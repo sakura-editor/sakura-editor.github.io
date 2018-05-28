@@ -1,0 +1,170 @@
+body
+{
+  font-family: "Verdana", "Arial", "Helvetica", "ＭＳ Ｐゴシック", sans-serif;
+  margin: 2em 5%;
+  line-height: 1.5;
+}
+
+a:link    { color: #f03; background-color: transparent; }
+a:visited { color: #903; background-color: transparent; }
+a:hover   { color: #000; background-color: #fab; }
+
+a:link img    { border-color: #f03; }
+a:visited img { border-color: #903; }
+a:hover img   { border-color: #fab; }
+
+hr
+{
+  margin: 1em;
+  height: 2px;
+  border-style: solid;
+  border-color: #666;
+}
+
+/******************** 見出し ****************************************/
+h1, h2, h3, h4
+{
+  font-weight: bold;
+  line-height: 1;
+  color: inherit; background-color: #fee;
+  padding: 0.2em 0.2em 0.2em 0.5em;
+  border-color: #f28;
+}
+
+h1
+{
+  font-size: 1.5em;
+  border-style: solid none solid none;
+  border-width: 4px;
+}
+
+h2
+{
+  font-size: 1.2em;
+  margin-top: 2em;
+  border-style: solid none solid none;
+  border-width: 2px;
+}
+
+h3
+{
+  font-size: 1em;
+  margin-top: 1.5em;
+  border-style: none none solid none;
+  border-width: 2px;
+}
+
+h4
+{
+  font-size: 1em;
+  margin-top: 1em;
+  border-style: none;
+}
+
+/******************** リスト ****************************************/
+dl
+{
+  margin-left: 1em;
+  margin-right: 1em;
+  padding: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #666;
+}
+
+dt
+{
+  color: inherit; background-color: #fee;
+  margin: 0.5em 0 0 0;
+  padding: 0.1em 0.3em;
+  border-width: 1px;
+  border-top-color: #666;
+  border-bottom-color: #f28;
+  border-style: solid none solid none;
+}
+
+dd
+{
+  margin: 0;
+  padding: 0.2em 0.1em 0.2em 0.5em;
+}
+
+/******************** テーブル ****************************************/
+table
+{
+  border-style: solid;
+  border-width: 2px;
+  border-collapse: collapse;
+  border-color: #666;
+}
+th, td
+{
+  padding: 0.1em 0.5em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #666;
+}
+
+/******************** その他ブロック ****************************************/
+p, dl, ul, ol
+{ line-height: 1.5; }
+
+dt { font-weight: bold; }
+
+ul { list-style-type: square; }
+
+/******************** インライン ****************************************/
+em, strong
+{ color: #909; background-color: transparent; }
+strong
+{
+  border-style: none none double none;
+  border-width: 3px;
+}
+
+/******************** クラス ****************************************/
+.s
+{ font-size: smaller; }
+
+.title
+{
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+.sub
+{
+  font-weight: bold;
+  text-align: center;
+}
+
+.example
+{
+  text-align: left;
+  font-weight: bold;
+  color: inherit; background-color: #E0FCE8;
+  margin: 0;
+  padding: 0 1em;
+  border-style: none; 
+}
+
+.note
+{
+  text-align: left;
+  color: inherit; background-color: #cdf;
+  margin: 0;
+  padding: 0 1em;
+  border-style: none; 
+}
+
+
+/* 画像にリンクボーダーを付けたくない場合は noboder クラスを a に付ける */
+a.noboder,
+a.noboder:hover
+{
+  text-decoration: none;
+  border: none;
+  background: none;
+}
