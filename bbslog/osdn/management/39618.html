@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://osdn.net/projects/sakura-editor/forums/34093/39618/ -->
+<html lang="ja">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Expires" content="Tue, 26 Jun 2018 04:04:48 GMT">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>スレッド 開発・管理:開発環境のカバー範囲（Visual Studioバージョン等） - サクラエディタ - OSDN</title>
+  <link rel="stylesheet" type="text/css" href="./files/base-2da12725b6819874b825be1edd8886bb.min.css">
+  <link rev="MADE" href="mailto:admin@osdn.net">
+  <link rel="INDEX" href="https://osdn.net/">
+  <link rel="CONTENTS" href="https://osdn.net/">
+  <link rel="alternate" hreflang="ja" href="https://ja.osdn.net/projects/sakura-editor/forums/34093/39618/">
+  <link rel="alternate" hreflang="zh" href="https://zh.osdn.net/projects/sakura-editor/forums/34093/39618/">
+  <link rel="alternate" hreflang="zh-TW" href="https://zh-tw.osdn.net/projects/sakura-editor/forums/34093/39618/">
+  <link rel="alternate" hreflang="de" href="https://de.osdn.net/projects/sakura-editor/forums/34093/39618/">
+  <link rel="alternate" hreflang="fr" href="https://fr.osdn.net/projects/sakura-editor/forums/34093/39618/">
+  <link rel="alternate" hreflang="ko" href="https://ko.osdn.net/projects/sakura-editor/forums/34093/39618/">
+  <link rel="alternate" hreflang="es" href="https://es.osdn.net/projects/sakura-editor/forums/34093/39618/">
+  <link rel="alternate" hreflang="pt" href="https://pt.osdn.net/projects/sakura-editor/forums/34093/39618/">
+  <link rel="alternate" hreflang="en" href="https://osdn.net/projects/sakura-editor/forums/34093/39618/">
+  <link rel="alternate" hreflang="x-default" href="https://osdn.net/projects/sakura-editor/forums/34093/39618/">
+  <link rel="alternate" title="Project History" type="application/rss+xml" href="https://osdn.net/projects/sakura-editor/history/rss">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="スレッド 開発・管理:開発環境のカバー範囲（Visual Studioバージョン等） - サクラエディタ - OSDN">
+  <meta property="fb:app_id" content="224902477537179">
+  <meta property="og:image" content="https://static-cdn.osdn.net/thumb/g/5/435/200x200_0.png">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:site" content="@osdnjp">
+  <meta property="twitter:domain" content="osdn.net">
+  <meta property="og:description" content="スレッド 開発・管理:開発環境のカバー範囲（Visual Studioバージョン等） - サクラエディタ #osdn">
+  <style>
+    #gpt-sf_dev_rec {
+      margin-bottom: 8px;
+    }
+
+    #docman_document {
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+
+    #head-ad-text {
+      max-width: 666px;
+      overflow: hidden;
+    }
+  </style>
+  <!--
+<PageMap>
+  <DataObject type="page-info">
+    <Attribute name="action" value="thread"/>
+    <Attribute name="reltype" value="group"/>
+  </DataObject>
+  <DataObject type="group-info">
+    <Attribute name="unix-name" value="sakura-editor"/>
+    <Attribute name="name" value="サクラエディタ"/>
+    <Attribute name="type" value="internal"/>
+    <Attribute name="registered-at" value="1526938218"/>
+    <Attribute name="lastupdate" value="1529984596"/>
+    <Attribute name="image" value="https://static-cdn.osdn.net/thumb/g/5/435/100x100_0.png"/>
+  </DataObject>
+</PageMap>
+-->
+  <style type="text/css">
+    .fb_hidden {
+      position: absolute;
+      top: -10000px;
+      z-index: 10001
+    }
+
+    .fb_reposition {
+      overflow: hidden;
+      position: relative
+    }
+
+    .fb_invisible {
+      display: none
+    }
+
+    .fb_reset {
+      background: none;
+      border: 0;
+      border-spacing: 0;
+      color: #000;
+      cursor: auto;
+      direction: ltr;
+      font-family: "lucida grande", tahoma, verdana, arial, "hiragino kaku gothic pro", meiryo, "ms pgothic", sans-serif;
+      font-size: 11px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: normal;
+      letter-spacing: normal;
+      line-height: 1;
+      margin: 0;
+      overflow: visible;
+      padding: 0;
+      text-align: left;
+      text-decoration: none;
+      text-indent: 0;
+      text-shadow: none;
+      text-transform: none;
+      visibility: visible;
+      white-space: normal;
+      word-spacing: normal
+    }
+
+    .fb_reset>div {
+      overflow: hidden
+    }
+
+    .fb_link img {
+      border: none
+    }
+
+    @keyframes fb_transform {
+      from {
+        opacity: 0;
+        transform: scale(.95)
+      }
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .fb_animate {
+      animation: fb_transform .3s forwards
+    }
+
+    .fb_dialog {
+      background: rgba(82, 82, 82, .7);
+      position: absolute;
+      top: -10000px;
+      z-index: 10001
+    }
+
+    .fb_reset .fb_dialog_legacy {
+      overflow: visible
+    }
+
+    .fb_dialog_advanced {
+      padding: 10px;
+      border-radius: 8px
+    }
+
+    .fb_dialog_content {
+      background: #fff;
+      color: #333
+    }
+
+    .fb_dialog_close_icon {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+      cursor: pointer;
+      display: block;
+      height: 15px;
+      position: absolute;
+      right: 18px;
+      top: 17px;
+      width: 15px
+    }
+
+    .fb_dialog_mobile .fb_dialog_close_icon {
+      top: 5px;
+      left: 5px;
+      right: auto
+    }
+
+    .fb_dialog_padding {
+      background-color: transparent;
+      position: absolute;
+      width: 1px;
+      z-index: -1
+    }
+
+    .fb_dialog_close_icon:hover {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent
+    }
+
+    .fb_dialog_close_icon:active {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent
+    }
+
+    .fb_dialog_loader {
+      background-color: #f6f7f9;
+      border: 1px solid #606060;
+      font-size: 24px;
+      padding: 20px
+    }
+
+    .fb_dialog_top_left,
+    .fb_dialog_top_right,
+    .fb_dialog_bottom_left,
+    .fb_dialog_bottom_right {
+      height: 10px;
+      width: 10px;
+      overflow: hidden;
+      position: absolute
+    }
+
+    .fb_dialog_top_left {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;
+      left: -10px;
+      top: -10px
+    }
+
+    .fb_dialog_top_right {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;
+      right: -10px;
+      top: -10px
+    }
+
+    .fb_dialog_bottom_left {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;
+      bottom: -10px;
+      left: -10px
+    }
+
+    .fb_dialog_bottom_right {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;
+      right: -10px;
+      bottom: -10px
+    }
+
+    .fb_dialog_vert_left,
+    .fb_dialog_vert_right,
+    .fb_dialog_horiz_top,
+    .fb_dialog_horiz_bottom {
+      position: absolute;
+      background: #525252;
+      filter: alpha(opacity=70);
+      opacity: .7
+    }
+
+    .fb_dialog_vert_left,
+    .fb_dialog_vert_right {
+      width: 10px;
+      height: 100%
+    }
+
+    .fb_dialog_vert_left {
+      margin-left: -10px
+    }
+
+    .fb_dialog_vert_right {
+      right: 0;
+      margin-right: -10px
+    }
+
+    .fb_dialog_horiz_top,
+    .fb_dialog_horiz_bottom {
+      width: 100%;
+      height: 10px
+    }
+
+    .fb_dialog_horiz_top {
+      margin-top: -10px
+    }
+
+    .fb_dialog_horiz_bottom {
+      bottom: 0;
+      margin-bottom: -10px
+    }
+
+    .fb_dialog_iframe {
+      line-height: 0
+    }
+
+    .fb_dialog_content .dialog_title {
+      background: #6d84b4;
+      border: 1px solid #365899;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0
+    }
+
+    .fb_dialog_content .dialog_title>span {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+      float: left;
+      padding: 5px 0 7px 26px
+    }
+
+    body.fb_hidden {
+      -webkit-transform: none;
+      height: 100%;
+      margin: 0;
+      overflow: visible;
+      position: absolute;
+      top: -10000px;
+      left: 0;
+      width: 100%
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+      min-height: 100%;
+      min-width: 100%;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      z-index: 10001
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered {
+      width: auto;
+      height: auto;
+      min-height: initial;
+      min-width: initial;
+      background: none
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
+      width: 100%
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
+      background: none
+    }
+
+    .loading.centered #fb_dialog_loader_close {
+      color: #fff;
+      display: block;
+      padding-top: 20px;
+      clear: both;
+      font-size: 18px
+    }
+
+    #fb-root #fb_dialog_ipad_overlay {
+      background: rgba(0, 0, 0, .45);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      width: 100%;
+      min-height: 100%;
+      z-index: 10000
+    }
+
+    #fb-root #fb_dialog_ipad_overlay.hidden {
+      display: none
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading iframe {
+      visibility: hidden
+    }
+
+    .fb_dialog_content .dialog_header {
+      -webkit-box-shadow: white 0 1px 1px -1px inset;
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));
+      border-bottom: 1px solid;
+      border-color: #1d4088;
+      color: #fff;
+      font: 14px Helvetica, sans-serif;
+      font-weight: bold;
+      text-overflow: ellipsis;
+      text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+      vertical-align: middle;
+      white-space: nowrap
+    }
+
+    .fb_dialog_content .dialog_header table {
+      -webkit-font-smoothing: subpixel-antialiased;
+      height: 43px;
+      width: 100%
+    }
+
+    .fb_dialog_content .dialog_header td.header_left {
+      font-size: 12px;
+      padding-left: 5px;
+      vertical-align: middle;
+      width: 60px
+    }
+
+    .fb_dialog_content .dialog_header td.header_right {
+      font-size: 12px;
+      padding-right: 5px;
+      vertical-align: middle;
+      width: 60px
+    }
+
+    .fb_dialog_content .touchable_button {
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));
+      border: 1px solid #29487d;
+      -webkit-background-clip: padding-box;
+      -webkit-border-radius: 3px;
+      -webkit-box-shadow: rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;
+      display: inline-block;
+      margin-top: 3px;
+      max-width: 85px;
+      line-height: 18px;
+      padding: 4px 12px;
+      position: relative
+    }
+
+    .fb_dialog_content .dialog_header .touchable_button input {
+      border: none;
+      background: none;
+      color: #fff;
+      font: 12px Helvetica, sans-serif;
+      font-weight: bold;
+      margin: 2px -12px;
+      padding: 2px 6px 3px 6px;
+      text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+    }
+
+    .fb_dialog_content .dialog_header .header_center {
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 18px;
+      text-align: center;
+      vertical-align: middle
+    }
+
+    .fb_dialog_content .dialog_content {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+      border: 1px solid #555;
+      border-bottom: 0;
+      border-top: 0;
+      height: 150px
+    }
+
+    .fb_dialog_content .dialog_footer {
+      background: #f6f7f9;
+      border: 1px solid #555;
+      border-top-color: #ccc;
+      height: 40px
+    }
+
+    #fb_dialog_loader_close {
+      float: left
+    }
+
+    .fb_dialog.fb_dialog_mobile .fb_dialog_close_button {
+      text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+    }
+
+    .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+      visibility: hidden
+    }
+
+    #fb_dialog_loader_spinner {
+      animation: rotateSpinner 1.2s linear infinite;
+      background-color: transparent;
+      background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      height: 24px;
+      width: 24px
+    }
+
+    @keyframes rotateSpinner {
+      0% {
+        transform: rotate(0deg)
+      }
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+
+    .fb_iframe_widget {
+      display: inline-block;
+      position: relative
+    }
+
+    .fb_iframe_widget span {
+      display: inline-block;
+      position: relative;
+      text-align: justify
+    }
+
+    .fb_iframe_widget iframe {
+      position: absolute
+    }
+
+    .fb_iframe_widget_fluid_desktop,
+    .fb_iframe_widget_fluid_desktop span,
+    .fb_iframe_widget_fluid_desktop iframe {
+      max-width: 100%
+    }
+
+    .fb_iframe_widget_fluid_desktop iframe {
+      min-width: 220px;
+      position: relative
+    }
+
+    .fb_iframe_widget_lift {
+      z-index: 1
+    }
+
+    .fb_hide_iframes iframe {
+      position: relative;
+      left: -10000px
+    }
+
+    .fb_iframe_widget_loader {
+      position: relative;
+      display: inline-block
+    }
+
+    .fb_iframe_widget_fluid {
+      display: inline
+    }
+
+    .fb_iframe_widget_fluid span {
+      width: 100%
+    }
+
+    .fb_iframe_widget_loader iframe {
+      min-height: 32px;
+      z-index: 2;
+      zoom: 1
+    }
+
+    .fb_iframe_widget_loader .FB_Loader {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;
+      height: 32px;
+      width: 32px;
+      margin-left: -16px;
+      position: absolute;
+      left: 50%;
+      z-index: 4
+    }
+
+    .fb_customer_chat_bounce_in_v1 {
+      animation-duration: 250ms;
+      animation-name: fb_bounce_in_v1
+    }
+
+    .fb_customer_chat_bounce_out_v1 {
+      animation-duration: 250ms;
+      animation-name: fb_bounce_out_v1
+    }
+
+    .fb_customer_chat_bounce_in_v2 {
+      animation-duration: 300ms;
+      animation-name: fb_bounce_in_v2;
+      transition-timing-function: ease-in
+    }
+
+    .fb_customer_chat_bounce_out_v2 {
+      animation-duration: 300ms;
+      animation-name: fb_bounce_out_v2;
+      transition-timing-function: ease-in
+    }
+
+    .fb_customer_chat_bounce_in_v2_mobile_chat_started {
+      animation-duration: 300ms;
+      animation-name: fb_bounce_in_v2_mobile_chat_started;
+      transition-timing-function: ease-in
+    }
+
+    .fb_customer_chat_bounce_out_v2_mobile_chat_started {
+      animation-duration: 300ms;
+      animation-name: fb_bounce_out_v2_mobile_chat_started;
+      transition-timing-function: ease-in
+    }
+
+    .fb_customer_chat_bubble_pop_in {
+      animation-duration: 250ms;
+      animation-name: fb_customer_chat_bubble_bounce_in_animation
+    }
+
+    .fb_customer_chat_bubble_animated_no_badge {
+      box-shadow: 0 3px 12px rgba(0, 0, 0, .15);
+      transition: box-shadow 150ms linear
+    }
+
+    .fb_customer_chat_bubble_animated_no_badge:hover {
+      box-shadow: 0 5px 24px rgba(0, 0, 0, .3)
+    }
+
+    .fb_customer_chat_bubble_animated_with_badge {
+      box-shadow: -5px 4px 14px rgba(0, 0, 0, .15);
+      transition: box-shadow 150ms linear
+    }
+
+    .fb_customer_chat_bubble_animated_with_badge:hover {
+      box-shadow: -5px 8px 24px rgba(0, 0, 0, .2)
+    }
+
+    .fb_invisible_flow {
+      display: inherit;
+      height: 0;
+      overflow-x: hidden;
+      width: 0
+    }
+
+    .fb_mobile_overlay_active {
+      background-color: #fff;
+      height: 100%;
+      overflow: hidden;
+      position: fixed;
+      visibility: hidden;
+      width: 100%
+    }
+
+    @keyframes fb_bounce_in_v1 {
+      0% {
+        opacity: 0;
+        transform: scale(.8, .8);
+        transform-origin: bottom right
+      }
+      80% {
+        opacity: .8;
+        transform: scale(1.03, 1.03)
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1, 1)
+      }
+    }
+
+    @keyframes fb_bounce_in_v2 {
+      0% {
+        opacity: 0;
+        transform: scale(0, 0);
+        transform-origin: bottom right
+      }
+      50% {
+        transform: scale(1.03, 1.03);
+        transform-origin: bottom right
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1, 1);
+        transform-origin: bottom right
+      }
+    }
+
+    @keyframes fb_bounce_in_v2_mobile_chat_started {
+      0% {
+        opacity: 0;
+        top: 20px
+      }
+      100% {
+        opacity: 1;
+        top: 0
+      }
+    }
+
+    @keyframes fb_bounce_out_v1 {
+      from {
+        opacity: 1
+      }
+      to {
+        opacity: 0
+      }
+    }
+
+    @keyframes fb_bounce_out_v2 {
+      0% {
+        opacity: 1;
+        transform: scale(1, 1);
+        transform-origin: bottom right
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0, 0);
+        transform-origin: bottom right
+      }
+    }
+
+    @keyframes fb_bounce_out_v2_mobile_chat_started {
+      0% {
+        opacity: 1;
+        top: 0
+      }
+      100% {
+        opacity: 0;
+        top: 20px
+      }
+    }
+
+    @keyframes fb_customer_chat_bubble_bounce_in_animation {
+      0% {
+        bottom: 6pt;
+        opacity: 0;
+        transform: scale(0, 0);
+        transform-origin: center
+      }
+      70% {
+        bottom: 18pt;
+        opacity: 1;
+        transform: scale(1.2, 1.2)
+      }
+      100% {
+        transform: scale(1, 1)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="frame" class="flex-outer theme2">
+    <div id="left-column">
+      <div id="head-ad-text-wrap">
+      </div>
+      <h3 class="headline1" id="thread_head">
+        <span>
+          <span class="thread-icon-wrap sticky-icon-wrap"></span>
+          <span class="thread-icon-wrap permission-icon-wrap"></span>話題(スレッド): 開発環境のカバー範囲（Visual Studioバージョン等）</span>
+      </h3>
+      <div id="forum-thread-whole-wrap">
+        <div class="forum-thread-wrap">
+          <div class="well forum-message-wrap" id="forum-message-81377">
+            <h4 class="headline2">
+              <a href="https://osdn.net/projects/sakura-editor/forums/34093/39618/81377/">
+                開発環境のカバー範囲（Visual Studioバージョン等） </a>
+              (2018-05-30 14:59,
+              <a href="https://osdn.net/users/kobake/" class="user-link">
+                <img width="12" height="12" src="./files/12x12_0.png" border="0" class="user-image user-image-type-icon" alt="">kobake</a>, #81377)
+              <div class="pull-right">
+                <button type="button" class="btn btn-mini btn-primary" data-toggle="collapse" data-target="#forum-post-collapse-81377">返信</button>
+                <div class="btn-group right-edge-menu">
+                  <a class="btn btn-mini" href="https://osdn.net/projects/sakura-editor/forums/34093/39618/#" data-toggle="dropdown">
+                    <i class="icon-cog"></i>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li role="presentation">
+                      <a data-toggle="modal" data-target="#sticky-config-modal39618">スレッドの固定</a>
+                    </li>
+                    <li role="presentation">
+                      <a data-toggle="modal" data-target="#permission-config-modal39618">書き込み権限</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li role="presentation">
+                      <a data-toggle="modal" data-target="#forum-post-delete-81377">削除</a>
+                    </li>
+                    <li role="presentation">
+                      <a data-toggle="modal" data-target="#forum-post-spam-81377">スパム削除</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="modal hide fade" id="sticky-config-modal39618">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4>固定スレッド</h4>
+                  </div>
+                  <form class="forum-thread-stickey-form" method="post" data-ajax="1" data-ajax-target="forum/update_sticky.php" data-hook-id="forum-thread-sticky-form">
+                    <div class="modal-body">
+                      <p>
+                        開発環境のカバー範囲（Visual Studioバージョン等） スレッドをリストの上部に固定表示するようにします。 </p>
+                      <p>例えば、アナウンス事項などを目につくように常にリストの先頭に置きたい場合などに設定してください。優先度が3段階あり、優先度が高いものほど上位に配置されます(同一優先度のスレッドは新しいものから並べられます)。</p>
+                      <p>
+                        <label class="radio">
+                          <input type="radio" name="priority" value="10"> 優先度 高 </label>
+                        <label class="radio">
+                          <input type="radio" name="priority" value="5"> 優先度 中 </label>
+                        <label class="radio">
+                          <input type="radio" name="priority" value="1"> 優先度 低 </label>
+                      </p>
+                      <hr class="divider">
+                      <label class="radio">
+                        <input type="radio" name="priority" value="0" checked=""> 固定表示しない </label>
+                      <p></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary">適用</button>
+                      <button type="button" class="btn" data-dismiss="modal">キャンセル</button>
+                    </div>
+                    <input type="hidden" name="group_id" value="10965">
+                    <input type="hidden" name="thread_id" value="39618">
+                  </form>
+                </div>
+                <div class="modal hide fade" id="permission-config-modal39618">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4>スレッドの書き込み権限</h4>
+                  </div>
+                  <form class="forum-thread-permission-form" method="post" data-ajax="1" data-ajax-target="forum/update_permission.php" data-hook-id="forum-thread-sticky-form">
+                    <div class="modal-body">
+                      <p>
+                        開発環境のカバー範囲（Visual Studioバージョン等） スレッドへの書き込み権限を変更します。 </p>
+                      <p>スレッドごとに書き込みを行えるユーザを制限することができます。例えばアナウンス用のスレッドなどでプロジェクトメンバー以外の書き込みを禁止したいような場合に使用できます。個々のスレッドに設定を行わない場合は、書き込み権限はフォーラムの設定に従って制御されます(設定によって全員書き込めるか、ログインユーザのみ書き込めるようになります)</p>
+                      <p>
+                        <label class="radio">
+                          <input type="radio" name="permission" value="1"> 誰でも(匿名ユーザでも)書き込める </label>
+                        <label class="radio">
+                          <input type="radio" name="permission" value="2"> ログインユーザのみ書き込める </label>
+                        <label class="radio">
+                          <input type="radio" name="permission" value="3"> プロジェクトメンバーのみ書き込める </label>
+                        <label class="radio">
+                          <input type="radio" name="permission" value="4"> フォーラム管理者とプロジェクト管理者のみ書き込める </label>
+                        <label class="radio">
+                          <input type="radio" name="permission" value="5"> 誰も書き込めない(read only) </label>
+                      </p>
+                      <hr class="divider">
+                      <label class="radio">
+                        <input type="radio" name="permission" value="0" checked=""> 設定しない </label>
+                      <p></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary">適用</button>
+                      <button type="button" class="btn" data-dismiss="modal">キャンセル</button>
+                    </div>
+                    <input type="hidden" name="group_id" value="10965">
+                    <input type="hidden" name="thread_id" value="39618">
+                  </form>
+                </div>
+                <div id="forum-post-delete-81377" class="modal hide fade">
+                  <div class="modal-header">
+                    <a class="close" data-dismiss="modal">×</a>
+                    <h4>フォーラムへの投稿 開発環境のカバー範囲（Visual Studioバージョン等） (#81377) の削除</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>フォーラムへの投稿 開発環境のカバー範囲（Visual Studioバージョン等） (#81377) を削除します。</p>
+                    <div class="alert">この投稿に対するすべてのフォローアップも同時に削除されます</div>
+                  </div>
+                  <div class="modal-footer">
+                    <form class="inline thin" method="post" action="https://osdn.net/ajax/forum/delete.php">
+                      <input type="hidden" name="msg_id" value="81377">
+                      <input type="hidden" name="group_id" value="10965">
+                      <button type="submit" class="btn btn-danger">はい、削除します</button>
+                    </form>
+                    <button type="button" class="btn" data-dismiss="modal">キャンセル</button>
+                  </div>
+                </div>
+                <div id="forum-post-spam-81377" class="modal hide fade">
+                  <div class="modal-header">
+                    <a class="close" data-dismiss="modal">×</a>
+                    <h4>フォーラムへの投稿 開発環境のカバー範囲（Visual Studioバージョン等） (#81377) をスパムとしてサイト管理者に報告</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>フォーラムへの投稿 開発環境のカバー範囲（Visual Studioバージョン等） (#81377) をスパムとしてサイト管理者に報告します(報告されたスパムはスパム投稿防止のためのフィルタの更新に役立てられます)</p>
+                    <div class="alert">報告を行うと、この投稿およびこの投稿へのすべてのフォローアップは同時にすべて削除されます</div>
+                  </div>
+                  <div class="modal-footer">
+                    <form class="inline thin" method="post" action="https://osdn.net/ajax/forum/delete.php">
+                      <input type="hidden" name="msg_id" value="81377">
+                      <input type="hidden" name="group_id" value="10965">
+                      <input type="hidden" name="spam_report" value="1">
+                      <button type="submit" class="btn btn-danger">はい、削除します</button>
+                    </form>
+                    <button type="button" class="btn" data-dismiss="modal">キャンセル</button>
+                  </div>
+                </div>
+              </div>
+              <div class="right-clear"></div>
+            </h4>
+            <div>
+              Visual Studio の古いバージョンへの対応を維持し続けるコストを削りたいので、一旦 Visual Studio 2013, 2015 用のプロジェクトファイルはリポジトリから削除し、Visual Studio 2017 用のプロジェクトファイルのみを残す形にします。
+              <br>
+              <br> これにあたりで何か不都合ある方いらっしゃいましたら後からでも良いので教えてください。（ファイルの復旧が必要な場合には git revert します）
+              <br>
+              <div class="right-clear"></div>
+            </div>
+          </div>
+          <div id="forum-post-collapse-81377" class="collapse fade" data-hook-id="forum-post-collapse">
+            <div class="well">
+              <h4 class="headline2">メッセージ #81377 への返信
+                <a class="close collapse-close" data-target="#forum-post-collapse-81377">×</a>
+              </h4>
+              <form id="forum-post-form-81377" class="forum-post-form form-horizontal reset-on-success need-validate" method="post" data-ajax-target="forum/post.php"
+                data-ajax="1" data-hook-id="forum-post">
+                <div class="control-group">
+                  <label class="control-label" for="input-forum-message-subject-81377">題名</label>
+                  <div class="controls">
+                    <input type="text" class="input-xlarge required" id="input-forum-message-subject-81377" name="subject" value="Re: 開発環境のカバー範囲（Visual Studioバージョン等）"
+                      placeholder="(必須)">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="input-forum-message-body-81377">本文</label>
+                  <div class="controls">
+                    <textarea class="input-xlarge required" rows="15" id="input-forum-message-body-81377" name="body" placeholder="(必須)">[メッセージ #81377 への返信]
+&gt; Visual Studio の古いバージョンへの対応を維持し続けるコストを削りたいので、一旦 Visual Studio 2013, 2015 用のプロジェクトファイルはリポジトリから削除し、Visual Studio 2017 用のプロジェクトファイルのみを残す形にします。
+&gt; 
+&gt; これにあたりで何か不都合ある方いらっしゃいましたら後からでも良いので教えてください。（ファイルの復旧が必要な場合には git revert します）
+
+</textarea>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="controls">
+                    <button type="submit" class="btn btn-primary">投稿</button>
+                    <button type="button" class="btn collapse-close" data-target="#forum-post-collapse-81377">キャンセル</button>
+                  </div>
+                </div>
+                <input type="hidden" name="forum_id" value="34093">
+                <input type="hidden" name="thread_id" value="39618">
+                <input type="hidden" name="is_followup_to" value="81377">
+              </form>
+            </div>
+          </div>
+          <div class="forum-thread-wrap">
+            <div class="well forum-message-wrap" id="forum-message-81378">
+              <h4 class="headline2">
+                <a href="https://osdn.net/projects/sakura-editor/forums/34093/39618/81378/">
+                  Re: 開発環境のカバー範囲（Visual Studioバージョン等） </a>
+                (2018-05-30 15:03,
+                <a href="https://osdn.net/users/kobake/" class="user-link">
+                  <img width="12" height="12" src="./files/12x12_0.png" border="0" class="user-image user-image-type-icon"
+                    alt="">kobake</a>, #81378)
+                <div class="pull-right">
+                  <button type="button" class="btn btn-mini btn-primary" data-toggle="collapse" data-target="#forum-post-collapse-81378">返信</button>
+                  <form id="forum-bestanswer-form-81378" class="inline thin forum-bestanswer-form" method="post" data-ajax="1" data-ajax-target="forum/bestanswer.php"
+                    data-hook-id="forum-bestanswer">
+                    <button type="submit" class="btn btn-mini">ベストアンサー</button>
+                    <input type="hidden" name="msg_id" value="81378">
+                    <input type="hidden" name="thread_id" value="39618">
+                    <input type="hidden" name="enable" value="1">
+                  </form>
+                  <div class="btn-group right-edge-menu">
+                    <a class="btn btn-mini" href="https://osdn.net/projects/sakura-editor/forums/34093/39618/#" data-toggle="dropdown">
+                      <i class="icon-cog"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li role="presentation">
+                        <a data-toggle="modal" data-target="#forum-post-delete-81378">削除</a>
+                      </li>
+                      <li role="presentation">
+                        <a data-toggle="modal" data-target="#forum-post-spam-81378">スパム削除</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div id="forum-post-delete-81378" class="modal hide fade">
+                    <div class="modal-header">
+                      <a class="close" data-dismiss="modal">×</a>
+                      <h4>フォーラムへの投稿 Re: 開発環境のカバー範囲（Visual Studioバージョン等） (#81378) の削除</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>フォーラムへの投稿 Re: 開発環境のカバー範囲（Visual Studioバージョン等） (#81378) を削除します。</p>
+                      <div class="alert">この投稿に対するすべてのフォローアップも同時に削除されます</div>
+                    </div>
+                    <div class="modal-footer">
+                      <form class="inline thin" method="post" action="https://osdn.net/ajax/forum/delete.php">
+                        <input type="hidden" name="msg_id" value="81378">
+                        <input type="hidden" name="group_id" value="10965">
+                        <button type="submit" class="btn btn-danger">はい、削除します</button>
+                      </form>
+                      <button type="button" class="btn" data-dismiss="modal">キャンセル</button>
+                    </div>
+                  </div>
+                  <div id="forum-post-spam-81378" class="modal hide fade">
+                    <div class="modal-header">
+                      <a class="close" data-dismiss="modal">×</a>
+                      <h4>フォーラムへの投稿 Re: 開発環境のカバー範囲（Visual Studioバージョン等） (#81378) をスパムとしてサイト管理者に報告</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>フォーラムへの投稿 Re: 開発環境のカバー範囲（Visual Studioバージョン等） (#81378) をスパムとしてサイト管理者に報告します(報告されたスパムはスパム投稿防止のためのフィルタの更新に役立てられます)</p>
+                      <div class="alert">報告を行うと、この投稿およびこの投稿へのすべてのフォローアップは同時にすべて削除されます</div>
+                    </div>
+                    <div class="modal-footer">
+                      <form class="inline thin" method="post" action="https://osdn.net/ajax/forum/delete.php">
+                        <input type="hidden" name="msg_id" value="81378">
+                        <input type="hidden" name="group_id" value="10965">
+                        <input type="hidden" name="spam_report" value="1">
+                        <button type="submit" class="btn btn-danger">はい、削除します</button>
+                      </form>
+                      <button type="button" class="btn" data-dismiss="modal">キャンセル</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="right-clear"></div>
+              </h4>
+              <div>
+                [メッセージ #81377 への返信]
+                <br> &gt; 一旦 Visual Studio 2013, 2015 用のプロジェクトファイルはリポジトリから削除し、
+                <br>
+                <br> 2003, 2005 の間違いでした。
+                <div class="pull-right">
+                  <a href="https://osdn.net/projects/sakura-editor/forums/34093/39618/#forum-message-81377">#81377</a> への返信 </div>
+                <div class="right-clear"></div>
+              </div>
+            </div>
+            <div id="forum-post-collapse-81378" class="collapse fade" data-hook-id="forum-post-collapse">
+              <div class="well">
+                <h4 class="headline2">メッセージ #81378 への返信
+                  <a class="close collapse-close" data-target="#forum-post-collapse-81378">×</a>
+                </h4>
+                <form id="forum-post-form-81378" class="forum-post-form form-horizontal reset-on-success need-validate" method="post" data-ajax-target="forum/post.php"
+                  data-ajax="1" data-hook-id="forum-post">
+                  <div class="control-group">
+                    <label class="control-label" for="input-forum-message-subject-81378">題名</label>
+                    <div class="controls">
+                      <input type="text" class="input-xlarge required" id="input-forum-message-subject-81378" name="subject" value="Re: 開発環境のカバー範囲（Visual Studioバージョン等）"
+                        placeholder="(必須)">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="input-forum-message-body-81378">本文</label>
+                    <div class="controls">
+                      <textarea class="input-xlarge required" rows="15" id="input-forum-message-body-81378" name="body" placeholder="(必須)">[メッセージ #81378 への返信]
+&gt; [メッセージ #81377 への返信]
+&gt; &gt; 一旦 Visual Studio 2013, 2015 用のプロジェクトファイルはリポジトリから削除し、
+&gt; 
+&gt; 2003, 2005 の間違いでした。
+</textarea>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <div class="controls">
+                      <button type="submit" class="btn btn-primary">投稿</button>
+                      <button type="button" class="btn collapse-close" data-target="#forum-post-collapse-81378">キャンセル</button>
+                    </div>
+                  </div>
+                  <input type="hidden" name="forum_id" value="34093">
+                  <input type="hidden" name="thread_id" value="39618">
+                  <input type="hidden" name="is_followup_to" value="81378">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END: #left-column -->
+  </div>
+  <!-- #frame -->
+  <div class="both-clear"></div>
+
+</body>
+
+</html>
