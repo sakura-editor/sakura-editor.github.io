@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>UTF8の扱い</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">642</span>
+    <a class="title" href="642.html#642">UTF8の扱い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">720</span>
+    <a class="title" href="642.html#720">Re:UTF8の扱い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">723</span>
+    <a class="title" href="642.html#723">Re2:UTF8の扱い</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=642>
+    <span class="no">[642]</span>
+    <a class="title" href="#642">UTF8の扱い</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-07-23T12:31:41">2001年07月23日 12:31</time></h1>
+    <div class="body">現在、sakuraではUTF-8(BOMあり)とUTF-8n(BOMなし)を区別していませんが、両者を区別するようにしたほうがよいと思います。<br>sakuraで扱われるUTF-8は、正確にはUTF-8nですので、ファイルオープンダイアログの表記もそちらのほうが望ましいです。<br><br>UTF-8  先頭に EF BB BF がつく<br>UTF-8n いきなり本文が始まる<br></div></section>
+    <ul><li><section><h1 id=720>
+    <span class="no">[720]</span>
+    <a class="title" href="#720">Re:UTF8の扱い</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-10-01T18:25:28">2001年10月01日 18:25</time></h1>
+    <div class="body">レスなしでどんどん忘れ去られていく記事が・・・<br><br>▼ すとーにぃさん<br>&gt; 現在、sakuraではUTF-8(BOMあり)とUTF-8n(BOMなし)を区別していませんが、両者を区別するようにしたほうがよいと思います。<br>&gt; sakuraで扱われるUTF-8は、正確にはUTF-8nですので、ファイルオープンダイアログの表記もそちらのほうが望ましいです。<br>&gt; <br>&gt; UTF-8  先頭に EF BB BF がつく<br>&gt; UTF-8n いきなり本文が始まる<br><br>通常UTF-8といえばどっちなのですか？　「通常」と見なされている方がよく使うものでしょうから必要ならソースの方を修正するのが筋でしょう。</div></section>
+    <ul><li><section><h1 id=723>
+    <span class="no">[723]</span>
+    <a class="title" href="#723">Re2:UTF8の扱い</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-10-01T19:45:39">2001年10月01日 19:45</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; 通常UTF-8といえばどっちなのですか？<br><br>UTF-8の歴史的な経緯として、<br><br>・最初は先頭の識別文字(BOM)は使用されてなかった。<br>・その後、UNICODEファミリー間での区別のため、先頭に識別文字列をつけることを推奨するようになった。<br>・旧来の先頭に何もつかないUTF-8はUTF-8nと呼んで区別するようになった。<br><br>なので、他のエディタでも「UTF-8と称しているが本来はUTF-8nと表記すべき」というものが結構あります。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

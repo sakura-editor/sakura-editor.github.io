@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>スクリプトを中断するには？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">374</span>
+    <a class="title" href="374.html#374">スクリプトを中断するには？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">376</span>
+    <a class="title" href="374.html#376">RE: スクリプトを中断するには？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">377</span>
+    <a class="title" href="374.html#377">Re2: スクリプトを中断するには？</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=374>
+    <span class="no">[374]</span>
+    <a class="title" href="#374">スクリプトを中断するには？</a>
+    <span class="author">ぼさがみ</span>
+    <time datetime="2007-05-07T14:43:11">2007年05月07日 14:43</time></h1>
+    <div class="body">WScript.Quit();のように、JScriptを使用して<br>スクリプトを途中で中断したいのですが、<br>Editorのメソッドに同様の機能は存在するのでしょうか？<br><br>＃WScript自体が作成できないというM$の仕様が<br>＃一番の問題な訳ですが・・・<br><br>ご存知の方がいましたらお願いします。<br></div></section>
+    <ul><li><section><h1 id=376>
+    <span class="no">[376]</span>
+    <a class="title" href="#376">RE: スクリプトを中断するには？</a>
+    <span class="author">maru</span>
+    <time datetime="2007-05-09T21:30:07">2007年05月09日 21:30</time></h1>
+    <div class="body">&gt;WScript.Quit();のように、JScriptを使用して<br>&gt;スクリプトを途中で中断したいのですが、<br>&gt;Editorのメソッドに同様の機能は存在するのでしょうか？<br>そのような機能はありません。<br><br>現在のスクリプトの非関数部分を適当な関数でラッピングしてreturnで脱出とか。<br><br><br>main();<br>function main(){    // 非関数部分をこの中に<br>    //いろいろな処理<br>    return;    //Quitしたい場所<br>    //いろいろな処理<br>    return;    //Quitしたい場所<br>    //いろいろな処理<br>    return;    //Quitしたい場所<br>}<br></div></section>
+    <ul><li><section><h1 id=377>
+    <span class="no">[377]</span>
+    <a class="title" href="#377">Re2: スクリプトを中断するには？</a>
+    <span class="author">ぼさがみ</span>
+    <time datetime="2007-05-10T12:50:37">2007年05月10日 12:50</time></h1>
+    <div class="body">▼ maruさん<br>&gt; そのような機能はありません。<br>&gt; <br>&gt; 現在のスクリプトの非関数部分を適当な関数でラッピングしてreturnで脱出とか。<br><br>そうですか、残念…。Editor.Quit()とかあると<br>スクリプトが大分みやすく書けるので<br>探していたのですが。<br>返信ありがとうございました。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

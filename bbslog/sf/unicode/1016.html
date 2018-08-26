@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) ChgmodEOLマクロのパラメータ値がANSI版と非互換</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1016</span>
+    <a class="title" href="1016.html#1016">Commit報告(Fix) ChgmodEOLマクロのパラメータ値がANSI版と非互換</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=1016>
+    <span class="no">[1016]</span>
+    <a class="title" href="#1016">Commit報告(Fix) ChgmodEOLマクロのパラメータ値がANSI版と非互換</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-08-18T22:54:58">2009年08月18日 22:54</time></h1>
+    <div class="body">リビジョン：<br>　rev1646<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: ChgmodEOLマクロのパラメータ値がANSI版と非互換になっている<br><br>LFCRが除去された分だけLFとCRの指定値が-1シフトしてしまっていました。<br>マクロの互換性を維持するために下記の値で動作するように修正しました。<br>    0    変更しない<br>    1    CRLF(Windows)<br>    2    LFCR ← UNICODE版では未定義（指定しても変更しない）<br>    3    LF(UNIX)<br>    4    CR(Mac)</div></section>
+    </li></ul></body></html>

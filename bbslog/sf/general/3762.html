@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現の色認識エラー?</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3762</span>
+    <a class="title" href="3762.html#3762">正規表現の色認識エラー?</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3763</span>
+    <a class="title" href="3762.html#3763">Re:正規表現の色認識エラー?</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3766</span>
+    <a class="title" href="3762.html#3766">Re2:正規表現の色認識エラー?</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3767</span>
+    <a class="title" href="3762.html#3767">Re2:正規表現の色認識エラー?</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3768</span>
+    <a class="title" href="3762.html#3768">Re3:正規表現の色認識エラー?</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3769</span>
+    <a class="title" href="3762.html#3769">Re4:別の逃げ方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3771</span>
+    <a class="title" href="3762.html#3771">Re5:別の逃げ方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3777</span>
+    <a class="title" href="3762.html#3777">Re6:別の逃げ方</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3762>
+    <span class="no">[3762]</span>
+    <a class="title" href="#3762">正規表現の色認識エラー?</a>
+    <span class="author">MIE</span>
+    <time datetime="2004-04-05T11:55:11">2004年04月05日 11:55</time></h1>
+    <div class="body">バグフィックス等は目を通してますが、既出でしたら申し訳ありません。<br><br>ファイル名に使用できない文字を検索するために、以下のような正規表現を<br>書いてみました。<br>str.match(/[\\\/\:\,\;\*\?\"\&lt;\&gt;\|\s]/)<br><br></div></section>
+    <ul><li><section><h1 id=3763>
+    <span class="no">[3763]</span>
+    <a class="title" href="#3763">Re:正規表現の色認識エラー?</a>
+    <span class="author">MIE</span>
+    <time datetime="2004-04-05T12:01:07">2004年04月05日 12:01</time></h1>
+    <div class="body">▼ MIEさん<br>&gt; バグフィックス等は目を通してますが、既出でしたら申し訳ありません。<br>&gt; <br>&gt; ファイル名に使用できない文字を検索するために、以下のような正規表現を<br>&gt; 書いてみました。<br>&gt; str.match(/[\\\/\:\,\;\*\?\"\&lt;\&gt;\|\s]/)<br>&gt; <br>すみません、途中で投稿してしまいました。<br>これをsakuraエディタで書いたところ、ダブルクォテーションの<br>ところから先が文字列認識されてしまい、以降の文字列認識が<br>ずれてしまいます。<br>（スクリプト動作上は問題ないのですが）<br>これについて、サクラエディタ応援ページの正規表現キーワードに<br>ある引用符用のキーワードを当てたところ、行の最後で文字列認識が<br>終わりますが、他の個所で記述している正規表現の引用符で<br>（他にも何箇所か書いてます）同様の症状が発生してしまいます。<br><br>これについて、どうにか対応する方法はないでしょうか？</div></section>
+    <ul><li><section><h1 id=3766>
+    <span class="no">[3766]</span>
+    <a class="title" href="#3766">Re2:正規表現の色認識エラー?</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-04-05T23:32:31">2004年04月05日 23:32</time></h1>
+    <div class="body">&gt;これをsakuraエディタで書いたところ、ダブルクォテーションの<br>&gt;ところから先が文字列認識されてしまい、以降の文字列認識が<br>&gt;ずれてしまいます。<br>&gt;これについて、どうにか対応する方法はないでしょうか？<br>私は単純に行末にコメントを入れていますが．(他人のコードを見る時は使えませんが)<br><br>Perlで<br>if( /"/ ){ #" ←調整用<br>&#9;$a = $'; #' ←調整用<br>}<br>てな感じで．<br></div></section>
+    </li><li><section><h1 id=3767>
+    <span class="no">[3767]</span>
+    <a class="title" href="#3767">Re2:正規表現の色認識エラー?</a>
+    <span class="author">すい</span>
+    <time datetime="2004-04-06T02:36:22">2004年04月06日 02:36</time></h1>
+    <div class="body">&gt;&gt; ファイル名に使用できない文字を検索するために、以下のような正規表現を<br>&gt;&gt; 書いてみました。<br>&gt;&gt; str.match(/[\\\/\:\,\;\*\?\"\&lt;\&gt;\|\s]/)<br>&gt;&gt; <br>&gt;これをsakuraエディタで書いたところ、ダブルクォテーションの<br>&gt;ところから先が文字列認識されてしまい、以降の文字列認識が<br>&gt;ずれてしまいます。<br>&gt;（スクリプト動作上は問題ないのですが）<br>&gt;これについて、サクラエディタ応援ページの正規表現キーワードに<br>&gt;ある引用符用のキーワードを当てたところ、行の最後で文字列認識が<br>&gt;終わりますが、他の個所で記述している正規表現の引用符で<br>&gt;（他にも何箇所か書いてます）同様の症状が発生してしまいます。<br><br>\" タイプでしたら、正規表現キーワードの内容を以下のように修正すれば<br>きちんと \" を識別してくれるかと。<br><br>キーワード：/"(|.*?[^\\])(\\\\)*"/k<br>色　指　定：ダブルクォーテーション文字列<br><br>キーワード：/'(|.*?[^\\])(\\\\)*'/k<br>色　指　定：シングルクォーテーション文字列<br></div></section>
+    <ul><li><section><h1 id=3768>
+    <span class="no">[3768]</span>
+    <a class="title" href="#3768">Re3:正規表現の色認識エラー?</a>
+    <span class="author">すい</span>
+    <time datetime="2004-04-06T02:51:33">2004年04月06日 02:51</time></h1>
+    <div class="body">&gt;キーワード：/"(|.*?[^\\])(\\\\)*"/k<br>&gt;色　指　定：ダブルクォーテーション文字列<br>&gt;<br>&gt;キーワード：/'(|.*?[^\\])(\\\\)*'/k<br>&gt;色　指　定：シングルクォーテーション文字列<br><br>あ、だめた。↑これだけだと<br><br>str.match(/[\\\/\:\,\;\*\?\"\&lt;\&gt;\|\s]/)&#9;"AB<br>D"<br><br>みたいな場合に \" ～ " が文字列扱いになってしまうのか。<br>全体が "～" で括られているわけではないのですね。<br><br>という事で上記２個の他に、以下の２個を追加してみてください。(^^;)<br><br>キーワード：/\\"/k<br>色　指　定：テキスト<br><br>キーワード：/\\'/k<br>色　指　定：テキスト<br></div></section>
+    <ul><li><section><h1 id=3769>
+    <span class="no">[3769]</span>
+    <a class="title" href="#3769">Re4:別の逃げ方</a>
+    <span class="author">すい</span>
+    <time datetime="2004-04-06T03:16:48">2004年04月06日 03:16</time></h1>
+    <div class="body">&gt;&gt;キーワード：/"(|.*?[^\\])(\\\\)*"/k<br>&gt;&gt;色　指　定：ダブルクォーテーション文字列<br>&gt;&gt;<br>&gt;&gt;キーワード：/'(|.*?[^\\])(\\\\)*'/k<br>&gt;&gt;色　指　定：シングルクォーテーション文字列<br>&gt;<br>&gt;キーワード：/\\"/k<br>&gt;色　指　定：テキスト<br>&gt;<br>&gt;キーワード：/\\'/k<br>&gt;色　指　定：テキスト<br><br>↑この４個を定義する方法とは別に<br>↓以下の３個を定義するという逃げ方もありですかね。こっちの方がずっと面白いんですが。<br><br>キーワード：/"(|.*?[^\\])(\\\\)*"/k<br>色　指　定：ダブルクォーテーション文字列<br><br>キーワード：/'(|.*?[^\\])(\\\\)*'/k<br>色　指　定：シングルクォーテーション文字列<br><br>キーワード：/\/(|.*?[^\\])(\\\\)*\//k<br>色　指　定：強調キーワード１<br><br>上の方の４個キーワード定義する場合と上の２個のキーワードが同じで<br>最後の１個のキーワードのみが異なります。<br>最後の１個を「強調キーワード１」にしてありますが、実際に色々試してみて<br>自分の好きな色を指定するとよいでしょう。<br>「テキスト」にして見た目わからなくするのもよし。<br>「正規表現キーワード1」とかにして独自色にするもよし。<br></div></section>
+    <ul><li><section><h1 id=3771>
+    <span class="no">[3771]</span>
+    <a class="title" href="#3771">Re5:別の逃げ方</a>
+    <span class="author">MIE</span>
+    <time datetime="2004-04-06T05:44:41">2004年04月06日 05:44</time></h1>
+    <div class="body">▼ すいさん<br>&gt; &gt;&gt;キーワード：/"(|.*?[^\\])(\\\\)*"/k<br>&gt; &gt;&gt;色　指　定：ダブルクォーテーション文字列<br>&gt; &gt;&gt;<br>&gt; &gt;&gt;キーワード：/'(|.*?[^\\])(\\\\)*'/k<br>&gt; &gt;&gt;色　指　定：シングルクォーテーション文字列<br>&gt; &gt;<br>&gt; &gt;キーワード：/\\"/k<br>&gt; &gt;色　指　定：テキスト<br>&gt; &gt;<br>&gt; &gt;キーワード：/\\'/k<br>&gt; &gt;色　指　定：テキスト<br>&gt; <br>&gt; ↑この４個を定義する方法とは別に<br>&gt; ↓以下の３個を定義するという逃げ方もありですかね。こっちの方がずっと面白いんですが。<br>&gt; <br>&gt; キーワード：/"(|.*?[^\\])(\\\\)*"/k<br>&gt; 色　指　定：ダブルクォーテーション文字列<br>&gt; <br>&gt; キーワード：/'(|.*?[^\\])(\\\\)*'/k<br>&gt; 色　指　定：シングルクォーテーション文字列<br>&gt; <br>&gt; キーワード：/\/(|.*?[^\\])(\\\\)*\//k<br>&gt; 色　指　定：強調キーワード１<br>&gt; <br>&gt; 上の方の４個キーワード定義する場合と上の２個のキーワードが同じで<br>&gt; 最後の１個のキーワードのみが異なります。<br>&gt; 最後の１個を「強調キーワード１」にしてありますが、実際に色々試してみて<br>&gt; 自分の好きな色を指定するとよいでしょう。<br>&gt; 「テキスト」にして見た目わからなくするのもよし。<br>&gt; 「正規表現キーワード1」とかにして独自色にするもよし。<br><br>正規表現をくくるほうは // ～ のコメントが認識されなかったので、<br>\+引用符をテキスト認識するほうを使わせていただきました。<br>（多分コメントフォーマットをもう一度上書きすれば使えると思いますが）<br>よくよく考えればうまく認識しないのならちゃんとヒント与えれば<br>動くんですよね（＾＾；<br><br>どうもありがとうございます　m(__)m</div></section>
+    <ul><li><section><h1 id=3777>
+    <span class="no">[3777]</span>
+    <a class="title" href="#3777">Re6:別の逃げ方</a>
+    <span class="author">すい</span>
+    <time datetime="2004-04-07T01:45:25">2004年04月07日 01:45</time></h1>
+    <div class="body">&gt;正規表現をくくるほうは // ～ のコメントが認識されなかったので、<br>&gt;\+引用符をテキスト認識するほうを使わせていただきました。<br>&gt;（多分コメントフォーマットをもう一度上書きすれば使えると思いますが）<br><br>// の行コメントという物がある言語ですか。<br>「上書き」と言うか、コメントも正規表現キーワードで表示<br>するようにすれば、とりあえずは逃げられるんですけどね。 (;^^;)<br>(とりあえず // だけは(笑) )<br># 他に逃げられそうにない物が．．．<br><br>&gt;&gt; キーワード：/"(|.*?[^\\])(\\\\)*"/k<br>&gt;&gt; 色　指　定：ダブルクォーテーション文字列<br>&gt;&gt;<br>&gt;&gt; キーワード：/'(|.*?[^\\])(\\\\)*'/k<br>&gt;&gt; 色　指　定：シングルクォーテーション文字列<br><br>キーワード：/\/\/.*/k<br>色　指　定：コメント<br><br>↑このキーワードだけは必ず↓このキーワードの上に定義する必要があります。<br>他のキーワードは順序はどうでもよいのですが。<br><br>&gt;&gt; キーワード：/\/(|.*?[^\\])(\\\\)*\//k<br>&gt;&gt; 色　指　定：強調キーワード１<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

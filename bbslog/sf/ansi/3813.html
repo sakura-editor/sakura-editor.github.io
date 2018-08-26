@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Ｃ＋＋メソッドツリー 　const関数</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3813</span>
+    <a class="title" href="3813.html#3813">Ｃ＋＋メソッドツリー 　const関数</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3814</span>
+    <a class="title" href="3813.html#3814">Re:Ｃ＋＋メソッドツリー 　const関数</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3833</span>
+    <a class="title" href="3813.html#3833">Re:Ｃ＋＋メソッドツリー 　const関数</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3813>
+    <span class="no">[3813]</span>
+    <a class="title" href="#3813">Ｃ＋＋メソッドツリー 　const関数</a>
+    <span class="author">SYUPPY</span>
+    <time datetime="2005-01-14T10:15:12">2005年01月14日 10:15</time></h1>
+    <div class="body">1.4.9.0以降のバージョンで以下のバグがありました。<br><br>以下のような"const"のつく関数で<br>メソッドツリーの表示がおかしくなります。<br><br>void AAAA::aaaa(int a)const<br>{<br>        bbbb();<br>        cccc();<br>}<br><br>constをとれば正常に表示されました。<br><br></div></section>
+    <ul><li><section><h1 id=3814>
+    <span class="no">[3814]</span>
+    <a class="title" href="#3814">Re:Ｃ＋＋メソッドツリー 　const関数</a>
+    <span class="author">SYUPPY</span>
+    <time datetime="2005-01-14T10:30:27">2005年01月14日 10:30</time></h1>
+    <div class="body">追記ですが、<br>1.4.9.0以前では正常だったと思います。<br></div></section>
+    </li><li><section><h1 id=3833>
+    <span class="no">[3833]</span>
+    <a class="title" href="#3833">Re:Ｃ＋＋メソッドツリー 　const関数</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-01-30T19:26:45">2005年01月30日 19:26</time></h1>
+    <div class="body">▼ SYUPPYさん<br>&gt; 以下のような"const"のつく関数で<br>&gt; メソッドツリーの表示がおかしくなります。<br>メソッドツリーだけではなくて，宣言でも後続の宣言がうまく認識されない現象が出ていました．<br>関数宣言の後ろのconst/throwには次で対応します．</div></section>
+    </li></ul></li></ul></body></html>

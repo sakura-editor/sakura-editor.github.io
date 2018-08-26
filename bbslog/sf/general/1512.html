@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択がおかしいです</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">1512</span>
+    <a class="title" href="1512.html#1512">選択がおかしいです</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1523</span>
+    <a class="title" href="1512.html#1523">Re:選択がおかしいです</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1526</span>
+    <a class="title" href="1512.html#1526">Re2:選択がおかしいです</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1657</span>
+    <a class="title" href="1512.html#1657">Re2:選択がおかしいです</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1658</span>
+    <a class="title" href="1512.html#1658">Re3:選択がおかしいです</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1512>
+    <span class="no">[1512]</span>
+    <a class="title" href="#1512">選択がおかしいです</a>
+    <span class="author">銀</span>
+    <time datetime="2002-04-01T23:19:23">2002年04月01日 23:19</time></h1>
+    <div class="body">テキストを選択するときに最終行の行番号の下辺り<br>([EOF]の左辺り)をクリックして上の方にドラッグ<br>すると選択がおかしな感じになってしまいます。<br>Deleteキーを押しても選択領域が削除されない等。<br>テキスト部分をクリックしてドラッグした時には<br>問題ないです。これはそういう仕様でしょうか。</div></section>
+    <ul><li><section><h1 id=1523>
+    <span class="no">[1523]</span>
+    <a class="title" href="#1523">Re:選択がおかしいです</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-04T00:30:07">2002年04月04日 00:30</time></h1>
+    <div class="body">▼ 銀さん<br>&gt; テキストを選択するときに最終行の行番号の下辺り<br>&gt; ([EOF]の左辺り)をクリックして上の方にドラッグ<br>&gt; すると選択がおかしな感じになってしまいます。<br>&gt; Deleteキーを押しても選択領域が削除されない等。<br>&gt; テキスト部分をクリックしてドラッグした時には<br>&gt; 問題ないです。これはそういう仕様でしょうか。<br><br>報告ありがとうございます～。<br>報告があってからかなり気合を入れて調べていたのですが、ようやく判明しました。<br>次回から直りますなり。</div></section>
+    <ul><li><section><h1 id=1526>
+    <span class="no">[1526]</span>
+    <a class="title" href="#1526">Re2:選択がおかしいです</a>
+    <span class="author">銀</span>
+    <time datetime="2002-04-04T06:53:31">2002年04月04日 06:53</time></h1>
+    <div class="body">前回の投稿のとき、挨拶をし忘れてしまいました。<br>申し訳ありません。<br>以後、よろしくお願いします！<br><br>▼ やざきさん<br>ありがとうございます。<br>プログラミングのことはよく分かりませんが、<br>なにか気づきましたらまた報告します。</div></section>
+    </li><li><section><h1 id=1657>
+    <span class="no">[1657]</span>
+    <a class="title" href="#1657">Re2:選択がおかしいです</a>
+    <span class="author">銀</span>
+    <time datetime="2002-04-17T23:24:44">2002年04月17日 23:24</time></h1>
+    <div class="body">先日は早々に対策していただきありがとうございました。<br><br>▼ やざきさん<br>&gt; 報告ありがとうございます～。<br>&gt; 報告があってからかなり気合を入れて調べていたのですが、ようやく判明しました。<br>&gt; 次回から直りますなり。<br><br>2002-04-08版で直っていたと思いましたが、不完全だったよう<br>です。[EOF]だけの行は問題ないのですが、文字列の後に[EOF]<br>があるような行だと以前と同じ症状になります。<br>どうも私は下方から上方に向けて選択するときに行番号の下辺り<br>からドラッグし始めることが多いようで、なんとなく気になって<br>います。</div></section>
+    <ul><li><section><h1 id=1658>
+    <span class="no">[1658]</span>
+    <a class="title" href="#1658">Re3:選択がおかしいです</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-17T23:37:37">2002年04月17日 23:37</time></h1>
+    <div class="body"><br>&gt;2002-04-08版で直っていたと思いましたが、不完全だったよう<br>&gt;です。[EOF]だけの行は問題ないのですが、文字列の後に[EOF]<br>&gt;があるような行だと以前と同じ症状になります。<br><br>ああ本当だ。文字列＋[EOF]で、EOFよりも下のほうからドラッグするとだめですね。しくしく。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>マジックナンバー削減</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1733</span>
+    <a class="title" href="1733.html#1733">マジックナンバー削減</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1734</span>
+    <a class="title" href="1733.html#1734">Re:マジックナンバー削減</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1735</span>
+    <a class="title" href="1733.html#1735">Re2:マジックナンバー削減</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1736</span>
+    <a class="title" href="1733.html#1736">Re:マジックナンバー削減</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1733>
+    <span class="no">[1733]</span>
+    <a class="title" href="#1733">マジックナンバー削減</a>
+    <span class="author">novice</span>
+    <time datetime="2002-03-13T21:38:43">2002年03月13日 21:38</time></h1>
+    <div class="body">マジックナンバーを削減してみました。<br><br>「CEditView::DispLineNew()」に、以下のような記述があります。<br><br> - 0: 通常<br> - 1: 行コメント<br> - 2: ブロックコメント<br> - 3: シングルコーテーション<br> - 4: ダブルコーテーション<br> - 5: 強調キーワード１<br> - 6: コントロールコード<br> - 9: 半角数値<br> - 20: ブロックコメント２<br> - 50: 強調キーワード２<br> - 80: URL<br> - 90: 検索<br> - 1000: 正規表現キーワード<br><br>これを次のようにしてみました。<br><br> - COLORIDX_TEXT     : テキスト<br> - COLORIDX_COMMENT  : 行コメント<br> - COLORIDX_BLOCK1   : ブロックコメント1<br> - COLORIDX_SSTRING  : シングルコーテーション<br> - COLORIDX_WSTRING  : ダブルコーテーション<br> - COLORIDX_KEYWORD1 : 強調キーワード1<br> - COLORIDX_CTRLCODE : コントロールコード<br> - COLORIDX_DIGIT    : 半角数値<br> - COLORIDX_BLOCK20  : ブロックコメント2<br> - COLORIDX_KEYWORD2 : 強調キーワード2<br> - COLORIDX_URL      : URL<br> - COLORIDX_SEARCH   : 検索<br> - 1000: 正規表現キーワード<br><br>修正抜けがなければ、機能的に同じです。<br><br>変更対象ファイル<br>ssrc_2002-03-11.lzh<br><br>差分ファイル<br>diff_ssrc_2002-03-11.lzh<br></div></section>
+    <ul><li><section><h1 id=1734>
+    <span class="no">[1734]</span>
+    <a class="title" href="#1734">Re:マジックナンバー削減</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-13T22:19:21">2002年03月13日 22:19</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; マジックナンバーを削減してみました。<br><br>すばらしい!!<br>慎重に取り込みます。<br>もし他の個所でマジックナンバーを見つけたときは、ぜひ知らせてくださいませ。&gt; みなさま<br></div></section>
+    <ul><li><section><h1 id=1735>
+    <span class="no">[1735]</span>
+    <a class="title" href="#1735">Re2:マジックナンバー削減</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-13T23:26:37">2002年03月13日 23:26</time></h1>
+    <div class="body">・CLayoutMgr::InsertLineNext()<br>・CLayoutMgr::AddLineBottom()<br><br>にnCOMMENTMODEを渡しているけど、この2つの関数って何ものかわかる人います？<br>で、nCOMMENTMODEをそのままpLayout-&gt;m_nTypeNextに入れているのだけれども。。。<br></div></section>
+    </li></ul></li><li><section><h1 id=1736>
+    <span class="no">[1736]</span>
+    <a class="title" href="#1736">Re:マジックナンバー削減</a>
+    <span class="author">novice</span>
+    <time datetime="2002-03-14T23:54:19">2002年03月14日 23:54</time></h1>
+    <div class="body">微妙に間違ってました。<br>  - COLORIDX_BLOCK20  : ブロックコメント2<br>-&gt;<br>  - COLORIDX_BLOCK2   : ブロックコメント2<br></div></section>
+    </li></ul></li></ul></body></html>

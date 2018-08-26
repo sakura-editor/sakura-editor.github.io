@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ウェブページへのジャンプ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6062</span>
+    <a class="title" href="6062.html#6062">ウェブページへのジャンプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6063</span>
+    <a class="title" href="6062.html#6063">RE: ウェブページへのジャンプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6064</span>
+    <a class="title" href="6062.html#6064">Re2: ウェブページへのジャンプ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6065</span>
+    <a class="title" href="6062.html#6065">Re2: ウェブページへのジャンプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6066</span>
+    <a class="title" href="6062.html#6066">Re3: ウェブページへのジャンプ</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6062>
+    <span class="no">[6062]</span>
+    <a class="title" href="#6062">ウェブページへのジャンプ</a>
+    <span class="author">にょろにょろ</span>
+    <time datetime="2007-05-19T13:48:44">2007年05月19日 13:48</time></h1>
+    <div class="body">探し方が悪ければすみません<br>マウスクリックにより<a href=http://marubatu target=_top><nobr>http://<wbr>marubatu<wbr></nobr></a>へ<br>ジャンプするのですが、<br>キーボードでは可能でしょうか。<br></div></section>
+    <ul><li><section><h1 id=6063>
+    <span class="no">[6063]</span>
+    <a class="title" href="#6063">RE: ウェブページへのジャンプ</a>
+    <span class="author">すい</span>
+    <time datetime="2007-05-19T16:31:14">2007年05月19日 16:31</time></h1>
+    <div class="body">無理かと。<br>マウスダブルクリックで URL へ飛ぶ機能はキー割り当て等、出来ませんから。<br><br>その手の機能のマクロを作って、<br>マクロを登録して、（共通設定 - マクロ）<br>そのマクロをキー割り当て（共通設定 - キー割り当て）<br>という手でなら自由自在に出来ますけど。<br><br>↓簡単な手抜きマクロ（頑張れば、もっと便利な機能にもできるかと。非選択時にはURL部分を自動的に判別して選択して実行してくれる、とか）<br>----- SelJump.PPA -----<br>// 選択文字列を実行する。<br><br>// TAB=4<br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに PPA.DLL を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>if ( S_GetSelectedString(0) &lt;&gt; '' ) then<br>&#9;begin&#9;// 選択されている文字列がある場合<br>&#9;&#9;Shell( S_GetSelectedString(0) , '' );&#9;&#9;// 選択されている文字列を実行する。<br>&#9;end<br>else<br>&#9;begin&#9;// 選択文字列が無い場合<br>&#9;&#9;Shell( S_GetLineStr(0) , '' );&#9;&#9;&#9;&#9;// カーソル行の文字列を実行する。<br>//&#9;&#9;Shell( S_ExpandParameter( '$C' ) , '' );&#9;// カーソル位置の単語を実行する。<br>&#9;end<br>;<br>-----<br></div></section>
+    <ul><li><section><h1 id=6064>
+    <span class="no">[6064]</span>
+    <a class="title" href="#6064">Re2: ウェブページへのジャンプ</a>
+    <span class="author">にょろにょろ</span>
+    <time datetime="2007-05-20T08:20:12">2007年05月20日 08:20</time></h1>
+    <div class="body">▼ すいさん<br>お世話になります。<br>回答ありがとうございます。<br>マクロでやるのですね。やってみます。</div></section>
+    </li><li><section><h1 id=6065>
+    <span class="no">[6065]</span>
+    <a class="title" href="#6065">Re2: ウェブページへのジャンプ</a>
+    <span class="author">ヒュン</span>
+    <time datetime="2007-05-20T10:58:13">2007年05月20日 10:58</time></h1>
+    <div class="body">▼ すいさん<br>&gt; 無理かと。<br>&gt; マウスダブルクリックで URL へ飛ぶ機能はキー割り当て等、出来ませんから。<br><br>逆にいえば「マウスダブルクリックで URL へ飛ぶ機能」を<br>OFFにすることもできないんでしょうか？</div></section>
+    <ul><li><section><h1 id=6066>
+    <span class="no">[6066]</span>
+    <a class="title" href="#6066">Re3: ウェブページへのジャンプ</a>
+    <span class="author">すい</span>
+    <time datetime="2007-05-20T12:13:29">2007年05月20日 12:13</time></h1>
+    <div class="body">共通設定 - 編集 - 「クリックで&amp;URLを選択する」のチェックを外せば<br>違和感…というか、他の部分との操作上の違いはかなり減ると思います。<br>ですが、それだけではダブルクリックするとURLへ飛んで行ってしまいます。<br><br>タイプ別設定 - カラー - 色指定にて<br>「URL」の「色分け/表示」をoff にすると、ダブルクリックしても<br>URLに飛んでいく事はなくなります。<br><br>このクリッカブルURLの機能on/offは、URLの色分け表示と連動していますので、<br>「色分け表示はしたいけど、クリッカブルURLはoffにしたい」といった事は<br>出来ません。<br><br><br>現状、クリッカブルURLの機能はダブルクリック時の処理内にハードコード<br>されているので、on/off とか「他の操作でクリッカブルURLを働かせる」<br>とかはの自由度はありませんね。<br><br>sakura_core/CEditView.cpp 4533行<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

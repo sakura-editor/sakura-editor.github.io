@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>複数ファイル「編集の全終了」→同じ状況で編集再開したい</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6156</span>
+    <a class="title" href="6156.html#6156">複数ファイル「編集の全終了」→同じ状況で編集再開したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6159</span>
+    <a class="title" href="6156.html#6159">RE: 複数ファイル「編集の全終了」→同じ状況で編集再開したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6164</span>
+    <a class="title" href="6156.html#6164">Re2: 複数ファイル「編集の全終了」→同じ状況で編集再開したい</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6166</span>
+    <a class="title" href="6156.html#6166">RE2: 複数ファイル「編集の全終了」→同じ状況で編集再開したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6167</span>
+    <a class="title" href="6156.html#6167">Re3: 複数ファイル「編集の全終了」→同じ状況で編集再開したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6170</span>
+    <a class="title" href="6156.html#6170">Re4: 複数ファイル「編集の全終了」→同じ状況で編集再開したい</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6156>
+    <span class="no">[6156]</span>
+    <a class="title" href="#6156">複数ファイル「編集の全終了」→同じ状況で編集再開したい</a>
+    <span class="author">ムカイ</span>
+    <time datetime="2007-07-19T23:49:55">2007年07月19日 23:49</time></h1>
+    <div class="body">複数ファイル「編集の全終了」→同じ状況で編集再開したい<br>のですが可能でしょうか。<br>実はサクラエディタを使うまでは「秀丸」でした。<br>「秀丸」では、編集の状態もセーブ、リストアがあり、<br>重宝してました。<br>サクラエディタにもこの機能ないのでしょうか。<br>もし無ければ、ぜひ加えて頂きたい！<br></div></section>
+    <ul><li><section><h1 id=6159>
+    <span class="no">[6159]</span>
+    <a class="title" href="#6159">RE: 複数ファイル「編集の全終了」→同じ状況で編集再開したい</a>
+    <span class="author">すい</span>
+    <time datetime="2007-07-21T20:47:51">2007年07月21日 20:47</time></h1>
+    <div class="body">&gt;複数ファイル「編集の全終了」→同じ状況で編集再開したい<br>&gt;のですが可能でしょうか。<br><br>サクラエディタには、そういう機能はありません。<br>マクロでも無理ですね。<br></div></section>
+    <ul><li><section><h1 id=6164>
+    <span class="no">[6164]</span>
+    <a class="title" href="#6164">Re2: 複数ファイル「編集の全終了」→同じ状況で編集再開したい</a>
+    <span class="author">ムカイ</span>
+    <time datetime="2007-07-22T18:22:04">2007年07月22日 18:22</time></h1>
+    <div class="body">&gt; サクラエディタには、そういう機能はありません。<br>&gt; マクロでも無理ですね。<br><br>そうですか～、残念です。<br>編集状態の復帰機能があれば、例えば、翌日に直ぐに<br>同じ状態で作業の復帰ができるので重宝します。<br><br>ぜひ新機能の一つとして加えて頂きたい！<br></div></section>
+    </li><li><section><h1 id=6166>
+    <span class="no">[6166]</span>
+    <a class="title" href="#6166">RE2: 複数ファイル「編集の全終了」→同じ状況で編集再開したい</a>
+    <span class="author">すい</span>
+    <time datetime="2007-07-25T00:44:24">2007年07月25日 00:44</time></h1>
+    <div class="body">サクラエディタのマクロでは無理ですが、<br>UWSC Free (http://www.uwsc.info/) とか使えばできますね。<br># 当たり前ですけど<br><br>----- SAKCLOSE.UWS -----<br>// サクラエディタのウィンドウの状態をファイル SAK_BOOT.BAT に<br>// メモしながら全て閉じる。<br><br>// SAK_BOOT.BAT を実行すると、元と同じ状態で開かれる。<br>//# Windows 95系の場合、あらかじめ SAK_BOOT.BAT のプロパティの<br>//# [プログラム]タブにて<br>//# ・実行時の大きさ:[最小化の状態]<br>//# ・プログラム終了時にウィンドウを閉じる　← チェックON<br>//# に設定しておくのがお勧め。<br><br>// タブバーを、ウィンドウをまとめる設定で使用している場合、各ウィンドウグループ毎の<br>// 位置・サイズは復帰しない。（全て一つのタブグループにまとめて開かれる）<br><br>SakuraEditor = "C:\PROGRA~1\SAKURA\SAKURA.EXE"&#9;// サクラエディタのパス - 短いMS-DOSファイル名で<br><br>WM_COMMAND = $0111<br>// ↓ ssrc_2007-07-08\sakura_core\Funccode.h 参照<br>F_COPYPATH = 30620&#9;//このファイルのパス名をクリップボードにコピー<br>F_COPYTAG  = 30621&#9;//このファイルのパス名とカーソル位置をコピー<br>F_COPYFNAME= 30622&#9;//このファイル名をクリップボードにコピー<br>F_WINCLOSE = 31320&#9;//ウィンドウを閉じる<br>F_EXITALL  = 30195&#9;// サクラエディタの全終了<br><br>FP = fopen("SAK_BOOT.BAT",F_WRITE)&#9;// バッチファイル<br><br>num = GETALLWIN()&#9;// 全てのウィンドウの一覧作成<br>For i = 0 to num-1&#9;//{<br>&#9;ID  = ALL_WIN_ID[i]<br><br>&#9;CLS = STATUS(ID,ST_CLASS)&#9;// クラス名<br>&#9;if ( CLS &lt;&gt; "TextEditorWindow" ) then&#9;continue&#9;// クラス名がサクラエディタではない<br><br>&#9;SendMessageA( IDTOHND(ID) , WM_COMMAND , F_COPYPATH , 0 )&#9;//このファイルのパス名をクリップボードにコピー<br>&#9;sleep(0.5)<br>&#9;file = GETSTR(0)&#9;// クリップボード取得<br><br>&#9;// コマンドライン作成<br>&#9;cmdl = ""<br>&#9;cmdl = cmdl + "start " + SakuraEditor<br>&#9;cmdl = cmdl + " -WX=" + STATUS(ID,ST_X     )&#9;// ウィンドウ位置のX座標<br>&#9;cmdl = cmdl + " -WY=" + STATUS(ID,ST_Y     )&#9;// ウィンドウ位置のY座標<br>&#9;cmdl = cmdl + " -SX=" + STATUS(ID,ST_WIDTH )&#9;// ウィンドウの幅<br>&#9;cmdl = cmdl + " -SY=" + STATUS(ID,ST_HEIGHT)&#9;// ウィンドウの高さ<br>&#9;cmdl = cmdl + " &lt;#DBL&gt;" + file + "&lt;#DBL&gt;"&#9;&#9;// 編集中ファイルのパス名<br><br>&#9;fput(FP,cmdl)&#9;// バッチに１行追記<br><br>&#9;SendMessageA( IDTOHND(ID) , WM_COMMAND , F_WINCLOSE , 0 )&#9;//ウィンドウを閉じる<br>Next&#9;//}<br><br>fclose(FP)<br><br>// ↓タスクトレイも終了させる場合<br>// SendMessageA( IDTOHND(EXEC(SakuraEditor)) , WM_COMMAND , F_EXITALL , 0 )&#9;// サクラエディタの全終了<br><br>exitexit<br><br>DEF_DLL SendMessageA(HWND,LONG,LONG,DWORD):LONG:user32.DLL<br>----------<br></div></section>
+    <ul><li><section><h1 id=6167>
+    <span class="no">[6167]</span>
+    <a class="title" href="#6167">Re3: 複数ファイル「編集の全終了」→同じ状況で編集再開したい</a>
+    <span class="author">ムカイ</span>
+    <time datetime="2007-07-26T20:49:23">2007年07月26日 20:49</time></h1>
+    <div class="body">▼ すいさん<br>&gt; サクラエディタのマクロでは無理ですが、<br>&gt; UWSC Free (http://www.uwsc.info/) とか使えばできますね。<br><br>ご紹介のUWSCのサイトに行ってみました。<br>が、UWSCを初めて知ったばかりで、まだチンプンカンプンというのが正直なところ。<br>これから、勉強してみます。<br>有難うございました。<br></div></section>
+    <ul><li><section><h1 id=6170>
+    <span class="no">[6170]</span>
+    <a class="title" href="#6170">Re4: 複数ファイル「編集の全終了」→同じ状況で編集再開したい</a>
+    <span class="author">すい</span>
+    <time datetime="2007-07-26T23:56:16">2007年07月26日 23:56</time></h1>
+    <div class="body">&gt;が、UWSCを初めて知ったばかりで、まだチンプンカンプンというのが正直なところ。<br><br>UWSC はマウスやキーボードを自動的に動かして他のアプリケーションを<br>操作する物です。<br><br>とりあえず、UWSC Free をダウンロードして .zip を適当な<br>新規フォルダに展開します。<br><br>あとは上記の記事を SAKCLOSE.UWS という名前のテキストファイルで<br>保存しておいて、それを uwsc.exe に渡せば動きます。<br><br>C:\～～\uwsc.exe  C:\～～\SAKCLOSE.UWS<br>のようなコマンドラインのショートカットを作成しておいて実行するとか、<br>あるいは拡張子 .uws を uwsc.exe に関連付け設定しておいて<br>SAKCLOSE.UWS をマウスで突いて実行するとか。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

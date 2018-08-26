@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3796</span>
+    <a class="title" href="3796.html#3796">【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3797</span>
+    <a class="title" href="3796.html#3797">Re:【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3798</span>
+    <a class="title" href="3796.html#3798">Re2:【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3800</span>
+    <a class="title" href="3796.html#3800">Re3:【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3801</span>
+    <a class="title" href="3796.html#3801">Re4:【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3837</span>
+    <a class="title" href="3796.html#3837">RE: 【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3796>
+    <span class="no">[3796]</span>
+    <a class="title" href="#3796">【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a>
+    <span class="author">よっしぃ</span>
+    <time datetime="2004-11-22T14:36:52">2004年11月22日 14:36</time></h1>
+    <div class="body">ウィンドウのタブ表示をOnにしている場合の話です。<br>複数ウィンドウを開いている場合、<br>「Ctrl + Tab」で次のウィンドウ(右のタブ)、<br>「Ctrl + Shift + Tab」で前のウィンドウ(左のタブ)に移動できます。<br><br>ウィンドウを3つ以上開いていますと、<br>左から3つ目のタブで「Ctrl + Shift + Tab」で左から2つ目のにタブ移動しますと、<br>「Ctrl + Tab」で左から3つ目のタブに移動しないで、<br>左から1つ目のタブに移動してしまいます。<br>以降「Ctrl + Tab」押すごとに、<br>左から1つ目のタブ←→左から2つ目のタブの動きを延々と繰り返すようになってしまいます。<br><br>再現性はあると思います。<br>確認をお願いします。<br><br><br>サクラエディタ: Ver. 1.4.8.1 V<br>OS: Windows XP Professional Version 2002 Service Pack 1</div></section>
+    <ul><li><section><h1 id=3797>
+    <span class="no">[3797]</span>
+    <a class="title" href="#3797">Re:【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a>
+    <span class="author">すす</span>
+    <time datetime="2004-11-22T15:10:46">2004年11月22日 15:10</time></h1>
+    <div class="body">▼ よっしぃさん<br>&gt; 再現性はあると思います。<br>&gt; 確認をお願いします。<br>サクラエディタ Ver 1.4.9.0<br>Windows XP Professional SP2<br>の環境では再現しないですね<br><br>1.4.9.0にしてみてはいかがでしょう？<br><br>&gt; <br>&gt; <br>&gt; サクラエディタ: Ver. 1.4.8.1 V<br>&gt; OS: Windows XP Professional Version 2002 Service Pack 1</div></section>
+    <ul><li><section><h1 id=3798>
+    <span class="no">[3798]</span>
+    <a class="title" href="#3798">Re2:【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a>
+    <span class="author">よっしぃ</span>
+    <time datetime="2004-11-22T18:32:08">2004年11月22日 18:32</time></h1>
+    <div class="body">マウ筋というマウスジェスチャーソフトを使っているのですが、<br>そのソフトで右ボタンを押しながらマウスのホイール回転での<br>タブ切り替えを行えるようにしています。<br>（要は、右クリック + ホイール上回転で、「Ctrl + Shift + Tab」、<br>右クリック + ホイール下回転で、「Ctrl + Tab」が発生するようにしている）<br><br>そのソフトでタブの切り替えを行っている場合は、<br>Ver1.4.9でも[3796]とは発生条件<br>（左から3つ目のタブで「Ctrl + Shift + Tab」×2で左から1つ目のにタブ移動すると発生）<br>が少し違いますが、<br>現象が再現されます。<br><br>しかし、キーボードを直接打った場合は発生しません。<br>Ver1.4.8.1ではキーボードを直接打っても発生していたと思います。<br><br>一度現象が発生するとキーボードを直接打っても現象が出続けるので、<br>ここら辺になんらかのバグが潜んでいるのかもしれませんが、<br>別のソフトが絡んでのことなので、<br>この投稿は削除した方がよいかもしれないと思っていますが、<br>どうしたらよいでしょうか？</div></section>
+    <ul><li><section><h1 id=3800>
+    <span class="no">[3800]</span>
+    <a class="title" href="#3800">Re3:【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a>
+    <span class="author">もか</span>
+    <time datetime="2004-11-23T12:15:47">2004年11月23日 12:15</time></h1>
+    <div class="body">&gt;別のソフトが絡んでのことなので、<br>&gt;この投稿は削除した方がよいかもしれないと思っていますが、<br>&gt;どうしたらよいでしょうか？<br>サクラエディタの処理の中で気になる箇所があります。<br>有用な情報ですので、削除しなくて結構です。<br><br>&gt;&gt;3731 Zオーダー(ウィンドウの前面・背面の順番)がおかしくなる<br>&gt;&gt;3740 アクティブのタブのと実際のウィンドウが異なる<br>上記にあるようにPostMessageであることと、<br>WM_SETFOCUSで、ウィンドウリストの配列を、入れ替えてる所があやしいです。<br>ほぼ同時にWM_SETFOCUSが着たら、配列自体が破壊されそう。<br></div></section>
+    <ul><li><section><h1 id=3801>
+    <span class="no">[3801]</span>
+    <a class="title" href="#3801">Re4:【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a>
+    <span class="author">よっしぃ</span>
+    <time datetime="2004-11-24T13:12:27">2004年11月24日 13:12</time></h1>
+    <div class="body">&gt; サクラエディタの処理の中で気になる箇所があります。<br>&gt; 有用な情報ですので、削除しなくて結構です。<br><br>了解しました。</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=3837>
+    <span class="no">[3837]</span>
+    <a class="title" href="#3837">RE: 【バグ報告】タブ表示時のウィンドウ(タブ)切り替えの順序がおかしくなる場合がある</a>
+    <span class="author">みく</span>
+    <time datetime="2005-02-07T19:01:55">2005年02月07日 19:01</time></h1>
+    <div class="body"><br>なんとなく、原因がわかったような気がするが、直す気はしないような。<br>ヒントだけ。<br><br>＞「Ctrl + Tab」で次のウィンドウ(右のタブ)、<br>＞「Ctrl + Shift + Tab」で前のウィンドウ(左のタブ)に移動できます。<br><br>という前提条件がそもそも違う。<br><br>・タブの表示順<br>　まあ、これはウインドウ生成順です。<br>・ウインドウメニューに出るウインドウの一覧表示順<br>・タスクトレイメニューに出るウインドウの一覧表示順<br>・次のウインドウ・前のウインドウで移動するウインドウ順<br></div></section>
+    </li></ul></li></ul></body></html>

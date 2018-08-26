@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>UNCパスをクリッカブルにする</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">912</span>
+    <a class="title" href="912.html#912">UNCパスをクリッカブルにする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">913</span>
+    <a class="title" href="912.html#913">Re:UNCパスをクリッカブルにする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">917</span>
+    <a class="title" href="912.html#917">Re2:UNCパスをクリッカブルにする</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">914</span>
+    <a class="title" href="912.html#914">Re:UNCパスをクリッカブルにする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">915</span>
+    <a class="title" href="912.html#915">Re2:UNCパスをクリッカブルにする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">918</span>
+    <a class="title" href="912.html#918">Re3:UNCパスをクリッカブルにする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">922</span>
+    <a class="title" href="912.html#922">Re4:UNCパスをクリッカブルにする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">926</span>
+    <a class="title" href="912.html#926">Re5:UNCパスをクリッカブルにする</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">937</span>
+    <a class="title" href="912.html#937"> Commit報告:(New) 正規表現キーワードのURLをクリッカブルに</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=912>
+    <span class="no">[912]</span>
+    <a class="title" href="#912">UNCパスをクリッカブルにする</a>
+    <span class="author">syat</span>
+    <time datetime="2009-05-21T00:57:26">2009年05月21日 00:57</time></h1>
+    <div class="body">文書中のUNCパス（\\で始まるパス）をクリッカブルにするパッチを投稿しました。<br>また、UNCパスとfile://パスは日本語を許容するように変更しています。<br>PatchUnicode: 2794449<br></div></section>
+    <ul><li><section><h1 id=913>
+    <span class="no">[913]</span>
+    <a class="title" href="#913">Re:UNCパスをクリッカブルにする</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-05-22T19:51:39">2009年05月22日 19:51</time></h1>
+    <div class="body">&gt; PatchUnicode: 2794449<br>↑こちらにコメントしておきましたが、従来URLと比べてUNCは誤認識がかなり多くなるので ON/OFF のオプションが別途必要かな、と思いました。<br><br>＃動作を見ていて関連箇所にANSI版からの持ち越しバグを見つけました。さっさと修正しておこうと思います。</div></section>
+    <ul><li><section><h1 id=917>
+    <span class="no">[917]</span>
+    <a class="title" href="#917">Re2:UNCパスをクリッカブルにする</a>
+    <span class="author">syat</span>
+    <time datetime="2009-05-23T11:53:31">2009年05月23日 11:53</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; &gt; PatchUnicode: 2794449<br>&gt; ↑こちらにコメントしておきましたが、従来URLと比べてUNCは誤認識がかなり多くなるので ON/OFF のオプションが別途必要かな、と思いました。<br>Ｃ言語系ソースとは相性悪いだろうなと思ってはいました。<br>ただ「\\」で始まるという条件しかないので「\\n」さえも妥当なUNCパスになってしまいます。誤認識の改善は難しいのでオプション追加ですかね（やり方を知らないのでこれから調べます；）<br></div></section>
+    </li></ul></li><li><section><h1 id=914>
+    <span class="no">[914]</span>
+    <a class="title" href="#914">Re:UNCパスをクリッカブルにする</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-05-22T22:53:21">2009年05月22日 22:53</time></h1>
+    <div class="body">思いつきですが、[タイプ別設定]-[正規表現キーワード]で[色指定]に「URL」を指定したものがクリッカブルになったらいいんじゃないでしょうか？<br>それなら新しいオプションUIを追加しなくていいですし、ユーザーが自由に追加のURLルールをカスタマイズすることができるようになります。<br>その方法に気づきにくい、てのが唯一の難点かしら...</div></section>
+    <ul><li><section><h1 id=915>
+    <span class="no">[915]</span>
+    <a class="title" href="#915">Re2:UNCパスをクリッカブルにする</a>
+    <span class="author">神楽</span>
+    <time datetime="2009-05-22T23:15:56">2009年05月22日 23:15</time></h1>
+    <div class="body">正規表現キーワード化なら問題ないですが、<br>ON/OFFオプション止まりなら<br>半角英字:\で始まるパスもクリッカブルにしてはどうでしょうか？</div></section>
+    <ul><li><section><h1 id=918>
+    <span class="no">[918]</span>
+    <a class="title" href="#918">Re3:UNCパスをクリッカブルにする</a>
+    <span class="author">syat</span>
+    <time datetime="2009-05-23T13:46:40">2009年05月23日 13:46</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; [タイプ別設定]-[正規表現キーワード]で[色指定]に「URL」を指定したものがクリッカブルになったらいいんじゃないでしょうか？<br>色指定リストにはURLがありますね。今まで気付きませんでした。誰も気付かないと思いますよ（笑）<br>実現したら最も柔軟ですね。<br><br>▼ 神楽さん<br>&gt; 正規表現キーワード化なら問題ないですが、<br>&gt; ON/OFFオプション止まりなら<br>&gt; 半角英字:\で始まるパスもクリッカブルにしてはどうでしょうか？<br>あったら便利だと思います。<br></div></section>
+    <ul><li><section><h1 id=922>
+    <span class="no">[922]</span>
+    <a class="title" href="#922">Re4:UNCパスをクリッカブルにする</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-05-23T20:01:22">2009年05月23日 20:01</time></h1>
+    <div class="body">▼ syatさん<br>&gt; ▼ ryojiさん<br>&gt; &gt; [タイプ別設定]-[正規表現キーワード]で[色指定]に「URL」を指定したものがクリッカブルになったらいいんじゃないでしょうか？<br>&gt; 色指定リストにはURLがありますね。今まで気付きませんでした。誰も気付かないと思いますよ（笑）<br>&gt; 実現したら最も柔軟ですね。<br><br>画面変更も不要なうえ、追加コードはちょっとだけで済むので、これを実装してみました。<br>→PatchUnicode: 2794449にパッチ追加</div></section>
+    <ul><li><section><h1 id=926>
+    <span class="no">[926]</span>
+    <a class="title" href="#926">Re5:UNCパスをクリッカブルにする</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-05-24T01:30:00">2009年05月24日 01:30</time></h1>
+    <div class="body">&gt; 画面変更も不要なうえ、追加コードはちょっとだけで済むので、これを実装してみました。<br>&gt; →PatchUnicode: 2794449にパッチ追加<br><br>誰も機能に気付かない、というのでは寂しいので、[正規表現キーワード]画面の下のほうにヒントになる説明を加えてみました。さらに、ヘルプを辿ったところに詳細説明をつければ...、と思います。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=937>
+    <span class="no">[937]</span>
+    <a class="title" href="#937"> Commit報告:(New) 正規表現キーワードのURLをクリッカブルに</a>
+    <span class="author">syat</span>
+    <time datetime="2009-05-30T15:04:11">2009年05月30日 15:04</time></h1>
+    <div class="body">リビジョン1577でコミットしました。<br>内容：<br>正規表現キーワードのURLにマッチした文字列をクリッカブルにする。<br>タイプ別設定（基本）の正規表現キーワードにデフォルト設定追加（\\で始まるパス、Windowsパス）</div></section>
+    </li></ul></li></ul></body></html>

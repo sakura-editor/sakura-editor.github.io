@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Imp) VS2010対応(2)</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1066</span>
+    <a class="title" href="1066.html#1066">Commit報告(Imp) VS2010対応(2)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1068</span>
+    <a class="title" href="1066.html#1068">Re: Commit報告(Imp) VS2010対応(2)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1069</span>
+    <a class="title" href="1066.html#1069">Re2: Commit報告(Imp) VS2010対応(2)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1070</span>
+    <a class="title" href="1066.html#1070">Re3: Commit報告(Imp) VS2010対応(2)</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1083</span>
+    <a class="title" href="1066.html#1083">プロジェクトのパスにスペースを含むとエラー</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1066>
+    <span class="no">[1066]</span>
+    <a class="title" href="#1066">Commit報告(Imp) VS2010対応(2)</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-11T20:01:03">2009年12月11日 20:01</time></h1>
+    <div class="body">リビジョン：<br>　rev1691<br><br>変更種別：<br>　改善<br><br>内容：<br>Imp: VS2010(Beta2)対応(2)<br><br>rev1690（&gt;&gt;unicode:1065）では&gt;&gt;unicode:39の変更を取り消したため、VS2005/2008でソースに変更を加えてビルド後、実行しようとすると、「プロジェクトは変更されています。ビルドしますか？」のダイアログが表示される現象が復活していました。<br>上記取り消しはVS2010対応用には必須のため、今回は、別の対策としてビルド前イベントでマニフェストを削除（ビルドごとにマニフェスト更新）することで上記メッセージが出ないようにしています。<br><br>また、VS2008/2010でRelease_Unicodeビルドすると、リンク時に「/OPT:NOWIN98 はサポートされていません」の警告が出ていたのを、オプション変更して出ないようにしました。<br><br>その他、ビルド設定の細部を見直して微調整しています。</div></section>
+    <ul><li><section><h1 id=1068>
+    <span class="no">[1068]</span>
+    <a class="title" href="#1068">Re: Commit報告(Imp) VS2010対応(2)</a>
+    <span class="author">もか</span>
+    <time datetime="2009-12-14T18:01:32">2009年12月14日 18:01</time></h1>
+    <div class="body">このコメント見てたのに何も考えないでsvn updateしたらVC9用vcprojが衝突＾＾；<br><br>+&#9;&#9;&#9;&#9;ProgramDatabaseFile="$(TargetDir)$(TargetName).pdb"<br>このパス真ん中に\が付いてないような気がします。<br><br><br>*ついでにメモ<br>&lt;File RelativePath="..\sakura_core\sakura_rc.rc"&gt;<br>の中の<br>&#9;AdditionalIncludeDirectories="\opensource\sakura\sakura_core" /&gt;<br>はいらなそう。<br><br>この２種類は勝手に付くのかそれとも意味があるんだろうか。<br>&lt;Tool<br>&#9;Name="VCCLCompilerTool"<br>&#9;ObjectFile="$(IntDir)\$(InputName)1.obj"<br>&#9;XMLDocumentationFileName="$(IntDir)\$(InputName)1.xdc"<br>/&gt;<br>&lt;Tool<br>&#9;Name="VCCLCompilerTool"<br>&#9;AdditionalIncludeDirectories=""<br>&#9;PreprocessorDefinitions=""<br>/&gt;<br><br># IA64/x64を追加したら同じ記述が12個もあるという。なんという無駄。<br># sakura.vcprojは224KBになってしまうだなんて……<br></div></section>
+    <ul><li><section><h1 id=1069>
+    <span class="no">[1069]</span>
+    <a class="title" href="#1069">Re2: Commit報告(Imp) VS2010対応(2)</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-14T21:17:37">2009年12月14日 21:17</time></h1>
+    <div class="body">▼ もかさん<br>&gt; +&#9;&#9;&#9;&#9;ProgramDatabaseFile="$(TargetDir)$(TargetName).pdb"<br>&gt; このパス真ん中に\が付いてないような気がします。<br>プロパティページの[リンカ]-[コマンドライン]で展開される/PDBオプションの文字列を見たところ\は不要みたいだったので、こうしてあるのですが… (^^;<br>おかしなところやもっと整理できるところがあったら、変更、お願いしま～す。</div></section>
+    <ul><li><section><h1 id=1070>
+    <span class="no">[1070]</span>
+    <a class="title" href="#1070">Re3: Commit報告(Imp) VS2010対応(2)</a>
+    <span class="author">もか</span>
+    <time datetime="2009-12-15T03:20:16">2009年12月15日 03:20</time></h1>
+    <div class="body">&gt; このパス真ん中に\が付いてないような気がします。<br>&gt;プロパティページの[リンカ]-[コマンドライン]で展開される/PDBオプションの文字列を見たところ\は不要みたいだったので、こうしてあるのですが… (^^;<br>なるほど。エディタでみててVC 2005は持ってないので確認できなかったのです。了解です。<br><br>&gt;おかしなところやもっと整理できるところがあったら、変更、お願いしま～す。<br>整理は急ぎではないんで、そのうちいじってみますね。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=1083>
+    <span class="no">[1083]</span>
+    <a class="title" href="#1083">プロジェクトのパスにスペースを含むとエラー</a>
+    <span class="author">syat</span>
+    <time datetime="2009-12-21T01:09:05">2009年12月21日 01:09</time></h1>
+    <div class="body">ひさしぶりにSVN更新したらビルドが通らなくなってしまいました。。<br><br>ビルドすると<br>&gt;ビルド前のイベントを実行しています...<br>&gt;出力ファイルは最新です<br>&gt;出力ファイルは最新です<br>&gt;指定されたパスが見つかりません。<br>&gt;Project : error PRJ0019: ツールはエラー コードを返しました : "ビルド前のイベントを実行しています..."<br>となり、ここでビルドが止まってしまいます。<br><br>ビルド前プロセスの「del $(TargetPath).manifest」でエラーになっているらしく、調べてみたらプロジェクトをデスクトップ下に置いてたのが原因でした。<br>「del C:\Documents and ...」のように置換されるので、スペースの入ったパスだと失敗します。<br>ということで、delの後ろを "" で囲んだほうがよいかと思います。<br></div></section>
+    </li></ul></li></ul></body></html>

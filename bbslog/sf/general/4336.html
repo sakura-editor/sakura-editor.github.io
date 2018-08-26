@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>SetWindowPos()の動作について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4336</span>
+    <a class="title" href="4336.html#4336">SetWindowPos()の動作について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4337</span>
+    <a class="title" href="4336.html#4337">Re: SetWindowPos()の動作について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4339</span>
+    <a class="title" href="4336.html#4339">Re2: SetWindowPos()の動作について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4369</span>
+    <a class="title" href="4336.html#4369">SetWindowPos()の動作について</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4336>
+    <span class="no">[4336]</span>
+    <a class="title" href="#4336">SetWindowPos()の動作について</a>
+    <span class="author">くろいわ</span>
+    <time datetime="2005-03-01T11:24:28">2005年03月01日 11:24</time></h1>
+    <div class="body">MS-Access の自作プログラムの中で、Windows API の SetWindowPos を呼び出しています。<br>目的は、画面から離れてリモートで入力操作を行うため、フォーカスが移動するのを防ぐために、常にフォームをトップに表示させていました。<br>しかし、先日、Sakura Editor の最新版をインストーラープログラムを利用してインストールした所、同じプロセスのアプリ（MS-Access）の中では有効なのですが、他のアプリにフォーカスが移動するようになってしまいました。<br>他に思いつく要因が思い当たらないので、Sakura Editor が不具合を起こしているのではないかと思います。<br>ただ、Sakura Editor をアンインストールしてみたのですが、症状は変わりませんでした。<br><br>原因が Sakura Editor にあると判断しても良いのか、また、その場合、対処方法あるいは完全にアンインストールする方法（元に戻す）についてご教示いただけると幸いです。<br><br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=4337>
+    <span class="no">[4337]</span>
+    <a class="title" href="#4337">Re: SetWindowPos()の動作について</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-03-01T13:53:44">2005年03月01日 13:53</time></h1>
+    <div class="body">コードを詳細に調べていないので確かなことは言えないのですが，新たに「ウィンドウを最前面に固定」という機能を導入しているのでその関連でエディタ内部にてTOPMOSTの解除が行われている可能性はあります．<br></div></section>
+    <ul><li><section><h1 id=4339>
+    <span class="no">[4339]</span>
+    <a class="title" href="#4339">Re2: SetWindowPos()の動作について</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-03-01T14:14:16">2005年03月01日 14:14</time></h1>
+    <div class="body">と書きましたが，「最前面に固定」を実行しない限り関係ないようです．<br>以前動いていたバージョンと比較してみないとちょっと何とも言えないのですが...<br></div></section>
+    <ul><li><section><h1 id=4369>
+    <span class="no">[4369]</span>
+    <a class="title" href="#4369">SetWindowPos()の動作について</a>
+    <span class="author">くろいわ</span>
+    <time datetime="2005-03-15T13:33:36">2005年03月15日 13:33</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; と書きましたが，「最前面に固定」を実行しない限り関係ないようです．<br>&gt; 以前動いていたバージョンと比較してみないとちょっと何とも言えないのですが...<br><br>フォローありがとうございます。<br>その後あれこれやっていて、API 呼び出しのタイミングを変更したら、<br>無事動作するようになりました。<br>（ですので、再現環境についてはその後突っ込んでいません）</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>速度改善パッチ群適用バイナリ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7637</span>
+    <a class="title" href="7637.html#7637">速度改善パッチ群適用バイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7638</span>
+    <a class="title" href="7637.html#7638">Re: 速度改善パッチ群適用バイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7639</span>
+    <a class="title" href="7637.html#7639">Re2: 速度改善パッチ群適用バイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7646</span>
+    <a class="title" href="7637.html#7646">Re3: 速度改善パッチ群適用バイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7652</span>
+    <a class="title" href="7637.html#7652">Re4: 速度改善パッチ群適用バイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7665</span>
+    <a class="title" href="7637.html#7665">Re5: 速度改善パッチ群適用バイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7666</span>
+    <a class="title" href="7637.html#7666">Re6: 速度改善パッチ群適用バイナリ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7637>
+    <span class="no">[7637]</span>
+    <a class="title" href="#7637">速度改善パッチ群適用バイナリ</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-13T00:11:23">2013年05月13日 00:11</time></h1>
+    <div class="body">以下のパッチ群を適用しました。<br>・194 変更行が一致しない問題<br>ソート、重複行の削除、全削除・全選択での変換系コマンドなど・またそれのRedo/Undo速度改善<br>行番号色分けを正確にする<br><br>・503 折り返し行でEOF直前で改行したときEOFが再描画されない(r2368-)<br>折り返し行でEOF直前で改行したときEOFが再描画されないバグの修正<br>行頭インデントが限界で解除された時の再描画されないバグの修正<br><br>・517 LogicToLayoutが遅いのを修正<br>全置換のうち選択範囲指定・クリップボードから貼り付け時の速度改善(主に全行連結などの場合)<br><br>・530 LogicToLayoutが遅いその2<br>全置換のうち選択範囲指定・クリップボードから貼り付け時の速度改善(折り返しありの場合)<br>全行に矩形選択で文字挿入の速度改善(折り返しありの場合)<br>今までは折り返したほうが遅かったのがおそらくパッチ適用後からは折り返したほうが早くなります。<br><br>・521 すべて置換の高速化<br>全置換のうちファイル全体でクリップボードでない時の速度改善(置換数が多い場合)<br>改行コード変換の速度改善(主に折り返しありの場合)<br>全置換・全行に矩形選択で(文字挿入|削除)・改行コード変換のRedo/Undoの速度改善<br><br>アップローダにアップしました。<br>http://ux.getuploader.com/sakura_editor/download/61/skrw_fix_slow_2-0-7-1_r3013.zip<br></div></section>
+    <ul><li><section><h1 id=7638>
+    <span class="no">[7638]</span>
+    <a class="title" href="#7638">Re: 速度改善パッチ群適用バイナリ</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-13T00:54:23">2013年05月13日 00:54</time></h1>
+    <div class="body">折り返し方法-折り返さないだと、全置換(選択・クリップボード)・矩形選択入力などが遅いです。<br>いくらか改善できそうなので、そのうち修正パッチを作ります。<br></div></section>
+    <ul><li><section><h1 id=7639>
+    <span class="no">[7639]</span>
+    <a class="title" href="#7639">Re2: 速度改善パッチ群適用バイナリ</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-13T01:51:36">2013年05月13日 01:51</time></h1>
+    <div class="body">追加で以下のパッチを入れました。<br>・折り返さないだと全行矩形入力が遅い<br>行数の多い場合の普通の置換・全置換もおそらく速くなっています。<br><br>すべて置換の高速化を更新。「折り返さない」に対応していなかったので修正<br><br>アップローダ<br>http://ux.getuploader.com/sakura_editor/download/62/skrw_fix_slow2_2-0-7-1_r3014.zip<br></div></section>
+    <ul><li><section><h1 id=7646>
+    <span class="no">[7646]</span>
+    <a class="title" href="#7646">Re3: 速度改善パッチ群適用バイナリ</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-13T19:33:16">2013年05月13日 19:33</time></h1>
+    <div class="body">すべて置換の高速化を更新。v0_7<br>2.8.1.0ベースにしました。<br><br>アップローダ<br>http://ux.getuploader.com/sakura_editor/download/63/skrw_fix_slow3_2-0-8-1_r3019.zip<br></div></section>
+    <ul><li><section><h1 id=7652>
+    <span class="no">[7652]</span>
+    <a class="title" href="#7652">Re4: 速度改善パッチ群適用バイナリ</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-16T03:43:05">2013年05月16日 03:43</time></h1>
+    <div class="body">さらに追加で以下のパッチを入れました。<br>・534 すべて置換・Grepの高速化(CSearchStringPatternの再利用)<br>正規表現・単語単位でないときの速度向上<br>・537 ファイル中央を表示していると画面描画が遅い<br>ファイルの行数と表示行数が多い場合に効果があります<br><br>その他、更新したパッチを適用しました。<br>アップローダ<br><a href=http://ux.getuploader.com/sakura_editor/download/66/skrw_fix_slow4_2-0-8-1_r3024.zip target=_top><nobr>http://<wbr>ux.<wbr>getuploa<wbr>der.<wbr>com/<wbr>sakura_e<wbr>ditor/<wbr>download<wbr>/<wbr>66/<wbr>skrw_fix<wbr>_slow4_2<wbr>-<wbr>0-<wbr>8-<wbr>1_r3024.<wbr>zip</nobr></a><br></div></section>
+    <ul><li><section><h1 id=7665>
+    <span class="no">[7665]</span>
+    <a class="title" href="#7665">Re5: 速度改善パッチ群適用バイナリ</a>
+    <span class="author">沙夜</span>
+    <time datetime="2013-05-18T12:45:24">2013年05月18日 12:45</time></h1>
+    <div class="body">こんちは、はじめまして。<br>サクラエディタ、便利に使わせて頂いてます。<br><br>こちらの速度改善パッチ群適用バイナリを試用させていただきましたところ、<br>正規表現・単語単位でない検索（と置換）で「英大文字と小文字を区別する」<br>のチェックを外した場合に不具合があるようです。<br>具体的には、「AAA」や「aAaa」など、英大文字を含み5文字以内の条件で検索した際に<br>マッチません。<br><br>正式版の2.0.8.1や直前の skrw_fix_slow3_2-0-8-1_r3019.zip のバイナリでは<br>再現しないことと、パッチの内容から534のパッチに問題があるようです。<br>skrw_fix_slow4_2-0-8-1_r3024.zip に同梱されたパッチファイルの1538行目あたりに<br>それらしいコメントがあるので、その前後でしょうか。<br><br>既に把握されているかも知れませんが、<br>意図した動作ではないようですので、お時間があれば調査をよろしくお願いします。</div></section>
+    <ul><li><section><h1 id=7666>
+    <span class="no">[7666]</span>
+    <a class="title" href="#7666">Re6: 速度改善パッチ群適用バイナリ</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-18T17:19:10">2013年05月18日 17:19</time></h1>
+    <div class="body">報告ありがとうございます。<br>直しました。<br>bLoHiCase → !bLoHiCase でした。<br><br><a href=http://ux.getuploader.com/sakura_editor/download/68/skrw_fix_slow5_2-0-8-1_r3030.zip target=_top><nobr>http://<wbr>ux.<wbr>getuploa<wbr>der.<wbr>com/<wbr>sakura_e<wbr>ditor/<wbr>download<wbr>/<wbr>68/<wbr>skrw_fix<wbr>_slow5_2<wbr>-<wbr>0-<wbr>8-<wbr>1_r3030.<wbr>zip</nobr></a><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

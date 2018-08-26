@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>検索文字列にアクセスできますか？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">505</span>
+    <a class="title" href="505.html#505">検索文字列にアクセスできますか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">506</span>
+    <a class="title" href="505.html#506">Re:検索文字列にアクセスできますか？</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=505>
+    <span class="no">[505]</span>
+    <a class="title" href="#505">検索文字列にアクセスできますか？</a>
+    <span class="author">たけ(tk)</span>
+    <time datetime="2010-09-07T16:22:11">2010年09月07日 16:22</time></h1>
+    <div class="body">マクロから検索文字列を参照したり、設定することは出来ますでしょうか？<br></div></section>
+    <ul><li><section><h1 id=506>
+    <span class="no">[506]</span>
+    <a class="title" href="#506">Re:検索文字列にアクセスできますか？</a>
+    <span class="author">たけ(tk)</span>
+    <time datetime="2010-09-07T17:43:44">2010年09月07日 17:43</time></h1>
+    <div class="body">▼ たけ(tk)さん<br>&gt; マクロから検索文字列を参照したり、設定することは出来ますでしょうか？<br><br>入れる方はこんな感じになりました（js）。<br><br>function SetSearch( str ){<br>  Editor.MoveHistSet();<br>  Editor.SearchNext(str);<br>  Editor.MoveHistPrev();<br>}<br><br>SetSearch( "test" );<br><br>取得は出来ますか？<br></div></section>
+    </li></ul></li></ul></body></html>

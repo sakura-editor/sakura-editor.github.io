@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ルーラーの高さの最小値について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2051</span>
+    <a class="title" href="2051.html#2051">ルーラーの高さの最小値について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2052</span>
+    <a class="title" href="2051.html#2052">RE: ルーラーの高さの最小値について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2054</span>
+    <a class="title" href="2051.html#2054">RE2: ルーラーの高さの最小値について</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2051>
+    <span class="no">[2051]</span>
+    <a class="title" href="#2051">ルーラーの高さの最小値について</a>
+    <span class="author">ai</span>
+    <time datetime="2002-05-13T10:06:47">2002年05月13日 10:06</time></h1>
+    <div class="body"><br>ルーラーの高さをもう少し狭くしたいと思い以下のように修正を加えました。<br>ベースにしたのはssrc_2002-05-08.zipです。<br><br>CPropComWin.cppの168、169、336、337行目<br>CShareData.cppの838行目<br>　13 → 10<br><br>※CShareData.cppのほうは変えないほうがよいのかも？？<br><br>これだと値を小さくした場合にルーラーから文字がはみ出てしまうので下の修正も加えてみました。<br><br>CEditView_New2.cppの710行目<br>　f.lfHeight&#9;= -12;<br>　　↓<br>　lf.lfHeight&#9;= 1 - m_pShareData-&gt;m_Common.m_nRulerHeight;<br><br>私のところでは意図した動作をしているのですがこれでよいのでしょうか？<br>C++は全然初心者なので大変な勘違いをしているかも・・・<br>御指摘くだされば幸いですm(_ _)m<br></div></section>
+    <ul><li><section><h1 id=2052>
+    <span class="no">[2052]</span>
+    <a class="title" href="#2052">RE: ルーラーの高さの最小値について</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-05-13T14:29:06">2002年05月13日 14:29</time></h1>
+    <div class="body"><br>&gt;　13 → 10<br><br>すばらしぃ。<br>10なんていわずに、0にできてもよくないですか？？ &gt; みなさま<br></div></section>
+    <ul><li><section><h1 id=2054>
+    <span class="no">[2054]</span>
+    <a class="title" href="#2054">RE2: ルーラーの高さの最小値について</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-05-13T17:54:37">2002年05月13日 17:54</time></h1>
+    <div class="body"><br>&gt;すばらしぃ。<br>&gt;10なんていわずに、0にできてもよくないですか？？ &gt; みなさま<br><br>　lf.lfHeight&#9;= 1 - m_pShareData-&gt;m_Common.m_nRulerHeight;<br><br>があるので、最小を2にしました。<br>それから、昨日の今日ですが、選択範囲の問題が解決したので、後ほどアップロードしなおします。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

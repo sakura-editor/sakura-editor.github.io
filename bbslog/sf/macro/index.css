@@ -1,0 +1,51 @@
+.no {
+    background: #FEE;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding-left: 1em;
+}
+
+li a {
+    text-decoration: none;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+li {
+    line-height: 1.6rem;
+}
+
+ul li ul {
+    margin-left: 0em;
+    padding-left: 1em;
+}
+
+ul li ul li {
+    position: relative;
+}
+
+ul li ul li::before {
+    content: "";
+    position: absolute;
+    left: -0.5em;
+    height: 100%;
+    border-left: 1px solid #999;
+}
+
+ul li ul li:last-child::before {
+    height: 0.8em;
+}
+
+ul li ul li::after {
+    content: "";
+    position: absolute;
+    top: 0.8em;
+    left: -0.5em;
+    width: 10px;
+    border-bottom: 1px solid #3972b2;
+}

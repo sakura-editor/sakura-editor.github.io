@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(New) エンコード別コード表示ダイアログ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1793</span>
+    <a class="title" href="1793.html#1793">Commit報告(New) エンコード別コード表示ダイアログ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1805</span>
+    <a class="title" href="1793.html#1805">カーソル位置文字コード表示欄の改行コードの表記について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1806</span>
+    <a class="title" href="1793.html#1806">Re:カーソル位置文字コード表示欄の改行コードの表記について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1807</span>
+    <a class="title" href="1793.html#1807">Re2:カーソル位置文字コード表示欄の改行コードの表記について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1808</span>
+    <a class="title" href="1793.html#1808">Re3:カーソル位置文字コード表示欄の改行コードの表記について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1818</span>
+    <a class="title" href="1793.html#1818">Re4:カーソル位置文字コード表示欄の改行コードの表記について</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1817</span>
+    <a class="title" href="1793.html#1817">Re3:カーソル位置文字コード表示欄の改行コードの表記について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1793>
+    <span class="no">[1793]</span>
+    <a class="title" href="#1793">Commit報告(New) エンコード別コード表示ダイアログ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2012-05-13T03:42:18">2012年05月13日 03:42</time></h1>
+    <div class="body">リビジョン：<br>  rev2132<br><br>変更種別：<br>  新機能<br><br>内容：<br>New: BOM付ファイルはステータスバーに「BOM付」を表示する<br>New: ステータスバーのカーソル位置文字コード表示欄ダブルクリックでエンコード別コード表示ダイアログを出す<br>Chg: ステータスバーのカーソル位置文字コード表示欄のアルファベットは大文字に変更</div></section>
+    <ul><li><section><h1 id=1805>
+    <span class="no">[1805]</span>
+    <a class="title" href="#1805">カーソル位置文字コード表示欄の改行コードの表記について</a>
+    <span class="author">神楽</span>
+    <time datetime="2012-05-27T14:26:16">2012年05月27日 14:26</time></h1>
+    <div class="body">▼ ryojiさん<br>ステータスバーのカーソル位置文字コード表示欄ってANSI版と比べて2倍以上に大きくなってたんですね（結合文字やサロゲートペア、異体字セレクタ対応？）<br><br>Unicodeのベータ版が出始めた頃から、おそらくCRLF改行を<br>u000d u000aと表示するには領域不足だったため、<br>改行コードだけ文字コード表示でなくなったようなのですが、<br>現在のUnicode正式版では領域が足りていますので、ANSI版相当に戻しても良いのではないでしょうか？</div></section>
+    <ul><li><section><h1 id=1806>
+    <span class="no">[1806]</span>
+    <a class="title" href="#1806">Re:カーソル位置文字コード表示欄の改行コードの表記について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2012-05-27T16:54:23">2012年05月27日 16:54</time></h1>
+    <div class="body">&gt; 現在のUnicode正式版では領域が足りていますので、ANSI版相当に戻しても良いのではないでしょうか？<br><br>U版では[共通設定]-[ステータスバー]でコードポイント表示／バイト列１６進表示が選択できるようになりました。<br>また、U版は文字コードとしてCESU-8をサポートしています。<br>CESU-8のサロゲートペア文字は６バイトになるようなので、１６進表示する場合に備えて１２桁の表示領域を確保してあります。<br><br>例えば、数の単位で１０の２４乗を表す"じょ"（見た目は"禾予"をくっつけたような文字）という漢字がありますが、これは１文字で、EDA195EDBDB1 の１２桁表示になります。<br>※コードポイントの表示形式のときは、U+25771 の７桁表示になります。</div></section>
+    <ul><li><section><h1 id=1807>
+    <span class="no">[1807]</span>
+    <a class="title" href="#1807">Re2:カーソル位置文字コード表示欄の改行コードの表記について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2012-05-27T18:17:36">2012年05月27日 18:17</time></h1>
+    <div class="body">&gt; 例えば、数の単位で１０の２４乗を表す"じょ"（見た目は"禾予"をくっつけたような文字）という漢字がありますが、これは１文字で、EDA195EDBDB1 の１２桁表示になります。<br>&gt; ※コードポイントの表示形式のときは、U+25771 の７桁表示になります。<br><br>蛇足ですが…<br><br>(a) [UTF-8およびCESU-8をコードポイントで表示する]<br>(b) [サロゲートペアをコードポイントで表示する]<br><br>(a) が OFF なら (b) の ON/OFF に関わらず表示は EDA195EDBDB1 になり、(a) が ON で (b) が OFF だと UTF-16 相当の D855DF71 の表示になるのは変？とちょっと思いましたが、(b) のオプションはそのような表示になるように意図して作られたものなんですね（わかりにくいけどヘルプもそのように記述されていました）。</div></section>
+    <ul><li><section><h1 id=1808>
+    <span class="no">[1808]</span>
+    <a class="title" href="#1808">Re3:カーソル位置文字コード表示欄の改行コードの表記について</a>
+    <span class="author">神楽</span>
+    <time datetime="2012-05-27T18:48:33">2012年05月27日 18:48</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; &gt; 現在のUnicode正式版では領域が足りていますので、ANSI版相当に戻しても良いのではないでしょうか？<br>&gt; <br>&gt; U版では[共通設定]-[ステータスバー]でコードポイント表示／バイト列１６進表示が選択できるようになりました。<br><br>そこは承知していまして、A版のカレント文字コード無関係にSJISバイト列から機能向上しているわけなので、<br>改行コードについてもコードポイントやバイト列表示してほしいという提案です<br><br>まあそこは表向きの理由で、実際はカーソル位置が行末改行の時に、<br>改行コード欄と16進コード欄を見分けづらいというのが本心なのですが。</div></section>
+    <ul><li><section><h1 id=1818>
+    <span class="no">[1818]</span>
+    <a class="title" href="#1818">Re4:カーソル位置文字コード表示欄の改行コードの表記について</a>
+    <span class="author">神楽</span>
+    <time datetime="2012-06-02T18:50:30">2012年06月02日 18:50</time></h1>
+    <div class="body">あと2.0.5.0ではカーソル位置が改行コードの場合は<br>ダブルクリックしても文字コード表示ダイアログが出てこないようです。</div></section>
+    </li></ul></li><li><section><h1 id=1817>
+    <span class="no">[1817]</span>
+    <a class="title" href="#1817">Re3:カーソル位置文字コード表示欄の改行コードの表記について</a>
+    <span class="author">神楽</span>
+    <time datetime="2012-06-02T18:46:22">2012年06月02日 18:46</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; (a) [UTF-8およびCESU-8をコードポイントで表示する]<br>&gt; (b) [サロゲートペアをコードポイントで表示する]<br>&gt; <br>&gt; (a) が OFF なら (b) の ON/OFF に関わらず表示は EDA195EDBDB1 になり、(a) が ON で (b) が OFF だと UTF-16 相当の D855DF71 の表示になるのは変？とちょっと思いましたが、(b) のオプションはそのような表示になるように意図して作られたものなんですね（わかりにくいけどヘルプもそのように記述されていました）。<br><br>確かにわかりづらいですね<br>エンコード別コード表示ダイアログでは上記オプションに関係なく、<br>最初の行はU+～のコードポイント表示で<br>以降の行は必ずバイト列表示というのはどうでしょうか？<br>(UnicodeBEの行も追加)<br><br>さらに２点要望で、この機能をキー割り当て等が可能なコマンド化して頂きたいのと<br>バージョン表示のダイアログのように、文字列選択してコピー等が行えると便利です。<br><br>以上、ご検討頂ければ幸いです。<br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

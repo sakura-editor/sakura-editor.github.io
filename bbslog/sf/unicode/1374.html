@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) Undo/Redoでルーラーと行番号の間の隙間が更新されない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1374</span>
+    <a class="title" href="1374.html#1374">Commit報告(Fix) Undo/Redoでルーラーと行番号の間の隙間が更新されない</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=1374>
+    <span class="no">[1374]</span>
+    <a class="title" href="#1374">Commit報告(Fix) Undo/Redoでルーラーと行番号の間の隙間が更新されない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-08-21T11:05:19">2010年08月21日 11:05</time></h1>
+    <div class="body">リビジョン：<br>  rev1813<br><br>変更種別：<br>  バグ修正<br><br>内容：<br>Fix: Undo/Redoでルーラーと行番号の間の隙間が更新されない<br><br>【再現手順】<br>●設定<br>ルーラーとテキストの間の隙間を 0 以外の値にしておく<br>画面キャッシュを ON の設定にしておく<br>ルーラーや行番号の背景色は目立つ色にしておくとわかりやすいです<br>●操作<br>ちょうど 100 行のテキストを用意して以下の操作を実行<br>(1) 任意の行を削除する → 行数が 2 桁になり、行番号の幅が狭くなる（正常）<br>(2) Undo を実行 → 行番号の幅が広がるが行番号の上の隙間の帯が更新されない（異常）<br>(3) F5 キーで再描画 → 行番号の上の隙間の帯が更新される（正常）<br>(4) Redo を実行 → 行番号の幅が狭くなるが行番号の上の隙間の帯が更新されない（異常）<br><br>ルーラー再描画の必要があるときは DispRuler() ではなく他の部分と同時に Call_OnPaint() で描画することで対策しました。<br>行番号表示に必要な幅を更新する処理は OPE_INSERT/OPE_DELETE 処理内で実施済みで、画面更新後の DetectWidthOfLineNumberAreaAllPane() は無用なので除去しました。</div></section>
+    </li></ul></body></html>

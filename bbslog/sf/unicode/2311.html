@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>テキスト・ルールアウトラインで落ちる</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2311</span>
+    <a class="title" href="2311.html#2311">テキスト・ルールアウトラインで落ちる</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=2311>
+    <span class="no">[2311]</span>
+    <a class="title" href="#2311">テキスト・ルールアウトラインで落ちる</a>
+    <span class="author">もか</span>
+    <time datetime="2015-11-13T22:20:54">2015年11月13日 22:20</time></h1>
+    <div class="body">ファイルの内容が<br>・行頭にスペース4000文字等<br>・その後ろにマッチ文字列<br>・1行のみ等ファイルサイズが小さい<br>この状態でアウトライン解析をすると落ちます。<br><br>wmemcpy( pszText, &amp;pLine[i], nLineLen );<br>と+iしているのに後ろの長さがiを引いていないため<br>範囲外のデータをコピーしようとします。<br>patchunicode:1010<br>とりあえずパッチを登録したので焼くなり煮るなりしてください<br></div></section>
+    </li></ul></body></html>

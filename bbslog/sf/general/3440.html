@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>開けないファイル</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3440</span>
+    <a class="title" href="3440.html#3440">開けないファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3441</span>
+    <a class="title" href="3440.html#3441">Re:開けないファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3442</span>
+    <a class="title" href="3440.html#3442">Re2:開けないファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3444</span>
+    <a class="title" href="3440.html#3444">Re3:開けないファイル</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3446</span>
+    <a class="title" href="3440.html#3446">Re3:開けないファイル</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3440>
+    <span class="no">[3440]</span>
+    <a class="title" href="#3440">開けないファイル</a>
+    <span class="author">skr</span>
+    <time datetime="2003-10-22T20:45:41">2003年10月22日 20:45</time></h1>
+    <div class="body">サクラエディタを愛用させていただいてます。<br>仕様かもしれませんが、下記のような症状が発生しましたので報告いたします。<br><br>ファイル名に特定の文字列があるとファイルが開けないようです。<br>例えば、下記のURLをIEで表示したあとに、名前を付けて保存します。<br><a href=http://www.microsoft.com/japan/technet/security/bulletin/MS03-041.asp?frame=true target=_top><nobr>http://<wbr>www.<wbr>microsof<wbr>t.<wbr>com/<wbr>japan/<wbr>technet/<wbr>security<wbr>/<wbr>bulletin<wbr>/<wbr>MS03-<wbr>041.<wbr>asp?<wbr>frame=<wbr>true</nobr></a><br>次にサクラエディタで保存したhtmファイルを開くと、<br>------<br>Authenticode? の検証の問題により、コードが実行される (823182) (MS03-041).htm<br>というファイルは存在しません。<br><br>ファイルを保存したときに、ディスク上にこのファイルが作成されます。<br>------<br>というダイアログが表示されます。<br>以上、報告まで。</div></section>
+    <ul><li><section><h1 id=3441>
+    <span class="no">[3441]</span>
+    <a class="title" href="#3441">Re:開けないファイル</a>
+    <span class="author">たや</span>
+    <time datetime="2003-10-22T22:46:59">2003年10月22日 22:46</time></h1>
+    <div class="body"><br>ハードリンク（リバースポイント？）が<br>はられているからかなぁ？？<br><br>うちでは再現しません。<br>（ＷｉｎＸＰ）<br></div></section>
+    <ul><li><section><h1 id=3442>
+    <span class="no">[3442]</span>
+    <a class="title" href="#3442">Re2:開けないファイル</a>
+    <span class="author">skr</span>
+    <time datetime="2003-10-22T23:15:18">2003年10月22日 23:15</time></h1>
+    <div class="body">「&amp;#8482;」(＝TMが一文字になっているもの。)がファイル名に入っているのが<br>原因と思ったのですが。。<br>再現しない環境もあるのですか。<br>うちは、Win2kSP4, IE6SP1(共にWindowsUpdate済み),<br>サクラエディタは1.4.3.2です。<br><br>ついでに申しますと、<br>「&amp;#8482;」は、メモ帳にペーストすると、そのままの姿で見えますが、<br>サクラエディタにペーストすると、「?」になってしまいます。<br>サクラエディタ内部で変換処理しているのでしょうか。</div></section>
+    <ul><li><section><h1 id=3444>
+    <span class="no">[3444]</span>
+    <a class="title" href="#3444">Re3:開けないファイル</a>
+    <span class="author">すい</span>
+    <time datetime="2003-10-23T03:20:52">2003年10月23日 03:20</time></h1>
+    <div class="body">&gt;「&amp;#8482;」(＝TMが一文字になっているもの。)がファイル名に入っているのが<br>&gt;原因と思ったのですが。。<br>&gt;再現しない環境もあるのですか。<br>&gt;うちは、Win2kSP4, IE6SP1(共にWindowsUpdate済み),<br>&gt;サクラエディタは1.4.3.2です。<br>&gt;<br>&gt;ついでに申しますと、<br>&gt;「&amp;#8482;」は、メモ帳にペーストすると、そのままの姿で見えますが、<br>&gt;サクラエディタにペーストすると、「?」になってしまいます。<br>&gt;サクラエディタ内部で変換処理しているのでしょうか。<br><br>その文字は Shift_JIS には存在しない、Unicode にしか存在しない文字ですね。<br>そういう文字がファイル名に含まれているなら扱えません。<br><br>このエディタは Shift_JIS コードのエディタなので、Shift_JIS に存在しない文字は<br>一切取り扱えません。テキストの編集画面でも もちろん取り扱えません。<br>そういう仕様です。<br></div></section>
+    </li><li><section><h1 id=3446>
+    <span class="no">[3446]</span>
+    <a class="title" href="#3446">Re3:開けないファイル</a>
+    <span class="author">たや</span>
+    <time datetime="2003-10-24T00:05:56">2003年10月24日 00:05</time></h1>
+    <div class="body">&gt; 「&amp;#8482;」(＝TMが一文字になっているもの。)がファイル名に入っているのが<br>&gt; 原因と思ったのですが。。<br>&gt; 再現しない環境もあるのですか。<br>&gt; うちは、Win2kSP4, IE6SP1(共にWindowsUpdate済み),<br>&gt; サクラエディタは1.4.3.2です。<br><br>あれれ？うちでは，そんな文字を含む<br>ファイル名はないですね・・・<br>ダウンロード時点で何か違うのかも？？<br>ＷｉｎＸＰ，ＩＥは同じみたい．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

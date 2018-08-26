@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ssrc_2002-01-06.zip</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1089</span>
+    <a class="title" href="1089.html#1089">ssrc_2002-01-06.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1097</span>
+    <a class="title" href="1089.html#1097">Re: ssrc_2002-01-06.zip</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1089>
+    <span class="no">[1089]</span>
+    <a class="title" href="#1089">ssrc_2002-01-06.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-06T11:29:21">2002年01月06日 11:29</time></h1>
+    <div class="body">アップロードしました。<br>ssrc_2002-01-03.zipからの変更点やメモは次のとおりでござんす。<br><br>========== 機能変更 ==========<br>・正規表現キーワードの一部が検索キーワードに一致すると、検索キーワードの後ろがデフォルトテキスト色になってしまう。<br>　発見したげんたさん、修正したみくさん、ありがとうございます。<br><br>・C++のネストされたクラスに対応。<br>　げんたさんありがとうございます。<br><br>・タグジャンプで、フォルダを対象外にした。<br>　げんたさんありがとうございまする。<br><br>========== ソース上の変更などのメモ =========<br>・MRUのクラス化などで大量にコメントアウトされている箇所はばっさり削除してもいいのではないか。<br>　強く同意。やるなら、1/6現在のソースを元にやったらいかがでしょ。<br><br>以下はすべてげんたさんに感謝。<br>・&amp;の二重化関数（dupamp）追加。<br>　（でも使ってない^^; ので修正お願いします。＆ごめんなさい～）<br><br>・EOL_NONE == pcLayout-&gt;m_cEol.GetLen() となっているところは全て EOL_NONE == pcLayout-&gt;m_cEol、またはEOL_NONE == pcLayout-&gt;m_cEol.GetType()の誤り。<br>　値が同じなので偶然動作しますが...<br>　未対応です。修正お願いします～ &gt; げんたさん。<br><br>・sakurabc.makをmakefileに改名。<br>　鋭いご指摘に感謝。<br><br>・CBregexp.hのコメントを追加。<br> <br>・CEditDoc.cppでC_IsOperator()のinline指定を削除(inline展開できないと警告が出るので)<br><br>というわけでした。<br><br>Bugsinfo.txt見てみると、2001.12.20から、20個以上もバグ修正ですね。すばらしい。<br></div></section>
+    <ul><li><section><h1 id=1097>
+    <span class="no">[1097]</span>
+    <a class="title" href="#1097">Re: ssrc_2002-01-06.zip</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-07T14:08:53">2002年01月07日 14:08</time></h1>
+    <div class="body">&gt;・C++のネストされたクラスに対応。<br>1カ所修正漏れがあって，クラス名エリアを拡張し損なっていました．<br>以下の修正を入れないと25文字を越えるクラス名が正しくまとめられません．<br><br>CDlgFuncList.cpp (580): <br>    char            szLabel[64+6];  // Jan. 07, 2001 genta クラス名エリアの拡大<br></div></section>
+    </li></ul></li></ul></body></html>

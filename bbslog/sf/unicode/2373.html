@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ファイル保存時の改行コード統一は仕様？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2373</span>
+    <a class="title" href="2373.html#2373">ファイル保存時の改行コード統一は仕様？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2374</span>
+    <a class="title" href="2373.html#2374">Re:ファイル保存時の改行コード統一は仕様？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2375</span>
+    <a class="title" href="2373.html#2375">Re2:【解決】ファイル保存時の改行コード統一は指定時のみ。</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2373>
+    <span class="no">[2373]</span>
+    <a class="title" href="#2373">ファイル保存時の改行コード統一は仕様？</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-07-30T16:41:53">2016年07月30日 16:41</time></h1>
+    <div class="body">ご存じの方がいれば教えてください。<br><br>現在、ver2系のsakuraでは、<br>ファイル保存のフローで保存前に改行コードを修正しています。<br>SVNログを見る限り、ver2発案時からの動作ですが、<br>これは仕様なんでしょうか？<br><br>.\sakura_core\CSaveAgent.cpp(105): <br>//改行コード統一<br>CDocVisitor(pcDoc).SetAllEol(sSaveInfo.cEol);<br><br><br>sakura内部では全行に対して行末記号を保持しており、<br>データ構造とロジックに矛盾があるように思います。<br><br>全行の行末記号情報を個別に持つ、ということは、<br>行末記号が混在した状態のファイルを保存したら、<br>混在状態がそのまま出力されるのが自然だと思います。<br><br>意図してやってると思うんですが、<br>なんでそうしたのか（だんまりで修正する仕様にしたのか）<br>経緯があれば教えてほしいです。</div></section>
+    <ul><li><section><h1 id=2374>
+    <span class="no">[2374]</span>
+    <a class="title" href="#2374">Re:ファイル保存時の改行コード統一は仕様？</a>
+    <span class="author">もか</span>
+    <time datetime="2016-07-31T02:35:12">2016年07月31日 02:35</time></h1>
+    <div class="body">▼ ばぼさん<br>&gt; .\sakura_core\CSaveAgent.cpp(105): <br>&gt; //改行コード統一<br>&gt; CDocVisitor(pcDoc).SetAllEol(sSaveInfo.cEol);<br>分かりにくいと思いますがSetAllEol内部で統一するかの判断をしており、<br>CDocVisitor.cpp(31):<br>　　//改行コードを統一する<br>　　if(cEol.IsValid()){<br><br>cEol.IsValid() != falseのときだけ改行コードが統一されます。<br>通常保存で無変換の時は、改行コード指定のcEolがEOL_NONEになっていて、<br>EOL_NONEのときIsValidはfalseを返すので、2.xでも改行コードは統一されません。<br>CViewCommander::Command_FILESAVE<br>sakura_core\cmd\CViewCommander_File.cpp(185):<br>　　sSaveInfo.cEol = EOL_NONE; //改行コード無変換<br>保存ダイアログ表示の場合は、改行コードコンボボックスの一番上が無変換indexが0==EOL_NONEです。<br></div></section>
+    <ul><li><section><h1 id=2375>
+    <span class="no">[2375]</span>
+    <a class="title" href="#2375">Re2:【解決】ファイル保存時の改行コード統一は指定時のみ。</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-07-31T09:45:55">2016年07月31日 09:45</time></h1>
+    <div class="body">回答ありがとうございます。<br>見事に勘違いしました。<br><br><br>CDocVisitor(pcDoc).SetAllEol(sSaveInfo.cEol);<br><br>この書き方でCDocVisitorが非visitorとか。<br>デザインパターンと一致する用語で関係ない概念なのは紛らわしい気がしました。<br><br>▼ もかさん<br>&gt; 分かりにくいと思いますがSetAllEol内部で統一するかの判断をしており、<br><br>分かりづらいですね...<br>出力時の行末記号変更だったら「出力前処理」より、<br>出力処理そのものに組み込んだ方が直観的な気がしないでもないです。<br><br>野良版できたらまたネタ提供させていただきます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

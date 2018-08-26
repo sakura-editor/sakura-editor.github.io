@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>色設定のインポートでアプリケーションエラー</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">1978</span>
+    <a class="title" href="1978.html#1978">色設定のインポートでアプリケーションエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1979</span>
+    <a class="title" href="1978.html#1979">RE: 色設定のインポートでアプリケーションエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1987</span>
+    <a class="title" href="1978.html#1987">RE2: 色設定のインポートでアプリケーションエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1992</span>
+    <a class="title" href="1978.html#1992">RE3: 色設定のインポートでアプリケーションエラー</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1978>
+    <span class="no">[1978]</span>
+    <a class="title" href="#1978">色設定のインポートでアプリケーションエラー</a>
+    <span class="author">ほた</span>
+    <time datetime="2002-06-05T03:36:28">2002年06月05日 03:36</time></h1>
+    <div class="body">初めまして，最近使い始めたものです．<br>色設定のインポートをキーボード操作のみで行おうとしたときに<br>アプリケーションエラーで異常終了する現象が生じました．<br>マウスで設定するとこちらの意図通り動作します．<br><br>2000/06/05版<br>Win2000 SP2<br></div></section>
+    <ul><li><section><h1 id=1979>
+    <span class="no">[1979]</span>
+    <a class="title" href="#1979">RE: 色設定のインポートでアプリケーションエラー</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-06-05T09:29:48">2002年06月05日 09:29</time></h1>
+    <div class="body"><br>&gt;初めまして，最近使い始めたものです．<br>&gt;色設定のインポートをキーボード操作のみで行おうとしたときに<br>&gt;アプリケーションエラーで異常終了する現象が生じました．<br>&gt;マウスで設定するとこちらの意図通り動作します．<br><br>確かに。不思議ですね。<br>例えば「色指定」の「行番号」をクリックしてから、ALT+Iでインポートダイアログを呼び出したときに発生するようです。<br><br>そして発生場所は、<br><br>void CPropTypes::SetData_p3_new( HWND hwndDlg )<br>の<br>&#9;/* 色をつける文字種類のリスト */<br>&#9;hwndWork = ::GetDlgItem( hwndDlg, IDC_LIST_COLORS );<br>&#9;::SendMessage( hwndWork, LB_RESETCONTENT, 0, 0 );  /* コンボボックスを空にする */<br><br>の::SendMessage()でした。<br><br>ちなみにいきなりALT+Iを使わずに、キーボードでTABを使ってフォーカスを移動してから、ALT+Iすれば発生しません。<br>どなたか修正を!!<br></div></section>
+    <ul><li><section><h1 id=1987>
+    <span class="no">[1987]</span>
+    <a class="title" href="#1987">RE2: 色設定のインポートでアプリケーションエラー</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-05T20:26:45">2002年06月05日 20:26</time></h1>
+    <div class="body"><br>とりあえず、<br>::EnableWindow( hwndWork, FALSE );<br>::SendMessage( hwndWork, LB_RESETCONTENT, 0, 0 );  /* コンボボックスを空にする */<br>::EnableWindow( hwndWork, TRUE );<br>とすればエラーになりません。<br>＃フォーカスがどっかいってしまいますが。<br><br>リストにフォーカスが残った状態でオーナードローの<br>リストを消すと駄目なんでしょうか。<br></div></section>
+    <ul><li><section><h1 id=1992>
+    <span class="no">[1992]</span>
+    <a class="title" href="#1992">RE3: 色設定のインポートでアプリケーションエラー</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-06T18:45:25">2002年06月06日 18:45</time></h1>
+    <div class="body"><br>DrawColorListItem()関数内のstrlen()でNULLポインタでエラーになってます。<br><br>CPropTypes.cppファイル中、DrawColorListItem()関数の先頭で<br>パラメータのNULLチェックを行ってください。<br><br><br>/* 色種別リスト オーナー描画 */<br>void CPropTypes::DrawColorListItem( DRAWITEMSTRUCT* pDis )<br>{<br><br>&#9;/*<br>&#9; * リストにフォーカスがあるときに"Alt-I"をするとアプリケーションエラーになる。<br>&#9; */<br>&#9;if( pDis == NULL || pDis-&gt;itemData == NULL )<br>&#9;{<br>&#9;&#9;return;<br>&#9;}<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

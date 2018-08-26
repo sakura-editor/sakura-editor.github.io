@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) カーソル位置縦線の描画不正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1361</span>
+    <a class="title" href="1361.html#1361">Commit報告(Fix) カーソル位置縦線の描画不正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1365</span>
+    <a class="title" href="1361.html#1365">Re: Commit報告(Fix) カーソル位置縦線の描画不正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1366</span>
+    <a class="title" href="1361.html#1366">Re2: Commit報告(Fix) カーソル位置縦線の描画不正</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1361>
+    <span class="no">[1361]</span>
+    <a class="title" href="#1361">Commit報告(Fix) カーソル位置縦線の描画不正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-08-16T13:39:44">2010年08月16日 13:39</time></h1>
+    <div class="body">リビジョン：<br>  rev1806<br><br>変更種別：<br>  バグ修正<br><br>内容：<br>テキストと行番号の隙間が半角文字幅より大きいと隙間位置にあるカーソルの縦線が描画されてしまう</div></section>
+    <ul><li><section><h1 id=1365>
+    <span class="no">[1365]</span>
+    <a class="title" href="#1365">Re: Commit報告(Fix) カーソル位置縦線の描画不正</a>
+    <span class="author">もか</span>
+    <time datetime="2010-08-19T01:23:35">2010年08月19日 01:23</time></h1>
+    <div class="body">なるほど。確かに1文字以上右スクロールして隙間の裏にカーソルがあると縦線だけ不正作画されてました。<br><br>この変更後は今度は隙間が0/1pxのときも画面上に線が表示されるようになり、<br>左端からカーソルを移動すると線が画面に残るようになりました。<br>太線の作画判定とOFFのほうの復帰処理部分の判定も変更する必要があります。<br><br>修正用コードはあるのですが、元の私が書いたコードがあいまいな関係で仕様そのものについて意見を聞いておきたいです。<br><br>隙間が0のとき行番号領域の上に線を引いたほうがいいのかどうかと、<br>行番号領域に線を引かない場合は、<br>A. 太線のときは2px引けるときだけ引き、通常線なら1px引けるときに引く<br>B. 1pxでも引けるなら太線のときも1px引く<br>C. 太線・通常線どちらも2px以上の隙間で引く<br>または、私が思いつかなかったほかの案のどの仕様がいいのだろう。<br><br>旧動作は隙間1pxを死守します。隙間2pxのときで太線だと左端にカーソルがあると1px幅だけ線を引いてました。<br>上記B. に加えて1pxマージンがあるという物です。<br>何でそういう動作にしたか記憶・記録がないです。<br>おそらく行番号の縦線と接近して並ぶのがイヤだからか、単に条件式を深く考えなかったとか。<br><br>#これとは別に隙間の太線がOnPaintのクリッピング領域に含まれないので線が残るというバグも、あわせて修正予定です。<br></div></section>
+    <ul><li><section><h1 id=1366>
+    <span class="no">[1366]</span>
+    <a class="title" href="#1366">Re2: Commit報告(Fix) カーソル位置縦線の描画不正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-08-19T07:28:51">2010年08月19日 07:28</time></h1>
+    <div class="body">▼ もかさん<br>&gt; この変更後は今度は隙間が0/1pxのときも画面上に線が表示されるようになり、<br>&gt; 左端からカーソルを移動すると線が画面に残るようになりました。<br>すみません。ミスしてしまいました。orz<br>描画左端判定部は従来判定に AND で新しい判定を追加するつもりでいたのに、従来判定と差し替えてしまっていました。<br><br>&gt; 隙間が0のとき行番号領域の上に線を引いたほうがいいのかどうかと、<br>自分は普段隙間 0 以外で使っていて、このとき行頭でも線が引かれているので、隙間 0 でも引かれたほうが自然かな？、と思いますが、よくわかりません。<br>（今回の修正は隙間が半角文字幅より大きい場合の描画不正だけ対策するつもりでした）</div></section>
+    </li></ul></li></ul></li></ul></body></html>

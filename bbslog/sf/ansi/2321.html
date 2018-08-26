@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CLayoutMgr_2002-09-24.zip </title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2321</span>
+    <a class="title" href="2321.html#2321">CLayoutMgr_2002-09-24.zip </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2322</span>
+    <a class="title" href="2321.html#2322">RE: CLayoutMgr_2002-09-23.zip </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2325</span>
+    <a class="title" href="2321.html#2325">Re2: CLayoutMgr_2002-09-23.zip </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2326</span>
+    <a class="title" href="2321.html#2326">Re3: CLayoutMgr_2002-09-23.zip </a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2327</span>
+    <a class="title" href="2321.html#2327">Re: CLayoutMgrをちょっと整理しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2330</span>
+    <a class="title" href="2321.html#2330">Re2: CLayoutMgrをちょっと整理しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2331</span>
+    <a class="title" href="2321.html#2331">Re3: CLayoutMgrをちょっと整理しました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2349</span>
+    <a class="title" href="2321.html#2349">Re3: CLayoutMgrをちょっと整理しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2351</span>
+    <a class="title" href="2321.html#2351">Re4: CLayoutMgrをちょっと整理しました</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2321>
+    <span class="no">[2321]</span>
+    <a class="title" href="#2321">CLayoutMgr_2002-09-24.zip </a>
+    <span class="author">やざき</span>
+    <time datetime="2002-09-23T00:40:26">2002年09月23日 00:40</time></h1>
+    <div class="body"><br>お久しぶりですっ。<br>CLayoutMgrをちょっと整理しました。<br>取り込んでいただきたく。<br></div></section>
+    <ul><li><section><h1 id=2322>
+    <span class="no">[2322]</span>
+    <a class="title" href="#2322">RE: CLayoutMgr_2002-09-23.zip </a>
+    <span class="author">やざき</span>
+    <time datetime="2002-09-23T01:32:13">2002年09月23日 01:32</time></h1>
+    <div class="body"><br>ファイルは、eGroupにアップロードしてあります。<br>＃日付が間違っていたので変えました(汗<br><br>よろしくお願いいたします。<br></div></section>
+    <ul><li><section><h1 id=2325>
+    <span class="no">[2325]</span>
+    <a class="title" href="#2325">Re2: CLayoutMgr_2002-09-23.zip </a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-23T03:39:53">2002年09月23日 03:39</time></h1>
+    <div class="body">BlockComment.cppとLineComment.cppが抜けてません？<br><br>BlockComment.cpp.objとかいうのがMakefileに入ってるし．<br></div></section>
+    <ul><li><section><h1 id=2326>
+    <span class="no">[2326]</span>
+    <a class="title" href="#2326">Re3: CLayoutMgr_2002-09-23.zip </a>
+    <span class="author">やざき</span>
+    <time datetime="2002-09-23T11:10:57">2002年09月23日 11:10</time></h1>
+    <div class="body">&gt;タイトル: Re3: CLayoutMgr_2002-09-23.zip <br>&gt;発言者: げんた<br>&gt;BlockComment.cppとLineComment.cppが抜けてません？<br>&gt;<br>&gt;BlockComment.cpp.objとかいうのがMakefileに入ってるし．<br><br>！！失礼しました。<br>BlockComment.hとLineComment.hも抜けてますね。<br>ということで、アップロードしなおしました。<br>よろしくお願いします。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=2327>
+    <span class="no">[2327]</span>
+    <a class="title" href="#2327">Re: CLayoutMgrをちょっと整理しました</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-23T18:53:40">2002年09月23日 18:53</time></h1>
+    <div class="body">▼CBlockComment, CLineCommentについて<br>CBlockComment::MatchComment_From()の番号を指定しない版がどのタイプのコメントが見つかったかを返さないのはちょっと使えないとおもう．（事実どこでも使われていない）<br>CLineComment::Match()でもどれに一致するのかを何らかの方法で返した方がよい．<br><br>CBlockComment::Match_CommentFrom()で毎回strlenで長さを取得しなくて良いようにどこかに値を覚えておいた方がよいように思う．<br><br>CopyTo()で文字列が長すぎて失敗したとき，中身を空にしてしまうのはどうか．また，失敗したことを戻り値で返した方がよいのでは？<br><br>CShareDataをフレンドクラスにしている理由が無いように思える．<br><br>▼CLayoutMgr<br>コンストラクタでm_cLineComment, m_cBlockCommentにパラメータを与えないならわざわざ初期化リストに書く意味がない．<br></div></section>
+    <ul><li><section><h1 id=2330>
+    <span class="no">[2330]</span>
+    <a class="title" href="#2330">Re2: CLayoutMgrをちょっと整理しました</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-09-23T23:02:19">2002年09月23日 23:02</time></h1>
+    <div class="body"><br>&gt;▼CBlockComment, CLineCommentについて<br>&gt;CBlockComment::MatchComment_From()の番号を指定しない版がどのタイプのコメントが見つかったかを返さないのはちょっと使えないとおもう．（事実どこでも使われていない）<br><br>あー、そうですね。使ってないので消してもいいです。おまかせします。<br><br><br>&gt;CLineComment::Match()でもどれに一致するのかを何らかの方法で返した方がよい．<br><br>使わないからいりません。使うようになったら付けましょう。<br><br><br>&gt;CBlockComment::Match_CommentFrom()で毎回strlenで長さを取得しなくて良いようにどこかに値を覚えておいた方がよいように思う．<br><br>確かに!!<br>元のコードをコピー＆アレンジしただけでそこまで気が付きませんでした!!<br>private変数で用意して、CopyToでコピーしたときにstrlenすればいいですね。<br>よろしくお願いします。<br><br><br>&gt;CopyTo()で文字列が長すぎて失敗したとき，中身を空にしてしまうのはどうか．<br><br>空にしているような気もしますが、今のコードとは違うのですか？<br><br><br>&gt;また，失敗したことを戻り値で返した方がよいのでは？<br><br>使わないからいりません。<br><br><br>&gt;CShareDataをフレンドクラスにしている理由が無いように思える．<br><br>iniファイルへの書き込みがめんどくさいと思ったのですが、よりよい方法があれば、お願いしますです。<br><br><br>&gt;▼CLayoutMgr<br>&gt;コンストラクタでm_cLineComment, m_cBlockCommentにパラメータを与えないならわざわざ初期化リストに書く意味がない．<br><br>まぁ、もともとコンストラクタで初期化されていたから、そのうちm_cLineComment、m_cBlockCommentも初期化する必要がでてくるかもしれないしってことで、別に無駄なコードが入るわけではない（よね？）と思ったので、付けておいてもいいのでは。<br>コードのバイト数を減らしても意味が無いし。<br><br>ということですが、いかがでしょうか。<br></div></section>
+    <ul><li><section><h1 id=2331>
+    <span class="no">[2331]</span>
+    <a class="title" href="#2331">Re3: CLayoutMgrをちょっと整理しました</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-23T23:13:56">2002年09月23日 23:13</time></h1>
+    <div class="body">どうもありがとうございました．次回には取り込みたいと思います．<br></div></section>
+    </li><li><section><h1 id=2349>
+    <span class="no">[2349]</span>
+    <a class="title" href="#2349">Re3: CLayoutMgrをちょっと整理しました</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-09-28T23:29:26">2002年09月28日 23:29</time></h1>
+    <div class="body"><br>すいさんに指摘していただいた色の件です。<br><br><br>&gt;&gt;CBlockComment::Match_CommentFrom()で毎回strlenで長さを取得しなくて良いようにどこかに値を覚えておいた方がよいように思う．<br>&gt;<br>&gt;確かに!!<br>&gt;元のコードをコピー＆アレンジしただけでそこまで気が付きませんでした!!<br>&gt;private変数で用意して、CopyToでコピーしたときにstrlenすればいいですね。<br>&gt;よろしくお願いします。<br><br>CopyToでstrlenする方法だとiniファイルを読み込んだときに、CopyToが呼ばれないからstrlenされない<br>ので↓こんな感じで修正してくださいませ。（こんな方法でいいのかどうかはさておき）<br><br>diff -rc E:\サクラエディタ\ssrc_2002-09-27_org/sakura_core/CShareData_new.cpp E:\サクラエディタ\ssrc_2002-09-27/sakura_core/CShareData_new.cpp<br>*** E:\サクラエディタ\ssrc_2002-09-27_org/sakura_core/CShareData_new.cpp&#9;Fri Sep 27 03:53:40 2002<br>--- E:\サクラエディタ\ssrc_2002-09-27/sakura_core/CShareData_new.cpp&#9;Sat Sep 28 14:22:46 2002<br>***************<br>*** 709,714 ****<br>--- 709,719 ----<br>  &#9;&#9;cProfile.IOProfileData( bRead, pszSecName, "szLineComment"&#9;&#9;, REGCNV_SZ2SZ, (char*)/*&amp;*/m_pShareData-&gt;m_Types[i].m_c<br>LineComment.m_pszLineComment[0], 0 );<br>  &#9;&#9;cProfile.IOProfileData( bRead, pszSecName, "szLineComment2"&#9;&#9;, REGCNV_SZ2SZ, (char*)/*&amp;*/m_pShareData-&gt;m_Types[i].m_c<br>LineComment.m_pszLineComment[1], 0 );<br>  &#9;&#9;cProfile.IOProfileData( bRead, pszSecName, "szLineComment3"&#9;&#9;, REGCNV_SZ2SZ, (char*)/*&amp;*/m_pShareData-&gt;m_Types[i].m_c<br>LineComment.m_pszLineComment[2], 0 );&#9;//Jun. 01, 2001 JEPRO 追加<br>+ &#9;&#9;if (bRead){<br>+ &#9;&#9;&#9;m_pShareData-&gt;m_Types[i].m_cLineComme<br>nt.m_nLineCommentLen[0] = lstrlen( m_pShareData-&gt;m_Types[i].m_cLineComment.m_pszLineComment[0] );<br>+ &#9;&#9;&#9;m_pShareData-&gt;m_Types[i].m_cLineComme<br>nt.m_nLineCommentLen[1] = lstrlen( m_pShareData-&gt;m_Types[i].m_cLineComment.m_pszLineComment[1] );<br>+ &#9;&#9;&#9;m_pShareData-&gt;m_Types[i].m_cLineComme<br>nt.m_nLineCommentLen[2] = lstrlen( m_pShareData-&gt;m_Types[i].m_cLineComment.m_pszLineComment[2] );<br>+ &#9;&#9;}<br>  &#9;&#9;cProfile.IOProfileData( bRead, pszSecName, "szBlockCommentFrom"&#9;, REGCNV_SZ2SZ, (char*)/*&amp;*/m_pShareData-&gt;m_Types[i].m_c<br>BlockComment.m_szBlockCommentFrom[0], 0 );<br>  &#9;&#9;cProfile.IOProfileData( bRead, pszSecName, "szBlockCommentTo"&#9;, REGCNV_SZ2SZ, (char*)/*&amp;*/m_pShareData-&gt;m_Types[i].m_c<br>BlockComment.m_szBlockCommentTo[0], 0 );<br>  //#ifdef COMPILE_BLOCK_COMMENT2&#9;//@@@ 2001.03.10 by MIK<br><br><br>お手数おかけしますが、よろしくお願いしますっ。<br></div></section>
+    <ul><li><section><h1 id=2351>
+    <span class="no">[2351]</span>
+    <a class="title" href="#2351">Re4: CLayoutMgrをちょっと整理しました</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-29T00:20:32">2002年09月29日 00:20</time></h1>
+    <div class="body">&gt;CopyToでstrlenする方法だとiniファイルを読み込んだときに、CopyToが呼ばれない<br>iniのこと忘れていました．<br>ここは，ちょっと面倒でも直接書き込みではなくてRead/Writeそれぞれメンバー関数を使った方がいいかもしれませんね．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

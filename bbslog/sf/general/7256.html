@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>『』等で括られた文字列中にある全角空白を取り除くには</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7256</span>
+    <a class="title" href="7256.html#7256">『』等で括られた文字列中にある全角空白を取り除くには</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7257</span>
+    <a class="title" href="7256.html#7257">RE: 『』等で括られた文字列中にある全角空白を取り除くには</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7269</span>
+    <a class="title" href="7256.html#7269">Re2: 『』等で括られた文字列中にある全角空白を取り除くには</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7256>
+    <span class="no">[7256]</span>
+    <a class="title" href="#7256">『』等で括られた文字列中にある全角空白を取り除くには</a>
+    <span class="author">皓い鴉</span>
+    <time datetime="2010-11-17T23:01:59">2010年11月17日 23:01</time></h1>
+    <div class="body">　『』等の括弧で括られた文章中にある全角空白を取り除くような、正規表現を使った置換方法はあるでしょうか？<br>　どなたかわかる方が居られましたら、教えてください。<br>　宜しくお願い致します。</div></section>
+    <ul><li><section><h1 id=7257>
+    <span class="no">[7257]</span>
+    <a class="title" href="#7257">RE: 『』等で括られた文字列中にある全角空白を取り除くには</a>
+    <span class="author">すい</span>
+    <time datetime="2010-11-19T01:16:18">2010年11月19日 01:16</time></h1>
+    <div class="body">置換前：(『[^』]*)　([^』]*』)<br>置換後：$1$2<br><br>とか？<br>置換一回に付き全角スペース１個しか消えないので、『～』間に<br>全角スペースが複数個ある場合、何度も置換を繰り返す必要がありますが。<br></div></section>
+    <ul><li><section><h1 id=7269>
+    <span class="no">[7269]</span>
+    <a class="title" href="#7269">Re2: 『』等で括られた文字列中にある全角空白を取り除くには</a>
+    <span class="author">皓い鴉</span>
+    <time datetime="2010-11-23T03:03:20">2010年11月23日 03:03</time></h1>
+    <div class="body">お陰様で、教えて頂いた正規表現での置換作業を数度繰り返すことにより対処することが出来ました。<br>正規表現はあまり難しいものはよくわからないので、教えて頂いて大変助かりました。<br>ありがとうございました！&lt;(_ _)&gt;</div></section>
+    </li></ul></li></ul></li></ul></body></html>

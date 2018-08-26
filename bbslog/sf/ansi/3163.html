@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ソースだけ更新</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3163</span>
+    <a class="title" href="3163.html#3163">ソースだけ更新</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3177</span>
+    <a class="title" href="3163.html#3177">RE: ソースだけ更新</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3163>
+    <span class="no">[3163]</span>
+    <a class="title" href="#3163">ソースだけ更新</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-20T08:45:05">2003年09月20日 08:45</time></h1>
+    <div class="body">http://sakura-editor.sourceforge.net/snapshot/ssrc_2003-09-20.tar.bz2<br><br>入れ忘れていた改行コード描画コード<br>64bitパッチ<br><br>のみ入っています．CVSディレクトリ付き．<br></div></section>
+    <ul><li><section><h1 id=3177>
+    <span class="no">[3177]</span>
+    <a class="title" href="#3177">RE: ソースだけ更新</a>
+    <span class="author">みく</span>
+    <time datetime="2003-09-22T20:52:22">2003年09月22日 20:52</time></h1>
+    <div class="body"><br>SDKがないとビルドできないのはOKなんでしょうか。<br><br>global.h<br>#ifndef _WIN64<br>#ifndef DWORD_PTR<br>#define DWORD_PTR DWORD<br>#endif<br>#ifndef ULONG_PTR<br>#define ULONG_PTR ULONG<br>#endif<br>#ifndef LONG_PTR<br>#define LONG_PTR LONG<br>#endif<br>#ifndef UINT_PTR<br>#define UINT_PTR UINT<br>#endif<br>#ifndef INT_PTR<br>#define INT_PTR INT<br>#endif<br>#ifndef SetWindowLongPtr<br>#define SetWindowLongPtr SetWindowLong<br>#endif<br>#ifndef GetWindowLongPtr<br>#define GetWindowLongPtr GetWindowLong<br>#endif<br>#ifndef DWLP_USER<br>#define DWLP_USER DWL_USER<br>#endif<br>#ifndef GWLP_WNDPROC<br>#define GWLP_WNDPROC GWL_WNDPROC<br>#endif<br>#ifndef GWLP_USERDATA<br>#define GWLP_USERDATA GWL_USERDATA<br>#endif<br>#ifndef GWLP_HINSTANCE<br>#define GWLP_HINSTANCE GWL_HINSTANCE<br>#endif<br>#endif  //_WIN64<br><br><br>あと、SDK なしでは、あいかわらず COLOR_MENUBAR が未定義です。<br></div></section>
+    </li></ul></li></ul></body></html>

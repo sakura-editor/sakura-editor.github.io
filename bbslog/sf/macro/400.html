@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>相対パスにある同名のCもしくはHファイルを開く</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">400</span>
+    <a class="title" href="400.html#400">相対パスにある同名のCもしくはHファイルを開く</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">401</span>
+    <a class="title" href="400.html#401">RE: 相対パスにある同名のCもしくはHファイルを開く</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">402</span>
+    <a class="title" href="400.html#402">Re2: 相対パスにある同名のCもしくはHファイルを開く</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=400>
+    <span class="no">[400]</span>
+    <a class="title" href="#400">相対パスにある同名のCもしくはHファイルを開く</a>
+    <span class="author">Hiro</span>
+    <time datetime="2007-09-30T01:58:34">2007年09月30日 01:58</time></h1>
+    <div class="body">マクロについてほとんど判らない素人です。<br>やりたいことを以下記載しますので、皆様の知恵を拝借ください。<br><br>【やりたいこと】<br>現在編集中のCソースファイルもしくはH（ヘッダファイル）と同一ファイル名のCソースファイルもしくはヘッダファイルを開きたい。<br>ただし、CソースファイルとH（ヘッダ）ファイルは下図の通りフォルダが分かれている。<br>//<br> |<br> +--- include ←このフォルダにヘッダファイルがある。<br> |<br> +--- src　←このフォルダにCソースファイルがある。<br><br>【よく似たコマンド】<br>メニューバーで「検索」→「同名のC/C++ヘッダ（ソース）を開く」というコマンドがあります。<br>しかし、このコマンドは現在編集しているファイルがある同一フォルダ内でしか検索してくれません。<br><br><br></div></section>
+    <ul><li><section><h1 id=401>
+    <span class="no">[401]</span>
+    <a class="title" href="#401">RE: 相対パスにある同名のCもしくはHファイルを開く</a>
+    <span class="author">すい</span>
+    <time datetime="2007-09-30T05:51:21">2007年09月30日 05:51</time></h1>
+    <div class="body">地道にヤルしかないんじゃないかと。<br>-----↓以下↓-----<br>// TAB=4<br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに ppa.dll を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>var&#9;&#9;// 変数を確保する場所<br>&#9;NewPath:String;<br>&#9;FullPath:String;<br>&#9;PDir,Dir,Fname,Ext:String;<br>&#9;pt:Integer;&#9;&#9;// 整数数値変数<br>&#9;NL:String;<br>begin&#9;// ここより処理内容&#9;//{<br>&#9;// ↓改行を用意<br>&#9;NL := '<br>';<br>&#9;FullPath := S_GetFilename();&#9;// 編集中のファイル名を取得する<br><br>&#9;// フルパスファイル名（FullPath）をディレクトリ(Dir)とファイル名(Fname)に分離する。<br>&#9;Fname := FullPath;<br>&#9;Dir := '';<br>&#9;repeat&#9;//{<br>&#9;&#9;pt := Pos( '\' , Fname );<br>&#9;&#9;if( pt &gt; 0 ) then&#9;begin<br>&#9;&#9;&#9;Dir   := Dir + Copy  ( Fname , 1 , pt );<br>&#9;&#9;&#9;Fname :=       Delete( Fname , 1 , pt );<br>&#9;&#9;end;<br>&#9;until ( pt &lt;= 0 );&#9;//}<br><br>&#9;// ディレクトリ(Dir)を親ディレクトリ(PDir)とディレクトリ(Dir)に分離する。<br>&#9;if ( Length(Dir) &gt; 3 )&#9;then&#9;Dir := Delete(Dir,Length(Dir),1);<br>&#9;PDir := '';<br>&#9;repeat&#9;//{<br>&#9;&#9;pt := Pos( '\' , Dir );<br>&#9;&#9;if( pt &gt; 0 ) then&#9;begin<br>&#9;&#9;&#9;PDir := PDir + Copy  ( Dir , 1 , pt );<br>&#9;&#9;&#9;Dir  :=        Delete( Dir , 1 , pt );<br>&#9;&#9;end;<br>&#9;until ( pt &lt;= 0 );&#9;//}<br><br>&#9;// ファイル名(Fname)をファイル名(Fname)と拡張子(Ext)に分離する。<br>&#9;Ext := Fname;<br>&#9;Fname := '';<br>&#9;repeat&#9;//{<br>&#9;&#9;pt := Pos( '.' , Ext );<br>&#9;&#9;if( pt &gt; 0 ) then&#9;begin<br>&#9;&#9;&#9;Fname := Fname + Copy  ( Ext , 1 , pt );<br>&#9;&#9;&#9;Ext   :=         Delete( Ext , 1 , pt );<br>&#9;&#9;end;<br>&#9;until ( pt &lt;= 0 );&#9;//}<br>&#9;if (Fname = '')&#9;then&#9;begin&#9;//{<br>&#9;&#9;Fname :=Ext;<br>&#9;&#9;Ext := '';<br>&#9;end;&#9;//}<br><br>&#9;// 拡張子毎に、新たに開くファイルのフルパスを生成する<br>&#9;NewPath := '';<br>&#9;Ext := UpperCase(Ext);<br>&#9;if (Ext = 'C') or (Ext = 'CPP')&#9;then&#9;NewPath := PDir + 'include\' + Fname + 'H'<br>&#9;else if (Ext = 'H')&#9;then&#9;NewPath := PDir + 'src\' + Fname + 'C'<br>&#9;;<br><br>//&#9;// ↓for デバッグ<br>//&#9;MessageBox(<br>//&#9;'[' + NewPath&#9;&#9;+ ']' + NL +<br>//&#9;'[' + FullPath&#9;&#9;+ ']' + NL +<br>//&#9;'[' + PDir&#9;&#9;&#9;+ ']' + NL +<br>//&#9;'[' + Dir&#9;&#9;&#9;+ ']' + NL +<br>//&#9;'[' + Fname&#9;&#9;&#9;+ ']' + NL +<br>//&#9;'[' + Ext&#9;&#9;&#9;+ ']' + NL +<br>//&#9;'' , '確認' , 0 );<br><br>&#9;// NewPath が空で無ければ開く<br>&#9;if (NewPath &lt;&gt; '')&#9;then&#9;S_FileOpen(NewPath);<br>end;&#9;//}<br></div></section>
+    <ul><li><section><h1 id=402>
+    <span class="no">[402]</span>
+    <a class="title" href="#402">Re2: 相対パスにある同名のCもしくはHファイルを開く</a>
+    <span class="author">Hiro</span>
+    <time datetime="2007-09-30T19:07:52">2007年09月30日 19:07</time></h1>
+    <div class="body">To　すいさん<br><br>動作確認し、正常に動作しました。<br>これで、快適にプログラミングが出来そうです。<br>本当に助かりました。ありがとうございます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

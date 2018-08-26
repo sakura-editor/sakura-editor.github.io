@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>読み込みアクセス権</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2412</span>
+    <a class="title" href="2412.html#2412">読み込みアクセス権</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2414</span>
+    <a class="title" href="2412.html#2414">Re: 読み込みアクセス権</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2412>
+    <span class="no">[2412]</span>
+    <a class="title" href="#2412">読み込みアクセス権</a>
+    <span class="author">そふとやさん</span>
+    <time datetime="2002-10-23T12:24:16">2002年10月23日 12:24</time></h1>
+    <div class="body">開発ご苦労様です。<br><br>1.3.2.4 のオブジェクトだと、他のプロセスが書き込んでいるファイルを開く時に、警告ダイアログ表示後、内容が表示されるのですが、1.3.5.4では、「読み込みアクセス権がありません」 のダイアログ表示ご、内容を表示することが出来ません。<br>今後、これは仕様になるのでしょうか?<br><br>よろしくお願いします。<br><br></div></section>
+    <ul><li><section><h1 id=2414>
+    <span class="no">[2414]</span>
+    <a class="title" href="#2414">Re: 読み込みアクセス権</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-23T13:15:24">2002年10月23日 13:15</time></h1>
+    <div class="body">&gt;「読み込みアクセス権がありません」 のダイアログ表示ご、内容を表示することが出来ません。<br>開発掲示板[2418]にて指摘があったので，1.3.5.4では開けるように直したつもりだったのですが...<br><br>と，ごめんなさいごめんなさい．<br>FILE_SHARE_READ | FILE_SHARE_WRITE<br>とすべきところが<br>FILE_SHARE_READ | FILE_SHARE_READ<br>となっていました（大馬鹿）<br><br>今度こそちゃんと直します．<br></div></section>
+    </li></ul></li></ul></body></html>

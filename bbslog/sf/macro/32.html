@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>非正規表現に変換</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">32</span>
+    <a class="title" href="32.html#32">非正規表現に変換</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=32>
+    <span class="no">[32]</span>
+    <a class="title" href="#32">非正規表現に変換</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-08-16T04:08:29">2003年08月16日 04:08</time></h1>
+    <div class="body">// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに <br>// PPA.DLL を入れておいてください。<br>// また、マクロファイルの拡張子は .PPA でなくてはなりません。<br>// UNREGEXP.PPA<br>// 選択した文字列を非正規表現に変換してクリップボードへコピー<br>var<br>  st: String;<br>begin<br>  // カーソル位置の文字列を取得する。<br>  st := S_GetSelectedString(0);<br>  // すべて置換：正規表現＆選択範囲<br>  S_ReplaceAll('[\^\.\$\|\[\]\(\)\{\}\*\+\?\\]', '\\$&amp;', 132);<br>  // 文末の']'で(音)パボン？<br>  S_Cut(0);  // 選択文字列とクリップボードの入替え<br>  S_InsText( st )；<br>  S_Right(0);  // or Left<br>  S_Left(0);<br>  S_Right(0);<br>  S_SearchClearMark(0);  // 検索マークの切替え<br>end.<br>// このマクロ何に使うのかと、関心の有る方は[一般]&lt;3183&gt;,&lt;3184&gt;をご覧下さい。<br></div></section>
+    </li></ul></body></html>

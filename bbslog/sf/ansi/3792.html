@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Shell_NotifyIcon関数について質問です。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3792</span>
+    <a class="title" href="3792.html#3792">Shell_NotifyIcon関数について質問です。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3794</span>
+    <a class="title" href="3792.html#3794">Re: Shell_NotifyIcon関数について質問です。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3795</span>
+    <a class="title" href="3792.html#3795">Re2: Shell_NotifyIcon関数について質問です。</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3792>
+    <span class="no">[3792]</span>
+    <a class="title" href="#3792">Shell_NotifyIcon関数について質問です。</a>
+    <span class="author">ootomo</span>
+    <time datetime="2004-11-15T15:48:46">2004年11月15日 15:48</time></h1>
+    <div class="body">さくらエディタのソースをカスタマイズして使用させて<br>いただいているものです。<br><br>オリジナルのさくらエディタでは、共通設定のタスクトレイ<br>を使用するのチェックをオフにしてOKボタンを押しても<br>即座に反映しませんが、即座に反映するように修正して<br>使用しています。<br><br>ここで質問なのですが、<br>Windows XP や Windows 2003 Serverで、Shell_NotifyIcon<br>でタスクトレイアイコンを削除しようとすると、FALSEが返ります。<br>アイコンは削除されるのですが・・・・。<br><br>タスクトレイへの登録・解除に４秒以上かかるとタイムアウト<br>でエラーになるらしいことは聞いたのですが、なんでスパッと<br>削除してくれないのか不思議です。<br><br>VC++に付いているSPY++を起動すると、スパッと削除してくれ、<br>Shell_NotifyIconもTRUEを返してくれました。<br><br>また、CEditAppのWM_DESTROYメッセージハンドラにおいて<br>トレイアイコンを削除する時は、正常に動きます。<br><br>オリジナルさくらエディタとは関係が薄い話で申し訳ないのですが、<br>何かご存知の方、教えてください。お願い致します。<br>m(_ _)m</div></section>
+    <ul><li><section><h1 id=3794>
+    <span class="no">[3794]</span>
+    <a class="title" href="#3794">Re: Shell_NotifyIcon関数について質問です。</a>
+    <span class="author">もか</span>
+    <time datetime="2004-11-15T23:11:42">2004年11月15日 23:11</time></h1>
+    <div class="body">うーん。以下のコードで実際にやってみましたが、エラーになりませんでした。<br>WinXP Pro SP1 + hotfixs; sakura 1.4.9.0; VC6.0 Pro の組み合わせで<br>LunaはOFF、manifestなしの設定です。<br><br>CEditApp::DispatchEvent内(Webブラウザだと見難いかも)<br>&#9;(中略...)<br>&#9;&#9;case MYWM_CHANGESETTING:<br>&#9;&#9;&#9;(中略...)<br>&#9;&#9;&#9;if( m_pShareData-&gt;m_Common.m_bUseTaskTray ){<br>&#9;&#9;&#9;&#9;// 無ければ作成<br>&#9;&#9;&#9;&#9;if( FALSE == m_bCreatedTrayIcon ){<br>&#9;&#9;&#9;&#9;&#9;CreateTrayIcon( m_hWnd );<br>&#9;&#9;&#9;&#9;&#9;::OutputDebugString( " create TrayIcon\n" );<br>&#9;&#9;&#9;&#9;}<br>&#9;&#9;&#9;}else{<br>&#9;&#9;&#9;&#9;if( m_bCreatedTrayIcon ){<br>&#9;&#9;&#9;&#9;&#9;::OutputDebugString( " NIM_DELETE\n" );<br>&#9;&#9;&#9;&#9;&#9;if( FALSE == TrayMessage( hwnd, NIM_DELETE, 0, NULL, NULL ) ){<br>&#9;&#9;&#9;&#9;&#9;&#9;::OutputDebugString( " error NIM_DELETE\n" );<br>&#9;&#9;&#9;&#9;&#9;}<br>&#9;&#9;&#9;&#9;&#9;m_bCreatedTrayIcon = FALSE;<br>&#9;&#9;&#9;&#9;}<br>&#9;&#9;&#9;}<br>&#9;&#9;return 0L;<br><br>&#9;&#9;case MYWM_NOTIFYICON:<br></div></section>
+    <ul><li><section><h1 id=3795>
+    <span class="no">[3795]</span>
+    <a class="title" href="#3795">Re2: Shell_NotifyIcon関数について質問です。</a>
+    <span class="author">ootomo</span>
+    <time datetime="2004-11-19T15:10:59">2004年11月19日 15:10</time></h1>
+    <div class="body">いろいろ調べたところ、IMEのバーをタスクバーの中に<br>入れているときだけShell_NotifyIcon関数がタイムアウト<br>するみたいです。<br><br>他の常駐できるソフトでいろいろ試したところ、みんなそう<br>なるみたいです。<br><br>Microsoftのページには、タイムアウトしたら<br>Shell_NotifyIcon(NIM_MODIFY,・・・)してみてアイコンの<br>登録(削除)が上手く行っているかを確かめて、だめなら<br>リトライしなさい、と書いてあったので、そうします。<br><br>お手数お掛けしました。<br>m(_ _)m;</div></section>
+    </li></ul></li></ul></li></ul></body></html>

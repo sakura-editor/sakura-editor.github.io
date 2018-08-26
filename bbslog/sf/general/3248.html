@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>（不具合報告）タスクバー左で「左右並べ」すると</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3248</span>
+    <a class="title" href="3248.html#3248">（不具合報告）タスクバー左で「左右並べ」すると</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3251</span>
+    <a class="title" href="3248.html#3251">Re:（不具合報告）タスクバー左で「左右並べ」すると</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3248>
+    <span class="no">[3248]</span>
+    <a class="title" href="#3248">（不具合報告）タスクバー左で「左右並べ」すると</a>
+    <span class="author">しょう</span>
+    <time datetime="2003-09-05T11:15:57">2003年09月05日 11:15</time></h1>
+    <div class="body">・タスクバーを左側に配置した状態で「左右に並べて表示」を行うとウィンドウ位置がずれて配置されます<br>　「ファイル内容比較」で「左右に表示」のチェックを有効にした場合も同様な現象が起こりました<br>[Ver 1.4.3.0/Win98]</div></section>
+    <ul><li><section><h1 id=3251>
+    <span class="no">[3251]</span>
+    <a class="title" href="#3251">Re:（不具合報告）タスクバー左で「左右並べ」すると</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-05T12:48:52">2003年09月05日 12:48</time></h1>
+    <div class="body">ワークエリアの始点を反映してないことが原因です。対処します。<br><br># CEditView_Command.cppのCommand_CASCADEの修正。<br>-&#9;&#9;int w_offset = 0;<br>-&#9;&#9;int h_offset = 0;<br>+&#9;&#9;int w_offset = rcDesktop.left, h_offset = rcDesktop.top;<br>&#9;&#9;for(i = 0; i &lt; count; ++i ){<br>&#9;&#9;&#9;if (w_offset + width &gt; rcDesktop.right || h_offset + height &gt; rcDesktop.bottom){<br>-&#9;&#9;&#9;&#9;w_offset = 0;<br>-&#9;&#9;&#9;&#9;h_offset = 0;<br>+&#9;&#9;&#9;&#9;w_offset = rcDesktop.left;<br>+&#9;&#9;&#9;&#9;h_offset = rcDesktop.top;<br>&#9;&#9;&#9;}<br><br>...<br># CEditView::Command_TILE_Hの修正。<br>&#9;&#9;&#9;::SetWindowPos(<br>&#9;&#9;&#9;&#9;phwndArr[i], 0,<br>-&#9;&#9;&#9;&#9;width * i, rcDesktop.top,<br>+&#9;&#9;&#9;&#9;rcDesktop.left + width * i, rcDesktop.top,<br>&#9;&#9;&#9;&#9;width, rcDesktop.bottom - rcDesktop.top,<br>&#9;&#9;&#9;&#9;SWP_NOOWNERZORDER | SWP_NOZORDER<br>&#9;&#9;&#9;);<br><br># CEditView::Command_TILE_Vの修正も同様に。<br><br>デスクトップ、スクリーン、ワークエリアは、それぞれ別のものです。間違えないでくだい。</div></section>
+    </li></ul></li></ul></body></html>

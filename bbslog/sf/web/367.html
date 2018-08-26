@@ -1,0 +1,136 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>SVNアクセス権限</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←webトップへ</a><li><div class="list-title">
+    <span class="no">367</span>
+    <a class="title" href="367.html#367">SVNアクセス権限</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">369</span>
+    <a class="title" href="367.html#369">RE: SVNアクセス権限</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">370</span>
+    <a class="title" href="367.html#370">Re2: SVNアクセス権限</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">371</span>
+    <a class="title" href="367.html#371">Re3: SVNアクセス権限</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">373</span>
+    <a class="title" href="367.html#373">Re4: SVNアクセス権限</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">375</span>
+    <a class="title" href="367.html#375">ブランチ作業開始</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">376</span>
+    <a class="title" href="367.html#376">Re:ブランチ作業開始</a></div>
+    </li><li><div class="list-title">
+    <span class="no">377</span>
+    <a class="title" href="367.html#377">trunk 復元しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">379</span>
+    <a class="title" href="367.html#379">RE: trunk 復元しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">382</span>
+    <a class="title" href="367.html#382">Re2: trunk 復元しました</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">381</span>
+    <a class="title" href="367.html#381">Re:trunk 復元しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">383</span>
+    <a class="title" href="367.html#383">Re2:trunk 復元しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">384</span>
+    <a class="title" href="367.html#384">Re3:trunk 復元しました</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">378</span>
+    <a class="title" href="367.html#378">ブランチ作成完了しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">380</span>
+    <a class="title" href="367.html#380">RE: ブランチ作成完了しました</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=367>
+    <span class="no">[367]</span>
+    <a class="title" href="#367">SVNアクセス権限</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-01T01:36:41">2007年11月01日 01:36</time></h1>
+    <div class="body">UNICODE化におけるブランチ作成が、そろそろ近いうちに取り掛かれそうです。<br><br>SVNアクセス権限をいただけますでしょうか。<br>Sourceforgeユーザ名は kobake です。<br><br>というか、実は Sourceforge wiki を編集できる権限をもらった時点で、<br>リポジトリ書込も許可されていたりするのでしょうか。<br>実験がてらに以下のようなコマンドを試してみましたが、<br>SVNに慣れていないので、コマンドが間違ってるのか、権限が無いのか、判断が付きません。<br><br>$ svn mkdir  <a href=https://sakura-editor.svn.sourceforge.net/svnroot/sakura-editor/sakura/branches/unicode_sandbox target=_top><nobr>https://<wbr>sakura-<wbr>editor.<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>svnroot/<wbr>sakura-<wbr>editor/<wbr>sakura/<wbr>branches<wbr>/<wbr>unicode_<wbr>sandbox</nobr></a> -m "sandbox before making unicode branch"<br>Authentication realm: &lt;<a href=https://sakura-editor.svn.sourceforge.net:443&gt; target=_top><nobr>https://<wbr>sakura-<wbr>editor.<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net:<wbr>443&gt;<wbr></nobr></a> SourceForge Subversion area<br>Password for 'kobake': (ごにょごにょ入力)<br>svn: MKACTIVITY of '/svnroot/sakura-editor/!svn/act/9819a938-87ca-11dc-947a-6d1e<br>9fc947bb': 403 Forbidden (<a href=https://sakura-editor.svn.sourceforge.net) target=_top><nobr>https://<wbr>sakura-<wbr>editor.<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net)<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=369>
+    <span class="no">[369]</span>
+    <a class="title" href="#369">RE: SVNアクセス権限</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-11-01T02:17:10">2007年11月01日 02:17</time></h1>
+    <div class="body">&gt;SVNアクセス権限をいただけますでしょうか。<br>アクセス権限つけました．<br><br>ブランチを作成するときには，編集の基礎になったリビジョンから変更されたことが残るようにcommitしてください．<br>ブランチを分ける起点にベースラベルを貼ることが多いんですが，SVNでも貼った方がいいんですかね．<br><br>○→○→○→<br>　＼<br>　　○→○→<br></div></section>
+    <ul><li><section><h1 id=370>
+    <span class="no">[370]</span>
+    <a class="title" href="#370">Re2: SVNアクセス権限</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-01T23:57:33">2007年11月01日 23:57</time></h1>
+    <div class="body">ありがとうございます。コミット権限が取得できていることを確認しました。<br><br>現在、branches の中に、「unicode_sandbox」という階層が作成されていますが、<br>これはちょっと Subversion に慣れるために個人的に練習しちゃってるスペースです。勝手にすみません。<br>必要なくなったら消します。<br><br>&gt; ブランチを作成するときには，編集の基礎になったリビジョンから変更されたことが残るようにcommitしてください．<br>&gt; ブランチを分ける起点にベースラベルを貼ることが多いんですが，SVNでも貼った方がいいんですかね．<br>&gt; <br>&gt; ○→○→○→<br>&gt; 　＼<br>&gt; 　　○→○→<br><br>了解です。svn copy を行い、それに対して変更を加える、という流れを採ります。<br>svn copy で、たぶん(？)リビジョン情報もコピーされると思うので、起点がどこにあるかは<br>リビジョンで判断付くのでしょうけれども、<br>ラベルで分かりやすい名前が付けられるのであれば、そのほうが便利ですよね。<br>(Subversion の慣習的なものはよく分かりませんけど)<br><br>svn copy した時点 (まだ、コピーしただけで変更は加えてない状態) で、その旨を報告しますので、<br>そのときにその時点でのリビジョンに対してラベルを付けていただければ、と思います。<br>自分が付けれたら、付けても良いんですけど、Subversion をよく理解していないので、やり方が分かりません(汗)。<br><br>ちなみに、<br>今こちらで公開しているUNICODE版ソースは、2007年9月11日時点 (リビジョン1121) を元に作成していますが、<br>(正確には、それより以前の元ソースの変更に対して、リビジョン1121をマージしている)<br>今回のブランチ作成前に、再度、現時点のリポジトリとマージ作業を済ませてしまい、<br>それをブランチとする予定です。<br><br>つまり、既に現在コミット済みのリポジトリとの差分を埋めることは考えなくて良いです。<br>ブランチの起点は、現時点のリビジョンとなります。<br>(ここ数日でコミットが無ければ、ですが)</div></section>
+    <ul><li><section><h1 id=371>
+    <span class="no">[371]</span>
+    <a class="title" href="#371">Re3: SVNアクセス権限</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-11-02T08:12:22">2007年11月02日 08:12</time></h1>
+    <div class="body">&gt;自分が付けれたら、付けても良いんですけど、Subversion をよく理解していないので、やり方が分かりません(汗)。<br>操作はブランチ作るのと全く同じですよ．単にTagsの下に作ると言うだけで．<br><br>&gt;ブランチの起点は、現時点のリビジョンとなります。<br>おおっ．了解しました．<br><br>ちなみにブランチ作成後ですが，とりあえずはkobakeさんの判断でcommitしていただいて結構です．<br>バグ管理はどうしましょうか．とりあえず現状のままでよいですかね．<br>sourceforgeのbugtrackを使うつもりがあればその旨ご連絡ください．<br></div></section>
+    <ul><li><section><h1 id=373>
+    <span class="no">[373]</span>
+    <a class="title" href="#373">Re4: SVNアクセス権限</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-02T21:45:04">2007年11月02日 21:45</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;自分が付けれたら、付けても良いんですけど、Subversion をよく理解していないので、やり方が分かりません(汗)。<br>&gt; 操作はブランチ作るのと全く同じですよ．単にTagsの下に作ると言うだけで．<br><br>なるほど。こんな↓感じですかね。<br>大丈夫であれば自分でやっときます。<br><br>ブランチ作成<br>$ svn copy /sakura/trunk /sakura/branches/unicode<br><br>ラベル付加 (タグ作成)<br>$ svn copy /sakura/trunk /sakura/tags/UnicodeSeed<br><br>タグのネーミングはちょっと考えどころですけど、<br>何か良い案あったら教えてください。<br><br><br>&gt; ちなみにブランチ作成後ですが，とりあえずはkobakeさんの判断でcommitしていただいて結構です．<br><br>了解です。<br><br><br>&gt; バグ管理はどうしましょうか．とりあえず現状のままでよいですかね．<br>&gt; sourceforgeのbugtrackを使うつもりがあればその旨ご連絡ください．<br><br>すぐに利用するつもりは無いですけど、<br>報告が増えてきたら、専用の管理システムを利用したいです。<br><br>Sourceforge の Tracker - Bugs<br>http://sourceforge.net/tracker/?group_id=12488&amp;atid=112488<br>を覗いてみたんですけど、本文内で文字化けしてるように見えるのは大丈夫なんでしょうか？<br><br>同じ Sourceforge でも、Tracker - Patches のほうでは<br>http://sourceforge.net/tracker/?group_id=12488&amp;atid=312488<br>ちゃんと日本語表示されてるようですが。<br><br>別に Sourceforge じゃなくても、pukiwiki の Tracker とかでも良いと思います。</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=375>
+    <span class="no">[375]</span>
+    <a class="title" href="#375">ブランチ作業開始</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-05T23:11:49">2007年11月05日 23:11</time></h1>
+    <div class="body">現在のtrunk (リビジョン1163) を起点として、<br>タグ (/sakura/tags/UnicodeSeed) と<br>ブランチ (/sakura/branches/unicode) を<br>作成しました。<br><br>ブランチはまだ、svn copy しただけです。<br>これから、がりがりコミットしていきます。</div></section>
+    <ul><li><section><h1 id=376>
+    <span class="no">[376]</span>
+    <a class="title" href="#376">Re:ブランチ作業開始</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-06T02:15:30">2007年11月06日 02:15</time></h1>
+    <div class="body">すみません、間違えて trunk にコミットしてしまいました。。<br>速やかに元に戻しますので、復元まで少々お待ちください。</div></section>
+    </li><li><section><h1 id=377>
+    <span class="no">[377]</span>
+    <a class="title" href="#377">trunk 復元しました</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-06T03:13:15">2007年11月06日 03:13</time></h1>
+    <div class="body">失礼致しました。。trunkの復元完了しました。<br>trunk r1163 に対して誤ってコミットをしてしまった結果、多数のファイルが r1166 になってしまい、<br>それを復元するために r1163 をコミットし直し、最終的なリビジョンは r1167 になりました。<br>貴重なコミットログを流してしまい申し訳ありません。今後気を付けます。<br><br>trunk をチェックアウトし直し、正常にビルドが通ることを確認致しました。<br></div></section>
+    <ul><li><section><h1 id=379>
+    <span class="no">[379]</span>
+    <a class="title" href="#379">RE: trunk 復元しました</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-11-06T10:42:18">2007年11月06日 10:42</time></h1>
+    <div class="body">&gt;trunk r1163 に対して誤ってコミットをしてしまった結果、多数のファイルが r1166 になってしまい、<br>&gt;それを復元するために r1163 をコミットし直し、最終的なリビジョンは r1167 になりました。<br>r1163とr1167に相違がないことを私の方でも確認しました．<br><br>先に言えばよかったですが，ローカルのディスクにもリポジトリを作成できますので，普段行わない操作を行う場合はそこで練習して動作を確かめてからの方がトラブルが起こりにくいと思います．(そういう意味ではunicode_sandboxはあんまり意味が無いような)<br><br>こういう場合の直し方ですが，単に古いものを上書きする以外に過去のリビジョンのコピーを作る方法があります．<br>0. リビジョン(X)は正常．リビジョン(X+1)に誤ってコミットした場合<br>1. 最新の(誤った)リビジョンをフォルダごと削除(X+2)<br>2. Tortoise SVNのrepositoryブラウザで(X)リビジョンXを選択a<br>3. コピー操作で同じパスを指定すると，リビジョン(X)のコピーが(X+3)に作られる．<br>この操作ではリビジョン(X+1)は過去から続くリビジョンツリーの別の枝となのでshow logでは見えなくなります．ただ，TortoseSVNでは「コピー元を追わない」設定がデフォルトでONになっており，チェックを外さないとここで表示が一旦停止するので，操作上の煩わしさ感じられるかもしれません．<br><br>(X)→(X+1)→(X+2)||　(X+3)<br>　＼　　　　　　　　／<br>　　￣￣￣￣￣￣￣￣<br><br>&gt;trunk をチェックアウトし直し、正常にビルドが通ることを確認致しました。<br>trunkとunicodeが共存する状態での誤commitに今後もご注意願います．<br></div></section>
+    <ul><li><section><h1 id=382>
+    <span class="no">[382]</span>
+    <a class="title" href="#382">Re2: trunk 復元しました</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-13T19:43:02">2007年11月13日 19:43</time></h1>
+    <div class="body">ご説明ありがとうございます。<br>ただ、安全だと分かっていてもtrunkにdeleteコマンドを投げるのは<br>精神的に気が引けたので(汗)、とりあえず上書きコミットにしときました。<br><br>今後コミット間違いが無いように気をつけます。<br>ここしばらくはブランチ側しか触わらないので (trunkのワーキングコピーは消しちゃいました)<br>trunkに誤アクセスすることは無さそうです。</div></section>
+    </li></ul></li><li><section><h1 id=381>
+    <span class="no">[381]</span>
+    <a class="title" href="#381">Re:trunk 復元しました</a>
+    <span class="author">KENCH</span>
+    <time datetime="2007-11-13T18:20:31">2007年11月13日 18:20</time></h1>
+    <div class="body">▼ kobakeさん<br>最近あんまり貢献していないKENCHです。<br>SubversionつかうならフロントはTortoiseSVNのほうがべんりですよ。<br>GUIでブランチのツリーみれたりしますし。<br>ただしエクスプローラーにアドオンされるので敬遠する人もいますが。<br><a href=http://www.gside.org/Gentoo/subversion/subversion_client.html target=_top><nobr>http://<wbr>www.<wbr>gside.<wbr>org/<wbr>Gentoo/<wbr>subversi<wbr>on/<wbr>subversi<wbr>on_clien<wbr>t.<wbr>html</nobr></a></div></section>
+    <ul><li><section><h1 id=383>
+    <span class="no">[383]</span>
+    <a class="title" href="#383">Re2:trunk 復元しました</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-13T19:48:35">2007年11月13日 19:48</time></h1>
+    <div class="body">アドバイスありがとうございます。<br>TortoiseSVNは自分も普段から便利に使っていますが、<br>いざリポジトリ修正をしようと思ってGoogleで情報を調べてみると、<br>svnコマンドの情報が多く出てきたので、それを踏む形で作業を行いました。<br><br>&gt; GUIでブランチのツリーみれたりしますし。<br><br>その辺の機能は使ったこと無かったです。<br>機会があれば使ってみます。<br><br>ちなみに自分は Windows Vista を使っているのですが、<br>XP→Vista間の大幅な仕様変更のせいで、<br>TortoiseSVN の恩恵が微妙に削られてます。。<br>エクスプローラのカラムで SVNリビジョンが見れなかったり。。<br></div></section>
+    <ul><li><section><h1 id=384>
+    <span class="no">[384]</span>
+    <a class="title" href="#384">Re3:trunk 復元しました</a>
+    <span class="author">KENCH</span>
+    <time datetime="2007-11-14T08:37:43">2007年11月14日 08:37</time></h1>
+    <div class="body">▼ kobakeさん<br>なるほど、アドバイスするまでもなかったようで失礼しました。<br>Vistaマシンがまだ手元にないもので確認したいところではありますが、その前に普段はまだ２０００だったりするので、カラムのリビジョンを見たことがなかったり。</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=378>
+    <span class="no">[378]</span>
+    <a class="title" href="#378">ブランチ作成完了しました</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-06T03:15:26">2007年11月06日 03:15</time></h1>
+    <div class="body">UNICODE版ブランチの作成が完了しました。<br>パスは /sakura/branches/unicode です。<br>実際にチェックアウトしてみて、正常にビルドが通ることを確認致しました。<br><br>今後どのように作業していくか、というプランはまだ具体的に考えていないのですが、<br>とりあえずブランチ作成が完了したことをお知らせ致します。<br></div></section>
+    <ul><li><section><h1 id=380>
+    <span class="no">[380]</span>
+    <a class="title" href="#380">RE: ブランチ作成完了しました</a>
+    <span class="author">maru</span>
+    <time datetime="2007-11-11T22:55:49">2007年11月11日 22:55</time></h1>
+    <div class="body">もかさんのご指摘どおり、unofficialrelease.txtは名前を変えたほうが良さそうですが、内容も見直したほうが良さそうな。<br><br>Unicode版のブランチ用に、unofficialrelease.txtに代わるテキストとして、Licenses.txtとHowToCompile.txtを用意してみました。&gt;&gt;help:396からの流れで、Doxygenのコメントスタイルになっています。<br><br>http://sakura.qp.land.to/?plugin=attach&amp;pcmd=open&amp;file=20071111doxy.zip&amp;refer=Document%2F10<br><br>以前から、コンパイルの方法はヘルプや開発者向けドキュメントに記載されていますが、コンパイラによる動作の違いなど私には分からないことも多く、正直こっちが聞きたいくらい。こういったドキュメントのマスターは、やはりソースコード同梱にしたい(＾＾； ちなみに、現状のHowToCompile.txtは、とりあえずANSI版の内容のままです。<br><br>ライセンスのところはちょっと大雑把ですが、現状の運用をまとめると、だいたいこんな感じでしょうか。zlib/libpngが全面適用するまでの移行期間用ですが、永遠に移行期間の可能性もあり微妙。もう少しunofficialrelease.txtに忠実なほうが良いかな・・・。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

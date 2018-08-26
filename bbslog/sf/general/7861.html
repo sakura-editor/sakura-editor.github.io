@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>画面キャッシュを使うと文字入力がもたつく</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7861</span>
+    <a class="title" href="7861.html#7861">画面キャッシュを使うと文字入力がもたつく</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7864</span>
+    <a class="title" href="7861.html#7864">Re: 画面キャッシュを使うと文字入力がもたつく</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=7861>
+    <span class="no">[7861]</span>
+    <a class="title" href="#7861">画面キャッシュを使うと文字入力がもたつく</a>
+    <span class="author">A</span>
+    <time datetime="2014-06-28T22:14:41">2014年06月28日 22:14</time></h1>
+    <div class="body">Windows7 でサクラエディタを使用しているときに、共通設定の「画面キャッシュを使う」という項目が有効になっていると、文字入力の速度が極端に落ちてしまうことに気づきました。<br><br>キーボードから直接入力しているときには気づきにくいのですが、英数字などを連続で入力（"a"キーを押しっぱなしにするとか）すると遅くなっているのがわかります。<br><br>特に困るのがマクロで自動化された文字入力で、本来なら一瞬で終わるはずのマクロでの入力が、まるでタイプライターで一文字ずつ打ち込んでいるかのような感じでかなり時間がかかってしまいます。<br><br>画面キャッシュを無効にすると改善するのですが、今度はウィンドウ全体の描画のパフォーマンスが低下して、ウィンドウを切り替えたりするときにブラックアウトするような感じでちらついて見えるようになってしまいます。<br><br>画面キャッシュが有効・無効のどちらにしても不具合があるので困っています。<br><br>改善は見込めませんでしょうか？<br><br>以前は Windows XP で使用していて特に問題はなかったのですが、最近になって Windows7 に移行して、以前から使っているマクロが非常に使いづらくなってしまって困っています。</div></section>
+    <ul><li><section><h1 id=7864>
+    <span class="no">[7864]</span>
+    <a class="title" href="#7864">Re: 画面キャッシュを使うと文字入力がもたつく</a>
+    <span class="author">もか</span>
+    <time datetime="2014-06-30T22:03:25">2014年06月30日 22:03</time></h1>
+    <div class="body">sakura 2.1.0.0以上限定でマクロを以下のようにします。<br><br>SetDrawSwitch(0);<br>マクロ内容<br>SetDrawSwitch(1);<br>ReDraw();<br><br>---<br>もしドライバが未インストール状態だったら、何かインストールすると改善するかもしれません。<br>ただし、WDMM1.1でないと遅いようです。<br></div></section>
+    </li></ul></li></ul></body></html>

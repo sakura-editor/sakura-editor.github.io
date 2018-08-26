@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ：ダブルクリックでファイルを開けない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2645</span>
+    <a class="title" href="2645.html#2645">バグ：ダブルクリックでファイルを開けない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2646</span>
+    <a class="title" href="2645.html#2646">RE: バグ：ダブルクリックでファイルを開けない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2647</span>
+    <a class="title" href="2645.html#2647">Re2: バグ：ダブルクリックでファイルを開けない</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2645>
+    <span class="no">[2645]</span>
+    <a class="title" href="#2645">バグ：ダブルクリックでファイルを開けない</a>
+    <span class="author">yasu</span>
+    <time datetime="2003-01-10T12:28:21">2003年01月10日 12:28</time></h1>
+    <div class="body">ファイルを置いてあるフォルダの名前に<br>スペースが入っている場合に開けないことがあります。<br><br>例えば"xxx yyy"というフォルダの中にあるファイルを<br>開きたい場合、スペース以降を取り除いた名前のフォルダ<br>"xxx"が同じ階層にあると、そっちのフォルダを開いて<br>ファイル選択画面になってしまいます。<br>"xxx"の中にあるファイルをダブルクリックしたときは<br>問題なく開けます。<br>"xxx zzz"のようにスペース以降に違う文字が来る名前は<br>大丈夫みたい。<br><br>1.3.6.1と1.3.6.2で確認しました。<br>それ以前のバージョンは調べてません。<br></div></section>
+    <ul><li><section><h1 id=2646>
+    <span class="no">[2646]</span>
+    <a class="title" href="#2646">RE: バグ：ダブルクリックでファイルを開けない</a>
+    <span class="author">すい</span>
+    <time datetime="2003-01-10T12:45:21">2003年01月10日 12:45</time></h1>
+    <div class="body">&gt;ファイルを置いてあるフォルダの名前に<br>&gt;スペースが入っている場合に開けないことがあります。<br>&gt;<br>&gt;例えば"xxx yyy"というフォルダの中にあるファイルを<br>&gt;開きたい場合、スペース以降を取り除いた名前のフォルダ<br>&gt;"xxx"が同じ階層にあると、そっちのフォルダを開いて<br>&gt;ファイル選択画面になってしまいます。<br>&gt;"xxx"の中にあるファイルをダブルクリックしたときは<br>&gt;問題なく開けます。<br>&gt;"xxx zzz"のようにスペース以降に違う文字が来る名前は<br>&gt;大丈夫みたい。<br><br>やってみましたが再現しません。<br>というか、その異常動作って関連付け設定をミスしている時の動作だと思いますが。<br>どうやって関連付け設定しています？<br>"C:\～～\sakura.exe" "%1"<br>のように、きちんと %1 を " " で括っていますか？括っていない場合、そうなるかと。<br>「関連付けツール」を使って関連付けしたらきちんと動作しませんか？<br></div></section>
+    <ul><li><section><h1 id=2647>
+    <span class="no">[2647]</span>
+    <a class="title" href="#2647">Re2: バグ：ダブルクリックでファイルを開けない</a>
+    <span class="author">yasu</span>
+    <time datetime="2003-01-10T13:28:17">2003年01月10日 13:28</time></h1>
+    <div class="body">▼ すいさん<br>&gt; やってみましたが再現しません。<br>&gt; というか、その異常動作って関連付け設定をミスしている時の動作だと思いますが。<br>&gt; どうやって関連付け設定しています？<br>&gt; "C:\～～\sakura.exe" "%1"<br>&gt; のように、きちんと %1 を " " で括っていますか？括っていない場合、そうなるかと。<br>&gt; 「関連付けツール」を使って関連付けしたらきちんと動作しませんか？<br><br>う、ご指摘の通りでした。<br>関連付けはフォルダオプションから設定したんですが、<br>普段はスペース含んだパスでも問題なく開けてたから<br>気付きませんでした。<br><br>どうもお騒がせしました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

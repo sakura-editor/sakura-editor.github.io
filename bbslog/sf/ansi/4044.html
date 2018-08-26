@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>カレントマクロのパス取得 他</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">4044</span>
+    <a class="title" href="4044.html#4044">カレントマクロのパス取得 他</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4045</span>
+    <a class="title" href="4044.html#4045">Re:カレントマクロのパス取得 他</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4046</span>
+    <a class="title" href="4044.html#4046">Re2:カレントマクロのパス取得 他</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4047</span>
+    <a class="title" href="4044.html#4047">Re3:カレントマクロのパス取得 他</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4048</span>
+    <a class="title" href="4044.html#4048">Re4:カレントマクロのパス取得 他</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4053</span>
+    <a class="title" href="4044.html#4053">取り込みありがとうございました</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=4044>
+    <span class="no">[4044]</span>
+    <a class="title" href="#4044">カレントマクロのパス取得 他</a>
+    <span class="author">FILE</span>
+    <time datetime="2005-09-19T16:12:17">2005年09月19日 16:12</time></h1>
+    <div class="body">　カレントマクロのパス取得を実装してみました。<br>  (ExpandParameterで$M)<br><br>　マクロの設定ファイル名や外部.wscファイル名を相対パスで<br>保持しておいて、実行時にマクロのフルパスを元に絶対パスを<br>生成すれば、環境に依存しにくくなると思います。<br>　(サクラエディタでマクロを使い始めてから、ずっと欲しい機能でした)<br><br><br>　ついでに、<br><br>・サクラエディタのパスを取得する(&gt;&gt;macro:207)<br>にも対応してみました。(ExpandParameterで$S)<br><br>・MsgBox, InputBox(&gt;&gt;dev:3921)<br>も少し修正して取り込んでいます。<br>　(wscのMsgBox, InputBoxだと、一度フォーカスを失った時に、<br>  ダイアログがサクラエディタの裏側に表示されるが使いづらいので)<br><br>　差分ファイルは、≪ 投稿許可サイズオーバーです. ≫と言われて<br>しまいましたので、以下のアドレスに(最低１ヶ月ぐらい)置いておきます。<br><br>www001.upp.so-net.ne.jp/folder/BywqBzIr/050919-Sakura_Diff/ssrc_2005-09-03_CurMacro.diff<br><br>　Ver. 1.5.6.0(2005-09-03)をベースに変更し、<br>Win95(+IE5.5), WinMe(+IE5.5), WinXP(+IE6)の環境で<br>動作確認しました。<br></div></section>
+    <ul><li><section><h1 id=4045>
+    <span class="no">[4045]</span>
+    <a class="title" href="#4045">Re:カレントマクロのパス取得 他</a>
+    <span class="author">miau</span>
+    <time datetime="2005-09-19T20:38:27">2005年09月19日 20:38</time></h1>
+    <div class="body">▼ FILEさん<br>&gt; 　カレントマクロのパス取得を実装してみました。<br>&gt;   (ExpandParameterで$M)<br><br>要望を出そうと思って覗いてみたら、既に実装されているとは・・・。<br><br>早速適用してみましたが、Win2000 でもちゃんと動作しました。<br>これで外部スクリプトを実行するマクロが汎用的なものになりますね。<br>ありがとうございます。<br><br>&gt; ・サクラエディタのパスを取得する(&gt;&gt;macro:207)<br>&gt; にも対応してみました。(ExpandParameterで$S)<br><br>これも動作確認しました。<br>sakura.exe を新規に起動したり &gt;&gt;macro:206 でりーやさんが言っていた<br><br>&gt; Perl(Script)での荒っぽい裏技としては、sakura.iniから読む<br>&gt; というテはあリかもです。（結構ストレスなく動きます）<br><br>を実現する上で便利そうですね。</div></section>
+    <ul><li><section><h1 id=4046>
+    <span class="no">[4046]</span>
+    <a class="title" href="#4046">Re2:カレントマクロのパス取得 他</a>
+    <span class="author">maru</span>
+    <time datetime="2005-09-20T00:19:12">2005年09月20日 00:19</time></h1>
+    <div class="body">▼ FILEさん<br>&gt; 　カレントマクロのパス取得を実装してみました。<br>&gt; ・サクラエディタのパスを取得する(&gt;&gt;macro:207)<br><br>ナイス＆タイムリー！！こちらでも動作確認しました。<br><br>ところで、$Sは「ScriptPath」にも見えるので<br>$E(エディタパス)が最適と思っていました。<br>ま、どちらでも・・・。<br><br>ついでに質問ですが、MsgBoxやInputBoxは<br>wscの中でしか動作しない？<br>で、間違いありませんか？</div></section>
+    <ul><li><section><h1 id=4047>
+    <span class="no">[4047]</span>
+    <a class="title" href="#4047">Re3:カレントマクロのパス取得 他</a>
+    <span class="author">FILE</span>
+    <time datetime="2005-09-20T23:09:45">2005年09月20日 23:09</time></h1>
+    <div class="body">　miau様、maru様、動作確認ありがとうございます。<br><br><br>&gt; ところで、$Sは「ScriptPath」にも見えるので<br>&gt; $E(エディタパス)が最適と思っていました。<br>&gt; ま、どちらでも・・・。<br><br>　「$Eの方がいい」というご意見が多数であれば、<br>変更させていただきますが…。<br>　(SakuraのSから安直に名付けただけですので)<br><br><br>&gt; MsgBoxやInputBoxは<br>&gt; wscの中でしか動作しない？<br><br>　(こちらの環境では)現時点のサクラエディタでも、wsc内で<br>MsgBoxやInputBoxが動作しています。(↓の制限付きで)<br>&gt; 一度フォーカスを失った時に、ダイアログがサクラエディタの裏側に<br>&gt; 表示される【の】(脱字修正)が使いづらいので<br><br>　上記の差分を適用すると、VBScript(拡張子vbs)から<br>MsgBoxやInputBoxが使用できるようになります。<br></div></section>
+    <ul><li><section><h1 id=4048>
+    <span class="no">[4048]</span>
+    <a class="title" href="#4048">Re4:カレントマクロのパス取得 他</a>
+    <span class="author">maru</span>
+    <time datetime="2005-09-21T00:12:58">2005年09月21日 00:12</time></h1>
+    <div class="body">▼ FILEさん<br><br>【現時点のサクラエディタ】<br>wsc内でのみMsgBoxやInputBoxがそれなりに動作する。<br><br>【差分を適用後】<br>VBScriptからMsgBoxやInputBoxが使用できるように。<br><br>ということのようですね。確認できました。<br>この修正はかなりgoodです。</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=4053>
+    <span class="no">[4053]</span>
+    <a class="title" href="#4053">取り込みありがとうございました</a>
+    <span class="author">FILE</span>
+    <time datetime="2005-10-05T00:33:05">2005年10月05日 00:33</time></h1>
+    <div class="body">　1.5.7.0での取り込み、ありがとうございました。<br>　今まで以上にマクロが活用出来そうです。<br><br>　コードやコメントまで修正していただいた様で、<br>本当にありがとうございました。(力不足でお手数掛けます…)<br><br><br>　以下、内部実装を見ていた時の話。<br><br>　フルパスを取得しようとソースコードを覗いていましたが、<br>スクリプトが文字列で保持されているらしく、マクロの番号<br>すら分かりませんでした。そのため、今回の修正でマクロの<br>番号を保持する変数と、その変数へアクセスするための関数<br>を追加させていただきました。(キーマクロも一応考慮)<br></div></section>
+    </li></ul></li></ul></body></html>

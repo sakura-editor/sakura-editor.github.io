@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>bug</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3052</span>
+    <a class="title" href="3052.html#3052">bug</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3053</span>
+    <a class="title" href="3052.html#3053">bugではない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3054</span>
+    <a class="title" href="3052.html#3054">RE: bugではない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3056</span>
+    <a class="title" href="3052.html#3056">Re2: bugではない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3061</span>
+    <a class="title" href="3052.html#3061">Re3: bugではない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3063</span>
+    <a class="title" href="3052.html#3063">Re4: bugではない</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3093</span>
+    <a class="title" href="3052.html#3093">Re: bug</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3052>
+    <span class="no">[3052]</span>
+    <a class="title" href="#3052">bug</a>
+    <span class="author">みく</span>
+    <time datetime="2003-08-31T15:51:19">2003年08月31日 15:51</time></h1>
+    <div class="body"><br>CDlgFavorite.cpp<br>/* モーダルダイアログの表示 */<br>int CDlgFavorite::DoModal(<br>^^^型が抜けています。<br><br>CDlgTagJumpList.cpp<br>/* モーダルダイアログの表示 */<br>int CDlgTagJumpList::DoModal(<br>^^^型が抜けています。<br></div></section>
+    <ul><li><section><h1 id=3053>
+    <span class="no">[3053]</span>
+    <a class="title" href="#3053">bugではない</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-08-31T16:07:36">2003年08月31日 16:07</time></h1>
+    <div class="body">関数の返り血の型を省略するとintになる。これ常識。よって、bugではない。C99/ANSIに違反するのみ。</div></section>
+    <ul><li><section><h1 id=3054>
+    <span class="no">[3054]</span>
+    <a class="title" href="#3054">RE: bugではない</a>
+    <span class="author">みく</span>
+    <time datetime="2003-08-31T16:45:15">2003年08月31日 16:45</time></h1>
+    <div class="body"><br>あ、MinGW3.0.0-rc4でビルドしてたらエラーになったもので、<br>とりあえず報告しておきました。<br><br>あいかわらずwindresでビルドするとダイアログが出ない。<br>VC6のrcを使ってごまかすと、日本語の0x5c以降が表示されませんでした。<br><br>誰か解決してくんないかなぁ、なんて。<br></div></section>
+    <ul><li><section><h1 id=3056>
+    <span class="no">[3056]</span>
+    <a class="title" href="#3056">Re2: bugではない</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-08-31T17:05:03">2003年08月31日 17:05</time></h1>
+    <div class="body">▼ みくさん<br>&gt; あ、MinGW3.0.0-rc4でビルドしてたらエラーになったもので、<br>&gt; VC6のrcを使ってごまかすと、日本語の0x5c以降が表示されませんでした。<br>0x5c=='\\' だろ？　日本語コード問題はczenyenでソース変換して対処すれば？<br><br>▼ みくさんの一般記事2578の結果報告：<br>&gt;ビルドに成功はしましたが、sakura_rc.rcで定義している<br>&gt;ダイアログ系が全滅です。<br>&gt;windresは、rcファイルのDLGINITという定義に対応していません。<br>&gt;rcファイルの日本語文字列の後ろに日本語文字数だけ\000<br>&gt;が付いてしまいます。<br><br>DLGINITって、何番だっけ？　resource hackerで調べてみて。<br><br>...<br>&gt;MinGWのビルドツールをアップしました。<br>&gt;junk/mingw-build-2003-03-10.zip<br></div></section>
+    <ul><li><section><h1 id=3061>
+    <span class="no">[3061]</span>
+    <a class="title" href="#3061">Re3: bugではない</a>
+    <span class="author">みく</span>
+    <time datetime="2003-08-31T22:02:14">2003年08月31日 22:02</time></h1>
+    <div class="body"><br>http://jp1.freemy.homeip.net/noire/sjis.html<br>にある<br>http://jp1.freemy.homeip.net/noire/archives/windres-2.14.90-sjis.zip<br>を使ったらうまくいけました。<br></div></section>
+    <ul><li><section><h1 id=3063>
+    <span class="no">[3063]</span>
+    <a class="title" href="#3063">Re4: bugではない</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-01T10:22:19">2003年09月01日 10:22</time></h1>
+    <div class="body">DLGINIT=240でした。windresに-DDLGINIT=240を付けると、うまく通るでしょう。<br>bug-binutils@gnu.orgに報告しておきます。<br><br># binutils/resrc.c<br>-#define DEFAULT_PREPROCESSOR "gcc -E -xc -DRC_INVOKED"<br>+#define DEFAULT_PREPROCESSOR "gcc -E -xc -DRC_INVOKED -DDLGINIT=240"<br><br># Borland版のリリースビルドのとき、-w-8004 -w-8057で警告が消してやって。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=3093>
+    <span class="no">[3093]</span>
+    <a class="title" href="#3093">Re: bug</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-07T13:23:16">2003年09月07日 13:23</time></h1>
+    <div class="body">intつけときました<br></div></section>
+    </li></ul></li></ul></body></html>

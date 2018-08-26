@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>不具合でしょうか？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3943</span>
+    <a class="title" href="3943.html#3943">不具合でしょうか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3944</span>
+    <a class="title" href="3943.html#3944">Re: 不具合でしょうか？(大量置換後のメモリ使用量)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3945</span>
+    <a class="title" href="3943.html#3945">Re2: 不具合でしょうか？(大量置換後のメモリ使用量)</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3943>
+    <span class="no">[3943]</span>
+    <a class="title" href="#3943">不具合でしょうか？</a>
+    <span class="author">arisa</span>
+    <time datetime="2005-06-08T16:56:58">2005年06月08日 16:56</time></h1>
+    <div class="body">はじめまして。<br>不具合なのかちょっと不安ですが。。。。<br>自分でしか確認していませんが、<br>すべて置換で置換作業時に2000箇所を「//」から「」に変更したところ<br>そのファイルを閉じるまでメモリ使用率が上がったままに<br>なりました。メモリリークしてるのではと思って。。。<br>2000個くらいだとわかりにくかったので水平タブを40万行<br>作り半角スペースに変換で試してみたところ同じようでした。。。<br><br>使用OS　 ：WinXP　SP2<br>SakuraVer：1.5.3.0<br><br>質問に書くべきか迷ったのですが、一応こちらに書かせて<br>頂きました。。。。</div></section>
+    <ul><li><section><h1 id=3944>
+    <span class="no">[3944]</span>
+    <a class="title" href="#3944">Re: 不具合でしょうか？(大量置換後のメモリ使用量)</a>
+    <span class="author">もか</span>
+    <time datetime="2005-06-09T00:16:25">2005年06月09日 00:16</time></h1>
+    <div class="body">はじめまして、まずは報告ありがとうございます。<br><br>サクラエディタでは、置換した動作を[元に戻す]ことができるように、<br>変更する前の内容と位置を、1箇所ごとに全て記憶しています。<br>絶対にメモリリークしてないとも言い切れないものの、<br>この動作がメモリを大量に使っているのが原因だと考えられます。<br>　制限なしのRedo/Undoなので、今のところ仕様だと思います。<br>しかし、不具合といえば不具合ですね。<br><br>私も試しに、216KBのファイルで23328個ほど「a」を「b」に置換してみたら<br>13MBが40MBになりました。<br>これならファイル丸ごと1度に記憶したほうがお得です。。<br></div></section>
+    <ul><li><section><h1 id=3945>
+    <span class="no">[3945]</span>
+    <a class="title" href="#3945">Re2: 不具合でしょうか？(大量置換後のメモリ使用量)</a>
+    <span class="author">arisa</span>
+    <time datetime="2005-06-09T00:33:43">2005年06月09日 00:33</time></h1>
+    <div class="body">ご返信ありがとうございます。<br><br>&gt;サクラエディタでは、置換した動作を[元に戻す]ことができるように、<br>&gt;変更する前の内容と位置を、1箇所ごとに全て記憶しています。<br><br>なるほど納得です。<br>普段ここまで大量のデータを置換することはあまり無いとは<br>思うので、一応アプリケーション終了時にはきちんと解放されている<br>ようなので、大丈夫だと思います。<br><br>どうもお騒がせしました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

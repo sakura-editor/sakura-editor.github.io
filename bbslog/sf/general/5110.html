@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>2ストロークキーの定義</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5110</span>
+    <a class="title" href="5110.html#5110">2ストロークキーの定義</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5112</span>
+    <a class="title" href="5110.html#5112">RE: 2ストロークキーの定義</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5117</span>
+    <a class="title" href="5110.html#5117">Re2: 2ストロークキーの定義</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5118</span>
+    <a class="title" href="5110.html#5118">Re3: 2ストロークキーの定義</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5110>
+    <span class="no">[5110]</span>
+    <a class="title" href="#5110">2ストロークキーの定義</a>
+    <span class="author">kage</span>
+    <time datetime="2006-03-20T19:12:54">2006年03月20日 19:12</time></h1>
+    <div class="body">Ctrl+Q、Ctrl+C　に"ファイルの先頭に移動"を割り当てる<br>のように、2ストロークキーを定義したいのですが、<br>どのように設定したらよろしいのでしょうか?<br></div></section>
+    <ul><li><section><h1 id=5112>
+    <span class="no">[5112]</span>
+    <a class="title" href="#5112">RE: 2ストロークキーの定義</a>
+    <span class="author">すい</span>
+    <time datetime="2006-03-21T00:50:28">2006年03月21日 00:50</time></h1>
+    <div class="body">&gt;Ctrl+Q、Ctrl+C　に"ファイルの先頭に移動"を割り当てる<br><br>「ファイルの先頭に移動」なら Ctrl+Q → R じゃないかな～～？<br><br>共通設定 → [キー割り当て]タブにて<br>Ctrl+Q に「メニュー23」を割り当てる。<br><br>共通設定 → [カスタムメニュー]タブにて<br>「メニュー23」の中に<br>　+─────────────<br>　|ファイルの先頭に移動<br>　|ファイルの最後に移動<br>　+─────────────<br>　|検索<br>　+─────────────<br>　|各種モードの取り消し<br>　+─────────────<br>と、機能を定義していきます。<br><br>で、この設定画面中の「ファイルの先頭に移動」を<br>マウスでダブルクリックして<br>「メニューアイテムのアクセスキー設定」<br>ダイアログを出して「R」と入力して [OK] します。<br>すると「ファイルの先頭に移動」が<br>「ファイルの先頭に移動(R)」になります。<br><br>同様に「ファイルの最後に移動」をマウスで突付いて<br>「C」と設定。<br><br>同様に「検索」をマウスで突付いて<br>「F」と設定。<br><br>同様に「各種モードの取り消し」をマウスで突付いて<br>「Q」と設定。<br><br>で、<br>　+─────────────<br>　|ファイルの先頭に移動(R)<br>　|ファイルの最後に移動(C)<br>　+─────────────<br>　|検索(F)<br>　+─────────────<br>　|各種モードの取り消し(Q)<br>　+─────────────<br>のようになったら [OK] で共通設定を閉じて設定完了。<br></div></section>
+    <ul><li><section><h1 id=5117>
+    <span class="no">[5117]</span>
+    <a class="title" href="#5117">Re2: 2ストロークキーの定義</a>
+    <span class="author">kage</span>
+    <time datetime="2006-03-22T15:50:28">2006年03月22日 15:50</time></h1>
+    <div class="body">Ctrl+Q → Rです<br>質問の文面が間違っていました。<br><br>早速定義したところ、うまく動作しましたありがとうございます。<br><br>スレッドを変えるべきかもしれませんが、新たな疑問が湧いてきました。<br>マクロで、今選択されている領域の行・列番号を取得するには<br>どうしたらよいのでしょうか?<br>選択範囲の左上と右下の位置がわかればよいです。<br><br>マクロで使える関数の一覧や書式について、<br>どの文書に書いてあるのか解からなくて困っています。<br>どこかからダウンロードするのだと思いますが、手がかり<br>も見つけられません。<br>（エディタ本体と一緒にインストールされているヘルプには、<br>簡単なサンプルがいくつかあるだけで、これだけでは<br>情報です）<br><br></div></section>
+    <ul><li><section><h1 id=5118>
+    <span class="no">[5118]</span>
+    <a class="title" href="#5118">Re3: 2ストロークキーの定義</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-03-22T21:40:54">2006年03月22日 21:40</time></h1>
+    <div class="body">▼ kageさん<br>&gt; スレッドを変えるべきかもしれませんが、新たな疑問が湧いてきました。<br>&gt; マクロで、今選択されている領域の行・列番号を取得するには<br>&gt; どうしたらよいのでしょうか?<br>&gt; 選択範囲の左上と右下の位置がわかればよいです。<br><br>  MessageBox(IntToStr(S_GetSelectLineFrom), 'title', 0);<br>  MessageBox(IntToStr(S_GetSelectLineTo), 'title', 0);<br>  MessageBox(IntToStr(S_GetSelectColmFrom), 'title', 0);<br>  MessageBox(IntToStr(S_GetSelectColmTo), 'title', 0);<br>こちらです。<br>&gt;&gt;macro:48<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

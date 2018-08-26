@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>逆TABインデント</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">592</span>
+    <a class="title" href="592.html#592">逆TABインデント</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=592>
+    <span class="no">[592]</span>
+    <a class="title" href="#592">逆TABインデント</a>
+    <span class="author">貧弱</span>
+    <time datetime="2015-03-18T23:02:24">2015年03月18日 23:02</time></h1>
+    <div class="body">勉強がてら、なんとなく作ってみました。<br>逆TABインデントの挙動を自分好みに改変。<br><br>＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿<br>// 逆TABインデント<br>// unindenttab.js<br><br>function unindenttab() {<br>    var linestr = Editor.GetLineStr(0); // カーソル行の文字列<br>    var cursor = parseInt(Editor.ExpandParameter("$x"), 10) - 1; // カーソル位置<br><br>    if(linestr.charAt(cursor - 1) == "\t") {<br>        // カーソルの左が TAB 文字の場合、TAB 文字削除<br>        Editor.DeleteBack();<br>        return true;<br>    } else {<br>        // カーソルの左が半角スペースの場合、TAB 幅の倍数のところまで削除<br>        var tw = Editor.ChangeTabWidth(0); // TAB 幅<br>        var sw = Editor.GetStrWidth(linestr.substr(0, cursor)); // カーソル位置までの文字幅<br>        var dw = (sw - 1) % tw + 1; // 削除する文字数<br><br>        // Undo 時にカーソル位置が元に戻るように、一旦左に移動した後に右選択してから削除する<br>        var i;<br>        for(i = 0; i &lt; dw &amp;&amp; linestr.charAt(cursor - i - 1) == " "; i++) { Editor.Left(); }<br>        if(i &gt; 0) {<br>            for(; i &gt; 0; i--) { Editor.Right_Sel(); }<br>            Editor.Delete();<br>            return true;<br>        }<br>    }<br><br>    return false;<br>}<br><br>if(Editor.IsTextSelected()) {<br>    // テキスト選択時は通常の逆TABインデント<br>    Editor.UnindentTab(0);<br>} else {<br>    Editor.SetDrawSwitch(0);<br>    var ret = unindenttab();<br>    Editor.SetDrawSwitch(1);<br>    Editor.ReDraw(0);<br><br>    if(!ret) { Editor.StatusMsg("★逆インデントは選択時のみ"); }<br>}</div></section>
+    </li></ul></body></html>

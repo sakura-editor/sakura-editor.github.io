@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>【要望】読み取り専用ファイルの編集時の動作</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5444</span>
+    <a class="title" href="5444.html#5444">【要望】読み取り専用ファイルの編集時の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5447</span>
+    <a class="title" href="5444.html#5447">Re:【要望】読み取り専用ファイルの編集時の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5450</span>
+    <a class="title" href="5444.html#5450">Re2:【要望】読み取り専用ファイルの編集時の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5480</span>
+    <a class="title" href="5444.html#5480">Re3:【要望】読み取り専用ファイルの編集時の動作</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5444>
+    <span class="no">[5444]</span>
+    <a class="title" href="#5444">【要望】読み取り専用ファイルの編集時の動作</a>
+    <span class="author">Shark++</span>
+    <time datetime="2006-09-24T11:18:10">2006年09月24日 11:18</time></h1>
+    <div class="body">Shark++です。<br>厚かましいようですが、もう一点(二点かな？)別の要望があります。<br><br>・上書き保存時のメッセージを変更してほしい<br>現在は<br># '～'<br># ファイルを保存できません。<br># パスが存在しないか、他のアプリケーションで使用されている可能性があります。<br>となっていますが、これに読み取り専用になっている可能性ついても追加してほしいです。<br><br>ご検討よろしくお願いします。<br><br>・読み取り専用属性が付いているファイルを編集時にタイトルバーにそのことがわかるように表示してほしい<br>と思ったら 共通設定→ウインドウタブにタイトルバーの文字列が指定できますね<br>でも↓になっているけど（上書き禁止）が表示されない。なぜでしょうか？<br>${w?$h$:アウトプット$:${I?$f$:$N$}$}${U?(更新)$} - sakura $V ${R?(読みとり専用)$:（上書き禁止）$}${M?  【キーマクロの記録中】$}<br></div></section>
+    <ul><li><section><h1 id=5447>
+    <span class="no">[5447]</span>
+    <a class="title" href="#5447">Re:【要望】読み取り専用ファイルの編集時の動作</a>
+    <span class="author">すい</span>
+    <time datetime="2006-09-25T01:03:59">2006年09月25日 01:03</time></h1>
+    <div class="body">&gt; ・読み取り専用属性が付いているファイルを編集時にタイトルバーにそのことがわかるように表示してほしい<br>&gt; と思ったら 共通設定→ウインドウタブにタイトルバーの文字列が指定できますね<br>&gt; でも↓になっているけど（上書き禁止）が表示されない。なぜでしょうか？<br><br>排他制御はONになっていますか？<br># 共通設定 → [ファイル]タブ<br><br>「排他制御しない」だと読み取り専用属性の判別が機能しなかったかと。<br>どういう理屈でそうなっているのか、までは知りませんが。</div></section>
+    <ul><li><section><h1 id=5450>
+    <span class="no">[5450]</span>
+    <a class="title" href="#5450">Re2:【要望】読み取り専用ファイルの編集時の動作</a>
+    <span class="author">Shark++</span>
+    <time datetime="2006-09-26T01:28:09">2006年09月26日 01:28</time></h1>
+    <div class="body">▼ すいさん<br>&gt; &gt; ・読み取り専用属性が付いているファイルを編集時にタイトルバーにそのことがわかるように表示してほしい<br>&gt; &gt; と思ったら 共通設定→ウインドウタブにタイトルバーの文字列が指定できますね<br>&gt; &gt; でも↓になっているけど（上書き禁止）が表示されない。なぜでしょうか？<br>&gt; <br>&gt; 排他制御はONになっていますか？<br>&gt; # 共通設定 → [ファイル]タブ<br>&gt; <br>&gt; 「排他制御しない」だと読み取り専用属性の判別が機能しなかったかと。<br>&gt; どういう理屈でそうなっているのか、までは知りませんが。<br>なるほど、どうりで最近その表示を見ていなかったわけです。<br>仰るとおり「排他制御しない」で使ってました。<br>実装としては文書の読込時に属性をチェックをすれば事足りるような気がしないでもないですが...<br></div></section>
+    <ul><li><section><h1 id=5480>
+    <span class="no">[5480]</span>
+    <a class="title" href="#5480">Re3:【要望】読み取り専用ファイルの編集時の動作</a>
+    <span class="author">かて</span>
+    <time datetime="2006-10-02T10:06:40">2006年10月02日 10:06</time></h1>
+    <div class="body">タイトルバーについてはこちらでも再現していますので、<br>修正を希望しておいて・・・<br><br>で、本題なのですが、「排他制御しない」にチェックが入っていた場合、読み取り専用ファイルが編集できてしまいました。<br>保存する時にエラーメッセージのダイアログが出て、上書きはできないようになっていますが。。<br>しかし、そのメッセージが<br>「パスが存在しないか、他のアプリケーションで使用されている可能性があります」<br>というメッセージになっているので、これは不適切というか混乱の原因になると思いますので、ぜひ修正をお願いします。<br><br>よろしくお願いします。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4005</span>
+    <a class="title" href="4005.html#4005">正規表現</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4006</span>
+    <a class="title" href="4005.html#4006">Re:正規表現</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=4005>
+    <span class="no">[4005]</span>
+    <a class="title" href="#4005">正規表現</a>
+    <span class="author">きだ</span>
+    <time datetime="2004-08-17T11:45:47">2004年08月17日 11:45</time></h1>
+    <div class="body">はじめまして。<br><br>VBのソースから、<br>「Fields("XX")」または、「Fields(0)」など、<br>「.Value」が記述されていない箇所をするには<br>どのようにすればよいのか、お知恵をお貸しください。<br><br>自分で試したのは、<br>Fields\(.+?\)[^.]<br>ですが、<br>「Fields(1).Value, "0000")」とか「Fields("SETTI").Value)」<br>といった箇所がヒットしてしまいます。<br><br></div></section>
+    <ul><li><section><h1 id=4006>
+    <span class="no">[4006]</span>
+    <a class="title" href="#4006">Re:正規表現</a>
+    <span class="author">(全略)</span>
+    <time datetime="2004-08-17T12:08:13">2004年08月17日 12:08</time></h1>
+    <div class="body">▼ きださん<br>&gt; 自分で試したのは、<br>&gt; Fields\(.+?\)[^.]<br>&gt; ですが、<br>&gt; 「Fields(1).Value, "0000")」とか「Fields("SETTI").Value)」<br>&gt; といった箇所がヒットしてしまいます。<br>Fields\([^)]+\)(?!\.Value) でいけますね<br><br>ただし<br>Fields(Val(opt1.Value)) とかのように括弧の中にさらに括弧が何重にも現れるような場合は<br>正規表現の性質上、記述が不可能です<br>そんなときは、perlの拡張正規表現とかでも使ってくださいな<br></div></section>
+    </li></ul></li></ul></body></html>

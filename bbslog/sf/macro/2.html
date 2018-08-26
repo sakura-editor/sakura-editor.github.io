@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>10進数 連番生成マクロ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">2</span>
+    <a class="title" href="2.html#2">10進数 連番生成マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4</span>
+    <a class="title" href="2.html#4">Re:10進数 連番生成マクロ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">10</span>
+    <a class="title" href="2.html#10">10進数 連番生成マクロ 更新 / 16進数版 追加</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2>
+    <span class="no">[2]</span>
+    <a class="title" href="#2">10進数 連番生成マクロ</a>
+    <span class="author">すい</span>
+    <time datetime="2002-11-21T00:04:14">2002年11月21日 00:04</time></h1>
+    <div class="body">遊びで試しに作ってみたら以外に便利そうな気がしたので公開しておきます。<br><br>http://www.egroups.co.jp/files/sakura-editor/Junk/<br>→ REN.zip<br><br>動作としては、<br>↓次の様なテキストがある場合（ | がカーソル位置とします）<br>--------------------<br>copy  original.txt  test|03.txt<br>--------------------<br><br>↓このマクロを実行すると、↓<br><br>--------------------<br>copy  original.txt  test03.txt<br>copy  original.txt  test|04.txt<br>--------------------<br><br>という１行が増えます。そのまま何度もマクロの実行を続けると、<br><br>--------------------<br>copy  original.txt  test03.txt<br>copy  original.txt  test04.txt<br>copy  original.txt  test05.txt<br>copy  original.txt  test06.txt<br>copy  original.txt  test07.txt<br>copy  original.txt  test08.txt<br>copy  original.txt  test09.txt<br>copy  original.txt  test10.txt<br>copy  original.txt  test|11.txt<br>--------------------<br><br>という具合に。。。<br>「カーソル位置より右の数値」が + 1 した値の行が増えていきます。<br># 「カーソル位置より左の文字」は、たとえ数値であろうと無視して、そのままとなります。<br>それだけ。<br><br>現在対応しているのは半角文字の 10進数数値のみですが、16進数なんかにも対応可能ですね。<br>かなり面倒ですけど。 :-)<br></div></section>
+    <ul><li><section><h1 id=4>
+    <span class="no">[4]</span>
+    <a class="title" href="#4">Re:10進数 連番生成マクロ</a>
+    <span class="author">やお</span>
+    <time datetime="2002-12-12T13:39:58">2002年12月12日 13:39</time></h1>
+    <div class="body">連番機能がほしくて、要望に書こうとしていたところ、<br>ちょうどいい具合に見つけました。<br>非常に便利で、重宝してます。<br><br>マクロ掲示板って、トップページから来れないんですね。<br>ここの存在を知らない人も多いかも。</div></section>
+    </li><li><section><h1 id=10>
+    <span class="no">[10]</span>
+    <a class="title" href="#10">10進数 連番生成マクロ 更新 / 16進数版 追加</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-17T04:29:46">2002年12月17日 04:29</time></h1>
+    <div class="body">http://www.egroups.co.jp/files/sakura-editor/Junk/<br>→ duplinc_20021217_04.LZH<br><br>10進数 連番行生成 DupLINC.PPA<br>・バグフィクス<br>　・カーソル位置に数値が無い場合の動作を修正<br>　・カーソル位置が行末や [EOF] 直前の場合の考慮もれ修正<br>・動作速度改善（の つもり）<br>・ファイル名変更 (;^^;)  ⇒ DupLINC.PPA ( DuplicateLine_INC の つもり)<br><br>ついでに 16進数版も作りました。<br>DupLINCX.PPA ( DuplicateLine_INCX の つもり)<br>仕様としては<br>・16進数4桁(0～0xFFFF)まで<br>・10～15 は英大文字の 'A'～'F' を使う。<br>となっています。他の動作仕様は 10進数版と全く同じです。<br>「最大桁数は 0xFFFF まで」や「英大文字を使う」といった辺りは中を書き換えれば<br>「最大 0xFFFFFFFF まで」とか「英小文字 'a'～'f' を使う」とかできますのでご自由に。<br><br>いじょ//<br></div></section>
+    </li></ul></li></ul></body></html>

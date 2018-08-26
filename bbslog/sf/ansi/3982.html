@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>存在しないファイルの履歴からのオープンで動作不正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3982</span>
+    <a class="title" href="3982.html#3982">存在しないファイルの履歴からのオープンで動作不正</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=3982>
+    <span class="no">[3982]</span>
+    <a class="title" href="#3982">存在しないファイルの履歴からのオープンで動作不正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-07-19T11:17:48">2005年07月19日 11:17</time></h1>
+    <div class="body">[共通設定]-[ファイル]-[前回と異なる文字コードのとき問い合わせを行う] がＯＮのとき、<br>・既に削除されて存在しないファイルを履歴から開く<br>・再度、同じファイルを履歴から開く<br>という操作をすると不正終了します。<br>（運がよければ？問い合わせのメッセージで新しい文字コードの箇所が文字化けするだけです）<br><br>CEditDoc_new.cpp line 1273-1302 の処理で、<br>CMemory::CheckKanjiCodeOfFile()<br>がエラー(-1)を返した場合に pszCodeNameNew に何も値が設定されていません。<br><br>--- sakura_core_2005-07-16\CEditDoc_new.cpp&#9;Sat Jul 16 07:59:43 2005<br>+++ sakura_core\CEditDoc_new.cpp&#9;Tue Jul 19 11:49:19 2005<br>@@ -1276,7 +1276,7 @@<br> &#9;&#9;&#9;&#9;エラー&#9;-1 */<br> &#9;&#9;&#9;nCharCodeNew = CMemory::CheckKanjiCodeOfFile( pszPath );<br> &#9;&#9;&#9;if( -1 == nCharCodeNew ){<br>-<br>+&#9;&#9;&#9;&#9;nCharCode = pfi-&gt;m_nCharCode;<br> &#9;&#9;&#9;}else{<br> &#9;&#9;&#9;&#9;nCharCode = nCharCodeNew;<br> &#9;&#9;&#9;}<br><br>で、いいのかなぁ？<br></div></section>
+    </li></ul></body></html>

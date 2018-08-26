@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>WSHでエラー終了等</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3404</span>
+    <a class="title" href="3404.html#3404">WSHでエラー終了等</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3405</span>
+    <a class="title" href="3404.html#3405">Re: WSHでエラー終了等</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3538</span>
+    <a class="title" href="3404.html#3538">Re2: WSHでエラー終了等</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3404>
+    <span class="no">[3404]</span>
+    <a class="title" href="#3404">WSHでエラー終了等</a>
+    <span class="author">FILE</span>
+    <time datetime="2004-02-07T14:06:25">2004年02月07日 14:06</time></h1>
+    <div class="body">　こんにちは。<br>　いつも活用しております。(特に矩形選択とWSH)<br><br>　下記の現象が発生しましたので、報告します(Ver. 1.4.3.4)。<br><br>●VBScriptのTypeName<br><br>　[コード]<br>　　Call CreateObject("WScript.Shell").Popup(TypeName(Me))<br>　　Call CreateObject("WScript.Shell").Popup(TypeName(Editor))<br><br>　[現象]<br>　　WinMe:Sakura が原因で OLEAUT32.DLL にエラーが発生しました。<br>　　　　　Sakura は終了します。<br>　　　　　問題が解決しない場合は、コンピュータを再起動してください。<br>　　WinXP:"0x77bf3ec0" の命令が "0x00000001" のメモリを参照しました。<br>　　　　　メモリが "read" になることはできませんでした。<br><br>●VBScriptのVarType<br><br>　[コード]<br>　　Call CreateObject("WScript.Shell").Popup(VarType(Me))<br>　　Call CreateObject("WScript.Shell").Popup(VarType(Editor))<br><br>　[現象]<br>　　　Popupで0が表示され、新しくSakuraが起動する。<br>　　　WinMeでは、そのPopupをアクティブに出来るが、WinXPでは出来ない。<br>　　　Popupを閉じずに、元のSakuraと新しく起動したSakuraを閉じると、<br>　　デスクトップの左上にBitBltされたようなイメージが(少し)残る。<br><br>　　ソースを眺めてみましたが、原因は分かりませんでした…。<br>　　新しくSakuraが起動するのは、　&gt;&gt;dev:3395 WSH(不明)　と関係が<br>　あるかもしれません。<br><br>以上、ご確認よろしくお願いいたします。<br><br>　[補足]<br>　　JScriptでは、問題無さそうでした。<br>　　(new ActiveXObject('WScript.Shell')).Popup(typeof this); // object<br>　　(new ActiveXObject('WScript.Shell')).Popup(typeof Editor); // object<br></div></section>
+    <ul><li><section><h1 id=3405>
+    <span class="no">[3405]</span>
+    <a class="title" href="#3405">Re: WSHでエラー終了等</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-02-08T23:05:58">2004年02月08日 23:05</time></h1>
+    <div class="body">&gt;●VBScriptのTypeName<br>デバッガ上で動かして動作を追ってみたところ，CInterfaceObjectTypeInfo::GetDocumentat<br>ion()を処理せずに不当な戻り値を返しています．しかしここを全部NULLを返すようにしてもやっぱり起こる．memid==-1で呼びだされているのがそもそもなんか変？<br><br>&gt;●VBScriptのVarType<br>CInterfaceObject::Invoke=IDispatch::InvokeがdispidMember==0で呼ばれるためにFileNewが動いているようです．<br>ただ，現在無視しているwFlagsというパラメータが<br>* 通常： 1 == DISPATCH_METHOD<br>* VarType: 3 == DISPATCH_METHOD|DISPATCH_PROPERTYGET<br>と異なるようです．<br></div></section>
+    <ul><li><section><h1 id=3538>
+    <span class="no">[3538]</span>
+    <a class="title" href="#3538">Re2: WSHでエラー終了等</a>
+    <span class="author">FILE</span>
+    <time datetime="2004-04-18T15:47:30">2004年04月18日 15:47</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;●VBScriptのVarType<br>&gt; CInterfaceObject::Invoke=IDispatch::InvokeがdispidMember==0で呼ばれるためにFileNewが動いているようです．<br>&gt; ただ，現在無視しているwFlagsというパラメータが<br>&gt; * 通常： 1 == DISPATCH_METHOD<br>&gt; * VarType: 3 == DISPATCH_METHOD|DISPATCH_PROPERTYGET<br>&gt; と異なるようです．<br><br>　こんばんは。ご確認ありがとうございます。<br><br>　OAIDL.Hによると、DISPID の 0 は("value"プロパティとして)予約済みである<br>と書かれている模様です。<br><br>&gt; /* DISPID reserved for the "value" property */<br>&gt; #define&#9;DISPID_VALUE&#9;( 0 )<br><br>　1 以降を使用した方が良いのかも知れません。<br><br>　おそらくご確認済みかとは思いますが、後で見る人のためにも、ここに書いて<br>おきます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

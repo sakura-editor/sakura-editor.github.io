@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>色分けの不具合修正パッチ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">4156</span>
+    <a class="title" href="4156.html#4156">色分けの不具合修正パッチ</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=4156>
+    <span class="no">[4156]</span>
+    <a class="title" href="#4156">色分けの不具合修正パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2005-11-21T02:08:04">2005年11月21日 02:08</time></h1>
+    <div class="body">色分けの不具合修正パッチなどです。<br><br>[修正]<br>・対括弧の色が不正なことがまれにある<br>  CEditView.cpp GetColorIndex 9300行目付近<br>・コメントの色分けがON/OFFに関係なく適用される &gt;&gt;4083 の後半参照<br>  CDocLineMgr_New.cpp CheckColorMODE 1100行目付近<br>・Debug版でプロパティを表示するとCDocLineMgr::GetAllData()でアクセス違反<br>  いまいち用途が不明ですが、CFLF区切りで返すように実装してあります。<br>[その他]<br>・CLayoutMgrのクォーテーション引数を削除しメンバで保持するように変更<br>  及びそれに従う各所の引数削除<br>  bDispSSTRINGとbDispWSTRINGですね。<br><br>1つ目の対括弧色バグは、以下のようなレイアウトの先頭行(行番号が表示される行)と、括弧のある行で、Layout-&gt;m_nTypePrevが異なると発生することがあります。<br><br>/* comment ↓<br>// */  {  &lt;<br>}<br><br>↓が改行、&lt;が折り返しとします。このとき}がコメント色になる現象です。<br><br>Yahooグループ＞ sdiff_2005-11-06fix01.zip<br></div></section>
+    </li></ul></body></html>

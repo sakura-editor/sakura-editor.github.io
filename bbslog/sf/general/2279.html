@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>「該当行マーク」のとこをコピーしたい</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2279</span>
+    <a class="title" href="2279.html#2279">「該当行マーク」のとこをコピーしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2280</span>
+    <a class="title" href="2279.html#2280">Re: 「該当行マーク」のとこをコピーしたい</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2279>
+    <span class="no">[2279]</span>
+    <a class="title" href="#2279">「該当行マーク」のとこをコピーしたい</a>
+    <span class="author">ipa</span>
+    <time datetime="2002-09-10T01:46:09">2002年09月10日 01:46</time></h1>
+    <div class="body">こんにちはipaです。<br>該当行マークの黄色い部分以外を消したいのですが<br>正規表現でできないでしょか？<br><br>例えば、<br><br>今日は2勝8敗・・負けるなパイ<br>がんばれパイ！昨日は3勝9敗だった（泣）<br><br>の「_勝_敗」のとこだけほしいとして<br>「.勝.敗」と正規表現でマークできますが<br>マーク部以外を消してマーク部をとりだせません。<br><br>検索→コピー→ページ最後→貼り付け→移動前へ<br>のマクロを作るしかないのでしょうか？<br><br>よろしくお願いします。<br><br></div></section>
+    <ul><li><section><h1 id=2280>
+    <span class="no">[2280]</span>
+    <a class="title" href="#2280">Re: 「該当行マーク」のとこをコピーしたい</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-10T02:41:49">2002年09月10日 02:41</time></h1>
+    <div class="body">&gt;今日は2勝8敗・・負けるなパイ<br>&gt;がんばれパイ！昨日は3勝9敗だった（泣）<br>&gt;<br>&gt;の「_勝_敗」のとこだけほしいとして<br>&gt;「.勝.敗」と正規表現でマークできますが<br>&gt;マーク部以外を消してマーク部をとりだせません。<br>例えば上の文章に対してその処理を行って<br>2勝8敗<br>3勝9敗<br>の2行を得たいということでしょうか．<br>それなら ^.*(.勝.敗).*$を$1に全置換すれば得られると思いますけど．<br><br>含む行のみを取り出すのであればマークをする代わりにGREPを使えば該当文字列を含む行を抽出できます．(ファイル名と位置が付いてしまいますが)<br><br>おっしゃることがいまいち理解できません．<br></div></section>
+    </li></ul></li></ul></body></html>

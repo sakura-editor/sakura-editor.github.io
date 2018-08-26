@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>処理中のメッセージループ動作</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3498</span>
+    <a class="title" href="3498.html#3498">処理中のメッセージループ動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3500</span>
+    <a class="title" href="3498.html#3500">Re:処理中のメッセージループ動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3593</span>
+    <a class="title" href="3498.html#3593">Re2:処理中のメッセージループ動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3596</span>
+    <a class="title" href="3498.html#3596">Re3:処理中のメッセージループ動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3608</span>
+    <a class="title" href="3498.html#3608">Re4:処理中のメッセージループ動作</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3498>
+    <span class="no">[3498]</span>
+    <a class="title" href="#3498">処理中のメッセージループ動作</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-25T23:56:32">2004年03月25日 23:56</time></h1>
+    <div class="body">ect_uty のBlockingHookでメッセージを処理していますが、処理の最中にデータを参照・変更されて危ない状態になる可能性は無いのでしょうか？<br>ファイルを読み込み中に、保存とか、入力とか大丈夫だろうか。<br></div></section>
+    <ul><li><section><h1 id=3500>
+    <span class="no">[3500]</span>
+    <a class="title" href="#3500">Re:処理中のメッセージループ動作</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-03-26T06:37:16">2004年03月26日 06:37</time></h1>
+    <div class="body">BlockingHookだけみました。<br>ここでは各場所から呼び出されたときのメッセージの処理のみ<br>のように思われます。<br>各場所でハンドルロックや確保などの前後配置が<br>きちんとなされていれば大丈夫だと思いますが・・・<br>各場所を見てないので分かりませんが。。。（汗<br>どうでしょう・・・？</div></section>
+    <ul><li><section><h1 id=3593>
+    <span class="no">[3593]</span>
+    <a class="title" href="#3593">Re2:処理中のメッセージループ動作</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-27T01:14:23">2004年05月27日 01:14</time></h1>
+    <div class="body">Grep中に、そのウィンドウで新たにGrepダイアログを出してGrepすると、Grep実行中ダイアログが2つ表示されて、両方キャンセルすると、ヌル参照して落ちます。<br></div></section>
+    <ul><li><section><h1 id=3596>
+    <span class="no">[3596]</span>
+    <a class="title" href="#3596">Re3:処理中のメッセージループ動作</a>
+    <span class="author">みく</span>
+    <time datetime="2004-05-27T18:35:10">2004年05月27日 18:35</time></h1>
+    <div class="body"><br>bool bNowProcessing = false;<br>BlockingHook(){<br>&#9;bNowProcessing = true;<br>&#9;...<br>&#9;bNowProcessing = false;<br>&#9;return TRUE;<br>}<br><br>HandleCommand(){<br>&#9;if( bNowProcessing ){<br>&#9;&#9;MsgBox("処理中です。");&#9;//&lt;--出していいのかなぁ<br>&#9;&#9;return;<br>&#9;}<br>}<br><br>でどうでしょう。<br></div></section>
+    <ul><li><section><h1 id=3608>
+    <span class="no">[3608]</span>
+    <a class="title" href="#3608">Re4:処理中のメッセージループ動作</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-31T01:20:40">2004年05月31日 01:20</time></h1>
+    <div class="body">MsgBoxは邪魔ですし、作画関数内から呼び出すと無限ループしてくれるので、MsgBeepにしませんか。<br>・Alt+F4のファイルを閉じる<br>・WM_CLOSE→CEditDoc::OnFileClose→保存処理<br>とかも動かなくなったらイヤだけど..もともと動かないか。<br>処理の途中で保存することもないし。<br><br># すべて置換は、親ウィンドウをdisableにして凌いでいたり、<br># Grepはウィンドウを閉じようとするとダイアログを出したり、一貫性は無いけど、多少なんかやってますね。<br># その辺とも総合的に管理できるといいんだけどなあ。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

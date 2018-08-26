@@ -1,0 +1,118 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Borland C++でのコンパイル</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">645</span>
+    <a class="title" href="645.html#645">Borland C++でのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">646</span>
+    <a class="title" href="645.html#646">Re:Borland C++でのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">647</span>
+    <a class="title" href="645.html#647">Re2:Borland C++でのコンパイル</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">648</span>
+    <a class="title" href="645.html#648">Re: Borland C++でのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">649</span>
+    <a class="title" href="645.html#649">Re2: Borland C++でのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">650</span>
+    <a class="title" href="645.html#650">Re3: Borland C++でのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">739</span>
+    <a class="title" href="645.html#739">Re4: Borland C++でのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">742</span>
+    <a class="title" href="645.html#742">Re5: Borland C++でのコンパイル</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">738</span>
+    <a class="title" href="645.html#738">Re: Borland C++でのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">741</span>
+    <a class="title" href="645.html#741">Re2: Borland C++でのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">743</span>
+    <a class="title" href="645.html#743">Re3: Borland C++でのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">845</span>
+    <a class="title" href="645.html#845">Re4: Borland C++でのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">848</span>
+    <a class="title" href="645.html#848">Re5: Borland C++でのコンパイル</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=645>
+    <span class="no">[645]</span>
+    <a class="title" href="#645">Borland C++でのコンパイル</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-08-21T01:57:57">2001年08月21日 01:57</time></h1>
+    <div class="body">Borland C++ free compilerでsakuraをコンパイルしようとするといくつかエラーがでます。で、数ヶ所修正したもの＋makefileを共有フォルダ-ソースに置いておきます。<br>*MSVCはやたらと柔軟にコンパイルしますがBCCは逆にお固いので。<br>*機能追加はないので次の版でついでにマージしてもらえるとありがたいです。＞げんた様<br></div></section>
+    <ul><li><section><h1 id=646>
+    <span class="no">[646]</span>
+    <a class="title" href="#646">Re:Borland C++でのコンパイル</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-08-21T21:50:46">2001年08月21日 21:50</time></h1>
+    <div class="body">▼ あろかさん<br>&gt;次の版でついでにマージして<br>btoolの扱いはどうしましょう？汎用なら別ツール＝sakuraとは独立したソース管理 or 管理対象外とするほうがよいのかなと思います．<br><br>あと，sakura.makが今後のファイル追加でもきちんとメンテナンスされるかどうか心配．(とりあえず入れておきますが)</div></section>
+    <ul><li><section><h1 id=647>
+    <span class="no">[647]</span>
+    <a class="title" href="#647">Re2:Borland C++でのコンパイル</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-08-21T23:22:26">2001年08月21日 23:22</time></h1>
+    <div class="body"><br>▼ げんたさん<br>&gt; btoolの扱いはどうしましょう？汎用なら別ツール＝sakuraとは独立したソース管理 or 管理対象外とするほうがよいのかなと思います．<br>汎用ではなくsakura専用のつもりですが、逆にBCC専用なので他のコンパイラユーザには邪魔なだけかもしれないですね。<br>&gt; あと，sakura.makが今後のファイル追加でもきちんとメンテナンスされるかどうか心配．(とりあえず入れておきますが)<br>雛型扱いにしておいたほうがよさそうですね。<br>＃ファイルの変動はそれほどないと思うので、あまり心配はしていませんが。<br><br>btoolとsakura.makをセットにして別管理とするとよいのかな。<br></div></section>
+    </li></ul></li><li><section><h1 id=648>
+    <span class="no">[648]</span>
+    <a class="title" href="#648">Re: Borland C++でのコンパイル</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-08-22T11:56:16">2001年08月22日 11:56</time></h1>
+    <div class="body">C++ Builder 5のコンパイラで試したのですが，リソースが組み込まれない(T_T)．resファイルはちゃんとできているみたいなんだけど...何故だろう？ 5.5だとうまくいかなくて5.5.1だとうまくいくのだろうか？<br></div></section>
+    <ul><li><section><h1 id=649>
+    <span class="no">[649]</span>
+    <a class="title" href="#649">Re2: Borland C++でのコンパイル</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-08-25T22:55:27">2001年08月25日 22:55</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; C++ Builder 5のコンパイラで試したのですが，リソースが組み込まれない(T_T)．resファイルはちゃんとできているみたいなんだけど...何故だろう？ 5.5だとうまくいかなくて5.5.1だとうまくいくのだろうか？<br>Borland C++ free Compilerでは、5.5ではリンクがうまくできません。5.5.1ではOKです。ilink32を使ってできたかも知れないけれど覚えていません。すみません。<br>C++　Builderのことはわかりません。</div></section>
+    <ul><li><section><h1 id=650>
+    <span class="no">[650]</span>
+    <a class="title" href="#650">Re3: Borland C++でのコンパイル</a>
+    <span class="author">KENCH</span>
+    <time datetime="2001-08-27T18:57:58">2001年08月27日 18:57</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; ▼ げんたさん<br>&gt; &gt; C++ Builder 5のコンパイラで試したのですが，リソースが組み込まれない(T_T)．resファイルはちゃんとできているみたいなんだけど...何故だろう？ 5.5だとうまくいかなくて5.5.1だとうまくいくのだろうか？<br>&gt; Borland C++ free Compilerでは、5.5ではリンクがうまくできません。5.5.1ではOKです。ilink32を使ってできたかも知れないけれど覚えていません。すみません。<br>&gt; C++　Builderのことはわかりません。<br>ILINK32 [@respfile][options] startup objs, [exe], [mapfile], [libs], [deffile], [resfile]<br>こんな感じ？</div></section>
+    <ul><li><section><h1 id=739>
+    <span class="no">[739]</span>
+    <a class="title" href="#739">Re4: Borland C++でのコンパイル</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-10-05T10:59:24">2001年10月05日 10:59</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; Borland C++ free Compilerでは、5.5ではリンクがうまくできません。5.5.1ではOKです。<br><br>http://www.neco.nu/gohodoji/bccfaq/bccfaq.html#win95error<br>をご覧下さい。<br><br>▼ あろかさん<br>&gt; C++　Builderのことはわかりません。<br><br>http://www.google.com/search?q=brc32+bcc32&amp;hl=ja&amp;lr=lang_ja<br>をご覧下さい。<br></div></section>
+    <ul><li><section><h1 id=742>
+    <span class="no">[742]</span>
+    <a class="title" href="#742">Re5: Borland C++でのコンパイル</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-10-06T00:44:42">2001年10月06日 00:44</time></h1>
+    <div class="body">TO&gt; あああさん<br>情報ありがとうございます。<br>やはりbrc32はバグっていたのですね。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=738>
+    <span class="no">[738]</span>
+    <a class="title" href="#738">Re: Borland C++でのコンパイル</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-10-04T13:48:03">2001年10月04日 13:48</time></h1>
+    <div class="body">&gt;Borland C++ free compilerでsakuraをコンパイルしようとするといくつかエラーがでます。で、数ヶ所修正したもの＋makefileを共有フォルダ-ソースに置いておきます。<br>makeを行うとアプリケーションエラーの出るexeが生成されることがあります．make cleanを行って全部やり直すと直るので，依存関係が正しく把握されていないように思います．<br><br>どこをどう直せばいいかわかります？<br></div></section>
+    <ul><li><section><h1 id=741>
+    <span class="no">[741]</span>
+    <a class="title" href="#741">Re2: Borland C++でのコンパイル</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-10-06T00:19:21">2001年10月06日 00:19</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;Borland C++ free compilerでsakuraをコンパイルしようとするといくつかエラーがでます。で、数ヶ所修正したもの＋makefileを共有フォルダ-ソースに置いておきます。<br>&gt; makeを行うとアプリケーションエラーの出るexeが生成されることがあります．make cleanを行って全部やり直すと直るので，依存関係が正しく把握されていないように思います．<br>&gt; <br>&gt; どこをどう直せばいいかわかります？<br>どこをどう更新してそうなったのかわからないのでなんともいえませんが、<br>makefileが.hと.cppの依存関係を見ていないのが原因でしょう。<br>＊メンテが面倒になるので対応していません。</div></section>
+    <ul><li><section><h1 id=743>
+    <span class="no">[743]</span>
+    <a class="title" href="#743">Re3: Borland C++でのコンパイル</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-10-06T02:31:49">2001年10月06日 02:31</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; makefileが.hと.cppの依存関係を見ていないのが原因でしょう。<br>&gt; ＊メンテが面倒になるので対応していません。<br><br>依存関係を自動的に調べてくれるツールGNUか何かでありませんでしたっけ？<br>linux kernelとかmake depend というのをやるでしょ。</div></section>
+    <ul><li><section><h1 id=845>
+    <span class="no">[845]</span>
+    <a class="title" href="#845">Re4: Borland C++でのコンパイル</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-11-22T21:50:43">2001年11月22日 21:50</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 依存関係を自動的に調べてくれるツールGNUか何かでありませんでしたっけ？<br>&gt; linux kernelとかmake depend というのをやるでしょ。<br>-aオプションはallの略だと思ってましたが違ったようです<br>make -f sakura.mak -aで行けます<br><br>＃新しいツールはなるべく増やしたくなかったのでラッキー</div></section>
+    <ul><li><section><h1 id=848>
+    <span class="no">[848]</span>
+    <a class="title" href="#848">Re5: Borland C++でのコンパイル</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-11-23T00:18:50">2001年11月23日 00:18</time></h1>
+    <div class="body">&gt;make -f sakura.mak -aで行けます<br>おおっ！こんな便利なオプションがあったんですね．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

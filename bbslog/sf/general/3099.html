@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>[事例報告]言語と文字化け</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3099</span>
+    <a class="title" href="3099.html#3099">[事例報告]言語と文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3106</span>
+    <a class="title" href="3099.html#3106">Re:[事例報告]言語と文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3107</span>
+    <a class="title" href="3099.html#3107">Re2:[事例報告]言語と文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3109</span>
+    <a class="title" href="3099.html#3109">Re3:[事例報告]言語と文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3306</span>
+    <a class="title" href="3099.html#3306">Re4:[事例報告]言語と文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3382</span>
+    <a class="title" href="3099.html#3382">Re:5; [事例報告]言語と文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3393</span>
+    <a class="title" href="3099.html#3393">Re2:5; [事例報告]言語と文字化け</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3099>
+    <span class="no">[3099]</span>
+    <a class="title" href="#3099">[事例報告]言語と文字化け</a>
+    <span class="author">ばく</span>
+    <time datetime="2003-07-23T23:50:56">2003年07月23日 23:50</time></h1>
+    <div class="body">486-PenIIIまで、いろんな所で愛用させて頂いてます。<br>表題の件ですが、多少特殊な条件下で使用すると、<br>張り付けした日本語文字列が文字化け("?"になる)する<br>ようです。<br><br>101キーボードでも同じ操作で日本語/半角英数入力を<br>切り替えるために、キーボードコンパネで、「英語」<br>を追加。<br>コピー元のアプリケーションが「英語」の時にコピー<br>してサクラに張り付け→文字化け、となります。<br>サクラエディタの言語モードは関係無いようです。<br>また、ドラッグ&amp;ドロップでは文字化けが起こらない<br>ようです。<br>サクラエディタからMozillaへの張り付けで文字化けを<br>見たことがありますが、ちょっと詳細を確認出来てい<br>ません。<br><br>出来れば対応していただけると嬉しいですが、バグと<br>言い切れたものでもないので、とりあえず事例報告<br>ぐらいで書かせて頂きました。</div></section>
+    <ul><li><section><h1 id=3106>
+    <span class="no">[3106]</span>
+    <a class="title" href="#3106">Re:[事例報告]言語と文字化け</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-07-24T21:12:40">2003年07月24日 21:12</time></h1>
+    <div class="body">▼ ばくさん<br>&gt; サクラエディタからMozillaへの張り付けで文字化けを見たことがありますが、ちょっと詳細を確認出来ていません。<br><br>突然で、失礼します。<br>お尋ねしますが、Sakura に貼り付ける前から既に"?"になっていませんか？<br></div></section>
+    <ul><li><section><h1 id=3107>
+    <span class="no">[3107]</span>
+    <a class="title" href="#3107">Re2:[事例報告]言語と文字化け</a>
+    <span class="author">みく</span>
+    <time datetime="2003-07-24T21:18:32">2003年07月24日 21:18</time></h1>
+    <div class="body"><br>http://www.geocities.jp/ht_deko/oldjunk.html<br><br>にある、クリップボードフォーマット解析支援ツールが使えませんか。<br><br>サクラは、CF_OEMTEXT を使ってるはずです。<br>＃ちなみに、CF_OEMTEXTだとAccessからの貼り付けでカラムの幅を超えるデータが切れます。<br></div></section>
+    <ul><li><section><h1 id=3109>
+    <span class="no">[3109]</span>
+    <a class="title" href="#3109">Re3:[事例報告]言語と文字化け</a>
+    <span class="author">ばく</span>
+    <time datetime="2003-07-25T00:39:39">2003年07月25日 00:39</time></h1>
+    <div class="body">&gt; http://www.geocities.jp/ht_deko/oldjunk.html<br>&gt; にある、クリップボードフォーマット解析支援ツールが使えませんか。<br>&gt; サクラは、CF_OEMTEXT を使ってるはずです。<br>&gt; ＃ちなみに、CF_OEMTEXTだとAccessからの貼り付けでカラムの幅を超えるデータが切れます。<br><br>みく　様、<br><br>ご紹介のツール、落として使ってみました。大当たりです。<br><br>・ソフト：IE5.0、Mozilla1.2.1<br>・ロケール：「英語(US)」、「日本語(IME2000、直接入力)」<br>1.ソフト2種*ロケール2種、計4種の場合で、文章を選択→コピー<br>2.それぞれのクリップボードの内容を、解析画面に現れた全てのフォーマットで保存。<br>3.保存した.datファイルをサクラエディタで開き、内容を確認<br>「入力ロケール」が「英語」の場合、CF_OEMTEXTが文字化けしているようです。<br>一方、試した範囲では、CF_TEXTは文字化けしていませんでした。<br><br>取り急ぎ報告まで・・・。</div></section>
+    <ul><li><section><h1 id=3306>
+    <span class="no">[3306]</span>
+    <a class="title" href="#3306">Re4:[事例報告]言語と文字化け</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-18T10:50:57">2003年09月18日 10:50</time></h1>
+    <div class="body">▼ ばくさん<br>&gt; 「入力ロケール」が「英語」の場合、CF_OEMTEXTが文字化けしているようです。<br>&gt; 一方、試した範囲では、CF_TEXTは文字化けしていませんでした。<br><br>CF_LOCALEを見ていないことが原因かも。ロケールが違ってたらLCMapStringで変換して。CF_LOCALEのデータが無かったら対処しようが無い。それはOEMCPを無視した側のバグということで。CF_OEMTEXTが信頼できないのであれば、CF_TEXTかCF_UNICODETEXTを見るべき（優先順位はCF_OEMTEXTの方が高いが）。SetThreadLocaleについては？</div></section>
+    <ul><li><section><h1 id=3382>
+    <span class="no">[3382]</span>
+    <a class="title" href="#3382">Re:5; [事例報告]言語と文字化け</a>
+    <span class="author">ばく</span>
+    <time datetime="2003-10-15T21:00:29">2003年10月15日 21:00</time></h1>
+    <div class="body">申し訳ないですが、プライベートがばたばたしていて、しばらくチェック不可です。使用しているWindowsそのものは日本語版なので、誰でも出来る事なのですが・・・。<br>▼ wmlhqさん<br>&gt; CF_LOCALEを見ていないことが原因かも。ロケールが違ってたらLCMapStringで変換して。CF_LOCALEのデータが無かったら対処しようが無い。それはOEMCPを無視した側のバグということで。CF_OEMTEXTが信頼できないのであれば、CF_TEXTかCF_UNICODETEXTを見るべき（優先順位はCF_OEMTEXTの方が高いが）。SetThreadLocaleについては？</div></section>
+    <ul><li><section><h1 id=3393>
+    <span class="no">[3393]</span>
+    <a class="title" href="#3393">Re2:5; [事例報告]言語と文字化け</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-10-16T11:49:40">2003年10月16日 11:49</time></h1>
+    <div class="body">余計なことを言ってすみません。議論は、CF_OEMTEXTよりも標準的なCF_TEXTを使う方向で進んでいる。CF_TEXTならこの問題は間違いなく解決。<br># 国際化なら、GetThreadLocaleとGetDefaultUserLCIDを使う方針。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

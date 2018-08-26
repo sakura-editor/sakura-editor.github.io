@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ラスティブ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">872</span>
+    <a class="title" href="872.html#872">ラスティブ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">873</span>
+    <a class="title" href="872.html#873">Re:PatchUnicode#2478365 の状況</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">874</span>
+    <a class="title" href="872.html#874">Re2:PatchUnicode#2478365 の状況</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">876</span>
+    <a class="title" href="872.html#876">Re3:PatchUnicode#2478365 の状況</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=872>
+    <span class="no">[872]</span>
+    <a class="title" href="#872">ラスティブ</a>
+    <span class="author">PatchUnicode#2478365 の状況</span>
+    <time datetime="2009-03-07T17:01:35">2009年03月07日 17:01</time></h1>
+    <div class="body">前回からの変更：<br><br>１．CNativeW::GetKetaOfCharとCTextMetrics::GenerateDxArrayに、<br>　ファイル文字コードによって切り分ける処理を追加しました。<br>　（UTF-16LE/BEのときに、0xDC00から0xDCFFまでを全角で表示するため。）<br><br>２．UTF-7読み込みで、バイナリを読み込むと無限ループになるバグを修正しました。<br></div></section>
+    <ul><li><section><h1 id=873>
+    <span class="no">[873]</span>
+    <a class="title" href="#873">Re:PatchUnicode#2478365 の状況</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-03-07T17:03:25">2009年03月07日 17:03</time></h1>
+    <div class="body">題名が逆になってしまいました。。。。。。。。。。。</div></section>
+    <ul><li><section><h1 id=874>
+    <span class="no">[874]</span>
+    <a class="title" href="#874">Re2:PatchUnicode#2478365 の状況</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-03-07T20:15:16">2009年03月07日 20:15</time></h1>
+    <div class="body">&gt;&gt;835<br>&gt; ▼ ryoji さん<br>&gt; 特殊なのは、他コード⇔UTF-16変換時にバイナリを<br>&gt; U+D800-D8FFに変換する処理だけで、<br>&gt; 他コードから変換されたU+D800-D8FFは他コードに<br>&gt; 変換するとき以外は純粋なUTF-16値として<br>&gt; 扱ってしまえば良い、です。<br>&gt; 多くのアプリで、他コード⇒UTF-16変換時に<br>&gt; バイナリ部を独自変換で'?'などの特定の文字に変換して<br>&gt; そのまま'?'の文字として扱うのと同様、上記変換で<br>&gt; UTF-16値（U+D800-D8FF）に変換してしまうことに<br>&gt; 決めているのですから。<br><br>UTF-16で文字化けに気付かず保存してしまう人<br>はいないと思いますが、上記の現在ではU+DC00からU+DCFFを<br>純粋なUTF-16として扱ってしまえばよいという考え方を、<br>UTF-16 に持ち込むのはだめですか？<br>そうすると、CMemory::GetKetaOfChar と<br>CTextMetrics::GenerateDxArray にある処理で、<br>現在のファイル文字コードで切り分ける処理をしなくても<br>良くなるのですが。。。<br></div></section>
+    <ul><li><section><h1 id=876>
+    <span class="no">[876]</span>
+    <a class="title" href="#876">Re3:PatchUnicode#2478365 の状況</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-03-08T00:38:01">2009年03月08日 00:38</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; そうすると、CMemory::GetKetaOfChar と<br>&gt; CTextMetrics::GenerateDxArray にある処理で、<br>&gt; 現在のファイル文字コードで切り分ける処理をしなくても<br>&gt; 良くなるのですが。。。<br><br>U+DC00-DCFFは文字コードに関係なく一律に１桁（半角）表示でいいんじゃないでしょうか？<br>UTF-16LE/BEで開いているときはU+D800-D8FFと同じ扱いにしてしまっていいと思うのですが。<br>＃コードも動作確認も未実施の浅い考えでしかコメントできてません... (^^;<br><br>あと、別件ですが、このパッチが導入されるとメニューの[変換]-[文字変換]にある、現状では未実装の変換（SJISがらみ）も動くようにできるんでしょうかね？<br>自分はこれらの変換の仕様をよく理解できていないです。特に使う機会も無かったし。これらの変換は今のところANSI版でファイルをSJIS読み込み（無変換読み込み）したときにだけ正しく機能する、と想像してるのですが、それであってるのかな？</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

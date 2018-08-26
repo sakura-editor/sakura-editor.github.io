@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>[変換]メニューの英数とかなの挙動の変更か追加のお願い</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5278</span>
+    <a class="title" href="5278.html#5278">[変換]メニューの英数とかなの挙動の変更か追加のお願い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5279</span>
+    <a class="title" href="5278.html#5279">RE: [変換]メニューの英数とかなの挙動の変更か追加のお願い</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5280</span>
+    <a class="title" href="5278.html#5280">Re:[変換]メニューの英数とかなの挙動の変更か追加のお願い</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=5278>
+    <span class="no">[5278]</span>
+    <a class="title" href="#5278">[変換]メニューの英数とかなの挙動の変更か追加のお願い</a>
+    <span class="author">もも</span>
+    <time datetime="2006-06-18T23:27:04">2006年06月18日 23:27</time></h1>
+    <div class="body">全角英数の混在する文章を、英数は半角に変換したいのですが、<br>下記のような挙動をしているので、変更か、新規追加を<br>お願いしたいのですが…<br><br>[全角英数-&gt;半角英数]だと記号が全角のまま残ります。<br>感覚的には、ASCIIコード表に対応する記号も半角化の<br>対象にして欲しいです。<br>[．][／]=&gt;[.][/]<br>　※ただし日本語の"「"(かぎ括弧)等は原文のまま<br><br>[全角-&gt;半角]を使用すると[ひらがな]まで半角カナに<br>変換されてしまいます。<br>NEC98の頃には半角カナ化はたまに使いましたが、<br>現在だと半角カナに変換してしまうといまいち<br>使いにくいと思います。<br><br>要は、通常ASCIIコード範囲は半角記述するところ、<br>入力ミスで全角になってしまっている部分を正規化<br>したいのですが、それに相応しい変換メニューが<br>欲しいなぁと思いまして…</div></section>
+    <ul><li><section><h1 id=5279>
+    <span class="no">[5279]</span>
+    <a class="title" href="#5279">RE: [変換]メニューの英数とかなの挙動の変更か追加のお願い</a>
+    <span class="author">すい</span>
+    <time datetime="2006-06-19T02:00:59">2006年06月19日 02:00</time></h1>
+    <div class="body">私も現在の変換機能には大いに不満があります（かなり非一般的な物ばかりで）。<br><br>でも「この文字は変換して欲しいけど、この文字は変換しない」<br>とか、組み合わせの個人の要望をいちいち叶えていたら、<br>変換メニューの内容が無限増殖するから、よっぽど大勢から<br>まとまった要望が来ない限りは その手の要望はバッサリ<br>切り捨てられていたかと。<br><br>マクロである程度何とかするとか。<br><br>↓この手のマクロを繰り返し実行、とか。<br>--------------------<br>//キーボードマクロのファイル<br><br>S_SearchNext('[　！”＃＄％＆’（）＊＋，－．／：；＜＝＞？＠［￥］＾＿‘｛｜｝￣０-９Ａ-Ｚａ-ｚ]+', 20);&#9;// 変換対象文字を検索<br>S_ToHankaku(0);&#9;&#9;&#9;// 全角→半角<br><br>S_SearchNext('', 20);&#9;// 次を検索<br>S_Left(0);&#9;&#9;&#9;&#9;// カーソル左移動<br><br>S_CurLineCenter(0);&#9;&#9;// カーソル行をウィンドウ中央へ<br>--------------------<br></div></section>
+    </li><li><section><h1 id=5280>
+    <span class="no">[5280]</span>
+    <a class="title" href="#5280">Re:[変換]メニューの英数とかなの挙動の変更か追加のお願い</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-06-20T02:05:29">2006年06月20日 02:05</time></h1>
+    <div class="body">▼ ももさん<br>//キーボードマクロのファイル REP.MAC<br>//S_ToHankata(0);<br>S_ToHanEi(0);<br>S_ReplaceAll('！', '!', 128);//21<br>S_ReplaceAll('”', '"', 128);//22<br>S_ReplaceAll('＃', '#', 128);//23<br>S_ReplaceAll('＄', '$', 128);//24<br>S_ReplaceAll('％', '%', 128);//25<br>S_ReplaceAll('＆', '&amp;', 128);//26<br>S_ReplaceAll('’', '\'',128);//27<br>S_ReplaceAll('（', '(', 128);//28<br>S_ReplaceAll('）', ')', 128);//29<br>S_ReplaceAll('＊', '*', 128);//2A<br>S_ReplaceAll('＋', '+', 128);//2B<br>S_ReplaceAll('，', ',', 128);//2C<br>S_ReplaceAll('－', '-', 128);//2D<br>S_ReplaceAll('．', '.', 128);//2E<br>S_ReplaceAll('／', '/', 128);//2F<br>S_ReplaceAll('：', ':', 128);//3A<br>S_ReplaceAll('；', ';', 128);//3B<br>S_ReplaceAll('＜', '&lt;', 128);//3C<br>S_ReplaceAll('＝', '=', 128);//3D<br>S_ReplaceAll('＞', '&gt;', 128);//3E<br>S_ReplaceAll('？', '?', 128);//3F<br>S_ReplaceAll('＠', '@', 128);//40<br>S_ReplaceAll('［', '[', 128);//5B<br>S_ReplaceAll('￥', '\\',128);//5C<br>S_ReplaceAll('］', ']', 128);//5D<br>S_ReplaceAll('＾', '^', 128);//5E<br>S_ReplaceAll('＿', '_', 128);//5F<br>S_ReplaceAll('‘', '`', 128);//60<br>S_ReplaceAll('｛', '{', 128);//7B<br>S_ReplaceAll('｜', '|', 128);//7C<br>S_ReplaceAll('｝', '}', 128);//7D<br>S_ReplaceAll('￣', '~', 128);//7E</div></section>
+    </li></ul></li></ul></body></html>

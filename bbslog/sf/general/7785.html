@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>画面の書き換え処理に不具合</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7785</span>
+    <a class="title" href="7785.html#7785">画面の書き換え処理に不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7786</span>
+    <a class="title" href="7785.html#7786">同じ現象になりました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7834</span>
+    <a class="title" href="7785.html#7834">同じような現象です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7856</span>
+    <a class="title" href="7785.html#7856">Re:同じような現象です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7857</span>
+    <a class="title" href="7785.html#7857">Re2:同じような現象です</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7785>
+    <span class="no">[7785]</span>
+    <a class="title" href="#7785">画面の書き換え処理に不具合</a>
+    <span class="author">ビッグフット</span>
+    <time datetime="2014-02-27T15:10:01">2014年02月27日 15:10</time></h1>
+    <div class="body">Excelのマクロ作成中にエラーが発生し、原因特定のため、<br>該当マクロをコピーしてサクラエディタに張り付け。<br>もしかしたら打ち間違え？と思い、フォントを大きくしてみたのですが、<br>コンマとピリオドの打ち間違え等もなく、フォントサイズを元の大きさに変更しました。<br>すると、なぜか経演習エリアが右にズレ、行の先頭にフォントを大きくした時の<br>残骸が残り、カーソルも該当エリアに移動しなくなりました。<br>念のため、ウィンドウサイズを最大化してみたり、最小化してみたりしてみましたが、<br>改善しません。<br>結局、一度終了させて再起動するまで直りませんでした。<br><br>バグと思われますので、対応をお願いします。<br></div></section>
+    <ul><li><section><h1 id=7786>
+    <span class="no">[7786]</span>
+    <a class="title" href="#7786">同じ現象になりました。</a>
+    <span class="author">ヤスヤス</span>
+    <time datetime="2014-03-01T15:22:34">2014年03月01日 15:22</time></h1>
+    <div class="body">開発者の皆様、素晴らしいエディタをありがとうございます。<br><br>同じ現象が発生しました。<br>「名前をつけて保存」をした途端、右側に半角３字分ズレます。<br>ズレは見た目だけで、カーソルは入りません。<br><br>&gt; 結局、一度終了させて再起動するまで直りませんでした。<br><br>終了させてから、sakura editor を起動させても、３文字分のズレ<br>は変わりません。一番上に「EOF」と出ます。<br><br>環境は Windows Vista<br>サクラエディタ   Ver. 2.1.1.1<br>Share Ver: 149<br>Compile Info: V1500 WR WIN500/I501/C000/N500<br>Last Modified: 2014/2/9 15:05:44<br><br>上記にアップデートしてから、この現象が出るようになりました。<br></div></section>
+    <ul><li><section><h1 id=7834>
+    <span class="no">[7834]</span>
+    <a class="title" href="#7834">同じような現象です</a>
+    <span class="author">aelaki</span>
+    <time datetime="2014-05-16T11:24:25">2014年05月16日 11:24</time></h1>
+    <div class="body">当方の環境でも表示がずれる現象が発生しています。<br>共通設定を開いて閉じるだけでも発生します。<br><br>いろいろ試してみたところ、<br>タイプ別設定で「指定桁で折り返さない」を選択していると発生するようです。<br><br>OS：Windows７（32bit）<br>サクラエディタ：Ver. 2.1.1.2<br></div></section>
+    <ul><li><section><h1 id=7856>
+    <span class="no">[7856]</span>
+    <a class="title" href="#7856">Re:同じような現象です</a>
+    <span class="author">いろは</span>
+    <time datetime="2014-06-19T02:54:53">2014年06月19日 02:54</time></h1>
+    <div class="body">同じくこの現象に遭遇しました。<br>テキストファイルを保存したタイミングで発生することがあります。<br>sakura.iniのnViewLeftColに負の値が設定されることが原因の様です。<br><br><br>環境は Windows7 64bit<br>サクラエディタ 2.1.1.3<br></div></section>
+    <ul><li><section><h1 id=7857>
+    <span class="no">[7857]</span>
+    <a class="title" href="#7857">Re2:同じような現象です</a>
+    <span class="author">もか</span>
+    <time datetime="2014-06-19T04:26:06">2014年06月19日 04:26</time></h1>
+    <div class="body">現象確認しました。<br>水平スクロールバーをOFFにして、折り返し桁が画面の幅より狭くなると、画面が右ぞろえの状態になります。<br>名前を付けて保存や、タイプ別・共通設定変更で発生します。<br><br>「折り返し変更時の横スクロール位置をなるべく保持するように」<br>2.1.1.0- r3540 patchunicode/728<br>が原因です。<br><br>パッチを登録しました<br>https://sourceforge.net/p/sakura-editor/patchunicode/846/<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

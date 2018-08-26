@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Keep) テキスト描画整理</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">291</span>
+    <a class="title" href="291.html#291">Commit報告:(Keep) テキスト描画整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">293</span>
+    <a class="title" href="291.html#293">Re:Commit報告:(Keep) テキスト描画整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">294</span>
+    <a class="title" href="291.html#294">Re2:Commit報告:(Keep) テキスト描画整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">296</span>
+    <a class="title" href="291.html#296">Re3:Commit報告:(Keep) テキスト描画整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">302</span>
+    <a class="title" href="291.html#302">Re4:Commit報告:(Keep) テキスト描画整理</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">295</span>
+    <a class="title" href="291.html#295">Re:Commit報告:(Keep) テキスト描画整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">297</span>
+    <a class="title" href="291.html#297">Re2:Commit報告:(Keep) テキスト描画整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">315</span>
+    <a class="title" href="291.html#315">Re3:Commit報告:(Keep) テキスト描画整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">326</span>
+    <a class="title" href="291.html#326">Re4:Commit報告:(Keep) テキスト描画整理</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=291>
+    <span class="no">[291]</span>
+    <a class="title" href="#291">Commit報告:(Keep) テキスト描画整理</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-20T02:24:45">2008年04月20日 02:24</time></h1>
+    <div class="body">リビジョン：<br>　rev1285<br><br>変更種別：<br>　リファクタリング。機能変更無し。<br><br>内容：<br>　DispLineNew() の名前を DrawLogicLine() に変更。<br>　DrawLogicLine() から、レイアウト行描画部分を抜き出し、DrawLayoutLine() を作成。<br>　DrawLayoutLine() 内、各種カラー処理を CDrawStrategy 派生クラスに分離。<br>　各 CDrawStrategy 派生クラス内の重複処理を抜き出し、まとめ。<br>　→ SDrawStrategyInfo::DrawToHere(), SDrawStrategyInfo::ChangeColor() 等。<br><br>何百行もあり処理フローを見通すことが非常に困難であった DispLineNew() を、<br>今回の整理により、なんとか見通せる形にもってこれたかと思います。<br>(現在の名前は DrawLogicLine となっています)<br></div></section>
+    <ul><li><section><h1 id=293>
+    <span class="no">[293]</span>
+    <a class="title" href="#293">Re:Commit報告:(Keep) テキスト描画整理</a>
+    <span class="author">anonymous</span>
+    <time datetime="2008-04-20T07:38:35">2008年04月20日 07:38</time></h1>
+    <div class="body">不具合です。<br>C/C++ファイルを開いたとき、コメントが1行目しか色分けされません。<br>タイプ別設定画面を開きOKボタンを押すと正常に表示されます。<br></div></section>
+    <ul><li><section><h1 id=294>
+    <span class="no">[294]</span>
+    <a class="title" href="#294">Re2:Commit報告:(Keep) テキスト描画整理</a>
+    <span class="author">anonymous</span>
+    <time datetime="2008-04-20T07:40:17">2008年04月20日 07:40</time></h1>
+    <div class="body">条件がありました。<br>・ファイルをドラッグ＆ドロップしたときに発生します。<br><br></div></section>
+    <ul><li><section><h1 id=296>
+    <span class="no">[296]</span>
+    <a class="title" href="#296">Re3:Commit報告:(Keep) テキスト描画整理</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-20T12:00:56">2008年04月20日 12:00</time></h1>
+    <div class="body">▼ anonymousさん<br>&gt; 不具合です。<br>&gt; C/C++ファイルを開いたとき、コメントが1行目しか色分けされません。<br>&gt; タイプ別設定画面を開きOKボタンを押すと正常に表示されます。<br>▼ anonymousさん<br>&gt; 条件がありました。<br>&gt; ・ファイルをドラッグ＆ドロップしたときに発生します。<br><br>ご報告ありがとうございます。<br>ただ、こちらでは再現できませんでした。<br>問題を再現することができる、最小限のファイル内容を<br>教えていただくことはできますでしょうか。<br></div></section>
+    <ul><li><section><h1 id=302>
+    <span class="no">[302]</span>
+    <a class="title" href="#302">Re4:Commit報告:(Keep) テキスト描画整理</a>
+    <span class="author">ac</span>
+    <time datetime="2008-04-20T15:20:17">2008年04月20日 15:20</time></h1>
+    <div class="body">以下の手順で発生します。<br><br>Vista(HomePremium)SP1, IE7, TortoiseSVN 1.4.7<br>XP(HomeEditon)SP2, IE7, TortoiseSVN 1.4.8<br><br>コメントが1行目しか色分けされない：<br>・sakuraW_r1286.zip（rev1286)を展開<br>・起動し、共通設定で「タスクトレイに常駐」のチェックをはずしOKを押下<br>・エクスプローラからCAutoSave.cpp(ssrc_2007-12-07版)をドラッグドロップ<br><br>変更行の色分け：<br>・sakuraW_r1286のサクラエディタを起動（上記の設定で）<br>・a[ret]b[ret]c[ret]&lt;Ctrl+S&gt;c[ret]d[ret]f[ret]&lt;Ctrl+S&gt;と入力<br>---以下の状態---<br>a<br>b<br>c<br>d<br>e<br>f<br>I[EOF]<br>・"d"の行(4行目)を修正すると4,5,6行目が変更行になる<br>・ウインドウ＞再描画、カーソル移動、マウスクリックでカーソル移動をするとカーソル以降が変更行表示に変化する<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=295>
+    <span class="no">[295]</span>
+    <a class="title" href="#295">Re:Commit報告:(Keep) テキスト描画整理</a>
+    <span class="author">anonymous</span>
+    <time datetime="2008-04-20T07:57:29">2008年04月20日 07:57</time></h1>
+    <div class="body">編集を繰り返すと、変更していない行まで色分けしてしまいます。<br>・過去に編集した箇所が色分けされているように見える。<br></div></section>
+    <ul><li><section><h1 id=297>
+    <span class="no">[297]</span>
+    <a class="title" href="#297">Re2:Commit報告:(Keep) テキスト描画整理</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-20T12:02:22">2008年04月20日 12:02</time></h1>
+    <div class="body">▼ anonymousさん<br>&gt; 編集を繰り返すと、変更していない行まで色分けしてしまいます。<br>&gt; ・過去に編集した箇所が色分けされているように見える。<br><br>ご報告ありがとうございます。<br>問題を再現するための具体的な操作が判るようでしたら、<br>教えていただけますでしょうか。<br></div></section>
+    <ul><li><section><h1 id=315>
+    <span class="no">[315]</span>
+    <a class="title" href="#315">Re3:Commit報告:(Keep) テキスト描画整理</a>
+    <span class="author">dskoba</span>
+    <time datetime="2008-04-23T22:10:59">2008年04月23日 22:10</time></h1>
+    <div class="body">&gt; 編集を繰り返すと、変更していない行まで色分けしてしまいます。<br><br>これは描画の問題ではなくて変更行の判定の問題。<br><br>&gt;&gt;dev:4576<br>&gt;&gt;data:3751</div></section>
+    <ul><li><section><h1 id=326>
+    <span class="no">[326]</span>
+    <a class="title" href="#326">Re4:Commit報告:(Keep) テキスト描画整理</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-27T23:53:08">2008年04月27日 23:53</time></h1>
+    <div class="body">▼ dskobaさん<br>&gt; &gt; 編集を繰り返すと、変更していない行まで色分けしてしまいます。<br>&gt; <br>&gt; これは描画の問題ではなくて変更行の判定の問題。<br>&gt; <br>&gt; &gt;&gt;dev:4576<br>&gt; &gt;&gt;data:3751<br><br>情報ありがとうございます。<br>ただ、今回の件に関しては、変更行フラグをちゃんと管理できていない、というバグでした。rev1301で修正しました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>指定された文字列を取得するマクロ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">452</span>
+    <a class="title" href="452.html#452">指定された文字列を取得するマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">453</span>
+    <a class="title" href="452.html#453">RE: 指定された文字列を取得するマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">454</span>
+    <a class="title" href="452.html#454">Re2: 指定された文字列を取得するマクロ</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=452>
+    <span class="no">[452]</span>
+    <a class="title" href="#452">指定された文字列を取得するマクロ</a>
+    <span class="author">つきた</span>
+    <time datetime="2008-12-11T15:31:02">2008年12月11日 15:31</time></h1>
+    <div class="body">プログラムできないため、サイトで探してみましたが良い感じのが見つからなかったので、どなたか教えてください。<br><br>「指定された文字を取得するマクロ」がほしいです。<br>やりたい事は、文章の先頭から、あるキーワードが出てくるまで、指定された文字を取得し、文章の最後に改行してペースト。<br>という内容です。<br><br>例えば<br>指定文字「abc.*」　→　先頭に小文字abcが付いた単語<br>キーワード「--END--」<br><br>文章に<br><br>abcde<br>ABCDE<br>あいうえお<br>かきくけこ<br>abcABC<br><br><br>--END--<br><br>と、書いていた場合、abcdeとabcABCを取得し、マクロ実行後、以下のような文章になっている事が期待です。<br><br>abcde<br>ABCDE<br>あいうえお<br>かきくけこ<br>abcABC<br><br><br>--END--<br>abcde<br>abcABC<br><br><br>あつかましいかと思いますが、優しい方お願いします＞＜</div></section>
+    <ul><li><section><h1 id=453>
+    <span class="no">[453]</span>
+    <a class="title" href="#453">RE: 指定された文字列を取得するマクロ</a>
+    <span class="author">すい</span>
+    <time datetime="2008-12-13T03:34:13">2008年12月13日 03:34</time></h1>
+    <div class="body">// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに ppa.dll を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>var&#9;// 変数確保<br>&#9;gstr:String;&#9;&#9;// 見つけた文字列を格納していくための文字列変数 gstr 確保<br>&#9;sstr,ends:String;&#9;// 文字列変数 sstr,ends 確保<br>&#9;find:String;&#9;&#9;// 検索結果格納用の文字列変数 find 確保<br>&#9;CR,LF,CRLF:String;&#9;// 改行コード格納用文字列変数を確保<br>&#9;pt:Integer;&#9;&#9;&#9;// 整数数値変数 pt 確保<br>begin&#9;//{<br>&#9;//↓ CR LF 改行コードを代入する<br>&#9;CRLF := '<br>';<br>&#9;CR := Copy(CRLF,1,1);&#9;// CR改行コードのみ取り出す<br>&#9;LF := Copy(CRLF,2,1);&#9;// LF改行コードのみ取り出す<br><br>&#9;sstr := InputBox( '検索文字列入力', '指定文字列を入力してください。(正規表現)' , '' );<br>&#9;if ( sstr = '' ) then&#9;Exit;&#9;// 空なら終了<br> <br>&#9;ends := InputBox( '終端文字列入力', '終端の文字列を入力してください。' , '' );<br>&#9;if ( ends = '' ) then&#9;Exit;&#9;// 空なら終了<br><br>&#9;gstr := '';&#9;// 「見つけた文字列を格納していく文字列変数」を空にしておく。<br>&#9;while (True) do&#9;begin&#9;//{<br>&#9;&#9;// ↓検索文字列と終端文字列を検索<br>&#9;&#9;S_SearchNext( sstr + '|' + ends , $16 );&#9;// 次を検索 $16=0001.0110(2進数)<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// 検索ダイアログを自動的に閉じる<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// 正規表現<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// 英大文字と小文字を区別する<br>&#9;&#9;S_ReDraw(0);&#9;// 再描画<br><br>&#9;&#9;find := S_GetSelectedString(0);&#9;// 検索実行後に選択されている文字列（見つけた文字列）を find に取得<br><br>&#9;&#9;// ↓検索結果文字列 find 中に改行コードが含まれていたら削除する。<br>&#9;&#9;pt := Pos(CR,find);&#9;if( pt &gt; 0 ) then&#9;find := Copy(find,1,pt-1);<br>&#9;&#9;pt := Pos(LF,find);&#9;if( pt &gt; 0 ) then&#9;find := Copy(find,1,pt-1);<br><br>//&#9;&#9;MessageBox( '↓これまでに見つけた文字列' +LF+ '-----' +LF+ gstr + '-----' +LF+ '↓今回見つけた文字列' +LF+ '[' + find + ']' , 'DEBUG' , 0 );&#9;// for DEBUG<br>&#9;&#9;S_Right(0);&#9;// カーソル右移動<br><br>&#9;&#9;if ( find = ends ) then&#9;Break;&#9;// 見つけたのが終端文字列だった - ループ脱出<br><br>&#9;&#9;if ( find = '' ) then&#9;begin&#9;//{<br>&#9;&#9;&#9;// 検索結果が空だった == 何も見つからなかった<br>&#9;&#9;&#9;// 終端文字列も見つからないまま、最後まで検索完了してしまった場合<br>&#9;&#9;&#9;S_AddTail( CRLF + '__end_of_text__' );&#9;// 最後にテキストを追加 - ファイル末尾へ飛んで行き、そこに指定された文字列を書き込む。<br>&#9;&#9;&#9;Break;&#9;// 検索文字列も終端文字列も無い<br>&#9;&#9;end;&#9;//}<br><br>&#9;&#9;// 検索結果文字列を gstr に追加格納していく。<br>&#9;&#9;gstr := gstr + find + CRLF;<br>&#9;end;&#9;//}<br><br>&#9;S_InsText( CRLF + gstr );&#9;// 文字列を書き出す<br>end.&#9;//}<br></div></section>
+    <ul><li><section><h1 id=454>
+    <span class="no">[454]</span>
+    <a class="title" href="#454">Re2: 指定された文字列を取得するマクロ</a>
+    <span class="author">つきた</span>
+    <time datetime="2008-12-15T10:28:48">2008年12月15日 10:28</time></h1>
+    <div class="body">▼ すいさん<br>ぐぐってppa.dllを入手し実行してみたところ、うまくいきました！！！<br>ありがとうございます！！！<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

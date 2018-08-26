@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>移動履歴のちょっとした不具合</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">806</span>
+    <a class="title" href="806.html#806">移動履歴のちょっとした不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">812</span>
+    <a class="title" href="806.html#812">すいません。修正方法間違いでした。</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=806>
+    <span class="no">[806]</span>
+    <a class="title" href="#806">移動履歴のちょっとした不具合</a>
+    <span class="author">大久保</span>
+    <time datetime="2001-11-07T18:39:57">2001年11月07日 18:39</time></h1>
+    <div class="body">以前、マクロなどのエンハンスメントリクエストを出させていただいたものです。<br><br>気がつけば、外部マクロがサポートされているではないですか。<br>ボランティアとして活動している皆さん、ご苦労様です。<br><br>ほんのちょっとした不具合を発見しましたので報告させていただきます。<br><br>Sakuraバージョン: 1.2.101.2<br><br>現象:<br>移動履歴で最後尾のものが有効にならない。<br><br>修正方法:<br>CMarkMgr.cppの 90行目と 121行目(NextValid()とCheckNext()メソッド内)の行を以下のように変更する。<br><br>修正前&#9;for( int i = curpos + 1; i &lt; Count(); i++ ){<br>修正後&#9;for( int i = curpos + 1; i &lt;= Count(); i++ ){<br><br>以下の環境で現象改善を確認しました。<br>  OS - Windows98<br>  コンパイラ - Microsoft Visual C++ 6.0<br>  ソースファイル - ssrc_2001-11-06.zip <br><br>(たいした変更でないのでここに書かせていただきました。)</div></section>
+    <ul><li><section><h1 id=812>
+    <span class="no">[812]</span>
+    <a class="title" href="#812">すいません。修正方法間違いでした。</a>
+    <span class="author">大久保</span>
+    <time datetime="2001-11-08T15:53:18">2001年11月08日 15:53</time></h1>
+    <div class="body">すいません。修正方法が正しくありませんでした。<br>正しくない情報を書きこんでしまいすいません。<br>もう少し検証してみます。<br></div></section>
+    </li></ul></li></ul></body></html>

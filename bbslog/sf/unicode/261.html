@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>不具合報告？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">261</span>
+    <a class="title" href="261.html#261">不具合報告？</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=261>
+    <span class="no">[261]</span>
+    <a class="title" href="#261">不具合報告？</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-03-26T12:54:57">2008年03月26日 12:54</time></h1>
+    <div class="body">sakura_core_080323_5.zipの不具合の報告をさせていただきます。<br>系統だって評価する時間が取れていないので、使ってみてのチェックになります。<br><br>1) 拡張子にかかわらず、『基本』に開かれる。<br>2) Grepで『オプション』（『単語単位で探す』等）の設定が利かない。<br>&#9;Grep画面内でのGrepは問題なし。他のファイルからのGrepで発生する。<br>&#9;Grep 呼び出しのとき -GOPT=が設定されていないようです。<br>3) sakuraW.iniがない場合に作成されるiniファイルに『読み取り専用』のアトリビュートが立っているため、sakuraW.iniが更新されない。<br>4) 『共通設定』の『ファイル』の『ファイルの排他制御』で『他プロセスから読み書きを禁止する』を選択し、『バックアップ』の『保存時にバックアップを作成する』にすると<br>    上書き保存時、「バックアップの作成に失敗しました.元ファイルへの上書きを継続しますか.」のメッセージが表示される。<br><br>以上４点ありました。<br>参考にしてください。<br>環境は、WinXpPro Memory 1.25G<br>VS2005ProでDebug_Unicodedeでのコンパイルです。<br><br>使ってみた感じでは、ファイルの読込が早くなり、ANSI版と同じ位（実測したわけではありませんが）に感じました。<br>このぐらいのスピードならば常用エディタとして使えそうです。</div></section>
+    </li></ul></body></html>

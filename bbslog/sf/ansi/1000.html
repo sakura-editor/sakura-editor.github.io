@@ -1,0 +1,118 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>最近使ったファイル - テスト</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1000</span>
+    <a class="title" href="1000.html#1000">最近使ったファイル - テスト</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1001</span>
+    <a class="title" href="1000.html#1001">Re:最近使ったファイル - テスト</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1008</span>
+    <a class="title" href="1000.html#1008">Re: 最近使ったファイル - テスト</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1010</span>
+    <a class="title" href="1000.html#1010">Re2: 最近使ったファイル - テスト</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1011</span>
+    <a class="title" href="1000.html#1011">Re3: 最近使ったファイル - テスト</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1013</span>
+    <a class="title" href="1000.html#1013">Re4: 最近使ったファイル - テスト</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1030</span>
+    <a class="title" href="1000.html#1030">気づいたこと 12/27</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1031</span>
+    <a class="title" href="1000.html#1031">Re: 気づいたこと 12/27</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1032</span>
+    <a class="title" href="1000.html#1032">Re:気づいたこと 12/27</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1033</span>
+    <a class="title" href="1000.html#1033">Re2:気づいたこと 12/27</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1034</span>
+    <a class="title" href="1000.html#1034">Re:気づいたこと 12/27</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1039</span>
+    <a class="title" href="1000.html#1039">Re2:気づいたこと 12/27</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1042</span>
+    <a class="title" href="1000.html#1042">Re3:気づいたこと 12/27</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1000>
+    <span class="no">[1000]</span>
+    <a class="title" href="#1000">最近使ったファイル - テスト</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-24T14:23:38">2001年12月24日 14:23</time></h1>
+    <div class="body">最近使ったファイルを管理する変数に、<br>クラス経由でアクセスすることを提案します。<br>そして、クラス（CMRUクラス）経由でアクセスするように変更したファイルを共有フォルダにアップロードしました。<br>ファイル名は、cmru_test-2001-12-24.zipです。<br><br>クラス経由でアクセスすると、、<br><br>・共有メモリへのアクセスコードが一箇所にまとまって見通しがよくなる。<br>・共有メモリに仕様変更があっても、アクセスクラスだけ変更すればいい。<br><br>ってなるといいなぁ(^^;<br>そして最終的には、共有メモリをすべてクラス経由でアクセスするようにしたいなぁ。<br>と思ってます。<br><br>で、副作用として、<br>・最近使ったファイルの一覧が、本来管理されるものよりも<br>　すくなかったバグを修正。<br><br>コメント歓迎です。<br></div></section>
+    <ul><li><section><h1 id=1001>
+    <span class="no">[1001]</span>
+    <a class="title" href="#1001">Re:最近使ったファイル - テスト</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-24T16:03:05">2001年12月24日 16:03</time></h1>
+    <div class="body">&gt; ・最近使ったファイルの一覧が、本来管理されるものよりも<br>&gt; 　すくなかったバグを修正。<br><br>これ勘違いでした。<br>「共通設定」の「全般」→「ファイルの履歴MAX」を無視するバグ追加（をい）<br><br>&gt; コメント歓迎です。</div></section>
+    </li><li><section><h1 id=1008>
+    <span class="no">[1008]</span>
+    <a class="title" href="#1008">Re: 最近使ったファイル - テスト</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-25T16:25:55">2001年12月25日 16:25</time></h1>
+    <div class="body">&gt;クラス経由でアクセスすることを提案します。<br>* CMRU.hではなくCShareData.hで宣言されているのは何故？相互にインクルードされていてうまくいかなかったからやめたとか(^^)<br><br>* CMRUは内部にデータを保持しているわけではないので，singletonにする必要性はない．コンストラクタでShareDataを取得し，デストラクタでそれを解放すれば十分．<br><br>* 中身はコピーしただけのようだが，せっかくなのでバグも直してくれれば(^^;) &amp;の表示を調整するところ．は+3のバッファを取っているが，これは&amp;が3つ以上あったら後ろにはみ出します．<br><br>* Length()のように明らかに1行しかないような関数はclass定義に書いてinline展開させた方がいいと思います．<br><br>* GetFileInfo()で「無防備」となっているところは const FileInfo* を返すようにすれば安全になるはず．ただし，受ける方もconst宣言してつじつまを合わせないと行けない．<br><br>* 170,181行目(Add()内)「これでポインタの代入をしている。」というのは実体をコピーしているの誤り．<br><br>* ClearAll() の「deleteしなくていいのか」は既に確保した領域を使いまわすのでdeleteではない．<br><br>* GetPathListは予め実際の個数+1の領域が確保されていることを前提としているが，呼び出し元で「ここでnewするのは危険」と書くぐらいなら std::vector&lt;const char*&gt; に入れてもらった方が呼び出す方もポインタを扱わなくて良いので安全だと思う．<br></div></section>
+    <ul><li><section><h1 id=1010>
+    <span class="no">[1010]</span>
+    <a class="title" href="#1010">Re2: 最近使ったファイル - テスト</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-25T16:33:50">2001年12月25日 16:33</time></h1>
+    <div class="body">▼ げんたさん<br><br>コメント感謝です :-)<br><br>&gt; &gt;クラス経由でアクセスすることを提案します。<br>&gt; * CMRU.hではなくCShareData.hで宣言されているのは何故？相互にインクルードされていてうまくいかなかったからやめたとか(^^)<br><br>そうです :-)<br>そこまで気合は入れてない。テストだしね。<br><br>&gt; * CMRUは内部にデータを保持しているわけではないので，singletonにする必要性はない．コンストラクタでShareDataを取得し，デストラクタでそれを解放すれば十分．<br><br>じゃぁどこにCMRUを置きます？<br>それを考えるのが面倒だったので、Singletonにしたんですけど。<br><br><br>&gt; * 中身はコピーしただけのようだが，せっかくなのでバグも直してくれれば(^^;) &amp;の表示を調整するところ．は+3のバッファを取っているが，これは&amp;が3つ以上あったら後ろにはみ出します．<br><br>おお鋭い。パッチに期待します。<br><br>&gt; * Length()のように明らかに1行しかないような関数はclass定義に書いてinline展開させた方がいいと思います．<br><br>趣味の範囲のような。いまどきコンパイラでやってくれてるのでは？<br><br> <br>&gt; * GetFileInfo()で「無防備」となっているところは const FileInfo* を返すようにすれば安全になるはず．ただし，受ける方もconst宣言してつじつまを合わせないと行けない．<br><br>了解。<br> <br>&gt; * 170,181行目(Add()内)「これでポインタの代入をしている。」というのは実体をコピーしているの誤り．<br><br>ご指摘どおり :-)<br> <br>&gt; * ClearAll() の「deleteしなくていいのか」は既に確保した領域を使いまわすのでdeleteではない．<br><br>こちらもご指摘どおり :-)<br><br>&gt; * GetPathListは予め実際の個数+1の領域が確保されていることを前提としているが，呼び出し元で「ここでnewするのは危険」と書くぐらいなら std::vector&lt;const char*&gt; に入れてもらった方が呼び出す方もポインタを扱わなくて良いので安全だと思う．<br><br>いろいろ考えてみます。<br></div></section>
+    <ul><li><section><h1 id=1011>
+    <span class="no">[1011]</span>
+    <a class="title" href="#1011">Re3: 最近使ったファイル - テスト</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-25T17:56:18">2001年12月25日 17:56</time></h1>
+    <div class="body">&gt;&gt; singletonにする必要性はない．<br>&gt;じゃぁどこにCMRUを置きます？<br>使いたいときに変数を宣言して，いらなくなったら or スコープから外れたらおしまい．全体で共通の実体を持つ必要はありません．<br>&gt;&gt; * Length()のように明らかに1行しかないような関数はclass定義に書いてinline展開させた方がいいと思います．<br>&gt;趣味の範囲のような。いまどきコンパイラでやってくれてるのでは？<br>class定義の外側にinline宣言無しで書いたら，絶対inlineにはなりません．というより，されたら困る．<br></div></section>
+    <ul><li><section><h1 id=1013>
+    <span class="no">[1013]</span>
+    <a class="title" href="#1013">Re4: 最近使ったファイル - テスト</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-25T18:06:46">2001年12月25日 18:06</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;&gt; singletonにする必要性はない．<br>&gt; &gt;じゃぁどこにCMRUを置きます？<br>&gt; 使いたいときに変数を宣言して，いらなくなったら or スコープから外れたらおしまい．全体で共通の実体を持つ必要はありません．<br><br>をを。鋭いですね。そりゃそうだ。<br>修正します!<br><br>&gt; &gt;&gt; * Length()のように明らかに1行しかないような関数はclass定義に書いてinline展開させた方がいいと思います．<br>&gt; &gt;趣味の範囲のような。いまどきコンパイラでやってくれてるのでは？<br>&gt; class定義の外側にinline宣言無しで書いたら，絶対inlineにはなりません．というより，されたら困る．<br><br>がーん。そうだったのか。すっかりinline展開って勝手にやってくれるものと思ってました。<br>じゃーclass定義に書き写しときます。<br><br>感謝感謝。</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=1030>
+    <span class="no">[1030]</span>
+    <a class="title" href="#1030">気づいたこと 12/27</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-28T10:36:02">2001年12月28日 10:36</time></h1>
+    <div class="body">どうもファイルサイズが大きいと思ったらsakuraフォルダに中間ファイル(1.2MB)が入っていた．<br><br>--<br>HMENU CreateMenu( class CMenuDrawer* pCMenuDrawer );<br><br>引数は CMenuDrawer&amp; の方がいいんじゃない？いちいち&amp;をつけて呼び出すのも前時代的な感じがする．<br>あと，Cと違って構造体やclassを使うときにstruct/classと書く必要はないので，ここの"class"はいりませんね．<br>GetFileInfoのstructも．<br><br>--<br>ヘッダに移すと言ったLength()が直っていない．<br><br>--<br>CMRUとCMRUFolderみたいな二卵性双生児みたいなクラスは間違いの元．<br>しかも，片方だけコメントが削除されていたりと微妙に違うのが謎．<br><br>CMRU<br>｜<br>△<br>｜<br>CMRUFile, CMRUFolder<br>みたいにできないかなぁ．<br><br>継承にしても今のコードをそのまま使ったのでは無意味なので，共通処理，例えば<br>* &amp;を&amp;&amp;に置換<br>* MRUに登録<br>とかいうのをCMRUのメソッドにして，それを利用するようにする．<br><br>あと，全体の処理の流れが酷似しているけどアクセス先が異なるようなものは個別クラスに依存する部分をprotectedな仮想関数にして，大きな流れを共通化した上で詳細部分はその関数を呼ぶstrategy patternをうまく使えないものだろうか．<br>---<br>GetPathのエラー時の戻り値は0じゃなくてNULLがいいな．<br><br>---<br>新規に作った関数には全て，何を渡すと何が行われて何が戻ってくるかがわかるようなコメントを入れて欲しいですね．あとから変更する人が一苦労．<br></div></section>
+    <ul><li><section><h1 id=1031>
+    <span class="no">[1031]</span>
+    <a class="title" href="#1031">Re: 気づいたこと 12/27</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-28T10:46:16">2001年12月28日 10:46</time></h1>
+    <div class="body">&gt;strategy pattern<br>変数のアクセス先だけが異なるものにこれを使うと，値を見るだけでも仮想関数呼び出しになって非効率．<br>どうしても別関数に切り出せない場合にはこういう手法はどうだろうか．<br>1. スーパークラスに必要な変数へのポインタ(protected)を用意する．<br>2. サブクラスのコンストラクタで，ポインタを適切に設定．<br>3. スーパークラスの関数内では予め設定されたポインタを使う．<br><br>と思ったら，なんとMRUFileとMRUFolderで型が異なるじゃないか！むむぅ．<br>m_nMRUArrNum_MAXとm_nOPENFOLDERArrNum_MAX位にしか使えないな．<br><br>--<br>でも，よく見たら上の記事で例に挙げたMRU登録と&amp;の展開くらいしか共通部分はないな．それとコンストラクタ．<br></div></section>
+    </li><li><section><h1 id=1032>
+    <span class="no">[1032]</span>
+    <a class="title" href="#1032">Re:気づいたこと 12/27</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-28T11:34:10">2001年12月28日 11:34</time></h1>
+    <div class="body">やー、批判ばかりはつらいですな。<br><br>▼ げんたさん<br>&gt; どうもファイルサイズが大きいと思ったらsakuraフォルダに中間ファイル(1.2MB)が入っていた．<br><br>ありゃ、しつれい。<br> <br>&gt; --<br>&gt; HMENU CreateMenu( class CMenuDrawer* pCMenuDrawer );<br>&gt; <br>&gt; 引数は CMenuDrawer&amp; の方がいいんじゃない？いちいち&amp;をつけて呼び出すのも前時代的な感じがする．<br>&gt; あと，Cと違って構造体やclassを使うときにstruct/classと書く必要はないので，ここの"class"はいりませんね．<br>&gt; GetFileInfoのstructも．<br><br>まぁそもそも、ソース全体が前時代的な雰囲気なので、そっちを直してから<br>文句をいってくれって感じですが :-(<br> <br>&gt; --<br>&gt; ヘッダに移すと言ったLength()が直っていない．<br><br>inlineをつけた。<br><br> <br>&gt; --<br>&gt; CMRUとCMRUFolderみたいな二卵性双生児みたいなクラスは間違いの元．<br>&gt; しかも，片方だけコメントが削除されていたりと微妙に違うのが謎．<br><br>思い付きです。気になったら直してください :-)<br><br><br>&gt; CMRU<br>&gt; ｜<br>&gt; △<br>&gt; ｜<br>&gt; CMRUFile, CMRUFolder<br>&gt; みたいにできないかなぁ．<br>&gt; <br>&gt; 継承にしても今のコードをそのまま使ったのでは無意味なので，共通処理，例えば<br>&gt; * &amp;を&amp;&amp;に置換<br>&gt; * MRUに登録<br>&gt; とかいうのをCMRUのメソッドにして，それを利用するようにする．<br>&gt; <br>&gt; あと，全体の処理の流れが酷似しているけどアクセス先が異なるようなものは個別クラスに依存する部分をprotectedな仮想関数にして，大きな流れを共通化した上で詳細部分はその関数を呼ぶstrategy patternをうまく使えないものだろうか．<br><br>考えてみてください :-)<br><br><br>&gt; ---<br>&gt; GetPathのエラー時の戻り値は0じゃなくてNULLがいいな．<br><br>手元では修正しましたん。<br><br>&gt; ---<br>&gt; 新規に作った関数には全て，何を渡すと何が行われて何が戻ってくるかがわかるようなコメントを入れて欲しいですね．あとから変更する人が一苦労．<br><br>へーい。考えときます。</div></section>
+    <ul><li><section><h1 id=1033>
+    <span class="no">[1033]</span>
+    <a class="title" href="#1033">Re2:気づいたこと 12/27</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-28T11:40:40">2001年12月28日 11:40</time></h1>
+    <div class="body">と、怒りに任せて書いたものの、反省。<br><br><br>▼ やざきさん<br>&gt; &gt; --<br>&gt; &gt; HMENU CreateMenu( class CMenuDrawer* pCMenuDrawer );<br>&gt; &gt; <br>&gt; &gt; 引数は CMenuDrawer&amp; の方がいいんじゃない？いちいち&amp;をつけて呼び出すのも前時代的な感じがする．<br>&gt; &gt; あと，Cと違って構造体やclassを使うときにstruct/classと書く必要はないので，ここの"class"はいりませんね．<br>&gt; &gt; GetFileInfoのstructも．<br>&gt; <br>&gt; まぁそもそも、ソース全体が前時代的な雰囲気なので、そっちを直してから<br>&gt; 文句をいってくれって感じですが :-(<br><br>この辺は陳謝。すんません。<br>こんごともどうぞよろしく。では～。<br></div></section>
+    </li><li><section><h1 id=1034>
+    <span class="no">[1034]</span>
+    <a class="title" href="#1034">Re:気づいたこと 12/27</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-28T12:18:46">2001年12月28日 12:18</time></h1>
+    <div class="body">&gt;&gt; ヘッダに移すと言ったLength()が直っていない．<br>&gt;<br>&gt;inlineをつけた。<br>inlineならヘッダファイルに移動しないと他のファイルがコンパイルできないはずなんですが...<br>だって，展開しようにも中身がわからないじゃない．<br><br>でも，エラーにならないとすれば自分のクラス内でしか使われていないのかな？<br>それならそれでいいけど他のファイルからは使えませんね．<br></div></section>
+    <ul><li><section><h1 id=1039>
+    <span class="no">[1039]</span>
+    <a class="title" href="#1039">Re2:気づいたこと 12/27</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-28T14:55:50">2001年12月28日 14:55</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;&gt; ヘッダに移すと言ったLength()が直っていない．<br>&gt; &gt;<br>&gt; &gt;inlineをつけた。<br>&gt; inlineならヘッダファイルに移動しないと他のファイルがコンパイルできないはずなんですが...<br>&gt; だって，展開しようにも中身がわからないじゃない．<br>&gt; <br>&gt; でも，エラーにならないとすれば自分のクラス内でしか使われていないのかな？<br>&gt; それならそれでいいけど他のファイルからは使えませんね．<br><br>ヘッダのほうにもinlineをつけるべき？<br>よくわからないので、げんたさんよろしくです(^^;</div></section>
+    <ul><li><section><h1 id=1042>
+    <span class="no">[1042]</span>
+    <a class="title" href="#1042">Re3:気づいたこと 12/27</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-29T00:12:02">2001年12月29日 00:12</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ▼ げんたさん<br>&gt; &gt; &gt;&gt; ヘッダに移すと言ったLength()が直っていない．<br>&gt; &gt; &gt;<br>&gt; &gt; &gt;inlineをつけた。<br>&gt; &gt; inlineならヘッダファイルに移動しないと他のファイルがコンパイルできないはずなんですが...<br>&gt; &gt; だって，展開しようにも中身がわからないじゃない．<br>&gt; &gt; <br>&gt; &gt; でも，エラーにならないとすれば自分のクラス内でしか使われていないのかな？<br>&gt; &gt; それならそれでいいけど他のファイルからは使えませんね．<br>&gt; <br>&gt; ヘッダのほうにもinlineをつけるべき？<br>&gt; よくわからないので、げんたさんよろしくです(^^;<br><br>ああ、確かにRelease版はコンパイルできない。<br>ので、手元ではinlineとっちゃった（はじめに戻る(苦笑)）</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>新ウィンドウに文字列挿入</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">275</span>
+    <a class="title" href="275.html#275">新ウィンドウに文字列挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">277</span>
+    <a class="title" href="275.html#277">Re:新ウィンドウに文字列挿入</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=275>
+    <span class="no">[275]</span>
+    <a class="title" href="#275">新ウィンドウに文字列挿入</a>
+    <span class="author">めっちー</span>
+    <time datetime="2006-06-01T13:58:23">2006年06月01日 13:58</time></h1>
+    <div class="body">文字列を選択してから新しいウィンドウを開き、<br>そのウィンドウに選択した文字列を挿入したいのですが<br>なかなか実現できません。<br><br>どなたか方法をご存知の方いらっしゃいますか<br><br>下記のような方法を試してみましたが、<br>元々フォーカスのあったウィンドウに文字列が挿入されてしまいます。<br><br>(PerlScript)<br># 選択範囲を取得<br>unless (IsTextSelected()) {<br>&#9;SelectAll();<br>}<br>my $seltext = GetSelectedString(0);<br><br># 新ファイルオープン<br>FileNew();<br>InsText($seltext);<br></div></section>
+    <ul><li><section><h1 id=277>
+    <span class="no">[277]</span>
+    <a class="title" href="#277">Re:新ウィンドウに文字列挿入</a>
+    <span class="author">maru</span>
+    <time datetime="2006-06-03T02:35:56">2006年06月03日 02:35</time></h1>
+    <div class="body">▼ めっちーさん<br>このような要望は今までもあがっておりますが<br>実現されておりません。<br><br>似たような機能を提供するものとして<br>アウトプットウインドウに出力するマクロ関数を<br>提供するパッチならありますので<br>よろしかったら試してみてください。<br><a href=http://sourceforge.net/tracker/index.php?func=detail&aid=1478468&group_id=12488&atid=312488 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>1478468&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>312488</nobr></a><br><br># 選択文字列をアウトプットウインドウに出力<br>TraceOut('$C', 1);</div></section>
+    </li></ul></li></ul></body></html>

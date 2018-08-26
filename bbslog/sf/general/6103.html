@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>RE: ”ヴ”のひらがな変換</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6103</span>
+    <a class="title" href="6103.html#6103">RE: ”ヴ”のひらがな変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6104</span>
+    <a class="title" href="6103.html#6104">Re2: ”ヴ”のひらがな変換</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=6103>
+    <span class="no">[6103]</span>
+    <a class="title" href="#6103">RE: ”ヴ”のひらがな変換</a>
+    <span class="author">すずみ</span>
+    <time datetime="2007-06-16T07:35:27">2007年06月16日 07:35</time></h1>
+    <div class="body">ご回答ありがとうございます。<br>私の場合、Atokのユーザー辞書を作るとき、<br>”う゛ぁいおりん”の表記が必要となります。<br>ご教示の「２段階変換」でも実用性に十分に<br>耐えると思います。<br>お手数をおかけしました。</div></section>
+    <ul><li><section><h1 id=6104>
+    <span class="no">[6104]</span>
+    <a class="title" href="#6104">Re2: ”ヴ”のひらがな変換</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-06-16T21:36:24">2007年06月16日 21:36</time></h1>
+    <div class="body">「ヴヵヶ」カタカナ→ひらがな変換出来ないのは、<br>「ヴヵヶ」はひらがなのコードが無いから。そう言えば、<br>「ヮヵヶ」全角カタカナ→半角変換が変だ。<br><br># _mbctombb Windows<br>--- コピー ～ CMemory.cpp&#9;Thu Feb 01 00:44:20 2007<br>+++ CMemory.cpp&#9;Sat Jun 16 23:04:02 2007<br>@@ -2271 +2271,5 @@<br>-&#9;&#9;&#9;&#9;if( ( 0x8340 &lt;= uiSrc &amp;&amp; uiSrc &lt;= 0x8396 )<br>+&#9;&#9;&#9;&#9;if( 0x838e == uiSrc ) {&#9;// 2007/06/16 「ヮ」を除外　じゅうじ<br>+&#9;&#9;&#9;&#9;&#9;bInHiraKata = true;<br>+&#9;&#9;&#9;&#9;} else<br>+//&#9;&#9;&#9;&#9;if( ( 0x8340 &lt;= uiSrc &amp;&amp; uiSrc &lt;= 0x8396 )<br>+&#9;&#9;&#9;&#9;if( ( 0x8340 &lt;= uiSrc &amp;&amp; uiSrc &lt;= 0x8394 )&#9;// 2007/06/16 「ヵヶ」を除外　じゅうじ<br></div></section>
+    </li></ul></li></ul></body></html>

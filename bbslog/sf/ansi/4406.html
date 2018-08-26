@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>そろそろリリースしたい</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">4406</span>
+    <a class="title" href="4406.html#4406">そろそろリリースしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4408</span>
+    <a class="title" href="4406.html#4408">Re:そろそろリリースしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4418</span>
+    <a class="title" href="4406.html#4418">Re2:そろそろリリースしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4425</span>
+    <a class="title" href="4406.html#4425">文字化け</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4410</span>
+    <a class="title" href="4406.html#4410">Re:そろそろリリースしたい</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=4406>
+    <span class="no">[4406]</span>
+    <a class="title" href="#4406">そろそろリリースしたい</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-04-15T11:58:40">2006年04月15日 11:58</time></h1>
+    <div class="body">いろいろ途中ではありますが，5月にまともなパッケージを用意するというPlanから考えるとそろそろ一旦バイナリを作ってリリースしたいと思います．<br><br>どの辺まで入りますかね．焦ってムリに入れることはないですが．<br><br>タブ・ヘルプなどの機能追加は次の次かな．<br></div></section>
+    <ul><li><section><h1 id=4408>
+    <span class="no">[4408]</span>
+    <a class="title" href="#4408">Re:そろそろリリースしたい</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-04-15T15:53:51">2006年04月15日 15:53</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; どの辺まで入りますかね．焦ってムリに入れることはないですが．<br>現行Trunkベースでいいんじゃないかと思います。<br>リリース契機とは別でいいですが、&gt;&gt;dev:4398 のようなパッチ文字化け対策が早めに欲しかったり...</div></section>
+    <ul><li><section><h1 id=4418>
+    <span class="no">[4418]</span>
+    <a class="title" href="#4418">Re2:そろそろリリースしたい</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-04-18T01:09:57">2006年04月18日 01:09</time></h1>
+    <div class="body">&gt;リリース契機とは別でいいですが、&gt;&gt;dev:4398 のようなパッチ文字化け対策が早めに欲しかったり... <br>CProcessFactory.h以外に，Debug.hも化けますね．<br><br>//&#9;この行は文字化け対策用です．消さないでください<br>というのを1行目に入れてみたら，化けなくなったようです．<br>でもどちらかというとコメントの充実といった点から文字化けを防止するほうが1行目に入れるよりスマートかもしれませんね．<br>機械的な対策ですと(将来に備えて)全てのファイルに対して行わなくてはならないですし．<br></div></section>
+    <ul><li><section><h1 id=4425>
+    <span class="no">[4425]</span>
+    <a class="title" href="#4425">文字化け</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-04-20T01:07:33">2006年04月20日 01:07</time></h1>
+    <div class="body">ヘッダファイルだけ全部チェックしましたところ，CDlgWinSize.hも化けていました．<br>文字化け対策のヘッダを挿入する方法は手間がかかって格好悪いので，問題が出ているファイルに対して日本語コメントを追加して対応しました．<br><br>sakura/trunk#963です．<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4410>
+    <span class="no">[4410]</span>
+    <a class="title" href="#4410">Re:そろそろリリースしたい</a>
+    <span class="author">fon</span>
+    <time datetime="2006-04-16T16:18:32">2006年04月16日 16:18</time></h1>
+    <div class="body">&gt; タブ・ヘルプなどの機能追加は次の次かな．<br>ヘルプ機能の方は、まだまだ皆さんの評価が必要かも知れません。<br>次の版ではsubversion用のパッチに挑戦してみます！<br>げんたさん、お気遣いありがとうございます。<br></div></section>
+    </li></ul></li></ul></body></html>

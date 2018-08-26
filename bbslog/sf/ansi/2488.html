@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ATOK15での再変換</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2488</span>
+    <a class="title" href="2488.html#2488">ATOK15での再変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2490</span>
+    <a class="title" href="2488.html#2490">Re:ATOK15での再変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2493</span>
+    <a class="title" href="2488.html#2493">Re2:ATOK15での再変換</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2488>
+    <span class="no">[2488]</span>
+    <a class="title" href="#2488">ATOK15での再変換</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2002-11-20T12:46:09">2002年11月20日 12:46</time></h1>
+    <div class="body">NT4.0+sakura1.3.5.4+ATOK15 で、「Shift+変換キー」による再変換はうまくいくのですが、<br>メニューから「再変換」を選んだときに再変換が実行されません。<br>CEditView::Command_Reconvert を以下のように修正したところ、再変換に成功しました。<br>ATOK15でしか動作を確認していないので、バージョンの違うATOKをお持ちの方、これで<br>問題ないかどうか追試をお願いします。<br><br>修正前：<br>|&#9;//再変換実行<br>|&#9;if(bUseUnicodeATOK){<br>|&#9;&#9;(*AT_ImmSetReconvertString)(hIMC, SCS_SETRECONVERTSTRING, pReconv, pReconv-&gt;dwSize);<br><br>修正後：<br>|&#9;//再変換実行<br>|&#9;if(bUseUnicodeATOK){<br>|&#9;&#9;(*AT_ImmSetReconvertString)(hIMC, ATRECONVERTSTRING_SET, pReconv, pReconv-&gt;dwSize);<br><br>#define ATRECONVERTSTRING_SET  1<br>をどこかで別途定義しておいて下さい。<br><br>＃ヘルプの更新に手をつけようとしてますが....年内になんとかしたい<br></div></section>
+    <ul><li><section><h1 id=2490>
+    <span class="no">[2490]</span>
+    <a class="title" href="#2490">Re:ATOK15での再変換</a>
+    <span class="author">かろと</span>
+    <time datetime="2002-11-26T19:10:27">2002年11月26日 19:10</time></h1>
+    <div class="body"><br>Win2000+sakura1.3.5.3+ATOK14 ですが、<br>修正前でも　メニューから再変換できました。<br><br></div></section>
+    <ul><li><section><h1 id=2493>
+    <span class="no">[2493]</span>
+    <a class="title" href="#2493">Re2:ATOK15での再変換</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-11-27T00:29:46">2002年11月27日 00:29</time></h1>
+    <div class="body">ごぶさたしておりました．<br>&gt;Win2000+sakura1.3.5.3+ATOK14 ですが、<br>&gt;修正前でも　メニューから再変換できました。<br>少し補足します．<br><br>すとーにぃさんの指摘部分はOSが再変換をサポートしていない場合にATOK固有のメッセージを用いて再変換を行わせる部分です．Win2KはOSで再変換をサポートしているはずですのでこの箇所を通りません．<br><br>ですので，すとーにぃさんの質問に答えられるのはWin95かWin NT4にATOK14をインストールしており，かつ，自分でバイナリを作れる人に限定されると思います．<br><br>私もWin95/WinNT+ATOK14という環境は手近にありませんので，とりあえずすとーにぃさんの指摘部分を反映したバイナリをテスト版としてsourceforgeに置くことにします．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>1.2.102.0</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">855</span>
+    <a class="title" href="855.html#855">1.2.102.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">856</span>
+    <a class="title" href="855.html#856">Re:1.2.102.0</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=855>
+    <span class="no">[855]</span>
+    <a class="title" href="#855">1.2.102.0</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-11-09T23:10:27">2001年11月09日 23:10</time></h1>
+    <div class="body">みくさんの修正，変更を取り込みました．<br>★キー設定ファイルのテキスト化<br>★設定ファイル形式違うときのファイルクローズ忘れバグ修正<br>★機能に割り当てられているキーリストをクリックするとキーリストのそれが選択される<br>★キー設定画面（だけ）の右クリックヘルプ<br>★インポート時に機能に割り当てられているキーリストが更新されないバグ修正<br>★半角数値のEfLl,指数付き浮動小数点,IPドット連結(11/8実装済み)<br>★上記実装時の"-1"の"-"が数値にならないバグ修正<br><br>キーのExport/Import形式が変わっています．<br><br>パッケージにはJunkディレクトリに入っているCOBOLとUnix Shellのキーワードを追加しました．<br>アンインストール時にsakura.iniは残すようにしました．(これ以前のバージョンではアンインストール時に削除されるので注意してください)<br><br>言い忘れましたけど，関連づけツールSakuExtも1つ前でNT対応版に入れ替えてあります．<br></div></section>
+    <ul><li><section><h1 id=856>
+    <span class="no">[856]</span>
+    <a class="title" href="#856">Re:1.2.102.0</a>
+    <span class="author">みく</span>
+    <time datetime="2001-11-10T08:19:35">2001年11月10日 08:19</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; キーのExport/Import形式が変わっています．<br>ImportはテキストでもバイナリでもOKです。<br>あと、<br>＞★機能に割り当てられているキーリストをクリックするとキーリストのそれが選択される<br>のリソース修正を添付するのを忘れてたので、<br>動作してません。すいません。<br>コンパイル環境をお持ちの方は、<br>リソース→Dialog→IDD_PROP_KEYBIND<br>→IDC_LIST_ASSIGNEDKEYS(左下のリストボックス)のプロパティ<br>→スタイルタブを選択し、<br>「選択」を「シングル」に、<br>「通知」にチェックを入れてください。<br><br></div></section>
+    </li></ul></li></ul></body></html>

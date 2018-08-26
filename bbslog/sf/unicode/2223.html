@@ -1,0 +1,136 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ダブルクォーテーション文字列の判定が変</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2223</span>
+    <a class="title" href="2223.html#2223">ダブルクォーテーション文字列の判定が変</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2224</span>
+    <a class="title" href="2223.html#2224">Re: ダブルクォーテーション文字列の判定が変</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2225</span>
+    <a class="title" href="2223.html#2225">Re2: ダブルクォーテーション文字列の判定が変</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2226</span>
+    <a class="title" href="2223.html#2226">Re3: ダブルクォーテーション文字列の判定が変</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2227</span>
+    <a class="title" href="2223.html#2227">Re4: ダブルクォーテーション文字列の判定が変</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2228</span>
+    <a class="title" href="2223.html#2228">Re4: ダブルクォーテーション文字列の判定が変</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2229</span>
+    <a class="title" href="2223.html#2229">Re5: ダブルクォーテーション文字列の判定が変</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2230</span>
+    <a class="title" href="2223.html#2230">Re6: ダブルクォーテーション文字列の判定が変</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2231</span>
+    <a class="title" href="2223.html#2231">Re7: ダブルクォーテーション文字列の判定が変</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2232</span>
+    <a class="title" href="2223.html#2232">Re8: ダブルクォーテーション文字列の判定が変</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2233</span>
+    <a class="title" href="2223.html#2233">Re9: ダブルクォーテーション文字列の判定が変</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2234</span>
+    <a class="title" href="2223.html#2234">紅桜の #if 0/#if 1  コード不具合について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2235</span>
+    <a class="title" href="2223.html#2235">RE: 紅桜の #if 0/#if 1  コード不具合について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2236</span>
+    <a class="title" href="2223.html#2236">RE2: 紅桜の #if 0/#if 1  コード不具合について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2237</span>
+    <a class="title" href="2223.html#2237">Re2: 紅桜の #if 0/#if 1  コード不具合について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2223>
+    <span class="no">[2223]</span>
+    <a class="title" href="#2223">ダブルクォーテーション文字列の判定が変</a>
+    <span class="author">匿名</span>
+    <time datetime="2014-12-31T13:08:40">2014年12月31日 13:08</time></h1>
+    <div class="body">Onigmo-5.15.0 のソース regexec.c の 1396 行目からダブルクォーテーション文字列の判定が変になります。<br><a href=https://github.com/k-takata/Onigmo/blob/Onigmo-5.15.0/regexec.c#L1396 target=_top><nobr>https://<wbr>github.<wbr>com/<wbr>k-<wbr>takata/<wbr>Onigmo/<wbr>blob/<wbr>Onigmo-<wbr>5.<wbr>15.<wbr>0/<wbr>regexec.<wbr>c#<wbr>L1396</nobr></a><br><br>2.1.1.4 Stable と Rev.3908 で確認しました。</div></section>
+    <ul><li><section><h1 id=2224>
+    <span class="no">[2224]</span>
+    <a class="title" href="#2224">Re: ダブルクォーテーション文字列の判定が変</a>
+    <span class="author">もか</span>
+    <time datetime="2014-12-31T16:28:40">2014年12月31日 16:28</time></h1>
+    <div class="body">そのURLで確認しました。<br>今の実装だと、「R"なにがし(」の文字列は、C++11のRaw Stringとみなされるので、<br>その終端がないものとして、この場合は「) "」が現れるまで文字列になります。<br>もしRと"の間にスペース1つでもあればRaw Stringとは認識されません。<br>これどうしたらいいと思う？<br><br>1. Rの直前にu8w以外が来ているかチェックする<br>\b(u|u8|w)R"[^(]*\(<br>の正規表現相当でチェック。\bの具体的パターンはよく分からない。<br><br>2. C++とは別にC/C++03文字列を追加してそっちを使ってもらう<br>作るのは簡単そうだけど、使う人が面倒<br>しかし、""文字列型を汎用として使うにはR"str...も普通の文字列としたい場合などあったほうがいいかも。<br><br>1.2.両方かな。<br>PRIdPTR等はC99みたいなので、何とかしようと思います。<br></div></section>
+    <ul><li><section><h1 id=2225>
+    <span class="no">[2225]</span>
+    <a class="title" href="#2225">Re2: ダブルクォーテーション文字列の判定が変</a>
+    <span class="author">もか</span>
+    <time datetime="2014-12-31T16:39:53">2014年12月31日 16:39</time></h1>
+    <div class="body">&gt;\b(u|u8|w)R"[^(]*\(<br>訂正。たぶんこう<br>\b(u8|u|U|L|)R"[^(]*\(<br><br>\bはたぶん<br>^|[!"#$%&amp;'()=@{};:&lt;&gt;?,.*/\-\+\[\]\\s]<br></div></section>
+    <ul><li><section><h1 id=2226>
+    <span class="no">[2226]</span>
+    <a class="title" href="#2226">Re3: ダブルクォーテーション文字列の判定が変</a>
+    <span class="author">もか</span>
+    <time datetime="2014-12-31T19:35:45">2014年12月31日 19:35</time></h1>
+    <div class="body">パッチをトラッカーに登録しました<br><br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/954/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>954/<wbr></nobr></a></div></section>
+    <ul><li><section><h1 id=2227>
+    <span class="no">[2227]</span>
+    <a class="title" href="#2227">Re4: ダブルクォーテーション文字列の判定が変</a>
+    <span class="author">匿名</span>
+    <time datetime="2014-12-31T21:41:19">2014年12月31日 21:41</time></h1>
+    <div class="body">お疲れ様です。</div></section>
+    </li><li><section><h1 id=2228>
+    <span class="no">[2228]</span>
+    <a class="title" href="#2228">Re4: ダブルクォーテーション文字列の判定が変</a>
+    <span class="author">suzz</span>
+    <time datetime="2015-01-04T14:34:44">2015年01月04日 14:34</time></h1>
+    <div class="body"><br>&gt;C++ Raw StringがR"で終わる識別子でRそのものでない(PTIdPTR等)場合にも<br><br>・・・わけがわからないよ。<br>もう少しわかるように書けない？<br>また、どう直したのかを自然言語でも書けないかな？<br><br>また、「#956 カラーの文字列にC言語風を追加」ですが、<br>C言語風 / C++言語風 よりは、C/C++03 / C++11 という定義名にして、<br>デフォルトは C/C++03 にしませんか？<br></div></section>
+    <ul><li><section><h1 id=2229>
+    <span class="no">[2229]</span>
+    <a class="title" href="#2229">Re5: ダブルクォーテーション文字列の判定が変</a>
+    <span class="author">もか</span>
+    <time datetime="2015-01-04T22:15:51">2015年01月04日 22:15</time></h1>
+    <div class="body">&gt;&gt;C++ Raw StringがR"で終わる識別子でRそのものでない(PTIdPTR等)場合にも<br>&gt;・・・わけがわからないよ。<br>(キューベーのAA略)<br>「Rで終わる」ってのはxxxxR"hoge(str... って意味で<br>「Rそのもの」ってのはR"hoge(str.. て意味で書いたけどこれは不正確だった。<br>でその2つが「かつ」って書いてないけどかつの場合。<br>if( 'R' == str[nPos-1] ){ // Rで終わる識別子<br>    // 旧:Raw String定義<br>    if( IsRawStringPrefix(str, nPos) ){<br>       // UR,uR,u8R,LR,R の識別子(直前が記号類・空白か行頭)<br>       // 新:Raw String定義<br>    }else{<br>      // 上記の「場合」とはここの意味。ここは条件から外す。<br>    }<br>}<br>&gt;また、「#956 カラーの文字列にC言語風を追加」ですが、<br>&gt;C言語風 / C++言語風 よりは、C/C++03 / C++11 という定義名にして、<br>定義名は変更しようと思います。<br>&gt;デフォルトは C/C++03 にしませんか？<br>C++11のほうを追加にして、<br>C/C++03(旧C/C++言語風)ではRawを色分けしないように仕様変更。<br>CType_CppのデフォルトだけC++11にしました。<br>旧設定から引き継いだC/C++タイプ別はC/C++03になります。ので、Rawを色分けしたい人は手動で設定を変更する必要があります。<br>2011年から4年も経過しているわけで、私個人としてはC++は04準拠で行きたいと思います。<br>サクラエディタのソースは違うけど。<br>新規格を取り込んでいかないと緩やかに死んでいくだけ。<br>Cの定義がっていう場合はそろそろタイプ別を分けたほうがいいと思う。<br>もはやCの上位版がC++とは言えないし。<br></div></section>
+    <ul><li><section><h1 id=2230>
+    <span class="no">[2230]</span>
+    <a class="title" href="#2230">Re6: ダブルクォーテーション文字列の判定が変</a>
+    <span class="author">suzz</span>
+    <time datetime="2015-01-05T22:44:44">2015年01月05日 22:44</time></h1>
+    <div class="body"><br>正規表現とか擬似コードに頼らずに日本語で書いて欲しいな。<br><br>コードを読まないと何やってんのかわからないのでは、<br>読む側は時間がかかるばっかりで嫌になっちゃうよ。<br>（サクラエディタのコードはうんこなんだから、できるだけヒントは欲しい。今北産業で。）<br><br>&gt;旧設定から引き継いだC/C++タイプ別はC/C++03になります。ので、Rawを色分けしたい人は手動で設定を変更する必要があります。<br>&gt;2011年から4年も経過しているわけで、私個人としてはC++は04準拠で行きたいと思います。<br><br>落とし所としてはこの辺ですかね。<br>新機能を入れるのはいいけど、利用者のことも考えてほしいなと。<br>(まあ、私はサクラエディタを使っていない人の筆頭なのだが)<br><br>&gt; Cの定義がっていう場合はそろそろタイプ別を分けたほうがいいと思う。<br>&gt; もはやCの上位版がC++とは言えないし。<br><br>ヘッダファイルがどっちも .h のことが多いので、分けるとそのへんが辛いのでは。<br></div></section>
+    <ul><li><section><h1 id=2231>
+    <span class="no">[2231]</span>
+    <a class="title" href="#2231">Re7: ダブルクォーテーション文字列の判定が変</a>
+    <span class="author">もか</span>
+    <time datetime="2015-01-06T02:17:19">2015年01月06日 02:17</time></h1>
+    <div class="body">&gt;コードを読まないと何やってんのかわからないのでは、<br>&gt;読む側は時間がかかるばっかりで嫌になっちゃうよ。<br>どちらかというと変な日本語読んで混乱しているより、<br>さくっとコード差分みるのが早いとおもうんだけど、違うかな。<br>特にこのパッチは簡単な部類の処理なのでC++アレルギーとかCOBOLしかわからんとかでなければ。<br>最近はかなりの量をコミットしてるので、全部見るのは相当しんどいと思うけど。<br><br>&gt;正規表現とか擬似コードに頼らずに日本語で書いて欲しいな。<br>それBNFで定義してるHTML5とかRFCとかディスってるの？<br>俺に日本語期待しても無駄だぞ。<br><br>&gt;\b(u8|u|U|L|)R"[^(]*\(<br>&gt;^|[!"#$%&amp;'()=@{};:&lt;&gt;?,.*/\-\+\[\]\\s]<br>挑戦してみた。<br>!"#$%&amp;'()=@{};:&lt;&gt;?,.*/-+[] 半角スペース および タブ文字 のいずれかの文字<br>または 行頭だった場合 かつ、<br>それに「u8R"」「uR"」「ULR"」「LR"」「R"」のいずれかの文字列が続きかつ、<br>その後ろに0文字以上「(」以外の任意の文字列が続きかつ、<br>さらにその後ろで改行までに「(」が現れた場合に、<br>Raw String とみなします。<br>いままでは、<br>「R"」の後で0文字以上の任意の文字列の後に、「(」が現れた場合に、<br>Raw String とみなしていました。<br><br>&gt;（サクラエディタのコードはうんこなんだから、できるだけヒントは欲しい。今北産業で。）<br>(否定はしないが)汚い言葉を書く以上は、ぜひSuzzさんのウルトラスーパーすばらしいコードをですね、<br>と思いちょっと#if 0のコードを読ませてもらいました。よければポートしたいですし。<br>「#if 0」「#if 1」でタブだった場合とか2文字以上スペースがある場合は考慮されてない。<br>#とif, else, endifの間にスペースがある場合は考慮しなくていいのかな。<br>wmemicmpになってるけど、「#IF 0」とかも認識しちゃうけどいいのかな(プリプロセッサの仕様は詳しく知らない)。<br>あとはもし、完璧を目指すなら、文字列中のコメントらしい文字は文字列になるはずなので、その考慮が必要かも。<br>一か所 $endifになってる。<br>CColor_Comment_Cpp_If1::Match_CommentTo とかのwmemicmpがバッファオーバーランしてるところがある<br>ちゃんと見てないけど、colorStrategyStateの取り回しは良さそう。<br>実行は試していない15分斜め読みクオリティーなので、間違ってる所あるかも。<br>ちなみに「#if 0」をコメント開始「#e」をコメント終了にしてしのいでます。<br></div></section>
+    <ul><li><section><h1 id=2232>
+    <span class="no">[2232]</span>
+    <a class="title" href="#2232">Re8: ダブルクォーテーション文字列の判定が変</a>
+    <span class="author">もか</span>
+    <time datetime="2015-01-06T14:17:23">2015年01月06日 14:17</time></h1>
+    <div class="body">自己突込み<br>&gt;バッファオーバーラン<br>×<br>○：範囲外アクセス<br>読み込みだけでは、バッファオーバーランとは言わないと思う。全然違うがな。<br></div></section>
+    <ul><li><section><h1 id=2233>
+    <span class="no">[2233]</span>
+    <a class="title" href="#2233">Re9: ダブルクォーテーション文字列の判定が変</a>
+    <span class="author">suzz</span>
+    <time datetime="2015-01-06T22:56:15">2015年01月06日 22:56</time></h1>
+    <div class="body">例えば、<br><br>C++11 Raw String の開始判定において、単語区切りを認識して<br>判定を行うように変更した。<br>(単語の区切りは、記号、ホワイトスペース、もしくは、<br>行頭の場合)<br><br>とか。100% 正確でなくても、コードや正規表現を読む<br>よりも、すばやく変更の概要が伝わるように。<br><br>コミットログやBTS/ITSのチケットなどを、他の人に<br>わかりやすく伝えたいと思って書かない人は、<br>コードも他の人が読みやすいようには書かないでしょう。<br>なので、諦めずに行きましょう。<br><br>私もご指摘の通り、うんこコードを書いていますので、<br>説得力はありませんが、サクラエディタのコードがこれ以上<br>うんこコードにならないように、善処いただけると、<br>ファンとしては嬉しいです。<br><br>&gt;「#if 0」「#if 1」でタブだった場合とか2文字以上スペースがある場合は考慮されてない。<br>&gt;#とif, else, endifの間にスペースがある場合は考慮しなくていいのかな。<br><br>私が仕事でメンテせざるを得なかった #if 0 だらけの<br>うんこコードは、サクラエディタを使って書かれたコード<br>だったらしく、概ね "#if 0" で統一されていました。<br>なので、上記のケースは考慮しなくても大丈夫でした。<br><br>私のうんこコードは出来も悪いので、取り込まないで<br>頂きたいのですが #if 0 / #if 1 ネスト対応は本家サクラエディタで<br>対応されるとありがたいユーザはそれなりにいると思います。<br>（C言語しか書けない（ような情けない人たちがIT土方を<br>やっている）組み込み業界では）<br><br>&gt;実行は試していない15分斜め読みクオリティーなので、間違ってる所あるかも。<br>コードレビュー、ありがとうございます。<br></div></section>
+    </li><li><section><h1 id=2234>
+    <span class="no">[2234]</span>
+    <a class="title" href="#2234">紅桜の #if 0/#if 1  コード不具合について</a>
+    <span class="author">suzz</span>
+    <time datetime="2015-01-10T22:56:58">2015年01月10日 22:56</time></h1>
+    <div class="body">&gt; ○：範囲外アクセス<br>&gt; 読み込みだけでは、バッファオーバーランとは言わないと思う。全然違うがな。<br><br>よろしければ、どのあたりが範囲外アクセスを行っているか、教えていただけないでしょうか？<br><br><br>ちなみに、<br><br>$endif はくだらないミスですね。。。<br>文字数が合っているので、かろうじて不具合にはなっていないようですが。<br><br>プリプロセッサに大文字は無いようなので、wmemicmp を使用しているのは不具合です。<br>おそらく、CBlockComment.cpp を流用したので、あまり考えず wmemicmp を使ってしまったのだと思います。<br></div></section>
+    <ul><li><section><h1 id=2235>
+    <span class="no">[2235]</span>
+    <a class="title" href="#2235">RE: 紅桜の #if 0/#if 1  コード不具合について</a>
+    <span class="author">もか</span>
+    <time datetime="2015-01-11T03:19:49">2015年01月11日 03:19</time></h1>
+    <div class="body">&gt;&gt; ○：範囲外アクセス<br>&gt;&gt; 読み込みだけでは、バッファオーバーランとは言わないと思う。全然違うがな。<br>&gt;<br>&gt;よろしければ、どのあたりが範囲外アクセスを行っているか、教えていただけないでしょうか？<br>これ、CStringRefは元がCNativeWだった場合は、NUL文字が末尾についていることを保証できるので、<br>呼び出し元を含めたコード全部を考慮にいれた場合は、大丈夫みたいです。<br>すみません。<br><br><br>細かく対応しようとすると面倒がおおいですね。<br>行をまたいだでプリプロセッサがコメントアウトされた場合<br>/*<br>#endif<br>*/<br>とか。<br>厳密にはOKなのか知らないのですが、ifの直後に括弧がある場合とか、<br>#if 0<br>#if(1)<br>#endif<br>#endif<br><br>memcmp/wmemcmpって、<br>比較が一致しなかった次の文字にはアクセスしたらいけないのですよね？<br>先頭から1文字づつ比較しないといけなくて、<br>intとか8バイト以上とかで一致するか見るだけの場合にループで書いたのほうが速いとかありそう。<br>まぁ今のマシンは100MBをコピーしても一瞬だったりするから気にしたことないけど。<br></div></section>
+    <ul><li><section><h1 id=2236>
+    <span class="no">[2236]</span>
+    <a class="title" href="#2236">RE2: 紅桜の #if 0/#if 1  コード不具合について</a>
+    <span class="author">もか</span>
+    <time datetime="2015-01-11T04:04:18">2015年01月11日 04:04</time></h1>
+    <div class="body">&gt;比較が一致しなかった次の文字にはアクセスしたらいけないのですよね？<br>気になったんで(英語はよく分からんから)JIS X 3010:2003をwebで閲覧してみたけど、(w)memcmpの箇所に<br>有効バッファ長(n)のうち一致しなかった文字の後ろにアクセスしちゃいけない<br>とは書いてないので、<br>memcmp( "ab", "abcdefgh", 8 );<br>こういうのは、厳密な定義によるなら範囲外アクセスになるかどうかは実装依存かも。<br>サクラのほかのコードでも引数のs1,s2両方の長さが、n未満の場合がある使い方をしてるっぽいので微妙だ。<br></div></section>
+    </li><li><section><h1 id=2237>
+    <span class="no">[2237]</span>
+    <a class="title" href="#2237">Re2: 紅桜の #if 0/#if 1  コード不具合について</a>
+    <span class="author">suzz</span>
+    <time datetime="2015-01-12T16:55:15">2015年01月12日 16:55</time></h1>
+    <div class="body">&gt; &gt;よろしければ、どのあたりが範囲外アクセスを行っているか、教えていただけないでしょうか？<br>&gt; これ、CStringRefは元がCNativeWだった場合は、NUL文字が末尾についていることを保証できるので、<br>&gt; 呼び出し元を含めたコード全部を考慮にいれた場合は、大丈夫みたいです。<br><br>ありがとうございます。<br>文字の比較に memcmp(wmemcmp) を使うのも微妙な感じがするので、wcsncmp で比較する形にしようと思います。<br>(条件判定１回分省略したい・・・とも思わないので。)<br><br>&gt; 細かく対応しようとすると面倒がおおいですね。<br>私は「いい加減」なので、あまり細かく対応せずとも、現状のブロックコメントより改善されれば良いかなと思っています。<br><br>#if 0/ #if 1 は、往々にしてコメントアウト目的のコードですので、<br>色分け表示する以前に消せばいいのですが、それを許してくれない現場も残っています。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

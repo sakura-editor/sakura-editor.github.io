@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>行頭に文字列挿入する方法</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2702</span>
+    <a class="title" href="2702.html#2702">行頭に文字列挿入する方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2703</span>
+    <a class="title" href="2702.html#2703">RE: 行頭に文字列挿入する方法</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2815</span>
+    <a class="title" href="2702.html#2815">Re:行頭に文字列挿入する方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2822</span>
+    <a class="title" href="2702.html#2822">Re2:行頭に文字列挿入する方法</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2825</span>
+    <a class="title" href="2702.html#2825">Re2:行頭に文字列挿入する方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2834</span>
+    <a class="title" href="2702.html#2834">Re3:行頭に文字列挿入する方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2836</span>
+    <a class="title" href="2702.html#2836">Re4:行頭に文字列挿入する方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2837</span>
+    <a class="title" href="2702.html#2837">Re5:行頭に文字列挿入する方法</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2702>
+    <span class="no">[2702]</span>
+    <a class="title" href="#2702">行頭に文字列挿入する方法</a>
+    <span class="author">TED</span>
+    <time datetime="2003-02-06T12:02:00">2003年02月06日 12:02</time></h1>
+    <div class="body">置換機能を用いて正規表現をONにし、 置換前に ^ を<br>置換後に適当な文字列を指定して、文字列を行頭に<br>挿入したいのですがうまく動作しません。<br>どのようにしたら良いかお教えください。<br><br></div></section>
+    <ul><li><section><h1 id=2703>
+    <span class="no">[2703]</span>
+    <a class="title" href="#2703">RE: 行頭に文字列挿入する方法</a>
+    <span class="author">すい</span>
+    <time datetime="2003-02-06T17:16:49">2003年02月06日 17:16</time></h1>
+    <div class="body">例えば「行頭に // ２文字を挿入」だと<br>　置換前：^.|\n<br>　置換後：//$&amp;<br>の正規表現置換かと。<br><br>★意味<br>----------<br>^：行頭<br>.：任意の１文字<br>|：どちらか<br>\n：LF(0x0a)改行<br>$&amp;：検索でマッチした文字列全体に置き換わる<br><br>行頭の任意１文字を「"//" + 検索結果マッチした文字列」に置換、って。<br><br>ちなみに "^\n" の記述は LF改行ファイルの空行に対して処理するために必要。<br>CR改行・CRLF改行ファイルの空行は、CR(0x0d) が通常の１文字として扱われるため<br>"." にマッチするので、特別な考慮は不要、"^." でok。<br>"^\n" と "^." を１個にまとめて "^.|\n" になった、と。<br>----------<br><br>でも、そもそもこのエディタのユーザーは この手の作業を正規表現置換でやる人いませんよぉ。<br>「矩形範囲選択して文字入力」の方が楽ですもん。<br>もちろん、あんまりにも処理対象行が多い、とかいう場合は別かもしれませんが。<br></div></section>
+    </li><li><section><h1 id=2815>
+    <span class="no">[2815]</span>
+    <a class="title" href="#2815">Re:行頭に文字列挿入する方法</a>
+    <span class="author">MMX</span>
+    <time datetime="2003-03-12T13:52:46">2003年03月12日 13:52</time></h1>
+    <div class="body">▼ TEDさん<br>^(.*)<br>HEAD\1<br>の置換はできました。しかし、トリッキー<br>ふつうの正規表現ソフトは ^ 一文字で<br>動作するが。<br>サクラエディタ・ローカルテクです</div></section>
+    <ul><li><section><h1 id=2822>
+    <span class="no">[2822]</span>
+    <a class="title" href="#2822">Re2:行頭に文字列挿入する方法</a>
+    <span class="author">みく</span>
+    <time datetime="2003-03-12T18:55:35">2003年03月12日 18:55</time></h1>
+    <div class="body"><br>お望みの機能は<br><br>置換前：^<br>置換後：挿入文字列<br>正規表現：チェック<br>置換範囲：選択始点挿入<br><br>だと思いますが、正規表現を使った場合の<br>選択文字以外の置換範囲指定は正しく動作<br>しません。<br></div></section>
+    </li><li><section><h1 id=2825>
+    <span class="no">[2825]</span>
+    <a class="title" href="#2825">Re2:行頭に文字列挿入する方法</a>
+    <span class="author">すい</span>
+    <time datetime="2003-03-13T00:59:52">2003年03月13日 00:59</time></h1>
+    <div class="body">&gt;^(.*)<br>&gt;HEAD\1<br><br>ちょっとマズイかと。置換後文字列中で \1 を使っている。<br>このエディタが利用している正規表現ライブラリ自体は perl 互換です。<br>ですので、perl ライクに「HEAD$1」と記述しないと。<br><br>あと、検索文字列が .* じゃ「LF改行のテキストファイル中の空行」の行に対して処理できませんよ。<br>CR改行 or CRLF改行 のテキストなら問題ありませんが。<br><br>&gt;の置換はできました。しかし、トリッキー<br>&gt;ふつうの正規表現ソフトは ^ 一文字で<br>&gt;動作するが。<br>&gt;サクラエディタ・ローカルテクです<br><br>その通りです。<br>ハッキリ言えばこれは不具合です。<br>^ １文字で行頭に文字挿入できるのが本来期待されるべき姿でしょう。<br><br>しかしながらその辺を直せる人がおらず、皆ず～～っと修正してくれる人が<br>登場するのを待っている、という状況です。<br><br>現状、この ^ や $ だけでなく、行頭・行末・改行がらみの検索・置換処理周辺は<br>色々と挙動がぁゃιぃです。<br><br>ここで紹介しているのは<br>「この辺の不具合を直してくれる方が登場するまで暫定的にこれら不具合を<br>　回避するためのテクニック」<br>です。「不具合があるから、その処理は出来ません」じゃぁ情けないでしょ。 (^^;<br>工夫すればなんとか使えるんだし。<br></div></section>
+    <ul><li><section><h1 id=2834>
+    <span class="no">[2834]</span>
+    <a class="title" href="#2834">Re3:行頭に文字列挿入する方法</a>
+    <span class="author">MMX</span>
+    <time datetime="2003-03-26T14:16:39">2003年03月26日 14:16</time></h1>
+    <div class="body">たしかに、幅０のマッチは不得意のようです<br>置換の￥１は有効だが？MIFES互換とかの隠し<br>仕様ですか？<br>パズルの別の答え ^([^\n]*\n*) → HEAD\1</div></section>
+    <ul><li><section><h1 id=2836>
+    <span class="no">[2836]</span>
+    <a class="title" href="#2836">Re4:行頭に文字列挿入する方法</a>
+    <span class="author">すい</span>
+    <time datetime="2003-03-27T03:26:55">2003年03月27日 03:26</time></h1>
+    <div class="body">&gt;たしかに、幅０のマッチは不得意のようです<br>&gt;置換の￥１は有効だが？MIFES互換とかの隠し<br>&gt;仕様ですか？<br><br>だから perl の仕様だってば。<br><br>perl では <br>「・検索文字列の中(パターンの中)　　 → 前方から登場した ( ) から順に \1,\2,\3 ...<br>　・検索文字列の外(置換後文字列など) → 前方から登場した ( ) から順に $1,$2,$3...<br>　と記述する。置換後文字列中などで \1 を使うのは悪習じゃぁ。やめれ。<br>　\1 じゃぁ、ひょっとしたら期待通りに動くかもしれんが、使い方によっては期待通りに動かんぞ。」<br><br>という事になっていますよね。<br>perl スクリプトで置換後の文字列中で \1 を使う人は普通いません。（ perl の仕様を理解していない人を除いて）<br></div></section>
+    <ul><li><section><h1 id=2837>
+    <span class="no">[2837]</span>
+    <a class="title" href="#2837">Re5:行頭に文字列挿入する方法</a>
+    <span class="author">MMX</span>
+    <time datetime="2003-03-27T13:55:34">2003年03月27日 13:55</time></h1>
+    <div class="body">&gt; だから perl の仕様だってば。<br>秀丸、ｘｙｚｚｙ、JmEditorなどでも<br>有効なので￥１とばかり思っていました。<br>テキストエディタの歴史はPerl5より長いですから</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

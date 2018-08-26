@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>cr+cr+lfの改行コードが混ざったテキストのdiff</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">361</span>
+    <a class="title" href="361.html#361">cr+cr+lfの改行コードが混ざったテキストのdiff</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=361>
+    <span class="no">[361]</span>
+    <a class="title" href="#361">cr+cr+lfの改行コードが混ざったテキストのdiff</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-02-20T11:18:22">2007年02月20日 11:18</time></h1>
+    <div class="body">//キーボードマクロのファイル &lt;DIFFCR.MAC&gt;<br>S_ReplaceAll('\\r$', '', 4);&#9;// $4 正規表現<br><br>　cr+cr+lfの改行コードが混ざったテキストのdiffを取ると、diffは、cr+lfだけの行番号を表示しますが、sakuraは、crとcr+lfの行番号で表示します。<br>　そのため、あらかじめファイルからcrのみの改行は取り除いてdiffに架けなければなりません。<br>　しかし、BREGEXPの検索ではcr改行だけを置換する方法が無いので、crを削除すると同時にcr+lfをlfにすれば良いのであれば、<br>diffで表示する行番号がsakuraでも表示できます。<br><br>所で、すいませんが。<br>空白+cr 改行に ".\\r$" が一致しないのですが。<br>cr+lf 改行に "\\n$" が一致しないのですが。<br>Bregexp V1.01</div></section>
+    </li></ul></body></html>

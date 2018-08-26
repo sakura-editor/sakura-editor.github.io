@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>置換がおかしい</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1116</span>
+    <a class="title" href="1116.html#1116">置換がおかしい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1117</span>
+    <a class="title" href="1116.html#1117">Re:置換がおかしい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1126</span>
+    <a class="title" href="1116.html#1126">Re2:置換がおかしい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1129</span>
+    <a class="title" href="1116.html#1129">Re3:置換がおかしい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1133</span>
+    <a class="title" href="1116.html#1133">Re4:置換がおかしい</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1118</span>
+    <a class="title" href="1116.html#1118">Re: 置換がおかしい</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1116>
+    <span class="no">[1116]</span>
+    <a class="title" href="#1116">置換がおかしい</a>
+    <span class="author">masanobicchi</span>
+    <time datetime="2002-01-09T12:46:24">2002年01月09日 12:46</time></h1>
+    <div class="body">置換する時、いつも置換したい文字列をマウスでググッと<br>ドラッグして選択してからCtrl-Rを押して置換始めるのですが、<br>最初の選択している所が置換されないで、次に<br>検索でひっかかる文字列が置換される時があります。<br>12月19日のバージョンを今使ってます。<br>以前はこの現象は起こりませんでした。</div></section>
+    <ul><li><section><h1 id=1117>
+    <span class="no">[1117]</span>
+    <a class="title" href="#1117">Re:置換がおかしい</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-09T13:43:02">2002年01月09日 13:43</time></h1>
+    <div class="body">▼ masanobicchiさん<br>&gt; 置換する時、いつも置換したい文字列をマウスでググッと<br>&gt; ドラッグして選択してからCtrl-Rを押して置換始めるのですが、<br>&gt; 最初の選択している所が置換されないで、次に<br>&gt; 検索でひっかかる文字列が置換される時があります。<br>&gt; 12月19日のバージョンを今使ってます。<br>&gt; 以前はこの現象は起こりませんでした。<br><br>下記の変更で修正できると思います。次のリリース時に取込んでいただけますか？→管理者<br><br>1/8版CDlgReplace.cppの486行～490行のかわりに以下のロジックを入れる。<br><br>  // 選択エリアがあれば、その先頭にカーソルを移す<br>  if( pcEditView-&gt;IsTextSelected() ){<br>    if( pcEditView-&gt;m_bBeginBoxSelect ){<br>      pcEditView-&gt;MoveCursor( pcEditView-&gt;m_nSelectColmFrom,<br>                              pcEditView-&gt;m_nSelectLineFrom,<br>                              TRUE );<br>    }else{<br>      pcEditView-&gt;HandleCommand( F_LEFT, TRUE, 0, 0, 0, 0 );<br>    }<br>  }<br></div></section>
+    <ul><li><section><h1 id=1126>
+    <span class="no">[1126]</span>
+    <a class="title" href="#1126">Re2:置換がおかしい</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-09T21:58:28">2002年01月09日 21:58</time></h1>
+    <div class="body">▼ horさん<br>&gt; ▼ masanobicchiさん<br>&gt; &gt; 置換する時、いつも置換したい文字列をマウスでググッと<br>&gt; &gt; ドラッグして選択してからCtrl-Rを押して置換始めるのですが、<br>&gt; &gt; 最初の選択している所が置換されないで、次に<br>&gt; &gt; 検索でひっかかる文字列が置換される時があります。<br>&gt; &gt; 12月19日のバージョンを今使ってます。<br>&gt; &gt; 以前はこの現象は起こりませんでした。<br>&gt; <br>&gt; 下記の変更で修正できると思います。次のリリース時に取込んでいただけますか？→管理者<br>&gt; <br>&gt; 1/8版CDlgReplace.cppの486行～490行のかわりに以下のロジックを入れる。<br>&gt; <br>&gt;   // 選択エリアがあれば、その先頭にカーソルを移す<br>&gt;   if( pcEditView-&gt;IsTextSelected() ){<br>&gt;     if( pcEditView-&gt;m_bBeginBoxSelect ){<br>&gt;       pcEditView-&gt;MoveCursor( pcEditView-&gt;m_nSelectColmFrom,<br>&gt;                               pcEditView-&gt;m_nSelectLineFrom,<br>&gt;                               TRUE );<br>&gt;     }else{<br>&gt;       pcEditView-&gt;HandleCommand( F_LEFT, TRUE, 0, 0, 0, 0 );<br>&gt;     }<br>&gt;   }<br><br>masanobicchiさん、報告ありがとうございます。<br>そして修正thanx. &gt; hor<br><br>取り込みます。</div></section>
+    <ul><li><section><h1 id=1129>
+    <span class="no">[1129]</span>
+    <a class="title" href="#1129">Re3:置換がおかしい</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-09T23:45:40">2002年01月09日 23:45</time></h1>
+    <div class="body">&gt; &gt; 下記の変更で修正できると思います。次のリリース時に取込んでいただけますか？→管理者<br>&gt; &gt; <br>&gt; &gt; 1/8版CDlgReplace.cppの486行～490行のかわりに以下のロジックを入れる。<br>&gt; &gt; <br>&gt; &gt;   // 選択エリアがあれば、その先頭にカーソルを移す<br>&gt; &gt;   if( pcEditView-&gt;IsTextSelected() ){<br>&gt; &gt;     if( pcEditView-&gt;m_bBeginBoxSelect ){<br>&gt; &gt;       pcEditView-&gt;MoveCursor( pcEditView-&gt;m_nSelectColmFrom,<br>&gt; &gt;                               pcEditView-&gt;m_nSelectLineFrom,<br>&gt; &gt;                               TRUE );<br>&gt; &gt;     }else{<br>&gt; &gt;       pcEditView-&gt;HandleCommand( F_LEFT, TRUE, 0, 0, 0, 0 );<br>&gt; &gt;     }<br>&gt; &gt;   }<br>&gt; <br>&gt; masanobicchiさん、報告ありがとうございます。<br>&gt; そして修正thanx. &gt; hor<br>&gt; <br>&gt; 取り込みます。<br><br>これって一括置換のほうもですか？ &gt; hor</div></section>
+    <ul><li><section><h1 id=1133>
+    <span class="no">[1133]</span>
+    <a class="title" href="#1133">Re4:置換がおかしい</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-10T12:29:13">2002年01月10日 12:29</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; これって一括置換のほうもですか？ &gt; hor<br><br>一括置換はそのままでだいじょうぶです。<br>・・・よろしくお願いします。</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=1118>
+    <span class="no">[1118]</span>
+    <a class="title" href="#1118">Re: 置換がおかしい</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-09T14:03:48">2002年01月09日 14:03</time></h1>
+    <div class="body">&gt;置換する時、いつも置換したい文字列をマウスでググッと<br>&gt;ドラッグして選択してからCtrl-Rを押して置換始めるのですが、<br>&gt;最初の選択している所が置換されないで、次に<br>&gt;検索でひっかかる文字列が置換される時があります。<br><br>予想するに、選択後にキャレットが選択位置の最後にあるとそこから次の文字列を探すので選択されたものが置換対象にならないのではないでしょうか。選択されている場合はキャレット位置ではなく選択範囲の先頭から探索を開始する必要がありますね。<br><br>置換に関しては大きく作り替えられているので、その際に考慮が漏れていたのではないかと思います。<br></div></section>
+    </li></ul></li></ul></body></html>

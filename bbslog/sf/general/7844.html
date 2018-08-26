@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>キーワードヘルプの辞書ファイルを共有したい</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7844</span>
+    <a class="title" href="7844.html#7844">キーワードヘルプの辞書ファイルを共有したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7845</span>
+    <a class="title" href="7844.html#7845">Re: キーワードヘルプの辞書ファイルを共有したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7846</span>
+    <a class="title" href="7844.html#7846">Re2: キーワードヘルプの辞書ファイルを共有したい</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7844>
+    <span class="no">[7844]</span>
+    <a class="title" href="#7844">キーワードヘルプの辞書ファイルを共有したい</a>
+    <span class="author">mae</span>
+    <time datetime="2014-06-01T16:29:18">2014年06月01日 16:29</time></h1>
+    <div class="body">お世話になります。<br>現在翻訳を行っており、複数人で行うため固有名詞の表記の統一を<br>するのに、キーワードヘルプを使用したいと思っています。<br>翻訳言語は中国語です。<br>文字コードをUTF－8で辞書ファイルを作成したのち、★中国語辞書.khpと拡張子を<br>つけて保存。<br>その後、タイプ別設定から辞書ファイルの読み込みを行いましたが、<br>単語を選択しても全くポップアップ表示がされません。<br>「キーワードヘルプを自動表示にする」にしてもダメなようです。<br><br>その後、<br>C:\Program Files (x86)\sakura\keywordに辞書ファイルを移してやってみましたが<br>だめでした。<br><br>なんとかうまく設定する方法をご教授いただければ幸いです。<br>よろしくお願い致します。<br><br><br></div></section>
+    <ul><li><section><h1 id=7845>
+    <span class="no">[7845]</span>
+    <a class="title" href="#7845">Re: キーワードヘルプの辞書ファイルを共有したい</a>
+    <span class="author">もか</span>
+    <time datetime="2014-06-01T18:38:59">2014年06月01日 18:38</time></h1>
+    <div class="body">UTF-8にするときに、BOMは付けましたか？<br>BOMがないとShift_JISとして読み込まれます。<br>読み込めそうかどうかは、タイプ別設定で設定するときに、<br>&lt;辞書の説明&gt;のところに1行目の内容が表示されればOKです。<br>　他の可能性としては、セパレータが間違っているパターンです。<br>辞書のセパレータは「 /// 」です。/の前後に半角スペースが必要です。<br>りんご /// Apple<br>みかん /// Orange<br></div></section>
+    <ul><li><section><h1 id=7846>
+    <span class="no">[7846]</span>
+    <a class="title" href="#7846">Re2: キーワードヘルプの辞書ファイルを共有したい</a>
+    <span class="author">mae</span>
+    <time datetime="2014-06-01T20:31:38">2014年06月01日 20:31</time></h1>
+    <div class="body">もか様<br>うまくいきました。全くもか様のご指摘のとおりでした。<br><br>&gt; UTF-8にするときに、BOMは付けましたか？<br>&gt; BOMがないとShift_JISとして読み込まれます。<br>→BOMなしで保存していたため、辞書に登録した際、第１行目のテキストが文字化けしていました。<br><br>&gt; 　他の可能性としては、セパレータが間違っているパターンです。<br>&gt; 辞書のセパレータは「 /// 」です。/の前後に半角スペースが必要です。<br><br>→はい、セパレータの半角スペースも付けていませんでした。<br><br>おかげさまで今日一日悩んでいた問題が全て解決しました。<br>素早く、的確なご指摘本当に有難うございます。<br>もう、感謝してもしきれないほどです。ありがとうございます！！<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

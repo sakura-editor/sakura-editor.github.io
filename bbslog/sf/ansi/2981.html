@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>BOMオプション追加</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2981</span>
+    <a class="title" href="2981.html#2981">BOMオプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2984</span>
+    <a class="title" href="2981.html#2984">Re:BOMオプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2985</span>
+    <a class="title" href="2981.html#2985">Re2:BOMオプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2986</span>
+    <a class="title" href="2981.html#2986">Re3:BOMオプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2987</span>
+    <a class="title" href="2981.html#2987">Re4:BOMオプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2988</span>
+    <a class="title" href="2981.html#2988">Re5:BOMオプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2999</span>
+    <a class="title" href="2981.html#2999">BOM取り込みました</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2981>
+    <span class="no">[2981]</span>
+    <a class="title" href="#2981">BOMオプション追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2003-07-26T16:24:54">2003年07月26日 16:24</time></h1>
+    <div class="body">開発掲示板には初投稿です。よろしくお願いします。<br><br>Unicode/UnicodeBE/UTF-8 で保存時に、<br>保存ダイアログでBOMの有無を指定するオプションを追加してみました。<br>Ver 1.4.1.0からの差分<br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/BOM_2003-07-21.diff target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>BOM_2003<wbr>-<wbr>07-<wbr>21.<wbr>diff</nobr></a><br>どなたかがやられている最中かもしれないので、まぁ添削していただければ．．．<br>という軽い気持ちでUPしてます。(^^;<br><br>デフォルトの設定は次のとおりになっています。<br>・新規作成や文字コード変更では従来通り<br>  （Uni/UniBEではBOM付き、UTF-8ではBOM無し）<br>・既存ファイルでは読み込み時のBOMの有無がデフォルト選択される<br>  （上書き時は変更しない）<br><br>あと、一般掲示板に投稿した、<br>  &lt;3087&gt;Re2: 改行記号の表示が欠ける<br>の修正も勝手に入れちゃってます。<br>ご感想でもいただければ、と思います。</div></section>
+    <ul><li><section><h1 id=2984>
+    <span class="no">[2984]</span>
+    <a class="title" href="#2984">Re:BOMオプション追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2003-07-28T11:59:01">2003年07月28日 11:59</time></h1>
+    <div class="body">&gt; Unicode/UnicodeBE/UTF-8 で保存時に、<br>&gt; 保存ダイアログでBOMの有無を指定するオプションを追加してみました。<br>&gt; Ver 1.4.1.0からの差分<br>&gt; <a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/BOM_2003-07-21.diff target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>BOM_2003<wbr>-<wbr>07-<wbr>21.<wbr>diff</nobr></a><br><br>diff差分で一時ファイル作成時の処理に漏れがあったので訂正して再UPしました。<br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/BOM_2003-7-21.ZIP target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>BOM_2003<wbr>-<wbr>7-<wbr>21.<wbr>ZIP</nobr></a><br><br>※前のでは未編集時と編集中とで先頭行の比較結果が違ってしまっていた<br><br>&gt; どなたかがやられている最中かもしれないので、まぁ添削していただければ．．．<br><br>もか さんが途中だったのですね．．．<br>なんだか差し出がましいことをしてしまったみたいで申し訳ありません。m(__)m</div></section>
+    <ul><li><section><h1 id=2985>
+    <span class="no">[2985]</span>
+    <a class="title" href="#2985">Re2:BOMオプション追加</a>
+    <span class="author">もか</span>
+    <time datetime="2003-07-28T16:09:21">2003年07月28日 16:09</time></h1>
+    <div class="body">&gt;もか さんが途中だったのですね．．．<br>呼ばれたようなので、経緯を書いておきます。<br>実は、HDDが壊れてパッチを丸ごと紛失したので、振り出しに戻っていました。<br>その後、手をつけていなかったので、大変助かります。(*^-^*)<br>早速ですが、気になる点を報告します。<br><br>1. CEditDoc::FileRead()<br>実際にはファイルは無いが、MRUに登録されているファイルを開く場合とか、BOMの指定が変になるかもしれません。<br><br>2. CEditDoc::ReloadCurrentFile()<br>ファイルが存在しないときの、BOMの考慮がほしいです。<br><br>3. CDocLineMgr::ReadFile()<br>BOMを設定した(FileOpen成功)後に、キャンセルorエラーになった場合のBOMは、元に戻さなくていいんでしょうか？<br></div></section>
+    <ul><li><section><h1 id=2986>
+    <span class="no">[2986]</span>
+    <a class="title" href="#2986">Re3:BOMオプション追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2003-07-28T21:46:39">2003年07月28日 21:46</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 早速ですが、気になる点を報告します。<br>&gt; <br>&gt; 1. CEditDoc::FileRead()<br>&gt; 実際にはファイルは無いが、MRUに登録されているファイルを開く場合とか、BOMの指定が変になるかもしれません。<br><br>あぁ、確かに、コマンドライン指定されたファイルが実際には無く、<br>MRUに登録されていると変になっちゃいました。(^^;<br><br>ファイルを開く（新規・既存）の直前にBOMの推奨値を設定、<br>エラー時にも推奨値に戻す方法に訂正しました。<br>これで、既存ファイルが開けた場合のみ、そのファイルのBOMを引き継ぐ<br>ことができると思います。<br><br>&gt; <br>&gt; 2. CEditDoc::ReloadCurrentFile()<br>&gt; ファイルが存在しないときの、BOMの考慮がほしいです。<br><br>内部で1.のCEditDoc::FileRead()を呼び出しているので、<br>1.の対策で大丈夫だと思います。<br><br>&gt; <br>&gt; 3. CDocLineMgr::ReadFile()<br>&gt; BOMを設定した(FileOpen成功)後に、キャンセルorエラーになった場合のBOMは、元に戻さなくていいんでしょうか？<br><br>これも、CEditDoc::FileRead()からしか呼ばれていないようなので、<br>1.の対策で大丈夫だと思います。<br>FILETIMEもエラー時に返してしまっているようですし．．．<br>今のところは上位が対策してますが、あとで見直しが必要になるかもしれないですね。<br><br>上記対策版をUPしておきました。<br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/BOM_2003-07-21.ZIP<br><br>自分なりにいろいろテストしなおしたつもりですが、<br>理解不足のための見落としがあるかもしれません。<br>問題等あれば、引き続きよろしくお願いします。</div></section>
+    <ul><li><section><h1 id=2987>
+    <span class="no">[2987]</span>
+    <a class="title" href="#2987">Re4:BOMオプション追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2003-07-29T10:05:56">2003年07月29日 10:05</time></h1>
+    <div class="body">&gt; &gt; 2. CEditDoc::ReloadCurrentFile()<br>&gt; &gt; ファイルが存在しないときの、BOMの考慮がほしいです。<br>&gt; <br>&gt; 内部で1.のCEditDoc::FileRead()を呼び出しているので、<br>&gt; 1.の対策で大丈夫だと思います。<br><br>これ、だめですね。また修正して出直します。(^^;;;<br>他に無いか、現状の版でチェックして指摘していただければと思います。</div></section>
+    <ul><li><section><h1 id=2988>
+    <span class="no">[2988]</span>
+    <a class="title" href="#2988">Re5:BOMオプション追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2003-07-29T19:48:25">2003年07月29日 19:48</time></h1>
+    <div class="body">&gt; &gt; &gt; 2. CEditDoc::ReloadCurrentFile()<br>&gt; &gt; &gt; ファイルが存在しないときの、BOMの考慮がほしいです。<br><br>修正しました。<br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/BOM_2003-07-21_4.zip<br><br>あと、<br>・CEditDoc::Init()での初期化対処<br>・CMacro::HandleCommand()へのF_FILESAVEAS対処<br>を追加してあります。<br><br>マクロでは、元ファイルと同じ文字コードが指定された場合だけBOMを引き継ぐようにしています。<br>別の文字コードが指定された場合は推奨BOM。<br>マクロでのBOMオプションパラメータ指定については、やってません。<br>とりあえず、ここまで。</div></section>
+    <ul><li><section><h1 id=2999>
+    <span class="no">[2999]</span>
+    <a class="title" href="#2999">BOM取り込みました</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-08-12T00:26:31">2003年08月12日 00:26</time></h1>
+    <div class="body">次版取り込み予定．<br>昨日リリースしてまた今日というのも何なのでとりあえずソースだけ．<br>http://sakura-editor.sourceforge.net/snapshot/ssrc_2003-08-11.tar.bz2<br><br>さらに変更を入れる方はこれをベースにお願いします．<br><br>もうちょっともかさんの追加分とか入れてからリリースしたい，なんて言っているとまた何もしないで2週間経過しそう...<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix) ANSIコンパイル版不具合修正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">540</span>
+    <a class="title" href="540.html#540">Commit報告:(Fix) ANSIコンパイル版不具合修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">542</span>
+    <a class="title" href="540.html#542">Re:Commit報告:(Fix) ANSIコンパイル版不具合修正</a></div>
+    </li><li><div class="list-title">
+    <span class="no">585</span>
+    <a class="title" href="540.html#585">Re:Commit報告:(Fix) ANSIコンパイル版不具合修正</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=540>
+    <span class="no">[540]</span>
+    <a class="title" href="#540">Commit報告:(Fix) ANSIコンパイル版不具合修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-29T18:38:27">2008年06月29日 18:38</time></h1>
+    <div class="body">リビジョン：<br>  rev1405<br><br>変更種別：<br>  バグ修正<br><br>内容：<br>  ANSIでコンパイルした時の不具合修正しました。<br>  不具合は以下の通り<br>  『開く』『名前を付けて保存』ダイアログの『ファイルの種別』が正常でない。<br>  同じく、『タイプ別設定』/『共通設定』の『インポート』『エクスポート』ダイアログの『ファイルの種別』<br>  同じく、『タイプ別設定』/『共通設定』の『支援』のファイルを開くダイアログの『ファイルの種別』<br>  『タイプ別設定』『スクリーン』ドロップダウンが文字化けしている。<br>  iniファイルにキーネームが正しく書き込まれない。（次回起動時、メニューのシートカット表示などが乱れる）<br>  『共通設定』『キーワード追加』/『セット追加』テキストボックスの初期値に変な文字列が表示される。<br>  『ファイル内容比較』ファイル名が出ない。<br>  キーボードマクロが正しく出力されない。<br>  『外部コマンド』の『アウトプット』取り込み時のコメントが不正。</div></section>
+    <ul><li><section><h1 id=542>
+    <span class="no">[542]</span>
+    <a class="title" href="#542">Re:Commit報告:(Fix) ANSIコンパイル版不具合修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-30T04:28:12">2008年06月30日 04:28</time></h1>
+    <div class="body">TCHAR対応いただくのは構わないのですが、もしかしたら将来無駄になってしまうかもしれません。。<br><br>一応TCHAR方式でANSIコンパイルをサポートしていますが、<br>正直、個人的にはこの方式に希望は持っていません。<br>TCHAR, char, wchar_t 3種の文字列が混在した状態での保守は不経済的です。<br>APIをラップするほうがよっぽど有意義な管理となるはずです。<br><br>今だから言いますが、あえてANSIコンパイルをTCHAR方式でサポートしたのは、<br>ANSI版支持者の不安を緩衝し、無駄な議論を避けるためだけです。設計的な価値は全く無い、完全に無駄撃ち前提の対応でした。<br><br>ANSI対応方法 (TCHAR方式, APIラップ方式, or others) をどうするかは、本家統合後に議論を提起するつもりです。<br><br>このまま TCHAR方式が採用されれば、今回対応いただいた分も<br>無駄にはならないのですが、どう転ぶかは今の時点では判りません。<br>そういう理由から、自分は手を付けないでいます。<br>先に言っておくべきでしたね。。すみません。<br></div></section>
+    </li><li><section><h1 id=585>
+    <span class="no">[585]</span>
+    <a class="title" href="#585">Re:Commit報告:(Fix) ANSIコンパイル版不具合修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-08-26T23:28:28">2008年08月26日 23:28</time></h1>
+    <div class="body"> ソースコードおよび動作に問題ないことを確認しました。</div></section>
+    </li></ul></li></ul></body></html>

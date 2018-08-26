@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>アウトライン解析について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6516</span>
+    <a class="title" href="6516.html#6516">アウトライン解析について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6519</span>
+    <a class="title" href="6516.html#6519">Re:アウトライン解析について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6520</span>
+    <a class="title" href="6516.html#6520">Re2:アウトライン解析について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6521</span>
+    <a class="title" href="6516.html#6521">Re2:アウトライン解析について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6523</span>
+    <a class="title" href="6516.html#6523">Re3:アウトライン解析について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6524</span>
+    <a class="title" href="6516.html#6524">Re4:アウトライン解析について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6516>
+    <span class="no">[6516]</span>
+    <a class="title" href="#6516">アウトライン解析について</a>
+    <span class="author">猫（仮）</span>
+    <time datetime="2007-12-12T03:42:09">2007年12月12日 03:42</time></h1>
+    <div class="body">はじめて投稿します。<br>Ver.1.6.2.0(V1310)を使用しております。<br>アウトライン解析の挙動について動作報告いたします。<br><br>  1:void func1(void);<br>  2:#if(FOO)<br>  3:#else<br>  4:#endif<br>  5:void func2(void);<br><br>アウトライン解析ルールC/C++で、上記のようなコードを解析すると<br>(1): func1 (宣言)<br>となり、func2が抜けてしまいます。<br>"#if"と"("の間にスペースを空けるか、"#else"を削除/コメントアウトすることで、func2が解析結果に出てくるようです。<br><br>このようにスペース（もしくは#else）の有無の有無で解析結果が変わってしまうのは大変不都合があるので、可能であれば修正をお願いいたします。<br></div></section>
+    <ul><li><section><h1 id=6519>
+    <span class="no">[6519]</span>
+    <a class="title" href="#6519">Re:アウトライン解析について</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-12-13T16:41:48">2007年12月13日 16:41</time></h1>
+    <div class="body">▼ 猫（仮）さん<br>&gt; このようにスペース（もしくは#else）の有無の有無で解析結果が変わってしまうのは大変不都合があるので、可能であれば修正をお願いいたします。<br><br>Bugs[#1849852]で修正パッチ出して置きます。<br><a href=http://sourceforge.net/tracker/index.php?func=detail&aid=1849852&group_id=12488&atid=112488 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>1849852&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>112488</nobr></a><br><br>#if (0) でfalse (修正前はtrue)<br>#if(0) でfalse (修正前はtrue)<br>#if(XXX) でtrue (修正前はfalse)<br>#if 01 でtrue (修正前はfalse)<br><br>信頼性は、あまり上がっていません。..;<br>又、コメント解析との一致は、考慮していません。 </div></section>
+    <ul><li><section><h1 id=6520>
+    <span class="no">[6520]</span>
+    <a class="title" href="#6520">Re2:アウトライン解析について</a>
+    <span class="author">猫（仮）</span>
+    <time datetime="2007-12-13T23:34:56">2007年12月13日 23:34</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; #if (0) でfalse (修正前はtrue)<br>&gt; #if(0) でfalse (修正前はtrue)<br>&gt; #if(XXX) でtrue (修正前はfalse)<br>&gt; #if 01 でtrue (修正前はfalse)<br>&gt; <br>&gt; 信頼性は、あまり上がっていません。..;<br>&gt; 又、コメント解析との一致は、考慮していません。 <br><br>早速の修正ありがとうございます。<br>まだあまり複雑な動作確認はしていませんが、とりあえず目的のファイルの解析は期待通りできるようになりました。</div></section>
+    </li><li><section><h1 id=6521>
+    <span class="no">[6521]</span>
+    <a class="title" href="#6521">Re2:アウトライン解析について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-12-15T07:09:20">2007年12月15日 07:09</time></h1>
+    <div class="body">&gt;Bugs[#1849852]で修正パッチ出して置きます。<br>根本的な問題は#ifではなく#elseの処理の方にあるので，そちらも直したパッチを作成しました．<br>#ifは<br>#if((..(0<br>まで判定するようにしています．<br>#if 01 と書く人はいないような気がしますが...<br>#if 0x01 なら0x0の先まで見ないと判定できないですし，そこまでする意味あります？<br><br>パッチはBugsからPatchesへ移動しました．<br></div></section>
+    <ul><li><section><h1 id=6523>
+    <span class="no">[6523]</span>
+    <a class="title" href="#6523">Re3:アウトライン解析について</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-12-16T01:32:50">2007年12月16日 01:32</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 根本的な問題は#ifではなく#elseの処理の方にあるので，そちらも直したパッチを作成しました．<br>&gt; #ifは<br>&gt; #if((..(0<br>&gt; まで判定するようにしています．<br><br>-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+<br>すいません、古いファイルのパッチでお手数掛けました。<br>こちらを、最新にすべきでした。<br>[sakura-editor] / sakura / trunk <br>[sakura-editor] / sakura / tags / R1.6.2.0 <br>-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+<br><br>&gt; そこまでする意味あります？<br>はい、"0"の1文字に限定する必要性は特に無いと思います。</div></section>
+    <ul><li><section><h1 id=6524>
+    <span class="no">[6524]</span>
+    <a class="title" href="#6524">Re4:アウトライン解析について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-12-17T22:16:50">2007年12月17日 22:16</time></h1>
+    <div class="body">&gt;&gt; そこまでする意味あります？<br>&gt;はい、"0"の1文字に限定する必要性は特に無いと思います。<br>0か00か01か0x10かは最後まで見ないとわかりません．<br>もしかしたら#if 0 &lt; SOMETHING かもしれない．<br><br>モデルの単純化という面では1文字だけ調べる現状がそんなに大きく外れているとも思えないですし，逆に精度を高めようと思うなら後ろの一文字だけ調べるのでは不十分だと思えるのですけど．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

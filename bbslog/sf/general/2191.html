@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>シングルクォーテーションのカラーでおかしくなる</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2191</span>
+    <a class="title" href="2191.html#2191">シングルクォーテーションのカラーでおかしくなる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2193</span>
+    <a class="title" href="2191.html#2193">Re:シングルクォーテーションのカラーでおかしくなる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2194</span>
+    <a class="title" href="2191.html#2194">Re2:シングルクォーテーションのカラーでおかしくなる</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2196</span>
+    <a class="title" href="2191.html#2196">Re2:シングルクォーテーションのカラーでおかしくなる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2200</span>
+    <a class="title" href="2191.html#2200">Re3:シングルクォーテーションのカラーでおかしくなる</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2191>
+    <span class="no">[2191]</span>
+    <a class="title" href="#2191">シングルクォーテーションのカラーでおかしくなる</a>
+    <span class="author">にゃも</span>
+    <time datetime="2002-08-13T21:32:46">2002年08月13日 21:32</time></h1>
+    <div class="body">&amp;jcode'convert(*val,'sjis');<br>↑こういったシングルクォーテーションが３つの<br>行をCGIスクリプトに挿入していると以下全てのカラーが<br>シングルクォーテーション扱いになります。<br>何か対策はないでしょうか？<br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=2193>
+    <span class="no">[2193]</span>
+    <a class="title" href="#2193">Re:シングルクォーテーションのカラーでおかしくなる</a>
+    <span class="author">tokumei</span>
+    <time datetime="2002-08-13T22:30:30">2002年08月13日 22:30</time></h1>
+    <div class="body">▼ にゃもさん<br>&gt; &amp;jcode'convert(*val,'sjis');<br>&gt; ↑こういったシングルクォーテーションが３つの<br>&gt; 行をCGIスクリプトに挿入していると以下全てのカラーが<br>&gt; シングルクォーテーション扱いになります。<br>&gt; 何か対策はないでしょうか？<br>&gt; よろしくお願いします。<br><br>以前にも同じ話題が出ていた覚えがありますが、<br>1.クォーテションのカラーを変えない<br>2.文末にコメントで閉じクォーテーションを書いて被害を最小化する<br>のような対処方法しかないという結論だったと思います。</div></section>
+    <ul><li><section><h1 id=2194>
+    <span class="no">[2194]</span>
+    <a class="title" href="#2194">Re2:シングルクォーテーションのカラーでおかしくなる</a>
+    <span class="author">すい</span>
+    <time datetime="2002-08-13T23:16:24">2002年08月13日 23:16</time></h1>
+    <div class="body">&gt;以前にも同じ話題が出ていた覚えがありますが、<br>&gt;1.クォーテションのカラーを変えない<br>&gt;2.文末にコメントで閉じクォーテーションを書いて被害を最小化する<br>&gt;のような対処方法しかないという結論だったと思います。<br><br>そのすぐ後、「正規表現キーワードを使う」という方法が出てきました。<br>&gt;&gt; &amp;jcode'convert(*val,'sjis');<br>のような perl なら<br>http://www.egroups.co.jp/files/sakura-editor/User/Data/<br>に正規表現の色設定の見本を置いてあります。<br>これを使えば、それっぽく(?)は なります。<br></div></section>
+    </li><li><section><h1 id=2196>
+    <span class="no">[2196]</span>
+    <a class="title" href="#2196">Re2:シングルクォーテーションのカラーでおかしくなる</a>
+    <span class="author">もか</span>
+    <time datetime="2002-08-13T23:38:49">2002年08月13日 23:38</time></h1>
+    <div class="body">以前、すいさんがPerl用正規表現キーワードファイルを作ってくれました。<br>詳細は 2029 のスレッドを<br>使い方は、ダウンロードしたファイル内を<br>それぞれ参照くださいm(__)m<br><br>ファイル自体は以下のフォルダにあります。<br><a href=http://www.egroups.co.jp/files/sakura-editor/User/Data/ target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>User/<wbr>Data/<wbr></nobr></a><br>最新版(2002/8/13日現在)は perl_20020806_20.lzh です<br></div></section>
+    <ul><li><section><h1 id=2200>
+    <span class="no">[2200]</span>
+    <a class="title" href="#2200">Re3:シングルクォーテーションのカラーでおかしくなる</a>
+    <span class="author">にゃも</span>
+    <time datetime="2002-08-14T10:33:07">2002年08月14日 10:33</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 以前、すいさんがPerl用正規表現キーワードファイルを作ってくれました。<br>&gt; 詳細は 2029 のスレッドを<br>&gt; 使い方は、ダウンロードしたファイル内を<br>&gt; それぞれ参照くださいm(__)m<br>&gt; <br>&gt; ファイル自体は以下のフォルダにあります。<br>&gt; <a href=http://www.egroups.co.jp/files/sakura-editor/User/Data/ target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>User/<wbr>Data/<wbr></nobr></a><br>&gt; 最新版(2002/8/13日現在)は perl_20020806_20.lzh です<br><br>ありがとうございます。<br>適用したことで無事防ぐことができました。<br>サクラエディタは細かな調整ができるので<br>非常に便利です。これからも頑張ってください。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

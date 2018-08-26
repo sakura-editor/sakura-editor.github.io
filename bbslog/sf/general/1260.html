@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>複数行の検索機能</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">1260</span>
+    <a class="title" href="1260.html#1260">複数行の検索機能</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1261</span>
+    <a class="title" href="1260.html#1261">Re:複数行の検索機能</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1266</span>
+    <a class="title" href="1260.html#1266">正規表現</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1267</span>
+    <a class="title" href="1260.html#1267">正規表現で複数行検索できました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1272</span>
+    <a class="title" href="1260.html#1272">Re:正規表現</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1274</span>
+    <a class="title" href="1260.html#1274">aaa\nbbb方式に一票</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1260>
+    <span class="no">[1260]</span>
+    <a class="title" href="#1260">複数行の検索機能</a>
+    <span class="author">よしかず</span>
+    <time datetime="2002-02-26T16:27:29">2002年02月26日 16:27</time></h1>
+    <div class="body">Grep機能が便利なので初代のsakuraをずっと使用していましが、<br>最近、このprojectを知り、ここまでsakuraが進化しているのに<br>驚いています。<br>今はCADの吐き出す12Mbyte近いテキストファイルを扱っていますが<br>sakuraは速度・機能とも十分対応しています。<br><br>要望は少ないのかも知れませんが、選択した複数行と同じ行に<br>マーキングをしてもらえるような「複数行の検索」機能が<br>あれば助かります。<br><br></div></section>
+    <ul><li><section><h1 id=1261>
+    <span class="no">[1261]</span>
+    <a class="title" href="#1261">Re:複数行の検索機能</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-26T17:53:53">2002年02月26日 17:53</time></h1>
+    <div class="body">▼ よしかずさん<br>&gt; 要望は少ないのかも知れませんが、選択した複数行と同じ行に<br>&gt; マーキングをしてもらえるような「複数行の検索」機能が<br>&gt; あれば助かります。<br><br>検索して見つかった行にマーキングするなら、検索ダイアログで、「該当行マーク」ではどうですか？<br>でも「複数行の検索」機能とかかれているので、違う機能なのかな？？<br></div></section>
+    <ul><li><section><h1 id=1266>
+    <span class="no">[1266]</span>
+    <a class="title" href="#1266">正規表現</a>
+    <span class="author">hideto</span>
+    <time datetime="2002-02-27T10:12:40">2002年02月27日 10:12</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; でも「複数行の検索」機能とかかれているので、違う機能なのかな？？<br><br>正規表現で、<br>aaa\nbbb<br>みたいなことじゃないでしょうか？<br><br>ありゃ？できない。<br>サクラエディタだとヘルプに改行は\rで検索してください<br>とかいてありますね。ってことで<br>aaa\rbbb<br>で再チャレンジ。ありゃ？だめだ。<br>aaa\r\nbbb<br>これもだめ？どうやるんでしょ？<br><br>検索ダイアログで複数行貼り付いたら一番楽なんですけど<br>そんなエディタ見たこと無いですねえ。<br>何か問題がでてくるのかな？</div></section>
+    <ul><li><section><h1 id=1267>
+    <span class="no">[1267]</span>
+    <a class="title" href="#1267">正規表現で複数行検索できました</a>
+    <span class="author">よしかず</span>
+    <time datetime="2002-02-27T15:50:49">2002年02月27日 15:50</time></h1>
+    <div class="body">▼ hidetoさん<br> ▼ やざきさん<br>いいですね、ここのフォーラム。すぐにヒントがもらえたので分かりました。<br>正規表現で、例えば　aaa\r|bbb\r|ccc　で検索すると<br>aaa<br>bbb<br>ccc<br>ddd<br>eee<br>aaa<br>bbb<br>ccc<br>ddd<br>eee<br>......<br>でaaa,bbb,cccの3行に該当行マークがつきました。<br>複数行まとめて置換もできそうな気がします。<br>アドバイスありがとうございました。<br><br></div></section>
+    </li><li><section><h1 id=1272>
+    <span class="no">[1272]</span>
+    <a class="title" href="#1272">Re:正規表現</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-27T23:54:15">2002年02月27日 23:54</time></h1>
+    <div class="body">▼ hidetoさん<br>&gt; 正規表現で、<br>&gt; aaa\nbbb<br>&gt; みたいなことじゃないでしょうか？<br>&gt;<br>&gt; ありゃ？できない。<br><br>そうそう、こういう検索したいんだけど、できるようにならないかなぁ？<br></div></section>
+    <ul><li><section><h1 id=1274>
+    <span class="no">[1274]</span>
+    <a class="title" href="#1274">aaa\nbbb方式に一票</a>
+    <span class="author">hideto</span>
+    <time datetime="2002-02-28T10:09:13">2002年02月28日 10:09</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ▼ hidetoさん<br>&gt; &gt; 正規表現で、<br>&gt; &gt; aaa\nbbb<br>&gt; &gt; みたいなことじゃないでしょうか？<br>&gt; &gt;<br>&gt; &gt; ありゃ？できない。<br>&gt; <br>&gt; そうそう、こういう検索したいんだけど、できるようにならないかなぁ？<br><br>おっ！<br>同じ考えの人がいたって事で、さっそく一票投じねば（＾＾／</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ルールファイルに半角英数の大小同一視をお願いします。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">8074</span>
+    <a class="title" href="8074.html#8074">ルールファイルに半角英数の大小同一視をお願いします。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8075</span>
+    <a class="title" href="8074.html#8075">Re:ルールファイルに半角英数の大小同一視をお願いします。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8076</span>
+    <a class="title" href="8074.html#8076">Re2:ルールファイルに半角英数の大小同一視をお願いします。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">8078</span>
+    <a class="title" href="8074.html#8078">Re2:ルールファイルに半角英数の大小同一視をお願いします。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8080</span>
+    <a class="title" href="8074.html#8080">Re3:ルールファイルに半角英数の大小同一視をお願いします。</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=8074>
+    <span class="no">[8074]</span>
+    <a class="title" href="#8074">ルールファイルに半角英数の大小同一視をお願いします。</a>
+    <span class="author">ささ</span>
+    <time datetime="2015-11-12T16:51:01">2015年11月12日 16:51</time></h1>
+    <div class="body">ふとアウトライン処理の存在を思い出して、<br>ネットを見ながら設定したのですが、<br>入力補完の辞書ファイルは大小同一視があるのに<br>アウトラインのルールファイルには同一視設定が無いようです。<br><br>個人的なスクリプトの作成などは、ネットからの借用ばかりで<br>ルールの徹底など到底できず、また大抵は大小同一視な物が<br>多いのでは無いかと思いますので、入力補完と同様に、<br>ルールファイルにも大小同一視設定が欲しいです。<br><br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=8075>
+    <span class="no">[8075]</span>
+    <a class="title" href="#8075">Re:ルールファイルに半角英数の大小同一視をお願いします。</a>
+    <span class="author">もか</span>
+    <time datetime="2015-11-13T19:16:20">2015年11月13日 19:16</time></h1>
+    <div class="body">ルールファイル拡張で正規表現モードならiオプションが使えます。<br><a href=http://sakura-editor.sourceforge.net/htmlhelp2/HLP000074.html target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>htmlhelp<wbr>2/<wbr>HLP00007<wbr>4.<wbr>html</nobr></a><br>ただし、こんな風に書く必要がありますが。<br><br>;Mode=Regex<br>;RegexOption=i<br>^[　 \t]*abc /// abc<br>^[　 \t]*test /// test<br></div></section>
+    <ul><li><section><h1 id=8076>
+    <span class="no">[8076]</span>
+    <a class="title" href="#8076">Re2:ルールファイルに半角英数の大小同一視をお願いします。</a>
+    <span class="author">もか</span>
+    <time datetime="2015-11-13T22:40:04">2015年11月13日 22:40</time></h1>
+    <div class="body">簡易的に書けるようにするパッチを登録しました。<br>patchunicode:1011<br>使えるようになるかはコミッターの方の判断にお任せします。<br><br>;SkipRegex=^[　 \t]+<br>;Mode=Regex<br>;RegexOption=i<br>^abc /// abc<br>^test /// test<br><br>または以下のように書けます<br>;IgnoreCase=True<br>abc /// abc<br>test /// test<br></div></section>
+    </li><li><section><h1 id=8078>
+    <span class="no">[8078]</span>
+    <a class="title" href="#8078">Re2:ルールファイルに半角英数の大小同一視をお願いします。</a>
+    <span class="author">ささ</span>
+    <time datetime="2015-11-16T16:40:34">2015年11月16日 16:40</time></h1>
+    <div class="body">▼ もかさん<br>返信ありがとうございます。まさか仕様が拡張されていたとは…<br>外部サイト見て設定してたので気づきませんでした。<br>最初、[ ]の中が意味不明でしたが、これもコピペしてわかりました。<br>要はインデント文字の読み飛ばしですね。<br><br>ただ、贅沢言えば終端文字(記号)やネストも正しく認識して欲しい…<br>uwscメインなので<br>If<br>  ～<br>Endif<br>とか<br>C系なんかの<br>{<br>  ～<br>}<br>とか。<br><br>正規表現だけだと終端文字(記号)までは判別できてもネストは無理ですかね…<br><br>p.s.<br>[8076]の「コミッター」とは開発者様向けの発言という解釈でいいでしょうか？<br>こちらはちょっと意味が理解できなかったので…<br></div></section>
+    <ul><li><section><h1 id=8080>
+    <span class="no">[8080]</span>
+    <a class="title" href="#8080">Re3:ルールファイルに半角英数の大小同一視をお願いします。</a>
+    <span class="author">もか</span>
+    <time datetime="2015-11-16T22:26:29">2015年11月16日 22:26</time></h1>
+    <div class="body">▼ さささん<br>&gt; 正規表現だけだと終端文字(記号)までは判別できてもネストは無理ですかね…<br>正確にやるにはプラグインでコードを書いて作る必要があります。<br>参考：<a href=http://sakura.qp.land.to/?Plugin%2F%C5%EA%B9%C6 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Plugin%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6</nobr></a><br>ファイルのインデントが一定なら「インデントを含めた記号」毎にルールを書くことで疑似的にネストにも対応は可能です。<br>C言語でタブ1つインデントなら以下のような感じで。<br>;Mode=Regex<br>^[a-zA-Z_] /// function,Lv=0<br>^\t(if|\}? *else|while|for|do|switch)\b /// statement1,Lv=1<br>^\t\t(if|\}? *else|while|for|do|switch)\b /// statement2,Lv=2<br>^\t{3}(if|\}? *else|while|for|do|switch)\b /// statement3,Lv=3<br>^\t{4}(if|\}? *else|while|for|do|switch)\b /// statement4,Lv=4<br>;閉じかっこ類も必要なら<br>^\} /// function,Lv=0<br>^\t\} /// statement1,Lv=1<br>^\t\t\} /// statement2,Lv=2<br>^\t{3}\} /// statement3,Lv=3<br>^\t{4}\} /// statement4,Lv=4<br>,Lv=はなくてもたぶんいいです。<br>Lvが指定してあると変なインデントが混ざっててもそれ以降がおかしくなりません<br>&gt; [8076]の「コミッター」とは開発者様向けの発言という解釈でいいでしょうか？<br>&gt; こちらはちょっと意味が理解できなかったので…<br>はい、内部の開発者向けの話です。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

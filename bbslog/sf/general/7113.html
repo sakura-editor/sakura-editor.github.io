@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>どこに何があるのか分からない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7113</span>
+    <a class="title" href="7113.html#7113">どこに何があるのか分からない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7114</span>
+    <a class="title" href="7113.html#7114">Re:どこに何があるのか分からない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7117</span>
+    <a class="title" href="7113.html#7117">Re2:どこに何があるのか分からない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7118</span>
+    <a class="title" href="7113.html#7118">Re3:どこに何があるのか分からない</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7113>
+    <span class="no">[7113]</span>
+    <a class="title" href="#7113">どこに何があるのか分からない</a>
+    <span class="author">もか</span>
+    <time datetime="2009-12-13T02:51:58">2009年12月13日 02:51</time></h1>
+    <div class="body">最近サクラエディタ関連はサボってたので<br>どこに何があるのか良く分かりません。<br><br>ryojiさんとかはバグ追跡にwiki/BugReportとBBS群とsf.netのtrackerと全部みてるのでしょうか<br><br>修正してパッチをトラッカーにあげてレビューして<br>コミット時点ではtrunkまたはtrunk2のBugsInfo.txtの記載<br>svnのrevのメッセージ記載<br>ANSIならwikiのHistory/x.x.x.xで<br>UnicodeならwikiのJunk/44にsvn履歴コピペもかな...<br><br>request.txtはtrunk/trunk2とも健在だけどメンテされてなくて<br>wiki/Requestが現在の本体という認識でいいでしょうか？<br></div></section>
+    <ul><li><section><h1 id=7114>
+    <span class="no">[7114]</span>
+    <a class="title" href="#7114">Re:どこに何があるのか分からない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-13T11:44:27">2009年12月13日 11:44</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ryojiさんとかはバグ追跡にwiki/BugReportとBBS群とsf.netのtrackerと全部みてるのでしょうか<br>自分は、wiki/BugReportとBBS群はちょくちょく見ますが、sf.netのtrackerは見てないです。追跡とかよりも、自分自身で見つけて修正することのが多いですけど。<br><br>&gt; 修正してパッチをトラッカーにあげてレビューして<br>ANSI版はそのルールで運用されていますが、UNICODE版は事後レビューということになったまま（暫定ルール）なので、トラッカーにあげるかどうか、レビューするかどうかは各自の自由ということになっていますね。<br>自分は事後レビューにも積極的には参加してなくて、使用していてバグに気づいたら修正するくらいです。<br><br>&gt; コミット時点ではtrunkまたはtrunk2のBugsInfo.txtの記載<br>UNICODE版固有のバグ（移植ミス等）については、まだ正式版ではないので記載していません。もともとANSI版にもあったバグについては、ANSI版BugsInfo.txtとの対比用に記載するようにしていますけど。<br><br>&gt; svnのrevのメッセージ記載<br>これは情報ソースとして必須と思っています。<br><br>&gt; ANSIならwikiのHistory/x.x.x.xで<br>コミッター自身が記載するというルールにはなっていないと思います。<br>自分はほとんど更新したことがありません。<br><br>&gt; UnicodeならwikiのJunk/44にsvn履歴コピペもかな...<br>こちらはベータ版リリース時にまとめて自分がコピペしています（無編集）。<br><br>&gt; request.txtはtrunk/trunk2とも健在だけどメンテされてなくて<br>&gt; wiki/Requestが現在の本体という認識でいいでしょうか？<br>request関係は以前からさほど見てないです＞自分 (^^;;;</div></section>
+    <ul><li><section><h1 id=7117>
+    <span class="no">[7117]</span>
+    <a class="title" href="#7117">Re2:どこに何があるのか分からない</a>
+    <span class="author">もか</span>
+    <time datetime="2009-12-14T01:09:05">2009年12月14日 01:09</time></h1>
+    <div class="body">詳細な情報ありがとうございます。<br>たすかります。<br>unicode版は暫定事後レビューになったのすっかり忘れてました。<br><br>&gt;&gt; svnのrevのメッセージ記載<br>&gt;これは情報ソースとして必須と思っています。<br>対応バージョンとか調べるのにこれが無かったらものすごく大変になるところでした。<br>私はコミットしたこと無いんですけどね；<br><br>&gt;&gt; ANSIならwikiのHistory/x.x.x.xで<br>&gt;コミッター自身が記載するというルールにはなっていないと思います。<br>&gt;自分はほとんど更新したことがありません。<br>げんたさんあたりだと思いますけど、<br>関連場所へのリンクもついていてかなり詳しい人が書いてますね。<br>欲を言えば、１バージョンごとページになっているので<br>いつ変更されたか探すのは苦労します。<br>あ、wiki内で検索くればよかったのか。<br><br>ちなみに私もsf.netのtrackerは昔から全然見てませんでした。<br>パッチもINCMでアナウンスがないと全然見てなかったり。<br><br>パッチを書いてもいいけど、ほかの人の作業を増やしそうで躊躇しています。<br>新機能も最近の開発人の皆様が掲示板/trackerで頑張っているようですし、<br>それより私は更新のボトルネックになっているような作業に取り組んだほうが<br>いいかもしれいと思っています。<br>なにか溜まってるものとかあったら教えてください。<br></div></section>
+    <ul><li><section><h1 id=7118>
+    <span class="no">[7118]</span>
+    <a class="title" href="#7118">Re3:どこに何があるのか分からない</a>
+    <span class="author">もか</span>
+    <time datetime="2009-12-14T01:31:29">2009年12月14日 01:31</time></h1>
+    <div class="body">&gt;なにか溜まってるものとかあったら教えてください。<br>自己レス失礼します。<br>1.6.5.0のヘルプがまだないのでそっち調べます。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

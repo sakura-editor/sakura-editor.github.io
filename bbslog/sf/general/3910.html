@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ctagsについて</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3910</span>
+    <a class="title" href="3910.html#3910">ctagsについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3911</span>
+    <a class="title" href="3910.html#3911">RE: ctagsについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3913</span>
+    <a class="title" href="3910.html#3913">Re2: ctagsについて</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3910>
+    <span class="no">[3910]</span>
+    <a class="title" href="#3910">ctagsについて</a>
+    <span class="author">asd</span>
+    <time datetime="2004-07-06T19:01:02">2004年07月06日 19:01</time></h1>
+    <div class="body">ダイレクトタグジャンプをするためにctagsを使って<br>タグファイルを作ろうかと思っているのですが、<br>デフォルトだと読み込まれないファイルがあるので<br>(.inc,.datなど)<br>コマンドラインオプションで<br><br>-h ".h.c.def.src.sub.inc.dat"<br><br>とつけて作成したのですがうまく作成されません。<br>どなたかうまく作成する方法を教えてください。<br>お願いします。</div></section>
+    <ul><li><section><h1 id=3911>
+    <span class="no">[3911]</span>
+    <a class="title" href="#3911">RE: ctagsについて</a>
+    <span class="author">すい</span>
+    <time datetime="2004-07-07T03:49:16">2004年07月07日 03:49</time></h1>
+    <div class="body">拡張子を指定するだけじゃ駄目でしょう。<br>ctags は、ファイルの内容（文法）を理解しつつ関数・変数部を抜き出して<br>一覧を作成するわけですから、<br>「このファイル名は、この言語（どういう文法で記述されているか）」<br>と、言語とファイル名をセットで指示するようになっていたハズ。<br><br><br>・アセンブラとして拡張子 .def を追加したい場合<br><br>アセンブラ言語の指定 → ａｓｍ：<br>デフォルトの asm 言語の拡張子の他に、以下の物を *追加する* 指定 → ＋<br><br>コマンドラインオプションに「--langmap=asm:+.def」と指示する。<br><br><br>・C言語として拡張子 .xyz を追加する。<br>　アセンブラとして拡張子 .def と .abc を追加する。<br><br>C言語の指定 → ｃ：<br>アセンブラ言語の指定 → ａｓｍ：<br>デフォルト設定の拡張子の他に、以下の物を *追加する* 指定 → ＋<br><br>コマンドラインオプションに「--langmap=c:+.xyz,asm:+.def.abc」と指示する。<br><br><br>※ 言語と拡張子の間の区切りはコロン(：) →「c：+.xyz」<br><br>※ 複数の拡張子を指定する時は「ピリオド(小数点)拡張子」をそのまま<br>　 ダラダラ繋げて指定する。 → 「．def．abc」<br><br>※ 言語と言語の間はカンマ(，)で区切る。 → 「c：+.xyz，asm：+～」<br><br><br>な感じだったと思ふぞ。たしか。<br>色々試してみてぐさい。<br></div></section>
+    <ul><li><section><h1 id=3913>
+    <span class="no">[3913]</span>
+    <a class="title" href="#3913">Re2: ctagsについて</a>
+    <span class="author">asd</span>
+    <time datetime="2004-07-07T10:46:47">2004年07月07日 10:46</time></h1>
+    <div class="body">勉強になりました。ありがとうございました。<br>これからいろいろ試してみます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

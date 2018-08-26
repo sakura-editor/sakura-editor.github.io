@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>外部マクロをツールバーに・・・</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1193</span>
+    <a class="title" href="1193.html#1193">外部マクロをツールバーに・・・</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1195</span>
+    <a class="title" href="1193.html#1195">Re:外部マクロをツールバーに・・・</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1193>
+    <span class="no">[1193]</span>
+    <a class="title" href="#1193">外部マクロをツールバーに・・・</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-17T23:42:16">2002年01月17日 23:42</time></h1>
+    <div class="body">ブックマークや外部コマンドの外部マクロをツールバーに登録しようかな、と思ったらだめでした・・・<br>で、TBUTTONDATA tbd[] に F_USERMACRO_0 + n を入れてみたのですが、これだけだと絵が出てこないみたい。<br><br>・・・どなたか実装していただけるとうれしいのですが・・・</div></section>
+    <ul><li><section><h1 id=1195>
+    <span class="no">[1195]</span>
+    <a class="title" href="#1195">Re:外部マクロをツールバーに・・・</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-18T00:09:29">2002年01月18日 00:09</time></h1>
+    <div class="body">▼ horさん<br>&gt; ブックマークや外部コマンドの外部マクロをツールバーに登録しようかな、と思ったらだめでした・・・<br>&gt; で、TBUTTONDATA tbd[] に F_USERMACRO_0 + n を入れてみたのですが、これだけだと絵が出てこないみたい。<br>&gt; <br>&gt; ・・・どなたか実装していただけるとうれしいのですが・・・<br><br>CImageListMgr.cppの54行目<br>const int MAX_Y = 11;<br>を<br>const int MAX_Y = 13;<br>に変えたら、352個目以降のアイコンが出ると思います。<br><br>horさん、あとはよろしく～。</div></section>
+    </li></ul></li></ul></body></html>

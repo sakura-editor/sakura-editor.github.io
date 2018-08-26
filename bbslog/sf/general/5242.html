@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>サクラエディタで異常終了</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5242</span>
+    <a class="title" href="5242.html#5242">サクラエディタで異常終了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5261</span>
+    <a class="title" href="5242.html#5261">Re:サクラエディタで異常終了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5262</span>
+    <a class="title" href="5242.html#5262">Re2:サクラエディタで異常終了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5264</span>
+    <a class="title" href="5242.html#5264">Re3:サクラエディタで異常終了</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5263</span>
+    <a class="title" href="5242.html#5263">Re2:サクラエディタで異常終了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5265</span>
+    <a class="title" href="5242.html#5265">Re3:サクラエディタで異常終了</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5242>
+    <span class="no">[5242]</span>
+    <a class="title" href="#5242">サクラエディタで異常終了</a>
+    <span class="author">hokkaido_takeda</span>
+    <time datetime="2006-05-25T00:22:21">2006年05月25日 00:22</time></h1>
+    <div class="body">いつもサクラエディタを使わせていただきありがとう<br>ございます。<br>以下条件で当方の環境で必ず異常終了しますので、<br>調査していただけると助かります。<br><br>１．一度保存済みのテキストファイルに下記のように<br>　　入力します。<br>a<br>cccc<br>ccccaaaaaad<br>d【EOF】<br><br>２．「ウィンドウ」から「左右に分割」をクリック<br>　　します<br><br>３．右ウィンドウに移動して「全て選択」します<br><br>４．左ウィンドウに移動して４行目を削除します<br><br>５．「上書き保存」します<br><br>６．異常終了します</div></section>
+    <ul><li><section><h1 id=5261>
+    <span class="no">[5261]</span>
+    <a class="title" href="#5261">Re:サクラエディタで異常終了</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-06-03T23:14:42">2006年06月03日 23:14</time></h1>
+    <div class="body">&gt; ５．「上書き保存」します<br><br>ここで「上書き保存」せずに、全選択しているほうの<br>ウィンドウをアクティブにするだけでも異常終了しますね。<br><br>選択範囲の情報をステータスバーへ表示する処理<br>CEditView::PrintSelectionInfoMsg()<br>の中で落ちてます。</div></section>
+    <ul><li><section><h1 id=5262>
+    <span class="no">[5262]</span>
+    <a class="title" href="#5262">Re2:サクラエディタで異常終了</a>
+    <span class="author">maru</span>
+    <time datetime="2006-06-04T16:16:43">2006年06月04日 16:16</time></h1>
+    <div class="body">&gt; CEditView::PrintSelectionInfoMsg()<br>&gt; の中で落ちてます。<br><br>例1（最終行に改行がない場合）<br>a<br>cccc<br>ccccaaaaaad<br>d【EOF】<br><br>例2（最終行に改行がある場合）<br>a<br>cccc<br>ccccaaaaaad<br>d<br>【EOF】<br><br>例1・例2ともに「すべて選択」での選択範囲は<br>m_nSelectLineFrom&#9;0<br>m_nSelectColmFrom&#9;0<br>m_nSelectLineTo&#9;4<br>m_nSelectColmTo&#9;0<br>になっているようですが、何か理由があるのでしょうか。<br><br>例2の4行目改行コードの前までを選択したときと<br>例1の「すべて選択」の結果が同じのほうが<br>自然な感じがするのですが。</div></section>
+    <ul><li><section><h1 id=5264>
+    <span class="no">[5264]</span>
+    <a class="title" href="#5264">Re3:サクラエディタで異常終了</a>
+    <span class="author">maru</span>
+    <time datetime="2006-06-04T16:38:34">2006年06月04日 16:38</time></h1>
+    <div class="body">よく考えたら最終行の改行コード有無は関係なかったです。<br>abc<br>def<br>ghi<br>[EOF]<br>の内容で、<br>１．左右に分割<br>２．右ウインドウですべて選択<br>３．左ウインドウで「ghi」の行を削除<br>４．右ウインドウをアクティブ<br>でも再現しますね。</div></section>
+    </li></ul></li><li><section><h1 id=5263>
+    <span class="no">[5263]</span>
+    <a class="title" href="#5263">Re2:サクラエディタで異常終了</a>
+    <span class="author">yukihane</span>
+    <time datetime="2006-06-04T16:36:40">2006年06月04日 16:36</time></h1>
+    <div class="body">メインエディタとしてサクラエディタを便利に使わせてもらっています。<br>ついでにサクラエディタのソースでプログラミングの勉強を<br>始めようと目論んでいるところです。<br>よろしくお願いします。<br><br>問題の件ですが、<br>本来であれば<br>非アクティブなペインの選択状態(CEditView::m_nSelectLineFromなど)<br>も、アクティブペインと同じタイミングで更新する必要が<br>あるのではないでしょうか。<br><br>似たような現象として、以下のようなものもありました。<br>(大した問題ではありませんが...)<br>1.上の例で示されている文字列の3行目<br>&gt; ccccaaaaaad<br>  に、右ペインで行の最後にキャレットを移動させる。<br>2.左ペインで3行目を削除。<br>3.右ペインをアクティブにする。<br>⇒<br>EOFの後ろにキャレットが表示される。<br>これはキャレット位置状態が更新されていないことに<br>よる問題ではないかと思います。<br><br><br>異常終了の問題については、<br>とりあえず非アクティブになったペインの選択状態を<br>解除する、という案を考えてみましたが、<br>本来の動作はどうあるべきでしょうか。<br></div></section>
+    <ul><li><section><h1 id=5265>
+    <span class="no">[5265]</span>
+    <a class="title" href="#5265">Re3:サクラエディタで異常終了</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-06-04T21:50:48">2006年06月04日 21:50</time></h1>
+    <div class="body">▼ yukihaneさん<br>&gt; メインエディタとしてサクラエディタを便利に使わせてもらっています。<br>&gt; ついでにサクラエディタのソースでプログラミングの勉強を<br>&gt; 始めようと目論んでいるところです。<br>&gt; よろしくお願いします。<br>&gt; <br>&gt; 問題の件ですが、<br>&gt; 本来であれば<br>&gt; 非アクティブなペインの選択状態(CEditView::m_nSelectLineFromなど)<br>&gt; も、アクティブペインと同じタイミングで更新する必要が<br>&gt; あるのではないでしょうか。<br>&gt; <br>&gt; 異常終了の問題については、<br>&gt; とりあえず非アクティブになったペインの選択状態を<br>&gt; 解除する、という案を考えてみましたが、<br>&gt; 本来の動作はどうあるべきでしょうか。<br><br>有難う御座います、もはや、勉強させて下さいのレベルではないですね。<br><br>仕様について、これだと思う、関連リンク貼ってみます。<br>左右分割ＯＫ<br>1.5.3.3 [Notes] (2005-07-01 23:08) <br>左右分割ＮＧ<br>1.5.4.0 [Notes] (2005-07-15 23:07)<br><br>&gt;&gt;web:223 maruさん<br>1.5.4.0     &gt;&gt;data:4549 げんたさん<br>2005.07.09 &gt;&gt;dev:3972 選択範囲の行数・バイト数表示 (げんた)<br><br>http://members.at.infoseek.co.jp/sakura_editor/snapshot/printselectinfo.diff</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

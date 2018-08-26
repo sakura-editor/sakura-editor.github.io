@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Upgradeによるリポジトリの変更</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←webトップへ</a><li><div class="list-title">
+    <span class="no">486</span>
+    <a class="title" href="486.html#486">Upgradeによるリポジトリの変更</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">487</span>
+    <a class="title" href="486.html#487">Re:"Upgrade"によるリポジトリの変更</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=486>
+    <span class="no">[486]</span>
+    <a class="title" href="#486">Upgradeによるリポジトリの変更</a>
+    <span class="author">novice</span>
+    <time datetime="2012-11-12T03:08:07">2012年11月12日 03:08</time></h1>
+    <div class="body">Upgradeに伴い、リポジトリの場所が変わりました。<br><a href=https://sourceforge.net/p/forge/documentation/svn%20-%20Beta/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>forge/<wbr>document<wbr>ation/<wbr>svn%<wbr>20-%<wbr>20Beta/<wbr></nobr></a><br><br>具体的にはリポジトリの場所が変わったのではなく、<br>別の場所に新しくリポジトリのクローンが作成されました。<br><br>・これまでのリポジトリ<br><a href=https://sakura-editor.svn.sourceforge.net/svnroot/sakura-editor/ target=_top><nobr>https://<wbr>sakura-<wbr>editor.<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>svnroot/<wbr>sakura-<wbr>editor/<wbr></nobr></a><br>・新しく作成したリポジトリ<br><a href=https://svn.code.sf.net/p/sakura-editor/code/ target=_top><nobr>https://<wbr>svn.<wbr>code.<wbr>sf.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr></nobr></a><br><br>下記を見ると、"remove the classic repo ..."とあり、<br><a href=https://sourceforge.net/p/forge/community-docs/Subversion/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>forge/<wbr>communit<wbr>y-<wbr>docs/<wbr>Subversi<wbr>on/<wbr></nobr></a><br>これまでのリポジトリは削除する必要があります。<br>(リポジトリが複数あると整合性が取れなくなる)<br><br>ということで従来のリポジトリを削除しようと思います。<br>念のため問題があってもデータを戻せるように<br>バックアップをとりながら進めたいと思います。<br><br>気になる点としては、<br>・ViewVCはこれまでのリポジトリのほうを参照している<br>新しいほうはViewVCが使えない<br>・新しいリポジトリでcommit未確認<br>・新しく作成したリポジトリを削除して、これまでのリポジトリを使うという手もある？<br></div></section>
+    <ul><li><section><h1 id=487>
+    <span class="no">[487]</span>
+    <a class="title" href="#487">Re:"Upgrade"によるリポジトリの変更</a>
+    <span class="author">novice</span>
+    <time datetime="2012-11-13T20:54:07">2012年11月13日 20:54</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; ということで従来のリポジトリを削除しようと思います。<br>&gt; 念のため問題があってもデータを戻せるように<br>&gt; バックアップをとりながら進めたいと思います。<br><br>削除しようと思いましたが、<br>従来のリポジトリはしばらくそのままにしておこうと思います。<br>(削除はいつでもできるので)<br><br>Allura移行前のリポジトリのバックアップ(rev2467)は下記に置きました。<br>/home/project-web/sakura-editor/sakura_rsync.tar.gz<br>#rsync -av sakura-editor.svn.sourceforge.net::svn/sakura-editor/* .<br></div></section>
+    </li></ul></li></ul></body></html>

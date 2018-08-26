@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>検索/置換ダイアログ、正規表現チェック時の挙動に関する提案</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4590</span>
+    <a class="title" href="4590.html#4590">検索/置換ダイアログ、正規表現チェック時の挙動に関する提案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4600</span>
+    <a class="title" href="4590.html#4600">Re:検索/置換ダイアログ、正規表現チェック時の挙動に関する提案</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=4590>
+    <span class="no">[4590]</span>
+    <a class="title" href="#4590">検索/置換ダイアログ、正規表現チェック時の挙動に関する提案</a>
+    <span class="author">るぅ</span>
+    <time datetime="2005-08-08T09:17:11">2005年08月08日 09:17</time></h1>
+    <div class="body">エディタで範囲選択している時に検索(または置換)の<br>行おうとすると、範囲選択されているテキストが<br>自動的にダイアログの条件として入力されます。<br><br>しかし、正規表現があらかじめチェックされている場合、<br>例えば「int main(char ** argv, int argc)」などが<br>条件フィールドに入ると、そのまま検索ボタンを押しても<br>「nested *?+ in regexp」「検索条件を指定してください」<br>などのエラーが出ます。なので、エスケープしないと<br>検索できません。<br><br>もし「.+*()[]{}」が多用されているファイルを<br>編集することになった場合、毎回 手でエスケープするのは<br>とても大変です。<br><br>正規表現があらかじめチェックされている場合には<br>自動でエスケープしてくれるように設定できるようになると<br>良いのではないでしょうか。<br></div></section>
+    <ul><li><section><h1 id=4600>
+    <span class="no">[4600]</span>
+    <a class="title" href="#4600">Re:検索/置換ダイアログ、正規表現チェック時の挙動に関する提案</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-08-11T21:49:33">2005年08月11日 21:49</time></h1>
+    <div class="body">▼ るぅさん<br>&gt; エディタで範囲選択している時に検索(または置換)の<br>&gt; 行おうとすると、範囲選択されているテキストが<br>&gt; 自動的にダイアログの条件として入力されます。<br>&gt; <br>&gt; しかし、正規表現があらかじめチェックされている場合、<br>&gt; 例えば「int main(char ** argv, int argc)」などが<br>&gt; 条件フィールドに入ると、そのまま検索ボタンを押しても<br>&gt; 「nested *?+ in regexp」「検索条件を指定してください」<br>&gt; などのエラーが出ます。なので、エスケープしないと<br>&gt; 検索できません。<br>argc と argv が逆ちゃいますか? とかどーでもいい突っ込みはおいといて、、、<br><br>そのまま検索されるのなら選択した状態から「検索マークの切り替え(Ctrl-F3)」を押せば<br>正規表現を使わないで検索したのと同じような状態になりますが、どうでしょう?<br><br># ただ、勝手に正規表現を使用するのチェックが外れてしまいますので<br># 次回検索時には気を付けて<br> <br>&gt; 正規表現があらかじめチェックされている場合には<br>&gt; 自動でエスケープしてくれるように設定できるようになると<br>&gt; 良いのではないでしょうか。<br>正規表現を選択してそのまま検索したい時面倒じゃないですか(少数派カナ ^^;)</div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行手前の文字が欠ける問題</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2543</span>
+    <a class="title" href="2543.html#2543">改行手前の文字が欠ける問題</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2544</span>
+    <a class="title" href="2543.html#2544">Re: 改行手前の文字が欠ける問題</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2548</span>
+    <a class="title" href="2543.html#2548">Re2: 改行手前の文字が欠ける問題</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2554</span>
+    <a class="title" href="2543.html#2554">Re3: 改行手前の文字が欠ける問題</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2555</span>
+    <a class="title" href="2543.html#2555">Re3: 改行手前の文字が欠ける問題</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2556</span>
+    <a class="title" href="2543.html#2556">Re4: 改行手前の文字が欠ける問題</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2543>
+    <span class="no">[2543]</span>
+    <a class="title" href="#2543">改行手前の文字が欠ける問題</a>
+    <span class="author">ひろき</span>
+    <time datetime="2002-11-26T23:19:15">2002年11月26日 23:19</time></h1>
+    <div class="body">たびたびすいません。<br>私の環境だけで起こる現象なのかもしれませんが、改行の手前にある文字の右端が欠けることがあります。<br>例えば、フォントをMSゴシック、サイズを10程度に設定して、「M」「国」「司」等の文字を入力して改行すると、この現象が顕著に出ます。<br>みなさんの環境ではどうでしょう?<br>[ver 1.3.2.4]</div></section>
+    <ul><li><section><h1 id=2544>
+    <span class="no">[2544]</span>
+    <a class="title" href="#2544">Re: 改行手前の文字が欠ける問題</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-11-27T00:30:09">2002年11月27日 00:30</time></h1>
+    <div class="body">&gt;私の環境だけで起こる現象なのかもしれませんが、改行の手前にある文字の右端が欠けることがあります。<br>&gt;例えば、フォントをMSゴシック、サイズを10程度に設定して、「M」「国」「司」等の文字を入力して改行すると、この現象が顕著に出ます。<br>Win2K + 1.3.5.6で試しましたところ，現象は確認できませんでした．<br>M，国，などの文字の直後で改行するので手順は合っていますか？<br></div></section>
+    <ul><li><section><h1 id=2548>
+    <span class="no">[2548]</span>
+    <a class="title" href="#2548">Re2: 改行手前の文字が欠ける問題</a>
+    <span class="author">もか</span>
+    <time datetime="2002-11-27T11:06:30">2002年11月27日 11:06</time></h1>
+    <div class="body"><br>▼ げんたさん<br>&gt;Win2K + 1.3.5.6で試しましたところ，現象は確認できませんでした．<br>&gt;M，国，などの文字の直後で改行するので手順は合っていますか？<br>Win95+IE4(たぶん関係ないがPC-98) + 1.3.5.5のＭＳゴジックで発生した記憶があります。<br>WinXP + 1.3.5.6 のＭＳゴシックでは再現しません。<br><br>回避方法としては，[タイプ別設定]の文字の間隔を[1]以上にすれば，右端が1ドット欠けることは回避できた気がします。(今，手元にWin95がないので確認が取れていません)<br><br>ExtTextOutで同時に作画する文字の最後の文字だけ欠けるようで，国という文字を，検索などでハイライト表示しても，同様に欠けます。<br></div></section>
+    <ul><li><section><h1 id=2554>
+    <span class="no">[2554]</span>
+    <a class="title" href="#2554">Re3: 改行手前の文字が欠ける問題</a>
+    <span class="author">ひろき</span>
+    <time datetime="2002-11-27T21:44:08">2002年11月27日 21:44</time></h1>
+    <div class="body">げんたさん、もかさん、返信ありがとうございます。<br>申し遅れましたが、私のシステムはPC-98 + Win95 + IE5.5です。<br>やっぱり、PC98 + Win95特有の現象なのでしょうか。<br>1.3.5.7を試しましたが、やはり同じ現象が出ます。<br>そこで、もかさんのご意見通り、文字の間隔を空けたところ、再現しませんでした。<br>貴重なご意見ありがとうございました。</div></section>
+    </li><li><section><h1 id=2555>
+    <span class="no">[2555]</span>
+    <a class="title" href="#2555">Re3: 改行手前の文字が欠ける問題</a>
+    <span class="author">すい</span>
+    <time datetime="2002-11-27T21:56:20">2002年11月27日 21:56</time></h1>
+    <div class="body">&gt;Win95+IE4(たぶん関係ないがPC-98) + 1.3.5.5のＭＳゴジックで発生した記憶があります。<br>&gt;WinXP + 1.3.5.6 のＭＳゴシックでは再現しません。<br><br>その辺、確認してみました。<br>Win95 4.00.950a + IE4.01sp2アクティブデスクトップ + IE5.5sp2 (PC/AT互換機)<br>サクラエディタ 1.3.5.6 - ＭＳ ゴシック,Regular,10<br><br>「M」はなんともありませんでしたが<br>「国」「司」は確かに右端が欠けますね。<br><br>&gt;回避方法としては，[タイプ別設定]の文字の間隔を[1]以上にすれば，右端が1ドット欠けることは回避できた気がします。(今，手元にWin95がないので確認が取れていません)<br><br>これも解消される事を確認しました。。。けど表示できる文字数が。。。(;^^Ａ<br><br>&gt;ExtTextOutで同時に作画する文字の最後の文字だけ欠けるようで，国という文字を，検索などでハイライト表示しても，同様に欠けます。<br>ならOSの仕様っぽいですね。<br><br>私も行末の文字が書けるという事には気付いてましたけど、「んなの、ど～でも良いや」って思ってました。(笑)<br></div></section>
+    <ul><li><section><h1 id=2556>
+    <span class="no">[2556]</span>
+    <a class="title" href="#2556">Re4: 改行手前の文字が欠ける問題</a>
+    <span class="author">すい</span>
+    <time datetime="2002-11-27T22:02:22">2002年11月27日 22:02</time></h1>
+    <div class="body">&gt;その辺、確認してみました。<br>&gt;Win95 4.00.950a + IE4.01sp2アクティブデスクトップ + IE5.5sp2 (PC/AT互換機)<br>&gt;サクラエディタ 1.3.5.6 - ＭＳ ゴシック,Regular,10<br><br>追加確認。<br><br>・Win95 4.00.950a + IE3.02 (PC/AT互換機)<br>　サクラエディタ 1.3.5.6 - ＭＳ ゴシック,Regular,10<br><br>・Win95 4.00.950B + IE5.5sp2 (アクティブデスクトップ無し PC/AT互換機)<br>　サクラエディタ 1.3.5.6 - ＭＳ ゴシック,Regular,10<br><br>でも状況は全く同じでした。<br>「Win95とは そういう物よ」という雰囲気？<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

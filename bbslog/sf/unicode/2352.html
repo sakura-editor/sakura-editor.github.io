@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>【議題】リソース管理について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2352</span>
+    <a class="title" href="2352.html#2352">【議題】リソース管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2353</span>
+    <a class="title" href="2352.html#2353">Re:【議題】リソース管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2355</span>
+    <a class="title" href="2352.html#2355">Re2:【議題】リソース管理について</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2354</span>
+    <a class="title" href="2352.html#2354">Re:【議題】リソース管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2356</span>
+    <a class="title" href="2352.html#2356">Re2:【議題】リソース管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2357</span>
+    <a class="title" href="2352.html#2357">Re3:【議題】リソース管理について</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2352>
+    <span class="no">[2352]</span>
+    <a class="title" href="#2352">【議題】リソース管理について</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-05-03T14:43:56">2016年05月03日 14:43</time></h1>
+    <div class="body">C++開発者向けの話題です。<br><br>皆さんは、リソース管理をどうしていますか？<br><br>svnのsakura_rc.rcをリソースファイルをVC++で編集すると、<br>触ってない部分が書き換わってしまい、困惑しております。<br><br>VC++使っちゃいけないんでしょうか？<br><br><br>ver2系リポジトリのrev4101を見て書いています。<br>認識する限り、ver2系の開発にはvs2005以降が必要なはず。<br>試してみたところ、vs2005でも再現します。<br><br>各国語対応のときにsakura_rc.rcに加えた変更を、<br>TEXTINCLUDEに反映してないのが原因です。<br>生成されるexeには影響せず、投稿の本旨とも異なるので修正パッチは投稿しません。<br><br><br>議論したい内容<br>・現状どうしているか<br>・今後どうするか<br><br>私の分<br>&gt; ・現状どうしているか<br>sakura_rc.rcを編集し、vs2013のリソースエディタで編集。<br>細かい修正はサクラエディタで実施。<br><br>&gt; ・今後どうするか<br>今後もvs2013を利用して編集したい。<br></div></section>
+    <ul><li><section><h1 id=2353>
+    <span class="no">[2353]</span>
+    <a class="title" href="#2353">Re:【議題】リソース管理について</a>
+    <span class="author">もか</span>
+    <time datetime="2016-05-04T00:43:11">2016年05月04日 00:43</time></h1>
+    <div class="body">パッチを作ってみたが、すでにnoviceさんのパッチが上がっていました。<br>→[upatchid:1074]<br>IDEで上書きすると<br>1．debug/releaseでアプリのアイコンが切り替わる<br>2．svn:revが自動設定される<br>のが働かなくなるので、個人の場合はいいけど、結局本家側へコミットする際は手作業が必要みたいです。<br>もしかするとDebugのときに上書きするとアイコンが青いやつのままになるかもしれません。<br><br>私の分<br>VC2005Expressを使用。こいつにはリソースエディタがないです。<br>sakura.rcはほとんどsakura上で手作業で更新<br>補助でResEditを使用し座標をコピペしてきてから手作業でダイアログ組み立て<br>最近VC2015Comを入れたのでこれも使うかもしれないです。<br><br>今後<br>とりあえず、エラーになるのは直るはずです。<br>でも相変わらずパッチ作成には手作業が必須なので、あんまり変わらないです。<br><br>IDEでいじったリソース使ってると svn update するとヤバいので、そういう人も手パッチ版を使わざるを得ないと思います。<br></div></section>
+    <ul><li><section><h1 id=2355>
+    <span class="no">[2355]</span>
+    <a class="title" href="#2355">Re2:【議題】リソース管理について</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-05-04T18:32:07">2016年05月04日 18:32</time></h1>
+    <div class="body">▼ もかさん<br>&gt; IDEで上書きすると<br>&gt; 1．debug/releaseでアプリのアイコンが切り替わる<br>&gt; 2．svn:revが自動設定される<br><br>2つとも、技術的には解決可能な問題です。<br>VC++が勝手に変更してもよいことになってる領域に、<br>変えられるとマズい記述を置いているために起きてます。<br>VC++から見て読取専用な領域に、記述を移動させればよいです。<br>デバッグアイコンは.rc2を使えばよいです。<br><br>sourceforgeってログインしないと書込みできないですね...orz<br></div></section>
+    </li></ul></li><li><section><h1 id=2354>
+    <span class="no">[2354]</span>
+    <a class="title" href="#2354">Re:【議題】リソース管理について</a>
+    <span class="author">anonymous</span>
+    <time datetime="2016-05-04T09:22:21">2016年05月04日 09:22</time></h1>
+    <div class="body">反映が足りないから変わる<br>変更したから変わる<br>だけでなく<br>変更してなくても変わります<br>だから自分が行った変更箇所だけを明確にするには手パッチしかないです<br></div></section>
+    <ul><li><section><h1 id=2356>
+    <span class="no">[2356]</span>
+    <a class="title" href="#2356">Re2:【議題】リソース管理について</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-05-04T23:59:02">2016年05月04日 23:59</time></h1>
+    <div class="body">▼ anonymousさん<br>&gt; 変更してなくても変わります<br><br>変更してなくても変わるのがマズくね？<br>なのです。<br><br>反映漏れがどうの、と責めたいわけじゃないです。<br>大事なのは、問題が見つかったときにどう対応するか。<br><br>sakuraのソースコードはzlibだから<br>著作権表示さえ消さなければ<br>何をどう変えて行ってもよいはずだと思うんです。<br><br>もちろん「いや、問題ない。」も１つの対応。。。<br></div></section>
+    <ul><li><section><h1 id=2357>
+    <span class="no">[2357]</span>
+    <a class="title" href="#2357">Re3:【議題】リソース管理について</a>
+    <span class="author">anonymous</span>
+    <time datetime="2016-05-05T11:48:17">2016年05月05日 11:48</time></h1>
+    <div class="body">&gt; 変更してなくても変わるのがマズくね？<br>&gt; なのです。<br><br>いえ、変わるんです。<br>長年いろんなプロジェクトファイル触ってると分かります。<br><br>だからコミット前にそれが目的の変更なのかどうか<br>そのまま元に戻さすコミットしていいか<br>は確認するんです。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

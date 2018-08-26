@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) 検索・置換マクロのエラーチェック不具合</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1090</span>
+    <a class="title" href="1090.html#1090">Commit報告(Fix) 検索・置換マクロのエラーチェック不具合</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=1090>
+    <span class="no">[1090]</span>
+    <a class="title" href="#1090">Commit報告(Fix) 検索・置換マクロのエラーチェック不具合</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-27T15:51:30">2009年12月27日 15:51</time></h1>
+    <div class="body">リビジョン：<br>　rev1702<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: マクロ S_Replace が置換前文字列として空文字列('')を受け付ける<br>Fix: 検索画面で正規表現ONのときにマクロ S_SearchNext( '(', 0 ) を実行すると「正規表現エラー」<br><br>「正規表現エラー」のほうは、Wiki BugReport/50 の修正です。<br><a href=http://sakura.qp.land.to/?BugReport%2F50 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F50</nobr></a><br>置換マクロにも同様の問題があったので、そちらも修正しています。<br><br>「置換前文字列として空文字列を受け付ける」（ヘルプには「受け付けない」と記載されている）のほうは、置換はされないものの実行されていて、空文字列が履歴に追加され、指定オプションが記憶されるようになっていました。</div></section>
+    </li></ul></body></html>

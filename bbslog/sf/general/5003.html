@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ブロックコメントの設定数</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5003</span>
+    <a class="title" href="5003.html#5003">ブロックコメントの設定数</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5004</span>
+    <a class="title" href="5003.html#5004">Re:ブロックコメントの正規表現対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5005</span>
+    <a class="title" href="5003.html#5005">Re2:ブロックコメントの正規表現対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5007</span>
+    <a class="title" href="5003.html#5007">Re3:ブロックコメントの正規表現対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5024</span>
+    <a class="title" href="5003.html#5024">Re4:ブロックコメントの正規表現対応</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5003>
+    <span class="no">[5003]</span>
+    <a class="title" href="#5003">ブロックコメントの設定数</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-01-21T17:55:49">2006年01月21日 17:55</time></h1>
+    <div class="body">タイプ別設定のカラーで、コメントスタイルの<br>行型を１個減らして２個に、ブロック型を１個増やして３個にしてほしい。<br>そして、出来れば、<br>行型を２個減らして１個に、ブロック型を２個増やして４個にしてほしい。<br><br>#if 0 ～　#endif<br>#if 0 ～　#else<br>#ifdef DEBUG ～　#endif<br>#ifdef DEBUG ～　#else<br><br>が、出来たらいいのですが。<br></div></section>
+    <ul><li><section><h1 id=5004>
+    <span class="no">[5004]</span>
+    <a class="title" href="#5004">Re:ブロックコメントの正規表現対応</a>
+    <span class="author">しろ</span>
+    <time datetime="2006-01-23T00:24:01">2006年01月23日 00:24</time></h1>
+    <div class="body">便乗になりますが、コメントスタイル（ブロック／行）を<br>正規表現に対応して頂くのは可能でしょうか？<br><br>行型に「;」「#」「!」「//」の４つ指定したかったのですが、<br>指定できるのは３つまでだったので。。<br>正規表現でまとめて記述できると嬉しいです。<br><br>じゅうじさん希望のブロックコメントも、正規表現だと<br>１行で記述することができますね。<br><br>&gt; #if( 0|def DEBUG)　～　#(else|endif)<br><br>お忙しいところすみませんが、ご検討をお願いいたします。<br></div></section>
+    <ul><li><section><h1 id=5005>
+    <span class="no">[5005]</span>
+    <a class="title" href="#5005">Re2:ブロックコメントの正規表現対応</a>
+    <span class="author">すい</span>
+    <time datetime="2006-01-23T23:56:51">2006年01月23日 23:56</time></h1>
+    <div class="body">&gt;行型に「;」「#」「!」「//」の４つ指定したかったのですが、<br><br>正規表現キーワード使えば<br><br>行型「;」ならば、正規表現キーワードに<br>・正規表現：/;.*/k<br>・色指定　：コメント<br>を指定すれば良いのではないかと。同様に、<br><br>「#」<br>・正規表現：/#.*/k<br>・色指定　：コメント<br><br>「!」<br>・正規表現：/!.*/k<br>・色指定　：コメント<br><br>「//」<br>・正規表現：/\/\/.*/k<br>・色指定　：コメント<br><br>の指定を追加していけば。<br><br>あ、正規表現キーワードに<br>・正規表現：/([;#!]|\/\/).*/k<br>・色指定　：コメント<br>と、１個にまとめて指定すれば良いのか。<br></div></section>
+    <ul><li><section><h1 id=5007>
+    <span class="no">[5007]</span>
+    <a class="title" href="#5007">Re3:ブロックコメントの正規表現対応</a>
+    <span class="author">しろ</span>
+    <time datetime="2006-01-25T00:12:13">2006年01月25日 00:12</time></h1>
+    <div class="body">▼ すいさん<br>&gt; 正規表現キーワード使えば<br><br>なるほど、色指定コメントで記述すれば、<br>行のは一つにまとめて指定できますね（盲点でした。。）<br><br>丁寧に教えて頂きありがとうございます。<br><br><br>ついでに JSPの色指定を試してましたが、<br>これはブロックコメントの指定が３つ無いと苦しいですね。<br>/*    */<br>&lt;!--  --&gt;<br>&lt;%--  --%&gt;<br>何か良い方法があればよいのですが。。<br></div></section>
+    <ul><li><section><h1 id=5024>
+    <span class="no">[5024]</span>
+    <a class="title" href="#5024">Re4:ブロックコメントの正規表現対応</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-02-06T11:29:48">2006年02月06日 11:29</time></h1>
+    <div class="body">ブロックコメントは、もう１個欲しいところ、<br>そもそも、ラインコメントがなぜ３個も有るのか、１個で十分。<br><br>C/C++なら、こんな使い方。<br>１．/* ～ */<br>２．#if 0 ～ #<br>３．#ifdef DEBUG ～ #<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

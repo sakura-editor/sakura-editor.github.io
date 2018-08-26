@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>変数Typeへの代入がVisual Basicアウトライン解析で表示される</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2325</span>
+    <a class="title" href="2325.html#2325">変数Typeへの代入がVisual Basicアウトライン解析で表示される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2335</span>
+    <a class="title" href="2325.html#2335">Re:変数Typeへの代入がVisual Basicアウトライン解析で表示される</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2325>
+    <span class="no">[2325]</span>
+    <a class="title" href="#2325">変数Typeへの代入がVisual Basicアウトライン解析で表示される</a>
+    <span class="author">mmm</span>
+    <time datetime="2015-12-26T19:33:59">2015年12月26日 19:33</time></h1>
+    <div class="body">タイプ別設定でアウトライン解析方法に標準ルール「Visual Basic」を指定したとき、アウトライン解析を実行するとVisual Basicアウトラインのダイアログに変数Typeへの代入が表示されてしまいます。<br><br>具体的には、以下のようなVBSマクロがあったとします。<br><br>1: Set ado = CreateObject("ADODB.Stream")<br>2: ado.Type = 2<br>3: ado.Charset = "UTF-8"<br>4: ado.Open<br><br>すると、Visual Basicアウトラインのダイアログに以下のように表示されます。<br><br>行 桁 関数名<br>2　1　2　　　　ユーザー定義型宣言（パブリック）<br><br>VBS で外部ファイルを読み込もうとすると、毎回表示されてうっとおしいのです。<br>なんとかならないでしょうか？</div></section>
+    <ul><li><section><h1 id=2335>
+    <span class="no">[2335]</span>
+    <a class="title" href="#2335">Re:変数Typeへの代入がVisual Basicアウトライン解析で表示される</a>
+    <span class="author">もか</span>
+    <time datetime="2016-02-29T20:43:30">2016年02月29日 20:43</time></h1>
+    <div class="body">これ対策のパッチをPatchUnicode:#1019に登録しました。<br>Type以外のFunction,Privateなどもメソッド名になっている場合は表示しないようにしてみました。<br></div></section>
+    </li></ul></li></ul></body></html>

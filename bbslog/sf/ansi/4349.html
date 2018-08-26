@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ソート時に画面がダウン</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">4349</span>
+    <a class="title" href="4349.html#4349">ソート時に画面がダウン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4350</span>
+    <a class="title" href="4349.html#4350">Re: ソート時に画面がダウン</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4351</span>
+    <a class="title" href="4349.html#4351">Re:ソート時に画面がダウン</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4357</span>
+    <a class="title" href="4349.html#4357">Re: ソート時に画面がダウン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4358</span>
+    <a class="title" href="4349.html#4358">Re2: ソート時に画面がダウン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4368</span>
+    <a class="title" href="4349.html#4368">Re3: ソート時に画面がダウン</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4349>
+    <span class="no">[4349]</span>
+    <a class="title" href="#4349">ソート時に画面がダウン</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-03-30T15:23:38">2006年03月30日 15:23</time></h1>
+    <div class="body">お願いします。<br>桁数の大きいテキストを、新規作成画面に貼り付けて、全選択後、ソートすると画面が落ちます。<br><br>こちらが、桁数の大きいテキストの入ったファイルです。<br>Junk/FILENEW_PASTE_SORT_1.5.8.1.log<br><br>SAKURA 1.5.8.1<br></div></section>
+    <ul><li><section><h1 id=4350>
+    <span class="no">[4350]</span>
+    <a class="title" href="#4350">Re: ソート時に画面がダウン</a>
+    <span class="author">もか</span>
+    <time datetime="2006-03-30T16:28:39">2006年03月30日 16:28</time></h1>
+    <div class="body">&gt;桁数の大きいテキストを、新規作成画面に貼り付けて、全選択後、ソートすると画面が落ちます。<br>&gt;こちらが、桁数の大きいテキストの入ったファイルです。<br>&gt;Junk/FILENEW_PASTE_SORT_1.5.8.1.log<br>ログファイルは見てませんけど、私の所でもソート時に落ちることがあります。<br>選択範囲に最終行を含んでいて最終行に改行がない場合だと、ソート後に行数が変わることがあります。というか1行減ります。<br>選択範囲がEOFより後ろを含んでいて、ステータスバーを表示していると、選択範囲文字数計算で落ちます。<br></div></section>
+    </li><li><section><h1 id=4351>
+    <span class="no">[4351]</span>
+    <a class="title" href="#4351">Re:ソート時に画面がダウン</a>
+    <span class="author">fey</span>
+    <time datetime="2006-03-30T16:29:52">2006年03月30日 16:29</time></h1>
+    <div class="body">みなさんはじめまして。<br><br>折り返し行が有る時に、末端行を含んでソートすると落ちるっぽいですね。<br></div></section>
+    </li><li><section><h1 id=4357>
+    <span class="no">[4357]</span>
+    <a class="title" href="#4357">Re: ソート時に画面がダウン</a>
+    <span class="author">もか</span>
+    <time datetime="2006-03-31T03:33:03">2006年03月31日 03:33</time></h1>
+    <div class="body">▼じゅうじ<br>&gt;桁数の大きいテキストを、新規作成画面に貼り付けて、全選択後、ソートすると画面が落ちます。<br>▼fey<br>&gt;みなさんはじめまして。<br>&gt;折り返し行が有る時に、末端行を含んでソートすると落ちるっぽいですね。<br>はじめまして。<br>　なるほど。じゅうじさんとfeyさんのコメントを読んで、なんとなく分かってきました。<br>ありがとうございます。<br><br>　最終行に改行がない場合は最終行を含めないようにする処理を、折り返していても正常に動作するようにしました。<br>　暫定パッチをあげておきますが、私情により暫く開発に参加できませんので、<br>問題がありましたら、修正をお願いいします。<br>Yahoo Group: sdiff_r954_select_draw_fix.zip<br></div></section>
+    <ul><li><section><h1 id=4358>
+    <span class="no">[4358]</span>
+    <a class="title" href="#4358">Re2: ソート時に画面がダウン</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-03-31T11:21:03">2006年03月31日 11:21</time></h1>
+    <div class="body">動作確認しましたが，修正後のイメージでOKのようです．<br><br>不要変数の削除とコメントを追加したパッチを以下の場所におきました．<br>https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1461816&amp;group_id=12488&amp;atid=312488<br><br>これで問題なければCommitします．<br></div></section>
+    <ul><li><section><h1 id=4368>
+    <span class="no">[4368]</span>
+    <a class="title" href="#4368">Re3: ソート時に画面がダウン</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-04-04T00:53:31">2006年04月04日 00:53</time></h1>
+    <div class="body">本件，Pachesの方にかろとさんがコメントくださっていたんですね．<br>全然気付きませんでした．(Monitor OFFにしていたので...)<br><br>もかさんはちょっと忙しいようですが，かろとさんが私の修正文も含め確認して頂いたと言うことで，安心してCommitできます．<br><br>sakura/trunk#956 でCommitしました．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>外部マクロが環境によって動かない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">580</span>
+    <a class="title" href="580.html#580">外部マクロが環境によって動かない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">582</span>
+    <a class="title" href="580.html#582">Re: 外部マクロが環境によって動かない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">583</span>
+    <a class="title" href="580.html#583">Re2: 外部マクロが環境によって動かない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">584</span>
+    <a class="title" href="580.html#584">Re3: 外部マクロが環境によって動かない</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=580>
+    <span class="no">[580]</span>
+    <a class="title" href="#580">外部マクロが環境によって動かない</a>
+    <span class="author">mae</span>
+    <time datetime="2014-06-06T08:25:15">2014年06月06日 08:25</time></h1>
+    <div class="body">お世話になっております。連投で申し訳ありません。<br>外部マクロなのですがJSでUTF-8記入したものを自宅の環境<br>win7で実行した際はちゃんと動きました。<br><br>win8の中国語版を日本語表示にしてあるもので試した所<br>「マクロ1（）の実行に失敗しました」<br>という表示が出てしまいます。<br>マクロの文字コードをUTF-8のBOM付き、BoMなし両方に変更してみましたが<br>だめでした。<br><br>他に考えられる原因などお心あたりございましたら、お教えください。<br><br></div></section>
+    <ul><li><section><h1 id=582>
+    <span class="no">[582]</span>
+    <a class="title" href="#582">Re: 外部マクロが環境によって動かない</a>
+    <span class="author">もか</span>
+    <time datetime="2014-06-06T21:22:05">2014年06月06日 21:22</time></h1>
+    <div class="body">&gt;「マクロ1（）の実行に失敗しました」<br>このエラーの()の中身が記述通り空欄だった場合、マクロのファイル名の取得に失敗しています。<br>共通設定のマクロのところを見直してください。<br>[設定(A)]ボタンを押し忘れたとか一番上にあるフォルダ指定の場所がおかしいとかかも。<br></div></section>
+    <ul><li><section><h1 id=583>
+    <span class="no">[583]</span>
+    <a class="title" href="#583">Re2: 外部マクロが環境によって動かない</a>
+    <span class="author">MAE</span>
+    <time datetime="2014-06-11T10:29:08">2014年06月11日 10:29</time></h1>
+    <div class="body">もかさん<br><br>すみません、私の書き方が間違っていました<br>「マクロ3（マクロ名）の実行に失敗しました。」<br>とでます。<br><br></div></section>
+    <ul><li><section><h1 id=584>
+    <span class="no">[584]</span>
+    <a class="title" href="#584">Re3: 外部マクロが環境によって動かない</a>
+    <span class="author">もか</span>
+    <time datetime="2014-06-11T18:06:10">2014年06月11日 18:06</time></h1>
+    <div class="body">A. マクロファイルのアクセス権がない場合<br>ファイルの読み込みに失敗している可能性があります。<br>サクラエディタの排他制御を「読み書きを禁止する」にしていてsakuraで開いている場合も実行できません。<br>ファイルのフルパスが260文字を超える場合もおそらくエラーになります。<br>セキリティーソフトに妨害されることもあり得るかもしれません。<br><br>B. レジストリの関連付けを確認してください<br>ファイルの関連付けを書き換えられていると実行できなことがあります。<br>1. HKEY_CLASSES_ROOT\.js\(既定)の文字列値(デフォルトだとJSFile)<br>2. HKEY_CLASSES_ROOT\&lt;上記1.文字列値&gt;\ScriptEngine\(既定)の文字列値（デフォルトだとJScript)<br>(1.)の文字列はJSFileでなくても(2.)のレジストリパスと文字列が存在していればOKです。<br>このエラーメッセージはこのA.B-1,B-2のどれかで出ると思います。<br><br>1.2.を修正しても「指名のスクリプトエンジンが(見つかりません|作成できません)」が表示される場合<br>3. HKEY_CLASSES_ROOT\&lt;上記2.文字列値&gt;\CLSID\(既定)={f414c260-6ac0-11cf-b6d1-00aa00bbbb58}<br>4. HKEY_CLASSES_ROOT\{f414c260-6ac0-11cf-b6d1-00aa00bbbb58}\InprocSerer32\(既定)=C:\Windows\System32\jscript.dll<br>4. HKEY_CLASSES_ROOT\{f414c260-6ac0-11cf-b6d1-00aa00bbbb58}\InprocSerer32\Threading<br>Model=Both<br>等が必要です。<br><br>C.拡張子が「.js」になっていない<br>未知の拡張子だともちろん実行できません。<br><br>なおUTF-8の場合は、BOM付きにしてください<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>画面表示開始行の取得方法</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">641</span>
+    <a class="title" href="641.html#641">画面表示開始行の取得方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">642</span>
+    <a class="title" href="641.html#642">Re:画面表示開始行の取得方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">643</span>
+    <a class="title" href="641.html#643">Re2:画面表示開始行の取得方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">644</span>
+    <a class="title" href="641.html#644">Re3:画面表示開始行の取得方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">645</span>
+    <a class="title" href="641.html#645">Re4:画面表示開始行の取得方法</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=641>
+    <span class="no">[641]</span>
+    <a class="title" href="#641">画面表示開始行の取得方法</a>
+    <span class="author">NaKIT</span>
+    <time datetime="2017-09-12T22:36:53">2017年09月12日 22:36</time></h1>
+    <div class="body">マクロの命令 SetViewTop を使用すると，<br>表示する一番上の行の行番号を指定することができますが，<br>現在何行目から表示されているかを取得するにはどうすればよいのでしょうか？</div></section>
+    <ul><li><section><h1 id=642>
+    <span class="no">[642]</span>
+    <a class="title" href="#642">Re:画面表示開始行の取得方法</a>
+    <span class="author">berryzplus</span>
+    <time datetime="2017-10-06T23:27:36">2017年10月06日 23:27</time></h1>
+    <div class="body">▼ NaKITさん<br>&gt; マクロの命令 SetViewTop を使用すると，<br>&gt; 表示する一番上の行の行番号を指定することができますが，<br>&gt; 現在何行目から表示されているかを取得するにはどうすればよいのでしょうか？<br><br>実装ベースで確認したところ、方法はありませんでした。<br>現状、サクラエディタには存在しない機能です。<br><br><br>マクロから使える全ての機能は、<br>以下のファイルで実装されています。<br><br><a href=https://sourceforge.net/p/sakura-editor/code/4196/tree/sakura/trunk2/sakura_core/macro/CSMacroMgr.cpp target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>4196/<wbr>tree/<wbr>sakura/<wbr>trunk2/<wbr>sakura_c<wbr>ore/<wbr>macro/<wbr>CSMacroM<wbr>gr.<wbr>cpp</nobr></a><br><br>・VB的にSubな関数群<br>sakura_core\macro\CSMacroMgr.cpp(43):&#9;MacroFuncInfo CSMacroMgr::m_MacroFuncInfoCommandArr[] = <br><br>・VB的にFunctionな関数群<br>sakura_core\macro\CSMacroMgr.cpp(411):&#9;MacroFuncInfo CSMacroMgr::m_MacroFuncInfoArr[] = <br><br><br>値を返す関数群「m_MacroFuncInfoArr」に<br>CEditWnd::getInstance()-&gt;GetActiveView()-&gt;m_pcTextArea-&gt;GetViewTopLine();<br>を返す関数を追加してやれば良いです。<br><br>需要があるとわかればきっと誰かが作ってくれる気がします。<br>開発Uとかでアピってみてください。<br><br>もしくは、これを機にC言語開発に挑戦してみるのもよいかもしれません。<br>F_SETVIEWTOPを参考にF_GETVIEWTOPを定義し、<br>他の部分は隣の処理からコピペしてくれば簡単に実現できる機能です。<br>javascript等で他人のコードが読めるなら、不可能じゃないと思います。<br></div></section>
+    <ul><li><section><h1 id=643>
+    <span class="no">[643]</span>
+    <a class="title" href="#643">Re2:画面表示開始行の取得方法</a>
+    <span class="author">berryzplus</span>
+    <time datetime="2017-10-07T16:32:53">2017年10月07日 16:32</time></h1>
+    <div class="body">ちょっと考え直してパッチ投稿することにしました。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1112/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1112/<wbr></nobr></a><br><br>この程度ならオレにもできる！<br>と感じてもらえれば幸いです。<br><br></div></section>
+    <ul><li><section><h1 id=644>
+    <span class="no">[644]</span>
+    <a class="title" href="#644">Re3:画面表示開始行の取得方法</a>
+    <span class="author">NaKIT</span>
+    <time datetime="2017-10-08T23:31:49">2017年10月08日 23:31</time></h1>
+    <div class="body">▼ berryzplusさん<br>ありがとうございます。<br>C++ は門外漢ですが，いただいた解説と実装例のパッチを拝見し，どうにかできそうな気になりました。<br><br>実のところ，もともとの目的は，以下の Request「EOFが最上部に来るまでスクロール可能にする」<br><a href=http://sakura.qp.land.to/?Request%2F483 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Request%<wbr>2F483</nobr></a><br>をマクロでどうにかすることです。<br>パッチ&amp;ビルドが必要となると，私個人はともかく，Request の投稿者さんには敷居が高いですね。<br><br>需要についてですが，表示開始行/桁が取得できると，エディタの舌触りというか，使用感を変更できるようになります。<br>示していただいたサンプルのように，マクロでいろいろやった後に元の表示状態に戻すことが容易になります。<br>段落移動・タグジャンプ・次/前検索・ブックマーク移動 などで，カーソル移動後の表示を望む場所にできます。<br><br>正式版への採用をにらんで考えるに，仕様としては，新たに GetViewTop()・GetViewLeft() を増発するよりも，ChangeTabWidth(), ChangeWrapColm() のように，SetViewTop()・SetViewLeft()・CurLineCenter() の戻り値とした方が良いように思えます。<br><br>取得のみ行いたいときは SetViewTop(), SetViewLeft() へ 0 を指定するわけです。<br></div></section>
+    <ul><li><section><h1 id=645>
+    <span class="no">[645]</span>
+    <a class="title" href="#645">Re4:画面表示開始行の取得方法</a>
+    <span class="author">berryzplus</span>
+    <time datetime="2017-10-09T21:08:59">2017年10月09日 21:08</time></h1>
+    <div class="body">さらに考え直してパッチとパッチ適用済みexeをwikiにあげときました。<br><br>▼ NaKITさん<br>&gt; 正式版への採用をにらんで考えるに，仕様としては，新たに GetViewTop()・GetViewLeft() を増発するよりも，ChangeTabWidth(), ChangeWrapColm() のように，SetViewTop()・SetViewLeft()・CurLineCenter() の戻り値とした方が良いように思えます。<br>&gt; <br>&gt; 取得のみ行いたいときは SetViewTop(), SetViewLeft() へ 0 を指定するわけです。<br><br>いらないものが増えるのは困りそうですが、<br>SetがあるのにGetがない状況は不自然だと思います。<br>戻り値を返すようにするのは賛成ですけど、<br>足りないものを補う増発はやむなしかな、と思います。<br><br><br>あと、ややこしいんですが、<br>SetViewTopは絶対レイアウト行番号を指定して<br>その行が上端になるようにスクロールする機能です。<br>正確な値が必要ならば、やはり取得関数が欲しいです。<br><br><br>ここであるべき姿についてグダグダ語ったとしても<br>きっと誰も読まないと思うのでそういうのは他所でやることにします。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

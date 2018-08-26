@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>文字コード判別テストバイナリ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6433</span>
+    <a class="title" href="6433.html#6433">文字コード判別テストバイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6444</span>
+    <a class="title" href="6433.html#6444">Re:文字コード判別テストバイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6447</span>
+    <a class="title" href="6433.html#6447">Re2:文字コード判別テストバイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6449</span>
+    <a class="title" href="6433.html#6449">Re3:文字コード判別テストバイナリ</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6433>
+    <span class="no">[6433]</span>
+    <a class="title" href="#6433">文字コード判別テストバイナリ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-10-31T20:55:28">2007年10月31日 20:55</time></h1>
+    <div class="body">ようやくキリのいいところで落ち着けそうなので、<br>文字コード判別改善のお試しバイナリをお披露目します。<br><br><a href=http://sakura.qp.land.to/?Junk%2F26 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F26</nobr></a><br><br>以下は関連する記事です。<br><br>＃１．　&gt;&gt;data:5853 「文字コード誤認識します」by すすさん<br>＃２．　&gt;&gt;data:6053 「文字コードの読み取りミス？by はこねさん<br>＃３．　&gt;&gt;dev:4553 「デフォルト文字コード設定」by fumさん<br>＃４．　&gt;&gt;dev:5074 「UTF-8 が SJIS に？」by らぐなさん<br><br>＃１．の問題は、EUCJP 派と SJIS 派で好みを選択できるように<br>タイプ別設定に優先したい文字を、<br>SJIS, JIS, EUC, UTF-8, UTF-7 の５つの中から設定できるように<br>しました。（thanks to fumさん）<br>（UTF-16 系は絶対的な目印として BOM があるので、Unicode,<br>UnicodeBE をリストから外しました。）<br><br>＃４．の問題は確認してないんですけれど、実のところ・・・、<br>UTF-8 の文字検査をするビット演算が非常に怪しいのです。<br>わかり易く書き直したので変化があるかな・・・<br>というくらいです。<br><br>fumさんのパッチにあった究極的なオプションとして（笑い）、<br>自動判別機能を切り離す設定も漏らさずついてます。<br>（ただし Unicode, UnicodeBE, UTF-8 の BOM 検出機能は<br>オフに出来ません。）自動判別しないで UTF-7 を優先したい<br>などの場合はお気をつけ下さい (^^;)<br><br>以上です。<br></div></section>
+    <ul><li><section><h1 id=6444>
+    <span class="no">[6444]</span>
+    <a class="title" href="#6444">Re:文字コード判別テストバイナリ</a>
+    <span class="author">sjin</span>
+    <time datetime="2007-11-05T11:23:07">2007年11月05日 11:23</time></h1>
+    <div class="body">ラスティブさん、ありがとうございます。<br>最近、UTF-8でのコーディングの仕事が増えてきていたので、<br>大変助かります。<br><br>要望なんですが、改行コードも初期設定できないでしょうか？<br>UTF-8・LFで記述して保存・終了したあと、再度開くと、<br>文字コードはUTF-8なんですが、改行コードがCRLFになってしまうのです。<br><br>ラスティブさんのご都合がよろしければ、検討していただけませんでしょうか？<br><br></div></section>
+    <ul><li><section><h1 id=6447>
+    <span class="no">[6447]</span>
+    <a class="title" href="#6447">Re2:文字コード判別テストバイナリ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-11-06T07:01:02">2007年11月06日 07:01</time></h1>
+    <div class="body">▼sjinさん<br>&gt; 要望なんですが、改行コードも初期設定できないでしょうか？<br><br>報告が遅れてしまい、お詫びしなければならないのですけれど。<br>テスト版にどさくさに紛れて組み込まれているデフォルト文字コード設定機能は、その主な部分が・・・<br><br>　　削　除　予　定<br><br>・・・です。<br><br>やっぱり機能としての曖昧さや不完全さみたいなのが拭いきれて<br>いないというか。。。個人的に使った感じでは、優先したい<br>文字コード設定によって初期設定できるものの中に Unicode が<br>抜けてるところに違和感を感じました。その設定はSJISで書か<br>れた半角カタカナのみのデータに対するSJIS・EUCの判別の曖昧さ、<br>SJISで書かれた半角英数字のみのデータに対する<br>SJIS・JIS・EUC・UTF-8・UTF-7の判別の曖昧さを、<br>ぶっちゃけかなり適当に解決するための優先順位表を<br>作成するためのものですから、Unicode を選択できるように<br>することも出来ず・・・。<br><br>デフォルト文字コード設定に関しては、自動実行マクロなどに<br>任せたいと思っています。また、改行コード初期設定機能に<br>ついても、勝手ながら・・・同じくです。<br><br>ただこの変更のテストバイナリへの反映は、開発の方が混雑して<br>いるのでしばらく先にしようと思います。<br><br><br>▼sjinさん<br>&gt; UTF-8・LFで記述して保存・終了したあと、再度開くと、<br>&gt; 文字コードはUTF-8なんですが、改行コードがCRLFになって<br>&gt; しまうのです。<br><br>再度開くと改行コードの設定がCRLFになってしまうという<br>ことから、ファイルに書き込んだデータ中に改行コードが<br>含まれないという認識でよろしいでしょうか。もしそうだと<br>したら、改行コードを入れるか、自動実行マクロが出来上がる<br>まで（←他力本願）お待ち頂くしか・・・。</div></section>
+    <ul><li><section><h1 id=6449>
+    <span class="no">[6449]</span>
+    <a class="title" href="#6449">Re3:文字コード判別テストバイナリ</a>
+    <span class="author">sjin</span>
+    <time datetime="2007-11-07T03:35:39">2007年11月07日 03:35</time></h1>
+    <div class="body">&gt;▼ ラスティブさん<br>&gt; 再度開くと改行コードの設定がCRLFになってしまうという<br>&gt; ことから、ファイルに書き込んだデータ中に改行コードが<br>&gt; 含まれないという認識でよろしいでしょうか。<br><br>含まれていない、若しくはWin上での動作なので、改行コード<br>のチェック機能がペンディングされているのかもしれませんね。<br><br>&gt; 改行コードを入れるか、自動実行マクロが出来上がる<br>&gt; まで（←他力本願）お待ち頂くしか・・・。<br><br>了解しました。<br>お手間を取らせてしまいまして、申し訳ありません。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

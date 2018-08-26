@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>置換について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">1906</span>
+    <a class="title" href="1906.html#1906">置換について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2001</span>
+    <a class="title" href="1906.html#2001">RE: 置換について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2006</span>
+    <a class="title" href="1906.html#2006">Re2: 置換について</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1906>
+    <span class="no">[1906]</span>
+    <a class="title" href="#1906">置換について</a>
+    <span class="author">ootomo</span>
+    <time datetime="2002-05-23T13:32:06">2002年05月23日 13:32</time></h1>
+    <div class="body">こんなの発見しました。<br><br>①置換ダイヤログボックスで、正規表現と選択始点(1)挿入<br>　にチェックする。<br>②置換前文字列を「.*」、置換後文字列を「abcd 」にする。<br>③置換ボタンを押下。<br><br>全ての行の先頭に「abcd 」が挿入されるかなと思ったんで<br>すけど、何も起こりませんでした。<br>一応、どの行も検索対象色に変化していたんで、検索には引<br>っかかっていたみたいです。<br><br>とりあえず報告まで、では。</div></section>
+    <ul><li><section><h1 id=2001>
+    <span class="no">[2001]</span>
+    <a class="title" href="#2001">RE: 置換について</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-10T22:48:17">2002年06月10日 22:48</time></h1>
+    <div class="body"><br>ootomoさんがあげた例だけでなく、<br>正規表現指定したときの置換対象は「選択文字」以外はNGのようです。<br>とりあえず、置換後文字列に"abcd$1"＋「選択文字」を指定しましょう。<br><br>-----<br>プログラム的には、検索にヒットすると、、、<br>（・検索ヒット文字列は無視する。）<br>・挿入位置にカーソルを持っていく。<br>・対象文字列長０（挿入なので）で置換を行おうとする(この時点で正規表現の置換対象文字列がないのでNG)。<br>（".*"は空文字列にはヒットしない）<br>・置換対象文字列を空にしたのでSubstにNULLポインタが渡る（この時点でもNG）。<br>・bregexpはNULLポインタまたは空文字では"invalid target parameter"エラーになる。<br>・置換はされない。<br>となります。<br><br>対処としては、<br>・「挿入」のときは、置換後文字列を"abcd$1"のように後ろに"$1"を付与する。<br>・「選択文字」として置換処理を行う。<br>というのが正解でしょう。<br></div></section>
+    <ul><li><section><h1 id=2006>
+    <span class="no">[2006]</span>
+    <a class="title" href="#2006">Re2: 置換について</a>
+    <span class="author">ootomo</span>
+    <time datetime="2002-06-11T13:32:43">2002年06月11日 13:32</time></h1>
+    <div class="body">ootomoです。<br><br>解答有難うございました ^^);<br><br>では。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

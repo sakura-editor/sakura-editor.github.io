@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>逆転する置き換え</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2686</span>
+    <a class="title" href="2686.html#2686">逆転する置き換え</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2687</span>
+    <a class="title" href="2686.html#2687">もとい、置換です。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2690</span>
+    <a class="title" href="2686.html#2690">は゛く゛っぽい</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2686>
+    <span class="no">[2686]</span>
+    <a class="title" href="#2686">逆転する置き換え</a>
+    <span class="author">J</span>
+    <time datetime="2003-01-31T09:59:02">2003年01月31日 09:59</time></h1>
+    <div class="body">よくプログラムのコードを書いていると、<br>代入演算子の左辺と右辺をひっくり返したり、<br>比較演算子の左辺と右辺をひっくり返したりする場面<br>がよくあります。このような操作をマクロなどで自動化<br>することは可能でしょうか？<br></div></section>
+    <ul><li><section><h1 id=2687>
+    <span class="no">[2687]</span>
+    <a class="title" href="#2687">もとい、置換です。</a>
+    <span class="author">J</span>
+    <time datetime="2003-01-31T10:02:07">2003年01月31日 10:02</time></h1>
+    <div class="body">ああっ、また間違えてしまった。(&gt;_&lt;)</div></section>
+    </li><li><section><h1 id=2690>
+    <span class="no">[2690]</span>
+    <a class="title" href="#2690">は゛く゛っぽい</a>
+    <span class="author">すい</span>
+    <time datetime="2003-02-01T21:52:54">2003年02月01日 21:52</time></h1>
+    <div class="body">&gt;よくプログラムのコードを書いていると、<br>&gt;代入演算子の左辺と右辺をひっくり返したり、<br>&gt;比較演算子の左辺と右辺をひっくり返したりする場面<br>&gt;がよくあります。<br>あたしゃそんな事、滅多に無いんですけど。(^^;<br><br>やってみました。<br>本当なら、処理範囲を範囲選択してから選択範囲内に対する正規表現の置換<br>・置換前：(\s*)([^!&lt;&gt;=]+?)(\s*[!&lt;&gt;=]+\s*)([^\r]+)<br>・置換後：$1$4$3$2<br>一発で出来るはずなのですが、なぜか出来ません。<br><br>行末まで範囲選択してから実行するときちんと動作しますが、<br>行末より１文字でも手前までしか選択していないと動作しません。<br>[～] が選択範囲だとすると<br>　　if([ *c &lt; 'a' ])<br>という場合だと動作せず、<br>　　if([ *c &lt; 'a' ]<br>　　)<br>なら動作します。<br>選択されている文字列内容が同じでも、選択範囲が行末まで達しているか<br>いないかで動作結果が異なるっていうのはどう考えてもおかしいかと。<br>動作速度が遅いパソコン上で動作させると、「プロセス．．．」という<br>ダイアログがほんの一瞬だけ出るっぽいという事が分かったのですが、<br>とても人の目でメッセージを読める時間ではなく。<br>もちろん動作速度の速いパソコンだとダイアログの存在にすら<br>気付けないっす。<br><br>というわけで、正規表現置換による処理をあきらめ、<br>PPA で一生懸命にやってみました。<br>こんなんで良いのかな？<br>http://www.egroups.co.jp/files/sakura-editor/User/MACRO/<br>invcmp_20030201_21.cab<br>正規表現使えぬと ただひたすらに めんどくさい。<br></div></section>
+    </li></ul></li></ul></body></html>

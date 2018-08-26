@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Unicodeファイル名をSJIS化したいのですが</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">594</span>
+    <a class="title" href="594.html#594">Unicodeファイル名をSJIS化したいのですが</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">595</span>
+    <a class="title" href="594.html#595">Re:Unicodeファイル名をSJIS化したいのですが</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">596</span>
+    <a class="title" href="594.html#596">Re2:Unicodeファイル名をSJIS化したいのですが</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=594>
+    <span class="no">[594]</span>
+    <a class="title" href="#594">Unicodeファイル名をSJIS化したいのですが</a>
+    <span class="author">もも</span>
+    <time datetime="2015-08-16T21:41:30">2015年08月16日 21:41</time></h1>
+    <div class="body">Windows8.1pro 64bit<br>サクラエディタ2.2.0.1<br><br>人様のスクリプトを切り張りして何とか使っています。<br><br>UTF8文章で、SJISに存在しない文字を置換する処理を作りたいのですが<br>うまくいきません<br><br>マクロのJSファイルもターゲットのファイルもUTF8で保存しています。<br>一番下のROCK =&gt; RocK はちゃんと置換できているので、<br>処理そのものが動いていないということはないはずなんですが…<br>どなたかよろしくお願いします。<br><br>// Unicode2SJIS.js<br>function Unicode2SJIS(){<br>  var str = Editor.GetSelectedString(0);<br>  str = str.replace( /&amp;#9829;/g,   "(ハート)" );<br>// ↑は掲示板で文字化けするようです<br>// &amp;#9829;はサクラのステータスバーではU+2665の文字(ハート記号)となっています<br>  str = str.replace( /～/g,   "～" );<br>// こちらも元はU+301Cです<br>  str = str.replace( /ROCK/g,   "RocK" );<br>  Editor.InsText( str );<br>}<br>Unicode2SJIS();<br><br></div></section>
+    <ul><li><section><h1 id=595>
+    <span class="no">[595]</span>
+    <a class="title" href="#595">Re:Unicodeファイル名をSJIS化したいのですが</a>
+    <span class="author">ななし</span>
+    <time datetime="2015-08-17T22:21:21">2015年08月17日 22:21</time></h1>
+    <div class="body">たぶん違うとは思いますが念のため。<br>マクロをUTF8で保存するとき、BOMをつけていますか？<br>BOMをつけないとSJISマクロとして実行されて思ったように処理されません。<br>またSJISでマクロを書いて"\u2665"のようにJScriptでUnicodeエスケープすることもできます。<br></div></section>
+    <ul><li><section><h1 id=596>
+    <span class="no">[596]</span>
+    <a class="title" href="#596">Re2:Unicodeファイル名をSJIS化したいのですが</a>
+    <span class="author">もも</span>
+    <time datetime="2015-08-18T20:58:54">2015年08月18日 20:58</time></h1>
+    <div class="body">▼ ななしさん<br>ありがとうございます!!<br>大当たりでした。<br>UTF8でBOMいるとは…<br>追加のエスケープ表記も確認しました。<br><br>てっきりJSの仕様だと思って諦めていたので<br>非常に助かりました!!<br><br><br>返信書いてて送信押し忘れてたみたい…<br>ホントに申し訳ありません～</div></section>
+    </li></ul></li></ul></li></ul></body></html>

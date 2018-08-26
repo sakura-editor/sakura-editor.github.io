@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>隠れ更新ボタンとAlt+A</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">747</span>
+    <a class="title" href="747.html#747">隠れ更新ボタンとAlt+A</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">750</span>
+    <a class="title" href="747.html#750">Re:隠れ更新ボタンとAlt+A</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">752</span>
+    <a class="title" href="747.html#752">Re2:隠れ更新ボタンとAlt+A</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">753</span>
+    <a class="title" href="747.html#753">Re3:隠れ更新ボタンとAlt+A</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=747>
+    <span class="no">[747]</span>
+    <a class="title" href="#747">隠れ更新ボタンとAlt+A</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-10-09T11:44:18">2001年10月09日 11:44</time></h1>
+    <div class="body">「Alt+A を押してもチェックが入らない」というバグについて。PSH_NOAPPLYNOW フラグを付けても「隠れ更新ボタン」ができるようです。隠れ更新ボタンのキャプションは「更新(&amp;A)」です。このため、Alt+A を押しても動作しません。<br><br>spy++ で調べたところ、このボタンのIDは生成されるたびに変わります。EnumChildWindows を使って探すことができるでしょう。ボタンを勝手に削除したらいけないかも知れないので、キャプションを別のものに変えればいいと思います。</div></section>
+    <ul><li><section><h1 id=750>
+    <span class="no">[750]</span>
+    <a class="title" href="#750">Re:隠れ更新ボタンとAlt+A</a>
+    <span class="author">蛭子屋</span>
+    <time datetime="2001-10-09T15:06:54">2001年10月09日 15:06</time></h1>
+    <div class="body">▼ あああさん<br>&gt; spy++ で調べたところ、このボタンのIDは生成されるたびに変わります。EnumChildWindows を使って探すことができるでしょう。ボタンを勝手に削除したらいけないかも知れないので、キャプションを別のものに変えればいいと思います。<br><br>こちらの環境では更新ボタンのIDは0x3021で固定でした。<br>afxres.hにも<br>&gt;#define ID_APPLY_NOW                    0x3021<br>という定義がありますので、この値で固定だと思っていたんですが、環境によっては違うんでしょうか?<br><br>＃と書き込もうとして先ほどは変なことになりました。<br>＃今度は大丈夫でしょうか(..;)</div></section>
+    <ul><li><section><h1 id=752>
+    <span class="no">[752]</span>
+    <a class="title" href="#752">Re2:隠れ更新ボタンとAlt+A</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-10-09T15:20:26">2001年10月09日 15:20</time></h1>
+    <div class="body">▼ 蛭子屋さん<br>&gt; こちらの環境では更新ボタンのIDは0x3021で固定でした。<br><br>ハンドルとIDを間違えちゃいました。また、Win98では更新ボタンは「適用(&amp;A)」でした。<br><br>SetWindowText(GetDlgItem(..., ID_APPLY_NOW), "更新");<br></div></section>
+    <ul><li><section><h1 id=753>
+    <span class="no">[753]</span>
+    <a class="title" href="#753">Re3:隠れ更新ボタンとAlt+A</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-10-09T15:57:30">2001年10月09日 15:57</time></h1>
+    <div class="body">▼ あああさん<br>&gt; SetWindowText(GetDlgItem(..., ID_APPLY_NOW), "更新");<br><br>SetDlgItemText(..., ID_APPLY_NOW, "適用");<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

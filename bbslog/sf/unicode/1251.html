@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バージョン情報ダイアログの変更 - ID: 3000111 </title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1251</span>
+    <a class="title" href="1251.html#1251">バージョン情報ダイアログの変更 - ID: 3000111 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1252</span>
+    <a class="title" href="1251.html#1252">Re: バージョン情報ダイアログの変更 - ID: 3000111 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1253</span>
+    <a class="title" href="1251.html#1253">Re2: バージョン情報ダイアログの変更 - ID: 3000111 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1255</span>
+    <a class="title" href="1251.html#1255">Re3: バージョン情報ダイアログの変更 - ID: 3000111 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1257</span>
+    <a class="title" href="1251.html#1257">Re4: バージョン情報ダイアログの変更 - ID: 3000111 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1258</span>
+    <a class="title" href="1251.html#1258">Re5: バージョン情報ダイアログの変更 - ID: 3000111 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1260</span>
+    <a class="title" href="1251.html#1260">Re6: バージョン情報ダイアログの変更 - ID: 3000111 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1261</span>
+    <a class="title" href="1251.html#1261">Re7: バージョン情報ダイアログの変更 - ID: 3000111 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1299</span>
+    <a class="title" href="1251.html#1299">Re8: バージョン情報ダイアログの変更 - ID: 3000111 </a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1259</span>
+    <a class="title" href="1251.html#1259">Re4: バージョン情報ダイアログの変更 - ID: 3000111 </a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1251>
+    <span class="no">[1251]</span>
+    <a class="title" href="#1251">バージョン情報ダイアログの変更 - ID: 3000111 </a>
+    <span class="author">anonymous</span>
+    <time datetime="2010-06-13T21:01:07">2010年06月13日 21:01</time></h1>
+    <div class="body">・下半分の文章がグレーダウンしてて読みにくい。<br><br>これいいんでしょうか。<br>ライセンス的に正式に決まった文言じゃないからグレーアウトしてたんじゃないの？<br></div></section>
+    <ul><li><section><h1 id=1252>
+    <span class="no">[1252]</span>
+    <a class="title" href="#1252">Re: バージョン情報ダイアログの変更 - ID: 3000111 </a>
+    <span class="author">もか</span>
+    <time datetime="2010-06-14T01:59:17">2010年06月14日 01:59</time></h1>
+    <div class="body">ご指摘ありがとうございます。<br>ES_WANTRETURN(Returnキーの入力をエディットコントロールを受け取る)が付いているため、<br>ライセンス文にカーソルがあると、Enterキーでダイアログを閉じれないので、<br>WS_DISABLED(グレーダウン)にしたというのを読んだような気がしたので、変更しました。<br>現在過去ログの中から経緯を捜索中です。見つけ次第、報告します。<br>もちろん、ライセンス的な問題でしたら元に戻します。<br></div></section>
+    <ul><li><section><h1 id=1253>
+    <span class="no">[1253]</span>
+    <a class="title" href="#1253">Re2: バージョン情報ダイアログの変更 - ID: 3000111 </a>
+    <span class="author">もか</span>
+    <time datetime="2010-06-14T17:13:47">2010年06月14日 17:13</time></h1>
+    <div class="body">報告します。<br>rev:66 2001/06/11 に GPL表示のために IDC_EDIT_ABOUT が ES_READONLY | ES_WANTRETURN で追加されています。<br>rev:95 2001/06/27 Fix: Dialog box design, tab order and access key<br>http://sakura-editor.svn.sourceforge.net/viewvc/sakura-editor/sakura/trunk/sakura_core/sakura_rc.rc?r1=82&amp;r2=95&amp;pathrev=943<br>というもので、WS_DISABLED が追加されています。変更の名称からするとキー操作に関する改善が目的だとも考えられます。掲示板で対応する記事は、<br>&gt;&gt;dev:468 dialog修正 じぇぷろさん 01/06/27 10:15<br>のようです。ただし、<br>&gt;&gt;dev:434 提案と要望 じぇぷろさん 01/06/24<br>&gt;・バイナリのバージョン情報のGPLに関する記述部分は無効化、かつコメントアウトにしておく。<br>という発言が別にあります。<br><br>肝心の概要 = IDS_ABOUT_DESCRIPTION のほうは、<br>rev:66  GPLv2であることを表示。初出<br>rev:160 GPLの条文が削除され「無償で利用できますが，著作権は各箇所を記述した人が留保しています．\r\nこのソフトウェアは無保証です。\r\nソースコードの利用に対する詳細なライセンスは現在検討中です．"」に変更<br>rev:273 「無保証です。」→「無保証です．」<br>rev:944 「商用・非商用を問わず」を追加し「ソースコードの利用に対する詳細なライセンスは現在検討中です」を削除(現在のもの)<br><br>ちなみに昔のsakura_rc.rcには「原作版」と「非公式版」の２つのバージョン情報ダイアログがリソースに含まれています。<br>svnの日時に関して。もともとげんたさんのローカルCVSリポジトリです。時間がUTCなのか、+9なのか、+9だったものがUTCとしてインポートされているのかは私には判断できませんでした。<br>掲示板の過去ログは一番最初のログ数時間を除き+9のようです。<br></div></section>
+    <ul><li><section><h1 id=1255>
+    <span class="no">[1255]</span>
+    <a class="title" href="#1255">Re3: バージョン情報ダイアログの変更 - ID: 3000111 </a>
+    <span class="author">もか</span>
+    <time datetime="2010-06-18T18:29:16">2010年06月18日 18:29</time></h1>
+    <div class="body">開発者のみなさん「正式なライセンスではないからグレーダウンされている」かつ「グレーダウンでないとこまる」と思っているのでしょうか。<br>みなさんの意見を教えてください。<br></div></section>
+    <ul><li><section><h1 id=1257>
+    <span class="no">[1257]</span>
+    <a class="title" href="#1257">Re4: バージョン情報ダイアログの変更 - ID: 3000111 </a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-06-18T22:17:52">2010年06月18日 22:17</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 開発者のみなさん「正式なライセンスではないからグレーダウンされている」かつ「グレーダウンでないとこまる」と思っているのでしょうか。<br><br>自分は、そうは思わないです。<br>色が何であれ、文言が同じなら伝わる内容は同じじゃないかなぁ。</div></section>
+    <ul><li><section><h1 id=1258>
+    <span class="no">[1258]</span>
+    <a class="title" href="#1258">Re5: バージョン情報ダイアログの変更 - ID: 3000111 </a>
+    <span class="author">anon</span>
+    <time datetime="2010-06-18T23:50:05">2010年06月18日 23:50</time></h1>
+    <div class="body">実践的なユーザビリティ<br>http://msdn.microsoft.com/ja-jp/magazine/dvdarchive/ee819136.aspx</div></section>
+    <ul><li><section><h1 id=1260>
+    <span class="no">[1260]</span>
+    <a class="title" href="#1260">Re6: バージョン情報ダイアログの変更 - ID: 3000111 </a>
+    <span class="author">もか</span>
+    <time datetime="2010-06-19T06:24:35">2010年06月19日 06:24</time></h1>
+    <div class="body">▼ anonさん<br>&gt;実践的なユーザビリティ<br>&gt;http://msdn.microsoft.com/ja-jp/magazine/dvdarchive/ee819136.aspx<br>大変参考になります。<br><br>私は、<br>・背景色を指定したら、文字の色も指定する<br>・文字の色を指定したら、背景色も指定する<br>と昔どこかで教わりました。<br>全部黒より灰色の方が締りがあるというのは感じましたので、<br>パッチをv1.3に更新して、やや灰色を指定してみました。<br>ついでにタブで移動できるのをやめて改行の位置を変更。<br>wikiに載せようとしたら書き込めないので、専用ページにしました。<br>http://www.geocities.jp/moca_skr/ss_dlgabout.html<br><br>ついでにいえば、(SSはXP) VistaだとMS P ゴシックがおかしいようで、<br>バージョンの .が変な感じになります。 XPでもご覧のように識別しにくい。<br><br>ANSI版も同じようにしたいので、もうちょっと右とか左とかそういう意見も<br>歓迎します。<br></div></section>
+    <ul><li><section><h1 id=1261>
+    <span class="no">[1261]</span>
+    <a class="title" href="#1261">Re7: バージョン情報ダイアログの変更 - ID: 3000111 </a>
+    <span class="author">anon</span>
+    <time datetime="2010-06-19T08:04:25">2010年06月19日 08:04</time></h1>
+    <div class="body">個人的には右側の上から２番目のイメージが見やすいです。<br><br>今回の件とは関係ないのですが、もかさんの画面を見ていて気づいたので３点ほど提案します。<br><br>1.<br>UNICODE版かANSI版かをわかりやすくした方がよくないですか。<br>今だとサクラエディタWのように最後に記号が付いてるだけですが<br>これだと一般の人が見たときに何を意味しているのかわかりません。<br>＃今後UNICODE版になるんだからもういいっていう意見もあるかも<br><br>2.<br>Ctrl+Cとかボタンで、障害報告に使えるバージョン情報をコピーできませんか。<br>＃これは他の人が提案していたかも<br><br>3.<br>外部リンクDLLのバージョン情報とかを表示する必要はありませんか。<br>＃他のソフトはどうしてるんだろう？<br>表示義務があるか、という場合もありますが、<br>２であげた障害報告時の付加情報になるのではないかと思いました。<br></div></section>
+    <ul><li><section><h1 id=1299>
+    <span class="no">[1299]</span>
+    <a class="title" href="#1299">Re8: バージョン情報ダイアログの変更 - ID: 3000111 </a>
+    <span class="author">もか</span>
+    <time datetime="2010-07-01T01:44:51">2010年07月01日 01:44</time></h1>
+    <div class="body">話が3箇所に分散してすみません。<br>パッチをabout v1.5 に更新しました。<br>Patch    Info:の部分を行頭のインデント以外自由定義に変更しただけです。<br>#コピペ時にインデントが邪魔ですが直してません。<br>これで反対意見などがなければ「その１」はフリーズして、ツールバーボタン番号の修正周りの進捗をみつつコミットします。<br><br>まとめ的なものは<br>http://sakura.qp.land.to/?Junk%2F50<br>49は消してくれた模様。ありがとうございます。<br>JunkにおかないでDevelopか要望に移動した方がいいのかな<br><br>今はその2の開発部分について撤退します。<br>1点だけ補足、名称については、Unicodeという名前は商標的に避けた方がいいと思います。<br>http://www.unicode.org/policies/logo_policy.html<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=1259>
+    <span class="no">[1259]</span>
+    <a class="title" href="#1259">Re4: バージョン情報ダイアログの変更 - ID: 3000111 </a>
+    <span class="author">Uchi</span>
+    <time datetime="2010-06-19T00:08:22">2010年06月19日 00:08</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 開発者のみなさん「正式なライセンスではないからグレーダウンされている」かつ「グレーダウンでないとこまる」と思っているのでしょうか。<br>&gt; みなさんの意見を教えてください。<br><br>現状に近い形(グレー)になったのは、<br>2001/6/11commitのrev.66<br>の時の様です。<br><br>ライセンスが如何のとかの話が出る前と記憶しています。<br>従いまして、<br>「正式なライセンス」と「グレーダウン」は関係のない話と考えています。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

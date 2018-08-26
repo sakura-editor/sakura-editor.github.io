@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>【タイトル】Commit報告:(Chg) ファイル保存時に文字情報が失われる警告を表示(EUC&amp;JIS)</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">398</span>
+    <a class="title" href="398.html#398">【タイトル】Commit報告:(Chg) ファイル保存時に文字情報が失われる警告を表示(EUC&amp;JIS)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">399</span>
+    <a class="title" href="398.html#399">Re:【タイトル】Commit報告:(Chg) ファイル保存時に文字情報が失われる警告を表示(EUC&amp;JIS)</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=398>
+    <span class="no">[398]</span>
+    <a class="title" href="#398">【タイトル】Commit報告:(Chg) ファイル保存時に文字情報が失われる警告を表示(EUC&amp;JIS)</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-05-12T23:19:32">2008年05月12日 23:19</time></h1>
+    <div class="body">リビジョン：<br>　rev1337<br><br>変更種別：<br>　機能追加。<br><br>内容：<br>　ファイル保存時に文字情報が失われる場合は、その確認メッセージを出すようにしました。<br>EUC 及び JISに対応。<br><br>■CEuc (今回対応)<br>■CJis (今回対応)<br>■CShiftJis (対応済み)<br>■CUnicode (文字情報は失われようが無いので、対応済み扱い)<br>■CUnicodeBe (文字情報は失われようが無いので、対応済み扱い)<br>■CUtf7 (ファイル保存時には情報は失われないので、対応済み扱い)<br>■CUtf8 (ファイル保存時には情報は失われないので、対応済み扱い)<br><br>文字コードの指定ミスの修正<br>SJISとUnicodeの変換でCPに CP_ACP を試用している箇所があったのでSJISに変更しました。<br>（日本語版Winでは問題は無いが他国語版の場合には変な動作をするはずです）<br><br>コミット権限をいただいたんでテストもかねて簡単な修正をあげました。<br><br>以上よろしく願いします。</div></section>
+    <ul><li><section><h1 id=399>
+    <span class="no">[399]</span>
+    <a class="title" href="#399">Re:【タイトル】Commit報告:(Chg) ファイル保存時に文字情報が失われる警告を表示(EUC&amp;JIS)</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-05-15T01:02:41">2008年05月15日 01:02</time></h1>
+    <div class="body">ご対応ありがとうございます。<br>動作確認を行い、正常に機能が働いていることを確認致しました。<br></div></section>
+    </li></ul></li></ul></body></html>

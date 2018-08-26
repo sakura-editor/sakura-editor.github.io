@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>キーワード文字のユーザ設定</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2653</span>
+    <a class="title" href="2653.html#2653">キーワード文字のユーザ設定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2654</span>
+    <a class="title" href="2653.html#2654">Re: キーワード文字のユーザ設定</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2653>
+    <span class="no">[2653]</span>
+    <a class="title" href="#2653">キーワード文字のユーザ設定</a>
+    <span class="author">みく</span>
+    <time datetime="2003-04-01T19:09:40">2003年04月01日 19:09</time></h1>
+    <div class="body"><br>キーワード文字はプログラム埋め込みで固定となっています。<br>これをタイプ別にユーザが設定可能なようにできます。<br><br>・CShareData:Typesにunsigned char m_szKeywordChar[256]を追加する。<br>・最初の初期化時はglobal.cppの埋め込み情報をコピーする。<br>・タイプ別設定ダイアログにキーワード文字エディットボックス(max=256)を追加する。<br>・OKボタン押下時エディットボックスのキャラクタを配列番号にしてm_szKeywordCharの該当バイトを1にする。<br>・iniファイルへの保存時はテーブルが０でないキャラクタのみを集めて文字列にして保存する。<br>（256文字固定の０、１の文字列リストにしてもよい）<br>・IS_KEYWORD_CHARマクロをTypes-&gt;m_szKeywordCharを見るように修正<br></div></section>
+    <ul><li><section><h1 id=2654>
+    <span class="no">[2654]</span>
+    <a class="title" href="#2654">Re: キーワード文字のユーザ設定</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-04-02T00:32:19">2003年04月02日 00:32</time></h1>
+    <div class="body">&gt;キーワード文字はプログラム埋め込みで固定となっています。<br>&gt;これをタイプ別にユーザが設定可能なようにできます。<br>タイプ別と言うよりはキーワード別にする方が妥当な気がしますが...<br>2種類のキーワードを同時に扱うときに不都合が出るのかな？<br></div></section>
+    </li></ul></li></ul></body></html>

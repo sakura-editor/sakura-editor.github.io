@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>urlエンコードデコード</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7033</span>
+    <a class="title" href="7033.html#7033">urlエンコードデコード</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7034</span>
+    <a class="title" href="7033.html#7034">Re:urlエンコードデコード</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=7033>
+    <span class="no">[7033]</span>
+    <a class="title" href="#7033">urlエンコードデコード</a>
+    <span class="author">ろろ</span>
+    <time datetime="2009-09-20T21:31:45">2009年09月20日 21:31</time></h1>
+    <div class="body">Sakura 1.3.10.2 です。<br>教えて下さい。既出なら申し訳ありません。<br>urlエンコードデコードを<br>変換＞文字コード変換でできると助かります。<br>よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=7034>
+    <span class="no">[7034]</span>
+    <a class="title" href="#7034">Re:urlエンコードデコード</a>
+    <span class="author">syat</span>
+    <time datetime="2009-09-21T22:26:28">2009年09月21日 22:26</time></h1>
+    <div class="body">▼ ろろさん<br>&gt; Sakura 1.3.10.2 です。<br>なぜそんな古いものを使う？？<br><br>&gt; urlエンコードデコードを<br>&gt; 変換＞文字コード変換でできると助かります。<br>変換メニューには組み込まれてませんが、以下のようなマクロで対応できます。<br><br>-- ↓encodeURI.jsの内容 --------------<br>var dec = GetSelectedString(0);<br>var enc = encodeURI(dec);<br>InsText(enc);<br><br>-- ↓decodeURI.jsの内容 --------------<br>var enc = GetSelectedString(0);<br>var dec = decodeURI(enc);<br>InsText(dec);<br><br>上の内容をencodeURI.js, decodeURI.jsというファイルに保存し、マクロ登録して使ってください。<br>v1.3.10.2でも動くと思います。（おそらく。ヘルプを見る限りでは）</div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>マイナーな（以下略 その３</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3422</span>
+    <a class="title" href="3422.html#3422">マイナーな（以下略 その３</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3444</span>
+    <a class="title" href="3422.html#3444">RE: マイナーな（以下略 その３</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3447</span>
+    <a class="title" href="3422.html#3447">Re2: マイナーな（以下略 その３</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3456</span>
+    <a class="title" href="3422.html#3456">Re3: マイナーな（以下略 その３</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3457</span>
+    <a class="title" href="3422.html#3457">Re4: マイナーな（以下略 その３</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3458</span>
+    <a class="title" href="3422.html#3458">Re5: Re4: マイナーな（以下略 その３</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3422>
+    <span class="no">[3422]</span>
+    <a class="title" href="#3422">マイナーな（以下略 その３</a>
+    <span class="author">もか</span>
+    <time datetime="2004-02-18T01:33:30">2004年02月18日 01:33</time></h1>
+    <div class="body">マイナーな修正 その３です。エラーチェックの強化が主です。<br>・未使用のstatic変数を削除<br>・未使用の全角フォントを削除<br>・コントロールプロセスのメニューの未使用のコードをコメントアウト<br>・GetMessageのエラーチェック<br>・クリップボードのGlobalAllocのエラーチェック<br>・BOOLとboolをちょっと修正<br>など。 項目は多いが、中身の薄いパッチとなっています :-)<br>ヤフーグループ(?)のfix040215.zip<br></div></section>
+    <ul><li><section><h1 id=3444>
+    <span class="no">[3444]</span>
+    <a class="title" href="#3444">RE: マイナーな（以下略 その３</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-02-28T16:32:13">2004年02月28日 16:32</time></h1>
+    <div class="body">エディタ以外からクリップボードに登録するためにSetClipboardText()を作っていますが， CEditView::MySetClipboardDataを使うとまずいのかな．<br></div></section>
+    <ul><li><section><h1 id=3447>
+    <span class="no">[3447]</span>
+    <a class="title" href="#3447">Re2: マイナーな（以下略 その３</a>
+    <span class="author">もか</span>
+    <time datetime="2004-02-29T00:36:10">2004年02月29日 00:36</time></h1>
+    <div class="body">&gt;エディタ以外からクリップボードに登録するためにSetClipboardText()を作っていますが， CEditView::MySetClipboardDataを使うとまずいのかな．<br>動作上は、問題ないと思います。クラス構造上は...いまいち<br>CDocLine,CMemoryとかのデータ(以降、編集データ)と、ただの文字列を明確に区別したいということはあります。<br>区別すると、少しだけありがたいこともあります。<br>・"SAKURAClip"分のメモリー使用量をケチれる(自分)<br>・編集データを標準形式(CF_xxx)にコピーするときは、ナル文字(\0) → 空白(\x20)変換したい(要望ないか)<br>あとは、多段バッファ...は、他のツールでやってもらおう<br>あれまあ、別関数にしなくても、MySetClipboardDataにフラグ追加するだけでも出来ますね。<br></div></section>
+    <ul><li><section><h1 id=3456>
+    <span class="no">[3456]</span>
+    <a class="title" href="#3456">Re3: マイナーな（以下略 その３</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-04T01:08:54">2004年03月04日 01:08</time></h1>
+    <div class="body">いちよう、新しいの上げました。<br>少し、修正個所が増えています。<br>newをスタックに変更した個所は止めました。<br></div></section>
+    <ul><li><section><h1 id=3457>
+    <span class="no">[3457]</span>
+    <a class="title" href="#3457">Re4: マイナーな（以下略 その３</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-04T08:24:02">2004年03月04日 08:24</time></h1>
+    <div class="body">&gt;いちよう、新しいの上げました。<br>前回の取り込んでしまったあとでした．<br><br>&gt;少し、修正個所が増えています。<br>m_szInitialDir, m_ofnも使ってない変数ですか．<br><br>&gt;newをスタックに変更した個所は止めました。<br>どこです？見あたりませんが．<br></div></section>
+    <ul><li><section><h1 id=3458>
+    <span class="no">[3458]</span>
+    <a class="title" href="#3458">Re5: Re4: マイナーな（以下略 その３</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-04T15:28:28">2004年03月04日 15:28</time></h1>
+    <div class="body">&gt;m_szInitialDir, m_ofnも使ってない変数ですか．<br>そうです。手違いじゃあないです。<br><br>&gt;&gt;newをスタックに変更した個所は止めました。<br>&gt;どこです？見あたりませんが．<br>見あたらなくて当然、削除前のパッチになってました。<br>実害はないし、取り込み後らしいので、そのままにします。<br>#CVS HEADは何処に..<br>#相変わらずミスが多いな自分<br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ANSI版からUnicode版への設定ファイル移行について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">8263</span>
+    <a class="title" href="8263.html#8263">ANSI版からUnicode版への設定ファイル移行について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8264</span>
+    <a class="title" href="8263.html#8264">Re:ANSI版からUnicode版への設定ファイル移行について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">8265</span>
+    <a class="title" href="8263.html#8265">Re:ANSI版からUnicode版への設定ファイル移行について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">8266</span>
+    <a class="title" href="8263.html#8266">Re:ANSI版からUnicode版への設定ファイル移行について</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=8263>
+    <span class="no">[8263]</span>
+    <a class="title" href="#8263">ANSI版からUnicode版への設定ファイル移行について</a>
+    <span class="author">ヤマモ</span>
+    <time datetime="2017-08-21T09:03:53">2017年08月21日 09:03</time></h1>
+    <div class="body">ANSI版1.6.7.0からUnicode版へのバージョンアップをしようと考えておりますが、<br>設定ファイル(sakura.ini)はそのまま引き継げるのでしょうか？<br><br>また、正規表現キーワードや強調表示キーワード、カラー設定などの<br>インポート/エクスポート機能に互換性はあるのでしょうか？<br><br></div></section>
+    <ul><li><section><h1 id=8264>
+    <span class="no">[8264]</span>
+    <a class="title" href="#8264">Re:ANSI版からUnicode版への設定ファイル移行について</a>
+    <span class="author">SNK</span>
+    <time datetime="2017-08-21T22:28:02">2017年08月21日 22:28</time></h1>
+    <div class="body">ANSI版からですか？ <br>試したことないので、はっきりしたことは言えないので申し訳ないですが、<br>Unicode版での注意事項だけ書いてみます。<br><br>* キーワードファイル自体は、単純なルールなので、ほぼ流用できるはず。<br>  もしかしたら、ルールが追加されているのもあるかもしれない。<br>* カラー設定は、新しく増えた設定項目とかはデフォルトのまま、引継ぎが可能。<br>* sakura.iniを流用し続けていると、新しいメニューが増えていることに気づかないことも。<br>  例えば、メニューに「ミニマップを表示」が追加されていても、<br>  昔からのiniを使い続けると、現れません。(そういうカスタマイズも正しいので)<br>  たまには、iniファイルを見直すとよいかもしれません。<br>* iniファイルの中身を直接編集して弄ってみるのも良いかもしれません。<br>  よく分からなければ、そのセクションを丸ごと削除してしまえば、デフォルトの設定で起動します。<br><br>単に、いろいろ試してみるとよいかも、としか言ってません。大したアドバイスできなくてごめんなさい。(*^_^*)</div></section>
+    </li><li><section><h1 id=8265>
+    <span class="no">[8265]</span>
+    <a class="title" href="#8265">Re:ANSI版からUnicode版への設定ファイル移行について</a>
+    <span class="author">berryzplus</span>
+    <time datetime="2017-08-21T22:34:25">2017年08月21日 22:34</time></h1>
+    <div class="body">▼ ヤマモさん<br>&gt; ANSI版1.6.7.0からUnicode版へのバージョンアップをしようと考えておりますが、<br>&gt; 設定ファイル(sakura.ini)はそのまま引き継げるのでしょうか？<br>&gt; <br>&gt; また、正規表現キーワードや強調表示キーワード、カラー設定などの<br>&gt; インポート/エクスポート機能に互換性はあるのでしょうか？<br><br>設定ファイルは基本的に互換です。<br>古い設定名は新しい設定名に自動で置換されますので、<br>v1のsakura.iniをv2のフォルダにコピーして起動すれば移行完了です。<br><br>v1→v2の移行なら通常は何の問題も起きないと思います。<br>ただ、正規表現エンジンの文字コードが違うので、<br>まれに取り込んだ正規表現キーワードが正しくうごかないことがあります。<br>例えば、文字コードを直接指定した正規表現はv1と違う結果になります。<br></div></section>
+    </li><li><section><h1 id=8266>
+    <span class="no">[8266]</span>
+    <a class="title" href="#8266">Re:ANSI版からUnicode版への設定ファイル移行について</a>
+    <span class="author">ヤマモ</span>
+    <time datetime="2017-08-22T10:19:11">2017年08月22日 10:19</time></h1>
+    <div class="body">回答ありがとうございます。<br>メニュー関係の設定は全く考えてませんでした。<br>アドバイスを参考に、試してみる事にします。<br><br>10年以上愛用しているsakura.iniファイルですが、<br>新機能を確認しながら新たに設定し直すのも楽しいかもしれませんね。<br>何かあったら報告しに来ます。</div></section>
+    </li></ul></li></ul></body></html>

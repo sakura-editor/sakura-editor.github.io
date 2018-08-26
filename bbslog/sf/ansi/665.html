@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Re2:Win95でメニューが出ないのは</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">665</span>
+    <a class="title" href="665.html#665">Re2:Win95でメニューが出ないのは</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">668</span>
+    <a class="title" href="665.html#668">Re3: Win95でメニューが出ないのは</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=665>
+    <span class="no">[665]</span>
+    <a class="title" href="#665">Re2:Win95でメニューが出ないのは</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-08-31T13:14:06">2001年08月31日 13:14</time></h1>
+    <div class="body">&gt;Win32 の場合 FormatMessage からエラーメッセージが得られます。<br>「パラメータが間違っています」というのはFormatMessage&amp;GetLastErrorの結果です．<br><br>---<br>再度いろいろやってみてわかったこと．<br>MIIM_TYPEとMIIM_FTYPEを同時指定するとエラーになる．<br>cchの値は0でも動く．<br>MIIM_TYPEを削除してMIIM_FTYPEとMIIM_STRINGを追加したらWin2Kでは動きました．でも，これは95ではサポートされていない．<br><br>--<br>(表面的な)原因が分かりました．MSのサイトからダウンロードした最新のPlatform SDKに含まれるincludeファイルを使っているとメニューが出ません．インクルードパスの順番を変えたらWin95でも動くものができました．<br><br>--<br>Win95でメニューが出ないときでもエラー内容は「処理は正常に終了しました」だって．<br></div></section>
+    <ul><li><section><h1 id=668>
+    <span class="no">[668]</span>
+    <a class="title" href="#668">Re3: Win95でメニューが出ないのは</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-08-31T14:06:15">2001年08月31日 14:06</time></h1>
+    <div class="body">最新のSDKでは，sizeof( MENUITEMINFO ) == 48<br>VC付属SDKでは，sizeof( MENUITEMINFO ) == 44<br><br>両者の違いは<br>(最新)<br>#if(WINVER &gt;= 0x0500)<br>    HBITMAP  hbmpItem;      // used if MIIM_BITMAP<br>#endif /* WINVER &gt;= 0x0500 */<br><br>(VC付属)<br>#if (_WIN32_WINNT &gt;= 0x0500)<br>    HBITMAP hbmpItem;       // used if MIIM_BITMAP<br>#endif<br><br>構造体サイズが大きくなると動作しないと言うのは明らかにWin95のバグのような気もするけど．<br></div></section>
+    </li></ul></li></ul></body></html>

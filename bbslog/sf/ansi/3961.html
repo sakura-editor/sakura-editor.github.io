@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>キャレットが残る不具合への対処</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3961</span>
+    <a class="title" href="3961.html#3961">キャレットが残る不具合への対処</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=3961>
+    <span class="no">[3961]</span>
+    <a class="title" href="#3961">キャレットが残る不具合への対処</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-06-26T23:38:16">2005年06月26日 23:38</time></h1>
+    <div class="body">&gt;&gt;data:4524 へのパッチです<br><br>diff --dos --dos -ur ../../ssrc_2005-06-18_orig/sakura_core/CEditView_New2.cpp ./CEditView_New2.cpp<br>--- ../../ssrc_2005-06-18_orig/sakura_core/CEditView_New2.cpp&#9;Sun Apr 17 19:01:03 2005<br>+++ ./CEditView_New2.cpp&#9;Sun Jun 26 23:33:15 2005<br>@@ -479,8 +479,10 @@<br> &#9;&#9;&#9;rcClip.right  = x + nSelectTo   * ( nCharWidth );<br> &#9;&#9;&#9;rcClip.top    = y;<br> &#9;&#9;&#9;rcClip.bottom = y + nLineHeight;<br>-&#9;&#9;&#9;// 2005/04/02 かろと ０文字マッチだと反転幅が０となり反転されないので、1/3文字幅だけ反転させる<br>-&#9;&#9;&#9;if (rcClip.right == rcClip.left) {<br>+&#9;&#9;&#9;// １行０文字マッチだと反転幅が０となり反転されないので、1/3文字幅だけ反転させる 2005/04/02 かろと 2005/06/26 zenryaku<br>+&#9;&#9;&#9;if (IsTextSelected() &amp;&amp; rcClip.right == rcClip.left &amp;&amp;<br>+&#9;&#9;&#9;&#9;m_nSelectLineFrom == m_nSelectLineTo)<br>+&#9;&#9;&#9;{<br> &#9;&#9;&#9;&#9;rcClip.right = rcClip.left + (nCharWidth/3 == 0 ? 1 : nCharWidth/3);<br> &#9;&#9;&#9;}<br> &#9;&#9;&#9;if( rcClip.right - rcClip.left &gt; 3000 ){<br><br>矩形選択で縦にだけ複数行選択し文字入力を行った場合キャレットが残ることもありましたけど<br>このパッチで解決できます<br><br>あと<br>&gt;マウスで選択範囲を上下させていてもなることがあります。<br>↑がいまいち分からなかったので対処できていないかもしれません &gt;_&lt;;;</div></section>
+    </li></ul></body></html>

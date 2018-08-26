@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Keep) リソース関連のリファクタリング</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">543</span>
+    <a class="title" href="543.html#543">Commit報告:(Keep) リソース関連のリファクタリング</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">586</span>
+    <a class="title" href="543.html#586">Re:Commit報告:(Keep) リソース関連のリファクタリング</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=543>
+    <span class="no">[543]</span>
+    <a class="title" href="#543">Commit報告:(Keep) リソース関連のリファクタリング</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-07-04T22:42:57">2008年07月04日 22:42</time></h1>
+    <div class="body">リビジョン：<br>  rev1406<br><br>変更種別：<br>  リファクタリング<br><br>内容：<br>  リソース関連のリファクタリング<br>    sakura_rc.hm の削除<br>    sakura_rc.hからsakura_ra.rcで使用していないシンボルの削除<br>    上記の伴うソースの変更（存在していないコントロールの削除）<br>    リーソースのシンボル名の変更（デフォルト名のままの物に名前を付ける）<br>    いくつかのシンボル値の変更（IDC_BUTTON_PRINTERSELECT）<br>    IDS_AUTHOR_PAGE を <a href=http://sakura-editor.sourceforge.net/ target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr></nobr></a> に変更<br>    IDS_AUTHOR_MAIL の削除<br>    IDR_TRAYMENU_Lの中身の削除（プログラムで作成しているので）</div></section>
+    <ul><li><section><h1 id=586>
+    <span class="no">[586]</span>
+    <a class="title" href="#586">Re:Commit報告:(Keep) リソース関連のリファクタリング</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-08-26T23:30:55">2008年08月26日 23:30</time></h1>
+    <div class="body">rev1406<br>ソースコードさらっと確認しました。<br>・define変更部分は流し読み<br>・リソース変更部分は流し読み<br>・define以外のソース部分に問題ないことを確認<br><br>動作さらっと確認しました。<br>・無作為に選んだヘルプ参照が正常に動作することを確認<br>・それ以外の変更箇所の動作で問題ないことを確認<br><br>問題はないのですが、ひとつコメントしますと、<br>CDlgProperty::OnBnClickedで<br>「case IDCANCEL: // 未使用 del 2008/7/4 Uchi」<br>とありますが、IDCANCELは未使用ではないです。<br>ダイアログの×ボタンを押したときと、キーボードのEscを押したときに、IDCANCELのWM_COMMANDが発生します。<br><br>今回の場合は、それ以降の CDialog::OnBnClicked が IDCANCEL の処理をしてくれているので、動作上の違いは出ていません。</div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>[バグ]読み込み専用で読めない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">83</span>
+    <a class="title" href="83.html#83">[バグ]読み込み専用で読めない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">88</span>
+    <a class="title" href="83.html#88">RE: [バグ]読み込み専用で読めない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">94</span>
+    <a class="title" href="83.html#94">Re2: [バグ]読み込み専用で読めない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">97</span>
+    <a class="title" href="83.html#97">Re3: [バグ]読み込み専用で読めない</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=83>
+    <span class="no">[83]</span>
+    <a class="title" href="#83">[バグ]読み込み専用で読めない</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-02-24T17:37:06">2001年02月24日 17:37</time></h1>
+    <div class="body">最近はヘルプの改修にまわっていますが、それはそれで発見があるものですな。<br>[ファイル]-[開く]で[読み取り専用ファイルとして開く]をチェックすると入力不可状態で開きます(閲覧モード)が、普通にファイルを開いた後に、別のファイルを読み込み専用で開こうとしてもそうなってくれません。<br>(始めからそう開いた時はできる。) β12までは問題ないですが、β15ですでに発生します。β14はソースのみです。記憶ではβ13もソースのみだったと思いますが、履歴に書いてないのでわかりません。 ソースのみの時はその旨記録しておかないと忘れますね。この近辺での改修に心当たりがある人は(私とげんた氏？(゜o゜))わかることがあったらご報告ください。いうまでもなく改修コードをアップするのがベストですが。。。<br></div></section>
+    <ul><li><section><h1 id=88>
+    <span class="no">[88]</span>
+    <a class="title" href="#88">RE: [バグ]読み込み専用で読めない</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-02-26T09:49:07">2001年02月26日 09:49</time></h1>
+    <div class="body">&gt; 普通にファイルを開いた後に、別のファイルを読み込み専用で開こうとしてもそうなってくれません。<br>CEditApp::OpenNewEditorのbReadOnlyという引数が起動するプロセスのコマンドラインに反映されていないのが原因のようです。<br><br>CEditApp.cppの1377行目くらいにReadOnlyのとき"-R"を引数に追加するコードを挿入すればOKです。これもじぇぷろさんの修正に入れておいてください。<br></div></section>
+    <ul><li><section><h1 id=94>
+    <span class="no">[94]</span>
+    <a class="title" href="#94">Re2: [バグ]読み込み専用で読めない</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-02-27T21:23:19">2001年02月27日 21:23</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; CEditApp.cppの1377行目くらいにReadOnlyのとき"-R"を引数に追加するコードを挿入すればOKです。これもじぇぷろさんの修正に入れておいてください。<br>これとD&amp;Dは修正・取り込みができましたが、肝腎の検索・置換誤認問題が未解決です。(私はヘルプの修正で手一杯でこれはいじってません。)<br>これとバックアップのキャンセルもReturnさせる値がわからかくて未完成です。一応他の所を真似てこうしてみましたが。。。<br>根本的に修正しなければダメそうなら諦めます。<br>CEditDoc.cppの1545行目あたりから<br>if( m_pShareData-&gt;m_Common.m_bBackUpDialog ){&#9;/* バックアップの作成前に確認 */<br>　　　::MessageBeep( MB_ICONQUESTION );<br>//From Here Feb. 27, 2001 JEPROtest キャンセルもできるようにし、メッセージを追加した<br>//　　if( IDYES != MYMESSAGEBOX(<br>//　　　m_hWnd,<br>//　　　MB_YESNO | MB_ICONQUESTION | MB_TOPMOST,<br>//　　　"バックアップ作成の確認",<br>//　　　"変更される前に、バックアップファイルを作成します。\nよろしいですか？\n\n%s\n    ↓\n%s\n\n",<br>//　　　lstrlen( m_szFilePath ) ? m_szFilePath : "（無題）",<br>//　　　szPath<br>//　　　) ){<br>//　　　return FALSE;<br>//　　　}<br>　　　nRet = ::MYMESSAGEBOX(<br>　　　m_hWnd,<br>　　　MB_YESNO/*CANCEL*/ | MB_ICONQUESTION | MB_TOPMOST,<br>　　　"バックアップ作成の確認",<br>　　　"変更される前に、バックアップファイルを作成します。\nよろしいですか？  [いいえ(N)] を選ぶと上書き保存になります。\n\n%s\n    ↓\n%s\n\n",<br>　　　lstrlen( m_szFilePath ) ? m_szFilePath : "（無題）",<br>　　　szPath<br>　　　);<br>　　　if( IDNO == nRet ){<br>　　　return FALSE;<br>　　　}else if( IDCANCEL == nRet ){<br>　　　　return FALSE;// FALSE ではダメですが何を返せばいいのかわかりません。。。 <br>　　　}<br>//To Here Feb. 27, 2001<br>}<br></div></section>
+    <ul><li><section><h1 id=97>
+    <span class="no">[97]</span>
+    <a class="title" href="#97">Re3: [バグ]読み込み専用で読めない</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-02-28T01:40:41">2001年02月28日 01:40</time></h1>
+    <div class="body">&gt;これとバックアップのキャンセルもReturnさせる値がわからかくて未完成です。<br>&gt;return FALSE;// FALSE ではダメですが何を返せばいいのかわかりません。。。 <br>そもそもMakeBackup()の戻り値は全くチェックされていませんから、何を返しても動作は変わりません。MakeBackup()を使っているところ（2カ所）を変更しないと。<br><br>戻り型をintにしてBackup成功/Backup失敗/Backup Canceledの3つが返せるようにして、呼び出し側でそれなりの処理を追加する必要があるでしょう。<br><br>それにしても、あらためて見てみると「後で考える」と書かれたままの所とか分岐は書かれているけど処理が空っぽの所とかかなり手抜きされていますねぇ。（と他人事のように言う）<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

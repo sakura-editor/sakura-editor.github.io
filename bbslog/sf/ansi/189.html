@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>GetDlgItemTextについて</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">189</span>
+    <a class="title" href="189.html#189">GetDlgItemTextについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">191</span>
+    <a class="title" href="189.html#191">RE: GetDlgItemTextについて</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=189>
+    <span class="no">[189]</span>
+    <a class="title" href="#189">GetDlgItemTextについて</a>
+    <span class="author">みく</span>
+    <time datetime="2001-03-16T23:55:39">2001年03月16日 23:55</time></h1>
+    <div class="body"><br>バグらしきものを見つけました。<br><br>GetDlgItemTextでsizeof(変数)-1という使い方を要所要所で<br>しています。<br>文字列の終端分を確保する目的のようですが、実際に文字列<br>を取得するとさらに１文字削られてしまいます。<br>たとえば、<br><br>IDC_EDIT_ABC   10文字項目<br>char abc[10+1];<br>GetDlgItemText(... abc, sizeof(abc) - 1, ...);<br><br>のときに、<br><br>"1234567890"と入力して項目を取得すると、<br>"123456789"までしか入りません。<br></div></section>
+    <ul><li><section><h1 id=191>
+    <span class="no">[191]</span>
+    <a class="title" href="#191">RE: GetDlgItemTextについて</a>
+    <span class="author">みく</span>
+    <time datetime="2001-03-17T08:41:40">2001年03月17日 08:41</time></h1>
+    <div class="body"><br>EM_LIMITTEXTで入力最大文字数制限してるとこは<br>全滅ですね。<br><br>＃TAB表示文字のユーザ指定を実装してて気づきました。<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>連続改行を一回改行にするには？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5206</span>
+    <a class="title" href="5206.html#5206">連続改行を一回改行にするには？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5207</span>
+    <a class="title" href="5206.html#5207">Re:連続改行を一回改行にするには？</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5208</span>
+    <a class="title" href="5206.html#5208">Re: 連続改行を一回改行にするには？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5210</span>
+    <a class="title" href="5206.html#5210">Re2: 連続改行を一回改行にするには？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5211</span>
+    <a class="title" href="5206.html#5211">Re3: 連続改行を一回改行にするには？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5240</span>
+    <a class="title" href="5206.html#5240">Re4: 連続改行を一回改行にするには？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5206>
+    <span class="no">[5206]</span>
+    <a class="title" href="#5206">連続改行を一回改行にするには？</a>
+    <span class="author">KT</span>
+    <time datetime="2006-05-05T20:48:21">2006年05月05日 20:48</time></h1>
+    <div class="body">初心者です。<br>改行が連続している部分を改行一回に置換しようとしています。<br>置換のヘルプを見ると、改行を置換する時には\r\nという正規表現を使うとのことで、たしかにこれを使うと改行を他の文字に置換できました。<br>しかし2回連続改行を選ぼうと思って\r\n\r\nを試しましたが、これはうまくいきません。<br>改行をいったん別の文字（%など）に置換して、%%を%に置換して、%を改行に戻せば、2回連続改行を1回改行にできましたが、もっとシンプルにするにはどうしたら良いのでしょうか。</div></section>
+    <ul><li><section><h1 id=5207>
+    <span class="no">[5207]</span>
+    <a class="title" href="#5207">Re:連続改行を一回改行にするには？</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-05-05T21:23:20">2006年05月05日 21:23</time></h1>
+    <div class="body">▼ KTさん<br>CR/LF改行なら、「^\r\n」⇒「」<br>LF改行なら、「^\n」⇒「」<br>CR改行なら、「^\r」⇒「」<br>正規表現(E)<br>すべて置換(A)</div></section>
+    </li><li><section><h1 id=5208>
+    <span class="no">[5208]</span>
+    <a class="title" href="#5208">Re: 連続改行を一回改行にするには？</a>
+    <span class="author">しみづ</span>
+    <time datetime="2006-05-05T23:50:48">2006年05月05日 23:50</time></h1>
+    <div class="body"><br>&gt;&gt;data:5097<br></div></section>
+    <ul><li><section><h1 id=5210>
+    <span class="no">[5210]</span>
+    <a class="title" href="#5210">Re2: 連続改行を一回改行にするには？</a>
+    <span class="author">KT</span>
+    <time datetime="2006-05-08T08:35:03">2006年05月08日 08:35</time></h1>
+    <div class="body">▼ じゅうじさん、しみづさん<br><br>早速お返事ありがとうございました。<br>^を入れると行頭という意味になるのですね。これでうまくいきました。<br>しみづさんが教えてくださった過去スレッドも読ませていただきましたが、改行が連続する場合の表記法についてはよく分からなかったので、今回は試していません。似た状況が生じたら試してみたいと思います。</div></section>
+    <ul><li><section><h1 id=5211>
+    <span class="no">[5211]</span>
+    <a class="title" href="#5211">Re3: 連続改行を一回改行にするには？</a>
+    <span class="author">しみづ</span>
+    <time datetime="2006-05-08T09:43:10">2006年05月08日 09:43</time></h1>
+    <div class="body"><br>　説明を横着してすみません。言いたかったのは、サクラエディタでは改行をまたぐ検索ができないので、連続する改行を検索するのもできないだろう、それをするためには &gt;&gt;data:5131 の(全略)さんのJREGEX組み込み版を使う必要があるのだろう、ということです。<br><br>&gt;改行が連続する場合の表記法についてはよく分からなかったので、今回は試していません。<br><br>CR/LF改行なら、「?\r\n\r\n」⇒「\r\n」<br>LF改行なら、「?\n\n」⇒「\n」<br>CR改行なら、「?\r\r」⇒「\r」<br>正規表現(E)<br>すべて置換(A)<br>でできるのではないかと思います。<br></div></section>
+    <ul><li><section><h1 id=5240>
+    <span class="no">[5240]</span>
+    <a class="title" href="#5240">Re4: 連続改行を一回改行にするには？</a>
+    <span class="author">KT</span>
+    <time datetime="2006-05-24T22:28:36">2006年05月24日 22:28</time></h1>
+    <div class="body">▼ しみづさん<br><br>再度ご説明いただきありがとうございます。お返事が遅れて済みません。<br>JREGEX組み込み版で、「?\r\n\r\n」⇒「\r\n」等の置換を行うということですね。まだ試していませんが、試したらご報告させていただきます。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

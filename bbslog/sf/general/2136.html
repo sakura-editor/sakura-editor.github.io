@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>256色モードでのマウスカーソルが見づらい件 again</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2136</span>
+    <a class="title" href="2136.html#2136">256色モードでのマウスカーソルが見づらい件 again</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2137</span>
+    <a class="title" href="2136.html#2137">ViVi色</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2139</span>
+    <a class="title" href="2136.html#2139">Re: 256色モードでのマウスカーソルが見づらい件 again</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2144</span>
+    <a class="title" href="2136.html#2144">Re2: 256色モードでのマウスカーソルが見づらい件 again</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2148</span>
+    <a class="title" href="2136.html#2148">Re3: 256色モードでのマウスカーソルが見づらい件 again</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2149</span>
+    <a class="title" href="2136.html#2149">Re4: 256色モードでのマウスカーソルが見づらい件 again</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2136>
+    <span class="no">[2136]</span>
+    <a class="title" href="#2136">256色モードでのマウスカーソルが見づらい件 again</a>
+    <span class="author">Azuma</span>
+    <time datetime="2002-07-25T13:13:03">2002年07月25日 13:13</time></h1>
+    <div class="body">以前に取り上げさせて頂いた時には、<br>「原型からはそういった変更を行っていない」との回答であり<br>当時は原因追及を諦めていたのですが、<br>ようやく原因がわかったので報告したいと思います。<br><br>環境　　　：Windows2000+SP2+個別パッチ（256色モード）<br>バージョン：sakura_2000-10-31_13.zip以降全て<br>　　　　　　勿論、sakura.iniが無い状態での確認<br>　　　　　　（sakura_2000-10-11_09.zipは問題無し）<br>現象　　　：256色モードでのマウスカーソルが見づらいというか<br>　　　　　　ほとんど同色。（どちらもほんのりsakura色？）<br>原因　　　：sakura_core\CShareData.cpp中の<br>　　　　　　背景色を<br>　　　　　　真っ白RGB(255,255,255)→(255,251,240)に変更<br>　　　　　　(眩しさを押さえた)とある変更（Oct. 8, 2000）<br><br>他の方の環境ではこの問題は発生していないのかもしれませんが、<br>私は「255, 251, 240」→「255, 255, 255」に戻して<br>コンパイルすると現象が修正されましたので、<br>安心して使えるようになりました。<br><br>同じ現象が出ている方は試してみてください。<br><br>P.S.ホントにこの現象は私のところだけなのでしょうか・・・。<br></div></section>
+    <ul><li><section><h1 id=2137>
+    <span class="no">[2137]</span>
+    <a class="title" href="#2137">ViVi色</a>
+    <span class="author">hideto</span>
+    <time datetime="2002-07-25T17:27:37">2002年07月25日 17:27</time></h1>
+    <div class="body">WinNTで試してみました。<br>確かに見辛いです。カーソルが、すごく薄い水色のよう。<br><br>白状してしまうと、RGB(255,251,240)に変えて見ては？と提案したのは私です。<br>白だと常時使うには目が痛いので、ViViの色に合わせて見ては如何でしょうか？と提案しました。<br><br>256色での常時使用者が少ない為かあまり問題になっていませんね。<br></div></section>
+    </li><li><section><h1 id=2139>
+    <span class="no">[2139]</span>
+    <a class="title" href="#2139">Re: 256色モードでのマウスカーソルが見づらい件 again</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-07-26T01:01:43">2002年07月26日 01:01</time></h1>
+    <div class="body">&gt;当時は原因追及を諦めていたのですが、<br>&gt;ようやく原因がわかったので報告したいと思います。<br>これって過去ログ747からのところで背景を白くしたら問題なくなるということで決着が付いていませんでしたっけ？すいさんから原理の説明もありましたし．<br></div></section>
+    <ul><li><section><h1 id=2144>
+    <span class="no">[2144]</span>
+    <a class="title" href="#2144">Re2: 256色モードでのマウスカーソルが見づらい件 again</a>
+    <span class="author">すい</span>
+    <time datetime="2002-07-26T12:38:11">2002年07月26日 12:38</time></h1>
+    <div class="body">&gt;すいさんから原理の説明もありましたし．<br># せっかく書き込みしてくれた あああさん のために一応書いておきます。(;^^a<br><br>今、過去ログ見てみましたけど、「原理の説明」と「対応策」の書き込みは<br>あああさん ですね。<br>私は「OS が Win95 ですが 256色環境で何も問題無いっす」と報告しただけで。<br></div></section>
+    <ul><li><section><h1 id=2148>
+    <span class="no">[2148]</span>
+    <a class="title" href="#2148">Re3: 256色モードでのマウスカーソルが見づらい件 again</a>
+    <span class="author">Azuma</span>
+    <time datetime="2002-07-26T16:43:00">2002年07月26日 16:43</time></h1>
+    <div class="body">&gt; これって過去ログ747からのところで背景を白くしたら<br>&gt; 問題なくなるということで決着が付いていませんでしたっけ？<br>&gt; すいさんから原理の説明もありましたし．<br><br>げんたさん、過去ログの件は知っていました。<br>（元々私が書いたものでしたので）<br>再設定で回避できるので、原因追求をやめただけでした。<br>気に障ったのでしたら、あやまります。<br><br>当時、すいさんが<br>&gt; そういう変更は無かったと思います。<br>&gt; ＆<br>&gt; 私の周りには故あって２５６色環境しかありません(笑)が、<br>&gt; デフォルトの色設定（sakura.ini 削除してから sakura.exe起動）<br>&gt; で問題無くマウスポインタ見えますよ。<br>&gt; <br>&gt; OS は Win95 ですが。<br>と回答してくださったので、<br>回避策はあるものの原因自体は不明になっていました。<br><br>数日前、別人がsakura.iniの無い状態の環境へsakuraをinstall<br>した事で同じ現象に見舞われた為、再び調べ始めた次第です。<br><br>お騒がせしました。<br></div></section>
+    <ul><li><section><h1 id=2149>
+    <span class="no">[2149]</span>
+    <a class="title" href="#2149">Re4: 256色モードでのマウスカーソルが見づらい件 again</a>
+    <span class="author">すい</span>
+    <time datetime="2002-07-26T21:17:58">2002年07月26日 21:17</time></h1>
+    <div class="body">&gt;気に障ったのでしたら、<br>別に「気に障る」とかっていうことは無いと思いますが。<br><br>要は言ってる事が全く同じで、何故また全く同じ事を？？？<br>っていう感じではないでしょうか。<br><br>前回の Azumaさん の書き込み内容は<br>「マウスポインタがデフォルトの背景色では見にくい<br>　→ 背景色を真っ白にすれば、とりあえず回避できる。」<br>で、今回も<br>「背景色を真っ白にしたら、とりあえず回避できる」<br>で、言っている事が全く同じでしょう？<br><br>その背景色の設定方法が<br>・前回：エディタ起動後に色設定の背景色をいじった<br>・今回：ソフトウェア内のデフォルトの背景色をいじった<br>と、ちょっと異なるだけで、言っている事もやっている事も一緒。<br>どちらも暫定の回避策にしか過ぎませんよね。<br><br>例えば、きちんとした回避策とは<br>「どのような背景色設定であってもマウスポインタが見やすいようにする」<br>とかいう事であって、そして、その修正のために必要な調査と原因、<br>そしてそれから求めた“こうすれば直るのでは？”という回避策案が、<br>前回の書き込みの時の あああさん の書き込みである、という事になるのでは？<br><br><br>では、今回の Azumaさん の書き込みが全く意味が無いかというと、そんな事はなくて（多分）。<br>未対処のまま既に忘れ去られている（ような気がする(;^^;)）本件について、<br>皆の記憶を掘り起こしている、という感じの価値があるような。 (*^^*)<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

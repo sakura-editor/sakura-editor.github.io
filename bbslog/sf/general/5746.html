@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>置換・変換の仕様変更お試し版</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5746</span>
+    <a class="title" href="5746.html#5746">置換・変換の仕様変更お試し版</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=5746>
+    <span class="no">[5746]</span>
+    <a class="title" href="#5746">置換・変換の仕様変更お試し版</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-01-16T22:18:34">2007年01月16日 22:18</time></h1>
+    <div class="body">&gt;&gt;data:5744 全角半角の変換処理について(maruさん)<br>&gt;&gt;data:5742 行置換のオプション化(ryoji)<br>の提案パッチでお試し版バイナリを作ってみました。<br><br><a href=http://sakura.qp.land.to/?Junk%2F21 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F21</nobr></a><br><br>仕様に関するご意見等ありましたら、お願いします。<br><br>----<br>以下、行置換のオプション化について。<br>「すべて置換」ボタンひとつで「すべて行置換」の動作も実行できるようにしています。<br>正規表現がONの場合のみ有効なオプションです。<br><br>ソース: Patches#1636751<br><br>マクロのほうも、ReplaceAllLineは廃止、ReplaceAllにフラグを追加しています。<br>0x400 「すべて置換」は置換の繰返し（ON:連続置換, OFF:一括置換）<br>です。<br>既存マクロは以下の修正が必要になります。<br>●ReplaceAllLineはReplaceAllに変更が必要（フラグ修正は不要）<br>●ReplaceAllで連続置換の副作用を狙った（意図的）マクロはフラグ修正が必要<br><br><br>その他の行置換関連の変更・修正点<br>・置換結果の行数表示を置換個数表示に変更<br>・置換範囲、選択範囲がおかしくなるのを修正<br><br>【置換範囲、選択範囲がおかしくなっていた例】<br><br>AB0 AB1<br>AB2 AB3<br><br>１行目の先頭から２行目のAB2まで選択した状態で、<br>「\bAB」-&gt;「x」(正規表現ON、選択範囲ON)で「すべて行置換」すると、<br>AB3も置換され、２行目は全体が選択状態になる。<br>（１行目のAB1から２行目の末尾までを選択した状態だと、AB0は置換されない）<br></div></section>
+    </li></ul></body></html>

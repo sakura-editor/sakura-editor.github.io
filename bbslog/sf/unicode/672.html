@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix) rev1446,rev1448の再修正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">672</span>
+    <a class="title" href="672.html#672">Commit報告:(Fix) rev1446,rev1448の再修正</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=672>
+    <span class="no">[672]</span>
+    <a class="title" href="#672">Commit報告:(Fix) rev1446,rev1448の再修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-10-13T15:22:46">2008年10月13日 15:22</time></h1>
+    <div class="body">リビジョン：<br>　rev1450<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>　CStringRef::At()でのassert対策(rev1446,rev1448)の再修正<br><br>よく見るとCStringRefは文字終端がNULLであることはまったく保証しないのが前提かな？という気がしてきたので、At()で強制的にNULLを返す修正は撤回し、呼び出し元のほうで対処するように再修正しました。<br><br>＃今回見つけた個所だけの修正ということになります。他の呼び出し元にも同様なバグがあるかどうかは確認していません。</div></section>
+    </li></ul></body></html>

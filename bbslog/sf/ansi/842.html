@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>コンパイラの警告によるバグ検出</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">842</span>
+    <a class="title" href="842.html#842">コンパイラの警告によるバグ検出</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">844</span>
+    <a class="title" href="842.html#844">Re:コンパイラの警告によるバグ検出</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">846</span>
+    <a class="title" href="842.html#846">Re:コンパイラの警告によるバグ検出</a></div>
+    </li><li><div class="list-title">
+    <span class="no">849</span>
+    <a class="title" href="842.html#849">Re2:コンパイラの警告によるバグ検出</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">850</span>
+    <a class="title" href="842.html#850">Re3:コンパイラの警告によるバグ検出</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">868</span>
+    <a class="title" href="842.html#868">Re2:コンパイラの警告によるバグ検出</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1187</span>
+    <a class="title" href="842.html#1187">Re2:コンパイラの警告によるバグ検出</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1190</span>
+    <a class="title" href="842.html#1190">Re3:コンパイラの警告によるバグ検出</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1207</span>
+    <a class="title" href="842.html#1207">Re4:コンパイラの警告によるバグ検出</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1210</span>
+    <a class="title" href="842.html#1210">Re5:コンパイラの警告によるバグ検出</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1211</span>
+    <a class="title" href="842.html#1211">Re5:コンパイラの警告によるバグ検出</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=842>
+    <span class="no">[842]</span>
+    <a class="title" href="#842">コンパイラの警告によるバグ検出</a>
+    <span class="author">みく</span>
+    <time datetime="2001-11-22T19:48:17">2001年11月22日 19:48</time></h1>
+    <div class="body">以前デバッグモードで警告がたくさん出ると<br>言ってたようなので試してみたんですが、<br>VC使われてる方はコンパイルレベルを最高に<br>してみてください。<br>かなりバグが見つかります。<br>・キャストによる値の切り捨て<br>・異なる型の比較<br>・通らない処理(returnの後の処理)<br>・変数を初期化せずに参照＜－致命的<br>など。<br><br></div></section>
+    <ul><li><section><h1 id=844>
+    <span class="no">[844]</span>
+    <a class="title" href="#844">Re:コンパイラの警告によるバグ検出</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-11-22T21:23:40">2001年11月22日 21:23</time></h1>
+    <div class="body">▼ みくさん<br>&gt; 以前デバッグモードで警告がたくさん出ると<br>&gt; 言ってたようなので試してみたんですが、<br>&gt; VC使われてる方はコンパイルレベルを最高に<br>&gt; してみてください。<br>&gt; かなりバグが見つかります。<br>&gt; ・キャストによる値の切り捨て<br>&gt; ・異なる型の比較<br>&gt; ・通らない処理(returnの後の処理)<br>&gt; ・変数を初期化せずに参照＜－致命的<br>&gt; など。<br>Bcc5.5.1での警告を減らしたソースのdiffを共有フォルダ-ソースに置きましたのでよかったら使ってください。<br>・警告レベルはふつう<br>・未初期化変数と参照されない変数は未対応<br></div></section>
+    <ul><li><section><h1 id=846>
+    <span class="no">[846]</span>
+    <a class="title" href="#846">Re:コンパイラの警告によるバグ検出</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-11-23T00:18:48">2001年11月23日 00:18</time></h1>
+    <div class="body">&gt;Bcc5.5.1での警告を減らしたソースのdiffを共有フォルダ-ソースに置きましたので<br>編集後のソースにパッチを当てたいのでunified diff (-u option) の方が良かった...<br>みくさんがこの差分も正規表現対応版に入れてくれると楽なんですけど...<br><br>それと，<br>&gt; ・変数を初期化せずに参照＜－致命的<br>というのは直したいですよね．<br><br>((o(^-^)o))ワクワク ＞みくさん (^^;)<br></div></section>
+    </li><li><section><h1 id=849>
+    <span class="no">[849]</span>
+    <a class="title" href="#849">Re2:コンパイラの警告によるバグ検出</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-11-23T00:31:19">2001年11月23日 00:31</time></h1>
+    <div class="body">diffをとる版を間違えていたのでアップしなおしました。<br><br>＃WinCvsを使っていますが、-u オプションの使い方がわかりません。</div></section>
+    <ul><li><section><h1 id=850>
+    <span class="no">[850]</span>
+    <a class="title" href="#850">Re3:コンパイラの警告によるバグ検出</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-11-23T00:36:30">2001年11月23日 00:36</time></h1>
+    <div class="body">cvs diff -u -r Rev11_09 でいいのかな。<br>とりあえずアップした。</div></section>
+    </li></ul></li><li><section><h1 id=868>
+    <span class="no">[868]</span>
+    <a class="title" href="#868">Re2:コンパイラの警告によるバグ検出</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-12-02T21:43:47">2001年12月02日 21:43</time></h1>
+    <div class="body">12/01版から差分を取りなおして共有フォルダに置きました。<br>*もとのMakefileでは警告は２，３個に削減。<br>*Bcc5.5.1の警告オプションを強化した。<br></div></section>
+    <ul><li><section><h1 id=1187>
+    <span class="no">[1187]</span>
+    <a class="title" href="#1187">Re2:コンパイラの警告によるバグ検出</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-17T19:13:38">2002年01月17日 19:13</time></h1>
+    <div class="body">&gt;タイトル: Re2:コンパイラの警告によるバグ検出<br>&gt;発言者: あろか<br>&gt;12/01版から差分を取りなおして共有フォルダに置きました。<br>&gt;*もとのMakefileでは警告は２，３個に削減。<br>&gt;*Bcc5.5.1の警告オプションを強化した。<br><br>これってもう取り込まれてるんでしょうか？<br></div></section>
+    <ul><li><section><h1 id=1190>
+    <span class="no">[1190]</span>
+    <a class="title" href="#1190">Re3:コンパイラの警告によるバグ検出</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-17T22:38:32">2002年01月17日 22:38</time></h1>
+    <div class="body">▼ みくさん<br>&gt; &gt;タイトル: Re2:コンパイラの警告によるバグ検出<br>&gt; &gt;発言者: あろか<br>&gt; &gt;12/01版から差分を取りなおして共有フォルダに置きました。<br>&gt; &gt;*もとのMakefileでは警告は２，３個に削減。<br>&gt; &gt;*Bcc5.5.1の警告オプションを強化した。<br>&gt; <br>&gt; これってもう取り込まれてるんでしょうか？<br><br>わたしは取り込んでません。<br>まだ積極的にかかわる前でした。</div></section>
+    <ul><li><section><h1 id=1207>
+    <span class="no">[1207]</span>
+    <a class="title" href="#1207">Re4:コンパイラの警告によるバグ検出</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-01-18T21:37:53">2002年01月18日 21:37</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ▼ みくさん<br>&gt; &gt; &gt;タイトル: Re2:コンパイラの警告によるバグ検出<br>&gt; &gt; <br>&gt; &gt; これってもう取り込まれてるんでしょうか？<br>&gt; <br>&gt; わたしは取り込んでません。<br>&gt; まだ積極的にかかわる前でした。<br><br>この差分は取りこまれてないですが、特に取りこまなくてよいのでは？<br>理由：<br>*変数の初期化などはみなさん少しずつ直されている。<br>*現在のソースはこのころとかなり変わってしまってる。<br>*警告がなんでも悪いということもなくて、Bccで消した警告がVCで警告になるケース、またはその逆があるよう。<br><br></div></section>
+    <ul><li><section><h1 id=1210>
+    <span class="no">[1210]</span>
+    <a class="title" href="#1210">Re5:コンパイラの警告によるバグ検出</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-01-18T21:56:51">2002年01月18日 21:56</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; この差分は取りこまれてないですが、特に取りこまなくてよいのでは？<br><br>ということにして12/2の警告削減差分を削除しますね。</div></section>
+    <ul><li><section><h1 id=1211>
+    <span class="no">[1211]</span>
+    <a class="title" href="#1211">Re5:コンパイラの警告によるバグ検出</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-18T22:28:27">2002年01月18日 22:28</time></h1>
+    <div class="body">&gt;タイトル: Re5:コンパイラの警告によるバグ検出<br>&gt;発言者: あろか<br>&gt;▼ あろかさん<br>&gt;&gt; この差分は取りこまれてないですが、特に取りこまなくてよいのでは？<br>&gt;<br>&gt;ということにして12/2の警告削減差分を削除しますね。<br><br>すいませんです。以前、私が取り込まなかったばっかりに。。。<br>ぼちぼち、気づいたものから修正していきましょう。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

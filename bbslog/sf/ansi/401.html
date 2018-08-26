@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>RTFの色分け表示</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">401</span>
+    <a class="title" href="401.html#401">RTFの色分け表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">403</span>
+    <a class="title" href="401.html#403">Re:RTFの色分け表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">405</span>
+    <a class="title" href="401.html#405">Re2:RTFの色分け表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">416</span>
+    <a class="title" href="401.html#416">クリッカブルURLのバグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">442</span>
+    <a class="title" href="401.html#442">Re:クリッカブルURLのバグ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=401>
+    <span class="no">[401]</span>
+    <a class="title" href="#401">RTFの色分け表示</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-06-22T11:00:25">2001年06月22日 11:00</time></h1>
+    <div class="body">＃ヘルプ掲示板から移動です。<br><br>▼ じぇぷろさん<br>&gt; 私はURLのチェックも外しましたが、<br><br>URLは 「<a href=http://xxxxx/ target=_top><nobr>http://<wbr>xxxxx/<wbr></nobr></a>}{」というパターンがあった時に色分けに失敗しますね。<br><br>etc_uty.cppのIsURL()関数の条件判定を修正すれば大丈夫みたいですが、<br>(プロトコルの)規格としてこれでよいのかな？<br>URLやFTPの接続先に波括弧は使わないですよね？ &gt;ALL<br><br>777行 &gt;  || ')'  == pszText[i]<br>追加行&gt;  || '}'  == pszText[i]<br>追加行&gt;  || '{'  == pszText[i]<br>778行 &gt; ){<br></div></section>
+    <ul><li><section><h1 id=403>
+    <span class="no">[403]</span>
+    <a class="title" href="#403">Re:RTFの色分け表示</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-22T11:48:25">2001年06月22日 11:48</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; ▼ じぇぷろ<br>&gt; &gt; 私はURLのチェックも外しましたが、<br>&gt; URLは 「<a href=http://xxxxx/ target=_top><nobr>http://<wbr>xxxxx/<wbr></nobr></a>}{」というパターンがあった時に色分けに失敗しますね。<br>確かに変になりますが、私が外した理由はヘルプの作成に限れば、これらがクリッカブルになっている必要がないし、原稿のままになっている方がむしろ修正するにもわかりやすいから(そうでもない？)、ということがあります。(特に下線は原稿で付けているわけではないので）クリッカブルURLの所でtelnet://とかズラッと並んでる所。</div></section>
+    <ul><li><section><h1 id=405>
+    <span class="no">[405]</span>
+    <a class="title" href="#405">Re2:RTFの色分け表示</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-06-22T12:53:21">2001年06月22日 12:53</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; ヘルプの作成に限れば、これらがクリッカブルになっている必要がないし、原稿のままになっている方がむしろ修正するにもわかりやすいから<br><br>私はURLの色分けはON/OFFを切り替えながら作業してます。<br>ただ色分け表示がOFFでも、「ダブルクリックでURLジャンプ」は有効のままで、現バージョンでは波括弧があるとURLとみなされる範囲の判定（IsURL()関数）に失敗してしまいます。<br></div></section>
+    <ul><li><section><h1 id=416>
+    <span class="no">[416]</span>
+    <a class="title" href="#416">クリッカブルURLのバグ</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-22T22:25:18">2001年06月22日 22:25</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; ただ色分け表示がOFFでも、「ダブルクリックでURLジャンプ」は有効のままで、現バージョンでは波括弧があるとURLとみなされる範囲の判定（IsURL()関数）に失敗してしまいます。<br>では表題のように理解いたしますので、修正ファイルをアップしていただくのがいいと思います。</div></section>
+    <ul><li><section><h1 id=442>
+    <span class="no">[442]</span>
+    <a class="title" href="#442">Re:クリッカブルURLのバグ</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-06-24T20:57:39">2001年06月24日 20:57</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; では表題のように理解いたしますので、修正ファイルをアップしていただくのがいいと思います。<br><br>eGroupsに差分ファイルを置きました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

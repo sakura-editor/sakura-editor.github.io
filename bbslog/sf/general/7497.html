@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>２文にまたがっている文を１文に</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7497</span>
+    <a class="title" href="7497.html#7497">２文にまたがっている文を１文に</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7498</span>
+    <a class="title" href="7497.html#7498">Re:２文にまたがっている文を１文に</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7499</span>
+    <a class="title" href="7497.html#7499">Re2:２文にまたがっている文を１文に</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7500</span>
+    <a class="title" href="7497.html#7500">Re3:２文にまたがっている文を１文に</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7497>
+    <span class="no">[7497]</span>
+    <a class="title" href="#7497">２文にまたがっている文を１文に</a>
+    <span class="author">Cat</span>
+    <time datetime="2012-04-24T00:22:38">2012年04月24日 00:22</time></h1>
+    <div class="body">はじめまして。<br><br>何度も試行錯誤し、ようやく最終段階までたどり着いたのですが、<br>最後の最後に置換が出来ず困っています。<br><br><br>The cat caught <br>a mouse　yesterday.<br><br>となっている２文の文章を<br><br>The cat caught a mouse yesterday.<br><br>の一文にしたいのですが、どのような正規表現を<br>用いればよいでしょうか。<br><br>教えて頂けると嬉しいです。<br>よろしくお願い致します。</div></section>
+    <ul><li><section><h1 id=7498>
+    <span class="no">[7498]</span>
+    <a class="title" href="#7498">Re:２文にまたがっている文を１文に</a>
+    <span class="author">AC</span>
+    <time datetime="2012-04-25T01:28:15">2012年04月25日 01:28</time></h1>
+    <div class="body">正規表現で置換しようとするからにはこれと似た複数の文が<br>対象なのだと思われますが、投稿文のいちサンプルから対象<br>となる文のパターンを読み取るのは困難です。<br><br> The cat caught\s+<br>を<br> The cat caught_<br>(_はスペース)に置換するという回答も、<br><br> (\w)\s*(\r\n?|\n)<br>を<br> $1_<br>(_はスペース)に置換するという回答も可能です。<br><br>因みに二番目は、アルファベットで終わる行の改行を空白に<br>置き換えるという意味です。<br></div></section>
+    <ul><li><section><h1 id=7499>
+    <span class="no">[7499]</span>
+    <a class="title" href="#7499">Re2:２文にまたがっている文を１文に</a>
+    <span class="author">Cat</span>
+    <time datetime="2012-04-25T17:31:36">2012年04月25日 17:31</time></h1>
+    <div class="body">ありがとうございます！<br>できました！<br>が・・・今の状況は、<br>The cat caught a mouse yesterday.　The cat caught a mouse yesterday.　The cat caught a mouse yesterday.<br><br>となっているので、これを<br>The cat caught a mouse yesterday.<br>The cat caught a mouse yesterday.<br>The cat caught a mouse yesterday.<br>と、一文に変えることは可能でしょうか。<br>ピリオド、はてな、びっくり後で改行できると良いのですが・・・<br><br><br>▼ ACさん<br>&gt; 正規表現で置換しようとするからにはこれと似た複数の文が<br>&gt; 対象なのだと思われますが、投稿文のいちサンプルから対象<br>&gt; となる文のパターンを読み取るのは困難です。<br>&gt; <br>&gt;  The cat caught\s+<br>&gt; を<br>&gt;  The cat caught_<br>&gt; (_はスペース)に置換するという回答も、<br>&gt; <br>&gt;  (\w)\s*(\r\n?|\n)<br>&gt; を<br>&gt;  $1_<br>&gt; (_はスペース)に置換するという回答も可能です。<br>&gt; <br>&gt; 因みに二番目は、アルファベットで終わる行の改行を空白に<br>&gt; 置き換えるという意味です。</div></section>
+    <ul><li><section><h1 id=7500>
+    <span class="no">[7500]</span>
+    <a class="title" href="#7500">Re3:２文にまたがっている文を１文に</a>
+    <span class="author">AC</span>
+    <time datetime="2012-04-25T18:21:44">2012年04月25日 18:21</time></h1>
+    <div class="body">&gt; が・・・今の状況は、<br>&gt; The cat caught a mouse yesterday.　The cat caught a mouse yesterday.　The cat caught a mouse yesterday.<br><br>この状態からなら<br> ([.?!])\s*<br>を<br> $1\r\n<br>に置換するのでどうでしょうか。<br><br>最初の状態から一度でやるには Onigmo版bregonig.dllが必要です。<br><br>勉強してくださいね。<br>*正規表現の構文|<a href=http://msdn.microsoft.com/ja-jp/library/ae5bf541%28v=vs.80%29.aspx target=_top><nobr>http://<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>ja-<wbr>jp/<wbr>library/<wbr>ae5bf541<wbr>%<wbr>28v=<wbr>vs.<wbr>80%<wbr>29.<wbr>aspx</nobr></a><br>*正規表現 - SakuraEditorWiki|<a href=http://sakura.qp.land.to/?%C0%B5%B5%AC%C9%BD%B8%BD target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?%<wbr>C0%<wbr>B5%<wbr>B5%<wbr>AC%<wbr>C9%<wbr>BD%<wbr>B8%<wbr>BD</nobr></a><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

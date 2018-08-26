@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>インデント系プラグインで描画がおかしくなる</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7657</span>
+    <a class="title" href="7657.html#7657">インデント系プラグインで描画がおかしくなる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7658</span>
+    <a class="title" href="7657.html#7658">Re: インデント系プラグインで描画がおかしくなる</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=7657>
+    <span class="no">[7657]</span>
+    <a class="title" href="#7657">インデント系プラグインで描画がおかしくなる</a>
+    <span class="author">Anonimato</span>
+    <time datetime="2013-05-16T20:41:24">2013年05月16日 20:41</time></h1>
+    <div class="body">サクラエディタ2.0.8.1でインデント系プラグインを使っていると、<br>Enterキーを押してインデントされるときに表示がおかしくなります。<br>タブやスペースが挿入されているのに、それらが表示されません。<br>ファイルを保存すると正しい表示になります。<br><br>SakuraEditorWikiの「C系インデント」「Cファミリ{}インデント」<br>「Pythonスマートインデント」で現象を確認しました。</div></section>
+    <ul><li><section><h1 id=7658>
+    <span class="no">[7658]</span>
+    <a class="title" href="#7658">Re: インデント系プラグインで描画がおかしくなる</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-16T21:32:36">2013年05月16日 21:32</time></h1>
+    <div class="body">InsTextの後にプラグインはRedrawしないので、おかしくなりますね。<br>プラグインが悪いといえば悪いような気もします。<br>マクロだったら強制的にRedrawするんですけどね。<br>#手元のCファミリ{}インデントの新バージョンではReDrawするようにしています。<br><br>サクラ開発者向け：<br>マクロ・プラグインでもCEditView::HandleCommandのbRedraw=trueにしたほうがいいような気がします。<br>bRedrawの影響を受けるのはInsText,SearchNext,SearchPrevだけで、<br>さらにそのうち他のコマンド含めてSetDrawSwitchで再描画の設定ができるようなるからです。<br>SearchNextはSetDrawSwitchで動作が変わるので要注意です。(直すべきかもしれませんが)<br>1文字入力毎のインデントプラグイン実行後にRedrawするのもいまいちです。<br>今はマクロ実行後にRedrawを実行していますが、bReadraw=trueにすれば再描画しなくても問題なくなります。<br></div></section>
+    </li></ul></li></ul></body></html>

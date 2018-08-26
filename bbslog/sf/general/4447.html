@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>このフリーソフトへの感謝と要望</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4447</span>
+    <a class="title" href="4447.html#4447">このフリーソフトへの感謝と要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4448</span>
+    <a class="title" href="4447.html#4448">セルフレスです</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4460</span>
+    <a class="title" href="4447.html#4460">Re:このフリーソフトへの感謝と要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4466</span>
+    <a class="title" href="4447.html#4466">確かに半角→全角変換が無いのも疑問ですね</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4447>
+    <span class="no">[4447]</span>
+    <a class="title" href="#4447">このフリーソフトへの感謝と要望</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-05-08T08:11:02">2005年05月08日 08:11</time></h1>
+    <div class="body">どうもはじめまして<br><br>この連休前に sinst1-5-2-1a.exe (1.5.2.1)をダウン<br>ロードさせて貰って、いっぺんに気に入って愛用させ<br>てもらってます。<br><br>今のところ特に気に入ってるのは、アウトライン解析<br>がルールファイルの利用により実に柔軟に出来る点で<br>す。これはあまりコードは書かなくなっちゃたけど、<br>自分や他人の作った沢山の文書ファイルを扱うのにと<br>ても強力な相棒になりました。ありがとうございます<br>マクロにＷＳＨも使えるとのことなのでPerlScriptで<br>機会を見つけて挑戦してみたいと思ってます。<br><br>それで、これまでの利用で要望が２点出てきました。<br><br>【アウトライン解析】でルールファイルがタイプ別に<br>一つでは、色々なテキストに対応出来ません。自分の<br>作る文章は一つで扱えるようにしようと思うのですが<br>他所から持ってきたファイルはその一つひとつに別の<br>ルールファイルを作っています。そこで…<br>・ファイルを開くときに同じフォルダにファイルの拡<br>　張子のみが rule と変わっている専用ルールファイ<br>　ルファイルがあればそれを適用させる。<br>という設定オプションがあれば夢のようなんですが…<br><br>【変換】で<br>・全角英数→半角英数と半角英数→全角英数の対象文<br>　字を同じにして欲しい。<br>具体的には本来、半角英数に分類されると思われる<br> !"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~ ←これらを<br>全角英数→半角英数のときも変換の対象にして欲しい<br>のです。これは、使ってるときにはバグじゃないかと<br>思いました。ですが、確認にヘルプを見ると 例：に<br>（Ｅｎｇｌｉｓｈ）→（English）（記号は変換されません）<br>(English!)→（Ｅｎｇｌｉｓｈ！）（記号も変換されます）<br>とあり、現在の仕様？なのでしょうか？<br>なぜこうなっているのか、想像がつきません。明確な<br>理由が失われているならば見直されるのが望ましいと<br>思われます。<br><br>ともあれ、特徴を活かして選んで使うのがツール、現<br>状、ほんとにとても便利に使わせて貰っています。<br></div></section>
+    <ul><li><section><h1 id=4448>
+    <span class="no">[4448]</span>
+    <a class="title" href="#4448">セルフレスです</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-05-10T16:48:28">2005年05月10日 16:48</time></h1>
+    <div class="body">&gt; ・ファイルを開くときに同じフォルダにファイルの拡<br>&gt; 　張子のみが rule と変わっている専用ルールファイ<br>&gt; 　ルファイルがあればそれを適用させる。<br>&gt; という設定オプションがあれば夢のようなんですが…<br><br>安易に要望する前に自分で努力してなかったのを<br>反省してます。<br><br>これは、ちょっと荒っぽくて改善の余地がありますが<br>PerlScriptのマクロで解決できました。<br><br>テキストタイプのルールファイルを<br>C:\Program Files\sakura\TextBase.rule<br>としたときの例が以下です。<br><br>$fn = GetFilename();<br>$fn =~ s/\..+$/\.rule/;<br>if(-e $fn){<br> rename('C:\Program Files\sakura\TextBase.rule' ,<br>        'C:\Program Files\sakura\TextBase.bak');<br> rename( $fn , 'C:\Program Files\sakura\TextBase.rule');<br> Outline();<br> rename('C:\Program Files\sakura\TextBase.rule' , $fn );<br> rename('C:\Program Files\sakura\TextBase.bak' ,<br>        'C:\Program Files\sakura\TextBase.rule');<br>} else {<br> Outline();<br>}<br></div></section>
+    </li><li><section><h1 id=4460>
+    <span class="no">[4460]</span>
+    <a class="title" href="#4460">Re:このフリーソフトへの感謝と要望</a>
+    <span class="author">すす</span>
+    <time datetime="2005-05-17T12:41:05">2005年05月17日 12:41</time></h1>
+    <div class="body">▼ りーやさん<br>&gt; どうもはじめまして<br>&gt; <br>&gt; この連休前に sinst1-5-2-1a.exe (1.5.2.1)をダウン<br>&gt; ロードさせて貰って、いっぺんに気に入って愛用させ<br>&gt; てもらってます。<br>&gt; 【変換】で<br>&gt; ・全角英数→半角英数と半角英数→全角英数の対象文<br>&gt; 　字を同じにして欲しい。<br>半角英数→全角英数の動作が<br>半角→全角になってるみたいですね。<br>半角→全角という機能が無いためと思われますがどうなんでしょう<br></div></section>
+    <ul><li><section><h1 id=4466>
+    <span class="no">[4466]</span>
+    <a class="title" href="#4466">確かに半角→全角変換が無いのも疑問ですね</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-05-20T02:57:10">2005年05月20日 02:57</time></h1>
+    <div class="body">▼ すすさん<br>&gt; 半角英数→全角英数の動作が<br>&gt; 半角→全角になってるみたいですね。<br><br>いや、半角カタカナも全角にはならないので<br>半角→全角になってる訳ではないと思われます。<br>ちなみに全角かな・全角カナ共に<br>全角→半角で半角カナになりますし…<br><br>やはり、英数がナニを対象にするかの違いなん<br>だと思います。英記号はASCIIコード的に見ても<br>かなりな部分が英半角大文字と小文字の間だし<br>半角英数に分類されるのが自然ではと思います。<br><br>カナ関係の変換は、きめ細か過ぎるほどですね。<br><br>&gt; 半角→全角という機能が無いためと思われますがどうなんでしょう<br><br>確かにこれも疑問ですね。<br>あった方が自然で直感的にも使い易くなると思われ<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

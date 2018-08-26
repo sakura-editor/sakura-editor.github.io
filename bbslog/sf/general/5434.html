@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>行頭・行末のカーソル移動</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5434</span>
+    <a class="title" href="5434.html#5434">行頭・行末のカーソル移動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5436</span>
+    <a class="title" href="5434.html#5436">Re:行頭・行末のカーソル移動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5449</span>
+    <a class="title" href="5434.html#5449">Re2:行頭・行末のカーソル移動</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5434>
+    <span class="no">[5434]</span>
+    <a class="title" href="#5434">行頭・行末のカーソル移動</a>
+    <span class="author">さわだ</span>
+    <time datetime="2006-09-21T13:07:14">2006年09月21日 13:07</time></h1>
+    <div class="body">カーソルの移動を、行頭、行末で止まる様にしたいのですが、<br>設定方法をお教え下さい。<br><br>Version は、1.5.11.0 を使用しています</div></section>
+    <ul><li><section><h1 id=5436>
+    <span class="no">[5436]</span>
+    <a class="title" href="#5436">Re:行頭・行末のカーソル移動</a>
+    <span class="author">maru</span>
+    <time datetime="2006-09-21T23:55:07">2006年09月21日 23:55</time></h1>
+    <div class="body">▼ さわださん<br>・行頭で左を押しても1行上の行末に移動しない<br>・行末で右を押しても次の行の行頭に移動しない<br>が期待の動作でしょうか。<br><br>// カーソルキー左に割り当てるマクロ<br>if S_ExpandParameter('$x') &lt;&gt; '1' then S_Left;<br><br>// カーソルキー右に割り当てるマクロ<br>S_Right;<br>if S_ExpandParameter('$x') = '1' then S_Left;<br><br>※フリーカーソルモードは考慮していません。<br><br></div></section>
+    <ul><li><section><h1 id=5449>
+    <span class="no">[5449]</span>
+    <a class="title" href="#5449">Re2:行頭・行末のカーソル移動</a>
+    <span class="author">さわだ</span>
+    <time datetime="2006-09-25T10:10:09">2006年09月25日 10:10</time></h1>
+    <div class="body">▼ maruさん<br>出来ました！<br>ありがとうございます。<br><br>「共通設定」で設定出来ると思ったんですが、<br>マクロでしか設定できないんですね。。。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

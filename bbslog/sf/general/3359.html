@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>GREPについて要望</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3359</span>
+    <a class="title" href="3359.html#3359">GREPについて要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3360</span>
+    <a class="title" href="3359.html#3360">Re:GREPについて要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3368</span>
+    <a class="title" href="3359.html#3368">Re2:GREPについて要望</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3359>
+    <span class="no">[3359]</span>
+    <a class="title" href="#3359">GREPについて要望</a>
+    <span class="author">まっちゃんコーナー</span>
+    <time datetime="2003-10-11T13:49:35">2003年10月11日 13:49</time></h1>
+    <div class="body">こん○○は。<br><br>早速なのですがGREPについて要望です。<br>あるいは既存の機能での実現方法があれば教えてください。<br><br>やりたいことはC/C++等のソースファイルをGREPするときに<br>コメントの部分は無視したいのです。<br>現在はGREP結果に対して"^.+\[SJIS\]:^[ \t]*//.*$\n"を""に置換することで逃げていますが、<br>これだとブロックコメントに対処できません。<br>何かよい方法はありますか？<br>「コメントを無視する」機能があると便利なのですが。<br><br>以上、宜しくお願いします。</div></section>
+    <ul><li><section><h1 id=3360>
+    <span class="no">[3360]</span>
+    <a class="title" href="#3360">Re:GREPについて要望</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-10-12T11:22:44">2003年10月12日 11:22</time></h1>
+    <div class="body">複数行正規表現ができれば、コメントが削れてこんな問題は吹っ飛ぶのですが、K2Edit*rと同じ過ちを繰り返してますよね。bregexp.dllは複数行に対応できているのに。とりあえずdevasでコメントを削ってみてください。<br><br>\/\*[^*]*\*\/<br>\/\/[^\r\n]*<br><br><a href=http://village.infoweb.ne.jp/~fwhk9290/gimite/ target=_top><nobr>http://<wbr>village.<wbr>infoweb.<wbr>ne.<wbr>jp/~<wbr>fwhk9290<wbr>/<wbr>gimite/<wbr></nobr></a></div></section>
+    <ul><li><section><h1 id=3368>
+    <span class="no">[3368]</span>
+    <a class="title" href="#3368">Re2:GREPについて要望</a>
+    <span class="author">まっちゃんコーナー</span>
+    <time datetime="2003-10-13T09:29:48">2003年10月13日 09:29</time></h1>
+    <div class="body">wmlhqさん、ご返答ありがとうございました。<br>やはりコメントを削除してからのGREPが常套手段ですか。<br>GREP結果の行や桁の位置が元のファイルと変わってしまうので<br>避けたかったのですが・・・。<br>devasを使ってみます。<br><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

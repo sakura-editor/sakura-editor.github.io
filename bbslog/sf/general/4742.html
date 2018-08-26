@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>行頭空白削除時のバグ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4742</span>
+    <a class="title" href="4742.html#4742">行頭空白削除時のバグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4743</span>
+    <a class="title" href="4742.html#4743">Re:行頭文字削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4751</span>
+    <a class="title" href="4742.html#4751">Re2:行頭文字削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4752</span>
+    <a class="title" href="4742.html#4752">Re3:行頭文字削除</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4742>
+    <span class="no">[4742]</span>
+    <a class="title" href="#4742">行頭空白削除時のバグ</a>
+    <span class="author">FOOTPRINT</span>
+    <time datetime="2005-10-15T10:54:38">2005年10月15日 10:54</time></h1>
+    <div class="body">正規表現を利用して<br>置換前　"^ "　（行頭＋空白1文字）<br>置換後　""　   （空文字列）<br>として、各行に対して行頭の空白を1文字だけ削除したいの<br>ですが、これを実行すると、行頭の空白が2文字以上の<br>行において全ての行頭空白が削除されてしまいます。<br><br>具体的には、<br><br>+------------------<br>+ 1<br>+  2<br>+   3<br>+------------------<br>↑こんな感じのファイルを<br><br>+------------------<br>+1<br>+ 2<br>+  3<br>+------------------<br>↑こうしたいのですが<br><br>+------------------<br>+1<br>+2<br>+3<br>+------------------<br>↑こうなってしまいます。</div></section>
+    <ul><li><section><h1 id=4743>
+    <span class="no">[4743]</span>
+    <a class="title" href="#4743">Re:行頭文字削除</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-10-15T12:12:45">2005年10月15日 12:12</time></h1>
+    <div class="body">&gt; ↑こうなってしまいます。<br><br>+-----<br>|abab<br>+-----<br><br>で"^ab"でもなるね。<br><br>少し古いsakuraでも。<br>sakura V1.4.7.0 </div></section>
+    <ul><li><section><h1 id=4751>
+    <span class="no">[4751]</span>
+    <a class="title" href="#4751">Re2:行頭文字削除</a>
+    <span class="author">Thor</span>
+    <time datetime="2005-10-18T21:21:55">2005年10月18日 21:21</time></h1>
+    <div class="body">以前のとまったく同じ話題ですね<br>[4505] 正規表現の置換について(行頭) <br>http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?tree=r4505<br><br>BREGEXPの全置換を使えば、この問題は起こらないですよね。<br>前にも書きましたがJmeditor2やK2EditorではBREGEXPで全置換しているので<br>問題は起きません。<br><br>これもまた前にも書いたんですが<br>置換対象文字列全体は「$&amp;」で呼び出せるので、<br>選択始点挿入にしたときは「置換後の文字列＋$&amp;」<br>選択終点追加にしたときは「$&amp;＋置換後の文字列」<br>とすれば、一つ一つ文字列を切り分けてから置換せずとも、<br>一行全体を全置換できると思うのですが<br><br>もしくは、BREGEXPに更に手を入れて引数の文字列が、<br>行頭を含むのか含まないのかを指定できるようにするとか。<br><br><br>以前に、鬼車をラッピングしたBREGEXPと差し替えられるDLLを作りました。<br>サクラエディタで使うと、戻り読み(後読み)を含んだ置換ができませんでした。<br>初回にマッチした文字列にはそれより前方の文字が含まれてないので、<br>実際の置換の時にマッチしなくなり、置換に失敗。<br>と、勝手に想像。<br>(実際にサクラエディタの動作を調べたわけではありません)<br><br><br>製作者の方々に質問があります。<br>置換するのに、行からマッチする部分だけを抜き出して、<br>その部分文字列に対して置換するのはなぜなんでしょうか？<br>わざわざ複雑なことをしているからには、なにか理由があるとおもうのですが。<br></div></section>
+    <ul><li><section><h1 id=4752>
+    <span class="no">[4752]</span>
+    <a class="title" href="#4752">Re3:行頭文字削除</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-10-19T00:35:24">2005年10月19日 00:35</time></h1>
+    <div class="body">&gt;タイトル: Re3:行頭文字削除<br>&gt;発言者: Thor<br>&gt;以前のとまったく同じ話題ですね<br>&gt;[4505] 正規表現の置換について(行頭) <br>&gt;http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?tree=r4505<br>&gt;<br>&gt;BREGEXPの全置換を使えば、この問題は起こらないですよね。<br>&gt;前にも書きましたがJmeditor2やK2EditorではBREGEXPで全置換しているので<br>&gt;問題は起きません。<br><br>これは、K2Editorの「全置換」のことを言われていると思いますが、<br><br>----------- K2Editorのヘルプより抜粋 ここから<br>通常の置換と全置換の違い<br>K2Editorの置換は、全置換と通常の置換で動作が違います。 <br><br>通常の置換（連続置換も含む） <br>置換を行った後、置換語の次の文字から再度検索を行います。 つまり次の置換は、置換された語の影響を受けます。 <br><br>全置換 <br>全文書の文字列を検索しながら、置換語を含む新しい文字列を生成します。 そのため、検索は常に置換前の文字列に対して行われるため、 置換語の影響を受けません。 <br><br>s/regexp/replaceexp/g　という風に、gオプションを使用します。 <br><br>特殊な正規表現検索以外では動作は同じになりますが、 単語境界(\b)を使った検索などでは、置換後の状態が検索に影響するので、 両者に違いが出る場合があります。 <br>----------- K2Editorのヘルプより抜粋 ここまで<br><br>とあるように、K2Editorでは、通常の置換と全置換の動作が異なることを仕様として、実現していると考えるべきです。<br>現に、通常置換を繰り返す「連続置換」を行うと、行頭文字に何度もマッチして消えていきます。<br><br><br>「通常置換」と「全置換」の動作が異なる。というのは、別の問題<br>（例えば、通常置換で動作を確認して、全置換すると、思った結果にならない）<br>を引き起こすという事も考慮する必要があり、<br>現状のサクラは、あえて「通常置換」と「全置換」の動作を同じにする仕様なのではないかと推測します。<br><br><br>これを問題とするか仕様とするか意見の分かれるところなのですが、<br>こうも何度も出てくると、<br>「通常置換」と「全置換」の動作が異ならないモードと<br>「通常置換」と「全置換」の動作が異なるが、この問題が起こらないモードと<br>オプションで切り替える設定ができるのが、よいのかもしれませんね。どなたかお願いします。<br><br><br>&gt;置換するのに、行からマッチする部分だけを抜き出して、<br>&gt;その部分文字列に対して置換するのはなぜなんでしょうか？<br>&gt;わざわざ複雑なことをしているからには、なにか理由があるとおもうのですが。<br><br>Apr. 29, 2005 (1.5.3.1)以降、<br>マッチする部分を抜き出して・・・の処理は、なくなってます。<br><br>では<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

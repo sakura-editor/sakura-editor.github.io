@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ファイル比較</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">990</span>
+    <a class="title" href="990.html#990">ファイル比較</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1003</span>
+    <a class="title" href="990.html#1003">ファイル比較あったのか～！</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1007</span>
+    <a class="title" href="990.html#1007">Re: ファイル比較</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1009</span>
+    <a class="title" href="990.html#1009">Re2: ファイル比較</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1012</span>
+    <a class="title" href="990.html#1012">Re3: ファイル比較</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1014</span>
+    <a class="title" href="990.html#1014">Re4: ファイル比較</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=990>
+    <span class="no">[990]</span>
+    <a class="title" href="#990">ファイル比較</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-21T23:41:22">2001年12月21日 23:41</time></h1>
+    <div class="body">ファイル比較するときに、いま編集中のファイルが<br>（無題）だった場合、ほかの（無題）のファイルが一覧表示<br>されないので、CDlgCompare.cppの<br>if( 0 == stricmp( pfi-&gt;m_szPath, m_pszPath ) ){<br>を<br>if (pEditNodeArr[i].m_hWnd == pCEditDoc-&gt;m_hWnd){<br>とウィンドウハンドルで比較しようとしました。が失敗。<br>pEditNodeArr[i].m_hWndは、現在開いている全ウィンドウの一覧、<br>pCEditDoc-&gt;m_hWndは、ファイル比較のダイアログを呼んだウィンドウ<br>だと思っているのですが、勘違いしてますか（してますよね）？<br><br>どなたか～。</div></section>
+    <ul><li><section><h1 id=1003>
+    <span class="no">[1003]</span>
+    <a class="title" href="#1003">ファイル比較あったのか～！</a>
+    <span class="author">hideto</span>
+    <time datetime="2001-12-24T23:20:49">2001年12月24日 23:20</time></h1>
+    <div class="body">なんと！ファイル比較あったんですね。この書きこみを見て始めて知りました(^^;<br>と言う事は、将来的にはグラフィカルな色付き比較も不可能ではないのかあ～！？期待大。<br><br>開発と関係なくてすみません。</div></section>
+    </li><li><section><h1 id=1007>
+    <span class="no">[1007]</span>
+    <a class="title" href="#1007">Re: ファイル比較</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-25T11:22:21">2001年12月25日 11:22</time></h1>
+    <div class="body">&gt;if (pEditNodeArr[i].m_hWnd == pCEditDoc-&gt;m_hWnd){<br>&gt;とウィンドウハンドルで比較しようとしました。が失敗。<br>pCEditDoc-&gt;m_hWndは使われていないみたい．そもそも，EditDocはウィンドウは扱わない．<br><br>pEditNodeArrのウィンドウハンドルはフレームウィンドウのハンドルなので，カレントウィンドウの方もpCEditDoc-&gt;m_hwndParentとフレームウィンドウを指定する必要があります．<br></div></section>
+    <ul><li><section><h1 id=1009>
+    <span class="no">[1009]</span>
+    <a class="title" href="#1009">Re2: ファイル比較</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-25T16:28:37">2001年12月25日 16:28</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;if (pEditNodeArr[i].m_hWnd == pCEditDoc-&gt;m_hWnd){<br>&gt; &gt;とウィンドウハンドルで比較しようとしました。が失敗。<br>&gt; pCEditDoc-&gt;m_hWndは使われていないみたい．そもそも，EditDocはウィンドウは扱わない．<br><br>そうですか？<br>m_hWndをコメントアウトするとエラーがいっぱい出ますよ。<br>Font？とか、クリップボード？とか、印刷プレビューを抜けたとき？とかで使ってるみたい。<br><br>ひとまず目的の動作は、m_hwndParentと比較して達成しました。<br>ありがとうございました。<br><br></div></section>
+    <ul><li><section><h1 id=1012>
+    <span class="no">[1012]</span>
+    <a class="title" href="#1012">Re3: ファイル比較</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-25T17:59:32">2001年12月25日 17:59</time></h1>
+    <div class="body">&gt;&gt; pCEditDoc-&gt;m_hWndは使われていないみたい．そもそも，EditDocはウィンドウは扱わない．<br>&gt;m_hWndをコメントアウトするとエラーがいっぱい出ますよ。<br>あ，すいません．よく見たら，m_hWnd = m_cSplitterWnd.m_hWnd となっていました．でも，これをEditDocのウィンドウハンドルとして保持しているのはなんか変ですね．<br></div></section>
+    <ul><li><section><h1 id=1014>
+    <span class="no">[1014]</span>
+    <a class="title" href="#1014">Re4: ファイル比較</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-26T10:26:54">2001年12月26日 10:26</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;&gt; pCEditDoc-&gt;m_hWndは使われていないみたい．そもそも，EditDocはウィンドウは扱わない．<br>&gt; &gt;m_hWndをコメントアウトするとエラーがいっぱい出ますよ。<br>&gt; あ，すいません．よく見たら，m_hWnd = m_cSplitterWnd.m_hWnd となっていました．でも，これをEditDocのウィンドウハンドルとして保持しているのはなんか変ですね．<br><br>m_hWndは、m_hSplitterWndですね。<br>あと、フォント指定ダイアログの親ウィンドウなど、<br>親ウィンドウが必要なところは、全部<br>CEditDoc::m_hwndParent（つまりCEditWnd）にしてみました。<br>しばらく使ってみて問題無さそうならアップロードします。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

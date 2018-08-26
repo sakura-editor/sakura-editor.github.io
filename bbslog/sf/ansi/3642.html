@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現検索でプロセス消失</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3642</span>
+    <a class="title" href="3642.html#3642">正規表現検索でプロセス消失</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3649</span>
+    <a class="title" href="3642.html#3649">RE: 正規表現検索でプロセス消失</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3642>
+    <span class="no">[3642]</span>
+    <a class="title" href="#3642">正規表現検索でプロセス消失</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-06-20T00:29:55">2004年06月20日 00:29</time></h1>
+    <div class="body">ふぁんくらぶPart 4 #636 のプロセスが消える件を確認しました．<br>まず，2chのはき出すHTMLの記事本文に改行コードが入っていません．<br>そこで長い部分にマッチする正規表現検索を行うとプロセスが消えてしまいます．<br></div></section>
+    <ul><li><section><h1 id=3649>
+    <span class="no">[3649]</span>
+    <a class="title" href="#3649">RE: 正規表現検索でプロセス消失</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-06-22T00:33:32">2004年06月22日 00:33</time></h1>
+    <div class="body">&gt;長い部分にマッチする正規表現検索を行うとプロセスが消えてしまいます．<br>Debug modeでコンパイルして再現させたところ，BREGEXP.DLL中の<br>100041C3  push        ebx <br>というところで[ESP]の指すアドレスに書き込もうとしてアクセス違反になっています．<br>どうもスタックオーバーフローのようです．内部で再帰呼び出し使っているのかな．<br></div></section>
+    </li></ul></li></ul></body></html>

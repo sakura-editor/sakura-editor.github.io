@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>変数の内容をクリップボードに設定したい。。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">87</span>
+    <a class="title" href="87.html#87">変数の内容をクリップボードに設定したい。。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">88</span>
+    <a class="title" href="87.html#88">Re:変数の内容をクリップボードに設定したい。。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">90</span>
+    <a class="title" href="87.html#90">Re2:変数の内容をクリップボードに設定したい。。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">101</span>
+    <a class="title" href="87.html#101">Re2:変数の内容をクリップボードに設定したい。。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">102</span>
+    <a class="title" href="87.html#102">Re3:変数の内容をクリップボードに設定したい。。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">104</span>
+    <a class="title" href="87.html#104">Re3:変数の内容をクリップボードに設定したい。。</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=87>
+    <span class="no">[87]</span>
+    <a class="title" href="#87">変数の内容をクリップボードに設定したい。。</a>
+    <span class="author">すす</span>
+    <time datetime="2004-08-25T15:36:59">2004年08月25日 15:36</time></h1>
+    <div class="body">PPAのマクロで箱型罫線を引こうとMacroを書いていたの<br>ですがうまくいかないです<br><br>１．箱型罫線を変数に代入<br>２．文字入力<br>を<br><br>１．箱型罫線を変数に代入<br>２．変数の内容をクリップボードに設定<br>３．矩形ペースト<br>に変えればとりあえず引けそうなのですが<br><br>変数の内容をクリップボードに設定することができません<br>誰か教えてください。<br><br>ちなみに途中まで書いたやつ<br>（文字数カウントのマクロをベースとしております）<br><a href=http://jp.y42.briefcase.yahoo.co.jp/bc/szk_sin/lst?&.dir=/%b7%d3%c0%fe%a5%de%a5%af%a5%ed&.src=bc&.view=l&.last=1 target=_top><nobr>http://<wbr>jp.<wbr>y42.<wbr>briefcas<wbr>e.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>bc/<wbr>szk_sin/<wbr>lst?&amp;.<wbr>dir=/%<wbr>b7%<wbr>d3%<wbr>c0%<wbr>fe%<wbr>a5%<wbr>de%<wbr>a5%<wbr>af%<wbr>a5%<wbr>ed&amp;.<wbr>src=<wbr>bc&amp;.<wbr>view=<wbr>l&amp;.<wbr>last=<wbr>1</nobr></a><br></div></section>
+    <ul><li><section><h1 id=88>
+    <span class="no">[88]</span>
+    <a class="title" href="#88">Re:変数の内容をクリップボードに設定したい。。</a>
+    <span class="author">すす</span>
+    <time datetime="2004-08-25T17:54:57">2004年08月25日 17:54</time></h1>
+    <div class="body">自レスですが<br>考え方を変えて<br><br>１行分の文字数カウント後に１文字ずつ罫線挿入で<br>何とか箱型罫線を引けたのですが<br>「範囲選択する際、右下から左上に向かって選択」<br>しないとカーソルの場所から挿入になってしまう。。。<br><br>範囲選択されてる左上の位置にカーソル移動<br>できれば解決するのに。。。</div></section>
+    <ul><li><section><h1 id=90>
+    <span class="no">[90]</span>
+    <a class="title" href="#90">Re2:変数の内容をクリップボードに設定したい。。</a>
+    <span class="author">すす</span>
+    <time datetime="2004-08-26T10:24:08">2004年08月26日 10:24</time></h1>
+    <div class="body">// ☆☆☆動作条件☆☆☆<br>// PPA.DLL が必須<br>// 拡張子は .PPA<br>// ☆範囲選択する際、右下から左上に向かって選択<br>// ☆行選択する際下から上に向かって選択<br>var<br> CRLF,CR,LF:String;<br> str:String;<br> byte:Integer;<br> mess:String;<br> han,zen:Integer;<br> n_crlf,n_cr,n_lf:Integer;<br> pt:Integer;<br> tmp1,tmp2:String;<br> isknj:Integer;<br> i,j:Integer;<br> max_size:Integer;<br><br>begin<br> CRLF := '<br>';<br> CR := Copy(CRLF,1,1);<br> LF := Copy(CRLF,2,1);<br> str := S_GetSelectedString(0);<br> byte := Length(str); <br> zen := 0;<br> han := 0;<br> n_crlf := 0;<br> n_cr := 0;<br> n_lf := 0;<br> pt := 1;<br> max_size := 0;<br> while (pt &lt;= byte) do<br> begin<br>  tmp1 := Copy(str,pt,1);<br>  tmp2 := Copy(str,pt,2);<br>  isknj := 0;<br>  if (('　' &lt;= tmp2) and (tmp2 &lt;= '滌')) then isknj := 1;<br>  if (('漾' &lt;= tmp2) and (tmp2 &lt;= '黑')) then isknj := 1;<br>  if (isknj &lt;&gt; 0) then <br>   begin<br>    zen := zen + 1;<br>    pt := pt + 1;<br>   end<br>  else<br>   begin<br>    if (tmp2 = CRLF) then<br>     begin<br>      n_crlf := n_crlf + 1;<br>      pt  := pt + 1;<br>      if (max_size &lt; ((han div 2) + (han mod 2) + zen)) then<br>       begin<br>        max_size := (han div 2) + (han mod 2) + zen;<br>       end<br>      ;<br>      zen := 0;<br>      han := 0;<br>     end<br>    else if (tmp1 = CR) then n_cr := n_cr + 1<br>    else if (tmp1 = LF) then n_lf := n_lf + 1<br>    else han := han + 1<br>    ;<br>   end<br>  ;<br>  pt := pt + 1;<br> end;<br> S_CancelMode(0);<br> if (n_crlf = 0) then<br>  begin<br>   i := 0;<br>   j := (han div 2) + (han mod 2) + zen;<br>   while i &lt; j do<br>    begin<br>     i := i + 1;<br>     S_InsText('━');<br>    end;<br>  end<br> else<br>  begin<br>   i := 0;<br>   while i &lt; n_crlf do<br>    begin<br>     j := 0;<br>     while j &lt; max_size do<br>      begin<br>       if (i = 0) then<br>        begin<br>         if (j = 0) then S_InsText('┏')<br>         else if (j = (max_size - 1)) then S_InsText('┓')<br>         else S_InsText('━')<br>         ;<br>        end<br>       else if (i = (n_crlf - 1)) then<br>        begin<br>         if (j = 0) then S_InsText('┗')<br>         else if (j = (max_size - 1)) then S_InsText('┛')<br>         else S_InsText('━')<br>         ;<br>        end<br>       else<br>        begin<br>         if (j = 0) then S_InsText('┃')<br>         else if (j = (max_size - 1)) then S_InsText('┃')<br>         else  S_InsText('　')<br>         ;<br>        end<br>       ;<br>       j := j + 1;<br>      end;<br>     i := i + 1;<br>     j := 0;<br>     while j &lt; max_size do<br>      begin<br>       S_Left();<br>       j := j + 1;<br>      end;<br>     S_Down();<br>    end;<br>  end<br> ;<br>end;<br></div></section>
+    </li><li><section><h1 id=101>
+    <span class="no">[101]</span>
+    <a class="title" href="#101">Re2:変数の内容をクリップボードに設定したい。。</a>
+    <span class="author">すい</span>
+    <time datetime="2004-09-03T04:10:54">2004年09月03日 04:10</time></h1>
+    <div class="body">一体、何をやりたいんでしょ。<br>文字列を矩形選択してからその &gt;&gt;90 のマクロを実行してみると、<br><br>その選択範囲と同じサイズの罫線の箱を挿入される。<br>その矩形選択されていた文字列を後ろに押しのけるような形で．．．<br><br>という事が目的の処理なのでしょうか？<br># 何に使うんだろ。 (;^^;)<br><br><br>&gt;範囲選択されてる左上の位置にカーソル移動<br>&gt;できれば解決するのに。。。<br><br>削除と Undo を組み合わせれば。<br><br>矩形選択状態で削除を実行すればカーソルは矩形選択の左上の位置に行きますよね。<br>この状態で S_ExpandParameter() で $x と $y を調べれば<br>その桁＆行位置が分かるのでこれらを変数に格納しておく。<br>その後、 S_Undo() すれば削除された文字列は元通り復帰。<br>ただし、前から後ろ方向に矩形選択していた場合には S_Undo() すると<br>矩形選択範囲の右下位置へ戻ってしまうので、先ほど S_ExpandParameter() で<br>変数にメモった桁・行位置まで、えッちらおッちら移動．．．<br># 行位置だけは S_Jump() 一発で飛べますが。<br><br>なんかバタバタしてて美しくないですね。<br><br>あ、待てよ、移動履歴を使えばもっとスムーズだ。<br>  1.削除<br>  2.[編集(E)]→[移動(O)]→[現在位置を移動履歴に登録(S)]<br>  3.元に戻す<br>  4.[編集(E)]→[移動(O)]→[移動履歴 前へ(P)]<br>で良し。<br><br>S_Delete(0)&#9;;&#9;// 削除<br>S_MoveHistSet(0);&#9;// 現在位置を移動履歴に登録<br>S_Undo(0);&#9;&#9;// 元に戻す<br>S_MoveHistPrev(0);&#9;// 移動履歴: 前へ<br>な感じで。<br></div></section>
+    <ul><li><section><h1 id=102>
+    <span class="no">[102]</span>
+    <a class="title" href="#102">Re3:変数の内容をクリップボードに設定したい。。</a>
+    <span class="author">すい</span>
+    <time datetime="2004-09-03T05:20:10">2004年09月03日 05:20</time></h1>
+    <div class="body">var<br>str,lbuff:String;<br>CRLF,CR,LF:String;<br>ptcr,ptlf,line:Integer;<br>MaxCol,MaxRow:Integer;<br>cx,cy:Integer;<br><br>begin<br>CRLF := '<br>';<br>CR := Copy(CRLF,1,1);<br>LF := Copy(CRLF,2,1);<br>// 選択範囲のサイズを調べる<br>// MaxCol:横幅(バイト数)<br>// MaxRow:縦幅(行数)<br>str := S_GetSelectedString(0);<br>MaxCol := 0;<br>MaxRow := 0;<br>while (str &lt;&gt; '') do&#9;// strが空で無ければループ<br>begin&#9;// {<br>&#9;MaxRow:=MaxRow+1;&#9;// 行数+1<br>&#9;// str中の先頭行の長さ調査<br>&#9;line:=Length(str);&#9;// 文字列全体の長さ<br>&#9;ptcr:=Pos(CR,str);&#9;// CRの位置<br>&#9;ptlf:=Pos(LF,str);&#9;// LFの位置<br>&#9;if(ptcr &lt;&gt; 0) and (ptcr &lt; line) then&#9;line:=ptcr-1;&#9;// CRあり&amp;&amp;lineより前→line:=CRの前までの長さ<br>&#9;if(ptlf &lt;&gt; 0) and (ptlf &lt; line) then&#9;line:=ptlf-1;&#9;// LFあり&amp;&amp;lineより前→line:=LFの前までの長さ<br>&#9;// ここまででlineに先頭の行の長さが格納されている<br>&#9;if(MaxCol &lt; line) then&#9;MaxCol:=line;&#9;// MaxCol:=最大の長さの行<br>&#9;// str から先頭行を削除<br>&#9;str:=Delete(str,1,line);&#9;// strから先頭行長さ分 削除<br>&#9;if(Copy(str,1,1) = CR) then&#9;str:=Delete(str,1,1);&#9;// 先頭1バイトがCRなら削除<br>&#9;if(Copy(str,1,1) = LF) then&#9;str:=Delete(str,1,1);&#9;// 先頭1バイトがLFなら削除<br>end; // }<br>// サイズ調査完了<br>// 選択領域の左上へ<br>S_Delete(0);&#9;&#9;// 削除<br>S_MoveHistSet(0);&#9;// 現在位置を移動履歴に登録<br>S_Undo(0);&#9;&#9;&#9;// 元に戻す<br>S_MoveHistPrev(0);&#9;// 移動履歴: 前へ<br>// 横MaxCol×縦MaxRowの箱出力<br>MaxCol := MaxCol div 2;&#9;// MaxCol / 2<br>for&#9;cy:=1&#9;to&#9;MaxRow&#9;do<br>begin<br>&#9;// 行出力バッファlbuff初期化<br>&#9;if(cy = 1) then&#9;&#9;&#9;lbuff:='┏'<br>&#9;else if(cy=MaxRow) then&#9;lbuff:='┗'<br>&#9;else&#9;&#9;&#9;&#9;&#9;lbuff:='┃'<br>&#9;;<br>&#9;// 横サイズ分lbuffに文字追加<br>&#9;for&#9;cx:=2&#9;to&#9;MaxCol-1&#9;do<br>&#9;begin<br>&#9;&#9;if(cy = 1) then&#9;&#9;&#9;lbuff:=lbuff+'━'<br>&#9;&#9;else if(cy=MaxRow) then&#9;lbuff:=lbuff+'━'<br>&#9;&#9;else&#9;&#9;&#9;&#9;&#9;lbuff:=lbuff+'　'<br>&#9;&#9;;<br>&#9;end;<br>&#9;// lbuff行末尾文字追加<br>&#9;if(cy = 1) then&#9;&#9;&#9;lbuff:=lbuff+'┓'<br>&#9;else if(cy=MaxRow) then&#9;lbuff:=lbuff+'┛'<br>&#9;else&#9;&#9;&#9;&#9;&#9;lbuff:=lbuff+'┃'<br>&#9;;<br>&#9;S_MoveHistSet(0);&#9;// 現在位置を移動履歴に登録<br>&#9;S_InsText(lbuff);&#9;// １行出力<br>&#9;S_MoveHistPrev(0);&#9;// 移動履歴: 前へ<br>&#9;S_Right(0);&#9;// カーソル右移動<br>&#9;S_Left(0);&#9;// カーソル左移動<br>&#9;S_Down(0);&#9;// カーソル下移動<br>end;<br><br>end;<br></div></section>
+    </li><li><section><h1 id=104>
+    <span class="no">[104]</span>
+    <a class="title" href="#104">Re3:変数の内容をクリップボードに設定したい。。</a>
+    <span class="author">すす</span>
+    <time datetime="2004-09-03T10:04:42">2004年09月03日 10:04</time></h1>
+    <div class="body">▼ すいさん<br>レスありがとうございます。<br><br>&gt; 一体、何をやりたいんでしょ。<br>&gt; 文字列を矩形選択してからその &gt;&gt;90 のマクロを実行してみると、<br>&gt; <br>&gt; その選択範囲と同じサイズの罫線の箱を挿入される。<br>&gt; その矩形選択されていた文字列を後ろに押しのけるような形で．．．<br>最終的には押しのけずに矩形の形に罫線挿入したいのですが<br>とりあえずちょっとづつ書いてみようと思いまして<br>今の目的は上記のとおりです<br><br>&gt; という事が目的の処理なのでしょうか？<br>&gt; # 何に使うんだろ。 (;^^;)<br>私も知らない。秀○に負けたくないだけ？<br><br><br>&gt; &gt;範囲選択されてる左上の位置にカーソル移動<br>&gt; &gt;できれば解決するのに。。。<br>&gt; <br>&gt; 削除と Undo を組み合わせれば。<br>&gt; <br>&gt; 矩形選択状態で削除を実行すれば<br>なるほど「削除ですか」<br><br><br>&gt; あ、待てよ、移動履歴を使えばもっとスムーズだ。<br>&gt;   1.削除<br>&gt;   2.[編集(E)]→[移動(O)]→[現在位置を移動履歴に登録(S)]<br>&gt;   3.元に戻す<br>&gt;   4.[編集(E)]→[移動(O)]→[移動履歴 前へ(P)]<br>&gt; で良し。<br>移動履歴とはこういうものだったのか・・・<br><br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

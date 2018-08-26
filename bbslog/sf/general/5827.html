@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現にアドバイスをください</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5827</span>
+    <a class="title" href="5827.html#5827">正規表現にアドバイスをください</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5832</span>
+    <a class="title" href="5827.html#5832">RE: 正規表現にアドバイスをください</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5833</span>
+    <a class="title" href="5827.html#5833">Re2: 正規表現にアドバイスをください</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5827>
+    <span class="no">[5827]</span>
+    <a class="title" href="#5827">正規表現にアドバイスをください</a>
+    <span class="author">ken</span>
+    <time datetime="2007-02-12T10:59:04">2007年02月12日 10:59</time></h1>
+    <div class="body">Have_VH0 you_PPY lived_VVN in_II this_DD1 town_NN1 for_IF a_AT1 long_JJ <br>time_NNT1 ?_? ---_NN1 Yes_UH ,_, I_PPIS1 have_VH0 ._.<br>置換前「\_[A-Za-z0-9\.\,\?\!]+」置換後を空欄にしますと、タグが全部取れるのですが、あまりスマートでないです。どなたかアイディアはありますか。 <br></div></section>
+    <ul><li><section><h1 id=5832>
+    <span class="no">[5832]</span>
+    <a class="title" href="#5832">RE: 正規表現にアドバイスをください</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-02-12T20:51:01">2007年02月12日 20:51</time></h1>
+    <div class="body">&gt;置換前「\_(\w+|\W+)」、置換後を空欄にしますと、タグが全部取れるのですが、---_NN1 もなくなってしまいます。<br>\Wに空白が含まれるので--- の直前とつながってますね．<br><br>_\S+ でお望みの物になります？<br>\Sは空白文字以外という意味です．<br></div></section>
+    <ul><li><section><h1 id=5833>
+    <span class="no">[5833]</span>
+    <a class="title" href="#5833">Re2: 正規表現にアドバイスをください</a>
+    <span class="author">ken</span>
+    <time datetime="2007-02-12T22:18:22">2007年02月12日 22:18</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; _\S+ でお望みの物になります？<br>&gt; \Sは空白文字以外という意味です．<br>げんたさん、ありがとうございます。とてもスマートな形ですし、うまくいきます。<br>ありがとうございます。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>#ifdef～#else～#endifの色分けについて</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5271</span>
+    <a class="title" href="5271.html#5271">#ifdef～#else～#endifの色分けについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5272</span>
+    <a class="title" href="5271.html#5272">RE: #ifdef～#else～#endifの色分けについて</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=5271>
+    <span class="no">[5271]</span>
+    <a class="title" href="#5271">#ifdef～#else～#endifの色分けについて</a>
+    <span class="author">あやこ</span>
+    <time datetime="2006-06-14T15:06:56">2006年06月14日 15:06</time></h1>
+    <div class="body">初めまして。<br>初心者プログラマーのあやこといいます。<br><br>サクラエディターはいつも使わせて頂いています。<br>ありがとうございます。<br><br>質問なのですが、サクラエディタのカラー表示で、<br>#ifdef～#else～#endifの色分け設定はできるのでしょうか？<br>ソーストレースをしていて、有効な部分と無効な部分の色分けが<br>できると大変便利だわと思いましたので・・。<br><br>ちなみに秀丸エディタでは、#define値を直接指定することで、<br>色分けできる機能があるようです。これには驚きました。<br>秀丸にできて、サクラエディタでできない機能は無いと思っていますので。<br><br>基本的な質問で恐縮ですが、どなたかご返答を<br>宜しくお願いいたします。<br><br>あやこ</div></section>
+    <ul><li><section><h1 id=5272>
+    <span class="no">[5272]</span>
+    <a class="title" href="#5272">RE: #ifdef～#else～#endifの色分けについて</a>
+    <span class="author">すい</span>
+    <time datetime="2006-06-15T00:45:38">2006年06月15日 00:45</time></h1>
+    <div class="body">&gt;ちなみに秀丸エディタでは、#define値を直接指定することで、<br>&gt;色分けできる機能があるようです。これには驚きました。<br>&gt;秀丸にできて、サクラエディタでできない機能は無いと思っていますので。<br><br>絶対無理。出来るわけない。<br><br>そういう判定処理をするにはインタープリタもどきの機能が必要ですからね。<br><br>#if に対応する #else / #endif を探したりする処理とか。<br>#if や #define の後ろの数式・比較などの計算処理をおこなったり、とか。<br>#define で変数(C言語的にはマクロとか呼びますが)に値などを格納する、<br>などの変数の管理機構など。<br><br>そういう機能を持たなくてはそういう判定出来ないでしょ？<br><br>で、秀丸で何故そういう事が出来るかと言うと、秀丸はインタープリター<br>システムを持っているから。<br>秀丸はマクロ言語を内蔵していて、マクロ中で変数やら数式やらを<br>使う事ができる、つまり数式処理やら変数の管理機構やらを初めから<br>持っているエディタなわけです。ですから秀丸内部では、それら初めから<br>持っている数式処理やら変数の処理部やらを流用する事で、C言語の<br>ソースを解釈して判断するなんていう機能も実現出来ているのではないかと。<br><br>一方でサクラエディタにはそんなマクロ言語のような機構は全く持っていません。<br>サクラエディタが持っているマクロは単なるキーボードマクロ。(拡張子.macのヤツね)<br>マクロ中に記録された過去の操作記録を上から下へなぞって実行する、というだけ。<br>数式処理とか変数とか その類の処理部は一切 持っていません。<br><br>PPAとかWSHとかのマクロでは数式処理とか変数とか使えますが、それらは<br>サクラエディタとは関係ない外部のプログラム(PPA.DLL やWSHのモジュール)<br>が処理しているのであって、サクラエディタが処理しているわけではありません。<br>サクラエディタの中にはそんな処理機構部はありません。<br><br>ですから、サクラエディタでC言語のソースの解析を行わせるようにするには<br>サクラエディタにインタープリター処理システム(もどき)をゼロから作成・追加<br>していかなくてはならず、、、そんな大変な事、誰もやらないんじゃないかな？<br></div></section>
+    </li></ul></li></ul></body></html>

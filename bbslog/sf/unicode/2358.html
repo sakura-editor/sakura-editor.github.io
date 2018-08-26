@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>hostsを上書き保存できる機能</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2358</span>
+    <a class="title" href="2358.html#2358">hostsを上書き保存できる機能</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2359</span>
+    <a class="title" href="2358.html#2359">Re:hostsを上書き保存できる機能</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2360</span>
+    <a class="title" href="2358.html#2360">Re2:hostsを上書き保存できる機能</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2361</span>
+    <a class="title" href="2358.html#2361">Re3:hostsを上書き保存できる機能</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2362</span>
+    <a class="title" href="2358.html#2362">Re4:hostsを上書き保存できる機能</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2363</span>
+    <a class="title" href="2358.html#2363">Re5:hostsを上書き保存できる機能</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2358>
+    <span class="no">[2358]</span>
+    <a class="title" href="#2358">hostsを上書き保存できる機能</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-05-06T20:08:35">2016年05月06日 20:08</time></h1>
+    <div class="body">しれっと新機能追加の要望です。<br><br>sakura使ったことある人なら<br>C:\Windows\System32\drivers\etc\hosts<br>を書き換えるのに、メモ帳じゃなくてsakuraを使うと思うんですよ。<br>でも、sakuraでhostsを開くと上書き保存できませんよね？<br><br>これ、できるようにしませんか？<br><br><br>従来）<br>　「管理者として実行」すれば上書き保存できるかも知れません。<br>目標到達点）<br>　権限昇格が必要な操作には盾マークを出す、UACの機構に一部対応。<br></div></section>
+    <ul><li><section><h1 id=2359>
+    <span class="no">[2359]</span>
+    <a class="title" href="#2359">Re:hostsを上書き保存できる機能</a>
+    <span class="author">もか</span>
+    <time datetime="2016-05-07T18:05:06">2016年05月07日 18:05</time></h1>
+    <div class="body">CoCreateInstanceAsAdminはレジストリキーが必要なので不可っぽいですね。<br>もしやるならexeを分離してcopy処理だけやってもらうような形になるのかも。<br>そうすると、上書き保存の度にUACの画面が表示されそうです。<br>ちなみにファイル書き込みで管理者権限の昇格が必要な場合の判定ってどうやるのだろう。<br>アプリケーションはあまり一般的でない動作はさせない方がいいかもしれない。<br></div></section>
+    <ul><li><section><h1 id=2360>
+    <span class="no">[2360]</span>
+    <a class="title" href="#2360">Re2:hostsを上書き保存できる機能</a>
+    <span class="author">もか</span>
+    <time datetime="2016-05-07T18:29:34">2016年05月07日 18:29</time></h1>
+    <div class="body">▼ もかさん<br>やろうと思えば同一exeでフラグで切り替えとか、<br>プロセス間通信を使ってUAC昇格は1プロセスで1回までとかもできそうです。<br></div></section>
+    <ul><li><section><h1 id=2361>
+    <span class="no">[2361]</span>
+    <a class="title" href="#2361">Re3:hostsを上書き保存できる機能</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-05-11T00:04:37">2016年05月11日 00:04</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ▼ もかさん<br>&gt; やろうと思えば同一exeでフラグで切り替えとか、<br>&gt; プロセス間通信を使ってUAC昇格は1プロセスで1回までとかもできそうです。<br><br>権限昇格の起動自体は<br>ShellExecuteExのverbに"RunAs"を指定する方法でいけます。<br>サクラエディタの起動マニュフェストはAsInvokerなので<br>プログラムから「管理者として実行」ができるはず。<br>（当然、認証or承認ダイアログが表示される...)<br><br>コマンドライン引数で動作を切り替える処理は<br>コントロールプロセスが既に採用しているので<br>これ自体は既存設計方針とも競合はしないかと。<br><br><br>そうじゃない部分で、<br>概念的に既存設計方針と競合する気がしたので<br>とりあえず掲示板に投げてみたわけです。<br><br>ビューモードとか、自動実行マクロとか、<br>ファイル保存に関連する処理が怪しいです。<br><br>あと、読み取り専用属性が付いてたら、<br>間違って上書き保存しないようにする、<br>って方針があるような気がしないでもないです。<br></div></section>
+    <ul><li><section><h1 id=2362>
+    <span class="no">[2362]</span>
+    <a class="title" href="#2362">Re4:hostsを上書き保存できる機能</a>
+    <span class="author">もか</span>
+    <time datetime="2016-05-11T02:54:42">2016年05月11日 02:54</time></h1>
+    <div class="body">▼ ばぼさん<br>&gt; サクラエディタの起動マニュフェスト<br>関係ないのかもしれないけれど、マニュフェストは<br>1.zip添付版<br>2.zipでmanifesetを使わない人<br>3.インストーラでC:\Program files以下に入れるかどうか<br>4.インストーラで3.以外の人<br>5.自分でいじっている人<br>で、バーチャルストアの扱いやその他記述が違いますので、注意してください。<br></div></section>
+    <ul><li><section><h1 id=2363>
+    <span class="no">[2363]</span>
+    <a class="title" href="#2363">Re5:hostsを上書き保存できる機能</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-05-12T22:34:48">2016年05月12日 22:34</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ▼ ばぼさん<br>&gt; &gt; サクラエディタの起動マニュフェスト<br>&gt; 関係ないのかもしれないけれど、マニュフェストは<br>&gt; 1.zip添付版<br>&gt; 2.zipでmanifesetを使わない人<br>&gt; 3.インストーラでC:\Program files以下に入れるかどうか<br>&gt; 4.インストーラで3.以外の人<br>&gt; 5.自分でいじっている人<br>&gt; で、バーチャルストアの扱いやその他記述が違いますので、注意してください。<br><br>心配ないと思います。<br><br>UAC対応は普通のwindowsを利用している人で、<br>sakuraを普通のアプリとして使いたい人向けの機能です。<br>レガシーアプリとして使いたい人には不要なので競合しません。<br>また、windows以外の環境で使いたい人の用途とも競合しないはずです。<br><br>ただ、vista以降のwindows環境でないと動かないので、<br>ver2系に組み込むのが妥当なのかどうかについては<br>議論の余地があると思っています。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

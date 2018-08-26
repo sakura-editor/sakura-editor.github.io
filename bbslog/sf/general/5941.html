@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>階層の深いフォルダにあるファイルが開けない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5941</span>
+    <a class="title" href="5941.html#5941">階層の深いフォルダにあるファイルが開けない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5942</span>
+    <a class="title" href="5941.html#5942">RE: 階層の深いフォルダにあるファイルが開けない</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5943</span>
+    <a class="title" href="5941.html#5943">Re:階層の深いフォルダにあるファイルが開けない</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5944</span>
+    <a class="title" href="5941.html#5944">Re:階層の深いフォルダにあるファイルが開けない</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=5941>
+    <span class="no">[5941]</span>
+    <a class="title" href="#5941">階層の深いフォルダにあるファイルが開けない</a>
+    <span class="author">ek</span>
+    <time datetime="2007-03-12T19:01:48">2007年03月12日 19:01</time></h1>
+    <div class="body">初めて投稿させて頂きます。<br><br>ネットワーク上の階層の深いフォルダにあるファイルを開こうとすると<br>「sakura.exe [2922] でハンドルされていない Win32 の例外が発生しました。」<br>というダイアログが出てファイルを開けません（メモ帳では普通に開けます）。<br><br>使用バージョンは 1.5.10.0 (V1310) です。<br><br>たぶんパスの長さが256を超えているからだと思うのですが<br>（上の階層に移動したら開けました）、パスを短くする以外に<br>何か対策はありますでしょうか？<br></div></section>
+    <ul><li><section><h1 id=5942>
+    <span class="no">[5942]</span>
+    <a class="title" href="#5942">RE: 階層の深いフォルダにあるファイルが開けない</a>
+    <span class="author">wakura</span>
+    <time datetime="2007-03-12T23:02:16">2007年03月12日 23:02</time></h1>
+    <div class="body"><br>・他のアプリでも同様の問題出る可能性あると思うので_MAX_PATHを超えないようにす<br>るのが無難。<br>（ドライブ名から数えて260-1文字）<br><br>・アプリケーションエラーはバッファオーバーフローなので、ガードしたいなら<br>strsafe.h<br>をglobal.hあたりでインクルードしてコンパイルするとエラーが出るのでその部分を<br>全部StringC*系関数に書き換える。<br>（ただし、ファイルは開けない）<br><br>・使えるようにしたいなら<br>#define _MAX_PATH   260 /* max. length of full pathname */<br>#define _MAX_DRIVE  3   /* max. length of drive component */<br>#define _MAX_DIR    256 /* max. length of path component */<br>#define _MAX_FNAME  256 /* max. length of file name component */<br>#define _MAX_EXT    256 /* max. length of extension component */<br>を使っているところを全部拡張してコンパイルする。<br>（アンダーバーがついてないのもある）<br>ただし、この値を使わずに独自にバッファ確保している部分もあると思われる。<br></div></section>
+    </li><li><section><h1 id=5943>
+    <span class="no">[5943]</span>
+    <a class="title" href="#5943">Re:階層の深いフォルダにあるファイルが開けない</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-03-13T07:39:58">2007年03月13日 07:39</time></h1>
+    <div class="body">▼ ekさん<br>&gt; （上の階層に移動したら開けました）、パスを短くする以外に<br>&gt; 何か対策はありますでしょうか？<br><br>&gt;&gt;data:4688<br>ネットワークドライブで、新ドライブに下の（上の？）階層を割り当てる。</div></section>
+    </li><li><section><h1 id=5944>
+    <span class="no">[5944]</span>
+    <a class="title" href="#5944">Re:階層の深いフォルダにあるファイルが開けない</a>
+    <span class="author">ek</span>
+    <time datetime="2007-03-13T09:57:58">2007年03月13日 09:57</time></h1>
+    <div class="body">＞wakuraさん、じゅうじさん<br><br>素早い回答ありがとうございました。<br>ネットワークドライブを割り当てることにより、ファイルを開けるようになりました。<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix): NUL文字、IME、無限ループ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1867</span>
+    <a class="title" href="1867.html#1867">Commit報告(Fix): NUL文字、IME、無限ループ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1868</span>
+    <a class="title" href="1867.html#1868">RE: Commit報告(Fix): NUL文字、IME、無限ループ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1869</span>
+    <a class="title" href="1867.html#1869">Re2: Commit報告(Fix): NUL文字、IME、無限ループ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1875</span>
+    <a class="title" href="1867.html#1875">Commit報告２(Keep): NUL文字、IME、無限ループ</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1867>
+    <span class="no">[1867]</span>
+    <a class="title" href="#1867">Commit報告(Fix): NUL文字、IME、無限ループ</a>
+    <span class="author">ds14050</span>
+    <time datetime="2012-12-16T14:52:06">2012年12月16日 14:52</time></h1>
+    <div class="body">事後ですみません。12文字だけなのでコミットしてしまいました。<br><br>----------------------------------------<br>--------------------------------<br>r2516 | ds14050 | 2012-12-16 14:37:01 +0900 (日, 16 12 2012) | 2 lines<br><br>Fix: NUL文字を含み、ある程度以上の長さがある行で IMEを使うと無限ループに陥っていた。<br>----------------------------------------<br>--------------------------------<br><br>ヌル文字を1つと何かを50文字のテキストの先頭で<br>日本語を入力しようとすると再現できると思います。<br><br><a href=https://sourceforge.net/p/sakura-editor/code/2515/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>2515/<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=1868>
+    <span class="no">[1868]</span>
+    <a class="title" href="#1868">RE: Commit報告(Fix): NUL文字、IME、無限ループ</a>
+    <span class="author">もか</span>
+    <time datetime="2012-12-16T18:44:18">2012年12月16日 18:44</time></h1>
+    <div class="body">以前直した記憶があるのですが、直ってなかったようです。<br>IMEにはNULをスペースに変換して渡す処理が入っています。<br><br>こうではなくて？<br><br>--- ./.svn/text-base/CEditView_Ime.cpp.svn-base&#9;Sun Dec 16 18:34:00 2012<br>+++ CEditView_Ime.cpp&#9;Sun Dec 16 18:34:48 2012<br>@@ -217,7 +217,11 @@<br> &#9;if ( ptSelect.x &gt; nReconvMaxLen ) {<br> &#9;&#9;const wchar_t* pszWork = pLine;<br> &#9;&#9;while( (ptSelect.x - nReconvIndex) &gt; nReconvMaxLen ){<br>+&#9;&#9;&#9;const wchar_t*  pszWork2 = pszWork;<br> &#9;&#9;&#9;pszWork = ::CharNextW_AnyBuild( pszWork);<br>+&#9;&#9;&#9;if( pszWork == pszWork2 ){<br>+&#9;&#9;&#9;&#9;pszWork++;<br>+&#9;&#9;&#9;}<br> &#9;&#9;&#9;nReconvIndex = pszWork - pLine ;<br> &#9;&#9;}<br> &#9;}<br>@@ -228,9 +232,12 @@<br> &#9;&#9;const wchar_t* pszWork = pLine + ptSelect.x;<br> &#9;&#9;nReconvLen = ptSelect.x - nReconvIndex;<br> &#9;&#9;while( ( nReconvLen + nReconvIndex - ptSelect.x) &lt;= nReconvMaxLen<br>-&#9;&#9;&#9;&amp;&amp; pszWork[0] // IMEには NUL文字から後ろを渡さない。<br> &#9;&#9;){<br>+&#9;&#9;&#9;const wchar_t*  pszWork2 = pszWork;<br> &#9;&#9;&#9;pszWork = ::CharNextW_AnyBuild( pszWork);<br>+&#9;&#9;&#9;if( pszWork == pszWork2 ){<br>+&#9;&#9;&#9;&#9;pszWork++;<br>+&#9;&#9;&#9;}<br> &#9;&#9;&#9;nReconvLen = pszWork - (pLine + nReconvIndex) ;<br> &#9;&#9;}<br> &#9;}<br></div></section>
+    <ul><li><section><h1 id=1869>
+    <span class="no">[1869]</span>
+    <a class="title" href="#1869">Re2: Commit報告(Fix): NUL文字、IME、無限ループ</a>
+    <span class="author">ds14050</span>
+    <time datetime="2012-12-16T19:43:02">2012年12月16日 19:43</time></h1>
+    <div class="body">対策に漏れがあったのと方針違いだったのですね。＞r2516<br>このへんは文脈依存変換パッチを書いていたもかさんが<br>詳しいだろうなあとチェックを期待しつつ報告を書いていました。<br>当方、目の前の無限ループを止める以上のことは手に余ります。<br></div></section>
+    </li><li><section><h1 id=1875>
+    <span class="no">[1875]</span>
+    <a class="title" href="#1875">Commit報告２(Keep): NUL文字、IME、無限ループ</a>
+    <span class="author">ds14050</span>
+    <time datetime="2013-01-08T20:52:19">2013年01月08日 20:52</time></h1>
+    <div class="body">いただいた助言に沿ってコミットしておきました。<br><br>----------------------------------------<br>r2561 | ds14050 | 2013-01-08 20:31:13 +0900 (火, 08 1 2013) | 2 lines<br>変更のあったパス:<br>   M /sakura/trunk2/sakura_core/view/CEditView_Ime.cpp<br><br>Keep: a complement to r2516.<br>----------------------------------------<br>http://sourceforge.net/p/sakura-editor/code/2561/<br><br>最低限ながら<br>* 再変換や文脈依存変換が機能すること(そういう部分のコードですよね？)<br>* r2516ではNUL文字の後ろにキャレットがあるときにまだ無限ループすること<br>* それが解消すること<br>を確認しています。<br><br># 以下ひとりごと<br># sourceforge.netの Browse Commitsは一覧性が低くて使いづらいですね。<br># オレンジの点が並んでるばっかりでコミットメッセージを表示してもくれない。<br># 点をクリックすると内容が表示されるものの、前後のリビジョンへのリンク<br># こそあれ、当のリビジョンの URLがどこからも得られない。<br># Pull Requestがばしばし飛んでくるようなリポジトリだと評価が違うんでしょうか。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

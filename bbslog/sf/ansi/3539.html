@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>[報告]最後まで選択後、削除できない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3539</span>
+    <a class="title" href="3539.html#3539">[報告]最後まで選択後、削除できない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3540</span>
+    <a class="title" href="3539.html#3540">RE: [報告]最後まで選択後、削除できない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3541</span>
+    <a class="title" href="3539.html#3541">Re2: [報告]最後まで選択後、削除できない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3542</span>
+    <a class="title" href="3539.html#3542">Re3: [報告]最後まで選択後、削除できない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3543</span>
+    <a class="title" href="3539.html#3543">Re4: [報告]最後まで選択後、削除できない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3549</span>
+    <a class="title" href="3539.html#3549">Re5: [報告]最後まで選択後、削除できない</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3557</span>
+    <a class="title" href="3539.html#3557">Command_GOLINEENDの謎</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3544</span>
+    <a class="title" href="3539.html#3544">Re4: [報告]最後まで選択後、削除できない</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3539>
+    <span class="no">[3539]</span>
+    <a class="title" href="#3539">[報告]最後まで選択後、削除できない</a>
+    <span class="author">FILE</span>
+    <time datetime="2004-04-18T15:52:25">2004年04月18日 15:52</time></h1>
+    <div class="body">　こんにちは。<br>　下記の現象が発生しましたので、ご報告いたします。<br>　いつも報告ばかりですみません。<br><br>現象／再現手順：<br>　０．サクラエディタ起動(無題)<br>　１．文字入力する(単数行)<br>　２．先頭から末尾まで選択<br>　３．削除(しようとしても削除できない)<br><br>キー入力に直すと、<br>　Tab, Left, Shift+Ctrl+End, Delete<br><br>試したバージョン：<br>　WinMe:1.4.5.1 / WinXP:1.4.5.0, 1.4.5.1<br><br>以上、ご確認よろしくお願いいたします。<br></div></section>
+    <ul><li><section><h1 id=3540>
+    <span class="no">[3540]</span>
+    <a class="title" href="#3540">RE: [報告]最後まで選択後、削除できない</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-04-18T21:34:06">2004年04月18日 21:34</time></h1>
+    <div class="body">&gt;キー入力に直すと、<br>&gt;　Tab, Left, Shift+Ctrl+End, Delete<br>む．本当だ．行末までの選択がShift+Endだと削除できるのに...<br></div></section>
+    <ul><li><section><h1 id=3541>
+    <span class="no">[3541]</span>
+    <a class="title" href="#3541">Re2: [報告]最後まで選択後、削除できない</a>
+    <span class="author">もか</span>
+    <time datetime="2004-04-19T01:24:55">2004年04月19日 01:24</time></h1>
+    <div class="body">1.4.5.1 - 1.4.3.5 × <br>この間は、全滅のようです。それ以前は未調査。<br>カーソルを行ったり来たり、いろいろやってみると、前の行が反転したり矩形選択っぽくなったりもします。<br>最近の変更の影響というより、だいぶ前か元から変なのかも。<br><br>#私、直す気無しだったりする<br></div></section>
+    <ul><li><section><h1 id=3542>
+    <span class="no">[3542]</span>
+    <a class="title" href="#3542">Re3: [報告]最後まで選択後、削除できない</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-04-19T05:07:39">2004年04月19日 05:07</time></h1>
+    <div class="body">▼ もかさん<br>&gt; #私、直す気無しだったりする<br><br>削除まで行なわなくても、選択で問題が発生しました。<br><br>--- コピー ～ CEditView_Command.cpp&#9;Sun Apr 11 12:29:36 2004<br>+++ CEditView_Command.cpp&#9;Mon Apr 19 04:58:48 2004<br>@@ -1340,8 +1340,22 @@<br> /* ファイルの最後に移動 */<br> void CEditView::Command_GOFILEEND( int bSelect )<br> {<br>+&#9;//Command_GOFILETOP() からif()ごとコピー 2004.04.19 じゅうじ<br>+&#9;if( bSelect ){<br>+&#9;&#9;if( !IsTextSelected() ){&#9;/* テキストが選択されているか */<br>+&#9;&#9;&#9;/* 現在のカーソル位置から選択を開始する */<br>+&#9;&#9;&#9;BeginSelectArea();<br>+&#9;&#9;}<br>+&#9;&#9;/* 現在のカーソル位置によって選択範囲を変更 */<br>+&#9;&#9;ChangeSelectAreaByCurrentCursor( m_nCaretPosX, 0 );<br>+&#9;}else{<br>+&#9;&#9;if( IsTextSelected() ){&#9;/* テキストが選択されているか */<br>+&#9;&#9;&#9;/* 現在の選択範囲を非選択状態に戻す */<br>+&#9;&#9;&#9;DisableSelectArea( TRUE );<br> // 2001.12.13 hor BOX選択中にファイルの最後にジャンプすると[EOF]の行が反転したままになるの修正<br>-&#9;if( !bSelect &amp;&amp; IsTextSelected() ) DisableSelectArea( TRUE );&#9;// 2001.12.21 hor Add<br>+//&#9;if( !bSelect &amp;&amp; IsTextSelected() ) DisableSelectArea( TRUE );&#9;// 2001.12.21 hor Add<br>+&#9;&#9;}<br>+&#9;}<br> &#9;AddCurrentLineToHistory();<br> &#9;Cursor_UPDOWN( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() , bSelect );<br> &#9;Command_DOWN( bSelect, TRUE );<br><br>#このAddCurrentLineToHistory()より後ろは、私、解っていません。</div></section>
+    <ul><li><section><h1 id=3543>
+    <span class="no">[3543]</span>
+    <a class="title" href="#3543">Re4: [報告]最後まで選択後、削除できない</a>
+    <span class="author">fotomo</span>
+    <time datetime="2004-04-19T10:55:30">2004年04月19日 10:55</time></h1>
+    <div class="body">僕の持ってるソースは、本家のソースからかなり修正して<br>しまったので、参考になるかわかりませんが・・・・。<br><br>void CEditView::Command_GOFILEEND( int bSelect )<br>関数内で、以下のような部分があると思いますが。<br><br>&gt;  Cursor_UPDOWN( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() , bSelect );<br>&gt;  Command_DOWN( bSelect, TRUE );<br>&gt;  if( !m_bBeginBoxSelect ) Command_GOLINEEND( bSelect, TRUE );<br><br>3行目のCommand_GOLINEEND関数の第二引数をFALSEにすると、<br>当該現象は起こらなくなるかもしれません。<br>(僕のやつは、ここで直りましたが・・。)</div></section>
+    <ul><li><section><h1 id=3549>
+    <span class="no">[3549]</span>
+    <a class="title" href="#3549">Re5: [報告]最後まで選択後、削除できない</a>
+    <span class="author">FILE</span>
+    <time datetime="2004-04-25T14:40:03">2004年04月25日 14:40</time></h1>
+    <div class="body">▼ fotomoさん<br>&gt; 僕の持ってるソースは、本家のソースからかなり修正して<br>&gt; しまったので、参考になるかわかりませんが・・・・。<br>&gt; <br>&gt; void CEditView::Command_GOFILEEND( int bSelect )<br>&gt; 関数内で、以下のような部分があると思いますが。<br>&gt; <br>&gt; &gt;  Cursor_UPDOWN( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() , bSelect );<br>&gt; &gt;  Command_DOWN( bSelect, TRUE );<br>&gt; &gt;  if( !m_bBeginBoxSelect ) Command_GOLINEEND( bSelect, TRUE );<br>&gt; <br>&gt; 3行目のCommand_GOLINEEND関数の第二引数をFALSEにすると、<br>&gt; 当該現象は起こらなくなるかもしれません。<br>&gt; (僕のやつは、ここで直りましたが・・。)<br><br>　こんにちは。<br><br>　上記の修正で、再現しない事を確認いたしました。<br>　(Win95 / WinXP, 1.4.5.1)<br><br>　&gt;&gt;dev:3544の選択開始関連も、再現しなくなりました。<br><br>　追試、ご対応してくださった皆様、ありがとうございました。<br></div></section>
+    </li><li><section><h1 id=3557>
+    <span class="no">[3557]</span>
+    <a class="title" href="#3557">Command_GOLINEENDの謎</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-05-01T15:36:41">2004年05月01日 15:36</time></h1>
+    <div class="body">&gt;void CEditView::Command_GOFILEEND( int bSelect )<br>&gt;3行目のCommand_GOLINEEND関数の第二引数をFALSEにすると、<br>&gt;当該現象は起こらなくなるかもしれません。<br>Cursor_UPDOWNで移動量が０でかつその行が改行で終わっていない場合に選択がうまく初期化されないのがまず原因の1つ．Command_GOLINEENDの第2引数がTRUEだと上の選択が初期化されないケースで選択範囲がおかしくなる．<br><br>しかしながら，Cursor_UPDOWNで選択を初期化しないケース及びCommand_GOLINEENDの引数は何か意図があってこうなっているように見えます．背景に何があったか想像できる方いらっしゃいますか．<br></div></section>
+    </li></ul></li><li><section><h1 id=3544>
+    <span class="no">[3544]</span>
+    <a class="title" href="#3544">Re4: [報告]最後まで選択後、削除できない</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-04-19T22:20:44">2004年04月19日 22:20</time></h1>
+    <div class="body">▼補足（自分に応援）<br><br>２行入力して、最初１行目にカーソルを持って行って、<br>Ctrl+Shift+End と入力し、次に２行目にカーソルを持って行って、<br>Ctrl+Shift+End と入力すると、最初のカーソル位置から<br>選択開始します。<br>===================<br>aaaaIbbbbbb<br>bbbIccccc[EOF]<br>===================<br>（カーソルは、キャレットを表します）</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ZIPプラグイン導入</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1917</span>
+    <a class="title" href="1917.html#1917">ZIPプラグイン導入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1920</span>
+    <a class="title" href="1917.html#1920">Re:ZIPプラグイン導入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1921</span>
+    <a class="title" href="1917.html#1921">Re2:ZIPプラグイン導入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1922</span>
+    <a class="title" href="1917.html#1922">Re3:ZIPプラグイン導入</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1917>
+    <span class="no">[1917]</span>
+    <a class="title" href="#1917">ZIPプラグイン導入</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-27T10:34:08">2013年04月27日 10:34</time></h1>
+    <div class="body">Windows7(64bit), Ver. 2.0.7.1で"ZIPプラグイン導入"の機能を使ってみたところ<br>プラグイン定義ファイル（plugin.def）がありません<br>と表示され、エラーになりました。<br>使用したファイルは、CIndent1.0.3.zipです。<br><br>原因を調査したところ、CZipFile::ChkPluginDef()の<br>定義ファイルのパス名を比較するところで不一致になっているようです。<br><br>ちなみにWindowsXP環境で同じ操作をしたところ、問題なしでした。<br><br>下記を見ると、<br><a href=http://sourceforge.net/p/sakura-editor/patchunicode/303/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>303/<wbr></nobr></a><br>WinXP/WinS2003以降で可能<br>と記載してあるのでWindows7動作するようにも見えます。<br><br>また、サポートしていないWindows2000で実行したときにこのボタン無効になったりするのかが気になりました。<br>(ソースコードを見た感じではOSチェックはしていなさそう)<br></div></section>
+    <ul><li><section><h1 id=1920>
+    <span class="no">[1920]</span>
+    <a class="title" href="#1920">Re:ZIPプラグイン導入</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-27T14:56:06">2013年04月27日 14:56</time></h1>
+    <div class="body">▼ noviceさん<br>PatchをPutchunicode#467に上げました。<br>Win7で仕様が変更になった様です。<br>未公開APIなんで仕方が無いのかな。<br>Vista, Win8 等での評価がいただけたらと思います。<br><br>&gt; また、サポートしていないWindows2000で実行したときにこのボタン無効になったりするのかが気になりました。<br>&gt; (ソースコードを見た感じではOSチェックはしていなさそう)<br>OSのチェックではなくAPIのチェックでボタンのOnOffを行っています。<br>例えば将来的にZipFolderのAPIのサポートが切れたらボタンがOffになります。</div></section>
+    <ul><li><section><h1 id=1921>
+    <span class="no">[1921]</span>
+    <a class="title" href="#1921">Re2:ZIPプラグイン導入</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-27T16:15:38">2013年04月27日 16:15</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; ▼ noviceさん<br>&gt; PatchをPutchunicode#467に上げました。<br>&gt; Win7で仕様が変更になった様です。<br>&gt; 未公開APIなんで仕方が無いのかな。<br>&gt; Vista, Win8 等での評価がいただけたらと思います。<br><br>Windows7(64bit), Ver. 2.0.7.1+パッチで無事読み込めました。<br>残念ながらVista, Win8は持ってないので、別途報告待ちになりますね。<br><br><br>&gt; &gt; また、サポートしていないWindows2000で実行したときにこのボタン無効になったりするのかが気になりました。<br>&gt; &gt; (ソースコードを見た感じではOSチェックはしていなさそう)<br>&gt; OSのチェックではなくAPIのチェックでボタンのOnOffを行っています。<br>&gt; 例えば将来的にZipFolderのAPIのサポートが切れたらボタンがOffになります。<br><br>承知しました。<br></div></section>
+    <ul><li><section><h1 id=1922>
+    <span class="no">[1922]</span>
+    <a class="title" href="#1922">Re3:ZIPプラグイン導入</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-27T16:40:04">2013年04月27日 16:40</time></h1>
+    <div class="body">リビジョン 2939 でcommitしました</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

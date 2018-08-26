@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>直前に編集した行に飛ぶ機能/マクロはありますか？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">8202</span>
+    <a class="title" href="8202.html#8202">直前に編集した行に飛ぶ機能/マクロはありますか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8203</span>
+    <a class="title" href="8202.html#8203">Re:直前に編集した行に飛ぶ機能/マクロはありますか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8204</span>
+    <a class="title" href="8202.html#8204">Re2:直前に編集した行に飛ぶ機能/マクロはありますか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8206</span>
+    <a class="title" href="8202.html#8206">Re3:直前に編集した行に飛ぶ機能/マクロはありますか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8207</span>
+    <a class="title" href="8202.html#8207">Re4:直前に編集した行に飛ぶ機能/マクロはありますか？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=8202>
+    <span class="no">[8202]</span>
+    <a class="title" href="#8202">直前に編集した行に飛ぶ機能/マクロはありますか？</a>
+    <span class="author">まあき</span>
+    <time datetime="2016-11-05T12:11:39">2016年11月05日 12:11</time></h1>
+    <div class="body">プログラミング等、いろんな行にあっちこっち飛んで入力作業をしていると、<br>ある行数で入力した後、その直前に打ち込んだ行数に「ジャンプして戻りたくなる」<br>ということがあるのですが、これを快適にする方法はありませんか？<br><br>例えば、<br><br>10行目に何か打ち込む<br>↓<br>100行目に何か打ち込む<br>↓<br>200行目に何か打ち込む<br>↓<br>300行目に何か打ち込む<br><br>上記のような作業を行った後<br>ファンクションキーで<br>「10行目に飛ぶ」「100行目に飛ぶ」「200行目に飛ぶ」<br>というようなたとえば過去3回分に遡って「編集した行数」に飛ぶ。<br>このような事を実現したいのですか可能でしょうか？<br>可能ならば方法をご教示願います。<br></div></section>
+    <ul><li><section><h1 id=8203>
+    <span class="no">[8203]</span>
+    <a class="title" href="#8203">Re:直前に編集した行に飛ぶ機能/マクロはありますか？</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-11-05T13:50:26">2016年11月05日 13:50</time></h1>
+    <div class="body">▼ まあきさん<br>&gt; このような事を実現したいのですか可能でしょうか？<br>&gt; 可能ならば方法をご教示願います。<br><br>「設定」→「共通設定」で設定画面を開き、<br>「キーボード割り当て」タブを選択してください。<br>「種別」を「カーソル移動系」に合わせると、<br>移動系ショートカットの割り当て状況を確認できます。<br><br>移動履歴を制御する機能がありますので、<br>「現在位置を移動履歴に登録する」に<br>「Shift+Alt+R」とか割り付けてあげれば、<br>比較的それっぽいことができると思います。<br><br>10行目に何か打ち込む<br>　↓<br>「Shift+Alt+R」(移動履歴を登録)<br>　↓<br>100行目に何か打ち込む<br>　↓<br>「Shift+Alt+R」(移動履歴を登録)<br>　↓<br>1024行目にジャンプ<br>　↓<br>「Alt+P」(100行目に移動)<br>　↓<br>「Alt+P」(10行目に移動)<br>　↓<br>「Alt+N」(100行目に移動)<br><br>他にも「前(次)の変更行に移動」なんて機能もあります。<br>類似機能に「ブックマーク」なんてものも。。。</div></section>
+    <ul><li><section><h1 id=8204>
+    <span class="no">[8204]</span>
+    <a class="title" href="#8204">Re2:直前に編集した行に飛ぶ機能/マクロはありますか？</a>
+    <span class="author">まあき</span>
+    <time datetime="2016-11-05T18:09:26">2016年11月05日 18:09</time></h1>
+    <div class="body">迅速な回答ありがとうございます。<br>移動履歴を使った方法で概ね望む処理が実現できました。<br><br>ところで<br>「移動履歴に登録する」作業を省いて直前の行に飛べるものかと思い<br>「前の変更行に移動」を試したのですが、何故か一行目の一文字目に飛ばされます。<br><br>コマンド名から察するに、直近に文字を打ち込んだ行数に飛ぶものかと思ったのですが<br>それは勘違い…ということでしょうか。。<br></div></section>
+    <ul><li><section><h1 id=8206>
+    <span class="no">[8206]</span>
+    <a class="title" href="#8206">Re3:直前に編集した行に飛ぶ機能/マクロはありますか？</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-11-05T20:24:27">2016年11月05日 20:24</time></h1>
+    <div class="body">▼ まあきさん<br>&gt; ところで<br>&gt; 「移動履歴に登録する」作業を省いて直前の行に飛べるものかと思い<br>&gt; 「前の変更行に移動」を試したのですが、何故か一行目の一文字目に飛ばされます。<br>&gt; <br>&gt; コマンド名から察するに、直近に文字を打ち込んだ行数に飛ぶものかと思ったのですが<br>&gt; それは勘違い…ということでしょうか。。<br><br>はい。<br><br>「前の変更行」は「時間的に前の変更」ではなく、<br>「ファイル位置的に前の変更行」を意味します。<br>検索の「前を検索」と同じ感覚です。<br>他のツールの機能とも同じ挙動なので私は違和感ありません。<br><br>桁位置に関していうと、先頭行と最終行について<br>なにやら桁位置調整をしています。<br>私はそのあたりの経緯を知らんのでなんともいえませんが、<br>行ジャンプと同じ挙動（移動したら行頭）が自然だと思います。<br>だから、1文字目なのはいいのかな、と。</div></section>
+    <ul><li><section><h1 id=8207>
+    <span class="no">[8207]</span>
+    <a class="title" href="#8207">Re4:直前に編集した行に飛ぶ機能/マクロはありますか？</a>
+    <span class="author">もか</span>
+    <time datetime="2016-11-07T00:34:01">2016年11月07日 00:34</time></h1>
+    <div class="body">直近、最後に編集した行を特定するには、GetLineAttributeを使うと<br>Redo/Undo番号が取得できるので使えると思います。<br>なお桁位置は分からないです。<br>私は直前の編集位置に戻るときは、UndoしてからRedoしてすませてます。<br><br>GetLineAttributeで移動するマクロを試しに作ったので参考にしてください。<br><a href=http://sakura.qp.land.to/?Macro%2F%C5%EA%B9%C6%2F236 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Macro%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6%<wbr>2F236</nobr></a><br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

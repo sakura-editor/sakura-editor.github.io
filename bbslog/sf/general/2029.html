@@ -1,0 +1,127 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>クォーテーションの処理について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2029</span>
+    <a class="title" href="2029.html#2029">クォーテーションの処理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2030</span>
+    <a class="title" href="2029.html#2030">クォーテーションの処理について（追伸）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2031</span>
+    <a class="title" href="2029.html#2031">RE: クォーテーションの処理について（追伸）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2032</span>
+    <a class="title" href="2029.html#2032">RE2: クォーテーションの処理について（追伸）</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2034</span>
+    <a class="title" href="2029.html#2034">Re2: クォーテーションの処理について（追伸）</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2035</span>
+    <a class="title" href="2029.html#2035">RE2: クォーテーションの処理について（追伸）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2038</span>
+    <a class="title" href="2029.html#2038">Re3: クォーテーションの処理について（追伸）</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2039</span>
+    <a class="title" href="2029.html#2039">Re3: クォーテーションの処理について（追伸）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2041</span>
+    <a class="title" href="2029.html#2041">Re4: クォーテーションの処理について（追伸）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2042</span>
+    <a class="title" href="2029.html#2042">Re5: クォーテーションの処理について（追伸）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2044</span>
+    <a class="title" href="2029.html#2044">Re6: クォーテーションの処理について（追伸）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2046</span>
+    <a class="title" href="2029.html#2046">Re7: クォーテーションの処理について（追伸）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2051</span>
+    <a class="title" href="2029.html#2051">Re8: クォーテーションの処理について（追伸）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2057</span>
+    <a class="title" href="2029.html#2057">Bregexp.dll</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2029>
+    <span class="no">[2029]</span>
+    <a class="title" href="#2029">クォーテーションの処理について</a>
+    <span class="author">かご</span>
+    <time datetime="2002-06-20T10:42:30">2002年06月20日 10:42</time></h1>
+    <div class="body">はじめまして。Perlでの利用を考えています。<br>ソース中に<br>&amp;jcode'convert(*value,'jis');<br>のような表現があるCGIを作成する場合、このはじめの'クォーテーションが<br>囲む始まりとして扱われてしまい、複数の行にわたって、カラーリングされてしまいます。<br>どこかの設定を変えることで、正しい範囲に設定できるものでしょうか。<br>正規表現でできるのかもしれませんが、もしおわかりの方いらっしゃったら<br>教えてください。<br></div></section>
+    <ul><li><section><h1 id=2030>
+    <span class="no">[2030]</span>
+    <a class="title" href="#2030">クォーテーションの処理について（追伸）</a>
+    <span class="author">かご</span>
+    <time datetime="2002-06-20T10:44:50">2002年06月20日 10:44</time></h1>
+    <div class="body">すみません。追伸です。<br>同じく<br>$name =~ s/\"//g;<br>このような行の影響でダブルクォーテーションが文字列範囲の<br>始まりとして認識されてしまいます。<br><br>カラーリングしないというのも手かと思いますが、できるなら<br>カラーリングさせたいので。<br></div></section>
+    <ul><li><section><h1 id=2031>
+    <span class="no">[2031]</span>
+    <a class="title" href="#2031">RE: クォーテーションの処理について（追伸）</a>
+    <span class="author">すい</span>
+    <time datetime="2002-06-20T12:40:17">2002年06月20日 12:40</time></h1>
+    <div class="body">&gt;&gt;ソース中に<br>&gt;&gt;&amp;jcode'convert(*value,'jis');<br>&gt;同じく<br>&gt;$name =~ s/\"//g;<br>&gt;カラーリングしないというのも手かと思いますが、できるなら<br>&gt;カラーリングさせたいので。<br><br>現状「色表示をoffにする」以外の方法は無し、かと。<br># 将来的にも無理では？<br># どういう時には色分けし、どういう時には色分けしない、という汎用的規則（アルゴリズム）が無いでしょ？<br># それとも何かあります？ 妙案アルゴリズム<br><br>なので私は末尾に注釈入れてます。↓とか<br># 泥臭い<br><br>&amp;jcode'convert(*value,'jis');   # '<br>$name =~ s/\"//g;               # " # わはははは " は削除だ削除!!<br><br>これで次の行以降だけはなんとか救えますので。(;^^;)<br></div></section>
+    <ul><li><section><h1 id=2032>
+    <span class="no">[2032]</span>
+    <a class="title" href="#2032">RE2: クォーテーションの処理について（追伸）</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-06-20T13:02:23">2002年06月20日 13:02</time></h1>
+    <div class="body"><br>&gt;なので私は末尾に注釈入れてます。↓とか<br>&gt;# 泥臭い<br>&gt;<br>&gt;&amp;jcode'convert(*value,'jis');   # '<br>&gt;$name =~ s/\"//g;               # " # わはははは " は削除だ削除!!<br>&gt;<br>&gt;これで次の行以降だけはなんとか救えますので。(;^^;)<br><br>なるほど、グッドアイディア。<br></div></section>
+    </li><li><section><h1 id=2034>
+    <span class="no">[2034]</span>
+    <a class="title" href="#2034">Re2: クォーテーションの処理について（追伸）</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-06-20T13:22:34">2002年06月20日 13:22</time></h1>
+    <div class="body">&gt;現状「色表示をoffにする」以外の方法は無し、かと。<br>perlのルールはかなり柔軟性が高い＝特殊パターンが多いので，単純な文字列比較では完全な色分けは難しいですね．現状でも色分け部分はべったりと書かれていて1関数で1000行とかいう状態ですので，これを整理しないとちょっと難しいかも．<br><br>Perlの色分けが欲しくなりそうなところ．<br>`` も色分けしたい．<br>q, qq, qx, qr, qw の引用．qq#abc# のときは初めと同じが終わりだけどqq{} のときは対応する括弧．<br>$#ARGVの#はコメントじゃない．<br>$', $` は引用じゃない．<br>s/abc/def/ や m// は色分けするの？?RE? というのもあるな．<br>s{abc}{def}とも書ける．<br>オプションにx付けて置換パターンにスクリプト書いたときは？<br>&lt;&lt;EOF<br>EOF<br><br>&gt;なので私は末尾に注釈入れてます。↓とか<br>&gt;これで次の行以降だけはなんとか救えますので。(;^^;)<br>同じく．<br></div></section>
+    </li><li><section><h1 id=2035>
+    <span class="no">[2035]</span>
+    <a class="title" href="#2035">RE2: クォーテーションの処理について（追伸）</a>
+    <span class="author">ai</span>
+    <time datetime="2002-06-20T13:30:53">2002年06月20日 13:30</time></h1>
+    <div class="body"><br>&gt;これで次の行以降だけはなんとか救えますので。(;^^;)<br><br>私は、みくさんのホームページにあるquort.rkwを頂いて正規表現で対応しています。<br>次の行以降を救うのであれば試してみてはいかがでしょうか。<br>かごさんの要望は解決しませんが…<br>既に御存知でしたら申し訳ありません。<br></div></section>
+    <ul><li><section><h1 id=2038>
+    <span class="no">[2038]</span>
+    <a class="title" href="#2038">Re3: クォーテーションの処理について（追伸）</a>
+    <span class="author">かご</span>
+    <time datetime="2002-06-20T22:12:01">2002年06月20日 22:12</time></h1>
+    <div class="body">▼ aiさん<br>&gt; <br>&gt; &gt;これで次の行以降だけはなんとか救えますので。(;^^;)<br>&gt; <br>&gt; 私は、みくさんのホームページにあるquort.rkwを頂いて正規表現で対応しています。<br>&gt; 次の行以降を救うのであれば試してみてはいかがでしょうか。<br>&gt; かごさんの要望は解決しませんが…<br>&gt; 既に御存知でしたら申し訳ありません。<br><br>aiさんはじめ、ご助言いただいた皆様ありがとうございます。<br>コメントを行末に追加するというアイデアには感心しました。<br>でも、今回は、このquort.rkwの方でなんとか使おうと思います。<br>別のエディタでは、この文字列の囲みの扱いがうまくいっている場合があります。<br>すべてではないかもしれませんが、少なくとも、先に例として挙げた文字列の場合に。<br>正規表現でもっと細かく指定すれば、いいのかもしれませんが、そこまで<br>頭が回らなくて...(^_^);<br></div></section>
+    </li><li><section><h1 id=2039>
+    <span class="no">[2039]</span>
+    <a class="title" href="#2039">Re3: クォーテーションの処理について（追伸）</a>
+    <span class="author">すい</span>
+    <time datetime="2002-06-21T00:24:48">2002年06月21日 00:24</time></h1>
+    <div class="body">&gt; 私は、みくさんのホームページにあるquort.rkwを頂いて正規表現で対応しています。<br><br>ああ、そうやれば良いのか。 (*^o^*)<br>いやぁ、私は末尾に # ' とか付けるのって無駄なゴミが付くから嫌いだったんですよ。<br>言い出しておいてなんですが(笑)(笑)(笑) :-P<br><br>ですが、この quort.rkw を見ていたら「ちょっと変えれば perl 専用のヤツ出来そうじゃん」<br>とか思ってちょっと perl 専用に変えてみました。<br><br>評価求む。って、評価で「ダメ」って言われても、そうそう直せるとは思えませんが。 :-(<br>っていうか不味かったら自力で直して。(笑) &gt; 正規表現のエキスパートな方<br>http://www.egroups.co.jp/files/sakura-editor/User/Data/Perl.lzh<br></div></section>
+    <ul><li><section><h1 id=2041>
+    <span class="no">[2041]</span>
+    <a class="title" href="#2041">Re4: クォーテーションの処理について（追伸）</a>
+    <span class="author">かご</span>
+    <time datetime="2002-06-21T12:09:20">2002年06月21日 12:09</time></h1>
+    <div class="body">▼ すいさん<br>&gt; ですが、この quort.rkw を見ていたら「ちょっと変えれば perl 専用のヤツ出来そうじゃん」<br>&gt; とか思ってちょっと perl 専用に変えてみました。<br><br>うぉ！すばらしい。私も同様にできないか正規表現を勉強しなおしているうちに<br>できてしまっているとは。早速使わさせて頂きます。<br>こちらの環境では、rkwファイル中のTXTやSQTを「テキスト」や<br>「シングルクォーテーション文字列」と置き換えないとインポートできませんでしたが。<br><br>&gt; 評価求む。って、評価で「ダメ」って言われても、そうそう直せるとは思えませんが。 :-(<br>&gt; っていうか不味かったら自力で直して。(笑) &gt; 正規表現のエキスパートな方<br><br>というか、充分エキスパートとお見受けしますが。<br>...と甘えついでに、$や@で始まる変数を強調表示させたいのですが、<br>どのような正規表現になるでしょうか。同じく、$が含まれていても変数でない場合には、テキストとして扱いたいのですが。<br><br>もし、お時間が許されるようでしたら、教えてください。<br>私も勉強し直してみますが。<br></div></section>
+    <ul><li><section><h1 id=2042>
+    <span class="no">[2042]</span>
+    <a class="title" href="#2042">Re5: クォーテーションの処理について（追伸）</a>
+    <span class="author">すい</span>
+    <time datetime="2002-06-21T12:48:18">2002年06月21日 12:48</time></h1>
+    <div class="body">早くも、あちこちマズイ点がみつかり、あわてて修正。<br>http://www.egroups.co.jp/files/sakura-editor/User/Data/perl_20020621.lzh<br><br>・仕様の理解度が低いことが露呈する恥ずかしいミスを修正(笑)<br>・"" 中での \ の処理をまともにした。<br>他、色々<br><br>&gt;...と甘えついでに、$や@で始まる変数を強調表示させたいのですが、<br>&gt;どのような正規表現になるでしょうか。同じく、$が含まれていても変数でない場合には、テキストとして扱いたいのですが。<br><br>対応(つもり)<br></div></section>
+    <ul><li><section><h1 id=2044>
+    <span class="no">[2044]</span>
+    <a class="title" href="#2044">Re6: クォーテーションの処理について（追伸）</a>
+    <span class="author">すい</span>
+    <time datetime="2002-06-21T20:41:53">2002年06月21日 20:41</time></h1>
+    <div class="body">さらに修正。<br>http://www.egroups.co.jp/files/sakura-editor/User/Data/perl_20020621_20.lzh<br><br>一応、全修正履歴（同梱の perl.txt より抜粋）<br><br>★ 履歴<br>　　2002/06/20<br>　　　　初版<br><br>　　2002/06/21-12時<br>　　　　・q qq qx 扱いが目茶苦茶だったのを修正。<br>　　　　　qq 後の括弧は ( ) か { } しかないはずなのに [ ] を入れてしまっていたり(恥)<br>　　　　　qq 直後のタブやスペースをスキップしていなかったりした。<br>　　　　・"" 中での \ の処理をまともにした<br>　　　　　文字列中で「 \ のすぐ後ろの " は文字列終端ではない」という単純処理だったため<br>　　　　　"C:\\Windows\\" で " が終端として扱かわれなかったのを直した。<br>　　　　　# まだ制限あり。「さまざまな制約」参照。<br>　　　　・q qq qx 単体でも色分けするようにしてあったが、それに対する除外処理が不完全であった。<br>　　　　　（変数名や何かに q が使われている場合に、「その q はシングルクォートじゃぁない」<br>　　　　　　という処理が不完全だった）<br>　　　　・かご さん「$や@で始まる変数を強調表示」要望に対応<br>　　　　・このファイルと色指定ファイルも同梱。<br><br>　　2002/06/21<br>　　　　・$q や $qq が変数表示にならなかった。<br>　　　　・$ppp'var が $ppp のみ変数表示で 'var 以降がシングルクォートになってしまっていた。<br>　　　　　$#ppp'var も同様だった。<br>　　　　　（2002/06/21-12 で変数の色分けをおこなった時に混ざった不具合。記述がいい加減過ぎました m(_ _)m）<br>　　　　・たわむれに &amp;func も色分けしてみた。<br>　　　　・"\\" とか "\\\\" で、末尾の " が文字列の終端扱いにならなかった。<br>　　　　　qq(\\) とか qq(\\\\) , qq{\\\\\\} , qx(\\) とかも同様<br>　　　　　↑この対処で、どさくさに紛れて qq{} が色分けされなかった不具合も直った。<br>　　　　・$$ver とかに対応していなかった。まだ対応は不完全だと思います。<br>　　　　　でもひょっとして対応しない方が良かった？<br>　　　　　$$var は ${$var} という扱いなわけで、$var 部分のみ色分けされた方が．．．っていう気もちょっとする。<br><br>end of file<br></div></section>
+    <ul><li><section><h1 id=2046>
+    <span class="no">[2046]</span>
+    <a class="title" href="#2046">Re7: クォーテーションの処理について（追伸）</a>
+    <span class="author">すい</span>
+    <time datetime="2002-06-22T00:05:10">2002年06月22日 00:05</time></h1>
+    <div class="body">&gt;さらに修正。<br>さらに修正。<br>http://www.egroups.co.jp/files/sakura-editor/User/Data/perl_20020621_21.lzh<br><br>正規表現を見直して無駄な記述を削減、整理整頓しただけで、<br>処理内容には変更は全く無い（はず）ですが。<br><br>無駄な処理が減ったはず。<br>定義も７行減りました。<br></div></section>
+    <ul><li><section><h1 id=2051>
+    <span class="no">[2051]</span>
+    <a class="title" href="#2051">Re8: クォーテーションの処理について（追伸）</a>
+    <span class="author">すい</span>
+    <time datetime="2002-06-24T20:25:50">2002年06月24日 20:25</time></h1>
+    <div class="body">&gt;&gt;さらに修正。<br>&gt;さらに修正。<br>さらに修正。<br><br>アナウンスするのも面倒になってきたし、こんな書き込み、無駄なだけで<br>鬱陶しいと思いますので、今後は特にアナウンス無しという事で、<br>http://www.egroups.co.jp/files/sakura-editor/User/Data/<br>から最新版を取っていってくださいませ。m(_ _)m<br><br><br>・'',q??,qq??,qx?? 文字列について \\ や \' の処理をやってなかったので、やるようにした。<br>・文字列中の \" の処理は完璧にした。<br>・``(バッククォート)にも対応した。<br>・m// , s/// , y/// , tr/// も色分けしてみた。<br>・他、全体を見直し、無駄な記述を削除、誤りの修正。<br></div></section>
+    <ul><li><section><h1 id=2057>
+    <span class="no">[2057]</span>
+    <a class="title" href="#2057">Bregexp.dll</a>
+    <span class="author">すい</span>
+    <time datetime="2002-06-25T21:10:04">2002年06月25日 21:10</time></h1>
+    <div class="body">&gt;&gt;&gt;さらに修正。<br>&gt;&gt;さらに修正。<br>&gt;さらに修正。<br>さらに修正。<br><br>http://www.egroups.co.jp/files/sakura-editor/User/Data/<br><br>「アナウンスしない」と言ったのですが、本体動作にからむ問題に気付いたので今回だけ例外という事で。<br><br>2002/06/25-20時<br>　　・ m// , s/// , y/// , tr/// の色分けのせいで split,substr,mkdir,truncate など s,m,tr で<br>　　　始まる強調キーワードが強調表示されなくなってしまっていたので修正。<br>　　　同様に qr,qw,quotemeta など、 q で始まる強調キーワードが強調表示されていなかったので修正。<br>　　　お手軽に「単語の境界 \b 」を使用するようにして修正したのだが、何か動作が変。 (;^^)a<br>　　　正規表現 m/\bqq/k が「Ａqq()」にはマッチするが「Ｂqq()」にはマッチしない。<br>　　　どうも　Bregexp.dll V1.1 Build 22 Apr 29 2000 21:13:19　の \b が２バイト文字に対応していない<br>　　　らしく、“２バイト目の文字コードが [A-Za-z_] である全角文字”の直後に [A-Za-z_] が来ている場合、<br>　　　その文字間を単語の境界と見なしてくれないらしい。。。<br>　　　実際のスクリプトでは「Ｂqq()」とか「５s///」とか「アtr/A-Z/a-z/」とか、、、<br>　　　こんな記述しないだろうから、これは放っておく事にする。<br>　　　↑は、まぁ良いとして、これってつまり、サクラエディタ本体でも正規表現検索／置換で \b がまともに<br>　　　使えない事では。。。あ、正常に動かん。(笑)(笑)(笑)(笑)(笑)<br><br><br>という事で、正規表現検索／置換では \b は正常動作しませんのでご注意。 ＞ 正規表現ユーザー各位<br>これはどうすれば．．．Bregexp.dll の作者さんに対して報告？<br>Bregexp.dll の仕様だったりして。(汗)<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

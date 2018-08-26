@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>小さな要望(空行挿入)</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2170</span>
+    <a class="title" href="2170.html#2170">小さな要望(空行挿入)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2172</span>
+    <a class="title" href="2170.html#2172">Re:小さな要望(空行挿入)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2173</span>
+    <a class="title" href="2170.html#2173">RE: 小さな要望(空行挿入)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2174</span>
+    <a class="title" href="2170.html#2174">RE2: 訂正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2176</span>
+    <a class="title" href="2170.html#2176">RE3: 訂正</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2179</span>
+    <a class="title" href="2170.html#2179">Re2: 小さな要望(空行挿入)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2181</span>
+    <a class="title" href="2170.html#2181">Re3: 小さな要望(空行挿入)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2182</span>
+    <a class="title" href="2170.html#2182">Re4: 小さな要望(空行挿入)</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2170>
+    <span class="no">[2170]</span>
+    <a class="title" href="#2170">小さな要望(空行挿入)</a>
+    <span class="author">しゃ</span>
+    <time datetime="2002-08-08T16:52:52">2002年08月08日 16:52</time></h1>
+    <div class="body"><br>要望その１<br><br>秀丸にある「空行の挿入」<br>Mifes(DOS版)にある「Ctrl+N」相当の機能を付加してほしいです。<br><br>要望その２<br>あと、検索で、「次を検索」して該当行の検索文字のハイライトした<br>状態で、その行を削除することができません。(一回カーソルを動かして<br>ハイライトを外してからやらないとダメ)<br>編集時、xxxのある行を選んで削除という操作を早くできるように<br>したいのです。<br></div></section>
+    <ul><li><section><h1 id=2172>
+    <span class="no">[2172]</span>
+    <a class="title" href="#2172">Re:小さな要望(空行挿入)</a>
+    <span class="author">KENCH</span>
+    <time datetime="2002-08-08T21:24:22">2002年08月08日 21:24</time></h1>
+    <div class="body">▼ しゃさん<br>&gt; 秀丸にある「空行の挿入」<br>私は、マクロで対応してます。<br><br>&gt; 要望その２<br>私の要望「範囲指定があれば、それを削除する」が効いているのかも・・・(^^;<br>検索の時にハイライトになってなければよいのかな、、、</div></section>
+    </li><li><section><h1 id=2173>
+    <span class="no">[2173]</span>
+    <a class="title" href="#2173">RE: 小さな要望(空行挿入)</a>
+    <span class="author">すい</span>
+    <time datetime="2002-08-08T21:37:47">2002年08月08日 21:37</time></h1>
+    <div class="body">&gt;要望その１<br>&gt;秀丸にある「空行の挿入」<br>&gt;Mifes(DOS版)にある「Ctrl+N」相当の機能を付加してほしいです。<br><br>マクロ使えば可能かと。<br><br>１．[ツール(T)]→[キーマクロの記録開始(R)] で記録開始。<br>　　キー操作 [Home]→[Enter]→[↑] とキー操作。<br>　　[ツール(T)]→[キーマクロの記録終了(R)] で操作内容を記録終了。<br><br>２．[ツール(T)]→[キーマクロの保存(M)] で、上記↑記録内容をファイルに保存。<br>　　例えば InsNL.MAC とかいう名前で保存してみる。<br><br>３．上記 InsNL.MAC をエディタで開いて、<br>　　S_GoLineTop(0); ←の (0) を (1) に書換えて保存する。<br>　　# S_GoLineTop(0) だとオートインデント処理されてしまう。<br>　　# S_GoLineTop(1) なら常に行頭へ飛ぶ。<br><br>３．[ツール(T)]→[共通設定(C)]→[マクロ] タブにて<br>　　マクロ一覧から適当に空いている行を選択してから、<br>　　・名前(N)[空行の挿入        ]<br>　　・File　 [InsNL.MAC         ] ↑上記で保存したファイルを指定する。<br>　　で、[設定(A)] 押して設定する。<br>　　その後、[OK] で共通設定を一旦閉じる。<br><br>４．もう一度、共通設定画面を出す。<br>　　共通設定の [キー割り当て] タブにて<br>　　・Ctrl にチェックを付ける<br>　　・キー(Y) から Ctrl+N を選択する。<br>　　・種類(K) で「外部マクロ」を選択する。<br>　　・機能(F) から「空行の挿入」を選択する。<br>　　で、[割付(B)] 押して設定してから [OK] で共通設定を閉じる。<br><br>これで Ctrl+N で空行の挿入がされるようになります。<br>私は Shift+Ctrl+N に割り当てましたけど。＜空行の挿入<br><br>&gt;要望その２<br>&gt;あと、検索で、「次を検索」して該当行の検索文字のハイライトした<br>&gt;状態で、その行を削除することができません。(一回カーソルを動かして<br>&gt;ハイライトを外してからやらないとダメ)<br>&gt;編集時、xxxのある行を選んで削除という操作を早くできるように<br>&gt;したいのです。<br><br>正規表現で置換すれば？<br><br>文字列「xxx」を含む行を改行ごとバッサリ削除する場合<br># 実際には xxx の所を任意の希望文字列にして↓<br>置換画面を出して、<br>・置換前(N)「.*xxx.*\r?\n」　←先頭のピリオド(小数点)を見落とさないように!!<br>・置換後(P)「　　　　　」　　←空にしておく<br>・正規表現(E)　←チェックする<br>で、置換していけば OK。<br><br>[置換(R)] ボタンで、今ヒットしている行が無くなります。<br>[下検索(D)] ボタンで、今ヒットしている行はそのままにして、次の該当行へ飛びます。<br><br>「改行ごとバッサリ」ではなく、「改行コードを残して空行のみ」にしたい場合は<br>置換前を「.*xxx.*[^\r\n]」にするだけです。<br></div></section>
+    <ul><li><section><h1 id=2174>
+    <span class="no">[2174]</span>
+    <a class="title" href="#2174">RE2: 訂正</a>
+    <span class="author">すい</span>
+    <time datetime="2002-08-08T21:50:42">2002年08月08日 21:50</time></h1>
+    <div class="body">&gt;文字列「xxx」を含む行を改行ごとバッサリ削除する場合<br>&gt;# 実際には xxx の所を任意の希望文字列にして↓<br>&gt;置換画面を出して、<br>&gt;・置換前(N)「.*xxx.*\r?\n」　←先頭のピリオド(小数点)を見落とさないように!!<br>↑よくよく考えたら \r? は不要でした。(^^ゞ<br>「.*xxx.*\n」で OK ですね。<br></div></section>
+    <ul><li><section><h1 id=2176>
+    <span class="no">[2176]</span>
+    <a class="title" href="#2176">RE3: 訂正</a>
+    <span class="author">すい</span>
+    <time datetime="2002-08-08T23:14:14">2002年08月08日 23:14</time></h1>
+    <div class="body">いかん。もう１か所 訂正です。<br># 何やってるんだ ＞ 私<br># 寝ぼけてる？ ＞ 私<br><br>&gt;&gt;「改行ごとバッサリ」ではなく、「改行コードを残して空行のみ」にしたい場合は<br>&gt;&gt;置換前を「.*xxx.*[^\r\n]」にするだけです。<br>↑こっちも誤りです。<br>置換前「.*xxx[^\r\n]*」 です。<br></div></section>
+    </li></ul></li><li><section><h1 id=2179>
+    <span class="no">[2179]</span>
+    <a class="title" href="#2179">Re2: 小さな要望(空行挿入)</a>
+    <span class="author">しゃ</span>
+    <time datetime="2002-08-09T10:36:07">2002年08月09日 10:36</time></h1>
+    <div class="body">▼ すいさん<br>&gt; &gt;要望その１<br>snip<br>&gt; マクロ使えば可能かと。<br><br>これで、いけそうですね。ありがとうございます。<br><br>&gt; &gt;要望その２<br>snip<br>&gt; 正規表現で置換すれば？<br><br>うーん。ここまで重くなく、もっと手軽なことをする操作が<br>多いのです。<br>検索＆確認しながら削除してゆくというものです。<br>選択されていても、１行削除の機能が使えるか、<br>検索に「マッチした行をハイライトにするが、選択せず」<br>みたいなオプションがあればよいのですが・・・<br></div></section>
+    <ul><li><section><h1 id=2181>
+    <span class="no">[2181]</span>
+    <a class="title" href="#2181">Re3: 小さな要望(空行挿入)</a>
+    <span class="author">すい</span>
+    <time datetime="2002-08-09T12:46:00">2002年08月09日 12:46</time></h1>
+    <div class="body">&gt;&gt; &gt;要望その２<br>&gt;snip<br>&gt;&gt; 正規表現で置換すれば？<br>&gt;<br>&gt;うーん。ここまで重くなく、もっと手軽なことをする操作が<br>&gt;多いのです。<br>&gt;検索＆確認しながら削除してゆくというものです。<br>&gt;選択されていても、１行削除の機能が使えるか、<br>&gt;検索に「マッチした行をハイライトにするが、選択せず」<br>&gt;みたいなオプションがあればよいのですが・・・<br><br>なら、キー操作<br>[Esc]キー → Shift+Ctrl+E<br>の操作をマクロ登録すればどう？<br><br>※ Shift+Ctrl+E：編集→高度な操作→行削除 ね<br></div></section>
+    <ul><li><section><h1 id=2182>
+    <span class="no">[2182]</span>
+    <a class="title" href="#2182">Re4: 小さな要望(空行挿入)</a>
+    <span class="author">しゃ</span>
+    <time datetime="2002-08-09T14:36:33">2002年08月09日 14:36</time></h1>
+    <div class="body">▼ すいさん<br>成るほど、これもマクロですね。<br>できますね。ありがとう御座います。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

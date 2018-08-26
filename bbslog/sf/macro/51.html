@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>コピーバッファによる検索</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">51</span>
+    <a class="title" href="51.html#51">コピーバッファによる検索</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">55</span>
+    <a class="title" href="51.html#55">Re:コピーバッファによる検索</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=51>
+    <span class="no">[51]</span>
+    <a class="title" href="#51">コピーバッファによる検索</a>
+    <span class="author">萬屋管理人</span>
+    <time datetime="2003-11-13T18:46:03">2003年11月13日 18:46</time></h1>
+    <div class="body">現在コピーバッファに入っている内容で検索することは可能でしょうか？</div></section>
+    <ul><li><section><h1 id=55>
+    <span class="no">[55]</span>
+    <a class="title" href="#55">Re:コピーバッファによる検索</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-01-01T05:29:15">2004年01月01日 05:29</time></h1>
+    <div class="body">▼ 萬屋管理人さん<br>&gt; 現在コピーバッファに入っている内容で検索することは可能でしょうか？ <br>いいえ、しかし選択中の文字で検索することは可能です。<br>レイ：<br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに <br>// PPA.DLL を入れておいてください。<br>// また、マクロファイルの拡張子は .PPA でなくてはなりません。<br>// PASTENEXT.PPA<br>// クリップボードの内容で前検索開始（複数行の貼り付けは不可）<br>var<br>  ss, st, se: String;<br>  is, it, ie: Integer;<br>begin<br>  S_CancelMode();  // 選択中の文字が有る場合<br>  st := S_ExpandParameter('$x');<br>  S_Paste();<br>  se := S_ExpandParameter('$x');<br>  ie := se;<br>  S_BeginSelect();<br>  for is := ie - 1 downto st do<br>    S_Left();<br>  ss := S_GetSelectedString(0);<br>  S_Delete();<br>  S_CancelMode();<br>  S_SearchNext(ss,0);<br>end.<br></div></section>
+    </li></ul></li></ul></body></html>

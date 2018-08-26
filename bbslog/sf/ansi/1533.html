@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Ctrl + Home、Shift + ↓</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1533</span>
+    <a class="title" href="1533.html#1533">Ctrl + Home、Shift + ↓</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1558</span>
+    <a class="title" href="1533.html#1558">Re:Ctrl + Home、Shift + ↓</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1566</span>
+    <a class="title" href="1533.html#1566">Re2:Ctrl + Home、Shift + ↓</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1595</span>
+    <a class="title" href="1533.html#1595">Re3:Ctrl + Home、Shift + ↓</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1596</span>
+    <a class="title" href="1533.html#1596">Re4:Ctrl + Home、Shift + ↓</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1600</span>
+    <a class="title" href="1533.html#1600">Re5:Ctrl + Home、Shift + ↓</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1603</span>
+    <a class="title" href="1533.html#1603">Re6:Ctrl + Home、Shift + ↓</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1533>
+    <span class="no">[1533]</span>
+    <a class="title" href="#1533">Ctrl + Home、Shift + ↓</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-09T23:55:44">2002年02月09日 23:55</time></h1>
+    <div class="body">Ctrl + Homeを実行すると行頭にカーソルが移動し、<br>続けてShift + ↓を実行すると、一行だけ丸ごと範囲選択だと思うのですが、<br>実際には、2行目も少し選択されるようです。<br><br>2行目は、Ctrl + Homeを実行する前のカーソル位置まで選択されるみたいです。</div></section>
+    <ul><li><section><h1 id=1558>
+    <span class="no">[1558]</span>
+    <a class="title" href="#1558">Re:Ctrl + Home、Shift + ↓</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-11T22:30:22">2002年02月11日 22:30</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; Ctrl + Homeを実行すると行頭にカーソルが移動し、<br>&gt; 続けてShift + ↓を実行すると、一行だけ丸ごと範囲選択だと思うのですが、<br>&gt; 実際には、2行目も少し選択されるようです。<br>&gt; <br>&gt; 2行目は、Ctrl + Homeを実行する前のカーソル位置まで選択されるみたいです。<br><br>範囲選択中にファイルの先頭,末尾へ移動する場合はこの動作がいいと思います。<br>特に矩形選択時は直前のカーソル位置が↑↓キーで復元できないとつらい・・・<br><br>でも選択中じゃないときは直前のカーソル位置を復元しなくても良いような気もしますので、<br>CEditView::Command_GOFILETOP と CEditView::Command_GOFILEEND の<br>return 直前に if( !IsTextSelected() ) m_nCaretPosX_Prev = 0; <br>ってゆうのをいれてみてはいかがでしょうか？</div></section>
+    <ul><li><section><h1 id=1566>
+    <span class="no">[1566]</span>
+    <a class="title" href="#1566">Re2:Ctrl + Home、Shift + ↓</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-13T10:14:13">2002年02月13日 10:14</time></h1>
+    <div class="body">&gt; でも選択中じゃないときは直前のカーソル位置を復元しなくても良いような気もしますので、<br>&gt; CEditView::Command_GOFILETOP と CEditView::Command_GOFILEEND の<br>&gt; return 直前に if( !IsTextSelected() ) m_nCaretPosX_Prev = 0; <br>&gt; ってゆうのをいれてみてはいかがでしょうか？<br><br>いれてみまーす。ありがとう～。</div></section>
+    <ul><li><section><h1 id=1595>
+    <span class="no">[1595]</span>
+    <a class="title" href="#1595">Re3:Ctrl + Home、Shift + ↓</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-14T18:09:15">2002年02月14日 18:09</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; &gt; でも選択中じゃないときは直前のカーソル位置を復元しなくても良いような気もしますので、<br>&gt; &gt; CEditView::Command_GOFILETOP と CEditView::Command_GOFILEEND の<br>&gt; &gt; return 直前に if( !IsTextSelected() ) m_nCaretPosX_Prev = 0; <br>&gt; &gt; ってゆうのをいれてみてはいかがでしょうか？<br>&gt; <br>&gt; いれてみまーす。ありがとう～。<br><br>CEditView::Command_GOFILEEND は<br><br>if( !IsTextSelected() ) m_nCaretPosX_Prev = m_nCaretPosX;<br><br>にした方が良さそう・・・</div></section>
+    <ul><li><section><h1 id=1596>
+    <span class="no">[1596]</span>
+    <a class="title" href="#1596">Re4:Ctrl + Home、Shift + ↓</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-14T19:21:29">2002年02月14日 19:21</time></h1>
+    <div class="body">▼ horさん<br><br>これじゃだめ？？<br>Command_GOFILETOP<br><br>  /* 先頭へカーソルを移動 */<br>  //&#9;Sep. 8, 2000 genta<br>  AddCurrentLineToHistory();<br>  MoveCursor( 0, 0, TRUE );<br>+ m_nCaretPosX_Prev = m_nCaretPosX;<br>+ m_nCaretPosX = 0;<br><br>Command_GOFILEEND<br><br>  Command_GOLINEEND( bSelect, TRUE );&#9;&#9;&#9;&#9;// 2001.12.21 hor Add<br>  MoveCursor( m_nCaretPosX, m_nCaretPosY, TRUE );&#9;// 2001.12.21 hor Add<br>+ m_nCaretPosX_Prev = m_nCaretPosX;<br><br>カーソル関係はさっぱり理解してないけれど、私が意図しているのは<br>これで動く動作なのです。いかがでございましょう？</div></section>
+    <ul><li><section><h1 id=1600>
+    <span class="no">[1600]</span>
+    <a class="title" href="#1600">Re5:Ctrl + Home、Shift + ↓</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-14T22:03:55">2002年02月14日 22:03</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ▼ horさん<br>&gt; <br>&gt; これじゃだめ？？<br>&gt; Command_GOFILETOP<br>&gt; <br>&gt;   /* 先頭へカーソルを移動 */<br>&gt;   //&#9;Sep. 8, 2000 genta<br>&gt;   AddCurrentLineToHistory();<br>&gt;   MoveCursor( 0, 0, TRUE );<br>&gt; + m_nCaretPosX_Prev = m_nCaretPosX;<br>&gt; <br>&gt; Command_GOFILEEND<br>&gt; <br>&gt;   Command_GOLINEEND( bSelect, TRUE );&#9;&#9;&#9;&#9;// 2001.12.21 hor Add<br>&gt;   MoveCursor( m_nCaretPosX, m_nCaretPosY, TRUE );&#9;// 2001.12.21 hor Add<br>&gt; + m_nCaretPosX_Prev = m_nCaretPosX;<br>&gt; <br>&gt; カーソル関係はさっぱり理解してないけれど、私が意図しているのは<br>&gt; これで動く動作なのです。いかがでございましょう？<br><br>大きなファイルの矩形編集がつらくなってしまいそうな気がします。<br>    下記のどちらかでいきませんか？<br><br>∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞<br><br>Command_GOFILETOP<br>    if( !IsTextSelected() ) m_nCaretPosX_Prev = 0;<br>    return;<br>Command_GOFILEEND<br>    if( !IsTextSelected() ) m_nCaretPosX_Prev = m_nCaretPosX;<br>    return;<br><br>∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞<br><br>Command_GOFILETOP<br>    if( !(IsTextSelected() &amp;&amp; m_bBeginBoxSelect) ) m_nCaretPosX_Prev = 0;<br>    return;<br>Command_GOFILEEND<br>    if( !(IsTextSelected() &amp;&amp; m_bBeginBoxSelect) ) m_nCaretPosX_Prev = m_nCaretPosX;<br>    return;<br></div></section>
+    <ul><li><section><h1 id=1603>
+    <span class="no">[1603]</span>
+    <a class="title" href="#1603">Re6:Ctrl + Home、Shift + ↓</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-15T13:31:19">2002年02月15日 13:31</time></h1>
+    <div class="body">じゃぁこういうのはどうかな？<br><br>Command_GOFILETOP<br><br>   /* 先頭へカーソルを移動 */<br>   //&#9;Sep. 8, 2000 genta<br>   AddCurrentLineToHistory();<br>+  MoveCursor( m_nCaretPosX, 0, TRUE );<br>+//m_nCaretPosX_Prev = m_nCaretPosX;<br><br>カーソルのX座標はそのままに、1行目に移動。<br>そうすれば、選択範囲と、カーソルの位置が食い違わなくて済む。<br>違和感があったのは、選択範囲と、実際のカーソル位置（X座標）が食い違っていたからです。<br><br>カーソルをホントにファイルの先頭に移動したいときは、<br>CTRL＋HOME→HOME<br>と2回押さなきゃいけなくなるけど。<br><br>GOFILEENDのほうも同様</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>（無題）</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3908</span>
+    <a class="title" href="3908.html#3908">（無題）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3921</span>
+    <a class="title" href="3908.html#3921">Re: （無題）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3926</span>
+    <a class="title" href="3908.html#3926">Re2: Grep で ,v が引っかかる</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3927</span>
+    <a class="title" href="3908.html#3927">Re2: （ちょい訂正）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3928</span>
+    <a class="title" href="3908.html#3928">Re3: （ちょい訂正）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3931</span>
+    <a class="title" href="3908.html#3931">Re4: (workaround)</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3908>
+    <span class="no">[3908]</span>
+    <a class="title" href="#3908">（無題）</a>
+    <span class="author">びちまるこちゃん</span>
+    <time datetime="2004-07-04T17:57:43">2004年07月04日 17:57</time></h1>
+    <div class="body">grep でファイル名に "*.c" を指定しても *.c,v がひっかかっ<br>てしまいます。検索対象から外すにはどうすればいいでしょうか。<br>"*.c " とか "*.c$" とかやってはみたのですが、ダメなようで。</div></section>
+    <ul><li><section><h1 id=3921>
+    <span class="no">[3921]</span>
+    <a class="title" href="#3921">Re: （無題）</a>
+    <span class="author">もか</span>
+    <time datetime="2004-07-09T23:22:10">2004年07月09日 23:22</time></h1>
+    <div class="body">Grepのファイル名で、*.cで*.c,vは引っかからないはずです。<br>,vが.vに変わってしまっているとかありませんか。<br>解凍/展開したファイルだったら、ツールによっては, を. に自動変換するソフトもあるらしいです。<br><br>どうしてもだめなら、「*.c !*.c,v」と入力してみてください。<br></div></section>
+    <ul><li><section><h1 id=3926>
+    <span class="no">[3926]</span>
+    <a class="title" href="#3926">Re2: Grep で ,v が引っかかる</a>
+    <span class="author">びちまるこちゃん</span>
+    <time datetime="2004-07-11T20:54:14">2004年07月11日 20:54</time></h1>
+    <div class="body">▼ もかさん<br>&gt; Grepのファイル名で、*.cで*.c,vは引っかからないはずです。<br>&gt; ,vが.vに変わってしまっているとかありませんか。<br>&gt; 解凍/展開したファイルだったら、ツールによっては, を. に自動変換するソフトもあるらしいです。<br>&gt; <br>&gt; どうしてもだめなら、「*.c !*.c,v」と入力してみてください。<br><br>ダメでした。<br><br>%ls -lRA hoge<br><br>hoge:<br>-a--rw-        7 Jul 11 20:37               hoge.c<br>-a--rw-        7 Jul 11 20:37               hoge.cpp<br>d---rwx        0 Jul 11 20:49               RCS<br><br>hoge/rcs:<br>-a--rw-        7 Jul 11 20:37 hoge~1.c_v    hoge.c,v<br>-a--rw-        7 Jul 11 20:37 hoge~1.cpp    hoge.cpp,v<br><br>%<br><br><br>□検索条件  "hello"<br>検索対象   *.c<br>フォルダ   D:\hoge\<br>    (サブフォルダも検索)<br>    (文字コードセットの自動判別)<br><br><br>■"D:\hoge\hoge.c"  [SJIS]<br>・(     1,1    ): hello<br>1 個が検索されました。<br><br>□検索条件  "hello"<br>検索対象   *.cpp<br>フォルダ   D:\hoge\<br>    (サブフォルダも検索)<br>    (文字コードセットの自動判別)<br><br><br>■"D:\hoge\hoge.cpp"  [SJIS]<br>・(     1,1    ): hello<br>■"D:\hoge\RCS\hoge.cpp,v"  [SJIS]<br>・(     1,1    ): hello<br>2 個が検索されました。<br><br>□検索条件  "hello"<br>検索対象   *.cpp !*.cpp,v<br>フォルダ   D:\hoge\<br>    (サブフォルダも検索)<br>    (文字コードセットの自動判別)<br><br><br>0 個が検索されました。<br></div></section>
+    </li><li><section><h1 id=3927>
+    <span class="no">[3927]</span>
+    <a class="title" href="#3927">Re2: （ちょい訂正）</a>
+    <span class="author">びちまるこちゃん</span>
+    <time datetime="2004-07-11T23:27:11">2004年07月11日 23:27</time></h1>
+    <div class="body">▼ もかさん<br>&gt; Grepのファイル名で、*.cで*.c,vは引っかからないはずです。<br><br>ごめん、*.c は大丈夫で *.cpp がダメなのです。<br>そういう意味で &lt;3908&gt; に書いた内容は不正確でした。<br></div></section>
+    <ul><li><section><h1 id=3928>
+    <span class="no">[3928]</span>
+    <a class="title" href="#3928">Re3: （ちょい訂正）</a>
+    <span class="author">もか</span>
+    <time datetime="2004-07-12T00:45:45">2004年07月12日 00:45</time></h1>
+    <div class="body">私のほうも一箇所訂正です。<br>実は、ヘルプにも書いてあったことですが、 (スペース),(コンマ);(セミコロン)は、区切り文字扱いになるので、ファイル名の一部として使う場合、"と"で囲う必要があります。<br>そういうわけで、「*.cpp !"*.cpp,v"」としてください。(こちらはヘルプには記述がありません)<br>「*.cpp !*.cpp,v」だと、*.cppであって、*.cppでなくて、vというファイル名という意味で、結局「v」というファイル名から検索ということになってました。<br><br>#ちなみに、ご察しの通り、DOS名はOSの都合で検索対象になります。<br></div></section>
+    <ul><li><section><h1 id=3931>
+    <span class="no">[3931]</span>
+    <a class="title" href="#3931">Re4: (workaround)</a>
+    <span class="author">びちまるこちゃん</span>
+    <time datetime="2004-07-13T16:27:46">2004年07月13日 16:27</time></h1>
+    <div class="body">ちわ。*.cpp !"*.cpp,v" でうまくいきました。<br><br>&gt;DOS名はOSの都合で検索対象になります。<br><br>僕は rcs/ を hidden にしているので、hidden 属性の<br>フォルダ／ファイルを除外する、というチェックボックス<br>（機能）をつけてもらうと助かります。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

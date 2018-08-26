@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>mrc2brcのバグ修正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3289</span>
+    <a class="title" href="3289.html#3289">mrc2brcのバグ修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3294</span>
+    <a class="title" href="3289.html#3294">Re: mrc2brcのバグ修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3295</span>
+    <a class="title" href="3289.html#3295">Re2: mrc2brcのバグ修正</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3296</span>
+    <a class="title" href="3289.html#3296">Re2: mrc2brcのバグ修正</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3289>
+    <span class="no">[3289]</span>
+    <a class="title" href="#3289">mrc2brcのバグ修正</a>
+    <span class="author">もか</span>
+    <time datetime="2003-10-31T18:11:03">2003年10月31日 18:11</time></h1>
+    <div class="body">RcCvt::setErr()で、未初期化のバッファに対し、strcatで文字列を追加しています。<br>ついでに、バッファ確保で+1しなくてもいいはず。<br><br>diff -u ..\..\ssrc_2003-09-20\btool\rcCvt.cpp D:\network\LavieZ\dev\sakura\ssrc_2003-0<br>9-20wchar09\btool\RcCvt.cpp<br>--- ssrc_2003-10-13mui\btool\RcCvt.cpp  Fri Feb 01 22:44:08 2002<br>+++ ssrc_2003-09-20wchar09\btool\RcCvt.cpp      Fri Oct 31 18:00:16 2003<br>@@ -37,14 +37,17 @@<br> &#9;char *t;<br> &#9;int lcr = strlen(errstr)+2;<br> &#9;if( strerr ){<br>-&#9;&#9;t = (char*)realloc( strerr , strlen(strerr)+lcr+1 );<br>+&#9;&#9;t = (char*)realloc( strerr , strlen(strerr)+lcr );<br> &#9;}else{<br>-&#9;&#9;t = (char*)malloc( lcr+1 );<br>+&#9;&#9;t = (char*)malloc( lcr );<br> &#9;}<br> &#9;if( t==NULL){<br> &#9;&#9;return false;<br> &#9;}<br> <br>+&#9;if( !strerr ){<br>+&#9;&#9;strcpy( t , "" );<br>+&#9;}<br> &#9;strcat( t, "\n" );<br> &#9;strcat( t, errstr );<br> &#9;strerr = t;<br></div></section>
+    <ul><li><section><h1 id=3294>
+    <span class="no">[3294]</span>
+    <a class="title" href="#3294">Re: mrc2brcのバグ修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-11-02T03:21:31">2003年11月02日 03:21</time></h1>
+    <div class="body">&gt;+&#9;if( !strerr ){<br>&gt;+&#9;&#9;strcpy( t , "" );<br>&gt;+&#9;}<br>mallocの代わりにcallocを使って0クリアを保証したほうが流れがわかりやすいかと思います．<br></div></section>
+    <ul><li><section><h1 id=3295>
+    <span class="no">[3295]</span>
+    <a class="title" href="#3295">Re2: mrc2brcのバグ修正</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-11-02T12:31:37">2003年11月02日 12:31</time></h1>
+    <div class="body">▼ もかさん<br>&gt;+        if( !strerr ){<br>&gt;+                strcpy( t , "" );<br>&gt;+        }<br><br>strcpyは、関数なので、<br>+        if( !strerr ){<br>+                *t = '\0';<br>+        }<br>が、早くて簡単だと思う。</div></section>
+    </li><li><section><h1 id=3296>
+    <span class="no">[3296]</span>
+    <a class="title" href="#3296">Re2: mrc2brcのバグ修正</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-11-02T12:53:54">2003年11月02日 12:53</time></h1>
+    <div class="body">▼ げんたさん<br>早いとはいい難いので、別の意味で解りやすくしてみました。<br>-&#9;strcat( t, "\n" );<br>+&#9;if( strerr ){<br>+&#9;&#9;strcat( t, "\n" );<br>+&#9;}else{<br>+&#9;&#9;*t = '\0';<br>+&#9;}<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

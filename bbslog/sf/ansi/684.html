@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ヘッダとフッダの変換例</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">684</span>
+    <a class="title" href="684.html#684">ヘッダとフッダの変換例</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">685</span>
+    <a class="title" href="684.html#685">Re:ヘッダとフッダの変換例</a></div>
+    </li><li><div class="list-title">
+    <span class="no">686</span>
+    <a class="title" href="684.html#686">Re: ヘッダとフッダの変換例</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">688</span>
+    <a class="title" href="684.html#688">Re2: ヘッダとフッダの変換例</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=684>
+    <span class="no">[684]</span>
+    <a class="title" href="#684">ヘッダとフッダの変換例</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-09-18T13:00:30">2001年09月18日 13:00</time></h1>
+    <div class="body">低レベル実装がお嫌いのようですね？<br>StrChr と CMemory を用いて書きなおしました。<br>StrChr が使えるか心配ですが。<br><br><br>CMemory* FormatHeaderFooter(char *pchSrc) {<br>  CMemory *pcmem = new CMemory;<br>  char szBuf[8], *pch = pchSrc;<br><br>  do {<br>    pch = StrChr(pch, '&amp;');<br>    if(pch == NULL) break; // '&amp;' が見つからなかった<br>    // '&amp;' の直前まで追加。<br>    cmem.Append(pchSrc, (int)(pch - pchSrc));<br>    pchSrc ++; // '&amp;' の次に移動。<br>    switch(*pchSrc) {<br>    case 'f': cmem.AppendSz(ファイル名); break;<br>    case 'P':<br>      sprintf(szBuf, "%ld", ページ番号);<br>      cmem.AppendSz(szBuf);  break;<br>      .....<br>    default: pch ++; // 読み飛ばし。<br>    }<br>    pchSrc = pch;<br>  } while(1);<br>  return cmem;<br>}<br></div></section>
+    <ul><li><section><h1 id=685>
+    <span class="no">[685]</span>
+    <a class="title" href="#685">Re:ヘッダとフッダの変換例</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-09-18T13:07:21">2001年09月18日 13:07</time></h1>
+    <div class="body">誤：<br>&gt;    default: pch ++; // 読み飛ばし。<br>&gt;    }<br>&gt;    pchSrc = pch;<br>&gt;  } while(1);<br>&gt;  return cmem;<br><br>正：<br>&gt;    default: pch = CMemory::MemCharNext(pch, 2, pch);<br>&gt;    }<br>&gt;    pchSrc = ++pch;<br>&gt;  } while(1);<br>&gt;  return cmem;<br></div></section>
+    </li><li><section><h1 id=686>
+    <span class="no">[686]</span>
+    <a class="title" href="#686">Re: ヘッダとフッダの変換例</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-09-18T17:41:03">2001年09月18日 17:41</time></h1>
+    <div class="body">▼あああ さん<br>なんか「あ」が一つ減っていますが気にしないことにして(^^ゞ<br><br>&gt;低レベル実装がお嫌いのようですね？<br>文字列の変換はいいんですけど，現在Headerは左揃えでFooterは中央揃えに固定になっているのも同時に何とかしたい．<br></div></section>
+    <ul><li><section><h1 id=688>
+    <span class="no">[688]</span>
+    <a class="title" href="#688">Re2: ヘッダとフッダの変換例</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-09-19T10:19:29">2001年09月19日 10:19</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 現在Headerは左揃えでFooterは中央揃えに固定になっているのも同時に何とかしたい．<br><br>1) [印刷ページ設定]にラジオボタンかドロップダウンを追加<br>2) CDlgPrintSetting に m_{Header,Footer}Align メンバを追加して GetData で揃えを取得<br>3) CEditWnd::OnPaint で揃えに対応した位置の計算<br><br>//**文字列の正確なサイズを求める方法**<br>SIZE sz;<br>GetTextExtentPoint32(hdc, lpsz, lstrlen(lpsz), &amp;sz);<br>GetTextMetrics(hdc, &amp;tm); // ラスタフォントを考慮して<br>// (幅 == sz.cx - tm.tmOverhang)<br>// (高さ == tm.tmHeight か sz.cy の好きな方)<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バッファオーバーラン</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">687</span>
+    <a class="title" href="687.html#687">バッファオーバーラン</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=687>
+    <span class="no">[687]</span>
+    <a class="title" href="#687">バッファオーバーラン</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-09-18T17:41:04">2001年09月18日 17:41</time></h1>
+    <div class="body">iniファイルを読み出す部分にバッファサイズのチェックがないので，iniを手で編集して長い文字列を設定したらやばいなと思いながらも後回しにしていたのですが，Debug Buildを走らせたらキーワードを読み込むところでアプリケーションエラーになりました．<br><br>サイズ計算が間違っているのか既にバッファからはみ出している可能性があります．<br></div></section>
+    </li></ul></body></html>

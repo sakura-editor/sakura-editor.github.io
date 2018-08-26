@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>コマンドラインオプションのマクロ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">8322</span>
+    <a class="title" href="8322.html#8322">コマンドラインオプションのマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8323</span>
+    <a class="title" href="8322.html#8323">Re:コマンドラインオプションのマクロ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">8324</span>
+    <a class="title" href="8322.html#8324">Re:コマンドラインオプションのマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8325</span>
+    <a class="title" href="8322.html#8325">Re2:コマンドラインオプションのマクロ</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=8322>
+    <span class="no">[8322]</span>
+    <a class="title" href="#8322">コマンドラインオプションのマクロ</a>
+    <span class="author">ねこ</span>
+    <time datetime="2018-04-02T14:05:18">2018年04月02日 14:05</time></h1>
+    <div class="body">sakura.exe "a.txt" -Y=10 -M=InsText('data') -MTYPE=mac<br><br>上記のようなコマンドライン引数を指定して実行した際に、<br>既に該当の「a.txt」ファイルがサクラで開かれていた場合、<br>-Yのカーソルの行位置へジャンプは動作するのですが、<br>-Mのマクロ実行は動作しませんでした。<br><br>「a.txt」ファイルがサクラで開かれていない場合は、<br>-Mのマクロは問題なく動作します。<br>-Mのマクロも-Yのように既にファイルが開かれていても<br>実行出来るようにする方法はありませんでしょうか？</div></section>
+    <ul><li><section><h1 id=8323>
+    <span class="no">[8323]</span>
+    <a class="title" href="#8323">Re:コマンドラインオプションのマクロ</a>
+    <span class="author">berryzplus</span>
+    <time datetime="2018-04-03T21:55:34">2018年04月03日 21:55</time></h1>
+    <div class="body">▼ ねこさん<br>&gt; -Mのマクロも-Yのように既にファイルが開かれていても<br>&gt; 実行出来るようにする方法はありませんでしょうか？<br><br>ありません。<br><br>-Yオプションの動作自体、要望で追加されたもののようです。<br>必要であれば自己改造を試みてみるといいと思います。<br><br><br>該当部分のソースは↓のあたりです。<br><br><a href=https://sourceforge.net/p/sakura-editor/code/HEAD/tree/sakura/trunk2/sakura_core/_main/CNormalProcess.cpp#l121 target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>HEAD/<wbr>tree/<wbr>sakura/<wbr>trunk2/<wbr>sakura_c<wbr>ore/<wbr>_main/<wbr>CNormalP<wbr>rocess.<wbr>cpp#<wbr>l121</nobr></a><br><br>121行目で起動済みのエディタプロセスと通信しています。<br>基本的にはこれを真似ればいいんですけど、<br>プロセス間通信になりますので、実装は少し手間かもしれません。<br><br></div></section>
+    </li><li><section><h1 id=8324>
+    <span class="no">[8324]</span>
+    <a class="title" href="#8324">Re:コマンドラインオプションのマクロ</a>
+    <span class="author">AC</span>
+    <time datetime="2018-04-03T23:37:34">2018年04月03日 23:37</time></h1>
+    <div class="body">先を越されてしまいました。<br><br>参考になれば良いのですが……。<br><br>#1115 追加のコマンドラインオプションを既存プロセスに渡します。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1115/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1115/<wbr></nobr></a><br><br>## 余談<br>## １文字でも中身のあるファイルと -X オプションを与えて<br>## -Y オプションを省略すると、キャレットを見失ってしまいます。<br>## 自分が書いた部分では無難な値を補うようにしました。<br></div></section>
+    <ul><li><section><h1 id=8325>
+    <span class="no">[8325]</span>
+    <a class="title" href="#8325">Re2:コマンドラインオプションのマクロ</a>
+    <span class="author">ねこ</span>
+    <time datetime="2018-04-04T13:53:35">2018年04月04日 13:53</time></h1>
+    <div class="body">&gt;&gt;berryzplusさん<br>丁寧に教えて頂きありがとうございます。<br>なるほど、元々そういった動きは想定していないものなのですね。<br><br>&gt;&gt;ACさん<br>パッチの方を使わせて頂きました。<br>想定していた通りの動きです！<br>複数のファイルやＸ位置などは使わない為、<br>現状のものでも非常に満足です、ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

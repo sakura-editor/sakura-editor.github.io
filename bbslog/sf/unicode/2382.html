@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>セキュアなsnprintf関数。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2382</span>
+    <a class="title" href="2382.html#2382">セキュアなsnprintf関数。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2383</span>
+    <a class="title" href="2382.html#2383">Re:セキュアなsnprintf関数。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2384</span>
+    <a class="title" href="2382.html#2384">Re2:セキュアなsnprintf関数。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2385</span>
+    <a class="title" href="2382.html#2385">Re3:セキュアなsnprintf関数。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2386</span>
+    <a class="title" href="2382.html#2386">Re4:セキュアなsnprintf関数。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2387</span>
+    <a class="title" href="2382.html#2387">Re5:セキュアなsnprintf関数。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2388</span>
+    <a class="title" href="2382.html#2388">Re5:セキュアなsnprintf関数。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2390</span>
+    <a class="title" href="2382.html#2390">Re6:セキュアなsnprintf関数。</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2393</span>
+    <a class="title" href="2382.html#2393">Re2:補足</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2382>
+    <span class="no">[2382]</span>
+    <a class="title" href="#2382">セキュアなsnprintf関数。</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-11-27T00:12:08">2016年11月27日 00:12</time></h1>
+    <div class="body">この１年間、荒らしのごとく掲示板に常駐しておりますが、<br>そろそろ何かリアクションが欲しいです。<br>sourceforgeのほうにパッチを送り続けるにしても、<br>現状の積滞パッチ件数95件、という状況から見て、<br>反応があるまで待っていられる自信がありません。<br><br>残件95件だと週1で消化したとしても2年です。<br>ここ1年の実績から考えると、週1なんて夢のようなペースですよね。<br><br>このままのらりくらりと、<br>見付けた不審点を「気ままに報告～」を続けていると<br>sakura editorのソフトウェアとしての信用に関わる気がします。<br>わたしとしては、それはすごく不本意なんです。<br><br>プロから見れば全然大したことない不具合であっても、<br>公開されたインターネットで指摘され、<br>しかも、長い間「未解決」のまま放置されている。。。<br>いまのsakura editorってそうなりつつあります。<br><br>コミッタ足りないなら手伝います。<br>ガチヲタ１匹、プロジェクトに参加させてください。<br><br><br>こないだsoureceforgeに書いた「auto系使えね」発言の責任をとるべく、<br>「使えるように整備してやろうじゃないか！」と<br>定義関数の総チェックに乗り出したところ、変なもの見付けてしまいました。<br><br>int auto_snprintf_s(WCHAR* buf, size_t count, const WCHAR* format, ...);<br><br>わたしが実装するとすれば↓な定義を作ると思います。<br>int auto_snprintf  (WCHAR* buf, size_t count, const WCHAR* format, ...);<br>int auto_snprintf_s(WCHAR* buf, size_t nBufSize, size_t count, const WCHAR* format, ...);<br>template&lt;size_t _BufSize&gt;<br>int auto_snprintf_s(WCHAR (&amp;buf)[_BufSize], size_t count, const WCHAR* format, ...);<br><br>指摘されれば「え、うそ。」みたいに思いますよね？<br>セキュア版関数って、一体何がセキュアなのか。<br><br>中の人向けなので詳しい内容は書きません。<br>是非、ご検討ください。<br></div></section>
+    <ul><li><section><h1 id=2383>
+    <span class="no">[2383]</span>
+    <a class="title" href="#2383">Re:セキュアなsnprintf関数。</a>
+    <span class="author">LR4</span>
+    <time datetime="2016-11-27T00:56:27">2016年11月27日 00:56</time></h1>
+    <div class="body">▼ ばぼさん<br>&gt; この１年間、荒らしのごとく掲示板に常駐しておりますが、<br>&gt; そろそろ何かリアクションが欲しいです。<br><br>え？、もう一年も経ったかしら<br>ていうか、一方的なゴリ押ししかしてないのに、<br>三年程度も待てず、一年足らずで物申すとか、あり得ない<br><br>&gt; 指摘されれば「え、うそ。」みたいに思いますよね？<br><br>水爆の父（Edward Teller）にでもなりたいかな？<br>それ、求めすぎてて、たとえ職人といえど異常ですからb<br>ロジックにだけ特化した気狂い<br><br>そう言われた覚えが今までに一度も無い、ってなら、どんだけ周囲が気遣ってくれてるんだか、自覚が必要<br><br>他に大事なもの、たくさんあるんだけどなぁ…<br>せめて「まともなAero Snap対応」とか「Per-Monitor DPI対応」くらい成し遂げてくれれば、少しは見込みもありそうだけれど<br><br>&gt; ガチヲタ１匹、プロジェクトに参加させてください。<br><br>おや、自信満々ですなぁ、誘われもせず「参加させろ」とは<br>※おいら的には「ください」は「させろ」と同意義なのねん<br><br>安易にコミッタ志願とか、無いわ<br><a href=../unicode#2120 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>unicode&amp;<wbr>tree=<wbr>r2120</nobr></a><br><br>単なる歯車としてであれば、彼の人の参加も有意義なのかもしれないけれど<br><br>さすがに、この程度の挑発に乗る程度の人材なら切ってしまったほうがいいと思われ<br>だって、その程度なら本人が病になるほどに苦労するだけだから<br><br>口が過ぎて申し訳ありません、気の毒な発言をしてしまいました。<br>今、この場で土下座しときます</div></section>
+    <ul><li><section><h1 id=2384>
+    <span class="no">[2384]</span>
+    <a class="title" href="#2384">Re2:セキュアなsnprintf関数。</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-11-27T18:06:33">2016年11月27日 18:06</time></h1>
+    <div class="body">▼ LR4さん<br>&gt; 口が過ぎて申し訳ありません、気の毒な発言をしてしまいました。<br>&gt; 今、この場で土下座しときます<br><br>いえ、問題ありません。<br>こちらこそ、あおるように書いてしまいました。<br>大変失礼しました。深くお詫びします。<br><br>私は現状のsakura editorの機能に満足しているので、<br>目新しい機能の追加よりも、機能の安定化に興味があります。<br>派手な機能追加の提案を行うことは、今後もありません。<br>機能追加の実装実績が見込みなのであれば、もうゼロです。<br><br><br>例示は「お題」ですかね。<br><br>Aero Snapは、邪魔になる場合があるのでオフにしてます。<br>使わない人間が手をだしちゃいかん機能ってありますよね。<br><br>Per Monitor DPIは多少興味があります。<br>作ったらFeature Requestsに入れます。<br>時期はクリスマス頃になると思います。<br>要らんかもしれませんが。<br><br><br>&gt; おや、自信満々ですなぁ、誘われもせず「参加させろ」とは<br>&gt; ※おいら的には「ください」は「させろ」と同意義なのねん<br><br>否定しません。<br><br>禍根の残らないように書いてしまうと<br>文脈的にはもっと酷いこと言ってるんです。<br>「見てられないから代われ」と言ってます。<br>実際にそこまでのことは思ってなかったんですが、<br>「参加させろ」の意図で書いたのは事実で、<br>どう考えても失礼な発言で、深く反省しております。<br><br>ただ、そのことと現状のままでよいかは別の問題で、<br>今後も自分なりに改善の努力を続けていきたいと考えています。<br></div></section>
+    <ul><li><section><h1 id=2385>
+    <span class="no">[2385]</span>
+    <a class="title" href="#2385">Re3:セキュアなsnprintf関数。</a>
+    <span class="author">もか</span>
+    <time datetime="2016-11-27T22:38:24">2016年11月27日 22:38</time></h1>
+    <div class="body">&gt;中の人向けなので詳しい内容は書きません<br>半分中の人です。中の人向けだからこそ書いてほしいです。<br><br>他人・自分の書いたコードの中には「許容可能」「ぎりぎり許容可能」「許容不可能」があります。<br>そのへんの閾値・種類は人によって異なるわけです。<br>例えば、new[]をdelete([]なし)で解放するとか、私は「許容不可能」に分類しています。<br>いっぽうで、私はauto_strlen,_tcslen,wcslen,lstrlenの混用をしょうがないので許容しています。<br>コーディングスタイルは、いまさら言っても始まらないので諦めています。<br><br>衝突の原因になるので、あまり言いたくはないですが<br>ぼぼさんに感じるのは、私とは信仰している宗教が違うみたいだ。<br>という点です。<br>宗教が違っても、お互い別の国に住んでる場合には問題ないのだけど、<br>同じ家に住んで、一緒の居間で過ごすとなると、双方に相応の努力が必要になってきます。<br><br>とりあえずぼぼさんは、セキュリティ対策っていうヤバめなタイトルのパッチを<br>・あるなら「本当にやばいと思う部分」脆弱性の修正(これは公開せずコミッタに直接送ってもいいです)<br>・予防措置的なセキュリティ対策<br>・inlineとか10マイクロ秒早くなるとかの、趣味的なもの<br>・初期化ミスとかのバグ類<br>みたいに意味のある単位に分離して、書き直した方がいいです。<br>でないと、でかいごちゃ混ぜの物を置いてかれても真面目に相手をしてもらえないです。<br><br>auto_snprintf_sについてはBufSize, countの2引数のそれぞれの意味と、<br>正しい想定した使い方を説明しないと「ただ見せびらかしてるだけ」です。<br>もちろんcount1引数ではダメである論理的な説明も必要です。<br>しかもこの前のauto_*はstrlenに関する話であってsprintfは無関係のはずです。<br>なお私は、10マイクロ秒、30バイト節約できるみたいな話に興味はありません。<br>でもコードの間違いが減る、コード変更に対する耐性が高くなる、簡素(分かりやすく)に書けるなどには興味があります。<br>ちなみに「え、うそ。」みたいには別に思いません。そう言う宗教もあるな、と思うだけです。<br><br>バッファ長を2引数にしたところで<br>TCHAR szRealBuf[100];<br>TCHAR* szBuf = szRealBuf;<br>auto_snprintf_s(szBuf, sizeof(szBuf), sizeof(szBuf), _T("%d"), linenum);<br>みたいに他人に書かれるのを防ぐ手立てがないんですよね。<br>しかも、後で変数宣言の方が書き変わったというパターンが多いので、見逃す可能性を否定できません。<br>結局最後は使う人だもの。正しい使い方を説明できなきゃだめだわ。<br>もちろん自分で説明する必要はないです、必要十分なURLを提示してくれれば。<br>追記：この例はよくないね。_countofを普通使うからエラーになる。(追記ここまで)<br><br>この二つは何がどう違うのか説明可能ですか。<br>void my_functuin1(wchar* out, size_t size){<br>    auto_snprintf_s(out, size, size, L"%d", g_linenum);<br>}<br>void my_functuin2(wchar* out, size_t size){<br>    auto_snprintf(out, size, L"%d", g_linenum);<br>}<br></div></section>
+    <ul><li><section><h1 id=2386>
+    <span class="no">[2386]</span>
+    <a class="title" href="#2386">Re4:セキュアなsnprintf関数。</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-11-30T01:15:39">2016年11月30日 01:15</time></h1>
+    <div class="body">&gt; この二つは何がどう違うのか説明可能ですか。<br>&gt; void my_functuin1(wchar* out, size_t size){<br>&gt;     auto_snprintf_s(out, size, size, L"%d", g_linenum);<br>&gt; }<br>&gt; void my_functuin2(wchar* out, size_t size){<br>&gt;     auto_snprintf(out, size, L"%d", g_linenum);<br>&gt; }<br><br>・1はoutにsize - 1文字書き込んで'\0'を付加します(溢れません)。<br>　出力がsizeを越えた場合、出力はsize-1文字に切り詰められます(溢れません)。<br>　出力がsizeを越えた場合、バッファサイズが足りない警告(戻り値!=0)が出ます。<br>・2はoutにsize文字書き込んで'\0'を付加します(出力=sizeで溢れます)。<br>　出力がsizeを越えた場合、出力はsize-1文字に切り詰められます(溢れません)。<br><br><br>いちおうちゃんと説明しましょう。<br><br>何が問題なのかを知るためには<br>sprintfシリーズの関数について、<br>発生した経緯から語るのがよさそうです。<br><br>まず、sprintf関数について。<br>40年くらい前、C言語が発生すると同時に生まれました。<br><br>　sprintf(out, format, ...)<br>　outに...の内容をformatの書式で出力する。<br><br>任意のデータを書式出力するprintf系関数の１つです。<br>出力先がメモリなのでI/O処理が要らず高速です。<br>確保したメモリの領域外に出力があふれてしまう障害、<br>バッファオーバーフローの危険が古くから指摘される関数です。<br><br>つぎに、snprintf関数。<br>15年くらい前にC言語の規格が改定されるときにできました。<br>sprintfが抱えるオーバーフロー問題への対策版です。<br><br>　snprintf(out, count, format, ...)<br>　countで最大文字数を指定し、出力を制限できる。<br><br>count文字出力すると末尾に'\0'を付加して終了します。<br>出力数がcount+1になるのが微妙ですが、<br>これはC言語が規格として提供するセキュア版sprintfです。<br><br>最後にマイクロソフトのセキュア版関数について。<br>10年くらい前、vc++2005が出たときにできました。<br>ほとんどすべてのメモリ書込みを行う関数に_s付きバージョンができました。<br><br>　sprintf_s(out, size, format, ...)<br><br>size - 1文字出力すると末尾に'\0'を付加して終了します。<br>最大出力数はsizeになります。<br>sprintf_s関数を使えば、sprintfの抱える問題をカバーできます。<br><br><br>じゃあ、snprintf_s関数は？<br><br>　snprintf_s(out, size, count, format, ...)<br><br>・・・ぶっちゃけるとわたしにもよく分りません。<br><br>countには _TRUNCATE という特別な値を指定できるのですが、<br>_TRUNCATEを指定した場合の動作はsprintf_sと等価です。<br>size - 1文字を上限に、できるだけたくさん出力する、という動きになります。<br>なんで存在するのかよく分らない関数です。<br><br>いま、snprintf_sが定義されていて、<br>snprintfがない状態になっています。<br>当然ですが、sprintf_sはちゃんとあります。<br><br>必要性が微妙な関数が間違った定義で定義されていて、<br>本来の使い方をできない状態になっています。<br>（sprintf_sを使うべき箇所に誤ったsnprintf_s利用）<br><br>LR4氏の言うように「もっと大事なことがある」と思います。<br>ただ、他の部分の共通関数の品質は高いので、放置したままにしとくのももったいないなーとも思います。<br></div></section>
+    <ul><li><section><h1 id=2387>
+    <span class="no">[2387]</span>
+    <a class="title" href="#2387">Re5:セキュアなsnprintf関数。</a>
+    <span class="author">もか</span>
+    <time datetime="2016-11-30T16:30:13">2016年11月30日 16:30</time></h1>
+    <div class="body">&gt;sprintf_s(out, size, format, ...)<br>&gt;size - 1文字出力すると末尾に'\0'を付加して終了します。<br><br>&gt;countには _TRUNCATE という特別な値を指定できるのですが、<br>&gt;_TRUNCATEを指定した場合の動作はsprintf_sと等価です。<br>言っている内容がいまいち理解できないのは、たぶんこの前提が間違ってるからだと思いました。<br><br>char test[4];<br>int ret = _snprintf_s(test, 4, _TRUNCATE, "%s", "1234567890");<br>&gt;ret=-1 test="123"<br>int ret = _snprintf_s(test, 4, 3, "%s", "1234567890");<br>&gt;ret=-1 test="123"<br>int ret = _snprintf_s(test, 4, 4, "%s", "1234567890");<br>&gt;実行時エラー<br>int ret = sprintf_s(test, 4, "%s", "1234567890");<br>&gt;実行時エラー<br>こうなるみたいです。<br>あとsprintf_sはVC2005では存在していなくて「_sprintf_s」ですよね。<br><br>&gt;snprintfがない状態になっています。<br>参考 <a href=https://sourceforge.net/p/sakura-editor/patchunicode/82/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>82/<wbr></nobr></a><br>&gt;どう倒しても紛らわしいので、<br>&gt;・VCの _snprintf に対応する auto関数は提供しない。<br>&gt;・今の auto_snprintf は auto_snprintf_s に変名。<br>と書かれています。<br><br>auto_snprintf_s→サクラでは_TRUNCATE前提でバッファ切り詰めで使う&amp;-1<br>auto_sprintf_s→あふれたら異常終了<br>auto_sprintf→あふれないことが保証されたときに使ってもいい<br>どれも、引数のバッファ長は\0分を含める実装となっていると。<br></div></section>
+    </li><li><section><h1 id=2388>
+    <span class="no">[2388]</span>
+    <a class="title" href="#2388">Re5:セキュアなsnprintf関数。</a>
+    <span class="author">もか</span>
+    <time datetime="2016-11-30T16:31:39">2016年11月30日 16:31</time></h1>
+    <div class="body">それ以前の問題として、サクラの定義をよく見てみると、数か所間違いがあるようにみえます。<br>defineのほうはrev:3680以降からです。<br>こうじゃないでしょうか。<br><br>Index: sakura_core/util/string_ex.h<br>===================================================================<br>--- sakura_core/util/string_ex.h&#9;(リビジョン 4157)<br>+++ sakura_core/util/string_ex.h&#9;(作業コピー)<br>@@ -253,9 +253,9 @@<br> <br> //印字系<br> #if defined(_MSC_VER) &amp;&amp; _MSC_VER&gt;=1400<br>-#define auto_snprintf_s(buf, count, format, ...) tchar_sprintf_s((buf), count, (format), __VA_ARGS__)<br>+#define auto_snprintf_s(buf, count, format, ...) tchar_snprintf_s((buf), count, (format), __VA_ARGS__)<br> #define auto_sprintf(buf, format, ...)           tchar_sprintf((buf), (format), __VA_ARGS__)<br>-#define auto_sprintf_s(buf, nBufCount, format, ...) tchar_snprintf_s((buf), nBufCount, (format), __VA_ARGS__)<br>+#define auto_sprintf_s(buf, nBufCount, format, ...) tchar_sprintf_s((buf), nBufCount, (format), __VA_ARGS__)<br> #else<br>(すみません省略します)<br>Index: sakura_core/util/tchar_printf.cpp<br>===================================================================<br>--- sakura_core/util/tchar_printf.cpp&#9;(リビジョン 4157)<br>+++ sakura_core/util/tchar_printf.cpp&#9;(作業コピー)<br>@@ -359,6 +359,7 @@<br> <br> <br> // sprintf_sラップ<br>+// ※nBufCountをはみ出す場合は異常終了します。<br> //<br> // (実装について)<br> //     内容が同じなので、templateでも良かったのですが、<br>@@ -418,7 +419,7 @@<br> {<br> &#9;va_list v;<br> &#9;va_start(v,format);<br>-&#9;int ret=tchar_vsprintf_s(buf,count,format,v);<br>+&#9;int ret=tchar_vsnprintf_s(buf,count,format,v);<br> &#9;va_end(v);<br> &#9;return ret;<br> }<br>@@ -426,7 +427,7 @@<br> {<br> &#9;va_list v;<br> &#9;va_start(v,format);<br>-&#9;int ret=tchar_vsprintf_s(buf,count,format,v);<br>+&#9;int ret=tchar_vsnprintf_s(buf,count,format,v);<br> &#9;va_end(v);<br> &#9;return ret;<br> }<br></div></section>
+    <ul><li><section><h1 id=2390>
+    <span class="no">[2390]</span>
+    <a class="title" href="#2390">Re6:セキュアなsnprintf関数。</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-12-03T00:36:13">2016年12月03日 00:36</time></h1>
+    <div class="body">▼ もかさん<br>&gt; それ以前の問題として、サクラの定義をよく見てみると、数か所間違いがあるようにみえます。<br>&gt; defineのほうはrev:3680以降からです。<br><br>やっと言ってる意味が分かりました。<br>わたしの修正コードでなくて、<br>現在のコードに対する修正提案なんですね。<br><br><br>(tchar_snprintf_sの実装部分)<br>&gt; -&#9;int ret=tchar_vsprintf_s(buf,count,format,v);<br>&gt; +&#9;int ret=tchar_vsnprintf_s(buf,count,format,v);<br><br>コア実装がいまのままなら同じことなんで<br>間違っていても機能的には影響ないと思います。<br><br>機能的に影響がなければ直さない、<br>それが乙女のポリシー。<br><br>と言われたらもう何も言えねっす。<br><br><br>ちなみに、tchar_snprintf_sは直呼びじゃなく<br>auto_snprintf_sを経由するのが正道と思われます。<br><br>string_ex.h 260行目<br>inline int auto_snprintf_s(ACHAR* buf, size_t count, const ACHAR* format, ...)   { va_list v; va_start(v,format); int ret=tchar_vsnprintf_s(buf,count,format,v); va_end(v); return ret; }<br>inline int auto_snprintf_s(WCHAR* buf, size_t count, const WCHAR* format, ...)   { va_list v; va_start(v,format); int ret=tchar_vsnprintf_s(buf,count,format,v); va_end(v); return ret; }<br>inline int auto_sprintf(ACHAR* buf, const ACHAR* format, ...)                    { va_list v; va_start(v,format); int ret=tchar_vsprintf(buf,format,v); va_end(v); return ret; }<br>inline int auto_sprintf(WCHAR* buf, const WCHAR* format, ...)                    { va_list v; va_start(v,format); int ret=tchar_vsprintf(buf,format,v); va_end(v); return ret; }<br>inline int auto_sprintf_s(ACHAR* buf, size_t nBufCount, const ACHAR* format, ...){ va_list v; va_start(v,format); int ret=tchar_vsprintf_s(buf,nBufCount,format,v); va_end(v); return ret; }<br>inline int auto_sprintf_s(WCHAR* buf, size_t nBufCount, const WCHAR* format, ...){ va_list v; va_start(v,format); int ret=tchar_vsprintf_s(buf,nBufCount,format,v); va_end(v); return ret; }<br><br>こっちは合ってますな。<br><br>内部実装のva_arg版関数を呼び出すだけの代物なので、<br>呼び出し口で１か所対応すれば目的を果たせるはずです。<br>邪道を利用してる箇所は非常に少なかったはずなので、<br>呼出し側を修正して関数定義ごと削除するのが適切かと思います。<br><br>関数定義ごと削除してしまえば<br>誤って利用してしまうことの再発防止にもなりますし。<br><br>また、全く同じ意味の実体が別定義で存在するので<br>機能を損なうこともありません。<br><br><br>まぁ、機能的影響はゼロなので、<br>どうでもいいっちゃどうでもいい話。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=2393>
+    <span class="no">[2393]</span>
+    <a class="title" href="#2393">Re2:補足</a>
+    <span class="author">SNK</span>
+    <time datetime="2016-12-23T06:54:23">2016年12月23日 06:54</time></h1>
+    <div class="body">ちょっと、公共の場にふさわしくない発言があったように思います。<br>いくら匿名のやりとりでも、いや、匿名だからこそ相手のことを思いやって書き込みするべきでしょう。<br>もうすこし時間をおいて頭を冷やしてから返答ボタンを押すべきだったと感じます。<br><br>参考: <br>  <a href=http://www.iajapan.org/rule/rule4general/ target=_top><nobr>http://<wbr>www.<wbr>iajapan.<wbr>org/<wbr>rule/<wbr>rule4gen<wbr>eral/<wbr></nobr></a><br>  インターネットにおけるルール&amp;マナー「大人版」5.15　誹謗・中傷しない<br><br>それはさておき、プロジェクト方針に関する部外者からの意見として、続きを[管理]掲示板に書きます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

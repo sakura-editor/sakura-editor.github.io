@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>1.5.7.0</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4720</span>
+    <a class="title" href="4720.html#4720">1.5.7.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4723</span>
+    <a class="title" href="4720.html#4723">RE: 1.5.7.0</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4725</span>
+    <a class="title" href="4720.html#4725">虫</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4726</span>
+    <a class="title" href="4720.html#4726">あぁ、それで！</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4728</span>
+    <a class="title" href="4720.html#4728">バグフィックス</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4732</span>
+    <a class="title" href="4720.html#4732">Re: 虫</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4733</span>
+    <a class="title" href="4720.html#4733">Re2: 虫</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4734</span>
+    <a class="title" href="4720.html#4734">Re3: 虫</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4720>
+    <span class="no">[4720]</span>
+    <a class="title" href="#4720">1.5.7.0</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-10-02T14:47:50">2005年10月02日 14:47</time></h1>
+    <div class="body">マクロ機能強化とちょっとバグfixです．<br><br>ExpandParameterに$S, $Mが追加されました．<br><br>2005.09.19 &gt;&gt;dev:4044 マクロからエディタのパス，マクロのパスを取得できるように．(FILEさん)<br>2005.09.19 &gt;&gt;dev:4044 マクロ(VBScript)からInputBox, MsgBoxを使用可能に．(FILEさん)<br>2005.09.29 &gt;&gt;data:4599 &gt;&gt;dev:4049 横スクロール時にキャレットのようなゴミが表示される問題を修正．(ryojiさん)<br>2005.09.29 &gt;&gt;dev:4050 (ryojiさん)<br>2005.10.02 &gt;&gt;dev:4038 &gt;&gt;dev:4043 ロングパス名の取得方法変更．(げんた)<br>2005.10.02 &gt;&gt;data:4718 上書きモードの影響範囲をドキュメント単位に変更．(げんた)<br><br>知らないうちに上書きモードに変更したまま戻せなくなる人がいることから，上書きモードの保存をやめ，影響範囲を同一文書にとどめるようにしました．<br></div></section>
+    <ul><li><section><h1 id=4723>
+    <span class="no">[4723]</span>
+    <a class="title" href="#4723">RE: 1.5.7.0</a>
+    <span class="author">みく</span>
+    <time datetime="2005-10-03T18:45:29">2005年10月03日 18:45</time></h1>
+    <div class="body"><br>&gt;2005.10.02 &gt;&gt;dev:4038 &gt;&gt;dev:4043 ロングパス名の取得方法変更．(げんた)<br><br>私の環境では、ツールバーが化ける現象は再現しなくなってます。<br></div></section>
+    </li><li><section><h1 id=4725>
+    <span class="no">[4725]</span>
+    <a class="title" href="#4725">虫</a>
+    <span class="author">すい</span>
+    <time datetime="2005-10-04T01:21:24">2005年10月04日 01:21</time></h1>
+    <div class="body">ちょっとしたトラブルで当分の間、自分のパソコンに触る事が出来ない状況に<br>なってしまったので充分な検証の類ができなくなってしまった、すい です。<br><br>ですが、これには気付きました。<br><br>sakura_2005-10-02.zip からですが、ファイルを相対パス指定で開くと、<br>その開いているファイルが相対パスのままになります。<br>sakura_2005-09-03.zip までは、なんともなかったようですが。<br><br>例えばコマンドプロンプトから<br><br>C:\&gt; C:\Progra~1\sakura\sakura.exe  AUTOEXEC.BAT<br><br>と実行すると、開いているファイルは<br>「C:\AUTOEXEC.BAT」ではなくて「AUTOEXEC.BAT」になっています。<br><br>↑この場合はまだ上書き保存とか実行できるようですが、<br>ディレクトリ付で指定した場合、例えば<br><br>C:\&gt;C:\Progra~1\sakura\sakura.exe  WINDOWS\WIN.INI<br><br>とやって「C:\WINDOWS\WIN.INI」を開いた場合、<br>開いているファイルは「WINDOWS\WIN.INI」となり、この場合、上書き保存できません。<br><br>|　'WINDOWS\WIN.INI'<br>|　ファイルを保存できません。<br>|　パスが存在しないか、他のアプリケーションで使用されている可能性があります。<br><br>というエラーダイアログが出ます。<br><br>[Alt]+[Enter] で「ファイルのプロパティ」を出してもファイル情報が空欄で。<br><br>同様の事が、テキスト中にファイル名を相対パスで記述しておき、<br>そこからタグジャンプで飛んだ場合にも起こります。<br><br>C:\ の中にあるテキストファイルに<br>WINDOWS\WIN.INI<br>と記述しておいて、↑その行からタグジャンプ、とか。<br><br>殺虫剤プリーズ<br></div></section>
+    <ul><li><section><h1 id=4726>
+    <span class="no">[4726]</span>
+    <a class="title" href="#4726">あぁ、それで！</a>
+    <span class="author">クプ</span>
+    <time datetime="2005-10-04T22:03:20">2005年10月04日 22:03</time></h1>
+    <div class="body">&gt; ちょっとしたトラブルで当分の間、自分のパソコンに触る事が出来ない状況に<br>&gt; なってしまったので充分な検証の類ができなくなってしまった、すい です。<br>&gt; <br>&gt; ですが、これには気付きました。<br>&gt; <br>&gt; sakura_2005-10-02.zip からですが、ファイルを相対パス指定で開くと、<br>&gt; その開いているファイルが相対パスのままになります。<br>&gt; sakura_2005-09-03.zip までは、なんともなかったようですが。<br>記録されていたはずのブックマークがことごとく無くなった！<br>と思い、さっきまで泣きそうになっていました。<br>(いつもDOS窓から起動しているもので。。。)<br><br>&gt; 殺虫剤プリーズ<br>待ってます。</div></section>
+    </li><li><section><h1 id=4728>
+    <span class="no">[4728]</span>
+    <a class="title" href="#4728">バグフィックス</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-10-05T00:15:49">2005年10月05日 00:15</time></h1>
+    <div class="body">▼ すいさん<br><br>etc_uty.cpp<br>etc_uty.h<br><br>を元に返して。</div></section>
+    </li><li><section><h1 id=4732>
+    <span class="no">[4732]</span>
+    <a class="title" href="#4732">Re: 虫</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-10-05T22:14:29">2005年10月05日 22:14</time></h1>
+    <div class="body">ご迷惑を掛けて済みません．ちょっと直しました．<br>http://members.at.infoseek.co.jp/sakura_editor/snapshot/sakura_2005-10-05.zip<br><br>存在するファイルについては絶対パスで開かれます．ただコマンドラインから存在しないファイルを作成しようとすると，まだ名前がFull Pathになってくれません．<br></div></section>
+    <ul><li><section><h1 id=4733>
+    <span class="no">[4733]</span>
+    <a class="title" href="#4733">Re2: 虫</a>
+    <span class="author">もか</span>
+    <time datetime="2005-10-06T01:25:35">2005年10月06日 01:25</time></h1>
+    <div class="body">&gt;存在するファイルについては絶対パスで開かれます．ただコマンドラインから存在しないファイルを作成しようとすると，まだ名前がFull Pathになってくれません．<br>バイナリだと何を変えたのか解らないので、いちよう修正したものをアナウンスしときます。<br>バイナリは、下記に置いておきました。<br>http://www.geocities.jp/moca_skr/sakura_2005-10-02relpathfix.zip<br>パッチは Yhaooブリーフケース。relpathfix.diff<br><br>XPの実際のGetLongPathNameだと相対パスはそのままなんですね。<br>「..\..\UNOFFI~1.TXT」→「..\..\unofficialrelease.txt」みたいに。<br></div></section>
+    <ul><li><section><h1 id=4734>
+    <span class="no">[4734]</span>
+    <a class="title" href="#4734">Re3: 虫</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-10-06T07:27:43">2005年10月06日 07:27</time></h1>
+    <div class="body">お手数をおかけします．GetFullPathNameで変換しただけなのは私も同じです．<br><br>存在しないファイルの方は... コメントアウトされているGetAbsolutePath()を復活させるしか無いのかなー．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

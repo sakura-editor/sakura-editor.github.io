@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>非アクティブ状態の負荷削減</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">4230</span>
+    <a class="title" href="4230.html#4230">非アクティブ状態の負荷削減</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4231</span>
+    <a class="title" href="4230.html#4231">Re: 非アクティブ状態の負荷削減</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4232</span>
+    <a class="title" href="4230.html#4232">Re2: 非アクティブ状態の負荷削減</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4230>
+    <span class="no">[4230]</span>
+    <a class="title" href="#4230">非アクティブ状態の負荷削減</a>
+    <span class="author">あろか</span>
+    <time datetime="2006-01-28T02:44:12">2006年01月28日 02:44</time></h1>
+    <div class="body">ウィンドウ幅の件はげんたさんにおまかせして、<br><br>ファンクションキーを表示している状態でサクラエディタをたくさん立ち上げると、CPU負荷が結構高くなります。<br>この原因のひとつに考えられる、Shift,Ctrl,Altのタイマーによる監視があります。<br><br>そこで、非アクティブ状態では表示を更新していないのでタイマーも停めるようにしてみました。<br>結果は100個起動して約5%(48→43%)、体感ではよくわかりませんでした。<br><br>ブリーフケース→BackgroundTimer_base1591.diff<br></div></section>
+    <ul><li><section><h1 id=4231>
+    <span class="no">[4231]</span>
+    <a class="title" href="#4231">Re: 非アクティブ状態の負荷削減</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-01-28T10:14:47">2006年01月28日 10:14</time></h1>
+    <div class="body">&gt;ファンクションキーを表示している状態でサクラエディタをたくさん立ち上げると、CPU負荷が結構高くなります。<br>&gt;この原因のひとつに考えられる、Shift,Ctrl,Altのタイマーによる監視があります。<br>ツールバーもタイマーで監視しているんですが，そちらはどうでしょう？<br></div></section>
+    <ul><li><section><h1 id=4232>
+    <span class="no">[4232]</span>
+    <a class="title" href="#4232">Re2: 非アクティブ状態の負荷削減</a>
+    <span class="author">あろか</span>
+    <time datetime="2006-01-28T15:46:56">2006年01月28日 15:46</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ツールバーもタイマーで監視しているんですが，そちらはどうでしょう？<br>最初タイマーを使わないように変えようとして、影響範囲が大きいので後回しにしてました。<br><br>結果は良好です。<br>ブリーフケース→BackgroundTimer2_base1591.diff<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

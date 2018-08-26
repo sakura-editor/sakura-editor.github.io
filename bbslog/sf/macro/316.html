@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ファイルのフルパスコピー時に任意の文字列を加える</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">316</span>
+    <a class="title" href="316.html#316">ファイルのフルパスコピー時に任意の文字列を加える</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">317</span>
+    <a class="title" href="316.html#317">Re:ファイルのフルパスコピー時に任意の文字列を加える</a></div>
+    </li><li><div class="list-title">
+    <span class="no">319</span>
+    <a class="title" href="316.html#319">Re:ファイルのフルパスコピー時に任意の文字列を加える</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">320</span>
+    <a class="title" href="316.html#320">Re2:ファイルのフルパスコピー時に任意の文字列を加える</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">321</span>
+    <a class="title" href="316.html#321">Re3:ファイルのフルパスコピー時に任意の文字列を加える</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">323</span>
+    <a class="title" href="316.html#323">Re4:ファイルのフルパスコピー時に任意の文字列を加える</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">324</span>
+    <a class="title" href="316.html#324">Re5:ファイルのフルパスコピー時に任意の文字列を加える</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">325</span>
+    <a class="title" href="316.html#325">Re6:ファイルのフルパスコピー時に任意の文字列を加える</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">329</span>
+    <a class="title" href="316.html#329">Re2:自己修正</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=316>
+    <span class="no">[316]</span>
+    <a class="title" href="#316">ファイルのフルパスコピー時に任意の文字列を加える</a>
+    <span class="author">giraffe</span>
+    <time datetime="2006-11-18T22:41:28">2006年11月18日 22:41</time></h1>
+    <div class="body">こんばんは、giraffeです。<br>エディタで編集中、右ボタンで ”ファイルのフルパスコピー”<br>をして、クリップボードにフルパスをコピーし、別のプログラムで実行<br>実行するときに、フルパスの前に ”$M/”を付けなければならないのですが<br>毎回するのは、面倒なので、クリップボードにコピー時に指定文字を<br>付加することは可能でしょうか？<br>カスタムメニューにでも、登録しておきたいのですが<br><br>宜しくお願いします。</div></section>
+    <ul><li><section><h1 id=317>
+    <span class="no">[317]</span>
+    <a class="title" href="#317">Re:ファイルのフルパスコピー時に任意の文字列を加える</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-11-19T14:40:40">2006年11月19日 14:40</time></h1>
+    <div class="body">▼ giraffeさん<br>//キーボードマクロのファイル PASTE_ADD.MAC<br>S_Paste(0);// 貼り付け<br>S_Char(13);// 文字入力 '\r'<br>S_Up(0);&#9;// カーソル上移動<br>S_Char(36);// 文字入力 '$'<br>S_Char(77);// 文字入力 'M'<br>S_Char(47);// 文字入力 '/'<br>S_Copy(0);// コピー<br><br>//クリップボードに、任意の文字を置く機能は無いので、何処かに書き込んでそれをクリップボードにコピーするしか、思いつきませんでした。</div></section>
+    </li><li><section><h1 id=319>
+    <span class="no">[319]</span>
+    <a class="title" href="#319">Re:ファイルのフルパスコピー時に任意の文字列を加える</a>
+    <span class="author">Perl礼賛</span>
+    <time datetime="2006-11-25T18:11:23">2006年11月25日 18:11</time></h1>
+    <div class="body">▼ giraffeさん<br>遅レスですが<br><br>S_insText (S_ExpandParameter ('$$M/$F'));<br>S_BeginSelect();<br>S_GoLineTop(0);<br>S_Cut();<br><br>というのはどうでしょう。<br>じゅうじ氏とやってることはおなじですが。<br>PPAマクロです。空白行で実行して下さい。<br><br>コピーした文字列がコマンドラインオプションなら<br>直接、マクロで実行プログラムを呼び出す方が簡単です。<br><br>S_ExecCommand (S_ExpandParameter ('実行プログラム名 $$M/$F'),0);<br><br>こちらは空白行でなくてもOKです。<br>実行プログラムのパスが通ってないときはフルパスで指定してください。<br>例を挙げときます。<br><br>S_ExecCommand (S_ExpandParameter ('Explorer /select,$F'),0);</div></section>
+    <ul><li><section><h1 id=320>
+    <span class="no">[320]</span>
+    <a class="title" href="#320">Re2:ファイルのフルパスコピー時に任意の文字列を加える</a>
+    <span class="author">まくろ初心者</span>
+    <time datetime="2006-11-25T23:43:44">2006年11月25日 23:43</time></h1>
+    <div class="body"><br>一番最初にS_GoLineTop(0);を加えれば、よりいいんじゃないでしょうか？<br>投稿したかったのですが、WSHだとなぜか投稿できませんでした…滝汗</div></section>
+    <ul><li><section><h1 id=321>
+    <span class="no">[321]</span>
+    <a class="title" href="#321">Re3:ファイルのフルパスコピー時に任意の文字列を加える</a>
+    <span class="author">Perl礼賛</span>
+    <time datetime="2006-11-26T00:53:48">2006年11月26日 00:53</time></h1>
+    <div class="body">▼ まくろ初心者さん<br><br>レス、どうもです。<br>S_GoLineTop(0);を加えても何も変わらないと思うのですが？<br></div></section>
+    <ul><li><section><h1 id=323>
+    <span class="no">[323]</span>
+    <a class="title" href="#323">Re4:ファイルのフルパスコピー時に任意の文字列を加える</a>
+    <span class="author">まくろ初心者</span>
+    <time datetime="2006-11-26T15:08:41">2006年11月26日 15:08</time></h1>
+    <div class="body">空白行でなくてもOKになりますよね。<br>（最初のPPAマクロの話ですが…）<br><br></div></section>
+    <ul><li><section><h1 id=324>
+    <span class="no">[324]</span>
+    <a class="title" href="#324">Re5:ファイルのフルパスコピー時に任意の文字列を加える</a>
+    <span class="author">Perl礼賛</span>
+    <time datetime="2006-11-26T16:18:30">2006年11月26日 16:18</time></h1>
+    <div class="body">▼ まくろ初心者さん<br>あっ、そういうことですか。気がつきませんでした…<br>確かによりよいですね。</div></section>
+    <ul><li><section><h1 id=325>
+    <span class="no">[325]</span>
+    <a class="title" href="#325">Re6:ファイルのフルパスコピー時に任意の文字列を加える</a>
+    <span class="author">giraffe </span>
+    <time datetime="2006-11-26T21:55:59">2006年11月26日 21:55</time></h1>
+    <div class="body">▼皆様書き込みできずにすいません。<br>ばたばたと、作業に追われて、確認できませんでした。<br>いろいろと書き込みしていただいているので、内容拝見させていただいて<br>結果、報告させていただきます。<br>ありがとうございました。<br><br>&gt; ▼ まくろ初心者さん<br>&gt; あっ、そういうことですか。気がつきませんでした…<br>&gt; 確かによりよいですね。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=329>
+    <span class="no">[329]</span>
+    <a class="title" href="#329">Re2:自己修正</a>
+    <span class="author">Perl礼賛</span>
+    <time datetime="2006-12-04T22:07:32">2006年12月04日 22:07</time></h1>
+    <div class="body">勉強のため過去ログを眺めていたら、<br>S_ExecCommandの引数に$変数が使えることを知りました。<br>2番目、3番目のマクロを<br><br>S_ExecCommand ('実行プログラム名 $$M/$F',0);<br><br>S_ExecCommand ('Explorer /select,$F',0);<br><br>に、置き換えてください。まだまだです。申し訳ない。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

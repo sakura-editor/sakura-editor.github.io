@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>関数の仕様など</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">5</span>
+    <a class="title" href="5.html#5">関数の仕様など</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6</span>
+    <a class="title" href="5.html#6">RE: 関数の仕様など</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7</span>
+    <a class="title" href="5.html#7">Re2: 関数の仕様など</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8</span>
+    <a class="title" href="5.html#8">Re3: 関数の仕様など</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5>
+    <span class="no">[5]</span>
+    <a class="title" href="#5">関数の仕様など</a>
+    <span class="author">loop</span>
+    <time datetime="2002-12-12T15:58:46">2002年12月12日 15:58</time></h1>
+    <div class="body">はじめまして。エディタの乗り換えを検討中で今いろいろいじってる所なんですが，以下<br>2点について宜しくお願い致します。<br><br>(1)マクロに記述するS_ReplaceAllなど関数の詳しい説明(仕様？)はどこかに書いてあっ<br>   たりしないでしょうか？FAQによるとまだマニュアルが整備されていないとの事ですが。<br>   (一応みくさんのページのマクロ関数名一覧は拝見しました。)<br>(2)全角記号のうちの一部を半角に変換したかったので，S_ReplaceAll連打のマクロ<br>   (「S_ReplaceAll('＠', '@' , 146);」などを記号だけ変えて30行くらい並べたもの)<br>   を作ってみたのですが，変換中に何度もダイアログが出てきてしまいます。何も表示<br>   させずに変換させるにはどうしたら良いでしょうか？あるいは何かもっとスマートな<br>   方法がありますでしょうか？<br></div></section>
+    <ul><li><section><h1 id=6>
+    <span class="no">[6]</span>
+    <a class="title" href="#6">RE: 関数の仕様など</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-12T23:03:52">2002年12月12日 23:03</time></h1>
+    <div class="body">&gt;(1)マクロに記述するS_ReplaceAllなど関数の詳しい説明(仕様？)はどこかに書いてあっ<br>&gt;   たりしないでしょうか？<br><br>現状無いです。サクラエディタのソースと PPA.DLL添付のヘルプを見るしか。<br><br>一応、http://www.egroups.co.jp/files/sakura-editor/User/Data/ に私が作った<br>「サクラエディタ マクロ設定セット（強調キーワード,キーワードヘルプ辞書ファイル）」<br>があるので、サクラエディタのタイプ別設定に設定する事ができれば分かるかと。<br><br>ただ、コレ、まだ作成途中版なので設定方法の手順とか書いてないですし、<br>内容もちょっと古くなってしまっています。<br><br>「“S_GetSelectedString(0); // 選択文字列を取得する”が無い」<br>とか、<br>「Grep のパラメータが、その後追加されているのにぃ」<br>とか。その辺。<br>まだ色々見直しが必要なんです。<br><br>&gt;(2)全角記号のうちの一部を半角に変換したかったので，S_ReplaceAll連打のマクロ<br>&gt;   (「S_ReplaceAll('＠', '@' , 146);」などを記号だけ変えて30行くらい並べたもの)<br>&gt;   を作ってみたのですが，変換中に何度もダイアログが出てきてしまいます。何も表示<br>&gt;   させずに変換させるにはどうしたら良いでしょうか？あるいは何かもっとスマートな<br>&gt;   方法がありますでしょうか？<br><br>一生懸命バージョン。<br>http://www.egroups.co.jp/files/sakura-editor/Junk/ ⇒ HENKAN2.LZH<br>とか。って、S_ReplaceAll 使うより、もっと酷い気がするわぁ。(笑)<br><br>やはり外部のテキスト変換処理ソフトを呼び出すのが一番スマートかと。<br>一般掲示板の方の<br>2002/10/18  2385：GNU aspellのaspell.exeについて<br>辺りなんかを参考に、その中の aspell.exe の代わりの変換ユーティリティを用意して．．．<br>て感じかと。<br></div></section>
+    <ul><li><section><h1 id=7>
+    <span class="no">[7]</span>
+    <a class="title" href="#7">Re2: 関数の仕様など</a>
+    <span class="author">loop</span>
+    <time datetime="2002-12-13T12:45:05">2002年12月13日 12:45</time></h1>
+    <div class="body">&gt; 一応、<a href=http://www.egroups.co.jp/files/sakura-editor/User/Data/ target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>User/<wbr>Data/<wbr></nobr></a> に私が作った<br>&gt; 「サクラエディタ マクロ設定セット（強調キーワード,キーワードヘルプ辞書ファイル）」<br>&gt; があるので、サクラエディタのタイプ別設定に設定する事ができれば分かるかと。<br><br>すごいです，キーワードヘルプってこんな事ができるんですね。<br>とりあえずこれで大満足です。どうもありがとうございます。<br><br>&gt; <a href=http://www.egroups.co.jp/files/sakura-editor/Junk/ target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Junk/<wbr></nobr></a> ⇒ HENKAN2.LZH<br>&gt; とか。って、S_ReplaceAll 使うより、もっと酷い気がするわぁ。(笑)<br><br>コピペで30個ほど登録して試してみました。<br>う～ん，何か1行ずつ色変わってくしS_ReplaceAll連打より処理遅<br>いみたいですね。<br>とにかく参考にさせて頂きます。ありがとうございました。<br>正直PPAを使う事までは考えていませんでした。勉強してから出直<br>します。(^^;<br><br>&gt; やはり外部のテキスト変換処理ソフトを呼び出すのが一番スマートかと。<br>&gt; 一般掲示板の方の<br>&gt; 2002/10/18  2385：GNU aspellのaspell.exeについて<br>&gt; 辺りなんかを参考に、その中の aspell.exe の代わりの変換ユーティリティを用意して．．．<br>&gt; て感じかと。<br><br>参考にしてみます。<br>とりあえす外部のテキスト変換処理ソフト探しとマクロ関数・PPA<br>の勉強をする事にします。<br>どうもありがとうございました。<br></div></section>
+    <ul><li><section><h1 id=8>
+    <span class="no">[8]</span>
+    <a class="title" href="#8">Re3: 関数の仕様など</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-13T20:07:38">2002年12月13日 20:07</time></h1>
+    <div class="body">&gt;&gt; http://www.egroups.co.jp/files/sakura-editor/Junk/ ⇒ HENKAN2.LZH<br>&gt;&gt; とか。って、S_ReplaceAll 使うより、もっと酷い気がするわぁ。(笑)<br>&gt;<br>&gt;コピペで30個ほど登録して試してみました。<br>&gt;う～ん，何か1行ずつ色変わってくしS_ReplaceAll連打より処理遅<br>&gt;いみたいですね。<br>&gt;とにかく参考にさせて頂きます。ありがとうございました。<br>&gt;正直PPAを使う事までは考えていませんでした。勉強してから出直<br>&gt;します。(^^;<br><br>すみません。<br>マクロの中にも一応書いてはおいたのですが、、、<br>↓<br>// ※ ちゅうい ※<br>// S_GetSelectedString() を使っているのですが、取り込める文字列の長さに限界があるかも．．．<br>// つまり１行あたりの文字数に限界がある*かも*。<br><br>調べて見たら限界がありました。259 バイトまででした。<br>なので、このマクロを使うと 259バイト以上ある行が 259バイト以下に切り捨てられてしまいます。(;^^;)<br># 実際に長～～い行を用意してから実行してみると分かります。<br><br>というわけで、このマクロは完全にお遊びの世界で実用性ありません。 m(_ _)m<br>やはり外部ツールを使用するしかないかと。<br>sed とか perl とか辺り？ (*^_^*)<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

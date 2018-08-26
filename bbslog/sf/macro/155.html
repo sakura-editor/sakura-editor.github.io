@@ -1,0 +1,208 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Web辞書をエディタから直接ひく JScriptマクロ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">155</span>
+    <a class="title" href="155.html#155">Web辞書をエディタから直接ひく JScriptマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">156</span>
+    <a class="title" href="155.html#156">Re:Web辞書をエディタから直接ひく JScriptマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">157</span>
+    <a class="title" href="155.html#157">シリーズ化は大歓迎、そこでちょい提案など</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">162</span>
+    <a class="title" href="155.html#162">Re:シリーズ化は大歓迎、そこでちょい提案など</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">167</span>
+    <a class="title" href="155.html#167">Re2:シリーズ化は大歓迎、そこでちょい提案など</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">172</span>
+    <a class="title" href="155.html#172">Re3:シリーズ化は大歓迎、そこでちょい提案など</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">168</span>
+    <a class="title" href="155.html#168">Re2:シリーズ化は大歓迎、そこでちょい提案など</a></div>
+    </li><li><div class="list-title">
+    <span class="no">169</span>
+    <a class="title" href="155.html#169">Re2:シリーズ化は大歓迎、そこでちょい提案など</a></div>
+    </li><li><div class="list-title">
+    <span class="no">170</span>
+    <a class="title" href="155.html#170">Re2:シリーズ化は大歓迎、そこでちょい提案など</a></div>
+    </li><li><div class="list-title">
+    <span class="no">171</span>
+    <a class="title" href="155.html#171">Re2:シリーズ化は大歓迎、そこでちょい提案など</a></div>
+    </li><li><div class="list-title">
+    <span class="no">173</span>
+    <a class="title" href="155.html#173">実験的マクロランチャ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">174</span>
+    <a class="title" href="155.html#174">Re:実験的マクロランチャ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">175</span>
+    <a class="title" href="155.html#175">Re2:実験的マクロランチャ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">176</span>
+    <a class="title" href="155.html#176">Re3:実験的マクロランチャ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">177</span>
+    <a class="title" href="155.html#177">Re4:実験的マクロランチャ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">178</span>
+    <a class="title" href="155.html#178">Re5:実験的マクロランチャ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">179</span>
+    <a class="title" href="155.html#179">Re: 実験的マクロランチャ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">180</span>
+    <a class="title" href="155.html#180">Re2: 実験的マクロランチャ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">182</span>
+    <a class="title" href="155.html#182">Re3: 実験的マクロランチャ</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">181</span>
+    <a class="title" href="155.html#181">Re2: 実験的マクロランチャ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">183</span>
+    <a class="title" href="155.html#183">Re3: 実験的マクロランチャ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">184</span>
+    <a class="title" href="155.html#184">Re4: 実験的マクロランチャ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">185</span>
+    <a class="title" href="155.html#185">Windows Script Componentの実験</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=155>
+    <span class="no">[155]</span>
+    <a class="title" href="#155">Web辞書をエディタから直接ひく JScriptマクロ</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-06-20T13:37:08">2005年06月20日 13:37</time></h1>
+    <div class="body">えっと、何時まで動くか判らない使い捨てに近いマクロですが、MS Bookshelf以上に役に立っています。選択範囲があればその選択文字列で、なければカーソル位置の単語で IE を開いて、上は、英辞郎 on the Webを、下は、goo国語辞典を引きます。ちょっと直せば検索エンジンのいくつかもＯＫだと思います。<br><br>-----^ otw_eijirou.js ( date:05-06-20 time:13:08 ) ------&lt; cut hear<br>// 選択範囲またはカーソル位置の単語で英辞郎on the Web英和・和英<br>var objIE =  new ActiveXObject("InternetExplorer.Application");<br>objIE.Visible = true;&#9;// True<br>var strWord = Editor.ExpandParameter("$C");<br>var naviURL = "<a href=http://www2.alc.co.jp/ejr/index.php?word_in= target=_top><nobr>http://<wbr>www2.<wbr>alc.<wbr>co.<wbr>jp/<wbr>ejr/<wbr>index.<wbr>php?<wbr>word_in=<wbr></nobr></a>" +<br>  strWord + "&amp;word_in2=あいうえお&amp;word_in3=PVawEWi72JXCKoa0Je";<br>objIE.Navigate( naviURL );<br>-----$ otw_eijirou.js ( line:7 charset:sjis) ------------&lt; cut hear<br><br>-----^ otw_goojpdic.js ( date:05-06-20 time:13:08 ) -----&lt; cut hear<br>// 選択範囲またはカーソル位置の単語で goo国語辞典<br>var objIE =  new ActiveXObject("InternetExplorer.Application");<br>objIE.Visible = true;&#9;// True<br>var strWord = Editor.ExpandParameter("$C");<br>var naviURL = "<a href=http://dictionary.goo.ne.jp/search.php?MT= target=_top><nobr>http://<wbr>dictiona<wbr>ry.<wbr>goo.<wbr>ne.<wbr>jp/<wbr>search.<wbr>php?<wbr>MT=<wbr></nobr></a>" +<br>               strWord + "&amp;kind=jn&amp;mode=0";<br>// &amp;kind=ej で英和、&amp;kind=je で和英<br>objIE.Navigate( naviURL );<br>-----$ otw_goojpdic.js ( line:8 charset:sjis) -----------&lt; cut hear<br></div></section>
+    <ul><li><section><h1 id=156>
+    <span class="no">[156]</span>
+    <a class="title" href="#156">Re:Web辞書をエディタから直接ひく JScriptマクロ</a>
+    <span class="author">maru</span>
+    <time datetime="2005-06-20T23:12:08">2005年06月20日 23:12</time></h1>
+    <div class="body">なるほど。シリーズ化出来そうな・・・。<br><br>// jm.js -----------------------------------------------------<br>// 選択範囲またはカーソル位置の単語でＪＭ<br>var objIE =  new ActiveXObject("InternetExplorer.Application");<br>objIE.Visible = true;        // True<br>var strWord = Editor.ExpandParameter("$C");<br>var naviURL = "http://search.linux.or.jp/cgi-bin/JM/man.cgi" +<br>  "?Sec1=on&amp;Sec2=on&amp;Sec3=on&amp;Sec4=on" +<br>  "&amp;Sec5=on&amp;Sec6=on&amp;Sec7=on&amp;Sec8=on" +<br>  "&amp;Pagename=" + strWord;<br>objIE.Navigate( naviURL );<br><br><br>// JMnamazu.js ------------------------------------------------<br>// 選択範囲またはカーソル位置の単語でＪＭ全文検索<br>var objIE =  new ActiveXObject("InternetExplorer.Application");<br>objIE.Visible = true;        // True<br>var strWord = Editor.ExpandParameter("$C");<br>var naviURL = "http://minori.linux.or.jp/cgi-bin/namazu.cgi" +<br>  "?key=" + strWord +<br>  "&amp;whence=0&amp;dbname=JM&amp;max=20&amp;format=long&amp;sort=score";<br>objIE.Navigate( naviURL );<br><br>// zipcode.js ------------------------------------------------<br>// 選択範囲またはカーソル位置の郵便番号検索<br>var objIE =  new ActiveXObject("InternetExplorer.Application");<br>objIE.Visible = true;        // True<br>var strWord = Editor.ExpandParameter("$C");<br>var naviURL = "http://www.benri.com/zipcode/zipcode.cgi" +<br>  "?Keyword=" + strWord;<br>objIE.Navigate( naviURL );<br><br>// gooMap.js ------------------------------------------------<br>// 選択範囲またはカーソル位置の住所を地図検索<br>var objIE =  new ActiveXObject("InternetExplorer.Application");<br>objIE.Visible = true;        // True<br>var strWord = Editor.ExpandParameter("$C");<br>var naviURL = "http://channel.goo.ne.jp/map/search.php?MT=" +<br>  strWord + "&amp;sw=1";<br>objIE.Navigate( naviURL );<br><br>// law.js ------------------------------------------------<br>// 選択範囲またはカーソル位置の単語で法令検索<br>var objIE =  new ActiveXObject("InternetExplorer.Application");<br>objIE.Visible = true;        // True<br>var strWord = Editor.ExpandParameter("$C");<br>var naviURL = "http://law.e-gov.go.jp/cgi-bin/idxsearch.cgi" +<br>  "?H_NAME=" + strWord +<br>  "&amp;H_NAME_SUBMIT=%8C%9F%8D%F5&amp;H_RYAKU=1&amp;H_YOMI_GUN=1" +<br>  "&amp;H_CTG_GUN=1&amp;H_NO_GENGO=H&amp;H_NO_YEAR=&amp;H_NO_TYPE=2&amp;H_NO_NO=";<br>objIE.Navigate( naviURL );<br></div></section>
+    <ul><li><section><h1 id=157>
+    <span class="no">[157]</span>
+    <a class="title" href="#157">シリーズ化は大歓迎、そこでちょい提案など</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-06-21T08:38:16">2005年06月21日 08:38</time></h1>
+    <div class="body">▼ maruさん<br>&gt; なるほど。シリーズ化出来そうな・・・。<br><br>maru さんのも、ほんとに便利です。 法律のとかでしばらく遊んでました。<br>Vzの時代からエディタは環境ソフトと思ってる 私は、こういう小物が大好きです。<br><br>なのでシリーズ化は大賛成。<br>みなさんがドンドンとアレンジして使って貰って、 気楽に旨く動いた/動かない<br>など掲載してくれるとうれしいですね。<br><br>でっ、提案ですが、まあ仮に？これを On The Web シリーズと名付けて<br>ファイル名の頭(プレフィックス)に 【 otw_ 】を付けるコトにする。<br>マクロ・フォルダの中で集めておきたいし、将来はランチャーマクロで・・・(絵に描いたモチ)<br><br>どうでしょうか？</div></section>
+    <ul><li><section><h1 id=162>
+    <span class="no">[162]</span>
+    <a class="title" href="#162">Re:シリーズ化は大歓迎、そこでちょい提案など</a>
+    <span class="author">maru</span>
+    <time datetime="2005-06-23T22:30:47">2005年06月23日 22:30</time></h1>
+    <div class="body">▼ りーやさん<br><br>&gt; ファイル名の頭(プレフィックス)に 【 otw_ 】を付ける<br>拝承。<br><br>&gt; 将来はランチャーマクロで・・・<br>がんばってくださいね。<br></div></section>
+    <ul><li><section><h1 id=167>
+    <span class="no">[167]</span>
+    <a class="title" href="#167">Re2:シリーズ化は大歓迎、そこでちょい提案など</a>
+    <span class="author">maru</span>
+    <time datetime="2005-06-26T01:00:58">2005年06月26日 01:00</time></h1>
+    <div class="body">今回は少しまじめに簡易ＵＲＬエンコードなど付けてみました。<br><br>'otw_ascii_yougo.vbs ---------------------------------<br>'アスキーデジタル用語<br>sWord = Editor.ExpandParameter("$C")<br>Set objIE = CreateObject("InternetExplorer.Application")<br>objIE.Visible = true<br><br>naviURL = "http://yougo.ascii24.com/gh/search/" _<br>    &amp; "?pattern=" &amp; URLEncode(sWord)<br>objIE.Navigate( naviURL )<br><br>Private Function URLEncode(sWord)<br>    For iCnt = 1 To Len(sWord)<br>        sHex = sHex &amp; Hex(Asc(Mid(sWord, iCnt)))<br>    Next<br>    For iCnt = 1To Len(sHex) Step 2<br>        sUrl = sUrl &amp; "%" &amp; Mid(sHex, iCnt, 2)<br>    Next<br>    URLEncode = sUrl<br>End Function<br><br><br>'otw_info_kokugo.vbs ----------------------------------<br>'インフォシーク国語辞典<br>sWord = Editor.ExpandParameter("$C")<br>Set objIE = CreateObject("InternetExplorer.Application")<br>objIE.Visible = true<br><br>naviURL = "http://jiten.www.infoseek.co.jp/Kokugo" _<br>    &amp; "?sm=1&amp;pg=result_k.html&amp;col=KO&amp;sv=DC" _<br>    &amp; "&amp;qt=" &amp; URLEncode(sWord)<br>objIE.Navigate( naviURL )<br><br>Private Function URLEncode(sWord)<br>    For iCnt = 1 To Len(sWord)<br>        sHex = sHex &amp; Hex(Asc(Mid(sWord, iCnt)))<br>    Next<br>    For iCnt = 1To Len(sHex) Step 2<br>        sUrl = sUrl &amp; "%" &amp; Mid(sHex, iCnt, 2)<br>    Next<br>    URLEncode = sUrl<br>End Function<br><br><br>'otw_info_katakana.vbs --------------------------------<br>'インフォシークカタカナ<br>sWord = Editor.ExpandParameter("$C")<br>Set objIE = CreateObject("InternetExplorer.Application")<br>objIE.Visible = true<br><br>naviURL = "http://jiten.www.infoseek.co.jp/Katakana" _<br>    &amp; "?pg=result_kn.html&amp;col=KN&amp;sv=DC" _<br>    &amp; "&amp;qt=" &amp; URLEncode(sWord)<br>objIE.Navigate( naviURL )<br><br>Private Function URLEncode(sWord)<br>    For iCnt = 1 To Len(sWord)<br>        sHex = sHex &amp; Hex(Asc(Mid(sWord, iCnt)))<br>    Next<br>    For iCnt = 1To Len(sHex) Step 2<br>        sUrl = sUrl &amp; "%" &amp; Mid(sHex, iCnt, 2)<br>    Next<br>    URLEncode = sUrl<br>End Function<br></div></section>
+    <ul><li><section><h1 id=172>
+    <span class="no">[172]</span>
+    <a class="title" href="#172">Re3:シリーズ化は大歓迎、そこでちょい提案など</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-06-26T20:54:35">2005年06月26日 20:54</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 今回は少しまじめに簡易ＵＲＬエンコードなど付けてみました。<br><br>JScriptのencodeURIメソッドだとユニコードにされちゃうので、思いっきりテ抜きしてた部分ですが、コンパクトな関数で実現されてますねぇ。<br>このシリーズは、全部VBSに移行した方が良いですね！<br></div></section>
+    </li></ul></li><li><section><h1 id=168>
+    <span class="no">[168]</span>
+    <a class="title" href="#168">Re2:シリーズ化は大歓迎、そこでちょい提案など</a>
+    <span class="author">maru</span>
+    <time datetime="2005-06-26T01:01:37">2005年06月26日 01:01</time></h1>
+    <div class="body">'otw_ext.vbs ----------------------------------------<br>'拡張子検索<br>sWord = Editor.ExpandParameter("$C")<br>Set objIE = CreateObject("InternetExplorer.Application")<br>objIE.Visible = true<br><br>naviURL = "http://www.55555.to/ext/go/ext.cgi" _<br>    &amp; "?text=" &amp; sWord<br>objIE.Navigate( naviURL )<br><br><br>'otw_msdn.vbs --------------------------------<br>'ＭＳＤＮ<br>sWord = Editor.ExpandParameter("$C")<br>Set objIE = CreateObject("InternetExplorer.Application")<br>objIE.Visible = true<br><br>naviURL = "http://www.microsoft.com/japan/msdn/shared/components/mscomsearch30.aspx" _<br>    &amp; "?SearchScope=2&amp;qu=" &amp; URLEncode(sWord)<br>objIE.Navigate( naviURL )<br><br>Private Function URLEncode(sWord)<br>    For iCnt = 1 To Len(sWord)<br>        sHex = sHex &amp; Hex(Asc(Mid(sWord, iCnt)))<br>    Next<br>    For iCnt = 1To Len(sHex) Step 2<br>        sUrl = sUrl &amp; "%" &amp; Mid(sHex, iCnt, 2)<br>    Next<br>    URLEncode = sUrl<br>End Function<br><br><br>'otw_info_WebTrans.vbs --------------------------------<br>'インフォシークＷｅｂ翻訳<br>sWord = Editor.ExpandParameter("$C")<br>Set objIE = CreateObject("InternetExplorer.Application")<br>objIE.Visible = true<br><br>naviURL = "http://honyakuinfoseek.infoseek.co.jp/amiweb/browser.jsp" _<br>    &amp; "?langpair=1%2C2&amp;url=" &amp; sWord _<br>    &amp; "&amp;display=2&amp;lang=JA&amp;toolbar=yes&amp;c_id=honyakuinfoseek"<br>objIE.Navigate( naviURL )<br><br></div></section>
+    </li><li><section><h1 id=169>
+    <span class="no">[169]</span>
+    <a class="title" href="#169">Re2:シリーズ化は大歓迎、そこでちょい提案など</a>
+    <span class="author">maru</span>
+    <time datetime="2005-06-26T02:18:28">2005年06月26日 02:18</time></h1>
+    <div class="body">正規表現の部分は、超ヘボヘボです。<br>識者の方が修正していただくと良いのですが。<br><br>// otw_whois.js ------------------------------------------------<br>// whois検索<br>var objIE =  new ActiveXObject("InternetExplorer.Application");<br>objIE.Visible = true;        // True<br>var sWord = Editor.ExpandParameter("$C");<br>sWord = sWord.replace(/http:\/\//,'');<br>sWord = sWord.replace(/https:\/\//,'');<br>sWord = sWord.replace(/ftp:\/\//,'');<br>sWord = sWord.replace(/\/.*/,'');<br>sWord = sWord.match(/[^\.]+\.[^\.]+$/g);<br><br>var naviURL = "http://www.makko.biz/whois/whois.php" +<br>  "?q=" + sWord[0];<br>objIE.Navigate( naviURL );<br><br><br>// otw_nslookup.js ---------------------------------------------<br>// nslookup<br>var objIE =  new ActiveXObject("InternetExplorer.Application");<br>objIE.Visible = true;        // True<br>var sWord = Editor.ExpandParameter("$C");<br>sWord = sWord.replace(/http:\/\//,'');<br>sWord = sWord.replace(/https:\/\//,'');<br>sWord = sWord.replace(/ftp:\/\//,'');<br>sWord = sWord.replace(/\/.*/,'');<br><br>var naviURL = "http://www.makko.biz/nslookup/nslookup.php" +<br>  "?q=" + sWord;<br>objIE.Navigate( naviURL );<br><br><br>// otw_pci_deviceID.js -------------------------------------<br>// PCIデバイスID検索<br>var objIE =  new ActiveXObject("InternetExplorer.Application");<br>objIE.Visible = true;        // True<br>var sWord = Editor.ExpandParameter("$C");<br><br>var naviURL = "http://www.pcidatabase.com/search.php" +<br>  "?device_search_str=" + sWord;<br>objIE.Navigate( naviURL );<br><br><br>// otw_pci_deviceID.js -------------------------------------<br>// PCIベンダID検索<br>var objIE =  new ActiveXObject("InternetExplorer.Application");<br>objIE.Visible = true;        // True<br>var sWord = Editor.ExpandParameter("$C");<br><br>var naviURL = "http://www.pcidatabase.com/search.php" +<br>  "?vendor_search_str=" + sWord;<br>objIE.Navigate( naviURL );<br></div></section>
+    </li><li><section><h1 id=170>
+    <span class="no">[170]</span>
+    <a class="title" href="#170">Re2:シリーズ化は大歓迎、そこでちょい提案など</a>
+    <span class="author">maru</span>
+    <time datetime="2005-06-26T02:19:56">2005年06月26日 02:19</time></h1>
+    <div class="body">'otw_2ch.vbs --------------------------------<br>'2chスレタイ検索<br>sWord = Editor.ExpandParameter("$C")<br>Set objIE = CreateObject("InternetExplorer.Application")<br>objIE.Visible = true<br><br>naviURL = "http://www.domo2.net/search/search.cgi" _<br>    &amp; "?word=" &amp; URLEncode(sWord)<br>objIE.Navigate( naviURL )<br><br>Private Function URLEncode(sWord)<br>    For iCnt = 1 To Len(sWord)<br>        sHex = sHex &amp; Hex(Asc(Mid(sWord, iCnt)))<br>    Next<br>    For iCnt = 1To Len(sHex) Step 2<br>        sUrl = sUrl &amp; "%" &amp; Mid(sHex, iCnt, 2)<br>    Next<br>    URLEncode = sUrl<br>End Function<br><br><br>'otw_perl_ref.vbs --------------------------------<br>'Perlリファレンス<br>sWord = Editor.ExpandParameter("$C")<br>Set objIE = CreateObject("InternetExplorer.Application")<br>objIE.Visible = true<br><br>naviURL = "http://www2u.biglobe.ne.jp/~MAS/cgi-bin/perl_ref.cgi" _<br>    &amp; "?query=" &amp; URLEncode(sWord)<br>objIE.Navigate( naviURL )<br><br>Private Function URLEncode(sWord)<br>    For iCnt = 1 To Len(sWord)<br>        sHex = sHex &amp; Hex(Asc(Mid(sWord, iCnt)))<br>    Next<br>    For iCnt = 1To Len(sHex) Step 2<br>        sUrl = sUrl &amp; "%" &amp; Mid(sHex, iCnt, 2)<br>    Next<br>    URLEncode = sUrl<br>End Function<br></div></section>
+    </li><li><section><h1 id=171>
+    <span class="no">[171]</span>
+    <a class="title" href="#171">Re2:シリーズ化は大歓迎、そこでちょい提案など</a>
+    <span class="author">maru</span>
+    <time datetime="2005-06-26T02:35:51">2005年06月26日 02:35</time></h1>
+    <div class="body">'otw_kakaku.vbs --------------------------------<br>'価格.com<br>sWord = Editor.ExpandParameter("$C")<br>Set objIE = CreateObject("InternetExplorer.Application")<br>objIE.Visible = true<br><br>naviURL = "http://kakaku.com/txtsearch/txtsearch.asp" _<br>    &amp; "?TopCategoryCD=&amp;SearchWord=" &amp; URLEncode(sWord)<br>objIE.Navigate( naviURL )<br><br>Private Function URLEncode(sWord)<br>    For iCnt = 1 To Len(sWord)<br>        sHex = sHex &amp; Hex(Asc(Mid(sWord, iCnt)))<br>    Next<br>    For iCnt = 1To Len(sHex) Step 2<br>        sUrl = sUrl &amp; "%" &amp; Mid(sHex, iCnt, 2)<br>    Next<br>    URLEncode = sUrl<br>End Function<br><br>'otw_music.vbs --------------------------------<br>'音楽検索<br>sWord = Editor.ExpandParameter("$C")<br>Set objIE = CreateObject("InternetExplorer.Application")<br>objIE.Visible = true<br><br>naviURL = "http://search.music.yahoo.co.jp/bin/musicsearch" _<br>    &amp; "?cp=" &amp; URLEncode(sWord) &amp; "&amp;cc=fs"<br>objIE.Navigate( naviURL )<br><br>Private Function URLEncode(sWord)<br>    For iCnt = 1 To Len(sWord)<br>        sHex = sHex &amp; Hex(Asc(Mid(sWord, iCnt)))<br>    Next<br>    For iCnt = 1To Len(sHex) Step 2<br>        sUrl = sUrl &amp; "%" &amp; Mid(sHex, iCnt, 2)<br>    Next<br>    URLEncode = sUrl<br>End Function<br></div></section>
+    </li><li><section><h1 id=173>
+    <span class="no">[173]</span>
+    <a class="title" href="#173">実験的マクロランチャ</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-06-26T20:55:51">2005年06月26日 20:55</time></h1>
+    <div class="body"><br>// otwMacLunch.js<br>var macDir = "C:\\MyDocuments\\Sakura\\Macro\\";<br>var exeStr = "cscript //Nologo C:\\bin\\sleep300.vbs";<br>var WshShell = new ActiveXObject("WScript.Shell");<br>// 選択範囲があったら退避<br>var wkStr = Editor.GetSelectedString(0);&#9;// 作業エリア<br>// 編集テキスト上に作業用の空行を作成<br>Editor.InsText("\r\n\r\n");&#9;// 改行を二つ貼り付け<br>Editor.Left();&#9;// カーソル左移動<br>// 入力補完機能のリストボックスでマクロを選択<br>Editor.InsText("otw_");&#9;// テキストを貼り付け<br>Editor.Complete();&#9;// 入力補完<br>while(Editor.ExpandParameter('$x') &lt; 6){<br>&#9;WshShell.Run(exeStr,0,true);<br>}<br>Editor.BeginSelect();&#9;// 範囲選択開始<br>Editor.GoLineTop(1);&#9;// 行頭に移動(折り返し単位)<br>var selStr = Editor.GetSelectedString(0);&#9;// 選択部分の文字列を取得<br>Editor.Delete();&#9;// マクロ選択の文字列を削除<br>// 起動マクロ取得部分の後始末<br>Editor.Right();&#9;// カーソル右移動<br>Editor.DeleteBack();&#9;// バックスペース<br>Editor.DeleteBack();&#9;// バックスペース<br>if(wkStr.length &gt; 0){    // 選択範囲があったなら<br>&#9;pos = Editor.ExpandParameter('$x'); // 現在のカラム位置<br>&#9;Editor.InsText(wkStr);  // 退避テキスト貼り付け<br>&#9;Editor.BeginSelect();   // 選択開始<br>&#9;while(pos &lt; Editor.ExpandParameter('$x')){<br>&#9;&#9;Editor.Left();      // 貼り付けた分カーソル左<br>&#9;}<br>}<br>// 起動マクロのフルパスを編集<br>pos = selStr.indexOf(" ");  // スペースの位置<br>var fn = selStr.substr(0 , pos); // ファイル名取得<br>fn = macDir + fn;  // フルパスに<br>// マクロの読み込みと実行<br>var fso, f, mac;<br>fso = new ActiveXObject("Scripting.FileSystemObject");<br>if(fso.FileExists(fn)){     // マクロが存在するなら<br>f = fso.OpenTextFile(fn, 1);  // 読み込んで<br>mac = f.ReadAll();<br>eval(mac);                    // マクロ実行<br>}<br></div></section>
+    <ul><li><section><h1 id=174>
+    <span class="no">[174]</span>
+    <a class="title" href="#174">Re:実験的マクロランチャ</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-06-26T20:58:20">2005年06月26日 20:58</time></h1>
+    <div class="body">サクラエディタとWSHだけの力で行おうとしています。<br><br>ただマクロ内では、WScriptオブジェクトのSleepが使えないので、外だしにしました。<br>また、選択に入力補完のセレクタを使うので、入力補完ファイルを汚します。<br><br>otwMacLunch.jsマクロの頭の二行はそれぞれの人の環境で変えて下さい。<br>macDir は、otwシリーズのマクロを置いてあるディレクトリのパス<br>exeStr は、以下のsleep300.vbsの起動コマンドです。置き場所に合わせて、フルパス名を直します。<br><br>一行だけのスリープ・スクリプト、300ms＋起動時間マクロを止める<br>-----^ sleep300.vbs<br>WScript.Sleep(300)<br>-----$ sleep300.vbs<br>このスクリプトの置き場所<br><br>以下は、タイプ別設定－支援－入力補完機能－単語ファイルに指定する内容です。<br>既に入力補完の単語ファイルが指定されているならば、この行をそのファイルの最後にでも加えます。<br>-----^ otw_JScript.hkn<br>otw_eijirou.js 英辞郎 On the Web英和・和英<br>otw_goojpdic.js ｇｏｏ国語辞典<br>otw_jm.js Linux JM Project man on WWW<br>otw_JMnamazu.js Linux JM Project 全文検索<br>otw_zipcode.js 郵便番号検索<br>otw_law.js 法令検索<br>-----$ otw_JScript.hkn<br><br>さて、JScript のランチャ・マクロで起動出来るのは JScript のマクロだけ。<br>どうしまひょ。</div></section>
+    <ul><li><section><h1 id=175>
+    <span class="no">[175]</span>
+    <a class="title" href="#175">Re2:実験的マクロランチャ</a>
+    <span class="author">maru</span>
+    <time datetime="2005-06-26T22:28:56">2005年06月26日 22:28</time></h1>
+    <div class="body">▼ りーやさん<br>&gt; さて、JScript のランチャ・マクロで起動出来るのは JScript のマクロだけ。<br><br>こちらも困ったことが…。<br>Symantecのセキュリティソフトが常駐していると<br>Sleepの処理のたびに、ウイルス警告が出ます。<br>FileSystemObjectも多分やばいです。<br><br>vbsで書いたものはエンコード処理をとっぱらって<br>js版で書き換えればどうにかなりそうですが。<br></div></section>
+    <ul><li><section><h1 id=176>
+    <span class="no">[176]</span>
+    <a class="title" href="#176">Re3:実験的マクロランチャ</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-06-27T08:21:20">2005年06月27日 08:21</time></h1>
+    <div class="body">▼ maruさん<br>&gt; こちらも困ったことが…。<br>&gt; Symantecのセキュリティソフトが常駐していると<br>&gt; Sleepの処理のたびに、ウイルス警告が出ます。<br><br>マカフィだと、ひとつのサクラエディタの編集ファイル(プロセス？)毎に警告は一度だけで、今回は許可とすると後は御構い無しですが、起動されるのが WSH だからでしょうか？<br><br>vector に sleep.exe があったので、これを使って<br>http://www.vector.co.jp/soft/win95/util/se282254.html<br><br>var exeStr = "sleep 1";<br>とかしてみると、どうでしょう？ダメっぽいかな？<br>起動を、Editor.ExecCommandにすると、電源落とすしかなくなっちゃうので、それは実験しない方が良いですよ。(泣)<br><br><br>&gt; FileSystemObjectも多分やばいです。<br><br>こっちもキビシイですね。マクロの中でファイルも読めないとなると、外部プログラムにマクロ選択と読み込みをまかせて、クリップボードで渡して貰うくらいしかアイデアが無いです。サクラエディタとマクロだけでは無理ということで、やはり特注プログラムが必要になるのかな？<br><br><br>&gt; vbsで書いたものはエンコード処理をとっぱらって<br>&gt; js版で書き換えればどうにかなりそうですが。<br>いや、ランチャを vbs にした方が良いと思うんですが、Execute ステートメントで動くのは確認しましたので、問題はやはり上の２点か？<br><br>' test.vbs ---------------<br>Dim mac, path<br>path = "C:\\MyDocuments\\Sakura\\Macro\\otw_ascii_yougo.vbs"<br>Set fso = CreateObject("Scripting.FileSystemObject")<br>Set f = fso.OpenTextFile(path , 1)<br>mac = f.ReadAll()<br>Execute mac<br></div></section>
+    <ul><li><section><h1 id=177>
+    <span class="no">[177]</span>
+    <a class="title" href="#177">Re4:実験的マクロランチャ</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-06-27T10:42:34">2005年06月27日 10:42</time></h1>
+    <div class="body">▼ りーやさん<br>&gt; &gt; FileSystemObjectも多分やばいです。<br>&gt; こっちもキビシイですね。マクロの中でファイルも読めない<br><br>gis_dur さん方式があった！！<br>こっちならマクロの言語を問わないから利点もあるか。。。<br>KeySend で実現しているgis_dur さんの 0executeMacro.js は、Symantecに叱られずに動くでしょうか？<br><br>後は、スリープか、マクロで使えない WScript オブジェクトのSleepメソッドの代わりがあれば良い訳で、それを提供している汎用COMコンポーネントを拾ってくればＯＫかな？<br>AutoItXの旧バージョンなら、サイズも小さいからアリかな？<br>http://www.autoitscript.com/AutoIt/downloads.php　(~78KB)<br></div></section>
+    <ul><li><section><h1 id=178>
+    <span class="no">[178]</span>
+    <a class="title" href="#178">Re5:実験的マクロランチャ</a>
+    <span class="author">maru</span>
+    <time datetime="2005-06-28T01:50:30">2005年06月28日 01:50</time></h1>
+    <div class="body">▼ りーやさん<br>&gt; var exeStr = "sleep 1";<br>sleep.exeはたぶんNGです。<br><br>テスト用にウエイトの身代わりとして<br>var exeStr = "ping localhost";<br>としましたがSymantecに叱られました。<br><br>Symantecユーザはあきらめるという選択肢も。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=179>
+    <span class="no">[179]</span>
+    <a class="title" href="#179">Re: 実験的マクロランチャ</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-06-28T08:49:48">2005年06月28日 08:49</time></h1>
+    <div class="body">話の腰を折るようで申し訳ないですが，これって本体にポップアップメニュー表示コマンドを用意すれば解決する話ですか？<br></div></section>
+    <ul><li><section><h1 id=180>
+    <span class="no">[180]</span>
+    <a class="title" href="#180">Re2: 実験的マクロランチャ</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-06-28T22:12:48">2005年06月28日 22:12</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 話の腰を折るようで申し訳ないですが，これって本体にポップアップメニュー表示コマンドを用意すれば解決する話ですか？<br><br>ありがとうございます。<br>本質的には、５０しかないマクロ登録の枠をつぶさないでというコトから始まっています。<br>便利なカスタムメニューが使い切れてない状態ですから、マクロ登録可能数を増やしていただければ、こんな足掻きはしなかったかもしれません。<br><br>一方で、長期的には、マクロ機能が、ここで議論されて強化されて欲しいと願っています。<br>現在のマクロ関数は、マクロ内での利用が充分に吟味されていずに、本体機能の基準で移植されているという印象を受けています。<br>今回のケースの入力補完やウインドウ関係やカスタムメニュー関係更には、ファイル操作関係と数々のマクロ関数が用意れいてますが、ユーザ入力や機能の終了を待たないのでマクロの最後でしか使えないものが大半です。<br>かたや、今回キー送信でメニュー選択してやってしまおうとしている、キーマクロの読み込み(機能番号:31252)とキーマクロの実行(同:31253)は、マクロ関数にありません。<br><br>ユーザーとの対話を支援する機能として、メッセージボックスやインプットボックスは基本的に欲しいですし、欲を言えば入力補完の素敵なリストボックスやファイルオープンなどのコモンダイアログ類もというのは欲張りすぎかな？<br>クリップボードの読み書きも欲しいし、挿入／上書きや折り返す／折り返さないや入力改行コードなどは、マクロで設定を変えられるのですが、ExpandParameter などで現在の状態が取得出来ません。<br><br>ＷＳＨは強力ですが、maruさんの書き込みのようにセキュリティ製品から制限を受けます。セキュリティ・ホールとはならないように便利機能を本体ベースで実現できると良いですね。</div></section>
+    <ul><li><section><h1 id=182>
+    <span class="no">[182]</span>
+    <a class="title" href="#182">Re3: 実験的マクロランチャ</a>
+    <span class="author">maru</span>
+    <time datetime="2005-06-29T00:33:35">2005年06月29日 00:33</time></h1>
+    <div class="body">▼ りーやさん<br>&gt; 本質的には、５０しかないマクロ登録の枠をつぶさないでというコトから始まっています。<br><br>やや便乗しますが「ツール」→「キーマクロの読み込み」<br>と同じ機能を、コマンドラインから<br>sakura.exe -mac="test.js" -nowin<br>→（マクロの読み込みのみを行う）<br>のような実装が、いつの日か実現されることを願いつつ。<br><br>さらに加えて<br>sakura.exe -mac="test.js" -macexec<br>→（マクロの読み込みを行い、実行する）<br>とかができると、日常的に定型の変換処理を行うための<br>ツールとして最高っす。Perlがインストールできる<br>環境であれば、ありがたみは少ないかもしれませんが。<br><br>&gt; マクロ機能が、ここで議論されて強化されて欲しい<br>マクロで実現可能な範囲が広がれば、結果的に<br>本体開発者の方々の負担減につながるかもしれません。<br>私のようにマクロなら書けそうな、なんちゃって開発者は<br>おそらく大勢いると思います。<br></div></section>
+    </li></ul></li><li><section><h1 id=181>
+    <span class="no">[181]</span>
+    <a class="title" href="#181">Re2: 実験的マクロランチャ</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-06-28T23:44:09">2005年06月28日 23:44</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 本体にポップアップメニュー表示コマンドを用意すれば解決する話ですか？<br><br>ああっ、ちゃんとお答えしていなかった。<br>完全には解決出来ないと思います。<br>これで、マクロ名が選択出来れば、後は読み込みと実行ですが、WSHでファイルを読み込んでも、それを避けてキー送信で ALT+T→Aとマクロファイル名とALT+T→Dで本体側に行わせようとしても、セキュリティ製品にブロックされます。<br><br>マカフィでは、sakura.exe のプロセス毎にひとつのマクロは一回許可すれば良いのですが、ノートンはマクロ実行の都度に止められるみたいです。<br><br>maruさん、以下のテストマクロでどうでしょうか？<br>// KeySendTest.js<br>var WshShell = new ActiveXObject("WScript.Shell");<br>WshShell.SendKeys("%(TA)");<br><br>さらに、キー送信は WScript.Sleep で間隔を空けながら行うのが普通ですが、HTML Applications (HTA)同様にWScriptオブジェクトは使えないのはご承知の通りです。<br><br>キーマクロの読み込みと実行もマクロ関数に用意していただいて解決ということになると思います。</div></section>
+    <ul><li><section><h1 id=183>
+    <span class="no">[183]</span>
+    <a class="title" href="#183">Re3: 実験的マクロランチャ</a>
+    <span class="author">maru</span>
+    <time datetime="2005-06-29T01:22:28">2005年06月29日 01:22</time></h1>
+    <div class="body">▼ りーやさん<br>&gt; マカフィでは、…一回許可すれば良いのですが<br>ノートンでも「スクリプト全体を1回許可」という選択が<br>ありますが、ここで許可される適用範囲が<br>いまいちよくわからず、微妙な挙動です。<br><br><br>&gt; // KeySendTest.js<br>&gt; var WshShell = new ActiveXObject("WScript.Shell");<br>&gt; WshShell.SendKeys("%(TA)");<br>警告でます…。<br>「スクリプトを1回許可」ではファイルダイアログがでます。<br>この場合、ある意味期待の動作です。<br>「スクリプト全体を1回許可」では、一応それ以降は<br>警告は出ませんがファイルダイアログも出なくなります。<br><br><br>たとえば呼び出される子マクロをWSCファイルとして<br>ひとつにまとめるというのは？<br>子マクロをWSCに埋め込むユーティリティ（外部プログラム）<br>を用意して事前にマクロ登録を行うような。<br>WSCを呼び出す親マクロと抱き合わせでリリース。<br><br>もっとも、ポップアップメニューが利用できたり<br>あるいはキーコード取得などもできれば<br>複数のマクロをひとつに統合すればよいわけで<br>５０個あるマクロ枠にもずいぶん余裕ができると思われ。<br></div></section>
+    <ul><li><section><h1 id=184>
+    <span class="no">[184]</span>
+    <a class="title" href="#184">Re4: 実験的マクロランチャ</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-06-29T18:49:36">2005年06月29日 18:49</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 「スクリプト全体を1回許可」では、一応それ以降は<br>&gt; 警告は出ませんがファイルダイアログも出なくなります。<br><br>天下のノートン、気難しいものですね。<br><br>&gt; たとえば呼び出される子マクロをWSCファイルとして<br>&gt; ひとつにまとめるというのは？<br><br>ちょっと、試してみました。実験の結果<br>メリット：他のスクリプト言語からでも使える<br>　　　　　レジスタに登録しなくても使えるので、気楽なライブラリィ利用が可能<br>デメリット：Editor.のマクロ関数を持たせるのはたぶん無理<br>やはり？：マクロ内からの利用では、自身と同様に WScript オブジェクトは不可<br><br>使いどころがなかなか難しそうです。<br><br><br>&gt; 複数のマクロをひとつに統合すればよいわけで<br>&gt; ５０個あるマクロ枠にもずいぶん余裕ができると思われ。<br><br>こっちの発想でしょうね。<br>汎用マクロランチャとかこだわらなければ、On The Web シリーズを１マクロで行けますね。<br>これは、ひとつの問題解決ですね。</div></section>
+    <ul><li><section><h1 id=185>
+    <span class="no">[185]</span>
+    <a class="title" href="#185">Windows Script Componentの実験</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-06-29T19:02:36">2005年06月29日 19:02</time></h1>
+    <div class="body">折角なので何かの参考に、レジストリに登録しないで動かせましたが、ウチでは止まっていたサービス(COM+ System Application)を動かす必要がありました。<br><br>-----^ sakuraTest.wsc -----&lt; cut hear<br>&lt;?xml version="1.0"?&gt;<br>&lt;component&gt;<br>&lt;?component error="true" debug="true"?&gt;<br>&lt;registration<br>&#9;description="sakuraTest"<br>&#9;progid="sakuraTest.WSC"<br>&#9;version="1.00"<br>&#9;classid="{a24c7f52-9433-428e-8986-b09d950d4f70}"<br>&gt;<br>&lt;/registration&gt;<br>&lt;public&gt;<br>&#9;&lt;property name="Titl"&gt;<br>&#9;&#9;&lt;put/&gt;<br>&#9;&lt;/property&gt;<br>&#9;&lt;method name="Popup2sec"&gt;<br>&#9;&#9;&lt;PARAMETER name="strMsg"/&gt;<br>&#9;&lt;/method&gt;<br>&lt;/public&gt;<br>&lt;implements type="Behavior" id="Behavior"/&gt;<br>&lt;script language="JScript"&gt;<br>&lt;![CDATA[<br>var description = new sakuraTest;<br>function sakuraTest()<br>{<br>&#9;this.put_Titl = put_Titl;<br>&#9;this.Popup2sec = Popup2sec;<br>}<br>var Titl = "Sakura Popup";<br>function put_Titl(newValue)<br>{<br>&#9;Titl = newValue;<br>}<br>function Popup2sec(strMsg)<br>{<br>&#9;var WshShell = new ActiveXObject("WScript.Shell");<br>&#9;var rtnCode = WshShell.Popup(strMsg, 2, Titl, 0);<br>&#9;return rtnCode;<br>}<br>]]&gt;<br>&lt;/script&gt;<br>&lt;/component&gt;<br>-----$ sakuraTest.wsc -----&lt; cut hear<br><br>ここから使う側<br>// test1.js<br>var sTest = GetObject("script:C:\\WSC\\sakuraTest.WSC");<br>sTest.Titl = "タイトル";     // property<br>sTest.Popup2sec("２秒表示"); // method<br><br>' test2.vbs<br>Set sTest = GetObject("script:C:\\WSC\\sakuraTest.WSC")<br>sTest.Titl = "タイトル"      ' property<br>sTest.Popup2sec("２秒表示")  ' method<br><br># test3.pls<br>use Win32::OLE;<br>my $sTest=Win32::OLE-&gt;GetObject("script:C:\\WSC\\sakuraTest.WSC");<br>$sTest-&gt;{"Titl"} = "タイトル";&#9;# property<br>$sTest-&gt;Popup2sec("２秒表示");  # method<br><br>エクスプローラから動かしたときと、マクロで動かしたときで、２秒で閉じるか閉じないかの違いがあります。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>もかさんの再変換拡張抑制について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3835</span>
+    <a class="title" href="3835.html#3835">もかさんの再変換拡張抑制について</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=3835>
+    <span class="no">[3835]</span>
+    <a class="title" href="#3835">もかさんの再変換拡張抑制について</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-01-30T22:38:51">2005年01月30日 22:38</time></h1>
+    <div class="body">試してみましたが，残念ながら期待通りに動きませんでした．<br><br>MS IMEでは期待通り動くのですが，ATOKだとIMR_CONFIRMRECONVERTSTRINGで0を返してもキャンセルと認識してくれないみたい．<br>(SDKの解説を見る限りではATOKが仕様通り実装されていないんだと思いますが)<br>なので，再変換範囲とエディタの選択範囲のミスマッチが起こって確定orキャンセル後にカーソル位置に別の場所の文字が入ってしまいます．<br><br>作ってしまったGUI部分を<br>reconv_selectext_gui.diff<br>として共有フォルダにおいておきます．</div></section>
+    </li></ul></body></html>

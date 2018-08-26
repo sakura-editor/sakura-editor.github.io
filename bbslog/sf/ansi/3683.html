@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>初期値（行番号の表示幅）</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3683</span>
+    <a class="title" href="3683.html#3683">初期値（行番号の表示幅）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3684</span>
+    <a class="title" href="3683.html#3684">Re: 初期値（行番号の表示幅）</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3683>
+    <span class="no">[3683]</span>
+    <a class="title" href="#3683">初期値（行番号の表示幅）</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-07-18T15:51:59">2004年07月18日 15:51</time></h1>
+    <div class="body">行番号の表示幅を変えてみました。<br>現在は２桁ですが、秀と同じに４桁にしました。<br>パッチにしていただければよいのですが。<br>--- コピー ～ CEditView.cpp&#9;Sun May 30 02:23:20 2004<br>+++ CEditView.cpp&#9;Sun Jul 18 15:38:00 2004<br>@@ -2476,6 +2476,6 @@<br> &#9;}<br> &#9;if( 0 &lt; nAllLines ){<br>-&#9;&#9;nWork = 100;<br>-&#9;&#9;for( i = 3; i &lt; 12; ++i ){<br>+&#9;&#9;nWork = 10000;<br>+&#9;&#9;for( i = 5; i &lt; 12; ++i ){<br> &#9;&#9;&#9;if( nWork &gt; nAllLines ){&#9;// Oct. 18, 2003 genta 式を整理<br> &#9;&#9;&#9;&#9;break;<br>@@ -2485,5 +2485,5 @@<br> &#9;}else{<br> &#9;&#9;//&#9;2003.09.11 wmlhq 行番号が1桁のときと幅を合わせる<br>-&#9;&#9;i = 3;<br>+&#9;&#9;i = 5;<br> &#9;}<br> &#9;return i;<br></div></section>
+    <ul><li><section><h1 id=3684>
+    <span class="no">[3684]</span>
+    <a class="title" href="#3684">Re: 初期値（行番号の表示幅）</a>
+    <span class="author">もか</span>
+    <time datetime="2004-07-18T17:29:27">2004年07月18日 17:29</time></h1>
+    <div class="body">だいぶ前、サクラエディタ(当時テキストエディタ)より、秀の行番号が、やけに横幅を食ってると感じたことがあります。<br>たった1・2桁の違いですが、私には無駄な領域に見えます。<br>主観ですが、100行書くのは比較的容易ですが、1000行書くとなると、かなり頑張らないとできません。<br>できれば、3桁で我慢して欲しいなぁ。<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>台詞部分抜き出し</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">409</span>
+    <a class="title" href="409.html#409">台詞部分抜き出し</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">410</span>
+    <a class="title" href="409.html#410">RE: 台詞部分抜き出し</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=409>
+    <span class="no">[409]</span>
+    <a class="title" href="#409">台詞部分抜き出し</a>
+    <span class="author">kazuki</span>
+    <time datetime="2007-12-06T17:43:11">2007年12月06日 17:43</time></h1>
+    <div class="body">初めまして。kazukiと申します。<br>サクラエディターを友人から進められてつい先日からいじる様になりました。<br>マクロ機能があるということなんですが…<br>すみませんが、早速皆さんに教えていただきたいと思います^^;<br><br>同人ゲームを作っているのですが結構なボリュームになってしまい、台詞の抜き出しに苦労しています。<br>一発で台詞を抜き出せるようなマクロがあったら教えていただけないでしょうか？<br><br>書式は以下のように作っています<br><br>---------------------<br>キャラクター１＠<br>「あああああああ」<br><br>キャラクター１＠<br>「ああああ<br>　あああ」<br><br>キャラクター２＠<br>「こんにちは」<br><br>キャラクター1＠<br>「あああああああ」<br><br>言葉が届いてないようだ。<br>---------------------<br>このような感じです。<br><br>出来ますでしょうか？<br>初心者質問になってしまい申し訳ございませんが、よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=410>
+    <span class="no">[410]</span>
+    <a class="title" href="#410">RE: 台詞部分抜き出し</a>
+    <span class="author">maru</span>
+    <time datetime="2007-12-06T21:35:22">2007年12月06日 21:35</time></h1>
+    <div class="body">とりあえず今回は、こんな感じで置換したらどうですか。<br><br>置換前：(.*＠\r\n)|([「」])<br>置換後：<br>正規表現にチェック<br><br>マクロもがんばって覚えてください。<br></div></section>
+    </li></ul></li></ul></body></html>

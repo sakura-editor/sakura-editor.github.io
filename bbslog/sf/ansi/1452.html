@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>メモ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1452</span>
+    <a class="title" href="1452.html#1452">メモ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1507</span>
+    <a class="title" href="1452.html#1507">RE: メモ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1508</span>
+    <a class="title" href="1452.html#1508">RE: メモ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1828</span>
+    <a class="title" href="1452.html#1828">禁則処理</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1452>
+    <span class="no">[1452]</span>
+    <a class="title" href="#1452">メモ</a>
+    <span class="author">みく</span>
+    <time datetime="2002-02-02T12:48:24">2002年02月02日 12:48</time></h1>
+    <div class="body"><br>前回の2chのメモの続きです。<br>抜けがあってもかんべんしてください。<br><br>・「共通設定－全般」にあるスクロール行数を10行以上にできませんか。<br>&#9;→３０行まで設定可能なはずが、修正漏れですね。<br>・ルーラーがちらつく。<br>&#9;非表示にするには？→色指定ではずす<br>・矩形選択後に元の選択範囲が残る<br>&#9;→2/1版<br>・ステータスバーの行桁表示のところで「桁」の字の右半分がはみ出して欠けている。最大化しても同じく。Win95<br>・ウインドウサイズと位置を保存したい。<br>&#9;→位置は無理<br>・関連付けをもっと細かく選択できたらいい。<br>&#9;→専用の関連付けツールを使いましょう。<br>・禁則処理<br>・外部コマンド実行でperl -e"print 'abcd'"とすると最後の文字が出力されない<br>&#9;→2/1版<br>・マクロに制御構文<br>&#9;→PPA.DLLで試作中<br>・マウスで選択するときEOFのとこまでカーソルが行かない<br>&#9;→2/1版<br>・検索置換のときダイアログで文字が隠れないように<br>&#9;好みにより選択可能？<br>&#9;ヒットした文字が表示される位置（下のほう（上のほう）、真ん中あたり）<br>・外部ヘルプを複数指定<br>&#9;タイプ別にヘルプを指定<br>・ショートカットの割り当てがしにくいので、わかりやすくしてほしい<br>&#9;（割り付け・解除ボタンも小さいなぁ）<br>・外部コマンドが実用に耐えない。<br>&#9;フリーズとか使える $F みたいなのが少ないとか？<br>&#9;外部コマンドに使える $F みたいなのは他にある？<br>&#9;マクロで使うときの「標準出力を得る」のチェックがない<br>・diff実装<br>&#9;K2Editor, xyzzy, 外部ツールでいい？<br>・色分け<br>&#9;全角文字、半角文字、選択範囲<br>・印刷<br>&#9;ヘッダ、フッタで指定できる予約語<br>&#9;IEは、&amp;pが現在のページ数、&amp;Pが総ページ数<br>&#9;位置指定やパス付きファイル名、パスなしファイル名のユーザ指定<br>&#9;IEとメモ帳をまぜて、<br>&#9;&#9;&amp;f 開いているファイルの名前<br>&#9;&#9;&amp;d 短い形式の日付<br>&#9;&#9;&amp;D 長い形式の日付<br>&#9;&#9;&amp;t 時刻 (コントロール パネルの [地域] アイコンで設定した形式)<br>&#9;&#9;&amp;T 時刻 (24 時間制)<br>&#9;&#9;&amp;p 現在のページ番号<br>&#9;&#9;&amp;P 総ページ数<br>&#9;&#9;&amp;&amp; アンパサンド (&amp;)<br>&#9;&#9;&amp;b 中央揃えの文字列 (&amp;b に続けて文字列を入力)<br>&#9;&#9;&amp;b&amp;b 中央揃えの文字列 (最初の &amp;b に続けて文字列を入力) と右揃えの文字列 (2 番目の &amp;b に続けて文字列を入力)<br>&#9;印刷の日付・時刻ではなくてファイルの日付・時刻<br>&#9;奇数／偶数ページのみの印刷指定<br>&#9;&amp;f ファイル名<br>&#9;&amp;F パス付きファイル名<br>&#9;拡張子を除くファイル名<br>&#9;＆では将来不足する可能性あり<br>・入力補完<br>&#9;インクリメンタルサーチ<br></div></section>
+    <ul><li><section><h1 id=1507>
+    <span class="no">[1507]</span>
+    <a class="title" href="#1507">RE: メモ</a>
+    <span class="author">みく</span>
+    <time datetime="2002-02-08T21:48:12">2002年02月08日 21:48</time></h1>
+    <div class="body"><br>しばらく忙しくて開発に参加できそうにありませんので、<br>メモをアップしておきます。<br>＃どなたか実装してみてはいかがでしょうか。<br><br><br>&gt;・色分け<br>&gt;&#9;全角文字、半角文字、選択範囲<br><br>選択範囲についてはglobal.cppに定義されている<br>const COLORREF&#9;SELECTEDAREA_RGB = RGB( 255, 255, 255 );<br>をタイプ別設定の色指定に持っていき、CEditView_New.cpp<br>あたりに処理を追加すれば実装可能です。<br></div></section>
+    </li><li><section><h1 id=1508>
+    <span class="no">[1508]</span>
+    <a class="title" href="#1508">RE: メモ</a>
+    <span class="author">みく</span>
+    <time datetime="2002-02-08T21:48:19">2002年02月08日 21:48</time></h1>
+    <div class="body">&gt;タイトル: メモ<br><br>&gt;・禁則処理<br><br>【概要】<br>　いわゆる禁則処理で次の2種類の禁則を別々にサポート<br><br>・行頭禁則<br>　行頭にくるとまずい文字を指定し、この文字が行頭にくる場合はその文字を行末に<br>置きます。ただし、禁則する文字は1文字だけです。行頭禁則文字の代表例は以下の<br>とおりです。<br>K2例&#9;、。，．・？！゛゜ヽヾゝゞ々ー）］｝」』!),.:;?]}。」、・ー゛゜<br>Word例&#9;!%),.:;?]}￠°’”‰′″℃、。々〉》」』】〕゛゜ゝゞ・ヽヾ！％），．：；？］｝。」、・゛゜￠<br>Word例&#9;!%),.:;?]}￠°’”‰′″℃、。々〉》」』】〕ぁぃぅぇぉっゃゅょゎ゛゜ゝゞァィゥェォッャュョヮヵヶ・ーヽヾ！％），．：；？］｝。」、・ァィゥェォャュョッー゛゜￠<br>・行末禁則<br>　行末にくるとまずい文字を指定し、この文字が行末にくる場合はその文字を行頭に<br>置きます。ただし、禁則する文字は1文字だけです。行末禁則文字の代表例は以下の<br>とおりです。<br>K2例&#9;（［｛「『([{「<br>Word例&#9;$([\{￡\‘“〈《「『【〔＄（［｛「￡￥<br><br>禁則処理の設定はタイプ別設定のスクリーンで行います。ここには元々英文ワード<br>ラップがあります。実は禁則処理は一種の日本語ワードラップと考えることができ<br>ます。ここで、それぞれの禁則処理をするかしないかをチェックボタンで指定し、<br>それぞれの禁則文字をエディットボックスで指定できるようにします。<br><br>禁則文字に指定できる文字数は100文字程度(200バイト)までとします。禁則文字に<br>は全角文字と半角文字のどちらでも指定できます。わかるとは思いますが、禁則文<br>字をたくさん登録すればそれだけ遅くなります。<br><br>【修正個所】<br>CLayoutMgr.cpp <br>&#9;メイン処理(DoLayout, DoLayout3_New)<br>&#9;bWordWrap のところで禁則処理を実装する。←これが問題だな。<br>CLayoutMgr.h<br>CShareData.h<br>&#9;BOOL m_bKinsokuHead<br>&#9;BOOL m_bKinsokuTail<br>&#9;char szKinsokuHead[200];<br>&#9;char szKinsokuTail[200];<br>CShareData.cpp<br>&#9;データのロードとセーブ、旧版との対応<br>CPropTypes.cpp<br>&#9;データの設定<br>ほか<br>&#9;bWordWrap を検索し、これと同様に bKinsokuHead, bKinsokuTail を追加する。<br></div></section>
+    <ul><li><section><h1 id=1828>
+    <span class="no">[1828]</span>
+    <a class="title" href="#1828">禁則処理</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-07T19:02:25">2002年04月07日 19:02</time></h1>
+    <div class="body"><br>なんとなく作りかけたのですが、時間がありません。<br>メモをアップしておきますので、どなたか続きお願いします。<br><br>eGrpups/junk/kinsoku20020407.zip<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

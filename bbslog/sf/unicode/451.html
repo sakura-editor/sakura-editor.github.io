@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix)論理行が長ファイルで対となる括弧がある場合、落ちる場合がある。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">451</span>
+    <a class="title" href="451.html#451">Commit報告:(Fix)論理行が長ファイルで対となる括弧がある場合、落ちる場合がある。</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=451>
+    <span class="no">[451]</span>
+    <a class="title" href="#451">Commit報告:(Fix)論理行が長ファイルで対となる括弧がある場合、落ちる場合がある。</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-05-31T18:06:03">2008年05月31日 18:06</time></h1>
+    <div class="body">リビジョン：<br>　rev1365<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>　Fix: 論理行が長い（テストファイルでは30,000桁以上）ファイルで対となる括弧がある場合、落ちる場合がある。<br><br>normnfkd.nls を読み込んでUnicodeで開きなおすと発生しました。<br><br>設定的には、対括弧の強調表示が必要なようです。<br><br>原因は、表示行の文字列から論理行のインデックスで読み込んでいることが原因です。<br><br>CEditView_Paint.cpp の GetColorIndex 関数を修正しましたが、落ちないようにしただけです。<br>どなたか見直ししていただけるとうれしいのですが。</div></section>
+    </li></ul></body></html>

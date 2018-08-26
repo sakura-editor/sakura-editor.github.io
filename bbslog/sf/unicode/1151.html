@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>rev1730でコンパイルエラー</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1151</span>
+    <a class="title" href="1151.html#1151">rev1730でコンパイルエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1153</span>
+    <a class="title" href="1151.html#1153">Re:rev1730でコンパイルエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1154</span>
+    <a class="title" href="1151.html#1154">Re2:rev1730でコンパイルエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1157</span>
+    <a class="title" href="1151.html#1157">Re3:rev1730でコンパイルエラー</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1151>
+    <span class="no">[1151]</span>
+    <a class="title" href="#1151">rev1730でコンパイルエラー</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-04-04T01:36:08">2010年04月04日 01:36</time></h1>
+    <div class="body">最新のrev1730ですが、ANSI用の構成(Debug_Ansi/Release_Ansi)でビルドするとコンパイルエラーになってしまうみたいです。</div></section>
+    <ul><li><section><h1 id=1153>
+    <span class="no">[1153]</span>
+    <a class="title" href="#1153">Re:rev1730でコンパイルエラー</a>
+    <span class="author">Uchi</span>
+    <time datetime="2010-04-04T07:14:03">2010年04月04日 07:14</time></h1>
+    <div class="body">ご指摘ありがとうございます。<br>修正を入れて追いました。<br><br>ところで、ANSI構成のビルドは動作しているのでしょうか？</div></section>
+    <ul><li><section><h1 id=1154>
+    <span class="no">[1154]</span>
+    <a class="title" href="#1154">Re2:rev1730でコンパイルエラー</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-04-04T10:00:57">2010年04月04日 10:00</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; ところで、ANSI構成のビルドは動作しているのでしょうか？<br><br>どこまで動くかはわからないのですが、今ちょっと試したところではWin98でも起動してファイルを読む、くらいは動くみたいですね。<br><br>自分は「ANSI構成でもコンパイルが通ることは確認しましょう」という既存ルールに従ってそうしています。(^^;;;<br>sakura以外のプログラムでも正式サポートかどうかに関わらず習慣としてそうするように心がけている、というのもありますけど。</div></section>
+    <ul><li><section><h1 id=1157>
+    <span class="no">[1157]</span>
+    <a class="title" href="#1157">Re3:rev1730でコンパイルエラー</a>
+    <span class="author">もか</span>
+    <time datetime="2010-04-04T22:39:03">2010年04月04日 22:39</time></h1>
+    <div class="body">%s %lsが狂ってるのを除けば大体動くみたいです。<br>今いじり中のダイレクトタグジャンプは間違ってました。<br><br>パッチ、trunkコミットについては<br>&gt;ANSI構成でもコンパイルが通ることは確認しましょう<br>に加えて、<br>・動作に対する修正は任意。修正の強制・強要はしない<br>という方針みたいですね。<br><br>Win9x/NT4(特に95 !!!)で使えないAPIの使用については、どうなんでしょう？<br>・95はそもそも、CRTで起動できないのでしらない<br>・xxxxWは基本実装されてないエラーコードになるので、TCHARにしている<br>・存在しないAPIはダイナミックリンク推奨？<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

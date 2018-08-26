@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>SJISファイルをUFT-8として開く</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6870</span>
+    <a class="title" href="6870.html#6870">SJISファイルをUFT-8として開く</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6871</span>
+    <a class="title" href="6870.html#6871">Re:SJISファイルをUFT-8として開く</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6872</span>
+    <a class="title" href="6870.html#6872">Re2:SJISファイルをUFT-8として開く</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6870>
+    <span class="no">[6870]</span>
+    <a class="title" href="#6870">SJISファイルをUFT-8として開く</a>
+    <span class="author">ぜっと</span>
+    <time datetime="2009-01-13T15:30:52">2009年01月13日 15:30</time></h1>
+    <div class="body">サクラエディタ ANSI版 v1.6.3.0 での現象です。<br><br>SJISで保存されているテキストファイルを開くダイアログで「UTF-8」指定したり、<br>「UTF-8で開きなおす」をしたりしても、正しい内容で表示されてしまいます。<br># 化けるはず、ですよねぇ？<br><br>UTF-8で保存されているファイルを「SJIS」指定で開くとちゃんと化けて表示されます。<br><br>なにか私が勘違いしているのでしょうか。。。。？<br><br></div></section>
+    <ul><li><section><h1 id=6871>
+    <span class="no">[6871]</span>
+    <a class="title" href="#6871">Re:SJISファイルをUFT-8として開く</a>
+    <span class="author">それで正しい</span>
+    <time datetime="2009-01-13T21:37:51">2009年01月13日 21:37</time></h1>
+    <div class="body">▼ ぜっとさん<br>&gt; # 化けるはず、ですよねぇ？<br><br>「多くの文字が化けない」が正しい動作だと思いますよ。<br><br>ANSI版では内部処理がSJISなので、UTF-8で開くとメモリ上にはUTF-8→SJIS変換したデータが置かれます。<br>その際、UTF-8として解釈できない文字は無変換のままメモリ上に置かれることになると思います。<br>元がSJISでUTF-8→SJIS変換できなかった文字はそのままSJISとして解釈できる状態でメモリに置かれることになるので、そこは化けません。<br><br>元がSJISなのにUTF-8→SJIS変換できてしまう部分については化けると思います。</div></section>
+    <ul><li><section><h1 id=6872>
+    <span class="no">[6872]</span>
+    <a class="title" href="#6872">Re2:SJISファイルをUFT-8として開く</a>
+    <span class="author">ぜっと</span>
+    <time datetime="2009-01-15T08:22:22">2009年01月15日 08:22</time></h1>
+    <div class="body">&gt; その際、UTF-8として解釈できない文字は無変換のままメモリ上に置かれることになると思います。<br>あ、そうか、なるほどそういうことですか。<br>理解しました。<br><br>どうもありがとうございます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

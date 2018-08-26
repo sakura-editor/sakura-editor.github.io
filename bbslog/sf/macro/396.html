@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>PHP＆JS向けのxDocコメント生成</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">396</span>
+    <a class="title" href="396.html#396">PHP＆JS向けのxDocコメント生成</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">397</span>
+    <a class="title" href="396.html#397">Re:PHP＆JS向けのxDocコメント生成</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">398</span>
+    <a class="title" href="396.html#398">Re2:PHP＆JS向けのxDocコメント生成</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">399</span>
+    <a class="title" href="396.html#399">Re3:PHP＆JS向けのxDocコメント生成</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=396>
+    <span class="no">[396]</span>
+    <a class="title" href="#396">PHP＆JS向けのxDocコメント生成</a>
+    <span class="author">てふてふ</span>
+    <time datetime="2007-09-24T06:58:59">2007年09月24日 06:58</time></h1>
+    <div class="body">はじめまして。<br>ちょっとよさげなマクロができたので投稿します。<br><br>JavaDocのようなコメントを生成します。<br>PHPやJavaScriptなど、関数宣言に型を使わない言語専用です。<br>（Javaはだめ）<br><br>関数・クラス・変数・ファイルヘッダ対応のつもり。<br>あえてJSぽく書いてみました。<br><br># Wikiに投稿したかったけどできなかったのでこちらへ。<br># 長くてすみませんが前・後編で。<br>-----------------------------<br>/**<br> * サクラエディタマクロ<br> * PHP・JS向けxDoc風コメント作成<br> * @author てふてふさん<br> * @license <a href=http://www.opensource.org/licenses/gpl-license.php target=_top><nobr>http://<wbr>www.<wbr>opensour<wbr>ce.<wbr>org/<wbr>licenses<wbr>/<wbr>gpl-<wbr>license.<wbr>php</nobr></a> GPL<br> * @version 1.0<br> * @link <br> * @since sakura:1.5.5.0<br> * @see 似たようなのがあったので参考にしました<br> * @see → doxgen用のコメントを付加<br> * @see  <a href=http://sakura.qp.land.to/?Macro%2F%C5%EA%B9%C6%2F100 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Macro%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6%<wbr>2F100</nobr></a><br> * <br> * 起動方法：対象となる function や class 行の上でマクロ起動。<br> * 種別    ：JScript<br> */<br><br><br>// 改行コードの取得<br>var cr = ["\x0d\x0a", "\x0a", "\x0a"][Editor.GetLineCode()];<br>d("cr:「" + cr + "」");<br><br>/**<br> * デバッグ出力<br> * @param s 文字列<br> */<br>function d(s) {<br>//  Editor.AddTail(s + cr);<br>}<br><br>/**<br> * オブジェクトの要素表示（デバッグ）<br> * @param o オブジェクト<br> */<br>function inspect(o) {<br>  var s = "";<br>  for (key in o) {<br>    s += key + " =&gt; " + o[key].toString() + cr;<br>  }<br>  d(s);<br>}<br><br>/**<br> * スクリプト離脱<br> * @throw number=0の例外オブジェクト<br> * @param s メッセージ<br> */<br>function exit(s) {<br>  throw {number: 0, message: s};<br>}<br><br>/**<br> * ファイルヘッダを出力する<br> */<br>function fileHeader() {<br>  out.put("/**" + cr);<br>  out.put(" * " + cr);<br>  // 以下、不要なものはコメントアウトしてください。<br>  out.put(" * @package " + cr);<br>  out.put(" * @author " + cr);<br>  out.put(" * @copyright " + cr);<br>  out.put(" * @license " + cr);<br>  out.put(" * @version " + cr);<br>  out.put(" * @filesource " + cr);<br>  out.put(" * @link " + cr);<br>  out.put(" * @see " + cr);<br>  out.put(" * @since " + cr);<br>  out.put(" */" + cr);<br>  out.flush();<br>  up(out.line - 1);<br>  Editor.GoLineEnd();<br>  exit("ファイルヘッダ出力");<br>}<br><br>/**<br> * カーソルを上に移動<br> * @return <br> * @param n 移動回数<br> */<br>function up(n) {<br>  if (n &gt; 0) {<br>    for (var i = 0; i &lt; n; i++) {<br>      Editor.Up();<br>    }<br>  } else if (n &lt; 0) {<br>    for (var i = 0; i &gt; n; i--) {<br>      Editor.Down();<br>    }<br>  }<br>}<br></div></section>
+    <ul><li><section><h1 id=397>
+    <span class="no">[397]</span>
+    <a class="title" href="#397">Re:PHP＆JS向けのxDocコメント生成</a>
+    <span class="author">てふてふ</span>
+    <time datetime="2007-09-24T07:01:17">2007年09月24日 07:01</time></h1>
+    <div class="body"><br>try {<br> <br>  /**<br>   * @var out 出力コメントオブジェクト<br>   */<br>  var out = {<br>    line: 0,  /* 出力行数 */<br>    /**<br>     * コメント行追加<br>     * @param s 行。改行は自分で付加すること。<br>     */<br>    put: function(s) {<br>      this[this.line++] = s;<br>    },<br>    /**<br>     * コメント行出力<br>     */<br>    flush: function() {<br>      Editor.GoLineTop(1);<br>      out.buf = "";<br>      for (var i = 0; i &lt; out.line; i++) {<br>        out.buf += out[i];<br>      }<br>      Editor.InsText(out.buf);<br>    }<br>  };<br> <br>  // カーソル行取得<br>  var line = Editor.GetLineStr(0);<br>  if (line.length == 0) {<br>    exit("line.len = 0");<br>  }<br> <br>  // 行番号取得<br>  Editor.GoLineTop();<br>  Editor.GoLineEnd_Sel();<br>  var lineno = Editor.GetSelectLineFrom().toString();<br> <br>  // １、２行目のときは、ファイルヘッダを出す。<br>  if (lineno &lt;= 2) {<br>    fileHeader();<br>    exit("ファイルヘッダ出力");<br>  }<br><br>  // 行をトークンわけする<br>  var norm = line.match(/[\$a-zA-Z0-9_]+|\(|\)/g).toString();<br>  d("norm:" + norm);<br>  var tok = norm.split(",");<br>  if (tok.length == 0) {<br>    exit("tok.len = 0");<br>  }<br> <br>  // インデントの取得<br>  var head = line.search(tok[0]);<br>  d("head:" + head);<br>  var indent = line.slice(0, head);<br>  d("indent:「" + indent + "」");<br> <br>  out.put(indent + "/**" + cr);<br> <br>-------<br># だめだ～。前・中・後編だぁ。</div></section>
+    <ul><li><section><h1 id=398>
+    <span class="no">[398]</span>
+    <a class="title" href="#398">Re2:PHP＆JS向けのxDocコメント生成</a>
+    <span class="author">てふてふ</span>
+    <time datetime="2007-09-24T07:01:44">2007年09月24日 07:01</time></h1>
+    <div class="body">  // コメントの作成<br>  if (tok[0] == "function") {<br>    // 関数<br>    out.put(indent + " * " + cr);<br>    out.put(indent + " * @return " + cr);<br>    out.put(indent + " * @throws " + cr);<br>    for (var i = 3; i &lt; tok.length &amp;&amp; tok[i] != ")"; i++) {<br>      out.put(indent + " * @param " + tok[i] + " " + cr);<br>    }<br>  } else if (tok[0] == "class") {<br>    // クラス<br>    out.put(indent + " * " + cr);<br>    out.put(indent + " * @package " + cr);<br>  } else if (tok[0] == "var") {<br>    // 変数<br>    out.put(indent + " * " + cr);<br>    out.put(indent + " * @var"<br>        + (tok.length &gt; 1  ?  " " + tok[1]  :  "") + " " + cr);<br>  } else {<br>    // 空のコメント<br>    out.put(indent + " * " + cr);<br>  }<br>  out.put(indent + " */" + cr);<br> <br>  // コメントの出力<br>  out.flush();<br>  // カーソル移動<br>  up(out.line - 1);<br>  Editor.GoLineEnd();<br><br>  d("正常終了");<br> <br>} catch (e) {<br>  if (e.number == 0) {<br>    d("離脱：" + e.message);<br>  } else {<br>    d(cr + e.name + ": " + e.description);<br>    d("エラー終了");<br>  }<br>}<br>------<br>おわり。</div></section>
+    <ul><li><section><h1 id=399>
+    <span class="no">[399]</span>
+    <a class="title" href="#399">Re3:PHP＆JS向けのxDocコメント生成</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-24T20:55:48">2007年09月24日 20:55</time></h1>
+    <div class="body">Wikiに転載しました．<br>http://sakura.qp.land.to/?Macro%2F%C5%EA%B9%C6%2F175<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

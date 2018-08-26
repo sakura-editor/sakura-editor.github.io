@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>強調表示についての質問 ＠wikiを編集しています</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5904</span>
+    <a class="title" href="5904.html#5904">強調表示についての質問 ＠wikiを編集しています</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5907</span>
+    <a class="title" href="5904.html#5907">Re: 強調表示についての質問 ＠wikiを編集しています</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5908</span>
+    <a class="title" href="5904.html#5908">Re2: 強調表示についての質問 ＠wikiを編集しています</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5904>
+    <span class="no">[5904]</span>
+    <a class="title" href="#5904">強調表示についての質問 ＠wikiを編集しています</a>
+    <span class="author">編集人</span>
+    <time datetime="2007-03-02T16:31:16">2007年03月02日 16:31</time></h1>
+    <div class="body">|BGCOLOR(BLACK):[[&gt;]]|BGCOLOR(BLACK):[[]<br>]|<br><br>上の文で[と&gt;を強調表示したいと思い、設定してみたんですが<br>反映されません。<br><br>強調キーワードでテキストというセットを追加し、<br>カラータブで強調キーワード1に設定しています。<br><br>強調キーワード：テキストの内容<br>#line<br>[<br>]<br><br>#lineは強調表示されています。<br>（確認用サンプルとして入れました）<br><br>よろしく、お願いします</div></section>
+    <ul><li><section><h1 id=5907>
+    <span class="no">[5907]</span>
+    <a class="title" href="#5907">Re: 強調表示についての質問 ＠wikiを編集しています</a>
+    <span class="author">もか</span>
+    <time datetime="2007-03-03T00:08:33">2007年03月03日 00:08</time></h1>
+    <div class="body">&gt;上の文で[と&gt;を強調表示したいと思い、設定してみたんですが<br>&gt;反映されません。<br>&gt;強調キーワードでテキストというセットを追加し、<br>&gt;カラータブで強調キーワード1に設定しています。<br>http://sakura-editor.sourceforge.net/htmlhelp/HLP000086.html<br>このあたりに書いてあるように、単語単位で検索するようになっているため、<br>[や()のようなものは強調キーワードでは設定できません。<br>これは<br>&gt;#line<br>の例で言えば、「#line #line_next」のような文字列の「#line_next」の#line部分は<br>色が変わらないようになっていると言うことです。<br>数が少ないのであれば、<br>タイプ別設定の「正規表現キーワード」で<br>&#9;▼キーワード  色指定<br>&#9;/\[/k 「強調キーワード1」<br>&#9;/\]/k 「強調キーワード1」<br><br>タイプ別カラータブの「強調キーワード1」の色分けをONにする。<br>のような設定を試して見てください。<br></div></section>
+    <ul><li><section><h1 id=5908>
+    <span class="no">[5908]</span>
+    <a class="title" href="#5908">Re2: 強調表示についての質問 ＠wikiを編集しています</a>
+    <span class="author">編集人</span>
+    <time datetime="2007-03-03T00:58:34">2007年03月03日 00:58</time></h1>
+    <div class="body">&gt;タイプ別設定の「正規表現キーワード」で<br>&gt;        ▼キーワード  色指定<br>&gt; &#9;/\[/k 「強調キーワード1」<br>&gt; &#9;/\]/k 「強調キーワード1」<br><br>この設定で強調表示する事が出来ました。<br>ヘルプの方にも目を通してみます。<br>ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>TeXにおける問題点に対する考察</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">206</span>
+    <a class="title" href="206.html#206">TeXにおける問題点に対する考察</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">208</span>
+    <a class="title" href="206.html#208">Re:TeXにおける問題点に対する考察</a></div>
+    </li><li><div class="list-title">
+    <span class="no">209</span>
+    <a class="title" href="206.html#209">外部コマンドについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">211</span>
+    <a class="title" href="206.html#211">Re: 外部コマンドについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">216</span>
+    <a class="title" href="206.html#216">文中のURL</a></div>
+    </li><li><div class="list-title">
+    <span class="no">220</span>
+    <a class="title" href="206.html#220">Re2: 外部コマンドについて</a></div>
+    </li><li><div class="list-title">
+    <span class="no">221</span>
+    <a class="title" href="206.html#221">Re2: 外部コマンドについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">222</span>
+    <a class="title" href="206.html#222">PipeCommandの質問</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">224</span>
+    <a class="title" href="206.html#224">Re:PipeCommandの質問</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">226</span>
+    <a class="title" href="206.html#226">解決策(Re2:PipeCommandの質問)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">227</span>
+    <a class="title" href="206.html#227">Re:解決策(Re2:PipeCommandの質問)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">228</span>
+    <a class="title" href="206.html#228">Re: 解決策</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">229</span>
+    <a class="title" href="206.html#229">Re2: 解決策</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">230</span>
+    <a class="title" href="206.html#230">新たな質問</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">231</span>
+    <a class="title" href="206.html#231">Re:新たな質問</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">233</span>
+    <a class="title" href="206.html#233">評価順序は処理系依存（話がそれてすみません）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">234</span>
+    <a class="title" href="206.html#234">Re:評価順序は処理系依存（話がそれてすみません）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">235</span>
+    <a class="title" href="206.html#235">Re2:評価順序は処理系依存（話がそれてすみません）</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=206>
+    <span class="no">[206]</span>
+    <a class="title" href="#206">TeXにおける問題点に対する考察</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-03-29T00:11:10">2001年03月29日 00:11</time></h1>
+    <div class="body">▼じぇぷろさんが一般掲示板にて<br>&gt;マクロをキーに割り当てられれば便利だが<br>現時点では一度に1つのマクロしか扱うことができない上、マクロではエディタでのキー操作しか登録できません。<br><br>キー操作では単一のコマンドコードを送信することしかできないのですが、複数(10個程度)のマクロを登録できる領域を用意してカスタムメニューみたいにMACRO_00～MACRO_09で対応するマクロを呼び出すようにすることは一時期考えました。（その後忘れましたが）。<br><br>もう一つ、現在のマクロではパラメータを伴うコマンドが用意されていませんので、たとえばJUMPを登録してもジャンプのダイアログが開くだけであり、移動先をパラメータ指定することができません。以前も書きましたがこれを提供するには対応する受け皿関数の実装とそれを使うための新規マクロの導入が必要と思われます。<br><br>&gt;外部コマンド<br>これ、誰か作り直してくれる人いませんか。Perl用Editor COPALのページに標準出力をうまく取り込む方法が詳しく書かれていたのでそれを利用できると思うのですが。<br><br>&gt; オプションスィッチに使われている'='が set xxx=の'='と見なされる<br>Windows 2000では'='も文字として設定できました。<br><br>&gt; 互換性の問題<br>実はテキストエディタ自身が新しいエディタを開くときにパラメータ指定を使っています。もっとも顕著な例がGREPですね。<br><br>&gt; ほとんど同じコードがずらーーっと増える<br>ここは作り方を工夫すれば回避可能だと思いますよ。ただ、回避しても気合いを入れただけの見返りがあるとは思えないけど。<br><br>&gt; 既に開いているファイルでもユーザが起動オプションを指定している場合はそれに従った動作をするように<br>WinMain.cppの280行目にあるとおり、既にウィンドウが開かれているときは単にActiveにするだけです。ここでパラメータを反映させるためには既にある別のプロセスに情報を送らないといけません。<br><br>最も簡単なのはコマンド送付用の共通メッセージを定義してPostMessageで送ることだと思います。幸いWindow Handleは取得できていますし。と思ったら既にありました。MYWM_SETCARETPOSメッセージです。ただ、これは共有メモリのワークエリアを使ってデータを送っているので、複数のエディタを同時に開いたりするとワークエリアが衝突する危険性が高いです。できれば共有メモリを使わないやり方に変えたいところです。<br><br>Window Messageで送れるパラメータ付きコマンドのレパートリーを増やしていけば、それがそのままマクロにも使えそうですしね。でももっと複雑なデータを確実に送るにはどうするのが一番良いのでしょうか？<br></div></section>
+    <ul><li><section><h1 id=208>
+    <span class="no">[208]</span>
+    <a class="title" href="#208">Re:TeXにおける問題点に対する考察</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-03-29T02:39:56">2001年03月29日 02:39</time></h1>
+    <div class="body">▼ げんたさん<br>いろいろコメントいただき有難うございます。そのいくつかに。。。<br><br>&gt; もう一つ、現在のマクロではパラメータを伴うコマンドが用意されていませんので、たとえばJUMPを登録してもジャンプのダイアログが開くだけであり、移動先をパラメータ指定することができません。以前も書きましたがこれを提供するには対応する受け皿関数の実装とそれを使うための新規マクロの導入が必要と思われます。<br>環境変数みたいに必要な内部変数を用意すればいいわけですよね。例えばK2Editorではそうなってます。<br> <br>&gt; &gt;外部コマンド<br>&gt; これ、誰か作り直してくれる人いませんか。Perl用Editor COPALのページに標準出力をうまく取り込む方法が詳しく書かれていたのでそれを利用できると思うのですが。<br>自分には手に余りますが、とりあえず今のダイアログを少し修正しました。無効な[?]を消し、コンテキストヘルプを表示させたり(ただしヘルプ自体はない)、無効な参照ボタンを使えるようにしたり、<br>コマンド入力が水平スクロールしなかったのを直したり、など。<br><br>&gt; &gt; オプションスィッチに使われている'='が set xxx=の'='と見なされる<br>&gt; Windows 2000では'='も文字として設定できました。<br>Win95/98ではダメです。Meは？　Y:だけは追加しました。他にメッセージなどの細かい修正も。<br>みく氏の修正と私のこの修正(+.rcの修正)でUR1.2.33.1にしてはどうでしょうか？<br><br>&gt; &gt; 互換性の問題<br>&gt; 実はテキストエディタ自身が新しいエディタを開くときにパラメータ指定を使っています。もっとも顕著な例がGREPですね。<br>内部使用だけなら、どう修正しても整合が取れていれば問題ないわけですが。。。見直すのがメンドくさいね。やっぱり追加が楽か。<br><br>&gt; &gt; ほとんど同じコードがずらーーっと増える<br>&gt; ここは作り方を工夫すれば回避可能だと思いますよ。ただ、回避しても気合いを入れただけの見返りがあるとは思えないけど。<br>そう思い、やってません。<br><br>&gt; &gt; 既に開いているファイルでもユーザが起動オプションを指定している場合はそれに従った動作をするように<br>&gt; WinMain.cppの280行目にあるとおり、既にウィンドウが開かれているときは単にActiveにするだけです。ここでパラメータを反映させるためには既にある別のプロセスに情報を送らないといけません。<br>文字コード指定オプションなど、複雑なのはいいから、行ジャンプだけでも何とかしてほしいです。<br> <br>例えば、保存しないまま修正していると、エラー行番号がずれてしまいますが、これはユーザがちゃんと保存することで対処できます。未保存の修正ファイルを行番号指定して開こうとしたら、開く前に注意を促す(保存してないよとか、行番号ズレルかも、とか)のが理想ですが、保存・未保存に関係なくいきなり指定行にジャンプするのでも大して問題はないでしょう。たかがジャンプですから。</div></section>
+    </li><li><section><h1 id=209>
+    <span class="no">[209]</span>
+    <a class="title" href="#209">外部コマンドについて</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-03-29T13:37:17">2001年03月29日 13:37</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;外部コマンド<br>&gt; これ、誰か作り直してくれる人いませんか。Perl用Editor COPALのページに標準出力をうまく取り込む方法が詳しく書かれていたのでそれを利用できると思うのですが。<br>COPALはコパルではなくてコーパルと読むんですか。自分では何も出来ませんが、HPにお得な情報がありました。<br>COPAL　HPのトップ http://homepage1.nifty.com/kaityo/<br>COPALの部屋にある「ちょっと愚痴っていいですか？(希望編)」を読みましたか？&gt;げんた氏<br>COPALももうじきそうするようですが、それを待つよりこっちのほうを利用できませんか？<br># 今度は得した気分？そうでもないか。。。<br># 色々便利な物があるんですね。COPALもはじめて知りました。こういうツールでしのぐ手も十分ありますね。でもファイルサイズがsakura並なのが。。。<br># sakuraに取り込む分にはもう一つの方のProでないもので十分という気がします。</div></section>
+    <ul><li><section><h1 id=211>
+    <span class="no">[211]</span>
+    <a class="title" href="#211">Re: 外部コマンドについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-03-29T15:31:09">2001年03月29日 15:31</time></h1>
+    <div class="body">▼じぇぷろさん<br>&gt;COPALももうじきそうするようですが、それを待つよりこっちのほうを利用できませんか？<br>DosExec.cppが参考になりそうですね。スレッド部分でMFCの機能を使っているのでこのまま使うわけには行きませんが。<br><br>P.S. INCMから投稿すると文中のURLがハイパーリンクにならないんですよね。<br></div></section>
+    <ul><li><section><h1 id=216>
+    <span class="no">[216]</span>
+    <a class="title" href="#216">文中のURL</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-03-30T00:40:57">2001年03月30日 00:40</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; P.S. INCMから投稿すると文中のURLがハイパーリンクにならないんですよね。<br>ごく普通にオンラインで投稿したんですが・・・INCMなるソフトは入れてません。<br></div></section>
+    </li><li><section><h1 id=220>
+    <span class="no">[220]</span>
+    <a class="title" href="#220">Re2: 外部コマンドについて</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-04-02T03:16:57">2001年04月02日 03:16</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼じぇぷろさん<br>&gt; &gt;COPALももうじきそうするようですが、それを待つよりこっちのほうを利用できませんか？<br>&gt; DosExec.cppが参考になりそうですね。スレッド部分でMFCの機能を使っているのでこのまま使うわけには行きませんが。<br>COPALはレジストリを使いませんが、DosExe(Pro)はレジストリに書き込んじゃいますね。アンインストールの手順が書いてないのもちょっと困るかな。。。<br>レジストリエディタで消すしかないですね。</div></section>
+    </li><li><section><h1 id=221>
+    <span class="no">[221]</span>
+    <a class="title" href="#221">Re2: 外部コマンドについて</a>
+    <span class="author">蛭子屋双六</span>
+    <time datetime="2001-04-02T10:25:05">2001年04月02日 10:25</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼じぇぷろさん<br>&gt; &gt;COPALももうじきそうするようですが、それを待つよりこっちのほうを利用できませんか？<br>&gt; DosExec.cppが参考になりそうですね。スレッド部分でMFCの機能を使っているのでこのまま使うわけには行きませんが。<br><br>こんなのを作ってみたんですが<br>http://cgisv.chldren.net/%7Eyebisuya/Pip<br>eCommand.lzh<br>使えませんでしょうか?</div></section>
+    <ul><li><section><h1 id=222>
+    <span class="no">[222]</span>
+    <a class="title" href="#222">PipeCommandの質問</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-02T14:33:28">2001年04月02日 14:33</time></h1>
+    <div class="body">▼蛭子屋双六さん<br>&gt;http://cgisv.chldren.net/%7Eyebisuya/Pi<br>peCommand.lzh<br>拝見させていただきましたが、よくわからないところがありますので教えてください。<br><br>1. PipeCommand::executeでglobal変数paramに関数のアドレスをセットしてAnonymousPipeクラスではそれを使っていますが、クラスオブジェクトのメンバー関数を直接呼び出さないのはどうしてですか？<br><br>2. &amp;PipeCommand::getCommandLine としてメンバー関数のアドレスをセットしていますが、これで派生クラスの関数のポインタが入るんですか？<br><br>3. paramがglobal変数なので、PipeCommandでは2種類の派生クラスを同時には使えないという認識でいいんでしょうか。<br><br>4. その他KEY POINTがありましたら教えてください。<br></div></section>
+    <ul><li><section><h1 id=224>
+    <span class="no">[224]</span>
+    <a class="title" href="#224">Re:PipeCommandの質問</a>
+    <span class="author">蛭子屋双六</span>
+    <time datetime="2001-04-02T21:16:36">2001年04月02日 21:16</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼蛭子屋双六さん<br>&gt; &gt;http://cgisv.chldren.net/%7Eyebisuya/Pi<br>&gt; peCommand.lzh<br>&gt; 拝見させていただきましたが、よくわからないところがありますので教えてください。<br>&gt; <br>&gt; 1. PipeCommand::executeでglobal変数paramに関数のアドレスをセットしてAnonymousPipeクラスではそれを使っていますが、クラスオブジェクトのメンバー関数を直接呼び出さないのはどうしてですか？<br><br>外部からこれらのプライベートメンバにアクセスできないように、<br>また、このソース(PipeCommand.cpp)にある関数からであれば<br>アクセスできるように隠蔽しています。<br><br>この方法の他にもfriend等を使って隠蔽する方法がありますが、<br>friendに指定したクラス名や関数名がばれてしまうので<br>ごく一部のクラスや関数にだけメンバの一部を公開するときに<br>私はこの方法を使っています。<br><br>しかし、理解しにくくなってしまってますね。<br>Keep It Simple and Smallを守るべきだったと後悔してます。<br><br>&gt; 2. &amp;PipeCommand::getCommandLine としてメンバー関数のアドレスをセットしていますが、これで派生クラスの関数のポインタが入るんですか？<br><br>派生クラスの関数のポインタが入るのではなく<br>PipeCommandクラスのメンバ関数へアクセスするための<br>ポインタが入ります。<br><br>例えば<br><br>void (SampleClass::*func)(const char*) = &amp;SampleClass::func1;<br>SampleClass* object;<br><br>とした場合、次の二つは同じになります。<br><br>object-&gt;*func(text);<br>object-&gt;func1(text);<br><br>つまりfunc1が仮想関数として宣言されていれば、<br>派生クラスでオーバーライドしていれば<br>オーバーライドしたメンバ関数func1が呼ばれるようになります。<br>ですので、<br><br>&gt; 3. paramがglobal変数なので、PipeCommandでは2種類の派生クラスを同時には使えないという認識でいいんでしょうか。<br><br>これは複数派生させたクラスがあれば<br>それぞれのメンバ関数が呼ばれるので<br>同時に使用しても大丈夫です。<br><br>&gt; 4. その他KEY POINTがありましたら教えてください。<br><br>PipeCommandのprivateメンバをすべてpublicにして<br>PipeCommand.cppの「-&gt;*param.」をすべて「-&gt;」に置換すれば<br>もうちょっとわかりやすくなるかも知れません。</div></section>
+    <ul><li><section><h1 id=226>
+    <span class="no">[226]</span>
+    <a class="title" href="#226">解決策(Re2:PipeCommandの質問)</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-03T11:26:35">2001年04月03日 11:26</time></h1>
+    <div class="body">▼蛭子屋双六さん<br>&gt;外部からこれらのプライベートメンバにアクセスできないように、<br>&gt;また、このソース(PipeCommand.cpp)にある関数からであれば<br>&gt;アクセスできるように隠蔽しています。<br>もっとStandardな方法で実現できないものかと考えていて思ったこと。PipeCommandクラスに、呼び出し側に提供する関数（こちらはoverrideなし）と呼び出し側が提供する関数が混在しているのがそもそもの問題なのだと思います。現在privateとなっているメンバー関数をPipeComandParamInterfaceとかいう名前の別クラスに分離し、PipeCommandにはPipeCommandParamInterfaceへのポインタor参照を渡すようにすれば、Interfaceクラスは呼び出し側がPipeCommand実装部に対して“公開”するのでpublic扱いでもおかしくないですし、PipeCommand本体は継承なしで使うことができます。<br></div></section>
+    <ul><li><section><h1 id=227>
+    <span class="no">[227]</span>
+    <a class="title" href="#227">Re:解決策(Re2:PipeCommandの質問)</a>
+    <span class="author">蛭子屋双六</span>
+    <time datetime="2001-04-03T15:35:37">2001年04月03日 15:35</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼蛭子屋双六さん<br>&gt; &gt;外部からこれらのプライベートメンバにアクセスできないように、<br>&gt; &gt;また、このソース(PipeCommand.cpp)にある関数からであれば<br>&gt; &gt;アクセスできるように隠蔽しています。<br>&gt; もっとStandardな方法で実現できないものかと考えていて思ったこと。PipeCommandクラスに、呼び出し側に提供する関数（こちらはoverrideなし）と呼び出し側が提供する関数が混在しているのがそもそもの問題なのだと思います。現在privateとなっているメンバー関数をPipeComandParamInterfaceとかいう名前の別クラスに分離し、PipeCommandにはPipeCommandParamInterfaceへのポインタor参照を渡すようにすれば、Interfaceクラスは呼び出し側がPipeCommand実装部に対して“公開”するのでpublic扱いでもおかしくないですし、PipeCommand本体は継承なしで使うことができます。<br><br>実は最初、シングルスレッドで実行しているときは<br>げんたさんの書かれているような方法で実装していました。<br><br>しかし、プロセスの終了を待つ部分を別スレッドに分けた結果<br>//プロセスのハンドルや終了コードを格納する先は<br>//インターフェイスとは別に渡さなければいけないので<br>スレッドに渡す引数の寿命を考えるのが面倒になって<br>私の使い方ではPipeCommandとインターフェイスのスパンはほぼ同じでしたので<br>「ええい、PipeCommandと一緒にしてしまえ」とやってしまいました。<br><br>しかしインターフェイスで実装した方が<br>確かにわかりやすいですね。<br>書き直したものを同じところに置いておきます。<br>お時間があれば見てください。</div></section>
+    </li><li><section><h1 id=228>
+    <span class="no">[228]</span>
+    <a class="title" href="#228">Re: 解決策</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-03T15:43:56">2001年04月03日 15:43</time></h1>
+    <div class="body">うーん、結局同じことが起こってしまった。CreateThreadで渡すものが2つに分かれてやりにくくなっただけかも。でも始めと違ってPipeCommandのサブクラス化は行わないわけだから、AnonymouosPipeをfriend関数にしても（気分的には）問題ないように思う。<br></div></section>
+    <ul><li><section><h1 id=229>
+    <span class="no">[229]</span>
+    <a class="title" href="#229">Re2: 解決策</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-03T15:49:51">2001年04月03日 15:49</time></h1>
+    <div class="body">ありゃ、新しいのが...新しいのを見てからまた考えます。<br></div></section>
+    <ul><li><section><h1 id=230>
+    <span class="no">[230]</span>
+    <a class="title" href="#230">新たな質問</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-03T20:08:41">2001年04月03日 20:08</time></h1>
+    <div class="body">AnonymousPipe::read()でパイプチェック、サイズチェック、読み出しの3つが&amp;&amp;で接続されていますが、C++ではPerlとは異なり左から評価されるという保証がないのでは？<br><br>もちろん&amp;&amp;は左結合ですから普通は左から評価するとは思いますが何となく気持ち悪い。<br><br>あと、availSizeに関係なくbufferSize読み込むようですが、これだとCopalのページで書かれていたようにBLOCKしてしまわないんですか？availSizeとbufferSizeのうち小さい方だけ読むというのが正しいのでは？<br></div></section>
+    <ul><li><section><h1 id=231>
+    <span class="no">[231]</span>
+    <a class="title" href="#231">Re:新たな質問</a>
+    <span class="author">蛭子屋双六</span>
+    <time datetime="2001-04-03T21:55:06">2001年04月03日 21:55</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; AnonymousPipe::read()でパイプチェック、サイズチェック、読み出しの3つが&amp;&amp;で接続されていますが、C++ではPerlとは異なり左から評価されるという保証がないのでは？<br><br>CやC++でも左から評価されることは保証されてますよ。<br>＃というかPerlの&amp;&amp;ってCから来たのではなかっただろうか<br><br>&gt; もちろん&amp;&amp;は左結合ですから普通は左から評価するとは思いますが何となく気持ち悪い。<br><br>気持ち悪いっていうのは、まぁ個人の趣味の問題なので…。<br>私はwhile(1)とかの方が気持ち悪いのでこのような書き方をよくします。<br>＃while(1)と書くしかないときには書きますが<br><br>&gt; あと、availSizeに関係なくbufferSize読み込むようですが、これだとCopalのページで書かれていたようにBLOCKしてしまわないんですか？availSizeとbufferSizeのうち小さい方だけ読むというのが正しいのでは？<br><br>こちらの環境では特に問題なく動いていたんでそのままにしてます。<br>95とNT4でしか試してないので<br>98やらMeやら2000では問題が起こるのかも知れませんね。<br>問題の起こる環境があるなら変更します。</div></section>
+    <ul><li><section><h1 id=233>
+    <span class="no">[233]</span>
+    <a class="title" href="#233">評価順序は処理系依存（話がそれてすみません）</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-04T10:04:57">2001年04月04日 10:04</time></h1>
+    <div class="body">▼ 蛭子屋双六さん<br>&gt; CやC++でも左から評価されることは保証されてますよ。<br>http://msdn.microsoft.com/library/devpro<br>ds/vs6/visualc/vclang/_clang_precedence_<br>and_order_of_evaluati<br>on.htm<br>を見てください。表の下にあるパラグラフの最後には<br>&gt;&gt; Order of operations is not defined by the language. The compiler is free to evalute such expression in any order, if the compiler can guarantee a consistent result.<br>と書かれています。つまり演算結果は保証されるが評価順序は処理系依存と。<br><br>A&amp;&amp;BでAがfalseならBをskipするのも最適化の結果であって、AとBを無条件に評価してその後でANDを取って結果を出すという処理系があったとしてもそれは規格違反にはならないということです。私が気にしているのは左からということよりも、左の結果が偽でも残りの項が評価される＝関数が呼び出される可能性が残っているのではないかということです。availSizeと無関係にReadFileが呼び出されてしまうと処理が止まってしまうので。<br><br>&gt; ＃というかPerlの&amp;&amp;ってCから来たのではなかっただろうか<br>意味はそうかもしれないですが、Perlでは&amp;&amp;や||は左から評価して結果が確定したらその後の処理をうち切ると明確に決まっていたはず。<br>だから、open(FP,file) || die "failed"; って書けます。||の前に全部評価されたら100%ここで止まってしまうので。<br><br>&gt; while(1)<br>これ何ですか？for(;;)？無限ループ以外に何か面白い技があるんですか？<br></div></section>
+    <ul><li><section><h1 id=234>
+    <span class="no">[234]</span>
+    <a class="title" href="#234">Re:評価順序は処理系依存（話がそれてすみません）</a>
+    <span class="author">蛭子屋双六</span>
+    <time datetime="2001-04-04T11:12:22">2001年04月04日 11:12</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼ 蛭子屋双六さん<br>&gt; &gt; CやC++でも左から評価されることは保証されてますよ。<br>&gt; http://msdn.microsoft.com/library/devpro<br>&gt; ds/vs6/visualc/vclang/_clang_precedence_<br>&gt; and_order_of_evaluati<br>&gt; on.htm<br>&gt; を見てください。表の下にあるパラグラフの最後には<br>&gt; &gt;&gt; Order of operations is not defined by the language. The compiler is free to evalute such expression in any order, if the compiler can guarantee a consistent result.<br>&gt; と書かれています。つまり演算結果は保証されるが評価順序は処理系依存と。<br><br>その後ろに<br>Only the sequential-evaluation (,), logical-AND (&amp;&amp;), logical-OR (||), conditional-expression (? :), and function-call operators constitute sequence points and therefore guarantee a particular order of evaluation for their operands. <br>とも書かれていますが…<br><br>&gt; &gt; while(1)<br>&gt; これ何ですか？for(;;)？無限ループ以外に何か面白い技があるんですか？<br><br>いや別にfor(;;)でもいいですが、<br><br>DWORD avail;<br>while (1) {<br>  if (!::PeekNamedPipe(/*...*/, &amp;avail))<br>    break;<br>  if (avail == 0)<br>    break;<br>  if (!::ReadFile(/*...*/))<br>    break;<br>  output(/*...*/);<br>}<br>// /*...*/の部分は引数調べるのが面倒なので略しましたm(_ _;)m<br><br>と書くよりは<br><br>while (::PeekNamedPipe(/*...*/, &amp;avail))<br>       &amp;&amp; avail &gt; 0<br>       &amp;&amp; ::ReadFile(/*...*/))<br>  output(/*...*/);<br><br>とかく方が私の趣味にあうってだけの話なので<br>気にしないで下さい</div></section>
+    <ul><li><section><h1 id=235>
+    <span class="no">[235]</span>
+    <a class="title" href="#235">Re2:評価順序は処理系依存（話がそれてすみません）</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-04T12:31:09">2001年04月04日 12:31</time></h1>
+    <div class="body"><a href=http://www.lysator.liu.se/c/ target=_top>http://www.lysator.liu.se/c/</a><br>私の認識違いでした。例外規定があったのね。&amp;&amp;で先の評価結果がfalse(0)だとその後は評価されないって書いてありました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

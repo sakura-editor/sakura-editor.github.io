@@ -1,0 +1,145 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>「\r」が「\r\n」にマッチする件</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">4059</span>
+    <a class="title" href="4059.html#4059">「\r」が「\r\n」にマッチする件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4060</span>
+    <a class="title" href="4059.html#4060">RE: 「\r」が「\r\n」にマッチする件</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4061</span>
+    <a class="title" href="4059.html#4061">RE: 「\r」が「\r\n」にマッチする件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4062</span>
+    <a class="title" href="4059.html#4062">Re2: 「\r」が「\r\n」にマッチする件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4063</span>
+    <a class="title" href="4059.html#4063">Re3: 「\r」が「\r\n」にマッチする件</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4064</span>
+    <a class="title" href="4059.html#4064">Re3: 「\n」の置換が動作不良</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4065</span>
+    <a class="title" href="4059.html#4065">Re4: 「\n」の置換が動作不良</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4066</span>
+    <a class="title" href="4059.html#4066">Re5: 「\n」の置換が動作不良</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4067</span>
+    <a class="title" href="4059.html#4067">Re5: 「\n」の置換が動作不良</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4068</span>
+    <a class="title" href="4059.html#4068">Re6: 「\n」の置換が動作不良</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4091</span>
+    <a class="title" href="4059.html#4091">Re6: 「\n」の置換が動作不良</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4092</span>
+    <a class="title" href="4059.html#4092">Re7: 「\n」の置換が動作不良</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4093</span>
+    <a class="title" href="4059.html#4093">Re8: 「\n」の置換が動作不良</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4094</span>
+    <a class="title" href="4059.html#4094">Re8: 「\n」の置換が動作不良</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4099</span>
+    <a class="title" href="4059.html#4099">Re9: 「\n」の置換が動作不良</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4100</span>
+    <a class="title" href="4059.html#4100">Re10: 「\n」の置換が動作不良</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4059>
+    <span class="no">[4059]</span>
+    <a class="title" href="#4059">「\r」が「\r\n」にマッチする件</a>
+    <span class="author">miau</span>
+    <time datetime="2005-10-21T15:56:35">2005年10月21日 15:56</time></h1>
+    <div class="body"><a href=../data#4540 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>data&amp;<wbr>tree=<wbr>r4540</nobr></a><br>このスレッドで「\r」が「\r\n」にマッチするという問題が指摘されてますが、ちょっと処理を追ってみました。<br><br>sakura_2005-10-09 の CEditView_Command.cpp 7518 行目、7957 行目で、<br><br>// 置換後文字列への書き換え(行末から検索文字列末尾までの文字を除く)<br>Command_INSTEXT( FALSE, cRegexp.GetString(), cRegexp.GetStringLen() - colDiff, TRUE );<br><br>という処理を行い、選択部分の文字列を置換後のものに置き換えているようです。<br>ここで検索マッチ部分に「\r」が含まれる場合、直後で「\n」にマッチしていない状態であっても<br>「\r\n」までが選択されているのが原因のようです。<br><br># どのように直せばいいのかわからないので大雑把な調査だけです。<br># 間違っていたらすみません。<br></div></section>
+    <ul><li><section><h1 id=4060>
+    <span class="no">[4060]</span>
+    <a class="title" href="#4060">RE: 「\r」が「\r\n」にマッチする件</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-10-21T21:47:56">2005年10月21日 21:47</time></h1>
+    <div class="body">&gt;タイトル: RE: 「\r」が「\r\n」にマッチする件<br>&gt;発言者: miau<br>&gt;data#4540<br>&gt;このスレッドで「\r」が「\r\n」にマッチするという問題が指摘されてますが、ちょっと処理を追ってみました。<br>&gt;<br>&gt;# どのように直せばいいのかわからないので大雑把な調査だけです。<br>&gt;# 間違っていたらすみません。<br><br>ありがとうございます。<br>最近、ほとんど掲示板見てなかったので気が付きませんでした。<br><br>バグを混入した張本人なので、修正します。m(__)m<br></div></section>
+    </li><li><section><h1 id=4061>
+    <span class="no">[4061]</span>
+    <a class="title" href="#4061">RE: 「\r」が「\r\n」にマッチする件</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-10-22T09:39:38">2005年10月22日 09:39</time></h1>
+    <div class="body">&gt;タイトル: RE: 「\r」が「\r\n」にマッチする件<br>&gt;発言者: miau<br>&gt;sakura_2005-10-09 の CEditView_Command.cpp 7518 行目、7957 行目で、<br>&gt;<br>&gt;// 置換後文字列への書き換え(行末から検索文字列末尾までの文字を除く)<br>&gt;Command_INSTEXT( FALSE, cRegexp.GetString(), cRegexp.GetStringLen() - colDiff, TRUE );<br>&gt;<br>&gt;という処理を行い、選択部分の文字列を置換後のものに置き換えているようです。<br>&gt;ここで検索マッチ部分に「\r」が含まれる場合、直後で「\n」にマッチしていない状態であっても<br>&gt;「\r\n」までが選択されているのが原因のようです。<br><br>\rを、INSTEXTで置き換えようと思っても(というより、改行の途中を表現できない)、<br>\r\nを置き換えてしまうので、結果的に \n が欠けてしまっていたようです。<br><br>改行の途中なら、行末まで(\nも含めて) INSTEXTで置き換えてしまうように修正しました。<br><br><br>diff --dos -ur -x CVS -x tags -x sakura_rc.aps -x *.obj -x *.RES -x *.rc sakura_core_old/CEditView_Command.cpp sakura_core/CEditView_Command.cpp<br>--- sakura_core_old/CEditView_Command.cpp&#9;Sun Oct 02 14:38:05 2005<br>+++ sakura_core/CEditView_Command.cpp&#9;Sat Oct 22 09:32:58 2005<br>@@ -7514,6 +7514,10 @@<br> &#9;&#9;&#9;&#9;}<br> &#9;&#9;&#9;&#9;// 行末から検索文字列末尾までの文字数<br> &#9;&#9;&#9;&#9;int colDiff = nLen - nIdxTo;<br>+&#9;&#9;&#9;&#9;if (colDiff &lt; pcLayout-&gt;m_pCDocLine-&gt;m_cEol.GetLen()) {<br>+&#9;&#9;&#9;&#9;&#9;// 改行にかかっていたら、行全体をINSTEXTする。<br>+&#9;&#9;&#9;&#9;&#9;colDiff = 0;<br>+&#9;&#9;&#9;&#9;}<br> &#9;&#9;&#9;&#9;// 置換後文字列への書き換え(行末から検索文字列末尾までの文字を除く)<br> &#9;&#9;&#9;&#9;Command_INSTEXT( FALSE, cRegexp.GetString(), cRegexp.GetStringLen() - colDiff, TRUE );<br> &#9;&#9;&#9;&#9;// To Here Jun. 6, 2005 かろと<br>@@ -7953,6 +7957,10 @@<br> &#9;&#9;&#9;&#9;}<br> &#9;&#9;&#9;&#9;// 行末から検索文字列末尾までの文字数<br> &#9;&#9;&#9;&#9;int colDiff =  nLen - nIdxTo;<br>+&#9;&#9;&#9;&#9;if (colDiff &lt; pcLayout-&gt;m_pCDocLine-&gt;m_cEol.GetLen()) {<br>+&#9;&#9;&#9;&#9;&#9;// 改行にかかっていたら、行全体をINSTEXTする。<br>+&#9;&#9;&#9;&#9;&#9;colDiff = 0;<br>+&#9;&#9;&#9;&#9;}<br> &#9;&#9;&#9;&#9;// 置換後文字列への書き換え(行末から検索文字列末尾までの文字を除く)<br> &#9;&#9;&#9;&#9;Command_INSTEXT( FALSE, cRegexp.GetString(), cRegexp.GetStringLen() - colDiff, TRUE );<br> &#9;&#9;&#9;&#9;// To Here Jun. 6, 2005 かろと<br></div></section>
+    <ul><li><section><h1 id=4062>
+    <span class="no">[4062]</span>
+    <a class="title" href="#4062">Re2: 「\r」が「\r\n」にマッチする件</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-10-22T12:01:00">2005年10月22日 12:01</time></h1>
+    <div class="body">\r\n改行の行に対する、\n単独での置換がまだちょっと変ですかね？<br>・置換後の文字を空にすると何も置換されない<br>・空以外だと一行おきに処理される（処理される箇所も\nは残ったまま）<br>みたいです...</div></section>
+    <ul><li><section><h1 id=4063>
+    <span class="no">[4063]</span>
+    <a class="title" href="#4063">Re3: 「\r」が「\r\n」にマッチする件</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-10-22T17:20:40">2005年10月22日 17:20</time></h1>
+    <div class="body">&gt;タイトル: Re3: 「\r」が「\r\n」にマッチする件<br>&gt;発言者: ryoji<br>&gt;\r\n改行の行に対する、\n単独での置換がまだちょっと変ですかね？<br>&gt;・置換後の文字を空にすると何も置換されない<br>&gt;・空以外だと一行おきに処理される（処理される箇所も\nは残ったまま）<br>&gt;みたいです... <br><br>なんだか、過去のバージョンでも似たような感じですね・・<br>こいつは手強い感が漂います・・・<br></div></section>
+    </li><li><section><h1 id=4064>
+    <span class="no">[4064]</span>
+    <a class="title" href="#4064">Re3: 「\n」の置換が動作不良</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-10-23T23:05:36">2005年10月23日 23:05</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; \r\n改行の行に対する、\n単独での置換がまだちょっと変ですかね？<br>&gt; ・置換後の文字を空にすると何も置換されない<br>&gt; ・空以外だと一行おきに処理される（処理される箇所も\nは残ったまま）<br>&gt; みたいです...<br><br>レイアウト行が改行文字を常に１文字で扱うので、<br>\r\n 改行で、\nだけにマッチすると、改行レイアウト位置での０文字マッチ？のような扱いとなり<br>Command_INSTEXTに失敗するようです。<br>レイアウト行の動作を変えるのは危険なので、<br>\nだけにマッチした場合に、改行文字全体(\r\n)にマッチしたように、<br>マッチ開始位置を調整してみました。<br>＃ついでにコードの整理も<br><br>\n 置換はできるようになってますが、副作用もあるかもしれないので、<br>とりあえずテスト版とします。<br><br>実行形式：(1.5.7.2)<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_20051023.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_2<wbr>0051023.<wbr>lzh</nobr></a><br><br>差分(1.5.3.0)：<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_R1572_sabun.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_R<wbr>1572_sab<wbr>un.<wbr>lzh</nobr></a><br><br></div></section>
+    <ul><li><section><h1 id=4065>
+    <span class="no">[4065]</span>
+    <a class="title" href="#4065">Re4: 「\n」の置換が動作不良</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-10-24T01:58:16">2005年10月24日 01:58</time></h1>
+    <div class="body">▼ かろとさん<br>&gt; \n 置換はできるようになってますが、副作用もあるかもしれないので、<br>&gt; とりあえずテスト版とします。<br>ちょっと動かしてみました。<br>うまくいっている感じですね。(^^)<br>しかし...、今回のケースとはまた別のパターンで妙なところを見つけてしまいました。(--;<br>\rや\nを置換前文字として、[選択始点挿入]や[選択終点追加]を選択実行した場合の置換結果が...<br><br>以下、この辺りの扱いについて、１ユーザーとしての素朴な所感です。<br>実を言うと、私自身は元ファイルの\rとか\nを個別に意識して部分的に改変できる必要性はあまり感じていません。<br>ファイル内の改行コードが CRLF/CR/LF の何れであっても、内部的には全部\nとして保持するようにしてしまってもいいんじゃないか？って思います。（ファイルの文字コードが何であれ内部的にはSJISで扱うのと同じように）<br>出力するときは全部同じ改行コードになっても構わない、というか、そのほうがむしろ嬉しいくらいです。<br>改行コードの混在って、何か御利益があるのかなぁ？<br>上書き保存で、触ってもいない箇所が勝手に変わるのが気持ち悪いと思う人はいるかもしれないけれど...<br>改行コードの内部表現が\nに統一されていれば、<br>正規表現で .（ピリオド）が\rに一致して？？？とかいう話も無くなるだろうし、<br>マクロを書くときも（従来互換は別として）改行コードの区別は必要なくなるし、<br>開発側もプログラムがシンプルになって楽な気がするんだけどな...<br>他のテキストエディタはどうなのかな。<br><br>いや、まぁ、これまでの経緯をよく知らないので、たわごとのようなものかもしれませんが。(^^;</div></section>
+    <ul><li><section><h1 id=4066>
+    <span class="no">[4066]</span>
+    <a class="title" href="#4066">Re5: 「\n」の置換が動作不良</a>
+    <span class="author">miau</span>
+    <time datetime="2005-10-24T06:19:28">2005年10月24日 06:19</time></h1>
+    <div class="body">かろとさん、ご対応ありがとうございます。\r も \n も動作してます。<br>ryoji さんの仰るとおり<br><br>&gt; \rや\nを置換前文字として、[選択始点挿入]や[選択終点追加]を選択実行した場合の置換結果が...<br><br>という問題はあるようですが・・・。<br><br>▼ ryojiさん<br>&gt; 出力するときは全部同じ改行コードになっても構わない、というか、そのほうがむしろ嬉しいくらいです。<br><br>基本的に同意見です。Unix 用のコードを Windows に流用するときに、改行コードが混在してしまって面倒な思いをすることも多いので。<br>ただ、<br><br>&gt; 改行コードの混在って、何か御利益があるのかなぁ？<br><br>ご利益を思いついてしまいました・・・。<br>他のアプリケーションからテキストを貼り付ける場合、<br><br>&gt; 正規表現で .（ピリオド）が\rに一致して？？？とかいう話も無くなるだろうし、<br><br>これを実現するためには、貼り付けのタイミングで内部コードに置換してやる必要があると思います。<br>しかし、そうするとサクラエディタからテキストをコピーする際の改行コードが問題になりそうです。<br><br>○改行コードを \r\n にした場合<br>「Excel の内容をコピー→サクラエディタで編集→再度 Excel にペースト」という作業を結構行うのですが、<br>Excel で 1 セルに複数行を入れた場合、その区切り文字は \n である必要があります。<br>（\r\n になってしまうと、余計なゴミがついてしまいます）<br><br>○改行コードを \n にした場合<br>notepad への貼り付けの際に、変なことになってしまいます。<br><br>ということで、内部コードを \n にすると、困ることも多そうです。<br>保存のタイミングで置換されるのであれば、それほど問題はないとは思いますが・・・<br>個人的には「保存の際、改行コード混在時は処理を選べる」というのがベストです。</div></section>
+    </li><li><section><h1 id=4067>
+    <span class="no">[4067]</span>
+    <a class="title" href="#4067">Re5: 「\n」の置換が動作不良</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-10-24T22:36:42">2005年10月24日 22:36</time></h1>
+    <div class="body">&gt;タイトル: Re5: 「\n」の置換が動作不良<br>&gt;発言者: ryoji<br>&gt;しかし...、今回のケースとはまた別のパターンで妙なところを見つけてしまいました。(--;<br>&gt;\rや\nを置換前文字として、[選択始点挿入]や[選択終点追加]を選択実行した場合の置換結果が... <br><br>あ～、ここに副作用が出ますか・・<br>（正規表現が使えるのに、[選択始点挿入]や[選択終点追加]ってのも、要るの？と思ったりする）<br>（あ、１ユーザとしての素朴な疑問ですよ。これも。（笑））<br><br>&gt;以下、この辺りの扱いについて、１ユーザーとしての素朴な所感です。<br>&gt;実を言うと、私自身は元ファイルの\rとか\nを個別に意識して部分的に改変できる必要性はあまり感じていません。<br>&gt;ファイル内の改行コードが CRLF/CR/LF の何れであっても、内部的には全部\nとして保持するようにしてしまってもいいんじゃないか？って思います。（ファイルの文字コードが何であれ内部的にはSJISで扱うのと同じように）<br><br>１ユーザとして同感です。いや、１開発者としても、そっちの方が簡単です。（笑）<br><br>ただ、サクラ以外は、恐らく改行コードを内部的には１つにしていると思われところを、<br>あえて、そうしない仕様を選んでいるのを、簡単に変えることは、私には出来ません。<br><br>&gt;いや、まぁ、これまでの経緯をよく知らないので、たわごとのようなものかもしれませんが。(^^;<br><br>私も、ここ１～２年しか知らないので、そこまで踏み込めません・・・<br></div></section>
+    <ul><li><section><h1 id=4068>
+    <span class="no">[4068]</span>
+    <a class="title" href="#4068">Re6: 「\n」の置換が動作不良</a>
+    <span class="author">maru</span>
+    <time datetime="2005-10-25T00:07:02">2005年10月25日 00:07</time></h1>
+    <div class="body">'ここ１～２年'をさかのぼると<br><a href=http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?ol=200504&tree=s4431#4431 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>ol=<wbr>200504&amp;<wbr>tree=<wbr>s4431#<wbr>4431</nobr></a><br><a href=http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?ol=200412&tree=s4014#4014 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>ol=<wbr>200412&amp;<wbr>tree=<wbr>s4014#<wbr>4014</nobr></a><br>な感じでした。<br><br>ところで、&gt;&gt;data:4014ってツリー構造が壊れているように見える。</div></section>
+    </li><li><section><h1 id=4091>
+    <span class="no">[4091]</span>
+    <a class="title" href="#4091">Re6: 「\n」の置換が動作不良</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-11-06T01:12:15">2005年11月06日 01:12</time></h1>
+    <div class="body">▼ かろとさん<br>&gt; &gt;タイトル: Re5: 「\n」の置換が動作不良<br>&gt; &gt;発言者: ryoji<br>&gt; &gt;しかし...、今回のケースとはまた別のパターンで妙なところを見つけてしまいました。(--;<br>&gt; &gt;\rや\nを置換前文字として、[選択始点挿入]や[選択終点追加]を選択実行した場合の置換結果が... <br>&gt; <br>&gt; あ～、ここに副作用が出ますか・・<br><br>副作用というより、前にも話題になったことある<br>dev:3942<br>の影響ですね。。。<br>というわけで、思いきって、そのあたりも見直してみました。<br><br>実行形式：(1.5.7.2)<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_20051105.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_2<wbr>0051105.<wbr>lzh</nobr></a><br><br>差分(1.5.7.2)：<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_R1572_1105.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_R<wbr>1572_110<wbr>5.<wbr>lzh</nobr></a><br></div></section>
+    <ul><li><section><h1 id=4092>
+    <span class="no">[4092]</span>
+    <a class="title" href="#4092">Re7: 「\n」の置換が動作不良</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-06T10:34:28">2005年11月06日 10:34</time></h1>
+    <div class="body">&gt; というわけで、思いきって、そのあたりも見直してみました。<br>。<br>ご苦労さまでっす。(^^;;;<br>改行関連は改善されている感じですね。<br>でも、以前よりおかしくなっているところもあるみたいです。<br>-----------------<br>1998-2001<br>2000-2001<br>2001<br>2002<br>2003<br>2004-2005<br>-----------------<br>のようなテキストを全行選択し、<br>置換前:2<br>置換後:a<br>正規表現にチェック<br>置換対象:選択始点挿入<br>範囲:選択範囲<br>で全置換した場合に、９箇所置換されるはずが４箇所しか置換されませんでした。<br>＃この例では正規表現を使う意味は無いですが、簡単な誤動作例ということで</div></section>
+    <ul><li><section><h1 id=4093>
+    <span class="no">[4093]</span>
+    <a class="title" href="#4093">Re8: 「\n」の置換が動作不良</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-06T11:25:27">2005年11月06日 11:25</time></h1>
+    <div class="body">同じデータで、条件を一部変えた場合もおかしくなっています。<br>正規表現OFF<br>置換対象:選択終点追加<br>だと無限に置換が繰り返されるようです。</div></section>
+    </li><li><section><h1 id=4094>
+    <span class="no">[4094]</span>
+    <a class="title" href="#4094">Re8: 「\n」の置換が動作不良</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-11-06T22:53:37">2005年11月06日 22:53</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; でも、以前よりおかしくなっているところもあるみたいです。<br><br>チェックありがとうございます。<br><br>不要と思ったところ、削除しすぎてました・・・(^^;<br><br>実行形式：(1.5.7.2)<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_20051106.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_2<wbr>0051106.<wbr>lzh</nobr></a><br><br>差分(1.5.7.2)：<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_R1572_1106.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_R<wbr>1572_110<wbr>6.<wbr>lzh</nobr></a><br></div></section>
+    <ul><li><section><h1 id=4099>
+    <span class="no">[4099]</span>
+    <a class="title" href="#4099">Re9: 「\n」の置換が動作不良</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-10T03:25:40">2005年11月10日 03:25</time></h1>
+    <div class="body">対応ありがとうございます。m(__)m<br>おかしくなっていたところも今回ので無くなっているようですね。<br>問題箇所を中心に、思いつきのパターンでいろいろ試した範囲ではうまくいってます。<br><br>最後に？、これはたぶん以前からだろうと思うのですが、どうやら選択範囲置換のときに選択が一部解除されてしまうことがあるんですね。<br>具体例で言うと、行選択状態で\r\nを空に変換して行を繋げると選択状態が解除されます。<br>これも何とかなると嬉しいんですが...</div></section>
+    <ul><li><section><h1 id=4100>
+    <span class="no">[4100]</span>
+    <a class="title" href="#4100">Re10: 「\n」の置換が動作不良</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-11-10T07:13:56">2005年11月10日 07:13</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 問題箇所を中心に、思いつきのパターンでいろいろ試した範囲ではうまくいってます。<br><br>毎度、確認ありがとうございます。m(__)m<br><br>差分を更新しておきました。<br>差分(1.5.8.0)：<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_R1580_1109.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_R<wbr>1580_110<wbr>9.<wbr>lzh</nobr></a><br><br>&gt; 最後に？、これはたぶん以前からだろうと思うのですが、どうやら選択範囲置換のときに選択が一部解除されてしまうことがあるんですね。<br>&gt; 具体例で言うと、行選択状態で\r\nを空に変換して行を繋げると選択状態が解除されます。<br>&gt; これも何とかなると嬉しいんですが...<br><br>本当ですね。あまり選択範囲置換しないので全然知りませんでした。<br>乗りかかった舟？なので、時間あるときに見てみますね。（後は別スレで）<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>4/12版でバグ(再変換)</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1861</span>
+    <a class="title" href="1861.html#1861">4/12版でバグ(再変換)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1863</span>
+    <a class="title" href="1861.html#1863">RE: 4/12版でバグ(再変換)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1868</span>
+    <a class="title" href="1861.html#1868">Re:4/12版でバグ(再変換)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1872</span>
+    <a class="title" href="1861.html#1872">Re2:4/12版でバグ(再変換)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1875</span>
+    <a class="title" href="1861.html#1875">Re2:4/12版でバグ(再変換)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1876</span>
+    <a class="title" href="1861.html#1876">CDllHandler/CBregexp改善</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1879</span>
+    <a class="title" href="1861.html#1879">RE: CDllHandler/CBregexp改善</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1881</span>
+    <a class="title" href="1861.html#1881">RE: 4/12版でバグ(再変換)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1883</span>
+    <a class="title" href="1861.html#1883">RE2: 4/12版でバグ(再変換)</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1861>
+    <span class="no">[1861]</span>
+    <a class="title" href="#1861">4/12版でバグ(再変換)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-14T08:55:13">2002年04月14日 08:55</time></h1>
+    <div class="body"><br>ATOK未使用時にフラグが初期化されないので、CEditViewの解放時に<br><br>CEditView.cpp:536行目<br>&#9;if(m_hAtokModule)<br>&#9;&#9;FreeLibrary(m_hAtokModule);<br><br>で、<br><br>例外処理 (初回) は sakura.exe (NTDLL.DLL) にあります: 0xC0000005: Access Violation。<br><br>が発生します。<br><br>CEditView.cpp:495行目<br>&#9;m_hAtokModule = 0;<br><br>を追加してくだい。<br></div></section>
+    <ul><li><section><h1 id=1863>
+    <span class="no">[1863]</span>
+    <a class="title" href="#1863">RE: 4/12版でバグ(再変換)</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-14T15:33:18">2002年04月14日 15:33</time></h1>
+    <div class="body"><br>&gt;例外処理 (初回) は sakura.exe (NTDLL.DLL) にあります: 0xC0000005: Access Violation。<br><br>をを、そういうことだったんですね。なんで出るようになったんだろうとは思っていたのですが(^^;<br>修正しておきます。ありがとうございますっ。<br></div></section>
+    </li><li><section><h1 id=1868>
+    <span class="no">[1868]</span>
+    <a class="title" href="#1868">Re:4/12版でバグ(再変換)</a>
+    <span class="author">minfu</span>
+    <time datetime="2002-04-14T18:43:18">2002年04月14日 18:43</time></h1>
+    <div class="body">▼ みくさん<br>&gt; <br>&gt; ATOK未使用時にフラグが初期化されないので、CEditViewの解放時に<br>&gt; <br>&gt; CEditView.cpp:536行目<br>&gt; &#9;if(m_hAtokModule)<br>&gt; &#9;&#9;FreeLibrary(m_hAtokModule);<br>&gt; <br>&gt; で、<br>&gt; <br>&gt; 例外処理 (初回) は sakura.exe (NTDLL.DLL) にあります: 0xC0000005: Access Violation。<br>&gt; <br>&gt; が発生します。<br><br>ご迷惑をおかけしております。<br><br>よくよく考えてみるとCEditViewは４つあるのでFreeLibraryの部分が４回実行されることになりますね。<br>どこかに移動させた方がよいのでしょうか？<br></div></section>
+    <ul><li><section><h1 id=1872>
+    <span class="no">[1872]</span>
+    <a class="title" href="#1872">Re2:4/12版でバグ(再変換)</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-14T22:51:38">2002年04月14日 22:51</time></h1>
+    <div class="body"><br>&gt;よくよく考えてみるとCEditViewは４つあるのでFreeLibraryの部分が４回実行されることになりますね。<br>&gt;どこかに移動させた方がよいのでしょうか？<br><br>EditViewの上ならEditDoc？<br>それか、EditWndかなぁ？<br>EditAppでは必要ないから、EditWndでどう？<br></div></section>
+    </li><li><section><h1 id=1875>
+    <span class="no">[1875]</span>
+    <a class="title" href="#1875">Re2:4/12版でバグ(再変換)</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-15T01:46:11">2002年04月15日 01:46</time></h1>
+    <div class="body">▼ minfuさん<br>&gt; よくよく考えてみるとCEditViewは４つあるのでFreeLibraryの部分が４回実行されることになりますね。<br>&gt; どこかに移動させた方がよいのでしょうか？<br>LoadLibraryが4回実行されるのだからFreeLibraryも4回実行されないとつじつまあわないですよね。<br>こんな時こそSingletonかな？<br><br>今回のようなミスを防ぐためにDLL動的ロードのWrapperを作ってありますのでできるだけ使ってください。<br>(そういえばやざきさんが作った関数のロード方法がスマートだったのでDllHandlerにも取り込もうと思って忘れていました)<br><br>--<br>Singletonといえば、先週買ったModern C++ designという本で一般のオブジェクトをSingletonにするSingletonHolderというテンプレートクラスが紹介されていました。<br><a href=http://www.awl.com/cseng/titles/0-201-70431-5/ target=_top><nobr>http://<wbr>www.<wbr>awl.<wbr>com/<wbr>cseng/<wbr>titles/<wbr>0-<wbr>201-<wbr>70431-<wbr>5/<wbr></nobr></a><br>ここからライブラリ本体をダウンロードできます。(使い方は本を見ないと解らないかもしれないが...)<br>こういうのをうまく使ったり作ったりしていけるといいんですけどね。</div></section>
+    <ul><li><section><h1 id=1876>
+    <span class="no">[1876]</span>
+    <a class="title" href="#1876">CDllHandler/CBregexp改善</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-15T03:32:37">2002年04月15日 03:32</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; (そういえばやざきさんが作った関数のロード方法がスマートだったのでDllHandlerにも取り込もうと思って忘れていました)<br>dll-improve.zip としてUPしました。<br>やざきさんのCPPA.cppの一部を共通関数としてCDllHandlerに移し、CBregexpもそちらを使うようにしました。<br><br>大丈夫とは思いますが、あまりちゃんと試験してないです。確認したのはBregexpでバージョンが取得できることくらいです。特にCPPAの方を全然試験してない。<br><br>--<br>デバッグ中に初めて知ったんですが、起動時にBregexp.dllの初期化が8回くらい走るんですね。</div></section>
+    <ul><li><section><h1 id=1879>
+    <span class="no">[1879]</span>
+    <a class="title" href="#1879">RE: CDllHandler/CBregexp改善</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-15T11:08:34">2002年04月15日 11:08</time></h1>
+    <div class="body"><br>&gt;&gt; (そういえばやざきさんが作った関数のロード方法がスマートだったのでDllHandlerにも取り込もうと思って忘れていました)<br><br>これって、わたしが発案者ではなくて、PPD.DLLのサンプルがそうなっていたんです。<br>PPA.DLLの作者の方の名誉のために書いときます。:-)<br><br><br>&gt;デバッグ中に初めて知ったんですが、起動時にBregexp.dllの初期化が8回くらい走るんですね。<br><br>これって何とかなりますか？<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=1881>
+    <span class="no">[1881]</span>
+    <a class="title" href="#1881">RE: 4/12版でバグ(再変換)</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-15T11:20:59">2002年04月15日 11:20</time></h1>
+    <div class="body"><br>&gt;CEditView.cpp:495行目<br>&gt;&#9;m_hAtokModule = 0;<br>&gt;<br>&gt;を追加してくだい。<br><br>495行目だと、LoadLibraryに成功したときも、0になっちゃうので、479行目にしました～。<br></div></section>
+    <ul><li><section><h1 id=1883>
+    <span class="no">[1883]</span>
+    <a class="title" href="#1883">RE2: 4/12版でバグ(再変換)</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-15T11:39:28">2002年04月15日 11:39</time></h1>
+    <div class="body"><br>&gt;495行目だと、LoadLibraryに成功したときも、0になっちゃうので、479行目にしました～。<br><br>ああ、そういうことか!!<br><br> &#9;&#9;// それ以外のOSのときはOS標準を使用する<br> &#9;&#9;m_uMSIMEReconvertMsg = 0;<br> &#9;&#9;m_uATOKReconvertMsg = 0 ;<br>+&#9;&#9;m_hAtokModule = 0;&#9;//@@@ 2002.04.14 MIK<br> &#9;}<br><br>MIKさんのパッチを見て正解を理解。MIKさんのにあわせておきまする。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

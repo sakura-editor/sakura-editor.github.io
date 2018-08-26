@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Drag &amp; Dropでタブの並べ替え</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3986</span>
+    <a class="title" href="3986.html#3986">Drag &amp; Dropでタブの並べ替え</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3987</span>
+    <a class="title" href="3986.html#3987">Re:Drag &amp; Dropでタブの並べ替え</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3988</span>
+    <a class="title" href="3986.html#3988">Re: Drag &amp; Dropでタブの並べ替え</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3989</span>
+    <a class="title" href="3986.html#3989">Re2: Drag &amp; Dropでタブの並べ替え</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3990</span>
+    <a class="title" href="3986.html#3990">Re3: Drag &amp; Dropでタブの並べ替え</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3992</span>
+    <a class="title" href="3986.html#3992">Re4: Drag &amp; Dropでタブの並べ替え</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3993</span>
+    <a class="title" href="3986.html#3993">Re5: Drag &amp; Dropでタブの並べ替え</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4424</span>
+    <a class="title" href="3986.html#4424">管理人削除</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4026</span>
+    <a class="title" href="3986.html#4026">Re:Drag &amp; Dropでタブの並べ替え</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3986>
+    <span class="no">[3986]</span>
+    <a class="title" href="#3986">Drag &amp; Dropでタブの並べ替え</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-07-21T00:48:21">2005年07月21日 00:48</time></h1>
+    <div class="body">Drag &amp; Dropでタブの並べ替えができるようにしてみました。<br><a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/DragDropTabWnd.zip target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr>DragDrop<wbr>TabWnd.<wbr>zip</nobr></a><br><br>ssrc_2005-07-16 の CTabWnd.h, CTabWnd.cpp に変更を加えています。<br>ついでに 3981 の修正も入っています。<br><br>あと、CEditWnd.cpp に、まとめ表示の際の起動・終了時のちらつき抑止のための実験的な変更が入っています。<br>・WM_ACTIVATEAPP 時の SetFocus() をコメントアウト<br>・WM_DESTROY 時の処理を OnClose() に移動<br>です。<br>他への影響とかあまり深く考えずにやってますが、それなりに効果は見られます。</div></section>
+    <ul><li><section><h1 id=3987>
+    <span class="no">[3987]</span>
+    <a class="title" href="#3987">Re:Drag &amp; Dropでタブの並べ替え</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-07-22T03:28:28">2005年07月22日 03:28</time></h1>
+    <div class="body">&gt; ・WM_DESTROY 時の処理を OnClose() に移動<br><br>こっちはまだ一時的に他アプリが前面に出ることがありますね。<br>WM_DESTROY 処理は変えずに OnClose() で次のウィンドウを前に出すようにしてみました。<br><br><a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/CEditWnd_2005-07-22.zip target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr>CEditWnd<wbr>_2005-<wbr>07-<wbr>22.<wbr>zip</nobr></a></div></section>
+    </li><li><section><h1 id=3988>
+    <span class="no">[3988]</span>
+    <a class="title" href="#3988">Re: Drag &amp; Dropでタブの並べ替え</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-07-23T00:28:15">2005年07月23日 00:28</time></h1>
+    <div class="body">ちょろっと試してみました．<br>アクティブなタブしかドラッグできないんですね．<br>アクティブじゃないタブを引きずるためには一旦マウスから指を放す必要があるのがちょっと違和感がありました．<br></div></section>
+    <ul><li><section><h1 id=3989>
+    <span class="no">[3989]</span>
+    <a class="title" href="#3989">Re2: Drag &amp; Dropでタブの並べ替え</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-07-23T16:10:10">2005年07月23日 16:10</time></h1>
+    <div class="body">&gt; アクティブなタブしかドラッグできないんですね．<br>&gt; アクティブじゃないタブを引きずるためには一旦マウスから指を放す必要があるのがちょっと違和感がありました．<br><br>はい、タブブラウザ Sleipnir と同様、アクティブタブしか動かせません。<br>というか最近 Sleipnir を見て、これと同じでよければ比較的容易にサクラにも実装できそう、というのが今回の作成動機になってます。<br>非アクティブタブを移動できるようにするにはもうちょっと検討も必要になるかと思います。<br><br>タブを押し下げた時点でアクティブなサクラを切り替え、そのままドラッグできるのが理想。<br>でも、追加のプロセス間通信が必要かな。それに同じタブがまったく同じ位置に無いと困る。<br>今はツールバー、タブの表示／非表示が全サクラで同期してないので．．．<br><br>タブを離したときにアクティブなサクラを切り替えるという方法も考えられますが、それは通常のタブ動作とはちょっと違うような気もしますし。<br><br>非アクティブタブの移動は今後の課題。<br>いずれにしても、今回のソースへの追加コードで対応できるのではないかと思います。</div></section>
+    <ul><li><section><h1 id=3990>
+    <span class="no">[3990]</span>
+    <a class="title" href="#3990">Re3: Drag &amp; Dropでタブの並べ替え</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-07-23T17:23:31">2005年07月23日 17:23</time></h1>
+    <div class="body">&gt; タブを押し下げた時点でアクティブなサクラを切り替え、そのままドラッグできるのが理想。<br>&gt; でも、追加のプロセス間通信が必要かな。それに同じタブがまったく同じ位置に無いと困る。<br>&gt; 今はツールバー、タブの表示／非表示が全サクラで同期してないので．．．<br><br>そもそもまとめ表示でないときにはこれは無理っぽいですね。<br>まとめのときしかタブを表示しない、というテもありますが。<br> <br>&gt; タブを離したときにアクティブなサクラを切り替えるという方法も考えられますが、それは通常のタブ動作とはちょっと違うような気もしますし。<br><br>こっちにしますか？</div></section>
+    <ul><li><section><h1 id=3992>
+    <span class="no">[3992]</span>
+    <a class="title" href="#3992">Re4: Drag &amp; Dropでタブの並べ替え</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-07-24T03:42:45">2005年07月24日 03:42</time></h1>
+    <div class="body">&gt; &gt; タブを離したときにアクティブなサクラを切り替えるという方法も考えられますが、それは通常のタブ動作とはちょっと違うような気もしますし。<br>&gt; <br>&gt; こっちにしますか？<br><br>してみました。これで非アクティブタブも移動できます。<br>いい感じかも(^^;<br><br>http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/DragDropTabWnd_2005-07-24.zip<br><br>※ちらつき抑止の [3987] CEditWnd_2005-07-22.zip も今回のに含めたので、削除しました。</div></section>
+    <ul><li><section><h1 id=3993>
+    <span class="no">[3993]</span>
+    <a class="title" href="#3993">Re5: Drag &amp; Dropでタブの並べ替え</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-07-25T00:28:06">2005年07月25日 00:28</time></h1>
+    <div class="body">更新版です。<br>http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/DragDropTabWnd_2005-07-25.zip<br><br>ファイルを多数表示していて右端のほうのファイルを閉じたとき、スクロール可能なのに右側に余白ができてしまうことへの対策を入れました。<br>タブを削除したときに何故か UpDown コントロールのポジション値とタブ表示位置がずれることがあるみたいで。<br>タブ削除時は強制的に位置合わせするようにしてます。</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4424>
+    <span class="no">[4424]</span>
+    <a class="title" href="#4424">管理人削除</a>
+    <span class="author">千里</span>
+    <time datetime="2006-04-19T10:09:09">2006年04月19日 10:09</time></h1>
+    <div class="body">-</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4026>
+    <span class="no">[4026]</span>
+    <a class="title" href="#4026">Re:Drag &amp; Dropでタブの並べ替え</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-08-24T00:20:54">2005年08月24日 00:20</time></h1>
+    <div class="body">2ch のほうで、<br> ・複数ウインドウ表示時の、アクティブタブの表示の改善（全部同じタブがアクティブ） <br>という要望を見かけました(part5 [604])。同じ人かもしれませんが、以前にも見たような気がします。<br>＃いつも自ウィンドウのタブが選択されていて欲しいということだと思います。<br>言われてみると、現状だとどれがどれだか一瞬迷うような気もします。<br>好みの問題もあると思いますが、皆さんはどう思われますか？</div></section>
+    </li></ul></li></ul></body></html>

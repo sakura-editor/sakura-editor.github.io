@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">271</span>
+    <a class="title" href="271.html#271">コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">273</span>
+    <a class="title" href="271.html#273">Re:コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a></div>
+    </li><li><div class="list-title">
+    <span class="no">274</span>
+    <a class="title" href="271.html#274">Re:コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">275</span>
+    <a class="title" href="271.html#275">Re2:コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">284</span>
+    <a class="title" href="271.html#284">Re3:コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">287</span>
+    <a class="title" href="271.html#287">Re4:コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=271>
+    <span class="no">[271]</span>
+    <a class="title" href="#271">コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-13T01:49:44">2008年04月13日 01:49</time></h1>
+    <div class="body">リビジョン：<br>　rev1274<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>　ストリームの基底クラスにバグがあったため、いくつかのファイルアクセスの場面で、<br>　意図しないアトリビュート変更が適用されてしまうバグがありました。それを修正。<br>　結果的に、バグ「sakuraW.iniがない場合に作成されるiniファイルに『読み取り専用』のアトリビュートが立っているため、sakuraW.iniが更新されない。」が修正されました。<br><br><br>変数の初期化ミスが原因でした（汗）。<br><br>unicode wiki のほうにもちょくちょくバイナリをアップロードしています。<br>が、今の段階では、けっこう不安定要素が多いので、<br>一般掲示板への宣伝（？）はやめておきます。</div></section>
+    <ul><li><section><h1 id=273>
+    <span class="no">[273]</span>
+    <a class="title" href="#273">Re:コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-04-13T10:39:29">2008年04月13日 10:39</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1274<br>&gt; <br>&gt; 変更種別：<br>&gt; 　バグ修正<br>&gt; <br>&gt; 内容：<br>&gt; 　ストリームの基底クラスにバグがあったため、いくつかのファイルアクセスの場面で、<br>&gt; 　意図しないアトリビュート変更が適用されてしまうバグがありました。それを修正。<br>&gt; 　結果的に、バグ「sakuraW.iniがない場合に作成されるiniファイルに『読み取り専用』のアトリビュートが立っているため、sakuraW.iniが更新されない。」が修正されました。<br>確認報告をさせていただきます。<br>1) 拡張子にかかわらず、『基本』に開かれる。<br>3) sakuraW.iniがない場合に作成されるiniファイルに『読み取り専用』のアトリビュートが立っているため、sakuraW.iniが更新されない。<br>以上2点修正されていることを確認しました。<br><br>これで普通に使えるようになったようなので、通常使うエディタとして使ってみます。</div></section>
+    </li><li><section><h1 id=274>
+    <span class="no">[274]</span>
+    <a class="title" href="#274">Re:コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-04-13T15:38:59">2008年04月13日 15:38</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1274<br>不具合報告です。<br>1) 選択時にステータスバーに表示される表示がおかしい<br>    たとえば漢字3文字を選択した場合の表示が<br>    3 byte (1 lines) selected.<br>    となっている。<br>    byte では無く character とするほうがいいのではないでしょうか？<br>2）表示行の長さがエディタの幅よりも長い場合に、行選択すると画面がちらつく。<br>以上2点です。<br>参考にしてください。</div></section>
+    <ul><li><section><h1 id=275>
+    <span class="no">[275]</span>
+    <a class="title" href="#275">Re2:コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-04-13T21:11:28">2008年04月13日 21:11</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1274<br>不具合報告追加です。<br>1) ファイルを読み込み、変更せずに『名前を付けて保存』を行っても書き込み処理を行わない。<br>2) 『名前を付けて保存』でバックアップを作成する。<br>3) 『開く』から存在しないファイルを指定し開いた場合、<br>        このファイルは存在しません。<br>        作成しますか？<br>    のメッセージで「はい」でオープンした場合、<br>    ファイルのモードが「上書き禁止」でファイルが変更できず、書き込みもできません。<br>    (削除したファイルを履歴から呼び出した場合も同じです)<br>4) "の直後に行型のコメント文字があり、色指定の「コメント」がオン「ダブルクォーティション文字列」がオフの場合、表示がおかしい。<br>    1.『文字の間隔』『行の間隔』が利かない（画面全体）<br>    2. コメントの色が行を超えて着色される。<br>    3. コントロールコードがあった場合は、以下すべてコントロールコードの色で着色される。<br>    2.3.は 以上の状態は次の"まで続きます。<br>    以上の状態は、読み込み直後の状態です。<br>    編集時は、どこまで影響するか不明です。<br>参考にしてください。</div></section>
+    <ul><li><section><h1 id=284>
+    <span class="no">[284]</span>
+    <a class="title" href="#284">Re3:コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-15T23:17:38">2008年04月15日 23:17</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; 4) "の直後に行型のコメント文字があり、色指定の「コメント」がオン「ダブルクォーティション文字列」がオフの場合、表示がおかしい。<br>&gt;     1.『文字の間隔』『行の間隔』が利かない（画面全体）<br>&gt;     2. コメントの色が行を超えて着色される。<br>&gt;     3. コントロールコードがあった場合は、以下すべてコントロールコードの色で着色される。<br>&gt;     2.3.は 以上の状態は次の"まで続きます。<br>&gt;     以上の状態は、読み込み直後の状態です。<br>&gt;     編集時は、どこまで影響するか不明です。<br><br>これってANSI版でも出てますね。<br>描画部分は、バグ修正以前に、保守性の面でかなりヤバイ状態になってるので（汗）、<br>これを機に大整理しちゃおうと考えてます。<br></div></section>
+    <ul><li><section><h1 id=287>
+    <span class="no">[287]</span>
+    <a class="title" href="#287">Re4:コミット報告：(バグ修正) 意図しないアトリビュート変更が適用されてしまう</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-04-16T00:05:30">2008年04月16日 00:05</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; ▼ Uchiさん<br>&gt; &gt; 4) "の直後に行型のコメント文字があり、色指定の「コメント」がオン「ダブルクォーティション文字列」がオフの場合、表示がおかしい。<br>&gt; &gt;     1.『文字の間隔』『行の間隔』が利かない（画面全体）<br>&gt; &gt;     2. コメントの色が行を超えて着色される。<br>&gt; &gt;     3. コントロールコードがあった場合は、以下すべてコントロールコードの色で着色される。<br>&gt; &gt;     2.3.は 以上の状態は次の"まで続きます。<br>&gt; &gt;     以上の状態は、読み込み直後の状態です。<br>&gt; &gt;     編集時は、どこまで影響するか不明です。<br>&gt; <br>&gt; これってANSI版でも出てますね。<br>&gt; 描画部分は、バグ修正以前に、保守性の面でかなりヤバイ状態になってるので（汗）、<br>&gt; これを機に大整理しちゃおうと考えてます。<br>私の確認した環境、ファイルではUnicode版のみで発生しています。<br>1.についてはこちらの確認ミスで上記条件に当てはまらない場合でも（つまりすべての場合で）発生しています。<br>大整理については大賛成ですが、一応報告させていただきます。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>カスタムメニューでお気に入り</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3951</span>
+    <a class="title" href="3951.html#3951">カスタムメニューでお気に入り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3953</span>
+    <a class="title" href="3951.html#3953">RE: カスタムメニューでお気に入り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3958</span>
+    <a class="title" href="3951.html#3958">カスタムメニューでお気に入り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3960</span>
+    <a class="title" href="3951.html#3960">RE: カスタムメニューでお気に入り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3964</span>
+    <a class="title" href="3951.html#3964">カスタムメニューでお気に入り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3966</span>
+    <a class="title" href="3951.html#3966">Re: カスタムメニューでお気に入り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3971</span>
+    <a class="title" href="3951.html#3971">Re2: カスタムメニューでお気に入り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3976</span>
+    <a class="title" href="3951.html#3976">カスタムメニューでお気に入り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3995</span>
+    <a class="title" href="3951.html#3995">いちおうバグ報告</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3951>
+    <span class="no">[3951]</span>
+    <a class="title" href="#3951">カスタムメニューでお気に入り</a>
+    <span class="author">ミック</span>
+    <time datetime="2004-07-31T14:40:57">2004年07月31日 14:40</time></h1>
+    <div class="body">カスタムメニューのポップアップに、お気に入りのような感じでよく使うファイルを登録して呼び出したいのですが、できますでしょうか？</div></section>
+    <ul><li><section><h1 id=3953>
+    <span class="no">[3953]</span>
+    <a class="title" href="#3953">RE: カスタムメニューでお気に入り</a>
+    <span class="author">すい</span>
+    <time datetime="2004-08-01T06:53:35">2004年08月01日 06:53</time></h1>
+    <div class="body">&gt;カスタムメニューのポップアップに、お気に入りのような感じでよく使うファイルを登録して呼び出したいのですが、できますでしょうか？<br><br>マクロ使えば出来なくはないですが。<br><br>例えば<br>-----<br>S_FileOpen('C:\\Program Files\\sakura\\MACRO\\RECKEY.MAC');<br>-----<br>という１行だけのマクロファイルを作成し、それをマクロフォルダに<br>拡張子 .MAC の名前を付けて保存。（例えば opRecKey.MAC とか。）<br># ファイルはフルパスで指定、\ は \\ にする事。<br><br>※ マクロフォルダとは「共通設定」→[マクロ] の一番上の欄で指定する<br>　　フォルダの事ね<br><br>それを「共通設定」→[マクロ]タブにて適当な名前で登録、<br>一旦 [OK] で「共通設定」を閉じる。<br><br>で、もう一度「共通設定」→[カスタムメニュー]タブで<br>「種別」を「外部マクロ」にして．．．<br><br>もちろん<br>-----<br>S_FileOpen('C:\\file1');<br>S_FileOpen('C:\\file2');<br>-----<br>とかいうマクロにしておけば一発で C:\file1 と C:\file2 を開く事が。<br><br><br>ただ、ファイル１個（１組）につき１マクロ作成して登録する必要があるわけで、<br>[マクロ] タフで登録できるマクロは数の制限があるので、こんな用途で<br>マクロ登録域を消費してしまうのは勿体無い気がしますけど。<br></div></section>
+    <ul><li><section><h1 id=3958>
+    <span class="no">[3958]</span>
+    <a class="title" href="#3958">カスタムメニューでお気に入り</a>
+    <span class="author">ミック</span>
+    <time datetime="2004-08-01T17:15:28">2004年08月01日 17:15</time></h1>
+    <div class="body">▼ すいさん<br>ご教示いただきありがとうございます。<br>&gt;こんな用途でマクロ登録域を消費してしまうのは勿体無い気がしますけど。<br>こんな用途しかできないバカなんで問題はないです。<br><br>もう１つ教えていただきたいのですが、できれば読みとり専用で開きたくて、<br>S_FileOpen('C:\\file1 -R');<br>としたのですが、うまくいきません。どうしたらできますでしょうか？<br></div></section>
+    <ul><li><section><h1 id=3960>
+    <span class="no">[3960]</span>
+    <a class="title" href="#3960">RE: カスタムメニューでお気に入り</a>
+    <span class="author">すい</span>
+    <time datetime="2004-08-02T02:44:41">2004年08月02日 02:44</time></h1>
+    <div class="body">&gt;もう１つ教えていただきたいのですが、できれば読みとり専用で開きたくて、<br><br>それは無理ですね。少なくともマクロでは。<br>S_FileOpen() は指定ファイルを普通に開く事しかできませんから、<br>始めから読み取り専用状態で開く事は出来ません。<br><br><br>ファイルを開いた後で、そのウィンドウを読み取り専用にするしか無いのですが、<br>マクロだと後から新規に開かれた他のエディタウィンドウをコントロールする事は出来ないので。<br><br><br>「 [Ctrl]+[N] やなんかで出した (無題) の新規エディタウィンドウ上でのみ利用可能」<br>で良ければ、↓こうすれば出来ますが、<br>-----<br>// ファイルを開いた後、読み取り専用にする<br>S_FileOpen('C:\\Program Files\\sakura\\MACRO\\RECKEY.MAC');&#9;// 開く<br>S_ReadOnly( );&#9;// 読み取り専用<br>-----<br>↑これ、他のファイル編集中にそこから実行すると、その「編集中の他のファイル」<br>のウィンドウが「読みとり専用」になってしまいますし。<br><br><br>-----<br>S_FileClose();&#9;// 閉じて(無題)<br>S_FileOpen('C:\\Program Files\\sakura\\MACRO\\RECKEY.MAC');&#9;// 開く<br>S_ReadOnly( );&#9;// 読み取り専用<br>-----<br>↑にすれば他ファイル編集中でも一応動作しますけど、こっちは編集中のファイルを閉じちゃうので、、、<br><br>どっちもなぁ．．．<br></div></section>
+    <ul><li><section><h1 id=3964>
+    <span class="no">[3964]</span>
+    <a class="title" href="#3964">カスタムメニューでお気に入り</a>
+    <span class="author">ミック</span>
+    <time datetime="2004-08-02T18:55:11">2004年08月02日 18:55</time></h1>
+    <div class="body">▼ すいさん<br>なるほど、どちらも使い勝手はよくなさそうですね。読みとり専用は諦めます。<br>いずれにしても、おつきあいいただきありがとうございました。m(_ _)m<br></div></section>
+    <ul><li><section><h1 id=3966>
+    <span class="no">[3966]</span>
+    <a class="title" href="#3966">Re: カスタムメニューでお気に入り</a>
+    <span class="author">もか</span>
+    <time datetime="2004-08-02T21:02:47">2004年08月02日 21:02</time></h1>
+    <div class="body">ずるい方法だけど、<br><br>S_ExecCommand('"C:\\Program files\\sakura\\sakura.exe" -R "filename"', 0);<br>// パスやファイル名は環境に合わせて書き換えてください。<br><br>というのはどうでしょう。<br></div></section>
+    <ul><li><section><h1 id=3971>
+    <span class="no">[3971]</span>
+    <a class="title" href="#3971">Re2: カスタムメニューでお気に入り</a>
+    <span class="author">すい</span>
+    <time datetime="2004-08-03T03:50:43">2004年08月03日 03:50</time></h1>
+    <div class="body">&gt;S_ExecCommand('"C:\\Program files\\sakura\\sakura.exe" -R "filename"', 0);<br>&gt;// パスやファイル名は環境に合わせて書き換えてください。<br>&gt;<br>&gt;というのはどうでしょう。<br><br>おお!! なるほど。その手が。(笑)<br>-----<br>S_ExecCommand( '"C:\\Program Files\\sakura\\sakura.exe" -R "C:\\Program Files\\sakura\\MACRO\\RECKEY.MAC"' , 0 );<br>-----<br>確かに↑とかすれば C:\Program Files\sakura\MACRO\RECKEY.MAC を読み取り専用で開けますね。<br></div></section>
+    <ul><li><section><h1 id=3976>
+    <span class="no">[3976]</span>
+    <a class="title" href="#3976">カスタムメニューでお気に入り</a>
+    <span class="author">ミック</span>
+    <time datetime="2004-08-05T17:32:48">2004年08月05日 17:32</time></h1>
+    <div class="body">すいません。終わったと思って見てませんでした。<br>うまくいきました。ありがとうございます。<br>ついでに勉強になりました。<br></div></section>
+    <ul><li><section><h1 id=3995>
+    <span class="no">[3995]</span>
+    <a class="title" href="#3995">いちおうバグ報告</a>
+    <span class="author">ミック</span>
+    <time datetime="2004-08-09T18:28:49">2004年08月09日 18:28</time></h1>
+    <div class="body">環境：98SE,ver1.4.8.0<br><br>まず、ひとつファイルを開きます。<br>次に、カスタムメニューから、上記いずれかの方法でファイルを開きます。<br>何もしないで（何かしても構いませんが）、すぐにそのファイルを閉じます。<br>すると、最初に開いたファイルが、読みとり専用でないにもかかわらず、読みとり専用と同じ状態になることがあります。（再現率50%くらい。2個目のファイルを閉じて、元のファイルに戻ったときに、キャレットが消えている場合に再現しています）。<br><br>既出でしたらすいません。<br>なお、実用的に困っているわけではないです。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

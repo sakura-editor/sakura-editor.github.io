@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) 変換不具合の修正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1412</span>
+    <a class="title" href="1412.html#1412">Commit報告(Fix) 変換不具合の修正</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=1412>
+    <span class="no">[1412]</span>
+    <a class="title" href="#1412">Commit報告(Fix) 変換不具合の修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-11-01T21:23:05">2010年11月01日 21:23</time></h1>
+    <div class="body">リビジョン：<br>  rev1849<br><br>変更種別：<br>  バグ修正<br><br>内容：<br>Fix: [半角カタカナ→全角ひらがな]で全角カタカナまで全角ひらがなに変換される<br>Fix: [半角カタカナ→全角ひらがな]で「ワ゛ヲ゛」が「&amp;#12535;&amp;#12538;」(U+30F7,U+30FA)に変換される（期待は「わ゛を゛」）<br>Fix: [全角→半角]で「&amp;#12437;&amp;#12438;」(U+30F7,U+30F8)が「ヵヶ」に変換される（期待は無変換）<br>Imp: 全角ひらがな「ゝゞ」と全角カタカナ「ヽゞ」とを相互変換可能に<br>Keep: 半角・全角変換に関するファイル名称・関数名称の整理</div></section>
+    </li></ul></body></html>

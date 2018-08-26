@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>D&amp;Dの修正@テスト</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3679</span>
+    <a class="title" href="3679.html#3679">D&amp;Dの修正@テスト</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3693</span>
+    <a class="title" href="3679.html#3693">RE: D&amp;Dの修正@テスト</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3694</span>
+    <a class="title" href="3679.html#3694">Re2: D&amp;Dの修正@テスト</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3679>
+    <span class="no">[3679]</span>
+    <a class="title" href="#3679">D&amp;Dの修正@テスト</a>
+    <span class="author">もか</span>
+    <time datetime="2004-07-14T00:40:54">2004年07月14日 00:40</time></h1>
+    <div class="body">http://white.sakura.ne.jp/~piro/latest/2003/09.html<br>の、サクラエディタがドロップ不可というのが気になっていたので、修正パッチを作りました。<br>Mozillaのような一部のアプリケーションから、ドロップできるようになります。<br>ちなみに、CF_UNICODETEXTをCF_TEXTより優先するように書き換えると、URI+タイトルを張り付けられます。<br>oledad01.zip です。(fix040714.zipと、変更した位置が近いので注意)<br></div></section>
+    <ul><li><section><h1 id=3693>
+    <span class="no">[3693]</span>
+    <a class="title" href="#3693">RE: D&amp;Dの修正@テスト</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-07T01:09:38">2004年08月07日 01:09</time></h1>
+    <div class="body">CEditView::Drop()でコンパイルエラーになりました．<br>mem.SetDataにWide文字列をいきなり与えているのを見ると，はUnicode版でテストしたのかな？<br></div></section>
+    <ul><li><section><h1 id=3694>
+    <span class="no">[3694]</span>
+    <a class="title" href="#3694">Re2: D&amp;Dの修正@テスト</a>
+    <span class="author">もか</span>
+    <time datetime="2004-08-07T02:07:15">2004年08月07日 02:07</time></h1>
+    <div class="body">&gt;CEditView::Drop()でコンパイルエラーになりました．<br>&gt;mem.SetDataにWide文字列をいきなり与えているのを見ると，はUnicode版でテストしたのかな？<br>通常版でテストしていますが、今、開発環境が再構築中なので、なんともいえません。<br>このソースも、各オブジェクトへの対応が綺麗ではないので誰か書き直してくれないかなあ。<br><br>ちなみに、これを適用すると、Word 2002、Excel 2002からもサクラエディタにドロップできるようになります。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

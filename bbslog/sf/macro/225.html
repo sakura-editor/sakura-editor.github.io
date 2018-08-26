@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>PerlScirpt へのパディング処理を行う PerlScirpt</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">225</span>
+    <a class="title" href="225.html#225">PerlScirpt へのパディング処理を行う PerlScirpt</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=225>
+    <span class="no">[225]</span>
+    <a class="title" href="#225">PerlScirpt へのパディング処理を行う PerlScirpt</a>
+    <span class="author">miau</span>
+    <time datetime="2005-11-07T00:50:16">2005年11月07日 00:50</time></h1>
+    <div class="body">PerlScript へのパディング処理を行うマクロを PerlScript で作ってみました。<br><br>=head1 NAME<br><br>PadPerlScript.pls - PerlScirpt へのパディング処理<br><br>=head1 DESCRIPTION<br><br>PerlScript(.pls)ファイルにパディングを行い、日本語の使用を可能にします。<br><br>=cut<br><br>use strict;<br>use warnings;<br><br>use encoding 'cp932';<br>binmode(STDERR, ':raw :encoding(cp932)');<br><br>use Encode;<br><br># パディングの設定<br>my $pad_char = ".";&#9;&#9;&#9;&#9;&#9;&#9;&#9;# 2 文字目以降の文字<br>my $pad_columns = 80;&#9;&#9;&#9;&#9;&#9;&#9;# 一行毎の文字数<br><br># 改行コードの判別<br>my @retcodes = ("\r\n", "\r", "\n");<br>my $retcode = $retcodes[GetLineCode()];<br><br># テキスト全体を取得<br>SelectAll();<br>my $seltext = GetSelectedString(0);<br><br># バイト数取得<br>use bytes;<br>my $bytecount = length($seltext);<br>no bytes;<br><br># 文字数の取得<br>my $seltext = decode('cp932', $seltext);<br>my $wordcount = length($seltext);<br><br># 選択解除＆ドキュメント末尾に移動<br>Right();<br><br># 必要ぶん、適当な文字を挿入<br>my $count = $bytecount - $wordcount;&#9;# 挿入が必要な文字数<br>my $instext = $retcode;&#9;&#9;&#9;&#9;&#9;# 挿入に使用するバッファ。とりあえず改行文字。<br>while ($count &gt; 0) {<br>&#9;$instext .= '#' . $pad_char x ($pad_columns - 1) . $retcode;<br>&#9;$count -= $pad_columns;<br>}<br>$instext = encode('cp932', $instext);&#9;# 挿入前に CP932 にエンコード<br>InsText($instext);<br><br>#...............................................................................<br>#...............................................................................<br></div></section>
+    </li></ul></body></html>

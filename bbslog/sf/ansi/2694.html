@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Re:[一般2875] 設定画面のバグ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2694</span>
+    <a class="title" href="2694.html#2694">Re:[一般2875] 設定画面のバグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2725</span>
+    <a class="title" href="2694.html#2725">Re2:[一般2875] 設定画面のバグ</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2694>
+    <span class="no">[2694]</span>
+    <a class="title" href="#2694">Re:[一般2875] 設定画面のバグ</a>
+    <span class="author">もか</span>
+    <time datetime="2003-04-28T18:30:50">2003年04月28日 18:30</time></h1>
+    <div class="body">もう直っているかもしれませんが、バグを埋め込んだ張本人として...<br>CPropCommon::m_nLastPos_FILENAMEを初期化していませんでした。<br><br>*CPropCommonのコンストラクタ<br>*CPropCommon::DispatchEvent_PROP_FILENAM<br>E<br>　case WM_INITDIALOG でSetData以前<br>のどちらかで、<br>m_nLastPos_FILENAME = -1;<br>してください。<br><br>#HDDが物理的に吹っ飛び、現在再構築中です。<br>#最後にバックアップしたのが12月...<br></div></section>
+    <ul><li><section><h1 id=2725>
+    <span class="no">[2725]</span>
+    <a class="title" href="#2725">Re2:[一般2875] 設定画面のバグ</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-05-12T00:56:57">2003年05月12日 00:56</time></h1>
+    <div class="body">共通設定の方はこれでOKのようですが、正規表現キーワードの方は...<br>そちらはフラグがstaticになっており、現象も初回ではなく2回目以降におかしくなるようです。＞みくさん？<br></div></section>
+    </li></ul></li></ul></body></html>

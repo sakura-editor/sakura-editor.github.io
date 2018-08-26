@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(New/Imp)CESU-8のサポート+α</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">950</span>
+    <a class="title" href="950.html#950">Commit報告:(New/Imp)CESU-8のサポート+α</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">951</span>
+    <a class="title" href="950.html#951">Re:Commit報告:(New/Imp)CESU-8のサポート+α</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">954</span>
+    <a class="title" href="950.html#954">Re2:Commit報告:(New/Imp)CESU-8のサポート+α</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">955</span>
+    <a class="title" href="950.html#955">Re3:Commit報告:(New/Imp)CESU-8のサポート+α</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">958</span>
+    <a class="title" href="950.html#958">Re4:Commit報告:(New/Imp)CESU-8のサポート+α</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">952</span>
+    <a class="title" href="950.html#952">Re:Commit報告:(New/Imp)CESU-8のサポート+α</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">960</span>
+    <a class="title" href="950.html#960">Re2:Commit報告:(New/Imp)CESU-8のサポート+α</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">965</span>
+    <a class="title" href="950.html#965">【副作用】カーソル位置復元が機能しない</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=950>
+    <span class="no">[950]</span>
+    <a class="title" href="#950">Commit報告:(New/Imp)CESU-8のサポート+α</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-06-17T11:55:01">2009年06月17日 11:55</time></h1>
+    <div class="body">リビジョン：<br>　rev1587<br><br>変更種別：<br>　新機能・改善<br><br>内容：<br>New:CESU-8のサポート<br>Imp:EUC-JP 誤判別対策<br>New:デフォルト文字コードを設定できるように<br><br>パッチ名：<br>CESU-8のサポート+α　ID:2795994<br></div></section>
+    <ul><li><section><h1 id=951>
+    <span class="no">[951]</span>
+    <a class="title" href="#951">Re:Commit報告:(New/Imp)CESU-8のサポート+α</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-06-18T00:19:09">2009年06月18日 00:19</time></h1>
+    <div class="body">SJIS/EUCは「デフォルト文字コード」の中だけにあり、<br>UTF-8/CESU-8は「自動判別時にCESU-8を優先する」にもあるのですが、<br>これはどういった理由でこうなったのでしょうか。<br>例えば、デフォルト文字コードでUTF-8を選択し、自動判別時にCESU-8を優先するように設定しておくと、UTF-8が採用されるのはどんなときで、CESU-8が採用されるのはどんなときですか？<br>デフォルトとは何で優先順位とは何？（それぞれの意味を曖昧にせず明確にお願いします）</div></section>
+    <ul><li><section><h1 id=954>
+    <span class="no">[954]</span>
+    <a class="title" href="#954">Re2:Commit報告:(New/Imp)CESU-8のサポート+α</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-06-18T10:29:16">2009年06月18日 10:29</time></h1>
+    <div class="body">返信ありがとうございます。<br><br>◆デフォルトとは<br><br>　たとえば半角英数字ばかりのファイルの場合を考えると、<br>文字コードが検出されない（第一候補に挙がった<br>文字コード検査結果が、ポイント数0）ため、<br>候補に挙がる文字コードは以下の文字コードになります。<br><br>　　SJIS,EUC,UTF-8,CESU-8,JIS<br><br># UTF-7 は、SetD以外の半角英数字が入ったファイルに対しては、<br># ポイント数をINT_MINにするため、除外しています。<br><br>この時、自動判別器はどれを選択すればいいのか迷います。<br>　ここで、SJIS がデフォルト文字コードに<br>指定されていた場合は、自動判別器が SJIS を<br>選します。つまり、デフォルトとは、コードが検出<br>されない場合で判別候補が複数挙がった場合の<br>既定選択肢、という意味になります。<br><br>◆優先順位とは<br><br>　文字コードが検出された場合（第一候補に挙がった文字コード<br>検査結果が、不正バイト数が検査データの0.05パーセント未満で、<br>ポイント数が1以上の場合）で、かつ、同ポイントの文字コードが<br>第2候補 第3候補に挙がっている場合、ケースバイケースの<br>優先順位でこうほをしぼっていきます。<br><br>　１．SJISとUTF-8またはCESU-8が同ポイントだった場合、<br>　　　UTF-8を優先します。これは、CESU-8とUTF-8を<br>　　　SJISよりも既定の優先順位を高くすることで対処します。<br><br># 既定の優先順位とは、CESI::GetIndexById()で決定される、<br># 配列CESI::m_aMbcInfo内の格納位置のことです。<br># 既定の優先順位を高くするとは、配列内の格納位置を<br># 添え字0に近づけるということです。<br># なぜUTF-8を優先するかというと、半角カタカナの影響で、<br># SJISのポイント数が無駄に上がっている場合があるからです。<br><br>　２．SJISとEUCが同ポイントだった場合、<br>　　　EUC全角文字にEUCひらがなが25％以上含まれている場合、<br>　　　EUCを優先し、そうでなければSJISを優先します。<br><br># 25パーセントというのは適当です。<br><br>　３．UTF-8とCESU-8が同ポイントだった場合、<br>　　　タイプ別設定にある「自動判別時にCESU-8を優先する」<br>　　　オプションにより、どちらを優先するかを決定します。<br><br>（このくらいしか作っていないです… ^^;）<br><br>つまり、優先順位とは、文字コード検査の結果、<br>同ポイントになった複数の文字コードのどれを第一候補するかを<br>解決する表みたいなものにある優先度のことを指しています。<br><br><br>&gt; 例えば、デフォルト文字コードでUTF-8を<br>&gt; 選択し、自動判別時にCESU-8を優先するように設定して<br>&gt; おくと、UTF-8が採用されるのはどんなときで、CESU-8が<br>&gt; 採用されるのはどんなときですか？<br><br>　UTF-8が採用されるとき：　文字コードが検出されない場合か、<br>検出された場合は、UTF-8固有の4バイトコードが見つかった場合で、<br>第一候補が明確な場合です。<br><br>　CESU-8が採用されるとき：　文字コードが検出された場合で、<br>CESU-8とUTF-8が同ポイントで第一候補のときか、<br>CESU-8固有の6バイトコードが見つかった場合で、第一候補が明確な場合です。<br><br><br>このくらいでよろしいでしょうか。。。<br></div></section>
+    <ul><li><section><h1 id=955>
+    <span class="no">[955]</span>
+    <a class="title" href="#955">Re3:Commit報告:(New/Imp)CESU-8のサポート+α</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-06-18T13:20:40">2009年06月18日 13:20</time></h1>
+    <div class="body">&gt; このくらいでよろしいでしょうか。。。<br>ありがとうございます。やっと何となく理解できてきました。<br><br>一般ユーザー用（ヘルプ）にはもっと簡潔に説明しないといけませんね。<br>以下のような説明で、大筋はあっているでしょうか。<br><br>自動判別のヒントになる固有文字がない場合、「デフォルト文字コード」で指定された文字コードを採用する。<br>例）<br>ファイル内容<br> 0x41 : A<br> 0x42 : B<br> 0x43 : C<br>のようにANSI半角英数字のみだった場合、「デフォルト文字コード」にUTF-8が選択されていればUTF-8とする。<br><br>自動判別のヒントになる固有文字があり、かつUTF-8/CESU-8のどちらかに絞れた場合には「自動判別時にCESU-8を優先する」オプションに従ってどちらかを採用する。<br>例）<br>ファイル内容<br> 0xe3 0x81 0x82 : あ<br> 0xe3 0x81 0x84 : い<br> 0xe3 0x81 0x86 : う<br>のようにUTF-8/CESU-8の区別がつかない場合、「自動判別時にCESU-8を優先する」がONならCESU-8とする。</div></section>
+    <ul><li><section><h1 id=958>
+    <span class="no">[958]</span>
+    <a class="title" href="#958">Re4:Commit報告:(New/Imp)CESU-8のサポート+α</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-06-19T19:12:12">2009年06月19日 19:12</time></h1>
+    <div class="body">返信ありがとうございます。<br><br>▼ ryojiさん<br>&gt; 自動判別のヒントになる固有文字がない場合、「デフォルト文字コード」で指定された文字コードを採用する。<br>&gt; 例）<br>&gt; ファイル内容<br>&gt;  0x41 : A<br>&gt;  0x42 : B<br>&gt;  0x43 : C<br>&gt; のようにANSI半角英数字のみだった場合、「デフォルト文字コード」にUTF-8が選択されていればUTF-8とする。<br>&gt; <br>&gt; 自動判別のヒントになる固有文字があり、かつUTF-8/CESU-8のどちらかに絞れた場合には「自動判別時にCESU-8を優先する」オプションに従ってどちらかを採用する。<br>&gt; 例）<br>&gt; ファイル内容<br>&gt;  0xe3 0x81 0x82 : あ<br>&gt;  0xe3 0x81 0x84 : い<br>&gt;  0xe3 0x81 0x86 : う<br>&gt; のようにUTF-8/CESU-8の区別がつかない場合、「自動判別時にCESU-8を優先する」がONならCESU-8とする。<br><br>大筋あってます。<br><br>これからできるだけ簡潔に説明できるように心がけます。</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=952>
+    <span class="no">[952]</span>
+    <a class="title" href="#952">Re:Commit報告:(New/Imp)CESU-8のサポート+α</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-06-18T00:42:49">2009年06月18日 00:42</time></h1>
+    <div class="body">[タイプ別設定]-[支援]-[文字コード]画面について<br><br>・各コントロールにニーモニック（ショートカットキー）が割り当てられていません<br>・タブ順が変です（以前から[文字コード]以外にも変なところがあったようですが）<br>・「自動判別時にCESU-8 を優先する」の"に"と"C"の間にはスペースがないのに"8"と"を"の間にはスペースがあります<br>・「自動判別時にCESU-8を優先する」の上下幅が小さいので文字の下が切れています<br>・デフォルト文字コードのコンボボックスの選択文字列が編集可能になっています（CBS_DROPDOWNではなくCBS_DROPDOWNLISTにしてください）<br><br>あと、レイアウトが、<br><br>□自動判別時にCESU-8を優先する<br>[SJIS     ] をデフォルト文字コードとする<br><br>のようになっていますが、<br><br>デフォルト文字コード: [SJIS     ]<br>□自動判別時にCESU-8を優先する<br><br>のように上下左右を入れ替えるほうがなんとなく自然な気がします。<br>（&gt;&gt;unicode:951のように、設定の意味がわかってなくて言ってますけど）</div></section>
+    <ul><li><section><h1 id=960>
+    <span class="no">[960]</span>
+    <a class="title" href="#960">Re2:Commit報告:(New/Imp)CESU-8のサポート+α</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-06-20T00:32:06">2009年06月20日 00:32</time></h1>
+    <div class="body">&gt; ・デフォルト文字コードのコンボボックスの選択文字列が編集可能になっています（CBS_DROPDOWNではなくCBS_DROPDOWNLISTにしてください）<br><br>ちなみに、意図的にキーボード入力でここに変更を加えて設定画面をOKで閉じると、その後、そのタイプ別設定が適用される新しい画面からは文字コードのインデックスが不正になるため、画面上の文字間をカーソル移動するだけでクラッシュ（NULLポインタアクセス）するようになります。<br>クラッシュする位置は、CCaret::ShowCaretPosInfo()の中です。(&gt;&gt;unicode:953の修正はこの障害を調べている最中に別件で見つけたものです)</div></section>
+    </li></ul></li><li><section><h1 id=965>
+    <span class="no">[965]</span>
+    <a class="title" href="#965">【副作用】カーソル位置復元が機能しない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-06-25T01:14:18">2009年06月25日 01:14</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; New:デフォルト文字コードを設定できるように<br>Rev1587（デフォルト文字コード設定）<br>から次の問題が発生しています。<br><br>・開ファイル時のカーソル位置復元が機能しない<br>・「開き直す」でブックマークが解除される<br><br>修正パッチをUPしておきました。<br>→ PatchUnicode#2811624<br>より良い修正方法があれば提案お願いします。</div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>マウスによるテキスト選択</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">1539</span>
+    <a class="title" href="1539.html#1539">マウスによるテキスト選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1540</span>
+    <a class="title" href="1539.html#1540">Re:マウスによるテキスト選択</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1541</span>
+    <a class="title" href="1539.html#1541">Re:マウスによるテキスト選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1542</span>
+    <a class="title" href="1539.html#1542">Re2:マウスによるテキスト選択</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1539>
+    <span class="no">[1539]</span>
+    <a class="title" href="#1539">マウスによるテキスト選択</a>
+    <span class="author">かんじゅ</span>
+    <time datetime="2002-04-06T08:28:11">2002年04月06日 08:28</time></h1>
+    <div class="body">僕だけかもしれませんが、みなさんはマウスでテキスト（マルチバイト文字）<br>選択時に意図した場所から選択が開始されないと感じたことありませんか？<br><br>サクラエディタでは右クリック押下時にカーソルにマルチバイト文字があれば<br>キャレットをその文字の前にもってくる仕様になっています。<br>これをマルチバイトの前半部分であれば前、後半部分であれば後ろにキャレッ<br>トを移動すればいい感じになると思うのですがどうでしょうか？<br><br>もし必要ならば修正ソース（4行ほど）投稿したいと思います。<br><br><br></div></section>
+    <ul><li><section><h1 id=1540>
+    <span class="no">[1540]</span>
+    <a class="title" href="#1540">Re:マウスによるテキスト選択</a>
+    <span class="author">たらう</span>
+    <time datetime="2002-04-06T10:29:53">2002年04月06日 10:29</time></h1>
+    <div class="body">あ、どうもうまく選択できないことが多いと思ったらこういう理由だったんですね。私の方からも修正希望です。<br><br>あと文字の真ん中らへんをクリックして範囲選択したらクリックした文字も含めるとか言う挙動をすると意図した範囲指定ができる確率も増えるかな？</div></section>
+    </li><li><section><h1 id=1541>
+    <span class="no">[1541]</span>
+    <a class="title" href="#1541">Re:マウスによるテキスト選択</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-06T11:18:46">2002年04月06日 11:18</time></h1>
+    <div class="body">▼ かんじゅさん<br>&gt; もし必要ならば修正ソース（4行ほど）投稿したいと思います。<br><br>確かに違和感ありますよね。送ってください。<br>今日から2～3日待って、反対意見がなければ取り込みますので。<br><br><br>それから、行番号をクリックして、上下に行選択するときもちょっと違和感ありません？ &gt; みなさま</div></section>
+    <ul><li><section><h1 id=1542>
+    <span class="no">[1542]</span>
+    <a class="title" href="#1542">Re2:マウスによるテキスト選択</a>
+    <span class="author">かんじゅ</span>
+    <time datetime="2002-04-06T13:08:50">2002年04月06日 13:08</time></h1>
+    <div class="body">&gt; 確かに違和感ありますよね。送ってください。<br>&gt; 今日から2～3日待って、反対意見がなければ取り込みますので。<br>アップしました。<br>ちなみに3074行目からに以下のコード追加しました。<br><br>if ((nCharChars == 2) &amp;&amp; ((nPosX + nCharChars - nNewX)&amp;1)){<br>　　nPosX += nCharChars;<br>}<br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/CEditView_2002_04_05.zip target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>CEditVie<wbr>w_2002_0<wbr>4_05.<wbr>zip</nobr></a><br><br>最初の投稿の右クリック押下ではなく左クリック押下です。<br>失礼しました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>1.3.5.8～1.3.6.1 強調表示異常</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2620</span>
+    <a class="title" href="2620.html#2620">1.3.5.8～1.3.6.1 強調表示異常</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2629</span>
+    <a class="title" href="2620.html#2629">Re: 1.3.5.8～1.3.6.1 強調表示異常</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2630</span>
+    <a class="title" href="2620.html#2630">Re2: 1.3.5.8～1.3.6.1 強調表示異常</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2635</span>
+    <a class="title" href="2620.html#2635">Re3: 1.3.5.8～1.3.6.1 強調表示異常</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2620>
+    <span class="no">[2620]</span>
+    <a class="title" href="#2620">1.3.5.8～1.3.6.1 強調表示異常</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-17T20:01:20">2002年12月17日 20:01</time></h1>
+    <div class="body">強調キーワードが一部、強調表示されないみたいです。<br><br>1. エディタを全終了状態にて sakura.ini を削除する。<br><br>2. http://www.egroups.co.jp/files/sakura-editor/User/Data/<br>　　から S_macppa_20021217_04.LZH をダウンロードして、中の S_MAC.KWD を適当に<br>　　強調キーワードとして設定する。「キーワードの英大文字小文字区別(C)」は<br>　　チェック off で。タイプ別設定も適当におこなって強調表示できるタイプを作成する。<br><br>3. ↑の S_MAC.KWD をエディタで開いて、タイプ別設定一覧から S_MAC.KWD の内容を<br>　　強調キーワードとして設定したタイプを [一時適用] してみる。<br><br>すると、ほとんどの物は強調表示されますが、<br>・S_F_WndScrollDown<br>・S_F_WndScrollUp<br>の２個は強調表示になりません。<br><br>同様の事を HSP.KWD でやって見ると、<br>・mousex<br>・mousey<br>・alloc<br>・addbg<br>・addbox<br>・addmesh<br>・addplate<br>・addspr<br>・getbg<br>・．．．<br>他、諸々の物が強調表示になりません。 (;_;)<br><br>強調キーワードの設定をおこなう時に「キーワードの英大文字小文字区別(C)」に<br>チェックすれば発生しないようです。<br><br>先祖帰りしてみると<br>　○ 1.3.5.7<br>　× 1.3.5.8<br>　× 1.3.6.0<br>　× 1.3.6.1<br>どうも 1.3.5.8 から おかしいみたいです。<br></div></section>
+    <ul><li><section><h1 id=2629>
+    <span class="no">[2629]</span>
+    <a class="title" href="#2629">Re: 1.3.5.8～1.3.6.1 強調表示異常</a>
+    <span class="author">もか</span>
+    <time datetime="2002-12-23T23:43:42">2002年12月23日 23:43</time></h1>
+    <div class="body">▼ すい<br>&gt;強調キーワードが一部、強調表示されないみたいです。<br>(中略)...<br>&gt;強調キーワードの設定をおこなう時に「キーワードの英大文字小文字区別(C)」に<br>&gt;チェックすれば発生しないようです。<br>調査、報告ご苦労様です。<br><br>原因が掴めたので報告します。<br>(内容からすると開発掲示板向きですが、報告ついでに書いておきます。<br>また、すでに他の方が修正していた場合はごめんなさい。)<br><br>強調キーワードの<br>クイックソートはコンパイラに付属のstricmpが使われ、<br>バイナリーサーチはstrnicmpですが、my_icmp.cpp/hのmy_strnicmpに置き換えられます。<br>VCの場合、コンパイラ付属のstricmpは「小文字として」比較しますが、my_icmpは「大文字として」比較するため、サーチに失敗するということです。<br>BCCの場合はコンパイラ付属のstricmpが「大文字として」比較するため、このバグによる影響は受けないはずです。<br><br>以下のどちらかでの修正で直ると思います。<br>修正お願いします。&gt;げんたさん<br>* my_icmp.h 側を修正する場合<br>[71行目以下]<br>-#define  memicmp(a,b,c)    my_memicmp((a),(b),(c))<br>+#define  memicmp  my_memicmp<br> 以下同様に変更<br><br>* CKeyWordSetMgr.cpp 側を修正する場合<br>[301行目以下]<br>&#9;&#9;qsort( 省略,,,<br>-&#9;&#9;&#9;&#9;(int (__cdecl *)(const void *, const void *))stricmp<br>+&#9;&#9;&#9;&#9;(int (__cdecl *)(const void *, const void *))my_stricmp<br></div></section>
+    <ul><li><section><h1 id=2630>
+    <span class="no">[2630]</span>
+    <a class="title" href="#2630">Re2: 1.3.5.8～1.3.6.1 強調表示異常</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-24T02:38:28">2002年12月24日 02:38</time></h1>
+    <div class="body">&gt;クイックソートはコンパイラに付属のstricmpが使われ、<br>&gt;バイナリーサーチはstrnicmpですが、my_icmp.cpp/hのmy_strnicmpに置き換えられます。<br>&gt;VCの場合、コンパイラ付属のstricmpは「小文字として」比較しますが、my_icmpは「大文字として」比較するため、サーチに失敗するということです。<br>&gt;BCCの場合はコンパイラ付属のstricmpが「大文字として」比較するため、このバグによる影響は受けないはずです。<br><br>つまりライブラリの微妙な仕様の差のせい？<br>英大文字と英小文字の間のコードのアンダースコア（下線）だとかが<br>アルファベットの前に並べられる場所と、後ろであると判定される場所<br>があって、、、というお話しですか。<br><br>そう言えばキーワード一覧からの検索部分はキーワードセットの中央から比較して<br>str?cmp の返値の大小を使ってキーワードセットの前方へ調査していくか後方へ<br>調査していくか決定して、それを繰り返して探していく構造ですね。<br>あらかじめキーワードの一覧をソートしておく時の並び順ルールと、検索時、<br>ソート済みのキーワードの一覧をたどるための大小判定のルールが異なっている<br>となれば確かに。<br>って事は強調表示されるかどうかは、下線を使ったキーワードがあるかどうかと<br>登録されているキーワード数の影響を受けるわけだ。<br>確かに HSPのキーワードから ＿ で始まるキーワードを１個削除してみたら<br>alloc も強調表示されるようになりますね。<br><br>1.3.5.7 ⇒ 1.3.5.8 の変更箇所見ていても変になりそうな所、無いよな～～<br>とか思ってたんですけど。見つからないわけです。<br>よく見つけられましたねぇ。<br>これ、見つけるのにだいぶ時間かかったのでは？ご苦労様です。<br><br>ちょっと嫌すぎますね、このバグ。<br><br>いっそのこと、str??cmp とかは全部 my_str??cmp に置換して明示的に<br>揃えちゃった方が後々のためにも良いのかもしれませんね。<br>あんまりこの手の事をやっている所って無さそうな気がしますけど。<br>普通あんまり str??cmp の大小って見ないもんな～～。大抵は一致しているかどうかだけで。<br></div></section>
+    <ul><li><section><h1 id=2635>
+    <span class="no">[2635]</span>
+    <a class="title" href="#2635">Re3: 1.3.5.8～1.3.6.1 強調表示異常</a>
+    <span class="author">もか</span>
+    <time datetime="2002-12-24T18:30:48">2002年12月24日 18:30</time></h1>
+    <div class="body">▼ すいさん<br>&gt;つまりライブラリの微妙な仕様の差のせい？<br>そういうことです。<br><br>&gt;いっそのこと、str??cmp とかは全部 my_str??cmp に置換して明示的に<br>&gt;揃えちゃった方が後々のためにも良いのかもしれませんね。<br>賛成です。ただし、将来のUnicode対応を考慮してmy_tchar.hを作成した上<br>使う側では、my_tchar.hをインクルードしてstr??cmp my_tcs??cmpにする<br>というようにしませんか？<br><br>詳しくは開発板へ書きます。<br><br>#2629の記事で呼び捨てにしていました。すいさん、ごめんなさい<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

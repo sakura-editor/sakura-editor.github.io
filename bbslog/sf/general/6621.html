@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現について　お教えください</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6621</span>
+    <a class="title" href="6621.html#6621">正規表現について　お教えください</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6622</span>
+    <a class="title" href="6621.html#6622">正規表現の文字クラスで質問</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6623</span>
+    <a class="title" href="6621.html#6623">Re:正規表現について　お教えください</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6627</span>
+    <a class="title" href="6621.html#6627">Re2:正規表現について　お教えください</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6621>
+    <span class="no">[6621]</span>
+    <a class="title" href="#6621">正規表現について　お教えください</a>
+    <span class="author">Ki</span>
+    <time datetime="2008-03-15T15:36:24">2008年03月15日 15:36</time></h1>
+    <div class="body">いつもながら正規表現に不安を覚える初心者です。<br>ファイルからGrepでfor a whileを検索しました。<br>for a whileの後に、ピリオド、カンマ、？や半角スペースの続くものを調べようとしました。<br>for a while[\.\,\?\s]と、for a while[.,? ]の入力結果が同じでした。.,?半角スペースの前に\をつけなくてもよいのでしょうか。</div></section>
+    <ul><li><section><h1 id=6622>
+    <span class="no">[6622]</span>
+    <a class="title" href="#6622">正規表現の文字クラスで質問</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2008-03-15T18:25:38">2008年03月15日 18:25</time></h1>
+    <div class="body">▼ Kiさん<br>\sは、半角スペース、タブ、改行にマッチします。<br>[]で囲まれた範囲を文字クラスまたはキャラクタクラスと呼ぶようです。<br>文字クラスの中は、たいてい￥記号でエスケープしていません。<br>^と[-]は、文字クラスの中でエスケープするのは当然として、<br>bとwWsSdDなどはエスケープすると本来の１文字とは異なる意味になるようです。<br><br>参考：<a href=http://www.harukaze.net/~mishima/perl/man/perlre.1.html target=_top><nobr>http://<wbr>www.<wbr>harukaze<wbr>.<wbr>net/~<wbr>mishima/<wbr>perl/<wbr>man/<wbr>perlre.<wbr>1.<wbr>html</nobr></a><br></div></section>
+    </li><li><section><h1 id=6623>
+    <span class="no">[6623]</span>
+    <a class="title" href="#6623">Re:正規表現について　お教えください</a>
+    <span class="author">神楽</span>
+    <time datetime="2008-03-15T23:43:05">2008年03月15日 23:43</time></h1>
+    <div class="body">▼ Kiさん<br>&gt; いつもながら正規表現に不安を覚える初心者です。<br>&gt; ファイルからGrepでfor a whileを検索しました。<br>&gt; for a whileの後に、ピリオド、カンマ、？や半角スペースの続くものを調べようとしました。<br>&gt; for a while[\.\,\?\s]と、for a while[.,? ]の入力結果が同じでした。.,?半角スペースの前に\をつけなくてもよいのでしょうか。<br><br>文字クラス内のエスケープシークエンスに悩むよりも<br>for a while(\.|,|\?| )<br>for a while(\.|,|\?|\s)<br>のように書いた方がわかりやすいかもしれません<br>（カンマは正規表現の特殊文字ではないためエスケープしなくても構いません）。<br><br>なお\sは、半角スペース、タブ、改行以外にも、垂直タブと改ページにもマッチしますが、<br>キーボードから直接入力できる文字ではないため通常は意識する必要はないでしょう。</div></section>
+    <ul><li><section><h1 id=6627>
+    <span class="no">[6627]</span>
+    <a class="title" href="#6627">Re2:正規表現について　お教えください</a>
+    <span class="author">Ki</span>
+    <time datetime="2008-03-20T23:52:07">2008年03月20日 23:52</time></h1>
+    <div class="body">▼ 神楽さん<br>&gt; ▼ Kiさん<br>&gt; &gt; いつもながら正規表現に不安を覚える初心者です。<br>&gt; &gt; ファイルからGrepでfor a whileを検索しました。<br>&gt; &gt; for a whileの後に、ピリオド、カンマ、？や半角スペースの続くものを調べようとしました。<br>&gt; &gt; for a while[\.\,\?\s]と、for a while[.,? ]の入力結果が同じでした。.,?半角スペースの前に\をつけなくてもよいのでしょうか。<br>&gt; <br>&gt; 文字クラス内のエスケープシークエンスに悩むよりも<br>&gt; for a while(\.|,|\?| )<br>&gt; for a while(\.|,|\?|\s)<br>&gt; のように書いた方がわかりやすいかもしれません<br>&gt; （カンマは正規表現の特殊文字ではないためエスケープしなくても構いません）。<br>&gt; <br>&gt; なお\sは、半角スペース、タブ、改行以外にも、垂直タブと改ページにもマッチしますが、<br>&gt; キーボードから直接入力できる文字ではないため通常は意識する必要はないでしょう。<br><br>じゅうじさん、神楽さん<br>本当にありがとうございます。<br>初心者にはカンマもエスケープした下記の形式が覚えやすいように思いました。はやく自信を持って使いこなせるようになりたいものです。<br>for a while(\.|\,|\?|\s)<br>御礼<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

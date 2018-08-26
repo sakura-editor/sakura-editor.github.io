@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>VS2005コンパイル環境について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">9</span>
+    <a class="title" href="9.html#9">VS2005コンパイル環境について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">19</span>
+    <a class="title" href="9.html#19">Re:VS2005コンパイル環境について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">37</span>
+    <a class="title" href="9.html#37">Re:VS2005コンパイル環境について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">39</span>
+    <a class="title" href="9.html#39">Re2:VS2005コンパイル環境について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">41</span>
+    <a class="title" href="9.html#41">Re3:VS2005コンパイル環境について</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=9>
+    <span class="no">[9]</span>
+    <a class="title" href="#9">VS2005コンパイル環境について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-11-14T22:52:41">2007年11月14日 22:52</time></h1>
+    <div class="body">VS2005 Team Editionを使ってコンパイルを試してみました。<br><br>ソースに変更を加えてビルド後、実行しようとすると、<br>「プロジェクトは変更されています。ビルドしますか？」のダイアログが表示されますね。<br>その後は何も修正しなくても同様に毎回ダイアログが表示されてちょっとうるさい感じです。<br><br>リソースエディタを使ってリソース編集してビルドすると、<br>sakura_rc.rc(106) : error RC2104 : undefined keyword or key name: F_FILENEW<br>のエラーになります。<br>リビルドしてもエラーが消えません。<br><br>あと、&gt;&gt;dev:5073に記載したように埋め込みマニフェストはOFFの設定でお願いします。<br></div></section>
+    <ul><li><section><h1 id=19>
+    <span class="no">[19]</span>
+    <a class="title" href="#19">Re:VS2005コンパイル環境について</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-16T02:12:47">2007年11月16日 02:12</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; リソースエディタを使ってリソース編集してビルドすると、<br>&gt; sakura_rc.rc(106) : error RC2104 : undefined keyword or key name: F_FILENEW<br>&gt; のエラーになります。<br>&gt; リビルドしてもエラーが消えません。<br><br>sakura_rc.rc を修正しました。<br>まだ共同コーディング (コミット) が始まってないので、<br>勝手ながら直接コミットさせていただきました。変更行は1行だけです。<br><br>前は funccode.h がインクルードされていたのを funccode_define.h に変更したのですが、<br>直接の #include行だけしか変更してなくて、<br>リソースエディタで編集するとインクルードが元に戻っちゃってました。<br>TEXTINCLUDE 部分の書き換えで対応。<br><br>今回は試しに、Subversionのコミットコメントを日本語で書いてみました。<br>参考: <a href=http://sakura-editor.wiki.sourceforge.net/RepoCommit#tocRepoCommit10 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>wiki.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>RepoComm<wbr>it#<wbr>tocRepoC<wbr>ommit10</nobr></a><br>SVN Browseではちゃんと表示されてます。<br><a href=http://sakura-editor.svn.sourceforge.net/viewvc/sakura-editor/sakura/branches/unicode/sakura_core/ target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>viewvc/<wbr>sakura-<wbr>editor/<wbr>sakura/<wbr>branches<wbr>/<wbr>unicode/<wbr>sakura_c<wbr>ore/<wbr></nobr></a><br>＃コメント長すぎですかね？</div></section>
+    </li><li><section><h1 id=37>
+    <span class="no">[37]</span>
+    <a class="title" href="#37">Re:VS2005コンパイル環境について</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-18T19:00:48">2007年11月18日 19:00</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; ソースに変更を加えてビルド後、実行しようとすると、<br>&gt; 「プロジェクトは変更されています。ビルドしますか？」のダイアログが表示されますね。<br>&gt; その後は何も修正しなくても同様に毎回ダイアログが表示されてちょっとうるさい感じです。<br><br>こちらの環境は Visual Studio 2005 Standard Edition です。<br><br>とりあえずプロジェクトをゼロから作り直してみて原因を追究したところ、<br>埋め込みマニフェストを「いいえ」にした所でこの現象が発生しているようでした。<br><br><br>～以下は Debug_Ansi モードでビルドした場合の例です。～<br><br>埋め込みマニフェストOFFの場合<br>・ビルドする<br>　↓<br>・以下2ファイルが生成される<br>　sakuraW_Ansi.exe.intermediate.manifest<br>　sakuraW_Ansi.exe.manifest<br>　↓<br>・ソースをいじる<br>　↓<br>・ビルドし直す<br>　↓<br>・sakuraW_Ansi.exe.intermediate.manifest は更新される<br>・sakuraW_Ansi.exe.manifest は更新されない<br>　↓<br>・いじったソースのほうが sakuraW_Ansi.exe.manifest より更新日時が新しいので、<br>　「再ビルド要」と判定される<br><br><br>埋め込みマニフェストONの場合<br>・ビルドする<br>　↓<br>・以下2ファイルが生成される<br>　sakuraW_Ansi.exe.intermediate.manifest<br>　sakuraW_Ansi.exe.embed.manifest<br>　↓<br>・ソースをいじる<br>　↓<br>・ビルドし直す<br>　↓<br>・sakuraW_Ansi.exe.intermediate.manifest は更新される<br>・sakuraW_Ansi.exe.embed.manifest は更新されない<br>　↓<br>・更新日時の比較は sakuraW_Ansi.exe.embed.manifest に対しては行われない。<br>　(マニフェストはexeに埋め込まれているため？)<br>　sakuraW_Ansi.exe のほうがソースより更新日時が新しいので「再ビルド不要」と判定される。<br><br><br>埋め込みマニフェストをOFFにするしか対応策が見つかりませんでした。<br>どう対応するのが良いか、ご存知の方いらっしゃいましたら、<br>アドバイスいただけると助かります。<br><br><br>＃今日の日付で、この問題を修正した旨のコメントで vcproj と sln をコミットをしましたが、<br>　勘違いでした、直ってなかったです、すみません。</div></section>
+    <ul><li><section><h1 id=39>
+    <span class="no">[39]</span>
+    <a class="title" href="#39">Re2:VS2005コンパイル環境について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-11-18T22:53:14">2007年11月18日 22:53</time></h1>
+    <div class="body">&gt; とりあえずプロジェクトをゼロから作り直してみて原因を追究したところ、<br>&gt; 埋め込みマニフェストを「いいえ」にした所でこの現象が発生しているようでした。<br>[リンカ]<br>  -[マニフェストファイル]<br>    -[マニフェストの生成]：はい<br>    -[マニフェストファイル]：$(TargetPath).manifest<br>[マニフェストツール]<br>  -[入力と出力]<br>　  -[埋め込みマニフェスト]：いいえ<br>    -[マニフェストファイル]：$(TargetPath).manifest<br>と設定すればうまくいくような気がします。</div></section>
+    <ul><li><section><h1 id=41>
+    <span class="no">[41]</span>
+    <a class="title" href="#41">Re3:VS2005コンパイル環境について</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-19T01:57:33">2007年11月19日 01:57</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; &gt; とりあえずプロジェクトをゼロから作り直してみて原因を追究したところ、<br>&gt; &gt; 埋め込みマニフェストを「いいえ」にした所でこの現象が発生しているようでした。<br>&gt; [リンカ]<br>&gt;   -[マニフェストファイル]<br>&gt;     -[マニフェストの生成]：はい<br>&gt;     -[マニフェストファイル]：$(TargetPath).manifest<br>&gt; [マニフェストツール]<br>&gt;   -[入力と出力]<br>&gt; 　  -[埋め込みマニフェスト]：いいえ<br>&gt;     -[マニフェストファイル]：$(TargetPath).manifest<br>&gt; と設定すればうまくいくような気がします。<br><br>アドバイスありがとうございます。<br>リンカ側の出力マニフェストファイル指定が「$(TargetPath).intermediate.manifest」になっていたのが<br>問題の原因でした。「$(TargetPath).manifest」に変更することで問題が解決しました。<br><br>修正したものをコミットしました。<br>今回移行は直接コミットせずにパッチを介します。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

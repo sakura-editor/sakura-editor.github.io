@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>GREPのバグ修正と大きいファイル</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2299</span>
+    <a class="title" href="2299.html#2299">GREPのバグ修正と大きいファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2300</span>
+    <a class="title" href="2299.html#2300">RE: GREPのバグ修正と大きいファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2301</span>
+    <a class="title" href="2299.html#2301">Re2: GREPのバグ修正と大きいファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2302</span>
+    <a class="title" href="2299.html#2302">Re3: GREPのバグ修正と大きいファイル のバグ</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2299>
+    <span class="no">[2299]</span>
+    <a class="title" href="#2299">GREPのバグ修正と大きいファイル</a>
+    <span class="author">もか</span>
+    <time datetime="2002-09-11T08:28:56">2002年09月11日 08:28</time></h1>
+    <div class="body">こんにちは<br><br>大きいファイルが扱えるように修正していたところ、<br>GREPのバグを発見したので、修正しました<br><br>GREPのバグ修正は以下の内容です<br>・GREPで、[ファイル検索]またはキャンセルをすると、ファイルを閉じない＆メモリーを解放しない<br>・GREPで[単語単位]と[該当行]を選択した場合、ヒットしないことがまれにある<br>・[正規表現を利用(例.*)]かつ[該当部分]を選択した場合にバッファオーバーランする可能性があったのを修正<br>  →出力する文字を2000バイトに制限しました。<br>・GREP結果の該当する部分・行に NULL を含んでいる場合、NULLの前までしか表示しない<br>・GREP実行中ダイアログでファイル名の欄が変なときがある<br><br>大きいファイルに関して<br>・2GBまでGREPできるように<br>・ファイルを開くほうは未知数(2-3倍)です<br><br>アーカイブはeGroupsの BigFile3.zip です。<br>バグ修正と大きいファイルに関しては、別のパッチになっています。<br></div></section>
+    <ul><li><section><h1 id=2300>
+    <span class="no">[2300]</span>
+    <a class="title" href="#2300">RE: GREPのバグ修正と大きいファイル</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-11T10:37:52">2002年09月11日 10:37</time></h1>
+    <div class="body">&gt;バグ修正と大きいファイルに関しては、別のパッチになっています。<br>別のパッチとはいいながら，GrepFixを先に当てておかないとBigFileLoadの方がうまく当たらないのには参りました．<br></div></section>
+    <ul><li><section><h1 id=2301>
+    <span class="no">[2301]</span>
+    <a class="title" href="#2301">Re2: GREPのバグ修正と大きいファイル</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-11T10:43:10">2002年09月11日 10:43</time></h1>
+    <div class="body">ごめんなさい．readme.txtに書いてありました．<br></div></section>
+    <ul><li><section><h1 id=2302>
+    <span class="no">[2302]</span>
+    <a class="title" href="#2302">Re3: GREPのバグ修正と大きいファイル のバグ</a>
+    <span class="author">もか</span>
+    <time datetime="2002-09-12T17:16:49">2002年09月12日 17:16</time></h1>
+    <div class="body"><br>以前げんたさんが修正していた部分を、私のパッチ(BigFileLoad.diff)で間違って削除していました。<br><br>ssrc_2002-09-12でいうところの<br>CEditView.cpp 6968 行目以下<br>&#9;SetGrepResult(<br>&#9;&#9;szWork, &amp;nWorkLen,<br>&#9;&#9;pszFullPath, pszCodeName,<br>-&#9;&#9;nLine, nNextWordFrom2, pCompareData, nLineLen, nEolCodeLen,<br>+&#9;&#9;//&#9;Jun. 25, 2002 genta<br>+&#9;&#9;//&#9;桁位置は1始まりなので1を足す必要がある<br>+&#9;&#9;nLine, nNextWordFrom2 + 1, pCompareData, nLineLen, nEolCodeLen,<br> &#9;&#9;pszKey, nKeyKen,<br> &#9;&#9;bGrepOutputLine, nGrepOutputStyle<br> &#9;);<br><br>修正願います m(__)m<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

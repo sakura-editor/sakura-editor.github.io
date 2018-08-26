@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>印刷プレビュー最大化したときの、右下サイズボックスが。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1141</span>
+    <a class="title" href="1141.html#1141">印刷プレビュー最大化したときの、右下サイズボックスが。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1142</span>
+    <a class="title" href="1141.html#1142">Re: 印刷プレビュー最大化したときの、右下サイズボックスが。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1143</span>
+    <a class="title" href="1141.html#1143">Re2: 印刷プレビュー最大化したときの、右下サイズボックスが。</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1141>
+    <span class="no">[1141]</span>
+    <a class="title" href="#1141">印刷プレビュー最大化したときの、右下サイズボックスが。</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-13T01:00:51">2002年01月13日 01:00</time></h1>
+    <div class="body">印刷プレビューを別クラスEditDocが太りすぎていたので、印刷プレビューを別クラスにする作業をしています。<br>で、そのときに気がついたんですが、印刷プレビューを最大化したときに、右下のサイズボックスが移動してしまうんですが、どなたか直せませんか？<br>私は治せませんでした。しくしく。<br><br>アウトライン解析とか、ブックマーク一覧も同じです。エディタは表示と非表示を切り替えているみたいだけど。。。</div></section>
+    <ul><li><section><h1 id=1142>
+    <span class="no">[1142]</span>
+    <a class="title" href="#1142">Re: 印刷プレビュー最大化したときの、右下サイズボックスが。</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-13T05:18:18">2002年01月13日 05:18</time></h1>
+    <div class="body">&gt;印刷プレビューを別クラスEditDocが太りすぎていたので、印刷プレビューを別クラスにする作業をしています。<br>印刷Previewは現在EditWndですよね。<br>今はフレームウィンドウ内に直接書き込んでいますが、これは変更していませんか？<br>できれば専用のウィンドウを１つ作ってView同様にあつかった方がよいと思います。<br><br>あと、できれば<br>CView<br>｜<br>△<br>｜<br>CEditView, CPrintPreview<br>みたいな感じになるといいんじゃないかと思いますが。CEditWnd/CEditDocでは単純にCViewのHandleCommandを呼び出すが、ウィンドウがEditViewかPrintPreviewかで処理が変わるイメージ。<br></div></section>
+    <ul><li><section><h1 id=1143>
+    <span class="no">[1143]</span>
+    <a class="title" href="#1143">Re2: 印刷プレビュー最大化したときの、右下サイズボックスが。</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-13T12:42:58">2002年01月13日 12:42</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; CView<br>&gt; ｜<br>&gt; △<br>&gt; ｜<br>&gt; CEditView, CPrintPreview<br>&gt; みたいな感じになるといいんじゃないかと思いますが。CEditWnd/CEditDocでは単純にCViewのHandleCommandを呼び出すが、ウィンドウがEditViewかPrintPreviewかで処理が変わるイメージ。<br><br>将来的にはそうですね。そういうのが理想かも。<br>ただ、メッセージの伝播がまだよくわかってないので、私には荷が重過ぎるように思います。<br>ので、私は手をつけないことにします。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

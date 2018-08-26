@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>対括弧の強調表示で、コメント内も含めてしまう</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5920</span>
+    <a class="title" href="5920.html#5920">対括弧の強調表示で、コメント内も含めてしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5926</span>
+    <a class="title" href="5920.html#5926">RE: 対括弧の強調表示で、コメント内も含めてしまう</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=5920>
+    <span class="no">[5920]</span>
+    <a class="title" href="#5920">対括弧の強調表示で、コメント内も含めてしまう</a>
+    <span class="author">渡辺真</span>
+    <time datetime="2007-03-04T11:33:14">2007年03月04日 11:33</time></h1>
+    <div class="body">Cで、行コメントに//を指定している場合、下記の例の、最初と最後の括弧が、「対」として認識されません。<br>(ちなみに、oeditでは、コメント・アウトした行を、無視してくれます。)<br>{<br>    {<br>//    { <br>        { <br>        }<br>    }<br>}<br><br>「対括弧の強調表示」が、「コメント(行)」より優先されているためだと思いますが、いかがなものでしょうか？</div></section>
+    <ul><li><section><h1 id=5926>
+    <span class="no">[5926]</span>
+    <a class="title" href="#5926">RE: 対括弧の強調表示で、コメント内も含めてしまう</a>
+    <span class="author">すい</span>
+    <time datetime="2007-03-05T02:05:16">2007年03月05日 02:05</time></h1>
+    <div class="body">&gt;「対括弧の強調表示」が、「コメント(行)」より優先されているためだと思いますが、いかがなものでしょうか？<br><br>優先順位の問題じゃないです。それ以前のお話し。<br>対括弧検索の作りが、他の表示（コメントやクォーテーションなど）とは<br>全く関連していない、最も単純な処理になっているから。<br>対括弧を探す時に、表示状態なんかは一切参照せず、単純にテキスト中から<br>対の括弧を探すだけの処理になっているから、ですよ。<br></div></section>
+    </li></ul></li></ul></body></html>

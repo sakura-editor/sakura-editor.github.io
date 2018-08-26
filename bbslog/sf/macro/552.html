@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ファイルの先頭から現在位置まで削除するマクロ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">552</span>
+    <a class="title" href="552.html#552">ファイルの先頭から現在位置まで削除するマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">553</span>
+    <a class="title" href="552.html#553">Re:ファイルの先頭から現在位置まで削除するマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">554</span>
+    <a class="title" href="552.html#554">Re2:ファイルの先頭から現在位置まで削除するマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">555</span>
+    <a class="title" href="552.html#555">「キーマクロの記録」を活用</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">556</span>
+    <a class="title" href="552.html#556">Re:「キーマクロの記録」を活用　範囲選択開始もありました</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=552>
+    <span class="no">[552]</span>
+    <a class="title" href="#552">ファイルの先頭から現在位置まで削除するマクロ</a>
+    <span class="author">ろろ</span>
+    <time datetime="2012-04-07T03:03:24">2012年04月07日 03:03</time></h1>
+    <div class="body">ファイルの先頭から現在位置まで削除するマクロ<br>をさがしています。よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=553>
+    <span class="no">[553]</span>
+    <a class="title" href="#553">Re:ファイルの先頭から現在位置まで削除するマクロ</a>
+    <span class="author">コヨ－テ</span>
+    <time datetime="2012-04-09T00:05:41">2012年04月09日 00:05</time></h1>
+    <div class="body">▼ ろろさん<br>S_GoFileTop_Sel(0);&#9;// (選択)ファイルの先頭に移動<br>S_Delete(0);&#9;// 削除<br><br>マクロのタイプはmacです。</div></section>
+    <ul><li><section><h1 id=554>
+    <span class="no">[554]</span>
+    <a class="title" href="#554">Re2:ファイルの先頭から現在位置まで削除するマクロ</a>
+    <span class="author">ろろ</span>
+    <time datetime="2012-04-11T00:39:03">2012年04月11日 00:39</time></h1>
+    <div class="body">▼ コヨ－テさん<br>できました。ありがとうございました。<br>現在位置からファイルの最後まで削除するマクロもできました。<br>S_GoFileEnd_Sel(0); // (選択)ファイルの最後に移動<br>S_Delete(0);        // 削除<br>マクロのタイプはmacです。</div></section>
+    <ul><li><section><h1 id=555>
+    <span class="no">[555]</span>
+    <a class="title" href="#555">「キーマクロの記録」を活用</a>
+    <span class="author">gis_dur</span>
+    <time datetime="2012-04-21T11:29:54">2012年04月21日 11:29</time></h1>
+    <div class="body">蛇足で申し訳ありませんが。<br><br>(1) メニューから<br>　　　ツール → キーマクロの記録開始<br>(2) メニューから<br>　　　編集 → 選択 → （選択）ファイルの先頭に移動<br>(3) Delete キー押下<br>(4) メニューから<br>　　　ツール → キーマクロの記録終了＆保存<br>(5) 保存したマクロファイルを開く<br>　　　おめでとう！<br><br>さらに全然関係ない、チラシの裏の独り言ですが、<br>ユニコード版になって、保存されるマクロファイルの文字コードが UTF-8 になったのですね。<br>うーん。<br>昔の資産が全てSJISで書かれていて、今のところ問題なく使えていますが、気持ち悪いから UTF-8 にした方が良いのかなあ。<br></div></section>
+    <ul><li><section><h1 id=556>
+    <span class="no">[556]</span>
+    <a class="title" href="#556">Re:「キーマクロの記録」を活用　範囲選択開始もありました</a>
+    <span class="author">ろろ</span>
+    <time datetime="2012-04-22T11:22:38">2012年04月22日 11:22</time></h1>
+    <div class="body">▼ gis_durさん<br>ありがとうございます。<br>//キーボードマクロのファイル<br>S_BeginSelect(0);&#9;// 範囲選択開始<br>S_GoFileTop(0);&#9;// ファイルの先頭に移動<br>S_Delete(0);&#9;// 削除<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

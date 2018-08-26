@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>矩形選択について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←webトップへ</a><li><div class="list-title">
+    <span class="no">532</span>
+    <a class="title" href="532.html#532">矩形選択について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">537</span>
+    <a class="title" href="532.html#537">Re:矩形選択について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">538</span>
+    <a class="title" href="532.html#538">Re2:矩形選択について</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=532>
+    <span class="no">[532]</span>
+    <a class="title" href="#532">矩形選択について</a>
+    <span class="author">n</span>
+    <time datetime="2015-12-12T21:23:43">2015年12月12日 21:23</time></h1>
+    <div class="body">矩形選択は「Alt+ドラッグ」か「Alt+矢印キー」しかできませんか？<br>結局対角線の始点と終点を選択するのだから<br>「Alt+ドラッグ」ではなく、「Alt+クリック+クリック」でいいのでは？<br>マウスでドラッグすると意図せずズルズルと下へなだれていくことがあり、<br>手首も緊張して疲れます。<br>「Alt+2点間クリック」で矩形選択できるようにしてほしい。</div></section>
+    <ul><li><section><h1 id=537>
+    <span class="no">[537]</span>
+    <a class="title" href="#537">Re:矩形選択について</a>
+    <span class="author">ななし</span>
+    <time datetime="2016-12-17T14:52:20">2016年12月17日 14:52</time></h1>
+    <div class="body">&gt; 矩形選択は「Alt+ドラッグ」か「Alt+矢印キー」しかできませんか？<br><br>標準のキー割り当てでは、<br>SHIFT+F6キーに、矩形範囲選択が割り当てられています。<br>その後、矢印キーで範囲を拡大することになりますが。<br><br>&gt; 「Alt+2点間クリック」で矩形選択できるようにしてほしい。<br><br>他のアプリやエディタではどうでしょう？<br>一般的に受け入られている手法なら、本体に取り込まれやすいかもしれませんが。<br><br>マクロで対応する方法もあるかもしれません。<br>(マウス情報をマクロで利用できるかどうか分かりませんが。)</div></section>
+    <ul><li><section><h1 id=538>
+    <span class="no">[538]</span>
+    <a class="title" href="#538">Re2:矩形選択について</a>
+    <span class="author">もか</span>
+    <time datetime="2016-12-18T23:46:51">2016年12月18日 23:46</time></h1>
+    <div class="body">▼ ななしさん<br>&gt; マクロで対応する方法もあるかもしれません。<br>&gt; (マウス情報をマクロで利用できるかどうか分かりませんが。)<br>クリック、○○+クリックは、キーカスタマイズができません。<br>あとマウス座標を取得、変換するマクロ関数は実装されていません。<br><br>前にも一度書いた気がするのですが、<br>F1とかAlt+ダブルクリックとか右クリックメニューで、選択開始、選択終了の指示をしていいなら<br>Editor.SetCookie("window", "boxy", ExpandParameter("$y"));<br>Editor.SetCookie("window", "boxx", ExpandParameter("$x"));<br>とかで開始位置を記録しておいて、終点をクリックした後<br>var y = ExpandParameter("$y");<br>var x = ExpandParameter("$x");<br>var oldx = Editor.GetCookie("window", "boxy") - 0;<br>var oldy = Editor.GetCookie("window", "boxx") - 0;<br>Editor.MoveCursor(oldy, oldx, 0);<br>Editor.MoveCursor(y, x, 2);<br>とかすれば矩形選択が可能です。<br>ただ問題があって、改行より後ろは選択できません。<br>MoveCursorLayoutは用意してありますが、ExpandParameterのほうにレイアウト座標を取得するメタ文字がないです。<br>その機能を追加するパッチはpatchunicode:1067は用意してあります。<br><br>私も詳しく調べていないのでわかりませんが弊害がなければ「Alt+クリック+クリック」でいいんじゃないかとは思います。<br><br>ちなみに普通の選択と挙動を合わせるなら、正確には「クリック(もしくはキーボードで移動)」→終点「Alt+クリック」ですよね。<br>「Alt+クリック」→「Alt+クリック」もしくは、「Alt+クリック」→「クリック」ではないと思います。<br><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

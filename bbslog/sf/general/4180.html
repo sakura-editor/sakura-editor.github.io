@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>タイムスタンプについて</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4180</span>
+    <a class="title" href="4180.html#4180">タイムスタンプについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4181</span>
+    <a class="title" href="4180.html#4181">Re:タイムスタンプについて</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4183</span>
+    <a class="title" href="4180.html#4183">RE: タイムスタンプについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4186</span>
+    <a class="title" href="4180.html#4186">Re2: タイムスタンプについて</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4180>
+    <span class="no">[4180]</span>
+    <a class="title" href="#4180">タイムスタンプについて</a>
+    <span class="author">Tiger</span>
+    <time datetime="2004-12-13T12:51:25">2004年12月13日 12:51</time></h1>
+    <div class="body">お世話になります。<br>こういう事を聞くのは恥ずかしいのですが、<br>サクラエディタでタイムスタンプのマクロはどうやって<br>作ったらいいのでしょうか？<br>2004/12/13(Mon) 04:43:33<br>のようにしたいのです。<br>曜日は日本語ではなく上記のようにしたいのですが、<br>どうしたらいいのでしょうか？<br><br>また、このようなマクロはどうやって覚えていったら<br>いいのでしょうか？<br>宜しくお願い致します。</div></section>
+    <ul><li><section><h1 id=4181>
+    <span class="no">[4181]</span>
+    <a class="title" href="#4181">Re:タイムスタンプについて</a>
+    <span class="author">しみづ</span>
+    <time datetime="2004-12-13T16:45:45">2004年12月13日 16:45</time></h1>
+    <div class="body"><br>&gt;どうしたらいいのでしょうか？<br><br>　InsertDateを実行した後、カーソルを戻して曜日を選択して、GetSelectedStringで変数に入れたら、その内容を判定して対応する英語をInsTextする、というのも一つの方法です。<br><br><br>&gt;また、このようなマクロはどうやって覚えていったら<br>&gt;いいのでしょうか？<br><br>　急ぎでないのでしたら、マクロＢＢＳ http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?log=macro をじっくり読んでみたらいかがでしょうか。<br></div></section>
+    </li><li><section><h1 id=4183>
+    <span class="no">[4183]</span>
+    <a class="title" href="#4183">RE: タイムスタンプについて</a>
+    <span class="author">すい</span>
+    <time datetime="2004-12-14T04:59:16">2004年12月14日 04:59</time></h1>
+    <div class="body">&gt;サクラエディタでタイムスタンプのマクロはどうやって<br>&gt;作ったらいいのでしょうか？<br><br>そもそも Tigerさん がおっしゃる「タイムスタンプのマクロ」というのは どういう物でしょう？<br>「タイムスタンプ」をどうしたいのやら。<br>単に日時文字列を書き出せば良いのなら↓こんな<br>-----<br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに PPA.DLL を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br>// TAB=4<br><br>// 共通設定→[書式] にて<br>//<br>// 日付書式 <br>// ○ 標準(S) ◎ カスタム(C) D[yyyy'/'MM'/'dd'('ddd')'　 ]<br>//<br>// 時刻書式<br>// ○ 標準(S) ◎ カスタム(U) T[HH':'mm':'ss　　　　　　　]<br>//<br>// に設定しておくこと。<br><br>var<br>&#9;str1,str2:String;&#9;// 文字列型変数 str1,str2 を用意<br>&#9;wk:String;&#9;&#9;&#9;// 文字列型変数 wk を用意<br>&#9;pts,pte:Integer;&#9;// 整数数値型変数 pts,pte を用意<br>begin<br>//&#9;str1 := S_ExpandParameter('$d $t');&#9;// 現在日時の文字列を str1 に取得・格納する<br>&#9;str1 := S_ExpandParameter('$D $T');&#9;// 開いているファイルのタイムスタンプの文字列を str1 に取得・格納する<br><br>&#9;// str1 内部の (～) 部の先頭2バイトを wk に取り出す。<br>&#9;pts := Pos('(',str1);&#9;// '(' を探して位置を pts に格納する<br>&#9;pte := Pos(')',str1);&#9;// ')' を探して位置を pte に格納する<br>&#9;if( (pts = 0) or (pte = 0) )&#9;then&#9;Exit;&#9;// '(' ')' どちらかが見つからなければマクロ終了(中断)<br>&#9;wk := Copy(str1,pts+1,2);&#9;// '(' の次の位置から 2バイトを wk に取得<br><br>&#9;// wk を英曜日に変換する<br>&#9;if     (wk = '日')&#9;then&#9;wk := 'Sun'<br>&#9;else if(wk = '月')&#9;then&#9;wk := 'Mon'<br>&#9;else if(wk = '火')&#9;then&#9;wk := 'Tue'<br>&#9;else if(wk = '水')&#9;then&#9;wk := 'Wed'<br>&#9;else if(wk = '木')&#9;then&#9;wk := 'Thu'<br>&#9;else if(wk = '金')&#9;then&#9;wk := 'Fri'<br>&#9;else if(wk = '土')&#9;then&#9;wk := 'Sat'<br>&#9;;<br><br>&#9;// 出力する文字列 str2 を用意する。<br>&#9;// str2 := 「先頭 ～ '(' まで」＋「英曜日文字列」＋「 '(' ～ 文字列末尾まで」<br>&#9;str2 := Copy(str1,1,pts) + wk + Copy(str1,pte,Length(str1));<br><br>//&#9;MessageBox(str2,'',0);&#9;// ダイアログ表示<br>&#9;S_InsText( str2 );&#9;&#9;// 書き出す<br><br>end;<br>-----<br></div></section>
+    <ul><li><section><h1 id=4186>
+    <span class="no">[4186]</span>
+    <a class="title" href="#4186">Re2: タイムスタンプについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-12-14T22:58:09">2004年12月14日 22:58</time></h1>
+    <div class="body">&gt;&gt;サクラエディタでタイムスタンプのマクロはどうやって<br>&gt;&gt;作ったらいいのでしょうか？<br>&gt;<br>&gt;そもそも Tigerさん がおっしゃる「タイムスタンプのマクロ」というのは どういう物でしょう？<br>&gt;「タイムスタンプ」をどうしたいのやら。<br>そもそもタイムスタンプの入力はALT+; で出来ますし，その形式を変更するのが「カスタム」形式で書式はAPIのGetDateFormat()参照...と書こうとして内容を見たら，日本語環境では曜日は日本語になっちゃうんですね...○|￣|__<br><br>マクロでごそごそやるより本体を機能拡張した方がいいかも...<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

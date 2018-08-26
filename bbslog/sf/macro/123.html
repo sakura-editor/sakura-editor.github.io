@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択部分の数字をカウントアップするWSHマクロ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">123</span>
+    <a class="title" href="123.html#123">選択部分の数字をカウントアップするWSHマクロ</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=123>
+    <span class="no">[123]</span>
+    <a class="title" href="#123">選択部分の数字をカウントアップするWSHマクロ</a>
+    <span class="author">しみづ</span>
+    <time datetime="2004-11-20T18:29:59">2004年11月20日 18:29</time></h1>
+    <div class="body"><br>　小品ですが、自分で使っていて便利なので紹介します。<br><br>【countup.js】<br>// 選択部分の数字をカウントアップするWSHマクロ<br>// 半角の数字を選択して実行すると、１だけカウントアップ<br>// 選択部分の長さが１の場合のみ、その半角英字をひとつ後の半角英字にする<br><br>var inp = Editor.GetSelectedString(0);<br>var len = inp.length;<br>var i;<br><br>if ( len == 1 &amp;&amp; inp &gt;= "A" ) {<br> i = inp.charCodeAt(0) + 1;<br> inp = String.fromCharCode(i); <br>}<br>else {<br> inp = String(Number(inp)+1);<br>}<br>Editor.InsText(inp);  // 変更<br>for ( i = 0; i &lt; len; i++ ) {  // 変更部分を選択<br>  Editor.Left_Sel();<br>}<br></div></section>
+    </li></ul></body></html>

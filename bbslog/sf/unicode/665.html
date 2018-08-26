@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix) CStringRef::At()が文字終端でassertする</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">665</span>
+    <a class="title" href="665.html#665">Commit報告:(Fix) CStringRef::At()が文字終端でassertする</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=665>
+    <span class="no">[665]</span>
+    <a class="title" href="#665">Commit報告:(Fix) CStringRef::At()が文字終端でassertする</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-10-12T16:04:11">2008年10月12日 16:04</time></h1>
+    <div class="body">リビジョン：<br>　rev1446<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>　CStringRef::At()が文字終端でassertする<br>　例）英文ワードラップの設定で行末に文字を挿入したとき、_GetKeywordLength()のwhile(IS_KEYWORD_CHAR(cLineStr.At(nPos)))の文でassertが発生することがある(Debug版)。<br>　例と同様、NULL文字の出現まで文字列として扱うアルゴリズムは頻繁に使用される可能性があるため、CStringRef::At()では文字終端でNULL文字を返すように修正。</div></section>
+    </li></ul></body></html>

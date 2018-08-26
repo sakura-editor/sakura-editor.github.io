@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>タイプ別設定変更内容がアウトライン表示に即時反映されない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2146</span>
+    <a class="title" href="2146.html#2146">タイプ別設定変更内容がアウトライン表示に即時反映されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2147</span>
+    <a class="title" href="2146.html#2147">Re:タイプ別設定変更内容がアウトライン表示に即時反映されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2148</span>
+    <a class="title" href="2146.html#2148">Re2:タイプ別設定変更内容がアウトライン表示に即時反映されない</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2146>
+    <span class="no">[2146]</span>
+    <a class="title" href="#2146">タイプ別設定変更内容がアウトライン表示に即時反映されない</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-03-16T14:48:04">2014年03月16日 14:48</time></h1>
+    <div class="body">タイプ別設定画面でアウトライン解析方法を変更した場合に、<br>表示中のアウトライン画面に即時反映されなくなっています。<br>（アウトラインをドッキング表示しているときのテキスト背景色変更も<br>アウトライン側に即時反映されなくなっています）<br>＃いつからかは調べていませんがv2.0.5.0では即時反映されていました。<br><br>CEditWndのMYWM_CHANGESETTING処理で、PM_CHANGESETTING_ALLでやっているのと同様に、<br>PM_CHANGESETTING_TYPEでもアウトライン更新の処理が必要と思います。<br>＃むしろ_ALLのほうに必要な理由が自分にはちょっとわかりません（汗）</div></section>
+    <ul><li><section><h1 id=2147>
+    <span class="no">[2147]</span>
+    <a class="title" href="#2147">Re:タイプ別設定変更内容がアウトライン表示に即時反映されない</a>
+    <span class="author">novice</span>
+    <time datetime="2014-03-16T19:34:24">2014年03月16日 19:34</time></h1>
+    <div class="body">▼ LR4さん<br>&gt; タイプ別設定画面でアウトライン解析方法を変更した場合に、<br>&gt; 表示中のアウトライン画面に即時反映されなくなっています。<br>&gt; （アウトラインをドッキング表示しているときのテキスト背景色変更も<br>&gt; アウトライン側に即時反映されなくなっています）<br>&gt; ＃いつからかは調べていませんがv2.0.5.0では即時反映されていました。<br><br>調べてみましたが、r3476～のようです。<br><br>patchを登録しました。<br><a href=http://sourceforge.net/p/sakura-editor/patchunicode/788/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>788/<wbr></nobr></a><br><br><br>&gt; CEditWndのMYWM_CHANGESETTING処理で、PM_CHANGESETTING_ALLでやっているのと同様に、<br>&gt; PM_CHANGESETTING_TYPEでもアウトライン更新の処理が必要と思います。<br>&gt; ＃むしろ_ALLのほうに必要な理由が自分にはちょっとわかりません（汗）<br><br>共通設定にアウトライン解析に関係する設定がないので、<br>共通設定-&gt;タイプ別設定に移動しました。<br></div></section>
+    <ul><li><section><h1 id=2148>
+    <span class="no">[2148]</span>
+    <a class="title" href="#2148">Re2:タイプ別設定変更内容がアウトライン表示に即時反映されない</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-03-16T20:16:45">2014年03月16日 20:16</time></h1>
+    <div class="body">&gt; patchを登録しました。<br>&gt; <a href=http://sourceforge.net/p/sakura-editor/patchunicode/788/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>788/<wbr></nobr></a><br><br>ご対応ありがとうございます。<br>パッチを見たところ、<br>case PM_CHANGESETTING_TYPE:<br>  if( GetDocument()-&gt;m_cDocType.GetDocumentType().GetIndex() == wParam ){<br>    GetDocument()-&gt;OnChangeSetting();<br>  }<br>の後ろに処理を移動していて、それで問題は無さそうな感じですが、<br>if文の{}ブロックの後ではなく、内側でも良いのかな？と思いました。<br>いかがでしょうか。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

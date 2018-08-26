@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>メモ：LVITEM</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3617</span>
+    <a class="title" href="3617.html#3617">メモ：LVITEM</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3626</span>
+    <a class="title" href="3617.html#3626">Re: メモ：LVITEM</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3617>
+    <span class="no">[3617]</span>
+    <a class="title" href="#3617">メモ：LVITEM</a>
+    <span class="author">みく</span>
+    <time datetime="2004-06-05T09:54:40">2004年06月05日 09:54</time></h1>
+    <div class="body"><br>LVITEM.pszTextはLPSTR型です。<br><br>CPropComMacro.cpp:246など<br>sItem.pszText = m_pShareData-&gt;m_MacroTable[index].m_bRel<br>oadWhenExecute ? "on" : "off";<br>だとconstになってしまうので厳密にはエラーになります。<br></div></section>
+    <ul><li><section><h1 id=3626>
+    <span class="no">[3626]</span>
+    <a class="title" href="#3626">Re: メモ：LVITEM</a>
+    <span class="author">もか</span>
+    <time datetime="2004-06-07T01:46:27">2004年06月07日 01:46</time></h1>
+    <div class="body">ListView_InsertItem/LVM_INSERTITEMは、const LV_ITEM FAR*とはなっているけど、constになるのはポインタ値(const TCHAR* const)で、定義上は中身をWin側で書き換える可能性ありってことですね。<br>Win32APIは、IN/OUTやconst/非constに関していいかげんすぎだよなあ。<br><br>VC6 Proに付属しているMFCのソース(初めて見た...)に、<br>int CListCtrl::InsertItem(UINT nMask, int nItem, LPCTSTR lpszItem, UINT nState, UINT nStateMask,<br>&#9;int nImage, LPARAM lParam)<br>&#9;LVITEM item;<br>&#9;...<br>&#9;item.pszText = (LPTSTR)lpszItem;<br>という物があります。もっとも、MFCもたいして当てにならないようで....<br>気持ち悪いけど、まあ、いいにしましょう。<br>#なんでconst_castでないんだ？古いから？<br><br>ちなみに、プログラミング言語C++第3版によれば、「文字列リテラルは、char*に代入できる。(中略) C、C++の以前の定義では、文字列リテラルの型はchar*だった」そうです。<br>ワイド文字列リテラルに関しては、const wchar_t[]型とは書いてありますが、wchar_t*に代入可能かは判りませんでした(^_^;<br></div></section>
+    </li></ul></li></ul></body></html>

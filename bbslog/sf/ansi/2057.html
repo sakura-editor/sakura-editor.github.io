@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CMemoryを使いたいという人が現れた</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2057</span>
+    <a class="title" href="2057.html#2057">CMemoryを使いたいという人が現れた</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2058</span>
+    <a class="title" href="2057.html#2058">RE: CMemoryを使いたいという人が現れた</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2061</span>
+    <a class="title" href="2057.html#2061">Re2: CMemoryを使いたいという人が現れた</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2062</span>
+    <a class="title" href="2057.html#2062">Re3: CMemoryを使いたいという人が現れた</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2063</span>
+    <a class="title" href="2057.html#2063">Re3: CMemoryを使いたいという人が現れた</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2064</span>
+    <a class="title" href="2057.html#2064">Re4: CMemoryを使いたいという人が現れた</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2065</span>
+    <a class="title" href="2057.html#2065">Re5: CMemoryを使いたいという人が現れた</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2066</span>
+    <a class="title" href="2057.html#2066">Re6: CMemoryを使いたいという人が現れた</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2070</span>
+    <a class="title" href="2057.html#2070">Re7: CMemoryを使いたいという人が現れた</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2071</span>
+    <a class="title" href="2057.html#2071">Re8: CMemoryを使いたいという人が現れた</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2068</span>
+    <a class="title" href="2057.html#2068">とりあえずOKと言っておきました</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2057>
+    <span class="no">[2057]</span>
+    <a class="title" href="#2057">CMemoryを使いたいという人が現れた</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-14T02:02:35">2002年05月14日 02:02</time></h1>
+    <div class="body">本日エディタコンポーネントの日本語対応のためにCMemoryクラスを使わせて欲しいというメールが私のところに来ました。<br><br>SourceForgeで探していたところこのエディタにたどり着いたとのこと。<br>＃ SourceForge.jpでなくSourceForge.netで公開していて良かった(^^)<br><br>ToolscenterというWindows用エディタコンポーネント<br><a href=http://www.toolscenter.org/about.htm target=_top><nobr>http://<wbr>www.<wbr>toolscen<wbr>ter.<wbr>org/<wbr>about.<wbr>htm</nobr></a><br><a href=http://groups.yahoo.com/group/TextCenter target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>com/<wbr>group/<wbr>TextCent<wbr>er</nobr></a> <br>とScintilla <a href=http://www.scintilla.org target=_top><nobr>http://<wbr>www.<wbr>scintill<wbr>a.<wbr>org</nobr></a> に使いたいとのこと。<br><br>で、みなさんに質問です。CMemory って客観的に見てどう思います？ 性能とか、制限事項とか。私はUnicode対応といいつつ内部がSJISなので一部扱えない文字があるのが気になりますが。<br><br>また、MFC/WTL用Wrapperを作りたいらしいので、インターフェースを変更するときには通知してあげないといけませんね。<br><br>あとは、誰の手が入っているかもう一度確認しないと。<br><br>本人には(日本語が見えるようなら)こちらに書き込んでいただくよう言っておきます。<br></div></section>
+    <ul><li><section><h1 id=2058>
+    <span class="no">[2058]</span>
+    <a class="title" href="#2058">RE: CMemoryを使いたいという人が現れた</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-05-14T10:04:02">2002年05月14日 10:04</time></h1>
+    <div class="body"><br>&gt;で、みなさんに質問です。CMemory って客観的に見てどう思います？ 性能とか、制限事項とか。私はUnicode対応といいつつ内部がSJISなので一部扱えない文字があるのが気になりますが。<br><br>MemCharNextとかMemCharPrev、CheckKanjiCode_EUCが、CMemoryを要求していないのに、CMemoryクラスの中にいたりするので、なんだかよくわからないクラスになっている気がします。<br></div></section>
+    <ul><li><section><h1 id=2061>
+    <span class="no">[2061]</span>
+    <a class="title" href="#2061">Re2: CMemoryを使いたいという人が現れた</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-15T03:55:25">2002年05月15日 03:55</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; MemCharNextとかMemCharPrev<br>この２つはCMemoryと密接に関連しているので良いのではないでしょうか。ちゃんとstaticになっているし。<br><br>どちらかと言えばこれらはCMemory::iterator (というのはないけど、作ったらの話)のoperator++, operator--に相当する機能だと思います。<br><br>&gt; CheckKanjiCode_EUC<br>判定関数は微妙なところではありますが、エディタ全体を見たときに処理がCMemory内でのみ行われるので、関数もCMemory名前空間に用意したと考えれば妥当だと思います。<br><br>CMemoryを使うと言いつつ、むしろこの辺が欲しかったのかも。<br>だって、既存のエディタに使うというのだから文字を扱う部分は既にあるわけだし。<br></div></section>
+    <ul><li><section><h1 id=2062>
+    <span class="no">[2062]</span>
+    <a class="title" href="#2062">Re3: CMemoryを使いたいという人が現れた</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-15T04:09:44">2002年05月15日 04:09</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 処理がCMemory内でのみ行われる<br>大嘘でした。たしかに漢字判定は関係ないですね。</div></section>
+    </li><li><section><h1 id=2063>
+    <span class="no">[2063]</span>
+    <a class="title" href="#2063">Re3: CMemoryを使いたいという人が現れた</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-05-15T10:27:06">2002年05月15日 10:27</time></h1>
+    <div class="body"><br>&gt;&gt; MemCharNextとかMemCharPrev<br>&gt;この２つはCMemoryと密接に関連しているので良いのではないでしょうか。ちゃんとstaticになっているし。<br><br>いや、ぜんぜん密接じゃないですよ。<br>MemCharNextのなかでは、単に、char*とintを使っているだけで、CMemoryを使っている箇所はまったくない。<br>CMemoryを要求していれば密接といってもいいと思うけどね。<br><br>MemCharNextも実は、もともとの意図で使っていなくて気持ちが悪い。<br>結局使うほうは、MemCharNextByte（次の文字のバイト数を取得する）くらいの意味でしか使っていないし。<br></div></section>
+    <ul><li><section><h1 id=2064>
+    <span class="no">[2064]</span>
+    <a class="title" href="#2064">Re4: CMemoryを使いたいという人が現れた</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-15T18:37:53">2002年05月15日 18:37</time></h1>
+    <div class="body">&gt;タイトル: Re4: CMemoryを使いたいという人が現れた<br>&gt;発言者: やざき<br>&gt;&gt;&gt; MemCharNextとかMemCharPrev<br>&gt;&gt;この２つはCMemoryと密接に関連しているので良いのではないでしょうか。ちゃんとstaticになっているし。<br>&gt;<br>&gt;いや、ぜんぜん密接じゃないですよ。<br>&gt;MemCharNextのなかでは、単に、char*とintを使っているだけで、CMemoryを使っている箇所はまったくない。<br>&gt;CMemoryを要求していれば密接といってもいいと思うけどね。<br>あ、確かに。名前に惑わされてしまった。<br>const char* pDataとint nLengthの組み合わせはCMemoryに置き換えられますね。<br><br>&gt;MemCharNextも実は、もともとの意図で使っていなくて気持ちが悪い。<br>あ、これはそう思います。<br></div></section>
+    <ul><li><section><h1 id=2065>
+    <span class="no">[2065]</span>
+    <a class="title" href="#2065">Re5: CMemoryを使いたいという人が現れた</a>
+    <span class="author">みく</span>
+    <time datetime="2002-05-15T19:15:20">2002年05月15日 19:15</time></h1>
+    <div class="body"><br>バグ見つけました。<br><br>MemCharNext<br>全角文字のチェックをしているがサイズをチェックしてないので<br>バッファを越えたところを見る可能性がある。<br>ただし、NULL終端あり文字列・CMemory確保での文字列であれば<br>終端記号を読むことになるのでセーフ。<br><br>MemCharPrev<br>CharPrev()はNULL終端された文字列を要求している。<br>サクラエディタはバイナリを扱えるので文字列の途中にNULL文字<br>があれば正しく動作しないだろう。<br><br>MemCharNextSize, MemCharPrevSize みたいな<br>文字サイズを取得できる関数作ったら良いのでは。<br>(ほとんどがこの使い方だと思う)<br></div></section>
+    <ul><li><section><h1 id=2066>
+    <span class="no">[2066]</span>
+    <a class="title" href="#2066">Re6: CMemoryを使いたいという人が現れた</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-15T20:34:19">2002年05月15日 20:34</time></h1>
+    <div class="body">&gt;サクラエディタはバイナリを扱えるので文字列の途中にNULL文字<br>&gt;があれば正しく動作しないだろう。<br>ということはCMemoryに限らずこのエディタでは'\0'終端された文字列を前提としてはいけないと言うことですよね。なんか不安になってきました。<br></div></section>
+    <ul><li><section><h1 id=2070>
+    <span class="no">[2070]</span>
+    <a class="title" href="#2070">Re7: CMemoryを使いたいという人が現れた</a>
+    <span class="author">みく</span>
+    <time datetime="2002-05-16T18:56:58">2002年05月16日 18:56</time></h1>
+    <div class="body">&gt;タイトル: Re7: CMemoryを使いたいという人が現れた<br>&gt;発言者: げんた<br>&gt;&gt;サクラエディタはバイナリを扱えるので文字列の途中にNULL文字<br>&gt;&gt;があれば正しく動作しないだろう。<br>&gt;ということはCMemoryに限らずこのエディタでは'\0'終端された文字列を前提としてはいけないと言うことですよね。なんか不安になってきました。<br><br>バイナリも使えるMemCharNext/Prev関数を作ってみました。<br>一応前方検索するようにして、テキストを最初から舐めな<br>くて済むようにしてますが、MemCharPrevはCharPrevより<br>1割ほど遅くなりました(CharPrevも前方検索だと思う)。<br><br>サイズ取得関数も作ってみましたが、似たようなコードが<br>複数あって保守性が悪くなるのでMemCharNext/Prevを使っ<br>たマクロまたはインライン関数にしたほうが良さそうです。<br></div></section>
+    <ul><li><section><h1 id=2071>
+    <span class="no">[2071]</span>
+    <a class="title" href="#2071">Re8: CMemoryを使いたいという人が現れた</a>
+    <span class="author">みく</span>
+    <time datetime="2002-05-16T19:01:18">2002年05月16日 19:01</time></h1>
+    <div class="body"><br>書き忘れました。ソースは、<br>egroups/source/MemChar0513.zip です。<br><br>あと、バッファ外にアクセスしないように修正してます。<br>＃CharNext/CharPrev関数は平気でアクセスしている。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=2068>
+    <span class="no">[2068]</span>
+    <a class="title" href="#2068">とりあえずOKと言っておきました</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-16T07:01:27">2002年05月16日 07:01</time></h1>
+    <div class="body">私が許可を出す権限は無いのですが、一応すべてのコードをzlib/libpngライセンスで配布しても問題ないと判断しましたのでOKと返事しました。<br><br>みさかさんからはメールにて許可をもらいました。<br>jeproさんは文字列にしか変更を加えていないので特に許可は不要と判断しました。<br>horさんの名前はファイル先頭にはあるのですがソース中から該当箇所を発見できませんでした。<br><br>CMemory を使いたいと言ってきた "Paul Selormey" &lt;<a href=mailto:paul@toolscenter.org><nobr>paul@<wbr>toolscen<wbr>ter.<wbr>org</nobr></a>&gt; さんから開発者の方々への言葉を転載します。<br><br>&gt; I wish to express my sincere gratitude to all the authors and contributors to the codes and for your kind offer to use it freely. I will communicate any modifications to you. It might be mainly the Japanese comments since most users of the TextCenter do not have systems that will handle them.<br>&gt; Your copy rights will, however, be preserved.<br></div></section>
+    </li></ul></li></ul></body></html>

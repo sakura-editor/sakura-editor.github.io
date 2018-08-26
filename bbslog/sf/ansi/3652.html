@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>DispLineNew</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3652</span>
+    <a class="title" href="3652.html#3652">DispLineNew</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3653</span>
+    <a class="title" href="3652.html#3653">Re: DispLineNew</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3667</span>
+    <a class="title" href="3652.html#3667">RE: DispLineNew</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3652>
+    <span class="no">[3652]</span>
+    <a class="title" href="#3652">DispLineNew</a>
+    <span class="author">みく</span>
+    <time datetime="2004-06-23T23:21:31">2004年06月23日 23:21</time></h1>
+    <div class="body"><br>#猿は禁断の地に踏み入った。<br><br>・描画関数の暗号解読<br>・可読性向上<br>・高速化（でも遅くなったようだ）<br>・色分け優先度(ただし、コンパイルできる人のみのハードコーディングタイプ)<br>&#9;state_order[]を書き換えてください。<br><br>とりあえず"動いた"ようなのでupします。<br><br>&#9;Source/DispLineNew.ZIP<br><br>なお、対括弧検索の関数は古いままです。<br><br>例えば、upソースでは、<br>"http://sourceforge.jp/"<br>のURL部分は色分けされます。<br>URLの優先度を下げれば、色分けされません。<br></div></section>
+    <ul><li><section><h1 id=3653>
+    <span class="no">[3653]</span>
+    <a class="title" href="#3653">Re: DispLineNew</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-06-23T23:52:44">2004年06月23日 23:52</time></h1>
+    <div class="body">ネ申キタ━━(゜∀゜)━━!!!!<br><br>まだ見てませんが...<br></div></section>
+    </li><li><section><h1 id=3667>
+    <span class="no">[3667]</span>
+    <a class="title" href="#3667">RE: DispLineNew</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-07-10T07:19:48">2004年07月10日 07:19</time></h1>
+    <div class="body">&gt;とりあえず"動いた"ようなのでupします。<br>まず検索文字列の色分けがおかしいような...<br><br>試しにCEditApp.cppから検索してみたところ<br>・検索文字列の位置にかかわらず常に行頭から検索文字列色になる．<br>・検索文字列の選択範囲がずれる<br>という現象が見られます．<br><br>次に文字列の色分け．ダブルクォート中のシングルクォート文字列がシングルクォート色になります．逆は大丈夫．<br>シングルクォートを閉じたあとの色がダブルクォートの終わりが文字列中にあれば通常の文字色，無ければダブルクォート色になるのでおかしいなりにうまく動いているようではありますが．<br>文字列をコメントより優先しているためかコメント中の文字列も色分けされますね．<br><br>優先度という点では検索文字列とそれ以外の2段階のみで，通常の色分けルールは優先度だけでは表現できないと思います．<br><br>あと様々な描画関数に渡しているたくさんの引数を全部統一した構造体にする方が速度と見やすさの点から良いと思うのですが．どうでしょうか．<br></div></section>
+    </li></ul></li></ul></body></html>

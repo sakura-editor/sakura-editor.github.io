@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>（無題）</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4943</span>
+    <a class="title" href="4943.html#4943">（無題）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4944</span>
+    <a class="title" href="4943.html#4944">Re:（無題）</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4947</span>
+    <a class="title" href="4943.html#4947">Re: クリップアウト2000</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4950</span>
+    <a class="title" href="4943.html#4950">Re2: クリップアウト2000</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4951</span>
+    <a class="title" href="4943.html#4951">Re3: クリップアウト2000</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4952</span>
+    <a class="title" href="4943.html#4952">Re3: クリップアウト2000</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4953</span>
+    <a class="title" href="4943.html#4953">Re4: クリップアウト2000</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4943>
+    <span class="no">[4943]</span>
+    <a class="title" href="#4943">（無題）</a>
+    <span class="author">かずかず</span>
+    <time datetime="2006-01-02T02:33:20">2006年01月02日 02:33</time></h1>
+    <div class="body">なにが問題なのか不明なのですが、サクラエディタにからんだ<br>自分の環境で困ってる事を報告します。ＯＳはwindows XP SP2です。<br><br>もともとsakura.exe 1.5.21を使用していたのですが最新版の1.5.8.1にexeファイルを<br>置き換えました。<br><br>また、私は、クリップボード管理に「クリップアウト2000」を使用しています。<br><br>1.5.21のsakura.exeを使用中にクリップアウト2000をalt + x で呼び出しクリップボード内容を<br>変更した場合、アクティブなウィンドウが直前に使用していたサクラエディタウィンドウに戻されるていた<br>のですが、1.5.8.1のsakura.exe ではアクティブなウィンドウがサクラエディタに戻りません。<br>他のエディタやアプリケーションではこの事象は発生せずサクラエディタのみで発生するみたいです。<br>何が原因なのでしょうか？また、過去と同様の操作感を保つ良い方法は無いでしょうか？<br><br></div></section>
+    <ul><li><section><h1 id=4944>
+    <span class="no">[4944]</span>
+    <a class="title" href="#4944">Re:（無題）</a>
+    <span class="author">かずかず</span>
+    <time datetime="2006-01-02T02:34:24">2006年01月02日 02:34</time></h1>
+    <div class="body">手がすべって無題でいれてしまいました。。すみません。。</div></section>
+    </li><li><section><h1 id=4947>
+    <span class="no">[4947]</span>
+    <a class="title" href="#4947">Re: クリップアウト2000</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-01-09T00:48:56">2006年01月09日 00:48</time></h1>
+    <div class="body">調べたところ1.5.5.0までは正常で1.5.6.0より動作しなくなっていました．<br>このソフトは貼り付け時にWM_KEYDOWN/WM_KEYUPメッセージを送ってCtrl+Vをエミュレートするように作られているのですが，最新版で挙動を調べるとCTipWndというツールチップのウィンドウへメッセージを送っているためにサクラエディタがアクティブにならず，送ったメッセージも無視されているようです．<br><br>1.5.5.0ではTextEditorWindow (CEditWnd)へメッセージが送られており，期待通り処理されています．<br><br>で，問題は何故その差が出たのかですが...<br>TabのDrag &amp; Dropとかが入っていますが，何か関係あるのかなぁ...<br><br>クリップアウト2000はDLLを使っていないのでキーボードフック等でウィンドウ状態を監視してはいないと考えられます．ということは何らかの手段で自分の直前のウィンドウを取得しているのではないかと思います．しかし，何故変わってしまったのか...は識者の方にバトンタッチ..(((^^)<br></div></section>
+    <ul><li><section><h1 id=4950>
+    <span class="no">[4950]</span>
+    <a class="title" href="#4950">Re2: クリップアウト2000</a>
+    <span class="author">(全略)</span>
+    <time datetime="2006-01-09T14:13:02">2006年01月09日 14:13</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 調べたところ1.5.5.0までは正常で1.5.6.0より動作しなくなっていました．<br>サクラエディタ側で対処したいなら<br>CEditWndでWM_ACTIVATEを処理している箇所をコメントアウトしたのが原因じゃないでしょうか?<br>試しにコメント解除してみると1.5.5.0同様の貼り付けができました<br><br>&gt;このソフトは貼り付け時にWM_KEYDOWN/WM_KEYUPメッセージを送ってCtrl+Vをエミュレートするように作られているのですが<br>よく調べましたね (^-^;;<br><br>WM_KEYDOWN/WM_KEYUPを使っているなら、クリップアウト2000側の問題じゃないのかとも思いますけど<br>例えばSendInputを使う方法ならこんな事はおこらないですし</div></section>
+    <ul><li><section><h1 id=4951>
+    <span class="no">[4951]</span>
+    <a class="title" href="#4951">Re3: クリップアウト2000</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-01-09T15:29:10">2006年01月09日 15:29</time></h1>
+    <div class="body">&gt;CEditWndでWM_ACTIVATEを処理している箇所をコメントアウトしたのが原因じゃないでしょうか?<br>&gt;試しにコメント解除してみると1.5.5.0同様の貼り付けができました<br>おお，本当だ．しか～し，しかしです．残念ながら別の問題が...<br><br>これを入れるとモードレスダイアログ(検索とか)への貼り付けが出来なくなるんです．<br><br>例えば検索ダイアログ→クリップアウト2000 として貼り付けを行うと<br>WM_ACTIVATEAPP処理無し: 検索ボックスへ<br>処理有り: エディタへ<br><br>フォーカスがエディタに戻ったときに必ず編集エリアがアクティブになるのでこのようになってしまいます．<br><br>と考えると，CTipWndにWM_KEYDOWN/WM_KEYUPを親であるCEditViewへ転送させるのがよいのかなと思います．<br>(入力ボックスを持たない全てのウィンドウでやらないとダメなのか...?)<br></div></section>
+    </li><li><section><h1 id=4952>
+    <span class="no">[4952]</span>
+    <a class="title" href="#4952">Re3: クリップアウト2000</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-01-09T15:37:35">2006年01月09日 15:37</time></h1>
+    <div class="body">▼ (全略)さん<br>&gt; CEditWndでWM_ACTIVATEを処理している箇所をコメントアウトしたのが原因じゃないでしょうか?<br>&gt; 試しにコメント解除してみると1.5.5.0同様の貼り付けができました<br><br>ちょうど確認しようと思っていた箇所です。<br>手間が省けました。確認ありがとうございます。m(__)m<br>ここは、起動時の画面ちらつき抑止のために除去したところです。<br>＃WM_ACTIVATEAPP で強制的に SetFocus() するのもやや不自然と思いましたし。<br><br>&gt; &gt;このソフトは貼り付け時にWM_KEYDOWN/WM_KEYUPメッセージを送ってCtrl+Vをエミュレートするように作られているのですが<br>&gt; よく調べましたね (^-^;;<br><br>たぶん、自画面よりも後ろにある最初の可視画面をフォアグラウンド化して<br>キーボードイベントを発生させているのだと思います。<br>で、CTipWnd は初期化時に可視になっていますね（サイズは０）。<br>初期化時は不可視にしておくのがいいんじゃないかと。<br><br>diff -ur --dos sakura_core_org/CTipWnd.cpp sakura_core/CTipWnd.cpp<br>--- sakura_core_org/CTipWnd.cpp&#9;Sun Oct 30 15:56:16 2005<br>+++ sakura_core/CTipWnd.cpp&#9;Mon Jan 09 15:09:24 2006<br>@@ -77,6 +77,8 @@<br> &#9;&#9;NULL // handle to menu, or child-window identifier<br> &#9;);<br> <br>+&#9;Hide();&#9;// 2006.01.09 ryoji Create直後は不可視にする<br>+<br> &#9;if( NULL != m_hFont ){<br> &#9;&#9;::DeleteObject( m_hFont );<br> &#9;&#9;m_hFont = NULL;<br><br>＃CTipWnd は現状でも辞書Tipを１度表示すればその後は<br>＃可視／不可視の切り替え動作になってるみたいですね</div></section>
+    <ul><li><section><h1 id=4953>
+    <span class="no">[4953]</span>
+    <a class="title" href="#4953">Re4: クリップアウト2000</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-01-09T19:18:48">2006年01月09日 19:18</time></h1>
+    <div class="body">&gt;で、CTipWnd は初期化時に可視になっていますね（サイズは０）。<br>&gt;初期化時は不可視にしておくのがいいんじゃないかと。<br>一応動作的にはOKになりましたが，Hide()の副作用かウィンドウを開く際に開く直前にActiveだったウィンドウがActive-Deactiveを2回ほど繰り返してタイトルバーがチカチカっとなるようです．<br><br>なので，最初から表示しないで作成するようにしたらうまく行きました．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

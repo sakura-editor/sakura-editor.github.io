@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ修正：印刷で全角フォント指定が効かない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">92</span>
+    <a class="title" href="92.html#92">バグ修正：印刷で全角フォント指定が効かない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">102</span>
+    <a class="title" href="92.html#102">Re:バグ修正：印刷で全角フォント指定が効かない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">103</span>
+    <a class="title" href="92.html#103">Re2:バグ修正：印刷で全角フォント指定が効かない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">104</span>
+    <a class="title" href="92.html#104">Re3:バグ修正：印刷で全角フォント指定が効かない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">105</span>
+    <a class="title" href="92.html#105">Re4:バグ修正：印刷で全角フォント指定が効かない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">106</span>
+    <a class="title" href="92.html#106">Re5:バグ修正：印刷で全角フォント指定が効かない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">107</span>
+    <a class="title" href="92.html#107">Re6:バグ修正：印刷で全角フォント指定が効かない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">109</span>
+    <a class="title" href="92.html#109">Re7:バグ修正：印刷で全角フォント指定が効かない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">110</span>
+    <a class="title" href="92.html#110">Re8:バグ修正：印刷で全角フォント指定が効かない</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">108</span>
+    <a class="title" href="92.html#108">Re6:バグ修正：印刷で全角フォント指定が効かない</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=92>
+    <span class="no">[92]</span>
+    <a class="title" href="#92">バグ修正：印刷で全角フォント指定が効かない</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-12-12T23:21:54">2007年12月12日 23:21</time></h1>
+    <div class="body">バグ修正パッチを登録しました。<br>PatchUnicode#1849347 印刷で全角フォント指定が効かない<br><a href=http://sourceforge.net/tracker/index.php?func=detail&aid=1849347&group_id=12488&atid=1013762 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>1849347&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>1013762</nobr></a><br></div></section>
+    <ul><li><section><h1 id=102>
+    <span class="no">[102]</span>
+    <a class="title" href="#102">Re:バグ修正：印刷で全角フォント指定が効かない</a>
+    <span class="author">Uchi</span>
+    <time datetime="2007-12-15T21:54:11">2007年12月15日 21:54</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; バグ修正パッチを登録しました。<br>&gt; PatchUnicode#1849347 印刷で全角フォント指定が効かない<br>&gt; <a href=http://sourceforge.net/tracker/index.php?func=detail&aid=1849347&group_id=12488&atid=1013762 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>1849347&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>1013762</nobr></a><br>動作確認しました。<br>Print_DrawLine関数でちょっと問題がちょっと問題があるようです。<br><br>::ExtTextOutW_AnyBuild(<br>&#9;hdc,<br>&#9;ptDraw.x + (Int)nLayoutX * nDx,<br>&#9;ptDraw.y - ( m_pPrintSetting-&gt;m_nPrintFontHeight - nAscentHan ),<br>&#9;0,<br>&#9;NULL,<br>&#9;&amp;pLine[nBgnLogic],<br>&#9;iLogic - nBgnLogic,<br>&#9;&amp;pDxArray[nBgnLogic]<br>);<br>の第3パラメータは<br>ptDraw.y - ( m_pPrintSetting-&gt;m_nPrintFontHeight - nKindLast==0?nAscentHan:nAscentZen ),<br>となると思います。<br><br>以上報告をあげておきます。</div></section>
+    <ul><li><section><h1 id=103>
+    <span class="no">[103]</span>
+    <a class="title" href="#103">Re2:バグ修正：印刷で全角フォント指定が効かない</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-12-15T22:39:44">2007年12月15日 22:39</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; Print_DrawLine関数でちょっと問題がちょっと問題があるようです。<br>&gt; <br>&gt; ::ExtTextOutW_AnyBuild(<br>&gt; &#9;hdc,<br>&gt; &#9;ptDraw.x + (Int)nLayoutX * nDx,<br>&gt; &#9;ptDraw.y - ( m_pPrintSetting-&gt;m_nPrintFontHeight - nAscentHan ),<br>&gt; &#9;0,<br>&gt; &#9;NULL,<br>&gt; &#9;&amp;pLine[nBgnLogic],<br>&gt; &#9;iLogic - nBgnLogic,<br>&gt; &#9;&amp;pDxArray[nBgnLogic]<br>&gt; );<br>&gt; の第3パラメータは<br>&gt; ptDraw.y - ( m_pPrintSetting-&gt;m_nPrintFontHeight - nKindLast==0?nAscentHan:nAscentZen ),<br>&gt; となると思います。<br><br>ご指摘ありがとうございます。<br>Ｙ座標調整は見落としていました。orz<br>修正を施したパッチを登録しました。<br>PatchUnicode#1849347 - 071215_1_FixPrintFont2.patch<br></div></section>
+    <ul><li><section><h1 id=104>
+    <span class="no">[104]</span>
+    <a class="title" href="#104">Re3:バグ修正：印刷で全角フォント指定が効かない</a>
+    <span class="author">Uchi</span>
+    <time datetime="2007-12-16T12:21:22">2007年12月16日 12:21</time></h1>
+    <div class="body">&gt; 修正を施したパッチを登録しました。<br>&gt; PatchUnicode#1849347 - 071215_1_FixPrintFont2.patch<br>動作確認しました。<br>()を忘れていました。どうもすみませんでした。<br><br>機能的には問題ないのですが、気になった点をひとつ<br>vDxArrayで事前に文字幅をとっているの様ですが、<br>結局、後のループで半角判定しているので無駄ではないでしょうか？<br><br>以上報告をあげておきます。</div></section>
+    <ul><li><section><h1 id=105>
+    <span class="no">[105]</span>
+    <a class="title" href="#105">Re4:バグ修正：印刷で全角フォント指定が効かない</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-12-16T13:01:15">2007年12月16日 13:01</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; &gt; PatchUnicode#1849347 - 071215_1_FixPrintFont2.patch<br>&gt; 動作確認しました。<br><br>ありがとうございます。<br><br>&gt; 機能的には問題ないのですが、気になった点をひとつ<br>&gt; vDxArrayで事前に文字幅をとっているの様ですが、<br>&gt; 結局、後のループで半角判定しているので無駄ではないでしょうか？<br><br>そう、それはちょっと迷いました。<br>既に取得済みの vDxArray を用いるかどうか。<br><br>vDxArray には文字幅のリストが入っているので、<br>要素の値が大きいか小さいかで全角／半角の判定はできます。<br>ただ、この値の意味はあくまでも「ピクセル幅」であり「全角／半角の正否」では無いので、<br>これを用いるのは文脈的に美しくないかなぁ、と思い、<br>あえて WCODE::isHankaku を用いました<br>(このリスト値を元に全角／半角の判定をしているコード箇所もありますけど)。<br><br>なお、WCODE::isHankaku は今後もうちょっと最適化して、定数速度の処理にする予定です。<br><br>あと、これはかなり可能性が薄いですけど、<br>将来、プロポーショナルフォントに対応する (？) ことがあるとしたら、<br>vDxArray から全角／半角の判定はできなくなるなぁ、という妄想も、<br>今回の実装の根拠のひとつとしてありますｗ<br></div></section>
+    <ul><li><section><h1 id=106>
+    <span class="no">[106]</span>
+    <a class="title" href="#106">Re5:バグ修正：印刷で全角フォント指定が効かない</a>
+    <span class="author">Uchi</span>
+    <time datetime="2007-12-16T15:32:58">2007年12月16日 15:32</time></h1>
+    <div class="body">&gt; あと、これはかなり可能性が薄いですけど、<br>&gt; 将来、プロポーショナルフォントに対応する (？) ことがあるとしたら、<br>&gt; vDxArray から全角／半角の判定はできなくなるなぁ、という妄想も、<br>&gt; 今回の実装の根拠のひとつとしてありますｗ<br>プロポーショナルフォント対応ということであればなおさら必要が無いのではないでしょうか？<br>プロポーショナルフォントであれば、桁進めは、出力した文字列の幅をAPIで求め、インクリメントすべきです。<br>（プロポーショナルフォントでは各文字の幅の合計と文字列の幅の合計が一致しません）<br>まあコーディングしているわけでもないのに能書きをたれています。<br>ひとつに意見として書かせていただきます。</div></section>
+    <ul><li><section><h1 id=107>
+    <span class="no">[107]</span>
+    <a class="title" href="#107">Re6:バグ修正：印刷で全角フォント指定が効かない</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-12-16T16:13:57">2007年12月16日 16:13</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; &gt; あと、これはかなり可能性が薄いですけど、<br>&gt; &gt; 将来、プロポーショナルフォントに対応する (？) ことがあるとしたら、<br>&gt; &gt; vDxArray から全角／半角の判定はできなくなるなぁ、という妄想も、<br>&gt; &gt; 今回の実装の根拠のひとつとしてありますｗ<br>&gt; プロポーショナルフォント対応ということであればなおさら必要が無いのではないでしょうか？<br>&gt; プロポーショナルフォントであれば、桁進めは、出力した文字列の幅をAPIで求め、インクリメントすべきです。<br>&gt; （プロポーショナルフォントでは各文字の幅の合計と文字列の幅の合計が一致しません）<br>&gt; まあコーディングしているわけでもないのに能書きをたれています。<br>&gt; ひとつに意見として書かせていただきます。<br><br>もしかして、論点は vDxArray 自体が不要ではないか？という話でしょうか。<br>ExtTextOut に文字幅配列を渡しているのは、<br>ただサクラエディタのコーディング文化に倣っているだけで、<br>その意図は意識していません。<br>ここで文字幅配列を渡さない実装にするとしたら、他の ExtTextOut 呼び出し箇所も<br>それに合わせて実装方針を変更する必要が出てくると思います。<br>(描画ロジックが一部だけ異なるのは一貫性に問題があるので)</div></section>
+    <ul><li><section><h1 id=109>
+    <span class="no">[109]</span>
+    <a class="title" href="#109">Re7:バグ修正：印刷で全角フォント指定が効かない</a>
+    <span class="author">Uchi</span>
+    <time datetime="2007-12-17T13:08:15">2007年12月17日 13:08</time></h1>
+    <div class="body">&gt; もしかして、論点は vDxArray 自体が不要ではないか？という話でしょうか。<br>&gt; ExtTextOut に文字幅配列を渡しているのは、<br>&gt; ただサクラエディタのコーディング文化に倣っているだけで、<br>&gt; その意図は意識していません。<br>&gt; ここで文字幅配列を渡さない実装にするとしたら、他の ExtTextOut 呼び出し箇所も<br>&gt; それに合わせて実装方針を変更する必要が出てくると思います。<br>&gt; (描画ロジックが一部だけ異なるのは一貫性に問題があるので)<br>その通りです。<br>vDxArrayが必要ないように思えた為のコメントです。<br>全角/半角のフォントを切り替えた時点で一貫性と言うのは意味が薄くなっているとは思いますが、<br>描画ロジックの一貫性であれば仕方が無いのかな、とも思います。</div></section>
+    <ul><li><section><h1 id=110>
+    <span class="no">[110]</span>
+    <a class="title" href="#110">Re8:バグ修正：印刷で全角フォント指定が効かない</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-12-18T04:09:12">2007年12月18日 04:09</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; &gt; もしかして、論点は vDxArray 自体が不要ではないか？という話でしょうか。<br>&gt; &gt; ExtTextOut に文字幅配列を渡しているのは、<br>&gt; &gt; ただサクラエディタのコーディング文化に倣っているだけで、<br>&gt; &gt; その意図は意識していません。<br>&gt; &gt; ここで文字幅配列を渡さない実装にするとしたら、他の ExtTextOut 呼び出し箇所も<br>&gt; &gt; それに合わせて実装方針を変更する必要が出てくると思います。<br>&gt; &gt; (描画ロジックが一部だけ異なるのは一貫性に問題があるので)<br>&gt; その通りです。<br>&gt; vDxArrayが必要ないように思えた為のコメントです。<br>&gt; 全角/半角のフォントを切り替えた時点で一貫性と言うのは意味が薄くなっているとは思いますが、<br>&gt; 描画ロジックの一貫性であれば仕方が無いのかな、とも思います。<br><br>文字間隔をすべてアプリ側で制御するのがサクラエディタの設計思想っぽかったので、<br>それは崩さないようにしています。<br>将来、その方針が変更されることはあるかもしれませんが、<br>兎にも角にもそれはまだ今では無いと思っています。</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=108>
+    <span class="no">[108]</span>
+    <a class="title" href="#108">Re6:バグ修正：印刷で全角フォント指定が効かない</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-12-16T16:16:27">2007年12月16日 16:16</time></h1>
+    <div class="body">補足ですが、ちょっと言葉を間違えていました。<br>vDxArray は文字幅配列ではなく、文字間隔配列、でした。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

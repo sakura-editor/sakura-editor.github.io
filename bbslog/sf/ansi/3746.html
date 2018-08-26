@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>同期スクロールの改善</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3746</span>
+    <a class="title" href="3746.html#3746">同期スクロールの改善</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3747</span>
+    <a class="title" href="3746.html#3747">上スクロールと下スクロールの定義</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3748</span>
+    <a class="title" href="3746.html#3748">Re: 同期スクロールの改善</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3746>
+    <span class="no">[3746]</span>
+    <a class="title" href="#3746">同期スクロールの改善</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-09-11T15:48:15">2004年09月11日 15:48</time></h1>
+    <div class="body">同期スクロールで対になるウィンドウが少しずれている場合にはそのずれを維持するように変更してみました．<br><a href=http://members.at.infoseek.co.jp/sakura_editor/snapshot/sakura-symc-scroll.zip target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>snapshot<wbr>/<wbr>sakura-<wbr>symc-<wbr>scroll.<wbr>zip</nobr></a><br>バイナリ，diff両方入ってます．<br><br>同期スクロールチェックが散らばっていたのをCEditView::SyncScrollV()とSyncScrollHに集約してありますので，そこを変更することで従来通りの動作，新しい動作，あるいはもっと別の動作（たとえば右ペインは必ず左ペインの続きになるとか）と機能を変更しやすくなっています．<br><br>ファイル末尾での複数行削除後で編集部分がウィンドウの上部数行だけ見えている場合に，ScrollAtV関数が無駄の少ないところまで勝手に位置を調整してしまうために左右がずれてしまうことがあるのですが，これは現状も同じなのでとりあえず見なかったことにしてあります．<br><br>MoveCursorのbDrawフラグというのが「再描画の有無」と説明されていますが実質的にはカーソル位置調整とあわせてスクロール位置の調整を行うかどうかのフラグなので名称を変更しました．<br><br>---<br>同期させるところはだいたいできましたので，あとは意図的に「ずらす」方法を考えないと現状とあまり変わらなくなってしまいます．<br>とりあえず思いついた案:<br>* 同期スクロールON/OFFを独立したコマンドとしてツールバーに割り当て可能にする<br>* SHIFTを押しながらスクロールバーを操作すると同期しない<br>* 同期無しスクロールというコマンドを新設<br>Shift+スクロールバーが最も使いやすいかな．<br><br>共通設定はチェックボックスからコンボに変えて<br>垂直同期スクロール方法: [なし][同一行][同一量][継続行]<br>(選択肢の名前はてきと～)<br>ってところかな．<br><br>---<br>おまけとして上のバイナリにはFileSaveAsの保存文字コード指定の修正が入っています．<br></div></section>
+    <ul><li><section><h1 id=3747>
+    <span class="no">[3747]</span>
+    <a class="title" href="#3747">上スクロールと下スクロールの定義</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-09-11T16:00:15">2004年09月11日 16:00</time></h1>
+    <div class="body">余談ですが，上下スクロールの解釈が場所によってばらばらで，最初実装したときは逆方向にスクロールするのをおもしろがっていたりしました．diffを見ていただくとわかりますが，スクロール行数を渡す部分で符号反転している場所があります．<br><br>しっかりとコメントが書かれてはいるのですが，言葉の定義が一致していないからあんまり役に立っていません．<br><br>で，質問<br>上スクロールといったら，行番号は増える方向<br>下スクロールといったら，行番号は減る方向<br><br>つまりカーソルを下に移動していくと「上」スクロールが始まるという解釈が一般的？<br>個人的には紙が止まっていて枠が下に動くから行番号が増える方向が下スクロールのような気がしてしまいます．<br>いずれにしても丁寧に書いてある(から余計たちが悪い)コメントは見直した方がいいなという話でした．<br><br>↓次の人がPageUpとRollUpの違いについてうんちくを垂れる方に一万ペリカ．<br></div></section>
+    </li><li><section><h1 id=3748>
+    <span class="no">[3748]</span>
+    <a class="title" href="#3748">Re: 同期スクロールの改善</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-09-11T22:26:37">2004年09月11日 22:26</time></h1>
+    <div class="body">とりあえずSHIFT押下で同期解除されるようにしました．<br>http://members.at.infoseek.co.jp/sakura_editor/snapshot/sakura-sync-scroll2.zip<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>そろそろ英訳しませんか？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3080</span>
+    <a class="title" href="3080.html#3080">そろそろ英訳しませんか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3082</span>
+    <a class="title" href="3080.html#3082">Re: そろそろ英訳しませんか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3083</span>
+    <a class="title" href="3080.html#3083">Re2: そろそろ英訳しませんか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3101</span>
+    <a class="title" href="3080.html#3101">Re3: そろそろ英訳しませんか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3117</span>
+    <a class="title" href="3080.html#3117">管理はどうしよう？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3118</span>
+    <a class="title" href="3080.html#3118">1.4.3.1に合わせられませんか</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3119</span>
+    <a class="title" href="3080.html#3119">Re:1.4.3.1に合わせられませんか</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3128</span>
+    <a class="title" href="3080.html#3128">リソース英語化版感想</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3134</span>
+    <a class="title" href="3080.html#3134">Re:リソース英語化版感想</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3080>
+    <span class="no">[3080]</span>
+    <a class="title" href="#3080">そろそろ英訳しませんか？</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-04T12:07:57">2003年09月04日 12:07</time></h1>
+    <div class="body">SourceForgeに翻訳の依頼が着ているようです。現在、sakura_rcの英訳に挑戦しています。ある程度完成したらヤフブリにでも公開しようと思います。<br><br>翻訳方針：<br>一般的で自然な表現を使う。冗長な表現は使わない（腹痛が痛いなど）<br>MSW*rdのVBAを参考にする。<br>カッコをなるべく使わない。<br>同時進行で用語集と訳語対照表と略語集を作る。<br>翻訳や用語などに関しては、ヘルプ掲示板を使う。<br>変な英語がある場合、互換性に影響なければ正誤表に加え、修正する。<br><br>長所：<br>ユーザーと開発者が増える。知名度が高まる。<br><br>短所：<br>英語の投稿が増える。ハッカーに狙われる。サポートが困難になる。</div></section>
+    <ul><li><section><h1 id=3082>
+    <span class="no">[3082]</span>
+    <a class="title" href="#3082">Re: そろそろ英訳しませんか？</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-04T22:28:31">2003年09月04日 22:28</time></h1>
+    <div class="body">&gt;現在sakura_rcの英訳に挑戦しています。<br>Wonderful!<br><br>しかし問題が2点．<br>1. プログラムに埋められた日本語は？(こちらは力業で何とかなるかもしれませんが，できれば枠組みを整えたい)<br><br>2. 2バイトを前提にしてあるのでShiftJIS1バイト目と重なる部分の1バイト文字を正しく扱えない．カーソルが2文字分移ってしまったり．<br></div></section>
+    <ul><li><section><h1 id=3083>
+    <span class="no">[3083]</span>
+    <a class="title" href="#3083">Re2: そろそろ英訳しませんか？</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-05T10:31:32">2003年09月05日 10:31</time></h1>
+    <div class="body">&gt; しかし問題が2点．<br>&gt; 1. プログラムに埋められた日本語は？(こちらは力業で何とかなるかもしれませんが，できれば枠組みを整えたい)<br>MESSAGETABLE+FormatString, STRINGTABLE+LoadString, *.po+gettext, 単なる埋め込みのどれかです。<br>MESSAGETABLEやgettextなら語順が変わっても大丈夫です。以下のコードはLoadStringの例です。<br><br>LPTSTR GetResString(idStr){ // for single thread<br>static TCHAR sz[RESSTRMAX] = _T("\0");<br>int cch = LoadString(...MAKEINTRESOURCE...);<br>MYASSERT(cch ...);<br>return sz;<br>}<br><br>&gt; 2. 2バイトを前提にしてあるのでShiftJIS1バイト目と重なる部分の1バイト文字を正しく扱えない．カーソルが2文字分移ってしまったり．<br>SystemParameter+IsDBCSLeadByteか, tcs*+localeを使うかの2通りあります。Cランタイム使用が前提なので、後者を使うのが妥当です。<br><br>ダイアログのアクセスキーは適当に変えてもいいですか？</div></section>
+    <ul><li><section><h1 id=3101>
+    <span class="no">[3101]</span>
+    <a class="title" href="#3101">Re3: そろそろ英訳しませんか？</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-08T12:41:56">2003年09月08日 12:41</time></h1>
+    <div class="body">英訳に関する討論は、ヘルプ掲示板に移ります。</div></section>
+    <ul><li><section><h1 id=3117>
+    <span class="no">[3117]</span>
+    <a class="title" href="#3117">管理はどうしよう？</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-11T23:21:31">2003年09月11日 23:21</time></h1>
+    <div class="body">リソースファイルをべたべたと訳して頂いているようですが，今後は両方をメンテナンスしないと行けなくなりますよね．<br>文字列だけ外に出すとかできるかなとも思いましたが，文字列の長さが足りなくてダイアログボックスを拡張する必要もあるようですし，そう単純には行きません．<br><br>すればいいじゃんと言われればそれまでだけど，今後英語版が忘れられそうで...<br></div></section>
+    <ul><li><section><h1 id=3118>
+    <span class="no">[3118]</span>
+    <a class="title" href="#3118">1.4.3.1に合わせられませんか</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-11T23:31:18">2003年09月11日 23:31</time></h1>
+    <div class="body">1.4.0.0のrcを翻訳されているようですが，1.4.3.1では少し変わっています．<br>できれば(英訳はいいのでとりあえず)追加分をマージして頂けませんか？<br>さらに翻訳が進んでいるかもしれないのでそちらのきりの良いところでお願いしたいのですが．<br><br>試しにバイナリを作ってみようかなと思ったもので...<br></div></section>
+    <ul><li><section><h1 id=3119>
+    <span class="no">[3119]</span>
+    <a class="title" href="#3119">Re:1.4.3.1に合わせられませんか</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-12T11:10:19">2003年09月12日 11:10</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 1.4.0.0のrcを翻訳されているようですが，1.4.3.1では少し変わっています．<br>&gt; できれば(英訳はいいのでとりあえず)追加分をマージして頂けませんか？<br><br>これでどうですか？ こちらも管理しきれないので、egroupに置いてください。<br><a href=http://jp.y42.briefcase.yahoo.co.jp/bc/wmlhqjp/lst?.dir=/sakura-editor&.view=l&.src=bc&.done=http%3a//jp.y42.briefcase.yahoo.co.jp/bc/wmlhqjp/lst%3f.dir=/sakura-editor%26.src=bc%26.view=l target=_top><nobr>http://<wbr>jp.<wbr>y42.<wbr>briefcas<wbr>e.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>bc/<wbr>wmlhqjp/<wbr>lst?.<wbr>dir=/<wbr>sakura-<wbr>editor&amp;.<wbr>view=<wbr>l&amp;.<wbr>src=<wbr>bc&amp;.<wbr>done=<wbr>http%<wbr>3a//<wbr>jp.<wbr>y42.<wbr>briefcas<wbr>e.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>bc/<wbr>wmlhqjp/<wbr>lst%<wbr>3f.<wbr>dir=/<wbr>sakura-<wbr>editor%<wbr>26.<wbr>src=<wbr>bc%<wbr>26.<wbr>view=<wbr>l</nobr></a><br>（おっと間違えたので修正）<br><br>下手な翻訳でスマソ。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=3128>
+    <span class="no">[3128]</span>
+    <a class="title" href="#3128">リソース英語化版感想</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-13T12:32:07">2003年09月13日 12:32</time></h1>
+    <div class="body">3カ所ほどエラーが出たので直してバイナリを作ってみました．<br><br>感想は「メニューが日本語では代わり映えしないなぁ」<br>プログラム本体からの文字列追い出し作戦を行わないと見た感じ英語になった印象を受けないなぁと．<br><br>エラーになったのは2カ所が""の外に文字がはみ出ていた点．1カ所が""中のクォートの扱い．<br>\"ではなく""を使わないとだめみたいです．<br><br>ところで，英語版Windows 2000＋日本語フォント という環境でメニューがちゃんと日本語表示されるソフトとされないソフトがあるんですけど，その差がなんだかわかりますか？sakuraもリストボックスの文字なんかはちゃんと日本語で出てきます．<br></div></section>
+    <ul><li><section><h1 id=3134>
+    <span class="no">[3134]</span>
+    <a class="title" href="#3134">Re:リソース英語化版感想</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-13T15:43:28">2003年09月13日 15:43</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ところで，英語版Windows 2000＋日本語フォント という環境でメニューがちゃんと日本語表示されるソフトとされないソフトがあるんですけど，その差がなんだかわかりますか？sakuraもリストボックスの文字なんかはちゃんと日本語で出てきます．<br><br>LANGUAGEが違うとUnicodeへの変換方法が変わってきます。LANGUAGEといっても、トップダウンの(globalな)LANGUAGEとDIALOGやMENUなどに付随するLANGUAGEがありますが。バイナリのリソースはResource Hackerなどで見れます。<br><a href=http://www.users.on.net/johnson/resourcehacker/ target=_top><nobr>http://<wbr>www.<wbr>users.<wbr>on.<wbr>net/<wbr>johnson/<wbr>resource<wbr>hacker/<wbr></nobr></a><br><br>独自にフォントを使っている可能性もある。指定されたフォントが無い場合は、GUI規定のフォントに置き換わる。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現で文字列中の数字の桁をそろえたい。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7573</span>
+    <a class="title" href="7573.html#7573">正規表現で文字列中の数字の桁をそろえたい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7574</span>
+    <a class="title" href="7573.html#7574">Re: 正規表現で文字列中の数字の桁をそろえたい。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7578</span>
+    <a class="title" href="7573.html#7578">Re:正規表現で文字列中の数字の桁をそろえたい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7584</span>
+    <a class="title" href="7573.html#7584">Re2:正規表現で文字列中の数字の桁をそろえたい。</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7573>
+    <span class="no">[7573]</span>
+    <a class="title" href="#7573">正規表現で文字列中の数字の桁をそろえたい。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2013-02-17T00:20:23">2013年02月17日 00:20</time></h1>
+    <div class="body">a123         a123<br>a45    ---&gt;  a045<br>a6           a006<br><br>置換前 (\D+)(\d)\n<br>置換後 ${1}00${2}<br>置換前 (\D+)(\d\d)\n<br>置換後 ${1}0${2}<br><br>教えて下さい。<br>一度の置換でできますか?よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=7574>
+    <span class="no">[7574]</span>
+    <a class="title" href="#7574">Re: 正規表現で文字列中の数字の桁をそろえたい。</a>
+    <span class="author">しみづ</span>
+    <time datetime="2013-02-18T00:20:10">2013年02月18日 00:20</time></h1>
+    <div class="body"><br>perlで組むなら、拡張子をplsにして、さしずめ<br><br>$seltext = GetSelectedString(0);<br>$seltext =~ /(\D+)(\d+)/;<br>$head = $1;<br>$num = $2;<br><br><br>$seltext = sprintf("%s%.3d",$head,$num);<br>InsText("$seltext");<br><br>かな。<br><br>macマクロでは無理かな。<br></div></section>
+    </li><li><section><h1 id=7578>
+    <span class="no">[7578]</span>
+    <a class="title" href="#7578">Re:正規表現で文字列中の数字の桁をそろえたい。</a>
+    <span class="author">あかま</span>
+    <time datetime="2013-03-12T06:02:15">2013年03月12日 06:02</time></h1>
+    <div class="body">サクラエディタの置換で一度にこれを置換する方法は思いつきませんでしたが、wshのjsマクロで置換処理を一度で済ますスクリプトを組むなら<br>&gt; Editor.SelectAll();<br>&gt; Editor.InsText(Editor.GetSelectedString().replace(/(\D+)(\d+)<br>([\r\n])/g,function(d,a,b,c){return a+(("00"+b).slice(-3))+c;}));<br>でいけます。<br>perlなどでも出来ると思いますが、あらかじめ<br>&gt; eval(Editor.GetSelectedString());<br>とかいう内容のマクロを組んでおいて、対象のファイル中に上述のマクロを手書きして範囲選択してマクロ実行とすれば比較的手軽に実行出来ます。<br>&gt; eval("Editor.SelectAll();Editor.InsText(Editor.GetSelectedString()."+Editor.GetSelectedString()+");");<br>とするなどで実行時の記述量を減らすと使いやすいかもしれません。<br><br>置換に使うキーワードの入力を一回だけ、という条件ならば<br>&gt; 置換前(\D+)(\d{1,2})([\r\n])<br>&gt; 置換後${1}0$2$3<br>として「全て置換(A)」を複数回実行すれば行けます。<br>邪道ですがUWSCなどで「全て置換(A)」を連打するスクリプトを外部コマンドやマクロから実行すれば操作としては一回入力一回実行にできます。<br>マクロから直接置換ダイアログの入力が読めれば外部ツールに頼らずに済むんですが、現状そういうマクロ関数はないようなので外部ツール越しにサクラエディタを操作するなどが限界ではないかと思います。<br></div></section>
+    <ul><li><section><h1 id=7584>
+    <span class="no">[7584]</span>
+    <a class="title" href="#7584">Re2:正規表現で文字列中の数字の桁をそろえたい。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2013-03-24T07:47:18">2013年03月24日 07:47</time></h1>
+    <div class="body">▼ しみづ様　あかま様<br>ありがとうございます。<br>gawkで組むなら<br>{<br>split(gensub(/([^0-9]+)([0-9]+)/, "\\1,\\2","g", $0),arr,",")<br>print arr[1] sprintf("%04d",arr[2])<br>}<br>検索ワード<br>①0埋め<br>②ゼロパディング<br>③ゼロフィル<br>④数字部分の桁数を揃える<br>⑤数字の桁をそろえる<br>⑥数値の整理　末尾からｎ番目の数値の桁合わせ(Flexible Renamerより)<br><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

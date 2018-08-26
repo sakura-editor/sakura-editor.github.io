@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>キーワードセット最大値増加について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6495</span>
+    <a class="title" href="6495.html#6495">キーワードセット最大値増加について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6496</span>
+    <a class="title" href="6495.html#6496">Re:キーワードセット最大値増加について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6497</span>
+    <a class="title" href="6495.html#6497">Re2:キーワードセット最大値増加について</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">6498</span>
+    <a class="title" href="6495.html#6498">Re:キーワードセット最大値増加について</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=6495>
+    <span class="no">[6495]</span>
+    <a class="title" href="#6495">キーワードセット最大値増加について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-12-01T17:55:14">2007年12月01日 17:55</time></h1>
+    <div class="body">Request/226 にてキーワードセットの最大数が25では不足するとのリクエストが出ています．<br>簡単に変更できるので50に引き上げようかと思いますが，このくらいで足りますかね？<br>1セットあたり65byteの増加で，25セット追加して合計1.3KB程度メモリ使用量が増えます．<br><br>↓テストバイナリ<br>http://sakura.qp.land.to/?Junk%2F36<br></div></section>
+    <ul><li><section><h1 id=6496>
+    <span class="no">[6496]</span>
+    <a class="title" href="#6496">Re:キーワードセット最大値増加について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-01T18:19:38">2007年12月01日 18:19</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; Request/226 にてキーワードセットの最大数が25では不足するとのリクエストが出ています．<br>&gt; 簡単に変更できるので50に引き上げようかと思いますが，このくらいで足りますかね？<br>&gt; 1セットあたり65byteの増加で，25セット追加して合計1.3KB程度メモリ使用量が増えます．<br>これはプロセス数には依存しない共有メモリ部分ですよね？<br>MAX_PATHのバッファを一個追加する程度のサイズなので全然問題無いと思います。<br>実は、以前、タブバー機能拡張（アイコン表示とか）の際に、MAX_PATH × MAX_EDITWINDOWSの共有メモリ拡張をしているので、そういうのと比べると．．．(^^;;;</div></section>
+    <ul><li><section><h1 id=6497>
+    <span class="no">[6497]</span>
+    <a class="title" href="#6497">Re2:キーワードセット最大値増加について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-01T18:35:04">2007年12月01日 18:35</time></h1>
+    <div class="body">&gt; そういうのと比べると．．．<br>100や200、1000(合計65KB)にしても何ら支障は無い気がします。</div></section>
+    </li></ul></li><li><section><h1 id=6498>
+    <span class="no">[6498]</span>
+    <a class="title" href="#6498">Re:キーワードセット最大値増加について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-01T19:01:25">2007年12月01日 19:01</time></h1>
+    <div class="body">現状、共有メモリ使用量は1,888,172byte(約1.8MB)のようです。<br>1.3KBなら1%にも満たないゴミですね。</div></section>
+    </li></ul></li></ul></body></html>

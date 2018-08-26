@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ修正(タイプ別設定のカラー)</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2478</span>
+    <a class="title" href="2478.html#2478">バグ修正(タイプ別設定のカラー)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2480</span>
+    <a class="title" href="2478.html#2480">Re: バグ修正(タイプ別設定のカラー)</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2478>
+    <span class="no">[2478]</span>
+    <a class="title" href="#2478">バグ修正(タイプ別設定のカラー)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-11-08T19:00:23">2002年11月08日 19:00</time></h1>
+    <div class="body"><br>以下のバグ修正。<br>＃あんまりよい修正とは言えないけど。<br><br>&gt;「タイプ別設定」の色選択で，最下項目の色をクリックすると<br>&gt;スクロールしてしまい1つ下の項目の設定になる(WinXPのみ)<br><br>CPropTypes.cpp:ColorList_SubclassProc()<br>&#9;&#9;&#9;&#9;nIndex = i;<br>&#9;&#9;&#9;&#9;break;<br>&#9;&#9;&#9;}<br>&#9;&#9;}<br>/*WinXPで最下項目をクリックするとスクロールしてしまい1つ下の項目の設定になるバグ修正*/<br>if( -1 != nIndex ){  //選ばれている項目を取得。<br>&#9;nIndex = ::SendMessage( hwnd, LB_GETCURSEL, 0, 0 );<br>}<br>&#9;&#9;break;<br>&#9;}<br>&#9;switch( uMsg ){<br>&#9;case WM_RBUTTONDOWN:<br></div></section>
+    <ul><li><section><h1 id=2480>
+    <span class="no">[2480]</span>
+    <a class="title" href="#2480">Re: バグ修正(タイプ別設定のカラー)</a>
+    <span class="author">もか</span>
+    <time datetime="2002-11-11T10:51:29">2002年11月11日 10:51</time></h1>
+    <div class="body">▼ みくさん<br>&gt;「タイプ別設定」の色選択で，最下項目の色をクリックすると<br>&gt;スクロールしてしまい1つ下の項目の設定になる(WinXPのみ)<br>ダイアログ(リソース)側を修正することで回避する方法をついに発見しました。<br>(といってもリストボックスのスタイルでサイズ自由をOFFにするだけでした...)<br>ただし，これもいい修正ともいえなさそうということで，<br>みくさんのソースと，リソース両方の修正をしたほうがよさそうです。<br>ということで混ぜるときに両方適用願います。 &gt;げんたさん<br><br>#明後日(2002/11/13)あたりに他の修正とともにリソース側のパッチをだすつもりです<br>#しばらくお待ちください(^_^)<br></div></section>
+    </li></ul></li></ul></body></html>

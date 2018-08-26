@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>「開く(ドロップダウン)...」のドロップダウンメニュー文字列が不正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2065</span>
+    <a class="title" href="2065.html#2065">「開く(ドロップダウン)...」のドロップダウンメニュー文字列が不正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2066</span>
+    <a class="title" href="2065.html#2066">Re:「開く(ドロップダウン)...」のドロップダウンメニュー文字列が不正</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2065>
+    <span class="no">[2065]</span>
+    <a class="title" href="#2065">「開く(ドロップダウン)...」のドロップダウンメニュー文字列が不正</a>
+    <span class="author">LR4</span>
+    <time datetime="2013-12-01T20:57:00">2013年12月01日 20:57</time></h1>
+    <div class="body">ツールバーの「開く(ドロップダウン)...」ボタンからのドロップダウンメニューで、<br>「最近使ったフォルダ」のサブメニュー名称が間違って「最近使ったファイル」に<br>なっています。<br><br>rev3447の影響のようです。<br><br>Index: CEditWnd.cpp<br>===================================================================<br>--- CEditWnd.cpp&#9;(リビジョン 3474)<br>+++ CEditWnd.cpp&#9;(作業コピー)<br>@@ -3632,7 +3632,7 @@<br> &#9;if ( cMRUFolder.MenuLength() &gt; 0 )<br> &#9;{<br> &#9;&#9;//&#9;アクティブ<br>-&#9;&#9;m_CMenuDrawer.MyAppendMenu( hMenu, MF_BYPOSITION | MF_STRING | MF_POPUP, (UINT_PTR)hMenuPopUp, LS( STR_SPECIAL_FUNC_RECENT_FILE ),  _T("") );<br>+&#9;&#9;m_CMenuDrawer.MyAppendMenu( hMenu, MF_BYPOSITION | MF_STRING | MF_POPUP, (UINT_PTR)hMenuPopUp, LS( STR_SPECIAL_FUNC_RECENT_FOLDER ),  _T("") );<br> &#9;}<br> &#9;else <br> &#9;{<br></div></section>
+    <ul><li><section><h1 id=2066>
+    <span class="no">[2066]</span>
+    <a class="title" href="#2066">Re:「開く(ドロップダウン)...」のドロップダウンメニュー文字列が不正</a>
+    <span class="author">もか</span>
+    <time datetime="2013-12-02T18:00:18">2013年12月02日 18:00</time></h1>
+    <div class="body">パッチ一覧に転載しました。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/700/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>700/<wbr></nobr></a><br>r3478でコミットしました。<br>協力感謝です。<br></div></section>
+    </li></ul></li></ul></body></html>

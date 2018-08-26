@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>文字コードセット指定</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2830</span>
+    <a class="title" href="2830.html#2830">文字コードセット指定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2842</span>
+    <a class="title" href="2830.html#2842">Re: 文字コードセット指定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2844</span>
+    <a class="title" href="2830.html#2844">Re: 文字カウント</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2894</span>
+    <a class="title" href="2830.html#2894">Re2: 文字コードセット指定</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2895</span>
+    <a class="title" href="2830.html#2895">Re2: 文字コードセット指定</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2830>
+    <span class="no">[2830]</span>
+    <a class="title" href="#2830">文字コードセット指定</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-03-20T16:54:40">2003年03月20日 16:54</time></h1>
+    <div class="body">sakura_1.3.8.0<br>SJISのファイルを、文字コードセット指定によりEUCで<br>読み込んでも、SJISで表示されます。<br>EUCで表示するように変更していただけませんか。</div></section>
+    <ul><li><section><h1 id=2842>
+    <span class="no">[2842]</span>
+    <a class="title" href="#2842">Re: 文字コードセット指定</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-03-30T03:06:38">2003年03月30日 03:06</time></h1>
+    <div class="body">&gt;SJISのファイルを、文字コードセット指定によりEUCで<br>&gt;読み込んでも、SJISで表示されます。<br>EUCの読み込みではEUCで解釈可能な部分のみをSJISに変換し、変換できない場所はそのままにします。SJISは大部分がEUCで解釈できないためにそのまま残り、結果として変換されないように見えます。<br><br>SJISのまま読み込んだ部分はそのまま、EUCから変換された部分はSJISに戻して保存して欲しいとの要望でしたらちょっと難しいです。<br></div></section>
+    <ul><li><section><h1 id=2844>
+    <span class="no">[2844]</span>
+    <a class="title" href="#2844">Re: 文字カウント</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-03-30T03:06:40">2003年03月30日 03:06</time></h1>
+    <div class="body">&gt;文字カウントって既にできるんでしょうか？<br>全部の文字カウントならファイル→ファイル操作→ファイルのプロパティ<br>選択範囲の文字カウントは要望にあがっていますがまだできません。<br></div></section>
+    </li><li><section><h1 id=2894>
+    <span class="no">[2894]</span>
+    <a class="title" href="#2894">Re2: 文字コードセット指定</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-04-30T13:32:38">2003年04月30日 13:32</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;SJISのファイルを、文字コードセット指定によりEUCで<br>&gt; &gt;読み込んでも、SJISで表示されます。<br>&gt; EUCの読み込みではEUCで解釈可能な部分のみをSJISに変換し、変換できない場所はそのままにします。SJISは大部分がEUCで解釈できないためにそのまま残り、結果として変換されないように見えます。<br>&gt; <br>&gt; SJISのまま読み込んだ部分はそのまま、EUCから変換された部分はSJISに戻して保存して欲しいとの要望でしたらちょっと難しいです。<br><br>お返事有難うございます。<br>漢字コードに関して、かなり高性能なエディターだと思います。<br>ステータスバーに表示される16進のコードは、EUCのコードになりませんでしょうか。<br>たとえば、数字の０は824fではなく、a3b0と云う風にです。</div></section>
+    </li><li><section><h1 id=2895>
+    <span class="no">[2895]</span>
+    <a class="title" href="#2895">Re2: 文字コードセット指定</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-04-30T19:35:04">2003年04月30日 19:35</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; EUCの読み込みではEUCで解釈可能な部分のみをSJISに変換し、変換できない場所はそのままにします。SJISは大部分がEUCで解釈できないためにそのまま残り、結果として変換されないように見えます。<br>&gt; <br>&gt; SJISのまま読み込んだ部分はそのまま、EUCから変換された部分はSJISに戻して保存して欲しいとの要望でしたらちょっと難しいです。<br><br>もう一つ、漢字コードの２バイト目が0x8Eの場合、SJISで表示されないのは何故でしょうか。<br>こちらの変更ならば簡単ですか。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

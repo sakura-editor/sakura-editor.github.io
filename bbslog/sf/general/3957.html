@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>UTF-8コードからの変換ミス？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3957</span>
+    <a class="title" href="3957.html#3957">UTF-8コードからの変換ミス？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3970</span>
+    <a class="title" href="3957.html#3970">Re:UTF-8コードからの変換ミス？</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3957>
+    <span class="no">[3957]</span>
+    <a class="title" href="#3957">UTF-8コードからの変換ミス？</a>
+    <span class="author">しみづ</span>
+    <time datetime="2004-08-01T16:15:46">2004年08月01日 16:15</time></h1>
+    <div class="body"><br>　いつも便利に使わせていただいています。<br>　今回、UTF-8の文字コードのblogを巡回するINCMプラグインを作成する時にも、コード変換処理の確認などに役立ちました。<br><br>http://homepage3.nifty.com/01117/cm_cocolog.htm<br><br>　そのうちに逆にサクラエディタの表示がおかしいのに気づきました。それはインターネット・エクスプローラの表示と比較して、です。<br><br>　例を示すのは難しいのですが、テストのために書き込んだ私のblogの、「鏡が上下」という記事の最後の返信のなかの、文字で作った図の一部です。ページをディスクに保存して、I.E.と見比べていただくとわかると思います。以下がページのアドレスです。<br><br>http://shimidu.txt-nifty.com/home/2004/07/post_3.html<br></div></section>
+    <ul><li><section><h1 id=3970>
+    <span class="no">[3970]</span>
+    <a class="title" href="#3970">Re:UTF-8コードからの変換ミス？</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-08-02T22:26:31">2004年08月02日 22:26</time></h1>
+    <div class="body">▼ しみづさん<br>ありがとうございます、マイナーバージョンから出た問題です。<br>本家のsakuraでは正しく表示しましたので、<br>[dev3556] の修正が入っていると考えられます。<br><br>void ExchangeWaveDash( unsigned char *pWork )<br>{<br>&#9;/* － */<br>/*&#9;else if(pWork[1] == 0xFF &amp;&amp; pWork[0] == 0x0D)<br>&#9;&#9;pWork[1] = 0x22, pWork[0] = 0x12;<br>&#9;else if(pWork[1] == 0x22 &amp;&amp; pWork[0] == 0x12)<br>&#9;&#9;pWork[1] = 0xFF, pWork[0] = 0x0D;&#9;[data3957] */<br><br>以上の部分をコメントにする、修正をお願いします。<br><br>なお、ついでで恐縮ですが、一部変更が有ります。<br>宣言は、CMemory.hからCMemory.cppに移動しました。<br>static void ExchangeWaveDash( unsigned char* );&#9;/* WAVE DASH を、～と交換。&#9;2004/04/23 じゅうじ */</div></section>
+    </li></ul></li></ul></body></html>

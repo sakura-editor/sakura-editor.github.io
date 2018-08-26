@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行コードについて</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">1294</span>
+    <a class="title" href="1294.html#1294">改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1295</span>
+    <a class="title" href="1294.html#1295">Re:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1298</span>
+    <a class="title" href="1294.html#1298">Re2:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1301</span>
+    <a class="title" href="1294.html#1301">Re3:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1304</span>
+    <a class="title" href="1294.html#1304">RE: Re3:改行コードについて</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1305</span>
+    <a class="title" href="1294.html#1305">Re4:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1313</span>
+    <a class="title" href="1294.html#1313">Re5:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1314</span>
+    <a class="title" href="1294.html#1314">Re6:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1353</span>
+    <a class="title" href="1294.html#1353">Re7:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1359</span>
+    <a class="title" href="1294.html#1359">Re8:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1361</span>
+    <a class="title" href="1294.html#1361">Re9:改行コードについて</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1294>
+    <span class="no">[1294]</span>
+    <a class="title" href="#1294">改行コードについて</a>
+    <span class="author">Atsu</span>
+    <time datetime="2002-03-05T21:27:01">2002年03月05日 21:27</time></h1>
+    <div class="body">サクラエディタ暦１ヶ月の者ですが<br>改行コードの保存方法についての質問です。<br><br>改行コード="LF" のテキストファイルを開いて、<br>"CRLF"のテキストを貼り付けた後、上書きすると<br>"LF"と"CRLF"の混ざったテキストファイルになってしまいます。<br><br>「名前を付けて保存」で改行コードを指定すれば<br>"LF"のみのファイルにできますが、<br>設定等で対応出来ませんか？</div></section>
+    <ul><li><section><h1 id=1295>
+    <span class="no">[1295]</span>
+    <a class="title" href="#1295">Re:改行コードについて</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-05T23:22:32">2002年03月05日 23:22</time></h1>
+    <div class="body">▼ Atsuさん<br>&gt; 設定等で対応出来ませんか？<br><br>どういう設定にしたらよさそうですか？</div></section>
+    <ul><li><section><h1 id=1298>
+    <span class="no">[1298]</span>
+    <a class="title" href="#1298">Re2:改行コードについて</a>
+    <span class="author">Atsu</span>
+    <time datetime="2002-03-06T11:39:58">2002年03月06日 11:39</time></h1>
+    <div class="body">▼ やざきさん<br>返信ありがとうございます。<br><br>&gt; どういう設定にしたらよさそうですか？<br><br>「タイプ別設定」で保存時の文字コード、及び改行コードを<br>設定できるように出来ないでしょうか？<br><br>または、ファイルを開いた時点で改行コードを判別して<br>保存時には、その改行コードで統一してしまうとか。<br>（ファイルを開いた時点で、改行コードが数種類あるときは<br>判別できないかもしれませんが。1行目のみ参照して判別する？）</div></section>
+    <ul><li><section><h1 id=1301>
+    <span class="no">[1301]</span>
+    <a class="title" href="#1301">Re3:改行コードについて</a>
+    <span class="author">やざき まこと</span>
+    <time datetime="2002-03-06T14:15:45">2002年03月06日 14:15</time></h1>
+    <div class="body">▼ Atsuさん<br>&gt; 「タイプ別設定」で保存時の文字コード、及び改行コードを<br>&gt; 設定できるように出来ないでしょうか？<br><br>C/C++なら、CRLFとか？？<br>ちょっと違和感ありますね。。。<br>それなら、別名保存するときにLFにしてもらったほうがいいかなぁ。<br><br><br>&gt; または、ファイルを開いた時点で改行コードを判別して<br>&gt; 保存時には、その改行コードで統一してしまうとか。<br>&gt; （ファイルを開いた時点で、改行コードが数種類あるときは<br>&gt; 判別できないかもしれませんが。1行目のみ参照して判別する？）<br><br>上書き保存時に1行目の改行コードで統一する。<br>という感じでしょうか。これならいいかなぁ？<br><br>ところで、私も昨年末あたりからかかわり始めたので<br>経緯が良くわかってないのですが、改行コードを残しておけるように<br>したのは何か意図があったんですか？&gt;詳しいかた</div></section>
+    <ul><li><section><h1 id=1304>
+    <span class="no">[1304]</span>
+    <a class="title" href="#1304">RE: Re3:改行コードについて</a>
+    <span class="author">すい</span>
+    <time datetime="2002-03-06T19:52:48">2002年03月06日 19:52</time></h1>
+    <div class="body">▼ やざき まことさん<br>&gt;上書き保存時に1行目の改行コードで統一する。<br>&gt;という感じでしょうか。これならいいかなぁ？<br>&gt;<br>&gt;ところで、私も昨年末あたりからかかわり始めたので<br>&gt;経緯が良くわかってないのですが、改行コードを残しておけるように<br>&gt;したのは何か意図があったんですか？&gt;詳しいかた<br><br>「改行コードを統一する」というのはあると便利だと思います。<br># ので、そういう機能は欲しいです(笑)<br><br>しかし、保存時等に勝手に統一されてしまうようだとトラブルの元です。<br><br>典型例だと csv ファイルでしょうか。（Excelとか表計算ソフトの類のヤツね）<br>あれなんかは「 LF(0x0a)改行と CR,LF(0x0d,0x0a)改行が混在したテキスト」<br>（改行コードを変えてしまうと正常に読込めなくなる（ゴミ文字データとかが出たりとか））<br>なので、その手のデータを編集する事が出来なくなってしまうかと。<br><br>世の中一般的には「改行コードを統一したテキスト」が普通だと思いますし、<br>その方が（統一した方が）無用なトラブルが減りそうな気がしますが。<br><br><br>&gt;&gt; 「タイプ別設定」で保存時の文字コード、及び改行コードを<br>&gt;&gt; 設定できるように出来ないでしょうか？<br><br>↑これなんかは、割と良い案かもしれませんね。<br># 複数種の改行が混在し得ないファイルには有効かと。<br>でも、そういうのとは別に、やっぱり「編集者が手操作で改行コードを統一できる」<br>という機能が要りそうな。（というか、その方が自然な気が。）<br>別名保存すれば良いんでしょうけど。＜ 現状<br>理想は「選択範囲の改行コードを (LF|CRLF|CR) にする」という機能なのかな。。。？<br><br>まぁ、↑この辺は置いておくとして、<br>取り扱うファイルによっては勝手に改行コードを変更されたりしたら非常に困ると思いますよ、というお話しでした。(^^;<br></div></section>
+    </li><li><section><h1 id=1305>
+    <span class="no">[1305]</span>
+    <a class="title" href="#1305">Re4:改行コードについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-03-06T22:20:19">2002年03月06日 22:20</time></h1>
+    <div class="body">&gt;ところで、私も昨年末あたりからかかわり始めたので<br>&gt;経緯が良くわかってないのですが、改行コードを残しておけるように<br>&gt;したのは何か意図があったんですか？&gt;詳しいかた<br>歴史的経緯は，<br>1. CRLF以外扱えない(全部CRLFになる)<br>2. 他の改行コードもそのまま読めるように<br>--- ここまで オリジナルテキストエディタ ---<br>3. 改行コードに関わらず新規の行はCRLFになっちゃう→1行目の改行コードに合わせるようにした<br>4. 改行コードを変更できない→上書き保存時に変更できるように<br>5. クリップボードにコピーするときはCRLFでないと不便だ→CRLFに変換してコピーするコマンドを追加<br><br>こんなところでしょうか．<br></div></section>
+    <ul><li><section><h1 id=1313>
+    <span class="no">[1313]</span>
+    <a class="title" href="#1313">Re5:改行コードについて</a>
+    <span class="author">Atsu</span>
+    <time datetime="2002-03-07T13:17:09">2002年03月07日 13:17</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 歴史的経緯は，<br>&gt; 1. CRLF以外扱えない(全部CRLFになる)<br>&gt; 2. 他の改行コードもそのまま読めるように<br>&gt; --- ここまで オリジナルテキストエディタ ---<br>&gt; 3. 改行コードに関わらず新規の行はCRLFになっちゃう→1行目の改行コードに合わせるようにした<br>&gt; 4. 改行コードを変更できない→上書き保存時に変更できるように<br>&gt; 5. クリップボードにコピーするときはCRLFでないと不便だ→CRLFに変換してコピーするコマンドを追加<br><br>と、いうことは、<br>「LFに変換してコピー」または「LFに変換して貼り付け」の<br>コマンド追加が理想的なのでしょうか。<br></div></section>
+    <ul><li><section><h1 id=1314>
+    <span class="no">[1314]</span>
+    <a class="title" href="#1314">Re6:改行コードについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-03-07T16:48:20">2002年03月07日 16:48</time></h1>
+    <div class="body">&gt;と、いうことは、<br>&gt;「LFに変換してコピー」または「LFに変換して貼り付け」の<br>&gt;コマンド追加が理想的なのでしょうか。<br>そういえば，秀○には「改行コードをLFにして保存」というコマンドが上書き保存とは別にありますね．<br><br>現状は保存時に統一することは可能だけどインターフェースを用意していないという状態だったと思います．<br><br>全パターンコマンドを用意するのもちょっとなぁと思いますので，マクロで保存を行うときは改行コード指定を可能にしておいて必要な人はマクロで対応してもらうというのでもよいかと思います．<br><br>そう考えると，コピーや貼り付けにも改行コードオプションを指定したくなりますね．<br></div></section>
+    <ul><li><section><h1 id=1353>
+    <span class="no">[1353]</span>
+    <a class="title" href="#1353">Re7:改行コードについて</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-11T23:22:46">2002年03月11日 23:22</time></h1>
+    <div class="body">改行コードの件、どうしましょう？<br><br>・「LFに変換してコピー」「LFに変換して貼り付け」を追加？<br><br>・「変換」→「改行コード」を増やして<br>　→「CR+LFに変換」<br>　→「LF(UNIX)に変換」<br>　→「CR(Mac)に変換」<br>　を追加？<br><br>・マクロに、S_GetFilenameを追加して、<br>　string filename := S_GetFilename();<br>　S_FileSaveAs(filename, 0, 1); // SJIS, CR+LFで保存<br><br>　S_FileSaveAs(filename, 0, 2); // SJIS, LFで保存<br><br>　S_FileSaveAs(filename, 0, 3); // SJIS, CRで保存<br><br>　などとする？<br><br>・タイプ別設定で保存時の文字コード、改行コードを設定できるようにする？<br><br>うーん。。。</div></section>
+    <ul><li><section><h1 id=1359>
+    <span class="no">[1359]</span>
+    <a class="title" href="#1359">Re8:改行コードについて</a>
+    <span class="author">Atsu</span>
+    <time datetime="2002-03-12T13:46:37">2002年03月12日 13:46</time></h1>
+    <div class="body">&gt; ・マクロに、S_GetFilenameを追加して、<br>&gt; 　string filename := S_GetFilename();<br>&gt; 　S_FileSaveAs(filename, 0, 1); // SJIS, CR+LFで保存<br>&gt; <br>&gt; 　S_FileSaveAs(filename, 0, 2); // SJIS, LFで保存<br>&gt; <br>&gt; 　S_FileSaveAs(filename, 0, 3); // SJIS, CRで保存<br><br>これが一番良いかなぁ？<br>これなら既存の動作は変わらないから<br>他のユーザへの影響は無さそうだし、<br>私のように、改行コードを意識しなきゃならないという<br>環境にいる人なら、マクロに相当のコマンドがあれば<br>自分でカスタマイズしちゃうので問題無いと思います。</div></section>
+    <ul><li><section><h1 id=1361>
+    <span class="no">[1361]</span>
+    <a class="title" href="#1361">Re9:改行コードについて</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-12T14:58:52">2002年03月12日 14:58</time></h1>
+    <div class="body">▼ Atsuさん<br>&gt; 自分でカスタマイズしちゃうので問題無いと思います。<br><br>りょうかーい。もっとすてきな仕様になればよかったんだけど、申し訳ない。<br>次回のものには混ぜときますね。<br>引き続きどうぞよろしくお願いします。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ソース整理のお話</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">5</span>
+    <a class="title" href="5.html#5">ソース整理のお話</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8</span>
+    <a class="title" href="5.html#8">Re:ソース整理のお話</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">11</span>
+    <a class="title" href="5.html#11">Re2:ソース整理のお話</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">13</span>
+    <a class="title" href="5.html#13">Re3:ソース整理のお話</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">22</span>
+    <a class="title" href="5.html#22">Re2:ソース整理のお話</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">24</span>
+    <a class="title" href="5.html#24">Re3:ソース整理のお話</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">16</span>
+    <a class="title" href="5.html#16">Re:ソース整理のお話</a></div>
+    </li><li><div class="list-title">
+    <span class="no">26</span>
+    <a class="title" href="5.html#26">Re:ソース整理のお話</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">40</span>
+    <a class="title" href="5.html#40">Re2:ソース整理のお話</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">95</span>
+    <a class="title" href="5.html#95">Re:ソース整理のお話</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=5>
+    <span class="no">[5]</span>
+    <a class="title" href="#5">ソース整理のお話</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-11-14T07:34:58">2007年11月14日 07:34</time></h1>
+    <div class="body">フライングしちゃってた話題を、<br>digital hole の掲示板から転載します・・・<br><br>――――――　ここから　――――――――――――<br>唐突ですが・・・といっても、ソース整理の話題です。<br>ソース整理に関して日頃から感じていることを打ち明けてみたいと<br>思います。畏れながらも少し棘のあるものですけれど、基本的に<br>提言したいだけでそれ以上の事を成すものではないことを何卒ご理解<br>下さい。<br><br><br>１．フォルダ util/ 配下などへ移動できるのではないかと思われる<br>　　内容を含むソースファイル：<br><br>新しく用意したフォルダに移し切れていないのではないかという<br>印象を受けました。<br><br>StaticType.h<br>MY_SP.h<br>MY_SP.C<br>my_tchar.h<br>my_icmp.h<br>my_icmp.cpp<br><br><br>２．関数などが探しにくくなっているのではと思うもの：<br>（甘い考えかと不安になりながらも敢えて提言してみます。）<br><br>ファイルサイズが大き過ぎるのかと確かめてみても、<br>CViewCommnander.cpp が 272KB というところをみると、<br>そういうわけでもないように窺えます。<br>目的があって分かれているなら、この際ファイル名を明確にした方が<br>見やすくなるのではないかという感想を持ちました。<br><br>CLayoutMgr_New.cpp<br>CLayoutMgr_New2.cpp<br>CEditView_New.cpp<br>CEditView_New2.cpp<br>CEditView_New3.cpp<br>charcode2.h<br>Debug2.h<br>Debug2.cpp<br>Debug3.h<br>Debug3.cpp<br>etc.<br>――――――　ここまで　――――――――――――<br></div></section>
+    <ul><li><section><h1 id=8>
+    <span class="no">[8]</span>
+    <a class="title" href="#8">Re:ソース整理のお話</a>
+    <span class="author">みく</span>
+    <time datetime="2007-11-14T20:49:39">2007年11月14日 20:49</time></h1>
+    <div class="body">文書化(doxygen)も必要と思いますのでリマインダとして。<br><br>サクラエディタ用doxygen設定ファイルって公開されてましたでしょうか。<br>参考になるようにサンプルソースとdoxygenでの見え方みたいなのを作ってみようかと思ったら見つかりませんでした。<br>sample.cpp　メソッドの説明・引数・戻り値など<br>sample.h クラス・メンバ変数・列挙型・構造体など<br></div></section>
+    <ul><li><section><h1 id=11>
+    <span class="no">[11]</span>
+    <a class="title" href="#11">Re2:ソース整理のお話</a>
+    <span class="author">maru</span>
+    <time datetime="2007-11-15T02:17:53">2007年11月15日 02:17</time></h1>
+    <div class="body">&gt;サクラエディタ用doxygen設定ファイルって公開されてましたでしょうか。<br><br>現在sfのWebで使用しているDoxyfileでよければ<br>http://sakura-editor.sourceforge.net/other/Doxyfile<br>におきました。<br><br>このDoxyfileは、INPUTフォルダやスタイルシートなどの、パス指定が必要な項目が設定されておりません。<br></div></section>
+    <ul><li><section><h1 id=13>
+    <span class="no">[13]</span>
+    <a class="title" href="#13">Re3:ソース整理のお話</a>
+    <span class="author">みく</span>
+    <time datetime="2007-11-15T20:42:45">2007年11月15日 20:42</time></h1>
+    <div class="body">ありがとうございます。<br><br>追記：<br>http://www29.atwiki.jp/mikmik/<br>にDoxygenの使い方を書きました。<br><br>dskobaさんも書かれてますが以下の点に注意が必要です。<br>・doxygen1.5.4はUTF-8出力のみ<br>・CHM作成時はhhc,hhpをSJISに変換する<br>・Full text searchのチェックをはずす<br></div></section>
+    </li></ul></li><li><section><h1 id=22>
+    <span class="no">[22]</span>
+    <a class="title" href="#22">Re2:ソース整理のお話</a>
+    <span class="author">dskoba</span>
+    <time datetime="2007-11-17T00:14:50">2007年11月17日 00:14</time></h1>
+    <div class="body">Doxyfileではありませんが<br>unicode r1176 の Doxygen出力をchm化したものを置いておきます。<br>http://www.ooyashima.net/products/<br><br>DoxygenとGraphvizのバージョンを上げてDoxyfileを上書きしてしまったため公開しているchmのDoxyfileはありません。<br>新しいDoxygenの出力から作ったchmはまだありません。<br>メモ<br>・Doxygen 1.5.4 は Graphviz 2.16 に対応していない<br>・Doxygen 1.5.2 以降の UTF-8 出力をchm化するとツリーが化ける<br>・CP932出力なら化けないかどうかは試していないので不明</div></section>
+    <ul><li><section><h1 id=24>
+    <span class="no">[24]</span>
+    <a class="title" href="#24">Re3:ソース整理のお話</a>
+    <span class="author">dskoba</span>
+    <time datetime="2007-11-17T21:55:41">2007年11月17日 21:55</time></h1>
+    <div class="body">Doxyfileを公開しました。<br>http://www.ooyashima.net/sakura/Doxyfile_20071117.txt<br><br>&gt; ・CP932出力なら化けないかどうかは試していないので不明<br>CP932での出力は出来ないようです。hhcをShift_JISに変換して解決。<br><br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=16>
+    <span class="no">[16]</span>
+    <a class="title" href="#16">Re:ソース整理のお話</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-16T00:02:43">2007年11月16日 00:02</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; １．フォルダ util/ 配下などへ移動できるのではないかと思われる<br>&gt; 　　内容を含むソースファイル：<br>&gt; <br>&gt; 新しく用意したフォルダに移し切れていないのではないかという<br>&gt; 印象を受けました。<br>&gt; <br>&gt; StaticType.h<br>&gt; MY_SP.h<br>&gt; MY_SP.C<br>&gt; my_tchar.h<br>&gt; my_icmp.h<br>&gt; my_icmp.cpp<br><br>同意です。<br>そのままutilに移動で良いと思います。<br><br>&gt; ２．関数などが探しにくくなっているのではと思うもの：<br>&gt; （甘い考えかと不安になりながらも敢えて提言してみます。）<br>&gt; <br>&gt; ファイルサイズが大き過ぎるのかと確かめてみても、<br>&gt; CViewCommnander.cpp が 272KB というところをみると、<br>&gt; そういうわけでもないように窺えます。<br>&gt; 目的があって分かれているなら、この際ファイル名を明確にした方が<br>&gt; 見やすくなるのではないかという感想を持ちました。<br>&gt; <br>&gt; CLayoutMgr_New.cpp<br>&gt; CLayoutMgr_New2.cpp<br>&gt; CEditView_New.cpp<br>&gt; CEditView_New2.cpp<br>&gt; CEditView_New3.cpp<br>&gt; charcode2.h<br>&gt; Debug2.h<br>&gt; Debug2.cpp<br>&gt; Debug3.h<br>&gt; Debug3.cpp<br><br>charcode2, Debug2, Debug3 は自分が作っちゃった<br>きもいファイルです。。後でまとめておきます。<br><br>「～_New」系は、よく分からないですけど、どうせまとめるなら、まとめるついでに<br>メンバ関数を種類毎に探しやすくする何らかの整理を適用できたら良いなと思います。<br><br>＃ちなみに、CEditView系ファイルからは、「COMMAND_～」というメンバ関数をすべて抜き出して<br>　CViewCommanderに移したので、ファイルサイズが元に比べてけっこう減ってます。<br><br>個人的には、ファイル整理は「なんかの作業のついでにやる」程度で良いと思います。<br>ファイル整理そのものに時間がかかっていては本末転倒なので。</div></section>
+    </li><li><section><h1 id=26>
+    <span class="no">[26]</span>
+    <a class="title" href="#26">Re:ソース整理のお話</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-11-17T23:02:57">2007年11月17日 23:02</time></h1>
+    <div class="body">自分のわかる範囲でやってみた感触をまとめてみます。参考になれば。<br><br>とりあえず bregonig.h は必要な構造体の宣言を CBregexpDll2.h に<br>移すだけで除去できそうです。<br><br>my_tchar.h<br>my_icmp.h<br>my_icmp.cpp<br><br>上記3つのファイルは util/string_ex.h へ統合できそうです。<br>が、観察していると大文字小文字を区別しない比較関数の種類が<br>2つあることに今更気づいて困惑しました。<br><br>種類１．7-bit ASCII, UTF16Mini 専用<br>種類２．SJIS, UTF16Mini 専用<br>（UTF16Mini: UTF-16 のサロゲートペアおよび組み合わせ文字列を<br>考慮しない版みたいなものに今付けたあだ名）<br><br>あと、TCHAR依存系とauto_～系とが陣地争いしているように<br>見えてしまうのは、読み間違えでしょうか。<br><br>MY_SP.h<br>MY_SP.c<br><br>上記2つは内容そのままに util/file.h, util/file.cpp へ<br>転居出来そうです。といっても、C++用に多少手を加えないと<br>型チェックに引っ掛ってコンパイルできませんでした。<br><br>charcode2.h<br><br>今の charcode.h は改めて見ると・・・<br>バイナリフィルタ機能（変な文字発見器）がそれの主を占めていて、<br>CESIやCCodeFactoryなどと運命共同体みたいな状態になっちゃって<br>いるので、いっそのこと charcode.h に入っているのをどっかに<br>転居して頂いて、charcode2.h を charcode.h に改名すれば<br>いいのなかと思ったり。試してないので実際のところわかりません。<br><br><br>▼ kobake さん(&gt;&gt;16)<br>&gt; 個人的には、ファイル整理は「なんかの作業のついでにやる」<br>&gt; 程度で良いと思います。ファイル整理そのものに時間が<br>&gt; かかっていては本末転倒なので。<br><br>ご尤もです。<br><br>ファイル整理の延長線上にある狙いは、ライセンス問題の<br>解決だったりしますので、たとえ徒労に終わっても、<br>長い目で見て効果があるはず・・・と見るのはどうも甘い<br>ですね。<br></div></section>
+    <ul><li><section><h1 id=40>
+    <span class="no">[40]</span>
+    <a class="title" href="#40">Re2:ソース整理のお話</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-11-19T01:01:44">2007年11月19日 01:01</time></h1>
+    <div class="body">一応、話題に出した内容に関するパッチをアップしておきます。<br>Sourceforgeやdigital holeのpukiwikiにあるバグ情報に追加<br>してもよかったのでしょうけれど少しご遠慮させていただいて。<br><br>場所：<a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/ target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr></nobr></a><br>ファイル名：maintenance__r1184.tgz<br><br>CFilePath.h に何故かパッチが当たらないので、<br>#include "StaticType.h"<br>を<br>#include "util/StaticType.h"<br>にエディタで変更してやってください。</div></section>
+    </li></ul></li><li><section><h1 id=95>
+    <span class="no">[95]</span>
+    <a class="title" href="#95">Re:ソース整理のお話</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-12-13T20:17:53">2007年12月13日 20:17</time></h1>
+    <div class="body">パッチ作成し直しました。<br>CFilePath.hにパッチが適用できないのは、たぶんリポジトリ側ソースの<br>文字コード判別に問題があるのかな、と思ってます。<br><a href=http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?log=dev&ol=200604&tree=s4406#4418 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>dev&amp;<wbr>ol=<wbr>200604&amp;<wbr>tree=<wbr>s4406#<wbr>4418</nobr></a><br><br>CFilePath.h はパッチでは無くアーカイブに含めてあります。<br>上記URL内に書かれている対処を施してみました。</div></section>
+    </li></ul></li></ul></body></html>

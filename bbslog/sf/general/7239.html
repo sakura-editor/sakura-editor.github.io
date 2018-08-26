@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現で全角文字を検索したい</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7239</span>
+    <a class="title" href="7239.html#7239">正規表現で全角文字を検索したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7240</span>
+    <a class="title" href="7239.html#7240">Re:正規表現で全角文字を検索したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7241</span>
+    <a class="title" href="7239.html#7241">Re2:できました！ありがとうございました。</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7239>
+    <span class="no">[7239]</span>
+    <a class="title" href="#7239">正規表現で全角文字を検索したい</a>
+    <span class="author">渡辺真</span>
+    <time datetime="2010-09-21T14:12:23">2010年09月21日 14:12</time></h1>
+    <div class="body">テキストから、全角文字を抽出したいと思って、ネットで調べました。<br>半角文字以外と言うことで、<br><br>[^ -~。-゜]<br>または、<br>[^\x01-\x7E]<br><br>という記述を見つけました。<br><br>対象例文<br>"item","A",,"渡辺12345",,"ML490","NIPPLE","95",<br>"item","A",,"abcd12345",,"ML490","ワタナベ","95",<br><br>ところが、SAKURAエディタでは、半角英字にも合致します。<br>またUNICODE版では、改行にも合致します。<br><br>他のエディタでは、全角文字を拾うようです。<br>何かお分かりのことがあれば、教えて下さい。</div></section>
+    <ul><li><section><h1 id=7240>
+    <span class="no">[7240]</span>
+    <a class="title" href="#7240">Re:正規表現で全角文字を検索したい</a>
+    <span class="author">ds14050</span>
+    <time datetime="2010-09-22T23:51:35">2010年09月22日 23:51</time></h1>
+    <div class="body">試してみました。読み込む正規表現ライブラリの設定を変更したあとは<br>確実にそのライブラリによって検索が行われるように一度終了しています。<br><br>! sakura.exe(1.6.5.0) + Bregexp.dll V1.02 for SAKURA<br> [^ -~。-゜]  渡辺ワタナベ(改行)にマッチ<br> [^\x01-\x7E] 渡辺ワタナベにマッチ<br><br>! sakura.exe(1.6.5.0) + bregonig.dll Ver.1.46 with Oniguruma 5.9.2 <br> [^ -~。-゜]  渡辺ワタナベ(改行)にマッチ<br> [^\x01-\x7E] 渡辺ワタナベにマッチ<br><br>! sakuraW.exe(Dec 27 2009) + bregonig.dll Ver.2.00 beta11 with Oniguruma 5.9.1<br> [^ -~。-゜]  渡辺ワタナベ(改行)にマッチ<br> [^\x01-\x7E] too short multibyte code string エラー。<br><br>エディタやライブラリのバージョンによるのでしょうか。<br>パターンについてわかることを書きますと、[^ -~。-゜] というのは ASCII<br>(形を持った文字部分)と半角カナ以外ということで、ASCII制御文字(改行含む)と<br>Shift_JISの先行バイトにマッチするようです。Shift_JISの一部の後続バイト<br>(ASCIIの形を持った文字や半角カナと同じコード)にはマッチしないはずですが<br>漢字の前半分にだけマッチするんでしょうか。[^\x01-\x7E] というのは ASCII<br>以外ということで、改行にはマッチしませんし、半角カナにはマッチします。<br><br>Unicodeでしたら East Asian Widthというプロパティが文字毎に定義されて<br>いるようです。サクラエディタで検索に利用できるかは別として。<br><br> 半角文字に合致する正規表現<br> &lt;<a href=http://www.4d.com/jp/blog/regex-hankaku.html&gt; target=_top><nobr>http://<wbr>www.<wbr>4d.<wbr>com/<wbr>jp/<wbr>blog/<wbr>regex-<wbr>hankaku.<wbr>html&gt;<wbr></nobr></a><br><br></div></section>
+    <ul><li><section><h1 id=7241>
+    <span class="no">[7241]</span>
+    <a class="title" href="#7241">Re2:できました！ありがとうございました。</a>
+    <span class="author">渡辺真</span>
+    <time datetime="2010-09-23T11:12:56">2010年09月23日 11:12</time></h1>
+    <div class="body">▼ ds14050さん<br>&gt; ! sakura.exe(1.6.5.0) + bregonig.dll Ver.1.46 with Oniguruma 5.9.2 <br>&gt; <br>&gt; エディタやライブラリのバージョンによるのでしょうか。<br><br>わざわざ確認いただいて、有難うございました。<br>そのとうりでした。(^^ゞ<br><br>私が使っていたものが、bregonig.dll Ver.1.42 だったので、半角英小文字にも当たっていましたが、Ver.1.46 にしたら、期待通りの結果になりました。<br><br><br>&gt; パターンについて、[^ -~。-゜] <br>と<br>&gt; [^\x01-\x7E] <br>の違いも教えていただいて、有難うございました。<br>私のホームページにも、転載させていただきます。<br><br>感謝いたします。<br>m(__)m</div></section>
+    </li></ul></li></ul></li></ul></body></html>

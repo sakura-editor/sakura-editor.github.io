@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) 奇数バイトファイルのUniBE読み書き修正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1089</span>
+    <a class="title" href="1089.html#1089">Commit報告(Fix) 奇数バイトファイルのUniBE読み書き修正</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=1089>
+    <span class="no">[1089]</span>
+    <a class="title" href="#1089">Commit報告(Fix) 奇数バイトファイルのUniBE読み書き修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-24T23:11:12">2009年12月24日 23:11</time></h1>
+    <div class="body">リビジョン：<br>　rev1701<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: 元が奇数バイトのファイルをUniBEで読み書きしたときに末尾ワードのバイト並びが不自然になる<br><br>（例）<br>内容が<br>01 02 03<br>の３バイトの（バイナリ）ファイルをUniBEで読んでそのまま書き込むと、<br>01 02 00 03<br>になる。<br>内部バッファがワード単位なので１バイト補って偶数バイトになるのは止むを得ないとしても、これでは最終ワードのバイト並びが不自然なので、<br>01 02 03 00<br>のように、最後に１バイト追加で保存されるように最終ワードのバイト並びを修正しました。（実際の修正箇所は読み込み時の内部バッファへのバイト追加処理部分）</div></section>
+    </li></ul></body></html>

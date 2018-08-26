@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択文字列でGoogle検索したい。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">625</span>
+    <a class="title" href="625.html#625">選択文字列でGoogle検索したい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">626</span>
+    <a class="title" href="625.html#626">Re:選択文字列でGoogle検索したい。</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=625>
+    <span class="no">[625]</span>
+    <a class="title" href="#625">選択文字列でGoogle検索したい。</a>
+    <span class="author">okbtsnr</span>
+    <time datetime="2017-05-05T16:49:53">2017年05月05日 16:49</time></h1>
+    <div class="body">どこからか下記を拾って右クリックメニューに追加したのですが、<br>「マクロの実行に失敗しました」のダイアログが出てきます。<br>どうすれば実行できるのでしょうか？<br>エンコードしてないと失敗するとは？<br><br>//任意のブラウザのパスに書き換える<br>var strBrowserPath = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";<br>strBrowserPath = "\"" + strBrowserPath + "\"";<br>var keyword = GetSelectedString(0);<br>if( keyword == ""){<br>    GetSelectedString(0);<br>}<br>//エンコードしてないと失敗するorz<br>keyword = encodeURIComponent(keyword);<br>var strUrl = "<a href=https://www.google.co.jp/search?hl=ja&inlang=ja&q= target=_top><nobr>https://<wbr>www.<wbr>google.<wbr>co.<wbr>jp/<wbr>search?<wbr>hl=<wbr>ja&amp;<wbr>inlang=<wbr>ja&amp;<wbr>q=<wbr></nobr></a>" + keyword;<br>var shell = new ActiveXObject("WScript.Shell");<br>shell.Run(strBrowserPath + " \"" + strUrl + "\"");</div></section>
+    <ul><li><section><h1 id=626>
+    <span class="no">[626]</span>
+    <a class="title" href="#626">Re:選択文字列でGoogle検索したい。</a>
+    <span class="author">okbtsnr</span>
+    <time datetime="2017-05-05T18:26:11">2017年05月05日 18:26</time></h1>
+    <div class="body">すみません、再インストールして解決しました。</div></section>
+    </li></ul></li></ul></body></html>

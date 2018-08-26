@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ReleaseDCのエラー</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3930</span>
+    <a class="title" href="3930.html#3930">ReleaseDCのエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3931</span>
+    <a class="title" href="3930.html#3931">RE: ReleaseDCのエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3932</span>
+    <a class="title" href="3930.html#3932">Re2: ReleaseDCのエラー</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3930>
+    <span class="no">[3930]</span>
+    <a class="title" href="#3930">ReleaseDCのエラー</a>
+    <span class="author">ootomo</span>
+    <time datetime="2005-04-25T11:41:08">2005年04月25日 11:41</time></h1>
+    <div class="body">ootomoと申します。<br>サクラエディタのソースをカスタマイズして使わせて頂いて<br>おります。<br><br>Compuware DevPartner Studio とかいうエラー検出ツール<br>を使う機会があったので、サクラエディタで試したところ、<br>「ReleaseDC関数の第二引数に、デフォルトでないオブジェクト<br>が含まれています。」というエラーを検出しました。<br><br>全てのReleaseDC関数呼び出しにエラーチェック＋メッセージ<br>ボックス出力を入れてやってみたのですが、エラーは起こりま<br>せんでした。<br>ReleaseDC関数自身は成功しているように思われます。<br><br><br>また、プログラム終了に伴うメモリリークが発見されましたが、<br>これって問題ないのですよね？<br><br><br>どなたか分かるという方いらっしゃいましたら、教えてください。<br><br>試したバージョンは、1.3.4.0 です。<br></div></section>
+    <ul><li><section><h1 id=3931>
+    <span class="no">[3931]</span>
+    <a class="title" href="#3931">RE: ReleaseDCのエラー</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-04-26T03:13:49">2005年04月26日 03:13</time></h1>
+    <div class="body">&gt;「ReleaseDC関数の第二引数に、デフォルトでないオブジェクト<br>&gt;が含まれています。」というエラーを検出しました。<br>エラーが検出された場所を教えて頂けるとありがたいのですが．<br><br>&gt;また、プログラム終了に伴うメモリリークが発見されましたが、<br>&gt;これって問題ないのですよね？<br>問題ないとは言い切れませんが...<br><br>singletonを使っているところで，プログラム終了時にdeleteが動かなくてリークに見えているものがあるかもしれません．<br></div></section>
+    <ul><li><section><h1 id=3932>
+    <span class="no">[3932]</span>
+    <a class="title" href="#3932">Re2: ReleaseDCのエラー</a>
+    <span class="author">ootomo</span>
+    <time datetime="2005-04-26T19:50:03">2005年04月26日 19:50</time></h1>
+    <div class="body">&gt; エラーが検出された場所を教えて頂けるとありがたいのですが．<br>大変申し訳ないのですが、エラーの箇所がメモリのアドレス<br>でしか表示されませんで、ソースプログラム中のどこかという<br>のはちょっと分かりませんでした。<br><br>EXCEL.exeとかテラタームとかで試したら、同じエラー<br>(ReleaseDC関数の～)が出たので、あまり気にする必要は<br>ないのでしょうか？<br><br>&gt; 問題ないとは言い切れませんが...<br>&gt; singletonを使っているところで，プログラム終了時にdeleteが動かなくてリークに見えているものがあるかもしれません．<br>メモリはアプリケーション終了と同時に開放されるのですよね？<br>多分・・・。<br><br>リソースリークというのはアプリケーション終了と同時に<br>開放されるのですか？</div></section>
+    </li></ul></li></ul></li></ul></body></html>

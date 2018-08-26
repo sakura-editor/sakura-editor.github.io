@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Perlの強調キーワードとエスケープ文字処理について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5120</span>
+    <a class="title" href="5120.html#5120">Perlの強調キーワードとエスケープ文字処理について</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=5120>
+    <span class="no">[5120]</span>
+    <a class="title" href="#5120">Perlの強調キーワードとエスケープ文字処理について</a>
+    <span class="author">辰</span>
+    <time datetime="2006-03-24T13:59:03">2006年03月24日 13:59</time></h1>
+    <div class="body">既出とは思いますが、Perlソースの編集に使用し気付いた点を<br>報告します。<br>*1. perlvar.kwd(perl2)<br>  　@や%で始まる特殊変数が未定義です。@_, @ARGV, @F, @INC,<br>  %ENV, %INC, %SIG があります。<br>  $ARGVが2個あります。たぶん$ARGと入力するつもりで勢い<br>  余ったのではないでしょうか、ついでに修正してください。<br>*2.perl.kwd(perl)<br>  　our を追加してください。strictな人しか使いませんが、<br>  一応、組み込み関数なので・・・<br>*3. \", \' の処理<br>  　正規表現キーワードを有効にすることで、$#array_nameの<br>  表示色は解決できるのですが、\", \' は、完全には解決でき<br>  ませんでした。(だからはずしてあるのかな?)<br>  　Perlでは、パターンマッチ等 "" で囲われていない場所<br>  にもエスケープ文字が現れます。タイプ別設定-&gt;カラー-&gt;<br>  エスケープは「C言語風」と謳っている通り "" 内にエスケー<br>  プ文字処理を限定してしています。そのため、Perlでは "" <br>  外にあるエスケープ文字で表示色が変わってしまいます。<br>  　エスケープ文字処理を "" 内に限定せず文章全体に拡張<br>  すれば、解決するのではないでしょうか?<br>  　C言語風ソースの場合、"" 外にエスケープ文字は現れない<br>  はずなので、表示に変化は無いと思います。<br>以上、修正リストの末席にでも加えてください。<br></div></section>
+    </li></ul></body></html>

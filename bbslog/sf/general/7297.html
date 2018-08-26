@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>1.6.5-&gt;1.6.6での改行（正規表現）の扱い</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7297</span>
+    <a class="title" href="7297.html#7297">1.6.5-&gt;1.6.6での改行（正規表現）の扱い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7298</span>
+    <a class="title" href="7297.html#7298">Re:1.6.5-&gt;1.6.6での改行（正規表現）の扱い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7299</span>
+    <a class="title" href="7297.html#7299">Re2:1.6.5-&gt;1.6.6での改行（正規表現）の扱い</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7297>
+    <span class="no">[7297]</span>
+    <a class="title" href="#7297">1.6.5-&gt;1.6.6での改行（正規表現）の扱い</a>
+    <span class="author">まくら</span>
+    <time datetime="2011-01-28T20:17:48">2011年01月28日 20:17</time></h1>
+    <div class="body">空行（改行だけの行）の正規表現<br>^\r\n$<br>を使った検索時の動きが1.6.5と1.6.6で異なります。<br><br>1.6.5は意図したとおりに検索されますが、<br>1.6.6ではヒットしません<br><br>正規表現エンジンは<br>bregonig.dll Ver.1.45 with Onigruma 5.9.1<br>です。<br>1.6.5のパッケージに1.6.6のexeのみ<br>差し替えて比較しています。<br><br>1.6.6から扱いが変わったのでしょうか？<br></div></section>
+    <ul><li><section><h1 id=7298>
+    <span class="no">[7298]</span>
+    <a class="title" href="#7298">Re:1.6.5-&gt;1.6.6での改行（正規表現）の扱い</a>
+    <span class="author">ds14050</span>
+    <time datetime="2011-01-29T00:15:15">2011年01月29日 00:15</time></h1>
+    <div class="body">はい。変えてしまいました。<br><br>1.6.5と 1.6.6の間で、bregonig.dllを使っているときの正規表現検索<br>に違いがあります。「.」が \nに加えて \rにもマッチしなくなり、<br>「$」のマッチ範囲が \r,\nを含む行末(条件により \r,\nを含まない)から、<br>常に \r,\nを含まない行末になりました。<br><br>1.6.5の $は .や否定の文字クラスと組み合わせたときに CRLFの LFのみと<br>マッチしてしまい、改行文字が意図せず&lt;del&gt;LFに&lt;/del&gt;変わってしまう不都合がありました。<br>$は(他の実装にならえば)「文字列の末尾(最後の文字の直後)」と、フラグにより<br>「行末(改行文字の直前)」にマッチするものです。$が改行文字の直前(行末)と<br>直後(行文字列の末尾)の両方にマッチする選択肢もないではなかったのですが、<br>その場合、$を対象に一括置換を行ったときに、一行につき二回ずつ置換が行われる<br>不都合がありました。<br><br>$は「行末(改行文字の直前)」にのみマッチする<br>ということで理解をいただきたいと考えています。<br><br># 不具合修正や機能追加が行われた bregonig.dll 1.48が<br># K.Takata氏によりリリースされています。<br></div></section>
+    <ul><li><section><h1 id=7299>
+    <span class="no">[7299]</span>
+    <a class="title" href="#7299">Re2:1.6.5-&gt;1.6.6での改行（正規表現）の扱い</a>
+    <span class="author">まくら</span>
+    <time datetime="2011-01-29T13:20:56">2011年01月29日 13:20</time></h1>
+    <div class="body">ご説明ありがとうございました。<br><br>&gt; $は「行末(改行文字の直前)」にのみマッチする<br>&gt; ということで理解をいただきたいと考えています。<br><br>ということなので、<br>^$\r\n<br>に変更したらうまくいきました。<br><br>書きっぱなしのマクロの動作が変わってしまうかも<br>しれないので1.6.5以前のモードで動く設定も<br>あったらいいなと思います。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

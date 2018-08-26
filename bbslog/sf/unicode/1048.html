@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) 折り返し2行目以後の矩形選択を削除する動作が不正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1048</span>
+    <a class="title" href="1048.html#1048">Commit報告(Fix) 折り返し2行目以後の矩形選択を削除する動作が不正</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=1048>
+    <span class="no">[1048]</span>
+    <a class="title" href="#1048">Commit報告(Fix) 折り返し2行目以後の矩形選択を削除する動作が不正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-11-02T21:35:48">2009年11月02日 21:35</time></h1>
+    <div class="body">リビジョン：<br>　rev1674<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: 折り返し2行目以後の矩形選択を削除する動作が不正<br>A版からU版への移植ミスの修正です。<br><br><br>■問題再現手順の例<br><br>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>↑のテキストを、10桁で折り返す設定にすると、<br><br>ABCDEFGHIJ<br>KLMNOPQRST<br>UVWXYZ<br><br>のように表示されるが、<br>その状態で、2行目の先頭3文字(KLM)を矩形選択してDELキーで削除すると、KLMではなく3行目のUVWが削除される。<br>さらに、これをUndoするとKの手前にUVWが挿入される。</div></section>
+    </li></ul></body></html>

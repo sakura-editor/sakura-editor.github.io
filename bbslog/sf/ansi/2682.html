@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>行番号の下から選択開始すると変になる</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2682</span>
+    <a class="title" href="2682.html#2682">行番号の下から選択開始すると変になる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2686</span>
+    <a class="title" href="2682.html#2686">Re: 行番号の下から選択開始すると変になる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2687</span>
+    <a class="title" href="2682.html#2687">Re2: 行番号の下から選択開始すると変になる</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2682>
+    <span class="no">[2682]</span>
+    <a class="title" href="#2682">行番号の下から選択開始すると変になる</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-04-15T22:58:04">2003年04月15日 22:58</time></h1>
+    <div class="body">CEditView::OnLBUTTONDOWN()で<br>if( xPos &lt; m_nViewAlignLeft ){<br>/* 現在のカーソル位置から選択を開始する */<br>m_bBeginLineSelect = TRUE;<br>の下の方に<br>m_nSelectLineBgnTo = m_nSelectLineTo;&#9;/* 範囲選択開始行(原点) */<br>m_nSelectColmBgnTo = m_nSelectColmTo;&#9;/* 範囲選択開始桁(原点) */<br>というのがあります。<br>行番号の下から選択開始するとその直前で選択が行われないために<br>nSelectLineTo/nSelectColmToが-1になって選択範囲の計算がおかしくなります。<br><br>ですので、これをIsTextSelected()の時のみ行うようにすると直ります。<br></div></section>
+    <ul><li><section><h1 id=2686>
+    <span class="no">[2686]</span>
+    <a class="title" href="#2686">Re: 行番号の下から選択開始すると変になる</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-04-21T04:20:57">2003年04月21日 04:20</time></h1>
+    <div class="body">このバグってなぜかBugsinfo.txtに入っていないようなのですが、初めて報告されたのいつでしたっけ？2chでしか報告されていなかったのかなぁ。<br></div></section>
+    <ul><li><section><h1 id=2687>
+    <span class="no">[2687]</span>
+    <a class="title" href="#2687">Re2: 行番号の下から選択開始すると変になる</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-04-21T04:29:14">2003年04月21日 04:29</time></h1>
+    <div class="body">[一般 1556]<br>2002-04-08 でやざきさんが直されているようなのですが、実際には直っていなかったのかその後の修正で再混入したのか。どちらかのようですね。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

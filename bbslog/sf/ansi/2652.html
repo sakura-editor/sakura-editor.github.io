@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ100連発(うそ)</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2652</span>
+    <a class="title" href="2652.html#2652">バグ100連発(うそ)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2657</span>
+    <a class="title" href="2652.html#2657">Re: バグ100連発(うそ)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2661</span>
+    <a class="title" href="2652.html#2661">RE: バグ100連発(うそ)</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2652>
+    <span class="no">[2652]</span>
+    <a class="title" href="#2652">バグ100連発(うそ)</a>
+    <span class="author">みく</span>
+    <time datetime="2003-04-01T18:55:36">2003年04月01日 18:55</time></h1>
+    <div class="body"><br>・プリンタボタンのキャンセルでプリンタ不明になるバグ<br>CPrint.cpp:77行目を削除するのでは駄目かな。<br><br>・つづり間違い？<br>CLayoutMgr/CDocLineMgrの関数で<br>GetFirstLinrStr<br>GetNextLinrStr<br><br>・関数の型と戻り値が...<br>CDocLineMgr.cpp:WriteFile()<br>戻り値の型がintでreturnではFALSE,TRUE,-1の3種<br>呼び出し側ではBOOLを期待しているので-1はどうする？<br>（途中でキャンセルすると正常終了になる）<br><br>関数の戻り値の型、returnでの値、呼び出し側での期待値がめちゃくちゃになっている関数がいくつかあります。<br>CDlg系のGetDataも同様です。<br>BOOLはreturnにTRUE,FALSE以外を書いてもビルド時に警告が出ないので、調べるのが大変そうです。<br></div></section>
+    <ul><li><section><h1 id=2657>
+    <span class="no">[2657]</span>
+    <a class="title" href="#2657">Re: バグ100連発(うそ)</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-04-02T00:56:41">2003年04月02日 00:56</time></h1>
+    <div class="body">&gt;BOOLはreturnにTRUE,FALSE以外を書いてもビルド時に警告が出ない<br>Windowsで定義されているものに文句をつけてもしょうがないが、BOOLがenumで定義してあれば警告が出なくてすんだのかな？<br></div></section>
+    </li><li><section><h1 id=2661>
+    <span class="no">[2661]</span>
+    <a class="title" href="#2661">RE: バグ100連発(うそ)</a>
+    <span class="author">みく</span>
+    <time datetime="2003-04-02T18:47:22">2003年04月02日 18:47</time></h1>
+    <div class="body"><br>CDocLineMgr.cpp:725,906行目<br>if( !::BlockingHook( NULL ) ){<br>※    return FALSE;<br>}            ^^^^^<br><br>とするか、<br><br>CEditDoc.cpp:846行目<br>if( TRUE != m_cDocLineMgr.WriteFile( ...<br>    ^^^^^^^<br>としないと駄目です。<br></div></section>
+    </li></ul></li></ul></body></html>

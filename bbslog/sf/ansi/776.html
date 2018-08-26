@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>IMEの状態</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">776</span>
+    <a class="title" href="776.html#776">IMEの状態</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">780</span>
+    <a class="title" href="776.html#780">Re:IMEの状態</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">782</span>
+    <a class="title" href="776.html#782">Re2:IMEの状態</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">802</span>
+    <a class="title" href="776.html#802">Re3:IMEの状態</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=776>
+    <span class="no">[776]</span>
+    <a class="title" href="#776">IMEの状態</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-10-16T08:33:32">2001年10月16日 08:33</time></h1>
+    <div class="body">[指定行にジャンプする]ダイアログを開いたとき、<br>IMEがONになったままなのは気になります。<br></div></section>
+    <ul><li><section><h1 id=780>
+    <span class="no">[780]</span>
+    <a class="title" href="#780">Re:IMEの状態</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-10-16T15:13:26">2001年10月16日 15:13</time></h1>
+    <div class="body">▼ あああさん<br>&gt; [指定行にジャンプする]ダイアログを開いたとき、<br>&gt; IMEがONになったままなのは気になります。<br>これ、かなり前から気付いてて直したかったんですができずじまいでした。(^_^;)</div></section>
+    <ul><li><section><h1 id=782>
+    <span class="no">[782]</span>
+    <a class="title" href="#782">Re2:IMEの状態</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-10-17T09:36:14">2001年10月17日 09:36</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; これ、かなり前から気付いてて直したかったんですができずじまいでした。(^_^;)<br><br>::ImmSetOpenStatus, ::ImmSetConversionStatus で制御できると思います。<br>CEditDoc::SetImeMode を参考に。<br><br>開いている文書のIMEの状態を復元するには<br>CEditDoc::SetImeMode( CEditDoc::GetDocumentAttribute().m_nImeS<br>tate );<br>を呼ぶんでしたね。CEditDoc のインスタンスをどうやって得るのか。。。<br></div></section>
+    <ul><li><section><h1 id=802>
+    <span class="no">[802]</span>
+    <a class="title" href="#802">Re3:IMEの状態</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-11-03T15:37:58">2001年11月03日 15:37</time></h1>
+    <div class="body">▼ あああさん<br>&gt; ▼ じぇぷろさん<br>&gt; &gt; これ、かなり前から気付いてて直したかったんですができずじまいでした。(^_^;)<br>&gt; <br>&gt; ::ImmSetOpenStatus, ::ImmSetConversionStatus で制御できると思います。<br>&gt; CEditDoc::SetImeMode を参考に。<br><br>ImmAssociateContext()でできることがわかりました。ただimm.hを先にインクルードするとなぜか変なエラーが出ます。インクルードを最後にしたらでないのに。変なの。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

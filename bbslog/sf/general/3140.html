@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>（要望）白紙状態の行番号</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3140</span>
+    <a class="title" href="3140.html#3140">（要望）白紙状態の行番号</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3223</span>
+    <a class="title" href="3140.html#3223">Re:（要望）白紙状態の行番号</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3229</span>
+    <a class="title" href="3140.html#3229">Re2:（要望）白紙状態の行番号</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3272</span>
+    <a class="title" href="3140.html#3272">Re3:（要望）白紙状態の行番号</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3278</span>
+    <a class="title" href="3140.html#3278">Re4:（要望）白紙状態の行番号</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3140>
+    <span class="no">[3140]</span>
+    <a class="title" href="#3140">（要望）白紙状態の行番号</a>
+    <span class="author">しょう</span>
+    <time datetime="2003-08-01T11:28:06">2003年08月01日 11:28</time></h1>
+    <div class="body">白紙状態から書き込みをした際に<br>ルーラーごと画面がずれることに違和感を感じます<br>行番号を表示する設定にある場合は<br>１行目の行番号、もしくは、１行目の行番号右側の縦線は<br>白紙状態でも表示してはいかがでしょう？</div></section>
+    <ul><li><section><h1 id=3223>
+    <span class="no">[3223]</span>
+    <a class="title" href="#3223">Re:（要望）白紙状態の行番号</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-08-31T16:38:55">2003年08月31日 16:38</time></h1>
+    <div class="body">EOFの後の行番号がどんな風に表示されればいいと思う？</div></section>
+    <ul><li><section><h1 id=3229>
+    <span class="no">[3229]</span>
+    <a class="title" href="#3229">Re2:（要望）白紙状態の行番号</a>
+    <span class="author">しょう</span>
+    <time datetime="2003-09-01T01:03:54">2003年09月01日 01:03</time></h1>
+    <div class="body">▼ wmlhqさん<br>&gt; EOFの後の行番号がどんな風に表示されればいいと思う？<br>現状どおりでよいかと思います<br>縦線も行番号に連動して表示される形で<br><br>行番号の表示条件は２通りあるかと<br>（現状．最終書き込み行までの行番号を表示、[EOF]だけの行は含まず）<br>案１．[EOF]行までの行番号を表示<br>案２．現状＋「１行目」の行番号は常に表示<br><br>案２いかがです？</div></section>
+    <ul><li><section><h1 id=3272>
+    <span class="no">[3272]</span>
+    <a class="title" href="#3272">Re3:（要望）白紙状態の行番号</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-11T12:09:53">2003年09月11日 12:09</time></h1>
+    <div class="body">▼ しょうさん<br>&gt;１行目の行番号右側の縦線は白紙状態<br>int CEditView::DetectWidthOfLineNumberArea_c<br>alculate( void )<br>...<br>&#9;}else{<br>-&#9;&#9;i = 1;<br>+&#9;&#9;i = 3;<br>&#9;}<br>たったこれだけの変更！</div></section>
+    <ul><li><section><h1 id=3278>
+    <span class="no">[3278]</span>
+    <a class="title" href="#3278">Re4:（要望）白紙状態の行番号</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-11T23:01:35">2003年09月11日 23:01</time></h1>
+    <div class="body">&gt;-&#9;&#9;i = 1;<br>&gt;+&#9;&#9;i = 3;<br>&gt;たったこれだけの変更！<br>ん？<br>確かに開始位置はずれなくなりましたけど，EOFのみの行に行番号が付かないのは代わってないですよね？<br><br>個人的には[EOF]のみの行をnullではなく空文字列として扱うようにしないといけないのかと思っておりますが．<br>EOFのみのとき行があるのにデータが無いためにnullを特別扱いしている箇所が随所にあったように記憶しておりますがその辺も合わせて整理できたらなぁと妄想してみます．<br><br>続きは開発掲示板の方がいいかな．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

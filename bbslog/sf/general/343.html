@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ発見</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">343</span>
+    <a class="title" href="343.html#343">バグ発見</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">346</span>
+    <a class="title" href="343.html#346">RE: バグ発見</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">349</span>
+    <a class="title" href="343.html#349">RE: バグ発見</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=343>
+    <span class="no">[343]</span>
+    <a class="title" href="#343">バグ発見</a>
+    <span class="author">みく</span>
+    <time datetime="2001-04-12T21:14:04">2001年04月12日 21:14</time></h1>
+    <div class="body"><br>あるファイルを開きます。<br>（排他をしない。更新確認ありの設定）<br>他のプログラムで、今開いたファイルの内容を書き換えます。<br>エディタの編集領域でマウスをクリックしてエディタにフォーカスを移動します。<br>すると、<br>範囲選択中状態になったり、勝手にスクロールしたりします。<br>編集領域以外をクリックしてウインドウをアクティブにした場合は正常です。<br></div></section>
+    <ul><li><section><h1 id=346>
+    <span class="no">[346]</span>
+    <a class="title" href="#346">RE: バグ発見</a>
+    <span class="author">みく</span>
+    <time datetime="2001-04-13T20:28:47">2001年04月13日 20:28</time></h1>
+    <div class="body"><br>キー入力ができなることもあります。<br>＃あせらず、マウスクリックすると直ります。<br><br>もうひとつ。<br>CDlgOpenFile.cppファイルのsakuraで開いて、<br>アウトライン解析をすると、<br>「CMemory::AllocBuffer(nNewDataLen==248)<br>メモリ確保に失敗しました。」<br>と出て、<br>エディタを終了させると、<br>「"0x77fca738" の命令が "0x04db6d75" のメモリを参照しました。<br>メモリが"read"になることはできませんでした。<br>プログラムを終了するには[OK]をクリックしてください」<br>と表示されます。<br></div></section>
+    <ul><li><section><h1 id=349>
+    <span class="no">[349]</span>
+    <a class="title" href="#349">RE: バグ発見</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-14T09:47:42">2001年04月14日 09:47</time></h1>
+    <div class="body">&gt;アウトライン解析をすると、<br>&gt;「"0x77fca738" の命令が "0x04db6d75" のメモリを参照しました。<br>4/1に開発掲示板に書き込みましたが、これは既に修正済みのはず．じぇぷろさんの所にあるバイナリでは直っていると思います．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

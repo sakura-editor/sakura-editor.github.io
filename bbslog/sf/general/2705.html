@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>行末置換（挿入）方法</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2705</span>
+    <a class="title" href="2705.html#2705">行末置換（挿入）方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2706</span>
+    <a class="title" href="2705.html#2706">RE: 行末置換（挿入）方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2707</span>
+    <a class="title" href="2705.html#2707">Re2: 行末置換（挿入）方法</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2816</span>
+    <a class="title" href="2705.html#2816">Re:行末置換（挿入）方法</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2817</span>
+    <a class="title" href="2705.html#2817">Re:行末置換（挿入）方法</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2705>
+    <span class="no">[2705]</span>
+    <a class="title" href="#2705">行末置換（挿入）方法</a>
+    <span class="author">ころ</span>
+    <time datetime="2003-02-06T19:54:40">2003年02月06日 19:54</time></h1>
+    <div class="body">2702の発言で行頭に挿入する方法はありましたが、<br>行末に入れる方法はありますでしょうか。<br>正規表現を用いて何度か試してみましたが、<br>うまくいきませんでした。<br>よろしければご教授ねがえませんでしょうか。</div></section>
+    <ul><li><section><h1 id=2706>
+    <span class="no">[2706]</span>
+    <a class="title" href="#2706">RE: 行末置換（挿入）方法</a>
+    <span class="author">すい</span>
+    <time datetime="2003-02-06T22:04:29">2003年02月06日 22:04</time></h1>
+    <div class="body">例えば「行末に // ２文字を挿入」だと<br>　置換前：[\r\n]<br>　置換後：//$&amp;<br>の正規表現置換かと。「置換前：\r|\n」でも大丈夫ですね。<br><br>★意味<br>----------<br>[ ]：[～] 内のどれか１文字<br>\r：CR(0x0d)改行コード<br>\n：LF(0x0a)改行コード<br>$&amp;：検索でマッチした文字列全体に置き換わる<br><br>行末の改行を「"//" + 検索結果マッチした文字列(=改行コード)」に置換、って。<br>----------<br></div></section>
+    <ul><li><section><h1 id=2707>
+    <span class="no">[2707]</span>
+    <a class="title" href="#2707">Re2: 行末置換（挿入）方法</a>
+    <span class="author">ころ</span>
+    <time datetime="2003-02-07T14:34:11">2003年02月07日 14:34</time></h1>
+    <div class="body">▼ すいさん<br>&gt; 例えば「行末に // ２文字を挿入」だと<br>&gt; 　置換前：[\r\n]<br>&gt; 　置換後：//$&amp;<br>&gt; の正規表現置換かと。「置換前：\r|\n」でも大丈夫ですね。<br><br>ありがとうございます。りくつがわかりましたっ＾</div></section>
+    </li></ul></li><li><section><h1 id=2816>
+    <span class="no">[2816]</span>
+    <a class="title" href="#2816">Re:行末置換（挿入）方法</a>
+    <span class="author">MMX</span>
+    <time datetime="2003-03-12T14:14:47">2003年03月12日 14:14</time></h1>
+    <div class="body">▼ ころさん<br>([\r\n])$<br>TAIL\1<br>ではできました。試行錯誤になります<br>こういうのは、パズルとしては楽しめるが<br> <br>Perl5.8, JAVA, JScript, .NET などの<br>最先端の正規表現に慣れた人々には？？と思います。<br><br>サクラエディタの行は<br>改行コードを含んでいて普通文字扱い、と認識しました。<br></div></section>
+    </li><li><section><h1 id=2817>
+    <span class="no">[2817]</span>
+    <a class="title" href="#2817">Re:行末置換（挿入）方法</a>
+    <span class="author">MMX</span>
+    <time datetime="2003-03-12T14:38:02">2003年03月12日 14:38</time></h1>
+    <div class="body">▼ ころさん<br>([\r\n])$<br>TAIL\1<br>ではできました。試行錯誤になります<br>こういうのは、パズルとしては楽しめるが<br> <br>Perl5.8, JAVA, JScript, .NET などの<br>最先端の正規表現に慣れた人々には？？と思います。<br><br>サクラエディタの行は<br>改行コードを含んでいて普通文字扱い、と認識しました。<br></div></section>
+    </li></ul></li></ul></body></html>

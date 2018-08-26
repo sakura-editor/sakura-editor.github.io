@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>行末文字「$」の置換がおかしい</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">8087</span>
+    <a class="title" href="8087.html#8087">行末文字「$」の置換がおかしい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8089</span>
+    <a class="title" href="8087.html#8089">Re:行末文字「$」の置換がおかしい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8090</span>
+    <a class="title" href="8087.html#8090">Re2:行末文字「$」の置換がおかしい</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=8087>
+    <span class="no">[8087]</span>
+    <a class="title" href="#8087">行末文字「$」の置換がおかしい</a>
+    <span class="author">雪さん</span>
+    <time datetime="2015-12-05T07:10:39">2015年12月05日 07:10</time></h1>
+    <div class="body">バージョン2.3.0に置き換えたら、<br>行末文字の置換に問題があったので報告します。<br><br>手順<br>(1)タイプ別設定で、「文字の間隔」に１以上を設定する。<br>(2)行末文字「$」を（正規表現にチェック）して「置換」する。<br>　 →余分な改行が1つ追加される。<br>(3)行末文字「＄」を（正規表現にチェック）して「すべて置換」する。<br>　 →余分な改行が50ぐらい追加される。<br>(4)複数行を選択して行末文字「＄」を（正規表現にチェック）して「すべて置換」する。<br>　 →余分な改行が無限ループで追加される続ける。<br><br>以上のような結果になってます。<br><br></div></section>
+    <ul><li><section><h1 id=8089>
+    <span class="no">[8089]</span>
+    <a class="title" href="#8089">Re:行末文字「$」の置換がおかしい</a>
+    <span class="author">ds14050</span>
+    <time datetime="2015-12-06T04:38:29">2015年12月06日 04:38</time></h1>
+    <div class="body">確認しました。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1014/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1014/<wbr></nobr></a><br>にパッチを投稿してみましたが、べつに読んでいただく必要はありません(読む気おこらないですよね？)。<br></div></section>
+    <ul><li><section><h1 id=8090>
+    <span class="no">[8090]</span>
+    <a class="title" href="#8090">Re2:行末文字「$」の置換がおかしい</a>
+    <span class="author">雪さん</span>
+    <time datetime="2015-12-06T20:26:07">2015年12月06日 20:26</time></h1>
+    <div class="body">パッチの件、読みました。<br>少し難しかったです。<br>修正版のリリースを待ってます。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

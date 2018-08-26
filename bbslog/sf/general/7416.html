@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>メモ帳の.LOG</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7416</span>
+    <a class="title" href="7416.html#7416">メモ帳の.LOG</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7417</span>
+    <a class="title" href="7416.html#7417">Re:メモ帳の.LOG</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=7416>
+    <span class="no">[7416]</span>
+    <a class="title" href="#7416">メモ帳の.LOG</a>
+    <span class="author">さくら</span>
+    <time datetime="2011-08-09T09:03:56">2011年08月09日 09:03</time></h1>
+    <div class="body">さくらエディタでは、開くたびに打刻されるような、メモ帳の.LOGみたいな機能はありますか？</div></section>
+    <ul><li><section><h1 id=7417>
+    <span class="no">[7417]</span>
+    <a class="title" href="#7417">Re:メモ帳の.LOG</a>
+    <span class="author">ＴＥＴＵ</span>
+    <time datetime="2011-08-11T11:23:53">2011年08月11日 11:23</time></h1>
+    <div class="body">▼ さくらさん<br>マクロで対応可能です。<br><br>以下のマクロ（jsです）は取りあえず版です（初めて作ったし）。<br><br>// MemoLOG.js<br>// メモ帳のようにテキストの先頭に".LOG"と書いてあると、文末に日付時刻を挿入する<br>----- ここ以降切り取り -------<br>var selStr;&#9;&#9;&#9;&#9;// 選択文字<br>var chkStr = ".LOG";&#9;// チェック文字（変更可）<br><br>Editor.GoFileTop(0);&#9;// ファイルの先頭<br>Editor.BeginSelect(0);&#9;// 選択開始<br>Editor.GoLineEnd(0);&#9;// 行末まで<br>selStr = Editor.GetSelectedString(0);&#9;// 選択文字取得<br>Editor.CancelMode(0);&#9;// 選択解除<br>if(selStr == chkStr){&#9;// 選択文字チェック<br>&#9;Editor.GoFileEnd(0);&#9;// ファイル末尾に移動<br>&#9;Editor.InsertDate(0);&#9;// 日付挿入<br>&#9;Editor.InsertTime(0);&#9;// 時刻挿入<br>&#9;Editor.Char(13);&#9;&#9;// 改行<br>&#9;Editor.CancelMode(0);&#9;// モード初期化<br>}<br>----- ここ以前切り取り -------<br>このマクロを名前は何でも良いので（例えばMemoLOG.js）保存して、<br>サクラエディタのマクロに登録して下さい。<br>その際、自動実行欄の「新規／開くファイル後(O)」にチェックを入れれば、<br>だいたいメモ帳と同じような動きになるかと思います。<br>マクロは自由に改造してより良い物にして下さい。</div></section>
+    </li></ul></li></ul></body></html>

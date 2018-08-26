@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ミニマップが印刷プレビューで表示されたまま</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2276</span>
+    <a class="title" href="2276.html#2276">ミニマップが印刷プレビューで表示されたまま</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2277</span>
+    <a class="title" href="2276.html#2277">Re:似たような箇所のバグたち</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2276>
+    <span class="no">[2276]</span>
+    <a class="title" href="#2276">ミニマップが印刷プレビューで表示されたまま</a>
+    <span class="author">もか</span>
+    <time datetime="2015-08-19T21:37:15">2015年08月19日 21:37</time></h1>
+    <div class="body">ミニマップが印刷プレビューで表示されたままになります<br>この状態になると再描画以降で全角半角判定がミニマップ側のフォントで計算されてしまいます<br>そのため一部文字で印刷設定通りに印刷されない可能性があります<br>このバグに対するコミット：<br><a href=https://github.com/mocaskr/sakura/commit/1484f034 target=_top><nobr>https://<wbr>github.<wbr>com/<wbr>mocaskr/<wbr>sakura/<wbr>commit/<wbr>1484f034<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=2277>
+    <span class="no">[2277]</span>
+    <a class="title" href="#2277">Re:似たような箇所のバグたち</a>
+    <span class="author">もか</span>
+    <time datetime="2015-08-21T00:40:08">2015年08月21日 00:40</time></h1>
+    <div class="body">印刷+操作回りを色々テストしてみたところ、まだ細かいバグがありましたので報告します。<br><br>印刷プレビュー中に共通設定を変更するとプレビューにメインメニューが表示される<br><a href=https://github.com/mocaskr/sakura/commit/1d96b217 target=_top><nobr>https://<wbr>github.<wbr>com/<wbr>mocaskr/<wbr>sakura/<wbr>commit/<wbr>1d96b217<wbr></nobr></a><br><br>印刷プレビュー中にミニマップを表示するとプレビューにも表示され、文字幅がミニマップのものになる<br><a href=https://github.com/mocaskr/sakura/commit/5434a993 target=_top><nobr>https://<wbr>github.<wbr>com/<wbr>mocaskr/<wbr>sakura/<wbr>commit/<wbr>5434a993<wbr></nobr></a><br>文字幅(trunk2では全半角判断)がミニマップになるのは、ほかのウィンドウでツールバー類をON/OFFした場合です。<br><br>終了時にアクセス違反が発生する(ミニマップ)<br><a href=https://github.com/mocaskr/sakura/commit/348974fb target=_top><nobr>https://<wbr>github.<wbr>com/<wbr>mocaskr/<wbr>sakura/<wbr>commit/<wbr>348974fb<wbr></nobr></a><br>これはミニマップの~CEditViewから呼び出されるCEditView::Close()内の<br>&#9;if(m_hAtokModule)<br>&#9;&#9;FreeLibrary(m_hAtokModule);<br>が未初期化のアドレスを解放しようとします。<br>私の環境ではデバッグのログに表示されますが処理はなぜか続行されていました。<br><br>同日の他3件はパッチ依存です<br>6029c238 印刷フォントがミニマップ用になることがある(私用版固有)<br>upatchid:837 フォントスタイルに斜体(仮)と取り消し線を追加 のパッチの不具合<br>未初期化の変数による条件分岐により印刷フォント名の1dot版で印刷されることがあります<br>たまたま該当変数がfalseだった場合は発生しません<br><br>4a52b261 印刷プレビュー中にミニマップをONにするとフォント幅がミニマップ用になる<br>TSVとりあえず対応プロポーショナル版のみの不具合<br><br>b57bed38 印刷プレビュー(中)に終了させるとアクセス違反が発生する<br>upatchid:949 印刷のレイアウト作成でCColorStrategyの設定をしていない のパッチの不具合<br>シングルトンのCEditWnd,CColorStrategyPoolは仕様上どちらが先に消えるかはっきりしないはず。<br>~CPrintPreview()内に追加したCColorStrategyPool::OnChangeSettingでアクセス違反になっていた<br>~CEditWnd()内のdelete m_pPrintPreviewより先に~CColorStrategyPool()が呼ばれていて変数が削除されていたため<br>該当処理はデストラクタでなくてもいいので外へ移動<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix) GetCharNext/GetCharPrev処理不正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">837</span>
+    <a class="title" href="837.html#837">Commit報告:(Fix) GetCharNext/GetCharPrev処理不正</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=837>
+    <span class="no">[837]</span>
+    <a class="title" href="#837">Commit報告:(Fix) GetCharNext/GetCharPrev処理不正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-02-15T15:18:38">2009年02月15日 15:18</time></h1>
+    <div class="body">リビジョン：<br>　rev1533<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>　Fix: GetCharNext/GetCharPrevでの文字列先頭/末尾処理が不正<br><br>１．文字列末尾にある［上位サロゲート＋非下位サロゲート］の２文字がGetCharNext()で１文字扱いになる<br>２．文字列先頭にある［非上位サロゲート＋下位サロゲート］の２文字がGetCharPrev()で１文字扱いになる<br><br>（障害例）<br>行末が１のパターンになっているとき、上位サロゲート文字位置でDELキーを押すと２文字削除される。</div></section>
+    </li></ul></body></html>

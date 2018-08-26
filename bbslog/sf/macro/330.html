@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>現在行のタグファイル文字列を作成</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">330</span>
+    <a class="title" href="330.html#330">現在行のタグファイル文字列を作成</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">331</span>
+    <a class="title" href="330.html#331">Re:現在行のタグファイル文字列を作成</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">332</span>
+    <a class="title" href="330.html#332">Re2:現在行のタグファイル文字列を作成</a></div>
+    </li><li><div class="list-title">
+    <span class="no">336</span>
+    <a class="title" href="330.html#336">MRUから作成その１</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">337</span>
+    <a class="title" href="330.html#337">MRUから作成その２</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">338</span>
+    <a class="title" href="330.html#338">Re:MRUから作成その２</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">333</span>
+    <a class="title" href="330.html#333">Re:現在行のタグファイル文字列を作成</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">334</span>
+    <a class="title" href="330.html#334">Re2:現在行のタグファイル文字列を作成</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">335</span>
+    <a class="title" href="330.html#335">Re3:現在行のタグファイル文字列を作成</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=330>
+    <span class="no">[330]</span>
+    <a class="title" href="#330">現在行のタグファイル文字列を作成</a>
+    <span class="author">まくろ初心者</span>
+    <time datetime="2006-12-04T23:46:29">2006年12月04日 23:46</time></h1>
+    <div class="body">現在行のタグファイル文字列（こんなの→C:\sakura\Macro\test.vbs(30,19)  [SJIS]:Call Editor.TraceOut( msg , 2)）を作成します。<br>あんまり用途ないですが…笑<br><br>' createTagString.vbs<br>ret = GetCharCode<br>select case ret<br>case 0:<br>&#9;sCharCode = "SJIS"<br>case 1:<br>&#9;sCharCode = "JIS"<br>case 2:<br>&#9;sCharCode = "EUC"<br>case 3:<br>&#9;sCharCode = "UNICODE"<br>case 4:<br>&#9;sCharCode = "UTF-8"<br>case 5:<br>&#9;sCharCode = "UTF-7"<br>case 6:<br>&#9;sCharCode = "UNICODE-BE"<br>end select<br><br>iCurLine = GetLineCount(0)<br>FilePath = ExpandParameter("$F")<br>Right_Sel<br>iCol = GetSelectColmFrom<br>Left_Sel<br>sLine = GetLineStr(0)<br><br>msg = FilePath &amp; "(" &amp; iCurLine &amp; "," &amp; iCol &amp; ")  [" &amp; sCharCode &amp; "]:" &amp; sLine<br><br>Call Editor.TraceOut( msg , 2)<br></div></section>
+    <ul><li><section><h1 id=331>
+    <span class="no">[331]</span>
+    <a class="title" href="#331">Re:現在行のタグファイル文字列を作成</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-12-05T14:11:16">2006年12月05日 14:11</time></h1>
+    <div class="body">▼ まくろ初心者さん<br>&gt; 現在行のタグファイル文字列を作成します。<br>&gt; あんまり用途ないですが…笑<br><br>文字コードは、先頭に持って来ても、（ダイレクトタグジャンプで）大丈夫のようです。<br>現在行番号を取って来るようにしました。<br><br>' iCurLine = GetLineCount(0)<br>' Right_Sel<br>Right_Sel<br>iCurLine = GetSelectLineFrom<br><br>msg = "[" &amp; sCharCode &amp; "] " &amp; FilePath &amp; "(" &amp; iCurLine &amp; "," &amp; iCol &amp; "): " &amp; sLine<br><br>手動操作と自動操作の中間で、<br>sakura.ini のMRU(bookmark)タグに入っている形式からの取り出しも欲しくなります。<br>では、また。</div></section>
+    <ul><li><section><h1 id=332>
+    <span class="no">[332]</span>
+    <a class="title" href="#332">Re2:現在行のタグファイル文字列を作成</a>
+    <span class="author">まくろ初心者</span>
+    <time datetime="2006-12-05T18:25:42">2006年12月05日 18:25</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; ▼ まくろ初心者さん<br>&gt; &gt; 現在行のタグファイル文字列を作成します。<br>&gt; &gt; あんまり用途ないですが…笑<br>&gt; <br>&gt; 文字コードは、先頭に持って来ても、（ダイレクトタグジャンプで）大丈夫のようです。<br>&gt; 現在行番号を取って来るようにしました。<br>&gt; <br>&gt; ' iCurLine = GetLineCount(0)<br>&gt; ' Right_Sel<br>&gt; Right_Sel<br>&gt; iCurLine = GetSelectLineFrom<br>&gt; <br>&gt; msg = "[" &amp; sCharCode &amp; "] " &amp; FilePath &amp; "(" &amp; iCurLine &amp; "," &amp; iCol &amp; "): " &amp; sLine<br>&gt; <br>&gt; 手動操作と自動操作の中間で、<br>&gt; sakura.ini のMRU(bookmark)タグに入っている形式からの取り出しも欲しくなります。<br>&gt; では、また。<br><br>間違いの指摘ありがとうございした。<br>MRUを取得するやつも作ってみましたが…遅い…(--;)<br><br><br>投稿しようとしたらサイズオーバー<br>う～ん、でかすぎかな。ファイルが…汗<br></div></section>
+    </li><li><section><h1 id=336>
+    <span class="no">[336]</span>
+    <a class="title" href="#336">MRUから作成その１</a>
+    <span class="author">まくろ初心者</span>
+    <time datetime="2006-12-06T01:05:24">2006年12月06日 01:05</time></h1>
+    <div class="body">' createTagByMru<br>Call Main()<br><br>Sub Main()<br>&#9;Const MRU_SECTION_NAME = "MRU"<br>&#9;Const MRU_ENTRY_NAME = "MRU"<br>&#9;Const MRU_ENTRY_PATH = ".szPath"<br>&#9;Const MRU_ENTRY_X = ".nX"<br>&#9;Const MRU_ENTRY_Y = ".nY"<br>&#9;Const MRU_ENTRY_CHARCODE = ".nCharCode"<br>&#9;Const MRU_ENTRY_MAX = "_MRU_Counts"<br>&#9;Const MRU_FR = 0<br><br>&#9;Dim iniCtl<br><br>&#9;Set iniCtl = New clsSakuraIni<br><br>&#9;Dim sNum<br>&#9;Dim mruTo<br>&#9;mruTo = iniCtl.GetProfileString(MRU_SECTION_NAME ,MRU_ENTRY_MAX )<br>&#9;Dim sCharCode, iCol, iCurLine, FilePath, sLine<br>&#9;Dim sTag<br><br>&#9;for i = MRU_FR to mruTo - 1<br>&#9;&#9;if i &lt; 10 then <br>&#9;&#9;&#9;sNum = "0" &amp; i<br>&#9;&#9;Else<br>&#9;&#9;&#9;sNum = i<br>&#9;&#9;End If<br>&#9;&#9;sCharCode = getCharCodeStr( iniCtl.GetProfileString(MRU_SECTION_NAME ,MRU_ENTRY_NAME &amp; "[" &amp; sNum &amp; "]" &amp; MRU_ENTRY_CHARCODE ) )<br>&#9;&#9;iCol = iniCtl.GetProfileString(MRU_SECTION_NAME ,MRU_ENTRY_NAME &amp; "[" &amp; sNum &amp; "]" &amp; MRU_ENTRY_X)<br>&#9;&#9;iCurLine = iniCtl.GetProfileString(MRU_SECTION_NAME ,MRU_ENTRY_NAME &amp; "[" &amp; sNum &amp; "]" &amp; MRU_ENTRY_Y )<br>&#9;&#9;FilePath = iniCtl.GetProfileString(MRU_SECTION_NAME ,MRU_ENTRY_NAME &amp; "[" &amp; sNum &amp; "]" &amp; MRU_ENTRY_PATH )<br>&#9;&#9;sLine = "" 'GetLineStr(0)<br>&#9;&#9;sTag = FilePath &amp; "(" &amp; iCurLine &amp; "," &amp; iCol &amp; ")  [" &amp; sCharCode &amp; "]:" &amp; sLine<br>&#9;&#9;TraceOut(sTag)<br>&#9;Next<br><br>&#9;Set iniCtl = Nothing&#9;' インスタンスを破棄します。<br>End Sub<br></div></section>
+    <ul><li><section><h1 id=337>
+    <span class="no">[337]</span>
+    <a class="title" href="#337">MRUから作成その２</a>
+    <span class="author">まくろ初心者</span>
+    <time datetime="2006-12-06T01:05:52">2006年12月06日 01:05</time></h1>
+    <div class="body"><br>Function getCharCodeStr( charCode )<br>&#9;if Not isNumeric(charCode) then Exit Function<br>&#9;aryChar = Array("SJIS", "JIS", "EUC", "UNICODE", "UTF-8", "UTF-7", "UNICODE-BE")<br>&#9;getCharCodeStr = aryChar( charCode )<br>End Function<br><br>' Class 定義<br>Class clsSakuraIni<br>&#9;Dim aryLine<br>&#9;Private Sub Class_Initialize&#9;' Initialize イベントを設定します。<br>&#9;&#9;Dim objFso<br>&#9;&#9;Dim iniFileName<br>&#9;&#9;Dim objFs<br> <br>&#9;&#9;Set objFso = CreateObject("Scripting.FileSystemObject")<br>&#9;&#9;iniFileName = getSakuraIniFileName<br> <br>&#9;&#9;Set objFs = objFso.OpenTextFile( iniFileName, 1 )<br>&#9;&#9;aryLine = Split( objFs.ReadAll, vbCrLf )<br>&#9;&#9;objFs.Close<br>&#9;&#9;Set objFs = Nothing<br>&#9;&#9;Set objFso = Nothing<br>&#9;End Sub<br> <br>&#9;Private Sub Class_Terminate&#9;' Terminate イベントを設定します。<br>&#9;&#9;' Do Nothing<br>&#9;End Sub<br> <br>&#9;' ini ファイル名生成<br>&#9;Private Function getSakuraIniFileName()<br>&#9;&#9;Dim sakuraPath, pos, sRet<br>&#9;&#9;sakuraPath = ExpandParameter("$S")<br>&#9;&#9;pos = instrrev(sakuraPath, ".")<br>&#9;&#9;if pos &lt;= 0 then<br>&#9;&#9;&#9;sRet = ""<br>&#9;&#9;Else<br>&#9;&#9;&#9;sRet = Mid(sakuraPath, 1, pos ) &amp; "ini"<br>&#9;&#9;End If<br>&#9;&#9;getSakuraIniFileName  = sRet<br>&#9;End Function<br> <br>&#9;' ini ファイルの読み込み<br>&#9;Function getProfileString( strSection, strEntry)<br>&#9;&#9;Dim i, sRet<br> <br>&#9;&#9;if UBound( aryLine ) &gt; 0 then<br>&#9;&#9;&#9;' ini ファイルの解析<br>&#9;&#9;&#9;Dim bFound,sLine,aryEntity<br> <br>&#9;&#9;&#9;sRet = ""&#9;&#9;'Empty<br>&#9;&#9;&#9;bFound = False<br>&#9;&#9;&#9;For i = 0 to Ubound( aryLine )-1<br>&#9;&#9;&#9;&#9;if bFound then<br>&#9;&#9;&#9;&#9;&#9;if Left( aryLine( i ), 1 ) = "[" then Exit For<br> <br>&#9;&#9;&#9;&#9;&#9;sLine = LTrim( aryLine( i ) )<br>&#9;&#9;&#9;&#9;&#9;if Left( sLine, Len(strEntry)) = strEntry then<br>&#9;&#9;&#9;&#9;&#9;&#9;aryEntity = Split( sLine, "=" )<br>&#9;&#9;&#9;&#9;&#9;&#9;if Trim(aryEntity(0)) = strEntry then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;if Ubound( aryEntity ) = 1 then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;sRet = Trim( aryEntity( 1 ) )<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;Exit For<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end if<br>&#9;&#9;&#9;&#9;&#9;&#9;end if<br>&#9;&#9;&#9;&#9;&#9;end if<br>&#9;&#9;&#9;&#9;End if <br>&#9;&#9;&#9;&#9;if aryLine(i) = "[" &amp; strSection &amp; "]" then<br>&#9;&#9;&#9;&#9;&#9;bFound = True<br>&#9;&#9;&#9;&#9;end if<br>&#9;&#9;&#9;Next<br>&#9;&#9;Else <br>&#9;&#9;&#9;sRet = ""<br>&#9;&#9;End If<br>&#9;&#9;getProfileString = sRet<br>&#9;End Function<br> <br>End Class<br><br><br></div></section>
+    <ul><li><section><h1 id=338>
+    <span class="no">[338]</span>
+    <a class="title" href="#338">Re:MRUから作成その２</a>
+    <span class="author">まくろ初心者</span>
+    <time datetime="2006-12-06T01:08:15">2006年12月06日 01:08</time></h1>
+    <div class="body">説明があとになっちゃいました…汗<br><br>その１、その２を連結するとMRUからタグ文を作成します。<br>（ただしファイル内容は取得しないです。）<br><br>若干動作が遅いのと、INIのパーサが自前なので微妙かもです。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=333>
+    <span class="no">[333]</span>
+    <a class="title" href="#333">Re:現在行のタグファイル文字列を作成</a>
+    <span class="author">maru</span>
+    <time datetime="2006-12-06T00:13:14">2006年12月06日 00:13</time></h1>
+    <div class="body">▼ まくろ初心者さん<br>GetSelectColmFromは折り返しモードの時に折り返し単位での桁位置を示しますので<br>こういう処理は素直にExpandParameterに任せた方がいいかも。<br><br>' createTagString.vbs<br>vArr = Array("SJIS", "JIS", "EUC", "UNICODE", "UTF-8", "UTF-7", "UNICODE-BE")<br>Call TraceOut("$F($y,$x) [" &amp; vArr(GetCharCode) &amp; "]: " &amp; GetLineStr(0), 3)<br></div></section>
+    <ul><li><section><h1 id=334>
+    <span class="no">[334]</span>
+    <a class="title" href="#334">Re2:現在行のタグファイル文字列を作成</a>
+    <span class="author">maru</span>
+    <time datetime="2006-12-06T00:21:32">2006年12月06日 00:21</time></h1>
+    <div class="body">GetLineStr(0)の中に特殊展開文字列があるかもしれないので<br>さっきのはだめですね。<br><br>' createTagString.vbs<br>vArr = Array("SJIS", "JIS", "EUC", "UNICODE", _<br>                "UTF-8", "UTF-7", "UNICODE-BE")<br>Call TraceOut("$F($y,$x) [" &amp; vArr(GetCharCode) &amp; "]: ", 3)<br>Call TraceOut(GetLineStr(0), 2)<br></div></section>
+    <ul><li><section><h1 id=335>
+    <span class="no">[335]</span>
+    <a class="title" href="#335">Re3:現在行のタグファイル文字列を作成</a>
+    <span class="author">まくろ初心者</span>
+    <time datetime="2006-12-06T01:03:30">2006年12月06日 01:03</time></h1>
+    <div class="body"><br>いろいろと返信ありがとございます。<br>結局２行で書けてしまいますね…笑<br><br>' createTagString.vbs<br>aryChar = Array("SJIS", "JIS", "EUC", "UNICODE", "UTF-8", _<br>                "UTF-7", "UNICODE-BE")<br>Call Editor.TraceOut( ExpandParameter("$F($y,$x)  [") &amp; aryChar( GetCharCode ) &amp; "]:" &amp; GetLineStr(0) , 2)<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

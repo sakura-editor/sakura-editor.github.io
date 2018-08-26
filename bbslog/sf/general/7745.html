@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択行のソートでのバグ？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7745</span>
+    <a class="title" href="7745.html#7745">選択行のソートでのバグ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7746</span>
+    <a class="title" href="7745.html#7746">Re:選択行のソートでのバグ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7747</span>
+    <a class="title" href="7745.html#7747">Re2:選択行のソートでのバグ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7748</span>
+    <a class="title" href="7745.html#7748">Re3:選択行のソートでのバグ？</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7745>
+    <span class="no">[7745]</span>
+    <a class="title" href="#7745">選択行のソートでのバグ？</a>
+    <span class="author">arigayas</span>
+    <time datetime="2014-01-03T11:21:49">2014年01月03日 11:21</time></h1>
+    <div class="body">1．以下の5行を一番最後の行(一番最後にEOFマークがある状態)に貼付けます。<br>第6巻<br>第15巻<br>第24巻<br>第4巻<br>第5巻<br>2．上記の5行を選択します。<br>3．選択行の昇順ソート　もしくは　選択行の降順ソート　を行います。<br>4．5行目の5巻が一番最後の行から移動しない。<br><br><br>仕様でしょうか？バグでしょうか？<br>サクラエディタ Ver. 2.1.0.0です。</div></section>
+    <ul><li><section><h1 id=7746>
+    <span class="no">[7746]</span>
+    <a class="title" href="#7746">Re:選択行のソートでのバグ？</a>
+    <span class="author">雲井ヒョットコ斎</span>
+    <time datetime="2014-01-03T17:27:07">2014年01月03日 17:27</time></h1>
+    <div class="body">以下の通り、正しく処理されるけど？<br>※Windows 7 SP1 + SakuraEditor 2.1.0.0環境<br><br>第15巻<br>第24巻<br>第4巻<br>第5巻<br>第6巻<br><br><br>▼ arigayasさん<br>&gt; 1．以下の5行を一番最後の行(一番最後にEOFマークがある状態)に貼付けます。<br>&gt; 第6巻<br>&gt; 第15巻<br>&gt; 第24巻<br>&gt; 第4巻<br>&gt; 第5巻<br>&gt; 2．上記の5行を選択します。<br>&gt; 3．選択行の昇順ソート　もしくは　選択行の降順ソート　を行います。<br>&gt; 4．5行目の5巻が一番最後の行から移動しない。<br>&gt; <br>&gt; <br>&gt; 仕様でしょうか？バグでしょうか？<br>&gt; サクラエディタ Ver. 2.1.0.0です。</div></section>
+    <ul><li><section><h1 id=7747>
+    <span class="no">[7747]</span>
+    <a class="title" href="#7747">Re2:選択行のソートでのバグ？</a>
+    <span class="author">もか</span>
+    <time datetime="2014-01-03T20:17:09">2014年01月03日 20:17</time></h1>
+    <div class="body"><br>&gt;第5巻[EOF]<br>だとソートされず、<br>&gt;第5巻<br>&gt;[EOF]<br>だとソートされるという意味だと思います。<br><br>通常選択時、最後の行の選択が中途半端だとその行に「改行コードがある」場合は、次の行頭までが選択されますが、<br>最終行に改行がない場合は、最終行は選択範囲から除外されて、その行の先頭までに選択範囲が変更されます。<br>これは、ソートが追加されたほぼ初期からの仕様です。<br>並び替えた後、前の行と結合されて変になるので。<br>矩形選択の場合は最後の行も処理されて、最近のバージョンから改行も小細工されてそれらしくソートできます。<br>(前のバージョンでは、最後の行も処理されるものの改行を小細工しません)<br>通常選択時も、最終行を範囲に含めて改行を小細工するようにしてもいいのですが、現状は互換性重視でそうしてはいません。<br>要望 &amp; 意見次第で仕様変更することもできます。<br></div></section>
+    <ul><li><section><h1 id=7748>
+    <span class="no">[7748]</span>
+    <a class="title" href="#7748">Re3:選択行のソートでのバグ？</a>
+    <span class="author">arigayas</span>
+    <time datetime="2014-01-04T04:52:43">2014年01月04日 04:52</time></h1>
+    <div class="body">▼ もかさん<br>&gt; <br>&gt; &gt;第5巻[EOF]<br>&gt; だとソートされず、<br>&gt; &gt;第5巻<br>&gt; &gt;[EOF]<br>&gt; だとソートされるという意味だと思います。<br>そう言いたかったんです(苦笑)<br><br>互換性重視ということなら仕様ということで納得します。<br>矩形選択の場合では私の意図した動きになる事を教えていただきありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

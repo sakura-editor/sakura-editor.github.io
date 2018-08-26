@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>「エントリポイントThunkConnect32が見つかりません」エラーの対処法</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">516</span>
+    <a class="title" href="516.html#516">「エントリポイントThunkConnect32が見つかりません」エラーの対処法</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=516>
+    <span class="no">[516]</span>
+    <a class="title" href="#516">「エントリポイントThunkConnect32が見つかりません」エラーの対処法</a>
+    <span class="author">しょうじまさみ</span>
+    <time datetime="2001-07-05T17:11:25">2001年07月05日 17:11</time></h1>
+    <div class="body">はじめまして。<br>サクラエディタは最近知って使い始めました。<br><br>1月31日 fubfun さんの投稿にありました、以下の問題が私の<br>環境でも再現したのでちょっと調べてみました。<br><br>▼ fubfanさん<br>&gt;自宅のwin2kでは起動時に以下のエラーメッセージが出ます。<br>&gt;（正確には、起動直後と「OK」押下後sakuraがタスクトレイに<br>&gt;常駐する際の２回です）<br>&gt;<br>&gt;「プロシージャエントリポイント ThunkConnect32が<br>&gt;ダイナミックリンクライブラリ KERNEL32.dllから<br>&gt;みつかりませんでした。」<br><br>　私の環境での解決法を先に書きますと、winnt\system32 の<br>中の rsrc32.dll があったら、削除するかファイル名を変更して<br>ロードされないようにします。(たぶん再起動したほうがいいです)<br>　もしかすると他のアプリケーションに副作用があるかも<br>しれません。<br><br>　私の環境は NT4.0(SP6a) です。<br><br>　ソースを見ると、GetSystemResources()という関数で<br>リソース情報の取得のために rsrc32.dll がロードされて<br>います。<br>　ロードに失敗しても何もしていないので、OSのバージョンを<br>調べてよけるようにできるかも知れませんね。<br><br>　思うに、NT系では本来 rsrc32.dll は入ってないはず<br>なのに、何かのアプリケーションと一緒にインストール<br>されてしまったのではないでしょうかね。<br><br></div></section>
+    </li></ul></body></html>

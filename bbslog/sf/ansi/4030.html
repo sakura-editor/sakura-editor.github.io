@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ツールバーが化ける件</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">4030</span>
+    <a class="title" href="4030.html#4030">ツールバーが化ける件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4032</span>
+    <a class="title" href="4030.html#4032">Re:ツールバーが化ける件</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=4030>
+    <span class="no">[4030]</span>
+    <a class="title" href="#4030">ツールバーが化ける件</a>
+    <span class="author">みく</span>
+    <time datetime="2005-08-30T18:56:36">2005年08月30日 18:56</time></h1>
+    <div class="body"><br>1.5.5.0にて再現しました。<br>他のプログラムが開いている増え続けるログファイルを開こう<br>とすると必ず化けることから、再現方法を発見しました。<br><br>Visual C++6.0で次のプログラムをデバッグモードで実行します。<br><br>test.exe:<br>main(){<br>&#9;FILE* fp = fopen( "a.txt", "w" );<br>&#9;while( 1 ){ Sleep( 1000 ); }<br>&#9;fclose( fp );<br>}<br><br>作成される a.txt をサクラエディタで開くとツールバーが化けます。<br>デバッグモードでない test.exe を実行した場合は化けませんでした。<br><br>WinXP SP2<br>Visual C++6.0<br>Office XP<br><br>ところが、自分の環境でサクラエディタをビルドし直して同じことを<br>行った場合、再現しませんでした。<br><br><br>あと、<br>InitCommonControls();が、ツールバーを使わないときに実行されません。<br>また、ツールバーを出したり消したろすると何度でも実行されます。<br><br>OleInitialize()/OleUnInitialize()については、<br>プログラム起動時にResolveShort...でCoIni/CoUniniされ、<br>DropTargetでOleIni/OleUniniされます。<br>さらに、ファイルをドロップすると<br>ResolveShort...でCoIni/CoUniniされます。<br></div></section>
+    <ul><li><section><h1 id=4032>
+    <span class="no">[4032]</span>
+    <a class="title" href="#4032">Re:ツールバーが化ける件</a>
+    <span class="author">yon</span>
+    <time datetime="2005-09-01T05:18:22">2005年09月01日 05:18</time></h1>
+    <div class="body">ツールバーが化ける件、起きています。<br><br>sakura 1.5.5.0<br><br>WinXP SP2<br>Office XP<br>Pen4でHTはOFF<br><br><br>ディレクトリ階層下にあるタグファイル"tags"を、SendToに入れた右クリックメニューの"送る"や、<br>"ファイルを開くプログラムの選択"でサクラエディタを選択して開くと、<br>ツールバーが黒四角に化けます。<br><br>拡張子を.txtや.cなど付けると、再現しません。<br>また、"tags"ファイルをD:\ドライブ直下に移動すると再現しません。<br><br><br>・拡張子による分別<br>・ファイルの文字コードや改行コード<br>・ファイルパスの組み合わせ<br>このあたりでしょうか・・・。<br><br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,113 @@
+li {
+    list-style-type: none;
+}
+
+section {
+    border: 1px solid #CCC;
+    margin-bottom: .5em;
+}
+
+h1 {
+    background-color: #EEE;
+    margin-top: 0;
+    padding: 0.5em;
+    font-size: 18px;
+}
+
+h1 time,
+h1 .author {
+    font-weight: normal;
+    margin: 0.2em;
+    font-size: 15px;
+}
+
+.list-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.body {
+    padding: 1em;
+    white-space: pre-wrap;
+}
+
+.no {
+    background-color: #EEE;
+    font-size: 0.8em;
+}
+
+ul {
+    margin: 0;
+}
+
+.side {
+    padding: 0;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    width: 300px;
+    border-right: 1px solid #CCC;
+}
+
+.actived {
+    background: #FFEEEE;
+    font-weight: bold;
+}
+
+.main {
+    padding: 0;
+    margin-left: 300px;
+}
+
+.main ul {
+    padding-left: 1em;
+}
+
+.side .toindex {
+    display: block;
+    background: #FEE;
+    text-decoration: none;
+}
+
+.side li a {
+    text-decoration: none;
+}
+
+.side li a:hover {
+    text-decoration: underline;
+}
+
+.side li {
+    line-height: 1.6rem;
+}
+
+ul.side li ul {
+    margin-left: 0em;
+    padding-left: 1em;
+}
+
+ul.side li ul li {
+    position: relative;
+}
+
+ul.side li ul li::before {
+    content: "";
+    position: absolute;
+    left: -0.5em;
+    height: 100%;
+    border-left: 1px solid #999;
+}
+
+ul.side li ul li:last-child::before {
+    height: 0.8em;
+}
+
+ul.side li ul li::after {
+    content: "";
+    position: absolute;
+    top: 0.8em;
+    left: -0.5em;
+    width: 10px;
+    border-bottom: 1px solid #3972b2;
+}

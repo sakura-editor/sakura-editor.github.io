@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) バッファ長指定がsizeofになっていた</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1266</span>
+    <a class="title" href="1266.html#1266">Commit報告(Fix) バッファ長指定がsizeofになっていた</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=1266>
+    <span class="no">[1266]</span>
+    <a class="title" href="#1266">Commit報告(Fix) バッファ長指定がsizeofになっていた</a>
+    <span class="author">もか</span>
+    <time datetime="2010-06-20T03:18:58">2010年06月20日 03:18</time></h1>
+    <div class="body"><br>リビジョン：<br>　rev1778<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: バッファ長指定がsizeofになっていた<br><br>GetExedirのGetModuleFileName<br>CClipboard::GetTextのDragQueryFile<br>の2か所です。 DragQueryFileで -1 する必要はありませんが、<br>配列のほうが[_MAX_PATH + 1] だったので、そのままにしておきました。<br></div></section>
+    </li></ul></body></html>

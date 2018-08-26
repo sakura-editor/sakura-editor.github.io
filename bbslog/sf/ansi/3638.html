@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>論理行先頭とタブの組み合わせバグ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3638</span>
+    <a class="title" href="3638.html#3638">論理行先頭とタブの組み合わせバグ</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=3638>
+    <span class="no">[3638]</span>
+    <a class="title" href="#3638">論理行先頭とタブの組み合わせバグ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-06-16T20:39:48">2004年06月16日 20:39</time></h1>
+    <div class="body">&gt;&gt;3509 で改行位置が変だったのを修正<br>したものの、同じ原理により、CLayoutMgr::CaretPos_Phys2Logにもバグがあります。<br>CEditView::DrawCaretPosInfoも変ですが、操作に問題は無いのでとりあえず放置します。<br><br>入力・置換・Redo・Undoなどに問題があることを確認しました。<br>検索の色分けは正常です。<br><br>CLayoutMgr.cpp<br>@@ -1287,7 +1287,7 @@<br> &#9;nCaretPosX = 0;<br> &#9;do{<br> &#9;&#9;if( nY == pLayout-&gt;m_nLinePhysical ){<br>-&#9;&#9;&#9;nCaretPosX = 0;<br>+&#9;&#9;&#9;nCaretPosX = pLayout-&gt;GetIndent();<br> //&#9;&#9;&#9;pData = GetLineStr( nCaretPosY, &amp;nDataLen );<br> //&#9;&#9;&#9;pData = pLayout-&gt;m_pLine + pLayout-&gt;m_nOffset;<br> &#9;&#9;&#9;pData = pLayout-&gt;m_pCDocLine-&gt;m_pLine-&gt;GetPtr() + pLayout-&gt;m_nOffset; // 2002/2/10 aroka CMemory変更<br>@@ -1335,7 +1335,7 @@<br> &#9;&#9;}<br> &#9;&#9;pLayout = pLayout-&gt;m_pNext;<br> &#9;}while( NULL != pLayout );<br>-&#9;*pnCaretPosX = nCaretPosX + (pLayout ? pLayout-&gt;GetIndent() : 0);<br>+&#9;*pnCaretPosX = pLayout ? nCaretPosX : 0;<br> &#9;*pnCaretPosY = nCaretPosY;<br> //#ifdef _DEBUG<br> //&#9;MYTRACE( "\t\tnCaretPosY - nY = %d\n", nCaretPosY - nY );<br></div></section>
+    </li></ul></body></html>

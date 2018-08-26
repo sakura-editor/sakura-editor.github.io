@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) 画面分割ボックス操作時の動作不正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1103</span>
+    <a class="title" href="1103.html#1103">Commit報告(Fix) 画面分割ボックス操作時の動作不正</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=1103>
+    <span class="no">[1103]</span>
+    <a class="title" href="#1103">Commit報告(Fix) 画面分割ボックス操作時の動作不正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-01-19T20:06:26">2010年01月19日 20:06</time></h1>
+    <div class="body">リビジョン：<br>　rev1710<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: 画面分割ボックスのクリックでアクティブビューが切り替わる<br>Fix: 画面分割ボックスのドラッグ開始位置に分割線のゴミが残る<br><br>下記の問題の修正です。<br>※下記で「画面分割ボックス」と言っているのは、水平スクロールバーの左端（左右分割用）と垂直スクロールバーの上端（上下分割用）にある、画面分割を開始するための長方形のつまみ部分のことです。<br><br>■再現方法<br><br>(1) 画面分割ボックスのクリックでアクティブビューが切り替わる<br>左右分割状態で上下分割ボックスをクリックすると必ず右側のビューがアクティブ化してしまう。<br>上下分割状態で左右分割ボックスをクリックすると必ず下側のビューがアクティブ化してしまう。<br><br>(2) 画面分割ボックスのドラッグ開始位置に分割線のゴミが残る<br>分割ボックスをドラッグしている最中、マウス位置に描画される分割線とは別に、ドラッグ開始位置にも分割線が表示されたまま残っています。<br>さらに、上下分割の場合、ビューの現在のキャレット位置よりも上の位置で上下分割を完了すると、ドラッグ開始位置（ルーラー近辺）の分割線が消えずに残ってしまうことがあります。</div></section>
+    </li></ul></body></html>

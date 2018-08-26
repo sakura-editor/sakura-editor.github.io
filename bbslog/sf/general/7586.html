@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ctrl+左クリックで単語選択</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7586</span>
+    <a class="title" href="7586.html#7586">ctrl+左クリックで単語選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7587</span>
+    <a class="title" href="7586.html#7587">Re:ctrl+左クリックで単語選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7591</span>
+    <a class="title" href="7586.html#7591">Re2:ctrl+左クリックで単語選択</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7586>
+    <span class="no">[7586]</span>
+    <a class="title" href="#7586">ctrl+左クリックで単語選択</a>
+    <span class="author">tarako</span>
+    <time datetime="2013-03-27T01:43:49">2013年03月27日 01:43</time></h1>
+    <div class="body">ver2.0.6でもctrl+左クリックでクリックした単語を選択するようにしたいのですが、<br>どの設定を変更すればいいでしょうか。<br></div></section>
+    <ul><li><section><h1 id=7587>
+    <span class="no">[7587]</span>
+    <a class="title" href="#7587">Re:ctrl+左クリックで単語選択</a>
+    <span class="author">ds14050</span>
+    <time datetime="2013-03-28T21:10:32">2013年03月28日 21:10</time></h1>
+    <div class="body">なんという隠し機能！<br>クリックに割り当てる機能の変更はできないみたいで知りませんでした。<br><br>Ctrlを押しながらあちこちをクリックしていくとクリックされた<br>位置でなくキャレットがそれまであった位置の単語が選択されて<br>いきました。単語選択がワンクリック遅れてキャレットを追いか<br>けていく感じです。<br><br>---開発者向け---<br>ｒ2610でＣＣａｒｅｔ：：ＭｏｖｅＣｕｒｓｏｒＰｒｏｐｅｒｌｙと<br>ＣＣａｒｅｔ：：ＭｏｖｅＣｕｒｓｏｒＴｏＣｌｉｅｎｔＰｏｉｎｔに、<br>実際にはキャレットを移動させないための test引数が追加されています。<br>目的があってこれが trueになっているのだと思いますが、<br>GetCommander().Command_SELECTWORD()を呼び出す前にキャレット移動<br>が完了していないといけないのだと思います。<br></div></section>
+    <ul><li><section><h1 id=7591>
+    <span class="no">[7591]</span>
+    <a class="title" href="#7591">Re2:ctrl+左クリックで単語選択</a>
+    <span class="author">もか</span>
+    <time datetime="2013-03-31T19:34:12">2013年03月31日 19:34</time></h1>
+    <div class="body">詳細ありがとうございます。<br>パッチを上げました。<br>http://sourceforge.net/p/sakura-editor/patchunicode/379/<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

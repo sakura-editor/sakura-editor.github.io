@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ＸＭＬファイルの展開</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4390</span>
+    <a class="title" href="4390.html#4390">ＸＭＬファイルの展開</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4391</span>
+    <a class="title" href="4390.html#4391">Re:ＸＭＬファイルの展開</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=4390>
+    <span class="no">[4390]</span>
+    <a class="title" href="#4390">ＸＭＬファイルの展開</a>
+    <span class="author">はまっち</span>
+    <time datetime="2005-04-01T11:32:16">2005年04月01日 11:32</time></h1>
+    <div class="body">サクラエディタを使わせていただいております。<br><br>ＸＭＬファイルを展開したいのですが、<br>どういった設定を行わなければなりませんか？<br><br>お教えいただけると助かります。<br>よろしくお願い致します。<br></div></section>
+    <ul><li><section><h1 id=4391>
+    <span class="no">[4391]</span>
+    <a class="title" href="#4391">Re:ＸＭＬファイルの展開</a>
+    <span class="author">maru</span>
+    <time datetime="2005-04-04T01:47:09">2005年04月04日 01:47</time></h1>
+    <div class="body">とっても動きが微妙ですが、こんな感じのマクロを<br>膨らませていけば、いけそうな・・・；<br>ヘルプファイル「設定メニュー」の「共通設定」の<br>「マクロのプロパティ」を読んで。<br><br>// xml_entity.js<br>iMax = Editor.GetLineCount(0);<br>iCnt = 1;<br>while (iCnt &lt; iMax){<br>    sBuf = Editor.GetLineStr(iCnt);<br>    sName = sBuf.replace(/&lt;!ENTITY ([^ ]*) "([^"]*)"&gt;/ig,'$1');<br>    iCnt += 1;<br>    if (sName != '') {<br>        sName = '&amp;' + sName.substring(0,sName.length -2) + ';';<br>        sValue = sBuf.replace(/&lt;!ENTITY ([^ ]*) "([^"]*)"&gt;/ig,'$2');<br>        sValue = sValue.substring(0,sValue.length -2);<br>        Editor.ReplaceAll(sName, sValue, 48);<br>    }<br>}<br>Editor.SearchClearMark();<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CSVモードで、Excel相当のデータの解釈をしてほしいです</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">8193</span>
+    <a class="title" href="8193.html#8193">CSVモードで、Excel相当のデータの解釈をしてほしいです</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8194</span>
+    <a class="title" href="8193.html#8194">Re:CSVモードで、Excel相当のデータの解釈をしてほしいです</a></div>
+    </li><li><div class="list-title">
+    <span class="no">8195</span>
+    <a class="title" href="8193.html#8195">Re:CSVモードで、Excel相当のデータの解釈をしてほしいです</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8196</span>
+    <a class="title" href="8193.html#8196">Re2:CSVモードで、Excel相当のデータの解釈をしてほしいです</a></div>
+    </li><li><div class="list-title">
+    <span class="no">8199</span>
+    <a class="title" href="8193.html#8199">Re2:CSVモードで、Excel相当のデータの解釈をしてほしいです</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8200</span>
+    <a class="title" href="8193.html#8200">Re3:CSVモードで、Excel相当のデータの解釈をしてほしいです</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8201</span>
+    <a class="title" href="8193.html#8201">Re4:CSVモードで、Excel相当のデータの解釈をしてほしいです</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8205</span>
+    <a class="title" href="8193.html#8205">Re5:CSVモードで、Excel相当のデータの解釈をしてほしいです</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8208</span>
+    <a class="title" href="8193.html#8208">Re6:CSVモードで、Excel相当のデータの解釈をしてほしいです</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=8193>
+    <span class="no">[8193]</span>
+    <a class="title" href="#8193">CSVモードで、Excel相当のデータの解釈をしてほしいです</a>
+    <span class="author">たかよ</span>
+    <time datetime="2016-10-21T10:31:19">2016年10月21日 10:31</time></h1>
+    <div class="body">CSVモードで、Excel相当のデータの解釈をしてほしいです。<br><br>例①""で区切ると、データ内にカンマ「,」を含めることが可能<br>"あ,い"　→　あ,い<br><br>例②"" で、データ内に「"」を含めることが可能<br>あ""　→　あ"</div></section>
+    <ul><li><section><h1 id=8194>
+    <span class="no">[8194]</span>
+    <a class="title" href="#8194">Re:CSVモードで、Excel相当のデータの解釈をしてほしいです</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-10-25T00:00:41">2016年10月25日 00:00</time></h1>
+    <div class="body">▼ たかよさん<br>&gt; CSVモードで、Excel相当のデータの解釈をしてほしいです。<br><br>サクラエディタのTSV/CSVモードは「タブ揃え」を<br>超拡大解釈させることによって実現しています。<br><br>タブ揃えの発動条件は１文字なので、対応は不可です。<br>正規表現置換でCSV→TSV変換すれば希望に添えるかもしれません。<br><br>置換前： ("[^\r\n"]*?"|[^,\r\n"]*?),<br>置換後： $1\t<br><br>""内にタブ文字を含まないことが条件になります。。。<br></div></section>
+    </li><li><section><h1 id=8195>
+    <span class="no">[8195]</span>
+    <a class="title" href="#8195">Re:CSVモードで、Excel相当のデータの解釈をしてほしいです</a>
+    <span class="author">もか</span>
+    <time datetime="2016-10-26T01:43:47">2016年10月26日 01:43</time></h1>
+    <div class="body">▼ たかよさん<br>&gt; 例①""で区切ると、データ内にカンマ「,」を含めることが可能<br>&gt; "あ,い"　→　あ,い<br>CSVのカンマのエスケープ対応<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1052/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1052/<wbr></nobr></a><br><br>上記のサンプルバイナリ<br><a href=http://mocaskr.web.fc2.com/weekly/sakura_weekly.html target=_top><nobr>http://<wbr>mocaskr.<wbr>web.<wbr>fc2.<wbr>com/<wbr>weekly/<wbr>sakura_w<wbr>eekly.<wbr>html</nobr></a><br>sakura2-3-0-0r4119_fix_csv_escape_v0_2.zip<br></div></section>
+    <ul><li><section><h1 id=8196>
+    <span class="no">[8196]</span>
+    <a class="title" href="#8196">Re2:CSVモードで、Excel相当のデータの解釈をしてほしいです</a>
+    <span class="author">たかよ</span>
+    <time datetime="2016-10-26T10:13:20">2016年10月26日 10:13</time></h1>
+    <div class="body">▼ もかさん<br>&gt; CSVのカンマのエスケープ対応<br>&gt; <a href=https://sourceforge.net/p/sakura-editor/patchunicode/1052/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1052/<wbr></nobr></a><br>&gt; <br>&gt; 上記のサンプルバイナリ<br>&gt; <a href=http://mocaskr.web.fc2.com/weekly/sakura_weekly.html target=_top><nobr>http://<wbr>mocaskr.<wbr>web.<wbr>fc2.<wbr>com/<wbr>weekly/<wbr>sakura_w<wbr>eekly.<wbr>html</nobr></a><br>&gt; sakura2-3-0-0r4119_fix_csv_escape_v0_2.zip<br><br><br>求めていたものはまさにこれでした！<br>正式版(？)に組み込まれる日を待ちたいと思います。<br><br>ご回答ありがとうございました！</div></section>
+    </li><li><section><h1 id=8199>
+    <span class="no">[8199]</span>
+    <a class="title" href="#8199">Re2:CSVモードで、Excel相当のデータの解釈をしてほしいです</a>
+    <span class="author">LR4</span>
+    <time datetime="2016-11-04T15:44:08">2016年11月04日 15:44</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 上記のサンプルバイナリ<br>&gt; <a href=http://mocaskr.web.fc2.com/weekly/sakura_weekly.html target=_top><nobr>http://<wbr>mocaskr.<wbr>web.<wbr>fc2.<wbr>com/<wbr>weekly/<wbr>sakura_w<wbr>eekly.<wbr>html</nobr></a><br>&gt; sakura2-3-0-0r4119_fix_csv_escape_v0_2.zip<br><br>このサンプルバイナリですが、テキストの折り返し位置設定との絡みで<br>プログラムが無応答になることがあるようです。<br>自分の環境では以下の手順で無応答になります。<br><br>(1)sakura.iniが無い状態で起動（初回起動）<br>(2)タイプ「基本」の設定で「右端で折り返す」に設定<br>(3)エディタ画面を、80桁で折り返されるような幅にする<br>(4)サンプルバイナリに添付されているskrw_fix_csv_escape_v0_2.patchを開く<br><br>(4)の数秒後にマウスをビューにかざすとマウスポインタが<br>砂時計状態になっていて操作を受け付けません。<br><br>環境が違うとこの通りでは起きないかもしれませんが、<br>・マウスで画面の端を掴んで画面サイズをぐりぐり変化させる<br>・スクロールバーをマウスで掴んで上下スクロールさせる<br>・マウス左クリックでカーソル位置を移動する<br>などの操作をしているうちに再現するかも、です。</div></section>
+    <ul><li><section><h1 id=8200>
+    <span class="no">[8200]</span>
+    <a class="title" href="#8200">Re3:CSVモードで、Excel相当のデータの解釈をしてほしいです</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-11-05T00:35:12">2016年11月05日 00:35</time></h1>
+    <div class="body">▼ LR4さん<br>&gt; このサンプルバイナリですが、テキストの折り返し位置設定との絡みで<br>&gt; プログラムが無応答になることがあるようです。<br><br>v2系のいくつかの機能は、設定ファイルに設定値がない状態を想定していません。<br>なので、使い方が間違っていると思います。<br>どこかのOSベンダー風に言うと「仕様」です。<br>設定ファイルは、あらかじめ用意しておくのがベターです。<br><br>ちなみに「右端で折り返す」機能にはバグがあります。<br>私はあまり使わない機能なので再現条件を把握していませんが、<br>どうもレイアウト解析の構造に起因する問題のようです。<br><br>本家バイナリでも再現するようでしたら、<br>sourceforgeのバグレポートにあげると誰かが対応してくれると思います。<br>もか氏のところのアレはpreview版で本家とは別、らしいです。</div></section>
+    <ul><li><section><h1 id=8201>
+    <span class="no">[8201]</span>
+    <a class="title" href="#8201">Re4:CSVモードで、Excel相当のデータの解釈をしてほしいです</a>
+    <span class="author">LR4</span>
+    <time datetime="2016-11-05T03:21:15">2016年11月05日 03:21</time></h1>
+    <div class="body">▼ ばぼさん<br><br>少々、言葉足らずだったようで申し訳ありません。<br><br>&gt; v2系のいくつかの機能は、設定ファイルに設定値がない状態を想定していません。<br>&gt; なので、使い方が間違っていると思います。<br>&gt; どこかのOSベンダー風に言うと「仕様」です。<br>&gt; 設定ファイルは、あらかじめ用意しておくのがベターです。<br><br>(1)の初回起動後すぐに[ファイル]-[サクラエディタの全終了]して設定ファイルを作成しておき、その後再起動して(2)～(4)を実施しても症状は再現しています。<br><br>&gt; 本家バイナリでも再現するようでしたら、<br>&gt; sourceforgeのバグレポートにあげると誰かが対応してくれると思います。<br>&gt; もか氏のところのアレはpreview版で本家とは別、らしいです。<br><br>現時点での本家バイナリでは再現しません。<br>本家の最近のソースに、もかさんのパッチを適用して手元でビルドしたバイナリで発生することは確認しています。<br><br>このパッチは本家の正規パッチ投稿場所（PatchUnicode）へも投稿されているようですので、正式取り込みが実施される前に修正していただければ、と思っています。</div></section>
+    <ul><li><section><h1 id=8205>
+    <span class="no">[8205]</span>
+    <a class="title" href="#8205">Re5:CSVモードで、Excel相当のデータの解釈をしてほしいです</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-11-05T19:44:01">2016年11月05日 19:44</time></h1>
+    <div class="body">▼ LR4さん<br>&gt; 少々、言葉足らずだったようで申し訳ありません。<br><br>コメントしてといて放置もアレなので再現確認してみました。<br>クリッカブルURLのためのカーソル変更判定の中から<br>もか氏追加のコードが呼ばれていて、そこでハングしてますね。<br><br>sakura_core/doc/layout/CLayoutMgr.cpp<br><br>1019行目で終了条件に誤った値を設定しているのが原因。<br>const CLogicXInt nEnd = nDataLen + pcLayout-&gt;GetLogicOffset();<br><br>1021行目の↓の終了条件を満たさず、無限ループ（応答なし）。<br>for( ; i &lt; nEnd; scan.Next(), i = scan.GetPos() )<br><br>とりあえず↓のようにしてビルドすれば「応答なし」は解消します。<br>const CLogicXInt nEnd = nDataLen;// + pcLayout-&gt;GetLogicOffset();<br><br><br>ソースにパッチを適用してビルドできるってことは開発系の人かと思います。<br>よければパッチ投稿してあげてください。<br>私はsakura開発チームの中の人じゃありませんので。<br><br>追記：<br>つか、中の人お願いします。</div></section>
+    <ul><li><section><h1 id=8208>
+    <span class="no">[8208]</span>
+    <a class="title" href="#8208">Re6:CSVモードで、Excel相当のデータの解釈をしてほしいです</a>
+    <span class="author">もか</span>
+    <time datetime="2016-11-07T02:56:22">2016年11月07日 02:56</time></h1>
+    <div class="body">お二方、ありがとうございます。<br>本家提出パッチおよびサンプルバイナリ更新しました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

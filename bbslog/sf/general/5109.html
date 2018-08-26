@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>タブが消える</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5109</span>
+    <a class="title" href="5109.html#5109">タブが消える</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5124</span>
+    <a class="title" href="5109.html#5124">Re:タブが消える</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5150</span>
+    <a class="title" href="5109.html#5150">Re2:タブが消える</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5109>
+    <span class="no">[5109]</span>
+    <a class="title" href="#5109">タブが消える</a>
+    <span class="author">too</span>
+    <time datetime="2006-03-19T21:10:57">2006年03月19日 21:10</time></h1>
+    <div class="body">Ver 1.5.9.91betaにて発生した現象です。(たぶんバージョンはあまり関係ないような気がしますが)<br>タブ表示(まとめる)、タスクトレイを使わない、と言う設定の時、<br>エクスプローラで2つのファイルを選択し、右クリックメニューから<br>「SAKURAで開く」を選んで開いた場合に発生しました。<br><br>開いた2つのファイルのうち、片方のタブを選択すると、<br>タブ自体の表示が消えました。(タブ表示OFFのような表示)<br>ウィンドウメニューから再度他方のファイルをアクティブにすると<br>タブは表示されます。<br>現状、何度やっても発生します。<br><br>iniファイルをリネームして初期設定からタブの表示とタスクトレイの設定だけ<br>しましたが、その状態では発生しません。<br><br>問題が発生するiniファイルは強調キーワードやファイル別設定等追加していて、<br>ある程度サイズが大きくなっていたので、ほぼ同時に起動される際に、<br>その読み込みの競合とか何か問題が起きてる？とか推測してみましたがどうでしょう。</div></section>
+    <ul><li><section><h1 id=5124>
+    <span class="no">[5124]</span>
+    <a class="title" href="#5124">Re:タブが消える</a>
+    <span class="author">too</span>
+    <time datetime="2006-03-27T21:45:19">2006年03月27日 21:45</time></h1>
+    <div class="body">この現象ですが、CPUのHyperThreading機能が有効なときに出る気がします。<br>HyperThreadingを無効にして同じように2ファイルを同時に開くのを何度か試しても起こりませんでした。<br>HyperThreadingを有効にしておくと、何度やっても大抵起こります。(100%ではないですが)</div></section>
+    <ul><li><section><h1 id=5150>
+    <span class="no">[5150]</span>
+    <a class="title" href="#5150">Re2:タブが消える</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-04-05T20:32:39">2006年04月05日 20:32</time></h1>
+    <div class="body">再現確認できたので、修正パッチを作成しました。<br>これでたぶん解決へ向かうんじゃないかと思います。<br><br>保管場所: SourceForge Patches "タブが消える"<br>パッチ形式: TortoiseSVN<br>ベース: sakura/trunk#956<br><br>・iniファイルのサイズが大きいと起きる<br>・HyperThreading有効だと起きる<br>といった情報が役に立ちました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

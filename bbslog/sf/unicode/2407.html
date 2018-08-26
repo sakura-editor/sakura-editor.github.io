@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CSV/TSVパース時にダブルクォートに囲まれた区切り文字でも列が区切られてしまう</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2407</span>
+    <a class="title" href="2407.html#2407">CSV/TSVパース時にダブルクォートに囲まれた区切り文字でも列が区切られてしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2408</span>
+    <a class="title" href="2407.html#2408">Re:CSV/TSVパース時にダブルクォートに囲まれた区切り文字でも列が区切られてしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2409</span>
+    <a class="title" href="2407.html#2409">Re2:CSV/TSVパース時にダブルクォートに囲まれた区切り文字でも列が区切られてしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2413</span>
+    <a class="title" href="2407.html#2413">Re3:CSV/TSVパース時にダブルクォートに囲まれた区切り文字でも列が区切られてしまう</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2407>
+    <span class="no">[2407]</span>
+    <a class="title" href="#2407">CSV/TSVパース時にダブルクォートに囲まれた区切り文字でも列が区切られてしまう</a>
+    <span class="author">soappp</span>
+    <time datetime="2017-08-17T00:12:38">2017年08月17日 00:12</time></h1>
+    <div class="body">こんにちは。サクラエディタを使わせていただいております。<br>この度、表題の事象を確認いたしましたので、ご報告いたします。<br>確認したバージョンは 2.3.2.0、使用OSは Windows 7 Pro です。<br><br>●再現手順<br>・.csv と紐付けたタイプ別設定を用意<br>・当該タイプ別設定の [レイアウト] で [CSV] を選択<br>・以下のような内容のCSVファイルを作成<br>　　"HOGE","FOO,BAR","Rock""n""Roll"<br>　　h,fb,rr<br>・当該CSVファイルをサクラエディタで開く<br>　→"FOO,BAR" の「,」は、通常の文字として扱われるべきだが、区切り文字として扱われてしまう。<br>　　つまり、「rr」が「BAR」と同じ桁位置から始まってしまう。<br><br>●補足<br>・CSVのフォーマットは様々なものが乱立しておりますが、カンマやダブルクォートの扱いは、RFC4180に準じるのがよいのではないかと個人的に考えています。<br>・TSVについても同様に、ダブルクォートに囲まれたタブ文字は通常の文字として扱われるのが自然だと考えています。</div></section>
+    <ul><li><section><h1 id=2408>
+    <span class="no">[2408]</span>
+    <a class="title" href="#2408">Re:CSV/TSVパース時にダブルクォートに囲まれた区切り文字でも列が区切られてしまう</a>
+    <span class="author">AC</span>
+    <time datetime="2017-08-17T21:20:43">2017年08月17日 21:20</time></h1>
+    <div class="body">それらしいパッチはあるようです。<br><br>Sakura Editor / PatchUnicode / #1052 CSVのカンマのエスケープ対応<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1052/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1052/<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=2409>
+    <span class="no">[2409]</span>
+    <a class="title" href="#2409">Re2:CSV/TSVパース時にダブルクォートに囲まれた区切り文字でも列が区切られてしまう</a>
+    <span class="author">soappp</span>
+    <time datetime="2017-08-19T02:17:23">2017年08月19日 02:17</time></h1>
+    <div class="body">▼ ACさん<br>&gt; それらしいパッチはあるようです。<br>&gt; <br>&gt; Sakura Editor / PatchUnicode / #1052 CSVのカンマのエスケープ対応<br>&gt; <a href=https://sourceforge.net/p/sakura-editor/patchunicode/1052/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1052/<wbr></nobr></a><br><br>情報ありがとうございます。<br>パッチが作成されたものの、取り込まれてはおらず、取り込まれていない理由も不明、という状況なのでしょうか。。</div></section>
+    <ul><li><section><h1 id=2413>
+    <span class="no">[2413]</span>
+    <a class="title" href="#2413">Re3:CSV/TSVパース時にダブルクォートに囲まれた区切り文字でも列が区切られてしまう</a>
+    <span class="author">berryzplus</span>
+    <time datetime="2017-08-26T16:39:40">2017年08月26日 16:39</time></h1>
+    <div class="body">▼ soapppさん<br>&gt; ▼ ACさん<br>&gt; &gt; それらしいパッチはあるようです。<br>&gt; &gt; <br>&gt; &gt; Sakura Editor / PatchUnicode / #1052 CSVのカンマのエスケープ対応<br>&gt; &gt; <a href=https://sourceforge.net/p/sakura-editor/patchunicode/1052/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1052/<wbr></nobr></a><br>&gt; <br>&gt; 情報ありがとうございます。<br>&gt; パッチが作成されたものの、取り込まれてはおらず、取り込まれていない理由も不明、という状況なのでしょうか。。<br><br>パッチにぼくの名前が入っていたので補足コメントします。<br>（ばぼ=berryzplusです)<br><br>ぼく自身、パッチを投稿した覚えはないんですが、<br>前に掲示板で「もかさんところの私家版が落ちる」という話題があって原因を調べたことがあります。<br>たぶんそれで名前が入ってるんでしょう。。。<br><br>CSV/TSVモードは典型的に「えいやっ！」で作られた機能です。<br>「あったらいいな」を形にしたものなので、<br>存在価値はそれなりにあると思うんですが、<br>公的な国際規格には対応していませんし、<br>日本国内での主要な利用方法として想定される、<br>Excelとの連携も特に考慮されていません。<br><br>既知の問題はたくさんあるけど、<br>誰もまとめてはいないし、対応もできていないのが現状です。<br><br><br>&gt; 取り込まれていない理由も不明、という状況なのでしょうか。。<br><br>機能としての信頼性にかけるから、と言いたいところですが、<br>他のパッチが大量に積滞しているので優先度的に後回しになっているだけだと思います。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

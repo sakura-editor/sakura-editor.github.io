@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ステータスバーの文字がはみ出す件</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3437</span>
+    <a class="title" href="3437.html#3437">ステータスバーの文字がはみ出す件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3440</span>
+    <a class="title" href="3437.html#3440">Re:ステータスバーの文字がはみ出す件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3442</span>
+    <a class="title" href="3437.html#3442">Re2:ステータスバーの文字がはみ出す件</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3443</span>
+    <a class="title" href="3437.html#3443">Re2:ステータスバーの文字がはみ出す件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3445</span>
+    <a class="title" href="3437.html#3445">Re3:ステータスバーの文字がはみ出す件</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3446</span>
+    <a class="title" href="3437.html#3446">Re3:ステータスバーの文字がはみ出す件</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3437>
+    <span class="no">[3437]</span>
+    <a class="title" href="#3437">ステータスバーの文字がはみ出す件</a>
+    <span class="author">fotomo</span>
+    <time datetime="2004-02-23T09:30:09">2004年02月23日 09:30</time></h1>
+    <div class="body">2002年の12月にサクラエディタのソースをダウンロードさせて<br>頂き、改造して個人使用させて頂いております。<br><br>オリジナルサクラ側で起こる現象かどうかわかりませんが、<br><br>・デスクトップの右クリック⇒プロパティー⇒デザイン<br>　から、配色を「ハイコントラスト黒(特大フォント)」<br>　としたときに、ステータスバーにカーソル位置などの<br>　文字列が入りきらずにはみ出してしまいます。<br><br>　CEditWndクラスのOnSize関数内のGetTextExtentPoint32<br>　関数が正しい値を返してくれないらしいのですが・・・・。<br><br>　何かいい方法はありませんでしょうか？<br>　教えてください。</div></section>
+    <ul><li><section><h1 id=3440>
+    <span class="no">[3440]</span>
+    <a class="title" href="#3440">Re:ステータスバーの文字がはみ出す件</a>
+    <span class="author">yasu</span>
+    <time datetime="2004-02-25T20:56:58">2004年02月25日 20:56</time></h1>
+    <div class="body">WM_GETFONTで表示しているフォントを取得して、<br>hdcに選択させれば正確な値を返すと思います。<br>あと、カラム幅計算用の文字列の<br>"SJIS  "を"Unicode"にしておいた方が良いかも。<br>// CEditWnd.cpp 3283行辺り<br>hdc = ::GetDC( m_hwndStatusBar );<br>HFONT hFont = (HFONT)::SendMessage(m_hwndStatusBar, WM_GETFONT, 0, 0);<br>if (hFont != NULL)<br>{<br>    hFont = (HFONT)::SelectObject(hdc, hFont);<br>}<br>...<br>// 使用後<br>if (hFont != NULL)<br>{<br>    ::SelectObject(hdc, hFont);<br>}<br>::ReleaseDC( m_hwndStatusBar, hdc );</div></section>
+    <ul><li><section><h1 id=3442>
+    <span class="no">[3442]</span>
+    <a class="title" href="#3442">Re2:ステータスバーの文字がはみ出す件</a>
+    <span class="author">fotomo</span>
+    <time datetime="2004-02-26T19:25:23">2004年02月26日 19:25</time></h1>
+    <div class="body">▼ yasuさん<br>&gt; WM_GETFONTで表示しているフォントを取得して、<br>&gt; hdcに選択させれば正確な値を返すと思います。<br>&gt; あと、カラム幅計算用の文字列の<br>&gt; "SJIS  "を"Unicode"にしておいた方が良いかも。<br>&gt; // CEditWnd.cpp 3283行辺り<br>&gt; hdc = ::GetDC( m_hwndStatusBar );<br>&gt; HFONT hFont = (HFONT)::SendMessage(m_hwndStatusBar, WM_GETFONT, 0, 0);<br>&gt; if (hFont != NULL)<br>&gt; {<br>&gt;     hFont = (HFONT)::SelectObject(hdc, hFont);<br>&gt; }<br>&gt; ...<br>&gt; // 使用後<br>&gt; if (hFont != NULL)<br>&gt; {<br>&gt;     ::SelectObject(hdc, hFont);<br>&gt; }<br>&gt; ::ReleaseDC( m_hwndStatusBar, hdc );<br>ありがとうございます。<br>早速試してみます。<br>m(_ _)m;</div></section>
+    </li><li><section><h1 id=3443>
+    <span class="no">[3443]</span>
+    <a class="title" href="#3443">Re2:ステータスバーの文字がはみ出す件</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-02-28T13:29:51">2004年02月28日 13:29</time></h1>
+    <div class="body">&gt;WM_GETFONTで表示しているフォントを取得して、<br>&gt;hdcに選択させれば正確な値を返すと思います。<br>普通の環境で試してみましたが，逆にどのセルも最後1文字ずつ足りなくなってしまいました．<br>(´Д⊂グスン なんでだろう？<br></div></section>
+    <ul><li><section><h1 id=3445>
+    <span class="no">[3445]</span>
+    <a class="title" href="#3445">Re3:ステータスバーの文字がはみ出す件</a>
+    <span class="author">yasu</span>
+    <time datetime="2004-02-28T22:42:01">2004年02月28日 22:42</time></h1>
+    <div class="body">#投稿許可サイズオーバーが出たので本文は別口で<br><br>--- ssrc_2004-02-15\sakura_core\CEditWnd.cpp&#9;Sun Feb 15 14:32:43 2004<br>+++ CEditWnd.cpp&#9;Sat Feb 28 20:07:44 2004<br>@@ -3272,22 +3272,31 @@<br> &#9;&#9;//&#9;From Here<br> &#9;&#9;int&#9;&#9;&#9;nStArr[8];<br> &#9;&#9;// 2003.08.26 Moca CR0LF0廃止に従い、適当に調整<br>-&#9;&#9;const char*&#9;pszLabel[7] = { "", "99999行 9999列", "CRLF ", "FFFFFFFF", "SJIS  ", "REC", "上書" };&#9;//Oct. 30, 2000 JEPRO 千万行も要らん<br>+&#9;&#9;// 2004-02-28 yasu 文字列を出力時の書式に合わせる<br>+&#9;&#9;const char*&#9;pszLabel[7] = { "", "999999 行 99999 列", "CRLF", "0000", "Unicode", "REC", "上書" };&#9;//Oct. 30, 2000 JEPRO 千万行も要らん<br> &#9;&#9;int&#9;&#9;&#9;nStArrNum = 7;<br> &#9;&#9;//&#9;To Here<br>-&#9;&#9;int&#9;&#9;&#9;nAllWidth;<br>+&#9;&#9;int&#9;&#9;&#9;nAllWidth = rc.right - rc.left;<br>+&#9;&#9;int&#9;&#9;&#9;nSbxWidth = ::GetSystemMetrics(SM_CXVSCROLL) + ::GetSystemMetrics(SM_CXEDGE); // サイズボックスの幅<br>+&#9;&#9;int&#9;&#9;&#9;nBdrWidth = ::GetSystemMetrics(SM_CXSIZEFRAME) + ::GetSystemMetrics(SM_CXEDGE) * 2; // 境界の幅<br> &#9;&#9;SIZE&#9;&#9;sz;<br> &#9;&#9;HDC&#9;&#9;&#9;hdc;<br> &#9;&#9;int&#9;&#9;&#9;i;<br>-&#9;&#9;nAllWidth = rc.right - rc.left;<br>+&#9;&#9;// 2004-02-28 yasu<br>+&#9;&#9;// 正確な幅を計算するために、表示フォントを取得してhdcに選択させる。<br> &#9;&#9;hdc = ::GetDC( m_hwndStatusBar );<br>+&#9;&#9;HFONT hFont = (HFONT)::SendMessage(m_hwndStatusBar, WM_GETFONT, 0, 0);<br>+&#9;&#9;if (hFont != NULL)<br>+&#9;&#9;{<br>+&#9;&#9;&#9;hFont = (HFONT)::SelectObject(hdc, hFont);<br>+&#9;&#9;}<br> &#9;&#9;nStArr[nStArrNum - 1] = nAllWidth;<br> &#9;&#9;if( wParam != SIZE_MAXIMIZED ){<br>-&#9;&#9;&#9;nStArr[nStArrNum - 1] -= 17; // 2003.08.26 Moca Lunaで「挿入」が「挿」になるので、16を17にした<br>+&#9;&#9;&#9;nStArr[nStArrNum - 1] -= nSbxWidth;<br> &#9;&#9;}<br> &#9;&#9;for( i = nStArrNum - 1; i &gt; 0; i-- ){<br> &#9;&#9;&#9;::GetTextExtentPoint32( hdc, pszLabel[i], lstrlen( pszLabel[i] ), &amp;sz );<br>-&#9;&#9;&#9;nStArr[i - 1] = nStArr[i] - ( sz.cx + ::GetSystemMetrics( SM_CXEDGE ) + 1 ); // 2003.08.26 Moca Luna向けに+1 してみる<br>+&#9;&#9;&#9;nStArr[i - 1] = nStArr[i] - ( sz.cx + nBdrWidth );<br> &#9;&#9;}<br> <br> &#9;&#9;//&#9;Nov. 8, 2003 genta<br>@@ -3301,6 +3310,10 @@<br> &#9;&#9;// nStArr[0] += 16;<br> <br> &#9;&#9;::SendMessage( m_hwndStatusBar, SB_SETPARTS, nStArrNum, (LPARAM) (LPINT)nStArr );<br>+&#9;&#9;if (hFont != NULL)<br>+&#9;&#9;{<br>+&#9;&#9;&#9;::SelectObject(hdc, hFont);<br>+&#9;&#9;}<br> &#9;&#9;::ReleaseDC( m_hwndStatusBar, hdc );<br> <br> <br></div></section>
+    </li><li><section><h1 id=3446>
+    <span class="no">[3446]</span>
+    <a class="title" href="#3446">Re3:ステータスバーの文字がはみ出す件</a>
+    <span class="author">yasu</span>
+    <time datetime="2004-02-28T22:45:07">2004年02月28日 22:45</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 普通の環境で試してみましたが，逆にどのセルも最後1文字ずつ足りなくなってしまいました．<br>&gt; (´Д⊂グスン なんでだろう？<br><br>『行桁』の部分は出力時の書式が"%6d 行 %5d 桁"になってるため、<br>今の文字列で正確な幅を出すと、はみ出るみたいです。<br>計算用文字列を変更すれば正しく表示されると思います。<br>他の部分はサイズボックスや境界部分の幅が影響してると思われるので、<br>GetSystemMetrics()で正確な幅を計算すれば切れないはずです。<br><br>上の差分で、うちではうまく表示されてます。（等幅フォントも可）<br>Win2kSP4で確認。XPでは未確認。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

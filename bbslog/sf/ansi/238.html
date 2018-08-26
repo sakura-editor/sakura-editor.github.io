@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CreateTaskbar対応</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">238</span>
+    <a class="title" href="238.html#238">CreateTaskbar対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">243</span>
+    <a class="title" href="238.html#243">Re: CreateTaskbar対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">248</span>
+    <a class="title" href="238.html#248">Re2: CreateTaskbar対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">250</span>
+    <a class="title" href="238.html#250">Re3: CreateTaskbar対応</a></div>
+    </li><li><div class="list-title">
+    <span class="no">252</span>
+    <a class="title" href="238.html#252">Re3: CreateTaskbar対応</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=238>
+    <span class="no">[238]</span>
+    <a class="title" href="#238">CreateTaskbar対応</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-04-15T10:26:58">2001年04月15日 10:26</time></h1>
+    <div class="body">こんにちは。<br>Windowsを使っていると、ときどきExplorerが落ちることがあります。<br>このとき、Explorer自体は自動的に復帰しますが、タスクトレイにあったアイコンのほとんどがなくなってしまいます。<br><br>タスクバーが再作成されたときにアイコンを再登録するための修正を行い、eGroupに登録しました。元のファイルはじぇぷろさんのCEditApp_etc(4/5)です。<br>VC6を持っていないのでBCCでのコンパイル確認しかしていませんがこれからもよろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=243>
+    <span class="no">[243]</span>
+    <a class="title" href="#243">Re: CreateTaskbar対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-17T11:15:13">2001年04月17日 11:15</time></h1>
+    <div class="body">このメッセージはRegisterWindowMessageにて登録しないといけないものです。名前に対してシステムが値を割り当てるので、今後も同じ値をとり続けるという保証がありません。<br>RegisterWindowMessage(TEXT("TaskbarCreat<br>ed"));<br><br><a href=http://msdn.microsoft.com/library/psdk/shellcc/shell/Shell_Int/Taskbar.htm target=_top>http://msdn.microsoft.com/library/psdk/s<br>hellcc/shell/Shell_Int/Taskbar.htm</a><br></div></section>
+    <ul><li><section><h1 id=248>
+    <span class="no">[248]</span>
+    <a class="title" href="#248">Re2: CreateTaskbar対応</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-04-19T23:27:55">2001年04月19日 23:27</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 今後も同じ値をとり続けるという保証がありません。<br>そうだったのですか。ごめんなさい。<br>同じOS＋マシンでもインストールしなおすと変わることもある」ということでしょうか。</div></section>
+    <ul><li><section><h1 id=250>
+    <span class="no">[250]</span>
+    <a class="title" href="#250">Re3: CreateTaskbar対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-19T23:33:56">2001年04月19日 23:33</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; 同じOS＋マシンでもインストールしなおすと変わることもある」ということでしょうか。<br>Explorerが最初に起動するんだろうから，変わらないんじゃないでしょうか．ただ今後の保証はされないでしょう．<br><br>RegisterWindowMessageをたくさん発行するプログラムを自動起動に登録したらどうなるかな？</div></section>
+    </li><li><section><h1 id=252>
+    <span class="no">[252]</span>
+    <a class="title" href="#252">Re3: CreateTaskbar対応</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-04-20T12:57:19">2001年04月20日 12:57</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; 同じOS＋マシンでもインストールしなおすと変わることもある」ということでしょうか。<br>&gt; 同じOS＋マシンでもインストールしなおすと変わることもあ<br>&gt; る」ということでしょうか。<br><br>RegisterWindowMessage の値が保証されているのは<br>Windowsのセッションの起動時から終了時の間だけと<br>理解してたのですが...<br><br><a href=http://msdn.microsoft.com/library/psdk/winui/messques_10h1.htm target=_top>http://msdn.microsoft.com/library/psdk/w<br>inui/messques_10h1.htm</a><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

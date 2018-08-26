@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>外部コマンド実行不具合</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3050</span>
+    <a class="title" href="3050.html#3050">外部コマンド実行不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3052</span>
+    <a class="title" href="3050.html#3052">Re: 外部コマンド実行不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3053</span>
+    <a class="title" href="3050.html#3053">Re2: 外部コマンド実行不具合</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3054</span>
+    <a class="title" href="3050.html#3054">外部コマンド実行の別の不具合</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3050>
+    <span class="no">[3050]</span>
+    <a class="title" href="#3050">外部コマンド実行不具合</a>
+    <span class="author">しゃ</span>
+    <time datetime="2003-07-01T11:36:43">2003年07月01日 11:36</time></h1>
+    <div class="body">「ツール」の「外部コマンド実行」で、「標準出力を得る」を<br>チェックして実行しますが、<br>アプリケーションで、Sleep()のが入ったアプリケーションの<br>標準出力が得られません。<br><br>例えば、<br>for ( int i = 0 ; i &lt; 20 ; i++ )<br>　　printf("test %d\n", i);<br><br>のようなアプリケーションを実行するとOKですが、<br>for ( int i = 0 ; i &lt; 20 ; i++ ){<br>　　printf("test %d\n", i);<br>　　Sleep(1000);<br>}<br>ではダメです。<br></div></section>
+    <ul><li><section><h1 id=3052>
+    <span class="no">[3052]</span>
+    <a class="title" href="#3052">Re: 外部コマンド実行不具合</a>
+    <span class="author">もか</span>
+    <time datetime="2003-07-02T11:09:25">2003年07月02日 11:09</time></h1>
+    <div class="body">▼しゃさん<br>&gt;「ツール」の「外部コマンド実行」で、「標準出力を得る」を<br>&gt;チェックして実行しますが、<br>&gt;アプリケーションで、Sleep()のが入ったアプリケーションの<br>&gt;標準出力が得られません。<br>&gt;<br>&gt;例えば、<br>&gt;for ( int i = 0 ; i &lt; 20 ; i++ )<br>&gt;　　printf("test %d\n", i);<br>&gt;<br>&gt;のようなアプリケーションを実行するとOKですが、<br>&gt;for ( int i = 0 ; i &lt; 20 ; i++ ){<br>&gt;　　printf("test %d\n", i);<br>&gt;　　Sleep(1000);<br>&gt;}<br>&gt;ではダメです。<br>どちらの場合も、私の環境ではアプリケーションが終了されてからしっかり表示されます。<br>これは、stdoutがバッファリングされているためです。<br>即座に表示したい場合は、バッファリングをやめるか、下記のようにfflushすれば即座に表示されます。<br>#こんな風にfflushを使っていいのか実は知らないんですけど(^_^;<br>&gt;for ( int i = 0 ; i &lt; 20 ; i++ ){<br>&gt;　　printf("test %d\n", i);<br>　 　fflush( stdout );<br>&gt;　　Sleep(1000);<br>&gt;}<br><br>以下、余談です。気にしないでください。<br>Win32のハンドル側でバッファリングさせない・可変長にする方法がわからないです。知ってる方が改良してくれるとありがたいです。<br>そういえば、CRLFがCRとLFに分断されて出力されます。(サクラのバグ）<br>さらに、GUIアプリケーションでも非表示のまま実行はひどい。<br>GUIアプリケーションの標準出力を捕まえられるから、printfを使ったデバッガとして使えるのに...<br>と思って表示するようにしてみたら、即座に表示されないから、使いにくい。<br></div></section>
+    <ul><li><section><h1 id=3053>
+    <span class="no">[3053]</span>
+    <a class="title" href="#3053">Re2: 外部コマンド実行不具合</a>
+    <span class="author">しゃ</span>
+    <time datetime="2003-07-02T17:29:31">2003年07月02日 17:29</time></h1>
+    <div class="body">▼ もかさん<br>&gt; どちらの場合も、私の環境ではアプリケーションが終了されてからしっかり表示されます。<br>すみません。私のも終了後は表示されてます。<br>i &lt; 20 としたのは適当で実際は長い間終わらないプログラム<br>を想定してようするに「リアルタイム」に表示しない。<br>という意味でした。<br><br>&gt; GUIアプリケーションの標準出力を捕まえられるから、printfを使ったデバッガとして使えるのに...<br>&gt; と思って表示するようにしてみたら、即座に表示されないから、使いにくい。<br><br>そういう使い方もできるんでしたね。昔のTraceWinのような。。。<br>これは使えると便利ですね。<br></div></section>
+    </li><li><section><h1 id=3054>
+    <span class="no">[3054]</span>
+    <a class="title" href="#3054">外部コマンド実行の別の不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-07-02T22:29:28">2003年07月02日 22:29</time></h1>
+    <div class="body">ふむふむと思い試しつつソースを見てみたところ1つ問題発見．<br>プロセスを呼びだした側が無限ループで出力を監視しているので，実行中にCPUを100%使い切っています．<br>途中にあるWaitForSingleObjectの待ち時間を200msecくらい入れてみたらまともになりましたが．<br><br>&gt;GUIアプリケーションの標準出力を捕まえられるから、printfを使ったデバッガとして使えるのに... <br>&gt;と思って表示するようにしてみたら、即座に表示されないから、使いにくい。<br>DebugOutputStringではだめなの？<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

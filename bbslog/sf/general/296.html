@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>TeXで使う場合問題になる点など2.</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">296</span>
+    <a class="title" href="296.html#296">TeXで使う場合問題になる点など2.</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=296>
+    <span class="no">[296]</span>
+    <a class="title" href="#296">TeXで使う場合問題になる点など2.</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-03-28T19:07:31">2001年03月28日 19:07</time></h1>
+    <div class="body">TeXでコンパイルエラーがあったとき、[e]キーを押せばエラー行にジャンプする機能がある。そのためにはautoexec.batなどに環境変数TEXEDITに、編集で使うエディタのタグジャンプを記述しておく。sakuraの場合は例えば<br> set TEXEDIT="C:\Program Files\SakuraEd\sakura.exe" -Y=%%d %%s<br>%dは行数, %sはファイル名が入る変数。バッチを実行したときに%記号が一つ取れるため、%をダブって書く。なおこれはバッチで書くときだけの注意ではなく、DOSプロンプトで直接setコマンドを叩いて設定するときも実は%をダブらせないとダメ。(この点がFOR %a in の%aの書き方と違う。)さもないと%d %sのうちの%d %が環境変数と解釈されてしまう。<br>さて、一見これでうまく環境変数TEXEDITが設定されたと思いきや、実は設定されていない。DOSプロンプトで直接set ...を打ってみればわかるが、構文エラーとなる。<br>(原因) オプションスィッチに使われている'='が set xxx=の'='と見なされるから。<br>(対策) オプションスィッチに'='を使わないようにする。少なくとも使わない指定もできるようにする。<br>(例1）省く。-Y%%d<br>(例2）:にする。-Y:%%d<br>起動オプションに=を使うのはsetコマンドとの絡みで、あまりいい仕様とはいえない。起動オプションを使っているユーザは少ないだろうから、個人的には指定に=を使わない仕様に変更したい。しかし互換性の問題で誰かに言われそうなので、一歩譲って、なし(一般にこれが多い)や:でもいいように追加したい。しかしそうするとほとんど同じコードがずらーーっと増えるのであんまり・・・　(やっぱり仕様変更したいな)<br>とりあえずTeXのために最低限必要なYオプションだけ、Y=の他にY:でもOKとなるように追加した。<br> set TEXEDIT="C:\Program Files\SakuraEd\sakura.exe" -Y:%%d %%s<br>これで環境変数が設定可能となった。</div></section>
+    </li></ul></body></html>

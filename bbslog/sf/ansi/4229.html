@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>起動時にウィンドウ幅に合わせる動作</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">4229</span>
+    <a class="title" href="4229.html#4229">起動時にウィンドウ幅に合わせる動作</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=4229>
+    <span class="no">[4229]</span>
+    <a class="title" href="#4229">起動時にウィンドウ幅に合わせる動作</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-01-25T00:54:19">2006年01月25日 00:54</time></h1>
+    <div class="body">お気楽に約束したままとなっている起動時に折り返し幅をウィンドウにあわせる機能ですが，思ったより簡単では無さそうです．<br>現在はタイプ別設定の切り替え時にレイアウトの再構築を行うのですが，その後横幅を変更するときに再レイアウトすると一回目が無駄になるのでタイプ別設定時はレイアウトの再構築をしないようにしてみました．<br><br>ところが，ウィンドウの横の文字数は文字の間隔に依存するのでタイプ別設定が決まらないとわからない，幅が決まらないとレイアウトが出来ないとなるのですが，ビューの初期化部分にあるカーソルの移動処理で物理行と論理行の変換を行っていて，そのときにレイアウトが正しくないとアプリケーションエラーになってしまいます．<br><br>ビューの初期化処理を恣意的に2回に分けるとかするのもちょっと...<br></div></section>
+    </li></ul></body></html>

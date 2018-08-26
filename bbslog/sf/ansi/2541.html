@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>(無題)</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2541</span>
+    <a class="title" href="2541.html#2541">(無題)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2543</span>
+    <a class="title" href="2541.html#2543">Re: (無題)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2549</span>
+    <a class="title" href="2541.html#2549">Re2: (無題)</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2541>
+    <span class="no">[2541]</span>
+    <a class="title" href="#2541">(無題)</a>
+    <span class="author">みく</span>
+    <time datetime="2003-01-13T13:38:23">2003年01月13日 13:38</time></h1>
+    <div class="body"><br>etc_uty.cpp:2107行あたり<br>&#9;/* 検索系 */<br>&#9;case F_SEARCH_DIALOG:&#9;return HLP000059;&#9;//検索(単語検索ダイアログ)<br>+&#9;case F_SEARCH_BOX:&#9;return HLP000059;&#9;//検索(ボックス)<br>&#9;case F_SEARCH_NEXT:&#9;return HLP000061;&#9;//次を検索<br><br><br>CEditView_Command.cpp:435行あたり<br>&#9;/* 検索系 */<br>&#9;case F_SEARCH_DIALOG:&#9;Command_SEARCH_DIALOG()<br>;break;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;//検索(単語検索ダイアログ)<br>+&#9;case F_SEARCH_BOX:&#9;Command_SEARCH_DIALOG();br<br>eak;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;//検索(単語検索ダイアログ)<br>&#9;case F_SEARCH_NEXT:&#9;Command_SEARCH_NEXT( bRedraw, (HWND)lparam1, (const char*)lparam2 );break;&#9;//次を検索<br></div></section>
+    <ul><li><section><h1 id=2543>
+    <span class="no">[2543]</span>
+    <a class="title" href="#2543">Re: (無題)</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-01-15T01:08:09">2003年01月15日 01:08</time></h1>
+    <div class="body">▼みくさん<br>&gt;etc_uty.cpp:2107行あたり<br>こっちはわかったけど，<br><br>&gt;CEditView_Command.cpp:435行あたり<br>&gt;+&#9;case F_SEARCH_BOX:&#9;Command_SEARCH_DIALOG();br<br>eak;<br>これは何？<br></div></section>
+    <ul><li><section><h1 id=2549>
+    <span class="no">[2549]</span>
+    <a class="title" href="#2549">Re2: (無題)</a>
+    <span class="author">みく</span>
+    <time datetime="2003-01-17T21:19:57">2003年01月17日 21:19</time></h1>
+    <div class="body"><br>&gt;&gt;CEditView_Command.cpp:435行あたり<br>&gt;&gt;+&#9;case F_SEARCH_BOX:&#9;Command_SEARCH_DIALOG();br<br>&gt;eak;<br>&gt;これは何？<br><br>検索ボックスをカスタムメニューに入れてしまった場合は、<br>検索ダイアログと同じ動作に...<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

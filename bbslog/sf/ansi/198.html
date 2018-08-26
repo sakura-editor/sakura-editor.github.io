@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ListViewは行選択じゃなきゃ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">198</span>
+    <a class="title" href="198.html#198">ListViewは行選択じゃなきゃ</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=198>
+    <span class="no">[198]</span>
+    <a class="title" href="#198">ListViewは行選択じゃなきゃ</a>
+    <span class="author">みく</span>
+    <time datetime="2001-03-19T21:14:49">2001年03月19日 21:14</time></h1>
+    <div class="body"><br>という方のために、ちょっと修正してみました。<br>しょうもない修正なので掲示板に。<br>好き嫌いがあると思うので、必要な方だけどうぞ。<br><br>/*<br> * CDlgFuncList.cpp<br> * <br> * ListView行選択<br> *<br> * ListViewが行選択じゃなきゃやだ！という人は、以下のように修正します。<br> * USE_LV_LINE_SELECT をコンパイルオプションに定義するか、コメントアウト<br> * すると有効になります。<br> *<br> * 2001/03/19 by MIK<br> */<br><br>163: //&#9;&#9;&#9;break;<br>164:&#9;&#9;}<br>165: &#9;&#9;::DestroyWindow( hwndTree );<br>+++:#ifdef USE_LV_LINE_SELECT<br>+++:&#9;&#9;{&#9;//@@@ 2001.03.19 Start by MIK<br>+++:&#9;&#9;&#9;//ListViewは行選択じゃなきゃやだ！<br>+++:&#9;&#9;&#9;long lngStyle;<br>+++:&#9;&#9;&#9;lngStyle = ::SendMessage( hwndList, LVM_GETEXTENDEDLISTVIEWSTYLE, 0, 0 );<br>+++:&#9;&#9;&#9;lngStyle |= LVS_EX_FULLROWSELECT;<br>+++:&#9;&#9;&#9;::SendMessage( hwndList, LVM_SETEXTENDEDLISTVIEWSTYLE, 0, lngStyle );<br>+++:&#9;&#9;}&#9;//@@@ 2001.03.19 End by MIK<br>+++:#endif<br>166: &#9;&#9;::EnableWindow( ::GetDlgItem( m_hWnd , IDC_BUTTON_COPY ), TRUE );<br>167: &#9;&#9;nFuncLineOld = 0;<br>168: &#9;&#9;bSelected = FALSE;<br></div></section>
+    </li></ul></body></html>

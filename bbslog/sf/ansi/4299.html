@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>SUCCEEDEDマクロ使用状況</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">4299</span>
+    <a class="title" href="4299.html#4299">SUCCEEDEDマクロ使用状況</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=4299>
+    <span class="no">[4299]</span>
+    <a class="title" href="#4299">SUCCEEDEDマクロ使用状況</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-03-17T13:38:41">2006年03月17日 13:38</time></h1>
+    <div class="body">&gt;&gt;data:5101 のSUCCEEDEDマクロの使用状況を調べてみました．<br><br>[etc_uty.cpp] ResolveShortcutLink<br>pIShellLink-&gt;GetPath()でパスを取得できなかったときS_OK以外の値が返ります．<br>ただ，その場合は結果に空文字列が返され，それをその後チェックしているので特に実害はないと思います．<br><br>[CEditWnd.cpp] CEditWnd::OnMouseMove<br>IShellFolder::ParseDisplayName()はS_OKでなければエラーを返すので問題なし．<br><br><br>[CDropTarget.cpp] CDropTarget::Revoke_DropTarget<br>RevokeDragDrop() はS_OK以外はエラー値なので問題なし．<br><br>[CDropTarget.cpp] CDataObject::DragDrop<br>得られたpdwEffectパラメータを戻り値として返していますが，エラーでない戻り値としてDRAGDROP_S_CANCELとDRAGDROP_S_DROPのケースがあって，pdwEffectはキャンセルされなかった場合のみ設定されるとあります．<br>キャンセルの場合に未初期化の不定な値が返される可能性があるように見えますが，実際他のウィンドウへDrag &amp; Dropしてキャンセルされた場合にはpdwEffectに0が設定されるようなので，実際のところこの問題は発生しないのかな？<br><br>DragDropを呼ぶのは1カ所だけで，成功時と失敗時の差は選択範囲をキャンセルするかどうかだけなので動作上の問題となることは無さそうです．<br></div></section>
+    </li></ul></body></html>

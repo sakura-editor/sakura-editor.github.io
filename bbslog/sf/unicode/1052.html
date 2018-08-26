@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) EOF表示が消える</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1052</span>
+    <a class="title" href="1052.html#1052">Commit報告(Fix) EOF表示が消える</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1053</span>
+    <a class="title" href="1052.html#1053">Re:Commit報告(Fix) EOF表示が消える</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1052>
+    <span class="no">[1052]</span>
+    <a class="title" href="#1052">Commit報告(Fix) EOF表示が消える</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-11-11T23:44:01">2009年11月11日 23:44</time></h1>
+    <div class="body">リビジョン：<br>　rev1679<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: 文書末を含む選択状態で文字列を貼り付けるとEOF表示が消えることがある<br>&gt;&gt;unicode:1049とは別件で、こちらはANSI版でも発生します。<br><br>■再現手順例<br>ABC↓<br>DEF[EOF]<br>の1行目を行選択してコピーし、<br>2行目を行選択して貼り付ける<br>と、<br>ABC↓<br>ABC↓<br>[EOF]<br>となることが期待されるが、<br>最終行の[EOF]が描画されない。</div></section>
+    <ul><li><section><h1 id=1053>
+    <span class="no">[1053]</span>
+    <a class="title" href="#1053">Re:Commit報告(Fix) EOF表示が消える</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-11-11T23:48:06">2009年11月11日 23:48</time></h1>
+    <div class="body">&gt; &gt;&gt;unicode:1049とは別件で、こちらはANSI版でも発生します。<br>ANSI版だと「画面キャッシュを使う」をONにしたほうが発生しやすいかも。</div></section>
+    </li></ul></li></ul></body></html>

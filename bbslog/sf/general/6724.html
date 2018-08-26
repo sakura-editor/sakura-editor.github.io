@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>文字コードの判定処理でエラーが発生しました</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6724</span>
+    <a class="title" href="6724.html#6724">文字コードの判定処理でエラーが発生しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6725</span>
+    <a class="title" href="6724.html#6725">Re:文字コードの判定処理でエラーが発生しました</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=6724>
+    <span class="no">[6724]</span>
+    <a class="title" href="#6724">文字コードの判定処理でエラーが発生しました</a>
+    <span class="author">SAMOAJIN</span>
+    <time datetime="2008-07-22T18:45:45">2008年07月22日 18:45</time></h1>
+    <div class="body"><br>非常に大きいファイルをサクラエディタで開こうとすると<br><br>「文字コードの判定処理でエラーが発生しました」<br><br>というエラーメッセージが表示されてオープンできません。<br>ファイルサイズは約2.3ギガです。<br><br>特に変わった文字コードは使用していないと思うのですが。<br>調べようにもファイルがオープンできないので調べられません。<br>サイズが大きいファイルを開こうとすると上記のような<br>エラーが発生するのでしょうか？<br>どなたか似たような経験あるかたいらっしゃいましたら<br>教えて下さい。<br>サクラエディタのバージョンは1.6.2.0です。<br><br></div></section>
+    <ul><li><section><h1 id=6725>
+    <span class="no">[6725]</span>
+    <a class="title" href="#6725">Re:文字コードの判定処理でエラーが発生しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-23T00:59:12">2008年07月23日 00:59</time></h1>
+    <div class="body">▼ SAMOAJINさん<br>該当部分のソースを確認してみました。<br>ファイルサイズが31bitで表現できるバイト数までしか扱えない関数を使っていましたので、現状では2GB以上のファイルは正常に扱えないようです。<br>そもそもサクラエディタは巨大なファイルのオープンクローズに凄く時間がかかってしまいますから、そのようなファイルは別のアプリケーションを使った方が良いと思います (^^;<br></div></section>
+    </li></ul></li></ul></body></html>

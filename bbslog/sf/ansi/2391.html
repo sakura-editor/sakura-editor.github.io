@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>WM_IME_CHARの受け入れ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2391</span>
+    <a class="title" href="2391.html#2391">WM_IME_CHARの受け入れ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2402</span>
+    <a class="title" href="2391.html#2402">Re: WM_IME_CHARの受け入れ</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2391>
+    <span class="no">[2391]</span>
+    <a class="title" href="#2391">WM_IME_CHARの受け入れ</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-04T02:00:08">2002年10月04日 02:00</time></h1>
+    <div class="body">WM_IME_CHARがウィンドウに投げられた場合，上書きモードではエディタに取り込まれますが挿入モードでは無視されます．というのは，挿入モードではWM_IME_COMPOSITIONで変換後の文字列を一括して取り込むようになっているからです．(多分性能向上とUndo対策)<br><br>WM_IME_CHARを取り込むと2重に取り込まれてしまうことになるのですが，WM_IME_COMPOSITIONでの取り込みをやめずにWM_IME_CHARでの2重取り込みを回避する方法はないでしょうか．<br></div></section>
+    <ul><li><section><h1 id=2402>
+    <span class="no">[2402]</span>
+    <a class="title" href="#2402">Re: WM_IME_CHARの受け入れ</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-06T01:32:12">2002年10月06日 01:32</time></h1>
+    <div class="body">WM_IME_CHARはとりあえず保留にして，WM_CHARで連続して来た2バイトがSJISなら漢字としてWM_IME_CHARと同じ経路で処理するようにしました．<br><br>で，初めにやってみたら上位と下位がひっくり返ってしまう．メッセージの到着順調べても上下の順で来るし，マニュアル見てもWM_IME_CHARは上がlead byte/下がtrail byteとなっていておかしいところはない．<br><br>散々悩んだあげくCEditView::Command_IME_CHARとWM_IME_CHARを処理しているところを見るとなんと上位と下位をひっくり返して渡してるじゃないですか．も～，混乱させるようなインターフェースにするなよ...ほとんど罠です．<br><br>どうやら，char*にキャストしてそのまま渡すためにこうしたようですが，混乱を招くだけなので CEditView::Command_IME_CHAR()の引数はWM_IME_CHARの引数と同じ形式(上位が1バイト目)に変えますね．<br></div></section>
+    </li></ul></li></ul></body></html>

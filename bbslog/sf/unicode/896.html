@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix) 保存で同一ファイルを2個開いた状態になる</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">896</span>
+    <a class="title" href="896.html#896">Commit報告:(Fix) 保存で同一ファイルを2個開いた状態になる</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=896>
+    <span class="no">[896]</span>
+    <a class="title" href="#896">Commit報告:(Fix) 保存で同一ファイルを2個開いた状態になる</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-04-12T00:28:07">2009年04月12日 00:28</time></h1>
+    <div class="body">リビジョン：<br>　rev1563<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: 他ウィンドウで開いているファイル名で名前を付けて保存すると同一ファイルを2個開いた状態になる<br>（排他制御なしの設定だと保存ができてこの状態になる）<br><br>ANSI版だと他ウィンドウのほうをアクティブにして自ウィンドウを「(無題)」にしていますが、UNICODE版では保存を抑止する（エラー表示）ようにしました。<br>「(無題)」にすると、名前を付けて保存の前へのUndoも可能にする方針（&gt;&gt;dev:5090, &gt;&gt;unicode:181）を崩すことになるので。</div></section>
+    </li></ul></body></html>

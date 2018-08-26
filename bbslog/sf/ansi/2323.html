@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>TAB幅と，区切り線の修正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2323</span>
+    <a class="title" href="2323.html#2323">TAB幅と，区切り線の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2324</span>
+    <a class="title" href="2323.html#2324">RE: TAB幅と，区切り線の修正</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2328</span>
+    <a class="title" href="2323.html#2328">TAB幅と，区切り線の修正 その2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2329</span>
+    <a class="title" href="2323.html#2329">Re: TAB幅と，区切り線の修正 その2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2334</span>
+    <a class="title" href="2323.html#2334">Re2: TAB幅と，区切り線の修正 その2</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2323>
+    <span class="no">[2323]</span>
+    <a class="title" href="#2323">TAB幅と，区切り線の修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-23T03:12:25">2002年09月23日 03:12</time></h1>
+    <div class="body">2002-09-21_tab.zip<br>* TAB幅を1～64まで1刻みで修正可能に．<br>* 行番号の右に隙間をあけたとき，縦棒が一番右に寄ってしまうのを数字の直後に来るようにした<br></div></section>
+    <ul><li><section><h1 id=2324>
+    <span class="no">[2324]</span>
+    <a class="title" href="#2324">RE: TAB幅と，区切り線の修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-23T03:16:46">2002年09月23日 03:16</time></h1>
+    <div class="body">TAB幅をファイル単位に変更可能か見てみたのですが，CLayoutMgrではタイプ別設定の値を内部にコピーしているのですが，CEditViewではCEditDoc経由でタイプ別設定の値を直接読み出していますので，一方だけ変えるとおかしくなります．<br><br>まずタイプ別設定から直接読んでいるところをCLayoutMgrから読むように変えて，その後でファイル単位の設定に着手する必要がありますね．<br></div></section>
+    </li><li><section><h1 id=2328>
+    <span class="no">[2328]</span>
+    <a class="title" href="#2328">TAB幅と，区切り線の修正 その2</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-23T21:17:50">2002年09月23日 21:17</time></h1>
+    <div class="body">2002-09-21_tab2.zip <br>&gt;* TAB幅を1～64まで1刻みで修正可能に．<br>&gt;* 行番号の右に隙間をあけたとき，縦棒が一番右に寄ってしまうのを数字の直後に来るようにした<br>* 行番号の縦線と文字の隙間が行番号背景色だったのをテキスト背景色に変更<br>* 行番号非表示で上部余白を指定しているとき，左上にテキスト色の隙間ができていたのを解消<br>* TAB設定は全てCLayoutMgrの値を使用するようにした．<br><br>行番号と文字の隙間はテキストの背景色ではありますが，扱い上は行番号領域です．<br>ですので，アンダーラインが行番号にくっつかない，余白にマウスカーソルを置くと右向きになるなどちょっと気になる点があるかもしれません．<br><br>m_nTopYohauのようにCEditView::m_nLeftYohakuを作って，テキスト・行番号の両側で考慮した方が良いとは思いますが，それはまたの機会ということで．<br><br>TAB幅の方は，一応CLayoutMgr::m_nTabSpaceを設定してレイアウトと描画をやり直せば変わると思いますが，ファイル単位の設定をどうやって行うかが問題．で，かつて出てきたルーラをクリックするとというあろかさんの変更が生きてくるということでしょうか．<br><br>始めからあろかさんの設定を適用したところから始めるべきだったかも．う～む，突っ走りすぎた気がする．<br></div></section>
+    <ul><li><section><h1 id=2329>
+    <span class="no">[2329]</span>
+    <a class="title" href="#2329">Re: TAB幅と，区切り線の修正 その2</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-23T21:24:14">2002年09月23日 21:24</time></h1>
+    <div class="body">本当に突っ走りすぎだったようです．あろかさんごめんなさい．<br></div></section>
+    <ul><li><section><h1 id=2334>
+    <span class="no">[2334]</span>
+    <a class="title" href="#2334">Re2: TAB幅と，区切り線の修正 その2</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-09-25T00:08:59">2002年09月25日 00:08</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 本当に突っ走りすぎだったようです．あろかさんごめんなさい．<br>呼ばれたようなので出てきてみました(^^  ＃お久しぶりです<br><br>よく覚えてないので変更はげんたさんにお任せして要望だけ追加しておきます。<br>「ウィンドウ右端で折り返し」などもファイルごとに設定できるとなおうれしいです。<br>「別ウィンドウで検索中の検索キーワード」もファイルごとになってるといいかなぁ。<br><br>私の考えてたアーキテクチャはこんなかんじ。<br><br> 共有メモリ          プロセス固有メモリ<br>タイプ別設定１ &lt;-&gt; 現在のファイル設定<br>タイプ別設定２<br>   ：<br>   ：<br><br>１．現在のファイルは、共有メモリから基本とするタイプ別設定をもらってくる。<br>２．ツールバーから設定を変更すると、一時的にそのウィンドウでだけ変更できる。<br>３．タイプ別設定ダイアログに「カレントファイル」項目を設け、ここを変更すると.iniファイルに出力。<br>４．「カレントファイル」で「タイプ別設定に反映」ボタンを押すと、元になったタイプ別設定にも反映。<br>※ ほかにも固有メモリ-&gt;共有メモリの経路があった気がしますが忘れてしまいました。<br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

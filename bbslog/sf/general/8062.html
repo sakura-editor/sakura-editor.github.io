@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>[EOF]マークのバグ報告です &gt; moca_skrさん</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">8062</span>
+    <a class="title" href="8062.html#8062">[EOF]マークのバグ報告です &gt; moca_skrさん</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8063</span>
+    <a class="title" href="8062.html#8063">Re:[EOF]マークのバグ報告です &gt; moca_skrさん</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8067</span>
+    <a class="title" href="8062.html#8067">Re2:[EOF]マークのバグ報告です &gt; moca_skrさん</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8068</span>
+    <a class="title" href="8062.html#8068">Re3:[EOF]マークのバグ報告です &gt; moca_skrさん</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=8062>
+    <span class="no">[8062]</span>
+    <a class="title" href="#8062">[EOF]マークのバグ報告です &gt; moca_skrさん</a>
+    <span class="author">ds14050</span>
+    <time datetime="2015-10-16T21:07:40">2015年10月16日 21:07</time></h1>
+    <div class="body">r3842|<a href=http://sourceforge.net/p/sakura-editor/code/3842/#diff-9 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>3842/#<wbr>diff-<wbr>9</nobr></a><br>CEditView_Paint.cppへの 5行削除 4行コメントアウトによって<br>改行直後の[EOF]マークの再描画に問題が生じています。<br><br>-- 手順 --<br>1.無題ドキュメントを開いて改行を入力します。<br>2.その改行を選択し、よそからコピーしてきたテキストを上から貼り付けます。<br>3.[EOF]マークが 2つになります。<br>-- ---- --<br><br>コミットログの内容とはあまり関係なさそうに見えます。<br>該当部分だけリバートして良いものでしょうか？<br></div></section>
+    <ul><li><section><h1 id=8063>
+    <span class="no">[8063]</span>
+    <a class="title" href="#8063">Re:[EOF]マークのバグ報告です &gt; moca_skrさん</a>
+    <span class="author">もか</span>
+    <time datetime="2015-10-17T01:50:35">2015年10月17日 01:50</time></h1>
+    <div class="body">現象確認しました。<br>リバートすると偶数行の背景色、いわゆるストタイプ表示のEOF以降の表示が異なるため<br>もう少し手を入れる必要がありそうです。<br></div></section>
+    <ul><li><section><h1 id=8067>
+    <span class="no">[8067]</span>
+    <a class="title" href="#8067">Re2:[EOF]マークのバグ報告です &gt; moca_skrさん</a>
+    <span class="author">もか</span>
+    <time datetime="2015-10-20T21:59:35">2015年10月20日 21:59</time></h1>
+    <div class="body">この件のパッチを登録しました。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1008/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1008/<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=8068>
+    <span class="no">[8068]</span>
+    <a class="title" href="#8068">Re3:[EOF]マークのバグ報告です &gt; moca_skrさん</a>
+    <span class="author">ds14050</span>
+    <time datetime="2015-10-22T01:28:56">2015年10月22日 01:28</time></h1>
+    <div class="body">パッチで直りました(※パッチの内容はさっぱり理解できません)。<br><br>ついでに C++のアウトラインの件もパッチで落ちなくなっているのを報告しておきます。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>sourceforge.net 新サーバへの移設完了</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←webトップへ</a><li><div class="list-title">
+    <span class="no">416</span>
+    <a class="title" href="416.html#416">sourceforge.net 新サーバへの移設完了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">417</span>
+    <a class="title" href="416.html#417">Re:sourceforge.net 新サーバへの移設完了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">419</span>
+    <a class="title" href="416.html#419">Re2:sourceforge.net 新サーバへの移設完了</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">418</span>
+    <a class="title" href="416.html#418">RE: sourceforge.net 新サーバへの移設完了</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=416>
+    <span class="no">[416]</span>
+    <a class="title" href="#416">sourceforge.net 新サーバへの移設完了</a>
+    <span class="author">管理人</span>
+    <time datetime="2008-09-20T20:14:18">2008年09月20日 20:14</time></h1>
+    <div class="body">sourceforge.net 新サーバへの移行に伴い，データディレクトリの場所が変更になったため，しばらくサービスが停止しておりましたが，ただいま復活しました．</div></section>
+    <ul><li><section><h1 id=417>
+    <span class="no">[417]</span>
+    <a class="title" href="#417">Re:sourceforge.net 新サーバへの移設完了</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-09-21T01:07:42">2008年09月21日 01:07</time></h1>
+    <div class="body">新サーバへ移行してから，ちょっと変ですね．<br>投稿後に内容が更新されません．<br><br>Last-modifiedがおかしいのでしょうか．<br><br>サーバ本体はApachdeで，nginxがLoad balancerとして途中に入っているそうですが，構成変更と関係があるのでしょうか．<br><br></div></section>
+    <ul><li><section><h1 id=419>
+    <span class="no">[419]</span>
+    <a class="title" href="#419">Re2:sourceforge.net 新サーバへの移設完了</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-09-22T15:30:18">2008年09月22日 15:30</time></h1>
+    <div class="body">▼ げんたさん<br>> 新サーバへ移行してから，ちょっと変ですね．<br>> 投稿後に内容が更新されません．<br>> <br>> Last-modifiedがおかしいのでしょうか．<br>> <br>> サーバ本体はApachdeで，nginxがLoad balancerとして途中に入っているそうですが，構成変更と関係があるのでしょうか．<br><br>ネットワーク構成が与える影響についてはよくわからないですが、とりあえずクライアントレベルで受信しているHTTPレスポンスについて眺めてみた所…↓。<br><br><br>HTTPレスポンスが以下のようになっています。<br>-----------------------------------------<br>Cache-Control: max-age=172800 (2日間キャッシュが有効)<br>Expires: <2日後の日時><br>-----------------------------------------<br><br><br>今回の問題の主原因が何かは知りませんが、<br>カンフル剤的対処としては、上のヘッダを以下のようにしちゃえば、<br>キャッシュが異常に長く使いまわされることは無いですね。<br>-----------------------------------------<br>Cache-Control: max-age=0<br>Expires: 0<br>-----------------------------------------<br><br><br>「Cache-Control: max-age=172800」のレスポンスを受け取っちゃった後に、普通に (F5ではなくリンク等で) ページ表示をしようとすると、(おそらく2日間経過するまでは) Last-Modified の問い合わせリクエスト自体も発行されていないようなので、Last-Modified 云々以前の問題、と思います。<br></div></section>
+    </li></ul></li><li><section><h1 id=418>
+    <span class="no">[418]</span>
+    <a class="title" href="#418">RE: sourceforge.net 新サーバへの移設完了</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-09-21T01:35:18">2008年09月21日 01:35</time></h1>
+    <div class="body">もう一点．新サーバではShell Accessが廃止されました．<br>シェルアクセスはrsync, scp, sftp専用です．<br><br>cronでの自動更新やサーバ上でのデータ生成は行えなくなりました．<br></div></section>
+    </li></ul></li></ul></body></html>

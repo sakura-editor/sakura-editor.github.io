@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>V2の検索で、見つからない時に「後方(↑)・・・」「前方(↓)・・・」と出る</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2331</span>
+    <a class="title" href="2331.html#2331">V2の検索で、見つからない時に「後方(↑)・・・」「前方(↓)・・・」と出る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2332</span>
+    <a class="title" href="2331.html#2332">Re:V2の検索で、見つからない時に「後方(↑)・・・」「前方(↓)・・・」と出る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2333</span>
+    <a class="title" href="2331.html#2333">Re2:V2の検索で、見つからない時に「後方(↑)・・・」「前方(↓)・・・」と出る</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2331>
+    <span class="no">[2331]</span>
+    <a class="title" href="#2331">V2の検索で、見つからない時に「後方(↑)・・・」「前方(↓)・・・」と出る</a>
+    <span class="author">cobolin</span>
+    <time datetime="2016-01-31T15:29:07">2016年01月31日 15:29</time></h1>
+    <div class="body">【種別】<br>バグ報告<br><br>【確認環境】<br>バージョン： ver.2.3.0.0<br>ＯＳ      ： Windows 7<br><br>V2 (Unicode版) 2.3.0.0 になるまで気が付かなかったのですが、<br>手元の 2.1.0.0 でやっても同じでした。ＡＮＳＩ版はＯＫ。<br><br>Ｆ３で「次を検索」してＥＯＦまで行った時のメッセージが<br>「前方(↓) に文字列・・・」と出ます。「前を検索」では<br>「後方(↑) に文字列・・・」と出ます。<br>ソースを見ると sakura_rc.rc に書き間違いが見つかりました。<br>これは「後方(↓)・・・」「前方(↑)・・・」ですよね。<br>CFuncListManager.cpp はコメントなので実害は無いでしょうが・・・。<br><br>長くなってしまいますが、以下はＧＲＥＰの結果です。<br><br>□検索条件  "(↓)"<br>sakura_core\sakura_rc.rc(3953,24)  [SJIS]: &#9;STR_ERR_SRNEXT3&#9;&#9;&#9;&#9;"前方(↓) に文字列 '%ls' が１つも見つかりません。"<br>sakura_core\sakura_rc.rc(3987,33)  [SJIS]: &#9;STR_BOOKMARK_NEXT_NOT_FOUND&#9;"前方(↓) にブックマークが見つかりません。"<br>sakura_core\sakura_rc.rc(3989,32)  [SJIS]: &#9;STR_FUCLIST_NEXT_NOT_FOUND&#9;"前方(↓) に関数が見つかりません。"<br>sakura_core\sakura_rc.rc(4003,30)  [SJIS]: &#9;STR_DIFF_NEXT_NOT_FOUND&#9;&#9;"前方(↓) に差分が見つかりません。"<br>sakura_core\sakura_rc.rc(4008,32)  [SJIS]: &#9;STR_MODLINE_NEXT_NOT_FOUND&#9;"前方(↓) に変更行が見つかりません。"<br>sakura_core\docplus\CFuncListManager.cpp(70,9)  [SJIS]: &#9;&#9;//前方検索(↓)<br><br>□検索条件  "(↑)"<br>sakura_core\sakura_rc.rc(3950,24)  [SJIS]: &#9;STR_ERR_SRPREV3&#9;&#9;&#9;&#9;"後方(↑) に文字列 '%ls' が１つも見つかりません。"<br>sakura_core\sakura_rc.rc(3988,33)  [SJIS]: &#9;STR_BOOKMARK_PREV_NOT_FOUND&#9;"後方(↑) にブックマークが見つかりません。"<br>sakura_core\sakura_rc.rc(3990,32)  [SJIS]: &#9;STR_FUCLIST_PREV_NOT_FOUND&#9;"後方(↑) に関数が見つかりません。"<br>sakura_core\sakura_rc.rc(4004,30)  [SJIS]: &#9;STR_DIFF_PREV_NOT_FOUND&#9;&#9;"後方(↑) に差分が見つかりません。"<br>sakura_core\sakura_rc.rc(4009,32)  [SJIS]: &#9;STR_MODLINE_PREV_NOT_FOUND&#9;"後方(↑) に変更行が見つかりません。"<br>sakura_core\docplus\CFuncListManager.cpp(58,9)  [SJIS]: &#9;&#9;//後方検索(↑)</div></section>
+    <ul><li><section><h1 id=2332>
+    <span class="no">[2332]</span>
+    <a class="title" href="#2332">Re:V2の検索で、見つからない時に「後方(↑)・・・」「前方(↓)・・・」と出る</a>
+    <span class="author">novice</span>
+    <time datetime="2016-01-31T19:58:24">2016年01月31日 19:58</time></h1>
+    <div class="body">▼ cobolinさん<br>&gt; Ｆ３で「次を検索」してＥＯＦまで行った時のメッセージが<br>&gt; 「前方(↓) に文字列・・・」と出ます。「前を検索」では<br>&gt; 「後方(↑) に文字列・・・」と出ます。<br>&gt; ソースを見ると sakura_rc.rc に書き間違いが見つかりました。<br>&gt; これは「後方(↓)・・・」「前方(↑)・・・」ですよね。<br><br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/141/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>141/<wbr></nobr></a><br>この変更で後方と前方の意味が逆になりました。<br><br>Migemoに合わせて．．．とありますが、下記に<br><a href=https://github.com/rubikitch/daily-emacs-jp/blob/master/1503190533.sd1409-migemo-ace-jump-mode-dabbrev.org target=_top><nobr>https://<wbr>github.<wbr>com/<wbr>rubikitc<wbr>h/<wbr>daily-<wbr>emacs-<wbr>jp/<wbr>blob/<wbr>master/<wbr>15031905<wbr>33.<wbr>sd1409-<wbr>migemo-<wbr>ace-<wbr>jump-<wbr>mode-<wbr>dabbrev.<wbr>org</nobr></a><br>・前方(カーソル以降)<br>・後方(カーソル以前)<br>説明があります。<br><br>(カーソル以降を)Ｆ３で「次を検索」してＥＯＦまで行くと、「前方(↓) に文字列・・・」になります。<br></div></section>
+    <ul><li><section><h1 id=2333>
+    <span class="no">[2333]</span>
+    <a class="title" href="#2333">Re2:V2の検索で、見つからない時に「後方(↑)・・・」「前方(↓)・・・」と出る</a>
+    <span class="author">cobolin</span>
+    <time datetime="2016-02-01T13:12:10">2016年02月01日 13:12</time></h1>
+    <div class="body">▼ noviceさん<br><br>あ、そうでしたか。大変失礼致しました。m(__)m<br><br>&gt; ・前方(カーソル以降)<br>&gt; ・後方(カーソル以前)<br>&gt; 説明があります。<br><br>読ませて頂きました。なるほどねぇ。<br>知らなかったのは私だけみたい・・・(汗)<br>ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

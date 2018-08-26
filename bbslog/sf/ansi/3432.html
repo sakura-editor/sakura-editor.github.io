@@ -1,0 +1,109 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>カーソルがルーラーに重なる。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3432</span>
+    <a class="title" href="3432.html#3432">カーソルがルーラーに重なる。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3433</span>
+    <a class="title" href="3432.html#3433">RE: カーソルがルーラーに重なる。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3435</span>
+    <a class="title" href="3432.html#3435">Re2: カーソルがルーラーに重なる。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3436</span>
+    <a class="title" href="3432.html#3436">Re3: カーソルがルーラーに重なる。</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3687</span>
+    <a class="title" href="3432.html#3687">Re2: 最後の３行目から２行目へ移動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3696</span>
+    <a class="title" href="3432.html#3696">画面の高さが３ライン以下でも良い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3714</span>
+    <a class="title" href="3432.html#3714">Re: 画面の高さが３ライン以下でも良い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3718</span>
+    <a class="title" href="3432.html#3718">Re2: 画面の高さが３ライン以下でも良い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3730</span>
+    <a class="title" href="3432.html#3730">Re3: 画面の高さが３ライン以下でも良い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3732</span>
+    <a class="title" href="3432.html#3732">Re4: 画面の高さが３ライン以下でも良い</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3751</span>
+    <a class="title" href="3432.html#3751">Re2: 画面の高さが３ライン以下でも良い</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3697</span>
+    <a class="title" href="3432.html#3697">Re3: 上下のマージンを自動設定しない</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3432>
+    <span class="no">[3432]</span>
+    <a class="title" href="#3432">カーソルがルーラーに重なる。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-02-21T19:20:31">2004年02月21日 19:20</time></h1>
+    <div class="body">バグ報告はこちら、DEVで良かったでしょうか？<br>３行ほどの入力をして、ウィンドウの高さを４行以下にすると、<br>カーソルが上のルーラーに重なります。<br>また、この３行目に文字を入力すると、テキストが上下に移動します。<br><br>自信のある方、試してみて下さい。よろしくお願いします。<br><br>Ver.1.4.3.7<br>Windows 2000</div></section>
+    <ul><li><section><h1 id=3433>
+    <span class="no">[3433]</span>
+    <a class="title" href="#3433">RE: カーソルがルーラーに重なる。</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-02-22T01:20:06">2004年02月22日 01:20</time></h1>
+    <div class="body">&gt;３行ほどの入力をして、ウィンドウの高さを４行以下にすると、<br>&gt;カーソルが上のルーラーに重なります。<br>やってみましたが，うまく再現しませんでした．<br><br>&gt;また、この３行目に文字を入力すると、テキストが上下に移動します。<br>こちらは再現しました．高さを2行分くらいにしてキャレットを右に移動すると1行目では普通ですが2行目では1桁動かすごとに上下にスクロールしますね．<br><br>どこかで計算式を間違えている方に３カノッサ．<br>＃というときの「カノッサ」って何に由来しているんだろう？<br></div></section>
+    <ul><li><section><h1 id=3435>
+    <span class="no">[3435]</span>
+    <a class="title" href="#3435">Re2: カーソルがルーラーに重なる。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-02-22T04:40:40">2004年02月22日 04:40</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;３行ほどの入力をして、ウィンドウの高さを４行以下にすると、<br>&gt; &gt;カーソルが上のルーラーに重なります。<br>&gt; やってみましたが，うまく再現しませんでした．<br><br>すみません、何行のファイルでも良いのですが、<br>ウィンドウの高さは３行以下です。<br><br>共通設定→全般→スクロール→行数→３に設定して、<br>キャレットIを上から下に移動してゆくと、<br>偶数行で、テキストエリアから外れてしまいます。<br></div></section>
+    <ul><li><section><h1 id=3436>
+    <span class="no">[3436]</span>
+    <a class="title" href="#3436">Re3: カーソルがルーラーに重なる。</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-02-22T17:47:54">2004年02月22日 17:47</time></h1>
+    <div class="body">&gt;共通設定→全般→スクロール→行数→３に設定して、<br>&gt;キャレットIを上から下に移動してゆくと、<br>&gt;偶数行で、テキストエリアから外れてしまいます。<br>再現しました．文字が重なるわけではなく，キャレット位置だけがおかしくなるんですね．<br><br>CEditView::MoveCursor()のカーソル位置設定処理の中であわせて必要なスクロール量を計算しています．エディタの一番下に2行のマージンを取っていて，ファイルの末尾の場合にも一番下を2行あけるようになっています．このファイル末尾処理がどうも問題のようです．<br><br>画面に入りきらない行数のファイルの末尾付近でカーソルの下矢印を押して画面がスクロールしながら最終行に近づいていくとき，最終行の2行前に移ったところで上方向に画面がスクロールする現象が出ますが，これも同じ原因です．<br><br>ファイル末尾の余白行数を変えて試してみたんですが，表示部分が2行しかないような場合だとやっぱりだめです．<br></div></section>
+    </li></ul></li><li><section><h1 id=3687>
+    <span class="no">[3687]</span>
+    <a class="title" href="#3687">Re2: 最後の３行目から２行目へ移動</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-07-31T06:32:36">2004年07月31日 06:32</time></h1>
+    <div class="body">［暑中見舞い］<br>ウィンドウサイズを４行以上にして、<br>最後の３行目から２行目に移動する時の、表示ぶれが無くなりました。<br><br>--- コピー ～ CEditView.cpp&#9;Sun May 30 02:23:20 2004<br>+++ CEditView.cpp&#9;Sat Jul 31 06:04:26 2004<br>@@ -2707,13 +2707,15 @@<br> &#9;if( nWk_CaretPosY &gt;= m_nViewTopLine + m_nViewRowNum - ( nCaretMarginY + 2 ) ){<br> &#9;&#9;if( nWk_CaretPosY &gt; m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() - ( nCaretMarginY + 2 ) ){<br> &#9;&#9;&#9;if( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() + 2 &gt; m_nViewRowNum ){<br>-&#9;&#9;&#9;&#9;nScrollRowNum = m_nViewTopLine - ( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() + 2 - m_nViewRowNum );<br>+//&#9;&#9;&#9;&#9;nScrollRowNum = m_nViewTopLine - ( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() + 2 - m_nViewRowNum );<br>+&#9;&#9;&#9;&#9;nScrollRowNum =<br>+&#9;&#9;&#9;&#9;&#9;m_nViewTopLine + m_nViewRowNum - ( nCaretMarginY + 2 ) - nWk_CaretPosY;<br> &#9;&#9;&#9;}else{<br> &#9;&#9;&#9;&#9;nScrollRowNum = 0;<br> &#9;&#9;&#9;}<br> &#9;&#9;}else{<br> &#9;&#9;&#9;nScrollRowNum =<br>-&#9;&#9;&#9;&#9;m_nViewTopLine + m_nViewRowNum - ( nCaretMarginY ) - ( nWk_CaretPosY + 2 );<br>+&#9;&#9;&#9;&#9;m_nViewTopLine + m_nViewRowNum - ( nCaretMarginY + 2 ) - nWk_CaretPosY;<br> &#9;&#9;}<br> &#9;}<br> &#9;if( bDraw ){<br><br>（ssrc_2004-06-05を使用）</div></section>
+    <ul><li><section><h1 id=3696>
+    <span class="no">[3696]</span>
+    <a class="title" href="#3696">画面の高さが３ライン以下でも良い</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-08-07T18:48:13">2004年08月07日 18:48</time></h1>
+    <div class="body">画面の高さを３ライン以下にした時に、カーソルが上にはみ出す問題の修正です。<br>コメントも追加しました。左右キーにも対応しています。<br>--- コピー ～ CEditView.cpp&#9;Sun May 30 02:23:20 2004<br>+++ CEditView.cpp&#9;Sun Aug 08 01:23:50 2004<br>@@ -2697,23 +2697,30 @@<br> &#9;m_nViewLeftCol -= nScrollColNum;<br> <br>-&#9;/* 垂直スクロール量（行数）の算出 */<br>+&#9;/* 垂直スクロール量（行数）の算出 */&#9;// 移動先は、画面の最大行数－２より下か？（下スクロール）<br>+&#9;if( nWk_CaretPosY &gt;= m_nViewTopLine + m_nViewRowNum - ( nCaretMarginY + 2 ) ){<br>+/*&#9;&#9;if( nWk_CaretPosY &gt; m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() - ( nCaretMarginY + 2 ) ){<br>+ *&#9;&#9;&#9;if( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() + 2 &gt; m_nViewRowNum ){<br>+ *&#9;&#9;&#9;&#9;nScrollRowNum = m_nViewTopLine - ( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() + 2 - m_nViewRowNum );<br>+ *&#9;&#9;&#9;}else{<br>+ *&#9;&#9;&#9;&#9;nScrollRowNum = 0;<br>+ *&#9;&#9;&#9;}<br>+ *&#9;&#9;}else{&#9;*/<br>+&#9;&#9;if( m_nViewRowNum &lt;= nCaretMarginY + 2 ){<br>+&#9;&#9;&#9;nScrollRowNum = m_nViewTopLine - nWk_CaretPosY;<br>+&#9;&#9;}else{<br>+&#9;&#9;&#9;nScrollRowNum =<br>+&#9;&#9;&#9;&#9;m_nViewTopLine + m_nViewRowNum - ( nCaretMarginY + 2 ) - nWk_CaretPosY;<br>+&#9;&#9;}<br>+&#9;}else&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// 移動先は、画面のスクロールラインより上か？（上スクロール）<br> &#9;if( nWk_CaretPosY &lt; m_nViewTopLine + ( nCaretMarginY ) ){<br>-&#9;&#9;if( nWk_CaretPosY &lt; ( nCaretMarginY ) ){<br>+&#9;&#9;if( m_nViewRowNum == ( nCaretMarginY + 2 ) ){&#9;// 画面が３行の時の処理を追加<br>+&#9;&#9;&#9;nScrollRowNum = m_nViewTopLine - nWk_CaretPosY;<br>+&#9;&#9;}else<br>+&#9;&#9;if( nWk_CaretPosY &lt;= ( nCaretMarginY ) ){<br> &#9;&#9;&#9;nScrollRowNum = m_nViewTopLine;<br> &#9;&#9;}else{<br> &#9;&#9;&#9;nScrollRowNum = m_nViewTopLine + ( nCaretMarginY ) - nWk_CaretPosY;<br> &#9;&#9;}<br>-&#9;}else<br>-&#9;if( nWk_CaretPosY &gt;= m_nViewTopLine + m_nViewRowNum - ( nCaretMarginY + 2 ) ){<br>-&#9;&#9;if( nWk_CaretPosY &gt; m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() - ( nCaretMarginY + 2 ) ){<br>-&#9;&#9;&#9;if( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() + 2 &gt; m_nViewRowNum ){<br>-&#9;&#9;&#9;&#9;nScrollRowNum = m_nViewTopLine - ( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() + 2 - m_nViewRowNum );<br>-&#9;&#9;&#9;}else{<br>-&#9;&#9;&#9;&#9;nScrollRowNum = 0;<br>-&#9;&#9;&#9;}<br>-&#9;&#9;}else{<br>-&#9;&#9;&#9;nScrollRowNum =<br>-&#9;&#9;&#9;&#9;m_nViewTopLine + m_nViewRowNum - ( nCaretMarginY ) - ( nWk_CaretPosY + 2 );<br>-&#9;&#9;}<br>+<br> &#9;}<br> &#9;if( bDraw ){<br>以上[修正しました]</div></section>
+    <ul><li><section><h1 id=3714>
+    <span class="no">[3714]</span>
+    <a class="title" href="#3714">Re: 画面の高さが３ライン以下でも良い</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-18T23:21:28">2004年08月18日 23:21</time></h1>
+    <div class="body">画面の高さを2ラインくらいにするとやっぱりカーソルがキャレット位置に行くことがあるようです．<br>そのときの全体の行数は4行<br><br>一応確認ですが，パッチ適用後は<br><br>/* 垂直スクロール量（行数）の算出 */&#9;// 移動先は、画面の最大行数－２より下か？（下スクロール）<br>if( nWk_CaretPosY &gt;= m_nViewTopLine + m_nViewRowNum - ( nCaretMarginY + 2 ) ){<br>&#9;if( m_nViewRowNum &lt;= nCaretMarginY + 2 ){<br>&#9;&#9;nScrollRowNum = m_nViewTopLine - nWk_CaretPosY;<br>&#9;}else{<br>&#9;&#9;nScrollRowNum =<br>&#9;&#9;&#9;m_nViewTopLine + m_nViewRowNum - ( nCaretMarginY + 2 ) - nWk_CaretPosY;<br>&#9;}<br>}else&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// 移動先は、画面のスクロールラインより上か？（上スクロール）<br>if( nWk_CaretPosY &lt; m_nViewTopLine + ( nCaretMarginY ) ){<br>&#9;if( nWk_CaretPosY &lt;= nCaretMarginY ){<br>&#9;&#9;nScrollRowNum = m_nViewTopLine;<br>&#9;}else{<br>&#9;&#9;nScrollRowNum = m_nViewTopLine + ( nCaretMarginY ) - nWk_CaretPosY;<br>&#9;}<br>}<br><br>でいいんですよね？<br>中身はまだ理解していません...(^^ゞ<br></div></section>
+    <ul><li><section><h1 id=3718>
+    <span class="no">[3718]</span>
+    <a class="title" href="#3718">Re2: 画面の高さが３ライン以下でも良い</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-08-19T02:49:31">2004年08月19日 02:49</time></h1>
+    <div class="body">▼ げんたさん<br>先週よりも少し古いです。<br>-&#9;&#9;if( nWk_CaretPosY &lt; ( nCaretMarginY ) ){<br>+&#9;&#9;if( m_nViewRowNum == ( nCaretMarginY + 2 ) ){&#9;// 画面が３行の時の処理を追加<br>+&#9;&#9;&#9;nScrollRowNum = m_nViewTopLine - nWk_CaretPosY;<br>+&#9;&#9;}else<br>+&#9;&#9;if( nWk_CaretPosY &lt;= ( nCaretMarginY ) ){<br>先週何回か修正したのが原因のようで、すみません。</div></section>
+    <ul><li><section><h1 id=3730>
+    <span class="no">[3730]</span>
+    <a class="title" href="#3730">Re3: 画面の高さが３ライン以下でも良い</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-30T22:11:25">2004年08月30日 22:11</time></h1>
+    <div class="body">じゅうじさんの案では画面下2ラインのマージンが死守されるようですが，たとえば3行のサイズのウィンドウを新たに作ってそこに行を加えていくと，必ず下の2行が空白となるためにEnterを押すごとに入力部分が画面から消えてしまいあたかも文字が消えてしまうかのように見えます．<br><br>マージンがウィンドウの高さによって変わるのが奇妙だとのことですが，高さが極端に低い場合にはマージン＝0とする方が見た目が自然で扱いも簡単ではないかと思いますがどうでしょうか．<br></div></section>
+    <ul><li><section><h1 id=3732>
+    <span class="no">[3732]</span>
+    <a class="title" href="#3732">Re4: 画面の高さが３ライン以下でも良い</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-08-30T23:24:51">2004年08月30日 23:24</time></h1>
+    <div class="body">▼ げんたさん<br>ウィンドウの高さが３と２の時は、下に２行空けるよりも、上に１行有ったほうが良さそうです。<br>（しばらくお待ちくださいooo）<br><br>前にも書きましたが、ウィンドウの行数が２０以上の時に、空白行が増える必要は、無いと思います。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=3751>
+    <span class="no">[3751]</span>
+    <a class="title" href="#3751">Re2: 画面の高さが３ライン以下でも良い</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-09-27T01:28:00">2004年09月27日 01:28</time></h1>
+    <div class="body">少しソースを圧縮してみました。<br>+++ CEditView.cpp&#9;Aug 18 23:55:14 2004<br>int CEditView::MoveCursor() 行番号 2705,2724 です。<br><br>▼ げんたさん<br>&gt; 画面の高さを2ラインくらいにするとやっぱりカーソルがキャレット位置に行くことがあるようです．<br>&gt; そのときの全体の行数は4行<br>&gt; <br>&gt; 一応確認ですが，パッチ適用後は<br>&gt; でいいんですよね？<br>&gt; 中身はまだ理解していません...(^^ゞ<br><br>&#9;/* 垂直スクロール量（行数）の算出 */&#9;// 移動先は、画面の最大行数－２より下か？(Downキー)<br>&#9;if( nWk_CaretPosY &gt; m_nViewTopLine + (m_nViewRowNum - 2) - nCaretMarginY ){<br>&#9;&#9;nScrollRowNum =&#9;(m_nViewRowNum - 2) - nCaretMarginY;<br>&#9;&#9;if( (m_nViewRowNum - 2) &lt;= nCaretMarginY )&#9;// 画面が３行以下の時<br>&#9;&#9;&#9;nScrollRowNum = 0;<br>&#9;&#9;nScrollRowNum += m_nViewTopLine - nWk_CaretPosY;<br>&#9;}else&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// 移動先は、画面のスクロールラインより上か？（Upキー）<br>&#9;if( nWk_CaretPosY &lt; m_nViewTopLine + nCaretMarginY ){<br>&#9;&#9;nScrollRowNum = min(nWk_CaretPosY, nCaretMarginY);<br>&#9;&#9;if( (m_nViewRowNum - 2) &lt;= nCaretMarginY )&#9;// 画面が３行以下の時<br>&#9;&#9;&#9;nScrollRowNum = 0;<br>&#9;&#9;nScrollRowNum += m_nViewTopLine - nWk_CaretPosY;<br>&#9;}</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=3697>
+    <span class="no">[3697]</span>
+    <a class="title" href="#3697">Re3: 上下のマージンを自動設定しない</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-08-08T01:39:46">2004年08月08日 01:39</time></h1>
+    <div class="body">▼げんたさんへ<br>上下のスクロールマージンが、画面の高さによって変わるのが変なので、<br>修正を希望します。<br>--- コピー ～ CEditView.cpp&#9;Sun May 30 02:23:20 2004<br>+++ CEditView.cpp&#9;Sun Aug 08 01:23:50 2004<br>@@ -2666,9 +2666,9 @@<br> &#9;&#9;nCaretMarginY = 0;<br> &#9;}else{<br>-&#9;&#9;//&#9;2001/10/20 novice<br>-&#9;&#9;nCaretMarginY = m_nViewRowNum / nCaretMarginRate;<br>-&#9;&#9;if( 1 &gt; nCaretMarginY ){<br>+<br>+//&#9;&#9;nCaretMarginY = m_nViewRowNum / nCaretMarginRate;<br>+//&#9;&#9;if( 1 &gt; nCaretMarginY ){<br> &#9;&#9;&#9;nCaretMarginY = 1;<br>-&#9;&#9;}<br>+//&#9;&#9;}<br> &#9;}<br> &#9;// 2004.04.02 Moca 行だけ有効な座標に修正するのを厳密に処理する<br>以上</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

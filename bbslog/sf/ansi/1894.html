@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CRLF改行でコピーのバグ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1894</span>
+    <a class="title" href="1894.html#1894">CRLF改行でコピーのバグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1899</span>
+    <a class="title" href="1894.html#1899">RE: CRLF改行でコピーのバグ</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1894>
+    <span class="no">[1894]</span>
+    <a class="title" href="#1894">CRLF改行でコピーのバグ</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-17T01:00:28">2002年04月17日 01:00</time></h1>
+    <div class="body">CEditView_Command.cpp (357):<br>Command_COPY( FALSE, EOL_CRLF );<br><br>改行コードの指定は第3引数なので、<br>Command_COPY( FALSE, m_pShareData-&gt;m_Common.m_bAddCRLFWhenCop, EOL_CRLF );<br>が正解。</div></section>
+    <ul><li><section><h1 id=1899>
+    <span class="no">[1899]</span>
+    <a class="title" href="#1899">RE: CRLF改行でコピーのバグ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-17T16:32:51">2002年04月17日 16:32</time></h1>
+    <div class="body"><br>Thanx。取り込みました。<br></div></section>
+    </li></ul></li></ul></body></html>

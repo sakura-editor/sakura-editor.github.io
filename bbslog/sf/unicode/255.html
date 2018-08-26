@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行コードについて</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">255</span>
+    <a class="title" href="255.html#255">改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">256</span>
+    <a class="title" href="255.html#256">Re:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">257</span>
+    <a class="title" href="255.html#257">Re2:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">258</span>
+    <a class="title" href="255.html#258">Re3:改行コードについて</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=255>
+    <span class="no">[255]</span>
+    <a class="title" href="#255">改行コードについて</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-03-15T14:07:05">2008年03月15日 14:07</time></h1>
+    <div class="body">改行コードについて盛り上がっているようなのでついでに一言<br><br>S-JISでは関係ないのですが、<br>UnicodeにはCRLF,LF,CRの他に<br>   Line Separator[U+2028]<br>   Paragraph Separator[U+2029]<br>   Next Line[U+0085]<br>の改行コードががあるようです。<br>ワードパッドやVS2003ではLS，PSをサポートしているようです。<br>VS2005では３つともサポートしているようです。<br>MocaさんのUnicode版ではLS,PSをサポートしています。<br><br><br>これらのサポートの必要性は感じていませんが、<br>標準に従うということであれば、<br>サポートしなければならないのでしょうか？</div></section>
+    <ul><li><section><h1 id=256>
+    <span class="no">[256]</span>
+    <a class="title" href="#256">Re:改行コードについて</a>
+    <span class="author">神楽</span>
+    <time datetime="2008-03-15T15:17:19">2008年03月15日 15:17</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; 改行コードについて盛り上がっているようなのでついでに一言<br>&gt; <br>&gt; S-JISでは関係ないのですが、<br>&gt; UnicodeにはCRLF,LF,CRの他に<br>&gt;    Line Separator[U+2028]<br>&gt;    Paragraph Separator[U+2029]<br>&gt;    Next Line[U+0085]<br>&gt; の改行コードががあるようです。<br>&gt; ワードパッドやVS2003ではLS，PSをサポートしているようです。<br>&gt; VS2005では３つともサポートしているようです。<br>&gt; MocaさんのUnicode版ではLS,PSをサポートしています。<br>&gt; <br>&gt; <br>&gt; これらのサポートの必要性は感じていませんが、<br>&gt; 標準に従うということであれば、<br>&gt; サポートしなければならないのでしょうか？<br><br>これはSJISにも関係する話ですが、ワードパッドは<br>垂直タブ[0x0B]でも改行されるみたいです。<br><br>ただし、桁位置を維持して改行されているわけではないので、<br>本来あるべき垂直タブの動作ではないような気もしますが。</div></section>
+    <ul><li><section><h1 id=257>
+    <span class="no">[257]</span>
+    <a class="title" href="#257">Re2:改行コードについて</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-15T20:51:06">2008年03月15日 20:51</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; S-JISでは関係ないのですが、<br>&gt; UnicodeにはCRLF,LF,CRの他に<br>&gt;    Line Separator[U+2028]<br>&gt;    Paragraph Separator[U+2029]<br>&gt;    Next Line[U+0085]<br>&gt; の改行コードががあるようです。<br>&gt; ワードパッドやVS2003ではLS，PSをサポートしているようです。<br>&gt; VS2005では３つともサポートしているようです。<br>&gt; MocaさんのUnicode版ではLS,PSをサポートしています。<br>▼ 神楽さん<br>&gt; これはSJISにも関係する話ですが、ワードパッドは<br>&gt; 垂直タブ[0x0B]でも改行されるみたいです。<br>&gt; <br>&gt; ただし、桁位置を維持して改行されているわけではないので、<br>&gt; 本来あるべき垂直タブの動作ではないような気もしますが。<br><br>情報ありがとうございます。<br>追加実装要素として認識しておきます。<br><br><br>▼ Uchiさん<br>&gt; これらのサポートの必要性は感じていませんが、<br>&gt; 標準に従うということであれば、<br>&gt; サポートしなければならないのでしょうか？<br><br>サポートするしないを簡単に選べる状況であれば<br>したほうがよいと思います。<br>ただ、自分は特に興味がないので実装する予定は無いです。<br><br>一応補足しておきますけど、<br>標準規格であっても（今のところ）誰も必要としない機能であれば<br>そこに無理に労力を費やす必要は無いと考えています。<br><br><br>なんだか「べき論」が独り歩きしているようなので<br>これを機に、標準未サポートにおける自分の見解を示しておきます。<br><br>・実装が大変だから標準未サポート→OK<br>・標準を破るほうが利便性が出るから標準未サポート→NG<br><br>両者には、未来の行く末に決定的な違いがあります。<br>ボランティアで標準に従う機能を実装する方が現れたとき、<br>・前者→「どうぞどうぞ歓迎します」→標準採用という結果に終結<br>・後者→「不便になるからやめてくれ」→再議論→自分が言うところの「コンセンサスの再発明」という無駄が発生する→結果は予想不可<br></div></section>
+    <ul><li><section><h1 id=258>
+    <span class="no">[258]</span>
+    <a class="title" href="#258">Re3:改行コードについて</a>
+    <span class="author">AC</span>
+    <time datetime="2008-03-17T01:42:25">2008年03月17日 01:42</time></h1>
+    <div class="body">javascriptが LSと PSを改行として扱うらしいので、見た目と意味が一致していると、jsファイルを編集するときに落とし穴に落ちずにすむかもしれないですね。(棒読み)<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>単語単位移動／選択について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">1214</span>
+    <a class="title" href="1214.html#1214">単語単位移動／選択について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1215</span>
+    <a class="title" href="1214.html#1215">Re:単語単位移動／選択について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1218</span>
+    <a class="title" href="1214.html#1218">Re2:単語単位移動／選択について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1264</span>
+    <a class="title" href="1214.html#1264">Re3:単語単位移動／選択について</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1214>
+    <span class="no">[1214]</span>
+    <a class="title" href="#1214">単語単位移動／選択について</a>
+    <span class="author">INSECTS</span>
+    <time datetime="2002-02-10T04:04:12">2002年02月10日 04:04</time></h1>
+    <div class="body">バージョンアップおめでとうございます。誰かが「楽しく使ってます」って書いてましたね。私もSAKURA使ってると楽しいです。<br><br>さて、［（Shift+）Ctrl+カーソル］による単語単位移動（選択）ですが、「［Ctrl+→］の際に空白の前で止まる」設定など出来ますでしょうか。具体的には、<br><br>#define    DCA_ZVAL_MAXNUM    100000000    // z値長最大個数<br><br>“D”にカーソルを置き［Ctrl+→］を二度行うと、“/”の手前に移動します。つまり「後に続く空白群も含めてジャンプ」なのです（Winアプリに割と共通してると思います）。これは“DCA_ZVAL_MAXNUM 100000000”だけコピーしたい時不便です（特にタブでなくスペースが使われてると！）。<br><br>こんな時、空白の前で止まると楽です。今度は“DCA_ZVAL_MAXNUM”と“100000000”の間の空白で一度押さねばなりませんが、それは空白が何個並ぼうと一回ですし、感覚的にもそう不自然でないのでストレスは少ないと思います。何と言うか、手に吸い付いて来る様な感覚で操作したいのです。こんな事思うの私だけですか？<br><br>でも、SAKURAは単語の切れ目と判断する文字種別がきめ細かくて好き。<br></div></section>
+    <ul><li><section><h1 id=1215>
+    <span class="no">[1215]</span>
+    <a class="title" href="#1215">Re:単語単位移動／選択について</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-02-11T02:31:28">2002年02月11日 02:31</time></h1>
+    <div class="body">▼ INSECTSさん<br>&gt; さて、［（Shift+）Ctrl+カーソル］による単語単位移動（選択）ですが、「［Ctrl+→］の際に空白の前で止まる」設定など出来ますでしょうか。具体的には、<br>&gt; <br>&gt; #define    DCA_ZVAL_MAXNUM    100000000    // z値長最大個数<br>&gt; <br>&gt; “D”にカーソルを置き［Ctrl+→］を二度行うと、“/”の手前に移動します。つまり「後に続く空白群も含めてジャンプ」なのです（Winアプリに割と共通してると思います）。これは“DCA_ZVAL_MAXNUM 100000000”だけコピーしたい時不便です（特にタブでなくスペースが使われてると！）。<br>&gt; <br>&gt; こんな時、空白の前で止まると楽です。今度は“DCA_ZVAL_MAXNUM”と“100000000”の間の空白で一度押さねばなりませんが、それは空白が何個並ぼうと一回ですし、感覚的にもそう不自然でないのでストレスは少ないと思います。何と言うか、手に吸い付いて来る様な感覚で操作したいのです。こんな事思うの私だけですか？<br>&gt; <br>これ、私も欲しいです。<br>小文字から大文字に変わったときとかにも止められる設定があるとさらにありがたいです。<br>const int DcaZvalNaxnum = 0; があった時に D以外に Z,M でもとめられる。 Max を Min にしたいときなんかに重宝するとおもいます。</div></section>
+    <ul><li><section><h1 id=1218>
+    <span class="no">[1218]</span>
+    <a class="title" href="#1218">Re2:単語単位移動／選択について</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-11T02:45:07">2002年02月11日 02:45</time></h1>
+    <div class="body">&gt; 小文字から大文字に変わったときとかにも止められる設定があるとさらにありがたいです。<br>&gt; const int DcaZvalNaxnum = 0; があった時に D以外に Z,M でもとめられる。 Max を Min にしたいときなんかに重宝するとおもいます。<br><br>よさそう。ぜひ実装して欲しいですね。<br>別々にオプションを作ってくれるとうれしいかも。<br><br><br>例：xがカーソルが止まる位置<br>const int DcaZvalMaxnum = 0<br>x_____x___x_____________x_x：現在<br>x____xx__xx____________xxxx：スペース前<br>x_____x___x__x___x______x_x：　　　　　　小文字から大文字に変わったとき<br>x____xx__xx__x___x_____xxxx：スペース前と小文字から大文字に変わったとき<br></div></section>
+    <ul><li><section><h1 id=1264>
+    <span class="no">[1264]</span>
+    <a class="title" href="#1264">Re3:単語単位移動／選択について</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-26T19:35:11">2002年02月26日 19:35</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; &gt; 小文字から大文字に変わったときとかにも止められる設定があるとさらにありがたいです。<br>&gt; &gt; const int DcaZvalNaxnum = 0; があった時に D以外に Z,M でもとめられる。 Max を Min にしたいときなんかに重宝するとおもいます。<br><br>ひとまず、手元では、スペース前でも止まる設定を追加しました。<br>次回お試し版でお目見え～。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Rubyマクロが落ちる件のパッチは？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7601</span>
+    <a class="title" href="7601.html#7601">Rubyマクロが落ちる件のパッチは？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7607</span>
+    <a class="title" href="7601.html#7607">Re:Rubyマクロが落ちる件のパッチは？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7608</span>
+    <a class="title" href="7601.html#7608">Re2:Rubyマクロが落ちる件のパッチは？</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7601>
+    <span class="no">[7601]</span>
+    <a class="title" href="#7601">Rubyマクロが落ちる件のパッチは？</a>
+    <span class="author">2chからきました</span>
+    <time datetime="2013-04-13T14:38:31">2013年04月13日 14:38</time></h1>
+    <div class="body">2chからきました。<br><a href=http://anago.2ch.net/test/read.cgi/software/1326436848/ target=_top><nobr>http://<wbr>anago.<wbr>2ch.<wbr>net/<wbr>test/<wbr>read.<wbr>cgi/<wbr>software<wbr>/<wbr>13264368<wbr>48/<wbr></nobr></a><br><br>サクラエディタのマクロとしてRubyを使いたいのですが、<br>一応実行できるですが、すごく不安定です。<br>同じマクロを何度か繰り返し実行していると、<br>エディタごと固まってしまいます。<br>==== マクロ.rb ==========<br>Editor.InsText("foo")<br>=========================<br><br>環境は<br>・サクラエディタ2.0.5 、2.0.6<br>・ActiveScriptRuby1.9.2<br>・Win7,WinXP<br>など。<br><br>過去記事をあさってみると、解決案がでていたようですが<br>まだパッチあたってないでしょうか、、。<br>↓↓↓↓↓↓<br>◆過去の掲示板<br>[412] マクロをRubyで書きたい<br><a href=../macro#412 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>macro&amp;<wbr>tree=<wbr>r412</nobr></a><br>→ この返信の[422]とか見ると、解決してそうだったのですが、、まだパッチがあたってないでしょうか？<br><br>◆パッチ情報<br>#152 WSH マクロの Ruby、PHP、Phython 対応<br><a href=http://sourceforge.net/p/sakura-editor/patches/152/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patches/<wbr>152/<wbr></nobr></a><br><br>◆miauさんのblog<br>サクラエディタ WSH マクロの Ruby、PHP、Phython 対応<br><a href=http://miau.s9.xrea.com/blog/index.php?itemid=844 target=_top><nobr>http://<wbr>miau.<wbr>s9.<wbr>xrea.<wbr>com/<wbr>blog/<wbr>index.<wbr>php?<wbr>itemid=<wbr>844</nobr></a><br><br>よろしくおねがいします。</div></section>
+    <ul><li><section><h1 id=7607>
+    <span class="no">[7607]</span>
+    <a class="title" href="#7607">Re:Rubyマクロが落ちる件のパッチは？</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-13T20:34:20">2013年04月13日 20:34</time></h1>
+    <div class="body">▼ 2chからきましたさん<br>&gt; 2chからきました。<br>&gt; <a href=http://anago.2ch.net/test/read.cgi/software/1326436848/ target=_top><nobr>http://<wbr>anago.<wbr>2ch.<wbr>net/<wbr>test/<wbr>read.<wbr>cgi/<wbr>software<wbr>/<wbr>13264368<wbr>48/<wbr></nobr></a><br>&gt; <br>&gt; サクラエディタのマクロとしてRubyを使いたいのですが、<br><br>話の流れですが、<br>(1)サクラエディタは、"Rubyマクロに未対応"。<br>(2)パッチを作成しました。<br>(3)パッチを適用すると互換性がなくなるので反対。<br>(4)サクラエディタが落ちるので、Rubyマクロをサポートするのは反対。<br>という感じです。<br><br>(3)についてはオプションの設定はなくても大丈夫？<br>(4)については、とりあえず動けばいいのでパッチを適用してほしい派と、中途半端にサポートするならはじめからサポートしないほうがよい派に分かれているようです。<br><br>結論？としては、とりあえず動けばいいのでパッチを適用してほしい派のために派生版を作るという感じですが、だれも派生版、改造版を作ってないようです。<br>(どうしても必要な場合、自分でコンパイルする必要があります)<br><br>&gt; → この返信の[422]とか見ると、解決してそうだったのですが、、まだパッチがあたってないでしょうか？<br>リンク先を確認してみましたが、話が途中で止まっているようにも見えます。<br></div></section>
+    <ul><li><section><h1 id=7608>
+    <span class="no">[7608]</span>
+    <a class="title" href="#7608">Re2:Rubyマクロが落ちる件のパッチは？</a>
+    <span class="author">2chからきました</span>
+    <time datetime="2013-04-13T22:44:45">2013年04月13日 22:44</time></h1>
+    <div class="body">返信ありがとうございます。<br><br>たしかに、互換性とかオプション追加など面倒な話が出てました。<br>(どっちかというと、今まで(Editorオブジェクトの指定なしで<br>実行できてしまっている)の方が行儀が悪い気がしますが、、)<br><br>だけど、そういう面倒な話抜きで、<br>とりあえず、<br>「Ruby マクロであれば SCRIPTITEM_GLOBALMEMBERS しない」<br>という対策で、なんとかなる、、みたいな意見も出てました。<br>そこで話が止まってしまっている？<br><br>[5354] Re2:WSH マクロの Ruby、PHP、Phython 対応<br><a href=http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?log=dev&v=5281#5281 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>dev&amp;<wbr>v=<wbr>5281#<wbr>5281</nobr></a><br><br><br>RubyマクロやPythonマクロがサクラエディタで動けばよいなあ。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

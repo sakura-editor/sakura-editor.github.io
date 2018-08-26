@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>最大化解除時にウィンドウ枠をつかんだ状態になります</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3848</span>
+    <a class="title" href="3848.html#3848">最大化解除時にウィンドウ枠をつかんだ状態になります</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3853</span>
+    <a class="title" href="3848.html#3853">Re: 最大化解除時にウィンドウ枠をつかんだ状態になります</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3848>
+    <span class="no">[3848]</span>
+    <a class="title" href="#3848">最大化解除時にウィンドウ枠をつかんだ状態になります</a>
+    <span class="author">せんば</span>
+    <time datetime="2004-05-20T16:09:34">2004年05月20日 16:09</time></h1>
+    <div class="body">いつも便利に利用させていただいております。<br><br>サクラエディタのウィンドウを最大化している状態から<br>タイトル部分をダブルクリックして最大化解除したとき、<br>たまたまマウスのアイコンがウィンドウ枠の位置にあると<br>マウスのボタンを離していても枠をつかんだ状態になり<br>マウスの動きに連れてウィンドウサイズが変わってしま<br>います。(^^;<br><br>最大化していない状態でウィンドウ枠をダブルクリック<br>すると同様の状態になるので恐らくこの仕様(?)の影響<br>なのではと思います。<br><br>通常時のウィンドウサイズはあまり変えたくないので、<br>最大化解除したときは枠をつかまないようにしていただ<br>けるととっても助かります。<br><br>Ver.:1.4.6.0<br>OS:Win2000 SP3</div></section>
+    <ul><li><section><h1 id=3853>
+    <span class="no">[3853]</span>
+    <a class="title" href="#3853">Re: 最大化解除時にウィンドウ枠をつかんだ状態になります</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-23T14:29:53">2004年05月23日 14:29</time></h1>
+    <div class="body">現象、確認しました。<br>ダブルクリックが、ボタンを押したまま(≒ドラッグ)の状態の処理になってました。<br><br>以下、開発者向け。<br>--- ssrc_2004-05-01/sakura_core/CEditWnd.cpp&#9;Sat May 01 20:40:26 2004<br>+++ ssrc_2004-05-01next/sakura_core/CEditWnd.cpp&#9;Sun May 23 14:11:31 2004<br>@@ -3718,7 +3718,7 @@ LRESULT CEditWnd::OnNcLButtonUp(WPARAM w<br> &#9;else if(wp == HTSYSMENU)<br> &#9;&#9;Result = 0;<br> &#9;else<br>-&#9;&#9;Result = DefWindowProc(m_hWnd, WM_NCLBUTTONDOWN, wp, lp);<br>+&#9;&#9;Result = DefWindowProc(m_hWnd, WM_NCLBUTTONUP, wp, lp);<br> <br> &#9;return Result;<br> }<br>@@ -3736,7 +3736,7 @@ LRESULT CEditWnd::OnLButtonDblClk(WPARAM<br> &#9;&#9;Result = 0;<br> &#9;}<br> &#9;else<br>-&#9;&#9;Result = DefWindowProc(m_hWnd, WM_NCLBUTTONDOWN, wp, lp);<br>+&#9;&#9;Result = DefWindowProc(m_hWnd, WM_LBUTTONDBLCLK, wp, lp);<br> <br> &#9;return Result;<br> }<br></div></section>
+    </li></ul></li></ul></body></html>

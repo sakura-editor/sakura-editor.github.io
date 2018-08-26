@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグを報告しました。(BugReport/57)</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1305</span>
+    <a class="title" href="1305.html#1305">バグを報告しました。(BugReport/57)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1306</span>
+    <a class="title" href="1305.html#1306">Re: バグを報告しました。(BugReport/57)</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1305>
+    <span class="no">[1305]</span>
+    <a class="title" href="#1305">バグを報告しました。(BugReport/57)</a>
+    <span class="author">ds14050</span>
+    <time datetime="2010-07-06T02:56:57">2010年07月06日 02:56</time></h1>
+    <div class="body">BugReport/57 - SakuraEditorWiki<br>&lt;<a href=http://sakura.qp.land.to/?BugReport%2F57&gt; target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F57&gt;<wbr></nobr></a><br>「数ギガバイトのメモリを食い尽くして Windowsの動作を妨げます。 」<br><br>みなさんのところでは再現できますか？<br>こういうときはメモリをダンプすればすぐに犯人(※メモリのあらゆる<br>ところに存在している)がわかるそうですが自分にはできません。<br>Very Sleepyで CPU消費時間をみたら _DoTabや _CreateLayoutが<br>目立っていました。<br></div></section>
+    <ul><li><section><h1 id=1306>
+    <span class="no">[1306]</span>
+    <a class="title" href="#1306">Re: バグを報告しました。(BugReport/57)</a>
+    <span class="author">もか</span>
+    <time datetime="2010-07-06T18:51:55">2010年07月06日 18:51</time></h1>
+    <div class="body">報告ありがとうございます。<br>再現しました。ANSI/Unicode両方です。おそらく折り返しインデントできる初期から発生するんではないかと。<br><br>TAB_____aTAB____b<br>を<br>TAB_____a&lt;(隙間ありの折り返し)|<br>INDENT__←ここにTAB____を置こうとするが入らないので、0文字のレイアウト行を作成<br>INDENT__←同上... となって、無限にレイアウト行を作っています。<br>いちよう対策コードはあって、インデントしたあとの残りが「6」以下だと折り返しインデントしなくなります。<br>しかし、行頭インデントで1行の残りが7ぐらいでタブ幅を8にすると当然入らないから、無限ループします。<br>右端で折り返さなくても、ある範囲の桁数で折り返しさえすれば発動します。<br><br>折り返しインデントをあきらめる桁数を、タブ幅+2(+2なのは未検証、保険)としておきます。<br>折り返し基準の仕様を変更して、行末のタブはいつも1文字幅として計算(タブぶら下げ)してもたぶん回避できます。<br><br>余談：<br>ちなみに、タブ幅(2-64) &lt; 折り返し幅 ぐらいで、タブ幅が強制的に4になるみたいですね。<br>右端で折り返しのタブ幅16とかにしてウィンドウを細すると4になるけど、ウィンドウを広げても元に戻らない。。<br></div></section>
+    </li></ul></li></ul></body></html>

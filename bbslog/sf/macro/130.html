@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>SQLの"AS"を揃える整形</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">130</span>
+    <a class="title" href="130.html#130">SQLの"AS"を揃える整形</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">131</span>
+    <a class="title" href="130.html#131">Re:SQLの"AS"を揃える整形</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">132</span>
+    <a class="title" href="130.html#132">Re2:SQLの"AS"を揃える整形</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">133</span>
+    <a class="title" href="130.html#133">Re3:SQLの"AS"を揃える整形</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=130>
+    <span class="no">[130]</span>
+    <a class="title" href="#130">SQLの"AS"を揃える整形</a>
+    <span class="author">名無し</span>
+    <time datetime="2004-11-22T10:27:51">2004年11月22日 10:27</time></h1>
+    <div class="body">マクロでも、正規表現でもなんでもいいのですが、<br>左からのバイト数を12と指定すると、<br>SQL文の"AS"以下を12の位置に揃える事って<br>可能なのでしょうか？<br>=============================<br>例）<br>SELECT <br>CD AS V_CODE<br>NAME AS V_NAME <br>ADDRESS AS V_ADDRESS<br>FROM MASTER<br>　　↓<br>SELECT <br>CD       AS V_CODE<br>NAME     AS V_NAME <br>ADDRESS  AS V_ADDRESS<br>FROM MASTER<br>=============================<br>ご存知の方がおられましたら、よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=131>
+    <span class="no">[131]</span>
+    <a class="title" href="#131">Re:SQLの"AS"を揃える整形</a>
+    <span class="author">しみづ</span>
+    <time datetime="2004-11-22T17:25:10">2004年11月22日 17:25</time></h1>
+    <div class="body"><br>&gt;可能なのでしょうか？<br><br>　発言#69は参考にならないでしょうか。<br>　べるぽんさんのTextAlign.jsを以下のように変えると目的の動作になるように見えますが。<br><br>20c20<br>&lt; var useSpace = false;&#9;// 位置詰めの文字にspaceを使うかどうか（falseの場合は、出来るだけ tab を使う。<br>---<br>&gt; var useSpace = true;&#9;// 位置詰めの文字にspaceを使うかどうか（falseの場合は、出来るだけ tab を使う。<br>23c23<br>&lt; var segmentStr = InputBox("区切りの文字を入力して下さい。");<br>---<br>&gt; var segmentStr = " AS ";<br>151c151<br>&lt; &#9;&#9;&#9;lines[i] = GetLookPositionSettedString(lines[i], letterIdx, maxPos, useSpace);<br>---<br>&gt; &#9;&#9;&#9;lines[i] = GetLookPositionSettedString(lines[i], letterIdx, 10, useSpace);<br></div></section>
+    <ul><li><section><h1 id=132>
+    <span class="no">[132]</span>
+    <a class="title" href="#132">Re2:SQLの"AS"を揃える整形</a>
+    <span class="author">名無し</span>
+    <time datetime="2004-11-22T18:35:00">2004年11月22日 18:35</time></h1>
+    <div class="body">しみづさんありがとうございました。<br><br>目的の動作そのものです（喜<br></div></section>
+    <ul><li><section><h1 id=133>
+    <span class="no">[133]</span>
+    <a class="title" href="#133">Re3:SQLの"AS"を揃える整形</a>
+    <span class="author">しみづ</span>
+    <time datetime="2004-11-23T06:10:09">2004年11月23日 06:10</time></h1>
+    <div class="body"><br>　べるぽんさんのおかげですね。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

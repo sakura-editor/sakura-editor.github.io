@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ツールバーでのマウスの両ボタン押し下げ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5413</span>
+    <a class="title" href="5413.html#5413">ツールバーでのマウスの両ボタン押し下げ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5418</span>
+    <a class="title" href="5413.html#5418">Re:ツールバーでのマウスの両ボタン押し下げ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5419</span>
+    <a class="title" href="5413.html#5419">Re2:ツールバーでのマウスの両ボタン押し下げ</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5413>
+    <span class="no">[5413]</span>
+    <a class="title" href="#5413">ツールバーでのマウスの両ボタン押し下げ</a>
+    <span class="author">taka</span>
+    <time datetime="2006-09-05T17:05:28">2006年09月05日 17:05</time></h1>
+    <div class="body">ツールバーのボタンの上でマウスの両方のボタンを押すと<br>固まってしまうのですが。。<br>回避できるものならぜひ回避方法を教えてください。</div></section>
+    <ul><li><section><h1 id=5418>
+    <span class="no">[5418]</span>
+    <a class="title" href="#5418">Re:ツールバーでのマウスの両ボタン押し下げ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-06T22:37:20">2006年09月06日 22:37</time></h1>
+    <div class="body">▼ takaさん<br>&gt; ツールバーのボタンの上でマウスの両方のボタンを押すと<br>&gt; 固まってしまうのですが。。<br><br>ツールバーがマウスをキャプチャしたままになってるようです。<br>キーボード操作は生きているので、'Ctrl' キーを押しながら '1' キーを２回押せば元に戻ります。<br><br>本来これは Windows 共通部品であるコモンコントロール側の問題だと思うのですが、いちおう回避のためのソース修正を Patches に Up しておきます。<br>参考. &gt;&gt;data:4486, &gt;&gt;dev:4034<br><br>この問題はコモンコントロールのツールバーを素のままで使っているアプリ全部に影響してます。<br>未対策アプリでこの問題を事前回避することは無理だと思いますが、起きてしまった場合は、デスクトップやタスクバーの何も無いところをクリックするなどして、対象アプリを一旦非アクティブにしてから戻れば無応答状態からは復帰できます。<br>但し、この方法だとボタンは押された表示のままになってしまうことがあります。<br><br>MS は Win XP ではもうまったく修正／対策する気が無いのか、エクスプローラや IE でもこの問題は起きます。<br>これらは右クリックでコンテキストメニューを表示するので、通常は、たまたま自動的にキャプチャが解除されているだけですね。<br>ツールバーボタン上で右ボタンを押し下げたまま左クリックし、そのままカーソルをタイトルバーか画面外まで動かして右ボタンを離せば固まります。<br>※Vista では起きないようになってるみたい。<br><br>まぁ、ツールバーを両ボタン同時押しなんて、意図的にやる人は別として、それをミスでやってしまうことは滅多に無いから「XP の仕様」でいいだろうってことでしょうけどね。しょっちゅうミスする人にはそもそも Windows 操作は無理、て？<br>問題に気づいちゃった人がこれを嫌がるのはよくわかるけど、さすがに既存／新規作成するアプリすべてに対策入れる気にはなれないな...</div></section>
+    <ul><li><section><h1 id=5419>
+    <span class="no">[5419]</span>
+    <a class="title" href="#5419">Re2:ツールバーでのマウスの両ボタン押し下げ</a>
+    <span class="author">taka</span>
+    <time datetime="2006-09-07T01:28:39">2006年09月07日 01:28</time></h1>
+    <div class="body">ありがとうございます。サブクラス化するんですね。<br><br>        case WM_RBUTTONUP:<br>&#9;&#9;&#9;if (wParam&amp;MK_LBUTTON)  return 0L;<br>&#9;&#9;&#9;msg = WM_LBUTTONUP;<br>&#9;&#9;&#9;break;<br><br>        case WM_RBUTTONDOWN:<br>&#9;&#9;&#9;if (wParam&amp;MK_LBUTTON)  return 0L;<br>&#9;&#9;&#9;msg = WM_LBUTTONDOWN;<br>&#9;&#9;&#9;break;<br><br><br>        case WM_LBUTTONUP:<br>        case WM_LBUTTONDOWN:<br>&#9;&#9;&#9;if (wParam&amp;MK_RBUTTON)  return 0L;<br>&#9;&#9;&#9;break;<br><br>とすれば、右クリックも左と同等に使えるってことですね。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

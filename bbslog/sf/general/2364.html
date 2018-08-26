@@ -1,0 +1,145 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択範囲の不具合</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2364</span>
+    <a class="title" href="2364.html#2364">選択範囲の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2368</span>
+    <a class="title" href="2364.html#2368">Re: 選択範囲の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2370</span>
+    <a class="title" href="2364.html#2370">Re2: 選択範囲の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2377</span>
+    <a class="title" href="2364.html#2377">Re3: 選択範囲の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2395</span>
+    <a class="title" href="2364.html#2395">Re4: 選択範囲の仕様変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2400</span>
+    <a class="title" href="2364.html#2400">Re5: 選択範囲の仕様変更案</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2401</span>
+    <a class="title" href="2364.html#2401">Re5: 選択範囲の仕様変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2403</span>
+    <a class="title" href="2364.html#2403">Re6: 選択範囲の仕様変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2404</span>
+    <a class="title" href="2364.html#2404">Re7: 選択範囲の仕様変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2405</span>
+    <a class="title" href="2364.html#2405">Re8: 選択範囲の仕様変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2406</span>
+    <a class="title" href="2364.html#2406">Re9: 選択範囲の仕様変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2407</span>
+    <a class="title" href="2364.html#2407">Re10: 選択範囲の仕様変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2409</span>
+    <a class="title" href="2364.html#2409">Re11: 選択範囲の仕様変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2416</span>
+    <a class="title" href="2364.html#2416">Re12: 選択範囲の仕様変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2418</span>
+    <a class="title" href="2364.html#2418">Re13: 選択範囲の仕様変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2423</span>
+    <a class="title" href="2364.html#2423">Re14: 選択範囲の仕様変更案</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2364>
+    <span class="no">[2364]</span>
+    <a class="title" href="#2364">選択範囲の不具合</a>
+    <span class="author">ai</span>
+    <time datetime="2002-10-12T01:31:51">2002年10月12日 01:31</time></h1>
+    <div class="body"><br>行番号をクリックして行を選択した状態にし、Shift + ←で選択範囲を変更しようとすると、選択範囲がおかしいです。<br>Ver0.3.9.0 でも再現しました。<br><br>※次版で DrawBracketPair_v6.zip を取り込んでいただけないでしょうか。よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=2368>
+    <span class="no">[2368]</span>
+    <a class="title" href="#2368">Re: 選択範囲の不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-16T01:30:21">2002年10月16日 01:30</time></h1>
+    <div class="body">&gt;行番号をクリックして行を選択した状態にし、Shift + ←で選択範囲を変更しようとすると、選択範囲がおかしいです。<br>範囲選択を行ってもクリックされた行内をカーソルが動くだけで選択範囲が縮まらないことですよね．<br><br>範囲外までキャレットを移動した場合は上でも下でも行選択した部分＋はみ出た部分が選択されるようになりますね．これはこういう仕様なのではないでしょうか．<br><br>キャレットを移動すると範囲が縮まるとすると，そのままキャレットを上に持っていくと行選択したところが選択範囲から外れてしまいます．そもそも，選択の起点が行の右端なのか左端なのかで挙動が変わりますし．<br><br>現在の動きが別に不自然とは思えません．<br></div></section>
+    <ul><li><section><h1 id=2370>
+    <span class="no">[2370]</span>
+    <a class="title" href="#2370">Re2: 選択範囲の不具合</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-10-16T08:43:00">2002年10月16日 08:43</time></h1>
+    <div class="body"><br>&gt;現在の動きが別に不自然とは思えません．<br><br>不自然だと思った。同じようにマウスを使って単語選択したときも不自然なような気がしました。<br>メニューを使って単語選択したときは違和感なしです。<br></div></section>
+    <ul><li><section><h1 id=2377>
+    <span class="no">[2377]</span>
+    <a class="title" href="#2377">Re3: 選択範囲の不具合</a>
+    <span class="author">ai</span>
+    <time datetime="2002-10-16T20:56:03">2002年10月16日 20:56</time></h1>
+    <div class="body"><br>他のエディタもいろいろ試してみましたが、みんなバラバラですね(^^;<br>「仕様です」ということならば、違和感はありますが強く修正は望みません。<br>やざきさんがおっしゃっているように、メニューから単語選択した後の動作は違和感ないんですけどねぇ。<br>※ 選択範囲の中をキャレットが移動してるのを見て不具合だと勘違いしてしまいました。<br></div></section>
+    <ul><li><section><h1 id=2395>
+    <span class="no">[2395]</span>
+    <a class="title" href="#2395">Re4: 選択範囲の仕様変更案</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-10-20T00:49:40">2002年10月20日 00:49</time></h1>
+    <div class="body"><br>&gt;他のエディタもいろいろ試してみましたが、みんなバラバラですね(^^;<br>&gt;「仕様です」ということならば、違和感はありますが強く修正は望みません。<br>&gt;やざきさんがおっしゃっているように、メニューから単語選択した後の動作は違和感ないんですけどねぇ。<br>&gt;※ 選択範囲の中をキャレットが移動してるのを見て不具合だと勘違いしてしまいました。<br><br>・行番号をクリックして、行を選択したとき<br>・単語選択をしたとき<br><br>などで、カーソル操作で選択範囲の中をカーソルが動くような仕様になっていますが、<br>これを、カーソル操作では選択範囲を伸縮するように手元では修正しました。<br><br>行を選択したときも、単語選択のときも、フツー(って何っていう議論が必要だと思いますが)<br>左側から右側に選択することを期待していると仮定して、選択範囲の左端を基準として変更されず、<br>選択範囲の右端が伸び縮みします。<br><br>この仕様変更案に対して、コメントを求めまする。<br></div></section>
+    <ul><li><section><h1 id=2400>
+    <span class="no">[2400]</span>
+    <a class="title" href="#2400">Re5: 選択範囲の仕様変更案</a>
+    <span class="author">ai</span>
+    <time datetime="2002-10-21T21:21:28">2002年10月21日 21:21</time></h1>
+    <div class="body">&gt;これを、カーソル操作では選択範囲を伸縮するように手元では修正しました。<br>&gt;左側から右側に選択することを期待していると仮定して、選択範囲の左端を基準として変更されず、<br>&gt;選択範囲の右端が伸び縮みします。<br>&gt;この仕様変更案に対して、コメントを求めまする。<br><br>私はこのほうがしっくりきますね。<br>他のかたはどうなんでしょう？<br></div></section>
+    </li><li><section><h1 id=2401>
+    <span class="no">[2401]</span>
+    <a class="title" href="#2401">Re5: 選択範囲の仕様変更案</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-21T23:14:44">2002年10月21日 23:14</time></h1>
+    <div class="body">私は現在の仕様でもやざきさんの案でもどちらでもいいです．マウスクリック後にカーソルで範囲を変えるという操作をそもそもやったことがなかった．<br></div></section>
+    <ul><li><section><h1 id=2403>
+    <span class="no">[2403]</span>
+    <a class="title" href="#2403">Re6: 選択範囲の仕様変更案</a>
+    <span class="author">すい</span>
+    <time datetime="2002-10-22T12:44:17">2002年10月22日 12:44</time></h1>
+    <div class="body">&gt;私は現在の仕様でもやざきさんの案でもどちらでもいいです．マウスクリック後にカーソルで範囲を変えるという操作をそもそもやったことがなかった．<br>私個人の意見は、この↑げんたさん の意見と全く同じなのですが．．．<br>ちょっと気になります。<br><br>やざきさん がおっしゃる<br>&gt;行を選択したときも、単語選択のときも、フツー(って何っていう議論が必要だと思いますが)<br>&gt;左側から右側に選択することを期待していると仮定して、選択範囲の左端を基準として変更されず、<br>&gt;選択範囲の右端が伸び縮みします。<br>この仕様って、このエディタの昔の動作仕様そのものですよね。<br>で、その後、<br>「行選択後、上へ範囲選択しながらカーソル移動すると、選択した行が選択されていない。<br>　はじめに行選択したんなら行単位の選択を希望しているんだろうし、その後、<br>　上の方へ範囲を広げようが、下の方へ範囲を広げようが、選択開始の基点の行は<br>　選択されたままにして欲しい。行単位の編集がやりにくい」<br>という（ような内容だったと思う）要望がどなたか（誰だったかは失念。過去ログ見ても見つからなかったし）<br>から出されて、で、プログラマーの方（これもどなただったか失念）が一生懸命要望を満たすように修正した、<br>その結果が現在の動作仕様だったはずですが？<br><br>それを安直に元に戻しちゃって良いものなのか、ちょっと不安です。<br>何も反対意見が出て来ない所をみると、要望を出された方も、もう使っていないんでしょうか？<br>なら何も問題なしでしょうけど。<br><br>私も別に行単位でいじったりしないし、元に戻そうがどちらでもOK ですが。<br>そもも「行単位での選択」自体あまりやらないですし。<br></div></section>
+    <ul><li><section><h1 id=2404>
+    <span class="no">[2404]</span>
+    <a class="title" href="#2404">Re7: 選択範囲の仕様変更案</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-22T13:39:08">2002年10月22日 13:39</time></h1>
+    <div class="body">&gt;それを安直に元に戻しちゃって良いものなのか、ちょっと不安です。<br>意見が分かれたら多数決ではなく両方サポートの上設定で選択可能にするというのがこのエディタのやり方に最も合っていると思います．少数意見も切り捨てない．これ重要．<br></div></section>
+    <ul><li><section><h1 id=2405>
+    <span class="no">[2405]</span>
+    <a class="title" href="#2405">Re8: 選択範囲の仕様変更案</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-10-22T14:24:16">2002年10月22日 14:24</time></h1>
+    <div class="body">&gt;タイトル: Re8: 選択範囲の仕様変更案<br>&gt;発言者: げんた<br>&gt;&gt;それを安直に元に戻しちゃって良いものなのか、ちょっと不安です。<br>&gt;意見が分かれたら多数決ではなく両方サポートの上設定で選択可能にするというのがこのエディタのやり方に最も合っていると思います．少数意見も切り捨てない．これ重要．<br><br>不用意に分けない。これも重要 :-)<br></div></section>
+    <ul><li><section><h1 id=2406>
+    <span class="no">[2406]</span>
+    <a class="title" href="#2406">Re9: 選択範囲の仕様変更案</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-22T15:53:52">2002年10月22日 15:53</time></h1>
+    <div class="body">&gt;不用意に分けない。これも重要 :-)<br>設定項目を増やさない方がいいってこと？<br></div></section>
+    <ul><li><section><h1 id=2407>
+    <span class="no">[2407]</span>
+    <a class="title" href="#2407">Re10: 選択範囲の仕様変更案</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-10-22T16:09:51">2002年10月22日 16:09</time></h1>
+    <div class="body"><br>&gt;&gt;不用意に分けない。これも重要 :-)<br>&gt;設定項目を増やさない方がいいってこと？<br><br>そう。<br>安易に設定項目を増やすのではなく、よりよい実装を模索するということで。<br></div></section>
+    <ul><li><section><h1 id=2409>
+    <span class="no">[2409]</span>
+    <a class="title" href="#2409">Re11: 選択範囲の仕様変更案</a>
+    <span class="author">すい</span>
+    <time datetime="2002-10-22T21:30:34">2002年10月22日 21:30</time></h1>
+    <div class="body">&gt;&gt;&gt;少数意見も切り捨てない．これ重要．<br>私はこの考え方が非常にうれしいのです。でも (^^;<br><br>&gt;&gt;設定項目を増やさない方がいいってこと？<br>&gt;安易に設定項目を増やすのではなく、よりよい実装を模索するということで。<br><br>こちらも。<br>安直に動作に関わる設定項目を作ると、「その分プログラムが複雑怪奇になって<br>バグの苗床になりやすい」とかいう製作側の理由だけでなく「マクロの汎用性が落ちてしまふ<br>（同じマクロファイルを実行しても設定状況によって動作結果が異なってしまう）」<br>という辺りのユーザーサイドのデメリットも無視できなくなってくるかと。<br># 「単語単位で移動するときに単語の両端に止まる」とか「コピーしたら選択解除」とか etc...<br><br>という事で私は げんたさん/やざきさん の相容れなさげな両方共のご意見に賛成です。（って、どないせぃちゅうんや＞私）<br><br>今回の場合だと、<br>a：「選択開始の基点の行は選択されたままにして欲しい」というユーザーを切り捨てない<br>b：使っていてあまり違和感を感じないように<br>c：設定項目も増やさない<br>を満たすとすると、<br>「行選択後に選択範囲変更操作した場合、“行選択直後の選択範囲変更操作”に応じて選択開始となる基点を変える」<br>くらい？<br><br>例えば 4，5行を行選択した場合、<br><br>１．4行と5行を選択。<br>２．[Shift]+[↓] と操作したら、<br>　　4行目行頭を基点とした通常の範囲選択になり、さらに6行目も選択状態（カーソル位置は7行目行頭）<br>　　# つまり選択中になっている行は 4,5,6行で、カーソル位置は後方の7行目<br>　　以後は [Shift]+[↑]/[↓]/[←]/[→] で普通に選択範囲を広げたり縮めたり変更可能。<br>　　[Shift]+[→] の時も同様に。<br><br>１．4行と5行を選択。<br>２．[Shift]+[↑] と操作したら、<br>　　6行目行頭を基点とした通常の範囲選択になり、さらに3行目も選択状態（カーソル位置は3行目行頭）<br>　　# つまり選択中になっている行は 3,4,5行で、カーソル位置は前方の3行目<br>　　以後は [Shift]+[↑]/[↓]/[←]/[→] で普通に選択範囲を広げたり縮めたり変更可能。<br>　　[Shift]+[←] の時も同様に。<br><br>という動作くらい？<br></div></section>
+    <ul><li><section><h1 id=2416>
+    <span class="no">[2416]</span>
+    <a class="title" href="#2416">Re12: 選択範囲の仕様変更案</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-10-23T17:02:16">2002年10月23日 17:02</time></h1>
+    <div class="body"><br>こういう動作はどうかなぁ。<br><br>4行目を選択したあとに、<br>・[Shift]+[↓] と操作したら<br>　4行目と5行目を選択（以前と同じ）<br><br>・[Shift]+[↑] と操作したら<br>　4行目だけ（ちょっと違和感があるけど、以前と同じ）<br><br>・[Shift]+[←] と操作したら<br>　4行目の先頭から、行末まで。ただし改行記号を含まず。<br><br>・[Shift]+[→] と操作したら<br>　4行目＋5行目の1文字目（以前と同じ）<br><br>で、[Shift]+[←]を押しつづけて、カーソルが行頭にくると、4行目全体が選択され（やっぱり違和感があるけど、結局のところ以前と同じ）、さらに[Shift]+[←]を押すと、4行目と3行目の改行のみが選択される。<br><br>これなら、パッチを出せるけどー。<br></div></section>
+    <ul><li><section><h1 id=2418>
+    <span class="no">[2418]</span>
+    <a class="title" href="#2418">Re13: 選択範囲の仕様変更案</a>
+    <span class="author">すい</span>
+    <time datetime="2002-10-23T20:54:52">2002年10月23日 20:54</time></h1>
+    <div class="body">&gt;こういう動作はどうかなぁ。<br><br>従来と同じ事ができるみたいなので行単位編集者を切り捨てずにすみそうですし、<br>違和感も当社比(?)少なめで良さそうに思えますね。<br></div></section>
+    <ul><li><section><h1 id=2423>
+    <span class="no">[2423]</span>
+    <a class="title" href="#2423">Re14: 選択範囲の仕様変更案</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-10-25T13:33:37">2002年10月25日 13:33</time></h1>
+    <div class="body">&gt;タイトル: Re14: 選択範囲の仕様変更案<br>&gt;発言者: すい<br>&gt;&gt;こういう動作はどうかなぁ。<br>&gt;<br>&gt;従来と同じ事ができるみたいなので行単位編集者を切り捨てずにすみそうですし、<br>&gt;違和感も当社比(?)少なめで良さそうに思えますね。<br><br>Thanx.<br>このパッチをアップロードしてみました。ついでにCRunningTimerも若干整理。<br>どのように取り込むかはお任せします。<br>よろしくおねがいしますっ。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>１３６桁（１５ｘ１１）２段印刷不可</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">8305</span>
+    <a class="title" href="8305.html#8305">１３６桁（１５ｘ１１）２段印刷不可</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8310</span>
+    <a class="title" href="8305.html#8310">Re:１３６桁（１５ｘ１１）２段印刷不可</a></div>
+    </li><li><div class="list-title">
+    <span class="no">8311</span>
+    <a class="title" href="8305.html#8311">Re:１３６桁（１５ｘ１１）２段印刷不可</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=8305>
+    <span class="no">[8305]</span>
+    <a class="title" href="#8305">１３６桁（１５ｘ１１）２段印刷不可</a>
+    <span class="author">まるこめ</span>
+    <time datetime="2018-01-11T08:59:22">2018年01月11日 08:59</time></h1>
+    <div class="body">サクラエディタを以前から愛用させていただいております。<br>さて、実はCなどのソースを大量に出力する必要があり、サクラエディタで出そうとしてますが、<br>・サクラエディタ側に連続用紙（１５ｘ１１）の設定がない<br>・近似でA3で出すとなぜか全部用紙縦出力になってしまう<br><br>きほんは１５ｘ１１で、２段で出力できると、折り曲げて読めるので綴じるのにも大変便利になります。<br>この場合どうすればいいでしょうか？<br></div></section>
+    <ul><li><section><h1 id=8310>
+    <span class="no">[8310]</span>
+    <a class="title" href="#8310">Re:１３６桁（１５ｘ１１）２段印刷不可</a>
+    <span class="author">berryzplus</span>
+    <time datetime="2018-01-16T20:54:21">2018年01月16日 20:54</time></h1>
+    <div class="body">▼ まるこめさん<br>&gt; この場合どうすればいいでしょうか？<br><br>設計的に困った部分だと認識しています。<br>いつかは対応されると思っています。<br><br>当座は諦めてください。<br><br><br>サクラエディタのプリンタ設定ダイアログは、<br>プリンタ(ドライバ)の能力によらず、<br>固定で41種類の用紙サイズを表示します。<br><br>X:\svn\sakura2\sakura_core\print\CPrint.cpp(43): const PAPER_INFO CPrint::m_paperInfoArr<br><br><br>以下の開発者向けサイトの1～41までが該当します。<br><a href=https://msdn.microsoft.com/ja-jp/library/windows/desktop/dd319099(v=vs.85).aspx target=_top><nobr>https://<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>ja-<wbr>jp/<wbr>library/<wbr>windows/<wbr>desktop/<wbr>dd319099<wbr>(<wbr>v=<wbr>vs.<wbr>85).<wbr>aspx</nobr></a><br><br>DMPAPER_15X11の除外理由は、<br>あるバージョン以降のwindowsでないと使えない値だから<br>と思われます。<br><br>あえて外したわけじゃない気もします。<br><br>あるべき姿はドライバの能力を照会して、<br>対応した用紙サイズのみを表示する、です。<br></div></section>
+    </li><li><section><h1 id=8311>
+    <span class="no">[8311]</span>
+    <a class="title" href="#8311">Re:１３６桁（１５ｘ１１）２段印刷不可</a>
+    <span class="author">AC</span>
+    <time datetime="2018-01-17T14:01:43">2018年01月17日 14:01</time></h1>
+    <div class="body">自分だったら餅は餅屋で紙への印刷は Acrobatか Adobe Readerに<br>まかせることにして、サクラエディタからは PDFとして印刷してみて<br>方法を考えますね。<br><br># ACの Cは cowardの C.<br># 便乗してコメントしました。<br></div></section>
+    </li></ul></li></ul></body></html>

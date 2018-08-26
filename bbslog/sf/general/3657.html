@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ：DIFF</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3657</span>
+    <a class="title" href="3657.html#3657">バグ：DIFF</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3661</span>
+    <a class="title" href="3657.html#3661">RE: バグ：DIFF</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3662</span>
+    <a class="title" href="3657.html#3662">Re:バグ：DIFF</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3835</span>
+    <a class="title" href="3657.html#3835">Re2:バグ：DIFF</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3847</span>
+    <a class="title" href="3657.html#3847">Re3:バグ：DIFF</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3657>
+    <span class="no">[3657]</span>
+    <a class="title" href="#3657">バグ：DIFF</a>
+    <span class="author">みく</span>
+    <time datetime="2004-02-19T20:17:09">2004年02月19日 20:17</time></h1>
+    <div class="body"><br>相手ファイルが編集中のとき、DIFFが動きません。<br>なんでだろう？　＞自分<br></div></section>
+    <ul><li><section><h1 id=3661>
+    <span class="no">[3661]</span>
+    <a class="title" href="#3661">RE: バグ：DIFF</a>
+    <span class="author">みく</span>
+    <time datetime="2004-02-20T20:01:21">2004年02月20日 20:01</time></h1>
+    <div class="body"><br>相手ファイルが無題の場合に発生するようです。<br><br>CDlgDiff.cpp:GetData()<br>の最後のif文をコメントアウト。<br></div></section>
+    </li><li><section><h1 id=3662>
+    <span class="no">[3662]</span>
+    <a class="title" href="#3662">Re:バグ：DIFF</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-02-21T20:08:23">2004年02月21日 20:08</time></h1>
+    <div class="body">▼ みくさん<br>過去ログ[3152]も、一緒にお願いします。<br>data&amp;ol=200308#3152<br>***************<br>*** 359,365 ****<br>  &#9;&#9;m_pShareData-&gt;m_Common.m_bSearchAll = FALSE;<br> <br>  &#9;//相手ファイルが指定されてなければキャンセル<br>! &#9;if( m_szFile2[0] == '\0' ) ret = FALSE;<br> <br>  &#9;return ret;<br>  }<br>--- 359,365 ----<br>  &#9;&#9;m_pShareData-&gt;m_Common.m_bSearchAll = FALSE;<br> <br>  &#9;//相手ファイルが指定されてなければキャンセル<br>! &#9;//if( m_szFile2[0] == '\0' ) ret = FALSE;<br> <br>  &#9;return ret;<br>  }<br></div></section>
+    <ul><li><section><h1 id=3835>
+    <span class="no">[3835]</span>
+    <a class="title" href="#3835">Re2:バグ：DIFF</a>
+    <span class="author">みく</span>
+    <time datetime="2004-05-12T19:07:54">2004年05月12日 19:07</time></h1>
+    <div class="body"><br>age<br></div></section>
+    <ul><li><section><h1 id=3847>
+    <span class="no">[3847]</span>
+    <a class="title" href="#3847">Re3:バグ：DIFF</a>
+    <span class="author">みく</span>
+    <time datetime="2004-05-19T18:37:46">2004年05月19日 18:37</time></h1>
+    <div class="body"><br>CDlgDiff.cpp:GetData()<br>の最後のif文を削除。<br><br>代わりに、外部ファイル指定時のチェック追加。<br><br>&#9;if( ::IsDlgButtonChecked( m_hWnd, IDC_RADIO_DIFF_DST1 ) == BST_CHECKED )<br>&#9;{<br>&#9;&#9;::GetDlgItemText( m_hWnd, IDC_EDIT_DIFF_DST, m_szFile2, sizeof( m_szFile2 ) );<br>+&#9;&#9;//相手ファイルが指定されてなければキャンセル<br>+&#9;&#9;if( m_szFile2[0] == '\0' ) ret = FALSE;<br>&#9;}<br><br>～～～～～<br><br>&#9;//相手ファイルが指定されてなければキャンセル<br>!&#9;//if( m_szFile2[0] == '\0' ) ret = FALSE;<br><br>&#9;return ret;<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

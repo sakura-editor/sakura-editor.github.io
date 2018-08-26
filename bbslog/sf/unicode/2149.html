@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ファイル切替え時のフォント切換え不正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2149</span>
+    <a class="title" href="2149.html#2149">ファイル切替え時のフォント切換え不正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2150</span>
+    <a class="title" href="2149.html#2150">Re:ファイル切替え時のフォント切換え不正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2151</span>
+    <a class="title" href="2149.html#2151">Re2:ファイル切替え時のフォント切換え不正</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2149>
+    <span class="no">[2149]</span>
+    <a class="title" href="#2149">ファイル切替え時のフォント切換え不正</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-04-08T19:30:11">2014年04月08日 19:30</time></h1>
+    <div class="body">ファイルの切替え操作に伴って、フォント切替えが中途半端になるケースがあるようです。<br><br>【再現用の設定】<br>無題はMS ゴシック10pt（デフォルトのフォント）<br>.txtはMS 明朝10pt（タイプ別指定のフォント）<br><br>【再現の操作】<br>無題で何も入力せずにフォントを数段階拡大してから.txtファイルを「開く」。<br>→フォントはゴシックで拡大したまま。その後１回拡大操作すると明朝10pt(+α?)になる。<br><br>.txtファイルを開いた状態でフォントを数段階拡大し「閉じて無題」。<br>→フォントは明朝で拡大したまま。その後1回拡大操作するとゴシック10pt(+α?)になる。<br><br>.txtファイルを開いた状態でフォントを数段階拡大し「開き直す」。<br>→フォントは拡大したまま。その後1回拡大操作するか再度「開き直す」と明朝10pt(+α?)になる。<br><br>自分が確認できているのは上記のパターンです。<br>他にもあるかもしれません。</div></section>
+    <ul><li><section><h1 id=2150>
+    <span class="no">[2150]</span>
+    <a class="title" href="#2150">Re:ファイル切替え時のフォント切換え不正</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-04-08T19:34:56">2014年04月08日 19:34</time></h1>
+    <div class="body">当て推量ですが、下記のような一行修正を加えると是正される感じです。<br>ご確認ください。<br><br>--- sakura_core/doc/CEditDoc.cpp&#9;(リビジョン 3671)<br>+++ sakura_core/doc/CEditDoc.cpp&#9;(作業コピー)<br>@@ -177,6 +177,7 @@<br> &#9;m_cDocType.SetDocumentType( CDocTypeManager().GetDocumentTypeOfPath( m_cDocFile.GetFilePath() ), true );<br> &#9;SelectCharWidthCache( CWM_FONT_EDIT, m_pcEditWnd-&gt;GetLogfontCacheMode() );<br> &#9;InitCharWidthCache( m_pcEditWnd-&gt;GetLogfont() );<br>+&#9;m_blfCurTemp = false;<br> &#9;m_pcEditWnd-&gt;m_pcViewFont-&gt;UpdateFont(&amp;m_pcEditWnd-&gt;GetLogfont());<br> <br> &#9;// 2008.06.07 nasukoji&#9;折り返し方法の追加に対応<br></div></section>
+    <ul><li><section><h1 id=2151>
+    <span class="no">[2151]</span>
+    <a class="title" href="#2151">Re2:ファイル切替え時のフォント切換え不正</a>
+    <span class="author">もか</span>
+    <time datetime="2014-04-09T19:34:44">2014年04月09日 19:34</time></h1>
+    <div class="body">GetLogfontCacheModeでm_blfCurTempを参照するので<br>SelectCharWidthCacheの前にm_blfCurTemp = falseする必要があると思います。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

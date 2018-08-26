@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>報告</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">476</span>
+    <a class="title" href="476.html#476">報告</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=476>
+    <span class="no">[476]</span>
+    <a class="title" href="#476">報告</a>
+    <span class="author">Starmirage</span>
+    <time datetime="2008-06-12T12:04:56">2008年06月12日 12:04</time></h1>
+    <div class="body">2000/XP上のrev.1377で確認しました。<br><br>一時的に折り返し設定を変えてファイルを編集し、保存すると折り返し設定が元に戻ります。<br>ansi版1.6.2.0では発生しません。<br><br>grep結果を編集し、ファイル-&gt;全て上書き保存を行うと、grep結果を保存しようとしてエラーが出ます。<br><br><br>あとこれはansi版もですが、正規表現でgrepするとバックスラッシュなどが余計にエスケープされて表示されます。<br>たとえば \[\d+\] でgrepすると条件部分に \\[\\d+\\] と表示されてしまいます。<br><br>ansi 2007-12-02版 CEditView.cpp CEditView::DoGrep() 7077-7084行<br>unicode2 rev.1371版 CGrepAgent.cpp CGrepAgent::DoGrep() 183-190行<br><br>上記部分の、grep条件文字列へのバックスラッシュ・シングルクォート・ダブルクォートの再エスケープは不要ではないでしょうか。</div></section>
+    </li></ul></body></html>

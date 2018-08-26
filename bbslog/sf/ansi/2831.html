@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Grepとその他バグ修正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2831</span>
+    <a class="title" href="2831.html#2831">Grepとその他バグ修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2839</span>
+    <a class="title" href="2831.html#2839">RE: Grep - 内容とは関係ないのですが</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2851</span>
+    <a class="title" href="2831.html#2851">Re2: Grep - 内容とは関係ないのですが</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2854</span>
+    <a class="title" href="2831.html#2854">取り込み作業中ですが，ちょっと質問など</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2862</span>
+    <a class="title" href="2831.html#2862">Re: 取り込み作業中ですが，ちょっと質問など</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2841</span>
+    <a class="title" href="2831.html#2841">RE: Grepとその他バグ修正</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2831>
+    <span class="no">[2831]</span>
+    <a class="title" href="#2831">Grepとその他バグ修正</a>
+    <span class="author">もか</span>
+    <time datetime="2003-06-10T11:03:14">2003年06月10日 11:03</time></h1>
+    <div class="body">正規表現の置換に関するバグ修正に関して、かろとさん、すいさん、蒔田　信幸さん、（他にもいたらごめんなさい）<br>本当にご苦労様です。<br>正規表現ということでGrepの正規表現は大丈夫なのか心配になり見てみたら、気になる部分があったので修正してみました。<br>ついでに、他のバグ修正も含んでいます。<br><br>eGroupsの、030525fix.zip<br><br>[バグ修正]<br>&#9;・Grepのバグ修正（仕様変更）<br>&#9; 詳細は一般掲示板の「Grep出力結果のバグっぽい仕様の変更(案)」を見てください<br>&#9;・BCC版で0バイトのファイルが開けない問題の修正<br>&#9;・CShareData::GetMacroName()の戻り値がローカル変数へのポインタを返すことがあった<br>&#9;・CPPAのメモリーリークの修正とメモリー使用量削減<br>[その他]<br>&#9;・検索の高速化(数clock)<br>&#9;・VCのリンクエラー対策<br>&#9;・CFileLoad内部で文字コード判別ができるように変更<br><br>ところで、直していませんけど開発#2931の「GrepにドロップするとGrepのままファイルを開く」はバグですよね？<br></div></section>
+    <ul><li><section><h1 id=2839>
+    <span class="no">[2839]</span>
+    <a class="title" href="#2839">RE: Grep - 内容とは関係ないのですが</a>
+    <span class="author">すい</span>
+    <time datetime="2003-06-12T02:13:19">2003年06月12日 02:13</time></h1>
+    <div class="body">Grep 周りいじるならついでに出来れば、と。<br><br>Grep ダイアログの「ファイル(T)」欄ですが、ここが空欄で Grep検索しようとすると<br>「検索対象ファイルを指定してください。」なんて警告ダイアログ出ちゃいますけど。<br>ここが空欄の状態で検索したら「*.*」が指定されているとみなして全ファイル検索<br>してくれた方が嬉しいと思うのですが。いちいち *.* って入力するの面倒ですし。<br>Windows 標準のファイル検索やなんかが↑そうなっていますよね。<br><br>sakura_core/CDlgGrep.cpp    500行近辺?<br>int CDlgGrep::GetData( void ) 内<br><br><br>&gt;ところで、直していませんけど開発#2931の「GrepにドロップするとGrepのままファイルを開く」はバグですよね？<br><br>これはバグでしょうねぇ、いくらなんでもこれは。(;^^;)<br></div></section>
+    <ul><li><section><h1 id=2851>
+    <span class="no">[2851]</span>
+    <a class="title" href="#2851">Re2: Grep - 内容とは関係ないのですが</a>
+    <span class="author">もか</span>
+    <time datetime="2003-06-14T13:28:38">2003年06月14日 13:28</time></h1>
+    <div class="body">▼すいさん<br>&gt;Grep ダイアログの「ファイル(T)」欄が<br>&gt;(中略)<br>&gt;空欄の状態で検索したら「*.*」が指定されているとみなして全ファイル検索<br>という風にしました。<br>コマンドラインオプションと、マクロは以前のままです。<br><br>eGroupsの、030525fix2.zipです。<br>ssrc_2003-05-25からの差分で、030525fix.zipの変更内容と#2841のCFileLoadに関する部分を含んでいます。<br>030525fix.zip適用後、BOMを読み飛ばし損ねるバグを修正。<br><br><br>[バグ修正]<br>&#9;・開発#2931　Grepウィンドウがそのままファイルを開くことがある<br>[仕様変更]<br>&#9;・Grep ダイアログの「ファイル」欄が空欄の状態で検索したら「*.*」が指定されているとみなして全ファイル検索<br><br>余談:<br>どうもこのワイルドカード指定というものは曲者ですね。<br>「*.*」=「*」というのがWindows/Linux世代(私だけかも)には謎な仕様に思える<br>.を含むファイル名のファイルから検索したいときはどうすればいいんだろう<br></div></section>
+    <ul><li><section><h1 id=2854>
+    <span class="no">[2854]</span>
+    <a class="title" href="#2854">取り込み作業中ですが，ちょっと質問など</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-06-15T03:06:06">2003年06月15日 03:06</time></h1>
+    <div class="body">&gt;eGroupsの、030525fix2.zipです。<br>*CShareData::GetMacroName()<br>外からバッファを与えるならバッファサイズも併せて与えた方が良いと思い，その辺の防御機構を追加しました．<br><br>*PPAのメモリリーク<br>どの辺がメモリリークなのでしょうか．登録が2回以上呼ばれるとリークするということでしょうか．一応解放時にはdeleteしているようですが．<br>確かにCSMacroMgrの要素に文字列を入れるのは気持ち悪いですけど，ひょっとして登録した文字列をPPA.DLLが解放されるまで保持し続けないと正しく動かないからこうなっているのかなと思ってPPA.DLLの説明を確認しました．特にそういう制限は書いてないようなので大丈夫なのかな？<br><br>ただどうせやるなら，メモリの取得解放を繰り返さなくても呼び出し側で大きなバッファを用意してそこに入れてもらった方が効率的かとおもいます．一応取り込む前に動作確認してみます．<br><br>*ヒットした文字列の表示文字数制限の変更<br>これ，変更した意図がよくわからないのですが．ソース上でも単に最大値を設定しているだけですし．<br></div></section>
+    <ul><li><section><h1 id=2862>
+    <span class="no">[2862]</span>
+    <a class="title" href="#2862">Re: 取り込み作業中ですが，ちょっと質問など</a>
+    <span class="author">もか</span>
+    <time datetime="2003-06-16T20:10:51">2003年06月16日 20:10</time></h1>
+    <div class="body">▼ げんたさん<br>&gt;&gt;eGroupsの、030525fix2.zipです。<br>&gt;*CShareData::GetMacroName()<br>&gt;外からバッファを与えるならバッファサイズも併せて与えた方が良いと思い，その辺の防御機構を追加しました．<br>了解しました。<br><br>*PPAのメモリリーク<br>&gt;どの辺がメモリリークなのでしょうか．<br>・InitDll()内<br>　CSMacroMgr::m_MacroFuncInfoNotCommandAr<br>r[i].m_pszData = new char [ strlen(CSMacroMgr::m_MacroFuncInfoNotCom<br>mandArr[i].m_pszFuncName) + 256 ];<br>　GetDeclarations( CSMacroMgr::m_MacroFuncInfoNotCommandArr<br>[i] );<br>・GetDeclarations( MacroFuncInfo&amp; cMacroFuncInfo )内<br>　cMacroFuncInfo.m_pszData = new char [ lstrlen( szBuffer ) + 1 ];<br>このあたりです。同じポインタ変数に2回連続してnewの結果?を入れています。<br>&gt;登録した文字列をPPA.DLLが解放されるまで保持し続けないと正しく動かないからこうなっているのかなと思って(中略...)特にそういう制限は書いてないようなので大丈夫なのかな？<br>私もそう思ったのですが、保持しなくても動くようです。<br>(このCPPA.cppの変更はマクロ拡張にも含まれています。)<br>ちなみにstaticなのは、「マクロ拡張」のエラー表示で流用したかったからですが、<br>引数の型チェックはPPA.dllがさきにエラーを返してくるため、<br>定義関数内のエラー処理で引数の型情報まで表示する必要はなかったかもしれません。<br>&gt;ただどうせやるなら，メモリの取得解放を繰り返さなくても呼び出し側で大きなバッファを用意してそこに入れてもらった方が効率的かとおもいます．一応取り込む前に動作確認してみます．<br>たしかに。適当に書き換えちゃってください。m(__)m<br><br>*ヒットした文字列の表示文字数制限の変更<br>&gt;これ，変更した意図がよくわからないのですが．ソース上でも単に最大値を設定しているだけですし．<br>とくに意味はありませんが、<br>・Grep結果に表示された文字列を何かに流量している人がいたら途中で切れるのはよくない<br>・逆に制限をなくして正直に1行全部表示してメモリーを使い果たすのも問題<br>と思い、とりあえず現状で確保しているサイズの安全な範囲の最大値に近い、きりのいい数字にしてみました。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=2841>
+    <span class="no">[2841]</span>
+    <a class="title" href="#2841">RE: Grepとその他バグ修正</a>
+    <span class="author">もか</span>
+    <time datetime="2003-06-12T10:51:02">2003年06月12日 10:51</time></h1>
+    <div class="body">&gt;eGroupsの、030525fix.zip<br>パッチのバグ修正。(現時点での動作には問題のないバグです）<br>このパッチを当てた後の行番号で<br>CFileLoad.cpp (150): <br>-&#9;if( nBomCode != 0 || nBomCode == m_CharCode ){<br>+&#9;if( nBomCode != 0 &amp;&amp; nBomCode == m_CharCode ){<br><br>Grepの正規表現ON／該当部分にて長さ0にヒットすると、<br>次の検索開始位置が、漢字の真ん中から始まります。<br>（オリジナル・030525fix.zip当てた後の両方とものバグ）<br>例：<br>「B|(.*?)」//特に意味のない検索<br>データ「B。BB」<br>だとBが4つみつかります。<br></div></section>
+    </li></ul></li></ul></body></html>

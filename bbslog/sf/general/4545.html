@@ -1,0 +1,127 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>行のコメント化</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4545</span>
+    <a class="title" href="4545.html#4545">行のコメント化</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4546</span>
+    <a class="title" href="4545.html#4546">Re:行のコメント化</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4547</span>
+    <a class="title" href="4545.html#4547">Re2:行のコメント化</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4552</span>
+    <a class="title" href="4545.html#4552">Re3:行のコメント化</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4556</span>
+    <a class="title" href="4545.html#4556">Re4:行のコメント化</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4557</span>
+    <a class="title" href="4545.html#4557">Re5:行のコメント化</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4559</span>
+    <a class="title" href="4545.html#4559">Re6:行のコメント化</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4560</span>
+    <a class="title" href="4545.html#4560">Re3:行のコメント化</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4561</span>
+    <a class="title" href="4545.html#4561">Re4:行のコメント化</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4562</span>
+    <a class="title" href="4545.html#4562">Re5:行のコメント化【解決】</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4565</span>
+    <a class="title" href="4545.html#4565">Re6:行のコメント化【解決】</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4566</span>
+    <a class="title" href="4545.html#4566">Re6:行のコメント化【解決】</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4568</span>
+    <a class="title" href="4545.html#4568">Re7:行のコメント化【最終解決】</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4569</span>
+    <a class="title" href="4545.html#4569">Re7:行のコメント化【解決】</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4545>
+    <span class="no">[4545]</span>
+    <a class="title" href="#4545">行のコメント化</a>
+    <span class="author">moi</span>
+    <time datetime="2005-07-14T08:38:33">2005年07月14日 08:38</time></h1>
+    <div class="body">行コメントしか対応していないタイプの言語です。<br>（旧式Basicのremなど）<br>ブロックコメントが無くて不便しているのですが、<br><br>ｎ行からｍ行まで一気にコメント化する方法は無いでしょうか？<br>（VBのアイコンでコメントブロックみたいなもの）<br>現在は、SHIFT-F6でコメント記号を入れたい場所を選択してから<br>挿入しています。<br>コメント記号を入れる場所が行頭が殆どという事もあり、<br>楽にやる方法があれば教えてください。<br></div></section>
+    <ul><li><section><h1 id=4546>
+    <span class="no">[4546]</span>
+    <a class="title" href="#4546">Re:行のコメント化</a>
+    <span class="author">すす</span>
+    <time datetime="2005-07-14T18:04:40">2005年07月14日 18:04</time></h1>
+    <div class="body">n-m行の0文字目を矩形選択すれば選択した行全部にremとか入れられますよ</div></section>
+    <ul><li><section><h1 id=4547>
+    <span class="no">[4547]</span>
+    <a class="title" href="#4547">Re2:行のコメント化</a>
+    <span class="author">maru</span>
+    <time datetime="2005-07-15T00:27:52">2005年07月15日 00:27</time></h1>
+    <div class="body">&gt;&gt; 現在は、SHIFT-F6でコメント記号を入れ…<br>&gt; n-m行の0文字目を矩形選択すれば…<br><br>ん？多分質問の意味が違うような。<br><br>マクロを使用して良いなら<br>//CommentBlock.mac<br>S_ReplaceAll('^', '//', 156);<br>S_ReDraw(0);<br>S_SearchClearMark(0);<br>とかをマクロに登録してツールバーに割り付け。<br></div></section>
+    <ul><li><section><h1 id=4552>
+    <span class="no">[4552]</span>
+    <a class="title" href="#4552">Re3:行のコメント化</a>
+    <span class="author">maru</span>
+    <time datetime="2005-07-19T02:22:20">2005年07月19日 02:22</time></h1>
+    <div class="body">//Comment.js --------------------------<br>//拡張子別に行コメント文字を定義<br>var aExt = new Array();<br>aExt["c"] = "//";<br>aExt["cpp"] = "//";<br>aExt["h"] = "//";<br>aExt["js"] = "//";<br>aExt["vbs"] = "'";<br>aExt["mac"] = "//";<br>aExt["pl"] = "#";<br>aExt["tex"] = "%";<br>aExt["php"] = "//";<br>aExt["asm"] = ";";<br>aExt["uws"] = "//";<br>aExt["conf"] = ";";<br>aExt["ppa"] = "//";<br><br>//行選択されていなくても<br>GoLineTop_Sel();<br><br>//先頭にキャレットがあり、無選択なときでも<br>sSelect = GetSelectedString(0);<br>sX = ExpandParameter("$x");<br>if ((sSelect.length == 0) &amp;&amp; (sX == "1")) GoLineEnd_Sel();<br><br>//拡張子を切り出し<br>sExt = ExpandParameter("$f");<br>sExt = sExt.substring( sExt.lastIndexOf(".") + 1);<br>sExt = sExt.toLowerCase()<br><br>//選択範囲を置換<br>ReplaceAll ("^.", aExt[sExt] + "$&amp;", 148);&#9;&#9;//コメントアウト<br>//ReplaceAll ("^([\t\s]*)" + aExt[sExt], "$1", 148);&#9;//コメント解除<br>CancelMode();<br>SearchClearMark();<br>ReDraw(0);<br>//EOF ----------------------------------<br><br><br>//CommentCancel.js --------------------<br>//拡張子別に行コメント文字を定義<br>var aExt = new Array();<br>aExt["c"] = "//";<br>aExt["cpp"] = "//";<br>aExt["h"] = "//";<br>aExt["js"] = "//";<br>aExt["vbs"] = "'";<br>aExt["mac"] = "//";<br>aExt["pl"] = "#";<br>aExt["tex"] = "%";<br>aExt["php"] = "//";<br>aExt["asm"] = ";";<br>aExt["uws"] = "//";<br>aExt["conf"] = ";";<br>aExt["ppa"] = "//";<br><br>//行選択されていなくても<br>GoLineTop_Sel();<br><br>//先頭にキャレットがあり、無選択なときでも<br>sSelect = GetSelectedString(0);<br>sX = ExpandParameter("$x");<br>if ((sSelect.length == 0) &amp;&amp; (sX == "1")) GoLineEnd_Sel();<br><br>//拡張子を切り出し<br>sExt = ExpandParameter("$f");<br>sExt = sExt.substring( sExt.lastIndexOf(".") + 1);<br>sExt = sExt.toLowerCase()<br><br>//選択範囲を置換<br>//ReplaceAll ("^.", aExt[sExt] + "$&amp;", 148);&#9;&#9;//コメントアウト<br>ReplaceAll ("^([\t\s]*)" + aExt[sExt], "$1", 148);&#9;//コメント解除<br>CancelMode();<br>SearchClearMark();<br>ReDraw(0);<br>//EOF ----------------------------------<br></div></section>
+    <ul><li><section><h1 id=4556>
+    <span class="no">[4556]</span>
+    <a class="title" href="#4556">Re4:行のコメント化</a>
+    <span class="author">moi</span>
+    <time datetime="2005-07-19T17:12:34">2005年07月19日 17:12</time></h1>
+    <div class="body">あ、ありがとうございます。<br>でも、ぜんぜんわかりません。<br>Comment.js とCommentCancel.js という<br>２つのマクロファイルを作るのですか？<br>１つ前に頂いたレスのマクロは書いて登録してみましたが、<br>ツールバーに設置がわからなくて・・・</div></section>
+    <ul><li><section><h1 id=4557>
+    <span class="no">[4557]</span>
+    <a class="title" href="#4557">Re5:行のコメント化</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-07-19T18:50:22">2005年07月19日 18:50</time></h1>
+    <div class="body">&gt;あ、ありがとうございます。<br>&gt;でも、ぜんぜんわかりません。<br><br>あは、サクラエディタって、 ちょっとパンピーにやさしくない って感じるときありますね (^^;;<br>誰かやさしい解説本でも 出してくれればいいのに 素晴らしさの割りに知名度もいまいち と思ったり・・・<br><br>&gt;Comment.js とCommentCancel.js という<br>&gt;２つのマクロファイルを作るのですか？<br><br>拝見したところ、Comment.js がコメント化（コメントアウト）する方で<br>CommentCancel.js はコメント化を解除して戻す方のようです。<br><br>&gt;１つ前に頂いたレスのマクロは書いて登録してみましたが、<br>&gt;ツールバーに設置がわからなくて・・・<br><br>ツールバーに設置するには、 マクロの０番～１９番のどこかに登録 しておく必要があります。登録したら、いったん「共通設定」を終わらせてから、 すぐに「共通設定」を開きなおして、 マクロがちゃんと登録されているのを確認します。 確認出来たら、「共通設定」の「ツールバー」のタブで、「種別(K)」で「外部マクロ」を選ぶと、 登録したものが出てきますので、それを選んで「→(A)」か「&gt;&gt;(B)」で右側にもってくればＯＫです。<br></div></section>
+    <ul><li><section><h1 id=4559>
+    <span class="no">[4559]</span>
+    <a class="title" href="#4559">Re6:行のコメント化</a>
+    <span class="author">maru</span>
+    <time datetime="2005-07-19T22:18:21">2005年07月19日 22:18</time></h1>
+    <div class="body">&gt; りーやさん<br>フォローありがとうございます。<br><br>&gt; moi<br><br>説明不足ですいません。<br>Comment.js とCommentCancel.js の２つを<br>それぞれマクロに登録して云々という意味です。<br><br>カスタマイズ項目が豊富なので<br>設定方法を探すのも大変だと思います。<br>sakuraのヘルプファイルは以下を参照してください。<br>＋コマンド概要<br>  ＋「ツール(&amp;T)」メニュー<br>    ・共通設定『マクロ』<br>    ・共通設定『ツールバー』<br>具体的には、りーやさんの解説の通りですね。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=4560>
+    <span class="no">[4560]</span>
+    <a class="title" href="#4560">Re3:行のコメント化</a>
+    <span class="author">すす</span>
+    <time datetime="2005-07-19T23:08:34">2005年07月19日 23:08</time></h1>
+    <div class="body">▼ maruさん<br>&gt; &gt;&gt; 現在は、SHIFT-F6でコメント記号を入れ…<br>&gt; &gt; n-m行の0文字目を矩形選択すれば…<br>おぅ、現在そうしてるってことですね。すみませんでした。</div></section>
+    <ul><li><section><h1 id=4561>
+    <span class="no">[4561]</span>
+    <a class="title" href="#4561">Re4:行のコメント化</a>
+    <span class="author">maru</span>
+    <time datetime="2005-07-20T02:39:38">2005年07月20日 02:39</time></h1>
+    <div class="body">&gt;&gt;data:4552<br>これ、だめですね。<br><br>VBのIDE環境での動作を意識して<br>行選択されていなくても動作するようにしましたが<br>インデントされた行が絡むと「行先頭への移動」は<br>GoLineTop_Sel()を使うと現在位置が把握できない。<br>ので、修正しました。<br><br>ついでに"REM"によるコメントの場合は<br>後に続く文字がスペースかタブか予想できないので<br>コメント文字を削除する方はユーザの期待の動作を<br>予想しにくい。<br>とりあえず、な感じの処理を追加しました。<br><br>// ------------------------------<br>//拡張子別に行コメント文字を定義<br>var aExt = new Array();<br>aExt["c"] = "//";<br>aExt["bat"] = "REM";<br>// - 省略 -<br><br>//行選択されていなくても<br>GoLineTop(13);<br>sSelect = GetSelectedString(0);<br>if (sSelect.length == 0) GoLineEnd_Sel();<br><br>//拡張子を切り出し<br>sExt = ExpandParameter("$f");<br>sExt = sExt.substring( sExt.lastIndexOf(".") + 1);<br>sExt = sExt.toLowerCase()<br><br>//選択範囲を置換<br>if (aExt[sExt] == "REM"){<br>&#9;//コメントアウト用<br>&#9;ReplaceAll ("^.", "REM\t$&amp;", 148);<br>&#9;//コメント解除用<br>&#9;//ReplaceAll ("^([\t\s]*)REM[\t\s]", "$1", 148);<br>}<br>else {<br>&#9;//コメントアウト用<br>&#9;ReplaceAll ("^.", aExt[sExt] + "$&amp;", 148);<br>&#9;//コメント解除用<br>&#9;//ReplaceAll ("^([\t\s]*)" + aExt[sExt], "$1", 148);<br>}<br>CancelMode();<br>SearchClearMark();<br>ReDraw(0);<br>//EOF -----------------------------------------</div></section>
+    <ul><li><section><h1 id=4562>
+    <span class="no">[4562]</span>
+    <a class="title" href="#4562">Re5:行のコメント化【解決】</a>
+    <span class="author">moi</span>
+    <time datetime="2005-07-20T09:36:55">2005年07月20日 09:36</time></h1>
+    <div class="body">すすさん、とんでもないです。ありがとうございます。<br>maruさん、丁寧にありがとうございます。<br>りーやさん、おかげで登録できました。<br><br>さて、maruさんの最後に記述していただいた<br>ものをコピペして、comment.jsという名前で保存し、登録しました。<br>コメントの挿入はウマく行ってます。<br>大助かりです。<br>これだけでも、十分満足なのですが、不思議と欲が出るもので（ｗ<br>コメント解除は（Jabaは全くわからないのですが）<br>自動認識に書いてくれてるのかな？と思いましたが、うまく<br>解除できません。<br>コメントマークが「REM」ではなくて「%」だからでしょうか？<br>（変な言語使ってるでしょう？ｗ）<br>コメントマーク「%」は慣用的に「%//」と表記していますので、<br>文字定義のところで、<br><br>aExt["m"] = "%//";<br>と、言うケースと<br>aExt["m"] = "%";<br>というケースで試してみましたがうまくいきませんでした。<br><br>すでに満足なので、今の状況で十分なのですが、<br>気が向けば、削除の方も教えてください。<br><br>ありがとうございました。<br></div></section>
+    <ul><li><section><h1 id=4565>
+    <span class="no">[4565]</span>
+    <a class="title" href="#4565">Re6:行のコメント化【解決】</a>
+    <span class="author">maru</span>
+    <time datetime="2005-07-21T00:03:54">2005年07月21日 00:03</time></h1>
+    <div class="body">解除用もほとんどそのままなので<br>掲載しなかったのですが、定義部分は<br>ご自分で追記してください。<br><br>// ------------------------------<br>//拡張子別に行コメント文字を定義<br>var aExt = new Array();<br>aExt["c"] = "//";<br>aExt["bat"] = "REM";<br>// - 省略 -<br><br>//行選択されていなくても<br>GoLineTop(13);<br>sSelect = GetSelectedString(0);<br>if (sSelect.length == 0) GoLineEnd_Sel();<br><br>//拡張子を切り出し<br>sExt = ExpandParameter("$f");<br>sExt = sExt.substring( sExt.lastIndexOf(".") + 1);<br>sExt = sExt.toLowerCase()<br><br>//選択範囲を置換<br>if (aExt[sExt] == "REM"){<br>&#9;//コメントアウト用<br>&#9;//ReplaceAll ("^.", "REM\t$&amp;", 148);<br>&#9;//コメント解除用<br>&#9;ReplaceAll ("^([\t\s]*)REM[\t\s]", "$1", 148);<br>}<br>else {<br>&#9;//コメントアウト用<br>&#9;//ReplaceAll ("^.", aExt[sExt] + "$&amp;", 148);<br>&#9;//コメント解除用<br>&#9;ReplaceAll ("^([\t\s]*)" + aExt[sExt], "$1", 148);<br>}<br>CancelMode();<br>SearchClearMark();<br>ReDraw(0);<br>//EOF -----------------------------------------</div></section>
+    </li><li><section><h1 id=4566>
+    <span class="no">[4566]</span>
+    <a class="title" href="#4566">Re6:行のコメント化【解決】</a>
+    <span class="author">しみづ</span>
+    <time datetime="2005-07-21T02:42:52">2005年07月21日 02:42</time></h1>
+    <div class="body">&gt;コメントマークが「REM」ではなくて「%」だからでしょうか？<br><br>　「%」は特殊な意味を持つようなので、「%%」とか「\%」で置き換えたらどうなるでしょうか。あるいは16進「0x25」では。<br></div></section>
+    <ul><li><section><h1 id=4568>
+    <span class="no">[4568]</span>
+    <a class="title" href="#4568">Re7:行のコメント化【最終解決】</a>
+    <span class="author">moi</span>
+    <time datetime="2005-07-21T11:03:53">2005年07月21日 11:03</time></h1>
+    <div class="body"> しみづさん,maruさん、ありがとうございます。<br>すごいです。大感激！<br>ホントにありがとうございました。<br></div></section>
+    </li><li><section><h1 id=4569>
+    <span class="no">[4569]</span>
+    <a class="title" href="#4569">Re7:行のコメント化【解決】</a>
+    <span class="author">しみづ</span>
+    <time datetime="2005-07-21T11:34:41">2005年07月21日 11:34</time></h1>
+    <div class="body"><br>　すいません、的外れでした。取り消します。<br>&gt;&gt;data:4552<br>のCommentCancel.jsに<br>aExt["bat"] = "%";<br>を追加して、変えたいところを選択してから実行させたら動きました。<br><br>&gt;&gt;data:4565<br>こちらでも<br>aExt["bat"] = "%";<br>でできました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

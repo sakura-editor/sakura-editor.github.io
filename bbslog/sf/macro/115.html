@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>doxygenコメント挿入マクロ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">115</span>
+    <a class="title" href="115.html#115">doxygenコメント挿入マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">116</span>
+    <a class="title" href="115.html#116">Re:doxygenコメント挿入マクロ(単語分割部分)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">117</span>
+    <a class="title" href="115.html#117">Re:doxygenコメント挿入マクロ(挿入部分)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">118</span>
+    <a class="title" href="115.html#118">Re:doxygenコメント挿入マクロ</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=115>
+    <span class="no">[115]</span>
+    <a class="title" href="#115">doxygenコメント挿入マクロ</a>
+    <span class="author">nary</span>
+    <time datetime="2004-11-14T01:08:55">2004年11月14日 01:08</time></h1>
+    <div class="body">ついでに投稿していきます。<br><br>Doxygen用のコメントを挿入します。<br><br>int append(const char *text, int bbb);<br><br>のどこでもいいのでカーソルを置いて実行してください。<br><br>/**<br> *<br> **<br> * @param&#9;text           : <br> * @param&#9;bbb            : <br> **<br> * @return<br>**/<br>int append(const char *text, int bbb);<br><br>こんな感じになります。インデントは顧慮されていますが、<br>引数に改行が入っているとうまくいきません。<br>また、JSの正規表現が？？？な動作をするので力技です<br><br><br></div></section>
+    <ul><li><section><h1 id=116>
+    <span class="no">[116]</span>
+    <a class="title" href="#116">Re:doxygenコメント挿入マクロ(単語分割部分)</a>
+    <span class="author">nary</span>
+    <time datetime="2004-11-14T01:10:24">2004年11月14日 01:10</time></h1>
+    <div class="body">/////////////////////////////////////////////////<br>/**<br> *&#9;ドキュメントコメントを挿入する<br>**/<br>var jumpToY = parseInt(Editor.ExpandParameter("$y"));<br>var curLineText = Editor.GetLineStr(jumpToY);<br>Editor.Jump(jumpToY, 0);<br><br>curLineText = curLineText.replace(/,/g, " , ");<br>var strs = curLineText.split("");<br>var i;<br>// alert(curLineText);<br>curLineText = "";<br>var iscomment = 0;<br>var isparse = 0;<br>var isTop = 1;<br>var indent = "";<br>var isFunc = 0;<br><br><br>for(i = 0; i &lt; strs.length; i++)<br>{<br>    if(isTop)<br>    {<br>        if(strs[i] == " " || strs[i] == "&#9;")<br>        {<br>            indent += strs[i];<br>        }<br>        else<br>            isTop = 0;<br>    }<br><br>    if(strs[i] == '/' &amp;&amp; i + 1 &lt; strs.length &amp;&amp; strs[++i] == '*')<br>    {<br>        iscomment = 1;<br>    }<br>    else if(iscomment)<br>    {<br><br>        if(strs[i] == '*' &amp;&amp; i + 1 &lt; strs.length &amp;&amp; strs[++i] == '/')<br>        {<br>            curLineText += " ";<br>            iscomment = 0;<br>        }<br>        continue;<br>    }<br>    else if(!isparse)<br>    {<br>        if(strs[i] == '(')<br>            isparse = 1;<br>    }<br>    else if(strs[i] == ')')<br>        break;<br>    else if(strs[i] == "*" || strs[i] == '&amp;')<br>        continue;<br>    else<br>    {<br>        curLineText += strs[i];<br>    }<br>}<br><br>strs = curLineText.split(/[ \t]+/);<br>// alert(strs);<br><br><br>var isVoid = 0;<br>var space = "                                                                                                                 ";<br>var buffer = indent + "/**\r\n";<br>buffer += indent + " *\r\n" + indent + " **\r\n";<br>var ins = 0;<br>var hasParam = 0;<br>for(i = 0; i &lt; strs.length; i++)<br>{<br>&#9;if(strs[i] == "void")<br>&#9;{<br>&#9;&#9;isVoid = 1;<br>&#9;}<br>    else if((strs[i] == "," || strs[i] == '=') &amp;&amp; 0 &lt; i)<br>    {<br>    &#9;hasParam++;<br>        ins = strs[i - 1].length;<br>        // "   "<br>        buffer += indent;<br>        buffer += " * @param\t" + strs[i - 1];<br>        if(ins &lt; 15)<br>            buffer += space.substr(0, 15 - ins);<br>        buffer += ": \r\n";<br>    }<br>}<br><br><br></div></section>
+    </li><li><section><h1 id=117>
+    <span class="no">[117]</span>
+    <a class="title" href="#117">Re:doxygenコメント挿入マクロ(挿入部分)</a>
+    <span class="author">nary</span>
+    <time datetime="2004-11-14T01:11:33">2004年11月14日 01:11</time></h1>
+    <div class="body">//if(i != 0)<br>{<br>&#9;if(i - 1 &gt; 0)<br>&#9;{<br>&#9;&#9;hasParam++;<br>//&#9;&#9;buffer = i;<br>        ins = strs[i - 1].length;<br>        // "   "<br>        buffer += indent;<br>        buffer += " * @param\t" + strs[i - 1];<br>        if(ins &lt; 15)<br>            buffer += space.substr(0, 15 - ins);<br>        buffer += ": \r\n";<br>&#9;}<br><br><br>    if(!isVoid)<br>    {<br>    &#9;if(hasParam)<br>        &#9;buffer += indent + " **\r\n";<br>        buffer += indent + " * @return\r\n";<br>    }<br><br>    buffer += indent + "**/\r\n";<br><br>    if(jumpToY - 1 &gt; 0)<br>    {<br>        var s = Editor.GetLineStr(jumpToY - 1);<br>        s += "";<br>        if(s.search(/template/) != -1)<br>        {<br>            Editor.Jump(--jumpToY);<br>        }<br>    }<br>    // alert(buffer);<br>    Editor.InsText(buffer);<br>    //alert(buffer);<br><br>&#9;Editor.Jump(jumpToY, 0);<br>}<br><br>///////////////////////////////////////////<br><br>今のところ void の判定がうまくいっていないはずです。<br>再読み込みするにチェックを入れておいてください。<br></div></section>
+    </li><li><section><h1 id=118>
+    <span class="no">[118]</span>
+    <a class="title" href="#118">Re:doxygenコメント挿入マクロ</a>
+    <span class="author">nary</span>
+    <time datetime="2004-11-14T01:28:48">2004年11月14日 01:28</time></h1>
+    <div class="body">過去ログを見てたら既出でしたね。<br>かぶった(^_^,;</div></section>
+    </li></ul></li></ul></body></html>

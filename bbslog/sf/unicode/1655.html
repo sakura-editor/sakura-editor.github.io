@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>マクロ実行でクラッシュする</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1655</span>
+    <a class="title" href="1655.html#1655">マクロ実行でクラッシュする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1656</span>
+    <a class="title" href="1655.html#1656">Re:マクロ実行でクラッシュする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1657</span>
+    <a class="title" href="1655.html#1657">Re2:マクロ実行でクラッシュする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1663</span>
+    <a class="title" href="1655.html#1663">Re3:マクロ実行でクラッシュする</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1655>
+    <span class="no">[1655]</span>
+    <a class="title" href="#1655">マクロ実行でクラッシュする</a>
+    <span class="author">ryoji</span>
+    <time datetime="2011-09-28T22:17:07">2011年09月28日 22:17</time></h1>
+    <div class="body">ふぁんくらぶ part14 の 772 で報告されている<br>下記マクロでクラッシュする件ですが、<br><br>if(Editor.GetFilename != "")<br>new ActiveXObject("Shell.Application").Open<br>(new ActiveXObject("Scripting.FileSystemObject")<br>.GetParentFolderName(Editor.GetFilename));<br><br>クラッシュ箇所は CWSHIfObj.cpp(103) の memcpy() のようです。<br><br> 101:       // 2011.3.18 syat 引数の順序を正しい順にする<br> 102:       VARIANTARG rgvargBak[4];<br>*103:       memcpy( rgvargBak, Arguments-&gt;rgvarg, sizeof(VARIANTARG) * 4 );<br> 104:       for(I = 0; I &lt; ArgCount; I++){<br> 105:           Arguments-&gt;rgvarg[ArgCount-I-1] = rgvargBak[I];<br> 106:       }<br><br>Arguments-&gt;rgvargをオーバーランアクセスしているのかな？<br>第３引数で指定されている 4 を ArgCount にするのが正解？<br></div></section>
+    <ul><li><section><h1 id=1656>
+    <span class="no">[1656]</span>
+    <a class="title" href="#1656">Re:マクロ実行でクラッシュする</a>
+    <span class="author">syat</span>
+    <time datetime="2011-10-01T12:11:42">2011年10月01日 12:11</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; Arguments-&gt;rgvargをオーバーランアクセスしているのかな？<br>&gt; 第３引数で指定されている 4 を ArgCount にするのが正解？<br>なるほど。不要にアクセスしてますね。というかアクセスしては駄目なんですね。<br>解析ありがとうございます。<br>rev1958で修正をコミットしました。<br></div></section>
+    <ul><li><section><h1 id=1657>
+    <span class="no">[1657]</span>
+    <a class="title" href="#1657">Re2:マクロ実行でクラッシュする</a>
+    <span class="author">もか</span>
+    <time datetime="2011-10-04T14:23:52">2011年10月04日 14:23</time></h1>
+    <div class="body">そういえば昔からおかしかったのですが、マクロに引数が5個以上書かれている場合はどうなるんでしょう？<br></div></section>
+    <ul><li><section><h1 id=1663>
+    <span class="no">[1663]</span>
+    <a class="title" href="#1663">Re3:マクロ実行でクラッシュする</a>
+    <span class="author">syat</span>
+    <time datetime="2011-10-18T23:55:09">2011年10月18日 23:55</time></h1>
+    <div class="body">▼ もかさん<br>&gt; そういえば昔からおかしかったのですが、マクロに引数が5個以上書かれている場合はどうなるんでしょう？<br>返信おそくてすみません。<br><br>ArgCountが5以上だと強制的に4に書きかえているので、後ろから最大4個の引数しか認識されません。<br>例）引数６コ<br>InsText('1', '2', '3', '4', '5', '6')<br>→　InsText('3', '4', '5', '6')　と同じ動き<br><br>マクロ関数の引数は今のところ４引数までなので、実害ないですが、<br>ArgCountは変えずに、参照するときの添え字をやりくりする方が仕様的にしっくりすると思います。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

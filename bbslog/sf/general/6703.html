@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>JUNCTIONと更新の監視</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6703</span>
+    <a class="title" href="6703.html#6703">JUNCTIONと更新の監視</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6705</span>
+    <a class="title" href="6703.html#6705">Re: JUNCTIONと更新の監視</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6706</span>
+    <a class="title" href="6703.html#6706">Re2: JUNCTIONと更新の監視</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6711</span>
+    <a class="title" href="6703.html#6711">Re3: JUNCTIONと更新の監視</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6712</span>
+    <a class="title" href="6703.html#6712">Re4: JUNCTIONと更新の監視</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">6713</span>
+    <a class="title" href="6703.html#6713">JUNCTIONとは関係無いと思う</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=6703>
+    <span class="no">[6703]</span>
+    <a class="title" href="#6703">JUNCTIONと更新の監視</a>
+    <span class="author">doskoi</span>
+    <time datetime="2008-07-02T00:48:58">2008年07月02日 00:48</time></h1>
+    <div class="body">テキストファイルにJUNCTIONを張って、そのJUNCTIONをサクラ<br>で開くと更新の監視が働いて、開いた瞬間に、<br>「このファイルは外部のエディタ等で変更されています。」<br>と出てきます。<br>で、「以後更新を監視しない(N)」をクリックしないといけない。<br>編集後セーブすると、元ファイルもきちんと変更されています。<br><br>「更新の監視」を有効にしたまま、JUNCTIONファイルに対して<br>これを回避する方法はないでしょうか。<br>因みに、lessやnotepadではこのJUNCTIONは問題なく開けます。<br><br>XP_HEsp3です。<br>変な質問で恐縮ですm(_)m。<br></div></section>
+    <ul><li><section><h1 id=6705>
+    <span class="no">[6705]</span>
+    <a class="title" href="#6705">Re: JUNCTIONと更新の監視</a>
+    <span class="author">もか</span>
+    <time datetime="2008-07-02T23:22:59">2008年07月02日 23:22</time></h1>
+    <div class="body">XP Pro sp3です。<br>http://homepage1.nifty.com/emk/symlink.html<br>のツールで試して見ましたが、<br>v1.05ではファイルのJUNCTION作成機能は削除されていました。<br>Vista互換のシンボリックリンクを試そうとしたら<br>senableの実行で<br>「symlink.sys を  にコピーできません。<br>管理者権限を持っているか確認してください。」<br>とでてエラーで落ちて再現できる環境を作れませんでした。<br>なにか他に方法がありましたら、教えて下さい。<br><br>ちなみにサクラエディタは、ショートカットの解決をサポートしているので<br>開いた後のファイル名が実体をさしてもいいなら、ショートカットを開く手もあります。<br></div></section>
+    <ul><li><section><h1 id=6706>
+    <span class="no">[6706]</span>
+    <a class="title" href="#6706">Re2: JUNCTIONと更新の監視</a>
+    <span class="author">doskoi</span>
+    <time datetime="2008-07-03T12:58:57">2008年07月03日 12:58</time></h1>
+    <div class="body">どうもです。<br>▼ もかさん<br>&gt; XP Pro sp3です。<br>&gt; http://homepage1.nifty.com/emk/symlink.html<br>&gt; のツールで試して見ましたが、<br>&gt; v1.05ではファイルのJUNCTION作成機能は削除されていました。<br><br>ln -jはファイルに対しては落ちますね。<br>ln -sとするとジャンクションが作れますね。<br><br>&gt; senableの実行で<br>&gt; 「symlink.sys を  にコピーできません。<br>&gt; 管理者権限を持っているか確認してください。」<br>&gt; とでてエラーで落ちて再現できる環境を作れませんでした。<br><br>私の環境でも同じです。<br><br>よって、サクラのコマンドラインオプションに「更新の監視オフ」<br>が有ればいいなと思います。<br><br></div></section>
+    <ul><li><section><h1 id=6711>
+    <span class="no">[6711]</span>
+    <a class="title" href="#6711">Re3: JUNCTIONと更新の監視</a>
+    <span class="author">もか</span>
+    <time datetime="2008-07-04T16:04:45">2008年07月04日 16:04</time></h1>
+    <div class="body">&gt;ln -sとするとジャンクションが作れますね。<br>プロンプトのdirだとJUNCTIONと表示されますが、<br>作成されるのはシンボリックリンクですよね。<br><br>結局senableのエラーはソースコードを読んで解決しました。<br>senable実行時のカレントディレクトリにsymlink.sysがないと、ドライバの<br>コピーに失敗していました。<br>　doskoiさんの環境ではsenable installかなにかで、すでに動作している状態に<br>なっていたんだと思います。<br>更新通知が繰り返されるのも確認しました。<br>日時が正しくないのは、エクスプローラも同様でした。<br>Vistaのシンボリックリンクでも発生するなら、なにか対策を考えたほうがよいかも<br>しれません。(Vista機を持っていないので確認はできません)<br>そうでないならsenableのバグかもしれないのでそちらに確認してみてはどうでしょうか。<br><br>&gt;よって、サクラのコマンドラインオプションに「更新の監視オフ」<br>&gt;が有ればいいなと思います。<br>あれば便利かもしれないですね。<br></div></section>
+    <ul><li><section><h1 id=6712>
+    <span class="no">[6712]</span>
+    <a class="title" href="#6712">Re4: JUNCTIONと更新の監視</a>
+    <span class="author">doskoi</span>
+    <time datetime="2008-07-04T23:48:19">2008年07月04日 23:48</time></h1>
+    <div class="body">▼ もかさん<br>&gt; &gt;ln -sとするとジャンクションが作れますね。<br>&gt; プロンプトのdirだとJUNCTIONと表示されますが、<br>&gt; 作成されるのはシンボリックリンクですよね。<br>snip <br>&gt; 日時が正しくないのは、エクスプローラも同様でした。<br><br>timestampがおかしいので更新通知が繰り返される、と。<br>JUNCTIONファイルを編集してもタイムスタンプが更新されません。<br>しかし元ファイルは内容も日時も正常に更新されている。<br>この仕様は、Linuxのシンボリックリンクではあり得ないですよね。<br>よって、作られるのは、NT固有のJUNCTIONというよく分らない<br>代物だと理解します。<br>しかしそれなりに便利なので使いたい。<br><br>そのうち、NTFSが大クラッシュしたりして・・・・(^_^;;)<br><br>それと、ntfs.sysがSP2とSP3では違うようです。<br>違いの中身は分りません。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=6713>
+    <span class="no">[6713]</span>
+    <a class="title" href="#6713">JUNCTIONとは関係無いと思う</a>
+    <span class="author">すい</span>
+    <time datetime="2008-07-05T02:05:13">2008年07月05日 02:05</time></h1>
+    <div class="body">この問題（と全く同じか実は良く分からないんですけど）ずっと以前から<br>気付いていたけど面倒で報告を怠っていた怠け者の私がやって来ましたよ。<br><br>更新通知のダイアログが出っぱなしになる現象自体は<br>JUNCTION 使っていなくても、特定の条件にて良く出ます。<br><br>Windows NT系のパソコンと Windows 95系のパソコンをネットワークで<br>接続している環境において、Windows NT系のパソコン上の HDD が<br>NTFS であり、その NTFS ディスク上のファイルを共有に出しておいて、<br>そのファイルに Windows 95系パソコンからアクセスして<br>Windows 95系パソコン上のサクラエディタで開いた場合です。<br><br>え～、その「開いたファイル」を最後に更新したのが Windows NT系側の<br>オペレーターであった場合、ファイルの更新日時情報は NTFS の<br>精度、すなわち ms の単位まで記録されていますよね。<br>その手のファイルを Windows 95系のパソコンからサクラエディタで<br>開くと、どうも更新ダイアログが出続ける事になるようです。<br><br>Windows 95系(= HDD は FATシステム)の更新日時の精度である、2秒<br>（更新日時の秒 情報格納領域が 5bit しかないため、偶数秒しか表せない）<br>から外れているファイルを扱おうとすると問題が出るようで。<br><br>で、更新通知のチェック部で２つの更新日時情報を比較している<br>わけですが、その両者の更新日時情報を取得している API が<br>それぞれ全くの別物の API だから、特定の条件下において別々の<br>日付情報を返して来るのだろうな～～(推測)、それで更新通知<br>ダイアログが出っ放しになるのだろうな～～、という辺りまでは<br>簡単に行き着いたのですが、その確認まではやってないし、<br>報告も怠っていました。 m(_ _)m<br></div></section>
+    </li></ul></li></ul></body></html>

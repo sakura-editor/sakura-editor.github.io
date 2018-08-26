@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バージョン情報ダイアログ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3160</span>
+    <a class="title" href="3160.html#3160">バージョン情報ダイアログ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3165</span>
+    <a class="title" href="3160.html#3165">Re:バージョン情報ダイアログ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3176</span>
+    <a class="title" href="3160.html#3176">Re2:バージョン情報ダイアログ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3225</span>
+    <a class="title" href="3160.html#3225">Re2:バージョン情報ダイアログ</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3160>
+    <span class="no">[3160]</span>
+    <a class="title" href="#3160">バージョン情報ダイアログ</a>
+    <span class="author">dskoba</span>
+    <time datetime="2003-09-19T22:28:05">2003年09月19日 22:28</time></h1>
+    <div class="body">ver.1.4.3.1 およびそれ以前から<br>タスクトレイアイコンの右クリックメニュー経由でバージョン情報ダイアログを表示すると，ダイアログ上でカーソルが砂時計になります。<br>OK ボタンや URL 上へカーソルを持っていけば通常の矢印カーソルになります。<br>この現象は Windows98，WindowsXP で共に生じます。<br><br>また Windows98 でのみダイアログに表示されるアイコンが 16x16 になります。<br><br>メニューのヘルプ経由で表示した場合は問題ありません。<br><br>ついでに報告。Windows98 ではタスクトレイアイコンとウィンドウ左上のアイコンが 32x32 の縮小表示になっているようです。</div></section>
+    <ul><li><section><h1 id=3165>
+    <span class="no">[3165]</span>
+    <a class="title" href="#3165">Re:バージョン情報ダイアログ</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-20T14:26:39">2003年09月20日 14:26</time></h1>
+    <div class="body">DlgAboutのWM_SETCURSORの処理が不十分なため。<br><br>&gt; Windows98 でのみダイアログに表示されるアイコンが 16x16 になります。<br>&gt; Windows98 ではタスクトレイアイコンとウィンドウ左上のアイコンが 32x32 の縮小表示になっているようです。<br>LR_SHAREDは便利なフラグですが、制限があります。LR_LOADFROMFILEを使う場合、非標準サイズを使う場合、後で変更する場合は、LR_SHAREDを消してください。</div></section>
+    <ul><li><section><h1 id=3176>
+    <span class="no">[3176]</span>
+    <a class="title" href="#3176">Re2:バージョン情報ダイアログ</a>
+    <span class="author">dskoba</span>
+    <time datetime="2003-09-22T20:17:59">2003年09月22日 20:17</time></h1>
+    <div class="body">▼ wmlhqさん<br>&gt; DlgAboutのWM_SETCURSORの処理が不十分なため。<br><br>再描画が必要ないときも TRUE を返しているからですかね<br><br>&gt; &gt; Windows98 ではタスクトレイアイコンとウィンドウ左上のアイコンが 32x32 の縮小表示になっているようです。<br>タスクトレイアイコンではなくタスクバーのアイコンでした。<br>タスクトレイアイコンは 16x16 です。</div></section>
+    </li><li><section><h1 id=3225>
+    <span class="no">[3225]</span>
+    <a class="title" href="#3225">Re2:バージョン情報ダイアログ</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-10-09T02:28:53">2003年10月09日 02:28</time></h1>
+    <div class="body">&gt;LR_SHAREDは便利なフラグですが、制限があります。<br>LR_SHARED<br>Windows 95/98/Me: The function finds the first image with the requested resource name in the cache, regardless of the size requested.<br>というやつですね．<br><br>LR_SHAREDを使ったのはハンドルの管理が面倒くさかったからまぁWin98の人には泣いてもらうと言うことで(勝手に)こうしたような記憶があるが...やっぱだめかな．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

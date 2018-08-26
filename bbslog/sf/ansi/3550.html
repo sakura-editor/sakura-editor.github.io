@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Re: UTF-8文字化け</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3550</span>
+    <a class="title" href="3550.html#3550">Re: UTF-8文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3551</span>
+    <a class="title" href="3550.html#3551">Re2: UTF-8文字化け(～)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3552</span>
+    <a class="title" href="3550.html#3552">Re3: UTF-8文字化け(～)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3553</span>
+    <a class="title" href="3550.html#3553">Re4: UTF-8文字化け(～)</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3555</span>
+    <a class="title" href="3550.html#3555">Re2: UTF-8文字化け(～)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3556</span>
+    <a class="title" href="3550.html#3556">Re3: UTF-8文字化け(～)</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3550>
+    <span class="no">[3550]</span>
+    <a class="title" href="#3550">Re: UTF-8文字化け</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-04-25T21:14:54">2004年04月25日 21:14</time></h1>
+    <div class="body">&gt;&gt;data[3252]2003/10 Re: UTF-8文字化け<br><br>WAVE DASH の問題で、U301C と UFF5E を交換するパッチです。<br>Google の検索をしたHTMLソースで、<br>「～」記号が使用出来るようになります。<br><br>--- original ～ CMemory.h&#9;Wed Jan 01 10:58:18 2003<br>+++ CMemory.h&#9;Sun Apr 25 20:13:36 2004<br>@@ -191,3 +191,4 @@<br> &#9;static unsigned short _mbcjmstojis_ex( unsigned char* pszSrc );<br>-<br>+private:<br>+&#9;static void ExchangeWaveDash( unsigned char* );&#9;/* WAVE DASH を、～と交換。&#9;2004/04/23 じゅうじ */<br> };<br><br>--- original ～ CMemory.cpp&#9;Tue Apr 13 20:53:16 2004<br>+++ CMemory.cpp&#9;Sun Apr 25 20:07:00 2004<br>@@ -1263,2 +1263,3 @@<br> &#9;&#9;&#9;if( 2 == nUNICODEBytes ){<br>+&#9;&#9;&#9;&#9;ExchangeWaveDash( (unsigned char *)pWork );&#9;/* 2004/04/23 じゅうじ */<br> &#9;&#9;&#9;&#9;j = wctomb( (char*)&amp;(pDes[k]), ((wchar_t*)pWork)[0] );<br>@@ -1290,5 +1291,10 @@<br> <br>-<br>-<br>-<br>+/* WAVE DASH を、～と交換。&#9;&#9;2004/04/23 じゅうじ */<br>+void CMemory::ExchangeWaveDash( unsigned char *pWork )<br>+{<br>+&#9;if(pWork[1] == 0xFF &amp;&amp; pWork[0] == 0x5E)<br>+&#9;&#9;pWork[1] = 0x30, pWork[0] = 0x1C;<br>+&#9;else if(pWork[1] == 0x30 &amp;&amp; pWork[0] == 0x1C)<br>+&#9;&#9;pWork[1] = 0xFF, pWork[0] = 0x5E;<br>+}<br> <br>@@ -2023,2 +2029,3 @@<br> &#9;&#9;j = mbtowc( &amp;wchar, &amp;pBuf[i], nCharChars );<br>+&#9;&#9;ExchangeWaveDash( (unsigned char *)&amp;wchar );&#9;/* 2004/04/23 じゅうじ */<br> &#9;&#9;if( j == -1 || j == 0 ){<br>@@ -2060,2 +2067,3 @@<br> &#9;for( i = 0; i &lt; nBufLen / (int)sizeof( wchar_t ); ++i ){<br>+&#9;&#9;ExchangeWaveDash( (unsigned char *)&amp;pUniBuf[i] );&#9;/* 2004/04/23 じゅうじ */<br> &#9;&#9;j = wctomb( (char*)mbchar, pUniBuf[i] );<br>@@ -2071,2 +2079,3 @@<br> &#9;for( i = 0; i &lt; nBufLen / (int)sizeof( wchar_t ); ++i ){<br>+&#9;&#9;ExchangeWaveDash( (unsigned char *)&amp;pUniBuf[i] );&#9;/* 2004/04/23 じゅうじ */<br> &#9;&#9;j = wctomb( (char*)&amp;(pBufSJIS[k]), pUniBuf[i] );<br>@@ -2793,2 +2802,3 @@<br> &#9;&#9;&#9;j = mbtowc( &amp;wchar, (const char*)&amp;pBuf[i], nCharChars );<br>+//&#9;&#9;&#9;ExchangeWaveDash( (unsigned char *)&amp;wchar );&#9;/* 2004/04/23 じゅうじ */<br> <br>@@ -2966,2 +2976,3 @@<br> &#9;&#9;&#9;if( 2 == nUNICODEBytes ){<br>+&#9;&#9;&#9;&#9;ExchangeWaveDash( (unsigned char *)pWork );&#9;/* 2004/04/23 じゅうじ */<br> &#9;&#9;&#9;&#9;j = wctomb( (char*)pDes, ((wchar_t*)pWork)[0] );<br>@@ -3090,2 +3101,3 @@<br> &#9;&#9;&#9;&#9;&#9;&#9;&#9;/* 変換可能なUnicodeか */<br>+&#9;&#9;&#9;&#9;&#9;&#9;&#9;ExchangeWaveDash( (unsigned char *)&amp;pszWork[j] );&#9;/* 2004/04/23 じゅうじ */<br> &#9;&#9;&#9;&#9;&#9;&#9;&#9;nUniBytes = wctomb( (char*)NULL, *(wchar_t*)(&amp;pszWork[j]) );<br>以上</div></section>
+    <ul><li><section><h1 id=3551>
+    <span class="no">[3551]</span>
+    <a class="title" href="#3551">Re2: UTF-8文字化け(～)</a>
+    <span class="author">もか</span>
+    <time datetime="2004-04-26T00:19:27">2004年04月26日 00:19</time></h1>
+    <div class="body">&gt;Google の検索をしたHTMLソースで、「～」記号が使用出来るようになります。<br>この意味が良く分かりません。<br>あと、取り込むことを前提にしているなら、私はそれに反対します。<br><br>理由は、～だけ変えているので、どの変換表とも違う新しい変換表であるということと、<br>CP932とUTF-8の変換を期待している人にとっては、U+FF5Eが使えなくて、さらに問題になるからです。<br>実装するなら、ベンダー間で違う文字を～以外も含めて考慮した上で、「変換テーブル」を選べるようにするか、<br>UTF-8(glibc)、UTF-8(Java1.4)のような、妙なエンコードを追加するべきです。<br><br>▼渡辺さん &gt;&gt;data::3262<br>&gt;U+301C→0x8160<br>&gt;U+FF5E→0x8160<br>&gt;の両刀使いが、ファジィで良いと思います。(汗)<br>というように、多対一変換で対応するだけでいい人も居ます。<br><br># 個人利用を目的に、このパッチを掲示板に書いてくれたというのなら大歓迎です。<br># Fedoraとか、gettextとかがUTF-8を要求してくるらしい昨今では、この辺の違いは痛いようですが、何とかならないのかなぁ<br></div></section>
+    <ul><li><section><h1 id=3552>
+    <span class="no">[3552]</span>
+    <a class="title" href="#3552">Re3: UTF-8文字化け(～)</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-04-26T07:00:00">2004年04月26日 07:00</time></h1>
+    <div class="body">▼ もかさん<br>&gt; &gt;Google の検索をしたHTMLソースで、「～」記号が使用出来るようになります。<br>&gt; この意味が良く分かりません。<br>&gt; あと、取り込むことを前提にしているなら、私はそれに反対します。<br><br>Google でホームページを検索すると、title の文字コードが、全てUTF-8に統一されます。<br>他の検索エンジンの事を考えなければ、「～」文字だけでHTMLのソースが文字化けするのは、<br>問題だと思います。<br><br>この関数に、私が、他の変換を入れる予定は、今の所有りません。(CMemory::ExchangeWaveDash())<br><br>n:1 (n&gt;1)のコード変換をしない理由は、違う文字コードであることを残したかった為です。<br><br>最初の目標は、Unicodeで未使用の文字コードを、プログラム内で、独自のShift-JISコード<br>として管理できないか、というつもりでした。<br><br>では、また。</div></section>
+    <ul><li><section><h1 id=3553>
+    <span class="no">[3553]</span>
+    <a class="title" href="#3553">Re4: UTF-8文字化け(～)</a>
+    <span class="author">もか</span>
+    <time datetime="2004-04-27T00:28:07">2004年04月27日 00:28</time></h1>
+    <div class="body">&gt;Google でホームページを検索すると、title の文字コードが、全てUTF-8に統一されます。<br>&gt;他の検索エンジンの事を考えなければ、「～」文字だけでHTMLのソースが文字化けするのは、<br>&gt;問題だと思います。<br><br>Googleの場合に限れば、オプションのoe=UTF-8をoe=Shift_JISとすると、Shift_JISで出力してくれるけど、それじゃ駄目なんでしょうか。<br>そういう問題でなさそうだけど。<br><br>&gt;n:1 (n&gt;1)のコード変換をしない理由は、違う文字コードであることを残したかった為です。<br>&gt;最初の目標は、Unicodeで未使用の文字コードを、プログラム内で、独自のShift-JISコード<br>&gt;として管理できないか、というつもりでした。<br>そういう用途なら、こういう実装も納得できます。<br>URL忘れましたが、そういう拡張Shift_JISコードを考えたて実装もしてみているサイトがあります。中国の新しい符号化方式とだいたい同じ方法だそうです。<br></div></section>
+    </li></ul></li><li><section><h1 id=3555>
+    <span class="no">[3555]</span>
+    <a class="title" href="#3555">Re2: UTF-8文字化け(～)</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-04-29T12:30:55">2004年04月29日 12:30</time></h1>
+    <div class="body">すみません。<br>U+FF5E の保存がうまく出来ないので、十分とは言えません。<br>では、後ほど。<br></div></section>
+    <ul><li><section><h1 id=3556>
+    <span class="no">[3556]</span>
+    <a class="title" href="#3556">Re3: UTF-8文字化け(～)</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-04-29T15:28:23">2004年04月29日 15:28</time></h1>
+    <div class="body">/* WAVE DASH を、～と交換。&#9;&#9;2004/04/29 じゅうじ */<br>void CMemory::ExchangeWaveDash( unsigned char *pWork )<br>{<br>&#9;/* ― */<br>&#9;     if(pWork[1] == 0x20 &amp;&amp; pWork[0] == 0x15)<br>&#9;&#9;pWork[1] = 0x20, pWork[0] = 0x14;<br>&#9;else if(pWork[1] == 0x20 &amp;&amp; pWork[0] == 0x14)<br>&#9;&#9;pWork[1] = 0x20, pWork[0] = 0x15;<br>&#9;/* ～ */<br>&#9;else if(pWork[1] == 0xFF &amp;&amp; pWork[0] == 0x5E)<br>&#9;&#9;pWork[1] = 0x30, pWork[0] = 0x1C;<br>&#9;else if(pWork[1] == 0x30 &amp;&amp; pWork[0] == 0x1C)<br>&#9;&#9;pWork[1] = 0xFF, pWork[0] = 0x5E;<br>&#9;/* ∥ */<br>&#9;else if(pWork[1] == 0x22 &amp;&amp; pWork[0] == 0x25)<br>&#9;&#9;pWork[1] = 0x20, pWork[0] = 0x16;<br>&#9;else if(pWork[1] == 0x20 &amp;&amp; pWork[0] == 0x16)<br>&#9;&#9;pWork[1] = 0x22, pWork[0] = 0x25;<br>&#9;/* － */<br>&#9;else if(pWork[1] == 0xFF &amp;&amp; pWork[0] == 0x0D)<br>&#9;&#9;pWork[1] = 0x22, pWork[0] = 0x12;<br>&#9;else if(pWork[1] == 0x22 &amp;&amp; pWork[0] == 0x12)<br>&#9;&#9;pWork[1] = 0xFF, pWork[0] = 0x0D;<br>&#9;/* ￠ */<br>&#9;else if(pWork[1] == 0xFF &amp;&amp; pWork[0] == 0xE0)<br>&#9;&#9;pWork[1] = 0x00, pWork[0] = 0xA2;<br>&#9;else if(pWork[1] == 0x00 &amp;&amp; pWork[0] == 0xA2)<br>&#9;&#9;pWork[1] = 0xFF, pWork[0] = 0xE0;<br>&#9;/* ￡ */<br>&#9;else if(pWork[1] == 0x22 &amp;&amp; pWork[0] == 0x25)<br>&#9;&#9;pWork[1] = 0x00, pWork[0] = 0xA3;<br>&#9;else if(pWork[1] == 0x00 &amp;&amp; pWork[0] == 0xA3)<br>&#9;&#9;pWork[1] = 0x22, pWork[0] = 0x25;<br>&#9;/* ￢ */<br>&#9;else if(pWork[1] == 0xFF &amp;&amp; pWork[0] == 0xE2)<br>&#9;&#9;pWork[1] = 0x00, pWork[0] = 0xAC;<br>&#9;else if(pWork[1] == 0x00 &amp;&amp; pWork[0] == 0xAC)<br>&#9;&#9;pWork[1] = 0xFF, pWork[0] = 0xE2;<br>}<br><br>Special thanks to,<br>Google search site:miraclelinux.com iconv_memo</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

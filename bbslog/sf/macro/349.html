@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択文字列へのsakura_htmlを用いたタグ挿入</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">349</span>
+    <a class="title" href="349.html#349">選択文字列へのsakura_htmlを用いたタグ挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">350</span>
+    <a class="title" href="349.html#350">Re:選択文字列へのsakura_htmlを用いたタグ挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">351</span>
+    <a class="title" href="349.html#351">Re2:選択文字列へのsakura_htmlを用いたタグ挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">353</span>
+    <a class="title" href="349.html#353">Re3:選択文字列へのsakura_htmlを用いたタグ挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">355</span>
+    <a class="title" href="349.html#355">Re4:選択文字列へのsakura_htmlを用いたタグ挿入</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">352</span>
+    <a class="title" href="349.html#352">Re: 選択文字列へのsakura_htmlを用いたタグ挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">354</span>
+    <a class="title" href="349.html#354">Re2: 選択文字列へのsakura_htmlを用いたタグ挿入</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=349>
+    <span class="no">[349]</span>
+    <a class="title" href="#349">選択文字列へのsakura_htmlを用いたタグ挿入</a>
+    <span class="author">ki</span>
+    <time datetime="2007-01-27T22:29:35">2007年01月27日 22:29</time></h1>
+    <div class="body">サクラエディタで作成した文章にsakura_htmlのフォルダ内のマクロを用いて、選択した文字列に、ユーザの決めたタグを作成し、挿入したいのです。<br>例<br>I am a vet.をIam a &lt;JOB&gt;vet&lt;/JOB&gt;.<br>このようにするにはどのようにタグ（&lt;JOB&gt;&lt;/JOB&gt;）を作成し、設定を行なったらよいのでしょうか。<br>お手数をおかけします。<br></div></section>
+    <ul><li><section><h1 id=350>
+    <span class="no">[350]</span>
+    <a class="title" href="#350">Re:選択文字列へのsakura_htmlを用いたタグ挿入</a>
+    <span class="author">ki</span>
+    <time datetime="2007-01-28T17:24:35">2007年01月28日 17:24</time></h1>
+    <div class="body">▼ kiさん<br>&gt; I am a vet.をIam a &lt;JOB&gt;vet&lt;/JOB&gt;.<br>&gt; このようにするにはどのようにタグ（&lt;JOB&gt;&lt;/JOB&gt;）を作成し、設定を行なったらよいのでしょうか。<br><br>MIFESですと以下のマクロをコンパイルして使用するとうまくいくのですが、これをサクラエディタに移植するとどのようにマクロを書いたらよいのでしょうか？どなたかおわかりでしょうか？<br><br>*JOB &lt;JOB&gt;&lt;/JOB&gt;挿入<br> strcpy( @@str1, "&lt;JOB&gt;" )<br> strcpy( @@str2, "&lt;/JOB&gt;" )<br> macro( "instag" )<br>*</div></section>
+    <ul><li><section><h1 id=351>
+    <span class="no">[351]</span>
+    <a class="title" href="#351">Re2:選択文字列へのsakura_htmlを用いたタグ挿入</a>
+    <span class="author">maru</span>
+    <time datetime="2007-01-28T18:10:24">2007年01月28日 18:10</time></h1>
+    <div class="body">▼ kiさん<br>&gt; &gt; I am a vet.をIam a &lt;JOB&gt;vet&lt;/JOB&gt;.<br>&gt; &gt; このようにするにはどのようにタグ（&lt;JOB&gt;&lt;/JOB&gt;）を作成し、設定を行なったらよいのでしょうか。<br>一般的なタグ挿入系のマクロでしょうか？<br><a href=http://sakura.qp.land.to/?encode_hint=%A4%D7&cmd=read&page=Macro%2F%C5%EA%B9%C6&word=%A5%BF%A5%B0 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>encode_h<wbr>int=%<wbr>A4%<wbr>D7&amp;<wbr>cmd=<wbr>read&amp;<wbr>page=<wbr>Macro%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6&amp;<wbr>word=%<wbr>A5%<wbr>BF%<wbr>A5%<wbr>B0</nobr></a><br>このあたりで、参考になりそうなものがあれば。</div></section>
+    <ul><li><section><h1 id=353>
+    <span class="no">[353]</span>
+    <a class="title" href="#353">Re3:選択文字列へのsakura_htmlを用いたタグ挿入</a>
+    <span class="author">ki</span>
+    <time datetime="2007-01-28T18:51:58">2007年01月28日 18:51</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ▼ kiさん<br>&gt; &gt; &gt; I am a vet.をIam a &lt;JOB&gt;vet&lt;/JOB&gt;.<br>&gt; &gt; &gt; このようにするにはどのようにタグ（&lt;JOB&gt;&lt;/JOB&gt;）を作成し、設定を行なったらよいのでしょうか。<br>&gt; 一般的なタグ挿入系のマクロでしょうか？<br>&gt; <a href=http://sakura.qp.land.to/?encode_hint=%A4%D7&cmd=read&page=Macro%2F%C5%EA%B9%C6&word=%A5%BF%A5%B0 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>encode_h<wbr>int=%<wbr>A4%<wbr>D7&amp;<wbr>cmd=<wbr>read&amp;<wbr>page=<wbr>Macro%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6&amp;<wbr>word=%<wbr>A5%<wbr>BF%<wbr>A5%<wbr>B0</nobr></a><br>&gt; このあたりで、参考になりそうなものがあれば。<br>ありました。「任意のタグで選択文字列を挟む」をありがたく使用させていただきます。試したところうまくいきました。maruさん、御礼申し上げます。</div></section>
+    <ul><li><section><h1 id=355>
+    <span class="no">[355]</span>
+    <a class="title" href="#355">Re4:選択文字列へのsakura_htmlを用いたタグ挿入</a>
+    <span class="author">ki</span>
+    <time datetime="2007-01-28T20:37:49">2007年01月28日 20:37</time></h1>
+    <div class="body">▼ kiさん<br>&gt; ▼ maruさん<br>&gt; &gt; ▼ kiさん<br>&gt; &gt; このあたりで、参考になりそうなものがあれば。<br>&gt; ありました。「任意のタグで選択文字列を挟む」をありがたく使用させていただきます。試したところうまくいきました。maruさん、御礼申し上げます。<br>もう一言申し上げさせてください。<br>任意のタグで選択文字列を挟むppaは、 堀内悟様の作品です。すばらしいppaを提供していただいた堀内様にも感謝いたします。 <br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=352>
+    <span class="no">[352]</span>
+    <a class="title" href="#352">Re: 選択文字列へのsakura_htmlを用いたタグ挿入</a>
+    <span class="author">しみづ</span>
+    <time datetime="2007-01-28T18:10:45">2007年01月28日 18:10</time></h1>
+    <div class="body"><br>　次の場合に似てるのではないでしょうか。<br>&gt;&gt;71<br></div></section>
+    <ul><li><section><h1 id=354>
+    <span class="no">[354]</span>
+    <a class="title" href="#354">Re2: 選択文字列へのsakura_htmlを用いたタグ挿入</a>
+    <span class="author">ki</span>
+    <time datetime="2007-01-28T18:56:28">2007年01月28日 18:56</time></h1>
+    <div class="body">▼ しみづさん<br>&gt; <br>&gt; 　次の場合に似てるのではないでしょうか。<br>&gt; &gt;&gt;71<br>ありがとうございます。初心者には難しいですが早く理解できるようになりたいです。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

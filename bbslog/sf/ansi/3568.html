@@ -1,0 +1,118 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>タグジャンプ機能追加</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3568</span>
+    <a class="title" href="3568.html#3568">タグジャンプ機能追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3577</span>
+    <a class="title" href="3568.html#3577">Re: タグジャンプ機能追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3583</span>
+    <a class="title" href="3568.html#3583">Re2: タグジャンプ機能追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3585</span>
+    <a class="title" href="3568.html#3585">Re3: タグジャンプ機能追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3640</span>
+    <a class="title" href="3568.html#3640">Re4: タグジャンプ機能追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3645</span>
+    <a class="title" href="3568.html#3645">Re5: タグジャンプ機能追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3646</span>
+    <a class="title" href="3568.html#3646">Re6: タグジャンプ機能追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3648</span>
+    <a class="title" href="3568.html#3648">Re7: タグジャンプ機能追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3650</span>
+    <a class="title" href="3568.html#3650">Re8: タグジャンプ機能追加</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3657</span>
+    <a class="title" href="3568.html#3657">Re6: タグジャンプ機能追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3661</span>
+    <a class="title" href="3568.html#3661">Re7: タグジャンプ機能追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3666</span>
+    <a class="title" href="3568.html#3666">Re8: タグジャンプ機能追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3669</span>
+    <a class="title" href="3568.html#3669">Re9: タグジャンプ機能追加</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3568>
+    <span class="no">[3568]</span>
+    <a class="title" href="#3568">タグジャンプ機能追加</a>
+    <span class="author">novice</span>
+    <time datetime="2004-05-04T00:15:58">2004年05月04日 00:15</time></h1>
+    <div class="body">「タグジャンプ元」と「タグジャンプ先」が同じファイルであるときでも、タグジャンプバックできるように変更しました。<br><br>変更対象ファイル<br>ssrc_2004-05-01.tar.bz2<br><br>差分ファイル<br>diff_ssrc_2004-05-01.zip<br><br>その他<br>(1)タグジャンプ情報を「共有メモリ」に保存しているため、共有メモリのバージョンの変更しました。<br>(2)タグジャンプできる回数は最大100回です(MAX_TAGJUMPNUMの設定値を変更して調整できます)。<br>(3)「タグジャンプバック」できないときの表示を、「タグジャンプ」できないときの表示に合わせました(MYMESSAGEBOX→SendStatusMessage)。<br>(4)「MAX_CUSTMACRO」の定義を「Funccode.h→CShareData.h」に移動しました。<br></div></section>
+    <ul><li><section><h1 id=3577>
+    <span class="no">[3577]</span>
+    <a class="title" href="#3577">Re: タグジャンプ機能追加</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-14T00:08:22">2004年05月14日 00:08</time></h1>
+    <div class="body">&gt;「タグジャンプ元」と「タグジャンプ先」が同じファイルであるときでも、タグジャンプバックできる<br>実は、これ欲しかったんです！<br>&gt;(2)タグジャンプできる回数は最大100回です<br>スタック方式になっているようで、100回ジャンプした後は、記録されない仕様なんですね。<br>私は、記録できないより、古いほうを消して新しいほうを記録したほうがよいと思います。<br>それからCommand_TAGJUMPBACKで、tagJump.hwndRefererがサクラエディタの編集ウィンドウか、<br>調べていません。<br>もし、参照元ウィンドウを閉じて、同じハンドルがほかのプログラムに割り当てられた場合、<br>SendMessageで、そのプログラムが予期せぬ動作をするかもしれません。<br></div></section>
+    <ul><li><section><h1 id=3583>
+    <span class="no">[3583]</span>
+    <a class="title" href="#3583">Re2: タグジャンプ機能追加</a>
+    <span class="author">novice</span>
+    <time datetime="2004-05-21T16:43:25">2004年05月21日 16:43</time></h1>
+    <div class="body">▼ もかさん<br>&gt; スタック方式になっているようで、100回ジャンプした後は、記録されない仕様なんですね。<br>タグジャンプ→タグジャンプバックの使用方法を考えるとスタック方式が一番しっくりくるかなと思いました。<br><br>&gt; 私は、記録できないより、古いほうを消して新しいほうを記録したほうがよいと思います。<br>スタック方式だけど、オーバフローしたら、一番下のスタックを書き換える、という動作でよろしいですか？<br><br>m_TagJump[0] = 1番目のタグジャンプ情報<br>m_TagJump[1] = 2番目のタグジャンプ情報<br>...<br>m_TagJump[MAX_TAGJUMPNUM-1] = MAX_TAGJUMPNUM番目のタグジャンプ情報<br><br>上記の状態のとき、さらにタグジャンプしたら、m_TagJump[0]を書き換える、という感じでしょうか？<br>(ただし、タブジャンプバックしてもm_TagJump[1]までしか戻らない)<br><br>&gt; それからCommand_TAGJUMPBACKで、tagJump.hwndRefererがサクラエディタの編集ウィンドウか、<br>&gt; 調べていません。<br>&gt; もし、参照元ウィンドウを閉じて、同じハンドルがほかのプログラムに割り当てられた場合、<br>&gt; SendMessageで、そのプログラムが予期せぬ動作をするかもしれません。<br>下記の修正で問題ないでしょうか？<br><br>■変更前<br>/* タグジャンプ情報の参照 */<br>if( !CShareData::getInstance()-&gt;GetTagJump(&amp;<br>tagJump) || NULL == tagJump.hwndReferer ){<br><br>&#9;SendStatusMessage("タグジャンプバックできません");<br>&#9;m_pShareData-&gt;m_TagJumpNum = 0;<br>&#9;return;<br>}<br><br>■変更後<br>/* タグジャンプ情報の参照 */<br>if( !CShareData::getInstance()-&gt;GetTagJump(&amp;<br>tagJump) || !CShareData::IsEditWnd(tagJump.hwndReferer) ){<br>&#9;SendStatusMessage("タグジャンプバックできません");<br>&#9;m_pShareData-&gt;m_TagJumpNum = 0;<br>&#9;return;<br>}<br></div></section>
+    <ul><li><section><h1 id=3585>
+    <span class="no">[3585]</span>
+    <a class="title" href="#3585">Re3: タグジャンプ機能追加</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-23T23:13:49">2004年05月23日 23:13</time></h1>
+    <div class="body">&gt;タグジャンプ→タグジャンプバックの使用方法を考えるとスタック方式が一番しっくりくるかなと思いました。<br>微妙に危惧しているのは、A→Bにタグジャンプ。C→Dにタグジャンプした後、<br>Bでタブジャンプバックすると、従来はAに飛びましたが、Cに飛ぶようになるので、<br>ちゃんとアナウンスしないと、「タブジャンプバックが違うウィンドウに移動するけどバグ？」とかいわれそうです。<br>#私はそういう使い方はしないし、2回タグジャンプバックすればいいので気にならないけど、そういう人もいるかも<br>&gt;スタック方式だけど、オーバフローしたら、一番下のスタックを書き換える、という動作でよろしいですか？<br>&gt;(中略...)<br>そういう動作でいいです。<br><br>&gt;&gt; SendMessageで、そのプログラムが予期せぬ動作をするかもしれません。<br>&gt;下記の修正で問題ないでしょうか？<br>&gt;(中略...)<br>見た限りではOKです。<br></div></section>
+    <ul><li><section><h1 id=3640>
+    <span class="no">[3640]</span>
+    <a class="title" href="#3640">Re4: タグジャンプ機能追加</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-06-19T23:10:16">2004年06月19日 23:10</time></h1>
+    <div class="body">すいません．どなたか最終版パッチ作ってくださいませんか？<br>このままだとずっと先送りしそうなので．<br></div></section>
+    <ul><li><section><h1 id=3645>
+    <span class="no">[3645]</span>
+    <a class="title" href="#3645">Re5: タグジャンプ機能追加</a>
+    <span class="author">novice</span>
+    <time datetime="2004-06-21T13:33:47">2004年06月21日 13:33</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; すいません．どなたか最終版パッチ作ってくださいませんか？<br>&gt; このままだとずっと先送りしそうなので．<br><br>最新版ソースに対する差分ファイルを作成しました。<br><br>変更対象ファイル<br>ssrc_2004-06-19.tar.bz2<br><br>差分ファイル<br>diff_ssrc_2004-06-19.zip<br><br>下記の処理はまだ実装できていません。すいません。<br><br>&gt;スタック方式だけど、オーバフローしたら、一番下のスタックを書き換える、という動作でよろしいですか？<br>&gt;<br>&gt;m_TagJump[0] = 1番目のタグジャンプ情報<br>&gt;m_TagJump[1] = 2番目のタグジャンプ情報<br>&gt;...<br>&gt;m_TagJump[MAX_TAGJUMPNUM-1] = MAX_TAGJUMPNUM番目のタグジャンプ情報<br>&gt;<br>&gt;上記の状態のとき、さらにタグジャンプしたら、m_TagJump[0]を書き換える、という感じでしょうか？<br>&gt;(ただし、タブジャンプバックしてもm_TagJump[1]までしか戻らない)<br></div></section>
+    <ul><li><section><h1 id=3646>
+    <span class="no">[3646]</span>
+    <a class="title" href="#3646">Re6: タグジャンプ機能追加</a>
+    <span class="author">もか</span>
+    <time datetime="2004-06-21T19:09:07">2004年06月21日 19:09</time></h1>
+    <div class="body">&gt;下記の処理はまだ実装できていません。すいません。<br>&gt;&gt;一番下のスタックを書き換える<br>文句つけた手前、noviceさんが未着手ならば、実装します。どうですか？<br><br># diff_ssrc_2004-06-19.zipのファイルのタイムスタンプがなぜか未来なんです。<br># UNZIP32.DLL(Noah)だと、+9:00時間して解凍します。<br># Windowsの「圧縮フォルダ」だとアーカイブの時間を現地時間扱いにするのか、<br># 時差フィールドのようなものがあるのか、午後1:00前後になります。<br></div></section>
+    <ul><li><section><h1 id=3648>
+    <span class="no">[3648]</span>
+    <a class="title" href="#3648">Re7: タグジャンプ機能追加</a>
+    <span class="author">novice</span>
+    <time datetime="2004-06-21T23:49:59">2004年06月21日 23:49</time></h1>
+    <div class="body">▼ もかさん<br>&gt; &gt;下記の処理はまだ実装できていません。すいません。<br>&gt; &gt;&gt;一番下のスタックを書き換える<br>&gt; 文句つけた手前、noviceさんが未着手ならば、実装します。どうですか？<br><br>では、お言葉に甘えてお願い致します。<br><br>&gt; # diff_ssrc_2004-06-19.zipのファイルのタイムスタンプがなぜか未来なんです。<br>&gt; # UNZIP32.DLL(Noah)だと、+9:00時間して解凍します。<br>&gt; # Windowsの「圧縮フォルダ」だとアーカイブの時間を現地時間扱いにするのか、<br>&gt; # 時差フィールドのようなものがあるのか、午後1:00前後になります。<br><br>ちなみに上記ファイルの圧縮は、「+Lhaca」でやりました。<br>こちらで解凍してみた限りでは、特に問題ないようなのですが．．．<br></div></section>
+    <ul><li><section><h1 id=3650>
+    <span class="no">[3650]</span>
+    <a class="title" href="#3650">Re8: タグジャンプ機能追加</a>
+    <span class="author">もか</span>
+    <time datetime="2004-06-22T23:19:53">2004年06月22日 23:19</time></h1>
+    <div class="body">&gt;&gt; # diff_ssrc_2004-06-19.zipのファイルのタイムスタンプがなぜか未来なんです。<br>&gt;ちなみに上記ファイルの圧縮は、「+Lhaca」でやりました。<br>&gt;こちらで解凍してみた限りでは、特に問題ないようなのですが．．．<br>環境変数の「TZ=JST-9」してませんでした。あああ、またやってしまった。<br>申し訳ありません。m(__)m<br><br>実装のほうは、SetTagJump()が失敗することがなくなったため、戻り値をvoidにしようかboolのままにするか考え中...<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=3657>
+    <span class="no">[3657]</span>
+    <a class="title" href="#3657">Re6: タグジャンプ機能追加</a>
+    <span class="author">みちばな</span>
+    <time datetime="2004-07-05T03:10:14">2004年07月05日 03:10</time></h1>
+    <div class="body">&gt; ssrc_2004-06-19.tar.bz2<br>&gt; diff_ssrc_2004-06-19.zip<br><br>上記を落としてきて試してみたのですが、うまく動かずトレースしてみました。<br>その結果、<br><br>CEditView_Command.cpp 6895行の SendMesssageで m_nCaretPosX,m_nCaretPosYが更新されてしまい。<br>ジャンプ先の場所がジャンプ元として保存されてしまっているようでしたので、<br>その前で保存するように変更したらとりあえず機能するようになりました。<br>（6933～6950行目を切り取って6883行に移動）<br><br>ではでは、ご報告まで。<br><br># なお、ひ○まる乗換え組みのあちしと致しましては、これが実装されて誠に有難い気持ちでいっぱい。<br># ありがとうございました。</div></section>
+    <ul><li><section><h1 id=3661>
+    <span class="no">[3661]</span>
+    <a class="title" href="#3661">Re7: タグジャンプ機能追加</a>
+    <span class="author">もか</span>
+    <time datetime="2004-07-09T20:55:46">2004年07月09日 20:55</time></h1>
+    <div class="body">みちばなさん、ありがとうございます。<br>やっとこさテストをしたので、パッチ出します。<br>tagjump02.zip  です。<br><br>みちばなさんの変更も入れてあります。<br>全然気が付いていなかった...。<br></div></section>
+    <ul><li><section><h1 id=3666>
+    <span class="no">[3666]</span>
+    <a class="title" href="#3666">Re8: タグジャンプ機能追加</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-07-10T05:28:28">2004年07月10日 05:28</time></h1>
+    <div class="body">&gt;tagjump02.zip<br>ちょっと気になったところ:<br>メソッド名SetTagjump/GetTagjumpよりPushTagJump/PopTagJumpの方がスタックであることがわかりやすいと思います．<br>同名のC/C++ヘッダ/ソースを開く機能でタグジャンプバックの登録が取り除かれていますが，これはわざとなのかな？あると使いにくい？<br><br>&gt; それからCommand_TAGJUMPBACKで、tagJump.hwndRefererがサクラエディタの編集ウィンドウか、<br>&gt; 調べていません。<br>に対する修正 &gt;&gt;3583 が入っていない．<br></div></section>
+    <ul><li><section><h1 id=3669>
+    <span class="no">[3669]</span>
+    <a class="title" href="#3669">Re9: タグジャンプ機能追加</a>
+    <span class="author">もか</span>
+    <time datetime="2004-07-11T03:54:39">2004年07月11日 03:54</time></h1>
+    <div class="body">指摘のとおり、変更・修正しました。<br>C/C++の行き来は、考慮漏れか、意図的なのか分からないので、とりあえず従来のように登録するようにしました。<br>あと、CEditDoc::SetRefererが宣言だけ残っていたんで修正。<br>タグジャンプバックが失敗したときの、m_pShareData-&gt;m_TagJumpNum = 0をやめました。<br>一つ前は無効でも、さらに古いのが残っていたらそれも無効だとは限らないし。<br>tagjump03.zipです。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

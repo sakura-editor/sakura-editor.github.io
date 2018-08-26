@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>パッチ：#3152327 背景画像表示</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1465</span>
+    <a class="title" href="1465.html#1465">パッチ：#3152327 背景画像表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1470</span>
+    <a class="title" href="1465.html#1470">Re:パッチ：#3152327 背景画像表示</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1471</span>
+    <a class="title" href="1465.html#1471">Re:パッチ：#3152327 背景画像表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1472</span>
+    <a class="title" href="1465.html#1472">Re2:パッチ：#3152327 背景画像表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1473</span>
+    <a class="title" href="1465.html#1473">Re3:パッチ：#3152327 背景画像表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1474</span>
+    <a class="title" href="1465.html#1474">Re4:パッチ：#3152327 背景画像表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1475</span>
+    <a class="title" href="1465.html#1475">Re5:パッチ：#3152327 背景画像表示</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1465>
+    <span class="no">[1465]</span>
+    <a class="title" href="#1465">パッチ：#3152327 背景画像表示</a>
+    <span class="author">もか</span>
+    <time datetime="2011-01-27T17:45:01">2011年01月27日 17:45</time></h1>
+    <div class="body">ひっそりとアップしてあった背景画像表示パッチをtrunk2最新に対応させました。<br>設定UIが窮屈だけど、いまのところそのままにするつもりです。<br>特に突込みが入らなければ、しばらくしたらコミットする予定です。<br><br>#おしらせ<br>#小枝研ですが、諸事象により永久に更新できなくなってしまいました。<br># http://mocaskr.web.fc2.com/sakura/bin_other.html に引越ししました。<br></div></section>
+    <ul><li><section><h1 id=1470>
+    <span class="no">[1470]</span>
+    <a class="title" href="#1470">Re:パッチ：#3152327 背景画像表示</a>
+    <span class="author">ryoji</span>
+    <time datetime="2011-01-29T20:23:46">2011年01月29日 20:23</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ひっそりとアップしてあった背景画像表示パッチをtrunk2最新に対応させました。<br>まだちょっと触ってみただけですが、いいですね、コレ。(^_^)<br><br>&gt; 設定UIが窮屈だけど、いまのところそのままにするつもりです。<br>画面設定を高 DPI （Win7 125% = 120DPI 「中」）にすると、幅がはみ出して読めない文字があるようです。少し画面幅を広げていただければ、と思います。<br>以前、高 DPI 用にすべての画面のレイアウトをひととおり調整してあるので、他は概ね大丈夫のはずです。<br><br>最近、量販店の店頭 PC を見てたとき、高 DPI 「中」になってる PC があるのに気づきました。出荷時設定で高 DPI のマシンも出てきてるのかな～、と。今後は従来のように 96 DPI 「小」決め打ちというわけにはいきそうにないですね。<br>150% = 144DPI 「大」までになるとあまり使用されないと思いますが、そのくらいになると DPI  仮想化の拡大表示の影響（文字がぼける）がはっきりでてくるようです。<br>＃DPI 仮想化も UAC 仮想化と同様、manifest への記述追加で明示的に抑止可能<br><br>http://msdn.microsoft.com/ja-jp/windows/dd630126<br>あたりを参考に、既にいくらか対応を進めています（← rev1655,1664,1665）。<br>ANSI版では見栄えが残念になってる部分がUNICODE版では少しはましになってると思います。<br><br>&gt; #小枝研ですが、諸事象により永久に更新できなくなってしまいました。<br>&gt; # http://mocaskr.web.fc2.com/sakura/bin_other.html に引越ししました。<br>プロポーショナルのほうも、いずれ入るかしら？、と期待してま～す。(^^;</div></section>
+    </li><li><section><h1 id=1471>
+    <span class="no">[1471]</span>
+    <a class="title" href="#1471">Re:パッチ：#3152327 背景画像表示</a>
+    <span class="author">syat</span>
+    <time datetime="2011-01-30T11:06:31">2011年01月30日 11:06</time></h1>
+    <div class="body">▼ もかさん<br>触ってみた感想です。<br><br>ファイルを開くダイアログの拡張子フィルタに.txtがあるというツッコミは無しですか？（画像を扱うようになって今さらながら違和感が…）<br><br>RepeatXのON/OFFで行番号の背景が変わるのがやや違和感があります。好みの問題かもしれませんが、RepeatXがＯＮでも行番号の後ろは画像なしのほうがルーラーとの一体感がある気がします。<br><br>画面キャッシュをオフにするとちらつきがすごいです（ScrollがOFFだと特に）。画面キャッシュのチェックは必須かと。<br>本パッチの話からは外れますが、画面キャッシュオプションは固定でＯＮにして、共通設定から削ってもよい気がします。あえてＯＦＦにしたい状況ってあるのでしょうか？<br></div></section>
+    <ul><li><section><h1 id=1472>
+    <span class="no">[1472]</span>
+    <a class="title" href="#1472">Re2:パッチ：#3152327 背景画像表示</a>
+    <span class="author">ryoji</span>
+    <time datetime="2011-01-30T12:14:41">2011年01月30日 12:14</time></h1>
+    <div class="body">▼ syatさん<br>&gt; ファイルを開くダイアログの拡張子フィルタに.txtがあるというツッコミは無しですか？（画像を扱うようになって今さらながら違和感が…）<br>本パッチが意図してそうしているのではなく、汎用に作成された関数が.txtのフィルタ行を追加してます。なので、今のところあらゆるファイルオープンダイアログに.txtフィルタが入ってると思います。<br><br>なんとなく、本件の確認の際、今まで気づかなかった点（別件）が目についたという感じなのではないでしょうか。<br>本件のついでにとなると、本件が片付くまで別件も片付かなくなります。<br>別途に提案していただいて、別枠で作業を進めるほうがやりやすいかと。。。<br><br>&gt; RepeatXのON/OFFで行番号の背景が変わるのがやや違和感があります。好みの問題かもしれませんが、RepeatXがＯＮでも行番号の後ろは画像なしのほうがルーラーとの一体感がある気がします。<br>文書末より下の部分の話ですよね？<br>X のオフセット値に負の値を入力して画像を左シフトすれば、切れ目は気にならないかもです。<br>文書末を超えた部分の行番号の下は従来、「行番号背景色」ではなく「本文背景色」で塗られるようになっています。「背景画像は本文背景の置き換え」という意味では今の動作が妥当とも言えるような気がします。<br>行番号背景色と本文背景色とがまったくの別色だった場合、syatさんが言われているのとは逆に、RepeatXがＯＦＦのほうが違和感が出てしまうということがあるかもしれません。<br><br>やるとしたら、文書末を超えた部分の行番号の下も「行番号背景色」で塗られるように、仕様変更をする方向に話が進むんじゃないかとも思います。そうだとすれば、これも別件になりますが。。。<br>文書末越えの行番号下は画像ではなく常に本文背景色のまま、ユーザー指定で本文背景色のほうを調整してもらう、でもよいのかしら？いや、本文背景色はドッキングアウトラインの背景色と連動してるからやっぱりＮＧ。。。</div></section>
+    <ul><li><section><h1 id=1473>
+    <span class="no">[1473]</span>
+    <a class="title" href="#1473">Re3:パッチ：#3152327 背景画像表示</a>
+    <span class="author">syat</span>
+    <time datetime="2011-01-31T01:18:39">2011年01月31日 01:18</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; なんとなく、本件の確認の際、今まで気づかなかった点（別件）が目についたという感じなのではないでしょうか。<br>おっしゃる通りです。今までも目にはしてたはずなのですが、今回は「もしかして背景に別テキストを表示する機能が？」とちょっぴり期待してしまいました。<br>たいして強い要望じゃありません。<br><br>&gt; &gt; RepeatXのON/OFFで行番号の背景が変わるのがやや違和感があります。好みの問題かもしれませんが、RepeatXがＯＮでも行番号の後ろは画像なしのほうがルーラーとの一体感がある気がします。<br>&gt; 文書末より下の部分の話ですよね？<br>すみません。文書末はあまり気になりませんでした。<br>行番号表示・画像位置左上にして、RepeatXのチェックを切り替えると、行番号に背景画像が表示されたりされなかったりします。<br>オプションで好きな方を選べるのでとくに問題ないでしょう。<br><br>壁紙用のタイル画像ではなく普通の写真を背景にすると画像の切れ目が気になるので私はRepeatOFF派です。<br>Scroll・Repeatを全てＯＦＦにして、大きめの画像を背景にするのが私のおすすめです。<br><br>&gt; X のオフセット値に負の値を入力して画像を左シフトすれば、切れ目は気にならないかもです。<br>これでも良いですね。<br><br>私は基本的にデフォルトの色設定のまま長く使っていたので、ルーラーと行番号はＬ型定規のように一体化しているという先入観があり、行番号にだけ背景画像が表示されるのに違和感を感じただけな気がしてきました。<br>自分好みの設定（と背景画像）をみつけるまで多少試行錯誤がいりますが、今のパッチのままで問題ないと思っています。<br></div></section>
+    <ul><li><section><h1 id=1474>
+    <span class="no">[1474]</span>
+    <a class="title" href="#1474">Re4:パッチ：#3152327 背景画像表示</a>
+    <span class="author">ryoji</span>
+    <time datetime="2011-01-31T09:08:14">2011年01月31日 09:08</time></h1>
+    <div class="body">▼ syatさん<br>&gt; すみません。文書末はあまり気になりませんでした。<br>&gt; 行番号表示・画像位置左上にして、RepeatXのチェックを切り替えると、行番号に背景画像が表示されたりされなかったりします。<br><br>あぁ、それは行番号の背景色を、本文の背景色とちょっとだけ（RGB値を1だけでも）ずらせばいいです。微妙にでも本文背景色と違う色にしておけば行番号背景は常に行番号背景色で塗りつぶされるようになります。<br>完全な同一色を指定しておくと行番号背景部も画像になります。<br>ソースコードはまだ読んでないけど、そういうことですよね＞もかさん</div></section>
+    <ul><li><section><h1 id=1475>
+    <span class="no">[1475]</span>
+    <a class="title" href="#1475">Re5:パッチ：#3152327 背景画像表示</a>
+    <span class="author">ryoji</span>
+    <time datetime="2011-01-31T22:28:30">2011年01月31日 22:28</time></h1>
+    <div class="body">&gt; 完全な同一色を指定しておくと行番号背景部も画像になります。<br>これの用途としては２色画像を使った行のストライプ表示とか。<br><a href=http://www7a.biglobe.ne.jp/~ryoji/stripe.jpg target=_top><nobr>http://<wbr>www7a.<wbr>biglobe.<wbr>ne.<wbr>jp/~<wbr>ryoji/<wbr>stripe.<wbr>jpg</nobr></a></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

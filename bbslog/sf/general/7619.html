@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ報告</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7619</span>
+    <a class="title" href="7619.html#7619">バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7620</span>
+    <a class="title" href="7619.html#7620">Re: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7621</span>
+    <a class="title" href="7619.html#7621">Re2: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7625</span>
+    <a class="title" href="7619.html#7625">Re3: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7627</span>
+    <a class="title" href="7619.html#7627">Re4: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7631</span>
+    <a class="title" href="7619.html#7631">Re5: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7632</span>
+    <a class="title" href="7619.html#7632">Re6: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7634</span>
+    <a class="title" href="7619.html#7634">Re7: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7635</span>
+    <a class="title" href="7619.html#7635">Re8: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7636</span>
+    <a class="title" href="7619.html#7636">Re9: バグ報告</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7619>
+    <span class="no">[7619]</span>
+    <a class="title" href="#7619">バグ報告</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-05-10T21:35:49">2013年05月10日 21:35</time></h1>
+    <div class="body">折り返し行インデントを有効にし、折り返しの最後の1タブ位の所まで文字が無い場合、折り返し行インデントが効かない。<br>tx2x、論理行先頭も同じです。<br>Ver.2.0.6.0から確認しています。<br>Ver.1.6.7.0も同様です。<br><br>ちょっと追っかけられなかったのでよろしくお願いします。</div></section>
+    <ul><li><section><h1 id=7620>
+    <span class="no">[7620]</span>
+    <a class="title" href="#7620">Re: バグ報告</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-11T01:28:42">2013年05月11日 01:28</time></h1>
+    <div class="body">折り返しを無効にしないと、1行に1文字も置けなくなって無限ループするのでそうなってます。<br>その1文字がタブだったりしても大丈夫なようにたぶんなってます。<br>スペース・タブを入力していって折り返しが無効になったときの再描画がおかしいのはバグです。<br></div></section>
+    <ul><li><section><h1 id=7621>
+    <span class="no">[7621]</span>
+    <a class="title" href="#7621">Re2: バグ報告</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-11T08:48:19">2013年05月11日 08:48</time></h1>
+    <div class="body">EOFが描画されないのと場所が近かったので一緒のパッチにしました。<br>http://sourceforge.net/p/sakura-editor/patchunicode/503/<br></div></section>
+    <ul><li><section><h1 id=7625>
+    <span class="no">[7625]</span>
+    <a class="title" href="#7625">Re3: バグ報告</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-05-11T23:33:01">2013年05月11日 23:33</time></h1>
+    <div class="body">▼ もかさん<br>&gt; EOFが描画されないのと場所が近かったので一緒のパッチにしました。<br>&gt; http://sourceforge.net/p/sakura-editor/patchunicode/503/<br>パッチのアップはまだでしょうか？</div></section>
+    <ul><li><section><h1 id=7627>
+    <span class="no">[7627]</span>
+    <a class="title" href="#7627">Re4: バグ報告</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-12T10:17:25">2013年05月12日 10:17</time></h1>
+    <div class="body">v1_2がそうです。<br></div></section>
+    <ul><li><section><h1 id=7631>
+    <span class="no">[7631]</span>
+    <a class="title" href="#7631">Re5: バグ報告</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-05-12T13:45:29">2013年05月12日 13:45</time></h1>
+    <div class="body">▼ もかさん<br>&gt; v1_2がそうです。<br>どの現象が修正されたんでしょうか?</div></section>
+    <ul><li><section><h1 id=7632>
+    <span class="no">[7632]</span>
+    <a class="title" href="#7632">Re6: バグ報告</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-12T15:49:43">2013年05月12日 15:49</time></h1>
+    <div class="body">&gt;どの現象が修正されたんでしょうか?<br>「スペース・タブを入力していって行頭インデントが無効になったときの再描画がおかしい」<br>を修正しました。<br>行頭インデントが文字入力で無効になると下側の再描画が行われていませんでした。<br></div></section>
+    <ul><li><section><h1 id=7634>
+    <span class="no">[7634]</span>
+    <a class="title" href="#7634">Re7: バグ報告</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-05-12T19:00:17">2013年05月12日 19:00</time></h1>
+    <div class="body">▼ もかさん<br>&gt; &gt;どの現象が修正されたんでしょうか?<br>&gt; 「スペース・タブを入力していって行頭インデントが無効になったときの再描画がおかしい」<br>&gt; を修正しました。<br>&gt; 行頭インデントが文字入力で無効になると下側の再描画が行われていませんでした。<br><br>バグが直ったわけではないんですね。<br>判りました。<br>直る見込みも無いと。<br><br>私はWikiの方の書込みが拒否されているので、このバグをWikiのBugReportに書き込んでいただき無いでしょうか。<br>お願いいたします。</div></section>
+    <ul><li><section><h1 id=7635>
+    <span class="no">[7635]</span>
+    <a class="title" href="#7635">Re8: バグ報告</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-12T19:22:30">2013年05月12日 19:22</time></h1>
+    <div class="body">&gt;バグが直ったわけではないんですね。<br>&gt;判りました。<br>&gt;直る見込みも無いと。<br>直らないというわけでないですが、どういう風にすればいいと思いますか？<br>最大幅(残りタブ１つ分)を保つようにするのが自然な感じでしょうか。<br></div></section>
+    <ul><li><section><h1 id=7636>
+    <span class="no">[7636]</span>
+    <a class="title" href="#7636">Re9: バグ報告</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-05-12T20:21:26">2013年05月12日 20:21</time></h1>
+    <div class="body">▼ もかさん<br>&gt; &gt;バグが直ったわけではないんですね。<br>&gt; &gt;判りました。<br>&gt; &gt;直る見込みも無いと。<br>&gt; 直らないというわけでないですが、どういう風にすればいいと思いますか？<br>私としては、(致命的では無いので)直らないなら其れで、位の気持ちです。<br>如何いう状態で何故発生するバグなのかがはっきりしていれば問題ないです。<br>なのでWikiの方に転載をお願いしたんですが。<br><br>&gt; 最大幅(残りタブ１つ分)を保つようにするのが自然な感じでしょうか。<br>判り易くていいんじゃないでしょうか。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

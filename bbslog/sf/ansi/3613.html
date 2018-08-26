@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>RE(一般):SAKURAが勝手に消える</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3613</span>
+    <a class="title" href="3613.html#3613">RE(一般):SAKURAが勝手に消える</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=3613>
+    <span class="no">[3613]</span>
+    <a class="title" href="#3613">RE(一般):SAKURAが勝手に消える</a>
+    <span class="author">もか</span>
+    <time datetime="2004-06-03T21:30:48">2004年06月03日 21:30</time></h1>
+    <div class="body">1. CEditDoc::FileRead() pbOpenedが未初期化のまま戻る場合がある<br>2. CEditWnd::Createで、上記FileReadが本当にbOpened = TRUEの場合、ウィンドウを作成したにもかかわらずreturn NULLを返している<br>その直後WM_CLOSEをPostMessageしているけど、CNormalProcessが、メッセージループを開始せず結局、強制的に破棄されている。<br><br>で、この辺を直すと&gt;&gt;data::3864 不具合&gt;SAKURA勝手に消える (by 無人駅さん)が、直るみたいです。<br></div></section>
+    </li></ul></body></html>

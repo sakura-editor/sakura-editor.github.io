@@ -1,0 +1,118 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ライセンスについて</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">302</span>
+    <a class="title" href="302.html#302">ライセンスについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">303</span>
+    <a class="title" href="302.html#303">Re: ライセンスについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">304</span>
+    <a class="title" href="302.html#304">バージョン名の表記(was:ライセンスについて)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">307</span>
+    <a class="title" href="302.html#307">Re:バージョン名の表記(was:ライセンスについて)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">308</span>
+    <a class="title" href="302.html#308">Re:バージョン名の表記(was:ライセンスについて)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">309</span>
+    <a class="title" href="302.html#309">Re2:バージョン名の表記(was:ライセンスについて)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">325</span>
+    <a class="title" href="302.html#325">Re2:バージョン名の表記(was:ライセンスについて)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">328</span>
+    <a class="title" href="302.html#328">Re3:バージョン名の表記(was:ライセンスについて)</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">427</span>
+    <a class="title" href="302.html#427">新名称に関して</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">429</span>
+    <a class="title" href="302.html#429">Re:新名称に関して</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">306</span>
+    <a class="title" href="302.html#306">Re2: ライセンスについて</a></div>
+    </li><li><div class="list-title">
+    <span class="no">321</span>
+    <a class="title" href="302.html#321">Re2: ライセンスについて</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">305</span>
+    <a class="title" href="302.html#305">Re:ライセンスについて</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=302>
+    <span class="no">[302]</span>
+    <a class="title" href="#302">ライセンスについて</a>
+    <span class="author">nakatani</span>
+    <time datetime="2001-06-06T23:16:34">2001年06月06日 23:16</time></h1>
+    <div class="body">いまさらのこのこ現れてきてライセンスについて言うのもなんですが・・<br>ハッキリさせておいたほうがいいと思って・・<br><br>開発に携わった方々が賛成してくれるならすぐにでも<br>GPLにします。GPLのライセンスを適用します。(日本語変?)<br><br>でGPLにするにはどうしたら良いんですか?<br>配布物にGPLを適用する旨を明記してから<br>GPLの条文みたいなのを添付しておけばいいんでしょうか。<br>配布物の作成取りまとめ人? の、げんたさんにお任せします。<br><br>ところで最近は単語単位の検索や置換(Grep未対応)や<br>BisualBasic(.frm;.bas)のアウトライン解析とか<br>「改行だけの行を削除」とかぐらいしかしてません<br>これらはオリジナル版に対する修正なので共同開発版に組み込む<br>にはいろいろ考えないとだめみたいです。トホホ<br><br><br></div></section>
+    <ul><li><section><h1 id=303>
+    <span class="no">[303]</span>
+    <a class="title" href="#303">Re: ライセンスについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-06-07T10:08:56">2001年06月07日 10:08</time></h1>
+    <div class="body">▼nakataniさん<br>&gt;開発に携わった方々が賛成してくれるならすぐにでも<br>&gt;GPLにします。GPLのライセンスを適用します。(日本語変?)<br>では次のリリースからGPLにしたいと思います。<br><br>&gt;GPLにするにはどうしたら良いんですか?<br>&gt;配布物にGPLを適用する旨を明記してから<br>&gt;GPLの条文みたいなのを添付しておけばいいんでしょうか。<br>たぶんそんな感じだと思います。<br><br>&gt; 単語単位の検索や置換<br>これは、正規表現で単語境界を表す \b を使えば現在でも実現可能だと思います。<br><br>&gt;BisualBasic(.frm;.bas)のアウトライン解析<br>これはすぐにでも組み込めそうですね。<br><br>&gt;改行だけの行を削除<br>これもわざわざ追加しなくても、正規表現の置換で ^$ を空文字列に一括置換すればできますよね。スペースのみの行も対象に含めたければ ^\s*$ でOK。<br><br>正規表現については私はbregexp.dll&amp;BRegIf.DLLを使っているのでjre32.dllと動作が異なるのかもしれません。<br></div></section>
+    <ul><li><section><h1 id=304>
+    <span class="no">[304]</span>
+    <a class="title" href="#304">バージョン名の表記(was:ライセンスについて)</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-06-07T10:48:05">2001年06月07日 10:48</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼nakataniさん<br>&gt; &gt;開発に携わった方々が賛成してくれるならすぐにでも<br>&gt; &gt;GPLにします。GPLのライセンスを適用します。(日本語変?)<br>&gt; では次のリリースからGPLにしたいと思います。<br><br>GPLが適用された時点で、<br><br>・UR1.2.34.3 は"U"がとれて R1.2.34.3 となるのでしょうか？ ＞ALL<br>・ヘルプ内のソフト名表記を<br><br>　日本語:「サクラエディタ共同開発版」（旧称：テキストエディタ）<br>　英　語:「Sakura-Editor GPL version」<br><br>　に統一したいのですが、これでよろしいでしょうか？　＞仲谷さん &amp; Collaborators<br><br>＃別案：さくらエディタ、桜エディタ、櫻エディタ、、、<br></div></section>
+    <ul><li><section><h1 id=307>
+    <span class="no">[307]</span>
+    <a class="title" href="#307">Re:バージョン名の表記(was:ライセンスについて)</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-07T13:24:49">2001年06月07日 13:24</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; ・UR1.2.34.3 は"U"がとれて R1.2.34.3 となるのでしょうか？ ＞ALL<br>Rもいらないのでは？<br><br>&gt; ・ヘルプ内のソフト名表記を<br>&gt; 　日本語:「サクラエディタ共同開発版」（旧称：テキストエディタ）<br>&gt; 　英　語:「Sakura-Editor GPL version」<br>&gt; 　に統一したいのですが、これでよろしいでしょうか？　＞仲谷さん &amp; Collaborators<br>今日久しぶりに自分のHPを更新したら・・・ありゃりゃ。。。そこにも書きましたが、「テキストエディタ」という名前はオリジナル版名称でそれと共同開発版とを区別する意味でテキストエディタ共同開発版をサクラエディタと私は呼んでます。サクラエディタには共同開発版という意味も入っているのです。英語名のSakura-Editorにしても正式名ではなかったのですから<br> 　日本語:「サクラエディタ」（旧称：テキストエディタ）<br> 　英　語:「Sakura-Editor」<br>を正式名として認可してもらえればすっきりすると思うんですが。旧称との関係をはっきりさせたいときに「テキストエディタ共同開発版」と注釈すればいいのではないですか？ダメ？<br># つまり原作版、共同開発版の総称としての「テキストエディタ」は残ることになりますが、実際のところ総称する必要性はあまりないでしょう。<br></div></section>
+    <ul><li><section><h1 id=308>
+    <span class="no">[308]</span>
+    <a class="title" href="#308">Re:バージョン名の表記(was:ライセンスについて)</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-06-07T19:33:28">2001年06月07日 19:33</time></h1>
+    <div class="body">&gt;&gt; R1.2.34.3 となるのでしょうか？<br>&gt;Rもいらないのでは？<br>現在のバージョンはVer.0.3.9.0 - UR1.2.34.3と開発起点のバージョン＋サブバージョンという形になっています。<br>ですが、起点バージョンはもはや意味を持たないというのであればVer.1.2.34.3と書くのが自然でしょう。<br><br>&gt;&gt; ・ヘルプ内のソフト名表記を<br>&gt; 　日本語:「サクラエディタ」（旧称：テキストエディタ）<br>&gt; 　英　語:「Sakura-Editor」<br>&gt;を正式名として認可してもらえればすっきりすると思うんですが。旧称との関係をはっきりさせたいときに「テキストエディタ共同開発版」と注釈すればいいのではないですか？ダメ？<br><br>GPL適用に際してのプログラムの変更として以下の作業を予定しています。<br>＊GPL V2のライセンス規定をソースコードセットに含める。<br>＊全ソースコード(*.h/*.cpp)先頭にCopyright表示と以下の文面を挿入<br>    This program is free software; you can redistribute it and/or modify<br>    it under the terms of the GNU General Public License as published by<br>    the Free Software Foundation; either version 2 of the License, or<br>    (at your option) any later version.<br><br>    This program is distributed in the hope that it will be useful,<br>    but WITHOUT ANY WARRANTY; without even the implied warranty of<br>    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<br>    GNU General Public License for more details.<br><br>    You should have received a copy of the GNU General Public License<br>    along with this program; if not, write to the Free Software<br>    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA<br>＊名称変更とライセンス変更をAboutBoxに反映<br>＊AboutBoxでソースコード入手先を明示する<br><br>現状ではGPLの規定に従っていない部分があるので現行バージョンは旧ライセンス（＝権利保有者に個別に聞いてください）のままとし、次のバージョンからGPLにするつもりです。<br></div></section>
+    <ul><li><section><h1 id=309>
+    <span class="no">[309]</span>
+    <a class="title" href="#309">Re2:バージョン名の表記(was:ライセンスについて)</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-07T19:49:21">2001年06月07日 19:49</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 現在のバージョンはVer.0.3.9.0 - UR1.2.34.3と開発起点のバージョン＋サブバージョンという形になっています。<br>&gt; ですが、起点バージョンはもはや意味を持たないというのであればVer.1.2.34.3と書くのが自然でしょう。<br>これを機会に次期Ver.はいっそのこと、きれいさっぱり 2.0.0.0（あるいは 1.3.0.0 or 1.0.0.0）から始めるというのもGPL化したということがわかりやすいのでは？前にちょっと議論したことでそもそも四桁も必要かというのもあります。<br># 1.2.34.3は幻のVer.No.になるかなあ...(^_^;)<br><br>&gt;GPL適用に際してのプログラムの変更として以下の作業を予定<br>&gt;(省略)<br>&gt; ＊名称変更とライセンス変更をAboutBoxに反映<br>&gt; ＊AboutBoxでソースコード入手先を明示する<br>ご苦労様です。ｍ（＿＿）ｍ</div></section>
+    </li><li><section><h1 id=325>
+    <span class="no">[325]</span>
+    <a class="title" href="#325">Re2:バージョン名の表記(was:ライセンスについて)</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-11T16:14:22">2001年06月11日 16:14</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; GPL適用に際してのプログラムの変更として以下の作業を予定しています。<br>&gt; ＊GPL V2のライセンス規定をソースコードセットに含める。<br>&gt; ＊全ソースコード(*.h/*.cpp)先頭にCopyright表示と以下の文面を挿入<br>&gt;     This program is free software; you can redistribute it and/or modify<br>(省略)<br>.h,.cpp以外のすべてはどうなるのですか？ドキュメントやリソースなどです。ライセンスを書けないファイルには(書ける物もあるけど…)どこかに一括して「以下のファイルは・・・」のように記載するのですか？</div></section>
+    <ul><li><section><h1 id=328>
+    <span class="no">[328]</span>
+    <a class="title" href="#328">Re3:バージョン名の表記(was:ライセンスについて)</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-06-11T21:43:08">2001年06月11日 21:43</time></h1>
+    <div class="body">▼ じぇぷろさん<br>> ▼ げんたさん<br>> .h,.cpp以外のすべてはどうなるのですか？<br>> どこかに一括して「以下のファイルは・・・」のように記載するのですか？<br>そのつもりです．一応unofficialrelease.txtにはソースコードが全てGPLに従って扱われるという記述とソースコードが.cpp/.h以外にリソース、ビットマップ、プロジェクトファイルなども含むと書いてあります．<br>そうなると、全ファイルに記述を追加したのは労力の無駄だったと言われるかもしれませんが...<br><br>ドキュメントはソースコード本体とは別のものとして扱おうと考えています．<br>FSFにはドキュメント用のフリーライセンスというのもあります．（中身は確認していませんが）<br><a href=http://www.fsf.org/philosophy/license-list.ja.html target=_top><nobr>http://<wbr>www.<wbr>fsf.<wbr>org/<wbr>philosop<wbr>hy/<wbr>license-<wbr>list.<wbr>ja.<wbr>html</nobr></a></div></section>
+    </li></ul></li><li><section><h1 id=427>
+    <span class="no">[427]</span>
+    <a class="title" href="#427">新名称に関して</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-23T22:38:55">2001年06月23日 22:38</time></h1>
+    <div class="body">&gt; &gt;&gt; ・ヘルプ内のソフト名表記を<br>&gt; &gt; 　日本語:「サクラエディタ」（旧称：テキストエディタ）<br>&gt; &gt; 　英　語:「Sakura-Editor」<br>&gt; &gt;を正式名として認可してもらえればすっきりすると思うんですが。旧称との関係をはっきりさせたいときに「テキストエディタ共同開発版」と注釈すればいいのではないですか？ダメ？<br>これに関してまた少々フライング気味になっていると思うので、大(おお)著作権者(著作権筆頭？)のたけ氏の承認をもらってから正式に決定としませんか？拒否権発動されたりして。(~_~;)<br>（いつのまにかげんた氏も掲示板のタイトル変えてるし。。。）<br></div></section>
+    <ul><li><section><h1 id=429>
+    <span class="no">[429]</span>
+    <a class="title" href="#429">Re:新名称に関して</a>
+    <span class="author">nakatani</span>
+    <time datetime="2001-06-24T01:08:17">2001年06月24日 01:08</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; &gt; &gt;&gt; ・ヘルプ内のソフト名表記を<br>&gt; &gt; &gt; 　日本語:「サクラエディタ」（旧称：テキストエディタ）<br>&gt; &gt; &gt; 　英　語:「Sakura-Editor」<br>&gt; &gt; &gt;を正式名として認可してもらえればすっきりすると思うんですが。旧称との関係をはっきりさせたいときに「テキストエディタ共同開発版」と注釈すればいいのではないですか？ダメ？<br>&gt; これに関してまた少々フライング気味になっていると思うので、大(おお)著作権者(著作権筆頭？)のたけ氏の承認をもらってから正式に決定としませんか？拒否権発動されたりして。(~_~;)<br>&gt; （いつのまにかげんた氏も掲示板のタイトル変えてるし。。。）<br><br><br>少なくともわたしは「サクラエディタ」でいいですよ<br>自分には他に思い浮ばないし。。。<br>また名前を変えたくなればみんなで考えて変えれば良いし・・?<br><br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=306>
+    <span class="no">[306]</span>
+    <a class="title" href="#306">Re2: ライセンスについて</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-07T13:09:00">2001年06月07日 13:09</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt; 単語単位の検索や置換<br>&gt; これは、正規表現で単語境界を表す \b を使えば現在でも実現可能だと思います。<br>&gt; <br>&gt; &gt;改行だけの行を削除<br>&gt; これもわざわざ追加しなくても、正規表現の置換で ^$ を空文字列に一括置換すればできますよね。スペースのみの行も対象に含めたければ ^\s*$ でOK。<br><br>正規表現は一般に「難しい」という印象があります。これらをTipsやQ&amp;Aにまとめて記載してあるとありがたいと思うユーザがいるでしょう。</div></section>
+    </li><li><section><h1 id=321>
+    <span class="no">[321]</span>
+    <a class="title" href="#321">Re2: ライセンスについて</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-09T01:32:06">2001年06月09日 01:32</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; では次のリリースからGPLにしたいと思います。<br>jre32に関してしかるべき手順を試みてからでも遅くないと思います。<br>今までは曖昧でしたが、GPL宣言すると「明確にした」という意味で制約になるからです。これまで曖昧になっていた問題点はjre32の作者にも多少の原因があるから(返答なしという)仕方ないとしても、ずーと放置していたのにここで慌てて見切り発車する特別な理由はないでしょう。<br>アイコン問題もできればMSKKの公式見解かその類の返答あるいは書かれている文書などを入手する試みも考えたほうがいいと思います。<br>これに関してはそれなりのMSKKのWebページがあるようです。<br>Googleで「アイコン　著作権　マイクロソフト」にて検索<br>#　だれか問い合わせてくれませんか？m(__)m<br></div></section>
+    </li></ul></li><li><section><h1 id=305>
+    <span class="no">[305]</span>
+    <a class="title" href="#305">Re:ライセンスについて</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-07T12:27:48">2001年06月07日 12:27</time></h1>
+    <div class="body">▼ nakataniさん<br>&gt; ハッキリさせておいたほうがいいと思って・・<br>そうしていただいた方がやりやすいと思います。<br><br>&gt; 開発に携わった方々が賛成してくれるなら<br>私は全く異存ありません。ていうか皆たけ氏の正式表明を願ってたのでは？</div></section>
+    </li></ul></li></ul></body></html>

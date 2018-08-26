@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ダイアログヘルプ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1098</span>
+    <a class="title" href="1098.html#1098">ダイアログヘルプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1103</span>
+    <a class="title" href="1098.html#1103">Re:ダイアログヘルプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1104</span>
+    <a class="title" href="1098.html#1104">Re2:ダイアログヘルプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1105</span>
+    <a class="title" href="1098.html#1105">Re3:ダイアログヘルプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1106</span>
+    <a class="title" href="1098.html#1106">Re4:ダイアログヘルプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1114</span>
+    <a class="title" href="1098.html#1114">Re5:ダイアログヘルプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1120</span>
+    <a class="title" href="1098.html#1120">Re5:ダイアログヘルプ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1098>
+    <span class="no">[1098]</span>
+    <a class="title" href="#1098">ダイアログヘルプ</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-07T20:51:38">2002年01月07日 20:51</time></h1>
+    <div class="body">ダイアログヘルプを実装しました。<br>2002-01-06+macmgrに対する差分です。<br>＃ただし、OpenDlgに対してはうまく制御できません。<br></div></section>
+    <ul><li><section><h1 id=1103>
+    <span class="no">[1103]</span>
+    <a class="title" href="#1103">Re:ダイアログヘルプ</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-08T19:18:59">2002年01月08日 19:18</time></h1>
+    <div class="body">▼ みくさん<br>&gt; ダイアログヘルプを実装しました。<br>&gt; 2002-01-06+macmgrに対する差分です。<br>&gt; ＃ただし、OpenDlgに対してはうまく制御できません。<br>OpenDlgはCDialogクラスではなかった。。。<br>・OpenDlgでもヘルプ出るように修正しました。<br>・貼り付けも修正しました。<br>・ポップアップヘルプメッセージのみ記入部分を記入。<br>PL/SQLのジャンプの意味がわかりません。誰かお願いします。<br><br><br></div></section>
+    <ul><li><section><h1 id=1104>
+    <span class="no">[1104]</span>
+    <a class="title" href="#1104">Re2:ダイアログヘルプ</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-08T19:46:42">2002年01月08日 19:46</time></h1>
+    <div class="body">マクロ画面用ポップアップヘルプがないみたいなので、<br>適当に作りました。<br>patchを当てた後、popuphelp.txtをかぶせてください。<br>＃popuphelp.txtはCVS管理にしないでくださいね。<br></div></section>
+    <ul><li><section><h1 id=1105>
+    <span class="no">[1105]</span>
+    <a class="title" href="#1105">Re3:ダイアログヘルプ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-08T22:39:40">2002年01月08日 22:39</time></h1>
+    <div class="body">▼ みくさん<br>&gt; マクロ画面用ポップアップヘルプがないみたいなので、<br>&gt; 適当に作りました。<br>&gt; patchを当てた後、popuphelp.txtをかぶせてください。<br>&gt; ＃popuphelp.txtはCVS管理にしないでくださいね。<br><br>patchのあてかた（コマンドライン）を教えてください。<br>patchはダウンロードしましたが、オプションが多すぎて何をどうすれば正確にpatchがあたるのかわかりませんでした。<br><br>＃前回は手で当ててました。。。<br><br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=1106>
+    <span class="no">[1106]</span>
+    <a class="title" href="#1106">Re4:ダイアログヘルプ</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-08T22:53:03">2002年01月08日 22:53</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; patchのあてかた（コマンドライン）を教えてください。<br>&gt; patchはダウンロードしましたが、オプションが多すぎて何をどうすれば正確にpatchがあたるのかわかりませんでした。<br><br>ssrc_2002-01-06/ のあるフォルダで<br>patch -p &lt; パッチファイル名<br>とします。後にできる<br>.orig ファイルは元ファイル<br>.rej ファイルはパッチが当てられなかったコードです。<br><br>ちなみに差分ファイルは、<br><br>diff -uNr ssrc-2002-01-06_orig ssrc_2002-01-06<br>のように指定します。objファイルなどは事前に削除<br>しておきましょう。<br><br></div></section>
+    <ul><li><section><h1 id=1114>
+    <span class="no">[1114]</span>
+    <a class="title" href="#1114">Re5:ダイアログヘルプ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-09T00:03:40">2002年01月09日 00:03</time></h1>
+    <div class="body">▼ みくさん<br>&gt; ▼ やざきさん<br>&gt; &gt; patchのあてかた（コマンドライン）を教えてください。<br>&gt; &gt; patchはダウンロードしましたが、オプションが多すぎて何をどうすれば正確にpatchがあたるのかわかりませんでした。<br>&gt; <br>&gt; ssrc_2002-01-06/ のあるフォルダで<br>&gt; patch -p &lt; パッチファイル名<br>&gt; とします。後にできる<br>&gt; .orig ファイルは元ファイル<br>&gt; .rej ファイルはパッチが当てられなかったコードです。<br>&gt; <br>&gt; ちなみに差分ファイルは、<br>&gt; <br>&gt; diff -uNr ssrc-2002-01-06_orig ssrc_2002-01-06<br>&gt; のように指定します。objファイルなどは事前に削除<br>&gt; しておきましょう。<br><br><br>patch 2.5.4ですが、<br>&gt; patch -p0 &lt; パッチファイル名<br>と0をつけたらうまくいきました。<br><br>.origが付いたファイルは作成されませんでした。<br>うーん。<br><br>ひとつひとつパッチがあたってるか確認してみます。<br>ありがとうございましたー。</div></section>
+    <ul><li><section><h1 id=1120>
+    <span class="no">[1120]</span>
+    <a class="title" href="#1120">Re5:ダイアログヘルプ</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-09T14:03:50">2002年01月09日 14:03</time></h1>
+    <div class="body">▼やざきさん<br>&gt;patch 2.5.4ですが、<br>&gt; patch -p0 &lt; パッチファイル名<br>&gt;と0をつけたらうまくいきました。<br>フォルダ名をあわせるのが面倒くさいので、私はsakura-***フォルダの中に入ってから<br>  patch -p1 &lt; パッチファイル名<br>とします。-p1はディレクトリを１階層無視するということ。patchがgzipで圧縮されているときは<br>  gzip -dc パッチファイル名 | patch -p1<br>ですね。<br><br>&gt;.origが付いたファイルは作成されませんでした。<br>そうなんですか。不思議だ。全く変更されていない＝失敗なのかな。<br><br>▼みくさん<br>&gt; diff -uNr ssrc-2002-01-06_orig ssrc_2002-01-06<br>以前じぇぷろさんが言ったと思いますが、Nをつけない方がobjなど余分なファイルが対象にならないので楽かもしれません。ただ、新規ファイルがある場合はうまくいきませんけどね。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

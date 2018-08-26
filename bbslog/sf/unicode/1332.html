@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>メインメニュー設定のセパレータのコードがおかしい</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1332</span>
+    <a class="title" href="1332.html#1332">メインメニュー設定のセパレータのコードがおかしい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1333</span>
+    <a class="title" href="1332.html#1333">RE: メインメニュー設定のセパレータのコードがおかしい</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1332>
+    <span class="no">[1332]</span>
+    <a class="title" href="#1332">メインメニュー設定のセパレータのコードがおかしい</a>
+    <span class="author">もか</span>
+    <time datetime="2010-07-17T00:38:18">2010年07月17日 00:38</time></h1>
+    <div class="body">セパレータの機能番号は、 F_SEPARATOR「ではなく」0 です。<br>そのためにわざわざマクロの番兵を-1のF_INVALID にしています。<br>0の使われ方がキー割り当ての未割当(F_0)などにも使われていて微妙ではありますが。<br>じゃあなんで、F_SEPARATORがあるか、と言われても知りません。<br></div></section>
+    <ul><li><section><h1 id=1333>
+    <span class="no">[1333]</span>
+    <a class="title" href="#1333">RE: メインメニュー設定のセパレータのコードがおかしい</a>
+    <span class="author">もか</span>
+    <time datetime="2010-07-17T01:12:34">2010年07月17日 01:12</time></h1>
+    <div class="body">追記：<br>発見者はUchiさんです。<br>PluginIniStr_1795_v2_1-1.patch<br>で、0 を一部分だけ 1 に変更していたので。<br><br>全部 セパレータは 1 にしてしまおうか。<br></div></section>
+    </li></ul></li></ul></body></html>

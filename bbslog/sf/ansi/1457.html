@@ -1,0 +1,127 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>TipWndにフォーカスが行ってしまう問題</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1457</span>
+    <a class="title" href="1457.html#1457">TipWndにフォーカスが行ってしまう問題</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1458</span>
+    <a class="title" href="1457.html#1458">Re:TipWndにフォーカスが行ってしまう問題</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1486</span>
+    <a class="title" href="1457.html#1486">VC++でコンパイルできません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1488</span>
+    <a class="title" href="1457.html#1488">Re:VC++でコンパイルできません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1489</span>
+    <a class="title" href="1457.html#1489">Re2:VC++でコンパイルできません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1490</span>
+    <a class="title" href="1457.html#1490">Re3:VC++でコンパイルできません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1493</span>
+    <a class="title" href="1457.html#1493">Re4:VC++でコンパイルできません</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1492</span>
+    <a class="title" href="1457.html#1492">Re2:VC++でコンパイルできません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1494</span>
+    <a class="title" href="1457.html#1494">表示の乱れ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1495</span>
+    <a class="title" href="1457.html#1495">Re: 表示の乱れ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1496</span>
+    <a class="title" href="1457.html#1496">Re2: 表示の乱れ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1503</span>
+    <a class="title" href="1457.html#1503">Re3: 表示の乱れ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1505</span>
+    <a class="title" href="1457.html#1505">Re4: 表示の乱れ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1472</span>
+    <a class="title" href="1457.html#1472">RE: TipWndにフォーカスが行ってしまう問題</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1457>
+    <span class="no">[1457]</span>
+    <a class="title" href="#1457">TipWndにフォーカスが行ってしまう問題</a>
+    <span class="author">gae</span>
+    <time datetime="2002-02-03T04:03:24">2002年02月03日 04:03</time></h1>
+    <div class="body">前面にあるウィンドウが閉じられるか、最小化されるかして<br>sakuraがアクティブになった時、ALT+TABを押すとTipWndという不可視の<br>ウィンドウにフォーカスが設定されてしまう問題の修正方法です。<br><br>CTipWnd.cpp の 103 行目。<br><br>/* 基底クラスメンバ呼び出し */<br>CWnd::Create(<br>&#9;/* CreateWindowEx()用 */<br>&#9;WS_EX_TOOLWINDOW, // extended window style&#9;&#9;//←修正したところ<br>&#9;m_pszClassName,&#9;// Pointer to a null-terminated string or is an atom.<br>&#9;m_pszClassName, // pointer to window name<br>&#9;WS_VISIBLE | WS_POPUP | WS_CLIPCHILDREN | WS_BORDER, // window style<br>&#9;CW_USEDEFAULT, // horizontal position of window<br>&#9;0, // vertical position of window<br>&#9;CW_USEDEFAULT, // window width<br>&#9;0, // window height<br>&#9;NULL // handle to menu, or child-window identifier<br>);<br><br><br>「←修正したところ」が変更点です。<br>こちらでテストした範囲ではこれで解決しました。<br>あと、作成時に WS_VISIBLE は指定しない方がいいと思います。<br>どうせ直後にSW_HIDEされてしまうし、<br>このウィンドウの役割からして非表示状態が基本なので。(たぶん)<br><br>どなたか反映お願い致します。<br><br><br>この機能(キーワードヘルプ)を使っている人がいるかどうか、<br>ちょっと疑問ではありますが。<br>もしも本気で使っているという方がいたら、<br>どんな辞書を設定してるか教えてください(笑)<br></div></section>
+    <ul><li><section><h1 id=1458>
+    <span class="no">[1458]</span>
+    <a class="title" href="#1458">Re:TipWndにフォーカスが行ってしまう問題</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-02-03T10:41:05">2002年02月03日 10:41</time></h1>
+    <div class="body">▼ gaeさん<br>&gt; こちらでテストした範囲ではこれで解決しました。<br>感謝です！<br>さっそく頂きました。<br><br>&gt; あと、作成時に WS_VISIBLE は指定しない方がいいと思います。<br>でもこちらは指定したままです。<br><br>パス名をクリップボードにコピー があるのに、ファイル名だけをコピーする機能がなかったので追加しました。<br>が、メニューの使い方がよくわからないので中途半端です。どなたか完成させてください。おねがいしますm(..)m<br><br>変更ファイルと差分ファイルを共有フォルダに置きました。<br>*GAEさん TipWnd 修正<br>*horさん etcファイル(2/1)マージ<br>*みくさん my_icmp 修正<br>*あろか ファイル名をコピー、ほか細々<br><br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=1486>
+    <span class="no">[1486]</span>
+    <a class="title" href="#1486">VC++でコンパイルできません</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-06T21:49:15">2002年02月06日 21:49</time></h1>
+    <div class="body">▼ あろかさん<br>&gt;変更ファイルと差分ファイルを共有フォルダに置きました。<br>&gt;*GAEさん TipWnd 修正<br>&gt;*horさん etcファイル(2/1)マージ<br>&gt;*みくさん my_icmp 修正<br>&gt;*あろか ファイル名をコピー、ほか細々<br>不要なヘッダファイルの読み込みが整理された関係だと思いますが，<br>CDlgCompare.cpp, CEditView_New.cpp, CShareData.cppに<br>#include &lt;locale.h&gt;<br>を追加しないとVisual C++でコンパイルエラーになってしまいます．<br>Borland C++ではコンパイルできます．<br></div></section>
+    <ul><li><section><h1 id=1488>
+    <span class="no">[1488]</span>
+    <a class="title" href="#1488">Re:VC++でコンパイルできません</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-02-07T00:59:29">2002年02月07日 00:59</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 不要なヘッダファイルの読み込みが整理された関係だと思いますが，<br>&gt; CDlgCompare.cpp, CEditView_New.cpp, CShareData.cppに<br>&gt; #include &lt;locale.h&gt;<br>&gt; を追加しないとVisual C++でコンパイルエラーになってしまいます．<br>&gt; Borland C++ではコンパイルできます．<br>報告ありがとうございます。<br>他のヘッダ変更でも出現するエラーと思います。原因個所が判ればこちらでの修正時にも対策がしやすいので、できれば一部でもエラーになる個所を教えてもらえませんか？<br>＃現在８割くらいのヘッダを見なおしているところですが、依存関係をみながらのコンパイル時間が二割くらい短くなるので、是非取りこんで欲しい修正なのです。<br></div></section>
+    <ul><li><section><h1 id=1489>
+    <span class="no">[1489]</span>
+    <a class="title" href="#1489">Re2:VC++でコンパイルできません</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-07T09:35:20">2002年02月07日 09:35</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; ▼ げんたさん<br>&gt; &gt; 不要なヘッダファイルの読み込みが整理された関係だと思いますが，<br>&gt; &gt; CDlgCompare.cpp, CEditView_New.cpp, CShareData.cppに<br>&gt; &gt; #include &lt;locale.h&gt;<br>&gt; &gt; を追加しないとVisual C++でコンパイルエラーになってしまいます．<br>&gt; &gt; Borland C++ではコンパイルできます．<br>&gt; 報告ありがとうございます。<br>&gt; 他のヘッダ変更でも出現するエラーと思います。原因個所が判ればこちらでの修正時にも対策がしやすいので、できれば一部でもエラーになる個所を教えてもらえませんか？<br>&gt; ＃現在８割くらいのヘッダを見なおしているところですが、依存関係をみながらのコンパイル時間が二割くらい短くなるので、是非取りこんで欲しい修正なのです。<br><br>期待してます。<br><br>エラーになるのは、<br><br>・CDlgCompare.cpp<br>・CEditView_New.cpp<br>・CShareData.cpp<br><br>なんですよね？ &gt; げんたさん<br></div></section>
+    <ul><li><section><h1 id=1490>
+    <span class="no">[1490]</span>
+    <a class="title" href="#1490">Re3:VC++でコンパイルできません</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-02-07T10:52:26">2002年02月07日 10:52</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; エラーになるのは、<br>&gt; <br>&gt; ・CDlgCompare.cpp<br>&gt; ・CEditView_New.cpp<br>&gt; ・CShareData.cpp<br>&gt; <br>&gt; なんですよね？ &gt; げんたさん<br>えっと、できれば引っかかった行とかシンボルまで教えて欲しいのですが。<br>＃あんまり急ぎません。</div></section>
+    <ul><li><section><h1 id=1493>
+    <span class="no">[1493]</span>
+    <a class="title" href="#1493">Re4:VC++でコンパイルできません</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-07T19:04:29">2002年02月07日 19:04</time></h1>
+    <div class="body">▼ あろかさん<br>&gt;えっと、できれば引っかかった行とかシンボルまで教えて欲しいのですが。<br>引っかかったのは setlocale です．BCCのstricmp対策で各所に入っています．<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=1492>
+    <span class="no">[1492]</span>
+    <a class="title" href="#1492">Re2:VC++でコンパイルできません</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-07T14:41:53">2002年02月07日 14:41</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; ▼ げんたさん<br>&gt; &gt; 不要なヘッダファイルの読み込みが整理された関係だと思いますが，<br>&gt; &gt; CDlgCompare.cpp, CEditView_New.cpp, CShareData.cppに<br>&gt; &gt; #include &lt;locale.h&gt;<br>&gt; &gt; を追加しないとVisual C++でコンパイルエラーになってしまいます．<br>&gt; &gt; Borland C++ではコンパイルできます．<br>&gt; 報告ありがとうございます。<br>&gt; 他のヘッダ変更でも出現するエラーと思います。原因個所が判ればこちらでの修正時にも対策がしやすいので、できれば一部でもエラーになる個所を教えてもらえませんか？<br>&gt; ＃現在８割くらいのヘッダを見なおしているところですが、依存関係をみながらのコンパイル時間が二割くらい短くなるので、是非取りこんで欲しい修正なのです。<br><br>題名からずれてしまいますが、BCCでコンパイルした実行ファイルで以下の現象が起りました。<br>・キー割当を変更しても次に起動したらデフォルト値に戻る<br>・ウィンドウ分割→解除すると表示が壊れる<br><br>私だけでしょうか？</div></section>
+    <ul><li><section><h1 id=1494>
+    <span class="no">[1494]</span>
+    <a class="title" href="#1494">表示の乱れ</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-07T19:09:35">2002年02月07日 19:09</time></h1>
+    <div class="body">&gt;・ウィンドウ分割→解除すると表示が壊れる<br>私のところ (Win2k)でも起こりました．<br>表示の乱れは一時的ではなく，分割を解除した後も再描画の度に存在しないウィンドウが描かれてしまいます．<br></div></section>
+    <ul><li><section><h1 id=1495>
+    <span class="no">[1495]</span>
+    <a class="title" href="#1495">Re: 表示の乱れ</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-07T19:12:59">2002年02月07日 19:12</time></h1>
+    <div class="body">途中で送ってしまいました．<br>&gt;表示の乱れは一時的ではなく，<br>コンパイラには依存しませんね．<br>Viewの扱いがループに変更されているようなので，そのうちのどこかが原因かと思います．<br></div></section>
+    <ul><li><section><h1 id=1496>
+    <span class="no">[1496]</span>
+    <a class="title" href="#1496">Re2: 表示の乱れ</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-07T19:29:57">2002年02月07日 19:29</time></h1>
+    <div class="body">CSplitterWnd.cppの310行目(DoSplit)ですね．diffファイルの4363行目．<br>元々はSW_SHOW/SH_HIDEがあったのに，変更後は全部SW_SHOWになっています．<br><br>それとは別件ですが，今画面をスクロールしている途中でいきなり死にました．(あろかさんのPatch当て版)<br>その前には検索(正規表現ON)を何回か行っています．<br></div></section>
+    <ul><li><section><h1 id=1503>
+    <span class="no">[1503]</span>
+    <a class="title" href="#1503">Re3: 表示の乱れ</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-02-08T02:45:19">2002年02月08日 02:45</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; CSplitterWnd.cppの310行目(DoSplit)ですね．diffファイルの4363行目．<br>&gt; 元々はSW_SHOW/SH_HIDEがあったのに，変更後は全部SW_SHOWになっています．<br>&gt; <br>CSplitterWnd.cpp は編集中のが混ざってしまったようです。前の分は無視してください、申し訳ない。<br>ヘッダ整理とファイル名コピーをはずした分の更新ファイルを作りなおしました。<br>変更項目毎に小分けにしてフォルダに入れてます。<br><br>&gt; それとは別件ですが，今画面をスクロールしている途中でいきなり死にました．(あろかさんのPatch当て版)<br>&gt; その前には検索(正規表現ON)を何回か行っています．<br>2/1のhor さんのetc.lzh のぶんで色々変わってるのを適当にマージしたからおかしくなってるかもしれません。<br>見なおして頂けますか？＞horさん<br></div></section>
+    <ul><li><section><h1 id=1505>
+    <span class="no">[1505]</span>
+    <a class="title" href="#1505">Re4: 表示の乱れ</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-08T18:24:35">2002年02月08日 18:24</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; 2/1のhor さんのetc.lzh のぶんで色々変わってるのを適当にマージしたからおかしくなってるかもしれません。<br><br>申し訳ありませんでした・・・今日中に見直してUpします。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=1472>
+    <span class="no">[1472]</span>
+    <a class="title" href="#1472">RE: TipWndにフォーカスが行ってしまう問題</a>
+    <span class="author">みく</span>
+    <time datetime="2002-02-04T21:06:50">2002年02月04日 21:06</time></h1>
+    <div class="body"><br>なんか、<br>「Alt+TAB で他のウィンドウに切替え Alt+Space で最小化を選択してもフォーカスが来ない」<br>というのが直っているみたいです。Win98<br></div></section>
+    </li></ul></li></ul></body></html>

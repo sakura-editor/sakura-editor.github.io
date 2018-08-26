@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>編集やりなおし</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2243</span>
+    <a class="title" href="2243.html#2243">編集やりなおし</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2250</span>
+    <a class="title" href="2243.html#2250">RE: 編集やりなおし</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2254</span>
+    <a class="title" href="2243.html#2254">Re2: 編集やりなおし</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2255</span>
+    <a class="title" href="2243.html#2255">Re:編集やりなおし</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2260</span>
+    <a class="title" href="2243.html#2260">Re:あと編集ファイルの削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2270</span>
+    <a class="title" href="2243.html#2270">Re2:編集ファイルの削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2271</span>
+    <a class="title" href="2243.html#2271">Re3:編集ファイルの削除</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2243>
+    <span class="no">[2243]</span>
+    <a class="title" href="#2243">編集やりなおし</a>
+    <span class="author">しゃ</span>
+    <time datetime="2002-08-29T15:25:07">2002年08月29日 15:25</time></h1>
+    <div class="body">として、現在編集中のファイルの変更をキャンセルして<br>ファイルを読み直すには、どのような操作が適切でしょうか？</div></section>
+    <ul><li><section><h1 id=2250>
+    <span class="no">[2250]</span>
+    <a class="title" href="#2250">RE: 編集やりなおし</a>
+    <span class="author">すい</span>
+    <time datetime="2002-08-30T12:30:33">2002年08月30日 12:30</time></h1>
+    <div class="body">&gt;として、現在編集中のファイルの変更をキャンセルして<br>&gt;ファイルを読み直すには、どのような操作が適切でしょうか？<br><br>私は<br>[Ctrl]+[F4] → [N]（「保存しますか？」ダイアログに対して [いいえ(N)] ね）<br>[Alt] + [F]→[F]→[0] （最後は数字のゼロ。アルファベットのオーじゃないです）<br>ですね。<br><br>あるいはマクロ↓<br>//------------------------------<br>// 実行には PPA.DLL が必須です。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>var<br>&#9;filename:string;<br>begin<br>&#9;filename := S_GetFilename();&#9;// 編集中のファイルのフルパスを取得<br>&#9;S_FileClose();&#9;&#9;&#9;&#9;&#9;// 閉じて(無題)<br>&#9;S_FileOpen(filename);&#9;&#9;&#9;// ファイルを開く<br>end;<br>//------------------------------<br></div></section>
+    <ul><li><section><h1 id=2254>
+    <span class="no">[2254]</span>
+    <a class="title" href="#2254">Re2: 編集やりなおし</a>
+    <span class="author">しゃ</span>
+    <time datetime="2002-08-30T14:33:05">2002年08月30日 14:33</time></h1>
+    <div class="body">▼ すいさん<br>&gt; [Alt] + [F]→[F]→[0] （最後は数字のゼロ。アルファベットのオーじゃないです）<br>やはり、これなんですね。どうもありがとうございました。</div></section>
+    </li></ul></li><li><section><h1 id=2255>
+    <span class="no">[2255]</span>
+    <a class="title" href="#2255">Re:編集やりなおし</a>
+    <span class="author">よーすけ</span>
+    <time datetime="2002-08-31T01:57:57">2002年08月31日 01:57</time></h1>
+    <div class="body">▼ しゃさん<br>&gt; として、現在編集中のファイルの変更をキャンセルして<br>&gt; ファイルを読み直すには、どのような操作が適切でしょうか？<br><br>[ファイル]-[文字コードセット]-[～で開きなおす]を使うとか。<br><br>普通に「開きなおす」という機能は有りそうなのにないので、実装してもらえると私もありがたいです。</div></section>
+    </li><li><section><h1 id=2260>
+    <span class="no">[2260]</span>
+    <a class="title" href="#2260">Re:あと編集ファイルの削除</a>
+    <span class="author">しゃ</span>
+    <time datetime="2002-09-02T10:49:03">2002年09月02日 10:49</time></h1>
+    <div class="body">については、出来ませんか？<br>外部コマンド実行だとロックで怒られるし。<br>ファイル内容を空にして保存すると、<br>「ファイルを削除しますか？<br>　空のファイルとして残しますか？」<br>を訊いて選択できればよかったのですが。<br>マクロでやるにはどのようにすればよいでしょうか？<br></div></section>
+    <ul><li><section><h1 id=2270>
+    <span class="no">[2270]</span>
+    <a class="title" href="#2270">Re2:編集ファイルの削除</a>
+    <span class="author">すい</span>
+    <time datetime="2002-09-03T21:26:51">2002年09月03日 21:26</time></h1>
+    <div class="body">&gt;については、出来ませんか？<br>&gt;外部コマンド実行だとロックで怒られるし。<br><br>美しくないマクロの例。dosプロンプトが開くし。<br>動作確認は Win95 にて。<br>//------------------------------<br>// 実行には PPA.DLL が必須です。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br>var<br>&#9;filename:string;<br>&#9;yn:Integer;<br>begin<br>&#9;filename := S_GetFilename();&#9;// 編集中のファイルのフルパスを取得<br>&#9;yn := MessageBox('編集中のファイル ' + filename + ' を削除します。よろしいですか？' , 'ファイル削除' , $133 );&#9;// [はい(Y)] [いいえ(N)] [キャンセル],デフォルトボタン=2,△！<br><br>&#9;if( yn = 6 ) then<br>&#9;begin<br>&#9;&#9;S_FileClose();&#9;&#9;&#9;&#9;// 閉じて(無題)<br>&#9;&#9;S_ExecCommand( 'start /m command /c del "' + filename + '"', 0 );<br>//&#9;&#9;Exec('start','/m command.com /c del "' + filename + '"' , False );&#9;// テスト<br><br>//&#9;&#9;S_WinClose();&#9;&#9;&#9;&#9;// ウィンドウを閉じる －なら行頭の // を消して<br>&#9;end<br>end;<br>//------------------------------<br><br>&gt;ファイル内容を空にして保存すると、<br>&gt;「ファイルを削除しますか？<br>&gt;　空のファイルとして残しますか？」<br>&gt;を訊いて選択できればよかったのですが。<br><br>↑私もこの機能が欲しくて大分前、要望したのですが．．．<br></div></section>
+    <ul><li><section><h1 id=2271>
+    <span class="no">[2271]</span>
+    <a class="title" href="#2271">Re3:編集ファイルの削除</a>
+    <span class="author">しゃ</span>
+    <time datetime="2002-09-04T17:33:15">2002年09月04日 17:33</time></h1>
+    <div class="body">▼ すいさん<br>いつもありがとうございます。<br><br>&gt; 美しくないマクロの例。dosプロンプトが開くし。<br>&gt; 動作確認は Win95 にて。<br><br>こちらは、Win2Kですが、<br>'start /m command /c<br>を、<br>'cmd /c'<br>に、変更してできました。<br>＃DOSプロンプトは一瞬で消えるのでわかりませんが。<br>また、rm.exeもあるので、<br>S_ExecCommand( 'rm -f "' + filename + '"', 0 );<br>でやれば綺麗にいけました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

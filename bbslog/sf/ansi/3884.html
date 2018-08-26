@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Doxygenの引数説明の書き方</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3884</span>
+    <a class="title" href="3884.html#3884">Doxygenの引数説明の書き方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3887</span>
+    <a class="title" href="3884.html#3887">Re: Doxygenの引数説明の書き方</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3884>
+    <span class="no">[3884]</span>
+    <a class="title" href="#3884">Doxygenの引数説明の書き方</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-03-31T01:57:46">2005年03月31日 01:57</time></h1>
+    <div class="body"><a href=http://members.at.infoseek.co.jp/sakura_editor/comment-rule.html target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>comment-<wbr>rule.<wbr>html</nobr></a><br>引数の説明の書き方で，<br>@param filename [in] ファイル名<br>のようになってますが，公式マニュアル <a href=http://www.stack.nl/~dimitri/doxygen/commands.html#cmdparam target=_top><nobr>http://<wbr>www.<wbr>stack.<wbr>nl/~<wbr>dimitri/<wbr>doxygen/<wbr>commands<wbr>.<wbr>html#<wbr>cmdparam<wbr></nobr></a> によれば，<br>@param[in] filename ファイル名<br>となっています。<br>また入出力は[i/o]ではなく[in,out]です。<br><br>今後は公式に合わせて書いた方が良いでしょうか？<br></div></section>
+    <ul><li><section><h1 id=3887>
+    <span class="no">[3887]</span>
+    <a class="title" href="#3887">Re: Doxygenの引数説明の書き方</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-03-31T21:46:25">2005年03月31日 21:46</time></h1>
+    <div class="body">&gt;@param[in] filename ファイル名<br>&gt;また入出力は[i/o]ではなく[in,out]です。<br>バージョン1.3.7から導入された機能のようですね．<br><br>1.4.2で試してみましたが，パラメータ説明の前に[in][out][in,out]が付くだけみたいです．<br>HTML出力での従来との違いは，in/out,パラメータ名，説明がそれぞれ揃うことと，in/outのフォントくらい．<br><br>&gt;今後は公式に合わせて書いた方が良いでしょうか？<br>そうしましょう，と書きたいところですが，１つ問題発見．<br>関数のパラメータの後ろに<br>const char* name, //!&lt; [in] 名前だよ<br>みたいな書き方をしている場所でin/outが指定できません．<br>強引に<br>const char* name, //!&lt; @param[in] 名前だよ<br>と書いたら，パラメータの後ろにまた引数というセクションが作られて変な出力になります．<br><br>この書き方を禁止するのも忍びないので，@paramの記法のみを使う場合は極力新形式に合わせるが，パラメータの後ろに置く場合には従来の記法を使って，1つの関数の説明で両者が混在しないようにするのがいいかな．<br><br>この方針でホームページの方更新しておきました．<br><br>---<br>従来の記述からは正規表現置換を使えば簡単に変換できます．<br>置換前: @param\s+(.*)\[i/o\]\s+<br>置換後: @param[in,out] $1<br>[in][out]も同様<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Googleサーチ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">18</span>
+    <a class="title" href="18.html#18">Googleサーチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">19</span>
+    <a class="title" href="18.html#19">RE: Googleサーチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">20</span>
+    <a class="title" href="18.html#20">Re2: Googleサーチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">21</span>
+    <a class="title" href="18.html#21">Re3: Googleサーチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">22</span>
+    <a class="title" href="18.html#22">Re4: Googleサーチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">23</span>
+    <a class="title" href="18.html#23">Re5: Googleサーチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">39</span>
+    <a class="title" href="18.html#39">Re6: Googleサーチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">40</span>
+    <a class="title" href="18.html#40">Re7: Googleサーチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">41</span>
+    <a class="title" href="18.html#41">Re8: Googleサーチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">42</span>
+    <a class="title" href="18.html#42">Re9: Googleサーチ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=18>
+    <span class="no">[18]</span>
+    <a class="title" href="#18">Googleサーチ</a>
+    <span class="author">しゃ</span>
+    <time datetime="2003-01-09T11:45:07">2003年01月09日 11:45</time></h1>
+    <div class="body">サクラエディタの選択文字をGoogleでサーチするマクロを<br>作成したいのですが、以下のように作成して実行することは<br>できたのですが、選択文字列を２行目の"s"に渡すには、<br>どうしたらよいのでしょうか？<br><br>set WSHShell = CreateObject("WScript.Shell")<br>s = "さがすもじ"<br>WSHShell.Run "<a href=http://www.google.co.jp/search?sourceid=navclient&hl=ja&ie=Shift_JIS&oe=Shift_JIS&q= target=_top><nobr>http://<wbr>www.<wbr>google.<wbr>co.<wbr>jp/<wbr>search?<wbr>sourceid<wbr>=<wbr>navclien<wbr>t&amp;<wbr>hl=<wbr>ja&amp;<wbr>ie=<wbr>Shift_JI<wbr>S&amp;<wbr>oe=<wbr>Shift_JI<wbr>S&amp;<wbr>q=<wbr></nobr></a>""" &amp; s &amp; """  target=""_blank"""<br><br>以上です。よろしくおねがいします。</div></section>
+    <ul><li><section><h1 id=19>
+    <span class="no">[19]</span>
+    <a class="title" href="#19">RE: Googleサーチ</a>
+    <span class="author">すい</span>
+    <time datetime="2003-01-09T12:39:56">2003年01月09日 12:39</time></h1>
+    <div class="body">&gt;set WSHShell = CreateObject("WScript.Shell")<br>&gt;s = "さがすもじ"<br>&gt;WSHShell.Run "http://www.google.co.jp/search?sourceid=navclient&amp;hl=ja&amp;ie=Shift_JIS&amp;oe=Shift_JIS&amp;q=""" &amp; s &amp; """  target=""_blank"""<br><br>WSH の .VBS マクロのようですが、現時点のサクラエディタでは WSH は一部の環境でしか動作しません。<br>PPA を使ってください。<br><br><br>GOOGLE.VBS<br>----------<br>' 選択文字列を Google で検索する<br>'<br>set WSHShell = CreateObject("WScript.Shell")<br>s = Editor.GetSelectedString( 0 )<br>WSHShell.Run "http://www.google.co.jp/search?sourceid=navclient&amp;hl=ja&amp;ie=Shift_JIS&amp;oe=Shift_JIS&amp;q=""" &amp; s &amp; """  target=""_blank"""<br>----------<br><br><br>GOOGLE.PPA<br>----------<br>// 選択文字列を Google で検索する<br><br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに PPA.DLL を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>var<br>&#9;s:String;&#9;// 文字列変数 s を用意<br>begin<br>&#9;s := S_GetSelectedString(0);<br>&#9;Shell('http://www.google.co.jp/search?sourceid=navclient&amp;hl=ja&amp;ie=Shift_JIS&amp;oe=Shift_JIS&amp;q="' + s , '');<br>end<br>----------<br></div></section>
+    <ul><li><section><h1 id=20>
+    <span class="no">[20]</span>
+    <a class="title" href="#20">Re2: Googleサーチ</a>
+    <span class="author">しゃ</span>
+    <time datetime="2003-01-09T13:28:44">2003年01月09日 13:28</time></h1>
+    <div class="body">▼ すいさん<br>ありがとうございました。うごきました。<br>CSMacroMgr.cppはみていたのですが、見落としてました。<br><br>＞一部の環境でしか動作<br>っていうのは、どういう環境でしょう？<br></div></section>
+    <ul><li><section><h1 id=21>
+    <span class="no">[21]</span>
+    <a class="title" href="#21">Re3: Googleサーチ</a>
+    <span class="author">すい</span>
+    <time datetime="2003-01-09T19:11:06">2003年01月09日 19:11</time></h1>
+    <div class="body">&gt;ありがとうございました。うごきました。<br><br>それは なによりです。<br><br>後で（たぶん深夜）もう少しまともにしてみた（つもり の） PPA のマクロを<br>http://www.egroups.co.jp/files/sakura-editor/User/MACRO/<br>の方に入れておきます。<br><br><br>&gt;＞一部の環境でしか動作<br>&gt;っていうのは、どういう環境でしょう？<br><br>現サクラエディタでは、WSH は<br><br>・Windows NT 系 OS（確認されているのは Win NT4/2000 だけですが）では、一応それっぽく動作する。<br>ただし、環境によってはオプションパラメータの与え方なんかが変な感じだったりして、ちょっと ぁゃιぃ。<br>数値の 1 を与えるために "1" と文字列形式で渡してやらないと動作しない環境と、<br>素直に 1 と与えて動作する環境があるらしい、とか、その辺。他にも。<br><br>・Windows 95 系 OS（確認されているのは Win 95/98SE だけですが）では、まったくまともに動作しない。<br>Editor.xxxxx の機能は全て全く動作してくれない。（替わりに新規エディタウィンドウが起動したりする。）<br><br>多分 Win Xp は前者、WinMe は後者になるんじゃないかと推測します。（情報無しのため不明です）<br><br><br>という事で「私のような不具合は楽しみという人間」以外の方は、まだ、使わないほうが無難かな、と。＜ WSH<br></div></section>
+    <ul><li><section><h1 id=22>
+    <span class="no">[22]</span>
+    <a class="title" href="#22">Re4: Googleサーチ</a>
+    <span class="author">しゃ</span>
+    <time datetime="2003-01-10T09:27:14">2003年01月10日 09:27</time></h1>
+    <div class="body"><br>&gt; ・Windows 95 系 OS（確認されているのは Win 95/98SE だけですが）では、まったくまともに動作しない。<br><br>判りました。<br><br>＞後で（たぶん深夜）もう少しまともにしてみた（つもり の） PPA のマクロを<br>http://www.egroups.co.jp/files/sakura-editor/User/MACRO/<br>の方に入れておきます。<br><br>ありがとうございます。使わせていただきます。<br>これで、他にも「右クリックサーチくん」に相当する、<br>英和、和英、国語辞書、翻訳等、沢山ありますが、<br>簡単に応用できますね。<br></div></section>
+    <ul><li><section><h1 id=23>
+    <span class="no">[23]</span>
+    <a class="title" href="#23">Re5: Googleサーチ</a>
+    <span class="author">すい</span>
+    <time datetime="2003-01-13T13:58:13">2003年01月13日 13:58</time></h1>
+    <div class="body">&gt;後で（たぶん深夜）もう少しまともにしてみた（つもり の） PPA のマクロを<br>&gt;http://www.egroups.co.jp/files/sakura-editor/User/MACRO/<br>&gt;の方に入れておきます。<br><br>VECTOR.PPA にバグ（文法ミス）があったので直しました。<br>なんでか正常に動作していたみたいですけどスッキリしないですし。<br><br>あと機能アップ。<br>取得した選択文字列の先頭と末尾のタブ・スペース類を削除するようにした。<br>用途からして（途中のスペースは必要かもしれないけど）前と後ろのスペースってゴミですよね。<br><br>あと、文字列中の一部の記号を置換するようにしました。<br>'%'⇒'%25' , '#'⇒'%23' , '&amp;'⇒'%26' , '='⇒'%3D' , '?'⇒'%3F' , '+'⇒'%2B' , ' '⇒'+'<br><br>&gt;ありがとうございます。使わせていただきます。<br>&gt;これで、他にも「右クリックサーチくん」に相当する、<br>&gt;英和、和英、国語辞書、翻訳等、沢山ありますが、<br>&gt;簡単に応用できますね。<br><br>他の皆にも使えそうな、良さげな物ができたら他の人のためにも<br>http://www.egroups.co.jp/files/sakura-editor/User/MACRO/<br>にでも入れておいておいていただけると助かります。 (*^o^*)<br></div></section>
+    <ul><li><section><h1 id=39>
+    <span class="no">[39]</span>
+    <a class="title" href="#39">Re6: Googleサーチ</a>
+    <span class="author">pon</span>
+    <time datetime="2003-10-16T13:24:01">2003年10月16日 13:24</time></h1>
+    <div class="body">&gt;「右クリックサーチくん」に相当する、<br>&gt;英和、和英、国語辞書、翻訳等、沢山ありますが、<br>&gt;簡単に応用できますね。<br><br>マクロに詳しくなく応用できなくて・・(^_^;)<br><br> すみません・・よろしければ、<br>できれば、Infoseekの国語、英和、和英、カタカナ語、漢字の辞書のマクロもUPしていただけ無いでしょうか?<br><br>　お願いします　m(__)m<br></div></section>
+    <ul><li><section><h1 id=40>
+    <span class="no">[40]</span>
+    <a class="title" href="#40">Re7: Googleサーチ</a>
+    <span class="author">すい</span>
+    <time datetime="2003-10-17T05:55:27">2003年10月17日 05:55</time></h1>
+    <div class="body">&gt;できれば、Infoseekの国語、英和、和英、カタカナ語、漢字の辞書のマクロもUPしていただけ無いでしょうか?<br><br>ご自分で変更して作ってみて下さい。<br><br>お手軽に GOOGLE.PPA を元にして作成する場合↓。(例：Infoseek英和の場合)<br><br>GOOGLE.PPA を拡張子は .PPA のまま、適当な名前でコピーする。<br>例えば IS_EJ.PPA とか。<br><br>で、その IS_EJ.PPA をエディタで開く。<br><br>「begin」の次の行、つまり「// 表示件数」の行から<br>「word := Trim(S_GetSelectedString(0));&#9;// 文字列変数 ～～」<br>の前の行までは要らなくなるので削除。(23～67行目)<br><br>つまり↓のようにする。<br>----------<br>&#9;chn,pt:Integer;&#9;&#9;// 整数数値変数 chn,pt を用意<br>begin<br>&#9;word := Trim(S_GetSelectedString(0));&#9;// 文字列変数 word に「“選択部分の文字列”から先頭と末尾のスペースを削除した文字列」を取得<br>&#9;// -------------------------------------------------- //<br>&#9;// 文字列 word 内の記号を置換する。<br>&#9;for chn :=1 to 7 do&#9;&#9;// 7種類の置換を順におこなう。<br>----------<br><br><br>で、いよいよここからが「インフォシーク：?EXCEED英和辞典」など向けの変更。<br><br>やる事はファイル後方の<br>----------<br>&#9;&#9;url := 'http://www.google.co.jp/search?ie=Shift_JIS&amp;hl=ja&amp;lr=' + lr + '&amp;num=' + IntToStr(num) + '&amp;q=' + word;<br>----------<br>↑の行の内容、「url :=」の後ろの方を変えるだけなのです。<br><br>実際に Infoseek で適当な単語、例えば“test”とかを入力して[英和]するとブラウザのアドレス欄は<br>http://jiten.www.infoseek.co.jp/Eiwa?pg=result_e.html&amp;col=EW&amp;sm=1&amp;qt=test&amp;svp=SEEK&amp;svx=100600<br>となりますね。↑この文字列を '～' で括った文字列に変更します。↓こんな<br>----------<br>&#9;&#9;url := 'http://jiten.www.infoseek.co.jp/Eiwa?pg=result_e.html&amp;col=EW&amp;sm=1&amp;qt=test&amp;svp=SEEK&amp;svx=100600';<br>----------<br>↑なお、行末尾にセミコロン(;)１文字が必要です。要注意。<br><br>で、そのなかの「実際に入力した単語“test”」の部分を「' + word + '」に書き換えます。<br>で、↓こんな<br>----------<br>&#9;&#9;url := 'http://jiten.www.infoseek.co.jp/Eiwa?pg=result_e.html&amp;col=EW&amp;sm=1&amp;qt=' + word + '&amp;svp=SEEK&amp;svx=100600';<br>----------<br><br>これで出来上がり。他の物も同様に。<br>どうでしょう？<br></div></section>
+    <ul><li><section><h1 id=41>
+    <span class="no">[41]</span>
+    <a class="title" href="#41">Re8: Googleサーチ</a>
+    <span class="author">pon</span>
+    <time datetime="2003-10-17T07:58:22">2003年10月17日 07:58</time></h1>
+    <div class="body">すい　さん　詳しい説明ありがとうございます。<br><br>　とりあえずは、さっそくやってみる事にます。　m(__)m<br></div></section>
+    <ul><li><section><h1 id=42>
+    <span class="no">[42]</span>
+    <a class="title" href="#42">Re9: Googleサーチ</a>
+    <span class="author">pon</span>
+    <time datetime="2003-10-17T21:08:19">2003年10月17日 21:08</time></h1>
+    <div class="body"><br> すい　さん　できました　ありがとうございます　m(__)m</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>grepと複数ファイルの置換</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2670</span>
+    <a class="title" href="2670.html#2670">grepと複数ファイルの置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2674</span>
+    <a class="title" href="2670.html#2674">RE: grepと複数ファイルの置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2677</span>
+    <a class="title" href="2670.html#2677">RE2: grepと複数ファイルの置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2678</span>
+    <a class="title" href="2670.html#2678">Re3(+要望): grepと複数ファイルの置換</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2682</span>
+    <a class="title" href="2670.html#2682">Re3: grepと複数ファイルの置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2683</span>
+    <a class="title" href="2670.html#2683">Re4: grepと複数ファイルの置換</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2684</span>
+    <a class="title" href="2670.html#2684">Re4: grepと複数ファイルの置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2685</span>
+    <a class="title" href="2670.html#2685">Re5: grepと複数ファイルの置換</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2689</span>
+    <a class="title" href="2670.html#2689">Re5: grepと複数ファイルの置換</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2670>
+    <span class="no">[2670]</span>
+    <a class="title" href="#2670">grepと複数ファイルの置換</a>
+    <span class="author">いが</span>
+    <time datetime="2003-01-24T06:24:19">2003年01月24日 06:24</time></h1>
+    <div class="body">最近サクラエディタに乗り換えたのですが、わからないことがありましたので、質問させていただきます。<br><br>grepで複数のファイルから検索したところを一度に複数ファイルを置換することはできないのでしょうか？<br><br>現在はgrepの結果をダブルクリックして、ひとつづつ置換しています。<br><br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=2674>
+    <span class="no">[2674]</span>
+    <a class="title" href="#2674">RE: grepと複数ファイルの置換</a>
+    <span class="author">すい</span>
+    <time datetime="2003-01-28T12:41:53">2003年01月28日 12:41</time></h1>
+    <div class="body">&gt;grepで複数のファイルから検索したところを一度に複数ファイルを置換することはできないのでしょうか？<br>&gt;<br>&gt;現在はgrepの結果をダブルクリックして、ひとつづつ置換しています。<br><br>これは出来ませんねぇ。<br>マクロを使ってもまず出来ない内容ですね。。。（少なくとも一発では）<br></div></section>
+    <ul><li><section><h1 id=2677>
+    <span class="no">[2677]</span>
+    <a class="title" href="#2677">RE2: grepと複数ファイルの置換</a>
+    <span class="author">すい</span>
+    <time datetime="2003-01-29T04:13:25">2003年01月29日 04:13</time></h1>
+    <div class="body">&gt;&gt;grepで複数のファイルから検索したところを一度に複数ファイルを置換することはできないのでしょうか？<br><br>マクロを作ってみました。<br>Grep結果のテキストから複数のファイルに対して置換処理をまとめておこないます。<br><br>http://www.egroups.co.jp/files/sakura-editor/User/MACRO/<br>⇒ grepr_20030128_23.cab<br><br>PPA マクロなので、実行には PPA.DLL が必要です。<br>PPA.DLL を入手して sakura.exe と同じフォルダに入れておいてください。<br><br>基本的な使用手順は<br><br>１．Grep をおこなう。    ※ 結果出力形式は「ノーマル」を選択しておいてください。<br>２．Grep 結果の先頭行（１行目）に「置換後の文字列」を書き込む。<br>３．このマクロを実行する。<br><br>例えば<br>「フォルダ C:\Hoge\ 以下にある複数のファイル *.pl ,*.cgi の中の<br>　文字列 perl を jperl に置換したい。」<br>なら、<br>１．Grep で<br>　　検索条件：perl<br>　　ファイル：*.pl *.cgi<br>　　フォルダ：C:\Hoge<br>　　他、サブフォルダ、英大小文字の区別、正規表現、なども指示して Grepを実行する。<br>２．Grep が完了したら、Grep結果表示ウィンドウの先頭行に「jperl」と入力する。<br>３．このマクロを実行する。<br><br>と操作します。すると、置換処理内容の確認ダイアログが出ます。処理内容は<br><br>　「 Grep で見つけたファイル群に対して、Grepの検索条件文字列を指定の置換後文字列に、<br>　　 Grep時の条件（英大小区別する？正規表現使う？など）で、一気に「すべて置換」処理する。」<br><br>と、なります。<br>確認ダイアログに対して [はい] と答えると、その置換処理が Grepで見つかった<br>複数ファイルに対して一気に実行されます。<br><br>※ マクロ内の変数 affF の値を書き換える事により、<br>　 ファイル毎に「このファイルに対して置換処理の実行をする／しない」の<br>　 確認ダイアログを＜出す／出さない＞の設定変更が可能です。<br><br># 先に Grep結果と同じ形式のテキストファイルを作っておいて、サクラエディタで開いて<br># おいてから このマクロを実行したりしても構いません。<br><br><br>※ 「このマクロを実行開始するエディタウィンドウ」以外のサクラエディタの<br>　 ウィンドウを全て閉じてからマクロを実行してください。<br><br><br>マクロだとこれが精いっぱいではないかと思うのですが、とても使いにくいです。<br>１箇所ずつ確認しながら置換＜する／しない＞を指示していくとか、そういう事が<br>出来ませんし。エディタ本体側にこの機能があるとかなり便利かもしれませんね。<br></div></section>
+    <ul><li><section><h1 id=2678>
+    <span class="no">[2678]</span>
+    <a class="title" href="#2678">Re3(+要望): grepと複数ファイルの置換</a>
+    <span class="author">ssh</span>
+    <time datetime="2003-01-29T09:37:04">2003年01月29日 09:37</time></h1>
+    <div class="body">▼ すいさん<br>&gt; マクロだとこれが精いっぱいではないかと思うのですが、とても使いにくいです。<br>&gt; １箇所ずつ確認しながら置換＜する／しない＞を指示していくとか、そういう事が<br>&gt; 出来ませんし。エディタ本体側にこの機能があるとかなり便利かもしれませんね。<br>同感です。<br>そういえば、Danaには、「エディタでOpen中の全ファイルを対象に置換」というのも<br>あるそうです。これもできたらいいなと思いますがいかがでしょう？</div></section>
+    </li><li><section><h1 id=2682>
+    <span class="no">[2682]</span>
+    <a class="title" href="#2682">Re3: grepと複数ファイルの置換</a>
+    <span class="author">いが</span>
+    <time datetime="2003-01-30T12:10:55">2003年01月30日 12:10</time></h1>
+    <div class="body">▼ すいさん<br>府狂うファイルに対する置換のマクロを使用させていただきました。<br>1.3.6.3を使用しているのですが、マクロを実行すると、「ファイル（置換対象の）が見つかりません」というエラーが出てしまいます。<br><br>Grepの結果から、行末の「(32,34)  [EUC]: aaaaaaaaaa」などをすべて削除してから実行するとうまくいきます。<br><br>Grepの仕方が間違っているのかといろいろ試してみたのですが、どうもうまくいきません。<br></div></section>
+    <ul><li><section><h1 id=2683>
+    <span class="no">[2683]</span>
+    <a class="title" href="#2683">Re4: grepと複数ファイルの置換</a>
+    <span class="author">いが</span>
+    <time datetime="2003-01-30T12:12:19">2003年01月30日 12:12</time></h1>
+    <div class="body">▼ いがさん<br>&gt; ▼ すいさん<br>&gt; 府狂うファイルに対する置換の…<br><br>間違えました。「複数」です</div></section>
+    </li><li><section><h1 id=2684>
+    <span class="no">[2684]</span>
+    <a class="title" href="#2684">Re4: grepと複数ファイルの置換</a>
+    <span class="author">すい</span>
+    <time datetime="2003-01-30T17:06:13">2003年01月30日 17:06</time></h1>
+    <div class="body">&gt;Grepの結果から、行末の「(32,34)  [EUC]: aaaaaaaaaa」などをすべて削除してから実行するとうまくいきます。<br><br>ごめんなさい。m(_ _)m<br>マクロが悪いです。<br><br>X:\hogehoge(32,34)  [EUC]: aa<br>で、「文字コード [EUC] だとかが付く」場合の事が完全に考慮もれしています。<br>マクロ作っていた時の実験対象ファイルが皆 Shift_JIS のファイルばかりだったので<br>気付きませんでした。 (;^^;ゞ<br>マクロ中の置換処理の正規表現を１箇所修正すれば直るはずです。＞ 自力で直せる方<br><br>あとで（たぶん夜）修正版を上げておきます。<br>報告感謝です。＞ いが さん<br></div></section>
+    <ul><li><section><h1 id=2685>
+    <span class="no">[2685]</span>
+    <a class="title" href="#2685">Re5: grepと複数ファイルの置換</a>
+    <span class="author">すい</span>
+    <time datetime="2003-01-31T07:48:00">2003年01月31日 07:48</time></h1>
+    <div class="body">&gt;あとで（たぶん夜）<br>ごめんなさい。もう少し後にりなりそ。現在風邪でダウン中。。。<br></div></section>
+    </li><li><section><h1 id=2689>
+    <span class="no">[2689]</span>
+    <a class="title" href="#2689">Re5: grepと複数ファイルの置換</a>
+    <span class="author">すい</span>
+    <time datetime="2003-02-01T21:03:27">2003年02月01日 21:03</time></h1>
+    <div class="body">修正版 upload しておきました。<br>http://www.egroups.co.jp/files/sakura-editor/User/MACRO/<br>grepr_20030201_20.cab<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

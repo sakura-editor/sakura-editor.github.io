@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Re3:ダイレクトタグジャンプ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3307</span>
+    <a class="title" href="3307.html#3307">Re3:ダイレクトタグジャンプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3309</span>
+    <a class="title" href="3307.html#3309">Re4:ダイレクトタグジャンプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3310</span>
+    <a class="title" href="3307.html#3310">Re5:ダイレクトタグジャンプ</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3307>
+    <span class="no">[3307]</span>
+    <a class="title" href="#3307">Re3:ダイレクトタグジャンプ</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-11-09T07:58:10">2003年11月09日 07:58</time></h1>
+    <div class="body">一般[3480]の続き(返信)<br>エラーダイアログを出すようにしました。<br>diff -u "E:\Program Files\Sakura\ssrc_2003-11-08\sakura_core<br>\CEditView_Command.cpp"<br>@@ -7020,6 +7020,21 @@<br> &#9;&#9;&#9;&#9;&#9;if( read_cnt == 0 )<br> &#9;&#9;&#9;&#9;&#9;{<br> &#9;&#9;&#9;&#9;&#9;&#9;continue;<br>+&#9;&#9;&#9;&#9;&#9;} else<br>+&#9;&#9;&#9;&#9;&#9;{<br>+&#9;&#9;&#9;&#9;&#9;&#9;::MYMESSAGEBOX( m_hWnd,&#9;MB_OK | MB_ICONEXCLAMATION, GSTR_APPNAME,<br>+&#9;&#9;&#9;&#9;&#9;&#9;"\"tags\" はタグファイルではないため上書き出来ません。" ); // 2003.11.09 じゅうじ<br>+&#9;&#9;&#9;&#9;&#9;//&#9;::MYMESSAGEBOX( m_hWnd,&#9;MB_OK | MB_ICONEXCLAMATION, GSTR_APPNAME,<br>+&#9;&#9;&#9;&#9;&#9;//&#9;"タグ作成コマンド実行は失敗しました。\n\n%s", work );<br>+&#9;&#9;&#9;&#9;&#9;&#9;//終了処理<br>+&#9;&#9;&#9;&#9;&#9;&#9;CloseHandle( hStdOutWrite );<br>+&#9;&#9;&#9;&#9;&#9;&#9;CloseHandle( hStdOutRead  );<br>+&#9;&#9;&#9;&#9;&#9;&#9;if( pi.hProcess ) CloseHandle( pi.hProcess );<br>+&#9;&#9;&#9;&#9;&#9;&#9;if( pi.hThread  ) CloseHandle( pi.hThread  );<br>+<br>+&#9;&#9;&#9;&#9;&#9;&#9;cDlgCancel.CloseDialog( TRUE );<br>+<br>+&#9;&#9;&#9;&#9;&#9;&#9;return true;<br> &#9;&#9;&#9;&#9;&#9;}<br> &#9;&#9;&#9;&#9;}<br> &#9;&#9;&#9;}<br><br>終了コード: 1<br></div></section>
+    <ul><li><section><h1 id=3309>
+    <span class="no">[3309]</span>
+    <a class="title" href="#3309">Re4:ダイレクトタグジャンプ</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-11-12T08:33:08">2003年11月12日 08:33</time></h1>
+    <div class="body">&gt;一般[3480]の続き(返信)<br>&gt;エラーダイアログを出すようにしました。<br>&gt;diff -u "E:\Program Files\Sakura\ssrc_2003-11-08\sakura_core<br>&gt;\CEditView_Command.cpp"<br>&gt;@@ -7020,6 +7020,21 @@<br>あれ？<br>ここにエラー表示を入れると正常でも異常でもメッセージが出てしまいません？<br></div></section>
+    <ul><li><section><h1 id=3310>
+    <span class="no">[3310]</span>
+    <a class="title" href="#3310">Re5:ダイレクトタグジャンプ</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-11-12T21:17:44">2003年11月12日 21:17</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; あれ？<br>&gt; ここにエラー表示を入れると正常でも異常でもメッセージが出てしまいません？<br><br>いいえ。正常終了の時、CTAGSはメッセージ無しの様です。<br><br>処で、一般[????]の、[EOF]直前入力中のコメント色はどうやってデバッグすれば良いか(Ｃしかしらなくても解る)簡単な方法があれば教えてください。<br>(^_^)</div></section>
+    </li></ul></li></ul></li></ul></body></html>

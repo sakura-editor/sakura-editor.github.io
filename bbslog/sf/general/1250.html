@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>スマートインデントの仕様</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">1250</span>
+    <a class="title" href="1250.html#1250">スマートインデントの仕様</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1290</span>
+    <a class="title" href="1250.html#1290">Re:スマートインデントの仕様</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1250>
+    <span class="no">[1250]</span>
+    <a class="title" href="#1250">スマートインデントの仕様</a>
+    <span class="author">Y.T</span>
+    <time datetime="2002-02-19T15:54:20">2002年02月19日 15:54</time></h1>
+    <div class="body">Ｃ/Ｃ＋＋のスマートインデントに<br>ついてなんですが、<br>仕様では、直前の "{" から＋１インデント<br>のようですが、<br>下記のようなプログラムを記述するとき、<br>#include &lt;stdio.h&gt;<br><br>int main(void)<br>{<br>    |← "{" を入力し改行した後に<br>        ここにカーソルがくるように<br>        ならないでしょうか。<br>    ・<br>    ・<br>}<br></div></section>
+    <ul><li><section><h1 id=1290>
+    <span class="no">[1290]</span>
+    <a class="title" href="#1290">Re:スマートインデントの仕様</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-05T03:11:23">2002年03月05日 03:11</time></h1>
+    <div class="body">▼ Y.Tさん<br>いまさらで申し訳ないです。<br>確かに、<br>　-----<br>1:int main(void)<br>2:<br>3:[EOF]<br>　-----<br>となっているときに、<br>2行目に"{"を入れるとインデントされるけど、<br>　-----<br>1:int main(void)<br>2:[EOF]<br>　-----<br>となっているときに、<br>2行目に"{"を入れてもインデントされないですね。<br>不思議。<br></div></section>
+    </li></ul></li></ul></body></html>

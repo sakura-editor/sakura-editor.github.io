@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>キー設定画面インポート時...</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">821</span>
+    <a class="title" href="821.html#821">キー設定画面インポート時...</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=821>
+    <span class="no">[821]</span>
+    <a class="title" href="#821">キー設定画面インポート時...</a>
+    <span class="author">みく</span>
+    <time datetime="2001-11-15T21:21:21">2001年11月15日 21:21</time></h1>
+    <div class="body">前回、キー設定のインポート時の画面更新バグ修正<br>したつもりでしましたが、バグを入れ込んでました。<br>「キーに割り当てられている機能」が更新されなく<br>なってました。<br>CPropCommon::p5_Import_KeySetting()<br>関数の最後で、IDC_LIST_FUNCと<br>IDC_LIST_KEYの両方にそれぞれLBN_SELCHANGEを<br>SendMessageしないといけません。<br><br>あと、あいかわらず<br>新しいフォルダ　（２）みたいなフォルダの<br>ファイルを開けません。<br></div></section>
+    </li></ul></body></html>

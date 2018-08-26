@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>置換で１行おきに行削除</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6179</span>
+    <a class="title" href="6179.html#6179">置換で１行おきに行削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6180</span>
+    <a class="title" href="6179.html#6180">RE: 置換で１行おきに行削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6182</span>
+    <a class="title" href="6179.html#6182">Re2: 置換で１行おきに行削除</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6204</span>
+    <a class="title" href="6179.html#6204">Re2: 置換で１行おきに行削除</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6179>
+    <span class="no">[6179]</span>
+    <a class="title" href="#6179">置換で１行おきに行削除</a>
+    <span class="author">もも</span>
+    <time datetime="2007-07-31T14:27:06">2007年07月31日 14:27</time></h1>
+    <div class="body">暑中お見舞い申し上げます。質問します。<br><br>What is that?<br>あれは何ですか。<br>That is a book.<br>あれは本です。<br>↓<br>What is that?あれは何ですか。<br>That is a book.あれは本です。<br><br>上のように置換したいのです。最初は「１行おきの改行コードの削除」を考えたのですが、よくみると、日本語と英語が交互にあるテキストなので、行末の英字がある行の改行を削除すればいいことに気づきました。そこで、<br>$(A-Za-z)\r\nかしら？など思いついたものをやってみましたが。。。うまく行きません。</div></section>
+    <ul><li><section><h1 id=6180>
+    <span class="no">[6180]</span>
+    <a class="title" href="#6180">RE: 置換で１行おきに行削除</a>
+    <span class="author">すい</span>
+    <time datetime="2007-08-01T01:22:03">2007年08月01日 01:22</time></h1>
+    <div class="body">&gt;What is that?<br>&gt;あれは何ですか。<br>&gt;That is a book. <br>&gt;あれは本です。<br>&gt;↓<br>&gt;What is that?あれは何ですか。<br>&gt;That is a book.あれは本です。<br><br>置換前：([A-Za-z\?\.])\s*\r\n<br>置換後：$1<br><br>みたいな？<br></div></section>
+    <ul><li><section><h1 id=6182>
+    <span class="no">[6182]</span>
+    <a class="title" href="#6182">Re2: 置換で１行おきに行削除</a>
+    <span class="author">もも</span>
+    <time datetime="2007-08-01T09:03:31">2007年08月01日 09:03</time></h1>
+    <div class="body">▼ すいさん<br>ありがとうございまぅす！がんばりま～す</div></section>
+    </li><li><section><h1 id=6204>
+    <span class="no">[6204]</span>
+    <a class="title" href="#6204">Re2: 置換で１行おきに行削除</a>
+    <span class="author">渡辺真</span>
+    <time datetime="2007-08-04T01:25:15">2007年08月04日 01:25</time></h1>
+    <div class="body">▼ すいさん<br>&gt; <br>&gt; 置換前：([A-Za-z\?\.])\s*\r\n<br>&gt; 置換後：$1<br>&gt; <br><br>の、すいさんのを少しアレンジして、<br>英文を指定するのではなく、「日本語ではない」としたら、シンプルになりました？<br><br>置換前：(^((?![、-黑]).)*)\r\n<br>置換後：$1<br><br>[、-黑]は、日本語<br>(?!パターン) は、ゼロ幅の否定的な先読み表現</div></section>
+    </li></ul></li></ul></li></ul></body></html>

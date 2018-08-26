@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>削除が遅い問題の修正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">803</span>
+    <a class="title" href="803.html#803">削除が遅い問題の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">804</span>
+    <a class="title" href="803.html#804">Re:削除が遅い問題の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">805</span>
+    <a class="title" href="803.html#805">Re2:削除が遅い問題の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">806</span>
+    <a class="title" href="803.html#806">Re3:削除が遅い問題の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">807</span>
+    <a class="title" href="803.html#807">Re4:削除が遅い問題の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">809</span>
+    <a class="title" href="803.html#809">Re5:削除が遅い問題の修正</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=803>
+    <span class="no">[803]</span>
+    <a class="title" href="#803">削除が遅い問題の修正</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-02-06T17:07:43">2009年02月06日 17:07</time></h1>
+    <div class="body">CSearchAgent::ReplaceDataの<br>CMemory::AppendString関数が大きなボトルネックになっていたので、<br>mem/CStringListの一方向リストにいったん削除文字列を格納し、<br>その後で結合する方法に変更しました。<br><br>PatchUnicode #2571657<br></div></section>
+    <ul><li><section><h1 id=804>
+    <span class="no">[804]</span>
+    <a class="title" href="#804">Re:削除が遅い問題の修正</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-02-06T20:11:57">2009年02月06日 20:11</time></h1>
+    <div class="body">万単位の行を消すときにボトルネックになっているところは、<br><br>CLayoutMgr_New2.cpp 128行あたりにある<br><br>pArg-&gt;nModLineTo = DoLayout_Range(...<br><br>のようです。とりあえず報告です。</div></section>
+    <ul><li><section><h1 id=805>
+    <span class="no">[805]</span>
+    <a class="title" href="#805">Re2:削除が遅い問題の修正</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-02-06T20:14:34">2009年02月06日 20:14</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; 万単位の行を消すときにボトルネックになっているところは、<br>&gt; <br>&gt; CLayoutMgr_New2.cpp 128行あたりにある<br>&gt; <br>&gt; pArg-&gt;nModLineTo = DoLayout_Range(...<br>&gt; <br>&gt; のようです。とりあえず報告です。<br><br>うそです。。。すみません。</div></section>
+    <ul><li><section><h1 id=806>
+    <span class="no">[806]</span>
+    <a class="title" href="#806">Re3:削除が遅い問題の修正</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-02-06T20:22:08">2009年02月06日 20:22</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; ▼ ラスティブさん<br>&gt; &gt; 万単位の行を消すときにボトルネックになっているところは、<br>&gt; &gt; <br>&gt; &gt; CLayoutMgr_New2.cpp 128行あたりにある<br>&gt; &gt; <br>&gt; &gt; pArg-&gt;nModLineTo = DoLayout_Range(...<br>&gt; &gt; <br>&gt; &gt; のようです。とりあえず報告です。<br>&gt; <br><br>削除して元に戻すときに上記のところでなかなか戻ってこれません。<br>削除操作でなかなか戻ってこない場所は、<br>その少し上に書かれてある<br><br>pLayoutPrev = DeleteLayoutAsLogical(...<br><br>のようです。</div></section>
+    <ul><li><section><h1 id=807>
+    <span class="no">[807]</span>
+    <a class="title" href="#807">Re4:削除が遅い問題の修正</a>
+    <span class="author">test</span>
+    <time datetime="2009-02-07T15:45:12">2009年02月07日 15:45</time></h1>
+    <div class="body">▼ ラスティブさん<br>ANSI版でも同じような箇所を直せば、<br>数万行以上の削除が遅い問題が解決するんですか？</div></section>
+    <ul><li><section><h1 id=809>
+    <span class="no">[809]</span>
+    <a class="title" href="#809">Re5:削除が遅い問題の修正</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-02-07T18:57:58">2009年02月07日 18:57</time></h1>
+    <div class="body">Patch [ 2576450 ] 削除が遅い問題の修正<br>に、<br>PatchUnicode [ 2571657 ] 削除が遅い問題の修正<br><br>と同じ内容のパッチをアップしました。<br><br>▼ testさん<br>&gt; ▼ ラスティブさん<br>&gt; ANSI版でも同じような箇所を直せば、<br>&gt; 数万行以上の削除が遅い問題が解決するんですか？<br><br>CDocLineMgr_New.cpp の 142行目にある以下の記述が<br>ANSI版でもボトルネックになってました。<br><br>if( NULL == pArg-&gt;pcmemDeleted-&gt;Append( &amp;pLine[nWorkPos], nWorkLen ) ){<br>...<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

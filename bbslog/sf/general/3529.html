@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>[要望] 全角文字を半角文字で上書きしたときの挙動</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3529</span>
+    <a class="title" href="3529.html#3529">[要望] 全角文字を半角文字で上書きしたときの挙動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3532</span>
+    <a class="title" href="3529.html#3532">Re: [要望] 全角文字を半角文字で上書きしたときの挙動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3533</span>
+    <a class="title" href="3529.html#3533">Re2: [要望] 全角文字を半角文字で上書きしたときの挙動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3551</span>
+    <a class="title" href="3529.html#3551">Re3: [要望] 全角文字を半角文字で上書きしたときの挙動</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3529>
+    <span class="no">[3529]</span>
+    <a class="title" href="#3529">[要望] 全角文字を半角文字で上書きしたときの挙動</a>
+    <span class="author">nop</span>
+    <time datetime="2003-12-05T02:26:54">2003年12月05日 02:26</time></h1>
+    <div class="body">Insertキーを押して上書きモードにし、<br>全角文字を半角文字で上書きしたときの挙動について。<br><br>現状は全角文字１文字を半角文字１文字で上書きするため、<br>桁位置がずれてしまいます。<br>全角文字１文字は半角文字２文字で上書きするように<br>してもらえませんか？<br><br>現状：<br>「あいうえお」の先頭文字を「A」で上書きすると、<br>「Aいうえお」になる。さらに上書きしていくと、<br>「ABうえお」<br>「ABCえお」<br>「ABCDお」のように後続の文字の桁位置がずれる。<br><br>期待する動作の例：<br>例えば以下のように、全角文字１文字を半角文字１文字で上書きしたら<br>半角空白を１つ補って桁位置がずれないようにする。<br>「あいうえお」<br>「A いうえお」<br>「ABいうえお」<br>「ABC うえお」<br>「ABCDうえお」<br>    ：<br><br>いかがですか？<br><br></div></section>
+    <ul><li><section><h1 id=3532>
+    <span class="no">[3532]</span>
+    <a class="title" href="#3532">Re: [要望] 全角文字を半角文字で上書きしたときの挙動</a>
+    <span class="author">もか</span>
+    <time datetime="2003-12-05T18:57:41">2003年12月05日 18:57</time></h1>
+    <div class="body">昔使用していた、文豪(NECのワードプロセッサ機)では、要望と同じ動作だったので、<br>私も上書きモードなら幅がずれないものだとは思うのです。<br>日本の伝統的な等角フォントエディタ？としては、要望の動作のほうが好ましい気がします。<br>この概念は日本的な考えのようで、米資本のMS-WordとかMS-IEでは、上書きモードでは1文字を1文字に置き換えます。<br>ということでこの半独占市場では少数派なのかもしれません。<br>非標準的、非一般的と平成生まれ世代に言われそうで....。<br>#一太郎を始め、他はどうだろう。<br><br>因みに、<br>「ABあいうえお」 <br>で、Bの後ろで「ア」を入力すると<br>「Aア いうえお」<br>となるんですよね？<br><br>Edmaxの上書きモードでは<br>「ABCDEF」に「あい」を入力すると、「あいEF」<br>「あいうえ」に「AB」を入力すると、「ABうえ」<br>こういうのもあるのかと。<br></div></section>
+    <ul><li><section><h1 id=3533>
+    <span class="no">[3533]</span>
+    <a class="title" href="#3533">Re2: [要望] 全角文字を半角文字で上書きしたときの挙動</a>
+    <span class="author">nop</span>
+    <time datetime="2003-12-05T23:40:32">2003年12月05日 23:40</time></h1>
+    <div class="body">Word、IE、一太郎はテキストエディタというカテゴリには<br>入らないのであまり参考にならない気がします。<br>日本語対応テキストエディタというカテゴリで比較した方が<br>話が発散しにくいと思います。<br><br><br>&gt; 因みに、<br>&gt; 「ABあいうえお」 <br>&gt; で、Bの後ろで「ア」を入力すると<br>&gt; 「Aア いうえお」<br>&gt; となるんですよね？<br>「ABアいうえお」じゃないでしょうか。<br>Bの「上」で「ア」を入力ということでしたら、希望は<br>「Aア いうえお」です。(桁位置がずれない)<br><br><br>&gt; Edmaxの上書きモードでは<br>&gt; 「ABCDEF」に「あい」を入力すると、「あいEF」<br>&gt; 「あいうえ」に「AB」を入力すると、「ABうえ」<br>&gt; こういうのもあるのかと。<br>全角でも半角でも1文字は1文字として上書きするんですね。<br>仕様としては美しい(実装もUNICODEなら楽そう)ですが、<br>桁位置をずらしたくない私(^^;としては、イマイチです。<br><br>ちなみに私が愛用している(していた) xyzzy では<br>私の希望通りの動作をします。(桁位置がずれない)<br>なら xyzzy を使えばいいじゃんと言われそうですが<br>他のWindowsアプリとキー操作があまりにも違うので<br>そろそろWindows的なエディタに乗り換えようかと<br>思って物色中だったりします。<br>サクラエディタはなかなかイイ線行ってるので<br>期待しているんですが…。<br></div></section>
+    <ul><li><section><h1 id=3551>
+    <span class="no">[3551]</span>
+    <a class="title" href="#3551">Re3: [要望] 全角文字を半角文字で上書きしたときの挙動</a>
+    <span class="author">もか</span>
+    <time datetime="2003-12-15T23:58:24">2003年12月15日 23:58</time></h1>
+    <div class="body"><br>&gt;&gt; 因みに、<br>&gt;&gt; 「ABあいうえお」 <br>&gt;&gt; で、Bの後ろで「ア」を入力すると<br>&gt;&gt; 「Aア いうえお」<br>&gt;&gt; となるんですよね？<br>&gt;「ABアいうえお」じゃないでしょうか。<br>&gt;Bの「上」で「ア」を入力ということでしたら、希望は<br>&gt;「Aア いうえお」です。(桁位置がずれない)<br>そうです。まさしくそれが言いたかったのですが、位置を間違えてました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

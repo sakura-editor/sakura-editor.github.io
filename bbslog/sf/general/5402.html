@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現を使って,左寄せの数字の並べ替えできますか。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5402</span>
+    <a class="title" href="5402.html#5402">正規表現を使って,左寄せの数字の並べ替えできますか。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5407</span>
+    <a class="title" href="5402.html#5407">Re:正規表現を使って,左寄せの数字の並べ替えできますか。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5408</span>
+    <a class="title" href="5402.html#5408">Re2:正規表現を使って,左寄せの数字の並べ替えできますか。</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5402>
+    <span class="no">[5402]</span>
+    <a class="title" href="#5402">正規表現を使って,左寄せの数字の並べ替えできますか。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2006-08-29T19:21:09">2006年08月29日 19:21</time></h1>
+    <div class="body">(例)<br>T-1.txt             T-1.txt              T-01.txt<br>T-10.txt            T-2.txt              T-02.txt<br>T-11.txt            T-3.txt              T-03.txt<br>T-12.txt            T-4.txt              T-04.txt<br>T-2.txt             T-5.txt              T-05.txt<br>T-3.txt    ===&gt;     T-6.txt     または   T-06.txt<br>T-4.txt             T-7.txt              T-07.txt<br>T-5.txt             T-8.txt              T-08.txt<br>T-6.txt             T-9.txt              T-09.txt<br>T-7.txt             T-10.txt             T-10.txt<br>T-8.txt             T-11.txt             T-11.txt<br>T-9.txt             T-12.txt             T-12.txt<br>編集(E)整形(K)選択行の昇順ソート(A)<br>検索(S)置換(R)正規表現(R)を組み合わせて並べ替え可能でしょうか？<br>0埋めというのかな？<br>なるべく汎用性のあるものを考えています。<br>一度ファイラーで並べ替えを見たのですが,忘れてしまいました。<br>正規表現以外に,他言語でもいいので,よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=5407>
+    <span class="no">[5407]</span>
+    <a class="title" href="#5407">Re:正規表現を使って,左寄せの数字の並べ替えできますか。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-08-31T07:16:36">2006年08月31日 07:16</time></h1>
+    <div class="body">&gt; (例)<br>&gt; T-6.txt     または   T-06.txt<br><br>D:\&gt;DIR /L /B T-*.TXT &gt;TEMP.DAT<br>環境が分かりません、私の所は、 OS: Windows 2000<br><br>//キーボードマクロのファイル　拡張子は.MAC<br>S_ReplaceAll('t-(.).txt', 't-00$1.txt', 20);<br>S_ReplaceAll('t-(..).txt', 't-0$1.txt', 20);</div></section>
+    <ul><li><section><h1 id=5408>
+    <span class="no">[5408]</span>
+    <a class="title" href="#5408">Re2:正規表現を使って,左寄せの数字の並べ替えできますか。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-08-31T07:35:54">2006年08月31日 07:35</time></h1>
+    <div class="body">&gt; なるべく汎用性のあるものを考えています。<br><br>| //キーボードマクロのファイル　拡張子は.MAC<br>| S_ReplaceAll('(.*)-(.).txt', '$1-0$2.txt', 20);<br>| S_ReplaceAll('(.*)-(..).txt', '$1-0$2.txt', 20);<br>| S_ReplaceAll('(.*)-(...).txt', '$1-0$2.txt', 20);<br><br>ところで、<br>キーマクロの記録終了／キーマクロの記録終了＆読み込みが、なにもしないで終わります。<br>ただ、キーマクロの実行／キーマクロの保存は出来ます。<br><br>HELPを読み間違ってたらすみません。<br>マクロ一覧には、SAKURAのパスが入っています。<br>SAKURA 1.5.10.1<br>SAKURA.HLP 783 KB (802,802 バイト)2006年5月8日、3:39:44</div></section>
+    </li></ul></li></ul></li></ul></body></html>

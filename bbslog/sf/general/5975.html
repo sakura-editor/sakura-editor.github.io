@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>vs2005で外部ツールとして開くときに行、列位置が反映されない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5975</span>
+    <a class="title" href="5975.html#5975">vs2005で外部ツールとして開くときに行、列位置が反映されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5976</span>
+    <a class="title" href="5975.html#5976">Re:vs2005で外部ツールとして開くときに行、列位置が反映されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5977</span>
+    <a class="title" href="5975.html#5977">Re2:vs2005で外部ツールとして開くときに行、列位置が反映されない</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5975>
+    <span class="no">[5975]</span>
+    <a class="title" href="#5975">vs2005で外部ツールとして開くときに行、列位置が反映されない</a>
+    <span class="author">bName</span>
+    <time datetime="2007-04-04T21:18:56">2007年04月04日 21:18</time></h1>
+    <div class="body">vs2005で外部ツールとして開く時に行、列情報が反映されないです。<br><br>vs2005の設定は以下のようにしてます。<br><br>メニュー -&gt; ツール -&gt; 外部ツール<br><br>タイトル サクラエディタ<br>コマンド C:\Program Files\sakura\sakura.exe<br>引数 -X=$(CurCol) -Y=$(CurLine) $(ItemPath)<br>初期ディレクトリ $(ItemDir)<br><br>で設定してます。<br><br>ファイルは開けますが行、列の設定が反映されません。<br><br>解決して頂けると大変嬉しいです。<br>(っていうか誰かやってくれないかな・・・・・。)<br></div></section>
+    <ul><li><section><h1 id=5976>
+    <span class="no">[5976]</span>
+    <a class="title" href="#5976">Re:vs2005で外部ツールとして開くときに行、列位置が反映されない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-04-04T22:02:42">2007年04月04日 22:02</time></h1>
+    <div class="body">▼ bNameさん<br>&gt; 引数 -X=$(CurCol) -Y=$(CurLine) $(ItemPath)<br>二重引用符で囲むのが正解です。<br>-Y="$(CurLine)" "$(ItemPath)"<br><br>$(CurCol)はVS2005では文字数なので、sakuraの桁位置とは合致しません。</div></section>
+    <ul><li><section><h1 id=5977>
+    <span class="no">[5977]</span>
+    <a class="title" href="#5977">Re2:vs2005で外部ツールとして開くときに行、列位置が反映されない</a>
+    <span class="author">bName</span>
+    <time datetime="2007-04-06T01:28:25">2007年04月06日 01:28</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; -Y="$(CurLine)" "$(ItemPath)"<br>おお！うまく行きました。ありがとうございます。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>行の選択</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">870</span>
+    <a class="title" href="870.html#870">行の選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">871</span>
+    <a class="title" href="870.html#871">Re: 行の選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">872</span>
+    <a class="title" href="870.html#872">Re2: 行の選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">873</span>
+    <a class="title" href="870.html#873">Re3: 行の選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">874</span>
+    <a class="title" href="870.html#874">Re4: 行の選択</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=870>
+    <span class="no">[870]</span>
+    <a class="title" href="#870">行の選択</a>
+    <span class="author">mini40th</span>
+    <time datetime="2001-11-20T15:02:01">2001年11月20日 15:02</time></h1>
+    <div class="body"><br>要望です。<br><br>カーソル位置から前、カーソル位置から後ろとか、<br>単語という選択はできるのですが、<br>現在あるカーソルの行全てを<br>選択できるようできますでしょうか？<br></div></section>
+    <ul><li><section><h1 id=871>
+    <span class="no">[871]</span>
+    <a class="title" href="#871">Re: 行の選択</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-11-20T15:28:35">2001年11月20日 15:28</time></h1>
+    <div class="body">&gt;現在あるカーソルの行全てを<br>&gt;選択できるようできますでしょうか？<br><br>以下のマクロで一応できます．<br>------ここから<br>//キーボードマクロのファイル<br>GoLineEnd();<br>GoLineTop(5);<br>------ここまで<br><br>ただし，カーソルが行頭に移動してしまうのと折り返しがあると表面的な行しか選択されないのがちょっと厳しい点です．<br>GoLineTopの5というのは，1(空白と関係なく行頭へ移動) + 4(選択しつつ移動) です．<br><br>この手のものはマクロの機能拡充で対応したいと考えています．<br></div></section>
+    <ul><li><section><h1 id=872>
+    <span class="no">[872]</span>
+    <a class="title" href="#872">Re2: 行の選択</a>
+    <span class="author">mini40th</span>
+    <time datetime="2001-11-20T18:44:15">2001年11月20日 18:44</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 以下のマクロで一応できます．<br>&gt; ------ここから<br>&gt; //キーボードマクロのファイル<br>&gt; GoLineEnd();<br>&gt; GoLineTop(5);<br>&gt; ------ここまで<br><br>ありがとうございます。<br><br>このマクロを実行すると、<br>選択が完了したことになるのですね。<br>例えば、このマクロ実行後も範囲選択を<br>継続するようにできますか？<br></div></section>
+    <ul><li><section><h1 id=873>
+    <span class="no">[873]</span>
+    <a class="title" href="#873">Re3: 行の選択</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-11-20T23:05:09">2001年11月20日 23:05</time></h1>
+    <div class="body">▼mini40thさん<br>&gt;このマクロを実行すると、<br>&gt;選択が完了したことになるのですね。<br>&gt;例えば、このマクロ実行後も範囲選択を<br>&gt;継続するようにできますか？<br>意味がよくわからないんですが，カーソルが行頭に来るのでそのままSHIFT+↑を押せば上方向に範囲が広がります．下方向だと変になりますが，ESCで範囲選択をキャンセルしてからSHIFT+↓で似たような結果が得られます．<br><br>というので答えになっていますか？違うようならどんな動作が望ましいと思うのか具体的な操作例をお願いします．<br></div></section>
+    <ul><li><section><h1 id=874>
+    <span class="no">[874]</span>
+    <a class="title" href="#874">Re4: 行の選択</a>
+    <span class="author">mini40th</span>
+    <time datetime="2001-11-21T09:32:40">2001年11月21日 09:32</time></h1>
+    <div class="body">▼ げんたさん<br><br>&gt; 意味がよくわからないんですが，カーソルが行頭に来るのでそのままSHIFT+↑を押せば上方向に範囲が広がります．下方向だと変になりますが，ESCで範囲選択をキャンセルしてからSHIFT+↓で似たような結果が得られます．<br><br>SHIFT+↑とSHIFT+←は選択範囲が広がるので問題なしです。<br>SHIFT+↓も一度ESCを押せばいいので問題なしです。<br><br>SHIFT+→の場合、行末から選択が開始されてしまいます。<br>これを選択した行から、次の行の任意の文字まで選択範囲を<br>広げられるようになるといいかなと思います。<br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

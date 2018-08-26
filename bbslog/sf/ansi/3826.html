@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>サクラエディタ応援ページ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3826</span>
+    <a class="title" href="3826.html#3826">サクラエディタ応援ページ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3827</span>
+    <a class="title" href="3826.html#3827">RE: サクラエディタ応援ページ</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3826>
+    <span class="no">[3826]</span>
+    <a class="title" href="#3826">サクラエディタ応援ページ</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-01-24T03:24:44">2005年01月24日 03:24</time></h1>
+    <div class="body">そういえば，みくさんの「サクラエディタ応援ページ」って何処に行っちゃったのかしらん．<br>「サクラエディタのツールアイコン作って。」とかあったのに...<br></div></section>
+    <ul><li><section><h1 id=3827>
+    <span class="no">[3827]</span>
+    <a class="title" href="#3827">RE: サクラエディタ応援ページ</a>
+    <span class="author">みく</span>
+    <time datetime="2005-01-24T19:11:46">2005年01月24日 19:11</time></h1>
+    <div class="body"><br>更新できないので閉鎖しました。<br>＃更新がなければ強制的に閉鎖されるはずですが、そうでもないようです。<br><br>アイコン作成ツール(ソース付き)は<br>eGroups:Junk/ToolIconMaker20021013src.zip<br><br>古いアイコンは<br>eGroups:Developer/Source/old_icon20050124.ZIP<br><br>にアップしておきました。<br><br><br>＞ヘルプに対してコンテキストID HLP000286 が指定されていましたが，これは直し忘れ？<br>＞でもこのダイアログボックスにはヘルプボタンがないのでこれは不要ですよね．<br><br>コピーしたのがばれちゃいましたね。<br>直し忘れ・消し忘れです。<br><br><br>メモ：<br>dev:3800あたりで言われている問題ですが、<br>CSemaphore.hを作成して、CShareDataに組み込みます。<br>で、配列操作関数でセマフォを取るようにすれば少しは危険を回避できるので<br>はないでしょうか。<br><br>＃エラー処理等は省いてます。<br>class CSemaphore{<br>&#9;HANDLE m_hSem;<br>&#9;CSemaphore(){<br>&#9;&#9;m_hSem = ::CreateSemaphore( NULL, 1, 1, _T("SemaphoreSakura") );<br>&#9;}<br>&#9;~CSemaphore(){<br>&#9;&#9;::CloseHandle( m_hSem );<br>&#9;}<br>&#9;void SemTake( void ){<br>&#9;&#9;DWORD dwRet = ::WaitForSingleObject( m_hSem, INFINITE );<br>&#9;&#9;//判定<br>&#9;}<br>&#9;void SemGive( void ){<br>&#9;&#9;::ReleaseSemaphore( m_hSem, 1, NULL );<br>&#9;}<br>}<br><br>func(){<br>&#9;SemTake();<br>&#9;//CShareData::getInstance()-&gt;SemTake(); //CShareData以外から<br>&#9;//クリティカル処理<br>&#9;SemGive();<br>&#9;//CShareData::getInstance()-&gt;SemGive(); //CShareData以外から<br>}<br><br>二重呼び出しするとロックしてしまうので注意が必要です。<br>＃他のプロセスとの排他ができればよいだけだと思うのですが。。。<br></div></section>
+    </li></ul></li></ul></body></html>

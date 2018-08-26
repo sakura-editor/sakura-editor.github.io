@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>左端部分が描画されなくなるケース</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2603</span>
+    <a class="title" href="2603.html#2603">左端部分が描画されなくなるケース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2604</span>
+    <a class="title" href="2603.html#2604">Re: 左端部分が描画されなくなるケース</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2603>
+    <span class="no">[2603]</span>
+    <a class="title" href="#2603">左端部分が描画されなくなるケース</a>
+    <span class="author">catfish</span>
+    <time datetime="2003-03-05T00:29:12">2003年03月05日 00:29</time></h1>
+    <div class="body">「タイプ別設定」で行番号を非表示にしている時に、<br>「共通設定」-「行番号とテキストの隙間」を設定すると<br>ウィンドウ内左端の部分が欠けてしまうようです。<br>デスクトップや他のウィンドウが表示されます。<br><br>私は通常のテキストファイルなどは、できるかぎり見易さ優先<br>の設定にしているのでこの新機能はありがたいのですが。<br><br>Ver.1.3.6.3<br>Ver.1.3.7.0<br><br>でこの症状が出ています。</div></section>
+    <ul><li><section><h1 id=2604>
+    <span class="no">[2604]</span>
+    <a class="title" href="#2604">Re: 左端部分が描画されなくなるケース</a>
+    <span class="author">もか</span>
+    <time datetime="2003-03-05T00:44:17">2003年03月05日 00:44</time></h1>
+    <div class="body">&gt;「タイプ別設定」で行番号を非表示にしている時に、<br>&gt;「共通設定」-「行番号とテキストの隙間」を設定すると<br>&gt;ウィンドウ内左端の部分が欠けてしまうようです。<br>&gt;デスクトップや他のウィンドウが表示されます。<br>報告ありがとうございます。現象確認しました。<br><br>CEditView_New2.cpp<br>297行目<br>+&#9;&#9;rcClip.left = rcClip.right;<br>+&#9;&#9;rcClip.right = m_nViewAlignLeft;<br>+&#9;&#9;rcClip.top = y;<br>+&#9;&#9;rcClip.bottom = y + nLineHeight;<br>+&#9;&#9;hBrush = ::CreateSolidBrush( m_pcEditDoc-&gt;GetDocumentAttribute().m_Co<br>lorInfoArr[COLORIDX_TEXT].m_colBACK );<br>+&#9;&#9;::FillRect( hdc, &amp;rcClip, hBrush );<br>+&#9;&#9;::DeleteObject( hBrush );<br><br>でいいのかな？<br></div></section>
+    </li></ul></li></ul></body></html>

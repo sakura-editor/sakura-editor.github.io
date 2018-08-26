@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>「空白→TAB変換」機能における不具合</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2989</span>
+    <a class="title" href="2989.html#2989">「空白→TAB変換」機能における不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2990</span>
+    <a class="title" href="2989.html#2990">Re: 「空白→TAB変換」機能における不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2993</span>
+    <a class="title" href="2989.html#2993">Re2: 「空白→TAB変換」機能における不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3029</span>
+    <a class="title" href="2989.html#3029">Re3: 「空白→TAB変換」機能における不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3032</span>
+    <a class="title" href="2989.html#3032">Re4: 「空白→TAB変換」機能における不具合</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2989>
+    <span class="no">[2989]</span>
+    <a class="title" href="#2989">「空白→TAB変換」機能における不具合</a>
+    <span class="author">FD3SLOVE</span>
+    <time datetime="2003-08-05T16:24:19">2003年08月05日 16:24</time></h1>
+    <div class="body">初めて投稿します。<br>みなさんよろしくお願いします_(._.)_<br><br>一応、FAQ及び過去分は検索してみてなかったので書かせていただきました。<br>症状は、スペースをダブルコーテーションで挟んだ場合に「空白→TAB変換」機能を使うと、<br>TAB幅が4以上のときに不具合（「TAB→空白変換」したときに数が合わない）が出始めて、<br>TAB幅が8以上になるとエラーを吐いて落ちてしまいます。<br><br>以下のようなパターンで試しました。<br>-----------------------------------<br>" "<br> " "<br>  " "<br>   " "<br>    " "<br>"  "<br> "  "<br>  "  "<br>   "  "<br>    "  "<br>"   "<br> "   "<br>  "   "<br>   "   "<br>    "   "<br>"    "<br> "    "<br>  "    "<br>   "    "<br>    "    "<br>"     "<br> "     "<br>  "     "<br>   "     "<br>    "     "<br>-----------------------------------<br><br>当方の環境は（以下NT診断プログラムから抜粋）<br><br>OS バージョン レポート<br>----------------------------------------<br>------------------------------<br>Microsoft (R) Windows NT (R) Workstation<br>Version 4.0 (Build 1381: Service Pack 6) x86 Uniprocessor Free<br>システム レポート<br>----------------------------------------<br>------------------------------<br>システム: AT/AT COMPATIBLE<br>ハードウェア アブストラクション レイヤ: UP MPS 1.4 - APIC platform<br>プロセッサの一覧:<br>   0:  x86 Family 15 Model 2 Stepping 7 GenuineIntel ~2789 Mhz<br>ビデオ ディスプレイ レポート<br>----------------------------------------<br>------------------------------<br>BIOS 日付: 04/02/20<br>BIOS バージョン: Hardware Version 0.0<br> <br>アダプタ:<br>   設定: 1280 x 1024 x 65536<br>       75 Hz<br>   種類: ialmnt4 互換ディスプレイ アダプタ<br>   文字列: Intel(R) 82845G/GL Graphics Controller<br>   メモリ: 64 MB<br>   チップの種類: Intel(R) 82845G/GL Chip<br>   DAC の種類: Internal<br>ドライバ:<br>   製造元: Intel Corporation<br>   ファイル: ialmnt4.sys, ialmdnt4.dll<br>   バージョン: 4.03.1381.3119, 4.0.32<br>----------------------------------------<br>------------------------------<br><br>です。<br>WindowsXPHomeEditionを搭載するノートPCでも試しましたが同じ症状でした。<br><br>以上です。</div></section>
+    <ul><li><section><h1 id=2990>
+    <span class="no">[2990]</span>
+    <a class="title" href="#2990">Re: 「空白→TAB変換」機能における不具合</a>
+    <span class="author">もか</span>
+    <time datetime="2003-08-05T22:14:39">2003年08月05日 22:14</time></h1>
+    <div class="body">確かに。変みたいです。<br>以下の変更で、治ると思います。短いので、貼っておきます。<br>--- ssrc_2003-07-21org/sakura_core/CMemory.cpp&#9;Sun May 25 00:12:42 2003<br>+++ ssrc_2003-07-21sp2tb/sakura_core/CMemory.cpp&#9;Tue Aug 05 20:35:17 2003<br>@@ -3328,8 +3328,9 @@<br> &#9;&#9;&#9;&#9;&#9;&#9;&#9;for( j = nStartPos / nTabSpace; j &lt; (nPosX / nTabSpace); j++ ){<br> &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;pDes[nPosDes] = TAB;<br> &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;nPosDes++;<br>+&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;nStartPos += nTabSpace - ( nStartPos % nTabSpace );<br> &#9;&#9;&#9;&#9;&#9;&#9;&#9;}<br>-&#9;&#9;&#9;&#9;&#9;&#9;&#9;for( j = 0; j &lt; (nPosX % nTabSpace); j++ ){<br>+&#9;&#9;&#9;&#9;&#9;&#9;&#9;for( j = nStartPos; j &lt; nPosX; j++ ){<br> &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;pDes[nPosDes] = SPACE;<br> &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;nPosDes++;<br> &#9;&#9;&#9;&#9;&#9;&#9;&#9;}<br>@@ -3354,8 +3355,9 @@<br>(タブ数以外上と同じ)<br>--ここまで--<br></div></section>
+    <ul><li><section><h1 id=2993>
+    <span class="no">[2993]</span>
+    <a class="title" href="#2993">Re2: 「空白→TAB変換」機能における不具合</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-08-06T21:28:04">2003年08月06日 21:28</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 確かに。変みたいです。<br>&gt; 以下の変更で、治ると思います。短いので、貼っておきます。<br><br>スペースに変換できるTABTABのタブスペース変換は、空白に成りませんでしょうか？<br>８TABの時、aaaaaaaTABTAB等です。<br>かってなお願いですが、どうでしょう？</div></section>
+    <ul><li><section><h1 id=3029>
+    <span class="no">[3029]</span>
+    <a class="title" href="#3029">Re3: 「空白→TAB変換」機能における不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-08-19T21:24:12">2003年08月19日 21:24</time></h1>
+    <div class="body">&gt;スペースに変換できるTABTABのタブスペース変換は、空白に成りませんでしょうか？<br>&gt;８TABの時、aaaaaaaTABTAB等です。<br>長いこと放っておいて申し訳ありませんでした．が，おっしゃることの意味がさっぱりわかりません．<br><br>ところで，SPACE→TAB変換でちょうどTAB区切りの1文字前から始まっていてTABでもスペースでも結果が代わらないケースに於いて<br>* 直後がSPACEまたはTABの時→TAB<br>* 直後がSPACE,TAB以外の時→SPACEのまま<br>となるようですが，ひょっとしてこの動作を変更した方がよいとおっしゃっていますか？<br></div></section>
+    <ul><li><section><h1 id=3032>
+    <span class="no">[3032]</span>
+    <a class="title" href="#3032">Re4: 「空白→TAB変換」機能における不具合</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-08-20T01:22:38">2003年08月20日 01:22</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ところで，SPACE→TAB変換でちょうどTAB区切りの1文字前から始まっていてTABでもスペースでも結果が代わらないケースに於いて<br>&gt; * 直後がSPACEまたはTABの時→TAB<br>&gt; * 直後がSPACE,TAB以外の時→SPACEのまま<br>&gt; となるようですが，ひょっとしてこの動作を変更した方がよいとおっしゃっていますか？<br><br>はいそうです。スペースタブ変換の間違いでした。すみません。<br>理由は、すべて空白が理想ですが、節約のためタブを使っているためです。<br>こじつけですが。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

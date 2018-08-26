@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Diff差分印刷機能？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3346</span>
+    <a class="title" href="3346.html#3346">Diff差分印刷機能？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3347</span>
+    <a class="title" href="3346.html#3347">Re:Diff差分印刷機能？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3348</span>
+    <a class="title" href="3346.html#3348">Re2:Diff差分印刷機能？</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3346>
+    <span class="no">[3346]</span>
+    <a class="title" href="#3346">Diff差分印刷機能？</a>
+    <span class="author">ipa</span>
+    <time datetime="2003-10-07T11:01:45">2003年10月07日 11:01</time></h1>
+    <div class="body">差分を印刷する方法ってないでしょうか？<br><br>今は「差分検索-&gt;行頭に@を付ける」<br>を繰り返すマクロで対処してるのですが+と!が区別できません。<br><br>よい方法がありましたら教えてください。</div></section>
+    <ul><li><section><h1 id=3347>
+    <span class="no">[3347]</span>
+    <a class="title" href="#3347">Re:Diff差分印刷機能？</a>
+    <span class="author">ty</span>
+    <time datetime="2003-10-07T11:09:02">2003年10月07日 11:09</time></h1>
+    <div class="body">▼ ipaさん<br>&gt; 差分を印刷する方法ってないでしょうか？<br>&gt; <br>&gt; 今は「差分検索-&gt;行頭に@を付ける」<br>&gt; を繰り返すマクロで対処してるのですが+と!が区別できません。<br>&gt; <br>&gt; よい方法がありましたら教えてください。<br>それだったら、コマンドラインでdiffで差分を出したほうが早くないですか?<br>無理やりサクラでやるなら、外部コマンドで無理やり差分を出力するして、それを印刷する、といった感じです。<br>もちろん、サクラでdiffの標準出力を受け付ける、という提案に反対はしません。</div></section>
+    <ul><li><section><h1 id=3348>
+    <span class="no">[3348]</span>
+    <a class="title" href="#3348">Re2:Diff差分印刷機能？</a>
+    <span class="author">ipa</span>
+    <time datetime="2003-10-07T14:08:34">2003年10月07日 14:08</time></h1>
+    <div class="body">▼ tyさん<br>返信ありがとうございます！<br>そうですね下手にサクラを重くするよりこちらのテクでなんとかしたいですね<br>簡単にバッチファイルを書いてみましたがこんなオプションでいいんでしょうか？<br><br>========================================<br>====================<br>@echo off<br>rem Diff差分表示.bat<br>rem 使い方：２つのファイルをこのバッチにＤ＆Ｄ(比較元をつかむ)<br>C:\toolz\_text\sakura\diff -c500 %1 %2 &gt; "%TEMP%\diff.txt"<br>start C:\toolz\_text\sakura\sakura "%TEMP%\diff.txt"<br>========================================<br>====================<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>3ヶ月ぶりですが1.5.0.0です</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4220</span>
+    <a class="title" href="4220.html#4220">3ヶ月ぶりですが1.5.0.0です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4221</span>
+    <a class="title" href="4220.html#4221">Re: 3ヶ月ぶりですが1.5.0.0です</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4222</span>
+    <a class="title" href="4220.html#4222">Re:1.5.0.0</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4227</span>
+    <a class="title" href="4220.html#4227">Re:3ヶ月ぶりですが1.5.0.0です</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=4220>
+    <span class="no">[4220]</span>
+    <a class="title" href="#4220">3ヶ月ぶりですが1.5.0.0です</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-01-11T00:49:23">2005年01月11日 00:49</time></h1>
+    <div class="body"><br>個人的にいろいろと忙しく時間が取れないままに3ヶ月過ぎてしまいました．<br>全てを取り込めてはいないのですが，今日までにできたところで1.5.0.0とします．<br><br>1.5.0.0<br>2004.09.21 &gt;&gt;data:3664 &gt;&gt;data:4029 常に最前面に表示機能 (もかさん)<br>2004.10.09 &gt;&gt;dev:3756 前回と異なる文字コードと自動認識された場合の確認ダイアログ抑制オプション(げんた)<br>2004.10.09 &gt;&gt;data:3656 存在しないファイルを開こうとした場合の確認ダイアログ表示オプション(げんた)<br>2004.10.10 &gt;&gt;dev:3761 マウスのサイドボタンに機能を割り当てられるように (noviceさん)<br>2004.10.11 &gt;&gt;dev:3764 マウスの中ボタンに機能を割り当てられるように (noviceさん)<br>2004.10.13 ふぁんくらぶ Part4-844 インクリメンタルサーチ(with Migemo)対応 (isearch/844さん)<br>2004.11.12 &gt;&gt;dev:3788 &gt;&gt;data:4131 禁則文字が重複して登録されるとアプリケーションエラーになることがある．(もかさん)<br>2004.11.12 &gt;&gt;dev:3788 &gt;&gt;data:4080 アウトラインウィンドウの枠のマージン縮小(もかさん)<br>2004.11.13 &gt;&gt;dev:3787 タグジャンプのバグ (*?&lt;が先頭にあると変な動きになる) (もかさん)<br>2005.01.03 &gt;&gt;data:4162 &gt;&gt;dev:3812 TeXアウトラインで文字の途中で切れてしまうことがある (noahさん)<br>2005.01.03 &gt;&gt;dev:3812 アウトプットウィンドウの改善．Tagjump，表示形式の指定を可能に (noahさん)<br><br>ふぁんくらぶPart4がdat落ちしていますのでMigemoの使い方を簡単に説明．<br><br>まずC/Migemoのバイナリをhttp://www.kaoriya.netからダウンロード<br>sakuraだけで使う方はmigemo.dllとdictディレクトリをsakura.exeと同じ場所に置いてください．<br>他のソフトと共有する等の理由で別の場所に置きたい方は，共通設定→支援でパスを指定してください．<br><br>ふぁんくらぶ版から以下の点を変更しています．<br>・アイコン : patchファイルに入っていなかったので適当に作りました．もっといいアイコン募集します．<br>・インクリメンタルサーチ中にツールバーアイコンが押し下げられるように<br>・検索メニューへの追加．長くなりすぎるのでブックマークもサブメニューにしました．<br>・共通設定でmigemo.dllへのパスを指定したらエディタの再起動無しに機能が有効になるように．<br><br>機能的には以上ですが，ソースコードは関数の位置を変更したので公開されていたパッチから変わっています．<br><br>あと，ツールバーに置いてある検索ボックスにincremental search中の文字が出て，FirefoxみたいにHitしている場合とそうでない場合で色が変わったりするとうれし～な～，とか希望を出してみる．<br><br>--<br>マウスボタンへの機能の割り当ては共通設定→キー割り当てで行えます．<br><br>開こうとしたファイルが無い場合に警告するオプションを共通設定→ファイル に追加しました．<br>以前の動作の方が好きな方はONにしてください．<br><br>texアウトラインは試験していません．不具合があったら報告してください．<br><br>--<br>最後に，取りこぼしているパッチ・不具合報告などまとめてくださる方がいると助かります．<br></div></section>
+    <ul><li><section><h1 id=4221>
+    <span class="no">[4221]</span>
+    <a class="title" href="#4221">Re: 3ヶ月ぶりですが1.5.0.0です</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-01-11T20:37:18">2005年01月11日 20:37</time></h1>
+    <div class="body">早速ですが，インクリメンタルサーチで2バイト文字を入力しても正しく文字が入力されません．<br>私が変更したときのバグです．次でなおします．<br></div></section>
+    </li><li><section><h1 id=4222>
+    <span class="no">[4222]</span>
+    <a class="title" href="#4222">Re:1.5.0.0</a>
+    <span class="author">もか</span>
+    <time datetime="2005-01-11T23:37:52">2005年01月11日 23:37</time></h1>
+    <div class="body">更新お疲れ様です。<br>&gt;2005.01.03 &gt;&gt;dev:3812 アウトプットウィンドウの改善．Tagjump，表示形式の指定を可能に (noahさん)<br>これについて勝手ながら、補足説明。<br>Tagjump：Grepと同じです。ON/OFFの設定もGrepと共有しています。<br>表示形式の指定を可能に：指定したいタイプ別設定の拡張子リストに、outputを追加しておいてください。<br><br>以下、開発者向け。<br>VC6.0 SP5では、etc_uty.cpp IsFilePath関数内<br>etc_uty.cpp(1585) : error C2362: 'cur_pos' の初期化が 'goto can_not_tagjump' によって行われませんでした。<br>というエラーが出ます。<br></div></section>
+    </li><li><section><h1 id=4227>
+    <span class="no">[4227]</span>
+    <a class="title" href="#4227">Re:3ヶ月ぶりですが1.5.0.0です</a>
+    <span class="author">しみづ</span>
+    <time datetime="2005-01-14T06:09:04">2005年01月14日 06:09</time></h1>
+    <div class="body"><br>　そうだ、data:3970のUTF-8の件はどうなったでしょう。<br></div></section>
+    </li></ul></li></ul></body></html>

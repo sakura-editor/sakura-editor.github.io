@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>アウトライン解析で日本語が含まれている部分が表示されない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1643</span>
+    <a class="title" href="1643.html#1643">アウトライン解析で日本語が含まれている部分が表示されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1644</span>
+    <a class="title" href="1643.html#1644">Re:アウトライン解析で日本語が含まれている部分が表示されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1648</span>
+    <a class="title" href="1643.html#1648">Re2:アウトライン解析で日本語が含まれている部分が表示されない</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1643>
+    <span class="no">[1643]</span>
+    <a class="title" href="#1643">アウトライン解析で日本語が含まれている部分が表示されない</a>
+    <span class="author">cat</span>
+    <time datetime="2011-09-12T17:48:44">2011年09月12日 17:48</time></h1>
+    <div class="body">サクラエディタ UNICODE版 v2.0.3.0を使用しています。<br><br>アウトライン解析(F11)をJavaのソースに対して行った場合、<br>キーワード(メソッド名等)に日本語が含まれている部分が表示されません。<br><br>v2.0.2.0も同様の現象です。<br></div></section>
+    <ul><li><section><h1 id=1644>
+    <span class="no">[1644]</span>
+    <a class="title" href="#1644">Re:アウトライン解析で日本語が含まれている部分が表示されない</a>
+    <span class="author">syat</span>
+    <time datetime="2011-09-16T07:07:19">2011年09月16日 07:07</time></h1>
+    <div class="body">修正パッチを作成してみました。<br>PatchUnicode:3410222<br><br>英数と一部記号しか認めないのは今までのバージョンでもそうなので、仕様変更扱いになると思います。<br></div></section>
+    <ul><li><section><h1 id=1648>
+    <span class="no">[1648]</span>
+    <a class="title" href="#1648">Re2:アウトライン解析で日本語が含まれている部分が表示されない</a>
+    <span class="author">cat</span>
+    <time datetime="2011-09-19T04:53:32">2011年09月19日 04:53</time></h1>
+    <div class="body">▼ syatさん<br>修正パッチの提供ありがとうございました。<br><br>svn rev.1947に修正パッチを当てて<br>VC2008にてビルドしたexeで動作を確認できました。<br>(使用環境はWindows XP SP3です。)<br><br>JavaやC#、C99、Ruby等では識別子に国際文字を許容しているので<br>時々、日本語混じりの識別子を使っていたので、非常に助かります。<br>是非、本流にも反映される事を期待します。<br><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

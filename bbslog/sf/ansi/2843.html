@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ：Ctrl+1でツールバーを消したとき</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2843</span>
+    <a class="title" href="2843.html#2843">バグ：Ctrl+1でツールバーを消したとき</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=2843>
+    <span class="no">[2843]</span>
+    <a class="title" href="#2843">バグ：Ctrl+1でツールバーを消したとき</a>
+    <span class="author">みく</span>
+    <time datetime="2003-06-12T20:44:48">2003年06月12日 20:44</time></h1>
+    <div class="body"><br>ファンクションキーを上に表示しているときに、<br>Ctrl+1でツールバーを非表示にしたとき、<br>表示が崩れます。<br><br>CFuncKeyWnd.cpp:OnSize()の最後で<br>::InvalidateRect( m_hWnd, NULL, TRUE );<br></div></section>
+    </li></ul></body></html>

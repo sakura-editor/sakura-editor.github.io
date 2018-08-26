@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>列のジャンプは出来るのか?</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">381</span>
+    <a class="title" href="381.html#381">列のジャンプは出来るのか?</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">382</span>
+    <a class="title" href="381.html#382">Re: 列のジャンプは出来るのか?</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">384</span>
+    <a class="title" href="381.html#384">Re2: 列のジャンプは出来るのか?</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">383</span>
+    <a class="title" href="381.html#383">RE: 列のジャンプは出来るのか?</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=381>
+    <span class="no">[381]</span>
+    <a class="title" href="#381">列のジャンプは出来るのか?</a>
+    <span class="author">tokuya</span>
+    <time datetime="2007-07-26T13:06:36">2007年07月26日 13:06</time></h1>
+    <div class="body">はじめまして<br><br>マクロ初心者なので質問させてください。<br><br>複数行あるファイルから500バイト目に数値の"8"がある場合<br>どうかをファイルの先頭から最後までループ処理で行いたいのですが<br>可能なのでしょうか？<br><br>以下のように正規表現検索を行う事も出来るのですが<br>ファイルが全て半角文字である必要があり、（全角文字があるとHITしない）<br>私的にはマクロでループしならが500Byte目を比較するしかないのかと考えております。<br><br>正規表現検索：[\s|\S]{499}8<br><br>どうかよろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=382>
+    <span class="no">[382]</span>
+    <a class="title" href="#382">Re: 列のジャンプは出来るのか?</a>
+    <span class="author">しみづ</span>
+    <time datetime="2007-07-28T16:29:41">2007年07月28日 16:29</time></h1>
+    <div class="body"><br>&gt;複数行あるファイルから500バイト目に数値の"8"がある場合<br>&gt;どうかをファイルの先頭から最後までループ処理で行いたいのですが<br>&gt;可能なのでしょうか？<br><br>　自分で試してみない理由は何ですか？<br></div></section>
+    <ul><li><section><h1 id=384>
+    <span class="no">[384]</span>
+    <a class="title" href="#384">Re2: 列のジャンプは出来るのか?</a>
+    <span class="author">しみづ</span>
+    <time datetime="2007-07-29T13:16:11">2007年07月29日 13:16</time></h1>
+    <div class="body"><br>　ああ、そうか。意味を誤解していたようです。題名の機能があるか聞きたかったわけですか。<br>　私は同じことは「カーソル右移動」と「特殊文字の展開（現在の物理桁位置(先頭からのバイト数)）」のループでできそうだと思ったので、なぜわかってて試さないのだろうと疑問に思っていました。<br>　「500バイト目に数値の"8"」はファイルに一つあるのではなくて、各行の頭から「500バイト目に数値の"8"」のある行が複数あって、行の処理を「ループ」することを言っていたのですね。<br></div></section>
+    </li></ul></li><li><section><h1 id=383>
+    <span class="no">[383]</span>
+    <a class="title" href="#383">RE: 列のジャンプは出来るのか?</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-28T23:04:00">2007年07月28日 23:04</time></h1>
+    <div class="body">バイト指定でジャンプする機能は今のところ無いですね．<br>ただ，文字コード変換が入るとバイト位置はずれてしまいますので，テキストエディタの機能として一貫性のあるものが作れるかどうかが微妙です．<br><br>正規表現による対応は，1行にしかマッチしないので無理だと思います．<br><br>Perlならファイルを開いて500byteシークして読めば簡単に判定できますが...<br></div></section>
+    </li></ul></li></ul></body></html>

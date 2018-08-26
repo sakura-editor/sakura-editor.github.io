@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ウインドウサイズが小さくなるバグ再び</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1107</span>
+    <a class="title" href="1107.html#1107">ウインドウサイズが小さくなるバグ再び</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1113</span>
+    <a class="title" href="1107.html#1113">Re:ウインドウサイズが小さくなるバグ再び</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1123</span>
+    <a class="title" href="1107.html#1123">Re2:ウインドウサイズが小さくなるバグ再び</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1125</span>
+    <a class="title" href="1107.html#1125">Re3:ウインドウサイズが小さくなるバグ再び</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1107>
+    <span class="no">[1107]</span>
+    <a class="title" href="#1107">ウインドウサイズが小さくなるバグ再び</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-08T22:56:58">2002年01月08日 22:56</time></h1>
+    <div class="body">ウインドウサイズのバグを修正しました。<br>どうも、原作＆私の両方ともRECTの意味を<br>間違ってたみたいです。RECTは画面の四隅を<br>指すものであって、width,heightとは違う<br>ってことで、bottom,rightを-1するのは間違<br>いでした。<br>CEditWnd.cpp:Create()関数の該当部分を<br>切り出したものをeGroupsに置きました。<br></div></section>
+    <ul><li><section><h1 id=1113>
+    <span class="no">[1113]</span>
+    <a class="title" href="#1113">Re:ウインドウサイズが小さくなるバグ再び</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-08T23:49:48">2002年01月08日 23:49</time></h1>
+    <div class="body">▼ みくさん<br>&gt; ウインドウサイズのバグを修正しました。<br>&gt; どうも、原作＆私の両方ともRECTの意味を<br>&gt; 間違ってたみたいです。RECTは画面の四隅を<br>&gt; 指すものであって、width,heightとは違う<br>&gt; ってことで、bottom,rightを-1するのは間違<br>&gt; いでした。<br>&gt; CEditWnd.cpp:Create()関数の該当部分を<br>&gt; 切り出したものをeGroupsに置きました。<br><br>そうそう、ここでデスクトップからはみ出ないように調整する必要ってあります？<br>一般掲示板のほうで、デスクトップよりも微妙に大きくしているのに、勝手に少し小さくなるって報告がありましたが、<br>デスクトップからはみ出ないように調整しているからですよね？<br>で、試しにこの調整部分をざっくりはずしてみたんですが、ぜんぜん不都合が無いと思えたんです。<br><br>調整部分を削除してもいいんじゃないかと思うんですが。。。</div></section>
+    <ul><li><section><h1 id=1123>
+    <span class="no">[1123]</span>
+    <a class="title" href="#1123">Re2:ウインドウサイズが小さくなるバグ再び</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-09T19:02:29">2002年01月09日 19:02</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; そうそう、ここでデスクトップからはみ出ないように調整する必要ってあります？<br><br>サイズや位置を保存している場合は制御しないとまずいです。<br>もし改造するなら、微妙にはみ出しても良いようにもっと賢く<br>するくらいでしょうか。<br>Win終了時には位置情報の取得ででたらめな値が返ることが<br>数百回に一度くらいの確率であります。Long値なので、画面<br>外の座標やとんでもなく大きな画面サイズになることがあり<br>ます。iniをなおせる人はいいですが...<br></div></section>
+    <ul><li><section><h1 id=1125>
+    <span class="no">[1125]</span>
+    <a class="title" href="#1125">Re3:ウインドウサイズが小さくなるバグ再び</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-09T21:51:01">2002年01月09日 21:51</time></h1>
+    <div class="body">▼ みくさん<br>&gt; ▼ やざきさん<br>&gt; &gt; そうそう、ここでデスクトップからはみ出ないように調整する必要ってあります？<br>&gt; <br>&gt; サイズや位置を保存している場合は制御しないとまずいです。<br>&gt; もし改造するなら、微妙にはみ出しても良いようにもっと賢く<br>&gt; するくらいでしょうか。<br>&gt; Win終了時には位置情報の取得ででたらめな値が返ることが<br>&gt; 数百回に一度くらいの確率であります。Long値なので、画面<br>&gt; 外の座標やとんでもなく大きな画面サイズになることがあり<br>&gt; ます。iniをなおせる人はいいですが...<br><br>うひー。そうなんですか。じゃぁ「調整しない」案は却下ですねぇ。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

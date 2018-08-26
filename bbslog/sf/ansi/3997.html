@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>マクロの機能を充実させていので</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3997</span>
+    <a class="title" href="3997.html#3997">マクロの機能を充実させていので</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3998</span>
+    <a class="title" href="3997.html#3998">Re:マクロの機能を充実させていので</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3999</span>
+    <a class="title" href="3997.html#3999">Re2:マクロの機能を充実させていので</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4001</span>
+    <a class="title" href="3997.html#4001">Re3:マクロの機能を充実させていので</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4010</span>
+    <a class="title" href="3997.html#4010">Re4:マクロの機能を充実させていので</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4002</span>
+    <a class="title" href="3997.html#4002">Re3:マクロの機能を充実させtaいので</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4003</span>
+    <a class="title" href="3997.html#4003">Re3:マクロの機能を充実させたいので</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3997>
+    <span class="no">[3997]</span>
+    <a class="title" href="#3997">マクロの機能を充実させていので</a>
+    <span class="author">maru</span>
+    <time datetime="2005-07-31T01:11:24">2005年07月31日 01:11</time></h1>
+    <div class="body">マクロの機能充実のため<br>エディタのステータスなどを取得する処理を<br>追加したいと思っています。<br><br>ブリーフケース：macro_test.diff<br><br>今後こんな感じでマクロの強化を推進<br>したいのですが、いかんせん足軽ふぜいのため<br>不適切な実装があるかもしれません。<br><br>どなたかのコメントを頂きたいです。</div></section>
+    <ul><li><section><h1 id=3998>
+    <span class="no">[3998]</span>
+    <a class="title" href="#3998">Re:マクロの機能を充実させていので</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-07-31T08:51:35">2005年07月31日 08:51</time></h1>
+    <div class="body">▼ maruさん<br>&gt; マクロの機能充実のため<br>&gt; エディタのステータスなどを取得する処理を<br>&gt; 追加したいと思っています。<br>足軽２号です、個人的にはタイプ別設定を取得/設定したいとか思ってますが、どうでしょう?<br><br>中でもタブサイズをファイル別に変更したいと思ったことがよくありましたので<br>これだけは勝手に実装してます、取り込んでもらえれば幸いです<br><br><a href=http://qwerty.s2.xrea.com/data/tab-size.diff target=_top><nobr>http://<wbr>qwerty.<wbr>s2.<wbr>xrea.<wbr>com/<wbr>data/<wbr>tab-<wbr>size.<wbr>diff</nobr></a><br><br>↓マクロで使うとこういう風に使えます<br><a href=http://qwerty.s2.xrea.com/data/tabsize2to4to8.vbs.txt target=_top><nobr>http://<wbr>qwerty.<wbr>s2.<wbr>xrea.<wbr>com/<wbr>data/<wbr>tabsize2<wbr>to4to8.<wbr>vbs.<wbr>txt</nobr></a><br><a href=http://qwerty.s2.xrea.com/data/tabsize4to8.vbs.txt target=_top><nobr>http://<wbr>qwerty.<wbr>s2.<wbr>xrea.<wbr>com/<wbr>data/<wbr>tabsize4<wbr>to8.<wbr>vbs.<wbr>txt</nobr></a><br><br># 欲を言えばファイルを開いた時自動的に呼ばれるマクロ/関数なんかがほしいですけど、、、^^;</div></section>
+    <ul><li><section><h1 id=3999>
+    <span class="no">[3999]</span>
+    <a class="title" href="#3999">Re2:マクロの機能を充実させていので</a>
+    <span class="author">maru</span>
+    <time datetime="2005-07-31T23:44:31">2005年07月31日 23:44</time></h1>
+    <div class="body">▼ (全略)さん<br>&gt; タイプ別設定を取得/設定したいとか思ってますが、<br>&gt; どうでしょう?<br>必要性は感じるのですが、何を返せば良いかわかりません。<br>ひとつのタイプに対して拡張子が複数存在するので<br>拡張子は不適切だと思います。<br>タイプ別の配列番号や「テキスト」「C/C++」とか名称を<br>取得しても直接は利用できず、かえって不便かも。<br><br><br>&gt; # 欲を言えばファイルを開いた時自動的に<br>&gt; 呼ばれるマクロ/関数なんかがほしいですけど、、、^^;<br>同感です。<br><br>とりあえず、前回のを少し修正したものに<br>(前略)様のtab-size.diffをひとつにまとめて<br>ブリーフケースにアップしました。<br>AddMacro0731.diff<br></div></section>
+    <ul><li><section><h1 id=4001>
+    <span class="no">[4001]</span>
+    <a class="title" href="#4001">Re3:マクロの機能を充実させていので</a>
+    <span class="author">maru</span>
+    <time datetime="2005-08-07T01:04:40">2005年08月07日 01:04</time></h1>
+    <div class="body">ちまちまと機能追加しています。<br>ブリーフケース：AddMacro1541.diff<br><br>このパッチで追加される機能は以下のとおり。<br>・S_TabSizeChg<br>・S_IsTextSelected<br>     0:非選択<br>     1:選択状態<br>     2:矩形選択状態<br>・S_GetSelLineFrom<br>・S_GetSelColmFrom<br>・S_GetSelLineTo<br>・S_GetSelColmTo<br>・S_IsInsMode<br>     true :挿入モード<br>     false:上書きモード<br>・S_GetCharCode<br>     0:SJIS<br>     1:JIS<br>     2:EUC<br>     (以下省略)<br>・S_GetLineCode<br>     0:CRLF<br>     1:CR<br>     2:LF<br>・S_IsEnableUndo<br>・S_IsEnableRedo<br><br>いくつかはExpandParameterにまとめたほうが<br>良いのかも知れませんが。<br>取り込んでいただけると幸いです。</div></section>
+    <ul><li><section><h1 id=4010>
+    <span class="no">[4010]</span>
+    <a class="title" href="#4010">Re4:マクロの機能を充実させていので</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-08-14T03:54:07">2005年08月14日 03:54</time></h1>
+    <div class="body">動作確認しましたので取り込ませて頂きます．(PPAだけですが...)<br>が，ちょっと名前を変えました．<br><br>&gt;・S_TabSizeChg<br>他の関数が動詞＋目的語の順になっているのでこれもS_ChangeTabWidthに<br><br>&gt;・S_IsEnableUndo<br>&gt;・S_IsEnableRedo<br>Enableだと制御パラメータのようなので，Possibleに<br>これは元々の関数を名付けた人が悪いんですが...<br><br>&gt;ExpandParameter<br>ExpandParameterでは結果が文字列なので，数値を文字列に変換してまた数値に戻す必要があり効率が悪いです．<br>直接数値で値をとれる方が望ましいと思います．<br></div></section>
+    </li></ul></li><li><section><h1 id=4002>
+    <span class="no">[4002]</span>
+    <a class="title" href="#4002">Re3:マクロの機能を充実させtaいので</a>
+    <span class="author">maru</span>
+    <time datetime="2005-08-07T01:22:13">2005年08月07日 01:22</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ▼ (全略)さん<br>&gt; &gt; タイプ別設定を取得/設定したいとか思ってますが、<br>&gt; &gt; どうでしょう?<br>&gt; 必要性は感じるのですが、何を返せば良いかわかりません。<br>&gt; ひとつのタイプに対して拡張子が複数存在するので<br>&gt; 拡張子は不適切だと思います。<br>&gt; タイプ別の配列番号や「テキスト」「C/C++」とか名称を<br>&gt; 取得しても直接は利用できず、かえって不便かも。<br>&gt; <br>&gt; <br>&gt; &gt; # 欲を言えばファイルを開いた時自動的に<br>&gt; &gt; 呼ばれるマクロ/関数なんかがほしいですけど、、、^^;<br>&gt; 同感です。<br>&gt; <br>&gt; とりあえず、前回のを少し修正したものに<br>&gt; (前略)様のtab-size.diffをひとつにまとめて<br>&gt; ブリーフケースにアップしました。<br>&gt; AddMacro0731.diff</div></section>
+    </li><li><section><h1 id=4003>
+    <span class="no">[4003]</span>
+    <a class="title" href="#4003">Re3:マクロの機能を充実させたいので</a>
+    <span class="author">maru</span>
+    <time datetime="2005-08-07T01:34:09">2005年08月07日 01:34</time></h1>
+    <div class="body">&gt;&gt;4002<br>削除キー設定せずに誤投稿してしまいました。<br>すいません。<br>----------------------------------------<br>-<br>編集中のすべてのウインドウにキーマクロの実行<br>する機能をつけてみました。<br>「すべて上書き保存」の模倣です。<br>ブリーフケース：AllWinMacro1541.diff<br><br>この機能があると何が嬉しいのかというと<br>複数のファイルを一括して置換したり<br>なんらかの変換をまとめておこなったり<br>などの操作を手軽に実現するためのものです。<br><br>できればこちらも取り込んでいただきたいです。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

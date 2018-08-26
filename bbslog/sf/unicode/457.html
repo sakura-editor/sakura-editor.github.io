@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Chg) インポート・エクスポートファイルの仕様変更  </title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">457</span>
+    <a class="title" href="457.html#457">Commit報告:(Chg) インポート・エクスポートファイルの仕様変更  </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">461</span>
+    <a class="title" href="457.html#461">Re:Commit報告:(Chg) インポート・エクスポートファイルの仕様変更  </a></div>
+    </li><li><div class="list-title">
+    <span class="no">462</span>
+    <a class="title" href="457.html#462">Re:Commit報告:(Chg) インポート・エクスポートファイルの仕様変更  </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">466</span>
+    <a class="title" href="457.html#466">Re2:Commit報告:(Chg) インポート・エクスポートファイルの仕様変更  </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">467</span>
+    <a class="title" href="457.html#467">Re3:Commit報告:(Chg) インポート・エクスポートファイルの仕様変更  </a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=457>
+    <span class="no">[457]</span>
+    <a class="title" href="#457">Commit報告:(Chg) インポート・エクスポートファイルの仕様変更  </a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-01T07:13:06">2008年06月01日 07:13</time></h1>
+    <div class="body">リビジョン：<br>　rev1366<br><br>変更種別：<br>　インポート・エクスポートファイルの仕様変更<br><br>内容：<br>    カスタムメニュー設定ファイルの試用をsakura.iniに合わせた。<br>    sakura.iniのキー割り当て部をキー割り当てファイルに合わせた。<br>    キー割り当てファイルのVer.2（現行版）を読み込める様にした。<br><br>    カスタムメニュー設定ファイル、キー割り当てファイル を sakura.ini の一部を切り出したような形式にしました。<br>    （設定ファイルとiniファイルの読み書きルーチンを共用にしました）<br>    設定ファイルにはコマンド名を出力しsakura.iniにはコードで出力するようにしました。<br><br>    sakura.iniの仕様も変更しましたので後方互換性がなくなります。<br>    注意してください。</div></section>
+    <ul><li><section><h1 id=461>
+    <span class="no">[461]</span>
+    <a class="title" href="#461">Re:Commit報告:(Chg) インポート・エクスポートファイルの仕様変更  </a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-07T16:51:51">2008年06月07日 16:51</time></h1>
+    <div class="body">ソースコードを軽くレビューしました。局所的な観点では問題無いです（全体の流れは追えていません）。<br><br>インポート・エクスポートファイルはあんまり使ったことが無いので、動作検証の仕方もよくわかってないです。<br>お時間があるときで結構ですので、↓に仕様変更内容を軽く書いておいていただけると助かります。<br><a href=http://mofmof.nsf.tc/soft/sakura_unicode/index.php?%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%B target=_top><nobr>http://<wbr>mofmof.<wbr>nsf.<wbr>tc/<wbr>soft/<wbr>sakura_u<wbr>nicode/<wbr>index.<wbr>php?%<wbr>E3%<wbr>82%<wbr>A4%<wbr>E3%<wbr>83%<wbr>B3%<wbr>E3%<wbr>83%<wbr>9D%<wbr>E3%<wbr>83%<wbr>B</nobr></a><br>C%E3%83%88%E3%83%BB%E3%82%A8%E3%82%AF%E3<br>%82%B9%E3%83%9D%E3%83%BC%E3%83%88<br></div></section>
+    </li><li><section><h1 id=462>
+    <span class="no">[462]</span>
+    <a class="title" href="#462">Re:Commit報告:(Chg) インポート・エクスポートファイルの仕様変更  </a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-07T17:04:55">2008年06月07日 17:04</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt;     sakura.iniの仕様も変更しましたので後方互換性がなくなります。<br>&gt;     注意してください。<br><br>「前方互換性」ではなくてですか？<br>古いサクラエディタでは新しい形式の sakura.ini が読めない、という認識ですが、逆ですか？<br></div></section>
+    <ul><li><section><h1 id=466>
+    <span class="no">[466]</span>
+    <a class="title" href="#466">Re2:Commit報告:(Chg) インポート・エクスポートファイルの仕様変更  </a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-08T07:01:45">2008年06月08日 07:01</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; ▼ Uchiさん<br>&gt; &gt;     sakura.iniの仕様も変更しましたので後方互換性がなくなります。<br>&gt; &gt;     注意してください。<br>&gt; <br>&gt; 「前方互換性」ではなくてですか？<br>&gt; 古いサクラエディタでは新しい形式の sakura.ini が読めない、という認識ですが、逆ですか？<br><br>動作は、古いサクラエディタでは新しい形式のsakura.ini が読めない<br>という意味です。<br>逆に新しいバージョンでは旧sakura.iniを引継ぎことができるようにしています。<br><br>「後方互換性」ですが、私の勘違いです。</div></section>
+    <ul><li><section><h1 id=467>
+    <span class="no">[467]</span>
+    <a class="title" href="#467">Re3:Commit報告:(Chg) インポート・エクスポートファイルの仕様変更  </a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-08T07:13:09">2008年06月08日 07:13</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; ▼ kobakeさん<br>&gt; &gt; ▼ Uchiさん<br>&gt; &gt; &gt;     sakura.iniの仕様も変更しましたので後方互換性がなくなります。<br>&gt; &gt; &gt;     注意してください。<br>&gt; &gt; <br>&gt; &gt; 「前方互換性」ではなくてですか？<br>&gt; &gt; 古いサクラエディタでは新しい形式の sakura.ini が読めない、という認識ですが、逆ですか？<br>&gt; <br>&gt; 動作は、古いサクラエディタでは新しい形式のsakura.ini が読めない<br>&gt; という意味です。<br>&gt; 逆に新しいバージョンでは旧sakura.iniを引継ぎことができるようにしています。<br>&gt; <br>&gt; 「後方互換性」ですが、私の勘違いです。<br><br>ご説明ありがとうございます。認識が合っていて良かったです。<br><br>＃日本語の「前」「後」は文脈によって意味が間逆になるので紛らわしいですよね。。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

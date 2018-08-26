@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>「お気に入りの設定」バグ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2938</span>
+    <a class="title" href="2938.html#2938">「お気に入りの設定」バグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2945</span>
+    <a class="title" href="2938.html#2945">RE: 「お気に入りの設定」バグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2946</span>
+    <a class="title" href="2938.html#2946">Re2: 「お気に入りの設定」バグ</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2947</span>
+    <a class="title" href="2938.html#2947">Re:「お気に入りの設定」バグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2949</span>
+    <a class="title" href="2938.html#2949">Re2:「お気に入りの設定」バグ復旧の弊害？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2951</span>
+    <a class="title" href="2938.html#2951">Re3:「お気に入りの設定」バグ復旧の弊害？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2952</span>
+    <a class="title" href="2938.html#2952">Re4:「お気に入りの設定」バグ復旧の弊害？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2953</span>
+    <a class="title" href="2938.html#2953">Re5:「お気に入りの設定」バグ復旧の弊害？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2954</span>
+    <a class="title" href="2938.html#2954">Re6:「お気に入りの設定」バグ復旧の弊害？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2957</span>
+    <a class="title" href="2938.html#2957">Re7:「お気に入りの設定」バグ復旧の弊害？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2983</span>
+    <a class="title" href="2938.html#2983">Re2:「お気に入りの設定」バグ</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2938>
+    <span class="no">[2938]</span>
+    <a class="title" href="#2938">「お気に入りの設定」バグ</a>
+    <span class="author">くまた</span>
+    <time datetime="2003-05-17T15:56:20">2003年05月17日 15:56</time></h1>
+    <div class="body">1.3.9.0Vで追加された「お気に入りの設定」をメニューから選択後<br><br>「最近使ったGREPファイルの履歴が更新されました。<br>　設定中の情報をクリアし再表示しました。」<br><br>というメッセージが表示され、「ＯＫ」を押しても<br>同じメッセージが出続けます。<br>＃強制終了しないと抜けられません。<br><br>Windows 98 Second Editionで、この現象が発生したため<br>念のためにWindows2000(SP3適用)で試してみたところ<br>この現象は発生しませんでした。<br><br>関係のありそうなDLLのバージョンとタイムスタンプは以下のとおりです。<br>＃まだ足りないものがあるかもしれませんが、とりあえず。<br>Rsrc32.dll 4.10.1998(1999年5月5日 22:22:00)<br>USER32.DLL 4.10.2227(2000年4月21日 17:10:10)<br>COMDLG32.DLL 4.72.3510.2300(1999年5月5日 22:22:00)<br>ADVAPI32.DLL 4.80.1675(1999年5月6日 7:22:00)<br>OLE32.DLL 4.71.2900(1998年9月1日 10:56:06)<br>OLEAUT32.DLL 2.40.4277(1999年4月24日 13:11:50)<br>COMCTL32.DLL 5.50.4807.2300(2001年8月1日)<br>IMM32.DLL 4.10.2222(1999年5月5日 22:22:00)<br></div></section>
+    <ul><li><section><h1 id=2945>
+    <span class="no">[2945]</span>
+    <a class="title" href="#2945">RE: 「お気に入りの設定」バグ</a>
+    <span class="author">みく</span>
+    <time datetime="2003-05-19T19:32:08">2003年05月19日 19:32</time></h1>
+    <div class="body"><br>バグ報告ありがとうございます。<br>本件を修正(開発記事2778)してみましたので次期版<br>(そのうち公開されますのでしばらくお待ちください)<br>で確認してみてください。<br>また、動作報告をしていただければ幸いです。<br></div></section>
+    <ul><li><section><h1 id=2946>
+    <span class="no">[2946]</span>
+    <a class="title" href="#2946">Re2: 「お気に入りの設定」バグ</a>
+    <span class="author">くまた</span>
+    <time datetime="2003-05-20T00:25:25">2003年05月20日 00:25</time></h1>
+    <div class="body">▼ みくさん<br>&gt; 本件を修正(開発記事2778)してみましたので次期版<br>&gt; (そのうち公開されますのでしばらくお待ちください)<br>&gt; で確認してみてください。<br>&gt;また、動作報告をしていただければ幸いです。<br>さっそくの対応、ありがとうございます。<br><br>1.3.9.1にバージョンアップしても同じ現象が出るため<br>一度アンインストールした後で、最新パッケージ(1.3.6.3)を<br>再インストールして、1.3.9.1にバージョンアップしたところ<br>この現象は出なくなりました。<br>何度か試してみましたが、特に問題はないようです。<br>＃バージョンアップの仕方か、あるいはファイルの有無か…<br><br>次期版が公開されたら、また動作報告させていただきます。<br></div></section>
+    </li></ul></li><li><section><h1 id=2947>
+    <span class="no">[2947]</span>
+    <a class="title" href="#2947">Re:「お気に入りの設定」バグ</a>
+    <span class="author">うえりん</span>
+    <time datetime="2003-05-20T15:37:24">2003年05月20日 15:37</time></h1>
+    <div class="body">▼ くまたさん<br>&gt; 1.3.9.0Vで追加された「お気に入りの設定」をメニューから選択後<br>&gt; <br>&gt; 「最近使ったGREPファイルの履歴が更新されました。<br>&gt; 　設定中の情報をクリアし再表示しました。」<br>&gt; <br>&gt; というメッセージが表示され、「ＯＫ」を押しても<br>&gt; 同じメッセージが出続けます。<br>&gt; ＃強制終了しないと抜けられません。<br><br>私も同じ現象が出ました。 <br>1.3.9.0V、1.3.9.1V<br><br>が、1.3.9.1Vにおいて、sakuraの常駐も含めてすべて終了し、<br>sakura.iniの[Grep]セクション内のキーを以下の状態にして<br>再起動すると、現象は起こらなくなりましたよ。<br><br>[Grep]<br>_GREPFILE_Counts=0<br>_GREPFOLDER_Counts=0<br></div></section>
+    <ul><li><section><h1 id=2949>
+    <span class="no">[2949]</span>
+    <a class="title" href="#2949">Re2:「お気に入りの設定」バグ復旧の弊害？</a>
+    <span class="author">うえりん</span>
+    <time datetime="2003-05-20T17:10:11">2003年05月20日 17:10</time></h1>
+    <div class="body">▼ うえりん<br>&gt; 1.3.9.1Vにおいて、sakuraの常駐も含めてすべて終了し、<br>&gt; sakura.iniの[Grep]セクション内のキーを以下の状態にして<br>&gt; 再起動すると、現象は起こらなくなりましたよ。<br>&gt; <br>&gt; [Grep]<br>&gt; _GREPFILE_Counts=0<br>&gt; _GREPFOLDER_Counts=0<br><br>しかしその弊害が現れました。<br>強調キーワードが色づけされなくなったのです。<br><br>その他の現象としては、メニューの「共通設定」で<br>「強調キーワード」タブの「セット名」はあるのに<br>その下の強調キーワードリストが空になります。<br><br>INIファイルにはあるのに、なぜでしょう？<br></div></section>
+    <ul><li><section><h1 id=2951>
+    <span class="no">[2951]</span>
+    <a class="title" href="#2951">Re3:「お気に入りの設定」バグ復旧の弊害？</a>
+    <span class="author">みく</span>
+    <time datetime="2003-05-20T20:30:39">2003年05月20日 20:30</time></h1>
+    <div class="body"><br>sakura.ini(強調キーワード部分)はバイナリ情報になっているので、<br>バイナリを扱えないエディタで保存すると壊れます。<br></div></section>
+    <ul><li><section><h1 id=2952>
+    <span class="no">[2952]</span>
+    <a class="title" href="#2952">Re4:「お気に入りの設定」バグ復旧の弊害？</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-05-20T22:13:05">2003年05月20日 22:13</time></h1>
+    <div class="body">&gt;sakura.ini(強調キーワード部分)はバイナリ情報になっているので、<br>&gt;バイナリを扱えないエディタで保存すると壊れます。<br>私も先日やってしまいました．<br>強調キーワード周辺を削除すればデフォルト値で復活します．<br></div></section>
+    <ul><li><section><h1 id=2953>
+    <span class="no">[2953]</span>
+    <a class="title" href="#2953">Re5:「お気に入りの設定」バグ復旧の弊害？</a>
+    <span class="author">みく</span>
+    <time datetime="2003-05-20T22:20:27">2003年05月20日 22:20</time></h1>
+    <div class="body"><br>強調キーワードのところは 0 を区切り記号にしているので問題が起こるので、<br>区切り記号をキーワードに使われない TAB 記号とかに修正すればOKだと思います。<br><br>＃後はキー割り当てのエクスポート・インポートだけがバイナリだったような。<br></div></section>
+    <ul><li><section><h1 id=2954>
+    <span class="no">[2954]</span>
+    <a class="title" href="#2954">Re6:「お気に入りの設定」バグ復旧の弊害？</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-05-20T23:17:48">2003年05月20日 23:17</time></h1>
+    <div class="body">&gt;区切り記号をキーワードに使われない TAB 記号とかに修正すればOKだと思います。<br>たしかに．TABなら大抵のエディタでは問題ないでしょうからね．<br></div></section>
+    <ul><li><section><h1 id=2957>
+    <span class="no">[2957]</span>
+    <a class="title" href="#2957">Re7:「お気に入りの設定」バグ復旧の弊害？</a>
+    <span class="author">うえりん</span>
+    <time datetime="2003-05-21T09:06:38">2003年05月21日 09:06</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;区切り記号をキーワードに使われない TAB 記号とかに修正すればOKだと思います。<br>&gt; たしかに．TABなら大抵のエディタでは問題ないでしょうからね．<br><br>iniファイルにバイナリの箇所があったなんて...<br>ぜひ区切り記号を変えていただきたいです。<br><br>ご教示通り、バイナリエディタで[Grep]セクションを編集し<br>なおしたら、強調キーワードの色づけが戻りました。<br><br>ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=2983>
+    <span class="no">[2983]</span>
+    <a class="title" href="#2983">Re2:「お気に入りの設定」バグ</a>
+    <span class="author">くまた</span>
+    <time datetime="2003-05-29T17:53:16">2003年05月29日 17:53</time></h1>
+    <div class="body">返事が遅れてしまいました。<br><br>▼ うえりんさん<br>&gt; sakura.iniの[Grep]セクション内のキーを以下の状態にして<br>&gt; 再起動すると、現象は起こらなくなりましたよ。<br>&gt; <br>&gt; [Grep]<br>&gt; _GREPFILE_Counts=0<br>&gt; _GREPFOLDER_Counts=0<br>いまのところ現象が出ていませんが、再発したら試してみたいと思います。<br>情報、ありがとうございます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>FileSaveAsの使い方</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2752</span>
+    <a class="title" href="2752.html#2752">FileSaveAsの使い方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2753</span>
+    <a class="title" href="2752.html#2753">RE: FileSaveAsの使い方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2754</span>
+    <a class="title" href="2752.html#2754">RE2: FileSaveAsの使い方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2755</span>
+    <a class="title" href="2752.html#2755">Re3: FileSaveAsの使い方</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2756</span>
+    <a class="title" href="2752.html#2756">Re3: FileSaveAsの使い方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2757</span>
+    <a class="title" href="2752.html#2757">Re4: FileSaveAsの使い方</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2759</span>
+    <a class="title" href="2752.html#2759">名前を付けて保存、名前の変更、成功です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2760</span>
+    <a class="title" href="2752.html#2760">RE: 名前を付けて保存、名前の変更、成功です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2762</span>
+    <a class="title" href="2752.html#2762">RE2: 名前を付けて保存、名前の変更、成功です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2764</span>
+    <a class="title" href="2752.html#2764">Re3: 名前を付けて保存、名前の変更、成功です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2767</span>
+    <a class="title" href="2752.html#2767">Re4: 名前を付けて保存、名前の変更、成功です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2768</span>
+    <a class="title" href="2752.html#2768">Re5: 名前を付けて保存、名前の変更、成功です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2777</span>
+    <a class="title" href="2752.html#2777">Re6: 名前を付けて保存、名前の変更、成功です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2779</span>
+    <a class="title" href="2752.html#2779">Re7: gomiです</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2752>
+    <span class="no">[2752]</span>
+    <a class="title" href="#2752">FileSaveAsの使い方</a>
+    <span class="author">tsune</span>
+    <time datetime="2003-02-24T20:06:42">2003年02月24日 20:06</time></h1>
+    <div class="body">　初めまして。tsuneと申します。<br>　最近、サクラエディタを使い出しました。なかなかよい使い勝手だと思います。フリーとはありがたいですね。<br>　さて、マクロを使って、「名前を付けて保存」をしたいのですが、<br>「文法エラー」<br>となってうまくいきません。<br>　newnameを文字変数に指定して、編集中のファイル名を取り込み、<br>これに特定の文字を付加して新しいファイル名としたいのです。<br>以下のように記載しましたが、この行が「文法エラー」になります。<br>引数の指定方法が多分間違っているのだと思いますが、<br>関連ページであちこち調べても、答えが見つかりません。<br>　FileSaveAs(newname);<br><br>　ご存知の方、どうかお教えください。<br><br>　なお、ＰＰＡのExecを利用して、ファイル名を変更するのでも同じ目的は達成できるのですが、これもできません。<br>　具体的には、編集中のファイル名(フルパス)をfilenameという名前の変数に取り込み、<br>　これの拡張子(htm)をhtmlに変更したいのです。<br>　宜しくお願いします。<br></div></section>
+    <ul><li><section><h1 id=2753>
+    <span class="no">[2753]</span>
+    <a class="title" href="#2753">RE: FileSaveAsの使い方</a>
+    <span class="author">すい</span>
+    <time datetime="2003-02-24T22:12:20">2003年02月24日 22:12</time></h1>
+    <div class="body">&gt;　newnameを文字変数に指定して、編集中のファイル名を取り込み、<br>&gt;これに特定の文字を付加して新しいファイル名としたいのです。<br>&gt;以下のように記載しましたが、この行が「文法エラー」になります。<br>&gt;引数の指定方法が多分間違っているのだと思いますが、<br>&gt;関連ページであちこち調べても、答えが見つかりません。<br>&gt;　FileSaveAs(newname);<br><br>FileSaveAs じゃ駄目でやんす。PPA の中では S_FileSaveAs でやんす。<br>みな機能名称の先頭に S_ が付くでやんす。<br><br>先頭の S_ の有無が PPA側の機能なのかサクラエディタ側の機能なのかの<br>判定材料となっているので、S_ 無しで FileSaveAs と出てくると<br>「PPA の機能中の FileSaveAs」と解釈して実行され、<br>そんな物無い → 文法エラー です。<br><br>あと、引数などの点でも文法ミスってますね、確かに。＜↓仕様＞<br>----------<br>S_FileSaveAs /// void  S_FileSaveAs ( S1 ， i1 ， i2 ) ；<br>名前を付けて保存<br><br>S1：文字列：保存するファイル名<br><br>i1：整数数値：文字コードセット {<br>    0：Shift_JIS<br>    1：JIS<br>    2：EUC<br>    3：Unicode<br>    4：UTF-8<br>    5：UTF-7<br>    6：UnicodeBE<br>}<br><br>i2：整数数値：改行コード {<br>    0：変更しない<br>    1：CRLF<br>    2：LF<br>    3：CR<br>}<br>----------<br>&gt;　なお、ＰＰＡのExecを利用して、ファイル名を変更するのでも同じ目的は達成できるのですが、これもできません。<br>&gt;　具体的には、編集中のファイル名(フルパス)をfilenameという名前の変数に取り込み、<br>&gt;　これの拡張子(htm)をhtmlに変更したいのです。<br><br>Exec は「外部の実行プログラムを起動する」という物です。<br>ファイル名の変更をするなら「ファイル名を変更するプログラム」を指定<br>しなくてはなりません。そういう機能を持つプログラム(実行ファイル)を<br>用意して path が通っている所に置いておかなければ駄目です。<br><br>Windows 標準であれば command.com (Windows95系)や cmd.exe (WindowsNT系)<br>を指定して実行する事になりますね。<br><br>あと、「ファイルをサクラエディタで開いたままファイル名を変更する」<br>は無理かと。排他制御でロックされているでしょ。（デフォルト設定で）<br>手順としては、<br>1.ファイルを閉じて(無題) - S_FileClose();<br>2.ファイル名を変更       - Exec('command.com','/c "'+oldname + '" "'+ newname + '"' , True);<br>3.新しいファイル名のファイルを開く - S_FileOpen(newname);<br>という処理になるハズ。<br></div></section>
+    <ul><li><section><h1 id=2754>
+    <span class="no">[2754]</span>
+    <a class="title" href="#2754">RE2: FileSaveAsの使い方</a>
+    <span class="author">すい</span>
+    <time datetime="2003-02-24T22:19:27">2003年02月24日 22:19</time></h1>
+    <div class="body">&gt;&gt;　なお、ＰＰＡのExecを利用して、ファイル名を変更するのでも同じ目的は達成できるのですが、これもできません。<br>&gt;&gt;　具体的には、編集中のファイル名(フルパス)をfilenameという名前の変数に取り込み、<br>&gt;&gt;　これの拡張子(htm)をhtmlに変更したいのです。<br>&gt;<br>&gt;手順としては、<br>&gt;1.ファイルを閉じて(無題) - S_FileClose();<br>&gt;2.ファイル名を変更       - Exec('command.com','/c "'+oldname + '" "'+ newname + '"' , True);<br>&gt;3.新しいファイル名のファイルを開く - S_FileOpen(newname);<br>&gt;という処理になるハズ。<br>↑これ、↓こんなんでよろし？<br>----------<br>// 実行には PPA.DLL が必須です。<br>// TAB = 4<br><br>var&#9;&#9;// 変数を確保する場所<br>&#9;oldname,newname:String;&#9;&#9;// 文字列変数を用意<br>&#9;ext:String;&#9;&#9;&#9;&#9;&#9;// 文字列変数を用意<br>&#9;CRLF:String;&#9;&#9;&#9;&#9;// Debug 用 文字列変数を用意<br>&#9;pt:Integer;&#9;&#9;&#9;&#9;&#9;// 整数数値変数を用意<br>begin&#9;// ここより処理内容の記述<br>&#9;CRLF := '<br>';<br>&#9;oldname := S_GetFilename();&#9;&#9;// ファイル名を取得する。<br><br>&#9;// ↓ファイル名末尾 4文字を取り出し、英小文字に変換して文字列変数 ext へ取り込む<br>&#9;ext := LowerCase( Copy(oldname , Length(oldname)-3 ,4) );<br><br>&#9;if ( ext = '.htm' )&#9;then&#9;// 拡張子が .htm なら<br>&#9;begin<br>&#9;&#9;// 拡張子を変更する。<br>&#9;&#9;newname := Delete(oldname , Length(oldname)-3 ,4) + '.html';<br><br>&#9;&#9;// ファイル名からディレクトリ部分を削除する。<br>&#9;&#9;repeat<br>&#9;&#9;&#9;pt := Pos('\',newname);&#9;&#9;&#9;&#9;// pt := '\' の位置<br>&#9;&#9;&#9;newname := Delete(newname,1,pt);&#9;// newname := 先頭～'\' を削除した文字列<br>&#9;&#9;until( pt = 0 );&#9;// '\' が見つからなかった( pt == 0 )ら、ループ脱出<br><br>&#9;&#9;MessageBox( 'Old：' + oldname + CRLF + 'New：' + newname , 'Debug' , 0 );<br><br>&#9;&#9;S_FileClose();&#9;// 閉じて(無題)<br>&#9;&#9;Exec('command.com' , '/c ren "'+oldname + '" "'+ newname + '"' , True);&#9;// for Win95系<br>&#9;&#9;S_FileOpen(newname);<br>&#9;end;<br>end;<br>----------<br></div></section>
+    <ul><li><section><h1 id=2755>
+    <span class="no">[2755]</span>
+    <a class="title" href="#2755">Re3: FileSaveAsの使い方</a>
+    <span class="author">tsune</span>
+    <time datetime="2003-02-24T23:59:33">2003年02月24日 23:59</time></h1>
+    <div class="body">▼ すいさん<br>&gt; &gt;&gt;　なお、ＰＰＡのExecを利用して、ファイル名を変更するのでも同じ目的は達成できるのですが、これもできません。<br>&gt; &gt;&gt;　具体的には、編集中のファイル名(フルパス)をfilenameという名前の変数に取り込み、<br>&gt; &gt;&gt;　これの拡張子(htm)をhtmlに変更したいのです。<br>&gt; &gt;<br>&gt; &gt;手順としては、<br>&gt; &gt;1.ファイルを閉じて(無題) - S_FileClose();<br>&gt; &gt;2.ファイル名を変更       - Exec('command.com','/c "'+oldname + '" "'+ newname + '"' , True);<br>&gt; &gt;3.新しいファイル名のファイルを開く - S_FileOpen(newname);<br>&gt; &gt;という処理になるハズ。<br>&gt; ↑これ、↓こんなんでよろし？<br>&gt; ----------<br>&gt; // 実行には PPA.DLL が必須です。<br>&gt; // TAB = 4<br>&gt; <br>&gt; var&#9;&#9;// 変数を確保する場所<br>&gt; &#9;oldname,newname:String;&#9;&#9;// 文字列変数を用意<br>&gt; &#9;ext:String;&#9;&#9;&#9;&#9;&#9;// 文字列変数を用意<br>&gt; &#9;CRLF:String;&#9;&#9;&#9;&#9;// Debug 用 文字列変数を用意<br>&gt; &#9;pt:Integer;&#9;&#9;&#9;&#9;&#9;// 整数数値変数を用意<br>&gt; begin&#9;// ここより処理内容の記述<br>&gt; &#9;CRLF := '<br>&gt; ';<br>&gt; &#9;oldname := S_GetFilename();&#9;&#9;// ファイル名を取得する。<br>&gt; <br>&gt; &#9;// ↓ファイル名末尾 4文字を取り出し、英小文字に変換して文字列変数 ext へ取り込む<br>&gt; &#9;ext := LowerCase( Copy(oldname , Length(oldname)-3 ,4) );<br>&gt; <br>&gt; &#9;if ( ext = '.htm' )&#9;then&#9;// 拡張子が .htm なら<br>&gt; &#9;begin<br>&gt; &#9;&#9;// 拡張子を変更する。<br>&gt; &#9;&#9;newname := Delete(oldname , Length(oldname)-3 ,4) + '.html';<br>&gt; <br>&gt; &#9;&#9;// ファイル名からディレクトリ部分を削除する。<br>&gt; &#9;&#9;repeat<br>&gt; &#9;&#9;&#9;pt := Pos('\',newname);&#9;&#9;&#9;&#9;// pt := '\' の位置<br>&gt; &#9;&#9;&#9;newname := Delete(newname,1,pt);&#9;// newname := 先頭～'\' を削除した文字列<br>&gt; &#9;&#9;until( pt = 0 );&#9;// '\' が見つからなかった( pt == 0 )ら、ループ脱出<br>&gt; <br>&gt; &#9;&#9;MessageBox( 'Old：' + oldname + CRLF + 'New：' + newname , 'Debug' , 0 );<br>&gt; <br>&gt; &#9;&#9;S_FileClose();&#9;// 閉じて(無題)<br>&gt; &#9;&#9;Exec('command.com' , '/c ren "'+oldname + '" "'+ newname + '"' , True);&#9;// for Win95系<br>&gt; &#9;&#9;S_FileOpen(newname);<br>&gt; &#9;end;<br>&gt; end;<br>&gt; ----------</div></section>
+    </li><li><section><h1 id=2756>
+    <span class="no">[2756]</span>
+    <a class="title" href="#2756">Re3: FileSaveAsの使い方</a>
+    <span class="author">tsune</span>
+    <time datetime="2003-02-25T00:10:24">2003年02月25日 00:10</time></h1>
+    <div class="body">すいさん、早速の御教示ありがとうございます。<br><br>　勤め先に環境が用意してありますので、「名前を付けて保存」、「リネーム」とも、明日、早速試してみます。<br>　なお、先の投稿で、「FileSaveAs()」と書いたのは、頭に「S_」を書き忘れていました。「サクラエディタ応援ページ」でこのことは承知しており、作成中のマクロでもこれは守っていたのですが、この点の御指摘まで、お手を煩わせて申し訳ありませんでした。<br>　今回、御教示戴きました引数などの仕様は、どちらに行けば判るのでしょうか。<br>　よろしければ教えて戴けませんでしょうか。<br><br>　間違って、名前だけ入れて一件投稿してしまいました。<br>　削除キーの入力前だったので、削除もできません。<br>　管理人様、削除して戴けませんでしょうか。<br></div></section>
+    <ul><li><section><h1 id=2757>
+    <span class="no">[2757]</span>
+    <a class="title" href="#2757">Re4: FileSaveAsの使い方</a>
+    <span class="author">すい</span>
+    <time datetime="2003-02-25T00:54:12">2003年02月25日 00:54</time></h1>
+    <div class="body">&gt;　今回、御教示戴きました引数などの仕様は、どちらに行けば判るのでしょうか。<br><br>http://www.egroups.co.jp/files/sakura-editor/User/Data/<br>の<br>「サクラエディタ マクロ設定セット（強調キーワード,キーワードヘルプ辞書ファイル）作成途上版」<br>を見てください。<br>未だにサクラエディタ最新版バイナリに追いついていない状況の物のままですが．．．<br><br>最新版までに追加されている物については、サクラエディタのソースを<br>見て自分で解析するしか手はありません。<br><br>あと、ここの掲示板、「マクロ会議室（サクラエディタ マクロ掲示板）（サクラエディタ マクロBBS）」<br>もあるんですけど．．．(;^^;)<br># げんたさん の所 http://members.tripod.co.jp/sakura_editor/<br># では「マクロ会議室」となっていて、実際行ってみると<br># 「サクラエディタ マクロ掲示板」となっていて、html上の<br># ＜title＞～＜/title＞ は「サクラエディタ マクロBBS」<br># なので、「マクロ会議室」「サクラエディタ マクロ掲示板」<br># 「サクラエディタ マクロBBS」どれが正式名称なのかサッパリ？？？(笑)<br># なので。紹介が難しい。(;^^a<br></div></section>
+    </li><li><section><h1 id=2759>
+    <span class="no">[2759]</span>
+    <a class="title" href="#2759">名前を付けて保存、名前の変更、成功です</a>
+    <span class="author">tsune</span>
+    <time datetime="2003-02-25T01:12:44">2003年02月25日 01:12</time></h1>
+    <div class="body">すいさん、ありがとうございました。<br><br>　取り敢えず、手元の環境(Win2000)を簡単に整えて、試してみたところ、<br>「名前を付けて保存」と「古いファイルの削除」の組合せも、<br>「名前の変更」も両方うまくいきました。<br><br>　「古いファイルの削除」は、サクラエディタのマクロの紹介ページ<br>(と言ったら良いのでしょうか)のdelthis_20030103_20.cabから、<br>delfile.exeを利用させて戴きました。<br><br>　「名前の変更」の方は、ＯＳ違いでしたので、「command.com」を<br>「cmd.exe」に変えました。<br>　今回は、名前の変更内容が拡張子の変更だけでしたので、「*.html」で<br>よいみたいですね。<br>　でも、教えて戴きましたパス名の除去ルーチンは、これから色々と使い道が<br>ありそうです。<br><br>　まだ、未完ですが、お教え戴きました処理部分も含めて、作成中のマクロを<br>投稿させて戴きます。<br>　同じフォルダ内にあってリンクされている画像ファイルの名前を、半角空白を<br>詰めた形式に変更する必要があるため、HTMファイル内のリンク情報を書き換え、<br>書き換え済の識別用に拡張子を変更するものです。<br>　マクロの終了時にチャイムが鳴るのが少し気になりますけど、一応動作します。<br>　ファイルを順次に開く処理をどうするか、思案中・・・。<br><br>var<br>&#9;str:String;&#9;//文字列変数宣言<br>&#9;oldname:String;&#9;//ファイル名格納用<br>&#9;newname:String;&#9;//HTMLファイル名格納用<br><br>//ファイルを開く(未作成)<br><br><br>//半角空白を"_"に置換する<br>begin&#9;//置換処理開始<br>&#9;S_GoFileTop(0);&#9;// ファイルの先頭に移動<br>&#9;while (true) do&#9;//無限ループ<br>&#9;&#9;begin<br>&#9;&#9;&#9;S_SearchNext('src="', 16);&#9;//リンク情報を探す<br>&#9;&#9;&#9;str := S_GetSelectedString(0);&#9;//選択範囲の文字列取得<br>&#9;&#9;&#9;if (str &lt;&gt; '') then&#9;//何か文字列が選択されていれば、<br>&#9;&#9;&#9;&#9;begin&#9;//以下の処理を実行<br>&#9;&#9;&#9;&#9;&#9;S_Right(0);&#9;// カーソル右移動<br>&#9;&#9;&#9;&#9;&#9;S_GoLineEnd_Sel(0);&#9;// (選択)行末に移動(折り返し単位)<br>&#9;&#9;&#9;&#9;&#9;S_ReplaceAll(' +', '_', 148);&#9;//半角空白を"_"に置換(正規表現、ダイアログ自動閉、選択範囲をそれぞれオン)<br>&#9;&#9;&#9;&#9;end&#9;//処理終了<br>&#9;&#9;&#9;else&#9;//選択文字列無し＝"src"が見つからない(＝置換終了)故<br>&#9;&#9;&#9;&#9;Break;&#9;//ループ抜ける<br>&#9;&#9;end;&#9;//無限ループ終了<br><br>//ファイル名を変更<br>&#9;oldname := S_GetFilename();&#9;// 編集中のファイルのフルパスを取得<br>&#9;newname := oldname + 'L';&#9;// HTMLファイル名を生成<br>//&#9;S_FileSaveAs( newname , 0 , 0 );&#9;// 拡張子'HTML'で保存<br>&#9;S_FileSave();&#9;// 上書保存<br>&#9;S_FileClose();&#9;// 閉じて(無題)<br>&#9;Exec('cmd.exe' , '/c ren "'+ oldname + '" *.html"' , True);<br><br>// 古いファイルを削除(S_FileSaveAsが利用可能で、名前変更ができない場合に使用)<br>//&#9;Exec( 'delfile.exe', oldname , False );&#9;//PPA.DLLのExecとdelfile.exeを利用<br>&#9;S_WinClose();&#9;// ウィンドウを閉じる<br>end;<br></div></section>
+    <ul><li><section><h1 id=2760>
+    <span class="no">[2760]</span>
+    <a class="title" href="#2760">RE: 名前を付けて保存、名前の変更、成功です</a>
+    <span class="author">すい</span>
+    <time datetime="2003-02-25T01:39:37">2003年02月25日 01:39</time></h1>
+    <div class="body">&gt;　今回は、名前の変更内容が拡張子の変更だけでしたので、「*.html」で<br>&gt;よいみたいですね。<br><br>言われてみれば仰せの通り。あんな処理、一生懸命やらなくても良かったですね。<br>うっかり やってしまいました。(;^^ゞ<br><br>&gt; 　「古いファイルの削除」は、サクラエディタのマクロの紹介ページ<br>&gt; (と言ったら良いのでしょうか)のdelthis_20030103_20.cabから、<br>&gt; delfile.exeを利用させて戴きました。<br><br># ちなみにソレ(delfile.exe)、command.com/cmd.exe を使うと、<br># 「Win95系とWinNT系とでマクロを変更しなくてはならない」<br># というのと「DOS画面が現れるのがうっとうしい」というだけの<br># 理由で使っているんですよね。<br># ってわざわざ言うまでもなく見当ついていると思いますが。(^^;<br><br>&gt;　ファイルを順次に開く処理をどうするか、思案中・・・。<br><br>http://www.egroups.co.jp/files/sakura-editor/User/MACRO/<br>の「grepr_20030201_20.cab<br>マクロ(PPA)：Grep結果から複数のファイルに対して置換処理をまとめておこなう」<br>で似たような事を姑息な手（力ずく）で やってます。(笑)<br>参考になるかどうかは？ですが。前処理部分が長くて見にくいし。<br></div></section>
+    <ul><li><section><h1 id=2762>
+    <span class="no">[2762]</span>
+    <a class="title" href="#2762">RE2: 名前を付けて保存、名前の変更、成功です</a>
+    <span class="author">すい</span>
+    <time datetime="2003-02-25T02:20:14">2003年02月25日 02:20</time></h1>
+    <div class="body">一応、って事で。<br><br>&gt;&gt;　ファイルを順次に開く処理をどうするか、思案中・・・。<br>&gt;<br>&gt;http://www.egroups.co.jp/files/sakura-editor/User/MACRO/<br>&gt;の「grepr_20030201_20.cab<br>&gt;マクロ(PPA)：Grep結果から複数のファイルに対して置換処理をまとめておこなう」<br>&gt;で似たような事を姑息な手（力ずく）で やってます。(笑)<br><br>↑で大雑把にやっている事<br><br>処理対象のファイル名一覧ファイルを開いた状態でマクロ実行開始する。<br>↓以下、マクロの処理内容。<br><br>S_GetSelectedString(); で一行ずつファイル名を文字列変数 str へ取得。<br># S_GetSelectedString は一行ずつしか内容を取り込めないから。<br><br>取り込んだファイル名（フルパス）を文字列変数 files に追加格納していく。<br>ファイル名の区切りには CRLF改行を使用している。<br>187行近辺：files := files + str + CRLF;<br><br>files := 'C:\hogehoge\hoge1.txt(CRLF)<br>C:\hogehoge\hoge2.txt(CRLF)<br>C:\hogehoge\hoge3.txt(CRLF)<br>';<br>↑みたいな感じになっていくの。<br>こうして処理対象ファイル名一覧の文字列変数 files が用意出来た所でメイン処理<br><br>269行近辺：<br>ループ開始 {<br><br>　　files 中から先頭の「セパレーターの CRLF改行文字」の位置を探して、<br>　　　str に「files の先頭～CRLF改行文字の前まで」の文字列を格納する。(次の処理対象ファイル名)<br>　　　files は「先頭～CRLF改行文字」の文字列を削除した内容に更新しておく。(残りの処理対象ファイル名一覧)<br><br>　　で、今まで開いていたファイルを S_FileClose();（閉じて(無題)）して<br>　　S_FileOpen( str );（処理対象のファイルを開く）して<br><br>　　んで、一生懸命書き換え処理メイン。<br><br>} これを文字列変数 files が空っぽになるまでグルグルループ。<br><br>ループ抜けたら後始末してマクロ終了。<br><br>tsuneさん でしたら↑この程度の説明で処理内容を十分イメージできますよね？(^^;<br><br><br>「処理対象ファイル一覧」なんかは<br>「外部コマンド実行」で dir/b *.htm とか dir/b/s *.htm とかで取れますかね。<br>マクロ的には<br>S_ExecCommand('dir/b *.htm', 1);<br>ですが。ただ、↑これやってからそのまま書き換え処理まで<br>連続でやるのは無理ですが。<br>「外部コマンド実行」の実行結果は別ウィンドウで開いちゃいますから。<br></div></section>
+    <ul><li><section><h1 id=2764>
+    <span class="no">[2764]</span>
+    <a class="title" href="#2764">Re3: 名前を付けて保存、名前の変更、成功です</a>
+    <span class="author">tsune</span>
+    <time datetime="2003-02-25T20:12:36">2003年02月25日 20:12</time></h1>
+    <div class="body">すいさん<br><br>　重ね重ねありがとうございます。<br>　御紹介戴きましたマクロも、サクラエディタのマクロ・ディレクトリ内に放り込んで、使える状態にはしておりますので、<br>　御説明に従って、近いうちに作ってみます。<br>　たぶん、大丈夫とは思いますが、また、判らなくなったら、ｏｒ うまくいったら、報告に参ります。<br><br>　「サクラエディタ マクロ設定セット（強調キーワード,キーワードヘルプ辞書ファイル）作成途上版」も戴いて参りました。まだ、読んでませんが・・・。早く読まなきゃ・・・。<br><br><br>　#2757で御指摘を戴きましたが、マクロの話は「マクロ会議室」に行ったほうがよろしいのですね。<br>　今回の報告も含め、次からはそちらに書き込むように致します。<br>　御指摘に気がつく前に、もう一つ書き込んじゃいました。すみません。<br>　では。</div></section>
+    <ul><li><section><h1 id=2767>
+    <span class="no">[2767]</span>
+    <a class="title" href="#2767">Re4: 名前を付けて保存、名前の変更、成功です</a>
+    <span class="author">すい</span>
+    <time datetime="2003-02-26T01:34:04">2003年02月26日 01:34</time></h1>
+    <div class="body">&gt;　「サクラエディタ マクロ設定セット（強調キーワード,キーワードヘルプ辞書ファイル）作成途上版」も戴いて参りました。まだ、読んでませんが・・・。早く読まなきゃ・・・。<br><br>「読む」というよりも「設定する」のですが。(*^^*)<br>マクロを快適に作成・編集する環境を構築するための設定ファイルですので。<br># 設定方法を「読む」という事ではありますが。<br><br>「きちんと環境を構築するとこんな事までできるんだ、このエディタ」<br>とかって感動していただけると幸いです。(笑)(笑)<br><br>&gt;　#2757で御指摘を戴きましたが、マクロの話は「マクロ会議室」に行ったほうがよろしいのですね。<br>&gt;　今回の報告も含め、次からはそちらに書き込むように致します。<br><br>あぅ、すみません。そういう意図ではなかったです。<br>「“マクロ掲示板”もありますからね。そちらの過去ログとかも<br>　漁ると ひょっとしたら ためになる情報が．．．」<br>という程度の事で。<br>まぁ、どちらの掲示板に書き込もうが私は気になりませんが、、、<br># どうせ他に あんまり書き込み無いし(爆)<br>マクロ掲示板に書き込んだ方がベターっちゃベターなんでしょうけど。<br></div></section>
+    <ul><li><section><h1 id=2768>
+    <span class="no">[2768]</span>
+    <a class="title" href="#2768">Re5: 名前を付けて保存、名前の変更、成功です</a>
+    <span class="author">tsune</span>
+    <time datetime="2003-02-26T07:26:55">2003年02月26日 07:26</time></h1>
+    <div class="body">すいさん<br><br>｜「読む」というよりも「設定する」のですが。(*^^*)<br>｜マクロを快適に作成・編集する環境を構築するための設定ファイルですので。<br>｜# 設定方法を「読む」という事ではありますが。<br>　取り敢えず、「設定」致しました。(*^^*ゞ<br>　で、どうやって使うのか、強調キーワードなんて使ったことがないもので、<br>これから調べま～す。<br>　多分、マクロの編集中に使うのですね・・・と。<br>　こないだ作ったPPAを開いてみます。<br>　おぉっ！　コマンドをダブルクリックすると使い方が表示されるではありま<br>せんか！　感動。(; ;)ホロホロ<br><br>｜「きちんと環境を構築するとこんな事までできるんだ、このエディタ」<br>｜とかって感動していただけると幸いです。(笑)(笑)<br>　ホント、奥の深いエディタでございます。<br><br>｜「“マクロ掲示板”もありますからね。そちらの過去ログとかも<br>｜　漁ると ひょっとしたら ためになる情報が．．．」<br>｜という程度の事で。<br>｜まぁ、どちらの掲示板に書き込もうが私は気になりませんが、、、<br>｜# どうせ他に あんまり書き込み無いし(爆)<br>｜マクロ掲示板に書き込んだ方がベターっちゃベターなんでしょうけど。<br>　そうでしたか。<br>　確かに、書込の数が少ないですねぇ。<br>　いろいろとありがとうございました。<br></div></section>
+    <ul><li><section><h1 id=2777>
+    <span class="no">[2777]</span>
+    <a class="title" href="#2777">Re6: 名前を付けて保存、名前の変更、成功です</a>
+    <span class="author">すい</span>
+    <time datetime="2003-02-26T21:55:58">2003年02月26日 21:55</time></h1>
+    <div class="body">&gt;　おぉっ！　コマンドをダブルクリックすると使い方が表示されるではありま<br>&gt;せんか！　感動。(; ;)ホロホロ<br><br>「マクロファイルを開いた状態で、s_file とか途中までキー入力して [Ctrl]+[　　]（スペースバー） 」<br>で感動して欲しかった．．．と、わがまま言ってみるテスト。<br>standing ovation 希望。(笑)<br># なに言ってんだ ＞ 私<br></div></section>
+    <ul><li><section><h1 id=2779>
+    <span class="no">[2779]</span>
+    <a class="title" href="#2779">Re7: gomiです</a>
+    <span class="author">tsune</span>
+    <time datetime="2003-02-26T23:57:10">2003年02月26日 23:57</time></h1>
+    <div class="body">｜「マクロファイルを開いた状態で、s_file とか途中までキー入力して [Ctrl]+[　　]（スペースバー） 」<br>｜で感動して欲しかった．．．と、わがまま言ってみるテスト。<br>｜standing ovation 希望。(笑)<br>｜# なに言ってんだ ＞ 私<br>　やってみました。<br><br>　おぉっ！<br>　何だ、これは・・・。<br>　奥が深すぎる・・・。<br><br>　ども。ゴミで済みません。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

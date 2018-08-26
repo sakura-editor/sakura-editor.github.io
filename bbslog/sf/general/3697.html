@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>特定手順で落ちてしまいます</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3697</span>
+    <a class="title" href="3697.html#3697">特定手順で落ちてしまいます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3699</span>
+    <a class="title" href="3697.html#3699">RE: 特定手順で落ちてしまいます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3700</span>
+    <a class="title" href="3697.html#3700">Re2: 特定手順で落ちてしまいます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3701</span>
+    <a class="title" href="3697.html#3701">Re3: 特定手順で落ちてしまいます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3702</span>
+    <a class="title" href="3697.html#3702">Re4: 特定手順で落ちてしまいます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3704</span>
+    <a class="title" href="3697.html#3704">Re5: 特定手順で落ちてしまいます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3705</span>
+    <a class="title" href="3697.html#3705">Re6: 特定手順で落ちてしまいます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3708</span>
+    <a class="title" href="3697.html#3708">Re7: 特定手順で落ちてしまいます</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3697>
+    <span class="no">[3697]</span>
+    <a class="title" href="#3697">特定手順で落ちてしまいます</a>
+    <span class="author">なか</span>
+    <time datetime="2004-03-18T00:47:08">2004年03月18日 00:47</time></h1>
+    <div class="body">いつも便利に使わせてもらっています。<br>既知のお話でしたらすみません。<br><br>1. 行末にカーソル。[EOF] も行末。<br>2. [Alt]+[←] で範囲選択開始。<br>3. 少なくとも2行上の行頭にカーソルを移動。<br>4. [BackSpace]もしくは[Delete]で矩形削除。<br><br>という手順でサクラエディタが落ちてしまいます。<br>ver1.4.3.7 と ver1.4.3.92 で現象確認しました。<br><br>これって私の環境だけの話でしょうか？</div></section>
+    <ul><li><section><h1 id=3699>
+    <span class="no">[3699]</span>
+    <a class="title" href="#3699">RE: 特定手順で落ちてしまいます</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-18T01:03:04">2004年03月18日 01:03</time></h1>
+    <div class="body">あう～，立て続けに2件クラッシュ報告とは...<br><br>&gt;1. 行末にカーソル。[EOF] も行末。<br>&gt;2. [Alt]+[←] で範囲選択開始。<br>&gt;3. 少なくとも2行上の行頭にカーソルを移動。<br>&gt;4. [BackSpace]もしくは[Delete]で矩形削除。<br>&gt;<br>&gt;という手順でサクラエディタが落ちてしまいます。<br>1.4.3.92で試しましたが再現しません．<br>2行上の行頭ということは，矩形選択中だけど選択範囲は無い(幅0)のですよね．<br><br>&gt;これって私の環境だけの話でしょうか？<br>バグがあることは確かだと思うのですが，初期化漏れなど環境に依存するものは再現が難しいことがあります．<br></div></section>
+    <ul><li><section><h1 id=3700>
+    <span class="no">[3700]</span>
+    <a class="title" href="#3700">Re2: 特定手順で落ちてしまいます</a>
+    <span class="author">なか</span>
+    <time datetime="2004-03-18T03:03:15">2004年03月18日 03:03</time></h1>
+    <div class="body">げんたさん、コメントありがとうございます。<br><br>すみません、書き方がまずかったですね。<br><br>３この行頭まで<br>２この辺は適当<br>１ここの行末から開始。[eof]<br><br>のような状態とすると、’。’の後ろにカーソルを置いて<br>範囲選択開始して’３’の前の行頭までカーソルを移動して<br>矩形削除なので、選択範囲はある状態になります。<br><br># 落ちるのが自分だけだと少し悲しい…(^^;</div></section>
+    <ul><li><section><h1 id=3701>
+    <span class="no">[3701]</span>
+    <a class="title" href="#3701">Re3: 特定手順で落ちてしまいます</a>
+    <span class="author">あきひ</span>
+    <time datetime="2004-03-18T13:56:13">2004年03月18日 13:56</time></h1>
+    <div class="body">こんにちは。あきひと申します。<br><br>以下の手順でも落ちますね。<br><br>2行以上存在し、最終行に[eof]がある状態で<br><br>1. 最終行で行頭～行末を矩形選択。<br>2. [Delete]or[BackSpace]キーで選択範囲を削除。<br>3. 最終行よりも上にマウスポインタを持っていく。<br>          または<br>   アンドゥを繰り返す。<br><br>Ver 1.4.4.0で確認しました。<br></div></section>
+    <ul><li><section><h1 id=3702>
+    <span class="no">[3702]</span>
+    <a class="title" href="#3702">Re4: 特定手順で落ちてしまいます</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-18T18:15:40">2004年03月18日 18:15</time></h1>
+    <div class="body">sakura wchar0.6.6 なら落ちたのを確認できました。<br>sakura 1.4.4.0 / 1.4.3.2 とも再現できません。 うーん<br></div></section>
+    <ul><li><section><h1 id=3704>
+    <span class="no">[3704]</span>
+    <a class="title" href="#3704">Re5: 特定手順で落ちてしまいます</a>
+    <span class="author">なか</span>
+    <time datetime="2004-03-19T00:54:44">2004年03月19日 00:54</time></h1>
+    <div class="body">バージョンを代えて試してみました。<br>再現せず<br>  1.4.3.3<br>再現<br>  1.4.3.7<br>  1.4.3.92<br>  1.4.4.0<br><br>以上何か参考になれば幸いです。</div></section>
+    <ul><li><section><h1 id=3705>
+    <span class="no">[3705]</span>
+    <a class="title" href="#3705">Re6: 特定手順で落ちてしまいます</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-19T01:20:50">2004年03月19日 01:20</time></h1>
+    <div class="body">情報、ありがとうございます。<br>私のところと、げんた氏の所でも再現できたようです。<br>おそらくこれで直ると思います。念のためテスト版おいておきます。<br><a href=http://www.geocities.co.jp/SiliconValley-Oakland/6358/sakura_2004-03-17fix.zip target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>co.<wbr>jp/<wbr>SiliconV<wbr>alley-<wbr>Oakland/<wbr>6358/<wbr>sakura_2<wbr>004-<wbr>03-<wbr>17fix.<wbr>zip</nobr></a><br></div></section>
+    <ul><li><section><h1 id=3708>
+    <span class="no">[3708]</span>
+    <a class="title" href="#3708">Re7: 特定手順で落ちてしまいます</a>
+    <span class="author">なか</span>
+    <time datetime="2004-03-20T00:20:21">2004年03月20日 00:20</time></h1>
+    <div class="body">テスト版にて直っている事を確認しました。<br><br>正直、こんなに早く解決するとは思ってませんでした(^^;;<br><br>修正して下さった方、追試して下さった方、<br>本当に有難う御座いました m(_ _)m</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

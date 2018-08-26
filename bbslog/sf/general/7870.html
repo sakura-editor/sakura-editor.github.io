@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>プライベートブランチでの変数の初期化について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7870</span>
+    <a class="title" href="7870.html#7870">プライベートブランチでの変数の初期化について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7871</span>
+    <a class="title" href="7870.html#7871">Re: プライベートブランチでの変数の初期化について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7872</span>
+    <a class="title" href="7870.html#7872">Re2: プライベートブランチでの変数の初期化について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7873</span>
+    <a class="title" href="7870.html#7873">Re2: プライベートブランチでの変数の初期化について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7874</span>
+    <a class="title" href="7870.html#7874">Re3: プライベートブランチでの変数の初期化について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7877</span>
+    <a class="title" href="7870.html#7877">Re4: プライベートブランチでの変数の初期化について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7879</span>
+    <a class="title" href="7870.html#7879">Re5: プライベートブランチでの変数の初期化について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7880</span>
+    <a class="title" href="7870.html#7880">Re5: プライベートブランチでの変数の初期化について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7870>
+    <span class="no">[7870]</span>
+    <a class="title" href="#7870">プライベートブランチでの変数の初期化について</a>
+    <span class="author">ねこ</span>
+    <time datetime="2014-07-22T01:35:26">2014年07月22日 01:35</time></h1>
+    <div class="body">ローカルでカスタマイズを行っています。<br>タイプ別設定構造体(CTypr.h の STypeConfig)にint型の変数を追加しました。<br>基本動作は完成したのですが、変数の初期化タイミングが分かりません。<br><br>カスタマイズ内容<br>・行番号の最小幅を可変にする<br>・主な変更箇所はCTextArea::DetectWidthOfLineNumberArea_c<br>alculate()<br>・タイプ別設定ダイアログに設定項目を一つ追加する(3～12の整数)<br><br>今問題になっていること<br>・変数の適切な初期化タイミングが分からず、追加した変数の初期化を行っていない。<br>・エディタを起動すると、行番号が表示される幅が0になっている。<br>・タイプ別設定を開くと、追加したEDITボックスコントロールが0となっている。 <br>・ダイアログをOKで閉じた後は補正処理が効くため期待通り操作する。<br><br>期待する動作<br>・iniファイルに当該項目がない場合は初期値3で初期化する（現状の動作に合わせる）<br><br><br>どの変数を参考にすればよいなどのアドバイスがありましたらよろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=7871>
+    <span class="no">[7871]</span>
+    <a class="title" href="#7871">Re: プライベートブランチでの変数の初期化について</a>
+    <span class="author">もか</span>
+    <time datetime="2014-07-23T22:08:29">2014年07月23日 22:08</time></h1>
+    <div class="body">タイプ別設定の初期化コードは CType.cpp _DefaultConfig()にあります。<br></div></section>
+    <ul><li><section><h1 id=7872>
+    <span class="no">[7872]</span>
+    <a class="title" href="#7872">Re2: プライベートブランチでの変数の初期化について</a>
+    <span class="author">ねこ</span>
+    <time datetime="2014-07-26T16:41:53">2014年07月26日 16:41</time></h1>
+    <div class="body">ありがとうございます。<br>期待通り初期化ができるようになりました。<br></div></section>
+    </li><li><section><h1 id=7873>
+    <span class="no">[7873]</span>
+    <a class="title" href="#7873">Re2: プライベートブランチでの変数の初期化について</a>
+    <span class="author">ねこ</span>
+    <time datetime="2014-07-26T17:19:26">2014年07月26日 17:19</time></h1>
+    <div class="body">行番号の幅（桁数）を可変にするパッチをwikiに添付しました。<br>ダイアログの修正が仮なのでご注意願います。<br>ご確認いただけますと幸いです。<br>http://sakura.qp.land.to/?Develop%2F13<br></div></section>
+    <ul><li><section><h1 id=7874>
+    <span class="no">[7874]</span>
+    <a class="title" href="#7874">Re3: プライベートブランチでの変数の初期化について</a>
+    <span class="author">ねこ</span>
+    <time datetime="2014-07-26T17:28:03">2014年07月26日 17:28</time></h1>
+    <div class="body">裁量権のある方に確認いたします。<br><br>この修正を適用するにあたり<br>・設定ダイアログを大きくしてよいか。<br>・math.hをincludeしてよいか。<br><br>以上二点、よろしくお願いします。<br>（最終的には本流へのcommitを目標としています）</div></section>
+    <ul><li><section><h1 id=7877>
+    <span class="no">[7877]</span>
+    <a class="title" href="#7877">Re4: プライベートブランチでの変数の初期化について</a>
+    <span class="author">もか</span>
+    <time datetime="2014-07-27T19:00:35">2014年07月27日 19:00</time></h1>
+    <div class="body">#裁量権はわかりませんがcommit権限もちです。<br><br>&gt;・設定ダイアログを大きくしてよいか。<br>行番号関連はタイプ別設定-ウィンドウにあるので、そちらに置いたらどうでしょうか。<br>それなら大きくしなくてもよさそうです。<br>&gt;・math.hをincludeしてよいか。<br>個人的には初心者向きのfor版のままのほうがいいかなと思います。<br>_で始まるキーワードは既存コードでも使われていますが、コンパイラ等の予約なので、普通の文字で始めるようにしたほうがいいです。<br></div></section>
+    <ul><li><section><h1 id=7879>
+    <span class="no">[7879]</span>
+    <a class="title" href="#7879">Re5: プライベートブランチでの変数の初期化について</a>
+    <span class="author">ねこ</span>
+    <time datetime="2014-07-28T23:43:57">2014年07月28日 23:43</time></h1>
+    <div class="body">もかさん、ありがとうございます。<br>ご提案いただいた方針で修正します。<br></div></section>
+    </li><li><section><h1 id=7880>
+    <span class="no">[7880]</span>
+    <a class="title" href="#7880">Re5: プライベートブランチでの変数の初期化について</a>
+    <span class="author">ねこ</span>
+    <time datetime="2014-08-03T22:18:48">2014年08月03日 22:18</time></h1>
+    <div class="body">パッチを更新しました。<br>主な変更点は以下の通りです。<br>・エディットボックスを「スクリーン」から「ウィンドウ」に移動<br>・設定可能範囲を「３～１２」から「２～１１」に変更。<br><br><a href=http://sakura.qp.land.to/?Develop%2F13 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2F13</nobr></a></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

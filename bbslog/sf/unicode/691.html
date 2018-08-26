@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title> Commit報告:(Fix) ANSIビルドでPPAマクロが実行できない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">691</span>
+    <a class="title" href="691.html#691"> Commit報告:(Fix) ANSIビルドでPPAマクロが実行できない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">692</span>
+    <a class="title" href="691.html#692">Re: Commit報告:(Fix) ANSIビルドでPPAマクロが実行できない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">693</span>
+    <a class="title" href="691.html#693">Re2: Commit報告:(Fix) ANSIビルドでPPAマクロが実行できない</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=691>
+    <span class="no">[691]</span>
+    <a class="title" href="#691"> Commit報告:(Fix) ANSIビルドでPPAマクロが実行できない</a>
+    <span class="author">syat</span>
+    <time datetime="2008-10-20T23:04:13">2008年10月20日 23:04</time></h1>
+    <div class="body">ANSIビルドで .ppa のマクロを実行するとエラーになる問題の対処です。<br>rev1456でコミットしました。<br><br>ごく小さい修正のためパッチを作らずコミットしています。<br>原因は macro/CPPA.cpp の GetDeclarations でマクロ関数の登録文を作ってますが、関数名はwchar_t文字列なのに書式文字列が%tsになっていたため登録文がおかしくなりエラーになっていました。<br><br>UNICODE版ではsprintfを自前で用意してあって、<br>　wchar_t, WCHAR → %ls<br>　char, ACHAR  → %hs<br>　TCHAR → %ts<br>と引数の型によって使い分ける必要があるようです。<br><br>ANSIとUNICODEで切り替わるTCHARがテスト不足になりやすく危なげ。画面まわりとか。（CViewCommanderに数匹いそう）<br></div></section>
+    <ul><li><section><h1 id=692>
+    <span class="no">[692]</span>
+    <a class="title" href="#692">Re: Commit報告:(Fix) ANSIビルドでPPAマクロが実行できない</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-10-20T23:19:57">2008年10月20日 23:19</time></h1>
+    <div class="body">▼ syatさん<br>> ANSIビルドで .ppa のマクロを実行するとエラーになる問題の対処です。<br>> rev1456でコミットしました。<br>> <br>> ごく小さい修正のためパッチを作らずコミットしています。<br>> 原因は macro/CPPA.cpp の GetDeclarations でマクロ関数の登録文を作ってますが、関数名はwchar_t文字列なのに書式文字列が%tsになっていたため登録文がおかしくなりエラーになっていました。<br>> <br>> UNICODE版ではsprintfを自前で用意してあって、<br>> 　wchar_t, WCHAR → %ls<br>> 　char, ACHAR  → %hs<br>> 　TCHAR → %ts<br>> と引数の型によって使い分ける必要があるようです。<br>> <br>> ANSIとUNICODEで切り替わるTCHARがテスト不足になりやすく危なげ。画面まわりとか。（CViewCommanderに数匹いそう）<br><br>ANSIビルドの動作保証は基本的に無視して突っ走ってきたので、<br>こういう箇所はまだまだたくさんあると思います（数匹どころじゃないはずです）。すみません。。<br><br>ANSIビルド安定化への道は2通りあります。<br><br>(1) 現状のまま、%ls,%hs,%ts に気を遣いながら組んでいく。<br>(2) 文字列型をすべて %ls (wchat_t) に統一する。(charが必要なAPI呼び出しはラップしてwchar_tで呼べるようにしておく)<br><br>個人的には (2) を強く推奨しますが、<br>その決定に際して深くは突っ込みません。<br><br>＃初期のUNICODE版は (2) の方針で組んでいましたが、<br>　議論の流れがTCHAR方針に寄っていたので、途中で (1) に切り替えた経緯があります。<br><br>適宜議論するなどして良い方向を模索してください。＞プロジェクトの皆様</div></section>
+    <ul><li><section><h1 id=693>
+    <span class="no">[693]</span>
+    <a class="title" href="#693">Re2: Commit報告:(Fix) ANSIビルドでPPAマクロが実行できない</a>
+    <span class="author">syat</span>
+    <time datetime="2008-10-22T00:32:28">2008年10月22日 00:32</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; ANSIビルドの動作保証は基本的に無視して突っ走ってきたので、<br>&gt; こういう箇所はまだまだたくさんあると思います（数匹どころじゃないはずです）。すみません。。<br>バグがあることを咎めたりする意図は全然ありません。<br>今こういう問題があると報告してみただけとです...<br><br>UNICODE版の方針としては「ANSIビルドが通ることまでは確認する」みたいな記述を以前どこかで見た気がするのですが、見失ってしまいました。<br>ANSIビルドは現時点で動作の保証はされていないということだったのですね。<br>私の中でちょっと勘違いしている部分がありました。<br><br>A版とU版Uビルドの２本があれば、U版Aビルドはあまり気にする必要がないのかもしれませんね。<br>その場合はchar文字列を渡すところに注意すればよいので確認が楽です。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

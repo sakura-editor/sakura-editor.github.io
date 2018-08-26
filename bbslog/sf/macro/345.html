@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>MKTABLE起動マクロ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">345</span>
+    <a class="title" href="345.html#345">MKTABLE起動マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">346</span>
+    <a class="title" href="345.html#346">Re:MKTABLE起動マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">347</span>
+    <a class="title" href="345.html#347">Re2:MKTABLE起動マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">348</span>
+    <a class="title" href="345.html#348">Re3:MKTABLE起動マクロ</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">390</span>
+    <a class="title" href="345.html#390">管理人削除</a></div>
+    </li><li><div class="list-title">
+    <span class="no">423</span>
+    <a class="title" href="345.html#423">管理人削除</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=345>
+    <span class="no">[345]</span>
+    <a class="title" href="#345">MKTABLE起動マクロ</a>
+    <span class="author">まくろ初心者</span>
+    <time datetime="2007-01-03T03:35:10">2007年01月03日 03:35</time></h1>
+    <div class="body">応用すればランチャーにもなったりするかもしれません。<br><br><br>' mkTable 起動マクロ<br>' sakura.exe と同じフォルダに下記EXEを配置<br>' <a href=http://www.vector.co.jp/soft/winnt/writing/se324403.html target=_top><nobr>http://<wbr>www.<wbr>vector.<wbr>co.<wbr>jp/<wbr>soft/<wbr>winnt/<wbr>writing/<wbr>se324403<wbr>.<wbr>html</nobr></a><br><br>Call Main()<br><br>Sub Main()<br>&#9;Dim pathSakura<br> <br>&#9;pathSakura = getExePath()<br>&#9;Set WshShell = CreateObject("WScript.Shell")<br>&#9;if Len(pathSakura) &gt; 0 then WshShell.Run( pathSakura &amp; "mkTable.exe")<br> <br>End Sub<br><br>Function getExePath()<br>&#9;Dim sakuraPath, pos, sRet<br>&#9;sRet = ""<br>&#9;sakuraPath = ExpandParameter("$S")<br>&#9;pos = instrrev(sakuraPath, "\")<br>&#9;if pos &gt; 0 then&#9;sRet = Mid(sakuraPath, 1, pos )<br>&#9;getExePath  = sRet<br>End Function<br><br></div></section>
+    <ul><li><section><h1 id=346>
+    <span class="no">[346]</span>
+    <a class="title" href="#346">Re:MKTABLE起動マクロ</a>
+    <span class="author">ガンジャム</span>
+    <time datetime="2007-01-05T00:28:14">2007年01月05日 00:28</time></h1>
+    <div class="body">&gt; mkTable<br>&gt; <a href=http://www.vector.co.jp/soft/winnt/writing/se324403.html target=_top><nobr>http://<wbr>www.<wbr>vector.<wbr>co.<wbr>jp/<wbr>soft/<wbr>winnt/<wbr>writing/<wbr>se324403<wbr>.<wbr>html</nobr></a><br><br>おお、拙作の2種を合体発展させたような感じです。<br>実行してみるとvectorサイト上のサンプルと違って各列の縦罫線も合っていました。<br><br></div></section>
+    <ul><li><section><h1 id=347>
+    <span class="no">[347]</span>
+    <a class="title" href="#347">Re2:MKTABLE起動マクロ</a>
+    <span class="author">ぺけ</span>
+    <time datetime="2007-01-06T01:08:44">2007年01月06日 01:08</time></h1>
+    <div class="body">どうもです。<br><br>よっぱらった勢いで投稿しちゃったみたいで…笑<br><br><br>この板はよく見るのですが、見た瞬間<br><br>…あれ！？<br><br>って感じでした。笑<br><br>お騒がせですね。<br>すでにあるEXEを利用するというアプローチは大事だと思います。<br>そういう観点で見てもらえると（いろんな意味で）有難いかなと思います。<br></div></section>
+    <ul><li><section><h1 id=348>
+    <span class="no">[348]</span>
+    <a class="title" href="#348">Re3:MKTABLE起動マクロ</a>
+    <span class="author">まくろ初心者</span>
+    <time datetime="2007-01-06T01:11:33">2007年01月06日 01:11</time></h1>
+    <div class="body">すいません。<br><br>普段使っているHNを使用してしまいました。<br>これも酔っ払った功罪です…汗<br><br>ぺけ＝まくろ初心者<br><br>です。</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=390>
+    <span class="no">[390]</span>
+    <a class="title" href="#390">管理人削除</a>
+    <span class="author">管理人</span>
+    <time datetime="2007-08-30T17:13:29">2007年08月30日 17:13</time></h1>
+    <div class="body">-</div></section>
+    </li><li><section><h1 id=423>
+    <span class="no">[423]</span>
+    <a class="title" href="#423">管理人削除</a>
+    <span class="author">管理人</span>
+    <time datetime="2008-04-23T19:22:59">2008年04月23日 19:22</time></h1>
+    <div class="body">-</div></section>
+    </li></ul></li></ul></body></html>

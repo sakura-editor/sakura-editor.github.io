@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ファイルをカーソルの位置に読み込む</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4079</span>
+    <a class="title" href="4079.html#4079">ファイルをカーソルの位置に読み込む</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4091</span>
+    <a class="title" href="4079.html#4091">Re:ファイルをカーソルの位置に読み込む</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4114</span>
+    <a class="title" href="4079.html#4114">Re2:ファイルをカーソルの位置に読み込む</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4079>
+    <span class="no">[4079]</span>
+    <a class="title" href="#4079">ファイルをカーソルの位置に読み込む</a>
+    <span class="author">mitsu5</span>
+    <time datetime="2004-10-08T17:12:36">2004年10月08日 17:12</time></h1>
+    <div class="body">ファイルが開かれていて、そこに更に<br>新しいファイルを開いて、<br>ファイル＝＞カーソルの位置に読み込む<br><br>この様な機能が見付からないのですが、有りますでしょうか？<br><br>なければ、マクロではないでしょうか？<br><br>教えてください。<br></div></section>
+    <ul><li><section><h1 id=4091>
+    <span class="no">[4091]</span>
+    <a class="title" href="#4091">Re:ファイルをカーソルの位置に読み込む</a>
+    <span class="author">すす</span>
+    <time datetime="2004-10-13T13:41:09">2004年10月13日 13:41</time></h1>
+    <div class="body">▼ mitsu5さん<br>&gt; ファイルが開かれていて、そこに更に<br>&gt; 新しいファイルを開いて、<br>&gt; ファイル＝＞カーソルの位置に読み込む<br>&gt; <br>&gt; この様な機能が見付からないのですが、有りますでしょうか？<br>&gt; <br>&gt; なければ、マクロではないでしょうか？<br>&gt; <br>&gt; 教えてください。<br>私もあればほしいので作りました<br>PPAマクロでこんな感じです<br>var<br> str_fn:String;<br>begin<br> str_fn := S_GetFilename();<br> S_FileSave();<br> S_FileCloseOpen();<br> S_SelectAll(0);<br> S_Copy(0);<br> S_FileClose();<br> S_FileOpen( str_fn );<br> S_Paste(0);<br>end;<br></div></section>
+    <ul><li><section><h1 id=4114>
+    <span class="no">[4114]</span>
+    <a class="title" href="#4114">Re2:ファイルをカーソルの位置に読み込む</a>
+    <span class="author">mitsu5</span>
+    <time datetime="2004-10-22T00:40:00">2004年10月22日 00:40</time></h1>
+    <div class="body">▼ すすさん<br>返事が遅くなりました。<br>うまく動いています。<br>ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

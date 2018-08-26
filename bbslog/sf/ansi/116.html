@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ？：アウトライン解析</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">116</span>
+    <a class="title" href="116.html#116">バグ？：アウトライン解析</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">119</span>
+    <a class="title" href="116.html#119">Re: バグ？：アウトライン解析</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=116>
+    <span class="no">[116]</span>
+    <a class="title" href="#116">バグ？：アウトライン解析</a>
+    <span class="author">みく</span>
+    <time datetime="2001-03-02T21:01:57">2001年03月02日 21:01</time></h1>
+    <div class="body">アウトラインの現象がわかったのですが、<br>バグ関係はこっちのようなので、新たに<br>投稿します。<br><br>アウトライン解析で次のような行を拾っ<br>てしまいます。<br>#if (ABC)<br>ポイントは()です。括弧のどちらかがな<br>ければ拾うこともありません。拾ったと<br>きは＃が取り除かれifというツリーがで<br>きます。<br></div></section>
+    <ul><li><section><h1 id=119>
+    <span class="no">[119]</span>
+    <a class="title" href="#119">Re: バグ？：アウトライン解析</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-03-03T08:54:51">2001年03月03日 08:54</time></h1>
+    <div class="body">&gt;アウトライン解析で次のような行を拾っ<br>&gt;てしまいます。<br>&gt;#if (ABC)<br>#で始まる行はコメント行と同様に関数検索対象から外すように動作を変更した方がいいですね。<br></div></section>
+    </li></ul></li></ul></body></html>

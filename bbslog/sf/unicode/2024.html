@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>再描画の不足？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2024</span>
+    <a class="title" href="2024.html#2024">再描画の不足？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2025</span>
+    <a class="title" href="2024.html#2025">RE: 再描画の不足？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2028</span>
+    <a class="title" href="2024.html#2028">Re2: 再描画の不足？</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2026</span>
+    <a class="title" href="2024.html#2026">Re:再描画の不足？</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2027</span>
+    <a class="title" href="2024.html#2027">Re:再描画の不足？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2029</span>
+    <a class="title" href="2024.html#2029">Re2:再描画の不足？</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2024>
+    <span class="no">[2024]</span>
+    <a class="title" href="#2024">再描画の不足？</a>
+    <span class="author">syat</span>
+    <time datetime="2013-07-20T18:51:43">2013年07月20日 18:51</time></h1>
+    <div class="body">新規エディタを小さめに開き、何行かのテキストをはりつけ、ウィンドウを最大化すると、画面左上に元のサイズで画面が表示され、残りの部分が黒くなります。<br><br>2.1.0.0でも2.0.8.1でも起きました。<br>OSはWindows8（正確には8.1のプレビュー）です。<br><br>いろいろな条件で試したところ、画面を最大化する直前に見えている最上行が1行目なら問題なし、2行目以降だったら問題ありのようです。<br>貼り付けでなく手入力でも、スクロールして最上行が1行目でなくなると最大化で黒くなるようです。</div></section>
+    <ul><li><section><h1 id=2025>
+    <span class="no">[2025]</span>
+    <a class="title" href="#2025">RE: 再描画の不足？</a>
+    <span class="author">もか</span>
+    <time datetime="2013-07-20T20:06:27">2013年07月20日 20:06</time></h1>
+    <div class="body">2.0.0.0でもおきました。 Windows 7です。<br>1.6.6.0ではおきませんでした。<br></div></section>
+    <ul><li><section><h1 id=2028>
+    <span class="no">[2028]</span>
+    <a class="title" href="#2028">Re2: 再描画の不足？</a>
+    <span class="author">もか</span>
+    <time datetime="2013-07-20T22:39:32">2013年07月20日 22:39</time></h1>
+    <div class="body">&gt;1.6.6.0ではおきませんでした。<br>1.6.6.0(Windows 7)でも、画面キャッシュをONにすると発生しました。<br></div></section>
+    </li></ul></li><li><section><h1 id=2026>
+    <span class="no">[2026]</span>
+    <a class="title" href="#2026">Re:再描画の不足？</a>
+    <span class="author">novice</span>
+    <time datetime="2013-07-20T21:03:20">2013年07月20日 21:03</time></h1>
+    <div class="body">▼ syatさん<br>&gt; いろいろな条件で試したところ、画面を最大化する直前に見えている最上行が1行目なら問題なし、2行目以降だったら問題ありのようです。<br>&gt; 貼り付けでなく手入力でも、スクロールして最上行が1行目でなくなると最大化で黒くなるようです。<br><br>Windows7 + Ver.2.1.0.0の組み合わせで確認しました。<br>"画面キャッシュを使う"のチェックを無効にすると再現しなくなりました。<br></div></section>
+    </li><li><section><h1 id=2027>
+    <span class="no">[2027]</span>
+    <a class="title" href="#2027">Re:再描画の不足？</a>
+    <span class="author">syat</span>
+    <time datetime="2013-07-20T22:31:01">2013年07月20日 22:31</time></h1>
+    <div class="body">なお、2.1.0.0/WinXPで試したところ再現しませんでした。<br>総合すると７以降（Vistaも？）、バージョン2系限定の画面キャッシュの問題でしょうか。<br></div></section>
+    <ul><li><section><h1 id=2029>
+    <span class="no">[2029]</span>
+    <a class="title" href="#2029">Re2:再描画の不足？</a>
+    <span class="author">もか</span>
+    <time datetime="2013-07-20T23:49:33">2013年07月20日 23:49</time></h1>
+    <div class="body">パッチを投げました。<br>https://sourceforge.net/p/sakura-editor/patchunicode/647/<br><br>CEditView::OnSize -&gt; AdjustScrollBars -&gt; ScrollAtV( CLayoutInt(0) ) -&gt;<br> UpdateWindow -&gt; OnPaintのときに、<br>キャッシュ用ビットマップの大きさが足りないみたいです。<br>(足りない時にはサイズ変更するコードがありましたが、不等号の向きが反対だった)<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

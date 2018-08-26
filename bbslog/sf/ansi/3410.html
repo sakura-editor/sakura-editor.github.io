@@ -1,0 +1,154 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現もどりよみ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3410</span>
+    <a class="title" href="3410.html#3410">正規表現もどりよみ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3412</span>
+    <a class="title" href="3410.html#3412">RE: 正規表現もどりよみ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3415</span>
+    <a class="title" href="3410.html#3415">Re2: 正規表現もどりよみ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3420</span>
+    <a class="title" href="3410.html#3420">Re3: 正規表現もどりよみ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3421</span>
+    <a class="title" href="3410.html#3421">Re4: 正規表現もどりよみ</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3417</span>
+    <a class="title" href="3410.html#3417">RE2: 正規表現もどりよみ</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3423</span>
+    <a class="title" href="3410.html#3423">正規表現エンジン差し替え(多分)完了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3424</span>
+    <a class="title" href="3410.html#3424">Re:正規表現エンジン差し替え(多分)完了</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3426</span>
+    <a class="title" href="3410.html#3426">RE: 正規表現エンジン差し替え(多分)完了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3427</span>
+    <a class="title" href="3410.html#3427">Re2: 正規表現エンジン差し替え(多分)完了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3429</span>
+    <a class="title" href="3410.html#3429">Re3: 正規表現エンジン差し替え(多分)完了</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3428</span>
+    <a class="title" href="3410.html#3428">RE: 正規表現エンジン差し替え(多分)完了</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3448</span>
+    <a class="title" href="3410.html#3448">JRegexの質問</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3449</span>
+    <a class="title" href="3410.html#3449">RE: 続・JRegex</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3451</span>
+    <a class="title" href="3410.html#3451">RE2: 続・JRegex</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3452</span>
+    <a class="title" href="3410.html#3452">Re3: 続・JRegex</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3450</span>
+    <a class="title" href="3410.html#3450">Re:JRegexの質問</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3410>
+    <span class="no">[3410]</span>
+    <a class="title" href="#3410">正規表現もどりよみ</a>
+    <span class="author">(全略)</span>
+    <time datetime="2004-02-14T00:29:23">2004年02月14日 00:29</time></h1>
+    <div class="body">BREGEXPでもどりよみを実装してみました、、、<br>でこれだったら1から作った方が早いやってことで正規表現エンジン書いてみました<br><br>一応動くだけ動くようになったので持ってきました<br>暇な人は遊んでみてくださいな<br><a href=http://qwerty.s2.xrea.com/data/sakura_jr.lzh target=_top><nobr>http://<wbr>qwerty.<wbr>s2.<wbr>xrea.<wbr>com/<wbr>data/<wbr>sakura_j<wbr>r.<wbr>lzh</nobr></a><br><br>一応perlの正規表現を模していますが他にも適当に足してみてあります<br>まー遅かったりするかもしれませんが ^^;</div></section>
+    <ul><li><section><h1 id=3412>
+    <span class="no">[3412]</span>
+    <a class="title" href="#3412">RE: 正規表現もどりよみ</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-02-14T11:54:37">2004年02月14日 11:54</time></h1>
+    <div class="body">&gt;1から作った方が早いやってことで正規表現エンジン書いてみました<br>おお，興味津々．<br><br>&gt;暇な人は遊んでみてくださいな<br>まず&gt;&gt;2959のperl正規表現エンジンのバグに当たるパターンを試してみました(極悪)が問題なくマッチしてうれし～．<br><br>次に^.*$というのを試すと<br>空行→改行がマッチ<br>空行でない→改行を除いた文字列にマッチ<br>と一貫性がない．<br><br>.$だと空行の改行はマッチしない．<br><br>正規表現マニアの方々が今まで出てきた各種パターンを試してくれるでしょう．<br><br>&gt;まー遅かったりするかもしれませんが ^^;<br>速度は試していません．<br><br>バイナリサイズが本体＋40KBなので，これなら本体に取り込んでBREGEXP.DLL無しで動けるようにしたいなと思います．<br>正規表現が使える前提だとアウトライン解析とかがだいぶ楽になるので．<br><br>http://qwerty.s2.xrea.com/storage/other/listup.html<br>にあるJRegexと添付パッチでコンパイルできるのでしょうか．<br><br>しかしライセンスがちょっと気になる．<br>onigurumaはBSD，boost/regexも自由に使える物なのでいいのですが，GNU/regexはGPLだから結果としてGPLになってしまう．<br><br>---<br>ところで，検索対象として文字列の代わりに文字列リストを与えるようなものって作れますかね？<br>一般的な正規表現エンジンは入力として連続した文字列を与えるようになっているために，検索のことを考えると内部形式を1行＝1連続メモリにせざるを得ません．すると，1行に10万文字くらい入れたときに非常に遅くなる．<br></div></section>
+    <ul><li><section><h1 id=3415>
+    <span class="no">[3415]</span>
+    <a class="title" href="#3415">Re2: 正規表現もどりよみ</a>
+    <span class="author">(全略)</span>
+    <time datetime="2004-02-14T15:44:11">2004年02月14日 15:44</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;暇な人は遊んでみてくださいな<br>&gt; まず&gt;&gt;2959のperl正規表現エンジンのバグに当たるパターンを試してみました(極悪)が問題なくマッチしてうれし～．<br>まだバグ残ったままのものをテストしていただいて、すいませんー<br><br>&gt; 次に^.*$というのを試すと<br>&gt; 空行→改行がマッチ<br>&gt; 空行でない→改行を除いた文字列にマッチ<br>&gt; と一貫性がない．<br>CBregexをごっそり入れ替えて適当に作ったのでどっかで失敗したのかな?<br><br>&gt; .$だと空行の改行はマッチしない．<br>改行を文字と認識しないためですね<br>JRegexでは . が [^\r\n\0] になってますから<br><br>&gt; http://qwerty.s2.xrea.com/storage/other/listup.html<br>&gt; にあるJRegexと添付パッチでコンパイルできるのでしょうか．<br>入れるの忘れてました、、、だいたいできます<br>cppとしてコンパイルすると何カ所かキャストの警告出ます、が、動いてます<br> <br>&gt; しかしライセンスがちょっと気になる．<br>&gt; onigurumaはBSD，boost/regexも自由に使える物なのでいいのですが，GNU/regexはGPLだから結果としてGPLになってしまう．<br>JRegexはうちがフルスクラッチでかきおこしたものです<br>作るときにonigurumaとRuby/regexは見ましたがコピーしたコードは一つもありません<br>胸を張ってオリジナルだと言い切れるのでライセンスは自由にできます<br># で、今googleで検索したらJavaの正規表現ライブラリでJRegexってすでにあるんですね、、、関係ありませんので<br><br>&gt; ---<br>&gt; ところで，検索対象として文字列の代わりに文字列リストを与えるようなものって作れますかね？<br>&gt; 一般的な正規表現エンジンは入力として連続した文字列を与えるようになっているために，検索のことを考えると内部形式を1行＝1連続メモリにせざるを得ません．すると，1行に10万文字くらい入れたときに非常に遅くなる．<br>できますよ<br>検索対象文字列として以下のような関数ポインタ渡せるようになっておりこれを経由で呼び出せばいいです<br>tchar&#9;(*PATTERN_FUNC)(dword,void*);<br>文字 &#9;(*PATTERN_FUNC)(検索位置,ユーザ定義);<br>ついでにやろうと思ったんですけどエディタ側がバイト配列用意してくれるので甘んじてさぼってしまいました<br>これはあんまりテストしてない機能なんであやしいです^^;</div></section>
+    <ul><li><section><h1 id=3420>
+    <span class="no">[3420]</span>
+    <a class="title" href="#3420">Re3: 正規表現もどりよみ</a>
+    <span class="author">かろと</span>
+    <time datetime="2004-02-15T21:00:29">2004年02月15日 21:00</time></h1>
+    <div class="body">ご無沙汰してます。<br>なんだか興味深いものが出てきましたね。<br><br>▼ (全略)さん<br>&gt; ▼ げんたさん<br>&gt; &gt; .$だと空行の改行はマッチしない．<br>&gt; 改行を文字と認識しないためですね<br>&gt; JRegexでは . が [^\r\n\0] になってますから<br><br>うむむ。sakuraの為に作ってもらったような仕様ですね。<br>ということは、これはこれで、良さそうですね。<br><br>私もつまみ食いさせていただきました。<br><br>あれ？０文字マッチしない？<br>「^」を検索したり、「a*」検索したりで、０文字マッチしないですね。<br>こういう仕様かな？<br><br>ちょいとソース見せてもらいました。<br><br>    if(!jreg_exec(m_reg, pat, start, len, (jreg_opt)opt)) { return false; }<br>    else if(m_reg-&gt;pBackRef[0].dwMatchCnt &lt;= 1) {<br>        // マッチ幅が0文字の時非マッチとする<br>        return false;<br>    }<br><br>ここで、わざわざ０文字マッチを非マッチにしてるのかな？<br>なぜ？<br><br></div></section>
+    <ul><li><section><h1 id=3421>
+    <span class="no">[3421]</span>
+    <a class="title" href="#3421">Re4: 正規表現もどりよみ</a>
+    <span class="author">(全略)</span>
+    <time datetime="2004-02-15T22:17:51">2004年02月15日 22:17</time></h1>
+    <div class="body">▼ かろとさん<br>&gt; ▼ (全略)さん<br>&gt; &gt; ▼ げんたさん<br>&gt; &gt; &gt; .$だと空行の改行はマッチしない．<br>&gt; &gt; 改行を文字と認識しないためですね<br>&gt; &gt; JRegexでは . が [^\r\n\0] になってますから<br>&gt; <br>&gt; うむむ。sakuraの為に作ってもらったような仕様ですね。<br>&gt; ということは、これはこれで、良さそうですね。<br>とりあえず手元にある教典(perl)に従ってます^^<br><br><br>&gt; ここで、わざわざ０文字マッチを非マッチにしてるのかな？<br>&gt; なぜ？<br>あら、、、恐らく元の位置にあった<br>if(matched==0) return false;<br>を勘違いして実装してしまったようですね、全然違いますね、修正しときます<br><br># あぁ、呼び出し側で0文字幅マッチしないと思って修正したコードがぁ;_;</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=3417>
+    <span class="no">[3417]</span>
+    <a class="title" href="#3417">RE2: 正規表現もどりよみ</a>
+    <span class="author">みく</span>
+    <time datetime="2004-02-15T09:49:29">2004年02月15日 09:49</time></h1>
+    <div class="body"><br>&gt;&gt;1から作った方が早いやってことで正規表現エンジン書いてみました<br>&gt;おお，興味津々．<br>+1<br><br>&gt;正規表現が使える前提だとアウトライン解析とかがだいぶ楽になるので．<br><br>私はマクロに使っているWSHを汎用化してアウトラインで使えないかと考えているところです。<br>（一般ユーザにとっては、プラグイン.DLLよりは敷居が低くなるはず）<br></div></section>
+    </li></ul></li><li><section><h1 id=3423>
+    <span class="no">[3423]</span>
+    <a class="title" href="#3423">正規表現エンジン差し替え(多分)完了</a>
+    <span class="author">(全略)</span>
+    <time datetime="2004-02-18T13:26:00">2004年02月18日 13:26</time></h1>
+    <div class="body">正規表現エンジンの差し替え作業終わりました<br>恐らくBREGEXP版と動作は大差ないと思います<br><br>バイナリ+差分: <a href=http://qwerty.s2.xrea.com/data/sakura_jr20040218.lzh target=_top><nobr>http://<wbr>qwerty.<wbr>s2.<wbr>xrea.<wbr>com/<wbr>data/<wbr>sakura_j<wbr>r2004021<wbr>8.<wbr>lzh</nobr></a><br>ソース全部: <a href=http://qwerty.s2.xrea.com/data/sakura_core20040218.lzh target=_top><nobr>http://<wbr>qwerty.<wbr>s2.<wbr>xrea.<wbr>com/<wbr>data/<wbr>sakura_c<wbr>ore20040<wbr>218.<wbr>lzh</nobr></a><br><br>取り入れてもらえれば幸いです<br><br>#この版はBREGEXP用のソースを削除してあります、書いてた人すいません</div></section>
+    <ul><li><section><h1 id=3424>
+    <span class="no">[3424]</span>
+    <a class="title" href="#3424">Re:正規表現エンジン差し替え(多分)完了</a>
+    <span class="author">かろと</span>
+    <time datetime="2004-02-18T20:50:30">2004年02月18日 20:50</time></h1>
+    <div class="body">▼ (全略)さん<br>&gt; 正規表現エンジンの差し替え作業終わりました<br>&gt; 恐らくBREGEXP版と動作は大差ないと思います<br><br>おお！ご苦労様です。<br>サッカー見ながらちょっと使ってみました。<br><br>まだちょっとしか使ってないけど、かなりいい出来だと思います。<br>早く本流に組み込まれるといいなぁ。。<br><br>少しオリジナルと異なる動作を見つけたので報告しますね。<br><br>・「\r\n」→「\r」で、改行文字を置換しようとすると、改行がなくなります。<br>・「abc」→「ABC$&amp;」で、Perlで言う特殊変数 $&amp;（マッチ文字列） が使えない。<br><br><br>あと、動作とは関係ないですが、<br><br>＜クラス　CRegexpへの提案＞<br>正規表現が内蔵されると、このクラスをあちこちで使うでしょうから、見やすくするためにもメンバ関数の引数を減らした方がいいかなと思います。<br>つまり、マッチ位置・マッチ幅・置換後文字列・置換後文字列長は、インライン型のメンバ関数で取得する。<br><br>クラス定義で、<br><br>bool Match(const TCHAR *target, int len, int start, int *matchs, int *matchr, int opt);<br>bool Replace(const TCHAR *target, const TCHAR *repstr, int len, int start, TCHAR **out, int *outs, int *matchs, int *matchr, int opt);<br>を、<br>bool Match(const TCHAR *target, int start, int end, int opt = 0); // start, end の順番の方がわかりやすいかな？というので順番変えてます<br>bool Replace(const TCHAR *target, int start, int end, const TCHAR *repstr, int opt = 0);<br>int GetIndex(void); // マッチ位置 (BREGEXPのstartp<br>int GetLastIndex(void); // マッチ文字列の最後 (BREGEXPのendp<br>int GetMatchLen(void)  // マッチ幅<br>TCHAR *GetRepStr(void) // 置換後文字列<br>int GetRepStrLen(void) // 置換後文字列長<br><br>という感じ（メンバ関数名は適当）にする。<br>を提案します。ご検討ください。<br><br></div></section>
+    </li><li><section><h1 id=3426>
+    <span class="no">[3426]</span>
+    <a class="title" href="#3426">RE: 正規表現エンジン差し替え(多分)完了</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-02-19T02:07:46">2004年02月19日 02:07</time></h1>
+    <div class="body">最初に関係ないことで申し訳ないですが，diffは-uの方が-cより差分が見やすくないですか？<br><br>あと，中をまだ見ていないうちに質問して申し訳ないんですが，大文字小文字の区別は何ともならないのでしょうか．同一視できないならまだ正規表現で逃げられますが，区別できないのはちょっと...<br><br>うまくいくようになったら1.5.0.0として取り込みたいと考えています．<br></div></section>
+    <ul><li><section><h1 id=3427>
+    <span class="no">[3427]</span>
+    <a class="title" href="#3427">Re2: 正規表現エンジン差し替え(多分)完了</a>
+    <span class="author">(全略)</span>
+    <time datetime="2004-02-19T09:43:54">2004年02月19日 09:43</time></h1>
+    <div class="body">まとめて、返信させてもらいます<br><br>▼ かろとさん<br>&gt; ・「\r\n」→「\r」で、改行文字を置換しようとすると、改行がなくなります。<br>改行文字前後の関係がちょっとおかしいですね、見直します<br><br>&gt; ・「abc」→「ABC$&amp;」で、Perlで言う特殊変数 $&amp;（マッチ文字列） が使えない。<br>必要かどうか迷ったので、入れてませんでした<br>\nの後方参照と\xnnnの文字を表すメタキャラクタが使えます<br># 今気づきました、ドキュメントに書き忘れた;_;<br><br>▼ げんたさん<br>&gt; 最初に関係ないことで申し訳ないですが，diffは-uの方が-cより差分が見やすくないですか？<br>diffは他のGUIツール使ってたので気にしてませんでした^^;<br>-cにしときます<br><br>&gt; あと，中をまだ見ていないうちに質問して申し訳ないんですが，大文字小文字の区別は何ともならないのでしょうか．同一視できないならまだ正規表現で逃げられますが，区別できないのはちょっと...<br>あとでまとめて直そうと思って常に大文字小文字無視の設定で通していましたが<br>上のURLの20040218版ではちゃんと直したと思ってたんですが、、、直ってなかったですか、すいません、確認します<br># 正規表現キーワードは常に大文字小文字を区別します、これも //i などに対応するかな、、、</div></section>
+    <ul><li><section><h1 id=3429>
+    <span class="no">[3429]</span>
+    <a class="title" href="#3429">Re3: 正規表現エンジン差し替え(多分)完了</a>
+    <span class="author">かろと</span>
+    <time datetime="2004-02-19T23:12:52">2004年02月19日 23:12</time></h1>
+    <div class="body">▼ (全略)さん<br>&gt; &gt; ・「abc」→「ABC$&amp;」で、Perlで言う特殊変数 $&amp;（マッチ文字列） が使えない。<br>&gt; 必要かどうか迷ったので、入れてませんでした<br><br>マッチ列を参照する方法は欲しいなぁ<br><br>&gt; \nの後方参照と\xnnnの文字を表すメタキャラクタが使えます<br><br>\1 \2 で参照できるのは気がつきました($1 が使えなかったので次に試したのは \1）<br><br>あと、<br>・\x82a0 で文字検索しようとすると、\x が 0 にマッチしてしまうみたいです<br><br><br>&gt; 上のURLの20040218版ではちゃんと直したと思ってたんですが、、、直ってなかったですか、すいません、確認します<br><br>私が見たところ、直っていると思いますよ。<br><br>&gt; # 正規表現キーワードは常に大文字小文字を区別します、これも //i などに対応するかな、、、<br><br>そうですね・・・//k とかユーザには関係ないから要らないかなと思ってましたが、/i があったんですね。<br>互換性のことを考えて正規表現キーワードは //でかこんで、i を付けられるようにしておくのも手ですね。<br><br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=3428>
+    <span class="no">[3428]</span>
+    <a class="title" href="#3428">RE: 正規表現エンジン差し替え(多分)完了</a>
+    <span class="author">みく</span>
+    <time datetime="2004-02-19T20:24:36">2004年02月19日 20:24</time></h1>
+    <div class="body"><br>\z で検索するとキャレットが見えないです。<br></div></section>
+    </li></ul></li><li><section><h1 id=3448>
+    <span class="no">[3448]</span>
+    <a class="title" href="#3448">JRegexの質問</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-02-29T18:37:22">2004年02月29日 18:37</time></h1>
+    <div class="body">JRegexのソースと格闘中です．脳内設計図だけでコメント0のこれを作ったとしたらかなり神業ではないかと...<br>少なくとも関数の入出力は明確に定義しておかないと，あとで改造しようとするときに間違いなくはまりますね．<br><br>以下行番号は2004-02-18版に入っていたJRegex.cのものです．<br><br>jreg_comp()<br>196行目: if(pReg-&gt;pBackRef &amp;&amp; pReg-&gt;pdwClosure)で，片方だけメモリ取得に失敗するとリークしますよね．<br><br>193行目: 正規表現の中に反復が全くない場合にpReg-&gt;dwClosureCntが0になるようですが，Borland Cではサイズ0のmallocに対してNULLが返る実装になっているので，malloc(sizeof(dword)*pReg-&gt;dwClosureCnt<br>);でちょっといやなことになりそう．<br><br>jreg_exec()<br>215行目:  (!Pattern.PATTERN_FUNC &amp;&amp; !pReg-&gt;Pattern.PATTERN_FUNC)<br>今回か前回のどちらかで設定されていればOKと判定されているのに<br>pReg-&gt;Pattern&#9;=&#9;Pattern;<br>では常に今回のパターンで上書きされてしまう．<br><br>あと，Unionなので2回目に文字列としてNULLを与えた場合も前回の文字列から探しに行きそうな気がしますが．<br><br>その他異常パターンの対応に，反復文字を先頭に置いた場合の対応が不十分なようです．<br>ab|+cdはコンパイルエラーになりますが，ab|?cdは通ってしまう．<br>また{}はjreg_parse()で戻り値チェック無しでpNodeにアクセスしているため，先頭に置くとアプリケーションエラーになります．<br><br>まだまだ解析継続中ですが，以下ご教授ください．<br>jreg_get_cnt()は何を返す物なのでしょうか？<br>戻り値0をエラーとするためになんか下駄を履かせているみたい．<br>本当は他の関数と構造体の要素や定義してある定数なんかも全部解説して欲しいところではありますが．<br><br>以下自分なりに解析した結果を置いておきます．<br>http://members.at.infoseek.co.jp/sakura_editor/JRegex_analysis.txt<br></div></section>
+    <ul><li><section><h1 id=3449>
+    <span class="no">[3449]</span>
+    <a class="title" href="#3449">RE: 続・JRegex</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-01T01:14:27">2004年03月01日 01:14</time></h1>
+    <div class="body">解析続行中．まだ正規表現のコンパイル部分の解読途中です．<br>気づいた点をいくつか．<br><br>文字クラス[]において，]や-を文字として認識させるためには[]の先頭に置くというルールが実装されていないようです．(説明書でも触れられていませんでしたね)<br>]とABCのどれか→[]ABC]<br>-とABCのどれか→[-ABC]<br>どうも，BREGEXP(=perl?)では-は最後に置いてもOKのようです．<br>-とABCのどれか→[ABC-]<br>]と-を両方マッチさせるには<br>-と]とABCのどれか→[]ABC-]<br><br>:alpha:のような記述で，jreg_ccの呼び出し側は大括弧の中身だけを渡そうとしているのにjreg_ccでは大括弧の存在を前提にしているため[:alpha:] では:,a,l,p,hのいずれかにマッチしてしまいます．期待する動作をさせるためには[[:alpha:]]と[]を二重にしなくてはならない．私はこの記法を使ったことがないのですが，意図的にこうなっているんでしょうか．<br><br>jreg<br><br>613行目: 繰り返し{,}の解析後のif文で<br>pNode-&gt;Data.Closure.dwLower!=pNode-&gt;Data.Closure.dwLower<br>うーん，!=の両辺が全く同じなんですが...間違ってません？<br><br>--<br>その他，弱点を狙った実験をちょっとやってみました．<br>==の60回程度の繰り返しに対して，マッチしないパターンを色々．<br><br>=*A→一瞬でNot found<br>(=)*A→一瞬でNot found<br>(=+)*A→フリーズ(=が10文字程度ならすぐにNot Found)<br>(=*)*A→アプリケーションエラーも出ないでプロセス消滅．<br><br>closureが一重のケースは=の数kに対してO(k)で，マッチするまで1文字ずつ進めていくからΣO(k){k=1..n}でO(n^2)のオーダーなのに対し，二重の方は1つ目と2つ目の境目の取り方がk-1パターンあるのでO(n^3)になるという理解で正しいのかな．<br><br>最後のパターンはなんでお亡くなりになるんでしょう？スタックオーバーフロー？=の数を10程度に減らしてもダメでした．<br><br>マルチラインで検索を行いたいという話がありますけど，文書の頭からひとかたまりと見なして探索を行うと.+のようなパターンでトンでとんでもなく時間がかかる可能性もありますね．<br></div></section>
+    <ul><li><section><h1 id=3451>
+    <span class="no">[3451]</span>
+    <a class="title" href="#3451">RE2: 続・JRegex</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-01T02:40:24">2004年03月01日 02:40</time></h1>
+    <div class="body">間違ってました．<br>&gt;二重の方は1つ目と2つ目の境目の取り方<br>O(n^3)は(=+)(=+)というパターンでした．このパターンならすぐにマッチが終了します．<br>(=+)*というパターンは連続する=の分割方法すべてにマッチするんですね．*があると0文字マッチが入ってパターンが無限になるので(=+)+で考えると，=がn個連続していたら(n-1)ある隙間のそれぞれで分割する・しないのオプションがあるので全部2^(n-1)通りとなり，計算量O(2^n)ですね．<br></div></section>
+    <ul><li><section><h1 id=3452>
+    <span class="no">[3452]</span>
+    <a class="title" href="#3452">Re3: 続・JRegex</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-01T08:51:45">2004年03月01日 08:51</time></h1>
+    <div class="body">&gt;&gt;二重の方<br>2^nは1カ所からの場合で，見つからなかった場合に先頭をずらしながらマッチ位置を探すことを考慮するとO(n*2^n)ですか．<br><br>極悪なパターンを見ていて思ったのですが，(AB[CDE]FG)+とか()にclosureが付いているケースで後方参照を使ったら何が参照されるべきなのでしょうか．今のソースでは1回目が\1, 2回目が\2とはならないですよね．<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=3450>
+    <span class="no">[3450]</span>
+    <a class="title" href="#3450">Re:JRegexの質問</a>
+    <span class="author">(全略)</span>
+    <time datetime="2004-03-01T01:21:51">2004年03月01日 01:21</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; JRegexのソースと格闘中です．脳内設計図だけでコメント0のこれを作ったとしたらかなり神業ではないかと...<br>&gt; 少なくとも関数の入出力は明確に定義しておかないと，あとで改造しようとするときに間違いなくはまりますね．<br>関数のコメントくらい入れてから公開しようかとおもったのですが面倒くさくなってやめました（ぉ<br># 脳内設計図以外ありません^^;<br><br>*抜粋して返事します<br><br>&gt; 193行目: 正規表現の中に反復が全くない場合にpReg-&gt;dwClosureCntが0になるようですが，Borland Cではサイズ0のmallocに対してNULLが返る実装になっているので，malloc(sizeof(dword)*pReg-&gt;dwClosureCnt<br>&gt; );でちょっといやなことになりそう．<br>これはmallocをラップする関数で対処するのがスジですかね?<br>jectlib.cに_db_mallocなんておあつらえ向きの関数があったりします<br><br>&gt; あと，Unionなので2回目に文字列としてNULLを与えた場合も前回の文字列から探しに行きそうな気がしますが．<br>あれ?そういう仕様でしたっけunionって、、、確認しておきます<br><br>&gt; その他異常パターンの対応に，反復文字を先頭に置いた場合の対応が不十分なようです．<br>&gt; ab|+cdはコンパイルエラーになりますが，ab|?cdは通ってしまう．<br>&gt; また{}はjreg_parse()で戻り値チェック無しでpNodeにアクセスしているため，先頭に置くとアプリケーションエラーになります．<br>この点については確認修正しておきました、ありがとうございます<br><br>&gt; jreg_get_cnt()は何を返す物なのでしょうか？<br>&gt; 戻り値0をエラーとするためになんか下駄を履かせているみたい．<br>これの意味は戻り読みを行うときのみにしか役に立ちません<br>正規表現戻り読みでは (?&lt;=a*c) なんてのはエラーになりますよね?<br>この関数は正規表現がマッチした場合の文字数を返すのです<br>a* や b+ 、 c? などといったマッチした場合何文字になるか分からないものについてはエラーが返されます<br>ただし a{3} は確実に3文字にしかマッチしないので可となるのですが、、<br><br>&gt; 本当は他の関数と構造体の要素や定義してある定数なんかも全部解説して欲しいところではありますが．<br>いまの急に仕事で忙しいのが来てしまったのでそれさえ終われば整備します;_;<br><br># こんなへんちくりんなソース解析させてしまってすいません</div></section>
+    </li></ul></li></ul></li></ul></body></html>

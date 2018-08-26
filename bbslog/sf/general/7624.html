@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>折り返し行のレイアウトカーソル位置表示がおかしい</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7624</span>
+    <a class="title" href="7624.html#7624">折り返し行のレイアウトカーソル位置表示がおかしい</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=7624>
+    <span class="no">[7624]</span>
+    <a class="title" href="#7624">折り返し行のレイアウトカーソル位置表示がおかしい</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-11T09:40:28">2013年05月11日 09:40</time></h1>
+    <div class="body">折り返されているときの、座標計算でタブ幅がおかしい気がします。<br>レイアウト桁位置(GetCaretLayoutPos().x)-行頭インデント+カーソル行の１つ上までのロジック行頭からの折り返されていない場合のレイアウト桁数(CalcLayoutOffset)<br>になっています。<br>すべて折り返されていない場合のレイアウト桁位置を表示したいなら、行頭インデントがタブ幅でない場合はずれが出ます。<br>IndentをCalcLayoutOffsetの値としてGetCaretLayoutPos().xまでを計算しないとだめです。<br></div></section>
+    </li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) ファイルのOpenSaveダイアログが出ない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1359</span>
+    <a class="title" href="1359.html#1359">Commit報告(Fix) ファイルのOpenSaveダイアログが出ない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1364</span>
+    <a class="title" href="1359.html#1364">Re: Commit報告(Fix) ファイルのOpenSaveダイアログが出ない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1367</span>
+    <a class="title" href="1359.html#1367">Re2: Commit報告(Fix) ファイルのOpenSaveダイアログが出ない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1371</span>
+    <a class="title" href="1359.html#1371">Re3: Commit報告(Fix) ファイルのOpenSaveダイアログが出ない</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1359>
+    <span class="no">[1359]</span>
+    <a class="title" href="#1359">Commit報告(Fix) ファイルのOpenSaveダイアログが出ない</a>
+    <span class="author">Uchi</span>
+    <time datetime="2010-08-15T15:05:08">2010年08月15日 15:05</time></h1>
+    <div class="body">リビジョン：<br>  rev1804<br><br>変更種別：<br>  バグ修正<br><br>内容：<br>  ファイルのOpen,Saveのダイアログを表示しようとすると落ちる。<br>  rev1803でのバグです。</div></section>
+    <ul><li><section><h1 id=1364>
+    <span class="no">[1364]</span>
+    <a class="title" href="#1364">Re: Commit報告(Fix) ファイルのOpenSaveダイアログが出ない</a>
+    <span class="author">もか</span>
+    <time datetime="2010-08-19T00:52:29">2010年08月19日 00:52</time></h1>
+    <div class="body">&gt;&gt;1323<br>理解してもらえていないようで残念です。<br><br>それと、プログレスバーの値設定をPostMessageに統一したので、メッセージループを回していないコードの場所は、プログレスバー自体が更新されないような気がする。<br></div></section>
+    <ul><li><section><h1 id=1367>
+    <span class="no">[1367]</span>
+    <a class="title" href="#1367">Re2: Commit報告(Fix) ファイルのOpenSaveダイアログが出ない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-08-19T18:55:53">2010年08月19日 18:55</time></h1>
+    <div class="body">▼ もかさん<br>&gt; それと、プログレスバーの値設定をPostMessageに統一したので、メッセージループを回していないコードの場所は、プログレスバー自体が更新されないような気がする。<br>こいつはいけませんねぇ。(・へ・;;)<br><br>進行中に進行状況が更新されないのも問題ですが、メッセージキューも溢れちゃいます。<br>手元の環境で 320,000 行程度の削除操作を行ってみたところ、溢れたと思われる症状になりました。<br>溢れた以後の PBM_SETPOS が捨てられるうえ、処理が終了したときにポストされる WM_CLOSE も捨てられるので、処理が終了しても進行状況が途中で止まったダイアログが「処理中です...」のまま閉じられずに残ります。<br><br>自分には自スレッドのプログレスバー表示を更新するのに Post を使う理由が思いつきません。他のメッセージと同様、Send に統一で問題無い気がするんだけど、何か支障ありそうですか？</div></section>
+    <ul><li><section><h1 id=1371>
+    <span class="no">[1371]</span>
+    <a class="title" href="#1371">Re3: Commit報告(Fix) ファイルのOpenSaveダイアログが出ない</a>
+    <span class="author">もか</span>
+    <time datetime="2010-08-21T02:03:58">2010年08月21日 02:03</time></h1>
+    <div class="body">Sendでいいと思います。<br>もしメッセージ処理のたびにプログレスバーの画面更新が実行されるなら遅くなるかもしれないですね。<br>1万回とかでなく、設定値が変化した時(0-100)だけメッセージを投げるようにすれば安心かも。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

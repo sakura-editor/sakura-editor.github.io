@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>あれこれ徹底討論!</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3156</span>
+    <a class="title" href="3156.html#3156">あれこれ徹底討論!</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3157</span>
+    <a class="title" href="3156.html#3157">Re:あれこれ徹底討論!</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3168</span>
+    <a class="title" href="3156.html#3168">結論</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3182</span>
+    <a class="title" href="3156.html#3182">メッセージのリソース化までの予定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3184</span>
+    <a class="title" href="3156.html#3184">Re: メッセージのリソース化までの予定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3213</span>
+    <a class="title" href="3156.html#3213">Re2: メッセージのリソース化までの予定</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3156>
+    <span class="no">[3156]</span>
+    <a class="title" href="#3156">あれこれ徹底討論!</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-19T11:04:54">2003年09月19日 11:04</time></h1>
+    <div class="body">議題1: Unicodeに統一するか、ANSI版,UNICODE版の2関数に分けるか。それともUnicode化をあきらめるか。<br>内部形式がSJISのため、このままではUnicode文字が化けます。すでにSJISで書かれたコードが多く、Unicodeのサポートは難しい。<br><br>議題2: メッセージはリソース化が望まれます。文字列リソース(STRINGTABLE)かメッセージリソース(MESSAGETABLE)か。<br>STRINGTABLEはすでに予約されているIDが多く、国際化でしたら、MESSAGETABLEは語順の問題がなくて便利です。なので、現在のところ、MESSAGETABLEが優勢です。<br><br>議題3: 引数の多いMYMESSAGEBOXをそれぞれ別々の関数INFOBOX,ERRORBOX,QUERYBOXなどで包むか否か。この場合、直前のMessageBeepは吸収されます。<br><br>議題4: システムエラーメッセージをユーザーへの応答として使うか否か？</div></section>
+    <ul><li><section><h1 id=3157>
+    <span class="no">[3157]</span>
+    <a class="title" href="#3157">Re:あれこれ徹底討論!</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-19T11:08:09">2003年09月19日 11:08</time></h1>
+    <div class="body">見れば分かるように、メッセージのリソース化と国際化に向けて、::MYMESSAGEBOXに代わる関数を考えています。<br><br>// idMsgはMESSAGETABLEリソースのID。書式指定はwsprintfとは違って<br>// 国際化のために %1!d!, %2!s! のように引数の順序を指定する。<br>// 詳しくはFormatMessageを参照。<br>int OurMsgBox(HWND hwnd, UINT uType, LPCTSTR lpszTitle, int idMsg, ...)<br>{<br> va_list args;<br> va_start(args, idMsg);<br> int idCmd=IDCANCEL;<br> LPTSTR lpsz/*=NULL*/;<br> int cchLen=FormatMessage(FORMAT_ALLOCATE_BUFFER|<br>FORMAT_MESSAGE_FROM_HMODULE, GetModuleHandle(?), idMsg, LANG_USER_DEFAULT, (LPTSTR)&amp;lpsz, 0, args);<br> if(cchLen){<br>  MessageBeep(uType&amp;MB_TYPEMASK);<br>  idCmd=MessageBox(hwnd,lpsz,lpszTitle,uType);<br>  LocalFree(lpsz)<br> }<br> va_end(args);<br> return idCmd;<br>}</div></section>
+    <ul><li><section><h1 id=3168>
+    <span class="no">[3168]</span>
+    <a class="title" href="#3168">結論</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-21T10:57:11">2003年09月21日 10:57</time></h1>
+    <div class="body">みんなやる気がなさそうなので、勝手に結論出しちゃいます。反論はありませんよね？<br><br>内部処理のUnicode化は人材不足のため、ひとまず先送りする（とはいいながら、嫌な奴は書類選考で落とす）。<br>システムエラーメッセージを有効に活用する。<br>メッセージボックスを表示する関数は、メッセージリソースを使った関数に順次切り替え/*削除:さらに…(中略)…に変え*/る。<br>メッセージボックスを表示する直前のMessageBeepは前述の関数に吸収される。<br>メッセージリソースIDの識別子の名前は MSG_ で始め、msgresid.h 中に定義する。</div></section>
+    <ul><li><section><h1 id=3182>
+    <span class="no">[3182]</span>
+    <a class="title" href="#3182">メッセージのリソース化までの予定</a>
+    <span class="author">サイコジプシー</span>
+    <time datetime="2003-09-24T15:35:28">2003年09月24日 15:35</time></h1>
+    <div class="body">1. MYMESSAGEBOXの文字列定数をMESSAGETABLEリソースに置き換える。<br>　1.1. ソース中のMYMESSAGEBOX文を複数行正規表現Grepで探し尽くして、CSVファイルにする。<br>  1.2. できたCSVファイルを元に各文字列定数に対応するメッセージIDをすべてmsgresid.hに定義し、global.hで#includeする。<br>　1.3. MESSAGETABLEリソースを完成し、sakura_rcに追加。<br># ここまでを二週間以内に完了。<br><br>2. MYMESSAGEBOXをMESSAGETABLE対応型に置き換える。<br>  2.1. 前述のOurMsgBoxをetc_utyに追加。<br>　2.2. ソース中のすべてのMYMESSAGEBOXを強力な置換ツールでOurMsgBoxに置き換え。<br># これで、四週間以内にメッセージのリソース化完了。<br><br>さあ、できるかな？　まぁ、君達には無理かもしれないが。</div></section>
+    <ul><li><section><h1 id=3184>
+    <span class="no">[3184]</span>
+    <a class="title" href="#3184">Re: メッセージのリソース化までの予定</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-24T21:47:17">2003年09月24日 21:47</time></h1>
+    <div class="body">&gt;さあ、できるかな？　まぁ、君達には無理かもしれないが。<br>その先に続くのは「私ならできるけどね」でしょーね．期待してまっせ．<br></div></section>
+    <ul><li><section><h1 id=3213>
+    <span class="no">[3213]</span>
+    <a class="title" href="#3213">Re2: メッセージのリソース化までの予定</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-10-05T15:48:42">2003年10月05日 15:48</time></h1>
+    <div class="body">#!ruby<br>$KCODE="S"<br>FILES="C*.cpp"<br>#WORKDIR="C:\\WINDOWS\\Src\\ssrc_2003-09-20\\sak<br>ura_core"<br>WORKDIR="C:\\WINNT\\System64\\devonly\\ssrc_200<br>3-09-20.tar\\ssrc_2003-09-20\\sakura_core"<br><br>RE_C_CMT=/\/\*[^\r\n*]*\*\//mo<br>RE_CPP_CMT=/\/\/[^\r\n]*/mo<br>RE_LITSTR=/("(([^"]|\\")*)")/mo<br>RE_LITSTRS=/(#{RE_LITSTR.source}\s*)+/mo<br>RE_MYMSGBOX=/MYMESSAGEBOX\([^,]+,[^,]+,[^,]+,\s*(#{<br>RE_LITSTRS.source})\s*\)/mo<br>RE_MSGBOX=/MessageBox\([\w\s]+,(#{RE_LITSTRS.source}),/mo<br><br>def concat_litstrs(s)<br> i=0; str=""<br> while i=s.index(RE_LITSTR,i)<br>  i+=$1.size<br>  str&lt;&lt;$2<br> end<br> return str<br>end<br><br>msgs=[]<br>Dir.chdir WORKDIR; files = Dir.glob(FILES)<br>for f in files<br> lines=File.readlines(f,nil)[0]<br> lines.gsub! RE_C_CMT,""<br> lines.gsub! RE_CPP_CMT,""<br> i=0;<br> while i=lines.index(RE_MYMSGBOX,i)<br> msgs.push $3.strip<br> i+=$1.size<br> end<br> msgs.uniq!<br>end<br>for m in msgs.sort!<br> print m,"\n"<br>end<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

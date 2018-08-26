@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>特定の文字を変換して次の行へ挿入</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">43</span>
+    <a class="title" href="43.html#43">特定の文字を変換して次の行へ挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">44</span>
+    <a class="title" href="43.html#44">Re:特定の文字を変換して次の行へ挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">45</span>
+    <a class="title" href="43.html#45">Re2:特定の文字を変換して次の行へ挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">46</span>
+    <a class="title" href="43.html#46">Re3:特定の文字を変換して次の行へ挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">47</span>
+    <a class="title" href="43.html#47">Re4:特定の文字を変換して次の行へ挿入</a></div>
+    </li><li><div class="list-title">
+    <span class="no">48</span>
+    <a class="title" href="43.html#48">Re4:特定の文字を変換して次の行へ挿入</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=43>
+    <span class="no">[43]</span>
+    <a class="title" href="#43">特定の文字を変換して次の行へ挿入</a>
+    <span class="author">キス</span>
+    <time datetime="2003-10-22T18:48:10">2003年10月22日 18:48</time></h1>
+    <div class="body">マクロを考えているのですがどうしもてできあがりません。<br>やりたいことは<br><br>Kitano<br>Kato's Picture<br>Tanaka GO-GO<br>Murata Hito<br><br>のようリストを<br>Kitano<br>kitano.jpg<br>kato's Picture<br>katos_picture.jpg<br>Tanaka GO-GO<br>tanaka_go_go.jpg<br>Murata Hito<br>murata_hito.jpg<br>のように変換したいのです。<br><br>大文字を小文字へ<br>「'」「-」はアンダースコア_に変換<br>スペースもアンダースコア_に変換<br>行の最後に.jpgを追加<br>変換、.jpgを追加した行をオリジナルのしたの行に挿入<br><br>以上の動作をやりたいのですが、PPAがどうも理解できません。<br>どのようにすればいいでしょうか？<br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=44>
+    <span class="no">[44]</span>
+    <a class="title" href="#44">Re:特定の文字を変換して次の行へ挿入</a>
+    <span class="author">キス</span>
+    <time datetime="2003-10-22T22:04:01">2003年10月22日 22:04</time></h1>
+    <div class="body">すいません。一部間違っていました。<br>こちらが修正です。<br>&gt; 大文字を小文字へ<br>「'」は削除<br>「-」はアンダースコア_に変換<br>スペースもアンダースコア_に変換<br>行の最後に.jpgを追加<br>変換、.jpgを追加した文字列をオリジナルの文字列の下の行に挿入<br><br>つまり<br>Kitano<br>Kato's Picture<br>Tanaka GO-GO<br>Murata Hito<br>は下の様になります。<br>Kitano<br>kitano.jpg<br>Kato's Picture<br>katos_picture.jpg<br>Tanaka GO-GO<br>tanaka_go_go.jpg<br>Murata Hito<br>murata_hito.jpg<br><br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=45>
+    <span class="no">[45]</span>
+    <a class="title" href="#45">Re2:特定の文字を変換して次の行へ挿入</a>
+    <span class="author">すい</span>
+    <time datetime="2003-10-22T23:46:15">2003年10月22日 23:46</time></h1>
+    <div class="body">うにっ! (*^^*)/<br><br>あにょぉ～～、どうしても PPAのマクロじゃなきゃぁ駄目なんでしょうか？<br>拡張子.mac のキーボードマクロじゃ駄目？こっちの方が楽なんですけど↓(笑)<br><br>----------<br>//キーボードマクロのファイル<br>// TAB=4<br><br>// 1.カーソル行を２重化する<br>// 2.増えた下の行を範囲選択後、その選択範囲内の文字列に対して<br>// (1)英大文字→小文字 変換する。<br>// (2)「'」を空文字列に範囲指定の置換をする。<br>// (3)「-」「 」を「_」に範囲指定の置換をする。<br>// 3.変換した文字列の行末尾へ移動して(ついでに範囲選択解除)<br>// 4.「.jpg」と記述追記<br>// 5.行頭へ移動して次の行へ移動する<br><br>S_DuplicateLine(0);&#9;&#9;&#9;&#9;&#9;// 1.行の二重化(折り返し単位)<br>S_GoLineEnd_Sel(0);&#9;&#9;&#9;&#9;&#9;// 2.(選択)行末に移動(折り返し単位)<br>S_ToLower(0);&#9;&#9;&#9;&#9;&#9;&#9;// (1)英大文字→英小文字<br>S_ReplaceAll('\'', '', 144);&#9;&#9;// (2)選択範囲のみ [すべて置換(A)] で ' １文字を空文字列に置換(つまり削除)<br>S_ReplaceAll('[\\- ]', '_', 148);&#9;// (3)正規表現ON,選択範囲のみ [すべて置換(A)] で '['\- ]' → '_' の置換処理<br>S_ReDraw(0);&#9;&#9;&#9;&#9;&#9;&#9;// (2)(3)のオマケ - 再描画<br>S_GoLineEnd(0);&#9;&#9;&#9;&#9;&#9;&#9;// 3.行末に移動(折り返し単位) - ついでに範囲選択解除される<br>S_InsText('.jpg');&#9;&#9;&#9;&#9;&#9;// 4.文字入力<br>S_GoLineTop(0);&#9;&#9;&#9;&#9;&#9;&#9;// 5.行頭に移動(折り返し単位)<br>S_Down(0);&#9;&#9;&#9;&#9;&#9;&#9;&#9;// 5.カーソル下移動<br>----------<br><br>あ、そうだ。↑.mac のキーボードマクロは、拡張子を .ppa に変更するだけで<br>PPAマクロに出来ますので、それでPPAマクロです、という事で。(をぃ＞私)<br></div></section>
+    <ul><li><section><h1 id=46>
+    <span class="no">[46]</span>
+    <a class="title" href="#46">Re3:特定の文字を変換して次の行へ挿入</a>
+    <span class="author">キス</span>
+    <time datetime="2003-10-23T02:23:16">2003年10月23日 02:23</time></h1>
+    <div class="body">別にPPAじゃなくてもいいです！<br>目的が達成できれば！<br>そして達成できました！<br>ただ一回の実行に一行しか書き換えないのですね。<br>EOFまでこの作業を自動で繰り返させるのに、PoorPascalとキーマクロってまぜてもかまわないのですか？<br><br>あと、キーマクロの説明のようなドキュメントか何かが存在するなら読みたいのですがどこで入手できるでしょうか？</div></section>
+    <ul><li><section><h1 id=47>
+    <span class="no">[47]</span>
+    <a class="title" href="#47">Re4:特定の文字を変換して次の行へ挿入</a>
+    <span class="author">キス</span>
+    <time datetime="2003-10-23T02:38:12">2003年10月23日 02:38</time></h1>
+    <div class="body">Yahooのeグループでヘルプファイルを発見しました。<br>どうもありがとうございます。</div></section>
+    </li><li><section><h1 id=48>
+    <span class="no">[48]</span>
+    <a class="title" href="#48">Re4:特定の文字を変換して次の行へ挿入</a>
+    <span class="author">すい</span>
+    <time datetime="2003-10-23T03:03:15">2003年10月23日 03:03</time></h1>
+    <div class="body">基本的なところ、使いはじめるにあたって、まず<br>http://www.egroups.co.jp/files/sakura-editor/User/MACRO/<br>⇒ HINT.TXT<br>を読むこと。ついでにそこにサンプルマクロが色々あります。<br><br>次に<br>http://www.egroups.co.jp/files/sakura-editor/User/Data/<br>⇒ S_macppa_20030822_01.LZH<br>「サクラエディタ マクロ設定セット」があります。この中のファイル S_MAC.KWD を<br>エディタで開いて、その中の指示通りに設定すると、.PPA や .MAC のファイル編集中に<br><br>・マクロや PPA の機能名が色分け表示されるようになる。<br><br>・それら機能名を範囲選択すると、その使い方,説明がその場に表示されるようになる。(キーワードヘルプ)<br><br>・「s_file」とか途中までキー入力してから [Ctrl]+[　](スペースバー) と操作すると<br>　その途中まで入力した「s_file」で始まる機能名一覧が表示されるようになる。(入力補完)<br><br>その他<br><br>・PPA については PPA.DLL の配布書庫にヘルプが同梱されているので、それを読めば文法類がわかる。<br><br>・サクラエディタのマクロについては、一応<br>　http://www.egroups.co.jp/files/sakura-editor/Developer/Help/<br>　⇒ macro_help_20030703.lzh がある。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

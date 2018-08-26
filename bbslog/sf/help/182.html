@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ロシア語入力の件</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←helpトップへ</a><li><div class="list-title">
+    <span class="no">182</span>
+    <a class="title" href="182.html#182">ロシア語入力の件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">183</span>
+    <a class="title" href="182.html#183">RE: ロシア語入力の件</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=182>
+    <span class="no">[182]</span>
+    <a class="title" href="#182">ロシア語入力の件</a>
+    <span class="author">よしchiba</span>
+    <time datetime="2004-06-19T18:17:48">2004年06月19日 18:17</time></h1>
+    <div class="body">お世話様です。日頃ワープロの代わりに使用させて頂いています。フォント設定でクーリエNEWを使用してキリル語の表示をさせてみたのですが、入力時にwindows2kpro　sp4にて<br>1文字入力すると表示されず、2文字目を入れて初めて1文字目と一緒に2文字同時に表示されます。これは何が問題なのでしょうか。環境は他の多国語言語を仕様ができるエディタでは正常に入力されています。以上初めての質問ですが宜しくお願いします。</div></section>
+    <ul><li><section><h1 id=183>
+    <span class="no">[183]</span>
+    <a class="title" href="#183">RE: ロシア語入力の件</a>
+    <span class="author">すい</span>
+    <time datetime="2004-06-20T05:12:17">2004年06月20日 05:12</time></h1>
+    <div class="body">なんでここに書き込んでるんでしょ？<br>ここはサクラエディタのヘルプファイル作成のための相談所であって一般質問所ではないです。<br>こちらに書き込んでも普通は質問の回答なんて付きませんよ。<br>----------<br>サクラエディタは日本語Shift_JIS専用エディタです。<br>他の文字コード、他国語の類は取り扱えません。<br><br>Unicode 等のファイルの読み書きは、<br><br>・ファイル読み込み時に Unicode → Shift_JIS 変換しながら読み込む。<br>　編集中は変換後の Shift_JIS 文字列を取り扱っているだけ。<br><br>・ファイル保存時は編集中の Shift_JIS 文字列を Shift_JIS → Unicode<br>　変換しながらディスクに書き込む。<br><br>という処理をして、見かけ上 Unocode も取り扱えるように、いわば*見せかけている*だけで。<br>他の JIS,EUC も同様です。<br>ですから日本語 Shift_JIS に存在しない文字(Unicode にしか無い文字とか)は<br>取り扱えませんし、そのため当然ながら他国語の文字入力も全く想定されていませんし。<br>日本語 Shift_JIS 以外の文字は一切受け付けないエディタである、と認識して下さい。<br><br>&gt;1文字入力すると表示されず、2文字目を入れて初めて1文字目と一緒に2文字同時に表示されます。<br><br>は、恐らく入力しようとしている1文字目の文字コードが、Shift_JIS の2バイト文字(全角)の<br>1バイト目として取り扱われるコードの文字だったのでは？<br>で、2バイト受け取った時点で「全角文字１文字」を受け取り完了と認識→表示、となっているとか。<br></div></section>
+    </li></ul></li></ul></body></html>

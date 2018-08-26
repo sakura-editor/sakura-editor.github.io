@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit時にpatch番号も入れた方が</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">4407</span>
+    <a class="title" href="4407.html#4407">Commit時にpatch番号も入れた方が</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4409</span>
+    <a class="title" href="4407.html#4409">Re:Commit時にpatch番号も入れた方が</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4413</span>
+    <a class="title" href="4407.html#4413">Re2:Commit時にpatch番号も入れた方が</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4416</span>
+    <a class="title" href="4407.html#4416">Re3:Commit時にpatch番号も入れた方が</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4417</span>
+    <a class="title" href="4407.html#4417">Re4:Commit時にpatch番号も入れた方が</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4407>
+    <span class="no">[4407]</span>
+    <a class="title" href="#4407">Commit時にpatch番号も入れた方が</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-04-15T11:58:41">2006年04月15日 11:58</time></h1>
+    <div class="body">パッチとCommitの対応を取るために，Patchesに登録されたパッチをCommitするときはコメントにパッチ番号を書いておくと，あとから経緯を調べるのに使えそう．ただ，SourceForgeに番号から検索する機能がないので，なんか作らないとすぐには見られないです．<br><br>もう1つ．ryojiさんのcommitにcontributed by ryojiとの記述がありますが，自分で作って自分でcommitした場合(author=commiter)の場合は書かなくても良いと思います．<br></div></section>
+    <ul><li><section><h1 id=4409>
+    <span class="no">[4409]</span>
+    <a class="title" href="#4409">Re:Commit時にpatch番号も入れた方が</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-04-15T17:57:30">2006年04月15日 17:57</time></h1>
+    <div class="body">&gt; もう1つ．ryojiさんのcommitにcontributed by ryojiとの記述がありますが，自分で作って自分でcommitした場合(author=commiter)の場合は書かなくても良いと思います．<br>あ、commiterはauthorとして表示されるんですね。了解です。<br>パッチ番号の記載は Patches Request ID: 1464838 とかでいいんでしょうか。</div></section>
+    <ul><li><section><h1 id=4413>
+    <span class="no">[4413]</span>
+    <a class="title" href="#4413">Re2:Commit時にpatch番号も入れた方が</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-04-17T03:05:09">2006年04月17日 03:05</time></h1>
+    <div class="body">そうだ．もう1つ．<br>バグ修正の時にはBugsInfo.txtの変更も．<br><br>ただ，この辺整理した方がいいかもしれませんね．<br>掲示板でアナウンスしていたものは変更全部をまとめた形の別のフォーマットでしたし，今回からPatchesで議論された物もあってちょっと複雑になっています．<br><br>ちなみに1.5.9.90, 1.5.9.91に対応する変更履歴を作ってないんですがどなたか...<br></div></section>
+    <ul><li><section><h1 id=4416>
+    <span class="no">[4416]</span>
+    <a class="title" href="#4416">Re3:Commit時にpatch番号も入れた方が</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-04-17T23:49:48">2006年04月17日 23:49</time></h1>
+    <div class="body">&gt; バグ修正の時にはBugsInfo.txtの変更も．<br>sakura/trunk#962でCommitしました。<br><br>&gt; ちなみに1.5.9.90, 1.5.9.91に対応する変更履歴を作ってないんですがどなたか...<br>以下の通りです。たぶん。<br>漏れや間違いがあったら指摘願います。<br><br>Mar. 17, 2006 (1.5.9.91beta)<br><br>[バグ修正]<br>・タブバー結合表示のときウィンドウ移動直後のタグジャンプなどで移動前のウィンドウ位置に戻るのを修正．(ryoji)<br>・エディタウィンドウにファイルをドラッグしてきた場合にキャレットがマウスポインタに追従する問題を修正．(もかさん)<br><br>[その他変更]<br>・バージョン情報のコンパイラVer表示が途中で切れないように．(ryoji)<br>・CProfile.cppでのDebugコンパイルエラー修正．(ryoji)<br>・タブバーがアイコン非表示なら従来と同等性能で動作するように．(ryoji)<br><br><br>Feb. 19, 2006 (1.5.9.90beta)<br><br>[機能追加]<br>・タブバー機能拡張（中クリックで閉じる，等幅指定，アイコン表示指定，タブ一覧ボタン）．(ryoji)<br>・アウトラインウィンドウの位置継承．(あろかさん)<br><br>[バグ修正]<br>・他のアプリケーションからドロップできないバグの修正．(もかさん)<br>・テキストの左側が隠れているのに水平スクロールバーのスライダーが消えるバグの修正．(あろかさん)<br><br>[その他変更]<br>・バージョン情報のコンパイラVer表示．(もかさん)<br>・CProfileクラス更新．(dskobaさん)<br>・バックグラウンドタイマーの停止．(あろかさん)<br>・Mytools.bmpの変更．(げんたさん)<br>・Visual Basicの拡張子に.vb追加．(げんたさん)<br>・バージョン情報のライセンス文章の変更．(げんたさん)<br></div></section>
+    <ul><li><section><h1 id=4417>
+    <span class="no">[4417]</span>
+    <a class="title" href="#4417">Re4:Commit時にpatch番号も入れた方が</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-04-18T00:33:12">2006年04月18日 00:33</time></h1>
+    <div class="body">あー，入れ違いに自分でも作ってしまいました．(一般掲示板の方)<br>すいません．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

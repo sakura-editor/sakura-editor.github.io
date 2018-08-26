@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>メールのレスを色分け</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4112</span>
+    <a class="title" href="4112.html#4112">メールのレスを色分け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4113</span>
+    <a class="title" href="4112.html#4113">Re:メールのレスを色分け</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4115</span>
+    <a class="title" href="4112.html#4115">RE: メールのレスを色分け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4120</span>
+    <a class="title" href="4112.html#4120">Re2: メールのレスを色分け</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4112>
+    <span class="no">[4112]</span>
+    <a class="title" href="#4112">メールのレスを色分け</a>
+    <span class="author">maru</span>
+    <time datetime="2004-10-21T13:16:11">2004年10月21日 13:16</time></h1>
+    <div class="body">メールのレス部分を色分けするため<br>正規表現キーワードを使おうと思っています。<br>ところが、レスのレスなど、"&gt;"が他段になるときに<br><br>"&gt;&gt;"とするメールソフトと<br>"&gt; &gt;"とするメールソフトがありますよね。<br><br>キーワード１：/^&gt;\s?[^&gt;].*/k<br>キーワード２：/^&gt;\s?&gt;\s?[^&gt;].*/k<br>キーワード３：(以下省略)<br><br>とやってみたのですが、"&gt; &gt;"が"&gt;"と同じ色に<br>なってしまいます。<br>どうやたら良いのでしょう?どなたかご教示願います。<br></div></section>
+    <ul><li><section><h1 id=4113>
+    <span class="no">[4113]</span>
+    <a class="title" href="#4113">Re:メールのレスを色分け</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-10-21T13:31:08">2004年10月21日 13:31</time></h1>
+    <div class="body">▼ maruさん<br>こんな感じでしょうか。<br>// 正規表現キーワード Ver1<br>RxKey[000]=RK1,/ ?&gt; ?&gt; ?&gt; ?.*/k<br>RxKey[001]=RK2,/ ?&gt; ?&gt; ?.*/k<br>RxKey[002]=RK3,/ ?&gt; ?.*/k<br><br>テストデータを以下に示します。<br>aaaaaaaaa<br>&gt;bbbbbbbbbbbbb<br>&gt; ccccccccccccccccc<br>&gt;&gt;ddddddddddddddddddd<br>&gt;&gt; eeeeeeeeeeeee<br>&gt; &gt;fffffffffffffffff<br>&gt; &gt; ggggggggggggggggggggg<br>&gt;&gt;&gt;hhhhhhhhhhhhhhhhhhhhhhh<br>&gt;&gt;&gt; iiiiiiiiiiiiiii<br>&gt; &gt; &gt;jjjjjjjjjjjjjjjjj<br>&gt; &gt; &gt; kkkkkkkk<br><br> aaaaaaaaa<br> &gt;bbbbbbbbbbbbb<br> &gt; ccccccccccccccccc<br> &gt;&gt;ddddddddddddddddddd<br> &gt;&gt; eeeeeeeeeeeee<br> &gt; &gt;fffffffffffffffff<br> &gt; &gt; ggggggggggggggggggggg<br> &gt;&gt;&gt;hhhhhhhhhhhhhhhhhhhhhhh<br> &gt;&gt;&gt; iiiiiiiiiiiiiii<br> &gt; &gt; &gt;jjjjjjjjjjjjjjjjj<br> &gt; &gt; &gt; kkkkkkkk</div></section>
+    </li><li><section><h1 id=4115>
+    <span class="no">[4115]</span>
+    <a class="title" href="#4115">RE: メールのレスを色分け</a>
+    <span class="author">すい</span>
+    <time datetime="2004-10-22T01:20:33">2004年10月22日 01:20</time></h1>
+    <div class="body">もう「どう設定すれば良いのか」という回答は じゅうじさん から付いているので、<br>「どうして maruさんの設定で上手く行かないのか」の方を勝手に担当。<br><br><br>&gt;キーワード１：/^&gt;\s?[^&gt;].*/k<br>&gt;キーワード２：/^&gt;\s?&gt;\s?[^&gt;].*/k<br>&gt;キーワード３：(以下省略)<br>&gt;<br>&gt;とやってみたのですが、"&gt; &gt;"が"&gt;"と同じ色に<br>&gt;なってしまいます。<br><br>まず、正規表現で「キーワード１：/^&gt;\s?[^&gt;].*/k」だと「&gt; &gt;」の行にもマッチしちゃいますよね？<br><br>　^&gt;　　行頭の '&gt;'<br>　\s?　 次にスペースが 0個ある<br>　[^&gt;]　で、その次に '&gt;' 以外の文字（スペースがありますね）があって、<br>　.*　　で、その後ろ全部。つまり２個目の '&gt;' から行末まで<br><br>で、「&gt; &gt;」は、先にマッチしたキーワード１の色になるわけです。<br><br>そうならないようにするには、キーワード１とキーワード２の順番を<br>入れ替えて設定しておけば良い。<br>そうすれば「&gt; &gt;」は、キーワード１にマッチするよりも先に<br>キーワード２にマッチするのでキーワード２の色になります。<br><br>キーワード３：/^&gt;\s?&gt;\s?&gt;\s?[^&gt;].*/k<br>キーワード２：/^&gt;\s?&gt;\s?[^&gt;].*/k<br>キーワード１：/^&gt;\s?[^&gt;].*/k<br><br>の順番に定義する事。<br><br>ただし、これだと<br>・「&gt;&gt;&gt;&gt;」はキーワード３にならない<br>・「&gt;&gt;&gt; &gt;」はキーワード３になる<br>とか、なっちゃいますけれど。（キーワード４が無い場合の話です）<br><br>正規表現を [^&gt;] の部分を[^&gt;\s] にすれば良いのかな。<br>その場合、（キーワード４が無い場合）「&gt;&gt;&gt;&gt;」は常に<br>キーワード１～３いずれにも該当しなくなりますね。<br><br><br>私なら単純に<br>・キーワード５：/^(\s*[&gt;＞]){5}.*/k<br>・キーワード４：/^(\s*[&gt;＞]){4}.*/k<br>・キーワード３：/^(\s*[&gt;＞]){3}.*/k<br>・キーワード２：/^(\s*[&gt;＞]){2}.*/k<br>・キーワード１：/^(\s*[&gt;＞]){1}.*/k<br>って、やっちゃいますけど。<br># ↑行頭にスペース文字が入る場合もある、というパターンです。<br></div></section>
+    <ul><li><section><h1 id=4120>
+    <span class="no">[4120]</span>
+    <a class="title" href="#4120">Re2: メールのレスを色分け</a>
+    <span class="author">maru</span>
+    <time datetime="2004-10-23T11:38:02">2004年10月23日 11:38</time></h1>
+    <div class="body">じゅうじさん　すいさん回答ありがとうございます。<br><br>▼ すいさん<br>&gt; 　^&gt;　　行頭の '&gt;'<br>&gt; 　\s?　 次にスペースが 0個ある<br>&gt; 　[^&gt;]　で、その次に '&gt;' 以外の文字（スペースがありますね）があって、<br>&gt; 　.*　　で、その後ろ全部。つまり２個目の '&gt;' から行末まで<br>う～ん、なるほど・・・。<br>中途半端な知識で使うと落とし穴。<br>結構難しいですね。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

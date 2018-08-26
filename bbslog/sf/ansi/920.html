@@ -1,0 +1,145 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ssrc_2001-12-01_plus.lzh 実装修正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">920</span>
+    <a class="title" href="920.html#920">ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">923</span>
+    <a class="title" href="920.html#923">Re:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">937</span>
+    <a class="title" href="920.html#937">Re2:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">938</span>
+    <a class="title" href="920.html#938">Re3:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">939</span>
+    <a class="title" href="920.html#939">Re4:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">942</span>
+    <a class="title" href="920.html#942">Re5:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">943</span>
+    <a class="title" href="920.html#943">Re6:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">945</span>
+    <a class="title" href="920.html#945">Re7:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">946</span>
+    <a class="title" href="920.html#946">Re8:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">947</span>
+    <a class="title" href="920.html#947">Re9:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">948</span>
+    <a class="title" href="920.html#948">Re10:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">950</span>
+    <a class="title" href="920.html#950">Re11:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">944</span>
+    <a class="title" href="920.html#944">Re6:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">956</span>
+    <a class="title" href="920.html#956">Re7:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">957</span>
+    <a class="title" href="920.html#957">Re8:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">960</span>
+    <a class="title" href="920.html#960">Re9:ssrc_2001-12-01_plus.lzh 実装修正</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=920>
+    <span class="no">[920]</span>
+    <a class="title" href="#920">ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-14T13:53:02">2001年12月14日 13:53</time></h1>
+    <div class="body">ブックマークのフラグ実装、こんなかんじでいいですか？<br>m_bModifyもBOOLにして、IsModifyed みたいなのを作ったほうがいいのでしょうか？<br><br>class CDocLine<br>(中略)<br>    int         m_bModify;  /* 変更フラグ */<br>    CEOL        m_cEol;     /* 行末コード */<br>//  enumEOLType m_enumEOLType;  /* 改行コードの種類 */<br>//  int         m_nEOLLen;      /* 改行コードの長さ */<br>//  int         m_nModifyCount; /* 変更回数 */<br><br>    void        SetBookMark( void );    // 2001.12.14 hor ブックマークのON/OFFを切替える<br>    void        SetBookMark( BOOL );    // 2001.12.14 hor ブックマークのON/OFFを指定する<br>    BOOL        IsBookMark ( void );    // 2001.12.14 hor ブックマークのON/OFFを取得する<br><br>protected:<br>    BOOL        m_bBookMark;            // 2001.12.03 hor ブックマーク<br>};<br></div></section>
+    <ul><li><section><h1 id=923>
+    <span class="no">[923]</span>
+    <a class="title" href="#923">Re:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-14T18:12:29">2001年12月14日 18:12</time></h1>
+    <div class="body">▼ horさん<br>&gt; ブックマークのフラグ実装、こんなかんじでいいですか？<br>意図が半分くらいしか伝わっていなかったみたい...<br><br>まず、アクセス関数ではBOOLではなくてboolを使った方がいいのではないかと思います。bool/true/falseはC++の予約語なのでどこでも使える。<br>データはたかがboolで32bit使うのもメモリがもったいないのでModifyの上位ビットをつかえないかな～と。true/falseに応じてbitをset/resetする。貧乏くさいかなぁ。こんなことしてもメモリ使用量には対して影響しないかな。<br><br>&gt; m_bModifyもBOOLにして、IsModifyed みたいなのを作ったほうがいいのでしょうか？<br>暇ならやっておいた方がいいと思います。そうすればあとでデータ構造を変更できるので。<br><br>余談ですが、CEditDocのGetDocumentAttribute()というのも昔は共有メモリ直アクセスだったのを変更しました。そうしておけばタイプ別設定情報の配置場所を後で簡単に変更できると思ったからです。</div></section>
+    <ul><li><section><h1 id=937>
+    <span class="no">[937]</span>
+    <a class="title" href="#937">Re2:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-17T10:47:04">2001年12月17日 10:47</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; まず、アクセス関数ではBOOLではなくてboolを使った方がいいのではないかと思います。bool/true/falseはC++の予約語なのでどこでも使える。<br>&gt; データはたかがboolで32bit使うのもメモリがもったいないのでModifyの上位ビットをつかえないかな～と。true/falseに応じてbitをset/resetする。<br>&gt; 貧乏くさいかなぁ。こんなことしてもメモリ使用量には対して影響しないかな。<br><br>int型が４バイトでbool型が１バイトだと思ったので、<br>m_bModify,m_bBookMarkを両方bool型にした方がメモリ消費が少ないと思ったのですが・・・<br><br>勘違いしてます？  初心者なので教えていただけると助かります。</div></section>
+    <ul><li><section><h1 id=938>
+    <span class="no">[938]</span>
+    <a class="title" href="#938">Re3:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-17T11:13:47">2001年12月17日 11:13</time></h1>
+    <div class="body">▼horさん<br>&gt;int型が４バイトでbool型が１バイトだと思ったので、<br>&gt;m_bModify,m_bBookMarkを両方bool型にした方がメモリ消費が少ないと思ったのですが・・・<br>&gt;勘違いしてます？  初心者なので教えていただけると助かります。<br>boolのメモリ消費はsizeof(bool)を出力してみたところ，1バイトでした．<br><br>もう一つ考慮する点はメモリのAlignmentです．intはメモリ上で4の倍数のメモリ位置から配置されますので(オプションで変更できますけど，とりあえず一般論として)，例えば sizeof(bool)==1，sizeof(int) == 4としたとき．<br>bool a; bool b; int c; だと a, bで各1バイト，隙間2バイト，cで4バイトの合計8バイト消費．<br>bool a; int c; bool b; だと aで1バイト，隙間3バイト，cで4バイト，bで1バイト，隙間3バイトの合計12バイト消費となると思います．<br><br>ここまで来ると好みの問題かもしれませんが，私はintを区切って使うのが好きです．ビデオのシールもはさみで切って使う位なので．(←単なる貧乏性 ^^;)<br><br>---<br>#include &lt;stdio.h&gt;<br><br>#define showsize(X) printf( "sizeof(" #X ") == %d\n", sizeof( X ))<br><br>int main()<br>{<br>    struct A {<br>        bool a;<br>        bool b;<br>        int c;<br>    };<br><br>    struct B {<br>        bool a;<br>        int c;<br>        bool b;<br>    };<br><br>    showsize(char);<br>    showsize(int);<br>    showsize(bool);<br>    showsize(long);<br>    showsize(A);<br>    showsize(B);<br><br>    return 0;<br>}<br></div></section>
+    <ul><li><section><h1 id=939>
+    <span class="no">[939]</span>
+    <a class="title" href="#939">Re4:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-17T11:52:33">2001年12月17日 11:52</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ここまで来ると好みの問題かもしれませんが，私はintを区切って使うのが好きです．ビデオのシールもはさみで切って使う位なので．(←単なる貧乏性 ^^;)<br><br>なるほど・・・コメントありがとうございました。<br>intを区切るように変更します。<br></div></section>
+    <ul><li><section><h1 id=942>
+    <span class="no">[942]</span>
+    <a class="title" href="#942">Re5:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-17T21:07:09">2001年12月17日 21:07</time></h1>
+    <div class="body">&gt; intを区切るように変更します。<br><br>とは言ってみたものの、ビット操作の方法がさっぱり解らなかったりします。<br>一時間ほど調べてみたのですが・・・難しい・・・<br><br>intの分割を げんたさん にお願いしたくなってきました。<br><br>↓現状です<br>class CDocLine<br>  (中略)<br>&#9;void&#9;&#9;SetModifyFlg( bool );&#9;// 2001.12.17<br>&#9;bool&#9;&#9;IsModifyed  ( void );&#9;// 2001.12.17<br>&#9;void&#9;&#9;SetBookMark ( void );&#9;// 2001.12.14 hor ブックマークのON/OFFを切替える<br>&#9;void&#9;&#9;SetBookMark ( bool );&#9;// 2001.12.14 hor ブックマークのON/OFFを指定する<br>&#9;bool&#9;&#9;IsBookMark  ( void );&#9;// 2001.12.14 hor ブックマークのON/OFFを取得する<br>protected:<br>&#9;bool&#9;&#9;m_bModify;&#9;&#9;&#9;&#9;// 変更フラグ<br>&#9;bool&#9;&#9;m_bBookMark;&#9;&#9;&#9;// ブックマーク 2001.12.03 hor<br></div></section>
+    <ul><li><section><h1 id=943>
+    <span class="no">[943]</span>
+    <a class="title" href="#943">Re6:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-18T00:00:49">2001年12月18日 00:00</time></h1>
+    <div class="body">&gt; intを区切るように変更します。<br><br>↓こんなかんじでしょうか？<br><br>CDocLine.h<br>----------------------------------------<br>-------<br>        bool        IsModifyed  ( void ) const;<br>        void        SetModifyFlg( bool );<br>        bool        IsBookMarked( void ) const;<br>        void        SetBookMark ( bool );<br>        void        SetBookMark ( void );<br>    protected:<br>        int         m_nDocLineFlags;<br><br>CDocLine.cpp<br>----------------------------------------<br>-------<br>bool CDocLine::IsModifyed ( void ) const {<br>    return m_nDocLineFlags &amp; 0x1;<br>}<br><br>void CDocLine::SetModifyFlg ( bool bFlg ) {<br>    if(bFlg){<br>        m_nDocLineFlags |= 0x1;<br>    }else{<br>        m_nDocLineFlags &amp;= ~0x1;<br>    }<br>}<br><br>bool CDocLine::IsBookMarked ( void ) const {<br>    return m_nDocLineFlags &amp; 0x2;<br>}<br><br>(以下略)</div></section>
+    <ul><li><section><h1 id=945>
+    <span class="no">[945]</span>
+    <a class="title" href="#945">Re7:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-12-18T00:56:08">2001年12月18日 00:56</time></h1>
+    <div class="body">▼ horさん<br>&gt; &gt; intを区切るように変更します。<br>こんばんは。<br>boolやBOOLのサイズは処理系依存なのであまり気にしないほうがよいと思います。<br>＃BOOLだとVC4とVC6でも占有バイト数がちがうし。BCCはboolのサイズをオプションで変えられる。<br>intに押しこむのもソースがわかりにくくなりませんか？特に今回くらいだと、数バイトデータが減ってもその分コードが増えるのであまり効果ないのではないでしょうか。<br></div></section>
+    <ul><li><section><h1 id=946>
+    <span class="no">[946]</span>
+    <a class="title" href="#946">Re8:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-18T08:53:35">2001年12月18日 08:53</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; こんばんは。<br>&gt; boolやBOOLのサイズは処理系依存なのであまり気にしないほうがよいと思います。<br>&gt; ＃BOOLだとVC4とVC6でも占有バイト数がちがうし。BCCはboolのサイズをオプションで変えられる。<br>&gt; intに押しこむのもソースがわかりにくくなりませんか？特に今回くらいだと、<br>&gt; 数バイトデータが減ってもその分コードが増えるのであまり効果ないのではないでしょうか。<br><br>こうゆうのってどんな言語でも悩むところですよね・・・<br>とりあえず、ビットの操作にかなり自信が無いので[942]の雰囲気で一度Upさせていただこうと思います。<br><br>・・・仕事のスキを見つけて変更点を整理しますのでちょっと時間かかるかも</div></section>
+    <ul><li><section><h1 id=947>
+    <span class="no">[947]</span>
+    <a class="title" href="#947">Re9:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">蛭子屋双六</span>
+    <time datetime="2001-12-18T10:15:33">2001年12月18日 10:15</time></h1>
+    <div class="body">▼ horさん<br>&gt; こうゆうのってどんな言語でも悩むところですよね・・・<br>&gt; とりあえず、ビットの操作にかなり自信が無いので[942]の雰囲気で一度Upさせていただこうと思います。<br><br>コンパイラを限定することにもなるかもしれませんが<br>ビットフィールドを使うのはどうでしょう?<br><br>struct mybitfields<br>{<br>    unsigned short a : 4;<br>    unsigned short b : 5;<br>    unsigned short c : 7;<br>} test;<br><br>こんな風に書けばただの構造体、もしくはクラスのメンバの一つとしてビット単位で操作できます。<br>確かgccは対応していたはず。VCは今ヘルプを見たら書いてあったので対応しているようです。<br>bccやlcc等、他のコンパイラはどうなんでしょう?</div></section>
+    <ul><li><section><h1 id=948>
+    <span class="no">[948]</span>
+    <a class="title" href="#948">Re10:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-18T12:25:40">2001年12月18日 12:25</time></h1>
+    <div class="body">久しぶりです．そろそろ出てくることかと思っていました(笑)．<br><br>▼蛭子屋双六さん<br>&gt;コンパイラを限定することにもなるかもしれませんが<br>&gt;ビットフィールドを使うのはどうでしょう?<br>ビットフィールドは私も気づいていましたが，実は自分自身今まで一度も使ったことがなかったので敢えて黙っていました．自前でビット操作を行うよりもコンパイラの最適化が入る分だけ優れたコードが生成される可能性がありますかね．<br><br>ところで，ビットフィールドってCの標準仕様の一部かと思っていたのですが，コンパイラ依存なんですか？<br><br>--<br>とりあえず，サンプル．bccでコンパイルできました．<br><br>#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    union A {<br>        int x;<br>        struct {<br>            unsigned short a : 1;<br>            unsigned short b : 5;<br>            unsigned short c : 2;<br>        };<br>    };<br> <br>    A r;<br>    r.x = 0;<br>    r.a = 0;<br>    r.b = 3;<br>    r.c = 2;<br> <br>    printf( "%d (%X)\n", r.x, r.x );<br> <br>    return 0;<br>}<br><br>掲示板だとインデントが崩れちゃいます．ごめんね．<br></div></section>
+    <ul><li><section><h1 id=950>
+    <span class="no">[950]</span>
+    <a class="title" href="#950">Re11:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">蛭子屋双六</span>
+    <time datetime="2001-12-18T13:32:59">2001年12月18日 13:32</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ところで，ビットフィールドってCの標準仕様の一部かと思っていたのですが，コンパイラ依存なんですか？<br><br>むかーし、ビットフィールドを使えないコンパイラを使ってました。<br>gccなら使えるのにー、と地団駄踏んでたんでよく覚えてます。<br>当時ですらかなり古くて、ANSIにすら準拠していなかったので当然かも知れませんが。<br><br>さすがに今はもう大概のコンパイラで使えるんですかね?</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=944>
+    <span class="no">[944]</span>
+    <a class="title" href="#944">Re6:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-18T00:45:40">2001年12月18日 00:45</time></h1>
+    <div class="body">▼ horさん<br>&gt; intの分割を げんたさん にお願いしたくなってきました。<br>そこまで気合い入れてがんばらなくてもいいですよ。<br>インターフェースさえアクセス関数にしておけば、データ構造は後から変更可能なので。<br><br>その辺で適当にUPしてください。データの配置に注意すればサイズは現在と変わりません。<br><br>ただ、bookmarkは複数種を扱えるといいと思っているので1bitのon/offのみというのも寂しいとは思いますけど。<br>マークを利用して範囲指定というviみたいなことが出来ないかなあ。<br><br>とりあえず、今年中にhorさんの変更を取り込んだものを正式版にしたいです。<br>マイナーチェンジはその後でも出来ますので。</div></section>
+    <ul><li><section><h1 id=956>
+    <span class="no">[956]</span>
+    <a class="title" href="#956">Re7:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-18T16:00:18">2001年12月18日 16:00</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; マークを利用して範囲指定というviみたいなことが出来ないかなあ。<br><br>F6で範囲選択を開始して次(前)のブックマークへ飛ぶと、<br>ジャンプ前後の範囲を選択できますけど・・・<br><br>「マークを利用して範囲指定」ってどうゆう意味ですか？</div></section>
+    <ul><li><section><h1 id=957>
+    <span class="no">[957]</span>
+    <a class="title" href="#957">Re8:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-18T16:20:57">2001年12月18日 16:20</time></h1>
+    <div class="body">&gt;▼horさん<br>&gt;「マークを利用して範囲指定」ってどうゆう意味ですか？<br>viではマークを行うときにそれに名前を付けておいて，マークaからbの間で置換といった指定ができます．でも普通のエディタでは意味無いか．範囲選択すれば済む話だし．<br><br>と思ったら，範囲選択開始→アウトライン解析→移動だと範囲選択が解除されちゃうのね．<br>範囲選択開始→検索→移動だと範囲選択の状態が保持される．<br></div></section>
+    <ul><li><section><h1 id=960>
+    <span class="no">[960]</span>
+    <a class="title" href="#960">Re9:ssrc_2001-12-01_plus.lzh 実装修正</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-18T17:04:32">2001年12月18日 17:04</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; と思ったら，範囲選択開始→アウトライン解析→移動だと範囲選択が解除されちゃうのね．<br>&gt; 範囲選択開始→検索→移動だと範囲選択の状態が保持される．<br><br>どちらの場合も「範囲選択が解除されちゃう」が再現しないのですが・・・私だけ？<br><br>別件ですが、F6→次を検索を繰り返してると選択状態がおかしくなる場合があるようです。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

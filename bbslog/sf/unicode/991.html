@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Fix) 置き換え操作で発生する各種問題の修正(4件)</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">991</span>
+    <a class="title" href="991.html#991">Commit報告(Fix) 置き換え操作で発生する各種問題の修正(4件)</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=991>
+    <span class="no">[991]</span>
+    <a class="title" href="#991">Commit報告(Fix) 置き換え操作で発生する各種問題の修正(4件)</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-07-18T10:55:20">2009年07月18日 10:55</time></h1>
+    <div class="body">リビジョン：<br>　rev1601<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: 矩形選択からの文字変換で対象行にカーソル行アンダーラインの描画が残る<br> Wiki BugReport/41(<a href=http://sakura.qp.land.to/?BugReport%2F41) target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F41)<wbr></nobr></a><br>Fix: 複数行コピーして別の複数行選択箇所に貼り付けると処理途中の描画が汚い<br> Wiki BugReport/43(<a href=http://sakura.qp.land.to/?BugReport%2F43) target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F43)<wbr></nobr></a><br>Fix: ワードラップ位置が変化するような変換を行うと変換後の選択範囲が不正<br>Fix: ワードラップ位置が変化するような変換をUndoすると「作者に教えてほしいエラー」で異常動作<br><br>★上記はすべて現行ANSI版でも発生する問題です。<br><br>「矩形選択から...」の件はANSI版では設定依存で発生します（[画面キャッシュを使う]と[英文ワードラップ]が両方ONのときなど）。<br><br>「ワードラップ位置が...」の２件は以下の操作で再現します。<br>次のテキスト、<br>123456789 123456789 123456789 abcdefghijklmn<br>を、<br>　[折り返し桁数]: 40<br>　[英文ワードラップ]: ON<br>の設定で表示する。<br>すると、折り返し２行目の先頭が<br>abcdefghijklmn<br>になりますが、<br>このうち"def"の３文字だけ選択し、<br>[半角英数→全角英数]コマンド<br>を実行すると、<br>変換後の"ｄｅｆ"までが１行目に回り込みます（これは正常な動作）。<br>しかしここで選択範囲が"ghi"になってしまいます（異常）。<br>さらに[元に戻す]を実行すると、<br>「作者に教えてほしいエラー」<br>が表示され、Undo結果も壊れたものになります（異常）。<br>続けてRedo/Undoを繰り返すと、文書がどんどん壊れていきます。<br><br>★ANSI版のほうだと自分の環境ではUndo後にエディタ自体が異常終了します</div></section>
+    </li></ul></body></html>

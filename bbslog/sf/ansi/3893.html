@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>アウトライン ソート順保持</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3893</span>
+    <a class="title" href="3893.html#3893">アウトライン ソート順保持</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3928</span>
+    <a class="title" href="3893.html#3928">Re:アウトライン ソート順保持</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3929</span>
+    <a class="title" href="3893.html#3929">Re2:アウトライン ソート順保持</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3893>
+    <span class="no">[3893]</span>
+    <a class="title" href="#3893">アウトライン ソート順保持</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-04-05T14:18:26">2005年04月05日 14:18</time></h1>
+    <div class="body">一般の4392に対するパッチです<br>アウトラインを再度表示してもソート順(名前、行順)を保ちます<br><br>diff --dos -ur ../ssrc_2005-02-04/sakura_core/CDlgFuncList.cpp ../sonjr/sakura_core/CDlgFuncList.cpp<br>--- ../ssrc_2005-02-04/sakura_core/CDlgFuncList.cpp&#9;Mon Oct 11 10:23:04 2004<br>+++ ../sonjr/sakura_core/CDlgFuncList.cpp&#9;Tue Apr 05 14:09:18 2005<br>@@ -97,7 +97,7 @@<br> {<br> &#9;m_pcFuncInfoArr = NULL;&#9;&#9;/* 関数情報配列 */<br> &#9;m_nCurLine = 0;&#9;&#9;&#9;&#9;/* 現在行 */<br>-&#9;m_nSortCol = 0;&#9;&#9;&#9;&#9;/* ソートする列番号 */<br>+&#9;m_nSortCol = 1;&#9;&#9;&#9;&#9;/* ソートする列番号 2004.04.06 zenryaku 標準は行番号(2列目) */<br> &#9;m_bLineNumIsCRLF = FALSE;&#9;/* 行番号の表示 FALSE=折り返し単位／TRUE=改行単位 */<br> &#9;m_bWaitTreeProcess = false;&#9;// 2002.02.16 hor Treeのダブルクリックでフォーカス移動できるように 2/4<br> &#9;m_nSortType = 0;<br>@@ -432,6 +432,7 @@<br> &#9;&#9;::EnableWindow( ::GetDlgItem( m_hWnd, IDC_COMBO_nSortType ), FALSE );<br> &#9;&#9;::ShowWindow( GetDlgItem( m_hWnd, IDC_COMBO_nSortType ), SW_HIDE );<br> &#9;&#9;::ShowWindow( GetDlgItem( m_hWnd, IDC_STATIC_nSortType ), SW_HIDE );<br>+&#9;&#9;ListView_SortItems( hwndList, _CompareFunc_, (LPARAM)this );  // 2005.04.05 zenryaku ソート状態を保持<br> &#9;}<br> <br> &#9;return;<br><br># 記事間リンクって data:4392 とかでしたっけ?</div></section>
+    <ul><li><section><h1 id=3928>
+    <span class="no">[3928]</span>
+    <a class="title" href="#3928">Re:アウトライン ソート順保持</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-04-23T13:22:13">2005年04月23日 13:22</time></h1>
+    <div class="body">&gt;&gt;data:4432で初めて気づきました<br>修正しましたんで↓です<br><br>diff --dos -ur ../ssrc_2005-02-04/sakura_core/CDlgFuncList.cpp ../sonjr/sakura_core/CDlgFuncList.cpp<br>--- ../ssrc_2005-02-04/sakura_core/CDlgFuncList.cpp&#9;Mon Oct 11 10:23:05 2004<br>+++ ../sonjr/sakura_core/CDlgFuncList.cpp&#9;Sat Apr 23 13:21:55 2005<br>@@ -97,7 +97,7 @@<br> {<br> &#9;m_pcFuncInfoArr = NULL;&#9;&#9;/* 関数情報配列 */<br> &#9;m_nCurLine = 0;&#9;&#9;&#9;&#9;/* 現在行 */<br>-&#9;m_nSortCol = 0;&#9;&#9;&#9;&#9;/* ソートする列番号 */<br>+&#9;m_nSortCol = 1;&#9;&#9;&#9;&#9;/* ソートする列番号 2004.04.06 zenryaku 標準は行番号(2列目) */<br> &#9;m_bLineNumIsCRLF = FALSE;&#9;/* 行番号の表示 FALSE=折り返し単位／TRUE=改行単位 */<br> &#9;m_bWaitTreeProcess = false;&#9;// 2002.02.16 hor Treeのダブルクリックでフォーカス移動できるように 2/4<br> &#9;m_nSortType = 0;<br>@@ -432,6 +432,8 @@<br> &#9;&#9;::EnableWindow( ::GetDlgItem( m_hWnd, IDC_COMBO_nSortType ), FALSE );<br> &#9;&#9;::ShowWindow( GetDlgItem( m_hWnd, IDC_COMBO_nSortType ), SW_HIDE );<br> &#9;&#9;::ShowWindow( GetDlgItem( m_hWnd, IDC_STATIC_nSortType ), SW_HIDE );<br>+&#9;&#9;ListView_SortItems    ( hwndList, _CompareFunc_, (LPARAM)this );  // 2005.04.05 zenryaku ソート状態を保持<br>+&#9;&#9;ListView_EnsureVisible( hwndList, ListView_GetNextItem(hwndList, -1, LVNI_FOCUSED) - 1, FALSE );<br> &#9;}<br> <br> &#9;return;<br>@@ -1650,6 +1652,7 @@<br> &#9;&#9;&#9;&#9;ListView_SortItems( hwndList, _CompareFunc_, (LPARAM)this );<br> &#9;&#9;&#9;// To Here 2001.12.07 hor<br> &#9;&#9;&#9;}<br>+&#9;&#9;&#9;ListView_EnsureVisible( hwndList, ListView_GetNextItem(hwndList, -1, LVNI_FOCUSED) - 1, FALSE );<br> &#9;&#9;&#9;return TRUE;<br> &#9;&#9;case NM_DBLCLK:<br> &#9;&#9;&#9;return OnJump();</div></section>
+    <ul><li><section><h1 id=3929>
+    <span class="no">[3929]</span>
+    <a class="title" href="#3929">Re2:アウトライン ソート順保持</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-04-23T14:22:13">2005年04月23日 14:22</time></h1>
+    <div class="body">&gt;&gt;&gt;data:4432で初めて気づきました<br>&gt;修正しましたんで↓です<br>EnsureVisibleか，なるほど<br>私もなんかあるはずと思ってSDKのヘルプ調べたんですが，どれだかわからなかったんですよ．<br><br>なにはともあれありがとうございます．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

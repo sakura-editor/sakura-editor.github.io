@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>置換文字列の直後に数字</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6129</span>
+    <a class="title" href="6129.html#6129">置換文字列の直後に数字</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6130</span>
+    <a class="title" href="6129.html#6130">Re:置換文字列の直後に数字</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6131</span>
+    <a class="title" href="6129.html#6131">Re2:置換文字列の直後に数字</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6133</span>
+    <a class="title" href="6129.html#6133">Re2:置換文字列の直後に数字</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">6132</span>
+    <a class="title" href="6129.html#6132">Re:置換文字列の直後に数字</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=6129>
+    <span class="no">[6129]</span>
+    <a class="title" href="#6129">置換文字列の直後に数字</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-07-04T01:12:13">2007年07月04日 01:12</time></h1>
+    <div class="body">\123 のように、1番目の、または12番目の置換文字列の後に、BREGEXP で数字を記述したいのですが？</div></section>
+    <ul><li><section><h1 id=6130>
+    <span class="no">[6130]</span>
+    <a class="title" href="#6130">Re:置換文字列の直後に数字</a>
+    <span class="author">di</span>
+    <time datetime="2007-07-04T13:54:51">2007年07月04日 13:54</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; \123 のように、1番目の、または12番目の置換文字列の後に、BREGEXP で数字を記述したいのですが？<br>回りくどい感じのする方法ですが．．．<br>\1\x323<br>\12\x33<br>なんてどうでしょう。<br><br>もっと良い方法がありそうですが。</div></section>
+    <ul><li><section><h1 id=6131>
+    <span class="no">[6131]</span>
+    <a class="title" href="#6131">Re2:置換文字列の直後に数字</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-07-04T16:53:23">2007年07月04日 16:53</time></h1>
+    <div class="body">▼ diさん<br>&gt; &gt; \123 のように、1番目の、または12番目の置換文字列の後に、BREGEXP で数字を記述したいのですが？<br>&gt; 回りくどい感じのする方法ですが．．．<br>&gt; \1\x323<br>&gt; \12\x33<br><br>有難う御座いました。１６進とは気が付きませんでした。<br><br>([=g])124<br>\1\x31\x32\x35<br>正規表現 on<br>----------------<br>   =1244 g1244<br>   =1245 g1245<br>   =1246 g1246<br>   =1247 g1247<br></div></section>
+    </li><li><section><h1 id=6133>
+    <span class="no">[6133]</span>
+    <a class="title" href="#6133">Re2:置換文字列の直後に数字</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-07-04T23:21:26">2007年07月04日 23:21</time></h1>
+    <div class="body">▼ diさん<br>&gt; もっと良い方法がありそうですが。<br><br>([=g])124<br>$1$0125<br>正規表現 on<br>----------------<br>([=g])0<br>$1<br>正規表現 on<br>----------------<br>実用では、上の二段階で試して出来ました。<br>$0-&gt;0 , \0nn-&gt;8進</div></section>
+    </li></ul></li><li><section><h1 id=6132>
+    <span class="no">[6132]</span>
+    <a class="title" href="#6132">Re:置換文字列の直後に数字</a>
+    <span class="author">K.Takata</span>
+    <time datetime="2007-07-04T20:42:12">2007年07月04日 20:42</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; \123 のように、1番目の、または12番目の置換文字列の後に、BREGEXP で数字を記述したいのですが？<br><br>bregonig.dll を使えば、<br>${1}23<br>${12}3<br>とすることができます。</div></section>
+    </li></ul></li></ul></body></html>

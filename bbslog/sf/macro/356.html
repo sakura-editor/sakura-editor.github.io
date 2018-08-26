@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>お題：選択行を反転</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">356</span>
+    <a class="title" href="356.html#356">お題：選択行を反転</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">357</span>
+    <a class="title" href="356.html#357">Re:お題：選択行を反転</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=356>
+    <span class="no">[356]</span>
+    <a class="title" href="#356">お題：選択行を反転</a>
+    <span class="author">すい</span>
+    <time datetime="2007-02-06T23:33:32">2007年02月06日 23:33</time></h1>
+    <div class="body">// TAB=4<br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに ppa.dll を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>// 範囲選択されている行を反転・逆順に並べる。<br><br>var&#9;&#9;// 変数確保<br>&#9;sel:String;&#9;&#9;// 処理対象の文字列（残りの未処理の文字列）格納用<br>&#9;res:String;&#9;&#9;// 処理結果の文字列格納用<br>&#9;CRLF,CR,LF:String;&#9;// 各種の改行コードを格納しておく<br>&#9;pt,ptCR,ptLF:Integer;&#9;// 各種改行位置を格納<br>begin&#9;// 処理内容<br>&#9;// CRLF := CRLF改行コード<br>&#9;CRLF := '<br>';<br>&#9;CR := Copy  (CRLF,1,1);&#9;// CR := CR改行コード<br>&#9;LF := Delete(CRLF,1,1);&#9;// LF := LF改行コード<br><br>&#9;sel := S_GetSelectedString(0);<br>&#9;if ( sel = '' ) then&#9;Exit;&#9;// 何も選択されていなかったら終了<br><br>&#9;res := '';&#9;// 処理結果格納用文字列変数初期化<br><br>&#9;while ( sel &lt;&gt; '' ) do&#9;begin&#9;//{<br>&#9;&#9;ptCR   := Pos( CR , sel );&#9;// 処理対象文字列 sel 内の先頭の CR の位置<br>&#9;&#9;ptLF   := Pos( LF , sel );&#9;// 処理対象文字列 sel 内の先頭の LF の位置<br><br>&#9;&#9;// pt := 処理対象文字列 sel 内の「最も前の改行コード」の後ろ位置（つまり１行目の末尾位置）<br>&#9;&#9;pt := 0;<br><br>&#9;&#9;if ( ptCR &gt; 0 ) then&#9;begin&#9;//{<br>&#9;&#9;&#9;// CR があった<br>&#9;&#9;&#9;pt := ptCR;&#9;// pt := CR までのバイト数<br><br>&#9;&#9;&#9;// CR の次が LF だった(CRLF改行)→ pt := CRLF の後ろまで(値を1加算)<br>&#9;&#9;&#9;if ( Copy(sel,ptCR+1,1) = LF ) then&#9;pt := pt + 1;<br>&#9;&#9;end;&#9;//}<br><br>&#9;&#9;if ( ptLF &gt; 0 ) then&#9;begin&#9;//{<br>&#9;&#9;&#9;// LF があった<br>&#9;&#9;&#9;if ( pt   = 0  ) then&#9;pt := ptLF;&#9;// CR が無かった場合、pt := LF までのバイト数<br>&#9;&#9;&#9;if ( ptLF &lt; pt ) then&#9;pt := ptLF;&#9;// CR より前に LF があった場合、pt := LF までのバイト数<br>&#9;&#9;end;&#9;//}<br><br>&#9;&#9;if ( pt = 0 ) then&#9;begin&#9;//{<br>&#9;&#9;&#9;// sel 内に改行コードが無かった<br><br>&#9;&#9;&#9;// 末尾に「編集中テキストと同じ改行コード」を追加<br>&#9;&#9;&#9;case S_GetLineCode() of&#9;//{<br>&#9;&#9;&#9;&#9;0:&#9;sel := sel + CRLF;&#9;// CRLF を追加<br>&#9;&#9;&#9;&#9;1:&#9;sel := sel + CR;&#9;// CR   を追加<br>&#9;&#9;&#9;&#9;2:&#9;sel := sel + LF;&#9;// LF   を追加<br>&#9;&#9;&#9;end;&#9;//}<br><br>&#9;&#9;&#9;pt := Length(sel);&#9;// 末尾までを一行目とする。<br>&#9;&#9;end;&#9;//}<br><br>&#9;&#9;res := Copy  (sel,1,pt) + res;&#9;// sel の一行目の内容を処理結果文字列 res の前に追加<br>&#9;&#9;sel := Delete(sel,1,pt);&#9;&#9;// sel の一行目の内容を削除した文字列が、次回の sel<br>&#9;end;&#9;//}<br><br>&#9;S_InsText(res);&#9;// 処理結果を書き出す<br>&#9;S_ReDraw(0);&#9;// 再描画 - 処理後にカーソル位置が変わる場合用<br>end;<br></div></section>
+    <ul><li><section><h1 id=357>
+    <span class="no">[357]</span>
+    <a class="title" href="#357">Re:お題：選択行を反転</a>
+    <span class="author">miau</span>
+    <time datetime="2007-02-07T09:16:49">2007年02月07日 09:16</time></h1>
+    <div class="body">以前自分用に作った PerlScript 版です。<br>（すいさんの投稿を見て少しいじりましたが）<br>LF と CRLF のみの対応でよければ、こんな感じで。<br><br>my $sel = GetSelectedString(0);<br>my @lines = split(/(?&lt;=\n)/, $sel);<br>my $res = join('', reverse(@lines));<br>InsText($res);<br></div></section>
+    </li></ul></li></ul></body></html>

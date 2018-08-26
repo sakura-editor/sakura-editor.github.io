@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択範囲をWEB検索するマクロで文字化け</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">579</span>
+    <a class="title" href="579.html#579">選択範囲をWEB検索するマクロで文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">581</span>
+    <a class="title" href="579.html#581">RE: 選択範囲をWEB検索するマクロで文字化け</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=579>
+    <span class="no">[579]</span>
+    <a class="title" href="#579">選択範囲をWEB検索するマクロで文字化け</a>
+    <span class="author">mae</span>
+    <time datetime="2014-06-05T07:12:24">2014年06月05日 07:12</time></h1>
+    <div class="body">お世話になっております。お知恵を拝借したいのですが、<br><br>.JSで、選択範囲を右クリックメニューからWEB検索できるマクロ<br>を設定しました。<br>テキストはUTF-8で作成しています。<br><br>例えばGoogleだったら<br>var naviURL = "<a href=https://www.google.co.jp/search?q= target=_top><nobr>https://<wbr>www.<wbr>google.<wbr>co.<wbr>jp/<wbr>search?<wbr>q=<wbr></nobr></a>" + strWord + "&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t;<br>となっていて、検索を行うと<br>アルファベットだと問題なく検索できるのですが、<br>ひらがな、漢字、カタカナ全て文字化けしてしまいます。<br>但し、IEのタブや、IEに言葉を渡した時点では、ちゃんと元のテキストが表示されているので、<br>もしかしたらIEの設定の問題なのかもしれません。<br><br>お心当たりございましたら、ご教授お願い致します。<br><br><br></div></section>
+    <ul><li><section><h1 id=581>
+    <span class="no">[581]</span>
+    <a class="title" href="#581">RE: 選択範囲をWEB検索するマクロで文字化け</a>
+    <span class="author">もか</span>
+    <time datetime="2014-06-06T21:22:01">2014年06月06日 21:22</time></h1>
+    <div class="body">&gt;var naviURL = "https://www.google.co.jp/search?q=" + encodeURIComponent(strWord) + "&amp;ie=utf-8&amp;oe=utf-8&amp;aq=t;<br>encodeURIComponentをしてみるとかでどうでしょう<br></div></section>
+    </li></ul></li></ul></body></html>

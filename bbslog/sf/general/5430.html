@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Unicode(UTF-16?)をサクラエディタで扱う方法を教えて下さい。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5430</span>
+    <a class="title" href="5430.html#5430">Unicode(UTF-16?)をサクラエディタで扱う方法を教えて下さい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5438</span>
+    <a class="title" href="5430.html#5438">Re:Unicode(UTF-16?)をサクラエディタで扱う方法を教えて下さい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5442</span>
+    <a class="title" href="5430.html#5442">DANDPとStirlingを使ってみたら？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5446</span>
+    <a class="title" href="5430.html#5446">Re:DANDPとStirlingを使ってみたら？</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5448</span>
+    <a class="title" href="5430.html#5448">Re:Unicode(UTF-16?)をサクラエディタで扱う方法を教えて下さい。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5452</span>
+    <a class="title" href="5430.html#5452">Re:Unicode(UTF-16?)をサクラエディタで扱う方法を教えて下さい。</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=5430>
+    <span class="no">[5430]</span>
+    <a class="title" href="#5430">Unicode(UTF-16?)をサクラエディタで扱う方法を教えて下さい。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2006-09-19T20:18:40">2006年09月19日 20:18</time></h1>
+    <div class="body">以下13行は,土木の電子納品SXFのP21形式ファイルのヘッダー部分です。<br>ISO-10303-21;<br>HEADER;<br>FILE_DESCRIPTION(('SCADEC level2 AP202_mode'),<br>        '2;1');<br>FILE_NAME('\X2\30B530AF30E930A830C730A33<br>0BF\X0\_model.p21',<br>           '2006-9-14T7:57:9',<br>           (''),<br>           (''),<br>           'SCADEC_API_Ver3.00',<br>           '***********************',<br>        '');<br>FILE_SCHEMA(('ASSOCIATIVE_DRAUGHTING'));<br>ENDSEC;<br><br>Q.サクラエディタで,以下のケース1),ケース2)のコード変換の対応可能でしょうか。<br>  ケース1) '\X2\30B530AF30E930A830C730A330BF\X0\_mo<br>del.p21'  ---&gt;      サ  ク  ラ  エ  デ  ィ  タ<br>  ケース2)      サ  ク  ラ  エ  デ  ィ  タ                   ---&gt; '\X2\30B530AF30E930A830C730A330BF\X0\_mo<br>del.p21'<br><br>現在は,ケース2)について,WinJis(フリーウエア)で確認できました。<br>       ケース1)について,バイナリーエディタでできそうな気がします。<br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=5438>
+    <span class="no">[5438]</span>
+    <a class="title" href="#5438">Re:Unicode(UTF-16?)をサクラエディタで扱う方法を教えて下さい。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-09-23T00:48:32">2006年09月23日 00:48</time></h1>
+    <div class="body">▼ ろろさん<br>&gt; Q.サクラエディタで,以下のケース1),ケース2)のコード変換の対応可能でしょうか。<br>&gt;   ケース1) '\X2\30B530AF30E930A830C730A330BF\X0\_mo<br>&gt; del.p21'  ---&gt;      サ  ク  ラ  エ  デ  ィ  タ<br>&gt;   ケース2)      サ  ク  ラ  エ  デ  ィ  タ                   ---&gt; '\X2\30B530AF30E930A830C730A330BF\X0\_mo<br>&gt; del.p21'<br>&gt; <br>&gt; 現在は,ケース2)について,WinJis(フリーウエア)で確認できました。<br>&gt;        ケース1)について,バイナリーエディタでできそうな気がします。<br><br>1)<br>バイナリエディタの１６進表示で、キーボードから全１６進英数文字を入力し、ファイルに保存する。<br>サクラエディタを使って、UnicodeBE モードで開く。<br>　バイナリエディタで、１６進入力部分が貼り付け出来ればなお良い。<br>2)<br>サクラエディタで全角文字を入力し、UnicodeBE でファイルに保存する。<br>バイナリエディタを使ってファイルを開き、画面に１６進表示する。<br>　バイナリエディタで、１６進表示部分がカット／コピー出来ればなお良い。<br><br>そんなバイナリエディター有るんでしょうか。無かったら作って下さい。</div></section>
+    <ul><li><section><h1 id=5442>
+    <span class="no">[5442]</span>
+    <a class="title" href="#5442">DANDPとStirlingを使ってみたら？</a>
+    <span class="author">渡辺真</span>
+    <time datetime="2006-09-24T08:57:05">2006年09月24日 08:57</time></h1>
+    <div class="body">下記のDANDPの16進部分に、<br><a href=http://hp.vector.co.jp/authors/VA020296/ target=_top><nobr>http://<wbr>hp.<wbr>vector.<wbr>co.<wbr>jp/<wbr>authors/<wbr>VA020296<wbr>/<wbr></nobr></a><br><br>B530AF30E930A830C730A330BF30<br>をペースト(貼り付け)すると、<br>サクラエディタ<br>と表示されます。<br><br>下記のStirling<br><a href=http://www.vector.co.jp/soft/win95/util/se079072.html target=_top><nobr>http://<wbr>www.<wbr>vector.<wbr>co.<wbr>jp/<wbr>soft/<wbr>win95/<wbr>util/<wbr>se079072<wbr>.<wbr>html</nobr></a><br>のテキスト部分に、<br>サクラエディタと入力すると、<br>B530AF30E930A830C730A330BF30<br>と表示されます。<br>これをコピーして、他のソフトにペースト(貼り付け)できます。<br><br>Stirlingは、独自のクリップボードを使うため、Stirling内でコピーしたデータしか、Stirlingにペーストできません。<br></div></section>
+    <ul><li><section><h1 id=5446>
+    <span class="no">[5446]</span>
+    <a class="title" href="#5446">Re:DANDPとStirlingを使ってみたら？</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-09-24T12:28:12">2006年09月24日 12:28</time></h1>
+    <div class="body">▼ 渡辺真さん<br>&gt; 下記のDANDPの16進部分に、<br>&gt; <a href=http://hp.vector.co.jp/authors/VA020296/ target=_top><nobr>http://<wbr>hp.<wbr>vector.<wbr>co.<wbr>jp/<wbr>authors/<wbr>VA020296<wbr>/<wbr></nobr></a><br><br>DANDP 16進入力にいいですね。<br>私も、16進出力internetで見つけました。<br>BINYOMIならスペース無く切り取り出来るので、300KBのテキスト(SJIS)でも大丈夫でした。<br><br><a href=http://www.vector.co.jp/soft/win95/util/se347515.html target=_top><nobr>http://<wbr>www.<wbr>vector.<wbr>co.<wbr>jp/<wbr>soft/<wbr>win95/<wbr>util/<wbr>se347515<wbr>.<wbr>html</nobr></a><br>以上</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=5448>
+    <span class="no">[5448]</span>
+    <a class="title" href="#5448">Re:Unicode(UTF-16?)をサクラエディタで扱う方法を教えて下さい。</a>
+    <span class="author">すい</span>
+    <time datetime="2006-09-25T01:31:10">2006年09月25日 01:31</time></h1>
+    <div class="body">全体的にどういう事(処理)をやりたいのかがよく分かりませんので、<br>ただ単に、16進数文字列をバイナリに変換するだけならマクロを<br>使えば一応は出来ますよ、というお話しを。<br><br>カーソル位置から２文字ずつ範囲選択して、それが16進数の文字列なら<br>\x** に正規表現で選択範囲のみの置換をしていく、それを16進数文字列の<br>終わりまで繰り返していくだけです。<br><br>-- HEX2BIN.PPA --<br>// TAB=4<br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに ppa.dll を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>var&#9;&#9;// 変数を確保する場所<br>&#9;str:String;&#9;&#9;// 文字列変数を用意<br>&#9;num:Integer;<br>begin&#9;// ここより処理内容の記述&#9;{<br>&#9;S_CancelMode(0);&#9;// 各種モードの取り消し<br>&#9;S_MoveHistSet(0);&#9;// 現在位置を移動履歴に登録<br>&#9;num := 0;&#9;// 変換した文字数 = 0<br><br>&#9;while(1) do&#9;begin&#9;//{<br>&#9;&#9;S_Right_Sel();&#9;// (範囲選択)カーソル右移動<br>&#9;&#9;S_Right_Sel();&#9;// (範囲選択)カーソル右移動<br>&#9;&#9;str := S_GetSelectedString(0);<br>&#9;&#9;if ( Length(str) &lt; 2 )&#9;then&#9;Break;&#9;&#9;// 範囲選択長が2未満ならループ脱出<br>&#9;&#9;if ( ( StrToInt('0x'+str) = 0 ) and ( str &lt;&gt; '00' ) ) then&#9;Break;&#9;// 選択した2文字が16進数文字でなければループ脱出<br><br>&#9;&#9;S_ReplaceAll( '..' , '\x'+str , $84 );&#9;// $84 = 選択範囲 , 正規表現<br>&#9;&#9;S_Left();&#9;&#9;&#9;&#9;// カーソル左移動 - 選択解除(カーソル位置=選択範囲の左端)<br>//&#9;&#9;S_SearchClearMark(0);&#9;// 検索マークの切替え<br>&#9;&#9;S_Right();&#9;&#9;&#9;&#9;// カーソル右移動 - 次の文字へ→移動<br>&#9;&#9;num := num + 1;&#9;// 変換した文字数 ++<br>//&#9;&#9;MessageBox(str,'p1',0);<br>&#9;end;&#9;//}<br><br>&#9;S_Left();&#9;&#9;&#9;&#9;// カーソル左移動 - 選択解除(カーソル位置=選択範囲の左端)<br>&#9;S_SearchClearMark(0);&#9;// 検索マークの切替え<br>&#9;S_ReDraw(0);&#9;&#9;&#9;// 再描画<br><br>&#9;if( num &gt; 0 ) then&#9;// 変換した文字があった場合。<br>&#9;&#9;begin&#9;//{<br>&#9;&#9;&#9;// ↓変換した範囲の文字列を範囲選択する<br>&#9;&#9;&#9;S_BeginSelect(0);&#9;// 範囲選択開始<br>&#9;&#9;&#9;S_MoveHistPrev(0);&#9;// 移動履歴: 前へ<br>&#9;&#9;&#9;S_Right();&#9;&#9;&#9;// カーソル右移動<br>&#9;&#9;&#9;S_Left();&#9;&#9;&#9;// カーソル左移動<br><br>&#9;&#9;&#9;MessageBox( '文字コード変換します' , 'message' , 0 );<br>&#9;&#9;&#9;S_CodeCnvUNICODEBEtoSJIS(0);&#9;// UnicodeBE→SJISコード変換<br>&#9;&#9;end&#9;//}<br>&#9;;<br>end;&#9;//}</div></section>
+    </li><li><section><h1 id=5452>
+    <span class="no">[5452]</span>
+    <a class="title" href="#5452">Re:Unicode(UTF-16?)をサクラエディタで扱う方法を教えて下さい。</a>
+    <span class="author">miau</span>
+    <time datetime="2006-09-26T11:09:47">2006年09月26日 11:09</time></h1>
+    <div class="body">サクラエディタの機能をほとんど使ってないのでアレですが・・・<br>選択範囲に対して変換を行う PerlScript マクロを書いてみました。<br># 日本語とか書くと面倒なので最低限のソースです。<br><br>(1) 「30B530AF30E930A830C730A330BF」→「サクラエディタ」<br><br>use Encode;<br><br># input<br>my $seltext = decode('cp932', GetSelectedString());<br><br># hex2unicode<br>$seltext =~ s/([a-fA-F0-9]{4})/pack("U", hex($1))/eg;<br><br># output<br>InsText(encode('cp932', $seltext));<br><br>(2) 「サクラエディタ」→「30B530AF30E930A830C730A330BF」<br><br>use Encode;<br><br># input<br>my $seltext = decode('cp932', GetSelectedString());<br><br># unicode2hex<br>$seltext =~ s/(.)/sprintf('%02X', unpack("U", $1))/eg;<br><br># output<br>InsText(encode('cp932', $seltext));<br></div></section>
+    </li></ul></li></ul></body></html>

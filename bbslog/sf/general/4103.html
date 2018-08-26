@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Perlでカラーがくずれる</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4103</span>
+    <a class="title" href="4103.html#4103">Perlでカラーがくずれる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4104</span>
+    <a class="title" href="4103.html#4104">Re:Perlでカラーがくずれる</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4108</span>
+    <a class="title" href="4103.html#4108">RE: Perlでカラーがくずれる</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=4103>
+    <span class="no">[4103]</span>
+    <a class="title" href="#4103">Perlでカラーがくずれる</a>
+    <span class="author">あき</span>
+    <time datetime="2004-10-19T08:58:05">2004年10月19日 08:58</time></h1>
+    <div class="body">こんにちは。質問なのですが、Perlで例えば<br><br>$Main::SKIN{'IMAGE_SIZE'} = $cgi_lib'maxdata;<br>とか<br>$agent =~ s/"/&amp;quot;/g;<br>とか<br>&amp;jcode'convert(*val, 'sjis');<br><br>など、構文の途中に、文字列を囲う場合じゃない場合に<br> " や ' を使うと、カラーが新たに"や'が出てくるまで<br>崩れてしまいます。<br>sakuraのバージョンは1.4.9.0ですが、このような現象が<br>起きるのは私だけでしょうか？<br>または私の設定不備でしょうか？バグでしょうか？<br><br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=4104>
+    <span class="no">[4104]</span>
+    <a class="title" href="#4104">Re:Perlでカラーがくずれる</a>
+    <span class="author">バギャニャー</span>
+    <time datetime="2004-10-19T09:40:50">2004年10月19日 09:40</time></h1>
+    <div class="body">これを参考にしてみてはいかがでしょう。<br>↓<br><a href=http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?tree=r4019 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>tree=<wbr>r4019</nobr></a><br></div></section>
+    </li><li><section><h1 id=4108>
+    <span class="no">[4108]</span>
+    <a class="title" href="#4108">RE: Perlでカラーがくずれる</a>
+    <span class="author">すい</span>
+    <time datetime="2004-10-20T04:11:29">2004年10月20日 04:11</time></h1>
+    <div class="body">&gt;こんにちは。質問なのですが、Perlで例えば<br>&gt;<br>&gt;$Main::SKIN{'IMAGE_SIZE'} = $cgi_lib'maxdata;<br>&gt;とか<br>&gt;$agent =~ s/"/&amp;quot;/g;<br>&gt;とか<br>&gt;&amp;jcode'convert(*val, 'sjis');<br>&gt;<br>&gt;など、構文の途中に、文字列を囲う場合じゃない場合に<br>&gt; " や ' を使うと、カラーが新たに"や'が出てくるまで<br>&gt;崩れてしまいます。<br><br>http://groups.yahoo.co.jp/group/sakura-editor/files/User/Data/<br>⇒  perl_20020806_20.lzh <br>「perl色分け表示設定（正規表現キーワード,色指定ファイル）」<br><br>でも使ってみて下さい。<br></div></section>
+    </li></ul></li></ul></body></html>

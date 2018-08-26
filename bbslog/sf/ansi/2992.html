@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>サンプル</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2992</span>
+    <a class="title" href="2992.html#2992">サンプル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2994</span>
+    <a class="title" href="2992.html#2994">Re: サンプル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2995</span>
+    <a class="title" href="2992.html#2995">Re2: サンプル</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2992>
+    <span class="no">[2992]</span>
+    <a class="title" href="#2992">サンプル</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-08-06T16:54:33">2003年08月06日 16:54</time></h1>
+    <div class="body">開発が停滞しているようだから、ヒントをあげます。<br><br>typedef BOOL (FAR * ENUMFILEPROC)(LPCTSTR lpszFileTitle, LPWIN32_FIND_DATA lpw32fd, LPARAM lParam)<br><br>BOOL EnumFiles(LPCTSTR lpszSpec, ENUMFILEPROC lpfn, LPARAM lParam)<br>{<br>&#9;WIN32_FIND_DATA w32fd;<br>&#9;HANDLE hFind = FindFirstFile(lpszSpec, &amp;w32fd);<br>&#9;if(hFind != INVALID_HANDLE_VALUE) {<br>&#9;&#9;do {<br>&#9;&#9;&#9;// Ignore _T(".") and _T("..").<br>&#9;&#9;&#9;if(PathIsTrivial(lpszSpec, &amp;w32fd))<br>&#9;&#9;&#9;&#9;continue;<br>&#9;&#9;&#9;if(!(*lpfn)(lpszSpec, &amp;w32fd, lParam))<br>&#9;&#9;&#9;&#9;break;<br>&#9;&#9;} while(FindNextFile(hFind, &amp;w32fd));<br>&#9;&#9;return FindClose(hFind);<br>&#9;}<br>&#9;return FALSE;<br>}<br><br>BOOL EnumDirListFiles(LPCTSTR lpszDir, ENUMFILEPROC lpfn, LPARAM lParam)<br>{<br>&#9;int cchDirLen = hq_strlen(lpszDir);<br>&#9;if(lpszDir[cchDirLen - 1] == '\\')<br>&#9;&#9;cchDirLen--;<br>&#9;int cchMax = cchDirLen + (2 + 1); // hq_strlen("\\*") == 2.<br> <br>&#9;LPTSTR lpszSpec = (LPTSTR)hq_malloc(cchMax * sizeof(TCHAR));<br>&#9;if(lpszSpec != NULL) {<br>&#9;&#9;hq_strcpy(lpszSpec, lpszDir);<br>&#9;&#9;hq_strcpy(lpszSpec + cchDirLen, _T("\\*"));<br>&#9;&#9;BOOL fResult = EnumFiles(lpszSpec, lpfn, lParam);<br>&#9;&#9;hq_free(lpszSpec);<br>&#9;&#9;return TRUE;<br>&#9;}<br>&#9;return FALSE;<br>}<br>// BOOL EnumDropedFileProc(LPCTSTR lpszFile, OPTIONAL LPPOINT lppt, LPARAM lParam);<br>typedef BOOL (FAR * ENUMDROPEDFILEPROC)(LPCTSTR lpszFile, OPTIONAL LPPOINT lppt, LPARAM lParam);<br><br>BOOL EnumDroppedFiles(HDROP hdrop, ENUMDROPEDFILEPROC lpfn, LPARAM lParam)<br>{<br>&#9;if(hdrop == NULL) {<br>&#9;&#9;SetLastError(ERROR_INVALID_HANDLE);<br>&#9;&#9;return FALSE;<br>&#9;}<br><br>&#9;DWORD dwError = 0;<br>&#9;int cchMax = MAX_PATH;<br>&#9;LPTSTR lpszFile = (LPTSTR)hq_malloc(cchMax * sizeof(TCHAR));<br>&#9;if(lpszFile != NULL) {<br>&#9;&#9;POINT pt;<br>&#9;&#9;LPPOINT lppt = (DragQueryPoint(hdrop, &amp;pt) ? &amp;pt : NULL);<br>&#9;&#9;UINT cFiles = DragQueryFile(hdrop, 0xFFFFFFFF, NULL, 0);<br>&#9;&#9;for(UINT uIndex = 0 ; uIndex &lt; cFiles ; uIndex++) {<br>&#9;&#9;&#9;int cchMaxNew = DragQueryFile(hdrop, uIndex, NULL, 0) + 1;<br>&#9;&#9;&#9;if(cchMax &lt; cchMaxNew) {<br>&#9;&#9;&#9;&#9;cchMax = cchMaxNew;<br>&#9;&#9;&#9;&#9;lpszFile = (LPTSTR)hq_realloc(lpszFile, cchMaxNew * sizeof(TCHAR));<br>&#9;&#9;&#9;}<br>&#9;&#9;&#9;if(DragQueryFile(hdrop, uIndex, lpszFile, cchMax)) {<br>&#9;&#9;&#9;&#9;if(!(*lpfn)(lpsz, lppt, lParam))<br>&#9;&#9;&#9;&#9;&#9;break;<br>&#9;&#9;&#9;} else dwError = GetLastError();<br>&#9;&#9;} else dwError = GetLastError();<br>&#9;&#9;hq_free(lpszFile);<br>&#9;} else dwError = GetLastError();<br>&#9;SetLastError(dwError);<br>&#9;return dwError != 0;<br>}<br></div></section>
+    <ul><li><section><h1 id=2994>
+    <span class="no">[2994]</span>
+    <a class="title" href="#2994">Re: サンプル</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-08-07T01:49:26">2003年08月07日 01:49</time></h1>
+    <div class="body">&gt;発言者: wmlhq<br>&gt;開発が停滞しているようだから、ヒントをあげます。<br>Thanks!<br>で何のヒントだっけ？(笑)<br></div></section>
+    <ul><li><section><h1 id=2995>
+    <span class="no">[2995]</span>
+    <a class="title" href="#2995">Re2: サンプル</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-08-07T16:57:38">2003年08月07日 16:57</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; Thanks!<br>&gt; で何のヒントだっけ？(笑)<br><br>ボケてました。すみません。<br>ところで、POSIXでは、コマンドラインのオプションは最初につけるはずでは？　複数ファイルに別々のオプションを指定するためにも、これは制限した方がよろしいかと。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>WSHマクロとCOM</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3260</span>
+    <a class="title" href="3260.html#3260">WSHマクロとCOM</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3270</span>
+    <a class="title" href="3260.html#3270">Re:WSHマクロとCOM</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3276</span>
+    <a class="title" href="3260.html#3276">Re2:WSHマクロ</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3260>
+    <span class="no">[3260]</span>
+    <a class="title" href="#3260">WSHマクロとCOM</a>
+    <span class="author">もか</span>
+    <time datetime="2003-10-16T11:02:20">2003年10月16日 11:02</time></h1>
+    <div class="body">WSHで、COMしてるのに、<br>CoInitialize()、CoUninitialize()<br>が呼ばれていません。WSHの挙動がおかしいのは、これのせいかもしれません。<br>　COMしたことないので良くわかっていないのですが、CoIni→CoIni→CoUnini→CoUnini(表記略)のように複数回呼ぶのはまずいのでしょうか？<br>　まずいのなら、ショートカットの解決でetc_uty.cppでもこれらの関数が使われているため、初期化と開放は、CProcess配下かどこかで、<br>シングルトンみたいにして管理したほうがよさそうです。<br><br>#ついでに、CCommandLineのインスタンスの管理も委託したいなぁ。あれdeleteしてない。。。(Unicode版は修正したけど)<br></div></section>
+    <ul><li><section><h1 id=3270>
+    <span class="no">[3270]</span>
+    <a class="title" href="#3270">Re:WSHマクロとCOM</a>
+    <span class="author">おに</span>
+    <time datetime="2003-10-19T17:53:34">2003年10月19日 17:53</time></h1>
+    <div class="body">OleInitialize/OleUninitializeを呼べば、CoInitialize/CoUninitializeは中で呼ばれていますので、OLEも使う時はOle～に絞らないとダメです。<br>で、それぞれ一回しか呼んじゃダメです。また、スレッド毎に呼ぶ必要があります。<br><br>//今更で恐縮なんですが…<br>//OLE D&amp;Dしてるので、当然正しく呼ばれてるものと思ってた、というより、現にOLE D&amp;Dが動作している以上正しく呼ばれてるのでは？<br>//手元では上手く行ってたのも、ショートカットを使わなかったせいでしょうか？</div></section>
+    <ul><li><section><h1 id=3276>
+    <span class="no">[3276]</span>
+    <a class="title" href="#3276">Re2:WSHマクロ</a>
+    <span class="author">もか</span>
+    <time datetime="2003-10-23T18:25:27">2003年10月23日 18:25</time></h1>
+    <div class="body">&gt;//今更で恐縮なんですが…<br>&gt;//OLE D&amp;Dしてるので、当然正しく呼ばれてるものと思ってた、というより、現にOLE D&amp;Dが動作している以上正しく呼ばれてるのでは？<br>&gt;//手元では上手く行ってたのも、ショートカットを使わなかったせいでしょうか？<br>ショートカット解決は、ファイルを開くと大抵呼び出されるんで、どうやら問題は別にあるみたいです。<br>見当違いだったようです。申し訳ありません。<br>で、まじめに調べてみました。<br>　ActiveScriptRubyをインストールして、マクロ板35のことをやってみると、同じように見事に落ちます。<br>VC6.0によると、<br>CWSH.cpp / CWSHClient / m_Engine-&gt;SetScriptState(SCRIPTSTATE_STA<br>RTED)<br>の向こう側、MSVCRT-RUBY18.DLLでスタックがあふれます。<br>コールスタックや、メモリーマップを見た感じだと、MSVCRT-RUBY18.DLL内で、4つの関数が山手線みたいに再起実行されている模様。ということでサクラ側で直すのは難しそうです。<br>スタックを5MBにすると、デフォルト(1MB)のとき再起実行したであろう付近で、今度はアクセス違反で落ちます。<br>　ActiveScriptRubyのsamples/ruby.htmlでもファイル-新規作成でもう一つ実行するとIEが固まる<br>(sample-readmej.txtにも書いてある)ので、それと関係があるのかもしれません。<br><br>テスト環境：<br>ActiveScriptRuby 1.8.0.5<br>Windows2000 SP4 / IE5.01 SP4<br>sakura 1.4.3.1<br><br># m_Engine-&gt;SetScriptState(SCRIPTSTATE_CON<br>NECTED)しなくてもいいのかな。<br># でも、その前で落ちるんで、関係ないみたい<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

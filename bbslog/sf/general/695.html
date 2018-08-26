@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>キーワードの強調表示</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">695</span>
+    <a class="title" href="695.html#695">キーワードの強調表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">696</span>
+    <a class="title" href="695.html#696">Re: キーワードの強調表示</a></div>
+    </li><li><div class="list-title">
+    <span class="no">698</span>
+    <a class="title" href="695.html#698">Re:キーワードの強調表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">699</span>
+    <a class="title" href="695.html#699">Re2:キーワードの強調表示</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=695>
+    <span class="no">[695]</span>
+    <a class="title" href="#695">キーワードの強調表示</a>
+    <span class="author">GAE</span>
+    <time datetime="2001-09-19T00:23:01">2001年09月19日 00:23</time></h1>
+    <div class="body">もしかしたら仕様かもしれませんが、<br>キーワードは3バイト以上でないとマッチしないんですね。<br><br>記号の色を変えようと思って<br>「☆、★、■、□」といったキーワードを定義したのですが、<br>色が変わりませんでした。<br>可能であれば対処していただけるとうれしいです。<br></div></section>
+    <ul><li><section><h1 id=696>
+    <span class="no">[696]</span>
+    <a class="title" href="#696">Re: キーワードの強調表示</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-09-19T09:58:27">2001年09月19日 09:58</time></h1>
+    <div class="body">&gt;キーワードは3バイト以上でないとマッチしないんですね。<br>&gt;「☆、★、■、□」といったキーワードを定義したのですが、<br>&gt;色が変わりませんでした。<br>長さが問題なのではなくて，色分けの際に2バイト文字をキーワードとして認識しないことが問題なのです．<br><br>2バイト文字をキーワードの一部として認識させるだけでは，キーワードの終了検出がうまくいかずに色分けされないのではないかと思います．(部分一致は許していないので)<br></div></section>
+    </li><li><section><h1 id=698>
+    <span class="no">[698]</span>
+    <a class="title" href="#698">Re:キーワードの強調表示</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-09-19T10:43:23">2001年09月19日 10:43</time></h1>
+    <div class="body">▼ GAEさん<br>&gt; 「☆、★、■、□」といったキーワードを定義したのですが、<br>&gt; 色が変わりませんでした。<br><br>CEditView にて強調キーワードを探すのに global.h の IS_KEYWORD_CHAR(c) が使われていて、これはC言語の識別子の文字しか受け付けないので、２バイト文字は駄目です。逆に IS_KEYWORD_CHAR を変えれば漢字も受け付けると思います。<br></div></section>
+    <ul><li><section><h1 id=699>
+    <span class="no">[699]</span>
+    <a class="title" href="#699">Re2:キーワードの強調表示</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-09-19T11:10:16">2001年09月19日 11:10</time></h1>
+    <div class="body">&gt; C言語の識別子の文字しか受け付けない<br>は間違いです。IS_KEYWORD_CHAR の定義をご覧ください。<br><br>加えて CEditView[_New] の「キーワード文字列の終端を探す」辺りを変更かな？<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

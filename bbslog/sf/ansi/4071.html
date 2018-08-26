@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>GREP除外フォルダ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">4071</span>
+    <a class="title" href="4071.html#4071">GREP除外フォルダ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4074</span>
+    <a class="title" href="4071.html#4074">Re:GREP除外フォルダ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4076</span>
+    <a class="title" href="4071.html#4076">Re2:GREP除外フォルダ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4077</span>
+    <a class="title" href="4071.html#4077">Re3:GREP除外フォルダ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4078</span>
+    <a class="title" href="4071.html#4078">Re4:GREP除外フォルダ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4085</span>
+    <a class="title" href="4071.html#4085">Re5:GREP除外フォルダ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4086</span>
+    <a class="title" href="4071.html#4086">Re6:GREP除外フォルダ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4084</span>
+    <a class="title" href="4071.html#4084">RE: GREP除外フォルダ</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=4071>
+    <span class="no">[4071]</span>
+    <a class="title" href="#4071">GREP除外フォルダ</a>
+    <span class="author">みく</span>
+    <time datetime="2005-10-25T18:32:34">2005年10月25日 18:32</time></h1>
+    <div class="body"><br>eGroups:source/grep20051025.LZH<br><br>GREPで除外フォルダを指定できるパッチです。<br>ファイルパターンのところに !/CVS !/.svn のように書くと<br>そのフォルダを除外します。<br>指定の仕方が特殊なので、フォルダパターンを別枠で指定で<br>きるようにするなど、適当に修正してください。<br><br>---<br><br>Diffの修正により VC でコンパイルエラーが出ます。<br>for( int v = ...<br>のint v定義を関数の先頭に移動してください。<br>#すぐ後のラベルの関係でエラーとなります。<br><br>---<br><br>例えば別ファイルの関数にタグジャンプをしたとき、<br>表示される位置がウインドウの下の方になるときがあります。<br>（うまく説明できない）<br>真ん中か少し上に表示されると見やすくなると思います。<br></div></section>
+    <ul><li><section><h1 id=4074>
+    <span class="no">[4074]</span>
+    <a class="title" href="#4074">Re:GREP除外フォルダ</a>
+    <span class="author">maru</span>
+    <time datetime="2005-10-30T03:22:38">2005年10月30日 03:22</time></h1>
+    <div class="body">▼ みくさん<br>&gt; Diffの修正により VC でコンパイルエラーが出ます。<br>&gt; for( int v = ...<br>&gt; のint v定義を関数の先頭に移動してください。<br>&gt; #すぐ後のラベルの関係でエラーとなります。<br><br>お手数おかけしまして、すみません。＞げんたさん、みくさん<br>ご指摘事項のほかに、存在しないファイル名<br>を指定したときの処理追加など<br>自分なりに修正してみました。<br>http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/Command_Diff_2005-10-22.diff<br></div></section>
+    <ul><li><section><h1 id=4076>
+    <span class="no">[4076]</span>
+    <a class="title" href="#4076">Re2:GREP除外フォルダ</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-10-30T16:02:38">2005年10月30日 16:02</time></h1>
+    <div class="body">一時ファイル作成に失敗した場合にMakeDiffTmpFile()エラー表示を行ってますけど，マクロから呼びだしたときにここで止まってしまうというのはどうなんだろう？<br></div></section>
+    <ul><li><section><h1 id=4077>
+    <span class="no">[4077]</span>
+    <a class="title" href="#4077">Re3:GREP除外フォルダ</a>
+    <span class="author">maru</span>
+    <time datetime="2005-10-31T02:17:27">2005年10月31日 02:17</time></h1>
+    <div class="body">▼ げんたさん<br>うわ、まずいですか？<br><br>ホントはマクロ関数の終了ステータスを返せるように<br>したかったのですが影響範囲がよく見えなくて。</div></section>
+    <ul><li><section><h1 id=4078>
+    <span class="no">[4078]</span>
+    <a class="title" href="#4078">Re4:GREP除外フォルダ</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-10-31T23:09:06">2005年10月31日 23:09</time></h1>
+    <div class="body">&gt;▼ げんたさん<br>&gt;うわ、まずいですか？<br>&gt;<br>&gt;ホントはマクロ関数の終了ステータスを返せるように<br>&gt;したかったのですが影響範囲がよく見えなくて。<br>いや，私も調べたわけではないのでいまいち判断つかずってところです．<br></div></section>
+    <ul><li><section><h1 id=4085>
+    <span class="no">[4085]</span>
+    <a class="title" href="#4085">Re5:GREP除外フォルダ</a>
+    <span class="author">maru</span>
+    <time datetime="2005-11-05T01:32:31">2005年11月05日 01:32</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; いや，私も調べたわけではないのでいまいち判断つかずってところです．<br>気が付く範囲で動きを確認し、今回は大丈夫そうな・・・。<br>ちょっと弱気ですけど。</div></section>
+    <ul><li><section><h1 id=4086>
+    <span class="no">[4086]</span>
+    <a class="title" href="#4086">Re6:GREP除外フォルダ</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-11-05T08:49:22">2005年11月05日 08:49</time></h1>
+    <div class="body">&gt;&gt; いや，私も調べたわけではないのでいまいち判断つかずってところです．<br>&gt;気が付く範囲で動きを確認し、今回は大丈夫そうな・・・。<br>&gt;ちょっと弱気ですけど。<br>次回取り込みにはもう入れちゃいました．<br>(まだリリースしてないけど...)<br><br>今日は外出するのでまた明日．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=4084>
+    <span class="no">[4084]</span>
+    <a class="title" href="#4084">RE: GREP除外フォルダ</a>
+    <span class="author">みく</span>
+    <time datetime="2005-11-04T19:14:41">2005年11月04日 19:14</time></h1>
+    <div class="body"><br>・GREP除外フォルダ<br>バグ修正<br><br>・スペルチェック<br>バグ修正<br>バグ修正<br>バグ修正<br>スペルチェック用DLLを自作<br><br>eGroups:source/myspell20051104.lzh<br></div></section>
+    </li></ul></li></ul></body></html>

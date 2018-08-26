@@ -1,0 +1,91 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>新規保存では、拡張子が無い。 </title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">5579</span>
+    <a class="title" href="5579.html#5579">新規保存では、拡張子が無い。 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5591</span>
+    <a class="title" href="5579.html#5591">Re:新規保存では、拡張子が無い。 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5595</span>
+    <a class="title" href="5579.html#5595">Re2:新規保存では、拡張子が無い。 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5596</span>
+    <a class="title" href="5579.html#5596">Re3:新規保存では、拡張子が無い。 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5597</span>
+    <a class="title" href="5579.html#5597">Re4:新規保存では、拡張子が無い。 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5598</span>
+    <a class="title" href="5579.html#5598">Re5:新規保存では、拡張子が無い。 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5600</span>
+    <a class="title" href="5579.html#5600">Re6:新規保存では、拡張子が無い。 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5601</span>
+    <a class="title" href="5579.html#5601">Re7:新規保存では、拡張子が無い。 </a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5611</span>
+    <a class="title" href="5579.html#5611">Re4:新規保存では、拡張子が無い。 </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5612</span>
+    <a class="title" href="5579.html#5612">Re5:新規保存では、拡張子が無い。 </a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5579>
+    <span class="no">[5579]</span>
+    <a class="title" href="#5579">新規保存では、拡張子が無い。 </a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-11-07T05:12:02">2006年11月07日 05:12</time></h1>
+    <div class="body">▼ryojiさん<br>sourceforgeのpatch掲示板の方に、修正版(201496:SAVE_NEW.diff)の私へのレスとして、ryojiさんが書かれていますが、<br>要するに、修正版ではなく最新版の「保存」のダイアログで、「テキストファイル(*.txt)」▽を選んだ場合、.txt等の既に登録されている拡張子ではなく、新たな拡張子でファイルを保存すると、<br>file.ext.txt となって、期待どうりの file.ext になりません。<br>（多分、過去ログに有ったと思います。蒸し返してすみません。）<br>aid=1590760</div></section>
+    <ul><li><section><h1 id=5591>
+    <span class="no">[5591]</span>
+    <a class="title" href="#5591">Re:新規保存では、拡張子が無い。 </a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-11-12T03:07:33">2006年11月12日 03:07</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; 要するに、修正版ではなく最新版の「保存」のダイアログで、「テキストファイル(*.txt)」▽を選んだ場合、.txt等の既に登録されている拡張子ではなく、新たな拡張子でファイルを保存すると、<br>&gt; file.ext.txt となって、期待どうりの file.ext になりません。<br>この件の対策と、<br>・(無題)からの保存で.txtを自動補完する<br>・既存ファイルからの「名前を付けて保存」で元ファイルの拡張子を自動補完する<br>機能を入れたテスト用バイナリを作成しました。<br><a href=http://sakura.qp.land.to/?Junk%2F14 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F14</nobr></a><br>仕様および動作の確認お願いします。</div></section>
+    <ul><li><section><h1 id=5595>
+    <span class="no">[5595]</span>
+    <a class="title" href="#5595">Re2:新規保存では、拡張子が無い。 </a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-11-13T12:52:29">2006年11月13日 12:52</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 機能を入れたテスト用バイナリを作成しました。<br>&gt; <a href=http://sakura.qp.land.to/?Junk%2F14 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F14</nobr></a><br>&gt; 仕様および動作の確認お願いします。<br><br>patch の方にも書きましたが、意図を汲んで貰えないとさびしいので、<br><br>ユーザー指定 (*.txt)▼を先頭に持ってきてはどうでしょうか？<br>拡張子無しのファイルを保存する場合、選択のダイアログが出ないで、ユーザー指定 (*.txt;*.*)▼をわざわざ選んでもらう事になりますが、テキストファイル (*.txt)▼を毎回選ぶのと、Windowsの表示上のトレードオフです。</div></section>
+    <ul><li><section><h1 id=5596>
+    <span class="no">[5596]</span>
+    <a class="title" href="#5596">Re3:新規保存では、拡張子が無い。 </a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-11-13T14:03:01">2006年11月13日 14:03</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; テキストファイル (*.txt)▼を先頭に持ってきてはどうでしょうか？<br>&gt; 拡張子無しのファイルを保存する場合、選択のダイアログが出て、ユーザー指定 (*.*)▼をわざわざ選んでもらっても、ユーザー指定 (*.txt;*.*)▼が毎回表示されるのと、Windowsの表示上のトレードオフですが。<br><br>すいません、意図がわかりません。<br>現状のパッチでは無題を保存するとき、<br>・ユーザ指定(*.txt;*.*)<br>・テキスト(*.txt)<br>・すべてのファイル(*.*)<br>の３種類が[ファイルの種類]コンボボックスにあって、<br>一番上のユーザ指定(*.txt;*.*)を既定の選択状態にしています。<br>これをテキスト(*.txt)を既定の選択状態にしてほしいという意味でしょうか？<br><br>(*.txt;*.*)と(*.txt)とでは、拡張子補完の処理に差異はありません。<br>どちらも、拡張子を指定してないときは.txtを自動的に追加します。<br>[ファイル名]入力ボックスにどんな内容を入力しようが、どちらも同じルールで同じ名前のファイルを作成します。<br>で、何が違うかというと、ファイル一覧のリストビューに表示されるファイルが違うだけです。<br>(*.txt;*.*)のときは*.txtと*.*の両方にマッチするファイル、つまりすべてのファイルが表示され、<br>(*.txt)のときは*.txtにマッチするファイル、つまり拡張子が.txtのファイルのみが表示されます。<br><br>自分はファイル一覧に全部のファイルが見えていたほうが都合が良いので、(*.txt;*.*)が既定で良いと思っています。</div></section>
+    <ul><li><section><h1 id=5597>
+    <span class="no">[5597]</span>
+    <a class="title" href="#5597">Re4:新規保存では、拡張子が無い。 </a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-11-13T14:09:30">2006年11月13日 14:09</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; すいません、意図がわかりません。<br>すみません、了解しました。<br>(*.*)の場合のみ、全てのファイルが表示されます。</div></section>
+    <ul><li><section><h1 id=5598>
+    <span class="no">[5598]</span>
+    <a class="title" href="#5598">Re5:新規保存では、拡張子が無い。 </a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-11-13T14:10:56">2006年11月13日 14:10</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; ▼ ryojiさん<br>&gt; &gt; すいません、意図がわかりません。<br>&gt; すみません、了解しました。<br>&gt; (*.*)の場合のみ、全てのファイルが表示されます。<br>いや、(*.txt;*.*)の場合もすべてのファイルが表示されます。</div></section>
+    <ul><li><section><h1 id=5600>
+    <span class="no">[5600]</span>
+    <a class="title" href="#5600">Re6:新規保存では、拡張子が無い。 </a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-11-13T23:48:53">2006年11月13日 23:48</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; ▼ じゅうじさん<br>&gt; &gt; ▼ ryojiさん<br>&gt; &gt; &gt; すいません、意図がわかりません。<br>&gt; &gt; すみません、了解しました。<br>&gt; &gt; (*.*)の場合のみ、全てのファイルが表示されます。<br>&gt; いや、(*.txt;*.*)の場合もすべてのファイルが表示されます。<br><br>分かり辛かったので、もう一度書き直します。<br>現在SAKURAを使っている人は、ファイルを保存するとき、毎回<br>ユーザー指定 (*.*)▼　で、全ての拡張子が見えているはずです。それを、<br>ユーザー指定 (*.txt)▼　で、全ての拡張子が見えるようにしてはどうでしょうか？<br>今回の、<br>ユーザー指定 (*.txt;*.*)▼　では、*.*がいきなり加わって、意味が解り辛いのでは、と感じた次第です。<br><br>要望になってしまいました。<br>簡単に出来るのかどうかわかりません。</div></section>
+    <ul><li><section><h1 id=5601>
+    <span class="no">[5601]</span>
+    <a class="title" href="#5601">Re7:新規保存では、拡張子が無い。 </a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-11-14T10:29:18">2006年11月14日 10:29</time></h1>
+    <div class="body">&gt; 今回の、<br>&gt; ユーザー指定 (*.txt;*.*)▼　では、*.*がいきなり加わって、意味が解り辛いのでは、と感じた次第です。<br><br>確かに(*.txt;*.*)はあまり目にするものではないかもしれません。<br>でも、(*.htm;*.html)なんかはよく見かけるでしょう？それと同じです。<br>(*.txt)ですべてのファイルが見える、というのも十分違和感があります。<br>(*.*)から(*.txt)に変更したら、そのときは拡張子.txtのものだけが見えるのが自然だと思います。<br><br>&gt; 簡単に出来るのかどうかわかりません。<br><br>ファイルダイアログのWin32 APIを呼び出す際に、<br>表記の指定には文字列"*.txt"<br>動作の指定には文字列"*.txt;*.*"<br>を渡してやれば、APIはお望みの動作をしてくれると思います。</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=5611>
+    <span class="no">[5611]</span>
+    <a class="title" href="#5611">Re4:新規保存では、拡張子が無い。 </a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-11-16T08:28:26">2006年11月16日 08:28</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; (*.txt;*.*)と(*.txt)とでは、拡張子補完の処理に差異はありません。<br>&gt; どちらも、拡張子を指定してないときは.txtを自動的に追加します。<br>&gt; [ファイル名]入力ボックスにどんな内容を入力しようが、どちらも同じルールで同じ名前のファイルを作成します。<br>&gt; で、何が違うかというと、ファイル一覧のリストビューに表示されるファイルが違うだけです。<br>&gt; (*.txt;*.*)のときは*.txtと*.*の両方にマッチするファイル、つまりすべてのファイルが表示され、<br>&gt; (*.txt)のときは*.txtにマッチするファイル、つまり拡張子が.txtのファイルのみが表示されます。<br>&gt; <br>&gt; 自分はファイル一覧に全部のファイルが見えていたほうが都合が良いので、(*.txt;*.*)が既定で良いと思っています。<br><br>これも仕様への要望ですが。<br>新規保存の時は、テキスト(*.txt)<br>新規以外の保存の時は、ユーザー指定 (*.nnn;*.*)<br>が選択ボックスの先頭に来るようになると、一番いいのですが、どうでしょうか。<br>つまり、最初の(無題)の時だけは、*.txt の一覧だけを表示です。<br>表示が少ないのが理由です。<br>（それと、拡張子を付けたくなければ、選択で(*.txt;*.*)を選べば良いので、今の作業動作と丁度反対になります。）</div></section>
+    <ul><li><section><h1 id=5612>
+    <span class="no">[5612]</span>
+    <a class="title" href="#5612">Re5:新規保存では、拡張子が無い。 </a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-11-17T01:51:22">2006年11月17日 01:51</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; 新規保存の時は、テキスト(*.txt)<br>&gt; 新規以外の保存の時は、ユーザー指定 (*.nnn;*.*)<br>&gt; が選択ボックスの先頭に来るようになると、一番いいのですが、どうでしょうか。<br><br>じゅうじさんは、<br>新規保存の時は.txtで保存する率が高く<br>新規以外から保存のときは元の拡張子で保存する率が低い<br>のでしょうね。<br><br>自分は対照的に、<br>新規保存の時は.txtで保存する率が低く<br>新規以外から保存のときは元の拡張子で保存する率が高い<br>ので、<br>新規保存の時は(*.txt;*.*)<br>新規以外から保存のときは(*.xxx)<br>がいいかな～、と思ってました。<br>K2Editorなんかは、<br>新規保存の時は(*.*)<br>新規以外から保存のときは(*.xxx)<br>なので割と自分の感覚に近いです。<br><br>どちらか一方を立てれば満足、とはいきそうにないので、<br>ここはオプションで選べるようにしてみました。<br><a href=http://sakura.qp.land.to/?Junk%2F14 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F14</nobr></a><br>[共通設定]-[ファイル]で、<br>「新規から保存時は全ファイル表示」をOFF<br>「新規以外から保存時は全ファイル表示」をON<br>にすれば、じゅうじさんの望むような動作になると思います。<br>（元のじゅうじさんのパッチとほぼ同じ動作）<br>＃デフォルトは従来互換ということで両方ONにしてます<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

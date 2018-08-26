@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>タブグループでのGrepで各種バーが消える</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">10</span>
+    <a class="title" href="10.html#10">タブグループでのGrepで各種バーが消える</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=10>
+    <span class="no">[10]</span>
+    <a class="title" href="#10">タブグループでのGrepで各種バーが消える</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-11-14T23:09:00">2007年11月14日 23:09</time></h1>
+    <div class="body">タブグループ化の設定で、<br>・新規タブが追加されるときウィンドウが非アクティブになる<br>・Grepで新規Grepタブが追加されるときツールバーなど各種バーが無い状態で表示される<br><br>CEditWnd::Create()で、m_cHokanMgr.DoModeless()が実行されると、<br>まだ何もウィンドウを表示していないのにCreateDialogParam APIの<br>実行に伴ってWM_ACTIVATEAPPが発生するためと思われます。<br>SetWindowLongでCEditWnd::DispatchEvent()を有効化するのは上記<br>処理よりも後にしたほうが良さそうです。<br><br>Index: sakura_core/CEditWnd.cpp<br>===================================================================<br>--- sakura_core/CEditWnd.cpp&#9;(revision 1177)<br>+++ sakura_core/CEditWnd.cpp&#9;(working copy)<br>@@ -419,7 +419,6 @@<br> &#9;HWND hWnd = _CreateMainWindow(nGroup, sTabGroupInfo);<br> &#9;if(!hWnd)return NULL;<br> &#9;m_hWnd = hWnd;<br>-&#9;::SetWindowLongPtr( GetHwnd(), GWLP_USERDATA, (LONG_PTR)this );<br> <br> &#9;//コモンコントロール初期化<br> &#9;MyInitCommonControls();<br>@@ -483,6 +482,10 @@<br> <br> <br> &#9;// -- -- -- -- その他調整など -- -- -- -- //<br>+<br>+&#9;// 画面表示直前にDispatchEventを有効化する<br>+&#9;::SetWindowLongPtr( GetHwnd(), GWLP_USERDATA, (LONG_PTR)this );<br>+<br> &#9;// デスクトップからはみ出さないようにする<br> &#9;_AdjustInMonitor(sTabGroupInfo);<br> <br></div></section>
+    </li></ul></body></html>

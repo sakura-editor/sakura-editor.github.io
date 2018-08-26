@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行記号の表示について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3318</span>
+    <a class="title" href="3318.html#3318">改行記号の表示について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3376</span>
+    <a class="title" href="3318.html#3376">Re:改行記号の表示について</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3318>
+    <span class="no">[3318]</span>
+    <a class="title" href="#3318">改行記号の表示について</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-09-25T22:49:38">2003年09月25日 22:49</time></h1>
+    <div class="body">改行記号の区別が難しいと感じました。<br><br>CRLFは、←↓<br>LFCRは、↓←<br>であるのだから、<br>LFの記号は、元々のline feedから考えても、↓<br>CRの記号は、元々のcarrige returnから考えても、←<br>のはずなのですが、現状←と↓です。<br><br>以上<br>----- 以下　2003/9/27 22:01 追加書込み -----<br>CEditView_New.cpp<br>@@ -1668 +1668 @@<br>-&#9;case EOL_LF:&#9;//&#9;左向き矢印<br>+&#9;case EOL_CR:&#9;//&#9;下向き矢印<br>@@ -1700 +1700 @@<br>-&#9;case EOL_CR:&#9;//&#9;下向き矢印<br>+&#9;case EOL_LF:&#9;//&#9;左向き矢印<br><br>----- 以下　2003/9/29 21:51 追加書込み -----<br>MYTOOL.BMP ６段目183,184<br>LF↓CR←<br></div></section>
+    <ul><li><section><h1 id=3376>
+    <span class="no">[3376]</span>
+    <a class="title" href="#3376">Re:改行記号の表示について</a>
+    <span class="author">もか</span>
+    <time datetime="2003-10-14T23:59:57">2003年10月14日 23:59</time></h1>
+    <div class="body">亀レスで、すみません。<br>これについては、数回逆だと指摘されているのですが、<br>Enterの記号の形をCRLFにしたために逆になってしまったようです。<br>変更すると、バージョンアップしたときに既存ユーザが混乱してしまいます。<br>逆のままでは、新規ユーザと、CR/LFの意味を理解している人には、誤解されやす表記であることも事実です。<br>入力改行コードのツールバーのアイコンを描いたときも、どうしようか迷いました。<br>思い切って、アナウンスした上で変更するのが、長期的には、良い方法ではないかと、私は思います。<br><br>CRLF=Enterの形, LF=↓, CR=←, LFCR=斜め(／)矢印<br>のように、気持ち悪いかもしれませんが、変更するという手ではダメでしょうか。<br><br>#実は個人的にはCRLFがEnterの形で表示されるが気に入っていたりする<br>#改行といえば、PS,LSってどんな形にすりゃあいいんだろう。<br></div></section>
+    </li></ul></li></ul></body></html>

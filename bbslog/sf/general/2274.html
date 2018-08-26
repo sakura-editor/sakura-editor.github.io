@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>外部コマンド実行で拡張子抜きのファイル名</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2274</span>
+    <a class="title" href="2274.html#2274">外部コマンド実行で拡張子抜きのファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2277</span>
+    <a class="title" href="2274.html#2277">Re: 外部コマンド実行で拡張子抜きのファイル名</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2289</span>
+    <a class="title" href="2274.html#2289">Re: 外部コマンド実行で拡張子抜きのファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2292</span>
+    <a class="title" href="2274.html#2292">Re2: 外部コマンド実行で拡張子抜きのファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2293</span>
+    <a class="title" href="2274.html#2293">Re3: 外部コマンド実行で拡張子抜きのファイル名</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2274>
+    <span class="no">[2274]</span>
+    <a class="title" href="#2274">外部コマンド実行で拡張子抜きのファイル名</a>
+    <span class="author">kenken</span>
+    <time datetime="2002-09-08T18:09:17">2002年09月08日 18:09</time></h1>
+    <div class="body">ども、最近このエディターにはまってます。<br>つきましては質問です。<br>外部コマンド実行でファイル名を拡張子抜きでgetできるでしょうか。<br>ファイル名(フルパス)は"$F"でgetできるのですが,残念ながら拡張子がついてきます。<br>何かいい案があれば教えて欲しいのですが・・・。<br></div></section>
+    <ul><li><section><h1 id=2277>
+    <span class="no">[2277]</span>
+    <a class="title" href="#2277">Re: 外部コマンド実行で拡張子抜きのファイル名</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-09T10:01:17">2002年09月09日 10:01</time></h1>
+    <div class="body">&gt;外部コマンド実行でファイル名を拡張子抜きでgetできるでしょうか。<br>現在使えるのは，<br>$$: $<br>$F: フルパス<br>$/: フルパス(区切り/)<br>$f: ファイル名<br>$C: 選択中テキスト<br>$d: 日付<br>$t: 時刻<br>$D: ファイルの日付<br>$T: ファイルの時刻<br>です．追加しないとだめですね．<br></div></section>
+    </li><li><section><h1 id=2289>
+    <span class="no">[2289]</span>
+    <a class="title" href="#2289">Re: 外部コマンド実行で拡張子抜きのファイル名</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-16T00:44:18">2002年09月16日 00:44</time></h1>
+    <div class="body">&gt;ファイル名(フルパス)は"$F"でgetできるのですが,残念ながら拡張子がついてきます。<br>拡張子を除いたファイル名というのを$gに追加しようと思っているのですが，もしかしてフルパスで欲しいですか？となると，$Gというのも追加しないといけない．なんてやっているときりがないので，<br>* directory(区切り\)，<br>* directory(区切り/)，<br>* 拡張子無しファイル名，<br>* 拡張子<br>と作っておいて，あとは組み合わせて使ってもらう方がいいもしれません．<br><br>始めの2つに割り当てたいDとdが既にDateとして使われてしまっているのが残念...<br><br>---<br>処理部分もすいさんが作ってくれたsplitpathを使えばすぐできそうと思いましたが，こちらはファイルが実在しないといけないらしい．しかし，編集中のファイルが存在しないが，そのPathを使いたいことがあるだろうか．<br></div></section>
+    <ul><li><section><h1 id=2292>
+    <span class="no">[2292]</span>
+    <a class="title" href="#2292">Re2: 外部コマンド実行で拡張子抜きのファイル名</a>
+    <span class="author">すい</span>
+    <time datetime="2002-09-17T12:43:18">2002年09月17日 12:43</time></h1>
+    <div class="body">&gt;&gt;外部コマンド実行でファイル名を拡張子抜きでgetできるでしょうか。<br>&gt;処理部分もすいさんが作ってくれたsplitpathを使えばすぐできそうと思いましたが，こちらはファイルが実在しないといけないらしい．<br>&gt;しかし，編集中のファイルが存在しないが，そのPathを使いたいことがあるだろうか．<br><br>これは「“エディタで編集中のファイル”のファイル名」ではないでしょうか。なら常に実在するファイルかと。 (;^^;)<br>それと私が作った my_splitpath() って<br>「“オプションパラメータが付いている文字列”中からファイル名部分を抜き出して _splitpath() する」ための物ですので、<br>「現在編集中のファイルのフルパス文字列（オプションパラメータが付いていない文字列）」なら普通の _splitpath() 関数に投げてしまえばよいのではないかと。<br><br>ディレクトリは．．．FD は $P だったな。拡張子なしファイル名は $X だった。:-P<br></div></section>
+    <ul><li><section><h1 id=2293>
+    <span class="no">[2293]</span>
+    <a class="title" href="#2293">Re3: 外部コマンド実行で拡張子抜きのファイル名</a>
+    <span class="author">すい</span>
+    <time datetime="2002-09-17T20:10:55">2002年09月17日 20:10</time></h1>
+    <div class="body">&gt;ディレクトリは．．．FD は $P だったな。拡張子なしファイル名は $X だった。:-P<br>↑ P は既に使われているんですね～～。＜サクラエディタ<br>X に至っては何のことやらさっぱりわからなくなりそうですし。サクラエディタには採用不可ですね。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>文字列の検索</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4758</span>
+    <a class="title" href="4758.html#4758">文字列の検索</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4761</span>
+    <a class="title" href="4758.html#4761">RE: 文字列の検索</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4762</span>
+    <a class="title" href="4758.html#4762">Re2: 文字列の検索</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4763</span>
+    <a class="title" href="4758.html#4763">Re3: 文字列の検索</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4758>
+    <span class="no">[4758]</span>
+    <a class="title" href="#4758">文字列の検索</a>
+    <span class="author">かて</span>
+    <time datetime="2005-10-27T15:39:30">2005年10月27日 15:39</time></h1>
+    <div class="body">検索について少し気になる点があったので報告します。<br><br>ファイル中に「aaaaa」という文字列があり、<br>説明のため前から順にa1～a5とします。<br><br>ここで「aa」という文字列で検索をかけた場合、<br>ファイルの先頭から"次を検索"で前から順に検索をかけると<br>　　a1-a2<br>　　a3-a4<br>の２組にヒットします。<br>これをファイルの最後から"前を検索"で逆向きに検索をかけると<br>　　a4-a5<br>　　a3-a4<br>　　a2-a3<br>　　a1-a2<br>の４組にヒットしており、少し違和感がありました。<br>個人的には、先頭から検索した場合でも４組にヒットするのが自然だと思うのですが、いかがでしょうか。<br><br>因みに、秀丸やK2Editorではどちらから検索した場合でも４組にヒットしました。<br></div></section>
+    <ul><li><section><h1 id=4761>
+    <span class="no">[4761]</span>
+    <a class="title" href="#4761">RE: 文字列の検索</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-10-27T22:06:53">2005年10月27日 22:06</time></h1>
+    <div class="body">&gt;タイトル: RE: 文字列の検索<br>&gt;発言者: かて<br>&gt;ここで「aa」という文字列で検索をかけた場合、<br>&gt;ファイルの先頭から"次を検索"で前から順に検索をかけると<br>&gt;の２組にヒットします。<br>&gt;これをファイルの最後から"前を検索"で逆向きに検索をかけると<br>&gt;の４組にヒットしており、少し違和感がありました。<br><br>あれ？こちらでは検索の向きに関係なく２組にヒットしてますよ。<br><br><br>&gt;個人的には、先頭から検索した場合でも４組にヒットするのが自然だと思うのですが、いかがでしょうか。<br>&gt;因みに、秀丸やK2Editorではどちらから検索した場合でも４組にヒットしました。<br><br>４組でヒットするか、２組でヒットするかは検索の仕様の違い<br>（エディタによって、どちらもある。例：Peggyは２組でした）<br>なので、一概にどちらが良いとも言えないみたいです。<br><br>いろいろ対応してしまうサクラ的には、これも設定で切り替えられるべき？<br></div></section>
+    <ul><li><section><h1 id=4762>
+    <span class="no">[4762]</span>
+    <a class="title" href="#4762">Re2: 文字列の検索</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-10-27T23:25:51">2005年10月27日 23:25</time></h1>
+    <div class="body">▼ かろとさん<br>&gt; あれ？こちらでは検索の向きに関係なく２組にヒットしてますよ。<br>正規表現検索では2組にヒットするようですが<br>普通の検索では4組になるみたいですね<br><br>言われるまで気づきませんでしたが ^^;<br><br>&gt; ４組でヒットするか、２組でヒットするかは検索の仕様の違い<br>&gt; （エディタによって、どちらもある。例：Peggyは２組でした）<br>&gt; なので、一概にどちらが良いとも言えないみたいです。<br>4組にヒットすると検索文字ハイライトと微妙に違ってくるので<br>個人的には2ヒットの方がいいかなと思いますが</div></section>
+    <ul><li><section><h1 id=4763>
+    <span class="no">[4763]</span>
+    <a class="title" href="#4763">Re3: 文字列の検索</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-10-28T23:33:33">2005年10月28日 23:33</time></h1>
+    <div class="body">&gt;タイトル: Re3: 文字列の検索<br>&gt;発言者: (全略)<br>&gt;正規表現検索では2組にヒットするようですが<br>&gt;普通の検索では4組になるみたいですね<br>&gt;<br>&gt;言われるまで気づきませんでしたが ^^;<br><br>ホントだ・・・正規表現でしか使ったことないのがバレバレですね。。(--;<br><br><br>diff --dos -ur -x CVS -x tags -x sakura_rc.aps -x *.obj -x *.RES -x *.rc sakura_core_R1_5_7_2/CDocLineMgr.cpp sakura_core/CDocLineMgr.cpp<br>--- sakura_core_R1_5_7_2/CDocLineMgr.cpp&#9;Sat Oct 22 13:12:58 2005<br>+++ sakura_core/CDocLineMgr.cpp&#9;Fri Oct 28 23:20:46 2005<br>@@ -1897,7 +1897,7 @@<br> &#9;&#9;&#9;&#9;&#9;);<br> &#9;&#9;&#9;&#9;&#9;if( NULL != pszRes ){<br> &#9;&#9;&#9;&#9;&#9;&#9;nHitPos = pszRes - pLine;<br>-&#9;&#9;&#9;&#9;&#9;&#9;nIdxPos = CMemory::MemCharNext(pLine, nLineLen, pszRes) - pLine;&#9;//&#9;Azumaiya前方検索で選択範囲がおかしくなることがあるバグ修正<br>+&#9;&#9;&#9;&#9;&#9;&#9;nIdxPos = nHitPos + nPatternLen;&#9;// マッチ文字列長進めるように変更<br> &#9;&#9;&#9;&#9;&#9;&#9;if( nHitPos &gt;= nHitTo ){<br> &#9;&#9;&#9;&#9;&#9;&#9;&#9;if( -1 != nHitPosOld ){<br> &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;*pnLineNum = nLinePos;&#9;&#9;&#9;&#9;&#9;&#9;&#9;/* マッチ行 */<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

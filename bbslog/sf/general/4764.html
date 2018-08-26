@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>垂直スクロールバーのスライダー</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4764</span>
+    <a class="title" href="4764.html#4764">垂直スクロールバーのスライダー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4769</span>
+    <a class="title" href="4764.html#4769">Re:垂直スクロールバーのスライダー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4772</span>
+    <a class="title" href="4764.html#4772">Re2:垂直スクロールバーのスライダー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4773</span>
+    <a class="title" href="4764.html#4773">Re3:垂直スクロールバーのスライダー</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4764>
+    <span class="no">[4764]</span>
+    <a class="title" href="#4764">垂直スクロールバーのスライダー</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-10-29T07:25:46">2005年10月29日 07:25</time></h1>
+    <div class="body">▼ あろかさん　が詳しいですよね。<br>　操作上の問題だけですが。<br>　ディスプレーの解像度はほどほどに高くして、全体が２０行くらいのテキストを表示させ、画面の大きさをディスプレーの半分以下にして、テキストの上半分くらいを表示しないように、適当にスクロールします。<br>　その後で画面の高さを徐々に（これ大事）大きくして行って、文章全体が表示できる高さになると、画面はスクロールしないのに、垂直スクロールバーのスライダーが消えます。<br><br>Ver. 1.5.7.1<br></div></section>
+    <ul><li><section><h1 id=4769>
+    <span class="no">[4769]</span>
+    <a class="title" href="#4769">Re:垂直スクロールバーのスライダー</a>
+    <span class="author">あろか</span>
+    <time datetime="2005-11-01T00:01:15">2005年11月01日 00:01</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; ▼ あろかさん　が詳しいですよね。<br>そんなに詳しくないですよ、(^^;;<br><br>名指しされてしまったので調べてみました。<br>void CEditView::AdjustScrollBars( void ) 内の<br>　　if( m_nViewRowNum &gt; nAllLines ){<br>　　　　ScrollAtV( 0 );<br>　　}<br>のnAllLinesをnAllLines-1にするととりあえずよくなります。<br>結構昔からあったバグのようでVer 1.4.0.0でも現象がおきてますね。<br></div></section>
+    <ul><li><section><h1 id=4772>
+    <span class="no">[4772]</span>
+    <a class="title" href="#4772">Re2:垂直スクロールバーのスライダー</a>
+    <span class="author">あろか</span>
+    <time datetime="2005-11-01T23:47:03">2005年11月01日 23:47</time></h1>
+    <div class="body">▼ あろかさん<br>[表示域]と[総行数]を比較して充分なら0行目から表示、<br>なので -1で調整するのではなく<br>　　if( m_nViewRowNum &gt;= nAllLines ){<br>　　　　ScrollAtV( 0 );<br>　　}<br>とするのが正解に近そうです。<br></div></section>
+    <ul><li><section><h1 id=4773>
+    <span class="no">[4773]</span>
+    <a class="title" href="#4773">Re3:垂直スクロールバーのスライダー</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-11-02T08:04:53">2005年11月02日 08:04</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; ▼ あろかさん<br>&gt; [表示域]と[総行数]を比較して充分なら0行目から表示、<br>&gt; なので -1で調整するのではなく<br>&gt; 　　if( m_nViewRowNum &gt;= nAllLines ){<br>&gt; 　　　　ScrollAtV( 0 );<br>&gt; 　　}<br>&gt; とするのが正解に近そうです。<br><br>ｎ－ｍ＞－１｛ｍ，ｎ：整数｝<br>ｎ－ｍ≧０<br>…影響は局所的（極小）なので、どちらでも同じですね。ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

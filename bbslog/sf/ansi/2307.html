@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>関数内での #if ( でインデントさせない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2307</span>
+    <a class="title" href="2307.html#2307">関数内での #if ( でインデントさせない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2309</span>
+    <a class="title" href="2307.html#2309">Re: 関数内での #if ( でインデントさせない</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2307>
+    <span class="no">[2307]</span>
+    <a class="title" href="#2307">関数内での #if ( でインデントさせない</a>
+    <span class="author">かろと</span>
+    <time datetime="2002-09-18T03:57:13">2002年09月18日 03:57</time></h1>
+    <div class="body"><br>void main (void)<br>{<br>#if (<br><br>と打つと、<br>void main (void)<br>{<br>    #if (<br><br>とインデントされしまうのでパッチを当てました。<br>下のように感じです。<br>要するに、'(' '{'でインデントするのは 先頭文字が # でない時に限定します。<br>（こんなので、いいのかな・・・）<br>本来なら、CVSリポジトリにコミットしにいくべきなのでしょうが、<br>なにぶん初投稿なもので勝手がわかりませんので、お許しを・・・<br>＃ここを読めば、コミットできるというがあれば教えてください。<br><br><br>CEditView_Command_New.cpp<br>の<br>SmartIndent_CPP<br>関数内で<br>if( i &lt; nWork ){<br>    if( ( ':' == cChar<br>&#9;&amp;&amp; (<br>&#9;     0 == strncmp( &amp;pLine[i], "case", 4 )<br>&#9;  || 0 == strncmp( &amp;pLine[i], "default:", 8 )<br>&#9;  || 0 == strncmp( &amp;pLine[i], "public:", 7 )<br>&#9;  || 0 == strncmp( &amp;pLine[i], "private:", 8 )<br>&#9;  || 0 == strncmp( &amp;pLine[i], "protected:", 10 )<br>&#9;)<br>        )<br>      || ( '{' == cChar<br>&#9;&amp;&amp; (<br>&#9;  '#' != pLine[i]<br>&#9;   )<br>&#9;)<br>      || ( '(' == cChar <br>&#9;&amp;&amp; (<br>&#9;  '#' != pLine[i]<br>&#9;   ) <br>&#9;)<br>   ){</div></section>
+    <ul><li><section><h1 id=2309>
+    <span class="no">[2309]</span>
+    <a class="title" href="#2309">Re: 関数内での #if ( でインデントさせない</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-18T09:35:44">2002年09月18日 09:35</time></h1>
+    <div class="body">&gt;とインデントされしまうのでパッチを当てました。<br>&gt;下のように感じです。<br>ありがとうございました．<br><br>&gt;要するに、'(' '{'でインデントするのは 先頭文字が # でない時に限定します。<br>&gt;（こんなので、いいのかな・・・）<br>SmartIndent_CPPは結構腐っている上(メモリもリークしているようだし)私も使ってないので，誰かが作り直してくれることを期待しております．(^^;)<br><br>&gt;本来なら、CVSリポジトリにコミットしにいくべきなのでしょうが、<br>リポジトリ自身は http://sakura-editor.sourceforge.net/snapshot/ で随時更新しておりますが，SourceForgeのCVSリポジトリは今のところ空っぽです．今のところ私が勝手にCVSに入れているものを公開しており，他の人もそれをベースにCVSを使いたい人は勝手に使っている状態です．<br><br>修正差分はわずかなら掲示板でもいいですし，ある程度大きいならegroupsの方に入れてください．<br><br>&gt; ここを読めば<br>http://members.tripod.co.jp/sakura_editor/dev.html<br>に一応書いてあります．(最近見直してないけど...A^^)<br><br>--<br>関係ない突っ込み:<br>&gt; void main (void)<br>は<br>&gt; int main(void)<br>でないと...<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現置換の方法を教えて下さい</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3709</span>
+    <a class="title" href="3709.html#3709">正規表現置換の方法を教えて下さい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3711</span>
+    <a class="title" href="3709.html#3711">Re: 正規表現置換の方法を教えて下さい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3713</span>
+    <a class="title" href="3709.html#3713">お礼: 正規表現置換できました</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3709>
+    <span class="no">[3709]</span>
+    <a class="title" href="#3709">正規表現置換の方法を教えて下さい</a>
+    <span class="author">渡辺真</span>
+    <time datetime="2004-03-21T11:46:30">2004年03月21日 11:46</time></h1>
+    <div class="body">ここの話題にふさわしくないかもしれませんが、専門家が集まる場所なので、一つ教えて下さい。<br><br>たとえば、下記文中の英字と数字の組合せは、[A-Z]+[0-9]+<br>で検索できます。<br><br>【置換前】<br>ANATA10とBOKU223とC321は友達です。<br>DANNA412とEK51の子供はFUJI632とGENKI721とHITO88です。<br><br>この英文字と数字の間に、一律「半角スペース」を入れて、<br><br>【置換後】<br>ANATA 10とBOKU 223とC 321は友達です。<br>DANNA 412とEK 51の子供はFUJI 632とGENKI 721とHITO 88です。<br><br><br>と置換したいのです。<br>サクラエディタの置換後の欄には、どう書けば良いのでしょうか？</div></section>
+    <ul><li><section><h1 id=3711>
+    <span class="no">[3711]</span>
+    <a class="title" href="#3711">Re: 正規表現置換の方法を教えて下さい</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-21T15:29:56">2004年03月21日 15:29</time></h1>
+    <div class="body">&gt;この英文字と数字の間に、一律「半角スペース」を入れて、<br>&gt;と置換したいのです。<br>&gt;サクラエディタの置換後の欄には、どう書けば良いのでしょうか？<br>置換前: ([A-Z])(\d)<br>置換後: \1 \2<br>でできます．<br></div></section>
+    <ul><li><section><h1 id=3713>
+    <span class="no">[3713]</span>
+    <a class="title" href="#3713">お礼: 正規表現置換できました</a>
+    <span class="author">渡辺真</span>
+    <time datetime="2004-03-22T14:20:33">2004年03月22日 14:20</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 置換前: ([A-Z])(\d)<br><br>の()でバッファに溜め込んで、<br><br>&gt; 置換後: \1 \2<br><br>でバッファを読み出しているのですね。<br><br>有難うございました。やっと分かりました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

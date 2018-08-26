@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択領域が無いときに、CTRL/Cを押す。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4163</span>
+    <a class="title" href="4163.html#4163">選択領域が無いときに、CTRL/Cを押す。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4179</span>
+    <a class="title" href="4163.html#4179">Re: 選択領域が無いときに、CTRL/Cを押す。</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=4163>
+    <span class="no">[4163]</span>
+    <a class="title" href="#4163">選択領域が無いときに、CTRL/Cを押す。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-11-30T17:17:39">2004年11月30日 17:17</time></h1>
+    <div class="body">選択領域が無いときに、CTRL/Cを押すと、ペーストバッファの内容が消える現象は、<br>キャレットが[EOF]の処に有る時は、発生しません。</div></section>
+    <ul><li><section><h1 id=4179>
+    <span class="no">[4179]</span>
+    <a class="title" href="#4179">Re: 選択領域が無いときに、CTRL/Cを押す。</a>
+    <span class="author">もか</span>
+    <time datetime="2004-12-08T17:54:55">2004年12月08日 17:54</time></h1>
+    <div class="body">想定どうりの動作だろうと思いつつ、色々やってみたところ以下のような結果です。<br>　1行0文字の矩形選択、0文字の通常選択して「コピー」するときも、同様に何も起きません。<br>　n(2&lt;=n)行0文字矩形選択の場合は、n行分の改行のコピーが行われます。<br>このデータを、EOF付近で貼り付けると足りない行数分だけ行が増えます。すでにある行には、変更マークが付きません。<br>　ちなみに、同等の未選択時の行コピー機能があるVS.NET 2003で試したところ、長さ0のテキストがクリップボードにコピーされます。<br>これをサクラエディタに貼り付けると、変更マークが付きます。<br></div></section>
+    </li></ul></li></ul></body></html>

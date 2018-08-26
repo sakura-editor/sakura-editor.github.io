@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>外部コマンド実行</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">523</span>
+    <a class="title" href="523.html#523">外部コマンド実行</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">524</span>
+    <a class="title" href="523.html#524">Re:外部コマンド実行</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">526</span>
+    <a class="title" href="523.html#526">Re2:外部コマンド実行</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">527</span>
+    <a class="title" href="523.html#527">Re3:外部コマンド実行</a></div>
+    </li><li><div class="list-title">
+    <span class="no">528</span>
+    <a class="title" href="523.html#528">Re3:外部コマンド実行</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=523>
+    <span class="no">[523]</span>
+    <a class="title" href="#523">外部コマンド実行</a>
+    <span class="author">GAE</span>
+    <time datetime="2001-07-06T21:16:46">2001年07月06日 21:16</time></h1>
+    <div class="body">外部コマンド実行についての要望です。<br><br>  1. カレントディレクトリを設定できるように<br>  2. ダイアログを出さずに実行する機能<br>  3. プログラムを登録する機能<br>  4. アウトプット画面でコマンドを直接入力<br><br>1 はそのまんまです。<br><br>2 は前回の実行の繰り返しをする機能です。ただしダイアログがでずにすぐ実行します。<br>「スクリプトを書く。実行する」を繰り返すのに便利だと思います。<br>今日ちょっとRubyのスクリプトを書いたのですが、<br>現状でもDOS窓を行き来する必要がなくなって便利になりました。<br>(アウトプットにフォーカスが移動しないところも楽でいいです)<br><br>3 誰も使わないかもしれないけど、実行のコマンドラインとパラメータを<br>いくつか登録しておいて、それを実行できるようにするものです。<br>たとえば、ctrl+shift+D に "dump %filename%" を割り当てます。<br>これで簡単にファイルのダンプがとれるとか。<br><br>4 アウトプット画面で [Enter] が押されると、その行のコマンドを実行するというもの。<br>Grepでは[Enter]でタグジャンプしますが、それに似たようなかんじで。<br><br>どれも思いつきで申し訳ありませんが、<br>面白そうなものがあったらぜひ実装していただけるとうれしいです。<br>3 はかなりコードをかかないといけないきがしますし。<br></div></section>
+    <ul><li><section><h1 id=524>
+    <span class="no">[524]</span>
+    <a class="title" href="#524">Re:外部コマンド実行</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-07-07T00:29:32">2001年07月07日 00:29</time></h1>
+    <div class="body">&gt; 3 誰も使わないかもしれないけど、<br>けっこう使うと思いますよ．私も欲しいと思っていました．<br>現在編集中の内容を標準入力に入れられたら，フィルタみたいなものを登録して使えるかもしませんね．<br><br>&gt; 3 はかなりコードをかかないといけないきがしますし。<br>本当は，マクロ登録機能＋マクロからファイル実行 の組み合わせでできればBESTかと思います．<br><br>作りかけていたマクロ登録も何とかしないと．</div></section>
+    <ul><li><section><h1 id=526>
+    <span class="no">[526]</span>
+    <a class="title" href="#526">Re2:外部コマンド実行</a>
+    <span class="author">Katz</span>
+    <time datetime="2001-07-07T02:05:25">2001年07月07日 02:05</time></h1>
+    <div class="body">最近、さくらエディタを使いはじめました。<br>かの秀丸のような完成度で驚いております。<br>あとはマクロが揃えば...<br>お役に立てるかどうかわかりませんが、<br>現在のマクロ機能について関心があります。<br>マクロ仕様に関するドキュメント等が<br>存在するのであればご教授いただきたいのですが。<br>（ドキュメントのページを見たのですが<br>それらしいものは発見できませんでした）<br><br><br>▼ げんたさん<br>&gt; &gt; 3 誰も使わないかもしれないけど、<br>&gt; けっこう使うと思いますよ．私も欲しいと思っていました．<br>&gt; 現在編集中の内容を標準入力に入れられたら，フィルタみたいなものを登録して使えるかもしませんね．<br>&gt; <br>&gt; &gt; 3 はかなりコードをかかないといけないきがしますし。<br>&gt; 本当は，マクロ登録機能＋マクロからファイル実行 の組み合わせでできればBESTかと思います．<br>&gt; <br>&gt; 作りかけていたマクロ登録も何とかしないと．</div></section>
+    <ul><li><section><h1 id=527>
+    <span class="no">[527]</span>
+    <a class="title" href="#527">Re3:外部コマンド実行</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-07-07T07:35:31">2001年07月07日 07:35</time></h1>
+    <div class="body">▼ Katzさん<br>&gt; 現在のマクロ機能について関心があります。<br>&gt; マクロ仕様に関するドキュメント等が<br>&gt; 存在するのであればご教授いただきたいのですが。<br>現在のマクロは，キーボードやメニューの機能を順番に実行するだけのものです．引数がまともに使えない上制御機能もありません．<br>私が作りかけたのは現在のキーボードマクロのLoad+Runを機能番号に割り当てて他のコマンドと同様に扱えるようにするもので，マクロとしての機能をあれこれするつもりは今のところありません．<br></div></section>
+    </li><li><section><h1 id=528>
+    <span class="no">[528]</span>
+    <a class="title" href="#528">Re3:外部コマンド実行</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-07-07T10:34:19">2001年07月07日 10:34</time></h1>
+    <div class="body">▼ Katzさん<br>&gt;マクロ仕様に関するドキュメント等が<br>&gt;存在するのであればご教授いただきたいのですが。<br><br>以前書いたメモ<br><a href=http://members.tripod.co.jp/sakura_editor/devdoc/KeyMacro.txt target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>devdoc/<wbr>KeyMacro<wbr>.<wbr>txt</nobr></a><br>別にこの通りにする必要はありませんが。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

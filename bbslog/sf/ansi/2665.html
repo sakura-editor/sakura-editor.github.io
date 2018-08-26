@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CShareDataの疑問</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2665</span>
+    <a class="title" href="2665.html#2665">CShareDataの疑問</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2736</span>
+    <a class="title" href="2665.html#2736">RE: CShareDataの疑問</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2665>
+    <span class="no">[2665]</span>
+    <a class="title" href="#2665">CShareDataの疑問</a>
+    <span class="author">みく</span>
+    <time datetime="2003-04-05T14:00:17">2003年04月05日 14:00</time></h1>
+    <div class="body"><br>・共有メモリ上に Common, CKeyWordSetMgr が<br>定義されてますが、これっていいのでしょうか。<br>複数のプロセスが参照するわけですよね。<br>データ以外にクラス管理情報とかも存在して<br>たりしないのでしょうか。<br><br>・エディタを起動したままWindowsをログオフ<br>またはシャットダウンするとき、コントロール<br>プロセスが先に死んでしまうようなことはない<br>のでしょうか（それでも問題ない？）。<br>逆に、親子関係がある場合にコントロールプロ<br>セスにしかWM_ENDSESSIONが届かないようなこ<br>とはないでしょうか。<br></div></section>
+    <ul><li><section><h1 id=2736>
+    <span class="no">[2736]</span>
+    <a class="title" href="#2736">RE: CShareDataの疑問</a>
+    <span class="author">みく</span>
+    <time datetime="2003-05-13T19:05:39">2003年05月13日 19:05</time></h1>
+    <div class="body"><br>&gt;・共有メモリ上に Common, CKeyWordSetMgr が<br>&gt;定義されてますが、これっていいのでしょうか。<br>&gt;複数のプロセスが参照するわけですよね。<br>&gt;データ以外にクラス管理情報とかも存在して<br>&gt;たりしないのでしょうか。<br><br>普通は問題ないようですが、virtual 関数を使うと<br>余分に4バイト取られるようです。<br>これはアドレスで、その先に関数リストが格納されている模様。<br><br>Common, CKeyWordSetMgr, Types 等には virtual は<br>ないと思われるので問題ないようです。<br>ほかのパターンで余分に確保されるかどうかは不明です。<br></div></section>
+    </li></ul></li></ul></body></html>

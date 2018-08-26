@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix) Splitterウィンドウの破棄処理を ~CEditDoc から ~CSplitterWnd に移動</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">309</span>
+    <a class="title" href="309.html#309">Commit報告:(Fix) Splitterウィンドウの破棄処理を ~CEditDoc から ~CSplitterWnd に移動</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=309>
+    <span class="no">[309]</span>
+    <a class="title" href="#309">Commit報告:(Fix) Splitterウィンドウの破棄処理を ~CEditDoc から ~CSplitterWnd に移動</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-20T23:45:10">2008年04月20日 23:45</time></h1>
+    <div class="body">リビジョン：<br>　rev1290<br><br>変更種別：<br>　バグ修正。（ユーザ視点では変化無し）<br><br>内容：<br>　CEditDocデストラクタで行われていたSplitterウィンドウ破棄の処理を、<br>　CSplitterデストラクタで行うように修正しました。<br><br><br>&gt;&gt;307<br>▼ Uchiさん<br>&gt; &gt; 4) ファイルを閉じるときに落ちる。<br>&gt; &gt;         問題が発生したため、sakuraW.exeを終了します。…<br>&gt; &gt;     のメッセージが出ます。<br>&gt; &gt;     exeでダウンロードした物では発生せず、SVNでチェックアウトしコンパイルしたもので発生します。<br>&gt; &gt;     コンパイル環境 Visual C++ 2005 Express Edition<br>&gt; CEditApp のデストラクタの破棄順番の問題だと思います。<br>&gt; <br>&gt; CEditApp.cpp のデストラクタを以下のように変更しいただけたら思います。<br>&gt; <br>&gt; CEditApp::~CEditApp()<br>&gt; {<br>&gt;     delete m_pcSMacroMgr;<br>&gt;     delete m_pcPropertyManager;<br>&gt;     delete m_pcMruListener;<br>&gt; //  delete m_pcEditWnd;     // move to<br>&gt;     delete m_pcGrepAgent;<br>&gt;     delete m_pcVisualProgress;<br>&gt;     delete m_pcSaveAgent;<br>&gt;     delete m_pcLoadAgent;<br>&gt;     delete m_pcEditDoc;     // この中で m_pcEditWnd を使用しています。<br>&gt;     delete m_pcEditWnd;     // move from<br>&gt; }<br><br>解析ありがとうございます。<br>そもそも CEditDoc のデストラクタでウィンドウ破棄の処理が行われていること自体が<br>設計的におかしいので、ウィンドウ破棄処理を本来の CSplitterWnd のデストラクタで<br>行うように変更しました。<br><br>＃こういった問題は、自己デバッグ時に気づきたいところですが、<br>　なんだかこちらの環境だと無駄にタフ（？）で、無効なポインタを参照しても<br>　落ちてくれないことが時々あるんですよね…。<br>　OS は Windows Vista Home Edition、<br>　コンパイラは Visual Studio 2005 Standard Edition です。<br></div></section>
+    </li></ul></body></html>

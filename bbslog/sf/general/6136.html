@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>自動改行できますか？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6136</span>
+    <a class="title" href="6136.html#6136">自動改行できますか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6137</span>
+    <a class="title" href="6136.html#6137">Re:自動改行できますか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6138</span>
+    <a class="title" href="6136.html#6138">Re2:自動改行できますか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6139</span>
+    <a class="title" href="6136.html#6139">Re3:自動改行できますか？</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6141</span>
+    <a class="title" href="6136.html#6141">Re3:自動改行できますか？</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6136>
+    <span class="no">[6136]</span>
+    <a class="title" href="#6136">自動改行できますか？</a>
+    <span class="author">まゆ</span>
+    <time datetime="2007-07-09T15:50:11">2007年07月09日 15:50</time></h1>
+    <div class="body">EXCELデータの表でセルごとにsakuraエディタにて改行をしたいのですが、<br>自動で改行する方法はありますか？<br><br>イメージとしてはEXCELで作った表をエディタにコピペした瞬間に<br>自動で改行されるような形です。<br><br>分かりづらい表現ですみませんが、どなたかお教えいただけると<br>大変助かります。<br><br>よろしくおねがいします。</div></section>
+    <ul><li><section><h1 id=6137>
+    <span class="no">[6137]</span>
+    <a class="title" href="#6137">Re:自動改行できますか？</a>
+    <span class="author">see</span>
+    <time datetime="2007-07-14T12:33:42">2007年07月14日 12:33</time></h1>
+    <div class="body">自動ではありませんが、貼り付けた後、置換ダイアログで<br>・置換前 \t<br>・置換後 \n<br>・正規表現にチェック<br>・全て置換<br>ではだめなんでしょうか？</div></section>
+    <ul><li><section><h1 id=6138>
+    <span class="no">[6138]</span>
+    <a class="title" href="#6138">Re2:自動改行できますか？</a>
+    <span class="author">神楽</span>
+    <time datetime="2007-07-14T13:37:39">2007年07月14日 13:37</time></h1>
+    <div class="body">▼ seeさん<br>&gt; 自動ではありませんが、貼り付けた後、置換ダイアログで<br>&gt; ・置換前 \t<br>&gt; ・置換後 \n<br>&gt; ・正規表現にチェック<br>&gt; ・全て置換<br>&gt; ではだめなんでしょうか？<br>置換後が\nだと改行コードがLFになってしまうので、<br>\r\nの方が良いのでは？</div></section>
+    <ul><li><section><h1 id=6139>
+    <span class="no">[6139]</span>
+    <a class="title" href="#6139">Re3:自動改行できますか？</a>
+    <span class="author">see</span>
+    <time datetime="2007-07-14T16:34:41">2007年07月14日 16:34</time></h1>
+    <div class="body">▼ 神楽さん<br>&gt; 置換後が\nだと改行コードがLFになってしまうので、<br>&gt; \r\nの方が良いのでは？<br>失礼しました。おっしゃるとおりです。<br>\nでは改行コードが混在してしまいよくありません。</div></section>
+    </li><li><section><h1 id=6141>
+    <span class="no">[6141]</span>
+    <a class="title" href="#6141">Re3:自動改行できますか？</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-07-14T17:12:58">2007年07月14日 17:12</time></h1>
+    <div class="body">▼ 神楽さん<br>ファイル全体でいいのか？と、思いますが、まとめると、こうなります。<br>//キーボードマクロのファイル<br>S_Paste(0);&#9;// 貼り付け<br>S_ReplaceAll('\\t', '\\r\\n', 20);&#9;// $14<br>//ＥＸＣＥＬの列毎に改行するなら、その前にＥＸＣＥＬで<br>//[形式を選択して貼り付け][行列を入れ替える]を実行。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

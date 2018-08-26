@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>新規ウィンドウを開いたときの桁位置表示がされない件</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2668</span>
+    <a class="title" href="2668.html#2668">新規ウィンドウを開いたときの桁位置表示がされない件</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=2668>
+    <span class="no">[2668]</span>
+    <a class="title" href="#2668">新規ウィンドウを開いたときの桁位置表示がされない件</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-04-07T23:12:42">2003年04月07日 23:12</time></h1>
+    <div class="body">昔はウィンドウを開いた瞬間から桁位置が表示されていたのにいつからか表示されなくなったのは、<br>CEditView_New.cpp (108,1): <br>EdiwView Redraw時の行番号表示がコメントアウトされている<br>&#9;/* キャレットの行桁位置を表示する */<br>//&#9;DrawCaretPosInfo();<br>がその理由のようです。でもなぜ変更したんでしょうか。</div></section>
+    </li></ul></body></html>

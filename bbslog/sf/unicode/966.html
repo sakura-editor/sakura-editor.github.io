@@ -1,0 +1,109 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択文字数カウントにバイト単位オプション追加</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">966</span>
+    <a class="title" href="966.html#966">選択文字数カウントにバイト単位オプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">967</span>
+    <a class="title" href="966.html#967">Re:選択文字数カウントにバイト単位オプション追加</a></div>
+    </li><li><div class="list-title">
+    <span class="no">968</span>
+    <a class="title" href="966.html#968">Re:選択文字数カウントにバイト単位オプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">969</span>
+    <a class="title" href="966.html#969">Re2:選択文字数カウントにバイト単位オプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">975</span>
+    <a class="title" href="966.html#975">Re3:選択文字数カウントにバイト単位オプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">977</span>
+    <a class="title" href="966.html#977">Re4:選択文字数カウントにバイト単位オプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">992</span>
+    <a class="title" href="966.html#992">Commit報告(Imp)選択文字数カウントにバイト単位オプション追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">993</span>
+    <a class="title" href="966.html#993">【問題報告】F5キーでバイト数表示が増減する</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">994</span>
+    <a class="title" href="966.html#994">Re:【問題報告】F5キーでバイト数表示が増減する</a></div>
+    </li><li><div class="list-title">
+    <span class="no">995</span>
+    <a class="title" href="966.html#995">Re:【問題報告2】行選択範囲変更時のバイト表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">996</span>
+    <a class="title" href="966.html#996">Re2:【問題報告2】行選択範囲変更時のバイト表示</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">998</span>
+    <a class="title" href="966.html#998">Re:【問題報告】F5キーでバイト数表示が増減する</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=966>
+    <span class="no">[966]</span>
+    <a class="title" href="#966">選択文字数カウントにバイト単位オプション追加</a>
+    <span class="author">syat</span>
+    <time datetime="2009-06-25T22:15:04">2009年06月25日 22:15</time></h1>
+    <div class="body">パッチを投稿しました。<br><br>内容：<br>ステータスバーの文字数カウントに、文字数ではなくバイト数で表示するオプションを追加する。<br>PatchUnicode:2812128</div></section>
+    <ul><li><section><h1 id=967>
+    <span class="no">[967]</span>
+    <a class="title" href="#967">Re:選択文字数カウントにバイト単位オプション追加</a>
+    <span class="author">syat</span>
+    <time datetime="2009-06-25T22:49:24">2009年06月25日 22:49</time></h1>
+    <div class="body">書き忘れましたが、WikiのRequest/285の要望です。<br><a href=http://sakura.qp.land.to/?Request%2F285 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Request%<wbr>2F285</nobr></a><br><br>なお、実際のバイト数を表示するのでShiftJisの場合は今までどおりですが、UTF-8などでは漢字１文字が３バイトで表示されたりします。そこらへんがANSI版との仕様差です。<br><br>ついでに見つけたのですが、１行を選択したときの行数カウントがANSIとUnicodeで微妙に違っています。（Aは1行、Uは2行）ANSI版のほうが自然な気がしますが、何か理由があるのでしょうか？</div></section>
+    </li><li><section><h1 id=968>
+    <span class="no">[968]</span>
+    <a class="title" href="#968">Re:選択文字数カウントにバイト単位オプション追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-06-26T22:30:22">2009年06月26日 22:30</time></h1>
+    <div class="body">syatさん自身、意識はされているようですが、選択範囲をちょっと拡大・縮小するだけで文字列変換の負荷が毎回発生してしまうのが気になりますね。キーワードヘルプ機能との併用時とか、他アプリの処理に負荷がかかっていたりしてる場合など、かなりの重さになってしまうかもしれません。<br>デフォルトはOFFにしておくというだけでなく、明示的に[高負荷につき非推奨]というような注釈つきオプションにしたほうがいい気がします。<br><br>&gt; ついでに見つけたのですが、１行を選択したときの行数カウントがANSIとUnicodeで微妙に違っています。（Aは1行、Uは2行）<br>自分のところではそうはならないようなのですが（Uでも1行になっていますが）、何か条件はありますか？</div></section>
+    <ul><li><section><h1 id=969>
+    <span class="no">[969]</span>
+    <a class="title" href="#969">Re2:選択文字数カウントにバイト単位オプション追加</a>
+    <span class="author">syat</span>
+    <time datetime="2009-06-27T09:34:04">2009年06月27日 09:34</time></h1>
+    <div class="body">パッチを改版しました。<br><br>▼ ryojiさん<br>&gt; デフォルトはOFFにしておくというだけでなく、明示的に[高負荷につき非推奨]というような注釈つきオプションにしたほうがいい気がします。<br>オプション画面に「※高負荷のため非推奨」を追加します。<br> <br>&gt; &gt; ついでに見つけたのですが、１行を選択したときの行数カウントがANSIとUnicodeで微妙に違っています。（Aは1行、Uは2行）<br>&gt; 自分のところではそうはならないようなのですが（Uでも1行になっていますが）、何か条件はありますか？<br>これは今回のパッチの作りこんだバグでした。失礼！<br><br>選択領域の差分だけコード変換を行うとかで負荷が減らないか、もう少し探ってみようと思います。</div></section>
+    <ul><li><section><h1 id=975>
+    <span class="no">[975]</span>
+    <a class="title" href="#975">Re3:選択文字数カウントにバイト単位オプション追加</a>
+    <span class="author">syat</span>
+    <time datetime="2009-06-28T19:37:10">2009年06月28日 19:37</time></h1>
+    <div class="body">選択領域の差分だけコード変換を行うようにパッチを修正してみました。<br>選択範囲が広くなるほど利点が出てくるはずです。高負荷なのは変わりませんが。。<br></div></section>
+    <ul><li><section><h1 id=977>
+    <span class="no">[977]</span>
+    <a class="title" href="#977">Re4:選択文字数カウントにバイト単位オプション追加</a>
+    <span class="author">syat</span>
+    <time datetime="2009-07-01T23:26:23">2009年07月01日 23:26</time></h1>
+    <div class="body">差分だけコード変換にした結果、行数カウントの最終行補正がうまくいかなくなっていたので修正。パッチU4をアップしました。</div></section>
+    <ul><li><section><h1 id=992>
+    <span class="no">[992]</span>
+    <a class="title" href="#992">Commit報告(Imp)選択文字数カウントにバイト単位オプション追加</a>
+    <span class="author">syat</span>
+    <time datetime="2009-07-22T00:06:26">2009年07月22日 00:06</time></h1>
+    <div class="body">リビジョン1615でコミットしました。</div></section>
+    <ul><li><section><h1 id=993>
+    <span class="no">[993]</span>
+    <a class="title" href="#993">【問題報告】F5キーでバイト数表示が増減する</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-07-22T13:50:18">2009年07月22日 13:50</time></h1>
+    <div class="body">Shift+矢印キーで選択範囲を拡大するとバイト数も増加しますが、その後F5キーを押すたびに（選択範囲は変化しないのに）バイト数が加算されるようです。<br>逆に、Shift+矢印キーで範囲縮小した場合はF5のたびにバイト数が減算されますね。。。</div></section>
+    <ul><li><section><h1 id=994>
+    <span class="no">[994]</span>
+    <a class="title" href="#994">Re:【問題報告】F5キーでバイト数表示が増減する</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-07-22T14:26:03">2009年07月22日 14:26</time></h1>
+    <div class="body">F5のかわりに、Ctrl+Tab（次のウィンドウ）,Ctrl+Shift+Tab（前のウィンドウ）でウィンドウを行き来するのでも増減するみたいです。他にもあるかもしれませんが。。。</div></section>
+    </li><li><section><h1 id=995>
+    <span class="no">[995]</span>
+    <a class="title" href="#995">Re:【問題報告2】行選択範囲変更時のバイト表示</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-07-22T17:44:18">2009年07月22日 17:44</time></h1>
+    <div class="body">何か適当なファイルを開き、<br>(1) 適当な行の行番号をクリックして1行選択する<br>(2) Shiftキーを押しながら(1)よりも上の行の行番号をクリックして選択範囲を拡大する<br>(3) Shiftキーを押したまま(1)の行の行番号を再度クリックして1行選択に戻す<br>とすると、<br>(1)と(3)では選択範囲が同じなのにバイト数が違います。<br>＃(2)で表示したバイト数のまま変化が無いようです。</div></section>
+    <ul><li><section><h1 id=996>
+    <span class="no">[996]</span>
+    <a class="title" href="#996">Re2:【問題報告2】行選択範囲変更時のバイト表示</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-07-22T17:48:36">2009年07月22日 17:48</time></h1>
+    <div class="body">&gt; (3) Shiftキーを押したまま(1)の行の行番号を再度クリックして1行選択に戻す<br>のかわりに、<br>(3)' Shiftキーを押したまま(2)の行の行番号を再度クリックする<br>とすると、<br>(2)と(3)では選択範囲が同じなのに(3)でバイト数が増加します</div></section>
+    </li></ul></li><li><section><h1 id=998>
+    <span class="no">[998]</span>
+    <a class="title" href="#998">Re:【問題報告】F5キーでバイト数表示が増減する</a>
+    <span class="author">syat</span>
+    <time datetime="2009-07-23T00:43:38">2009年07月23日 00:43</time></h1>
+    <div class="body">問題報告ありがとうございます。気付かなかったな…。<br><br>▼ ryojiさん<br>&gt; Shift+矢印キーで選択範囲を拡大するとバイト数も増加しますが、その後F5キーを押すたびに（選択範囲は変化しないのに）バイト数が加算されるようです。<br>&gt; 逆に、Shift+矢印キーで範囲縮小した場合はF5のたびにバイト数が減算されますね。。。<br>確認しました。パッチページに原因を書きましたが、結局のところPrintSelectionInfoMsg関数のなかで差分カウントをやったのが失敗だったと思います。伊達にconstなわけじゃなかった。<br>修正パッチを投稿しました。<br>PatchUnicode:2825421<br><br>&gt; 【問題報告2】行選択範囲変更時のバイト表示<br>こちらも途中でRedrawAllが走ったのが原因でカウントが狂う、同じ問題です。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

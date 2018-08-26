@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>テスト版置きました</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">651</span>
+    <a class="title" href="651.html#651">テスト版置きました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">652</span>
+    <a class="title" href="651.html#652">Re:テスト版置きました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">653</span>
+    <a class="title" href="651.html#653">Re:テスト版置きました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">659</span>
+    <a class="title" href="651.html#659">Re: テスト版置きました</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=651>
+    <span class="no">[651]</span>
+    <a class="title" href="#651">テスト版置きました</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-08-28T16:19:01">2001年08月28日 16:19</time></h1>
+    <div class="body">起動部分を変更した物をeGroupsに置きました．sakura.exeとwinmain.cppしか入っていませんので，RC6のsakura.exeと置き換えて使って下さい．<br>変更内容は以下の通り．<br>* コントロールプロセスが存在しないとき，新規に起動したプロセスをコントロールプロセスにする．<br>従来は自分がコントロールプロセスで，エディタをそこから起動していた．これによって子プロセスを監視するツールから使った場合でも編集終了が常に認識されるようになった．<br><br>* コントロールプロセスのカレントディレクトリはシステムディレクトリ．<br>コントロールプロセスのカレントディレクトリが残るためにフォルダが削除できないことが無くなったはず．<br><br>* -NOWIN オプションの振る舞い<br>既にコントロールプロセスがいる場合には従来はウィンドウを開いていたが，コントロールプロセスの有無に関わらずエディタは開かないようにした．<br><br>Windows 2000 SP2でしか試していませんので，他の環境で試した方は結果を教えてください．<br>テスト版のため，バージョン番号が小さくなっていますが気にしないでください(^^ゞ<br></div></section>
+    <ul><li><section><h1 id=652>
+    <span class="no">[652]</span>
+    <a class="title" href="#652">Re:テスト版置きました</a>
+    <span class="author">KENCH</span>
+    <time datetime="2001-08-28T19:25:22">2001年08月28日 19:25</time></h1>
+    <div class="body"><br>&gt; Windows 2000 SP2でしか試していませんので，他の環境で試した方は結果を教えてください．<br>　とりあえず、９８では動きました。<br>　起動と、ちょっと触った程度ですけど。</div></section>
+    </li><li><section><h1 id=653>
+    <span class="no">[653]</span>
+    <a class="title" href="#653">Re:テスト版置きました</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-08-29T01:40:47">2001年08月29日 01:40</time></h1>
+    <div class="body">もう１つあった。<br>* コマンドラインからの相対パス指定<br>コマンドラインから相対パスを指定すると、エディタ初回起動時に２回評価されておかしくなるのも直ったはず。<br></div></section>
+    </li><li><section><h1 id=659>
+    <span class="no">[659]</span>
+    <a class="title" href="#659">Re: テスト版置きました</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-08-30T23:17:59">2001年08月30日 23:17</time></h1>
+    <div class="body">エディタを書き込み禁止フォルダに置いて起動すると，起動に失敗しましたというメッセージが出続けてしまうので注意してください．<br></div></section>
+    </li></ul></li></ul></body></html>

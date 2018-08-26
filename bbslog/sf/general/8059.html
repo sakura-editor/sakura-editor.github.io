@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>2.3.0.0リリース</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">8059</span>
+    <a class="title" href="8059.html#8059">2.3.0.0リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8060</span>
+    <a class="title" href="8059.html#8060">Re:2.3.0.0リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8061</span>
+    <a class="title" href="8059.html#8061">Re2:2.3.0.0リリース</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=8059>
+    <span class="no">[8059]</span>
+    <a class="title" href="#8059">2.3.0.0リリース</a>
+    <span class="author">syat</span>
+    <time datetime="2015-10-12T17:51:56">2015年10月12日 17:51</time></h1>
+    <div class="body">サクラエディタ V2 (Unicode版) の 2.3.0.0 をリリースしました。<br><br>インストーラパッケージ<br>なし<br><br>単体配布版<br><a href=http://sourceforge.net/projects/sakura-editor/files/sakura2/2.3.0.0/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>projects<wbr>/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>sakura2/<wbr>2.<wbr>3.<wbr>0.<wbr>0/<wbr></nobr></a><br><br>64bit（x64）単体配布 *テスト* 版<br>なし<br><br>更新履歴<br><a href=http://sakura.qp.land.to/?History%2F2.3.0.0 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>History%<wbr>2F2.<wbr>3.<wbr>0.<wbr>0</nobr></a><br><br>ヘルプファイル<br>なし<br></div></section>
+    <ul><li><section><h1 id=8060>
+    <span class="no">[8060]</span>
+    <a class="title" href="#8060">Re:2.3.0.0リリース</a>
+    <span class="author">xyz</span>
+    <time datetime="2015-10-15T12:41:00">2015年10月15日 12:41</time></h1>
+    <div class="body">矩形選択の挙動が替わりました。<br>改行より後ろを選択すると<br>文字単位の移動がドット単位に変わり<br>動きが遅くなります。<br>何か理由が有るのでしょうか？</div></section>
+    <ul><li><section><h1 id=8061>
+    <span class="no">[8061]</span>
+    <a class="title" href="#8061">Re2:2.3.0.0リリース</a>
+    <span class="author">syat</span>
+    <time datetime="2015-10-15T22:48:27">2015年10月15日 22:48</time></h1>
+    <div class="body">▼ xyzさん<br>今版からプロポーショナルフォントを使用できるようになり、桁の幅が固定でなくなったため内部の処理がいろいろ変わっています。<br>ご指摘の動きもその影響ですが、従来風の動きに直せると思うので次版（数週間後くらい）で修正します。<br><br>基本的には等幅フォントを使っていれば従来通りの動きになるようにしたいと思います。<br>ただし一部のマクロ関数（GetSelectColmFrom、GetSelectColmTo、GetStrLayoutLength、GetViewColumns）は、従来は桁数を返却しましたが今版からはピクセル幅を返すように仕様変更しました。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

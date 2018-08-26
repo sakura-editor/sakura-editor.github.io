@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Keep) CEditView::GetColorIndex整理</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">344</span>
+    <a class="title" href="344.html#344">Commit報告:(Keep) CEditView::GetColorIndex整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">346</span>
+    <a class="title" href="344.html#346">Re:Commit報告:(Keep) CEditView::GetColorIndex整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">351</span>
+    <a class="title" href="344.html#351">Re2:Commit報告:(Keep) CEditView::GetColorIndex整理</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=344>
+    <span class="no">[344]</span>
+    <a class="title" href="#344">Commit報告:(Keep) CEditView::GetColorIndex整理</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-30T00:11:41">2008年04月30日 00:11</time></h1>
+    <div class="body">リビジョン：<br>　rev1309<br><br>変更種別：<br>　リファクタリング。機能変更無し。<br><br>内容：<br>　CEditView::GetColorIndex が巨大で保守性が低い状態であったので、整理を開始しています。<br></div></section>
+    <ul><li><section><h1 id=346>
+    <span class="no">[346]</span>
+    <a class="title" href="#346">Re:Commit報告:(Keep) CEditView::GetColorIndex整理</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-05-01T20:17:32">2008年05月01日 20:17</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1309<br>&gt; <br>&gt; 変更種別：<br>&gt; 　リファクタリング。機能変更無し。<br>&gt; <br>&gt; 内容：<br>&gt; 　CEditView::GetColorIndex が巨大で保守性が低い状態であったので、整理を開始しています。<br>確認報告をさせていただきます。<br>&gt; 2) 『タイプ別設定』『スクリーン』『アウトライン解析方法』『標準ルール』に値が設定できない。<br><br>&gt; 2) Grepで『オプション』（『単語単位で探す』等）の設定が利かない。<br>&gt;     Grep画面内でのGrepは問題なし。他のファイルからのGrepで発生する。<br>&gt;     Grep 呼び出しのとき -GOPT=が設定されていないようです。<br><br>&gt; 7) 行間隔を大きくした場合、エディタのベースラインとIMEのベースラインがずれる<br><br>&gt; 6) 『共通設定』『ファイル』『新規以外から保存時は全ファイル表示』が効かない。<br>&gt;     『新規から保存時は全ファイル表示』のフラグを見ているようです。<br><br>&gt; 2) 『共通設定』『ファイル』『前回と異なる文字コードのとき問い合わせを行う』がオンのとき、<br>&gt;     文字コードがSJIS以外のファイルの２回目以降のオープン時<br>&gt;     （最近使ったファイルに残っているファイルのオープン時）、<br>&gt;         このファイルは、前回は別の文字コードxxxで開かれています。<br>&gt;         前回と同じ文字コードを使いますか?<br>&gt;         ・[(はい(Y))] ＝xxx<br>&gt;         ・[(いいえ(N))]＝SJIS<br>&gt;         ・[(キャンセル)]＝開きません<br>&gt;     のメッセージがでる。<br>&gt;     （xxxは前回の文字コード)<br>&gt; 3) 2)の場合、選択をYでもNでも今回のファイルの文字コードの自動判定に従いファイルを開く。<br>&gt; 4) 『共通設定』『ファイル』『前回と異なる文字コードのとき問い合わせを行う』がオフのとき、<br>&gt;     文字コードがSJIS以外のファイルの２回目以降のオープン時<br>&gt;     （最近使ったファイルに残っているファイルのオープン時）、<br>&gt;     前回の文字コードを無視し、自動判定の文字コードで開く。<br><br>&gt; 排他制御を『他プロセスからの読み書きを禁止にする』の設定にした場合、<br>&gt; 『開き直す』が出来ないバグを修正しました。<br>以上８点修正されていることを確認しました。<br><br>275:<br>4) "の直後に行型のコメント文字があり、色指定の「コメント」がオン「ダブルクォーティション文字列」がオフの場合、表示がおかしい。<br>    1.『文字の間隔』『行の間隔』が利かない（画面全体）<br>    2. コメントの色が行を超えて着色される。<br>    3. コントロールコードがあった場合は、以下すべてコントロールコードの色で着色される。<br>    2.3.は 以上の状態は次の"まで続きます。<br>    以上の状態は、読み込み直後の状態です。<br>    編集時は、どこまで影響するか不明です。<br>303:<br>3) 拡張子にかかわらず、起動直後は『基本』で表示される。<br>    内部的な選択は拡張子で設定されているようです。<br>    『上書き保存』等を行うと選択された『タイプ別設定』で再表示されます。<br>以上２点も現象が発生しなくなったことを確認しました。<br>Unicode版開発用wikiの『バグ情報/3』「本家版とのDrag&amp;Dropができない」が修正されていることを確認しました。<br>これは、いつの間に修正したのですか？<br><br>以上報告させていただきます。</div></section>
+    <ul><li><section><h1 id=351>
+    <span class="no">[351]</span>
+    <a class="title" href="#351">Re2:Commit報告:(Keep) CEditView::GetColorIndex整理</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-05-03T17:02:46">2008年05月03日 17:02</time></h1>
+    <div class="body">ご確認ありがとうございます。<br><br>&gt; 275:<br>&gt; 4) "の直後に行型のコメント文字があり、色指定の「コメント」がオン「ダブルクォーティション文字列」がオフの場合、表示がおかしい。<br>&gt;     1.『文字の間隔』『行の間隔』が利かない（画面全体）<br>&gt;     2. コメントの色が行を超えて着色される。<br>&gt;     3. コントロールコードがあった場合は、以下すべてコントロールコードの色で着色される。<br>&gt;     2.3.は 以上の状態は次の"まで続きます。<br>&gt;     以上の状態は、読み込み直後の状態です。<br>&gt;     編集時は、どこまで影響するか不明です。<br><br>&gt;&gt;322 の対応で修正されたのだと思います。<br>コメント色がおかしくなる原因は、<br>ファイルロード直後に、タイプ別設定が正確に反映されていないことでした。<br>その問題を修正したので、それに付随して上記問題（それの原因がタイプ別設定反映であれば、ですが）も解決したのだと思います。<br><br><br>&gt; 303:<br>&gt; 3) 拡張子にかかわらず、起動直後は『基本』で表示される。<br>&gt;     内部的な選択は拡張子で設定されているようです。<br>&gt;     『上書き保存』等を行うと選択された『タイプ別設定』で再表示されます。<br><br>上と同じく、&gt;&gt;322 に付随して修正されたかと思います。<br><br><br>&gt; 以上２点も現象が発生しなくなったことを確認しました。<br>&gt; Unicode版開発用wikiの『バグ情報/3』「本家版とのDrag&amp;Dropができない」が修正されていることを確認しました。<br><br>明示的に修正した覚えはあるのですが、いつだったかよく覚えていません。<br>branch/unicode2 を作る直前くらいの頃だったかもしれません。<br><br>他にも報告外のバグ修正が含まれているかもしれませんが、よく覚えていません。<br>と、いうのは下のような経緯があったからです。<br><br>branch/unicode の頃、リファクタリングパッチを登録<br>↓<br>リファクタリングパッチを適用した前提でバグ修正を着手<br>↓<br>バグ修正できたは良いけど、リファクタリングパッチのレビューが無いので、そのバグ修正パッチを公開できず<br>↓<br>待つ<br>↓<br>修正した事実を忘れる<br>↓<br>2つ目のブランチを作る際に、（いくつかのバグ修正が含まれた）自分のワーキングコピーを用いたので、<br>（忘れていた）バグ修正の適用されたソースコードがリポジトリに登録された<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

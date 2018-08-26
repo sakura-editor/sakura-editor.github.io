@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>空白だけの行の削除</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">2614</span>
+    <a class="title" href="2614.html#2614">空白だけの行の削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2615</span>
+    <a class="title" href="2614.html#2615">RE: 空白だけの行の削除</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2614>
+    <span class="no">[2614]</span>
+    <a class="title" href="#2614">空白だけの行の削除</a>
+    <span class="author">DSS</span>
+    <time datetime="2002-12-13T18:18:34">2002年12月13日 18:18</time></h1>
+    <div class="body">まいどです．<br>ViVi からの乗り換えを考えてます．<br>改行した結果空白だけになる場合，空白を削除<br>したいんですが，そんなオプションはあるでしょうか？<br>→をタブ，↓を改行だとすると<br><br>→   →   →↓<br><br>こんな行が出来てなんかいや～んです．(^^;</div></section>
+    <ul><li><section><h1 id=2615>
+    <span class="no">[2615]</span>
+    <a class="title" href="#2615">RE: 空白だけの行の削除</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-13T19:47:55">2002年12月13日 19:47</time></h1>
+    <div class="body">&gt;まいどです．<br>&gt;ViVi からの乗り換えを考えてます．<br>&gt;改行した結果空白だけになる場合，空白を削除<br>&gt;したいんですが，そんなオプションはあるでしょうか？<br>&gt;→をタブ，↓を改行だとすると<br>&gt;<br>&gt;→   →   →↓<br>&gt;<br>&gt;こんな行が出来てなんかいや～んです．(^^;<br><br>正規表現で置換すれば良いお話し。<br><br>置換で「正規表現」にチェックして置換する。<br><br>・スペース・タブだけの行 ⇒ スペース・タブを削除し、空行にする場合。<br>置換前：^[ \t]+([\r\n])<br>置換後：$1<br><br>・スペース・タブだけの行 ⇒ 行をバッサリ削除する場合。<br>置換前：^[ \t]+[\r\n]+<br>置換後：<br><br>・何も無い空行を削除する場合。<br>置換前：^[\r\n]+<br>置換後：<br><br>・何も無い空行、またはスペースタブのみの行を削除する場合。<br>置換前：^[ \t]*[\r\n]+<br>置換後：<br><br><br>あとは１箇所ずつ [置換] で判断しながら消していくのも良し、<br>「範囲」を「選択範囲」にして [すべて置換] で選択範囲のみバッサリ一気に消すのも良し、<br>自由自在でしょう。<br><br>さらに、これらの中で自分がよく使う物なんかがあれば、マクロ化しておけば良し。<br><br>１．[Ctrl]+[Shift]+[M] でマクロ記録開始する。（タイトルバーを見て記録中なのを確認）<br>２．使いたい置換作業を１回やる。 ※この時に「範囲」を「選択範囲」にしておくと後々使いやすくなる。<br>３．もう一度 [Ctrl]+[Shift]+[M] でマクロの記録終了。<br>４．[Ctrl]+[M] でマクロをファイルとして保存する。<br><br>あとは このマクロファイルを 共通設定 - マクロ に登録して（一旦、共通設定を [OK] で閉じる）<br>さらに 共通設定 - カスタムメニュー で 右クリックメニュー にでも登録するとか。<br><br>マクロ作成時に「範囲」を「選択範囲」にしておくと、マクロ実行時に<br>・範囲選択してからマクロを実行する ⇒ 選択範囲にのみ処理される<br>・範囲選択しないでマクロを実行する ⇒ ファイル全体に対して処理される<br>となります。<br></div></section>
+    </li></ul></li></ul></body></html>

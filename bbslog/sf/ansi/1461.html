@@ -1,0 +1,109 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>PPA.DLL対応パッチ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1461</span>
+    <a class="title" href="1461.html#1461">PPA.DLL対応パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1463</span>
+    <a class="title" href="1461.html#1463">マクロ新コマンド一覧</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1466</span>
+    <a class="title" href="1461.html#1466">Re: マクロ新コマンド一覧</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1468</span>
+    <a class="title" href="1461.html#1468">Re2: マクロ新コマンド一覧</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1497</span>
+    <a class="title" href="1461.html#1497">Re:マクロ新コマンド一覧</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1501</span>
+    <a class="title" href="1461.html#1501">Re2:マクロ新コマンド一覧</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1504</span>
+    <a class="title" href="1461.html#1504">Re3:マクロ新コマンド一覧</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1506</span>
+    <a class="title" href="1461.html#1506">Re4:マクロ新コマンド一覧</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1510</span>
+    <a class="title" href="1461.html#1510">Re5:マクロ新コマンド一覧</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1464</span>
+    <a class="title" href="1461.html#1464">Re:PPA.DLL対応パッチ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1541</span>
+    <a class="title" href="1461.html#1541">Re: PPA.DLL対応パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1542</span>
+    <a class="title" href="1461.html#1542">Re2: PPA.DLL対応パッチ</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1461>
+    <span class="no">[1461]</span>
+    <a class="title" href="#1461">PPA.DLL対応パッチ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-03T18:32:06">2002年02月03日 18:32</time></h1>
+    <div class="body">PPA.DLL対応パッチをアップロードしました。<br><br>-----PPA.DLLに対応させるときにとった方針-----<br>ダイアログを表示させて何かする機能を、すべてダイアログ表示と、機能実行部を分けるように努力した。<br><br>※いまのところ、マクロから、ダイアログ表示コマンドを呼び出すことはできません。<br><br>具体的には、<br>・F_EXECCOMMAND→F_EXECCOMMAND_DIALOGに変更し、外部コマンド実行ダイアログ表示コマンドとした。<br>　F_EXECCOMMANDを新設し、外部コマンド実行コマンドとした。<br>・F_GREP→F_GREP_DIALOGに変更し、GREPダイアログ表示コマンドとした。<br>　F_GREPを新設し、GREP実行コマンドとした。<br>・F_REPLACE→F_REPLACE_DIALOGに変更し、置換ダイアログ表示コマンドとした。<br>　F_REPLACEを新設し、置換実行コマンドとした。<br>　置換実行コマンドは、CEditViewに移動した。<br>・F_JUMP→F_JUMP_DIALOGに変更し、指定行へジャンプダイアログ表示コマンドとした。<br>　F_JUMPを新設し、指定行へジャンプ実行コマンドとした。<br>・m_pcOpeBlkがNULLか否かで困ったことがあったので、とりあえず、<br>　1.m_pcOpeBlk == NULLのとき<br>　　m_pcOpeBlkを作成。<br>　2.m_pcOpeBlk != NULLのとき<br>　　何もしない。<br>　という方針にしてみた。<br><br>・マクロをCSMacroMgrに統一。PPA.DLLアリ／ナシを極力統一するように努力する。（引き続き努力する）<br><br>-----ほかの修正-----<br>・CDlgFind::AddToSearchKeyArr()を、CShareData::AddToSearchKeyArr()に移動し、置換ダイアログ、GREPダイアログなどから使えるようにした。<br>　同様に、CShareData::AddToReplaceKeyArr()、を追加。<br><br>・マクロを別フォルダに保存すると、マクロフォルダが変わってしまうバグ修正。<br><br>・文字をたくさん入れると折り返して1文字目に同じ文字が繰り返し表示されてしまうバグ修正（したつもり）<br><br>・Windowsでフォントを大きくしておくと、メニューが窮屈になる問題に対処。<br>　ステータスバーとか、ほかの部分も変えたほうが親切かもね。<br><br>です。<br><br>diff形式がいいそうなので、リリース版からのdiffが、diff_2002_2_3.zip。更新したソースはppa_2002_2_3.zip。<br>です。<br>私はdiffを渡されても管理する自信が無いので、今回から一式をアップロードするのはやめました。<br>ではよろしくお願いします。</div></section>
+    <ul><li><section><h1 id=1463>
+    <span class="no">[1463]</span>
+    <a class="title" href="#1463">マクロ新コマンド一覧</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-03T18:50:17">2002年02月03日 18:50</time></h1>
+    <div class="body">マクロで用意されているコマンド。<br>どこかにアップロードすればよかったかも。<br><br>引数が無いものについては、頭に「S_」が付くだけで以前と同様です。<br>文字列は''で囲む必要があります。あわせて\でエスケープする必要があるのは"ではなく'になります。<br>コメントは//のみ。/* */は使えません。<br><br>以下、今回追加されたコマンドです。<br>なお、「フラグ」の部分は、「キーマクロを記録」機能を使って記録すれば、ダイアログのチェックなどから、必要な数値が記録されます（されるはずです）<br><br>・S_AddTail('文字列');    // テキストの最後に文字列を追加する。<br>　S_InsText()より早いはず。<br><br>・S_Jump(行番号, フラグ); // 指定行へジャンプ<br>　例：S_Jump(10, 1);<br>　フラグ部分は次の数値の和。<br>　******** 以下「行番号の単位」 ********<br>　0      折り返し単位の行番号<br>　1      改行単位の行番号<br>　**************************************<br>　0x02   PL/SQLコンパイルエラー行を処理する<br>　未定義 テキストの□行目をブロックの1行目とする<br>　未定義 検出されたPL/SQLパッケージのブロックから選択<br><br>・S_SearchNext('文字列', フラグ); // 下検索<br>　S_SearchPrev('文字列', フラグ); // 上検索<br>　フラグ部分は、次の数値の和<br>　1      単語単位で探す<br>　2      英大文字と小文字を区別する<br>　4      正規表現<br>　8      見つからないときにメッセージを表示<br>　16     検索ダイアログを自動的に閉じる<br>　32     先頭（末尾）から再検索する<br><br>・S_ExecCommand('文字列', フラグ); // 外部コマンド実行<br>　フラグ部分は、次の数値の和<br>　1      標準出力を得る<br><br>・S_Replace('置換前文字列', '置換後文字列', フラグ); // 置換<br>　フラグ部分は、次の数値の和<br>　1      単語単位で探す<br>　2      英大文字と小文字を区別する<br>　4      正規表現<br>　8      見つからないときにメッセージを表示<br>　16     検索ダイアログを自動的に閉じる<br>　32     先頭（末尾）から再検索する<br>　64     クリップボードから貼り付ける<br>　******** 以下「置換範囲」 ********<br>　0      ファイル全体<br>　128    選択範囲<br>　**********************************<br>　******** 以下「置換対象」 ********<br>　0      見つかった文字列と置換<br>　256    見つかった文字列の前に挿入<br>　512&#9;見つかった文字列の後に追加<br>　**********************************<br><br>・S_Grep('検索文字列', 'ファイル名（パターン）', '検索対象フォルダ', フラグ);<br>　フラグ部分は、次の数値の和<br>　1      サブフォルダからも検索する<br>　2      この編集中のテキストから検索する（未実装）<br>　4      英大文字と英小文字を区別する<br>　8      正規表現<br>　16     文字コード自動判別<br>　******** 以下「結果出力」 ********<br>　0      該当行<br>　32     該当部分<br>　**********************************<br>　******** 以下「出力形式」 ********<br>　0      ノーマル<br>　64     ファイル毎<br>　**********************************<br><br>以上です。<br></div></section>
+    <ul><li><section><h1 id=1466>
+    <span class="no">[1466]</span>
+    <a class="title" href="#1466">Re: マクロ新コマンド一覧</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-04T12:53:52">2002年02月04日 12:53</time></h1>
+    <div class="body">・S_Jump(行番号, フラグ); // 指定行へジャンプ<br>これと対になる機能として，キャレットの現在位置を取得というのはできないでしょうか．<br><br>・S_SearchNext('文字列', フラグ); // 下検索<br>&gt;　S_SearchPrev('文字列', フラグ); // 上検索<br>見つかったかどうかを戻り値で得ることはできないんでしょうか．<br><br>・S_ExecCommand('文字列', フラグ); // 外部コマンド実行<br>&gt;　フラグ部分は、次の数値の和<br>&gt;　1      標準出力を得る<br>実行するディレクトリの指定もできればあった方がいいと思います．<br></div></section>
+    <ul><li><section><h1 id=1468>
+    <span class="no">[1468]</span>
+    <a class="title" href="#1468">Re2: マクロ新コマンド一覧</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-04T16:16:30">2002年02月04日 16:16</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ・S_Jump(行番号, フラグ); // 指定行へジャンプ<br>&gt; これと対になる機能として，キャレットの現在位置を取得というのはできないでしょうか．<br>&gt; <br>&gt; ・S_SearchNext('文字列', フラグ); // 下検索<br>&gt; &gt;　S_SearchPrev('文字列', フラグ); // 上検索<br>&gt; 見つかったかどうかを戻り値で得ることはできないんでしょうか．<br>&gt; <br>&gt; ・S_ExecCommand('文字列', フラグ); // 外部コマンド実行<br>&gt; &gt;　フラグ部分は、次の数値の和<br>&gt; &gt;　1      標準出力を得る<br>&gt; 実行するディレクトリの指定もできればあった方がいいと思います．<br><br>ああ、いきなり要望さんくす。<br>ほかのコメントが付くかもしれないので、とりあえず保留にしておきます。<br><br>次は、ヘッダとフッタか～。どなたか手つけてます？</div></section>
+    </li></ul></li><li><section><h1 id=1497>
+    <span class="no">[1497]</span>
+    <a class="title" href="#1497">Re:マクロ新コマンド一覧</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-07T20:44:24">2002年02月07日 20:44</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; 文字列は''で囲む必要があります。あわせて\でエスケープする必要があるのは"ではなく'になります。<br><br>キーマクロの記録時に「"」を含むコマンドを使うと、<br>記録の終了時に死んでしまいます。<br><br>・・・エスケープした方がよさそうな気がします・・・</div></section>
+    <ul><li><section><h1 id=1501>
+    <span class="no">[1501]</span>
+    <a class="title" href="#1501">Re2:マクロ新コマンド一覧</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-07T23:43:21">2002年02月07日 23:43</time></h1>
+    <div class="body">▼ horさん<br>&gt; ▼ やざきさん<br>&gt; &gt; 文字列は''で囲む必要があります。あわせて\でエスケープする必要があるのは"ではなく'になります。<br>&gt; <br>&gt; キーマクロの記録時に「"」を含むコマンドを使うと、<br>&gt; 記録の終了時に死んでしまいます。<br>&gt; <br>&gt; ・・・エスケープした方がよさそうな気がします・・・<br><br>例えばどんなので死にました？<br>手元では「あ"い」を検索したのも記録できたし、「あ'い」も大丈夫。<br>でも後者は再生できなかったけど(汗)</div></section>
+    <ul><li><section><h1 id=1504>
+    <span class="no">[1504]</span>
+    <a class="title" href="#1504">Re3:マクロ新コマンド一覧</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-08T09:03:38">2002年02月08日 09:03</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; 例えばどんなので死にました？<br>&gt; 手元では「あ"い」を検索したのも記録できたし、「あ'い」も大丈夫。<br>&gt; でも後者は再生できなかったけど(汗)<br><br>外部コマンド実行で echo "test" や echo 'test' を実行して記録するとおなくなりになります。<br>他のコマンドでも同じだと思い込んでいましたが、やざきさんのご指摘どおり検索は大丈夫でした。<br>・・・外部コマンド実行のときだけに起る問題なのかもしれません。</div></section>
+    <ul><li><section><h1 id=1506>
+    <span class="no">[1506]</span>
+    <a class="title" href="#1506">Re4:マクロ新コマンド一覧</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-08T21:45:37">2002年02月08日 21:45</time></h1>
+    <div class="body">▼ horさん<br>&gt; ▼ やざきさん<br>&gt; &gt; 例えばどんなので死にました？<br>&gt; &gt; 手元では「あ"い」を検索したのも記録できたし、「あ'い」も大丈夫。<br>&gt; &gt; でも後者は再生できなかったけど(汗)<br>&gt; <br>&gt; 外部コマンド実行で echo "test" や echo 'test' を実行して記録するとおなくなりになります。<br>&gt; 他のコマンドでも同じだと思い込んでいましたが、やざきさんのご指摘どおり検索は大丈夫でした。<br>&gt; ・・・外部コマンド実行のときだけに起る問題なのかもしれません。<br><br>！<br>どんなコマンドでもお亡くなりになるかも？<br>ExecCommandだけ、間違ってました。<br>case F_EXECCOMMAND:<br>&#9;//&#9;引数ひとつ分だけ保存<br>&#9;pText = m_pParamTop-&gt;m_pData;<br>&#9;nTextLen = strlen(pText);<br>&#9;cmemWork.SetData( pText, nTextLen );<br>&#9;cmemWork.Replace( "\\\'", "\'" );<br>&#9;cmemWork.Replace( "\\\\", "\\" );<br>&#9;wsprintf( szLine, "%s(\'%s\', %d);\t// %s\r\n", szFuncName, cmemWork.GetPtr( NULL ), m_pParamTop-&gt;m_pNext-&gt;m_pData ? atoi(m_pParamTop-&gt;m_pNext-&gt;m_pData) : 0, szFuncNameJapanese );<br>&#9;_lwrite( hFile, szLine, strlen( szLine ) );<br>&#9;break;<br><br>こんな感じにしたら、うごきます？</div></section>
+    <ul><li><section><h1 id=1510>
+    <span class="no">[1510]</span>
+    <a class="title" href="#1510">Re5:マクロ新コマンド一覧</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-09T00:00:51">2002年02月09日 00:00</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ExecCommandだけ、間違ってました。<br>(中略)<br>&gt; こんな感じにしたら、うごきます？<br><br>いけました。ありがとうございます。<br>もう少ししたらUpします。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=1464>
+    <span class="no">[1464]</span>
+    <a class="title" href="#1464">Re:PPA.DLL対応パッチ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-03T18:55:03">2002年02月03日 18:55</time></h1>
+    <div class="body">PPA.DLL対応パッチの補足。<br><br>PPA.DLLがあれば、変数や制御コマンドが使えます。<br>PPA.DLLがなければ、制御コマンドが使えません。<br><br>キーマクロの記録は、PPA.DLLのありなしに関係なくできます。<br>記録したマクロは、PPA.DLLのありなしに関係なく実行できます。<br><br>という違いしかありません。<br>では動作報告、バグ報告、お待ちしております～。</div></section>
+    </li><li><section><h1 id=1541>
+    <span class="no">[1541]</span>
+    <a class="title" href="#1541">Re: PPA.DLL対応パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-10T18:29:36">2002年02月10日 18:29</time></h1>
+    <div class="body">&gt;・マクロを別フォルダに保存すると、マクロフォルダが変わってしまうバグ修正。<br>元々マクロの保存先を入れておく場所だったのを私が流用したのでこうなっていました．<br><br>&gt;・文字をたくさん入れると折り返して1文字目に同じ文字が繰り返し表示されてしまうバグ修正（したつもり）<br>これは2/1版で既に入れたはずですが...<br><br>--<br>PPAを既に使っているTEADというエディタにマクロ名称やパラメータを極力合わせるというのも1つの方針かとおもいます．<br></div></section>
+    <ul><li><section><h1 id=1542>
+    <span class="no">[1542]</span>
+    <a class="title" href="#1542">Re2: PPA.DLL対応パッチ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-10T21:35:17">2002年02月10日 21:35</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;・文字をたくさん入れると折り返して1文字目に同じ文字が繰り返し表示されてしまうバグ修正（したつもり）<br>&gt; これは2/1版で既に入れたはずですが...<br><br>私の意図したとおりに直されていなかったので、さらに修正したのでした。<br><br><br>&gt; PPAを既に使っているTEADというエディタにマクロ名称やパラメータを極力合わせるというのも1つの方針かとおもいます．<br><br>見てみます。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

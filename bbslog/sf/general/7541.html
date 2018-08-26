@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Unicode文字置換</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7541</span>
+    <a class="title" href="7541.html#7541">Unicode文字置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7542</span>
+    <a class="title" href="7541.html#7542">Re: Unicode文字置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7616</span>
+    <a class="title" href="7541.html#7616">Re2: Unicode文字置換</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7541>
+    <span class="no">[7541]</span>
+    <a class="title" href="#7541">Unicode文字置換</a>
+    <span class="author">やまぶき</span>
+    <time datetime="2012-10-13T15:38:44">2012年10月13日 15:38</time></h1>
+    <div class="body">U+2129、U+2029などのUnicode文字をマクロを使って置換したいのですが、<br>どのように検索すればよいでしょうか。<br><br>よろしくお願いします。<br><br><br></div></section>
+    <ul><li><section><h1 id=7542>
+    <span class="no">[7542]</span>
+    <a class="title" href="#7542">Re: Unicode文字置換</a>
+    <span class="author">もか</span>
+    <time datetime="2012-10-15T09:53:35">2012年10月15日 09:53</time></h1>
+    <div class="body">2.x系を使っているのが前提で、普通にマクロをUTF-8(BOM付き)で書けばいいです。<br>PPAではSJISしか使えないので、.Macの通常マクロかJScript/VBScriptを使ってください。<br>JScriptならば、<br>Editor.Replace("\u2129", "", 0);<br>Editor.Replace(String.fromCharCode(2129), "", 0);<br>などのように書くこともできます。<br></div></section>
+    <ul><li><section><h1 id=7616>
+    <span class="no">[7616]</span>
+    <a class="title" href="#7616">Re2: Unicode文字置換</a>
+    <span class="author">もか</span>
+    <time datetime="2013-04-24T19:59:45">2013年04月24日 19:59</time></h1>
+    <div class="body">&gt;Editor.Replace("\u2129", "", 0);<br>&gt;Editor.Replace(String.fromCharCode(2129), "", 0);<br>Editor.Replace(String.fromCharCode(0x2129), "", 0);<br>でした。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

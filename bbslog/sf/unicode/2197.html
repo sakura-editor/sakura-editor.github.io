@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>rev3758 Debug_Unicode-x64 でコンパイルエラー</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">2197</span>
+    <a class="title" href="2197.html#2197">rev3758 Debug_Unicode-x64 でコンパイルエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2198</span>
+    <a class="title" href="2197.html#2198">Re:rev3758 Debug_Unicode-x64 でコンパイルエラー</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2197>
+    <span class="no">[2197]</span>
+    <a class="title" href="#2197">rev3758 Debug_Unicode-x64 でコンパイルエラー</a>
+    <span class="author">piko</span>
+    <time datetime="2014-07-06T13:32:32">2014年07月06日 13:32</time></h1>
+    <div class="body">ソースを最新のrev3758にして、VS2010でx64構成を追加し、<br>Debug_Unicode(x64)でビルドしてみたところ、<br>コンパイルエラーになりました。<br>少し前のrevまではコンパイルできていたと思います。<br><br>  CKeyBind.cpp<br>..\sakura_core\func\CKeyBind.cpp(490): error C2666: 'CStrictInteger&lt;STRICT_ID,ALLOW_CMP_INT,ALLOW_ADDSUB_INT,ALLOW_CAST_INT,ALLOW_ASSIGNOP_INT&gt;::operator &lt;' : 6 のオーバーロード関数があいまいです。(新しい機能 ; ヘルプを参照)</div></section>
+    <ul><li><section><h1 id=2198>
+    <span class="no">[2198]</span>
+    <a class="title" href="#2198">Re:rev3758 Debug_Unicode-x64 でコンパイルエラー</a>
+    <span class="author">もか</span>
+    <time datetime="2014-07-06T18:22:54">2014年07月06日 18:22</time></h1>
+    <div class="body">rev3726 メニュー周りの不具合..で<br>const int LABEL_MAX = 256;<br>を<br>const unsigned int LABEL_MAX = nLabelSize;<br>に変更したのが原因っぽいです。<br><br>(Int)を付ける変更をしました<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/862/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>862/<wbr></nobr></a><br></div></section>
+    </li></ul></li></ul></body></html>

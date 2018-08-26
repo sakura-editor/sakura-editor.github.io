@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(New) テキスト折り返し方法の追加</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">505</span>
+    <a class="title" href="505.html#505">Commit報告:(New) テキスト折り返し方法の追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">506</span>
+    <a class="title" href="505.html#506">Re:Commit報告:(New) テキスト折り返し方法の追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">507</span>
+    <a class="title" href="505.html#507">Re2:Commit報告:(New) テキスト折り返し方法の追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">508</span>
+    <a class="title" href="505.html#508">Re3:Commit報告:(New) テキスト折り返し方法の追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">509</span>
+    <a class="title" href="505.html#509">Re4:Commit報告:(New) テキスト折り返し方法の追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">510</span>
+    <a class="title" href="505.html#510">Re5:Commit報告:(New) テキスト折り返し方法の追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">513</span>
+    <a class="title" href="505.html#513">Re6:Commit報告:(New) テキスト折り返し方法の追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">514</span>
+    <a class="title" href="505.html#514">Re7:Commit報告:(New) テキスト折り返し方法の追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">517</span>
+    <a class="title" href="505.html#517">Re8:Commit報告:(New) テキスト折り返し方法の追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">520</span>
+    <a class="title" href="505.html#520">Re9:Commit報告:(New) テキスト折り返し方法の追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">533</span>
+    <a class="title" href="505.html#533">Re10:Commit報告:(New) テキスト折り返し方法の追加</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=505>
+    <span class="no">[505]</span>
+    <a class="title" href="#505">Commit報告:(New) テキスト折り返し方法の追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-21T16:51:45">2008年06月21日 16:51</time></h1>
+    <div class="body">リビジョン：<br>　rev1391<br><br>変更種別：<br>　新規機能追加<br><br>内容：<br>　テキスト折り返し方法の追加<br>　&gt;&gt;dev:5299の件をUNICODE版に適用しました。<br>　&gt;&gt;dev:5358の修正まで含んでいます。<br>　　　　↑<br>１．画面ちらつきの抑制<br>２．折り返し桁数変更(Ctrl+Alt+U)の制限撤去<br>３．折り返し桁変更マクロ(ChangeWrapColm)を追加</div></section>
+    <ul><li><section><h1 id=506>
+    <span class="no">[506]</span>
+    <a class="title" href="#506">Re:Commit報告:(New) テキスト折り返し方法の追加</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-21T19:33:56">2008年06月21日 19:33</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; リビジョン：<br>&gt; 　rev1391<br>&gt; <br>&gt; 変更種別：<br>&gt; 　新規機能追加<br>&gt; <br>&gt; 内容：<br>&gt; 　テキスト折り返し方法の追加<br>&gt; 　&gt;&gt;dev:5299の件をUNICODE版に適用しました。<br>&gt; 　&gt;&gt;dev:5358の修正まで含んでいます。<br>&gt; 　　　　↑<br>&gt; １．画面ちらつきの抑制<br>&gt; ２．折り返し桁数変更(Ctrl+Alt+U)の制限撤去<br>&gt; ３．折り返し桁変更マクロ(ChangeWrapColm)を追加<br><br>不具合なのかわかりませんが、『折り返し桁数』で『右端で折り返す」を指定した場合に、<br>右端に空きが出てきてしまいます。<br><br>修正お願いいたします。</div></section>
+    <ul><li><section><h1 id=507>
+    <span class="no">[507]</span>
+    <a class="title" href="#507">Re2:Commit報告:(New) テキスト折り返し方法の追加</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-21T21:59:17">2008年06月21日 21:59</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; 不具合なのかわかりませんが、『折り返し桁数』で『右端で折り返す」を指定した場合に、<br>&gt; 右端に空きが出てきてしまいます。<br><br>折り返し記号および改行ぶら下げ時の改行記号が見えるようにデフォルトで2桁分余白を持つようになっています。<br>句読点ぶら下げ時はさらに2桁分余白が増えます。<br>右側の空きは多分これによるものと思います。<br><br>改行ぶら下げ、句読点ぶら下げのオプションが共に選択されていない場合1文字の余白でもぎりぎり良いかもしれませんが……<br></div></section>
+    <ul><li><section><h1 id=508>
+    <span class="no">[508]</span>
+    <a class="title" href="#508">Re3:Commit報告:(New) テキスト折り返し方法の追加</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-22T00:13:04">2008年06月22日 00:13</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; 折り返し記号および改行ぶら下げ時の改行記号が見えるようにデフォルトで2桁分余白を持つようになっています。<br>&gt; 句読点ぶら下げ時はさらに2桁分余白が増えます。<br>&gt; 右側の空きは多分これによるものと思います。<br>&gt; <br>&gt; 改行ぶら下げ、句読点ぶら下げのオプションが共に選択されていない場合1文字の余白でもぎりぎり良いかもしれませんが……<br>ぶら下げ指定なしでも空きができています。<br>ぶら下げ指定が無ければ、右側ぎりぎりにしてほしいです<br>（以前の『ウインドウ花で折返し』の動作）。<br>自分としては、ぶら下げが在っても右側ぎりぎりがいいのです。<br>オプションででも出来ませんか？</div></section>
+    <ul><li><section><h1 id=509>
+    <span class="no">[509]</span>
+    <a class="title" href="#509">Re4:Commit報告:(New) テキスト折り返し方法の追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-22T00:56:24">2008年06月22日 00:56</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; 自分としては、ぶら下げが在っても右側ぎりぎりがいいのです。<br><br>そのほうがいいと思われる理由は何でしょうか？<br>ぶら下げが見えないと困ることが多いと思うのですが。<br>桁数をきっちり80桁とかに設定したいなら、画面サイズを80桁に変更してCtrl+Alt+Uをするよりも、新しく追加したマクロ(使用例：&gt;&gt;dev:5358)を使うほうが圧倒的に楽だと思いますけど。<br><br>従来仕様での操作が身に染み付いているというだけなら、オプションまで追加して従来挙動を残したくはないのですが。。。</div></section>
+    <ul><li><section><h1 id=510>
+    <span class="no">[510]</span>
+    <a class="title" href="#510">Re5:Commit報告:(New) テキスト折り返し方法の追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-22T01:03:15">2008年06月22日 01:03</time></h1>
+    <div class="body">&gt; 桁数をきっちり80桁とかに設定したいなら、画面サイズを80桁に変更してCtrl+Alt+Uをするよりも、新しく追加したマクロ(使用例：&gt;&gt;dev:5358)を使うほうが圧倒的に楽だと思いますけど。<br><br>ちなみに、僕はというと、Ctrl+Alt+Uはもうほとんど使わず、例示したマクロを使います。</div></section>
+    <ul><li><section><h1 id=513>
+    <span class="no">[513]</span>
+    <a class="title" href="#513">Re6:Commit報告:(New) テキスト折り返し方法の追加</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-22T02:08:18">2008年06月22日 02:08</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; &gt; 桁数をきっちり80桁とかに設定したいなら、画面サイズを80桁に変更してCtrl+Alt+Uをするよりも、新しく追加したマクロ(使用例：&gt;&gt;dev:5358)を使うほうが圧倒的に楽だと思いますけど。<br>&gt; <br>&gt; ちなみに、僕はというと、Ctrl+Alt+Uはもうほとんど使わず、例示したマクロを使います。<br>単純に作業領域が減るのがいやなだけです。<br>1桁でも多く表示したいということです。<br>横1024の画面で3つぐらいの画面を見比べながらの作業等があり、<br>その場合には、1桁でも多く表示表示したいということです。<br>80桁がどうのこうのということはまるでありません。</div></section>
+    <ul><li><section><h1 id=514>
+    <span class="no">[514]</span>
+    <a class="title" href="#514">Re7:Commit報告:(New) テキスト折り返し方法の追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-22T02:15:02">2008年06月22日 02:15</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; 単純に作業領域が減るのがいやなだけです。<br>&gt; 1桁でも多く表示したいということです。<br><br>今後も継続的にそういう要望が出てくるようなら考えてみます。<br>それまではご自身で、自分専用パッチを用意すればよいと思います。<br>僕も、個人的には気に入らないけれど、オプション追加するほど需要が無いかもしれないと感じる部分についてはそうしています。<br>自分には不要なオプションは、単に増えるだけでもいやだと感じる人もいます。<br>そのあたりはトレードオフだと思います。<br><br>＃どこを修正すればよさそうか、知りたければお教えします。</div></section>
+    <ul><li><section><h1 id=517>
+    <span class="no">[517]</span>
+    <a class="title" href="#517">Re8:Commit報告:(New) テキスト折り返し方法の追加</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-22T03:03:19">2008年06月22日 03:03</time></h1>
+    <div class="body">個人的にはどっちでも良いです (^^;<br>ただ、横幅が減るのを嫌がる人はいるだろうなぁと思っていました。<br><br>ぶら下げオプションが選択されていない場合、折り返し位置より右側に出るのは折り返し記号だけですよね？<br>であれば、下記の様にしても大丈夫かもしれませんね。<br>　オプションなし：余白なし<br>　改行ぶら下げ　：余白2桁追加<br>　句読点ぶら下げ：余白2桁追加<br><br>あとはマクロでガンバってもらうとか (^^;<br>S_WrapWindowWidth();<br>S_ChangeWrapColm( S_ChangeWrapColm( 0 ) + 2 );<br><br>ではでは。<br></div></section>
+    <ul><li><section><h1 id=520>
+    <span class="no">[520]</span>
+    <a class="title" href="#520">Re9:Commit報告:(New) テキスト折り返し方法の追加</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-22T03:30:31">2008年06月22日 03:30</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; ぶら下げオプションが選択されていない場合、折り返し位置より右側に出るのは折り返し記号だけですよね？<br>&gt; であれば、下記の様にしても大丈夫かもしれませんね。<br>&gt; 　オプションなし：余白なし<br>&gt; 　改行ぶら下げ　：余白2桁追加<br>&gt; 　句読点ぶら下げ：余白2桁追加<br>この線でお願いします。<br>自分としては、改行ぶら下げは余白1桁というところなのですが。</div></section>
+    <ul><li><section><h1 id=533>
+    <span class="no">[533]</span>
+    <a class="title" href="#533">Re10:Commit報告:(New) テキスト折り返し方法の追加</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-23T00:55:28">2008年06月23日 00:55</time></h1>
+    <div class="body">早速修正されていましたね。みなさん手が早いっス (^^;<br><br>&gt; 自分としては、改行ぶら下げは余白1桁というところなのですが。<br><br>私も当初は1桁だと思っていたのですが、ウィンドウは場によっては改行文字の右端が切れてしまうとryojiさんに教えて頂きました。CRとCRLFが区別できなくなります。<br>実際に不都合を感じるユーザは殆どいないかもしれませんが、区別ができなくなるのが良いとも思えませんので余白2桁でOKではないでしょうか。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>貼り付けパッチについて</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">641</span>
+    <a class="title" href="641.html#641">貼り付けパッチについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">649</span>
+    <a class="title" href="641.html#649">Re:貼り付けパッチについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">650</span>
+    <a class="title" href="641.html#650">Re2:貼り付けパッチについて</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">706</span>
+    <a class="title" href="641.html#706">Commit報告:(New) パスの貼り付け</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=641>
+    <span class="no">[641]</span>
+    <a class="title" href="#641">貼り付けパッチについて</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-09-30T15:37:33">2008年09月30日 15:37</time></h1>
+    <div class="body">#2102923 パスの貼り付け のパッチを確認しましたが、パッチの最後の方のコメントにもあるように悩ましい所があります。<br> <br>複数のパスがある場合、区切りにCRLFを追加しておき後でさらに選択されている改行文字に置き換えています。<br>私は、他の方法も思いつかないしこれで良いかと思っていますが、他の方でこの部分についてご意見あればお願いします。<br> <br>10日ほど待って何もなければそのまま代理コミットします。<br>ではでは。<br></div></section>
+    <ul><li><section><h1 id=649>
+    <span class="no">[649]</span>
+    <a class="title" href="#649">Re:貼り付けパッチについて</a>
+    <span class="author">あひる</span>
+    <time datetime="2008-10-04T13:08:55">2008年10月04日 13:08</time></h1>
+    <div class="body">▼ なすこじさん<br>下記、UNICODE版では何らかの対策があるのでしょうか？<br><br><a href=http://sakura.qp.land.to/?Junk%2Ftest-1.6.2.0 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2Ftest-<wbr>1.<wbr>6.<wbr>2.<wbr>0</nobr></a><br>オプション化されてないのは問題ないでしょうか？ -- あひる? 2008-04-15 (火) 12:23:55 <br>ある意味サクラエディタがデフォルトでクリップボード拡張ソフト化されるわけで、 -- あひる? 2008-04-15 (火) 12:24:55 <br>機能をオフにしたい場合もあるのでは？ -- あひる? 2008-04-15 (火) 12:25:39 <br></div></section>
+    <ul><li><section><h1 id=650>
+    <span class="no">[650]</span>
+    <a class="title" href="#650">Re2:貼り付けパッチについて</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-10-05T15:58:55">2008年10月05日 15:58</time></h1>
+    <div class="body">▼ あひるさん<br>ちょっと理由が思い浮かびませんが、オプション化が必要ですか？<br><br>この件は、対応するクリップボード形式を増やしたのであり、今まであった機能は変更していません。<br><br>次に、意図せず操作した（誤操作）時のペナルティの大きさを考えた場合、以下のようになります。<br>・操作クリップボード形式がCF_HDROPの時にペーストを実行する<br>　（現状）ビープ音がなる<br>　（追加）クリップボードにコピーされているファイルのパスがペーストされる<br><br>今まではビープ音だけですんでいたのが、ファイルパスがペーストされるためペナルティが大きくなっています。<br>しかし、Undoにて元に戻せるということと元々誤操作であるということを考えた場合、さほど大きなペナルティとも思えません。<br><br>したがって、旧動作を選択するという名目でのオプションは不要のように思います。<br><br>以上、こんな感じですがどうでしょう？<br><br>忙し過ぎて考える余裕がないです。なので月末まで何もできないかも……。<br></div></section>
+    </li></ul></li><li><section><h1 id=706>
+    <span class="no">[706]</span>
+    <a class="title" href="#706">Commit報告:(New) パスの貼り付け</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-11-18T20:02:26">2008年11月18日 20:02</time></h1>
+    <div class="body">代理コミットしました。<br><br>リビジョン：<br>　rev1467<br><br>変更種別：<br>　新規機能追加<br><br>内容：<br>　クリップボードからのパスの貼り付けに対応<br>　PatchUnicode#2102923<br></div></section>
+    </li></ul></li></ul></body></html>

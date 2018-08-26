@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ダイレクトタグジャンプの不具合</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3614</span>
+    <a class="title" href="3614.html#3614">ダイレクトタグジャンプの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3615</span>
+    <a class="title" href="3614.html#3615">Re: ダイレクトタグジャンプの不具合</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3614>
+    <span class="no">[3614]</span>
+    <a class="title" href="#3614">ダイレクトタグジャンプの不具合</a>
+    <span class="author">SHU</span>
+    <time datetime="2004-06-04T09:46:15">2004年06月04日 09:46</time></h1>
+    <div class="body">いつも便利に利用させて頂いております。<br><br>タグジャンプ先ファイルのパスに空白が含まれていると、<br>処理に失敗してしまいます。<br>CEditView::Command_TagJumpByTagsFile内のsscanfで<br>正常にパスを取得できていないのが原因のようです。<br><br>以上、既知のものでしたら申し訳御座いませんが<br>よろしくお願い致します。</div></section>
+    <ul><li><section><h1 id=3615>
+    <span class="no">[3615]</span>
+    <a class="title" href="#3615">Re: ダイレクトタグジャンプの不具合</a>
+    <span class="author">もか</span>
+    <time datetime="2004-06-04T23:54:46">2004年06月04日 23:54</time></h1>
+    <div class="body">&gt;タグジャンプ先ファイルのパスに空白が含まれていると、<br>&gt;処理に失敗してしまいます。<br>悲しいがな、今日の昼間(非ネット接続環境)これが原因で悩んでました。<br>既知ではないみたいです。<br><br>(SHUさんや他の方は、理解しているかもしれませんけど)<br>2番目の%s→%[^\t\r\n]("&gt;&lt;|も入れたほうがいいかも)にしたら動きましたけど、これでいいのでしょうか。<br>%[hoge]表記を初めて知った...<br><br>#VCのヘッダにジャンプできんかった<br>#Program files\Microsoft Visual Studio\なんたらで、スペースばっかり。<br></div></section>
+    </li></ul></li></ul></body></html>

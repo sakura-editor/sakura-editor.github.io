@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>LF/CRの改行コード</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4419</span>
+    <a class="title" href="4419.html#4419">LF/CRの改行コード</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4420</span>
+    <a class="title" href="4419.html#4420">Re:LF/CRの改行コード</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4422</span>
+    <a class="title" href="4419.html#4422">Re2:LF/CRの改行コード</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4430</span>
+    <a class="title" href="4419.html#4430">Re3:LF/CRの改行コード</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4431</span>
+    <a class="title" href="4419.html#4431">Re4:LF/CRの改行コード</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4419>
+    <span class="no">[4419]</span>
+    <a class="title" href="#4419">LF/CRの改行コード</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-04-15T11:13:21">2005年04月15日 11:13</time></h1>
+    <div class="body">実際ファイル中に、改行コードを混在させることも可能ですので、<br>ＬＦ／ＣＲは、２行にして、表示するといいと思います。<br><br>ＣＲ／ＬＦなら、Windows。ＣＲなら、Ｍａｃ。ＬＦならホスト。<br>LF/CRは、実際どこかのメインフレームで有るのでしょうか！<br></div></section>
+    <ul><li><section><h1 id=4420>
+    <span class="no">[4420]</span>
+    <a class="title" href="#4420">Re:LF/CRの改行コード</a>
+    <span class="author">すす</span>
+    <time datetime="2005-04-15T12:35:29">2005年04月15日 12:35</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; 実際ファイル中に、改行コードを混在させることも可能ですので、<br>&gt; ＬＦ／ＣＲは、２行にして、表示するといいと思います。<br>それだと本来の意味から離れてしまいます。<br>CR 行頭に移動<br>LF 行を進める<br>ですよ<br>なのでUNIX,LINUX,MACはCRで改行だけど、本来なら行の先頭に移動するだけ<br>LF/CRなら単にCRで改行されるだけでいいのでは？<br>ほかのエディタもそうでしょ？<br><br>&gt; <br>&gt; ＣＲ／ＬＦなら、Windows。ＣＲなら、Ｍａｃ。ＬＦならホスト。<br>&gt; LF/CRは、実際どこかのメインフレームで有るのでしょうか！<br></div></section>
+    <ul><li><section><h1 id=4422>
+    <span class="no">[4422]</span>
+    <a class="title" href="#4422">Re2:LF/CRの改行コード</a>
+    <span class="author">みく</span>
+    <time datetime="2005-04-15T19:22:20">2005年04月15日 19:22</time></h1>
+    <div class="body"><br>一応まとめ。<br><br>CR 0x0d 復帰(Carriage Return) ヘッドを行頭に移動<br>LF 0x0a 改行(Line Feed) 紙を1行分送る<br><br>ラインプリンタの制御を思い浮かべればよい。<br>ラインプリンタの制御としては、復帰して改行しようが<br>改行して復帰しようが、どっちでもいいんです。<br>って、今時ラインプリンタなんてないかorz<br><br><br>0x0a      UNIX派<br>0x0d,0x0a Windows派<br>0x0d      MAC派<br>0x0a,0x0d ナニ派?(10年に一回くらいは見る気もする)<br><br><br>他のエディタの挙動(a,0x0a,0x0d,bを表示させた場合)<br>さくら    a(改行1個)b   *1個の改行と認識<br>秀丸      a(改行1個)b   *1個の改行と認識<br>K2Editor  a(改行2個)b   *空行ができる<br>EdLeaf    a(改行2個)b   *空行ができる<br>JmEditor  a(改行2個)b   *空行ができる<br>TeraPad   a(改行2個)b   *空行ができる<br>Becky(Dana)   a(改行1個)(M)b<br>NotePad   a(ごみ)b      *改行なしかよ!<br>ワードパッド  a(改行2個)b   *空行ができる<br><br>*調べたエディタのバージョンは適当です。昔から入ってるやつなんで結構古いです。<br><br>他のエディタ持ってる方、暇だったら調査よろしく。<br></div></section>
+    <ul><li><section><h1 id=4430>
+    <span class="no">[4430]</span>
+    <a class="title" href="#4430">Re3:LF/CRの改行コード</a>
+    <span class="author">くうく</span>
+    <time datetime="2005-04-22T23:32:50">2005年04月22日 23:32</time></h1>
+    <div class="body">&gt; LF/CRは、実際どこかのメインフレームで有るのでしょうか！<br><br>論点を外しているかもしれませんが、<br>改行コードLFCRはCopy&amp;Pasteのときに意図せず作ってしまう<br>ものではないでしょうか？たとえば、LFモードで開いた<br> [LF]<br> [LF]<br>というファイルの１行目と２行目の間に、他からCopyした<br> [CRLF]<br>をPasteします。この状態では<br> [LF]<br> [CRLF]<br> [LF]<br>となりますが、これをCTRL+Sして「開き直す」と、サクラでは<br> [LFCR]<br> [LF]<br> [LF]<br>になってしまいます。<br>（Paste先が４行以上だと再現しないようです？）<br>ひとたび自動認識にてLFCRと判断されると、以後Enterキー入力で<br>LFCRが量産されます。<br><br>上記はサクラ1.5.2.1 on WinXPによります。<br>サクラ愛用なもので（素晴らしいエディタ、有難うございます）、<br>他のエディタは、わかりません。<br><br>置換で\rを扱う場合も同じことが起こり得ますので、<br>ちょっと複雑かも。<br></div></section>
+    <ul><li><section><h1 id=4431>
+    <span class="no">[4431]</span>
+    <a class="title" href="#4431">Re4:LF/CRの改行コード</a>
+    <span class="author">もか</span>
+    <time datetime="2005-04-23T00:27:04">2005年04月23日 00:27</time></h1>
+    <div class="body">オリジナルの「テキストエディタ」の更新履歴に<br>&gt;◆Ver 0.3.8.8 1999.12.6<br>(中略...)<br>&gt; ・LFCRの改行コードのファイルも読み込めるようにした<br>とあります。<br>残念ながら経緯を知りませんが、必要があって後で追加している可能性があります。<br><br>また、検索してみると、LFCRとCRLFの両方を受け付けるフォーマット(仕様)・ソフトが結構あったり<br>LFCRでなければいけない場合も＜あったらしい＞です。<br>そもそも、間違えて逆になっていることもあるようですが……<br><br>個人的には、インターネットの各種プロトコルやXMLで、改行区切りを<br>CRLF | LF | CR<br>と、定義していることが多い都合で、LFCR廃止に賛成ではあります。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

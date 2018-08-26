@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>newの失敗の検出方法</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3320</span>
+    <a class="title" href="3320.html#3320">newの失敗の検出方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3321</span>
+    <a class="title" href="3320.html#3321">Re:newの失敗の検出方法</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3320>
+    <span class="no">[3320]</span>
+    <a class="title" href="#3320">newの失敗の検出方法</a>
+    <span class="author">もか</span>
+    <time datetime="2003-11-30T16:47:25">2003年11月30日 16:47</time></h1>
+    <div class="body">VC6はnew失敗時にはNULLを返すけど、すくなくともBCC551/MinGWでは std::bad_alloc 例外が発生します。<br>サクラエディタは、newに対しては「確保に失敗しない」ことを前提にしているのが現状ですが、<br>異なるコンパイラ間でも統一した方法でエラー検出ができないものでしょうか...<br>調べた限りでは、<br>NULLに統一したくてもBCC551ではnothrowが効かないことがある。<br>VC6では operator delete( size_t, nothrow_t&amp; ); が未宣言。<br>VC7xではnewヘッダをインクルードするかしないかで動作が変わる。<br>set_new_handler()を使う場合もstaticなオブジェクトが、それより先にnewを実行するかもしれない。<br>結局、下記のソースみたく書かないといけないのでしょうか。<br>私はこの辺の仕様と実装を理解していないので、フォロー願います。<br><br>#include &lt;new&gt;<br>...<br>class Hoge *p = NULL;<br>try{<br>&#9;p = new Hoge();<br>}catch( std::bad_alloc ){<br>&#9;p = NULL;<br>}catch(...){<br>}<br><br>if( !p ){<br>&#9;// エラー、しかるべき対処を。<br>}<br></div></section>
+    <ul><li><section><h1 id=3321>
+    <span class="no">[3321]</span>
+    <a class="title" href="#3321">Re:newの失敗の検出方法</a>
+    <span class="author">ryoji</span>
+    <time datetime="2003-12-03T12:11:46">2003年12月03日 12:11</time></h1>
+    <div class="body">▼ もかさん<br>&gt; set_new_handler()を使う場合もstaticなオブジェクトが、それより先にnewを実行するかもしれない。<br><br>#pragma init_seg(lib)<br>で、他のオブジェクトが作成される前にset_new_handler()できるみたいです。<br>http://support.microsoft.com/?kbid=167733</div></section>
+    </li></ul></li></ul></body></html>

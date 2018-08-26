@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>doxygen用のマクロを作ってみました。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">83</span>
+    <a class="title" href="83.html#83">doxygen用のマクロを作ってみました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">84</span>
+    <a class="title" href="83.html#84">Re:doxygen用のマクロを作ってみました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">86</span>
+    <a class="title" href="83.html#86">Re2:doxygen用のマクロを作ってみました。</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=83>
+    <span class="no">[83]</span>
+    <a class="title" href="#83">doxygen用のマクロを作ってみました。</a>
+    <span class="author">aono-a</span>
+    <time datetime="2004-05-26T18:12:50">2004年05月26日 18:12</time></h1>
+    <div class="body">大きいので自分のスペースにアップしました。<br><br>説明<br><a href=http://www.doumo.jp/aon-java/jsp/postgretips/tips.jsp?tips=38 target=_top><nobr>http://<wbr>www.<wbr>doumo.<wbr>jp/<wbr>aon-<wbr>java/<wbr>jsp/<wbr>postgret<wbr>ips/<wbr>tips.<wbr>jsp?<wbr>tips=<wbr>38</nobr></a><br><br>置き場所<br><a href=http://www.doumo.jp/aon-java/jsp/postgretips/data/aono-a/data/sakura/sak_doxy.js target=_top><nobr>http://<wbr>www.<wbr>doumo.<wbr>jp/<wbr>aon-<wbr>java/<wbr>jsp/<wbr>postgret<wbr>ips/<wbr>data/<wbr>aono-<wbr>a/<wbr>data/<wbr>sakura/<wbr>sak_doxy<wbr>.<wbr>js</nobr></a><br><br>最初はvbsで作ろうとしましたがうまくできなかったので<br>初JScriptに挑戦です。(^^;<br></div></section>
+    <ul><li><section><h1 id=84>
+    <span class="no">[84]</span>
+    <a class="title" href="#84">Re:doxygen用のマクロを作ってみました。</a>
+    <span class="author">ななし</span>
+    <time datetime="2004-07-20T15:55:26">2004年07月20日 15:55</time></h1>
+    <div class="body">使わせてもらっています。便利なものをありがとうございます。<br>ところで、関数の引数でデフォルト値のあるものをdoxygen用のマクロに渡すと<br>@param にはデフォルト値が表示されてしまうみたいです。<br><br>一応、修正してみました<br>function GetArgName( ArgTargetStr )<br>内の<br>&#9;TargetLen -= 1;<br>の次から<br>&#9;for ( i = TargetLen - 1 ; i &gt;= 0 ; i-- ){<br>&#9;&#9;TempChar = ArgTargetStr.charAt(i);<br>&#9;&#9;if ( TempChar == '='){<br>&#9;&#9;&#9;TargetLen = i;<br>&#9;&#9;}<br>&#9;}<br>を追加、<br>JScriptしたことないんでチョー適当です、以上。<br></div></section>
+    <ul><li><section><h1 id=86>
+    <span class="no">[86]</span>
+    <a class="title" href="#86">Re2:doxygen用のマクロを作ってみました。</a>
+    <span class="author">aono-a</span>
+    <time datetime="2004-08-23T18:51:15">2004年08月23日 18:51</time></h1>
+    <div class="body">▼ ななしさん<br>&gt; 使わせてもらっています。便利なものをありがとうございます。<br>&gt; ところで、関数の引数でデフォルト値のあるものをdoxygen用のマクロに渡すと<br>&gt; @param にはデフォルト値が表示されてしまうみたいです。<br><br>指摘ありがとうございます。(^_^)<br>それも含めて修正してみました。<br>(徐々に自分専用になっていく・・・)<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

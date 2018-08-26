@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>マクロの二重登録</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6150</span>
+    <a class="title" href="6150.html#6150">マクロの二重登録</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6158</span>
+    <a class="title" href="6150.html#6158">RE: マクロの二重登録</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6160</span>
+    <a class="title" href="6150.html#6160">RE2: マクロの二重登録</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6150>
+    <span class="no">[6150]</span>
+    <a class="title" href="#6150">マクロの二重登録</a>
+    <span class="author">サクラ大好きっこ</span>
+    <time datetime="2007-07-18T18:38:17">2007年07月18日 18:38</time></h1>
+    <div class="body">開発者さんに要望なんですけど、<br>SHIFT＋CTRL＋Mでマクロを登録できますが、<br>その、登録したマクロを含んだ<br>別のマクロを登録できるようにしてほしいです。<br><br>Aマクロを登録→Bマクロ(Aマクロを含む)登録って<br>できるようになっていたら便利だなぁと。<br><br>すでにそのような機能があったりしますか？<br><br>ぜひお願い致します。</div></section>
+    <ul><li><section><h1 id=6158>
+    <span class="no">[6158]</span>
+    <a class="title" href="#6158">RE: マクロの二重登録</a>
+    <span class="author">すい</span>
+    <time datetime="2007-07-21T20:19:09">2007年07月21日 20:19</time></h1>
+    <div class="body">&gt;SHIFT＋CTRL＋Mでマクロを登録できますが、<br>&gt;その、登録したマクロを含んだ<br>&gt;別のマクロを登録できるようにしてほしいです。<br>&gt;<br>&gt;Aマクロを登録→Bマクロ(Aマクロを含む)登録って<br>&gt;できるようになっていたら便利だなぁと。<br>&gt;<br>&gt;すでにそのような機能があったりしますか？<br><br>多分、マクロの中から他のマクロを呼び出す事を<br>したいのだと思いますが。<br><br>例えば<br>S_Call( 'MACRO.JS' );<br>みたいな感じで MACRO.JS を呼び出して実行する、みたいな。<br><br>少なくとも、現在、そういう機能は無いです。<br><br>で、私も欲しいな～とは思っていたりします。<br>例えば、<br>----------<br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに ppa.dll を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>var<br>&#9;str:String;<br>&#9;cnt,num:Integer;<br>begin&#9;//{<br>&#9;str := InputBox( 'キーボードマクロ実行' , '実行回数を入力してください。' , '' );<br>&#9;num := StrToInt(str);<br>&#9;if num &lt; 1 then&#9;exit;<br><br>&#9;for cnt:=1 to num&#9;do&#9;begin<br>&#9;&#9;S_Call( 'RECKEY.MAC' );&#9;&#9;// ← ここ<br>&#9;end;<br>end;&#9;//}<br>----------<br>この程度でキーボードマクロを指定回数実行、とか出来るようになるし。<br><br>開発中の自動実行マクロだとかも、単純に<br>・エディタ起動時、マクロフォルダに AutoExec.mac があれば実行される。<br>・ファイルを開く時、マクロフォルダに FOpen.mac があれば実行される。<br>・ファイルを閉じる時、マクロフォルダに FClose.mac があれば実行される。<br>　　・<br>　　・<br>みたいな単純な仕様にできるんじゃないか、とか思うのですが。<br># で、AutoExec.mac とかの中から任意のマクロを呼び出す。<br></div></section>
+    <ul><li><section><h1 id=6160>
+    <span class="no">[6160]</span>
+    <a class="title" href="#6160">RE2: マクロの二重登録</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-22T00:47:03">2007年07月22日 00:47</time></h1>
+    <div class="body">&gt;例えば、<br>&gt;&#9;for cnt:=1 to num&#9;do&#9;begin<br>&gt;&#9;&#9;S_Call( 'RECKEY.MAC' );&#9;&#9;// ← ここ<br>&gt;&#9;end;<br>自動実行マクロの実装の一部として，マクロ実行中に別のマクロを起動しても問題ないように修正中です．<br>で，すいさんには申し訳ないんですが『PPAだけは』再入できないんです．<br>PPAからエディタを経由して別のPPAを呼びだすのはPPA.DLLを直さない限り無理っぽい．<br><br>現在キーボードマクロは保存の有無にかかわらず一旦ファイルに格納しているので，その時点でjavascriptで保存してしまえばそのまま関数の一部として使えるとかはできそうな気がします．保存時に拡張子を選ぶと別の形式に変換できるといいかも．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

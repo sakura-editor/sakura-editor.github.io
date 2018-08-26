@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>カーソル桁位置を知るには？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">391</span>
+    <a class="title" href="391.html#391">カーソル桁位置を知るには？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">392</span>
+    <a class="title" href="391.html#392">RE: カーソル桁位置を知るには？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">393</span>
+    <a class="title" href="391.html#393">Re2: カーソル桁位置を知るには？</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=391>
+    <span class="no">[391]</span>
+    <a class="title" href="#391">カーソル桁位置を知るには？</a>
+    <span class="author">だだ星人</span>
+    <time datetime="2007-09-02T22:57:25">2007年09月02日 22:57</time></h1>
+    <div class="body">　はじめまして。だだ星人と申します。<br><br>表題の件ですが、マクロ中で現在のキャレット（カーソル）位置<br>を知るにはどうしたらよいのか？わからないので投稿させていた<br>だきます。<br><br>　ExpandParameter( '$x' )を使用すればキャレット物理桁位置<br>が取得できることはわかりました。しかし、以下のような文面で<br>は私が期待した内容のものが取得できないのです。<br><br>例）TABサイズ = 4：TAB = '^'<br>^   ^   i = 1;<br><br>上記行のセミコロンの後ろにキャレットがある場合、私としては<br>"15"が帰ってきてほしいのですが（※1）、<br>ExpandParameter( '$x' )だと"9"が帰ってきます。<br>要は、TABサイズが考慮されていないので、TABサイズを考慮した、<br>エディタのルーラーに表示されている位置が取得したいのです。<br><br>　どうやったらこの位置が取得できますでしょうか？ご存じの方<br>がいらっしゃいましたら、是非ご教示ください。<br><br>　みなさま、よろしくお願いいたします。<br><br>※1）"15"は1起算の場合。ゼロ起算の場合は"14"が帰ってきてほ<br>     しい。<br></div></section>
+    <ul><li><section><h1 id=392>
+    <span class="no">[392]</span>
+    <a class="title" href="#392">RE: カーソル桁位置を知るには？</a>
+    <span class="author">すい</span>
+    <time datetime="2007-09-03T01:03:52">2007年09月03日 01:03</time></h1>
+    <div class="body">S_ExpandParameter('$x'); は「現在の物理桁位置(先頭からのバイト数 1開始)」ですからね。<br>バイト数だからタブ文字があると桁位置とは剥離します。<br><br>で、現状、タブ幅も考慮した桁位置取得機能はありません。<br><br>ただ、選択状態をいじっても良いなら「選択開始桁の取得」でできます。<br><br>-----<br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに ppa.dll を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>var&#9;// 変数確保<br>&#9;x,y:Integer;&#9;// 整数数値変数 x,y 確保<br>begin&#9;//{<br><br>&#9;S_CancelMode(0);&#9;&#9;// 各種モードの取り消し - 選択解除<br>&#9;// ↑マクロ開始時に選択状態だった場合のため<br><br>&#9;S_BeginSelect(0);&#9;&#9;// 範囲選択開始<br>&#9;x := S_GetSelectColmFrom();&#9;// 選択開始桁の取得<br>&#9;y := S_GetSelectLineFrom();&#9;// 選択開始行の取得<br>&#9;S_CancelMode(0);&#9;&#9;// 各種モードの取り消し - 選択解除<br><br>&#9;MessageBox( IntToStr(x) + ',' + IntToStr(y)  , '(x,y)' , 0 );&#9;// 表示<br><br>end;&#9;//}<br>-----<br></div></section>
+    <ul><li><section><h1 id=393>
+    <span class="no">[393]</span>
+    <a class="title" href="#393">Re2: カーソル桁位置を知るには？</a>
+    <span class="author">だだ星人</span>
+    <time datetime="2007-09-03T11:36:57">2007年09月03日 11:36</time></h1>
+    <div class="body">すいさん さん こんにちは<br><br>ご回答ありがとうございます。<br>そんな方法があったとは！思いつきませんでした。本当に、ありがとうございます。<br><br>　それにしてもサクラエディタのマクロって、エディタ上でできるほとんど全ての操作が行える点はスゴイ！と思うんですが、<br>現在のエディタ内情報の状態取得が弱いですね。ExpandParameter('$x')にしても「何故文字列で取得？数値は？」と思ったりします。<br>　なんらかの開発ポリシーがあるんでしょうか？</div></section>
+    </li></ul></li></ul></li></ul></body></html>

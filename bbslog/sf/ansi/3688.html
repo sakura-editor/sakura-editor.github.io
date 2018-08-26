@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>キーワードの上限を緩和するパッチ</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3688</span>
+    <a class="title" href="3688.html#3688">キーワードの上限を緩和するパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3802</span>
+    <a class="title" href="3688.html#3802">Re: キーワードの上限を緩和するパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3829</span>
+    <a class="title" href="3688.html#3829">Re2: キーワードの上限を緩和するパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3830</span>
+    <a class="title" href="3688.html#3830">Re3: キーワードの上限を緩和するパッチ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3831</span>
+    <a class="title" href="3688.html#3831">Re3: キーワードの上限を緩和するパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3832</span>
+    <a class="title" href="3688.html#3832">Re4: キーワードの上限を緩和するパッチ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3688>
+    <span class="no">[3688]</span>
+    <a class="title" href="#3688">キーワードの上限を緩和するパッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-08-02T03:28:33">2004年08月02日 03:28</time></h1>
+    <div class="body">keywordの配列を、3次元固定長配列だったものを、<br>2次元配列に変更して、可変長3次元配列のようにして使うパッチです。<br>キーワード数の上限は、基本的には全てのセットのキーワードの合計で決まります。<br>キーワードセット数の上限は従来のままです。<br>まあ、きれいなソースではないので、プレビュー版です。<br>eGroups＞keyword02.zip<br></div></section>
+    <ul><li><section><h1 id=3802>
+    <span class="no">[3802]</span>
+    <a class="title" href="#3802">Re: キーワードの上限を緩和するパッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-11-25T18:40:51">2004年11月25日 18:40</time></h1>
+    <div class="body">2chのほうで話題になっているらしい事と関連するので、念のためアナウンスします。<br>元記事の放置してあったものですが、重大なバグがありました。<br>設定ファイル読み込み時に、キーワードセットの17個目以降のキーワードが、すべてクリアされてしまいます。<br>先(2004-11-25T18:30+09:00)ほど更新しましたので、前のバージョンを、運悪く発見してダウンロードした人は、気をつけてください。<br>バグのある旧バージョン：keyword02.zip(Yhaooブリーフケース) / sakura_2004-10-02kwnew.zip<br>修正版：sdiff_2004-10-02keyword03.tar.gz / sakura_2004-10-02kwnew03.zip<br>なお、バイナリはバージョンダイアログの一番下にパッチ名が入っているのでわかります。<br><br>ちなみに、現在の正式版のサクラエディタは、キーワードの保持に<br>20 * 2000 * 101 = 4040000(4MB)<br>このパッチ適用後は、<br>15000 * 100 + 164(管理用追加分) = 1500164(1.5MB)<br>共有メモリを使用します。<br><br>#キーワードにはできないけれど、99文字あればHello Woldが作れますね。<br>#public class MyClass { public static void main(String s[]) { System.out.println("Hello world"); } }<br></div></section>
+    <ul><li><section><h1 id=3829>
+    <span class="no">[3829]</span>
+    <a class="title" href="#3829">Re2: キーワードの上限を緩和するパッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2005-01-27T23:30:29">2005年01月27日 23:30</time></h1>
+    <div class="body">▼げんたさん(Red: 強調キーワード10個) &gt;&gt;3821<br>&gt;最終的には可変長パッチを取り込むことになるとは思いますが... <br>ということを受けて、更新しました。<br>なお、実験用本体に移動しました。<br><br>1.5.1.0で加わった、キーワード数の表示は、<br>セットのキーワード数 / (セットで確保しているキーワード数 + 未使用域)<br>の表示に変更しました。<br>未使用域は、全キーワードセットで共通なので、未使用領域が、10000の場合<br>　セットA : 123 / 10150<br>　セットB :  30 / 10050<br>と表示されて、セットBを70個などにすると、<br>　セットA : 123 / 10100　←未使用50減<br>　セットB :  70 / 10050　←確保50増 + 未使用50減 = 変わらず<br>となります。<br><br>あと、CShareData::Initの「強調キーワードのテストデータ」をAddKeyWordしていたものを、専用関数に変更しました。<br>体感的には起動が0.1秒くらい早くなる気がします。<br><br>#主な変更点はサイトを参照ください :-)<br></div></section>
+    <ul><li><section><h1 id=3830>
+    <span class="no">[3830]</span>
+    <a class="title" href="#3830">Re3: キーワードの上限を緩和するパッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-01-29T00:36:43">2005年01月29日 00:36</time></h1>
+    <div class="body">&gt;▼げんたさん(Red: 強調キーワード10個) &gt;&gt;3821<br>&gt;&gt;最終的には可変長パッチを取り込むことになるとは思いますが... <br>&gt;ということを受けて、更新しました。<br>ありがとうございます．早速試してみます．<br><br>と，ページを見ると他にも<br>・編集不可モード<br>・行マークの制限緩和<br>・再変換の選択範囲拡張を無効にできるオプション<br>などなど，せっかく作って頂いたのに追いついていない部分がありますね．<br>すいませんです．<br></div></section>
+    </li><li><section><h1 id=3831>
+    <span class="no">[3831]</span>
+    <a class="title" href="#3831">Re3: キーワードの上限を緩和するパッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-01-29T18:13:51">2005年01月29日 18:13</time></h1>
+    <div class="body">CKeyWordSetMgrを中心に一通り見て，コメント追加したりしました．<br>共有フォルダの kwd_modify_200501029.zip です．<br><br>CanAddKeyWord()が確保済みエリアに空きがあっても共通空き領域を使い切っているとメモリ不足と判定するようでしたので，確保済みエリアの空きをまず確認するように修正しました．<br><br>KeyWordAlloc()の末尾に領域だけ確保するという動作がちょっと固定的すぎてわかりにくいと感じたのと，1回しか使わないのにKeyWordReAlloc()と分けるのも保守しにくくなるかと思いましたので，サイズ0のセット領域を設定してからReAllocし，失敗した場合はカウンタを戻すようにしてみました．<br><br>領域拡張等の操作でm_nStartIdx[]の未使用領域にも演算を行っていますが，セット数＋１まで設定すれば十分ではないかと...<br><br>---<br>ご認識がありましたら指摘して頂ければと思います．<br><br>&gt;(セットで確保しているキーワード数 + 未使用域)<br>&gt;の表示に変更しました。<br>見てみましたが，ちょっとわかりにくいように思います．<br>(セットで確保しているキーワード領域の残数 + 未使用域)<br>で残りを表示した方がわかりやすいのではないかと思いましたがどうでしょうか？<br><br>&gt;あと、CShareData::Initの「強調キーワードのテストデータ」をAddKeyWordしていたものを、専用関数に変更しました。<br>&gt;体感的には起動が0.1秒くらい早くなる気がします。<br><br>関係ないですが，CShareData::Init()はキーワード登録がかなりの行数を消費しているので<br>その部分を別関数に分離しようと考えています．<br></div></section>
+    <ul><li><section><h1 id=3832>
+    <span class="no">[3832]</span>
+    <a class="title" href="#3832">Re4: キーワードの上限を緩和するパッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2005-01-30T04:12:10">2005年01月30日 04:12</time></h1>
+    <div class="body">げんたさんの指摘箇所とは関係ないですけど、、<br>共通設定のキーワード一覧を表示する箇所で、非表示→一気に表示に変更したら、キーワード表示の長さが固定されていました。<br>ここの変更は元に戻す他ないようです。<br><br>&gt;領域拡張等の操作でm_nStartIdx[]の未使用領域にも演算を行っていますが，セット数＋１まで設定すれば十分ではないかと... <br>昔のコードのときに、初期設定より多くINIが設定されていて、しかも番号が飛んでるときに、矛盾するのを防ぐためです。<br>今は、考慮するのは諦めたため、まったく意味はないですね。<br><br>&gt;CShareData::Init()はキーワード登録(中略..)<br>&gt;その部分を別関数に分離しようと考えています．<br>つにでに無効に…とは言えないから、IOProfileでセクションが読みこめなかったときに設定するように変更してはどうでしょうか。<br><br>他の項目は、まだ見ていないため保留します。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>sourceforgeのWEBアクセス用HTMLヘルプ更新について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←webトップへ</a><li><div class="list-title">
+    <span class="no">261</span>
+    <a class="title" href="261.html#261">sourceforgeのWEBアクセス用HTMLヘルプ更新について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">262</span>
+    <a class="title" href="261.html#262">RE: sourceforgeのWEBアクセス用HTMLヘルプ更新について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">263</span>
+    <a class="title" href="261.html#263">RE2: sourceforgeのWEBアクセス用HTMLヘルプ更新について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">264</span>
+    <a class="title" href="261.html#264">RE2: sourceforgeのWEBアクセス用HTMLヘルプ更新について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">265</span>
+    <a class="title" href="261.html#265">RE3: sourceforgeのWEBアクセス用HTMLヘルプ更新について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">266</span>
+    <a class="title" href="261.html#266">RE4: sourceforgeのWEBアクセス用HTMLヘルプ更新について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=261>
+    <span class="no">[261]</span>
+    <a class="title" href="#261">sourceforgeのWEBアクセス用HTMLヘルプ更新について</a>
+    <span class="author">maru</span>
+    <time datetime="2007-02-28T01:18:47">2007年02月28日 01:18</time></h1>
+    <div class="body">▼ げんたさん<br><a href=http://sakura-editor.sourceforge.net/htmlhelp/ target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>htmlhelp<wbr>/<wbr></nobr></a><br><br>ここのヘルプファイルは、sakura-hh-update.shを実行すれば更新されるのでしょうか。<br>グループ権限が付いていないので、別ユーザーからでも期待通りに更新可能なのか不安で、試すにはちょっと度胸がいります…。<br></div></section>
+    <ul><li><section><h1 id=262>
+    <span class="no">[262]</span>
+    <a class="title" href="#262">RE: sourceforgeのWEBアクセス用HTMLヘルプ更新について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-02-28T22:28:05">2007年02月28日 22:28</time></h1>
+    <div class="body">&gt;ここのヘルプファイルは、sakura-hh-update.shを実行すれば更新されるのでしょうか。<br>&gt;グループ権限が付いていないので、別ユーザーからでも期待通りに更新可能なのか不安で、試すにはちょっと度胸がいります…。<br>あれれ？っと，cronがいつの間にか消えている！！<br>というか，それ以前にSSHでつなぐとHOST KEYが違うと言われるところから，サーバの入れ替えがあったようです．<br>しかし，cronちゃんと引き継いでくれよぉ...<br><br>cron再設定します．<br>maruさんのアカウントで動かす方が都合が良ければそのようにしますが．<br>(group権限は付けておきました)<br></div></section>
+    <ul><li><section><h1 id=263>
+    <span class="no">[263]</span>
+    <a class="title" href="#263">RE2: sourceforgeのWEBアクセス用HTMLヘルプ更新について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-02-28T23:10:39">2007年02月28日 23:10</time></h1>
+    <div class="body">結局自分のところでcronを再設定しました．<br>今度は設定内容をファイルに残してあります．<br><br>パーミッションの話がありましたので，スクリプト先頭に<br>umask 002<br>を入れました．またファイルに全てgroup +wを付けました．<br><br>ちなみに，2/12まではcronは動いていた模様です．<br></div></section>
+    </li><li><section><h1 id=264>
+    <span class="no">[264]</span>
+    <a class="title" href="#264">RE2: sourceforgeのWEBアクセス用HTMLヘルプ更新について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-02-28T23:19:04">2007年02月28日 23:19</time></h1>
+    <div class="body">&gt;というか，それ以前にSSHでつなぐとHOST KEYが違うと言われるところから，サーバの入れ替えがあったようです．<br>TeraTermの方でつないだら警告が出なかったので，サーバが替わったというのは私の早とちりだったようです．<br><br>しかし何故cronを消されたのだろうか...<br></div></section>
+    <ul><li><section><h1 id=265>
+    <span class="no">[265]</span>
+    <a class="title" href="#265">RE3: sourceforgeのWEBアクセス用HTMLヘルプ更新について</a>
+    <span class="author">maru</span>
+    <time datetime="2007-03-01T01:03:00">2007年03月01日 01:03</time></h1>
+    <div class="body">&gt;&gt;というか，それ以前にSSHでつなぐとHOST KEYが違うと言われるところから，サーバの入れ替えがあったようです．<br>&gt;TeraTermの方でつないだら警告が出なかったので，サーバが替わったというのは私の早とちりだったようです．<br>いや、サーバは入れ替わったのだと思います。こちらでも新しいホストとしてWarningが出ました。<br>さらに、ここ１～２週間shell.sorceforge.netのポート22がずっとconnection refuseでしたから。<br><br>&gt;&gt;結局自分のところでcronを再設定しました．<br>了解です。<br></div></section>
+    <ul><li><section><h1 id=266>
+    <span class="no">[266]</span>
+    <a class="title" href="#266">RE4: sourceforgeのWEBアクセス用HTMLヘルプ更新について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-01T09:23:21">2007年03月01日 09:23</time></h1>
+    <div class="body">&gt;いや、サーバは入れ替わったのだと思います。<br>https://sourceforge.net/docs/A04/en/#top にありました．<br>cronが止められたのはごく最近だったみたいですね．よかった．<br>前のサーバから近々復元すると書いてあるのに，勝手に再設定してしまいましたが...<br><br> 2007-02-27 13:38:18 - Project Shell Service  )   Cron has been disabled on the shell server while we redesign it in a more robust and secure fashion. We expect service to be restored no later than Tuesday, March 6, 2007. Previously existing crontabs have been retained from the former shell server and will be reinstated when cron service is restored.<br><br>( 2007-02-23 12:00:52 - Project Shell Service )   As of 1200 PST on February 23, 2007, project shell service has been restored. Please note that the SSH host keys have changed: refer to document G04 to see the new host key fingerprints.<br><br>( 2007-02-22 10:56:10 - Project Shell Service )   2007-02-12: The shell server was taken offline for unscheduled maintenance. Due to a need to replace the old hardware and some unforeseen problems in getting the new hardware setup, we estimate that the shell service may not return until the 23rd of February. We apologize for the inconvenience.<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

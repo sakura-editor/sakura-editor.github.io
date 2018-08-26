@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現キーワードの文字数のこと</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">1704</span>
+    <a class="title" href="1704.html#1704">正規表現キーワードの文字数のこと</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=1704>
+    <span class="no">[1704]</span>
+    <a class="title" href="#1704">正規表現キーワードの文字数のこと</a>
+    <span class="author">もか</span>
+    <time datetime="2011-12-04T23:27:25">2011年12月04日 23:27</time></h1>
+    <div class="body">一般掲示板を眺めていて思ったのですが、<br>strcut RegexInfo{<br> szKeyword[100];<br>};<br>RegexInfo[100];<br>みたいになっているのを、<br>どうせ実行時に正規表現コンパイル時にコピーするわけだから、<br>szKeyword[100*100]みたいにしておいて、<br>複数ファイル名リストや補完候補みたいに<br>NUL区切り文字列にしてはどうでしょうか。<br>szKeyword[] = "const\0volatile\0";<br>そうすれば、99文字*100個にも999文字*10個にもできるようになります。<br>最大値チェックが面倒・わかりにくいという点に目をつぶればうまくいくように思います。<br></div></section>
+    </li></ul></body></html>

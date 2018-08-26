@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>スマートインデント（emacs風味）</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">4118</span>
+    <a class="title" href="4118.html#4118">スマートインデント（emacs風味）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4119</span>
+    <a class="title" href="4118.html#4119">Re: スマートインデント（emacs風味）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4121</span>
+    <a class="title" href="4118.html#4121">Re2: スマートインデント（emacs風味）</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4118>
+    <span class="no">[4118]</span>
+    <a class="title" href="#4118">スマートインデント（emacs風味）</a>
+    <span class="author">すぐる</span>
+    <time datetime="2004-10-23T00:52:14">2004年10月23日 00:52</time></h1>
+    <div class="body">いつも愛用させていただいてます。<br><br>サクラエディタでemacsみたいな自動インデントができればなーと思い、<br>機能追加してみました。<br><a href=http://49uper.com:8080/html/img-s/17777.lzh target=_top><nobr>http://<wbr>49uper.<wbr>com:<wbr>8080/<wbr>html/<wbr>img-<wbr>s/<wbr>17777.<wbr>lzh</nobr></a><br>使い方は、C++系のソースファイルを開き、調節したいところでタブキーです。<br><br>ソースのほうもあっぷしておきます。<br>開発者のみなさまのご意見いただければ幸いです。<br><a href=http://49uper.com:8080/html/img-s/17778.lzh target=_top><nobr>http://<wbr>49uper.<wbr>com:<wbr>8080/<wbr>html/<wbr>img-<wbr>s/<wbr>17778.<wbr>lzh</nobr></a><br>（1.4.7.1をベースにしてます。）</div></section>
+    <ul><li><section><h1 id=4119>
+    <span class="no">[4119]</span>
+    <a class="title" href="#4119">Re: スマートインデント（emacs風味）</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-10-23T11:37:57">2004年10月23日 11:37</time></h1>
+    <div class="body">括弧を入力するとインデントが変化するんですね．<br>Emacs使ってないのでなんか妙な感じ．<br><br>関数の引数を複数行にわたって記述した場合に，関数の中身のインデントがどんどん深くなってしまうのですが...<br><br>int abcde (<br>　　int param1,<br>　　　　int param2　　// 先頭が揃わない<br>)　　// &lt;-- 括弧の入力時にlevel 3-&gt;0<br>{<br>　　　　abcde();　　// &lt;-- 括弧の入力時にlevel 2-&gt;1<br>　　　　　　a = 0;<br>　　　　　　　　b = 0;　　// どんどん深くなる<br>}　　// &lt;-- 括弧の入力時にlevel 4-&gt;0<br><br>閉じ括弧を入力した後にパラメータを追加する場合は正しく動作するようですね．<br><br>TAB入力を整形で横取りしているので，思い通りのTABが入ってくれない場合にTABを追加できなくてストレスがたまる..ような人は使わなければいいだけかな．(思い通りなら問題ないんですが...) TABキーはTAB文字入力のままにしておいて，インデントは別のコマンドを追加した上でTABに割り当てた方がいいのかも．<br><br>----<br>インデントにスペースとタブのどちらを使うかのフラグが共通設定にあるので，DoSmartIndent()にインデント幅及びTAB/SPACEの区別を渡すように出来ればうまく連動させられるように思います．<br><br>現行のSmartIndentとだいぶ違うので併用できる形にしたいと思います．<br></div></section>
+    <ul><li><section><h1 id=4121>
+    <span class="no">[4121]</span>
+    <a class="title" href="#4121">Re2: スマートインデント（emacs風味）</a>
+    <span class="author">すぐる</span>
+    <time datetime="2004-10-24T00:48:03">2004年10月24日 00:48</time></h1>
+    <div class="body">&gt; 関数の引数を複数行にわたって記述した場合に，関数の中身のインデントがどんどん深くなってしまうのですが...<br>&gt; <br>&gt; int abcde (<br>&gt; 　　int param1,<br>&gt; 　　　　int param2　　// 先頭が揃わない<br>&gt; )　　// &lt;-- 括弧の入力時にlevel 3-&gt;0<br>&gt; {<br>&gt; 　　　　abcde();　　// &lt;-- 括弧の入力時にlevel 2-&gt;1<br>&gt; 　　　　　　a = 0;<br>&gt; 　　　　　　　　b = 0;　　// どんどん深くなる<br>&gt; }　　// &lt;-- 括弧の入力時にlevel 4-&gt;0<br><br>こちらでも現象のほう確認しました。<br>入力行がEOFを含むときに発生するようです。<br>さっそく修正しましたー。<br><a href=http://49uper.com:8080/html/img-s/18082.lzh target=_top><nobr>http://<wbr>49uper.<wbr>com:<wbr>8080/<wbr>html/<wbr>img-<wbr>s/<wbr>18082.<wbr>lzh</nobr></a><br><br>&gt; TAB入力を整形で横取りしているので，思い通りのTABが入ってくれない場合にTABを追加できなくてストレスがたまる..ような人は使わなければいいだけかな．(思い通りなら問題ないんですが...) TABキーはTAB文字入力のままにしておいて，インデントは別のコマンドを追加した上でTABに割り当てた方がいいのかも．<br>できるだけ思い通りのTABが入るようにチューニングしていけたらいいなーと思います。<br><br>&gt; インデントにスペースとタブのどちらを使うかのフラグが共通設定にあるので，DoSmartIndent()にインデント幅及びTAB/SPACEの区別を渡すように出来ればうまく連動させられるように思います．<br>たしかに、タイプ別設定に”SPACEの挿入”ってフラグがありますね。<br><br>CEditView_Command_Indent(170)から<br>#ifdef INDENT_BY_SPACE<br>&#9;for( int i = 0 ; i &lt; *len ; i++ ){<br>&#9;&#9;ret[i] = SPACE;<br>&#9;}<br>#else<br>&#9;for( int i = 0, j = 0 ; i &lt; *len ; i++ ){<br>&#9;&#9;/* 略 */<br>&#9;}<br>#endif<br><br>となっているところを、(m_bInsSpace==0)の分岐に変えればOKのはずですー。<br><br>と思ったら、タイプ別設定の”SPACEの挿入”をチェックするとTAB入力がこなくなってしまうのですね。(^^;;;;;<br><br>&gt; 現行のSmartIndentとだいぶ違うので併用できる形にしたいと思います．<br>もし、片隅にでも使っていただければ幸いですー。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

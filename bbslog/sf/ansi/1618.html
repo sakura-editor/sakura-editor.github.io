@@ -1,0 +1,109 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ssrc_2002-02-11_p2</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1618</span>
+    <a class="title" href="1618.html#1618">ssrc_2002-02-11_p2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1622</span>
+    <a class="title" href="1618.html#1622">Re: ssrc_2002-02-11_p2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1623</span>
+    <a class="title" href="1618.html#1623">Re2: ssrc_2002-02-11_p2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1624</span>
+    <a class="title" href="1618.html#1624">Re2: ssrc_2002-02-11_p2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1625</span>
+    <a class="title" href="1618.html#1625">Re3: ssrc_2002-02-11_p2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1627</span>
+    <a class="title" href="1618.html#1627">Re4: ssrc_2002-02-11_p2</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1642</span>
+    <a class="title" href="1618.html#1642">Re:ssrc_2002-02-11_p2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1643</span>
+    <a class="title" href="1618.html#1643">Re2:ssrc_2002-02-11_p2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1644</span>
+    <a class="title" href="1618.html#1644">参加中？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1645</span>
+    <a class="title" href="1618.html#1645">Re:参加中？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1646</span>
+    <a class="title" href="1618.html#1646">Re2:参加中？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1647</span>
+    <a class="title" href="1618.html#1647">see you next</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1618>
+    <span class="no">[1618]</span>
+    <a class="title" href="#1618">ssrc_2002-02-11_p2</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-18T15:35:48">2002年02月18日 15:35</time></h1>
+    <div class="body">[追加]<br>・単語単位移動・編集のオプションを[共通設定]-[編集]に追加<br>    （とりあえず空白の先頭で止まるかどうかだけ）<br>[変更]<br>・次(前)を検索してマッチした文字列の全体をできるだけ表示するように<br>    （マッチした文字列の長さが水平スクロールする必要が無いときだけ）<br>・タイプ別色設定で「色の設定」-「色の作成」-「色の追加」で作った色をちょっとだけ覚えておくように<br>    （ウィンドウ閉じたら消えるけど私はこれで充分）<br>[バグ]<br>・正規表現で改行をすべて置換すると処理が終わらないのを修正<br>・ブックマークの復元が変なときがあるのをこんどこそ修正<br><br>[案]<br>・[Ctrl+Home]or[Ctrl+End]後に[Down]or[Up]したときの挙動を見直し【 その２ 】<br>  １.矩形選択中以外はMS-Wordっぽく振る舞う<br>  ２.矩形選択中に[Ctrl+Home]or[Ctrl+End]したら桁はそのままで行だけ移動する<br>     （ファイルの先頭/末尾で実行したら桁も移動）<br>  ３.キャンセルしたら普通にカーソル移動<br><br>・・・いかがでしょう？</div></section>
+    <ul><li><section><h1 id=1622>
+    <span class="no">[1622]</span>
+    <a class="title" href="#1622">Re: ssrc_2002-02-11_p2</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-18T17:44:11">2002年02月18日 17:44</time></h1>
+    <div class="body">&gt;[バグ]<br>&gt;・ブックマークの復元が変なときがあるのをこんどこそ修正<br>CMRU::GetFileInfo()に追加されたマークのクリアは不要でしょう．<br><br>問題は，失敗する可能性があるのに戻り値をチェックしていない呼び出し側です．Grepしたところ<br>CEditApp.cpp (1115):<br>CEditWnd.cpp (1538):<br>CEditWnd.cpp (1569):<br>の3カ所で戻り値チェックが抜けているようです．<br></div></section>
+    <ul><li><section><h1 id=1623>
+    <span class="no">[1623]</span>
+    <a class="title" href="#1623">Re2: ssrc_2002-02-11_p2</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-18T17:53:27">2002年02月18日 17:53</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;[バグ]<br>&gt; &gt;・ブックマークの復元が変なときがあるのをこんどこそ修正<br>&gt; CMRU::GetFileInfo()に追加されたマークのクリアは不要でしょう．<br>&gt; <br>&gt; 問題は，失敗する可能性があるのに戻り値をチェックしていない呼び出し側です．<br><br>修正方法はお任せします。<br>GetFileInfo内でやった方が手っ取り早いかな、と思っただけですので。</div></section>
+    <ul><li><section><h1 id=1624>
+    <span class="no">[1624]</span>
+    <a class="title" href="#1624">Re2: ssrc_2002-02-11_p2</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-18T18:31:35">2002年02月18日 18:31</time></h1>
+    <div class="body">&gt; CEditApp.cpp (1115):<br>&gt; CEditWnd.cpp (1538):<br>&gt; CEditWnd.cpp (1569):<br>問題箇所周辺をよく見るとFileInfoの他のメンバにもアクセスが行われていますので，この対応では不十分です．3カ所とも戻り値がFALSEであったときに処理をSKIPさせる(breakを入れる?)必要があると思います．<br><br>エラー処理の代わりに問題の無い値で予め初期化を行うのであれば全ての要素を初期化しておく必要があります．<br><br>▼ horさん<br>&gt;GetFileInfo内でやった方が手っ取り早いかな、と思っただけですので。<br>今は手っ取り早くても後ではまる可能性があります．(horさん自身か他の人かはわかりませんが)<br><br>関数の上に書かれている記述からすればこの処理は不要ですから，あとで「なんだこれ？」って思って取り除くとおかしくなりますよね．そうすると何が悪いか探すのにまた苦労することになります．そうなると触らぬ神に祟りなし＝「なんか意味が分からないけど，そのままにしておこう」ということになってどんどん複雑度＆不要なコードが増すということになりかねません．特にこのような副作用に依存したコードは後からわかりにくくなりますので，副作用のない一般的なインターフェースを使っていくべきだと思います．<br></div></section>
+    <ul><li><section><h1 id=1625>
+    <span class="no">[1625]</span>
+    <a class="title" href="#1625">Re3: ssrc_2002-02-11_p2</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-18T18:47:39">2002年02月18日 18:47</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; あとで「なんだこれ？」って思って取り除くとおかしくなりますよね．<br>&gt; そうすると何が悪いか探すのにまた苦労することになります．<br>&gt; そうなると触らぬ神に祟りなし＝「なんか意味が分からないけど，そのままにしておこう」<br>&gt; ということになってどんどん複雑度＆不要なコードが増すということになりかねません．<br>&gt; 特にこのような副作用に依存したコードは後からわかりにくくなりますので，<br>&gt; 副作用のない一般的なインターフェースを使っていくべきだと思います．<br><br>手っ取り早いからこれで良いって言ってる訳じゃなくて・・・<br>私は素人なのでそのへんの訂正はお任せしますって言ってるんですけど。<br><br>そんなやつは参加するなって事ならこれでおわりにします。</div></section>
+    <ul><li><section><h1 id=1627>
+    <span class="no">[1627]</span>
+    <a class="title" href="#1627">Re4: ssrc_2002-02-11_p2</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-19T00:26:28">2002年02月19日 00:26</time></h1>
+    <div class="body">▼ horさん<br>&gt; 手っ取り早いからこれで良いって言ってる訳じゃなくて・・・<br>&gt; 私は素人なのでそのへんの訂正はお任せしますって言ってるんですけど。<br>修正しておきました。<br><br>&gt; そんなやつは参加するなって事ならこれでおわりにします。<br>(~_~) 正直かなり返答に窮していますが、私とhorさんで何に重点を置くかに相違があるようです。<br>これについてはまた後ほど。<br><br>私にはhorさんには比較的時間に余裕があると感じられたのでいろいろと注文してしまいましたが、誤解でしたら申し訳ありません。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=1642>
+    <span class="no">[1642]</span>
+    <a class="title" href="#1642">Re:ssrc_2002-02-11_p2</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-21T02:12:40">2002年02月21日 02:12</time></h1>
+    <div class="body">ごぶさた。<br>削除されていますね。<br><br>さて、どうしたものか。</div></section>
+    <ul><li><section><h1 id=1643>
+    <span class="no">[1643]</span>
+    <a class="title" href="#1643">Re2:ssrc_2002-02-11_p2</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-21T02:14:46">2002年02月21日 02:14</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ごぶさた。<br>&gt; 削除されていますね。<br>&gt; <br>&gt; さて、どうしたものか。<br><br>というか、強力なメンバー（と私は思っていました。）をひとり失ってしまったことは明らかですね。<br>すぐにフォローすべきであったか。はぁ。。。</div></section>
+    <ul><li><section><h1 id=1644>
+    <span class="no">[1644]</span>
+    <a class="title" href="#1644">参加中？</a>
+    <span class="author">hideto</span>
+    <time datetime="2002-02-22T00:11:03">2002年02月22日 00:11</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; というか、強力なメンバー（と私は思っていました。）をひとり失ってしまったことは明らかですね。<br>&gt; すぐにフォローすべきであったか。はぁ。。。<br><br>やめると明記されていないので、参加中と思っているのですがどうですか？＞horさん</div></section>
+    <ul><li><section><h1 id=1645>
+    <span class="no">[1645]</span>
+    <a class="title" href="#1645">Re:参加中？</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-22T13:58:18">2002年02月22日 13:58</time></h1>
+    <div class="body">▼ hidetoさん<br>&gt; ▼ やざきさん<br>&gt; &gt; というか、強力なメンバー（と私は思っていました。）をひとり失ってしまったことは明らかですね。<br>&gt; &gt; すぐにフォローすべきであったか。はぁ。。。<br>&gt; <br>&gt; やめると明記されていないので、参加中と思っているのですがどうですか？＞horさん<br><br>ごめんなさい…どうにもげんたさんと"そり"があわないので退散することにしました。<br><br>開発者の皆様、これからもがんばって下さい。   では。</div></section>
+    <ul><li><section><h1 id=1646>
+    <span class="no">[1646]</span>
+    <a class="title" href="#1646">Re2:参加中？</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-22T15:08:05">2002年02月22日 15:08</time></h1>
+    <div class="body">まだ見てくれるかな？<br><br>▼ horさん<br>&gt; ごめんなさい…どうにもげんたさんと"そり"があわないので退散することにしました。<br>&gt; <br>&gt; 開発者の皆様、これからもがんばって下さい。   では。<br><br>最後のソースをメールででも送ってもらえないかな？<br>せっかくだから、アレンジして取り込みたい。</div></section>
+    <ul><li><section><h1 id=1647>
+    <span class="no">[1647]</span>
+    <a class="title" href="#1647">see you next</a>
+    <span class="author">hideto</span>
+    <time datetime="2002-02-22T17:48:02">2002年02月22日 17:48</time></h1>
+    <div class="body">&gt; ▼ horさん<br>&gt; &gt; ごめんなさい…どうにもげんたさんと"そり"があわないので退散することにしました。<br>&gt; &gt; <br>&gt; &gt; 開発者の皆様、これからもがんばって下さい。   では。<br><br>そうですか、、、<br>近い日に「やっぱり気に入ったエディタが無かったので戻ってきました」というのをお待ちしております（＾＾）</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

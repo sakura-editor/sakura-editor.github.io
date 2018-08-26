@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>冗長な宣言に対するC++のアウトライン解析について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2640</span>
+    <a class="title" href="2640.html#2640">冗長な宣言に対するC++のアウトライン解析について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2659</span>
+    <a class="title" href="2640.html#2659">RE: C++のアウトライン解析について(メモ)</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2640>
+    <span class="no">[2640]</span>
+    <a class="title" href="#2640">冗長な宣言に対するC++のアウトライン解析について</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-03-30T13:48:27">2003年03月30日 13:48</time></h1>
+    <div class="body">class A {<br>  void func();<br>}<br>は冗長に<br>class A {<br>  void A::func();<br>}<br>と記述することもできますが、このように記述するとアウトライン解析で<br>Aクラス<br>└Aクラス<br>　└func(宣言)<br>となります。<br>Aクラス<br>└func(宣言)<br>となって欲しいところですけどね。<br></div></section>
+    <ul><li><section><h1 id=2659>
+    <span class="no">[2659]</span>
+    <a class="title" href="#2659">RE: C++のアウトライン解析について(メモ)</a>
+    <span class="author">もか</span>
+    <time datetime="2003-04-02T16:00:15">2003年04月02日 16:00</time></h1>
+    <div class="body">便乗して、要望というほどではないのでメモです。<br>1つめのマクロ以外は、遭遇したことないけど...<br><br>*マクロ+論理行<br>#define MACRO( c ) \<br>&#9;Function( c , 0 , NULL )<br>があると解析が変に。<br><br>*行コメント+論理行<br>// 行コメント  \<br>  ここも行コメントの続き<br><br>*コメントの終了<br>/*  \*/<br>だとコメントアウトの終わりが認識できない。<br><br>*トリグラフ<br>3文字表現(??=等)の解析。日本ではまず使わない...<br></div></section>
+    </li></ul></li></ul></body></html>

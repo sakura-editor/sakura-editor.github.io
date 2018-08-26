@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Re: TeX アウトライン解析ほか</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2961</span>
+    <a class="title" href="2961.html#2961">Re: TeX アウトライン解析ほか</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2964</span>
+    <a class="title" href="2961.html#2964">Re2: TeX アウトライン解析ほか</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=2961>
+    <span class="no">[2961]</span>
+    <a class="title" href="#2961">Re: TeX アウトライン解析ほか</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-07-21T12:29:39">2003年07月21日 12:29</time></h1>
+    <div class="body">&gt;chapter, section, subsection, subsubsectionが階層になるはずです。<br>\chapter<br>\section<br>\subsection<br>\chapter<br>の順に並べたとき，なぜかchapterが1階層目に来ないで1つ前のchapterの下にぶら下がってしまいますね．<br><br>&gt;・・・ひょっとして、一つ一つの機能でpatch作った方が良かったでしょうか？<br>私はdiffを取った後で関係ないところを削除してtexアウトラインだけ試してみました．<br><br><br>--<br>あと，キーワードを抜き出すところでstrstrつかっているのはなぜなんでしょう？<br>単にstrcmpでいいような... ひょっとして前後のスペース対策？<br></div></section>
+    <ul><li><section><h1 id=2964>
+    <span class="no">[2964]</span>
+    <a class="title" href="#2964">Re2: TeX アウトライン解析ほか</a>
+    <span class="author">naoh</span>
+    <time datetime="2003-07-21T22:19:32">2003年07月21日 22:19</time></h1>
+    <div class="body">ご意見ありがとうございます。<br><br>&gt; &gt;chapter, section, subsection, subsubsectionが階層になるはずです。<br>&gt; \chapter<br>&gt; \section<br>&gt; \subsection<br>&gt; \chapter<br>&gt; の順に並べたとき，なぜかchapterが1階層目に来ないで1つ前のchapterの下にぶら下がってしまいますね．<br><br>そういえばそういう可能性もあったんですね。ぼけてました。<br><br> <br>&gt; あと，キーワードを抜き出すところでstrstrつかっているのはなぜなんでしょう？<br>&gt; 単にstrcmpでいいような... ひょっとして前後のスペース対策？<br><br>これは、、、癖です。確かにstrcmpでいけますね。<br><br><br>一応、上記のあたりは修正してみました。</div></section>
+    </li></ul></li></ul></body></html>

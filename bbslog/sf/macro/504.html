@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>マクロでの計算結果をクリップボードに入れることはできますか？</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←macroトップへ</a><li><div class="list-title">
+    <span class="no">504</span>
+    <a class="title" href="504.html#504">マクロでの計算結果をクリップボードに入れることはできますか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">507</span>
+    <a class="title" href="504.html#507">Re:マクロでの計算結果をクリップボードに入れることはできますか？</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=504>
+    <span class="no">[504]</span>
+    <a class="title" href="#504">マクロでの計算結果をクリップボードに入れることはできますか？</a>
+    <span class="author">たけ(tk)</span>
+    <time datetime="2010-09-07T16:14:39">2010年09月07日 16:14</time></h1>
+    <div class="body">マクロでの計算結果を（エディタウィンドウに書き出すのではなく）クリップボードに入れることはできますか？<br><br></div></section>
+    <ul><li><section><h1 id=507>
+    <span class="no">[507]</span>
+    <a class="title" href="#507">Re:マクロでの計算結果をクリップボードに入れることはできますか？</a>
+    <span class="author">たけ(tk)</span>
+    <time datetime="2010-09-09T15:59:14">2010年09月09日 15:59</time></h1>
+    <div class="body">こんな風なの（↓）を作ってみましたが、<br><br>Ctrl+Z で途中経過が出てきてしまうといった副作用があります。<br><br>副作用なしで実現する方法はありますでしょうか？<br><br><br>  // SetClip( str )関数は<br>  // クリップボードに str を入れる。<br>  //<br>  // ＊　Ctrl+Z で途中経過が出てきてしまう。<br>  //<br>function SetClip( str ) {<br>  Editor.MoveHistSet();<br>  Editor.GoLineTop(0);<br>  Editor.InsText( str )<br>  Editor.BeginSelect();<br>  Editor.GoLineTop(0);<br>  Editor.Cut();<br>  Editor.MoveHistPrev();<br>}<br><br>SetClip( "test" );<br><br>＊　ステータスバーへの書込は、見当がつかない・・。だれかお願いいたします。<br></div></section>
+    </li></ul></li></ul></body></html>

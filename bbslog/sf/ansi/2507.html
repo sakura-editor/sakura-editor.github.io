@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>コマンド追加方法</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2507</span>
+    <a class="title" href="2507.html#2507">コマンド追加方法</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=2507>
+    <span class="no">[2507]</span>
+    <a class="title" href="#2507">コマンド追加方法</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-12-05T02:06:31">2002年12月05日 02:06</time></h1>
+    <div class="body">コマンド追加時に考慮すべき内容をまとめてみました．<br><br>▼コマンド追加手順<br>1. Funccode.hにコマンドID追加 メニューに入れる物は32767以下の値を割り振る<br>2. CEditView::HandleCommand()に処理追加<br>3. Funccode.cpp にコマンドID追加．どこかのカテゴリに加える．<br>4. sakura_rc.rcにコマンド名IDとコマンド名の組み合わせを追加<br>5. CEditWnd::InitMenu() にメニューを追加<br>6. CSMacroMgr.cppにマクロ文字列及び引数型を定義<br>7. (必要なら) CShareData.cppのCShareData::Init()でデフォルトのキー割り当てを設定<br>8. 常時利用可能なコマンドでなければ，CEditWnd::IsFuncEnableでコマンドの有効・無効判定を追加<br>9. チェック状態を持つコマンドでは，CEditWnd::IsFuncCheckedでON/OFF表示判定を追加<br>10. ファイル編集に関連するコマンドは，CEditDoc_new.cppのCEditDoc::IsModificationForbidden()に追加し，読みとり専用時に利用できなくする．<br>11. アイコンを追加する場合は，ビットマップリソースmytool.bmpにアイコン追加．<br>12. アイコンを追加する場合は，CMenuDrawer.cppの該当箇所にコマンドIDを入れて有効化<br>13. キーマクロの保存対象コマンドであれば，CSMacroMgr::CanFuncIsKeyMacro()に判定追加<br>14. マクロに引数がある場合は CMacro::HandleCommand() に引数をHandleCommandに渡す処理を追加．<br>15. マクロ保存時に引数を付けたい場合にはCMacro::AddParam()に引数を追加する処理を追加<br><br>▼動作確認手順<br>1. メニューから実行できるか<br>2. ツールバーから実行できるか<br>3. ショートカットキーから実行できるか<br>4. マクロ登録の有無は意図どおりか<br>5. 読み出し専用モードでは意図どおりに動作するか<br>6. マクロからの実行は可能か<br>7. マクロ引数は意図どおりに解釈され，動作するか<br></div></section>
+    </li></ul></body></html>

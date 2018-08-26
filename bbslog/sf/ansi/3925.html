@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CMacro::HandleFunctionの引数</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3925</span>
+    <a class="title" href="3925.html#3925">CMacro::HandleFunctionの引数</a></div>
+    </li></ul><ul class="main"><li><section><h1 id=3925>
+    <span class="no">[3925]</span>
+    <a class="title" href="#3925">CMacro::HandleFunctionの引数</a>
+    <span class="author">もか</span>
+    <time datetime="2005-04-20T01:28:33">2005年04月20日 01:28</time></h1>
+    <div class="body">私のCPPA::CallHandleFunction実装ミスで<br>PPAから呼び出されるときは、<br>S_Funcsion( A, B, C )<br>Arguments[0] = A<br>Arguments[1] = B<br>Arguments[2] = C<br><br>VBScript(WSH)から呼び出されるときは、<br>Editor.Funcsion( A, B, C )<br>Arguments[0] = C<br>Arguments[1] = B<br>Arguments[2] = A<br><br>と引数の順序が逆です。<br>現在のところ1引数のマクロ関数しかないため問題が表面化していませんが、修正する必要があります。<br><br>もし順序をWSHのほうにあわせて引数を省略した場合<br>Editor.Funcsion( A, B )<br>Arguments[0] = B<br>Arguments[1] = A<br>というように、順番がずれるために、PPAの順番にしたほうが処理が楽そうです。<br></div></section>
+    </li></ul></body></html>

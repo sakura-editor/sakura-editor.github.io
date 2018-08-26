@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>1.6.0.0</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6337</span>
+    <a class="title" href="6337.html#6337">1.6.0.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6340</span>
+    <a class="title" href="6337.html#6340">RE: 1.6.0.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6341</span>
+    <a class="title" href="6337.html#6341">Re2: 1.6.0.0</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6342</span>
+    <a class="title" href="6337.html#6342">RE2: 1.6.0.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6347</span>
+    <a class="title" href="6337.html#6347">Re3: 1.6.0.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6348</span>
+    <a class="title" href="6337.html#6348">Re4: 1.6.0.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6350</span>
+    <a class="title" href="6337.html#6350">Re5: 1.6.0.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6352</span>
+    <a class="title" href="6337.html#6352">Re6: 1.6.0.0</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6337>
+    <span class="no">[6337]</span>
+    <a class="title" href="#6337">1.6.0.0</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-27T23:58:16">2007年09月27日 23:58</time></h1>
+    <div class="body">懸案事項が一通り片付きましたので，まだ若干細かい問題が残ってはいますが，ここでバイナリはリリースしておきます．<br>ヘルプファイルができる頃までにはもう少し片付け＆バグレポートに対応して，1.6.0.1あたりでパッケージ作成と考えております．<br></div></section>
+    <ul><li><section><h1 id=6340>
+    <span class="no">[6340]</span>
+    <a class="title" href="#6340">RE: 1.6.0.0</a>
+    <span class="author">maru</span>
+    <time datetime="2007-09-29T21:42:50">2007年09月29日 21:42</time></h1>
+    <div class="body">現在、patches:1742481（bregonig.dll対応）の部分についてヘルプの修正を行っている最中です。<br><br>ちょっと気になっているのは次のページの「パターンについて」の記載のところ<br>http://sakura-editor.sourceforge.net/htmlhelp/HLP000006.html<br>ここは長らくメンテされていないので、内容についても見直したほうが良いのかもしれませんが、今のところノーチェックです。もし、どなたか要修正点などをまとめていただければ、1.6.0.1には反映したいと思います。<br><br>なお1.6.0.0のヘルプは、完成度をあまり気にせずに明日あたりでリリースします。<br></div></section>
+    <ul><li><section><h1 id=6341>
+    <span class="no">[6341]</span>
+    <a class="title" href="#6341">Re2: 1.6.0.0</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-09-29T23:00:48">2007年09月29日 23:00</time></h1>
+    <div class="body">&gt;ヘルプの修正<br>に関連して、<br>rev:1132 sakura/trunk/sakura_core/sakura.hh<br>で、sakura本体のコンパイル時に警告が．．．<br>HLP000078が重複定義のようです。</div></section>
+    </li><li><section><h1 id=6342>
+    <span class="no">[6342]</span>
+    <a class="title" href="#6342">RE2: 1.6.0.0</a>
+    <span class="author">maru</span>
+    <time datetime="2007-09-30T22:28:35">2007年09月30日 22:28</time></h1>
+    <div class="body">一応、ヘルプリリースです。<br>ご指摘事項などあれば、なるべく1.6.0.1の本体リリースまでにお願いします。<br></div></section>
+    <ul><li><section><h1 id=6347>
+    <span class="no">[6347]</span>
+    <a class="title" href="#6347">Re3: 1.6.0.0</a>
+    <span class="author">di</span>
+    <time datetime="2007-10-03T10:32:38">2007年10月03日 10:32</time></h1>
+    <div class="body">以前から気になっていたのですが、<br>正規表現の制限 のところで、<br>&gt;(^■)|(【.*?】)の、後ろ半分の(【.*?】) は、正しく動きません。<br><br>これ正しく動きませんか？<br>テスト文字列　：■あああああ【テスト】【テスト２】<br>結果　ヒット１：■<br>　　　ヒット２：【テスト】<br>　　　ヒット３：【テスト２】<br><br>的外れまたは勘違いでしたらごめんなさい。</div></section>
+    <ul><li><section><h1 id=6348>
+    <span class="no">[6348]</span>
+    <a class="title" href="#6348">Re4: 1.6.0.0</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-10-03T11:59:18">2007年10月03日 11:59</time></h1>
+    <div class="body">▼ diさん<br>&gt; 以前から気になっていたのですが、<br>&gt; 正規表現の制限 のところで、<br>&gt; &gt;(^■)|(【.*?】)の、後ろ半分の(【.*?】) は、正しく動きません。<br><br>賛成です。bregexp_1.01 の内容のようです<br>&gt; # 修正内容は &gt;&gt;data:5216 辺り。<br><br>bregexpのヘルプについては、拡張構文&gt;&gt;data:5758 が追加希望。</div></section>
+    <ul><li><section><h1 id=6350>
+    <span class="no">[6350]</span>
+    <a class="title" href="#6350">Re5: 1.6.0.0</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-04T02:59:12">2007年10月04日 02:59</time></h1>
+    <div class="body">▼ diさん<br>&gt; &gt;(^■)|(【.*?】)の、後ろ半分の(【.*?】) は、正しく動きません。<br>&gt;これ正しく動きませんか？<br>確認しました。次版に反映いたします。<br><br>▼ じゅうじさん<br>&gt;bregexpのヘルプについては、拡張構文&gt;&gt;data:5758 が追加希望。<br>先読みや戻り読みの話であれば、1.6.0.0のヘルプにて反映しましたが、ちょっと分かりにくいでしょうか。もしくは別の意味ですか？<br><br>なお、&gt;&gt;help:348の流れで、1.6.0.0をさらに修正した未コミットのバージョンが<br>http://sakura.qp.land.to/?Document%2F9<br>に添付されています。20071001_HLP000089_mod.zipが最新です。<br>大変お手数ですが、最新のファイルで再度、じゅうじさんの期待に沿うものになっているかをご確認いただけませんか。<br><br>正規表現の説明については、今回久しぶりに見直しを図っており、表記や用語などの点も含め要望・指摘事項があればこの機会に一括してどうぞ。<br></div></section>
+    <ul><li><section><h1 id=6352>
+    <span class="no">[6352]</span>
+    <a class="title" href="#6352">Re6: 1.6.0.0</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-10-04T21:00:00">2007年10月04日 21:00</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 正規表現の説明については、今回久しぶりに見直しを図っており、表記や用語などの点も含め要望・指摘事項があればこの機会に一括してどうぞ。<br><br>失礼しました、今回初めて拝見しました。<br>コメント：<br>(鬼)bregonig …は、table の後ろに（下に）持ってきた方が良いように思います。<br>xHH の個所がHHではなくhh の間違いではないでしょうか。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

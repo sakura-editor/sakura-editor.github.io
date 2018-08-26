@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>マウスの中ボタン押下中のホイールスクロールではページスクロールする</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">657</span>
+    <a class="title" href="657.html#657">マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">661</span>
+    <a class="title" href="657.html#661">便利です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">670</span>
+    <a class="title" href="657.html#670">Re:便利です</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">668</span>
+    <a class="title" href="657.html#668">Re:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">669</span>
+    <a class="title" href="657.html#669">Re2:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">707</span>
+    <a class="title" href="657.html#707">Commit報告:(New) マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=657>
+    <span class="no">[657]</span>
+    <a class="title" href="#657">マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-10-10T20:59:57">2008年10月10日 20:59</time></h1>
+    <div class="body">マウスの中ボタンを押した状態でホイールスクロールした場合は、行ではなくページをスクロールします。<br><br>PatchUnicode #2157244<br><br>Macにてブラウザ表示をページアップ・ダウンするのに便利に使っていますが、テキストエディタでも便利かは？<br>なので、いきなりコミットせずにレビュー待ちします (^^;<br><br>ついでに共有メモリのバージョンも通常の番号に戻しています。<br></div></section>
+    <ul><li><section><h1 id=661>
+    <span class="no">[661]</span>
+    <a class="title" href="#661">便利です</a>
+    <span class="author">syat</span>
+    <time datetime="2008-10-11T15:26:22">2008年10月11日 15:26</time></h1>
+    <div class="body">私の環境では問題なく動いています。<br>最初手がつりそうだったけど慣れるとマウスだけで高速スクロールできるので便利♪<br>とりあえず使用感の報告まで。<br></div></section>
+    <ul><li><section><h1 id=670>
+    <span class="no">[670]</span>
+    <a class="title" href="#670">Re:便利です</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-10-13T13:44:47">2008年10月13日 13:44</time></h1>
+    <div class="body">▼ syatさん<br>どうもありがとうございます。<br> <br>マウスによっては中ボタンが重くて使い勝手があまり良くないかもしれませんね。<br>経験的にロジテックは重めMSは軽めな気がします。<br></div></section>
+    </li></ul></li><li><section><h1 id=668>
+    <span class="no">[668]</span>
+    <a class="title" href="#668">Re:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-10-12T18:29:14">2008年10月12日 18:29</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; マウスの中ボタンを押した状態でホイールスクロールした場合は、行ではなくページをスクロールします。<br>&gt; <br>&gt; PatchUnicode #2157244<br>&gt; <br>&gt; Macにてブラウザ表示をページアップ・ダウンするのに便利に使っていますが、テキストエディタでも便利かは？<br><br>Macだとどのブラウザでもそれが慣例なんでしょうか。<br>Windowsのブラウザでは中ボタンを押下した時点で「自動スクロール開始」というイメージが強いのですが...、そっちを実装したいと思った時に競合しませんかね。</div></section>
+    <ul><li><section><h1 id=669>
+    <span class="no">[669]</span>
+    <a class="title" href="#669">Re2:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-10-12T22:50:20">2008年10月12日 22:50</time></h1>
+    <div class="body">▼ ryojiさん<br>すみません、思いっきり端折ってます m(_ _)m<br> <br>Mac OS 9での話なのですが、実際はマウスドライバで対応しています。<br>一般的というわけではなく、自分が使っているMS Intelli Mouse Opticalではたまたまその様な設定ができるだけです。<br> <br>中ボタンでのオートスクロールにも対応しています。<br>ドライバ側での対応のため、スクロール可能なところで概ね使えます。<br> <br>&gt; Windowsのブラウザでは中ボタンを押下した時点で「自動スクロール開始」というイメージが強いのですが...、そっちを実装したいと思った時に競合しませんかね。<br> <br>中ボタンをダウンした後にホイールを回すか一定量以上上下するかで動作する機能が決まりますから、その様に実装すれば大丈夫だと思います。<br></div></section>
+    <ul><li><section><h1 id=707>
+    <span class="no">[707]</span>
+    <a class="title" href="#707">Commit報告:(New) マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-11-18T20:29:22">2008年11月18日 20:29</time></h1>
+    <div class="body">いけそうな感じなのでコミットしました (^^;<br><br>リビジョン：<br>　rev1468<br><br>変更種別：<br>　新規機能追加<br><br>内容：<br>　マウスの中ボタン押下中のホイールスクロールではページスクロールする<br>　PatchUnicode #2157244</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

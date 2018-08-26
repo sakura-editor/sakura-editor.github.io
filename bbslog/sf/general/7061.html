@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>折り返し部分の矩形選択</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7061</span>
+    <a class="title" href="7061.html#7061">折り返し部分の矩形選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7062</span>
+    <a class="title" href="7061.html#7062">Re:折り返し部分の矩形選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7066</span>
+    <a class="title" href="7061.html#7066">Re2:折り返し部分の矩形選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7070</span>
+    <a class="title" href="7061.html#7070">Re3:折り返し部分の矩形選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7078</span>
+    <a class="title" href="7061.html#7078">Re4:折り返し部分の矩形選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7079</span>
+    <a class="title" href="7061.html#7079">Re5:折り返し部分の矩形選択</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">7071</span>
+    <a class="title" href="7061.html#7071">折り返し部分の矩形選択。描画の問題。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7073</span>
+    <a class="title" href="7061.html#7073">Re:折り返し部分の矩形選択。描画の問題。</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7061>
+    <span class="no">[7061]</span>
+    <a class="title" href="#7061">折り返し部分の矩形選択</a>
+    <span class="author">おか</span>
+    <time datetime="2009-10-16T16:12:07">2009年10月16日 16:12</time></h1>
+    <div class="body">A版U版の最新版にて、<br>折り返ししている物理行末を、キーボードで左から右へ矩形選択しようとすると、<br>次の物理行にカーソルが移動して意図した通りに選択できませんが<br>設定により回避できできるのでしょうか。<br><br>マウスを使ったり、物理行末を始点にして左側に選択範囲を広げる場合は<br>うまくいきます。</div></section>
+    <ul><li><section><h1 id=7062>
+    <span class="no">[7062]</span>
+    <a class="title" href="#7062">Re:折り返し部分の矩形選択</a>
+    <span class="author">ds14050</span>
+    <time datetime="2009-10-18T22:50:16">2009年10月18日 22:50</time></h1>
+    <div class="body">たしかに右端の1文字が選択できませんね。<br>境界条件を変えてやるだけで選択できるようになる気はしますが……<br><br>矩形選択中にキャレットが行頭に戻るのってびっくりしませんか？<br>フリーカーソル設定でなくても矩形選択中は範囲を矢印の方向に<br>ずっと広げていきたい気がします。(賛同者募集中)<br></div></section>
+    <ul><li><section><h1 id=7066>
+    <span class="no">[7066]</span>
+    <a class="title" href="#7066">Re2:折り返し部分の矩形選択</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-10-24T00:29:35">2009年10月24日 00:29</time></h1>
+    <div class="body">▼ ds14050さん<br>矩形選択時の移動でカーソルが反対側に飛ぶのは、私もちょっとまずい気がします。<br>左移動時は行頭で、右移動時は折り返し位置（選択範囲内にはみ出た部分があればそこまで）で停止というのが良いかなと思います。<br>右側フリーは扱い辛い気が……<br>あと、マウスを使った場合でも、句読点ぶら下げではみ出た部分は選択できないようですね。<br></div></section>
+    <ul><li><section><h1 id=7070>
+    <span class="no">[7070]</span>
+    <a class="title" href="#7070">Re3:折り返し部分の矩形選択</a>
+    <span class="author">ds14050</span>
+    <time datetime="2009-10-24T01:53:49">2009年10月24日 01:53</time></h1>
+    <div class="body">一人、表れましたね(笑)<br><br>&gt; 右側フリーは扱い辛い気が……<br>行頭を幅0で矩形選択してタブキーを押すと選択範囲が右側に<br>無限に広がるように見えます。こういう状態を頭に置いて<br>「ずっと広げていきたい」と書きました。<br>実際の選択範囲は 10240桁の折り返し位置までですから、<br>折り返しを超えてずっと、というつもりではありませんでした。<br><br>いまさわっていて気付きました。<br>1.選択できないのは折り返しの直前の1文字で、折り返しと<br>  同じ位置に改行があるときは右端の1文字まで選択できる。<br>2.Endキーだと折り返し位置まで選択できる。<br><br>&gt;句読点ぶら下げではみ出た部分は選択できない<br>はみ出た行に関しては Endキーではみ出た部分まで選択できます。<br>そこから上下方向に選択範囲を広げることもできます。<br><br>「矩形選択範囲の右端を、改行文字や EOFや折り返しの位置に制限せず、<br>どの行でも、ぶら下がりを含めた位置まで範囲を拡大できる」<br>ようにすると使い勝手がよさそうです。<br></div></section>
+    <ul><li><section><h1 id=7078>
+    <span class="no">[7078]</span>
+    <a class="title" href="#7078">Re4:折り返し部分の矩形選択</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-10-26T01:05:42">2009年10月26日 01:05</time></h1>
+    <div class="body">▼ ds14050さん<br>&gt; &gt;句読点ぶら下げではみ出た部分は選択できない<br>&gt; はみ出た行に関しては Endキーではみ出た部分まで選択できます。<br>&gt; そこから上下方向に選択範囲を広げることもできます。<br>A版でのみ確認していました (^^;<br>U版だとそうなりますね。<br> <br>&gt; 「矩形選択範囲の右端を、改行文字や EOFや折り返しの位置に制限せず、<br>&gt; どの行でも、ぶら下がりを含めた位置まで範囲を拡大できる」<br>&gt; ようにすると使い勝手がよさそうです。<br>賛成です。EOFの所が難しいかもしれませんが……<br></div></section>
+    <ul><li><section><h1 id=7079>
+    <span class="no">[7079]</span>
+    <a class="title" href="#7079">Re5:折り返し部分の矩形選択</a>
+    <span class="author">ds14050</span>
+    <time datetime="2009-10-27T05:53:39">2009年10月27日 05:53</time></h1>
+    <div class="body">口だけではなんなので、やってみました。難しいです。<br>&gt; <a href=http://vvvvvv.sakura.ne.jp/ds14050/diary/20091026.html#p01 target=_top><nobr>http://<wbr>vvvvvv.<wbr>sakura.<wbr>ne.<wbr>jp/<wbr>ds14050/<wbr>diary/<wbr>20091026<wbr>.<wbr>html#<wbr>p01</nobr></a><br><br>訂正&gt;「矩形選択範囲の右端を、改行文字や EOFや折り返しの位置に制限せず、<br>改行の位置はもともと、矩形選択中は無視されていました。<br><br>&gt;A版でのみ確認していました (^^;<br>U版でのみ確認していました (^^;<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=7071>
+    <span class="no">[7071]</span>
+    <a class="title" href="#7071">折り返し部分の矩形選択。描画の問題。</a>
+    <span class="author">ds14050</span>
+    <time datetime="2009-10-24T02:03:50">2009年10月24日 02:03</time></h1>
+    <div class="body">若干関連するのでここにぶら下げます。9月28日の Unicode版です。<br><br>ぶら下がり文字を含めて範囲選択すると折り返し線が反転表示されます。<br>この状態で、ウィンドウを隠し、元に戻すと反転表示ではなくなっています。<br>そのまま選択を取り消すと、選択解除の過程で折り返し線が反転表示されます。<br><br>途中で、折り返し線の反転・反転解除の対応がとれなくなっています。<br></div></section>
+    <ul><li><section><h1 id=7073>
+    <span class="no">[7073]</span>
+    <a class="title" href="#7073">Re:折り返し部分の矩形選択。描画の問題。</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-10-25T00:20:59">2009年10月25日 00:20</time></h1>
+    <div class="body">▼ ds14050さん<br>&gt; 途中で、折り返し線の反転・反転解除の対応がとれなくなっています。<br><br>別件で「指定桁縦線が描画されない」というのも見つけたので、それとあわせて修正してみました。<br>(&gt;&gt;unicode:1042, &gt;&gt;unicode:1043)</div></section>
+    </li></ul></li></ul></li></ul></body></html>

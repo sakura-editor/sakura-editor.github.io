@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>また正規表現で</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6528</span>
+    <a class="title" href="6528.html#6528">また正規表現で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6529</span>
+    <a class="title" href="6528.html#6529">Re:また正規表現で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6531</span>
+    <a class="title" href="6528.html#6531">Re2:また正規表現で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6532</span>
+    <a class="title" href="6528.html#6532">Re3:また正規表現で</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6528>
+    <span class="no">[6528]</span>
+    <a class="title" href="#6528">また正規表現で</a>
+    <span class="author">dnsbalancejp</span>
+    <time datetime="2007-12-21T12:58:29">2007年12月21日 12:58</time></h1>
+    <div class="body">教えていただきたいんです。m(_)m<br>ドットと拡張子がないファイルを正規表現で指定するのは、どう<br>書けばよいでしょうか。<br><br>hoge→→hoge.log<br>みたいなことがしたいのです。<br></div></section>
+    <ul><li><section><h1 id=6529>
+    <span class="no">[6529]</span>
+    <a class="title" href="#6529">Re:また正規表現で</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-12-22T01:24:38">2007年12月22日 01:24</time></h1>
+    <div class="body">置換前　「^([^.]+)\r」　→　「$1.log\r」<br>正規表現ON<br>どうでしょうか？</div></section>
+    <ul><li><section><h1 id=6531>
+    <span class="no">[6531]</span>
+    <a class="title" href="#6531">Re2:また正規表現で</a>
+    <span class="author">dnsbalancejp</span>
+    <time datetime="2007-12-22T23:00:46">2007年12月22日 23:00</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; 置換前　「^([^.]+)\r」　→　「$1.log\r」<br><br>すみません、私アホでよく分りません。<br>最初の＾は行頭の意味ですか、否定の意味ですか。<br>[]内の＾は否定の意味と思いますが。<br><br>今回の例では正規表現処理エンジンの種類は関係しませんよね？<br></div></section>
+    <ul><li><section><h1 id=6532>
+    <span class="no">[6532]</span>
+    <a class="title" href="#6532">Re3:また正規表現で</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-12-23T05:48:50">2007年12月23日 05:48</time></h1>
+    <div class="body">▼ dnsbalancejpさん<br>&gt; 最初の＾は行頭の意味ですか、否定の意味ですか。<br>&gt; <br>&gt; 今回の例では正規表現処理エンジンの種類は関係しませんよね？<br><br>ファイル名を変更するのは、'RENMANE %1 %1.log'ですが、それはご存知です？<br>\でエスケープされない[と、\でエスケープされない]で囲まれた最初の^は、否定の意味で、正規表現の最初の^は先頭の意味です。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

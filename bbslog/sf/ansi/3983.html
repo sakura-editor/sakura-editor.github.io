@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>3974のパッチで選択範囲がおかしい</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3983</span>
+    <a class="title" href="3983.html#3983">3974のパッチで選択範囲がおかしい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3984</span>
+    <a class="title" href="3983.html#3984">Re: 3974のパッチで選択範囲がおかしい</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3985</span>
+    <a class="title" href="3983.html#3985">Re: 3974のパッチで選択範囲がおかしい</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3983>
+    <span class="no">[3983]</span>
+    <a class="title" href="#3983">3974のパッチで選択範囲がおかしい</a>
+    <span class="author">もか</span>
+    <time datetime="2005-07-20T19:30:50">2005年07月20日 19:30</time></h1>
+    <div class="body">&gt;&gt;data:4563  で報告されている通りです。<br>追加・変更したSetSelectArea()の引数が間違っていて、おかしくなります。<br>申し訳ありません。<br><br>影響のある機能は以下の通りです。<br>・行頭まで切り取り(改行単位)<br>・行末まで切り取り(改行単位)<br>・行末まで削除(改行単位)<br>・インクリメンタルサーチ系<br><br>Yahooグループの selectArea_fix2.diff として公開しておきます。<br></div></section>
+    <ul><li><section><h1 id=3984>
+    <span class="no">[3984]</span>
+    <a class="title" href="#3984">Re: 3974のパッチで選択範囲がおかしい</a>
+    <span class="author">もか</span>
+    <time datetime="2005-07-20T19:50:58">2005年07月20日 19:50</time></h1>
+    <div class="body">&gt;影響のある機能は以下の通りです。<br>&gt;・行頭まで切り取り(改行単位)<br>&gt;・行末まで切り取り(改行単位)  **<br>&gt;・行末まで削除(改行単位)<br>&gt;・インクリメンタルサーチ系<br><br>**は間違いです。正しくは、<br>・行頭まで切り取り(改行単位)<br>・行末まで削除(改行単位)<br>・行頭まで削除(改行単位)<br>・インクリメンタルサーチ系<br></div></section>
+    </li><li><section><h1 id=3985>
+    <span class="no">[3985]</span>
+    <a class="title" href="#3985">Re: 3974のパッチで選択範囲がおかしい</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-07-20T22:06:25">2005年07月20日 22:06</time></h1>
+    <div class="body">&gt;追加・変更したSetSelectArea()の引数が間違っていて、おかしくなります。<br>ぎゃー，豪快に違っているのに全然気付きませんでした...<br>やっぱり目で見るだけではダメですね．ちゃんと動作試験しないと．<br></div></section>
+    </li></ul></li></ul></body></html>

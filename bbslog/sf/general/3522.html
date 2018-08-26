@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>ダイレクトタグジャンプしない</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">3522</span>
+    <a class="title" href="3522.html#3522">ダイレクトタグジャンプしない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3523</span>
+    <a class="title" href="3522.html#3523">おーい、もしもし</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3524</span>
+    <a class="title" href="3522.html#3524">Re:おーい、もしもし</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3526</span>
+    <a class="title" href="3522.html#3526">一応、解決しました。</a></div>
+    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3522>
+    <span class="no">[3522]</span>
+    <a class="title" href="#3522">ダイレクトタグジャンプしない</a>
+    <span class="author">かめ</span>
+    <time datetime="2003-12-01T12:06:40">2003年12月01日 12:06</time></h1>
+    <div class="body">サクラエディタVer.1.4.3.3V '03 11/8 11:51:02にて<br><br>ダイレクトタグジャンプが機能しませんでした。<br>操作手順<br>１．Cのソースコードからタグファイルtagsを作成<br>　　（ソースコードと同じディレクトリ）<br>２．関数名の先頭にキャレット移動後、[F12]押下<br>３．”タグジャンプできません”ステータスバーに表示される。<br><br>[F12]でタグジャンプを試みた後、ダイレクトタグジャンプされる<br>はずですよね。<br>-------------<br>tagsを開いて関数名を検索(Ctrl+F)で該当関数名のタグ位置に<br>移動後、[F12]では正常にタグジャンプが実行されるので<br>tagsは正常に作成されているようです。<br><br>何か設定が必要であればご指南ください。<br>よろしくお願い致します。<br></div></section>
+    <ul><li><section><h1 id=3523>
+    <span class="no">[3523]</span>
+    <a class="title" href="#3523">おーい、もしもし</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-12-01T22:04:04">2003年12月01日 22:04</time></h1>
+    <div class="body">▼ かめさん<br>&gt; サクラエディタVer.1.4.3.3V '03 11/8 11:51:02にて<br><br>F12はタグジャンプで、tagsファイルを作ったからといって関係は有りません。<br>tagsはダイレクトタグジャンプで使うファイルです。<br><br>それ例外に、Ver1.4.3.4 にupdateしてみて下さい。</div></section>
+    <ul><li><section><h1 id=3524>
+    <span class="no">[3524]</span>
+    <a class="title" href="#3524">Re:おーい、もしもし</a>
+    <span class="author">りんご</span>
+    <time datetime="2003-12-01T23:22:19">2003年12月01日 23:22</time></h1>
+    <div class="body">▼ じゅうじさん<br>タグジャンプができない場合は<br>自動的にダイレクトタグジャンプが行われるので<br>F12に問題はないでしょう。<br><br>▼ かめさん<br>少なくとも手元のsakura 1.4.3.4 では<br>特に設定を変えなくても使えています。<br><br>最新版にしても使えないようなら、<br>cのソースとタグファイルの中身を<br>ここに書いてみてはどうでしょうか？<br>正常に動作している人との違いがわかるかもしれません。</div></section>
+    <ul><li><section><h1 id=3526>
+    <span class="no">[3526]</span>
+    <a class="title" href="#3526">一応、解決しました。</a>
+    <span class="author">かめ</span>
+    <time datetime="2003-12-02T11:50:20">2003年12月02日 11:50</time></h1>
+    <div class="body">▼ りんごさん<br>▼ じゅうじさん<br><br>ありがとうございました。<br><br>一応、解決しました。<br><br>以前grepで直接作成したtagsが原因でした。<br>sakuraのメニューから”タグファイルの作成”を実行していたので<br>書き換えられていると思っていたのですが<br>実際には書き換えられておらず古い内容のタグファイル<br>のままだったようです。<br>sakuraが作成する形式とは違うのですがタグジャンプは<br>可能な形式のタグファイルだったのが原因でした。<br>一度、tagsを削除した後で再度メニューから<br>”タグファイルの作成”したところ<br>正常に動作しました。<br><br>但し、削除しないと旧tagsは書き換えられませんでした。<br>何度か試したのですが”タグファイルの作成が終了しました。”<br>が表示されるのですが実際には上書きされていませんでした。<br>その後はtagsは”タグファイルの作成”で<br>普通に上書きされているようです。<br><br>どうやら、これはctagsの仕様みたいですがエラーにならず<br>見た目ではタグファイル作成が正常終了してしまうのは<br>1.4.3.4で修正されているようですね。<br>実際に試していませんが更新履歴にありますね。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

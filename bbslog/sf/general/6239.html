@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現で漢字の熟語を抽出したい。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">6239</span>
+    <a class="title" href="6239.html#6239">正規表現で漢字の熟語を抽出したい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6242</span>
+    <a class="title" href="6239.html#6242">RE: 正規表現で漢字の熟語を抽出したい。</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=6239>
+    <span class="no">[6239]</span>
+    <a class="title" href="#6239">正規表現で漢字の熟語を抽出したい。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2007-08-22T12:01:29">2007年08月22日 12:01</time></h1>
+    <div class="body">(参考)[5095] 日本語空白が色つけられるなら　日本語だけを色づけることは？<br>        /[　-黑]/k <br>(条件)「の」が複数個あっても対応できる。～の～の～の～<br>(入力)正規表現で複数個の漢字の熟語を抽出したい。<br>(出力)正規表現<br>　  　　複数個<br>　　　　漢字<br>　　  　熟語<br>　　  　複数個の漢字の熟語<br>　　  　抽出<br>(正規表現）<br>数量子の使い方が理解できませんでした。よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=6242>
+    <span class="no">[6242]</span>
+    <a class="title" href="#6242">RE: 正規表現で漢字の熟語を抽出したい。</a>
+    <span class="author">すい</span>
+    <time datetime="2007-08-23T00:54:28">2007年08月23日 00:54</time></h1>
+    <div class="body">漢字なら<br><br>[亜-黑]<br><br>で大体良いのではないかと。<br><br># 実際にはローマ数字（ⅰⅱⅲ...,ⅠⅡⅢ...）とか<br># 一部の記号（㈱№℡∵）も含まれてしまいますので。。。<br><br>で、熟語というと、「漢字２文字以上」で良いのかな？<br>なら<br><br>[亜-黑]{2,}<br><br>かと。<br><br>「の」での無制限連結ありなら<br><br>[亜-黑]{2,}(の[亜-黑]{2,})*<br><br>でしょうかね。<br></div></section>
+    </li></ul></li></ul></body></html>

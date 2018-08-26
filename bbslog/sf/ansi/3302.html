@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>[バグ報告] 無効となっている水平スクロールバーを強制的に動かすと画面表示が崩れる</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">3302</span>
+    <a class="title" href="3302.html#3302">[バグ報告] 無効となっている水平スクロールバーを強制的に動かすと画面表示が崩れる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3602</span>
+    <a class="title" href="3302.html#3602">Re: [バグ報告] 無効となっている水平スクロールバーを強制的に動かすと画面表示が崩れる</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=3302>
+    <span class="no">[3302]</span>
+    <a class="title" href="#3302">[バグ報告] 無効となっている水平スクロールバーを強制的に動かすと画面表示が崩れる</a>
+    <span class="author">nop</span>
+    <time datetime="2003-11-08T00:38:53">2003年11月08日 00:38</time></h1>
+    <div class="body">動作環境：<br>Thinkpad<br>sakura 1.4.3.2<br>Windows 2000 SP4<br><br>症状：<br>サクラエディタは「折り返し桁数」で指定された桁数によって本文が<br>画面内に収まるとき、水平スクロールバーが無効となる。<br>しかしながら、この状態でThinkpadに備わっているセンターボタンと<br>トラックポイントの組み合わせで水平スクロールを行おうとすると、<br>ルーラと本文を含めた画面表示が乱れる。<br><br><br>過去ログを漁っても見あたらなかったので、上記の通り報告します。<br>サクラエディタにはかなり重宝しています。開発陣の方々に感謝。<br></div></section>
+    <ul><li><section><h1 id=3602>
+    <span class="no">[3602]</span>
+    <a class="title" href="#3602">Re: [バグ報告] 無効となっている水平スクロールバーを強制的に動かすと画面表示が崩れる</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-05-30T02:15:20">2004年05月30日 02:15</time></h1>
+    <div class="body">遅くなりましたが現象を確認しました．折り返しの右側に余白がある状態で右スクロールをすると編集エリアが右端にそろって，もう一度右スクロールすると今度は左隅にそろった状態に戻ります．<br><br>水平スクロールバーが無効なときにトラックポイントを使って右にスクロールするとWM_HSCROLLメッセージのSB_LINERIGHTというのがEditViewに送られますが，ScrollAtHの先頭部分にあるスクロール調整のためにnPosが負の値になってしまいます．<br>2回目の右スクロールでは元の負の値＋水平スクロール分の4が負になるため，位置が負なら0に合わせるというルールが効いて元に戻ります．<br><br>というわけで，調整後に位置が負の値だったら0にするチェックを追加しました．<br></div></section>
+    </li></ul></li></ul></body></html>

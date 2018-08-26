@@ -1,0 +1,46 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>起動時間</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">2409</span>
+    <a class="title" href="2409.html#2409">起動時間</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2410</span>
+    <a class="title" href="2409.html#2410">Re: 起動時間</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2433</span>
+    <a class="title" href="2409.html#2433">Re2: 起動時間</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2413</span>
+    <a class="title" href="2409.html#2413">RE: 起動時間</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2414</span>
+    <a class="title" href="2409.html#2414">Re2: 起動時間</a></div>
+    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2409>
+    <span class="no">[2409]</span>
+    <a class="title" href="#2409">起動時間</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-16T01:05:58">2002年10月16日 01:05</time></h1>
+    <div class="body">ちょっと起動時間の内訳を調べてみました．<br><br><a href=http://sakura-editor.sourceforge.net/snapshot/startup_time.txt target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>snapshot<wbr>/<wbr>startup_<wbr>time.<wbr>txt</nobr></a><br><br>これをみると，<br>・常駐プロセスの起動時間: 0.77 sec<br>・その後の初期化処理: 0.98 sec<br>くらいかかっています．(時間はPCの性能によって変わります)<br><br>イメージリストの作成に300msec程度かかっており，しかもこれが常駐プロセスとエディタ本体の両方で行われるので結構な割合を占めていることがわかりました．Windows 95でアイコンでなくなっちゃったこともありますので，Imagelistはやめた方がいいのかも．がっかり．<br><br>以前のように単一のbitmapで保持して部分を切り出して渡す方法を検討してみます．<br><br>本日の1.3.5.3でCRunningTimerを少し直した上で，時間計測用コードをあちこちに入れてあります．<br></div></section>
+    <ul><li><section><h1 id=2410>
+    <span class="no">[2410]</span>
+    <a class="title" href="#2410">Re: 起動時間</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-16T15:48:30">2002年10月16日 15:48</time></h1>
+    <div class="body">&gt;イメージリストの作成に300msec程度かかっており<br>時間がかかっているのはイメージリストの作成ではなく，MemoryDCを使ったイメージの切り出しのようでした．イメージのコピーを行わずに昔のような横長のBitmapを読み込ませたら30msecくらいしかかかりませんでした．<br><br>しかし全て横一直線に並べると横6144dot必要なのでメンテナンスが非常に行いにくい．現状のビットマップを横一直線に並べ替えるプログラム無いかしら．<br></div></section>
+    <ul><li><section><h1 id=2433>
+    <span class="no">[2433]</span>
+    <a class="title" href="#2433">Re2: 起動時間</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-23T13:10:20">2002年10月23日 13:10</time></h1>
+    <div class="body">&gt;時間がかかっているのはMemoryDCを使ったイメージの切り出し<br>横一列に並び替えて一括して登録した場合は十分に高速だったので，どうもSetObject()が遅かったようです．<br><br>しかし，横一列に並び替えるのがうまく動かなかったという2年前の今日のコメントが入っているので，ひょっとしてOSに依存するのかも．<br><br>あと，my_icons.bmpがある方が処理時間が100msecほど短かったです．リソースの取り出しも時間がかかるみたい．<br></div></section>
+    </li></ul></li><li><section><h1 id=2413>
+    <span class="no">[2413]</span>
+    <a class="title" href="#2413">RE: 起動時間</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-10-17T02:03:06">2002年10月17日 02:03</time></h1>
+    <div class="body"><br>&gt;本日の1.3.5.3でCRunningTimerを少し直した上で，時間計測用コードをあちこちに入れてあります．<br><br>DEBUG時にもCRunningTimerを殺しておくオプションを用意していただきたく!!<br>日常的にDEBUGビルドを使っていたので、ショックを受けておりますです。しくしく。<br></div></section>
+    <ul><li><section><h1 id=2414>
+    <span class="no">[2414]</span>
+    <a class="title" href="#2414">Re2: 起動時間</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-17T09:08:19">2002年10月17日 09:08</time></h1>
+    <div class="body">&gt;日常的にDEBUGビルドを使っていたので、ショックを受けておりますです。しくしく。<br>失礼しました．そんな方がいらっしゃるとは．<br><br>CRunningTimer.hのクラス定義の下にある MY_TRACETIMEとMY_RUNNINGTIMERの定義を切り換えるところを<br>#ifdef _DEBUG<br>から<br>#if defined(_DEBUG) &amp;&amp; defined(TIME_MEASURE)<br>とすれば，TIME_MEASUREが定義されていない場合にはRunningTimerを無効にできます．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>CDocLineMgr:ReadFileのhgRead</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ansiトップへ</a><li><div class="list-title">
+    <span class="no">1867</span>
+    <a class="title" href="1867.html#1867">CDocLineMgr:ReadFileのhgRead</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1884</span>
+    <a class="title" href="1867.html#1884">RE: CDocLineMgr:ReadFileのhgRead</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=1867>
+    <span class="no">[1867]</span>
+    <a class="title" href="#1867">CDocLineMgr:ReadFileのhgRead</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-14T16:42:53">2002年04月14日 16:42</time></h1>
+    <div class="body"><br>VCのレベル４ビルド警告でおかしそうな場所です。<br><br>・CDocLineMgr:ReadFileのhgRead<br>リードオープンに失敗した場合、goto _RETURN_;で飛んだ先で<br>未初期化のhgReadを参照(762行)します。<br><br>・CDocLineMgr::ReplaceDataのhwndCancel,hwndProgress<br>未初期化のhwndCancel,hwndProgress参照あり<br><br>・CEditApp::DispatchEventのpszCodeNameCur, pszCodeNameNew<br>2箇所に未初期化の場合あり<br><br>・CEditDoc::DoFileLockのpszMode<br>未初期化の場合あり<br><br>・CEditView::ShowEditCaretのnCaretWidth,nCaretHeight<br>未初期化の場合あり<br><br>・CEditView::GetLeftWordのnIdxTo<br>未初期化の場合あり<br><br>・CLayoutMgr::ReplaceData_CLayoutMgrのnModifyLayoutLinesOld<br>未初期化の場合あり<br><br>（他はif分などが複雑で調査しきれず）<br>など。。。<br></div></section>
+    <ul><li><section><h1 id=1884>
+    <span class="no">[1884]</span>
+    <a class="title" href="#1884">RE: CDocLineMgr:ReadFileのhgRead</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-15T12:03:16">2002年04月15日 12:03</time></h1>
+    <div class="body"><br>&gt;VCのレベル４ビルド警告でおかしそうな場所です。<br><br>Thanx! 適当に初期化しておきました（をいをい）<br></div></section>
+    </li></ul></li></ul></body></html>

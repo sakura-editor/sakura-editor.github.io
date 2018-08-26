@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>要望です。</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">7015</span>
+    <a class="title" href="7015.html#7015">要望です。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7017</span>
+    <a class="title" href="7015.html#7017">Re:要望です。(+色分けバグ?)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7018</span>
+    <a class="title" href="7015.html#7018">Re2:要望です。(+色分けバグ?)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7020</span>
+    <a class="title" href="7015.html#7020">Re2:要望です。(+色分けバグ?)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7021</span>
+    <a class="title" href="7015.html#7021">Re3:要望です。(+色分けバグ?)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7326</span>
+    <a class="title" href="7015.html#7326">まっちろになっちったｗｗｗ</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">7019</span>
+    <a class="title" href="7015.html#7019">RE: 要望です。</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=7015>
+    <span class="no">[7015]</span>
+    <a class="title" href="#7015">要望です。</a>
+    <span class="author">cro.</span>
+    <time datetime="2009-08-04T12:09:17">2009年08月04日 12:09</time></h1>
+    <div class="body">普段、Perlの開発にsakuraを使わせてもらってます。とても役に立っていて、手放せません（笑）<br><br>要望としてなのですが、<br>例えばダブルクォーテションなどで括った文字の色が変化する機能がありますが、エスケープ「\」文字をつけたものに関しては、これを無効にする機能が欲しいです。<br>正規表現の中にダブルクォーテションなどが出てきてしまうと、それ以後の文字の色が全て変わってしまうので…。<br><br>不都合がなければ、変更を検討してもらえると嬉しいです。<br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=7017>
+    <span class="no">[7017]</span>
+    <a class="title" href="#7017">Re:要望です。(+色分けバグ?)</a>
+    <span class="author">名前</span>
+    <time datetime="2009-08-05T01:48:27">2009年08月05日 01:48</time></h1>
+    <div class="body">▼ cro.さん<br>すごくよくあることですよね。&gt; それ以後の文字の色が全て変わってしまう<br><br>けれど、\" をダブルクォーテーション文字列の開始文字にしないでほしい、というのは乱暴な気がします。<br>その \ は何に対するエスケープなんでしょう。エディタですか。<br>正規表現の中の " に余分な \ を付けられるのならば、行末に #" を付けることで代わりにできませんか？<br><br>----<br><br>ここからバグ報告です。7月頃の Unicode版+bregonig.dllでデフォルトの Perlモードを使用しました。<br><br>\" をダブルクォーテーション文字列(WQT)の開始文字にさせないつもりで、正規表現キーワードで /\\"/k をテキストの色に設定しました。<br>\" から行末までは WQT色にならず、意図通りだったのですが、次の行から WQT色が始まってしまいました。<br>次の行から始まる色分けが間違っているように思えます。いかがでしょう。<br></div></section>
+    <ul><li><section><h1 id=7018>
+    <span class="no">[7018]</span>
+    <a class="title" href="#7018">Re2:要望です。(+色分けバグ?)</a>
+    <span class="author">cro.</span>
+    <time datetime="2009-08-05T12:00:00">2009年08月05日 12:00</time></h1>
+    <div class="body">&gt; けれど、\" をダブルクォーテーション文字列の開始文字にしないでほしい、というのは乱暴な気がします。<br>&gt; その \ は何に対するエスケープなんでしょう。エディタですか。<br>&gt; 正規表現の中の " に余分な \ を付けられるのならば、行末に #" を付けることで代わりにできませんか？<br><br>こういったソフトを作ったことがないので、この案が乱暴かどうかもわからないのですが、どういった不都合があるのでしょうか？<br>行末に#"で対処しています。それでも行末までは色が変わってしまうので、何かいい案はないものかと思ったわけです。<br>これに対する対処法というのはなさそうですね。諦めて#"します。</div></section>
+    </li><li><section><h1 id=7020>
+    <span class="no">[7020]</span>
+    <a class="title" href="#7020">Re2:要望です。(+色分けバグ?)</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-08-06T14:58:42">2009年08月06日 14:58</time></h1>
+    <div class="body">▼ 名前さん<br>&gt; 次の行から始まる色分けが間違っているように思えます。いかがでしょう。<br><br>ANSI版でも昔からずっとそうなってるみたいです。<br><br>確かに変ですが、ここの部分をきっちりやろうとするとレイアウト処理性能にシビアに影響するみたいです。<br>ざっと試したところでは、ファイル読み込みで1.5～3倍くらいの処理時間がかかるようになってしまいました。<br>右端で折り返す設定で画面幅を変化させるときの応答にも同様に効いてきます。<br><br>あと、現状のUNICODE版のレイアウト処理時間はANSI版の1.5～2倍くらいになっている感じです。<br>今までANSI版で1秒で読めたファイル（数MB程度？）を、この部分を修正したUNICODE版で読むのに3～6秒くらいかかってしまうのでは、人によっては体感的に躊躇しそうな差異になってしまいます。<br><br>頑張ってチューニングすれば何とかなるかもしれませんが、文字列開始のクォート記号に正規表現を被せるのはやや特殊な設定という気がしますし、当面、自分は手をつけないで置いておこうかなぁ、と思っています。<br>＃誰かが手をつけるまでは「既知の制約事項」扱い(^^;;;</div></section>
+    <ul><li><section><h1 id=7021>
+    <span class="no">[7021]</span>
+    <a class="title" href="#7021">Re3:要望です。(+色分けバグ?)</a>
+    <span class="author">名前</span>
+    <time datetime="2009-08-07T02:09:15">2009年08月07日 02:09</time></h1>
+    <div class="body">▼ ryojiさん<br><br>性能面の制約があるのですか。重たいエディタは嫌われますから簡単ではないですね。<br><br>&gt; 文字列開始のクォート記号に正規表現を被せるのはやや特殊な設定という気がしますし<br><br>/\\"/k というのを正規表現リテラルに対応した正規表現キーワードに読み替えてもらえますか。<br>この問題に対処できると組み込みのダブルクォーテーション文字列の色分け機能(複数行対応)を有効にしたまま、正規表現のなかのダブルクォーテーションに煩わされることがなくなります。<br><br>&lt;追記&gt;<br>Perlの xフラグを活用した正規表現リテラルに正規表現キーワードで対応することは無理なので、正規表現のなかの全てのダブルクォーテーションを黙らせることにはなりません。(残念ながら)<br></div></section>
+    <ul><li><section><h1 id=7326>
+    <span class="no">[7326]</span>
+    <a class="title" href="#7326">まっちろになっちったｗｗｗ</a>
+    <span class="author">ぽこぺん星人</span>
+    <time datetime="2011-02-25T21:34:50">2011年02月25日 21:34</time></h1>
+    <div class="body"><br>■リ顔の子にぶっかけちゃった♪♪♪(＾＾)<br>ビュルルルッて出したら、チョー気持ちよさそうなイキ顔してた件ｗｗｗｗ<br>初めて逆 ￥ 助したけど、これマジはまりそうだわｗｗｗｗｗ<br><a href=http://gfrmcva.ahe.tirinuru.com/gfrmcva/ target=_top><nobr>http://<wbr>gfrmcva.<wbr>ahe.<wbr>tirinuru<wbr>.<wbr>com/<wbr>gfrmcva/<wbr></nobr></a><br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=7019>
+    <span class="no">[7019]</span>
+    <a class="title" href="#7019">RE: 要望です。</a>
+    <span class="author">げんた</span>
+    <time datetime="2009-08-05T19:07:32">2009年08月05日 19:07</time></h1>
+    <div class="body">&gt;普段、Perlの開発にsakuraを使わせてもらってます。とても役に立っていて、手放せません（笑）<br>こちらでいかがでしょうか．<br>http://sakura.qp.land.to/?Customize%2F%C5%EA%B9%C6%2F9<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>[バグ?]行の二重化での変更行</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">223</span>
+    <a class="title" href="223.html#223">[バグ?]行の二重化での変更行</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">225</span>
+    <a class="title" href="223.html#225">Re:[バグ?]行の二重化での変更行</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=223>
+    <span class="no">[223]</span>
+    <a class="title" href="#223">[バグ?]行の二重化での変更行</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-02-17T19:57:42">2001年02月17日 19:57</time></h1>
+    <div class="body">貼り付けや行の二重化ではカーソル行の直前の行との間に挿入されますが、このとき何も変更していないカーソル行まで変更行ステータスとなるのはおかしくはないかな？<br>追加行が変更行とみなされるのはいいとしても、元からある行まで変更は。。。なんか変。それとも「変更」とは内容の変更ではなく、この位置で変更の作業があったという意味なのかな？</div></section>
+    <ul><li><section><h1 id=225>
+    <span class="no">[225]</span>
+    <a class="title" href="#225">Re:[バグ?]行の二重化での変更行</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-02-17T22:59:01">2001年02月17日 22:59</time></h1>
+    <div class="body">関係のない行までもが変更された行になってしまい、Undoでも戻らないというのはたぶん至るところにありますので全部見直さないとだめかもしれませんね。<br><br>編集開始時点までUndoすると変更が全てなくなるのはUndoバッファの位置が初期値に戻ったら変更を表示しないように細工されているからです。</div></section>
+    </li></ul></li></ul></body></html>

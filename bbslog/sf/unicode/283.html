@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix) 「開く」でファイル作成した場合の問題を修正</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←unicodeトップへ</a><li><div class="list-title">
+    <span class="no">283</span>
+    <a class="title" href="283.html#283">Commit報告:(Fix) 「開く」でファイル作成した場合の問題を修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">285</span>
+    <a class="title" href="283.html#285">Re:Commit報告:(Fix) 「開く」でファイル作成した場合の問題を修正</a></div>
+    </li><li><div class="list-title">
+    <span class="no">286</span>
+    <a class="title" href="283.html#286">Re:Commit報告:(Fix) 「開く」でファイル作成した場合の問題を修正</a></div>
+    </li><li><div class="list-title">
+    <span class="no">289</span>
+    <a class="title" href="283.html#289">Re:Commit報告:(Fix) 「開く」でファイル作成した場合の問題を修正</a></div>
+    </li></ul></li></ul><ul class="main"><li><section><h1 id=283>
+    <span class="no">[283]</span>
+    <a class="title" href="#283">Commit報告:(Fix) 「開く」でファイル作成した場合の問題を修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-15T21:33:54">2008年04月15日 21:33</time></h1>
+    <div class="body">リビジョン：<br>　rev1283<br><br>変更種別：<br>　バグ修正。<br><br>内容：<br>　下記バグを修正しました。<br><br>　&gt; 3) 『開く』から存在しないファイルを指定し開いた場合、<br>　&gt;         このファイルは存在しません。<br>　&gt;         作成しますか？<br>　&gt;     のメッセージで「はい」でオープンした場合、<br>　&gt;     ファイルのモードが「上書き禁止」でファイルが変更できず、書き込みもできません。<br>　&gt;     (削除したファイルを履歴から呼び出した場合も同じです)<br></div></section>
+    <ul><li><section><h1 id=285>
+    <span class="no">[285]</span>
+    <a class="title" href="#285">Re:Commit報告:(Fix) 「開く」でファイル作成した場合の問題を修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-04-15T23:54:01">2008年04月15日 23:54</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1283<br>&gt; <br>&gt; 変更種別：<br>&gt; 　バグ修正。<br>&gt; <br>&gt; 内容：<br>&gt; 　下記バグを修正しました。<br>&gt; <br>&gt; 　&gt; 3) 『開く』から存在しないファイルを指定し開いた場合、<br>&gt; 　&gt;         このファイルは存在しません。<br>&gt; 　&gt;         作成しますか？<br>&gt; 　&gt;     のメッセージで「はい」でオープンした場合、<br>&gt; 　&gt;     ファイルのモードが「上書き禁止」でファイルが変更できず、書き込みもできません。<br>&gt; 　&gt;     (削除したファイルを履歴から呼び出した場合も同じです)<br><br>&gt; 　文書の新規保存時はバックアップ作成不要であるにも関わらず<br>&gt; 　バックアップを作成してしまっていたバグを修正しました。<br>確認報告をさせていただきます。<br>上記2点修正されていることを確認しました。</div></section>
+    </li><li><section><h1 id=286>
+    <span class="no">[286]</span>
+    <a class="title" href="#286">Re:Commit報告:(Fix) 「開く」でファイル作成した場合の問題を修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-04-15T23:56:46">2008年04月15日 23:56</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1283<br>不具合報告をさせていただきます。<br>1) 起動直後、『タイプ別設定』の『折り返し桁数』『文字の間隔』『行の間隔』が効かない。<br>2) 前回開いたときの文字コードを見ていない。<br>    必ず、自動判別した文字コードで開く。<br>3) 『共通設定』の『ファイル』の『前回と異なる文字コードのとき問い合わせを行う』がうまく効かない。<br>    ダイアログで『いいえ(N)』を選択しても、『はい(Y)』と同じ文字コードで開く。<br>以上3点です。</div></section>
+    </li><li><section><h1 id=289>
+    <span class="no">[289]</span>
+    <a class="title" href="#289">Re:Commit報告:(Fix) 「開く」でファイル作成した場合の問題を修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-04-20T00:27:30">2008年04月20日 00:27</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1283<br>不具合報告をさせていただきます。<br>1) 他のプログラムの排他制御で上書き禁止になっているファイルをオープンすると、<br>    【上書き禁止】モードになり、そのファイルを『名前をつけて保存』で保存しても【上書き禁止】モードのままになっている。<br>2) 『ファイルの排他制御』で『更新の監視』をつけていてる場合で、<br>    他のプログラムの排他制御で上書き禁止になっているファイルをオープンすると、【上書き禁止】モードになる。<br>    次に排他制御を行っているプログラムを終了し、ファイルが書込み可能になっても【上書き禁止】モードのままになっている。<br>3) 『読み取り専用』にチェックが付いているファイルをオープンしすると、<br>    【上書き禁止】モード（ビューモード）になり、のファイルを『名前をつけて保存』で保存しても【上書き禁止】モードのままになっている。<br>4) すでに開いているファイルを他のプログラムが「排他」で使用したときに、『上書き保存』した場合、<br>        ファイルを保存できません。<br>        パスが存在しないか、他のアプリケーションで使用されている可能性があります。<br>    でOKすると、バックアップは作成され、ファイルの書込みは行われず、『上書き保存』のアイコンはdesableになる。<br>    問題点は、書込みされていないのに内部的に書込みがなされているようになっていることです。<br>以上4点報告させていただきます。</div></section>
+    </li></ul></li></ul></body></html>

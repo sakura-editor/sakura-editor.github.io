@@ -1,0 +1,109 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>要望：補完機能について</title><link rel='stylesheet' href='bbs.css' /><script src='bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←generalトップへ</a><li><div class="list-title">
+    <span class="no">657</span>
+    <a class="title" href="657.html#657">要望：補完機能について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">662</span>
+    <a class="title" href="657.html#662">Re: 補完機能について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">665</span>
+    <a class="title" href="657.html#665">Re2: 補完機能について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">683</span>
+    <a class="title" href="657.html#683">Re3: 補完機能について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">782</span>
+    <a class="title" href="657.html#782">Re4: 補完機能について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">813</span>
+    <a class="title" href="657.html#813">Re5: 補完機能について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">815</span>
+    <a class="title" href="657.html#815">Re6: 補完機能について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">816</span>
+    <a class="title" href="657.html#816">Re7: 補完機能について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">820</span>
+    <a class="title" href="657.html#820">Re8: 補完機能について</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">819</span>
+    <a class="title" href="657.html#819">Re5: 補完機能について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">821</span>
+    <a class="title" href="657.html#821">Re6: 補完機能について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">822</span>
+    <a class="title" href="657.html#822">Re7: 補完機能について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=657>
+    <span class="no">[657]</span>
+    <a class="title" href="#657">要望：補完機能について</a>
+    <span class="author">とみ</span>
+    <time datetime="2001-09-02T04:59:21">2001年09月02日 04:59</time></h1>
+    <div class="body">私は，カーソル移動を Ctrl + I,A,K,M に割り当てている<br>のですが（変ですか？）補完リストが出たときに，候補から<br>選択しようとして，Ctrl を押すと，補完リストから<br>フォーカスがはずれてしまうので，仕方なく，カーソルキー<br>を使っています．これでは不便なので，何とかならない<br>ものでしょうか．同じような思いをしている人はたくさん<br>いると思いますので，それなりに需要はあると思いますが．<br><br></div></section>
+    <ul><li><section><h1 id=662>
+    <span class="no">[662]</span>
+    <a class="title" href="#662">Re: 補完機能について</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-09-03T11:43:58">2001年09月03日 11:43</time></h1>
+    <div class="body">&gt;のですが（変ですか？）補完リストが出たときに，候補から<br>&gt;選択しようとして，Ctrl を押すと，補完リストから<br>&gt;フォーカスがはずれてしまう<br>現在は候補リストの選択にエディタのキー割り当てと無関係にカーソル移動などのキーをチェックするようになっています．<br></div></section>
+    <ul><li><section><h1 id=665>
+    <span class="no">[665]</span>
+    <a class="title" href="#665">Re2: 補完機能について</a>
+    <span class="author">とみ</span>
+    <time datetime="2001-09-04T01:50:57">2001年09月04日 01:50</time></h1>
+    <div class="body">&gt; 現在は候補リストの選択にエディタのキー割り当てと無関係にカーソル移動などのキーをチェックするようになっています．<br><br>う～ん，残念ですね．自分で何とかできればよいのですけど．<br>ところで，同じ補完機能についてなのですが，リストファイルにはきちんと入っているのに，補完されないものがあるのですが(\beginなど) これはバグでしょうか．</div></section>
+    <ul><li><section><h1 id=683>
+    <span class="no">[683]</span>
+    <a class="title" href="#683">Re3: 補完機能について</a>
+    <span class="author">とみ</span>
+    <time datetime="2001-09-13T05:38:34">2001年09月13日 05:38</time></h1>
+    <div class="body">&gt; ところで，同じ補完機能についてなのですが，リストファイルにはきちんと入っているのに，補完されないものがあるのですが(\beginなど) これはバグでしょうか．<br><br>どうして補完できないのかわかりました．ヘルプをよく読んでみると，「一度にサーチする補完候補の上限は３２個」と書いてありました．"\"から始まる単語が多すぎたのです．<br>　多分，補完候補の数をあまり多くすると速度が低下するからなのでしょうが，これは少なすぎやしませんか？ これだと，例えば glib を用いて，プログラミングをする場合などは，補完機能は，使えないと言うことになります．(glib の関数は，ほとんど g から始まる)<br>　現在のところ，逐次補完を ON にしていても軽快に動作しているので，256 ぐらいにまで増やしても大丈夫なのではないでしょうか．<br></div></section>
+    <ul><li><section><h1 id=782>
+    <span class="no">[782]</span>
+    <a class="title" href="#782">Re4: 補完機能について</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-10-22T18:18:58">2001年10月22日 18:18</time></h1>
+    <div class="body">▼ とみさん<br>&gt; &gt; ところで，同じ補完機能についてなのですが，リストファイルにはきちんと入っているのに，補完されないものがあるのですが(\beginなど) これはバグでしょうか．<br>&gt; <br>&gt; どうして補完できないのかわかりました．ヘルプをよく読んでみると，「一度にサーチする補完候補の上限は３２個」と書いてありました．"\"から始まる単語が多すぎたのです．<br>&gt; 　多分，補完候補の数をあまり多くすると速度が低下するからなのでしょうが，これは少なすぎやしませんか？ これだと，例えば glib を用いて，プログラミングをする場合などは，補完機能は，使えないと言うことになります．(glib の関数は，ほとんど g から始まる)<br>&gt; 　現在のところ，逐次補完を ON にしていても軽快に動作しているので，256 ぐらいにまで増やしても大丈夫なのではないでしょうか．<br><br>この件はすぐにはできないのでしょうか？それとTeXファイルを作っていて気の付いたこと。begin endも対カッコ検索の対象の仲間に入っているとうれしいです。Pascalプログラマーにも受けると思います。<br>TeXのキーワードには*の付くものがありますが、これは色付きの対象になってなかったですね。ガックリ。作った本人がTeXで利用してないからお話になりません。メンゴ。TeX用のアウトライン解析が付けば大分違うんですが。<br>もう一つ。外部コマンドでファイルパスにデリミタ\が使えないソフトとはTeXのことです。これもTeXでsakuraを使ってない理由の一つ。（メンゴ）＾２．m(__)m</div></section>
+    <ul><li><section><h1 id=813>
+    <span class="no">[813]</span>
+    <a class="title" href="#813">Re5: 補完機能について</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-10-30T16:16:23">2001年10月30日 16:16</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; ▼ とみさん<br>&gt; &gt; どうして補完できないのかわかりました．ヘルプをよく読んでみると，「一度にサーチする補完候補の上限は３２個」と書いてありました．"\"から始まる単語が多すぎたのです．<br>&gt; この件はすぐにはできないのでしょうか？<br><br>誰も反応しないので、自己レス。ソースを見た限りでは候補数は無制限 (nMaxKouho=0)に大昔からなってます。原因は別の所にあるかも。使わない機能にはウトイ。使ってる人オシエテネ。<br></div></section>
+    <ul><li><section><h1 id=815>
+    <span class="no">[815]</span>
+    <a class="title" href="#815">Re6: 補完機能について</a>
+    <span class="author">t</span>
+    <time datetime="2001-10-30T19:13:46">2001年10月30日 19:13</time></h1>
+    <div class="body">\beginなどは入力補完できません。"\begin"が単語ではないからです。<br><br>テキストエディタは補完リストを表示しようとするとき，現在のカーソル位置の後方(左方向)に向かって単語の開始位置を走査し,その開始位置から現在のカーソル位置までの文字列を以って補完単語ファイルを前方一致検索します。beginの途中まで入力しているとき,テキスト中の'b'が単語の先頭とみなされ,補完単語ファイル中の"\begin"と前方一致で不一致となるため,補完リストには表示されません。<br><br>先頭が'\'でない場合も候補リストに表示されることが許容できるなら，補完単語ファイルを修正し先頭の'\'を取り除くことで補完機能が利用できます。<br><br>あるいは,「単語を構成する文字集合」を拡張子ごとに設定可能とし,CDocLineMgr::WhereCurrentWord() や CDocLineMgr::WhatKindOfChar() の処理を変更すると良いでしょう。<br>ここを変更すると変数名に'-'を使用可能なプログラミング言語のソースファイル編集時にいいことがあるかも知れません。<br></div></section>
+    <ul><li><section><h1 id=816>
+    <span class="no">[816]</span>
+    <a class="title" href="#816">Re7: 補完機能について</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-10-30T19:50:42">2001年10月30日 19:50</time></h1>
+    <div class="body">▼ tさん<br>&gt; "\begin"などは入力補完できません。"\begin"が単語ではないからです。<br>なるほど、なるほど。TeXのキーワードも\付きのままじゃ入力補完に使えないことになるわけだ。<br>eqnarray*のような*付きも単語と認識できないからだめなんすよね。(;_;)<br>&gt; あるいは,「単語を構成する文字集合」を拡張子ごとに設定可能とし,CDocLineMgr::WhereCurrentWord() や CDocLineMgr::WhatKindOfChar() の処理を変更すると良いでしょう。<br>&gt; ここを変更すると変数名に'-'を使用可能なプログラミング言語のソースファイル編集時にいいことがあるかも知れません。<br>どうしたってこっちがいいなあ。</div></section>
+    <ul><li><section><h1 id=820>
+    <span class="no">[820]</span>
+    <a class="title" href="#820">Re8: 補完機能について</a>
+    <span class="author">t</span>
+    <time datetime="2001-10-30T23:38:22">2001年10月30日 23:38</time></h1>
+    <div class="body">&gt; eqnarray*のような*付きも単語と認識できないからだめなんすよね。(;_;)<br>これはOKだと思います。試してませんが。<br>補完リストファイル内は別に単語でなくてもよく,入力中の単語がリスト各行の最初の単語とマッチすればいいのです。<br>eqnarryまで入力して補完候補を表示させれば前方一致でヒットしますので候補リスト内に表示されるはずです。<br>最後の*まで入力した場合は"*"が検索されるのでヒットしませんが、もはや単語は入力済みとなります。<br>先ほどの説明は不正確でした。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=819>
+    <span class="no">[819]</span>
+    <a class="title" href="#819">Re5: 補完機能について</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-10-30T22:52:37">2001年10月30日 22:52</time></h1>
+    <div class="body">&gt; ▼ とみさん<br>&gt; どうして補完できないのかわかりました．ヘルプをよく読んでみると，「一度にサーチする補完候補の上限は３２個」と書いてありました．<br>ソースを見る限り３２個という制限は原作版のころからないように見えます。（無制限）<br>33個以上でやってみればわかるんでしょうが、なんせこの機能はつかってないんで。。。<br>でも恐らくヘルプ修正の要あり？　知ってる人、こっそり教えて下さい。</div></section>
+    <ul><li><section><h1 id=821>
+    <span class="no">[821]</span>
+    <a class="title" href="#821">Re6: 補完機能について</a>
+    <span class="author">t</span>
+    <time datetime="2001-10-30T23:42:08">2001年10月30日 23:42</time></h1>
+    <div class="body">&gt; ソースを見る限り３２個という制限は原作版のころからないように見えます。（無制限）<br>&gt; 33個以上でやってみればわかるんでしょうが、なんせこの機能はつかってないんで。。。<br>&gt; でも恐らくヘルプ修正の要あり？　知ってる人、こっそり教えて下さい。<br>Win32APIの関数リストを食わせてGと入力し補完候補を出すと，300個ほど出てきました。<br></div></section>
+    <ul><li><section><h1 id=822>
+    <span class="no">[822]</span>
+    <a class="title" href="#822">Re7: 補完機能について</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-10-31T03:48:01">2001年10月31日 03:48</time></h1>
+    <div class="body">▼ tさん<br>&gt; Win32APIの関数リストを食わせてGと入力し補完候補を出すと，300個ほど出てきました。<br>tさん、有難うございます。ということでヘルプには32個→無制限の修正が出てきました。むしろ、\のように記号で始まるようなキーワードには働かないという注意の方が重要ですか。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>
