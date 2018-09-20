@@ -32,9 +32,16 @@ h1 .author {
     white-space: pre-wrap;
 }
 
-.no {
+.side .no {
     background-color: #EEE;
     font-size: 0.8em;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding: 1px;
+    display: inline-block;
+    line-height: 1em;
+    min-width: 1em;
+    text-align: center;
 }
 
 ul {
@@ -79,12 +86,12 @@ ul {
 }
 
 .side li {
-    line-height: 1.6rem;
+    line-height: 1.5rem;
 }
 
 ul.side li ul {
     margin-left: 0em;
-    padding-left: 1em;
+    padding-left: 0.5em;
 }
 
 ul.side li ul li {
@@ -94,20 +101,21 @@ ul.side li ul li {
 ul.side li ul li::before {
     content: "";
     position: absolute;
-    left: -0.5em;
+    left: -0.3em;
+    top: -0.1em;
     height: 100%;
     border-left: 1px solid #999;
 }
 
 ul.side li ul li:last-child::before {
-    height: 0.8em;
+    height: 1em;
 }
 
 ul.side li ul li::after {
     content: "";
     position: absolute;
     top: 0.8em;
-    left: -0.5em;
-    width: 10px;
+    left: -0.3em;
+    width: 0.3em;
     border-bottom: 1px solid #3972b2;
 }

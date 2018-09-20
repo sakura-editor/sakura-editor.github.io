@@ -7,9 +7,9 @@ window.addEventListener("scroll", function () {
                 if (p && x.offsetTop > (window.scrollY + 10)) {
                     document.querySelectorAll(".side li a").forEach(li => {
                         if (li.hash === "#" + p.id) {
-                            li.className = "actived";
+                            li.parentNode.classList.add("actived");
                         } else
-                            li.className = "";
+                            li.parentNode.classList.remove("actived");
                     });
                     break;
                 }
