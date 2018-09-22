@@ -17,7 +17,7 @@ import re
 # <script type="text/javascript" src="/hoge/huga/hoge.js"></script>
 def replace_js_file(path, out_path, js_file):
 	data = '''<!-- Start Google Analytics -->
-<script type="text/javascript" src="{filename}"></script>
+<script async type="text/javascript" src="{filename}"></script>
 <!-- End Google Analytics -->
 '''.format(filename=js_file)
 
