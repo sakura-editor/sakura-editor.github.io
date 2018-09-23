@@ -6,3 +6,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 // Google Analytics tracking code for kobake
 ga('create', 'UA-120820034-1', 'auto');
 ga('send', 'pageview');
+
+// Google Analytics tracking code for m-tmatma
+ga('create', 'UA-49508988-2', 'auto');
+ga('send', 'pageview');
