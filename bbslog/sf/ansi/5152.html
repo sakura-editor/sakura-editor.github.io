@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>連絡不通の人のソースコードの取り扱い | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5152</span>
+    <a class="thread-title" href="5152.html#5152">連絡不通の人のソースコードの取り扱い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5153</span>
+    <a class="thread-title" href="5152.html#5153">Re:連絡不通の人のソースコードの取り扱い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5154</span>
+    <a class="thread-title" href="5152.html#5154">Re2:連絡不通の人のソースコードの取り扱い</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5156</span>
+    <a class="thread-title" href="5152.html#5156">Re:連絡不通の人のソースコードの取り扱い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5157</span>
+    <a class="thread-title" href="5152.html#5157">Re2:連絡不通の人のソースコードの取り扱い</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5158</span>
+    <a class="thread-title" href="5152.html#5158">Re:連絡不通の人のソースコードの取り扱い</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5152>
+    <span class="no">[5152]</span>
+    <a class="thread-title" href="#5152">連絡不通の人のソースコードの取り扱い</a>
+    <span class="author">maru</span>
+    <time datetime="2007-11-02T16:08:01">2007年11月02日 16:08</time></h1>
+    <div class="body">Develop/Licenses@usersWikiが意外に早く反響をいただいているので、並行して次のステップを検討したいと思います。<br><br>最終的に意思表示が確認できない人がいくらか残るでしょうから、その人のソースコードの取り扱いについてです。<br><br>あとでソースコードを整理しようと思っていますので、確認の意味も含め一定の基準が欲しいのです。<br><br>１．ライセンス有効性について<br><br>（１）確認できない部分のうち、どこまでが有効性なし(zlib/libpng適用可)と判断して良いか<br><br>・誰が書いても同じ書き方になる<br>・表示メッセージを変更しただけ<br>・表示順の入れ替えや非表示に変更しただけとか<br>・コメントの修正だけやインデントを変更だけなどコード的に意味の変わらないもの<br><br>（２）ファイルの先頭や関数の先頭には名前があるが、コード内のコメントに修正箇所を明記した箇所がみつからないケース、これは多くの場合、多数の修正がその箇所に繰り返された場合に発生すると思われますが、ここのライセンスは無効と考えてよいか。<br><br>２．残留した非zlib/libpngのファイルについて<br><br>（１）非zlib/libpngのソースコードが混ざっていることをファイルの先頭に明記する？<br><br>（２）別のコードで置き換えることを推奨する(先人の成果を締め出しすることになりますが・・・)<br></div></section>
+    <ul><li><section><h1 id=5153>
+    <span class="no">[5153]</span>
+    <a class="thread-title" href="#5153">Re:連絡不通の人のソースコードの取り扱い</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-02T21:14:51">2007年11月02日 21:14</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ２．残留した非zlib/libpngのファイルについて<br>&gt; <br>&gt; （１）非zlib/libpngのソースコードが混ざっていることをファイルの先頭に明記する？<br>&gt; <br>&gt; （２）別のコードで置き換えることを推奨する(先人の成果を締め出しすることになりますが・・・)<br><br>「ぜんぶzlib/libpng」と言い切れたほうが、利用する側も管理する側も楽で良いと思います。<br><br>ところで「非zlib/libpng」というのは「zlib/libpng以外のライセンスを掲げている」箇所があるということでしょうか。<br>それとも単に「zlib/libpng適用可否に対する返答が無い」だけ？<br></div></section>
+    <ul><li><section><h1 id=5154>
+    <span class="no">[5154]</span>
+    <a class="thread-title" href="#5154">Re2:連絡不通の人のソースコードの取り扱い</a>
+    <span class="author">maru</span>
+    <time datetime="2007-11-02T22:08:30">2007年11月02日 22:08</time></h1>
+    <div class="body">&gt;「ぜんぶzlib/libpng」と言い切れたほうが、利用する側も管理する側も楽で良いと思います。<br>私としてもそれが理想です。「ほとんどzlib/libpng」では歯切れが悪くって。<br><br>&gt;ところで「非zlib/libpng」というのは「zlib/libpng以外のライセンスを掲げている」箇所があるということでしょうか。<br>&gt;それとも単に「zlib/libpng適用可否に対する返答が無い」だけ？<br>私の知る限り、zlib/libpng以外のライセンスはないと思います。<br>「zlib/libpng適用可否に対する返答が無い」の意味です。<br><br>Unicode版ブランチが用意された時点で、返答のない人と、その人が影響を与えているファイルの一覧をまとめようと思っています。<br><br>不明確な範囲が整理されていれば、バグフィックスの際に修正どころを意識できると思うので。<br></div></section>
+    </li></ul></li><li><section><h1 id=5156>
+    <span class="no">[5156]</span>
+    <a class="thread-title" href="#5156">Re:連絡不通の人のソースコードの取り扱い</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-11-03T14:03:55">2007年11月03日 14:03</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 最終的に意思表示が確認できない人<br>これって、□はいないから・・・<br>◎、●、○、△以外の人ってことですよね？</div></section>
+    <ul><li><section><h1 id=5157>
+    <span class="no">[5157]</span>
+    <a class="thread-title" href="#5157">Re2:連絡不通の人のソースコードの取り扱い</a>
+    <span class="author">maru</span>
+    <time datetime="2007-11-03T14:26:07">2007年11月03日 14:26</time></h1>
+    <div class="body">&gt;▼ ラスティブさん<br>&gt;&gt; 最終的に意思表示が確認できない人<br>&gt;これって、□はいないから・・・<br>&gt;◎、●、○、△以外の人ってことですよね？<br><br>そうです、今は該当者はいません。<br>「最終的に意思表示が確認できない人」の中から□と判断してよい境界線を確認したいのです。<br></div></section>
+    </li></ul></li><li><section><h1 id=5158>
+    <span class="no">[5158]</span>
+    <a class="thread-title" href="#5158">Re:連絡不通の人のソースコードの取り扱い</a>
+    <span class="author">あろか</span>
+    <time datetime="2007-11-04T02:34:02">2007年11月04日 02:34</time></h1>
+    <div class="body">▼ maruさん<br>&gt; （２）ファイルの先頭や関数の先頭には名前があるが、コード内のコメントに修正箇所を明記した箇所がみつからないケース、これは多くの場合、多数の修正がその箇所に繰り返された場合に発生すると思われますが、ここのライセンスは無効と考えてよいか。<br>&gt; <br>問題はライセンスがファイルごとに適用されるのか、関数単位か、あるいは行単位に適用されるのか。ということだと理解します。<br>　私は「ファイルごと」だと考えていました。なので、とある人(Aとします)の修正を含む箇所が不要になってコメント化-&gt;削除された場合、Aさんを含めた開発者全員のアウトプットと考えました。<br>　上の考えに従ってコメントアウト箇所を削除するときに修正者のお名前だけ先頭に残して(移して)削除したことが幾度かあります。<br><br>　ただ、新規にファイルを起こして関数を移動したときは、その時点での移動元の修正者だけを新しいファイルの先頭に含めていました。<br><br>最近は参加できていないので新しい基準が決まればそちらに従います。<br><br>＞ちなみにメールにて回答済みですが、zlib/libpng適用はOKです。万が一さらに別のライセンスに変えたくなってもOKです。<br></div></section>
+    </li></ul></li></ul></body></html>

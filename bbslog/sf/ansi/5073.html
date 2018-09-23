@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>■VC++2005でコンパイルする際の補足事項 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5073</span>
+    <a class="thread-title" href="5073.html#5073">■VC++2005でコンパイルする際の補足事項</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=5073>
+    <span class="no">[5073]</span>
+    <a class="thread-title" href="#5073">■VC++2005でコンパイルする際の補足事項</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-09-28T03:28:06">2007年09月28日 03:28</time></h1>
+    <div class="body">VC++2005でsakuraをコンパイルする場合の補足事項です。<br>sakura.dswをsakura.slnに変換すると、埋め込みマニフェストの設定が自動的にONになるので、OFFに切替えてからコンパイルしてください。<br>具体的には、プロジェクトのプロパティ画面で[マニフェストツール]-[入力と出力]-[埋め込みマニフェスト]の部分を「はい」から「いいえ」に変えます。<br>ここが「はい」のままだとVista環境ではUAC対応用の外部マニフェストが適用できない実行ファイルが作成されてしまいます。<br>＃VC++2003にはこの設定はありません（操作不要です）</div></section>
+    </li></ul></body></html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>UTF-8 が　SGISに？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5074</span>
+    <a class="thread-title" href="5074.html#5074">UTF-8 が　SGISに？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5075</span>
+    <a class="thread-title" href="5074.html#5075">RE: UTF-8 が　SGISに？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5076</span>
+    <a class="thread-title" href="5074.html#5076">Re2: UTF-8 が　SGISに？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5077</span>
+    <a class="thread-title" href="5074.html#5077">Re3: UTF-8 が　SJISに？</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5074>
+    <span class="no">[5074]</span>
+    <a class="thread-title" href="#5074">UTF-8 が　SGISに？</a>
+    <span class="author">らぐな</span>
+    <time datetime="2007-09-29T13:10:32">2007年09月29日 13:10</time></h1>
+    <div class="body">便利なエディタ使わせていただきまして<br>ありがとうございます。<br><br>ちょっと問題点が出てきたので、詳細が分かればと<br>投稿させていただきます。<br><br>現在　PHPソースを編集中なのですが、<br>UTF-8のファイルを開き編集後<br>Ctrl＋S　の保存で閉じているのですが<br>なにかしらのタイミングで次回ファイルオープン時から<br>SGISの認識となってしまっています。<br><br>無知ながら怪しい点として着目しているのが次の2点です。<br>・キーマクロによる編集<br>・コメント編集時にExcelへ一度貼り付け<br>　コメントを追加し、コピー貼り付けにて<br>　複数行まとめて編集<br><br>この辺りが怪しいかなとは思っているのですが<br>詳しい調査等は行っていないので、<br>確実に「ここ！」　と言えないのです。<br>たぶん　これじゃないかな？　程度のヒントですが<br>回避策　対応　決定的な原因がありましたら<br>教えてください。<br><br>環境：<br>Windows　XP<br>IME　2003<br></div></section>
+    <ul><li><section><h1 id=5075>
+    <span class="no">[5075]</span>
+    <a class="thread-title" href="#5075">RE: UTF-8 が　SGISに？</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-29T14:49:08">2007年09月29日 14:49</time></h1>
+    <div class="body">&gt;なにかしらのタイミングで次回ファイルオープン時から<br>&gt;SGISの認識となってしまっています。<br>SJISですよね．<br><br>文字コードはファイルの先頭部分1KBの内容から自動判断しますのでファイルを見ないことにはなんとも言えませんが，ファイルの最初の方に日本語が全く入っていないとShift JISと判定されてしまいます．ただ，最近使ったファイルであれば前回の文字コードが優先されるはずなので，多数のファイルを編集しているのでしょうか．<br><br>ファイルの最初の方に日本語でコメントを入れてもらえれば認識ミスは起こりにくくなると思います．<br></div></section>
+    <ul><li><section><h1 id=5076>
+    <span class="no">[5076]</span>
+    <a class="thread-title" href="#5076">Re2: UTF-8 が　SGISに？</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-09-29T19:20:36">2007年09月29日 19:20</time></h1>
+    <div class="body">▼ らぐなさん<br>共通設定のファイルタブから、<br>□前回と異なる文字コードのとき問い合わせをおこなう<br>v チェックを入れたほうが良いようです。<br>そうすれば、自動認識はしないで、履歴の文字コードを使いますから。</div></section>
+    <ul><li><section><h1 id=5077>
+    <span class="no">[5077]</span>
+    <a class="thread-title" href="#5077">Re3: UTF-8 が　SJISに？</a>
+    <span class="author">らぐな</span>
+    <time datetime="2007-10-01T06:44:09">2007年10月01日 06:44</time></h1>
+    <div class="body">▼げんたさん<br>そうです　SJISです<br>いやはや　お恥ずかしい誤字でした。<br>先頭部分には　コメントが入っていますが<br>再度確認してみます。（プログラム名等　英字だったりしますので）<br>ファイル数は　かなりの数になります。<br><br>▼じゅうじさん<br>ファイルを開いたときに聞いてくる<br>このファイルはUTF-8でなんたらかんたら<br>SJISで開きますか？　UTF-8で開きますか？<br>ってやつでしょうか？<br>そのメッセージなら出てきてるんです。<br>今日設定を再度確認してみたいと思います。<br><br><br>回答ありがとうございました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

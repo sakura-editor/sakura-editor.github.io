@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ヘルプソースの管理・運用変更案 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">353</span>
+    <a class="thread-title" href="353.html#353">ヘルプソースの管理・運用変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">369</span>
+    <a class="thread-title" href="353.html#369">Re:ヘルプソースの管理・運用変更案</a></div>
+    </li><li><div class="list-title">
+    <span class="no">371</span>
+    <a class="thread-title" href="353.html#371">Re:ヘルプソースの管理・運用変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">374</span>
+    <a class="thread-title" href="353.html#374">Re2:ヘルプソースの管理・運用変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">375</span>
+    <a class="thread-title" href="353.html#375">Re3:ヘルプソースの管理・運用変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">376</span>
+    <a class="thread-title" href="353.html#376">Re4:ヘルプソースの管理・運用変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">377</span>
+    <a class="thread-title" href="353.html#377">Re5:ヘルプソースの管理・運用変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">378</span>
+    <a class="thread-title" href="353.html#378">Re6:ヘルプソースの管理・運用変更案</a></div>
+    </li><li><div class="list-title">
+    <span class="no">379</span>
+    <a class="thread-title" href="353.html#379">Re6:ヘルプソースの管理・運用変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">381</span>
+    <a class="thread-title" href="353.html#381">Re7:ヘルプソースの管理・運用変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">384</span>
+    <a class="thread-title" href="353.html#384">Re8:ヘルプソースの管理・運用変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">385</span>
+    <a class="thread-title" href="353.html#385">Re9:ヘルプソースの管理・運用変更案</a></div>
+    </li><li><div class="list-title">
+    <span class="no">391</span>
+    <a class="thread-title" href="353.html#391">Re9:ヘルプソースの管理・運用変更案</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">393</span>
+    <a class="thread-title" href="353.html#393">Re10:ヘルプソースの管理・運用変更案</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">386</span>
+    <a class="thread-title" href="353.html#386">インストーラのソース</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=353>
+    <span class="no">[353]</span>
+    <a class="thread-title" href="#353">ヘルプソースの管理・運用変更案</a>
+    <span class="author">maru</span>
+    <time datetime="2007-09-30T22:47:52">2007年09月30日 22:47</time></h1>
+    <div class="body">今回はヘルプソースにHTML workshopのプロジェクト形式である*.hhp, *.hhc, *.hhkを含めました。(従来は中間ファイルの扱いでした)<br>いままで使っていたヘルプましんのUIは何かと便利ですが、機能上の制限が運用方針に適さないところがいくつかあり、メンテナンスが面倒です。<br><br>今後、ヘルプソースの取り扱いをHTML workshopの形式に変更したいと考えておりますので、ご意見などあればお願いします。期限は1.6.0.1リリースまでとします。<br><br>HTML workshopでの管理への変更にあたり<br>■メリット<br>・画像以外はすべてテキストなので変更を管理しやすい<br>・特にヘルプのメニューツリーの変更もhhcの差分を見れば分かる<br>・HTML workshopだけあればコンパイルできる<br>・CHMの持つ機能のすべてを活用できる<br>・ヘルプマシンがもつ相対パスなどの問題に対するローカルルールは基本的に不要<br><br>■デメリット<br>・hhcを編集保存するとマージファイル指定の記述が壊れる<br>・英語<br><br>*.hhcはHTML workshopから編集保存してはいけない、という前提ルールを守ることとして、*.hhcファイルはエディタで編集する方針で進めたいと思っています。<br>特にご指摘など無ければ次回より*.XHPと*.XHCを削除します。<br></div></section>
+    <ul><li><section><h1 id=369>
+    <span class="no">[369]</span>
+    <a class="thread-title" href="#369">Re:ヘルプソースの管理・運用変更案</a>
+    <span class="author">novice</span>
+    <time datetime="2007-10-07T03:07:07">2007年10月07日 03:07</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 今後、ヘルプソースの取り扱いをHTML workshopの形式に変更したいと考えておりますので、ご意見などあればお願いします。期限は1.6.0.1リリースまでとします。<br><br>昔のことなのであまり記憶にないのですが、<br>WinHelp→HTML Helpへ移行するときに<br>ヘルプましんを導入したような気がします。<br><br>たぶん、ヘルプましんが生成する中間ファイルを<br>何もないところから作るのが大変だったから<br>というのが理由のような気がします。<br><br>ということで、HTML workshopの管理で<br>問題ないと思います。<br></div></section>
+    </li><li><section><h1 id=371>
+    <span class="no">[371]</span>
+    <a class="thread-title" href="#371">Re:ヘルプソースの管理・運用変更案</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-10-07T14:29:55">2007年10月07日 14:29</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 今回はヘルプソースにHTML workshopのプロジェクト形式である*.hhp, *.hhc, *.hhkを含めました。(従来は中間ファイルの扱いでした)<br>&gt; いままで使っていたヘルプましんのUIは何かと便利ですが、機能上の制限が運用方針に適さないところがいくつかあり、メンテナンスが面倒です。<br>&gt; <br>&gt; 今後、ヘルプソースの取り扱いをHTML workshopの形式に変更したいと考えておりますので、ご意見などあればお願いします。期限は1.6.0.1リリースまでとします。<br>&gt; <br>&gt; *.hhcはHTML workshopから編集保存してはいけない、という前提ルールを守ることとして、*.hhcファイルはエディタで編集する方針で進めたいと思っています。<br>&gt; 特にご指摘など無ければ次回より*.XHPと*.XHCを削除します。<br><br>hhp,hhc,hhkを追加するのは賛成です、削除するのは反対です。<br>中間ファイルをメインにすると、前以上に面倒にならないか、の問題です。<br>・ヘルプマシンを使う場合で、SAKURA.HHPの[HERGE]指定での、絶対パスを削除する以外の手間には何が有りますか？<br>　それから、SAKURA.XHPのパス指定を削除する手間。<br>・HTML WorkShop のUIを使うと駄目なら、ヘルプましんで修正しても駄目なのではないですか？しかし、現行では修正出来ますが、それは、HTML WorkShop だけの問題では。<br><br>所で、インストーラ(sinst*.exe)のソースは公開されてませんね。</div></section>
+    <ul><li><section><h1 id=374>
+    <span class="no">[374]</span>
+    <a class="thread-title" href="#374">Re2:ヘルプソースの管理・運用変更案</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-07T18:39:16">2007年10月07日 18:39</time></h1>
+    <div class="body">▼ じゅうじさん<br>念のための確認ですが、中間ファイルと表現しているのは、ヘルプましんから見れば中間ファイルですが、本来の姿（HTML Workshop）ではプロジェクトファイル本体や目次ファイルなど（hhp,hhc,hhk）のことを指しているつもりです。<br>そして、hhp,hhc,hhkの追加の件は「HTML Workshopだけのユーザーでもコンパイルできるように」の意味よりは、「ヘルプましんは管理しにくいから離脱したい」の意味が強く、どちらかというとヘルプ作成者側の都合です。<br>作業感覚的には、これまでHTMLWorkshopのフロントエンドがヘルプましんだったものを、今度からテキストエディタ(普通はサクラエディタ)に変更しよう、という話です。<br>ここまでは、お互いの認識は合っていますよね？<br><br>さて本題ですが、以前の書き込みではWorkshop側のメリット・デメリットだけを列挙したので、主張が分かりにくかったかもしれません。<br><br>■ヘルプましんで管理するデメリット<br>１．コンパイルにはHTMLWorkshopとヘルプましんの２つのソフトが必要。<br>２．HTMLWorkshopに比べて、インストールされた環境が限定される。<br>３．コンテンツツリーがバイナリで保存されているので、変更点がわかりにくい。<br>４．コンテンツツリーがバイナリで保存されているので、パッチ配布できない。<br>５．コンテンツツリーがバイナリで保存されているので、別々の修正をマージできない。<br>６．コンパイル前には、hhp内のパス指定を修正しなければならない<br>７．６の理由により、リリースファイルのコンパイルは２段階の作業になってしまう。<br>８．ソース配布前には、XHP内のパス指定を修正しなければならない<br>９．７と８の理由により、７の作業でコンパイルの動作確認済みのソースはそのまま配布できず、コンパイル実施前の状態を別途保持しておかなければならない。<br>10．９の理由からリリース直前の細かい修正にはバージョン管理が煩雑になるが、６や８の作業が抜けても気が付きにくい。<br><br>■ヘルプましんで管理するメリット<br>１．UIが日本語<br>２．ヘルプましんからコンテンツツリー構造を変更・保存してもmerge指定が壊れない<br><br>といった状況です。<br>ヘルプましんの方がリリースにいたるまでのローカルルールが多くて、SVNでの管理にも不向き、というのが主な提案理由です。<br><br>&gt; hhp,hhc,hhkを追加するのは賛成です、削除するのは反対です。<br>ヘルプましんとWorkshopの両サポートという意味でしょうか。これは間違いなく前以上に面倒だと思うのですが。<br>いずれの結論の場合も、最終的にはどちらか一方にさせてください(^^;;<br></div></section>
+    <ul><li><section><h1 id=375>
+    <span class="no">[375]</span>
+    <a class="thread-title" href="#375">Re3:ヘルプソースの管理・運用変更案</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-10-07T20:09:46">2007年10月07日 20:09</time></h1>
+    <div class="body">▼ maruさん<br>&gt; &gt; hhp,hhc,hhkを追加するのは賛成です、削除するのは反対です。<br>&gt; ヘルプましんとWorkshopの両サポートという意味でしょうか。これは間違いなく前以上に面倒だと思うのですが。<br>&gt; いずれの結論の場合も、最終的にはどちらか一方にさせてください(^^;;<br><br>いいえ、これは、コンパイル後の中間ファイルも公開しましょうと言うことで、そうすればヘルプましんの出力が変わっても分かるという意味です。<br>バイナリーファイルでもヘルプましんでUI出来る訳ですから、SVNで管理出来ないと言う訳は無いと思ったのですが。<br>HELP WorkShopのUIが使用できないと言うのが主な理由です。</div></section>
+    <ul><li><section><h1 id=376>
+    <span class="no">[376]</span>
+    <a class="thread-title" href="#376">Re4:ヘルプソースの管理・運用変更案</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-07T21:51:21">2007年10月07日 21:51</time></h1>
+    <div class="body">&gt;いいえ、これは、コンパイル後の中間ファイルも公開しましょうと言うことで、そうすればヘルプましんの出力が変わっても分かるという意味です。<br>&gt;バイナリーファイルでもヘルプましんでUI出来る訳ですから、SVNで管理出来ないと言う訳は無いと思ったのですが。<br>う～ん、おっしゃることは理解できましたが、これだけでは私的には旨みがないですね・・・。<br><br>&gt;HELP WorkShopのUIが使用できないと言うのが主な理由です。<br>えっと、まったく使えないわけではなく、一番最後の&lt;/UL&gt;が変なところに挿入されてしまうのです。mergeの指定が&lt;UL&gt;&lt;/UL&gt;の内側に入ってしまいます。<br>もしコンテンツツリーの編集をWorkshopで行う場合は、最後の&lt;UL&gt;を修正する作業を追加すれば解決します。<br>そういうことであれば、Workshopでの編集＋UL修正、という運用でも私は構いませんので、やはりヘルプましんからの離脱を推進したいのですが、いかがですか。<br><br>理由は前回書き込みのデメリット４～９のためです。<br></div></section>
+    <ul><li><section><h1 id=377>
+    <span class="no">[377]</span>
+    <a class="thread-title" href="#377">Re5:ヘルプソースの管理・運用変更案</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-10-08T12:26:22">2007年10月08日 12:26</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ■ヘルプましんで管理するデメリット<br>&gt; ３．コンテンツツリーがバイナリで保存されているので、変更点がわかりにくい。<br>&gt; ４．コンテンツツリーがバイナリで保存されているので、パッチ配布できない。<br>&gt; ５．コンテンツツリーがバイナリで保存されているので、別々の修正をマージできない。<br>&gt; ６．コンパイル前には、hhp内のパス指定を修正しなければならない<br>&gt; ８．ソース配布前には、XHP内のパス指定を修正しなければならない<br>&gt; <br>&gt; ■ヘルプましんで管理するメリット<br>&gt; １．UIが日本語<br>&gt; ２．ヘルプましんからコンテンツツリー構造を変更・保存してもmerge指定が壊れない<br><br>Ａ. HTML HELP Workshop で管理するメリット<br>１．Wikiサイトの管理との関連で、ヘルプましんのGUIは使いたくない、3と4が主な理由。<br>２．リリース時の手間の問題で、ヘルプましんのXHP,HHPは使いたくない、6と8が主な理由。<br><br>Ｂ. HTML HELP Workshopで管理するデメリット<br>１．GUIからCUIに移行する(GUIが英語で使い方が難しい)<br>２．GUIからコンテンツツリー構造を変更・保存するとmerge指定が壊れる<br><br>まとめるとこんな感じでしょうか、私はテキストのXHPも,バイナリーのXHCも更新出来れば更新を続けて欲しいと思います。<br><br>さて、HHPについてです。<br>リリースや、パッチにXHP,XHCは含めないという事でしたら、<br>毎回ヘルプましんのGUI出力ファイルを使う、Ｂ２の問題の為、HTML HELP Workshop のGUI出力ファイルは使わない。<br>（提供は出来ないが、XHP,XHCは何時でも手元に有るという状態）<br>Ａ２以外、テキストファイルを直接編集しなくても良くなります。</div></section>
+    <ul><li><section><h1 id=378>
+    <span class="no">[378]</span>
+    <a class="thread-title" href="#378">Re6:ヘルプソースの管理・運用変更案</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-08T19:43:10">2007年10月08日 19:43</time></h1>
+    <div class="body">&gt;リリースや、パッチにXHP,XHCは含めないという事でしたら、<br>ちょっと違います。「（サクラエディタのヘルプ作成において）ヘルプましんは作業性が悪いから使いたくない」です。<br><br>&gt;（提供は出来ないが、XHP,XHCは何時でも手元に有るという状態）<br>これまた厳しいリクエストで・・・(^^;;<br>別件で Document/コンテンツツリー にパッチをアップされていらっしゃいますが、これをXHCに反映するのはかなり面倒なはずです。<br>手順としては<br>１．XHP,XHCからhhcを作成<br>２．hhcにパッチをあてる<br>３．新しいhhc「Workshopプロジェクトの取り込み」でXHCに吸い上げる<br>４．ヘルプましんが解釈できない部分(アンカーネームなど)を元ファイルを見ながら目視・手修正<br>のようなプロセスになるかと思います。<br>「XHP,XHCは何時でも手元に有る」というのは、そういう意味（パッチ提供を受けたらXHCを更新できることを保証する）ですよね？<br><br>&gt;テキストファイルを直接編集しなくても良くなります。<br>あれ？直接テキストを編集したほうが手軽だと思うのですが。<br>ちょっとした修正のためだけに、いちいち関連ファイルを改変されると、それを元に戻すオーバーヘッドがものすごく無駄に思えてくるのです。<br>まあ、これは個人の好みに左右されますが。ヘルプましんではグラフィカルなインターフェィスしか利用できないのに対して、Workshopではグラフィカルなインターフェィスまたはテキストの直接編集どちらでもユーザーは好きなほうを選べるのです。これって素敵だと思いませんか？<br></div></section>
+    </li><li><section><h1 id=379>
+    <span class="no">[379]</span>
+    <a class="thread-title" href="#379">Re6:ヘルプソースの管理・運用変更案</a>
+    <span class="author">AC</span>
+    <time datetime="2007-10-08T20:10:25">2007年10月08日 20:10</time></h1>
+    <div class="body">全部管理するのが理想。<br>そんなリソースはないというのが現実。<br><br></div></section>
+    <ul><li><section><h1 id=381>
+    <span class="no">[381]</span>
+    <a class="thread-title" href="#381">Re7:ヘルプソースの管理・運用変更案</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-10-08T23:36:46">2007年10月08日 23:36</time></h1>
+    <div class="body">▼ ACさん<br>&gt; 全部管理するのが理想。<br>&gt; そんなリソースはないというのが現実。<br><br>　ツールを何にするかで揉めています。<br>この様子だと、ヘルプましんは使えなく（サクラエディタでは使用禁止）なりそうです。<br>しかし、よく見ると、ヘルプリリース1.6.0.0のhhcがHTML Workshopの出力と微妙に異なります。<br>新規作成は、HTML Workshop以外の何かのツールで、既に終わってるようなのです。<br><br>#このHELP Documentスレって上がらないですね。</div></section>
+    <ul><li><section><h1 id=384>
+    <span class="no">[384]</span>
+    <a class="thread-title" href="#384">Re8:ヘルプソースの管理・運用変更案</a>
+    <span class="author">AC</span>
+    <time datetime="2007-10-09T19:48:46">2007年10月09日 19:48</time></h1>
+    <div class="body">ヘルプましんに固執する理由がわかりません。<br><br>今は問題があるけど、改善されれば使えるというのであれ<br>ば、ヘルプましん作者に改善要望を出してみてはいかがで<br>しょうか。<br></div></section>
+    <ul><li><section><h1 id=385>
+    <span class="no">[385]</span>
+    <a class="thread-title" href="#385">Re9:ヘルプソースの管理・運用変更案</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-10-09T21:03:29">2007年10月09日 21:03</time></h1>
+    <div class="body">▼ ACさん<br>&gt; ヘルプましんに固執する理由がわかりません。<br><br>ヘルプましんを使った場合、具体的には出力されるHHPファイルにフルパスが含まれる事です。<br>HHPファイルは、HELP Workshopの入力となる、テキストファイルですから、エディタでそのフルパスを削除すれば使えます。<br>後、ヘルプましんは操作がGUIのみで、使い方を覚えなければいけないんですが...。<br>私は、HELP WorkshopのGUIが日本語でも全然分からないので、後残るは hhp,hhc,hhk をエディタで直接編集するしか無い訳で、それはかなり面倒だと思います。<br>HTML Workshopにするという事であれば、固執していません。<br></div></section>
+    </li><li><section><h1 id=391>
+    <span class="no">[391]</span>
+    <a class="thread-title" href="#391">Re9:ヘルプソースの管理・運用変更案</a>
+    <span class="author">AC</span>
+    <time datetime="2007-10-10T21:15:34">2007年10月10日 21:15</time></h1>
+    <div class="body">ヘルプましんのHP見てきたんですけど、<br>放置プレー状態ですね。<br>（改善要望は無理っぽい</div></section>
+    <ul><li><section><h1 id=393>
+    <span class="no">[393]</span>
+    <a class="thread-title" href="#393">Re10:ヘルプソースの管理・運用変更案</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-10T23:29:47">2007年10月10日 23:29</time></h1>
+    <div class="body">&gt;ヘルプましんのHP見てきたんですけど、<br>&gt;放置プレー状態ですね。<br>そうなんですよ(涙)<br>いくつかの要望に対しては前向きなコメントをいただいたのですが、更新される気配の無いまま１年が経過・・・。<br>良いソフトなのに、ほぼ開発休止中といった感じで残念です。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=386>
+    <span class="no">[386]</span>
+    <a class="thread-title" href="#386">インストーラのソース</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-10-09T21:46:53">2007年10月09日 21:46</time></h1>
+    <div class="body">▼じゅうじさん<br>&gt;インストーラ(sinst*.exe)のソースは公開されてませんね。<br>次回インストーラ用に見直した物は，こちらにあります．<br>http://sakura-editor.wiki.sourceforge.net/Installer<br><br>昔の物はこちらにあります．<br>http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/installer/<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>テキスト入力への感想2 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5753</span>
+    <a class="thread-title" href="5753.html#5753">テキスト入力への感想2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5754</span>
+    <a class="thread-title" href="5753.html#5754">Re:テキスト入力への感想2</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5753>
+    <span class="no">[5753]</span>
+    <a class="thread-title" href="#5753">テキスト入力への感想2</a>
+    <span class="author">aTa</span>
+    <time datetime="2015-06-05T23:32:05">2015年06月05日 23:32</time></h1>
+    <div class="body">また、ヘッダの先頭で<br><br>#if ( defined __cplusplus )<br>extern 'C' {<br>#endif<br><br>としたところで、その次の行から { を認識してインデントされてしまいます。<br>これが、コメントアウトした時でも同じで<br><br>/*<br>extern 'C' {<br>*/<br><br>とした時でもインデントされてしまう現象を回避することはできないでしょうか?<br><br><br>また、アセンブラでの開発時ように、ラベルとJMP命令を対応させて、<br><br>jmp LABEL1<br><br>LABEL1:<br><br>というときに、 jmp LABEL1　から直接ラベルに飛べるような機能がほしいです。<br><br><br></div></section>
+    <ul><li><section><h1 id=5754>
+    <span class="no">[5754]</span>
+    <a class="thread-title" href="#5754">Re:テキスト入力への感想2</a>
+    <span class="author">ponta</span>
+    <time datetime="2015-10-02T11:22:32">2015年10月02日 11:22</time></h1>
+    <div class="body">▼ aTaさん<br>&gt; また、アセンブラでの開発時ように、ラベルとJMP命令を対応させて、<br>&gt; <br>&gt; jmp LABEL1<br>&gt; <br>&gt; LABEL1:<br>&gt; <br>&gt; というときに、 jmp LABEL1　から直接ラベルに飛べるような機能がほしいです。<br><br>// ***** ここから <br>var line_str = Editor.GetLineStr(0);    // Get Current Line Strings<br>var cur_pos = parseInt(Editor.ExpandParameter("$x"),10) - 1;    // Get Current Cursor Posision<br><br>if(line_str.charAt(cur_pos) &gt;" ")<br>{<br>    var end_pos = cur_pos;<br>    var temp_str=  (line_str.substring(cur_pos)).replace(/\r?\n/,"");<br><br>    // "LABEL1:"の時<br>    var jump_word = temp_str.match(/\w+/)+":";<br><br>//  // "LABEL1"の時<br>//  var jump_word = temp_str.match(/\w+/);<br><br>    Editor.SearchNext("^"+jump_word,0x24);<br>}<br>ここまで *****//<br>上記をショートカットに割り当てると可能かと思います。<br><br>使用方法は、"jmp LABEL1"のLの部分にカーソルを合わせて実行してください。</div></section>
+    </li></ul></li></ul></body></html>

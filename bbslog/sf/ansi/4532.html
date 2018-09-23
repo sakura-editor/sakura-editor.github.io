@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>タグファイル作成でエラーが出る | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4532</span>
+    <a class="thread-title" href="4532.html#4532">タグファイル作成でエラーが出る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4533</span>
+    <a class="thread-title" href="4532.html#4533">Re: タグファイル作成でエラーが出る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4534</span>
+    <a class="thread-title" href="4532.html#4534">Re2: タグファイル作成でエラーが出る</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4547</span>
+    <a class="thread-title" href="4532.html#4547">Re2: タグファイル作成でエラーが出る</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4532>
+    <span class="no">[4532]</span>
+    <a class="thread-title" href="#4532">タグファイル作成でエラーが出る</a>
+    <span class="author">もか</span>
+    <time datetime="2006-08-03T19:51:11">2006年08月03日 19:51</time></h1>
+    <div class="body">タグファイル作成時に、<br>「"tags" はタグファイルではないため上書き出来ません。<br>タグ作成コマンド実行は失敗しました。<br>(ここにカレントディレクトリが表示される)」<br>というエラーダイアログが表示されます。<br><br>HKEY_CURRENT_USER\Software\Microsoft\Com<br>mand Processor\AutoRun<br>で、「prompt $N:$G&amp; cd」と指定していてcdの出力を<br>エラーとして報告してしまいます。<br>ファイルがロックされていて開けない場合も同様のエラーが出ますが、<br>「"tags" はタグファイルではないため上書き出来ません。」<br>という文面は誤解を招くので、削除したほうがいいような気がします。<br><br><br></div></section>
+    <ul><li><section><h1 id=4533>
+    <span class="no">[4533]</span>
+    <a class="thread-title" href="#4533">Re: タグファイル作成でエラーが出る</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-08-04T01:01:22">2006年08月04日 01:01</time></h1>
+    <div class="body">&gt;HKEY_CURRENT_USER\Software\Microsoft\Co<br>m<br>&gt;mand Processor\AutoRun<br>&gt;で、「prompt $N:$G&amp; cd」と指定していてcdの出力を<br>&gt;エラーとして報告してしまいます。<br>報告ありがとうございます．<br><br>cmd.exeのヘルプを見ると，<br>&gt;/D      レジストリからの AutoRun コマンドの実行を無効にします<br>&gt;        (下記を参照してください)。<br>&gt;コマンド ラインで /D が指定されなかった場合は、CMD.EXE の開始時に次の REG_SZまたは REG_EXPAND_SZ レジストリ変数が検索されます。次のレジストリ変数の両方またはどちらかが存在する場合、それらを最初に実行します。<br><br>とあるので， tags.exe 起動時に/Dをつける必要があるようですね．<br></div></section>
+    <ul><li><section><h1 id=4534>
+    <span class="no">[4534]</span>
+    <a class="thread-title" href="#4534">Re2: タグファイル作成でエラーが出る</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-08-04T01:02:48">2006年08月04日 01:02</time></h1>
+    <div class="body">って，よく見たら久しぶりのもかさんじゃないですか．<br></div></section>
+    </li><li><section><h1 id=4547>
+    <span class="no">[4547]</span>
+    <a class="thread-title" href="#4547">Re2: タグファイル作成でエラーが出る</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-08-20T09:20:27">2006年08月20日 09:20</time></h1>
+    <div class="body">Patches#1543101 に修正パッチを出しました．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

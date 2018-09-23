@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>テスト版1.6.2.204の「支援」設定画面 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5218</span>
+    <a class="thread-title" href="5218.html#5218">テスト版1.6.2.204の「支援」設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5219</span>
+    <a class="thread-title" href="5218.html#5219">RE: テスト版1.6.2.204の「支援」設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5220</span>
+    <a class="thread-title" href="5218.html#5220">Re2: テスト版1.6.2.204の「支援」設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5221</span>
+    <a class="thread-title" href="5218.html#5221">Re3: テスト版1.6.2.204の「支援」設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5222</span>
+    <a class="thread-title" href="5218.html#5222">Re4: テスト版1.6.2.204の「支援」設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5223</span>
+    <a class="thread-title" href="5218.html#5223">Re5: テスト版1.6.2.204の「支援」設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5224</span>
+    <a class="thread-title" href="5218.html#5224">Re6: テスト版1.6.2.204の「支援」設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5226</span>
+    <a class="thread-title" href="5218.html#5226">Re7: テスト版1.6.2.204の「支援」設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5228</span>
+    <a class="thread-title" href="5218.html#5228">Re8: テスト版1.6.2.204の「支援」設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5231</span>
+    <a class="thread-title" href="5218.html#5231">Re9: テスト版1.6.2.204の「支援」設定画面</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5229</span>
+    <a class="thread-title" href="5218.html#5229">Re8: テスト版1.6.2.204の「支援」設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5230</span>
+    <a class="thread-title" href="5218.html#5230">Re9: テスト版1.6.2.204の「支援」設定画面</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5234</span>
+    <a class="thread-title" href="5218.html#5234">Re9: テスト版1.6.2.204の「支援」設定画面</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5218>
+    <span class="no">[5218]</span>
+    <a class="thread-title" href="#5218">テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-15T13:37:45">2007年12月15日 13:37</time></h1>
+    <div class="body">「支援」設定画面で、<br>  外部ヘルプ→通常ヘルプ<br>  外部HTMLヘルプ→HTMLヘルプ<br>に変更しているみたいですね。<br>VistaではAP Helpが標準になってHLP形式のヘルプビューアは標準搭載すらされてないので、今後も「通常」と呼ぶのはちょっとどうかな？と思いました。<br>あと、タイプ別設定「支援」画面でのタブ移動順序が変です。</div></section>
+    <ul><li><section><h1 id=5219>
+    <span class="no">[5219]</span>
+    <a class="thread-title" href="#5219">RE: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-12-15T14:45:09">2007年12月15日 14:45</time></h1>
+    <div class="body">&gt;  外部ヘルプ→通常ヘルプ<br>-[[patches:1724317]] 文字コード判別改善（２）codechecker_fix9-2__r1204.patch<br>で入った変更ですね．<br><br>ヘルプに関して言えば(今まで放置していましたが).HLPと.CHMをわざわざ機能として分離すること自体に意味がないと思います．<br>単に外部ヘルプ1, 外部ヘルプ2として，指定されたファイルの拡張子で内部動作を振り分けた方が使いやすいのでは？<br><br>.HLP: WinHLP(選択キーワードがあればそれを検索)<br>.CHM: HTML Help(選択キーワードがあればそれを検索)<br>とすると，ここに<br>.HTM;.HTML : Webブラウザで開く<br>とか<br>http://www.example.com/search?key=<br>とかを入れたくなりますね．しかし，マクロでも同じことができるから無理にそこまでやる必要も無いでしょうけど．<br></div></section>
+    <ul><li><section><h1 id=5220>
+    <span class="no">[5220]</span>
+    <a class="thread-title" href="#5220">Re2: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-12-15T21:04:45">2007年12月15日 21:04</time></h1>
+    <div class="body">テスト版1.6.2.204と比べて妙に遅くなっているような気が<br>するのはさて置きまして、画面確認のためアップしておきました。<br><br>通常ヘルプ→ヘルプ1 (.hlp形式)<br>HTMLヘルプ→ヘルプ2 (.chm形式)<br><br><a href=http://sakura.qp.land.to/?Junk%2F26 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F26</nobr></a></div></section>
+    <ul><li><section><h1 id=5221>
+    <span class="no">[5221]</span>
+    <a class="thread-title" href="#5221">Re3: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-15T22:12:59">2007年12月15日 22:12</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; 通常ヘルプ→ヘルプ1 (.hlp形式)<br>&gt; HTMLヘルプ→ヘルプ2 (.chm形式)<br>[ヘルプ]メニューに表示されるコマンドのほうの名称は以前のままですし、当面は従来のままの名称でいいんじゃないかと思います。<br>パッチ本来の目的とは別の箇所ですし。<br><br>[外部ヘルプ1]コマンドの"1"というのは．．．<br>HTMLヘルプの追加以前はHLPヘルプ２個だったのでしたっけ？</div></section>
+    <ul><li><section><h1 id=5222>
+    <span class="no">[5222]</span>
+    <a class="thread-title" href="#5222">Re4: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-12-16T02:48:54">2007年12月16日 02:48</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; [ヘルプ]メニューに表示されるコマンドのほうの名称は以前のままですし、当面は従来のままの名称でいいんじゃないかと思います。<br>&gt; パッチ本来の目的とは別の箇所ですし。<br><br>とは言っても、paint的に狭いので整理されているようですので、キーワードヘルプを右半分に、"[フォント]"の位置は変えないで、文字コード自動判別を、空いた左半分に、持って来てはどうでしょう。<br>ラスティブさんの物を継承すると、私は楽ですが。</div></section>
+    <ul><li><section><h1 id=5223>
+    <span class="no">[5223]</span>
+    <a class="thread-title" href="#5223">Re5: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-12-16T14:00:45">2007年12月16日 14:00</time></h1>
+    <div class="body">&gt; ▼ ryojiさん<br>&gt; &gt; [ヘルプ]メニューに表示されるコマンドのほうの名称は以前の<br>&gt; &gt; ままですし、当面は従来のままの名称でいいんじゃないかと<br>&gt; &gt;思います。パッチ本来の目的とは別の箇所ですし。<br>&gt; <br>&gt; とは言っても、paint的に狭いので整理されているようですので、<br>&gt; ・・・<br><br>・・・そうなんです。チェックボックスの置き場所に困った<br>ので整理させていただいておりました。<br><br>じゅうじさんの案で変更を加えさせて頂きました。<br><br><a href=http://sakura.qp.land.to/?Junk%2F26 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F26</nobr></a><br><br>使用頻度めちゃ低オプションがmigemo設定より先に目に付くのが<br>少々アレですけども、慣れれば大丈夫ですね（笑い）<br><br>----<br>・Sourceforgeにアップされている最も古いバージョンでは、「外部HTMLヘルプ」コマンドが既に装備されているようです。<br>・テキストエディタ"sakura" Ver 0.3.9.0 (2000-10-11_09) と、テキストエディタ"sakura" Ver (1.3.20.0 2000-10-31_13) の間で、「外部ヘルプ」が「外部ヘルプ１」へ変更になっているようです。<br></div></section>
+    <ul><li><section><h1 id=5224>
+    <span class="no">[5224]</span>
+    <a class="thread-title" href="#5224">Re6: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-16T16:53:43">2007年12月16日 16:53</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; じゅうじさんの案で変更を加えさせて頂きました。<br>レイアウト的にはOKなんじゃないかと思います。<br><br>支援タブに切り替えた直後、従来は、共通設定のほうはEnter(E)チェックボックスに、タイプ別設定のほうは単語ファイルのエディットボックスにフォーカスが行ってたと思いますが、どこにもフォーカスが行かなくなっちゃってますね。<br>細かいので突っ込み入れるのもちょっと恐縮なのですが．．．<br>＃グループボックスは通常はグループの最後にしたほうが何かと都合が良いんじゃないかと(^^;;;</div></section>
+    <ul><li><section><h1 id=5226>
+    <span class="no">[5226]</span>
+    <a class="thread-title" href="#5226">Re7: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-12-16T23:08:17">2007年12月16日 23:08</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; ＃グループボックスは通常はグループの最後にしたほうが何かと都合が良いんじゃないかと(^^;;;<br><br>グループボックスのタブストップを削除するだけで良いように思えます。<br>それと次いでに、タブの順序が共通設定のほうで自動判定が最後になっていますが？<br><br>IDD_PROP_HELPER<br>    GROUPBOX        "入力補完機能",IDC_STATIC,3,3,264,30,WS_GROUP | <br>913:                WS_TABSTOP<br><br>IDD_PROPTYPESP2<br>    GROUPBOX        "入力補完機能",IDC_STATIC,3,3,264,45,WS_GROUP | <br>1714:               WS_TABSTOP</div></section>
+    <ul><li><section><h1 id=5228>
+    <span class="no">[5228]</span>
+    <a class="thread-title" href="#5228">Re8: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-17T00:34:14">2007年12月17日 00:34</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; グループボックスのタブストップを削除するだけで良いように思えます。<br>確認してませんが、たぶんそれでいいでしょうね。<br><br>&gt;＃グループボックスは通常はグループの最後にしたほうが何かと都合が良いんじゃないかと(^^;;;<br>これは単に自分の慣習的なものです。<br>オートラジオボタン(BS_AUTORADIOBUTTON)のグループを作る場合、最初のラジオボタンと最後に置いたグループボックスとにWS_GROUPを付与して自動チェックのグループ範囲にすることがよくあります。<br>最初に読んだWindowsプログラミングの教則本がそうしてたから、昔からそうしてるんですが、皆さんはどうしてるんでしょ？</div></section>
+    <ul><li><section><h1 id=5231>
+    <span class="no">[5231]</span>
+    <a class="thread-title" href="#5231">Re9: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-17T02:28:14">2007年12月17日 02:28</time></h1>
+    <div class="body">余談です。<br>&gt; 最初に読んだWindowsプログラミングの教則本がそうしてたから<br>何かほかにも理由があったような．．．、と妙に気になって記憶をたどってみたら、<br>特定のケース（たぶんサイズ変更可能ダイアログを作ってた時だったと思う）で画面のちらつきを減らすためにグループ内のコントロールにWS_CLIPSIBLINGSを設定したことがあって、そういうときグループボックスが手前にあるとそのコントロールが描画されない、というのがありました。<br>ちょっと特殊なケースだから通常は気にしなくていいのだけど、これも潜在意識に焼き付いてたみたい。(^^;;;</div></section>
+    </li></ul></li><li><section><h1 id=5229>
+    <span class="no">[5229]</span>
+    <a class="thread-title" href="#5229">Re8: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-12-17T00:51:52">2007年12月17日 00:51</time></h1>
+    <div class="body">▼ ryojiさん (&gt;&gt;5224)<br>&gt; 支援タブに切り替えた直後、従来は、共通設定のほうは<br>&gt; Enter(E)チェックボックスに、タイプ別設定のほうは<br>&gt; 単語ファイルのエディットボックスにフォーカスが<br>&gt; 行ってたと思いますが、どこにもフォーカスが行かなく<br>&gt; なっちゃってますね。<br><br>イタタタ。<br>タブを開いていきなりテキスト入力に入られると、<br>例えば 'L' と入力して外部ヘルプの設定欄にジャンプできない問題に<br>対処したつもりだったのですけれど、ついででやるには拙かった<br>かもしれません。はい。<br><br>▼ じゅうじさん(&gt;&gt;5526)<br>&gt; それと次いでに、タブの順序が共通設定のほうで自動判定が<br>&gt; 最後になっていますが？<br><br>これも狙っているんです。が、確かに、使えば使うほど、<br>不自然さが浮き彫りになってきますね・・・これ。<br></div></section>
+    <ul><li><section><h1 id=5230>
+    <span class="no">[5230]</span>
+    <a class="thread-title" href="#5230">Re9: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-17T01:46:58">2007年12月17日 01:46</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; タブを開いていきなりテキスト入力に入られると、<br>&gt; 例えば 'L' と入力して外部ヘルプの設定欄にジャンプできない問題に<br>エディットボックスにフォーカスがあると'L'でジャンプできないのは「問題」じゃなくて「そういうもの」かな。(^^;<br>確実なジャンプ方法は'ALT+L'ですね。</div></section>
+    </li><li><section><h1 id=5234>
+    <span class="no">[5234]</span>
+    <a class="thread-title" href="#5234">Re9: テスト版1.6.2.204の「支援」設定画面</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-12-18T00:11:27">2007年12月18日 00:11</time></h1>
+    <div class="body">修正しました。<br><br><a href=http://sakura.qp.land.to/?Junk%2F26 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F26</nobr></a><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>外部コマンド実行 ExecCommand のヘルプ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">463</span>
+    <a class="thread-title" href="463.html#463">外部コマンド実行 ExecCommand のヘルプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">464</span>
+    <a class="thread-title" href="463.html#464">Re:外部コマンド実行 ExecCommand のヘルプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">465</span>
+    <a class="thread-title" href="463.html#465">Re2:外部コマンド実行 ExecCommand のヘルプ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=463>
+    <span class="no">[463]</span>
+    <a class="thread-title" href="#463">外部コマンド実行 ExecCommand のヘルプ</a>
+    <span class="author">NaKIT</span>
+    <time datetime="2015-03-02T21:25:20">2015年03月02日 21:25</time></h1>
+    <div class="body">バッチスクリプトなどを編集中に，マクロで，<br>ExecCommand "$F", 0<br>を実行したとき，ヘルプを見た限りではカレントディレクトリは不定ですが，実際には開いているファイルのあるディレクトリのようです。<br>ここで，開いているファイルのあるディレクトリでの実行を確実にしようとして，<br>ExecCommand "$F", &amp;h0200, "$e"<br>とすると，失敗してしまいます。どうやら，特殊文字が利用できるのは，実行するコマンド文字列のみのようです。結局，期待通りの結果を得るには，<br>ExecCommand "$F", &amp;h0200, ExpandParameter("$e")<br>としなければなりません。<br><br>上記はちょっと罠っぽいので，<br>・カレントディレクトリを指定しないとき，コマンドがどこで実行されるのか（不定，または，開いているファイルのパス）。<br>・特殊文字が使えるのはコマンド文字列であること。<br>を明確にしておいていただけるとよいなと思いました。</div></section>
+    <ul><li><section><h1 id=464>
+    <span class="no">[464]</span>
+    <a class="thread-title" href="#464">Re:外部コマンド実行 ExecCommand のヘルプ</a>
+    <span class="author">もか</span>
+    <time datetime="2015-03-03T17:24:48">2015年03月03日 17:24</time></h1>
+    <div class="body">改善案ありがとうございます。<br>該当箇所に追記しました。これでどうでしょうか。<br><a href=https://sourceforge.net/p/sakura-editor/code/4014/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>4014/<wbr></nobr></a></div></section>
+    <ul><li><section><h1 id=465>
+    <span class="no">[465]</span>
+    <a class="thread-title" href="#465">Re2:外部コマンド実行 ExecCommand のヘルプ</a>
+    <span class="author">NaKIT</span>
+    <time datetime="2015-03-03T22:44:33">2015年03月03日 22:44</time></h1>
+    <div class="body">&gt; <a href=https://sourceforge.net/p/sakura-editor/code/4014/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>4014/<wbr></nobr></a><br>ありがとうございます。あいまいさがなくなりました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

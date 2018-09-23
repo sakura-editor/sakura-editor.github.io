@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>物理行とレイアウト行と | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4663</span>
+    <a class="thread-title" href="4663.html#4663">物理行とレイアウト行と</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4672</span>
+    <a class="thread-title" href="4663.html#4672">Re:物理行とレイアウト行と</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4663>
+    <span class="no">[4663]</span>
+    <a class="thread-title" href="#4663">物理行とレイアウト行と</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-01-20T17:37:03">2007年01月20日 17:37</time></h1>
+    <div class="body">物理行とレイアウト行の誤りというのがこれまでも何度かあったと思いますが，レイアウト行内の物理桁位置を受け取る関数もあるんですね．この3種類を間違えずに使うのは結構難しいかも．<br><br>それぞれに異なる型を作って，互いに代入出来ないように...今からするのも難しいですよね．どこも見た瞬間に判断出来るようには作ってないですし，変換結果を同じ変数に入れている場合もあります．<br><br>既存部分はそのままに新たに変更する部分にのみ適用できて，間違いを機械的に(コンパイルエラーなどで)検出出来る方法って無いでしょうか．<br></div></section>
+    <ul><li><section><h1 id=4672>
+    <span class="no">[4672]</span>
+    <a class="thread-title" href="#4672">Re:物理行とレイアウト行と</a>
+    <span class="author">dskoba</span>
+    <time datetime="2007-02-09T23:16:03">2007年02月09日 23:16</time></h1>
+    <div class="body">class CPhysicalLine {<br>public:<br>  CPhysicalLine() {};<br>  ~CPhysicalLine() {};<br><br>  CPhysicalLine&amp; operator =(int i) {<br>    n = i;<br>    return *this;<br>  }<br>  operator int() { return n; }<br>  operator const int() const { return n; }<br>  friend int operator +(const CPhysicalLine&amp;, const CPhysicalLine&amp;);<br>  friend int operator +(const CPhysicalLine&amp;,const int);<br>  friend int operator +(const int,const CPhysicalLine&amp;);<br>  friend int operator -(const CPhysicalLine&amp;, const CPhysicalLine&amp;);<br>  friend int operator -(const CPhysicalLine&amp;,const int);<br>  friend int operator -(const int,const CPhysicalLine&amp;);<br>  friend void operator +=(CPhysicalLine&amp;, const int);<br>private:<br>  int&#9;n;<br>};<br><br>class CLayout<br>{<br>...<br>//  int           m_nLinePhysical;<br>    CPhysicalLine m_nLinePhysical;<br>...<br>};<br><br>こういうコードが良いのかどうかよく分かりませんが，こんな感じでどうでしょうかね。<br>関数の引数にした場合，int型を渡しても引数付きコンストラクタが無いのでコンパイルエラーになるのではないかと。<br></div></section>
+    </li></ul></li></ul></body></html>

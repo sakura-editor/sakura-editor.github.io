@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>右ボタンでのファイルドロップ機能拡張 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5357</span>
+    <a class="thread-title" href="5357.html#5357">右ボタンでのファイルドロップ機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5371</span>
+    <a class="thread-title" href="5357.html#5371">Re:右ボタンでのファイルドロップ機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5372</span>
+    <a class="thread-title" href="5357.html#5372">Re2:右ボタンでのファイルドロップ機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5373</span>
+    <a class="thread-title" href="5357.html#5373">Re3:右ボタンでのファイルドロップ機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5374</span>
+    <a class="thread-title" href="5357.html#5374">Re4:右ボタンでのファイルドロップ機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5375</span>
+    <a class="thread-title" href="5357.html#5375">Re5:右ボタンでのファイルドロップ機能拡張</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5762</span>
+    <a class="thread-title" href="5357.html#5762">Re4:右ボタンでのファイルドロップ機能拡張</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5385</span>
+    <a class="thread-title" href="5357.html#5385">Re:右ボタンでのファイルドロップ機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5387</span>
+    <a class="thread-title" href="5357.html#5387">Re2:右ボタンでのファイルドロップ機能拡張</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5389</span>
+    <a class="thread-title" href="5357.html#5389">Re:右ボタンでのファイルドロップ機能拡張</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5398</span>
+    <a class="thread-title" href="5357.html#5398">Re:右ボタンでのファイルドロップ機能拡張</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5514</span>
+    <a class="thread-title" href="5357.html#5514">Re:右ボタンでのファイルドロップ機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5515</span>
+    <a class="thread-title" href="5357.html#5515">Re2:右ボタンでのファイルドロップ機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5746</span>
+    <a class="thread-title" href="5357.html#5746">Re3:右ボタンでのファイルドロップ機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5747</span>
+    <a class="thread-title" href="5357.html#5747">Re4:右ボタンでのファイルドロップ機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5748</span>
+    <a class="thread-title" href="5357.html#5748">Re5:右ボタンでのファイルドロップ機能拡張</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5517</span>
+    <a class="thread-title" href="5357.html#5517">GrepへのDrag &amp; Dropフォルダパス貼り付けが動作しない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5522</span>
+    <a class="thread-title" href="5357.html#5522">Re:GrepへのDrag &amp; Dropフォルダパス貼り付けが動作しない</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5357>
+    <span class="no">[5357]</span>
+    <a class="thread-title" href="#5357">右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-21T15:13:45">2008年06月21日 15:13</time></h1>
+    <div class="body">&gt;&gt;5344 で話題になっているパス貼り付けと同類ですが、右ボタンでのファイルドロップ機能拡張を作ってみました。<br><br>→Patches#1999317<br><br>エクスプローラでファイル選択し、それをマウス右ボタンでサクラにドロップしたときにポップアップメニューを出し、<br><br>・パス名貼り付け<br>・ファイル名貼り付け<br>・ファイルを開く<br><br>から動作を選択できるようにしています。<br>今はこれだけですが、「ファイルをここに挿入」など、各種の機能拡張も可能だと思います。<br>パス名、ファイル名は選択状態で貼り付けるようにしているので、そのまま選択範囲ソートしたり、コピーして他アプリに貼り付けるなどの連続操作は容易かも、です。</div></section>
+    <ul><li><section><h1 id=5371>
+    <span class="no">[5371]</span>
+    <a class="thread-title" href="#5371">Re:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-25T22:06:35">2008年06月25日 22:06</time></h1>
+    <div class="body">a1.txtからa10.txtがありそれらを選択しa5.txtを右ボタンでサクラエディタへドロップ＆ファイル名貼り付けすると、下記のような並びとなります。<br>　a5.txt<br>　a10.txt<br>　a2.txt<br>　a3.txt<br>　a4.txt<br>　a1.txt<br>　a6.txt<br>　a7.txt<br>　a8.txt<br>　a9.txt<br><br>ドラッグの開始点となったa5.txtが先頭のa1.txtと入れ替わった状態なんですが、この動作分かり辛くないでしょうか？<br>慣れれば問題なくなると思いますが、最初はとまどうような気がします。<br></div></section>
+    <ul><li><section><h1 id=5372>
+    <span class="no">[5372]</span>
+    <a class="thread-title" href="#5372">Re2:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-25T23:01:23">2008年06月25日 23:01</time></h1>
+    <div class="body">エクスプローラ側がそのような順序で格納して渡してくるというだけで、サクラ側では何も加工していません。<br><br>エクスプローラの仕様ですが、何かそれで困ることがあるでしょうか。<br>サクラ側からはエクスプローラ上でどのように並んでいたのかを調べるようなことはしていません。まぁ、調べてほしいと言われても、たぶん出来ない相談だと思いますけど。CF_HDROPのドラッグ元はエクスプローラとは限らない（別の知らないファイラかもしれない）ですし。</div></section>
+    <ul><li><section><h1 id=5373>
+    <span class="no">[5373]</span>
+    <a class="thread-title" href="#5373">Re3:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-26T03:50:49">2008年06月26日 03:50</time></h1>
+    <div class="body">▼ ryojiさん<br>うーん、別に困ることはないと思います。<br>困るかどうかということではなく、戸惑わないだろうかということで、BBS等で何度かネタになるかも……程度の話です (^^;<br>私自身は動き方が分かりましたのでこのままでも構いません。<br>それに、たまにですがパスやファイル名が欲しい時がありますのでこれ自体は組み込んで欲しい機能です。<br>ですのでコミットOKと思います。<br>貼り付けパッチの方はそれで並び替えしてるんでしょうかね？<br></div></section>
+    <ul><li><section><h1 id=5374>
+    <span class="no">[5374]</span>
+    <a class="thread-title" href="#5374">Re4:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-26T19:17:14">2008年06月26日 19:17</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; 困るかどうかということではなく、戸惑わないだろうかということで、BBS等で何度かネタになるかも……程度の話です (^^;<br><br>慣れてない人は、何で？と思うでしょうね。こういう機能を持ったアプリ自体が多くは無いので。。。<br>MS Word も同様な操作（「ここにハイパーリンクを作成」）でパス名を貼り付けることができるのですが、やはりエクスプローラからのデータを加工しないで貼り付けるので、現状パッチと同じ順序になります。<br><br>そういえば、&gt;&gt;dev:5371の例を見ていて思い出したんですが、<br><br>test1.txt<br>test2.txt<br>test10.txt<br>test20.txt<br><br>というファイルがあるとき、XP 以降のエクスプローラで名前順ソートすると上記のとおりの並び順になります。<br>2000 以前のエクスプローラでは、<br><br>test1.txt<br>test10.txt<br>test2.txt<br>test20.txt<br><br>という並びになります。XP 以降のように数字を数値として比較はしてくれません。<br><br>どっちの場合でも、それらを選択して test1.txt を右ボタンでドロップすればエクスプローラの表示順そのままで貼り付けることができます。<br>通常のソート関数でソートしてからだと 2000 のエクスプローラの並びになると思います。誰か XP のエクスプローラの並びにするソート関数知ってますか？(^^;;;<br>無条件にソートしたものを貼り付ける、という仕様にするのは簡単ですが、貼り付けたあとでエクスプローラの表示順にソートすることは常人には無理、と思います。<br><br>ちなみに XP で、<br>dir /B /O:N<br>とコマンドを打っても 2000 の並びにしかならない。<br><br>&gt; 私自身は動き方が分かりましたのでこのままでも構いません。<br><br>このようにすぐに慣れる話なので、現行の仕様でちょっとしたコツ（エクスプローラ側の動作仕様）を覚えてもらうほうが、柔軟な使い方ができて良い気がします。<br><br>&gt; それに、たまにですがパスやファイル名が欲しい時がありますのでこれ自体は組み込んで欲しい機能です。<br>&gt; ですのでコミットOKと思います。<br><br>需要はそれなりにある、と考えていいんでしょうかね？<br>自家製サクラに適用できれば取り込まれなくてもいいや、程度の考えでしたが、コードレビューまでしてくれる方がいらっしゃるようなら、コミットしようと思います。</div></section>
+    <ul><li><section><h1 id=5375>
+    <span class="no">[5375]</span>
+    <a class="thread-title" href="#5375">Re5:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-26T21:47:51">2008年06月26日 21:47</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; そういえば、&gt;&gt;dev:5371の例を見ていて思い出したんですが、<br>&gt; <br>&gt; test1.txt<br>&gt; test2.txt<br>&gt; test10.txt<br>&gt; test20.txt<br>&gt; <br>&gt; というファイルがあるとき、XP 以降のエクスプローラで名前順ソートすると上記のとおりの並び順になります。<br>&gt; 2000 以前のエクスプローラでは、<br>&gt; <br>&gt; test1.txt<br>&gt; test10.txt<br>&gt; test2.txt<br>&gt; test20.txt<br>&gt; <br>&gt; という並びになります。XP 以降のように数字を数値として比較はしてくれません。<br><br>そう言えばそうですね。2kとXP両方使ってるのに何も感じてませんでした (^^;<br><br>&gt; どっちの場合でも、それらを選択して test1.txt を右ボタンでドロップすればエクスプローラの表示順そのままで貼り付けることができます。<br>&gt; 通常のソート関数でソートしてからだと 2000 のエクスプローラの並びになると思います。誰か XP のエクスプローラの並びにするソート関数知ってますか？(^^;;;<br>&gt; 無条件にソートしたものを貼り付ける、という仕様にするのは簡単ですが、貼り付けたあとでエクスプローラの表示順にソートすることは常人には無理、と思います。<br><br>StrCmpLogicalW かな？使ったことないですが……<br><br>&gt; 需要はそれなりにある、と考えていいんでしょうかね？<br>&gt; 自家製サクラに適用できれば取り込まれなくてもいいや、程度の考えでしたが、コードレビューまでしてくれる方がいらっしゃるようなら、コミットしようと思います。<br><br>需要はあると思うのですが……<br>欲しい機能なので当然ソースは見てるのですが恥ずかしい話OKと言える程分かってないです (^^;<br>だれかレビューお願いします m(_ _)m<br></div></section>
+    </li></ul></li><li><section><h1 id=5762>
+    <span class="no">[5762]</span>
+    <a class="thread-title" href="#5762">Re4:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">rasti</span>
+    <time datetime="2016-09-20T19:03:20">2016年09月20日 19:03</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; ▼ ryojiさん<br>&gt; うーん、別に困ることはないと思います。<br>&gt; 困るかどうかということではなく、戸惑わないだろうかということで、BBS等で何度かネタになるかも……程度の話です (^^;<br>&gt; 私自身は動き方が分かりましたのでこのままでも構いません。<br>&gt; それに、たまにですがパスやファイル名が欲しい時がありますのでこれ自体は組み込んで欲しい機能です。<br>&gt; ですのでコミットOKと思います。<br>&gt; 貼り付けパッチの方はそれで並び替えしてるんでしょうかね？<br><br>なすこじな こう@up8-2 はかかないけどな<br>ryoji な こう@up9-3 はかかない<br>かかない<br><br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=5385>
+    <span class="no">[5385]</span>
+    <a class="thread-title" href="#5385">Re:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">あひる</span>
+    <time datetime="2008-07-14T17:39:10">2008年07月14日 17:39</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; &gt;&gt;5344 で話題になっているパス貼り付けと同類ですが、右ボタンでのファイルドロップ機能拡張を作ってみました。<br>この右クリックD&amp;Dを本体に取り込めば&gt;&gt;5344はリリース不要かと思いますがどうでしょうか？<br>サクラエディタが起動している状態では常にエクスプローラの動作をサクラが監視しているというのは気分が悪いです。<br>（オプション化されていれば話は別ですがそうはなっていないみたいなので。。。）<br><br>必要な時にパスコピーできる今回の修正だけをリリースで良いと思います。</div></section>
+    <ul><li><section><h1 id=5387>
+    <span class="no">[5387]</span>
+    <a class="thread-title" href="#5387">Re2:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-16T19:01:50">2008年07月16日 19:01</time></h1>
+    <div class="body">▼ あひるさん<br>&gt; サクラエディタが起動している状態では常にエクスプローラの動作をサクラが監視しているというのは気分が悪いです。<br>&gt; （オプション化されていれば話は別ですがそうはなっていないみたいなので。。。）<br><br>ペーストや全て置換が指令された時にクリップボードの形式を確認しています。<br>なので常に監視しているわけではないのですが、ダメでしょうか？<br><br>件のパッチはファイルパスをクリップボードにコピーしたままにしておけるのが便利だと思うので、実は両方コミットして欲しいです (^^;<br></div></section>
+    </li></ul></li><li><section><h1 id=5389>
+    <span class="no">[5389]</span>
+    <a class="thread-title" href="#5389">Re:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-21T02:33:20">2008年07月21日 02:33</time></h1>
+    <div class="body">▼ ryojiさん<br>がんばってソースコードを確認しました (^^;<br>ANSI版、unicode版共にコミットOKと思います。<br></div></section>
+    </li><li><section><h1 id=5398>
+    <span class="no">[5398]</span>
+    <a class="thread-title" href="#5398">Re:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">あひる</span>
+    <time datetime="2008-08-04T12:17:51">2008年08月04日 12:17</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; &gt;&gt;5344 で話題になっているパス貼り付けと同類ですが、右ボタンでのファイルドロップ機能拡張を作ってみました。<br>&gt; <br>&gt; →Patches#1999317<br>&gt; <br>&gt; エクスプローラでファイル選択し、それをマウス右ボタンでサクラにドロップしたときにポップアップメニューを出し、<br>&gt; <br>&gt; ・パス名貼り付け<br>&gt; ・ファイル名貼り付け<br>&gt; ・ファイルを開く<br>&gt; <br>&gt; から動作を選択できるようにしています。<br>&gt; 今はこれだけですが、「ファイルをここに挿入」など、各種の機能拡張も可能だと思います。<br><br>・パス名貼り付け(UNC変換)<br>というのはできないでしょうか？<br>ネットワークドライブ以下のファイルやフォルダのパスを<br>UNCパスに変換して取得できると何かと便利です。</div></section>
+    </li><li><section><h1 id=5514>
+    <span class="no">[5514]</span>
+    <a class="thread-title" href="#5514">Re:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">神楽</span>
+    <time datetime="2009-01-08T08:04:47">2009年01月08日 08:04</time></h1>
+    <div class="body">アクティブウインドウがサクラエディタの状態でGrep条件入力ダイアログで出した場合に、<br>右D&amp;Dでフォルダ(O)テキストボックスにフォルダパス貼り付けができなくなったようです。<br>（タスクトレイからGrep条件入力ダイアログを出した場合は問題なさそうです）</div></section>
+    <ul><li><section><h1 id=5515>
+    <span class="no">[5515]</span>
+    <a class="thread-title" href="#5515">Re2:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-01-09T01:40:30">2009年01月09日 01:40</time></h1>
+    <div class="body">▼ 神楽さん<br>&gt; アクティブウインドウがサクラエディタの状態でGrep条件入力ダイアログで出した場合に、<br>&gt; 右D&amp;Dでフォルダ(O)テキストボックスにフォルダパス貼り付けができなくなったようです。<br><br>現象を確認しました。<br>左ドロップでもテキストボックスに貼り付けできなくなってて、これはまずいですね。orz<br><br>どうやらタイトルバー上やツールバー上など、ビューの外で右ドロップしたときにもメニューが出るようにしたのと機能的にバッティングしているようです（ビュー外での右ドロップと左ドロップを別挙動にするとＮＧ）。<br><br>ビュー内での右ドロップは現状どおりメニュー表示し、ビュー外での右ドロップは左ドロップと同じ動作（ファイルを開く）に戻せば、Grepダイアログも元の動作に戻るようなので、そのように修正しようかと思います。<br><br>＃バッティング回避策が見つかればそちらを優先しますけど...</div></section>
+    <ul><li><section><h1 id=5746>
+    <span class="no">[5746]</span>
+    <a class="thread-title" href="#5746">Re3:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">神楽</span>
+    <time datetime="2012-05-29T06:44:55">2012年05月29日 06:44</time></h1>
+    <div class="body">▼ ryojiさん<br>V2.0.5.0でビュー内での右ドロップで任意カーソル位置への右クリックメニューによる<br>ファイルパス貼り付けが機能しなくなっているようです。<br>ツールバー等のビュー外では右ドロップで右クリックメニューが表示されています。</div></section>
+    <ul><li><section><h1 id=5747>
+    <span class="no">[5747]</span>
+    <a class="thread-title" href="#5747">Re4:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">ryoji</span>
+    <time datetime="2012-06-02T02:02:00">2012年06月02日 02:02</time></h1>
+    <div class="body">いろいろ試してみましたが、こちらでは特に問題なく動作しています。<br>sakura: V2.0.5.0<br>OS: 2000, XP, Vista, Win7(x86/x64)の各環境ひととおり<br><br>・以前のバージョンに戻したら機能するのか<br>・相性の悪い常駐ソフトなどが無いか<br>など、ご利用の環境を確認してみてください。</div></section>
+    <ul><li><section><h1 id=5748>
+    <span class="no">[5748]</span>
+    <a class="thread-title" href="#5748">Re5:右ボタンでのファイルドロップ機能拡張</a>
+    <span class="author">神楽</span>
+    <time datetime="2012-06-02T16:17:53">2012年06月02日 16:17</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; いろいろ試してみましたが、こちらでは特に問題なく動作しています。<br>&gt; sakura: V2.0.5.0<br>&gt; OS: 2000, XP, Vista, Win7(x86/x64)の各環境ひととおり<br>&gt; <br>&gt; ・以前のバージョンに戻したら機能するのか<br>&gt; ・相性の悪い常駐ソフトなどが無いか<br>&gt; など、ご利用の環境を確認してみてください。<br><br>以前のバージョンに戻すというか、不具合に気付いたのが1.6.6.0と2.0.5.0を二重起動させて、<br>挙動が1.6.6.0から2.0.5.0で違いがあったからでした（ビュー内に右ドロップしてもカーソル位置を選択できず、<br>そのまま通常の左ドロップによる複数ファイルオープンのように動作）。<br><br>ただし申し訳ありませんが諸事情により当該環境のXPproSP3の環境を別OSでクリーンインストールしてしまったため、<br>もう再現させることはできません、<br><br>またMAC OS X上のゲストOSとしてWin8 Consumer Preview版で、2.0.5.0を起動してみたところ<br>想定通りの動作をしましたので、本件クローズとさせて頂きます。<br>ご調査頂き、どうもありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=5517>
+    <span class="no">[5517]</span>
+    <a class="thread-title" href="#5517">GrepへのDrag &amp; Dropフォルダパス貼り付けが動作しない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-01-10T23:01:04">2009年01月10日 23:01</time></h1>
+    <div class="body">わずか数行の修正で解決しました。（ビュー外の右ドロップと左ドロップを同じ動作に戻さなくてもできた）<br><br>Patches#2497740<br><br>95/98/Me/NT/2k/XP/Vistaの各環境で動作確認済みです。</div></section>
+    <ul><li><section><h1 id=5522>
+    <span class="no">[5522]</span>
+    <a class="thread-title" href="#5522">Re:GrepへのDrag &amp; Dropフォルダパス貼り付けが動作しない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-01-12T12:19:09">2009年01月12日 12:19</time></h1>
+    <div class="body">rev1507でcommitしました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

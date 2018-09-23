@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>スタートアップマクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4501</span>
+    <a class="thread-title" href="4501.html#4501">スタートアップマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4502</span>
+    <a class="thread-title" href="4501.html#4502">Re:スタートアップマクロ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4503</span>
+    <a class="thread-title" href="4501.html#4503">Re: スタートアップマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4506</span>
+    <a class="thread-title" href="4501.html#4506">Re2: スタートアップマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4560</span>
+    <a class="thread-title" href="4501.html#4560">自動実行マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4562</span>
+    <a class="thread-title" href="4501.html#4562">Re:自動実行マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4565</span>
+    <a class="thread-title" href="4501.html#4565">Re2:自動実行マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4566</span>
+    <a class="thread-title" href="4501.html#4566">Re3:自動実行マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4567</span>
+    <a class="thread-title" href="4501.html#4567">Re4:自動実行マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4568</span>
+    <a class="thread-title" href="4501.html#4568">Re5:自動実行マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4569</span>
+    <a class="thread-title" href="4501.html#4569">Re6:自動実行マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4571</span>
+    <a class="thread-title" href="4501.html#4571">Re7:自動実行マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4573</span>
+    <a class="thread-title" href="4501.html#4573">Re8:自動実行マクロ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4579</span>
+    <a class="thread-title" href="4501.html#4579">Re:自動実行マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4580</span>
+    <a class="thread-title" href="4501.html#4580">Re2:自動実行マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4581</span>
+    <a class="thread-title" href="4501.html#4581">Re3:自動実行マクロ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4582</span>
+    <a class="thread-title" href="4501.html#4582">Re:スタートアップマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4584</span>
+    <a class="thread-title" href="4501.html#4584">Re2:スタートアップマクロ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4501>
+    <span class="no">[4501]</span>
+    <a class="thread-title" href="#4501">スタートアップマクロ</a>
+    <span class="author">(全略)</span>
+    <time datetime="2006-07-03T23:10:42">2006年07月03日 23:10</time></h1>
+    <div class="body">ユーザのマクロ実行以外の動作をした時に実行されるマクロがあってもいいんじゃないかな思いますが、どうでしょう?<br><br>簡単なものではスタートアップマクロとか<br>一番最初に開いた時に実行されるという程度のものなら<br>CEditWnd::Createの最後に<br><br>if(m_cEditDoc.m_pcSMacroMgr-&gt;IsEnabled(0)) {m_cEditDoc.HandleCommand(F_USERMACRO_0);}<br><br>と入れるだけです(マクロの0番を実行します)<br><br>こういうのがあると &gt;&gt;data:5292 で出たようなファイルの中身を見て文字コードの変更なども<br>ユーザ側で対応できるんじゃないでしょうか?<br>自家製のマクロではファイル名を見て文字コード切り替えたり<br>タブサイズ変えたり、ファイル先頭の #!/usr/local/bin/hoge を見て拡張子の設定変えたりさせてます<br><br>あると便利ですよ^-^</div></section>
+    <ul><li><section><h1 id=4502>
+    <span class="no">[4502]</span>
+    <a class="thread-title" href="#4502">Re:スタートアップマクロ</a>
+    <span class="author">maru</span>
+    <time datetime="2006-07-03T23:20:18">2006年07月03日 23:20</time></h1>
+    <div class="body">▼ (全略)さん<br>&gt; 簡単なものではスタートアップマクロとか<br>ぜひとも取り入れていただきたいですね^^</div></section>
+    </li><li><section><h1 id=4503>
+    <span class="no">[4503]</span>
+    <a class="thread-title" href="#4503">Re: スタートアップマクロ</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-07-04T00:34:21">2006年07月04日 00:34</time></h1>
+    <div class="body">あると便利という点は賛成です．<br><br>以前ちょっと考えたときは，引数でマクロファイル名を渡すことばかり考えていて結構複雑になりそうだと思っていましたが，登録マクロの１つをスタートアップマクロにするのであれば簡単に出来そうですね．<br><br>もしかして，もう出来てます？щ(゜д゜щ)カモーン<br></div></section>
+    <ul><li><section><h1 id=4506>
+    <span class="no">[4506]</span>
+    <a class="thread-title" href="#4506">Re2: スタートアップマクロ</a>
+    <span class="author">(全略)</span>
+    <time datetime="2006-07-05T23:35:53">2006年07月05日 23:35</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; もしかして，もう出来てます？щ(゜д゜щ)カモーン<br>マクロ0番を・・・というヤツなら自家製版で組み込んでます<br>って言ってもほんとに上のコメントにある1行いれただけなんですけどね<br>http://qwerty.s2.xrea.com/XA5B5A5AFA5E9A5A8A5C7A5A3A5BF2FA5B5A5AF<br>A5E9A5A8A5C7A5A3A5BFXJRegex.xhtml<br>の2005/10/19版ですか<br># ドキュメントで一切触れてないほどいい加減なヤツですが^^;<br><br>自分で入れろって事ですかね<br>svnの使い方覚えてみます(&gt;_&lt;)</div></section>
+    <ul><li><section><h1 id=4560>
+    <span class="no">[4560]</span>
+    <a class="thread-title" href="#4560">自動実行マクロ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-01T23:16:48">2006年09月01日 23:16</time></h1>
+    <div class="body">(全略)さんのコードを参考に作ってみました。<br><br>Patches#1550557<br><br>自動実行マクロ（３種類）に任意番号のマクロを<br>割り当てられるようにしています。</div></section>
+    <ul><li><section><h1 id=4562>
+    <span class="no">[4562]</span>
+    <a class="thread-title" href="#4562">Re:自動実行マクロ</a>
+    <span class="author">maru</span>
+    <time datetime="2006-09-02T12:08:40">2006年09月02日 12:08</time></h1>
+    <div class="body">▼ ryojiさん<br>１．開くときのマクロでS_FileNewを使用すると無限ループ<br>→使う人が気をつける話なので無視<br><br>２．開くときのマクロでS_Grepを使用すると無限ループ<br>→ユーザー責任とするかどうかは微妙<br><br>３．アウトプットウインドウが表示されていない状態で開くときのマクロにS_ExecCommand(標準出力を得る)とかS_TraceOutとかを使用すると「エディタまたはシステムがビジー状態です。しばらく待って開きなおしてください。」「プロセスの起動に失敗しました」<br>→これはちょっと不便な感じです<br><br><br>現仕様はアウトプットウインドウもGrepウインドウも新規作成もすべて '(無題)' として、マクロ側からは同じに見えるので、マクロ側での回避は難しいです。<br></div></section>
+    <ul><li><section><h1 id=4565>
+    <span class="no">[4565]</span>
+    <a class="thread-title" href="#4565">Re2:自動実行マクロ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-03T03:34:54">2006年09月03日 03:34</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 現仕様はアウトプットウインドウもGrepウインドウも新規作成もすべて '(無題)' として、マクロ側からは同じに見えるので、マクロ側での回避は難しいです。<br><br>そもそもアウトプットやGrepでは自動実行しないほうがいいのかな？<br>とりあえず、２や３についてマクロ側で回避できるようしたものをUpしておきました。<br>自分はあまり凝ったマクロを組むことが無いので、maru さんのように評価してくださる方がいると助かります。</div></section>
+    <ul><li><section><h1 id=4566>
+    <span class="no">[4566]</span>
+    <a class="thread-title" href="#4566">Re3:自動実行マクロ</a>
+    <span class="author">maru</span>
+    <time datetime="2006-09-03T17:10:06">2006年09月03日 17:10</time></h1>
+    <div class="body">▼ ryojiさん<br>個人的にはかなり理想形です。<br><br>ただ実際には、バグだとか不親切だとかの指摘が来そうな予感がするので、やはりryoujiさんのおっしゃる通りアウトプットやGrepでは自動実行を止めたほうがいいかも知れません。<br>想像するシナリオとしては、マクロを初めて使用する人が設定を誤って、「サクラエディタが突然起動できなくなりました」とか。<br></div></section>
+    <ul><li><section><h1 id=4567>
+    <span class="no">[4567]</span>
+    <a class="thread-title" href="#4567">Re4:自動実行マクロ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-04T01:38:10">2006年09月04日 01:38</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ただ実際には、バグだとか不親切だとかの指摘が来そうな予感がするので、やはりryoujiさんのおっしゃる通りアウトプットやGrepでは自動実行を止めたほうがいいかも知れません。<br>アウトプットやGrepウィンドウが開かれるときは「新規／開ファイル」マクロは自動実行しないようにしました。<br>その他細部仕様については、どんなマクロが登場するかも未知なので利用／評価してもらいながら微調整していくのがいいかな～、と思います。</div></section>
+    <ul><li><section><h1 id=4568>
+    <span class="no">[4568]</span>
+    <a class="thread-title" href="#4568">Re5:自動実行マクロ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-05T00:46:23">2006年09月05日 00:46</time></h1>
+    <div class="body">今回の自動実行にはこれくらい欲しいだろうと思われるマクロ関数を３つ追加してみました。<br>見送りになったPatches#1542670「ExpandParameterの条件文字追加」の中にあったタイプ判別を別の関数型でできるようにしています。<br>＃汎用性は持たせたつもりですが... (^^;</div></section>
+    <ul><li><section><h1 id=4569>
+    <span class="no">[4569]</span>
+    <a class="thread-title" href="#4569">Re6:自動実行マクロ</a>
+    <span class="author">maru</span>
+    <time datetime="2006-09-05T23:14:35">2006年09月05日 23:14</time></h1>
+    <div class="body">▼ ryojiさん<br>きわどそうなマクロを自動実行でいろいろテストしてみて<br>いまのところ特に問題は出ていません。<br><br>&gt; タイプ判別を別の関数型でできるようにしています<br>ありがとうございます！<br><br>ところで、S_IsSameTypeExtとS_GetSaveFileNameの<br>使いどころがいまひとつ分かりません(^^;;<br>どういう用途を想定したものでしょうか？</div></section>
+    <ul><li><section><h1 id=4571>
+    <span class="no">[4571]</span>
+    <a class="thread-title" href="#4571">Re7:自動実行マクロ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-06T00:42:05">2006年09月06日 00:42</time></h1>
+    <div class="body">&gt; きわどそうなマクロを自動実行でいろいろテストしてみて<br>&gt; いまのところ特に問題は出ていません。<br><br>評価ありがとうございます。<br>その「いろいろ」が自分ではあまり思いつかないだけに、自信が無く...<br><br>&gt; ところで、S_IsSameTypeExtとS_GetSaveFileNameの<br>&gt; 使いどころがいまひとつ分かりません(^^;;<br>&gt; どういう用途を想定したものでしょうか？<br><br>普段の自分の作業を思い返したとき、「新規」でウィンドウを開いてそこにパタパタと何か入力したり他ファイルからコピペしたあとで名前をつけて保存するということがちょくちょくあります。<br>それだと保存時まで名無しで基本タイプのままになるわけですが、そんなときも保存時の拡張子に対応したタイプで自動整形したい、ってことがあるかなと。<br>あと、タイプは同じでも作業ごとにフォルダを分けていて、それぞれ名前をつけて保存する際に違う整形を施したい、というような場合とか。</div></section>
+    <ul><li><section><h1 id=4573>
+    <span class="no">[4573]</span>
+    <a class="thread-title" href="#4573">Re8:自動実行マクロ</a>
+    <span class="author">maru</span>
+    <time datetime="2006-09-06T23:58:45">2006年09月06日 23:58</time></h1>
+    <div class="body">▼ ryojiさん<br>ご説明ありがとうございます。<br>本来あってもよさそうなS_FileSaveAsDialogのような関数<br>がないからですね、きっと。<br><br>で、S_IsSameTypeExtのほうですが<br>ごめんなさいやっぱり分かりません。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=4579>
+    <span class="no">[4579]</span>
+    <a class="thread-title" href="#4579">Re:自動実行マクロ</a>
+    <span class="author">miau</span>
+    <time datetime="2006-09-12T09:16:15">2006年09月12日 09:16</time></h1>
+    <div class="body">遅ればせながら使ってみました。<br>色々と可能性が広がって嬉しい限りなんですけど、何点か要望が。<br><br>・元々行おうとした動作をキャンセルする方法があるとさらに便利かも？<br>　例えばファイルを開く際の自動実行に<br>　「ファイルサイズが 10 MB 以上であれば本当に開くか確認する」<br>　マクロを登録したい場合や、ファイル保存前の自動実行に<br>　「改行コードが混在していればダイアログ表示して保存を行わない」<br>　マクロを登録したい場合にも対応できると嬉しいです。<br><br>・一つのイベントに複数のマクロを関連づけることができると良いかも？<br>　今後便利な自動実行マクロが公開されたときに、<br>　あるものは .vbs、あるものは .js という状況だと困りますので。<br></div></section>
+    <ul><li><section><h1 id=4580>
+    <span class="no">[4580]</span>
+    <a class="thread-title" href="#4580">Re2:自動実行マクロ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-13T01:46:28">2006年09月13日 01:46</time></h1>
+    <div class="body">ご意見ありがとうございます。<br><br>&gt; ・元々行おうとした動作をキャンセルする方法があるとさらに便利かも？<br><br>これは、マクロから実行結果を本体に返してもらうようなインターフェースの追加が必要になりますね。<br>今はちょっとどんな具合にしたらいいか思いつきませんが...<br><br>&gt; 　例えばファイルを開く際の自動実行に<br>&gt; 　「ファイルサイズが 10 MB 以上であれば本当に開くか確認する」<br><br>これについては「開ファイル前」マクロを追加することが前提になると思います。<br>ただ、他に用途があまりないようなら、「開ファイル前」マクロの追加ではなく、本体にファイル読み込み途中でキャンセルできる機能が追加されるほうが嬉しいかも。<br><br>&gt; 　「改行コードが混在していればダイアログ表示して保存を行わない」<br>&gt; 　マクロを登録したい場合にも対応できると嬉しいです。<br><br>現状のイベントマクロでキャンセルの用途があるとすれば、このようなファイル保存前処理になるかと思います。<br>sakura は保存後でも UNDO が効くので、警告メッセージを出すだけで無条件に改行コードを統一保存してしまってもさほど支障はなさそうな気もします。他エディタの多くは警告すら出さずに無条件統一するのが普通ですし。<br><br>&gt; ・一つのイベントに複数のマクロを関連づけることができると良いかも？<br>&gt; 　今後便利な自動実行マクロが公開されたときに、<br>&gt; 　あるものは .vbs、あるものは .js という状況だと困りますので。<br><br>この機能に着手したとき、そのようにする選択肢もあったのですが、複数選択可能になっていたとしても通常は１個だけ動くようにしておくのが使い方の基本かな～、１個だけ使うなら選択したときに勝手に他の選択が解除されたほうが使いやすいよな～、ということで１イベントにつき１個にしました。<br>普通に使うのに扱いやすいのと、複数マクロを１つにまとめる苦労がなくなるのとを天秤にかけて、今は前者を取ったというところです。あまり気の利いたＵＩを思いつかなかったというのもありますけど。<br>これじゃやってられん！と感じるようになったらそのときに対策を考えてみようかと。</div></section>
+    <ul><li><section><h1 id=4581>
+    <span class="no">[4581]</span>
+    <a class="thread-title" href="#4581">Re3:自動実行マクロ</a>
+    <span class="author">miau</span>
+    <time datetime="2006-09-13T08:55:18">2006年09月13日 08:55</time></h1>
+    <div class="body">ご回答ありがとうございます。<br><br>&gt; これは、マクロから実行結果を本体に返してもらうようなインターフェースの追加が必要になりますね。<br>&gt; 今はちょっとどんな具合にしたらいいか思いつきませんが...<br><br>イメージとしては、マクロ側で Editor.Cancel = True を設定するとキャンセルされる、というものなんですが…<br>実現性とか度外視した意見ばかりですみません。<br><br>&gt; これについては「開ファイル前」マクロを追加することが前提になると思います。<br><br>こちらもすいません。勘違いしてました。<br>今あるのはファイルを開いた直後のイベントですね。<br><br>&gt; 現状のイベントマクロでキャンセルの用途があるとすれば、このようなファイル保存前処理になるかと思います。<br>&gt; sakura は保存後でも UNDO が効くので、警告メッセージを出すだけで無条件に改行コードを統一保存してしまってもさほど支障はなさそうな気もします。他エディタの多くは警告すら出さずに無条件統一するのが普通ですし。<br><br>確かにこの用途だとあまり支障無いですね。<br>何かまた「キャンセルできるとすごく助かる」という場面に出くわしたら要望出させていただきます。<br><br>複数マクロ登録の件も了解です。<br>いざとなったら別の言語に移植するなり ScriptControl 使うなり、やりようはあると思いますので。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=4582>
+    <span class="no">[4582]</span>
+    <a class="thread-title" href="#4582">Re:スタートアップマクロ</a>
+    <span class="author">miau</span>
+    <time datetime="2006-09-13T20:41:43">2006年09月13日 20:41</time></h1>
+    <div class="body">たびたびすみません。<br><br>▼ (全略)さん<br>&gt; 自家製のマクロではファイル名を見て文字コード切り替えたり<br>&gt; タブサイズ変えたり、ファイル先頭の #!/usr/local/bin/hoge を見て拡張子の設定変えたりさせてます<br><br>とのことなんですけど、拡張子の設定を変えるマクロ関数ってありましたっけ？<br># WScript.Shell を使って -TYPE=txt とか指定できそうですが・・・</div></section>
+    <ul><li><section><h1 id=4584>
+    <span class="no">[4584]</span>
+    <a class="thread-title" href="#4584">Re2:スタートアップマクロ</a>
+    <span class="author">（全略）</span>
+    <time datetime="2006-09-17T13:15:10">2006年09月17日 13:15</time></h1>
+    <div class="body">▼ miauさん<br>&gt; たびたびすみません。<br>&gt; <br>&gt; ▼ (全略)さん<br>&gt; &gt; 自家製のマクロではファイル名を見て文字コード切り替えたり<br>&gt; &gt; タブサイズ変えたり、ファイル先頭の #!/usr/local/bin/hoge を見て拡張子の設定変えたりさせてます<br>&gt; <br>&gt; とのことなんですけど、拡張子の設定を変えるマクロ関数ってありましたっけ？<br>&gt; # WScript.Shell を使って -TYPE=txt とか指定できそうですが・・・<br>これは失礼しましたm(__)m<br>自家製fork版に入れた機能の話をしてしまいました<br><br>今出先で手元にPCがなくて詳しく確認できませんが<br><a href=http://qwerty.s2.xrea.com/XA5B5A5AFA5E9A5A8A5C7A5A3A5BF2FA5B5A5AF target=_top><nobr>http://<wbr>qwerty.<wbr>s2.<wbr>xrea.<wbr>com/<wbr>XA5B5A5A<wbr>FA5E9A5A<wbr>8A5C7A5A<wbr>3A5BF2FA<wbr>5B5A5AF</nobr></a><br>A5E9A5A8A5C7A5A3A5BFXJRegex.xhtml<br>の2005/10/19版にその機能が入っています<br>スタートアップマクロのサンプルとしてsakura.rc.vbsとかいうファイル名のスクリプトを同梱したはずです<br><br>よければ参考にしてください(^_^)</div></section>
+    </li></ul></li></ul></li></ul></body></html>

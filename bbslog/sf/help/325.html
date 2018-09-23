@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>rev.1088 コメント | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">325</span>
+    <a class="thread-title" href="325.html#325">rev.1088 コメント</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">326</span>
+    <a class="thread-title" href="325.html#326">RE: rev.1088 コメント</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">329</span>
+    <a class="thread-title" href="325.html#329">RE2: rev.1088 コメント</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=325>
+    <span class="no">[325]</span>
+    <a class="thread-title" href="#325">rev.1088 コメント</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-05-19T00:33:05">2007年05月19日 00:33</time></h1>
+    <div class="body">1.5.15.3対応のヘルプファイルに対するコメントです．(順不同)<br><br>[HLP000315.html]<br>&gt;[パス]<br>&gt;辞書ファイルのフルパスを表示します。<br>相対パス指定も可能です(すいさんの指摘で今回修正)．その場合sakura.exeからの相対パスになります．<br><br>[HLP000318.html] キーワードヘルプ自動表示する/しない<br>&gt;表示する<br>&gt;    非選択状態でもカーソル位置の単語を検索します<br>&gt;表示しない<br>&gt;    単語選択時にのみ検索を行います <br>ちょっとわかりにくいので，<br>検索を行う→検索結果をポップアップする と記述した方が良いのでは？<br><br>[HLP000249.html] 読み取り専用<br>マクロの解説が，何故か挿入モードに関する記述になっている．<br><br>[HLP000003.html] 動作環境<br>Vistaも加えませんか？(ryojiさんが確認してくださっています)<br>現状のインストーラも使えます．<br><br>[HLP000097.html] タブバー<br>ウィンドウリストでは右クリックではフルパス，左クリックではファイル名のみのリストが出ることも書き加えた方が良い．<br><br>---<br>初めてPCにさわるような人も利用しているようですので，特殊キーの意味とか(当たり前のことでも)解説するページがあっても良いかもしれませんね．<br><br>インストーラに入れたいと思うので，適当なところでchmファイル作成してください．<br></div></section>
+    <ul><li><section><h1 id=326>
+    <span class="no">[326]</span>
+    <a class="thread-title" href="#326">RE: rev.1088 コメント</a>
+    <span class="author">maru</span>
+    <time datetime="2007-05-20T18:29:14">2007年05月20日 18:29</time></h1>
+    <div class="body">▼ げんたさん<br>コメントありがとうございます。<br><br>&gt;[HLP000315.html]<br>&gt;&gt;[パス]<br>&gt;&gt;辞書ファイルのフルパスを表示します。<br>&gt;相対パス指定も可能です(すいさんの指摘で今回修正)．その場合sakura.exeからの相対パスになります．<br>HLP000315 修正しました<br><br>&gt;[HLP000318.html] キーワードヘルプ自動表示する/しない<br>&gt;&gt;表示する<br>&gt;&gt;    非選択状態でもカーソル位置の単語を検索します<br>&gt;&gt;表示しない<br>&gt;&gt;    単語選択時にのみ検索を行います <br>&gt;ちょっとわかりにくいので，<br>&gt;検索を行う→検索結果をポップアップする と記述した方が良いのでは？<br>HLP000318 修正しました<br><br>&gt;[HLP000249.html] 読み取り専用<br>&gt;マクロの解説が，何故か挿入モードに関する記述になっている．<br>HLP000249 修正しました<br><br>&gt;[HLP000003.html] 動作環境<br>&gt;Vistaも加えませんか？(ryojiさんが確認してくださっています)<br>&gt;現状のインストーラも使えます．<br>HLP000003 Vista追加しました<br><br>&gt;[HLP000097.html] タブバー<br>&gt;ウィンドウリストでは右クリックではフルパス，左クリックではファイル名のみのリストが出ることも書き加えた方が良い．<br>HLP000097/HLP000106/HLP000400 タスクトレイメニューとしてツリー修正<br><br>ついでにいくつか修正<br>HLP000005&#9;インストールの説明で不適切な部分を修正<br>HLP000006&#9;正規表現ライブラリにbregonig.dll追加<br>HLP000050&#9;カナ変換の説明で不適切な部分を修正<br>HLP000051&#9;かな変換の説明で不適切な部分を修正<br>HLP000081&#9;用語統一「キャレット」→「カーソル」<br>HLP000107&#9;デフォルトのキー割り当て一覧を更新<br>HLP000149&#9;不適切な部分を修正<br>HLP000193&#9;デフォルトのキー割り当て一覧を更新<br>HLP000261&#9;あると便利なツールについて更新<br>HLP000268&#9;用語統一「キャレット」→「カーソル」<br>HLP000281&#9;用語統一「キャレット」→「カーソル」<br>HLP000284&#9;用語統一「キャレット」→「カーソル」<br>HLP000300&#9;デフォルトのタイプ別拡張子を更新<br><br>さらに、リスト表示などHTMLとして見て不自然な部分や、説明が分かりにくい部分について、目に付く範囲で多数修正<br><br>きりがないので、ここらでいったん力尽きます。<br><br>&gt;インストーラに入れたいと思うので，適当なところでchmファイル作成してください．<br>1.5.15.3ベースですか？<br></div></section>
+    <ul><li><section><h1 id=329>
+    <span class="no">[329]</span>
+    <a class="thread-title" href="#329">RE2: rev.1088 コメント</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-05-22T23:39:19">2007年05月22日 23:39</time></h1>
+    <div class="body">お疲れ様です．<br><br>&gt;&gt;インストーラに入れたいと思うので，適当なところでchmファイル作成してください．<br>&gt;1.5.15.3ベースですか？<br>はい．そのつもりです．<br><br>そういえば，インストーラ自身もsubversionに入れた方がいいですよね．キーワードファイルとかをいつも修正し忘れるので．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

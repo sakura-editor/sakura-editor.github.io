@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>VC6のこと | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5015</span>
+    <a class="thread-title" href="5015.html#5015">VC6のこと</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5017</span>
+    <a class="thread-title" href="5015.html#5017">Re:VC6のこと</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5018</span>
+    <a class="thread-title" href="5015.html#5018">Re:VC6のこと</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5019</span>
+    <a class="thread-title" href="5015.html#5019">Re2:VC6のこと</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5025</span>
+    <a class="thread-title" href="5015.html#5025">Re3:VC6のこと</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5020</span>
+    <a class="thread-title" href="5015.html#5020">Re:VC6のこと</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5021</span>
+    <a class="thread-title" href="5015.html#5021">Re2:VC6のこと</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5028</span>
+    <a class="thread-title" href="5015.html#5028">Re3:VC6のこと</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5039</span>
+    <a class="thread-title" href="5015.html#5039">Re4:VC6のこと</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5250</span>
+    <a class="thread-title" href="5015.html#5250">Re4:VC6のこと</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5023</span>
+    <a class="thread-title" href="5015.html#5023">Re:VC6のこと</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5027</span>
+    <a class="thread-title" href="5015.html#5027">Re:VC6のこと</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5029</span>
+    <a class="thread-title" href="5015.html#5029">Re2:Win95のこと</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5036</span>
+    <a class="thread-title" href="5015.html#5036">Re:VC6のこと</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5015>
+    <span class="no">[5015]</span>
+    <a class="thread-title" href="#5015">VC6のこと</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-14T01:07:33">2007年09月14日 01:07</time></h1>
+    <div class="body">UNICODEの話からVisual C++ 6.0の話が出たので，独立させてみました．<br><br>以下個人的な意見です．<br>Windows 95をサポートしているのはVC6のみ:<br>→それともこれはコンパイラ自身のプラットフォームの話でしょうか．そこが曖昧でよくわかりませんでした．<br>実質的にWindows 95でも動作するならVC6にこだわらなくて良いと思う．(開発環境としてWindow 98以前を使っている人はさすがにいないのでは？)<br><br>Visual C++ 2005 Express Editionが入手可能な今，それ以前のバージョンにこだわる理由<br>→素のVisual C++ 2005で作るとWindows 95で動作しないファイルになる (patches:1601496で回避できる)．VC2005が生成するEXEが妙に大きい気がする．しかし，これもVS 2003と比べての話．<br><br>VC6をサポート外にするならsakura.dsp/sakura.dswは？<br>→VC6以降のVisualStudioで開ける形式としてこのままにしたいけど，VC6でコンパイルできないのは変ですよねぇ．何か代わりの形式があればそちらで．<br><br>現在もVC6でのコンパイルはリリース版作成においても行っていません．BCCのことも忘れてます．<br>でもリソースファイルはVC6の出力を崩さないように手で編集してます．<br><br>---<br><br>VC6でコンパイルできるようにソースを修正することは可能かもしれませんが，VC6を持っていなければコンパイルエラーになるかどうか確認しようがありません．むしろ古い物は切り捨てた方が親切なのかな．「コンパイルにはVisual C++ 2005が必須」と言い切ってしまって困る人ってどのくらいいるのでしょうか．<br></div></section>
+    <ul><li><section><h1 id=5017>
+    <span class="no">[5017]</span>
+    <a class="thread-title" href="#5017">Re:VC6のこと</a>
+    <span class="author">K.Takata</span>
+    <time datetime="2007-09-14T01:40:08">2007年09月14日 01:40</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 「コンパイルにはVisual C++ 2005が必須」<br><br>最新の１つ前であるVS2003を切り捨てるのはまだまだ早いのではないかと個人的には思います。<br>さすがに３つも前のVC6はもうそろそろいいのではないかと思いますが。<br># もっとも、私自身は未だにVC6をメインで使っていますが。<br><br><br>&gt; VC2005が生成するEXEが妙に大きい気がする．<br><br>2005からはシングルスレッドライブラリがなくなって、マルチスレッドのみになってしまいましたが、その関係でしょうか。<br></div></section>
+    </li><li><section><h1 id=5018>
+    <span class="no">[5018]</span>
+    <a class="thread-title" href="#5018">Re:VC6のこと</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-09-14T09:16:46">2007年09月14日 09:16</time></h1>
+    <div class="body">ちょっと話が脇道にそれるかもしれませんが、<br>下に話の発端となったネタとその補足説明を、<br>整理して抜粋させて頂きます。m(__)m<br>事後報告になるなのでちょっと後ろめたいですが。。。<br><br>原文は下記のページに掲載されています。<br><a href=http://sourceforge.net/tracker/index.php?func=detail&aid=1788045&group_id=12488&atid=312488 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>1788045&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>312488</nobr></a><br><br> -----------<br>一般掲示板なりで合意形成に近いことはしないと<br>さすがに変えられるレベルの問題ではないだろう<br>という懸念がある。また、サクラでは私を含め<br>ユーザーとの議論が少ないなどの関係で、<br>まともな合意形成がとれたことはほとんどない。<br>これらのことを踏まえると、サポートを切るより<br>コードを妥協したほうが現実的な路線ではと、<br>個人的に感じている。ただ、今のうちに切れるものを<br>切ったほうが今後楽になるので、なんとかして<br>切ってしまうのも勿論良いとは思う。<br><br>もか<br> -----------<br><br>Win95 上の開発においては、VC6 が主役だ<br>ということが前提となっている話だというように<br>見えますけれども・・・。<br>外していたら申し訳ないです。<br></div></section>
+    <ul><li><section><h1 id=5019>
+    <span class="no">[5019]</span>
+    <a class="thread-title" href="#5019">Re2:VC6のこと</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-09-14T21:29:12">2007年09月14日 21:29</time></h1>
+    <div class="body">どこでつまずいちゃってるか、<br>レポートさせて頂きたいと思います：<br><br>・メッセージの強度差があるものの、開発者は<br>「VC6 サポート外してもいい時期だよね」の方向で<br>ほぼ致している。。。<br><br>・VC6 のサポートは Win95 プラットフォーム上で<br>走らせるべく書かれたソースコードの保守・開発の<br>主要コンパイラとして位置づけられている…？<br>VC6 をサポートしない方向で進めるのであれば、<br>ユーザーとの合意形成は絶望的だから仕方ないにしても、<br>最低でも事前に 「Win95 のサポートが事実上切られることに<br>なりましたごめんなさい。」みたいな意向だけは<br>周知される必要がある。<br><br>・ふと Project Home を見ると、Win95 から Vista までの<br>サポートを気前よく謳っている。なんか名残惜しい・・・。<br><br>▼ げんたさん<br>&gt; むしろ古い物は切り捨てた方が親切なのかな．<br>&gt; 「コンパイルにはVisual C++ 2005が必須」と<br>&gt; 言い切ってしまって困る人ってどのくらいいるのでしょうか．<br><br>ちょっとわかりません orz.<br><br>▼ kobake さん<br>&gt; 　UNICODE化以降は<br>&gt; VC6を切り捨てる＝Win9xを切り捨てる＝ANSIビルドを切り捨てる<br>&gt; という意味に取れてしまったのですが、<br>&gt; どこか間違っていますでしょうか。<br><br>ANSI 版と UNICODE 版とを<br>１つのソースからコンパイル出来るようにするのが目的です。<br>ANSI 版は Win95 からサポート、<br>UNICODE 版は ・・・あれ、いつからかちょっとよく<br>調べてないのですが、少なくとも Win95 は外されると思います。<br>ここで、ソースコードは Win95 プラットフォーム上でも保守され<br>得るので、コードは自ずと Win95 上の主役、<br>VC6 でコンパイルできる必要があります。<br>（ここまではもかさんが指摘された趣旨だという認識です…）<br>けれど VC6 は C++ ならぬ "C+" 言語を搭載してるのか、<br>あまり賢くないみたいで、<br>kobake さんも げんたさんも もかさんも仰っていますように、<br>（ryoji さんも行動でもって暗に伝えている<br>可能性がありますが… (^^; ）将来的に見て<br>ここまで執着する必要あるの？みたいな感じで<br>つまずいてます。<br><br>他の皆さんの意見が皆無で独裁的になりがちなのも、<br>すっぱり言い切れない理由の一つでして。。。<br>ちなみに自分は、お察しの通り、<br>すっぱり切りたい派に属しています。<br><br>自分の裁量では判断しかねます。<br>秀丸とかはちゃんと Win95 でも動くようですが、<br>あれはクローズドソースですから。。。<br>その辺は融通が着くのかなと思ったり。<br><br>そんなところです。<br></div></section>
+    <ul><li><section><h1 id=5025>
+    <span class="no">[5025]</span>
+    <a class="thread-title" href="#5025">Re3:VC6のこと</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-09-15T00:47:19">2007年09月15日 00:47</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; ・VC6 のサポートは Win95 プラットフォーム上で<br>&gt; 走らせるべく書かれたソースコードの保守・開発の<br>&gt; 主要コンパイラとして位置づけられている…？<br>&gt; VC6 をサポートしない方向で進めるのであれば、<br>&gt; ユーザーとの合意形成は絶望的だから仕方ないにしても、<br>&gt; 最低でも事前に 「Win95 のサポートが事実上切られることに<br>&gt; なりましたごめんなさい。」みたいな意向だけは<br>&gt; 周知される必要がある。<br><br>「サポート」とは、たとえば<br>Win95でのみ発生するバグが見つかった場合に、<br>「それを迅速に修正できる体制」のようなものでしょうか。<br>たしかに、VC6でコンパイルできなければ、<br>Win95固有のバグ修正は手間がかかりそうです。<br><br>ただ、(自分は今まで勘違いしていたのですが)<br>げんたさんが書かれているとおり、VC2005でもWin95でも動くものはできるようなので、<br>わりと動くものができるんじゃないか、と楽観的に思ったりするのです、、<br>が、知識の裏づけはまったくないです(汗)。<br><br><br>また、これは、あまり前向きでない意見なのですが、<br>Win95ユーザが少ないであろう現状では、<br>ユーザレポートが多ければ働くはずのバグの淘汰の原理が<br>既に働かなくなっている、「かもしれない」、ことを考えると<br>VC6を切ってしまっても、Win95への対応品質にはそれほど変化がない、<br>「かもしれない」という考えが頭をよぎります。<br><br><br>&gt; ・ふと Project Home を見ると、Win95 から Vista までの<br>&gt; サポートを気前よく謳っている。なんか名残惜しい・・・。<br><br>たしかに、この文句が無くなるのは名残惜しいです。。。</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=5020>
+    <span class="no">[5020]</span>
+    <a class="thread-title" href="#5020">Re:VC6のこと</a>
+    <span class="author">AC(その1)</span>
+    <time datetime="2007-09-14T21:50:59">2007年09月14日 21:50</time></h1>
+    <div class="body">＞コンパイルにはVisual C++ 2005が必須<br>2003は捨てないで;;<br><br>＞何か代わりの形式<br>つ「Makefile.vc6」<br>＃メ、メイクファイルだって使えるんだからねっ！<br><br>VC6使ってますが、GUIで画面修正できるからなので<br>画面修正できるフリーのソフトあるならVC6は捨て<br>てもいい<br>＃コンパイラ買い換えるお金はないっすorz<br><br>#defineが足りないというレベルなら<br>compatibleヘッダでも作ってVC6使う人が追っかけ<br>で修正すればいいのではないかと思います。<br></div></section>
+    <ul><li><section><h1 id=5021>
+    <span class="no">[5021]</span>
+    <a class="thread-title" href="#5021">Re2:VC6のこと</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-14T23:32:08">2007年09月14日 23:32</time></h1>
+    <div class="body">&gt;＞コンパイルにはVisual C++ 2005が必須<br>&gt;2003は捨てないで;;<br>いや，VC 2005 Express Editionが無料だから...<br><br>でも，普段2003以前を使っている人は，これだけのためにVC2005を入れたくないというのも理解できます．<br>関連づけをとられてしまうので．(Express EditionだとMFCが無くてリソース編集ができない)<br><br>&gt;VC6使ってますが、GUIで画面修正できるからなので<br>そうでした．Express Editionの泣き所．<br>ということはプロジェクトファイルをVC6で読み込める点は変えるべきではないでしょうね．<br><br>&gt;＞何か代わりの形式<br>&gt;つ「Makefile.vc6」<br>&gt;＃メ、メイクファイルだって使えるんだからねっ！<br>makefileだと<br>&gt;GUIで画面修正<br>には使えないのではないかと...<br><br>&gt;#defineが足りないというレベルなら<br>&gt;compatibleヘッダでも作ってVC6使う人が追っかけ<br>&gt;で修正すればいいのではないかと思います。<br>テンプレートが炸裂して，どう直したらコンパイルに通るのか素人にはわからないレベルになることを危惧しております．<br><br>VC6で使えないテンプレートとその回避策一覧がまとまった物があれば良いのですけど...<br><br>それ以外にも(現在は使っていませんが)現在の関数名を表す定数__FUNCTION__ (?)が使えるとか．<br>(使うとしてもdebug用なので，VC6の時はダミーの定義を入れておけば良いか)<br></div></section>
+    <ul><li><section><h1 id=5028>
+    <span class="no">[5028]</span>
+    <a class="thread-title" href="#5028">Re3:VC6のこと</a>
+    <span class="author">AC(その1の2)</span>
+    <time datetime="2007-09-15T09:13:37">2007年09月15日 09:13</time></h1>
+    <div class="body">個人的意見＞発言少ないと開発の方も判断つかないので、一意見として。<br>VC6やWin95が原因で開発(特にUNICODE対応)が滞るなら切り捨てたほうがいい。<br>ANSI版は凍結(バグFIXのみor有志出現期待放置)で<br>UNICODE版ではVC6&amp;WIN95切り捨てるとか。<br><br>Express Editionは編集できないんですよね;;<br>嘆いてばかりしていてもしかたないので調べてみました。<br><br>フリーのリソースエディタ<br>・XN Resource Editor<br>http://www.wilsonc.demon.co.uk/d10resourceeditor.htm<br>・BCCForm and BCCSkelton<br>http://www.vector.co.jp/soft/win95/prog/se226181.html<br><br>試しましたがどちらも読み込めない。<br>ヘッダファイルとか細工すればいけるんだろうか・・・<br><br>__FUNCTION__ は現在の関数名文字列ですね。<br>VS2003で使ってますが、ないならないで問題ないない。<br><br>テンプレート一覧は...見つかりませんでした。<br></div></section>
+    <ul><li><section><h1 id=5039>
+    <span class="no">[5039]</span>
+    <a class="thread-title" href="#5039">Re4:VC6のこと</a>
+    <span class="author">AC(その1の2の3)</span>
+    <time datetime="2007-09-15T21:36:11">2007年09月15日 21:36</time></h1>
+    <div class="body">XN Resource Editor<br><br>#必要なファイルはすべて作業用フォルダにコピーして行う。<br><br>1.windows.hを次の内容で作る。このとき4ファイルの中に<br>#elifの記述があったら#else,#if,#endifに展開しておく。<br><br>#include "commctrl.rh"<br>#include "dde.rh"<br>#include "winnt.rh"<br>#include "winuser.rh"<br><br>2.次の4ファイルの\5cを持つ全角文字を消すか<br>能\のようにする。特に行末の\5cに注意。<br>すべてコメント中にあるのでとりあえず削除でよい。<br><br>funccode.h<br>sakura_rc.h<br>sakura_rc.hm<br>sakura.hh<br><br>3.リソースの\5cを別の文字に変換する。<br>(ソ、能、表、貼、―)<br>\077は使えるが\x??や能\は使えないので、<br>元に戻せるよう識別可能なユニークな文字列に変換する。<br><br>sakura_rc.rc<br><br>4.XNで読み込む。<br><br><br>まぁ、3が致命的かな。<br>ソースがPascalなんでわからんよ。<br></div></section>
+    </li><li><section><h1 id=5250>
+    <span class="no">[5250]</span>
+    <a class="thread-title" href="#5250">Re4:VC6のこと</a>
+    <span class="author">ac</span>
+    <time datetime="2008-03-12T21:26:29">2008年03月12日 21:26</time></h1>
+    <div class="body">&gt; フリーのリソースエディタ<br>http://www.resedit.net/<br>http://www.forest.impress.co.jp/article/2008/03/12/resedit.html</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=5023>
+    <span class="no">[5023]</span>
+    <a class="thread-title" href="#5023">Re:VC6のこと</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-09-15T00:20:12">2007年09月15日 00:20</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; Visual C++ 2005 Express Editionが入手可能な今，それ以前のバージョンにこだわる理由<br>&gt; →素のVisual C++ 2005で作るとWindows 95で動作しないファイルになる (patches:1601496で回避できる)．<br><br>VC2005でもWin95で動くプログラムは作れるのですね。知りませんでした。<br>そうなると、自分も、個人的にはVC6を切りたい派です。<br><br>VC2003を捨てるか捨てないかの話に関しては、<br>VC2003を捨てないことによる、作業効率の低下はあまり感じないので、<br>残しても良いのではないかな、、という意見です。<br><br>ちなみに、自分が感じた、VC2003とVC2005の違いは、<br>strcpy_s のような 「～_s」の付く関数が有るか無いか、くらいでした。コンパイル機能の差は感じませんでした。<br>VC2003の使用期間があまり長くないので、気づいていない差もたくさんあると思いますが。</div></section>
+    </li><li><section><h1 id=5027>
+    <span class="no">[5027]</span>
+    <a class="thread-title" href="#5027">Re:VC6のこと</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-09-15T06:06:53">2007年09月15日 06:06</time></h1>
+    <div class="body">▼ kobake さん<br>&gt; 「サポート」とは、たとえば<br>&gt; Win95でのみ発生するバグが見つかった場合に、<br>&gt; 「それを迅速に修正できる体制」のようなものでしょうか。<br>&gt; たしかに、VC6でコンパイルできなければ、<br>&gt; Win95固有のバグ修正は手間がかかりそうです。<br><br>そういうことだと思いますたぶんきっと。。。（←代弁モード）<br>もかさんの Patches #1788045 でのコメント：<br>&gt; VC6以外ではBCCでないとWin95が動作保障範囲外なので<br>&gt; 捨てにくいんですけど、どうしましょう？<br><br>自分はコンパイラ周りの事情をあまり感知せずやっているので、<br>詳しいことがよく分からないのですけれど、<br>Win95 (ANSI コンパイル) 上で一応裏技的な手法で<br>動作するようにはしてるけどきちんとした対応は<br>もうできなくなったよーというようなことをもって、<br>事実上の Win95 サポートの切り捨てだと自分も思います。<br><br>ひょっとして自分だけだいぶ外してたりして、<br>イタイ状態に陥ってるかもしれませんが orz.<br>それは置いておきましても、<br><br>▼ げんたさん<br>&gt; &gt; Win95 サポートのため、VC6 でのコンパイルを保障する<br>&gt; これは，Windows 95で動作するという意味？<br>&gt; それともWindows 95でコンパイルできるという意味？<br>&gt; <br>&gt; 前者なら現在も(VC6じゃないけど)できます．<br>&gt; 後者は...必要あるの？<br><br>▼ kobake さん<br>&gt; VC2005でもWin95で動くプログラムは作れるのですね。<br>&gt; 知りませんでした。<br>&gt; そうなると、自分も、個人的にはVC6を切りたい派です。<br><br>自分も含めてこういう動きが圧倒的に優勢だというのは、<br>紛れもない事実・・・ですよね。<br><br>Unicode 化の際のコンパイルに関わる大まかな方針としては、<br>VC6 切り捨ての流れになりそうですけれど・・・<br><br>みなさま了解？<br><br># いつもどおりご都合主義的な結論ですが…。<br></div></section>
+    <ul><li><section><h1 id=5029>
+    <span class="no">[5029]</span>
+    <a class="thread-title" href="#5029">Re2:Win95のこと</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-15T09:38:19">2007年09月15日 09:38</time></h1>
+    <div class="body">コンパイラとは関係ないですが念のために申し上げておくと，Windows 95対策コードというのがコード中にいくつかあります．<br><br>自分の覚えている範囲では，<br>* メニューのコマンド値が16bit (32767以下)でないとメニューが出ない<br>* 構造体サイズとしてWindows 95が期待する値以外の値を入れるとエラーになる．(新しいOS/SDKでは拡張されているので，sizeofを使わずに固定値にしている．64bit版では不適切な値となるので，条件コンパイルにしている．)<br></div></section>
+    </li></ul></li><li><section><h1 id=5036>
+    <span class="no">[5036]</span>
+    <a class="thread-title" href="#5036">Re:VC6のこと</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-09-15T12:58:20">2007年09月15日 12:58</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; コンパイラとは関係ないですが念のために申し上げておくと，<br>&gt; Windows 95対策コードというのがコード中にいくつかあります．<br><br>Windows 95対策コードは従来どおり残すけれど、<br>VC6 の言語仕様の面でヘッポコな部分については、<br>もうさじ投げましたってことですよね。<br>ユーザー側へのメッセージとしては、<br>「Win95 プラットフォームにおかれましては、<br>　配布されたソースコードの VC6 でのコンパイルが<br>　保障できなくなります。」<br>ということですね。<br><br>それでは Unicode 化の指針の一つとして、<br>どさくさに紛れて承諾されたことにします。<br><br><br>▼ AC(その1の2) さん<br>&gt; ANSI版は凍結(バグFIXのみor有志出現期待放置)で<br>&gt; UNICODE版ではVC6&amp;WIN95切り捨てるとか。<br><br>将来的には、だいたいそういう流れ・・・になると思います。<br>時勢を考えても当たる確率は比較的高いと予想されます。<br><br>（いつの間にか時事レポートやっちゃってます）<br><br>ただ、その割には実質的な行動が伴ってないとは<br>自覚しているので、実は、旗振り役（というのか）を<br>kobake さんへバトンタッチ中なのですけれど。。。<br><br>よろしいですか？　＞げんたさん<br><br># どうも掲示板全体の流れを見ると、<br># 自分の不手際で話が前後しちゃってるようです。。。<br></div></section>
+    </li></ul></li></ul></body></html>

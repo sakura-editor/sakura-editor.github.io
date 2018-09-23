@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ExpandParameterの「$h」が無効 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5547</span>
+    <a class="thread-title" href="5547.html#5547">ExpandParameterの「$h」が無効</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5548</span>
+    <a class="thread-title" href="5547.html#5548">RE: ExpandParameterの「$h」が無効</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5550</span>
+    <a class="thread-title" href="5547.html#5550">Re2: ExpandParameterの「$h」が無効</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5551</span>
+    <a class="thread-title" href="5547.html#5551">Re3: ExpandParameterの「$h」が無効</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5555</span>
+    <a class="thread-title" href="5547.html#5555">Re4: ExpandParameterの「$h」が無効</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5547>
+    <span class="no">[5547]</span>
+    <a class="thread-title" href="#5547">ExpandParameterの「$h」が無効</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-02-24T20:29:41">2009年02月24日 20:29</time></h1>
+    <div class="body">Wiki BugReport/30<br><a href=http://sakura.qp.land.to/?BugReport%2F30 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F30</nobr></a><br><br>最新1.6.4.0のみ、rev1510以後からの問題のようです。<br><br>↓このあたりでしょうか？<br>CEditView.cpp<br>  7286: //  2008.12.13 genta パターンが長すぎる場合は登録しない<br>  7287: //  (正規表現が途中で途切れると困るので)<br>  7288: if( sizeof( m_pcEditDoc-&gt;m_szGrepKey ) &lt; pcmGrepKey-&gt;GetLength() ){<br>  7289:     strcpy( m_pcEditDoc-&gt;m_szGrepKey, pcmGrepKey-&gt;GetPtr() );<br>  7290: }</div></section>
+    <ul><li><section><h1 id=5548>
+    <span class="no">[5548]</span>
+    <a class="thread-title" href="#5548">RE: ExpandParameterの「$h」が無効</a>
+    <span class="author">げんた</span>
+    <time datetime="2009-02-26T06:30:45">2009年02月26日 06:30</time></h1>
+    <div class="body">&gt;↓このあたりでしょうか？<br>&gt;  7288: if( sizeof( m_pcEditDoc-&gt;m_szGrepKey ) &lt; pcmGrepKey-&gt;GetLength() ){<br>たしかに不等号が反対のような...って自分かっ m(_ _)mスミマセン<br></div></section>
+    <ul><li><section><h1 id=5550>
+    <span class="no">[5550]</span>
+    <a class="thread-title" href="#5550">Re2: ExpandParameterの「$h」が無効</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-02-26T20:34:57">2009年02月26日 20:34</time></h1>
+    <div class="body">それにOK出したの私…… (^^;</div></section>
+    <ul><li><section><h1 id=5551>
+    <span class="no">[5551]</span>
+    <a class="thread-title" href="#5551">Re3: ExpandParameterの「$h」が無効</a>
+    <span class="author">げんた</span>
+    <time datetime="2009-02-28T17:50:01">2009年02月28日 17:50</time></h1>
+    <div class="body">修正パッチを出しておきました．<br>Patches#2648201<br></div></section>
+    <ul><li><section><h1 id=5555>
+    <span class="no">[5555]</span>
+    <a class="thread-title" href="#5555">Re4: ExpandParameterの「$h」が無効</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-03-09T19:11:38">2009年03月09日 19:11</time></h1>
+    <div class="body">遅くなりました (^^;<br>ソースコードおよび動作を確認しました。<br>コミットOKと思います。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>改行単位での行頭移動について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4875</span>
+    <a class="thread-title" href="4875.html#4875">改行単位での行頭移動について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4880</span>
+    <a class="thread-title" href="4875.html#4880">Re:改行単位での行頭移動について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4881</span>
+    <a class="thread-title" href="4875.html#4881">Re2:改行単位での行頭移動について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4875>
+    <span class="no">[4875]</span>
+    <a class="thread-title" href="#4875">改行単位での行頭移動について</a>
+    <span class="author">maru</span>
+    <time datetime="2007-06-18T23:59:27">2007年06月18日 23:59</time></h1>
+    <div class="body">下の例で1行目と2行目はタブまたは半角スペースと改行のみの行です。<br>このような構造のテキストのときに、改行単位で行頭へ移動する処理（マクロ専用？）を実施すると、カーソルが１～３行目のどの位置にあっても３行目行頭に移動します。<br>これはこういう仕様なのでしょうか。<br><br>1行目：\t\t\r\n<br>2行目：\t\t\r\n<br>3行目：\t\tあ\r\n<br><br>もしくは、折り返しのときに次の行を取得する処理の実装ミス？<br></div></section>
+    <ul><li><section><h1 id=4880>
+    <span class="no">[4880]</span>
+    <a class="thread-title" href="#4880">Re:改行単位での行頭移動について</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-06-21T01:00:45">2007年06月21日 01:00</time></h1>
+    <div class="body">▼ maruさん<br>、折り返しのときに次の行を取得する処理の実装ミス？<br><br>未実装、ヘルプの原稿ミス？<br>CMacro.cpp(358)  [SJIS]: &#9;case F_GOLINETOP:&#9;//&#9;行頭に移動。数値は、0x0（デフォルト）、0x1（空白を無視して先頭に移動）、0x2（未定義）、0x4（選択して移動）、0x8（改行単位で先頭に移動：未実装）</div></section>
+    <ul><li><section><h1 id=4881>
+    <span class="no">[4881]</span>
+    <a class="thread-title" href="#4881">Re2:改行単位での行頭移動について</a>
+    <span class="author">maru</span>
+    <time datetime="2007-06-21T23:09:02">2007年06月21日 23:09</time></h1>
+    <div class="body">&gt;&gt;折り返しのときに次の行を取得する処理の実装ミス？<br>&gt;未実装、ヘルプの原稿ミス？<br>なるほど。では、本体側を修正いたしましょう。<br>コメントありがとうございました。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

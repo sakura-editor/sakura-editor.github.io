@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>パス貼り付けパッチ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5344</span>
+    <a class="thread-title" href="5344.html#5344">パス貼り付けパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5348</span>
+    <a class="thread-title" href="5344.html#5348">Re:パス貼り付けパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5355</span>
+    <a class="thread-title" href="5344.html#5355">Re2:パス貼り付けパッチ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5416</span>
+    <a class="thread-title" href="5344.html#5416">Re2:パス貼り付けパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5417</span>
+    <a class="thread-title" href="5344.html#5417">Re3:パス貼り付けパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5418</span>
+    <a class="thread-title" href="5344.html#5418">Re4:パス貼り付けパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5419</span>
+    <a class="thread-title" href="5344.html#5419">Re5:パス貼り付けパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5421</span>
+    <a class="thread-title" href="5344.html#5421">Re6:パス貼り付けパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5423</span>
+    <a class="thread-title" href="5344.html#5423">Re7:パス貼り付けパッチ</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5422</span>
+    <a class="thread-title" href="5344.html#5422">Re6:パス貼り付けパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5428</span>
+    <a class="thread-title" href="5344.html#5428">Re7:パス貼り付けパッチ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5399</span>
+    <a class="thread-title" href="5344.html#5399">パッチを更新しました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5462</span>
+    <a class="thread-title" href="5344.html#5462">Commit報告:(New) パスの貼り付け</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5344>
+    <span class="no">[5344]</span>
+    <a class="thread-title" href="#5344">パス貼り付けパッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2008-06-18T14:18:25">2008年06月18日 14:18</time></h1>
+    <div class="body">お試し版で統合されている、パス貼り付け<br>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1894888&amp;group_id=12488&amp;atid=312488<br>　このパッチで貼り付けるとソートするように実装されています。<br>エクスプローラで並べ替えたものをコピーすると、順番がくるってしまうので不便に感じます。<br>例えば、拡張子順でならべたり、0.jpg 1.jpg 10.jpgみたいに数字が混ざっている場合です。<br>サクラなら並び替えずに貼り付けても、このパッチと同等のソート機能がありますので、<br>貼り付け時のソートは不要だとおもうのです。<br><br>あと、ソース上にここだけzlib licenseと連絡先が書いてあるのは、どこかにlicenseファイルにまとめるべき項目なようなきが。<br></div></section>
+    <ul><li><section><h1 id=5348>
+    <span class="no">[5348]</span>
+    <a class="thread-title" href="#5348">Re:パス貼り付けパッチ</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-19T00:17:48">2008年06月19日 00:17</time></h1>
+    <div class="body">▼ もかさん<br>ついこの間ソース見て動作確認まではしていたのですが、似た様な理由でちょっと放置していました (^^;<br><br>・並び替えはここでやる必要があるのか？親切過ぎないか？<br>・ライセンスのコメントはここではなく冒頭の方が良いのでは？<br>　（このままコミットするとコメント部分が削除できなくなってしまわないか？）<br><br>並び替えについては、元々ある機能で可能と言う事で貼付け機能からは削除した方が良さそうですね。<br><br>ライセンスのコメントはどうすりゃ良いのでしょうかね？<br>勝手に移動したり……はやっぱりダメ？<br>ご本人の登場を待つ？<br></div></section>
+    <ul><li><section><h1 id=5355>
+    <span class="no">[5355]</span>
+    <a class="thread-title" href="#5355">Re2:パス貼り付けパッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2008-06-20T14:41:11">2008年06月20日 14:41</time></h1>
+    <div class="body">&gt;&gt;サクラなら並び替えずに貼り付けても、このパッチと同等のソート機能がありますので、<br>ソースをよく読み直したら同等ではありませんでした。<br>nocase(大文字小文字を区別しない)になってました。<br></div></section>
+    </li><li><section><h1 id=5416>
+    <span class="no">[5416]</span>
+    <a class="thread-title" href="#5416">Re2:パス貼り付けパッチ</a>
+    <span class="author">bosagami</span>
+    <time datetime="2008-09-08T10:19:34">2008年09月08日 10:19</time></h1>
+    <div class="body">&gt; ライセンスのコメントはどうすりゃ良いのでしょうかね？<br><br>書き込みをしばらく見ていなかったもので、いまさらですが・・・<br>以前にもzlibライセンスへの同意は表明しているので、<br>コメントも含めて自由に編集していただいてかまいません。<br>＃むしろ、著作権放棄orコミッタに著作権移譲でいいです。<br>＃ライセンスは面倒ですね。同名の人がいる可能性もありますし、<br>＃連絡先一覧とか作らないといけないのかも？<br><br>パスのソートはエクスプローラと同等のほうがよいと思います。<br>ソートなしだと「何でこの順序？」とつっこまれそうなので。<br>なすこじさん、修正していただきありがとうございます。<br></div></section>
+    <ul><li><section><h1 id=5417>
+    <span class="no">[5417]</span>
+    <a class="thread-title" href="#5417">Re3:パス貼り付けパッチ</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-09-09T22:16:40">2008年09月09日 22:16</time></h1>
+    <div class="body">▼ bosagamiさん<br>コメントどうもありがとうございます。<br>エクスプローラと同じ並びとなる方でコミットを目指すことにします。<br><br></div></section>
+    <ul><li><section><h1 id=5418>
+    <span class="no">[5418]</span>
+    <a class="thread-title" href="#5418">Re4:パス貼り付けパッチ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-09-09T22:48:30">2008年09月09日 22:48</time></h1>
+    <div class="body">Vista のエクスプローラには、（シフトキーを押しながらの）右クリックメニューに「パスとしてコピー」という、そのものずばりの機能があります。<br>他アプリでの貼り付け用にパス名をテキスト形式でクリップボードに格納してくれるんですが、この機能でコピーしたときの並びは、フォーカスがあるファイルが先頭で、残りは現在表示している並び順になります（例えば日付順ならその順番）。<br>CF_DROP形式のコピーでもエクスプローラがクリップボードに格納する並びは、上記と同じなので、わざわざソートしなくてもそのまま貼り付けてしまえば良いと思いますが．．．<br><br>あと、200800806-path-paste_B.patch は StrCmpLogicalW をスタティックロードで利用しているようなので、Win9x や Win2k + IE5.0 環境ではサクラがまったく起動しなくなってますね。</div></section>
+    <ul><li><section><h1 id=5419>
+    <span class="no">[5419]</span>
+    <a class="thread-title" href="#5419">Re5:パス貼り付けパッチ</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-09-09T23:33:36">2008年09月09日 23:33</time></h1>
+    <div class="body">▼ ryojiさん<br>本当は目の前に見えている状態と同じ並びとなるのが理想的なんですが、どの道全然ダメみたいですね (^^;<br>Bでのコミットは止めにしましょう。<br>Aの方はOKですか？<br><br>なぜかまったくアップできんかったのでPC変えた orz</div></section>
+    <ul><li><section><h1 id=5421>
+    <span class="no">[5421]</span>
+    <a class="thread-title" href="#5421">Re6:パス貼り付けパッチ</a>
+    <span class="author">bosagami</span>
+    <time datetime="2008-09-10T11:04:46">2008年09月10日 11:04</time></h1>
+    <div class="body">&gt; 本当は目の前に見えている状態と同じ並びとなるのが...<br>うーん、そうなんですよね。以前に議論されていたとおりで。<br>まあ、右クリックドロップなんて便利な機能がすでにあるようですし、<br>とりあえずは仕様をあわせてソートなし版でもコミットいただければ、と。<br><br>あとは、大文字・小文字を区別しないソートをどこかに追加するか、<br>ソートオプションを追加するか・・・＞暇になったら考えます。<br><br>patch Aのコード＆動作をもう一度確認しましたが、問題なしです。<br><br>&gt; Vista のエクスプローラには、（シフトキーを押しながらの）右クリックメニューに「パスとしてコピー」という...<br>こんな便利な機能があったとは。<br><br><br>ついでにパス貼り付けのunicode版もアップしました。<br><a href=http://sourceforge.net/tracker/index.php?func=detail&aid=2102923&group_id=12488&atid=1013762 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>2102923&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>1013762</nobr></a><br>＃クリップボード周りが整理されててちょっと焦った。<br></div></section>
+    <ul><li><section><h1 id=5423>
+    <span class="no">[5423]</span>
+    <a class="thread-title" href="#5423">Re7:パス貼り付けパッチ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-09-10T17:29:56">2008年09月10日 17:29</time></h1>
+    <div class="body">▼ bosagamiさん<br>&gt; あとは、大文字・小文字を区別しないソートをどこかに追加するか、<br>&gt; ソートオプションを追加するか・・・＞暇になったら考えます。<br>[ツール]-[外部コマンド実行]を使ってソートする手もあります。<br>ソートしたい範囲を選択して下記の設定で[実行]。<br><br> 名前(N): SORT<br> レ 標準出力を得る(S)<br> レ 標準入力に送る(I)<br> ● 編集中のウィンドウ(C)<br><br>Windows 標準の SORT コマンドは大文字・小文字を区別しません。ひら・カタや全角・半角の並びもサクラのソートとは異なります。探せば別のタイプのソートプログラムもあると思います。比較関数さえ手に入れば自作も容易（コンソールアプリ）ですね。サクラ側で用意してあげなくても、それで十分間に合うかもしれません。</div></section>
+    </li></ul></li><li><section><h1 id=5422>
+    <span class="no">[5422]</span>
+    <a class="thread-title" href="#5422">Re6:パス貼り付けパッチ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-09-10T17:29:04">2008年09月10日 17:29</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; Aの方はOKですか？<br>Bのような動作不正の問題は無いと思います。Win9xでも動作しました。<br>通常の「貼り付け」で CF_HDROP も扱うこと自体に若干の違和感あり？まぁ、懸念には及ばないかしら？</div></section>
+    <ul><li><section><h1 id=5428>
+    <span class="no">[5428]</span>
+    <a class="thread-title" href="#5428">Re7:パス貼り付けパッチ</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-09-17T00:19:46">2008年09月17日 00:19</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; Bのような動作不正の問題は無いと思います。Win9xでも動作しました。<br> <br>確認ありがとうございます。<br>週末にでもコミットしようと思います。<br> <br>&gt; 通常の「貼り付け」で CF_HDROP も扱うこと自体に若干の違和感あり？まぁ、懸念には及ばないかしら？<br> <br>また悩ましいことを (^^;<br>エクスプローラに Ctrl-C, Ctrl-V したようなイメージなんですけどね。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=5399>
+    <span class="no">[5399]</span>
+    <a class="thread-title" href="#5399">パッチを更新しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-08-06T21:55:02">2008年08月06日 21:55</time></h1>
+    <div class="body">パスをソートしないのと、エクスプローラと同様の並びにするのを作成してみました。<br>悩んだ末にコメント部分にも手を入れました。<br><br>200800806-path-paste_A.patch<br>　パスをソートしません。右ボタンでのファイルドロップと同様の仕様です。<br><br>200800806-path-paste_B.patch<br>　XP以降ではStrCmpLogicalWを使ってパスをソートします。<br>　エクスプローラと同様の並びとなりますが、比較関数でレジストリを読んだりしてて美しくないです (^^;<br><br>Patchesの方にはアップできませんので、下記にアップしました。<br>　<a href=http://sakura.qp.land.to/?Develop%2F7 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2F7</nobr></a><br></div></section>
+    </li><li><section><h1 id=5462>
+    <span class="no">[5462]</span>
+    <a class="thread-title" href="#5462">Commit報告:(New) パスの貼り付け</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-11-18T23:09:26">2008年11月18日 23:09</time></h1>
+    <div class="body">コミットしました。<br>2個前のコメントで週末と言っていたのに1ヶ月過ぎてる……<br><br>リビジョン：<br>  　rev1469<br><br>  変更種別：<br>  　新規機能追加<br><br>内容：<br>　クリップボードからのパスの貼り付けに対応<br>　Wiki_develop:7（Patches#1894888ベース）<br></div></section>
+    </li></ul></li></ul></body></html>

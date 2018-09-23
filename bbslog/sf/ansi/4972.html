@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バグ報告：Windows2000でおかしな関連付け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4972</span>
+    <a class="thread-title" href="4972.html#4972">バグ報告：Windows2000でおかしな関連付け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4977</span>
+    <a class="thread-title" href="4972.html#4977">RE: バグ報告：Windows2000でおかしな関連付け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4978</span>
+    <a class="thread-title" href="4972.html#4978">RE2: バグ報告：Windows2000でおかしな関連付け</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4979</span>
+    <a class="thread-title" href="4972.html#4979">Re2: バグ報告：Windows2000でおかしな関連付け</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4972>
+    <span class="no">[4972]</span>
+    <a class="thread-title" href="#4972">バグ報告：Windows2000でおかしな関連付け</a>
+    <span class="author">h</span>
+    <time datetime="2007-08-28T20:58:34">2007年08月28日 20:58</time></h1>
+    <div class="body">既に報告済みかも知れませんが、バグ報告です。<br><br>OS：Windows2000 SP4<br>サクラエディタ：1.5.15.3パッケージで確認<br><br>インストール時に「コンテキストメニューに追加」を選んでいると、<br>msi ファイルや dsw ファイルなどをダブルクリックで開いた際に、<br>なぜかサクラエディタで開くようになります。<br>一度サクラエディタをアンインストールして、さきほどの項目を<br>選ばずにインストールしなおすと、不具合は解消します。<br><br>この不具合はインストール時の項目チェックによって発生します。<br>「関連付けエディタ」での操作では起きないようです。</div></section>
+    <ul><li><section><h1 id=4977>
+    <span class="no">[4977]</span>
+    <a class="thread-title" href="#4977">RE: バグ報告：Windows2000でおかしな関連付け</a>
+    <span class="author">すい</span>
+    <time datetime="2007-09-01T20:49:05">2007年09月01日 20:49</time></h1>
+    <div class="body">Windows の仕様です。<br><br>&gt;インストール時に「コンテキストメニューに追加」を選んでいると、<br><br>この設定をonにすると、インストーラは<br>全ての拡張子のファイルの右クリックメニュー中にサクラエディタが登場する<br>という設定をします。<br><br># 具体的にはレジストリの HKEY_CLASSES_ROOT\*\shell の中に<br># サクラエディタを登録する。<br><br>しかし、その「全ての拡張子のファイルの右クリックメニュー中に登場する」<br>という設定をおこなうと、ある特定の関連付け状態になっている拡張子の<br>ファイルをマウスで突付いて関連付け実行しようとした時、その<br>「全ての拡張子のファイルの右クリックメニュー中に登場する」<br>ように設定したアプリケーションで起動するようになってしまいます。<br><br>この挙動は Windows OS自身の動作仕様なので、アプリケーションや<br>インストーラ側でどうこう出来る問題ではありません。<br><br># .msi なんかが、その「ある特定の関連付け状態」になっている物の代表格です。<br># 他にも色々ありますけど。<br><br>この動作が気に入らないのでしたら、<br>「全ての拡張子のファイルの右クリックメニュー中にサクラエディタが登場する」<br>という設定をおこなわないようにする以外に方法はありません。<br><br>つまり<br>&gt;さきほどの項目を<br>&gt;選ばずにインストールしなおす<br>↑こうする以外に手はありません。<br><br>- 以下、過去ログ一覧 -<br>&gt;&gt;data:4857&#9;2005/11/16, 9:56&#9;Wクリックでファイルを開くとすべてSakuraで開いてしまう。&#9;ハル<br>└&gt;&gt;data:4861<br><br>&gt;&gt;data:4354&#9;2005/03/07,17:32&#9;msiファイルとの関連付けについて&#9;TQR<br>├&gt;&gt;data:4355<br>├&gt;&gt;data:4358<br>│└&gt;&gt;data:4359<br>└&gt;&gt;data:4366<br><br>&gt;&gt;dev:3206&#9;2003/10/01,16:58&#9;Wav/MP3ファイルを開いてしまう？？？&#9;小喬@Peach<br>├&gt;&gt;dev:3207<br>└&gt;&gt;dev:3208<br>　└&gt;&gt;dev:3234<br><br>&gt;&gt;data:2320&#9;2002/09/29,19:34&#9;ファイルの関連付け&#9;ATMSW<br>└&gt;&gt;data:2322<br><br>&gt;&gt;data:2117&#9;2002/07/17, 3:44&#9;関連付けについて&#9;ワト<br>├&gt;&gt;data:2118<br>└&gt;&gt;data:2119<br>　└&gt;&gt;data:2120<br>　　└&gt;&gt;data:2122<br><br>&gt;&gt;data:1550&#9;2002/04/08,13:18&#9;関連付けとiniファイル&#9;ramrun<br>├&gt;&gt;data:1552<br>│└&gt;&gt;data:1562<br>└&gt;&gt;data:1560<br>　└&gt;&gt;data:1563<br><br>&gt;&gt;dev:1196&#9;2002/01/18,11:54&#9;.BATや.MSIを開くとサクラエディタで開きます&#9;きく<br>└&gt;&gt;dev:1198<br>　└&gt;&gt;dev:1199<br>　　└&gt;&gt;dev:1201<br>　　　└&gt;&gt;dev:1212<br><br>・サクラエディタふぁんくらぶ part3 (588-594)&#9;2003/05/18 17:30<br>　http://pc5.2ch.net/software/kako/1036/10369/1036923887.html#R588<br><br>・サクラエディタふぁんくらぶ part5 (575-579)&#9;2005/08/08, 2:44<br>　http://pc7.2ch.net/test/read.cgi/software/1105088271/l50<br><br>・サクラエディタふぁんくらぶ part8 (149-151)&#9;2007/01/05, 2:14<br>　http://pc11.2ch.net/test/read.cgi/software/1163950939/l50<br></div></section>
+    <ul><li><section><h1 id=4978>
+    <span class="no">[4978]</span>
+    <a class="thread-title" href="#4978">RE2: バグ報告：Windows2000でおかしな関連付け</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-02T00:12:48">2007年09月02日 00:12</time></h1>
+    <div class="body">いつも細やかな解説ありがとうございます．<br>FAQに追加しました．<br>http://sakura.qp.land.to/?FAQ%2F35<br></div></section>
+    </li><li><section><h1 id=4979>
+    <span class="no">[4979]</span>
+    <a class="thread-title" href="#4979">Re2: バグ報告：Windows2000でおかしな関連付け</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-09-02T01:40:56">2007年09月02日 01:40</time></h1>
+    <div class="body">&gt; Windows の仕様です。<br>この仕様はOSバージョンで微妙に違うところがあるようです。<br>自分もWindows 2000 の頃はそれがあったので「sakuraで開く」の使用は避けてました。<br>XP/Vistaでは起きなくなってきた（自分の環境では）ので今は使ってます。<br>レジストリエディタを使って意図的に2000でなら確実に起きるような設定をしてみても起きないみたい。<br>2000だと、もとの拡張子の非デフォルトアクションよりも「すべてのファイル」の非デフォルトアクションが優先され、XP/Vistaではその逆になったという感じ。<br>このあたりの優先順位に関する仕様については公式文書が見当たらず、細部はわからないんですが、今後はこういう話も減ってきそうな気がしますね。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

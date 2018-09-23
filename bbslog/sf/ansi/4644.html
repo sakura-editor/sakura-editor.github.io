@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>trunk#1028でオーバーラン書き込み | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4644</span>
+    <a class="thread-title" href="4644.html#4644">trunk#1028でオーバーラン書き込み</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4645</span>
+    <a class="thread-title" href="4644.html#4645">RE: trunk#1028でオーバーラン書き込み</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4644>
+    <span class="no">[4644]</span>
+    <a class="thread-title" href="#4644">trunk#1028でオーバーラン書き込み</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-12-16T21:29:48">2006年12月16日 21:29</time></h1>
+    <div class="body">最新のtrunk#1028ですが、VS2005(SP1)でビルドしてみたら、<br><br>cdlgfunclist.cpp(1134) :<br>warning C4789: メモリ コピーのターゲットが小さすぎます<br><br>との警告が出ました。<br>memset(szTypeOption, '\0', sizeof(szText));<br>の行です。<br>char szTypeOption[256];<br>char szText[2048];<br>なのでバッファオーバーラン書き込みになってます。</div></section>
+    <ul><li><section><h1 id=4645>
+    <span class="no">[4645]</span>
+    <a class="thread-title" href="#4645">RE: trunk#1028でオーバーラン書き込み</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-12-17T02:08:48">2006年12月17日 02:08</time></h1>
+    <div class="body">&gt;との警告が出ました。<br>&gt;memset(szTypeOption, '\0', sizeof(szText));<br>&gt;の行です。<br>&gt;char szTypeOption[256];<br>&gt;char szText[2048];<br>&gt;なのでバッファオーバーラン書き込みになってます。<br>ありゃー，szOptionに置き換えたところでサイズの判定がことごとく修正漏れですね．<br>全然気付かなかったです．<br><br>そこまで大きくはみ出していればスタックを壊されてまともに動けるはずがない...と思ってよく見たら，ご指摘の箇所は異常ルートなのですね．通らなければ気付かないのが動的チェックの限界ですね．<br><br>#1617078にパッチ出しました．<br></div></section>
+    </li></ul></li></ul></body></html>

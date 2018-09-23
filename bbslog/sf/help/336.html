@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>UAC/マルチユーザー対応の記述内容について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">336</span>
+    <a class="thread-title" href="336.html#336">UAC/マルチユーザー対応の記述内容について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">337</span>
+    <a class="thread-title" href="336.html#337">RE: UAC/マルチユーザー対応の記述内容について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">338</span>
+    <a class="thread-title" href="336.html#338">RE: UAC/マルチユーザー対応の記述内容について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">342</span>
+    <a class="thread-title" href="336.html#342">RE2: UAC/マルチユーザー対応の記述内容について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=336>
+    <span class="no">[336]</span>
+    <a class="thread-title" href="#336">UAC/マルチユーザー対応の記述内容について</a>
+    <span class="author">maru</span>
+    <time datetime="2007-09-24T18:58:20">2007年09月24日 18:58</time></h1>
+    <div class="body">▼ げんたさん<br>&gt;&gt;dev:5001 あたりから<br>開発板とどちらに書き込もうか迷いましたが、あっちは混雑しているので。<br><br>表題の件で、ヘルプの記載内容について誤りが無いか、不足が無いか事前に確認していただきたく、テスト版を用意しました。<br>作業中のものなので、svn:1120＋αな状態ですが、http://sakura.qp.land.to/?Document%2F8 に添付のファイルで、特に以下の部分を中心に目を通していただけると助かります。<br><br>* #1120に対する主な変更・追加<br>\サクラエディタ概要\インストール／アンインストール手順<br>\サクラエディタ概要\マルチユーザー化<br>\サクラエディタ概要\VisualStyle化／UAC対応化<br>\コマンド概要\「設定(O)」メニュー\設定フォルダ<br></div></section>
+    <ul><li><section><h1 id=337>
+    <span class="no">[337]</span>
+    <a class="thread-title" href="#337">RE: UAC/マルチユーザー対応の記述内容について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-24T21:02:30">2007年09月24日 21:02</time></h1>
+    <div class="body">&gt;\サクラエディタ概要\インストール／アンインストール手順<br>■単体配布版インストール<br>「すでに設定ファイルsakura.iniがVirtualStoreに保存されている場合があります。」に加えて，manifestを置くことでVirtual Storeが無効になり，これまで使っていた設定が引き継がれなくなる旨を明示した方が良いと思います．<br><br>■パッケージ版インストール<br>インストーラにマルチユーザを使う・使わないを選択する画面を追加しています．<br>OS種別とAdministratorかどうかで初期値を決めているので，基本的にはデフォルトで問題ないですが，説明を加えた方が親切かもしれません．一旦インストールすると，その後の上書きインストールではその画面は出ませんので．<br><br>■パッケージ版アンインストール<br>「設定を残したい場合は、sakura.ini のバックアップを取っておくと役に立つことがあるかもしれません」<br>今のインストーラはsakura.iniはアンインストールで削除されません．<br><br>&gt;\サクラエディタ概要\マルチユーザー化<br>杞憂かもしれませんが，sakura.exe.iniを既にインストールされた(マルチユーザでない)sakura.exeで編集するとvirtual storeに入ってしまうんですよね．iniは初期状態でメモ帳に関連づけられているから大丈夫？<br><br>&gt;\サクラエディタ概要\VisualStyle化／UAC対応化<br>■UAC対応化<br>「パッケージ版で新規インストール時には、自動的にsakura.exe.manifestがインストールされます」は間違ってはいませんが誤解されそうな気がします．なぜなら，インストーラは2種類のsakura.exe.manifest(VirtualStore有/無)を持っていて，マルチユーザON/OFFに応じて使い分けているのです．<br><br>&gt;\コマンド概要\「設定(O)」メニュー\設定フォルダ<br>「共通設定」「タイプ別設定」のそれぞれのページからも，ここへ誘導した方が良いと思います．<br></div></section>
+    </li><li><section><h1 id=338>
+    <span class="no">[338]</span>
+    <a class="thread-title" href="#338">RE: UAC/マルチユーザー対応の記述内容について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-24T21:38:33">2007年09月24日 21:38</time></h1>
+    <div class="body">最後の方で追加されたUIPI対応のために，Administrator権限とユーザ権限のエディタが混在できないようになっています．<br>(もっとも，混在させるとまともに動作しないのですが．顕著なのがbackspaceが効かない現象)<br><br>一応どこかにその旨を記述した方が親切だと思います．<br></div></section>
+    <ul><li><section><h1 id=342>
+    <span class="no">[342]</span>
+    <a class="thread-title" href="#342">RE2: UAC/マルチユーザー対応の記述内容について</a>
+    <span class="author">maru</span>
+    <time datetime="2007-09-27T03:38:54">2007年09月27日 03:38</time></h1>
+    <div class="body">ご指摘いただいた分をひとそろえ修正した(と思われる)バージョンを添付しました。<br>http://sakura.qp.land.to/?plugin=attach&amp;pcmd=open&amp;file=help_20070927_gotta207.zip&amp;refer=Document%2F8<br><br>大物のsvn:1120を越えれば、あとは小物たちばかり！！・・・と言ってられる件数ではなくなりつつありますが。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

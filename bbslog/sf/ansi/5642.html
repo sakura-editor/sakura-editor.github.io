@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ExecExternalMacroの第2引数がない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5642</span>
+    <a class="thread-title" href="5642.html#5642">ExecExternalMacroの第2引数がない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5643</span>
+    <a class="thread-title" href="5642.html#5643">Re:ExecExternalMacroの第2引数がない</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5642>
+    <span class="no">[5642]</span>
+    <a class="thread-title" href="#5642">ExecExternalMacroの第2引数がない</a>
+    <span class="author">もか</span>
+    <time datetime="2009-12-18T03:34:57">2009年12月18日 03:34</time></h1>
+    <div class="body">ANSI版のみです。<br>Unicode版では rev1591 で変更されています。<br>rev1591 は New: マクロ実行コマンドラインオプション PatchUnicode:2806664 です。<br><br>CSMacroMgr<br>F_EXECEXTMACRO,&#9;&#9;&#9;"ExecExternalMacro",{VT_BSTR, VT_EMPTY,<br></div></section>
+    <ul><li><section><h1 id=5643>
+    <span class="no">[5643]</span>
+    <a class="thread-title" href="#5643">Re:ExecExternalMacroの第2引数がない</a>
+    <span class="author">syat</span>
+    <time datetime="2009-12-23T23:41:09">2009年12月23日 23:41</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ANSI版のみです。<br>&gt; Unicode版では rev1591 で変更されています。<br>&gt; rev1591 は New: マクロ実行コマンドラインオプション PatchUnicode:2806664 です。<br>&gt; <br>&gt; CSMacroMgr<br>&gt; F_EXECEXTMACRO,&#9;&#9;&#9;"ExecExternalMacro",{VT_BSTR, VT_EMPTY,<br><br>ご指摘ありがとうございます。<br>VT_EMPTYをVT_BSTRに修正してコミットしました。<br>ちなみにこのバグはPPAにしか影響しないようです。<br>修正していない1.6.5.0で試してみたら、MACとJSとVBSはマクロ種別を指定できました。<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>入力補完とかキーワードヘルプ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4787</span>
+    <a class="thread-title" href="4787.html#4787">入力補完とかキーワードヘルプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4788</span>
+    <a class="thread-title" href="4787.html#4788">RE: 入力補完とかキーワードヘルプ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4789</span>
+    <a class="thread-title" href="4787.html#4789">Re2: 入力補完とかキーワードヘルプ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4787>
+    <span class="no">[4787]</span>
+    <a class="thread-title" href="#4787">入力補完とかキーワードヘルプ</a>
+    <span class="author">wakura</span>
+    <time datetime="2007-03-28T21:47:06">2007年03月28日 21:47</time></h1>
+    <div class="body"><br>WindowsAPIとかをがっつり登録したらプログラミングに便利かな～と<br>思ったのですが、これって、テキストファイルの単純検索ですよね。<br>むっちゃ遅くなりそうなんですが、みなさんどのくらい登録して使っ<br>てるのでしょうか。<br><br>テキストベースの高速検索にできないかなぁと思って探したところ<br>sqliteとか使えばどうなんだろうとか思ったしだいです。<br><br>http://www.sqlite.org/<br></div></section>
+    <ul><li><section><h1 id=4788>
+    <span class="no">[4788]</span>
+    <a class="thread-title" href="#4788">RE: 入力補完とかキーワードヘルプ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-29T00:09:35">2007年03月29日 00:09</time></h1>
+    <div class="body">&gt;sqliteとか使えばどうなんだろうとか思ったしだいです。<br>sqliteだとLIKEで前方一致ができるってことですか．<br><br>とか個別に考えるよりもglobe対応の話もあるので，先頭部分を渡したら補完候補一覧を返してくれるインターフェースだけ定義して，必要な人はwebでもDBでも何でも使えるようにするほうが，エディタ側も楽だし外側は自由にできて良いのでは？<br></div></section>
+    <ul><li><section><h1 id=4789>
+    <span class="no">[4789]</span>
+    <a class="thread-title" href="#4789">Re2: 入力補完とかキーワードヘルプ</a>
+    <span class="author">fon</span>
+    <time datetime="2007-03-31T02:19:02">2007年03月31日 02:19</time></h1>
+    <div class="body">GTAGSによる補完機能を実装しました。何となく動いているんですが、補完候補が出ないことがあり難航しています。globalからの出力の受け取りが間に合わないとか、そういう類の問題だとは思うのですが。。<br>他にも煮詰まってきている問題などがありますので、いったんリリースさせてください。<br>問題点を下記に列挙しておきます。<br><br>v0.5 現行版 (v0.4版からの差分情報)<br>-c(補完機能)オプション対応。「設定→タイプ別設定→支援」にGTAGS補完追加。<br>制限事項：<br>　GTAGSによる補完機能は一応実装したが、出力系がうまくいっていないせいか<br>　補完候補を出してくれないことがある。<br>　この場合CTRLを押したままSPACEを連打したり頑張ると、表示されるようにな<br>　る。(謎)<br> <br> sakura-wiki&gt; Junk/31: Global検索 テスト版<br><br>■現在残っている目立つ問題１～４<br><br>CEditView::Command_GTAGS()<br>{<br>  CmdExePrep()///うまく機能せず★問題１<br>finish:<br>  ///ハイライト処理.うまく行かず★問題２<br>}<br>CEditView::Update_GTAGS()<br>{<br>  CmdExePrep()///うまく機能せず★問題１<br>}<br>CEditView::HokanOut()<br>{<br>  do {<br>    switch(){<br>      case WAIT_OBJECT_0:///ここに入ってくれない★問題３<br>        bLoopFlag = FALSE;<br>        break;<br>      ...<br>      }<br>    if(PeekNamedPipe()){<br>      while(){<br>        ...<br>        ///↓この辺の作りが悪く？Hokan機能が働かないことがある★問題４<br>        if( NULL == *ppcmemKouho ){<br>          *ppcmemKouho = new CMemory;<br>          (*ppcmemKouho)-&gt;SetDataSz( work );<br>        }else{<br>          (*ppcmemKouho)-&gt;AppendSz( work );<br>    } } }<br>    bLoopFlag = FALSE;  ///暫定的に1Loopで抜けるようにした★問題３<br>  } while( bLoopFlag || new_cnt &gt; 0 );<br>}<br>CEditView::Hokan_GTAGS()<br>{<br>  CmdExePrep()///うまく機能せず★問題１<br>}<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

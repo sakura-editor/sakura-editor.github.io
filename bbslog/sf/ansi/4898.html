@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ウィンドウを閉じるときの問い合わせ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4898</span>
+    <a class="thread-title" href="4898.html#4898">ウィンドウを閉じるときの問い合わせ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4899</span>
+    <a class="thread-title" href="4898.html#4899">Re:ウィンドウを閉じるときの問い合わせ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4898>
+    <span class="no">[4898]</span>
+    <a class="thread-title" href="#4898">ウィンドウを閉じるときの問い合わせ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-06-28T00:06:18">2007年06月28日 00:06</time></h1>
+    <div class="body">タブとは関係ない既存の現象ですが，怪しい動きに気がつきました．<br>複数ウィンドウを閉じる場合，およびエディタを閉じる場合に確認メッセージを出すことができますが，その確認ウィンドウって閉じようとしたウィンドウに対してModalじゃないんですね．なので，問い合わせのあとエディタに触れると問い合わせが後ろに隠れてしまいます．もう一度閉じようとすると二つ目が出ます．(以下何度でも繰り返し)<br><br>さらに「常に手前に表示」がONだと，確認ウィンドウが絶対手前に出ません．閉じようとする度にタスクバーのsakuraがどんどん増殖していくように見えます．(裏でポップアップが増殖している)<br></div></section>
+    <ul><li><section><h1 id=4899>
+    <span class="no">[4899]</span>
+    <a class="thread-title" href="#4899">Re:ウィンドウを閉じるときの問い合わせ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-06-28T22:36:12">2007年06月28日 22:36</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 複数ウィンドウを閉じる場合，およびエディタを閉じる場合に確認メッセージを出すことができますが，その確認ウィンドウって閉じようとしたウィンドウに対してModalじゃないんですね．なので，問い合わせのあとエディタに触れると問い合わせが後ろに隠れてしまいます．もう一度閉じようとすると二つ目が出ます．(以下何度でも繰り返し)<br>複数ウィンドウを閉じるメッセージはエディタ全終了のメッセージに倣って作ったものですが、確かそのときもなぜ親ウィンドウをNULLにしてるのか疑問に思いました。が、理由がわからないのでそのままにしています。<br>他にも親をNULLまたは意図的に？トレイウィンドウにしてる箇所をちょくちょく見かけますね。</div></section>
+    </li></ul></li></ul></body></html>

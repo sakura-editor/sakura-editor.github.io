@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>C++アウトライン | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4837</span>
+    <a class="thread-title" href="4837.html#4837">C++アウトライン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4838</span>
+    <a class="thread-title" href="4837.html#4838">RE: C++アウトライン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4847</span>
+    <a class="thread-title" href="4837.html#4847">Re2: C++アウトライン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4848</span>
+    <a class="thread-title" href="4837.html#4848">Re3: C++アウトライン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4849</span>
+    <a class="thread-title" href="4837.html#4849">Re4: C++アウトライン</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4837>
+    <span class="no">[4837]</span>
+    <a class="thread-title" href="#4837">C++アウトライン</a>
+    <span class="author">AC</span>
+    <time datetime="2007-05-22T20:08:37">2007年05月22日 20:08</time></h1>
+    <div class="body">解析に失敗することがあります。<br>多分COM系のソースで、ソース上<br>[module ... (SERVICE:... ]<br>のようか感じになっているときにmoduleだけが見えて<br>それ以降が解析されませんでした。<br>SERVICEのところがdllになっているソースは解析できましたし、<br>SERVICEをdllに変更したら解析できましたので文字列の長さ<br>でNGになっているようです。<br></div></section>
+    <ul><li><section><h1 id=4838>
+    <span class="no">[4838]</span>
+    <a class="thread-title" href="#4838">RE: C++アウトライン</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-05-23T00:04:42">2007年05月23日 00:04</time></h1>
+    <div class="body">&gt;[module ... (SERVICE:... ]<br>これって，C++/CLIですか？<br><br>サンプルコードがあれば解析可能かとは思います．<br></div></section>
+    <ul><li><section><h1 id=4847>
+    <span class="no">[4847]</span>
+    <a class="thread-title" href="#4847">Re2: C++アウトライン</a>
+    <span class="author">AC</span>
+    <time datetime="2007-05-24T21:00:50">2007年05月24日 21:00</time></h1>
+    <div class="body">[ module(SERVICE, uuid = "...",<br>  name = "...",<br>  helpstring = "...",<br>  ... )]<br>class CXXX {<br>...<br><br>という感じです。<br>SERVICEのところがdllだとOKなんです。<br></div></section>
+    <ul><li><section><h1 id=4848>
+    <span class="no">[4848]</span>
+    <a class="thread-title" href="#4848">Re3: C++アウトライン</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-05-24T23:48:38">2007年05月24日 23:48</time></h1>
+    <div class="body">MSDNでそれっぽいサンプルを見つけました．<br>http://msdn2.microsoft.com/ja-jp/library/65t81w8a(VS.80).aspx<br>試してみると...全然だめですね．<br><br>属性を囲む[]が全く認識されていないので，[]の中のそれぞれが関数の始まりと誤解しています．<br><br>[]の中身を無視するようにすれば一応期待される動作になるかなと思いますので少々お待ちください．<br>(C++の解析処理はちょっと入り組んでいるので...)<br></div></section>
+    <ul><li><section><h1 id=4849>
+    <span class="no">[4849]</span>
+    <a class="thread-title" href="#4849">Re4: C++アウトライン</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-05-26T08:00:05">2007年05月26日 08:00</time></h1>
+    <div class="body">テストバイナリを作成しました．<br>http://sakura.qp.land.to/?Junk%2F32<br><br>属性の他に __interface キーワードへの対応と基底クラスであるテンプレートクラスでその実体化において__uuid()が使われているとそれを関数と誤認する問題の修正を含めています．<br><br>Microsftのサンプルコードでいくつか試しましたが，うまく解析でないパターンがあるようでしたらまたお知らせください．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

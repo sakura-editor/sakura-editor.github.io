@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>1.5.15.0 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4664</span>
+    <a class="thread-title" href="4664.html#4664">1.5.15.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4665</span>
+    <a class="thread-title" href="4664.html#4665">Re:1.5.15.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4666</span>
+    <a class="thread-title" href="4664.html#4666">Re2:1.5.15.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4667</span>
+    <a class="thread-title" href="4664.html#4667">Re3:1.5.15.0</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4664>
+    <span class="no">[4664]</span>
+    <a class="thread-title" href="#4664">1.5.15.0</a>
+    <span class="author">novice</span>
+    <time datetime="2007-01-27T23:33:05">2007年01月27日 23:33</time></h1>
+    <div class="body">「Visual Studio .NET 2003 Service Pack 1」でコンパイルするときは、<br>「マルチスレッド(/MT)」にしないとリンクエラーになるのは私だけでしょうか？<br></div></section>
+    <ul><li><section><h1 id=4665>
+    <span class="no">[4665]</span>
+    <a class="thread-title" href="#4665">Re:1.5.15.0</a>
+    <span class="author">novice</span>
+    <time datetime="2007-01-27T23:34:44">2007年01月27日 23:34</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; 「Visual Studio .NET 2003 Service Pack 1」でコンパイルするときは、<br>&gt; 「マルチスレッド(/MT)」にしないとリンクエラーになるのは私だけでしょうか？<br><br>「makefile」を下記のように変更したらコンパイル通りました。<br><br>Index: makefile<br>========================================<br>===========================<br>--- makefile&#9;(revision 1054)<br>+++ makefile&#9;(working copy)<br>@@ -58,7 +58,7 @@<br> OBJDIR=.\Debug_one<br> OPTLIBS=libcd.lib libcpd.lib<br> !else<br>-OPTFLAGS=/W3 /GR /GX /O1 /ML /D "NDEBUG" <br>+OPTFLAGS=/W3 /GR /GX /O1 /MT /D "NDEBUG" <br> OBJDIR=.\Release_one<br> OPTLIBS=libc.lib libcp.lib<br> !endif<br></div></section>
+    <ul><li><section><h1 id=4666>
+    <span class="no">[4666]</span>
+    <a class="thread-title" href="#4666">Re2:1.5.15.0</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-01-28T01:05:15">2007年01月28日 01:05</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; ▼ noviceさん<br>&gt; &gt; 「Visual Studio .NET 2003 Service Pack 1」でコンパイルするときは、<br>&gt; &gt; 「マルチスレッド(/MT)」にしないとリンクエラーになるのは私だけでしょうか？<br>もとのmakefileのままでリンクできてます(VS2003 SP1)。<br>環境変数LIBの設定でVisual Studio .NET 2003のLIBへのパスが優先されるようなっていますか？<br>例）<br>Set LIB=C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\lib<br>Set LIB=C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\PlatformSDK\Lib;%LIB%<br>別途インストールしたPSDKのLIBへのパスが優先になってたりすると、リンクエラーになると思います。<br><br>マルチスレッド(/MT)にするなら、OPTLIBの設定も変えたほうがいいです。<br>OPTLIBS=libcmt.lib libcpmt.lib<br>かな。<br></div></section>
+    <ul><li><section><h1 id=4667>
+    <span class="no">[4667]</span>
+    <a class="thread-title" href="#4667">Re3:1.5.15.0</a>
+    <span class="author">novice</span>
+    <time datetime="2007-01-28T02:00:11">2007年01月28日 02:00</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 別途インストールしたPSDKのLIBへのパスが優先になってたりすると、リンクエラーになると思います。<br><br>ご確認ありがとうございます。<br>ご指摘の通り、「Microsoft Platform SDK for Windows Server 2003 SP1」のリンクパスが<br>優先になってました。<br>「NewApis.h」のエラーの件があったので、このようにした気がしました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

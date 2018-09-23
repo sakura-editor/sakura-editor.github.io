@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ExpandParameterの条件文字追加 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4545</span>
+    <a class="thread-title" href="4545.html#4545">ExpandParameterの条件文字追加</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=4545>
+    <span class="no">[4545]</span>
+    <a class="thread-title" href="#4545">ExpandParameterの条件文字追加</a>
+    <span class="author">maru</span>
+    <time datetime="2006-08-18T23:16:13">2006年08月18日 23:16</time></h1>
+    <div class="body">なにげに過去ログを見ていたら&gt;&gt;dev:3749<br>を見つけました。<br>すいさんの発言どおり、こういった機能はExpandParameter<br>から呼び出すほうが、どう考えても汎用性が高いので<br>いくつかのマクロ関数廃止とExpandParameterの<br>条件文字追加を考えています。<br><br>マクロ関係のコードを整理する目的もあるので<br>ExpandParameterに統合されたマクロ関数は<br>廃止したいと思います。<br><br>-&gt;#1542670<br><br>*廃止したい関数<br>  S_IsTextSelected / S_IsInsMode<br>  S_GetCharCode / S_GetLineCode<br>  S_IsPossibleUndo / S_IsPossibleRedo<br><br>*追加したい条件文字<br>  ${c?SJIS$:JIS$:EUC$:..$}<br>  ${n?CRLF$:CR$:LF$}<br>  ${i?挿入$:上書$}<br>  ${u?Undo可$:Undo否$}<br>  ${r?Redo可$:Redo否$}<br>  ${s?選択中$:矩形選択中$:非選択中$}<br>  ${d?文書タイプ1$:文書タイプ2$:..$}<br>  ${S?StatusBar表示$:StatusBar非表示$}<br>  ${T?タブ$:非タブ$}<br>  ${F?FuncKey表示$:FuncKey非表示$}<br><br>実装済みのマクロ関数を廃止しても<br>あまり大きな問題はない気がしますが<br>ご指摘があればお願いします。<br></div></section>
+    </li></ul></body></html>

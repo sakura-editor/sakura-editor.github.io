@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ゴキ発見 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">474</span>
+    <a class="thread-title" href="474.html#474">ゴキ発見</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=474>
+    <span class="no">[474]</span>
+    <a class="thread-title" href="#474">ゴキ発見</a>
+    <span class="author">berryzplus</span>
+    <time datetime="2018-01-17T21:23:46">2018年01月17日 21:23</time></h1>
+    <div class="body">ヘルプの記述が実装とあっていない箇所を見付けました。<br><br>確認方法<br>（前提：サクラエディタの設定フォルダまたはexeフォルダにsakura.chmを置いておく）<br>設定 - タイプ別設定でカラータブを選択。<br>ダイアログの下部にある「ヘルプ」をクリック。<br><br>「半角空白」の説明が実装と合っていません。<br><br><br>ヘルプファイルのソース<br><a href=https://sourceforge.net/p/sakura-editor/code/HEAD/tree/help/trunk2/_RESOURCE/HLP000075.html target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>HEAD/<wbr>tree/<wbr>help/<wbr>trunk2/<wbr>_RESOURC<wbr>E/<wbr>HLP00007<wbr>5.<wbr>html</nobr></a><br><br>161行目<br>ONにすると半角スペースを「 」の代わりに「U」の下半分で指定した設定で表示します。&lt;br&gt;<br><br><br>該当機能の実装ファイルのソース<br><a href=https://sourceforge.net/p/sakura-editor/code/HEAD/tree/sakura/trunk2/sakura_core/view/figures/CFigure_HanSpace.cpp target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>HEAD/<wbr>tree/<wbr>sakura/<wbr>trunk2/<wbr>sakura_c<wbr>ore/<wbr>view/<wbr>figures/<wbr>CFigure_<wbr>HanSpace<wbr>.<wbr>cpp</nobr></a><br><br>33行目<br>//小文字"o"の下半分を出力<br></div></section>
+    </li></ul></body></html>

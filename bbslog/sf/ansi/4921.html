@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>WSHのCoCreateInstance | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4921</span>
+    <a class="thread-title" href="4921.html#4921">WSHのCoCreateInstance</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4923</span>
+    <a class="thread-title" href="4921.html#4923">Re:WSHのCoCreateInstance</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4927</span>
+    <a class="thread-title" href="4921.html#4927">Re2:WSHのCoCreateInstance</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4928</span>
+    <a class="thread-title" href="4921.html#4928">Re3:WSHのCoCreateInstance</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4930</span>
+    <a class="thread-title" href="4921.html#4930">Re4:WSHのCoCreateInstance</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4921>
+    <span class="no">[4921]</span>
+    <a class="thread-title" href="#4921">WSHのCoCreateInstance</a>
+    <span class="author">AC</span>
+    <time datetime="2007-07-10T21:18:20">2007年07月10日 21:18</time></h1>
+    <div class="body">の前にCoInitializeがないように見えるのは私だけ～？</div></section>
+    <ul><li><section><h1 id=4923>
+    <span class="no">[4923]</span>
+    <a class="thread-title" href="#4923">Re:WSHのCoCreateInstance</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-10T23:39:41">2007年07月10日 23:39</time></h1>
+    <div class="body">&gt; の前にCoInitializeがないように見えるのは私だけ～？<br>ああ、SHBrowseForFolderの前にもCoInitializeが無いことに気付いているのはきっと私だけではないはず。(^^;;;<br>いちおう、CEditViewの生成に伴うCDropTargetの生成でOleInitialize()が１度だけ実行されるようになってるみたいなんですが．．．<br>これって、COM共通の処理なのでCOMを使う度に個別に呼び出さなくても起動時に１度だけやっておけば十分ですよね？<br>COM全般用の１度きりの実行がCDropTargetクラスの中で、っていうのは、まぁ、あんまりスマートには見えないですね。<br>CDropTargetからも抜いてしまってWinMain()にでも持って行ったほうがすっきりするかしら？</div></section>
+    <ul><li><section><h1 id=4927>
+    <span class="no">[4927]</span>
+    <a class="thread-title" href="#4927">Re2:WSHのCoCreateInstance</a>
+    <span class="author">AC</span>
+    <time datetime="2007-07-11T23:27:43">2007年07月11日 23:27</time></h1>
+    <div class="body">DropTargetではOleUninitializeもあるのでだめなんですよね、これが。<br>スレッド毎に必要なんだからWinMainでやっちゃえばって感じです。<br></div></section>
+    <ul><li><section><h1 id=4928>
+    <span class="no">[4928]</span>
+    <a class="thread-title" href="#4928">Re3:WSHのCoCreateInstance</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-12T12:06:00">2007年07月12日 12:06</time></h1>
+    <div class="body">▼ ACさん<br>&gt; DropTargetではOleUninitializeもあるのでだめなんですよね、これが。<br>だめなんですか(´・ω・｀)？<br>そのOleUninitialize()はWinMain()を抜ける直前にしか実行されないと思うのだけど...、違う？</div></section>
+    <ul><li><section><h1 id=4930>
+    <span class="no">[4930]</span>
+    <a class="thread-title" href="#4930">Re4:WSHのCoCreateInstance</a>
+    <span class="author">AC</span>
+    <time datetime="2007-07-14T09:30:09">2007年07月14日 09:30</time></h1>
+    <div class="body">▼ ryojiさん<br>DropTargetのOleInitializeはDropTargetやりたいからでそ？<br>そこで他のCoInitializeもできてるのはバグの偶然<br>本来の目的じゃないじゃん。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ダイアログの文字列長制限がおかしいことがある | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5751</span>
+    <a class="thread-title" href="5751.html#5751">ダイアログの文字列長制限がおかしいことがある</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=5751>
+    <span class="no">[5751]</span>
+    <a class="thread-title" href="#5751">ダイアログの文字列長制限がおかしいことがある</a>
+    <span class="author">もか</span>
+    <time datetime="2014-06-12T21:17:57">2014年06月12日 21:17</time></h1>
+    <div class="body">Windows XP/7で試した所、1.xのANSI版、2.xのANSIビルドともに<br>EM_LIMITTEXTで文字列長制限をしていますが<br>Unicode単位(全角=1,半角=1)になるようです。<br>これは、MSの文書にComCtrl 6.0の仕様変更と書いてあります。<br><br>さらにGetDlgItemText( hwndDlg, IDC_EDIT_TYPENAME, m_Types.m_szTypeName, _countof(m_Types.m_szTypeName) );<br>のようになってますが、タイプ別設定の設定の名前に<br>テキストテキストテキストテキストテキストテキストテキストテキス12345<br>と名前を空にしてからコピペしてOKを押すと<br>OSのバグなのかbuffに82+NULL Byte書き込まれてバッファオーバーランします。<br>m_szTypeName[64]なので、もう一度タイプ別設定を開くと拡張子とつながって表示されます。<br>入力する文字列によっては63文字+NULLだけ書き込まれることもあり再現性が悪いです。<br>2.xの場合は全終了して再起動するとiniの読みこみでエラーになります。<br></div></section>
+    </li></ul></body></html>

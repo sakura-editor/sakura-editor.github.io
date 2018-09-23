@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>起動オプションの英大文字小文字区別について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4617</span>
+    <a class="thread-title" href="4617.html#4617">起動オプションの英大文字小文字区別について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4618</span>
+    <a class="thread-title" href="4617.html#4618">Re:起動オプションの英大文字小文字区別について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4621</span>
+    <a class="thread-title" href="4617.html#4621">Re2:起動オプションの英大文字小文字区別について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4624</span>
+    <a class="thread-title" href="4617.html#4624">Re3:起動オプションの英大文字小文字区別について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4625</span>
+    <a class="thread-title" href="4617.html#4625">Re4:起動オプションの英大文字小文字区別について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4626</span>
+    <a class="thread-title" href="4617.html#4626">Re4:起動オプションの英大文字小文字区別について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4627</span>
+    <a class="thread-title" href="4617.html#4627">Re5:起動オプションの英大文字小文字区別について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4617>
+    <span class="no">[4617]</span>
+    <a class="thread-title" href="#4617">起動オプションの英大文字小文字区別について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-24T22:13:59">2006年10月24日 22:13</time></h1>
+    <div class="body">現仕様では起動オプションは英大文字小文字を区別するようになっていて、使っているのは大文字だけですよね？<br>大文字小文字を区別しないように仕様変更したら問題あるでしょうか？<br><br>自分は差分ソフトにWinMergeを利用しているのですが、最近になって外部エディタに行番号を渡せるようになっているのを知り（日本語版固有機能）、早速試してみたんですが、何故かサクラエディタには行番号が渡りませんでした。orz...<br>で、WinMergeのほうのソースを調べたところ、コマンドライン文字列を大文字→小文字変換して外部エディタを起動するようになっていて、行番号指定の'-Y'が'-y'になっているのでした。ぎゃぼ～。<br>もちろん、これはWinMerge側の問題だと思いますが．．．<br>他エディタの多くは大文字小文字を区別しないか小文字主体のオプション体系になっているみたいで、サクラエディタだけがうまく動かないような感じになってしまっています。<br>また、うまくいかないことでユーザーには余計な手間がかかり、結局はあきらめて起動元アプリの側の対処を待つしか術がなくなるんじゃあないかと思います。<br>（別アプリやWSHなどのスクリプト経由で小文字→大文字の逆変換をしてサクラエディタを起動するという手はありますが、誰にでもできるってわけじゃないですし．．．）<br>WinMerge以外でも同様な不備のものがあるかも／今後も出てくるかもしれないことを考えると、一部または全部のオプションについて大文字小文字を区別しないようにしておいたほうが問題が起きなくなって良いのではないかな～、と思ったのですが、どうでしょう？</div></section>
+    <ul><li><section><h1 id=4618>
+    <span class="no">[4618]</span>
+    <a class="thread-title" href="#4618">Re:起動オプションの英大文字小文字区別について</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-24T23:49:56">2006年10月24日 23:49</time></h1>
+    <div class="body">小文字も許すようにしても問題無いと思います。<br>そこで、patch を作成しました。-code=1 -y:3 でテストしています。<br>COMMIT可能でしたら、お願いします。<br><br>--- K:\Program Files\Sakura\ssrc_2006-09-23\ssrc_2006-09-23\sakura_core\CCommandLine.cpp&#9;Thu Apr 20 08:59:52 2006<br>+++ K:\Program Files\Sakura\ssrc_2006-09-23\sakura_core\CCommandLine.cpp&#9;Tue Oct 24 23:41:52 2006<br>@@ -113,4 +113,8 @@<br> &#9;int len = lstrlen( str );<br> <br>+&#9;for(int i=0 ; i&lt;len ; i++ ) {&#9;&#9;// 2006/10/24 ADD じゅうじ dev:4617<br>+&#9;&#9;if(str[i] == '=' || str[i] == ':') break;<br>+&#9;&#9;if(str[i] &gt;= 'a' &amp;&amp; str[i] &lt;= 'z') str[i] &amp;= 0xFF ^ ('a'-'A') ;&#9;// 半角小文字→大文字<br>+&#9;}<br> &#9;//&#9;引数がある場合を先に確認<br> &#9;for( ptr = _COptWithA; ptr-&gt;opt != NULL; ptr++ ){<br></div></section>
+    <ul><li><section><h1 id=4621>
+    <span class="no">[4621]</span>
+    <a class="thread-title" href="#4621">Re2:起動オプションの英大文字小文字区別について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-25T22:17:31">2006年10月25日 22:17</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; そこで、patch を作成しました。-code=1 -y:3 でテストしています。<br>&gt; COMMIT可能でしたら、お願いします。<br>考えていただいてありがとうございます。<br>このやりかたでもいけそうですが、シンプルにその後の比較をmemcmp()からmy_icmp.hの_memicmp()に置き換えるやり方で作ってみました。<br>-&gt;Patches#1584411<br><br>他エディタでの大文字小文字区別ですが、調べた範囲では次のようになってます。<br>区別なし: 秀丸,Peggy,ViVi,QX,K2Editor,TeraPad,MkEditor<br>区別あり: EmEditor,gvim<br>EmEditorは小文字しか使ってなくて、gvimの行指定は'+'なので、WinMergeから行番号が渡らないのはサクラのみという．．．(;_;)<br><br>一度「区別する」から「区別しない」に変えたら、簡単に戻るわけにはいかないでしょうから、他の方もご意見があればよろしくお願いします。</div></section>
+    <ul><li><section><h1 id=4624>
+    <span class="no">[4624]</span>
+    <a class="thread-title" href="#4624">Re3:起動オプションの英大文字小文字区別について</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-28T22:53:18">2006年10月28日 22:53</time></h1>
+    <div class="body">&gt;一度「区別する」から「区別しない」に変えたら、簡単に戻るわけにはいかないでしょうから、他の方もご意見があればよろしくお願いします。<br>オプションは1文字に限定していないので，大文字小文字の区別を無くしても<br><br>ところで，通常のオプション以外にGREP条件を渡す部分も区別を無くしていますが，ここは基本的にsakuraが内部で使う物なのでそのままでも良いように思いますけど．<br></div></section>
+    <ul><li><section><h1 id=4625>
+    <span class="no">[4625]</span>
+    <a class="thread-title" href="#4625">Re4:起動オプションの英大文字小文字区別について</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-29T07:21:13">2006年10月29日 07:21</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; オプションは1文字に限定していないので，大文字小文字の区別を無くしても<br>&gt; ところで，通常のオプション以外にGREP条件を渡す部分も区別を無くしていますが，ここは基本的にsakuraが内部で使う物なのでそのままでも良いように思いますけど．<br><br>私もそう思います。<br>・オプションは英大文字小文字を区別します。<br>これって何処に書いてあるか分かります？ HELP! AT SAKURA です。新HELPは、<br>・オプションは英大文字小文字を区別しません。<br>ウインドウズなので、小文字を区別しても意味無いと思いますが、<br>どちらにしても修正個所が多いのが、駄目なんでしょうね。toupper OK!</div></section>
+    </li><li><section><h1 id=4626>
+    <span class="no">[4626]</span>
+    <a class="thread-title" href="#4626">Re4:起動オプションの英大文字小文字区別について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-29T12:02:27">2006年10月29日 12:02</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ところで，通常のオプション以外にGREP条件を渡す部分も区別を無くしていますが，ここは基本的にsakuraが内部で使う物なのでそのままでも良いように思いますけど．<br>単に、同一視するならサブオプションもそうしたほうがわかりやすいかと思って。<br>grepサブオプションは1文字指定ですね。<br>grep画面上のショートカットは大文字小文字区別無しだけど、それはあまり関係ないか。<br>さて、ここはどうしたものか．．．<br><br>ちなみに、<br>秀丸では検索/grepのサブオプションは特別に小文字は有効、大文字は無効を表すようになっいるのは知ってたんですが、<br>例）w:単語検索有効, W:単語検索無効<br>無指定も許していて、その場合にどうなるのかよくわからなかったりします。<br>（明示的にするためには全サブオプションを記述しなければならない）<br>※サクラでは指定すれば有効、無指定だと無効<br></div></section>
+    <ul><li><section><h1 id=4627>
+    <span class="no">[4627]</span>
+    <a class="thread-title" href="#4627">Re5:起動オプションの英大文字小文字区別について</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-29T12:36:05">2006年10月29日 12:36</time></h1>
+    <div class="body">すいません．書きかけで投稿してしまったのに意をくんでくださってありがとうございました．<br><br>&gt;単に、同一視するならサブオプションもそうしたほうがわかりやすいかと思って。<br>&gt;grepサブオプションは1文字指定ですね。<br>&gt;grep画面上のショートカットは大文字小文字区別無しだけど、それはあまり関係ないか。<br>&gt;さて、ここはどうしたものか．．．<br><br>Grepの方もどんどんオプションが増えて文字数が足りなくなるという心配があるわけでもなく，どっちでもいいと言えばいいんですが，Grepの方を変えるとテストが面倒くさそう...普通のGrepでは決して通らないパスなので自分でGrep風引数を与えないといけないので．<br><br>=(またはコロン)の後ろは大文字小文字の区別有りの方が他のオプションとの整合が取れると思います．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

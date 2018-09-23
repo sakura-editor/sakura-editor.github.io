@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>TgaJumpListでバッファオーバーラン | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4733</span>
+    <a class="thread-title" href="4733.html#4733">TgaJumpListでバッファオーバーラン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4736</span>
+    <a class="thread-title" href="4733.html#4736">RE: TgaJumpListでバッファオーバーラン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4740</span>
+    <a class="thread-title" href="4733.html#4740">RE2: TgaJumpListでバッファオーバーラン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4743</span>
+    <a class="thread-title" href="4733.html#4743">Re3: TgaJumpListでバッファオーバーラン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4745</span>
+    <a class="thread-title" href="4733.html#4745">Re4: TgaJumpListでバッファオーバーラン</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4733>
+    <span class="no">[4733]</span>
+    <a class="thread-title" href="#4733">TgaJumpListでバッファオーバーラン</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-13T00:36:54">2007年03月13日 00:36</time></h1>
+    <div class="body">長い(256文字以上)のクラス名を含むタグジャンプ一覧を作成すると，関数一覧で落ちます．<br>理由は，ctagsで作成したファイルをsscanfで読み取っており，何故かクラス名を受けるところまでも_MAX_PATHの長さしか無いためです．ここはsscanfを使わないように作り直す必要があると思います．<br><br>なんで，そんな長いものに出会ったかと言いますと，ctagsがrubyの関数を1行で定義してある場合に関数の終わりを正しく認識できないみたいなのです．ruby-1.8.5のソースに入っているテスト用スクリプトに<br>def f; yield; end;<br>がずらっと並んでいて，それが全部入れ子になっていると勘違いされるため，長大な関数名ができあがってしまったようです．<br></div></section>
+    <ul><li><section><h1 id=4736>
+    <span class="no">[4736]</span>
+    <a class="thread-title" href="#4736">RE: TgaJumpListでバッファオーバーラン</a>
+    <span class="author">wakura</span>
+    <time datetime="2007-03-13T18:23:59">2007年03月13日 18:23</time></h1>
+    <div class="body"><br>fgetsに指定するバッファがsscanfに指定するバッファより大きいことが原因。<br><br>バッファをすべて1025に変更する。<br>fgetsではsizeof(buff)で読み込む。<br>これでsscanfはbuff内に収まる。<br><br>sprintfはwsprintfにする。<br><br>fgets(buff,1025,fp)<br>1024を超える場合は1025バイト目に終端を書き込む。<br>(buff[1024]==0になる)<br><br>wsprintf(buff,format,...)<br>1024を超える場合は1025バイト目に終端を書き込む。<br>(buff[1024]==0になる)<br><br>パスを扱うバッファを1025で定義してwsprintfを使うようにすれば<br>とりあえずバッファオーバーは防げる。<br></div></section>
+    <ul><li><section><h1 id=4740>
+    <span class="no">[4740]</span>
+    <a class="thread-title" href="#4740">RE2: TgaJumpListでバッファオーバーラン</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-13T22:43:59">2007年03月13日 22:43</time></h1>
+    <div class="body">&gt;fgetsに指定するバッファがsscanfに指定するバッファより大きいことが原因。<br>たしかに，TagJumpを実行する方では全て1024byteのバッファを取っていますから問題が出ないんですね．<br>しかし，1文字しか使わないところまで1024バイト取るのがもったいないと思ってしまう私は貧乏性かな．<br><br>ファイルを開いてデータを読む処理で共通に使える，1行の長さを気にせずに読み出せるようなファイル読み出しクラスが欲しいところではありますね．fopen_absexe()なんかも統合できるといいな．<br></div></section>
+    <ul><li><section><h1 id=4743>
+    <span class="no">[4743]</span>
+    <a class="thread-title" href="#4743">Re3: TgaJumpListでバッファオーバーラン</a>
+    <span class="author">もか</span>
+    <time datetime="2007-03-14T21:02:31">2007年03月14日 21:02</time></h1>
+    <div class="body">&gt;ファイルを開いてデータを読む処理で共通に使える，1行の長さを気にせずに読み出せるようなファイル読み出しクラス<br>CFileLoadではだめですか？？<br></div></section>
+    <ul><li><section><h1 id=4745>
+    <span class="no">[4745]</span>
+    <a class="thread-title" href="#4745">Re4: TgaJumpListでバッファオーバーラン</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-14T23:52:46">2007年03月14日 23:52</time></h1>
+    <div class="body">&gt;CFileLoadではだめですか？？<br>かなりいい線行っているとは思いますが，設定ファイルの読み込みには必ずしも合っていないところもあります．<br>例えばfopen_absexe()とかも自動でやってくれるとか，ファイルサイズの途中経過は必要かとか．<br>CFileLoadを基本にしてもうちょっとターゲットを広げるか，兄弟クラスにするかといったところでしょうか．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

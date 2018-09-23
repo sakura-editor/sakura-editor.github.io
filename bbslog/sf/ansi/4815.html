@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>UTF-7 の読み取りミス(?) について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4815</span>
+    <a class="thread-title" href="4815.html#4815">UTF-7 の読み取りミス(?) について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4816</span>
+    <a class="thread-title" href="4815.html#4816">RE: UTF-7 の読み取りミス(?) について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4817</span>
+    <a class="thread-title" href="4815.html#4817">Re2: UTF-7 の読み取りミス(?) について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4825</span>
+    <a class="thread-title" href="4815.html#4825">Re3: UTF-7 の読み取りミス(?) について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4842</span>
+    <a class="thread-title" href="4815.html#4842">Re4: UTF-7 の読み取りミス(?) について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4843</span>
+    <a class="thread-title" href="4815.html#4843">Re5: UTF-7 の読み取りミス(?) について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4851</span>
+    <a class="thread-title" href="4815.html#4851">Re5: UTF-7 の読み取りミス(?) について</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4818</span>
+    <a class="thread-title" href="4815.html#4818">Re2: UTF-7 の読み取りミス(?) について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4820</span>
+    <a class="thread-title" href="4815.html#4820">Re3: UTF-7 の読み取りミス(?) について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4821</span>
+    <a class="thread-title" href="4815.html#4821">Re4: UTF-7 の読み取りミス(?) について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4822</span>
+    <a class="thread-title" href="4815.html#4822">Re4: UTF-7 の読み取りミス(?) について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4815>
+    <span class="no">[4815]</span>
+    <a class="thread-title" href="#4815">UTF-7 の読み取りミス(?) について</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-05-12T18:02:15">2007年05月12日 18:02</time></h1>
+    <div class="body">&gt;&gt;data:6053<br>▼ はこねさん<br>&gt; 以下の文字列のファイルを開こうとすると UTF-7 と<br>&gt; 判定されて文字化け（？）してしまいます。<br>&gt; ・・・（中略）・・・<br>&gt; d+hG5ugj9r46NRQqEZMyppcHgFCNCjOO9VCdsCMs6tjoJ6mkE66befz58aqNKRHQ<br>&gt; <br>&gt; ちなみに、1.5.10.0 では正常に開けました。<br><br>暫定的にですけれど、自分なりに見つかった問題を報告します。<br><br>charcode.cpp の UTF-7 判別関数に怪しげな部分が…<br><br>修正範囲）<br>charcode.cpp リビジョン 1081 の 342 行から 352 行のところ：<br><br>342:&#9;&#9;nret = CheckUtf7SetBPart( base_ptr, end_ptr-base_ptr, ptr );<br>343:&#9;&#9;// ここで， [特有バイト数] := [実際に調査されたデータ長] - [不正バイト数]<br>344:&#9;&#9;num_of_base64_encoded_bytes += (ptr-base_ptr) - nret;<br>345:<br>346:&#9;&#9;// ptr == end_ptr が成り立つ場合, CheckUtf7SetBPart() 関数の特性により，<br>347:&#9;&#9;// 単純に不正バイト数 := ptr-base_ptr（読み込んだバイト数）となる恐れがあるので，<br>348:&#9;&#9;// 条件 ptr == end_ptr が成り立つときはループ脱出．<br>349:&#9;&#9;if( end_ptr &lt;= ptr ){<br>350:&#9;&#9;&#9;break;<br>351:&#9;&#9;}<br>352:&#9;&#9;nlostbytes += nret;<br><br>修正方法）<br>上から順に<br>&#9;&#9;nret = CheckUtf7SetBPart( base_ptr, end_ptr-base_ptr, ptr );<br>消す&#9;&#9;// ここで， [特有バイト数] := [実際に調査されたデータ長] - [不正バイト数]<br>消す&#9;&#9;num_of_base64_encoded_bytes += (ptr-base_ptr) - nret;<br>消す<br>消す&#9;&#9;// ptr == end_ptr が成り立つ場合, CheckUtf7SetBPart() 関数の特性により，<br>消す&#9;&#9;// 単純に不正バイト数 := ptr-base_ptr（読み込んだバイト数）となる恐れがあるので，<br>消す&#9;&#9;// 条件 ptr == end_ptr が成り立つときはループ脱出．<br>消す&#9;&#9;if( end_ptr &lt;= ptr ){<br>消す&#9;&#9;&#9;break;<br>消す&#9;&#9;}<br>書足す&#9;&#9;// ptr == end_ptr が成り立つ場合, CheckUtf7SetBPart() 関数の特性により，<br>書足す&#9;&#9;// 単純に不正バイト数 := ptr-base_ptr（読み込んだバイト数）となる恐れがあるので，<br>書足す&#9;&#9;// 条件 ptr == end_ptr が成り立つときはループ脱出．<br>書足す&#9;&#9;if( end_ptr &lt;= ptr ){<br>書足す&#9;&#9;&#9;break;<br>書足す&#9;&#9;}<br>書足す&#9;&#9;// ここで， [特有バイト数] := [実際に調査されたデータ長] - [不正バイト数]<br>書足す&#9;&#9;num_of_base64_encoded_bytes += (ptr-base_ptr) - nret;<br>&#9;&#9;nlostbytes += nret;<br><br>ちゃんとしたパッチが出せなくてすみません。<br><br># 忘れまいと<br># 自分でコメントを入れたそばから・・・ あぁあぁ orz<br></div></section>
+    <ul><li><section><h1 id=4816>
+    <span class="no">[4816]</span>
+    <a class="thread-title" href="#4816">RE: UTF-7 の読み取りミス(?) について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-05-12T22:49:43">2007年05月12日 22:49</time></h1>
+    <div class="body">&gt;&gt; d+hG5ugj9r46NRQqEZMyppcHgFCNCjOO9VCdsCMs<br>6tjoJ6mkE66befz58aqNKRHQ<br>&gt;暫定的にですけれど、自分なりに見つかった問題を報告します。<br>&gt;<br>&gt;charcode.cpp の UTF-7 判別関数に怪しげな部分が…<br>早速修正して試してみましたが，同じようにUTF-7と認識されてしまいました．<br>ASCIIのみの文字列ですのでUTF-7以外の文字コードのスコアはいずれも0．<br>UTF-7が1ポイントでも取ればUTF-7になってしまうのでは？<br><br>たぶん元の文字列はBase 64の一部ですよね？ちがうかな？<br>Base64にエンコードされた文字列の一部として+が出現することがあり，UTF-7自体もB partがBase64 Encodeになっているので，Base 64の結果に+が出現するとUTF-7と誤認識される可能性はかなり高いのではないかと思います．<br><br>charcode.cppではUTF-7の判定としてSet D, Set Bのチェックしか行っていませんが，Set BをDecodeした結果がUTF-16として正当であるところまできちんと判定すればUTF-7としての誤認識を減らせると思いますが，rastivさんどうでしょう？<br><br>上のパターンでも+以降の部分がUTF-7特有と判断されていますが，decodeしてみると全然文字になっていないわけでして...<br></div></section>
+    <ul><li><section><h1 id=4817>
+    <span class="no">[4817]</span>
+    <a class="thread-title" href="#4817">Re2: UTF-7 の読み取りミス(?) について</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-05-13T16:02:42">2007年05月13日 16:02</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ・・・Base 64の結果に+が出現すると<br>&gt; UTF-7と誤認識される可能性はかなり高いのではないかと思います．<br>&gt; ・・・<br>&gt; Set BをDecodeした結果がUTF-16として正当であるところまできちんと判定すれば<br>&gt; UTF-7としての誤認識を減らせると思いますが，rastivさんどうでしょう？<br>&gt; ・・・<br><br>UTF-16 が正当なときとは、<br>UTF-16 が正規なときであると解釈すると、<br>未定義領域 0xFFFE と0xFFFF が使われていなくて、<br>分解文字（正規化形式 D 型）と<br>結合済み文字（正規化形式 C 型）に当てはめたとき、<br>行き場のない送りなし文字が見つからなかったときのこと・・・<br>となりそうで、話がでかくなるのですよね（^^;<br># だから外部ライブラリに依頼すぅわ グシャ<br><br>…手届きな方法といえば、恣意的だからという<br>（勝手な）理由で封印させていただいてた<br>「ありえないフラグ」の復活とか・・・<br>そんなものになりそうです。<br></div></section>
+    <ul><li><section><h1 id=4825>
+    <span class="no">[4825]</span>
+    <a class="thread-title" href="#4825">Re3: UTF-7 の読み取りミス(?) について</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-05-16T11:40:32">2007年05月16日 11:40</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; ・・・<br>&gt; UTF-16 が正当なときとは、<br>&gt; UTF-16 が正規なときであると解釈すると、<br>&gt; ・・・<br>&gt; 分解文字（正規化形式 D 型）と<br>&gt; 結合済み文字（正規化形式 C 型）に当てはめたとき、<br>&gt; 行き場のない送りなし文字が見つからなかったときのこと・・・<br>&gt; となりそうで、  ・・・<br><br>ウソを言っておりました。m(_ _)m<br>Unicode.org のデータを使えば<br>簡易チェックができるみたいなので、<br>念頭にいれてみます。。。<br><br><a href=http://www.unicode.org/Public/UNIDATA/ target=_top><nobr>http://<wbr>www.<wbr>unicode.<wbr>org/<wbr>Public/<wbr>UNIDATA/<wbr></nobr></a><br>- DerivedNormalizationProps.txt<br></div></section>
+    <ul><li><section><h1 id=4842>
+    <span class="no">[4842]</span>
+    <a class="thread-title" href="#4842">Re4: UTF-7 の読み取りミス(?) について</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-05-23T13:52:57">2007年05月23日 13:52</time></h1>
+    <div class="body">中間報告：<br><br>Thebe という便利なエディタを使わせてもらって…<br>目で確認しただけですけれど、例のデータは、<br><br>＊　UTF-16 フォーマットのチェック<br>　サロゲートペアが正常に組み合わさっているかどうか<br>＊　組み合わせ文字の配列がおかしい<br>　各文字の Combination_Class 値が直前の文字より小さくて<br>　0でなければ整ってないとみる、らしい。<br>　Combination_Class 値が1以上のものは 418 文字でした。<br>＊　NFC に絶対出てこない 1115 文字の禁止<br>　DerivedNormalizationProps.txt で NFC_Quick_Check=No で<br>　指定されてる文字を検査。<br><br>この3つの検査だけではひっかかりませんでした orz.<br><br>こうなったら、<br>Unicode の予約コードポイントも不正値と見るというのは、<br>やりすぎでしょうか・・・。<br></div></section>
+    <ul><li><section><h1 id=4843>
+    <span class="no">[4843]</span>
+    <a class="thread-title" href="#4843">Re5: UTF-7 の読み取りミス(?) について</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-05-23T14:11:16">2007年05月23日 14:11</time></h1>
+    <div class="body">訂正：<br><br># 案の定というかなんというか <br><br>誤）<br>&gt;　各文字の Combination_Class 値が直前の文字より小さくて<br>&gt;　0でなければ整ってないとみる、らしい。<br>正）<br>&gt;　Combination_Class 値が 0 の文字に続く文字の<br>&gt;　Combination_Class 値が、直前の文字のそれより小さければ、<br>&gt;　整ってないとみる、らしい。<br></div></section>
+    </li><li><section><h1 id=4851>
+    <span class="no">[4851]</span>
+    <a class="thread-title" href="#4851">Re5: UTF-7 の読み取りミス(?) について</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-05-28T19:23:48">2007年05月28日 19:23</time></h1>
+    <div class="body">&gt; Unicode の予約コードポイントも不正値と見るというのは、<br>&gt; やりすぎでしょうか・・・。<br><br>数日前のことですが、一応それようのパッチを登録しました。<br># Unicode の組み合わせ文字（今のところ 418個）の<br># ハッシュによる参照関数が未だできていないのが<br># 心残りなのですけれど。。。<br><br>ありえないフラグの導入やらで、<br>UTF-16 BE/LE の判定条件がよりいっそう厳しくなりまして、<br>ワード文書も Unicode と認識されなくなりますけれど、<br>バイナリファイルが Unicode に逝てしまうようなことは<br>なんとか防げそうです。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=4818>
+    <span class="no">[4818]</span>
+    <a class="thread-title" href="#4818">Re2: UTF-7 の読み取りミス(?) について</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-05-14T23:30:55">2007年05月14日 23:30</time></h1>
+    <div class="body">▼ げんたさん<br>d+hG5ugj9r46NRQqEZMyppcHgFCNCjOO9VCdsCMs6tjoJ6mkE66befz58aqNKRHQ<br>&gt; &gt;暫定的にですけれど、自分なりに見つかった問題を報告します。<br>&gt; &gt;<br>&gt; &gt;charcode.cpp の UTF-7 判別関数に怪しげな部分が…<br>&gt; 早速修正して試してみましたが，同じようにUTF-7と認識されてしまいました．<br><br>リリースお疲れ様です。<br>このパッチ、少なくとも上記の文字列では大丈夫でした。</div></section>
+    <ul><li><section><h1 id=4820>
+    <span class="no">[4820]</span>
+    <a class="thread-title" href="#4820">Re3: UTF-7 の読み取りミス(?) について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-05-15T00:59:49">2007年05月15日 00:59</time></h1>
+    <div class="body">&gt;このパッチ、少なくとも上記の文字列では大丈夫でした。<br>あ，最後に改行がないとOKですね．改行がある場合は2文字目の+がUTF-7の先頭と判定され，その後62文字アルファベットと数字が続きます．<br>62 / 8 = 7 あまり 6<br>あまり6のときは<br>00xx xxxx  00xx xxxx  00xx xxxx  00xx xxxx  00xx xxxx  00xx 0000 のパターンで<br>最後の文字の表す値の下位4ビットは0<br><br>最後の文字はQで，これの表す値が16．故にUTF-7として正当な値．<br><br>というふうに判定されて，<br>&gt;UTF-7コード検査：特有バイト数=62  ポイント数=62<br>になります．<br><br>&gt;ptr == end_ptr が成り立つ場合, CheckUtf7SetBPart() 関数の特性により，単純に不正バイト数 := ptr-base_ptr（読み込んだバイト数）となる恐れがある<br>と書かれていますが，この『特性』って一体なんでしょうか．<br></div></section>
+    <ul><li><section><h1 id=4821>
+    <span class="no">[4821]</span>
+    <a class="thread-title" href="#4821">Re4: UTF-7 の読み取りミス(?) について</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-05-15T16:18:24">2007年05月15日 16:18</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ・・・<br>&gt; &gt;ptr == end_ptr が成り立つ場合, <br>&gt; &gt;CheckUtf7SetBPart() 関数の特性により，<br>&gt; &gt;単純に不正バイト数 := ptr-base_ptr（読み込んだバイト数）<br>&gt; &gt;となる恐れがある<br>&gt; と書かれていますが，この『特性』って一体なんでしょうか．<br><br>以下の部分を見てみて下さい。<br><br>ViewVC の<br>sakura/trunk/sakura_core/charcode.cpp (リビジョン 1047)<br>関数 CheckUtf7SetBPart() 内:<br>267: &#9;&#9;base_ptr = const_cast&lt;uchar_t*&gt;(pS);<br>268: &#9;&#9;end_ptr = base_ptr + nLen;<br>269: &#9;&#9;for( ptr = base_ptr; ptr &lt; end_ptr; ++ptr ){<br>270: &#9;&#9;&#9;if( !IsBase64Char( *ptr ) ){<br>271: &#9;&#9;&#9;&#9;// UTF-7 Set D 部分の開始を認識.<br>272: &#9;&#9;&#9;&#9;break;<br>273: &#9;&#9;&#9;}<br>274: &#9;&#9;}<br><br>これは UTF-7 セットD文字列の開始部分を判断するループです。<br>判定している部分が２つあります。<br><br>１つ目は 270行の条件  !IsBase64Char( *ptr )<br>２つ目は 269行の条件  ptr &lt; end_ptr<br><br>その言う、この関数の特性っていうのは、例えば、<br>２つ目の条件でセットＤ文字列だと判断されて、<br>その後の例の検証ステップに合格するとしたら、<br>仮に、読み込んだ BASE64 文字列が途中で切れていて、<br>最後まできちんと調査できないときも、<br>それにかまわず、不正バイトは見つからなかったと<br>結果を返してしまうことを表しています。<br><br># この件の本質的な解決にはなってないという落ちです ^^;<br># <br># 検証ステップで UTF-7 の BASE64 部分をデコードして得られた<br># UTF-16 Be(だったっけ？)の内容のことも考慮すると、<br># セットDに含まれる文字がデコード結果の<br># UTF-16 Be 文字列に含まれていれば、<br># 不正な UTF-7 文字列とすることができます。。。よね？<br># けれど、それだけでは普通に作業量が割り増しになるので、<br># 調査対象文字列に UTF-7 では使われない値が見つかったら<br># UTF-7 の可能性に見切りをつけるようにすれば安くつくかなと、<br># 思案中。。。。思案中。<br># どうも Unicode の合成文字からは<br># 逃げられそうにありません T_T<br><br><br></div></section>
+    </li><li><section><h1 id=4822>
+    <span class="no">[4822]</span>
+    <a class="thread-title" href="#4822">Re4: UTF-7 の読み取りミス(?) について</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-05-15T19:12:55">2007年05月15日 19:12</time></h1>
+    <div class="body">補足：<br><br>&gt; ２つ目の条件でセットＤ文字列だと判断されて、<br>&gt; その後の例の検証ステップに合格するとしたら、<br>&gt; 仮に、読み込んだ BASE64 文字列が途中で切れていて、<br>&gt; 最後まできちんと調査できないときも、それにかまわず、<br>&gt; 不正バイトは見つからなかったと結果を返してしまうことを<br>&gt; 表しています。<br><br>逆に、２つ目の条件でセットＤ文字列だと判断されて、<br>その後、例の検証ステップに合格しないとしたら、<br>最後まで調査できてないときでも、それにかまわず、<br>不正バイト数が見つかったと結果を返してしまいます。<br><br>つ、つまり要約すると。<br><br>そこに書かれてる特性とは、<br>最後まで調査できていなくても、<br>結果を断定しようとする性質のことです (&gt;_&lt;;)<br><br>すみません。<br>実は平々凡々とした内容なのに、<br>そうでないかのように長々と<br>講釈を垂れてしまいました orz<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

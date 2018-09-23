@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>パッチを色々確認しました | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5685</span>
+    <a class="thread-title" href="5685.html#5685">パッチを色々確認しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5686</span>
+    <a class="thread-title" href="5685.html#5686">Re: パッチを色々確認しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5687</span>
+    <a class="thread-title" href="5685.html#5687">Re2: パッチを色々確認しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5689</span>
+    <a class="thread-title" href="5685.html#5689">Re3: パッチを色々確認しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5690</span>
+    <a class="thread-title" href="5685.html#5690">Re4: パッチを色々確認しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5692</span>
+    <a class="thread-title" href="5685.html#5692">Re5: パッチを色々確認しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5693</span>
+    <a class="thread-title" href="5685.html#5693">Re6: パッチを色々確認しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5694</span>
+    <a class="thread-title" href="5685.html#5694">Re7: パッチを色々確認しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5695</span>
+    <a class="thread-title" href="5685.html#5695">Re8: パッチを色々確認しました</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5688</span>
+    <a class="thread-title" href="5685.html#5688">Re:パッチを色々確認しました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5691</span>
+    <a class="thread-title" href="5685.html#5691">Re:パッチを色々確認しました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5696</span>
+    <a class="thread-title" href="5685.html#5696">Re:パッチを色々確認しました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5697</span>
+    <a class="thread-title" href="5685.html#5697">コミット完了しました</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5685>
+    <span class="no">[5685]</span>
+    <a class="thread-title" href="#5685">パッチを色々確認しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-10-01T20:54:10">2010年10月01日 20:54</time></h1>
+    <div class="body">こんにちは、やっとXP SP3に移行したのでVS2008/VS2010がインストールできるようになりました (^^;<br><br>以下のANSI版パッチを確認しました。<br>　#2835545 Erlang アウトライン解析<br>　#2992320 存在しないcursor1.curのsakura.dsp登録を解除<br>　#3008991 Viewウィンドウの遅延作成(ANSI版)<br>　#3009187 [U済] アウトライン解析（トグル）で「C 関数一覧」画面が閉じない<br>　#3025944 [U済]折り返し行インデントで折り返すとメモリを食い尽くす<br>　#3026401 [U済]ツールバー折返しの番号ずれ対応<br>　#3055719 [U済]Undo/Redoでのメモリーリーク修正<br>　#3055721 [U済]矩形選択中の長い文字列の貼り付けでクラッシュ<br><br>－－　ここまで確認済み　－－<br><br>★未確認<br>　#3056634 [U済]チップウィンドウのリソースリーク修正<br>　#3056638 Grep不具合の修正<br>　#3067444 [U済] 「クリップボードから」と「正規表現」がONの置換で「選択始点挿入」「選択終点追加」が効かない<br>　#3069797 [U済] MSDEVLineSelect形式で「クリップボードから」全置換したときにラインモード貼り付けにならない<br><br>★多分破棄（#3069797により該当部分が無くなるため）<br>　#3055721 [U済]矩形選択中の長い文字列の貼り付けでクラッシュ<br><br>特に問題が出なければ10/11以降に代理コミットします。<br></div></section>
+    <ul><li><section><h1 id=5686>
+    <span class="no">[5686]</span>
+    <a class="thread-title" href="#5686">Re: パッチを色々確認しました</a>
+    <span class="author">もか</span>
+    <time datetime="2010-10-02T17:13:17">2010年10月02日 17:13</time></h1>
+    <div class="body">&gt;★多分破棄（#3069797により該当部分が無くなるため）<br>&gt;　#3055721 [U済]矩形選択中の長い文字列の貼り付けでクラッシュ<br>破棄(Rejected)に変更しました。<br><br>#3055711 ユーザの意図しないプログラム実行の抑制(A用)<br>も候補に入れていただきたく。<br>意図的にPrivateに設定してありましたが、A/Wとも全く反応がなく、私以外には見えていないのでしょうか？<br>見えないと困るのでPublicにしました。<br><br># そろそろ 1.6.6.0 のリリース時期かなぁと<br></div></section>
+    <ul><li><section><h1 id=5687>
+    <span class="no">[5687]</span>
+    <a class="thread-title" href="#5687">Re2: パッチを色々確認しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-10-03T00:27:16">2010年10月03日 00:27</time></h1>
+    <div class="body">▼ もかさん<br>&gt; #3055711 ユーザの意図しないプログラム実行の抑制(A用)<br>&gt; も候補に入れていただきたく。<br>&gt; 意図的にPrivateに設定してありましたが、A/Wとも全く反応がなく、私以外には見えていないのでしょうか？<br>&gt; 見えないと困るのでPublicにしました。<br><br>見えていませんでしたので、Privateが原因だと思います。<br><br>「#3056638 Grep不具合の修正」について、以下の現象が確認できません。<br>・Grep結果画面の強調表示に単語単位が適用されていない<br>・Grepの出力順が不正になることがある<br><br>パッチの74～88行目の理由が分かりません。<br>この時点ではcmemMessageは空な気が……<br><br>ではでは。</div></section>
+    <ul><li><section><h1 id=5689>
+    <span class="no">[5689]</span>
+    <a class="thread-title" href="#5689">Re3: パッチを色々確認しました</a>
+    <span class="author">もか</span>
+    <time datetime="2010-10-03T01:27:28">2010年10月03日 01:27</time></h1>
+    <div class="body">いろいろありがとうございます。<br>&gt;見えていませんでしたので、Privateが原因だと思います。<br>プロジェクトメンバーの名前が濃い人(Admin)の人は見えてると思っていたけれど、<br>Tracker ManagerのAdmin+投稿者でないと見えないということみたいですね。<br>それだと私とgentaさんとyazakiさんだけに見えると。<br><br>&gt;「#3056638 Grep不具合の修正」について、以下の現象が確認できません。<br>&gt;・Grep結果画面の強調表示に単語単位が適用されていない<br>行出力にして、単語単位検索でHogeをGrepしたとき<br>出力の同一行に Hoge と HogeHoge があると HogeHoge にも色がついてしまいます。<br><br>&gt;・Grepの出力順が不正になることがある<br>&gt;パッチの74～88行目の理由が分かりません。<br>&gt;この時点ではcmemMessageは空な気が……<br>移植ミスで場所を間違えたようです。すみません。確認してませんでした。<br>CEditView::DoGrepTree:7957行目付近<br>&gt;&#9;/*<br>&gt;&#9; * サブフォルダを検索する。<br>&gt;&#9; */<br>&gt;&#9;if( bGrepSubFolder ){<br>の直前が正しい位置でした。<br>この位置で出力しないと、同一フォルダ内の出力がサブフォルダで分断されます。<br>移動しただけですが変更後のパッチをあげました。<br></div></section>
+    <ul><li><section><h1 id=5690>
+    <span class="no">[5690]</span>
+    <a class="thread-title" href="#5690">Re4: パッチを色々確認しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-10-04T03:09:18">2010年10月04日 03:09</time></h1>
+    <div class="body">▼ もかさん<br>あああ、すみません m(_ _)m<br>SourceForgeにログインせずに見ていました。<br><br>&gt; &gt;「#3056638 Grep不具合の修正」について、以下の現象が確認できません。<br>&gt; &gt;・Grep結果画面の強調表示に単語単位が適用されていない<br>&gt; 行出力にして、単語単位検索でHogeをGrepしたとき<br>&gt; 出力の同一行に Hoge と HogeHoge があると HogeHoge にも色がついてしまいます。<br><br>A版r1825やv1.6.4.0、U版r1432などでも試してみましたが、どうにも現象が出ません ＞＜<br>m_bCurSrchWordOnlyにアクセスする所が少ないので、おっしゃる様な現象は出ない気がするのですが……<br><br>XP SP3/VC2008 Express Editionでビルドしています。<br><br>・Grepの出力順が不正になることがある<br>現象を確認できました。<br>また、修正箇所を移動により修正後の動作を確認できました。<br><br></div></section>
+    <ul><li><section><h1 id=5692>
+    <span class="no">[5692]</span>
+    <a class="thread-title" href="#5692">Re5: パッチを色々確認しました</a>
+    <span class="author">もか</span>
+    <time datetime="2010-10-04T20:08:39">2010年10月04日 20:08</time></h1>
+    <div class="body">お手数おかけします。Grep結果だけ見て不具合の有無のほう確認してませんでした。<br>なすこじさんの指摘通りで、そのままでは発生しませんでした。<br><br>Unicode版では rev1796 &gt;&gt;unicode:1334 検索文字列の色分けで単語単位のフラグがビューごとになっていない<br>でのビューの表示側を修正した影響で現象が発生するようになりました。<br>　調べてみたところ、色分けの描画の判定関数<br>ANSIのCEditView::IsSearchString()内<br>trunk/sakura_core/CEDitView_New2.cpp:590<br>&gt;&#9;if( m_pShareData-&gt;m_Common.m_bWordOnly ){&#9;/* 検索／置換  1==単語のみ検索 */<br>になっていて、ANSI側は不具合のあるままです。<br>m_bCurSrchWordOnlyに変更するとANSIでもGrepの表示不具合を確認しました。<br><br>なおANSIのHEADとrev1796より前のUnicodeでは以下のような感じになります。<br>WindowA: ファイルを開いて「単語単位」でGrep検索<br>WindowB: 新規Grepウィンドウ。Grep完了。色分けできている(設定=ShareData, 表示=ShareDataだから)<br>WindowA: 普通に単語チェックをOFFで検索or検索マーク切り替え(で今の実装では単語チェックが外れる)<br>WindowB: 再作画された部分だけ単語単位色分けが無効になる<br>もちろんGrep以外の2つの編集ウィンドウ/ビューでも同じです。<br></div></section>
+    <ul><li><section><h1 id=5693>
+    <span class="no">[5693]</span>
+    <a class="thread-title" href="#5693">Re6: パッチを色々確認しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-10-05T01:05:47">2010年10月05日 01:05</time></h1>
+    <div class="body">▼ もかさん<br>Grepの件了解です。また確認しておきます。<br><br>その他の問題点<br>#3008991 Viewウィンドウの遅延作成(ANSI版)VC6でビルドエラー<br>CreateEditViewBySplit()内にfor(int i=0;…が2個あるのでVC6では2重定義となります。<br>int i; を外に出して下さい。<br><br>#3055711 ユーザの意図しないプログラム実行の抑制(A用)VC2005で起動エラー<br>StartControlProcess()でCreateProcess()実行時にメモリ参照エラーとなります。<br>エラーになる理屈は分からないけど、下記の所がおかしい気がします (^^;<br>パッチ90行目<br>　　if( !szExeDir[0] ){<br>　→if( szExeDir[0] ){<br><br>パッチ246～249行目<br>　Init()は元のままで良い<br><br>ではでは。<br><br></div></section>
+    <ul><li><section><h1 id=5694>
+    <span class="no">[5694]</span>
+    <a class="thread-title" href="#5694">Re7: パッチを色々確認しました</a>
+    <span class="author">もか</span>
+    <time datetime="2010-10-05T23:10:28">2010年10月05日 23:10</time></h1>
+    <div class="body">3点とも問題点を当方でも確認。修正したパッチをアップしました。<br>#念のためパッチも上げてありますが、なすこじさん手元のほうの修正でいいような気がします。<br><br>&gt;#3055711 ユーザの意図しないプログラム実行の抑制(A用)VC2005で起動エラー<br>&gt;StartControlProcess()でCreateProcess()実行時にメモリ参照エラーとなります。<br>&gt;(中略)<br>&gt;パッチ90行目<br>&gt;　　if( !szExeDir[0] ){<br>&gt;　→if( szExeDir[0] ){<br>意図と反対ですね。<br>こちらの実害は少ないけれど0ではないです。<br><br>&gt;パッチ246～249行目<br>&gt;　Init()は元のままで良い<br>こっちがビンゴで、メンバ関数呼び出しだったところをpatchで同名のAPIと間違えて置き換えてます。<br>その影響でメンバ変数が初期化されなくて落ちているようです。<br><br>#U版ではInitの部分は実装が違うので問題ないです。<br></div></section>
+    <ul><li><section><h1 id=5695>
+    <span class="no">[5695]</span>
+    <a class="thread-title" href="#5695">Re8: パッチを色々確認しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-10-07T00:34:55">2010年10月07日 00:34</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 3点とも問題点を当方でも確認。修正したパッチをアップしました。<br>&gt; #念のためパッチも上げてありますが、なすこじさん手元のほうの修正でいいような気がします。<br><br>ありがとうございます。確認しました。<br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=5688>
+    <span class="no">[5688]</span>
+    <a class="thread-title" href="#5688">Re:パッチを色々確認しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-10-03T00:51:26">2010年10月03日 00:51</time></h1>
+    <div class="body">「#2992320 存在しないcursor1.curのsakura.dsp登録を解除」については、パッチに問題が無いので確認済みとしていますが、私のVC2010 Express Editionでは&gt;&gt;dev:5673 の現象が出せません。<br><br>dswを直接VC2010で開くと「…dspを読み込めません。…」となって変換に失敗してしまうので……<br><br></div></section>
+    </li><li><section><h1 id=5691>
+    <span class="no">[5691]</span>
+    <a class="thread-title" href="#5691">Re:パッチを色々確認しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-10-04T03:10:03">2010年10月04日 03:10</time></h1>
+    <div class="body">以下のパッチを確認しました。<br>　#3056634 [U済]チップウィンドウのリソースリーク修正　#3067444 [U済] 「クリップボードから」と「正規表現」がONの置換で「選択始点挿入」「選択終点追加」が効かない　#3069797 [U済] MSDEVLineSelect形式で「クリップボードから」全置換したときにラインモード貼り付けにならない<br><br>★一部現象未確認のため保留<br>　#3056638 Grep不具合の修正<br>★未確認<br>　#3055711 ユーザの意図しないプログラム実行の抑制(A用)<br><br></div></section>
+    </li><li><section><h1 id=5696>
+    <span class="no">[5696]</span>
+    <a class="thread-title" href="#5696">Re:パッチを色々確認しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-10-07T00:35:39">2010年10月07日 00:35</time></h1>
+    <div class="body">以下のパッチを確認しました。<br>　#3056638 Grep不具合の修正　#3055711 ユーザの意図しないプログラム実行の抑制(A用)<br><br>確認が終わりましたので、予定通り10/11以降にコミットします。<br><br></div></section>
+    </li><li><section><h1 id=5697>
+    <span class="no">[5697]</span>
+    <a class="thread-title" href="#5697">コミット完了しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-10-11T17:33:07">2010年10月11日 17:33</time></h1>
+    <div class="body">以下のANSI版パッチをコミットしました。<br>　#2835545 Erlang アウトライン解析<br>　#2992320 存在しないcursor1.curのsakura.dsp登録を解除<br>　#3008991 Viewウィンドウの遅延作成(ANSI版)<br>　#3009187 [U済] アウトライン解析（トグル）で「C 関数一覧」画面が閉じない<br>　#3025944 [U済]折り返し行インデントで折り返すとメモリを食い尽くす<br>　#3026401 [U済]ツールバー折返しの番号ずれ対応<br>　#3055719 [U済]Undo/Redoでのメモリーリーク修正<br>　#3056634 [U済]チップウィンドウのリソースリーク修正<br>　#3056638 Grep不具合の修正<br>　#3067444 [U済] 「クリップボードから」と「正規表現」がONの置換で「選択始点挿入」「選択終点追加」が効かない<br>　#3069797 [U済] MSDEVLineSelect形式で「クリップボードから」全置換したときにラインモード貼り付けにならない<br>　#3055711 ユーザの意図しないプログラム実行の抑制(A用)<br><br>以上<br></div></section>
+    </li></ul></li></ul></body></html>

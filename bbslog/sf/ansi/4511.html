@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>全て選択後、選択終了桁を取得すると 1が返る | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4511</span>
+    <a class="thread-title" href="4511.html#4511">全て選択後、選択終了桁を取得すると 1が返る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4512</span>
+    <a class="thread-title" href="4511.html#4512">Re:全て選択後、選択終了桁を取得すると 1が返る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4516</span>
+    <a class="thread-title" href="4511.html#4516">Re2:全て選択後、選択終了桁を取得すると 1が返る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4517</span>
+    <a class="thread-title" href="4511.html#4517">Re3:全て選択後、選択終了桁を取得すると 1が返る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4531</span>
+    <a class="thread-title" href="4511.html#4531">Re4:全て選択後、選択終了桁を取得すると 1が返る</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4511>
+    <span class="no">[4511]</span>
+    <a class="thread-title" href="#4511">全て選択後、選択終了桁を取得すると 1が返る</a>
+    <span class="author">tis</span>
+    <time datetime="2006-07-10T22:31:41">2006年07月10日 22:31</time></h1>
+    <div class="body">バグらしき箇所を発見しましたので、ご報告致します。<br><br>内容は、全て選択後、選択終了桁を取得すると 1が返る、というものです。<br>マウスドラッグやカーソル移動では、意図した結果が返ってきます。<br><br>環境はこちら<br>SakuraEditor 1.5.10.1 (初回起動時の iniファイルを使用)<br>PPA 1.24<br><br><br>内容が不適切、板違い等ございましたら、削除致します。</div></section>
+    <ul><li><section><h1 id=4512>
+    <span class="no">[4512]</span>
+    <a class="thread-title" href="#4512">Re:全て選択後、選択終了桁を取得すると 1が返る</a>
+    <span class="author">maru</span>
+    <time datetime="2006-07-11T01:20:30">2006年07月11日 01:20</time></h1>
+    <div class="body">▼ tisさん<br>&gt; 内容は、全て選択後、選択終了桁を取得すると 1が返る、というものです。<br>&gt; マウスドラッグやカーソル移動では、意図した結果が返ってきます。<br>最終行に改行が無いときとに<br>「すべて選択」をすると再現します。</div></section>
+    <ul><li><section><h1 id=4516>
+    <span class="no">[4516]</span>
+    <a class="thread-title" href="#4516">Re2:全て選択後、選択終了桁を取得すると 1が返る</a>
+    <span class="author">tis</span>
+    <time datetime="2006-07-13T01:26:26">2006年07月13日 01:26</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 最終行に改行が無いときとに<br>&gt; 「すべて選択」をすると再現します。<br><br>つまり、以下の文章のような、<br>最終行が空行で終わる形、ということでしょうか?<br><br>Line1[CrLf]<br>Line2[CrLf]<br>[EOF]<br><br>確かに上記の文章だと、範囲終了桁に 1が返るのも納得できます。<br>しかし、以下の文章のような、<br>最終行に文字入力があって終わる形でも 1が返ってきます。<br><br>Line1[CrLf]<br>Line2[EOF]<br><br>上記文章だと、範囲終了桁は 6が返るはずです。<br>マクロリファレンスを見る限りでは、<br>そのはずだと思うのですが、如何でしょうか?</div></section>
+    <ul><li><section><h1 id=4517>
+    <span class="no">[4517]</span>
+    <a class="thread-title" href="#4517">Re3:全て選択後、選択終了桁を取得すると 1が返る</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-07-13T06:46:29">2006年07月13日 06:46</time></h1>
+    <div class="body">ソースコードを見ると，「すべて選択」では<br>SetSelectArea( 0, 0, m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount(), 0 );<br>と総行数＋１を無条件で選択しています．<br>このように広めにとっても画面上では問題ないのでしょうが，マクロではこのとき指定したままの値が返ってしまいます．<br><br>「すべて選択」の末尾の判定を厳密に行わないとだめですね．<br></div></section>
+    <ul><li><section><h1 id=4531>
+    <span class="no">[4531]</span>
+    <a class="thread-title" href="#4531">Re4:全て選択後、選択終了桁を取得すると 1が返る</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-07-29T12:53:18">2006年07月29日 12:53</time></h1>
+    <div class="body">&gt;「すべて選択」の末尾の判定を厳密に行わないとだめですね．<br>Patches #1530740 にパッチを出しました．<br><br>Command_GOLINEEND()を参考にしたのですが，足したり引いたり奇妙なことをやっていてよくわかりませんでした．<br>なので，シンプルに最後の位置を求めるだけにしたので何か特別なケースが抜けているかもしれません．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

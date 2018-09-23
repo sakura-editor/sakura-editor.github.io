@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>全角引用符の半角変換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5227</span>
+    <a class="thread-title" href="5227.html#5227">全角引用符の半角変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5232</span>
+    <a class="thread-title" href="5227.html#5232">RE: 全角引用符の半角変換</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5233</span>
+    <a class="thread-title" href="5227.html#5233">Re:全角引用符の半角変換</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5227>
+    <span class="no">[5227]</span>
+    <a class="thread-title" href="#5227">全角引用符の半角変換</a>
+    <span class="author">TAK</span>
+    <time datetime="2007-12-16T23:28:37">2007年12月16日 23:28</time></h1>
+    <div class="body">v1.6.2.0／Win2000SP4<br><br>全角のシングル／ダブルクォートで囲まれた文字列に対して<br>変換メニューの「全角英数→半角英数」変換を実行した場合、<br>片側の引用符だけしか変換対象になりませんが、<br>これは環境や設定の問題ですか？　それとも開発側の問題ですか？<br><br>例<br><br>変換前：‘○○’　→　変換後：`○○'　　左（&amp;lsquo）だけが半角に<br>変換前：“○○”　→　変換後：“○○"　右（&amp;rdquo）だけが半角に<br><br>念のために書きますが、引用符には左右の区別があります</div></section>
+    <ul><li><section><h1 id=5232>
+    <span class="no">[5232]</span>
+    <a class="thread-title" href="#5232">RE: 全角引用符の半角変換</a>
+    <span class="author">maru</span>
+    <time datetime="2007-12-17T03:54:00">2007年12月17日 03:54</time></h1>
+    <div class="body">&gt;変換メニューの「全角英数→半角英数」変換を実行した場合、<br>&gt;片側の引用符だけしか変換対象になりませんが、<br><br>一重引用符の時は左右ともに変換されていますよね？<br><br>問題は二重引用符ですが、二重の半角は左右の区別がない<br>と思いますので、全角左側には戻せなくなりますね。<br><br>どうしたらいいのだろう・・・。<br></div></section>
+    </li><li><section><h1 id=5233>
+    <span class="no">[5233]</span>
+    <a class="thread-title" href="#5233">Re:全角引用符の半角変換</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-12-17T12:31:15">2007年12月17日 12:31</time></h1>
+    <div class="body">▼ TAKさん<br>INCMで文字化けしなければ、こうゆう事ですね。<br><br>変換メニューの「全角→半角」「全角英数→半角英数」変換を実行した場合、<br><br>変換前：[‘○○’]　全角→　変換後：['○○']　半角に（現状は[`○○']）<br>変換前：[“○○”]　全角→　変換後：["○○"]　半角に（現状は[“○○"]）<br><br>変換メニューの「半角＋→全角・」「半角英数→全角英数」変換を実行した場合、<br><br>変換前：['○○'] 半角→　変換後：［‘○○’］　全角に（現状が［’○○’］）<br>変換前：["○○"] 半角→　変換後：［“○○”］　全角に（現状が［”○○”］）</div></section>
+    </li></ul></li></ul></body></html>

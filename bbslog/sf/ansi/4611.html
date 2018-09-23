@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バグ？：SQL*Plus実行後、プロンプトに「t」 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4611</span>
+    <a class="thread-title" href="4611.html#4611">バグ？：SQL*Plus実行後、プロンプトに「t」</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4614</span>
+    <a class="thread-title" href="4611.html#4614">RE: バグ？：SQL*Plus実行後、プロンプトに「t」</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4615</span>
+    <a class="thread-title" href="4611.html#4615">Re2: バグ？：SQL*Plus実行後、プロンプトに「t」</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4620</span>
+    <a class="thread-title" href="4611.html#4620">Re3: SQL*Plus実行後、プロンプトに「t」</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4622</span>
+    <a class="thread-title" href="4611.html#4622">Re4: SQL*Plus実行後、プロンプトに「t」</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4623</span>
+    <a class="thread-title" href="4611.html#4623">Re5: SQL*Plus実行後、プロンプトに「t」</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4628</span>
+    <a class="thread-title" href="4611.html#4628">Re6: SQL*Plus実行後、プロンプトに「t」</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4629</span>
+    <a class="thread-title" href="4611.html#4629">Re6: SQL*Plus実行後、プロンプトに「t」</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4619</span>
+    <a class="thread-title" href="4611.html#4619">RE: バグ？：SQL*Plus実行後、プロンプトに「t」</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4630</span>
+    <a class="thread-title" href="4611.html#4630">Re2: バグ？：SQL*Plus実行後、プロンプトに「t」</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4611>
+    <span class="no">[4611]</span>
+    <a class="thread-title" href="#4611">バグ？：SQL*Plus実行後、プロンプトに「t」</a>
+    <span class="author">梅沢</span>
+    <time datetime="2006-10-23T11:02:22">2006年10月23日 11:02</time></h1>
+    <div class="body">「SQL*Plusで実行」を行うと、実行は正しくできるのですが、<br>その後の SQL プロンプトに「t」という余計な文字が入力されています。<br>サクラ V. 1.5.10.0<br>SQL*Plus V. 8.1.6.0.0<br>ですが、これはバグでしょうか？</div></section>
+    <ul><li><section><h1 id=4614>
+    <span class="no">[4614]</span>
+    <a class="thread-title" href="#4614">RE: バグ？：SQL*Plus実行後、プロンプトに「t」</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-23T23:59:39">2006年10月23日 23:59</time></h1>
+    <div class="body">&gt;「SQL*Plusで実行」を行うと、実行は正しくできるのですが、<br>&gt;その後の SQL プロンプトに「t」という余計な文字が入力されています。<br>&gt;サクラ V. 1.5.10.0<br>&gt;SQL*Plus V. 8.1.6.0.0<br>&gt;ですが、これはバグでしょうか？<br>これは原作者の方が最初に作った機能なのですが，その後Oracleもバージョンが上がっています．<br>何度か似たような指摘を受けたのですが，残念ながらOracleを持っていないので再現も確認も出来ません．<br>というわけで，Oracleを使っている方の協力をお待ちしています．<br></div></section>
+    <ul><li><section><h1 id=4615>
+    <span class="no">[4615]</span>
+    <a class="thread-title" href="#4615">Re2: バグ？：SQL*Plus実行後、プロンプトに「t」</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-24T02:26:35">2006年10月24日 02:26</time></h1>
+    <div class="body">ソリッドに再現できないので確証は持てませんが、次の条件で、SQL*Plusが誤動作するようです。<br>・ファイルパスに空白が含まれるときか日本語が含まれるとき？(詳細不<br>明)<br>・SQL*Plusに渡す文字列（クリップボード経由）が\rで改行している<br><br>どうして\rにしているのか理由はわかりませんが\r\nで再現しなくなりました。<br><br>一般WindowsアプリケーションからSQLプロンプトにペーストするときの動作を考えても、\r\nのほうがより安全だと思います。<br><br>再現環境<br>SQL*Plus 9.0.1.0.0<br>sakura 1.5.12.0<br><br>#1583031</div></section>
+    <ul><li><section><h1 id=4620>
+    <span class="no">[4620]</span>
+    <a class="thread-title" href="#4620">Re3: SQL*Plus実行後、プロンプトに「t」</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-25T11:28:58">2006年10月25日 11:28</time></h1>
+    <div class="body">▼ maruさん<br>&gt; …再現しなくなりました。<br>ソリ…の意味が不明です、固体？ハードが不明てことでしょうか。<br><br>Oracle SQL*Plus バージョン9.2.0.1.0<br>サクラエディタ Ver. 1.5.12.0 (V 1310)<br>環境(Linux)で試しましたが、私も現象が再現しませんでした。<br><br>ファイルパスやファイル名に半角空白が有ってもtは出ません。<br>ファイル名に全角（さらに日本語）が有ってもtは出ません。<br><br>（本題の）試しに、SAKURAでファイル名を書いたものを貼り付けましたが、LFのみだと改行しません。<br>-------------------------<br>SQL&gt; @"C:\Program Files\Sakura\sql1 エスキューエル.sql"+CR+LF正常<br>SQL&gt; @"C:\Program Files\Sakura\sql1 エスキューエル.sql"+LF改行しない<br>SQL&gt; @"C:\Program Files\Sakura\sql1 エスキューエル.sql"+CR正常<br>-------------------------<br><br>ただ、気になる点が１点、SAKURAの最新リリース版も同じですが、<br>ファイル名ではなく、SQLテキストの改行コードをCRにすると、SQL*Plusがエラーで終了します。</div></section>
+    <ul><li><section><h1 id=4622>
+    <span class="no">[4622]</span>
+    <a class="thread-title" href="#4622">Re4: SQL*Plus実行後、プロンプトに「t」</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-26T00:59:42">2006年10月26日 00:59</time></h1>
+    <div class="body">▼ じゅうじさん<br>「同じ条件でも現象がでたり出なかったりするので」に読み替えてください。<br>すいません、一般用語かと思っていました。<br><br>CR改行のときに、何らかの条件で発生するみたいですが、はっきりしたことは分かりませんでした。<br>同じファイルパスでも、繰り返し実行すると再現したりしなかったりします。<br>また、必ずtが出るわけではなく、いろんな文字が出ます。<br><br>ただ、クリップボードを使わない限り、コンソールからCRが入力されることはありませんから<br>SQL*plusはCRLFで入力されることを前提に作られているような気がします。</div></section>
+    <ul><li><section><h1 id=4623>
+    <span class="no">[4623]</span>
+    <a class="thread-title" href="#4623">Re5: SQL*Plus実行後、プロンプトに「t」</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-26T12:59:35">2006年10月26日 12:59</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ▼ じゅうじさん<br>&gt; 「同じ条件でも現象がでたり出なかったりするので」に読み替えてください。<br>&gt; すいません、一般用語かと思っていました。<br>了解しました、有難うございます。<br><br>この4行を、SAKURAからコピーしてペーストし、<br>一度クリアーして再度ペーストすると、以降は毎回発生するようです。<br>-------------------------<br>@"meta http-equiv"<br>@"titlegoo/title"<br>@"link rel"<br>@"meta name"<br>-------------------------<br><br>改行コードをCRにすると、画面には次の様に表示されました。<br>-------------------------<br>SQL&gt; @"meta http-equiv"<br>SP2-0310: ファイル"meta http-equiv.sql"をオープンできません。<br>SQL&gt; "titlegoo/title"<br>SP2-0734: ""titlegoo/..."で開始するコマンドが不明です - 残りの行は無視されました。<br>SQL&gt; "link rel"<br>SP2-0042: 不明なコマンドです(""link rel"")。行の残りは無視されました。<br>SQL&gt; "meta name"<br>SP2-0734: ""meta name..."で開始するコマンドが不明です - 残りの行は無視されました。<br>SQL&gt; (<br>-------------------------<br><br>再現テストでSQL*Plusで実行の時も、<br>1行目をSQL*Plusが実行中に2行目を起動して、<br>2行目の@が出なければ良いと思います。<br><br>SQL*Plus を起動した直後は大丈夫のようです、<br>2回目の実行から発生するようです。</div></section>
+    <ul><li><section><h1 id=4628>
+    <span class="no">[4628]</span>
+    <a class="thread-title" href="#4628">Re6: SQL*Plus実行後、プロンプトに「t」</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-29T20:31:26">2006年10月29日 20:31</time></h1>
+    <div class="body">▼ じゅうじさん<br><br>再現手順が分かりにくいので確認させてください。<br>&gt; -------------------------<br>&gt; @"meta http-equiv"<br>&gt; @"titlegoo/title"<br>&gt; @"link rel"<br>&gt; @"meta name"<br>&gt; -------------------------<br>この4行(CR改行で)を、ペースト、クリア、ペーストして<br>その直後の「SQL*Plusで実行」の結果を見るという意味でしょうか？<br>もしくは、じゅうじさんのほうでご確認いただけると助かります。<br><br>理想を言えば、梅沢さんのレスが欲しいところですが。</div></section>
+    </li><li><section><h1 id=4629>
+    <span class="no">[4629]</span>
+    <a class="thread-title" href="#4629">Re6: SQL*Plus実行後、プロンプトに「t」</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-30T13:54:57">2006年10月30日 13:54</time></h1>
+    <div class="body">▼ maruさん<br>ご迷惑をお掛けしています、試して見ています。<br><br>ファイル名を"meta name.sql.sql"にして、<br>オリジナルのバージョンを、SQL*Plusで実行を試しました。<br>ファイルの内容は、0バイトでかまいません。<br><br>SQL&gt; @"C:\Program Files\Sakura\meta name.sql.sql"<br>SQL&gt; \<br>SP2-0042: 不明なコマンドです("\")。行の残りは無視されました。<br>SQL&gt; <br><br>修正後の動作報告をお待ちしております。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=4619>
+    <span class="no">[4619]</span>
+    <a class="thread-title" href="#4619">RE: バグ？：SQL*Plus実行後、プロンプトに「t」</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-25T02:11:20">2006年10月25日 02:11</time></h1>
+    <div class="body">maruさんのパッチを入れたテスト版を作りましたので，お試しください．<br>http://sakura.qp.land.to/?Junk%2F12<br><br>問題なければ公式に取り込みますので，こちらでOK/NGの報告をして頂ければと思います．<br></div></section>
+    <ul><li><section><h1 id=4630>
+    <span class="no">[4630]</span>
+    <a class="thread-title" href="#4630">Re2: バグ？：SQL*Plus実行後、プロンプトに「t」</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-30T22:12:20">2006年10月30日 22:12</time></h1>
+    <div class="body">▼ じゅうじさん<br>具体的に例示いただきありがとうございます。<br>教えていただいた手順で再現し、修正の動作確認を完了しました。<br><br>ついでに発見した点として<br>・ファイルパスに日本語<br>・ファイル名に半角スペース<br>・ダブル拡張子<br>の３条件が重なるとSQL*Plusが強制終了します。<br><br>ただ、こちらはSQL*Plusで直接手入力しても発生することから<br>SQL*Plus側のバグと思われますので、無視します。<br><br>▼ げんたさん<br>#1012でコミットしました。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

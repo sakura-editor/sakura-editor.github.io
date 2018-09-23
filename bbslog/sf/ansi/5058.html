@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>タブが見えなくなる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5058</span>
+    <a class="thread-title" href="5058.html#5058">タブが見えなくなる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5059</span>
+    <a class="thread-title" href="5058.html#5059">RE: タブが見えなくなる</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5063</span>
+    <a class="thread-title" href="5058.html#5063">Re:タブが見えなくなる</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5058>
+    <span class="no">[5058]</span>
+    <a class="thread-title" href="#5058">タブが見えなくなる</a>
+    <span class="author">maru</span>
+    <time datetime="2007-09-24T19:38:20">2007年09月24日 19:38</time></h1>
+    <div class="body">以下の条件で、タブが見えなくなります。<br><br>■設定内容<br>タブバーを表示する：ON<br>ウィンドウをまとめてグループ化する：ON<br>最後のウィンドウを閉じたとき(無題)文書を残す：ON<br>ウィンドウを閉じるボタンは現在のファイルのみ閉じる：OFF<br>アイコン表示：ON<br>タブ一覧をソートする：ON<br><br>■再現手順<br>１．たくさんのファイルを開き、タブバーに左右三角ボタンが出るようにする<br>２．ファイルメニューで新規作成<br>３．無題のタブをD&amp;Dで外に出して新規グループに無題タブだけの状態にする<br>４．無題だけのグループをアクティブにしておく<br>５．コマンドラインで任意のファイルを開く<br>６．５で開いたファイルをタブバーの[×]ボタンで閉じる<br>７．もう一度コマンドラインで５のファイルを開く<br>８．無題のタブをクリックする<br>９．５のファイルのタブが見えない<br><br>ソースは追いかけていません。報告だけです。<br></div></section>
+    <ul><li><section><h1 id=5059>
+    <span class="no">[5059]</span>
+    <a class="thread-title" href="#5059">RE: タブが見えなくなる</a>
+    <span class="author">maru</span>
+    <time datetime="2007-09-24T19:45:42">2007年09月24日 19:45</time></h1>
+    <div class="body">すいません、バージョンを書いていませんでした。<br>1.5.17.0と1.5.17.207で確認しました。<br></div></section>
+    </li><li><section><h1 id=5063>
+    <span class="no">[5063]</span>
+    <a class="thread-title" href="#5063">Re:タブが見えなくなる</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-09-24T22:59:29">2007年09月24日 22:59</time></h1>
+    <div class="body">▼ maruさん<br>症状を確認しました。<br>98/2000/XPでは言われたとおりになりました。Vistaでは６．の時点で１個だけ残っているはずの自タブも消えてしまうようです。<br>見えてはいないけれど、ツールチップは表示されるし、クリックすると画面が切り替わりますね．．．<br>どうやら、タブコントロールの内部状態がおかしくなっているようです。<br>Patches#1801168に修正パッチをUpしておきました。</div></section>
+    </li></ul></li></ul></body></html>

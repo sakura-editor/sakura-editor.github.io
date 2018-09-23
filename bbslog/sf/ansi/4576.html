@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>編集行表示（行番号の強調）の動作 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4576</span>
+    <a class="thread-title" href="4576.html#4576">編集行表示（行番号の強調）の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4577</span>
+    <a class="thread-title" href="4576.html#4577">Re:編集行表示（行番号の強調）の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4578</span>
+    <a class="thread-title" href="4576.html#4578">Re2:編集行表示（行番号の強調）の動作</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4576>
+    <span class="no">[4576]</span>
+    <a class="thread-title" href="#4576">編集行表示（行番号の強調）の動作</a>
+    <span class="author">NOVO</span>
+    <time datetime="2006-09-10T15:05:34">2006年09月10日 15:05</time></h1>
+    <div class="body">検索しましたが、<br>既出だったらすみません。<br><br>ファイルを開き<br>編集後にUNDOして更新状態を未更新にすると<br>行番号の強調がなくなるのですが<br><br>その状態でその行より上の行を編集すると<br>UNDOで元に戻したはずの行番号が強調されてしまいます。<br><br>開発環境が無いのでGrepをしながらソースを読んでみましたが<br>CDocLine::m_bModifyのフラグが正しく操作されてないように感じました。<br><br>CEditView_New2.cppの161行<br>if( m_pcEditDoc-&gt;IsModified()&#9;/* ドキュメントが無変更の状態か */<br>&amp;&amp; pCDocLine-&gt;IsModifyed() ){&#9;&#9;/* 変更フラグ */<br>nColorIndex = COLORIDX_GYOU_MOD;&#9;/* 行番号（変更行） */<br>}<br><br>SetModifyFlgをfalseにしている箇所は<br>CDocLineMgr.cppの2393行しかないので<br>ファイル書き込み時にしかfalseにならないようです。<br><br>もしかすると仕様でしょうか？</div></section>
+    <ul><li><section><h1 id=4577>
+    <span class="no">[4577]</span>
+    <a class="thread-title" href="#4577">Re:編集行表示（行番号の強調）の動作</a>
+    <span class="author">maru</span>
+    <time datetime="2006-09-10T18:47:31">2006年09月10日 18:47</time></h1>
+    <div class="body">▼ NOVOさん<br>&gt;&gt;data:3751を見ての通りですが<br>「直せる人が出て来て直してくれると、皆喜ぶ」<br>という状況です。</div></section>
+    <ul><li><section><h1 id=4578>
+    <span class="no">[4578]</span>
+    <a class="thread-title" href="#4578">Re2:編集行表示（行番号の強調）の動作</a>
+    <span class="author">NOVO</span>
+    <time datetime="2006-09-11T18:34:54">2006年09月11日 18:34</time></h1>
+    <div class="body">▼ maruさん<br>そうなんですか。。<br><br>僕の脳みそじゃディスク上の情報をメモリに持つくらいしか<br>思いつかないですｗ<br><br>それじゃ効率悪いですもんね・・<br><br>ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

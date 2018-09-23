@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>HTMLヘルプの呼び出し方 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4631</span>
+    <a class="thread-title" href="4631.html#4631">HTMLヘルプの呼び出し方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4632</span>
+    <a class="thread-title" href="4631.html#4632">Re:HTMLヘルプの呼び出し方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4633</span>
+    <a class="thread-title" href="4631.html#4633">Re2:HTMLヘルプの呼び出し方</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4631>
+    <span class="no">[4631]</span>
+    <a class="thread-title" href="#4631">HTMLヘルプの呼び出し方</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-11-03T01:33:36">2006年11月03日 01:33</time></h1>
+    <div class="body">ふと気付いたんですが，外部HTMLヘルプを呼びだすときにはHTMLHELPのDLLを動的にロードしています．<br>当時HTML Help workshopへの依存性をなくすために動的ロードにしたのですが，今回のHTMLヘルプでは静的にリンクしてあると思うので，ここはOpenHelpに戻して，CHtmlHelp.h/cppも不要かと思いますが，いかがでしょうか．<br></div></section>
+    <ul><li><section><h1 id=4632>
+    <span class="no">[4632]</span>
+    <a class="thread-title" href="#4632">Re:HTMLヘルプの呼び出し方</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-11-03T11:28:51">2006年11月03日 11:28</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ふと気付いたんですが，外部HTMLヘルプを呼びだすときにはHTMLHELPのDLLを動的にロードしています．<br>&gt; 当時HTML Help workshopへの依存性をなくすために動的ロードにしたのですが，今回のHTMLヘルプでは静的にリンクしてあると思うので，ここはOpenHelpに戻して，CHtmlHelp.h/cppも不要かと思いますが，いかがでしょうか．<br>今回の変更では、以前からあるOpenHtmlHelpを呼び出しているので、ビルド時のlibの依存関係という意味では前と同じはずです。<br>当時の事情はよくわかりませんが、htmlhelp.libを利用してリンクしてもhhctrl.ocxは動的ロードになるみたいですし、CHtmlHelp.h/cppはさほど必要なものには思えないです。</div></section>
+    <ul><li><section><h1 id=4633>
+    <span class="no">[4633]</span>
+    <a class="thread-title" href="#4633">Re2:HTMLヘルプの呼び出し方</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-11-03T11:58:56">2006年11月03日 11:58</time></h1>
+    <div class="body">&gt;以前からあるOpenHtmlHelpを呼び出している<br>あ，本当だ．失礼しました．<br><br>&gt;CHtmlHelp.h/cppはさほど必要なものには思えない<br>これを入れたときはHtmlHelp.h, HtmlHelp.libが無くてもコンパイル＆リンクが出来るようにというつもり...で思い出しました．BCCでコンパイルするときSDKのlibを使えないのでimport libraryを自分で用意する必要がある．動的にリンクすればそういった前準備が要らなくなるという経緯だった気がします．<br><br>ということはこのままにしたほうがいいみたいですね．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>コンボボックスのリスト選択－編集－エンターの不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5493</span>
+    <a class="thread-title" href="5493.html#5493">コンボボックスのリスト選択－編集－エンターの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5495</span>
+    <a class="thread-title" href="5493.html#5495">Re:コンボボックスのリスト選択－編集－エンターの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5496</span>
+    <a class="thread-title" href="5493.html#5496">Re2:コンボボックスのリスト選択－編集－エンターの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5497</span>
+    <a class="thread-title" href="5493.html#5497">Re3:コンボボックスのリスト選択－編集－エンターの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5498</span>
+    <a class="thread-title" href="5493.html#5498">Re4:コンボボックスのリスト選択－編集－エンターの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5499</span>
+    <a class="thread-title" href="5493.html#5499">解決です！</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5503</span>
+    <a class="thread-title" href="5493.html#5503">Re:コンボボックスのリスト選択－編集－エンターの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5506</span>
+    <a class="thread-title" href="5493.html#5506">Re2:コンボボックスのリスト選択－編集－エンターの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5513</span>
+    <a class="thread-title" href="5493.html#5513">Re3:コンボボックスのリスト選択－編集－エンターの不具合</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5493>
+    <span class="no">[5493]</span>
+    <a class="thread-title" href="#5493">コンボボックスのリスト選択－編集－エンターの不具合</a>
+    <span class="author">syat</span>
+    <time datetime="2008-12-06T13:44:26">2008年12月06日 13:44</time></h1>
+    <div class="body">コンボボックスのリストを選んで、末尾を数文字削ってエンターを押すと、削った文字が復活します。<br>1.6.3.0限定です。（それ以前では文字列が消える）<br>パッチを作りました。<br>Patches:2394131<br><br>コンボボックスのメッセージでCB_GETEDITSELはバイト単位の位置を返すのに、CB_SETEDITSELは文字単位の位置を指定するという変な動きをするんですが、私だけでしょうか？<br>環境依存だったらどうしよう（; °_°）</div></section>
+    <ul><li><section><h1 id=5495>
+    <span class="no">[5495]</span>
+    <a class="thread-title" href="#5495">Re:コンボボックスのリスト選択－編集－エンターの不具合</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-12-06T23:48:57">2008年12月06日 23:48</time></h1>
+    <div class="body">▼ syatさん<br>&gt; コンボボックスのメッセージでCB_GETEDITSELはバイト単位の位置を返すのに、CB_SETEDITSELは文字単位の位置を指定するという変な動きをするんですが、私だけでしょうか？<br>&gt; 環境依存だったらどうしよう（; °_°）<br><br>私の所ではCB_SETEDITSELの方もバイト単位でないと正常動作しませんでした。<br><br>開発環境：BCC5.5.1およびVC2005 Express Edition<br>テスト環境：Win2k SP4およびWinXP SP2<br></div></section>
+    <ul><li><section><h1 id=5496>
+    <span class="no">[5496]</span>
+    <a class="thread-title" href="#5496">Re2:コンボボックスのリスト選択－編集－エンターの不具合</a>
+    <span class="author">syat</span>
+    <time datetime="2008-12-07T02:07:43">2008年12月07日 02:07</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; 私の所ではCB_SETEDITSELの方もバイト単位でないと正常動作しませんでした。<br>&gt; <br>&gt; 開発環境：BCC5.5.1およびVC2005 Express Edition<br>&gt; テスト環境：Win2k SP4およびWinXP SP2<br>ありがとうございます。<br>私はVC2008ExpressEditionで、WinXP SP3です。<br><br>現象としては、２バイト文字をカーソル位置より前に含むときに問題になります。<br>例えば、<br>　あいA|BCDE　　縦棒はカーソル<br>の状態でCB_GETEDITSELを実行すると 5 を取得します。（バイト単位）<br>その結果を使ってCB_SETEDITSELを実行すると、以下のようになります。<br>　あいABC|DE<br>カーソルがずれてしまいます。<br><br>UNICODE版では基本的に１文字＝２バイトなので問題になりませんでしたが、ANSIビルドだと同様の問題が出ました。<br>サロゲートペア文字はどちらも2でカウントするらしく大丈夫そうでした。<br><br>明日にでもBCCで試してみます。SP3のバグとかいうオチは～ないよね。<br></div></section>
+    <ul><li><section><h1 id=5497>
+    <span class="no">[5497]</span>
+    <a class="thread-title" href="#5497">Re3:コンボボックスのリスト選択－編集－エンターの不具合</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-12-07T22:16:53">2008年12月07日 22:16</time></h1>
+    <div class="body">▼ syatさん<br><br>Patches:2394131(combo_list_hide_A2.patch)を適用したプログラムを、<br>Vista SP1で動かしてみました。<br><br>&gt; 　あいA|BCDE　　縦棒はカーソル<br><br>の状態でEnterを押すと、<br>　あ|いABCDE<br>のようにカーソル位置がずれてしまいます。<br><br>ワークで使っているローカル変数は以下の値になってました。<br>Aeroスタイル有効のとき：nSelStartByte=3, nSelStartChar=1<br>Aeroスタイル無効のとき：nSelStartByte=5, nSelStartChar=3<br><br>どうやら、<br>Aeroスタイル有効のときはCB_SETEDITSEL/CB_SETEDITSELとも文字数単位<br>Aeroスタイル無効のときはCB_SETEDITSEL/CB_SETEDITSELともバイト数単位<br>ということみたいです。<br><br>&gt; 明日にでもBCCで試してみます。SP3のバグとかいうオチは～ないよね。<br><br>CB_GETEDITSELなどの動作結果は、コンパイラではなくOSやIEに付属のコモンコントロール（comctl32.dll）のバージョン依存になると思います。</div></section>
+    <ul><li><section><h1 id=5498>
+    <span class="no">[5498]</span>
+    <a class="thread-title" href="#5498">Re4:コンボボックスのリスト選択－編集－エンターの不具合</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-12-07T22:59:46">2008年12月07日 22:59</time></h1>
+    <div class="body">パッチ後のexeをXP SP3でも動かしてみました。<br><br>結果はVista SP1と同じで、<br>　あいA|BCDE<br>から<br>　あ|いABCDE<br>になってしまいます。<br><br>ローカル変数もVista SP1と同様で、<br>Lunaスタイル有効のとき：nSelStartByte=3, nSelStartChar=1<br>Lunaスタイル無効のとき：nSelStartByte=5, nSelStartChar=3<br>でした。<br><br>ひょっとするとsyatさんの環境で使用されている何らかの常駐ソフトが怪しいかもです。<br>＃自分のところの確認環境はVirtual PC上の仮想PC(XP SP3)で、凝ったカスタマイズはほとんどしてません。</div></section>
+    <ul><li><section><h1 id=5499>
+    <span class="no">[5499]</span>
+    <a class="thread-title" href="#5499">解決です！</a>
+    <span class="author">syat</span>
+    <time datetime="2008-12-07T23:48:07">2008年12月07日 23:48</time></h1>
+    <div class="body">まず、BCCでコンパイルしてみたところ、皆さんの環境と同じような結果になりました。<br>また、VC2008EEで、SDKを6.0A、6.1でビルドしたところどちらも私が主張する動きを再現しました。<br>不思議ですね～<br><br>という報告を書き込もうとしたところで、ryojiさんの書き込みを見ました。<br>▼ ryojiさん<br>&gt; ひょっとするとsyatさんの環境で使用されている何らかの常駐ソフトが怪しいかもです。<br>&gt; ＃自分のところの確認環境はVirtual PC上の仮想PC(XP SP3)で、凝ったカスタマイズはほとんどしてません。<br>ryojiさん、正解です！<br>ZTopという常駐ソフトを止めて試したところ問題が発生しなくなりました。どうもお騒がせしました。<br><br>もしこの問題が簡単に解決できそうにないものだったらあまり深入りしたくないので、選択状態を復元する機能をやめようかと考えていました。リストを閉じたら文字列を全選択にするというのも不自然じゃないかな、と。ZTop便利だし。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=5503>
+    <span class="no">[5503]</span>
+    <a class="thread-title" href="#5503">Re:コンボボックスのリスト選択－編集－エンターの不具合</a>
+    <span class="author">syat</span>
+    <time datetime="2008-12-13T16:34:25">2008年12月13日 16:34</time></h1>
+    <div class="body">リストボックスを閉じたら文字列を全選択するだけにしてみました。<br>Patches:2394131<br></div></section>
+    <ul><li><section><h1 id=5506>
+    <span class="no">[5506]</span>
+    <a class="thread-title" href="#5506">Re2:コンボボックスのリスト選択－編集－エンターの不具合</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-12-23T21:07:01">2008年12月23日 21:07</time></h1>
+    <div class="body">▼ syatさん<br>ソースコードおよび動作を確認しました。<br>コミットOKと思います。<br></div></section>
+    <ul><li><section><h1 id=5513>
+    <span class="no">[5513]</span>
+    <a class="thread-title" href="#5513">Re3:コンボボックスのリスト選択－編集－エンターの不具合</a>
+    <span class="author">syat</span>
+    <time datetime="2008-12-26T21:06:33">2008年12月26日 21:06</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; ソースコードおよび動作を確認しました。<br>&gt; コミットOKと思います。<br>ありがとうございます。<br>リビジョン1496でコミットしました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>水平スクロールの同期 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5400</span>
+    <a class="thread-title" href="5400.html#5400">水平スクロールの同期</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5403</span>
+    <a class="thread-title" href="5400.html#5403">Re:水平スクロールの同期</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5404</span>
+    <a class="thread-title" href="5400.html#5404">Re2:水平スクロールの同期</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5740</span>
+    <a class="thread-title" href="5400.html#5740">-</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5400>
+    <span class="no">[5400]</span>
+    <a class="thread-title" href="#5400">水平スクロールの同期</a>
+    <span class="author">fon</span>
+    <time datetime="2008-08-07T09:58:33">2008年08月07日 09:58</time></h1>
+    <div class="body">「水平スクロールの同期をとる」機能って、以前からこうでしたっけ？<br>  +-----+-----+<br>  |  A  t  B  u    マウスホイール連動Up<br>  +--p--+--q--+  --------------------------<br>  |  C  v  D  w    マウスホイール連動Down<br>  +--r--+--s--+<br>  （A,B,C,D: テキスト表示領域）<br>  （p,q,r,s,t,u,v,w: スクロールバー）<br><br>＜現状＞<br>水平同期の動作：p,rを操作すると、A-Cが同期。q,sを操作するとB-Dが同期。<br>垂直同期の動作：t,uを操作すると、A-Bが同期。v,wを操作するとC-Dが同期。<br><br>＜期待＞<br>2画面のときは、次の感じというのはどうか？変ですかね。。<br><br>  +-----+-----+<br>  |  A  t  B  u<br>  +--p--+--q--+<br>垂直同期の動作：tを操作すると、A-Bが同期。uを操作するとBだけ動く。<br><br>  +-----+<br>  |  A  t<br>  +--p--+<br>  |  C  v<br>  +--r--+<br>水平同期の動作：pを操作すると、A-Cが同期。rを操作するとCだけ動く。<br>→こっちは必要ないかも。<br><br>＜考え方＞<br>左右の２ペインでコードを閲覧する場合、必然的に横幅が狭くなって、<br>右へスクロールしたくなります。現状の作りの方が、一般的なような気も<br>しますが、このケースに対応できるとちょっと便利だと思いました。<br># WinMergeとかで(何かの理由で)差分がありすぎる場合、エディタで閲覧<br># したくなるでしょう、というのがユースケースです。<br></div></section>
+    <ul><li><section><h1 id=5403>
+    <span class="no">[5403]</span>
+    <a class="thread-title" href="#5403">Re:水平スクロールの同期</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-08-09T01:58:35">2008年08月09日 01:58</time></h1>
+    <div class="body">▼ fonさん<br>シフトキーを押しながらスクロールバーを操作すると一時的に同期OFFとなるようですが、これで代用できませんか？<br></div></section>
+    <ul><li><section><h1 id=5404>
+    <span class="no">[5404]</span>
+    <a class="thread-title" href="#5404">Re2:水平スクロールの同期</a>
+    <span class="author">fon</span>
+    <time datetime="2008-08-13T11:39:24">2008年08月13日 11:39</time></h1>
+    <div class="body"><br>▼ なすこじさん<br>&gt; シフトキーを押しながらスクロールバーを操作すると一時的に同期OFFとなるようですが、これで代用できませんか？<br>情報ありがとうございます、面白い機能ですね！<br>上下２面で使う分には、期待通りの動作で言うことなしです！！<br>左右２面の場合には、Shiftを離して縦の同期スクロールを再開したとき、同じスクロール位置に戻す仕様だと使いづらく感じました。<br>横方向のスクロール同期を先に実装して、縦も同じ風にしたんですかね。<br>今の実装だと、左右２面にしたときの縦同期って全く意味がないように見えます。エディタで縦書きする人用とか？</div></section>
+    <ul><li><section><h1 id=5740>
+    <span class="no">[5740]</span>
+    <a class="thread-title" href="#5740">-</a>
+    <span class="author">管理者削除</span>
+    <time datetime="2011-10-14T11:31:03">2011年10月14日 11:31</time></h1>
+    <div class="body">-</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

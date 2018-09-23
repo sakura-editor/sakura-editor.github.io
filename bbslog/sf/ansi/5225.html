@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>最新PSDKで発生する問題について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5225</span>
+    <a class="thread-title" href="5225.html#5225">最新PSDKで発生する問題について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5238</span>
+    <a class="thread-title" href="5225.html#5238">Re:最新PSDKで発生する問題について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5239</span>
+    <a class="thread-title" href="5225.html#5239">Re2:最新PSDKで発生する問題について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5240</span>
+    <a class="thread-title" href="5225.html#5240">Re3:最新PSDKで発生する問題について</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5225>
+    <span class="no">[5225]</span>
+    <a class="thread-title" href="#5225">最新PSDKで発生する問題について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-16T19:08:56">2007年12月16日 19:08</time></h1>
+    <div class="body">VS2008（日本語版リリース）を入手したのでちょっとだけ<br>試してみました。<br>＃昨日から、MSDN会員向けにTeam Editionのみ<br>＃ダウンロード可能になってます<br>＃他Editionも数日内に入手可能になるでしょう<br><br>NewApis.hをincludeから除外するだけでコンパイルは通りますが、<br>・2000/XPでメニューの文字が表示されない。幅も狭くなる。<br>↑WINVER &gt;= 0x0600でNONCLIENTMETRICSのサイズが拡張されるため<br>・XPでVisual Style時にツールバーが表示されない。<br>↑_WIN32_WINNT &gt;= 0x0600でREBARBANDINFOのサイズが拡張されるため<br>といった問題があります。<br>他にもあるかもしれないですが、何があるかは推測困難。<br>なので、WINVERなどを明示指定してやる必要がありそうです。<br><br>上記の問題は、VS2008に限ったことではなく、<br>VS2005+最新SDK（Vista SDK）でも同様です。</div></section>
+    <ul><li><section><h1 id=5238>
+    <span class="no">[5238]</span>
+    <a class="thread-title" href="#5238">Re:最新PSDKで発生する問題について</a>
+    <span class="author">SIRIUS</span>
+    <time datetime="2007-12-20T20:26:56">2007年12月20日 20:26</time></h1>
+    <div class="body">私もVC++2005からVC++2008に乗り換えて、プルダウンメニューが文字化けして困っています。<br>これは簡単に修正できるものなのでしょうか。影響範囲が読めなくて、どう直していいのかわからない状態です。<br>もし簡単な解決方法があるなら、教えていただければ嬉しいです。<br>今さらまたVC++2005に戻すのも辛いですし……。</div></section>
+    <ul><li><section><h1 id=5239>
+    <span class="no">[5239]</span>
+    <a class="thread-title" href="#5239">Re2:最新PSDKで発生する問題について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-22T01:54:55">2007年12月22日 01:54</time></h1>
+    <div class="body">対策パッチを作ってみました。<br>→Patches1855829<br><br>・VS2008ではNewApis.hをコンパイルから除外（VS2005+Windows SDK for Vistaでも除外）<br>・Vistaより前のOSでツールバー、メニュー表示が不正になる問題の対策<br>・64bitコンパイル時エラーの修正<br><br>VS2008でコンパイルするときはNewApis.h, multimon.hを自動的にコンパイルから除外しているので、95/NT4.0には非対応になります。……って、そもそもVS2008でコンパイルしたら95/NT4.0だけでなく98やMeでも動作しないんですけどね。(^^;;;</div></section>
+    <ul><li><section><h1 id=5240>
+    <span class="no">[5240]</span>
+    <a class="thread-title" href="#5240">Re3:最新PSDKで発生する問題について</a>
+    <span class="author">SIRIUS</span>
+    <time datetime="2007-12-25T09:22:52">2007年12月25日 09:22</time></h1>
+    <div class="body">パッチの作成ありがとうございます。<br>適用してVC++2008 Expressでコンパイルしたところ、問題なく動作しました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

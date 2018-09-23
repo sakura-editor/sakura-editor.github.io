@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ブロックコメント色を２→３種類にしてみました。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4603</span>
+    <a class="thread-title" href="4603.html#4603">ブロックコメント色を２→３種類にしてみました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4604</span>
+    <a class="thread-title" href="4603.html#4604">Re:ブロックコメント色を２→３種類にしてみました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4605</span>
+    <a class="thread-title" href="4603.html#4605">Re2:ブロックコメント色を２→３種類にしてみました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4606</span>
+    <a class="thread-title" href="4603.html#4606">Re3:ブロックコメント色を２→３種類にしてみました。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4607</span>
+    <a class="thread-title" href="4603.html#4607">Re3:ブロックコメント色を２→３種類にしてみました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4608</span>
+    <a class="thread-title" href="4603.html#4608">Re4:ブロックコメント色を２→３種類にしてみました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4609</span>
+    <a class="thread-title" href="4603.html#4609">Re5:ブロックコメント色を２→３種類にしてみました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4610</span>
+    <a class="thread-title" href="4603.html#4610">Re6:ブロックコメント色を２→３種類にしてみました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4612</span>
+    <a class="thread-title" href="4603.html#4612">Re7:ブロックコメント色を２→３種類にしてみました。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4613</span>
+    <a class="thread-title" href="4603.html#4613">Re7:ブロックコメント色を２→３種類にしてみました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4616</span>
+    <a class="thread-title" href="4603.html#4616">Re8:ブロックコメント色を２→３種類にしてみました。</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4603>
+    <span class="no">[4603]</span>
+    <a class="thread-title" href="#4603">ブロックコメント色を２→３種類にしてみました。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-20T07:48:04">2006年10月20日 07:48</time></h1>
+    <div class="body">sourceforge.net にパッチを置いてあります。<br>最初は、ブロックコメント色は１種類だったのを、凄い方（※mikさん）が複数の２種類にされたんですね。<br>それを、わたしは３にしただけなので、良かったら変えて下さい。<br>代わりにラインコメント色は３→２種類になっています。<br>ちなみに、タイプはC/C++を念頭にしています。</div></section>
+    <ul><li><section><h1 id=4604>
+    <span class="no">[4604]</span>
+    <a class="thread-title" href="#4604">Re:ブロックコメント色を２→３種類にしてみました。</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-21T13:54:45">2006年10月21日 13:54</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt;代わりにラインコメント色は３→２種類になっています。<br>自分は３つも使ってはいないけれど、それでいいんでしょうか。<br><br>&gt;&gt;data:386 より抜粋<br>&gt;Fortranのコメントの件ですが90では！以降がコメントとなり、勿論行頭にもおけます。それ以外に1桁目のCや*も使えます。小文字のcも使えるから全部で4つも使える！ただサクラエディタのヘルプによると大文字小文字は区別しない仕様なので！,C,*の3つでいい。<br>&gt;行型コメントの2にCと書けばｃや*も使えるという隠し機能は止めてちゃんと対応するように3行にしませんか？<br><br>３つ使っていなくても、削られる場所に設定していたものは消えてしまうんですよね？<br>現状のパッチでは、以前のsakura.exeを上書きして動かすと先頭の行コメントが全部消えるみたいです。<br><br>&gt; ちなみに、タイプはC/C++を念頭にしています。<br>どういう使い方でしょう？（４や５にはしなくていい？）</div></section>
+    <ul><li><section><h1 id=4605>
+    <span class="no">[4605]</span>
+    <a class="thread-title" href="#4605">Re2:ブロックコメント色を２→３種類にしてみました。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-21T15:46:02">2006年10月21日 15:46</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; &gt;ただサクラエディタのヘルプによると大文字小文字は区別しない仕様なので！,C,*の3つでいい。<br>&gt; &gt; 行型コメントの2にCと書けばｃや*も使えるという隠し機能は止め<br><br>現状、* 以外の指定で * が行コメントにはなりません。<br>行コメントに C とすると、小文字の c でもコメントですね。<br>確かに ! や * も指定したいとなると、３個必要ですね。最近の知りませんでした。<br><br>ここから、メール分割してレスします。<br><br>&gt; ３つ使っていなくても、削られる場所に設定していたものは消えてしまうんですよね？<br>&gt; 先頭の行コメントが全部消えるみたいです。<br><br>&gt; &gt; ちなみに、タイプはC/C++を念頭にしています。<br>&gt; どういう使い方でしょう？（４や５にはしなくていい？）<br><br>1.どういう事なのか詳しくは分りません。<br>2.前の設定が残っているような感じは無いですが。<br>（行コメント1,2,3の使い方の話ですね。行コメントの１番目を無しにしたのですが、それより３番目を無しにした方が良かったですか。）<br>1.と2.はiniファイルの事ですか？もしそうならばそうですね。ダイアログの高さを変えるんですね！<br><br>４や５にはしなくていいと思います。私は、<br>「#if 0」～「#」<br>「#ifdef」～「#endif」<br>ですが、皆さんは<br>「#if」～「#」<br>だけでも、いいんですか！（「#if 1」～「#」もコメント）</div></section>
+    <ul><li><section><h1 id=4606>
+    <span class="no">[4606]</span>
+    <a class="thread-title" href="#4606">Re3:ブロックコメント色を２→３種類にしてみました。</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-21T16:39:34">2006年10月21日 16:39</time></h1>
+    <div class="body">&gt; 「#ifdef」～「#endif」<br>２よりは３のが使い道はあるかな、というのはわかります。<br>３つになったら自分は、「#ifdef _DEBUG」～「#endif」として使うかも。<br>ただ、こういうのはあくまでも「なんちゃってコメント」なので、<br><br>#ifdef XXX<br>  ...<br>#if 0<br>  ...<br>#endif<br>  ...<br>#endif<br><br>のような構文には対応できず、かえって見づらくなることもあるので、あまり多用する気にもなれず．．．</div></section>
+    </li><li><section><h1 id=4607>
+    <span class="no">[4607]</span>
+    <a class="thread-title" href="#4607">Re3:ブロックコメント色を２→３種類にしてみました。</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-21T17:06:10">2006年10月21日 17:06</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; 1.どういう事なのか詳しくは分りません。<br>&gt; 2.前の設定が残っているような感じは無いですが。<br>&gt; （行コメント1,2,3の使い方の話ですね。行コメントの１番目を無しにしたのですが、それより３番目を無しにした方が良かったですか。）<br>&gt; 1.と2.はiniファイルの事ですか？もしそうならばそうですね。ダイアログの高さを変えるんですね！<br><br>そうです。これまで使っていたsakura.iniの設定がどれか消えてしまうということ。<br>なので、増やすなら行型を減らさずに増やさないと。</div></section>
+    <ul><li><section><h1 id=4608>
+    <span class="no">[4608]</span>
+    <a class="thread-title" href="#4608">Re4:ブロックコメント色を２→３種類にしてみました。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-22T04:45:51">2006年10月22日 04:45</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; そうです。これまで使っていたsakura.iniの設定がどれか消えてしまうということ。<br>&gt; なので、増やすなら行型を減らさずに増やさないと。<br><br>そうですね、既存ユーザーも大切にしないといけませんね。行コメント３個のままにしています。<br><br>また、異なる種類のコメントのネストは、以前のままです。ここでバグ報告になりますが、行が#ifdefで始まると、「ifdef」～でコメント色になりません。<br><br>files/Developer/Source/<br>BLOCK_COMMENT3.zip 追加できないので、場所は Yahoo!です。</div></section>
+    <ul><li><section><h1 id=4609>
+    <span class="no">[4609]</span>
+    <a class="thread-title" href="#4609">Re5:ブロックコメント色を２→３種類にしてみました。</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-23T01:47:46">2006年10月23日 01:47</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt;ここでバグ報告になりますが、行が#ifdefで始まると、「ifdef」～でコメント色になりません。<br>強調キーワードに#ifdefが指定されてるからですね。<br><br>ちょっと他エディタでa/*を強調表示色にして試してみましたが、秀丸、EmEditor、K2Editorでは、aは強調表示色、/*以後はコメント色になるようです。<br>（aの部分だけが強調表示になるのが変）<br><br>まぁ、どのエディタでも「ifdefをコメント開始にしたいなら#ifdefの強調表示は外してください、お願いします」というところでしょうね。<br>それで問題ありますか？(^^;</div></section>
+    <ul><li><section><h1 id=4610>
+    <span class="no">[4610]</span>
+    <a class="thread-title" href="#4610">Re6:ブロックコメント色を２→３種類にしてみました。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-23T10:35:05">2006年10月23日 10:35</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; aは強調表示色、/*以後はコメント色になるようです。<br>&gt;（aの部分だけが強調表示になるのが変）<br><br>色指定の優先順位が原因でしたか、何故か、気が付きませんでした。sakura の場合も、強調表示を外せば、aの部分だけがコメント外になりました。<br>aの部分だけが強調表示になるのは、良いと思います。元々a/*を強調指定しているのが原因ですから、普通の色にした場合もコメントの色にしても違和感あります。<br>/*の部分は、コメント色と強調表示のどちらを優先させるかなので、別のレス「色指定の優先順位の問題」ということで、ここでは終わりにします。<br><br>話を戻しますが、webのsourceforge.net のスレッドで、自分で返信のレスポンスを新しくすれば、ファイルを１個追加出来そうですね。<br>削除・変更は自分では出来ないようですが、他の方法でファイルの追加出来ますか？（チャレンジしてみれば済むことですが）<br><br>ともかく、他のエディタまで見て調べていただいてありがとう御座いました。</div></section>
+    <ul><li><section><h1 id=4612>
+    <span class="no">[4612]</span>
+    <a class="thread-title" href="#4612">Re7:ブロックコメント色を２→３種類にしてみました。</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-23T22:43:44">2006年10月23日 22:43</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt;話を戻しますが、webのsourceforge.net のスレッドで、自分で返信のレスポンスを新しくすれば、ファイルを１個追加出来そうですね。<br>&gt;削除・変更は自分では出来ないようですが、他の方法でファイルの追加出来ますか？（チャレンジしてみれば済むことですが）<br><br>ファイルはYahoo!でレビュー等の話はSourceForge Patchesになってもかまわないと思います。<br><br>誤解を招かぬよう予めおことわりしておくと、自分はこの件については積極的に賛同も否定もしません。<br>ブロックコメントが３種類定義されている言語用に追加するという話ではなく、条件付コンパイル部をコメントとして拡大解釈利用することが目的のようだから。<br><br>自分としては、<br>●「なんちゃってコメント」複数使用の推奨はしたくない<br>承知かもしれないけど、じゅうじさんの推奨パターン「#if 0」～「#」も、<br><br>#if 0<br>    printf("#");  // #は入力プロンプト<br>    gets(s);<br>#else<br>    ...<br>#endif<br>    ...<br><br>のようなケースでは、「#if 0」～「#endif」よりも醜い結果になるわけで。（重箱の隅？）<br>このような破綻が起こり得るものをいくつも指定するのが良いとはちょっと言いかねます。<br>それでも使いたい人がいて、限界があることを納得して使ってもらう分にはどうぞ、なのですが．．．<br><br>●３個が妥当な数量なのか判断できない<br>次のような状況になることが考えられます。<br>hogeさん＞「#if define」～「#endif」も追加したい。皆さんは「#if 0」～「#」と「#ifdef」～「#endif」だけでもいいんですか！<br>fugaさん＞画面を広げて４種類にしてみました。xxxにパッチを置いてあります。問題無ければ採用して下さい。<br>piyoさん＞提案です。「#if !1」～「#」も追加できるようお願いします。私はそれ以上にはしなくていいと思います。<br>（続く）（続く）（続く）．．．<br><br>誰かが、ブロックコメントとは別に、秀丸にあるようなC/C++言語の条件付コンパイル文解析・色分け処理を作ってくれれば、より正確なうえブロックコメントはPascal用に２個のままで良さそうだけど．．．<br>無分別に追加することはできても、あとで気軽には減らせないし～。<br>まぁ、ブロックの３個目はそれまでの繋ぎ／予備とし、それ以上は原則増やさない、と割り切ればいいのかな？<br>「数量に根拠はありません。２つでも足りると思いますが行コメントの数に合わて３つにしました。(#ifdef)～(#endif)として使っている人はいるようです。」と。(^^;;</div></section>
+    </li><li><section><h1 id=4613>
+    <span class="no">[4613]</span>
+    <a class="thread-title" href="#4613">Re7:ブロックコメント色を２→３種類にしてみました。</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-23T23:26:12">2006年10月23日 23:26</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; 他の方法でファイルの追加出来ますか？<br><br>今後の方のためにもコメントしておきます。<br>sorceforgeのIDを持っていればグループメンバでなくても、Openした本人に限りファイル追加やステータス変更ができたと思います。<br>つまり初回投稿時にログインして投稿しておき、次回以降同じユーザーでログインする。<br></div></section>
+    <ul><li><section><h1 id=4616>
+    <span class="no">[4616]</span>
+    <a class="thread-title" href="#4616">Re8:ブロックコメント色を２→３種類にしてみました。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-24T05:54:28">2006年10月24日 05:54</time></h1>
+    <div class="body">▼ maruさん<br>&gt; &gt;話を戻しますが、webのsourceforge.net のスレッドで、自分で返信のレスポンスを新しくすれば、ファイルを１個追加出来そうですね。<br>&gt; &gt;削除・変更は自分では出来ないようですが、他の方法でファイルの追加出来ますか？（チャレンジしてみれば済むことですが）<br><br>&gt; 今後の方のためにもコメントしておきます。<br>&gt; sorceforgeのIDを持っていればグループメンバでなくても、Openした本人に限りファイル追加やステータス変更ができたと思います。<br>&gt; つまり初回投稿時にログインして投稿しておき、次回以降同じユーザーでログインする。<br><br>横から失礼します。<br>因みに、私は、投稿する為にsourceforge.net のID は作りましたが、グループメンバではないので、そのままにしておいて下さい。<br><br>グループメンバでない場合、投稿したのが誰か(Submitted By nobody)、登録されないようです。<br>質問しておいて意見してすみません。sourceforge に直接聞けば好い事でした。<br>それなので、返信で投稿する場合も誰か(Assigned To nobody)の投稿とみなされます。<br><br>返信初期画面の何処を探しても、これが見当たりません。▼ maruさん<br><br>Upload and Attach a File: <br>[           ]<br><br>File Description:<br>[           ]<br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>sakura/trunkにLF改行のソース | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4637</span>
+    <a class="thread-title" href="4637.html#4637">sakura/trunkにLF改行のソース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4638</span>
+    <a class="thread-title" href="4637.html#4638">Re:sakura/trunkにLF改行のソース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4639</span>
+    <a class="thread-title" href="4637.html#4639">Re2:sakura/trunkにLF改行のソース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4642</span>
+    <a class="thread-title" href="4637.html#4642">Re3:sakura/trunkにLF改行のソース</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4643</span>
+    <a class="thread-title" href="4637.html#4643">Re:sakura/trunkにLF改行のソース</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4637>
+    <span class="no">[4637]</span>
+    <a class="thread-title" href="#4637">sakura/trunkにLF改行のソース</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-12-08T01:32:36">2006年12月08日 01:32</time></h1>
+    <div class="body">TortoiseSVNでチェックアウトしたソースのうち、CDlgSameColor.cppがLF改行になっています。<br>自分が追加したファイルなんですが、なぜそうなったのかよくわかりません。<br>同時に追加したCDlgSameColor.hはCRLF改行になっています。<br>作成時にLF改行にした覚えはないのだけど...<br>何か設定とかの問題でしょうか？<br><br>以下、別の話ですが、<br>最近のTortoiseSVN(1.4.0, 1.4.1)ってパッチ適用の操作をしたとき、元ファイルの最終行が改行のみの行だった場合余計に改行が追加されますよね？<br>自分はまだ1.3.5を使ってます。</div></section>
+    <ul><li><section><h1 id=4638>
+    <span class="no">[4638]</span>
+    <a class="thread-title" href="#4638">Re:sakura/trunkにLF改行のソース</a>
+    <span class="author">maru</span>
+    <time datetime="2006-12-08T03:01:20">2006年12月08日 03:01</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 作成時にLF改行にした覚えはないのだけど...<br>すいません、犯人は私でした。<br>ヘルプHtml化の際のryojiさんとnoviceさんの累積パッチ群を私がコミット(#1009)しており、どうも、当時私の環境でTortoiseSVNの設定を間違っていたようです。<br><br>他にも影響ファイルがないかを確認の後、修正しておきます。</div></section>
+    <ul><li><section><h1 id=4639>
+    <span class="no">[4639]</span>
+    <a class="thread-title" href="#4639">Re2:sakura/trunkにLF改行のソース</a>
+    <span class="author">maru</span>
+    <time datetime="2006-12-09T17:04:51">2006年12月09日 17:04</time></h1>
+    <div class="body">▼ ryojiさん<br>あまり詳しくは追跡していませんが、svn:eol-styleが設定されていないファイルに対してパッチを作成・適用する場合に、設定の違いかバージョンの違いなどで発生する問題のように見えます。トラブル防止ためCDlgSameColor.hにもeol-styleにnativeを設定をしておきました。(trunk#1025)<br></div></section>
+    <ul><li><section><h1 id=4642>
+    <span class="no">[4642]</span>
+    <a class="thread-title" href="#4642">Re3:sakura/trunkにLF改行のソース</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-12-12T22:00:05">2006年12月12日 22:00</time></h1>
+    <div class="body">▼ maruさん<br>&gt; あまり詳しくは追跡していませんが、svn:eol-styleが設定されていないファイルに対して<br>そういえば自分のTortoiseSVN設定も間違ってました（汗）<br>当時は enable-auto-props = yes の行が有効になっていなかったです。</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4643>
+    <span class="no">[4643]</span>
+    <a class="thread-title" href="#4643">Re:sakura/trunkにLF改行のソース</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-12-15T05:44:44">2006年12月15日 05:44</time></h1>
+    <div class="body">▼ ryojiさん<br>SAKURAの起動オプションで、文字コードや改行の認識結果を、<br>標準出力に表示というのが有ってもいいかな、と思います。<br><br>C:\SAKURA -CODEHELP file &gt;&gt;list.log</div></section>
+    </li></ul></li></ul></body></html>

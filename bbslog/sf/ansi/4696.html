@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CWnd | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4696</span>
+    <a class="thread-title" href="4696.html#4696">CWnd</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=4696>
+    <span class="no">[4696]</span>
+    <a class="thread-title" href="#4696">CWnd</a>
+    <span class="author">Wakura</span>
+    <time datetime="2007-03-05T19:23:59">2007年03月05日 19:23</time></h1>
+    <div class="body">CWnd(これを継承したものやCDialog、プロパティシート等)のOnCommandとOnNotify(他にもあるかも)で、いくつか問題があると思いますので提案です。<br><br>・メッセージが処理されなかったときにデフォルトハンドラを呼ばないことがあります。<br>・OnCommandのHIWORD(wParam)はそれを送信したコントロールの種類によって値が同じでも意味が違います。<br>　このあたりの作りこみが適当なので、誤動作の原因になる可能性があります。<br>　（違うコントロールのメッセージを誤って処理してしまう）<br>　まずコントロールがlParam=NULLの場合、HIWORD(wParam)=0はMenu,1はAcceleratorです。<br>・ハンドラの処理が長すぎて大変見づらいです。<br>　BN_CLICKEDはOnBnClickedで分割されてますので、他の同レベルのメッセージもハンドラに分割したほうが保守性向上や前述の誤動作防止にも役立つと思います。<br><br>まあ、修正することになるとかなり広範囲になりますが、プログラム的な作りの問題だけでユーザに恩恵がないことなので参考まで。<br></div></section>
+    </li></ul></body></html>

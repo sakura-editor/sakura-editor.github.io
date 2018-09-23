@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>subversion適用 svn:1002 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">267</span>
+    <a class="thread-title" href="267.html#267">subversion適用 svn:1002</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">268</span>
+    <a class="thread-title" href="267.html#268">Re: subversion適用 svn:1002</a></div>
+    </li><li><div class="list-title">
+    <span class="no">269</span>
+    <a class="thread-title" href="267.html#269">Re: subversion適用 svn:1002</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">270</span>
+    <a class="thread-title" href="267.html#270">Re2: subversion適用 svn:1002</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">271</span>
+    <a class="thread-title" href="267.html#271">Re3: subversion適用 svn:1002</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">273</span>
+    <a class="thread-title" href="267.html#273">Re4: subversion適用 svn:1002</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">272</span>
+    <a class="thread-title" href="267.html#272">Re:subversion適用 svn:1002</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">274</span>
+    <a class="thread-title" href="267.html#274">Re2:subversion適用 svn:1002</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">275</span>
+    <a class="thread-title" href="267.html#275">Re3:subversion適用 svn:1002</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">276</span>
+    <a class="thread-title" href="267.html#276">Re4:subversion適用 svn:1002</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=267>
+    <span class="no">[267]</span>
+    <a class="thread-title" href="#267">subversion適用 svn:1002</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-07T21:37:52">2006年10月07日 21:37</time></h1>
+    <div class="body">どなたもコミットする気配がないまま、変更が積みあがりそうなので<br>初版としてコミットしました。<br><br>* help_20061001.zipベース<br><br>&gt;&gt;help:260 削除ファイル<br>    help\flow.png<br>    help\HtmlHelp_2b.patch<br>    help\ReadMe.txt<br>    help\sakura.chm<br>    help\sakura.exe<br>    help\_RESOURCE\hd2html.rb<br>    help\_RESOURCE\sakura.hdp<br><br>&gt;&gt;help:260 help\trunkのignore属性設定<br>    *.Log<br>    *.chm<br>    *.hhc<br>    *.hhk<br>    *.HHP<br>    COMPILE.HTML<br>    *.chm.bak*<br><br>&gt;&gt;help:253 結合ファイル SakuraMacro.chm -&gt; macro.chmに変更<br><br>&gt;&gt;help:264 ウィンドウ一覧(HLP000314)の追加とその関連修正<br><br>&gt;&gt;help:264 「後方」アイコンの誤り修正<br><br>&gt;&gt;help:266 #1526879適用済みのsakura.hhに差し替え<br><br>* 未実施事項<br>    #1526879<br>    ・[キーワードヘルプ]タブでのヘルプボタンID追加<br>      -&gt; HLP000315<br>    ・[カラー]タブの文字色/背景色統一ダイアログにヘルプボタン追加<br>      -&gt; HLP000316<br></div></section>
+    <ul><li><section><h1 id=268>
+    <span class="no">[268]</span>
+    <a class="thread-title" href="#268">Re: subversion適用 svn:1002</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-07T22:11:59">2006年10月07日 22:11</time></h1>
+    <div class="body">&gt;初版としてコミットしました。<br>1つ気付いたことが...<br><br>sakura.hhはソースコードと重複しているので，本来はそちらと共通にすべきなのかと思います．<br>でも1ファイルだけ外部参照にすることは出来ないはずなので...どうしましょう？<br></div></section>
+    </li><li><section><h1 id=269>
+    <span class="no">[269]</span>
+    <a class="thread-title" href="#269">Re: subversion適用 svn:1002</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-07T22:26:26">2006年10月07日 22:26</time></h1>
+    <div class="body">&gt;初版としてコミットしました。<br>もう1つコメントです．<br><br>cronでwebスペースに自動checkoutするようにしておくと，最新のヘルプがホームページに自動反映されて便利かも．<br></div></section>
+    <ul><li><section><h1 id=270>
+    <span class="no">[270]</span>
+    <a class="thread-title" href="#270">Re2: subversion適用 svn:1002</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-07T23:53:39">2006年10月07日 23:53</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; sakura.hhはソースコードと重複しているので，本来はそちらと共通にすべきなのかと思います．<br>&gt; でも1ファイルだけ外部参照にすることは出来ないはずなので...どうしましょう？<br>それ、気にはしているのですが、もし本体側のsakura.hhでIDの変更が発生するとhelp側もリアルタイムに追従しなければならないということですよね。<br>ID追加なら大丈夫でしょうが。<br><br>一応、案としてどうにかシンボリックリンク張れないか考えています。<br>リポジトリ丸ごと落として、linux端末でシンボリックリンクを張ってそのままlinuxからコミットすれば、もしかしたら…？<br>で、Windowsからは別ファイルに見えるらしいので、help\trunkだけをチェックアウトしてもヘルプのコンパイルは可能かと。<br>ただsubversionのテストサーバが手元にないのでちょっと時間がかかりそう。<br><br>&gt; cronでwebスペースに自動checkoutするようにしておくと<br>これは是非やったほうがいいと思います。</div></section>
+    <ul><li><section><h1 id=271>
+    <span class="no">[271]</span>
+    <a class="thread-title" href="#271">Re3: subversion適用 svn:1002</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-08T14:34:10">2006年10月08日 14:34</time></h1>
+    <div class="body">&gt;&gt; cronでwebスペースに自動checkoutするようにしておくと<br>&gt;これは是非やったほうがいいと思います。<br>1日1回更新するようにcronを設定しました．<br>http://sakura-editor.sourceforge.net/htmlhelp/ 以下に_RESOURCESを展開しています．<br><br>ところで，chmが無いときにエディタからこのHTMLをトピックを指定して開けたら便利かなと思ったのですが，<br>ヘルプ番号→HTMLファイル名の変換がどこかで必要ですよね．<br><br>sakura.hhから対応表を作って，CGIでリダイレクトさせれば解決できるかな．<br></div></section>
+    <ul><li><section><h1 id=273>
+    <span class="no">[273]</span>
+    <a class="thread-title" href="#273">Re4: subversion適用 svn:1002</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-08T16:36:55">2006年10月08日 16:36</time></h1>
+    <div class="body">&gt;sakura.hhから対応表を作って，CGIでリダイレクトさせれば解決できるかな．<br>作ってみました．<br><br>http://sakura-editor.sourceforge.net/hid.cgi?HELP_ID<br>でHELP_IDに内部番号を指定すると，対応するURLが開きます．<br>存在しないIDを指定すると<br><br>1日に1回cronで<br>* ヘルプ本体を更新<br>* sakura.hhを(内部で)更新<br>* インデックスファイルを更新<br>するはずです．<br><br>メソッドはGETにしか対応していません．<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=272>
+    <span class="no">[272]</span>
+    <a class="thread-title" href="#272">Re:subversion適用 svn:1002</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-08T15:02:08">2006年10月08日 15:02</time></h1>
+    <div class="body">&gt; 初版としてコミットしました。<br><br>ありがとうございます。<br>チェックアウトして軽～く内容確認してみました。<br>ずいぶん進んでますね～。(^^)<br><br>&gt; &gt;&gt;help:264 ウィンドウ一覧(HLP000314)の追加とその関連修正<br><br>目次の中で「ウィンドウ(W)」メニューの一番下に置かれてますが、実際の表示位置にあわせて「前のウィンドウ」の後ろに持ってきたほうがいいように思います。<br>あと、「ウインドウ」メニューの直下に「1(無題)」のように表示される項目上で[F1]押したときに何も表示されなくなってますね。以前は HLP000097（ウィンドウリスト）が表示されてたと思いますが...。紛らわしい名称なので、こちらはヘルプのタイトルを「ウィンドウ1, 2, ...」のようにしたほうがいいかもしれません。<br><br>&gt; &gt;&gt;help:264 「後方」アイコンの誤り修正<br><br>こちらは修正されていない？みたいでしたが...</div></section>
+    <ul><li><section><h1 id=274>
+    <span class="no">[274]</span>
+    <a class="thread-title" href="#274">Re2:subversion適用 svn:1002</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-08T17:38:46">2006年10月08日 17:38</time></h1>
+    <div class="body">&gt; ▼ げんたさん<br>&gt; 一応、案としてどうにかシンボリックリンク張れないか<br>ダメでした。<br>説明が長いので、<a href=http://sakura.qp.land.to/?Junk%2F9 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F9</nobr></a><br><br>▼ ryojiさん<br>&gt; 「後方」アイコンの誤り修正<br>直ってないですね(^^;;<br>次回修正します。</div></section>
+    <ul><li><section><h1 id=275>
+    <span class="no">[275]</span>
+    <a class="thread-title" href="#275">Re3:subversion適用 svn:1002</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-08T19:57:02">2006年10月08日 19:57</time></h1>
+    <div class="body">▼ げんたさん<br><br>よくみたら…。<br>誤：/hid.cgi?HELP_ID<br>正：/cgi-bin/hid.cgi?HELP_ID<br>動作いい感じです。<br><br>&gt; sakura.hhはソースコードと重複しているので<br>さらにいろいろ調べましたがそろそろギブアップです。<br>sakura.hhだけディレクトリを分けるしかないのでしょうか。<br></div></section>
+    <ul><li><section><h1 id=276>
+    <span class="no">[276]</span>
+    <a class="thread-title" href="#276">Re4:subversion適用 svn:1002</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-08T21:02:47">2006年10月08日 21:02</time></h1>
+    <div class="body">&gt;よくみたら…。<br>&gt;誤：/hid.cgi?HELP_ID<br>&gt;正：/cgi-bin/hid.cgi?HELP_ID<br>ぎゃぎゃっ，失礼しました．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

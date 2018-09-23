@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ヘルプましん提供のsakura.HHP用パッチ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">322</span>
+    <a class="thread-title" href="322.html#322">ヘルプましん提供のsakura.HHP用パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">323</span>
+    <a class="thread-title" href="322.html#323">sakura.chmから、macro.chmを開く方法。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">324</span>
+    <a class="thread-title" href="322.html#324">Re:sakura.chmから、macro.chmを開く方法。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=322>
+    <span class="no">[322]</span>
+    <a class="thread-title" href="#322">ヘルプましん提供のsakura.HHP用パッチ</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-12-27T13:03:28">2006年12月27日 13:03</time></h1>
+    <div class="body">&gt;&gt;Wiki/Junk/20<br>ヘルプましんが、sakura.XHPを入力して、出力したsakura.HHPを<br>修正するパッチマクロです。<br>HTMLHelp のマージを、パス指定無しに変更します。<br><br>マージにパス指定が有ると、HH.EXE が全体をファイル名として<br>処理する為、ファイルの検索に行く先が、現在いるディレクトリの、<br>C:\パス\＋D:\パス\＋macro.chm のように誤ります。<br><br>リリースを、ヘルプましん用のXHPで行なっている為の暫定作業です。<br><br>//キーボードマクロのファイル ヘルプましん用 XHP.MAC<br>S_GoFileTop( );&#9;&#9;&#9;// ファイルの先頭に移動<br>S_SearchNext('[MERGE FILES]', 16);// $10 次を検索<br>S_BeginSelect( );&#9;&#9;// 範囲選択開始<br>S_SearchNext('[FILES]', 16);&#9;// $10 次を検索<br>S_ReplaceAll('.*\\\\', '', 132);// $84 選択範囲+正規表現<br>S_CancelMode( );&#9;// 各種モードの取り消し<br>S_GoLineTop( );&#9;&#9;// 行頭に移動(折り返し単位) <br>S_Char(13);&#9;&#9;// 改行を書き込む<br>S_SearchClearMark( );&#9;// 検索マークのクリア<br>// 終了</div></section>
+    <ul><li><section><h1 id=323>
+    <span class="no">[323]</span>
+    <a class="thread-title" href="#323">sakura.chmから、macro.chmを開く方法。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-03-16T11:34:44">2007年03月16日 11:34</time></h1>
+    <div class="body">続報です。<br>１．sakura.xhpを（ヘルプましん、で）コンパイルする。<br>２．sakura.hhpから、[MERGE FILES]の絶対パスを取り除く。<br>３．sakura.hhpを（HTML Help Workshop、で）コンパイルする。<br>４．sakura.chmを、適当なパスにコピーする。<br>*５．macro.chmを、sakura.chmまたはsakura.exeのあるパスにコピーする。<br>６．もし、有れば、他のppa.chm, script56.chmもどちらかのパスにコピーする。<br>７．SAKURAの設定→共通設定→支援→外部HTMLヘルプの設定(P)に、<br>　　sakura.chmのパスを指定する。<br>８．SAKURAのヘルプ→外部HTMLヘルプ(H)で、ヘルプを開く。<br><br>　sakura.hlp(Help Designer)が要らなくなり、<br>　代わりにPPA.hlpがヘルプメニューに追加出来ます。<br>※hlpは軽いので好きでしたが、httpと併せて<br>　３箇所もメンテ出来ないが正解でしょうか。<br>※ヘルプのメニューは、外部HTMLをhttpにして、<br>　標準をchmに戻す予定は無いでしょうか。<br>※ヘルプのキーワード検索(S)は、どちらにしても<br>　使用出来ないでしょうか。</div></section>
+    <ul><li><section><h1 id=324>
+    <span class="no">[324]</span>
+    <a class="thread-title" href="#324">Re:sakura.chmから、macro.chmを開く方法。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-03-16T14:21:39">2007年03月16日 14:21</time></h1>
+    <div class="body">１．の前なので、０．とします。（間違えました。）<br>sakura.xhp(sakura.hhp)のマクロヘルプ名を、<br>SakuraMacro.chm（旧macro.chm）に変更お願いします。<br>他のマージファイルは、指定の必要有りません。<br><br>逆に、SakuraMacro.chmをmacro.chmにファイル名変更してもNGでした。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

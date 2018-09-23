@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>折り返し方法変更機能の修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5358</span>
+    <a class="thread-title" href="5358.html#5358">折り返し方法変更機能の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5360</span>
+    <a class="thread-title" href="5358.html#5360">Re:折り返し方法変更機能の修正</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5358>
+    <span class="no">[5358]</span>
+    <a class="thread-title" href="#5358">折り返し方法変更機能の修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-21T15:55:26">2008年06月21日 15:55</time></h1>
+    <div class="body">Patches#1981460(&gt;&gt;dev:5299)の件ですが、<br>いくつか修正を加えました。<br><br>１．画面ちらつきの抑制<br>大きめのファイル（数千行程度）を「右端で折り返す」の設定で<br>開いていて、画面サイズ変更に伴って画面スクロールが発生する<br>ようなとき、画面が激しくちらつくのでちらつきを抑えるように<br>修正しました。<br><br>２．折り返し桁数変更(Ctrl+Alt+U)の制限撤去<br>「折り返さない」「右端で折り返す」の設定になっているときでも<br>桁数変更ができるようにしました。<br>桁数変更したら折り返し方法は自動的に「指定桁で折り返す」に<br>なるようにしています。<br><br>３．折り返し桁変更マクロ(ChangeWrapColm)を追加<br>任意の桁数に折り返し位置を変更するマクロ関数です。<br>実行すると折り返し方法は自動的に「指定桁で折り返す」に<br>なります。<br><br>-- マクロの例(WrapColm.vbs) --<br><br>Dim n<br>n = Editor.ChangeWrapColm(0)<br>n = InputBox("折り返し桁", "折り返し桁変更", n)<br>If n &lt;&gt; "" Then<br>    Editor.ChangeWrapColm(n)<br>End If<br><br>---<br><br>上記マクロを実行し、入力ボックスに桁数を<br>入力すると、その桁位置で折り返します。</div></section>
+    <ul><li><section><h1 id=5360>
+    <span class="no">[5360]</span>
+    <a class="thread-title" href="#5360">Re:折り返し方法変更機能の修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-21T23:43:49">2008年06月21日 23:43</time></h1>
+    <div class="body">補足です。<br><br>&gt; ３．折り返し桁変更マクロ(ChangeWrapColm)を追加<br>&gt; 任意の桁数に折り返し位置を変更するマクロ関数です。<br>&gt; 実行すると折り返し方法は自動的に「指定桁で折り返す」に<br>&gt; なります。<br><br>ChangeTabWidthマクロと同様、変更はこのマクロを実行した画面にだけ適用され、設定には保存しません。折り返しは変更しないで現在の折り返し桁数の取得のみをしたい場合は、0など無効な引数を指定します。<br>（無効な引数を指定した場合は折り返し方法も変更しません）<br>有効な桁数の範囲は10～10240です。</div></section>
+    </li></ul></li></ul></body></html>

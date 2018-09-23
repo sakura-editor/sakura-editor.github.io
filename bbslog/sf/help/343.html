@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ヘルプIDの重複 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">343</span>
+    <a class="thread-title" href="343.html#343">ヘルプIDの重複</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=343>
+    <span class="no">[343]</span>
+    <a class="thread-title" href="#343">ヘルプIDの重複</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-29T23:19:11">2007年09月29日 23:19</time></h1>
+    <div class="body">投稿先を間違えました．<br><br>rev. 1134にてコンパイルを行ったところ，HLP000078が二重定義されているとの警告が出ました．<br>sakura_core\sakura.hh(192) : warning C4005: 'HLP000078' : マクロが再定義されました。<br>        sakura_core\sakura.hh(191) : 'HLP000078' の前の定義を確認してください<br><br>定義ミスのようです．<br>#define HLP000078&#9;78 //マルチユーザー化&#9;&#9;&#9;&#9;// 2007.09.23 maru<br>#define HLP000078&#9;79 //Visual Style化／UAC対応化&#9;&#9;// 2007.09.23 maru<br><br>その他の変更点については現在確認中です．<br></div></section>
+    </li></ul></body></html>

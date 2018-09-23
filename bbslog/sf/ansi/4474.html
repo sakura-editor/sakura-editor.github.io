@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>キー割り当てのバグ報告 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4474</span>
+    <a class="thread-title" href="4474.html#4474">キー割り当てのバグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4479</span>
+    <a class="thread-title" href="4474.html#4479">Re:キー割り当てのバグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4480</span>
+    <a class="thread-title" href="4474.html#4480">Re2:キー割り当てのバグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4481</span>
+    <a class="thread-title" href="4474.html#4481">Re3:キー割り当てのバグ報告</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4474>
+    <span class="no">[4474]</span>
+    <a class="thread-title" href="#4474">キー割り当てのバグ報告</a>
+    <span class="author">あべ</span>
+    <time datetime="2006-05-19T14:45:13">2006年05月19日 14:45</time></h1>
+    <div class="body">OS : Windows XP Home Edition<br>サクラエディタ Version : 1.5.10.0<br><br><br>共通設定 --&gt; キー割り当て --&gt; 種別検索系 <br>「検索」と「検索（ボックス）」のどちらに割り当てても<br>検索（ボックス）の挙動になってしまいます。</div></section>
+    <ul><li><section><h1 id=4479>
+    <span class="no">[4479]</span>
+    <a class="thread-title" href="#4479">Re:キー割り当てのバグ報告</a>
+    <span class="author">yukihane</span>
+    <time datetime="2006-06-04T05:01:02">2006年06月04日 05:01</time></h1>
+    <div class="body">&gt; 「検索」と「検索（ボックス）」のどちらに割り当てても<br>&gt; 検索（ボックス）の挙動になってしまいます。<br>現象としては、どちらも「検索」の挙動になる、<br>というのが正しい表現だと思います。<br><br><br>本現象に対応するパッチを作ってみました。<br>VC2005EEもTortoiseSVNも初めて使用するので<br>おかしかったらごめんなさい。<br>(ついでにサクラのソース見るのも今日が初めてです…)<br><a href=http://sourceforge.net/tracker/index.php?func=detail&aid=1500184&group_id=12488&atid=312488 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>1500184&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>312488</nobr></a><br><br>なお、<br><a href=http://pc8.2ch.net/test/read.cgi/software/1105088271/605-609n target=_top><nobr>http://<wbr>pc8.<wbr>2ch.<wbr>net/<wbr>test/<wbr>read.<wbr>cgi/<wbr>software<wbr>/<wbr>11050882<wbr>71/<wbr>605-<wbr>609n</nobr></a><br>に対応方法が載っていました。<br>(外部アプリの力を借りる方法のようですが)<br></div></section>
+    <ul><li><section><h1 id=4480>
+    <span class="no">[4480]</span>
+    <a class="thread-title" href="#4480">Re2:キー割り当てのバグ報告</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-06-04T20:29:35">2006年06月04日 20:29</time></h1>
+    <div class="body">2chの方でも言われているように，バグと言うよりは単にそういう需要があると思わなかったので実装してなかっただけではないかと思います．<br><br>sourceforgeの方にコメント追加しました．<br>Paches 1500184<br></div></section>
+    <ul><li><section><h1 id=4481>
+    <span class="no">[4481]</span>
+    <a class="thread-title" href="#4481">Re3:キー割り当てのバグ報告</a>
+    <span class="author">yuki</span>
+    <time datetime="2006-06-04T23:58:37">2006年06月04日 23:58</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 2chの方でも言われているように，バグと言うよりは単にそういう需要があると思わなかったので実装してなかっただけではないかと思います．<br>チェックありがとうございます。<br>標準で表示されていない機能なので、あまり使用している方は<br>いないのですかね…<br>(個人的には頻繁に使用する機能のうちのひとつなんですけれど。)<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

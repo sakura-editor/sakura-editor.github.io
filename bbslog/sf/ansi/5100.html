@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>マクロで選択すると右端の1文字が選択されない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5100</span>
+    <a class="thread-title" href="5100.html#5100">マクロで選択すると右端の1文字が選択されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5102</span>
+    <a class="thread-title" href="5100.html#5102">Re:マクロで選択すると右端の1文字が選択されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5103</span>
+    <a class="thread-title" href="5100.html#5103">Re2:マクロで選択すると右端の1文字が選択されない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5100>
+    <span class="no">[5100]</span>
+    <a class="thread-title" href="#5100">マクロで選択すると右端の1文字が選択されない</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2007-10-08T15:02:16">2007年10月08日 15:02</time></h1>
+    <div class="body">以下のマクロにて折り返しで表示している行を選択すると右端の1文字が選択されません。<br>S_GoLineTop(1);<br>S_GoLineEnd_Sel();<br><br>(NG) 折り返された行<br>(OK) 改行のある行<br>(OK) [EOF]のある行<br><br>Command_GOLINEEND()を下記のように修正すると問題が無くなると思います。<br>ただし、SJIS,CRLF改行でしか確認していません。<br><br>＝＝ ここから ＝＝<br>--- sakura_core\CEditView_Command.cpp.orig&#9;Sun Oct 07 02:33:08 2007<br>+++ sakura_core\CEditView_Command.cpp&#9;Mon Oct 08 14:53:28 2007<br>@@ -1288,21 +1288,11 @@<br> &#9;while( !it.end() ){<br> &#9;&#9;it.scanNext();<br> &#9;&#9;if ( it.getIndex() + it.getIndexDelta() &gt; pcLayout-&gt;GetLengthWithoutEOL() ){<br>-&#9;&#9;&#9;nPosX += it.getColumnDelta();<br> &#9;&#9;&#9;break;<br> &#9;&#9;}<br> &#9;&#9;it.addDelta();<br> &#9;}<br>-&#9;nPosX += it.getColumn() - it.getColumnDelta();<br>-&#9;if( it.getIndex() &gt;= (pcLayout ? pcLayout-&gt;GetLengthWithEOL() : 0) ){<br>-&#9;&#9;if( m_nCaretPosY + 1 == m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() ){<br>-&#9;&#9;&#9;/* 改行で終わっているか */<br>-&#9;&#9;&#9;if( EOL_NONE != pcLayout-&gt;m_cEol ){<br>-&#9;&#9;&#9;}else{<br>-&#9;&#9;&#9;&#9;nPosX += it.getColumnDelta();<br>-&#9;&#9;&#9;}<br>-&#9;&#9;}<br>-&#9;}<br>+&#9;nPosX += it.getColumn();<br> <br> &#9;MoveCursor( nPosX, m_nCaretPosY, TRUE );<br> &#9;m_nCaretPosX_Prev = m_nCaretPosX;<br>＝＝ ここまで ＝＝<br></div></section>
+    <ul><li><section><h1 id=5102>
+    <span class="no">[5102]</span>
+    <a class="thread-title" href="#5102">Re:マクロで選択すると右端の1文字が選択されない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-10-08T17:10:28">2007年10月08日 17:10</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; (NG) 折り返された行<br>レイアウト折り返し行での行末へのカーソル移動についてもエディタによって違いがあるようです。<br><br>折り返し行末文字の前に移動するもの<br>→秀丸、K2Editor、TeraPadなど<br><br>折り返し行末文字の後ろに移動するもの<br>→EmEditor、VS2005など<br><br>現行のサクラエディタは前者の仲間ですね。経緯は知りませんがソースを見る限り意図的にそうしているみたいです．．．個人的には後者が好みです。(^^;</div></section>
+    <ul><li><section><h1 id=5103>
+    <span class="no">[5103]</span>
+    <a class="thread-title" href="#5103">Re2:マクロで選択すると右端の1文字が選択されない</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2007-10-08T20:20:05">2007年10月08日 20:20</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 現行のサクラエディタは前者の仲間ですね。経緯は知りませんがソースを見る限り意図的にそうしているみたいです．．．個人的には後者が好みです。(^^;<br><br>K2Editorでは折り返し表示を使用していなかったので知りませんでした (^^;<br>カーソルが行頭へ戻ってしまうのを嫌ったのでしょうかね。<br><br>仕様だとするとちょっと悩ましいですが、文字列の選択という機能を考えた場合この仕様は使い勝手が悪くないでしょうか？<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

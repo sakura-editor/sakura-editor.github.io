@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>（バグ報告）[外部コマンド実行]の「標準出力を得る」で標準エラー出力も出力される | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5661</span>
+    <a class="thread-title" href="5661.html#5661">（バグ報告）[外部コマンド実行]の「標準出力を得る」で標準エラー出力も出力される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5662</span>
+    <a class="thread-title" href="5661.html#5662">RE: （バグ報告）[外部コマンド実行]の「標準出力を得る」で標準エラー出力も出力される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5663</span>
+    <a class="thread-title" href="5661.html#5663">Re2: （バグ報告）[外部コマンド実行]の「標準出力を得る」で標準エラー出力も出力される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5664</span>
+    <a class="thread-title" href="5661.html#5664">Re3: （バグ報告）[外部コマンド実行]の「標準出力を得る」で標準エラー出力も出力される</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5661>
+    <span class="no">[5661]</span>
+    <a class="thread-title" href="#5661">（バグ報告）[外部コマンド実行]の「標準出力を得る」で標準エラー出力も出力される</a>
+    <span class="author">std</span>
+    <time datetime="2010-03-20T19:34:25">2010年03月20日 19:34</time></h1>
+    <div class="body">標準出力のみをエディタウインドウに出したいことや<br>標準エラー出力のみをエディタウインドウに出したいケースに<br>現状では対応していません。<br><br>「標準出力を得る」は標準出力のみを出力させるオプションに仕様変更して、<br>「標準エラー出力を得る」チェックボックスの新設と<br>「別々のアウトプットウインドウに出力」チェックボックスの新設を提案します。</div></section>
+    <ul><li><section><h1 id=5662>
+    <span class="no">[5662]</span>
+    <a class="thread-title" href="#5662">RE: （バグ報告）[外部コマンド実行]の「標準出力を得る」で標準エラー出力も出力される</a>
+    <span class="author">もか</span>
+    <time datetime="2010-03-21T20:06:42">2010年03月21日 20:06</time></h1>
+    <div class="body">確かに「標準出力・エラーを得る」が正しいです。<br><br>&gt;「別々のアウトプットウインドウに出力」チェックボックスの新設を希望します。<br>サンプル少ないですがこういうソフトを見かけたことがありません。<br>どちらかしか表示できないか両方画面に表示するものが多いです。<br>やはり、両方の出力を別々にリアルタイムで取得したいのでしょうか？<br><br>&gt;標準エラー出力のみをエディタウインドウに出したいケースに<br>&gt;現状では対応していません。<br>http://support.microsoft.com/kb/110930/ja<br>でどちらを拾ってくるか指定できます。<br>cmd /C "dir aaa 2&gt;nul" 標準出力だけほしい<br>cmd /C "dir aaa 1&gt;nul" 標準エラーだけほしい<br>cmd /C "dir aaa" 両方ほしい<br>dir aaaの部分をお好きなコマンドにしてください<br><br>cmd /C "dir aaa 2&gt;temperror.txt"<br>で標準出力だけ拾って、その後に temperror.txt を開くという方法もあります。<br>逆に標準出力を一時ファイルへ送ることもできます。<br>他にはWSHでなんとかする方法もあります。<br></div></section>
+    <ul><li><section><h1 id=5663>
+    <span class="no">[5663]</span>
+    <a class="thread-title" href="#5663">Re2: （バグ報告）[外部コマンド実行]の「標準出力を得る」で標準エラー出力も出力される</a>
+    <span class="author">std</span>
+    <time datetime="2010-03-22T11:37:26">2010年03月22日 11:37</time></h1>
+    <div class="body">▼ もかさん<br>&gt; &gt;標準エラー出力のみをエディタウインドウに出したいケースに<br>&gt; &gt;現状では対応していません。<br>&gt; http://support.microsoft.com/kb/110930/ja<br>&gt; でどちらを拾ってくるか指定できます。<br><br>fc aaa bbb 2&gt;hoge.txt 1&gt;nul 1&gt;&amp;2<br><br>のような複雑な指定の際に、標準出力(1)が削除され、<br>標準エラー(2)に標準出力の内容もコピーされているか<br>想定通りになっているかを確認するのが目的ですので、<br>ご提案頂いた方法では、申し訳ありませんが根本解決とはなりません。<br><br>最初の投稿から仕様変更したものをリクエストとして挙げました。<br>（やはりバグではなかったと思いますので）<br>http://sakura.qp.land.to/?Request%2F338<br><br>開発陣の皆様、なにとぞ対応をお願いします。</div></section>
+    <ul><li><section><h1 id=5664>
+    <span class="no">[5664]</span>
+    <a class="thread-title" href="#5664">Re3: （バグ報告）[外部コマンド実行]の「標準出力を得る」で標準エラー出力も出力される</a>
+    <span class="author">もか</span>
+    <time datetime="2010-03-22T18:18:01">2010年03月22日 18:18</time></h1>
+    <div class="body">&gt; fc aaa bbb 2&gt;hoge.txt 1&gt;nul 1&gt;&amp;2<br>&gt;のような複雑な指定の際に、標準出力(1)が削除され、<br>&gt;標準エラー(2)に標準出力の内容もコピーされているか<br>&gt;想定通りになっているかを確認するのが目的ですので、<br>&gt;ご提案頂いた方法では、申し訳ありませんが根本解決とはなりません。<br>そうですよね。想定レベルが分からなかったので、基本的な方法だけ書きました。<br>リクエストの反応しだいだとおもいます。<br><br>ちなみに、リダイレクトのテストをリダイレクトを使って書くとこんな感じになりました。<br>CMDが正しいか確認したいのにCMDを使うので微妙ですね。<br>CMD /C"CMD /C""fc aaa bbb 2&gt;hoge.txt 1&gt;nul 1&gt;&amp;2"" 2&gt;last_cerr.txt"<br>CMD /C"fc aaa bbb 2&gt;hoge.txt 1&gt;nul 1&gt;&amp;2" 2&gt;last_cerr.txt<br>CMD /C"fc aaa bbb 2&gt;hoge.txt 1&gt;nul 1&gt;&amp;2" 1&gt;last_cout.txt 2&gt;last_cerr.txt<br>(fc aaa bbb 2&gt;hoge.txt 1&gt;nul 1&gt;&amp;2) 1&gt;last_cout.txt 2&gt;last_cerr.txt<br>(fc aaa bbb 2&gt;hoge.txt 1&gt;nul 1&gt;&amp;2) 1&gt;nul<br>(fc aaa bbb 2&gt;hoge.txt 1&gt;nul 1&gt;&amp;2) 2&gt;nul<br>ちなみに/Cのあとにスペースを空けるとエラーになります。<br>こういうのをテストしたいと。さすがに面倒くさいです。私でもいやです。<br><br>*[以下オフトピック]<br>&gt; fc aaa bbb 2&gt;hoge.txt 1&gt;nul 1&gt;&amp;2<br>fc aaa bbb 2&gt;hoge.txt 1&gt;&amp;2<br>fc aaa bbb 1&gt;hoge.txt 2&gt;&amp;1<br>と同じはずと。<br><br>stdoutとstderrをひっくり返す<br>fc aaa bbb 3&gt;&amp;1 1&gt;&amp;2 2&gt;&amp;3<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

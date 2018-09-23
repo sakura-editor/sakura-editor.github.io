@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>長い正規表現マッチで落ちる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4819</span>
+    <a class="thread-title" href="4819.html#4819">長い正規表現マッチで落ちる</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=4819>
+    <span class="no">[4819]</span>
+    <a class="thread-title" href="#4819">長い正規表現マッチで落ちる</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-05-15T00:27:29">2007年05月15日 00:27</time></h1>
+    <div class="body">&gt;746  Name： 名無しさん＠お腹いっぱい。  [sage] Date： 2007/05/14(月) 20:23:57  ID: mkKJ4Aje0  Be:<br>&gt;バグ発見。<br>&gt;正規表現キーワードに<br>&gt;/a.*/k<br>&gt;などとして色付けする。　最後が .* だと起こるようです。<br>&gt;<br>&gt;a111111111111<br>&gt;<br>&gt;1をどんどん追加する。（1でなく任意の文字でもいいけど）<br>&gt;7600桁越えた辺りで、エディタが落ちます。<br>&gt;<br>&gt;鬼車版のbregexp.dllだと大丈夫みたいです。 <br><br>regexpが中で再帰を使っている構造上，マッチ対象が長いとスタックオーバーフローになります．<br></div></section>
+    </li></ul></body></html>

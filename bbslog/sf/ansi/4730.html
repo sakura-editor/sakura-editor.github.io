@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CTabWnd | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4730</span>
+    <a class="thread-title" href="4730.html#4730">CTabWnd</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4732</span>
+    <a class="thread-title" href="4730.html#4732">Re:CTabWnd</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4735</span>
+    <a class="thread-title" href="4730.html#4735">Re2:CTabWnd</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4739</span>
+    <a class="thread-title" href="4730.html#4739">Re3:CTabWnd</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4741</span>
+    <a class="thread-title" href="4730.html#4741">Re3:CTabWnd</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4748</span>
+    <a class="thread-title" href="4730.html#4748">Re4:CTabWnd</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4749</span>
+    <a class="thread-title" href="4730.html#4749">Re5:CTabWnd</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4752</span>
+    <a class="thread-title" href="4730.html#4752">Re5:CTabWnd</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4730>
+    <span class="no">[4730]</span>
+    <a class="thread-title" href="#4730">CTabWnd</a>
+    <span class="author">wakura</span>
+    <time datetime="2007-03-12T18:19:15">2007年03月12日 18:19</time></h1>
+    <div class="body">SetWindowLongPtrする場所間違ってるっぽい。<br>タブバーが消えるとかなんとかのバグがあった気がする<br>のはこのためかも<br></div></section>
+    <ul><li><section><h1 id=4732>
+    <span class="no">[4732]</span>
+    <a class="thread-title" href="#4732">Re:CTabWnd</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-13T00:29:48">2007年03月13日 00:29</time></h1>
+    <div class="body">▼ wakuraさん<br>&gt; SetWindowLongPtrする場所間違ってるっぽい。<br>えっ，どこどこ？<br>各種設定を行う前にいきなりサブクラス化するのが問題になるということですか？<br><br>できれば<br>- 不具合の出る状況<br>- 修正内容<br>- 修正後の確認結果<br>をまとめてもらえると助かります．<br></div></section>
+    <ul><li><section><h1 id=4735>
+    <span class="no">[4735]</span>
+    <a class="thread-title" href="#4735">Re2:CTabWnd</a>
+    <span class="author">wakura</span>
+    <time datetime="2007-03-13T18:23:58">2007年03月13日 18:23</time></h1>
+    <div class="body"><br>597行目<br>CreateWindow実行中にWM_CREATEイベントが発生するからCreateWindow<br>の後に実行したのでは遅い。<br>他の箇所はWndProcの中かWM_CREATE/WM_INITDIALOGの中でSetWindowLongPtrしている。<br></div></section>
+    <ul><li><section><h1 id=4739>
+    <span class="no">[4739]</span>
+    <a class="thread-title" href="#4739">Re3:CTabWnd</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-03-13T21:37:39">2007年03月13日 21:37</time></h1>
+    <div class="body">▼ wakuraさん<br>&gt; 他の箇所はWndProcの中かWM_CREATE/WM_INITDIALOGの中でSetWindowLongPtrしている。<br>本質的には、SetWindowLongPtrの位置が間違いなのではなく、<br>親ウィンドウをCreateしてから子ウィンドウをCreateするのか<br>親ウィンドウのCreateの最中に子ウィンドウをCreateするのか<br>の違いだと思います。<br>CTabWndは前者ですね。CEditWndやCFuncKeyWndも前者です。<br>というか、CWnd::OnCreate()は誰も使っていないみたいですね。<br>子ウィンドウのサブクラス化は対象の子ウィンドウを作ってからでないとできないので、前者なら自動的に親ウィンドウのCreate後ということになります。<br>たまたま最初に作った人が前者の手順で作ったというだけの話のように思います。<br>後者の手順のほうが普通っぽい気はしますが。。。</div></section>
+    </li><li><section><h1 id=4741>
+    <span class="no">[4741]</span>
+    <a class="thread-title" href="#4741">Re3:CTabWnd</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-03-14T02:33:03">2007年03月14日 02:33</time></h1>
+    <div class="body">▼ wakuraさん<br>&gt; 597行目<br>あれ？次の行のサブクラス化ぢゃなくてGWLP_USERDATAのほうですか？<br>だったら、サブクラス化（GWLP_WNDPROC）の前にやってるので問題ナッシングではないのかなぁ～。<br>thisポインタにアクセスするのはサブクラスプロシージャのほうですからね。<br>WC_TABCONTROLのシステム定義ウィンドウプロシージャがGWLP_USERDATAをthisポインタとして解釈することはないでしょ？<br>なんか見当違いしてますかね。σ(^^;</div></section>
+    <ul><li><section><h1 id=4748>
+    <span class="no">[4748]</span>
+    <a class="thread-title" href="#4748">Re4:CTabWnd</a>
+    <span class="author">wakura</span>
+    <time datetime="2007-03-15T21:51:07">2007年03月15日 21:51</time></h1>
+    <div class="body"><br>CreateWindowから戻ってきたときにはすでにウインドウメッセージは飛び始めた後なので、<br>サブクラス化のタイミングが遅いんじゃないかなぁと思ったのです。<br>（それまでのメッセージが不要なら、無問題です）<br><br>あと、CreateWindowの前にグローバル変数にオブジェクトを代入してWM_CREATEで拾う<br>方法がサクラでは一般的なようですが、マルチスレッドで動き出したら乙るので、<br>なんかいい方法ないかなとググってたら、いいもの見つけました。<br><br>http://techtips.belution.com/ja/vc/0009/<br><br>この例だと、グローバル変数を使わずにカプセル化できています。<br>（SetPropというAPIが便利そう。<br></div></section>
+    <ul><li><section><h1 id=4749>
+    <span class="no">[4749]</span>
+    <a class="thread-title" href="#4749">Re5:CTabWnd</a>
+    <span class="author">(全略)</span>
+    <time datetime="2007-03-16T00:04:28">2007年03月16日 00:04</time></h1>
+    <div class="body">▼ wakuraさん<br>&gt; <br>&gt; CreateWindowから戻ってきたときにはすでにウインドウメッセージは飛び始めた後なので、<br>&gt; サブクラス化のタイミングが遅いんじゃないかなぁと思ったのです。<br>&gt; （それまでのメッセージが不要なら、無問題です）<br>大したメッセージ流れないし、いいんじゃないですか?<br>昔調べた時のメモですが↓のような順番でした<br><br>* CreateWindowしてからCreateWindowを抜けるまでに飛ぶメッセージ<br>WM_GETMINMAXINFO<br>WM_NCCREATE<br>WM_NCCALCSIZE<br>WM_CREATE<br><br>ふつーのアプリケーションにはどー考えても不要かと(^^;<br># 後、コモンコントロール系のWM_CREATEはとれないことはないけど、あまりとらないんじゃ?</div></section>
+    </li><li><section><h1 id=4752>
+    <span class="no">[4752]</span>
+    <a class="thread-title" href="#4752">Re5:CTabWnd</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-03-16T02:57:27">2007年03月16日 02:57</time></h1>
+    <div class="body">▼ wakuraさん<br>&gt; この例だと、グローバル変数を使わずにカプセル化できています。<br>&gt; （SetPropというAPIが便利そう。<br>うろ覚えだけど、SetPropよりもTLS使うほうが高速らしいですよ。<br>言わずもがなで気付いいちゃいても、即、恩恵に結びつかないスマート化には皆さんなかなか手が回らないようで。<br>（WM_COMMANDの件も．．．）<br>＃プロセス間共有メモリを排他制御してないことのほうが遥かにやばいに違いない。(^^;;;</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

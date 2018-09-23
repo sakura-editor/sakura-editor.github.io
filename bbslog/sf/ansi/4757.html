@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>外部コマンド実行の機能拡張 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4757</span>
+    <a class="thread-title" href="4757.html#4757">外部コマンド実行の機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4767</span>
+    <a class="thread-title" href="4757.html#4767">Re:外部コマンド実行の機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4778</span>
+    <a class="thread-title" href="4757.html#4778">Re2:外部コマンド実行の機能拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4783</span>
+    <a class="thread-title" href="4757.html#4783">Re3:外部コマンド実行の機能拡張</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4770</span>
+    <a class="thread-title" href="4757.html#4770">&amp;iquest;</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4771</span>
+    <a class="thread-title" href="4757.html#4771">Re:&amp;iquest;</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4757>
+    <span class="no">[4757]</span>
+    <a class="thread-title" href="#4757">外部コマンド実行の機能拡張</a>
+    <span class="author">maru</span>
+    <time datetime="2007-03-19T01:36:22">2007年03月19日 01:36</time></h1>
+    <div class="body">Unicode化で盛り上がっているなかで、新機能の提案なので、なんとなく恐縮なのですが。<br>ずっと以前に検討していたものをのんびりと評価中で、テストバイナリ作りました。<br>ご意見をお願いします。<br><br><a href=http://sakura.qp.land.to/?Junk%2F18 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F18</nobr></a><br>#1553455</div></section>
+    <ul><li><section><h1 id=4767>
+    <span class="no">[4767]</span>
+    <a class="thread-title" href="#4767">Re:外部コマンド実行の機能拡張</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-03-22T14:11:20">2007年03月22日 14:11</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ご意見をお願いします。<br>&gt; <br>&gt; <a href=http://sakura.qp.land.to/?Junk%2F18 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F18</nobr></a><br>&gt; #1553455<br><br>ちょっとだけ使ってみました（^^;）<br>具体的には、現在の編集ウインドウに標準出力を送り込む機能を<br>GUI から使ってみました。この機能に限定して・・・。<br><br>正直、なんだかあったら便利かなーとは思うのですけれど、<br>テキストエディタとしては、<br>現在の編集バッファにファイルデータを<br>読み込むマクロ関数を装備することで、<br>より柔軟に対応するほうがいいのではないかという<br>感想を持ちました…。参考になれば、幸いです。<br><br>&gt; Unicode化で盛り上がっているなかで、新機能の提案なので、なんとなく恐縮なのですが。<br><br>えーと・・・。<br>ぼくは本家サイドが持つ Unicode 化（するという前提で）の大枠を<br>はっきり知りたかっただけですので、ほんとに、<br>ご遠慮なさらずいつも通りでいて下さいませー（^^）<br>基本的な関数ライブラリが整うのも、<br>正規表現のコトなんかを考えると、<br>ぶっちゃけ、まだまだまだまだ(…中略…)<br>先になりそうです（^^;）<br><br>なんだか、お騒がせしてすみませんでした m(__)m<br></div></section>
+    <ul><li><section><h1 id=4778>
+    <span class="no">[4778]</span>
+    <a class="thread-title" href="#4778">Re2:外部コマンド実行の機能拡張</a>
+    <span class="author">maru</span>
+    <time datetime="2007-03-24T16:38:36">2007年03月24日 16:38</time></h1>
+    <div class="body">&gt;▼ ラスティブさん<br>&gt;&gt; ご意見をお願いします。<br>&gt;&gt; http://sakura.qp.land.to/?Junk%2F18<br>&gt;<br>&gt;読み込むマクロ関数を装備することで、<br>&gt;より柔軟に対応するほうがいいのではないか<br><br>コメントありがとうございます。やっぱりこういう意見も出てきましたか。<br>私自身もすごく悩んでいて、過去に、ファイル入出力マクロ関数もたたき台のレベルで作ったことがありますが、「そんなことくらいならWSHマクロでやれば」的な意見も出たことがあり、落としどころが見つからなくなりつつあります。<br>で、逆に機能を限定し、trコマンドのようなテキストユーティリティを利用して標準機能にないテキスト処理を手軽に実現するための機能として考えました。<br>ゆえに、編集中のウィンドウにリダイレクトする機能は、ほとんどの場合「標準入力に送る」とペアで使用するケースで想定しております。<br>ちょっとした処理を手軽に、が狙いです。<br><br>一方ファイル入出力マクロについてですが、標準入出力を利用したいときと、ファイル入出力を利用したいときでは、状況・目的が異なるように思えるので、個人的な意見としては、これらの機能は別のものとして捉えております。<br>標準マクロであるPPAからはファイル操作ができないので、なんらかのファイル入出力機能があったほうがよいかなと思います。<br><br>ただ、両方とも実装するとなると、使わない人にとっては「似たような機能がいくつもゴテゴテと…」に見えるので、悩ましいです。<br></div></section>
+    <ul><li><section><h1 id=4783>
+    <span class="no">[4783]</span>
+    <a class="thread-title" href="#4783">Re3:外部コマンド実行の機能拡張</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-03-27T19:50:13">2007年03月27日 19:50</time></h1>
+    <div class="body">▼ maruさん<br>&gt; …（略）…逆に機能を限定し、trコマンドのようなテキストユーティリティを利用して<br>&gt; 標準機能にないテキスト処理を手軽に実現するための機能として考えました。<br>&gt; …（略）…編集中のウィンドウにリダイレクトする機能は、ほとんどの場合<br>&gt; 「標準入力に送る」とペアで使用するケースで想定しております。<br><br>そーだったのかー。納得しました（^^;）<br>ファイルを読み込むマクロ関数は確かに別物ですね…。<br><br>ろくにソースコード読んでいないのでアレなんですけれど・・・<br>文字の種類の多彩な変換に対応したいという要望から考えると、<br>選択範囲を標準入力に送ってこれこれの外部コマンドを実行<br>みたいなことが出来ればよりお手軽になりそうです・・・。<br><br>&gt; ただ、両方とも実装するとなると、<br>&gt; 使わない人にとっては「似たような機能がいくつもゴテゴテと…」に見えるので、<br>&gt; 悩ましいです。<br><br>インターフェース上で用途をはっきりさせる事で、<br>多少は改善されるのではと思ったりもします。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4770>
+    <span class="no">[4770]</span>
+    <a class="thread-title" href="#4770">&amp;iquest;</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-03-23T10:43:56">2007年03月23日 10:43</time></h1>
+    <div class="body">▼ maruさん<br>&gt; Unicode化で盛り上がっているなかで、<br><br>&gt;&gt;dev:4746 げんたさん<br>&gt; しかし，文書の内容以外にもANSI版だと日本語版以外のOSでメニュー等が文字化けしたり，Unicodeのファイル名が扱えなかったりという制限もありますので，後々禍根を残す中途半端な方法は止めた方が良いのかも．<br><br>&gt;&gt;dev:4754 hidetoさん<br>&gt; んな訳で、一般掲示板、または、特設ページで、「Win95/98切っちゃってもいいですか？」アンケートを実施するのがいいと思いますが如何でしょうか？<br><br>日本語のXPでもUnicodeのファイル名のファイルを開く事が出来ません。（既出のようですがまだ私には見つけられません）<br>DOSプロンプトのDIRでさえUnicodeのファイル名表示が出来ます、例えば半角の上下逆'?'。<br><br>Win9xでSAKURAが使えなくなるのは嫌ですが？何か？</div></section>
+    <ul><li><section><h1 id=4771>
+    <span class="no">[4771]</span>
+    <a class="thread-title" href="#4771">Re:&amp;iquest;</a>
+    <span class="author">wakura</span>
+    <time datetime="2007-03-23T21:51:47">2007年03月23日 21:51</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; DOSプロンプトのDIRでさえUnicodeのファイル名表示が出来ます<br><br>DOSだからこそできる。<br>ロングファイル名のFAT格納形式はUNICODEでふぉです。<br>それはさておき、<br><br>&gt; Win9xでSAKURAが使えなくなるのは嫌ですが？何か？<br><br>使えなくなるって言うか、<br>SJIS版は基本メンテナンスモードに移行。<br>（SJIS版がなくなるわけじゃない）<br><br>さらにUNICODE版は当分バギーなはずなので、<br>SJIS版の更新はしばらく止まらないと思われる。<br><br>UNICODE版はunicows.dllをリンクした版をWin95用として<br>別途リリースすればいいんじゃね？<br>（unicows.dllにバグがあるという噂もあるが、限定的で<br>あれば回避できるだろう）<br><br>uniscribeはどうなるんだろう・・・<br><br>UNICODE関係のリンク追加<br><a href=http://www-306.ibm.com/software/globalization/icu/index.jsp target=_top><nobr>http://<wbr>www-<wbr>306.<wbr>ibm.<wbr>com/<wbr>software<wbr>/<wbr>globaliz<wbr>ation/<wbr>icu/<wbr>index.<wbr>jsp</nobr></a><br><a href=http://www.pango.org/ target=_top><nobr>http://<wbr>www.<wbr>pango.<wbr>org/<wbr></nobr></a><br><br><br>IBM</div></section>
+    </li></ul></li></ul></li></ul></body></html>

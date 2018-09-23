@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Grep結果が分割他ビューに反映されない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5334</span>
+    <a class="thread-title" href="5334.html#5334">Grep結果が分割他ビューに反映されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5336</span>
+    <a class="thread-title" href="5334.html#5336">Re:Grep結果が分割他ビューに反映されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5338</span>
+    <a class="thread-title" href="5334.html#5338">Re2:Grep結果が分割他ビューに反映されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5339</span>
+    <a class="thread-title" href="5334.html#5339">Re3:Grep結果が分割他ビューに反映されない</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5334>
+    <span class="no">[5334]</span>
+    <a class="thread-title" href="#5334">Grep結果が分割他ビューに反映されない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-07T01:07:30">2008年06月07日 01:07</time></h1>
+    <div class="body">Grep結果が分割他ビューに反映されない問題の修正パッチを作成しました。<br>２行だけの修正です。<br><br>→Patches#1986607<br><br>（UNICODE版にはcommit済 &gt;&gt;unicode:459）</div></section>
+    <ul><li><section><h1 id=5336>
+    <span class="no">[5336]</span>
+    <a class="thread-title" href="#5336">Re:Grep結果が分割他ビューに反映されない</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-08T00:26:47">2008年06月08日 00:26</time></h1>
+    <div class="body">RedrawAll();<br>が<br>m_pcEditDoc-&gt;SetActivePane( m_nMyIndex );<br>に変更されているのは、RedrawAll()ではまずい状況があり得るという事でしょうか？それもと保険的なものでしょうか？<br></div></section>
+    <ul><li><section><h1 id=5338>
+    <span class="no">[5338]</span>
+    <a class="thread-title" href="#5338">Re2:Grep結果が分割他ビューに反映されない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-09T00:32:59">2008年06月09日 00:32</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; RedrawAll()ではまずい状況<br><br>Grepは実行中でも編集画面をいじれるようになっています。別の分割ビューにアクティブビューを切り替えることもできます。アクティブビューが切り替わった状態でGrepが終了すると、<br><br>RedrawAll(); ←自分（以前のアクティブビュー）を更新<br>m_pcEditDoc-&gt;RedrawInactivePane(); ←現在の非アクティブビューを更新<br><br>では新しいアクティブビューが更新されません。それが、RedrawAll() を m_pcEditDoc-&gt;SetActivePane() に変えた理由です。<br><br>ただ、RedrawAll() を m_pcEditDoc-&gt;SetActivePane() に変えると、切り替えたアクティブビューを強制的に引き戻すことになって、あまりスマートなやり方ともいえないし、別の問題も見つけてしまいました。<br>これらの問題も修正した新しいパッチをUPしましたので、よろしくお願いします。（別の問題の内容については、Patchesに内容を書いておきました）<br><br>新パッチでは、ついでに、リアルタイム表示オプションが全分割ビューに適用されるようにしています。</div></section>
+    <ul><li><section><h1 id=5339>
+    <span class="no">[5339]</span>
+    <a class="thread-title" href="#5339">Re3:Grep結果が分割他ビューに反映されない</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-10T01:59:05">2008年06月10日 01:59</time></h1>
+    <div class="body">▼ ryojiさん<br>ありがとうございます。理解出来ました。<br>私の想像力が足りてないのを痛感します (^^;<br><br>FixGrepRedraw2.patchの方も確認しました。<br>コミットOKと思います。<br><br>足りてないと言いつつOKもないですが……</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

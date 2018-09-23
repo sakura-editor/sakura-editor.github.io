@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>コミットルールを見直したい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5191</span>
+    <a class="thread-title" href="5191.html#5191">コミットルールを見直したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5192</span>
+    <a class="thread-title" href="5191.html#5192">Re:コミットルールを見直したい</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5198</span>
+    <a class="thread-title" href="5191.html#5198">RE: コミットルールを見直したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5241</span>
+    <a class="thread-title" href="5191.html#5241">Re2: コミットルールを見直したい</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5191>
+    <span class="no">[5191]</span>
+    <a class="thread-title" href="#5191">コミットルールを見直したい</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-11-26T22:26:18">2007年11月26日 22:26</time></h1>
+    <div class="body">半年ほど前から気にはなっていたのになかなか言い出せなかったのですが...<br>現状の誰かがレビューした後でcommitというルールが開発の速度を落とすだけで効果に乏しいのではと感じています．<br><br>レビューという行為に意味がないというつもりはありませんが，レビューでバグはなくせないというのが実情ではないかと思います．特に状態遷移を伴う物やGUIに関わるものなどコードの目視だけで判断するのは無理(少なくとも非効率)でしょう．<br>そこで動作試験となりますが，十分な試験を行ったかが重要です．しかし，他の人の作った新機能とその影響範囲を理解して試験をするのが結構大変です．<br><br>UNICODE版の掲示板で様々な方が活発に意見を述べているのを見て，これまでの運営が能力ある方々の意欲をそいでいたのではと反省しつつ，何かよい方法がないかを模索したいと思います．レビュー，試験を見落とし無く完璧に行わずとも，容易にできる部分とコアとなる部分に作業を分けて，能力に応じて分担することで品質，速度，そして参加してくださる方の満足度とも高められるような形に持って行けないでしょうか．<br><br>皆様のご意見をお待ちしています．<br></div></section>
+    <ul><li><section><h1 id=5192>
+    <span class="no">[5192]</span>
+    <a class="thread-title" href="#5192">Re:コミットルールを見直したい</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-27T00:04:29">2007年11月27日 00:04</time></h1>
+    <div class="body">自分的には、ピアレビュー式の運用には不満は無いです。<br><br>＃現在のUNICODEパッチのレビューをすると言いつつ遅れてしまってますが、<br>　今回の場合はレビュー自体が手間というわけではなく、たまたま私生活の用事が重なって<br>　しまって作業が滞ってました。すみません。今レビュー作業を行ってます。<br><br>＞レビューという行為に意味がないというつもりはありませんが，<br>＞レビューでバグはなくせないというのが実情ではないかと思います．<br>＞特に状態遷移を伴う物やGUIに関わるものなどコードの目視だけで<br>＞判断するのは無理(少なくとも非効率)でしょう．<br><br>たしかに、これは自分も思いました。<br>「木を見て森を見ず」の言い回しで例えるならば、<br>「木」に関するミスは発見しやすいですけど<br>「森」に関するミスの発見や整合性の確認には骨が折れます。<br><br>ただ、とりあえずは「木」のミスだけでも発見できることに<br>意味があるんじゃないかなぁという思いです。</div></section>
+    </li><li><section><h1 id=5198>
+    <span class="no">[5198]</span>
+    <a class="thread-title" href="#5198">RE: コミットルールを見直したい</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-12-01T10:43:47">2007年12月01日 10:43</time></h1>
+    <div class="body">多少ヒントになりそうな記事<br><br>Multiple Stable 2.6.23 Releases<br>http://kerneltrap.org/Linux/Multiple_Stable_2.6.23_Releases<br><br>As there's no real way that everyone can review all of these patches, I've decided to split them up into 6 different categories, and will be sending patches out in these categories for review.<br><br>これはrepository上では分岐しているのかな？<br></div></section>
+    <ul><li><section><h1 id=5241>
+    <span class="no">[5241]</span>
+    <a class="thread-title" href="#5241">Re2: コミットルールを見直したい</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-01-06T01:56:20">2008年01月06日 01:56</time></h1>
+    <div class="body">1つのパッチに対するレビューの労力 (作業量、知識量ともに) が少なく済むように、<br>できるだけパッチは小さくするように務めてはいます。<br><br>が、それでも大きくなってしまうパッチはあって、<br>やはりレビューが付きにくくなりますね。。<br>レビュー人口の少なさがネックなのでしょうか。<br><br>未コミットのパッチを保留したまま新しいパッチを量産することはできますが、<br>そうすると、保留されたパッチがそのうちコンフリクトしまくりの「使えない」パッチと化することが不安です。<br><br>＃そんなわけで、今のところ UNICODE版のコーディング作業は、<br>　現存のパッチをコミットし終えるまで控えています。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

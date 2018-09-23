@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>パッチを色々確認しました | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5667</span>
+    <a class="thread-title" href="5667.html#5667">パッチを色々確認しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5668</span>
+    <a class="thread-title" href="5667.html#5668">Re: パッチを色々確認しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5669</span>
+    <a class="thread-title" href="5667.html#5669">Re2: パッチを色々確認しました</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5670</span>
+    <a class="thread-title" href="5667.html#5670">コミットしました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5671</span>
+    <a class="thread-title" href="5667.html#5671">ちょっと失敗</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5672</span>
+    <a class="thread-title" href="5667.html#5672">Re:ちょっと失敗</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5667>
+    <span class="no">[5667]</span>
+    <a class="thread-title" href="#5667">パッチを色々確認しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-04-12T19:11:26">2010年04月12日 19:11</time></h1>
+    <div class="body">以下のANSI版パッチを確認しました。<br><br>　#2912612 [U済] タブバーツールチップの&amp;表示不正<br>　#2921307 タブを閉じるコマンドの改良<br>　#2921768 [U済] 検索・置換マクロのエラーチェック不具合<br>　#2928898 [U済] -GREPDLG指定でキャレットが消える　（*_4.patchにて確認）<br>　#2934911 [U済] 画面分割ボックス操作時の動作不正　（*_2.patchにて確認）<br>　#2955419 [U済]文字種が変わる位置での単語補完候補にカーソル位置の単語が出る<br>　#2970236 読み込むファイルサイズが大きい場合に警告する(ANSI版)<br>　#2970250 [U済]ルールファイル解析でスタック使いすぎ<br>　#2981137 [U済] 画面分割でカーソル行位置表示が不正<br><br>－－　ここまで確認済み　－－<br><br>上記については、18日まで未コミットのまま且つ異論が出ていないようでしたら私の方で勝手に代理コミットします (^^;<br><br>★保留<br>　#2875910 浅いフォルダにあるファイルの編集・保存時にバックアップ処理で異常終了する<br><br>上記については、C:\temp.txtの場合C:\\\のフォルダを作成しようとしたりC:\\\tempにコピーする動作がちょっと気になったので保留しました。<br><br>★未確認<br>　#2964148 WIN64でコンパイルエラー<br><br>2005 Express Editionで64bit版を作成する方法が分からなかったので確認していません。<br></div></section>
+    <ul><li><section><h1 id=5668>
+    <span class="no">[5668]</span>
+    <a class="thread-title" href="#5668">Re: パッチを色々確認しました</a>
+    <span class="author">もか</span>
+    <time datetime="2010-04-15T01:27:27">2010年04月15日 01:27</time></h1>
+    <div class="body">確認ありがとうございます。助かります。<br><br>&gt;★保留<br>&gt;　#2875910 浅いフォルダにあるファイルの編集・保存時にバックアップ処理で異常終了する<br>落ちるのの確認とパッチの動作をみてみました。<br>\はフォーマット($2\$1)のほうに書いてありこの部分はただのユーザー指定文字列なので、上位フォルダがないと\だけ重なるということで、認識あっているでしょうか。<br>ちなみにUnicode版でも同じ動作をします。<br>保留で飛ばされると落ちるままで非常に怖いので、\\にしない処理を加えたものを<br>Patches#2875910に sakura_backup_fix.patch として追加しました。<br><br>「指定フォルダに作成する」を選んだ場合、相対パスのまま表示される(これはUnicode版で今確認)けどいいのかな。<br>そのまま保存されるのなら、おそらくファイルからの相対になっているんだとおもう。<br>ini設定だかexeから相対パスにしてほしいという人がいたとおもう。<br><br>&gt;★未確認<br>&gt;　#2964148 WIN64でコンパイルエラー<br>&gt;2005 Express Editionで64bit版を作成する方法が分からなかったので確認していません。<br>2008Expressでパッチを作ったので、2005は私も分からないです。<br>makefileを書くか、VCのCLの検索パスを変更したうえでlinkオプションを強制すればできるとおもうけど、やらないほうがいいです。<br></div></section>
+    <ul><li><section><h1 id=5669>
+    <span class="no">[5669]</span>
+    <a class="thread-title" href="#5669">Re2: パッチを色々確認しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-04-16T00:06:11">2010年04月16日 00:06</time></h1>
+    <div class="body">▼ もかさん<br>&gt; &gt;★保留<br>&gt; &gt;　#2875910 浅いフォルダにあるファイルの編集・保存時にバックアップ処理で異常終了する<br>&gt; 落ちるのの確認とパッチの動作をみてみました。<br>&gt; \はフォーマット($2\$1)のほうに書いてありこの部分はただのユーザー指定文字列なので、上位フォルダがないと\だけ重なるということで、認識あっているでしょうか。<br>合っています。Unicode版でも同じとのことなので気にしすぎだったかもしれませんね (^^;<br><br>&gt; 保留で飛ばされると落ちるままで非常に怖いので、\\にしない処理を加えたものを<br>&gt; Patches#2875910に sakura_backup_fix.patch として追加しました。<br>ありがとうございます。動作確認しました。<br><br>&gt; 「指定フォルダに作成する」を選んだ場合、相対パスのまま表示される(これはUnicode版で今確認)けどいいのかな。<br>&gt; そのまま保存されるのなら、おそらくファイルからの相対になっているんだとおもう。<br>&gt; ini設定だかexeから相対パスにしてほしいという人がいたとおもう。<br>'\'でカレントドライブのルート、'.\'でカレントフォルダになりましたから、相対になっているようですね。<br>ini設定またはexeからの相対というのをやるとしたら、詳細設定にパラメータ追加で対応したほうが良いかなと思います。<br><br>&gt; &gt;★未確認<br>&gt; &gt;　#2964148 WIN64でコンパイルエラー<br>&gt; &gt;2005 Express Editionで64bit版を作成する方法が分からなかったので確認していません。<br>&gt; 2008Expressでパッチを作ったので、2005は私も分からないです。<br>&gt; makefileを書くか、VCのCLの検索パスを変更したうえでlinkオプションを強制すればできるとおもうけど、やらないほうがいいです。<br>以下の対応でnmakeにてビルド完了までこぎつけました。<br>・Platform SDKのamd64関係を追加<br>・VC2005 Express Editionのビルドオプションを参考にmakefileを改造<br>・ソースファイルをUnicodeに変換（SDK付属のcl.exeが英語版のため）<br>・strcmpiを_stricmpに変更（SDK付属のamd64にstrcmpiが無いため）<br><br>起動できるかは64bit環境が無いので分かりませんが、とりあえず64bit版らしきものができました (^^;<br><br>というわけで、保留・未確認の#2875910, #2964148についてもコミットOKと思います。<br><br>ではでは。<br></div></section>
+    </li></ul></li><li><section><h1 id=5670>
+    <span class="no">[5670]</span>
+    <a class="thread-title" href="#5670">コミットしました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-04-19T01:29:24">2010年04月19日 01:29</time></h1>
+    <div class="body">以下をコミットしました。<br>　#2875910 浅いフォルダにあるファイルの編集・保存時にバックアップ処理で異常終了する<br>　#2912612 [U済] タブバーツールチップの&amp;表示不正<br>　#2921307 タブを閉じるコマンドの改良<br>　#2921768 [U済] 検索・置換マクロのエラーチェック不具合<br>　#2928898 [U済] -GREPDLG指定でキャレットが消える<br>　#2934911 [U済] 画面分割ボックス操作時の動作不正<br>　#2955419 [U済]文字種が変わる位置での単語補完候補にカーソル位置の単語が出る<br>　#2964148 WIN64でコンパイルエラー<br>　#2970236 読み込むファイルサイズが大きい場合に警告する(ANSI版)<br>　#2970250 [U済]ルールファイル解析でスタック使いすぎ<br>　#2981137 [U済] 画面分割でカーソル行位置表示が不正<br></div></section>
+    <ul><li><section><h1 id=5671>
+    <span class="no">[5671]</span>
+    <a class="thread-title" href="#5671">ちょっと失敗</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-04-19T01:37:48">2010年04月19日 01:37</time></h1>
+    <div class="body">ちょっと失敗しました。<br><br>「#2970236 読み込むファイルサイズが大きい場合に警告する(ANSI版)」のCShareData_new.cppの修正に不要なコード（行頭に+）が存在しコンパイル時に警告が発生します。<br>パッチ確認時にもコミット時にも気がつかなかった……orz<br><br>修正パッチを作成しました（レビュー無しでコミットしようかと思いましたが止めました）<br>　#2989036 不要なコードの存在によりコンパイル時に警告が発生する<br></div></section>
+    <ul><li><section><h1 id=5672>
+    <span class="no">[5672]</span>
+    <a class="thread-title" href="#5672">Re:ちょっと失敗</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2010-04-20T08:54:57">2010年04月20日 08:54</time></h1>
+    <div class="body">「#2989036 不要なコードの存在によりコンパイル時に警告が発生する」<br>をrev1749でコミットしました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

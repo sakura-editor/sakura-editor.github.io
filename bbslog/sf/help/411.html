@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>svn/Rev1750について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">411</span>
+    <a class="thread-title" href="411.html#411">svn/Rev1750について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">412</span>
+    <a class="thread-title" href="411.html#412">Re: svn/Rev1750について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">413</span>
+    <a class="thread-title" href="411.html#413">Re2: svn/Rev1750について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=411>
+    <span class="no">[411]</span>
+    <a class="thread-title" href="#411">svn/Rev1750について</a>
+    <span class="author">もか</span>
+    <time datetime="2010-04-23T01:03:30">2010年04月23日 01:03</time></h1>
+    <div class="body">リリースしているバイナリが動作しないという話なので<br>Windows 95をヘルプ上の動作環境からはずしました。<br></div></section>
+    <ul><li><section><h1 id=412>
+    <span class="no">[412]</span>
+    <a class="thread-title" href="#412">Re: svn/Rev1750について</a>
+    <span class="author">もか</span>
+    <time datetime="2010-04-24T01:37:10">2010年04月24日 01:37</time></h1>
+    <div class="body">&gt;リリースしているバイナリが動作しないという話なので<br>&gt;Windows 95をヘルプ上の動作環境からはずしました。<br>VC2005(1400)でリリースしてると思っていたのですが、再確認したら1310でした。<br>どうも、Unicode版とごっちゃになっていたようです。すみません。<br>VC2005でコンパイルしているけど、95で使えないからアセンブラでと思っていたら、<br>VC2005に移行したいからでした。。。<br>元に戻しておきます。<br><br>VC.NET 2003なので、Win 95のサポートは明記されていないけど起動はできますね。<br>(98/MEはコンパイルしたバイナリの実行がVSのFAQで明記されている)<br>念のためPC-98/Win95 GOLD/IE4(4.71.1712.6)/saura 1.6.5.0で起動だけ確認しましたが、<br>○saura.exe<br>○インストーラ<br>○bregonig.dll<br>未確認：ppa.dll<br>○関連付けツール<br>△sakura.chm<br>△macro.chm<br><br>サクラエディタからヘルプを呼び出すときにHTMLがver1.1指定なのでエラーが表示されて、<br>ツリーとメニューとツールバーが表示されないページだけの状態になります。<br>この1.1のことは以前誰かがコメントしていた気がするんだけど、過去記事を見つけられずにいます。<br>「目次」は、sakura.chm::default.htmを表示しようとしてナビゲーションのエラーの画面のみになります。<br>各メニューからF1キーで飛ぶと、ページだけは表示されますが、画像とCSSを含むリンクが無効になります。<br>これは、sakura.hhpの\を/に置換すると直りました。<br>直接sakura.chmを起動すれば、エラーは表示されますがヘルプを見ることはできます。<br><br>#なんでIEにSPとか当たってないのかは知りません。<br></div></section>
+    <ul><li><section><h1 id=413>
+    <span class="no">[413]</span>
+    <a class="thread-title" href="#413">Re2: svn/Rev1750について</a>
+    <span class="author">もか</span>
+    <time datetime="2010-04-24T01:58:47">2010年04月24日 01:58</time></h1>
+    <div class="body">ちなみに、よくryojiさん等がWin95で動作確認してくれています。<br>それとリリースは別だと思っていたのが間違い。<br><br>ただ、Win 95は4.0 GOLD/a/b/c と4種類あった気がするけど...<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

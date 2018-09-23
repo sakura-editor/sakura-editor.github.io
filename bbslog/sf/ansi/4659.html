@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>SJIS2004 の対応は… | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4659</span>
+    <a class="thread-title" href="4659.html#4659">SJIS2004 の対応は…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4678</span>
+    <a class="thread-title" href="4659.html#4678">Re:SJIS2004 の対応は…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4679</span>
+    <a class="thread-title" href="4659.html#4679">Re2:SJIS2004 の対応は…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4680</span>
+    <a class="thread-title" href="4659.html#4680">Re3:SJIS2004 の対応は…</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4659>
+    <span class="no">[4659]</span>
+    <a class="thread-title" href="#4659">SJIS2004 の対応は…</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-01-16T10:59:05">2007年01月16日 10:59</time></h1>
+    <div class="body">なんか今更いうのもなんですが、<br>Windows Vista が SJIS2004 エンコーディングを<br>搭載しているみたいなんですけれど。<br><br>どう対応するべきなんですかね… (^^;<br></div></section>
+    <ul><li><section><h1 id=4678>
+    <span class="no">[4678]</span>
+    <a class="thread-title" href="#4678">Re:SJIS2004 の対応は…</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-02-19T11:29:05">2007年02月19日 11:29</time></h1>
+    <div class="body">&gt; Windows Vista が SJIS2004 エンコーディングを・・・<br><br>サクラエディタがサポートする "SJIS" と "EUC" の<br>文字コードをワイドキャラクタ版でやってる風に、<br><br>"SJIS"・・・<br>　JIS X 0213<br>　UTF-32 との変換：CP-932 + SJIS2004 で補われた変換。<br>"EUC"・・・<br>　JIS X 0213<br>　UTF-32 との変換：たぶん、TOG/JVC eucJP-open (eucJP-ms)。<br><br>とするといいんじゃないかと思うんですけれど、<br>良いでしょうか。<br><br>ところで、ワイドキャラクタ版では、"JIS" の<br>(UTF-32 との)変換も JIS X 0213 用の<br>ISO-2022-JP-2004 を追加しているようですが、IANA に<br>登録なされていない関係で、従来通りにしたほうが<br>いいような気がするんですけれど、どうするべき<br>なんでしょうか・・・。<br></div></section>
+    <ul><li><section><h1 id=4679>
+    <span class="no">[4679]</span>
+    <a class="thread-title" href="#4679">Re2:SJIS2004 の対応は…</a>
+    <span class="author">maru</span>
+    <time datetime="2007-02-21T01:07:53">2007年02月21日 01:07</time></h1>
+    <div class="body">&gt;ところで、ワイドキャラクタ版では、"JIS" の<br>&gt;(UTF-32 との)変換も JIS X 0213 用の<br>&gt;ISO-2022-JP-2004 を追加しているようですが、IANA に<br>&gt;登録なされていない関係で、従来通りにしたほうが<br>&gt;いいような気がするんですけれど、どうするべき<br>&gt;なんでしょうか・・・。<br><br>Shift_JIS-2004もIANAに登録されていないような？<br><br>仮にISO-2022-JP-2004だけ仲間はずれにすると、変換できない文字を<br>どうやって保持するかという、今も抱えてるあの問題に直面しません？<br></div></section>
+    <ul><li><section><h1 id=4680>
+    <span class="no">[4680]</span>
+    <a class="thread-title" href="#4680">Re3:SJIS2004 の対応は…</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-02-22T18:56:23">2007年02月22日 18:56</time></h1>
+    <div class="body">&gt;Shift_JIS-2004もIANAに登録されていないような？<br><br>商売上手な天下のマイクロソフトが導入したから、<br>Shift_JIS-2004 の亜種がいわゆる SJIS と名乗ることに！？<br>そして将来、SJIS は恐らく CP-932＋α で、<br>EUC は恐らく eucJP-open＋α ですから、（←これが特に怪しい）<br>書き込むときに気をつけとけば大丈夫そう<br>・・・と思ってのことです（汗<br><br>&gt;仮にISO-2022-JP-2004だけ仲間はずれにすると、変換できない文字を<br>&gt;どうやって保持するかという、今も抱えてるあの問題に直面しません？<br>&gt;<br>※ あの問題・・・SourceForge Patches #1618265 で取り上げられている内容。<br><br>競合するエンコーディング方式 UTF-8 ＋ BASE64 も存在していて、<br>ISO-2022-JP-2004 はあまり広まらないんじゃないかなーなんて（f^^;<br>確かに、サポートできる方が無難ですよね。<br><br>ところで、あの問題にはどうやってもどこかしらで直面しそうです。<br>厄介なのは、SJIS や Unicode などの内部文字コードへ変更された<br>ISO-2022-JP 系列のバイト列を、元どおりのバイト列に復元する<br>簡単な方法が無さげです。UTF-7 も、これと同様の問題を抱えてます。<br><br>特別扱いするのがいいのでしょうか。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

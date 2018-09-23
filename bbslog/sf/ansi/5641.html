@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Sleipnir風タブを閉じるコマンドに関して | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5641</span>
+    <a class="thread-title" href="5641.html#5641">Sleipnir風タブを閉じるコマンドに関して</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5644</span>
+    <a class="thread-title" href="5641.html#5644">Re:Sleipnir風タブを閉じるコマンドに関して</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5645</span>
+    <a class="thread-title" href="5641.html#5645">Re2:Sleipnir風タブを閉じるコマンドに関して</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5646</span>
+    <a class="thread-title" href="5641.html#5646">Re2:Sleipnir風タブを閉じるコマンドに関して</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5647</span>
+    <a class="thread-title" href="5641.html#5647">Re3:Sleipnir風タブを閉じるコマンドに関して</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5641>
+    <span class="no">[5641]</span>
+    <a class="thread-title" href="#5641">Sleipnir風タブを閉じるコマンドに関して</a>
+    <span class="author">もか</span>
+    <time datetime="2009-12-14T23:19:45">2009年12月14日 23:19</time></h1>
+    <div class="body">ANSI 1.6.5.0 / Unicode 1.6.5.0 rev1684<br>#2326632 Sleipnir風タブを閉じるコマンド<br><br>・このタブ以外を閉じる<br>実行可能判定がm_bDispTabWndMultiWin=ウィンドウをまとめてグループ化する<br>になっているので、タブバー表示でまとめない設定で動きません。<br>もっともタブ非表示でも「このウィンドウ以外を閉じる」として動作しても問題ないので判定自体が不要かと。<br><br>・左をすべて閉じる<br>・右をすべて閉じる<br>同様に実行可能判定がおかしい。<br>m_bDispTabWndMultiWin→m_bDispTabWnd<br>こちらは、タブバーがないときは「左右」が分からないのでタブバー表示のON/OFFで制御するとよさそう。<br>ついでにメニュー・ツールバーをグレーダウンできるように<br>ANSI版 CEditWnd.cpp  CEditWnd::IsFuncEnable()<br>Unicode版 func\IsFuncEnable()<br>で処理を追加すると親切です。<br><br>マクロで使えないのは、#2326632にて、syatさん<br>&gt;以下はそれほど必要ないと思い、やってません。<br>とのことですし対応したとしても、ほかのウィンドウが操作できないから、<br>ほかのファイルを開いてそっちで処理して「右をすべて閉じる」して戻ってくる<br>とかできないからあまり意味なさそうです。<br></div></section>
+    <ul><li><section><h1 id=5644>
+    <span class="no">[5644]</span>
+    <a class="thread-title" href="#5644">Re:Sleipnir風タブを閉じるコマンドに関して</a>
+    <span class="author">syat</span>
+    <time datetime="2009-12-24T00:47:04">2009年12月24日 00:47</time></h1>
+    <div class="body">▼ もかさん<br>「グループを閉じる」からコードを流用したので全部その判定になっていますが、確かにグループ解除状態のときも実行できるほうがよいですね。<br>ただし「グループを閉じる」は、グループ解除状態だと全終了と等しくなってしまうので、今の判定を残しておきます。<br><br>「左／右をすべて閉じる」は、m_bDispTabWndMultiWinの条件を削ります。<br><br>「このタブ以外を閉じる」は、、、悩みます。<br>m_bDispTabWndMultiWinを削るのは良いとして、タブバー非表示のときは動作しないのが正しいのでは？と直感的には思いますが、「このウィンドウ以外を閉じる」の代わりとして使えるのですね・・・。<br>「タブの操作」配下からウィンドウメニュー直下に引き上げ、タブバーの有無でメニューの文言（タブ／ウィンドウ）を切り替える、というのが良いかなと思ってます。<br></div></section>
+    <ul><li><section><h1 id=5645>
+    <span class="no">[5645]</span>
+    <a class="thread-title" href="#5645">Re2:Sleipnir風タブを閉じるコマンドに関して</a>
+    <span class="author">syat</span>
+    <time datetime="2009-12-26T13:56:20">2009年12月26日 13:56</time></h1>
+    <div class="body">&gt;&gt;dev:5644の仕様でパッチを作ってみました。<br>Patches:2921307<br>UNICODE版はこちら  PatchUnicode:2921305</div></section>
+    </li><li><section><h1 id=5646>
+    <span class="no">[5646]</span>
+    <a class="thread-title" href="#5646">Re2:Sleipnir風タブを閉じるコマンドに関して</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-26T15:51:08">2009年12月26日 15:51</time></h1>
+    <div class="body">▼ syatさん<br>&gt; 「このタブ以外を閉じる」は、、、悩みます。<br>(snip)<br>&gt; 「タブの操作」配下からウィンドウメニュー直下に引き上げ、タブバーの有無でメニューの文言（タブ／ウィンドウ）を切り替える<br><br>こうすると、[ヘルプ]-[コマンド一覧]での表示位置や文言も調整する必要がありそうですね。<br>「このウィンドウ／タブ以外を閉じる」？</div></section>
+    <ul><li><section><h1 id=5647>
+    <span class="no">[5647]</span>
+    <a class="thread-title" href="#5647">Re3:Sleipnir風タブを閉じるコマンドに関して</a>
+    <span class="author">syat</span>
+    <time datetime="2009-12-27T00:16:15">2009年12月27日 00:16</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; こうすると、[ヘルプ]-[コマンド一覧]での表示位置や文言も調整する必要がありそうですね。<br>そうですね。タブバー非表示だと「このタブ以外」だけが浮いてるので、閉じる・すべて閉じるの下に移動します。<br><br>&gt; 「このウィンドウ／タブ以外を閉じる」？<br>ではそれで。^^</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

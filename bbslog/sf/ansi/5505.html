@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>マクロ実行コマンドラインオプション | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5505</span>
+    <a class="thread-title" href="5505.html#5505">マクロ実行コマンドラインオプション</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5508</span>
+    <a class="thread-title" href="5505.html#5508">Re:マクロ実行コマンドラインオプション</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5516</span>
+    <a class="thread-title" href="5505.html#5516">Re2:マクロ実行コマンドラインオプション</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5523</span>
+    <a class="thread-title" href="5505.html#5523">（バグ報告）WSHからは1で始まる関数が呼び出せない</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5505>
+    <span class="no">[5505]</span>
+    <a class="thread-title" href="#5505">マクロ実行コマンドラインオプション</a>
+    <span class="author">syat</span>
+    <time datetime="2008-12-23T11:31:17">2008年12月23日 11:31</time></h1>
+    <div class="body">起動したときにマクロを実行するコマンドラインオプションを追加しました。<br>Patches: 2457700<br><br>全マクロ関数をテストしたわけではないのでひょっとすると相性の悪い機能があるかもです。<br>また、mac,ppa,js,vba以外では試してません。どうやったら他の言語が使えるようになるの？？</div></section>
+    <ul><li><section><h1 id=5508>
+    <span class="no">[5508]</span>
+    <a class="thread-title" href="#5508">Re:マクロ実行コマンドラインオプション</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-12-23T21:43:21">2008年12月23日 21:43</time></h1>
+    <div class="body">▼ syatさん<br>&gt; また、mac,ppa,js,vba以外では試してません。どうやったら他の言語が使えるようになるの？？<br><br>以下が関連すると思いますが、完全というわけではないようです。<br>&gt;&gt;dev:5281<br>&gt;&gt;macro:412<br></div></section>
+    <ul><li><section><h1 id=5516>
+    <span class="no">[5516]</span>
+    <a class="thread-title" href="#5516">Re2:マクロ実行コマンドラインオプション</a>
+    <span class="author">syat</span>
+    <time datetime="2009-01-10T13:00:21">2009年01月10日 13:00</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; ▼ syatさん<br>&gt; &gt; また、mac,ppa,js,vba以外では試してません。どうやったら他の言語が使えるようになるの？？<br>&gt; <br>&gt; 以下が関連すると思いますが、完全というわけではないようです。<br>&gt; &gt;&gt;dev:5281<br>&gt; &gt;&gt;macro:412<br><br>ためしにrubyを入れて触ってみましたが、現状のパッチだとjsやvbsまで「Editor.」が必須になるみたいですね。<br>いろいろ解決策を探している途中でモチベーション切れました。。。<br><br>全てのマクロ関数を1Callするスクリプトを作りました。割と簡単に他の言語に対応できるのでテストに使ってもらえるとうれしいです。<br>Patches:2457700 <br></div></section>
+    <ul><li><section><h1 id=5523>
+    <span class="no">[5523]</span>
+    <a class="thread-title" href="#5523">（バグ報告）WSHからは1で始まる関数が呼び出せない</a>
+    <span class="author">syat</span>
+    <time datetime="2009-01-12T23:17:41">2009年01月12日 23:17</time></h1>
+    <div class="body">バグというか不具合です。<br><br>マクロ関数として<br>　1PageDown<br>　1PageDown_Sel<br>　1PageUp<br>　1PageUp_Sel<br>が定義されていますが、jsやvbsなどは関数名の先頭を数字にすることはできないため構文エラーになって呼び出せません。<br>OnePageDownなどの別名を用意したほうが良いと思います。<br>前の名前も互換性のため残しておくとして。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

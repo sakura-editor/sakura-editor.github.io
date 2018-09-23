@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>関数一覧の作り方 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4522</span>
+    <a class="thread-title" href="4522.html#4522">関数一覧の作り方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4523</span>
+    <a class="thread-title" href="4522.html#4523">Re: C/C++の関数一覧の作り方</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4522>
+    <span class="no">[4522]</span>
+    <a class="thread-title" href="#4522">関数一覧の作り方</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-07-16T06:30:55">2006年07月16日 06:30</time></h1>
+    <div class="body">&gt;&gt;data:5345 のGuiYMさんからのRequestがあったので，関数一覧の作り方について<br><br>うまく書けたら，後からホームページにまとめよう．<br><br>関数の場所: CEditDoc.cpp<br>CEditDoc::MakeFuncList_***** という関数群です．<br><br>EditDocの持つデータを先頭から読んで，引数pcFuncInfoArrに解析結果を格納します．<br>返されるデータレコード1つ分はCFuncInfo型で，<br>行番号，関数名，付加情報，深さ を持ちます．<br><br>そのデータを元に，CDlgFuncListクラス (CDlgFuncList.cpp) にて再度表示用に加工してツリーまたはリスト形式でダイアログボックスに表示します．<br><br>[改善したほうが良いと思われる点]<br>関数個別の処理がCEditDocの関数とCDlgFuncListの2つに分離されている．種別毎に1つのクラスを設けて，処理を1カ所にまとめた方がよい．そうすることで追加が容易になり，解析のPlug-in化も可能になるかも．<br><br>それぞれの関数は手作りだが，lexerを使うことでもうちょっとスマートに作れるかも．<br></div></section>
+    <ul><li><section><h1 id=4523>
+    <span class="no">[4523]</span>
+    <a class="thread-title" href="#4523">Re: C/C++の関数一覧の作り方</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-07-16T06:50:24">2006年07月16日 06:50</time></h1>
+    <div class="body">その前に前の記事の訂正．<br>MakeFuncList_*** 以外に MakeTopicList_*** というのもあります．<br>あと，MakeFuncList_***はCEditDoc_***.cpp という別のファイルにもあって，特にCはCEditDoc_FuncList1.cppという専用のファイルに入っています．<br><br>文法が複雑なC++の解析のために中身はかなり複雑になっています．またヘッダファイルを読み込まないので，こんなパターンは関数だろうというヒューリスティックな手法も使っています．<br>最初に#ifdef-elseのプリプロセッサ解析を行います．プリプロセッサによって削除される部分はこの時点で空行に変換されます．<br>そこで残った行を順番に見ていきます．やっていることを一言で言えば状態遷移表を出現文字によってたどっていき，必要な文字列を保存して後で使います．<br><br>nMode, nMode2といった変数がありますが，この中に入っている値が現在の状態です．値の意味は一応書いてありますが，詳しく知りたいなら実際にステップ実行してみてください．<br><br>ネームスペース，クラスや{}のネストは配列をスタックとして使います．<br><br>---<br>他に具体的に知りたい点があればまた質問してください．<br></div></section>
+    </li></ul></li></ul></body></html>

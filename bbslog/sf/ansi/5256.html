@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>読み取り専用モードだとファイルロックされない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5256</span>
+    <a class="thread-title" href="5256.html#5256">読み取り専用モードだとファイルロックされない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5257</span>
+    <a class="thread-title" href="5256.html#5257">Re:読み取り専用モードだとファイルロックされない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5258</span>
+    <a class="thread-title" href="5256.html#5258">Re2:読み取り専用モードだとファイルロックされない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5259</span>
+    <a class="thread-title" href="5256.html#5259">Re3:読み取り専用モードだとファイルロックされない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5260</span>
+    <a class="thread-title" href="5256.html#5260">Re4:読み取り専用モードだとファイルロックされない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5261</span>
+    <a class="thread-title" href="5256.html#5261">Re5:読み取り専用モードだとファイルロックされない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5262</span>
+    <a class="thread-title" href="5256.html#5262">Re6:読み取り専用モードだとファイルロックされない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5263</span>
+    <a class="thread-title" href="5256.html#5263">Re7:読み取り専用モードだとファイルロックされない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5264</span>
+    <a class="thread-title" href="5256.html#5264">Re8:読み取り専用モードだとファイルロックされない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5265</span>
+    <a class="thread-title" href="5256.html#5265">Re9:読み取り専用モードだとファイルロックされない</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5256>
+    <span class="no">[5256]</span>
+    <a class="thread-title" href="#5256">読み取り専用モードだとファイルロックされない</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-21T06:48:21">2008年03月21日 06:48</time></h1>
+    <div class="body">バグ報告（？）です。<br><br>読み取り専用モードでファイルを開くと、<br>「他プロセスからの上書きを禁止する」オプションをONにしていても<br>ファイルがロックされません。<br>メモ帳などで上書きができてしまいます。<br><br>なお、UNICODE版ソースコードでは既に修正を行っております。<br>（まだ公開できていませんけど）</div></section>
+    <ul><li><section><h1 id=5257>
+    <span class="no">[5257]</span>
+    <a class="thread-title" href="#5257">Re:読み取り専用モードだとファイルロックされない</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2008-03-22T11:27:03">2008年03月22日 11:27</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; バグ報告（？）です。<br>バグではないかと私も思います。<br>「他プロセスからの読み書きを禁止する」でも起きました。<br><br>void CEditDoc::DoFileLock( void )<br>/* 読み取り専用モード */<br>以下３行をコメントにすれば直るかと、どうでしょうか。</div></section>
+    <ul><li><section><h1 id=5258>
+    <span class="no">[5258]</span>
+    <a class="thread-title" href="#5258">Re2:読み取り専用モードだとファイルロックされない</a>
+    <span class="author">神楽</span>
+    <time datetime="2008-03-22T12:10:36">2008年03月22日 12:10</time></h1>
+    <div class="body">読取専用でオープン時に排他制御しないのは、<br>ExcelやWordでも同様ですし一般的な動作なのでは？<br><br>それよりも読取専用でオープン時に編集不可なのがおかしな仕様ではないかと。<br>上記Officeソフトでは上書き保存ができないだけで編集は可能ですし。</div></section>
+    <ul><li><section><h1 id=5259>
+    <span class="no">[5259]</span>
+    <a class="thread-title" href="#5259">Re3:読み取り専用モードだとファイルロックされない</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2008-03-22T14:01:17">2008年03月22日 14:01</time></h1>
+    <div class="body">▼ 神楽さん<br>&gt; 読取専用でオープン時に排他制御しないのは、<br>&gt; ExcelやWordでも同様ですし一般的な動作なのでは？<br>Office には、「排他制御」のオプションは無いはず。<br>いつもは「排他制御する」で、読み取り専用で開いた時のみ「排他制御しない」の基本動作。<br>そうすると、sakura の排他制御オプションに意味が無い事になります。<br>メッセージだけを「排他制御無しのビューモードで開く」に変える手も有りますね。<br><br>&gt; それよりも読取専用でオープン時に編集不可なのがおかしな仕様ではないかと。<br>&gt; 上記Officeソフトでは上書き保存ができないだけで編集は可能ですし。<br>こちらの件は別のレスで、させていただきます。 修正方法が有ると思います。</div></section>
+    <ul><li><section><h1 id=5260>
+    <span class="no">[5260]</span>
+    <a class="thread-title" href="#5260">Re4:読み取り専用モードだとファイルロックされない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-03-22T22:56:18">2008年03月22日 22:56</time></h1>
+    <div class="body">僕は排他制御も読み取り専用も普段は使ってないので、よくわからないんですが、実際に利用している人はどうなんでしょう？<br>＃排他制御は他アプリをデバッグする際のテストに使うことはあるけど特殊用途ですね<br><br>&gt; いつもは「排他制御する」で、読み取り専用で開いた時のみ「排他制御しない」の基本動作。<br>&gt; そうすると、sakura の排他制御オプションに意味が無い事になります。<br><br>読み取り専用で開いていて、誰か別の人が編集保存したとして、何か不都合があるのかなぁ？<br>むしろ、編集保存する気もない人に排他制御されて、他の人が保存できなくなってしまうのは迷惑なんじゃないか、とも思ったり。<br>＃読み取り専用にするたびいちいち排他制御オプションをいじるのも面倒でしょうし<br>僕はそういう共同作業をしてないこともあり、このあたりについて自ら変更を加えたりする気にはなれないですね。<br>実際の利用者間での議論から「これではどうにも困るからこういう具合に変更してほしい」という結論が出るようなら話は別ですけど。<br><br>&gt; メッセージだけを「排他制御無しのビューモードで開く」に変える手も有りますね。<br><br>なるほど。</div></section>
+    <ul><li><section><h1 id=5261>
+    <span class="no">[5261]</span>
+    <a class="thread-title" href="#5261">Re5:読み取り専用モードだとファイルロックされない</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-23T00:37:06">2008年03月23日 00:37</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; ＃読み取り専用にするたびいちいち排他制御オプションをいじるのも面倒でしょうし<br>&gt; 僕はそういう共同作業をしてないこともあり、このあたりについて自ら変更を加えたりする気にはなれないですね。<br>&gt; 実際の利用者間での議論から「これではどうにも困るからこういう具合に変更してほしい」という結論が出るようなら話は別ですけど。<br><br>自分の立場としては明確な仕様の無い項目に関して<br>主観的にバグに見える挙動があったので修正しただけです。<br><br>正直どっちでも良いので仕様を公式に決めていただければ<br>それに従いますが。</div></section>
+    <ul><li><section><h1 id=5262>
+    <span class="no">[5262]</span>
+    <a class="thread-title" href="#5262">Re6:読み取り専用モードだとファイルロックされない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-03-23T00:46:41">2008年03月23日 00:46</time></h1>
+    <div class="body">&gt; 正直どっちでも良いので<br><br>僕も使っていないから決めてもらえばどっちでも良いですね。<br><br>読み取り専用なら排他制御OFFということなら、[設定]-[読み取り専用]メニューのON/OFFでも排他ON/OFFしたほうがいいのかもしれませんね（今はしていないみたいなので）。</div></section>
+    <ul><li><section><h1 id=5263>
+    <span class="no">[5263]</span>
+    <a class="thread-title" href="#5263">Re7:読み取り専用モードだとファイルロックされない</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2008-03-23T09:22:18">2008年03月23日 09:22</time></h1>
+    <div class="body">&gt; 読み取り専用で開いていて、誰か別の人が編集保存したとして、何か不都合があるのかなぁ？<br>不都合は無いと思います。<br><br>現状の動作では：<br>読み取り専用で開いた時に、設定メニューの「上書き禁止」が常にONになり、タイトルバーに「上書き禁止」と表示される。<br>設定メニューをOFFにすると、タイトルバーが「読み取り専用」になるが、他に何も変わらない。<br><br>変更が必要な個所を重要度で並べると：<br>１．読み取り専用で開いた時、タイトルバーは、「上書き禁止」にしない。<br>２．読み取り専用で開いた時、設定メニューは、固定（灰色）にする。<br><br>一方、変更しない個所は：<br>設定メニューの「上書き禁止」をONにした時、排他制御はOFFにしない。<br>タイトルバーの「読み取り専用」は、Word/Excelに合わせている。<br>メッセージの「読み取り専用ファイルとして開く」を変える。変えられませんでした。</div></section>
+    <ul><li><section><h1 id=5264>
+    <span class="no">[5264]</span>
+    <a class="thread-title" href="#5264">Re8:読み取り専用モードだとファイルロックされない</a>
+    <span class="author">もか</span>
+    <time datetime="2008-03-23T15:25:40">2008年03月23日 15:25</time></h1>
+    <div class="body">排他制御をONにしている設定で、他のプログラムが任意のタイミングで書き込みをするログファイルを開くときに<br>読み取り専用で開く(-Rオプション)を使っていた時期がありました。<br>いまの動作は一貫性がないにも見えますが、変更しないでほしいです。<br><br>http://www.geocities.jp/moca_skr/public_test.html<br>に放置してある編集不可モードを作ったときも、これは機能だと判断してました。<br></div></section>
+    <ul><li><section><h1 id=5265>
+    <span class="no">[5265]</span>
+    <a class="thread-title" href="#5265">Re9:読み取り専用モードだとファイルロックされない</a>
+    <span class="author">神楽</span>
+    <time datetime="2008-03-23T16:51:11">2008年03月23日 16:51</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 排他制御をONにしている設定で、他のプログラムが任意のタイミングで書き込みをするログファイルを開くときに<br>&gt; 読み取り専用で開く(-Rオプション)を使っていた時期がありました。<br>&gt; いまの動作は一貫性がないにも見えますが、変更しないでほしいです。<br>&gt; <br>&gt; http://www.geocities.jp/moca_skr/public_test.html<br>&gt; に放置してある編集不可モードを作ったときも、これは機能だと判断してました。<br><br>自分も似たような用途で読み取り専用で開く(-Rオプション)を使っていますが、<br>開くダイアログに「排他制御せずに開く」チェックボックスを追加して、<br>コマンドラインオプションも追加するというのはどうでしょうか？</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

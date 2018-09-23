@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>C/Migemo 32ビット最新版でサクラエディタが不正終了 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5710</span>
+    <a class="thread-title" href="5710.html#5710">C/Migemo 32ビット最新版でサクラエディタが不正終了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5711</span>
+    <a class="thread-title" href="5710.html#5711">RE: C/Migemo 32ビット最新版でサクラエディタが不正終了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5712</span>
+    <a class="thread-title" href="5710.html#5712">RE2: C/Migemo 32ビット最新版でサクラエディタが不正終了</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5710>
+    <span class="no">[5710]</span>
+    <a class="thread-title" href="#5710">C/Migemo 32ビット最新版でサクラエディタが不正終了</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2011-03-06T17:40:06">2011年03月06日 17:40</time></h1>
+    <div class="body">サクラエディタの1.6.6.0で <br>C/Migemo の32ビット最新版(20110227版) <br><a href=http://www.kaoriya.net/software/cmigemo/win32dll target=_top><nobr>http://<wbr>www.<wbr>kaoriya.<wbr>net/<wbr>software<wbr>/<wbr>cmigemo/<wbr>win32dll<wbr></nobr></a> <br><a href=http://cmigemo.googlecode.com/files/cmigemo-default-win32-20110227.zip target=_top><nobr>http://<wbr>cmigemo.<wbr>googleco<wbr>de.<wbr>com/<wbr>files/<wbr>cmigemo-<wbr>default-<wbr>win32-<wbr>20110227<wbr>.<wbr>zip</nobr></a> <br>を使うと、サクラエディタごと落ちません？ <br><br><a href=http://www.kaoriya.net/blog/201103/20110306_2 target=_top><nobr>http://<wbr>www.<wbr>kaoriya.<wbr>net/<wbr>blog/<wbr>201103/<wbr>20110306<wbr>_2</nobr></a> <br>をみるかぎりでは、C/Migemoの作者の方には<br>DLL側を直す気がないように読み取れました。</div></section>
+    <ul><li><section><h1 id=5711>
+    <span class="no">[5711]</span>
+    <a class="thread-title" href="#5711">RE: C/Migemo 32ビット最新版でサクラエディタが不正終了</a>
+    <span class="author">げんた</span>
+    <time datetime="2011-03-06T20:00:13">2011年03月06日 20:00</time></h1>
+    <div class="body">&gt;http://cmigemo.googlecode.com/files/cmigemo-default-win32-20110227.zip <br>&gt;を使うと、サクラエディタごと落ちません？ <br><br>呼び出し規約が<br>v1.2まで: cdecl<br>v1.3～  : stdcall<br><br>ですから，たぶん落ちますね．<br>サクラエディタでは呼び出し規約が"__cdecl"と明示されていました．<br><br>履歴を見るとソースが変更されたのは2007年ですが，バイナリが出たのはつい先日なんですね...<br>v1.3に合わせるのは簡単ですが，単純に合わせると，こんどは古い方で落ちるようになります．<br><br>作者の人に問い合わせてみましょうかね．<br></div></section>
+    <ul><li><section><h1 id=5712>
+    <span class="no">[5712]</span>
+    <a class="thread-title" href="#5712">RE2: C/Migemo 32ビット最新版でサクラエディタが不正終了</a>
+    <span class="author">げんた</span>
+    <time datetime="2011-03-06T22:00:02">2011年03月06日 22:00</time></h1>
+    <div class="body">&gt;作者の人に問い合わせてみましょうかね．<br>作者に聞いてみました．<br><br>v1.2と1.3の識別はリソース内の番号を見るしかないようです．<br>v1.2は"2002.6.22.17"<br>v1.3(20110227)は"1.3.0.175"<br>です．<br><br>現在ホームページより入手できるv1.2より古い物が公開されていたかどうかはわからないとのことでした．<br><br>なので，<br>1. DLLロード前にリソース内のVERSIONINFOを読み出す．<br>2. 1桁目が2002だったら(念のため1900～2002だったらにしておくか？)v1.2と判断して<br>3. 使用できないので最新版を使用するよう表示する．<br><br>とする必要があると思います．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

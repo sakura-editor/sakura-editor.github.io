@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5090</span>
+    <a class="thread-title" href="5090.html#5090">ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5094</span>
+    <a class="thread-title" href="5090.html#5094">Re:ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5119</span>
+    <a class="thread-title" href="5090.html#5119">Re2:ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5120</span>
+    <a class="thread-title" href="5090.html#5120">RE: ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5121</span>
+    <a class="thread-title" href="5090.html#5121">Re2: ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5122</span>
+    <a class="thread-title" href="5090.html#5122">Re3: ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5126</span>
+    <a class="thread-title" href="5090.html#5126">Re4: ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5090>
+    <span class="no">[5090]</span>
+    <a class="thread-title" href="#5090">ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-10-07T02:44:18">2007年10月07日 02:44</time></h1>
+    <div class="body">CEditDoc::FileSaveAs の中で、<br>SaveFile の後に ReloadCurrentFile を呼んでいますが、<br>これはどういった意図があるのでしょうか。<br><br>UNICODE化に関する話になってしまいますが、<br>例えばSJIS範囲外の文字を含む文書をSJISで保存した場合に、<br>再読込が無ければ編集中の文字データは失われないのですが<br>再読込が発生すると、当然、編集中の文字データ (SJIS範囲外の個所) が壊れてしまいます。<br><br>「この文書はこんな形で保存されましたよ」的なアナウンスであると考えれば<br>これも仕様と捉えることができますが。<br><br>個人的には、せっかく編集中には保持されている文字コードを敢えて壊すのもどうかな、という思いです。<br>たとえば同じ文書を SJIS, EUC, UTF-8 でそれぞれ保存してみる、といったことをしようとすると、<br>SJIS保存の時点で文字データが壊れるので、それ以降の保存が正しい結果にならなくなります。</div></section>
+    <ul><li><section><h1 id=5094>
+    <span class="no">[5094]</span>
+    <a class="thread-title" href="#5094">Re:ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-10-07T13:36:15">2007年10月07日 13:36</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; CEditDoc::FileSaveAs の中で、<br>&gt; SaveFile の後に ReloadCurrentFile を呼んでいますが、<br>&gt; これはどういった意図があるのでしょうか。<br><br>書き込まれたデータの確認がてらに<br>再読み込みしているように見えます。確かに、<br>確認して操作を間違っていたことに気づいても<br>既に手遅れの状態になっているので使いでがないですよね。</div></section>
+    <ul><li><section><h1 id=5119>
+    <span class="no">[5119]</span>
+    <a class="thread-title" href="#5119">Re2:ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-10-11T23:51:52">2007年10月11日 23:51</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; 書き込まれたデータの確認がてらに<br>&gt; 再読み込みしているように見えます。確かに、<br>&gt; 確認して操作を間違っていたことに気づいても<br>&gt; 既に手遅れの状態になっているので使いでがないですよね。<br><br>なるほど。<br><br>SJIS版だとデータが失われることが稀なので(日本語しか編集しないので)、<br>あんまり問題にもならなかった気もします。<br><br>特に重要な意図があるわけでは無い、と判断し、<br>UNICODE版では、とりあえず再読込を切っておきました。<br>もし必要ならオプションで再読込あり/なしを選べても良いかもしれません。</div></section>
+    </li></ul></li><li><section><h1 id=5120>
+    <span class="no">[5120]</span>
+    <a class="thread-title" href="#5120">RE: ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-10-12T00:37:54">2007年10月12日 00:37</time></h1>
+    <div class="body">&gt;SaveFile の後に ReloadCurrentFile を呼んでいますが、<br>&gt;これはどういった意図があるのでしょうか。<br>想像ですが...<br><br>保存時に改行コードの統一ができます．その際，エディタ内部のバッファを1行ずつ書き換える代わりに再読込で辻褄を合わせているとか？<br></div></section>
+    <ul><li><section><h1 id=5121>
+    <span class="no">[5121]</span>
+    <a class="thread-title" href="#5121">Re2: ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-10-12T01:37:41">2007年10月12日 01:37</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;SaveFile の後に ReloadCurrentFile を呼んでいますが、<br>&gt; &gt;これはどういった意図があるのでしょうか。<br>&gt; 想像ですが...<br>&gt; <br>&gt; 保存時に改行コードの統一ができます．その際，エディタ内部のバッファを1行ずつ書き換える代わりに再読込で辻褄を合わせているとか？<br><br>なるほど、もしそうだとすると、<br>再読込を削った場合は自前で改行コードを統一する必要がありますね。<br>実際どうなっているか、後で確認してみます。</div></section>
+    <ul><li><section><h1 id=5122>
+    <span class="no">[5122]</span>
+    <a class="thread-title" href="#5122">Re3: ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-12T03:29:06">2007年10月12日 03:29</time></h1>
+    <div class="body">再読み込みを無くしたとき、MRUの登録とかは大丈夫でしょうか。<br></div></section>
+    <ul><li><section><h1 id=5126>
+    <span class="no">[5126]</span>
+    <a class="thread-title" href="#5126">Re4: ファイル書き込み (SaveFile) 後の再読み込み (ReloadCurrentFile) の意図</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-10-13T00:21:12">2007年10月13日 00:21</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 再読み込みを無くしたとき、MRUの登録とかは大丈夫でしょうか。<br><br>なるほど、これも気づきませんでした。<br>調べてみましたが、一応、FileWrite の中でも AddToMRU が呼ばれているせいか、<br>ファイル保存時のMRUの挙動は、再読込を削る前と変わっていませんでした。<br><br>軽い気持ちで再読込削ってしまいましたが<br>他にも見落としている点がありそうですね。<br>ReloadCurrentFile内の流れを真面目に追って、<br>他に落ちが無いかどうかちゃんと検証してみます。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

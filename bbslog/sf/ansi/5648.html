@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>[U済] 検索・置換マクロのエラーチェック不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5648</span>
+    <a class="thread-title" href="5648.html#5648">[U済] 検索・置換マクロのエラーチェック不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5652</span>
+    <a class="thread-title" href="5648.html#5652">RE: [U済] 検索・置換マクロのエラーチェック不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5654</span>
+    <a class="thread-title" href="5648.html#5654">Re2: [U済] 検索・置換マクロのエラーチェック不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5655</span>
+    <a class="thread-title" href="5648.html#5655">Re3: [U済] 検索・置換マクロのエラーチェック不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5657</span>
+    <a class="thread-title" href="5648.html#5657">Re4: [U済] 検索・置換マクロのエラーチェック不具合</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5648>
+    <span class="no">[5648]</span>
+    <a class="thread-title" href="#5648">[U済] 検索・置換マクロのエラーチェック不具合</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-27T16:27:41">2009年12月27日 16:27</time></h1>
+    <div class="body">&gt;&gt;unicode:1090(rev1702)の<br>ANSI版用パッチを作成しました。<br>→ Patches#2921768</div></section>
+    <ul><li><section><h1 id=5652>
+    <span class="no">[5652]</span>
+    <a class="thread-title" href="#5652">RE: [U済] 検索・置換マクロのエラーチェック不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2010-01-18T08:03:47">2010年01月18日 08:03</time></h1>
+    <div class="body">&gt;タイトル: RE: [U済] 検索・置換マクロのエラーチェック不具合<br>&gt;発言者: ryoji<br>&gt;&gt;&gt;unicode:1090(rev1702)の<br>&gt;ANSI版用パッチを作成しました。<br>&gt;→ Patches#2921768<br>以下の3点確認しました．<br><br>S_SearchNext( '(', 0 )<br>→正規表現エラーが出なくなった<br><br>S_Replace('(','',0)<br>→正規表現エラーが出なくなった<br><br>S_Replace('','',0)<br>→置換元パターンが指定されていないエラー<br><br>---<br>ところで，上記検索・置換を実行すると検索オプションがすべてクリアされたままになってしまうようです．<br><br>ソースには<br>//&#9;各値をShareDataに設定してコマンドを発行し、ShareDataの値を元に戻す。<br>と，書いてあるのですけど戻されていないように思います．<br></div></section>
+    <ul><li><section><h1 id=5654>
+    <span class="no">[5654]</span>
+    <a class="thread-title" href="#5654">Re2: [U済] 検索・置換マクロのエラーチェック不具合</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-01-18T21:31:16">2010年01月18日 21:31</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ソースには<br>&gt; //&#9;各値をShareDataに設定してコマンドを発行し、ShareDataの値を元に戻す。<br>&gt; と，書いてあるのですけど戻されていないように思います．<br><br>ずっと昔から（実装された当初から？）こうなっているみたいですね。<br><br>マクロ実行した検索オプションが実行後も保持され、そのまま続けて[次を検索]／[前を検索]できるのでそれが便利、というマクロも既にあります。<br><br>（例）<br>「MS Visual C++風”次の文字列を検索”」マクロ<br><a href=http://sakura.qp.land.to/?Macro%2F%C5%EA%B9%C6%2F153 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Macro%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6%<wbr>2F153</nobr></a><br><br>自分も上記マクロをアレンジしたような自作マクロを使っているので…<br>こういうマクロでは、オプションが戻されてしまうとかえって不便です。<br><br>ちょっと違うかもしれませんが、<br>「ダブルクリックして選択範囲と同じ単語をハイライト」マクロ<br><a href=http://sakura.qp.land.to/?Macro%2F%C5%EA%B9%C6%2F116 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Macro%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6%<wbr>2F116</nobr></a><br>も、検索条件がマクロ実行前に戻されてしまうようだと、不便ですよね？<br><br>戻すのも必要ということであれば、別途オプション化するなどの対処が必要かな、と思います。</div></section>
+    <ul><li><section><h1 id=5655>
+    <span class="no">[5655]</span>
+    <a class="thread-title" href="#5655">Re3: [U済] 検索・置換マクロのエラーチェック不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2010-01-18T23:20:06">2010年01月18日 23:20</time></h1>
+    <div class="body">&gt;▼ げんたさん<br>&gt;&gt; ソースには<br>&gt;&gt; //&#9;各値をShareDataに設定してコマンドを発行し、ShareDataの値を元に戻す。<br>&gt;&gt; と，書いてあるのですけど戻されていないように思います．<br>&gt;<br>&gt;ずっと昔から（実装された当初から？）こうなっているみたいですね。<br>&gt;<br>&gt;マクロ実行した検索オプションが実行後も保持され、そのまま続けて[次を検索]／[前を検索]できるのでそれが便利、というマクロも既にあります。<br>そうでしたか．でしたら，紛らわしいコメントの方を現状にあわせて直した方がいいですね．<br></div></section>
+    <ul><li><section><h1 id=5657>
+    <span class="no">[5657]</span>
+    <a class="thread-title" href="#5657">Re4: [U済] 検索・置換マクロのエラーチェック不具合</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-01-19T20:46:08">2010年01月19日 20:46</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; そうでしたか．でしたら，紛らわしいコメントの方を現状にあわせて直した方がいいですね．<br>とりあえずコメントの箇所だけ先に修正してコミットしておきました。<br>U版：rev1711<br>A版：rev1712<br><br>※上記コミットにはPatches#2921768の修正は含んでいません。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>
