@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>全角スペース直後のクリッカブルＵＲＬが無効</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>全角スペース直後のクリッカブルＵＲＬが無効 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7102</span>
-    <a class="title" href="7102.html#7102">全角スペース直後のクリッカブルＵＲＬが無効</a></div>
+    <a class="thread-title" href="7102.html#7102">全角スペース直後のクリッカブルＵＲＬが無効</a></div>
     <ul><li><div class="list-title">
     <span class="no">7103</span>
-    <a class="title" href="7102.html#7103">Re:全角スペース直後のクリッカブルＵＲＬが無効</a></div>
+    <a class="thread-title" href="7102.html#7103">Re:全角スペース直後のクリッカブルＵＲＬが無効</a></div>
     <ul><li><div class="list-title">
     <span class="no">7104</span>
-    <a class="title" href="7102.html#7104">Re2:全角スペース直後のクリッカブルＵＲＬが無効</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7102>
+    <a class="thread-title" href="7102.html#7104">Re2:全角スペース直後のクリッカブルＵＲＬが無効</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7102>
     <span class="no">[7102]</span>
-    <a class="title" href="#7102">全角スペース直後のクリッカブルＵＲＬが無効</a>
+    <a class="thread-title" href="#7102">全角スペース直後のクリッカブルＵＲＬが無効</a>
     <span class="author">gonvei</span>
     <time datetime="2009-11-27T14:07:34">2009年11月27日 14:07</time></h1>
     <div class="body">はじめまして、特にアウトライン解析が便利で使わせて<br>もらっています。<br><br>題名通り、ＵＲＬの直前に全角の空白があるとクリッカ<br>ブルＵＲＬが効きません。<br>半角の空白や(全・半角)文字がある場合は有効です。<br><br>これを変える設定がどこかにあるのでしょうか。なかっ<br>たら、全角空白直後は無効にしている理由をお教え下さい。<br>特に理由がないのでしたら、有効に変更していただければ<br>と思います。<br></div></section>
     <ul><li><section><h1 id=7103>
     <span class="no">[7103]</span>
-    <a class="title" href="#7103">Re:全角スペース直後のクリッカブルＵＲＬが無効</a>
+    <a class="thread-title" href="#7103">Re:全角スペース直後のクリッカブルＵＲＬが無効</a>
     <span class="author">ryoji</span>
     <time datetime="2009-11-28T00:28:36">2009年11月28日 00:28</time></h1>
     <div class="body">▼ gonveiさん<br>&gt; 題名通り、ＵＲＬの直前に全角の空白があるとクリッカ<br>&gt; ブルＵＲＬが効きません。<br>&gt; 半角の空白や(全・半角)文字がある場合は有効です。<br><br>すみません、これは自分のミスです。orz<br>少し以前に、「クリッカブルURL表示でない箇所がクリッカブルになってしまう（ex: xhttp://www.xx）」問題を修正したのですが、このときに2バイト文字の考慮が欠如していて、逆にURL表示なのにクリッカブルにならないケースが発生するようになっていました。<br>全角空白に限らず一部の2バイト文字（"、"とか）で同じ現象が起きます。<br>※ANSIの2バイト文字固有問題なので同様修正のUNICODE版には問題無し<br><br>修正パッチを作成しておきました。<br>→Patches#2905012</div></section>
     <ul><li><section><h1 id=7104>
     <span class="no">[7104]</span>
-    <a class="title" href="#7104">Re2:全角スペース直後のクリッカブルＵＲＬが無効</a>
+    <a class="thread-title" href="#7104">Re2:全角スペース直後のクリッカブルＵＲＬが無効</a>
     <span class="author">gonvei</span>
     <time datetime="2009-11-28T01:33:46">2009年11月28日 01:33</time></h1>
     <div class="body">▼ ryojiさん<br>&gt; <br>&gt; 修正パッチを作成しておきました。<br>&gt; →Patches#2905012<br><br>ありがとうございました。</div></section>

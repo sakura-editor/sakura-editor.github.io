@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>HTML閉じタグ補完</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>HTML閉じタグ補完 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">269</span>
-    <a class="title" href="269.html#269">HTML閉じタグ補完</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=269>
+    <a class="thread-title" href="269.html#269">HTML閉じタグ補完</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=269>
     <span class="no">[269]</span>
-    <a class="title" href="#269">HTML閉じタグ補完</a>
+    <a class="thread-title" href="#269">HTML閉じタグ補完</a>
     <span class="author">りっちゃん</span>
     <time datetime="2006-05-13T20:51:11">2006年05月13日 20:51</time></h1>
     <div class="body">HTMLソース手打ちする際にできたマクロ(*.mac)です。<br>あまりに簡易で...<br><br>// HTMLのタグ入力時に閉じを作る(簡易)<br>// &lt;html(カーソル)&gt;  →  &lt;html&gt;(カーソル)&lt;/html&gt;<br>//<br>// &lt;html*&gt; ←カーソルが * の位置にいないと(多分)ダメ。<br>// 挿入モードでないとダメ。<br><br>S_Left(0); // 単語の中へ<br>S_SelectWord(0); // 現在位置の単語選択<br>S_Copy(0); // コピー<br>S_Right(0); // 選択解除<br>S_Right(0); // タグの外へ<br>S_MoveHistSet(0); // 位置控え<br>S_Char(60); // 文字入力('&lt;')<br>S_Char(47); // 文字入力('/')<br>S_Paste(0); // 貼り付け<br>S_Char(62); // 文字入力('&gt;')<br>S_MoveHistPrev(0); // 元の位置(タグの間)へ<br><br>// Shift + Ctrl + Spaceとか登録しとくと入力補完とキー近くて便利かも。<br>// 1.タグの囲みを打つ &lt;&gt;<br>// 2.中にタグ名を打つ &lt;html&gt;<br>// 3.そのままこのマクロで閉じを補完  →&lt;html&gt;&lt;/html&gt;<br>// 4.そのままタグの中身を打っていける<br></div></section>

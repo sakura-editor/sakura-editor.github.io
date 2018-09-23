@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>MacroMgr bugfix</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>MacroMgr bugfix | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1091</span>
-    <a class="title" href="1091.html#1091">MacroMgr bugfix</a></div>
+    <a class="thread-title" href="1091.html#1091">MacroMgr bugfix</a></div>
     <ul><li><div class="list-title">
     <span class="no">1093</span>
-    <a class="title" href="1091.html#1093">Re:MacroMgr bugfix</a></div>
+    <a class="thread-title" href="1091.html#1093">Re:MacroMgr bugfix</a></div>
     <ul><li><div class="list-title">
     <span class="no">1095</span>
-    <a class="title" href="1091.html#1095">Re2:MacroMgr bugfix</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1091>
+    <a class="thread-title" href="1091.html#1095">Re2:MacroMgr bugfix</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1091>
     <span class="no">[1091]</span>
-    <a class="title" href="#1091">MacroMgr bugfix</a>
+    <a class="thread-title" href="#1091">MacroMgr bugfix</a>
     <span class="author">あろか</span>
     <time datetime="2002-01-06T19:15:47">2002年01月06日 19:15</time></h1>
     <div class="body">おつかれさまです。２，３の修正をアップしました。<br><br>CKeyMacroMgrとCSMacroMgr<br>*メモリオーバラン対策。<br>*コメント追加等<br>CPropTypeとCPropCommon<br>*(unsigned値&lt;0)チェックの修正<br>*警告を減らした<br></div></section>
     <ul><li><section><h1 id=1093>
     <span class="no">[1093]</span>
-    <a class="title" href="#1093">Re:MacroMgr bugfix</a>
+    <a class="thread-title" href="#1093">Re:MacroMgr bugfix</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-06T23:49:48">2002年01月06日 23:49</time></h1>
     <div class="body">▼ あろかさん<br>&gt; CKeyMacroMgrとCSMacroMgr<br>デストラクタのClearAllは不要だと思います。<br>べつにResetでメモリを解放しているわけではないので。<br><br>&gt; CPropTypeとCPropCommon<br>&gt; *(unsigned値&lt;0)チェックの修正<br>なーるほど。「条件が常に真」という警告が何で出るのかと思ったらそういうわけだったんですね。</div></section>
     <ul><li><section><h1 id=1095>
     <span class="no">[1095]</span>
-    <a class="title" href="#1095">Re2:MacroMgr bugfix</a>
+    <a class="thread-title" href="#1095">Re2:MacroMgr bugfix</a>
     <span class="author">あろか</span>
     <time datetime="2002-01-07T00:29:05">2002年01月07日 00:29</time></h1>
     <div class="body">▼ げんたさん<br>&gt; ▼ あろかさん<br>&gt; &gt; CKeyMacroMgrとCSMacroMgr<br>&gt; デストラクタのClearAllは不要だと思います。<br>&gt; べつにResetでメモリを解放しているわけではないので。<br>なるほど。<br>手元では修正しましたが、あると誤動作するのでなければアップは後日にします。<br></div></section>

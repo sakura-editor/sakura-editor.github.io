@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>関連づけ（初心者向け）</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>関連づけ（初心者向け） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">103</span>
-    <a class="title" href="103.html#103">関連づけ（初心者向け）</a></div>
+    <a class="thread-title" href="103.html#103">関連づけ（初心者向け）</a></div>
     <ul><li><div class="list-title">
     <span class="no">106</span>
-    <a class="title" href="103.html#106">（補足3）昔の掲示板から(バッチファイル編)</a></div>
+    <a class="thread-title" href="103.html#106">（補足3）昔の掲示板から(バッチファイル編)</a></div>
     <ul><li><div class="list-title">
     <span class="no">114</span>
-    <a class="title" href="103.html#114">(補足)前の掲示板からコピー</a></div>
+    <a class="thread-title" href="103.html#114">(補足)前の掲示板からコピー</a></div>
     </li><li><div class="list-title">
     <span class="no">115</span>
-    <a class="title" href="103.html#115">(補足2)昔の掲示板から(レジストリ編)</a></div>
+    <a class="thread-title" href="103.html#115">(補足2)昔の掲示板から(レジストリ編)</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">111</span>
-    <a class="title" href="103.html#111">Re:関連づけ（初心者向け）</a></div>
+    <a class="thread-title" href="103.html#111">Re:関連づけ（初心者向け）</a></div>
     <ul><li><div class="list-title">
     <span class="no">112</span>
-    <a class="title" href="103.html#112">Re2:関連づけ（初心者向け）</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=103>
+    <a class="thread-title" href="103.html#112">Re2:関連づけ（初心者向け）</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=103>
     <span class="no">[103]</span>
-    <a class="title" href="#103">関連づけ（初心者向け）</a>
+    <a class="thread-title" href="#103">関連づけ（初心者向け）</a>
     <span class="author">げんた</span>
     <time datetime="2001-02-01T11:53:18">2001年02月01日 11:53</time></h1>
     <div class="body">初心者向けで思い出したんですが，関連づけを行う機能はどうしましょう？じぇぷろさんがインストーラをつけてくれればそこでできますか？それともエディタ本体につけた方がいいですか？<br>私としては全部の種類に「エディタで開く」メニューを追加する機能もサポートしたいと思いますが．<br>「初心者向け」とは書きましたが，関連づけは作業が面倒くさいのであればあったで誰もが便利に使えます．</div></section>
     <ul><li><section><h1 id=106>
     <span class="no">[106]</span>
-    <a class="title" href="#106">（補足3）昔の掲示板から(バッチファイル編)</a>
+    <a class="thread-title" href="#106">（補足3）昔の掲示板から(バッチファイル編)</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-02-01T14:59:10">2001年02月01日 14:59</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 私としては全部の種類に「エディタで開く」メニューを追加する機能もサポートしたいと思いますが．<br>レジストリをいじりたくない人にはバッチによる方法もあります。<br>あるいはげんた氏作のArgHelper.exeを使うのもいいでしょう。<br>以下は(補足2)の続きです。正確にはそれより前の記事です。(若干編集)<br>(なお記事が先に投稿したはずの記事の親になってしまい(不思議だ)、移動したかったんですが、できませんでした。m(__)m)<br>------(以下昔の掲示板から. 引用符は略)------<br>[9] Wed May 31 11:08:54 JST 2000<br>すい<br>＞ショートカットに引数を指定しても，アイコンへのDrag &amp; Dropとか「送る」で<br>＞ファイル名を与えてしまうと引数が無視されてしまうのはWindowsの仕様<br>＞なんでしょうか．<br>そういう物です。現状の sakura.exe のまま、この問題を解決したいのでしたら<br>バッチを使う以外に手はないかな？と。エディタで<br>----------------------------------------<br>"C:\Program Files\sakura\sakura.exe" -CODE=0 %1 %2 %3 %4 %5 %6 %7 %8 %9<br>----------------------------------------<br>の１行を記述して、適当な場所に SAKURASJ.BAT とかの名前で保存。<br><br>この SAKURASJ.BAT に対するショートカットを“送る”とかに登録します。<br>もちろんデスクトップに置いておいても良いでしょう。<br>あらかじめ、ショートカットの [プログラム]タブ内で、<br>・実行時の大きさ(R):　[最小化の状態　　　]<br>・□ プログラム終了時にウィンドウを閉じる(X) ← チェックする<br>・[アイコンの変更(C)]　←　お好きなように<br>等を実施しておくことを忘れずに。<br>----------------------------------------<br>[8] Tue May 30 23:31:16 JST 2000<br>げんた <br>ショートカットの後ろにコマンドラインを付ければ....ありゃ．だめだ．<br>ショートカットに引数を指定しても，アイコンへのDrag &amp; Dropとか「送る」で<br>ファイル名を与えてしまうと引数が無視されてしまうのはWindowsの仕様<br>なんでしょうか．<br>----------------------------------------<br>[7] Tue May 30 12:08:43 JST 2000<br>ひろ-ひろ <br>げんたさん　ありがとうございました。コマンドラインからは実行できました。<br>ただ、コマンドラインからでは、少々使いにくいですね。<br>今のところ方法が無いようであれば、ぜひ次のバージョンで<br>お願いしたいです。（GUI上で、スイッチをつけるとか...）</div></section>
     <ul><li><section><h1 id=114>
     <span class="no">[114]</span>
-    <a class="title" href="#114">(補足)前の掲示板からコピー</a>
+    <a class="thread-title" href="#114">(補足)前の掲示板からコピー</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-02-02T13:51:22">2001年02月02日 13:51</time></h1>
     <div class="body">▼ じぇぷろさん<br>&gt; (=自分でやれよ)、というインストーラやソフトが。またすとーにぃ氏が<br>&gt; 前に書いていたようにインストーラでレジストリをいじるのは私も<br>&gt; あまり好みません。関連付けはその最たるものだからやりません。<br><br>上記にある'前に'とは以下の記事です。あっちとこっちで読みにくくなったのでここにコピーしておきます。<br>------(以下前の掲示板から. 引用符は略)------<br>インストーラを使わないとアンインストールできない点でむしろ不親切<br>&gt;フォルダを削除するとコンパネの「アプリケーションの追加と削除」の一覧に残ったまま<br>私の使おうと思っているフリーのインストーラでは一覧に入れない設定にもできます。<br>&gt;(レジストリを汚さない)というのがウリの一つでは。<br><br>私もそれは大賛成なんですが、よくよく変更履歴を見ると「やっぱり使うことにした」とあるのが前から気にはなってました。共有情報を取ってくるのに利用するという意味だと思うのですが、アプリが勝手に枝を作って何かやっているのかな？レジストリエディタだけでは確認できない枝もあるらしいから。そこまではやってないと思いますが。。。(一応それらしき枝はレジストリエディタで見る限りなし)<br><br>&gt;＃主眼が(「インストーラ付きであるべきだ」ではなく)選択肢の追加<br><br>私は常に初心者を念頭においてますんで。(「初心者用に」と書いたように)<br>要はメインとしていることは<br>・DLの手間の低減(最新バイナリ、ヘルプ、キーワード設定ファイル、色設定ファイル)<br>・スタートメニューやデスクトップ、[送る]、スタートアップへのショートカットの自動(選択して)作成<br>程度です。設計思想は<br>・アンインストールは基本的にフォルダ丸ごとでOK<br>・VerUpは基本的に上書きでOK<br>とすることです。<br></div></section>
     </li><li><section><h1 id=115>
     <span class="no">[115]</span>
-    <a class="title" href="#115">(補足2)昔の掲示板から(レジストリ編)</a>
+    <a class="thread-title" href="#115">(補足2)昔の掲示板から(レジストリ編)</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-02-02T16:51:28">2001年02月02日 16:51</time></h1>
     <div class="body">▼ じぇぷろさん<br>&gt; ▼ げんたさん<br>&gt; &gt; 私としては全部の種類に「エディタで開く」メニューを追加する機能もサポートしたいと思いますが．<br>&gt; 全部とはファイルタイプすべてに例えばコンテキストメニューにそれを<br>&gt; 追加するという意味ですか？ずーーっと前に双六氏(でしたっけ)が<br>&gt; 「レジストリのここをこうするといい」というTipを教えてくれたような。<br><br>上記にある'前に'とは以下の記事です。今はもう読めないので再掲します。<br>記事は下から上の順です。(補足3にもっと前の記事があります。)<br>------(以下昔の掲示板から. 引用符は略)------<br>[11] Wed May 31 20:18:39 JST 2000<br>げんた <br>いままで「送る」を使っていたんですが，双六さんの方法で「エディタで開く」<br>というメニューを作ったら100倍くらい便利になったような気がしました．<br>（「送る」を開くタイムラグが少しずつストレスを貯めていたような気がする）<br><br>すいさんの方法とに近いけどウィンドウが開かなくて済むプログラムを<br>作ってしまったので（もはや不要ですが）tripodに置いておきます．<br>（メモ帳トラッパーの汎用品みたいなものです）．<br>(じぇぷろ注. 補足3に書いたArgHelper.exeのこと)<br>----------------------------------------<br>[10] Wed May 31 11:19:17 JST 2000<br>双六　(メールアドレスは削除しました)<br>レジストリエディタで<br>HKEY_CLASSES_ROOT\*\shell\SJIS\command<br>というキーを作り、標準の値に<br>～\sakura.exe -CODE=0 "%1"<br>を入れてやれば右クリックメニューに「SJIS」という項目が出来<br>そこを選択することでsakuraがSJISで起動するようになります。<br><br></div></section>
     </li></ul></li><li><section><h1 id=111>
     <span class="no">[111]</span>
-    <a class="title" href="#111">Re:関連づけ（初心者向け）</a>
+    <a class="thread-title" href="#111">Re:関連づけ（初心者向け）</a>
     <span class="author">すとーにぃ</span>
     <time datetime="2001-02-02T12:36:06">2001年02月02日 12:36</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 私としては全部の種類に「エディタで開く」メニューを追加する機能もサポートしたいと思いますが．<br><br>これは、『「送る」メニューに追加』でしょうか？<br>それともコンテキストメニュー等をさしているのでしょうか？<br>『「送る」メニューに追加』はレジストリを修正しないので<br>うれしいかも。<br></div></section>
     <ul><li><section><h1 id=112>
     <span class="no">[112]</span>
-    <a class="title" href="#112">Re2:関連づけ（初心者向け）</a>
+    <a class="thread-title" href="#112">Re2:関連づけ（初心者向け）</a>
     <span class="author">げんた</span>
     <time datetime="2001-02-02T13:13:05">2001年02月02日 13:13</time></h1>
     <div class="body">▼ すとーにぃさん<br>&gt; これは、『「送る」メニューに追加』でしょうか？<br>&gt; それともコンテキストメニュー等をさしているのでしょうか？<br>コンテキストメニューです．<br>コンテキストメニューになれてしまうと「送る」サブメニューを開くのに必要な一瞬のタイムラグが我慢できなくなってしまいました．</div></section>

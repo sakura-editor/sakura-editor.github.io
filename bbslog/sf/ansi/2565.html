@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>CProfile::WriteProfileは_lwriteのままだったので</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CProfile::WriteProfileは_lwriteのままだったので | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2565</span>
-    <a class="title" href="2565.html#2565">CProfile::WriteProfileは_lwriteのままだったので</a></div>
+    <a class="thread-title" href="2565.html#2565">CProfile::WriteProfileは_lwriteのままだったので</a></div>
     <ul><li><div class="list-title">
     <span class="no">2576</span>
-    <a class="title" href="2565.html#2576">Re: CProfile::WriteProfileは_lwriteのままだったので</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2565>
+    <a class="thread-title" href="2565.html#2576">Re: CProfile::WriteProfileは_lwriteのままだったので</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2565>
     <span class="no">[2565]</span>
-    <a class="title" href="#2565">CProfile::WriteProfileは_lwriteのままだったので</a>
+    <a class="thread-title" href="#2565">CProfile::WriteProfileは_lwriteのままだったので</a>
     <span class="author">Mr.Nak</span>
     <time datetime="2003-02-12T12:20:16">2003年02月12日 12:20</time></h1>
     <div class="body">こういう風に書き換えてはどうでしょうか？<br><br>BOOL CProfile::WriteProfile( const char* pszProfileName, const char* pszComment )<br>{<br>&#9;int&#9;&#9;i;<br>&#9;int&#9;&#9;j;<br>//&#9;char&#9;szLine[102400];<br>&#9;HFILE&#9;hFile;<br>&#9;char*&#9;pData;<br>&#9;int&#9;&#9;nDataLen;<br>&#9;if( NULL != pszProfileName ){<br>&#9;&#9;strcpy( m_szProfileName, pszProfileName );<br>&#9;}<br><br>&#9;hFile = _tfopen( m_szProfileName, _T("wb") );<br>&#9;if( NULL == hFile ){<br>&#9;&#9;::MYMESSAGEBOX(&#9;NULL, MB_OK | MB_ICONSTOP | MB_TOPMOST, GSTR_APPNAME,<br>&#9;&#9;&#9;"ファイルを作成できませんでした。\n\n%s", m_szProfileName<br>&#9;&#9;);<br>&#9;&#9;return FALSE;<br>&#9;}<br>&#9;/* コメント書き込み */<br>&#9;fwrite( "//", 1, 2, hFile );<br>&#9;fwrite( pszComment, strlen( pszComment ), hFile );<br>&#9;fwrite( "\r\n", 1, 2, hFile );<br>&#9;fwrite( "\r\n", 1, 2, hFile );<br><br><br>&#9;for( i = 0; i &lt; m_nSecNum; ++i ){<br>&#9;&#9;if( 0 &lt; i ){<br>&#9;&#9;&#9;fwrite( "\r\n", 1, 2, hFile );<br>&#9;&#9;}<br>&#9;&#9;fwrite( hFile, "[", 1, hFile );<br>&#9;&#9;pData = m_pSecNameArr[i]-&gt;GetPtr( &amp;nDataLen );<br>&#9;&#9;fwrite( pData, 1, nDataLen, hFile );<br>&#9;&#9;fwrite( "]\r\n", 1, 3, hFile );<br>&#9;&#9;for( j = 0; j &lt; m_nSecDataNumArr[i]; ++j ){<br>&#9;&#9;&#9;pData = m_pDataNameArr[i][j]-&gt;GetPtr( &amp;nDataLen );<br>&#9;&#9;&#9;fwrite( pData, 1, nDataLen, hFile );<br>&#9;&#9;&#9;fwrite( "=", 1, 1, hFile );<br>&#9;&#9;&#9;pData = m_pDataArr[i][j]-&gt;GetPtr( &amp;nDataLen );<br>&#9;&#9;&#9;fwrite( pData, 1, nDataLen, hFile );<br>&#9;&#9;&#9;fwrite( "\r\n", 1, 2, hFile );<br>&#9;&#9;}<br>&#9;}<br>&#9;fwrite( "\r\n", 1, 2 ,hFile );<br>&#9;fclose( hFile );<br>&#9;return TRUE;<br>}<br><br>ついでにReadProfileもfreadに書き換えたほうがいいのかも。</div></section>
     <ul><li><section><h1 id=2576>
     <span class="no">[2576]</span>
-    <a class="title" href="#2576">Re: CProfile::WriteProfileは_lwriteのままだったので</a>
+    <a class="thread-title" href="#2576">Re: CProfile::WriteProfileは_lwriteのままだったので</a>
     <span class="author">もか</span>
     <time datetime="2003-02-17T16:23:54">2003年02月17日 16:23</time></h1>
     <div class="body">&gt;BOOL CProfile::WriteProfile( const char* pszProfileName, const char* pszComment )<br>&gt;&#9;hFile = _tfopen( m_szProfileName, _T("wb") );<br>に書き換えるのだから、<br>&gt;&#9;HFILE&#9;hFile;<br>は、 <br>&#9;FILE*&#9;hFile;<br>ですよね。 <br>変数名もhFileというより、pFileですが...<br></div></section>

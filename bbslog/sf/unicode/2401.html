@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>起動時、たまに落ちる</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>起動時、たまに落ちる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2401</span>
-    <a class="title" href="2401.html#2401">起動時、たまに落ちる</a></div>
+    <a class="thread-title" href="2401.html#2401">起動時、たまに落ちる</a></div>
     <ul><li><div class="list-title">
     <span class="no">2402</span>
-    <a class="title" href="2401.html#2402">Re:起動時、たまに落ちる</a></div>
+    <a class="thread-title" href="2401.html#2402">Re:起動時、たまに落ちる</a></div>
     <ul><li><div class="list-title">
     <span class="no">2403</span>
-    <a class="title" href="2401.html#2403">Re2:起動時、たまに落ちる</a></div>
+    <a class="thread-title" href="2401.html#2403">Re2:起動時、たまに落ちる</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">2404</span>
-    <a class="title" href="2401.html#2404">Re:起動時、たまに落ちる</a></div>
+    <a class="thread-title" href="2401.html#2404">Re:起動時、たまに落ちる</a></div>
     </li><li><div class="list-title">
     <span class="no">2405</span>
-    <a class="title" href="2401.html#2405">Re:起動時、たまに落ちる</a></div>
+    <a class="thread-title" href="2401.html#2405">Re:起動時、たまに落ちる</a></div>
     <ul><li><div class="list-title">
     <span class="no">2406</span>
-    <a class="title" href="2401.html#2406">Re2:起動時、たまに落ちる</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2401>
+    <a class="thread-title" href="2401.html#2406">Re2:起動時、たまに落ちる</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2401>
     <span class="no">[2401]</span>
-    <a class="title" href="#2401">起動時、たまに落ちる</a>
+    <a class="thread-title" href="#2401">起動時、たまに落ちる</a>
     <span class="author">hagi</span>
     <time datetime="2017-06-19T19:43:41">2017年06月19日 19:43</time></h1>
     <div class="body">いつも使わせてもらってます。<br><br>Win7 32bit でver2.3.2.0 Unicode版を使っていますが、<br>たまに落ちるので、デバッグ版をコンパイルして<br>再現するまで起動／終了を繰り返しました。<br>すると、必ず<br><br>sakura_core/util/shell.cpp 内119行の<br>SHGetSpecialFolderLocation()<br><br>で失敗します。<br><br>どうやら正しく解放できていないかと思われますが<br>他の方は、いかがでしょうか？おま環なのかもしれません。<br><br>ちなみにこの関数はもうサポートされないそうで<br>いずれは SHGetFolderLocation() に代わらないといけないようですが<br><br><a href=https://msdn.microsoft.com/ja-jp/library/windows/desktop/bb762203(v=vs.85).aspx target=_top><nobr>https://<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>ja-<wbr>jp/<wbr>library/<wbr>windows/<wbr>desktop/<wbr>bb762203<wbr>(<wbr>v=<wbr>vs.<wbr>85).<wbr>aspx</nobr></a><br><br>ANSIとコードが共有ならば DllGetVersion() で判定するしかないですかね？。<br><br><a href=https://msdn.microsoft.com/ja-jp/library/windows/desktop/bb776779(v=vs.85).aspx target=_top><nobr>https://<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>ja-<wbr>jp/<wbr>library/<wbr>windows/<wbr>desktop/<wbr>bb776779<wbr>(<wbr>v=<wbr>vs.<wbr>85).<wbr>aspx</nobr></a></div></section>
     <ul><li><section><h1 id=2402>
     <span class="no">[2402]</span>
-    <a class="title" href="#2402">Re:起動時、たまに落ちる</a>
+    <a class="thread-title" href="#2402">Re:起動時、たまに落ちる</a>
     <span class="author">rasti</span>
     <time datetime="2017-06-21T13:54:51">2017年06月21日 13:54</time></h1>
     <div class="body">▼ hagiさん<br>&gt; ...<br>&gt; <br>&gt; ANSIとコードが共有ならば DllGetVersion() で判定するしかないですかね？。<br>&gt;<br>&gt; ...<br>こーどは  きょうゆう  して  おりま   せん<br></div></section>
     <ul><li><section><h1 id=2403>
     <span class="no">[2403]</span>
-    <a class="title" href="#2403">Re2:起動時、たまに落ちる</a>
+    <a class="thread-title" href="#2403">Re2:起動時、たまに落ちる</a>
     <span class="author">rasti</span>
     <time datetime="2017-06-21T14:01:55">2017年06月21日 14:01</time></h1>
     <div class="body">&gt; こーどは  きょうゆう  して  おりま   せん<br><br>↓<br><a href=http://svn.code.sf.net/p/sakura-editor/code/sakura/trunk target=_top><nobr>http://<wbr>svn.<wbr>code.<wbr>sf.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>sakura/<wbr>trunk</nobr></a><br>↑-これ  とは<br></div></section>
     </li></ul></li><li><section><h1 id=2404>
     <span class="no">[2404]</span>
-    <a class="title" href="#2404">Re:起動時、たまに落ちる</a>
+    <a class="thread-title" href="#2404">Re:起動時、たまに落ちる</a>
     <span class="author">ばぼ</span>
     <time datetime="2017-06-21T23:02:52">2017年06月21日 23:02</time></h1>
     <div class="body">こんばんは。<br><br>▼ hagiさん<br>&gt; すると、必ず<br>&gt; <br>&gt; sakura_core/util/shell.cpp 内119行の<br>&gt; SHGetSpecialFolderLocation()<br>&gt; <br>&gt; で失敗します。<br><br>64bit版windowsで試した限り再現しませんでした。<br>具体的にどうなって落ちる（デバッグブレークする）かまで書いていただけると、<br>より意味のあるレスを返すことができるような気がします。たぶん。<br><br>単に想像ですが、メモリ解放周りのコードがおかしい気がします。<br>CRTでいうところの「ヒープが壊れています。」的なエラーがでて止まったのでは？<br><br>そして、同ファイル内112行目の変数型が怪しいな、と。<br><a href=https://msdn.microsoft.com/ja-jp/library/windows/desktop/bb762190(v=vs.85).aspx target=_top><nobr>https://<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>ja-<wbr>jp/<wbr>library/<wbr>windows/<wbr>desktop/<wbr>bb762190<wbr>(<wbr>v=<wbr>vs.<wbr>85).<wbr>aspx</nobr></a><br><br>In its place, programs can call the equivalent (and easier to use) CoTaskMemAlloc and CoTaskMemFree.<br><br><br>121行目の呼出し結果によらず、<br>122行目で解放に行ってるあたり。<br>確保できてないのに解放したから<br>再確保しようとした瞬間に落ちる、と。<br><br><br>該当コードはv2専用なので<br>windows2000で動作できる関数ならば使ってよい認識です。<br><br><br></div></section>
     </li><li><section><h1 id=2405>
     <span class="no">[2405]</span>
-    <a class="title" href="#2405">Re:起動時、たまに落ちる</a>
+    <a class="thread-title" href="#2405">Re:起動時、たまに落ちる</a>
     <span class="author">novice</span>
     <time datetime="2017-06-25T00:03:39">2017年06月25日 00:03</time></h1>
     <div class="body">▼ hagiさん<br>&gt; ちなみにこの関数はもうサポートされないそうで<br>&gt; いずれは SHGetFolderLocation() に代わらないといけないようですが<br><br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1107/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1107/<wbr></nobr></a><br>patch登録しました。<br></div></section>
     <ul><li><section><h1 id=2406>
     <span class="no">[2406]</span>
-    <a class="title" href="#2406">Re2:起動時、たまに落ちる</a>
+    <a class="thread-title" href="#2406">Re2:起動時、たまに落ちる</a>
     <span class="author">berryzplus</span>
     <time datetime="2017-08-11T13:50:14">2017年08月11日 13:50</time></h1>
     <div class="body">▼ noviceさん<br>&gt; ▼ hagiさん<br>&gt; &gt; ちなみにこの関数はもうサポートされないそうで<br>&gt; &gt; いずれは SHGetFolderLocation() に代わらないといけないようですが<br>&gt; <br>&gt; <a href=https://sourceforge.net/p/sakura-editor/patchunicode/1107/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1107/<wbr></nobr></a><br>&gt; patch登録しました。<br><br>これって問題が解決した、ってことでいいんですか？<br><br>32bit版のライセンスは持っていないから、<br>うちでは再現確認ができないので、<br>情報があればあげていただけるとありがたいです。<br><br></div></section>

@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現の置換について(改行の挿入)</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現の置換について(改行の挿入) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">4487</span>
-    <a class="title" href="4487.html#4487">正規表現の置換について(改行の挿入)</a></div>
+    <a class="thread-title" href="4487.html#4487">正規表現の置換について(改行の挿入)</a></div>
     <ul><li><div class="list-title">
     <span class="no">4490</span>
-    <a class="title" href="4487.html#4490">Re:正規表現の置換について(改行の挿入)</a></div>
+    <a class="thread-title" href="4487.html#4490">Re:正規表現の置換について(改行の挿入)</a></div>
     </li><li><div class="list-title">
     <span class="no">4491</span>
-    <a class="title" href="4487.html#4491">Re:正規表現の置換について(改行の挿入)</a></div>
+    <a class="thread-title" href="4487.html#4491">Re:正規表現の置換について(改行の挿入)</a></div>
     <ul><li><div class="list-title">
     <span class="no">4492</span>
-    <a class="title" href="4487.html#4492">Re2:正規表現の置換について(改行の挿入)</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4487>
+    <a class="thread-title" href="4487.html#4492">Re2:正規表現の置換について(改行の挿入)</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4487>
     <span class="no">[4487]</span>
-    <a class="title" href="#4487">正規表現の置換について(改行の挿入)</a>
+    <a class="thread-title" href="#4487">正規表現の置換について(改行の挿入)</a>
     <span class="author">hi</span>
     <time datetime="2005-06-06T11:03:40">2005年06月06日 11:03</time></h1>
     <div class="body">いつも便利に利用させていただいております。<br><br><br>select A,B,C<br>from XXX<br><br>という文字列に下記のような置換を行うと、<br>期待したような結果が得られないのですが、<br>どの様にすれば期待する結果が得られるのでしょうか？<br><br>サクラエディタ：Ver. 1.5.3.1<br>Bregexp.dll：V1.01 for SAKURA Apr 5 2005<br><br>置換前:,<br>置換後:\r\n,<br><br>期待する結果----------<br>select a<br>,b<br>,c<br>from xxx<br>----------------------<br><br>実行した結果----------<br>select a<br><br>・<br>・<br>・<br><br>,b<br>,c<br>from xxx<br>----------------------<br>置換結果の"\r\n,"内の","も再び置換し続けているようです。</div></section>
     <ul><li><section><h1 id=4490>
     <span class="no">[4490]</span>
-    <a class="title" href="#4490">Re:正規表現の置換について(改行の挿入)</a>
+    <a class="thread-title" href="#4490">Re:正規表現の置換について(改行の挿入)</a>
     <span class="author">どとっぱ</span>
     <time datetime="2005-06-07T13:19:54">2005年06月07日 13:19</time></h1>
     <div class="body">▼ hiさん<br>&gt; select A,B,C<br>&gt; from XXX<br>&gt; <br>&gt; という文字列に下記のような置換を行うと、<br>&gt; 期待したような結果が得られないのですが、<br>&gt; どの様にすれば期待する結果が得られるのでしょうか？<br>&gt; <br>&gt; サクラエディタ：Ver. 1.5.3.1<br>&gt; Bregexp.dll：V1.01 for SAKURA Apr 5 2005<br>&gt; <br>&gt; 置換前:,<br>&gt; 置換後:\r\n,<br>&gt; <br>&gt; 期待する結果----------<br>&gt; select a<br>&gt; ,b<br>&gt; ,c<br>&gt; from xxx<br>&gt; ----------------------<br>&gt; <br>&gt; 実行した結果----------<br>&gt; select a<br>&gt; <br>&gt; ・<br>&gt; ・<br>&gt; ・<br>&gt; <br>&gt; ,b<br>&gt; ,c<br>&gt; from xxx<br>&gt; ----------------------<br>&gt; 置換結果の"\r\n,"内の","も再び置換し続けているようです。<br><br>私はBregexp.dllが for SAKURA じゃないのを使ってますが同じ結果でした。<br><br>とりあえずですがSQLな書き方にだけ対応してみました。<br>カラム名の後ろにカンマがあったら、カンマ → 改行+カンマ にする感じです。<br><br>  置換前:([0-9a-zA-Z]+),<br>  置換後:$1\r\n,<br><br><br>あ、hiさんの書き方でも秀丸なら「期待する結果」に Σ(￣□￣;)</div></section>
     </li><li><section><h1 id=4491>
     <span class="no">[4491]</span>
-    <a class="title" href="#4491">Re:正規表現の置換について(改行の挿入)</a>
+    <a class="thread-title" href="#4491">Re:正規表現の置換について(改行の挿入)</a>
     <span class="author">かろと</span>
     <time datetime="2005-06-07T13:30:26">2005年06月07日 13:30</time></h1>
     <div class="body">▼ hiさん<br>&gt; という文字列に下記のような置換を行うと、<br>&gt; 期待したような結果が得られないのですが、<br>&gt; どの様にすれば期待する結果が得られるのでしょうか？<br>&gt; 置換前:,<br>&gt; 置換後:\r\n,<br><br>先読み置換の変更で、ミスがあるようです。<br>修正版まで少々お待ち下さい。<br></div></section>
     <ul><li><section><h1 id=4492>
     <span class="no">[4492]</span>
-    <a class="title" href="#4492">Re2:正規表現の置換について(改行の挿入)</a>
+    <a class="thread-title" href="#4492">Re2:正規表現の置換について(改行の挿入)</a>
     <span class="author">hi</span>
     <time datetime="2005-06-07T16:53:42">2005年06月07日 16:53</time></h1>
     <div class="body">▼ かろとさん<br>▼ どとっぱさん<br><br>返信ありがとうございます。<br><br>&gt; 先読み置換の変更で、ミスがあるようです。<br>&gt; 修正版まで少々お待ち下さい。<br><br>とりあえず どとっぱさん の方法で対応しつつ<br>修正版を待待つことにします。<br></div></section>

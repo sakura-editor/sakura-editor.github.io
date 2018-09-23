@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>編集不可モードの分離</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>編集不可モードの分離 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3778</span>
-    <a class="title" href="3778.html#3778">編集不可モードの分離</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=3778>
+    <a class="thread-title" href="3778.html#3778">編集不可モードの分離</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3778>
     <span class="no">[3778]</span>
-    <a class="title" href="#3778">編集不可モードの分離</a>
+    <a class="thread-title" href="#3778">編集不可モードの分離</a>
     <span class="author">もか</span>
     <time datetime="2004-10-28T22:10:07">2004年10月28日 22:10</time></h1>
     <div class="body">編集不可モードと、読み取り専用属性の扱いを変更するパッチです。<br>仕様チェック用にプロトタイプを出します。<br>以下、現時点の新仕様・動作<br>・編集不可モード<br>  元、読みとり専用モード。<br>・読み取り専用<br>  ファイル属性に「読み取り専用」がついている場合。<br>  上書き保存はできない。<br>・上書き禁止<br>  排他制御中で、ロックできなかった場合に表示される。<br>  NTFS等で書き込み権限がない場合も同様に書込み禁止扱いになる。<br>  上書き保存は禁止されていないものの、保存でエラーになる可能性あり。<br>  ちなみに、sakuraが「上書き禁止している」のではなく、ほかの要因で「上書き禁止にさせられている」状態です。<br>・排他制御<br>  あらかじめ編集不可モードで開いた場合は、ファイルの排他制御を行いません（従来と同じはず)。<br>・ExpandParameter<br>  {$E? 編集不可のとき }<br>  {$R? 読み取り専用 $: 上書き禁止 $} として使う。<br>  従来の設定のまま運用可能。だたしその場合、編集不可・可の区別はタイトルバーではつかない。<br></div></section>

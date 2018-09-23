@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>D&amp;Dのメモリ管理</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>D&amp;Dのメモリ管理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3820</span>
-    <a class="title" href="3820.html#3820">D&amp;Dのメモリ管理</a></div>
+    <a class="thread-title" href="3820.html#3820">D&amp;Dのメモリ管理</a></div>
     <ul><li><div class="list-title">
     <span class="no">3828</span>
-    <a class="title" href="3820.html#3828">Re: D&amp;Dのメモリ管理</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3820>
+    <a class="thread-title" href="3820.html#3828">Re: D&amp;Dのメモリ管理</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3820>
     <span class="no">[3820]</span>
-    <a class="title" href="#3820">D&amp;Dのメモリ管理</a>
+    <a class="thread-title" href="#3820">D&amp;Dのメモリ管理</a>
     <span class="author">もか</span>
     <time datetime="2005-01-23T19:26:14">2005年01月23日 19:26</time></h1>
     <div class="body"><br>▼CDropTarget.cpp<br>&gt;DWORD CDataObject::DragDrop()<br>&gt;&#9;CDropSource drop( bLeft );<br>&gt;&#9;if( SUCCEEDED( ::DoDragDrop( this, &amp;drop, dwEffects, &amp;dwEffect ) ) )<br>関数から抜けるとデストラクタが走って無効になるんですが、いいんでしょうか。<br><br>▼CEditWnd.cpp<br>&gt;LRESULT CEditWnd::OnMouseMove()<br>&gt;&#9;DoDragDrop(DataObject, new CDropSource(TRUE), DROPEFFECT_COPY | DROPEFFECT_LINK, &amp;R);<br>こちらは、newしていますが、削除されません。<br><br>CDropSourceのReleaseは、<br>&gt;&#9;STDMETHOD_( ULONG, Release )( void )<br>&gt;&#9;{<br>&gt;&#9;&#9;return 0;<br>となっていて削除はしません。(デストラクタが消す)<br></div></section>
     <ul><li><section><h1 id=3828>
     <span class="no">[3828]</span>
-    <a class="title" href="#3828">Re: D&amp;Dのメモリ管理</a>
+    <a class="thread-title" href="#3828">Re: D&amp;Dのメモリ管理</a>
     <span class="author">もか</span>
     <time datetime="2005-01-27T23:30:28">2005年01月27日 23:30</time></h1>
     <div class="body">&gt;&#9;CDropSource drop( bLeft );<br>&gt;&#9;if( SUCCEEDED( ::DoDragDrop( this, &amp;drop, dwEffects, &amp;dwEffect ) ) )<br>すみませんこれは、問題ないようです。<br></div></section>

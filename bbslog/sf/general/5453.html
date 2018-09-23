@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ブックマークが消える</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ブックマークが消える | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5453</span>
-    <a class="title" href="5453.html#5453">ブックマークが消える</a></div>
+    <a class="thread-title" href="5453.html#5453">ブックマークが消える</a></div>
     <ul><li><div class="list-title">
     <span class="no">5474</span>
-    <a class="title" href="5453.html#5474">Re:ブックマークが消える</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=5453>
+    <a class="thread-title" href="5453.html#5474">Re:ブックマークが消える</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5453>
     <span class="no">[5453]</span>
-    <a class="title" href="#5453">ブックマークが消える</a>
+    <a class="thread-title" href="#5453">ブックマークが消える</a>
     <span class="author">じゅうじ</span>
     <time datetime="2006-09-26T23:43:44">2006年09月26日 23:43</time></h1>
     <div class="body">「変換」メニューのコマンドで、ブックマーク<br>しておいた行が、2行目から解除されます。<br>矩形選択の「変換」では、大丈夫です。<br>SAKURA 1.5.10.1<br>//キーボードマクロのファイル BOOKMBUG.MAC<br>Char(32);<br>Char(13);<br>Char(32);<br>Char(13);<br>Char(32);<br>Char(13);<br>Char(32);<br>Char(13);<br>Char(32);<br>Char(13);<br>Char(32);<br>Char(13);<br><br>GoFileTop(0);&#9;// ファイルの先頭に移動<br>Down(0);<br>Down(0);<br>Down_Sel(0);<br>Down_Sel(0);<br>Down_Sel(0);<br>BookmarkSet(0);&#9;// ブックマーク設定・解除<br><br>GoFileTop(0);&#9;// ファイルの先頭に移動<br>Down(0);<br>Down_Sel(0);<br>Down_Sel(0);<br>TABToSPACE(0);&#9;// TAB→空白</div></section>
     <ul><li><section><h1 id=5474>
     <span class="no">[5474]</span>
-    <a class="title" href="#5474">Re:ブックマークが消える</a>
+    <a class="thread-title" href="#5474">Re:ブックマークが消える</a>
     <span class="author">ryoji</span>
     <time datetime="2006-09-30T00:49:09">2006年09月30日 00:49</time></h1>
     <div class="body">現状の「変換」動作は、一旦、選択行を削除して変換結果を挿入するような動作になっているみたいです。<br>この他にもマーク行については、行削除した後Undoしても復元されないということがあります。<br>Undoバッファのことを考えず単純に変換の前後でマークを記憶／復元するように変更しただけではUndoで消えてしまうので、改善の際はそのあたりも考慮する必要がありそうです。</div></section>

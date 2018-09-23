@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>代替ストリームの保持</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>代替ストリームの保持 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7787</span>
-    <a class="title" href="7787.html#7787">代替ストリームの保持</a></div>
+    <a class="thread-title" href="7787.html#7787">代替ストリームの保持</a></div>
     <ul><li><div class="list-title">
     <span class="no">7788</span>
-    <a class="title" href="7787.html#7788">Re:代替ストリームの保持</a></div>
+    <a class="thread-title" href="7787.html#7788">Re:代替ストリームの保持</a></div>
     <ul><li><div class="list-title">
     <span class="no">7795</span>
-    <a class="title" href="7787.html#7795">Re2:代替ストリームの保持</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7787>
+    <a class="thread-title" href="7787.html#7795">Re2:代替ストリームの保持</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7787>
     <span class="no">[7787]</span>
-    <a class="title" href="#7787">代替ストリームの保持</a>
+    <a class="thread-title" href="#7787">代替ストリームの保持</a>
     <span class="author">もむもむ</span>
     <time datetime="2014-03-04T16:30:44">2014年03月04日 16:30</time></h1>
     <div class="body">代替ストリームを保持したファイルをサクラエディタで編集<br>すると、削除されてしまいます。<br>この解決策はあるのでしょうか？<br><br>また、解決できない場合なぜこのような現象が起きるのでしょうか？<br><br></div></section>
     <ul><li><section><h1 id=7788>
     <span class="no">[7788]</span>
-    <a class="title" href="#7788">Re:代替ストリームの保持</a>
+    <a class="thread-title" href="#7788">Re:代替ストリームの保持</a>
     <span class="author">syat</span>
     <time datetime="2014-03-08T23:54:45">2014年03月08日 23:54</time></h1>
     <div class="body">今のところ解決策はありません。<br>多くのプログラムがそのような動きをするようです。<br><br>サクラエディタはファイルの保存時に_tfopen関数の"wb"モードでファイルを開いていますが、"w"モードで開くと代替ストリームが消えてしまうようです。"a"モードで開くと代替ストリームが保持されますが、追記なので保存処理には使えません。<br><br>どうしても代替ストリームを保持したい場合はファイルのバックアップをとってから編集し、保存後にコマンドプロンプトで<br> more &lt; foo.bak:bar &gt; foo:bar<br>のようにバックアップから再設定できます。（テキスト限定）</div></section>
     <ul><li><section><h1 id=7795>
     <span class="no">[7795]</span>
-    <a class="title" href="#7795">Re2:代替ストリームの保持</a>
+    <a class="thread-title" href="#7795">Re2:代替ストリームの保持</a>
     <span class="author">もむもむ</span>
     <time datetime="2014-03-10T18:48:08">2014年03月10日 18:48</time></h1>
     <div class="body">▼ syatさん<br>&gt; 今のところ解決策はありません。<br>&gt; 多くのプログラムがそのような動きをするようです。<br>&gt; <br>&gt; サクラエディタはファイルの保存時に_tfopen関数の"wb"モードでファイルを開いていますが、"w"モードで開くと代替ストリームが消えてしまうようです。"a"モードで開くと代替ストリームが保持されますが、追記なので保存処理には使えません。<br>&gt; <br>&gt; どうしても代替ストリームを保持したい場合はファイルのバックアップをとってから編集し、保存後にコマンドプロンプトで<br>&gt;  more &lt; foo.bak:bar &gt; foo:bar<br>&gt; のようにバックアップから再設定できます。（テキスト限定）<br><br>ご回答ありがとうございます。<br>tfopen関数に関して無知であるため調べてみようと思います。<br><br>解決策はなさそうですが、原因が分かりそうでうれしいです。<br>ありがとうございました。</div></section>

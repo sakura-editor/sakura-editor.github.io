@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>設定画面でメモリを消費します。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>設定画面でメモリを消費します。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2828</span>
-    <a class="title" href="2828.html#2828">設定画面でメモリを消費します。</a></div>
+    <a class="thread-title" href="2828.html#2828">設定画面でメモリを消費します。</a></div>
     <ul><li><div class="list-title">
     <span class="no">2847</span>
-    <a class="title" href="2828.html#2847">Re: 設定画面でメモリを消費します。</a></div>
+    <a class="thread-title" href="2828.html#2847">Re: 設定画面でメモリを消費します。</a></div>
     <ul><li><div class="list-title">
     <span class="no">2851</span>
-    <a class="title" href="2828.html#2851">Re2: 設定画面でメモリを消費します。</a></div>
+    <a class="thread-title" href="2828.html#2851">Re2: 設定画面でメモリを消費します。</a></div>
     <ul><li><div class="list-title">
     <span class="no">2853</span>
-    <a class="title" href="2828.html#2853">Re3: 設定画面でメモリを消費します。</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2828>
+    <a class="thread-title" href="2828.html#2853">Re3: 設定画面でメモリを消費します。</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2828>
     <span class="no">[2828]</span>
-    <a class="title" href="#2828">設定画面でメモリを消費します。</a>
+    <a class="thread-title" href="#2828">設定画面でメモリを消費します。</a>
     <span class="author">otomo</span>
     <time datetime="2003-03-18T17:21:59">2003年03月18日 17:21</time></h1>
     <div class="body">共通設定／タイプ別設定のプロパティーシートを開くと、<br>開いただけでメモリを大量に食ってしまうみたいです。<br>開く前に7MBくらいだったのが、開いただけで、12MB<br>位まで跳ね上がります。<br><br>プロパティーシートを閉じてもメモリを食いっぱなしの<br>ようで、何かしらの資源の解放漏れとかってないですか？<br><br>うちで改造して使っているsakuraも修正したいので<br>解決法を教えていただけると助かります。<br><br>PS:<br>　ファイルを保存するとき、ファイルが読取専用・隠し<br>　ファイルだったとき、<br>　「上書き保存できません」メッセージが出たあとで、<br>　隠し属性が外れてしまうようです。<br><br>PS2:<br>　置換の「選択始点挿入」が動かないようです。<br>　全置換の高速化を図ったときにデグレッたみた<br>　いですね。<br><br></div></section>
     <ul><li><section><h1 id=2847>
     <span class="no">[2847]</span>
-    <a class="title" href="#2847">Re: 設定画面でメモリを消費します。</a>
+    <a class="thread-title" href="#2847">Re: 設定画面でメモリを消費します。</a>
     <span class="author">げんた</span>
     <time datetime="2003-03-30T05:36:15">2003年03月30日 05:36</time></h1>
     <div class="body">&gt;共通設定／タイプ別設定のプロパティーシートを開くと、<br>&gt;開いただけでメモリを大量に食ってしまうみたいです。<br>プロパティシートでは設定のキャンセルを行えるようにするために内部構造体のコピーを作って操作した上でOKでそれを書き戻すようになっています。<br><br>たぶんその構造体(Common)が巨大なのだと思います。<br>直すにはその辺の作りを見直さなくてはなりません。<br><br>&gt;プロパティーシートを閉じてもメモリを食いっぱなしの<br>&gt;ようで、何かしらの資源の解放漏れとかってないですか？<br>一旦取ったメモリをOSに戻さないのはCのメモリマネージャの常なのでメモリリークではないと思います。(といいつつ、誰かpurifyかけてくれないかなとも思ってみたり)<br><br>&gt;　ファイルを保存するとき、ファイルが読取専用・隠し<br>&gt;　ファイルだったとき、<br>&gt;　「上書き保存できません」メッセージが出たあとで、<br>&gt;　隠し属性が外れてしまうようです。<br>さらにメモリリークしてました。<br><br>&gt;PS2:<br>&gt;　置換の「選択始点挿入」が動かないようです。<br>&gt;　全置換の高速化を図ったときにデグレッたみた<br>&gt;　いですね。<br>これは、また今度orわかる人お願い。<br></div></section>
     <ul><li><section><h1 id=2851>
     <span class="no">[2851]</span>
-    <a class="title" href="#2851">Re2: 設定画面でメモリを消費します。</a>
+    <a class="thread-title" href="#2851">Re2: 設定画面でメモリを消費します。</a>
     <span class="author">げんた</span>
     <time datetime="2003-03-30T15:15:06">2003年03月30日 15:15</time></h1>
     <div class="body">&gt;たぶんその構造体(Common)が巨大なのだと思います。<br>プロパティシートで使っているデータのサイズを調べてみました。(単位 byte)<br><br>m_Common 10224<br>m_cLookup 12<br>m_pKeyNameArr 10000<br>m_CKeyWordSetMgr 2020848<br>m_MacroTable 6640<br>m_szTransformFileNameFrom 4160<br>m_szTransformFileNameTo 4160<br><br>m_CKeyWordSetMgrが2MB近く使っています。これはタイプ別でも使われています。<br>実際に使う数と無関係に最大領域を使ってますからね。直したいところなんですが。<br><br>あとの3MBは何だろう...<br><br>キーワード編集機能って本当に必要なんだろうか。外部ファイルをエディタで編集してもらえばすむような気もしますが...<br></div></section>
     <ul><li><section><h1 id=2853>
     <span class="no">[2853]</span>
-    <a class="title" href="#2853">Re3: 設定画面でメモリを消費します。</a>
+    <a class="thread-title" href="#2853">Re3: 設定画面でメモリを消費します。</a>
     <span class="author">げんた</span>
     <time datetime="2003-04-01T01:59:00">2003年04月01日 01:59</time></h1>
     <div class="body">&gt;m_CKeyWordSetMgrが2MB近く使っています。これはタイプ別でも使われています。<br>とりあえず、タイプ別設定では参照のみなのでコピーを作らないようにしました。<br>共通設定はもうすこし考えないとダメみたいです。<br></div></section>

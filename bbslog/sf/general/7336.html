@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現キーワードが正常に動作していない</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現キーワードが正常に動作していない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7336</span>
-    <a class="title" href="7336.html#7336">正規表現キーワードが正常に動作していない</a></div>
+    <a class="thread-title" href="7336.html#7336">正規表現キーワードが正常に動作していない</a></div>
     <ul><li><div class="list-title">
     <span class="no">7337</span>
-    <a class="title" href="7336.html#7337">Re:正規表現キーワードが正常に動作していない</a></div>
+    <a class="thread-title" href="7336.html#7337">Re:正規表現キーワードが正常に動作していない</a></div>
     <ul><li><div class="list-title">
     <span class="no">7343</span>
-    <a class="title" href="7336.html#7343">Re2:正規表現キーワードが正常に動作していない</a></div>
+    <a class="thread-title" href="7336.html#7343">Re2:正規表現キーワードが正常に動作していない</a></div>
     <ul><li><div class="list-title">
     <span class="no">7344</span>
-    <a class="title" href="7336.html#7344">Re3:正規表現キーワードが正常に動作していない</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7336>
+    <a class="thread-title" href="7336.html#7344">Re3:正規表現キーワードが正常に動作していない</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7336>
     <span class="no">[7336]</span>
-    <a class="title" href="#7336">正規表現キーワードが正常に動作していない</a>
+    <a class="thread-title" href="#7336">正規表現キーワードが正常に動作していない</a>
     <span class="author">kidd</span>
     <time datetime="2011-03-25T19:10:15">2011年03月25日 19:10</time></h1>
     <div class="body">お世話になっております。<br><br>サクラエディタでログを読み込んだ場合に、<br>ログレベルに応じて行の色を変えることにチャレンジしています。<br><br>正規表現キーワードを使用していますが、<br>行末に「$"」が入っている行の次の行から<br>正しくマッチングが行われません。<br><br>正規表現のキーワードは次のような正規表現を使用しています。<br><br>/^.*DEBUG.*$/ki<br><br>これは、自分の設定の方法が悪いのでしょうか？<br>それとも、不具合なのでしょうか？<br><br>ご教授いただければ幸いです。</div></section>
     <ul><li><section><h1 id=7337>
     <span class="no">[7337]</span>
-    <a class="title" href="#7337">Re:正規表現キーワードが正常に動作していない</a>
+    <a class="thread-title" href="#7337">Re:正規表現キーワードが正常に動作していない</a>
     <span class="author">ds14050</span>
     <time datetime="2011-03-26T01:50:34">2011年03月26日 01:50</time></h1>
     <div class="body">必ずしも力になれるとは限りませんが、いろいろ質問があります。<br>*使っているサクラエディタのバージョンは何でしょうか？<br>*使っている正規表現ライブラリは何でしょうか？(ログを開いた状態でタイブ別設定&gt;正規表現キーワード)<br>*ダブルクォーテーション文字列の色分けのチェックは外れていますか？<br>*「正しくマッチングが行われ」ないとは、一切の色分けが行われていない状態ですか。<br></div></section>
     <ul><li><section><h1 id=7343>
     <span class="no">[7343]</span>
-    <a class="title" href="#7343">Re2:正規表現キーワードが正常に動作していない</a>
+    <a class="thread-title" href="#7343">Re2:正規表現キーワードが正常に動作していない</a>
     <span class="author">kidd</span>
     <time datetime="2011-03-29T18:45:00">2011年03月29日 18:45</time></h1>
     <div class="body">ds14050さん<br><br>返信ありがとうございます。<br>&gt; *使っているサクラエディタのバージョンは何でしょうか？<br>&gt; *使っている正規表現ライブラリは何でしょうか？(ログを開いた状態でタイブ別設定&gt;正規表現キーワード)<br>すいません、質問の基礎的な部分が完全に抜けてました。。。<br><br>サクラエディタのバージョンは、1.6.6.0 です。<br>ライブラリは標準で組み込まれているbregonig.dllになります。<br><br><br>で、自分が質問した内容ですが、解決しました！！<br><br>&gt; *ダブルクォーテーション文字列の色分けのチェックは外れていますか？<br>の部分が気になり、いろいろ調べてみました。<br>結果、ダブルクォーテーションではなく、<br>シングルクォーテーションの方が問題でした。<br><br>とある行に「Can't・・・」とあり、<br>その行の次の行からシングルクォーテーションのカラーになっていました。<br><br>シングルクォーテーションのカラーが意図せず、<br>正規表現キーワードにマッチしたときに使用している<br>カラーと同じになってしまったため、気がつきませんでした。<br><br>また、ダブルクォーテーションやシングルクォーテーションの有効範囲が、<br>秀丸や VisualStudio のエディタと同じく、<br>その行まで有効であると思い込んでいたため、<br>気がつきませんでした。<br><br>ダブルクォーテーション、シングルクォーテーションはあきらめます。。。<br>（行末までオプションとかないんでしょうかね。。）<br><br><br>以上です。<br><br>▼ ds14050さん<br>&gt; 必ずしも力になれるとは限りませんが、いろいろ質問があります。<br>&gt; *使っているサクラエディタのバージョンは何でしょうか？<br>&gt; *使っている正規表現ライブラリは何でしょうか？(ログを開いた状態でタイブ別設定&gt;正規表現キーワード)<br>&gt; *ダブルクォーテーション文字列の色分けのチェックは外れていますか？<br>&gt; *「正しくマッチングが行われ」ないとは、一切の色分けが行われていない状態ですか。</div></section>
     <ul><li><section><h1 id=7344>
     <span class="no">[7344]</span>
-    <a class="title" href="#7344">Re3:正規表現キーワードが正常に動作していない</a>
+    <a class="thread-title" href="#7344">Re3:正規表現キーワードが正常に動作していない</a>
     <span class="author">Coward</span>
     <time datetime="2011-03-29T19:00:12">2011年03月29日 19:00</time></h1>
     <div class="body">&gt; ダブルクォーテーション、シングルクォーテーションはあきらめます。。。<br>&gt; （行末までオプションとかないんでしょうかね。。）<br><br>ダブルクォーテーション、シングルクォーテーションも<br>正規表現で色分けすればいいのでわ？<br><br>閉じないクォーテーションの色分け問題対策<br><a href=http://sakura.qp.land.to/?%C0%B5%B5%AC%C9%BD%B8%BD%2F%C5%EA%B9%C6#hdc3b599 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?%<wbr>C0%<wbr>B5%<wbr>B5%<wbr>AC%<wbr>C9%<wbr>BD%<wbr>B8%<wbr>BD%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6#<wbr>hdc3b599<wbr></nobr></a><br>↑自分は試してないけど、これでいけませんかね？</div></section>

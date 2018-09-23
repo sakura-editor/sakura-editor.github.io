@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>バックアップファイル名</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バックアップファイル名 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">287</span>
-    <a class="title" href="287.html#287">バックアップファイル名</a></div>
+    <a class="thread-title" href="287.html#287">バックアップファイル名</a></div>
     <ul><li><div class="list-title">
     <span class="no">290</span>
-    <a class="title" href="287.html#290">Re:バックアップファイル名</a></div>
+    <a class="thread-title" href="287.html#290">Re:バックアップファイル名</a></div>
     <ul><li><div class="list-title">
     <span class="no">292</span>
-    <a class="title" href="287.html#292">Re2:バックアップファイル名</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=287>
+    <a class="thread-title" href="287.html#292">Re2:バックアップファイル名</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=287>
     <span class="no">[287]</span>
-    <a class="title" href="#287">バックアップファイル名</a>
+    <a class="thread-title" href="#287">バックアップファイル名</a>
     <span class="author">げんた</span>
     <time datetime="2001-03-17T22:16:14">2001年03月17日 22:16</time></h1>
     <div class="body">開発掲示板からの続きです。<br><br>▼ じぇぷろさん<br>&gt; これは他で出ていた要望ですが、こっちでも同じことがあるので書いてます。(要望のパクリ(^_^;))<br>&gt; 現在バックアップファイルは拡張子をbakあるいは世代b00-98にするパタンと、ファイル名の後ろに日時などを追加して拡張子はそのままにするパタンの2種類あります。<br>&gt; しかしファイル名は同じで拡張子だけが違うというファイルもよくあります。また拡張子が変わってしまうとそのファイルの属性が不明になり、例えば関連付けも無効になってしまいます。.bxxではエディタで即開けませんよね。そこでバックアップファイル名は拡張子変更ではなく、日時と同じように拡張子は変えずにファイル名に追加するようにしてはどうでしょうか？<br>&gt; 今あるものはそのままにして、「ファイルの後ろに連番を付加したもの」の追加です。aaa.txt→aaa_b00.txt　一つのみの場合(bak)もありますが、1世代(b00)で代替すればいいでしょう。<br>&gt; それよりかなり前にげんた氏が実装したときに「してない」だけのI/Fを付けて、ユーザがある程度文字列を変えられるようになっているといいと思います。こんな感じでしょうか：<br>現在は世代つきバックアップのアルファベット文字'b'を設定ファイルで変更可能にしてあります。<br>バックアップを行う関数は他と独立性が高いので割と簡単に変更できるとは思います。ただ、ユーザインタフェースと設定ファイルの変更も行わないといけませんが。<br><br>&gt; 　・ファイル名の後ろに付加 <br>&gt; 　・拡張子を変更<br>&gt; 　　　　バックアップファイルを表す文字 [b]  保存する世代数  [1-99] (b00-98) <br>&gt; <br>&gt; 第一世代(bak)の場合も一緒に出来るとなおいいですが。その場合は<br>&gt; 　・ファイル名の後ろに付加 <br>&gt; 　・拡張子を変更<br>&gt; 　　　・バックアップファイルを表す文字 [bak]　(半角3文字限定で十分でしょう)<br>&gt; 　　　・バックアップファイルを表す文字 [b]　保存する世代数  [1-99] (b00-98)<br>&gt; (・はラジオボタン; [　]内の文字(列)／数はユーザが変更可能)<br>&gt; <br>&gt; #今あるキャプションは「ファイルの後ろ」の説明が少しわかりにくいですね。</div></section>
     <ul><li><section><h1 id=290>
     <span class="no">[290]</span>
-    <a class="title" href="#290">Re:バックアップファイル名</a>
+    <a class="thread-title" href="#290">Re:バックアップファイル名</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-03-19T17:33:39">2001年03月19日 17:33</time></h1>
     <div class="body">▼ げんたさん<br>　▼じぇぷろ<br>&gt; 開発掲示板からの続きです。<br>&gt; 現在は世代つきバックアップのアルファベット文字'b'を設定ファイルで変更可能にしてあります。<br>iniのそれらしい所を見ましたが, 数値指定しかないようですが。。。<br> <br>&gt; &gt; #今あるキャプションは「ファイルの後ろ」の説明が少しわかりにくいですね。<br>#開発掲示板に書いた通り、この点も含めて少し修正したsakura_rc.rcをeGroupsにおきました。<br>#Grepはsakuraの売りの一つですが、MKEditorもできるようになってます(前にも書いた)。さらに自動保存、自動バックアップもできるようです。他のエディタも日々進化するので、好敵手がまた台頭してきたという感じでしょうか。</div></section>
     <ul><li><section><h1 id=292>
     <span class="no">[292]</span>
-    <a class="title" href="#292">Re2:バックアップファイル名</a>
+    <a class="thread-title" href="#292">Re2:バックアップファイル名</a>
     <span class="author">げんた</span>
     <time datetime="2001-03-19T18:12:22">2001年03月19日 18:12</time></h1>
     <div class="body">▼じぇぷろさん<br>&gt;iniのそれらしい所を見ましたが, 数値指定しかないようですが。。。<br>数値指定にしてはやけに数字が大きいと思いませんでしたか？<br>上位8bitが予約、次の8bitが文字で、下位の16bitがバックアップ世代数だったような記憶が（未確認）。<br></div></section>

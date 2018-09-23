@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">472</span>
-    <a class="title" href="472.html#472">Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a></div>
+    <a class="thread-title" href="472.html#472">Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a></div>
     <ul><li><div class="list-title">
     <span class="no">489</span>
-    <a class="title" href="472.html#489">Re: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a></div>
+    <a class="thread-title" href="472.html#489">Re: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a></div>
     <ul><li><div class="list-title">
     <span class="no">490</span>
-    <a class="title" href="472.html#490">Re2: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a></div>
+    <a class="thread-title" href="472.html#490">Re2: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a></div>
     <ul><li><div class="list-title">
     <span class="no">499</span>
-    <a class="title" href="472.html#499">Re3: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=472>
+    <a class="thread-title" href="472.html#499">Re3: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=472>
     <span class="no">[472]</span>
-    <a class="title" href="#472">Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a>
+    <a class="thread-title" href="#472">Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a>
     <span class="author">Uchi</span>
     <time datetime="2008-06-08T21:11:42">2008年06月08日 21:11</time></h1>
     <div class="body">リビジョン：<br>　rev1378<br><br>変更種別：<br>　機能改善<br><br>内容：<br>　外部コマンド出力の取り込みをUnicodeで行うようにしました。<br>　合わせて【アウトプット】の文字コードをUnicodeに変更しました。<br></div></section>
     <ul><li><section><h1 id=489>
     <span class="no">[489]</span>
-    <a class="title" href="#489">Re: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a>
+    <a class="thread-title" href="#489">Re: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a>
     <span class="author">もか</span>
     <time datetime="2008-06-16T10:14:37">2008年06月16日 10:14</time></h1>
     <div class="body">うちのVC2003ではコンパイルできないので試してませんが、<br>&gt;外部コマンド出力の取り込みをUnicodeで行うようにしました。<br>というのは、ANSI出力の結果を表示すると文字化けするということですよね。<br>それは何かまずいような気がするけど、そんなことない？<br><br>ついでに「標準出力に送る」はSJIS固定になっているので、こちらもUnicodeにするか<br>ファイルの文字コードor 任意のコードを選択できると便利そうです。<br></div></section>
     <ul><li><section><h1 id=490>
     <span class="no">[490]</span>
-    <a class="title" href="#490">Re2: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a>
+    <a class="thread-title" href="#490">Re2: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a>
     <span class="author">kobake</span>
     <time datetime="2008-06-16T22:01:15">2008年06月16日 22:01</time></h1>
     <div class="body">コードはさらっと流し読みしました。問題無かったです。<br>動作確認としては「echo "(ニーハオ)"」の出力が正常に表示されることを確認しました。<br><br>▼ もかさん<br>&gt; うちのVC2003ではコンパイルできないので試してませんが、<br>&gt; &gt;外部コマンド出力の取り込みをUnicodeで行うようにしました。<br>&gt; というのは、ANSI出力の結果を表示すると文字化けするということですよね。<br>&gt; それは何かまずいような気がするけど、そんなことない？<br><br>たしかに、以下のようなプログラムを実行させると文字化けしました。<br>int main()<br>{<br>　　printf("こんにちは\n");<br>　　return 0;<br>}<br><br>入出力の文字コードを自動で判別できたら良いんですけどねぇ。<br><br>ところで、標準出力がUNICODEのプログラムってたとえばどんなものがありますか？<br></div></section>
     <ul><li><section><h1 id=499>
     <span class="no">[499]</span>
-    <a class="title" href="#499">Re3: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a>
+    <a class="thread-title" href="#499">Re3: Commit報告:(Imp) 外部コマンド出力の取り込みをUnicodeで行う</a>
     <span class="author">もか</span>
     <time datetime="2008-06-17T15:05:37">2008年06月17日 15:05</time></h1>
     <div class="body">&gt;ところで、標準出力がUNICODEのプログラムってたとえばどんなものがありますか？<br>Unicodeなのは cmd /U 位しかないと思います。<br>.NETの入出力のストリーム系クラスはデフォルトがUTF-8だったりします。<br>その関係で.NETのプログラムはUTF-8のこともままあります。<br>CygwinはEUC-JPだったような...<br></div></section>

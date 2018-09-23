@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>デバッグ版の起動が遅すぎるの？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>デバッグ版の起動が遅すぎるの？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">940</span>
-    <a class="title" href="940.html#940">デバッグ版の起動が遅すぎるの？</a></div>
+    <a class="thread-title" href="940.html#940">デバッグ版の起動が遅すぎるの？</a></div>
     <ul><li><div class="list-title">
     <span class="no">941</span>
-    <a class="title" href="940.html#941">Re:デバッグ版の起動が遅すぎるの？</a></div>
+    <a class="thread-title" href="940.html#941">Re:デバッグ版の起動が遅すぎるの？</a></div>
     <ul><li><div class="list-title">
     <span class="no">952</span>
-    <a class="title" href="940.html#952">Re2:デバッグ版の起動が遅すぎるの？</a></div>
+    <a class="thread-title" href="940.html#952">Re2:デバッグ版の起動が遅すぎるの？</a></div>
     <ul><li><div class="list-title">
     <span class="no">958</span>
-    <a class="title" href="940.html#958">Re3:デバッグ版の起動が遅すぎるの？</a></div>
+    <a class="thread-title" href="940.html#958">Re3:デバッグ版の起動が遅すぎるの？</a></div>
     <ul><li><div class="list-title">
     <span class="no">964</span>
-    <a class="title" href="940.html#964">Re4:デバッグ版の起動が遅すぎるの？</a></div>
+    <a class="thread-title" href="940.html#964">Re4:デバッグ版の起動が遅すぎるの？</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">974</span>
-    <a class="title" href="940.html#974">Re2:デバッグ版の起動が遅すぎるの？</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=940>
+    <a class="thread-title" href="940.html#974">Re2:デバッグ版の起動が遅すぎるの？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=940>
     <span class="no">[940]</span>
-    <a class="title" href="#940">デバッグ版の起動が遅すぎるの？</a>
+    <a class="thread-title" href="#940">デバッグ版の起動が遅すぎるの？</a>
     <span class="author">やざき</span>
     <time datetime="2001-12-17T18:55:14">2001年12月17日 18:55</time></h1>
     <div class="body">うちでコンパイルした、デバッグ版のsakura.exeは、<br><br>WinMainの622行目<br>int nResult = WaitForInputIdle( p.hProcess, 10000 );&#9;//&#9;最大20秒間待つ<br>で、失敗してしまうみたい。<br><br>'...sakura.exe'<br>コントロールプロセスの起動に失敗しました。<br><br>と表示されます。<br><br>ただ不思議なのは、ここで「OK」を押してしばらく待つと、<br>何事も無かったようにタスクトレイにはあらわれるんです。<br>こういうものなんでしょうか？</div></section>
     <ul><li><section><h1 id=941>
     <span class="no">[941]</span>
-    <a class="title" href="#941">Re:デバッグ版の起動が遅すぎるの？</a>
+    <a class="thread-title" href="#941">Re:デバッグ版の起動が遅すぎるの？</a>
     <span class="author">げんた</span>
     <time datetime="2001-12-17T21:04:25">2001年12月17日 21:04</time></h1>
     <div class="body">▼ やざきさん<br>&gt; WinMainの622行目<br>&gt; で、失敗してしまうみたい。<br>昔からそうです。<br><br>ただ、私の近くの特定のマシンではリリース版でも同様の症状が出ることがあります。<br></div></section>
     <ul><li><section><h1 id=952>
     <span class="no">[952]</span>
-    <a class="title" href="#952">Re2:デバッグ版の起動が遅すぎるの？</a>
+    <a class="thread-title" href="#952">Re2:デバッグ版の起動が遅すぎるの？</a>
     <span class="author">やざき</span>
     <time datetime="2001-12-18T14:55:45">2001年12月18日 14:55</time></h1>
     <div class="body">▼ げんたさん<br>&gt; ▼ やざきさん<br>&gt; &gt; WinMainの622行目<br>&gt; &gt; で、失敗してしまうみたい。<br>&gt; 昔からそうです。<br>&gt; <br>&gt; ただ、私の近くの特定のマシンではリリース版でも同様の症状が出ることがあります。<br><br>ありゃま。<br>これって原因不明なんでしょうか？<br><br>でもそのうちコントロールプロセス（＝タスクトレイのアイコン？）が<br>起動するので、ここでチェックしないで、必要になったときにチェックする<br>ようにするか、何でこんなにタスクトレイのアイコンがでてくるのが<br>遅いのか調べてみません？<br><br>わたしはどこを見ればいいのか、さっぱり分からなかったので<br>お手上げ。って感じなのですが。ヒントがあれば見てみます。</div></section>
     <ul><li><section><h1 id=958>
     <span class="no">[958]</span>
-    <a class="title" href="#958">Re3:デバッグ版の起動が遅すぎるの？</a>
+    <a class="thread-title" href="#958">Re3:デバッグ版の起動が遅すぎるの？</a>
     <span class="author">やざき</span>
     <time datetime="2001-12-18T16:30:47">2001年12月18日 16:30</time></h1>
     <div class="body">▼ やざきさん<br>&gt; ▼ げんたさん<br>&gt; &gt; ▼ やざきさん<br>&gt; &gt; &gt; WinMainの622行目<br>&gt; &gt; &gt; で、失敗してしまうみたい。<br>&gt; &gt; 昔からそうです。<br>&gt; &gt; <br>&gt; &gt; ただ、私の近くの特定のマシンではリリース版でも同様の症状が出ることがあります。<br>&gt; <br>&gt; ありゃま。<br>&gt; これって原因不明なんでしょうか？<br>&gt; <br>&gt; でもそのうちコントロールプロセス（＝タスクトレイのアイコン？）が<br>&gt; 起動するので、ここでチェックしないで、必要になったときにチェックする<br>&gt; ようにするか、何でこんなにタスクトレイのアイコンがでてくるのが<br>&gt; 遅いのか調べてみません？<br>&gt; <br>&gt; わたしはどこを見ればいいのか、さっぱり分からなかったので<br>&gt; お手上げ。って感じなのですが。ヒントがあれば見てみます。<br><br>と言いつつも、いろいろ調べたところ、<br>void CProfile::DUMP( void )<br>ですごく時間がかかってるみたい。<br>なので、DUMPしないようにしちゃいました。<br>問題あります？</div></section>
     <ul><li><section><h1 id=964>
     <span class="no">[964]</span>
-    <a class="title" href="#964">Re4:デバッグ版の起動が遅すぎるの？</a>
+    <a class="thread-title" href="#964">Re4:デバッグ版の起動が遅すぎるの？</a>
     <span class="author">げんた</span>
     <time datetime="2001-12-18T18:44:28">2001年12月18日 18:44</time></h1>
     <div class="body">&gt;void CProfile::DUMP( void )<br>&gt;ですごく時間がかかってるみたい。<br>&gt;なので、DUMPしないようにしちゃいました。<br>&gt;問題あります？<br>別に無くても良いと思います．<br><br>Visual Studioを起動しなくてもデバッグ出力を見られるツールがあるんですね．初めて発見しました．<br>http://www.vector.co.jp/soft/win95/prog/se046776.html<br></div></section>
     </li></ul></li></ul></li><li><section><h1 id=974>
     <span class="no">[974]</span>
-    <a class="title" href="#974">Re2:デバッグ版の起動が遅すぎるの？</a>
+    <a class="thread-title" href="#974">Re2:デバッグ版の起動が遅すぎるの？</a>
     <span class="author">やざき</span>
     <time datetime="2001-12-19T18:51:34">2001年12月19日 18:51</time></h1>
     <div class="body">▼ げんたさん<br><br>&gt; ただ、私の近くの特定のマシンではリリース版でも同様の症状が出ることがあります。<br><br>悲しいかな、<br>sinst_B011218_H011218.exeで<br>同じ症状がでてしまい、起動することができませんでした。<br></div></section>

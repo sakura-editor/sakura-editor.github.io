@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>.po ファイルのソースを参照したい</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>.po ファイルのソースを参照したい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">512</span>
-    <a class="title" href="512.html#512">.po ファイルのソースを参照したい</a></div>
+    <a class="thread-title" href="512.html#512">.po ファイルのソースを参照したい</a></div>
     <ul><li><div class="list-title">
     <span class="no">513</span>
-    <a class="title" href="512.html#513">Re:.po ファイルのソースを参照したい</a></div>
+    <a class="thread-title" href="512.html#513">Re:.po ファイルのソースを参照したい</a></div>
     <ul><li><div class="list-title">
     <span class="no">514</span>
-    <a class="title" href="512.html#514">Re2:.po ファイルのソースを参照したい</a></div>
+    <a class="thread-title" href="512.html#514">Re2:.po ファイルのソースを参照したい</a></div>
     <ul><li><div class="list-title">
     <span class="no">515</span>
-    <a class="title" href="512.html#515">Re3:.po ファイルのソースを参照したい</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=512>
+    <a class="thread-title" href="512.html#515">Re3:.po ファイルのソースを参照したい</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=512>
     <span class="no">[512]</span>
-    <a class="title" href="#512">.po ファイルのソースを参照したい</a>
+    <a class="thread-title" href="#512">.po ファイルのソースを参照したい</a>
     <span class="author">Belgae</span>
     <time datetime="2011-02-12T00:37:54">2011年02月12日 00:37</time></h1>
     <div class="body">はじめまして。<br><br>.po ファイルを翻訳する際、そのエントリがどの.cファイルで使用されているか<br>参照したいのですが、どのようにしたらよいでしょうか。<br><br>.poファイルの各エントリは以下のような形になっています。<br><br>#: common/version.c:59<br>msgid "version "<br>msgstr "バージョン "<br><br>コメント行にソースファイルのパスと行が書いてあるので、<br>これを利用すればいいと思い、以下のppaマクロを書きました。<br><br>var<br>&#9;Src: String;&#9;// ソースファイルのパスと行<br>begin<br>&#9;S_GoLineTop(0);&#9;// 行頭に移動(折り返し単位)<br>&#9;S_WordRight(0);&#9;// 単語の右端に移動<br>&#9;S_GoLineEnd_Sel(0);&#9;// (選択)行末に移動(折り返し単位)<br>&#9;Src := S_GetSelectedString(0);&#9;//ファイルパスを取得<br>&#9;S_FileOpen(Src);&#9;//ファイルを開く<br>end<br><br>しかしこれでは、上記の例では"version.c:59"という名前のファイルを<br>新規作成して開いてしまうようです。<br><br>たぶん、":"を" -Y="に置換できればコマンドラインオプションの<br>形式に合致してうまくいくと思うのですが、ここで詰まってしまいました。<br>マクロを作るのは初めてなので、実は簡単な方法があるのかもしれませんが、<br>見つけられませんでした。<br><br>よろしくお願いします。</div></section>
     <ul><li><section><h1 id=513>
     <span class="no">[513]</span>
-    <a class="title" href="#513">Re:.po ファイルのソースを参照したい</a>
+    <a class="thread-title" href="#513">Re:.po ファイルのソースを参照したい</a>
     <span class="author">普段ROMってます</span>
     <time datetime="2011-02-12T21:08:44">2011年02月12日 21:08</time></h1>
     <div class="body">▼ Belgaeさん<br>はじめまして。<br><br>.poファイルのあるフォルダにcommonフォルダ、<br>そのcommonフォルダの中にversion.cがあり、.poファイルを開いた状態で<br>マクロを実行→version.cの59行目を開きたい、という仮定で組んでみました。<br>JScriptで組んでいますので、拡張子を.jsにしてマクロを登録してみてください。<br>とりあえず手元では動いています（sakura Ver1.6.6.0、WinXP）。<br>（グダグダしていて明快なコードじゃなくてごめんなさい）<br><br><br>//★ここから<br><br>// ファイルの親フォルダパスを取得<br>var filePath = ExpandParameter("$/");<br>var i = filePath.lastIndexOf("/");<br>var folderPath = filePath.substr(0, i+1);<br><br>// 1行目を取得して、.cのパスと行数を取得<br>var L1 = GetLineStr(1);<br>var reg =/#: (.+):(\d+)/;<br>if ( reg.test(L1) ) {<br>&#9;// ファイルパスと行数が取得できたっぽい<br>&#9;var openFilePath = folderPath + RegExp.$1;<br>&#9;var line = RegExp.$2;<br> <br>&#9;// サクラエディタを呼び出して指定行数で開く<br>&#9;var sakura = ExpandParameter("$S");<br>&#9;ExecCommand(sakura + ' "' + openFilePath + '" -Y=' + line, 0);<br>};<br>// ファイルがない場合は勝手に作成されます。保存しないで閉じてください。<br><br>//★ここまで</div></section>
     <ul><li><section><h1 id=514>
     <span class="no">[514]</span>
-    <a class="title" href="#514">Re2:.po ファイルのソースを参照したい</a>
+    <a class="thread-title" href="#514">Re2:.po ファイルのソースを参照したい</a>
     <span class="author">Belgae</span>
     <time datetime="2011-02-12T21:52:17">2011年02月12日 21:52</time></h1>
     <div class="body">▼ 普段ROMってますさん<br>ご返答ありがとうございます。<br><br>最初は動きませんでした。頂いたマクロをよく見たところ、パスがファイルの<br>1行目に書かれている前提になっていたためでした。私の説明が足りませんでした。<br>.poファイルにはエントリがたくさんあって、それぞれのエントリにコメントとして<br>その翻訳対象語が使用されているファイルのパスが付いているのです。<br><br>そこで、GetLineStr()の引数を1ではなく0（現在の行）に変えて<br>実行したところ、希望通りの動作になりました。<br>ありがとうございました。</div></section>
     <ul><li><section><h1 id=515>
     <span class="no">[515]</span>
-    <a class="title" href="#515">Re3:.po ファイルのソースを参照したい</a>
+    <a class="thread-title" href="#515">Re3:.po ファイルのソースを参照したい</a>
     <span class="author">普段ROMってます</span>
     <time datetime="2011-02-13T00:10:29">2011年02月13日 00:10</time></h1>
     <div class="body">▼ Belgaeさん<br>こりゃ失敬。.poの中身をよく理解してなかった私が悪いですな。<br>行指定があるって事は1ファイルにエントリがずらっと並ぶものだと今更気がつきました。<br>何はともあれ動いたようで何よりです。</div></section>

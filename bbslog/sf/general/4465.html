@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アウトライン解析、除外文字について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アウトライン解析、除外文字について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">4465</span>
-    <a class="title" href="4465.html#4465">アウトライン解析、除外文字について</a></div>
+    <a class="thread-title" href="4465.html#4465">アウトライン解析、除外文字について</a></div>
     <ul><li><div class="list-title">
     <span class="no">4467</span>
-    <a class="title" href="4465.html#4467">それならとりあえずルールファイルを使われたら？</a></div>
+    <a class="thread-title" href="4465.html#4467">それならとりあえずルールファイルを使われたら？</a></div>
     <ul><li><div class="list-title">
     <span class="no">4469</span>
-    <a class="title" href="4465.html#4469">りーやさんありがとうございます。</a></div>
+    <a class="thread-title" href="4465.html#4469">りーやさんありがとうございます。</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">4468</span>
-    <a class="title" href="4465.html#4468">それより Perl の関数名をうまく捕まえて欲しいのですが</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=4465>
+    <a class="thread-title" href="4465.html#4468">それより Perl の関数名をうまく捕まえて欲しいのですが</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4465>
     <span class="no">[4465]</span>
-    <a class="title" href="#4465">アウトライン解析、除外文字について</a>
+    <a class="thread-title" href="#4465">アウトライン解析、除外文字について</a>
     <span class="author">くろきつかさ</span>
     <time datetime="2005-05-19T16:44:06">2005年05月19日 16:44</time></h1>
     <div class="body">いつも便利に使用させていただいております。<br>アウトライン解析について要望があります。<br><br>//▼ や<br># ▼ など<br><br>見出し記号の前にコメント等、「見出し記号」以外の文字が来ると<br>アウトライン解析が出来ないため、行頭の「除外文字」を指定出来て<br>欲しいです。<br><br>よろしくお願いします。<br></div></section>
     <ul><li><section><h1 id=4467>
     <span class="no">[4467]</span>
-    <a class="title" href="#4467">それならとりあえずルールファイルを使われたら？</a>
+    <a class="thread-title" href="#4467">それならとりあえずルールファイルを使われたら？</a>
     <span class="author">りーや</span>
     <time datetime="2005-05-20T05:02:53">2005年05月20日 05:02</time></h1>
     <div class="body">▼ くろきつかささん<br>&gt; //▼ や<br>&gt; # ▼ など<br>&gt; <br>&gt; 見出し記号の前にコメント等、「見出し記号」以外の文字が来ると<br>&gt; アウトライン解析が出来ないため、行頭の「除外文字」を指定出来て<br>&gt; 欲しいです。<br><br>プログラム（スクリプト）コードのようなコメントのつけ方<br>ですが、見出し記号のテキストトピックを使用してのアウト<br>ライン解析ということは、タイプ分類がテキストなんですよ<br>ね。プログラムの対応は判りませんが、とりあえずはすぐに<br>対応できるのでルールファイルを作ってはどうでしょうか？<br><br>-----^ この下から<br>▼ /// ▼<br>//▼ /// ▼<br># ▼ /// ▼<br>● /// ●<br>//● /// ●<br># ● /// ●<br>-----$ この上まで<br><br>のように、使われている見出し記号の分だけ繰り返した<br>テキストファイルを用意して、タイプ別設定でルール<br>ファイルとして適用すればＯＫです。<br><br>これなら今日から使えますし・・・<br></div></section>
     <ul><li><section><h1 id=4469>
     <span class="no">[4469]</span>
-    <a class="title" href="#4469">りーやさんありがとうございます。</a>
+    <a class="thread-title" href="#4469">りーやさんありがとうございます。</a>
     <span class="author">くろきつかさ</span>
     <time datetime="2005-05-20T13:07:26">2005年05月20日 13:07</time></h1>
     <div class="body">無事、ツリーが表示されるようになりました。<br>アウトライン解析にもルールファイルが適用<br>されるとは思っても見ませんでした。<br>感謝感謝です。<br><br>質問時の情報が少なかったですが<br>投稿してすぐにレスが頂けて嬉しかったです。<br>ついつい自分が知っている情報は、書くのを忘れてしまいます。<br><br>早速、今日から使わしていただきます。<br>ありがとうございました。</div></section>
     </li></ul></li><li><section><h1 id=4468>
     <span class="no">[4468]</span>
-    <a class="title" href="#4468">それより Perl の関数名をうまく捕まえて欲しいのですが</a>
+    <a class="thread-title" href="#4468">それより Perl の関数名をうまく捕まえて欲しいのですが</a>
     <span class="author">りーや</span>
     <time datetime="2005-05-20T05:09:39">2005年05月20日 05:09</time></h1>
     <div class="body">Ｐｅｒｌの表記方法には<br><br>sub main::dumpvar {<br><br>とか<br><br>sub main'chdir {<br><br>といったのがあるのですが、これがアウトライン解析を<br>掛けると全部「関数名」の欄が mail になってしまいま<br>す。<br>見分けつかないので、改定の際には対応していただける<br>とありがたいです。<br></div></section>

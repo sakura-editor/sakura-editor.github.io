@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix)　ファイル操作関連の問題修正</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告:(Fix)　ファイル操作関連の問題修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">432</span>
-    <a class="title" href="432.html#432">Commit報告:(Fix)　ファイル操作関連の問題修正</a></div>
+    <a class="thread-title" href="432.html#432">Commit報告:(Fix)　ファイル操作関連の問題修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">433</span>
-    <a class="title" href="432.html#433">「閉じて開く」は仕様変更？</a></div>
+    <a class="thread-title" href="432.html#433">「閉じて開く」は仕様変更？</a></div>
     <ul><li><div class="list-title">
     <span class="no">436</span>
-    <a class="title" href="432.html#436">Re:「閉じて開く」は仕様変更？</a></div>
+    <a class="thread-title" href="432.html#436">Re:「閉じて開く」は仕様変更？</a></div>
     <ul><li><div class="list-title">
     <span class="no">438</span>
-    <a class="title" href="432.html#438">Re2:「閉じて開く」は仕様変更？</a></div>
+    <a class="thread-title" href="432.html#438">Re2:「閉じて開く」は仕様変更？</a></div>
     </li><li><div class="list-title">
     <span class="no">623</span>
-    <a class="title" href="432.html#623">Re2:「閉じて開く」は仕様変更？</a></div>
+    <a class="thread-title" href="432.html#623">Re2:「閉じて開く」は仕様変更？</a></div>
     <ul><li><div class="list-title">
     <span class="no">624</span>
-    <a class="title" href="432.html#624">Re3:「閉じて開く」は仕様変更？</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=432>
+    <a class="thread-title" href="432.html#624">Re3:「閉じて開く」は仕様変更？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=432>
     <span class="no">[432]</span>
-    <a class="title" href="#432">Commit報告:(Fix)　ファイル操作関連の問題修正</a>
+    <a class="thread-title" href="#432">Commit報告:(Fix)　ファイル操作関連の問題修正</a>
     <span class="author">ryoji</span>
     <time datetime="2008-05-24T23:26:33">2008年05月24日 23:26</time></h1>
     <div class="body">リビジョン：<br>　rev1354<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>　下記３件の問題修正です。<br><br>Fix: 「閉じて開く」で異常終了する<br>Fix: 画面が上書き禁止状態のときに「閉じて(無題)」を実行すると上書き禁止の(無題)画面になる<br>Fix: ファイル排他制御の設定を「排他制御しない」に変更しても現在開いているファイルのロックが解除されない</div></section>
     <ul><li><section><h1 id=433>
     <span class="no">[433]</span>
-    <a class="title" href="#433">「閉じて開く」は仕様変更？</a>
+    <a class="thread-title" href="#433">「閉じて開く」は仕様変更？</a>
     <span class="author">ryoji</span>
     <time datetime="2008-05-24T23:38:22">2008年05月24日 23:38</time></h1>
     <div class="body">&gt; Fix: 「閉じて開く」で異常終了する<br><br>ほとんど「閉じて開く」なんて使ったことなかったんですが、動かしてみて「あれれ？」と思ったので従来と動作を比較してみました。<br>＃従来動作がどうなっているかも定かでないくらい、このコマンドは使ってませんでしたけど。(^^;<br><br>従来は「ファイルを開く」ダイアログでキャンセルすると元のファイルが開いたままでしたが、現在のUNICODE版では(無題)になります。<br>従来動作は秀丸やTeraPadと同じ動作のようです。たぶん、従来と同じ動作だったら自分も不審には感じなかったと思います。<br>何か意図があっての変更でしょうか？</div></section>
     <ul><li><section><h1 id=436>
     <span class="no">[436]</span>
-    <a class="title" href="#436">Re:「閉じて開く」は仕様変更？</a>
+    <a class="thread-title" href="#436">Re:「閉じて開く」は仕様変更？</a>
     <span class="author">kobake</span>
     <time datetime="2008-05-25T06:17:13">2008年05月25日 06:17</time></h1>
     <div class="body">▼ ryojiさん<br>&gt; &gt; Fix: 「閉じて開く」で異常終了する<br>&gt; <br>&gt; ほとんど「閉じて開く」なんて使ったことなかったんですが、動かしてみて「あれれ？」と思ったので従来と動作を比較してみました。<br>&gt; ＃従来動作がどうなっているかも定かでないくらい、このコマンドは使ってませんでしたけど。(^^;<br>&gt; <br>&gt; 従来は「ファイルを開く」ダイアログでキャンセルすると元のファイルが開いたままでしたが、現在のUNICODE版では(無題)になります。<br>&gt; 従来動作は秀丸やTeraPadと同じ動作のようです。たぶん、従来と同じ動作だったら自分も不審には感じなかったと思います。<br>&gt; 何か意図があっての変更でしょうか？<br><br>意図は無いです。<br>セーブ・ロード関連の整理箇所が多すぎて、検証していませんでした。<br>そのうち直すと思いますが、可能であれば他の方のほうで修正していただいて構いません。</div></section>
     <ul><li><section><h1 id=438>
     <span class="no">[438]</span>
-    <a class="title" href="#438">Re2:「閉じて開く」は仕様変更？</a>
+    <a class="thread-title" href="#438">Re2:「閉じて開く」は仕様変更？</a>
     <span class="author">ryoji</span>
     <time datetime="2008-05-25T10:47:19">2008年05月25日 10:47</time></h1>
     <div class="body">&gt; そのうち直すと思います<br><br>よろしくお願いします。<br><br>あと、未変更の文書に「保存して閉じる」を実行したときに閉じなくなっている気がします。</div></section>
     </li><li><section><h1 id=623>
     <span class="no">[623]</span>
-    <a class="title" href="#623">Re2:「閉じて開く」は仕様変更？</a>
+    <a class="thread-title" href="#623">Re2:「閉じて開く」は仕様変更？</a>
     <span class="author">ryoji</span>
     <time datetime="2008-09-28T15:13:07">2008年09月28日 15:13</time></h1>
     <div class="body">▼ kobakeさん<br>&gt; ▼ ryojiさん<br>&gt; &gt; &gt; Fix: 「閉じて開く」で異常終了する<br>&gt; &gt; <br>&gt; &gt; ほとんど「閉じて開く」なんて使ったことなかったんですが、動かしてみて「あれれ？」と思ったので従来と動作を比較してみました。<br>&gt; &gt; ＃従来動作がどうなっているかも定かでないくらい、このコマンドは使ってませんでしたけど。(^^;<br>&gt; &gt; <br>&gt; &gt; 従来は「ファイルを開く」ダイアログでキャンセルすると元のファイルが開いたままでしたが、現在のUNICODE版では(無題)になります。<br>&gt; &gt; 従来動作は秀丸やTeraPadと同じ動作のようです。たぶん、従来と同じ動作だったら自分も不審には感じなかったと思います。<br>&gt; &gt; 何か意図があっての変更でしょうか？<br>&gt; <br>&gt; 意図は無いです。<br>&gt; セーブ・ロード関連の整理箇所が多すぎて、検証していませんでした。<br>&gt; そのうち直すと思いますが、可能であれば他の方のほうで修正していただいて構いません。<br><br>この件は、今、どうなってます？</div></section>
     <ul><li><section><h1 id=624>
     <span class="no">[624]</span>
-    <a class="title" href="#624">Re3:「閉じて開く」は仕様変更？</a>
+    <a class="thread-title" href="#624">Re3:「閉じて開く」は仕様変更？</a>
     <span class="author">kobake</span>
     <time datetime="2008-09-28T16:32:23">2008年09月28日 16:32</time></h1>
     <div class="body">覚えてはいますが、まだ手を付けられてはいません。</div></section>

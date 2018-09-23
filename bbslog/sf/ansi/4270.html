@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>CEOL クラスの一部変更</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CEOL クラスの一部変更 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">4270</span>
-    <a class="title" href="4270.html#4270">CEOL クラスの一部変更</a></div>
+    <a class="thread-title" href="4270.html#4270">CEOL クラスの一部変更</a></div>
     <ul><li><div class="list-title">
     <span class="no">4271</span>
-    <a class="title" href="4270.html#4271">Re:CEOL クラスの一部変更</a></div>
+    <a class="thread-title" href="4270.html#4271">Re:CEOL クラスの一部変更</a></div>
     </li><li><div class="list-title">
     <span class="no">4282</span>
-    <a class="title" href="4270.html#4282">Re:CEOL クラスの一部変更</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=4270>
+    <a class="thread-title" href="4270.html#4282">Re:CEOL クラスの一部変更</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4270>
     <span class="no">[4270]</span>
-    <a class="title" href="#4270">CEOL クラスの一部変更</a>
+    <a class="thread-title" href="#4270">CEOL クラスの一部変更</a>
     <span class="author">ラスティブ</span>
     <time datetime="2006-02-19T04:44:56">2006年02月19日 04:44</time></h1>
     <div class="body">おはようございます.<br>以下の部分を global.h から CEol.h へ,<br>移動します. (今の段階ではコピー)<br><br>// 2002/09/22 Moca EOL_CRLF_UNICODEを廃止<br>/* 行終端子の種類 */<br>SAKURA_CORE_API enum enumEOLType {<br>&#9;EOL_NONE,<br>&#9;EOL_CRLF,<br>&#9;EOL_LFCR,<br>&#9;EOL_LF,<br>&#9;EOL_CR,<br>&#9;EOL_CODEMAX,<br>&#9;EOL_UNKNOWN = -1<br>};<br><br>/* 行終端子のデータ長 */<br>SAKURA_CORE_API enum enumEOLLen {<br>&#9;LEN_EOL_NONE&#9;&#9;= 0,<br>&#9;LEN_EOL_CRLF&#9;&#9;= 2,<br>&#9;LEN_EOL_LFCR&#9;&#9;= 2,<br>&#9;LEN_EOL_LF&#9;&#9;= 1,<br>&#9;LEN_EOL_CR&#9;&#9;= 1<br>//&#9;LEN_EOL_UNKNOWN&#9;&#9;0<br>};<br><br>#define EOL_TYPE_NUM&#9;5<br><br>支障ありませんよね...<br></div></section>
     <ul><li><section><h1 id=4271>
     <span class="no">[4271]</span>
-    <a class="title" href="#4271">Re:CEOL クラスの一部変更</a>
+    <a class="thread-title" href="#4271">Re:CEOL クラスの一部変更</a>
     <span class="author">ラスティブ</span>
     <time datetime="2006-02-19T04:49:53">2006年02月19日 04:49</time></h1>
     <div class="body">っと, あと etc_uty から GetNextLine() 関数を<br>CMemory クラスへ移動(コピー)します.<br>これも大丈夫ですよね；；<br><br>追記：<br>GetNextLine を CMemory の TabToSpace<br>とかが使ってるので, そうしてもいいのではと思った次第です.<br>grep で GetNextLine 検索して見たところ,<br>影響範囲が広くなりそうなのが困りものですが...<br>追記その２：<br>考え直してみるとやっぱ GetNextLen() の移動は<br>妥当ではなさそうなので中止...お騒がせしました.<br></div></section>
     </li><li><section><h1 id=4282>
     <span class="no">[4282]</span>
-    <a class="title" href="#4282">Re:CEOL クラスの一部変更</a>
+    <a class="thread-title" href="#4282">Re:CEOL クラスの一部変更</a>
     <span class="author">ラスティブ</span>
     <time datetime="2006-02-22T08:57:14">2006年02月22日 08:57</time></h1>
     <div class="body">&gt; EOL の定数宣言を global.h から CEol.h へ移動<br>&gt; 支障ありませんよね...<br><br>CEOL::EOL_NONE と書けるようにすると, 今どのクラスに依存したコードを書いているかがわかりやすくなるかなと思ったのですけど, 識別子名がしっかりしてますし, 移動する労力からすると割に合いませんでした.<br>てことで, 却下です.<br><br>板汚し失礼しました.<br></div></section>

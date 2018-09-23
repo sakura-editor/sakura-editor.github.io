@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>grep関連</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>grep関連 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6077</span>
-    <a class="title" href="6077.html#6077">grep関連</a></div>
+    <a class="thread-title" href="6077.html#6077">grep関連</a></div>
     <ul><li><div class="list-title">
     <span class="no">6079</span>
-    <a class="title" href="6077.html#6079">Re:grep関連</a></div>
+    <a class="thread-title" href="6077.html#6079">Re:grep関連</a></div>
     <ul><li><div class="list-title">
     <span class="no">6080</span>
-    <a class="title" href="6077.html#6080">Re2:grep関連</a></div>
+    <a class="thread-title" href="6077.html#6080">Re2:grep関連</a></div>
     <ul><li><div class="list-title">
     <span class="no">6082</span>
-    <a class="title" href="6077.html#6082">Re3:grep関連</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6077>
+    <a class="thread-title" href="6077.html#6082">Re3:grep関連</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6077>
     <span class="no">[6077]</span>
-    <a class="title" href="#6077">grep関連</a>
+    <a class="thread-title" href="#6077">grep関連</a>
     <span class="author">かて</span>
     <time datetime="2007-05-29T11:35:12">2007年05月29日 11:35</time></h1>
     <div class="body">grepに関して、２点気になることがあります。<br><br>＜１点目＞<br>grepを裏で実行させながら、他にsakuraで開いているファイルを編集していると、grepが終了した時にsakuraエディタが裏に行ってしまい、直前に使っていたメーラーやエクスプローラなどが前面に出てきます。<br>編集中に突然どこかに行ってしまうので少し不便に感じるのですが、そんなことありませんか？<br><br>当方では、タブモードでウインドウをまとめる、設定にしているときに再現しています。（他の場合は未確認です。すいません）<br><br>更に未確認で申しわけないのですが、「tagファイルの作成」や「全て置換」などでも同じ現象が起こりそうな気がします。<br>ファイルサイズが小さければ実行してもすぐに終了するのであまり気にならないと思いますが、「tagファイルの作成」や「全て置換」のようにある程度時間がかかる処理だと裏で実行させておくこともよくあると思うので。<br><br><br>＜２点目＞<br>「Grepモードで保存確認する」にチェックを入れていても、確認のダイアログなどが出ずに普通に閉じます。<br>これって、grep結果をそのままの形式で保存できる機能だと思ったのですが、そうでは無いのでしょうか？<br>他にも何か設定が必要ですか？それとも機能内容に何か認識のずれがあるのでしょうか？<br></div></section>
     <ul><li><section><h1 id=6079>
     <span class="no">[6079]</span>
-    <a class="title" href="#6079">Re:grep関連</a>
+    <a class="thread-title" href="#6079">Re:grep関連</a>
     <span class="author">ryoji</span>
     <time datetime="2007-05-29T23:09:48">2007年05月29日 23:09</time></h1>
     <div class="body">▼ かてさん<br>&gt; grepを裏で実行させながら、他にsakuraで開いているファイルを編集していると、grepが終了した時にsakuraエディタが裏に行ってしまい、直前に使っていたメーラーやエクスプローラなどが前面に出てきます。<br>最新のテストバイナリではこのあたりの挙動も改善されているかもです。<br><a href=http://sakura.qp.land.to/?Junk%2Ftest-1.5.15.3 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2Ftest-<wbr>1.<wbr>5.<wbr>15.<wbr>3</nobr></a><br>patches:1720792 タブ連続切替の安定化対策<br>で画面を差し替えるときの遷移を見直しています。<br><br>&gt; 「Grepモードで保存確認する」にチェックを入れていても、確認のダイアログなどが出ずに普通に閉じます。<br>grep結果を編集すると保存確認のダイアログが出るようになっているみたいです。</div></section>
     <ul><li><section><h1 id=6080>
     <span class="no">[6080]</span>
-    <a class="title" href="#6080">Re2:grep関連</a>
+    <a class="thread-title" href="#6080">Re2:grep関連</a>
     <span class="author">かて</span>
     <time datetime="2007-05-30T09:39:09">2007年05月30日 09:39</time></h1>
     <div class="body">▼ ryojiさん<br>&gt; 最新のテストバイナリではこのあたりの挙動も改善されているかもです。<br>次回のリリースを楽しみに待っています。<br><br><br>&gt; grep結果を編集すると保存確認のダイアログが出るようになっているみたいです。<br>これは、チェックボックス無しで常に有効でもいいような気がしますが、いかがでしょう？<br>一般的に「編集すると保存確認が出るのは当たり前」だと思うので。<br>むしろ、知らないうちにチェックを外していて、grep結果は保存できないの？という弊害を発生させることにしかならないような・・・。<br>一度チェックを外して試してみましたが、編集しているのに、いきなり閉じてしまうのは不自然というか危険な気がします。<br>※わざわざこのチェックを外して使ってる人っているんでしょうかね。。？<br><br>私も勘違いしてしまい思わずヘルプを見たのですが、チェックボックスまで付けて「grepモードで保存確認する」と書いてあると、grep結果の形式（アイコンが「メモ帳＋虫メガネ」のもの）で保存できる！という印象を受けて、誤解をまねくような気がします。（保存できるようになれば、一番の理想だったりしますが^^;）<br></div></section>
     <ul><li><section><h1 id=6082>
     <span class="no">[6082]</span>
-    <a class="title" href="#6082">Re3:grep関連</a>
+    <a class="thread-title" href="#6082">Re3:grep関連</a>
     <span class="author">神楽</span>
     <time datetime="2007-06-03T08:37:45">2007年06月03日 08:37</time></h1>
     <div class="body">Grep時に検索文字列に「\」が含まれていると、<br>Grep結果画面で「\」がエスケープされて「\\」になってしまいます。<br>（これってマクロで正規表現を使う時の記載方法？）<br><br>他人にGrep結果を見せたり、保存したGrep結果の検索条件を再利用する時に不便ですので、<br>検索文字列がそのまま検索条件に出力されるようにしてもらえませんか？<br><br><br>□検索条件  "C\\[UND\\]="<br>検索対象   sakura.ini<br>フォルダ   C:\Program Files\sakura\<br>    (サブフォルダを検索しない)<br>    (英大文字小文字を区別する)<br>    (正規表現)<br>    (文字コードセット：UTF-8)<br>    (一致した行を出力)<br><br><br>■"C:\Program Files\sakura\sakura.ini"<br>・(   997,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  1099,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  1201,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  1303,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  1405,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  1507,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  1613,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  1715,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  1817,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  1919,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  2021,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  2123,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  2225,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  2327,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  2429,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  2531,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  2633,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  2735,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  2837,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>・(  2939,1    ): C[UND]=1,0,ff0000,f0fbff,0<br>20 個が検索されました。<br></div></section>

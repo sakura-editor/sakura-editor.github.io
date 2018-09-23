@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>タブモードでの「重ねて表示」</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>タブモードでの「重ねて表示」 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3731</span>
-    <a class="title" href="3731.html#3731">タブモードでの「重ねて表示」</a></div>
+    <a class="thread-title" href="3731.html#3731">タブモードでの「重ねて表示」</a></div>
     <ul><li><div class="list-title">
     <span class="no">3738</span>
-    <a class="title" href="3731.html#3738">Re: タブモードでの「重ねて表示」</a></div>
+    <a class="thread-title" href="3731.html#3738">Re: タブモードでの「重ねて表示」</a></div>
     <ul><li><div class="list-title">
     <span class="no">3739</span>
-    <a class="title" href="3731.html#3739">Re2: タブモードでの「重ねて表示」</a></div>
+    <a class="thread-title" href="3731.html#3739">Re2: タブモードでの「重ねて表示」</a></div>
     <ul><li><div class="list-title">
     <span class="no">3741</span>
-    <a class="title" href="3731.html#3741">Re3: タブモードでの「重ねて表示」</a></div>
+    <a class="thread-title" href="3731.html#3741">Re3: タブモードでの「重ねて表示」</a></div>
     <ul><li><div class="list-title">
     <span class="no">3742</span>
-    <a class="title" href="3731.html#3742">Re4: タブモードでの「重ねて表示」</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3731>
+    <a class="thread-title" href="3731.html#3742">Re4: タブモードでの「重ねて表示」</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3731>
     <span class="no">[3731]</span>
-    <a class="title" href="#3731">タブモードでの「重ねて表示」</a>
+    <a class="thread-title" href="#3731">タブモードでの「重ねて表示」</a>
     <span class="author">げんた</span>
     <time datetime="2004-08-30T22:11:27">2004年08月30日 22:11</time></h1>
     <div class="body">kazikaさんの変更を確認していて気付いたのですが，まとめないタブ表示の場合に「重ねて表示」のZ-orderが正しくならず，ウィンドウが奥に隠れてしまうことがあります．<br><br>タブがない場合と何が違うんでしょうか．<br></div></section>
     <ul><li><section><h1 id=3738>
     <span class="no">[3738]</span>
-    <a class="title" href="#3738">Re: タブモードでの「重ねて表示」</a>
+    <a class="thread-title" href="#3738">Re: タブモードでの「重ねて表示」</a>
     <span class="author">げんた</span>
     <time datetime="2004-09-04T14:44:48">2004年09月04日 14:44</time></h1>
     <div class="body">&gt;タブがない場合と何が違うんでしょうか．<br>Tab WindowにOrder指令が行くと場合によってフレームウィンドウの制御をしているようなんですが，そのあたり関係している可能性はありませんか？<br><br>デバッガで追ってみたところ，SetWindowPos()の結果が期待通りでないことはわかりましたが，なぜそうなるのかは相変わらずよくわかりません．<br><br>誰か助けて～．<br></div></section>
     <ul><li><section><h1 id=3739>
     <span class="no">[3739]</span>
-    <a class="title" href="#3739">Re2: タブモードでの「重ねて表示」</a>
+    <a class="thread-title" href="#3739">Re2: タブモードでの「重ねて表示」</a>
     <span class="author">Kazika</span>
     <time datetime="2004-09-06T11:22:12">2004年09月06日 11:22</time></h1>
     <div class="body">重ねて表示する際に、ウィンドウが隠れているのが原因かもしれ<br>ません。<br><br>CEditView_Command.cpp の以下の関数<br>　CEditView::Command_CASCADE<br>　CEditView::Command_TILE_H<br>　CEditView::Command_TILE_V<br>の先頭で、タブウィンドウをまとめない設定に変更する処理<br>　//タブウィンドウをまとめない設定に変更<br>　m_pShareData-&gt;m_Common.m_bDispTabWndMultiWin = TRUE;<br>がありますが、これを<br>　//タブウィンドウをまとめない設定に変更<br>　Command_BIND_WINDOW();<br>に修正すればよいかもしれません。応急処置としてはこの修正で<br>いけると思います。<br><br>ただ、Command_BIND_WINDOW関数ではタブモードの変更をSendでは<br>なくPostしていますので、タイミングによってはうまくいかない可<br>能性があります。<br>CShareData::SendMessageToAllEditors関数を作るなど、タブモー<br>ド変更に伴う処理の終了をまってから、重ねて表示などの各処理<br>を行なうようにする必要があるかも知れません。<br></div></section>
     <ul><li><section><h1 id=3741>
     <span class="no">[3741]</span>
-    <a class="title" href="#3741">Re3: タブモードでの「重ねて表示」</a>
+    <a class="thread-title" href="#3741">Re3: タブモードでの「重ねて表示」</a>
     <span class="author">げんた</span>
     <time datetime="2004-09-07T00:50:30">2004年09月07日 00:50</time></h1>
     <div class="body">&gt;重ねて表示する際に、ウィンドウが隠れているのが原因かもしれ<br>&gt;ません。<br>現状でも，最大化されたウィンドウを最大化状態のまま重ねて表示してしまうという問題点があったので，並べ替える前にすべてShowWindowのSW_RESTOREで元に戻してからSetWindowPosを実行しているのですが相変わらず駄目なのです．<br></div></section>
     <ul><li><section><h1 id=3742>
     <span class="no">[3742]</span>
-    <a class="title" href="#3742">Re4: タブモードでの「重ねて表示」</a>
+    <a class="thread-title" href="#3742">Re4: タブモードでの「重ねて表示」</a>
     <span class="author">Kazika</span>
     <time datetime="2004-09-07T23:01:46">2004年09月07日 23:01</time></h1>
     <div class="body">&gt;&gt;重ねて表示する際に、ウィンドウが隠れているのが原因かもしれ<br>&gt;&gt;ません。<br>&gt;現状でも，最大化されたウィンドウを最大化状態のまま重ねて表<br>&gt;示してしまうという問題点があったので，並べ替える前にすべて<br>&gt;ShowWindowのSW_RESTOREで元に戻してからSetWindowPosを実行し<br>&gt;ているのですが相変わらず駄目なのです．<br>私のほうでも試してみましたがダメでした。<br>SetWindowPosのNOACTIVATEをはずして逆順で試したりもしてみた<br>のですが、何故かうまくいきませんね。<br>もう少し時間のあるときにじっくり調べてみます。<br></div></section>

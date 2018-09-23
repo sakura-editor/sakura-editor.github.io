@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>INCLUDEファイルを開く</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>INCLUDEファイルを開く | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">290</span>
-    <a class="title" href="290.html#290">INCLUDEファイルを開く</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=290>
+    <a class="thread-title" href="290.html#290">INCLUDEファイルを開く</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=290>
     <span class="no">[290]</span>
-    <a class="title" href="#290">INCLUDEファイルを開く</a>
+    <a class="thread-title" href="#290">INCLUDEファイルを開く</a>
     <span class="author">まくろ初心者</span>
     <time datetime="2006-07-02T16:14:21">2006年07月02日 16:14</time></h1>
     <div class="body">' OpenIncludeFile.vbs<br>' <br>' 現在行にある #include &lt;file.h&gt;、#include "file.h" のfile.hを開く。<br>' 検索対象は環境変数の INCLUDE と現在開いているファイルのフォルダ内<br><br>Call Main<br><br>' メイン処理<br>Sub Main()<br>    Dim objShell<br>    Dim sDistFileName, sCurDirName<br>    Dim i, pos<br><br>    Set objShell = CreateObject("Wscript.Shell")<br>    sIncPath = objShell.ExpandEnvironmentStrings("%INCLUDE%")<br><br>    sDistFileName = getIncludeFileName(Editor.GetLineStr(0))<br>    sCurDirName = getCurrentFolderName()<br><br>    If openFile(sCurDirName &amp; sDistFileName) Then Exit Sub<br><br>    i = 1<br>    Do While True<br>        pos = InStr(i, sIncPath, ";")<br>        If IsNull(pos) Then Exit Do<br>        If pos = 0 Then<br>            If openFile(Mid(sIncPath, i)) Then Exit Sub<br>            Exit Do<br>        End If<br>        If openFile(Mid(sIncPath, i, pos - i)) Then Exit Sub<br>        i = pos + 1<br>    Loop<br>End Sub<br><br>' インクルードファイル名取得<br>Function getIncludeFileName(sLine)<br>    Dim pos, endpos<br> <br>    getIncludeFileName = ""<br>    pos = InStr(1, sLine, "&lt;")<br>    If pos = 0 Then<br>        pos = InStr(1, sLine, """")<br>        endpos = InStr(pos + 1, sLine, """")<br>    Else<br>        endpos = InStr(pos + 1, sLine, "&gt;")<br>    End If<br><br>    If pos = 0 Or endpos = 0 Then Exit Function<br>    pos = pos + 1<br>    getIncludeFileName = Mid(sLine, pos, endpos - pos)<br> <br>End Function<br><br>' 現在のフォルダ名取得<br>Function getCurrentFolderName()<br>    Dim pos<br>    Dim sCurFileName<br> <br>    getCurrentFolderName = ""<br> <br>    sCurFileName = GetFileName()<br>    pos = InStrRev(sCurFileName, "\")<br>    If pos = 0 Then Exit Function<br>    getCurrentFolderName = Mid(sCurFileName, 1, pos)<br>End Function<br><br>' ファイルが存在していたら開く<br>Function openFile(sPath)<br>    Dim fso<br>    Set fso = CreateObject("Scripting.FileSystemObject")<br> <br>    openFile = False<br>    If (fso.FileExists(sPath)) Then<br>        Editor.FileOpen (sPath)<br>        openFile = True<br>    End If<br> <br>End Function<br><br></div></section>

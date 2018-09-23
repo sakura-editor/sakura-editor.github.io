@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ALT+キーでのカーソル移動</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ALT+キーでのカーソル移動 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3554</span>
-    <a class="title" href="3554.html#3554">ALT+キーでのカーソル移動</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=3554>
+    <a class="thread-title" href="3554.html#3554">ALT+キーでのカーソル移動</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3554>
     <span class="no">[3554]</span>
-    <a class="title" href="#3554">ALT+キーでのカーソル移動</a>
+    <a class="thread-title" href="#3554">ALT+キーでのカーソル移動</a>
     <span class="author">もか</span>
     <time datetime="2004-04-28T02:33:23">2004年04月28日 02:33</time></h1>
     <div class="body">&gt;&gt;data:3583 [質問]キー割り当て：ALT＋「？」<br>ふと思い出したので、パッチ出します。<br><br>diff -ur ssrc_2004-04-11/sakura_core/CEditView.cpp ssrc_2004-04-11fix/sakura_core/CEditView.cpp<br>--- ssrc_2004-04-11/sakura_core/CEditView.cpp&#9;Sun Apr 11 16:07:52 2004<br>+++ ssrc_2004-04-11fix/sakura_core/CEditView.cpp&#9;Wed Apr 28 01:18:40 2004<br>@@ -884,6 +884,12 @@<br> &#9;&#9;m_bPrevCommand = 0;<br> &#9;&#9;return 0L;<br> <br>+&#9;// 2004.04.27 Moca From Here ALT+xでALTを押したままだとキーリピートがOFFにならない対策<br>+&#9;case WM_SYSKEYUP:<br>+&#9;&#9;m_bPrevCommand = 0;<br>+&#9;&#9;// 念のため呼ぶ<br>+&#9;&#9;return ::DefWindowProc( hwnd, uMsg, wParam, lParam );<br>+&#9;// 2004.04.27 To Here<br> <br> //&#9;case WM_MBUTTONDBLCLK:<br> &#9;case WM_LBUTTONDBLCLK:<br>diff -ur ssrc_2004-04-11/sakura_core/CEditWnd.cpp ssrc_2004-04-11fix/sakura_core/CEditWnd.cpp<br>--- ssrc_2004-04-11/sakura_core/CEditWnd.cpp&#9;Thu Mar 18 00:44:28 2004<br>+++ ssrc_2004-04-11fix/sakura_core/CEditWnd.cpp&#9;Wed Apr 28 01:19:59 2004<br>@@ -1111,6 +1111,7 @@<br> &#9;case WM_CHAR:<br> &#9;case WM_IME_CHAR:<br> &#9;case WM_KEYUP:<br>+&#9;case WM_SYSKEYUP:&#9;// 2004.04.28 Moca ALT+キーのキーリピート処理のため追加<br> &#9;case WM_ENTERMENULOOP:<br> &#9;case MYWM_IME_REQUEST:   /*  再変換対応 by minfu 2002.03.27  */ // 20020331 aroka<br> &#9;&#9;/* メッセージの配送 */<br><br><br># 初めてWineでサクラを動かしたのですが、こちらはキーリピートONのままでした。WM_KEUPがこないのかな<br></div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>マクロ関数の充実化</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>マクロ関数の充実化 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1516</span>
-    <a class="title" href="1516.html#1516">マクロ関数の充実化</a></div>
+    <a class="thread-title" href="1516.html#1516">マクロ関数の充実化</a></div>
     <ul><li><div class="list-title">
     <span class="no">1564</span>
-    <a class="title" href="1516.html#1564">Re:マクロ関数の充実化</a></div>
+    <a class="thread-title" href="1516.html#1564">Re:マクロ関数の充実化</a></div>
     <ul><li><div class="list-title">
     <span class="no">1568</span>
-    <a class="title" href="1516.html#1568">Re2:マクロ関数の充実化</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1516>
+    <a class="thread-title" href="1516.html#1568">Re2:マクロ関数の充実化</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1516>
     <span class="no">[1516]</span>
-    <a class="title" href="#1516">マクロ関数の充実化</a>
+    <a class="thread-title" href="#1516">マクロ関数の充実化</a>
     <span class="author">syat</span>
     <time datetime="2011-03-20T10:11:21">2011年03月20日 10:11</time></h1>
     <div class="body">あったら良いと思うマクロ関数を追加するパッチをアップしました。<br>PatchUnicode:3226146<br>ベースは去年もかさんがwikiで提案されていた案で、そのうち簡単に実現できそうなものをピックアップして実装しています。<br><br>＜追加予定関数＞<br>InputBox(message, default, max) : string テキスト入力ダイアログの表示<br>MessageBox(message, type) : int メッセージボックスの表示<br>ErrorMsg(message) : int メッセージボックス（エラー）の表示<br>WarnMsg(message) : int メッセージボックス（警告）の表示<br>InfoMsg(message) : int メッセージボックス（情報）の表示<br>OkCancelBox(message) : int メッセージボックス（確認：OK／キャンセル）の表示<br>YesNoBox(message) : int メッセージボックス（確認：はい／いいえ）の表示<br>CompareVersion(ver1, ver2) : int バージョン番号の比較<br>Sleep(milli) : int 指定した時間停止<br>FileOpenDialog(default, filter) : string ファイルを開くダイアログの表示<br>FileSaveDialog(default, filter) : string ファイルを保存ダイアログの表示<br>FolderDialog(message, default) : string フォルダを開くダイアログの表示<br>GetClipboard(opt) : string クリップボードの文字列を取得<br>SetClipboard(opt, value) : int クリップボードに文字列を設定<br></div></section>
     <ul><li><section><h1 id=1564>
     <span class="no">[1564]</span>
-    <a class="title" href="#1564">Re:マクロ関数の充実化</a>
+    <a class="thread-title" href="#1564">Re:マクロ関数の充実化</a>
     <span class="author">syat</span>
     <time datetime="2011-05-22T08:34:59">2011年05月22日 08:34</time></h1>
     <div class="body">リビジョン1917でコミットしました。</div></section>
     <ul><li><section><h1 id=1568>
     <span class="no">[1568]</span>
-    <a class="title" href="#1568">Re2:マクロ関数の充実化</a>
+    <a class="thread-title" href="#1568">Re2:マクロ関数の充実化</a>
     <span class="author">syat</span>
     <time datetime="2011-05-29T14:03:26">2011年05月29日 14:03</time></h1>
     <div class="body">コミット時に util/format.hのコメントが文字化けしていたのを直しました。<br>リビジョン:1919<br></div></section>

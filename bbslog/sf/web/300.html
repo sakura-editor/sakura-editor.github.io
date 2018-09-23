@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>sourceforgeのDocManager</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Webトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>sourceforgeのDocManager | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Webトップへ</a>
+        <li><div class="list-title">
     <span class="no">300</span>
-    <a class="title" href="300.html#300">sourceforgeのDocManager</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=300>
+    <a class="thread-title" href="300.html#300">sourceforgeのDocManager</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=300>
     <span class="no">[300]</span>
-    <a class="title" href="#300">sourceforgeのDocManager</a>
+    <a class="thread-title" href="#300">sourceforgeのDocManager</a>
     <span class="author">maru</span>
     <time datetime="2007-06-09T02:18:23">2007年06月09日 02:18</time></h1>
     <div class="body">DocManager試してみました。<br>http://sourceforge.net/docman/index.php?group_id=12488<br>送信フォーム上での1行が長いと微妙な文字化けを起こすので(例patches#1721425などと同様の現象)、ちょっと配慮が必要です。<br>30byteくらい？の一定バイト数単位のかたまりで保存されていて、ちょうど境界のところにまたがるように2バイト文字が来ると化けが発生しているように見えます。<br>対策としては、境界線をまたがるところに半角スペースで埋める or こまめに改行する、でしょうかねぇ。<br><br>そういえば、フォーラムが消えましたが運用は見送りでしょうか。<br></div></section>

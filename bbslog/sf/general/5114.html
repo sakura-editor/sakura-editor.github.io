@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>関連づけツール</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>関連づけツール | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5114</span>
-    <a class="title" href="5114.html#5114">関連づけツール</a></div>
+    <a class="thread-title" href="5114.html#5114">関連づけツール</a></div>
     <ul><li><div class="list-title">
     <span class="no">5221</span>
-    <a class="title" href="5114.html#5221">RE: 関連づけツール</a></div>
+    <a class="thread-title" href="5114.html#5221">RE: 関連づけツール</a></div>
     <ul><li><div class="list-title">
     <span class="no">5224</span>
-    <a class="title" href="5114.html#5224">Re2: 関連づけツール</a></div>
+    <a class="thread-title" href="5114.html#5224">Re2: 関連づけツール</a></div>
     <ul><li><div class="list-title">
     <span class="no">5225</span>
-    <a class="title" href="5114.html#5225">Re3: 関連づけツール</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5114>
+    <a class="thread-title" href="5114.html#5225">Re3: 関連づけツール</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5114>
     <span class="no">[5114]</span>
-    <a class="title" href="#5114">関連づけツール</a>
+    <a class="thread-title" href="#5114">関連づけツール</a>
     <span class="author">げんた</span>
     <time datetime="2006-03-21T13:32:33">2006年03月21日 13:32</time></h1>
     <div class="body">LhaplusのページでEXEファイルを関連づけてしまう問題のまとめページを発見しました．<br>http://www7a.biglobe.ne.jp/~schezo/exefix/index.html<br><br>簡単に言うと，EXEの標準動作に実行以外の機能を割り当ててしまうとアプリケーションが何も実行できなくなってしまう．回避策はcommand.comを実行してそこからレジストリエディタを開いて復旧させる，というものです．<br>.comも関連づけられていたら，もうコマンドプロンプトのセーフモードで起動するしか復旧方法は無いのかも．<br><br>.EXEをエディタで編集するような酔狂な人はいないとは思いますが，同様の問題になる可能性は0とはいえないので，できれば対策した方がよいと思います．.comもね．<br></div></section>
     <ul><li><section><h1 id=5221>
     <span class="no">[5221]</span>
-    <a class="title" href="#5221">RE: 関連づけツール</a>
+    <a class="thread-title" href="#5221">RE: 関連づけツール</a>
     <span class="author">すい</span>
     <time datetime="2006-05-11T02:38:03">2006年05月11日 02:38</time></h1>
     <div class="body">&gt;LhaplusのページでEXEファイルを関連づけてしまう問題のまとめページを発見しました．<br><br>そのツールは関連付けを行う拡張子の設定を、丸々そのツールの設定のみに<br>入替えてしまうためにそういう問題が出るのでしょう。<br>サクラエディタの関連付けツールには関係ない話だと思います。<br><br>少なくともサクラエディタの関連付けツールでは<br>&gt;簡単に言うと，EXEの標準動作に実行以外の機能を割り当ててしまうとアプリケーションが何も実行できなくなってしまう．回避策はcommand.comを実行してそこからレジストリエディタを開いて復旧させる，というものです．<br>&gt;.comも関連づけられていたら，もうコマンドプロンプトのセーフモードで起動するしか復旧方法は無いのかも．<br>こういう事はありません。<br>サクラエディタの関連付けツールではオリジナルの設定は消えません<br>（オリジナルの関連付け設定の中に、サクラエディタの設定が追加される形）<br>ので。<br><br>拡張子 .exe にサクラエディタを関連付けた時、<br>「標準（ファイルをダブルクリック）で Sakura Editor で開く」が off の<br>状態なら、.exe ファイルをマウスでダブルクリックすると普通に<br>その .exe ファイルが実行されます。<br><br>「標準（ファイルをダブルクリック）で Sakura Editor で開く」が on の<br>状態だと、.exe ファイルをマウスでダブルクリックするとサクラエディタで<br>開かれてしまいますが、その場合でも .exe ファイルを<br>マウス右クリック → 「開く(O)」<br>と操作すれば普通に その .exe ファイルを実行する事ができます。<br><br><br>まぁ、もし仮により一層の改善をするとしたら<br>　　拡張子 .exe や .com には<br>　　「標準（ファイルをダブルクリック）で Sakura Editor で開く」が on の<br>　　状態にならないようにする。<br>とでも するくらいでしょうか。<br><br>&gt;.EXEをエディタで編集するような酔狂な人はいないとは思いますが，同様の問題になる可能性は0とはいえないので，できれば対策した方がよいと思います．.comもね．<br><br>普通に .com に関連付けして使っている人がココにいるんです。(;^^;)<br>よく拡張子 .com の perl スクリプトを作るもので。エディタでの編集作業必須。<br></div></section>
     <ul><li><section><h1 id=5224>
     <span class="no">[5224]</span>
-    <a class="title" href="#5224">Re2: 関連づけツール</a>
+    <a class="thread-title" href="#5224">Re2: 関連づけツール</a>
     <span class="author">げんた</span>
     <time datetime="2006-05-12T01:07:40">2006年05月12日 01:07</time></h1>
     <div class="body">▼ すいさん<br>&gt; よく拡張子 .com の perl スクリプトを作るもので。<br>えっ！これ，なんですか？裏技？<br><br>詳しく教えてください．</div></section>
     <ul><li><section><h1 id=5225>
     <span class="no">[5225]</span>
-    <a class="title" href="#5225">Re3: 関連づけツール</a>
+    <a class="thread-title" href="#5225">Re3: 関連づけツール</a>
     <span class="author">すい</span>
     <time datetime="2006-05-12T02:27:10">2006年05月12日 02:27</time></h1>
     <div class="body">&gt;詳しく教えてください．<br><br>SOS を愛用しているんです。<br># SOS の実体は単なる文字列なんですけど。魔法の文字列(え゛)<br>http://www.vector.co.jp/soft/dos/util/se028129.html<br><br># この作者さんのツールは一風変わった物が多くて結構気に入っています。<br># http://www.vector.co.jp/vpack/browse/person/an000460.html<br># http://www.asahi-net.or.jp/~bi3t-aoym/nidetool.htm<br><br>ただ SOS は Windows での利用はかなり制約が出て使いにくいんですけどね。<br>Windows ではコマンドラインから非常に長い文字列をオプション<br>パラメータで渡す事が出来ますが、SOS が あまり長い文字列を<br>受け取る事が出来ない。長い文字列（長いファイルパスとか）を<br>渡そうとすると正常に動作してくれなくて、それで結構不便な思いを<br>する事があります。<br><br>SOS は perl だけではなく awk 等、同類のツールの .com スクリプトを<br>作成する事ができますが、私は perl で使う事が多いので、サクラエディタ<br>では .com も perl スクリプト扱いの設定にしています。<br></div></section>

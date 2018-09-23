@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>印刷プレビューすると落ちる件</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>印刷プレビューすると落ちる件 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">23</span>
-    <a class="title" href="23.html#23">印刷プレビューすると落ちる件</a></div>
+    <a class="thread-title" href="23.html#23">印刷プレビューすると落ちる件</a></div>
     <ul><li><div class="list-title">
     <span class="no">28</span>
-    <a class="title" href="23.html#28">Re:印刷プレビューすると落ちる件</a></div>
+    <a class="thread-title" href="23.html#28">Re:印刷プレビューすると落ちる件</a></div>
     </li><li><div class="list-title">
     <span class="no">68</span>
-    <a class="title" href="23.html#68">Re:印刷プレビューすると落ちる件</a></div>
+    <a class="thread-title" href="23.html#68">Re:印刷プレビューすると落ちる件</a></div>
     <ul><li><div class="list-title">
     <span class="no">80</span>
-    <a class="title" href="23.html#80">Re2:印刷プレビューすると落ちる件</a></div>
+    <a class="thread-title" href="23.html#80">Re2:印刷プレビューすると落ちる件</a></div>
     <ul><li><div class="list-title">
     <span class="no">87</span>
-    <a class="title" href="23.html#87">Re3:印刷プレビューすると落ちる件</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=23>
+    <a class="thread-title" href="23.html#87">Re3:印刷プレビューすると落ちる件</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=23>
     <span class="no">[23]</span>
-    <a class="title" href="#23">印刷プレビューすると落ちる件</a>
+    <a class="thread-title" href="#23">印刷プレビューすると落ちる件</a>
     <span class="author">Uchi</span>
     <time datetime="2007-11-17T12:22:27">2007年11月17日 12:22</time></h1>
     <div class="body">54&#9;ハングルの一覧ファイルで印刷プレビューすると落ちる<br><br>の原因がわかりましたのでご報告します。<br><br>CLayoutMgr.hの220行目<br>    bool _ExistKinsokuKuto(wchar_t wc) const{ return m_pszKinsokuKuto_1.size() &amp;&amp; wcschr(&amp;m_pszKinsokuKuto_1[0],wc)!=NULL; }<br><br>が原因でした。<br>m_pszKinsokuKuto_1 は std::vector の変数なのでnull文字で終点されているわけでないのに、<br>wcschr() というnull文字終端を期待する関数を使用しているのが原因です。<br><br>現象としては、印刷時に発生していましたが、起動時などにも発生しうる状況でしょう。<br>その下の _ExistKinsokuHead関数 も同様でしょう（使用されていないようですが）<br><br>キャストは控えめにということで。</div></section>
     <ul><li><section><h1 id=28>
     <span class="no">[28]</span>
-    <a class="title" href="#28">Re:印刷プレビューすると落ちる件</a>
+    <a class="thread-title" href="#28">Re:印刷プレビューすると落ちる件</a>
     <span class="author">kobake</span>
     <time datetime="2007-11-17T23:42:21">2007年11月17日 23:42</time></h1>
     <div class="body">▼ Uchiさん<br>&gt; 54&#9;ハングルの一覧ファイルで印刷プレビューすると落ちる<br>&gt; <br>&gt; の原因がわかりましたのでご報告します。<br>&gt; <br>&gt; CLayoutMgr.hの220行目<br>&gt;     bool _ExistKinsokuKuto(wchar_t wc) const{ return m_pszKinsokuKuto_1.size() &amp;&amp; wcschr(&amp;m_pszKinsokuKuto_1[0],wc)!=NULL; }<br>&gt; <br>&gt; が原因でした。<br>&gt; m_pszKinsokuKuto_1 は std::vector の変数なのでnull文字で終点されているわけでないのに、<br>&gt; wcschr() というnull文字終端を期待する関数を使用しているのが原因です。<br>&gt; <br>&gt; 現象としては、印刷時に発生していましたが、起動時などにも発生しうる状況でしょう。<br>&gt; その下の _ExistKinsokuHead関数 も同様でしょう（使用されていないようですが）<br>&gt; <br>&gt; キャストは控えめにということで。<br><br>なるほど…！ご調査ありがとうございます。<br>作業範囲の多さもあって、深く理解も検証も行わないまま<br>「機械的に」ガンガンソースいじり倒した箇所が多々あって、そのつけが回った感じですorz<br><br>全般を通して「ピアレビュー」的なプロセスが必要かもしれません。</div></section>
     </li><li><section><h1 id=68>
     <span class="no">[68]</span>
-    <a class="title" href="#68">Re:印刷プレビューすると落ちる件</a>
+    <a class="thread-title" href="#68">Re:印刷プレビューすると落ちる件</a>
     <span class="author">kobake</span>
     <time datetime="2007-11-27T23:29:21">2007年11月27日 23:29</time></h1>
     <div class="body">遅くなりましたが、修正パッチを登録しました。<br>情報ありがとうございました。<br><br>PatchUnicode#1839483 印刷プレビューで落ちる問題の修正</div></section>
     <ul><li><section><h1 id=80>
     <span class="no">[80]</span>
-    <a class="title" href="#80">Re2:印刷プレビューすると落ちる件</a>
+    <a class="thread-title" href="#80">Re2:印刷プレビューすると落ちる件</a>
     <span class="author">Uchi</span>
     <time datetime="2007-12-01T16:30:25">2007年12月01日 16:30</time></h1>
     <div class="body">▼ kobakeさん<br>&gt; 遅くなりましたが、修正パッチを登録しました。<br>&gt; 情報ありがとうございました。<br>&gt; <br>&gt; PatchUnicode#1839483 印刷プレビューで落ちる問題の修正<br>動作確認いたしました。<br>必ず発生するものでもないので動作確認だけでは問題があるので、<br>コード等も追ってみて、問題ないようでした。</div></section>
     <ul><li><section><h1 id=87>
     <span class="no">[87]</span>
-    <a class="title" href="#87">Re3:印刷プレビューすると落ちる件</a>
+    <a class="thread-title" href="#87">Re3:印刷プレビューすると落ちる件</a>
     <span class="author">kobake</span>
     <time datetime="2007-12-05T01:23:09">2007年12月05日 01:23</time></h1>
     <div class="body">▼ Uchiさん<br>&gt; 動作確認いたしました。<br>&gt; 必ず発生するものでもないので動作確認だけでは問題があるので、<br>&gt; コード等も追ってみて、問題ないようでした。<br><br>レビューありがとうございます。<br>コミットしました。(rev:1205)</div></section>

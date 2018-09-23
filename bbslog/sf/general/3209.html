@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>強調キーワード数の上限1000件について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>強調キーワード数の上限1000件について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3209</span>
-    <a class="title" href="3209.html#3209">強調キーワード数の上限1000件について</a></div>
+    <a class="thread-title" href="3209.html#3209">強調キーワード数の上限1000件について</a></div>
     <ul><li><div class="list-title">
     <span class="no">3235</span>
-    <a class="title" href="3209.html#3235">Re: 強調キーワード数の上限1000件について</a></div>
+    <a class="thread-title" href="3209.html#3235">Re: 強調キーワード数の上限1000件について</a></div>
     <ul><li><div class="list-title">
     <span class="no">3237</span>
-    <a class="title" href="3209.html#3237">ありがとうございました。</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3209>
+    <a class="thread-title" href="3209.html#3237">ありがとうございました。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3209>
     <span class="no">[3209]</span>
-    <a class="title" href="#3209">強調キーワード数の上限1000件について</a>
+    <a class="thread-title" href="#3209">強調キーワード数の上限1000件について</a>
     <span class="author">サクラエディタユーザー</span>
     <time datetime="2003-08-28T13:14:19">2003年08月28日 13:14</time></h1>
     <div class="body">サクラエディタを使わせてもらってます。<br><br>PHPのキーワードファイルを下記アドレスよりダウンロードしたんですが、<br>2800件以上のキーワードがあるため、<br>いくつかのキーワードがインポートされませんでした。<br>キーワードには1000件の上限が設定されているようです。<br>この上限を回避する事はできるんでしょうか？<br>1000件以上のキーワードをインポートする方法をご存知の方がいれば<br>お教えください。<br><br><br>キーワードは以下よりダウンロードしたものです。<br><a href=http://www.egroups.co.jp/files/sakura-editor/User/Data/ target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>User/<wbr>Data/<wbr></nobr></a><br></div></section>
     <ul><li><section><h1 id=3235>
     <span class="no">[3235]</span>
-    <a class="title" href="#3235">Re: 強調キーワード数の上限1000件について</a>
+    <a class="thread-title" href="#3235">Re: 強調キーワード数の上限1000件について</a>
     <span class="author">もか</span>
     <time datetime="2003-09-01T17:07:59">2003年09月01日 17:07</time></h1>
     <div class="body">&gt;PHPのキーワードファイルを下記アドレスよりダウンロードしたんですが、<br>&gt;2800件以上のキーワードがあるため、<br>&gt;いくつかのキーワードがインポートされませんでした。<br>&gt;キーワードには1000件の上限が設定されているようです。<br>&gt;この上限を回避する事はできるんでしょうか？<br>(ソースコード上で)キーワード上限を3000位に変更してコンパイルするのが、現状では手っ取り早い方法です。<br><br>自分でコンパイルするには、CKeyWordSetMgr.hの25行目で定義されるMAX_KEYWORDNUMの数を変えてください。<br>例：上限を3000にする場合<br>#define&#9;&#9;MAX_KEYWORDNUM&#9;3000<br><br>一般ユーザにコンパイルしろと言うのは酷なので、バイナリをあげておきます。<br>http://www.geocities.co.jp/SiliconValley-Oakland/6358/sakura_2003-08-20kw3k.zip<br>※オリジナルと同時に起動すると落ちますので、ご注意ください。<br></div></section>
     <ul><li><section><h1 id=3237>
     <span class="no">[3237]</span>
-    <a class="title" href="#3237">ありがとうございました。</a>
+    <a class="thread-title" href="#3237">ありがとうございました。</a>
     <span class="author">サクラエディタユーザー</span>
     <time datetime="2003-09-02T14:14:29">2003年09月02日 14:14</time></h1>
     <div class="body">▼ もかさん<br>キーワード全部インポートすることが出来ました。<br>ありがとうございます。<br>PHP自体の関数はそんなに多くないんですが、<br>キーワードファイルには、<br>外部のライブラリ関数も含まれるようで、<br>選んで消すのも大変なので困っていました<br>バイナリまでアップしていただき、助かりました。<br>会社にVisualStudioがあるので次回からは<br>コンパイルにもチャレンジしてみます。<br></div></section>

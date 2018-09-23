@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現の行末メタキャラクタ $ </title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現の行末メタキャラクタ $  | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2160</span>
-    <a class="title" href="2160.html#2160">正規表現の行末メタキャラクタ $ </a></div>
+    <a class="thread-title" href="2160.html#2160">正規表現の行末メタキャラクタ $ </a></div>
     <ul><li><div class="list-title">
     <span class="no">2162</span>
-    <a class="title" href="2160.html#2162">RE: 正規表現の行末メタキャラクタ $ </a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2160>
+    <a class="thread-title" href="2160.html#2162">RE: 正規表現の行末メタキャラクタ $ </a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2160>
     <span class="no">[2160]</span>
-    <a class="title" href="#2160">正規表現の行末メタキャラクタ $ </a>
+    <a class="thread-title" href="#2160">正規表現の行末メタキャラクタ $ </a>
     <span class="author">赤貝１号</span>
     <time datetime="2002-08-05T00:02:25">2002年08月05日 00:02</time></h1>
     <div class="body">　正規表現の行末メタキャラクタ $ は使用できないのでしょうか？<br>　現在Ver 1.3.2.1Vを使用していますが、たとえば<br>[A-Z]+$<br>では全然マッチしません。FAQとこのBBSの過去ログを見ましたが、これに関する<br>話題はないようです。とすると私だけかな？ と思ったりもしますが・・・<br></div></section>
     <ul><li><section><h1 id=2162>
     <span class="no">[2162]</span>
-    <a class="title" href="#2162">RE: 正規表現の行末メタキャラクタ $ </a>
+    <a class="thread-title" href="#2162">RE: 正規表現の行末メタキャラクタ $ </a>
     <span class="author">すい</span>
     <time datetime="2002-08-05T12:42:33">2002年08月05日 12:42</time></h1>
     <div class="body">&gt;　正規表現の行末メタキャラクタ $ は使用できないのでしょうか？<br>&gt;　現在Ver 1.3.2.1Vを使用していますが、たとえば<br>&gt;[A-Z]+$<br>&gt;では全然マッチしません。FAQとこのBBSの過去ログを見ましたが、これに関する<br>&gt;話題はないようです。とすると私だけかな？ と思ったりもしますが・・・<br><br>過去に何度か出ています。(^^;<br><br>現状、<br>[A-Z]+\r<br>とか<br>[A-Z]+\r$<br>とか<br>[A-Z]+\r?$<br>とかに せざるを得ない。<br>末尾の改行コードのうち \r(CR 0x0d) も文字として扱われてしまっているような感じで．．．<br>改行コードが \n(LF 0x0a)のみのテキストの場合は [A-Z]+$ でマッチします。<br></div></section>

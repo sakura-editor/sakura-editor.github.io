@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>リソースのDlgs.hとBCCのmakefile</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>リソースのDlgs.hとBCCのmakefile | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1131</span>
-    <a class="title" href="1131.html#1131">リソースのDlgs.hとBCCのmakefile</a></div>
+    <a class="thread-title" href="1131.html#1131">リソースのDlgs.hとBCCのmakefile</a></div>
     <ul><li><div class="list-title">
     <span class="no">1138</span>
-    <a class="title" href="1131.html#1138">Re:リソースのDlgs.hとBCCのmakefile</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1131>
+    <a class="thread-title" href="1131.html#1138">Re:リソースのDlgs.hとBCCのmakefile</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1131>
     <span class="no">[1131]</span>
-    <a class="title" href="#1131">リソースのDlgs.hとBCCのmakefile</a>
+    <a class="thread-title" href="#1131">リソースのDlgs.hとBCCのmakefile</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-10T09:39:01">2002年01月10日 09:39</time></h1>
     <div class="body">BCC用makefileにはインクルードパスが絶対パスで書かれています。<br>ここが自分の環境と異なっていても本体のコンパイルの際にはbcc32の環境ファイルが参照されるので問題ないのですが、リソースのコンパイルで"Dlgs.h"が見つからないエラーが出てしまいます。<br><br>試しにsakura_rc.rcの#include "Dlgs.h"の行を削除してみても問題なくコンパイルできるので、この行を取り除けたらと思うのですが、VCのリソースエディタで編集するとまたついてしまいます。<br><br>この行をbtoolで取り除けたらと思うのですが、いかがでしょう？（自分でやれって？)<br></div></section>
     <ul><li><section><h1 id=1138>
     <span class="no">[1138]</span>
-    <a class="title" href="#1138">Re:リソースのDlgs.hとBCCのmakefile</a>
+    <a class="thread-title" href="#1138">Re:リソースのDlgs.hとBCCのmakefile</a>
     <span class="author">あろか</span>
     <time datetime="2002-01-10T22:32:49">2002年01月10日 22:32</time></h1>
     <div class="body">▼ げんたさん<br>&gt; この行をbtoolで取り除けたらと思うのですが、いかがでしょう？（自分でやれって？)<br>RcCvt::include に以下の行を追加してください。<br><br>&#9;if( strstr( linestr, "Dlgs.h" ) != NULL )<br>&#9;{<br>&#9;&#9;strcpy( linestr, "\n" );<br>&#9;}<br><br>makefileの修正もお願いします。<br></div></section>

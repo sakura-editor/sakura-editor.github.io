@@ -1,99 +1,125 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ExtTextOutの制限？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ExtTextOutの制限？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1412</span>
-    <a class="title" href="1412.html#1412">ExtTextOutの制限？</a></div>
+    <a class="thread-title" href="1412.html#1412">ExtTextOutの制限？</a></div>
     <ul><li><div class="list-title">
     <span class="no">1413</span>
-    <a class="title" href="1412.html#1413">Re: ExtTextOutの制限？</a></div>
+    <a class="thread-title" href="1412.html#1413">Re: ExtTextOutの制限？</a></div>
     <ul><li><div class="list-title">
     <span class="no">1414</span>
-    <a class="title" href="1412.html#1414">Re2: ExtTextOutの制限？</a></div>
+    <a class="thread-title" href="1412.html#1414">Re2: ExtTextOutの制限？</a></div>
     <ul><li><div class="list-title">
     <span class="no">1415</span>
-    <a class="title" href="1412.html#1415">Re3: ExtTextOutの制限？</a></div>
+    <a class="thread-title" href="1412.html#1415">Re3: ExtTextOutの制限？</a></div>
     <ul><li><div class="list-title">
     <span class="no">1416</span>
-    <a class="title" href="1412.html#1416">Re4: ExtTextOutの制限？</a></div>
+    <a class="thread-title" href="1412.html#1416">Re4: ExtTextOutの制限？</a></div>
     </li><li><div class="list-title">
     <span class="no">1417</span>
-    <a class="title" href="1412.html#1417">Re3: ExtTextOutの制限？</a></div>
+    <a class="thread-title" href="1412.html#1417">Re3: ExtTextOutの制限？</a></div>
     <ul><li><div class="list-title">
     <span class="no">1418</span>
-    <a class="title" href="1412.html#1418">Re4: ExtTextOutの制限？</a></div>
+    <a class="thread-title" href="1412.html#1418">Re4: ExtTextOutの制限？</a></div>
     <ul><li><div class="list-title">
     <span class="no">1419</span>
-    <a class="title" href="1412.html#1419">Re5: ExtTextOutの制限？</a></div>
+    <a class="thread-title" href="1412.html#1419">Re5: ExtTextOutの制限？</a></div>
     <ul><li><div class="list-title">
     <span class="no">1420</span>
-    <a class="title" href="1412.html#1420">Re6: ExtTextOutの制限？</a></div>
+    <a class="thread-title" href="1412.html#1420">Re6: ExtTextOutの制限？</a></div>
     <ul><li><div class="list-title">
     <span class="no">1434</span>
-    <a class="title" href="1412.html#1434">Re6: ExtTextOutの制限？</a></div>
+    <a class="thread-title" href="1412.html#1434">Re6: ExtTextOutの制限？</a></div>
     </li><li><div class="list-title">
     <span class="no">1438</span>
-    <a class="title" href="1412.html#1438">Re7: ExtTextOutの制限？</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1412>
+    <a class="thread-title" href="1412.html#1438">Re7: ExtTextOutの制限？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1412>
     <span class="no">[1412]</span>
-    <a class="title" href="#1412">ExtTextOutの制限？</a>
+    <a class="thread-title" href="#1412">ExtTextOutの制限？</a>
     <span class="author">やざき</span>
     <time datetime="2002-01-30T13:31:53">2002年01月30日 13:31</time></h1>
     <div class="body">ある一定の文字数を超えると、行頭からダブって表示される問題ですが、どうもExtTextOutの制限に引っかかっている様子でした。<br>ウィンドウの左右にあふれている文字のクリッピングをExtTextOutに一任していたものを、動作に支障が出ない程度に自前でクリッピングするようにしました。<br>そしたら、不思議なことに行頭からダブって表示される問題は発生しなくなったように見えます。<br><br>ExtTextOutについて詳しくは、<br><a href=http://www.microsoft.com/japan/developer/library/jpgdipf/_win32_exttextout.htm target=_top><nobr>http://<wbr>www.<wbr>microsof<wbr>t.<wbr>com/<wbr>japan/<wbr>develope<wbr>r/<wbr>library/<wbr>jpgdipf/<wbr>_win32_e<wbr>xttextou<wbr>t.<wbr>htm</nobr></a><br><br><br>で、結局DispTextを次のように変更しました。<br><br>int CEditView::DispText( HDC hdc, int x, int y, const unsigned char* pData, int nLength )<br>{<br>&#9;if( 0 &gt;= nLength ){<br>&#9;&#9;return 0;<br>&#9;}<br>&#9;RECT&#9;rcClip;<br>&#9;int&#9;&#9;nLineHeight = m_nCharHeight + m_pcEditDoc-&gt;GetDocumentAttribute().m_nL<br>ineSpace;<br>&#9;int&#9;&#9;nCharWidth = m_nCharWidth + m_pcEditDoc-&gt;GetDocumentAttribute().m_nC<br>olmSpace;<br>&#9;UINT&#9;fuOptions = ETO_CLIPPED | ETO_OPAQUE;<br>&#9;rcClip.left = x;<br>&#9;rcClip.right = rcClip.left + ( nCharWidth ) * nLength;<br>&#9;rcClip.top = y;<br>&#9;if( rcClip.left &lt; m_nViewAlignLeft ){<br>&#9;&#9;rcClip.left = m_nViewAlignLeft;<br>&#9;}<br>&#9;if( rcClip.left &lt; rcClip.right<br>&#9; &amp;&amp; rcClip.left &lt; m_nViewAlignLeft + m_nViewCx &amp;&amp; rcClip.right &gt; m_nViewAlignLeft<br>&#9; &amp;&amp; rcClip.top &gt;= m_nViewAlignTop<br>&#9;){<br>&#9;&#9;rcClip.bottom = y + nLineHeight;<br>/*&#9;&#9;if( rcClip.right - rcClip.left &gt; 3000 ){<br>&#9;&#9;&#9;rcClip.right = rcClip.left + 3000;<br>&#9;&#9;}<br>&#9;&#9;::ExtTextOut( hdc, x, y, fuOptions, &amp;rcClip, (const char *)pData, nLength, m_pnDx );<br>*/<br>&#9;&#9;if( rcClip.right - rcClip.left &gt; m_nViewCx ){<br>&#9;&#9;&#9;rcClip.right = rcClip.left + m_nViewCx;<br>&#9;&#9;}<br>&#9;&#9;int nBefore = 0;&#9;//&#9;ウィンドウの左にあふれた文字数<br>&#9;&#9;int nAfter = 0;&#9;&#9;//&#9;ウィンドウの右にあふれた文字数<br>&#9;&#9;if ( x &lt; 0 ){<br>&#9;&#9;&#9;nBefore = ( 0 - x ) / nCharWidth;<br>&#9;&#9;}<br>&#9;&#9;if ( rcClip.right &lt; x + nCharWidth * nLength ){<br>&#9;&#9;&#9;nAfter = (x + nCharWidth * nLength - rcClip.right) / nCharWidth;<br>&#9;&#9;}<br><br>&#9;&#9;::ExtTextOut( hdc, x + nBefore * nCharWidth, y, fuOptions, &amp;rcClip, (const char *)&amp;pData[nBefore], nLength - nBefore - nAfter, m_pnDx );<br><br>&#9;}<br>&#9;return nLength;<br><br>}<br><br></div></section>
     <ul><li><section><h1 id=1413>
     <span class="no">[1413]</span>
-    <a class="title" href="#1413">Re: ExtTextOutの制限？</a>
+    <a class="thread-title" href="#1413">Re: ExtTextOutの制限？</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-30T14:48:48">2002年01月30日 14:48</time></h1>
     <div class="body">&gt;自前でクリッピングするようにしました。<br>2バイト文字の考慮が無いので，漢字コードの2バイト目から始まったときに表示がおかしくなる可能性があるような気がしますが大丈夫？<br></div></section>
     <ul><li><section><h1 id=1414>
     <span class="no">[1414]</span>
-    <a class="title" href="#1414">Re2: ExtTextOutの制限？</a>
+    <a class="thread-title" href="#1414">Re2: ExtTextOutの制限？</a>
     <span class="author">やざき</span>
     <time datetime="2002-01-30T15:31:19">2002年01月30日 15:31</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;自前でクリッピングするようにしました。<br>&gt; 2バイト文字の考慮が無いので，漢字コードの2バイト目から始まったときに表示がおかしくなる可能性があるような気がしますが大丈夫？<br><br>うむ。行番号のところで隠してるから大丈夫だと思ってたけどだめみたい(苦笑)</div></section>
     <ul><li><section><h1 id=1415>
     <span class="no">[1415]</span>
-    <a class="title" href="#1415">Re3: ExtTextOutの制限？</a>
+    <a class="thread-title" href="#1415">Re3: ExtTextOutの制限？</a>
     <span class="author">やざき</span>
     <time datetime="2002-01-30T15:44:17">2002年01月30日 15:44</time></h1>
     <div class="body">▼ やざきさん<br>&gt; うむ。行番号のところで隠してるから大丈夫だと思ってたけど、行番号を隠してたらだめみたい(苦笑)<br><br>化けるところを、一文字前（ウィンドウの外側）にしたらどうかしらん？<br>以下のように。<br><br>if ( x &lt; 0 ){<br>&#9;nBefore = ( 0 - x ) / nCharWidth;<br>&#9;nBefore = (nBefore &gt; 0) ? nBefore - 1 : nBefore;//&#9;-1してごまかす。<br>}<br></div></section>
     <ul><li><section><h1 id=1416>
     <span class="no">[1416]</span>
-    <a class="title" href="#1416">Re4: ExtTextOutの制限？</a>
+    <a class="thread-title" href="#1416">Re4: ExtTextOutの制限？</a>
     <span class="author">やざき</span>
     <time datetime="2002-01-30T15:46:35">2002年01月30日 15:46</time></h1>
     <div class="body">▼ やざきさん<br>&gt; ▼ やざきさん<br>&gt; &gt; うむ。行番号のところで隠してるから大丈夫だと思ってたけど、行番号を隠してたらだめみたい(苦笑)<br>&gt; <br>&gt; 化けるところを、一文字前（ウィンドウの外側）にしたらどうかしらん？<br>&gt; 以下のように。<br>&gt; <br>&gt; if ( x &lt; 0 ){<br>&gt; &#9;nBefore = ( 0 - x ) / nCharWidth;<br>&gt; &#9;nBefore = (nBefore &gt; 0) ? nBefore - 1 : nBefore;//&#9;-1してごまかす。<br>&gt; }<br><br>いや、x&lt;0ならいつもnBefore &gt; 0だから、<br><br>if ( x &lt; 0 ){<br>&#9;nBefore = ( 0 - x ) / nCharWidth - 1;<br>}<br><br>でいいのか。</div></section>
     </li><li><section><h1 id=1417>
     <span class="no">[1417]</span>
-    <a class="title" href="#1417">Re3: ExtTextOutの制限？</a>
+    <a class="thread-title" href="#1417">Re3: ExtTextOutの制限？</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-30T16:47:06">2002年01月30日 16:47</time></h1>
     <div class="body">&gt;化けるところを、一文字前（ウィンドウの外側）にしたらどうかしらん？<br>ぶったぎられた漢字の2バイト目が運悪く漢字の1バイト目としても認識されるもので，その次の1バイト目が2バイト目としても認識されるものだと立て続けに後ろの方まで化けるのでは？<br></div></section>
     <ul><li><section><h1 id=1418>
     <span class="no">[1418]</span>
-    <a class="title" href="#1418">Re4: ExtTextOutの制限？</a>
+    <a class="thread-title" href="#1418">Re4: ExtTextOutの制限？</a>
     <span class="author">やざき</span>
     <time datetime="2002-01-30T17:31:29">2002年01月30日 17:31</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;化けるところを、一文字前（ウィンドウの外側）にしたらどうかしらん？<br>&gt; ぶったぎられた漢字の2バイト目が運悪く漢字の1バイト目としても認識されるもので，その次の1バイト目が2バイト目としても認識されるものだと立て続けに後ろの方まで化けるのでは？<br><br>そしたらこうか？<br>int nBefore = 0;&#9;//&#9;ウィンドウの左にあふれた文字数<br>int nAfter = 0;&#9;&#9;//&#9;ウィンドウの右にあふれた文字数<br>if ( x &lt; 0 ){<br>&#9;int nCharChars;<br> <br>&#9;while (nBefore &lt; ( 0 - x ) / nCharWidth - 1){<br>&#9;&#9;nCharChars = CMemory::MemCharNext( (const char *)pData, nLength, (const char *)&amp;pData[nBefore] ) - (const char *)&amp;pData[nBefore];<br>&#9;&#9;nBefore += nCharChars;<br>&#9;}<br>}<br>if ( rcClip.right &lt; x + nCharWidth * nLength ){<br>&#9;nAfter = (x + nCharWidth * nLength - rcClip.right) / nCharWidth - 1;&#9;//&#9;-1してごまかす（うしろはいいよね？）<br>}<br></div></section>
     <ul><li><section><h1 id=1419>
     <span class="no">[1419]</span>
-    <a class="title" href="#1419">Re5: ExtTextOutの制限？</a>
+    <a class="thread-title" href="#1419">Re5: ExtTextOutの制限？</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-30T18:11:40">2002年01月30日 18:11</time></h1>
     <div class="body">&gt;そしたらこうか？<br>&gt;&#9;while (nBefore &lt; ( 0 - x ) / nCharWidth - 1){<br>&gt;&#9;&#9;nCharChars = CMemory::MemCharNext( (const char *)pData, nLength, (const char *)&amp;pData[nBefore] ) - (const char *)&amp;pData[nBefore];<br>&gt;&#9;&#9;nBefore += nCharChars;<br>&gt;&#9;}<br>&gt;}<br>処理としてはOKですが，毎回サーチしないといけないので処理速度が気になる．<br>とは言っても，ExtTextOutで先頭から指示するときは同じことがAPI内で行われているわけだから一緒か．<br></div></section>
     <ul><li><section><h1 id=1420>
     <span class="no">[1420]</span>
-    <a class="title" href="#1420">Re6: ExtTextOutの制限？</a>
+    <a class="thread-title" href="#1420">Re6: ExtTextOutの制限？</a>
     <span class="author">やざき</span>
     <time datetime="2002-01-30T18:39:23">2002年01月30日 18:39</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 処理としてはOKですが，毎回サーチしないといけないので処理速度が気になる．<br>&gt; とは言っても，ExtTextOutで先頭から指示するときは同じことがAPI内で行われているわけだから一緒か．<br><br>okでましたね(^-^)<br>ほんとはDispTextを呼び出す側でせっかくスキャンしているのだから、きちんとクリッピングすれば、もっと無駄が省けると思いますが。。。<br></div></section>
     <ul><li><section><h1 id=1434>
     <span class="no">[1434]</span>
-    <a class="title" href="#1434">Re6: ExtTextOutの制限？</a>
+    <a class="thread-title" href="#1434">Re6: ExtTextOutの制限？</a>
     <span class="author">みく</span>
     <time datetime="2002-01-31T19:36:43">2002年01月31日 19:36</time></h1>
     <div class="body"><br>TEditorの方の掲示板でタイムリーな話題が...<br><br>http://mcgi2.nifty.ne.jp/cgi-bin/thread.cgi?user_id=VYR01647&amp;disp_no=2087&amp;log_no=485&amp;msg_per_page=50&amp;def=10<br></div></section>
     </li><li><section><h1 id=1438>
     <span class="no">[1438]</span>
-    <a class="title" href="#1438">Re7: ExtTextOutの制限？</a>
+    <a class="thread-title" href="#1438">Re7: ExtTextOutの制限？</a>
     <span class="author">げんた</span>
     <time datetime="2002-02-01T00:50:38">2002年02月01日 00:50</time></h1>
     <div class="body">▼ やざきさん<br>&gt; okでましたね(^-^)<br>バグ対応と言うことで今回のリリースに取り込みます。</div></section>

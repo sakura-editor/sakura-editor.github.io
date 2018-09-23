@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>「現在位置の単語選択」について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>「現在位置の単語選択」について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7775</span>
-    <a class="title" href="7775.html#7775">「現在位置の単語選択」について</a></div>
+    <a class="thread-title" href="7775.html#7775">「現在位置の単語選択」について</a></div>
     <ul><li><div class="list-title">
     <span class="no">7776</span>
-    <a class="title" href="7775.html#7776">Re: 「現在位置の単語選択」について</a></div>
+    <a class="thread-title" href="7775.html#7776">Re: 「現在位置の単語選択」について</a></div>
     <ul><li><div class="list-title">
     <span class="no">7777</span>
-    <a class="title" href="7775.html#7777">Re2: 「現在位置の単語選択」について</a></div>
+    <a class="thread-title" href="7775.html#7777">Re2: 「現在位置の単語選択」について</a></div>
     <ul><li><div class="list-title">
     <span class="no">7778</span>
-    <a class="title" href="7775.html#7778">Re3: 「現在位置の単語選択」について</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7775>
+    <a class="thread-title" href="7775.html#7778">Re3: 「現在位置の単語選択」について</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7775>
     <span class="no">[7775]</span>
-    <a class="title" href="#7775">「現在位置の単語選択」について</a>
+    <a class="thread-title" href="#7775">「現在位置の単語選択」について</a>
     <span class="author">ペンペン</span>
     <time datetime="2014-02-18T00:23:34">2014年02月18日 00:23</time></h1>
     <div class="body">「現在位置の単語選択」にて、バグと思われる現象を見つけましたのでご報告します。<br>Ctrlを押しながらWキーを数回押下した時、以前のバージョンではWキー押下に応じて次々と次の単語を選択していた所が、Ver.2.1.1.0からは次の単語を選択しなくなりました。<br>変更履歴や仕様変更も確認しましたが、そのような記述がありませんでした。<br><br>良く使用する機能でしたので、可能であれば修正して頂けると助かります。<br><br><br>OS        ：Windows7(64bit)<br>バージョン：Ver.2.1.1.0(Unicode版)<br>(他にも必要な情報がありましたらご指摘下さい)<br></div></section>
     <ul><li><section><h1 id=7776>
     <span class="no">[7776]</span>
-    <a class="title" href="#7776">Re: 「現在位置の単語選択」について</a>
+    <a class="thread-title" href="#7776">Re: 「現在位置の単語選択」について</a>
     <span class="author">もか</span>
     <time datetime="2014-02-18T04:25:13">2014年02月18日 04:25</time></h1>
     <div class="body">r3417が原因のようです。<br>IsFuncEnableでなぜか選択中は実行できないようになっているようです。<br></div></section>
     <ul><li><section><h1 id=7777>
     <span class="no">[7777]</span>
-    <a class="title" href="#7777">Re2: 「現在位置の単語選択」について</a>
+    <a class="thread-title" href="#7777">Re2: 「現在位置の単語選択」について</a>
     <span class="author">novice</span>
     <time datetime="2014-02-18T22:09:55">2014年02月18日 22:09</time></h1>
     <div class="body">▼ もかさん<br>&gt; r3417が原因のようです。<br>&gt; IsFuncEnableでなぜか選択中は実行できないようになっているようです。<br><br>お手数おかけして申し訳ありません。<br>調べてみたところr12からそうなってました。<br><br>手元の修正で元の動作になることを確認しました。<br>sourceforgeの調子が悪いみたいなので、<br>復旧したらpatchを登録します。<br></div></section>
     <ul><li><section><h1 id=7778>
     <span class="no">[7778]</span>
-    <a class="title" href="#7778">Re3: 「現在位置の単語選択」について</a>
+    <a class="thread-title" href="#7778">Re3: 「現在位置の単語選択」について</a>
     <span class="author">ペンペン</span>
     <time datetime="2014-02-22T00:20:58">2014年02月22日 00:20</time></h1>
     <div class="body">ご連絡が遅くなってしまって申し訳ありませんでした。<br><br>もかさん、noviceさん、早速対応して頂いてありがとうございました。<br>パッチを元にコンパイルし動作確認しました。<br>結果はバッチリで、とても助かりました。<br>ありがとうございました。</div></section>

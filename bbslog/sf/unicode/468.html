@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>亜種Commit報告:(Chg) 全角スペースの描画ロジック変更</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>亜種Commit報告:(Chg) 全角スペースの描画ロジック変更 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">468</span>
-    <a class="title" href="468.html#468">亜種Commit報告:(Chg) 全角スペースの描画ロジック変更</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=468>
+    <a class="thread-title" href="468.html#468">亜種Commit報告:(Chg) 全角スペースの描画ロジック変更</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=468>
     <span class="no">[468]</span>
-    <a class="title" href="#468">亜種Commit報告:(Chg) 全角スペースの描画ロジック変更</a>
+    <a class="thread-title" href="#468">亜種Commit報告:(Chg) 全角スペースの描画ロジック変更</a>
     <span class="author">kobake</span>
     <time datetime="2008-06-08T07:23:39">2008年06月08日 07:23</time></h1>
     <div class="body">リビジョン：<br>　rev1374<br><br>変更種別：<br>　仕様変更。<br><br>内容：<br>　全角スペースを「□」ではなく、点線の四角で描画するようにしました。<br><br>色設定のポリシーに一貫性が無いため、仮のポリシーを定め、それに従い実装を進めています。仮のポリシーは、「色設定のネストはサポートしない」です。<br><br>例を挙げると、現状の本家仕様では、ダブルクォーテーション文字列内やコメント内において、全角スペースが全角スペース色になっています（色設定がネストされた動作）が、<br>branch2_draw仕様では、ダブルクォーテーション文字列内ではすべてダブルクォーテーション色、コメント内ではすべてコメント色、となります。<br><br>色設定をネストさせたい方もおられるかもしれませんが、<br>まずはシンプルな仕様で設計が掃除できてから、高級な機能については考えましょう。<br><br><br>ちなみに、今回の仕様変更は、<br>コメント内などの全角スペースが、記号の「□」と区別が付かないため、<br>点線矩形で描画することとしました。</div></section>

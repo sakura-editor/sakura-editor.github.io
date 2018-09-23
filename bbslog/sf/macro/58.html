@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>WSHマクロ５題1</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>WSHマクロ５題1 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">58</span>
-    <a class="title" href="58.html#58">WSHマクロ５題1</a></div>
+    <a class="thread-title" href="58.html#58">WSHマクロ５題1</a></div>
     <ul><li><div class="list-title">
     <span class="no">59</span>
-    <a class="title" href="58.html#59">WSHマクロ５題 2</a></div>
+    <a class="thread-title" href="58.html#59">WSHマクロ５題 2</a></div>
     <ul><li><div class="list-title">
     <span class="no">60</span>
-    <a class="title" href="58.html#60">WSHマクロ５題3</a></div>
+    <a class="thread-title" href="58.html#60">WSHマクロ５題3</a></div>
     <ul><li><div class="list-title">
     <span class="no">61</span>
-    <a class="title" href="58.html#61">RE: WSHマクロ５題</a></div>
+    <a class="thread-title" href="58.html#61">RE: WSHマクロ５題</a></div>
     <ul><li><div class="list-title">
     <span class="no">62</span>
-    <a class="title" href="58.html#62">RE2: WSHマクロ５題</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=58>
+    <a class="thread-title" href="58.html#62">RE2: WSHマクロ５題</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=58>
     <span class="no">[58]</span>
-    <a class="title" href="#58">WSHマクロ５題1</a>
+    <a class="thread-title" href="#58">WSHマクロ５題1</a>
     <span class="author">しみづ</span>
     <time datetime="2004-01-27T09:51:34">2004年01月27日 09:51</time></h1>
     <div class="body"><br>　ブロックコメント関係（コメントアウト、選択、解除）、括弧の選択、改行までの選択のWSHマクロを作ってみました。<br>　WSHマクロが使える環境の人がどれくらいいるのか……。<br><br>【addcomm.js】<br>// 選択部分をブロックコメント"/*""*/"で囲むWSHマクロ<br><br>var inp = Editor.GetSelectedString(0);<br>var len = inp.length+4;<br>var crlf = 0;<br>var rc;<br>var i;<br><br>for ( i = 0; ; i++ ) {  // 改行カウント<br>  rc = inp.indexOf("\n", i);<br>  if ( rc == -1 )<br>    break;<br>  crlf++;<br>  i = rc;<br>}<br>len -= crlf;  // 改行数を長さから引く<br>inp = "/*" + inp + "*/";<br>Editor.InsText(inp);  // 変更<br>for ( i = 0; i &lt; len; i++ ) {  // 変更部分を選択<br>  Editor.Left_Sel();<br>}<br><br>【delcomm.js】<br>// 選択部分の先頭と最後を2文字づつ削除するWSHマクロ<br><br>var inp = Editor.GetSelectedString(0);<br>var len = inp.length-4;<br>var outp = inp.substr(2, len);<br>var crlf = 0;<br>var rc;<br>var i;<br><br>for ( i = 0; ; i++ ) {  // 改行カウント<br>  rc = inp.indexOf("\n", i);<br>  if ( rc == -1 )<br>    break;<br>  crlf++;<br>  i = rc;<br>}<br>len -= crlf;  // 改行数を長さから引く<br>Editor.InsText(outp);  // 改行数を長さから引く<br>for ( i = 0; i &lt; len; i++ ) {  // 変更部分を選択<br>  Editor.Left_Sel();<br>}<br></div></section>
     <ul><li><section><h1 id=59>
     <span class="no">[59]</span>
-    <a class="title" href="#59">WSHマクロ５題 2</a>
+    <a class="thread-title" href="#59">WSHマクロ５題 2</a>
     <span class="author">しみづ</span>
     <time datetime="2004-01-27T10:01:42">2004年01月27日 10:01</time></h1>
     <div class="body"><br>【commsel.js】<br>// カーソル位置からさかのぼってブロックコメント"/*"を探し、そこから"*/"までを選択するWSHマクロ<br>// ※ファルイ先頭行・最終行にあるコメントは選択できません<br><br>var inp = " ";<br>var type = " ";<br>var last = 99;<br>var i = 0;<br>var tmp = " ";<br>var crlf = 0;<br>var rc = 0;<br><br>Editor.MoveHistSet();<br>Editor.GoFileEnd();<br>last = Number(Editor.ExpandParameter("$y"));  // 最後の行数を取得<br>Editor.MoveHistPrev();<br>for ( ; ; ) {  // ／＊をさかのぼって検索ループ<br>  Editor.Left_Sel();<br>  inp = Editor.GetSelectedString(0);<br>  tmp = inp.substr(0, 1);  // 頭の一文字を取得し<br>  if ( -1 != tmp.indexOf("*", 0) ) {  // ＊なら<br>    type = "*";<br>  }<br>  else if ( -1 != tmp.indexOf("/", 0) ) {  // その前が／か調べる<br>    if ( type == "*" ) {<br>      type = "/";<br>      break;<br>    }<br>  }<br>  else {<br>    type = " ";<br>  }<br>  if ( 1 == Number(Editor.ExpandParameter("$y")) )  // ファイル先頭にきたらやめる<br>    break;<br>}<br><br>if ( type == " " ) {  // 見つからなかったら戻る<br>  Editor.MoveHistPrev();<br>}<br>else {  // 見つかったら<br>  Editor.Left();  // 選択をやめて<br>  for ( i=0; ;i++ ) {  // ＊／を検索ループ<br>    Editor.Right_Sel();<br>    inp = Editor.GetSelectedString(0);<br>    tmp = inp.substr(i, 1);  // 次の一文字を取得し<br>    if ( -1 != tmp.indexOf("\n", 0) ) {  // 改行は選択にスキップされるので、次の一文字を取り直し<br>      i++;<br>      tmp = inp.substr(i, 1);<br>    }<br>    if ( -1 != tmp.indexOf("*", 0) ) {  // ＊なら<br>      type = "*";<br>    }<br>    else if ( -1 != tmp.indexOf("/", 0) ) {  // その前が／か調べる<br>      if ( type == "*" )<br>        break;<br>    }<br>    else {<br>      type = " ";<br>    }<br>    if ( Number(Editor.ExpandParameter("$y")) &gt;= last ) {  // ファイル最後にきたらやめて戻る<br>      Editor.Left();<br>      break;<br>    }<br>  }<br>}<br></div></section>
     <ul><li><section><h1 id=60>
     <span class="no">[60]</span>
-    <a class="title" href="#60">WSHマクロ５題3</a>
+    <a class="thread-title" href="#60">WSHマクロ５題3</a>
     <span class="author">しみづ</span>
     <time datetime="2004-01-27T10:02:37">2004年01月27日 10:02</time></h1>
     <div class="body"><br>【brasel.js】<br>// カーソル位置から選択を開始し、最初に見つけた（か｛の対括弧までを選択するWSHマクロ<br>// 括弧以前も選択できることにより、例えば関数呼び出し部分を全部選択できる<br>// また、（を判定して抜ける処理部分をコメントアウトして作り直しておけば、最初に見つけた｛の対括弧までを選択するため、関数定義を全部選択できる<br>// ※ファルイ最終行にある括弧は選択できません<br><br>var inp = " ";<br>var type = " ";<br>var last = 99;<br>var tmp = " ";<br>var i = 1;<br><br>Editor.MoveHistSet();<br>Editor.GoFileEnd();<br>last = Number(Editor.ExpandParameter('$y'));  // 最後の行数を取得<br>Editor.MoveHistPrev();<br>Editor.BeginSelect();<br>for ( i=0; ; i++ ) {  // （か｛を検索ループ<br>  Editor.Right();<br>  inp = Editor.GetSelectedString(0);<br>  tmp = inp.substr(i, 1);  // 次の一文字を取得し<br>  if ( -1 != tmp.indexOf("\n", 0) ) {  // 改行は選択にスキップされるので、次の一文字を取り直し<br>    i++;<br>    tmp = inp.substr(i, 1);<br>  }<br>  if ( -1 != tmp.indexOf("{", 0) ) {  // ｛を判定<br>    type = "{";<br>      break;<br>  }<br>  if ( -1 != tmp.indexOf("(", 0) ) {  // （を判定<br>    type = "(";<br>      break;<br>  }<br>  if ( Number(Editor.ExpandParameter("$y")) &gt;= last )  // ファイル最後にきたらやめる<br>    break;<br>}<br>if ( type == " " ) {  // 見つからなかったら戻る<br>  Editor.MoveHistPrev();<br>}<br>else {  // 見つかったら<br>  if ( i &gt; 0 )  // いきなり最初で見つかったのでなかったら<br>    Editor.Left();  // 一つもどって<br>  Editor.BracketPair();  // 対括弧まで行って<br>  Editor.Right();  // 選択<br>}<br><br>【endsel.js】<br>// カーソル位置から選択を開始し、最初に見つけた改行までを選択するWSHマクロ<br>// ※ファルイ最終行は選択できません<br><br>var inp = " ";<br>var last = 99;<br>var tmp = " ";<br>var i = 1;<br><br>Editor.MoveHistSet();<br>Editor.GoFileEnd();<br>last = Number(Editor.ExpandParameter('$y'));<br>Editor.MoveHistPrev();<br>Editor.BeginSelect();<br>for ( i=0; ; i++ ) {<br>  Editor.Right();<br>  inp = Editor.GetSelectedString(0);<br>  tmp = inp.substr(i, 1);<br>  if ( -1 != tmp.indexOf("\n", 0) ) {  // 改行<br>    Editor.Left();<br>    Editor.Left();<br>    break;<br>  }<br>  if ( Number(Editor.ExpandParameter("$y")) &gt;= last )<br>    break;<br>}<br></div></section>
     <ul><li><section><h1 id=61>
     <span class="no">[61]</span>
-    <a class="title" href="#61">RE: WSHマクロ５題</a>
+    <a class="thread-title" href="#61">RE: WSHマクロ５題</a>
     <span class="author">もか</span>
     <time datetime="2004-01-28T00:15:12">2004年01月28日 00:15</time></h1>
     <div class="body">&gt;// ※ファルイ最終行にある括弧は選択できません<br>以下のように変更すれば、最終行でも選択できそうです。(未実験ですので注意)<br>ただし、sakura 1.4.2.0以上専用です。<br><br>&gt;Editor.GoFileEnd();<br>&gt;last = Number(Editor.ExpandParameter('$y'));  // 最後の行数を取得<br>&gt;Editor.MoveHistPrev();<br>last = Editor.GetLineCount( 0 ); // 物理行数を取得<br><br>&gt;  if ( Number(Editor.ExpandParameter("$y")) &gt;= last )  // ファイル最後にきたらやめる<br>(省略) &gt; last )<br></div></section>
     <ul><li><section><h1 id=62>
     <span class="no">[62]</span>
-    <a class="title" href="#62">RE2: WSHマクロ５題</a>
+    <a class="thread-title" href="#62">RE2: WSHマクロ５題</a>
     <span class="author">しみづ</span>
     <time datetime="2004-01-28T07:13:11">2004年01月28日 07:13</time></h1>
     <div class="body">もかさん<br>　反応ありがとうございます。動いたのでしょうか、これらのマクロ。意味がないことしてるような。<br><br>&gt;&gt;last = Number(Editor.ExpandParameter('$y'));  // 最後の行数を取得<br>&gt;last = Editor.GetLineCount( 0 ); // 物理行数を取得<br><br>　提案ありがとうございます。テストしてみるかもしれません。二つの処理は返ってくるものが違うのかどうか。<br><br>&gt;&gt;  if ( Number(Editor.ExpandParameter("$y")) &gt;= last )  // ファイル最後にきたらやめる<br>&gt;(省略) &gt; last )<br><br>　ファイルエンドを超えた場合に、何が返ってくるのかがはっきりしないので、その手前でやめる事にしたのです。<br>　最後にあるものを扱うのはなかなかないとも思いましたし、そこはあまり追求する気がなかったのです。ループに陥るのは嫌ですし。（ちなみに、最後というのは行末にEOFが直接ついている行です）<br>　必要な場合に出会ったら、試してみたいと思います。<br>　つれない返事ですみません。<br></div></section>

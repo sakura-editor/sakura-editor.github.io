@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>マクロのヘルプを美味しく使うマクロ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>マクロのヘルプを美味しく使うマクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">160</span>
-    <a class="title" href="160.html#160">マクロのヘルプを美味しく使うマクロ</a></div>
+    <a class="thread-title" href="160.html#160">マクロのヘルプを美味しく使うマクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">161</span>
-    <a class="title" href="160.html#161">Re:マクロのヘルプを美味しく使うマクロ</a></div>
+    <a class="thread-title" href="160.html#161">Re:マクロのヘルプを美味しく使うマクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">163</span>
-    <a class="title" href="160.html#163">もうちょっと見つけやすいところにリンクを</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=160>
+    <a class="thread-title" href="160.html#163">もうちょっと見つけやすいところにリンクを</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=160>
     <span class="no">[160]</span>
-    <a class="title" href="#160">マクロのヘルプを美味しく使うマクロ</a>
+    <a class="thread-title" href="#160">マクロのヘルプを美味しく使うマクロ</a>
     <span class="author">りーや</span>
     <time datetime="2005-06-23T02:23:13">2005年06月23日 02:23</time></h1>
     <div class="body">私を含めてこの掲示板を読む人は、maruさんのマクロのヘルプを、外部HTMLファイルに置いて、ありがたく使わせていただいてる人も多いと思います。<br><br>折角のマクロのヘルプなので、PPA以外のマクロ作者でもより便利に使わせてもらおうというマクロです。<br>サクラエディタから外部HTMLヘルプを開く時にはカーソル位置の単語を表示させたいキーワードとして開くのですが、マクロのヘルプの中にも説明のあるようにマクロの関数名のキーワードは私の知らないＰＰＡマクロに合わせてあります。<br><br>つまり、このマクロはカーソル位置の単語の頭に"S_"を補ってからマクロのヘルプを呼びカーソル位置のマクロ関数の説明に直行で飛べるようにしています。<br>単語の先頭にS_が無い時だけ補完してますので、たぶん WSH系とPPAを両方使ってる方も大丈夫です。<br><br>私は、F1キーはこのマクロにして、サクラエディタの外部HTMLヘルプには、また別なものを割り当てました。<br>他の人のマクロを追いかけて勉強するのにも便利です。<br><br>// MacroHelp.js ---------------<br>// マクロ・ヘルプをキーワードで開く<br>var hlpfile = "C:\\Program Files\\sakura\\SakuraMacro.chm";<br>var curStr = Editor.ExpandParameter('$C');<br>if(curStr == "Editor"){<br>    Editor.WordRight();<br>    curStr = Editor.ExpandParameter('$C');<br>}<br>if(curStr == "."){<br>    Editor.WordRight();<br>    curStr = Editor.ExpandParameter('$C');<br>}<br>if(curStr.match(/^S_/) == null)<br>    curStr = "S_".concat(curStr);<br>Editor.ExtHtmlHelp(hlpfile,curStr);<br></div></section>
     <ul><li><section><h1 id=161>
     <span class="no">[161]</span>
-    <a class="title" href="#161">Re:マクロのヘルプを美味しく使うマクロ</a>
+    <a class="thread-title" href="#161">Re:マクロのヘルプを美味しく使うマクロ</a>
     <span class="author">maru</span>
     <time datetime="2005-06-23T22:29:23">2005年06月23日 22:29</time></h1>
     <div class="body">▼ りーやさん<br>&gt; つまり、このマクロはカーソル位置の単語の頭に"S_"を補ってからマクロのヘルプを呼びカーソル位置のマクロ関数の説明に直行で飛べるようにしています。<br><br>あららら。すいません。<br>キーワードにＳ付きとＳなしの両方を登録しておけば<br>こんな心配もなかったんですが。<br><br>いつの日か、もっとまともな完成度でリリースしたいです。<br>気長にお待ちください。<br></div></section>
     <ul><li><section><h1 id=163>
     <span class="no">[163]</span>
-    <a class="title" href="#163">もうちょっと見つけやすいところにリンクを</a>
+    <a class="thread-title" href="#163">もうちょっと見つけやすいところにリンクを</a>
     <span class="author">りーや</span>
     <time datetime="2005-06-24T15:32:53">2005年06月24日 15:32</time></h1>
     <div class="body">▼ maruさん<br>&gt; いつの日か、もっとまともな完成度でリリースしたいです。<br>&gt; 気長にお待ちください。<br><br>今でも、ほとんど充分、私はコレだけで勉強させて貰いました。<br>が、気長に楽しみにさせていただきます。<br><br>それで、どこからダウンロードしたのか、見直すと入り口のページからは、遠すぎて見つけるのが困難ですよ。<br>ドキュメントの掲示板からだったみたい・・・<br><br>もうちょっと、見つけやすいリンクを張って欲しかったりします。</div></section>

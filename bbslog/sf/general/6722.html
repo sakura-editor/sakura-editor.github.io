@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>*.h &lt;--&gt; *.cpp 切り替え時の不具合？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>*.h &lt;--&gt; *.cpp 切り替え時の不具合？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6722</span>
-    <a class="title" href="6722.html#6722">*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a></div>
+    <a class="thread-title" href="6722.html#6722">*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a></div>
     <ul><li><div class="list-title">
     <span class="no">6723</span>
-    <a class="title" href="6722.html#6723">Re:*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a></div>
+    <a class="thread-title" href="6722.html#6723">Re:*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a></div>
     <ul><li><div class="list-title">
     <span class="no">6727</span>
-    <a class="title" href="6722.html#6727">Re2:*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6722>
+    <a class="thread-title" href="6722.html#6727">Re2:*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6722>
     <span class="no">[6722]</span>
-    <a class="title" href="#6722">*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a>
+    <a class="thread-title" href="#6722">*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a>
     <span class="author">モチ</span>
     <time datetime="2008-07-22T15:02:35">2008年07月22日 15:02</time></h1>
     <div class="body">あるファイル(*.h/*.cpp) のヘッダ(ソース)が開いてない<br>状態で「同名のC/C++ヘッダ(ソース)を開く」を行うと<br>対応するファイルが開かれるにもかかわらず、<br>----------------------------------------<br>----<br>C/C++ヘッダファイルのオープンに失敗しました。<br>----------------------------------------<br>----<br>というダイアログが表示されます。<br><br>その後両方のファイルが開いた状態で同じコマンドを<br>行った場合は正常に切り替えが行われます。<br><br>Windows Vista Ultimate 32bit版と正式版(非Unicode版)<br>ver.1.6.2.0の組み合わせで現象を確認しました。<br><br>Unicode版(rev1398)では発生しませんでした。同じPCでは<br>ないのですが WindowsXP 上の非Unicode版では発生しない<br>ようです。<br><br></div></section>
     <ul><li><section><h1 id=6723>
     <span class="no">[6723]</span>
-    <a class="title" href="#6723">Re:*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a>
+    <a class="thread-title" href="#6723">Re:*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a>
     <span class="author">なすこじ</span>
     <time datetime="2008-07-22T17:49:04">2008年07月22日 17:49</time></h1>
     <div class="body">▼ モチさん<br>&gt;&gt;dev:5288で報告されている内容と思います。<br>Patches #1946334 にてコミット済みですので、最新ソースでビルドしていただくか、最新のテスト版を使用していただくと問題が回避できると思います。<br><br>unicode版はrev1398以前で対策済みのようです。<br></div></section>
     <ul><li><section><h1 id=6727>
     <span class="no">[6727]</span>
-    <a class="title" href="#6727">Re2:*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a>
+    <a class="thread-title" href="#6727">Re2:*.h &lt;--&gt; *.cpp 切り替え時の不具合？</a>
     <span class="author">モチ</span>
     <time datetime="2008-07-23T03:00:16">2008年07月23日 03:00</time></h1>
     <div class="body">▼ なすこじさん<br>確かにご指摘頂いた報告と同じ内容のようです。確認が足らず<br>申し訳ないです。貴重な情報ありがとうございました。</div></section>

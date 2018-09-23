@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>(無題)でも、ファイルをエクスプローラで開く</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>(無題)でも、ファイルをエクスプローラで開く | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">403</span>
-    <a class="title" href="403.html#403">(無題)でも、ファイルをエクスプローラで開く</a></div>
+    <a class="thread-title" href="403.html#403">(無題)でも、ファイルをエクスプローラで開く</a></div>
     <ul><li><div class="list-title">
     <span class="no">405</span>
-    <a class="title" href="403.html#405">Re:(無題)でも、ファイルをエクスプローラで開く</a></div>
+    <a class="thread-title" href="403.html#405">Re:(無題)でも、ファイルをエクスプローラで開く</a></div>
     <ul><li><div class="list-title">
     <span class="no">406</span>
-    <a class="title" href="403.html#406">Re2:(無題)でも、ファイルをエクスプローラで開く</a></div>
+    <a class="thread-title" href="403.html#406">Re2:(無題)でも、ファイルをエクスプローラで開く</a></div>
     </li><li><div class="list-title">
     <span class="no">407</span>
-    <a class="title" href="403.html#407">Re2:(無題)でも、ファイルをエクスプローラで開く</a></div>
+    <a class="thread-title" href="403.html#407">Re2:(無題)でも、ファイルをエクスプローラで開く</a></div>
     <ul><li><div class="list-title">
     <span class="no">408</span>
-    <a class="title" href="403.html#408">Re3:(無題)でも、ファイルをエクスプローラで開く</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=403>
+    <a class="thread-title" href="403.html#408">Re3:(無題)でも、ファイルをエクスプローラで開く</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=403>
     <span class="no">[403]</span>
-    <a class="title" href="#403">(無題)でも、ファイルをエクスプローラで開く</a>
+    <a class="thread-title" href="#403">(無題)でも、ファイルをエクスプローラで開く</a>
     <span class="author">じゅうじ</span>
     <time datetime="2007-10-02T15:46:56">2007年10月02日 15:46</time></h1>
     <div class="body">&gt;&gt;data:6343 新規ファイルかどうかの判定 〔10/2(Tue) 12:19〕 かて<br>// OpenFolder.ppa by じゅうじ, .mac by かて <br>var<br>  Path : string ;<br>begin<br>  Path := S_ExpandParameter( '$F' );<br>  if CompareStr( Path, '(無題)' ) = 0<br>  then<br>    S_ExecCommand('explorer /select,"C:\Program Files\sakura\sakura.exe"', 0)<br>  else<br>    S_ExecCommand('explorer /select,"$F"', 0);<br>end.</div></section>
     <ul><li><section><h1 id=405>
     <span class="no">[405]</span>
-    <a class="title" href="#405">Re:(無題)でも、ファイルをエクスプローラで開く</a>
+    <a class="thread-title" href="#405">Re:(無題)でも、ファイルをエクスプローラで開く</a>
     <span class="author">かて</span>
     <time datetime="2007-10-11T17:39:25">2007年10月11日 17:39</time></h1>
     <div class="body">▼ じゅうじさん<br>ありがとうございます！<br><br>さっそく「OpenFolder.ppa」のファイル名で保存し、実行してみたのですが、<br>　　マクロ21（OpenFolder.ppa）の実行に失敗しました<br>とのダイアログが出て、実行できませんでした。<br><br><br>&gt;    S_ExecCommand('explorer /select,"C:\Program Files\sakura\sakura.exe"', 0)<br>のあたりにセミコロンが抜けているようだったので追加してみましたが、それでもダメでした。<br><br>ヘルプを見ると、PPA.DLLが必要だということなので、最新版のPPA_124をダウンロードしてきて、Ppa.dllをsakuraの実行ファイルと同じ場所に置いてみたりもしたのですが、状況は変わりませんでした。<br><br>他に思いつく手がなく困っています。<br>原因分かりますでしょうか？<br><br></div></section>
     <ul><li><section><h1 id=406>
     <span class="no">[406]</span>
-    <a class="title" href="#406">Re2:(無題)でも、ファイルをエクスプローラで開く</a>
+    <a class="thread-title" href="#406">Re2:(無題)でも、ファイルをエクスプローラで開く</a>
     <span class="author">だだ星人</span>
     <time datetime="2007-10-11T19:03:43">2007年10月11日 19:03</time></h1>
     <div class="body">かてさん みなさん こんばんは。<br><br>&gt; 　　マクロ21（OpenFolder.ppa）の実行に失敗しました<br>&gt; とのダイアログが出て、実行できませんでした。<br><br>　↑偶然にも同様な現象が発生して困っています。ppaのマクロもjsのマクロも同じエラーが出て実行できません。<br>以前は実行できていたんですが…？<br><br>　バージョンは『Ver.1.5.16.0(V1310)』です。どなたかなにかご存じでしたら教えていただけないでしょうか。よろしくお願いいたします。</div></section>
     </li><li><section><h1 id=407>
     <span class="no">[407]</span>
-    <a class="title" href="#407">Re2:(無題)でも、ファイルをエクスプローラで開く</a>
+    <a class="thread-title" href="#407">Re2:(無題)でも、ファイルをエクスプローラで開く</a>
     <span class="author">じゅうじ</span>
     <time datetime="2007-10-11T23:19:15">2007年10月11日 23:19</time></h1>
     <div class="body">▼ かてさん<br>こんにちは。<br>PPA.DLLが今回無かったので、<br>サクラを一回全終了して（パソコン再起動に似てます）いただけますか。<br><br>それと、PPAの文法ではelseの前は、セミコロンは無いのが正解です。<br><br>Ver.1.5.16.0</div></section>
     <ul><li><section><h1 id=408>
     <span class="no">[408]</span>
-    <a class="title" href="#408">Re3:(無題)でも、ファイルをエクスプローラで開く</a>
+    <a class="thread-title" href="#408">Re3:(無題)でも、ファイルをエクスプローラで開く</a>
     <span class="author">かて</span>
     <time datetime="2007-10-12T09:34:24">2007年10月12日 09:34</time></h1>
     <div class="body">▼ じゅうじさん<br>今朝、もう一度ppaマクロを作り直して（コピペしただけですが）実行すれば、動きました！<br><br>マクロを編集するので「マクロを実行する度にファイルを読み直す」のチェックしていたのですが、それだけじゃ不安だったので、sakuraの再起動も散々試していたはずなのですが・・・。（sakuraの常駐もさせていません）<br><br>もしかすると、勝手に自分で編集していたのが混ざっていたのかも・・・？<br>お手数をおかけしました。ありがとうございました！<br></div></section>

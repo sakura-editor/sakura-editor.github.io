@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>改行について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">8213</span>
-    <a class="title" href="8213.html#8213">改行について</a></div>
+    <a class="thread-title" href="8213.html#8213">改行について</a></div>
     <ul><li><div class="list-title">
     <span class="no">8214</span>
-    <a class="title" href="8213.html#8214">Re:改行について</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=8213>
+    <a class="thread-title" href="8213.html#8214">Re:改行について</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8213>
     <span class="no">[8213]</span>
-    <a class="title" href="#8213">改行について</a>
+    <a class="thread-title" href="#8213">改行について</a>
     <span class="author">アール</span>
     <time datetime="2016-12-28T11:28:14">2016年12月28日 11:28</time></h1>
     <div class="body">サクラエディタを使って<br><br>1＠AAA<br>2＠BBB<br>3＠CCC<br>4＠DDD<br><br>　省略<br><br>100＠ZZZ<br><br>みたいな文を、<br><br>1＠AAA<br><br><br>2＠BBB<br><br>このように間に改行を2つ入れる事はマクロで可能ですか？<br>初歩的な事で申し訳ないです。</div></section>
     <ul><li><section><h1 id=8214>
     <span class="no">[8214]</span>
-    <a class="title" href="#8214">Re:改行について</a>
+    <a class="thread-title" href="#8214">Re:改行について</a>
     <span class="author">774</span>
     <time datetime="2016-12-28T19:01:22">2016年12月28日 19:01</time></h1>
     <div class="body">置換ダイアログを開いて「正規表現(E)」にチェックを入れて<br>$ を \r\n\r\n に置換するのが一番簡単です。<br><br>＊チェックが入らないなら正規表現DLL(bregonig.dllか BREGEXP.DLL)<br>  をエディタと同じフォルダにコピーするとできるようになります。<br>＊置換する対象を選択した範囲内に限定することも(通常の手順で)できます。<br>＊「正規表現(E)」にチェックを入れると(望まなくても) $ や \r\n 以外にも<br>  見た目と実際の文字が異なる特殊な記法が有効になります。<br>  余力があればこちらをどうぞ。<br>  &amp;#9830;正規表現の概説<br>    &lt;<a href=https://msdn.microsoft.com/ja-jp/library/cc427946.aspx&gt; target=_top><nobr>https://<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>ja-<wbr>jp/<wbr>library/<wbr>cc427946<wbr>.<wbr>aspx&gt;<wbr></nobr></a><br>  &amp;#9830;正規表現 - SakuraEditorWiki<br>    &lt;<a href=http://sakura.qp.land.to/?%C0%B5%B5%AC%C9%BD%B8%BD&gt; target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?%<wbr>C0%<wbr>B5%<wbr>B5%<wbr>AC%<wbr>C9%<wbr>BD%<wbr>B8%<wbr>BD&gt;<wbr></nobr></a><br><br>マクロにこだわるならたとえば次のような内容で拡張子が .js のファイルを<br>マクロとして登録します。(ファイルの文字コードはシフトJISで)<br><br>var selected = Editor.GetSelectedString(0);<br>if (! selected) {<br>&#9;Editor.SelectAll();<br>&#9;selected = Editor.GetSelectedString(0);<br>}<br>var replaced = selected.replace(/(\r\n?|\n)/g, "$1$1$1");<br>if (selected == Editor.GetSelectedString(0)) {<br>&#9;Editor.InsText(replaced);<br>}<br><br>これも対象を選択範囲に限定して実行できます。<br></div></section>

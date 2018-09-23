@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ報告 - EOFでの矩形選択</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バグ報告 - EOFでの矩形選択 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3344</span>
-    <a class="title" href="3344.html#3344">バグ報告 - EOFでの矩形選択</a></div>
+    <a class="thread-title" href="3344.html#3344">バグ報告 - EOFでの矩形選択</a></div>
     <ul><li><div class="list-title">
     <span class="no">3349</span>
-    <a class="title" href="3344.html#3349">Re:バグ報告 - EOFでの矩形選択</a></div>
+    <a class="thread-title" href="3344.html#3349">Re:バグ報告 - EOFでの矩形選択</a></div>
     </li><li><div class="list-title">
     <span class="no">3370</span>
-    <a class="title" href="3344.html#3370">Re: バグ報告 - EOFでの矩形選択</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3344>
+    <a class="thread-title" href="3344.html#3370">Re: バグ報告 - EOFでの矩形選択</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3344>
     <span class="no">[3344]</span>
-    <a class="title" href="#3344">バグ報告 - EOFでの矩形選択</a>
+    <a class="thread-title" href="#3344">バグ報告 - EOFでの矩形選択</a>
     <span class="author">うまそ</span>
     <time datetime="2003-12-31T00:16:54">2003年12月31日 00:16</time></h1>
     <div class="body">//はじめまして，いつも使わせていただいています．<br>//一応ログを拝見しましたが，既出かもしれません．<br><br>//下記のマクロでエラーが発生しました．<br>//TABインデントの部分を全角ひらがな等にしても，<br>//同様のエラーが発生しました．<br>//EOF付近での矩形範囲選択に問題があるように思います．<br>//キーボードマクロのファイル<br>S_GoFileEnd(0);&#9;&#9;// ファイルの最後に移動<br>S_IndentTab(0);&#9;&#9;// TABインデント<br>S_IndentTab(0);&#9;&#9;// TABインデント<br>S_BeginBoxSelect(0);&#9;// 矩形範囲選択開始<br>S_Left(0);&#9;&#9;// カーソル左移動<br>S_LTrim(0);&#9;&#9;// 左(先頭)の空白を削除<br>S_Undo(0);&#9;&#9;// 元に戻す<br><br>//以上です．</div></section>
     <ul><li><section><h1 id=3349>
     <span class="no">[3349]</span>
-    <a class="title" href="#3349">Re:バグ報告 - EOFでの矩形選択</a>
+    <a class="thread-title" href="#3349">Re:バグ報告 - EOFでの矩形選択</a>
     <span class="author">うまそ</span>
     <time datetime="2004-01-08T18:19:20">2004年01月08日 18:19</time></h1>
     <div class="body">すみません．<br>バージョンとOSの報告が抜けていました．<br>バージョン  1.4.3.3 V<br>OS  Windows Me，XP<br><br>キーボード操作でも同エラーが発生しました．<br></div></section>
     </li><li><section><h1 id=3370>
     <span class="no">[3370]</span>
-    <a class="title" href="#3370">Re: バグ報告 - EOFでの矩形選択</a>
+    <a class="thread-title" href="#3370">Re: バグ報告 - EOFでの矩形選択</a>
     <span class="author">げんた</span>
     <time datetime="2004-01-25T14:36:41">2004年01月25日 14:36</time></h1>
     <div class="body">説明は省きますが，一応なおったと思います．<br></div></section>

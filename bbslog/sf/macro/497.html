@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>サクラエディタからEvernoteに新規ノートを追加するマクロ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>サクラエディタからEvernoteに新規ノートを追加するマクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">497</span>
-    <a class="title" href="497.html#497">サクラエディタからEvernoteに新規ノートを追加するマクロ</a></div>
+    <a class="thread-title" href="497.html#497">サクラエディタからEvernoteに新規ノートを追加するマクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">498</span>
-    <a class="title" href="497.html#498">Re:サクラエディタからEvernoteに新規ノートを追加するマクロ</a></div>
+    <a class="thread-title" href="497.html#498">Re:サクラエディタからEvernoteに新規ノートを追加するマクロ</a></div>
     </li><li><div class="list-title">
     <span class="no">499</span>
-    <a class="title" href="497.html#499">Re:サクラエディタからEvernoteに新規ノートを追加するマクロ</a></div>
+    <a class="thread-title" href="497.html#499">Re:サクラエディタからEvernoteに新規ノートを追加するマクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">500</span>
-    <a class="title" href="497.html#500">Re2:サクラエディタからEvernoteに新規ノートを追加するマクロ</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=497>
+    <a class="thread-title" href="497.html#500">Re2:サクラエディタからEvernoteに新規ノートを追加するマクロ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=497>
     <span class="no">[497]</span>
-    <a class="title" href="#497">サクラエディタからEvernoteに新規ノートを追加するマクロ</a>
+    <a class="thread-title" href="#497">サクラエディタからEvernoteに新規ノートを追加するマクロ</a>
     <span class="author">usami-k</span>
     <time datetime="2010-07-01T12:21:14">2010年07月01日 12:21</time></h1>
     <div class="body">はじめまして。usami-kといいます。<br><br>サクラエディタからEvernoteに新規ノートを追加するマクロを作ってみました。<br>WindowsのEvernoteアプリに付属する「ENScript.exe」コマンドを使用しています。<br><br>だいたいうまく動作しているのですが、時々文字化けしてしまいます・・・。<br>そのため、Wikiのマクロ投稿のページに書き込むのを躊躇していましたが、<br>掲示板があると知ったので、ひとまず投稿してみます。<br><br>もし可能でしたら、どなたかアドバイスをいただけると嬉しいです。<br><br>**********<br><br>// 選択文字列をEvernoteの新規ノートとして追加するマクロ<br>// Evernoteアプリがインストールしてあることが条件<br>// Author : usami-k<br><br>var shell = new ActiveXObject("WScript.Shell");<br>var fso = new ActiveXObject("Scripting.FileSystemObject");<br><br>// ENScriptのパス<br>var enscript = "C:\\PROGRA~1\\Evernote\\Evernote3.5\\ENScript.exe"<br><br>// サクラエディタの選択文字列を取得する<br>if( IsTextSelected() )<br>{<br>&#9;// 一時保存用ファイル名<br>&#9;var temp = shell.ExpandEnvironmentStrings("%TEMP%" + "\\temp-evernote.txt");<br><br>&#9;// 選択文字列をファイルに書き込み<br>&#9;var file = fso.CreateTextFile(temp);<br>&#9;file.Write(GetSelectedString());<br>&#9;file.Close();<br><br>&#9;// ファイルをEvernoteに渡す<br>&#9;shell.Run(enscript + " createNote /s " + temp, 7, true);<br><br>&#9;// ファイル削除<br>&#9;fso.DeleteFile(temp);<br><br>&#9;// 完了通知<br>&#9;shell.Popup("Evernoteにメモを追加しました");<br>}<br>else<br>{<br>&#9;shell.Popup("選択文字列がありません");<br>}<br></div></section>
     <ul><li><section><h1 id=498>
     <span class="no">[498]</span>
-    <a class="title" href="#498">Re:サクラエディタからEvernoteに新規ノートを追加するマクロ</a>
+    <a class="thread-title" href="#498">Re:サクラエディタからEvernoteに新規ノートを追加するマクロ</a>
     <span class="author">usami-k</span>
     <time datetime="2010-07-01T12:24:03">2010年07月01日 12:24</time></h1>
     <div class="body">書き忘れたので補足します。マクロはJScriptです。<br></div></section>
     </li><li><section><h1 id=499>
     <span class="no">[499]</span>
-    <a class="title" href="#499">Re:サクラエディタからEvernoteに新規ノートを追加するマクロ</a>
+    <a class="thread-title" href="#499">Re:サクラエディタからEvernoteに新規ノートを追加するマクロ</a>
     <span class="author">usami-k</span>
     <time datetime="2010-07-05T12:03:15">2010年07月05日 12:03</time></h1>
     <div class="body">多少、変更を加えました。<br>・一時ファイル名は日付と時刻を使用（YYYYMMDDhhmmss形式）<br>・一時ファイルを削除しない（文字化けが発生した時の保険）<br><br>**********<br><br>// 選択文字列をEvernoteの新規ノートとして追加するサクラエディタマクロ（JScript）<br>// 補足：Evernoteアプリ同梱のENScript.exeを使用している<br>// Author : usami-k<br><br>var shell = new ActiveXObject("WScript.Shell");<br>var fso = new ActiveXObject("Scripting.FileSystemObject");<br><br>// ENScriptのパス<br>var enscript = "C:\\PROGRA~1\\Evernote\\Evernote3.5\\ENScript.exe"<br><br>// 一時保存用ファイル名<br>var tempname = shell.ExpandEnvironmentStrings("%TEMP%" + "\\" + getCurrentDateTimeString());<br><br>// サクラエディタの選択文字列を取得する<br>if( IsTextSelected() )<br>{<br>&#9;// 選択文字列をファイルに書き込み<br>&#9;var file = fso.CreateTextFile(tempname);<br>&#9;file.Write(Editor.GetSelectedString());<br>&#9;file.Close();<br><br>&#9;// ファイルをEvernoteに渡す<br>&#9;shell.Run(enscript + " createNote /s " + tempname, 7, true);<br><br>&#9;// Evernote同期<br>&#9;//＜同期を行うとマクロ処理が遅くなるのでコメントアウトしている＞<br>&#9;//shell.Run(enscript + " syncDatabase", 7, true);<br><br>&#9;// ファイル削除<br>&#9;//＜ノートが文字化けする場合があるので保険のためコメントアウトしている＞<br>&#9;//fso.DeleteFile(tempname);<br><br>&#9;// 完了通知<br>&#9;shell.Popup("Evernoteにメモを追加しました");<br>}<br>else<br>{<br>&#9;shell.Popup("選択文字列がありません");<br>}<br><br>// 現在の時刻をYYYYMMDDhhmmss形式で返す<br>function getCurrentDateTimeString()<br>{<br>&#9;var date = new Date;<br>&#9;var string = "";<br><br>&#9;string += date.getFullYear();<br>&#9;string += ("0" + (date.getMonth() + 1)).slice(-2);<br>&#9;string += ("0" + date.getDate()).slice(-2);<br>&#9;string += ("0" + date.getHours()).slice(-2);<br>&#9;string += ("0" + date.getMinutes()).slice(-2);<br>&#9;string += ("0" + date.getSeconds()).slice(-2);<br><br>&#9;return string;<br>}<br><br></div></section>
     <ul><li><section><h1 id=500>
     <span class="no">[500]</span>
-    <a class="title" href="#500">Re2:サクラエディタからEvernoteに新規ノートを追加するマクロ</a>
+    <a class="thread-title" href="#500">Re2:サクラエディタからEvernoteに新規ノートを追加するマクロ</a>
     <span class="author">usami-k</span>
     <time datetime="2010-07-06T12:11:00">2010年07月06日 12:11</time></h1>
     <div class="body">間違いがありましたので修正です。<br>（ファイル名に拡張子が必要）<br><br>&gt; // 一時保存用ファイル名<br>&gt; var tempname = shell.ExpandEnvironmentStrings("%TEMP%" + "\\" + getCurrentDateTimeString());<br><br>// 一時保存用ファイル名<br>var tempname = shell.ExpandEnvironmentStrings("%TEMP%" + "\\" + getCurrentDateTimeString() + ".txt");<br></div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>-M,-MTYPEについて</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>-M,-MTYPEについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1076</span>
-    <a class="title" href="1076.html#1076">-M,-MTYPEについて</a></div>
+    <a class="thread-title" href="1076.html#1076">-M,-MTYPEについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">1079</span>
-    <a class="title" href="1076.html#1079">Re:-M,-MTYPEについて</a></div>
+    <a class="thread-title" href="1076.html#1079">Re:-M,-MTYPEについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">1080</span>
-    <a class="title" href="1076.html#1080">Re2:-M,-MTYPEについて</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1076>
+    <a class="thread-title" href="1076.html#1080">Re2:-M,-MTYPEについて</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1076>
     <span class="no">[1076]</span>
-    <a class="title" href="#1076">-M,-MTYPEについて</a>
+    <a class="thread-title" href="#1076">-M,-MTYPEについて</a>
     <span class="author">もか</span>
     <time datetime="2009-12-18T03:34:35">2009年12月18日 03:34</time></h1>
     <div class="body">Unicode/ANSI版とも、""で囲うと動作しません。<br></div></section>
     <ul><li><section><h1 id=1079>
     <span class="no">[1079]</span>
-    <a class="title" href="#1079">Re:-M,-MTYPEについて</a>
+    <a class="thread-title" href="#1079">Re:-M,-MTYPEについて</a>
     <span class="author">syat</span>
     <time datetime="2009-12-18T21:47:44">2009年12月18日 21:47</time></h1>
     <div class="body">▼ もかさん<br>&gt; Unicode/ANSI版とも、""で囲うと動作しません。<br><br>sakuraW "-M=Editor.InsText('hello world')" "-MTYPE=js"<br>こんな感じで動かないでしょうか？<br></div></section>
     <ul><li><section><h1 id=1080>
     <span class="no">[1080]</span>
-    <a class="title" href="#1080">Re2:-M,-MTYPEについて</a>
+    <a class="thread-title" href="#1080">Re2:-M,-MTYPEについて</a>
     <span class="author">もか</span>
     <time datetime="2009-12-19T01:17:49">2009年12月19日 01:17</time></h1>
     <div class="body">&gt;sakuraW "-M=Editor.InsText('hello world')" "-MTYPE=js"<br>&gt;こんな感じで動かないでしょうか？<br>ああなるほど。ありがとうございます。<br>ちょこっといじってヘルプに例として載せます。<br><br>sakuraW -M="Editor.InsText('hello world')" -MTYPE="js"<br>こうやって書いてました。<br>GREPは歴史的にこっちなんですよね。<br>どっちでも書けるようになるとうれしいです。<br>言語仕様を詳しく知らないけど VBScript の文字列がかけない気がするので<br>Grepコマンドと同じように "の中に"を書けるようになるといいです。<br>たぶんこんな感じです。<br>sakuraW -M="Editor.InsText (""hello world""+vbCrlf)" -MTYPE="vbs"<br></div></section>

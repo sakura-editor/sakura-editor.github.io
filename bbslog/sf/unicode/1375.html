@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Pluginの不具合・改良パッチ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Pluginの不具合・改良パッチ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1375</span>
-    <a class="title" href="1375.html#1375">Pluginの不具合・改良パッチ</a></div>
+    <a class="thread-title" href="1375.html#1375">Pluginの不具合・改良パッチ</a></div>
     <ul><li><div class="list-title">
     <span class="no">1388</span>
-    <a class="title" href="1375.html#1388">Commit報告(Chg) プラグイン周りの不具合の修正とUI動作変更</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1375>
+    <a class="thread-title" href="1375.html#1388">Commit報告(Chg) プラグイン周りの不具合の修正とUI動作変更</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1375>
     <span class="no">[1375]</span>
-    <a class="title" href="#1375">Pluginの不具合・改良パッチ</a>
+    <a class="thread-title" href="#1375">Pluginの不具合・改良パッチ</a>
     <span class="author">もか</span>
     <time datetime="2010-08-21T21:10:24">2010年08月21日 21:10</time></h1>
     <div class="body">プラグインの管理仕様周りの変更<br>PatchUnicode#1013762<br>・プラグイン追加より前の古いウィンドウ側で[稼働]のプラグイン設定ボタンを押すと強制終了するのを修正<br>・フォルダ名表示がSJIS未対応 tstring::rfind("\\") を修正<br>・プラグイン追加時のフォルダ名識別が大文字小文字を同一視していなかったのを修正<br>・kobake氏の仕様にあるようにplugins\unuseフォルダを特別視して無視するように<br>・削除→追加し直すときにPluginIDが変更されないように改良<br>・プラグイン追加時のIdentiferの使用不可文字列チェックを追加<br>「/\,[]*?&lt;&gt;&amp;|;=" \t」を利用不可文字とする。ファイル名,ini,コメント,セパレータとみなされるようなものを排除<br>先頭が数字である場合も排除<br>・プラグインの読み込みを無効にした場合でも、プラグインを削除可能なように<br>・プラグインの削除/オプション設定ボタンの状態を設定<br>  完全に無効の状態のものでは使えないようにする。<br>  ボタンを押しても反応しない、何もないものを削除しようとするのをやめる<br>・プロセスごとの読込状態を一覧に表示。表示幅の調整<br>・オプション設定で現在のウィンドウのフォルダが共通設定側と違う場合は拒否する<br>・Plugin系ID変換関数をCPlugへ移動。PluginId/PlugId/EOutlineType/ESmartIndentTypeの混在を分離<br><br>CPluginManager::LoadAllPluginの<br>&gt;m_plugins.sort();<br>はID順だと思っていたんですが<br>m_pluginsは =&gt; CPlugin::List =&gt; std::list&lt;CPlugin*&gt;<br>だからnewされたアドレス順のような気する。ここは意図が不明なためそのままです。<br>　削除済プラグインのショートカットキー/ツールバーなどの設定値がsakura.iniに<br>「/01」みたいな文字列で書き込まれそうなのもそのままです。<br></div></section>
     <ul><li><section><h1 id=1388>
     <span class="no">[1388]</span>
-    <a class="title" href="#1388">Commit報告(Chg) プラグイン周りの不具合の修正とUI動作変更</a>
+    <a class="thread-title" href="#1388">Commit報告(Chg) プラグイン周りの不具合の修正とUI動作変更</a>
     <span class="author">もか</span>
     <time datetime="2010-09-12T00:29:27">2010年09月12日 00:29</time></h1>
     <div class="body">コミットしました<br>rev:1818<br></div></section>

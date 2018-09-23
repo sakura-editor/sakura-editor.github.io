@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>要望：通知領域の右クリックについて</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>要望：通知領域の右クリックについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2631</span>
-    <a class="title" href="2631.html#2631">要望：通知領域の右クリックについて</a></div>
+    <a class="thread-title" href="2631.html#2631">要望：通知領域の右クリックについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">2632</span>
-    <a class="title" href="2631.html#2632">Re: 要望：通知領域の右クリックについて</a></div>
+    <a class="thread-title" href="2631.html#2632">Re: 要望：通知領域の右クリックについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">2636</span>
-    <a class="title" href="2631.html#2636">Re2: 要望：通知領域の右クリックについて</a></div>
+    <a class="thread-title" href="2631.html#2636">Re2: 要望：通知領域の右クリックについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">2638</span>
-    <a class="title" href="2631.html#2638">Re3: 要望：通知領域の右クリックについて</a></div>
+    <a class="thread-title" href="2631.html#2638">Re3: 要望：通知領域の右クリックについて</a></div>
     </li><li><div class="list-title">
     <span class="no">2640</span>
-    <a class="title" href="2631.html#2640">Re3: 要望：通知領域の右クリックについて</a></div>
+    <a class="thread-title" href="2631.html#2640">Re3: 要望：通知領域の右クリックについて</a></div>
     </li><li><div class="list-title">
     <span class="no">2657</span>
-    <a class="title" href="2631.html#2657">Re3: 要望：通知領域の右クリックについて</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2631>
+    <a class="thread-title" href="2631.html#2657">Re3: 要望：通知領域の右クリックについて</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2631>
     <span class="no">[2631]</span>
-    <a class="title" href="#2631">要望：通知領域の右クリックについて</a>
+    <a class="thread-title" href="#2631">要望：通知領域の右クリックについて</a>
     <span class="author">towest</span>
     <time datetime="2002-12-24T15:07:06">2002年12月24日 15:07</time></h1>
     <div class="body">初めての投稿となります。<br>結構前からサクラエディタを使わせていただいていたのですが、<br>常々気になっていた事なので指摘させていただきます。<br><br>単刀直入にいうと、通知領域（タスクトレイ）にあるサクラエディタのアイコンを<br>右クリックした時、ポップアップメニューが表示されますよね？<br>それを表示するタイミングを<br>WM_RBUTTONDOWN から WM_RBUTTONUP に変えてほしいのです。<br>なぜなら、自分は WindowsXP を使っているのですが、<br>XP ではタスクトレイを右クリックした時に表示されるポップアップメニューは<br>全て WM_RBUTTONUP でキャッチしているので、<br>サクラエディタのアイコンをマウスの右ボタンで押してすぐに離すと、<br>サクラエディタのポップアップメニューと、Windows のポップアップメニューの<br>二つが表示されてしまい、両方のポップアップメニューの残像が残ります。<br><br>修正してもらえるわけにはいかないでしょうか？<br>毎回自分で修正して使うのは疲れます・・・。</div></section>
     <ul><li><section><h1 id=2632>
     <span class="no">[2632]</span>
-    <a class="title" href="#2632">Re: 要望：通知領域の右クリックについて</a>
+    <a class="thread-title" href="#2632">Re: 要望：通知領域の右クリックについて</a>
     <span class="author">もか</span>
     <time datetime="2002-12-24T17:40:10">2002年12月24日 17:40</time></h1>
     <div class="body">▼ towest<br>&gt;初めての投稿となります。<br>&gt;常々気になっていた事なので指摘させていただきます。<br>どしどし、指摘しちゃってください。:-)<br><br>&gt;通知領域（タスクトレイ）にあるサクラエディタのアイコンを<br>&gt;右クリックした時、ポップアップメニューが表示されますよね？<br>&gt;それを表示するタイミングを<br>&gt;WM_RBUTTONDOWN から WM_RBUTTONUP に変えてほしいのです。<br>この部分を修正することで、私のXPでもメニューがダブらなくなることを確認しました。<br>うれしいです。やっとあのバグが直りますね。<br><br>ちなみに、CEditApp.cpp 767行目です。<br><br>&gt;毎回自分で修正して使うのは疲れます・・・。<br>同感。sakuraのコンパイルは結構時間がかかるんですよ<br></div></section>
     <ul><li><section><h1 id=2636>
     <span class="no">[2636]</span>
-    <a class="title" href="#2636">Re2: 要望：通知領域の右クリックについて</a>
+    <a class="thread-title" href="#2636">Re2: 要望：通知領域の右クリックについて</a>
     <span class="author">げんた</span>
     <time datetime="2002-12-25T00:51:37">2002年12月25日 00:51</time></h1>
     <div class="body">&gt;私のXPでもメニューがダブらなくなることを確認しました。<br>なーるほど．たまに変なメニューが出るなあと思ったらこういうことでしたか．<br>SAKURAアイコン上でクリックするとメニューが出て，アイコンの外にマウスを動かして離すとタスクバーのメニューが出るのですね．<br><br>私はいつもマウスカーソルを止めてクリックしていたので全然気づかなかったのですが，動かしながらクリックする人だとしょっちゅう出てしまうのでしょうか．<br><br>とにかく，ここは直すことにします．<br></div></section>
     <ul><li><section><h1 id=2638>
     <span class="no">[2638]</span>
-    <a class="title" href="#2638">Re3: 要望：通知領域の右クリックについて</a>
+    <a class="thread-title" href="#2638">Re3: 要望：通知領域の右クリックについて</a>
     <span class="author">towest</span>
     <time datetime="2002-12-25T21:33:27">2002年12月25日 21:33</time></h1>
     <div class="body">早速の修正、ありがとうございました。<br>これで右クリック連打しない限りバグらなくなりますね。<br>＃それにしても迅速な修正に正直驚きました。</div></section>
     </li><li><section><h1 id=2640>
     <span class="no">[2640]</span>
-    <a class="title" href="#2640">Re3: 要望：通知領域の右クリックについて</a>
+    <a class="thread-title" href="#2640">Re3: 要望：通知領域の右クリックについて</a>
     <span class="author">あろか</span>
     <time datetime="2003-01-01T15:04:46">2003年01月01日 15:04</time></h1>
     <div class="body">Ctrl+Alt+Z(ショートカットキー)でメニューがでなくなってしまいました。<br>CEditApp.cpp (537,48): の WM_LBUTTONDOWN を WM_LBUTTONUP に修正してください。<br><br></div></section>
     </li><li><section><h1 id=2657>
     <span class="no">[2657]</span>
-    <a class="title" href="#2657">Re3: 要望：通知領域の右クリックについて</a>
+    <a class="thread-title" href="#2657">Re3: 要望：通知領域の右クリックについて</a>
     <span class="author">ai</span>
     <time datetime="2003-01-13T18:39:36">2003年01月13日 18:39</time></h1>
     <div class="body">タスクトレイのアイコンをダブルクリックして新規ウィンドウを出すことがあるのですが、この時メニューが残ったままになってしまうようになりました。<br>メニューが残らないようにできないでしょうか。</div></section>

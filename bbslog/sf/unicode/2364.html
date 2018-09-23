@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>文字選択範囲を返すマクロ専用関数の返す値がおかしい。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>文字選択範囲を返すマクロ専用関数の返す値がおかしい。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2364</span>
-    <a class="title" href="2364.html#2364">文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a></div>
+    <a class="thread-title" href="2364.html#2364">文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a></div>
     <ul><li><div class="list-title">
     <span class="no">2365</span>
-    <a class="title" href="2364.html#2365">Re:文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a></div>
+    <a class="thread-title" href="2364.html#2365">Re:文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a></div>
     <ul><li><div class="list-title">
     <span class="no">2366</span>
-    <a class="title" href="2364.html#2366">Re2:文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2364>
+    <a class="thread-title" href="2364.html#2366">Re2:文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2364>
     <span class="no">[2364]</span>
-    <a class="title" href="#2364">文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a>
+    <a class="thread-title" href="#2364">文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a>
     <span class="author">mmm</span>
     <time datetime="2016-05-15T10:37:22">2016年05月15日 10:37</time></h1>
     <div class="body">マクロ専用関数 GetSelectLineTo(), GetSelectColmFrom(), GetSelectColmTo() が正しい値を返しません。<br><br>GetSelectLineTo() は GetSelectLineFrom() と同じ値を返しています。<br>GetSelectColmFrom(), GetSelectColmTo() は文字の桁位置ではなく、左端からのピクセル数を<br>返しているように思われます。<br>なお、GetSelectLineFrom()は正しい値を返しています。<br><br>例：適当なテキストで、１行目２桁目～２行目３桁目を選択して、<br>GetSelectLineFrom(), GetSelectColmFrom(), GetSelectLineTo(), GetSelectColmTo() <br>の返す値を表示すると、それぞれ1, 2, 2, 4になるはずですが 1, 8, 1, 22 になります。<br><br>Ver 2.1.1.2、Ver 2.3.0.0で確認しました。<br>また、Ver 2.0.5.0では正しい値を返していたことも確認しました。</div></section>
     <ul><li><section><h1 id=2365>
     <span class="no">[2365]</span>
-    <a class="title" href="#2365">Re:文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a>
+    <a class="thread-title" href="#2365">Re:文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a>
     <span class="author">もか</span>
     <time datetime="2016-05-15T20:49:17">2016年05月15日 20:49</time></h1>
     <div class="body">▼ mmmさん<br>&gt; GetSelectLineTo() は GetSelectLineFrom() と同じ値を返しています。<br>こちらではちゃんと違う値が取得できているようです。<br>&gt;&gt;2282<br>2.3.0.0からレイアウト座標が文字幅からピクセル単位に変更になったのです。<br><br>(function(){<br>   &#9;var layoutXFrom = GetSelectColmFrom();<br>&#9;var layoutYFrom = GetSelectLineFrom();<br>&#9;var layoutXTo = GetSelectColmTo();<br>&#9;var layoutYTo = GetSelectLineTo();<br>&#9;var logicXFrom = LineColumnToIndex(layoutYFrom, layoutXFrom);<br>&#9;var logicYFrom = LayoutToLogicLineNum(layoutYFrom);<br>&#9;var logicXTo = LineColumnToIndex(layoutYTo, layoutXTo);<br>&#9;var logicYTo = LayoutToLogicLineNum(layoutYTo);<br>&#9;var columnXFrom = Math.floor((layoutXFrom - 1) / GetDefaultCharLength()) + 1;<br>&#9;var columnXTo = Math.floor((layoutXTo - 1) / GetDefaultCharLength()) + 1;<br>&#9;InfoMsg(<br>&#9;&#9;"layout (" + layoutYFrom + ", " + layoutXFrom + ") - (" +<br>&#9;&#9;layoutYTo + ", " + layoutXTo + ") \n" +<br>&#9;&#9;"logic(" + logicYFrom + ", " + logicXFrom + ") - (" +<br>&#9;&#9;logicYTo + ", " + logicXTo + ") \n" +<br>&#9;&#9;"column (" + layoutYFrom + ", " + columnXFrom + ") - (" +<br>&#9;&#9;layoutYTo + ", " + columnXTo + ")"<br>&#9;);<br>})();<br>columnXFrom,Toが正しく半角文字単位になるには、フォント選択を固定幅フォントを使用していて、<br>かつ、選択範囲のFrom,Toの行の文字が固定幅になる文字により構成されている必要があります。<br>(固定幅フォントでも0幅文字などが混ざっているとそれらは1pxの文字になるので、幅がずれます)<br>選択文字が半角文字かどうかを判定するには、GetLineStrで実際に文字を取得して、GetStrWidthで取得するか、自分で文字種判定する必要があります。<br>GetDefaultCharLengthは、2.1.0.0から使用可能です。<br>もし古いバージョンでも動作させたければ<br>if(0 &lt; CompareVersion(ExpandParameter("$v"),"2.1.0.0"))<br>などで条件分けが必要です。<br></div></section>
     <ul><li><section><h1 id=2366>
     <span class="no">[2366]</span>
-    <a class="title" href="#2366">Re2:文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a>
+    <a class="thread-title" href="#2366">Re2:文字選択範囲を返すマクロ専用関数の返す値がおかしい。</a>
     <span class="author">mmm</span>
     <time datetime="2016-05-18T07:35:41">2016年05月18日 07:35</time></h1>
     <div class="body">▼ もかさん<br>&gt; 2.3.0.0からレイアウト座標が文字幅からピクセル単位に変更になったのです。<br><br>そうだったのですか。<br>教えてくださり、ありがとうございます。<br><br>これらの関数を使う自作マクロの挙動がおかしくなっていたので悩んでいました。<br>仕様を見直してマクロを変更しようと思います。<br><br><br>&gt;&gt; GetSelectLineTo() は GetSelectLineFrom() と同じ値を返しています。<br>&gt;こちらではちゃんと違う値が取得できているようです。<br><br>これはこちらの勘違いでした。<br>すみませんでした。</div></section>

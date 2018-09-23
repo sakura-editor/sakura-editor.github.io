@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ファイル毎に検索語を記憶</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ファイル毎に検索語を記憶 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6067</span>
-    <a class="title" href="6067.html#6067">ファイル毎に検索語を記憶</a></div>
+    <a class="thread-title" href="6067.html#6067">ファイル毎に検索語を記憶</a></div>
     <ul><li><div class="list-title">
     <span class="no">6068</span>
-    <a class="title" href="6067.html#6068">Re:ファイル毎に検索語を記憶</a></div>
+    <a class="thread-title" href="6067.html#6068">Re:ファイル毎に検索語を記憶</a></div>
     <ul><li><div class="list-title">
     <span class="no">6069</span>
-    <a class="title" href="6067.html#6069">Re2:ファイル毎に検索語を記憶</a></div>
+    <a class="thread-title" href="6067.html#6069">Re2:ファイル毎に検索語を記憶</a></div>
     <ul><li><div class="list-title">
     <span class="no">6071</span>
-    <a class="title" href="6067.html#6071">Re3:ファイル毎に検索語を記憶</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6067>
+    <a class="thread-title" href="6067.html#6071">Re3:ファイル毎に検索語を記憶</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6067>
     <span class="no">[6067]</span>
-    <a class="title" href="#6067">ファイル毎に検索語を記憶</a>
+    <a class="thread-title" href="#6067">ファイル毎に検索語を記憶</a>
     <span class="author">かて</span>
     <time datetime="2007-05-22T10:18:58">2007年05月22日 10:18</time></h1>
     <div class="body">質問なのですが、ファイル毎に検索語を覚えさせることは出来ないのでしょうか？<br>具体例をあげると、ファイルAで"aaa"を検索したあとで、ファイルBで"bbb"を検索した場合に、それぞれのファイルで「次を検索」をした場合の動作です。<br>＜現状＞<br>・ファイルA："bbb"を検索<br>・ファイルB："bbb"を検索<br><br>＜希望＞<br>・ファイルA："aaa"を検索<br>・ファイルB："bbb"を検索<br>となって欲しいのですが。<br><br><br>ヘルプファイルなどで探してみましたが、そういう設定は無さそうでした。（見落としていたらすいません）<br><br>個人的には＜希望＞で挙げた方が使いやすいのですが、皆さんはどうでしょうか？<br>プログラムの仕事なんぞをやっていると、ある関数から、その先で使われている関数や変数を辿っていくようなことも多いのですが、元のファイルに戻ってきた時に検索語が最後に調べていたローカル変数などに勝手に変わっていると不便だなぁ、、と感じたりします。<br><br>これって需要は少なそうですかね？<br></div></section>
     <ul><li><section><h1 id=6068>
     <span class="no">[6068]</span>
-    <a class="title" href="#6068">Re:ファイル毎に検索語を記憶</a>
+    <a class="thread-title" href="#6068">Re:ファイル毎に検索語を記憶</a>
     <span class="author">fon</span>
     <time datetime="2007-05-22T21:50:19">2007年05月22日 21:50</time></h1>
     <div class="body">▼ かてさん<br>&gt; プログラムの仕事なんぞをやっていると、ある関数から、その先で使われている関数や変数を辿っていくようなことも多いのですが、元のファイルに戻ってきた時に検索語が最後に調べていたローカル変数などに勝手に変わっていると不便だなぁ、、と感じたりします。<br>この辺前々から思ってました。もっというと、複数検索語に対応できたらよくないですか？<br>同じファイルの中でも、この関数の中のこの変数、という感じでシーケンシャルに検索したいシチュエーションが結構あるので、是非欲しいです。<br>単に検索語を2語に拡張しただけでも恩恵があると思います。<br><br>ちょっと考えたのが、サクラ共通でモードレスのダイアログを１つ持たせて、そこにテンポラリのキーワードを複数語登録し、色分け＆検索できるようになってると便利だなと。<br>どっちみち実装されてないですが。。<br>イメージ：<br>┌―――――――――――――――<br>｜複数語検索                             [X]<br>├―――――――――――――――――――――<br>｜  キーワード    単 英 正 先 色指定<br>｜1[ keyword1   ] [ ][ ][v][ ][  ▽] [検索]<br>｜2[ keyword2   ] [v][ ][ ][ ][  ▽] [検索]<br>｜3[            ] [ ][ ][ ][ ][  ▽] [検索]<br>｜:<br>｜<br>・・・すいません、書いてたら実装大変そうな気がしてきました。</div></section>
     <ul><li><section><h1 id=6069>
     <span class="no">[6069]</span>
-    <a class="title" href="#6069">Re2:ファイル毎に検索語を記憶</a>
+    <a class="thread-title" href="#6069">Re2:ファイル毎に検索語を記憶</a>
     <span class="author">げんた</span>
     <time datetime="2007-05-23T00:05:11">2007年05月23日 00:05</time></h1>
     <div class="body">&gt;複数検索語に対応できたらよくないですか？<br>http://sakura.qp.land.to/?Request%2F197 にも書いたのですが，<br>個人的にはGoogle Toolbarの検索ワードの色分けみたいなのができると良いなと思います．<br><br>検索ワードをファイルごとに独立にするだけなら難しくは無いかも．現在でも検索ワードの強調は別のウィンドウで検索を行っても消えないでしょ．<br><br>ただ自分では同じワードを複数ファイルに渡って検索することの方が多い(Grep使えよって？)ので，今の仕様が絶対悪いとは思いませんが．例えば，ログなどの分割されたファイルでキーワードを探していって，最後に来たら次のファイルを開いてまた同じワードで検索するとか．<br></div></section>
     <ul><li><section><h1 id=6071>
     <span class="no">[6071]</span>
-    <a class="title" href="#6071">Re3:ファイル毎に検索語を記憶</a>
+    <a class="thread-title" href="#6071">Re3:ファイル毎に検索語を記憶</a>
     <span class="author">fon</span>
     <time datetime="2007-05-23T21:03:01">2007年05月23日 21:03</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 個人的にはGoogle Toolbarの検索ワードの色分けみたいなのができると良いなと思います．<br>既出すいません。。こっち↑のが一般的でしっくりきそうですね。FireFoxのとかは？同じかな。<br>かてさん風な検索ボックスの活用と合わせると、結構よさそう。(検索ボックスを使ってませんでした・・)</div></section>

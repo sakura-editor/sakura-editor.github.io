@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Chg) 検索・置換での正規表現において、. と $ の意味を変更。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告(Chg) 検索・置換での正規表現において、. と $ の意味を変更。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1034</span>
-    <a class="title" href="1034.html#1034">Commit報告(Chg) 検索・置換での正規表現において、. と $ の意味を変更。</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=1034>
+    <a class="thread-title" href="1034.html#1034">Commit報告(Chg) 検索・置換での正規表現において、. と $ の意味を変更。</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1034>
     <span class="no">[1034]</span>
-    <a class="title" href="#1034">Commit報告(Chg) 検索・置換での正規表現において、. と $ の意味を変更。</a>
+    <a class="thread-title" href="#1034">Commit報告(Chg) 検索・置換での正規表現において、. と $ の意味を変更。</a>
     <span class="author">ds14050</span>
     <time datetime="2009-09-28T10:30:51">2009年09月28日 10:30</time></h1>
     <div class="body">リビジョン：<br>　rev1662<br><br>変更種別：<br>　仕様変更<br><br>内容：<br>. は [^\n] から [^\r\n] の意味になりました。<br>$ は正しく改行文字の直前にマッチします。以前は改行文字を含んでいました。<br>また、$ は改行文字の後ろ、行文字列の末尾にはマッチしなくなりました。<br><br>改行文字とは CR(LF)と LF(CR)です。(LFCRをはじく処理はしていません)<br>$のマッチ範囲の変更は置換結果に影響を与えません。<br><br>. と $ の変更によりたとえば<br> xyz(CR)(LF)<br>という行に対する .$ の検索結果が z になります。以前は (CR) でした。<br> .+ の検索結果は xyz になります。以前は xyz(CR) でした。<br></div></section>

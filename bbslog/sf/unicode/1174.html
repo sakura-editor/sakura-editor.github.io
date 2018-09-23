@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>タイプ別設定のインポート、エクスポート、初期化の追加</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>タイプ別設定のインポート、エクスポート、初期化の追加 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1174</span>
-    <a class="title" href="1174.html#1174">タイプ別設定のインポート、エクスポート、初期化の追加</a></div>
+    <a class="thread-title" href="1174.html#1174">タイプ別設定のインポート、エクスポート、初期化の追加</a></div>
     <ul><li><div class="list-title">
     <span class="no">1177</span>
-    <a class="title" href="1174.html#1177">Re:タイプ別設定のインポート、エクスポート、初期化の追加</a></div>
+    <a class="thread-title" href="1174.html#1177">Re:タイプ別設定のインポート、エクスポート、初期化の追加</a></div>
     <ul><li><div class="list-title">
     <span class="no">1181</span>
-    <a class="title" href="1174.html#1181">Re2:タイプ別設定のインポート、エクスポート、初期化の追加</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1174>
+    <a class="thread-title" href="1174.html#1181">Re2:タイプ別設定のインポート、エクスポート、初期化の追加</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1174>
     <span class="no">[1174]</span>
-    <a class="title" href="#1174">タイプ別設定のインポート、エクスポート、初期化の追加</a>
+    <a class="thread-title" href="#1174">タイプ別設定のインポート、エクスポート、初期化の追加</a>
     <span class="author">Uchi</span>
     <time datetime="2010-04-15T20:36:36">2010年04月15日 20:36</time></h1>
     <div class="body">タイプ別設定のインポート、エクスポート、初期化を追加するパッチを作成しました。<br>「タイプ別設定一覧」に「インポート」「エクスポート」「初期化」のボタンを追加しました。<br>タイプを選択し、各ボタンをクリックします。<br><br>「インポート」「エクスポート」するファイルの形式は、<br>ファイル名の初期値は"[設定の名称].ini"、<br>形式は、"sakuraW.ini" の[Types(n)]のセクションを[Type]として、<br>[TypeEx]セクションとして「共通設定」との結合情報を格納します。<br>具体的のは、強調キーワード1～10とプラグイン情報です。<br><br>「エクスポート」時、強調キーワードが設定されていたならば、強調キーワードもエクスポートします。<br>ファイル名は「セット名」から自動的に作成されます。<br>「インポート」時にはエクスポート時に記録したファイルからインポートします。<br><br>プラグイン情報は、<br>「エクスポート」時、ウトライン、スマートインデントのフォルダ名とIDを記録します。<br>「インポート」時の記録しているIDを元に検索し、存在したならば、設定します。<br><br>「初期化」は、タイプ別設定の「基本」をコピーすることにより行います。<br><br>SourceForgeのPatchUnicodeにおきましたので、<br>使ってみていただけたらと思います。</div></section>
     <ul><li><section><h1 id=1177>
     <span class="no">[1177]</span>
-    <a class="title" href="#1177">Re:タイプ別設定のインポート、エクスポート、初期化の追加</a>
+    <a class="thread-title" href="#1177">Re:タイプ別設定のインポート、エクスポート、初期化の追加</a>
     <span class="author">Uchi</span>
     <time datetime="2010-04-19T23:15:25">2010年04月19日 23:15</time></h1>
     <div class="body">mocaさんの指摘、要望にしたがって<br>手直ししたものを、アップします。<br><br>SourceForgeのPatchUnicodeにおきました。</div></section>
     <ul><li><section><h1 id=1181>
     <span class="no">[1181]</span>
-    <a class="title" href="#1181">Re2:タイプ別設定のインポート、エクスポート、初期化の追加</a>
+    <a class="thread-title" href="#1181">Re2:タイプ別設定のインポート、エクスポート、初期化の追加</a>
     <span class="author">Uchi</span>
     <time datetime="2010-04-25T01:16:49">2010年04月25日 01:16</time></h1>
     <div class="body">手直ししたので、アップします。<br><br>SourceForgeのPatchUnicodeにおきました。</div></section>

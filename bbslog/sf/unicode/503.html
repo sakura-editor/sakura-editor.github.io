@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Imp) 外部コマンドの標準入出力のUnicode使用のオプション化</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告:(Imp) 外部コマンドの標準入出力のUnicode使用のオプション化 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">503</span>
-    <a class="title" href="503.html#503">Commit報告:(Imp) 外部コマンドの標準入出力のUnicode使用のオプション化</a></div>
+    <a class="thread-title" href="503.html#503">Commit報告:(Imp) 外部コマンドの標準入出力のUnicode使用のオプション化</a></div>
     <ul><li><div class="list-title">
     <span class="no">511</span>
-    <a class="title" href="503.html#511">Re:Commit報告:(Imp) 外部コマンドの標準入出力のUnicode使用のオプション化</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=503>
+    <a class="thread-title" href="503.html#511">Re:Commit報告:(Imp) 外部コマンドの標準入出力のUnicode使用のオプション化</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=503>
     <span class="no">[503]</span>
-    <a class="title" href="#503">Commit報告:(Imp) 外部コマンドの標準入出力のUnicode使用のオプション化</a>
+    <a class="thread-title" href="#503">Commit報告:(Imp) 外部コマンドの標準入出力のUnicode使用のオプション化</a>
     <span class="author">Uchi</span>
     <time datetime="2008-06-20T22:58:06">2008年06月20日 22:58</time></h1>
     <div class="body">リビジョン：<br>　rev1389<br><br>変更種別：<br>　バグ修正等<br><br>内容：<br>    rev1378の修正の再修正<br>    「標準出力を得る」、「標準入力に送る」の「Unicodeを使用」のチェックをを追加<br><br>    外部コマンド実行<br>    ■マクロ構文<br>    ・構文: ExecCommand( str1 :String, int2 :Integer );<br>        str1    実行するコマンド文字列<br>        int2    実行制御オプション<br>    ・記録: ○<br>    ・解説<br>    実行制御オプションには、次の値の和を指定します。<br>        0x01    標準出力を得ます<br>        0x02    標準出力を編集中のウィンドウにリダイレクト<br>                (指定なしならアウトプットウィンドウ)<br>        0x04    編集中の内容を子プロセスにリダイレクト<br>        0x08    標準出力でUnicodeを使用する     ←今回追加<br>        0x10    標準入力でUnicodeを使用する     ←今回追加<br><br>    もかさん、kobakeさんご指摘ありがとうございます。<br>    私は、「dir」ぐらいしか使用せず、それでSjis外のファイル名が取れないのでこの修正をしましたが、<br>    ちょっと、考え不足でした。</div></section>
     <ul><li><section><h1 id=511>
     <span class="no">[511]</span>
-    <a class="title" href="#511">Re:Commit報告:(Imp) 外部コマンドの標準入出力のUnicode使用のオプション化</a>
+    <a class="thread-title" href="#511">Re:Commit報告:(Imp) 外部コマンドの標準入出力のUnicode使用のオプション化</a>
     <span class="author">kobake</span>
     <time datetime="2008-06-22T01:22:26">2008年06月22日 01:22</time></h1>
     <div class="body">ソースコードをさらっと確認しました。<br>局所的な観点では特に問題は見つかりませんでした。<br><br>動作をさらっと確認しました。<br>以下の不具合(？)が見つかりました。<br><br><br>【不具合報告】<br>メニューの「外部コマンドを実行」を押して表示される「ファイル名を指定して実行」ダイアログで、初期状態の「Unicodeを使用」の有効無効状態がちょっとおかしかった(？)です。<br><br>「標準出力を得る」がデフォルトでオンの場合、<br>その下の「Unicodeを使用」が無効状態で、値を変更することができませんでした。<br>「標準出力を得る」をオフにして再びオンにしたときは、<br>その下の「Unicodeを使用」が有効状態になりました。（おそらくこれが意図通り？）<br><br>「標準入力に送る」がデフォルトでオフの場合、<br>その下の「Unicodeを使用」が有効状態で、値を変更することができてしまいました (こちらは害は無いですが)。<br>「標準入力に送る」をオンにして再びオフにしたときは、<br>その下の「Unicodeを使用」が無効状態になりました。（おそらくこれが意図通り？）<br></div></section>

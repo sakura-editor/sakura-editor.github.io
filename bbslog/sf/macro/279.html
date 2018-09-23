@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>相対パスを開く</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>相対パスを開く | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">279</span>
-    <a class="title" href="279.html#279">相対パスを開く</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=279>
+    <a class="thread-title" href="279.html#279">相対パスを開く</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=279>
     <span class="no">[279]</span>
-    <a class="title" href="#279">相対パスを開く</a>
+    <a class="thread-title" href="#279">相対パスを開く</a>
     <span class="author">di</span>
     <time datetime="2006-06-06T12:54:11">2006年06月06日 12:54</time></h1>
     <div class="body">選択された相対パスを開くマクロです。<br>フォルダを開くのにも対応。<br>Webサイト開発とかで便利だと思います。<br>例：&lt;script language="JavaScript" src="../foo/bar.js"&gt;&lt;/script&gt;<br>　：という記述があったとして、「../foo/bar.js」を選択し、実行。<br>　：bar.jsファイルが開かれる。<br><br>//SakuraOpenner.js<br><br>var oFS = new ActiveXObject("Scripting.FileSystemObject");<br>var oShell = new ActiveXObject("WScript.Shell");<br><br>// 選択文字列を絶対(物理)パスに変換<br>var sPhysPath = oFS.GetAbsolutePathName( GetSelectedString(0) );<br><br>if( oFS.FileExists( sPhysPath ) ){<br>&#9;//File Open<br>&#9;Editor.FileOpen( sPhysPath );<br>}else{<br>&#9;if( oFS.FolderExists( sPhysPath ) ){<br>&#9;&#9;//Folder Open<br>&#9;&#9;var oShellApp = new ActiveXObject("Shell.Application");<br>&#9;&#9;oShellApp.Open( sPhysPath );<br>&#9;&#9;oShellApp = null;<br>&#9;}else{<br>&#9;&#9;//Not Found<br>&#9;&#9;oShell.Popup("そんなファイルなっしんぐ" + "\r\n" + sPhysPath<br>&#9;&#9;&#9;&#9;, 0, "SakuraOpenner", 0 );<br>&#9;}<br>}<br>oShell = null;<br>oFS = null;</div></section>

@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>fix021023.zip</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>fix021023.zip | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2438</span>
-    <a class="title" href="2438.html#2438">fix021023.zip</a></div>
+    <a class="thread-title" href="2438.html#2438">fix021023.zip</a></div>
     <ul><li><div class="list-title">
     <span class="no">2440</span>
-    <a class="title" href="2438.html#2440">RE: fix021023.zip</a></div>
+    <a class="thread-title" href="2438.html#2440">RE: fix021023.zip</a></div>
     <ul><li><div class="list-title">
     <span class="no">2443</span>
-    <a class="title" href="2438.html#2443">Re2: fix021023.zip</a></div>
+    <a class="thread-title" href="2438.html#2443">Re2: fix021023.zip</a></div>
     <ul><li><div class="list-title">
     <span class="no">2444</span>
-    <a class="title" href="2438.html#2444">Re3: fix021023.zip</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2438>
+    <a class="thread-title" href="2438.html#2444">Re3: fix021023.zip</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2438>
     <span class="no">[2438]</span>
-    <a class="title" href="#2438">fix021023.zip</a>
+    <a class="thread-title" href="#2438">fix021023.zip</a>
     <span class="author">もか</span>
     <time datetime="2002-10-25T18:08:20">2002年10月25日 18:08</time></h1>
     <div class="body"><br>あいかわらずマイナーなバグ修正パッチです。<br>よろしくお願いします。<br><br>[バグ修正]<br>&#9;・UTF-7→SJISで，データを失うことがある<br>&#9;・SJIS(Unicode)→UTF-7でコントロールコードを含めすべての7ビットコードを直接エンコードしていた<br>&#9;・外部コマンド実行の$f,$gが日本語のファイル名に対応していない<br>&#9;・CEditDoc::OpenFileDialogのpszDefFolderが未初期化のまま参照される可能性があった<br>[その他変更]<br>&#9;・UTF-7への変換時，Dセット(英数+記号の一部)のみ直接エンコードするように変更。<br>&#9;以前よりファイルサイズが大きくなります。<br>[その他(ユーザには関係の薄い所)]<br>&#9;・CEditDoc::GetFileName()新設。ファイル名(パスなし)を返します。<br>&#9;・文字コード名を取得するコードで#if 0 ～ #endif部分を削除<br>&#9;・CFileLoadの読み込み終了の確認方法を変更<br><br>▼ げんたさん<br>&gt; パイプからの入力や圧縮ファイルの直読み込み<br>については，外部仕様を先につめたほうがいいのと，最近あまり時間が取れないので私はパスします。<br></div></section>
     <ul><li><section><h1 id=2440>
     <span class="no">[2440]</span>
-    <a class="title" href="#2440">RE: fix021023.zip</a>
+    <a class="thread-title" href="#2440">RE: fix021023.zip</a>
     <span class="author">げんた</span>
     <time datetime="2002-10-27T00:34:33">2002年10月27日 00:34</time></h1>
     <div class="body">CFileLoad.cppは明らかに10/23版からの差分では無いようです．<br>もう少し古いものと差分を取っているようですが．<br></div></section>
     <ul><li><section><h1 id=2443>
     <span class="no">[2443]</span>
-    <a class="title" href="#2443">Re2: fix021023.zip</a>
+    <a class="thread-title" href="#2443">Re2: fix021023.zip</a>
     <span class="author">もか</span>
     <time datetime="2002-10-28T19:42:44">2002年10月28日 19:42</time></h1>
     <div class="body">▼ げんたさん<br>&gt;CFileLoad.cppは明らかに10/23版からの差分では無いようです．<br>&gt;もう少し古いものと差分を取っているようですが．<br><br>ReadLineW(コメント中)にReadLine側の変更をそのままコピーしたため，<br>紛らわしくなっている＆古いものと差分を取ったように見えるます。<br><br>たかがコメントされどコメントですね。<br>コメント入れておくんだった．．．<br></div></section>
     <ul><li><section><h1 id=2444>
     <span class="no">[2444]</span>
-    <a class="title" href="#2444">Re3: fix021023.zip</a>
+    <a class="thread-title" href="#2444">Re3: fix021023.zip</a>
     <span class="author">げんた</span>
     <time datetime="2002-10-28T21:18:28">2002年10月28日 21:18</time></h1>
     <div class="body">&gt;ReadLineW(コメント中)にReadLine側の変更をそのままコピーしたため，<br>あ，なるほど．行番号までちゃんと確認していませんでした．<br></div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>画面上のカーソル位置</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>画面上のカーソル位置 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">630</span>
-    <a class="title" href="630.html#630">画面上のカーソル位置</a></div>
+    <a class="thread-title" href="630.html#630">画面上のカーソル位置</a></div>
     <ul><li><div class="list-title">
     <span class="no">631</span>
-    <a class="title" href="630.html#631">Re:画面上のカーソル位置</a></div>
+    <a class="thread-title" href="630.html#631">Re:画面上のカーソル位置</a></div>
     <ul><li><div class="list-title">
     <span class="no">633</span>
-    <a class="title" href="630.html#633">Re2:画面上のカーソル位置</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=630>
+    <a class="thread-title" href="630.html#633">Re2:画面上のカーソル位置</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=630>
     <span class="no">[630]</span>
-    <a class="title" href="#630">画面上のカーソル位置</a>
+    <a class="thread-title" href="#630">画面上のカーソル位置</a>
     <span class="author">ケイ</span>
     <time datetime="2017-05-20T04:07:29">2017年05月20日 04:07</time></h1>
     <div class="body">質問させていただきます。<br>現在、何画面か離れたとこへJump()し、処理を終えてJump()で元の位置に戻ってくるようなマクロを書いているのですが、<br>これですと戻ってくる行としては合ってますが行の位置自身が変わってしまうため数行程度のスクロールが発生してしまいます。<br>これを防ぐ手立てはありますでしょうか？<br>見た目上のカーソル位置が取得出来れば対処可能かなと思ったのですが、ちょっと探しきれず…どなたかご教示頂ければと思います。<br><br></div></section>
     <ul><li><section><h1 id=631>
     <span class="no">[631]</span>
-    <a class="title" href="#631">Re:画面上のカーソル位置</a>
+    <a class="thread-title" href="#631">Re:画面上のカーソル位置</a>
     <span class="author">神楽</span>
     <time datetime="2017-05-20T18:37:52">2017年05月20日 18:37</time></h1>
     <div class="body">BookmarkReset();<br>BookmarkSet();<br>Jump();<br>BookmarkPrev(); または BookmarkNext();<br><br>という流れはどうですか？</div></section>
     <ul><li><section><h1 id=633>
     <span class="no">[633]</span>
-    <a class="title" href="#633">Re2:画面上のカーソル位置</a>
+    <a class="thread-title" href="#633">Re2:画面上のカーソル位置</a>
     <span class="author">ケイ</span>
     <time datetime="2017-05-20T20:59:35">2017年05月20日 20:59</time></h1>
     <div class="body">レスありがとうございます。<br>やはり戻ってくる時点でスクロールが発生してしまいます…<br>例えば50行目を画面の縦位置中央辺りに表示させて置いて、100行目に飛んで戻ってくると50行目が上の方へ移動していると言うようなことを防ぎたいのです。</div></section>

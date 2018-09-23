@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>UNICODE版リリースに向けての課題</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>UNICODE版リリースに向けての課題 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">979</span>
-    <a class="title" href="979.html#979">UNICODE版リリースに向けての課題</a></div>
+    <a class="thread-title" href="979.html#979">UNICODE版リリースに向けての課題</a></div>
     <ul><li><div class="list-title">
     <span class="no">980</span>
-    <a class="title" href="979.html#980">１，２，５，６について</a></div>
+    <a class="thread-title" href="979.html#980">１，２，５，６について</a></div>
     </li><li><div class="list-title">
     <span class="no">981</span>
-    <a class="title" href="979.html#981">３，４について</a></div>
+    <a class="thread-title" href="979.html#981">３，４について</a></div>
     <ul><li><div class="list-title">
     <span class="no">982</span>
-    <a class="title" href="979.html#982">Re:３，４について</a></div>
+    <a class="thread-title" href="979.html#982">Re:３，４について</a></div>
     </li><li><div class="list-title">
     <span class="no">1368</span>
-    <a class="title" href="979.html#1368">管理人</a></div>
+    <a class="thread-title" href="979.html#1368">管理人</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">983</span>
-    <a class="title" href="979.html#983">Re:UNICODE版リリースに向けての課題</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=979>
+    <a class="thread-title" href="979.html#983">Re:UNICODE版リリースに向けての課題</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=979>
     <span class="no">[979]</span>
-    <a class="title" href="#979">UNICODE版リリースに向けての課題</a>
+    <a class="thread-title" href="#979">UNICODE版リリースに向けての課題</a>
     <span class="author">syat</span>
     <time datetime="2009-07-03T06:44:25">2009年07月03日 06:44</time></h1>
     <div class="body">UNICODE版は年内にリリースされるのかな～という期待を持ちつつ、リリースに向けての課題（気になる点）を並べてみました。皆様の意見をぜひ聞かせてください。<br><br>１．名前は「サクラエディタUNICODE版（英名：sakuraW）」で決定か<br>２．バージョン番号（2.0.0.0～となる？）<br>３．インストールフォルダは、sakuraに上書きするのか、sakuraWというフォルダを作るのか。<br>４．ANSI版の設定を移行する方法<br>５．関連付けツールの準備<br>６．ヘルプはANSI版と共通か、二手に分かれてゆくのか<br><br>他にもあれば追加してください。<br><br>ちなみに５の関連付けツールについてはBeta.Itoさんが新たにC++で作ったものを公開されているので、それで良いのかなと思っています。<br><a href=http://sakura.qp.land.to/?Develop%2F%B3%C8%C4%A5%BB%D2%C5%D0%CF% target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2F%<wbr>B3%<wbr>C8%<wbr>C4%<wbr>A5%<wbr>BB%<wbr>D2%<wbr>C5%<wbr>D0%<wbr>CF%<wbr></nobr></a><br>BF<br><br>また３については、鬼車のANSI版とUNICODE版が同じファイル名なので、別フォルダにするのがよいのではないかと思います。<br></div></section>
     <ul><li><section><h1 id=980>
     <span class="no">[980]</span>
-    <a class="title" href="#980">１，２，５，６について</a>
+    <a class="thread-title" href="#980">１，２，５，６について</a>
     <span class="author">ryoji</span>
     <time datetime="2009-07-03T21:16:21">2009年07月03日 21:16</time></h1>
     <div class="body">&gt; １．名前は「サクラエディタUNICODE版（英名：sakuraW）」で決定か<br>&gt; ２．バージョン番号（2.0.0.0～となる？）<br><br>開発上はA版/U版の区別が必要とは思いますが、一般向けには単に、1.x系/2.x系というバージョン区別だけで十分ではないかしら？<br><br>&gt; ５．関連付けツールの準備<br><br>自分も、Beta.ItoさんのC++版が使えるならそれでよいかなと思います。<br><br>&gt; ６．ヘルプはANSI版と共通か、二手に分かれてゆくのか<br><br>A版保守用とは分岐したほうが良さそうな気がしますね。</div></section>
     </li><li><section><h1 id=981>
     <span class="no">[981]</span>
-    <a class="title" href="#981">３，４について</a>
+    <a class="thread-title" href="#981">３，４について</a>
     <span class="author">ryoji</span>
     <time datetime="2009-07-03T21:22:34">2009年07月03日 21:22</time></h1>
     <div class="body">&gt; ３．インストールフォルダは、sakuraに上書きするのか、sakuraWというフォルダを作るのか。<br>&gt; ４．ANSI版の設定を移行する方法<br><br>●ファイル名はsakuraW.exeかsakura.exeか<br>（参考）<a href=http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?log=data&ol=200806&tree=s6672#6672 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>data&amp;<wbr>ol=<wbr>200806&amp;<wbr>tree=<wbr>s6672#<wbr>6672</nobr></a><br><br>一般利用者の標準的な移行パスを、<br>・A版/U版の併用はしない<br>・一度U版に移行したらA版へは戻らない<br>であると仮定すると…<br><br>以下のA版のファイルを、同名のU版ファイルで上書きしてしまうのが移行は断然楽だと思います。（移行前にsakura.iniのバックアップくらいはしておいたほうがいいと思いますけど）<br> sakura.exe<br> bregonig.dll<br> sakura.chm<br> sakuext.exe<br><br>利点は次の通り、「すぐに使い始められる」ことですね。<br>・sakura.iniの各種設定はそのまま引き継がれる<br>・その他の支援ファイル(ctags,diff,migemoなど)を移動せずに使える<br>・ファイル関連付けや「sakuraで開く」が以前のまま使える<br>・他アプリの外部エディタ設定も変更せずに以前のまま使える<br>まぁ、iniファイル形式が少し変わった程度で、他は従来と大差無いと思ってもらうくらいがいいんじゃないかな？</div></section>
     <ul><li><section><h1 id=982>
     <span class="no">[982]</span>
-    <a class="title" href="#982">Re:３，４について</a>
+    <a class="thread-title" href="#982">Re:３，４について</a>
     <span class="author">syat</span>
     <time datetime="2009-07-04T16:26:04">2009年07月04日 16:26</time></h1>
     <div class="body">▼ ryojiさん<br>&gt; 一般利用者の標準的な移行パスを、<br>&gt; ・A版/U版の併用はしない<br>&gt; ・一度U版に移行したらA版へは戻らない<br>&gt; であると仮定すると…<br>A→Uで失われる機能がとくになければそれで良いと思います。<br>私は併用でやっていましたが、関連付けとか設定変更とかでいろいろ面倒くさいだけでしたので。<br><br>&gt; 以下のA版のファイルを、同名のU版ファイルで上書きしてしまうのが移行は断然楽だと思います。（移行前にsakura.iniのバックアップくらいはしておいたほうがいいと思いますけど）<br>なるほど。ファイル名が違ったので、上書きすることはあまり考えてませんでした。<br><br>&gt; ・sakura.iniの各種設定はそのまま引き継がれる<br>試してみましたが、U版を起動するとA版の設定がきちんと引き継がれるみたいですね。ただ設定ファイルがUTF-8になってしまうので、A版に戻るときはSJISに変換する必要があります。<br>それとキー割り当ての設定が大きくかわっていて、U→Aに引き継ぐことができませんでした。キー割り当てのエクスポートでもだめです。A版に新しい形式をインポートする機能があればいいのかもしれません。<br><br>関連付けツール２は、サクラ本体のファイル名によってANSI/UNICODEモードを切り替えているようで、sakura.exeを上書きするやり方だと文字が化け化けでした。。。<br>sakura.exeとsakuraW.exeを併用する人なら問題ないですが、上書きする人には何か考えないといけないですね。<br>上書きの方針で行くなら、早いうちにファイル名をsakura.exeにしておいたほうが良いのでは？<br></div></section>
     </li><li><section><h1 id=1368>
     <span class="no">[1368]</span>
-    <a class="title" href="#1368">管理人</a>
+    <a class="thread-title" href="#1368">管理人</a>
     <span class="author">削除</span>
     <time datetime="2010-08-20T20:48:30">2010年08月20日 20:48</time></h1>
     <div class="body">-<br></div></section>
     </li></ul></li><li><section><h1 id=983>
     <span class="no">[983]</span>
-    <a class="title" href="#983">Re:UNICODE版リリースに向けての課題</a>
+    <a class="thread-title" href="#983">Re:UNICODE版リリースに向けての課題</a>
     <span class="author">anonymous</span>
     <time datetime="2009-07-06T18:50:45">2009年07月06日 18:50</time></h1>
     <div class="body">2chよりコピペしておきます。<br><br>７．集中虫取り←ピアレビューとかいいつつ一気に修正したところを誰も確認してない<br>８．全機能の動作確認←開発者が使うところしか見てないだろ<br><br>９．ソースのライセンス表記<br>　後でやるとか言いつつ、今は何も記載がない<br></div></section>

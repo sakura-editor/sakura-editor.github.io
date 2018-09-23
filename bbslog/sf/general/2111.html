@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>「外部コマンド実行」の [ファイル参照]</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>「外部コマンド実行」の [ファイル参照] | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2111</span>
-    <a class="title" href="2111.html#2111">「外部コマンド実行」の [ファイル参照]</a></div>
+    <a class="thread-title" href="2111.html#2111">「外部コマンド実行」の [ファイル参照]</a></div>
     <ul><li><div class="list-title">
     <span class="no">2112</span>
-    <a class="title" href="2111.html#2112">Re: 「外部コマンド実行」の [ファイル参照]</a></div>
+    <a class="thread-title" href="2111.html#2112">Re: 「外部コマンド実行」の [ファイル参照]</a></div>
     <ul><li><div class="list-title">
     <span class="no">2115</span>
-    <a class="title" href="2111.html#2115">Re2: 「外部コマンド実行」の [ファイル参照]</a></div>
+    <a class="thread-title" href="2111.html#2115">Re2: 「外部コマンド実行」の [ファイル参照]</a></div>
     <ul><li><div class="list-title">
     <span class="no">2125</span>
-    <a class="title" href="2111.html#2125">Re3: 「外部コマンド実行」の [ファイル参照]</a></div>
+    <a class="thread-title" href="2111.html#2125">Re3: 「外部コマンド実行」の [ファイル参照]</a></div>
     <ul><li><div class="list-title">
     <span class="no">2127</span>
-    <a class="title" href="2111.html#2127">Re4: 「外部コマンド実行」の [ファイル参照]</a></div>
+    <a class="thread-title" href="2111.html#2127">Re4: 「外部コマンド実行」の [ファイル参照]</a></div>
     <ul><li><div class="list-title">
     <span class="no">2129</span>
-    <a class="title" href="2111.html#2129">Re5: 「外部コマンド実行」の [ファイル参照]</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2111>
+    <a class="thread-title" href="2111.html#2129">Re5: 「外部コマンド実行」の [ファイル参照]</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2111>
     <span class="no">[2111]</span>
-    <a class="title" href="#2111">「外部コマンド実行」の [ファイル参照]</a>
+    <a class="thread-title" href="#2111">「外部コマンド実行」の [ファイル参照]</a>
     <span class="author">すい</span>
     <time datetime="2002-07-12T22:44:26">2002年07月12日 22:44</time></h1>
     <div class="body">[ツール(T)] → [外部コマンド実行(X)]<br>でファイル参照のボタン（右端の [...] ボタン）が出なくなることがあります。<br>具体的にはエラーダイアログが出ます。<br>+------------------------------<br>|sakura<br>|ダイアログが開けません。<br>|<br>|エラー:FNERR_INVALIDFILENAME<br>|　　　　[　OK　]<br>+------------------------------<br><br>最後に実行したコマンド（コマンドの実行履歴）によってエラーが出たり出なかったりします。<br>×：dir/b/s<br>×：dir/b<br>○：dir<br>×：C:\WINDOWS\COMMAND\Attrib.exe /s<br>×：C:\WINDOWS\COMMAND\Attrib.exe c:\*.*<br>×：attrib /s<br>○：C:\WINDOWS\COMMAND\Attrib.exe<br>○：attrib<br>×："C:\Program Files\SAKURA\Diff.exe" "C:\Program Files\SAKURA\hoge.pl" "C:\Program Files\SAKURA\hoge2.pl"<br>○：C:\Program Files\SAKURA\Diff.exe<br>×：dir c:<br>×：dir *.*<br><br>○：正常に「ファイルを開く」が出る。<br>×：エラーダイアログが出る。<br><br>最後に実行したコマンドに何かオプションパラメータが付いている場合にダメ？<br><br>で、CDlgOpenFile.cpp の CDlgOpenFile::Create() 中で文字列を単純に<br>「_splitpath に投げて szDrive と szDir を結合するだけ」の辺りが原因？かな？と推測したんですが。<br>例えば dir/b/s なんかを _splitpath に投げると<br>・Drive：""<br>・Dir　："dir/b/"<br>になってしまう(と思う)ので m_szInitialDir = "dir/b/" になってしまったりする(と思う)のがまずいかな？と。<br># 確認できないので、実際には原因、違うかもしれません。<br><br>ただ、もしそうだとすると、<br>「 Drive が空の場合は m_szInitialDir に文字列を代入しない」である程度解決するかな？と思ったけど、<br>C:\WINDOWS\COMMAND\Attrib.exe c:\*.* なんかの場合は<br>　・Drive："C:"<br>　・Dir　："\WINDOWS\COMMAND\Attrib.exe c:\"<br>となるだろうから問題回避できなさそうだし。<br>さらに、逆に \\computer0\name1\dir2\file3 なんかの場合は<br>　・Drive：""<br>　・Dir　："\\computer0\name1\dir2\"<br>だからデフォルトで開いてくれなくなりそうだし。<br><br>そもそも _splitpath って“正常なパス文字列”以外の文字列が来た場合の挙動って<br>コンパイラ（のライブラリ）によって異なるから、ちょっと恐いんですよね。<br>「オプションパラメータとの分離」／「本当にパス文字列なのかどうかの判別」<br>をちゃんと真面目にやる「 _splitpath 代替関数」を自作しないと解決しそうにないです。<br><br>もし、本当にこれが原因だったら、_splitpath 関数、私が自作してみませうか？<br># 私に任せておくと時間かかると思いますけど。<br>もっとも、その前に私には原因が特定できないので．．．<br></div></section>
     <ul><li><section><h1 id=2112>
     <span class="no">[2112]</span>
-    <a class="title" href="#2112">Re: 「外部コマンド実行」の [ファイル参照]</a>
+    <a class="thread-title" href="#2112">Re: 「外部コマンド実行」の [ファイル参照]</a>
     <span class="author">げんた</span>
     <time datetime="2002-07-13T00:32:32">2002年07月13日 00:32</time></h1>
     <div class="body">&gt;[ツール(T)] → [外部コマンド実行(X)]<br>&gt;でファイル参照のボタン（右端の [...] ボタン）が出なくなることがあります。<br>詳細どうもです．<br>これは以前に報告があって，そのときにパスの解析にパラメータまで渡しておかしくなるというところまでは調べたんですが，それっきり忘れて放置してました．<br><br>&gt;もし、本当にこれが原因だったら、_splitpath 関数、私が自作してみませうか？<br>&gt;# 私に任せておくと時間かかると思いますけど。<br>まぁ気長に待つとしましょう．<br></div></section>
     <ul><li><section><h1 id=2115>
     <span class="no">[2115]</span>
-    <a class="title" href="#2115">Re2: 「外部コマンド実行」の [ファイル参照]</a>
+    <a class="thread-title" href="#2115">Re2: 「外部コマンド実行」の [ファイル参照]</a>
     <span class="author">すい</span>
     <time datetime="2002-07-15T20:15:09">2002年07月15日 20:15</time></h1>
     <div class="body">&gt;&gt;もし、本当にこれが原因だったら、_splitpath 関数、私が自作してみませうか？<br>&gt;&gt;# 私に任せておくと時間かかると思いますけど。<br>&gt;まぁ気長に待つとしましょう．<br><br>作ってみました。こんな感じ。<br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/my_sp.lzh<br><br>my_splitpath( CommandLine, drive, dir, fname, ext );<br><br>_splitpath() と互換（のつもり）の関数です。<br>CommandLine に与えられたコマンドライン文字列の先頭から、実在する<br>ファイル・ディレクトリの部分のみを抽出し、その抽出部分に対して<br>_splitpath() と同等の処理をおこないます。<br># ↑実際にディスクにアクセスして実在のファイル・ディレクトリを探すので、<br># 単なる文字列処理だけの _splitpath() よりも遅くなります。<br><br>先頭部分に実在するファイル・ディレクトリ名が無い場合は空文字列が<br>返ります。<br>文字列中の日本語(Shift_JISコードのみ)に対応しています。<br><br>my_sp.c：my_splitpath(); が記述されているファイル<br>test.c ：↑の動作確認用テストプログラム main();<br><br>結構長い物になってしまいました。が、半分くらい注釈だったりして（をぃ＞私）<br><br>適当なファイルにコピーペーストするなり何なりしてリンクするようにして、<br>_splitpath を my_splitpath に置き換えてみてください。<br></div></section>
     <ul><li><section><h1 id=2125>
     <span class="no">[2125]</span>
-    <a class="title" href="#2125">Re3: 「外部コマンド実行」の [ファイル参照]</a>
+    <a class="thread-title" href="#2125">Re3: 「外部コマンド実行」の [ファイル参照]</a>
     <span class="author">げんた</span>
     <time datetime="2002-07-23T01:19:21">2002年07月23日 01:19</time></h1>
     <div class="body">&gt;作ってみました。こんな感じ。<br><br>&gt; _dos_setvect(0x24,int24h);&#9;/* 割込みベクタ復活 */<br>めっちゃ久しぶりに見ました．自分では使ったこと無いな～．<br><br>&gt;#ifdef&#9;LSI_C&#9;/* LSI-C の場合。 */<br>&gt;void far&#9;_asm_void_( char * );<br>&gt;void far&#9;int_nop(){&#9;_asm_void_( "IRET\n" );&#9;}<br>&gt;#endif&#9;/* LSI_C */<br>こっ，こんな技が... DOS時代は凄かった...<br><br>別ファイルにコピペしようかとかDOS部分を削除しようかとか考えましたが，下手に削除するとコメントとつじつま合わなくなっちゃうのでファイルさら使うことにします．<br><br># えーと，C関数のリンク方法は...(._.) φ メモメモ<br></div></section>
     <ul><li><section><h1 id=2127>
     <span class="no">[2127]</span>
-    <a class="title" href="#2127">Re4: 「外部コマンド実行」の [ファイル参照]</a>
+    <a class="thread-title" href="#2127">Re4: 「外部コマンド実行」の [ファイル参照]</a>
     <span class="author">すい</span>
     <time datetime="2002-07-23T21:38:49">2002年07月23日 21:38</time></h1>
     <div class="body">&gt;下手に削除するとコメントとつじつま合わなくなっちゃうので<br>コメント、全部削除して頂いて構いませんよ。 (;*^_^*Ａ<br># ソース近辺のまで全部消したら何処で何やっているかわからなくなるかもしれませんが。 :-D<br>著作権や何かは一切放棄させていただきます。改変等もご自由に、という事で。<br><br>いえ、モロ C のソースファイルを C++ と一緒くたにしちゃって、何か管理上とか、<br>他のファイルとの雰囲気(?)上、変な事にならなければ良いのですが。。。と思いまして。　f(^^;<br><br><br># 今、エディタのフォント設定を Y.OzFont 太文字(Y.OzFontB) にして<br># 何とも言えぬいい雰囲気に浸ってます。:-D　 http://users.hoops.ne.jp/yozk/<br></div></section>
     <ul><li><section><h1 id=2129>
     <span class="no">[2129]</span>
-    <a class="title" href="#2129">Re5: 「外部コマンド実行」の [ファイル参照]</a>
+    <a class="thread-title" href="#2129">Re5: 「外部コマンド実行」の [ファイル参照]</a>
     <span class="author">げんた</span>
     <time datetime="2002-07-24T00:22:27">2002年07月24日 00:22</time></h1>
     <div class="body">&gt;著作権や何かは一切放棄させていただきます。改変等もご自由に、という事で。<br>著作権表示は追加しましたけど，ライセンスは書き込んでいません．<br><br>&gt;いえ、モロ C のソースファイルを C++ と一緒くたにしちゃって、何か管理上とか、<br>makeファイルに.c.objを追加しました．<br>あと，Global名前空間を表す::はCではコンパイルエラーになったので取り除きました．<br><br>&gt;# 今、エディタのフォント設定を Y.OzFont 太文字(Y.OzFontB) にして<br>みかちゃんフォントといい手書きフォントは何となくほのぼのしますね<br></div></section>

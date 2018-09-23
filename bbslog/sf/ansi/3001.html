@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>BCCでのコンパイルエラー（覚え書き）</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>BCCでのコンパイルエラー（覚え書き） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3001</span>
-    <a class="title" href="3001.html#3001">BCCでのコンパイルエラー（覚え書き）</a></div>
+    <a class="thread-title" href="3001.html#3001">BCCでのコンパイルエラー（覚え書き）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3003</span>
-    <a class="title" href="3001.html#3003">RE: BCCでのコンパイルエラー（覚え書き）</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3001>
+    <a class="thread-title" href="3001.html#3003">RE: BCCでのコンパイルエラー（覚え書き）</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3001>
     <span class="no">[3001]</span>
-    <a class="title" href="#3001">BCCでのコンパイルエラー（覚え書き）</a>
+    <a class="thread-title" href="#3001">BCCでのコンパイルエラー（覚え書き）</a>
     <span class="author">げんた</span>
     <time datetime="2003-08-12T08:15:23">2003年08月12日 08:15</time></h1>
     <div class="body">888 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：03/08/11 17:36 ID:aLj4Qetl<br>v1.4.2.0ってBorland C5.5.1でコンパイルすると次のエラーが出るね。<br><br>エラー E2268 ..\sakura_core\CLayoutMgr_New.cpp 1288: 未定義の関数 '_mbsstr' を呼<br>び出した(関数 CLayoutMgr::getIndentOffset_LeftSpace(CL<br>ayout *) )<br><br>本家開発掲示板にMinGWでの修正を参考に<br>#define _mbsstr(a,b) strstr((char*)(a),(char*)(b))<br>をソース中に入れたらバイナリが出来た。<br>前のバージョンではエラーが出なかったと思うのだが気のせいか？<br></div></section>
     <ul><li><section><h1 id=3003>
     <span class="no">[3003]</span>
-    <a class="title" href="#3003">RE: BCCでのコンパイルエラー（覚え書き）</a>
+    <a class="thread-title" href="#3003">RE: BCCでのコンパイルエラー（覚え書き）</a>
     <span class="author">もか</span>
     <time datetime="2003-08-13T02:26:06">2003年08月13日 02:26</time></h1>
     <div class="body">&gt;v1.4.2.0ってBorland C5.5.1でコンパイルすると次のエラーが出るね。<br>&gt;<br>&gt;エラー E2268 ..\sakura_core\CLayoutMgr_New.cpp 1288: 未定義の関数 '_mbsstr' を呼<br>&gt;び出した(関数 CLayoutMgr::getIndentOffset_LeftSpace(CL<br>&gt;ayout *) )<br><br>別の問題ですが、私が書いたコードで、<br>#if defined(_MBCS)<br>で囲ってSJIS対策処理をしたことがあるので、makefileを修正して_MBCSを定義しないといけません。<br>_MBCSを定義すれば_mbsstrのエラーも出なくなるみたいです。<br><br>makefile 11行目<br>CPPFLAGS=-I..\sakura_core  -DWINVER=0x400 -D_WIN32_WINNT=0 -D_WIN32_IE=0x400 -D_MBCS -M<br></div></section>

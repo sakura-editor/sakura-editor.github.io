@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>バージョンアップクラス（案）</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バージョンアップクラス（案） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3303</span>
-    <a class="title" href="3303.html#3303">バージョンアップクラス（案）</a></div>
+    <a class="thread-title" href="3303.html#3303">バージョンアップクラス（案）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3314</span>
-    <a class="title" href="3303.html#3314">RE: バージョンアップクラス（案）</a></div>
+    <a class="thread-title" href="3303.html#3314">RE: バージョンアップクラス（案）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3397</span>
-    <a class="title" href="3303.html#3397">RE2: バージョンアップクラス（案）</a></div>
+    <a class="thread-title" href="3303.html#3397">RE2: バージョンアップクラス（案）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3401</span>
-    <a class="title" href="3303.html#3401">Re3: バージョンアップクラス（案）</a></div>
+    <a class="thread-title" href="3303.html#3401">Re3: バージョンアップクラス（案）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3403</span>
-    <a class="title" href="3303.html#3403">Re3: バージョンアップクラス（案）</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3303>
+    <a class="thread-title" href="3303.html#3403">Re3: バージョンアップクラス（案）</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3303>
     <span class="no">[3303]</span>
-    <a class="title" href="#3303">バージョンアップクラス（案）</a>
+    <a class="thread-title" href="#3303">バージョンアップクラス（案）</a>
     <span class="author">みく</span>
     <time datetime="2003-11-08T09:46:30">2003年11月08日 09:46</time></h1>
     <div class="body"><br>サクラエディタをバージョンアップした際に、(1度だけ)必要な処理を走らせるためのもの。<br><br>・iniファイルにバージョン情報を記録するようにする。<br>・iniファイルから読み込んだ情報が本体のバージョンより古い場合、共有メモリに格納する前に呼び出す。<br>・必要ならCProfileが保持する情報を変換する。<br>（CShareData_new.cpp:ShareData_IO_2()のcProfile.ReadProfile()の直後に呼び出す）<br><br>例えば、<br>・タブメニュー（カスタムメニュー24）<br>バージョンアップによって追加されたものなので、バージョンアップの際に<br>初期値を設定してあげるのが親切である。<br>メニューが空なら初期値設定ということをすることはできるが、<br>ユーザが「右クリックメニューは出さない」（空）という設定にしたのかもしれない。<br>(毎回、初期値設定という処理を入れるには問題がある)<br>バージョンアップの際に一度だけ初期値設定処理を走らせることができればこの問題は解決。<br><br><br>バージョンアップに関する処理を1箇所にまとめることができ、<br>また、一度だけ走らせることもできるので便利だと思います。<br><br>トリガーですが、<br>・該当するバージョンになったか、<br>・該当するバージョンを飛び越えた<br>場合に処理が走るということになると思います。<br></div></section>
     <ul><li><section><h1 id=3314>
     <span class="no">[3314]</span>
-    <a class="title" href="#3314">RE: バージョンアップクラス（案）</a>
+    <a class="thread-title" href="#3314">RE: バージョンアップクラス（案）</a>
     <span class="author">みく</span>
     <time datetime="2003-11-20T21:47:00">2003年11月20日 21:47</time></h1>
     <div class="body"><br>試作品を作ってみました。<br>→egroups:source/vup20031120.LZH<br><br>例として、<br>1.4.0.0：タブメニューの登録<br>1.4.3.4：タブキャプションの変更<br>を入れています。<br></div></section>
     <ul><li><section><h1 id=3397>
     <span class="no">[3397]</span>
-    <a class="title" href="#3397">RE2: バージョンアップクラス（案）</a>
+    <a class="thread-title" href="#3397">RE2: バージョンアップクラス（案）</a>
     <span class="author">みく</span>
     <time datetime="2004-02-02T21:53:45">2004年02月02日 21:53</time></h1>
     <div class="body"><br>なーんもレスないところを見ると、こんな機能は必要なしってことで。<br></div></section>
     <ul><li><section><h1 id=3401>
     <span class="no">[3401]</span>
-    <a class="title" href="#3401">Re3: バージョンアップクラス（案）</a>
+    <a class="thread-title" href="#3401">Re3: バージョンアップクラス（案）</a>
     <span class="author">げんた</span>
     <time datetime="2004-02-05T09:31:49">2004年02月05日 09:31</time></h1>
     <div class="body">&gt;なーんもレスないところを見ると、こんな機能は必要なしってことで。<br>といいつつ，しっかり更新されてるし．<br></div></section>
     <ul><li><section><h1 id=3403>
     <span class="no">[3403]</span>
-    <a class="title" href="#3403">Re3: バージョンアップクラス（案）</a>
+    <a class="thread-title" href="#3403">Re3: バージョンアップクラス（案）</a>
     <span class="author">もか</span>
     <time datetime="2004-02-05T23:30:26">2004年02月05日 23:30</time></h1>
     <div class="body">&gt;なーんもレスないところを見ると、こんな機能は必要なしってことで。<br>　バージョンアップされたときのみその必要性がある比較的利用されることが少ないコードを、1MB寸前の本体に内蔵するには、ちょっと抵抗があります。<br>　だた、バージョンアップしたら、どこどこが変だとか言われてばかりだし、その辺頭が痛い...<br>　代替案としては、別途、設定ファイル更新ツールを作成して、フルパッケージに添付するとか、<br>バージョンアップ向けパッケージをつくってもいいかも。<br>問題点は、作成自体が大変で、メンテナンスがないがしろになる傾向がある等。<br>　そうなると、HPで設定の変更情報をまとめて知らせるのが手ごろかなとかも考えます。<br>で、結局自分の意見は、代替案を押します。<br>バージョン更新関数が20個とかになるまえに分離できれば、ありがたいかな、ぐらいです。<br>　とりあえず、sakura.iniにバージョン番号を記録する部分は、今すぐにでも実装(統合)したほうがいいとは思います。<br></div></section>

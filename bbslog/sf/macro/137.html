@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>sakuraのマクロで連続してgrepできますか？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>sakuraのマクロで連続してgrepできますか？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">137</span>
-    <a class="title" href="137.html#137">sakuraのマクロで連続してgrepできますか？</a></div>
+    <a class="thread-title" href="137.html#137">sakuraのマクロで連続してgrepできますか？</a></div>
     <ul><li><div class="list-title">
     <span class="no">139</span>
-    <a class="title" href="137.html#139">Re: sakuraのマクロで連続してgrepできますか？</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=137>
+    <a class="thread-title" href="137.html#139">Re: sakuraのマクロで連続してgrepできますか？</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=137>
     <span class="no">[137]</span>
-    <a class="title" href="#137">sakuraのマクロで連続してgrepできますか？</a>
+    <a class="thread-title" href="#137">sakuraのマクロで連続してgrepできますか？</a>
     <span class="author">sakura～</span>
     <time datetime="2004-12-08T12:53:43">2004年12月08日 12:53</time></h1>
     <div class="body">はじめまして。<br>教えていただきたいのですが、<br>現在sakuraのマクロで連続してgrepを行おうとしています。<br>ソースは<br>S_Grep('xxx', '*.*', 'xxxxx', 25393);// Grep<br>S_Grep('xxx', '*.*', 'xxxxx', 25393);// Grep<br>S_Grep('xxx', '*.*', 'xxxxx', 25393);// Grep<br>を記述しているのですが、これですとgrepの数だけ<br>sakuraエディタが起動しています。<br>総grep数は７００ぐらいありこれではビジー状態となってしまいます。<br>一つのgrepが終わるのを待機して終了すれば次のgrepを行うことは可能でしょうか？<br>当方、初心者で申し訳ありませんが、ご教授お願いいたします。</div></section>
     <ul><li><section><h1 id=139>
     <span class="no">[139]</span>
-    <a class="title" href="#139">Re: sakuraのマクロで連続してgrepできますか？</a>
+    <a class="thread-title" href="#139">Re: sakuraのマクロで連続してgrepできますか？</a>
     <span class="author">げんた</span>
     <time datetime="2005-02-27T01:32:31">2005年02月27日 01:32</time></h1>
     <div class="body">2ヶ月半遅れですが...<br>&gt;現在sakuraのマクロで連続してgrepを行おうとしています。<br>&gt;総grep数は７００ぐらいありこれではビジー状態となってしまいます。<br>正規表現でorを使って1つにまとめる，にしても700は多すぎるかな．<br>(やったこと無いのでわかりませんが)<br><br>あるいはperlとか使った方が現実的かと思います．<br></div></section>

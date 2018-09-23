@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>提案：ソースコードの文字コード</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>提案：ソースコードの文字コード | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">65</span>
-    <a class="title" href="65.html#65">提案：ソースコードの文字コード</a></div>
+    <a class="thread-title" href="65.html#65">提案：ソースコードの文字コード</a></div>
     <ul><li><div class="list-title">
     <span class="no">66</span>
-    <a class="title" href="65.html#66">RE: 提案：ソースコードの文字コード</a></div>
+    <a class="thread-title" href="65.html#66">RE: 提案：ソースコードの文字コード</a></div>
     <ul><li><div class="list-title">
     <span class="no">67</span>
-    <a class="title" href="65.html#67">Re2: 提案：ソースコードの文字コード</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=65>
+    <a class="thread-title" href="65.html#67">Re2: 提案：ソースコードの文字コード</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=65>
     <span class="no">[65]</span>
-    <a class="title" href="#65">提案：ソースコードの文字コード</a>
+    <a class="thread-title" href="#65">提案：ソースコードの文字コード</a>
     <span class="author">kobake</span>
     <time datetime="2007-11-27T20:49:03">2007年11月27日 20:49</time></h1>
     <div class="body">もしヤルとしたら今のうち…なのですが、<br>パッチ適用時の文字化けを防ぐために、全てのソースをUTF-8にしてしまう、というのはどうでしょうか。<br><a href=http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?log=dev&ol=200604&tree=s4396 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>dev&amp;<wbr>ol=<wbr>200604&amp;<wbr>tree=<wbr>s4396</nobr></a><br><a href=http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?log=dev&ol=200604&tree=s4406 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>dev&amp;<wbr>ol=<wbr>200604&amp;<wbr>tree=<wbr>s4406</nobr></a><br><br>UTF-8で書かれたソースコード、というのがどれほど浸透しているのか分かりませんけど。。<br>デメリットもありそうではあります。</div></section>
     <ul><li><section><h1 id=66>
     <span class="no">[66]</span>
-    <a class="title" href="#66">RE: 提案：ソースコードの文字コード</a>
+    <a class="thread-title" href="#66">RE: 提案：ソースコードの文字コード</a>
     <span class="author">げんた</span>
     <time datetime="2007-11-27T22:53:55">2007年11月27日 22:53</time></h1>
     <div class="body">&gt;パッチ適用時の文字化けを防ぐために、全てのソースをUTF-8にしてしまう、というのはどうでしょうか。<br>&gt;UTF-8で書かれたソースコード、というのがどれほど浸透しているのか分かりませんけど。。<br>経験がないのでわかりませんが，埋め込まれた文字列がUTF-8だと，UTF-16でもSJISでもなくUTF-8出力されてしまうということにはなりませんか？<br><br>文法上はSJISで問題となる文字列中のbackslash(YEN記号)が出ないので問題なさそうですけど...<br></div></section>
     <ul><li><section><h1 id=67>
     <span class="no">[67]</span>
-    <a class="title" href="#67">Re2: 提案：ソースコードの文字コード</a>
+    <a class="thread-title" href="#67">Re2: 提案：ソースコードの文字コード</a>
     <span class="author">kobake</span>
     <time datetime="2007-11-27T23:23:05">2007年11月27日 23:23</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;パッチ適用時の文字化けを防ぐために、全てのソースをUTF-8にしてしまう、というのはどうでしょうか。<br>&gt; &gt;UTF-8で書かれたソースコード、というのがどれほど浸透しているのか分かりませんけど。。<br>&gt; 経験がないのでわかりませんが，埋め込まれた文字列がUTF-8だと，UTF-16でもSJISでもなくUTF-8出力されてしまうということにはなりませんか？<br><br>なるほど、たしかにその辺りはちょっと不安ですね。<br><br>Visual Studio 2005 で試してみた限りでは、文字列リテラルは<br>内部的(コンパイラ的)には<br>charリテラルなら Shift_JIS に、wchar_tリテラルなら UTF-16LE に、<br>それぞれ変換した上で保持されているようでした。<br><br>たとえば日本語環境で、以下のようなコードを書いて、<br>void f()<br>{<br>　char*    s1 =  "ABC日本(ニーハオ)"; //(※1)<br>　wchar_t* s2 = L"ABC日本(ニーハオ)"; //(※2)<br>}<br>これをステップ実行で追って s1 の中身を見てみると、<br>s1 は Shift_JIS 形式で "ABC日本?好" と保持されていました。<br>(「ニー」の部分が日本語環境のコードページでは現せないので「?」に変換されている)<br><br>ちなみに、コンパイルの時点で(※1)の行で<br>「warning C4566: ユニバーサル文字名 '\u4F60' によって表示されている文字は、現在のコード ページ (932) で表示できません」<br>という警告が発せられていました。<br><br>s2 では警告も無くデータも壊れず UTF-16LE 形式で格納されていました。<br><br><br>規格は調べていませんが、実際の動作として、「Visual Studio 2005 に関して試した限りでは」、<br>問題が無さそうでした。<br>・この挙動が一般的であるか<br>・他のコンパイラでも同じ挙動になるのか<br>等の普遍的で太鼓判を押すに値する情報は、まだ見つけてないです。<br></div></section>

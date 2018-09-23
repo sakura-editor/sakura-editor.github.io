@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>GetSelectedString</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>GetSelectedString | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2691</span>
-    <a class="title" href="2691.html#2691">GetSelectedString</a></div>
+    <a class="thread-title" href="2691.html#2691">GetSelectedString</a></div>
     <ul><li><div class="list-title">
     <span class="no">2692</span>
-    <a class="title" href="2691.html#2692">RE: GetSelectedString</a></div>
+    <a class="thread-title" href="2691.html#2692">RE: GetSelectedString</a></div>
     <ul><li><div class="list-title">
     <span class="no">2693</span>
-    <a class="title" href="2691.html#2693">Re2: GetSelectedString</a></div>
+    <a class="thread-title" href="2691.html#2693">Re2: GetSelectedString</a></div>
     <ul><li><div class="list-title">
     <span class="no">2694</span>
-    <a class="title" href="2691.html#2694">Re3: GetSelectedString</a></div>
+    <a class="thread-title" href="2691.html#2694">Re3: GetSelectedString</a></div>
     <ul><li><div class="list-title">
     <span class="no">2835</span>
-    <a class="title" href="2691.html#2835">Re4: GetSelectedString</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2691>
+    <a class="thread-title" href="2691.html#2835">Re4: GetSelectedString</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2691>
     <span class="no">[2691]</span>
-    <a class="title" href="#2691">GetSelectedString</a>
+    <a class="thread-title" href="#2691">GetSelectedString</a>
     <span class="author">おに</span>
     <time datetime="2003-02-02T21:20:43">2003年02月02日 21:20</time></h1>
     <div class="body">選択範囲をタグで囲むマクロを作ろうとしてEditor.GetSelectedStringを使おうとしたのですが、複数行選択している時も、一行めしか取得できていない様子。<br>二行目以降を得るにはどうすればよいのでしょうか。<br>2002-12-24日版です。<br><br>(ソースを見ても実質View-&gt;GetCurrentTextForSearch( cMem )だけですし引数も使って無くいまいち把握が…。VC++持って無いのでデバッガで追いかける事もできず。ソースを目で追う気力は無く…申し訳ないです)</div></section>
     <ul><li><section><h1 id=2692>
     <span class="no">[2692]</span>
-    <a class="title" href="#2692">RE: GetSelectedString</a>
+    <a class="thread-title" href="#2692">RE: GetSelectedString</a>
     <span class="author">すい</span>
     <time datetime="2003-02-02T21:38:58">2003年02月02日 21:38</time></h1>
     <div class="body">&gt;選択範囲をタグで囲むマクロを作ろうとしてEditor.GetSelectedStringを使おうとしたのですが、複数行選択している時も、一行めしか取得できていない様子。<br>&gt;二行目以降を得るにはどうすればよいのでしょうか。<br><br>仕様が<br>------------------------------<br>S_GetSelectedString /// string  S_GetSelectedString ( i1 ) ；<br>選択部分の文字列を取得<br><br>i1：整数数値：＜予約＞ 現在は特に機能はない。0 にしておくこと。<br><br>「検索ダイアログを出した時に、検索の“条件”欄に取り込まれる文字列」<br>と同じ文字列が取得される。従って次のような仕様になっている。<br>・文字列が範囲選択されている場合、その選択されている文字列が取得される。<br>・文字列が範囲選択されていない場合、カーソル位置の単語が取得される。<br>・複数行を選択してあっても、取得されるのは一番上の１行のみである。<br>・取得できる文字列は 259 バイトまでである。<br>------------------------------<br>なので、２行目の取得は出来ません。字数制限(259バイト)まであります。<br>現在、２行以上の取得方法はありません。<br><br>S_Copy(0);  // コピー<br>S_Cut(0);   // 切り取り<br>とか使えば複数行をクリップボードに取得する事は出来ますけど、<br>その後の加工処理の類は出来ませんし。<br>外部にユーティリティ用意すればクリップボード経由で複数行を外部の<br>ユーティリティで加工したりは出来ますけど、それじゃ何が違うような気もするし。(^^;<br></div></section>
     <ul><li><section><h1 id=2693>
     <span class="no">[2693]</span>
-    <a class="title" href="#2693">Re2: GetSelectedString</a>
+    <a class="thread-title" href="#2693">Re2: GetSelectedString</a>
     <span class="author">おに</span>
     <time datetime="2003-02-02T23:05:33">2003年02月02日 23:05</time></h1>
     <div class="body">すいさん、解説ありがとうございます。<br>検索時の…そうでしたか…って、何故そんなきわどい仕様に。<br><br>ええと、つまり、CWSH.cppの該当部分(S_GetSelectedString実装箇所)をCEditView::Command_COPYが選択文字列を得ている方法と同じに置き換えればいいのかな。<br>(マクロからの場合は選択無しの時は空文字列が返って欲しいから…ええと…まあ、やってみます)</div></section>
     <ul><li><section><h1 id=2694>
     <span class="no">[2694]</span>
-    <a class="title" href="#2694">Re3: GetSelectedString</a>
+    <a class="thread-title" href="#2694">Re3: GetSelectedString</a>
     <span class="author">げんた</span>
     <time datetime="2003-02-02T23:58:34">2003年02月02日 23:58</time></h1>
     <div class="body">&gt;検索時の…そうでしたか…って、何故そんなきわどい仕様に。<br>本人です。理由は...既にあったちょうどいい関数がそういう仕様だったからです。<br>ちゃんとした範囲指定を行えるようになるときのために一応未使用の引数をつけておきました。<br>ごめんなさいね。<br></div></section>
     <ul><li><section><h1 id=2835>
     <span class="no">[2835]</span>
-    <a class="title" href="#2835">Re4: GetSelectedString</a>
+    <a class="thread-title" href="#2835">Re4: GetSelectedString</a>
     <span class="author">MMX</span>
     <time datetime="2003-03-26T15:18:18">2003年03月26日 15:18</time></h1>
     <div class="body">＞選択範囲をタグで囲むマクロ<br>ーーーーーーーーー TAG.PPA<br>//キーボードマクロのファイル<br>S_Cut(0);&#9;// 切り取り<br>S_InsText( '&lt;TAG&gt;&lt;/TAG&gt;' );//適度に改行を入れる<br>S_SearchPrev('&lt;/', 2);&#9;// 前を検索<br>S_Left(0);  // 選択解除のおまじない<br>S_Paste(0);&#9;// 貼り付け<br>// カーソル位置の調整はこのあと、履歴の管理とか<br>-----------<br>操作をマクロの変数で行わず<br>編集面でするのが、エディタ・マクロの発想法です。<br>ーーーーー 作った感想<br>エディタ・マクロはどこでもクセが強い。<br>特にDOとSetはあるがGetは少ない<br>エディタ状態（情報）は<br>カーソル位置（X,Y,ファイル先頭からのバイト位置）<br>カーソル戻しとか<br></div></section>

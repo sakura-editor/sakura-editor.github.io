@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix)　画面のちらつき修正など</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告:(Fix)　画面のちらつき修正など | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">416</span>
-    <a class="title" href="416.html#416">Commit報告:(Fix)　画面のちらつき修正など</a></div>
+    <a class="thread-title" href="416.html#416">Commit報告:(Fix)　画面のちらつき修正など</a></div>
     <ul><li><div class="list-title">
     <span class="no">417</span>
-    <a class="title" href="416.html#417">Re:Commit報告:(Fix)　画面のちらつき修正など</a></div>
+    <a class="thread-title" href="416.html#417">Re:Commit報告:(Fix)　画面のちらつき修正など</a></div>
     <ul><li><div class="list-title">
     <span class="no">418</span>
-    <a class="title" href="416.html#418">Re2:Commit報告:(Fix)　画面のちらつき修正など</a></div>
+    <a class="thread-title" href="416.html#418">Re2:Commit報告:(Fix)　画面のちらつき修正など</a></div>
     <ul><li><div class="list-title">
     <span class="no">419</span>
-    <a class="title" href="416.html#419">Re3:Commit報告:(Fix)　画面のちらつき修正など</a></div>
+    <a class="thread-title" href="416.html#419">Re3:Commit報告:(Fix)　画面のちらつき修正など</a></div>
     </li><li><div class="list-title">
     <span class="no">420</span>
-    <a class="title" href="416.html#420">Re3:Commit報告:(Fix)　画面のちらつき修正など</a></div>
+    <a class="thread-title" href="416.html#420">Re3:Commit報告:(Fix)　画面のちらつき修正など</a></div>
     <ul><li><div class="list-title">
     <span class="no">423</span>
-    <a class="title" href="416.html#423">Re4:Commit報告:(Fix)　画面のちらつき修正など</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=416>
+    <a class="thread-title" href="416.html#423">Re4:Commit報告:(Fix)　画面のちらつき修正など</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=416>
     <span class="no">[416]</span>
-    <a class="title" href="#416">Commit報告:(Fix)　画面のちらつき修正など</a>
+    <a class="thread-title" href="#416">Commit報告:(Fix)　画面のちらつき修正など</a>
     <span class="author">ryoji</span>
     <time datetime="2008-05-20T23:52:30">2008年05月20日 23:52</time></h1>
     <div class="body">リビジョン：<br>　rev1349<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>　下記３件の問題修正です。<br><br>●表示行の長さがエディタの幅よりも長い場合に行選択すると画面がちらつく（&gt;&gt;unicode:274）<br>●下方向ドラッグで選択範囲を拡大すると画面がちらつく<br>●折り返しインデント行で「行末に移動」を実行しても行末に移動しない</div></section>
     <ul><li><section><h1 id=417>
     <span class="no">[417]</span>
-    <a class="title" href="#417">Re:Commit報告:(Fix)　画面のちらつき修正など</a>
+    <a class="thread-title" href="#417">Re:Commit報告:(Fix)　画面のちらつき修正など</a>
     <span class="author">ryoji</span>
     <time datetime="2008-05-21T00:02:32">2008年05月21日 00:02</time></h1>
     <div class="body">補足です。<br>&gt; ●下方向ドラッグで選択範囲を拡大すると画面がちらつく<br><br>Shiftキーを押しながら矢印キーで下方向に選択範囲拡大した場合も同じです。</div></section>
     <ul><li><section><h1 id=418>
     <span class="no">[418]</span>
-    <a class="title" href="#418">Re2:Commit報告:(Fix)　画面のちらつき修正など</a>
+    <a class="thread-title" href="#418">Re2:Commit報告:(Fix)　画面のちらつき修正など</a>
     <span class="author">kobake</span>
     <time datetime="2008-05-21T00:55:16">2008年05月21日 00:55</time></h1>
     <div class="body">ご対応ありがとうございます。<br>Windows2000 にて、動作確認致しました。<br>・以前のバージョンでちらつきが発生することを確認<br>・同じPCで同じ操作を今回のバージョンで行ったとき、ちらつきが発生しないことを確認<br><br>ところで未だにインデント (CLayout::m_nIndentらしきもの) の意味がわからずにいるのですが、これってなんなのでしょうか？サクラエディタ上でどんな操作をすればこの値が変わるのでしょうか。これに関する（せめてユーザ視点の）ドキュメントってあるのでしょうか。</div></section>
     <ul><li><section><h1 id=419>
     <span class="no">[419]</span>
-    <a class="title" href="#419">Re3:Commit報告:(Fix)　画面のちらつき修正など</a>
+    <a class="thread-title" href="#419">Re3:Commit報告:(Fix)　画面のちらつき修正など</a>
     <span class="author">ryoji</span>
     <time datetime="2008-05-21T01:32:54">2008年05月21日 01:32</time></h1>
     <div class="body">&gt; ところで未だにインデント (CLayout::m_nIndentらしきもの) の意味がわからずにいるのですが、これってなんなのでしょうか？サクラエディタ上でどんな操作をすればこの値が変わるのでしょうか。これに関する（せめてユーザ視点の）ドキュメントってあるのでしょうか。<br><br>[タイプ別設定]-[スクリーン]-[折り返し行インデント]で追加されるインデントのことではないかと。実はレイアウト生成の処理部分を読んだことが無いんですが、いつもその解釈でコーディングしております。<br><br>d (￣ ・￣)ヾ(^o^; ）オイオイ<br><br><a href=http://sakura-editor.sourceforge.net/htmlhelp/HLP000074.html target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>htmlhelp<wbr>/<wbr>HLP00007<wbr>4.<wbr>html</nobr></a></div></section>
     </li><li><section><h1 id=420>
     <span class="no">[420]</span>
-    <a class="title" href="#420">Re3:Commit報告:(Fix)　画面のちらつき修正など</a>
+    <a class="thread-title" href="#420">Re3:Commit報告:(Fix)　画面のちらつき修正など</a>
     <span class="author">ryoji</span>
     <time datetime="2008-05-21T02:01:17">2008年05月21日 02:01</time></h1>
     <div class="body">&gt; どんな操作をすればこの値が変わるのでしょうか<br><br>折り返し桁数を短かめに、折り返し行インデントを「論理行先頭」などと設定しておき、長ーい行の行頭に空白文字やタブ文字を入力していくと、折り返した行の始まりの桁位置も（空白文字やタブ文字は入れずに）右にずらしてくれるです。</div></section>
     <ul><li><section><h1 id=423>
     <span class="no">[423]</span>
-    <a class="title" href="#423">Re4:Commit報告:(Fix)　画面のちらつき修正など</a>
+    <a class="thread-title" href="#423">Re4:Commit報告:(Fix)　画面のちらつき修正など</a>
     <span class="author">kobake</span>
     <time datetime="2008-05-21T22:58:05">2008年05月21日 22:58</time></h1>
     <div class="body">ご説明ありがとうございます。<br>折り返し行インデントの機能は知らなかったです。<br>確かにこれを使うと、m_nIndent の値が変わりますね。<br>ryojiさんの解釈で良いんじゃないかと。<br></div></section>

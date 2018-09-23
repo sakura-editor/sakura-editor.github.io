@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix) 句読点の行頭禁則が機能しない</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告:(Fix) 句読点の行頭禁則が機能しない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1005</span>
-    <a class="title" href="1005.html#1005">Commit報告:(Fix) 句読点の行頭禁則が機能しない</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=1005>
+    <a class="thread-title" href="1005.html#1005">Commit報告:(Fix) 句読点の行頭禁則が機能しない</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1005>
     <span class="no">[1005]</span>
-    <a class="title" href="#1005">Commit報告:(Fix) 句読点の行頭禁則が機能しない</a>
+    <a class="thread-title" href="#1005">Commit報告:(Fix) 句読点の行頭禁則が機能しない</a>
     <span class="author">ryoji</span>
     <time datetime="2009-08-06T13:25:16">2009年08月06日 13:25</time></h1>
     <div class="body">リビジョン：<br>　rev1629<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: 句読点ぶら下げをOFFにしても行頭禁則に指定した句読点が1文字前からの折り返しにならない<br><br>ふぁんくらぶ(part12)の381で報告された問題の修正です。<br>'？'や'！'は行頭禁則に指定すれば1文字前から折り返されるけど、'．'などはどうしても行頭になってしまっていました。</div></section>

@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現OFF置換で異常終了する</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現OFF置換で異常終了する | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2266</span>
-    <a class="title" href="2266.html#2266">正規表現OFF置換で異常終了する</a></div>
+    <a class="thread-title" href="2266.html#2266">正規表現OFF置換で異常終了する</a></div>
     <ul><li><div class="list-title">
     <span class="no">2267</span>
-    <a class="title" href="2266.html#2267">Re:正規表現OFF置換で異常終了する</a></div>
+    <a class="thread-title" href="2266.html#2267">Re:正規表現OFF置換で異常終了する</a></div>
     <ul><li><div class="list-title">
     <span class="no">2268</span>
-    <a class="title" href="2266.html#2268">Re2:正規表現OFF置換で異常終了する</a></div>
+    <a class="thread-title" href="2266.html#2268">Re2:正規表現OFF置換で異常終了する</a></div>
     <ul><li><div class="list-title">
     <span class="no">2269</span>
-    <a class="title" href="2266.html#2269">Re3:正規表現OFF置換で異常終了する</a></div>
+    <a class="thread-title" href="2266.html#2269">Re3:正規表現OFF置換で異常終了する</a></div>
     <ul><li><div class="list-title">
     <span class="no">2270</span>
-    <a class="title" href="2266.html#2270">Re4:正規表現OFF置換で異常終了する</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2266>
+    <a class="thread-title" href="2266.html#2270">Re4:正規表現OFF置換で異常終了する</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2266>
     <span class="no">[2266]</span>
-    <a class="title" href="#2266">正規表現OFF置換で異常終了する</a>
+    <a class="thread-title" href="#2266">正規表現OFF置換で異常終了する</a>
     <span class="author">LR4</span>
     <time datetime="2015-07-11T10:12:27">2015年07月11日 10:12</time></h1>
     <div class="body">以下の手順で異常終了します。sakura ver.2.2.0.1（たぶん2.1.0.0以後）<br><br>①正規表現ONの検索または置換を実行<br>②何か選択（矩形選択、非矩形選択のどちらでも同じ）<br>③正規表現OFFの置換を実行<br><br>手っ取り早い再現手順は以下の通りです。<br><br>① 「無題」で abc を入力する<br>   -&gt; キャレットは末尾の c の後にくる<br>② 置換ダイアログを出し、以下の条件で「上検索」を実施<br>        置換前:a<br>        置換後:(空)<br>        正規表現:ON<br>        他のチェックボックス:すべてOFF<br>   -&gt; 先頭の a が選択状態になる<br>③ 続けて②のダイアログで正規表現:OFFにして「置換」を実施<br>   -&gt; 異常終了<br></div></section>
     <ul><li><section><h1 id=2267>
     <span class="no">[2267]</span>
-    <a class="title" href="#2267">Re:正規表現OFF置換で異常終了する</a>
+    <a class="thread-title" href="#2267">Re:正規表現OFF置換で異常終了する</a>
     <span class="author">syat</span>
     <time datetime="2015-07-11T21:51:52">2015年07月11日 21:51</time></h1>
     <div class="body">▼ LR4さん<br>&gt; 以下の手順で異常終了します。sakura ver.2.2.0.1（たぶん2.1.0.0以後）<br>&gt; <br>&gt; ①正規表現ONの検索または置換を実行<br>&gt; ②何か選択（矩形選択、非矩形選択のどちらでも同じ）<br>&gt; ③正規表現OFFの置換を実行<br><br>私のところでも再現しました。<br>パッチを投稿しました。( patchunicode:994)</div></section>
     <ul><li><section><h1 id=2268>
     <span class="no">[2268]</span>
-    <a class="title" href="#2268">Re2:正規表現OFF置換で異常終了する</a>
+    <a class="thread-title" href="#2268">Re2:正規表現OFF置換で異常終了する</a>
     <span class="author">LR4</span>
     <time datetime="2015-07-11T23:22:57">2015年07月11日 23:22</time></h1>
     <div class="body">▼ syatさん<br>&gt; 私のところでも再現しました。<br>&gt; パッチを投稿しました。( patchunicode:994)<br><br>試していないのですが、「ChangeCurRegexp()呼び出しが必要かしら？」というのは自分も推測していました。<br>パッチではパラメータなしのようですが、ChangeCurRegexp(false)にしたら何か問題ありますかね？<br>そこで再描画まで追加する必要があるかどうか、なのですが、自分にはわかりません。<br><br>ところで、提案です。<br>・USE_CRASHDUMPはデフォルトでONにしませんか？<br>・ver2.0.5.0までは実施されていた .pdbファイルのリリースを復活しませんか？<br><br>今回、再現手順を特定できたのはUSE_CRASHDUMPをONでコンパイルしたsakuraをしばらく使い続けた恩恵でした。<br>それまでOFFのsakuraを使っていた時には「置換を実行すると異常終了することがある」ということしかわかりませんでした。<br>そんな報告受けても「再現しません」としか回答できませんよね？<br>でも、<br>・異常終了時に生成されたユーザ環境の .dmpファイル<br>・コンパイル時ソース<br>・コンパイル時に作成された .pdbファイル<br>これだけあればVC++2005以後を持っている誰でも障害解析が可能です。<br>ユーザさんに .dmp ファイルの送付をお願いする必要はありますが、<br>それだけで障害が起きたソース個所とその時点のスタックトレースがピンポイントで特定できます。<br><br>[一般]掲示板の8044だって一発で解決できる可能性があります。<br><br>いかがでしょうか？</div></section>
     <ul><li><section><h1 id=2269>
     <span class="no">[2269]</span>
-    <a class="title" href="#2269">Re3:正規表現OFF置換で異常終了する</a>
+    <a class="thread-title" href="#2269">Re3:正規表現OFF置換で異常終了する</a>
     <span class="author">syat</span>
     <time datetime="2015-07-12T13:02:38">2015年07月12日 13:02</time></h1>
     <div class="body">▼ LR4さん<br>&gt; パッチではパラメータなしのようですが、ChangeCurRegexp(false)にしたら何か問題ありますかね？<br><br>Command_REPLACEはその後に Command_SEARCH_NEXT() を呼び出していて、その中でもう一度 ChangeCurRegexp が引数なしで呼ばれるので、再描画はいらないですね。<br><br><br>&gt; ・USE_CRASHDUMPはデフォルトでONにしませんか？<br>&gt; ・ver2.0.5.0までは実施されていた .pdbファイルのリリースを復活しませんか？<br><br>よいと思います。<br><br>私が無知で申し訳ないのですが、これはリリースビルドでも有効なんでしょうか？<br>リリースビルドだとsakura.pdbが生成されないみたいですが、作る方法があるのでしょうか？<br>昔ryojiさんがやっていた記憶はありますが、継承していません・・</div></section>
     <ul><li><section><h1 id=2270>
     <span class="no">[2270]</span>
-    <a class="title" href="#2270">Re4:正規表現OFF置換で異常終了する</a>
+    <a class="thread-title" href="#2270">Re4:正規表現OFF置換で異常終了する</a>
     <span class="author">LR4</span>
     <time datetime="2015-07-12T15:03:07">2015年07月12日 15:03</time></h1>
     <div class="body">▼ syatさん<br>&gt; リリースビルドだとsakura.pdbが生成されないみたいですが、作る方法があるのでしょうか？<br><br>それはよくある勘違いらしいですが…<br>プロジェクトのプロパティで以下の設定をすればリリースビルドでもOKです。<br>[リンカ]-[デバッグ]の画面を開き、<br>[デバッグ情報の生成]で「はい」を選択<br>[プログラムデータベースファイル]でパスを指定<br><br>もしかするとexeサイズが少し大きくなるかもしれませんが、<br>性能には何の影響もありません。<br>私の環境ではサイズも変わりませんでした。<br>大きくなるといってもせいぜい1KB程度らしいです。<br></div></section>

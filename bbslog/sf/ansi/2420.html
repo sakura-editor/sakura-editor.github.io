@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>対括弧強調表示の不具合</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>対括弧強調表示の不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2420</span>
-    <a class="title" href="2420.html#2420">対括弧強調表示の不具合</a></div>
+    <a class="thread-title" href="2420.html#2420">対括弧強調表示の不具合</a></div>
     <ul><li><div class="list-title">
     <span class="no">2425</span>
-    <a class="title" href="2420.html#2425">RE: 対括弧強調表示の不具合</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2420>
+    <a class="thread-title" href="2420.html#2425">RE: 対括弧強調表示の不具合</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2420>
     <span class="no">[2420]</span>
-    <a class="title" href="#2420">対括弧強調表示の不具合</a>
+    <a class="thread-title" href="#2420">対括弧強調表示の不具合</a>
     <span class="author">げんた</span>
     <time datetime="2002-10-17T23:14:59">2002年10月17日 23:14</time></h1>
     <div class="body">1.3.5.3よりキャレットの手前にある括弧も強調対象となりましたが，括弧が折り返しの最後の桁にあり，キャレットが次の行の先頭部分にある場合に強調箇所がおかしくなります．（前行末の括弧ではなく，キャレットの手前の何もないところが強調されてしまう）<br><br>折り返しインデント無しの場合は手前が描画範囲外に出るので単に強調されないように見えますが，折り返しインデントを設定してあると，直前のスペースが強調されたようになってしまいます．(背景色を設定している場合)<br></div></section>
     <ul><li><section><h1 id=2425>
     <span class="no">[2425]</span>
-    <a class="title" href="#2425">RE: 対括弧強調表示の不具合</a>
+    <a class="thread-title" href="#2425">RE: 対括弧強調表示の不具合</a>
     <span class="author">ai</span>
     <time datetime="2002-10-18T17:42:36">2002年10月18日 17:42</time></h1>
     <div class="body">修正しました。<br>DrawBracketPair_diff.zip です。<br>ssrc_2002-10-16.tar.bz2に対する差分です。<br>宜しくお願いします。<br></div></section>

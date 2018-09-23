@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>マクロで変数</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>マクロで変数 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2216</span>
-    <a class="title" href="2216.html#2216">マクロで変数</a></div>
+    <a class="thread-title" href="2216.html#2216">マクロで変数</a></div>
     <ul><li><div class="list-title">
     <span class="no">2219</span>
-    <a class="title" href="2216.html#2219">RE: マクロで変数</a></div>
+    <a class="thread-title" href="2216.html#2219">RE: マクロで変数</a></div>
     <ul><li><div class="list-title">
     <span class="no">2220</span>
-    <a class="title" href="2216.html#2220">Re2: マクロで変数</a></div>
+    <a class="thread-title" href="2216.html#2220">Re2: マクロで変数</a></div>
     <ul><li><div class="list-title">
     <span class="no">2221</span>
-    <a class="title" href="2216.html#2221">Re3: マクロで変数</a></div>
+    <a class="thread-title" href="2216.html#2221">Re3: マクロで変数</a></div>
     <ul><li><div class="list-title">
     <span class="no">2225</span>
-    <a class="title" href="2216.html#2225">Re4: マクロで変数</a></div>
+    <a class="thread-title" href="2216.html#2225">Re4: マクロで変数</a></div>
     <ul><li><div class="list-title">
     <span class="no">2226</span>
-    <a class="title" href="2216.html#2226">Re5: マクロで変数</a></div>
+    <a class="thread-title" href="2216.html#2226">Re5: マクロで変数</a></div>
     <ul><li><div class="list-title">
     <span class="no">2227</span>
-    <a class="title" href="2216.html#2227">Re6: マクロで変数</a></div>
+    <a class="thread-title" href="2216.html#2227">Re6: マクロで変数</a></div>
     <ul><li><div class="list-title">
     <span class="no">2228</span>
-    <a class="title" href="2216.html#2228">Re7: マクロで変数</a></div>
+    <a class="thread-title" href="2216.html#2228">Re7: マクロで変数</a></div>
     <ul><li><div class="list-title">
     <span class="no">2230</span>
-    <a class="title" href="2216.html#2230">Re8: マクロで変数</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2216>
+    <a class="thread-title" href="2216.html#2230">Re8: マクロで変数</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2216>
     <span class="no">[2216]</span>
-    <a class="title" href="#2216">マクロで変数</a>
+    <a class="thread-title" href="#2216">マクロで変数</a>
     <span class="author">しゃ</span>
     <time datetime="2002-08-21T11:46:52">2002年08月21日 11:46</time></h1>
     <div class="body">キーボードマクロで、<br>test01<br>test02<br>test03<br>test04<br>....<br>とか、<br>test1, test2, test3,...<br>とかやりたいのですが、<br>（Mifes(DOS版)とかのマクロ変数があって、printf(@2++)<br>　みたいなもの）<br>どーやって実現できますか？<br></div></section>
     <ul><li><section><h1 id=2219>
     <span class="no">[2219]</span>
-    <a class="title" href="#2219">RE: マクロで変数</a>
+    <a class="thread-title" href="#2219">RE: マクロで変数</a>
     <span class="author">すい</span>
     <time datetime="2002-08-21T12:45:41">2002年08月21日 12:45</time></h1>
     <div class="body">以下、マクロファイル名 test.ppa↓<br>//---------------<br>// 実行には PPA.DLL が必須です。<br><br>var<br>//&#9;str:String;<br>//&#9;fval:Real<br>&#9;cnt:Integer;<br>begin<br>&#9;cnt := 0;<br>&#9;while( cnt &lt;= 5 ) do&#9;// cnt が 5 以下の間、繰り返す<br>&#9;begin<br>&#9;&#9;S_InsText( 'test' + IntToStr(cnt) );<br>&#9;&#9;S_Char(13);&#9;&#9;// 改行<br>//&#9;&#9;MessageBox( IntToStr(cnt) , '数値変数 cnt の値',0 );&#9;// for DEBUG<br>&#9;&#9;cnt := cnt + 1;<br>&#9;end;<br>end;<br>//---------------<br></div></section>
     <ul><li><section><h1 id=2220>
     <span class="no">[2220]</span>
-    <a class="title" href="#2220">Re2: マクロで変数</a>
+    <a class="thread-title" href="#2220">Re2: マクロで変数</a>
     <span class="author">しゃ</span>
     <time datetime="2002-08-21T19:21:20">2002年08月21日 19:21</time></h1>
     <div class="body">すみません。PPA.DLLは落としてきて、<br>Sakuraのディレクトリにも、System32のディレクトリにも<br>置いたのですが動作しません。<br>どーすればよいでしょうか？<br></div></section>
     <ul><li><section><h1 id=2221>
     <span class="no">[2221]</span>
-    <a class="title" href="#2221">Re3: マクロで変数</a>
+    <a class="thread-title" href="#2221">Re3: マクロで変数</a>
     <span class="author">すい</span>
     <time datetime="2002-08-21T20:22:42">2002年08月21日 20:22</time></h1>
     <div class="body">&gt;すみません。PPA.DLLは落としてきて、<br>&gt;Sakuraのディレクトリにも、System32のディレクトリにも<br>&gt;置いたのですが動作しません。<br><br>PPA.DLL は sakura.exe と同じディレクトリに放り込んでおけば OK です。<br>（ディレクトリに DLL を入れた後から立ち上げたエディタのウィンドウ内で使用できるようになります。）<br><br>それで動作しないとなると、あとは<br>・マクロファイルの拡張子を .PPA にしていない。<br>・サクラエディタのバージョンがかなり古い。<br>くらい？？<br>そのくらいしか思い付きません。m(_ _)m<br><br>ここの掲示板に書き込んだマクロの内容を、もう一度取り込んでファイルに書き出して<br>試しに動かしてみましたが何も問題無く動作しました。<br>マクロ自体の方には問題無いでしょう。(念のため)<br></div></section>
     <ul><li><section><h1 id=2225>
     <span class="no">[2225]</span>
-    <a class="title" href="#2225">Re4: マクロで変数</a>
+    <a class="thread-title" href="#2225">Re4: マクロで変数</a>
     <span class="author">しゃ</span>
     <time datetime="2002-08-22T11:13:35">2002年08月22日 11:13</time></h1>
     <div class="body">拡張子PPAにすることで動作しました。<br>ですが、私の実現したいことはこれではなく、<br>DOS版Mifesの、「printf("d", @3++)」の機能です。<br>キーボードマクロとかで、最初の例のものを連続して<br>入力するときに使うものです。<br>たとえば、<br>AAAa<br>AAAb<br>AAAc<br>AAAd<br>を、<br>AAA1<br>AAA2<br>AAA3<br>AAA4<br>...<br>とかにキーボードマクロ中で変更したいときに使いたいのです。<br></div></section>
     <ul><li><section><h1 id=2226>
     <span class="no">[2226]</span>
-    <a class="title" href="#2226">Re5: マクロで変数</a>
+    <a class="thread-title" href="#2226">Re5: マクロで変数</a>
     <span class="author">すい</span>
     <time datetime="2002-08-22T12:46:00">2002年08月22日 12:46</time></h1>
     <div class="body">&gt;ですが、私の実現したいことはこれではなく、<br>&gt;DOS版Mifesの、「printf("d", @3++)」の機能です。<br>&gt;キーボードマクロとかで、最初の例のものを連続して<br>&gt;入力するときに使うものです。<br>&gt;たとえば、<br>&gt;AAAa<br>&gt;AAAb<br>&gt;AAAc<br>&gt;AAAd<br>&gt;を、<br>&gt;AAA1<br>&gt;AAA2<br>&gt;AAA3<br>&gt;AAA4<br>&gt;... <br>&gt;とかにキーボードマクロ中で変更したいときに使いたいのです。<br><br>おっしゃる意味がよくわからないのですが。<br><br>@3 の値を何処か全く別の場所で設定しておき、また、<br>printf("d", @3++)<br>というだけのマクロを作っておいて、そのマクロを何度も呼び出し直す。<br>つまり、<br>「毎回マクロを呼び出す度に、“前回マクロを呼び出した時の値＋１”という値を使っていきたい」<br>というような意味ですか？<br><br>もしそういう意味でしたら無理でしょう。サクラエディタには Mifes の @n のような<br>「値を設定され直さない限り（マクロを終了していても）ずっと値を保持し続けている」<br>というようなグローバル変数は存在しませんから。<br>変数はマクロを起動する度ごとに新規に用意される物しかないです。<br></div></section>
     <ul><li><section><h1 id=2227>
     <span class="no">[2227]</span>
-    <a class="title" href="#2227">Re6: マクロで変数</a>
+    <a class="thread-title" href="#2227">Re6: マクロで変数</a>
     <span class="author">しゃ</span>
     <time datetime="2002-08-22T12:58:17">2002年08月22日 12:58</time></h1>
     <div class="body">&gt; @3 の値を何処か全く別の場所で設定しておき、また、<br>&gt; printf("d", @3++)<br>&gt; というだけのマクロを作っておいて、そのマクロを何度も呼び出し直す。<br>&gt; つまり、<br>&gt; 「毎回マクロを呼び出す度に、“前回マクロを呼び出した時の値＋１”という値を使っていきたい」<br>&gt; というような意味ですか？<br><br>そうです。その通りの意味です。<br><br>&gt; もしそういう意味でしたら無理でしょう。サクラエディタには Mifes の @n のような<br>&gt; 「値を設定され直さない限り（マクロを終了していても）ずっと値を保持し続けている」<br>&gt; というようなグローバル変数は存在しませんから。<br><br>そうですか。残念ですね。エクセルのオートフィルのような<br>編集をする場面って結構あると思うのですが・・・<br></div></section>
     <ul><li><section><h1 id=2228>
     <span class="no">[2228]</span>
-    <a class="title" href="#2228">Re7: マクロで変数</a>
+    <a class="thread-title" href="#2228">Re7: マクロで変数</a>
     <span class="author">Youma</span>
     <time datetime="2002-08-22T14:54:44">2002年08月22日 14:54</time></h1>
     <div class="body">▼ しゃさん<br><br>&gt; そうですか。残念ですね。エクセルのオートフィルのような<br>&gt; 編集をする場面って結構あると思うのですが・・・<br><br>この編集方法、滅茶苦茶やりたいですよね～（ＴＴ<br><br>ＥＸＣＥＬでも出来ないんですけど、１６進数で<br>インクリメントする方法なんかがあると、世の中の<br>ゲーム改造好き（カラット社のアクションリプレイとかの改造ツールで）<br>が泣いて喜びますね。<br><br>あと、ＥＸＣＥＬというと、その操作で気に入っているのが<br>行を飛び飛びに選択できる事ですが、<br>（ＣＴＬを押しながら行番号押下だったような）<br><br>こーゆう選択の仕方ができると面白いですよね。<br>できるならば、行飛び選択した後、[ // ]を入力とか（Ｗ<br>　　＜↑出来るエディタを見たこと無いですが（Ｗ</div></section>
     <ul><li><section><h1 id=2230>
     <span class="no">[2230]</span>
-    <a class="title" href="#2230">Re8: マクロで変数</a>
+    <a class="thread-title" href="#2230">Re8: マクロで変数</a>
     <span class="author">すい</span>
     <time datetime="2002-08-23T12:34:51">2002年08月23日 12:34</time></h1>
     <div class="body">&gt;あと、ＥＸＣＥＬというと、その操作で気に入っているのが<br>&gt;行を飛び飛びに選択できる事ですが、<br>&gt;（ＣＴＬを押しながら行番号押下だったような）<br>&gt;<br>&gt;こーゆう選択の仕方ができると面白いですよね。<br>&gt;できるならば、行飛び選択した後、[ // ]を入力とか（Ｗ<br>&gt;　　＜↑出来るエディタを見たこと無いですが（Ｗ<br><br>それはサイパックのフリーソフトウェア BeatWord ですな。<br>http://www.cypac.co.jp/beatword/index.html<br># って、そりゃワープロだっちゅぅの ＞ 私<br></div></section>

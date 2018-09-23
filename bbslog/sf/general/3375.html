@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>右クリック→送るで複数同時オープン</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>右クリック→送るで複数同時オープン | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3375</span>
-    <a class="title" href="3375.html#3375">右クリック→送るで複数同時オープン</a></div>
+    <a class="thread-title" href="3375.html#3375">右クリック→送るで複数同時オープン</a></div>
     <ul><li><div class="list-title">
     <span class="no">3379</span>
-    <a class="title" href="3375.html#3379">Re:右クリック→送るで複数同時オープン</a></div>
+    <a class="thread-title" href="3375.html#3379">Re:右クリック→送るで複数同時オープン</a></div>
     <ul><li><div class="list-title">
     <span class="no">3389</span>
-    <a class="title" href="3375.html#3389">Re2:右クリック→送るで複数同時オープン</a></div>
+    <a class="thread-title" href="3375.html#3389">Re2:右クリック→送るで複数同時オープン</a></div>
     </li><li><div class="list-title">
     <span class="no">3390</span>
-    <a class="title" href="3375.html#3390">Re2:右クリック→送るで複数同時オープン</a></div>
+    <a class="thread-title" href="3375.html#3390">Re2:右クリック→送るで複数同時オープン</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">3513</span>
-    <a class="title" href="3375.html#3513">Re:右クリック→送るで複数同時オープン</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3375>
+    <a class="thread-title" href="3375.html#3513">Re:右クリック→送るで複数同時オープン</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3375>
     <span class="no">[3375]</span>
-    <a class="title" href="#3375">右クリック→送るで複数同時オープン</a>
+    <a class="thread-title" href="#3375">右クリック→送るで複数同時オープン</a>
     <span class="author">ZONE</span>
     <time datetime="2003-10-14T23:59:55">2003年10月14日 23:59</time></h1>
     <div class="body">サクラを随分前から使わせていただいている者です。<br>一つお願いがあります。<br><br>秀丸エディタなどでは、送る(SendToフォルダ)にショート<br>カットいれておき、複数のファイルを選択した後で<br>右クリックして、送る→エディタのショートカットとして<br>オープンすれば複数同時にオープンできます。<br><br>サクラでもできるようにならないでしょうか？<br>ご検討のほど、よろしくお願いいたします。<br><br>※修正が難しいようでしたら、見なかったことにして下さい。<br><br></div></section>
     <ul><li><section><h1 id=3379>
     <span class="no">[3379]</span>
-    <a class="title" href="#3379">Re:右クリック→送るで複数同時オープン</a>
+    <a class="thread-title" href="#3379">Re:右クリック→送るで複数同時オープン</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-10-15T12:40:26">2003年10月15日 12:40</time></h1>
     <div class="body">この症状は実行ファイルに複数ファイルをドラッグしたときにも起こる。原因は、コマンドライン(CCommandLine)が複数ファイルに対応していないから。<br><br>これに対処するとすれば、コマンドラインの文法を次のように、順序を考慮した形に変えなければならないと思います(こちらの方がPOSIXに近い)。<br><br>sakura.exe [options_1] "file_1" [options_2] "file_2" ... "file_(n-1)" [options_n]<br><br>CEditWnd::OnDropFilesを参考に。できれば切り離して共通化。<br><br># 「Check」はオツムの軽そうな深夜ラジオのDJとわがまま独身女優の神田ウソが使う、<br># あいまいな言葉。神田ウソがヒステリーを起こして一般の視聴者を罵倒する前に、<br># GetやIsValidなどに直すこと。豚に真珠でCheck it out!!</div></section>
     <ul><li><section><h1 id=3389>
     <span class="no">[3389]</span>
-    <a class="title" href="#3389">Re2:右クリック→送るで複数同時オープン</a>
+    <a class="thread-title" href="#3389">Re2:右クリック→送るで複数同時オープン</a>
     <span class="author">ZONE</span>
     <time datetime="2003-10-16T01:04:14">2003年10月16日 01:04</time></h1>
     <div class="body">▼ wmlhqさん<br>&gt; この症状は実行ファイルに複数ファイルをドラッグしたときにも起こる。原因は、コマンドライン(CCommandLine)が複数ファイルに対応していないから。<br>&gt; <br>&gt; これに対処するとすれば、コマンドラインの文法を次のように、順序を考慮した形に変えなければならないと思います(こちらの方がPOSIXに近い)。<br>&gt; <br>&gt; sakura.exe [options_1] "file_1" [options_2] "file_2" ... "file_(n-1)" [options_n]<br>&gt; <br>&gt; CEditWnd::OnDropFilesを参考に。できれば切り離して共通化。<br>&gt; <br>&gt; # 「Check」はオツムの軽そうな深夜ラジオのDJとわがまま独身女優の神田ウソが使う、<br>&gt; # あいまいな言葉。神田ウソがヒステリーを起こして一般の視聴者を罵倒する前に、<br>&gt; # GetやIsValidなどに直すこと。豚に真珠でCheck it out!!</div></section>
     </li><li><section><h1 id=3390>
     <span class="no">[3390]</span>
-    <a class="title" href="#3390">Re2:右クリック→送るで複数同時オープン</a>
+    <a class="thread-title" href="#3390">Re2:右クリック→送るで複数同時オープン</a>
     <span class="author">ZONE</span>
     <time datetime="2003-10-16T01:17:09">2003年10月16日 01:17</time></h1>
     <div class="body">▼ wmlhqさん<br>ZONEです。前回は間違えて何も書かずにEnterキーで送信して<br>しまいすいません。<br>とにかく早速回答いただきありがとうございます！<br>無理強いできませんので、開発者の皆さんで異論ないようでしたら<br>いつか機能として盛り込んでいただければと思います。<br>よろしくお願いいたします。<br><br>それから最後の方の３，４行は良く意味がわからないのですが。。<br></div></section>
     </li></ul></li><li><section><h1 id=3513>
     <span class="no">[3513]</span>
-    <a class="title" href="#3513">Re:右クリック→送るで複数同時オープン</a>
+    <a class="thread-title" href="#3513">Re:右クリック→送るで複数同時オープン</a>
     <span class="author">じゅうじ</span>
     <time datetime="2003-11-24T14:33:51">2003年11月24日 14:33</time></h1>
     <div class="body">▼ 誤解している人がいると困るので．．．(me)<br>&gt; ※修正が難しいようでしたら、見なかったことにして下さい。<br><br>ファイルタイプの関連づけにすれば複数ファイルの一発オープンは可能です。<br><br>Win2000/Win98SE<br></div></section>

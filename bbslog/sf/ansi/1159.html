@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>外部コマンド実行時に選択文字を渡す</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>外部コマンド実行時に選択文字を渡す | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1159</span>
-    <a class="title" href="1159.html#1159">外部コマンド実行時に選択文字を渡す</a></div>
+    <a class="thread-title" href="1159.html#1159">外部コマンド実行時に選択文字を渡す</a></div>
     <ul><li><div class="list-title">
     <span class="no">1160</span>
-    <a class="title" href="1159.html#1160">Re: 外部コマンド実行時に選択文字を渡す</a></div>
+    <a class="thread-title" href="1159.html#1160">Re: 外部コマンド実行時に選択文字を渡す</a></div>
     <ul><li><div class="list-title">
     <span class="no">1161</span>
-    <a class="title" href="1159.html#1161">Re2: 外部コマンド実行時に選択文字を渡す</a></div>
+    <a class="thread-title" href="1159.html#1161">Re2: 外部コマンド実行時に選択文字を渡す</a></div>
     </li><li><div class="list-title">
     <span class="no">1162</span>
-    <a class="title" href="1159.html#1162">Re2: 外部コマンド実行時に選択文字を渡す</a></div>
+    <a class="thread-title" href="1159.html#1162">Re2: 外部コマンド実行時に選択文字を渡す</a></div>
     <ul><li><div class="list-title">
     <span class="no">1163</span>
-    <a class="title" href="1159.html#1163">Re3: 外部コマンド実行時に選択文字を渡す</a></div>
+    <a class="thread-title" href="1159.html#1163">Re3: 外部コマンド実行時に選択文字を渡す</a></div>
     </li><li><div class="list-title">
     <span class="no">1182</span>
-    <a class="title" href="1159.html#1182">Re3: 外部コマンド実行時に選択文字を渡す</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1159>
+    <a class="thread-title" href="1159.html#1182">Re3: 外部コマンド実行時に選択文字を渡す</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1159>
     <span class="no">[1159]</span>
-    <a class="title" href="#1159">外部コマンド実行時に選択文字を渡す</a>
+    <a class="thread-title" href="#1159">外部コマンド実行時に選択文字を渡す</a>
     <span class="author">hor</span>
     <time datetime="2002-01-15T17:40:44">2002年01月15日 17:40</time></h1>
     <div class="body"><a href=../data#1097 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>data&<wbr>tree=<wbr>c1097</nobr></a><br>↓<br>無茶苦茶手抜きですが、CEditView_Command.CPP の CEditView::Command_EXECCOMMAND で<br>for の前あたりに CMemory cmemCurText; を追加し、switch( p[1] ) のcase句に下記ロジックを追加すると、<br>$Cでカレントテキストをコマントラインに渡せるようになると思います。<br>どなたか、きれいに実装していただけますか？<br><br>        case 'C':   // CurText<br>            GetCurrentTextForSearch( cmemCurText );<br>            strcpy( m_pcEditDoc-&gt;m_cDlgFind.m_szText, cmemCurText.GetPtr( NULL ) );<br>            for( r = m_pcEditDoc-&gt;m_cDlgFind.m_szText; *r != '\0' &amp;&amp; q &lt; q_max; ++r, ++q )<br>                *q = *r;<br>            --q;<br>            ++p;<br>            break;<br></div></section>
     <ul><li><section><h1 id=1160>
     <span class="no">[1160]</span>
-    <a class="title" href="#1160">Re: 外部コマンド実行時に選択文字を渡す</a>
+    <a class="thread-title" href="#1160">Re: 外部コマンド実行時に選択文字を渡す</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-15T18:22:15">2002年01月15日 18:22</time></h1>
     <div class="body">&gt;strcpy( m_pcEditDoc-&gt;m_cDlgFind.m_szText, cmemCurText.GetPtr( NULL ) );<br>この行は不要でしょう．<br><br>&gt;for( r = cmemCurText.GetPtr( NULL ); *r != '\0' &amp;&amp; q &lt; q_max; ++r, ++q )<br>でいいのでは？<br></div></section>
     <ul><li><section><h1 id=1161>
     <span class="no">[1161]</span>
-    <a class="title" href="#1161">Re2: 外部コマンド実行時に選択文字を渡す</a>
+    <a class="thread-title" href="#1161">Re2: 外部コマンド実行時に選択文字を渡す</a>
     <span class="author">hor</span>
     <time datetime="2002-01-15T18:33:58">2002年01月15日 18:33</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;strcpy( m_pcEditDoc-&gt;m_cDlgFind.m_szText, cmemCurText.GetPtr( NULL ) );<br>&gt; この行は不要でしょう．<br>&gt; <br>&gt; &gt;for( r = cmemCurText.GetPtr( NULL ); *r != '\0' &amp;&amp; q &lt; q_max; ++r, ++q )<br>&gt; でいいのでは？<br><br>ご指摘の通りです。<br>なにかのついでに実装していただけますか？</div></section>
     </li><li><section><h1 id=1162>
     <span class="no">[1162]</span>
-    <a class="title" href="#1162">Re2: 外部コマンド実行時に選択文字を渡す</a>
+    <a class="thread-title" href="#1162">Re2: 外部コマンド実行時に選択文字を渡す</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-15T18:35:46">2002年01月15日 18:35</time></h1>
     <div class="body">current_word.zip という名前でeGroupsに置きました．<br>ついでに以前指摘したcEol.GetLine()の修正も行いました．<br><br>$Cで実装しちゃいましたが，$Sという意見も以前すとーにぃさんから出ていたような．<br></div></section>
     <ul><li><section><h1 id=1163>
     <span class="no">[1163]</span>
-    <a class="title" href="#1163">Re3: 外部コマンド実行時に選択文字を渡す</a>
+    <a class="thread-title" href="#1163">Re3: 外部コマンド実行時に選択文字を渡す</a>
     <span class="author">やざき</span>
     <time datetime="2002-01-15T18:37:33">2002年01月15日 18:37</time></h1>
     <div class="body">▼ げんたさん<br>&gt; current_word.zip という名前でeGroupsに置きました．<br>&gt; ついでに以前指摘したcEol.GetLine()の修正も行いました．<br>&gt; <br>&gt; $Cで実装しちゃいましたが，$Sという意見も以前すとーにぃさんから出ていたような．<br><br>すばらしいですね。&gt; horさん、げんたさん<br>手元では取り込んでおきます。</div></section>
     </li><li><section><h1 id=1182>
     <span class="no">[1182]</span>
-    <a class="title" href="#1182">Re3: 外部コマンド実行時に選択文字を渡す</a>
+    <a class="thread-title" href="#1182">Re3: 外部コマンド実行時に選択文字を渡す</a>
     <span class="author">hor</span>
     <time datetime="2002-01-17T08:50:13">2002年01月17日 08:50</time></h1>
     <div class="body">▼ げんたさん<br>&gt; current_word.zip という名前でeGroupsに置きました．<br>&gt; ついでに以前指摘したcEol.GetLine()の修正も行いました．<br>&gt; <br>&gt; $Cで実装しちゃいましたが<br><br>IDD_EXEC ダイアログ内の[Note]に $f,$C の説明があったらわかりやすいかも・・・</div></section>

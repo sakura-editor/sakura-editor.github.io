@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ステータスバーの文字コード表示</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ステータスバーの文字コード表示 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3804</span>
-    <a class="title" href="3804.html#3804">ステータスバーの文字コード表示</a></div>
+    <a class="thread-title" href="3804.html#3804">ステータスバーの文字コード表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">3805</span>
-    <a class="title" href="3804.html#3805">Re: ステータスバーの文字コード表示</a></div>
+    <a class="thread-title" href="3804.html#3805">Re: ステータスバーの文字コード表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">3806</span>
-    <a class="title" href="3804.html#3806">Re2: ステータスバーの文字コード表示</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3804>
+    <a class="thread-title" href="3804.html#3806">Re2: ステータスバーの文字コード表示</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3804>
     <span class="no">[3804]</span>
-    <a class="title" href="#3804">ステータスバーの文字コード表示</a>
+    <a class="thread-title" href="#3804">ステータスバーの文字コード表示</a>
     <span class="author">Ｐ</span>
     <time datetime="2004-04-16T13:18:31">2004年04月16日 13:18</time></h1>
     <div class="body">Ｐと申します。<br><br>サクラエディタ v1.4.5.1 にて、ステータスバー上の文字コード表示が<br>SJIS固定になっているようですのでご報告させて頂きます。<br><br>テスト使用文字列<br>&gt; 口乳拳<br>&gt; 美入麦<br><br>この文字列を名前を指定して保存でSJISとEUCで保存します。<br>次にそれぞれのファイルをバイナリエディタで表示しますと<br><br>EUC_JP<br>&gt;B8 FD C6 FD B7 FD 0D 0A C8 FE C6 FE C7 FE<br><br>SJIS<br>&gt;8C FB 93 FB 8C 9D 0D 0A 94 FC 93 FC 94 9E<br><br>このようになります。<br>保存されたデータは正常だと思います。<br><br>このファイルをサクラエディタで開き、それぞれの文字にカーソルを合わせると…<br>EUC_JPのファイルとSJISのファイル、共に同じSJISの文字コードが表示されます。<br><br>この表示が仕様なのか不具合なのかはヘルプファイル等を検索してみましたが<br>私には判断出来なかったので、ここに報告させて頂きます。<br><br>同じステータスバーで、文字コードの右隣が文字コードセットが表示されて<br>います関係上、EUCでの文字コード表示にするべきではないかなと思います。<br><br>以上です。</div></section>
     <ul><li><section><h1 id=3805>
     <span class="no">[3805]</span>
-    <a class="title" href="#3805">Re: ステータスバーの文字コード表示</a>
+    <a class="thread-title" href="#3805">Re: ステータスバーの文字コード表示</a>
     <span class="author">げんた</span>
     <time datetime="2004-04-16T23:04:46">2004年04月16日 23:04</time></h1>
     <div class="body">現時点では仕様としか言えませんが，それでいいと思っているわけでもありません．<br>本当は選べるといいんでしょうけどねぇ．<br><br>デフォルトはファイルと同じ文字コードで，ステータスバーを右クリックするとコードを選択するPopup Menuが出る．そのとき各コードでの値がメニュー項目中に含まれるので一時的に別のコードで見たい人はESCでキャンセルとか．<br></div></section>
     <ul><li><section><h1 id=3806>
     <span class="no">[3806]</span>
-    <a class="title" href="#3806">Re2: ステータスバーの文字コード表示</a>
+    <a class="thread-title" href="#3806">Re2: ステータスバーの文字コード表示</a>
     <span class="author">Ｐ</span>
     <time datetime="2004-04-17T00:20:29">2004年04月17日 00:20</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 現時点では仕様としか言えませんが，それでいいと思っているわけでもありません．<br>&gt; 本当は選べるといいんでしょうけどねぇ．<br>&gt; デフォルトはファイルと同じ文字コードで，ステータスバーを右クリックするとコードを選択するPopup Menuが出る．そのとき各コードでの値がメニュー項目中に含まれるので一時的に別のコードで見たい人はESCでキャンセルとか．<br><br> なるほどなるほど。<br>選択出来ると…というのは先ほど初めて知ったのですけど、ステータスバーの改行コードで右クリックすると表示されるPopup Menuのような感じでしょうか。<br>そのようにして頂けると嬉しいですね。やはり隣に文字コード表示がありますから私のように誤解する人も出てくるとは思います。<br>テキストエディタとしての動作不具合ではありませんし、表示のみの課題と思います。<br><br>私からは「ステータスバーの文字コードセット表示と同期して文字コードを表示して欲しい」と要望しておきます。<br><br>ご回答有り難う御座いました。</div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>1.3.5.4</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>1.3.5.4 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2411</span>
-    <a class="title" href="2411.html#2411">1.3.5.4</a></div>
+    <a class="thread-title" href="2411.html#2411">1.3.5.4</a></div>
     <ul><li><div class="list-title">
     <span class="no">2424</span>
-    <a class="title" href="2411.html#2424">Re: 1.3.5.4</a></div>
+    <a class="thread-title" href="2411.html#2424">Re: 1.3.5.4</a></div>
     <ul><li><div class="list-title">
     <span class="no">2633</span>
-    <a class="title" href="2411.html#2633">Re2: 1.3.5.4</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2411>
+    <a class="thread-title" href="2411.html#2633">Re2: 1.3.5.4</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2411>
     <span class="no">[2411]</span>
-    <a class="title" href="#2411">1.3.5.4</a>
+    <a class="thread-title" href="#2411">1.3.5.4</a>
     <span class="author">げんた</span>
     <time datetime="2002-10-23T02:03:44">2002年10月23日 02:03</time></h1>
     <div class="body">選択文字列を取得するマクロを追加しました．<br>あとバグフィックスいろいろです．<br><br>ダウンロード<br><a href=http://prdownloads.sourceforge.net/sakura-editor/sakura_2002-10-23.zip?download target=_top><nobr>http://<wbr>prdownlo<wbr>ads.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>sakura-<wbr>editor/<wbr>sakura_2<wbr>002-<wbr>10-<wbr>23.<wbr>zip?<wbr>download<wbr></nobr></a><br><br>リリースノート<br><a href=http://sourceforge.net/project/shownotes.php?release_id=117788 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>project/<wbr>shownote<wbr>s.<wbr>php?<wbr>release_<wbr>id=<wbr>117788</nobr></a></div></section>
     <ul><li><section><h1 id=2424>
     <span class="no">[2424]</span>
-    <a class="title" href="#2424">Re: 1.3.5.4</a>
+    <a class="thread-title" href="#2424">Re: 1.3.5.4</a>
     <span class="author">もか</span>
     <time datetime="2002-10-25T18:25:39">2002年10月25日 18:25</time></h1>
     <div class="body">リリースノートに，<br>ブックマークの印が，縦棒から行番色に変わった件が抜けているようです。<br><br>さらに要望ですが，ブックマークの[色分け/表示]をOFFにしているときは，従来のように縦棒表示にするのはどうでしょうか<br></div></section>
     <ul><li><section><h1 id=2633>
     <span class="no">[2633]</span>
-    <a class="title" href="#2633">Re2: 1.3.5.4</a>
+    <a class="thread-title" href="#2633">Re2: 1.3.5.4</a>
     <span class="author">ai</span>
     <time datetime="2002-12-24T17:56:27">2002年12月24日 17:56</time></h1>
     <div class="body">&gt;さらに要望ですが，ブックマークの[色分け/表示]をOFFにしているときは，従来のように縦棒表示にするのはどうでしょうか<br><br>CEditView_New2.cppの304行目を下記の様に修正し、301行と313行目の#if 0と#endifを削除してもらえれば御要望の動作になります。(ブックマークの色は従来通り行番号の文字色(?)が使用されます)<br>申し訳ないですが取り込みの判断/取り込みをお願いできますでしょうか？ &gt;げんたさん<br><br>-&#9;if(pCDocLine-&gt;IsBookMarked()){<br>+&#9;if(pCDocLine-&gt;IsBookMarked() &amp;&amp; (FALSE == m_pcEditDoc-&gt;GetDocumentAttribute().m_Co<br>lorInfoArr[COLORIDX_MARK].m_bDisp)){<br></div></section>

@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Subversion文書</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Webトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Subversion文書 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Webトップへ</a>
+        <li><div class="list-title">
     <span class="no">203</span>
-    <a class="title" href="203.html#203">Subversion文書</a></div>
+    <a class="thread-title" href="203.html#203">Subversion文書</a></div>
     <ul><li><div class="list-title">
     <span class="no">205</span>
-    <a class="title" href="203.html#205">Re: Subversion文書</a></div>
+    <a class="thread-title" href="203.html#205">Re: Subversion文書</a></div>
     <ul><li><div class="list-title">
     <span class="no">206</span>
-    <a class="title" href="203.html#206">Re2: Subversion文書</a></div>
+    <a class="thread-title" href="203.html#206">Re2: Subversion文書</a></div>
     <ul><li><div class="list-title">
     <span class="no">207</span>
-    <a class="title" href="203.html#207">Re3: Subversion文書</a></div>
+    <a class="thread-title" href="203.html#207">Re3: Subversion文書</a></div>
     <ul><li><div class="list-title">
     <span class="no">208</span>
-    <a class="title" href="203.html#208">Re4: Subversion文書</a></div>
+    <a class="thread-title" href="203.html#208">Re4: Subversion文書</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">209</span>
-    <a class="title" href="203.html#209">Re2: Subversion文書</a></div>
+    <a class="thread-title" href="203.html#209">Re2: Subversion文書</a></div>
     <ul><li><div class="list-title">
     <span class="no">210</span>
-    <a class="title" href="203.html#210">Re3: Subversion文書</a></div>
+    <a class="thread-title" href="203.html#210">Re3: Subversion文書</a></div>
     <ul><li><div class="list-title">
     <span class="no">211</span>
-    <a class="title" href="203.html#211">Re4: Subversion文書</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=203>
+    <a class="thread-title" href="203.html#211">Re4: Subversion文書</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=203>
     <span class="no">[203]</span>
-    <a class="title" href="#203">Subversion文書</a>
+    <a class="thread-title" href="#203">Subversion文書</a>
     <span class="author">つっちー</span>
     <time datetime="2006-03-31T01:32:18">2006年03月31日 01:32</time></h1>
     <div class="body">&gt; ファイルの追加<br><a href=http://members.at.infoseek.co.jp/sakura_editor/repositorymgmt.html target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>reposito<wbr>rymgmt.<wbr>html</nobr></a><br>に関してコメントしたいと思います。<br><br>&gt;  ファイルの追加はコード量や機能単位を勘案して各自の判断で行って良い<br>&gt;  新規ファイルは作成時に以下のを付与すること．<br>&gt;<br>&gt;  svn:keywords (リビジョンの埋め込み) <br>&gt;  &#9;Author Date Id Revision <br>ブランチを作って、後でマージするときに大量にコンフリクトを<br>起こす可能性があるのでつけない方が安全だと思います。<br><br>またファイルの登録時にあらかじめ設定するプロパティを<br>拡張子ごとに設定することが可能です。TortoiseSVN の場合<br>[TortoiseSVN] -&gt; [設定] でSubversionの設定で編集ボタンを<br>押すと、設定ファイルが開くので設定ファイルに指定します。<br><br>&gt; Private領域へのファイル追加<br>&gt; コンパイラの副生成物: オブジェクトファイル (*.obj)，<br>&gt; Incremental linker (*.ilk)，プリコンパイルヘッダ (*.pch)等 <br>svn:ignore 属性を設定するというルールをいれた方が<br>いいと思います。<br><br>&gt; 変更者などCommit時に自動的に記録される物は記入しないこと<br>コミットする人と、パッチを作成した人が必ず一致するわけでは<br>ないので、パッチ作成者とコミットすることが違う場合<br>パッチ作成者を明記するような記述があった方がいいと<br>思います。<br><br>&gt; 配置： sakura/tag/<br>ディレクトリ構成のところでは tags となっています。<br>(たぶんタイプミスだと思いますが)<br><br>ブランチのパスが　branch/ となっていますが<br>慣習的には　branches/ とするようです。<br><br><br></div></section>
     <ul><li><section><h1 id=205>
     <span class="no">[205]</span>
-    <a class="title" href="#205">Re: Subversion文書</a>
+    <a class="thread-title" href="#205">Re: Subversion文書</a>
     <span class="author">げんた</span>
     <time datetime="2006-04-01T01:41:50">2006年04月01日 01:41</time></h1>
     <div class="body">コメントありがとうございます．<br><br>&gt;&gt;  svn:keywords (リビジョンの埋め込み) <br>&gt;&gt;  &#9;Author Date Id Revision <br>&gt;ブランチを作って、後でマージするときに大量にコンフリクトを<br>&gt;起こす可能性があるのでつけない方が安全だと思います。<br>なるほど．そうですか．<br>1行目の$Idは変更した変更元バージョンを確認するために入れています．差分でないファイルが送られてきてもどこと差分を取ればいいのかを自己申告に依らずに明確にするためにCVS管理にしたときに追加しました．<br>ただ，実際には自分のCVSへimportして管理していて，リリース版とは全然関係ないバージョンが入っているケースがあり，その場合はその部分を差分から取り除く必要がありましたので，ご指摘の通りの問題は生じたことは既にあります．<br><br>何かうまい方法があれば教えて頂きたいところです．<br><br>それとファイルのリビジョンをdoxygenのファイルに埋め込めた方がいいかなと思って，Revisionを使っています．<br>ただ，Subversionではリポジトリへのバージョン付けなのでファイル単位のリビジョンを書く必然性は無いですね．<br>ファイルヘッダから一気に全部削ってしまうのも1つの方法かもしれません．<br><br>&gt;またファイルの登録時にあらかじめ設定するプロパティを<br>&gt;拡張子ごとに設定することが可能です。<br>こちらはSubversionの使い方のページに説明を作ってあります．一応リンクを追加しました．<br><br>&gt;svn:ignore 属性を設定するというルールをいれた方が<br>&gt;いいと思います。<br>そうですね．これはディレクトリに設定したらサブディレクトリにも効果が波及するんでしたっけ？<br><br>&gt;コミットする人と、パッチを作成した人が必ず一致するわけでは<br>&gt;ない<br>たしかにそうですね．ただソースコードの差分を見れば実際に編集した人の名前がコメントに入っているはずなので容易に判別可能なはずではありますが．ソースコードを修正した人以外にも間接的に貢献してくれる人もいますので，謝辞として記入可能としました．<br><br>&gt;&gt; 配置： sakura/tag/<br>&gt;ディレクトリ構成のところでは tags となっています。<br>直しました．<br><br>&gt;慣習的には　branches/<br>実際にもbranchesですので，直しました．(csv2svnがちゃんと名前を付けてくれていました^^;)<br></div></section>
     <ul><li><section><h1 id=206>
     <span class="no">[206]</span>
-    <a class="title" href="#206">Re2: Subversion文書</a>
+    <a class="thread-title" href="#206">Re2: Subversion文書</a>
     <span class="author">つっちー</span>
     <time datetime="2006-04-01T11:49:59">2006年04月01日 11:49</time></h1>
     <div class="body">&gt; 1行目の$Idは変更した変更元バージョンを確認するために入れています．<br>&gt; 差分でないファイルが送られてきてもどこと差分を取ればいいのかを<br>&gt; 自己申告に依らずに明確にするためにCVS管理にしたときに追加しました．<br>マージする側でいちいち適用しないといけないリビジョンあるいはブランチを<br>特定するのはかなり手間がかかります。<br><br>それを考えるとSubversion のパッチ形式でない場合は適用しないという<br>運用ポリシーもありだと思います。(Subversion を使ったことのひとの方が<br>多数派だと思うのでいきなりは難しい かもしれませんが)<br><br>マージ作業を簡単にしておかないと、せっかく作成してもらったパッチも<br>適用されずにたまってしまう可能性があります。<br><br>&gt; ただ，Subversionではリポジトリへのバージョン付けなのでファイル単位の<br>&gt; リビジョンを書く必然性は無いですね．<br>&gt; ファイルヘッダから一気に全部削ってしまうのも1つの方法かもしれません．<br>私も、CVS を使っていた頃は 必ず $Id$ をつけていました。<br>CVS がファイル単位でバージョン管理するためにどのバージョンか明確に<br>するためでした。<br><br>しかし Subversion を使うようになってからは $Id$ などをつけなくなりました。<br>(最初はすこし抵抗がありましたが)<br>リポジトリ全体にリビジョンが振られるので特にファイル単位でリビジョンを<br>管理する必要がなくなったためです。<br><br>&gt; <br>&gt; &gt;svn:ignore 属性を設定するというルールをいれた方が<br>&gt; &gt;いいと思います。<br>&gt; そうですね．これはディレクトリに設定したらサブディレクトリにも<br>&gt; 効果が波及するんでしたっけ？<br>基本的には設定したディレクトリのみです。<br><br>TortoiseSVN の場合プロパティを設定する画面で「再帰的」という<br>チェックボックスをつけて設定した場合はサブディレクトリにも<br>設定されます。<br><br>&gt; sakura/<br>&gt; &#9;branches/ (official branch)<br>&gt; &#9;tags/ (official release tag) <br>&gt; &#9;trunk/ (main stream)<br>&gt; <br>&gt; help/<br>&gt; &#9;branches/<br>&gt; &#9;tags/<br>&gt; &#9;trunk/<br>あと help がエディタ本体と別の場所にありますが、本来ヘルプと<br>プログラムは一対一対応するはずなので同じ場所に入れた方が<br>よいのではないでしょうか?<br><br></div></section>
     <ul><li><section><h1 id=207>
     <span class="no">[207]</span>
-    <a class="title" href="#207">Re3: Subversion文書</a>
+    <a class="thread-title" href="#207">Re3: Subversion文書</a>
     <span class="author">げんた</span>
     <time datetime="2006-04-01T22:58:37">2006年04月01日 22:58</time></h1>
     <div class="body">&gt;それを考えるとSubversion のパッチ形式でない場合は適用しないという<br>&gt;運用ポリシーもありだと思います。(Subversion を使ったことのひとの方が<br>&gt;多数派だと思うのでいきなりは難しい かもしれませんが)<br>所定の書式以外は門前払いまでしなくてもよいかなとは思いますが，放置するなら門前払いの方がいいですかね？<br>ただ，今まで受け入れていた通常のPatchを門前払いはちょっとやりすぎかなと．<br>パッチなら多少対象バージョンが違っても当該箇所だけならうまく当たることが多いですし．<br><br>&gt;マージ作業を簡単にしておかないと、せっかく作成してもらったパッチも<br>&gt;適用されずにたまってしまう可能性があります。<br>実際これはその通りです．私も人間ですので面倒なパッチほど後回しになってしまいます．<br>パッチ形式であってもConflictするとそれを解決するのがいやになることもあります．<br>Subversion導入で最新状態を誰でも見られるようにしたのは，この差分同士の衝突を差分を作った人にお任せしたいという意図もありました．<br><br>&gt;私も、CVS を使っていた頃は 必ず $Id$ をつけていました。<br>&gt;しかし Subversion を使うようになってからは $Id$ などをつけなくなりました。<br>(._.) φ メモメモ<br><br>&gt;&gt; &gt;svn:ignore 属性を設定するというルール<br>&gt;基本的には設定したディレクトリのみです。<br>了解です．<br><br>&gt;あと help がエディタ本体と別の場所にありますが、本来ヘルプと<br>&gt;プログラムは一対一対応するはずなので同じ場所に入れた方が<br>&gt;よいのではないでしょうか?<br>正論ではあるのですが，実は私もヘルプファイルを全然編集したことが無くて，ヘルプをメンテナンスしてくださる方のご厚意に甘えております．プログラムの変更とヘルプの更新が全然同期しておらず，同じtrunk配下に入れてもヘルプとコードが同時にcommitされないと考えて別になっています．<br><br>RTFだったのをヘルプデザイナの形式に変換して頂いてからは，テキストベースでバージョン管理もちゃんと出来るんですけどね．<br>ヘルプファイルが更新されないから知る人ぞ知る機能だらけになってあんまりよくないんですけどね...<br></div></section>
     <ul><li><section><h1 id=208>
     <span class="no">[208]</span>
-    <a class="title" href="#208">Re4: Subversion文書</a>
+    <a class="thread-title" href="#208">Re4: Subversion文書</a>
     <span class="author">つっちー</span>
     <time datetime="2006-04-02T09:28:36">2006年04月02日 09:28</time></h1>
     <div class="body">&gt; 所定の書式以外は門前払いまでしなくてもよいかなとは思いますが，<br>&gt; 放置するなら門前払いの方がいいですかね？<br>&gt; ただ，今まで受け入れていた通常のPatchを門前払いはちょっとやりすぎかなと．<br>&gt; パッチなら多少対象バージョンが違っても当該箇所だけならうまく当たることが多いですし．<br>パッチを送っても拒否されるならともかく単に音沙汰が<br>ないのは寂しすぎます。<br><br>なのでパッチの種類によって優先度を明示するようにしては<br>いかがでしょうか? <br><br>優先度の高い順に<br>&#9;1. Subversion形式の patch<br>&#9;2. 通常の patch<br>&#9;3. 単に変更したファイルのみなど適用するバージョンが<br>&#9;   不明確でマージが難しいもの<br><br>&#9;※ コンフリクトが起こる場合優先度が下がるという条件を<br>&#9;   つけておいてパッチ作成者側でコンフリクトを解消して<br>&#9;   くださいと明記しておく<br><br>優先度を明示すれば、早くパッチを適用してもらいたい人は<br>なるべく優先度の高い形式で送るようになると思います。<br><br>優先度の低い形式で送った人に関しても優先度が低い<br>ことがあらかじめ知っているので、放置されていても<br>まだ納得できるかと思います。<br><br>&gt; &gt;あと help がエディタ本体と別の場所にありますが、本来ヘルプと<br>&gt; &gt;プログラムは一対一対応するはずなので同じ場所に入れた方が<br>&gt; &gt;よいのではないでしょうか?<br>&gt; 正論ではあるのですが，実は私もヘルプファイルを全然編集したことが<br>&gt; 無くて，ヘルプをメンテナンスしてくださる方のご厚意に甘えております．<br>&gt; プログラムの変更とヘルプの更新が全然同期しておらず，同じtrunk配下に<br>&gt; 入れてもヘルプとコードが同時にcommitされないと考えて別になっています．<br>現状ヘルプを更新しようと思うと、ソースコードを解析するか実際に使用して<br>こんな機能があるというのを調べた上でヘルプに反映させるということをする<br>必要があります。これではヘルプをメンテナンスしてくださる方の負担が<br>大きすぎて継続的にヘルプを更新することは難しいと思います。<br><br>パッチ作成者側で機能追加を行う場合や既存機能でUI上での操作が変わる場合に<br>簡単なテキスト形式でもいいので、機能の説明や操作方法などを簡単にまとめて<br>同時に送ってもらうということをルール化したほうがいいように思います。<br><br>ヘルプを作成する人はこれらの文章をまとめたりレビューしたりするだけで<br>OKというような仕組みを作ればヘルプの更新も進むのではないでしょうか?<br><br>現状でのヘルプとプログラムの乖離を改善もしないといけないですが<br></div></section>
     </li></ul></li></ul></li><li><section><h1 id=209>
     <span class="no">[209]</span>
-    <a class="title" href="#209">Re2: Subversion文書</a>
+    <a class="thread-title" href="#209">Re2: Subversion文書</a>
     <span class="author">つっちー</span>
     <time datetime="2006-04-02T12:53:33">2006年04月02日 12:53</time></h1>
     <div class="body">&gt; &gt;&gt;  svn:keywords (リビジョンの埋め込み) <br>&gt; &gt;&gt;  &#9;Author Date Id Revision <br>&gt; &gt;ブランチを作って、後でマージするときに大量にコンフリクトを<br>&gt; &gt;起こす可能性があるのでつけない方が安全だと思います。<br>&gt; なるほど．そうですか．<br>&gt; 1行目の$Idは変更した変更元バージョンを確認するために入れています．差分でないファイルが送られてきてもどこと差分を取ればいいのかを自己申告に依らずに明確にするためにCVS管理にしたときに追加しました．<br>&gt; ただ，実際には自分のCVSへimportして管理していて，リリース版とは全然関係ないバージョンが入っているケースがあり，その場合はその部分を差分から取り除く必要がありましたので，ご指摘の通りの問題は生じたことは既にあります．<br>コメントするのを忘れていましたが、<br>これらのキーワードには文字化けする可能性があるという問題もあります。<br><br><a href=http://arch.bluegate.org/pipermail/subversion-jp/2005-February/000252.html target=_top><nobr>http://<wbr>arch.<wbr>bluegate<wbr>.<wbr>org/<wbr>pipermai<wbr>l/<wbr>subversi<wbr>on-<wbr>jp/<wbr>2005-<wbr>February<wbr>/<wbr>000252.<wbr>html</nobr></a><br><a href=http://subversion.tigris.org/issues/show_bug.cgi?id=2332 target=_top><nobr>http://<wbr>subversi<wbr>on.<wbr>tigris.<wbr>org/<wbr>issues/<wbr>show_bug<wbr>.<wbr>cgi?<wbr>id=<wbr>2332</nobr></a><br><br>国際化対応のためにキーワードの部分の展開でロケールの設定が日本語になっている場合<br>日本語に展開されるのですが、常にUTF-8で表現されるため Shift-JIS のコメントの入った<br>ソースコードだとキーワード展開された部分が文字化けします。<br><br>※ 解決するパッチも出ているようですが解決したかどうか未確認です。<br><br><br></div></section>
     <ul><li><section><h1 id=210>
     <span class="no">[210]</span>
-    <a class="title" href="#210">Re3: Subversion文書</a>
+    <a class="thread-title" href="#210">Re3: Subversion文書</a>
     <span class="author">げんた</span>
     <time datetime="2006-04-02T23:03:45">2006年04月02日 23:03</time></h1>
     <div class="body">&gt;国際化対応のためにキーワードの部分の展開でロケールの設定が日本語になっている場合<br>&gt;日本語に展開されるのですが、常にUTF-8で表現されるため Shift-JIS のコメントの入った<br>&gt;ソースコードだとキーワード展開された部分が文字化けします。<br>これはちょっといやですね．<br><br>ですが，既にCommitされたものを見たところ，<br>2006-03-31 17:16:51Z<br>のように入っていたので，今のところはセーフかな．<br></div></section>
     <ul><li><section><h1 id=211>
     <span class="no">[211]</span>
-    <a class="title" href="#211">Re4: Subversion文書</a>
+    <a class="thread-title" href="#211">Re4: Subversion文書</a>
     <span class="author">つっちー</span>
     <time datetime="2006-04-02T23:18:04">2006年04月02日 23:18</time></h1>
     <div class="body">▼ げんたさん<br>> >国際化対応のためにキーワードの部分の展開でロケールの設定が日本語になっている場合<br>> >日本語に展開されるのですが、常にUTF-8で表現されるため Shift-JIS のコメントの入った<br>> >ソースコードだとキーワード展開された部分が文字化けします。<br>> これはちょっといやですね．<br>> <br>> ですが，既にCommitされたものを見たところ，<br>> 2006-03-31 17:16:51Z<br>> のように入っていたので，今のところはセーフかな．<br>本当ですね。なんでだろ?<br></div></section>

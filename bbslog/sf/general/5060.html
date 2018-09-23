@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Grepから選択したウインドウ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Grepから選択したウインドウ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5060</span>
-    <a class="title" href="5060.html#5060">Grepから選択したウインドウ</a></div>
+    <a class="thread-title" href="5060.html#5060">Grepから選択したウインドウ</a></div>
     <ul><li><div class="list-title">
     <span class="no">5061</span>
-    <a class="title" href="5060.html#5061">Re:Grepから選択したウインドウ</a></div>
+    <a class="thread-title" href="5060.html#5061">Re:Grepから選択したウインドウ</a></div>
     <ul><li><div class="list-title">
     <span class="no">5062</span>
-    <a class="title" href="5060.html#5062">Re2:Grepから選択したウインドウ</a></div>
+    <a class="thread-title" href="5060.html#5062">Re2:Grepから選択したウインドウ</a></div>
     <ul><li><div class="list-title">
     <span class="no">5064</span>
-    <a class="title" href="5060.html#5064">Re3:Grepから選択したウインドウ</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5060>
+    <a class="thread-title" href="5060.html#5064">Re3:Grepから選択したウインドウ</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5060>
     <span class="no">[5060]</span>
-    <a class="title" href="#5060">Grepから選択したウインドウ</a>
+    <a class="thread-title" href="#5060">Grepから選択したウインドウ</a>
     <span class="author">アニ</span>
     <time datetime="2006-02-27T06:34:01">2006年02月27日 06:34</time></h1>
     <div class="body">・Grepで、既に開いているファイルに含まれる文字列を検索<br>・ウインドウを移動<br>・検索結果を選択<br><br>以上の操作をすると、選択されたのが元から開いていたファイルの場合、移動前のウインドウ位置に戻されます。<br>"タブを表示"、"結合して表示"が前提です。<br><br>正規の動作なのか不具合なのかわからないのですが、偶然見つけて気になったので報告させていただきました。</div></section>
     <ul><li><section><h1 id=5061>
     <span class="no">[5061]</span>
-    <a class="title" href="#5061">Re:Grepから選択したウインドウ</a>
+    <a class="thread-title" href="#5061">Re:Grepから選択したウインドウ</a>
     <span class="author">TETU</span>
     <time datetime="2006-02-28T15:12:33">2006年02月28日 15:12</time></h1>
     <div class="body">▼ アニさん<br><br>こんにちは、初めまして。<br>その動作は正常な動作で「タグジャンプ」の機能です。<br>ヘルプでキーワードに”タグジャンプ”と入れて検索してみてください。<br><br>「行番号が記述されている場合、その行へカーソルが移動します。Grepの検索結果からも直接タグジャンプできます。」<br><br>と言う一文があります。<br><br>ご指摘の動作は既にファイルが開かれているのでそちらのファイルにジャンプすると言う動作になります。<br>ファイルが開かれていなければ、そのファイルが開かれ、Grepで検索された行へ自動的に飛びます。<br></div></section>
     <ul><li><section><h1 id=5062>
     <span class="no">[5062]</span>
-    <a class="title" href="#5062">Re2:Grepから選択したウインドウ</a>
+    <a class="thread-title" href="#5062">Re2:Grepから選択したウインドウ</a>
     <span class="author">アニ</span>
     <time datetime="2006-03-01T09:04:13">2006年03月01日 09:04</time></h1>
     <div class="body">▼ TETUさん<br><br>返信ありがとうございます。<br>えっと、説明が下手だったようで、すみません。<br>タグジャンプはもちろん知っています。<br>機能の事ではなく、ウインドウの挙動についてです。<br><br>"タブを表示"、"結合して表示"してある状態で、Grep後にウインドウを移動（座標）させ、元から開いていたファイルを選択すると、"移動させる前の位置（座標）"にウインドウが戻されるのです。<br>その後Grepのタブを選択すると、また移動後の位置になります。<br><br>タブを結合している場合、この動作には違和感を感じたので報告させていただきました。</div></section>
     <ul><li><section><h1 id=5064>
     <span class="no">[5064]</span>
-    <a class="title" href="#5064">Re3:Grepから選択したウインドウ</a>
+    <a class="thread-title" href="#5064">Re3:Grepから選択したウインドウ</a>
     <span class="author">ryoji</span>
     <time datetime="2006-03-03T00:33:20">2006年03月03日 00:33</time></h1>
     <div class="body">▼ アニさん<br>&gt; "タブを表示"、"結合して表示"してある状態で、Grep後にウインドウを移動（座標）させ、元から開いていたファイルを選択すると、"移動させる前の位置（座標）"にウインドウが戻されるのです。<br>&gt; その後Grepのタブを選択すると、また移動後の位置になります。<br><br>現状だとこれ以外にも多くのケースで予期しないウィンドウ移動は発生します。<br><br>ウィンドウを移動させた直後に、<br>・タグジャンプまたはタグジャンプバックを実行した場合（アニさんが指摘されたケース）<br>・ウィンドウ一覧からウィンドウを選択した場合（ただし、タスクトレイからの実行なら移動しない）<br>・最近使ったファイル一覧の中から、既に開いているファイルを選択した場合<br>・ファイルを開くダイアログから、既に開いているファイルを選択した場合<br>・「同名のC/C++ヘッダ（ソース）を開く」で、目的のファイルが既に開かれていた場合<br>・エクスプローラからのダブルクリックで、目的のファイルが既に開かれていた場合<br>・ファイル名を指定して実行で、目的のファイルが既に開かれていた場合<br>など。<br><br>ソースプログラムを見ると、ウィンドウ一覧のところに一旦は対策をした形跡が残っていたりするのですが...<br>なぜそれをやめた（コメントアウトしている）のか、当時の実装経緯は私にもわかりません。</div></section>

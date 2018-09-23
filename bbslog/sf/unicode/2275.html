@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Mingwのダンプ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Mingwのダンプ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2275</span>
-    <a class="title" href="2275.html#2275">Mingwのダンプ</a></div>
+    <a class="thread-title" href="2275.html#2275">Mingwのダンプ</a></div>
     <ul><li><div class="list-title">
     <span class="no">2281</span>
-    <a class="title" href="2275.html#2281">Re:Mingwのダンプ</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2275>
+    <a class="thread-title" href="2275.html#2281">Re:Mingwのダンプ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2275>
     <span class="no">[2275]</span>
-    <a class="title" href="#2275">Mingwのダンプ</a>
+    <a class="thread-title" href="#2275">Mingwのダンプ</a>
     <span class="author">もか</span>
     <time datetime="2015-08-13T03:05:55">2015年08月13日 03:05</time></h1>
     <div class="body">Mingwは構造化例外処理(__try)をサポートしてなかった気がする<br>ので、無条件にダンプを有効にすると、コンパイルできないかも。<br>未確認。<br></div></section>
     <ul><li><section><h1 id=2281>
     <span class="no">[2281]</span>
-    <a class="title" href="#2281">Re:Mingwのダンプ</a>
+    <a class="thread-title" href="#2281">Re:Mingwのダンプ</a>
     <span class="author">syat</span>
     <time datetime="2015-09-20T19:38:40">2015年09月20日 19:38</time></h1>
     <div class="body">▼ もかさん<br><br>MinGWだとそもそも DbgHelp.h が含まれておらずコンパイルできなかったので、必要な定義がない場合はダンプ無効になるようにしました。<br><br>patchunicode:#955</div></section>

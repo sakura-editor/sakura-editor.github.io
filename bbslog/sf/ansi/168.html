@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アウトライン解析の構造</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アウトライン解析の構造 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">168</span>
-    <a class="title" href="168.html#168">アウトライン解析の構造</a></div>
+    <a class="thread-title" href="168.html#168">アウトライン解析の構造</a></div>
     <ul><li><div class="list-title">
     <span class="no">172</span>
-    <a class="title" href="168.html#172">RE: アウトライン解析の構造</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=168>
+    <a class="thread-title" href="168.html#172">RE: アウトライン解析の構造</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=168>
     <span class="no">[168]</span>
-    <a class="title" href="#168">アウトライン解析の構造</a>
+    <a class="thread-title" href="#168">アウトライン解析の構造</a>
     <span class="author">げんた</span>
     <time datetime="2001-03-09T01:52:56">2001年03月09日 01:52</time></h1>
     <div class="body">現在、アウトライン解析はEditDocでデータを走査して行番号情報を構築し、CDlgFuncListでList/Treeに組み上げています。この部分をうまく切り出すためには両者を1つにしておく必要があるでしょう。<br><br># アウトライン解析のDLL化の話を思い出したので。<br></div></section>
     <ul><li><section><h1 id=172>
     <span class="no">[172]</span>
-    <a class="title" href="#172">RE: アウトライン解析の構造</a>
+    <a class="thread-title" href="#172">RE: アウトライン解析の構造</a>
     <span class="author">みく</span>
     <time datetime="2001-03-10T08:26:57">2001年03月10日 08:26</time></h1>
     <div class="body">&gt;タイトル: アウトライン解析の構造<br>&gt;発言者: げんた<br>&gt;現在、アウトライン解析はEditDocでデータを走査して行番号情報を構築し、CDlgFuncListでList/Treeに組み上げています。この部分をうまく切り出すためには両者を1つにしておく必要があるでしょう。<br>&gt;<br>&gt;# アウトライン解析のDLL化の話を思い出したので。<br><br>必要なのは行番号を指定して行データを取得する操作だけです。<br>これをDLLにAPIとして提供すればよさそうです。<br>解析タイプはDLL呼び出し時の引数で渡せます。<br><br>DLLに画面を持たせるとき：<br>　DLLはジャンプ時の行番号をイベントで返せばよいです。<br>DLLに画面を持たせないとき：<br>　DLLは解析結果一覧表を返せばよいです。<br>　（一覧表を取得するためのAPIを本体に提供する）<br><br>理論上は。。。<br></div></section>

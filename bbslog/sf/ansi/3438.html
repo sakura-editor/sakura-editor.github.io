@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現パターンの反転</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現パターンの反転 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3438</span>
-    <a class="title" href="3438.html#3438">正規表現パターンの反転</a></div>
+    <a class="thread-title" href="3438.html#3438">正規表現パターンの反転</a></div>
     <ul><li><div class="list-title">
     <span class="no">3439</span>
-    <a class="title" href="3438.html#3439">Re:正規表現パターンの反転</a></div>
+    <a class="thread-title" href="3438.html#3439">Re:正規表現パターンの反転</a></div>
     <ul><li><div class="list-title">
     <span class="no">3441</span>
-    <a class="title" href="3438.html#3441">Re2:正規表現パターンの反転</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3438>
+    <a class="thread-title" href="3438.html#3441">Re2:正規表現パターンの反転</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3438>
     <span class="no">[3438]</span>
-    <a class="title" href="#3438">正規表現パターンの反転</a>
+    <a class="thread-title" href="#3438">正規表現パターンの反転</a>
     <span class="author">げんた</span>
     <time datetime="2004-02-25T11:25:59">2004年02月25日 11:25</time></h1>
     <div class="body">複数行マッチを考えた場合に下から上の検索に前方からの検索を使って1行ずつ与えたのでは期待する結果になりませんよね．<br>そこで思ったのですが，正規表現を反転？して正規表現エンジンにもreverse_iteratorを与えられるようにしたら真の逆方向検索ができるのではないかと．<br></div></section>
     <ul><li><section><h1 id=3439>
     <span class="no">[3439]</span>
-    <a class="title" href="#3439">Re:正規表現パターンの反転</a>
+    <a class="thread-title" href="#3439">Re:正規表現パターンの反転</a>
     <span class="author">(全略)</span>
     <time datetime="2004-02-25T16:15:02">2004年02月25日 16:15</time></h1>
     <div class="body">ちょっと口を挟んでみます<br>間違いとかあればご容赦を、<br><br>▼ げんたさん<br>&gt; そこで思ったのですが，正規表現を反転？して正規表現エンジンにもreverse_iteratorを与えられるようにしたら真の逆方向検索ができるのではないかと．<br>正規表現を反転って m/A[a-z]\w+\s/ (適当)を m/\s\w+[a-z]A/ にしちゃってって話ですか?<br>もしそのことでしたら後方参照や拡張正規表現で泣きますよ^^;<br><br>reverse_iteratorってSTLはよく分かりませんが<br> for(int i=p長さ; i&gt;=0; i--){p[i] で何かする}<br>ってな感じのものですよね?<br>これもバッファ先頭/末やCRLFでごちゃごちゃするかと思います<br><br># 否定してばかりですいません、一度試しに組んでみます</div></section>
     <ul><li><section><h1 id=3441>
     <span class="no">[3441]</span>
-    <a class="title" href="#3441">Re2:正規表現パターンの反転</a>
+    <a class="thread-title" href="#3441">Re2:正規表現パターンの反転</a>
     <span class="author">げんた</span>
     <time datetime="2004-02-26T08:29:01">2004年02月26日 08:29</time></h1>
     <div class="body">&gt;▼ げんたさん<br>&gt;# 否定してばかりですいません、一度試しに組んでみます<br>いや，所詮は思いつきですから...<br>それに，SJISだと逆方向から正しくたどるのは単純にはできませんよね<br></div></section>

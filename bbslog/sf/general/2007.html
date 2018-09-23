@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行を含む正規表現置換 異状</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>改行を含む正規表現置換 異状 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2007</span>
-    <a class="title" href="2007.html#2007">改行を含む正規表現置換 異状</a></div>
+    <a class="thread-title" href="2007.html#2007">改行を含む正規表現置換 異状</a></div>
     <ul><li><div class="list-title">
     <span class="no">2008</span>
-    <a class="title" href="2007.html#2008">Re:改行を含む正規表現置換 異状</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2007>
+    <a class="thread-title" href="2007.html#2008">Re:改行を含む正規表現置換 異状</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2007>
     <span class="no">[2007]</span>
-    <a class="title" href="#2007">改行を含む正規表現置換 異状</a>
+    <a class="thread-title" href="#2007">改行を含む正規表現置換 異状</a>
     <span class="author">すい</span>
     <time datetime="2002-06-12T00:07:59">2002年06月12日 00:07</time></h1>
     <div class="body">sakura_2002-06-05.zip ですが、正規表現で改行を含む文字列を<br>置換させた時の動作が変です。<br><br>例えば<br><br>・置換前：^R.*\r\n<br>・置換後：<br>・正規表現　←チェック ON<br><br>で実行すると、きちんと該当行（ Rで始まる行全体）が検索(置換)対象になりますが<br>[置換(R)] ボタンを押しても検索一致箇所が先に進むだけで何も置換作業が行われません。<br>んが、しかし、そこで条件はそのままで [すべて置換(A)] を押すと、全ての<br>条件一致行に対して置換作業が行われます。<br><br>つまり [置換(R)] ボタンを何回も押していった場合と [すべて置換(A)] を押した場合とで<br>置換作業の結果が異なっている。 :-P<br><br>さらに、sakura_2002-05-20.zip までは、上記のように改行を含む文字列を<br>置換すると行そのものが消えてくれたのに対して、sakura_2002-06-05.zip <br>だと行が残ってしまいます。<br>そのため「"^\r\n" を "" に置換」による空行の削除とかが出来なくなっています。<br></div></section>
     <ul><li><section><h1 id=2008>
     <span class="no">[2008]</span>
-    <a class="title" href="#2008">Re:改行を含む正規表現置換 異状</a>
+    <a class="thread-title" href="#2008">Re:改行を含む正規表現置換 異状</a>
     <span class="author">yosukep</span>
     <time datetime="2002-06-12T18:52:35">2002年06月12日 18:52</time></h1>
     <div class="body">私もsakura_2002-06-05バージョンにアップデートした後に同様の状態がおこっています。<br><br>改行を取り除くために、<br>正規表現にチェックを入れて、置換前に「\r\n」、置換後を空にすると検索文字列が色づけされるだけでなにも置換されません。ひとつ前のバージョンまではできていました。<br><br></div></section>

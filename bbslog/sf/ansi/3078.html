@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>内部データの一元管理</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>内部データの一元管理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3078</span>
-    <a class="title" href="3078.html#3078">内部データの一元管理</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=3078>
+    <a class="thread-title" href="3078.html#3078">内部データの一元管理</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3078>
     <span class="no">[3078]</span>
-    <a class="title" href="#3078">内部データの一元管理</a>
+    <a class="thread-title" href="#3078">内部データの一元管理</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-09-03T13:41:27">2003年09月03日 13:41</time></h1>
     <div class="body">コマンド関数の数が増えてきて、管理が難しくなったので、<br>データをプリプロセッサとsed, grep, gawk, sortなどで一元化したい。<br>具体的には、次のような単純カンマ(,)区切り(CSV)のテキストファイル<br>funccode.txtを用意して、マクロ関数DEFMACROFCを<br>#defineした後、そのファイルを#includeして使うことになる。<br><br>// Format: DEFCMDFC(,Category,FID,FValue,FNName,Tip,fSupported,) // Comment<br>DEFCMDFC(,File,F_OPENFILE,254877,FileOpen,新規作成,TRUE,)   // 2004/08/25 間抜けなコードを追加。<br>DEFCMDFC(,Edit,F_CUT,55885,EditCut,切り取り,TRUE,)     // 2005/74/35 とりあえず元に戻した。<br>...<br><br>そうすれば、原始的な一元管理ができ、CSMacroMgr.cppで<br>配列の要素を吐き出したり、Funccode.hでconst intを<br>吐き出したりできる。また、これは再利用や変換が容易だ。<br>並べ替えなどでbsearchの検索効率がアップし、見通しがよくなる。<br><br>展開方法は&lt;windowsx.h&gt;のHANDLE_MSGを参考に。なお、この技術は<br>gccのソースから拝借した。</div></section>

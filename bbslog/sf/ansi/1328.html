@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現置換の振舞いが変わっています</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現置換の振舞いが変わっています | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1328</span>
-    <a class="title" href="1328.html#1328">正規表現置換の振舞いが変わっています</a></div>
+    <a class="thread-title" href="1328.html#1328">正規表現置換の振舞いが変わっています</a></div>
     <ul><li><div class="list-title">
     <span class="no">1333</span>
-    <a class="title" href="1328.html#1333">Re:正規表現置換の振舞いが変わっています</a></div>
+    <a class="thread-title" href="1328.html#1333">Re:正規表現置換の振舞いが変わっています</a></div>
     <ul><li><div class="list-title">
     <span class="no">1439</span>
-    <a class="title" href="1328.html#1439">Re:正規表現置換の振舞い</a></div>
+    <a class="thread-title" href="1328.html#1439">Re:正規表現置換の振舞い</a></div>
     <ul><li><div class="list-title">
     <span class="no">1440</span>
-    <a class="title" href="1328.html#1440">Re2:正規表現置換の振舞い</a></div>
+    <a class="thread-title" href="1328.html#1440">Re2:正規表現置換の振舞い</a></div>
     <ul><li><div class="list-title">
     <span class="no">1443</span>
-    <a class="title" href="1328.html#1443">Re2:正規表現置換の振舞い</a></div>
+    <a class="thread-title" href="1328.html#1443">Re2:正規表現置換の振舞い</a></div>
     <ul><li><div class="list-title">
     <span class="no">1444</span>
-    <a class="title" href="1328.html#1444">Re3:正規表現置換の振舞い</a></div>
+    <a class="thread-title" href="1328.html#1444">Re3:正規表現置換の振舞い</a></div>
     <ul><li><div class="list-title">
     <span class="no">1445</span>
-    <a class="title" href="1328.html#1445">Re4:正規表現置換の振舞い</a></div>
+    <a class="thread-title" href="1328.html#1445">Re4:正規表現置換の振舞い</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">1446</span>
-    <a class="title" href="1328.html#1446">Re2:正規表現置換の振舞い</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1328>
+    <a class="thread-title" href="1328.html#1446">Re2:正規表現置換の振舞い</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1328>
     <span class="no">[1328]</span>
-    <a class="title" href="#1328">正規表現置換の振舞いが変わっています</a>
+    <a class="thread-title" href="#1328">正規表現置換の振舞いが変わっています</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-25T20:24:29">2002年01月25日 20:24</time></h1>
     <div class="body">最終リリースから正規表現置換における改行コードの扱いが変わっています．おそらくnoviceさんの変更が効いているのだと思いますが．<br><br>以前は<br>* /^TEXT.*$/ では改行は含まれない<br>* /^TEXT.*\n$/ では改行が含まれる<br>で，改行が含まれるパターンを指定することで行削除を行うことができたのですが，<br><br>現在は<br>* /^TEXT.*$/ では改行は含まれない(同じ)<br>* /^TEXT.*\n$/ では全体がHITしてしまう？ ＋ 置換が永遠に終わらない<br>みたいです．<br><br>置換で複数行を一括して扱っているのが問題なのかなと思います．複数行を含んだ文字列を扱うときはmオプションが必要なのでは？<br></div></section>
     <ul><li><section><h1 id=1333>
     <span class="no">[1333]</span>
-    <a class="title" href="#1333">Re:正規表現置換の振舞いが変わっています</a>
+    <a class="thread-title" href="#1333">Re:正規表現置換の振舞いが変わっています</a>
     <span class="author">novice</span>
     <time datetime="2002-01-26T02:33:55">2002年01月26日 02:33</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 最終リリースから正規表現置換における改行コードの扱いが変わっています．おそらくnoviceさんの変更が効いているのだと思いますが．<br>私が2002/01/19に追加したコードのGetSelectedData()の引数の設定が間違っていました。<br><br>変更前<br>if( FALSE == pcEditView-&gt;GetSelectedData( cmemory, FALSE, NULL, FALSE, EOL_NONE ) ){<br><br>変更後<br>if( FALSE == pcEditView-&gt;GetSelectedData( cmemory, FALSE, NULL, FALSE ) ){<br><br>ご確認お願い致します。<br></div></section>
     <ul><li><section><h1 id=1439>
     <span class="no">[1439]</span>
-    <a class="title" href="#1439">Re:正規表現置換の振舞い</a>
+    <a class="thread-title" href="#1439">Re:正規表現置換の振舞い</a>
     <span class="author">げんた</span>
     <time datetime="2002-02-01T14:24:45">2002年02月01日 14:24</time></h1>
     <div class="body">&gt;私が2002/01/19に追加したコードのGetSelectedData()の引数の設定が間違っていました。<br>&gt;ご確認お願い致します。<br>行全体を（改行を含めて）空文字列に置換＝行削除するとNULL Pointerを参照して死にます．<br>置換先に何かしら文字がある場合は大丈夫です．<br></div></section>
     <ul><li><section><h1 id=1440>
     <span class="no">[1440]</span>
-    <a class="title" href="#1440">Re2:正規表現置換の振舞い</a>
+    <a class="thread-title" href="#1440">Re2:正規表現置換の振舞い</a>
     <span class="author">hor</span>
     <time datetime="2002-02-01T15:42:30">2002年02月01日 15:42</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;私が2002/01/19に追加したコードのGetSelectedData()の引数の設定が間違っていました。<br>&gt; &gt;ご確認お願い致します。<br>&gt; 行全体を（改行を含めて）空文字列に置換＝行削除するとNULL Pointerを参照して死にます．<br>&gt; 置換先に何かしら文字がある場合は大丈夫です．<br><br>..*\n$ でやってみたら削除できましたけど…？？？</div></section>
     <ul><li><section><h1 id=1443>
     <span class="no">[1443]</span>
-    <a class="title" href="#1443">Re2:正規表現置換の振舞い</a>
+    <a class="thread-title" href="#1443">Re2:正規表現置換の振舞い</a>
     <span class="author">げんた</span>
     <time datetime="2002-02-01T20:56:51">2002年02月01日 20:56</time></h1>
     <div class="body">▼horさん<br>&gt;..*\n$ でやってみたら削除できましたけど…？？？<br>申し訳ない．<br><br>正規表現置換に関してはnoviceさんの方を削除してHORさんのルーチンを使っていますので，その差が出ているのかも．<br>もう少し調べてみます．<br></div></section>
     <ul><li><section><h1 id=1444>
     <span class="no">[1444]</span>
-    <a class="title" href="#1444">Re3:正規表現置換の振舞い</a>
+    <a class="thread-title" href="#1444">Re3:正規表現置換の振舞い</a>
     <span class="author">hor</span>
     <time datetime="2002-02-01T21:08:05">2002年02月01日 21:08</time></h1>
     <div class="body">▼ げんたさん<br>&gt; ▼horさん<br>&gt; &gt;..*\n$ でやってみたら削除できましたけど…？？？<br>&gt; 申し訳ない．<br>&gt; <br>&gt; 正規表現置換に関してはnoviceさんの方を削除してHORさんのルーチンを使っていますので，その差が出ているのかも．<br><br>私もnoviceさんのロジックはまだ使ってないです。<br>…ダイアログから大文字小文字のオプションを正規表現に埋め込んだりしてたのでだいぶ違うソースになってるかも…</div></section>
     <ul><li><section><h1 id=1445>
     <span class="no">[1445]</span>
-    <a class="title" href="#1445">Re4:正規表現置換の振舞い</a>
+    <a class="thread-title" href="#1445">Re4:正規表現置換の振舞い</a>
     <span class="author">hor</span>
     <time datetime="2002-02-01T21:52:35">2002年02月01日 21:52</time></h1>
     <div class="body">▼ horさん<br>&gt; ▼ げんたさん<br>&gt; &gt; 正規表現置換に関してはnoviceさんの方を削除してHORさんのルーチンを使っていますので，その差が出ているのかも．<br>&gt; <br>&gt; 私もnoviceさんのロジックはまだ使ってないです。<br>&gt; …ダイアログから大文字小文字のオプションを正規表現に埋め込んだりしてたのでだいぶ違うソースになってるかも…<br><br>一応、私が正規表現置換の動作を確認したソースを Junk/etc.lzh に置いておきます。<br><br>↓見る・ぱくる・無視する・ちょっと使う……ご自由に。<br>ssrc_2002-01-27.zip<br>+ srcdiff_2002-01-27_p4.zip<br>+ 正規表現iオプションをダイアログで指定可能に<br>+ 行末より後ろにキャレットがある状態で正規表現下検索すると変だったのを修正<br>+ 検索後のメッセージをステータスバーに表示、を、またはメニューバーに表示する、に変更<br>+ スペルミス修正(CEditView::SendStatusMassage→CEditView::SendStatusMessage)<br>+ アウトライン解析/ブックマーク一覧でジャンプしたら文書の方をアクティブにする<br>+ アウトライン解析/ブックマーク一覧のリスト(ツリー)がアクティブなら、<br>    再描画,アウトライン解析,ブックマーク一覧,ブックマーク設定/解除キーを使えるように変更</div></section>
     </li></ul></li></ul></li><li><section><h1 id=1446>
     <span class="no">[1446]</span>
-    <a class="title" href="#1446">Re2:正規表現置換の振舞い</a>
+    <a class="thread-title" href="#1446">Re2:正規表現置換の振舞い</a>
     <span class="author">げんた</span>
     <time datetime="2002-02-01T22:27:38">2002年02月01日 22:27</time></h1>
     <div class="body">&gt;..*\n$ でやってみたら削除できましたけど…？？？<br>よく見たら自分で何気なく変えたところだった．<br>本当に申し訳ない．<br>今は普通に動いています．<br><br>ただ，BREGEXPのせいなのか，^.*$ には先頭から改行コード \r\n の\rの部分までがヒットして\nが残ります．<br>^.*\n$ だと行全体にヒット．<br></div></section>

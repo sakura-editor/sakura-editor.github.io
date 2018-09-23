@@ -1,63 +1,89 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>1.4.3.1</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>1.4.3.1 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3257</span>
-    <a class="title" href="3257.html#3257">1.4.3.1</a></div>
+    <a class="thread-title" href="3257.html#3257">1.4.3.1</a></div>
     <ul><li><div class="list-title">
     <span class="no">3259</span>
-    <a class="title" href="3257.html#3259">Re:1.4.3.1</a></div>
+    <a class="thread-title" href="3257.html#3259">Re:1.4.3.1</a></div>
     <ul><li><div class="list-title">
     <span class="no">3260</span>
-    <a class="title" href="3257.html#3260">Re2:1.4.3.1</a></div>
+    <a class="thread-title" href="3257.html#3260">Re2:1.4.3.1</a></div>
     <ul><li><div class="list-title">
     <span class="no">3263</span>
-    <a class="title" href="3257.html#3263">Re3:1.4.3.1</a></div>
+    <a class="thread-title" href="3257.html#3263">Re3:1.4.3.1</a></div>
     <ul><li><div class="list-title">
     <span class="no">3264</span>
-    <a class="title" href="3257.html#3264">Re4:1.4.3.1</a></div>
+    <a class="thread-title" href="3257.html#3264">Re4:1.4.3.1</a></div>
     </li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">3273</span>
-    <a class="title" href="3257.html#3273">Re:1.4.3.1</a></div>
+    <a class="thread-title" href="3257.html#3273">Re:1.4.3.1</a></div>
     <ul><li><div class="list-title">
     <span class="no">3279</span>
-    <a class="title" href="3257.html#3279">Re2:1.4.3.1</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3257>
+    <a class="thread-title" href="3257.html#3279">Re2:1.4.3.1</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3257>
     <span class="no">[3257]</span>
-    <a class="title" href="#3257">1.4.3.1</a>
+    <a class="thread-title" href="#3257">1.4.3.1</a>
     <span class="author">げんた</span>
     <time datetime="2003-09-07T16:47:48">2003年09月07日 16:47</time></h1>
     <div class="body">更新しました．<br><br>・ファイル更新検出修正<br>・アイコン・メッセージ背景色修正<br>・URLのクリック無効<br>・保存時のファイル更新検出抑制<br><br>こんなところです．<br></div></section>
     <ul><li><section><h1 id=3259>
     <span class="no">[3259]</span>
-    <a class="title" href="#3259">Re:1.4.3.1</a>
+    <a class="thread-title" href="#3259">Re:1.4.3.1</a>
     <span class="author">じゅうじ</span>
     <time datetime="2003-09-08T00:35:02">2003年09月08日 00:35</time></h1>
     <div class="body">▼ げんたさん<br>ご苦労様です。<br>コンパイルで、エラーが出ました。<br>新しいコンスタントでしょうか？COLOR_MENUBAR <br>CEditWnd.cpp line 3938<br>&#9;&#9;::GetSysColor(/* COsVersionInfo().IsLuna() ? COLOR_MENUBAR :*/ COLOR_MENU );<br><br>VC++6.0を使用しています。</div></section>
     <ul><li><section><h1 id=3260>
     <span class="no">[3260]</span>
-    <a class="title" href="#3260">Re2:1.4.3.1</a>
+    <a class="thread-title" href="#3260">Re2:1.4.3.1</a>
     <span class="author">げんた</span>
     <time datetime="2003-09-08T01:35:08">2003年09月08日 01:35</time></h1>
     <div class="body">&gt;コンパイルで、エラーが出ました。<br>&gt;新しいコンスタントでしょうか？COLOR_MENUBAR <br>Windows XP以降でのみ有効な定数です．<br>Windows XPではメニューのバー部分とPopup部分の色が異なるので，バー用に新たに定数が追加されています．<br><br>&gt;VC++6.0を使用しています。<br>が発売された当時はXPが無かったですからねぇ．<br>新しいPlatform SDKを使ってもらえばコンパイルできると思います．<br>http://www.microsoft.com/msdownload/platformsdk/sdkupdate/<br><br>SDK February 2003では<br>▼WinUser.h<br>#if(WINVER &gt;= 0x0501)<br>#define COLOR_MENUHILIGHT       29<br>#define COLOR_MENUBAR           30<br>#endif /* WINVER &gt;= 0x0501 */<br>となっております．<br><br>当該部分はWINVERによって条件コンパイルするようにしておいた方がいいのかも．<br>ただ，そうすると古いSDKでコンパイルしたものはWindows XPで背景色が合わなくなってしまいますけど．<br><br>---<br>VisualStudio .NETも2003だというのにVC++ 6.0を使っているところってまだまだ多いですよね．<br></div></section>
     <ul><li><section><h1 id=3263>
     <span class="no">[3263]</span>
-    <a class="title" href="#3263">Re3:1.4.3.1</a>
+    <a class="thread-title" href="#3263">Re3:1.4.3.1</a>
     <span class="author">みく</span>
     <time datetime="2003-09-08T20:12:19">2003年09月08日 20:12</time></h1>
     <div class="body"><br>//#if(WINVER &lt; 0x0501)<br>#ifndef COLOR_MENUHILIGHT<br>#define COLOR_MENUHILIGHT 29<br>#endif<br>#ifndef COLOR_MENUBAR<br>#define COLOR_MENUBAR 30<br>#endif<br>//#endif /* WINVER &lt; 0x0501 */<br><br>::GetSysColor( COsVersionInfo().IsLuna() ? COLOR_MENUBAR : COLOR_MENU );<br><br>では駄目なの？<br></div></section>
     <ul><li><section><h1 id=3264>
     <span class="no">[3264]</span>
-    <a class="title" href="#3264">Re4:1.4.3.1</a>
+    <a class="thread-title" href="#3264">Re4:1.4.3.1</a>
     <span class="author">げんた</span>
     <time datetime="2003-09-09T08:31:55">2003年09月09日 08:31</time></h1>
     <div class="body">&gt;では駄目なの？<br>いや，いいと思います．<br>私も書き込んでから気づいた．<br></div></section>
     </li></ul></li></ul></li></ul></li><li><section><h1 id=3273>
     <span class="no">[3273]</span>
-    <a class="title" href="#3273">Re:1.4.3.1</a>
+    <a class="thread-title" href="#3273">Re:1.4.3.1</a>
     <span class="author">じゅうじ</span>
     <time datetime="2003-09-11T20:05:23">2003年09月11日 20:05</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 更新しました．<br>&gt; <br>重要なURLを教えていただき、有り難うございます。早速試してみます。<br><br>ところで、[3197] 改行記号の表示が欠ける ryoji<br>の修正は、まだ入れられないのでしょうか？<br><br>複雑な修正なので分りません。<br>結果良ければ．．では駄目だからでしょうか？<br></div></section>
     <ul><li><section><h1 id=3279>
     <span class="no">[3279]</span>
-    <a class="title" href="#3279">Re2:1.4.3.1</a>
+    <a class="thread-title" href="#3279">Re2:1.4.3.1</a>
     <span class="author">げんた</span>
     <time datetime="2003-09-12T01:13:04">2003年09月12日 01:13</time></h1>
     <div class="body">&gt;ところで、[3197] 改行記号の表示が欠ける ryoji<br>&gt;の修正は、まだ入れられないのでしょうか？<br>ぎょっ(O_O) 忘れていました．<br>とりあえず入れておきます．<br></div></section>

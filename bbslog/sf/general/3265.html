@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>巨大ファイル編集でメモリ違反</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>巨大ファイル編集でメモリ違反 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3265</span>
-    <a class="title" href="3265.html#3265">巨大ファイル編集でメモリ違反</a></div>
+    <a class="thread-title" href="3265.html#3265">巨大ファイル編集でメモリ違反</a></div>
     <ul><li><div class="list-title">
     <span class="no">3268</span>
-    <a class="title" href="3265.html#3268">Re:巨大ファイル編集でメモリ違反</a></div>
+    <a class="thread-title" href="3265.html#3268">Re:巨大ファイル編集でメモリ違反</a></div>
     </li><li><div class="list-title">
     <span class="no">3277</span>
-    <a class="title" href="3265.html#3277">RE: 巨大ファイル編集でメモリ違反</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3265>
+    <a class="thread-title" href="3265.html#3277">RE: 巨大ファイル編集でメモリ違反</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3265>
     <span class="no">[3265]</span>
-    <a class="title" href="#3265">巨大ファイル編集でメモリ違反</a>
+    <a class="thread-title" href="#3265">巨大ファイル編集でメモリ違反</a>
     <span class="author">fotomo</span>
     <time datetime="2003-09-09T17:59:20">2003年09月09日 17:59</time></h1>
     <div class="body">41MBのファイルを開いて、<br>①すべて選択<br>②コピー<br>③貼り付け<br>をやると、メモリ違反が起きます。<br><br>マシンの実メモリは256MBです。<br><br>メモリが足りないときは「メモリが足りません」<br>とMSGBOXして何も起こらない風にはできませんか？</div></section>
     <ul><li><section><h1 id=3268>
     <span class="no">[3268]</span>
-    <a class="title" href="#3268">Re:巨大ファイル編集でメモリ違反</a>
+    <a class="thread-title" href="#3268">Re:巨大ファイル編集でメモリ違反</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-09-10T15:16:14">2003年09月10日 15:16</time></h1>
     <div class="body"># CEditView::MySetClipboardData<br>&#9;/* テキスト形式のデータ */<br>&#9;hgClip = ::GlobalAlloc(<br>&#9;&#9;GMEM_MOVEABLE | GMEM_DDESHARE,<br>&#9;&#9;lstrlen( pszText ) + 1<br>&#9;);<br>&#9;pszClip = (char*)::GlobalLock( hgClip );<br><br>本当に何にもチェックしてないね。似たようなコードが他にもありそうだ。状態構造化コードでないとつらいね (1scopeにたくさんの局所変数が並んでstatefulでわかりづらい)。</div></section>
     </li><li><section><h1 id=3277>
     <span class="no">[3277]</span>
-    <a class="title" href="#3277">RE: 巨大ファイル編集でメモリ違反</a>
+    <a class="thread-title" href="#3277">RE: 巨大ファイル編集でメモリ違反</a>
     <span class="author">みく</span>
     <time datetime="2003-09-11T21:45:20">2003年09月11日 21:45</time></h1>
     <div class="body"><br>new<br>malloc<br>realloc<br>GlobalAlloc<br>SysAllocString<br>strdup<br><br>などについて結果の確認が必要です。<br></div></section>

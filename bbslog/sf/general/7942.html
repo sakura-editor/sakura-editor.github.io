@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>強調キーワードの設定数増加の要望</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>強調キーワードの設定数増加の要望 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7942</span>
-    <a class="title" href="7942.html#7942">強調キーワードの設定数増加の要望</a></div>
+    <a class="thread-title" href="7942.html#7942">強調キーワードの設定数増加の要望</a></div>
     <ul><li><div class="list-title">
     <span class="no">7943</span>
-    <a class="title" href="7942.html#7943">Re: 強調キーワードの設定数増加の要望</a></div>
+    <a class="thread-title" href="7942.html#7943">Re: 強調キーワードの設定数増加の要望</a></div>
     <ul><li><div class="list-title">
     <span class="no">7944</span>
-    <a class="title" href="7942.html#7944">Re2: 強調キーワードの設定数増加の要望</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7942>
+    <a class="thread-title" href="7942.html#7944">Re2: 強調キーワードの設定数増加の要望</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7942>
     <span class="no">[7942]</span>
-    <a class="title" href="#7942">強調キーワードの設定数増加の要望</a>
+    <a class="thread-title" href="#7942">強調キーワードの設定数増加の要望</a>
     <span class="author">こうじ</span>
     <time datetime="2015-02-11T23:30:09">2015年02月11日 23:30</time></h1>
     <div class="body">いつもサクラエディタのお世話になっています。<br><br>要望なのですが、「タイプ別設定」⇒「カラー」⇒「強調キーワードの設定」<br>の数を現状の10個から増やしてほしいです。<br><br>なぜ増やしてほしいかといいますと、<br>例えばC++で、標準型などの強調キーワードセット以外に、<br>WinAPIなどのよく使われるライブラリの型を個別に強調キーワードセットとして<br>登録するという使い方をしており、<br>ライブラリが増えるほど、強調キーワード設定のスロットが必要になります。<br><br>できるだけメジャーで汎用性の高いライブラリに絞って強調キーワードスロットを<br>使うようにして節約してきましたが、いよいよ足りなくなってきてしまいました。<br><br>20個ほど欲しいところですが、不都合がない範囲内でよいので、<br>増加を検討していただけないでしょうか？<br><br>よろしくお願いいたします。</div></section>
     <ul><li><section><h1 id=7943>
     <span class="no">[7943]</span>
-    <a class="title" href="#7943">Re: 強調キーワードの設定数増加の要望</a>
+    <a class="thread-title" href="#7943">Re: 強調キーワードの設定数増加の要望</a>
     <span class="author">もか</span>
     <time datetime="2015-02-12T02:12:12">2015年02月12日 02:12</time></h1>
     <div class="body">指定可能数だけじゃなく対応する色数も増やす必要ありますよね？<br>とりあえず両方20に増やしてみた。<br>https://sourceforge.net/p/sakura-editor/patchunicode/973/<br><br>現状で何とかする場合、<br>最近のバージョンでは正規表現キーワードで1つのキーワードで「/\b(hoge|piyo|fuga)\b/k」みたいに並べて1,000文字まで、<br>1タイプ別で合計約10,000文字まで使えるので、そちらもご検討を。<br>(1000文字づつなら10個、100文字つづなら100個設定可能)<br>以前は、1キーワードで100文字*100個の固定でした。<br><br>ところで、正規表現キーワードって他の色も指定できるとはいえ10色分しかないけど足りなくならないのかな。<br></div></section>
     <ul><li><section><h1 id=7944>
     <span class="no">[7944]</span>
-    <a class="title" href="#7944">Re2: 強調キーワードの設定数増加の要望</a>
+    <a class="thread-title" href="#7944">Re2: 強調キーワードの設定数増加の要望</a>
     <span class="author">こうじ</span>
     <time datetime="2015-02-13T14:07:05">2015年02月13日 14:07</time></h1>
     <div class="body">もかさん、早速のご対応ありがとうございます！<br><br>色数のほうもありがとうございます。<br>自分の場合は強調キーワード設定数に依らず、すべて同じ色を適用しています。<br>強調キーワードセットの管理（変更や削除など）を行い易くするために<br>こちらは分けていますが、汎用的には色数も同数設定できるほうが良いですよね。<br><br>サクラエディタ、ますます使い易くなって嬉しい限りです。<br>これからもお世話になります。<br><br>ありがとうございました。</div></section>

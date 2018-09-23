@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>C/C++関数を強調表示</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>C/C++関数を強調表示 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">240</span>
-    <a class="title" href="240.html#240">C/C++関数を強調表示</a></div>
+    <a class="thread-title" href="240.html#240">C/C++関数を強調表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">247</span>
-    <a class="title" href="240.html#247">Re:C/C++関数を強調表示</a></div>
+    <a class="thread-title" href="240.html#247">Re:C/C++関数を強調表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">257</span>
-    <a class="title" href="240.html#257">Re2:C/C++関数を強調表示</a></div>
+    <a class="thread-title" href="240.html#257">Re2:C/C++関数を強調表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">291</span>
-    <a class="title" href="240.html#291">Re3:C/C++関数を強調表示</a></div>
+    <a class="thread-title" href="240.html#291">Re3:C/C++関数を強調表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">292</span>
-    <a class="title" href="240.html#292">Re4:C/C++関数を強調表示</a></div>
+    <a class="thread-title" href="240.html#292">Re4:C/C++関数を強調表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">294</span>
-    <a class="title" href="240.html#294">Re5:C/C++関数を強調表示</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=240>
+    <a class="thread-title" href="240.html#294">Re5:C/C++関数を強調表示</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=240>
     <span class="no">[240]</span>
-    <a class="title" href="#240">C/C++関数を強調表示</a>
+    <a class="thread-title" href="#240">C/C++関数を強調表示</a>
     <span class="author">じゅうじ</span>
     <time datetime="2006-02-06T10:24:58">2006年02月06日 10:24</time></h1>
     <div class="body">カラー設定で正規表現キーワードをON<br>別のタブで正規表現キーワードを設定<br><br>/(if|for|while|switch|return|sizeof)[ \t]*\(/k<br>/[a-zA-Z_]+[0-9a-zA-Z_]*[ \t]*\(/k<br><br>ただ、括弧の直前で改行しない前提です。</div></section>
     <ul><li><section><h1 id=247>
     <span class="no">[247]</span>
-    <a class="title" href="#247">Re:C/C++関数を強調表示</a>
+    <a class="thread-title" href="#247">Re:C/C++関数を強調表示</a>
     <span class="author">maru</span>
     <time datetime="2006-02-12T16:54:14">2006年02月12日 16:54</time></h1>
     <div class="body">こんな使い方もあるんですね。<br><br>関数直後にくる左丸括弧にも<br>色がついてしまうのが気になるけど。<br></div></section>
     <ul><li><section><h1 id=257>
     <span class="no">[257]</span>
-    <a class="title" href="#257">Re2:C/C++関数を強調表示</a>
+    <a class="thread-title" href="#257">Re2:C/C++関数を強調表示</a>
     <span class="author">too</span>
     <time datetime="2006-03-23T17:53:26">2006年03月23日 17:53</time></h1>
     <div class="body">&gt; 関数直後にくる左丸括弧にも<br>&gt; 色がついてしまうのが気になるけど。<br>最後の「\(」を先読み「(?=\()」にしてしまえば、括弧には色が付かないように出来ますね。</div></section>
     <ul><li><section><h1 id=291>
     <span class="no">[291]</span>
-    <a class="title" href="#291">Re3:C/C++関数を強調表示</a>
+    <a class="thread-title" href="#291">Re3:C/C++関数を強調表示</a>
     <span class="author">7188</span>
     <time datetime="2006-07-19T12:59:27">2006年07月19日 12:59</time></h1>
     <div class="body">↑の正規表現を便利に利用させてもらってるのですが、<br>↓のような関数ポインタ対応ってできますか？<br><br>void (*aaa)(int bbb, int ccc);<br><br>正規表現に詳しい方、お願いしますm(__)m</div></section>
     <ul><li><section><h1 id=292>
     <span class="no">[292]</span>
-    <a class="title" href="#292">Re4:C/C++関数を強調表示</a>
+    <a class="thread-title" href="#292">Re4:C/C++関数を強調表示</a>
     <span class="author">夢音</span>
     <time datetime="2006-07-19T22:18:50">2006年07月19日 22:18</time></h1>
     <div class="body">/[a-zA-Z_][0-9a-zA-Z_]*[ \t]*(?=(\[[^]]*\][ \t]*)?\([ \t]*[^\*])(?!=\([ \t]*\*)/k<br>/\*[ \t]*[a-zA-Z_][a-zA-Z0-9_]*[ \t]*(?=(\[\][ \t]*)?\)[ \t]*\()/k<br><br>力業．<br>void (*aaa)(int bbb, int ccc);<br>だと*aaaの色が変わるようになります．<br>一応<br>int (*pfunc[])(int, int);<br>pfunc[0](a,b);<br>pfunc[MAX](a,b);<br>(*pfunc)(5,2); <br>こんな感じのにも対応したつもり．</div></section>
     <ul><li><section><h1 id=294>
     <span class="no">[294]</span>
-    <a class="title" href="#294">Re5:C/C++関数を強調表示</a>
+    <a class="thread-title" href="#294">Re5:C/C++関数を強調表示</a>
     <span class="author">7188</span>
     <time datetime="2006-07-21T14:32:09">2006年07月21日 14:32</time></h1>
     <div class="body">＞夢音さん<br>すばらしいです。<br>プログラマーとして尊敬いたします。<br>ありがとうございました。<br></div></section>

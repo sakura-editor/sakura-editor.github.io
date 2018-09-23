@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>文字の色つけについて</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>文字の色つけについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5728</span>
-    <a class="title" href="5728.html#5728">文字の色つけについて</a></div>
+    <a class="thread-title" href="5728.html#5728">文字の色つけについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">5730</span>
-    <a class="title" href="5728.html#5730">Re:文字の色つけについて</a></div>
+    <a class="thread-title" href="5728.html#5730">Re:文字の色つけについて</a></div>
     </li><li><div class="list-title">
     <span class="no">5731</span>
-    <a class="title" href="5728.html#5731">Re:文字の色つけについて</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=5728>
+    <a class="thread-title" href="5728.html#5731">Re:文字の色つけについて</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5728>
     <span class="no">[5728]</span>
-    <a class="title" href="#5728">文字の色つけについて</a>
+    <a class="thread-title" href="#5728">文字の色つけについて</a>
     <span class="author">太田　博</span>
     <time datetime="2007-01-04T16:16:47">2007年01月04日 16:16</time></h1>
     <div class="body">はじめまして。最近MacからWinに乗り換えたものです(世の中の流れには逆らえません)<br>Mac時代にプログラミングの際soloWriterを愛用していました。<br>気に入った点は文字ごとに強調、色付ができることです。<br>サブルーチンに持ち込む変数、持ち出す変数が一目で理解でき、気に入っていました。<br>winの世界で同じ機能のエディタを探したのですが、予備語には色付けかのうながら、任意にはできそうもありません。<br>このような機能の付加はできないのでしょうか。どなたか、その辺が可能なエディタがあれば教えてもらいたのですが。<br>すみませんが、よろしくお願いします。</div></section>
     <ul><li><section><h1 id=5730>
     <span class="no">[5730]</span>
-    <a class="title" href="#5730">Re:文字の色つけについて</a>
+    <a class="thread-title" href="#5730">Re:文字の色つけについて</a>
     <span class="author">じゅうじ</span>
     <time datetime="2007-01-05T18:05:01">2007年01月05日 18:05</time></h1>
     <div class="body">▼ 太田　博さん<br>ワープロなら、リッチ・テキスト・フォーマットが編集出来る<br>Windowsのワードパッドが標準で付いています。<br>予備語の意味が不明ですが、英語で表現すると、予約語(reserve word)でしょうか。<br><br>具体的には、このような手順になるかと存じます。<br>１．エディタでプログラムを作成する。<br>２．ＳＪＩＳ文字コードで保存・終了する。<br>３．ワードパッドで開く。<br>４．文字に色を付けたり、文字のスタイルを変更する。<br>５．ワードパッドで保存・終了する。<br>６．ワードパッドで開く。<br>７．ワードパッドから、全選択をCOPY&amp;PASTEする。<br>８．エディタにプログラムを貼り付ける。<br>９．保存・終了し、コンパイル・実行等する。<br></div></section>
     </li><li><section><h1 id=5731>
     <span class="no">[5731]</span>
-    <a class="title" href="#5731">Re:文字の色つけについて</a>
+    <a class="thread-title" href="#5731">Re:文字の色つけについて</a>
     <span class="author">コリン</span>
     <time datetime="2007-01-06T04:56:06">2007年01月06日 04:56</time></h1>
     <div class="body">soloWriterのことをよく知りませんが…<br><br>&gt; 気に入った点は文字ごとに強調、色付ができることです。<br>&gt; サブルーチンに持ち込む変数、持ち出す変数が一目で理解でき、気に入っていました。<br><br>これは引数とか変数に自動で色が付くという認識でよいでしょうか<br><br>&gt; winの世界で同じ機能のエディタを探したのですが、予備語には色付けかのうながら、任意にはできそうもありません。<br>サクラエディターの場合であれば、共通設定-強調キーワードで予約語の追加もできますが、変数等に自動で色をつける<br>ことは出来ませんね…<br>変数・関数等にハンガリアン記法みたいな形で規則性を持たせれば、タイプ別設定の正規表現キーワードで自動色付けは<br>可能かと思います。<br>プログラムの書き方の趣味の問題になるのですがどうでしょうか。<br></div></section>

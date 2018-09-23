@@ -1,90 +1,116 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>コード簡略化計画</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>コード簡略化計画 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3271</span>
-    <a class="title" href="3271.html#3271">コード簡略化計画</a></div>
+    <a class="thread-title" href="3271.html#3271">コード簡略化計画</a></div>
     <ul><li><div class="list-title">
     <span class="no">3351</span>
-    <a class="title" href="3271.html#3351">コード簡略化計画2</a></div>
+    <a class="thread-title" href="3271.html#3351">コード簡略化計画2</a></div>
     <ul><li><div class="list-title">
     <span class="no">3352</span>
-    <a class="title" href="3271.html#3352">コード簡略化計画2-2</a></div>
+    <a class="thread-title" href="3271.html#3352">コード簡略化計画2-2</a></div>
     <ul><li><div class="list-title">
     <span class="no">3353</span>
-    <a class="title" href="3271.html#3353">Re:コード簡略化計画2-2</a></div>
+    <a class="thread-title" href="3271.html#3353">Re:コード簡略化計画2-2</a></div>
     <ul><li><div class="list-title">
     <span class="no">3355</span>
-    <a class="title" href="3271.html#3355">Re2:コード簡略化計画2-2</a></div>
+    <a class="thread-title" href="3271.html#3355">Re2:コード簡略化計画2-2</a></div>
     <ul><li><div class="list-title">
     <span class="no">3357</span>
-    <a class="title" href="3271.html#3357">コード簡略化計画2-3</a></div>
+    <a class="thread-title" href="3271.html#3357">コード簡略化計画2-3</a></div>
     <ul><li><div class="list-title">
     <span class="no">3358</span>
-    <a class="title" href="3271.html#3358">Re:コード簡略化計画2-4</a></div>
+    <a class="thread-title" href="3271.html#3358">Re:コード簡略化計画2-4</a></div>
     <ul><li><div class="list-title">
     <span class="no">3369</span>
-    <a class="title" href="3271.html#3369">Re2:コード簡略化計画2-4</a></div>
+    <a class="thread-title" href="3271.html#3369">Re2:コード簡略化計画2-4</a></div>
     <ul><li><div class="list-title">
     <span class="no">3371</span>
-    <a class="title" href="3271.html#3371">バイナリサイズ</a></div>
+    <a class="thread-title" href="3271.html#3371">バイナリサイズ</a></div>
     </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">3363</span>
-    <a class="title" href="3271.html#3363">コード簡略化計画3 CCommandLine</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3271>
+    <a class="thread-title" href="3271.html#3363">コード簡略化計画3 CCommandLine</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3271>
     <span class="no">[3271]</span>
-    <a class="title" href="#3271">コード簡略化計画</a>
+    <a class="thread-title" href="#3271">コード簡略化計画</a>
     <span class="author">みく</span>
     <time datetime="2003-10-20T19:54:22">2003年10月20日 19:54</time></h1>
     <div class="body"><br>CEditView_Command.cpp:8574行目<br>bSPACE = _tcschr( m_pcEditDoc-&gt;GetFilePath(), SPACE ) ? TRUE : FALSE;<br></div></section>
     <ul><li><section><h1 id=3351>
     <span class="no">[3351]</span>
-    <a class="title" href="#3351">コード簡略化計画2</a>
+    <a class="thread-title" href="#3351">コード簡略化計画2</a>
     <span class="author">dskoba</span>
     <time datetime="2004-01-10T21:58:02">2004年01月10日 21:58</time></h1>
     <div class="body">CShareData_new.cpp<br>CShareData::ShareData_IO_2() の MRU 読み書き部<br><br>char szKeyNameTop[64];<br>for(省略){<br>  wsprintf( szKeyNameTop, "MRU[%02d].", i );<br>  strcpy( szKeyName, szKeyNameTop );<br>  strcat( szKeyName, "nViewTopLine" );<br>  cProfile.IOProfileData(省略);<br>  strcpy( szKeyName, szKeyNameTop );<br>  strcat( szKeyName, "nViewLeftCol" );<br>  cProfile.IOProfileData(省略);<br>  ...<br>}<br><br>↓<br><br>for(省略){<br>  wsprintf( szKeyName, "MRU[%02d].nViewTopLine", i );<br>  cProfile.IOProfileData(省略);<br>  wsprintf( szKeyName, "MRU[%02d].nViewLeftCol", i );<br>  cProfile.IOProfileData(省略);<br>  ...<br>}<br></div></section>
     <ul><li><section><h1 id=3352>
     <span class="no">[3352]</span>
-    <a class="title" href="#3352">コード簡略化計画2-2</a>
+    <a class="thread-title" href="#3352">コード簡略化計画2-2</a>
     <span class="author">dskoba</span>
     <time datetime="2004-01-11T02:09:38">2004年01月11日 02:09</time></h1>
     <div class="body">CProfile::IOProfileData()の第5引数 lpDataSrc を char*型 → void*型<br><br>理由：<br>CShareData::ShareData_IO_2() で int* や BOOL* は char* にキャストして渡しているが，CProfile::IOProfileData()で元の型に再びキャストしているので。<br>効果：<br>CShareData::ShareData_IO_2() で IOProfileData() を使用する際，(char*)が必要無くなる。(一部 const_cast は必要だが)<br><br>DIFF差分<br>http://www2.wbs.ne.jp/~dskoba/sakura/1434_to_dsk20040110.diff<br><br>ついでに CProfile::IOProfileData() で bool が扱えるようになってます。<br></div></section>
     <ul><li><section><h1 id=3353>
     <span class="no">[3353]</span>
-    <a class="title" href="#3353">Re:コード簡略化計画2-2</a>
+    <a class="thread-title" href="#3353">Re:コード簡略化計画2-2</a>
     <span class="author">dskoba</span>
     <time datetime="2004-01-11T02:20:31">2004年01月11日 02:20</time></h1>
     <div class="body">ファイル間違えました。<br>DIFF差分<br>http://www2.wbs.ne.jp/~dskoba/sakura/1434_to_dsk20040110.lzh<br></div></section>
     <ul><li><section><h1 id=3355>
     <span class="no">[3355]</span>
-    <a class="title" href="#3355">Re2:コード簡略化計画2-2</a>
+    <a class="thread-title" href="#3355">Re2:コード簡略化計画2-2</a>
     <span class="author">もか</span>
     <time datetime="2004-01-11T17:48:41">2004年01月11日 17:48</time></h1>
     <div class="body">&gt;CProfile::IOProfileData()の第5引数 lpDataSrc を char*型 → void*型<br>&gt;(char*)が必要無くなる。<br>ついでにこういうのはどうでしょう？<br>(可能なら)第4引数のREGCNV_***の指定をなくしたものを型ごとに定義します。<br>intなどの参照型でも書き換えられるものは、最後の引数も無くします。<br>CProfile::IOProfileData( BOOL, LPCTSTR, LPCTSTR, char*, int );<br>CProfile::IOProfileData( BOOL, LPCTSTR, LPCTSTR, int* );<br>...<br>新設した関数群は、従来のまたはlpDataSrcをvoid*に変更したCProfile::IOProfileDataに処理を依頼する。<br></div></section>
     <ul><li><section><h1 id=3357>
     <span class="no">[3357]</span>
-    <a class="title" href="#3357">コード簡略化計画2-3</a>
+    <a class="thread-title" href="#3357">コード簡略化計画2-3</a>
     <span class="author">dskoba</span>
     <time datetime="2004-01-12T01:35:58">2004年01月12日 01:35</time></h1>
     <div class="body">▼ もかさん<br>&gt; (可能なら)第4引数のREGCNV_***の指定をなくしたものを型ごとに定義します。<br>&gt; intなどの参照型でも書き換えられるものは、最後の引数も無くします。<br><br>以前作った STL 版 CProfile に組み込んでみました。<br><br>1.4.3.4からのDIFF差分<br>http://www2.wbs.ne.jp/~dskoba/sakura/1434_to_dsk20040111.lzh<br><br><br>これを組み込まないとして，修正箇所。<br>CShareData_new.cpp の IOProfileData()の引数。<br>・&amp;m_pShareData-&gt;m_Types[i].m_szHokanFile<br>・&amp;m_pShareData-&gt;m_Types[i].m_szKeyWordHel<br>pFile<br>・&amp;m_pShareData-&gt;m_Types[i].m_szKinsokuHea<br>d<br>・&amp;m_pShareData-&gt;m_Types[i].m_szKinsokuTai<br>l<br>先頭の&amp;を削除。<br><br>・&amp;m_pShareData-&gt;m_Types[i].m_cLineTermCha<br>r<br>で使っている nRegCnvID。REG_BINARY (CProfile で未定義) から REGCNV_CHAR2SZ に変更。<br></div></section>
     <ul><li><section><h1 id=3358>
     <span class="no">[3358]</span>
-    <a class="title" href="#3358">Re:コード簡略化計画2-4</a>
+    <a class="thread-title" href="#3358">Re:コード簡略化計画2-4</a>
     <span class="author">dskoba</span>
     <time datetime="2004-01-14T00:10:36">2004年01月14日 00:10</time></h1>
     <div class="body">1.4.3.4からのDIFF差分<br>http://www2.wbs.ne.jp/~dskoba/sakura/1434_to_dsk20040113.lzh<br>・1434_to_dsk20040113.diff<br>元々のCProfileで作成。ただしBOOLはboolに変更されている。<br>・1434_to_dsk20040113stl.diff<br>STL版のCProfile。例外処理を入れてみました。<br><br>修正はこれで止めておきます。<br><br>&gt;REG_BINARY (CProfile で未定義) <br>訂正：REG_BINARY (REGCNV_CHAR2SZ と値が等しい）</div></section>
     <ul><li><section><h1 id=3369>
     <span class="no">[3369]</span>
-    <a class="title" href="#3369">Re2:コード簡略化計画2-4</a>
+    <a class="thread-title" href="#3369">Re2:コード簡略化計画2-4</a>
     <span class="author">げんた</span>
     <time datetime="2004-01-25T14:36:41">2004年01月25日 14:36</time></h1>
     <div class="body">STL版取り込んでみました．<br><br>他にも何カ所かSTL使っているところがあるのですがバイナリサイズがどんどん大きくなってしまうのが悩みの種です．<br>mapが結構おおきいのかなぁ．<br></div></section>
     <ul><li><section><h1 id=3371>
     <span class="no">[3371]</span>
-    <a class="title" href="#3371">バイナリサイズ</a>
+    <a class="thread-title" href="#3371">バイナリサイズ</a>
     <span class="author">dskoba</span>
     <time datetime="2004-01-25T21:32:58">2004年01月25日 21:32</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 他にも何カ所かSTL使っているところがあるのですがバイナリサイズがどんどん大きくなってしまうのが悩みの種です．<br>&gt; mapが結構おおきいのかなぁ．<br><br>自分で書いておいてなんですが sstream，fstream はやめた方が良いですね。<br>CProfile でしか使っていないですし。</div></section>
     </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=3363>
     <span class="no">[3363]</span>
-    <a class="title" href="#3363">コード簡略化計画3 CCommandLine</a>
+    <a class="thread-title" href="#3363">コード簡略化計画3 CCommandLine</a>
     <span class="author">dskoba</span>
     <time datetime="2004-01-18T00:20:30">2004年01月18日 00:20</time></h1>
     <div class="body">CCommandLine の private メンバ関数が static になっていて，メンバ変数に引数経由でアクセスしていたので static をやめてメンバ変数を直接扱うように変更。<br><br>1.4.3.4 からの diff<br>http://www2.wbs.ne.jp/~dskoba/sakura/ccommandline_dsk20040117.lzh</div></section>

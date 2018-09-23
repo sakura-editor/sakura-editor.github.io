@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>入力補完の高速化</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>入力補完の高速化 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3043</span>
-    <a class="title" href="3043.html#3043">入力補完の高速化</a></div>
+    <a class="thread-title" href="3043.html#3043">入力補完の高速化</a></div>
     <ul><li><div class="list-title">
     <span class="no">3051</span>
-    <a class="title" href="3043.html#3051">Re:入力補完の高速化</a></div>
+    <a class="thread-title" href="3043.html#3051">Re:入力補完の高速化</a></div>
     </li><li><div class="list-title">
     <span class="no">3095</span>
-    <a class="title" href="3043.html#3095">Re: 入力補完の高速化</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3043>
+    <a class="thread-title" href="3043.html#3095">Re: 入力補完の高速化</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3043>
     <span class="no">[3043]</span>
-    <a class="title" href="#3043">入力補完の高速化</a>
+    <a class="thread-title" href="#3043">入力補完の高速化</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-08-30T15:31:04">2003年08月30日 15:31</time></h1>
     <div class="body">現在、検索の仕方が逐次検索でキャッシュも使っていない状態です。二分検索のbsearchとソートしたキャッシュを使えば早くなりますが、メモリ使用量が増えます。また、強調キーワードを含めるともっと使いやすくなります。いかがでしょうか。</div></section>
     <ul><li><section><h1 id=3051>
     <span class="no">[3051]</span>
-    <a class="title" href="#3051">Re:入力補完の高速化</a>
+    <a class="thread-title" href="#3051">Re:入力補完の高速化</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-08-31T15:40:41">2003年08月31日 15:40</time></h1>
     <div class="body">この場合、検索方法は、bsearchかハッシュかdartsになりますが、現状ではメモリが高価なのでbsearchが妥当です。<br><br>並べ替えには、クイックソート（qsort）を使いましょう。強調キーワードの入力補完については、強調キーワードをソートした後、マージソートするのが速いのでは？<br><br>また、キャッシュの作成時に待たせないために、別スレッドを使うのも乙だと思います。<br><br>＃誰も反応しない…</div></section>
     </li><li><section><h1 id=3095>
     <span class="no">[3095]</span>
-    <a class="title" href="#3095">Re: 入力補完の高速化</a>
+    <a class="thread-title" href="#3095">Re: 入力補完の高速化</a>
     <span class="author">げんた</span>
     <time datetime="2003-09-07T16:06:36">2003年09月07日 16:06</time></h1>
     <div class="body">&gt;検索の仕方が逐次検索でキャッシュも使っていない状態です。<br>補完の都度ファイルを開いて探しているんですねぇ．<br>数が多くなってメモリ量が破綻するのを防いでいるのかもしれないが，このままでは速度的に破綻するような気もする．<br><br>強調キーワードはバイナリサーチにしたというのに．<br><br>まぁ実際上困ってなければいいんじゃない？<br></div></section>

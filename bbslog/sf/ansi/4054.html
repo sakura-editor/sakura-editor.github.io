@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>スマートインデント関連の機能追加・修正</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>スマートインデント関連の機能追加・修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">4054</span>
-    <a class="title" href="4054.html#4054">スマートインデント関連の機能追加・修正</a></div>
+    <a class="thread-title" href="4054.html#4054">スマートインデント関連の機能追加・修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">4055</span>
-    <a class="title" href="4054.html#4055">Re:スマートインデント関連の機能追加・修正</a></div>
+    <a class="thread-title" href="4054.html#4055">Re:スマートインデント関連の機能追加・修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">4056</span>
-    <a class="title" href="4054.html#4056">Re2:スマートインデント関連の機能追加・修正</a></div>
+    <a class="thread-title" href="4054.html#4056">Re2:スマートインデント関連の機能追加・修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">4057</span>
-    <a class="title" href="4054.html#4057">Re3:スマートインデント関連の機能追加・修正</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4054>
+    <a class="thread-title" href="4054.html#4057">Re3:スマートインデント関連の機能追加・修正</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4054>
     <span class="no">[4054]</span>
-    <a class="title" href="#4054">スマートインデント関連の機能追加・修正</a>
+    <a class="thread-title" href="#4054">スマートインデント関連の機能追加・修正</a>
     <span class="author">ryoji</span>
     <time datetime="2005-10-08T15:08:14">2005年10月08日 15:08</time></h1>
     <div class="body">スマートインデント関連で機能追加・修正をしてみました。<br><a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/ssrc_2005-10-2_smart.zip target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr>ssrc_200<wbr>5-<wbr>10-<wbr>2_smart.<wbr>zip</nobr></a> <br><br>・改行時に行末の空白を除去する機能を追加（タイプ別設定）<br>・TABキーがSPACE挿入の設定なら追加インデントもSPACEにする<br>・EOFのみの行もスマートインデントの対象にする<br><br> 「・改行時に～」は、例えば空白行は改行だけに整形します。C/C++スマートインデントと組み合わせると、VC++エディタ風の動作になります。<br> 「・TABキーが～」は、BugsInfo.txt(447)「2002.07.24 □  ----.--.-- スマートインデントでソフトタブ設定が考慮されない．(常時TABになる)」の修正です。<br> 「・EOFのみの行も～」は、EOF直前にカーソルがあるときの改行ではスマートインデントが効かないのを修正しました。<br></div></section>
     <ul><li><section><h1 id=4055>
     <span class="no">[4055]</span>
-    <a class="title" href="#4055">Re:スマートインデント関連の機能追加・修正</a>
+    <a class="thread-title" href="#4055">Re:スマートインデント関連の機能追加・修正</a>
     <span class="author">ryoji</span>
     <time datetime="2005-10-11T23:06:37">2005年10月11日 23:06</time></h1>
     <div class="body">&gt; ・改行時に行末の空白を除去する機能を追加（タイプ別設定）<br>&gt; ・TABキーがSPACE挿入の設定なら追加インデントもSPACEにする<br>&gt; ・EOFのみの行もスマートインデントの対象にする<br><br>「・改行時に～」では、[右（末尾）の空白を削除]コマンドと同様に全角空白も含めるようにしました。<br>また、上記の３点に加えて、<br>・&gt;&gt;data:4738「右の空白を削除」の不具合<br>・[ブックマークの一覧]コマンドの右空白削除の不具合<br>の２点の修正をまとめたパッチを作成しました。<br><br><a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/ssrc_2005-10-09_Smart_Rtrim.zip target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr>ssrc_200<wbr>5-<wbr>10-<wbr>09_Smart<wbr>_Rtrim.<wbr>zip</nobr></a><br>（ssrc_2005-10-09のソースとの差分）<br></div></section>
     <ul><li><section><h1 id=4056>
     <span class="no">[4056]</span>
-    <a class="title" href="#4056">Re2:スマートインデント関連の機能追加・修正</a>
+    <a class="thread-title" href="#4056">Re2:スマートインデント関連の機能追加・修正</a>
     <span class="author">ryoji</span>
     <time datetime="2005-10-12T02:10:58">2005年10月12日 02:10</time></h1>
     <div class="body">不手際があったので、ちょっと前に同名のファイルを置き換えました。</div></section>
     <ul><li><section><h1 id=4057>
     <span class="no">[4057]</span>
-    <a class="title" href="#4057">Re3:スマートインデント関連の機能追加・修正</a>
+    <a class="thread-title" href="#4057">Re3:スマートインデント関連の機能追加・修正</a>
     <span class="author">ryoji</span>
     <time datetime="2005-10-12T10:58:38">2005年10月12日 10:58</time></h1>
     <div class="body">オプション名を変更しました。（[右（末尾）の空白を削除]コマンドとの用語合わせのため）<br>旧：改行時に行末の空白を除去する<br>新：改行時に末尾の空白を削除する<br><br>あと、修正箇所に冗長なオーバーランチェックがあったのを削除。<br><br><a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/ssrc_2005-10-09_Smart_Rtrim.zip target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr>ssrc_200<wbr>5-<wbr>10-<wbr>09_Smart<wbr>_Rtrim.<wbr>zip</nobr></a><br><br>いちおう、これでセルフチェックは終わりにしたいと思います. (^^;</div></section>

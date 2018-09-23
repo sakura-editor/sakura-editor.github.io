@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>2002-03-05 マクロ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>2002-03-05 マクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">1299</span>
-    <a class="title" href="1299.html#1299">2002-03-05 マクロ</a></div>
+    <a class="thread-title" href="1299.html#1299">2002-03-05 マクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">1300</span>
-    <a class="title" href="1299.html#1300">Re:2002-03-05 マクロ</a></div>
+    <a class="thread-title" href="1299.html#1300">Re:2002-03-05 マクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">1302</span>
-    <a class="title" href="1299.html#1302">Re2:2002-03-05 マクロ</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1299>
+    <a class="thread-title" href="1299.html#1302">Re2:2002-03-05 マクロ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1299>
     <span class="no">[1299]</span>
-    <a class="title" href="#1299">2002-03-05 マクロ</a>
+    <a class="thread-title" href="#1299">2002-03-05 マクロ</a>
     <span class="author">すい</span>
     <time datetime="2002-03-06T12:37:18">2002年03月06日 12:37</time></h1>
     <div class="body">今、キーボードマクロを使っているんですけど、どうも動作が変みたいです。(^^;<br># 何処からも報告が無いところを見ると、ひょっとして私の所だけ？？(汗)<br><br>１．キーマクロ記録開始<br>２．「a」（半角小文字のa）と入力<br>３．マクロ記録終了して実行すると、何故か a の代わりに tab が入力されます。(^^;<br><br>同様に「abcde」と入力させようとすると「&lt;tab&gt;&lt;tab&gt;&lt;tab&gt;de」とか。<br><br>一方、「;」（半角のセミコロン）を入力させようとすると、<br>マクロ実行しても何も文字入力されません。(;^^;)<br><br><br>RecKey.mac の中はちゃんと<br>S_Char(97);&#9;// 文字入力<br>となっているようですが。。。（「a」の場合。97 == 0x61 == 'a' だから OK）<br><br>どうも S_Char() が特定のコードの文字の書き込みができない？みたいです。<br>他の文字なんかは、結構ちゃんと出る物が多いみたいですが。<br><br>ちょっと先祖がえりしてみると<br>・sakura_2002-02-01.zip：○ 正常動作。まだ Char(); の頃<br>・sakura_2002-02-26.zip：× 駄目みたい。S_Char();<br>という感じでした。<br><br>環境は Win95 + IE4.01sp2アクティブデスクトップ + IE5.5sp2 です。<br></div></section>
     <ul><li><section><h1 id=1300>
     <span class="no">[1300]</span>
-    <a class="title" href="#1300">Re:2002-03-05 マクロ</a>
+    <a class="thread-title" href="#1300">Re:2002-03-05 マクロ</a>
     <span class="author">やざき</span>
     <time datetime="2002-03-06T14:11:30">2002年03月06日 14:11</time></h1>
     <div class="body">▼ すいさん<br>ほんとだ!<br>これはおかしいですね。調査します。<br></div></section>
     <ul><li><section><h1 id=1302>
     <span class="no">[1302]</span>
-    <a class="title" href="#1302">Re2:2002-03-05 マクロ</a>
+    <a class="thread-title" href="#1302">Re2:2002-03-05 マクロ</a>
     <span class="author">やざき</span>
     <time datetime="2002-03-06T14:44:11">2002年03月06日 14:44</time></h1>
     <div class="body">▼ やざきさん<br>&gt; ▼ すいさん<br>&gt; ほんとだ!<br>&gt; これはおかしいですね。調査します。<br><br>調べてみました。<br>PPA.DLL無しのとき（すなわち自前のマクロ読込時）に、2桁の数値の読み込みで問題がありました。<br>2桁のうちの1桁めだけが読み込まれて、2桁めは無視されていました。<br>1桁、3桁以上の場合は問題が無かったようです。<br><br>で、abcは、97 98 99と文字コードが2桁。2桁めが無視されると"9"すなわち"タブ文字"ということでした。<br>今日中には修正版をアップロードします。ご迷惑をおかけします(__;</div></section>

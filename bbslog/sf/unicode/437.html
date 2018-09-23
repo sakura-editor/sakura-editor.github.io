@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ASCII文字0xA0の幅</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ASCII文字0xA0の幅 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">437</span>
-    <a class="title" href="437.html#437">ASCII文字0xA0の幅</a></div>
+    <a class="thread-title" href="437.html#437">ASCII文字0xA0の幅</a></div>
     <ul><li><div class="list-title">
     <span class="no">439</span>
-    <a class="title" href="437.html#439">Re:ASCII文字0xA0の幅</a></div>
+    <a class="thread-title" href="437.html#439">Re:ASCII文字0xA0の幅</a></div>
     <ul><li><div class="list-title">
     <span class="no">442</span>
-    <a class="title" href="437.html#442">Re2:ASCII文字0xA0の幅</a></div>
+    <a class="thread-title" href="437.html#442">Re2:ASCII文字0xA0の幅</a></div>
     <ul><li><div class="list-title">
     <span class="no">443</span>
-    <a class="title" href="437.html#443">Re3:ASCII文字0xA0の幅</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=437>
+    <a class="thread-title" href="437.html#443">Re3:ASCII文字0xA0の幅</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=437>
     <span class="no">[437]</span>
-    <a class="title" href="#437">ASCII文字0xA0の幅</a>
+    <a class="thread-title" href="#437">ASCII文字0xA0の幅</a>
     <span class="author">kobake</span>
     <time datetime="2008-05-25T06:58:18">2008年05月25日 06:58</time></h1>
     <div class="body">一般掲示板にて 0xA0 を半角表示にしたい、との要望がきていますが、<br>これって実際、どんな幅であるべきなんでしょうか。<br><br>(検証1)<br>WindowsVista の「ＭＳ ゴシック」で<br>0xA0 を GetTextExtentPoint32A にかけると、全角幅が返ってきます。<br>0xA0 を MultiByteToWideChar した結果の 0xF8F0 を GetTextExtentPoint32W にかけると、全角幅が返ってきます。<br><br>(検証2)<br>WindowsVistaのメモ帳で「ＭＳ ゴシック」で<br>0xA0 が含まれる文書を開くと、その文字部分は全角幅で描画されます。<br><br>上記結果から、少なくとも WindowsVista の「ＭＳ ゴシック」では<br>0xA0 は全角幅で定義されているように見えます。<br><br><br>サクラエディタUNICODE版で 0xA0 が全角表示されるのは、「仕様」ってことで良いですかね？文字コードに詳しくないので、どう判断してよいか判りません。識者からのご意見をいただけると助かります。<br><br><br>＃リッチな策として、文字幅をユーザ定義でカスタマイズできる機能を付ける、という案もありますが、それはまた統合後にでも考えましょう。</div></section>
     <ul><li><section><h1 id=439>
     <span class="no">[439]</span>
-    <a class="title" href="#439">Re:ASCII文字0xA0の幅</a>
+    <a class="thread-title" href="#439">Re:ASCII文字0xA0の幅</a>
     <span class="author">ラスティブ</span>
     <time datetime="2008-05-25T14:06:05">2008年05月25日 14:06</time></h1>
     <div class="body">▼ kobakeさん<br>UNICODEでは NO-BREAK-SPACE と定義されていて、<br>U+0020 の SPACE と似ているようですので、<br>半角扱いが適切ではないでしょうか。<br><a href=http://www.unicode.org/charts/PDF/U0080.pdf target=_top><nobr>http://<wbr>www.<wbr>unicode.<wbr>org/<wbr>charts/<wbr>PDF/<wbr>U0080.<wbr>pdf</nobr></a><br><br>&gt; 0xA0 を MultiByteToWideChar した結果の<br>&gt; 0xF8F0 を GetTextExtentPoint32W にかけると、<br>&gt; 全角幅が返ってきます。<br><br>CP932の未定義文字、0xA0 を<br>MB_ERR_INVALID_CHARSフラグつきのMultiByteToWideCharに<br>かけると変換に失敗しますが、付けてないと<br>スルーされちゃうようです。</div></section>
     <ul><li><section><h1 id=442>
     <span class="no">[442]</span>
-    <a class="title" href="#442">Re2:ASCII文字0xA0の幅</a>
+    <a class="thread-title" href="#442">Re2:ASCII文字0xA0の幅</a>
     <span class="author">Uchi</span>
     <time datetime="2008-05-25T20:21:14">2008年05月25日 20:21</time></h1>
     <div class="body">0xA0はSjisでは未定義になっています。<br>フォントとしては「ＭＳ ゴシック」「ＭＳ 明朝」では<br>u+A0は半角と定義され、u+F8F0は未定義（グリフ指定なし）（したがってデフォルト文字'・'「全角」とみなされている）となっています。<br>rev1344（Commit報告 Unicode:409）の修正で、フォント設定の対応した半角、全角判定を追加していますので、<br>フォントを「Courier New」に変更すれば、該当のファイルは桁ずれを起こさないように見えます。<br>（フォントとしては、すべての文字が半角幅になる）<br>対応とすれば、これで十分だと思いますが、いかがでしょうか？<br><br>仕様的に変更するならば、Sjis の0xA0,0xFD,0xFE,0xFFがU+F8F0,U+F8F1,U+F8F2,U+F8F3に変換されているのを、そのままU+A0,U+FD,U+FE,U+FF に変換するという変換もありかと思います。<br>（Mocaさん版サクラエディタunicode版がその仕様です）</div></section>
     <ul><li><section><h1 id=443>
     <span class="no">[443]</span>
-    <a class="title" href="#443">Re3:ASCII文字0xA0の幅</a>
+    <a class="thread-title" href="#443">Re3:ASCII文字0xA0の幅</a>
     <span class="author">もか</span>
     <time datetime="2008-05-26T00:14:37">2008年05月26日 00:14</time></h1>
     <div class="body">&gt;rev1344（Commit報告 Unicode:409）の修正で、フォント設定の対応した半角、全角判定を追加していますので、<br>&gt;フォントを「Courier New」に変更すれば、該当のファイルは桁ずれを起こさないように見えます。<br>charcode.cppより<br>&gt;&#9;&#9;// 外字は全角とみなす<br>&gt;&#9;&#9;if (wc&gt;=0xE000 &amp;&amp; wc&lt;=0xE8FF)&#9;return false;&#9;// Private Use Area<br>&gt;&#9;&#9;//$$ 仮。もう動的に計算しちゃえ。(初回のみ)<br>&gt;&#9;&#9;return CalcHankakuByFont(wc);<br>PUAの範囲はU+E000～U+F8FFです。<br>コードの定義範囲が間違っていて、たまたまフォントサイズを参照できるようになっているみたいです。<br><br>&gt;仕様的に変更するならば、Sjis の0xA0,0xFD,0xFE,0xFFがU+F8F0,U+F8F1,U+F8F2,U+F8F3に変換されているのを、そのままU+A0,U+FD,U+FE,U+FF に変換するという変換もありかと思います。<br>&gt;（Mocaさん版サクラエディタunicode版がその仕様です）<br>私が言うのもなんですが、0xA0は双方向できるのでよしとしても、0xFD,0xFE,0xFFは反則的だとおもいます。<br>上書き保存したときにつぶれるんじゃないかな。<br>それよりは、全角にみえたとしてもU+F8xxのほうがよいと思います。<br>開いて→保存でコードも保持されるし、<br>sakuraWで開いたのをメモ帳にコピペしてSJISで保存するときに値を保持したままにできます。<br>これは、前kobakeさんが言っていた標準化の話です。で標準に従うべきかと。<br><br>関係ないけどフォントをCourier Newにすると※の表示幅がおかしいです。<br>単独or英字のみと「※」を表示すると豆腐になるので豆腐の幅になってるみたいです。<br>たしかこれは、FontLink周りのバグか仕様だったきがします。<br>試せてないのですけどPUAもそれに該当する可能性があります。<br><br>私の意見のまとめとしては、<br>FontLinkが正しく使えるのならフォントに依存するようにすればいいとおもいます。<br>そうでないなら全角固定でいいのではないか。<br>どうしてもというならPUAのうち「U+F8F0,U+F8F1,U+F8F2,U+F8F3」だけ半角固定がよさそう。<br>というかんじになります。<br></div></section>

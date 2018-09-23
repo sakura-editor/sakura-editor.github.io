@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>dev:4033追加コードのメンテ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>dev:4033追加コードのメンテ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">4050</span>
-    <a class="title" href="4050.html#4050">dev:4033追加コードのメンテ</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=4050>
+    <a class="thread-title" href="4050.html#4050">dev:4033追加コードのメンテ</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=4050>
     <span class="no">[4050]</span>
-    <a class="title" href="#4050">dev:4033追加コードのメンテ</a>
+    <a class="thread-title" href="#4050">dev:4033追加コードのメンテ</a>
     <span class="author">ryoji</span>
     <time datetime="2005-09-29T23:07:38">2005年09月29日 23:07</time></h1>
     <div class="body">&gt;&gt;dev:4033 タブ並べ替え関連まとめ<br>のメンテ（冗長コード除去、変数初期化）です。<br><br>diff -ur --dos ssrc_2005-09-03\sakura_core/CEditWnd.cpp ssrc_2005-09-03_2\sakura_core/CEditWnd.cpp<br>--- ssrc_2005-09-03\sakura_core/CEditWnd.cpp&#9;Sun Sep 04 13:16:49 2005<br>+++ ssrc_2005-09-03_2\sakura_core/CEditWnd.cpp&#9;Thu Sep 29 22:50:58 2005<br>@@ -1625,7 +1625,6 @@<br> &#9;&#9;HWND hwnd = p[ i ].m_hWnd;<br> &#9;&#9;if( !::IsWindowVisible( hwnd ) )<br> &#9;&#9;{<br>-&#9;&#9;&#9;HWND hwnd = p[ i ].m_hWnd;<br> &#9;&#9;&#9;TabWnd_SucceedWindowPlacement( m_hWnd, hwnd );<br> &#9;&#9;&#9;::SetForegroundWindow( hwnd );<br> &#9;&#9;&#9;::BringWindowToTop( hwnd );<br>diff -ur --dos ssrc_2005-09-03\sakura_core/CTabWnd.cpp ssrc_2005-09-03_2\sakura_core/CTabWnd.cpp<br>--- ssrc_2005-09-03\sakura_core/CTabWnd.cpp&#9;Sun Sep 04 13:17:16 2005<br>+++ ssrc_2005-09-03_2\sakura_core/CTabWnd.cpp&#9;Thu Sep 29 22:50:58 2005<br>@@ -446,7 +446,6 @@<br> <br> <br> CTabWnd::CTabWnd()<br>-  : m_eDragState( DRAG_NONE )<br> {<br> &#9;strcat( m_szClassInheritances, _T("::CTabWnd") );<br> <br>@@ -460,6 +459,7 @@<br> &#9;m_hFont      = NULL;<br> &#9;gm_pOldWndProc = NULL;<br> &#9;m_hwndToolTip = NULL;<br>+&#9;m_eDragState = DRAG_NONE;<br> <br> &#9;return;<br> }<br>@@ -479,6 +479,7 @@<br> &#9;m_hFont      = NULL;<br> &#9;gm_pOldWndProc = NULL;<br> &#9;m_hwndToolTip = NULL;<br>+&#9;m_eDragState = DRAG_NONE;<br> <br> &#9;/* ウィンドウクラス作成 */<br> &#9;RegisterWC(<br></div></section>

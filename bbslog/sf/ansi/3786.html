@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>TeXアウトラインが日本語未対応</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>TeXアウトラインが日本語未対応 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3786</span>
-    <a class="title" href="3786.html#3786">TeXアウトラインが日本語未対応</a></div>
+    <a class="thread-title" href="3786.html#3786">TeXアウトラインが日本語未対応</a></div>
     <ul><li><div class="list-title">
     <span class="no">3811</span>
-    <a class="title" href="3786.html#3811">Re:TeXアウトラインが日本語未対応</a></div>
+    <a class="thread-title" href="3786.html#3811">Re:TeXアウトラインが日本語未対応</a></div>
     <ul><li><div class="list-title">
     <span class="no">3812</span>
-    <a class="title" href="3786.html#3812">Re2:TeXアウトラインが日本語未対応</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3786>
+    <a class="thread-title" href="3786.html#3812">Re2:TeXアウトラインが日本語未対応</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3786>
     <span class="no">[3786]</span>
-    <a class="title" href="#3786">TeXアウトラインが日本語未対応</a>
+    <a class="thread-title" href="#3786">TeXアウトラインが日本語未対応</a>
     <span class="author">もか</span>
     <time datetime="2004-11-12T15:36:38">2004年11月12日 15:36</time></h1>
     <div class="body">一般掲示板のK氏のファイルを見たときに気がつきましたが、<br>&gt;\subsubsection{サクラエディタはマックで動きません}<br>とあると、マ(0x837d)の後続バイトを}と認識して「サクラエディタは」がアウトラインの見出しに含まれます。<br>おそらく、\のエスケープも怪しいです。<br></div></section>
     <ul><li><section><h1 id=3811>
     <span class="no">[3811]</span>
-    <a class="title" href="#3811">Re:TeXアウトラインが日本語未対応</a>
+    <a class="thread-title" href="#3811">Re:TeXアウトラインが日本語未対応</a>
     <span class="author">naoh</span>
     <time datetime="2005-01-03T13:31:03">2005年01月03日 13:31</time></h1>
     <div class="body">こんにちわ。naohです。<br><br>遅ればせながら下記のTeXアウトラインの修正を行いました。<br>ついでにprosperのslideにも対応してみました。<br>＃ まだ使い始めたばかりなので本当に対応してるのかわからないですが・・・<br><br>[バイナリ] http://cgi.html.ne.jp/~naoh/sakura/ssrc_2004-10-02_n1.zip<br>[パッチ]   http://cgi.html.ne.jp/~naoh/sakura/ssrc_2004-10-02_n1.patch.txt<br><br>お暇なときにでもマージして頂ければ幸いです。<br><br><br>▼ もかさん<br>&gt; 一般掲示板のK氏のファイルを見たときに気がつきましたが、<br>&gt; &gt;\subsubsection{サクラエディタはマックで動きません}<br>&gt; とあると、マ(0x837d)の後続バイトを}と認識して「サクラエディタは」がアウトラインの見出しに含まれます。<br>&gt; おそらく、\のエスケープも怪しいです。</div></section>
     <ul><li><section><h1 id=3812>
     <span class="no">[3812]</span>
-    <a class="title" href="#3812">Re2:TeXアウトラインが日本語未対応</a>
+    <a class="thread-title" href="#3812">Re2:TeXアウトラインが日本語未対応</a>
     <span class="author">naoh</span>
     <time datetime="2005-01-04T16:00:22">2005年01月04日 16:00</time></h1>
     <div class="body">すいません、追加で修正しました。<br>「}」の前の文字の2byte目がSJIS1byte目にマッチするときに<br>うまくいかなかったようなので直しました。<br>例：\section{今後の課題}<br><br>[バイナリ] http://cgi.html.ne.jp/~naoh/sakura/sakura_2004-10-02_n2.zip<br>[パッチ]   http://cgi.html.ne.jp/~naoh/sakura/ssrc_2004-10-02_n2.patch.txt<br></div></section>

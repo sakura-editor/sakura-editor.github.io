@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>【不具合】フォルダが削除できない</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>【不具合】フォルダが削除できない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6576</span>
-    <a class="title" href="6576.html#6576">【不具合】フォルダが削除できない</a></div>
+    <a class="thread-title" href="6576.html#6576">【不具合】フォルダが削除できない</a></div>
     <ul><li><div class="list-title">
     <span class="no">6578</span>
-    <a class="title" href="6576.html#6578">RE: 【不具合】フォルダが削除できない</a></div>
+    <a class="thread-title" href="6576.html#6578">RE: 【不具合】フォルダが削除できない</a></div>
     <ul><li><div class="list-title">
     <span class="no">6579</span>
-    <a class="title" href="6576.html#6579">Re2: 【不具合】フォルダが削除できない</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6576>
+    <a class="thread-title" href="6576.html#6579">Re2: 【不具合】フォルダが削除できない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6576>
     <span class="no">[6576]</span>
-    <a class="title" href="#6576">【不具合】フォルダが削除できない</a>
+    <a class="thread-title" href="#6576">【不具合】フォルダが削除できない</a>
     <span class="author">おつかれちゃん</span>
     <time datetime="2008-02-06T12:37:32">2008年02月06日 12:37</time></h1>
     <div class="body">もしかして既知化も知れませんが報告します。<br><br>■使用環境<br>  Sakura 1.6.2.0.<br>  Windows XP Pro SP2<br><br>■不具合内容<br>  サクラエディタでテキスト編集した後、全てのタブを閉じ(サクラエディタは起動したまま)、<br>  編集したテキストのあるフォルダを削除しようとすると、そのフォルダが削除できない。<br>  -&gt; サクラエディタを閉じるとフォルダが削除できる<br> <br>■再現手順<br>  1. 任意のフォルダを作成する<br>  2. 作成したフォルダに新規テキストを作成する<br>  3. 作成した新規テキストをサクラエディタで開く<br>  4. 適当な文章を新規テキストに書き込み上書き保存<br>  5. サクラエディタのメニューバーから「すべて閉じる」のアイコンでファイルを閉じる<br>     ・タブには「(無題)」のみが出ている。<br>     ・サクラエディタ自体は閉じていない<br>  6. 作成したフォルダをデリートする<br>     -&gt; デリートできなく、Windows警告メッセージが表示される<br><br>    [新しいファイルまたはフォルダの削除エラー]ダイアログ<br>    新しいフォルダを削除できません。ほかの人またはプログラムによって使用されています。<br>    ファイルを使用している可能性があるプログラムをすべて閉じてから。やり直してください。<br><br>     -&gt; たぶん最後に残る「(無題)」タブの裏側で最後ファイルについてファイルハンドルを開放していない？<br>        「(無題)」タブに他のフォルダのファイルをドロップすると、フォルダ削除が可能になる。<br></div></section>
     <ul><li><section><h1 id=6578>
     <span class="no">[6578]</span>
-    <a class="title" href="#6578">RE: 【不具合】フォルダが削除できない</a>
+    <a class="thread-title" href="#6578">RE: 【不具合】フォルダが削除できない</a>
     <span class="author">すい</span>
     <time datetime="2008-02-07T02:09:36">2008年02月07日 02:09</time></h1>
     <div class="body">それは Windows NT系OS の仕様。Windows 95系では起こらないかと。<br><br>ファイルハンドルを開放していないのではなく、<br>「Windows NT系OS では、何らかのアプリケーションの<br>　カレントディレクトリは削除する事が出来ない」<br>という お話し かと。<br><br>アプリケーションは常に どこかのディレクトリを<br>カレントディレクトリとして動作している物です。<br><br>サクラエディタの場合だと、<br>　各エディタウィンドウのカレントディレクトリ==編集中のファイルが存在しているディレクトリ<br>になっているんですね。<br>だから [ファイル(F)]→[開く(O)...] すると、編集中のファイルがあるディレクトリ<br>（「(無題)」の場合は、最後に編集していたファイルがあったディレクトリ）が<br>開かれるわけです。<br><br>で、このようにカレントディレクトリの扱いになっているディレクトリは<br>アプリケーションによってロックされているような状態になっており、<br>削除はできない、と。<br><br>一方、Windows 95系OS では、そういう「ディレクトリをきちんとロックしておく」<br>という事が出来ないので、いつでも消し放題。 (^^;<br><br>ちなみに「最後に残る「(無題)」タブ」から [ファイル(F)]→[開く(O)...] して、<br>そこから別のディレクトリへ移動（別のディレクトリのファイルを見に行く）すれば、<br>元のディレクトリは削除できるようになります。エディタウィンドウを閉じなくても。<br></div></section>
     <ul><li><section><h1 id=6579>
     <span class="no">[6579]</span>
-    <a class="title" href="#6579">Re2: 【不具合】フォルダが削除できない</a>
+    <a class="thread-title" href="#6579">Re2: 【不具合】フォルダが削除できない</a>
     <span class="author">おつかれちゃん</span>
     <time datetime="2008-02-07T12:44:16">2008年02月07日 12:44</time></h1>
     <div class="body">▼ すいさん<br>&gt; それは Windows NT系OS の仕様。Windows 95系では起こらないかと。<br>&gt; <br>&gt;サクラエディタの場合だと、<br>&gt;　各エディタウィンドウのカレントディレクトリ==編集中のファイルが存在しているディレクトリ<br>&gt;になっているんですね。<br><br>なるほど。納得できました。<br>教えて頂きありがとうございました。(^o^)ノシ</div></section>

@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>要望</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>要望 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3749</span>
-    <a class="title" href="3749.html#3749">要望</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=3749>
+    <a class="thread-title" href="3749.html#3749">要望</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3749>
     <span class="no">[3749]</span>
-    <a class="title" href="#3749">要望</a>
+    <a class="thread-title" href="#3749">要望</a>
     <span class="author">すい</span>
     <time datetime="2004-09-12T07:29:12">2004年09月12日 07:29</time></h1>
     <div class="body">2ch「サクラエディタふぁんくらぶ part4」見ていて思ったのですが、<br><br>&gt;805 ：名無しさん＠お腹いっぱい。 ：04/09/04 01:52 ID:M4aIWGqu<br>&gt;&#9;S_FileSaveAs(ファイル名, 文字コード, 改行コード)<br>&gt;&#9;をマクロで使う時、文字コードを指定しないとエラーになりますが、<br>&gt;&#9;文字コードを変更せずに保存するということはできないでしょうか？<br>&gt;&#9;現在の文字コードを取得できたら可能だと思うのですが、<br>&gt;&#9;どうすればいいか方法がわかりません。<br>&gt;<br>&gt;806 ：名無しさん＠お腹いっぱい。 ：04/09/04 12:23 ID:enbilh+u<br>&gt;&#9;99を指定すればいいんじゃないかと思ったがそうでもないな。<br>&gt;&#9;落ちるのはバグっぽい。<br>&gt;<br>&gt;815 ：名無しさん＠お腹いっぱい。 ：04/09/11 11:38:43 ID:KsOqGZDd<br>&gt;&#9;&gt;&gt;806<br>&gt;&#9;範囲チェック漏れ<br>&gt;<br>&gt;&#9;&gt;&gt;805<br>&gt;&#9;次版より無指定＝99＝文字コード変更しないにします．<br><br>「S_FileSaveAs で文字コードをそのままで保存」は私も前々からマクロで<br>やりたかったので、その機能が付くのは嬉しいのですが、それとは別に<br><br>&gt; 現在の文字コードを取得できたら可能だと...<br><br>こちらも欲しいです。<br><br>一番簡単なのは ExpandParameter の条件文を拡張する事かな～～<br>とか思ったりするんですが。今は<br><br>ssrc_2004-08-19/sakura_core/CEditDoc.cpp 4062 :int CEditDoc::ExParam_Evaluate( )<br>├ R:読み取り専用/上書き禁止(リードオンリー属性)/書込み可<br>├ w:Grepウィンドウ/Outputウィンドウ/通常のウィンドウ<br>├ M:キーボードマクロ記録中/通常<br>├ U:更新されている/されていない<br>└ I:アクティブではない/アクティブである<br><br>だけですよね。で、探してみるとメニュー作成時のチェックon/off判定処理、<br><br>ssrc_2004-08-19/sakura_core/CEditWnd.cpp 2745 :int CEditWnd::IsFuncChecked( )<br>├ 文字コード判定(SJISか？/JISか？/EUCか？...)<br>├ キーマクロの記録中か？<br>├ ツールバー表示中か？<br>├ ファンクションキー表示中か？<br>├ タブ表示中か？<br>├ ステータスバー表示中か？<br>├ 読み取り専用か？<br>├ 改行コード(CRLFか？/LFか？/CRか？)<br>└ 上書きモードか？<br><br>な～んていう各種条件判定部がまとまった物が。<br>この条件判定を ExpandParameter の条件判定部にコピー＆ペーストして並べ替えて<br>「この条件の場合は return 0; この場合は return 1;...」って追加していけば<br>よいのかなと。<br><br>とりあえずこれ全部一通り欲しいですね。<br>文字コード,改行コード,上書き/挿入モード,ツールバー,ステータスバー,...<br>これ拡張すれば例えば「ステータスバー非表示時はタイトルバーに文字コード,改行コード類を表示」<br>なんて共通設定でできるようになるわけですし。<br><br>他にもマクロ動作に影響が出そうだから取得したい情報とかはありそうですが<br>数あり過ぎて何の情報が取得できれば嬉しいのかまとめきれない。。。<br></div></section>

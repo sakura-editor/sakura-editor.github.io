@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>最終行の色分けがおかしくなります。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>最終行の色分けがおかしくなります。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3958</span>
-    <a class="title" href="3958.html#3958">最終行の色分けがおかしくなります。</a></div>
+    <a class="thread-title" href="3958.html#3958">最終行の色分けがおかしくなります。</a></div>
     <ul><li><div class="list-title">
     <span class="no">3959</span>
-    <a class="title" href="3958.html#3959">Re: 最終行の色分けがおかしくなります。</a></div>
+    <a class="thread-title" href="3958.html#3959">Re: 最終行の色分けがおかしくなります。</a></div>
     <ul><li><div class="list-title">
     <span class="no">3960</span>
-    <a class="title" href="3958.html#3960">Re2: 最終行の色分けがおかしくなります。</a></div>
+    <a class="thread-title" href="3958.html#3960">Re2: 最終行の色分けがおかしくなります。</a></div>
     </li><li><div class="list-title">
     <span class="no">3962</span>
-    <a class="title" href="3958.html#3962">Re2: 最終行の色分けがおかしくなります。</a></div>
+    <a class="thread-title" href="3958.html#3962">Re2: 最終行の色分けがおかしくなります。</a></div>
     <ul><li><div class="list-title">
     <span class="no">3964</span>
-    <a class="title" href="3958.html#3964">Re3: 最終行の色分けがおかしくなります。</a></div>
+    <a class="thread-title" href="3958.html#3964">Re3: 最終行の色分けがおかしくなります。</a></div>
     <ul><li><div class="list-title">
     <span class="no">3966</span>
-    <a class="title" href="3958.html#3966">Re4: 最終行の色分けがおかしくなります。</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3958>
+    <a class="thread-title" href="3958.html#3966">Re4: 最終行の色分けがおかしくなります。</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3958>
     <span class="no">[3958]</span>
-    <a class="title" href="#3958">最終行の色分けがおかしくなります。</a>
+    <a class="thread-title" href="#3958">最終行の色分けがおかしくなります。</a>
     <span class="author">ootomo</span>
     <time datetime="2005-06-22T14:17:46">2005年06月22日 14:17</time></h1>
     <div class="body">ootomoです。<br>サクラエディタのソースをカスタマイズして使用させて<br>頂いております。<br><br>こんな現象を発見しました。<br>①無題を開きます。<br>②タイプ別設定をC言語にします。<br>③以下のような状態にします。<br>　aaaaaaaaaaa<br>　"bbbb[EOF]<br>④2行目の最後尾からバックスペースで先頭まで削除します。<br>　aaaaaaaaaaa<br>　[EOF]<br>⑤2行目に入力します。<br>　aaaaaaaaaaa<br>　ccccc<br>⑥2行目は文字列ではないのに、文字列の色になります。<br><br>CLayoutMgr::DoLayout_Range()メソッドの最後のほうに<br>　// EOFだけの行の直前の行の色分けが・・・<br>　if( nCurLine == m_pcDocLineMgr-&gt;GetLineCount() ){<br>　　m_nLineTypeBot = nCOMMENTMODE_Prev;<br>　}<br>という処理がありますが、これが原因らしいです。<br>ここをコメントアウトしても問題ないでしょうか？</div></section>
     <ul><li><section><h1 id=3959>
     <span class="no">[3959]</span>
-    <a class="title" href="#3959">Re: 最終行の色分けがおかしくなります。</a>
+    <a class="thread-title" href="#3959">Re: 最終行の色分けがおかしくなります。</a>
     <span class="author">もか</span>
     <time datetime="2005-06-22T20:35:23">2005年06月22日 20:35</time></h1>
     <div class="body">いつも報告・検証ありがとうございます。<br>現象、確認できました。いままでまったく気が付きませんでした。<br><br>　トレースすると、(4)の"を削除するときに<br>CLayoutMgr::DoLayout_Range()の引数がnLineNum = 0となります。<br>このとき、何もしないために、m_nLineTypeBotが更新されずに不正になるようです。<br><br>▼CLayoutMgr::DoLayout_Rangeの先頭付近<br>&#9;if( 0 == nLineNum ){<br>&#9;&#9;return 0;<br>&#9;}<br>を削除してください。<br><br>&gt;CLayoutMgr::DoLayout_Range()メソッドの最後のほうに<br>&gt;　// EOFだけの行の直前の行の色分けが・・・<br>&gt;　if( nCurLine == m_pcDocLineMgr-&gt;GetLineCount() ){<br>&gt;　　m_nLineTypeBot = nCOMMENTMODE_Prev;<br>&gt;　}<br>&gt;という処理がありますが、これが原因らしいです。<br>&gt;ここをコメントアウトしても問題ないでしょうか？<br>この部分をコメントアウトすると、m_nLineTypeBotが「"モード」に更新されなくなって<br>たとえば、以下のように１文字つづ入力すると<br> xxx"aaaa<br> bb[EOF]<br>のbbの色が、通常テキストになってしまいますので、消さないでください。<br>本来なら、0 == nLineNumのときも、この処理が行われて正常に色が変わる仕組みでした。<br></div></section>
     <ul><li><section><h1 id=3960>
     <span class="no">[3960]</span>
-    <a class="title" href="#3960">Re2: 最終行の色分けがおかしくなります。</a>
+    <a class="thread-title" href="#3960">Re2: 最終行の色分けがおかしくなります。</a>
     <span class="author">ootomo</span>
     <time datetime="2005-06-23T14:58:17">2005年06月23日 14:58</time></h1>
     <div class="body">教えて頂いた通りに修正したところ、うまく色分けされる<br>ようになりました。<br><br>ありがとうございました。<br>m(_ _)m</div></section>
     </li><li><section><h1 id=3962>
     <span class="no">[3962]</span>
-    <a class="title" href="#3962">Re2: 最終行の色分けがおかしくなります。</a>
+    <a class="thread-title" href="#3962">Re2: 最終行の色分けがおかしくなります。</a>
     <span class="author">げんた</span>
     <time datetime="2005-06-27T01:05:15">2005年06月27日 01:05</time></h1>
     <div class="body">&gt;　トレースすると、(4)の"を削除するときに<br>&gt;CLayoutMgr::DoLayout_Range()の引数がnLineNum = 0となります。<br>本質的にはnLineNumに0を入れて呼びだす方に問題があるような印象を受けるんですが，<br>やっぱり最後の[EOF]のみの半人前の行を考慮しないといけなくなってややこしくなるんでしょうか．<br></div></section>
     <ul><li><section><h1 id=3964>
     <span class="no">[3964]</span>
-    <a class="title" href="#3964">Re3: 最終行の色分けがおかしくなります。</a>
+    <a class="thread-title" href="#3964">Re3: 最終行の色分けがおかしくなります。</a>
     <span class="author">もか</span>
     <time datetime="2005-06-29T00:37:07">2005年06月29日 00:37</time></h1>
     <div class="body">&gt;本質的にはnLineNumに0を入れて呼びだす方に問題があるような印象を受けるんですが，<br>&gt;やっぱり最後の[EOF]のみの半人前の行を考慮しないといけなくなってややこしくなるんでしょうか．<br>そういうことですね。<br>ここでも、EOF行はCLayoutが存在しないために処理がややこしいわけです。<br><br>なお、この削除部分は 2004.03.28 の修正のときに、追加した行だったと記憶しています（CVS未確認)。<br>元からの動作では、nLineNum=0でも色情報を更新する仕様になっていたと考えられます。<br>また、DoLayout/DoLayout_Range以外で、CLayoutMgr::m_nLineTypeBotを更新するのも変です。<br>ですから呼び出し側に問題は（一応）無いと思います。<br></div></section>
     <ul><li><section><h1 id=3966>
     <span class="no">[3966]</span>
-    <a class="title" href="#3966">Re4: 最終行の色分けがおかしくなります。</a>
+    <a class="thread-title" href="#3966">Re4: 最終行の色分けがおかしくなります。</a>
     <span class="author">げんた</span>
     <time datetime="2005-07-02T15:37:56">2005年07月02日 15:37</time></h1>
     <div class="body">&gt;なお、この削除部分は 2004.03.28 の修正のときに、追加した行だったと記憶しています（CVS未確認)。<br>CVSで確認したところ，当初からこのようになっていたようです．<br>1.1          (genta    07-Nov-00): &#9;if( 0 == nLineNum ){<br>1.1          (genta    07-Nov-00): &#9;&#9;return 0;<br>1.1          (genta    07-Nov-00): &#9;}<br></div></section>

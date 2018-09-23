@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択範囲を挟み込むマクロを書くには。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>選択範囲を挟み込むマクロを書くには。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">71</span>
-    <a class="title" href="71.html#71">選択範囲を挟み込むマクロを書くには。</a></div>
+    <a class="thread-title" href="71.html#71">選択範囲を挟み込むマクロを書くには。</a></div>
     <ul><li><div class="list-title">
     <span class="no">72</span>
-    <a class="title" href="71.html#72">Re:選択範囲を挟み込むマクロを書くには。</a></div>
+    <a class="thread-title" href="71.html#72">Re:選択範囲を挟み込むマクロを書くには。</a></div>
     <ul><li><div class="list-title">
     <span class="no">73</span>
-    <a class="title" href="71.html#73">Re2:選択範囲を挟み込むマクロを書くには。</a></div>
+    <a class="thread-title" href="71.html#73">Re2:選択範囲を挟み込むマクロを書くには。</a></div>
     <ul><li><div class="list-title">
     <span class="no">74</span>
-    <a class="title" href="71.html#74">Re3:選択範囲を挟み込むマクロを書くには。</a></div>
+    <a class="thread-title" href="71.html#74">Re3:選択範囲を挟み込むマクロを書くには。</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">75</span>
-    <a class="title" href="71.html#75">Re:選択範囲を挟み込むマクロを書くには。</a></div>
+    <a class="thread-title" href="71.html#75">Re:選択範囲を挟み込むマクロを書くには。</a></div>
     <ul><li><div class="list-title">
     <span class="no">76</span>
-    <a class="title" href="71.html#76">ありがとうございます。</a></div>
+    <a class="thread-title" href="71.html#76">ありがとうございます。</a></div>
     <ul><li><div class="list-title">
     <span class="no">77</span>
-    <a class="title" href="71.html#77">追記</a></div>
+    <a class="thread-title" href="71.html#77">追記</a></div>
     <ul><li><div class="list-title">
     <span class="no">78</span>
-    <a class="title" href="71.html#78">Re:追記</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=71>
+    <a class="thread-title" href="71.html#78">Re:追記</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=71>
     <span class="no">[71]</span>
-    <a class="title" href="#71">選択範囲を挟み込むマクロを書くには。</a>
+    <a class="thread-title" href="#71">選択範囲を挟み込むマクロを書くには。</a>
     <span class="author">ミック</span>
     <time datetime="2004-05-17T07:45:49">2004年05月17日 07:45</time></h1>
     <div class="body">『選択範囲を挟み込むマクロ』は、どうやって書いたらよいのでしょうか。<br><br>具体的には、たとえば、<br>『これはテストです。』という文の『テスト』を選択した状態から、<br>『これは【テスト】です。』といった具合にしたいのです。<br><br><br>よろしくお願いします。m(_ _)m。<br><br></div></section>
     <ul><li><section><h1 id=72>
     <span class="no">[72]</span>
-    <a class="title" href="#72">Re:選択範囲を挟み込むマクロを書くには。</a>
+    <a class="thread-title" href="#72">Re:選択範囲を挟み込むマクロを書くには。</a>
     <span class="author">しみづ</span>
     <time datetime="2004-05-17T11:22:40">2004年05月17日 11:22</time></h1>
     <div class="body">&gt;『選択範囲を挟み込むマクロ』は、どうやって書いたらよいのでしょうか。<br><br>　手順としては、<br><br>（１）選択部分を取得する<br>（２）テキストを貼り付けで"【" + 選択部分 + "】"を貼り付ける<br><br>を得意なマクロ形式で作ればよいのではないでしょうか。<br><br>　例えば発言#58の前半のマクロは、そのあと変更部分を選択して終わるWSHマクロ例です。<br></div></section>
     <ul><li><section><h1 id=73>
     <span class="no">[73]</span>
-    <a class="title" href="#73">Re2:選択範囲を挟み込むマクロを書くには。</a>
+    <a class="thread-title" href="#73">Re2:選択範囲を挟み込むマクロを書くには。</a>
     <span class="author">ミック</span>
     <time datetime="2004-05-17T13:35:29">2004年05月17日 13:35</time></h1>
     <div class="body">お返事ありがとうございます。<br><br>&gt;を得意なマクロ形式で作ればよいのではないでしょうか。<br><br>すいません。分からないです。<br><br>キーマクロで書くとすると、どうなるのでしょうか？<br><br></div></section>
     <ul><li><section><h1 id=74>
     <span class="no">[74]</span>
-    <a class="title" href="#74">Re3:選択範囲を挟み込むマクロを書くには。</a>
+    <a class="thread-title" href="#74">Re3:選択範囲を挟み込むマクロを書くには。</a>
     <span class="author">しみづ</span>
     <time datetime="2004-05-17T15:38:10">2004年05月17日 15:38</time></h1>
     <div class="body">&gt;キーマクロで書くとすると、どうなるのでしょうか？<br><br>　発言#48の最後にヘルプのある場所が書いてあるので、それを見て勉強してください。私はキーマクロはあまり書いたことありません。<br>　試しにちょっと書いてみたら、S_GetSelectedStringが関数がないといわれました。キーマクロでは組めないかもしれません。<br><br>　そういう場合は、前述の発言#58のaddcomm.jsを一部変更して使えるでしょう。インターネット・エクスプローラーが組み込まれた環境なら、動く可能性があります。<br>　さあ、どこを変更するのでしょう。JavaScriptの仕様は、とほほさんのページから「とほほのJavaScriptリファレンス」を調べてください。<br>http://tohoho.wakusei.ne.jp/www.htm<br></div></section>
     </li></ul></li></ul></li><li><section><h1 id=75>
     <span class="no">[75]</span>
-    <a class="title" href="#75">Re:選択範囲を挟み込むマクロを書くには。</a>
+    <a class="thread-title" href="#75">Re:選択範囲を挟み込むマクロを書くには。</a>
     <span class="author">しみづ</span>
     <time datetime="2004-05-18T04:07:36">2004年05月18日 04:07</time></h1>
     <div class="body"><br>　もう一つの方法を考え付きました。こちらはキーマクロで組めます。ただし、クリップボードの内容を壊します。<br><br>（１）コピー(選択範囲をクリップボードにコピー)<br>（２）テキストを貼り付け"【"<br>（３）貼り付け(クリップボードから貼り付け)<br>（４）テキストを貼り付け"】"<br></div></section>
     <ul><li><section><h1 id=76>
     <span class="no">[76]</span>
-    <a class="title" href="#76">ありがとうございます。</a>
+    <a class="thread-title" href="#76">ありがとうございます。</a>
     <span class="author">ミック</span>
     <time datetime="2004-05-18T16:31:26">2004年05月18日 16:31</time></h1>
     <div class="body">できました！！<br><br>正直なところ、この式の意味はまったく分からないのですが、とにかくできて、とても嬉しいです。ヽ(^。^)ノ<br><br>これを機会に、何とか、もうちょっと、プログラミングみたいなことがわかればなぁ、と思います。<br><br>ありがとうございました。m(_ _)m<br><br><br>var inp = Editor.GetSelectedString(0);<br>var len = inp.length+4;<br>var crlf = 0;<br>var rc;<br>var i;<br><br>for ( i = 0; ; i++ ) {  // 改行カウント<br>  rc = inp.indexOf("\n", i);<br>  if ( rc == -1 )<br>    break;<br>  crlf++;<br>  i = rc;<br>}<br>len -= crlf;  // 改行数を長さから引く<br>inp = "【" + inp + "】";<br>Editor.InsText(inp);  // 変更<br>for ( i = 0; i &lt; len; i++ ) {  // 変更部分を選択<br>  Editor.Left_Sel();<br>}<br><br></div></section>
     <ul><li><section><h1 id=77>
     <span class="no">[77]</span>
-    <a class="title" href="#77">追記</a>
+    <a class="thread-title" href="#77">追記</a>
     <span class="author">ミック</span>
     <time datetime="2004-05-19T15:08:15">2004年05月19日 15:08</time></h1>
     <div class="body">var len = inp.length+4;　→var len = inp.length+2;<br><br>ですね。<br><br>しばらく使って、気がつきました。(^^;;</div></section>
     <ul><li><section><h1 id=78>
     <span class="no">[78]</span>
-    <a class="title" href="#78">Re:追記</a>
+    <a class="thread-title" href="#78">Re:追記</a>
     <span class="author">しみづ</span>
     <time datetime="2004-05-19T17:15:55">2004年05月19日 17:15</time></h1>
     <div class="body"><br>&gt;しばらく使って、気がつきました。(^^;;<br><br>　はい、気づいていましたが、あえて黙ってました。そうやってだんだんわかってくるものです。<br>　バラしてしまうと、変更した部分を選択する必要がなければ、次の一行ですみます。<br><br>Editor.InsText("【" + Editor.GetSelectedString(0) + "】");<br></div></section>

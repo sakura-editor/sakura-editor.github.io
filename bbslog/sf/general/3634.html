@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現キーワードで単語の検索</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現キーワードで単語の検索 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3634</span>
-    <a class="title" href="3634.html#3634">正規表現キーワードで単語の検索</a></div>
+    <a class="thread-title" href="3634.html#3634">正規表現キーワードで単語の検索</a></div>
     <ul><li><div class="list-title">
     <span class="no">3635</span>
-    <a class="title" href="3634.html#3635">Re:正規表現キーワードで単語の検索</a></div>
+    <a class="thread-title" href="3634.html#3635">Re:正規表現キーワードで単語の検索</a></div>
     </li><li><div class="list-title">
     <span class="no">3636</span>
-    <a class="title" href="3634.html#3636">正規表現キーワードで単語の検索</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3634>
+    <a class="thread-title" href="3634.html#3636">正規表現キーワードで単語の検索</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3634>
     <span class="no">[3634]</span>
-    <a class="title" href="#3634">正規表現キーワードで単語の検索</a>
+    <a class="thread-title" href="#3634">正規表現キーワードで単語の検索</a>
     <span class="author">tak</span>
     <time datetime="2004-02-12T16:44:29">2004年02月12日 16:44</time></h1>
     <div class="body">文中の数値を強調表示させようとしています。<br>秀丸の場合は、文字列を<br>([0-9]+)|([0-9]+\.[0-9]+)|((0x)[0-9a-fA-<br>F]+)|([0-9a-fA-F]+)<br>検索方法で「単語の検索」にチェクを入れると期待した動作をしてくれるの<br>ですがサクラエディタの場合「単語の検索」が無いので、上記のキーワード<br>だと"MESSAGE" 等の単語中のE, Aも強調表示されてしまいます。<br><br>正規表現で単語の検索をする方法はない物でしょうか？</div></section>
     <ul><li><section><h1 id=3635>
     <span class="no">[3635]</span>
-    <a class="title" href="#3635">Re:正規表現キーワードで単語の検索</a>
+    <a class="thread-title" href="#3635">Re:正規表現キーワードで単語の検索</a>
     <span class="author">(全略)</span>
     <time datetime="2004-02-12T23:15:43">2004年02月12日 23:15</time></h1>
     <div class="body">▼ takさん<br>&gt; 文中の数値を強調表示させようとしています。<br>&gt; 秀丸の場合は、文字列を<br>&gt; ([0-9]+)|([0-9]+\.[0-9]+)|((0x)[0-9a-fA-<br>&gt; F]+)|([0-9a-fA-F]+)<br>&gt; 検索方法で「単語の検索」にチェクを入れると期待した動作をしてくれるの<br>&gt; ですがサクラエディタの場合「単語の検索」が無いので、上記のキーワード<br>&gt; だと"MESSAGE" 等の単語中のE, Aも強調表示されてしまいます。<br>&gt; <br>&gt; 正規表現で単語の検索をする方法はない物でしょうか？<br>文字列前後を非単語構成文字(\W)でくくるとか</div></section>
     </li><li><section><h1 id=3636>
     <span class="no">[3636]</span>
-    <a class="title" href="#3636">正規表現キーワードで単語の検索</a>
+    <a class="thread-title" href="#3636">正規表現キーワードで単語の検索</a>
     <span class="author">もか</span>
     <time datetime="2004-02-13T00:10:04">2004年02月13日 00:10</time></h1>
     <div class="body">単語といっても、その区切り方には色々ありますので、出来るパターンと無理なものがあります。<br>sakura-editor + Bregexp.dllの場合は \bで単語区切りを(SJIS未対応ながら)拾えます。<br>この\bは、 [A-Za-z0-9_]のまとまりを単語とします。<br>これでは、用が足りないとときは、先読みと後読みというのを使います。<br>が、後読みには未対応ですので、\bを先頭に書いて、末尾にも\bをつけてください。<br># JREだと 多分\＞ \＜というのに相当するはず。<br>それから、JREでは最長一致の原則(POSIX風)のようですが、<br>BREGEXP(Perl5)では、「|」の論理和は、左側から順に見て、一番最初にマッチしたパターンを選択するため、<br>こういうのは、厄介です。<br>ちなみに、数値の色分けをでC風だったらカラー半角数値で色を変えれます。<br><br>例えば、こんな感じだと思います。<br>\b((0x[0-9a-fA-F]+)|([0-9]+(\.[0-9]+)?)|<br>([0-9a-fA-F]+))(?![0-9A-Fa-f.])\b<br>想定するテストケース<br>マッチすべき: 0x19 0x1AF 0129 3245 012.345 01eF aAb BDF<br>マッチしないべき: 0xx0 0x MMX01 12f.3 .4 5. CGI TTF<br>区切り:  0/0 0+0 0*0 0-0 (0+0) A%4<br>えーと、これだと、12f.3 .4 の3と4にもマッチしてしまいました。うーん難しい<br># 後読みができない... 私にはこれ以上無理っぽいです。<br></div></section>

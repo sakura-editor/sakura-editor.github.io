@@ -1,90 +1,116 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>メモです。その１</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>メモです。その１ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1045</span>
-    <a class="title" href="1045.html#1045">メモです。その１</a></div>
+    <a class="thread-title" href="1045.html#1045">メモです。その１</a></div>
     <ul><li><div class="list-title">
     <span class="no">1046</span>
-    <a class="title" href="1045.html#1046">メモです。その２</a></div>
+    <a class="thread-title" href="1045.html#1046">メモです。その２</a></div>
     <ul><li><div class="list-title">
     <span class="no">1047</span>
-    <a class="title" href="1045.html#1047">メモです。その３</a></div>
+    <a class="thread-title" href="1045.html#1047">メモです。その３</a></div>
     <ul><li><div class="list-title">
     <span class="no">1048</span>
-    <a class="title" href="1045.html#1048">メモです。その４</a></div>
+    <a class="thread-title" href="1045.html#1048">メモです。その４</a></div>
     <ul><li><div class="list-title">
     <span class="no">1049</span>
-    <a class="title" href="1045.html#1049">メモです。その５</a></div>
+    <a class="thread-title" href="1045.html#1049">メモです。その５</a></div>
     <ul><li><div class="list-title">
     <span class="no">1050</span>
-    <a class="title" href="1045.html#1050">メモです。その６</a></div>
+    <a class="thread-title" href="1045.html#1050">メモです。その６</a></div>
     <ul><li><div class="list-title">
     <span class="no">1051</span>
-    <a class="title" href="1045.html#1051">メモです。その７</a></div>
+    <a class="thread-title" href="1045.html#1051">メモです。その７</a></div>
     <ul><li><div class="list-title">
     <span class="no">1052</span>
-    <a class="title" href="1045.html#1052">Re:メモです。その8</a></div>
+    <a class="thread-title" href="1045.html#1052">Re:メモです。その8</a></div>
     <ul><li><div class="list-title">
     <span class="no">1053</span>
-    <a class="title" href="1045.html#1053">Re2:メモです。その8</a></div>
+    <a class="thread-title" href="1045.html#1053">Re2:メモです。その8</a></div>
     </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">1066</span>
-    <a class="title" href="1045.html#1066">Re:メモです。その１</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1045>
+    <a class="thread-title" href="1045.html#1066">Re:メモです。その１</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1045>
     <span class="no">[1045]</span>
-    <a class="title" href="#1045">メモです。その１</a>
+    <a class="thread-title" href="#1045">メモです。その１</a>
     <span class="author">みく</span>
     <time datetime="2001-12-29T10:32:29">2001年12月29日 10:32</time></h1>
     <div class="body">久しぶりに2chを見たらいろいろ書かれていたのでまとめてみました。<br>抜けがあってもかんべんしてください。<br><br>■EXE関係<br>・dllなし版(global.h と sakura_core.h の SAKURA_CORE_APIを空のdefineに。プリプロセッサに _MBCS 足す)<br><br>sakura_code.h, global.hに以下の記述を追加<br>要するに SAKURA_CORE_API 定義を「なし」にしてしまう<br>-----<br>//@@@ DLLを使わない。<br>#ifdef NON_DLL<br>#undef SAKURA_CORE_API<br>#define SAKURA_CORE_API<br>#endif<br>//@@@<br>-----<br>VCのコンパイル時に NON_DLL を定義しておく<br>リンクライブラリに sakura, sakura_core に定義してるものを全部含める<br># ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /machine:I386<br># ADD LINK32 ole32.lib comctl32.lib Imm32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /pdb:none /machine:I386<br>-----<br><br>・システムリソースが減りすぎ<br>・初期の頃のソースも公開してもらえるとよい<br><br></div></section>
     <ul><li><section><h1 id=1046>
     <span class="no">[1046]</span>
-    <a class="title" href="#1046">メモです。その２</a>
+    <a class="thread-title" href="#1046">メモです。その２</a>
     <span class="author">みく</span>
     <time datetime="2001-12-29T10:33:02">2001年12月29日 10:33</time></h1>
     <div class="body">■正規表現関係<br>・正規表現の書き方<br>&#9;→簡単なのはヘルプにあるが、詳細はWWWでperl正規表現を参照してね<br>・正規表現にpcreは組み込んで使えないの？<br>・GNU rx-1.5 とかは駄目なの？<br>&#9;rx+mbパッチは公開されてるのでSJISには対応できている<br>&#9;あとは誰がDLL作るか。<br>&#9;&#9;→すでにあったら情報求む。できたらbregexp.dll互換がいいな<br>&#9;バイナリデータに対する耐性があるかどうか不明<br>&#9;linuxなどで世界中で使われてるからバグは潰されてると思うんだがどうだろう。<br>・正規表現で色づけ可能<br>&#9;→正規表現キーワードを使用してください<br>・正規表現の使い勝手を良くしてもらいたい。<br>&#9;→//kとかが勝手に付いてくれるとうれしい？<br>・置換後文字列にも正規表現を！$1$2なんかが使いたい。<br>・BRegIf.DLLの独自拡張機能、「~」によるパターンの否定にも対応してほしい<br><br></div></section>
     <ul><li><section><h1 id=1047>
     <span class="no">[1047]</span>
-    <a class="title" href="#1047">メモです。その３</a>
+    <a class="thread-title" href="#1047">メモです。その３</a>
     <span class="author">みく</span>
     <time datetime="2001-12-29T10:33:26">2001年12月29日 10:33</time></h1>
     <div class="body">■バグ関係<br>・バグつぶしてくれ<br>・タグジャンプできません問題<br>・マクロの記録で何もしないで終了すると巨大なファイルができる。<br>&#9;最新版では直っていませんか<br>・設定を変更しても反映されないことがある<br>&#9;→iniファイルを消すと元に戻るので、何かのタイミングでiniファイルがおかし<br>&#9;くなることがあるような気がする...<br><br></div></section>
     <ul><li><section><h1 id=1048>
     <span class="no">[1048]</span>
-    <a class="title" href="#1048">メモです。その４</a>
+    <a class="thread-title" href="#1048">メモです。その４</a>
     <span class="author">みく</span>
     <time datetime="2001-12-29T10:33:51">2001年12月29日 10:33</time></h1>
     <div class="body">■マクロ関係<br>・マクロの仕様ってヘルプに載ってる奴以外で公開されてる？<br>・マクロのドキュメントがないのでわからない。<br>・外部マクロがツールバーに登録できないの？<br>&#9;外部マクロをファンクションキーに割当ててファンクションのボタンを表示しとく<br>・取りあえず外部マクロをツールバーに登録できるようにしてほしい。<br><br></div></section>
     <ul><li><section><h1 id=1049>
     <span class="no">[1049]</span>
-    <a class="title" href="#1049">メモです。その５</a>
+    <a class="thread-title" href="#1049">メモです。その５</a>
     <span class="author">みく</span>
     <time datetime="2001-12-29T10:34:16">2001年12月29日 10:34</time></h1>
     <div class="body">■表示入力関係<br>・全角スペースを記号で表せるのに、半角ができないのでできるように<br>・カーソル行、選択範囲の色を変えられるように<br>&#9;→サクラエディタの選択範囲の表示は(255,255,255)の反転塗りつぶしなので、<br>&#9;その色を変更できるようにするくらいならできますが。<br>&#9;色組み合わせを考えないと字が見えなくなることもあるぞ。<br>・行の強調表示<br>&#9;→正規表現キーワードで対応できませんか？<br>・アウトライン解析も、表示するところを正規表現で指定<br>&#9;→個人的には実装したい気がする<br>・ASPの予約語<br>・禁則処理<br>・文字入力時の処理速度を速くしてほしい。<br>・「マージ」の意味は「連続した重複行の削除」の方が正しい<br>・「ブックマーク」というのでしょうか<br><br></div></section>
     <ul><li><section><h1 id=1050>
     <span class="no">[1050]</span>
-    <a class="title" href="#1050">メモです。その６</a>
+    <a class="thread-title" href="#1050">メモです。その６</a>
     <span class="author">みく</span>
     <time datetime="2001-12-29T10:34:41">2001年12月29日 10:34</time></h1>
     <div class="body">■外部コマンド関係<br>・"標準出力を得る"のチェックボックスを記憶<br>・外部コマンド1・外部コマンド2…みたいにコマンド登録<br>・アウトプットウィンドウを出さないようにするオプション<br>&#9;入力を受け付けるDOSプログラムに渡すと固まるので<br><br></div></section>
     <ul><li><section><h1 id=1051>
     <span class="no">[1051]</span>
-    <a class="title" href="#1051">メモです。その７</a>
+    <a class="thread-title" href="#1051">メモです。その７</a>
     <span class="author">みく</span>
     <time datetime="2001-12-29T10:35:07">2001年12月29日 10:35</time></h1>
     <div class="body">■その他、FAQ、ドキュメント不足<br>・常駐のはずし方がわからない<br>・強調キーワードの設定がうまくいかない<br>&#9;共通設定：強調キーワードセット登録<br>&#9;タイプ別設定：使用するキーワードセット指定<br>&#9;&#9;色指定で強調キーワードにチェックをいれる<br>&#9;&#9;ファイルの拡張子はタイプ別設定にあるか<br>・設定の反映は全サクラエディタの終了しないとだめ？<br>&#9;常駐時Windowsシャットダウンで保存されないのか<br>・メーリングリストへの参加方法は？<br>&#9;→これはeGroupsに登録してください。eGroups ホームページ見てね<br>&#9;ただしこの機能は使ってないのでメールは流れてません。<br><br></div></section>
     <ul><li><section><h1 id=1052>
     <span class="no">[1052]</span>
-    <a class="title" href="#1052">Re:メモです。その8</a>
+    <a class="thread-title" href="#1052">Re:メモです。その8</a>
     <span class="author">みく</span>
     <time datetime="2001-12-29T10:37:37">2001年12月29日 10:37</time></h1>
     <div class="body">▼ みくさん<br>&gt; ■その他、FAQ、ドキュメント不足<br>&gt; ・常駐のはずし方がわからない<br>&gt; ・強調キーワードの設定がうまくいかない<br>&gt; &#9;共通設定：強調キーワードセット登録<br>&gt; &#9;タイプ別設定：使用するキーワードセット指定<br>&gt; &#9;&#9;色指定で強調キーワードにチェックをいれる<br>&gt; &#9;&#9;ファイルの拡張子はタイプ別設定にあるか<br>&gt; ・設定の反映は全サクラエディタの終了しないとだめ？<br>&gt; &#9;常駐時Windowsシャットダウンで保存されないのか<br>&gt; ・メーリングリストへの参加方法は？<br>&gt; &#9;→これはeGroupsに登録してください。eGroups ホームページ見てね<br>&gt; &#9;ただしこの機能は使ってないのでメールは流れてません。<br>&gt; </div></section>
     <ul><li><section><h1 id=1053>
     <span class="no">[1053]</span>
-    <a class="title" href="#1053">Re2:メモです。その8</a>
+    <a class="thread-title" href="#1053">Re2:メモです。その8</a>
     <span class="author">みく</span>
     <time datetime="2001-12-29T10:39:51">2001年12月29日 10:39</time></h1>
     <div class="body">＃Re:その８は無視してください。<br>見にくいですがすいません。<br>INCMだときれいに見えます。</div></section>
     </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=1066>
     <span class="no">[1066]</span>
-    <a class="title" href="#1066">Re:メモです。その１</a>
+    <a class="thread-title" href="#1066">Re:メモです。その１</a>
     <span class="author">みく</span>
     <time datetime="2001-12-30T14:25:04">2001年12月30日 14:25</time></h1>
     <div class="body">&gt; ・dllなし版<br><br>eGroupsにプロジェクトをアップしました。<br>1045記事に書いたライブラリは間違ってるので<br>書いておきます。<br><br>Win32Applicationで空のプロジェクトを作って<br>全ソース(cpp,h,rc,hm,hh,bmp,ico,cur...)を追加して、<br>sakura_core.h, global.hのSAKURA_CORE_API<br>を空定義にして(ifdef書いたときはプリプロセッサに定義して)、<br>インクルードパスに..\sakura_coreを追加して、<br>リンクライブラリは以下のものを追加です。<br>comctl32.lib<br>Imm32.lib<br>htmlhelp.lib<br>mpr.lib<br></div></section>

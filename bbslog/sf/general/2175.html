@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行コードの統一(ぢっけん)</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>改行コードの統一(ぢっけん) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2175</span>
-    <a class="title" href="2175.html#2175">改行コードの統一(ぢっけん)</a></div>
+    <a class="thread-title" href="2175.html#2175">改行コードの統一(ぢっけん)</a></div>
     <ul><li><div class="list-title">
     <span class="no">2177</span>
-    <a class="title" href="2175.html#2177">RE: 改行コードの統一(ぢっけん)</a></div>
+    <a class="thread-title" href="2175.html#2177">RE: 改行コードの統一(ぢっけん)</a></div>
     <ul><li><div class="list-title">
     <span class="no">2180</span>
-    <a class="title" href="2175.html#2180">RE2: 改行コードの統一(ぢっけん)</a></div>
+    <a class="thread-title" href="2175.html#2180">RE2: 改行コードの統一(ぢっけん)</a></div>
     <ul><li><div class="list-title">
     <span class="no">2208</span>
-    <a class="title" href="2175.html#2208">RE3: 改行コードの統一(ぢっけん)</a></div>
+    <a class="thread-title" href="2175.html#2208">RE3: 改行コードの統一(ぢっけん)</a></div>
     <ul><li><div class="list-title">
     <span class="no">2210</span>
-    <a class="title" href="2175.html#2210">Re4: ちょっと注意</a></div>
+    <a class="thread-title" href="2175.html#2210">Re4: ちょっと注意</a></div>
     <ul><li><div class="list-title">
     <span class="no">2211</span>
-    <a class="title" href="2175.html#2211">Re5: ちょっと注意</a></div>
+    <a class="thread-title" href="2175.html#2211">Re5: ちょっと注意</a></div>
     </li><li><div class="list-title">
     <span class="no">2212</span>
-    <a class="title" href="2175.html#2212">Re5: ちょっと注意</a></div>
+    <a class="thread-title" href="2175.html#2212">Re5: ちょっと注意</a></div>
     </li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">2183</span>
-    <a class="title" href="2175.html#2183">RE2: 改行コードの統一(ぢっけん)</a></div>
+    <a class="thread-title" href="2175.html#2183">RE2: 改行コードの統一(ぢっけん)</a></div>
     <ul><li><div class="list-title">
     <span class="no">2185</span>
-    <a class="title" href="2175.html#2185">Re3: 改行コードの統一(ぢっけん)</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2175>
+    <a class="thread-title" href="2175.html#2185">Re3: 改行コードの統一(ぢっけん)</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2175>
     <span class="no">[2175]</span>
-    <a class="title" href="#2175">改行コードの統一(ぢっけん)</a>
+    <a class="thread-title" href="#2175">改行コードの統一(ぢっけん)</a>
     <span class="author">すい</span>
     <time datetime="2002-08-08T22:58:37">2002年08月08日 22:58</time></h1>
     <div class="body">「2170 小さな要望(空行挿入)」にフォロー書いていて、ふと思い付いた事。<br><br>ファイル全体を改行コード LF (0x0a) に統一する場合。<br><br>Ctrl+R で置換画面を出す。<br>・置換前(N)「[\r\n]+」<br>・置換後(P)「\n」<br>・正規表現(E)　　←チェックする。<br>で [すべて置換(A)] ボタンをパシーンと押せば一発でファイル全体が LF 改行になりますね。<br><br>[置換(R)]（変換する）と [下検索(D)]（変換せず次の行へ）で押し分けてみてもよし。<br><br>また、範囲指定してから置換出して、上記設定にしてから「選択範囲(S)」を<br>選択後、[すべて置換(A)] で指定範囲の行のみ改行コードが LF になりますね。（当然ですが）<br><br>改行コードを CRLF に統一する場合は置換後(N)を「\r\n」に変えるだけ。<br>改行コードを CR　 に統一する場合は置換後(N)を「\r」　に変えるだけ。<br>・\r\n = CRLF  0x0d,0x0a <br>・\n = LF 0x0a <br>・\r = CR 0x0d <br><br>んで、これをマクロに記述して右クリックメニューとかに登録することまで考えてみる。<br>--------- 2CRLF.MAC ---------<br>//キーボードマクロのファイル<br>S_ReplaceAll('[\\r\\n]+', '\\r\\n', 148);&#9;// <br>S_CancelMode(0);&#9;// 各種モードの取り消し<br>S_SearchClearMark(0);&#9;// 検索マークの切替え<br>S_MoveHistPrev(0);&#9;// 移動履歴: 前へ<br>S_ReDraw(0);&#9;// 再描画<br>---------- 2LF.MAC ----------<br>S_ReplaceAll('[\\r\\n]+', '\\n', 148);&#9;// <br>S_CancelMode(0);&#9;// 各種モードの取り消し<br>S_SearchClearMark(0);&#9;// 検索マークの切替え<br>S_MoveHistPrev(0);&#9;// 移動履歴: 前へ<br>S_ReDraw(0);&#9;// 再描画<br>---------- 2CR.MAC ----------<br>//キーボードマクロのファイル<br>S_ReplaceAll('[\\r\\n]+', '\\r', 148);&#9;// <br>S_CancelMode(0);&#9;// 各種モードの取り消し<br>S_SearchClearMark(0);&#9;// 検索マークの切替え<br>S_MoveHistPrev(0);&#9;// 移動履歴: 前へ<br>S_ReDraw(0);&#9;// 再描画<br>-----------------------------<br>これらを共通設定→[マクロ] でそれぞれ<br>・改行コードを CRLF (Win)：2CRLF.MAC<br>・改行コードを LF (UNIX) ：2LF.MAC<br>・改行コードを CR (MAC)　：2CR.MAC<br>とか設定して、マウス右クリックメニューに登録してみた。<br>ちなみに<br>・範囲選択してから実行すると選択範囲内の改行コードのみ変わる。<br>・範囲選択せず実行するとファイル全体の改行コードが変わる。<br>と なるようにしてある。いかがなものでしょ？<br><br>難点はカーソル位置が保存されないこと。変換が終ると、とんでもない所（ファイル末尾とか）へ行ってしまう。<br>ので、ラストに S_MoveHistPrev 入れたけど．．．<br>「元の位置近辺に戻る確率が高い」だけで完全に元の場所には戻らないし。。。<br>置換処理に対しては「検索開始位置へ戻る」も機能しないようだし。。。(未解決)<br>全行が「変更行」になってしまうというのは愛敬という事で。<br></div></section>
     <ul><li><section><h1 id=2177>
     <span class="no">[2177]</span>
-    <a class="title" href="#2177">RE: 改行コードの統一(ぢっけん)</a>
+    <a class="thread-title" href="#2177">RE: 改行コードの統一(ぢっけん)</a>
     <span class="author">ai</span>
     <time datetime="2002-08-08T23:21:35">2002年08月08日 23:21</time></h1>
     <div class="body"><br>&gt;置換処理に対しては「検索開始位置へ戻る」も機能しないようだし。。。(未解決)<br>私の手元には、置換でも動作するように修正したものがあります。<br>繰り返し使っているうちに、置換でも使えたほうが便利かな？と感じましたので(^^;<br>他にいくつか追加したい機能があり、そちらと一緒に差分をUPしようと思っていました。<br>ただ、マクロから検索/置換を実行した場合は機能しません。<br></div></section>
     <ul><li><section><h1 id=2180>
     <span class="no">[2180]</span>
-    <a class="title" href="#2180">RE2: 改行コードの統一(ぢっけん)</a>
+    <a class="thread-title" href="#2180">RE2: 改行コードの統一(ぢっけん)</a>
     <span class="author">すい</span>
     <time datetime="2002-08-09T12:34:36">2002年08月09日 12:34</time></h1>
     <div class="body">&gt;&gt;置換処理に対しては「検索開始位置へ戻る」も機能しないようだし。。。(未解決)<br>&gt;私の手元には、置換でも動作するように修正したものがあります。<br>&gt;繰り返し使っているうちに、置換でも使えたほうが便利かな？と感じましたので(^^;<br><br>私もその方が便利だと思います。<br># というか、そもそも検索と置換で違いがあるのは変な気が (^^;)<br><br>&gt;ただ、マクロから検索/置換を実行した場合は機能しません。<br><br>それは残念、というかどうでも良かったりして。(爆)<br><br>マクロを使う立場から考えると、「現在のカーソル位置を移動履歴に登録する」という機能が欲しいですね。<br>場所を登録するだけで他は何もしない。<br>CEditView_Command.cpp の中で AddCurrentLineToHistory(); を呼び出すだけの機能、というか。<br><br>そうすれば、カーソル位置を保存したい所で「移動履歴に登録」やってから<br>「移動履歴 前へ」「移動履歴 次へ」すれば良いワケで、カーソル位置を<br>行ったり来たりするようなマクロも簡単に作れるようになりますし。<br><br>そうなれば検索/置換で「検索開始位置へ戻る」が使えなくても何も問題無しなんですけど。<br>汎用的だし。<br></div></section>
     <ul><li><section><h1 id=2208>
     <span class="no">[2208]</span>
-    <a class="title" href="#2208">RE3: 改行コードの統一(ぢっけん)</a>
+    <a class="thread-title" href="#2208">RE3: 改行コードの統一(ぢっけん)</a>
     <span class="author">すい</span>
     <time datetime="2002-08-19T21:30:54">2002年08月19日 21:30</time></h1>
     <div class="body">&gt;マクロを使う立場から考えると、「現在のカーソル位置を移動履歴に登録する」という機能が欲しいですね。<br>&gt;場所を登録するだけで他は何もしない。<br>&gt;CEditView_Command.cpp の中で AddCurrentLineToHistory(); を呼び出すだけの機能、というか。<br><br>↑を追加してみました。<br><br>ssrc_2002-08-18.tar.bz2 に対する差分です。<br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/MoveHistSet.zip<br><br>追加 → 内部名称　F_JUMPHIST_SET // 現在位置を移動履歴に登録<br><br>これに合わせ、内部名称 JUMPPREV / JUMPNEXT をそれぞれ<br>・JUMPPREV → JUMPHIST_PREV  // 移動履歴: 前へ<br>・JUMPNEXT → JUMPHIST_NEXT  // 移動履歴: 次へ<br>に揃えました。<br><br>ただ、コンパイル出来ないので動作確認が出来ないので していません。(;^^Ａ (恐)<br>どうでしょうか？動きます？<br>たったこれだけの変更なんですが．．．(;*^o^*;)<br><br>あ、動作確認できてないのでスリルあり。夏向きという事で。(こら＞私)<br># 動かなかったらごめんなさい。 m(_ _)m<br></div></section>
     <ul><li><section><h1 id=2210>
     <span class="no">[2210]</span>
-    <a class="title" href="#2210">Re4: ちょっと注意</a>
+    <a class="thread-title" href="#2210">Re4: ちょっと注意</a>
     <span class="author">げんた</span>
     <time datetime="2002-08-20T09:51:34">2002年08月20日 09:51</time></h1>
     <div class="body">&gt;&gt;マクロを使う立場から考えると、「現在のカーソル位置を移動履歴に登録する」という機能が欲しいですね。<br>移動履歴は行マークとは異なり現在のカーソル位置を記憶するだけのものなので，ファイルが編集されると場所がずれちゃいます．<br><br>現在位置をマークして，番号を返す．<br>mark = SetMark();<br><br>指定された番号のマーク位置に飛ぶ<br>JumpMark( mark );<br><br>みたいな機能があるともっといいですけどね．<br><br>---<br>そういえば，マクロといえばWSHの組み込みをすっかり忘れていました...<br></div></section>
     <ul><li><section><h1 id=2211>
     <span class="no">[2211]</span>
-    <a class="title" href="#2211">Re5: ちょっと注意</a>
+    <a class="thread-title" href="#2211">Re5: ちょっと注意</a>
     <span class="author">Youma</span>
     <time datetime="2002-08-20T10:35:41">2002年08月20日 10:35</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;&gt;マクロを使う立場から考えると、「現在のカーソル位置を移動履歴に登録する」という機能が欲しいですね。<br>&gt; 移動履歴は行マークとは異なり現在のカーソル位置を記憶するだけのものなので，ファイルが編集されると場所がずれちゃいます．<br><br>あ、これ、あると非常にうれしいですよね～<br>行マークとか、結構使いまくるんですけど、<br>文字単位のマーキングが有ると非常に便利（Ｗ<br><br>ついでに、<br>SelectMark(mark1 , mark2 )って感じに、<br>マーキングした所から、マーキングした所までを<br>選択　⇒　切り取り／コピー　して、<br>PasteMark( mark ) って感じにマークの部分に貼り付けるとか（Ｗ<br>マーク単位の編集技があるとうれしいなぁ。<br></div></section>
     </li><li><section><h1 id=2212>
     <span class="no">[2212]</span>
-    <a class="title" href="#2212">Re5: ちょっと注意</a>
+    <a class="thread-title" href="#2212">Re5: ちょっと注意</a>
     <span class="author">すい</span>
     <time datetime="2002-08-20T20:00:26">2002年08月20日 20:00</time></h1>
     <div class="body">&gt;&gt;&gt;マクロを使う立場から考えると、「現在のカーソル位置を移動履歴に登録する」という機能が欲しいですね。<br>&gt;移動履歴は行マークとは異なり現在のカーソル位置を記憶するだけのものなので，ファイルが編集されると場所がずれちゃいます．<br>ァ,それは見落としていました。一応、注意が必要ですね。 :-P<br><br><br>&gt;現在位置をマークして，番号を返す．<br>&gt;mark = SetMark();<br>&gt;<br>&gt;指定された番号のマーク位置に飛ぶ<br>&gt;JumpMark( mark );<br>&gt;<br>&gt;みたいな機能があるともっといいですけどね．<br><br>各種編集による場所の移動にも対応・追跡してくれるような物、という事でしょうか？<br># と言うか、↑そうでなければ「現在の行位置・桁位置を返す」「指定の行・桁位置へ移動する」<br># という単純な物を用意すれば十分ですよね。(;^^ゞ<br><br>それはとっても良い構想ですけど．．．<br>それって mark みたいな変数が必要って事ですよね？<br>つまり ppa.dll とかが必須では。どこの環境でも動くというワケではなく。。。<br><br>サクラエディタ単体で変数が使えるようになるならば、それはそれで嬉しいですけど、<br>変数とかの取り扱いって結構プログラムが面倒になってバグ取りとかが大変なのは<br>経験済みだから、やりとぅないですしねぇ。<br>変数といっても「特定の名前固定の大域変数のみ」なら比較的取り扱いも楽ですが。<br># って考えていくと、次第に DOS版 Mifes のマクロになっていくのか。(笑)<br>でも数式の処理は絶対必要になるだろうし。<br></div></section>
     </li></ul></li></ul></li></ul></li><li><section><h1 id=2183>
     <span class="no">[2183]</span>
-    <a class="title" href="#2183">RE2: 改行コードの統一(ぢっけん)</a>
+    <a class="thread-title" href="#2183">RE2: 改行コードの統一(ぢっけん)</a>
     <span class="author">すい</span>
     <time datetime="2002-08-09T20:21:01">2002年08月09日 20:21</time></h1>
     <div class="body">&gt;&gt;置換処理に対しては「検索開始位置へ戻る」も機能しないようだし。。。(未解決)<br>&gt;私の手元には、置換でも動作するように修正したものがあります。<br><br>ついでにデフォルトでキー割り当てするわけにいきませんか？ :-)<br>例えば Shift+Ctrl+F3 とか。<br># 皆、使わないかなぁ？<br><br>&gt;他にいくつか追加したい機能があり、そちらと一緒に差分をUPしようと思っていました。<br><br>もし、機能周りをいじるなら、ついでに例の<br>（2164:RE2: 検索をマクロから実行時の不具合）<br>&gt;カーソル位置がファイル先頭の方にある場合、困った事に S_CurLineCenter は全く動作してくれません<br>の方も直してもらえると嬉しひ。ついでって事で。<br>これでかなり不自由していますので。<br><br>CEditView_Command.cpp の void CEditView::Command_CURLINECENTER( void ) 内<br>オリジナル<br>--------------------<br>&#9;if( 0 &lt;= nViewTopLine ){<br>&#9;&#9;m_nViewTopLine = nViewTopLine;<br>&#9;&#9;/* フォーカス移動時の再描画 */<br>&#9;&#9;RedrawAll();<br>&#9;}<br>--------------------<br>↓↓ 変更 ↓↓<br>--------------------<br>&#9;if( 0 &gt; nViewTopLine )&#9;nViewTopLine = 0;<br>&#9;m_nViewTopLine = nViewTopLine;<br>&#9;/* フォーカス移動時の再描画 */<br>&#9;RedrawAll();<br>--------------------<br><br>で直りますよね？<br>動作確認していない（確認出来ない）んですけど。<br></div></section>
     <ul><li><section><h1 id=2185>
     <span class="no">[2185]</span>
-    <a class="title" href="#2185">Re3: 改行コードの統一(ぢっけん)</a>
+    <a class="thread-title" href="#2185">Re3: 改行コードの統一(ぢっけん)</a>
     <span class="author">げんた</span>
     <time datetime="2002-08-10T01:31:43">2002年08月10日 01:31</time></h1>
     <div class="body">&gt;&gt;カーソル位置がファイル先頭の方にある場合、困った事に S_CurLineCenter は全く動作してくれません<br>&gt;の方も直してもらえると嬉しひ。ついでって事で。<br>aiさん，ついでにお願いします．<br></div></section>

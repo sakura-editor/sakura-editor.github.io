@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>メニューにタブモードを切り替えるためのコマンドを追加</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>メニューにタブモードを切り替えるためのコマンドを追加 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3682</span>
-    <a class="title" href="3682.html#3682">メニューにタブモードを切り替えるためのコマンドを追加</a></div>
+    <a class="thread-title" href="3682.html#3682">メニューにタブモードを切り替えるためのコマンドを追加</a></div>
     <ul><li><div class="list-title">
     <span class="no">3727</span>
-    <a class="title" href="3682.html#3727">Re: メニューにタブモードを切り替えるためのコマンドを追加</a></div>
+    <a class="thread-title" href="3682.html#3727">Re: メニューにタブモードを切り替えるためのコマンドを追加</a></div>
     <ul><li><div class="list-title">
     <span class="no">3728</span>
-    <a class="title" href="3682.html#3728">Re2: メニューにタブモードを切り替えるためのコマンドを追加</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3682>
+    <a class="thread-title" href="3682.html#3728">Re2: メニューにタブモードを切り替えるためのコマンドを追加</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3682>
     <span class="no">[3682]</span>
-    <a class="title" href="#3682">メニューにタブモードを切り替えるためのコマンドを追加</a>
+    <a class="thread-title" href="#3682">メニューにタブモードを切り替えるためのコマンドを追加</a>
     <span class="author">Kazika</span>
     <time datetime="2004-07-15T17:41:15">2004年07月15日 17:41</time></h1>
     <div class="body">メニューにタブモードを切り替えるためのコマンド<br>「結合して表示」を追加しました。<br><br>概要<br>・ウィンドウメニューからタブモードの結合、非結合を切り替え<br>　ることが出来る<br>　(設定の「タブ表示まとめない」の切り替えと同じ)<br>・非結合から結合にると、まとめられる側ウィンドウを隠す<br>・結合からでも左右に並べて表示などが実行できる<br><br><br>TODO<br>・結合から非結合になった場合に、隠れていたウィンドウを<br>　表示する。「元の」位置に表示するとなお良い？<br>・メニューに持ってきたので設定画面の「まとめない」を削除<br>・ツールバーボタンにコマンド追加<br>・キー割り当て機能にコマンド追加<br>・左右に並べて表示などの状態から結合した場合の、サイズ復帰<br>　(必要かどうかは微妙)<br>・アイコン作成(個人的には不要ですが)<br><br><br>YahooグループのブリーフケースのDeveloperに<br>差分ファイルをアップロードいたしました。<br>　ssrc_2004-06-19_kazika.zip<br>ファイル名の通り2004-06-19のソースに対するdiffです。<br><br>よろしければお使いください。<br></div></section>
     <ul><li><section><h1 id=3727>
     <span class="no">[3727]</span>
-    <a class="title" href="#3727">Re: メニューにタブモードを切り替えるためのコマンドを追加</a>
+    <a class="thread-title" href="#3727">Re: メニューにタブモードを切り替えるためのコマンドを追加</a>
     <span class="author">げんた</span>
     <time datetime="2004-08-27T01:57:03">2004年08月27日 01:57</time></h1>
     <div class="body">長らく放置していて申し訳ありません．<br>やっとこさ試してみました．<br>&gt;・非結合から結合でまとめられる側ウィンドウを隠す<br>これはいいと思いますが，<br>&gt;・結合からでも左右に並べて表示などが実行できる<br>この場合に自動的にまとめてあったのが解除されてしまうのはいかがなものかと...<br>まとまっている場合は実行不可のほうがよいのでは？<br><br>また，実行しても隠れたウィンドウが表示状態にならないのは<br>&gt;TODO<br>&gt;・結合から非結合になった場合に、隠れていたウィンドウを<br>&gt;　表示する。「元の」位置に表示するとなお良い？<br>と同じことですか？<br><br>直接は関係ないですが，個人的にはタブまとめモードからタブを隠すとすると隠れているエディタウィンドウにアクセスできなくなるのが気になっているのでこれと一緒に直してもらえたらと思っています．あとタブのON/OFFも全ウィンドウに状態が伝搬しないからつじつまが合わなくなる場面がありますね．<br></div></section>
     <ul><li><section><h1 id=3728>
     <span class="no">[3728]</span>
-    <a class="title" href="#3728">Re2: メニューにタブモードを切り替えるためのコマンドを追加</a>
+    <a class="thread-title" href="#3728">Re2: メニューにタブモードを切り替えるためのコマンドを追加</a>
     <span class="author">Kazika</span>
     <time datetime="2004-08-27T13:42:11">2004年08月27日 13:42</time></h1>
     <div class="body">Kazikaです。<br>修正版を作成しました(diff_ssrc_2004-08-19_kazika.diff)。<br>ユーザグループにアップしてあります。<br><br>&gt;&gt;・結合からでも左右に並べて表示などが実行できる<br>&gt;この場合に自動的にまとめてあったのが解除されてしまうのはいかがなものかと...<br>&gt;まとまっている場合は実行不可のほうがよいのでは？<br>タブまとめモードから直接ウィンドウを並べて表示させたい、<br>と思ったのが修正動機ですので、上記機能は修正いたしません。<br>例えば、メニューの文言を変えて結合が解除されることを明示す<br>るなどすれば良いかもしれません。<br><br>&gt;また，実行しても隠れたウィンドウが表示状態にならないのは<br>これは結合から非結合にした場合のことでしょうか。とすると、<br><br>&gt;&gt;TODO<br>&gt;&gt;・結合から非結合になった場合に、隠れていたウィンドウを<br>&gt;&gt;　表示する。「元の」位置に表示するとなお良い？<br>&gt;と同じことですか？<br>はい、これと同じことです。<br>こちらはdiff_ssrc_2004-08-19_kazika.diffで修正しました。<br><br>&gt;直接は関係ないですが，個人的にはタブまとめモードからタブを隠すとすると隠れて<br>&gt;いるエディタウィンドウにアクセスできなくなるのが気になっているのでこれと一緒<br>&gt;に直してもらえたらと思っています．<br>私の環境ではタブまとめモードタブを隠すとしても、タブが消えたりしませんので、ア<br>クセス出来なくなるというのが、どういう状況かよくわかりません。<br>再現したら調査してみます。<br></div></section>

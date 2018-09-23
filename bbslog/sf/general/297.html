@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>TeXで使う場合問題になる点など3. </title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>TeXで使う場合問題になる点など3.  | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">297</span>
-    <a class="title" href="297.html#297">TeXで使う場合問題になる点など3. </a></div>
-    </li></ul><ul class="main"><li><section><h1 id=297>
+    <a class="thread-title" href="297.html#297">TeXで使う場合問題になる点など3. </a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=297>
     <span class="no">[297]</span>
-    <a class="title" href="#297">TeXで使う場合問題になる点など3. </a>
+    <a class="thread-title" href="#297">TeXで使う場合問題になる点など3. </a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-03-28T20:12:30">2001年03月28日 20:12</time></h1>
     <div class="body">sakuraで開いてないファイルをDOSプロンプトでコンパイルしたとき、エラーがあれば[e]押下でsakuraを開いてエラー行にジャンプするようになった。しかし、ファイルを開いてそれをコンパイルし、エラーがあればまた編集し直してときどきプレビューもする、というのが普通のTeX作業。つまりファイルは開いているのが当たり前で、コンパイルの度に一々閉じたりしない。しかしこれだと残念ながらエラー行にジャンプしてくれない。<br>(原因) これは既に開いているファイルの状態を優先するためで、起動時に指定したファイルが既に開かれていたら、そのウィンドウをアクティブにするだけなのでこうなる。<br>(要望) 既に開いているファイルでもユーザが起動オプションを指定している場合はそれに従った動作をするようになってほしい(仕様変更)。もしくは共通設定かタイプ別設定でそう動作できるようなオプション指定が可能に。「開く」を「閉じて開く」動作にしてもいいが、閉じる手間だけムダ(保存してない場合は聞いてくるし。)少なくとも行ジャンプオプションだけでも有効になるようになってほしい。<br># 秀丸はこの辺はどうなっているのでしょう？　秀丸用のマクロTEXMACではDDEで行ジャンプの通信をしているようです。<br># 関連して以前、ShellExecuteでアプリ登録を簡単にできるように、という話がありましたが。。。。<br></div></section>

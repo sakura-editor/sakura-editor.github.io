@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>GREP除外フォルダとスペルチェック</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>GREP除外フォルダとスペルチェック | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">4072</span>
-    <a class="title" href="4072.html#4072">GREP除外フォルダとスペルチェック</a></div>
+    <a class="thread-title" href="4072.html#4072">GREP除外フォルダとスペルチェック</a></div>
     <ul><li><div class="list-title">
     <span class="no">4095</span>
-    <a class="title" href="4072.html#4095">RE: GREP除外フォルダとスペルチェック</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=4072>
+    <a class="thread-title" href="4072.html#4095">RE: GREP除外フォルダとスペルチェック</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4072>
     <span class="no">[4072]</span>
-    <a class="title" href="#4072">GREP除外フォルダとスペルチェック</a>
+    <a class="thread-title" href="#4072">GREP除外フォルダとスペルチェック</a>
     <span class="author">みく</span>
     <time datetime="2005-10-28T20:43:51">2005年10月28日 20:43</time></h1>
     <div class="body"><br>（これはプロトタイプです。）<br><br>・GREP除外フォルダ<br>記事4071と変更なし<br><br>・スペルチェック<br>eGroups:spell20051028.LZH<br><br>SPLCHECK.DLLは<br>　　　http://www.threeweb.ad.jp/~ishioka/SpellChecker/SpellChecker.shtml<br>からダウンロードしてsakura.exeと同じフォルダに置いてください。<br>sakura.exeのあるフォルダにspellフォルダを作成し、<br>base.dic, user.dic を置いてください。<br>検索メニューにスペルチェックがあります。<br><br>辞書を操作するコマンド makespell を用意しました。<br>使い方はソースファイルのコメントを見てください。<br><br>スペルチェックを実行すると登録した単語がuser.txtにも保存されます。<br>このファイルを昇順ソート＆重複削除して makespell で辞書を再構築<br>すると正常にスペルチェックできるようになります。<br>（SPLCHECK.DLLのバグか、単語登録しても正しくマッチしないことが<br>あるため）<br><br>SPLCHECKのHPから辞書もダウンロードして、base.dicという名前に改名<br>しておいてもよいでしょう。<br></div></section>
     <ul><li><section><h1 id=4095>
     <span class="no">[4095]</span>
-    <a class="title" href="#4095">RE: GREP除外フォルダとスペルチェック</a>
+    <a class="thread-title" href="#4095">RE: GREP除外フォルダとスペルチェック</a>
     <span class="author">みく</span>
     <time datetime="2005-11-07T18:42:29">2005年11月07日 18:42</time></h1>
     <div class="body"><br>＃ぶら下げるツリーを間違えてたので。。。<br><br>&gt;（これはプロトタイプです。）<br><br>・GREP除外フォルダ<br>バグ修正(WordListが降順に並んでたバグ)<br>　CEditView_Grep.cppというファイルはまずいので、どっかのファイルに統合したほうがいい。<br>!/CVS !/.svn のように書くとフォルダを除外する。<br><br>・スペルチェック<br>バグ修正<br>バグ修正<br>バグ修正<br>スペルチェック用DLLを自作<br><br>sakuraと同じフォルダに MySpell.dll を置く。<br>spell/myspell.txt ファイルを作成し、1行に1単語を記述する。<br>ツールメニューにスペルチェックがあります。<br><br><br>eGroups:source/myspell20051104.lzh<br><br><br>分かってるバグ：<br>・辞書ファイルの最後に改行がないとバッファオーバーランする。<br>・MYSPELL.DLLがないときにエラーかどうかわからず終わってしまう。<br>・ツールバーのアイコンを作ってない。<br>・UNICODEでビルドしたらmalloc等のサイズ(sizeofのとこ)が間違ってる。<br>・日本語単語には対応してない（英単語だからこれはいいよね）<br>・候補解析ルーチンが微妙・・・<br><br>親切だろう集：<br>・スペルチェック開始時にいきなり開始せず問い合わせしたほうが親切だろう。<br>・カーソル位置からスペルチェック開始とかもできたほうが親切だろう。<br>・単語を小文字→頭文字大文字→大文字変換のトグルボタン用意したほうが親切だろう。<br>・フリーの辞書をがんばって作って提供したほうが親切だろう。<br>・DLL位置を設定画面で指定できたほうが親切だろう。<br>　　（コメントアウト状態）<br></div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Windows Script Componentの使用、が出来ない</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Windows Script Componentの使用、が出来ない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7925</span>
-    <a class="title" href="7925.html#7925">Windows Script Componentの使用、が出来ない</a></div>
+    <a class="thread-title" href="7925.html#7925">Windows Script Componentの使用、が出来ない</a></div>
     <ul><li><div class="list-title">
     <span class="no">7926</span>
-    <a class="title" href="7925.html#7926">Re:Windows Script Componentの使用、が出来ない</a></div>
+    <a class="thread-title" href="7925.html#7926">Re:Windows Script Componentの使用、が出来ない</a></div>
     <ul><li><div class="list-title">
     <span class="no">7927</span>
-    <a class="title" href="7925.html#7927">Re2:Windows Script Componentの使用、が出来ない</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7925>
+    <a class="thread-title" href="7925.html#7927">Re2:Windows Script Componentの使用、が出来ない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7925>
     <span class="no">[7925]</span>
-    <a class="title" href="#7925">Windows Script Componentの使用、が出来ない</a>
+    <a class="thread-title" href="#7925">Windows Script Componentの使用、が出来ない</a>
     <span class="author">質問します</span>
     <time datetime="2014-12-29T21:41:36">2014年12月29日 21:41</time></h1>
     <div class="body">ホームページ<br>　　<a href=http://www.geocities.jp/maru3128/SakuraMacro/ target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>maru3128<wbr>/<wbr>SakuraMa<wbr>cro/<wbr></nobr></a><br>の<br>　　Windows Script Componentの使用<br>を参照して<br><br>　　WSCサンプル（呼ばれる側）<br>　　VBScriptから呼び出し<br><br>を作り、実行しました。するとエラーが発生します。<br>　　Error<br>　　[Line 2]error (null)<br><br>場所は<br><br><br>Set oFunc=GetObject("Script:" &amp; WSC_PATH)<br><br><br>です。<br>使っているのは次です<br><br>サクラエディタ   Ver. 2.0.4.0<br><br>      Share Ver: 110<br>      Compile Info: V 1400  WR WIN501/I501/C000/N000<br>      Last Modified: 2012/1/15 12:56:36<br><br>解決方法があるでしょうか。<br></div></section>
     <ul><li><section><h1 id=7926>
     <span class="no">[7926]</span>
-    <a class="title" href="#7926">Re:Windows Script Componentの使用、が出来ない</a>
+    <a class="thread-title" href="#7926">Re:Windows Script Componentの使用、が出来ない</a>
     <span class="author">AC</span>
     <time datetime="2014-12-30T00:06:33">2014年12月30日 00:06</time></h1>
     <div class="body">そんなことができるのですねえ。試してみました。<br>最初はなんの文字も挿入されなかったのですが、<br>.wscファイルを Shift_JISから UTF-8に変更して<br>保存すると、.jsマクロから VBSの InsTextVBSを<br>呼び出すことに成功しました。<br>OSは Windows Vistaです。<br></div></section>
     <ul><li><section><h1 id=7927>
     <span class="no">[7927]</span>
-    <a class="title" href="#7927">Re2:Windows Script Componentの使用、が出来ない</a>
+    <a class="thread-title" href="#7927">Re2:Windows Script Componentの使用、が出来ない</a>
     <span class="author">質問します</span>
     <time datetime="2014-12-30T07:16:27">2014年12月30日 07:16</time></h1>
     <div class="body">▼ ACさん<br>&gt; そんなことができるのですねえ。試してみました。<br>&gt; 最初はなんの文字も挿入されなかったのですが、<br>&gt; .wscファイルを Shift_JISから UTF-8に変更して<br>&gt; 保存すると、.jsマクロから VBSの InsTextVBSを<br>&gt; 呼び出すことに成功しました。<br>&gt; OSは Windows Vistaです。<br><br>返信ありがとうございます<br>UTF-8で保存しましたが、結果は変わりませんでした。<br>残念です。<br>バージョンが古いのでしょうか。<br>なお、当方はWindows XP SP2です。<br>これも原因かもしれませんね。<br></div></section>

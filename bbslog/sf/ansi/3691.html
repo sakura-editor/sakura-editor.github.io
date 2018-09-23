@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>OLE Drag &amp; Dropの挙動</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>OLE Drag &amp; Dropの挙動 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3691</span>
-    <a class="title" href="3691.html#3691">OLE Drag &amp; Dropの挙動</a></div>
+    <a class="thread-title" href="3691.html#3691">OLE Drag &amp; Dropの挙動</a></div>
     <ul><li><div class="list-title">
     <span class="no">3695</span>
-    <a class="title" href="3691.html#3695">Re: OLE Drag &amp; Dropの挙動</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3691>
+    <a class="thread-title" href="3691.html#3695">Re: OLE Drag &amp; Dropの挙動</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3691>
     <span class="no">[3691]</span>
-    <a class="title" href="#3691">OLE Drag &amp; Dropの挙動</a>
+    <a class="thread-title" href="#3691">OLE Drag &amp; Dropの挙動</a>
     <span class="author">げんた</span>
     <time datetime="2004-08-06T23:57:33">2004年08月06日 23:57</time></h1>
     <div class="body">Drag &amp; Dropの動作を見ていて気付いたのですが，他のウィンドウに対してはCTRLキーの状態にかかわらず常にCOPYとなるようになっています．(Controlを押してもアイコンが変わらないのであれ？っと)<br><br>CEditView::OnLBUTTONDOWN()中のDragDropの戻り値(dwEffects)がDROPEFFECT_MOVEの時は選択範囲を削除するようにすれば移動を実装できるのではないかと思うんですが．意味は無いのかなぁ？<br><br>ちなみにFALSE == m_bDragSourceの判定がCEditView::DragEnter()で抜けているので最初の一瞬だけMoveカーソルになる点はなおしておきます．<br></div></section>
     <ul><li><section><h1 id=3695>
     <span class="no">[3695]</span>
-    <a class="title" href="#3695">Re: OLE Drag &amp; Dropの挙動</a>
+    <a class="thread-title" href="#3695">Re: OLE Drag &amp; Dropの挙動</a>
     <span class="author">もか</span>
     <time datetime="2004-08-07T02:07:16">2004年08月07日 02:07</time></h1>
     <div class="body">萌ディタの開発日記が、詳しいです（おい<br>http://www.geocities.co.jp/SiliconValley-Oakland/3617/<br>2004/03/08、2004/02/16あたりとか。<br><br>プロセス間の矩形D&amp;Dが出来ない。<br>あと、VS.NETや VS6ツールのDataObject Viewerなどにはドロップ出来ません。<br></div></section>

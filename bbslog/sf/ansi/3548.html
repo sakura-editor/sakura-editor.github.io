@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>HTMLアウトラインの改良</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>HTMLアウトラインの改良 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3548</span>
-    <a class="title" href="3548.html#3548">HTMLアウトラインの改良</a></div>
+    <a class="thread-title" href="3548.html#3548">HTMLアウトラインの改良</a></div>
     <ul><li><div class="list-title">
     <span class="no">3558</span>
-    <a class="title" href="3548.html#3558">Re: HTMLアウトラインの改良</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3548>
+    <a class="thread-title" href="3548.html#3558">Re: HTMLアウトラインの改良</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3548>
     <span class="no">[3548]</span>
-    <a class="title" href="#3548">HTMLアウトラインの改良</a>
+    <a class="thread-title" href="#3548">HTMLアウトラインの改良</a>
     <span class="author">もか</span>
     <time datetime="2004-04-25T00:43:36">2004年04月25日 00:43</time></h1>
     <div class="body">&gt;&gt;data:3807 に対する改良です。<br>空要素があるとダメなのではなく、コメントを認識していない＆ツリーにない終了タグの扱いあたりが、原因のようです。<br><br>HTMLアウトラインツリーでルート直下にぶら下がる問題に対する修正案です。<br>htmlの完全パースは、相当複雑な実装が必要なので、HTML4.01に適合した文書であっても正しく解析できないものもあります。<br>終了タグの省略は、うまく扱えないことがあります。<br>例：＜ｐ＞a＜ｐ＞a＜/ｐ＞<br>また、xml,xhtmlで、空でない要素を空要素のような書き方にするのもダメです。<br>例：＜p /＞<br><br>http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/ol_html.diff<br></div></section>
     <ul><li><section><h1 id=3558>
     <span class="no">[3558]</span>
-    <a class="title" href="#3558">Re: HTMLアウトラインの改良</a>
+    <a class="thread-title" href="#3558">Re: HTMLアウトラインの改良</a>
     <span class="author">もか</span>
     <time datetime="2004-05-01T23:13:26">2004年05月01日 23:13</time></h1>
     <div class="body">&gt;&gt;data:3807<br>で、指摘していることをそのまんま書くと、駄目であることにいまさら気が付きました。<br>本来のHTMLパーサの適切な動作は、「不明な要素は無視する」ものです。<br>現状とりあえずツリーに追加しているから変な動作になっています。<br>HTMLである以上、不明な要素をxml風に処理すべきか、否か、微妙です。<br>正しい、HTML4.01かxhtml1.0(の互換性ガイドラインに沿った)文書なら大抵問題ないはず。<br>xhtml + mathML +SVGとか他のxml系言語が混ざると問題ありかも<br></div></section>

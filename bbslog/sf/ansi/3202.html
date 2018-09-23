@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>折り返し桁数を無制限に</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>折り返し桁数を無制限に | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3202</span>
-    <a class="title" href="3202.html#3202">折り返し桁数を無制限に</a></div>
+    <a class="thread-title" href="3202.html#3202">折り返し桁数を無制限に</a></div>
     <ul><li><div class="list-title">
     <span class="no">3244</span>
-    <a class="title" href="3202.html#3244">Re:折り返し桁数を無制限に</a></div>
+    <a class="thread-title" href="3202.html#3244">Re:折り返し桁数を無制限に</a></div>
     <ul><li><div class="list-title">
     <span class="no">3247</span>
-    <a class="title" href="3202.html#3247">Re2:折り返し桁数を無制限に</a></div>
+    <a class="thread-title" href="3202.html#3247">Re2:折り返し桁数を無制限に</a></div>
     <ul><li><div class="list-title">
     <span class="no">3248</span>
-    <a class="title" href="3202.html#3248">Re3:折り返し桁数を無制限に</a></div>
+    <a class="thread-title" href="3202.html#3248">Re3:折り返し桁数を無制限に</a></div>
     <ul><li><div class="list-title">
     <span class="no">3250</span>
-    <a class="title" href="3202.html#3250">Re4:折り返し桁数を無制限に</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3202>
+    <a class="thread-title" href="3202.html#3250">Re4:折り返し桁数を無制限に</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3202>
     <span class="no">[3202]</span>
-    <a class="title" href="#3202">折り返し桁数を無制限に</a>
+    <a class="thread-title" href="#3202">折り返し桁数を無制限に</a>
     <span class="author">サイコジプシー</span>
     <time datetime="2003-09-30T10:52:41">2003年09月30日 10:52</time></h1>
     <div class="body">折り返し桁数を無制限にするには、m_nMaxLineSizeの解釈を変えて、開いたファイルの最大桁数を計算する必要が出てきます。m_nMaxLineSize==INT_MAXのとき折り返しなしと解釈することにして、そのとき読み込み時に計算した最大桁数を代わりに使う、という感じでお願いします。ReadLineの呼び出し個所でpnLineLenが返されますから、これを使いましょう。<br><br>できたら、IDD_PROPTYPESP1 DIALOGEXのIDC_EDIT_MAXLINELENの隣に「折り返しする」というチェックを追加して、初期化・取得されるようにしてください。</div></section>
     <ul><li><section><h1 id=3244>
     <span class="no">[3244]</span>
-    <a class="title" href="#3244">Re:折り返し桁数を無制限に</a>
+    <a class="thread-title" href="#3244">Re:折り返し桁数を無制限に</a>
     <span class="author">qhlmw</span>
     <time datetime="2003-10-13T15:27:22">2003年10月13日 15:27</time></h1>
     <div class="body">他人が言う冗談がわからないqhlmwです。<br>&gt; 折り返し桁数を無制限にするには、m_nMaxLineSizeの解釈を変えて、開いたファイルの最大桁数を計算する必要が出てきます。m_nMaxLineSize==INT_MAXのとき折り返しなしと解釈することにして、そのとき読み込み時に計算した最大桁数を代わりに使う、という感じでお願いします。ReadLineの呼び出し個所でpnLineLenが返されますから、これを使いましょう。<br>&gt; <br>&gt; できたら、IDD_PROPTYPESP1 DIALOGEXのIDC_EDIT_MAXLINELENの隣に「折り返しする」というチェックを追加して、初期化・取得されるようにしてください。<br><br>これも自分に言ってるのですか？</div></section>
     <ul><li><section><h1 id=3247>
     <span class="no">[3247]</span>
-    <a class="title" href="#3247">Re2:折り返し桁数を無制限に</a>
+    <a class="thread-title" href="#3247">Re2:折り返し桁数を無制限に</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-10-14T16:20:29">2003年10月14日 16:20</time></h1>
     <div class="body">&gt; これも自分に言ってるのですか？<br><br>開発に無関係なことを答える義務はありません。君とタッグを組むのはお断りします。</div></section>
     <ul><li><section><h1 id=3248>
     <span class="no">[3248]</span>
-    <a class="title" href="#3248">Re3:折り返し桁数を無制限に</a>
+    <a class="thread-title" href="#3248">Re3:折り返し桁数を無制限に</a>
     <span class="author">ななし</span>
     <time datetime="2003-10-14T21:09:53">2003年10月14日 21:09</time></h1>
     <div class="body">▼ wmlhqさん<br>&gt; &gt; これも自分に言ってるのですか？<br>&gt; <br>&gt; 開発に無関係なことを答える義務はありません。君とタッグを組むのはお断りします。<br><br>誰が作るのかを問うているので、無関係ではない。<br></div></section>
     <ul><li><section><h1 id=3250>
     <span class="no">[3250]</span>
-    <a class="title" href="#3250">Re4:折り返し桁数を無制限に</a>
+    <a class="thread-title" href="#3250">Re4:折り返し桁数を無制限に</a>
     <span class="author">もか</span>
     <time datetime="2003-10-15T00:33:01">2003年10月15日 00:33</time></h1>
     <div class="body">誰が作るかは知りませんが、私がだいぶ前に最大値を大きくしたものなら、HP上に放置されていますので、<br>実装して下さる方がいらっしゃるなら、ご自由にお使いください。<br>以下、技術的なお話。<br>&gt;ReadLineの呼び出し個所でpnLineLenが返されますから、これを使いましょう。<br>表示上の桁数と、データの長さは別のものなので使えません。<br>まじめに、TAB,Unicodeなら文字の幅を計算する必要があります。<br>また、Win9xのGDIで座標が2^15を超えられなかったような気がします。<br>そもそも、現在の作画ルーチンでは、画面外も表示色サーチを<br>無意味でも行うために、とても重くなってしまいます。<br>また、折り返し桁数の限界値も、(2^31 / 文字幅)以下であることは容易にわかりますが、各所の計算でオバーフローしない値以下にしてやらないといけません。<br>画面外は文字幅だけで計算して、表示画面内のみドットで計算すれば、問題にはなりませんが、将来プロポーショナルフォントはサポートできそうになくなります。<br></div></section>

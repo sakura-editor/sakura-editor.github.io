@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Cのプリプロセッサ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Cのプリプロセッサ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3467</span>
-    <a class="title" href="3467.html#3467">Cのプリプロセッサ</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=3467>
+    <a class="thread-title" href="3467.html#3467">Cのプリプロセッサ</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3467>
     <span class="no">[3467]</span>
-    <a class="title" href="#3467">Cのプリプロセッサ</a>
+    <a class="thread-title" href="#3467">Cのプリプロセッサ</a>
     <span class="author">aono</span>
     <time datetime="2004-03-12T09:49:48">2004年03月12日 09:49</time></h1>
     <div class="body">すみません。既知のことなら申し訳ありませんが<br>Cのデフォルト設定では#if 0を使った場合、次の#endifまでをコメントアウトしてしまいますが<br>#if 0の中で#if～#endifを使いたい場合とかも判定してほしいなぁなんて、、<br>使わせてもらっといて恐縮ですが。<br><br>#if 0<br>　#if DEF_A==0<br>　　　#define DEF_B<br>　　#endif<br>　#if DEF_A==1<br>　　#define DEF_C<br>　#endif<br>#endif<br><br>version 1.4.3.3V<br><br></div></section>

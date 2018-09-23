@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行コードが無意識に混在してしまった場合の対応方法</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>改行コードが無意識に混在してしまった場合の対応方法 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5388</span>
-    <a class="title" href="5388.html#5388">改行コードが無意識に混在してしまった場合の対応方法</a></div>
+    <a class="thread-title" href="5388.html#5388">改行コードが無意識に混在してしまった場合の対応方法</a></div>
     <ul><li><div class="list-title">
     <span class="no">5389</span>
-    <a class="title" href="5388.html#5389">RE: 改行コードが無意識に混在してしまった場合の対応方法</a></div>
+    <a class="thread-title" href="5388.html#5389">RE: 改行コードが無意識に混在してしまった場合の対応方法</a></div>
     <ul><li><div class="list-title">
     <span class="no">5393</span>
-    <a class="title" href="5388.html#5393">Re2: 改行コードが無意識に混在してしまった場合の対応方法</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5388>
+    <a class="thread-title" href="5388.html#5393">Re2: 改行コードが無意識に混在してしまった場合の対応方法</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5388>
     <span class="no">[5388]</span>
-    <a class="title" href="#5388">改行コードが無意識に混在してしまった場合の対応方法</a>
+    <a class="thread-title" href="#5388">改行コードが無意識に混在してしまった場合の対応方法</a>
     <span class="author">きすけ</span>
     <time datetime="2006-08-22T20:38:35">2006年08月22日 20:38</time></h1>
     <div class="body">いつも、サクラエディタを利用させて頂いています。<br><br>題名にもありますが、改行コードが混在してしまった場合の<br>回避策はありますでしょうか？<br>現在そのように遭遇した場合は、[名前をつけて保存]→<br>[改行コード]を「LF(UNIX)」と個々に行っています。<br><br>希望としては、<br>①最初の行の改行コードに統一<br>②設定等で、改行コードを予め設定<br>③その他<br>です。<br><br>自分は、UNIX系の開発をしているので、改行コードをLFにし<br>ています。<br>時により、改行コードがCRLFのテキストをコピペしてしまい、<br>コンパイル時にエラーの続発になる場合が多々ありました。<br>原因は、改行コードの混在です。<br>「FTPする時に、ASCIIに変換してやれば？」とありますが、<br>FTP自身の設定を忘れてしまった場合などを考慮すると、<br>LFのまま（ASCII変換しないでそのまま）が理想です。<br><br>事例として…<br>下記のようにソースを記述します。<br>1:…………LF<br>2:…………LF<br>3:…………LF<br>4:…………LF<br>5:…………LF<br>行と行の間に<br>……………CRLF<br>……………CRLF<br>……………CRLF<br>を挿入すると、<br>1:…………LF<br>2:…………LF<br>3:…………LF<br>4:…………CRLF<br>5:…………CRLF<br>6:…………CRLF<br>7:…………LF<br>8:…………LF<br>となり、上書き保存だと、混在したままになってしまいます。<br><br>また、上記のように行ったところ、<br>1:…………LF<br>2:…………LF<br>3:…………LF<br>4:…………CR<br>5:…………CR<br>6:…………CR<br>7:…………LF<br>8:…………LF<br>のように、CRLFがCRのみになってしまった事も遭遇した事<br>もありました。<br>(改行のマークが違ったパターンだったので、調べたらCR)<br><br>お忙しいところすみませんが、宜しくお願いします。<br></div></section>
     <ul><li><section><h1 id=5389>
     <span class="no">[5389]</span>
-    <a class="title" href="#5389">RE: 改行コードが無意識に混在してしまった場合の対応方法</a>
+    <a class="thread-title" href="#5389">RE: 改行コードが無意識に混在してしまった場合の対応方法</a>
     <span class="author">すい</span>
     <time datetime="2006-08-22T23:19:38">2006年08月22日 23:19</time></h1>
     <div class="body">&gt;題名にもありますが、改行コードが混在してしまった場合の<br>&gt;回避策はありますでしょうか？<br><br>置換する。<br>&gt;&gt;data:4229<br><br>私は改行置換の動作をマクロ登録して使っています。<br><br>・選択範囲の改行コードを CRLF<br>・選択範囲の改行コードを LF<br>・選択範囲の改行コードを CR<br><br>↑これら３種類のマクロを右クリックメニューに登録して使っています。<br></div></section>
     <ul><li><section><h1 id=5393>
     <span class="no">[5393]</span>
-    <a class="title" href="#5393">Re2: 改行コードが無意識に混在してしまった場合の対応方法</a>
+    <a class="thread-title" href="#5393">Re2: 改行コードが無意識に混在してしまった場合の対応方法</a>
     <span class="author">きすけ</span>
     <time datetime="2006-08-23T09:42:01">2006年08月23日 09:42</time></h1>
     <div class="body">返答有難うございます。<br><br>&gt; <br>&gt; 私は改行置換の動作をマクロ登録して使っています。<br>&gt; <br>&gt; ・選択範囲の改行コードを CRLF<br>&gt; ・選択範囲の改行コードを LF<br>&gt; ・選択範囲の改行コードを CR<br>&gt; <br>&gt; ↑これら３種類のマクロを右クリックメニューに登録して使っています。<br><br>なるほど。<br>正規表現を含め、マクロ対応されているのですね。<br>チャレンジしてみます。<br><br></div></section>

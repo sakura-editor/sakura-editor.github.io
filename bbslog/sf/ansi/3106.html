@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アウトライン解析の抽出基準</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アウトライン解析の抽出基準 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3106</span>
-    <a class="title" href="3106.html#3106">アウトライン解析の抽出基準</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=3106>
+    <a class="thread-title" href="3106.html#3106">アウトライン解析の抽出基準</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3106>
     <span class="no">[3106]</span>
-    <a class="title" href="#3106">アウトライン解析の抽出基準</a>
+    <a class="thread-title" href="#3106">アウトライン解析の抽出基準</a>
     <span class="author">namu</span>
     <time datetime="2003-09-10T02:57:46">2003年09月10日 02:57</time></h1>
     <div class="body">環境は<br>Windows XP Professional SP1<br>InternetExplorer6 SP1<br>sakura-2003-09-07(13xx系でも起こりました)にて、<br>Cのソースファイルのアウトライン解析結果が、<br>関数の宣言の仕方によって変わってしまいます。<br><br>症状は、既知のバグ<br>▼◆1999.08.24 Ver 0.3.7.0 リリース ----------<br>▼・1999.08.23 ■  1999.08.23 アウトライン解析で<br>▼　　　　　　　　　　　　　　旧式のC関数定義を、<br>▼　　　　　　　　　　　　　　C関数宣言と間違えてしまう不具合<br>に該当するのかもしれないのですが、<br>よろしければご確認いただければと思い投稿致しました。<br><br>簡単に説明致しますと、<br>旧式のC関数定義をすると、<br>if(),for(),while(),switch()などの関数が、<br>アウトライン解析で拾われてしまいます。<br><br>言葉ではうまく表現できませんので、<br>下記リンクに簡単なコメント付きソースを載せてみました。<br><a href=http://www.eonet.ne.jp/~selfish-/namu/sample.html target=_top><nobr>http://<wbr>www.<wbr>eonet.<wbr>ne.<wbr>jp/~<wbr>selfish-/<wbr>namu/<wbr>sample.<wbr>html</nobr></a><br><br>現在勉強中の身ですので、<br>修正までは力が及びませんが、<br>よろしく御願い致します。</div></section>

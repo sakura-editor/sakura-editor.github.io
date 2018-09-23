@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>UNICODE版のtrunk移行について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>UNICODE版のtrunk移行について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">600</span>
-    <a class="title" href="600.html#600">UNICODE版のtrunk移行について</a></div>
+    <a class="thread-title" href="600.html#600">UNICODE版のtrunk移行について</a></div>
     <ul><li><div class="list-title">
     <span class="no">603</span>
-    <a class="title" href="600.html#603">Re(DevU:49):UNICODE版のtrunk移行について</a></div>
+    <a class="thread-title" href="600.html#603">Re(DevU:49):UNICODE版のtrunk移行について</a></div>
     <ul><li><div class="list-title">
     <span class="no">604</span>
-    <a class="title" href="600.html#604">Re:Re(DevU:49):UNICODE版のtrunk移行について</a></div>
+    <a class="thread-title" href="600.html#604">Re:Re(DevU:49):UNICODE版のtrunk移行について</a></div>
     </li><li><div class="list-title">
     <span class="no">608</span>
-    <a class="title" href="600.html#608">Re:Re(DevU:49):UNICODE版のtrunk移行について</a></div>
+    <a class="thread-title" href="600.html#608">Re:Re(DevU:49):UNICODE版のtrunk移行について</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">627</span>
-    <a class="title" href="600.html#627">Re:UNICODE版のtrunk移行について</a></div>
+    <a class="thread-title" href="600.html#627">Re:UNICODE版のtrunk移行について</a></div>
     </li><li><div class="list-title">
     <span class="no">646</span>
-    <a class="title" href="600.html#646">【追加アナウンス】Re:UNICODE版のtrunk移行について</a></div>
+    <a class="thread-title" href="600.html#646">【追加アナウンス】Re:UNICODE版のtrunk移行について</a></div>
     </li><li><div class="list-title">
     <span class="no">910</span>
-    <a class="title" href="600.html#910">yguq4 kfcvl</a></div>
+    <a class="thread-title" href="600.html#910">yguq4 kfcvl</a></div>
     </li><li><div class="list-title">
     <span class="no">911</span>
-    <a class="title" href="600.html#911">yguq4 kfcvl</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=600>
+    <a class="thread-title" href="600.html#911">yguq4 kfcvl</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=600>
     <span class="no">[600]</span>
-    <a class="title" href="#600">UNICODE版のtrunk移行について</a>
+    <a class="thread-title" href="#600">UNICODE版のtrunk移行について</a>
     <span class="author">げんた</span>
     <time datetime="2008-09-21T00:55:15">2008年09月21日 00:55</time></h1>
     <div class="body">ANSI開発掲示板に書きましたが，今後は正式にUNICODE版を開発のメインとして扱っていこうと考えています．<br><br>それにあたりブランチ名の改称を行います．<br>現在unicode2ブランチが branches 配下にありますが，1週間後にこれを sakura/trunk2 に移動します．(移動はkobakeさんにお願いしてあります)<br><br>改称後はそのままでは操作できなくなりますので，作業ディレクトリを持ち越すときは各自subversionのswitchコマンドにて新しいURLに変更してください．<br><br>参考: Subversion で作業コピーの URL を変更する方法<br>http://cl.pocari.org/2007-04-08-1.html<br></div></section>
     <ul><li><section><h1 id=603>
     <span class="no">[603]</span>
-    <a class="title" href="#603">Re(DevU:49):UNICODE版のtrunk移行について</a>
+    <a class="thread-title" href="#603">Re(DevU:49):UNICODE版のtrunk移行について</a>
     <span class="author">あろか</span>
     <time datetime="2008-09-21T17:33:50">2008年09月21日 17:33</time></h1>
     <div class="body">&gt; げんたさん<br>&gt; &gt;kobakeさん<br>&gt; &gt;UNICODE化代表者 (になったらしい) 的見解としては、<br>&gt; &gt;「trunkに統合されるまではVisualStudioのみ対応」で進めることを提案します。<br>&gt; ＃ソース見ないで発言します<br>&gt; <br>&gt; #defineの可変引数が使われていてVS2003でもコンパイル通らない訳なんですが，とりあえずVS 2005のみで進めてもらってもいいんじゃないでしょうか．<br>&gt; <br>&gt; VS2003やBCC対応はラッパー関数とか置換で後からなんとかなるような気がします．<br>&gt; <br>&gt; 他にも起動が遅いとかバイナリがでかいとか気になるところはありますが，その辺も動いてからで．<br><br>「VS2005のみ対応」の状態でtrunk統合する、ということでよいのですよね？<br>BCC対応やVS2003対応は統合後有志が行う（かもしれない）、ってことでよいのかな。<br>＃VS2008EE SP1でコンパイルはとおりました。<br></div></section>
     <ul><li><section><h1 id=604>
     <span class="no">[604]</span>
-    <a class="title" href="#604">Re:Re(DevU:49):UNICODE版のtrunk移行について</a>
+    <a class="thread-title" href="#604">Re:Re(DevU:49):UNICODE版のtrunk移行について</a>
     <span class="author">kobake</span>
     <time datetime="2008-09-22T03:01:45">2008年09月22日 03:01</time></h1>
     <div class="body">Visual Studio のバージョン制限等は、あくまでも trunk統合までの仮ルールなので、trunk統合した時点で、そのあたりの制限は取っ払ってしまって結構です。<br>ベターと思われるルールをご自由に練っていただければ、と。<br><br>メールにて、trunk移行に至る経緯のチャットログを送付致しました。よろしければそちらもご参照ください。<br>（チャットではVisual Studioバージョン等についての言明は行っていませんが）<br></div></section>
     </li><li><section><h1 id=608>
     <span class="no">[608]</span>
-    <a class="title" href="#608">Re:Re(DevU:49):UNICODE版のtrunk移行について</a>
+    <a class="thread-title" href="#608">Re:Re(DevU:49):UNICODE版のtrunk移行について</a>
     <span class="author">ryoji</span>
     <time datetime="2008-09-25T23:25:06">2008年09月25日 23:25</time></h1>
     <div class="body">▼ あろかさん<br>&gt; 「VS2005のみ対応」の状態でtrunk統合する、ということでよいのですよね？<br>&gt; BCC対応やVS2003対応は統合後有志が行う（かもしれない）、ってことでよいのかな。<br><br>多環境対応は、それ自体が開発側の負荷増大に繋がるので無条件に「良し」とも思えませんけどね。(^^;;;<br>古いものは徐々に入手困難になるのだし、それよりもきっと新環境への対応のほうを重視してほしいかも。<br><br>64bit対応 ＞ ANSI対応<br>とか。</div></section>
     </li></ul></li><li><section><h1 id=627>
     <span class="no">[627]</span>
-    <a class="title" href="#627">Re:UNICODE版のtrunk移行について</a>
+    <a class="thread-title" href="#627">Re:UNICODE版のtrunk移行について</a>
     <span class="author">anonymous</span>
     <time datetime="2008-09-28T18:31:40">2008年09月28日 18:31</time></h1>
     <div class="body">１利用者としての要望です。<br><br>UNICODE版をメインストリームにするために<br>unicode2ブランチをtrunk2に変更すること<br>には賛成ですが、現状ではunicode2_drawを<br>unicode2にコミットすることは反対します。</div></section>
     </li><li><section><h1 id=646>
     <span class="no">[646]</span>
-    <a class="title" href="#646">【追加アナウンス】Re:UNICODE版のtrunk移行について</a>
+    <a class="thread-title" href="#646">【追加アナウンス】Re:UNICODE版のtrunk移行について</a>
     <span class="author">kobake</span>
     <time datetime="2008-10-04T00:32:16">2008年10月04日 00:32</time></h1>
     <div class="body">アナウンス漏れがありますので、<br>げんたさんに代わりまして追加アナウンスをしておきます。<br><br>コミットのルールですが、本ルールが決まるまでの暫定ルールとして、<br>「コミットはレビュー無しで行える（ブランチ時代を踏襲）」という方針とします。<br><br>本ルールは随時議論をするなりして決定してくださいませ。<br>＃誰に議決権があるのか自分は知りませんが。<br></div></section>
     </li><li><section><h1 id=910>
     <span class="no">[910]</span>
-    <a class="title" href="#910">yguq4 kfcvl</a>
+    <a class="thread-title" href="#910">yguq4 kfcvl</a>
     <span class="author">xzajp s5xsla</span>
     <time datetime="2009-05-19T18:31:58">2009年05月19日 18:31</time></h1>
     <div class="body">Hi, you have a great site! I also recommend this site: [url=http://www.yo1glpvkoz.com]v0gk4c[/url] , thanks!</div></section>
     </li><li><section><h1 id=911>
     <span class="no">[911]</span>
-    <a class="title" href="#911">yguq4 kfcvl</a>
+    <a class="thread-title" href="#911">yguq4 kfcvl</a>
     <span class="author">q8h4je s3qvx</span>
     <time datetime="2009-05-19T18:31:59">2009年05月19日 18:31</time></h1>
     <div class="body">Hi, you have a great site! I also recommend this site: http://www.yo1glpvkoz.com v0gk4c , thanks!</div></section>

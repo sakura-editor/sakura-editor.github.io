@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現の色分けに関しての要望</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現の色分けに関しての要望 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6454</span>
-    <a class="title" href="6454.html#6454">正規表現の色分けに関しての要望</a></div>
+    <a class="thread-title" href="6454.html#6454">正規表現の色分けに関しての要望</a></div>
     <ul><li><div class="list-title">
     <span class="no">6470</span>
-    <a class="title" href="6454.html#6470">Re:正規表現の色分けに関しての要望</a></div>
+    <a class="thread-title" href="6454.html#6470">Re:正規表現の色分けに関しての要望</a></div>
     <ul><li><div class="list-title">
     <span class="no">6475</span>
-    <a class="title" href="6454.html#6475">Re2:正規表現の色分けに関しての要望</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6454>
+    <a class="thread-title" href="6454.html#6475">Re2:正規表現の色分けに関しての要望</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6454>
     <span class="no">[6454]</span>
-    <a class="title" href="#6454">正規表現の色分けに関しての要望</a>
+    <a class="thread-title" href="#6454">正規表現の色分けに関しての要望</a>
     <span class="author">さくらラヴァー</span>
     <time datetime="2007-11-12T00:25:36">2007年11月12日 00:25</time></h1>
     <div class="body">ありがたく使わせて頂いております＆開発の方々に感謝を。<br><br>【要望概要】<br>正規表現キーワードを用いた色の変更で()を使ったサブパターン部分の強調が出来ないか？<br><br>【詳細】<br>正規表現キーワードで条件を記述するとその条件にマッチした部分全てが設定した<br>色になってしまいます。それを、例えば<br><br>/[^,]+,([^,]+),[^,]+,[^,]+/k<br><br>のように記述すると、サブパターンの部分のみ設定した色で表示される、みたいな<br>事が出来るようにはならないでしょうか？贅沢を言えば、括弧を使ったサブパターン<br>全て夫々に違う色を設定できれば言うことはないのですが、これは大幅なUI変更等も含み<br>そうでそうでちょっと贅沢な要望かもしれません。ただ、一つののサブパターンだけを<br>対象とするのなら現在でも機能の強化といったレベルで簡単に実装できそう…と思った<br>次第です。<br><br>検討して頂けましたら幸いです。</div></section>
     <ul><li><section><h1 id=6470>
     <span class="no">[6470]</span>
-    <a class="title" href="#6470">Re:正規表現の色分けに関しての要望</a>
+    <a class="thread-title" href="#6470">Re:正規表現の色分けに関しての要望</a>
     <span class="author">空気</span>
     <time datetime="2007-11-16T13:21:08">2007年11月16日 13:21</time></h1>
     <div class="body">&gt; /[^,]+,([^,]+),[^,]+,[^,]+/k<br><br>このような場合は先読み・戻り読みを使ってみては。<br>(戻り読みは要bregonig)<br><br>/(?&lt;=[^,],)[^,]+(?=,[^,]+,[^.]+)/k<br><br>戻り読みで+や*など可変長マッチが使えないとこがネックですが<br>おおよそのパターンはカバーできるかと思います。</div></section>
     <ul><li><section><h1 id=6475>
     <span class="no">[6475]</span>
-    <a class="title" href="#6475">Re2:正規表現の色分けに関しての要望</a>
+    <a class="thread-title" href="#6475">Re2:正規表現の色分けに関しての要望</a>
     <span class="author">さくらラヴァー</span>
     <time datetime="2007-11-19T01:31:59">2007年11月19日 01:31</time></h1>
     <div class="body">▼ 空気さん<br>&gt; 戻り読みで+や*など可変長マッチが使えないとこがネックですが<br>&gt; おおよそのパターンはカバーできるかと思います。<br><br>助言感謝です。<br>最初の書込では書きませんでしたが、現在はがんばってその辺を駆使して<br>います。その結果、後でそのルールを手直しする時、『あれー、これ<br>どういう意図だったんだっけ…？？』なんてなっていたりますが(苦笑<br>先読み・戻り読みで可変長マッチが使えないのも結構苦難の一つですね。<br>不精せずメモでも残しとけってんでしょうけどね、あはは。<br><br>マクロとかで色分けできるようになれば凄く便利なんだろうけど、<br>実行タイミングや負荷等で問題が出そうですね。<br><br>とりあえず、現状手元に有る武器で何とか戦ってみます。<br>有難う御座いました。</div></section>

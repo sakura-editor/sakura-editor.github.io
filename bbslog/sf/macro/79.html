@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>マクロ内でファイルの有無を検出したい</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>マクロ内でファイルの有無を検出したい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">79</span>
-    <a class="title" href="79.html#79">マクロ内でファイルの有無を検出したい</a></div>
+    <a class="thread-title" href="79.html#79">マクロ内でファイルの有無を検出したい</a></div>
     <ul><li><div class="list-title">
     <span class="no">80</span>
-    <a class="title" href="79.html#80">Re:マクロ内でファイルの有無を検出したい</a></div>
+    <a class="thread-title" href="79.html#80">Re:マクロ内でファイルの有無を検出したい</a></div>
     <ul><li><div class="list-title">
     <span class="no">81</span>
-    <a class="title" href="79.html#81">Re2:マクロ内でファイルの有無を検出したい</a></div>
+    <a class="thread-title" href="79.html#81">Re2:マクロ内でファイルの有無を検出したい</a></div>
     <ul><li><div class="list-title">
     <span class="no">82</span>
-    <a class="title" href="79.html#82">マクロ内でファイルの有無を検出できました</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=79>
+    <a class="thread-title" href="79.html#82">マクロ内でファイルの有無を検出できました</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=79>
     <span class="no">[79]</span>
-    <a class="title" href="#79">マクロ内でファイルの有無を検出したい</a>
+    <a class="thread-title" href="#79">マクロ内でファイルの有無を検出したい</a>
     <span class="author">tsune</span>
     <time datetime="2004-05-23T00:18:32">2004年05月23日 00:18</time></h1>
     <div class="body">こんばんは。tsuneです。<br><br>　マクロ内でファイルの有無を検出したいのですが、適当な方法はございませんでしょうか。<br>　下記のようにやってみましたが、Execの戻り値がファイルの有無で分かれてくれません。<br>　戻り値 dirchk が必ず 1 になってしまいます。<br>　Execの使い方が間違っているのでしょうか。<br><br>　よろしくお願いします。<br>　ところで、<br>　#70の「マクロの強制終了」はできないということでしょうか。<br><br>　d:\data\hogehoge.HTMLの有無で処理を分岐させたいのです。hogehogeの部分には、ファイル名に相当する変数が順次に放り込まれます。実際のマクロは、(処理色々)の部分に長々と処理内容が記載してあり、if文も実際には、もっと内容がありますが、見にくいだけなので省略しました。<br><br><br>【マクロ】<br>var<br>　str,str2:String;&#9;// 文字列変数宣言<br>　dirchk:Integer;&#9;&#9;// 整数数値変数 tp を用意 - 作業用<br><br>begin&#9;// { 処理開始<br>　　・<br>　　・(処理色々)<br>　　・<br>　str := d:\data\hogehoge.HTM<br>　dirchk := Exec('html.bat',str,True);<br>　MessageBox(IntToStr(dirchk),'',1);<br>　if (dirchk = 1) then break<br>　else str2:="a";<br>　　・<br>　　・(処理色々)<br>　　・<br>end;<br><br>【html.bat】<br>@echo off<br>dir %1L /d | find "ファイルが見つかりません。"<br></div></section>
     <ul><li><section><h1 id=80>
     <span class="no">[80]</span>
-    <a class="title" href="#80">Re:マクロ内でファイルの有無を検出したい</a>
+    <a class="thread-title" href="#80">Re:マクロ内でファイルの有無を検出したい</a>
     <span class="author">しみづ</span>
     <time datetime="2004-05-23T12:31:55">2004年05月23日 12:31</time></h1>
     <div class="body"><br>　うーんと、例えばbuを使う方法でどうでしょう。<br>http://hp.vector.co.jp/authors/VA000007/<br>　ここのリストの下から２番目のバイナリを適当な場所に解凍してください。<br><br>　そして<br>var<br> str,str2:String;&#9;// 文字列変数宣言<br> dirchk:Integer;&#9;&#9;// 整数数値変数 tp を用意 - 作業用<br><br>begin&#9;// { 処理開始<br> str := 'fileline d:\data\hogehoge.HTM';<br> dirchk := Exec('c:\ddd\bu.com',str,True);<br> MessageBox(IntToStr(dirchk),'',1);<br> if (dirchk = 255) then break<br> else str2:='a';<br>end;<br></div></section>
     <ul><li><section><h1 id=81>
     <span class="no">[81]</span>
-    <a class="title" href="#81">Re2:マクロ内でファイルの有無を検出したい</a>
+    <a class="thread-title" href="#81">Re2:マクロ内でファイルの有無を検出したい</a>
     <span class="author">しみづ</span>
     <time datetime="2004-05-23T13:41:32">2004年05月23日 13:41</time></h1>
     <div class="body"><br>　ああ、でもロングファイル名がつかえないか。<br>　こっちのほうでいいのでは。<br><br><br>var<br> str,str2:String;&#9;// 文字列変数宣言<br> dirchk:Integer;&#9;&#9;// 整数数値変数 tp を用意 - 作業用<br><br>begin&#9;// { 処理開始<br> str := '/c dir d:\data\hogehoge.HTML';<br> dirchk := Exec('cmd.exe',str,True);<br> MessageBox(IntToStr(dirchk),'',1);<br> if (dirchk = 1) then break<br> else str2:='a';<br>end;<br></div></section>
     <ul><li><section><h1 id=82>
     <span class="no">[82]</span>
-    <a class="title" href="#82">マクロ内でファイルの有無を検出できました</a>
+    <a class="thread-title" href="#82">マクロ内でファイルの有無を検出できました</a>
     <span class="author">tsune</span>
     <time datetime="2004-05-23T16:11:05">2004年05月23日 16:11</time></h1>
     <div class="body">しみづ さん<br><br>　御教示ありがとうございました。<br>　２つ目にお教え戴いた方法でうまくいきました。下記のように、括弧の中にパラメータを直に入れましたが、問題無いようです。<br><br>　dirchk := Exec('cmd.exe','/c dir '+str+'L',True);<br><br>　要するに、dirの戻り値(終了コード))は、ファイルが見つからないときに 1 になるのですね。<br>　素人考えで、下手にパイプを使おうとしたのが、間違いでした。つい最近、別のソフトでパイプを使う必要のある例を教えて戴いたものですから、dirの終了コードを確かめもしないで、同じことをやる必要があるとの思い込みでした。<br><br>P.S.<br>　OSその他環境を一切書いてませんでした。申し訳ありません。<br>　Windows2000sp4でした。<br></div></section>

@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行時空行</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>改行時空行 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3332</span>
-    <a class="title" href="3332.html#3332">改行時空行</a></div>
+    <a class="thread-title" href="3332.html#3332">改行時空行</a></div>
     <ul><li><div class="list-title">
     <span class="no">3333</span>
-    <a class="title" href="3332.html#3333">Re:改行時空行</a></div>
+    <a class="thread-title" href="3332.html#3333">Re:改行時空行</a></div>
     <ul><li><div class="list-title">
     <span class="no">3336</span>
-    <a class="title" href="3332.html#3336">Re2:改行時空行</a></div>
+    <a class="thread-title" href="3332.html#3336">Re2:改行時空行</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">3335</span>
-    <a class="title" href="3332.html#3335">Re:改行時空行</a></div>
+    <a class="thread-title" href="3332.html#3335">Re:改行時空行</a></div>
     <ul><li><div class="list-title">
     <span class="no">3337</span>
-    <a class="title" href="3332.html#3337">Re2:改行時空行</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3332>
+    <a class="thread-title" href="3332.html#3337">Re2:改行時空行</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3332>
     <span class="no">[3332]</span>
-    <a class="title" href="#3332">改行時空行</a>
+    <a class="thread-title" href="#3332">改行時空行</a>
     <span class="author">DSS</span>
     <time datetime="2003-10-01T12:27:02">2003年10月01日 12:27</time></h1>
     <div class="body">秀丸とかにある機能ですが，インデントされて改行した<br>場合，その行を空行に出来ないでしょうか？<br><br>（→ タブ   ↓ 改行）<br><br>【現状】<br>→   →   →↓<br>→   →   →↓<br><br>【要望】<br>↓<br>↓<br><br>もちろん空行にタブなどを入力したときはそのままです．</div></section>
     <ul><li><section><h1 id=3333>
     <span class="no">[3333]</span>
-    <a class="title" href="#3333">Re:改行時空行</a>
+    <a class="thread-title" href="#3333">Re:改行時空行</a>
     <span class="author">ty</span>
     <time datetime="2003-10-01T12:35:53">2003年10月01日 12:35</time></h1>
     <div class="body">▼ DSSさん<br>&gt; 秀丸とかにある機能ですが，インデントされて改行した<br>&gt; 場合，その行を空行に出来ないでしょうか？<br>&gt; <br>&gt; （→ タブ   ↓ 改行）<br>&gt; <br>&gt; 【現状】<br>&gt; →   →   →↓<br>&gt; →   →   →↓<br>&gt; <br>&gt; 【要望】<br>&gt; ↓<br>&gt; ↓<br>&gt; <br>&gt; もちろん空行にタブなどを入力したときはそのままです．<br><br>ユーザーとして、この仕様は反対したいです。<br>例えば、タブ区切りで擬似データベースとして利用していた場合、タブだけを残して閉じる場合があります。<br>そういう場合に、消えてしまったら、またやり直しです。<br><br>この仕様をどのタイミングで行なうかにもよりますが、個人的には、マクロなどで対処すべき問題のような気もします。</div></section>
     <ul><li><section><h1 id=3336>
     <span class="no">[3336]</span>
-    <a class="title" href="#3336">Re2:改行時空行</a>
+    <a class="thread-title" href="#3336">Re2:改行時空行</a>
     <span class="author">DSS</span>
     <time datetime="2003-10-02T11:00:12">2003年10月02日 11:00</time></h1>
     <div class="body">▼ tyさん<br>&gt; ユーザーとして、この仕様は反対したいです。<br>&gt; 例えば、タブ区切りで擬似データベースとして利用していた場合、タブだけを残して閉じる場合があります。<br>&gt; そういう場合に、消えてしまったら、またやり直しです。<br><br>当然オプションです．拡張子ごとのオプションであれば<br>尚可でしょう．<br>自動インデントされて改行した場合に空白を除去するので<br>あって，空白をあとから入れても除去しない仕様（一般的<br>にはみんなこんな感じの実装になってますね） ですの<br>で問題はないだろうと．<br><br>&gt; この仕様をどのタイミングで行なうかにもよりますが、個人的には、マクロなどで対処すべき問題のような気もします。<br><br>マクロですと，スペースやタブを「入れておきたい」空行が無視される<br>ような気がします．<br>編集している最中であればどの行が空白を入れておきたいの<br>がか明白ですが，あとからマクロってことになると記憶に<br>頼らざるを得ないところがあり使い勝手に疑問がつきます．<br></div></section>
     </li></ul></li><li><section><h1 id=3335>
     <span class="no">[3335]</span>
-    <a class="title" href="#3335">Re:改行時空行</a>
+    <a class="thread-title" href="#3335">Re:改行時空行</a>
     <span class="author">ryoji</span>
     <time datetime="2003-10-01T15:23:40">2003年10月01日 15:23</time></h1>
     <div class="body">▼ DSSさん<br>&gt; 秀丸とかにある機能ですが，インデントされて改行した<br>&gt; 場合，その行を空行に出来ないでしょうか？<br><br>「改行するとき空白だけの行だったら空白を削除する」オプションのことでしょうか。<br>そうでしたらマクロ掲示板の、<br>[27] 行末の空白を削除して改行マクロ<br>が使えると思います。</div></section>
     <ul><li><section><h1 id=3337>
     <span class="no">[3337]</span>
-    <a class="title" href="#3337">Re2:改行時空行</a>
+    <a class="thread-title" href="#3337">Re2:改行時空行</a>
     <span class="author">DSS</span>
     <time datetime="2003-10-02T11:22:57">2003年10月02日 11:22</time></h1>
     <div class="body">▼ ryojiさん<br>&gt; 「改行するとき空白だけの行だったら空白を削除する」オプションのことでしょうか。<br>&gt; そうでしたらマクロ掲示板の、<br>&gt; [27] 行末の空白を削除して改行マクロ<br>&gt; が使えると思います。<br><br>早速ためしてみました．<br>おぉ～！！！！<br>いけますね．<br>マクロってきっと１つしか動かないんですよね？<br>他のマクロ動かしている時にどうなるか分かりませんが<br>これで一応対策可能です．<br><br>（でも出来るならオプションが欲しい）</div></section>

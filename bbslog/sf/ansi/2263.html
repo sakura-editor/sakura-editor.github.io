@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>フォーカス</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>フォーカス | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2263</span>
-    <a class="title" href="2263.html#2263">フォーカス</a></div>
+    <a class="thread-title" href="2263.html#2263">フォーカス</a></div>
     <ul><li><div class="list-title">
     <span class="no">2271</span>
-    <a class="title" href="2263.html#2271">RE: フォーカス</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2263>
+    <a class="thread-title" href="2263.html#2271">RE: フォーカス</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2263>
     <span class="no">[2263]</span>
-    <a class="title" href="#2263">フォーカス</a>
+    <a class="thread-title" href="#2263">フォーカス</a>
     <span class="author">げんた</span>
     <time datetime="2002-07-28T02:40:38">2002年07月28日 02:40</time></h1>
     <div class="body">ウィンドウを並べて表示したときにカレントウィンドウが一番左に来るというのを実装してみたのですが，並べ替えた後のフォーカスが思った通りに設定されません．<br><br>::ShowWindow()を使うとフォーカスが移ってしまうのでCEditView::Command_TILE_H() の後ろの方で強制的にFocusを与えたらと思ったのですが，そうしても一瞬フォーカスがそこに行った後でまた全然違うところに行ってしまいます．<br><br>なぜなんだろう？？？<br></div></section>
     <ul><li><section><h1 id=2271>
     <span class="no">[2271]</span>
-    <a class="title" href="#2271">RE: フォーカス</a>
+    <a class="thread-title" href="#2271">RE: フォーカス</a>
     <span class="author">みく</span>
     <time datetime="2002-08-16T11:21:37">2002年08月16日 11:21</time></h1>
     <div class="body">&gt;タイトル: RE: フォーカス<br>&gt;発言者: げんた<br>&gt;ウィンドウを並べて表示したときにカレントウィンドウが一番左に来るというのを実装してみたのですが，並べ替えた後のフォーカスが思った通りに設定されません．<br>&gt;<br>&gt;::ShowWindow()を使うとフォーカスが移ってしまうのでCEditView::Command_TILE_H() の後ろの方で強制的にFocusを与えたらと思ったのですが，そうしても一瞬フォーカスがそこに行った後でまた全然違うところに行ってしまいます．<br>&gt;<br>&gt;なぜなんだろう？？？<br><br>::SetFocus( phwndArr[0] );<br></div></section>

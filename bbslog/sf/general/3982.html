@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>開いた時に、日付が自動的に書きこめる機能</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>開いた時に、日付が自動的に書きこめる機能 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3982</span>
-    <a class="title" href="3982.html#3982">開いた時に、日付が自動的に書きこめる機能</a></div>
+    <a class="thread-title" href="3982.html#3982">開いた時に、日付が自動的に書きこめる機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">3986</span>
-    <a class="title" href="3982.html#3986">Re: 開いた時に、日付が自動的に書きこめる機能</a></div>
+    <a class="thread-title" href="3982.html#3986">Re: 開いた時に、日付が自動的に書きこめる機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">3990</span>
-    <a class="title" href="3982.html#3990">Re2: 開いた時に、日付が自動的に書きこめる機能</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3982>
+    <a class="thread-title" href="3982.html#3990">Re2: 開いた時に、日付が自動的に書きこめる機能</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3982>
     <span class="no">[3982]</span>
-    <a class="title" href="#3982">開いた時に、日付が自動的に書きこめる機能</a>
+    <a class="thread-title" href="#3982">開いた時に、日付が自動的に書きこめる機能</a>
     <span class="author">honohono</span>
     <time datetime="2004-08-07T11:24:32">2004年08月07日 11:24</time></h1>
     <div class="body">こんちわ<br>さっそくですが、タイトルに書いたような機能はありませんか？<br>過去ログやら、ＦＡＱを見たんですけど、見つけられませんでした<br><br>ファイルを開けるたびに、追加で、日付が書きこまれる機能です<br>カーソルの位置はいつも最後にきていてほしい。<br>マクロとか、難しい操作でなくてできますか？<br><br>マクロならどんな風に書きこむのか、教えてください<br><br></div></section>
     <ul><li><section><h1 id=3986>
     <span class="no">[3986]</span>
-    <a class="title" href="#3986">Re: 開いた時に、日付が自動的に書きこめる機能</a>
+    <a class="thread-title" href="#3986">Re: 開いた時に、日付が自動的に書きこめる機能</a>
     <span class="author">げんた</span>
     <time datetime="2004-08-08T10:12:50">2004年08月08日 10:12</time></h1>
     <div class="body">&gt;ファイルを開けるたびに、追加で、日付が書きこまれる機能です<br>&gt;カーソルの位置はいつも最後にきていてほしい。<br>ファイルを開いたときに自動的にマクロを実行する機能がないのでNo actionでは出来ません．<br>カーソルを文書末尾に移動して今日の日付を書き込むというマクロは作成できます．<br><br>S_GoFileEnd();<br>S_InsertDate();<br>S_Char(13); // 改行するなら<br><br>ですかね．日付の書式は共通設定～書式タブ で変更できます．<br></div></section>
     <ul><li><section><h1 id=3990>
     <span class="no">[3990]</span>
-    <a class="title" href="#3990">Re2: 開いた時に、日付が自動的に書きこめる機能</a>
+    <a class="thread-title" href="#3990">Re2: 開いた時に、日付が自動的に書きこめる機能</a>
     <span class="author">honohono</span>
     <time datetime="2004-08-08T15:12:44">2004年08月08日 15:12</time></h1>
     <div class="body">レスありがとうございました<br>マクロの書き方がいまいちわからないのですが、<br>自前で勉強してみたいと思います<br><br>わからないときは、また来ます<br></div></section>

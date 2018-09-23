@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>C++アウトライン解析でスタック破壊</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>C++アウトライン解析でスタック破壊 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2140</span>
-    <a class="title" href="2140.html#2140">C++アウトライン解析でスタック破壊</a></div>
+    <a class="thread-title" href="2140.html#2140">C++アウトライン解析でスタック破壊</a></div>
     <ul><li><div class="list-title">
     <span class="no">2141</span>
-    <a class="title" href="2140.html#2141">Re:C++アウトライン解析でスタック破壊</a></div>
+    <a class="thread-title" href="2140.html#2141">Re:C++アウトライン解析でスタック破壊</a></div>
     <ul><li><div class="list-title">
     <span class="no">2142</span>
-    <a class="title" href="2140.html#2142">Re2:C++アウトライン解析でスタック破壊</a></div>
+    <a class="thread-title" href="2140.html#2142">Re2:C++アウトライン解析でスタック破壊</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">2143</span>
-    <a class="title" href="2140.html#2143">Re:C++アウトライン解析でスタック破壊</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2140>
+    <a class="thread-title" href="2140.html#2143">Re:C++アウトライン解析でスタック破壊</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2140>
     <span class="no">[2140]</span>
-    <a class="title" href="#2140">C++アウトライン解析でスタック破壊</a>
+    <a class="thread-title" href="#2140">C++アウトライン解析でスタック破壊</a>
     <span class="author">LR4</span>
     <time datetime="2014-03-10T15:07:57">2014年03月10日 15:07</time></h1>
     <div class="body">UNICODE版rev3647をDebug_Unicodeでビルドしたsakura.exeで、<br>ANSI版のほうのrev3648に含まれるCEditView_Command.cppを開いて<br>アウトライン解析ダイアログを出す操作をしたところ、<br>以下のメッセージが出てエラー停止しました。<br>確認環境はWin7(32bit版), VS2005です。<br><br>Release_Unicodeでは一見、何事も無く動作しているように見えますが、<br>実は内部メモリは破壊されているのではないかと不安を感じます。<br>大丈夫でしょうか？ご確認お願いします。<br><br>---------------------------<br>Microsoft Visual C++ Debug Library<br>---------------------------<br>Debug Error!<br><br>Program: ...<br>Module: (省略)\trunk2\sakura\Debug_Unicode\sakura.exe<br>File: (省略)\trunk2\sakura_core\types\ctype_cpp.cpp<br>Line: 1198<br><br>Run-Time Check Failure #2 - Stack around the variable 'szTemplateName' was corrupted.<br><br>(Press Retry to debug the application)<br>---------------------------<br>中止(A)   再試行(R)   無視(I) <br>---------------------------<br><br>追記：<br>rev2134(v2.0.5.0相当)に戻して同じことを試してみましたが、<br>その場合は特に問題なく動作しました。</div></section>
     <ul><li><section><h1 id=2141>
     <span class="no">[2141]</span>
-    <a class="title" href="#2141">Re:C++アウトライン解析でスタック破壊</a>
+    <a class="thread-title" href="#2141">Re:C++アウトライン解析でスタック破壊</a>
     <span class="author">もか</span>
     <time datetime="2014-03-10T20:04:17">2014年03月10日 20:04</time></h1>
     <div class="body">現象確認しました。<br><br>wcsncat(dest,src,n)の使い方が間違っていました。<br>wcsncpyと違って、n+1文字書き込むのでバッファはwcslen(dest)+n+1が必要でした。<br>あと、Len++していない場所がありました。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/786/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>786/<wbr></nobr></a><br></div></section>
     <ul><li><section><h1 id=2142>
     <span class="no">[2142]</span>
-    <a class="title" href="#2142">Re2:C++アウトライン解析でスタック破壊</a>
+    <a class="thread-title" href="#2142">Re2:C++アウトライン解析でスタック破壊</a>
     <span class="author">LR4</span>
     <time datetime="2014-03-10T20:31:42">2014年03月10日 20:31</time></h1>
     <div class="body">ご対応ありがとうございます。<br>&gt; <a href=https://sourceforge.net/p/sakura-editor/patchunicode/786/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>786/<wbr></nobr></a><br>パッチ適用し、エラー停止せずにアウトライン表示できることを確認しました。</div></section>
     </li></ul></li><li><section><h1 id=2143>
     <span class="no">[2143]</span>
-    <a class="title" href="#2143">Re:C++アウトライン解析でスタック破壊</a>
+    <a class="thread-title" href="#2143">Re:C++アウトライン解析でスタック破壊</a>
     <span class="author">suzz</span>
     <time datetime="2014-03-11T23:01:27">2014年03月11日 23:01</time></h1>
     <div class="body">別件ですが、C/C++ アウトライン解析で一件不具合を見つけています。<br>紅桜側では暫定改修を行ったのですが、本家のほうで修正いただけると助かります。<br><br><a href=https://bitbucket.org/suzzsegv/benizakura/commits/18497ccdd5f2aca409dd12659537255dc2500fc target=_top><nobr>https://<wbr>bitbucke<wbr>t.<wbr>org/<wbr>suzzsegv<wbr>/<wbr>benizaku<wbr>ra/<wbr>commits/<wbr>18497ccd<wbr>d5f2aca4<wbr>09dd1265<wbr>9537255d<wbr>c2500fc</nobr></a><br>0</div></section>

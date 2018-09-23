@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アクティブ化時にキャプション更新されないことがある（rev2929-）</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アクティブ化時にキャプション更新されないことがある（rev2929-） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2169</span>
-    <a class="title" href="2169.html#2169">アクティブ化時にキャプション更新されないことがある（rev2929-）</a></div>
+    <a class="thread-title" href="2169.html#2169">アクティブ化時にキャプション更新されないことがある（rev2929-）</a></div>
     <ul><li><div class="list-title">
     <span class="no">2170</span>
-    <a class="title" href="2169.html#2170">ANSI版ではrev2966-</a></div>
+    <a class="thread-title" href="2169.html#2170">ANSI版ではrev2966-</a></div>
     </li><li><div class="list-title">
     <span class="no">2171</span>
-    <a class="title" href="2169.html#2171">Re:アクティブ化時にキャプション更新されないことがある（rev2929-）</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2169>
+    <a class="thread-title" href="2169.html#2171">Re:アクティブ化時にキャプション更新されないことがある（rev2929-）</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2169>
     <span class="no">[2169]</span>
-    <a class="title" href="#2169">アクティブ化時にキャプション更新されないことがある（rev2929-）</a>
+    <a class="thread-title" href="#2169">アクティブ化時にキャプション更新されないことがある（rev2929-）</a>
     <span class="author">LR4</span>
     <time datetime="2014-05-10T17:27:11">2014年05月10日 17:27</time></h1>
     <div class="body">&gt;&gt;unicode:2165の件で動作を確認していたところ、アクティブ化時に<br>メインウィンドウのキャプションタイトルが非アクティブ用の文字列<br>のまま切替わらないケースがありました。<br><br>(1) サクラからダイアログ（メッセージボックスでも良い）を出す<br>    例：バージョン情報ダイアログや検索ダイアログを出す<br>    → アクティブタイトルのまま<br>(2) 他のアプリをアクティブにする<br>    → 非アクティブタイトルに切替わる<br>(3) (1)で出したダイアログをクリックしてアクティブにする<br>    → 非アクティブタイトルのまま変わらない<br><br>Ver.1.6.6.0やVer.2.0.5.0では(3)でアクティブタイトルに戻っていました。<br>サクラでは、自プロセスのどれかのウィンドウがアクティブなら<br>メインウィンドウのキャプションをアクティブタイトル文字列にしているのですよね。<br>（タイトルバーの色とは別に）<br><br>rev2929（Keep: 不要なUpdateCaption()呼び出し削除[Patchunicode#456]）<br>の変更を以下のように戻すことで従来動作に戻るようです。<br><br>Index: sakura_core/window/CEditWnd.cpp<br>===================================================================<br>--- sakura_core/window/CEditWnd.cpp&#9;(リビジョン 3706)<br>+++ sakura_core/window/CEditWnd.cpp&#9;(作業コピー)<br>@@ -1269,12 +1269,10 @@<br> <br> &#9;&#9;&#9;// 2009.01.17 nasukoji&#9;ホイールスクロール有無状態をクリア<br> &#9;&#9;&#9;ClearMouseState();<br>-&#9;&#9;} else {<br>-&#9;&#9;&#9;// 非アクティブになるときだけキャプション設定(アクティブ時はほかで呼び出される)<br>-&#9;&#9;&#9;UpdateCaption();<br> &#9;&#9;}<br> <br>-&#9;&#9;// タイマーON/OFF&#9;&#9;// 2007.03.08 ryoji WM_ACTIVATEから移動<br>+&#9;&#9;// キャプション設定、タイマーON/OFF&#9;&#9;// 2007.03.08 ryoji WM_ACTIVATEから移動<br>+&#9;&#9;UpdateCaption();<br> &#9;&#9;m_CFuncKeyWnd.Timer_ONOFF( m_bIsActiveApp ); // 20060126 aroka<br> &#9;&#9;this-&gt;Timer_ONOFF( m_bIsActiveApp ); // 20060128 aroka<br> <br>ご確認お願いします。</div></section>
     <ul><li><section><h1 id=2170>
     <span class="no">[2170]</span>
-    <a class="title" href="#2170">ANSI版ではrev2966-</a>
+    <a class="thread-title" href="#2170">ANSI版ではrev2966-</a>
     <span class="author">LR4</span>
     <time datetime="2014-05-10T17:55:02">2014年05月10日 17:55</time></h1>
     <div class="body">&gt; rev2929（Keep: 不要なUpdateCaption()呼び出し削除[Patchunicode#456]）<br>&gt; の変更を以下のように戻すことで従来動作に戻るようです。<br><br>ANSI版では、rev2966で上記rev2929と同じ変更が行われているようです。</div></section>
     </li><li><section><h1 id=2171>
     <span class="no">[2171]</span>
-    <a class="title" href="#2171">Re:アクティブ化時にキャプション更新されないことがある（rev2929-）</a>
+    <a class="thread-title" href="#2171">Re:アクティブ化時にキャプション更新されないことがある（rev2929-）</a>
     <span class="author">novice</span>
     <time datetime="2014-05-11T09:50:29">2014年05月11日 09:50</time></h1>
     <div class="body">▼ LR4さん<br>&gt; &gt;&gt;unicode:2165の件で動作を確認していたところ、アクティブ化時に<br>&gt; メインウィンドウのキャプションタイトルが非アクティブ用の文字列<br>&gt; のまま切替わらないケースがありました。<br><br>ご指摘ありがとうございます。<br>r2929の変更を元に戻したいと思います。<br><br>潜在的な問題として、メインウィンドウをアクティブ化すると、<br>3回UpdateCaption()を呼び出すため、<br>呼び出し削除の件は再度検討してみたいと思います。<br></div></section>

@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Grepで同じファイルを複数回検索するバグ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Grepで同じファイルを複数回検索するバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3002</span>
-    <a class="title" href="3002.html#3002">Grepで同じファイルを複数回検索するバグ</a></div>
+    <a class="thread-title" href="3002.html#3002">Grepで同じファイルを複数回検索するバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3005</span>
-    <a class="title" href="3002.html#3005">Re:Grepで同じファイルを複数回検索するバグ</a></div>
+    <a class="thread-title" href="3002.html#3005">Re:Grepで同じファイルを複数回検索するバグ</a></div>
     </li><li><div class="list-title">
     <span class="no">3408</span>
-    <a class="title" href="3002.html#3408">RE: Grepで同じファイルを複数回検索するバグ</a></div>
+    <a class="thread-title" href="3002.html#3408">RE: Grepで同じファイルを複数回検索するバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3409</span>
-    <a class="title" href="3002.html#3409">RE2: Grepで同じファイルを複数回検索するバグ</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3002>
+    <a class="thread-title" href="3002.html#3409">RE2: Grepで同じファイルを複数回検索するバグ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3002>
     <span class="no">[3002]</span>
-    <a class="title" href="#3002">Grepで同じファイルを複数回検索するバグ</a>
+    <a class="thread-title" href="#3002">Grepで同じファイルを複数回検索するバグ</a>
     <span class="author">もか</span>
     <time datetime="2003-08-12T23:33:17">2003年08月12日 23:33</time></h1>
     <div class="body">Grepのファイル名指定を「*.* *.cpp」のように指定すると、<br>hoge.cppのようなファイルを2回検索してしまいます。<br>当然「*.*;*.*;*.*」とすれば、同じファイルを3回検索してしまいます。<br>修正したほうがいいですよね？<br></div></section>
     <ul><li><section><h1 id=3005>
     <span class="no">[3005]</span>
-    <a class="title" href="#3005">Re:Grepで同じファイルを複数回検索するバグ</a>
+    <a class="thread-title" href="#3005">Re:Grepで同じファイルを複数回検索するバグ</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-08-13T14:36:10">2003年08月13日 14:36</time></h1>
     <div class="body">少なくとも二通りの方法があります。<br>(1) ファイルのワイルドカードを複数のパスに展開した後、ユニークにする。<br>(2) すでに検索したファイル（のパス）にフラグをつけて区別する。<br><br>相対パスからどうやって同じファイルかを判定するのでしょうか。</div></section>
     </li><li><section><h1 id=3408>
     <span class="no">[3408]</span>
-    <a class="title" href="#3408">RE: Grepで同じファイルを複数回検索するバグ</a>
+    <a class="thread-title" href="#3408">RE: Grepで同じファイルを複数回検索するバグ</a>
     <span class="author">みく</span>
     <time datetime="2004-02-11T13:13:44">2004年02月11日 13:13</time></h1>
     <div class="body"><br>除外ファイルとの合わせ技が可能。<br><br>探索するフォルダ毎にチェック済みリストを作成する。<br>&#9;WIN32_FIND_DATA.cAlternateFileName[14] をリスト管理(qsort,bsearch)<br>&#9;することでデータ量を削減できる。<br><br>・先に除外ファイルを登録する(チェック済みにしてしまう)。<br>・対象ファイルをチェック済みリストと照合しながらGREP実行。<br>&#9;チェック済みならスキップ。<br>&#9;未チェックなら登録してGREP。<br><br>以上をフォルダ毎に実行する。<br></div></section>
     <ul><li><section><h1 id=3409>
     <span class="no">[3409]</span>
-    <a class="title" href="#3409">RE2: Grepで同じファイルを複数回検索するバグ</a>
+    <a class="thread-title" href="#3409">RE2: Grepで同じファイルを複数回検索するバグ</a>
     <span class="author">みく</span>
     <time datetime="2004-02-12T21:37:07">2004年02月12日 21:37</time></h1>
     <div class="body"><br>プロトタイプでテストしたところ、<br>8.3形式のファイル名を持たない場合もあるので、cAlternateFileNameは使えませんでした。<br>bsearch,qsort使うよりも単純に線形検索したほうが2倍速かったです。<br></div></section>

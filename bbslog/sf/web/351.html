@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>land.to の wiki でページの新規作成ができない</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Webトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>land.to の wiki でページの新規作成ができない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Webトップへ</a>
+        <li><div class="list-title">
     <span class="no">351</span>
-    <a class="title" href="351.html#351">land.to の wiki でページの新規作成ができない</a></div>
+    <a class="thread-title" href="351.html#351">land.to の wiki でページの新規作成ができない</a></div>
     <ul><li><div class="list-title">
     <span class="no">352</span>
-    <a class="title" href="351.html#352">RE: land.to の wiki でページの新規作成ができない</a></div>
+    <a class="thread-title" href="351.html#352">RE: land.to の wiki でページの新規作成ができない</a></div>
     <ul><li><div class="list-title">
     <span class="no">353</span>
-    <a class="title" href="351.html#353">Re2: land.to の wiki でページの新規作成ができない</a></div>
+    <a class="thread-title" href="351.html#353">Re2: land.to の wiki でページの新規作成ができない</a></div>
     <ul><li><div class="list-title">
     <span class="no">355</span>
-    <a class="title" href="351.html#355">Re3: land.to の wiki でページの新規作成ができない</a></div>
+    <a class="thread-title" href="351.html#355">Re3: land.to の wiki でページの新規作成ができない</a></div>
     <ul><li><div class="list-title">
     <span class="no">356</span>
-    <a class="title" href="351.html#356">Re4: land.to の wiki でページの新規作成ができない</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=351>
+    <a class="thread-title" href="351.html#356">Re4: land.to の wiki でページの新規作成ができない</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=351>
     <span class="no">[351]</span>
-    <a class="title" href="#351">land.to の wiki でページの新規作成ができない</a>
+    <a class="thread-title" href="#351">land.to の wiki でページの新規作成ができない</a>
     <span class="author">kobake</span>
     <time datetime="2007-10-17T03:00:01">2007年10月17日 03:00</time></h1>
     <div class="body">&gt;&gt;web:323 と同じ現象ですが、<br>ページの新規作成を無条件に拒否されている気がします。<br><br>(この時点では、既存ページの編集作業は行える)<br>↓<br>・[新規] をクリック<br>・ページ名を入力<br>・ページ内容を入力<br>・[ページの更新] をクリック<br>・ページは作成されずにFrontPageへ飛ばされる<br>↓<br>(以降、すべての編集作業が拒否される(FrontPageへ飛ばされる))<br><br>&gt;&gt;web:323 へのげんたさん返答ではSPAM避け、とされていますが、<br>これを回避するにはどうすればいいでしょうか。<br></div></section>
     <ul><li><section><h1 id=352>
     <span class="no">[352]</span>
-    <a class="title" href="#352">RE: land.to の wiki でページの新規作成ができない</a>
+    <a class="thread-title" href="#352">RE: land.to の wiki でページの新規作成ができない</a>
     <span class="author">maru</span>
     <time datetime="2007-10-17T23:21:28">2007年10月17日 23:21</time></h1>
     <div class="body">&gt;ページの新規作成を無条件に拒否されている気がします。<br>&gt;・ページは作成されずにFrontPageへ飛ばされる<br><br>すいません、SPAM対策のロジックがあまり利口でないものですから。<br>以下の減点条件の総合判断になっており、一言では説明しにくいです。<br>・ひらがなを含まない<br>・ブラウザの言語設定が日本語以外<br>・HTTP_REFERERが空<br>・USER_AGENTがウソっぽい<br>・極端に大きな投稿<br>・極端に短時間の連続投稿（プレビュー含む）<br>・ハイパーリンク数が極端に多い<br>・プロキシっぽい<br>・NGワード<br><br>例えば、そこそこの大きさのテキストでソースコードらしくもないのに、ひらがなが１文字も現れず、おまけにハイパーリンクを含んでいる、という状態だと蹴られる可能性が高いです。<br><br>一番引っかかりやすいのは連続投稿のようです。げんたさんからプレビューについての指摘もありましたので、連続投稿のリミット秒を緩和しておきました。<br></div></section>
     <ul><li><section><h1 id=353>
     <span class="no">[353]</span>
-    <a class="title" href="#353">Re2: land.to の wiki でページの新規作成ができない</a>
+    <a class="thread-title" href="#353">Re2: land.to の wiki でページの新規作成ができない</a>
     <span class="author">kobake</span>
     <time datetime="2007-10-17T23:58:49">2007年10月17日 23:58</time></h1>
     <div class="body">ご指摘の項目に気をつけながら、かつ、<br>(自分は普段Firefoxを使っているのですが)InternetExplorerで<br>作業を行ってみたところ、なんとか作成できました。<br>ありがとうございます。<br><br># ちなみに、ブラウザ種が原因であったかどうかを確かめるために、<br>Firefoxで再度「試してみる」といったことはしていません。<br>下手に試すとそれ以降の作業ができなくなり、拒否条件が解除される時間を<br>待たなくてはいけないので。ビクビクです。<br>なので、ブラウザ種が原因であったかどうかは不明です。<br></div></section>
     <ul><li><section><h1 id=355>
     <span class="no">[355]</span>
-    <a class="title" href="#355">Re3: land.to の wiki でページの新規作成ができない</a>
+    <a class="thread-title" href="#355">Re3: land.to の wiki でページの新規作成ができない</a>
     <span class="author">maru</span>
     <time datetime="2007-10-18T00:35:15">2007年10月18日 00:35</time></h1>
     <div class="body">&gt;下手に試すとそれ以降の作業ができなくなり、拒否条件が解除される時間を<br>&gt;待たなくてはいけないので。ビクビクです。<br>大変ご面倒をおかけいたします。<br><br>参考までに。ブラックリストに登録されるの条件は３つあり、それぞれ独立して３つのリストを保持します。<br>１．HTTP_REFERERが空での書き込み<br>２．USER_AGENTに数字が含まれない<br>３．投稿メッセージが不自然（ひらがなとかリンク数とかバイト数とかの複合判断）<br><br>１と２については、SPAM目的もしくはscan目的のアクセスでない限り、まずありえない状況だと思います。<br><br>問題は、条件のわかりにくい３ですが、一応最後の手段として、解除キーワードを打ち込めば強制投稿（ブラックリストさえも無視）できるようにしてあります。<br>キーワードは「sakuraサクラさくら」です。InterWikiNameのページは外部リンクが多いので解除キーワードを使用しています。<br>なお３のケースについて、投稿拒否されたからといって必ずしもブラックリストに登録されるわけではなく、なかでも特に点数の悪いもののみが登録対象となります。<br></div></section>
     <ul><li><section><h1 id=356>
     <span class="no">[356]</span>
-    <a class="title" href="#356">Re4: land.to の wiki でページの新規作成ができない</a>
+    <a class="thread-title" href="#356">Re4: land.to の wiki でページの新規作成ができない</a>
     <span class="author">kobake</span>
     <time datetime="2007-10-18T01:31:48">2007年10月18日 01:31</time></h1>
     <div class="body">いえいえ。<br>詳細な条件をお教えいただきありがとうございます。<br>というかセキュリティ的に、本当はこんなの教えてもらっちゃ<br>マズいとは思いもしますが(汗)。<br><br>条件をお聞きする前は、<br>IPを変えつつ(汗)、何度やってもページの作成ができなかったので、<br>ページを「新規作成」することそのものが無条件に<br>ブラックリスト入りなんじゃないかと疑ってしまいましたが<br>そうではなくて良かったです。<br><br>１と２の条件はFirefoxでも大丈夫っぽいですね。<br><br>３に関して、どういった内容で投稿しようとしていたかは正確には覚えていませんが<br>「*機能一覧」の1行程度のモノだった気がします。<br>漢字オンリーだったからダメだったのかも？？<br></div></section>

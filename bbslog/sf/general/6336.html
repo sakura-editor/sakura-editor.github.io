@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Request/174「マウスでのウィンドウアクティブ時に、クリック位置へカーソルを移動しない」について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Request/174「マウスでのウィンドウアクティブ時に、クリック位置へカーソルを移動しない」について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6336</span>
-    <a class="title" href="6336.html#6336">Request/174「マウスでのウィンドウアクティブ時に、クリック位置へカーソルを移動しない」について</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=6336>
+    <a class="thread-title" href="6336.html#6336">Request/174「マウスでのウィンドウアクティブ時に、クリック位置へカーソルを移動しない」について</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=6336>
     <span class="no">[6336]</span>
-    <a class="title" href="#6336">Request/174「マウスでのウィンドウアクティブ時に、クリック位置へカーソルを移動しない」について</a>
+    <a class="thread-title" href="#6336">Request/174「マウスでのウィンドウアクティブ時に、クリック位置へカーソルを移動しない」について</a>
     <span class="author">なすこじ</span>
     <time datetime="2007-09-27T22:21:10">2007年09月27日 22:21</time></h1>
     <div class="body">こんにちは。<br><br>私もこれが欲しいです。<br>コピーペースト時に場所を見失ってしまうことがあるので (^^;<br><br>CEditView.cppかCEditWnd.cppのどちらかのDispatchEvent()でWM_MOUSEACTIVATEを処理するとできるような気がします。<br><br>// インアクティブな時にWM_MOUSEACTIVATEが来たらMA_ACTIVATEANDEATを返す<br>　case WM_MOUSEACTIVATE:<br>//　if(! m_pcEditDoc-&gt;m_pcEditWnd-&gt;IsActiveApp())<br>　　if(! m_bIsActiveApp)<br>　　　return MA_ACTIVATEANDEAT;<br>　　else<br>　　　return DefWindowProc(...);<br>　：<br><br>ただ、これだけだとインアクティブなウィンドウをダブルクリックした時の単語選択がおかしくなる（カーソルが移動しないので別の単語が選択される（K2Editorがこの状態））と思われるので、MA_ACTIVATEANDEATの時はOnLBUTTONDBLCLK()の中でカーソルを移動する必要があるかもしれません。<br><br>ではでは。</div></section>

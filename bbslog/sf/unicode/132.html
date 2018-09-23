@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>リファクタリング：ウィンドウ基底クラス作成</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>リファクタリング：ウィンドウ基底クラス作成 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">132</span>
-    <a class="title" href="132.html#132">リファクタリング：ウィンドウ基底クラス作成</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=132>
+    <a class="thread-title" href="132.html#132">リファクタリング：ウィンドウ基底クラス作成</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=132>
     <span class="no">[132]</span>
-    <a class="title" href="#132">リファクタリング：ウィンドウ基底クラス作成</a>
+    <a class="thread-title" href="#132">リファクタリング：ウィンドウ基底クラス作成</a>
     <span class="author">kobake</span>
     <time datetime="2008-01-27T01:50:59">2008年01月27日 01:50</time></h1>
     <div class="body">PatchUnicode#1880338<br><br>MFCのクラス CWnd に似た形のクラス CMyWnd を作成しました。<br>(今のところはCEditViewにしか適用していませんが)<br>このクラスを基底に持つことにより、各種ウィンドウクラスで重複して定義されていた関数を<br>まとめて管理できるようになります。<br>また、特定のAPI操作すべてにブレークポイントを設定することが容易になります。<br>特定のAPI操作にアプリ独自の処理を被せる (フィルタリングおよびラッピング) ことも容易になります。<br><br>今回の変更により、動作は変わっていません。<br><br><br>動作が変わらないため重要度が見過ごされがちですが、<br>規模の大きいプログラムでは現在と未来の作業効率を得るためにリファクタリングは必須だと考えています。<br>本当は設計思想などよくよく議論した上でパッチを作成すべきだとは思うのですが<br>trunkにたどり着くまでの間はすみませんがスピード重視で作業させてください。<br><br>パッチレビューをお待ちしております。</div></section>

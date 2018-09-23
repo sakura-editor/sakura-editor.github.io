@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>CWSH.hのこと</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CWSH.hのこと | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1182</span>
-    <a class="title" href="1182.html#1182">CWSH.hのこと</a></div>
+    <a class="thread-title" href="1182.html#1182">CWSH.hのこと</a></div>
     <ul><li><div class="list-title">
     <span class="no">1183</span>
-    <a class="title" href="1182.html#1183">Re:CWSH.hのこと</a></div>
+    <a class="thread-title" href="1182.html#1183">Re:CWSH.hのこと</a></div>
     <ul><li><div class="list-title">
     <span class="no">1184</span>
-    <a class="title" href="1182.html#1184">Re2:CWSH.hのこと</a></div>
+    <a class="thread-title" href="1182.html#1184">Re2:CWSH.hのこと</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">1186</span>
-    <a class="title" href="1182.html#1186">Re:CWSH.hのこと</a></div>
+    <a class="thread-title" href="1182.html#1186">Re:CWSH.hのこと</a></div>
     <ul><li><div class="list-title">
     <span class="no">1187</span>
-    <a class="title" href="1182.html#1187">Re2:CWSH.hのこと</a></div>
+    <a class="thread-title" href="1182.html#1187">Re2:CWSH.hのこと</a></div>
     </li><li><div class="list-title">
     <span class="no">1189</span>
-    <a class="title" href="1182.html#1189">Re2:CWSH.hのこと</a></div>
+    <a class="thread-title" href="1182.html#1189">Re2:CWSH.hのこと</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">1193</span>
-    <a class="title" href="1182.html#1193">Commit報告(Keep) マクロ関連コードと IDispatch実装を分離</a></div>
+    <a class="thread-title" href="1182.html#1193">Commit報告(Keep) マクロ関連コードと IDispatch実装を分離</a></div>
     <ul><li><div class="list-title">
     <span class="no">1196</span>
-    <a class="title" href="1182.html#1196">Re:Commit報告(Keep) マクロ関連コードと IDispatch実装を分離</a></div>
+    <a class="thread-title" href="1182.html#1196">Re:Commit報告(Keep) マクロ関連コードと IDispatch実装を分離</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">1488</span>
-    <a class="title" href="1182.html#1488">KqblABPELmcGoIT</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1182>
+    <a class="thread-title" href="1182.html#1488">KqblABPELmcGoIT</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1182>
     <span class="no">[1182]</span>
-    <a class="title" href="#1182">CWSH.hのこと</a>
+    <a class="thread-title" href="#1182">CWSH.hのこと</a>
     <span class="author">ds14050</span>
     <time datetime="2010-04-28T09:46:50">2010年04月28日 09:46</time></h1>
     <div class="body">Emacsでもできるらしいのですが、例えば「Chapter (\d+)」を検索し、それを<br>「js: "Chapter " + (+$1+1)」に置換することで、章番号を 1ずつ増加させる<br>ようなことができたらいいなと思って WSH関連のコードを眺めていました。<br><br>その過程で、IUnknownと IDispatchを実装した CWSHIfObj(旧CInterfaceObject)<br>が、マクロと一体になっていて再利用しにくいことに気付きました。これでは<br>ちょっとしたスクリプトを実行するために、(無視することも含めて)マクロに対<br>応するか、IDispatchを再実装するかしなければいけない気がします。<br><br>r1715&lt;<a href=http://sakura-editor.svn.sourceforge.net/viewvc/sakura-editor?view=rev&revision=1715&gt; target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>viewvc/<wbr>sakura-<wbr>editor?<wbr>view=<wbr>rev&amp;<wbr>revision<wbr>=<wbr>1715&gt;<wbr></nobr></a><br>以前はそうではなかったことを知って、気付かなかったことを後悔しています。<br><br>また、ReadyCommands()と MacroCommand()が CWSHMacroManagerの配下から<br>CWSHIfObj(旧CInterfaceObject)配下に移動していますが、これは危険では<br>ないでしょうか。MacroCommand()の1行目の reinterpret_castは<br>CWSHClientが CEditView* を伴って作成されたことを前提にしていますが、<br>それを保証していたのは CWSHMacroManager::ExecKeyMacro()に思えます。<br><br># 自分がやりたいことは CInterfaceObject::AddProperty()を追加するだけで<br># 済みそうに思えてきたところなのですが、今は手を付けることが難しいです。<br></div></section>
     <ul><li><section><h1 id=1183>
     <span class="no">[1183]</span>
-    <a class="title" href="#1183">Re:CWSH.hのこと</a>
+    <a class="thread-title" href="#1183">Re:CWSH.hのこと</a>
     <span class="author">otomo</span>
     <time datetime="2010-04-28T13:21:00">2010年04月28日 13:21</time></h1>
     <div class="body">JScriptですと、<br><br>"1234".replace( /(\d+)/, function ($1) { return( "" + ( parseInt($1) + 1 ) ) } )<br><br>みたいにすると検索した数値を計算した後で置換することができますよ。<br>（置換語に、Stringを返す関数を使用できます。<br>　その関数の引数は、後方参照の$1,$2,$3 ... です）</div></section>
     <ul><li><section><h1 id=1184>
     <span class="no">[1184]</span>
-    <a class="title" href="#1184">Re2:CWSH.hのこと</a>
+    <a class="thread-title" href="#1184">Re2:CWSH.hのこと</a>
     <span class="author">ds14050</span>
     <time datetime="2010-04-28T21:46:57">2010年04月28日 21:46</time></h1>
     <div class="body">▼ otomoさん<br><br>それだとたぶんマクロにしてみても検索条件や置換条件を入力できなくて、<br>WSHで Scripting.FileSystemObjectを使った処理になると思うんです。<br>エディタで検索や置換をするような手軽さでサクッと処理する方法が欲しかったんです。<br><br># エディタの外にでるなら Rubyで String#gsubという手もありますね。<br></div></section>
     </li></ul></li><li><section><h1 id=1186>
     <span class="no">[1186]</span>
-    <a class="title" href="#1186">Re:CWSH.hのこと</a>
+    <a class="thread-title" href="#1186">Re:CWSH.hのこと</a>
     <span class="author">syat</span>
     <time datetime="2010-04-29T19:43:33">2010年04月29日 19:43</time></h1>
     <div class="body">▼ ds14050さん<br>&gt; IUnknownと IDispatchを実装した CWSHIfObj(旧CInterfaceObject)<br>&gt; が、マクロと一体になっていて再利用しにくいことに気付きました。<br>私の考えになりますが、サクラエディタでWSHスクリプトを扱いたい場合はCWSHMacroManagerを通してほしいです。<br>CWSHIfObjは、マクロに渡すオブジェクトの基底クラスです。<br>独自のマクロ関数が必要な時は、２つ方法があって、CSMacroMgrを修正してEditorオブジェクトに追加するか、またはCWSHIfObjを継承したC???IfObjを定義してCWSHMacroManagerにAddParamしてやります。<br>r1715でWSH部分を修正した目的は、WSHでEditor以外のオブジェクトを扱うことで、それ以前はEditorオブジェクトがもっと深くWSHに食い込んでいました。<br><br>ds14050さんが指摘されているのは、ManagerからExecKeyMacro()を呼ぶと必ずEditorオブジェクトが追加されてしまうのが邪魔、ということでしょうか？<br>その意味なら、それはその通りです。Editorは共通的に参照できたほうが良いと思っておせっかいしてるだけなので、ManagerとEditorオブジェクトを分離するのはありだと思います。<br><br>&gt; また、ReadyCommands()と MacroCommand()が CWSHMacroManagerの配下から<br>&gt; CWSHIfObj(旧CInterfaceObject)配下に移動していますが、これは危険では<br>&gt; ないでしょうか。<br>危険なのかはよくわかりません。<br>CEditView*以外を渡したいときは別のManagerを作って、それにIfObjを追加するときに注意すればよいことだと思いますけれど。<br><br>的はずれな回答だったらすみません。<br></div></section>
     <ul><li><section><h1 id=1187>
     <span class="no">[1187]</span>
-    <a class="title" href="#1187">Re2:CWSH.hのこと</a>
+    <a class="thread-title" href="#1187">Re2:CWSH.hのこと</a>
     <span class="author">ds14050</span>
     <time datetime="2010-04-30T11:55:22">2010年04月30日 11:55</time></h1>
     <div class="body">&gt; サクラエディタでWSHスクリプトを扱いたい場合はCWSHMacroManagerを通してほしいです。<br>CWSHMacroManagerを通しても自分のやりたいことはできそうですが、大げさだとも思います。<br>CWSHMacroManagerを通した方がいい理由はなんでしょうか。CWSHMacroManagerはマクロファイル<br>の読み込みや Editorオブジェクトの提供などマクロの実行に特化しすぎている気がします。<br>旧CWSH.hを再利用可能な低レベルコンポーネントとして残したまま、CWSHMacroManagerと<br>その配下(CEditorIfObjとCWSHIfObjをまとめたもの)が CWSH.hのいち利用者として実装されて<br>いれば良かったのにな、という思いは変わりません。以下はその立場からの意見です。<br><br>&gt; それ以前はEditorオブジェクトがもっと深くWSHに食い込んでいました。<br>とのことですが、それは WScriptや windowといったグローバルオブジェクト<br>の名前が Editorであっただけなのではないでしょうか。自分の用途では<br>* グローバルオブジェクトの名前はなんでもよい。<br>* マクロを呼べる必要はない。(むしろ呼ばれると結果が予想できない)<br>ので、CWSHIfObjを継承してマクロに関係した純粋仮想関数を定義することが<br>余計な作業に思えます。virtual関数なのにマクロに特化している、実質<br>CEditorIfObj向けの仕様だということも疑問です。<br><br>&gt; Editorは共通的に参照できたほうが良いと思っておせっかいしてるだけなので、<br>&gt; ManagerとEditorオブジェクトを分離するのはありだと思います。<br><br>MacroManagerが Editorオブジェクトを追加するのは役割から考えて当然だと思います。<br>自分は CWSHMacroManagerを作成したり ExecKeyMacro()を呼んだりするつもりはなく、<br>直接 CWSHClientと CWSHIfObjを作成してスクリプトを実行しようとしています。<br><br>&gt; CEditView*以外を渡したいときは<br>CWSHClientに CEditView*以外を渡したときは<br>* CWSHIfObj::MacroCommand()<br>* CWSHIfObj::ReadyCommands()<br>* CWSHIfObj::HandleFunction()<br>* CWSHIfObj::HandleCommand()<br>* CWSHIfObj::GetMacroCommandInfo()<br>* CWSHIfObj::GetMacroFuncInfo()<br>これらが全て使えなくなります。こういうものはスクリプトに公開するオブジェクトの<br>共通の基底クラスに、protectedや virtualとして提供されるよりも、その派生クラス<br>の CEditorIfObjが備えているべきものではないでしょうか。<br><br>&gt; CEditView*以外を渡したいときは別のManagerを作って、それにIfObjを<br>&gt; 追加するときに注意すればよいことだと思いますけれど。<br><br>注意すればいい、というのはよくない考えだと思います。syatさんや自分はもう<br>注意することができますが、他の人はどうでしょうか。あるいは未来の自分は。<br>問題に対して、注意します、もっと注意します、目を皿のようにして注意します、<br>なんて対応をしないためにも、以前のように依存関係を一つの場所に閉じ込めて<br>おく(※)か、危険な操作ができないように CWSHClientのコンストラクタを隠したり<br>コンストラクタの最後のパラメータを void*から CEditView*にするなどの処置が<br>あっていいと思いました。<br>(後者の対処はさらに不自由になるので、例として挙げただけで望んではいません)<br><br>※ CEditorIfObjと、CWSHIfObjの protected/virtual部分を CMacroManager.cppへ。<br><br># 終始えらそうですいません。ディベートのようなものだと思って<br># 間違っていると思った部分は遠慮なく指摘してください。<br></div></section>
     </li><li><section><h1 id=1189>
     <span class="no">[1189]</span>
-    <a class="title" href="#1189">Re2:CWSH.hのこと</a>
+    <a class="thread-title" href="#1189">Re2:CWSH.hのこと</a>
     <span class="author">ds14050</span>
     <time datetime="2010-05-01T03:05:55">2010年05月01日 03:05</time></h1>
     <div class="body">机上の空論でないことを示すためにパッチを置いておきました。<br>ちらっとでも見てやってください。<br><br><a href=http://sourceforge.net/tracker/?func=detail&aid=2994883&group_id=12488&atid=1013762 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>2994883&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>1013762</nobr></a><br></div></section>
     </li></ul></li><li><section><h1 id=1193>
     <span class="no">[1193]</span>
-    <a class="title" href="#1193">Commit報告(Keep) マクロ関連コードと IDispatch実装を分離</a>
+    <a class="thread-title" href="#1193">Commit報告(Keep) マクロ関連コードと IDispatch実装を分離</a>
     <span class="author">ds14050</span>
     <time datetime="2010-05-09T16:19:46">2010年05月09日 16:19</time></h1>
     <div class="body">リビジョン：<br>　1757<br><br>変更種別：<br>　保守<br><br>内容：<br>Keep: CWSHIfObjから CIfObj(旧CInterfaceObject相当)を切り出して<br>      マクロ関連コードと IDispatch実装を分離。<br>PatchUnicode#2994883, unicode:1182<br></div></section>
     <ul><li><section><h1 id=1196>
     <span class="no">[1196]</span>
-    <a class="title" href="#1196">Re:Commit報告(Keep) マクロ関連コードと IDispatch実装を分離</a>
+    <a class="thread-title" href="#1196">Re:Commit報告(Keep) マクロ関連コードと IDispatch実装を分離</a>
     <span class="author">Uchi</span>
     <time datetime="2010-05-09T21:50:31">2010年05月09日 21:50</time></h1>
     <div class="body">現在(リビジョン1759で確認)でビルドできないようです。<br>ファイルのcommit忘れが有りませんか？</div></section>
     </li></ul></li><li><section><h1 id=1488>
     <span class="no">[1488]</span>
-    <a class="title" href="#1488">KqblABPELmcGoIT</a>
+    <a class="thread-title" href="#1488">KqblABPELmcGoIT</a>
     <span class="author">Canadian Pharmacy</span>
     <time datetime="2011-02-13T02:42:25">2011年02月13日 02:42</time></h1>
     <div class="body">Very nice post, good luck! ;-)</div></section>

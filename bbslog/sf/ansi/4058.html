@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ファイル更新の誤検出修正</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ファイル更新の誤検出修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">4058</span>
-    <a class="title" href="4058.html#4058">ファイル更新の誤検出修正</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=4058>
+    <a class="thread-title" href="4058.html#4058">ファイル更新の誤検出修正</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=4058>
     <span class="no">[4058]</span>
-    <a class="title" href="#4058">ファイル更新の誤検出修正</a>
+    <a class="thread-title" href="#4058">ファイル更新の誤検出修正</a>
     <span class="author">ryoji</span>
     <time datetime="2005-10-20T22:27:58">2005年10月20日 22:27</time></h1>
     <div class="body">上書保存を実行した後で、「ファイルが更新されました」のメッセージボックスが表示されることがあります。<br>（自分で更新したのに他のプロセスに書き換えられたと勘違いしている）<br><br>新しい PC だと頻発しているので、環境依存で頻度は違うみたいです。<br>頻発する環境: WinXP(SP2), Pentium4(3.4GHz, ハイパースレッディング有効)<br>※ハイパースレッディング有効だと頻度が高い？<br>特に、当該ファイルがエクスプローラで選択されているようなときはかなり高い確率で起きます。<br>同じファイルを同時に VC++ で開いているときにも起きるみたい。<br><br>調べてみたところ、保存時にタイムスタンプを取得する再オープンのところで、<br>ERROR_SHARING_VIOLATION（プロセスはファイルにアクセスできません。別のプロセスが使用中です。）<br>のエラーが起きていて、タイムスタンプ取得に失敗していました。<br><br>FindFirstFile でタイムスタンプ取得するように変更したら起きなくなりました。<br>関連箇所の修正パッチを作成したので Up しておきます。<br><a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/ssrc_2005-10-09_FileTime.zip target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr>ssrc_200<wbr>5-<wbr>10-<wbr>09_FileT<wbr>ime.<wbr>zip</nobr></a><br></div></section>

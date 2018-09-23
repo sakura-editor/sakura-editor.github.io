@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>(不具合報告)ファイル保存で落ちる</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>(不具合報告)ファイル保存で落ちる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3250</span>
-    <a class="title" href="3250.html#3250">(不具合報告)ファイル保存で落ちる</a></div>
+    <a class="thread-title" href="3250.html#3250">(不具合報告)ファイル保存で落ちる</a></div>
     <ul><li><div class="list-title">
     <span class="no">3292</span>
-    <a class="title" href="3250.html#3292">Re:(不具合報告)ファイル保存で落ちる</a></div>
+    <a class="thread-title" href="3250.html#3292">Re:(不具合報告)ファイル保存で落ちる</a></div>
     <ul><li><div class="list-title">
     <span class="no">3298</span>
-    <a class="title" href="3250.html#3298">Re2:(不具合報告)ファイル保存で落ちる</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3250>
+    <a class="thread-title" href="3250.html#3298">Re2:(不具合報告)ファイル保存で落ちる</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3250>
     <span class="no">[3250]</span>
-    <a class="title" href="#3250">(不具合報告)ファイル保存で落ちる</a>
+    <a class="thread-title" href="#3250">(不具合報告)ファイル保存で落ちる</a>
     <span class="author">ジネ</span>
     <time datetime="2003-09-05T11:58:59">2003年09月05日 11:58</time></h1>
     <div class="body">いつもサクラエディタを使用させて頂いてます。<br>不具合と思われる事があったので報告させていただきます。<br>以下の動作をすると落ちます。<br>１、大きいサイズのファイルを開く(数十ＭＢ)<br>２、変更をする<br>３、保存をする<br>４、保存中に外部のツールにより変更されたとのメッセージが表示される<br>５、再読み込みを行う<br>環境はVer1.4.3.0 + Win2K(SP4)です。<br></div></section>
     <ul><li><section><h1 id=3292>
     <span class="no">[3292]</span>
-    <a class="title" href="#3292">Re:(不具合報告)ファイル保存で落ちる</a>
+    <a class="thread-title" href="#3292">Re:(不具合報告)ファイル保存で落ちる</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-09-15T17:49:02">2003年09月15日 17:49</time></h1>
     <div class="body">▼ ジネさん<br>&gt; １、大きいサイズのファイルを開く(数十ＭＢ)<br>&gt; ２、変更をする<br>&gt; ３、保存をする<br>&gt; ４、保存中に外部のツールにより変更されたとのメッセージが表示される<br>&gt; ５、再読み込みを行う<br><br>もしかしてシステムファイルではないですか？<br><br>保存時に失敗して再読み込みが起こるのなら、CFileWrite::CFileWriteで例外が発生していると考えられます。</div></section>
     <ul><li><section><h1 id=3298>
     <span class="no">[3298]</span>
-    <a class="title" href="#3298">Re2:(不具合報告)ファイル保存で落ちる</a>
+    <a class="thread-title" href="#3298">Re2:(不具合報告)ファイル保存で落ちる</a>
     <span class="author">ジネ</span>
     <time datetime="2003-09-16T15:03:02">2003年09月16日 15:03</time></h1>
     <div class="body">▼ wmlhqさん<br>&gt; もしかしてシステムファイルではないですか？<br>&gt; <br>&gt; 保存時に失敗して再読み込みが起こるのなら、CFileWrite::CFileWriteで例外が発生していると考えられます。<br><br>1.4.3.1にしたら当現象は出なくなりました。<br>・ファイル保存中にファイル更新を検出して再読込を行うと落ちるので，保存中はファイル更新を検出しないように．<br>で修正されたみたいですね<br>ご迷惑をお掛けしました。<br></div></section>

@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択範囲をバイナリ→%02X変換</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>選択範囲をバイナリ→%02X変換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">418</span>
-    <a class="title" href="418.html#418">選択範囲をバイナリ→%02X変換</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=418>
+    <a class="thread-title" href="418.html#418">選択範囲をバイナリ→%02X変換</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=418>
     <span class="no">[418]</span>
-    <a class="title" href="#418">選択範囲をバイナリ→%02X変換</a>
+    <a class="thread-title" href="#418">選択範囲をバイナリ→%02X変換</a>
     <span class="author">じゅうじ</span>
     <time datetime="2008-03-28T23:19:22">2008年03月28日 23:19</time></h1>
     <div class="body"># (3) 「サクラエディタ」→「8354834E8389834783668342835E」<br># 選択範囲に対してSJIS変換を行う PerlScript マクロ<br># 参考&gt;&gt;data:5452  by miau<br>$seltext = $Editor-&gt;GetSelectedString();<br>$seltext =~ s/(.)/sprintf('%02X', unpack("U", $1))/eg;<br>$Editor-&gt;CancelMode();<br>$Editor-&gt;InsText($seltext);<br># 以降のコメントは、PerlScript のバグに<br># 対応するためのものです。<br><br>SJIS2HEX.pls<br>コードによっては中点・8145になります。<br><br># (4)「8354834E8389834783668342835E」→「サクラエディタ」<br># 選択範囲に対してSJIS変換を行う PerlScript マクロ<br># 参考&gt;&gt;data:5452  by miau<br>$seltext = $Editor-&gt;GetSelectedString();<br>$seltext =~ s/([a-fA-F0-9]{2})/pack("c", hex($1))/eg;<br>$Editor-&gt;CancelMode();<br>$Editor-&gt;InsText($seltext);<br># 以降のコメントは、PerlScript のバグに<br># 対応するためのものです。<br><br>HEX2SJIS.pls<br>コードによっては中点・8145になります。</div></section>

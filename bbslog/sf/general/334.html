@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アウトライン解析と関数配列</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アウトライン解析と関数配列 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">334</span>
-    <a class="title" href="334.html#334">アウトライン解析と関数配列</a></div>
+    <a class="thread-title" href="334.html#334">アウトライン解析と関数配列</a></div>
     <ul><li><div class="list-title">
     <span class="no">336</span>
-    <a class="title" href="334.html#336">Re: アウトライン解析と関数配列</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=334>
+    <a class="thread-title" href="334.html#336">Re: アウトライン解析と関数配列</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=334>
     <span class="no">[334]</span>
-    <a class="title" href="#334">アウトライン解析と関数配列</a>
+    <a class="thread-title" href="#334">アウトライン解析と関数配列</a>
     <span class="author">イシュタル</span>
     <time datetime="2001-04-06T01:01:06">2001年04月06日 01:01</time></h1>
     <div class="body">こんばんは。<br>いつも仕事で使わせていただいています。<br><br>報告なのですが、<br>こんな感じの関数配列があったとします。<br>void (*KannsuuHairetu[])( void )<br>{<br>}<br>アウトライン解析にかけると、関数配列の行が、<br>[]<br>と表示されてしまいます。<br>また、<br>void (*KannsuuHairetu[5])( void )<br>のように、要素数を決めてやると、アウトライン解析では、<br>]<br>と表示されてしまいます。<br>なんとかなりませんでしょうか？<br></div></section>
     <ul><li><section><h1 id=336>
     <span class="no">[336]</span>
-    <a class="title" href="#336">Re: アウトライン解析と関数配列</a>
+    <a class="thread-title" href="#336">Re: アウトライン解析と関数配列</a>
     <span class="author">げんた</span>
     <time datetime="2001-04-06T09:37:21">2001年04月06日 09:37</time></h1>
     <div class="body">▼イシュタルさん<br>&gt;void (*KannsuuHairetu[])( void )<br>&gt;void (*KannsuuHairetu[5])( void )<br>&gt;なんとかなりませんでしょうか？<br>単なる考慮漏れでしょうね。何とかしたいです。<br>()の中だったら関数とは見なさないようにすれば解決するのかな？<br></div></section>

@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ユーザ毎の設定</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ユーザ毎の設定 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5806</span>
-    <a class="title" href="5806.html#5806">ユーザ毎の設定</a></div>
+    <a class="thread-title" href="5806.html#5806">ユーザ毎の設定</a></div>
     <ul><li><div class="list-title">
     <span class="no">5807</span>
-    <a class="title" href="5806.html#5807">Re: ユーザ毎の設定</a></div>
+    <a class="thread-title" href="5806.html#5807">Re: ユーザ毎の設定</a></div>
     <ul><li><div class="list-title">
     <span class="no">5811</span>
-    <a class="title" href="5806.html#5811">Re2: ユーザ毎の設定</a></div>
+    <a class="thread-title" href="5806.html#5811">Re2: ユーザ毎の設定</a></div>
     </li><li><div class="list-title">
     <span class="no">5819</span>
-    <a class="title" href="5806.html#5819">Re2: ユーザ毎の設定</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5806>
+    <a class="thread-title" href="5806.html#5819">Re2: ユーザ毎の設定</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5806>
     <span class="no">[5806]</span>
-    <a class="title" href="#5806">ユーザ毎の設定</a>
+    <a class="thread-title" href="#5806">ユーザ毎の設定</a>
     <span class="author">めい</span>
     <time datetime="2007-02-07T22:49:24">2007年02月07日 22:49</time></h1>
     <div class="body">なぜ、設定の保存にレジストリを使用しないのでしょうか。<br>せめて、ユーザ毎に設定を保存できるようにできませんか。</div></section>
     <ul><li><section><h1 id=5807>
     <span class="no">[5807]</span>
-    <a class="title" href="#5807">Re: ユーザ毎の設定</a>
+    <a class="thread-title" href="#5807">Re: ユーザ毎の設定</a>
     <span class="author">げんた</span>
     <time datetime="2007-02-08T00:11:22">2007年02月08日 00:11</time></h1>
     <div class="body">&gt;なぜ、設定の保存にレジストリを使用しないのでしょうか。<br>当初からそういう方針です．だと答えになっていないので，<br>* 削除を簡単にするため．(インストーラ無しで使ってもレジストリが残らないように)<br>* リムーバブルメディアからの一時的な使用でレジストリが残って欲しくない．<br><br>&gt;せめて、ユーザ毎に設定を保存できるようにできませんか。<br>こちらは対応した方が良いような気がしますね．<br>特にVistaで(ってまだ使っていませんが)，アプリケーションのディレクトリにユーザが書き込めるファイルを置くのはよろしくないと思いますし，現状ではユーザの切り替え機能を使うと設定が上書きされてしまいます．<br><br>以前出た環境変数を利用したパッチ &gt;&gt;dev:3791<br><br>ですが，対応するなら %USERPROFILE%(Document and Setting\ユーザ)\Application Data\sakura_editor<br>(何となくsakuraだと他のソフトと名前がぶつかりそうなので)<br>の中にsakura.iniを入れ，その他相対パス指定はsakura.exe以外にここを起点とした検索も行うようにすればいいのかな．<br><br>移動プロファイルを使っているとどうなるのかわかりませんけど...<br><br>レジストリを使わずにsakura.iniを使い分ける方法はどうしましょうか．<br>設定ファイルが使えないので共通設定に入れるわけにはいかず...<br>簡単な方法としては，sakura.exeと同じディレクトリに use_individual.ini(仮称)というファイルがあったら個人のプロファイルを見るとか．<br><br>use_individual.ini 無し<br>→sakura.exeと同じ場所のsakura.ini(無ければ新規作成)<br><br>use_individual.ini 有り＆sakura.exeと同じ場所のsakura.ini無し<br>→ユーザディレクトリに新規作成<br><br>use_individual.ini 有り＆sakura.exeと同じ場所のsakura.ini有り<br>→sakura.iniをユーザディレクトリにテンプレートとしてコピーしてそれを使う<br><br>こんな感じでどうでしょう？<br><br>この方法だとインストーラでユーザごとの設定を使うかどうかの選択肢を簡単に作れます．<br>(1ファイルコピーするかどうか選ぶだけなので)<br></div></section>
     <ul><li><section><h1 id=5811>
     <span class="no">[5811]</span>
-    <a class="title" href="#5811">Re2: ユーザ毎の設定</a>
+    <a class="thread-title" href="#5811">Re2: ユーザ毎の設定</a>
     <span class="author">hideto</span>
     <time datetime="2007-02-08T17:26:47">2007年02月08日 17:26</time></h1>
     <div class="body">デフォルトで、レジストリ使用や、INIファイルばら撒きになると困りますが、設定画面などでチェックさせる事により、ゴミを吐き出し始めるならまあいいかなあと思います。<br>ただ、バグが増えそうな気がしなくもないですが（＾＾；</div></section>
     </li><li><section><h1 id=5819>
     <span class="no">[5819]</span>
-    <a class="title" href="#5819">Re2: ユーザ毎の設定</a>
+    <a class="thread-title" href="#5819">Re2: ユーザ毎の設定</a>
     <span class="author">dskoba</span>
     <time datetime="2007-02-09T23:00:49">2007年02月09日 23:00</time></h1>
     <div class="body">アイデア<br><br>1.ユーザーフォルダにsakura.iniあり<br>→ユーザーフォルダのsakura.iniを使用する<br><br>2.ユーザーフォルダに特殊なsakura.iniあり<br>  (1行目に[USE COMMON INI]とか)<br>  sakura.exeのフォルダにsakura.iniあり<br>→sakura.exeのフォルダのsakura.iniを使用<br><br>3.ユーザーフォルダに特殊なsakura.iniあり<br>  sakura.exeのフォルダにsakura.ini無し<br>→sakura.exeのフォルダにsakura.iniを作成<br><br>4.ユーザーフォルダにsakura.ini無し<br>  sakura.exeのフォルダにsakura.iniあり<br>→ユーザー別か共通かを尋ねる<br>　ユーザー別にするならコピーするか新規にするか尋ねる<br><br>5.ユーザーフォルダにsakura.ini無し<br>  sakura.exeのフォルダにsakura.ini無し<br>→ユーザー別か共通かを尋ねる<br><br>新規インストール時は5の状態。<br>他人のPCでUSBメモリから起動する場合は4or5の状態になるわけですが。<br>sakura.exeのフォルダのsakura.iniにユーザーに尋ねない設定でも用意しますか<br></div></section>

@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Grepコマンドライン起動のバグ？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Grepコマンドライン起動のバグ？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3103</span>
-    <a class="title" href="3103.html#3103">Grepコマンドライン起動のバグ？</a></div>
+    <a class="thread-title" href="3103.html#3103">Grepコマンドライン起動のバグ？</a></div>
     <ul><li><div class="list-title">
     <span class="no">3224</span>
-    <a class="title" href="3103.html#3224">RE: Grepコマンドライン起動のバグ？</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3103>
+    <a class="thread-title" href="3103.html#3224">RE: Grepコマンドライン起動のバグ？</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3103>
     <span class="no">[3103]</span>
-    <a class="title" href="#3103">Grepコマンドライン起動のバグ？</a>
+    <a class="thread-title" href="#3103">Grepコマンドライン起動のバグ？</a>
     <span class="author">tam</span>
     <time datetime="2003-09-08T16:12:21">2003年09月08日 16:12</time></h1>
     <div class="body">はじめまして<br>大変便利に使用させていただいています。<br><br>当方、レジストリに"HKEY_CLASSES_ROOT\Directory\shell\Grep\command"キーを作成し<br>"C:\\Program Files\\sakura\\sakura.exe\" -GFOLDER="%1" -GREPDLG -GFILE="*.*" -GOPT=S -GREPMODE"<br>　と登録して、フォルダ右クリックでGrepできるようにして使用していますが、<br>　どうもコマンドラインから検索文字列・検索ファイル・検索フォルダが反映されていないようです。<br><br>CDlgGrep.cppのDoModal[75行目]に以下の３行を追加すれば、とりあえずは直るのですが<br>このような対応でよろしいのでしょうか？<br>もう少しソースを追えばよいのですが、とりあえずはバグ報告程度という事でお許しください。<br><br>strcpy( m_szText, m_pShareData-&gt;m_szSEARCHKEYArr[0] );&#9;&#9;/* 検索文字列 */<br>strcpy( m_szFile, m_pShareData-&gt;m_szGREPFILEArr[0] );&#9;&#9;/* 検索ファイル */<br>strcpy( m_szFolder, m_pShareData-&gt;m_szGREPFOLDERArr[0] );&#9;/* 検索フォルダ */<br><br></div></section>
     <ul><li><section><h1 id=3224>
     <span class="no">[3224]</span>
-    <a class="title" href="#3224">RE: Grepコマンドライン起動のバグ？</a>
+    <a class="thread-title" href="#3224">RE: Grepコマンドライン起動のバグ？</a>
     <span class="author">げんた</span>
     <time datetime="2003-10-09T02:28:53">2003年10月09日 02:28</time></h1>
     <div class="body">&gt;　どうもコマンドラインから検索文字列・検索ファイル・検索フォルダが反映されていないようです。<br>修正しました．直したのはCNormalProcess.cppです．<br></div></section>

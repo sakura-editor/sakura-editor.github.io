@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>作画ルーチンのバグ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>作画ルーチンのバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3203</span>
-    <a class="title" href="3203.html#3203">作画ルーチンのバグ</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=3203>
+    <a class="thread-title" href="3203.html#3203">作画ルーチンのバグ</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3203>
     <span class="no">[3203]</span>
-    <a class="title" href="#3203">作画ルーチンのバグ</a>
+    <a class="thread-title" href="#3203">作画ルーチンのバグ</a>
     <span class="author">もか</span>
     <time datetime="2003-09-30T14:32:03">2003年09月30日 14:32</time></h1>
     <div class="body">　1. 昔からずっとですが、1つの論理行のなかで、数レイアウト行をまたぐ色分け文字列（nCOMMENTPrevの適用外)は、正常に色分けができません。<br>　2. またnCOMMENTPrev適用範囲内でもCの場合、行コメントの/*、*/の/と*の間で、レイアウト行が変わった場合、変になります。<br>　3. 改行しても行番号が変わらないときがあります。<br>　論理行単位で行番号を表示する設定<br>　折り返されて2行以上のレイアウト行として表示されている状態の行<br>　その行を途中で改行し、改行後も表示上の行数が変わらないときに限り、<br>　行番号が変わるはずが再作画されずにそのままに<br><br>1.2.はどうしましょう？<br>・作画するとき、必ずCDocLine(論理行)単位で作画<br>　長い論理行の場合は、表示がすごく重くなると予想されます。<br>・CLayoutにm_nTypePrevに論理行内色分けも記録し、さらにその色の終了位置を追加<br>　メモリー使用量が...<br>・あきらめてもらう<br></div></section>

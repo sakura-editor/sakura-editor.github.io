@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>外部コマンドの実行の使い分け</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>外部コマンドの実行の使い分け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">1210</span>
-    <a class="title" href="1210.html#1210">外部コマンドの実行の使い分け</a></div>
+    <a class="thread-title" href="1210.html#1210">外部コマンドの実行の使い分け</a></div>
     <ul><li><div class="list-title">
     <span class="no">1211</span>
-    <a class="title" href="1210.html#1211">Re:外部コマンドの実行の使い分け</a></div>
+    <a class="thread-title" href="1210.html#1211">Re:外部コマンドの実行の使い分け</a></div>
     </li><li><div class="list-title">
     <span class="no">1212</span>
-    <a class="title" href="1210.html#1212">Re:外部コマンドの実行の使い分け</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1210>
+    <a class="thread-title" href="1210.html#1212">Re:外部コマンドの実行の使い分け</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1210>
     <span class="no">[1210]</span>
-    <a class="title" href="#1210">外部コマンドの実行の使い分け</a>
+    <a class="thread-title" href="#1210">外部コマンドの実行の使い分け</a>
     <span class="author">Youma</span>
     <time datetime="2002-02-07T11:31:53">2002年02月07日 11:31</time></h1>
     <div class="body">こんにちわ。　Ｙｏｕｍａです。<br><br>新バージョンリリースおめでとう御座います。<br>ダウンロードして、早速使いました。<br><br>最初に実験したのはもちろん、google検索との<br>関連付けです（Ｗ<br><br>explorer "<a href=http://www.google.com/search?q= target=_top><nobr>http://<wbr>www.<wbr>google.<wbr>com/<wbr>search?<wbr>q=<wbr></nobr></a>$C&amp;btnG=Google+$C&amp;lr=lang_ja"<br><br>上記で、Googleの「日本語サイト」から、検索<br><br>explorer "<a href=http://www.google.com/search?q= target=_top><nobr>http://<wbr>www.<wbr>google.<wbr>com/<wbr>search?<wbr>q=<wbr></nobr></a>$C"　で、Googleの英語サイト含む全体から検索が<br>可能になりました。<br><br>さて、以前質問したのですが、これら外部コマンドの実行を<br>複数使い分けるには、どうすればよいのでしょうか？<br><br>キーマクロについては、なんだか、色々ありそうなので＜マクロエンジン関連で<br><br>次回リリースまでお預けでしょうか？（Ｗ<br><br><br></div></section>
     <ul><li><section><h1 id=1211>
     <span class="no">[1211]</span>
-    <a class="title" href="#1211">Re:外部コマンドの実行の使い分け</a>
+    <a class="thread-title" href="#1211">Re:外部コマンドの実行の使い分け</a>
     <span class="author">Youma</span>
     <time datetime="2002-02-07T11:54:59">2002年02月07日 11:54</time></h1>
     <div class="body">▼ Youmaさん<br><br>追加です。　私がさらに利用するようになるコマンドは<br><br>explorer "<a href=http://home.alc.co.jp/db/owa/eijiro_red?word_in= target=_top><nobr>http://<wbr>home.<wbr>alc.<wbr>co.<wbr>jp/<wbr>db/<wbr>owa/<wbr>eijiro_r<wbr>ed?<wbr>word_in=<wbr></nobr></a>$C&amp;type_in=ej"<br>選択した単語を、英次郎で、　英⇒和　翻訳<br><br><br>explorer "<a href=http://home.alc.co.jp/db/owa/eijiro_red?word_in= target=_top><nobr>http://<wbr>home.<wbr>alc.<wbr>co.<wbr>jp/<wbr>db/<wbr>owa/<wbr>eijiro_r<wbr>ed?<wbr>word_in=<wbr></nobr></a>$C&amp;type_in=je"<br>選択した単語を、英次郎で、　和⇒英　翻訳<br><br>てな所ですね。<br><br>本当はExciteのＷｅｂページ翻訳を利用して『英文章』の<br>和訳・・・を実現したいのですが、これは、システム的に<br>ファイルを送り付けないと駄目っぽい<br>（というか、Excite 側　にＵＲＬを渡すと、先方が勝手にＤＬ<br>して翻訳するようだ）<br><br>・・・だれか、ファイルを渡す・・・の$$　や　$F　を利用して<br>FTPでも何でも良いからソフト利用してファイルの翻訳も<br>実現してくれないかなぁ（W<br><br>一応、URLだけを選択して送信すればWebページ翻訳OK<br>（でも右クリックサーチ君のが便利なので意味無し）<br><br>explorer "<a href=http://www.excite.co.jp/world/url/proceeding/?wb_url= target=_top><nobr>http://<wbr>www.<wbr>excite.<wbr>co.<wbr>jp/<wbr>world/<wbr>url/<wbr>proceedi<wbr>ng/?<wbr>wb_url=<wbr></nobr></a>$C&amp;wb_lp=ENJA&amp;wb_dis=3&amp;wb_co=excitejapan"<br>翻訳したいページのURLを選択して　対象ページの翻訳。<br></div></section>
     </li><li><section><h1 id=1212>
     <span class="no">[1212]</span>
-    <a class="title" href="#1212">Re:外部コマンドの実行の使い分け</a>
+    <a class="thread-title" href="#1212">Re:外部コマンドの実行の使い分け</a>
     <span class="author">hor</span>
     <time datetime="2002-02-07T17:49:29">2002年02月07日 17:49</time></h1>
     <div class="body">▼ Youmaさん<br>&gt; さて、以前質問したのですが、これら外部コマンドの実行を<br>&gt; 複数使い分けるには、どうすればよいのでしょうか？<br><br>複数の外部コマンドをキーやメニューで使い分ける・・・とゆう事でしたら以下の方法で実現できると思います。<br><br>まず次の一行を書いた外部マクロのテキストファイル(なんとか.mac)を作成して下さい。<br>ExecCommand("explorer \"<a href=http://www.google.com/search?q= target=_top><nobr>http://<wbr>www.<wbr>google.<wbr>com/<wbr>search?<wbr>q=<wbr></nobr></a>$C&amp;btnG=Google+$C&amp;lr=lang_ja\"")<br>次に、「ツール」-「共通設定」-「マクロ」で上記のファイルを何番かに「設定」して「OK」して下さい。<br>これで「ツール」-「登録済みマクロ」から外部マクロを実行できるようになると思います。<br>あとは必要な数だけこの操作を繰り返していただければ準備完了です。<br>・・・右クリックメニューやキーに割当てておくと便利かも。<br><br>ただ、直前に「ツール」-「外部コマンド実行」を"標準出力を得る"をOnにした状態で実行していた場合は<br>アウトプットウィンドウが出てくるだけだったりします・・・<br>(たぶん次のバージョンではExecCommandの引数で標準出力を得るかどうかを指定できるようになると思います)</div></section>

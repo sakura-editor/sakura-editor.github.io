@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>GlobalAllocの質問</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>GlobalAllocの質問 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3658</span>
-    <a class="title" href="3658.html#3658">GlobalAllocの質問</a></div>
+    <a class="thread-title" href="3658.html#3658">GlobalAllocの質問</a></div>
     <ul><li><div class="list-title">
     <span class="no">3662</span>
-    <a class="title" href="3658.html#3662">Re: GlobalAllocの質問</a></div>
+    <a class="thread-title" href="3658.html#3662">Re: GlobalAllocの質問</a></div>
     <ul><li><div class="list-title">
     <span class="no">3674</span>
-    <a class="title" href="3658.html#3674">Re:GlobalAllocの質問(訂正)</a></div>
+    <a class="thread-title" href="3658.html#3674">Re:GlobalAllocの質問(訂正)</a></div>
     <ul><li><div class="list-title">
     <span class="no">3676</span>
-    <a class="title" href="3658.html#3676">Re2:GlobalAllocの質問(訂正)</a></div>
+    <a class="thread-title" href="3658.html#3676">Re2:GlobalAllocの質問(訂正)</a></div>
     <ul><li><div class="list-title">
     <span class="no">3678</span>
-    <a class="title" href="3658.html#3678">Re3:GlobalAllocの質問</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3658>
+    <a class="thread-title" href="3658.html#3678">Re3:GlobalAllocの質問</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3658>
     <span class="no">[3658]</span>
-    <a class="title" href="#3658">GlobalAllocの質問</a>
+    <a class="thread-title" href="#3658">GlobalAllocの質問</a>
     <span class="author">fotomo</span>
     <time datetime="2004-07-08T11:34:50">2004年07月08日 11:34</time></h1>
     <div class="body">ソースについての質問なのですが、<br><br>クリップボードの関数やドラッグアンドドロップ編集<br>するところなどでGlobalAllocでメモリ確保してますが、<br>これらのメモリはどのタイミングでフリーされるのでしょうか？<br><br><br>CEditView::Drop()の中で使われているGetGlobalMemory<br>なんかでは素人目にはメモリを開放していないようにも見える<br>のですが。<br></div></section>
     <ul><li><section><h1 id=3662>
     <span class="no">[3662]</span>
-    <a class="title" href="#3662">Re: GlobalAllocの質問</a>
+    <a class="thread-title" href="#3662">Re: GlobalAllocの質問</a>
     <span class="author">もか</span>
     <time datetime="2004-07-09T21:52:31">2004年07月09日 21:52</time></h1>
     <div class="body">&gt;クリップボードの関数やドラッグアンドドロップ編集<br>&gt;するところなどでGlobalAllocでメモリ確保してますが、<br>&gt;これらのメモリはどのタイミングでフリーされるのでしょうか？<br>クリップボードの場合＝SetClipboardDataで設定したハンドルとメモリーは、OS管理下になります。<br>任意のプロセスがEmptyClipboard()を呼び出した時点でOSが開放します。<br><br>ちなみに、SetClipboardDataしたあと、そのハンドルを開放してみると、SetClipboardDataしたプロセスでは、GetClipboardDataを使ってもデータの取得に失敗します。(Win2Kの場合)。<br><br>一方D&amp;Dはよく知らないので調べてみた限りでは、<br>CDataObject::GetData()で、GlobalAllocしてその直後に<br>&gt;&#9;lpsm-&gt;pUnkForRelease = NULL;<br>と設定してあり、IDataObject::GetData()を呼び出す側がこのメモリーを開放するという指定なので、大丈夫そうです。<br><br>問題のデータをもらう側は、futomoさんが指摘しているとおり、<br>CEditView.cpp の GetGlobalData() の戻り値をGlobalFreeする必要があるようです。<br><br>#どうもOLE・COM周りは苦手や<br></div></section>
     <ul><li><section><h1 id=3674>
     <span class="no">[3674]</span>
-    <a class="title" href="#3674">Re:GlobalAllocの質問(訂正)</a>
+    <a class="thread-title" href="#3674">Re:GlobalAllocの質問(訂正)</a>
     <span class="author">もか</span>
     <time datetime="2004-07-12T21:50:12">2004年07月12日 21:50</time></h1>
     <div class="body">&gt;問題のデータをもらう側は、futomoさんが指摘しているとおり、<br>正しくは、fotomoさんです。大変失礼しました。<br></div></section>
     <ul><li><section><h1 id=3676>
     <span class="no">[3676]</span>
-    <a class="title" href="#3676">Re2:GlobalAllocの質問(訂正)</a>
+    <a class="thread-title" href="#3676">Re2:GlobalAllocの質問(訂正)</a>
     <span class="author">fotomo</span>
     <time datetime="2004-07-13T09:55:39">2004年07月13日 09:55</time></h1>
     <div class="body">回答ありがとうございました。<br><br>クリップボード系のメモリ開放タイミングに<br>ついては非常に良く分かりました。<br><br>CEditView::Drop 内で、GetGlobalData関数で<br>取得したメモリへのハンドルをGlobalFreeして<br>やれば良いのですね。こちらも理解可能です。<br><br>PS:<br>仕様なのだと思いますが、こんな現象を見つけました。<br><br>①NULLを含んだテキストをドラッグ &amp; <br>ドロップ編集すると、NULLのところでテキストが<br>打ち切られてしまうようです。<br><br>②NULLを含んだテキストを矩形貼り付けできない<br>ようです。<br><br><br>では。</div></section>
     <ul><li><section><h1 id=3678>
     <span class="no">[3678]</span>
-    <a class="title" href="#3678">Re3:GlobalAllocの質問</a>
+    <a class="thread-title" href="#3678">Re3:GlobalAllocの質問</a>
     <span class="author">もか</span>
     <time datetime="2004-07-14T00:40:49">2004年07月14日 00:40</time></h1>
     <div class="body">&gt;PS:<br>&gt;仕様なのだと思いますが、こんな現象を見つけました。<br>をを！　報告ありがたいです。<br><br>&gt;(1)NULLを含んだテキストをドラッグ &amp; ドロップ編集すると、NULLのところでテキストが打ち切られてしまうようです。<br>いまのところ、仕様のようです。<br>D&amp;Dの送り側/受け取り側の両方で、サクラエディタ専用フォーマット(SakuraClip)も扱えるようにしないと直せないと思います。<br><br>&gt;(2)NULLを含んだテキストを矩形貼り付けできないようです。<br>バグだったみたいです。<br><br>#改行位置、一部文字を変えました。ご了承を<br></div></section>

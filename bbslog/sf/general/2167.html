@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>メモ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>メモ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2167</span>
-    <a class="title" href="2167.html#2167">メモ</a></div>
+    <a class="thread-title" href="2167.html#2167">メモ</a></div>
     <ul><li><div class="list-title">
     <span class="no">2171</span>
-    <a class="title" href="2167.html#2171">RE: メモ</a></div>
+    <a class="thread-title" href="2167.html#2171">RE: メモ</a></div>
     <ul><li><div class="list-title">
     <span class="no">2178</span>
-    <a class="title" href="2167.html#2178">Re2: メモ</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2167>
+    <a class="thread-title" href="2167.html#2178">Re2: メモ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2167>
     <span class="no">[2167]</span>
-    <a class="title" href="#2167">メモ</a>
+    <a class="thread-title" href="#2167">メモ</a>
     <span class="author">みく</span>
     <time datetime="2002-08-07T18:52:38">2002年08月07日 18:52</time></h1>
     <div class="body"><br>・ツール→共通設定→支援の「キーワードヘルプ」誤記<br><br>・BugsInfo.txtファイルの77行目にゴミ<br><br>・CFileWrite.cpp<br>C++に詳しくないので適当に書きますが、<br>_tfopenに失敗したらthrowしてますが、<br>このときデストラクタは走らないということでよろしいのでしょうか。<br><br>→もし走るならデストラクタでいきなりfclose(m_hFile)はまずい。<br>→もし走らないならm_pszPathはどこで解放するのでしょうか。<br><br>m_pszPath=::_tcsdup(pszPath);<br>は必ず成功するとは限らないのでNULLチェックは必要です。<br>デストラクタではNULLチェックしてから使いましょう。<br><br>コンストラクタでm_dwFileAttribute == -1 となったとき、<br>m_pszPathはNULLのままなのでデストラクタでfree(m_pszPath);はまずいでしょう。<br></div></section>
     <ul><li><section><h1 id=2171>
     <span class="no">[2171]</span>
-    <a class="title" href="#2171">RE: メモ</a>
+    <a class="thread-title" href="#2171">RE: メモ</a>
     <span class="author">みく</span>
     <time datetime="2002-08-08T21:08:00">2002年08月08日 21:08</time></h1>
     <div class="body"><br>&gt;・CFileWrite.cpp<br>Writeのときも同じく、fwriteエラー時にthrowしてしまうので<br>m_pszPathが解放されません。しかもファイルをクローズしないので<br>FILEポインタつかみっぱなしです。<br><br>・フォントの設定で、<br>MSゴシック→欧文フォント→MSゴシック<br>としたとき、フォントがMSゴシックに戻りません。<br>Terminal→MSゴシック<br>とすると戻ります。<br></div></section>
     <ul><li><section><h1 id=2178>
     <span class="no">[2178]</span>
-    <a class="title" href="#2178">Re2: メモ</a>
+    <a class="thread-title" href="#2178">Re2: メモ</a>
     <span class="author">こおり</span>
     <time datetime="2002-08-09T09:09:16">2002年08月09日 09:09</time></h1>
     <div class="body">&gt;・CFileWrite.cpp<br>ここは私が書いた部分ですね。<br>沢山ミスがあって申し訳ありません。<br><br>&gt; _tfopenに失敗したらthrowしてますが、<br>&gt; →もし走るならデストラクタでいきなりfclose(m_hFile)はまずい。<br>&gt; →もし走らないならm_pszPathはどこで解放するのでしょうか。<br>デストラクタは走らないので、m_pszPathを解放していませんでした。<br>throwするまえにfree(m_pszPath)を呼び出す必要がありましたね。<br><br>&gt; コンストラクタでm_dwFileAttribute == -1 となったとき、<br>&gt; m_pszPathはNULLのままなのでデストラクタでfree(m_pszPath);はまずいでしょう。<br>freeは引数がNULLの時は何もしないと思っていたので、こうしたのですが<br>環境によってはまずかったりするのでしょうか？<br><br>&gt; Writeのときも同じく、fwriteエラー時にthrowしてしまうので<br>&gt; m_pszPathが解放されません。しかもファイルをクローズしないので<br>&gt; FILEポインタつかみっぱなしです。<br>コンストラクタの呼び出しが完了した後で例外がthrowされた場合は<br>デストラクタが呼び出されるので、これは大丈夫だと思います。</div></section>

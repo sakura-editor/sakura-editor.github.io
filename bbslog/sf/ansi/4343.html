@@ -1,99 +1,125 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>タブにマウス操作の機能追加</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>タブにマウス操作の機能追加 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">4343</span>
-    <a class="title" href="4343.html#4343">タブにマウス操作の機能追加</a></div>
+    <a class="thread-title" href="4343.html#4343">タブにマウス操作の機能追加</a></div>
     <ul><li><div class="list-title">
     <span class="no">4344</span>
-    <a class="title" href="4343.html#4344">RE: タブにマウス操作の機能追加</a></div>
+    <a class="thread-title" href="4343.html#4344">RE: タブにマウス操作の機能追加</a></div>
     <ul><li><div class="list-title">
     <span class="no">4346</span>
-    <a class="title" href="4343.html#4346">Re2: タブにマウス操作の機能追加</a></div>
+    <a class="thread-title" href="4343.html#4346">Re2: タブにマウス操作の機能追加</a></div>
     <ul><li><div class="list-title">
     <span class="no">4352</span>
-    <a class="title" href="4343.html#4352">Re3: タブにマウス操作の機能追加</a></div>
+    <a class="thread-title" href="4343.html#4352">Re3: タブにマウス操作の機能追加</a></div>
     <ul><li><div class="list-title">
     <span class="no">4354</span>
-    <a class="title" href="4343.html#4354">Re4: タブにマウス操作の機能追加</a></div>
+    <a class="thread-title" href="4343.html#4354">Re4: タブにマウス操作の機能追加</a></div>
     </li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">4345</span>
-    <a class="title" href="4343.html#4345">Re: タブにマウス操作の機能追加</a></div>
+    <a class="thread-title" href="4343.html#4345">Re: タブにマウス操作の機能追加</a></div>
     </li><li><div class="list-title">
     <span class="no">4348</span>
-    <a class="title" href="4343.html#4348">Re: タブにマウス操作の機能追加</a></div>
+    <a class="thread-title" href="4343.html#4348">Re: タブにマウス操作の機能追加</a></div>
     <ul><li><div class="list-title">
     <span class="no">4355</span>
-    <a class="title" href="4343.html#4355">Re2: タブにマウス操作の機能追加</a></div>
+    <a class="thread-title" href="4343.html#4355">Re2: タブにマウス操作の機能追加</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">4356</span>
-    <a class="title" href="4343.html#4356">タブにマウス操作の機能追加（修正1.2.1版）</a></div>
+    <a class="thread-title" href="4343.html#4356">タブにマウス操作の機能追加（修正1.2.1版）</a></div>
     </li><li><div class="list-title">
     <span class="no">4366</span>
-    <a class="title" href="4343.html#4366">タブにマウス操作の機能追加（修正1.3.1版）</a></div>
+    <a class="thread-title" href="4343.html#4366">タブにマウス操作の機能追加（修正1.3.1版）</a></div>
     <ul><li><div class="list-title">
     <span class="no">4371</span>
-    <a class="title" href="4343.html#4371">修正1.3.2版</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4343>
+    <a class="thread-title" href="4343.html#4371">修正1.3.2版</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4343>
     <span class="no">[4343]</span>
-    <a class="title" href="#4343">タブにマウス操作の機能追加</a>
+    <a class="thread-title" href="#4343">タブにマウス操作の機能追加</a>
     <span class="author">ryoji</span>
     <time datetime="2006-03-26T03:44:22">2006年03月26日 03:44</time></h1>
     <div class="body">タブにマウス操作の機能追加をしてみました。<br>＃Subversion運用への慣らしも兼ねて (^^;<br><br>・タブバーの何もない所をダブルクリックで新規作成 &gt;&gt;data:5077<br>・タブ上のマウスホイールでウィンドウ切替（共通設定オプション） &gt;&gt;dev:4302<br>です。<br><br>保管場所: SourceForge Patches "TabWnd Mouse+"<br>パッチ形式: TortoiseSVN Create Patch...<br>ベース: sakura/trunk#954</div></section>
     <ul><li><section><h1 id=4344>
     <span class="no">[4344]</span>
-    <a class="title" href="#4344">RE: タブにマウス操作の機能追加</a>
+    <a class="thread-title" href="#4344">RE: タブにマウス操作の機能追加</a>
     <span class="author">げんた</span>
     <time datetime="2006-03-26T23:27:55">2006年03月26日 23:27</time></h1>
     <div class="body">&gt;・タブ上のマウスホイールでウィンドウ切替（共通設定オプション） &gt;&gt;dev:4302<br>&gt;です。<br>タブバーの上じゃなくてタブの上でないとうまく動かないんですね．<br><br>それと，ホイールをくるくる激しく回すと一瞬画面が消えてから現れ，それ以降反応しなくなることがあります．<br></div></section>
     <ul><li><section><h1 id=4346>
     <span class="no">[4346]</span>
-    <a class="title" href="#4346">Re2: タブにマウス操作の機能追加</a>
+    <a class="thread-title" href="#4346">Re2: タブにマウス操作の機能追加</a>
     <span class="author">ryoji</span>
     <time datetime="2006-03-26T23:55:16">2006年03月26日 23:55</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;・タブ上のマウスホイールでウィンドウ切替（共通設定オプション） &gt;&gt;dev:4302<br>&gt; &gt;です。<br>&gt; タブバーの上じゃなくてタブの上でないとうまく動かないんですね．<br>あ、これ、無意識に他エディタの動作を真似しちゃってました。言われてみると、バーの上ならどこでも効くようにしたほうが良さそうですね。<br><br>&gt; それと，ホイールをくるくる激しく回すと一瞬画面が消えてから現れ，それ以降反応しなくなることがあります．<br>Ctrl+Tab も押しっぱなしだと同様なので、従来からの問題ですね。<br>ちょっと対策考えてみます。</div></section>
     <ul><li><section><h1 id=4352>
     <span class="no">[4352]</span>
-    <a class="title" href="#4352">Re3: タブにマウス操作の機能追加</a>
+    <a class="thread-title" href="#4352">Re3: タブにマウス操作の機能追加</a>
     <span class="author">げんた</span>
     <time datetime="2006-03-30T21:46:52">2006年03月30日 21:46</time></h1>
     <div class="body">&gt;&gt; それと，ホイールをくるくる激しく回すと一瞬画面が消えてから現れ，それ以降反応しなくなることがあります．<br>&gt;Ctrl+Tab も押しっぱなしだと同様なので、従来からの問題ですね。<br>仮説ですが，<br>このエディタは見かけ上TABだけ変わったように見えますが，実際には二人羽織状態で同じ位置の複数のウィンドウで表示・非表示を切り替えていますよね．<br>次のウィンドウに画面が切り替わる前に同じウィンドウにメッセージが連続して入ってしまうと誤動作するのかな？<br></div></section>
     <ul><li><section><h1 id=4354>
     <span class="no">[4354]</span>
-    <a class="title" href="#4354">Re4: タブにマウス操作の機能追加</a>
+    <a class="thread-title" href="#4354">Re4: タブにマウス操作の機能追加</a>
     <span class="author">ryoji</span>
     <time datetime="2006-03-31T01:25:56">2006年03月31日 01:25</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;&gt; それと，ホイールをくるくる激しく回すと一瞬画面が消えてから現れ，それ以降反応しなくなることがあります．<br>&gt; &gt;Ctrl+Tab も押しっぱなしだと同様なので、従来からの問題ですね。<br>&gt; 仮説ですが，<br>&gt; このエディタは見かけ上TABだけ変わったように見えますが，実際には二人羽織状態で同じ位置の複数のウィンドウで表示・非表示を切り替えていますよね．<br>&gt; 次のウィンドウに画面が切り替わる前に同じウィンドウにメッセージが連続して入ってしまうと誤動作するのかな？<br>WM_MOUSEWHEEL処理の最後にPeekMessage()で残りのWM_MOUSEWHEELを刈り取ってしまう(PM_REMOVE)、という実験を最初に試したんですが、特に効果は見られなかったです。<br><br>間違いなくまずそうなのは、表示／非表示の切り替えにPostMessage()でTWNT_ORDER通知している点です。<br>画面Ａ、Ｂ、ＣがあってアクティブなのがＡだったとき、<br>1.WM_MOUSEWHEELによってＡがＢをアクティブ化する（Ａ、Ｂが表示状態）<br>2.Ｂは自分がアクティブになるとＡ、Ｂ、ＣにTWNT_ORDER通知をポストする<br>3.ＡはTWNT_ORDERを取り出すと自分を非表示にする<br>4.ＢはTWNT_ORDERを取り出すと自分を表示にする（既に表示だけど）<br>5.ＣはTWNT_ORDERを取り出すと自分を非表示にする（既に非表示だけど）<br>（3,4,5は順不同）<br>という動作になりますが、2よりも後の処理には必ずタイムラグがあります。<br> 5 よりも先にＢのWM_MOUSEWHEEL処理が動きだすかもしれない。<br>すると、Ｃは一旦アクティブにされるものの、その後の 5 によって自分を消してしまう。<br>Ｃは自分がアクティブになったときに自分自身にTWNT_ORDERをポストしているから、また表示されるけど。<br><br>何度も試していると、２画面が表示状態のまま止まったりすることも。<br>TWNT_ORDERをSendMessage()で試してみたらだいぶ改善されたけど、それでも完動はしてないです。<br>他の要因も絡んでいるということなのでしょうが、まだ不明。<br>共有メモリの非同期アクセスが絡んでたら、嫌だなぁ～...</div></section>
     </li></ul></li></ul></li></ul></li><li><section><h1 id=4345>
     <span class="no">[4345]</span>
-    <a class="title" href="#4345">Re: タブにマウス操作の機能追加</a>
+    <a class="thread-title" href="#4345">Re: タブにマウス操作の機能追加</a>
     <span class="author">げんた</span>
     <time datetime="2006-03-26T23:37:24">2006年03月26日 23:37</time></h1>
     <div class="body">&gt;保管場所: SourceForge Patches "TabWnd Mouse+"<br>あ，別にコメントを日本語で書いて頂いても大丈夫です．<br>ただ，送られてくるメールにその本文が入って文字化けしますけど．<br>私はそれがいやで日本語を無意識に避けているだけです．<br></div></section>
     </li><li><section><h1 id=4348>
     <span class="no">[4348]</span>
-    <a class="title" href="#4348">Re: タブにマウス操作の機能追加</a>
+    <a class="thread-title" href="#4348">Re: タブにマウス操作の機能追加</a>
     <span class="author">もか</span>
     <time datetime="2006-03-29T02:31:41">2006年03月29日 02:31</time></h1>
     <div class="body">ホイールによるタブ切り替えについて、<br>F_PREVWINDOW / F_NEXTWINDOWを使っているので画面分割中だと、<br>アクティブな分割パネル(サクラ用語だと何だろう)が切り替わることがあります。<br>ドキュメント(＝タブ)間を切り替えるだけのほうが、使いかってはよさそうです。<br></div></section>
     <ul><li><section><h1 id=4355>
     <span class="no">[4355]</span>
-    <a class="title" href="#4355">Re2: タブにマウス操作の機能追加</a>
+    <a class="thread-title" href="#4355">Re2: タブにマウス操作の機能追加</a>
     <span class="author">ryoji</span>
     <time datetime="2006-03-31T01:40:52">2006年03月31日 01:40</time></h1>
     <div class="body">▼ もかさん<br>&gt; ホイールによるタブ切り替えについて、<br>&gt; F_PREVWINDOW / F_NEXTWINDOWを使っているので画面分割中だと、<br>&gt; アクティブな分割パネル(サクラ用語だと何だろう)が切り替わることがあります。<br>なので、要望では「タブ切替」と呼ばれていたのを密かに「ウィンドウ切替」と呼称変更していたのでした σ(^^;;;<br>もともとちょっと気にはしてたんですが、<br>&gt; ドキュメント(＝タブ)間を切り替えるだけのほうが、使いかってはよさそうです。<br>やっぱりタブ上の操作なので「タブ切替」にしたほうが素直でしたね。<br>ただ、高速切替が安定しないことには、安易に取り込まないほうがよさそうですけど...</div></section>
     </li></ul></li><li><section><h1 id=4356>
     <span class="no">[4356]</span>
-    <a class="title" href="#4356">タブにマウス操作の機能追加（修正1.2.1版）</a>
+    <a class="thread-title" href="#4356">タブにマウス操作の機能追加（修正1.2.1版）</a>
     <span class="author">ryoji</span>
     <time datetime="2006-03-31T02:28:36">2006年03月31日 02:28</time></h1>
     <div class="body">TabWnd_MousePlus1_2_1.diff（修正1.2.1版）<br>マウスホイールの修正<br>・タブ上だけでなくタブバーのどこでもホイールが効くように<br>・マルチモニタで負座標のときでもホイールが動作するように<br>・ホイール動作を「ウィンドウ切替」から「タブ切替」に<br>連続ホイールによる高速切替は不安定なままです。<br>安定化の目処も立っていません。<br><br>上記パッチに、以下を追加するとちょっとはましになるかも。<br><br>--- sakura_core/CShareData.cpp&#9;(revision 954)<br>+++ sakura_core/CShareData.cpp&#9;(working copy)<br>@@ -822,8 +826,20 @@<br> &#9;cRecentEditNode.Terminate();<br> <br> &#9;//ウインドウ登録メッセージをブロードキャストする。<br>-&#9;PostMessageToAllEditors( MYWM_TAB_WINDOW_NOTIFY, (WPARAM)nSubCommand, (LPARAM)hWnd, hWnd );<br> <br>+&#9;// 2006.03.30 ryoji タブまとめ表示の場合は SendMessageToAllEditors() にする<br>+&#9;// "次／前の画面" などの連続実行で短時間内に多数のウィンドウ切り替えが<br>+&#9;// 行われる場合、ポストでは受け側の処理（TWNT_ORDER）が遅延するので、<br>+&#9;// 一時的に、<br>+&#9;//     ・全部の画面が消える<br>+&#9;//     ・複数の画面が表示される<br>+&#9;//     ・表示されていてほしい画面が消えて別の画面が表示される<br>+&#9;// などの状態になり、切り替え動作自体がおかしくなることがある<br>+&#9;if( ( m_pShareData-&gt;m_Common.m_bDispTabWnd &amp;&amp; !m_pShareData-&gt;m_Common.m_bDispTabWndMultiWin ) &amp;&amp; nSubCommand == TWNT_ORDER )<br>+&#9;&#9;SendMessageToAllEditors( MYWM_TAB_WINDOW_NOTIFY, (WPARAM)nSubCommand, (LPARAM)hWnd, hWnd );<br>+&#9;else<br>+&#9;&#9;PostMessageToAllEditors( MYWM_TAB_WINDOW_NOTIFY, (WPARAM)nSubCommand, (LPARAM)hWnd, hWnd );<br>+<br> &#9;return TRUE;<br> }<br> <br></div></section>
     </li><li><section><h1 id=4366>
     <span class="no">[4366]</span>
-    <a class="title" href="#4366">タブにマウス操作の機能追加（修正1.3.1版）</a>
+    <a class="thread-title" href="#4366">タブにマウス操作の機能追加（修正1.3.1版）</a>
     <span class="author">ryoji</span>
     <time datetime="2006-04-03T23:17:58">2006年04月03日 23:17</time></h1>
     <div class="body">TabWnd_MousePlus1_3_1.diff（修正1.3.1版）<br><br>今回の修正<br>・画面の連続切替（Ctrl+Tab や ホイールによる切替）が安定動作しない件の対策<br><br>TWNT_ORDER を SendMessageTimeout() でブロードキャストするようにしました。<br>ActivateFrameWindow() が複数プロセスで衝突しないようにしました。<br>マルチプロセスの同期関連で他に問題が無いかは不明ですが、動作テストの範囲では安定しているように思われます。<br><br>動作確認<br>  コンパイル: VC++6.0, 2003, 2005<br>  OS: Win95, 98SE, NT4.0 WS, 2000 Pro, Xp Pro(SP2)<br>  CPU: Pen3, Pen4(ハイパースレッディング)<br><br>保管場所: SourceForge Patches "TabWnd Mouse+"<br>パッチ形式: TortoiseSVN Create Patch...<br>ベース: sakura/trunk#955<br></div></section>
     <ul><li><section><h1 id=4371>
     <span class="no">[4371]</span>
-    <a class="title" href="#4371">修正1.3.2版</a>
+    <a class="thread-title" href="#4371">修正1.3.2版</a>
     <span class="author">ryoji</span>
     <time datetime="2006-04-04T22:23:03">2006年04月04日 22:23</time></h1>
     <div class="body">TabWnd_MousePlus1_3_2.diff<br>バグ混入してたので、その部分を除去しました。m(__)m<br>ついでにミューテックスクラスも汎用化。<br><br>保管場所: SourceForge Patches "TabWnd Mouse+"<br>パッチ形式: TortoiseSVN<br>ベース: sakura/trunk#956</div></section>

@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>RE: .$ 置換（不具合？）</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>RE: .$ 置換（不具合？） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3335</span>
-    <a class="title" href="3335.html#3335">RE: .$ 置換（不具合？）</a></div>
+    <a class="thread-title" href="3335.html#3335">RE: .$ 置換（不具合？）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3337</span>
-    <a class="title" href="3335.html#3337">Re2: .$ 置換（不具合？）</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3335>
+    <a class="thread-title" href="3335.html#3337">Re2: .$ 置換（不具合？）</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3335>
     <span class="no">[3335]</span>
-    <a class="title" href="#3335">RE: .$ 置換（不具合？）</a>
+    <a class="thread-title" href="#3335">RE: .$ 置換（不具合？）</a>
     <span class="author">かろと</span>
     <time datetime="2003-12-14T20:54:44">2003年12月14日 20:54</time></h1>
     <div class="body"><br>一般[3548]のレスの続きです。<br><br>&gt;. には[CR]を含めないのが「ヘルプ」以前の本来の仕様なのだと思います。<br><br>『「ヘルプ」以前の』という意味がわかりませんが、<br>. は、[CR]又は[LF]以外の文字にマッチするのが、本来の仕様なのではないか？言われていると理解しました。<br><br>ここがつらいところなのですが、<br>残念ながら、サクラで使っている正規表現ライブラリ(BREGEXP.dll)内部で「.」は、[LF]以外と扱われているので<br>どうしても、「.」は[CR]にマッチしてしまうのが現状です。<br><br><br>今回の、<br><br>&gt;「.$」⇒「」or「\r」<br>&gt;「..$」⇒「」or「\r」<br>&gt;正規表現ですが、結果が大きく異なります。<br><br>という置換で、結果が異なるのは、<br>開発[2826]で実施した、$の行末文字の処理を特別扱いの対象になったか否かで決まっているようです。<br><br>$の特別処理で、$側に、[CR][LF]の両方を含んでいるかのように扱っているので、<br>後者の方はあたかも「.」が[CR」を含まないように振る舞います。<br>しかし、今のアルゴリズムでは「.$」は特別扱いの対象にならないため、<br>ライブラリの仕様通り、「.」が[CR]にマッチしているようです。<br><br><br>恐らく、上記から推測するに、じゅうじさんは、<br>&gt;「..$」⇒「」or「\r」<br>の動作が、期待する置換だと言われているのですよね？<br><br>$の特別処理に手を入れれば、<br>&gt;「.$」⇒「」or「\r」<br>も、同じように特別処理の対象にすることはできそうですので、要望があればモグラ叩き可能です。<br></div></section>
     <ul><li><section><h1 id=3337>
     <span class="no">[3337]</span>
-    <a class="title" href="#3337">Re2: .$ 置換（不具合？）</a>
+    <a class="thread-title" href="#3337">Re2: .$ 置換（不具合？）</a>
     <span class="author">もか</span>
     <time datetime="2003-12-15T01:02:36">2003年12月15日 01:02</time></h1>
     <div class="body">▼じゅうじさん<br>&gt;. には[CR]を含めないのが「ヘルプ」以前の本来の仕様なのだと思います。<br>▼ http://www.perldoc.com/perl5.004_05/pod/perlre.html<br>&gt;.&#9;Match any character (except newline)<br>...<br>&gt;    \n&#9;&#9;newline               (LF, NL)<br>&gt;    \r&#9;&#9;return                (CR)<br>参照したバージョンが正しいのか知りませんが、newlineにCRは含まれない。<br>すなわち、. にはCRは含まれると読めます。<br>any characterはBregexpの仕様により、漢字の2バイト文字も含みます。<br><br>なお、ヘルプにはサクラエディタ側が行っている特殊処理などの正確な記載が出来ていません。<br>それ以前に、今ざっと眺めただけでも幾つか変なところが...すみません。近いうちに直します。<br>▼ヘルプ(GFDL)より<br>&gt;.&#9;&#9;\nを除く任意の1文字 [.\n]と同じ<br>修正候補<br>.&#9;&#9;\nを除く任意の文字(全角文字にも一致する) [^\n]と同じ<br></div></section>

@@ -1,63 +1,89 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>[バグ]全角ナン検索でオンも検索(逆もそう)</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>[バグ]全角ナン検索でオンも検索(逆もそう) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">85</span>
-    <a class="title" href="85.html#85">[バグ]全角ナン検索でオンも検索(逆もそう)</a></div>
+    <a class="thread-title" href="85.html#85">[バグ]全角ナン検索でオンも検索(逆もそう)</a></div>
     <ul><li><div class="list-title">
     <span class="no">87</span>
-    <a class="title" href="85.html#87">Re:[バグ]全角ナン検索でオンも検索(逆もそう)</a></div>
+    <a class="thread-title" href="85.html#87">Re:[バグ]全角ナン検索でオンも検索(逆もそう)</a></div>
     <ul><li><div class="list-title">
     <span class="no">104</span>
-    <a class="title" href="85.html#104">Re2:[バグ]全角ナン検索でオンも検索(逆もそう)</a></div>
+    <a class="thread-title" href="85.html#104">Re2:[バグ]全角ナン検索でオンも検索(逆もそう)</a></div>
     <ul><li><div class="list-title">
     <span class="no">109</span>
-    <a class="title" href="85.html#109">Re3:[バグ]全角ナン検索でオンも検索(逆もそう)</a></div>
+    <a class="thread-title" href="85.html#109">Re3:[バグ]全角ナン検索でオンも検索(逆もそう)</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">89</span>
-    <a class="title" href="85.html#89">RE: [バグ]全角ナン検索でオンも検索(逆もそう)</a></div>
+    <a class="thread-title" href="85.html#89">RE: [バグ]全角ナン検索でオンも検索(逆もそう)</a></div>
     </li><li><div class="list-title">
     <span class="no">131</span>
-    <a class="title" href="85.html#131">似たような検索バグ</a></div>
+    <a class="thread-title" href="85.html#131">似たような検索バグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">135</span>
-    <a class="title" href="85.html#135">Re: 似たような検索バグ</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=85>
+    <a class="thread-title" href="85.html#135">Re: 似たような検索バグ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=85>
     <span class="no">[85]</span>
-    <a class="title" href="#85">[バグ]全角ナン検索でオンも検索(逆もそう)</a>
+    <a class="thread-title" href="#85">[バグ]全角ナン検索でオンも検索(逆もそう)</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-02-24T21:10:20">2001年02月24日 21:10</time></h1>
     <div class="body">厳密にはナとオが問題。(同一視現象が他にもあるかは未確認)<br>検索はエディタとしては最も基本的な機能なので早急にフィックスが必要です。プライオリティが高い致命的バグです。こういうことがあるということは検索ルーチンそのモノの見直しが必要だと思われるからです。<br>検索でなくて置換だったら「エライこっちゃ」です。実際置換でも案の定勘違いしてくれました。一々確認しないで[全置換]したら・・・ヤバイ。<br>(追記)オリジナル版からのバグと判明。よくも報告が来なかったもんだ。このエディタ、ホントに使われてるんかいな？「オリジナル」という文字列で試してみればすぐ発覚するというのもまた何とも皮肉な話だ。(T_T)<br>手の込んだ(いや、込んでない)イースターエッグかいな？アルファベットと五十音すべてを単文字で検索してみる必要あり？</div></section>
     <ul><li><section><h1 id=87>
     <span class="no">[87]</span>
-    <a class="title" href="#87">Re:[バグ]全角ナン検索でオンも検索(逆もそう)</a>
+    <a class="thread-title" href="#87">Re:[バグ]全角ナン検索でオンも検索(逆もそう)</a>
     <span class="author">KENCH</span>
     <time datetime="2001-02-26T09:08:15">2001年02月26日 09:08</time></h1>
     <div class="body">KENCH＠今日は自社で作業です。<br><br> &gt;&gt;アルファベットと五十音すべてを単文字で検索してみる必要あり？<br>　それはないでしょう。<br>　原因を突き止めれば、対策も可能かと（そのためのオープンソースですし）。類似不良も見つけられると思いますよ。<br></div></section>
     <ul><li><section><h1 id=104>
     <span class="no">[104]</span>
-    <a class="title" href="#104">Re2:[バグ]全角ナン検索でオンも検索(逆もそう)</a>
+    <a class="thread-title" href="#104">Re2:[バグ]全角ナン検索でオンも検索(逆もそう)</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-02-28T20:33:46">2001年02月28日 20:33</time></h1>
     <div class="body">▼ KENCHさん<br>&gt;  &gt;&gt;アルファベットと五十音すべてを単文字で検索してみる必要あり？<br>&gt; 　それはないでしょう。<br>&gt; 　原因を突き止めれば、対策も可能かと（そのためのオープンソースですし）。類似不良も見つけられると思いますよ。<br>カタカナだけで50音順検索してみたところ、相当根が深いことが判明。オ＝ナはそのほんの一例に過ぎなかった！他の人の反応がイマイチなので早急に修正することを願って以下に書き出します。他にもあるかも。今まで発覚しなかったのがつくづく不思議。ナンか変だなあと思ったことはあったが・・・<br>＝は同一視されてしまう文字。下にあるものは書いていない。(例. ツはア行で既出なので書いてない、ということ。書き出せば倍になる！おーこわ(*_*))<br>ア行　　　　　　　イ＝ツ　ウ＝テ　エ＝ト　オ＝ナ<br>カ行　　　カ＝ニ　キ＝ネ　ク＝ハ　ケ＝パ　コ＝ビ<br>サ行　　　サ＝フ　シ＝プ　ス＝べ　セ＝ホ<br><br>ナ行　　　　　　　　　　　ヌ＝ガ　　　　　ノ＝ギ<br>ハ行　　　　　　　ヒ＝ゲ　　　　　ヘ＝ジ<br><br>ガ行　　　グ＝バ　　　　　　　　　　　　　ゴ＝ピ<br>ザ行　　　ザ＝ブ　　　　　ズ＝ペ <br>ダ行　　　　　　　　　　　　　　　デ＝ェ　ド＝ォ<br><br>ァ行　　　　　　　　　ィ＝ッ</div></section>
     <ul><li><section><h1 id=109>
     <span class="no">[109]</span>
-    <a class="title" href="#109">Re3:[バグ]全角ナン検索でオンも検索(逆もそう)</a>
+    <a class="thread-title" href="#109">Re3:[バグ]全角ナン検索でオンも検索(逆もそう)</a>
     <span class="author">げんた</span>
     <time datetime="2001-03-01T02:31:25">2001年03月01日 02:31</time></h1>
     <div class="body">▼ じぇぷろさん<br>&gt; カタカナだけで50音順検索してみたところ<br>ご苦労様でした。やはり英大小文字の同一視が原因ですね。</div></section>
     </li></ul></li></ul></li><li><section><h1 id=89>
     <span class="no">[89]</span>
-    <a class="title" href="#89">RE: [バグ]全角ナン検索でオンも検索(逆もそう)</a>
+    <a class="thread-title" href="#89">RE: [バグ]全角ナン検索でオンも検索(逆もそう)</a>
     <span class="author">げんた</span>
     <time datetime="2001-02-26T09:49:09">2001年02月26日 09:49</time></h1>
     <div class="body">&gt;厳密にはナとオが問題。(同一視現象が他にもあるかは未確認)<br>漢字コードを比べてもらえばわかりますが、アルファベットの大文字・小文字を区別しないという条件に漢字コードの2バイト目が引っかかっているようです。本当は漢字コードの2バイト目ならこの条件は無視しないといけません。<br><br>問題箇所は、CDocLineMgr.cppの1926行目から始まるCDocLineMgr::SearchStringの中のどこかです。<br></div></section>
     </li><li><section><h1 id=131>
     <span class="no">[131]</span>
-    <a class="title" href="#131">似たような検索バグ</a>
+    <a class="thread-title" href="#131">似たような検索バグ</a>
     <span class="author">イシュタル</span>
     <time datetime="2001-03-05T23:56:44">2001年03月05日 23:56</time></h1>
     <div class="body">2X0と書き（Xの部分は任意の半角文字）、<br>正規表現をチェックして、「2.0」で検索をかけると、<br>200でも210でも230でも250でも2+0でも2-0でも2[0でも<br>検索に引っかかります。<br>というか、「.」で検索をかければ、<br>文字という文字が検索に引っかかるようです。<br>全角スペースも半角スペースもタブも。<br>「^」でもなるようです。<br>あと、1+1で検索すると、<br>1+1ではなく11が検索に引っかかります。<br>1*1も同様です。<br>これもバグですよね？<br><br></div></section>
     <ul><li><section><h1 id=135>
     <span class="no">[135]</span>
-    <a class="title" href="#135">Re: 似たような検索バグ</a>
+    <a class="thread-title" href="#135">Re: 似たような検索バグ</a>
     <span class="author">げんた</span>
     <time datetime="2001-03-06T02:19:40">2001年03月06日 02:19</time></h1>
     <div class="body">▼イシュタルさん<br>&gt;というか、「.」で検索をかければ、<br>&gt;文字という文字が検索に引っかかるようです。<br>それが正規表現というものです。正規表現にはいくつかの特殊文字があります。<br>.→任意の1文字<br>*→直前の文字の0回以上の繰り返し<br>+→直前の文字の1回以上の繰り返し<br>^→行頭を表す<br>$→行末を表す<br>[ABC]→ABCのうちのどれか1文字<br>[^ABC]→ABC以外の1文字<br>など。<br><br>ですから、別にバグではありません。<br></div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>officeファイルの判別</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>officeファイルの判別 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3659</span>
-    <a class="title" href="3659.html#3659">officeファイルの判別</a></div>
+    <a class="thread-title" href="3659.html#3659">officeファイルの判別</a></div>
     <ul><li><div class="list-title">
     <span class="no">3663</span>
-    <a class="title" href="3659.html#3663">Re: officeファイルの判別</a></div>
+    <a class="thread-title" href="3659.html#3663">Re: officeファイルの判別</a></div>
     <ul><li><div class="list-title">
     <span class="no">3668</span>
-    <a class="title" href="3659.html#3668">Re2: officeファイルの判別</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3659>
+    <a class="thread-title" href="3659.html#3668">Re2: officeファイルの判別</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3659>
     <span class="no">[3659]</span>
-    <a class="title" href="#3659">officeファイルの判別</a>
+    <a class="thread-title" href="#3659">officeファイルの判別</a>
     <span class="author">maru</span>
     <time datetime="2004-07-08T20:13:24">2004年07月08日 20:13</time></h1>
     <div class="body">お世話になっております。<br>以前一般掲示板の方で書き込みさせていただいた件で<br>どうしてもあきらめきれず、自分で何とかしてみました。<br>仕事上、Wordファイルを対象にGrep実行する頻度が高く<br>あったら便利そうだったので。<br><br>とはいえ、いきなり業務で使うにはちょっと勇気がいるので<br>恥かしながら、こちらでソースを掲示させていただきました。<br>ヤバそうなら、どなたかコメントを頂けると幸いです。<br><br>ファイル先頭にOffice文書のヘッダー<br> D0-CF-11-E0-A1-B1-1A-E1 があれば<br>有無を言わさずUNICODEという少々乱暴な仕様ですが<br>素人目にはうまく動作しているように見えます・・・。<br><br>//CMemory::IsUnicodeBom()に追加<br>if( 8 &lt;= nBufLen ){ //OfficeヘッダーがあればUNICODE<br>&#9;if( pBuf[0] == (unsigned char)0xd0 &amp;&amp;<br>&#9;&#9;pBuf[1] == (unsigned char)0xcf &amp;&amp;<br>&#9;&#9;pBuf[2] == (unsigned char)0x11 &amp;&amp;<br>&#9;&#9;pBuf[3] == (unsigned char)0xe0 &amp;&amp;<br>&#9;&#9;pBuf[4] == (unsigned char)0xa1 &amp;&amp;<br>&#9;&#9;pBuf[5] == (unsigned char)0xb1 &amp;&amp;<br>&#9;&#9;pBuf[6] == (unsigned char)0x1a &amp;&amp;<br>&#9;&#9;pBuf[7] == (unsigned char)0xe1 ){<br>&#9;&#9;return CODE_UNICODE;<br>&#9;}<br>}<br></div></section>
     <ul><li><section><h1 id=3663>
     <span class="no">[3663]</span>
-    <a class="title" href="#3663">Re: officeファイルの判別</a>
+    <a class="thread-title" href="#3663">Re: officeファイルの判別</a>
     <span class="author">もか</span>
     <time datetime="2004-07-09T21:52:45">2004年07月09日 21:52</time></h1>
     <div class="body">&gt;//CMemory::IsUnicodeBom()に追加<br>&gt;if( 8 &lt;= nBufLen ){ //OfficeヘッダーがあればUNICODE<br>&gt;&#9;if( pBuf[0] == (unsigned char)0xd0 &amp;&amp;<br>...中略<br>&gt;&#9;&#9;pBuf[7] == (unsigned char)0xe1 ){<br>&gt;&#9;&#9;return CODE_UNICODE;<br>&gt;&#9;}<br>&gt;}<br>IsUnicodeBomで判定させると、CFileLoadが読み込んだ時点で先頭2バイトを削除してしまうため、CMemory::CheckKanjiCodeに直接書くか、CheckCodeOfSignatureのようなメンバを追加した実装したほうがいいと思います。<br>Grepするだけなら問題なしです。<br><br>ちなみに、FindFastとかWord内の[ファイル]-[検索]はどうなんでしょう。<br></div></section>
     <ul><li><section><h1 id=3668>
     <span class="no">[3668]</span>
-    <a class="title" href="#3668">Re2: officeファイルの判別</a>
+    <a class="thread-title" href="#3668">Re2: officeファイルの判別</a>
     <span class="author">maru</span>
     <time datetime="2004-07-10T20:00:50">2004年07月10日 20:00</time></h1>
     <div class="body">▼ もかさん<br>レスありがとうございます。<br><br>&gt; 先頭2バイトを削除してしまう<br>削除している場所よくわかりませんでした(^^;;<br><br>&gt; CheckCodeOfSignatureのようなメンバを追加した実装したほうが<br>ほとんどgrepするだけなのですが、一応「メンバを追加」の方法で<br>あまり自信ないですが、動くようになりました。<br><br>&gt; ちなみに、FindFastとかWord内の[ファイル]-[検索]<br>sakuraを使うと、grepでマッチした行を<br>一画面で見渡せるため何かと都合が良いのです。<br>文字列「使用者名」とかでgrepし<br>結果ログに対して直接、正規表現を使って置換して<br>名前だけの一覧を抽出する場合などです。<br>我ながら下手な説明です・・・。<br><br>ともかく、たびたびのアドバイスありがとうございます。</div></section>

@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>横スクロール時の動作</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>横スクロール時の動作 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">27</span>
-    <a class="title" href="27.html#27">横スクロール時の動作</a></div>
+    <a class="thread-title" href="27.html#27">横スクロール時の動作</a></div>
     <ul><li><div class="list-title">
     <span class="no">28</span>
-    <a class="title" href="27.html#28">Re:横スクロール時の動作</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=27>
+    <a class="thread-title" href="27.html#28">Re:横スクロール時の動作</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=27>
     <span class="no">[27]</span>
-    <a class="title" href="#27">横スクロール時の動作</a>
+    <a class="thread-title" href="#27">横スクロール時の動作</a>
     <span class="author">げんた</span>
     <time datetime="2001-02-11T10:49:35">2001年02月11日 10:49</time></h1>
     <div class="body">現在のこのエディタはWM_HSCROLLが来たら横スクロール量を決定して画面全体を書き直す動作を行います。もし、画面全体を書き直す代わりに新規部分のみを書き直せば高速化すると思われるかも知れませんがそうはいきません。<br><br>なぜなら、このエディタは色分け情報をメモリ上に保持していないため、描画の都度行の先頭から調べて色を決定しているからです。その際キーワードの検索も行います。たぶん、これがかなりの処理を必要としているのだと思います。<br><br>横スクロール速度を劇的に改善しようと思ったら色分けを予め行ってその情報をメモリに保持するようにしないと難しいのではないでしょうか。</div></section>
     <ul><li><section><h1 id=28>
     <span class="no">[28]</span>
-    <a class="title" href="#28">Re:横スクロール時の動作</a>
+    <a class="thread-title" href="#28">Re:横スクロール時の動作</a>
     <span class="author">おっきー</span>
     <time datetime="2001-02-13T15:35:51">2001年02月13日 15:35</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 横スクロール速度を劇的に改善しようと思ったら色分けを予め行ってその情報をメモリに保持するようにしないと難しいのではないでしょうか。<br><br>労力の割に得るものが少なそうですね<br>適当な文字数で改行することでしのぎます（＾＾；<br><br>秀丸なんかは横スクロール時、10文字分移動するなんて<br>姑息な(笑)技を使っていますが<br>まともなマシンでは Sakura の方が奇麗に見えるでしょう<br><br>解説どうもありがとうございました</div></section>

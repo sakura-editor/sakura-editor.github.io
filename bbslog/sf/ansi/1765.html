@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ssrc_2002-03-25.zip</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ssrc_2002-03-25.zip | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1765</span>
-    <a class="title" href="1765.html#1765">ssrc_2002-03-25.zip</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=1765>
+    <a class="thread-title" href="1765.html#1765">ssrc_2002-03-25.zip</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1765>
     <span class="no">[1765]</span>
-    <a class="title" href="#1765">ssrc_2002-03-25.zip</a>
+    <a class="thread-title" href="#1765">ssrc_2002-03-25.zip</a>
     <span class="author">やざき</span>
     <time datetime="2002-03-25T00:26:16">2002年03月25日 00:26</time></h1>
     <div class="body">アップロードしました。<br><br><a href=http://sakura-editor.sourceforge.net/snapshot/ssrc_2002-03-25.zip target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>snapshot<wbr>/<wbr>ssrc_200<wbr>2-<wbr>03-<wbr>25.<wbr>zip</nobr></a><br>です。<br><br>機能に関わらないソース内部の修正が主でございます。<br>機能に関わるところは一般に書きます。<br><br>・GetPtr( NULL )を排除。GetPtr2()をGetPtr()に改名。<br><br>・使われていないbUndoを受け渡すのを止めた。<br>　ex.InsertData_CLayoutMgr()<br><br>・CLayoutMgr::GetLineStr2()を呼んでいるのに得られたCLayoutを使っていない場合は、GetLineStr()を呼ぶように変更。<br><br>・CLayoutMgr::GetLineStr2()をCLayoutMgr::GetLineStr()と同じ仕組みにして、GetLineStr()に改名。<br><br>・不要なCShareDataのコンストラクタを完全排除（したつもり）<br><br>・CCommandLineのマジックナンバー削減。<br>　#define CMDLINEOPT_CODE       1001<br>　#define CMDLINEOPT_R          1002<br>　#define CMDLINEOPT_NOWIN      1003<br>　#define CMDLINEOPT_GREPMODE   1100<br>　#define CMDLINEOPT_GREPDLG    1101<br>　#define CMDLINEOPT_DEBUGMODE  1999<br>　#define CMDLINEOPT_X          1<br>　#define CMDLINEOPT_Y          2<br>　#define CMDLINEOPT_VX         3<br>　#define CMDLINEOPT_VY         4<br>　#define CMDLINEOPT_TYPE       5<br>　#define CMDLINEOPT_GKEY       101<br>　#define CMDLINEOPT_GFILE      102<br>　#define CMDLINEOPT_GFOLDER    103<br>　#define CMDLINEOPT_GOPT       104<br><br>です。</div></section>

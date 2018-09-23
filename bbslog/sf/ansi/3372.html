@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>行コメントが保存できない　の修正</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>行コメントが保存できない　の修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3372</span>
-    <a class="title" href="3372.html#3372">行コメントが保存できない　の修正</a></div>
+    <a class="thread-title" href="3372.html#3372">行コメントが保存できない　の修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3373</span>
-    <a class="title" href="3372.html#3373">RE: 行コメントが保存できない　の修正</a></div>
+    <a class="thread-title" href="3372.html#3373">RE: 行コメントが保存できない　の修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3374</span>
-    <a class="title" href="3372.html#3374">Re2: 行コメントが保存できない　の修正</a></div>
+    <a class="thread-title" href="3372.html#3374">Re2: 行コメントが保存できない　の修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3375</span>
-    <a class="title" href="3372.html#3375">Re3: 行コメントが保存できない　の修正</a></div>
+    <a class="thread-title" href="3372.html#3375">Re3: 行コメントが保存できない　の修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3376</span>
-    <a class="title" href="3372.html#3376">Re4: 行コメントが保存できない　の修正</a></div>
+    <a class="thread-title" href="3372.html#3376">Re4: 行コメントが保存できない　の修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3378</span>
-    <a class="title" href="3372.html#3378">Re5: 行コメントが保存できない　の修正(_tstoi)</a></div>
+    <a class="thread-title" href="3372.html#3378">Re5: 行コメントが保存できない　の修正(_tstoi)</a></div>
     </li><li><div class="list-title">
     <span class="no">3379</span>
-    <a class="title" href="3372.html#3379">Re5: 行コメントが保存できない　の修正</a></div>
+    <a class="thread-title" href="3372.html#3379">Re5: 行コメントが保存できない　の修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3382</span>
-    <a class="title" href="3372.html#3382">CProfileのいろいろ</a></div>
+    <a class="thread-title" href="3372.html#3382">CProfileのいろいろ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3385</span>
-    <a class="title" href="3372.html#3385">Re:CProfileのいろいろ</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3372>
+    <a class="thread-title" href="3372.html#3385">Re:CProfileのいろいろ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3372>
     <span class="no">[3372]</span>
-    <a class="title" href="#3372">行コメントが保存できない　の修正</a>
+    <a class="thread-title" href="#3372">行コメントが保存できない　の修正</a>
     <span class="author">dskoba</span>
     <time datetime="2004-01-26T22:17:43">2004年01月26日 22:17</time></h1>
     <div class="body">CProfile.cpp の 78 行目<br><br>・コメントの削除の際，行内に"="が含まれていないことを確認する<br><br>if( iter-&gt;npos != idx )<br>　↓<br>if( iter-&gt;npos != idx &amp;&amp; iter-&gt;npos == iter-&gt;find( _T("=") ))<br></div></section>
     <ul><li><section><h1 id=3373>
     <span class="no">[3373]</span>
-    <a class="title" href="#3373">RE: 行コメントが保存できない　の修正</a>
+    <a class="thread-title" href="#3373">RE: 行コメントが保存できない　の修正</a>
     <span class="author">げんた</span>
     <time datetime="2004-01-27T00:49:08">2004年01月27日 00:49</time></h1>
     <div class="body">&gt;・コメントの削除の際，行内に"="が含まれていないことを確認する<br>コメントは1行目の先頭から始まる物しか存在しないのだから行頭から//となっている物だけをチェックすれば十分でしょう．<br>人間が編集するわけではないし．<br><br>極端な話1行目だけ読み捨てれば十分だが，あとで仕様の誤解を招いてはまりそうだからそれはやめた方がいいと思う．<br></div></section>
     <ul><li><section><h1 id=3374>
     <span class="no">[3374]</span>
-    <a class="title" href="#3374">Re2: 行コメントが保存できない　の修正</a>
+    <a class="thread-title" href="#3374">Re2: 行コメントが保存できない　の修正</a>
     <span class="author">dskoba</span>
     <time datetime="2004-01-27T02:16:53">2004年01月27日 02:16</time></h1>
     <div class="body">ご迷惑をおかけします。<br><br>DIFF差分<br>http://www2.wbs.ne.jp/~dskoba/sakura/1435cprofile_to_dsk20040127.lzh<br><br>・コメントは単純に行頭が"//"の行とする<br>・sstream をやめて _tstoi()，_itot() を使用<br>・変数名の修正<br>・必要かな?と思って追加していた関数は，永久に使いそうもないので削除<br>・バイナリサイズ軽減のため関数の inline をやめる</div></section>
     <ul><li><section><h1 id=3375>
     <span class="no">[3375]</span>
-    <a class="title" href="#3375">Re3: 行コメントが保存できない　の修正</a>
+    <a class="thread-title" href="#3375">Re3: 行コメントが保存できない　の修正</a>
     <span class="author">みく</span>
     <time datetime="2004-01-27T14:14:09">2004年01月27日 14:14</time></h1>
     <div class="body"><br>93:iter-&gt;erase( --(iter-&gt;end()) );<br><br>VC++6.0<br><br>ssrc_2004-01-25\sakura_core\CProfile.cpp(93) : error C2105: '--' には左辺値が必要です。<br></div></section>
     <ul><li><section><h1 id=3376>
     <span class="no">[3376]</span>
-    <a class="title" href="#3376">Re4: 行コメントが保存できない　の修正</a>
+    <a class="thread-title" href="#3376">Re4: 行コメントが保存できない　の修正</a>
     <span class="author">みく</span>
     <time datetime="2004-01-27T14:28:25">2004年01月27日 14:28</time></h1>
     <div class="body"><br>パッチを当てた後のVC++6.0でのビルドエラー。<br><br>ssrc_2004-01-25\sakura_core\CProfile.cpp(96) : error C2105: '--' には左辺値が必要です。<br>ssrc_2004-01-25\sakura_core\CProfile.cpp(271) : error C2065: '_tstoi' : 定義されていない識別子です。<br></div></section>
     <ul><li><section><h1 id=3378>
     <span class="no">[3378]</span>
-    <a class="title" href="#3378">Re5: 行コメントが保存できない　の修正(_tstoi)</a>
+    <a class="thread-title" href="#3378">Re5: 行コメントが保存できない　の修正(_tstoi)</a>
     <span class="author">もか</span>
     <time datetime="2004-01-27T17:26:33">2004年01月27日 17:26</time></h1>
     <div class="body">_tstoiとおそらく同じ機能をするマクロ名の_ttoiなら、VC6/BCC551付属のヘッダでもつかえます。<br>完全に同一かどうかは、ヘッダを見ないといけませんが、VS.NETを所持していないんで、確認が取れませんでした。<br>_tstoiをmy_tcharで定義するよりは、どっちかというと_ttoiに統一したほうが良いとおもいます。<br># MSはどういう意図で別名用意したんだろう。紛らわしいだけな.<br></div></section>
     </li><li><section><h1 id=3379>
     <span class="no">[3379]</span>
-    <a class="title" href="#3379">Re5: 行コメントが保存できない　の修正</a>
+    <a class="thread-title" href="#3379">Re5: 行コメントが保存できない　の修正</a>
     <span class="author">dskoba</span>
     <time datetime="2004-01-27T22:09:06">2004年01月27日 22:09</time></h1>
     <div class="body">&gt; ssrc_2004-01-25\sakura_core\CProfile.cpp(96) : error C2105: '--' には左辺値が必要です。<br><br>iter-&gt;erase( iter-&gt;begin() );<br>iter-&gt;erase( --(iter-&gt;end()) );<br>  ↓<br>iter-&gt;erase( iter-&gt;size()-1, 1 );<br>iter-&gt;erase( 0, 1 );<br></div></section>
     <ul><li><section><h1 id=3382>
     <span class="no">[3382]</span>
-    <a class="title" href="#3382">CProfileのいろいろ</a>
+    <a class="thread-title" href="#3382">CProfileのいろいろ</a>
     <span class="author">げんた</span>
     <time datetime="2004-01-28T02:40:49">2004年01月28日 02:40</time></h1>
     <div class="body">見てます．<br>&gt;iter-&gt;erase( iter-&gt;size()-1, 1 );<br>&gt;iter-&gt;erase( 0, 1 );<br>最後の]をちゃんと確認すべく<br>unsigned int idx = iter-&gt;find( _T("]") );<br>if( idx != iter-&gt;npos ){<br>&#9;Section Buffer;<br>&#9;Buffer.strSectionName = iter-&gt;substr( 1, idx - 1 - 1 ).c_str();<br>&#9;m_ProfileData.push_back( Buffer );<br>}<br>としてみた．<br><br>--<br>文字列比較でfindの結果と位置を比較しているが，位置が既知なのであるからcompareを使った方が効率的かと．<br>if( 0 == iter-&gt;compare( 0, 2, _T("//") )) continue;<br><br>--<br>要素の空チェックにはempty()を使ってsize()は使わない．<br>(空文字列チェックを strlen(str)==0ではなくstr[0]=='\0'とするのと同じ理屈)<br>else if( !m_ProfileData.empty())<br><br>--<br>Unicode版ではsakura.iniもUnicodeになるのでOK？WriteFile()で_T()の無い文字列が残っていますが．<br></div></section>
     <ul><li><section><h1 id=3385>
     <span class="no">[3385]</span>
-    <a class="title" href="#3385">Re:CProfileのいろいろ</a>
+    <a class="thread-title" href="#3385">Re:CProfileのいろいろ</a>
     <span class="author">dskoba</span>
     <time datetime="2004-01-28T23:21:30">2004年01月28日 23:21</time></h1>
     <div class="body">げんたさん，ありがとうございます。<br><br>http://www2.wbs.ne.jp/~dskoba/sakura/1435cprofile_to_dsk20040128.lzh<br><br>&gt; 最後の]をちゃんと確認すべく<br>&gt; unsigned int idx = iter-&gt;find( _T("]") );<br>&gt; if( idx != iter-&gt;npos ){<br><br>if( iter-&gt;find( _T("[") ) == 0 <br>    &amp;&amp; iter-&gt;find( _T("=") ) == iter-&gt;npos<br>    &amp;&amp; iter-&gt;find( _T("]") ) == ( iter-&gt;size() - 1 ) )<br>こんな風にしておきました。<br>今気づきましたが，これもcompare()の方が良いですかね?<br><br>&gt; Unicode版ではsakura.iniもUnicodeになるのでOK？WriteFile()で_T()の無い文字列が残っていますが．<br><br>突っ込まれてしまった…。<br>Unicodeにすると fstream が wchar_t* のファイル名を受け付けてくれないのでコンパイルできません。<br>ので，放置していて_T()を付け忘れていました。ファイルに書く部分はWriteFile()に分離しておきました。<br>ReadFile()とWriteFile()はCFileLoadとCFileWriteとかで書き直してください，誰か。</div></section>

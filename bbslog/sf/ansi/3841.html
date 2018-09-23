@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>CPassiveTimer修正</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CPassiveTimer修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3841</span>
-    <a class="title" href="3841.html#3841">CPassiveTimer修正</a></div>
+    <a class="thread-title" href="3841.html#3841">CPassiveTimer修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3842</span>
-    <a class="title" href="3841.html#3842">RE: CPassiveTimer修正</a></div>
+    <a class="thread-title" href="3841.html#3842">RE: CPassiveTimer修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3843</span>
-    <a class="title" href="3841.html#3843">Re2: CPassiveTimer修正</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3841>
+    <a class="thread-title" href="3841.html#3843">Re2: CPassiveTimer修正</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3841>
     <span class="no">[3841]</span>
-    <a class="title" href="#3841">CPassiveTimer修正</a>
+    <a class="thread-title" href="#3841">CPassiveTimer修正</a>
     <span class="author">dskoba</span>
     <time datetime="2005-02-17T23:24:23">2005年02月17日 23:24</time></h1>
     <div class="body">ファイルの自動保存で使用しているクラスCPassiveTimerのタイマーをGetTickCount()からtime()に変更してみました。<br><a href=http://www2.wbs.ne.jp/~dskoba/sakura/cautosave_dsk20050217.diff.txt target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>sakura/<wbr>cautosav<wbr>e_dsk200<wbr>50217.<wbr>diff.<wbr>txt</nobr></a></div></section>
     <ul><li><section><h1 id=3842>
     <span class="no">[3842]</span>
-    <a class="title" href="#3842">RE: CPassiveTimer修正</a>
+    <a class="thread-title" href="#3842">RE: CPassiveTimer修正</a>
     <span class="author">げんた</span>
     <time datetime="2005-02-18T22:09:56">2005年02月18日 22:09</time></h1>
     <div class="body">&gt;ファイルの自動保存で使用しているクラスCPassiveTimerのタイマーをGetTickCount()からtime()に変更してみました。<br>細かいことで申し訳ないんですが，time()って時刻を変えると影響を受けるのでは？<br>GetTickCount()を使っているのは時刻が変更されても変わらない(と思った)からなんですが．<br></div></section>
     <ul><li><section><h1 id=3843>
     <span class="no">[3843]</span>
-    <a class="title" href="#3843">Re2: CPassiveTimer修正</a>
+    <a class="thread-title" href="#3843">Re2: CPassiveTimer修正</a>
     <span class="author">dskoba</span>
     <time datetime="2005-02-18T23:21:59">2005年02月18日 23:21</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;ファイルの自動保存で使用しているクラスCPassiveTimerのタイマーをGetTickCount()からtime()に変更してみました。<br>&gt; 細かいことで申し訳ないんですが，time()って時刻を変えると影響を受けるのでは？<br>&gt; GetTickCount()を使っているのは時刻が変更されても変わらない(と思った)からなんですが．<br><br>完全に失念してました。その通りですね。これは忘れてください。<br></div></section>

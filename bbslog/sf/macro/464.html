@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>wordcounterの使用中にフリーズが起きる原因について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>wordcounterの使用中にフリーズが起きる原因について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">464</span>
-    <a class="title" href="464.html#464">wordcounterの使用中にフリーズが起きる原因について</a></div>
+    <a class="thread-title" href="464.html#464">wordcounterの使用中にフリーズが起きる原因について</a></div>
     <ul><li><div class="list-title">
     <span class="no">465</span>
-    <a class="title" href="464.html#465">Re:wordcounterの使用中にフリーズが起きる原因について</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=464>
+    <a class="thread-title" href="464.html#465">Re:wordcounterの使用中にフリーズが起きる原因について</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=464>
     <span class="no">[464]</span>
-    <a class="title" href="#464">wordcounterの使用中にフリーズが起きる原因について</a>
+    <a class="thread-title" href="#464">wordcounterの使用中にフリーズが起きる原因について</a>
     <span class="author">Ki</span>
     <time datetime="2009-06-07T14:55:32">2009年06月07日 14:55</time></h1>
     <div class="body">最近、XPでSakura 1.6.3.0の環境で英文を対象にwordcounter (wc.js)を使用しますと、フリーズを起こしてしまうのですが、原因についておわかりでしょうか？</div></section>
     <ul><li><section><h1 id=465>
     <span class="no">[465]</span>
-    <a class="title" href="#465">Re:wordcounterの使用中にフリーズが起きる原因について</a>
+    <a class="thread-title" href="#465">Re:wordcounterの使用中にフリーズが起きる原因について</a>
     <span class="author">Ki</span>
     <time datetime="2009-06-07T15:40:31">2009年06月07日 15:40</time></h1>
     <div class="body">▼ Kiさん<br>りーやさん作成のwc.jsはとっても便利です。<br>りーやさん作成のスクリプトの最後の3行を削除したところ、フリーズはなくなりました。単語数が貼り付けられなくなるのでちょっと残念です。IEがらみの現象のようです。<br><br>// WC JScript<br>var WshShell =  new ActiveXObject("WScript.Shell");<br>var nl = 0, nw = 0, nc = 0;<br>// line, word and character counters<br><br>var selStr = Editor.GetSelectedString(0);<br>if(selStr.length &gt; 0) {<br>  nc = selStr.length;<br>  var words = selStr.split(/\s+/);<br>  nw = words.length;<br>  var lines = selStr.split(/\n/);<br>  nl = lines.length;<br>}<br><br>var outStr = "lines:" + nl.toString();<br>outStr += " words:" + nw.toString();<br>outStr += " chars:" + nc.toString();<br><br>WshShell.Popup(outStr, 0 , "Word Count", 0);<br><br>var IEobj =  new ActiveXObject("InternetExplorer.Application");<br>IEobj.Navigate("about:blank");<br>IEobj.Document.parentWindow.clipboardData.setData("Text" , outStr);<br></div></section>

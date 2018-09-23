@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>折り返し行インデントのバグ修正ほか</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>折り返し行インデントのバグ修正ほか | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2404</span>
-    <a class="title" href="2404.html#2404">折り返し行インデントのバグ修正ほか</a></div>
+    <a class="thread-title" href="2404.html#2404">折り返し行インデントのバグ修正ほか</a></div>
     <ul><li><div class="list-title">
     <span class="no">2405</span>
-    <a class="title" href="2404.html#2405">Re: 折り返し行インデントのバグ修正ほか</a></div>
+    <a class="thread-title" href="2404.html#2405">Re: 折り返し行インデントのバグ修正ほか</a></div>
     <ul><li><div class="list-title">
     <span class="no">2406</span>
-    <a class="title" href="2404.html#2406">Re2: 折り返し行インデントのバグ修正ほか</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2404>
+    <a class="thread-title" href="2404.html#2406">Re2: 折り返し行インデントのバグ修正ほか</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2404>
     <span class="no">[2404]</span>
-    <a class="title" href="#2404">折り返し行インデントのバグ修正ほか</a>
+    <a class="thread-title" href="#2404">折り返し行インデントのバグ修正ほか</a>
     <span class="author">やざき</span>
     <time datetime="2002-10-07T02:31:37">2002年10月07日 02:31</time></h1>
     <div class="body"><br>IndentLayout_2002-10-07.zipをアップロードしました。<br><br>＋折り返し直前に文字を入力したときに、カーソルが1桁目に移動してしまうバグ修正。（[EOF]は相変わらず×）<br>＋tx2x用のインデントを修正。3行目以降は、2行目あわせ。<br>＋2行目以降をインデントしているときに、インデントされている行の行番号をクリックすると、選択範囲がおかしいバグ修正。<br>＋TABインデント時に、折り返し行にもタブがついて困るバグ修正。箱型インデントは修正しない。<br><br>ほか、ソースコードの整理<br>＋メモリ使用量を減らすために、CLayoutのm_nTypeNextを、CLayoutMgrのm_nLineTypeBotに改名して移動。<br>＋CLayoutMgr::DoLayout3_Newを、CLayoutMgr::DoLayout_Rangeに改名。<br>＋getIndentOffset_YazakiをgetIndentOffset_Tx2xに変更<br><br>よろしくお願いしますぅ。<br></div></section>
     <ul><li><section><h1 id=2405>
     <span class="no">[2405]</span>
-    <a class="title" href="#2405">Re: 折り返し行インデントのバグ修正ほか</a>
+    <a class="thread-title" href="#2405">Re: 折り返し行インデントのバグ修正ほか</a>
     <span class="author">げんた</span>
     <time datetime="2002-10-07T09:26:21">2002年10月07日 09:26</time></h1>
     <div class="body"><br>&gt;＋tx2x用のインデントを修正。3行目以降は、2行目あわせ。<br>あれ？方針変更ですか？<br><br>&gt;＋2行目以降をインデントしているときに、インデントされている行の行番号をクリックすると、選択範囲がおかしいバグ修正。<br>確かに．気づきませんでした．<br><br>&gt;＋TABインデント時に、折り返し行にもタブがついて困るバグ修正。箱型インデントは修正しない。<br>おおっ，＼(^o^)／<br><br>&gt;＋getIndentOffset_YazakiをgetIndentOffset_Tx2xに変更<br>^^;<br><br>Command_GOLINETOP()の仕様が変わっているみたいですが，論理行先頭に移動できるようになったのでしょうか．<br></div></section>
     <ul><li><section><h1 id=2406>
     <span class="no">[2406]</span>
-    <a class="title" href="#2406">Re2: 折り返し行インデントのバグ修正ほか</a>
+    <a class="thread-title" href="#2406">Re2: 折り返し行インデントのバグ修正ほか</a>
     <span class="author">やざき</span>
     <time datetime="2002-10-07T10:35:56">2002年10月07日 10:35</time></h1>
     <div class="body"><br>&gt;Command_GOLINETOP()の仕様が変わっているみたいですが，論理行先頭に移動できるようになったのでしょうか．<br><br>中身は変わってないです～。<br></div></section>

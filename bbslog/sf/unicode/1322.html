@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>dlgフォルダの整理</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>dlgフォルダの整理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1322</span>
-    <a class="title" href="1322.html#1322">dlgフォルダの整理</a></div>
+    <a class="thread-title" href="1322.html#1322">dlgフォルダの整理</a></div>
     <ul><li><div class="list-title">
     <span class="no">1323</span>
-    <a class="title" href="1322.html#1323">Re: dlgフォルダの整理</a></div>
+    <a class="thread-title" href="1322.html#1323">Re: dlgフォルダの整理</a></div>
     <ul><li><div class="list-title">
     <span class="no">1327</span>
-    <a class="title" href="1322.html#1327">Re2: dlgフォルダの整理</a></div>
+    <a class="thread-title" href="1322.html#1327">Re2: dlgフォルダの整理</a></div>
     <ul><li><div class="list-title">
     <span class="no">1329</span>
-    <a class="title" href="1322.html#1329">Re3: dlgフォルダの整理</a></div>
+    <a class="thread-title" href="1322.html#1329">Re3: dlgフォルダの整理</a></div>
     <ul><li><div class="list-title">
     <span class="no">1335</span>
-    <a class="title" href="1322.html#1335">Re4: dlgフォルダの整理</a></div>
+    <a class="thread-title" href="1322.html#1335">Re4: dlgフォルダの整理</a></div>
     <ul><li><div class="list-title">
     <span class="no">1336</span>
-    <a class="title" href="1322.html#1336">Re5: dlgフォルダの整理</a></div>
+    <a class="thread-title" href="1322.html#1336">Re5: dlgフォルダの整理</a></div>
     <ul><li><div class="list-title">
     <span class="no">1338</span>
-    <a class="title" href="1322.html#1338">Re6: dlgフォルダの整理</a></div>
+    <a class="thread-title" href="1322.html#1338">Re6: dlgフォルダの整理</a></div>
     <ul><li><div class="list-title">
     <span class="no">1342</span>
-    <a class="title" href="1322.html#1342">Re7: dlgフォルダの整理</a></div>
+    <a class="thread-title" href="1322.html#1342">Re7: dlgフォルダの整理</a></div>
     <ul><li><div class="list-title">
     <span class="no">1343</span>
-    <a class="title" href="1322.html#1343">Re8: dlgフォルダの整理</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1322>
+    <a class="thread-title" href="1322.html#1343">Re8: dlgフォルダの整理</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1322>
     <span class="no">[1322]</span>
-    <a class="title" href="#1322">dlgフォルダの整理</a>
+    <a class="thread-title" href="#1322">dlgフォルダの整理</a>
     <span class="author">Uchi</span>
     <time datetime="2010-07-14T21:25:53">2010年07月14日 21:25</time></h1>
     <div class="body">dlgフォルダの下のファイルのコモンコントロールの制御をSendMessageから&lt;WindoesX.h&gt;を使用し書き換えました。<br>使用していないincludeファイルの削除、<br>CDlgAbout の SubclassWindow 関数の名称変更<br>等も行っています。<br><br>PatchUnicode#3029491</div></section>
     <ul><li><section><h1 id=1323>
     <span class="no">[1323]</span>
-    <a class="title" href="#1323">Re: dlgフォルダの整理</a>
+    <a class="thread-title" href="#1323">Re: dlgフォルダの整理</a>
     <span class="author">もか</span>
     <time datetime="2010-07-14T23:38:37">2010年07月14日 23:38</time></h1>
     <div class="body">利点は、<br>・Visual Studio上でマクロの定義がポップアップヘルプ代わりになる<br>・SendMessageで未使用の引数0だったものがなくなり惑わされない<br>・戻り値型がキャスト済みで便利<br>とかですかね。<br>パッチの内容の範囲では、特に問題はないようです。<br>コードの見た目はよくなると思います。<br>#VS2005だと CDlgFind.cpp の ::DlgItem_SetText のポップアップがなんかおかしい。なんでだろう<br><br>----<br><br>ただし私はどちらかというと WindowsX.h 使用禁止にしたいんですがだめですか。<br>MSDN にも、載っていたり載っていなかったりして不便で、載っていても結局ウィンドウメッセージを見に行かないといけない。<br>(VC6系のヘルプで飛べないので個人的にすごく不便)<br>マクロはCスタイルキャストで実装されていて前時代的。<br>定義が被っていたりすると怖い。<br>さらにSDKのものを見くらべると、ヘッダファイルの内容がたまに間違っていて、あとで修正されてる。<br>あと SendMessageAny をわざわざ SendMessage に戻す理由はなんですか？<br>いまは、TCHAR混在でAnyかどうか気になることがあります。<br>(AnyがAnycastみたいだというのはマイナスポイント)<br><br>参考にcommctrlのほうのコードですがどうおもいますか？<br>これ、警告レベルを上げても警告なしにコンパイルできるとおいます。<br>#include &lt;windows.h&gt;<br>#include &lt;commctrl.h&gt;<br><br>HWND hwnd = NULL;<br>int i = 2;<br>RECT itemRect;<br>CHAR* testA = NULL;<br>TabCtrl_GetItemRect( hwnd, i, &amp;itemRect );<br>TabCtrl_GetItemRect( hwnd, i, testA );<br>TabCtrl_GetItemRect( hwnd, &amp;itemRect, i );<br>const int countMacro = TabCtrl_GetItemCount( hwnd );<br><br>::SendMessage( hwnd, TCM_GETITEMRECT, i, (LPARAM)&amp;itemRect );<br>::SendMessage( hwnd, TCM_GETITEMRECT, (LPARAM)&amp;itemRect, (WPARAM)i );<br>const int countApi = ::SendMessage( hwnd, TCM_GETITEMRECT, 0, 0 );<br><br>もちろん、SendMessageは HWND UINT WPARAM LPARAM です。<br>SendMessage + キャストだと「ん？危ないかも」と思えます。<br>マクロだと臭いものにフタをしただけで、K&amp;Rとかベーシックみたいな危うさを感じます。<br>ApiWrap は すばらしいと思うのだけど using namespace されていて、<br>普通のマクロと見た目が完全に同じだから、どれがAipWrapか名前を覚えるまで、エディタ上とかsvnの差分表示だとコードを読むときの効率が悪いなぁと。<br></div></section>
     <ul><li><section><h1 id=1327>
     <span class="no">[1327]</span>
-    <a class="title" href="#1327">Re2: dlgフォルダの整理</a>
+    <a class="thread-title" href="#1327">Re2: dlgフォルダの整理</a>
     <span class="author">Uchi</span>
     <time datetime="2010-07-15T20:38:51">2010年07月15日 20:38</time></h1>
     <div class="body">もかさん、コメントありがとうございます。<br><br>&gt;#VS2005だと CDlgFind.cpp の ::DlgItem_SetText のポップアップがなんかおかしい。なんでだろう<br>私の環境では、最初表示されるまで、20秒ぐらいかかりました。2回目からはすぐ出ましたが。<br>最初のポップアップはかなり時間がかかることがあるようです。<br><br>&gt;ただし私はどちらかというと WindowsX.h 使用禁止にしたいんですがだめですか。<br>&gt;MSDN にも、載っていたり載っていなかったりして不便で、載っていても結局ウィンドウメッセージを見に行かないといけない。<br>&gt;(VC6系のヘルプで飛べないので個人的にすごく不便)<br>ローカルのMSDNは最近使用していないのでよくわかりませんが、<br>Web上のMSDNでは去年あたりから SendMessage のパラメータのページが順次消されている様です。<br>ローカルのMSDNを使用していない私としては、WindowsX.h を使用したほうが分かりやすいので修正しました。<br><br>&gt;マクロはCスタイルキャストで実装されていて前時代的。<br>ラッパを作成していただけるのであれば、そちらのほうを使用することは吝かではないのですが、<br>そこまで必要あるか、WindowsX.h で充分だろう というのが私の考えです。<br>キャストに関してはSendMessage直と同程度の危険性と認識しています。<br><br>&gt;定義が被っていたりすると怖い。<br>CDlgAboutでかぶっていましたね。<br><br>&gt;さらにSDKのものを見くらべると、ヘッダファイルの内容がたまに間違っていて、あとで修正されてる。<br>ちょっと怖いですね。確認してみましょう。<br><br>&gt;あと SendMessageAny をわざわざ SendMessage に戻す理由はなんですか？<br>1. SendMessageAny が SendMessage の単なるマクロであること。<br>  つまり何の機能も果たしていないこと。<br>2. StdApi.h noの定義箇所に<br>&#9;// 過去のUNICODE化の名残です。<br>&#9;// 現在となっては、特に意味はありません。<br>とある（つまりのの遺産）。<br>3. 現在のソースで、SendMessageAny,SendMessageCmd,SendMessageがごちゃまぜで使われている。<br>という状態と認識し、特に3.の修正をかけたいという事です。<br></div></section>
     <ul><li><section><h1 id=1329>
     <span class="no">[1329]</span>
-    <a class="title" href="#1329">Re3: dlgフォルダの整理</a>
+    <a class="thread-title" href="#1329">Re3: dlgフォルダの整理</a>
     <span class="author">もか</span>
     <time datetime="2010-07-16T02:09:38">2010年07月16日 02:09</time></h1>
     <div class="body">&gt;タイトル: Re3: dlgフォルダの整理<br>&gt;発言者: Uchi<br>&gt;もかさん、コメントありがとうございます。<br>&gt;<br>&gt;&gt;#VS2005だと CDlgFind.cpp の ::DlgItem_SetText のポップアップがなんかおかしい。なんでだろう<br>&gt;私の環境では、最初表示されるまで、20秒ぐらいかかりました。2回目からはすぐ出ましたが。<br>&gt;最初のポップアップはかなり時間がかかることがあるようです。<br>&gt;<br>&gt;&gt;ただし私はどちらかというと WindowsX.h 使用禁止にしたいんですがだめですか。<br>&gt;&gt;MSDN にも、載っていたり載っていなかったりして不便で、載っていても結局ウィンドウメッセージを見に行かないといけない。<br>&gt;&gt;(VC6系のヘルプで飛べないので個人的にすごく不便)<br>&gt;ローカルのMSDNは最近使用していないのでよくわかりませんが、<br>&gt;Web上のMSDNでは去年あたりから SendMessage のパラメータのページが順次消されている様です。<br>たとえばどのメッセージとかないんでしょうか。<br>VC2005EEで、F1+ウェブも探す設定にしても、前から見つからないという表示しか出ません。。。<br>PSDKのヘルプとの連携も分からないです。VC2008 EEのF1キーでの検索もうまくいきません。<br>IE6が悪いのか色々入ってるのが悪いのか判断付かないんですが、使い物にならないので。<br><br>&gt;&gt;マクロはCスタイルキャストで実装されていて前時代的。<br>&gt;ラッパを作成していただけるのであれば、そちらのほうを使用することは吝かではないのですが、<br>&gt;そこまで必要あるか、WindowsX.h で充分だろう というのが私の考えです。<br>&gt;キャストに関してはSendMessage直と同程度の危険性と認識しています。<br>私は、Cスタイルキャストマクロは、SendMessageの何倍も有害だとおもってます。<br>&gt;&gt;定義が被っていたりすると怖い。<br>&gt;CDlgAboutでかぶっていましたね。<br>MFCでも被っていて、マクロをundefしろとKBに書かれています。<br><br>&gt;&gt;あと SendMessageAny をわざわざ SendMessage に戻す理由はなんですか？<br>&gt;1. SendMessageAny が SendMessage の単なるマクロであること。<br>&gt;  つまり何の機能も果たしていないこと。<br>&gt;2. StdApi.h noの定義箇所に<br>&gt;&#9;// 過去のUNICODE化の名残です。<br>&gt;&#9;// 現在となっては、特に意味はありません。<br>&gt;とある（つまりのの遺産）。<br>&gt;3. 現在のソースで、SendMessageAny,SendMessageCmd,SendMessageがごちゃまぜで使われている。<br>&gt;という状態と認識し、特に3.の修正をかけたいという事です。<br></div></section>
     <ul><li><section><h1 id=1335>
     <span class="no">[1335]</span>
-    <a class="title" href="#1335">Re4: dlgフォルダの整理</a>
+    <a class="thread-title" href="#1335">Re4: dlgフォルダの整理</a>
     <span class="author">Uchi</span>
     <time datetime="2010-07-17T19:27:17">2010年07月17日 19:27</time></h1>
     <div class="body">&gt;&gt;&gt;ただし私はどちらかというと WindowsX.h 使用禁止にしたいんですがだめですか。<br>&gt;&gt;&gt;MSDN にも、載っていたり載っていなかったりして不便で、載っていても結局ウィンドウメッセージを見に行かないといけない。<br>&gt;&gt;&gt;(VC6系のヘルプで飛べないので個人的にすごく不便)<br>&gt;&gt;ローカルのMSDNは最近使用していないのでよくわかりませんが、<br>&gt;&gt;Web上のMSDNでは去年あたりから SendMessage のパラメータのページが順次消されている様です。<br>&gt;たとえばどのメッセージとかないんでしょうか。<br>&gt;VC2005EEで、F1+ウェブも探す設定にしても、前から見つからないという表示しか出ません。。。<br>&gt;PSDKのヘルプとの連携も分からないです。VC2008 EEのF1キーでの検索もうまくいきません。<br>&gt;IE6が悪いのか色々入ってるのが悪いのか判断付かないんですが、使い物にならないので。<br>私は、Webブラウザ(Operaが主で、IE8、FFも使用)でhttp://msdn.microsoft.com/の中の検索を（昨年までは）使用していました。<br>MSは、昨年あたりからWebサイトをリニューアルしているようで、 SendMessage のパラメータ（CB_SHOWDROPDOWN等）のページを消している様です。<br>昨年まではヒットしていました。<br><br>&gt;&gt;&gt;マクロはCスタイルキャストで実装されていて前時代的。<br>&gt;&gt;ラッパを作成していただけるのであれば、そちらのほうを使用することは吝かではないのですが、<br>&gt;&gt;そこまで必要あるか、WindowsX.h で充分だろう というのが私の考えです。<br>&gt;&gt;キャストに関してはSendMessage直と同程度の危険性と認識しています。<br>&gt;私は、Cスタイルキャストマクロは、SendMessageの何倍も有害だとおもってます。<br>どのようにでしょうか？<br><br>&gt;&gt;&gt;定義が被っていたりすると怖い。<br>&gt;&gt;CDlgAboutでかぶっていましたね。<br>&gt;MFCでも被っていて、マクロをundefしろとKBに書かれています。<br>MFCを使用しているのならば、WindowsX.hを使用する意味はないわけです（同党の機能がMFC内にあるので）。<br>そして、サクラエディタではMFCを使用していないのでWindowsX.hを使用しても問題ないはずですが、如何でしょう。</div></section>
     <ul><li><section><h1 id=1336>
     <span class="no">[1336]</span>
-    <a class="title" href="#1336">Re5: dlgフォルダの整理</a>
+    <a class="thread-title" href="#1336">Re5: dlgフォルダの整理</a>
     <span class="author">もか</span>
     <time datetime="2010-07-18T01:54:03">2010年07月18日 01:54</time></h1>
     <div class="body">&gt;&gt;&gt;キャストに関してはSendMessage直と同程度の危険性と認識しています。<br>&gt;&gt;私は、Cスタイルキャストマクロは、SendMessageの何倍も有害だとおもってます。<br>&gt;どのようにでしょうか？<br>長い説明も書き終えているけどそれはやめて、<br>・アプリケーションハンガリアン<br>・C++の新しいキャストの必要性<br>と同じ理由です。おかしいものは可能ならエラーにする。<br>無理なら「コードを見たときに」そのコードが正しくないように見えなければならない。<br>Unicode版は、ベターC + classの旧コードとは違って、積極的にタイプセーフを使う方針に見えますが違いますか。<br>これは、最初の返信で書いたコード例の通り。<br>もう、C言語の亡霊にびくびくしながら、関数(に見える何か)を確認して回るのはイヤ。<br>どっちも結局キャストしているから同じと思っているのでしょうか。<br>SendMessageなら、(LPARAM)とか(*TCHAR)などがついていて、キャストが目に見えています。<br>だから、SendMessageの引数が合っているか不安になります。不安でいいんです。危険だから。<br>マクロでは、キャストがコード上に現れないので、引数が違っていても、人もコンパイラも気が付かなくて、見過ごす確率が高くなります。<br>ListBox_SetCurSelがSendMessageと同列の危険性を内包しているのを理解しているベテランWin32/C開発者は尊敬しますが、私はそうではないです。<br><br>・windowsxではないけど、CommCtrl.hのRect関連は 引数に副作用があると正常に使えないかも(min/maxと同じ)<br>ListView_GetItemRect(hwnd, i, pRect++, LVIR_LABEL);<br>pRectは3回インクリメントされる。<br>私は怖いので引数でインクリメントはしませんが、引数部分に関数を指定したり、一時インスタンスが生成されていると悲惨なことに。<br>&gt;ラッパを作成していただけるのであれば<br>そのうちやるつもりではありましたが、もうやらないかも。<br>&gt;1. SendMessageAny が SendMessage の単なるマクロであること。<br>&gt;  つまり何の機能も果たしていないこと。<br>Anyになっていれば、A/Wで引数型が同じで考慮しなくていいことを人間が読み取れる<br>(ただし一部おかしいきがする)<br>windowsxマクロでは無理<br><br>&gt;2. StdApi.h noの定義箇所に<br>&gt;&#9;// 過去のUNICODE化の名残です。<br>&gt;&#9;// 現在となっては、特に意味はありません。<br>&gt;とある（つまりのの遺産）。<br>当然そのコメントは読んでいます。それはフルWCHAR化してANSIビルドを使わない頃のコメントだったりしませんか。<br>もうTCHAR部分はいますぐ捨てる。というなら別にいい。<br><br>&gt;CB_SHOWDROPDOWN<br>http://msdn.microsoft.com/en-us/library/bb775919%28v=VS.85%29.aspx<br>各コントロールの一覧<br>http://msdn.microsoft.com/en-us/library/bb773169(v=VS.85).aspx<br><br>結局目視でのチェックが必要なら、<br>/(ListBos_|Button_|ComboBox_|Edit_|ListV<br>iew_|ScrollBar_|Static_|TabCtrl_)|(Messa<br>ge)|printf/<br>とか、なんか並べるて確認するより、<br>/(Message|printf/<br>で確認した方が、漏れも少ないし簡単。一括チェックでも脳内チェックでもです。<br><br>ほんとうは、説明を書いている時間でコードを書き終えられそうなんだけど、まあいいや。<br></div></section>
     <ul><li><section><h1 id=1338>
     <span class="no">[1338]</span>
-    <a class="title" href="#1338">Re6: dlgフォルダの整理</a>
+    <a class="thread-title" href="#1338">Re6: dlgフォルダの整理</a>
     <span class="author">もか</span>
     <time datetime="2010-07-18T14:10:30">2010年07月18日 14:10</time></h1>
     <div class="body">自分で説明しようとするからフレームの元であることに気が付いた。<br><br>間違ったコードは間違って見えるようにする<br>http://www.joelonsoftware.com/articles/Wrong.html<br>日本語訳(英語の方は読んでない)：<br>http://local.joelonsoftware.com/mediawiki/index.php/%E9%96%93%E9%81%95%E3%81%A3%E3%81%9F%E3<br>%82%B3%E3%83%BC%E3%83%89%E3%81%AF%E9%96%<br>93%E9%81%95%E3%81%A3%E3%81%A6%E8%A6%8B%E<br>3%81%88%E3%82%8B%E3%82%88%E3%81%86%E3%81<br>%AB%E3%81%99%E3%82%8B<br>「C++の設計と進化」もおすすめです。<br>ただしもしNULLは0と書けという話があったら、今はnullptrがおすすめ。nullptrがなければNULLがおすすめ(Googleが推奨)<br>http://www.textdrop.net/google-styleguide-ja/cppguide.xml<br><br>私からはwindowsx利用に関しては3種類の修正案を提示しておきます。<br>A. windowsx.h の中で使えるものを決めておく。それ以外は使わない。<br>windowx.h すべてがだめだとはさすがに思わないから<br>&gt;・SendMessageで未使用の引数0だったものがなくなり惑わされない<br>&gt;・戻り値型がキャスト済みで便利<br>などに該当するものを使えるようにする。<br>(Uchiさんのパッチの部分はほとんどそうだと思う)<br>だたし決めても、今後リストにないマクロが新規コードで使用されていないかチェックが必要。<br>使用不可マクロはすべてundefする<br>例えば int ListBox_GetCurSel(HWND); は有用<br>ListBox_AddString は undef。ApiWrap::List_AddStringを使う<br>ApiWrapは 紛らわしさ解消のため using namespaceをやめる。<br>ListBox_SetCurSel(HWND, int)をどうするかが議論の対象になる。<br><br>B. 文字列関連はAipWrapに。それ以外はSendMessageAnyに。windowsx.hは封印<br>(int)SendMessage(hwnd, LB_GETCURSEL, 0 ,0 ); は<br> B.のオプション案<br>(int)SendMessageAny(hwnd, LB_GETCURSEL, NOT_USE_0 ,NOT_USE_0 ); とかにしておくとか。<br>NOT_USE_0は適当に定義かどこかに代用品ないかな。0でいいなら0のまま。<br><br>C. ほしいのは全部ラップ関数を書く<br>ラップがほしいのはラップへ。<br>別にSendMessageでいいや。とおもうならSendMessageAnyに。<br>SendMessageのままのものは、修正対象<br><br>残ったPostMessageはPostMessageAny と新設の PostMessageTchar(仮名) とかにする<br></div></section>
     <ul><li><section><h1 id=1342>
     <span class="no">[1342]</span>
-    <a class="title" href="#1342">Re7: dlgフォルダの整理</a>
+    <a class="thread-title" href="#1342">Re7: dlgフォルダの整理</a>
     <span class="author">Uchi</span>
     <time datetime="2010-07-21T00:08:13">2010年07月21日 00:08</time></h1>
     <div class="body">もかさんの好みに合わせたと思う修正をしたものをアップしました<br><br></div></section>
     <ul><li><section><h1 id=1343>
     <span class="no">[1343]</span>
-    <a class="title" href="#1343">Re8: dlgフォルダの整理</a>
+    <a class="thread-title" href="#1343">Re8: dlgフォルダの整理</a>
     <span class="author">もか</span>
     <time datetime="2010-07-21T01:30:37">2010年07月21日 01:30</time></h1>
     <div class="body">なにこれ、すごい。ありがとうございます。<br>さっそく見てみます。目視チェックをかけるので、しばしお待ちを。<br><br>なにかヘッダ周りの確認はコツがあるのかな。それともツールとかあるんでしょうか。<br></div></section>

@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix/Imp) 表示関連の修正３件</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告:(Fix/Imp) 表示関連の修正３件 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">459</span>
-    <a class="title" href="459.html#459">Commit報告:(Fix/Imp) 表示関連の修正３件</a></div>
+    <a class="thread-title" href="459.html#459">Commit報告:(Fix/Imp) 表示関連の修正３件</a></div>
     <ul><li><div class="list-title">
     <span class="no">460</span>
-    <a class="title" href="459.html#460">Re:Commit報告:(Fix/Imp) 表示関連の修正３件</a></div>
+    <a class="thread-title" href="459.html#460">Re:Commit報告:(Fix/Imp) 表示関連の修正３件</a></div>
     <ul><li><div class="list-title">
     <span class="no">463</span>
-    <a class="title" href="459.html#463">Re2:Commit報告:(Fix/Imp) 表示関連の修正３件</a></div>
+    <a class="thread-title" href="459.html#463">Re2:Commit報告:(Fix/Imp) 表示関連の修正３件</a></div>
     <ul><li><div class="list-title">
     <span class="no">464</span>
-    <a class="title" href="459.html#464">Re3:Commit報告:(Fix/Imp) 表示関連の修正３件</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=459>
+    <a class="thread-title" href="459.html#464">Re3:Commit報告:(Fix/Imp) 表示関連の修正３件</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=459>
     <span class="no">[459]</span>
-    <a class="title" href="#459">Commit報告:(Fix/Imp) 表示関連の修正３件</a>
+    <a class="thread-title" href="#459">Commit報告:(Fix/Imp) 表示関連の修正３件</a>
     <span class="author">ryoji</span>
     <time datetime="2008-06-07T00:33:57">2008年06月07日 00:33</time></h1>
     <div class="body">リビジョン：<br>　rev1370, 1371, 1372<br><br>変更種別：<br>　表示関連のバグ修正および改善<br><br>内容：<br><br>rev1370:<br>Fix: 外部へのドロップ移動で分割他ビューが更新されない<br><br>rev1371:<br>Fix: Grep結果が分割他ビューに反映されない<br>（無題画面を分割してヒットしないGrepを実行すると現象が顕著に見られた）<br><br>rev1372:<br>Fix:  メニューバーに表示される行:列のラベルがウィンドウの縁を突き抜ける<br>（&gt;&gt;unicode:458 Vista以外のOSで起きていました）<br>Imp: メニューバーに表示される行:列の位置調整<br>Imp: ステータスバーの文字コード表示幅微調整<br>（Vista以外のOSでキャレット位置の文字コード表示部にCRLFを表示すると右端が欠けていました）</div></section>
     <ul><li><section><h1 id=460>
     <span class="no">[460]</span>
-    <a class="title" href="#460">Re:Commit報告:(Fix/Imp) 表示関連の修正３件</a>
+    <a class="thread-title" href="#460">Re:Commit報告:(Fix/Imp) 表示関連の修正３件</a>
     <span class="author">kobake</span>
     <time datetime="2008-06-07T16:47:36">2008年06月07日 16:47</time></h1>
     <div class="body">コード、動作、軽くレビューしました。問題無いです。<br><br>ところで細かい所ですけど、<br>CEditWnd::OnSize で pszLabel[3] を  _T("0000") から _T("CRLF") へ変えた意図ってなんでしょうか。<br></div></section>
     <ul><li><section><h1 id=463>
     <span class="no">[463]</span>
-    <a class="title" href="#463">Re2:Commit報告:(Fix/Imp) 表示関連の修正３件</a>
+    <a class="thread-title" href="#463">Re2:Commit報告:(Fix/Imp) 表示関連の修正３件</a>
     <span class="author">ryoji</span>
     <time datetime="2008-06-07T17:42:16">2008年06月07日 17:42</time></h1>
     <div class="body">▼ kobakeさん<br>&gt; CEditWnd::OnSize で pszLabel[3] を  _T("0000") から _T("CRLF") へ変えた意図ってなんでしょうか。<br><br>それが「Imp: ステータスバーの文字コード表示幅微調整」の部分です。<br>改行位置にカーソルがあると16進コードではなくて"CRLF"といった表示になるようですが、"0000"の幅では表示幅が足りなくて XP 環境などでは右端が微妙に欠けていたので。<br>＃この修正はメニューバーではなくてステータスバーのほう</div></section>
     <ul><li><section><h1 id=464>
     <span class="no">[464]</span>
-    <a class="title" href="#464">Re3:Commit報告:(Fix/Imp) 表示関連の修正３件</a>
+    <a class="thread-title" href="#464">Re3:Commit報告:(Fix/Imp) 表示関連の修正３件</a>
     <span class="author">kobake</span>
     <time datetime="2008-06-07T18:11:54">2008年06月07日 18:11</time></h1>
     <div class="body">▼ ryojiさん<br>&gt; ▼ kobakeさん<br>&gt; &gt; CEditWnd::OnSize で pszLabel[3] を  _T("0000") から _T("CRLF") へ変えた意図ってなんでしょうか。<br>&gt; <br>&gt; それが「Imp: ステータスバーの文字コード表示幅微調整」の部分です。<br>&gt; 改行位置にカーソルがあると16進コードではなくて"CRLF"といった表示になるようですが、"0000"の幅では表示幅が足りなくて XP 環境などでは右端が微妙に欠けていたので。<br>&gt; ＃この修正はメニューバーではなくてステータスバーのほう<br><br>なるほど、UI部分なので等幅フォントじゃないんですね。見落としていました。<br>ご解説ありがとうございます。<br><br>＃ちなみに自分はWindowsのUIフォントをぜんぶ等幅にしてしまっているので（笑）気づきませんでした…。<br></div></section>

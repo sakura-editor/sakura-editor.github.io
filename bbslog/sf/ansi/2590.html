@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ修正 GREPダイアログを表示して起動</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バグ修正 GREPダイアログを表示して起動 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2590</span>
-    <a class="title" href="2590.html#2590">バグ修正 GREPダイアログを表示して起動</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=2590>
+    <a class="thread-title" href="2590.html#2590">バグ修正 GREPダイアログを表示して起動</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=2590>
     <span class="no">[2590]</span>
-    <a class="title" href="#2590">バグ修正 GREPダイアログを表示して起動</a>
+    <a class="thread-title" href="#2590">バグ修正 GREPダイアログを表示して起動</a>
     <span class="author">もか</span>
     <time datetime="2003-02-23T16:08:44">2003年02月23日 16:08</time></h1>
     <div class="body">-GREPMODE -GREPDLGで表示するダイアログのオーナウィンドウがいない問題の修正。<br>CNormalProcess.cpp<br>@@ 153 @@<br>-&#9;&#9;&#9;int nRet = m_pcEditWnd-&gt;m_cEditDoc.m_cDlgGrep.DoModal( m_hInstance, m_hWnd,  NULL);<br>+&#9;&#9;&#9;int nRet = m_pcEditWnd-&gt;m_cEditDoc.m_cDlgGrep.DoModal( m_hInstance, hWnd,  NULL);<br><br>ちなみに、このダイアログを表示している状態では、新しいエディタウィンドウが開けません。<br></div></section>

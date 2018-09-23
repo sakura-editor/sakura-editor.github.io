@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(New) デフォルトの改行コード指定オプション</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告(New) デフォルトの改行コード指定オプション | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1462</span>
-    <a class="title" href="1462.html#1462">Commit報告(New) デフォルトの改行コード指定オプション</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=1462>
+    <a class="thread-title" href="1462.html#1462">Commit報告(New) デフォルトの改行コード指定オプション</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1462>
     <span class="no">[1462]</span>
-    <a class="title" href="#1462">Commit報告(New) デフォルトの改行コード指定オプション</a>
+    <a class="thread-title" href="#1462">Commit報告(New) デフォルトの改行コード指定オプション</a>
     <span class="author">ryoji</span>
     <time datetime="2011-01-26T21:21:06">2011年01月26日 21:21</time></h1>
     <div class="body">リビジョン：<br>  rev1878<br><br>変更種別：<br>  新機能<br><br>内容：<br>New: デフォルトの改行コード指定オプション<br><br>これまで文字コードしか指定できなくて残念だったので、改行コードとBOMも指定できるようにしました（[タイプ別設定]の[支援]タブ）。<br>新規作成（無題）用です。<br><br>・通常の新規画面には「基本」タイプのコード指定が適用されます<br>・起動オプション「-TYPE」でタイプ指定して新規画面を開けば指定したタイプのコード指定が適用されます<br>・新規画面で無編集（空の状態）のときに別のタイプを適用すると変更後のタイプのコード指定が適用されます<br>・存在しないファイルを開いて編集開始するときもファイル拡張子に対応したタイプのコード指定が適用されます（履歴中にも該ファイルが存在しなければ）<br><br>従来の文字コード指定についても上記と同様に動作するようにしています。<br>その他、関連箇所の軽微なバグ修正、細部挙動の調整を実施しています。<br><br>＃文字コード指定のほうは新規以外にも、ファイルを開く際の文字コード自動判定の優先順位が高くなります。</div></section>

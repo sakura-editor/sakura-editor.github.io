@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>[要望]全角かな入力状態でのメニュー操作</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>[要望]全角かな入力状態でのメニュー操作 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3616</span>
-    <a class="title" href="3616.html#3616">[要望]全角かな入力状態でのメニュー操作</a></div>
+    <a class="thread-title" href="3616.html#3616">[要望]全角かな入力状態でのメニュー操作</a></div>
     <ul><li><div class="list-title">
     <span class="no">3618</span>
-    <a class="title" href="3616.html#3618">RE: [要望]全角かな入力状態でのメニュー操作</a></div>
+    <a class="thread-title" href="3616.html#3618">RE: [要望]全角かな入力状態でのメニュー操作</a></div>
     <ul><li><div class="list-title">
     <span class="no">3619</span>
-    <a class="title" href="3616.html#3619">Re2: [要望]全角かな入力状態でのメニュー操作</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3616>
+    <a class="thread-title" href="3616.html#3619">Re2: [要望]全角かな入力状態でのメニュー操作</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3616>
     <span class="no">[3616]</span>
-    <a class="title" href="#3616">[要望]全角かな入力状態でのメニュー操作</a>
+    <a class="thread-title" href="#3616">[要望]全角かな入力状態でのメニュー操作</a>
     <span class="author">SIRIUS</span>
     <time datetime="2004-01-29T23:14:48">2004年01月29日 23:14</time></h1>
     <div class="body">サクラエディタ、常用させて戴いております。<br>ソースも公開されているのである程度の改造は自分で出来るのですが、ちょっと方法が解らないことがありましたので、質問しつつ要望として挙げさせて戴きます。<br><br>私はかな入力派なのでエディタを開いているときは基本的に全角かな入力モードなのですが、この状態ではキーボードでメニュー操作が出来ません。<br>具体的には、「Alt+F」でファイルメニューを開くところまでは出来るのですが、その後「N」や「O」を押しても反応しません。これを反応させるにはどうすれば良いのでしょうか。全角ローマ字入力モードでなら出来るのですが……。<br><br>ショートカットキーを割り当てればいいと言えばそれまでなのですが、ファイルを閉じるときに「Alt+F → C」というのがクセになっているため、もし出来ればありがたいです。<br><br>需要は限りなく低いかも知れませんが、出来れば宜しくお願いします。<br></div></section>
     <ul><li><section><h1 id=3618>
     <span class="no">[3618]</span>
-    <a class="title" href="#3618">RE: [要望]全角かな入力状態でのメニュー操作</a>
+    <a class="thread-title" href="#3618">RE: [要望]全角かな入力状態でのメニュー操作</a>
     <span class="author">げんた</span>
     <time datetime="2004-01-30T02:13:26">2004年01月30日 02:13</time></h1>
     <div class="body">&gt;私はかな入力派なのでエディタを開いているときは基本的に全角かな入力モードなのですが、この状態ではキーボードでメニュー操作が出来ません。<br>&gt;具体的には、「Alt+F」でファイルメニューを開くところまでは出来るのですが、その後「N」や「O」を押しても反応しません。これを反応させるにはどうすれば良いのでしょうか。全角ローマ字入力モードでなら出来るのですが……。<br>ソースを変更できるようなので仕組みだけ説明します．<br><br>このエディタではメニューのショートカットが押されたときに来るWM_MENUCHARメッセージを自分で処理しています．<br>場所はCMenuDrawer.cppのCMenuDrawer::OnMenuChar()です．<br>wParamの下位ワード(ソース中ではchUser変数)に押されたキーのキーコードが入ります．<br><br>とりあえず安直に考えつく案としては0x80以上だったらかな→アルファベット変換を(テーブルで?)行ってあげる方法があると思います．<br><br>以前コントロール＋アルファベットをアルファベット単体にする変更は入れたのですが，カナキーとは思いつきませんでした．<br></div></section>
     <ul><li><section><h1 id=3619>
     <span class="no">[3619]</span>
-    <a class="title" href="#3619">Re2: [要望]全角かな入力状態でのメニュー操作</a>
+    <a class="thread-title" href="#3619">Re2: [要望]全角かな入力状態でのメニュー操作</a>
     <span class="author">SIRIUS</span>
     <time datetime="2004-01-30T22:46:51">2004年01月30日 22:46</time></h1>
     <div class="body">▼ げんたさん<br>アドバイスありがとうございます。早速試してみました。<br>chUserに0xa7～0xd7のキーコードが入っていた場合、対応するアルファベット・記号に置き換えるようにしたところ、無事かな入力モードでも操作できるようになりました。<br>これで、手に馴染んだ操作でエディットが出来るようになり、効率も上がります。<br>ありがとうございます。<br></div></section>

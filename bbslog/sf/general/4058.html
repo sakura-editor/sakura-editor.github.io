@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アウトライン解析</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アウトライン解析 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">4058</span>
-    <a class="title" href="4058.html#4058">アウトライン解析</a></div>
+    <a class="thread-title" href="4058.html#4058">アウトライン解析</a></div>
     <ul><li><div class="list-title">
     <span class="no">4059</span>
-    <a class="title" href="4058.html#4059">RE: アウトライン解析</a></div>
+    <a class="thread-title" href="4058.html#4059">RE: アウトライン解析</a></div>
     <ul><li><div class="list-title">
     <span class="no">4060</span>
-    <a class="title" href="4058.html#4060">Re2: アウトライン解析</a></div>
+    <a class="thread-title" href="4058.html#4060">Re2: アウトライン解析</a></div>
     </li><li><div class="list-title">
     <span class="no">4100</span>
-    <a class="title" href="4058.html#4100">Re2: アウトライン解析</a></div>
+    <a class="thread-title" href="4058.html#4100">Re2: アウトライン解析</a></div>
     <ul><li><div class="list-title">
     <span class="no">4107</span>
-    <a class="title" href="4058.html#4107">Re3: アウトライン解析</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4058>
+    <a class="thread-title" href="4058.html#4107">Re3: アウトライン解析</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4058>
     <span class="no">[4058]</span>
-    <a class="title" href="#4058">アウトライン解析</a>
+    <a class="thread-title" href="#4058">アウトライン解析</a>
     <span class="author">よしだ</span>
     <time datetime="2004-09-27T23:16:54">2004年09月27日 23:16</time></h1>
     <div class="body">サクラエディタを毎日使用させて頂いています。<br>数あるエディタの中でも最強だと思います。<br><br>その機能のひとつにアウトライン解析がありますが、<br>1.4.8からは#if～#endifについても考慮するようになりました。<br>が、しかし複雑な構文には対応していないようです。<br>多重に使用している場合や、#if～#else～#endifのような場合に<br>正しく判断してくれません。<br>もっと賢くできればいいのですが、難しいでしょうからこの機能を<br>止めるように出来ないでしょうか？<br>今まで表示されていた関数が見つからなくなってしまいます。<br><br>どうかよろしくお願いいたします。 </div></section>
     <ul><li><section><h1 id=4059>
     <span class="no">[4059]</span>
-    <a class="title" href="#4059">RE: アウトライン解析</a>
+    <a class="thread-title" href="#4059">RE: アウトライン解析</a>
     <span class="author">げんた</span>
     <time datetime="2004-09-28T23:59:36">2004年09月28日 23:59</time></h1>
     <div class="body">&gt;その機能のひとつにアウトライン解析がありますが、<br>&gt;1.4.8からは#if～#endifについても考慮するようになりました。<br>&gt;が、しかし複雑な構文には対応していないようです。<br>&gt;多重に使用している場合や、#if～#else～#endifのような場合に<br>&gt;正しく判断してくれません。<br><br>この機能追加は<br>#if 0<br>  for(なんちゃら){<br>#else<br>  for(かｎちゃら){<br>#endif<br>みたいな場合に括弧の対応が取れなくなるのを防ぐ目的で入れたのですが簡易版では駄目でしたか．<br>多重になっている場合，ifdef/ifndefの場合なども考慮してあるつもりだったのですが...#elifを使っていますか？<br><br>あと，<br>#ifdef ABCDE<br>  for(なんちゃら){<br>#endif<br>#ifndef ABCDE<br>  for(かんちゃら){<br>#endif<br>となっていると相変わらず駄目なので<br><br>----<br>CEditDoc_FuncList1.cppのCCppPreprocessMng::ScanLine()にて<br>無条件で0を返せば従来と同様の動作となります．<br></div></section>
     <ul><li><section><h1 id=4060>
     <span class="no">[4060]</span>
-    <a class="title" href="#4060">Re2: アウトライン解析</a>
+    <a class="thread-title" href="#4060">Re2: アウトライン解析</a>
     <span class="author">よしだ</span>
     <time datetime="2004-10-01T23:43:11">2004年10月01日 23:43</time></h1>
     <div class="body">早速ご回答頂きありがとうございます。<br><br>ファームウェアの開発に使っているもので、ハードウェア構成によって<br>異なる条件でコンパイルしたいため<br>#define DEVICE 1<br><br>#if HARD<br>   デバイスが付いている場合の処理<br>#endif<br><br>みたいなことをして、DEVICEを0や１にして切り替えています。<br>このような場合に正しく解析できません。<br></div></section>
     </li><li><section><h1 id=4100>
     <span class="no">[4100]</span>
-    <a class="title" href="#4100">Re2: アウトライン解析</a>
+    <a class="thread-title" href="#4100">Re2: アウトライン解析</a>
     <span class="author">すぐる</span>
     <time datetime="2004-10-17T21:11:00">2004年10月17日 21:11</time></h1>
     <div class="body">&gt; この機能追加は<br>&gt; #if 0<br>&gt;   for(なんちゃら){<br>&gt; #else<br>&gt;   for(かｎちゃら){<br>&gt; #endif<br>&gt; みたいな場合に括弧の対応が取れなくなるのを防ぐ目的で入れたのですが簡易版では駄目でしたか．<br><br>↑確かに、括弧の対応がくずれそうですね。。。<br>ただ、こんなコードを書くプログラマはごく一部だと思うので、<br>下手にケアしなくて良いのでは無いでしょうか。<br>シンプル伊豆ベストだと思います！！！！！<br><br>私が今使ってるverでも、<br>文字列中に括弧が含まれたりしても対応が崩れることがありますが気にせず愛用してます。<br>他の機能が秀一なので～。<br><br>あと、最新のバージョンだと、デフォルトで<br>&gt;   for(かｎちゃら){<br>の部分までコメント色になってしまう現象は、もう直ってるのでしょうか？？？<br>たまに、ごくまれに、きわめてまれに(笑)混乱することがあるので～(^^;;;;;;;<br><br></div></section>
     <ul><li><section><h1 id=4107>
     <span class="no">[4107]</span>
-    <a class="title" href="#4107">Re3: アウトライン解析</a>
+    <a class="thread-title" href="#4107">Re3: アウトライン解析</a>
     <span class="author">げんた</span>
     <time datetime="2004-10-20T00:02:16">2004年10月20日 00:02</time></h1>
     <div class="body">&gt;ただ、こんなコードを書くプログラマはごく一部だと思うので、<br>私もこんなコード相手にしたくないですよ...トホホ<br></div></section>

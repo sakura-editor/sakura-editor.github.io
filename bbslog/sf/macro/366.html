@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>サクラエディタのマクロでこういうことしたいのですが教えてください。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>サクラエディタのマクロでこういうことしたいのですが教えてください。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">366</span>
-    <a class="title" href="366.html#366">サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
+    <a class="thread-title" href="366.html#366">サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
     <ul><li><div class="list-title">
     <span class="no">367</span>
-    <a class="title" href="366.html#367">RE: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
+    <a class="thread-title" href="366.html#367">RE: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
     <ul><li><div class="list-title">
     <span class="no">368</span>
-    <a class="title" href="366.html#368">Re2: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
+    <a class="thread-title" href="366.html#368">Re2: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
     <ul><li><div class="list-title">
     <span class="no">369</span>
-    <a class="title" href="366.html#369">Re3: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
+    <a class="thread-title" href="366.html#369">Re3: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
     </li><li><div class="list-title">
     <span class="no">370</span>
-    <a class="title" href="366.html#370">Re3: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
+    <a class="thread-title" href="366.html#370">Re3: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
     <ul><li><div class="list-title">
     <span class="no">371</span>
-    <a class="title" href="366.html#371">Re4: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
+    <a class="thread-title" href="366.html#371">Re4: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
     <ul><li><div class="list-title">
     <span class="no">372</span>
-    <a class="title" href="366.html#372">Re5: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
+    <a class="thread-title" href="366.html#372">Re5: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
     <ul><li><div class="list-title">
     <span class="no">373</span>
-    <a class="title" href="366.html#373">Re6: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=366>
+    <a class="thread-title" href="366.html#373">Re6: サクラエディタのマクロでこういうことしたいのですが教えてください。</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=366>
     <span class="no">[366]</span>
-    <a class="title" href="#366">サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
+    <a class="thread-title" href="#366">サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
     <span class="author">マクロ初心者</span>
     <time datetime="2007-04-02T15:07:38">2007年04月02日 15:07</time></h1>
     <div class="body">メールの返信のときに引用したい文章の各行の頭に”＞　”を追加しようとしています。メーラーにその機能がないので、一旦サクラエディタを起動し、引用したい文章を貼り付け、以下のＰＰＡマクロを実行して、できあがった文字列をコピーしてメーラーで貼り付け使用してます。<br><br>//PPAマクロ<br>begin<br>  S_ReplaceAll('^.', '&gt; $&amp;', 148); // 選択範囲の行頭を &gt; に置換する。<br>  S_CancelMode(0); // 各種モードの取り消し 選択状態を解除する。[Esc]キーと一緒。<br>  S_SearchClearMark(0); // 検索マークの切替え<br>  S_MoveHistPrev(0); // 移動履歴: 前へ<br>  S_ReDraw(0); // 再描画<br>end;<br><br>やりたいのは、引用したい文章をコピーして、右クリックして”サクラエディタで開く”を実行します。サクラエディタではエディタオープン時の自動実行マクロか何かでクリップボード内の文字列に上記マクロを実行して、マクロの中でクリップボードにコピーしてすぐに終了してしまうというものです。そうしますと”＞　”が追加された文字列をメーラーですぐに貼り付けることができるのではないかと思いました。<br>いまいちサクラエディタとＰＰＡマクロに詳しくないので可能かどうかさえ分かりません。<br>こういうことしたいのですがどうすればできるのか教えてください。よろしくお願いします。<br>もし、別のサイトでこういう問い合わせを受けているというのがありましたらそれでもですのでよろしくお願いします。また、申し訳ありませんが質問されても夜にしか返信できませんのでご了承ください。</div></section>
     <ul><li><section><h1 id=367>
     <span class="no">[367]</span>
-    <a class="title" href="#367">RE: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
+    <a class="thread-title" href="#367">RE: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
     <span class="author">すい</span>
     <time datetime="2007-04-03T03:19:11">2007年04月03日 03:19</time></h1>
     <div class="body">&gt; メーラーにその機能がないので、一旦サクラエディタを起動し、引用したい文章を貼り付け、以下のＰＰＡマクロを実行して、できあがった文字列をコピーしてメーラーで貼り付け使用してます。<br><br>その程度なら PPA でなくキーボードマクロで十分だと思う。<br>というか、変数も何も無いし、わざわざ PPA 使う意味無いんじゃ。<br><br>どうせなら、マクロの先頭で貼り付けして、<br>最後で全文を範囲選択してコピーするあたりまでやっちゃえば？<br><br>1.メーラーとやらで処理対象のテキストを範囲選択してコピー<br>2.新規サクラエディタのウィンドウを開く。<br>3.下記マクロを実行する。（勝手にテキスト処理されて最後にエディタウィンドウが閉じる）<br>4.メーラーとやらで貼り付け実行<br><br>----- なんとか.mac -----<br>//キーボードマクロのファイル<br>S_Paste(0);&#9;// 貼り付け<br><br>S_ReplaceAll('^', '&gt; ', 148); // 選択範囲の行頭を &gt; に置換する。何も選択されていない場合、全テキストが処理される。<br><br>S_SelectAll(0);&#9;// すべて選択<br>S_Copy(0);&#9;// コピー<br><br>S_Undo(0);&#9;// 元に戻す<br>S_Undo(0);&#9;// 元に戻す<br>S_WinClose()；&#9;// ウィンドウを閉じる<br>--------------------<br><br>&gt; サクラエディタではエディタオープン時の自動実行マクロか何かで<br>これは無理だから。自動実行の類は無いから。<br><br>でも、一番楽なのはサクラエディタじゃなくて perl か何かを使用する事だと思う。<br><br>Active Perl でもインストールしておいて、下記（実質内容４行）の<br>スクリプトを用意しておけば、後はそのファイルをクリックして<br>実行するだけです。<br><br>1.メーラーとやらで処理対象のテキストを範囲選択してコピー<br>2.下記、スクリプトファイルをマウスで突くだけ。<br>　# あるいはコマンド「perl C:\～～\test.pl」を実行する。<br>3.メーラーとやらで貼り付け実行<br><br>----- test.pl -----<br>#!perl<br><br>use Win32::Clipboard;               # Win32::Clipboard を使うわよ、の宣言<br>$data = Win32::Clipboard::Get();    # $data にクリップボードの内容を格納<br>$data =~ s/^/&gt; /mgo;                # $data の各行の行頭に "&gt; " を付ける<br>Win32::Clipboard::Set($data);       # $data の内容ををクリップボードにセット<br>--------------------<br></div></section>
     <ul><li><section><h1 id=368>
     <span class="no">[368]</span>
-    <a class="title" href="#368">Re2: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
+    <a class="thread-title" href="#368">Re2: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
     <span class="author">マクロ初心者</span>
     <time datetime="2007-04-03T05:35:56">2007年04月03日 05:35</time></h1>
     <div class="body">&gt; でも、一番楽なのはサクラエディタじゃなくて perl か何かを使用する事だと思う。<br>&gt; Active Perl でもインストールしておいて、下記（実質内容４行）の<br>&gt; スクリプトを用意しておけば、後はそのファイルをクリックして<br>&gt; 実行するだけです。<br><br>さっそくの回答ありがとうござました。<br>Active Perlをインストールして殆どやりたいことができました。<br>もしかしてWSHでも同じことができるのかな・・・？<br>とにかくありがとうござました。感謝です。<br></div></section>
     <ul><li><section><h1 id=369>
     <span class="no">[369]</span>
-    <a class="title" href="#369">Re3: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
+    <a class="thread-title" href="#369">Re3: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
     <span class="author">di</span>
     <time datetime="2007-04-03T09:47:56">2007年04月03日 09:47</time></h1>
     <div class="body">&gt; もしかしてWSHでも同じことができるのかな・・・？<br><br>WSHでもやれないことは無いですが、直接クリップボードを触れないので<br>下みたいな回りくどい感じになりますね。<br><br>var oIExp = WScript.CreateObject("InternetExplorer.Application");<br>oIExp.Navigate("about:blank");<br>while(oIExp.Busy){ WScript.Sleep(10); }<br>var oClip = oIExp.Document.parentWindow.clipboardData;<br>var sText = oClip.getData("TEXT");<br>sText = sText.replace(/([^\r\n]+\r?\n?)/g,"&gt; $1");<br>oClip.setData("TEXT", sText);<br>oIExp.Quit();</div></section>
     </li><li><section><h1 id=370>
     <span class="no">[370]</span>
-    <a class="title" href="#370">Re3: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
+    <a class="thread-title" href="#370">Re3: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
     <span class="author">AC</span>
     <time datetime="2007-04-03T18:20:32">2007年04月03日 18:20</time></h1>
     <div class="body">▼ マクロ初心者さん<br><br>&gt; Active Perlをインストールして殆どやりたいことができました。<br>&gt; もしかしてWSHでも同じことができるのかな・・・？<br><br>Active Perl て WSH だろとかいうつあｆひえｓｄｋｊ<br></div></section>
     <ul><li><section><h1 id=371>
     <span class="no">[371]</span>
-    <a class="title" href="#371">Re4: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
+    <a class="thread-title" href="#371">Re4: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
     <span class="author">まくろ初心者</span>
     <time datetime="2007-04-04T00:27:03">2007年04月04日 00:27</time></h1>
     <div class="body">▼ ACさん<br>&gt; ▼ マクロ初心者さん<br>&gt; <br>&gt; &gt; Active Perlをインストールして殆どやりたいことができました。<br>&gt; &gt; もしかしてWSHでも同じことができるのかな・・・？<br>&gt; <br>&gt; Active Perl て WSH だろとかいうつあｆひえｓｄｋｊ<br><br>私、スレ主とは別人です　笑<br><br>ってか、"&gt;"をつけるだけなら、サクラエディタにありますが？<br>右クリックで引用符つきコピーをすればよいのでは？？？<br><br></div></section>
     <ul><li><section><h1 id=372>
     <span class="no">[372]</span>
-    <a class="title" href="#372">Re5: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
+    <a class="thread-title" href="#372">Re5: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
     <span class="author">マクロ初心者</span>
     <time datetime="2007-04-04T15:31:25">2007年04月04日 15:31</time></h1>
     <div class="body">まくろ初心者さんへ<br><br>&gt; ってか、"&gt;"をつけるだけなら、サクラエディタにありますが？<br>&gt; 右クリックで引用符つきコピーをすればよいのでは？？？<br><br>　げっ、あったぁ～。<br>　何してたんだろう・・・。<br>　でも、ActivePerl方式が使い勝手がいいのでこちらにさせて<br>　もらいます。<br><br>　　※このＢＢＳには初めて質問したのですが、本当にマクロ<br>　　　初心者だったので同じ名前になってしまいました。<br>　　　おそらくもう質問することはないかと思いますので。<br>　　　失礼しました。<br></div></section>
     <ul><li><section><h1 id=373>
     <span class="no">[373]</span>
-    <a class="title" href="#373">Re6: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
+    <a class="thread-title" href="#373">Re6: サクラエディタのマクロでこういうことしたいのですが教えてください。</a>
     <span class="author">すい</span>
     <time datetime="2007-04-05T04:26:10">2007年04月05日 04:26</time></h1>
     <div class="body">&gt;　でも、ActivePerl方式が使い勝手がいいのでこちらにさせて<br>&gt;　もらいます。<br><br>あぅ、ごめんなさい、Active Perl、ちっとも使い勝手良くないです。<br>というか「他のツール使って良し」なら、「クリップボード拡張ツール」<br>の類を使用すればもっとずっと使い勝手が良くなりますね。<br># ド忘れしてました。<br><br>例えば CLCL (クルクル) なんか。<br>http://www.nakka.com/soft/clcl/<br><br>クリップボードの履歴を取るツールですが、プラグインで<br>色々なテキスト編集機能を付加する事が出来ます。<br>用意されている tool_text を登録すれば、ツールとして<br>「引用(&amp;Q)」が使えるようになります。<br><br>デフォルトの設定だと [Alt]+[T] で、登録したツールを利用する事が<br>出来ます。（キーは「オプション」→[動作]タブ にて自由に変えられます。）<br><br><br>1.メーラーとやらで処理対象のテキストを範囲選択する。（選択だけ）<br><br>2.CLCLのツールメニューを出して [引用(&amp;Q)] を実行する。<br>　具体的には [Alt]+[T] → [Q] とキー入力するだけ。<br>　すると、引用記号を聞いて来るので「&gt; 」と入力して [Enter]。<br><br>3.メーラーの編集画面で選択範囲の文字列が引用記号付きの<br>　状態に変わり果てたさまを呆然と眺める。<br><br>のような感じで、そのメーラーとやらの編集画面から一度も<br>外へ出る事なく、引用記号付けられますな。<br><br>類似のソフトは他にもあるんじゃないかなぁと。<br>探してみそ。<br></div></section>

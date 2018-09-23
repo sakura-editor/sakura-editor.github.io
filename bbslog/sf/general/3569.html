@@ -1,63 +1,89 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アイコンが変わりません</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アイコンが変わりません | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3569</span>
-    <a class="title" href="3569.html#3569">アイコンが変わりません</a></div>
+    <a class="thread-title" href="3569.html#3569">アイコンが変わりません</a></div>
     <ul><li><div class="list-title">
     <span class="no">3570</span>
-    <a class="title" href="3569.html#3570">Re:アイコンが変わりません</a></div>
+    <a class="thread-title" href="3569.html#3570">Re:アイコンが変わりません</a></div>
     <ul><li><div class="list-title">
     <span class="no">3573</span>
-    <a class="title" href="3569.html#3573">Re2:アイコンが変わりません</a></div>
+    <a class="thread-title" href="3569.html#3573">Re2:アイコンが変わりません</a></div>
     </li><li><div class="list-title">
     <span class="no">3574</span>
-    <a class="title" href="3569.html#3574">Re2:アイコンが変わりません</a></div>
+    <a class="thread-title" href="3569.html#3574">Re2:アイコンが変わりません</a></div>
     <ul><li><div class="list-title">
     <span class="no">3575</span>
-    <a class="title" href="3569.html#3575">Re3:アイコンが変わりません</a></div>
+    <a class="thread-title" href="3569.html#3575">Re3:アイコンが変わりません</a></div>
     <ul><li><div class="list-title">
     <span class="no">3577</span>
-    <a class="title" href="3569.html#3577">Re4:アイコンが変わりません</a></div>
+    <a class="thread-title" href="3569.html#3577">Re4:アイコンが変わりません</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">3578</span>
-    <a class="title" href="3569.html#3578">Re2:アイコンが変わりません</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3569>
+    <a class="thread-title" href="3569.html#3578">Re2:アイコンが変わりません</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3569>
     <span class="no">[3569]</span>
-    <a class="title" href="#3569">アイコンが変わりません</a>
+    <a class="thread-title" href="#3569">アイコンが変わりません</a>
     <span class="author">見習管理者</span>
     <time datetime="2003-12-26T11:08:04">2003年12月26日 11:08</time></h1>
     <div class="body">お世話になります。<br><br>V1.4.3.3をWin2000Proにインストール後、エクスプローラ<br>にて拡張子SQLのファイルをサクラエディタに関連付け<br>したのですが、エクスプローラの表示でアイコンがサクラエディタ<br>に変わりません。ダブルクリックすればサクラエディタで開きます。<br><br>どうしたら変更できるか、どなたかご教授お願いします。<br><br></div></section>
     <ul><li><section><h1 id=3570>
     <span class="no">[3570]</span>
-    <a class="title" href="#3570">Re:アイコンが変わりません</a>
+    <a class="thread-title" href="#3570">Re:アイコンが変わりません</a>
     <span class="author">じゅうじ</span>
     <time datetime="2003-12-27T17:39:01">2003年12月27日 17:39</time></h1>
     <div class="body">&gt; V1.4.3.3をWin2000Proにインストール後、エクスプローラ<br>&gt; にて拡張子SQLのファイルをサクラエディタに関連付け<br><br>先ずは、<br>ファイル名を指定して実行で、レジストリエディタを開いてください。<br>regedit.exe<br><br><br>マイ コンピュータ -&gt; HKEY_CLASSES_ROOT -&gt; .sql<br>と進んで、(標準) REG_SZ となっている所のデータ(例：ft00000)を、適当な所にメモして下さい。<br><br>マイ コンピュータ -&gt; HKEY_CLASSES_ROOT -&gt; ft00000<br>と進んで、<br>    ft00000<br>       |_ shell<br>となっている所の、ft00000 に DefaultIcon を追加して下さい。<br>編集(E) -&gt; 新規(N) -&gt; キー(K)<br>    ft00000<br>       |_ DefaultIcon<br>       |_ shell<br><br>DefaultIcon の(標準)に データ(さくらのアイコン)を追加して下さい。<br>編集(E) -&gt; 変更(M)<br>E:\Program Files\Sakura\sakura.exe,0<br><br>最後の，カンマと０ゼロをお忘れなく。<br>レジストリエディタを終了し、シャットダウン -&gt; ログオフで終ります。</div></section>
     <ul><li><section><h1 id=3573>
     <span class="no">[3573]</span>
-    <a class="title" href="#3573">Re2:アイコンが変わりません</a>
+    <a class="thread-title" href="#3573">Re2:アイコンが変わりません</a>
     <span class="author">見習管理者</span>
     <time datetime="2003-12-31T13:05:57">2003年12月31日 13:05</time></h1>
     <div class="body">じゅうじさん、　こんにちは。<br><br>会社が年末年始の休暇に入ってしまったので<br>返事が遅れてすいませんでした。<br>また、そういう理由で確認できませんので、<br>休み明けに確認してみます。<br><br></div></section>
     </li><li><section><h1 id=3574>
     <span class="no">[3574]</span>
-    <a class="title" href="#3574">Re2:アイコンが変わりません</a>
+    <a class="thread-title" href="#3574">Re2:アイコンが変わりません</a>
     <span class="author">見習管理者</span>
     <time datetime="2004-01-05T10:31:21">2004年01月05日 10:31</time></h1>
     <div class="body">じゅうじさん こんにちは。<br><br>▼ じゅうじさん<br> <br>&gt; マイ コンピュータ -&gt; HKEY_CLASSES_ROOT -&gt; .sql<br>&gt; と進んで、(標準) REG_SZ となっている所のデータ(例：ft00000)を、適当な所にメモして下さい。<br>&gt; <br>&gt; マイ コンピュータ -&gt; HKEY_CLASSES_ROOT -&gt; ft00000<br>&gt; と進んで、<br>&gt;     ft00000<br>&gt;        |_ shell<br>&gt; となっている所の、ft00000 に DefaultIcon を追加して下さい。<br>&gt; 編集(E) -&gt; 新規(N) -&gt; キー(K)<br>&gt;     ft00000<br>&gt;        |_ DefaultIcon<br>&gt;        |_ shell<br>&gt; <br>&gt; DefaultIcon の(標準)に データ(さくらのアイコン)を追加して下さい。<br>&gt; 編集(E) -&gt; 変更(M)<br>&gt; E:\Program Files\Sakura\sakura.exe,0<br><br>ドライブはこの例で言うとＥとなっていますが、自分のパソコンでは<br>ＣドライブなのでＣに読替えて変更を加えました。<br><br>以上のように変更を加え、再起動しましたが、変更されません。<br>大文字小文字も区別して入力しました。<br>ひとつ気になるのはshellというキーがないことです。<br><br>どこがいけないのでしょうか？<br><br></div></section>
     <ul><li><section><h1 id=3575>
     <span class="no">[3575]</span>
-    <a class="title" href="#3575">Re3:アイコンが変わりません</a>
+    <a class="thread-title" href="#3575">Re3:アイコンが変わりません</a>
     <span class="author">じゅうじ</span>
     <time datetime="2004-01-05T21:34:33">2004年01月05日 21:34</time></h1>
     <div class="body">▼ 見習管理者さん<br>&gt; マイ コンピュータ -&gt; HKEY_CLASSES_ROOT -&gt; .sql<br>&gt; と進んで、(標準) REG_SZ となっている所のデータ(例：ft00000)を、適当な所にメモして下さい。<br><br>.sqlに有るデータを使って下さい。<br>キーを新しく作られたように考えられます。<br>ft00000 の方をそのまま使っていないでしょうか？<br></div></section>
     <ul><li><section><h1 id=3577>
     <span class="no">[3577]</span>
-    <a class="title" href="#3577">Re4:アイコンが変わりません</a>
+    <a class="thread-title" href="#3577">Re4:アイコンが変わりません</a>
     <span class="author">見習管理者</span>
     <time datetime="2004-01-06T10:45:05">2004年01月06日 10:45</time></h1>
     <div class="body">じゅうじさん こんにちは。<br><br>▼ じゅうじさん<br>&gt; .sqlに有るデータを使って下さい。<br>&gt; キーを新しく作られたように考えられます。<br>&gt; ft00000 の方をそのまま使っていないでしょうか？<br><br>自分のパソコンのregeditで確認すると、.sqlの中ではft00003<br>となっていたので、ft00003というキー中にDefaultIconを作成<br>しました。これで間違っていないでしょうか？<br></div></section>
     </li></ul></li></ul></li><li><section><h1 id=3578>
     <span class="no">[3578]</span>
-    <a class="title" href="#3578">Re2:アイコンが変わりません</a>
+    <a class="thread-title" href="#3578">Re2:アイコンが変わりません</a>
     <span class="author">見習管理者</span>
     <time datetime="2004-01-06T16:13:19">2004年01月06日 16:13</time></h1>
     <div class="body">じゅうじさん こんにちは。<br><br>色々試した結果、sqlの拡張子のアイコン表示がサクラになりました。<br><br>自分なりに解決させた方法は、<br>エクスプローラのフォルダオプションのファイルタイプから<br>現在sqlという拡張子が登録されているものを一旦削除し、<br>再度新規にsqlの拡張子を追加し、その詳細設定でアクション<br>を新規に登録しました。結果、レジストリエディタで見ると、<br>該当のキーの所にじゅうじさんが言われたDefaultIconやshell<br>がありました。<br><br>じゅうじさん、色々アドバイスありがとうございました。<br><br></div></section>

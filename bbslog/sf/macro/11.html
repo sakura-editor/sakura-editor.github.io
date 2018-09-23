@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>対応するカッコの内部を選択する・・・（要望？）</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>対応するカッコの内部を選択する・・・（要望？） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">11</span>
-    <a class="title" href="11.html#11">対応するカッコの内部を選択する・・・（要望？）</a></div>
+    <a class="thread-title" href="11.html#11">対応するカッコの内部を選択する・・・（要望？）</a></div>
     <ul><li><div class="list-title">
     <span class="no">13</span>
-    <a class="title" href="11.html#13">RE: 対応するカッコの内部を選択する・・・（要望？）</a></div>
+    <a class="thread-title" href="11.html#13">RE: 対応するカッコの内部を選択する・・・（要望？）</a></div>
     <ul><li><div class="list-title">
     <span class="no">14</span>
-    <a class="title" href="11.html#14">Re2: 対応するカッコの内部を選択する・・・（要望？）</a></div>
+    <a class="thread-title" href="11.html#14">Re2: 対応するカッコの内部を選択する・・・（要望？）</a></div>
     <ul><li><div class="list-title">
     <span class="no">16</span>
-    <a class="title" href="11.html#16">Re3: 対応するカッコの内部を選択する・・・（要望？）</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=11>
+    <a class="thread-title" href="11.html#16">Re3: 対応するカッコの内部を選択する・・・（要望？）</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=11>
     <span class="no">[11]</span>
-    <a class="title" href="#11">対応するカッコの内部を選択する・・・（要望？）</a>
+    <a class="thread-title" href="#11">対応するカッコの内部を選択する・・・（要望？）</a>
     <span class="author">ssh</span>
     <time datetime="2002-12-18T16:21:23">2002年12月18日 16:21</time></h1>
     <div class="body">対応するカッコの内部を選択する、という機能がないようなので<br>要望として出そうと思ったのですが、その前にまず作ってみようと<br>思い、作ってみました。開きカッコまたは閉じカッコのすぐ右か左<br>(つまり対応するカッコへ移動、が反応する場所)では正しく動作しますが、<br>開きカッコの一文字左の位置で使用すると、少しずれて選択されます。<br>外部コマンドのところの$x、$yのように、カーソル位置を取得する関数が<br>あればいいな、と思いました。(これも要望ですね・・・)<br><br>/////////////以下マクロ。要PPA<br>&#9;//まずとにかく左のカッコへ移動させる。<br>&#9;//選択状態で左を押すと、選択範囲の左端に移動することを利用<br>&#9;S_BeginSelect(0);<br>&#9;S_BracketPair(0);<br>&#9;S_Right(0);<br>&#9;S_Left(0);<br>&#9;S_BeginSelect(0);<br>&#9;S_Left(0);<br><br>&#9;//左のカッコの位置を正しく指すようカーソルを移動。<br>&#9;S_BracketPair(0);<br>&#9;S_BracketPair(0);<br><br>&#9;//カッコの中を選択<br>&#9;S_Right(0);<br>&#9;S_BeginSelect(0);<br>&#9;S_BracketPair(0);<br>&#9;S_Right(0);<br>&#9;S_Left(0);<br>&#9;S_BeginSelect(0);<br>/////////////以上<br></div></section>
     <ul><li><section><h1 id=13>
     <span class="no">[13]</span>
-    <a class="title" href="#13">RE: 対応するカッコの内部を選択する・・・（要望？）</a>
+    <a class="thread-title" href="#13">RE: 対応するカッコの内部を選択する・・・（要望？）</a>
     <span class="author">すい</span>
     <time datetime="2002-12-21T18:06:41">2002年12月21日 18:06</time></h1>
     <div class="body">&gt;/////////////以下マクロ。要PPA<br>とか書きながら、どこをどう見ても PPA の機能を全く使っていない、<br>PPA.DLL 無しで、拡張子.MAC のマクロで動作する純粋なキーボード<br>マクロじゃぁないですかぁ。<br>PPA 使わずにここまでやるとは、なかなかやりますね。(*^^*)<br><br>で、私も PPA 使わずに<br>&gt;開きカッコの一文字左の位置で使用すると、少しずれて選択されます。<br>↑この辺の問題が無い理想動作が出来ないかちょっとやってみましたけど。。。<br>断念しちゃいました。(;^^;)<br><br>PPA使っちゃうとアッサリ出来ちゃいます↓けど、<br>http://www.egroups.co.jp/files/sakura-editor/Junk/ ⇒  SBRACKET.LZH<br>これじゃぁ芸が無さ過ぎますもんねぇ。(--;)<br>つうか単純で力技すぎ。汚ねぇっぅかみっともねぇっぅか。if の括弧のお化け。<br></div></section>
     <ul><li><section><h1 id=14>
     <span class="no">[14]</span>
-    <a class="title" href="#14">Re2: 対応するカッコの内部を選択する・・・（要望？）</a>
+    <a class="thread-title" href="#14">Re2: 対応するカッコの内部を選択する・・・（要望？）</a>
     <span class="author">ssh</span>
     <time datetime="2002-12-24T13:07:02">2002年12月24日 13:07</time></h1>
     <div class="body">&gt; &gt;/////////////以下マクロ。要PPA<br>&gt; とか書きながら、どこをどう見ても PPA の機能を全く使っていない、<br>嘘書きました。失礼。<br>何も考えずにコピーで作ってたコメントを何も考えずにコピー・・・頭悪いですね。<br><br>&gt; PPA 使わずにここまでやるとは、なかなかやりますね。(*^^*)<br>愛があるということで。<br><br>&gt; PPA使っちゃうとアッサリ出来ちゃいます↓けど、<br>&gt; http://www.egroups.co.jp/files/sakura-editor/Junk/ ⇒  SBRACKET.LZH<br>ありがたくこちらを使わせていただきます(笑)。<br>私も力技をしようと思ったんですが、対応カッコとして認識するもの全部の<br>リストってないかな？と思ってすぐに見つからなかったので諦めて愛のある(?)方法に<br>転換した次第なのです。<br></div></section>
     <ul><li><section><h1 id=16>
     <span class="no">[16]</span>
-    <a class="title" href="#16">Re3: 対応するカッコの内部を選択する・・・（要望？）</a>
+    <a class="thread-title" href="#16">Re3: 対応するカッコの内部を選択する・・・（要望？）</a>
     <span class="author">すい</span>
     <time datetime="2002-12-25T04:22:22">2002年12月25日 04:22</time></h1>
     <div class="body">&gt;私も力技をしようと思ったんですが、対応カッコとして認識するもの全部の<br>&gt;リストってないかな？と思ってすぐに見つからなかったので諦めて<br><br>お気持ちをお察しします。(;^^a<br>私も「対応している括弧の一覧ないかな．．．ソース中を探さなきゃだめなのかぁ (;_;)」<br>という辺りで気が遠くなりかけました。(笑)<br><br>という事で、せっかく調べた事だし、マクロ設定セットのキーワードヘルプに<br>記述しておきました。(*^^*)<br></div></section>

@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>パッケージの中身</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>パッケージの中身 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2058</span>
-    <a class="title" href="2058.html#2058">パッケージの中身</a></div>
+    <a class="thread-title" href="2058.html#2058">パッケージの中身</a></div>
     <ul><li><div class="list-title">
     <span class="no">2061</span>
-    <a class="title" href="2058.html#2061">RE: パッケージの中身</a></div>
+    <a class="thread-title" href="2058.html#2061">RE: パッケージの中身</a></div>
     <ul><li><div class="list-title">
     <span class="no">2063</span>
-    <a class="title" href="2058.html#2063">RE2: パッケージの中身</a></div>
+    <a class="thread-title" href="2058.html#2063">RE2: パッケージの中身</a></div>
     <ul><li><div class="list-title">
     <span class="no">2070</span>
-    <a class="title" href="2058.html#2070">Re3: パッケージの中身</a></div>
+    <a class="thread-title" href="2058.html#2070">Re3: パッケージの中身</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">2064</span>
-    <a class="title" href="2058.html#2064">RE2: パッケージの中身</a></div>
+    <a class="thread-title" href="2058.html#2064">RE2: パッケージの中身</a></div>
     <ul><li><div class="list-title">
     <span class="no">2071</span>
-    <a class="title" href="2058.html#2071">RE3: パッケージの中身</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2058>
+    <a class="thread-title" href="2058.html#2071">RE3: パッケージの中身</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2058>
     <span class="no">[2058]</span>
-    <a class="title" href="#2058">パッケージの中身</a>
+    <a class="thread-title" href="#2058">パッケージの中身</a>
     <span class="author">げんた</span>
     <time datetime="2002-06-26T12:48:54">2002年06月26日 12:48</time></h1>
     <div class="body">次のパッケージでは，pythonとC#のキーワード及びすいさんのPerl用正規表現キーワードを追加予定ですが，他にもパッケージに入れた方がいい物ありますか？<br></div></section>
     <ul><li><section><h1 id=2061>
     <span class="no">[2061]</span>
-    <a class="title" href="#2061">RE: パッケージの中身</a>
+    <a class="thread-title" href="#2061">RE: パッケージの中身</a>
     <span class="author">すい</span>
     <time datetime="2002-06-27T20:29:17">2002年06月27日 20:29</time></h1>
     <div class="body">&gt;他にもパッケージに入れた方がいい物ありますか？<br><br>diff.exe<br><br>&lt;理由&gt;<br>[検索(S)]→[DIFF差分表示(D)] がどうも diff.exe が無いと動かないらしい。<br>しかも diff.exe は PATH が通っている所じゃなくて、sakura.exe と同じディレクトリに入ってないとダメなのか。<br><br>んで、diff.exe を入れる。<br>「UNIX tools」&lt;http://www.vector.co.jp/soft/win95/util/se010511.html&gt;<br>のヤツが FAQ によると、商利用じゃなければバイナリの再配布も可能（自分でコンパイルしなおせば商利用も可）<br>らしいから、コレの diff.exe を．．．あれ？動かないじゃん。<br><br>じゃ「UNIX tools DLL版」&lt;http://www.vector.co.jp/soft/win95/util/se033318.html&gt;は？<br>（再配布は駄目かもしれないけど試しに）<br>これも動かないじゃん。<br><br>一体、どの diff.exe が使えるのん？<br>&lt;/理由&gt;<br><br>という経緯で．．．diff.exe なら何でも使えるというわけではないようなので。<br>再配布可能な diff.exe を探して、それで動作するようにして、それを同梱。 (;^^;)b<br></div></section>
     <ul><li><section><h1 id=2063>
     <span class="no">[2063]</span>
-    <a class="title" href="#2063">RE2: パッケージの中身</a>
+    <a class="thread-title" href="#2063">RE2: パッケージの中身</a>
     <span class="author">みく</span>
     <time datetime="2002-06-27T21:12:52">2002年06月27日 21:12</time></h1>
     <div class="body"><br>&gt;一体、どの diff.exe が使えるのん？<br><br>GNU diff 2.5 でお願いします。<br></div></section>
     <ul><li><section><h1 id=2070>
     <span class="no">[2070]</span>
-    <a class="title" href="#2070">Re3: パッケージの中身</a>
+    <a class="thread-title" href="#2070">Re3: パッケージの中身</a>
     <span class="author">げんた</span>
     <time datetime="2002-06-28T10:01:19">2002年06月28日 10:01</time></h1>
     <div class="body">&gt;GNU diff 2.5 でお願いします。<br>GNU diffはGPLなので，実行ファイルだけぽいっというわけにはいきませんね．<br>LICENSE.TXTを入れて，ソースの場所を明示しないと．<br>あと，GPLがエディタ本体には適用されないことも併せて書く必要がありますね．<br></div></section>
     </li></ul></li><li><section><h1 id=2064>
     <span class="no">[2064]</span>
-    <a class="title" href="#2064">RE2: パッケージの中身</a>
+    <a class="thread-title" href="#2064">RE2: パッケージの中身</a>
     <span class="author">みく</span>
     <time datetime="2002-06-27T21:58:10">2002年06月27日 21:58</time></h1>
     <div class="body"><br>&gt;しかも diff.exe は PATH が通っている所じゃなくて、sakura.exe と同じディレクトリに入ってないとダメなのか。<br><br>sakura.exeと同じディレクトリが基本です。<br><br><br>&gt;んで、diff.exe を入れる。<br>&gt;「UNIX tools」&lt;http://www.vector.co.jp/soft/win95/util/se010511.html&gt;<br>&gt;のヤツが FAQ によると、商利用じゃなければバイナリの再配布も可能（自分でコンパイルしなおせば商利用も可）<br>&gt;らしいから、コレの diff.exe を．．．あれ？動かないじゃん。<br><br>こいつは勝手に <br>&gt; diff.exe [return]<br>-----<br>Microsoft (R) KKCFUNC バージョン 1.10<br>Copyright (C) Microsoft Corp. 1991,1993. All rights reserved.<br><br>KKCFUNC が組み込まれました.<br><br>マイクロソフトかな漢字変換  バージョン 2.51<br>(C)Copyright Microsoft Corp. 1992-1993<br>Usage: diff [-beiw] [-c[1-9]] file1 file2<br>-----<br>みたいな事をするので、使えません。<br>結果として出力される形式は同じみたいですが、オプションも違いすぎます。<br></div></section>
     <ul><li><section><h1 id=2071>
     <span class="no">[2071]</span>
-    <a class="title" href="#2071">RE3: パッケージの中身</a>
+    <a class="thread-title" href="#2071">RE3: パッケージの中身</a>
     <span class="author">すい</span>
     <time datetime="2002-06-28T21:49:58">2002年06月28日 21:49</time></h1>
     <div class="body">色々な diff.exe を試してみて ようやく動作しました。<br>始めは動作している事に気付きませんでしたが。(^^;<br>行単位で「追加されている」「削除されている」「変更されている」が行番号部に表示されるんですね。<br>デフォルトで色設定が off になっていて、（on にしても目立たない配色がデフォルト設定みたいですが）<br>行番号の隣りに小さい可愛いマークが付くだけだったので、マークに気付かなくって。 (;^^ゞ<br>早速目立つ配色に設定し直しました。<br><br><br>で、すみません、ちょっと確認なのですが、<br><br>&gt;結果として出力される形式は同じみたいですが、オプションも違いすぎます。<br>と<br>&gt;GNU diff 2.5 でお願いします。<br>から、「オプションパラメータが GNU diff 2.5 と互換でなければならない」という事は理解しました。<br><br><br>&gt;こいつは勝手に <br>&gt;&gt; diff.exe [return]<br>&gt;-----<br>&gt;Microsoft (R) KKCFUNC バージョン 1.10<br>&gt;Copyright (C) Microsoft Corp. 1991,1993. All rights reserved. <br>&gt;<br>&gt;KKCFUNC が組み込まれました. <br>&gt;<br>&gt;マイクロソフトかな漢字変換  バージョン 2.51<br>&gt;(C)Copyright Microsoft Corp. 1992-1993<br>&gt;Usage: diff [-beiw] [-c[1-9]] file1 file2<br>&gt;-----<br>&gt;みたいな事をするので、使えません。<br><br>↑というのは「MS-DOS版 .exe の物は使用不可」という意味でしょうか？<br>「Windows 32 コンソールアプリ」の diff.exe じゃないと駄目という理解でよろしいのでしょうか。<br></div></section>

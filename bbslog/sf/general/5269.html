@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択単語がある行の削除方法</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>選択単語がある行の削除方法 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5269</span>
-    <a class="title" href="5269.html#5269">選択単語がある行の削除方法</a></div>
+    <a class="thread-title" href="5269.html#5269">選択単語がある行の削除方法</a></div>
     <ul><li><div class="list-title">
     <span class="no">5270</span>
-    <a class="title" href="5269.html#5270">RE: 選択単語がある行の削除方法</a></div>
+    <a class="thread-title" href="5269.html#5270">RE: 選択単語がある行の削除方法</a></div>
     <ul><li><div class="list-title">
     <span class="no">5281</span>
-    <a class="title" href="5269.html#5281">解決しました！</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5269>
+    <a class="thread-title" href="5269.html#5281">解決しました！</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5269>
     <span class="no">[5269]</span>
-    <a class="title" href="#5269">選択単語がある行の削除方法</a>
+    <a class="thread-title" href="#5269">選択単語がある行の削除方法</a>
     <span class="author">C</span>
     <time datetime="2006-06-12T13:02:54">2006年06月12日 13:02</time></h1>
     <div class="body">普段使いのエディタとして重宝しています。<br><br>表題の件ですが、簡単そうなのですが私にはできません。<br>メニューの[検索]等で検索した単語がある行全体を<br>削除したいのですが、簡単な方法はないでしょうか？<br><br>お知恵を貸してください。よろしくお願いします。</div></section>
     <ul><li><section><h1 id=5270>
     <span class="no">[5270]</span>
-    <a class="title" href="#5270">RE: 選択単語がある行の削除方法</a>
+    <a class="thread-title" href="#5270">RE: 選択単語がある行の削除方法</a>
     <span class="author">すい</span>
     <time datetime="2006-06-12T23:05:44">2006年06月12日 23:05</time></h1>
     <div class="body">&gt;メニューの[検索]等で検索した単語がある行全体を<br>&gt;削除したいのですが、簡単な方法はないでしょうか？<br><br>「単語」が含まれる行の内容を削除して空行にするなら、置換で正規表現ONで<br>・置換前：.*単語.*<br>・置換後：<br><br>「単語」が含まれる行を削除する(改行まで削除する)なら、置換で正規表現ONで<br>・置換前：.*単語.*[\r\n]+<br>・置換後：<br><br>で置換すれば？<br></div></section>
     <ul><li><section><h1 id=5281>
     <span class="no">[5281]</span>
-    <a class="title" href="#5281">解決しました！</a>
+    <a class="thread-title" href="#5281">解決しました！</a>
     <span class="author">C</span>
     <time datetime="2006-06-22T13:03:12">2006年06月22日 13:03</time></h1>
     <div class="body">教えていただいた方法で解決しました。<br>該当するコマンドか何かあるのかと思って探してばかり居ました。<br>どうもありがとうございました。</div></section>

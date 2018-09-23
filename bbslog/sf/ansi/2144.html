@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>switch文</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>switch文 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2144</span>
-    <a class="title" href="2144.html#2144">switch文</a></div>
+    <a class="thread-title" href="2144.html#2144">switch文</a></div>
     <ul><li><div class="list-title">
     <span class="no">2149</span>
-    <a class="title" href="2144.html#2149">RE: switch文</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2144>
+    <a class="thread-title" href="2144.html#2149">RE: switch文</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2144>
     <span class="no">[2144]</span>
-    <a class="title" href="#2144">switch文</a>
+    <a class="thread-title" href="#2144">switch文</a>
     <span class="author">みく</span>
     <time datetime="2002-06-05T01:07:09">2002年06月05日 01:07</time></h1>
     <div class="body"><br>switch文は以前チェック(Dialog系のみ)したのですが、<br>今回全体を見直して見るとバグを発見しました。<br><br>１．バグではないがbreakが抜けているもの(将来の修正でバグとなる可能性あり)<br>２．breakが余分にあるもの<br>３．明らかにbreakがなくて次のcaseが走るもの<br><br>が合わせて１０箇所以上ありました。3番目は致命的。<br>チェックリストは再チェックして後日アップしますが、ご注意を。<br></div></section>
     <ul><li><section><h1 id=2149>
     <span class="no">[2149]</span>
-    <a class="title" href="#2149">RE: switch文</a>
+    <a class="thread-title" href="#2149">RE: switch文</a>
     <span class="author">みく</span>
     <time datetime="2002-06-05T19:05:40">2002年06月05日 19:05</time></h1>
     <div class="body"><br>switch()breakのバグをいかに列挙します。<br>「バグ」と書いてあるもの以外はとりあえず大丈夫です。<br>diff0605.zip で修正してあります。<br><br><br>CDlgDebug.cpp<br>　DispatchEvent()<br>　　124&#9;&#9;BN_CLICKEDに対するbreakもれ<br>CDlgOpenFile.cpp<br>　OFNHookProc()<br>　　437&#9;&#9;バグ：CDN_FILEOKに対するbreakもれ<br>　　493&#9;&#9;CBN_SELCHANGEに対するbreakもれ<br>CPrintPreview.cpp<br>　DispatchEvent_PPB()<br>　　1583&#9;BN_CLICKEDに対するbreakもれ<br>CPropComBackup.cpp<br>　DispatchEvent_PROP_BACKUP()<br>　　202&#9;&#9;BN_CLICKEDに対するbreakもれ<br>CPropComCustmenu.cpp<br>　DispatchEvent_p8()<br>　　224&#9;&#9;BN_CLICKEDに対するbreakもれ<br>　　264&#9;&#9;CBN_SELCHANGEに対するbreakもれ<br>　　345&#9;&#9;LBN_SELCHANGEに対するbreakもれ<br>CPropComEdit.cpp<br>　DispatchEvent_PROP_EDIT()<br>　　136&#9;&#9;コメントアウトされたdefaultに対するbreakがコメントアウトされてない<br>CPropComFormat.cpp<br>　DispatchEvent_p9()<br>　　262&#9;&#9;BN_CLICKEDに対するbreakもれ<br>　　287&#9;&#9;コメントアウトされたdefaultに対するbreakがコメントアウトされてない<br>CPropComGrep.cpp<br>　DispatchEvent_PROP_GREP()<br>　　94&#9;&#9;コメントアウトされたdefaultに対するbreakがコメントアウトされてない<br>CPropComHelper.cpp<br>　DispatchEvent_p10()<br>　　235&#9;&#9;BN_CLICKEDに対するbreakもれ<br>　　260&#9;&#9;コメントアウトされたdefaultに対するbreakがコメントアウトされてない<br>CPropComKeybind.cpp<br>　DispatchEvent_p5()<br>　　270&#9;&#9;BN_CLICKEDに対するbreakもれ<br>CPropComKeyword.cpp<br>　DispatchEvent_p7()<br>　　365&#9;&#9;BN_CLICKEDに対するbreakもれ<br>CPropComMacro.cpp<br>　DispatchEvent_PROP_Macro()<br>　　160&#9;&#9;CBN_DROPDOWNに対するbreakもれ<br>CPropComUrl.cpp<br>　DispatchEvent_PROP_URL()<br>　　89&#9;&#9;コメントアウトされたdefaultに対するbreakがコメントアウトされてない<br>CPropCommon.cpp<br>　DispatchEvent_p1()<br>　　745&#9;&#9;BN_CLICKEDに対するbreakもれ<br>CPropTypes.cpp<br>　DispatchEvent_p1()<br>　　867&#9;&#9;BN_CLICKEDに対するbreakもれ<br>　DispatchEvent_p2()<br>　　1447&#9;BN_CLICKEDに対するbreakもれ<br>　DispatchEvent_p3_new()<br>　　2165&#9;BN_CLICKEDに対するbreakもれ<br>　　2245&#9;コメントアウトされたdefaultに対するbreakがコメントアウトされてない<br>　　2260&#9;バグ：return TRUE;もれ<br>CWnd.cpp<br>　DispatchEvent()<br>　　224&#9;&#9;defaultに対するbreakもれ<br>CEditWnd.cpp<br>　DispatchEvent()<br>　　960&#9;&#9;バグ：return FALSE;もれ<br>　IsFuncEnable()<br>　　2877&#9;/*FALLTHROUGH*/明記<br>CEditApp.cpp<br>　DispatchEvent()<br>　　1334&#9;defaultに対するbreakもれ<br>CDlgFuncList.cpp<br>　Key2Command()<br>　　1464&#9;/*FALLTHROUGH*/明記<br></div></section>

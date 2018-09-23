@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">1862</span>
-    <a class="title" href="1862.html#1862">正規表現</a></div>
+    <a class="thread-title" href="1862.html#1862">正規表現</a></div>
     <ul><li><div class="list-title">
     <span class="no">1863</span>
-    <a class="title" href="1862.html#1863">Re:正規表現</a></div>
+    <a class="thread-title" href="1862.html#1863">Re:正規表現</a></div>
     <ul><li><div class="list-title">
     <span class="no">1864</span>
-    <a class="title" href="1862.html#1864">Re2:正規表現</a></div>
+    <a class="thread-title" href="1862.html#1864">Re2:正規表現</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">1866</span>
-    <a class="title" href="1862.html#1866">Re:正規表現</a></div>
+    <a class="thread-title" href="1862.html#1866">Re:正規表現</a></div>
     <ul><li><div class="list-title">
     <span class="no">1867</span>
-    <a class="title" href="1862.html#1867">Re2:正規表現</a></div>
+    <a class="thread-title" href="1862.html#1867">Re2:正規表現</a></div>
     <ul><li><div class="list-title">
     <span class="no">1868</span>
-    <a class="title" href="1862.html#1868">Re3:正規表現</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1862>
+    <a class="thread-title" href="1862.html#1868">Re3:正規表現</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1862>
     <span class="no">[1862]</span>
-    <a class="title" href="#1862">正規表現</a>
+    <a class="thread-title" href="#1862">正規表現</a>
     <span class="author">シスコ</span>
     <time datetime="2002-05-15T20:34:02">2002年05月15日 20:34</time></h1>
     <div class="body"><br>こんばんは。正規表現について<br>質問させてください。<br><br>サクラエディタでは、<br>正規表現のメタ文字「$」<br>はつかえないのですか？<br><br>たとえば<br>/test$/k<br><br>ヘルプファイルを見る限りでは<br>使えそうなのですが。<br><br></div></section>
     <ul><li><section><h1 id=1863>
     <span class="no">[1863]</span>
-    <a class="title" href="#1863">Re:正規表現</a>
+    <a class="thread-title" href="#1863">Re:正規表現</a>
     <span class="author">jeak</span>
     <time datetime="2002-05-16T00:23:32">2002年05月16日 00:23</time></h1>
     <div class="body">▼ シスコさん<br>&gt; サクラエディタでは、<br>&gt; 正規表現のメタ文字「$」<br>&gt; はつかえないのですか？<br><br>　おそらく最後に改行があるため<br>上手く使えていないのだと思いま<br>す。検索なら正規表現にチェック<br>を入れ「test\r$」でいくとおも<br>います。<br><br>#外していたらごめんなさい。</div></section>
     <ul><li><section><h1 id=1864>
     <span class="no">[1864]</span>
-    <a class="title" href="#1864">Re2:正規表現</a>
+    <a class="thread-title" href="#1864">Re2:正規表現</a>
     <span class="author">シスコ</span>
     <time datetime="2002-05-16T20:57:01">2002年05月16日 20:57</time></h1>
     <div class="body">▼ jeakさん<br>&gt; 　おそらく最後に改行があるため<br>&gt; 上手く使えていないのだと思いま<br>&gt; す。検索なら正規表現にチェック<br>&gt; を入れ「test\r$」でいくとおも<br>&gt; います。<br><br>ありがとうございます。<br>無事、目的を果たせました。<br><br>改行があるとダメとは正規表現は<br>難しいですね。</div></section>
     </li></ul></li><li><section><h1 id=1866>
     <span class="no">[1866]</span>
-    <a class="title" href="#1866">Re:正規表現</a>
+    <a class="thread-title" href="#1866">Re:正規表現</a>
     <span class="author">おに</span>
     <time datetime="2002-05-16T21:30:43">2002年05月16日 21:30</time></h1>
     <div class="body">すいません、便乗質問させて下さい。<br>単語をヒットさせたいのですが、「\&lt;word\&gt;」で上手くいきません。<br>どうすればいいのでしょうか。</div></section>
     <ul><li><section><h1 id=1867>
     <span class="no">[1867]</span>
-    <a class="title" href="#1867">Re2:正規表現</a>
+    <a class="thread-title" href="#1867">Re2:正規表現</a>
     <span class="author">げんた</span>
     <time datetime="2002-05-16T21:40:43">2002年05月16日 21:40</time></h1>
     <div class="body">&gt;単語をヒットさせたいのですが、「\&lt;word\&gt;」で上手くいきません。<br>&gt;どうすればいいのでしょうか。<br>単語区切りは\bです。 http://www.hi-ho.ne.jp/babaq/bregexp.html<br><br>ヘルプに書かれている JRE32.DLLの特殊記号は無視してください。<br>＃混乱するからPerlの特殊記号の説明と入れ替えた方がいいかも。<br></div></section>
     <ul><li><section><h1 id=1868>
     <span class="no">[1868]</span>
-    <a class="title" href="#1868">Re3:正規表現</a>
+    <a class="thread-title" href="#1868">Re3:正規表現</a>
     <span class="author">おに</span>
     <time datetime="2002-05-16T22:48:38">2002年05月16日 22:48</time></h1>
     <div class="body">ありがとうございます。単語の検索ができました。</div></section>

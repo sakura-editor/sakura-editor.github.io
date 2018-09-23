@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>プレーンテキストをWZ階層付テキストに変換するマクロ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>プレーンテキストをWZ階層付テキストに変換するマクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">609</span>
-    <a class="title" href="609.html#609">プレーンテキストをWZ階層付テキストに変換するマクロ</a></div>
+    <a class="thread-title" href="609.html#609">プレーンテキストをWZ階層付テキストに変換するマクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">610</span>
-    <a class="title" href="609.html#610">Re:プレーンテキストをWZ階層付テキストに変換するマクロ</a></div>
+    <a class="thread-title" href="609.html#610">Re:プレーンテキストをWZ階層付テキストに変換するマクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">611</span>
-    <a class="title" href="609.html#611">Re2:プレーンテキストをWZ階層付テキストに変換するマクロ</a></div>
+    <a class="thread-title" href="609.html#611">Re2:プレーンテキストをWZ階層付テキストに変換するマクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">612</span>
-    <a class="title" href="609.html#612">Re3:プレーンテキストをWZ階層付テキストに変換するマクロ</a></div>
+    <a class="thread-title" href="609.html#612">Re3:プレーンテキストをWZ階層付テキストに変換するマクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">613</span>
-    <a class="title" href="609.html#613">Re4:プレーンテキストをWZ階層付テキストに変換するマクロ</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=609>
+    <a class="thread-title" href="609.html#613">Re4:プレーンテキストをWZ階層付テキストに変換するマクロ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=609>
     <span class="no">[609]</span>
-    <a class="title" href="#609">プレーンテキストをWZ階層付テキストに変換するマクロ</a>
+    <a class="thread-title" href="#609">プレーンテキストをWZ階層付テキストに変換するマクロ</a>
     <span class="author">ysi</span>
     <time datetime="2017-01-28T02:01:43">2017年01月28日 02:01</time></h1>
     <div class="body">編集中のプレーンテキストを、インデントに沿ってWZ階層付テキストに変換します。<br>プレーンテキストを直接、アウトライン解析できれば良いのですが、pluginを作れないので、このマクロで凌いでいます。<br>Plain2WZTree.vbs：編集中のプレーンテキストをWZ階層付テキストに変換<br>WZTree2Plain.vbs：編集中のWZ階層付テキストをプレーンテキストに変換<br><br>-----------------------------------<br>Plain2WZTree.vbs<br>-----------------------------------<br>'プレーンテキストをWZ階層付テキストに変換<br>Option Explicit<br>Dim aIndent_positions() 'インデント位置<br>ReDim Preserve aIndent_positions(0)<br>aIndent_positions(0) = -1 <br>Dim nJJ<br>Dim nTabWidth : nTabWidth = ChangeTabWidth(0) 'タブ幅<br>'プレーンテキストをWZ階層付テキストに変換<br>For nJJ = 1 To GetLineCount( 0 )<br> Dim xLine : xLine = GetLineStr( nJJ )<br> '改行を削除<br> xLine = Replace(xLine, vbNewLine, "")<br> Dim nII<br> Dim nBol_Space : nBol_Space = 0 '行頭スペースの個数<br> '行頭スペースの個数を数える<br> For nII = 1 To Len(xLine)<br>  '全角空白はスペース2個分<br>  If Mid(xLine,nII,1) = "　" Then<br>    nBol_Space = nBol_Space + 1<br>  Else<br>   'タブ文字は桁数を計算<br>   If Mid(xLine,nII,1) = vbTab Then<br>    nBol_Space = nBol_Space + ( nTabWidth - (nBol_Space mod nTabWidth)-1)<br>   Else<br>    If Mid(xLine,nII,1) &lt;&gt; " "   Then<br>     xLine = Mid(xLine,nII)<br>     Exit For<br>    End If<br>   End If<br>  End If<br>  nBol_Space = nBol_Space + 1<br> Next<br> 'プレーンテキストをWZ階層付テキストに変換<br> If Len(xLine) = 0 Then<br> Else<br>  If Len(Trim( Replace(xLine, vbTab, ""))) = 0 Then<br>   Jump(nJJ)<br>   BeginSelect(0)<br>   GoLineEnd( )<br>   InsText ""<br>  Else <br>   '階層数を調べ行頭スペースの個数を保存する<br>   For nII = UBound(aIndent_positions) To 0 Step -1<br>    If aIndent_positions(nII) &lt; nBol_Space Then<br>     ReDim Preserve aIndent_positions(nII+1)<br>     aIndent_positions(nII+1) = nBol_Space<br>     Exit For<br>    End If<br>   Next<br>   'プレーンテキストをWZ階層付テキストに変換<br>   xLine = String(nII+1,".") &amp; " " &amp; Trim(xLine) <br>   Jump(nJJ)<br>   BeginSelect(0)<br>   GoLineEnd( )<br>   InsText xLine<br>  End If<br> End If<br>Next<br><br>-----------------------------------<br>WZTree2Plain.vbs<br>-----------------------------------<br>'WZ階層付テキストをプレーンテキストに変換<br>Option Explicit<br>Dim nII<br>ReDim Preserve aLine(0)<br>'WZ階層付テキストをプレーンテキストに変換<br>For nII = 1 To GetLineCount( 0 )<br> Dim nJJ : nJJ = 1<br> '行頭の"."の個数を調べる<br> For nJJ = 1 To Len(GetLineStr( nII ))<br>  If Mid(GetLineStr( nII ),nJJ,1) &lt;&gt; "." Then Exit For<br> Next<br> 'WZ階層付テキストをプレーンテキストに変換<br> If nJJ &gt;= 2 Then <br>  Call Jump(nII,0)<br>  BeginSelect(0)<br>  GoLineEnd( )<br>  InsText Space(4*(nJJ-2)) &amp; Trim(Mid( Replace(GetLineStr( nII ), vbNewLine, ""),nJJ)) <br> End If<br>Next<br></div></section>
     <ul><li><section><h1 id=610>
     <span class="no">[610]</span>
-    <a class="title" href="#610">Re:プレーンテキストをWZ階層付テキストに変換するマクロ</a>
+    <a class="thread-title" href="#610">Re:プレーンテキストをWZ階層付テキストに変換するマクロ</a>
     <span class="author">もか</span>
     <time datetime="2017-01-30T22:54:40">2017年01月30日 22:54</time></h1>
     <div class="body">なかなか興味深い使い方です。<br>インデント形式が揃っていれば、タブのファイルにも対応しているところがなかなかいいですね。<br><br>これを基にプラグインには簡単にできますね。<br>先頭付近に<br>Outline.SetTitle("インデントアウトライン")<br>Outline.SetListType(100) ' ツリー表示<br>を追加<br><br>   xLine = String(nII+1,".") &amp; " " &amp; Trim(xLine)<br>   Jump(nJJ)<br>   BeginSelect(0)<br>   GoLineEnd( )<br>   InsText xLine<br>の部分を<br>   'ツリーに追加<br>   Outline.AddFuncInfo2 nJJ, 1, Trim(xLine), nII<br>にするだけでファイル自体は完成で、あとは他のプラグインを参考にして<br>plugin.defを書くだけでできます。<br>なおこれだけだとWzみたいに「1.」「1-1.」みたいな番号はついてません。<br><br>ysiさんさえよろしければpluginとこのマクロをwikiに乗っけておきましょうか？<br></div></section>
     <ul><li><section><h1 id=611>
     <span class="no">[611]</span>
-    <a class="title" href="#611">Re2:プレーンテキストをWZ階層付テキストに変換するマクロ</a>
+    <a class="thread-title" href="#611">Re2:プレーンテキストをWZ階層付テキストに変換するマクロ</a>
     <span class="author">ysi</span>
     <time datetime="2017-01-31T20:02:26">2017年01月31日 20:02</time></h1>
     <div class="body">▼ もかさん<br>&gt; ysiさんさえよろしければpluginとこのマクロをwikiに乗っけておきましょうか？<br><br>pluginの導入は未経験で完成させる自信がないので<br>是非、お願いいたします。<br>なお、プレーンテキストをアウトライン解析することが大目的ですので<br>Wzの機能は必須ではないです。</div></section>
     <ul><li><section><h1 id=612>
     <span class="no">[612]</span>
-    <a class="title" href="#612">Re3:プレーンテキストをWZ階層付テキストに変換するマクロ</a>
+    <a class="thread-title" href="#612">Re3:プレーンテキストをWZ階層付テキストに変換するマクロ</a>
     <span class="author">もか</span>
     <time datetime="2017-02-01T00:14:28">2017年02月01日 00:14</time></h1>
     <div class="body">プラグインをアップローダへ、Wikiにページを作りました。<br><a href=http://sakura.qp.land.to/?Plugin%2F%C5%EA%B9%C6%2F28 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Plugin%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6%<wbr>2F28</nobr></a><br><br>プラグインの導入は、サクラの共通設定のプラグインのタブで<br>「□プラグインを有効にする」をONにして<br>「フォルダを開く」を押すとpluginsフォルダができて開きます。<br>フォルダは閉じていいです。<br>[ZIPプラグインを導入]からプラグインのzipを選択すると追加されます。<br>新しく開いたファイルから有効になりますので、<br>開いていたファイルはウィンドウごと一度閉じて開きなおす必要があります。<br>開きなおしたら、タイプ別のアウトラインを「Indent」にすれば使えるようになるはずです。<br></div></section>
     <ul><li><section><h1 id=613>
     <span class="no">[613]</span>
-    <a class="title" href="#613">Re4:プレーンテキストをWZ階層付テキストに変換するマクロ</a>
+    <a class="thread-title" href="#613">Re4:プレーンテキストをWZ階層付テキストに変換するマクロ</a>
     <span class="author">ysi</span>
     <time datetime="2017-02-01T23:26:45">2017年02月01日 23:26</time></h1>
     <div class="body">動作することを確認しました。<br>長年の夢が叶って、うれしいです。<br><br>ありがとうございました。</div></section>

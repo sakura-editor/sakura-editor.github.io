@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>【バグ】タブを含む範囲選択</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>【バグ】タブを含む範囲選択 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3779</span>
-    <a class="title" href="3779.html#3779">【バグ】タブを含む範囲選択</a></div>
+    <a class="thread-title" href="3779.html#3779">【バグ】タブを含む範囲選択</a></div>
     <ul><li><div class="list-title">
     <span class="no">3780</span>
-    <a class="title" href="3779.html#3780">Re: 【バグ】タブを含む範囲選択</a></div>
+    <a class="thread-title" href="3779.html#3780">Re: 【バグ】タブを含む範囲選択</a></div>
     <ul><li><div class="list-title">
     <span class="no">3781</span>
-    <a class="title" href="3779.html#3781">Re2: 【バグ】タブを含む範囲選択</a></div>
+    <a class="thread-title" href="3779.html#3781">Re2: 【バグ】タブを含む範囲選択</a></div>
     <ul><li><div class="list-title">
     <span class="no">3782</span>
-    <a class="title" href="3779.html#3782">Re3: 【バグ】タブを含む範囲選択</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3779>
+    <a class="thread-title" href="3779.html#3782">Re3: 【バグ】タブを含む範囲選択</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3779>
     <span class="no">[3779]</span>
-    <a class="title" href="#3779">【バグ】タブを含む範囲選択</a>
+    <a class="thread-title" href="#3779">【バグ】タブを含む範囲選択</a>
     <span class="author">Max</span>
     <time datetime="2004-10-30T14:31:32">2004年10月30日 14:31</time></h1>
     <div class="body">いつもサクラエディタを楽しく使っています。<br>矩形選択にバグがあるので報告します。<br>タブを含めて矩形選択をして、文字を入力すると選択範囲がずれてしまいます。<br><br>たとえば、次のような感じです。<br><br>１．行頭のタブ（空白部分）を矩形選択します。<br>    uint32_t    operator() ( Container::value_type&amp; value ) const {<br>~~~~<br><br>２．文字を入力します。<br>c   uint32_t    operator() ( Container::value_type&amp; value ) const {<br> ~~~~<br><br>３．このとき、矩形選択範囲は「   u」になります。<br></div></section>
     <ul><li><section><h1 id=3780>
     <span class="no">[3780]</span>
-    <a class="title" href="#3780">Re: 【バグ】タブを含む範囲選択</a>
+    <a class="thread-title" href="#3780">Re: 【バグ】タブを含む範囲選択</a>
     <span class="author">げんた</span>
     <time datetime="2004-10-30T15:57:20">2004年10月30日 15:57</time></h1>
     <div class="body">&gt;タブを含めて矩形選択をして、文字を入力すると選択範囲がずれてしまいます。<br>これはこういう仕様かと...<br>複数行矩形選択＋文字入力で複数行に同一文字を追加するという機能です．<br></div></section>
     <ul><li><section><h1 id=3781>
     <span class="no">[3781]</span>
-    <a class="title" href="#3781">Re2: 【バグ】タブを含む範囲選択</a>
+    <a class="thread-title" href="#3781">Re2: 【バグ】タブを含む範囲選択</a>
     <span class="author">Max</span>
     <time datetime="2004-10-31T00:42:10">2004年10月31日 00:42</time></h1>
     <div class="body">選択範囲で考えてるわけですね。わかりました。<br><br>追加するだけなら今の仕様に不満はないのですが、<br>追加後に選択箇所を削除すると、最初に選択した<br>文字とは違うものも消されて不便に感じています。<br><br>そこで要望なのですが、タブを含んでも選択範囲が<br>ずれない仕組みも用意してもらえると助かります。<br></div></section>
     <ul><li><section><h1 id=3782>
     <span class="no">[3782]</span>
-    <a class="title" href="#3782">Re3: 【バグ】タブを含む範囲選択</a>
+    <a class="thread-title" href="#3782">Re3: 【バグ】タブを含む範囲選択</a>
     <span class="author">すい</span>
     <time datetime="2004-10-31T04:28:54">2004年10月31日 04:28</time></h1>
     <div class="body">&gt;追加するだけなら今の仕様に不満はないのですが、<br>&gt;追加後に選択箇所を削除すると、最初に選択した<br>&gt;文字とは違うものも消されて不便に感じています。<br>&gt;<br>&gt;そこで要望なのですが、タブを含んでも選択範囲が<br>&gt;ずれない仕組みも用意してもらえると助かります。<br><br>話も分かるし、すごく気持ちも分かるけど無理じゃない？<br><br>確かにその「タブがある行のみを矩形選択」の場合なら、何とか<br>文字単位で考えて選択範囲を変えるとか出来るように思えるかも<br>しれないですけど、タブがある行と無い行を同時に矩形範囲選択して<br>文字入力していく場合まで考えると、現仕様以外に手が無いのでは？<br><br>例えば<br><br>for( i=0 ; i&lt;10 ; i++ ){<br>　　a += b[i];&#9;// ←この行の行頭がタブだとします<br>} //<br><br>↑とかいうテキストの場合に<br><br>[for(] i=0 ; i&lt;10 ; i++ ){<br>[　　]a += b[i];&#9;// ←この行の行頭がタブだとします<br>[} //]<br><br>[～] を矩形範囲選択したとして、その後、「//」と文字入力していくと<br><br>//[for(] i=0 ; i&lt;10 ; i++ ){<br>//[　a ]+= b[i];&#9;// ←この行の行頭がタブだとします<br>//[} //]<br><br>こうなってしまう、、というのは致し方ない事ではないかと。<br><br>むしろタブに合わせて矩形選択範囲が↓<br><br>//[fo]r( i=0 ; i&lt;10 ; i++ ){<br>//[　]a += b[i];&#9;// ←この行の行頭がタブだとします<br>//[} ]//<br><br>↑こんな感じに変形してしまったら、もっと不自然ですよね？<br><br>ユーザーとしての理想は↓<br><br>//[for(] i=0 ; i&lt;10 ; i++ ){<br>//[　]a += b[i];&#9;// ←この行の行頭がタブだとします<br>//[} //]<br><br>↑こんな感じに矩形選択範囲が凸凹な形状に変形してくれる仕様<br>なんですよね。でも、これってプログラムがどえらく複雑になりそうだし、<br>（行毎に選択範囲を覚えておいて、入力文字に応じて行毎に選択範囲を変形させる？）<br>ちょっとそこまでは望めそうにないかなぁ～と思うのです。<br><br>もちろんこれが実現したら、私もすごく嬉しいのですが。<br></div></section>

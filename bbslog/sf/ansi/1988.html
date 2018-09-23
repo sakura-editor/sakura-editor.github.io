@@ -1,63 +1,89 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>スクロールバーのメニュー</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>スクロールバーのメニュー | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1988</span>
-    <a class="title" href="1988.html#1988">スクロールバーのメニュー</a></div>
+    <a class="thread-title" href="1988.html#1988">スクロールバーのメニュー</a></div>
     <ul><li><div class="list-title">
     <span class="no">1989</span>
-    <a class="title" href="1988.html#1989">RE: スクロールバーのメニュー</a></div>
+    <a class="thread-title" href="1988.html#1989">RE: スクロールバーのメニュー</a></div>
     </li><li><div class="list-title">
     <span class="no">1990</span>
-    <a class="title" href="1988.html#1990">Re: スクロールバーのメニュー</a></div>
+    <a class="thread-title" href="1988.html#1990">Re: スクロールバーのメニュー</a></div>
     <ul><li><div class="list-title">
     <span class="no">1991</span>
-    <a class="title" href="1988.html#1991">Re2: スクロールバーのメニュー</a></div>
+    <a class="thread-title" href="1988.html#1991">Re2: スクロールバーのメニュー</a></div>
     <ul><li><div class="list-title">
     <span class="no">2005</span>
-    <a class="title" href="1988.html#2005">Re3: スクロールバーのメニュー</a></div>
+    <a class="thread-title" href="1988.html#2005">Re3: スクロールバーのメニュー</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">1998</span>
-    <a class="title" href="1988.html#1998">Re:スクロールバーのメニュー</a></div>
+    <a class="thread-title" href="1988.html#1998">Re:スクロールバーのメニュー</a></div>
     <ul><li><div class="list-title">
     <span class="no">1999</span>
-    <a class="title" href="1988.html#1999">Re2:スクロールバーのメニュー</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1988>
+    <a class="thread-title" href="1988.html#1999">Re2:スクロールバーのメニュー</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1988>
     <span class="no">[1988]</span>
-    <a class="title" href="#1988">スクロールバーのメニュー</a>
+    <a class="thread-title" href="#1988">スクロールバーのメニュー</a>
     <span class="author">もか</span>
     <time datetime="2002-04-30T16:39:11">2002年04月30日 16:39</time></h1>
     <div class="body">いつもいつも開発ご苦労様です。<br><br>とてもマイナーな機能だとは思うのですが、Win2k/XPではスクロールバーを右クリックするとメニューが出てきます。その中の[最上部][最下部]の部分が動かないので修正(追加)してみました。<br>ファイル名 CEditView.cpp<br>CEditView::OnVScrollは<br>&#9;case SB_TOP:<br>&#9;&#9;ScrollAtV( 0 );<br>&#9;&#9;break;<br>&#9;case SB_BOTTOM:<br>&#9;&#9;ScrollAtV(( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() ) - m_nViewRowNum );<br>&#9;&#9;break;<br><br>void CEditView::OnHScrollのほうは<br>&#9;case SB_TOP:<br>&#9;&#9;ScrollAtH( 0 );<br>&#9;&#9;break;<br>&#9;case SB_BOTTOM:<br>&#9;&#9;ScrollAtH( m_pcEditDoc-&gt;GetDocumentAttribute().m_nM<br>axLineSize - m_nViewColNum );<br>&#9;&#9;break;<br><br>#短いソースは本当はどのような形で渡すのがベストなんでしょうか？<br></div></section>
     <ul><li><section><h1 id=1989>
     <span class="no">[1989]</span>
-    <a class="title" href="#1989">RE: スクロールバーのメニュー</a>
+    <a class="thread-title" href="#1989">RE: スクロールバーのメニュー</a>
     <span class="author">やざき</span>
     <time datetime="2002-04-30T17:05:36">2002年04月30日 17:05</time></h1>
     <div class="body"><br>ありがとうございます。取り込みますっ。<br><br>&gt;#短いソースは本当はどのような形で渡すのがベストなんでしょうか？<br><br>正確に伝われば、どういうものでもベストだと思います。:-)<br></div></section>
     </li><li><section><h1 id=1990>
     <span class="no">[1990]</span>
-    <a class="title" href="#1990">Re: スクロールバーのメニュー</a>
+    <a class="thread-title" href="#1990">Re: スクロールバーのメニュー</a>
     <span class="author">げんた</span>
     <time datetime="2002-04-30T20:34:15">2002年04月30日 20:34</time></h1>
     <div class="body">&gt;Win2k/XPではスクロールバーを右クリックするとメニューが出てきます。<br>初めて知りました．<br><br>&gt; その中の[最上部][最下部]の部分が動かないので修正(追加)してみました。<br>ついでといっては何ですが，横スクロールの[左の端][右の端]も動きませんね．<br></div></section>
     <ul><li><section><h1 id=1991>
     <span class="no">[1991]</span>
-    <a class="title" href="#1991">Re2: スクロールバーのメニュー</a>
+    <a class="thread-title" href="#1991">Re2: スクロールバーのメニュー</a>
     <span class="author">やざき</span>
     <time datetime="2002-04-30T22:18:10">2002年04月30日 22:18</time></h1>
     <div class="body"><br>&gt;&gt; その中の[最上部][最下部]の部分が動かないので修正(追加)してみました。<br>&gt;ついでといっては何ですが，横スクロールの[左の端][右の端]も動きませんね．<br><br>SB_LEFTとSB_RIGHTですね。直しておきます。<br></div></section>
     <ul><li><section><h1 id=2005>
     <span class="no">[2005]</span>
-    <a class="title" href="#2005">Re3: スクロールバーのメニュー</a>
+    <a class="thread-title" href="#2005">Re3: スクロールバーのメニュー</a>
     <span class="author">もか</span>
     <time datetime="2002-05-01T16:47:05">2002年05月01日 16:47</time></h1>
     <div class="body">素早い対応＆返信ありがとうございます。<br><br>▼ げんたさん<br>&gt; 横スクロールの[左の端][右の端]<br>▼ やざきさん<br>&gt; SB_LEFTとSB_RIGHTですね。直しておきます。<br>横スクロールはちがうんですね<br>SB_LEFTとSB_TOPが同じ値(?)らしく、動いてしまったので気がつきませんでした。<br></div></section>
     </li></ul></li></ul></li><li><section><h1 id=1998>
     <span class="no">[1998]</span>
-    <a class="title" href="#1998">Re:スクロールバーのメニュー</a>
+    <a class="thread-title" href="#1998">Re:スクロールバーのメニュー</a>
     <span class="author">KENCH</span>
     <time datetime="2002-05-01T11:05:59">2002年05月01日 11:05</time></h1>
     <div class="body">▼ もかさん<br><br>&gt; #短いソースは本当はどのような形で渡すのがベストなんでしょうか？<br>　eGroupsの共用でもいいですが、MLも塞いでないので、MLへ流してもらっても大丈夫かも。<br>　一応あそこは、開発用の共用ディスクの位置付けだと思っているので、、、</div></section>
     <ul><li><section><h1 id=1999>
     <span class="no">[1999]</span>
-    <a class="title" href="#1999">Re2:スクロールバーのメニュー</a>
+    <a class="thread-title" href="#1999">Re2:スクロールバーのメニュー</a>
     <span class="author">げんた</span>
     <time datetime="2002-05-01T11:40:22">2002年05月01日 11:40</time></h1>
     <div class="body">&gt;&gt; #短いソースは本当はどのような形で渡すのがベストなんでしょうか？<br>掲示板を添付可能にするという方法もありますが、みんなが使い始めるとあっという間にサイズが増えそうで怖い。<br></div></section>

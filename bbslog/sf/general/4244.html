@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Accessからの貼り付け</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Accessからの貼り付け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">4244</span>
-    <a class="title" href="4244.html#4244">Accessからの貼り付け</a></div>
+    <a class="thread-title" href="4244.html#4244">Accessからの貼り付け</a></div>
     <ul><li><div class="list-title">
     <span class="no">4265</span>
-    <a class="title" href="4244.html#4265">Re:Accessからの貼り付け</a></div>
+    <a class="thread-title" href="4244.html#4265">Re:Accessからの貼り付け</a></div>
     <ul><li><div class="list-title">
     <span class="no">4283</span>
-    <a class="title" href="4244.html#4283">Re2:Accessからの貼り付け</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4244>
+    <a class="thread-title" href="4244.html#4283">Re2:Accessからの貼り付け</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4244>
     <span class="no">[4244]</span>
-    <a class="title" href="#4244">Accessからの貼り付け</a>
+    <a class="thread-title" href="#4244">Accessからの貼り付け</a>
     <span class="author">みく</span>
     <time datetime="2005-01-30T16:28:07">2005年01月30日 16:28</time></h1>
     <div class="body"><br>以前ありましたAccessからの貼り付け時に罫線枠でデータが切れてしまう件<br>ですが、次のような実装もありかと思います。<br><br>「クリップボード形式を指定して貼り付け」<br>・現在のクリップボードの形式リストをダイアログに表示して選択<br>CF_TEXT<br>CF_OEMTEXT<br>"SAKURAClip" サクラ形式<br>"Csv" CSV形式(Access,Excelでコピー時に存在するので使えそう)<br>"HTML Format"<br>...<br></div></section>
     <ul><li><section><h1 id=4265>
     <span class="no">[4265]</span>
-    <a class="title" href="#4265">Re:Accessからの貼り付け</a>
+    <a class="thread-title" href="#4265">Re:Accessからの貼り付け</a>
     <span class="author">ばく</span>
     <time datetime="2005-02-05T01:43:25">2005年02月05日 01:43</time></h1>
     <div class="body">▼ みくさん<br>個人的には、ぜひともこれでお願いしたいところです・・・。<br>入力スクリプトに日本語以外が指定されていた場合に文字化けが起こるという<br>のも、同時に解決できるのではないかと思われます。<br><br>&gt; <br>&gt; 以前ありましたAccessからの貼り付け時に罫線枠でデータが切れてしまう件<br>&gt; ですが、次のような実装もありかと思います。<br>&gt; <br>&gt; 「クリップボード形式を指定して貼り付け」<br>&gt; ・現在のクリップボードの形式リストをダイアログに表示して選択<br>&gt; CF_TEXT<br>&gt; CF_OEMTEXT<br>&gt; "SAKURAClip" サクラ形式<br>&gt; "Csv" CSV形式(Access,Excelでコピー時に存在するので使えそう)<br>&gt; "HTML Format"<br>&gt; ...</div></section>
     <ul><li><section><h1 id=4283>
     <span class="no">[4283]</span>
-    <a class="title" href="#4283">Re2:Accessからの貼り付け</a>
+    <a class="thread-title" href="#4283">Re2:Accessからの貼り付け</a>
     <span class="author">もか</span>
     <time datetime="2005-02-07T22:53:38">2005年02月07日 22:53</time></h1>
     <div class="body">みくさんが、提案してくれている時点で、すでに実装に入っていることを期待しているのですが、どうでしょうか？<br>ついでに、日本語を入力のに、CF_TEXT/CF_OEMTEXTの両方をLatin1等で設定するソフトなどがあるとしたら、<br>CF_UNICODETEXTから、CMemory::ToUnicodeで変換してくれるとありがたい人も居るかもしれません。<br>#私は使いませんので、誰も居ないなら、パスで。<br><br>欲張って、D&amp;Dとの統合。優先するクリップボード形式または優先順位を指定できて、その順番に従ってダイアログ無しで貼り付ける機能もつけられるといいですよね。<br>たとえば、私なら<br>1. "SakuraClip"<br>2. CF_TEXT<br>3. CF_OEMTEXT<br>の順番にしたいとか。<br></div></section>

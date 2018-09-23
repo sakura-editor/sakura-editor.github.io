@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>SourceForgeのメンテだった？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>SourceForgeのメンテだった？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">788</span>
-    <a class="title" href="788.html#788">SourceForgeのメンテだった？</a></div>
+    <a class="thread-title" href="788.html#788">SourceForgeのメンテだった？</a></div>
     <ul><li><div class="list-title">
     <span class="no">790</span>
-    <a class="title" href="788.html#790">TeX環境への道？</a></div>
+    <a class="thread-title" href="788.html#790">TeX環境への道？</a></div>
     <ul><li><div class="list-title">
     <span class="no">791</span>
-    <a class="title" href="788.html#791">Re:TeX環境への道？</a></div>
+    <a class="thread-title" href="788.html#791">Re:TeX環境への道？</a></div>
     </li><li><div class="list-title">
     <span class="no">794</span>
-    <a class="title" href="788.html#794">(訂正)Re:TeX環境への道</a></div>
+    <a class="thread-title" href="788.html#794">(訂正)Re:TeX環境への道</a></div>
     </li><li><div class="list-title">
     <span class="no">797</span>
-    <a class="title" href="788.html#797">Re: TeX環境への道？</a></div>
+    <a class="thread-title" href="788.html#797">Re: TeX環境への道？</a></div>
     <ul><li><div class="list-title">
     <span class="no">800</span>
-    <a class="title" href="788.html#800">Re2: TeX環境への道？</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=788>
+    <a class="thread-title" href="788.html#800">Re2: TeX環境への道？</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=788>
     <span class="no">[788]</span>
-    <a class="title" href="#788">SourceForgeのメンテだった？</a>
+    <a class="thread-title" href="#788">SourceForgeのメンテだった？</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-10-26T19:52:30">2001年10月26日 19:52</time></h1>
     <div class="body">昨日、今日と変でしたね。<br>それはそうと、こんなの見つけました。<br>フリーのエディタということで採用されたのでしょうが、<br>んーん、稀有な存在ではある。個人ユーザではなく大学に。。。<br>というのは寡聞にしてきいたことがないです。初耳。<br>となれば、ましてや理工系ではやはりTeX環境への対応は<br>ゆるがせにはできないと思います。<br>問題点はすでに過去に何度か指摘しましたが整理すると、<br>１.外部コマンド実行でパスデリミタに\を許す。もしくはパス名なしファイル名を<br>　　オプションで渡せる様にする。<br>２．外部コマンド実行で <br>　　platex filename<br>　　dviout filename<br>　　dvips filename<br>　　gsview32 filename<br>　ができるよう、マクロ登録用ファイル(.mac)を作る。<br>３. TeXのキーワードで*も色が付くようにする。<br>４．キーワードを補完入力候補用にできるとよい。<br>５．TeXのアウトライン解析があればなおgood。<br><br>エラーがあった場合その行にジャンプする機能は環境変数TEXEDITを<br>適切に設定してあれば、多分今開いているファイルでも移動できるでしょう。<br>（試してないけど、最近コマンドラインからの行指定が利く様になったから。）</div></section>
     <ul><li><section><h1 id=790>
     <span class="no">[790]</span>
-    <a class="title" href="#790">TeX環境への道？</a>
+    <a class="thread-title" href="#790">TeX環境への道？</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-10-27T00:24:35">2001年10月27日 00:24</time></h1>
     <div class="body">▼ じぇぷろさん<br>&gt; １.外部コマンド実行でパスデリミタに\を許す。もしくはパス名なしファイル名を<br>&gt; 　　オプションで渡せる様にする。<br><br>現状、外部コマンドにファイル名を直打ちするしかない。<br><br>&gt; ２．外部コマンド実行で <br>&gt; 　　platex filename<br>&gt; 　　dviout filename<br>&gt; 　　dvips filename<br>&gt; 　　gsview32 filename<br>&gt; 　ができるよう、マクロ登録用ファイル(.mac)を作る。<br><br>現状、マクロでなくじかの実行で何とかできるが、デフォルトの標準出力ありが邪魔。TeXをやるには必要ないので<br>毎回チェックをはずすのが面倒。もしくはTeXの吐くメッセージからエラー行などにジャンプできるようになるならそれもいいですが。。。<br><br>&gt; エラーがあった場合その行にジャンプする機能は環境変数TEXEDITを<br>&gt; 適切に設定してあれば、多分今開いているファイルでも移動できるでしょう。<br>&gt; （試してないけど、最近コマンドラインからの行指定が利く様になったから。）<br><br>これは実際試してみて確認した。例えばautoexec.batなどに<br>TEXEDIT=C:\Freebox\SakuraEd\sakura -Y:%d %s<br>と書いておけばいい。起動オプションに=を使うと環境変数を設定できない（W98）ので:でもいいようにしたのだったなあ、自分が。<br>もともとこれのためだった。あ、でもげんた氏にすっかり作り変えられちゃったけど。(^_^;)　そのときはジャンプしないんで要望に出したんだった。で、最近できるようになったと。<br>しかし、まだsakuraでTeXは厳しいなあ・・・<br></div></section>
     <ul><li><section><h1 id=791>
     <span class="no">[791]</span>
-    <a class="title" href="#791">Re:TeX環境への道？</a>
+    <a class="thread-title" href="#791">Re:TeX環境への道？</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-10-27T00:30:10">2001年10月27日 00:30</time></h1>
     <div class="body">▼ じぇぷろさん<br>&gt; デフォルトの標準出力ありが邪魔。TeXをやるには必要ないので<br>&gt; 毎回チェックをはずすのが面倒。<br><br>すでに要望、もしくはバグ？として書いてあるんですが、チェックは前回の状態を保持するようにしてほしいっす。<br>前に調べたんですが、わからずじまい。要はデフォルト状態を変えた時iniに保存してないのが問題なんですよね。</div></section>
     </li><li><section><h1 id=794>
     <span class="no">[794]</span>
-    <a class="title" href="#794">(訂正)Re:TeX環境への道</a>
+    <a class="thread-title" href="#794">(訂正)Re:TeX環境への道</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-10-29T00:31:09">2001年10月29日 00:31</time></h1>
     <div class="body">▼ じぇぷろ<br>&gt; &gt; エラーがあった場合その行にジャンプする機能は環境変数TEXEDITを<br>&gt; &gt; 適切に設定してあれば、多分今開いているファイルでも移動できるでしょう。<br><br>&gt; これは実際試してみて確認した。例えばautoexec.batなどに<br>&gt; TEXEDIT=C:\Freebox\SakuraEd\sakura -Y:%d %s<br>&gt; と書いておけばいい。起動オプションに=を使うと環境変数を設定できない（W98）<br><br>setコマンドで見たのをそのまま書いてしまったが、正しくは%をダブらせる。つまり-Y:%%d %%s<br></div></section>
     </li><li><section><h1 id=797>
     <span class="no">[797]</span>
-    <a class="title" href="#797">Re: TeX環境への道？</a>
+    <a class="thread-title" href="#797">Re: TeX環境への道？</a>
     <span class="author">げんた</span>
     <time datetime="2001-10-29T16:34:28">2001年10月29日 16:34</time></h1>
     <div class="body">私がTeXを使っていた頃は Emacs + yatex でしたね。Wordを入れているところがTeX使っているんだろうか？<br><br>TeXも\chapter, \section, \subsectionで階層化したいかもしれませんが、TeXの場合はスタイルファイルの作り方によってどうにでも定義できますから、どこまでサポートできるか。<br><br>色分けといえば、私はdiffファイルの+-!で始まる行の色分けができればいいと思っているのですが、この手のものが現在のルールに入っていないので何とも難しい。コメント色を複数使い分けられればそれをうまく利用できるとは思いますが。<br><br>&gt; １.外部コマンド実行でパスデリミタに\を許す。もしくはパス名なしファイル名をオプションで渡せる様にする。<br>両方次版でサポートします。$fでファイル名のみはいいけど、区切りを/に置き換えるのはどの文字がいい？<br>$の後ろ一文字。<br><br>&gt; デフォルトの標準出力ありが邪魔。TeXをやるには必要ない<br>エラーの時場所が特定できないと困らないですか？と思ったら、<br><br>&gt; エラーがあった場合その行にジャンプする機能は環境変数TEXEDITを<br>を使おうということなのね。でも２つ以上あると...１つ目で止まっちゃうのかな？最近使ってないのでよくわからん。<br></div></section>
     <ul><li><section><h1 id=800>
     <span class="no">[800]</span>
-    <a class="title" href="#800">Re2: TeX環境への道？</a>
+    <a class="thread-title" href="#800">Re2: TeX環境への道？</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-10-29T17:25:12">2001年10月29日 17:25</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 両方次版でサポートします。$fでファイル名のみはいいけど、<br><br>$fは自分で直した。これでTeXコンパイルはできるのでよしとした。<br><br>&gt;区切りを/に置き換えるのはどの文字がいい？ $の後ろ一文字。<br>やっぱ/でしょ。<br><br>&gt; でも２つ以上あると...１つ目で止まっちゃうのかな？<br><br>だいたい最初のエラーから直していかんと大抵だめでしょ。とりあえず[Enter]おしまくりで先まで進められるし、.logにエラーを吐き出すから不要。あ、でもそのファイルからタグジャンプできればいいかも。でも、エラー形式が対応してないね。<br>TeXは理工系学生の必要ソフトです。。。ってNTに入ってないじゃん、京産大。何故？？？工学部では使わんかなあ、理学部では絶対使う。経営工学科あたりでも使うけどね。</div></section>

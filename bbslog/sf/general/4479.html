@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ある特定の#if、#ifdefの強調表示のやり方</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ある特定の#if、#ifdefの強調表示のやり方 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">4479</span>
-    <a class="title" href="4479.html#4479">ある特定の#if、#ifdefの強調表示のやり方</a></div>
+    <a class="thread-title" href="4479.html#4479">ある特定の#if、#ifdefの強調表示のやり方</a></div>
     <ul><li><div class="list-title">
     <span class="no">4480</span>
-    <a class="title" href="4479.html#4480">Re:ある特定の#if、#ifdefの強調表示のやり方</a></div>
+    <a class="thread-title" href="4479.html#4480">Re:ある特定の#if、#ifdefの強調表示のやり方</a></div>
     <ul><li><div class="list-title">
     <span class="no">4483</span>
-    <a class="title" href="4479.html#4483">Re2:ある特定の#if、#ifdefの強調表示のやり方</a></div>
+    <a class="thread-title" href="4479.html#4483">Re2:ある特定の#if、#ifdefの強調表示のやり方</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">4481</span>
-    <a class="title" href="4479.html#4481">秀丸いつのまにか独自進化してますね</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=4479>
+    <a class="thread-title" href="4479.html#4481">秀丸いつのまにか独自進化してますね</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4479>
     <span class="no">[4479]</span>
-    <a class="title" href="#4479">ある特定の#if、#ifdefの強調表示のやり方</a>
+    <a class="thread-title" href="#4479">ある特定の#if、#ifdefの強調表示のやり方</a>
     <span class="author">Arugon</span>
     <time datetime="2005-05-28T11:43:55">2005年05月28日 11:43</time></h1>
     <div class="body">こんにちわ。<br>Arugonです。<br><br>早速ですが質問です。下記のようなソースがあったとき、ZONEは<br>KAMIで宣言されているので6行目～9行目までしか実行しません。<br>なので、1行目～4行目は強調表示でフォントの色を変えたいのですが出来ますでしょうか？<br><br>#define ZONE KAMI<br><br>1 #if ZONE != KAMI<br>2     a = 100<br>3     b = 150<br>4 #endif<br>5<br>6 #if ZONE == KAMI<br>7     a = 200<br>8     b = 300<br>9 #endif<br><br>備考：<br>秀丸では、<br>「その他(O)」⇒「ファイルタイプ別の設定」⇒「表示とカラー」⇒「モード」⇒「C言語/JAVA」⇒<br>「#ifdef等のカラー表示」⇒「詳細」で設定できます。</div></section>
     <ul><li><section><h1 id=4480>
     <span class="no">[4480]</span>
-    <a class="title" href="#4480">Re:ある特定の#if、#ifdefの強調表示のやり方</a>
+    <a class="thread-title" href="#4480">Re:ある特定の#if、#ifdefの強調表示のやり方</a>
     <span class="author">りーや</span>
     <time datetime="2005-05-29T20:46:33">2005年05月29日 20:46</time></h1>
     <div class="body">▼ Arugonさん<br>&gt; 1行目～4行目は強調表示でフォントの色を変えたいのですが出来ますでしょうか？<br><br>この一種類だけなら、コメントの #if 0 を書き換えちゃうくらいかな？<br>正規表現キーワードではマルチライン指定の m 指示子が通らないので私にはノーアイデアです<br><br>でも、秀丸もヘルプをみると、<br>&gt;&gt; 秀丸は式の評価をしているわけではなく、<br>&gt;&gt; 文字列が一致しているかどうかだけで判断している<br>「#ifで有効にする式の内容」をそのつど全部入れなきゃならないということで、<br>#define ZONE KAMI<br>が効いているわけではないですね。入れ子のディレクティブに対応しているのはスゴイけど</div></section>
     <ul><li><section><h1 id=4483>
     <span class="no">[4483]</span>
-    <a class="title" href="#4483">Re2:ある特定の#if、#ifdefの強調表示のやり方</a>
+    <a class="thread-title" href="#4483">Re2:ある特定の#if、#ifdefの強調表示のやり方</a>
     <span class="author">かて</span>
     <time datetime="2005-06-01T09:28:10">2005年06月01日 09:28</time></h1>
     <div class="body">&gt; ▼ Arugonさん<br>&gt; &gt;&gt; 秀丸は式の評価をしているわけではなく、<br>&gt; &gt;&gt; 文字列が一致しているかどうかだけで判断している<br>&gt; 「#ifで有効にする式の内容」をそのつど全部入れなきゃならないということで、<br>&gt; #define ZONE KAMI<br>&gt; が効いているわけではないですね。入れ子のディレクティブに対応しているのはスゴイけど<br><br>それでも、#if 0、#if 1 の入れ子は結構便利だと思いました。<br><br>次のようなソースがあった場合、<br>７行目の括弧から「対応する括弧」を探した場合に<br>サクラエディタを含めたほとんどのエディタは４行目に移動しますが、<br>秀丸はキチンと２行目に飛んでくれたり。<br><br>1  #if 1 <br>2     if(式１){<br>3  #else<br>4     if(式２){<br>5  #endif<br>6         ＜なんか色々な処理＞<br>7     }<br><br></div></section>
     </li></ul></li><li><section><h1 id=4481>
     <span class="no">[4481]</span>
-    <a class="title" href="#4481">秀丸いつのまにか独自進化してますね</a>
+    <a class="thread-title" href="#4481">秀丸いつのまにか独自進化してますね</a>
     <span class="author">りーや</span>
     <time datetime="2005-05-29T21:06:05">2005年05月29日 21:06</time></h1>
     <div class="body">レジストはしたものの随分昔に EmEditor に乗り換えて、鶴亀メールのためにインストールだけはしてたのですが久方ぶりに最新版にしました。<br>OLEドラック＆ドロップ対応は、やっとという感じですがタブ付きの結合ウインドも追いついたし、言語系では「強調表示の一覧枠」がエディタ面の右側に常にダイナミックに変わるアウトライン表示のよう。<br>気合の入った強調表示定義ファイルもライブラリに整備されてて、Ruby なんてチカチカするほどカラフル。<br>また、少し使ってみようかと思わせるところもあるかなぁ？<br>上の「ファイルタイプ別の設定」で「HTML/XML」と「C言語/Java」にだけ今のところ付いてる「プロパティ」というのは秀丸ならではのアプローチでしょうね。<br></div></section>

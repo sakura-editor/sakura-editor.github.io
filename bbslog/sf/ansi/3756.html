@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>前回と異なる文字コードのときに問い合わせを行わないフラグ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>前回と異なる文字コードのときに問い合わせを行わないフラグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3756</span>
-    <a class="title" href="3756.html#3756">前回と異なる文字コードのときに問い合わせを行わないフラグ</a></div>
+    <a class="thread-title" href="3756.html#3756">前回と異なる文字コードのときに問い合わせを行わないフラグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3760</span>
-    <a class="title" href="3756.html#3760">ここまでのソース</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3756>
+    <a class="thread-title" href="3756.html#3760">ここまでのソース</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3756>
     <span class="no">[3756]</span>
-    <a class="title" href="#3756">前回と異なる文字コードのときに問い合わせを行わないフラグ</a>
+    <a class="thread-title" href="#3756">前回と異なる文字コードのときに問い合わせを行わないフラグ</a>
     <span class="author">げんた</span>
     <time datetime="2004-10-03T15:23:23">2004年10月03日 15:23</time></h1>
     <div class="body">ファイルを開いたときに前回と異なる文字コードと自動認識された場合に確認ダイアログが出ますが，それが鬱陶しい人のためにオプションを追加してみました．<br>差分ファイル: query-codechange.zip<br><br>共通設定－「ファイル」にチェックボックスを追加してあります．デフォルト設定はON(現状通り)となっています．<br><br>バイナリ<br><a href=http://members.at.infoseek.co.jp/sakura_editor/snapshot/sakura_2004-10-03f.zip target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>snapshot<wbr>/<wbr>sakura_2<wbr>004-<wbr>10-<wbr>03f.<wbr>zip</nobr></a><br><br>---<br>これとは関係ないですが，CEditView::Command_FILEOPEN()とCEditWnd::DispatchEvent()の履歴からのファイルオープンで同一の処理があります．処理内容を見るとCEditDocに関連するものが中心となっているので，実装部をCEditDocに移動しようと思っています．<br></div></section>
     <ul><li><section><h1 id=3760>
     <span class="no">[3760]</span>
-    <a class="title" href="#3760">ここまでのソース</a>
+    <a class="thread-title" href="#3760">ここまでのソース</a>
     <span class="author">げんた</span>
     <time datetime="2004-10-09T13:21:44">2004年10月09日 13:21</time></h1>
     <div class="body">http://members.at.infoseek.co.jp/sakura_editor/snapshot/ssrc_2004-10-09.tar.bz2<br><br>共通設定－「ファイル」にチェックボックスを追加<br>2004.10.09 &gt;&gt;dev:3756 前回と異なる文字コードと自動認識された場合の確認ダイアログ抑制オプション<br>2004.10.09 &gt;&gt;data:3656 存在しないファイルを開こうとした場合の確認ダイアログ表示オプション<br><br>CEditView::Command_FILEOPEN()をCEditDoc::OpenFile()として実装部移動<br>印刷の用紙名区切りの読点をセミコロンに置き換え<br></div></section>

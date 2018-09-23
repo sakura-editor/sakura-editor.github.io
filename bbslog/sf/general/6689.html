@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>256文字を超えるファイル名で異常終了する</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>256文字を超えるファイル名で異常終了する | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6689</span>
-    <a class="title" href="6689.html#6689">256文字を超えるファイル名で異常終了する</a></div>
+    <a class="thread-title" href="6689.html#6689">256文字を超えるファイル名で異常終了する</a></div>
     <ul><li><div class="list-title">
     <span class="no">6692</span>
-    <a class="title" href="6689.html#6692">Re:256文字を超えるファイル名で異常終了する</a></div>
+    <a class="thread-title" href="6689.html#6692">Re:256文字を超えるファイル名で異常終了する</a></div>
     <ul><li><div class="list-title">
     <span class="no">6694</span>
-    <a class="title" href="6689.html#6694">Re2:256文字を超えるファイル名で異常終了する</a></div>
+    <a class="thread-title" href="6689.html#6694">Re2:256文字を超えるファイル名で異常終了する</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">6693</span>
-    <a class="title" href="6689.html#6693">Re:256文字を超えるファイル名で異常終了する</a></div>
+    <a class="thread-title" href="6689.html#6693">Re:256文字を超えるファイル名で異常終了する</a></div>
     <ul><li><div class="list-title">
     <span class="no">6695</span>
-    <a class="title" href="6689.html#6695">Re2:256文字を超えるファイル名で異常終了する</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6689>
+    <a class="thread-title" href="6689.html#6695">Re2:256文字を超えるファイル名で異常終了する</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6689>
     <span class="no">[6689]</span>
-    <a class="title" href="#6689">256文字を超えるファイル名で異常終了する</a>
+    <a class="thread-title" href="#6689">256文字を超えるファイル名で異常終了する</a>
     <span class="author">mtake</span>
     <time datetime="2008-06-21T16:48:37">2008年06月21日 16:48</time></h1>
     <div class="body">ディレクトリ名を含むファイル名長が256文字（厳密には調査していない）を超えるとサクラエディタが異常終了する。<br>◆現象<br>サクラエディタでテキストファイルを表示しようとしたところ、なんの前触れもなく異常終了しました。<br>notepadでは何の問題もなく開くことができました。<br>◆原因<br>タイトルどおり。<br>◆兆候<br>そのテキストを保存する時点でも、ファイル名が途中で切れる形となる現象がありましたが、ファイル名を変更し、もとの長さのファイル名にしました。<br><br>このバグは既知のものですか？バグではなく仕様ですか？<br>ファイル名長を短くすることで対応できたので、これで対応しています。<br>サクラエディタは、非常に多用しているテキストエディタです。<br><br>同じ想いをしたことがある人がいるかもしれませんが、突然異常終了してしまうのでファイル名長が原因と気づかなかった人もいるだろうとおもい、報告させていただきました。<br><br>開発をしている方々に感謝します。</div></section>
     <ul><li><section><h1 id=6692>
     <span class="no">[6692]</span>
-    <a class="title" href="#6692">Re:256文字を超えるファイル名で異常終了する</a>
+    <a class="thread-title" href="#6692">Re:256文字を超えるファイル名で異常終了する</a>
     <span class="author">なすこじ</span>
     <time datetime="2008-06-23T04:07:09">2008年06月23日 04:07</time></h1>
     <div class="body">一応ANSI版の既知の問題です。<br>取りあえず修正を試みますが、多分落ちなくなるだけで開いたりそのファイル名で保存したりはできないです。<br></div></section>
     <ul><li><section><h1 id=6694>
     <span class="no">[6694]</span>
-    <a class="title" href="#6694">Re2:256文字を超えるファイル名で異常終了する</a>
+    <a class="thread-title" href="#6694">Re2:256文字を超えるファイル名で異常終了する</a>
     <span class="author">mtake</span>
     <time datetime="2008-06-23T09:06:12">2008年06月23日 09:06</time></h1>
     <div class="body">▼ なすこじさん<br>&gt; 一応ANSI版の既知の問題です。<br>&gt; 取りあえず修正を試みますが、多分落ちなくなるだけで開いたりそのファイル名で保存したりはできないです。<br><br>落ちなくなるだけで異常終了してしまう驚きからは逃れられます。<br>もし、可能なら「ファイル名が長い」旨のメッセージを表示できるようにしていただけますか<br><br>早速のレスありがとうございました。</div></section>
     </li></ul></li><li><section><h1 id=6693>
     <span class="no">[6693]</span>
-    <a class="title" href="#6693">Re:256文字を超えるファイル名で異常終了する</a>
+    <a class="thread-title" href="#6693">Re:256文字を超えるファイル名で異常終了する</a>
     <span class="author">じゅうじ</span>
     <time datetime="2008-06-23T08:00:59">2008年06月23日 08:00</time></h1>
     <div class="body">&gt;&gt;data:5941<br>&gt;&gt;dev:4733<br>過去ログから、これだけは見つけました。</div></section>
     <ul><li><section><h1 id=6695>
     <span class="no">[6695]</span>
-    <a class="title" href="#6695">Re2:256文字を超えるファイル名で異常終了する</a>
+    <a class="thread-title" href="#6695">Re2:256文字を超えるファイル名で異常終了する</a>
     <span class="author">mtake</span>
     <time datetime="2008-06-23T09:07:50">2008年06月23日 09:07</time></h1>
     <div class="body">▼ じゅうじさん<br>&gt; &gt;&gt;data:5941<br>&gt; &gt;&gt;dev:4733<br>&gt; 過去ログから、これだけは見つけました。<br><br>過去ログをもっと上手に検索し活用するようにします。<br>早速のレスありがとうございました。<br></div></section>

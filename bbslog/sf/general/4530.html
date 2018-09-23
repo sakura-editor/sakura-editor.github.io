@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Perlの「&lt;&lt;」で指定する部分の色分け</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Perlの「&lt;&lt;」で指定する部分の色分け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">4530</span>
-    <a class="title" href="4530.html#4530">Perlの「&lt;&lt;」で指定する部分の色分け</a></div>
+    <a class="thread-title" href="4530.html#4530">Perlの「&lt;&lt;」で指定する部分の色分け</a></div>
     <ul><li><div class="list-title">
     <span class="no">4535</span>
-    <a class="title" href="4530.html#4535">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a></div>
+    <a class="thread-title" href="4530.html#4535">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a></div>
     </li><li><div class="list-title">
     <span class="no">4537</span>
-    <a class="title" href="4530.html#4537">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a></div>
+    <a class="thread-title" href="4530.html#4537">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a></div>
     </li><li><div class="list-title">
     <span class="no">4539</span>
-    <a class="title" href="4530.html#4539">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=4530>
+    <a class="thread-title" href="4530.html#4539">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4530>
     <span class="no">[4530]</span>
-    <a class="title" href="#4530">Perlの「&lt;&lt;」で指定する部分の色分け</a>
+    <a class="thread-title" href="#4530">Perlの「&lt;&lt;」で指定する部分の色分け</a>
     <span class="author">Ｋ</span>
     <time datetime="2005-07-08T11:10:55">2005年07月08日 11:10</time></h1>
     <div class="body">Perlのソースで、<br><br>print &lt;&lt;END;<br>...<br>END<br><br>というときの、「END」を色分けしたいのですが、できますでしょうか？<br><br>正規表現キーワードに追加して、最初の「&lt;&lt;END」みたいな部分は色分けできるのですが、終わり部分を表す「END」の方を指定する方法がよくわからなくて…。<br>過去ログを「&lt;&lt;」で検索してみましたが、要望？として言っている人はいても、それ以外の情報がわかりませんでした。<br><br>できないから話題になっていないのか、既知の方法があるのか、教えていただけると助かります。<br>よろしくお願いいたします。</div></section>
     <ul><li><section><h1 id=4535>
     <span class="no">[4535]</span>
-    <a class="title" href="#4535">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a>
+    <a class="thread-title" href="#4535">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a>
     <span class="author">げんた</span>
     <time datetime="2005-07-09T17:16:07">2005年07月09日 17:16</time></h1>
     <div class="body">▼ Ｋさん<br>&gt;「END」を色分けしたい<br>正規表現キーワードでは行単位の色分けしかできないので，このケースには対応できないと思います．<br><br>ENDは任意の文字列なので，文字列の色分けで終了点を動的に判別できるような仕組みが必要かと．</div></section>
     </li><li><section><h1 id=4537>
     <span class="no">[4537]</span>
-    <a class="title" href="#4537">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a>
+    <a class="thread-title" href="#4537">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a>
     <span class="author">(全略)</span>
     <time datetime="2005-07-09T23:33:49">2005年07月09日 23:33</time></h1>
     <div class="body">▼ Ｋさん<br>&gt; というときの、「END」を色分けしたいのですが、できますでしょうか？<br>無理です、、、のでいっそ思い切って<br><br>m/^END$/<br><br>とか<br><br>ブロックコメントに &lt;&lt;EOF ～ EOF までを設定しちゃうとか<br><br># 自分で書いたソースコードしかさわらないときはこんないい加減な方法でもイイカモ</div></section>
     </li><li><section><h1 id=4539>
     <span class="no">[4539]</span>
-    <a class="title" href="#4539">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a>
+    <a class="thread-title" href="#4539">Re:Perlの「&lt;&lt;」で指定する部分の色分け</a>
     <span class="author">Ｋ</span>
     <time datetime="2005-07-11T15:53:42">2005年07月11日 15:53</time></h1>
     <div class="body">やはり行単位でしか無理なんですね…。<br>了解です。<br>ありがとうございました。<br><br># たまには、(全略)さんのおっしゃるような方法で逃げてみようかと思います(笑)</div></section>

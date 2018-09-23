@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>[要望]複数行一括コメントアウト</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>[要望]複数行一括コメントアウト | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">4155</span>
-    <a class="title" href="4155.html#4155">[要望]複数行一括コメントアウト</a></div>
+    <a class="thread-title" href="4155.html#4155">[要望]複数行一括コメントアウト</a></div>
     <ul><li><div class="list-title">
     <span class="no">4156</span>
-    <a class="title" href="4155.html#4156">Re:[要望]複数行一括コメントアウト</a></div>
+    <a class="thread-title" href="4155.html#4156">Re:[要望]複数行一括コメントアウト</a></div>
     </li><li><div class="list-title">
     <span class="no">4157</span>
-    <a class="title" href="4155.html#4157">Re:[要望]複数行一括コメントアウト</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=4155>
+    <a class="thread-title" href="4155.html#4157">Re:[要望]複数行一括コメントアウト</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4155>
     <span class="no">[4155]</span>
-    <a class="title" href="#4155">[要望]複数行一括コメントアウト</a>
+    <a class="thread-title" href="#4155">[要望]複数行一括コメントアウト</a>
     <span class="author">ベクトル</span>
     <time datetime="2004-11-25T00:02:20">2004年11月25日 00:02</time></h1>
     <div class="body">選択された行の頭に<br>コメントスタイルの行型一番目に指定した文字列<br>C/C++だったら // を<br>texだったら % を<br>一括挿入するような機能が欲しいです。</div></section>
     <ul><li><section><h1 id=4156>
     <span class="no">[4156]</span>
-    <a class="title" href="#4156">Re:[要望]複数行一括コメントアウト</a>
+    <a class="thread-title" href="#4156">Re:[要望]複数行一括コメントアウト</a>
     <span class="author">A24</span>
     <time datetime="2004-11-25T10:30:16">2004年11月25日 10:30</time></h1>
     <div class="body">&gt; 選択された行の頭に<br>&gt; コメントスタイルの行型一番目に指定した文字列<br>&gt; C/C++だったら // を<br>&gt; texだったら % を<br>&gt; 一括挿入するような機能が欲しいです。<br>ちょっと古いですが、<br>&gt;&gt;3081、&gt;&gt;3092の方法で可能だと思いますよ。<br>私は、&gt;&gt;3081の矩形選択でやっています。<br></div></section>
     </li><li><section><h1 id=4157>
     <span class="no">[4157]</span>
-    <a class="title" href="#4157">Re:[要望]複数行一括コメントアウト</a>
+    <a class="thread-title" href="#4157">Re:[要望]複数行一括コメントアウト</a>
     <span class="author">すす</span>
     <time datetime="2004-11-25T12:04:28">2004年11月25日 12:04</time></h1>
     <div class="body">▼ ベクトルさん<br>&gt; 選択された行の頭に<br>&gt; コメントスタイルの行型一番目に指定した文字列<br>&gt; C/C++だったら // を<br>&gt; texだったら % を<br>&gt; 一括挿入するような機能が欲しいです。<br>さらにこんな感じにすれば目的の動作に近いかと<br>思いますちなみにPPAマクロです<br>var<br>str,str1,str2:String;<br>begin<br>str1 := S_ExpandParameter('$f');<br>str2 := S_ExpandParameter('$g');<br>if ( (Length(str1) - Length(str2)) &gt; 1) then str:=Copy(str1,Length(str2) + 1,Length(str1) - Length(str2));<br>S_MoveHistSet(0);   // 現在位置を移動履歴に登録<br>if (str = '.c') or (str = '.cpp') or (str = '.h') then<br>begin<br>S_ReplaceAll('^.', '//$&amp;', 148);    // 選択範囲の行頭を // に置換する。<br>end;<br>if (str = '.tex') then<br>begin<br>S_ReplaceAll('^.', '%$&amp;', 148); // 選択範囲の行頭を // に置換する。<br>end;<br>S_CancelMode(0);        // 各種モードの取り消し     選択状態を解除する。[Esc]キーと一緒。<br>S_SearchClearMark(0);   // 検索マークの切替え<br>S_MoveHistPrev(0);  // 移動履歴: 前へ<br>S_ReDraw(0);    // 再描画<br>end;<br></div></section>

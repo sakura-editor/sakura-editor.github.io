@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>（要望）[EOF]の扱い</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>（要望）[EOF]の扱い | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">722</span>
-    <a class="title" href="722.html#722">（要望）[EOF]の扱い</a></div>
+    <a class="thread-title" href="722.html#722">（要望）[EOF]の扱い</a></div>
     <ul><li><div class="list-title">
     <span class="no">723</span>
-    <a class="title" href="722.html#723">Re: （要望）[EOF]の扱い</a></div>
+    <a class="thread-title" href="722.html#723">Re: （要望）[EOF]の扱い</a></div>
     <ul><li><div class="list-title">
     <span class="no">724</span>
-    <a class="title" href="722.html#724">（要望）再び</a></div>
+    <a class="thread-title" href="722.html#724">（要望）再び</a></div>
     <ul><li><div class="list-title">
     <span class="no">727</span>
-    <a class="title" href="722.html#727">Re:（要望）再び</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=722>
+    <a class="thread-title" href="722.html#727">Re:（要望）再び</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=722>
     <span class="no">[722]</span>
-    <a class="title" href="#722">（要望）[EOF]の扱い</a>
+    <a class="thread-title" href="#722">（要望）[EOF]の扱い</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-10-03T12:21:48">2001年10月03日 12:21</time></h1>
     <div class="body">要望１．[EOF]がないファイルは文字通り[EOF]がないのだから[EOF]を表示するにしても表示しないでほしい<br>要望２．[EOF]をファイル末尾に付加する／しないのオプションがあるといい<br><br>設定ファイルなどで[EOF]があると正常に動作しないものがたまにあります。その時用。<br>要望１のようになっているエディタは意外とないのかな。あるかないか見て判別できるようにしたいのです。色を別にするのは難しいでしょうから。<br>試してませんが、[EOF]のないファイルを編集・保存した時はそのままですか？それとも最後に付加されます？<br>[EOF]のないファイルをサクラエディタで作れますか？</div></section>
     <ul><li><section><h1 id=723>
     <span class="no">[723]</span>
-    <a class="title" href="#723">Re: （要望）[EOF]の扱い</a>
+    <a class="thread-title" href="#723">Re: （要望）[EOF]の扱い</a>
     <span class="author">げんた</span>
     <time datetime="2001-10-03T14:42:08">2001年10月03日 14:42</time></h1>
     <div class="body">サクラエディタではEOFはつきません．末尾についている場合は文字の1つとして読み込みます．<br>EOF(1A)を付けて保存する必要が生じるとは思えないので，現状のままでもいいかと思います．<br></div></section>
     <ul><li><section><h1 id=724>
     <span class="no">[724]</span>
-    <a class="title" href="#724">（要望）再び</a>
+    <a class="thread-title" href="#724">（要望）再び</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-10-03T15:07:13">2001年10月03日 15:07</time></h1>
     <div class="body">▼ げんたさん<br>&gt; サクラエディタではEOFはつきません．末尾についている場合は文字の1つとして読み込みます．<br>&gt; EOF(1A)を付けて保存する必要が生じるとは思えないので，現状のままでもいいかと思います．<br>メモ帳もそうですか？　DOS時代にはむしろ付くのが標準でしたが。どうも末尾に・という余計なものが付くことがあると思ったのはサクラエディタが文字として認識しているからですかあ。疑問が一つ解けた。ヘルプの仕様にでも書いておいてほしいなあ。（自分で書く？）<br><br>ではもういくつか。タイトルバーに書くファイル名はアクティブでないウィンドウでもフルパス名が選べるとうれしい。グレイになっていてもフルで見える方がうれしいから。ただしタスクバーはフルでない方が（アクティブでも）むしろ探しやすい。タスクが多くなるとすぐ一つ一つが短くなるのでその方がうれしい。<br>置換後文字列に正規表現が使えないのはJre32の制限ではないですよね。(Jre32で実現しているエディタがあるから。)<br>Bregexpでもやはり使えないのでしょうか？それと//は付けない仕様のほうが面倒くさくない気がしますけど。どうせ必要なものなら文字列に補ってしまうとか。</div></section>
     <ul><li><section><h1 id=727>
     <span class="no">[727]</span>
-    <a class="title" href="#727">Re:（要望）再び</a>
+    <a class="thread-title" href="#727">Re:（要望）再び</a>
     <span class="author">げんた</span>
     <time datetime="2001-10-03T17:34:25">2001年10月03日 17:34</time></h1>
     <div class="body">▼じぇぷろさん<br>&gt;ただしタスクバーはフルでない方が<br>タスクバーとタイトルバーで異なる文字列を設定することってできるのかしら．Explorerのオブジェクトにアクセスすればできるのかな．<br><br>&gt;置換後文字列に正規表現が使えない<br>&gt;Bregexpでもやはり使えないのでしょうか？<br>Bregexpにはそのまんまの機能が付いています．が，現在は使われていません．<br><br>&gt;それと//は付けない仕様のほうが面倒くさくない気がしますけど。<br>&gt;どうせ必要なものなら文字列に補ってしまうとか。<br>当時は急いでいたので，最小限だけ作ってあとは天に任せるようになってます．もちろん私も//は付けない方が楽だと思いますが，自動的に補う部分があまり単純ではなさそうなのでそのままになっています．<br></div></section>

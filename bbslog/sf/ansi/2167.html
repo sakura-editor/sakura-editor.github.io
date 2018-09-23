@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>UnicodeBEのミス</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>UnicodeBEのミス | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2167</span>
-    <a class="title" href="2167.html#2167">UnicodeBEのミス</a></div>
+    <a class="thread-title" href="2167.html#2167">UnicodeBEのミス</a></div>
     <ul><li><div class="list-title">
     <span class="no">2171</span>
-    <a class="title" href="2167.html#2171">Re2: UnicodeBEのミス その2</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2167>
+    <a class="thread-title" href="2167.html#2171">Re2: UnicodeBEのミス その2</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2167>
     <span class="no">[2167]</span>
-    <a class="title" href="#2167">UnicodeBEのミス</a>
+    <a class="thread-title" href="#2167">UnicodeBEのミス</a>
     <span class="author">もか</span>
     <time datetime="2002-06-15T17:07:38">2002年06月15日 17:07</time></h1>
     <div class="body"><br>たびたびすみません。リソースに機能名が入っていませんでした<br><br>sakura_rc.rc(2334)付近<br>    F_CODECNV_UNICODEBE2SJIS "UnicodeBE→SJISコード変換"<br>を追加してください<br></div></section>
     <ul><li><section><h1 id=2171>
     <span class="no">[2171]</span>
-    <a class="title" href="#2171">Re2: UnicodeBEのミス その2</a>
+    <a class="thread-title" href="#2171">Re2: UnicodeBEのミス その2</a>
     <span class="author">もか</span>
     <time datetime="2002-06-17T10:46:45">2002年06月17日 10:46</time></h1>
     <div class="body"><br>マクロ名のほうも違ってました<br>ついでにUnicode→SJISコード変換のマクロ名も変<br>ですよね？<br><br>CSMacroMgr.cpp(181)<br><br>- {F_CODECNV_UNICODE2SJIS,  "CodeCnvUNICODEtoJIS",  (中略) //Unicode→SJISコード変換<br>+ {F_CODECNV_UNICODE2SJIS,  "CodeCnvUNICODEtoSJIS", (中略) //Unicode→SJISコード変換<br><br>- {F_CODECNV_UNICODE2SJIS,  "CodeCnvUNICODEBEtoJIS",(中略) //UnicodeBE→SJISコード変換<br>+ {F_CODECNV_UNICODEBE2SJIS,"CodeCnvUNICODEBEtoSJIS",   (中略) //UnicodeBE→SJISコード変換<br></div></section>

@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>6/25付</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>6/25付 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">458</span>
-    <a class="title" href="458.html#458">6/25付</a></div>
+    <a class="thread-title" href="458.html#458">6/25付</a></div>
     <ul><li><div class="list-title">
     <span class="no">461</span>
-    <a class="title" href="458.html#461">Re:6/25付</a></div>
+    <a class="thread-title" href="458.html#461">Re:6/25付</a></div>
     <ul><li><div class="list-title">
     <span class="no">462</span>
-    <a class="title" href="458.html#462">外部コマンド実行</a></div>
+    <a class="thread-title" href="458.html#462">外部コマンド実行</a></div>
     </li><li><div class="list-title">
     <span class="no">661</span>
-    <a class="title" href="458.html#661">Re:外部コマンド実行 </a></div>
+    <a class="thread-title" href="458.html#661">Re:外部コマンド実行 </a></div>
     <ul><li><div class="list-title">
     <span class="no">669</span>
-    <a class="title" href="458.html#669">どのソースを見てますか？ Re2: 外部コマンド実行</a></div>
+    <a class="thread-title" href="458.html#669">どのソースを見てますか？ Re2: 外部コマンド実行</a></div>
     <ul><li><div class="list-title">
     <span class="no">673</span>
-    <a class="title" href="458.html#673">Re:どのソースを見てますか？ Re2: 外部コマンド実行</a></div>
+    <a class="thread-title" href="458.html#673">Re:どのソースを見てますか？ Re2: 外部コマンド実行</a></div>
     </li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">463</span>
-    <a class="title" href="458.html#463">Re:6/25付</a></div>
+    <a class="thread-title" href="458.html#463">Re:6/25付</a></div>
     </li><li><div class="list-title">
     <span class="no">465</span>
-    <a class="title" href="458.html#465">Re:6/25付</a></div>
+    <a class="thread-title" href="458.html#465">Re:6/25付</a></div>
     </li><li><div class="list-title">
     <span class="no">467</span>
-    <a class="title" href="458.html#467">Re:VBのアウトライン解析</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=458>
+    <a class="thread-title" href="458.html#467">Re:VBのアウトライン解析</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=458>
     <span class="no">[458]</span>
-    <a class="title" href="#458">6/25付</a>
+    <a class="thread-title" href="#458">6/25付</a>
     <span class="author">げんた</span>
     <time datetime="2001-06-25T21:51:11">2001年06月25日 21:51</time></h1>
     <div class="body">昨日までのpatchをまとめました。6/22からの差分と、nakataniさん用5/28付けからの差分の2種類を作ってあります。<br><br>ソース一式からはJre32関連の3ファイルとresourceディレクトリ以下のファイル(bitmap/cursor/icon)を取り除いてありますので、このままではコンパイルできません。<br><br>肝心の動作なんですが、nakataniさんの直してくれた外部コマンド実行が不調です。ウィンドウがたくさん開くのとアウトプットウィンドウに書き込めないのは直ったのですが、標準出力の取り込みが相変わらず動作しないようです(Win2K)。コマンド列だけが取り込まれます。<br><br>またcommand.comの実行時に16ビットサブシステムより「NTVDMはシステムエラーを検出しました。ハンドルが無効です」というエラーが出ます。<br></div></section>
     <ul><li><section><h1 id=461>
     <span class="no">[461]</span>
-    <a class="title" href="#461">Re:6/25付</a>
+    <a class="thread-title" href="#461">Re:6/25付</a>
     <span class="author">nakatani</span>
     <time datetime="2001-06-26T00:04:57">2001年06月26日 00:04</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 昨日までのpatchをまとめました。6/22からの差分と、nakataniさん用5/28付けからの差分の2種類を作ってあります。<br>&gt; <br>&gt; ソース一式からはJre32関連の3ファイルとresourceディレクトリ以下のファイル(bitmap/cursor/icon)を取り除いてありますので、このままではコンパイルできません。<br>&gt; <br>&gt; 肝心の動作なんですが、nakataniさんの直してくれた外部コマンド実行が不調です。ウィンドウがたくさん開くのとアウトプットウィンドウに書き込めないのは直ったのですが、標準出力の取り込みが相変わらず動作しないようです(Win2K)。コマンド列だけが取り込まれます。<br>&gt; <br>&gt; またcommand.comの実行時に16ビットサブシステムより「NTVDMはシステムエラーを検出しました。ハンドルが無効です」というエラーが出ます。<br><br>やっぱりダメみたいですね<br>私はWindows98でしか動作確認してませんでした<br>CreateProcessするときにファイルハンドルを子プロセスに渡してるのでたぶん<br>SECURITY_ATTRIBUTES 構造体の lpSecurityDescriptor メンバとかに<br>きちんとなんか設定しとかんとダメなんでしょうかね<br>windows95(たぶん98もそうだと思うけど)ではそういうのが<br>無視されるとAPIリファレンスに書かれてますね<br> <br>そういう問題じゃないんかな・・</div></section>
     <ul><li><section><h1 id=462>
     <span class="no">[462]</span>
-    <a class="title" href="#462">外部コマンド実行</a>
+    <a class="thread-title" href="#462">外部コマンド実行</a>
     <span class="author">げんた</span>
     <time datetime="2001-06-26T00:54:49">2001年06月26日 00:54</time></h1>
     <div class="body">eGroupsに双六さんが作ってくれたPipeCommandクラスがあるので、これをうまく活用できないでしょうか。外部コマンドとスレッドのハンドリングを行ってくれるので、あとはオブジェクトの生成、消失と標準入出力のハンドリング（これは別スレッドで動くので考慮が必要）を作ればいいだけなんですが。</div></section>
     </li><li><section><h1 id=661>
     <span class="no">[661]</span>
-    <a class="title" href="#661">Re:外部コマンド実行 </a>
+    <a class="thread-title" href="#661">Re:外部コマンド実行 </a>
     <span class="author">ああああ</span>
     <time datetime="2001-08-31T10:58:13">2001年08月31日 10:58</time></h1>
     <div class="body">ソースコードをいろいろチェックしてみました。<br><br>CEditView.cpp の8072 行目：<br>&gt; hFile = ::CreateFile( szTempFile, <br>&gt; GENERIC_WRITE | GENERIC_READ, <br>&gt; FILE_SHARE_WRITE | FILE_SHARE_READ, NULL, <br>&gt; CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL );<br><br>8091行目：<br>&gt; StartupInfo.hStdOutput = hFile;<br>&gt; StartupInfo.hStdError = hFile;<br>これでは、同一ハンドルのとき、閉じられるときデータが失われる可能性があると思います。<br>DuplicateHandle を使って、ハンドルの継承を何とかするとか。<br><br>&gt; またcommand.comの実行時に16ビットサブシステムより「NTVDMはシステムエラーを検出しました。ハンドルが無効です」というエラーが出ます。<br><br>調べてみると、dir は標準エラー出力を使うみたいです。次のMS-DOSコマンドで確認できます。<br><br>C:\&gt;dir &gt;&amp; test.txt<br><br>C:\&gt;type test.txt<br>ドライブ C: のボリュームラベルはありません.<br>ボリュームシリアル番号は 0623-0AF5<br>ディレクトリは C:\<br><br>53,575,680 バイトの空きがあります.<br><br>他にも気になる点がいくつかあります。リファレンスによると：<br><br>&gt;lpSecurityAttributes<br>&gt; If you want the console to be inherited, <br>&gt; the bInheritHandle member of the<br>&gt; SECURITY_ATTRIBUTES structure must be TRUE.<br>&gt; <br>&gt;dwCreationDistribution<br>&gt; The user should specify OPEN_EXISTING when<br>&gt; using CreateFile to open the console.<br><br>&gt;The CreateProcess function's<br>&gt;fInheritHandles parameter must<br>&gt;be set to TRUE for this to work properly.<br><br>とあります。コードを書くときにはよくリファレンスやコード例を参照した方がよろしいですよ。<br><br>&gt; SECURITY_ATTRIBUTES 構造体の lpSecurityDescriptor<br>&gt; メンバとかにきちんとなんか設定しとかんとダメなんで<br>&gt; しょうかね<br><br>SECURITY_ATTRIBUTES の lpSecurityDescriptor 以外のメンバは Win95/98 でも参照されるはずです。おそらくリファレンスの間違いです。<br><br>同じく 8108 行目。Windows 2000 では、3 つの DOS 窓が開きました。おそらくこの行の辺りから起こっています。<br><br>バージョンと ProcessInfo.hProcess をチェックすることをお勧めします。&lt;stdlib.h&gt; の _osver, _win{ver,major,minor} を使えば素早くバージョンをチェックできます。<br><br>&lt;stdlib.h&gt; から：<br>&gt;#define _osver (*__p__osver())<br>&gt;#define _winver (*__p__winver())<br>&gt;#define _winmajor (*__p__winmajor())<br>&gt;#define _winminor (*__p__winminor())<br><br>これで WinNT/2000 で command.com を実行することは避けられます。<br><br>Windows 版の Mule のソースコードと、MSDN のコードサンプル：<br>[Platform SDK]-[Reference]-[Code Samples]-{<br>　[WINBASE]-{<br>　　[IO]-[ASYNCIO],<br>　　[IPC]-[INHERIT]<br>　},<br>　[WINUI]-[CONGUI]<br>}<br>には非同期入出力の例などがあって役に立つと思います。 <br></div></section>
     <ul><li><section><h1 id=669>
     <span class="no">[669]</span>
-    <a class="title" href="#669">どのソースを見てますか？ Re2: 外部コマンド実行</a>
+    <a class="thread-title" href="#669">どのソースを見てますか？ Re2: 外部コマンド実行</a>
     <span class="author">げんた</span>
     <time datetime="2001-08-31T14:23:11">2001年08月31日 14:23</time></h1>
     <div class="body">&gt;8091行目：<br>&gt;&gt; StartupInfo.hStdOutput = hFile;<br>&gt;&gt; StartupInfo.hStdError = hFile;<br>これはnakataniさんが書いたやつではないですか？<br>この部分はGAEさんが書き直しているので，指摘されたコードは使われていません．<br>(でも，同じことやってるようですが)<br><br>どうせなら新しい版(共有フォルダにあります)を見ていただいた方がよろしいかと思います．<br></div></section>
     <ul><li><section><h1 id=673>
     <span class="no">[673]</span>
-    <a class="title" href="#673">Re:どのソースを見てますか？ Re2: 外部コマンド実行</a>
+    <a class="thread-title" href="#673">Re:どのソースを見てますか？ Re2: 外部コマンド実行</a>
     <span class="author">ああああ</span>
     <time datetime="2001-09-11T11:39:59">2001年09月11日 11:39</time></h1>
     <div class="body">▼ げんたさん<br>&gt; どうせなら新しい版(共有フォルダにあります)を見ていただいた方がよろしいかと思います．<br><br>どうも。見ました。参加します。</div></section>
     </li></ul></li></ul></li></ul></li><li><section><h1 id=463>
     <span class="no">[463]</span>
-    <a class="title" href="#463">Re:6/25付</a>
+    <a class="thread-title" href="#463">Re:6/25付</a>
     <span class="author">げんた</span>
     <time datetime="2001-06-26T00:57:27">2001年06月26日 00:57</time></h1>
     <div class="body">もう１点直したところ。<br><br>新しいエディタ画面を開くところ(CEditApp::OpenNewEditor)でnakataniさんはウィンドウが確実に開くのを待つためのウェイトループを入れていましたが、OpenNewEditorを以前改修したときに追加したsyncパラメータ（ウィンドウが開かれるまで待つ）を利用するようにしました。</div></section>
     </li><li><section><h1 id=465>
     <span class="no">[465]</span>
-    <a class="title" href="#465">Re:6/25付</a>
+    <a class="thread-title" href="#465">Re:6/25付</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-06-26T01:44:24">2001年06月26日 01:44</time></h1>
     <div class="body">▼ げんたさん<br>&gt; ソース一式からはJre32関連の3ファイルとresourceディレクトリ以下のファイル(bitmap/cursor/icon)を取り除いてありますので、このままではコンパイルできません。<br>やけのやんぱち？(^_^;)　リソース全部を消すことはないと思うけど。。。まあ、いいです。それとJre32のうちのJREUSR.HはHPからDLできるファイルと実質同じです。(記事327で既に述べた)<br>だからコンパイルにホントに必要なのは2ファイルだけです。unofficialrelease.txtその他少し修正しました。おかしかったら再修正して下さい。なおテキストファイル自身の著作権がまだ明記されてません。明日にでも置いときます。</div></section>
     </li><li><section><h1 id=467>
     <span class="no">[467]</span>
-    <a class="title" href="#467">Re:VBのアウトライン解析</a>
+    <a class="thread-title" href="#467">Re:VBのアウトライン解析</a>
     <span class="author">すとーにぃ</span>
     <time datetime="2001-06-26T21:47:09">2001年06月26日 21:47</time></h1>
     <div class="body">6/25のソースをコンパイルしてみました。<br>VBのアウトライン解析がついて、感動です。<br>これで、プロパティプロシージャを認識してくれると、更にうれしいのですが。<br><br>| Public Property Get foo() As XXX<br>| Public Property Let foo (hogehoge As XXX)<br></div></section>

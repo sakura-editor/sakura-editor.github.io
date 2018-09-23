@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行記号の真ん中にカーソルが</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>改行記号の真ん中にカーソルが | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">1865</span>
-    <a class="title" href="1865.html#1865">改行記号の真ん中にカーソルが</a></div>
+    <a class="thread-title" href="1865.html#1865">改行記号の真ん中にカーソルが</a></div>
     <ul><li><div class="list-title">
     <span class="no">1961</span>
-    <a class="title" href="1865.html#1961">RE: 改行記号の真ん中にカーソルが</a></div>
+    <a class="thread-title" href="1865.html#1961">RE: 改行記号の真ん中にカーソルが</a></div>
     <ul><li><div class="list-title">
     <span class="no">1967</span>
-    <a class="title" href="1865.html#1967">RE2: 改行記号の真ん中にカーソルが</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1865>
+    <a class="thread-title" href="1865.html#1967">RE2: 改行記号の真ん中にカーソルが</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1865>
     <span class="no">[1865]</span>
-    <a class="title" href="#1865">改行記号の真ん中にカーソルが</a>
+    <a class="thread-title" href="#1865">改行記号の真ん中にカーソルが</a>
     <span class="author">みく</span>
     <time datetime="2002-05-16T21:24:15">2002年05月16日 21:24</time></h1>
     <div class="body"><br>以下の手順で再現します。<br>・サクラエディタで編集し行末にカーソルがある状態で終了する。<br>・別のエディタで同じ行を編集し2バイト以上削除して保存する。<br>・サクラエディタで開く。<br>カーソルが改行記号の真ん中に出現します。<br><br>多分、内部保持CDocLineの行データに改行文字が1文字分あるのに<br>それを考慮してないためだと思うのですが。<br></div></section>
     <ul><li><section><h1 id=1961>
     <span class="no">[1961]</span>
-    <a class="title" href="#1961">RE: 改行記号の真ん中にカーソルが</a>
+    <a class="thread-title" href="#1961">RE: 改行記号の真ん中にカーソルが</a>
     <span class="author">みく</span>
     <time datetime="2002-06-01T13:23:26">2002年06月01日 13:23</time></h1>
     <div class="body"><br>多分これ↓で直るはず。<br><br>GetLengthWithoutEOL() に const を付けます。<br>CaretPos_Phys2Log()で行長取得で m_nLength の代わりに GetLengthWithoutEOL() を使います。<br><br>-----<br><br>CLayout.h<br>&#9;int&#9;GetLengthWithoutEOL() const {&#9;return m_nLength - (m_cEol.GetLen() ? 1 : 0);&#9;};<br><br>CLayoutMgr.cpp:CaretPos_Phys2Log()<br>&#9;//nDataLen = pLayout-&gt;m_nLength;<br>&#9;nDataLen = pLayout-&gt;GetLengthWithoutEOL();<br></div></section>
     <ul><li><section><h1 id=1967>
     <span class="no">[1967]</span>
-    <a class="title" href="#1967">RE2: 改行記号の真ん中にカーソルが</a>
+    <a class="thread-title" href="#1967">RE2: 改行記号の真ん中にカーソルが</a>
     <span class="author">やざき</span>
     <time datetime="2002-06-04T21:45:26">2002年06月04日 21:45</time></h1>
     <div class="body"><br>&gt;CLayout.h<br>&gt;&#9;int&#9;GetLengthWithoutEOL() const {&#9;return m_nLength - (m_cEol.GetLen() ? 1 : 0);&#9;};<br>&gt;<br>&gt;CLayoutMgr.cpp:CaretPos_Phys2Log()<br>&gt;&#9;//nDataLen = pLayout-&gt;m_nLength;<br>&gt;&#9;nDataLen = pLayout-&gt;GetLengthWithoutEOL();<br><br>取り込みました。Thanx!<br></div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>マクロヘルプについて</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>マクロヘルプについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2124</span>
-    <a class="title" href="2124.html#2124">マクロヘルプについて</a></div>
+    <a class="thread-title" href="2124.html#2124">マクロヘルプについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">2125</span>
-    <a class="title" href="2124.html#2125">Re:マクロヘルプについて</a></div>
+    <a class="thread-title" href="2124.html#2125">Re:マクロヘルプについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">2127</span>
-    <a class="title" href="2124.html#2127">Re2:マクロヘルプについて</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2124>
+    <a class="thread-title" href="2124.html#2127">Re2:マクロヘルプについて</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2124>
     <span class="no">[2124]</span>
-    <a class="title" href="#2124">マクロヘルプについて</a>
+    <a class="thread-title" href="#2124">マクロヘルプについて</a>
     <span class="author">もか</span>
     <time datetime="2014-02-08T20:12:04">2014年02月08日 20:12</time></h1>
     <div class="body">macro.chmは古いし、今はsakura.chmにマクロ関数の情報も載っているので<br>ほぼ同内容のものを2つメンテするのは非効率じゃないでしょうか。<br>サンプルなどはsakura.chmに統合しmacro.chmは廃止にして<br>どちらかというと元のS_MAC.KHPを、(JScript/VBScript用にして)更新してほしいと思います。<br>----<br>と思っていたのですが、<br>&gt;&gt;help:659<br>から、svnに登録済みなんですね。<br>しかも最近noviceさんが更新して対応済みみたいですね。知りませんでした。<br>リリース手順がまた増えますが、2.1.1.1 のmacro.chmは、svnの更新版に差し替えてほしいです。<br></div></section>
     <ul><li><section><h1 id=2125>
     <span class="no">[2125]</span>
-    <a class="title" href="#2125">Re:マクロヘルプについて</a>
+    <a class="thread-title" href="#2125">Re:マクロヘルプについて</a>
     <span class="author">novice</span>
     <time datetime="2014-02-08T23:10:35">2014年02月08日 23:10</time></h1>
     <div class="body">▼ もかさん<br>&gt; macro.chmは古いし、今はsakura.chmにマクロ関数の情報も載っているので<br>&gt; ほぼ同内容のものを2つメンテするのは非効率じゃないでしょうか。<br><br>実際にメンテナンスして気が付きましたが、sakura.chmの内容をコピーしているだけなので、ご指摘の通り必要な作業なのかは若干疑問があります。<br><br><br>&gt; リリース手順がまた増えますが、2.1.1.1 のmacro.chmは、svnの更新版に差し替えてほしいです。<br><br>作業途中ですが、リリースするのは特に問題ないです。<br></div></section>
     <ul><li><section><h1 id=2127>
     <span class="no">[2127]</span>
-    <a class="title" href="#2127">Re2:マクロヘルプについて</a>
+    <a class="thread-title" href="#2127">Re2:マクロヘルプについて</a>
     <span class="author">syat</span>
     <time datetime="2014-02-09T12:13:19">2014年02月09日 12:13</time></h1>
     <div class="body">次のインストーラには更新したmacro.chmとplugin.chmを同梱しようと思います。<br>（前回もUchiさんからplugin.chm同梱の依頼があったのですが、読んでみて我ながらひどい文章だなと思ったため見送りました。ごめんなさい）<br><br>▼ もかさん<br>&gt; macro.chmは古いし、今はsakura.chmにマクロ関数の情報も載っているので<br>&gt; ほぼ同内容のものを2つメンテするのは非効率じゃないでしょうか。<br><br>本体ヘルプの「マクロ」の下にマクロヘルプを組み込み、各コマンドのページにある関数仕様は徐々にマクロヘルプへのリンクに置き換えていくのはどうでしょう。<br>プラグインもマクロヘルプの書きっぷりに合わせて並べて置けばよいとおもいます。<br><br></div></section>

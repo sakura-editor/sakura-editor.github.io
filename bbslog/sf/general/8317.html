@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現で指数表記から小数点表記にして取りだしできますか</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現で指数表記から小数点表記にして取りだしできますか | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">8317</span>
-    <a class="title" href="8317.html#8317">正規表現で指数表記から小数点表記にして取りだしできますか</a></div>
+    <a class="thread-title" href="8317.html#8317">正規表現で指数表記から小数点表記にして取りだしできますか</a></div>
     <ul><li><div class="list-title">
     <span class="no">8318</span>
-    <a class="title" href="8317.html#8318">Re:正規表現で指数表記から小数点表記にして取りだしできますか</a></div>
+    <a class="thread-title" href="8317.html#8318">Re:正規表現で指数表記から小数点表記にして取りだしできますか</a></div>
     <ul><li><div class="list-title">
     <span class="no">8320</span>
-    <a class="title" href="8317.html#8320">Re2:正規表現で指数表記から小数点表記にして取りだしできますか</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=8317>
+    <a class="thread-title" href="8317.html#8320">Re2:正規表現で指数表記から小数点表記にして取りだしできますか</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8317>
     <span class="no">[8317]</span>
-    <a class="title" href="#8317">正規表現で指数表記から小数点表記にして取りだしできますか</a>
+    <a class="thread-title" href="#8317">正規表現で指数表記から小数点表記にして取りだしできますか</a>
     <span class="author">ろろ</span>
     <time datetime="2018-03-17T04:09:11">2018年03月17日 04:09</time></h1>
     <div class="body">指数表記　1.234E+2　4.321E+5<br>↓<br>123.4　432100<br>よろしくお願いします。<br></div></section>
     <ul><li><section><h1 id=8318>
     <span class="no">[8318]</span>
-    <a class="title" href="#8318">Re:正規表現で指数表記から小数点表記にして取りだしできますか</a>
+    <a class="thread-title" href="#8318">Re:正規表現で指数表記から小数点表記にして取りだしできますか</a>
     <span class="author">berryzplus</span>
     <time datetime="2018-03-19T01:25:11">2018年03月19日 01:25</time></h1>
     <div class="body">▼ ろろさん<br>&gt; 指数表記　1.234E+2　4.321E+5<br>&gt; ↓<br>&gt; 123.4　432100<br>&gt; よろしくお願いします。<br><br>sakuraの標準機能では不可能です。<br>マクロでなら実現できるかも知れません。<br><br>本家PERLの正規表現には/eオプションというのがあって、<br>パターンマッチした文字列を置換する際に、<br>置換文字列を式として扱う、という動作を指定できます。<br><a href=http://www.kent-web.com/perl/chap7.html target=_top><nobr>http://<wbr>www.<wbr>kent-<wbr>web.<wbr>com/<wbr>perl/<wbr>chap7.<wbr>html</nobr></a><br><br>PERLで書くと、こんな感じ。<br>(-?[0-9]*\.(?:[0-9]*))[Ee]([\+\-][0-9]+)<br>  ↓<br>$1 * ( 10 ** $2 )<br>　注: PERLの「**」はN乗を計算する演算子。<br><br>RubyとかJavascriptとかでも理屈は同じです。<br>Eの前と後を別々に取り出して乗算してやればよいです。<br></div></section>
     <ul><li><section><h1 id=8320>
     <span class="no">[8320]</span>
-    <a class="title" href="#8320">Re2:正規表現で指数表記から小数点表記にして取りだしできますか</a>
+    <a class="thread-title" href="#8320">Re2:正規表現で指数表記から小数点表記にして取りだしできますか</a>
     <span class="author">ろろ</span>
     <time datetime="2018-03-19T22:27:48">2018年03月19日 22:27</time></h1>
     <div class="body">▼ berryzplusさん<br>ありがとうございます。<br>&gt; Eの前と後を別々に取り出して乗算してやればよいです。<br>グループ化,gensubがわからなかったので,<br>awkのsplitで対応しました。<br>{<br>split($2, a, "E");split($3, b, "E");<br>print a[1] * ( 10 ** a[2] ) " " b[1] * ( 10 ** b[2] )<br>}<br></div></section>

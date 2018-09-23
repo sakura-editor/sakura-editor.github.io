@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>矩形置換不具合？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>矩形置換不具合？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">8292</span>
-    <a class="title" href="8292.html#8292">矩形置換不具合？</a></div>
+    <a class="thread-title" href="8292.html#8292">矩形置換不具合？</a></div>
     <ul><li><div class="list-title">
     <span class="no">8293</span>
-    <a class="title" href="8292.html#8293">Re:矩形置換不具合？</a></div>
+    <a class="thread-title" href="8292.html#8293">Re:矩形置換不具合？</a></div>
     </li><li><div class="list-title">
     <span class="no">8294</span>
-    <a class="title" href="8292.html#8294">Re:矩形置換不具合？</a></div>
+    <a class="thread-title" href="8292.html#8294">Re:矩形置換不具合？</a></div>
     <ul><li><div class="list-title">
     <span class="no">8295</span>
-    <a class="title" href="8292.html#8295">Re2:矩形置換不具合？</a></div>
+    <a class="thread-title" href="8292.html#8295">Re2:矩形置換不具合？</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">8296</span>
-    <a class="title" href="8292.html#8296">Re:矩形置換不具合？</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=8292>
+    <a class="thread-title" href="8292.html#8296">Re:矩形置換不具合？</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8292>
     <span class="no">[8292]</span>
-    <a class="title" href="#8292">矩形置換不具合？</a>
+    <a class="thread-title" href="#8292">矩形置換不具合？</a>
     <span class="author">ark</span>
     <time datetime="2017-11-28T00:53:55">2017年11月28日 00:53</time></h1>
     <div class="body">矩形置換を行うと、矩形選択範囲外の文字も置換されてしまうようです。<br>*1<br>123456785<br>1234567895<br>の、5桁目のみを矩形選択し5をXに置換すると、<br>1234X678X<br>1234X67895<br>となってしまいます。（9列目まで置換してしまいます。）<br><br>*2<br>155<br>1565<br>の、2桁目のみを矩形選択し5をXに置換すると、<br>1XX<br>1X65<br>になってしまいます。（3列目まで置換してしまいます。）<br><br>*3<br>156786785<br>1567867895<br>の、2～5桁目のみを矩形選択し5をXに置換すると、<br>1X678678X<br>1X67867895<br>になってしまいます。（9列目まで置換してしまいます。）<br><br>*4<br>15675<br>156785<br>の、2～3桁目のみを矩形選択し5をXに置換すると、<br>1X67X<br>1X6785<br>になってしまいます。（5列目まで置換してしまいます。）<br></div></section>
     <ul><li><section><h1 id=8293>
     <span class="no">[8293]</span>
-    <a class="title" href="#8293">Re:矩形置換不具合？</a>
+    <a class="thread-title" href="#8293">Re:矩形置換不具合？</a>
     <span class="author">AC</span>
     <time datetime="2017-11-28T11:49:19">2017年11月28日 11:49</time></h1>
     <div class="body">調査してみました。こちらです。<br><br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1113/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1113/<wbr></nobr></a><br><br>気長にお待ちください。<br></div></section>
     </li><li><section><h1 id=8294>
     <span class="no">[8294]</span>
-    <a class="title" href="#8294">Re:矩形置換不具合？</a>
+    <a class="thread-title" href="#8294">Re:矩形置換不具合？</a>
     <span class="author">ななし</span>
     <time datetime="2017-11-28T14:14:36">2017年11月28日 14:14</time></h1>
     <div class="body">既存バグかと。<br>矩形選択置換で置換範囲がおかしいバグの修正 <br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1028/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1028/<wbr></nobr></a><br></div></section>
     <ul><li><section><h1 id=8295>
     <span class="no">[8295]</span>
-    <a class="title" href="#8295">Re2:矩形置換不具合？</a>
+    <a class="thread-title" href="#8295">Re2:矩形置換不具合？</a>
     <span class="author">AC</span>
     <time datetime="2017-11-28T14:29:04">2017年11月28日 14:29</time></h1>
     <div class="body">なんだよもう(ごまかし笑い)。<br></div></section>
     </li></ul></li><li><section><h1 id=8296>
     <span class="no">[8296]</span>
-    <a class="title" href="#8296">Re:矩形置換不具合？</a>
+    <a class="thread-title" href="#8296">Re:矩形置換不具合？</a>
     <span class="author">ななし</span>
     <time datetime="2017-11-28T19:05:54">2017年11月28日 19:05</time></h1>
     <div class="body">メモ<br>wikiのbug番号<br><a href=http://sakura.qp.land.to/?BugReport%2F192 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F192</nobr></a><br></div></section>

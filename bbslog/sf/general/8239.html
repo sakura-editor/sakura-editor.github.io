@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現の戻り読みができません</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現の戻り読みができません | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">8239</span>
-    <a class="title" href="8239.html#8239">正規表現の戻り読みができません</a></div>
+    <a class="thread-title" href="8239.html#8239">正規表現の戻り読みができません</a></div>
     <ul><li><div class="list-title">
     <span class="no">8240</span>
-    <a class="title" href="8239.html#8240">Re:正規表現の戻り読みができません</a></div>
+    <a class="thread-title" href="8239.html#8240">Re:正規表現の戻り読みができません</a></div>
     <ul><li><div class="list-title">
     <span class="no">8241</span>
-    <a class="title" href="8239.html#8241">Re2:正規表現の戻り読みができません</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=8239>
+    <a class="thread-title" href="8239.html#8241">Re2:正規表現の戻り読みができません</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8239>
     <span class="no">[8239]</span>
-    <a class="title" href="#8239">正規表現の戻り読みができません</a>
+    <a class="thread-title" href="#8239">正規表現の戻り読みができません</a>
     <span class="author">セイロン</span>
     <time datetime="2017-04-28T04:43:57">2017年04月28日 04:43</time></h1>
     <div class="body">はじめまして。<br>正規表現にバグを見つけたかもしれません。<br>以下の正規表現を「行の頭にはない//」という意図で検索してみました。<br><br>(?&lt;!\r\n)//<br><br>ですが、検索結果に行の頭にある//ばかりでした。<br>不思議だなと思って「!」を削除してみたら、以下のエラーが出ました。<br><br>invalid char in group name &lt;\r\n&gt;<br><br>どうやら「(?&lt;」を名前付き捕獲式集合と勘違いしているようです。<br>こちらで構文を間違っているのでしょうか。<br>でなければ、修正して頂けないでしょうか。<br>どうぞよろしくお願いします。</div></section>
     <ul><li><section><h1 id=8240>
     <span class="no">[8240]</span>
-    <a class="title" href="#8240">Re:正規表現の戻り読みができません</a>
+    <a class="thread-title" href="#8240">Re:正規表現の戻り読みができません</a>
     <span class="author">ds14050</span>
     <time datetime="2017-04-29T00:55:27">2017年04月29日 00:55</time></h1>
     <div class="body">▼ セイロンさん<br><br>サクラエディタはテキストデータを１行ごとに別々に持っているため、<br>検索も１行ごとに行っています。そのため、ある行の頭より前に前の<br>行の改行があるわけではないのです。正規表現には ^ というテキスト<br>全体の頭や行の頭を意味する特殊記号がありますので、こちらを使って<br>ください。こうです (?&lt;!^)// あるいはまたこう (?&lt;=.)//<br><br>&gt;「(?&lt;」を名前付き捕獲式集合と勘違いしているようです。<br><br>正規表現ライブラリになったつもりで考えると、(?&lt; の次に = が来たら<br>戻り読み、! が来たら否定の戻り読み、それ以外なら名前付き捕獲式集合<br>のはずなんだけど、\r\n というのは有効な名前ではない、ってところ<br>でしょうね。<br></div></section>
     <ul><li><section><h1 id=8241>
     <span class="no">[8241]</span>
-    <a class="title" href="#8241">Re2:正規表現の戻り読みができません</a>
+    <a class="thread-title" href="#8241">Re2:正規表現の戻り読みができません</a>
     <span class="author">セイロン</span>
     <time datetime="2017-04-29T04:21:48">2017年04月29日 04:21</time></h1>
     <div class="body">▼ ds14050さん<br>回答してくれてありがとうございます。<br>とても参考になりました。<br>行を別々に扱っていたのですね。<br>お勧めの正規表現で検索できました。<br>ありがとうございました。</div></section>

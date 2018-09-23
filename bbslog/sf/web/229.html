@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アレの処理</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Webトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アレの処理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Webトップへ</a>
+        <li><div class="list-title">
     <span class="no">229</span>
-    <a class="title" href="229.html#229">アレの処理</a></div>
+    <a class="thread-title" href="229.html#229">アレの処理</a></div>
     <ul><li><div class="list-title">
     <span class="no">230</span>
-    <a class="title" href="229.html#230">RE: アレの処理</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=229>
+    <a class="thread-title" href="229.html#230">RE: アレの処理</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=229>
     <span class="no">[229]</span>
-    <a class="title" href="#229">アレの処理</a>
+    <a class="thread-title" href="#229">アレの処理</a>
     <span class="author">すい</span>
     <time datetime="2006-07-22T03:49:36">2006年07月22日 03:49</time></h1>
     <div class="body">また最近多いアレの件ですが。 &gt;&gt;web:177 でも教えていただいたアレの処理。<br><br>処理を<br><br>「投稿データ中にアレによく含まれている単語があったら、<br>　単語１回につき何点と点を付けていき、文章全体での合計点が<br>　とある閾値を越えたらアレと見なす。」<br><br>にしてみてはどうかな？と思ったのですが、どうでしょう？<br><br>例えば perl だと↓この程度で済みますよね。<br><br># ********** #<br>sub&#9;isSPAM{&#9;( &amp;SPAMpoint($_[0]) &gt;= $SPAM )&#9;}<br><br>sub&#9;SPAMpoint{<br>&#9;local&#9;$ten = 0;<br>&#9;if( -r 'spam.txt' ){<br>&#9;&#9;require&#9;'spam.txt';&#9;&#9;# SPAM 単語辞書を読み込む。<br><br>&#9;&#9;local&#9;$buff = $_[0];&#9;# 調査対象の文字列をコピー<br>&#9;&#9;local&#9;$Z = '　';&#9;# 全角スペース文字(正規表現中に直接記述すると perl によってはエラーになるため、一旦、変数に格納してから使う)<br><br>&#9;&#9;# 単語が行をまたぐ場合などの対策<br>&#9;&#9;$buff =~ s/$Z//go;&#9;# 全角スペース文字を削除<br>&#9;&#9;$buff =~ s/\s//go;&#9;# 改行やスペース文字類を削除<br><br>&#9;&#9;for( $j=0 ; $j &lt; $#SPAM ; $j+=2 ){<br>&#9;&#9;&#9;local( $word , $point ) = ( $SPAM[$j] , $SPAM[$j+1] );<br>#&#9;&#9;&#9;print&#9;"検索[$word/$point点]\n";&#9;# for DEBUG<br>&#9;&#9;&#9;while( $buff =~ s/$word// ){&#9;# 見つけた単語は調査対象文字列から削除していく<br>#&#9;&#9;&#9;&#9;print&#9;"-&gt;$word:$point\n"&#9;if( $deb );&#9;# for DEBUG<br>&#9;&#9;&#9;&#9;$ten += $point;<br>&#9;&#9;&#9;}<br>&#9;&#9;}<br>&#9;}<br>&#9;$SPAM = $SPAM || 10;&#9;# 閾値 $SPAM が定義されていなかったら(単語辞書が無かったとか)初期値 10 にしておく。<br>&#9;$ten;<br>}<br># ********** #<br><br>使う辞書ファイル spam.txt は↓こんな雰囲気で。<br><br>--↓-- spam.txt --↓--<br># スパム判定用辞書&#9;2006/07/21 22時<br><br># スパム書込みと見なす閾値。合計点が、この点 以上ならスパム書込みとみなす。<br>$SPAM = 6;<br><br># 単語 , 得点 の配列。(単語は正規表現可能)<br># 見つけた単語を文字列から削除しながら調査していくので、検索する単語順に定義すること。<br># (連想配列を使うと、配列参照時の順番が変わってしまうため、普通の配列を使用している)<br>@SPAM = (<br>&#9;'出会い'&#9;&#9;,  3.5,<br>&#9;'エロ'&#9;&#9;&#9;,  3,<br>&#9;'えろ'&#9;&#9;&#9;,  3,<br>&#9;'素人'&#9;&#9;&#9;,  3,<br>&#9;'男女'&#9;&#9;&#9;,  4,<br>&#9;'女性'&#9;&#9;&#9;,  4,<br>&#9;'女'&#9;&#9;&#9;,  3,<br>&#9;'レア(画像|動画)'&#9;,  5,<br>&#9;'動画'&#9;&#9;&#9;,  4,<br>);<br>----------<br><br>使い方は<br><br># ----------<br>$TEXT = &lt;&lt; '_TEXT_';<br>&#9;テスト用の書込み文章 貼り付け位置<br>_TEXT_<br># ----------<br><br>if( &amp;isSPAM($TEXT) ){&#9;print&#9;"*スパムだ*\n"&#9;}&#9;# 判定だけ<br><br>print&#9;&amp;SPAMpoint($TEXT) . "点\n";&#9;&#9;# 点数を得る場合<br><br>な、感じで。<br>&amp;isSPAM(); や &amp;SPAMpoint(); にタイトル,本文,URLなどの文字列を全て連結して投げる。<br>&amp;isSPAM( $FORM{'subject'} . $FORM{'body'} .～～ ); とか。<br></div></section>
     <ul><li><section><h1 id=230>
     <span class="no">[230]</span>
-    <a class="title" href="#230">RE: アレの処理</a>
+    <a class="thread-title" href="#230">RE: アレの処理</a>
     <span class="author">すい</span>
     <time datetime="2006-07-22T03:51:30">2006年07月22日 03:51</time></h1>
     <div class="body">単語辞書(spam.txt) に、よく含まれている単語をバカスカ登録しまくる。<br>・まともな文章にも よく含まれ得る単語は低得点<br>・まともな文章には滅多に含まれない単語は高得点<br>・こんな単語があったら絶対アレだ!! という単語には、一発で閾値を越えるような超高得点<br>を定義しまくる。<br><br>試してみたら、こんな単純な処理でも単に単語を多量に登録するだけで<br>それなりに精度が上がるっぽい。<br>SPAMメールの中から単語を拾いまくって登録しまくるとか。<br><br>ちなみにマイナス点(この単語があったら、その分、まともな文章とみなす)も定義可能! (って、要らんかな)<br><br>このフィルタを突破されて何か書き込まれてしまったら、辞書ファイル spam.txt に<br>お気楽に単語追加して、それだけサーバーへ転送で更新完了。<br><br>「単語が１回でも含まれていたらアウト」方式だと悪影響(普通の文章まで跳ねられる)が<br>出ないように単語追加には神経使うけど、この方式だと、比較的お気楽に単語追加しても平気。<br>単語を何個か追加したからって、すぐに悪影響が出るって事は殆ど無いみたい。<br><br>いうまでもなく単語は掲示板の用途を考慮して登録するのが吉。<br>短い英単語なんかは、この掲示板だとソースコード投稿時に変数とかの<br>一部にマッチしてSPAM扱いになる危険性が高いから登録しない、とか。<br>'料金'という単語は世間的には普通に使われるけど、この掲示板では普通なら<br>使われないから高得点で単語登録しちゃえ、とか。<br><br><br>ちょっと過去ログで試して見た感じ「名前が"エロ"い人は不利だな (;^^;)」と。<br>エロマントパーティさん とか ピエロさん とか。<br>辞書の先頭の方で "ピエロ" とかの単語を 0点で登録しておけば平気になりますが。<br>(いわゆる除外条件あつかい)<br></div></section>

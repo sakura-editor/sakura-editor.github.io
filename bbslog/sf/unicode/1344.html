@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現クリッカブルURLについて</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現クリッカブルURLについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1344</span>
-    <a class="title" href="1344.html#1344">正規表現クリッカブルURLについて</a></div>
+    <a class="thread-title" href="1344.html#1344">正規表現クリッカブルURLについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">1347</span>
-    <a class="title" href="1344.html#1347">Re: 正規表現クリッカブルURLについて</a></div>
+    <a class="thread-title" href="1344.html#1347">Re: 正規表現クリッカブルURLについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">1357</span>
-    <a class="title" href="1344.html#1357">Re2: 正規表現クリッカブルURLについて</a></div>
+    <a class="thread-title" href="1344.html#1357">Re2: 正規表現クリッカブルURLについて</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">1457</span>
-    <a class="title" href="1344.html#1457">ファイルパスクリッカブル設定改善パッチ</a></div>
+    <a class="thread-title" href="1344.html#1457">ファイルパスクリッカブル設定改善パッチ</a></div>
     <ul><li><div class="list-title">
     <span class="no">1478</span>
-    <a class="title" href="1344.html#1478">Commit報告(Chg) ファイルパス正規表現キーワード修正</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1344>
+    <a class="thread-title" href="1344.html#1478">Commit報告(Chg) ファイルパス正規表現キーワード修正</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1344>
     <span class="no">[1344]</span>
-    <a class="title" href="#1344">正規表現クリッカブルURLについて</a>
+    <a class="thread-title" href="#1344">正規表現クリッカブルURLについて</a>
     <span class="author">syat</span>
     <time datetime="2010-07-23T06:24:55">2010年07月23日 06:24</time></h1>
     <div class="body">一般掲示板&gt;&gt;data:7218でタイプ別設定基本の正規表現をデフォルトOFFにしたほうが良いのでは、という話が出ています。<br><br>現象としては、1.6.5.0で正規表現キーワードのクリッカブルURL化ができるようになり、ついでに「タイプ別：基本」にC:\～～と\\～～の初期設定が入っています。ただこの初期パターンは空白を含むパスに対応してないので、C:\Program Files配下でGrepしたりすると残念な感じになります。<br><br>この設定を入れたのは自分で(PatchUnicode:2794449)、初心者の人が一から正規表現書くのはつらいので何も設定せずともリンクになったほうがよい、嫌なら設定削除すればよい、というのが当時の考えでした。<br>でも今考えるとGrep結果のパスがリンクになるのは正直邪魔だし、正規表現URLもそれなりに知名度できたっぽいので、初期設定なしでも良いかと思っています。<br>みなさんどう思われますか？<br><br>案は<br>１．初期設定やめる<br>２．「基本」ではなく「テキスト」にしてGrepは回避する<br>３．もっと賢い初期パターンを考える　※空白とか括弧とかの完全解決は難しそう。<br></div></section>
     <ul><li><section><h1 id=1347>
     <span class="no">[1347]</span>
-    <a class="title" href="#1347">Re: 正規表現クリッカブルURLについて</a>
+    <a class="thread-title" href="#1347">Re: 正規表現クリッカブルURLについて</a>
     <span class="author">もか</span>
     <time datetime="2010-07-24T03:05:17">2010年07月24日 03:05</time></h1>
     <div class="body">&gt;２．「基本」ではなく「テキスト」にしてGrepは回避する<br>に1票入れておきます。<br><br>&gt;３．もっと賢い初期パターンを考える　※空白とか括弧とかの完全解決は難しそう。<br>ファイルの後ろの括弧とか、パラメータ類が厳しいですね。<br>MSDNが aa012345(=vs.85).aspx みたいになってるのとか。うむむ。<br>ついでに、この前の正規表現キーワードと同じで、行頭からのデータを渡していないので、<br>[http://日本語.jp] のようなものを[と]で識別してリンクにできないという制限もあるはず(未確認)。<br>前後を見れれば、「""で囲えばURLをリンクにできますよ」とか案内できるようになります。<br><br>削除しても戻せるように、現在のデフォルト値をヘルプに貼っておいたので、<br>初期値を消しても、前と同じものを追加したいだけなら、ヘルプを見てコピーすればOK。<br>ただし試してはいないけど、*と+が使われていて、長さ制限を入れていないので、行データのほうが長いときに、<br>パフォーマンスと安定性が少し不安だったりします。<br></div></section>
     <ul><li><section><h1 id=1357>
     <span class="no">[1357]</span>
-    <a class="title" href="#1357">Re2: 正規表現クリッカブルURLについて</a>
+    <a class="thread-title" href="#1357">Re2: 正規表現クリッカブルURLについて</a>
     <span class="author">syat</span>
     <time datetime="2010-08-09T18:00:34">2010年08月09日 18:00</time></h1>
     <div class="body">▼ もかさん<br>質問投げっぱなしですみません。回答ありがとうございます。<br><br>&gt; &gt;３．もっと賢い初期パターンを考える　※空白とか括弧とかの完全解決は難しそう。<br>&gt; MSDNが aa012345(=vs.85).aspx みたいになってるのとか。<br>ファイル名では(も)も当たり前に使いますしね。<br><br>&gt; ついでに、この前の正規表現キーワードと同じで、行頭からのデータを渡していないので、<br>&gt; [http://日本語.jp] のようなものを[と]で識別してリンクにできないという制限もあるはず(未確認)。<br>&gt; 前後を見れれば、「""で囲えばURLをリンクにできますよ」とか案内できるようになります。<br>某Outlook（無料じゃない方）の余り知られていない機能で、デフォルトは空白を含めないけど、&lt; &gt;で囲むとその間はリンク化するというのがありました。<br>正規表現で書くなら↓こんな感じ（鬼車限定）<br>/(?&lt;=&lt;)(http:\/\/|\\\\|\w:\\).*(?=&gt;)|(\b<br>http:\/\/|\\\\|\w:\\)[^ ]*/k<br>（お？意外といいかも）<br><br>&gt; ただし試してはいないけど、*と+が使われていて、長さ制限を入れていないので、行データのほうが長いときに、<br>&gt; パフォーマンスと安定性が少し不安だったりします。<br>基本設定に入れるのは結構危険だったかもしれません。とりあえずテキストに移動しようと思います。<br></div></section>
     </li></ul></li><li><section><h1 id=1457>
     <span class="no">[1457]</span>
-    <a class="title" href="#1457">ファイルパスクリッカブル設定改善パッチ</a>
+    <a class="thread-title" href="#1457">ファイルパスクリッカブル設定改善パッチ</a>
     <span class="author">syat</span>
     <time datetime="2011-01-20T07:02:27">2011年01月20日 07:02</time></h1>
     <div class="body">半年前のネタで恐縮ですが、正式リリース前の自分の宿題てことで。。<br><br>タイプ別「基本」に入っている、ファイルパスをクリッカブルにする設定を、「テキスト」に移動するパッチを作りました。<br>PatchUnicode:3162023<br><br>正規表現ライブラリには鬼車以外にも bregexp.dll や Bregexp.dll for SAKURA があるとヘルプには書いてありますが、UNICODE版に対応しているのは鬼車だけなので実質一択なのかな？、とふと思いました。<br><br></div></section>
     <ul><li><section><h1 id=1478>
     <span class="no">[1478]</span>
-    <a class="title" href="#1478">Commit報告(Chg) ファイルパス正規表現キーワード修正</a>
+    <a class="thread-title" href="#1478">Commit報告(Chg) ファイルパス正規表現キーワード修正</a>
     <span class="author">syat</span>
     <time datetime="2011-02-01T06:44:56">2011年02月01日 06:44</time></h1>
     <div class="body">リビジョン1881でコミットしました。</div></section>

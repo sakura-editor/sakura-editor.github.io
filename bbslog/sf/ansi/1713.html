@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>キーワードセット削除に関するバグ？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>キーワードセット削除に関するバグ？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1713</span>
-    <a class="title" href="1713.html#1713">キーワードセット削除に関するバグ？</a></div>
+    <a class="thread-title" href="1713.html#1713">キーワードセット削除に関するバグ？</a></div>
     <ul><li><div class="list-title">
     <span class="no">1714</span>
-    <a class="title" href="1713.html#1714">Re:キーワードセット削除に関するバグ？</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1713>
+    <a class="thread-title" href="1713.html#1714">Re:キーワードセット削除に関するバグ？</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1713>
     <span class="no">[1713]</span>
-    <a class="title" href="#1713">キーワードセット削除に関するバグ？</a>
+    <a class="thread-title" href="#1713">キーワードセット削除に関するバグ？</a>
     <span class="author">もか</span>
     <time datetime="2002-03-08T01:22:30">2002年03月08日 01:22</time></h1>
     <div class="body">はじめまして。いつも使わせていただいています<br><br>本題ですが、キーワードセットを削除すると、<br>タイプ別設定の強調キーワードの設定が<br>削除されたキーワードセットより後のセットだけがずれます<br><br>CPropComKeyword.cpp(ssrc_2002-03-07_ver)の312行目あたりに<br><br>for( i = 0; i &lt; MAX_TYPES; ++i ){<br>    if( nIndex1 &lt; m_Types[i].m_nKeyWordSetIdx ){<br>        m_Types[i].m_nKeyWordSetIdx--;<br>    }<br>    if( nIndex1 &lt; m_Types[i].m_nKeyWordSetIdx2 ){<br>    m_Types[i].m_nKeyWordSetIdx2--;<br>  }<br>}<br><br>と追加すれば直るみたいです。<br>あと、sakura.exe.manifestの文字コードが<br>ファイル中にはUFT8と書いてあるのにSJISになっています<br>よろしくおねがいします</div></section>
     <ul><li><section><h1 id=1714>
     <span class="no">[1714]</span>
-    <a class="title" href="#1714">Re:キーワードセット削除に関するバグ？</a>
+    <a class="thread-title" href="#1714">Re:キーワードセット削除に関するバグ？</a>
     <span class="author">やざき</span>
     <time datetime="2002-03-08T08:00:16">2002年03月08日 08:00</time></h1>
     <div class="body">▼ もかさん<br>2つありますが、一方だけ反応します。XP関係は...(^^;<br><br>&gt; 本題ですが、キーワードセットを削除すると、<br>&gt; タイプ別設定の強調キーワードの設定が<br>&gt; 削除されたキーワードセットより後のセットだけがずれます<br><br>確かに。。。取り込みます。ありがとうございます。<br></div></section>

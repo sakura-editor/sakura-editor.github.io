@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現キーワードの優先順位</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現キーワードの優先順位 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5556</span>
-    <a class="title" href="5556.html#5556">正規表現キーワードの優先順位</a></div>
+    <a class="thread-title" href="5556.html#5556">正規表現キーワードの優先順位</a></div>
     <ul><li><div class="list-title">
     <span class="no">5559</span>
-    <a class="title" href="5556.html#5559">RE: 正規表現キーワードの優先順位</a></div>
+    <a class="thread-title" href="5556.html#5559">RE: 正規表現キーワードの優先順位</a></div>
     <ul><li><div class="list-title">
     <span class="no">5562</span>
-    <a class="title" href="5556.html#5562">Re2: 正規表現キーワードの優先順位</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5556>
+    <a class="thread-title" href="5556.html#5562">Re2: 正規表現キーワードの優先順位</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5556>
     <span class="no">[5556]</span>
-    <a class="title" href="#5556">正規表現キーワードの優先順位</a>
+    <a class="thread-title" href="#5556">正規表現キーワードの優先順位</a>
     <span class="author">beta</span>
     <time datetime="2006-11-02T18:51:57">2006年11月02日 18:51</time></h1>
     <div class="body">正規表現キーワードは、上の方に行くほど優先順位が高くなるとなっていますが、<br>aabbccddeeff<br>という文字列に対して<br>/ccdd/k　正規表現キーワード1（赤）<br>/a.*f/k　正規表現キーワード2（青）<br>とすると全部青になります。<br>cとdだけ赤で残りが青になる、ということだと思っていたのですが。<br>最長一致が優先した上で、同じ長さの文字列に対しては上の方に記述したものが優先される、ということなのでしょうか。</div></section>
     <ul><li><section><h1 id=5559>
     <span class="no">[5559]</span>
-    <a class="title" href="#5559">RE: 正規表現キーワードの優先順位</a>
+    <a class="thread-title" href="#5559">RE: 正規表現キーワードの優先順位</a>
     <span class="author">すい</span>
     <time datetime="2006-11-03T00:47:27">2006年11月03日 00:47</time></h1>
     <div class="body">&gt;正規表現キーワードは、上の方に行くほど優先順位が高くなるとなっていますが、<br><br>違います。<br>各正規表現がマッチした時の列(?)位置(横方向の位置)が前の物が優先。<br><br>&gt;aabbccddeeff<br>&gt;という文字列に対して<br>&gt;/ccdd/k　正規表現キーワード1（赤）<br>&gt;/a.*f/k　正規表現キーワード2（青）<br><br>この場合、<br><br>aabbccddeeff というテキストに対して<br>/ccdd/k ← 5文字目からマッチする<br>/a.*f/k ← 1文字目からマッチする<br><br>なので、1文字目からマッチする /a.*f/k が優先されます。<br><br>そして「a.*f」という正規表現ですから「aabbccddeeff」の範囲が<br>（青）になります。一度（青）として決定した「aabbccddeeff」<br>の範囲の文字に対しては、以後、他の正規表現キーワードが適用<br>される事はありません。<br><br>ちなみに、正規表現がマッチした時の列(?)位置(横方向の位置)が<br>同じ物が複数あった場合には、正規表現キーワードの設定欄で<br>上に定義されている物が優先になります。<br></div></section>
     <ul><li><section><h1 id=5562>
     <span class="no">[5562]</span>
-    <a class="title" href="#5562">Re2: 正規表現キーワードの優先順位</a>
+    <a class="thread-title" href="#5562">Re2: 正規表現キーワードの優先順位</a>
     <span class="author">beta</span>
     <time datetime="2006-11-03T12:13:31">2006年11月03日 12:13</time></h1>
     <div class="body">理解しました。ありがとうございます。</div></section>

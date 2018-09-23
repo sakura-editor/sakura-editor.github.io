@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ？起動できません</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バグ？起動できません | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2724</span>
-    <a class="title" href="2724.html#2724">バグ？起動できません</a></div>
+    <a class="thread-title" href="2724.html#2724">バグ？起動できません</a></div>
     <ul><li><div class="list-title">
     <span class="no">2725</span>
-    <a class="title" href="2724.html#2725">Re: バグ？起動できません</a></div>
+    <a class="thread-title" href="2724.html#2725">Re: バグ？起動できません</a></div>
     <ul><li><div class="list-title">
     <span class="no">2729</span>
-    <a class="title" href="2724.html#2729">Re2: バグ？起動できません</a></div>
+    <a class="thread-title" href="2724.html#2729">Re2: バグ？起動できません</a></div>
     <ul><li><div class="list-title">
     <span class="no">2731</span>
-    <a class="title" href="2724.html#2731">Re3: バグ？起動できません</a></div>
+    <a class="thread-title" href="2724.html#2731">Re3: バグ？起動できません</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">2732</span>
-    <a class="title" href="2724.html#2732">Re2: バグ？起動できません</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2724>
+    <a class="thread-title" href="2724.html#2732">Re2: バグ？起動できません</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2724>
     <span class="no">[2724]</span>
-    <a class="title" href="#2724">バグ？起動できません</a>
+    <a class="thread-title" href="#2724">バグ？起動できません</a>
     <span class="author">えん</span>
     <time datetime="2003-02-15T23:33:37">2003年02月15日 23:33</time></h1>
     <div class="body">初めまして。いつも便利に使わせて頂いております。<br><br>最近、久しぶりにアップデートしてみたところ、sakura.exeを起動しても、<br>ブルースクリーンになってしまう現象が起きています。<br>ブルーになっても文字化けが酷く、<br>どんなエラーがでているのか確認できません。<br><br>古いモノから順に落としてみてチェックしてみたのですが、<br>1.3.5.5(2002-10-30)からダメなようです。<br>さらに、ソースからコンパイルで試したところ、<br>CImageListMgr.cppが原因のようです。<br>1.3.5.4での上記ファイル(Rev.1.8)に差し替えて、<br>コンパイルするとうまくいくのです。<br>どうも、起動高速化を図っているあたりで<br>引っかかっているようなのですが・・・<br><br>過去ログを検索してみてもそれらしい発言はないようなので、<br>機種固有の問題かとも思います。<br><br>PC環境は、<br>VAIO Z505GR/K(PenIII650MHz, Mem256MB)、Win2kSP3,IE6SP1<br>です。<br><br>もし、何らかの対処が可能であるならお願いしたいと思います。<br><br>＃毎回自前でコンパイルするのも何だかなぁ・・・なので。<br><br>よろしくお願いします。</div></section>
     <ul><li><section><h1 id=2725>
     <span class="no">[2725]</span>
-    <a class="title" href="#2725">Re: バグ？起動できません</a>
+    <a class="thread-title" href="#2725">Re: バグ？起動できません</a>
     <span class="author">げんた</span>
     <time datetime="2003-02-17T00:47:13">2003年02月17日 00:47</time></h1>
     <div class="body">&gt;CImageListMgr.cppが原因のようです。<br>&gt;どうも、起動高速化を図っているあたりで<br>&gt;引っかかっているようなのですが・・・<br>この部分は、ツールバーイメージを登録するときに1行ずつ12回登録していたのを横1列のイメージに内部的に変換してから一括して登録するようにしました。<br>それがブルースクリーンの直接の原因になるとすると、ドライバ周りの問題かと思います。アプリケーションが原因だとアプリケーションエラーにはなってもブルースクリーンには普通なりません。<br>ビデオドライバが原因である可能性はありませんか。最新のものを使っているでしょうか。<br><br>&gt;VAIO Z505GR/K(PenIII650MHz, Mem256MB)、Win2kSP3,IE6SP1<br>同一機種を持っている方の報告をお願いします。<br></div></section>
     <ul><li><section><h1 id=2729>
     <span class="no">[2729]</span>
-    <a class="title" href="#2729">Re2: バグ？起動できません</a>
+    <a class="thread-title" href="#2729">Re2: バグ？起動できません</a>
     <span class="author">もか</span>
     <time datetime="2003-02-17T15:31:03">2003年02月17日 15:31</time></h1>
     <div class="body">▼ げんたさん<br>&gt;ビデオドライバが原因である可能性はありませんか。<br><br>&gt;&gt; VAIO Z505GR/K(PenIII650MHz, Mem256MB)、Win2kSP3,IE6SP1<br>&gt; 同一機種を持っている方の報告をお願いします。<br>VAIOをもってないのですが、検索したらそれらしい項目を発見しましたので、<br>いらぬお節介かもしれませんが、報告しておきます。<br><br>http://vcl.vaio.sony.co.jp/download/W-N07-U17-0.html<br>のビデオドライバーのアップデートで【解決される問題】に、<br>&gt; PCGA-VC1/A を接続して動作させた場合、アプリケーション起動時に青画面になることがある。（PCG-F59DK のみ） <br>括弧でPCG-F59DKのみ と記載されていますが、【対象製品】にPCG-Z505GR/Kも含まれているので、解消されるかもしれません。<br></div></section>
     <ul><li><section><h1 id=2731>
     <span class="no">[2731]</span>
-    <a class="title" href="#2731">Re3: バグ？起動できません</a>
+    <a class="thread-title" href="#2731">Re3: バグ？起動できません</a>
     <span class="author">えん</span>
     <time datetime="2003-02-17T18:01:16">2003年02月17日 18:01</time></h1>
     <div class="body">▼ もかさん<br>&gt; ▼ げんたさん<br>&gt; &gt;ビデオドライバが原因である可能性はありませんか。<br>&gt; <br>&gt; &gt;&gt; VAIO Z505GR/K(PenIII650MHz, Mem256MB)、Win2kSP3,IE6SP1<br>&gt; &gt; 同一機種を持っている方の報告をお願いします。<br>&gt; VAIOをもってないのですが、検索したらそれらしい項目を発見しましたので、<br>&gt; いらぬお節介かもしれませんが、報告しておきます。<br><br>返信ありがとうございます。<br>アップデート(6.02.00T)は以前に行っております。<br>昔、それで動かなかったゲームが動いたりした記憶が有ります。<br><br>うーん、やっぱり、地道にバージョンアップごとに、<br>コンパイルするのが良いのかなぁ。</div></section>
     </li></ul></li><li><section><h1 id=2732>
     <span class="no">[2732]</span>
-    <a class="title" href="#2732">Re2: バグ？起動できません</a>
+    <a class="thread-title" href="#2732">Re2: バグ？起動できません</a>
     <span class="author">みく</span>
     <time datetime="2003-02-17T19:15:19">2003年02月17日 19:15</time></h1>
     <div class="body"><br>&gt;アプリケーションが原因だとアプリケーションエラーにはなってもブルースクリーンには普通なりません。<br><br>脱線:<br>以前 NT4.0 で MessageBox の引数に NULL を指定したら<br>ブルースクリーンになったことがあります。<br>Win98ではアプリケーションエラーで済んだのに...<br>恐るべしマイクロソ...<br></div></section>

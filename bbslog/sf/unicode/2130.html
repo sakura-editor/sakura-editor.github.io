@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>GetDocumentation</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>GetDocumentation | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2130</span>
-    <a class="title" href="2130.html#2130">GetDocumentation</a></div>
+    <a class="thread-title" href="2130.html#2130">GetDocumentation</a></div>
     <ul><li><div class="list-title">
     <span class="no">2131</span>
-    <a class="title" href="2130.html#2131">Re: GetDocumentation</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2130>
+    <a class="thread-title" href="2130.html#2131">Re: GetDocumentation</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2130>
     <span class="no">[2130]</span>
-    <a class="title" href="#2130">GetDocumentation</a>
+    <a class="thread-title" href="#2130">GetDocumentation</a>
     <span class="author">anonymous</span>
     <time datetime="2014-02-14T19:42:20">2014年02月14日 19:42</time></h1>
     <div class="body">掲示板で指摘されているGetDocumentationの問題は<br><a href=http://sourceforge.net/p/sakura-editor/patches/152/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patches/<wbr>152/<wbr></nobr></a><br>の最後のコメントで答えが出てますが放置されてますね。<br><br>実行確認してないので申し訳ないですが、以下のような感じだと思います。<br><br>virtual /* [local] */ HRESULT STDMETHODCALLTYPE GetDocumentation( <br>/* [in] */ MEMBERID memid,<br>/* [out] */ BSTR __RPC_FAR *pBstrName,<br>/* [out] */ BSTR __RPC_FAR *pBstrDocString,<br>/* [out] */ DWORD __RPC_FAR *pdwHelpContext,<br>/* [out] */ BSTR __RPC_FAR *pBstrHelpFile)<br>{<br>  // Feb. 08, 2004 genta<br>  // とりあえず全部NULLを返す (情報無し)<br>  if(pBstrName != NULL) *pBstrName = SysAllocString(m_MethodsRef[memid].Name)<br>; //これでいいのかな？<br>  //if(pBstrName != NULL) *pBstrName = SysAllocString(L"");<br>  if(pBstrDocString != NULL) *pBstrDocString = SysAllocString(L"");<br>  if(pdwHelpContext != NULL) *pdwHelpContext = SysAllocString(L"");<br>  if(pBstrHelpFile != NULL) *pBstrHelpFile = SysAllocString(L"");<br>  return S_OK ;<br>}<br><br>少なくとも元のpBstrName = NULL;はスタック上の変数を書き換えてるだけです。<br><br>ActiveScriptRubyの呼び出し側は<br><a href=https://github.com/arton/RScript20 target=_top><nobr>https://<wbr>github.<wbr>com/<wbr>arton/<wbr>RScript2<wbr>0</nobr></a><br>のeventsink.cppの111行目あたりです。<br>最後のコメントに掲載されてるコードと同じでした。<br></div></section>
     <ul><li><section><h1 id=2131>
     <span class="no">[2131]</span>
-    <a class="title" href="#2131">Re: GetDocumentation</a>
+    <a class="thread-title" href="#2131">Re: GetDocumentation</a>
     <span class="author">もか</span>
     <time datetime="2014-02-14T20:57:16">2014年02月14日 20:57</time></h1>
     <div class="body">情報ありがとうございます。<br>MEMBERID memidは、対応するメソッドID名を返せばいいんですね。<br><br>memid == -1のときに自分の名前を返すようにする必要があるのと、範囲チェックが必要みたいです。<br>ちょっとウェブで検索した感じでもRScript20のコードでも、エラーを返す時は呼び出し側のBSTRの後処理が行われないので引数に値を設定してはいけないみたいです。<br>もっともRScriptの場合は、サクラ側のGetContainingTypeLibなどが実装されていないので、GetDocumentationまで到達しないと思います。<br>もし呼び出し側がBSTRを最初にNULLで初期化しないような実装があった場合は、今の実装だと落ちるかもしれません。<br>こんな感じでどうでしょうか。<br>m_sNameは、m_MethodsRef同様CIfObjから引っ張ってくるようにしたうえで、<br>GetDocumentation(...){<br>&#9;//&#9;2014.02.12 各パラメータを設定するように<br>&#9;if( memid == -1 ){<br>&#9;&#9;if( pBstrName ){<br>&#9;&#9;&#9;pBstrName = SysAllocString( m_sName.c_str() );<br>&#9;&#9;}<br>&#9;}else if( 0 &lt;= memid &amp;&amp; memid &lt; m_MethodsRef.size() ){<br>&#9;&#9;if( pBstrName ){<br>&#9;&#9;&#9;pBstrName = SysAllocString( m_MethodsRef[memid].Name );<br>&#9;&#9;}<br>&#9;}else{<br>&#9;&#9;return TYPE_E_ELEMENTNOTFOUND;<br>&#9;}<br>&#9;if( pBstrDocString ){<br>&#9;&#9;*pBstrDocString = SysAllocString(L"");<br>&#9;}<br>&#9;if( pdwHelpContext ){<br>&#9;&#9;*pdwHelpContext = 0;<br>&#9;}<br>&#9;if( pBstrHelpFile ){<br>&#9;&#9;*pBstrHelpFile = SysAllocString(L"");<br>&#9;}<br>&#9;return S_OK;<br>}<br><br>---<br>GetFuncDesc, GetNamesでmemidの範囲チェックをしていないけどいいんだろうか。<br></div></section>

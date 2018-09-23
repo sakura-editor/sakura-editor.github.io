@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>[質問]強調キーワードをある条件で強調したくないとき</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>[質問]強調キーワードをある条件で強調したくないとき | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3611</span>
-    <a class="title" href="3611.html#3611">[質問]強調キーワードをある条件で強調したくないとき</a></div>
+    <a class="thread-title" href="3611.html#3611">[質問]強調キーワードをある条件で強調したくないとき</a></div>
     <ul><li><div class="list-title">
     <span class="no">3612</span>
-    <a class="title" href="3611.html#3612">Re:[質問]強調キーワードをある条件で強調したくないとき</a></div>
+    <a class="thread-title" href="3611.html#3612">Re:[質問]強調キーワードをある条件で強調したくないとき</a></div>
     <ul><li><div class="list-title">
     <span class="no">3613</span>
-    <a class="title" href="3611.html#3613">Re2:[質問]強調キーワードをある条件で強調したくないとき</a></div>
+    <a class="thread-title" href="3611.html#3613">Re2:[質問]強調キーワードをある条件で強調したくないとき</a></div>
     <ul><li><div class="list-title">
     <span class="no">3614</span>
-    <a class="title" href="3611.html#3614">Re3:[質問]強調キーワードをある条件で強調したくないとき</a></div>
+    <a class="thread-title" href="3611.html#3614">Re3:[質問]強調キーワードをある条件で強調したくないとき</a></div>
     <ul><li><div class="list-title">
     <span class="no">3615</span>
-    <a class="title" href="3611.html#3615">Re4:[質問]強調キーワードをある条件で強調したくないとき</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3611>
+    <a class="thread-title" href="3611.html#3615">Re4:[質問]強調キーワードをある条件で強調したくないとき</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3611>
     <span class="no">[3611]</span>
-    <a class="title" href="#3611">[質問]強調キーワードをある条件で強調したくないとき</a>
+    <a class="thread-title" href="#3611">[質問]強調キーワードをある条件で強調したくないとき</a>
     <span class="author">WB</span>
     <time datetime="2004-01-29T11:49:34">2004年01月29日 11:49</time></h1>
     <div class="body">最近このエディタを見つけ使用しております。<br>このエディタではじめて正規表現を使い始めいろいろ四苦八苦しながらやっているのですが、<br>強調キーワードに登録した語でも強調させないようにしたいとき何か良い方法はないでしょうか？<br>例えば、ERRという強調キーワードは"ERR.STEP","5.ERR"というときなど"ERR"以外の語と連結して<br>いる場合は強調させたくないといった場合なのですが．．．<br>素人丸出しの質問ですみません。</div></section>
     <ul><li><section><h1 id=3612>
     <span class="no">[3612]</span>
-    <a class="title" href="#3612">Re:[質問]強調キーワードをある条件で強調したくないとき</a>
+    <a class="thread-title" href="#3612">Re:[質問]強調キーワードをある条件で強調したくないとき</a>
     <span class="author">しみづ</span>
     <time datetime="2004-01-29T18:05:12">2004年01月29日 18:05</time></h1>
     <div class="body"><br>/[^.]ERR[^.]/k<br>などは解の一つでしょう。<br></div></section>
     <ul><li><section><h1 id=3613>
     <span class="no">[3613]</span>
-    <a class="title" href="#3613">Re2:[質問]強調キーワードをある条件で強調したくないとき</a>
+    <a class="thread-title" href="#3613">Re2:[質問]強調キーワードをある条件で強調したくないとき</a>
     <span class="author">(全略)</span>
     <time datetime="2004-01-29T18:45:48">2004年01月29日 18:45</time></h1>
     <div class="body">▼ しみづさん<br>&gt; <br>&gt; /[^.]ERR[^.]/k<br>&gt; などは解の一つでしょう。<br>ブラケット内での.はピリオドそのものを示してしまいませんか?<br><br>/(^|\s)ERR($|\s)/k<br>ですかね、ただ前後の空白を食っちゃっていやですけど<br><br><br>/(^|(?&lt;=\s))ERR(?=$|\s)k<br>って出来れば一番ベターなんですが^^; 無理ですね</div></section>
     <ul><li><section><h1 id=3614>
     <span class="no">[3614]</span>
-    <a class="title" href="#3614">Re3:[質問]強調キーワードをある条件で強調したくないとき</a>
+    <a class="thread-title" href="#3614">Re3:[質問]強調キーワードをある条件で強調したくないとき</a>
     <span class="author">しみづ</span>
     <time datetime="2004-01-29T20:31:38">2004年01月29日 20:31</time></h1>
     <div class="body"><br>&gt;ブラケット内での.はピリオドそのものを示してしまいませんか?<br><br>　ええ、え？　ピリオドと連結してる場合のことでしょ？<br></div></section>
     <ul><li><section><h1 id=3615>
     <span class="no">[3615]</span>
-    <a class="title" href="#3615">Re4:[質問]強調キーワードをある条件で強調したくないとき</a>
+    <a class="thread-title" href="#3615">Re4:[質問]強調キーワードをある条件で強調したくないとき</a>
     <span class="author">(全略)</span>
     <time datetime="2004-01-29T22:15:53">2004年01月29日 22:15</time></h1>
     <div class="body">▼ しみづさん<br>&gt; <br>&gt; &gt;ブラケット内での.はピリオドそのものを示してしまいませんか?<br>&gt; <br>&gt; 　ええ、え？　ピリオドと連結してる場合のことでしょ？<br>確かにそうみたいですね、勘違いしてました<br>余計なこと言ってしまいました、、</div></section>

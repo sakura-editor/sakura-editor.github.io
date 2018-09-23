@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>MIME エンコードのバグレポート</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>MIME エンコードのバグレポート | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">1800</span>
-    <a class="title" href="1800.html#1800">MIME エンコードのバグレポート</a></div>
+    <a class="thread-title" href="1800.html#1800">MIME エンコードのバグレポート</a></div>
     <ul><li><div class="list-title">
     <span class="no">1810</span>
-    <a class="title" href="1800.html#1810">RE: MIME エンコードのバグレポート</a></div>
+    <a class="thread-title" href="1800.html#1810">RE: MIME エンコードのバグレポート</a></div>
     <ul><li><div class="list-title">
     <span class="no">1815</span>
-    <a class="title" href="1800.html#1815">RE2: MIME エンコードのバグレポート</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1800>
+    <a class="thread-title" href="1800.html#1815">RE2: MIME エンコードのバグレポート</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1800>
     <span class="no">[1800]</span>
-    <a class="title" href="#1800">MIME エンコードのバグレポート</a>
+    <a class="thread-title" href="#1800">MIME エンコードのバグレポート</a>
     <span class="author">いまでぃ</span>
     <time datetime="2002-05-04T00:43:34">2002年05月04日 00:43</time></h1>
     <div class="body">はじめまして、いまでぃ＠ＤＩＯＮと申します。<br><br>さて、サクラエディタのバグ？っぽいのを発見したので<br>報告します。  既に報告／発見済のバグでしたらごめんなさい。<br><br>★ 概要 : 壊れた MIME エンコードされたヘッダが存在するファイルを<br>       開くとファイルのサイズが変になる。<br><br>★ 再現方法 :<br> 1. まず次の内容のファイルを JIS で作成します。<br><br>----次の行から----<br>いろは<br>=?iso-2022-jp?B?GyRCI00jSSNNI0U<br>bKEI=?=<br>にほへ<br>とちり<br>ぬるを<br>----前の行まで----<br><br> 2. 次にメニューの「ツール(T)」「共通設定(C)...」を選択、<br>    「ファイル」タブを選択、<br>    「ファイルを開いたときにMIMEエンコード‥‥」に<br>    チェックが入っていなければ入れる。<br><br> 3. 「OK」を選択した後、一旦ウィンドウを閉じて同ファイル<br>    を開きなおす。<br><br> 4. すると表示結果は<br><br>----次の行から----<br>いろは<br>にほへ<br> $<br>----前の行まで (３行目行頭は本当は 0x1b です。) ----<br><br>    となり、ファイルエンドが不当な位置になったり、<br>    表示がおかしくなったりします。<br><br>    MIME メッセージの切る場所によって表示が変わります。<br>    使用バージョンは 1.2.107.2 です。<br>    1.2.105.3 とか 1.3 系 (5月1日版) でも同じでした。<br><br>私は普段当該オプションを使用しないので積極的に直して<br>欲しいという訳ではございません。<br>バグが直るまではデフォルト時の当該オプションがオフに<br>なるようにしたほうがよいのではないかと思います。<br><br>以上です。<br></div></section>
     <ul><li><section><h1 id=1810>
     <span class="no">[1810]</span>
-    <a class="title" href="#1810">RE: MIME エンコードのバグレポート</a>
+    <a class="thread-title" href="#1810">RE: MIME エンコードのバグレポート</a>
     <span class="author">やざき</span>
     <time datetime="2002-05-07T13:16:51">2002年05月07日 13:16</time></h1>
     <div class="body"><br>&gt;バグが直るまではデフォルト時の当該オプションがオフに<br>&gt;なるようにしたほうがよいのではないかと思います。<br><br>私もそう思います。<br>とりあえず、デフォルトはオフに直しちゃいます。<br><br>これって何が原因なのでしょう？ そしてサクラエディタでどうにかするべきことなのかしらん？<br>（MIME全然わかんないので） &gt; 詳しい人<br></div></section>
     <ul><li><section><h1 id=1815>
     <span class="no">[1815]</span>
-    <a class="title" href="#1815">RE2: MIME エンコードのバグレポート</a>
+    <a class="thread-title" href="#1815">RE2: MIME エンコードのバグレポート</a>
     <span class="author">げんた</span>
     <time datetime="2002-05-08T00:08:44">2002年05月08日 00:08</time></h1>
     <div class="body">&gt;これって何が原因なのでしょう？ そしてサクラエディタでどうにかするべきことなのかしらん？<br>現在は?=という末尾を探して突き進んでいるために、最後がちゃんと閉じられていないと後続のデータが失われてしまうのだと思います。<br><br>MIMEで来るべきでない文字列が来たら変換をあきらめるように直そうとしましたが、今日のところはまだうまく動いておりません。<br><br>ところで、「Base64をDecodeして保存」という機能がありますけど、これ一般的なメールソフトのDecode速度と比べたらかなり遅いです。Base64のDecodeアルゴリズムも見直した方が良いのかもしれません。<br><br>ヘッダの変換では変換機能は内部で使っていますけど、今回の問題は変換の仕組みとは関係ないと思っています。<br></div></section>

@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>固定タブ位置移動 PerlScript</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>固定タブ位置移動 PerlScript | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">227</span>
-    <a class="title" href="227.html#227">固定タブ位置移動 PerlScript</a></div>
+    <a class="thread-title" href="227.html#227">固定タブ位置移動 PerlScript</a></div>
     <ul><li><div class="list-title">
     <span class="no">228</span>
-    <a class="title" href="227.html#228">Re:固定タブ位置移動 PerlScript</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=227>
+    <a class="thread-title" href="227.html#228">Re:固定タブ位置移動 PerlScript</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=227>
     <span class="no">[227]</span>
-    <a class="title" href="#227">固定タブ位置移動 PerlScript</a>
+    <a class="thread-title" href="#227">固定タブ位置移動 PerlScript</a>
     <span class="author">りーや</span>
     <time datetime="2005-11-20T23:29:37">2005年11月20日 23:29</time></h1>
     <div class="body"># 固定タブ位置で後方移動  NextTab.pls<br>@TabPos = (7, 8, 12, 40, 73);&#9;# Tab位置を昇順に指定<br>MoveHistSet();&#9;# 現在位置を移動履歴に登録<br>$CurCol = 0 + ExpandParameter('$x');&#9;# 現在の桁位置(col)<br>GoLineEnd();&#9;# 行末に移動(折り返し単位)<br>$EndCol = 0 + ExpandParameter('$x');&#9;# 現在の桁位置(col)<br>MoveHistPrev();&#9;# 移動履歴:前へ<br>@WkList = grep {$_ &gt; $CurCol} @TabPos;<br>$NextPos = shift @WkList;<br>if($NextPos){<br>  if($NextPos &gt;= $EndCol) {<br>    GoLineEnd();&#9;# 行末に移動(折り返し単位)<br>    if($NextPos &gt; $EndCol) {<br>      $blanks = sprintf('%' . ($NextPos - $EndCol) . 's', ' ');<br>      InsText($blanks);&#9;# テキストを貼り付け<br>    }<br>  } else {<br>    for($i=0; ($i + $CurCol) &lt; $NextPos; $i++) {<br>      Right();&#9;# カーソル右移動<br>    }<br>  }<br>} else {<br>  GoLineEnd();&#9;# 行末に移動(折り返し単位)<br>  Right();&#9;# カーソル右移動<br>}<br>#...............................................................................<br>#...............................................................................<br><br><br># 固定タブ位置で前方移動  PrevTab.pls<br>@TabPos = (7, 8, 12, 40, 73);&#9;# Tab位置を昇順に指定<br>$CurCol = 0 + ExpandParameter('$x');&#9;# 現在の桁位置(col)<br>@WkList = grep {$_ &lt; $CurCol} @TabPos;<br>$NextPos = pop @WkList;<br>if($NextPos){<br>  for($i=0; ($CurCol - $i) &gt; $NextPos; $i++) {<br>    Left();&#9;# カーソル左移動<br>  }<br>} else {<br>  GoLineTop(0);&#9;# 行頭に移動(折り返し単位)<br>  Left();&#9;# カーソル左移動<br>}<br>#...............................................................................<br></div></section>
     <ul><li><section><h1 id=228>
     <span class="no">[228]</span>
-    <a class="title" href="#228">Re:固定タブ位置移動 PerlScript</a>
+    <a class="thread-title" href="#228">Re:固定タブ位置移動 PerlScript</a>
     <span class="author">りーや</span>
     <time datetime="2005-11-20T23:31:11">2005年11月20日 23:31</time></h1>
     <div class="body">ユーザ（一般）会議室の方で COBOL の話題が出てたので<br>遊びで米国から Free Fujitsu COBOL をダウン。<br><br>もうちょっと使い易くしたくて作ったのが上です。<br>COBOLのコードや固定位置のデータ入力に役立つかと・・<br><br>ついでが、以下です。<br>先頭行のナンバーに基づいてナンバリングし直します。<br><br># リナンバリング  ReNumber.pls<br>MoveHistSet();&#9;# 現在位置を移動履歴に登録<br>$LineMax = GetLineCount(0);&#9;# 全論理行数の取得<br>GoFileTop();&#9;# ファイルの先頭に移動<br>$Line = ExpandParameter('$y') + 0;<br>$Num = ExpandParameter('$C');&#9;# カーソル位置の単語<br>$Len = length($Num);<br>exit 0 if($Num !~ /\d+/);<br><br>$Num =~ /0*$/;<br>$Inc = ("1" . $&amp;) * 1;<br>for($i=2; $i &lt;= $LineMax; $i++){<br>  Jump($i,1);&#9;# 指定行へジャンプ(論理行)<br>  $Num += $Inc;<br>  $outputText = sprintf('%0' . $Len . 'd', $Num);<br>  for($j=0; $j &lt; $Len; $j++){<br>    Right_Sel();&#9;# (選択)カーソル右移動;<br>  }<br>  InsText($outputText);&#9;# テキストを貼り付け<br>}<br>Jump($Line,0);&#9;# 元のカーソル行へジャンプ(物理行)<br>#...............................................................................<br></div></section>

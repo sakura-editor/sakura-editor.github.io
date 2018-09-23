@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>No-Break Spaceの解釈</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>No-Break Spaceの解釈 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6756</span>
-    <a class="title" href="6756.html#6756">No-Break Spaceの解釈</a></div>
+    <a class="thread-title" href="6756.html#6756">No-Break Spaceの解釈</a></div>
     <ul><li><div class="list-title">
     <span class="no">6757</span>
-    <a class="title" href="6756.html#6757">Re:No-Break Spaceの解釈</a></div>
+    <a class="thread-title" href="6756.html#6757">Re:No-Break Spaceの解釈</a></div>
     <ul><li><div class="list-title">
     <span class="no">6758</span>
-    <a class="title" href="6756.html#6758">Re2:No-Break Spaceの解釈</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6756>
+    <a class="thread-title" href="6756.html#6758">Re2:No-Break Spaceの解釈</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6756>
     <span class="no">[6756]</span>
-    <a class="title" href="#6756">No-Break Spaceの解釈</a>
+    <a class="thread-title" href="#6756">No-Break Spaceの解釈</a>
     <span class="author">らいらい</span>
     <time datetime="2008-09-04T10:49:31">2008年09月04日 10:49</time></h1>
     <div class="body">初めまして。<br><br>どこに書き込みをして良いかわかりませんでしたので、<br>こちらに書き込みをさせて頂きます。<br><br>先日、とある文字をコピーしたところうまく貼り付けが出来ませんでした。<br>色々確認したのですが、どうもsakura editorの方で、<br>うまくNo-Break Spaceを解釈出来ていないように見えます。<br>確認したこと、検証したことは以下の通りです。<br><br>■前提環境<br>Windows XP Pro SP3 日本語版<br>Sleipnir2.8.0＋sakura editor1.6.2.0<br><br>■対象サイト<br>ATOK.com - 日本語入力システム「ATOK（エイトック）」や日本語に関する情報のサイト<br><a href=http://www.atok.com/index.html target=_top><nobr>http://<wbr>www.<wbr>atok.<wbr>com/<wbr>index.<wbr>html</nobr></a><br>この配下の"製品情報"、"ATOKとは"、"こんなことができる"、"さらに使いこなす"、TOPの5つです。<br><br>■実際にやってみる<br>各ページを開き、タイトルとURIのコピー（ctrl+shift+c）を実施し、<br>sakura editorに貼り付けすると、正常に貼り付け出来ません。<br><br>■原因？<br>実際にtitleタグを見ると"&amp;nbsp;"が挿入されており、<br>実際にその"&amp;nbsp;"を使ったタイトルに関しては、"&amp;nbsp;"より後が貼り付けされません。<br><br>■謎？<br>上記状態で、タイトルのコピー（ctrl+shift+t）を実施してみました。<br>その状態でも同じようになり、"&amp;nbsp;"より後が貼り付けされません。<br><br>■更に謎？<br>"&amp;nbsp;"が原因か。<br>なるほどと思い、何気なくSleipnirの検索欄に貼り付けしてみたんです。<br>そうすると何故か全て正常に貼り付けされていることがわかりました・・・。<br>順番としては、タイトルのコピー（ctrl+shift+t）→Sleipnirに貼り付け→sakura editorに貼り付け。<br><br>■色々実験？<br>タイトルのコピー（ctrl+shift+t）→何かに貼り付けを実施してみる。<br>sleipnir検索欄　→　○<br>firefox検索欄　→　○<br>Internet Explorer検索欄　→　○<br>NotePad　→　○<br>WordPad　→　○<br>Office 2003 Word　→　○<br>LimeChat2.27　→　△<br>sakura editor　→　×<br><br>■質問？<br>結局、Sleipnirは正常にコピーを実施しているが、<br>アプリ側で"&amp;nbsp;"をうまく解釈出来ていないと思うのですが、どうでしょうか？</div></section>
     <ul><li><section><h1 id=6757>
     <span class="no">[6757]</span>
-    <a class="title" href="#6757">Re:No-Break Spaceの解釈</a>
+    <a class="thread-title" href="#6757">Re:No-Break Spaceの解釈</a>
     <span class="author">なすこじ</span>
     <time datetime="2008-09-05T04:12:51">2008年09月05日 04:12</time></h1>
     <div class="body">▼ らいらいさん<br>・Sleipnirにてnbspを含む文字列をコピーすると、本文からの場合nbspはU+0020、タイトルからの場合U+00a0となる<br>・ペースト時にサクラエディタがunicodeからSJISに変換するが、U+00a0は変換できないためそのまま0xa0,0x00となる<br>・0x00で文字列終了なのでnbsp以降が切れる<br> <br>ANSI版は上記のような状態です。<br>過去に議論があったようですが、なぜかそのままみたいですね。 <br> <br><a href=http://sakura.qp.land.to/?Develop%2F5 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2F5</nobr></a><br>&gt;&gt;data:5686<br>&gt;&gt;data:4244<br>&gt;&gt;dev:3946<br> <br>unicode版ではうまく動きますから、宜しければそちらを使って下さい。<br> <br>あと、うまく動く他のアプリは内部unicodeじゃないでしょうか？<br> <br>ではでは。<br></div></section>
     <ul><li><section><h1 id=6758>
     <span class="no">[6758]</span>
-    <a class="title" href="#6758">Re2:No-Break Spaceの解釈</a>
+    <a class="thread-title" href="#6758">Re2:No-Break Spaceの解釈</a>
     <span class="author">らいらい</span>
     <time datetime="2008-09-05T10:20:18">2008年09月05日 10:20</time></h1>
     <div class="body">▼ なすこじさん<br>ご説明ありがとう御座います。<br>原因がわかれば、すっきりするので助かりました。<br>unicode版を利用したいと思います。<br><br>＞内部unicode<br>すみません。<br>よくわかりませんので、回答出来ません。<br><br>ありがとう御座いました。<br><br>&gt; ▼ らいらいさん<br>&gt; ・Sleipnirにてnbspを含む文字列をコピーすると、本文からの場合nbspはU+0020、タイトルからの場合U+00a0となる<br>&gt; ・ペースト時にサクラエディタがunicodeからSJISに変換するが、U+00a0は変換できないためそのまま0xa0,0x00となる<br>&gt; ・0x00で文字列終了なのでnbsp以降が切れる<br>&gt; <br>&gt; ANSI版は上記のような状態です。<br>&gt; 過去に議論があったようですが、なぜかそのままみたいですね。 <br>&gt; <br>&gt; <a href=http://sakura.qp.land.to/?Develop%2F5 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2F5</nobr></a><br>&gt; &gt;&gt;data:5686<br>&gt; &gt;&gt;data:4244<br>&gt; &gt;&gt;dev:3946<br>&gt; <br>&gt; unicode版ではうまく動きますから、宜しければそちらを使って下さい。<br>&gt; <br>&gt; あと、うまく動く他のアプリは内部unicodeじゃないでしょうか？<br>&gt; <br>&gt; ではでは。</div></section>

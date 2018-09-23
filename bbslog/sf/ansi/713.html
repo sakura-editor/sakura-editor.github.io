@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ドキュメントの管理</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ドキュメントの管理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">713</span>
-    <a class="title" href="713.html#713">ドキュメントの管理</a></div>
+    <a class="thread-title" href="713.html#713">ドキュメントの管理</a></div>
     <ul><li><div class="list-title">
     <span class="no">717</span>
-    <a class="title" href="713.html#717">Re: ドキュメントの管理</a></div>
+    <a class="thread-title" href="713.html#717">Re: ドキュメントの管理</a></div>
     <ul><li><div class="list-title">
     <span class="no">721</span>
-    <a class="title" href="713.html#721">Re2: ドキュメントの管理</a></div>
+    <a class="thread-title" href="713.html#721">Re2: ドキュメントの管理</a></div>
     <ul><li><div class="list-title">
     <span class="no">722</span>
-    <a class="title" href="713.html#722">Re3: ドキュメントの管理</a></div>
+    <a class="thread-title" href="713.html#722">Re3: ドキュメントの管理</a></div>
     </li><li><div class="list-title">
     <span class="no">724</span>
-    <a class="title" href="713.html#724">Re3: ドキュメントの管理</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=713>
+    <a class="thread-title" href="713.html#724">Re3: ドキュメントの管理</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=713>
     <span class="no">[713]</span>
-    <a class="title" href="#713">ドキュメントの管理</a>
+    <a class="thread-title" href="#713">ドキュメントの管理</a>
     <span class="author">nag</span>
     <time datetime="2001-09-30T10:37:20">2001年09月30日 10:37</time></h1>
     <div class="body">このエディタはどのような方法でドキュメントを管理してるんでしょうか？<br>使ってるデータ構造なんかを教えてもらえたら幸いです。<br>探そうと思ったのですが他人のソースコードを読むのは苦手なので(汗<br>一応今作っているエディタの参考にしようと思ってます。</div></section>
     <ul><li><section><h1 id=717>
     <span class="no">[717]</span>
-    <a class="title" href="#717">Re: ドキュメントの管理</a>
+    <a class="thread-title" href="#717">Re: ドキュメントの管理</a>
     <span class="author">げんた</span>
     <time datetime="2001-10-01T12:12:20">2001年10月01日 12:12</time></h1>
     <div class="body">&gt;このエディタはどのような方法でドキュメントを管理してるんでしょうか？<br>&gt;使ってるデータ構造なんかを教えてもらえたら幸いです。<br>1行(改行まで)を１つの文字列として，それを双方向リストに入れています．<br>画面上での折り返しは，折り返し位置を管理する別のクラスで行っています．<br><br>この構造のために折り返し幅を可変にできないなど問題点がありますのでそのまま真似るのはやめた方がいいです．<br><br>↓昔ちょっとだけ書いたメモですが，ソースを追うための役には立つと思います．<br>http://members.tripod.co.jp/sakura_editor/doc/<br></div></section>
     <ul><li><section><h1 id=721>
     <span class="no">[721]</span>
-    <a class="title" href="#721">Re2: ドキュメントの管理</a>
+    <a class="thread-title" href="#721">Re2: ドキュメントの管理</a>
     <span class="author">nag</span>
     <time datetime="2001-10-01T18:47:49">2001年10月01日 18:47</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 1行(改行まで)を１つの文字列として，それを双方向リストに入れています．<br>&gt; 画面上での折り返しは，折り返し位置を管理する別のクラスで行っています．<br>&gt; <br>&gt; この構造のために折り返し幅を可変にできないなど問題点がありますのでそのまま真似るのはやめた方がいいです．<br>&gt; <br>&gt; ↓昔ちょっとだけ書いたメモですが，ソースを追うための役には立つと思います．<br>&gt; http://members.tripod.co.jp/sakura_editor/doc/<br>ありがとうございます。僕の知りたかった内容そのままです。<br>折り返し位置を別のクラスでやるというのはちょっと考えつきませんでした。参考にしたいと思います。<br>ちょっと折り返しは他の処理に比べて難しそうなので。<br>あと紹介してくださったURLも参考にさせていただきます。痒いところに手の届くようなページですね^_^;</div></section>
     <ul><li><section><h1 id=722>
     <span class="no">[722]</span>
-    <a class="title" href="#722">Re3: ドキュメントの管理</a>
+    <a class="thread-title" href="#722">Re3: ドキュメントの管理</a>
     <span class="author">げんた</span>
     <time datetime="2001-10-01T19:44:50">2001年10月01日 19:44</time></h1>
     <div class="body">AFEditやTEditorもソースが公開されているEditorです．<br>(Pascalですが)<br><br><a href=http://home1.infonia.ne.jp/~delphian/delphi/ target=_top><nobr>http://<wbr>home1.<wbr>infonia.<wbr>ne.<wbr>jp/~<wbr>delphian<wbr>/<wbr>delphi/<wbr></nobr></a><br>ここから探せるはず．</div></section>
     </li><li><section><h1 id=724>
     <span class="no">[724]</span>
-    <a class="title" href="#724">Re3: ドキュメントの管理</a>
+    <a class="thread-title" href="#724">Re3: ドキュメントの管理</a>
     <span class="author">げんた</span>
     <time datetime="2001-10-01T19:59:01">2001年10月01日 19:59</time></h1>
     <div class="body">もっと良い物ができたら，このエディタのCORE部分もそれでごっそり置き換えてください．っていうのは虫良すぎ？<br><br>他にも，サクラエディタでは色分け情報をデータに持っておらず描画時にいちいち調査していますが，これだと常に行頭から調べるので横スクロールが遅くなっているのかなと思います．<br><br>あと，Frame - Document - View において，DocumentがFrameにくっついているので，複数ウィンドウ表示とか分割して別ファイル表示とかが不可能です．<br></div></section>

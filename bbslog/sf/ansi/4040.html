@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>コードのメンテ CEditView</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>コードのメンテ CEditView | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">4040</span>
-    <a class="title" href="4040.html#4040">コードのメンテ CEditView</a></div>
+    <a class="thread-title" href="4040.html#4040">コードのメンテ CEditView</a></div>
     <ul><li><div class="list-title">
     <span class="no">4042</span>
-    <a class="title" href="4040.html#4042">Re: コードのメンテ CEditView</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=4040>
+    <a class="thread-title" href="4040.html#4042">Re: コードのメンテ CEditView</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4040>
     <span class="no">[4040]</span>
-    <a class="title" href="#4040">コードのメンテ CEditView</a>
+    <a class="thread-title" href="#4040">コードのメンテ CEditView</a>
     <span class="author">dskoba</span>
     <time datetime="2005-09-10T02:06:37">2005年09月10日 02:06</time></h1>
     <div class="body">・CEditView_New2.cppにあるzenkakkoarr[]，hankakkoarr[]をCEditViewのメンバに変更<br>・上記変数を使うfor文で，ポインタを使わず配列のままアクセス<br><a href=http://www2.wbs.ne.jp/~dskoba/sakura/1560dsk_ceditview_20050910.diff.txt target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>sakura/<wbr>1560dsk_<wbr>ceditvie<wbr>w_200509<wbr>10.<wbr>diff.<wbr>txt</nobr></a><br><br>・for文の終了条件の変更<br><a href=http://www2.wbs.ne.jp/~dskoba/sakura/1560dsk_ceditview_20050910a.diff.txt target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>sakura/<wbr>1560dsk_<wbr>ceditvie<wbr>w_200509<wbr>10a.<wbr>diff.<wbr>txt</nobr></a><br><br>どちらの方がよいだろうか。</div></section>
     <ul><li><section><h1 id=4042>
     <span class="no">[4042]</span>
-    <a class="title" href="#4042">Re: コードのメンテ CEditView</a>
+    <a class="thread-title" href="#4042">Re: コードのメンテ CEditView</a>
     <span class="author">げんた</span>
     <time datetime="2005-09-10T09:48:37">2005年09月10日 09:48</time></h1>
     <div class="body">どっちでも大差ないように思いますが...<br>&gt;・上記変数を使うfor文で，ポインタを使わず配列のままアクセス<br>これは最適化したら生成されるコードはたぶん同じ．<br>&gt;・for文の終了条件の変更<br>番人方式の方が実行時に配列数が変化する場合には便利．<br></div></section>

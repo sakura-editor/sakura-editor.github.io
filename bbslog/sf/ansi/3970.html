@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アウトライン解析１行選択</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アウトライン解析１行選択 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3970</span>
-    <a class="title" href="3970.html#3970">アウトライン解析１行選択</a></div>
+    <a class="thread-title" href="3970.html#3970">アウトライン解析１行選択</a></div>
     <ul><li><div class="list-title">
     <span class="no">3971</span>
-    <a class="title" href="3970.html#3971">Re: アウトライン解析１行選択</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3970>
+    <a class="thread-title" href="3970.html#3971">Re: アウトライン解析１行選択</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3970>
     <span class="no">[3970]</span>
-    <a class="title" href="#3970">アウトライン解析１行選択</a>
+    <a class="thread-title" href="#3970">アウトライン解析１行選択</a>
     <span class="author">ぜっと</span>
     <time datetime="2005-07-05T14:52:09">2005年07月05日 14:52</time></h1>
     <div class="body">リスト状のアウトライン解析表示時、1行選択されるといいなーって思います。<br><br>IE3 or laterですが、拡張スタイル LVS_EX_FULLROWSELECT があります。<br>FAQページによるとすでにツールバーでIE3 or laterな機能を使っていそうな記述があるので、<br>このスタイルを使ってもいいんじゃないかなーって思います。<br>いかがでしょ？<br><br>dwExStyle  = ListView_GetExtendedListViewStyle( hListView );<br>dwExStyle |= LVS_EX_FULLROWSELECT;<br>ListView_SetExtendedListViewStyle( hListView, dwExStyle );<br><br># ListView_SetExtendedListViewStyleEx はIE4 or laterらしいので、<br># IE3 or latorなListView_SetExtendedListViewStyleで。<br></div></section>
     <ul><li><section><h1 id=3971>
     <span class="no">[3971]</span>
-    <a class="title" href="#3971">Re: アウトライン解析１行選択</a>
+    <a class="thread-title" href="#3971">Re: アウトライン解析１行選択</a>
     <span class="author">げんた</span>
     <time datetime="2005-07-06T07:02:06">2005年07月06日 07:02</time></h1>
     <div class="body">たしかに行番号を先頭に持ってきたら選択できるところが狭くなりすぎた気がします．<br></div></section>

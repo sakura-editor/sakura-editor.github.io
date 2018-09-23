@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>VBScriptでMsgBoxとInputBoxを利用可能に</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>VBScriptでMsgBoxとInputBoxを利用可能に | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3921</span>
-    <a class="title" href="3921.html#3921">VBScriptでMsgBoxとInputBoxを利用可能に</a></div>
+    <a class="thread-title" href="3921.html#3921">VBScriptでMsgBoxとInputBoxを利用可能に</a></div>
     <ul><li><div class="list-title">
     <span class="no">3923</span>
-    <a class="title" href="3921.html#3923">RE: VBScriptでMsgBoxとInputBoxを利用可能に</a></div>
+    <a class="thread-title" href="3921.html#3923">RE: VBScriptでMsgBoxとInputBoxを利用可能に</a></div>
     <ul><li><div class="list-title">
     <span class="no">3926</span>
-    <a class="title" href="3921.html#3926">Re2: VBScriptでMsgBoxとInputBoxを利用可能に</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3921>
+    <a class="thread-title" href="3921.html#3926">Re2: VBScriptでMsgBoxとInputBoxを利用可能に</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3921>
     <span class="no">[3921]</span>
-    <a class="title" href="#3921">VBScriptでMsgBoxとInputBoxを利用可能に</a>
+    <a class="thread-title" href="#3921">VBScriptでMsgBoxとInputBoxを利用可能に</a>
     <span class="author">FILE</span>
     <time datetime="2005-04-18T23:08:51">2005年04月18日 23:08</time></h1>
     <div class="body">　こんばんは。<br><br>　Ver. 1.5.2.1(2005-02-04)の CWSH.cpp をベースに変更し、<br>Win95(+IE5.5), WinMe(+IE5.5), WinXP(+IE6)でMsgBoxとInputBox<br>のダイアログが表示される事を確認しました。<br>　(&gt;&gt;dev:3482 の中身が気になりますが…)<br><br>diff --dos -u1 CWSH_bef.cpp CWSH_aft.cpp &gt; CWSH.diff<br><br>--- CWSH_bef.cpp&#9;Mon Jan 31 01:27:52 2005<br>+++ CWSH_aft.cpp&#9;Mon Apr 18 18:00:00 2005<br>@@ -181,5 +181,6 @@<br> <br>-//IActiveScriptSite<br>+//&#9;Apr. 18, 2005 FILE IActiveScriptSiteWindow実装<br>+//IActiveScriptSite, IActiveScriptSiteWindow<br> <br>-class CWSHSite: public ImplementsIUnknown&lt;IActiveScriptSite&gt;<br>+class CWSHSite: public IActiveScriptSite, public IActiveScriptSiteWindow<br> {<br>@@ -188,4 +189,5 @@<br> &#9;ITypeInfo *m_TypeInfo;<br>+&#9;ULONG m_RefCount;<br> public:<br>-&#9;CWSHSite(CWSHClient *AClient): ImplementsIUnknown&lt;IActiveScriptSite&gt;(), m_Client(AClient) <br>+&#9;CWSHSite(CWSHClient *AClient): m_RefCount(0), m_Client(AClient)<br> &#9;{<br>@@ -193,2 +195,30 @@<br> <br>+&#9;virtual ULONG _stdcall AddRef() {<br>+&#9;&#9;return ++m_RefCount;<br>+&#9;}<br>+<br>+&#9;virtual ULONG _stdcall Release() {<br>+&#9;&#9;if(--m_RefCount == 0)<br>+&#9;&#9;{<br>+&#9;&#9;&#9;delete this;<br>+&#9;&#9;&#9;return 0;<br>+&#9;&#9;}<br>+&#9;&#9;return m_RefCount;<br>+&#9;}<br>+<br>+&#9;virtual HRESULT STDMETHODCALLTYPE QueryInterface(<br>+&#9;    /* [in] */ REFIID iid,<br>+&#9;    /* [out] */ void ** ppvObject)<br>+&#9;{<br>+&#9;&#9;*ppvObject = NULL;<br>+<br>+&#9;&#9;if(iid == IID_IActiveScriptSiteWindow){<br>+&#9;&#9;&#9;*ppvObject = static_cast&lt;IActiveScriptSiteWindow*&gt;(this);<br>+&#9;&#9;&#9;++m_RefCount;<br>+&#9;&#9;&#9;return S_OK;<br>+&#9;&#9;}<br>+<br>+&#9;&#9;return E_NOTIMPL;<br>+&#9;}<br>+<br> &#9;virtual HRESULT STDMETHODCALLTYPE GetLCID( <br>@@ -295,2 +325,16 @@<br> &#9;&#9;return S_OK; <br>+&#9;};<br>+<br>+&#9;//&#9;Apr. 18, 2005 FILE IActiveScriptSiteWindow実装<br>+&#9;virtual HRESULT __stdcall GetWindow(<br>+&#9;    /* [out] */ HWND *phwnd)<br>+&#9;{<br>+&#9;&#9;*phwnd = ((CEditView*) m_Client-&gt;m_Data)-&gt;m_pcEditDoc-&gt;m_hWnd;<br>+&#9;&#9;return S_OK;<br>+&#9;}<br>+<br>+&#9;virtual HRESULT __stdcall EnableModeless(<br>+&#9;    /* [in] */ BOOL fEnable)<br>+&#9;{<br>+&#9;&#9;return S_OK;<br> &#9;};<br><br><br>　今回の変更で、特に以下の点が気になっています。<br><br>・GetWindow()でのウィンドウハンドルの取得方法<br>　(モーダルにこだわらなければ、NULLや::GetDesktopWindow()でも良い様ですが)<br>・Visual C++ 6.0以外でもコンパイルや実行が可能かどうか<br>　(特にIActiveScriptSiteWindow)<br>・ImplementsIUnknownを使わない事(&gt;&gt;dev:3347)による、想定外の動作が無いかどうか<br><br>　上記の点、ご検証いただけますでしょうか。<br><br>以上、よろしくお願いいたします。<br></div></section>
     <ul><li><section><h1 id=3923>
     <span class="no">[3923]</span>
-    <a class="title" href="#3923">RE: VBScriptでMsgBoxとInputBoxを利用可能に</a>
+    <a class="thread-title" href="#3923">RE: VBScriptでMsgBoxとInputBoxを利用可能に</a>
     <span class="author">みく</span>
     <time datetime="2005-04-19T18:37:02">2005年04月19日 18:37</time></h1>
     <div class="body"><br>&gt;　(&gt;&gt;dev:3482 の中身が気になりますが…)<br><br>私も、<br>class CWshSite : public IActiveScriptSite,<br>                 public IActiveScriptSiteWindow<br>ってやってますね。<br><br>作りかけで止まってますが、ソースをアップしておきます。<br>ほぼ書き直しているのですが、主な目的はWSHをマクロから<br>分離し、マクロやアウトライン解析からWSHを利用できる<br>ようにしようと(妄想)しました。<br>アウトラインの解析は妄想済みなのですが、ダイアログへの<br>表示の共通化の部分で思考停止中です。<br>どなたか引き継いでいただけると幸いです。<br><br>eGroups:Source/wsh20040320.lzh<br></div></section>
     <ul><li><section><h1 id=3926>
     <span class="no">[3926]</span>
-    <a class="title" href="#3926">Re2: VBScriptでMsgBoxとInputBoxを利用可能に</a>
+    <a class="thread-title" href="#3926">Re2: VBScriptでMsgBoxとInputBoxを利用可能に</a>
     <span class="author">FILE</span>
     <time datetime="2005-04-20T23:27:43">2005年04月20日 23:27</time></h1>
     <div class="body">　ソース、ありがとうございます。<br><br>　ざっと拝見いたしましたが、私がサクラエディタに<br>"Win9x系で動かしつつ、exeのサイズを増やさないように"<br>実装する事は、かなり困難そうです…(力不足)。<br><br>　ところで、(試していないのですが、)ChallengeInt()の<br>代わりにVariantChangeType()という関数は使えないので<br>しょうか？(型変換してくれる様です)<br></div></section>

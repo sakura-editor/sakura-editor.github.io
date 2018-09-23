@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Java7における数値リテラルの変更</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Java7における数値リテラルの変更 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7413</span>
-    <a class="title" href="7413.html#7413">Java7における数値リテラルの変更</a></div>
+    <a class="thread-title" href="7413.html#7413">Java7における数値リテラルの変更</a></div>
     <ul><li><div class="list-title">
     <span class="no">7414</span>
-    <a class="title" href="7413.html#7414">Re:Java7における数値リテラルの変更</a></div>
+    <a class="thread-title" href="7413.html#7414">Re:Java7における数値リテラルの変更</a></div>
     <ul><li><div class="list-title">
     <span class="no">7415</span>
-    <a class="title" href="7413.html#7415">Re2:Java7における数値リテラルの変更</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7413>
+    <a class="thread-title" href="7413.html#7415">Re2:Java7における数値リテラルの変更</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7413>
     <span class="no">[7413]</span>
-    <a class="title" href="#7413">Java7における数値リテラルの変更</a>
+    <a class="thread-title" href="#7413">Java7における数値リテラルの変更</a>
     <span class="author">bitter_fox</span>
     <time datetime="2011-08-04T16:07:41">2011年08月04日 16:07</time></h1>
     <div class="body"><br>初めまして、非常に高機能で使いやすいため愛用させていただいております。<br><br>先日Java7が公式にリリースされましたが、その中で0bで始まる1や0で構成された数値を二進数リテラルとして認める変更や数値の見かけ上の区切り文字_が導入されました。<br>これに伴いJava7の変更に基づいてプログラムを書いた場合サクラエディタでの色づけが乱れてしまいます。<br><br>よろしければ0b1111や1234_5678.9098_7654などと言った物も色づけされるように改善していただけますか？<br>また、どういったものを数値として認めるかをユーザの任意で設定できるようにしてはいかがでしょうか？</div></section>
     <ul><li><section><h1 id=7414>
     <span class="no">[7414]</span>
-    <a class="title" href="#7414">Re:Java7における数値リテラルの変更</a>
+    <a class="thread-title" href="#7414">Re:Java7における数値リテラルの変更</a>
     <span class="author">camellia</span>
     <time datetime="2011-08-06T23:55:23">2011年08月06日 23:55</time></h1>
     <div class="body">&gt; よろしければ0b1111や1234_5678.9098_7654などと言った物も色づけされるように改善していただけますか？<br>[タイプ別設定]-[正規表現キーワード]で任意のルールを作って色分けすることができます。<br><br>（例）<br>正規表現(N)：/\b0b[01_]*\b/k<br>色指定(C)：半角数値<br><br>正規表現(N)：/\b[0-9][0-9_\.]*\b/k<br>色指定(C)：半角数値<br><br>Javaは知らないのでアレですが、この指定でそこそこ使えるかも。細かいとこはご自身で調整してみてください。</div></section>
     <ul><li><section><h1 id=7415>
     <span class="no">[7415]</span>
-    <a class="title" href="#7415">Re2:Java7における数値リテラルの変更</a>
+    <a class="thread-title" href="#7415">Re2:Java7における数値リテラルの変更</a>
     <span class="author">bitter_fox</span>
     <time datetime="2011-08-08T02:30:51">2011年08月08日 02:30</time></h1>
     <div class="body">▼ camelliaさん<br>ご返答ありがとうございます。<br><br>&gt; [タイプ別設定]-[正規表現キーワード]で任意のルールを作って色分けすることができます。<br>正規表現を使って拡張設定できるようになっていたんですね。<br>存じ上げませんでした。<br><br>&gt; Javaは知らないのでアレですが、この指定でそこそこ使えるかも。細かいとこはご自身で調整してみてください。<br>正規表現の例まで書いていただいて本当にありがとうございます。<br>正規表現の勉強も含め、教えていただいた例を元に調整してみたいと思います。<br></div></section>

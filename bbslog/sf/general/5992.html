@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>GREP置換</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>GREP置換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5992</span>
-    <a class="title" href="5992.html#5992">GREP置換</a></div>
+    <a class="thread-title" href="5992.html#5992">GREP置換</a></div>
     <ul><li><div class="list-title">
     <span class="no">5993</span>
-    <a class="title" href="5992.html#5993">RE: GREP置換</a></div>
+    <a class="thread-title" href="5992.html#5993">RE: GREP置換</a></div>
     <ul><li><div class="list-title">
     <span class="no">5996</span>
-    <a class="title" href="5992.html#5996">Re2: GREP置換</a></div>
+    <a class="thread-title" href="5992.html#5996">Re2: GREP置換</a></div>
     <ul><li><div class="list-title">
     <span class="no">5998</span>
-    <a class="title" href="5992.html#5998">Re3: GREP置換</a></div>
+    <a class="thread-title" href="5992.html#5998">Re3: GREP置換</a></div>
     <ul><li><div class="list-title">
     <span class="no">6037</span>
-    <a class="title" href="5992.html#6037">Re4: GREP置換</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5992>
+    <a class="thread-title" href="5992.html#6037">Re4: GREP置換</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5992>
     <span class="no">[5992]</span>
-    <a class="title" href="#5992">GREP置換</a>
+    <a class="thread-title" href="#5992">GREP置換</a>
     <span class="author">K</span>
     <time datetime="2007-04-09T23:05:38">2007年04月09日 23:05</time></h1>
     <div class="body">題名まんまなのですが、GREP結果すべてに置換するいい方法はないでしょうか？<br>過去ログにマクロはあったのですが、GREPウィンドウ以外は全部閉じなきゃいけないとか、微妙に使いにくいです。<br><br>VC#のリファクタリングっぽく使いたいのです。<br>本体の機能としてあってもいいと思うのですが、<br>なかなか実装されないということは難しいのでしょうか・・・<br></div></section>
     <ul><li><section><h1 id=5993>
     <span class="no">[5993]</span>
-    <a class="title" href="#5993">RE: GREP置換</a>
+    <a class="thread-title" href="#5993">RE: GREP置換</a>
     <span class="author">げんた</span>
     <time datetime="2007-04-10T00:15:43">2007年04月10日 00:15</time></h1>
     <div class="body">&gt;題名まんまなのですが、GREP結果すべてに置換するいい方法はないでしょうか？<br>個人的に昔Perlで作ったことはありますけど...<br>Grep結果を書き換えて，それを元のファイル群に書き戻すというツールです．<br>しかし残念なことに行方不明になっています．<br><br>&gt;難しいのでしょうか<br>このエディタでは基本的に1ウィンドウ1ファイルしか扱えないので，他のファイルを書き換えたり，別のデータを読み込んで保持したりといった機能が無いのです．<br><br>(行番号が変わっていないことを前提に)Grep結果を編集して書き戻すだけであれば，一時ファイルに保存して外部ツールを呼びだすマクロと書き戻しツール本体を作ればできるかもしれません．<br></div></section>
     <ul><li><section><h1 id=5996>
     <span class="no">[5996]</span>
-    <a class="title" href="#5996">Re2: GREP置換</a>
+    <a class="thread-title" href="#5996">Re2: GREP置換</a>
     <span class="author">fon</span>
     <time datetime="2007-04-10T20:08:05">2007年04月10日 20:08</time></h1>
     <div class="body">サクラじゃなくて恐縮ですが「複数ファイルを一気に置換」↓とかはどうですかね。<br>http://itpro.nikkeibp.co.jp/article/COLUMN/20060731/244742/<br><br>あとWindowsですらないんですけど、perlとかを使って簡単にやる方法を参考まで。<br>% find . -name '*.[ch]' -or -name '*.cpp' | xargs perl -pi -e 's/BEFORE/AFTER/g;'<br></div></section>
     <ul><li><section><h1 id=5998>
     <span class="no">[5998]</span>
-    <a class="title" href="#5998">Re3: GREP置換</a>
+    <a class="thread-title" href="#5998">Re3: GREP置換</a>
     <span class="author">K</span>
     <time datetime="2007-04-10T21:37:50">2007年04月10日 21:37</time></h1>
     <div class="body">&gt;fonさん<br>複数ファイルを置換するだけなら、いろいろ方法はあるんですが、<br>サクラエディタからシームレスに検索置換できるようにしたいんですよね～<br>これがなかなか難しい。<br><br>&gt; 別のデータを読み込んで保持したりといった機能が無いのです<br>確かに、マクロのコマンドも他ファイルにアクセスするものがないですね。<br>自分でスクリプトを組んでみたんですが、編集中の他のファイルのEditorオブジェクトが取得できず、<br>置換できず挫折しました。<br><br>結局、外部ツールを探しました。<br>サクラのGREPと同等の機能を持つツールがなかなか見つからなかったのですが、<br>Devasというツールが結構よさげです。<br>・シンプルかつ軽い<br>・単語単位の検索ができる。<br>・コマンドで詳細条件が指定できる<br>・フォルダ、検索条件の履歴が残せる<br>・外部エディタとの親和性が高い<br><br>Ctrl+Shift+G に登録して使ってます。<br>GREP代わりになるので、Ctrl+Gでもいいくらい。<br>記念にマクロを。<br><br>// カレントディレクトリを検索フォルダに<br>var path = Editor.GetFilename();<br>var last = path.lastIndexOf("\\");if (last &gt; 0)<br>    path = path.substring(0, last);<br><br>// 選択中の単語を検索語に指定<br>Editor.ExecCommand("Devas\\Devas.exe " + path + " -s $C");<br></div></section>
     <ul><li><section><h1 id=6037>
     <span class="no">[6037]</span>
-    <a class="title" href="#6037">Re4: GREP置換</a>
+    <a class="thread-title" href="#6037">Re4: GREP置換</a>
     <span class="author">Ken</span>
     <time datetime="2007-04-21T11:33:03">2007年04月21日 11:33</time></h1>
     <div class="body">便利そうなので利用させていただきたいと思い割り込ませていただきました。すみません。<br>二点お教えください。<br>もし、サクラエディタがProgram Filesにある場合は最終行は下記のような設定でよいのでしょうか？<br>Editor.ExecCommand("C:\\Program Files\\Devas\\Devas.exe " + path + " -s $C");<br>また、マクロとして登録する場合には、//Devas.macを最初の行として付け加えるのでよいでしょうか？<br><br></div></section>

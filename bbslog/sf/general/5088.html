@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>短形貼り付けのバグ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>短形貼り付けのバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5088</span>
-    <a class="title" href="5088.html#5088">短形貼り付けのバグ</a></div>
+    <a class="thread-title" href="5088.html#5088">短形貼り付けのバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">5090</span>
-    <a class="title" href="5088.html#5090">Re:短形貼り付けのバグ</a></div>
+    <a class="thread-title" href="5088.html#5090">Re:短形貼り付けのバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">5091</span>
-    <a class="title" href="5088.html#5091">Re2:短形貼り付けのバグ</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5088>
+    <a class="thread-title" href="5088.html#5091">Re2:短形貼り付けのバグ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5088>
     <span class="no">[5088]</span>
-    <a class="title" href="#5088">短形貼り付けのバグ</a>
+    <a class="thread-title" href="#5088">短形貼り付けのバグ</a>
     <span class="author">neko</span>
     <time datetime="2006-03-10T22:17:38">2006年03月10日 22:17</time></h1>
     <div class="body">改行文字数ギリギリの状況で、短形貼り付けを行うと、おかしな形に貼り付けられます。<br><br>具体的には<br>|を折り返し位置とします。<br>そして、文字列<br>bbb<br>bbb<br>を貼り付けるとします。<br><br>aaaaaaaaaaaaaaa|<br>aaaaaaaaaaaaaaa|<br><br>に短形貼り付けを行うと<br><br>aaaaaaabbbaaaaa|<br>aaa     bbb       |<br>aaaaaaaaaaaaaaa|<br><br>となってしまいます。本当は<br><br>aaaaaaabbbaaaaa|<br>aaa                 |<br>aaaaaaabbbaaaaa|<br>aaa                 |<br><br>となって欲しいのです。<br><br>貼り付け領域を短形選択しても、同様の症状がでます。<br><br>修正おねがいします。</div></section>
     <ul><li><section><h1 id=5090>
     <span class="no">[5090]</span>
-    <a class="title" href="#5090">Re:短形貼り付けのバグ</a>
+    <a class="thread-title" href="#5090">Re:短形貼り付けのバグ</a>
     <span class="author">じゅうじ</span>
     <time datetime="2006-03-11T18:09:44">2006年03月11日 18:09</time></h1>
     <div class="body">▼ nekoさん<br>&gt; 改行文字数ギリギリの状況で、短形貼り付けを行うと、おかしな形に貼り付けられます。<br><br>折り返さない設定にしてから、貼り付けるといいよ。<br><br>設定(O)→(W)Ｃｔｒｌ＋Ａｌｔ＋Ｕ<br>このコマンド自体、動きが変だけどね。</div></section>
     <ul><li><section><h1 id=5091>
     <span class="no">[5091]</span>
-    <a class="title" href="#5091">Re2:短形貼り付けのバグ</a>
+    <a class="thread-title" href="#5091">Re2:短形貼り付けのバグ</a>
     <span class="author">neko</span>
     <time datetime="2006-03-11T19:57:35">2006年03月11日 19:57</time></h1>
     <div class="body">▼ じゅうじさん<br>&gt; 折り返さない設定にしてから、貼り付けるといいよ。<br>はい、苦肉の策でその方法は見つけましたが、<br>いちいち設定を変更するは面倒ですし、バグっぽいので修正できないかな？<br>と思った次第です。</div></section>

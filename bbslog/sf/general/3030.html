@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ツールバーのアイコンが黒くなる</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ツールバーのアイコンが黒くなる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3030</span>
-    <a class="title" href="3030.html#3030">ツールバーのアイコンが黒くなる</a></div>
+    <a class="thread-title" href="3030.html#3030">ツールバーのアイコンが黒くなる</a></div>
     <ul><li><div class="list-title">
     <span class="no">3033</span>
-    <a class="title" href="3030.html#3033">RE: ツールバーのアイコンが黒くなる</a></div>
+    <a class="thread-title" href="3030.html#3033">RE: ツールバーのアイコンが黒くなる</a></div>
     <ul><li><div class="list-title">
     <span class="no">3064</span>
-    <a class="title" href="3030.html#3064">Re2: ツールバーのアイコンが黒くなる</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3030>
+    <a class="thread-title" href="3030.html#3064">Re2: ツールバーのアイコンが黒くなる</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3030>
     <span class="no">[3030]</span>
-    <a class="title" href="#3030">ツールバーのアイコンが黒くなる</a>
+    <a class="thread-title" href="#3030">ツールバーのアイコンが黒くなる</a>
     <span class="author">jun</span>
     <time datetime="2003-06-23T11:59:51">2003年06月23日 11:59</time></h1>
     <div class="body">こんにちは。<br>始めましてサクラエディタを愛用していますjunと言います。<br><br>この件について既に出ていたらすみません。<br>一応探したのですが見あたらなかったので・・・<br><br>C:\aaa\JaaaaaaFile\jaas.txt<br>にファイルを作成しエディタで開くと発生します。<br>ファイルは空でも発生するようです。<br>現在の環境はNT4.0SP6です。<br>昔ＸＰでも同じ様な現象は発生していました。<br><br>ここに書き込んだら良かったのでしょうか？？<br>間違ってたらごめんなさい。<br></div></section>
     <ul><li><section><h1 id=3033>
     <span class="no">[3033]</span>
-    <a class="title" href="#3033">RE: ツールバーのアイコンが黒くなる</a>
+    <a class="thread-title" href="#3033">RE: ツールバーのアイコンが黒くなる</a>
     <span class="author">げんた</span>
     <time datetime="2003-06-26T02:39:21">2003年06月26日 02:39</time></h1>
     <div class="body">&gt;C:\aaa\JaaaaaaFile\jaas.txt<br>私も以前から同様の症状が出ており，開発掲示板にて報告済みです．しかし原因は未だ不明．<br>ファイル名の長さに大きく依存するところにヒントがありそうな気もするのですが...<br></div></section>
     <ul><li><section><h1 id=3064>
     <span class="no">[3064]</span>
-    <a class="title" href="#3064">Re2: ツールバーのアイコンが黒くなる</a>
+    <a class="thread-title" href="#3064">Re2: ツールバーのアイコンが黒くなる</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-07-09T12:07:15">2003年07月09日 12:07</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;C:\aaa\JaaaaaaFile\jaas.txt<br>&gt; 私も以前から同様の症状が出ており，開発掲示板にて報告済みです．しかし原因は未だ不明．<br>&gt; ファイル名の長さに大きく依存するところにヒントがありそうな気もするのですが...<br><br>&#9;ImageList_AddMasked( m_hList, hTmpbmp, cTransparent);<br>で作成したので、m_hListのイメージは、マスクされている。<br>これが使われるのは、CImageListMgrのDrawである。<br>&#9;m_pcIcons-&gt;Draw( tbb.iBitmap, pDis-&gt;hDC, rc.left + 2, rc.top  + 2, ILD_NORMAL);<br>しかし、ILC_MASKが使われていない。よってマスクイメージを普通のものと間違えるのかも。<br><br>ところで、<br>&#9;::GetModuleFileName( ::GetModuleHandle(NULL), szPath, sizeof(szPath) );<br>は<br>&#9;::GetModuleFileName( NULL, szPath, sizeof(szPath) );<br>でも可能ではないか。<br></div></section>

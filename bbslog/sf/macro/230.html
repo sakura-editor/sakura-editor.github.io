@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>検索オプション状態取得とウィンドウ内でのカーソル位置</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>検索オプション状態取得とウィンドウ内でのカーソル位置 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">230</span>
-    <a class="title" href="230.html#230">検索オプション状態取得とウィンドウ内でのカーソル位置</a></div>
+    <a class="thread-title" href="230.html#230">検索オプション状態取得とウィンドウ内でのカーソル位置</a></div>
     <ul><li><div class="list-title">
     <span class="no">231</span>
-    <a class="title" href="230.html#231">Re:検索オプション状態取得とウィンドウ内でのカーソル位置</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=230>
+    <a class="thread-title" href="230.html#231">Re:検索オプション状態取得とウィンドウ内でのカーソル位置</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=230>
     <span class="no">[230]</span>
-    <a class="title" href="#230">検索オプション状態取得とウィンドウ内でのカーソル位置</a>
+    <a class="thread-title" href="#230">検索オプション状態取得とウィンドウ内でのカーソル位置</a>
     <span class="author">しゃ</span>
     <time datetime="2006-01-11T21:00:28">2006年01月11日 21:00</time></h1>
     <div class="body">現在、次検索／前検索でヒットした文字列の位置が画面の真ん中にくるようなマクロを作成しています。<br>以下、次検索の例を前提に記述します。<br><br>S_SearchNext('');&#9;// 次を検索<br>S_CurLineCenter();                // カーソル行をウィンドウ中央へ<br><br>ですが、次検索で第2引き数を↑のようにすると、検索オプション(例えば「大文字小文字を区別する」や「正規表現検索」)がOFFになってしまいます。<br>これを回避する方法は無いのでしょうか？<br>下記2ケースが回避策としてありそうなのですがわかりません。<br>いかがでしょうか？実現不可でしょうか？<br><br>1) 第2引き数で0～0x3f以外の値に「未指定」なる意味のビットがある？<br>2) 現在検索オプション状態を得る関数マクロがある？<br><br>また、現カーソルの論理行数を得たり、現カーソル位置のウィンドウ内の位置を知るマクロ関数もありませんでしょうか？<br>（やりたいことは、表示している画面に検索対象の複数文字列が存在してた場合、上記で「カーソル行をウィンドウ中央へ」をしないようにしたい）<br></div></section>
     <ul><li><section><h1 id=231>
     <span class="no">[231]</span>
-    <a class="title" href="#231">Re:検索オプション状態取得とウィンドウ内でのカーソル位置</a>
+    <a class="thread-title" href="#231">Re:検索オプション状態取得とウィンドウ内でのカーソル位置</a>
     <span class="author">maru</span>
     <time datetime="2006-01-12T22:35:21">2006年01月12日 22:35</time></h1>
     <div class="body">マクロでは、微妙に無理みたいですね…。惜しい。<br><br>CEditView::Command_SEARCH_NEXTの第一引数には<br>"falseで、CEditViewの現在設定されている検索パターンを使う"<br>と説明されてるので、CEditView::HandleCommandの中の<br>case F_SEARCH_NEXT:のあたりでどうにかするしか…。</div></section>

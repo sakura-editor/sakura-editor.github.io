@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>（無題）</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>（無題） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3165</span>
-    <a class="title" href="3165.html#3165">（無題）</a></div>
+    <a class="thread-title" href="3165.html#3165">（無題）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3171</span>
-    <a class="title" href="3165.html#3171">Re:ファイルの更新不具合</a></div>
+    <a class="thread-title" href="3165.html#3171">Re:ファイルの更新不具合</a></div>
     <ul><li><div class="list-title">
     <span class="no">3173</span>
-    <a class="title" href="3165.html#3173">Re2:ファイルの更新不具合</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3165>
+    <a class="thread-title" href="3165.html#3173">Re2:ファイルの更新不具合</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3165>
     <span class="no">[3165]</span>
-    <a class="title" href="#3165">（無題）</a>
+    <a class="thread-title" href="#3165">（無題）</a>
     <span class="author">くうく</span>
     <time datetime="2003-08-11T23:55:32">2003年08月11日 23:55</time></h1>
     <div class="body">DOS/Vパワレポで知って以来，愛用させていただいて<br>おります。ありがとうございます。<br>排他制御について，不具合報告とお願いがあります。<br><br>（不具合報告）<br>ファイルの排他制御で「更新の監視」をONにしたときに，<br>他のプログラムでファイルを書き換え，サクラに戻って<br>表示される更新通知ダイアログで処理を選ぶと，いずれの<br>場合もカーソルが選択状態になっている<br>（マウスを動かすと文字列が選択できてしまう）不具合が<br>あるようです。<br>バージョンは1.3.10.2です。<br><br>（要望）<br>更新の監視で，現状ではタイムスタンプが遡る場合<br>（古いファイルを意図的に上書きしたような場合）<br>は何も言ってきませんが，これも更新されたものと<br>見なすようにしていただけないでしょうか。<br>（通常の使い方からは少し外れるかもしれません。<br>挙動をオプションで選択可能にするとか…）<br><br>また，更新通知ダイアログの「閉じる」は意味が<br>わかりづらいので，例えば「読み込まない」などが<br>良いと思いますが如何でしょうか。<br></div></section>
     <ul><li><section><h1 id=3171>
     <span class="no">[3171]</span>
-    <a class="title" href="#3171">Re:ファイルの更新不具合</a>
+    <a class="thread-title" href="#3171">Re:ファイルの更新不具合</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-08-13T15:32:53">2003年08月13日 15:32</time></h1>
     <div class="body">▼ くうくさん<br>&gt; （不具合報告）<br>&gt; ファイルの排他制御で「更新の監視」をONにしたときに，<br>&gt; 他のプログラムでファイルを書き換え，サクラに戻って<br>&gt; 表示される更新通知ダイアログで処理を選ぶと，いずれの<br>&gt; 場合もカーソルが選択状態になっている<br>&gt; （マウスを動かすと文字列が選択できてしまう）不具合が<br>&gt; あるようです。<br>&gt; バージョンは1.3.10.2です。<br><br>残念ながら、1.4.2.0 Win2k SP4では確認できません。<br><br>&gt; （要望）<br>&gt; 更新の監視で，現状ではタイムスタンプが遡る場合<br>&gt; （古いファイルを意図的に上書きしたような場合）<br>&gt; は何も言ってきませんが，これも更新されたものと<br>&gt; 見なすようにしていただけないでしょうか。<br>// EditDoc.cpp<br>&#9;lWork = ::CompareFileTime( &amp;m_FileTime, &amp;FileTimeNow );<br>&#9;if( -1 == lWork ){<br>を<br>&#9;lWork = ::CompareFileTime( &amp;m_FileTime, &amp;FileTimeNow );<br>&#9;if( 0 != lWork ){<br>に変えるだけ。<br><br>&gt; 更新通知ダイアログの「閉じる」は意味がわかりづらい<br>確かに。次のようにしてみてはいかがかな。<br><br>----------------------------------------<br>&lt;!&gt; このファイルは別のプログラムによって変更されました。<br><br>読み直しますか？<br>----------------------------------------<br>[はい] [いいえ]<br>----------------------------------------<br> [ ]ステータスバーに通知する  [ ]今後、通知しない <br>----------------------------------------<br><br>それに、このダイアログ、長いファイル名で折り返しされないんだな。<br>一目でわかるアイコンもほしい。Grepの[検索]ボタンの位置も変。<br></div></section>
     <ul><li><section><h1 id=3173>
     <span class="no">[3173]</span>
-    <a class="title" href="#3173">Re2:ファイルの更新不具合</a>
+    <a class="thread-title" href="#3173">Re2:ファイルの更新不具合</a>
     <span class="author">みく</span>
     <time datetime="2003-08-13T20:10:45">2003年08月13日 20:10</time></h1>
     <div class="body">&gt;タイトル: Re2:ファイルの更新不具合<br><br>これは既知の問題です。<br><br>・排他制御しない・更新監視ありの状態でファイルを開く。<br>・メモ帳等で同じファイルを開き、上書き保存する。<br>・サクラエディタの編集エリアをマウスクリックしてフォーカスを当てる。<br>・更新されたダイアログが出るので、ダイアログを閉じる。<br><br>これで、選択中の状態になります。<br><br>→一般記事343<br></div></section>

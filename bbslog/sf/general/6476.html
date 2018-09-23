@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>貼り付けでの文字化け</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>貼り付けでの文字化け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6476</span>
-    <a class="title" href="6476.html#6476">貼り付けでの文字化け</a></div>
+    <a class="thread-title" href="6476.html#6476">貼り付けでの文字化け</a></div>
     <ul><li><div class="list-title">
     <span class="no">6477</span>
-    <a class="title" href="6476.html#6477">RE: 貼り付けでの文字化け</a></div>
+    <a class="thread-title" href="6476.html#6477">RE: 貼り付けでの文字化け</a></div>
     <ul><li><div class="list-title">
     <span class="no">6480</span>
-    <a class="title" href="6476.html#6480">Re2: 貼り付けでの文字化け</a></div>
+    <a class="thread-title" href="6476.html#6480">Re2: 貼り付けでの文字化け</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">6478</span>
-    <a class="title" href="6476.html#6478">Re:貼り付けでの文字化け</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=6476>
+    <a class="thread-title" href="6476.html#6478">Re:貼り付けでの文字化け</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6476>
     <span class="no">[6476]</span>
-    <a class="title" href="#6476">貼り付けでの文字化け</a>
+    <a class="thread-title" href="#6476">貼り付けでの文字化け</a>
     <span class="author">nanon</span>
     <time datetime="2007-11-22T00:43:47">2007年11月22日 00:43</time></h1>
     <div class="body">ブラウザ（Firefox,IEとも）でUTF-8のページを表示し，<br>ページ中の文字をコピー，貼り付けすると文字化けします．<br><br>元の文字列<br>*－－title &lt;title&gt;<br><br>sakura貼り付け後に表示される文字列（そのままコピペしてあります）<br>*""title &lt;title&gt;<br><br>元のページ<br><a href=http://www.bunkus.org/videotools/mkvtoolnix/doc/mkvmerge.html target=_top><nobr>http://<wbr>www.<wbr>bunkus.<wbr>org/<wbr>videotoo<wbr>ls/<wbr>mkvtooln<wbr>ix/<wbr>doc/<wbr>mkvmerge<wbr>.<wbr>html</nobr></a><br><br>修正，よろしくお願いします．</div></section>
     <ul><li><section><h1 id=6477>
     <span class="no">[6477]</span>
-    <a class="title" href="#6477">RE: 貼り付けでの文字化け</a>
+    <a class="thread-title" href="#6477">RE: 貼り付けでの文字化け</a>
     <span class="author">maru</span>
     <time datetime="2007-11-22T01:35:00">2007年11月22日 01:35</time></h1>
     <div class="body"><br>&gt;元のページ<br>&gt;http://www.bunkus.org/videotools/mkvtoolnix/doc/mkvmerge.html<br>&gt;*""title &lt;title&gt;<br><br>元ページを見に行きましたが、これはUnicodeにしかない文字で、U+2212のようです。<br>ANSIのハイフンマイナスと似ていますが異なる文字です。<br><br>現行のサクラエディタは内部的にSJISで動作するため、この貼り付け結果は仕様としか言いようがないです。<br>こういうケースでの対応は仕様として２通り考えられ、似た文字に変換するか、文字化けを無視して元データを維持するかのどちらかです。<br>サクラエディタは、後者「元データを維持」の支持派が多いため、現在のような動作になっています。<br><br>いずれUnicode版サクラエディタがリリースされれば解決します。<br><br>細かい突っ込みですが、常識的に考えてU+2212をオプションスイッチ文字として使用するとは思えないので、ハイフン(0x2D)が正解なのだと思います。なので、このドキュメントは間違ってますね。<br></div></section>
     <ul><li><section><h1 id=6480>
     <span class="no">[6480]</span>
-    <a class="title" href="#6480">Re2: 貼り付けでの文字化け</a>
+    <a class="thread-title" href="#6480">Re2: 貼り付けでの文字化け</a>
     <span class="author">nanon</span>
     <time datetime="2007-11-23T06:24:02">2007年11月23日 06:24</time></h1>
     <div class="body">▼ maruさん<br>&gt; <br>&gt; 元ページを見に行きましたが、これはUnicodeにしかない文字で、U+2212のようです。<br>&gt; ANSIのハイフンマイナスと似ていますが異なる文字です。<br>&gt; <br>&gt; 現行のサクラエディタは内部的にSJISで動作するため、この貼り付け結果は仕様としか言いようがないです。<br>&gt; こういうケースでの対応は仕様として２通り考えられ、似た文字に変換するか、文字化けを無視して元データを維持するかのどちらかです。<br>&gt; サクラエディタは、後者「元データを維持」の支持派が多いため、現在のような動作になっています。<br>▼ ryojiさん<br>&gt; &gt; 元の文字列<br>&gt; &gt; *－－title &lt;title&gt;<br>&gt; 上の－は、HTML上は&amp;minus;と書かれているものですね。<br>&gt; &amp;minus;はUnicodeの0x2212で、通常の - （Unicodeだと0x002d）<br>とは微妙に違う文字です。<br><br>なるほど，文字コードを扱う上での問題，および元のページのミスだったのですね．<br>了解しました，Unicode版を楽しみにしておきます．</div></section>
     </li></ul></li><li><section><h1 id=6478>
     <span class="no">[6478]</span>
-    <a class="title" href="#6478">Re:貼り付けでの文字化け</a>
+    <a class="thread-title" href="#6478">Re:貼り付けでの文字化け</a>
     <span class="author">ryoji</span>
     <time datetime="2007-11-22T01:56:14">2007年11月22日 01:56</time></h1>
     <div class="body">&gt; 元の文字列<br>&gt; *－－title &lt;title&gt;<br>上の－は、HTML上は&amp;minus;と書かれているものですね。<br>&amp;minus;はUnicodeの0x2212で、通常の - （Unicodeだと0x002d）とは微妙に違う文字です。<br><br>&gt; 修正，よろしくお願いします．<br>現行のsakuraは内部SJISのため修正のしようがないと思います。<br>開発中のUnicode版のほうでは正しく表示できています。</div></section>

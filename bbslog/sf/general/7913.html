@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>単語単位でのハイライト</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>単語単位でのハイライト | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7913</span>
-    <a class="title" href="7913.html#7913">単語単位でのハイライト</a></div>
+    <a class="thread-title" href="7913.html#7913">単語単位でのハイライト</a></div>
     <ul><li><div class="list-title">
     <span class="no">7914</span>
-    <a class="title" href="7913.html#7914">Re: 単語単位でのハイライト</a></div>
+    <a class="thread-title" href="7913.html#7914">Re: 単語単位でのハイライト</a></div>
     <ul><li><div class="list-title">
     <span class="no">7915</span>
-    <a class="title" href="7913.html#7915">Re2: 単語単位でのハイライト</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7913>
+    <a class="thread-title" href="7913.html#7915">Re2: 単語単位でのハイライト</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7913>
     <span class="no">[7913]</span>
-    <a class="title" href="#7913">単語単位でのハイライト</a>
+    <a class="thread-title" href="#7913">単語単位でのハイライト</a>
     <span class="author">のり</span>
     <time datetime="2014-11-30T00:13:38">2014年11月30日 00:13</time></h1>
     <div class="body">S_SelectWord(0);<br>S_SearchClearMark(0);<br>上記の2行でできるダブルクリックで文字列をハイライトするマクロを単語単位で実行する方法ってありますか？</div></section>
     <ul><li><section><h1 id=7914>
     <span class="no">[7914]</span>
-    <a class="title" href="#7914">Re: 単語単位でのハイライト</a>
+    <a class="thread-title" href="#7914">Re: 単語単位でのハイライト</a>
     <span class="author">もか</span>
     <time datetime="2014-11-30T00:46:51">2014年11月30日 00:46</time></h1>
     <div class="body">マーク切り替えに文字列は渡せないので、たぶんこう<br>// なんたら.js で保存<br>Editor.SelectWord();<br>var s = Editor.GetSelectedString(0);<br>Editor.Left();<br>Editor.SearchNext(s, 0x01);<br>0x01以外は0x02,0x20とか好きなの付けておけばOK<br>詳しくはヘルプ参照。<br></div></section>
     <ul><li><section><h1 id=7915>
     <span class="no">[7915]</span>
-    <a class="title" href="#7915">Re2: 単語単位でのハイライト</a>
+    <a class="thread-title" href="#7915">Re2: 単語単位でのハイライト</a>
     <span class="author">のり</span>
     <time datetime="2014-11-30T10:01:46">2014年11月30日 10:01</time></h1>
     <div class="body">できました！<br>.macでは文字列が渡せなかったので悩んでました。<br>ありがとうございます。</div></section>

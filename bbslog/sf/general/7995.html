@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>GREP置換</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>GREP置換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7995</span>
-    <a class="title" href="7995.html#7995">GREP置換</a></div>
+    <a class="thread-title" href="7995.html#7995">GREP置換</a></div>
     <ul><li><div class="list-title">
     <span class="no">7996</span>
-    <a class="title" href="7995.html#7996">Re: GREP置換</a></div>
+    <a class="thread-title" href="7995.html#7996">Re: GREP置換</a></div>
     <ul><li><div class="list-title">
     <span class="no">7997</span>
-    <a class="title" href="7995.html#7997">Re2: GREP置換</a></div>
+    <a class="thread-title" href="7995.html#7997">Re2: GREP置換</a></div>
     <ul><li><div class="list-title">
     <span class="no">7998</span>
-    <a class="title" href="7995.html#7998">Re3: GREP置換</a></div>
+    <a class="thread-title" href="7995.html#7998">Re3: GREP置換</a></div>
     <ul><li><div class="list-title">
     <span class="no">7999</span>
-    <a class="title" href="7995.html#7999">Re4: GREP置換</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7995>
+    <a class="thread-title" href="7995.html#7999">Re4: GREP置換</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7995>
     <span class="no">[7995]</span>
-    <a class="title" href="#7995">GREP置換</a>
+    <a class="thread-title" href="#7995">GREP置換</a>
     <span class="author">利用者</span>
     <time datetime="2015-03-03T13:13:02">2015年03月03日 13:13</time></h1>
     <div class="body">一行に複数の検索文字が存在する場合、<br>初めの文字しか置換されないのですが、解決方法はありますでしょうか？<br><br>あ→あ！ にGREP置換すると・・・<br><br><br>あいうえおあいうえお<br>↓<br>あ！いうえおあいうえお<br><br>となり、2文字目の あ は あ！ になりません・・・</div></section>
     <ul><li><section><h1 id=7996>
     <span class="no">[7996]</span>
-    <a class="title" href="#7996">Re: GREP置換</a>
+    <a class="thread-title" href="#7996">Re: GREP置換</a>
     <span class="author">もか</span>
     <time datetime="2015-03-03T14:18:10">2015年03月03日 14:18</time></h1>
     <div class="body">&gt;一行に複数の検索文字が存在する場合、<br>&gt;初めの文字しか置換されないのですが、解決方法はありますでしょうか？<br>Grep置換の結果出力が「該当行」だと行の初めのヒットしか結果画面には表示されませんが、<br>中身はちゃんと2個以上置換されていませんか？<br>置換個数も、1行に複数個あればその分増えているはずです。<br>軽く試した範囲では、2つあっても両方とも置換されていました。<br>何か条件があるのかもしれません。<br></div></section>
     <ul><li><section><h1 id=7997>
     <span class="no">[7997]</span>
-    <a class="title" href="#7997">Re2: GREP置換</a>
+    <a class="thread-title" href="#7997">Re2: GREP置換</a>
     <span class="author">もか</span>
     <time datetime="2015-03-03T14:37:57">2015年03月03日 14:37</time></h1>
     <div class="body">正規表現がONだと、2個目以降が置換されないようです。取り急ぎ報告まで。<br></div></section>
     <ul><li><section><h1 id=7998>
     <span class="no">[7998]</span>
-    <a class="title" href="#7998">Re3: GREP置換</a>
+    <a class="thread-title" href="#7998">Re3: GREP置換</a>
     <span class="author">もか</span>
     <time datetime="2015-03-03T14:54:17">2015年03月03日 14:54</time></h1>
     <div class="body">WikiのHistoryの該当バージョンのページで、一番上の所にバグを追記しておきました。<br></div></section>
     <ul><li><section><h1 id=7999>
     <span class="no">[7999]</span>
-    <a class="title" href="#7999">Re4: GREP置換</a>
+    <a class="thread-title" href="#7999">Re4: GREP置換</a>
     <span class="author">もか</span>
     <time datetime="2015-03-03T15:05:48">2015年03月03日 15:05</time></h1>
     <div class="body">報告ありがとうございました。<br><br>パッチ：<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/984/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>984/<wbr></nobr></a><br>暫定バイナリ：<br><a href=http://mocaskr.web.fc2.com/weekly/sakura_weekly.html target=_top><nobr>http://<wbr>mocaskr.<wbr>web.<wbr>fc2.<wbr>com/<wbr>weekly/<wbr>sakura_w<wbr>eekly.<wbr>html</nobr></a><br>sakura2-2-0-1r4013_fix_grep_replace_rege<br>x.zip<br></div></section>

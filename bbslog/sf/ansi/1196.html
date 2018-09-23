@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>.BATや.MSIを開くとサクラエディタで開きます</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>.BATや.MSIを開くとサクラエディタで開きます | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1196</span>
-    <a class="title" href="1196.html#1196">.BATや.MSIを開くとサクラエディタで開きます</a></div>
+    <a class="thread-title" href="1196.html#1196">.BATや.MSIを開くとサクラエディタで開きます</a></div>
     <ul><li><div class="list-title">
     <span class="no">1198</span>
-    <a class="title" href="1196.html#1198">Re: .BATや.MSIを開くとサクラエディタで開きます</a></div>
+    <a class="thread-title" href="1196.html#1198">Re: .BATや.MSIを開くとサクラエディタで開きます</a></div>
     <ul><li><div class="list-title">
     <span class="no">1199</span>
-    <a class="title" href="1196.html#1199">Re2: .BATや.MSIを開くとサクラエディタで開きます</a></div>
+    <a class="thread-title" href="1196.html#1199">Re2: .BATや.MSIを開くとサクラエディタで開きます</a></div>
     <ul><li><div class="list-title">
     <span class="no">1201</span>
-    <a class="title" href="1196.html#1201">Re3: .BATや.MSIを開くとサクラエディタで開きます</a></div>
+    <a class="thread-title" href="1196.html#1201">Re3: .BATや.MSIを開くとサクラエディタで開きます</a></div>
     <ul><li><div class="list-title">
     <span class="no">1212</span>
-    <a class="title" href="1196.html#1212">Re4: .BATや.MSIを開くとサクラエディタで開きます</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1196>
+    <a class="thread-title" href="1196.html#1212">Re4: .BATや.MSIを開くとサクラエディタで開きます</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1196>
     <span class="no">[1196]</span>
-    <a class="title" href="#1196">.BATや.MSIを開くとサクラエディタで開きます</a>
+    <a class="thread-title" href="#1196">.BATや.MSIを開くとサクラエディタで開きます</a>
     <span class="author">きく</span>
     <time datetime="2002-01-18T11:54:49">2002年01月18日 11:54</time></h1>
     <div class="body">.BATや.MSIをエクスプローラ等で開く（実行）と、サクラエディタで開いてしまいます。<br>もちろん、自分ではこれらの拡張子に関連付けはしてません。<br>私は右クリックでポップアップメニューを出して.BATや.MSIを実行していますが、ポップアップメニューで実行できることを知らない人はサクラエディタをアンインストールしてしまいます。<br>サクラエディタで開かなくすることはできないでしょうか？</div></section>
     <ul><li><section><h1 id=1198>
     <span class="no">[1198]</span>
-    <a class="title" href="#1198">Re: .BATや.MSIを開くとサクラエディタで開きます</a>
+    <a class="thread-title" href="#1198">Re: .BATや.MSIを開くとサクラエディタで開きます</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-18T14:07:07">2002年01月18日 14:07</time></h1>
     <div class="body">&gt;.BATや.MSIをエクスプローラ等で開く（実行）と、サクラエディタで開いてしまいます。<br>&gt;サクラエディタで開かなくすることはできないでしょうか？<br><br>メニューを追加すると一部機能でなぜか「開く」よりも追加メニューの方が優先されてしまうようで，こういうことが起こります．<br><br>ダブルクリックしか知らない人には追加メニューは役に立たないと言うわけですか...そういうレベルの人がどうやってエディタ使うかも疑問ですけど．<br><br>現在インストーラではメニューの追加がデフォルトでONになっていますが，これをOFFにした方がいいみたいですね．<br><br>関連づけではopen以外に(この追加メニューのように)機能を追加でき，ダブルクリックでそのうちのどれが動作するかを選択できます．エクスプローラのファイルタイプで bat/msiをそれぞれ選択して「詳細設定」を開き，アクションでopenを選択して「標準」を押して標準機能に設定してみてください．<br><br>と書いたところで，batがメニューに現れていないことに気づく(T_T) exeも出てきませんね．<br><br>しょうがないのでレジストリエディタでHKEY_CLASS_ROOT\batfile\shellの(標準)に"open"を設定してみてください．<br><br>---<br>サクラのメニューを手動で外すなら，レジストリエディタでHKEY_CLASS_ROOT\*\shell\sakuraeditor を削除してください．<br></div></section>
     <ul><li><section><h1 id=1199>
     <span class="no">[1199]</span>
-    <a class="title" href="#1199">Re2: .BATや.MSIを開くとサクラエディタで開きます</a>
+    <a class="thread-title" href="#1199">Re2: .BATや.MSIを開くとサクラエディタで開きます</a>
     <span class="author">やざき</span>
     <time datetime="2002-01-18T14:30:21">2002年01月18日 14:30</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;.BATや.MSIをエクスプローラ等で開く（実行）と、サクラエディタで開いてしまいます。<br>&gt; &gt;サクラエディタで開かなくすることはできないでしょうか？<br><br>げんたさんがかかれた回避方法も情報としては十分価値があるものですが、<br>インストーラーを修正することはできないでしょうか？<br><br>別のインストーラーを採用するとか、新たに作るとか。</div></section>
     <ul><li><section><h1 id=1201>
     <span class="no">[1201]</span>
-    <a class="title" href="#1201">Re3: .BATや.MSIを開くとサクラエディタで開きます</a>
+    <a class="thread-title" href="#1201">Re3: .BATや.MSIを開くとサクラエディタで開きます</a>
     <span class="author">きく</span>
     <time datetime="2002-01-18T18:35:21">2002年01月18日 18:35</time></h1>
     <div class="body">▼ やざきさん<br>&gt; ▼ げんたさん<br>&gt; &gt; &gt;.BATや.MSIをエクスプローラ等で開く（実行）と、サクラエディタで開いてしまいます。<br>&gt; &gt; &gt;サクラエディタで開かなくすることはできないでしょうか？<br>&gt; <br>&gt; げんたさんがかかれた回避方法も情報としては十分価値があるものですが、<br>&gt; インストーラーを修正することはできないでしょうか？<br>&gt; <br>&gt; 別のインストーラーを採用するとか、新たに作るとか。<br><br>インストールしただけで.BATや.MSIが起動しなくなるのは使いづらいと思います。<br>仕組みを知っている人は対処できますが、なんとなくWindowsを使っている人がほとんどの数百人もいる職場でげんたさんのおっしゃる方法を実行させることは無理です。<br>やはり、インストーラーで対処するのがよいのではないでしょうか？</div></section>
     <ul><li><section><h1 id=1212>
     <span class="no">[1212]</span>
-    <a class="title" href="#1212">Re4: .BATや.MSIを開くとサクラエディタで開きます</a>
+    <a class="thread-title" href="#1212">Re4: .BATや.MSIを開くとサクラエディタで開きます</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-18T22:44:16">2002年01月18日 22:44</time></h1>
     <div class="body">▼ きくさん<br>&gt; やはり、インストーラーで対処するのがよいのではないでしょうか？<br>とりあえず「SAKURAで開く」のチェックはデフォルトでOFFにします．<br><br>個別に関連づけるには「関連づけツール」を使ってください．</div></section>

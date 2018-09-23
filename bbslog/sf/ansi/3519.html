@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アウトライン解析(asm)</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アウトライン解析(asm) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3519</span>
-    <a class="title" href="3519.html#3519">アウトライン解析(asm)</a></div>
+    <a class="thread-title" href="3519.html#3519">アウトライン解析(asm)</a></div>
     <ul><li><div class="list-title">
     <span class="no">3531</span>
-    <a class="title" href="3519.html#3531">コード簡略化計画</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3519>
+    <a class="thread-title" href="3519.html#3531">コード簡略化計画</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3519>
     <span class="no">[3519]</span>
-    <a class="title" href="#3519">アウトライン解析(asm)</a>
+    <a class="thread-title" href="#3519">アウトライン解析(asm)</a>
     <span class="author">みく</span>
     <time datetime="2004-04-02T22:15:02">2004年04月02日 22:15</time></h1>
     <div class="body"><br>・以下のような行がラベル(es:)になってしまいます。<br>&#9;mov&#9;ax,word ptr es:[si]<br><br>・ラベルの":"は表示しなくてもいいと思います。<br><br>・アセンブラの行コメントは";"です。<br>(CShareDataでは未定義みたい)<br></div></section>
     <ul><li><section><h1 id=3531>
     <span class="no">[3531]</span>
-    <a class="title" href="#3531">コード簡略化計画</a>
+    <a class="thread-title" href="#3531">コード簡略化計画</a>
     <span class="author">みく</span>
     <time datetime="2004-04-12T21:09:24">2004年04月12日 21:09</time></h1>
     <div class="body"><br>&gt;・以下のような行がラベル(es:)になってしまいます。<br>&gt;&#9;mov&#9;ax,word ptr es:[si]<br><br>http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/asm.cpp<br></div></section>

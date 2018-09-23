@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>リムーバブルメディアを履歴に入れない</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>リムーバブルメディアを履歴に入れない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">214</span>
-    <a class="title" href="214.html#214">リムーバブルメディアを履歴に入れない</a></div>
+    <a class="thread-title" href="214.html#214">リムーバブルメディアを履歴に入れない</a></div>
     <ul><li><div class="list-title">
     <span class="no">215</span>
-    <a class="title" href="214.html#215">Re:リムーバブルメディアを履歴に入れない</a></div>
+    <a class="thread-title" href="214.html#215">Re:リムーバブルメディアを履歴に入れない</a></div>
     <ul><li><div class="list-title">
     <span class="no">217</span>
-    <a class="title" href="214.html#217">Re:リムーバブルメディアを履歴に入れない</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=214>
+    <a class="thread-title" href="214.html#217">Re:リムーバブルメディアを履歴に入れない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=214>
     <span class="no">[214]</span>
-    <a class="title" href="#214">リムーバブルメディアを履歴に入れない</a>
+    <a class="thread-title" href="#214">リムーバブルメディアを履歴に入れない</a>
     <span class="author">みく</span>
     <time datetime="2001-03-29T21:42:50">2001年03月29日 21:42</time></h1>
     <div class="body"><br>...設定は以下のとおり。<br>（//@@@ 2001.03.29のあるところと、その囲み部分）<br>少ないので掲示板に。<br><br>する・しないを制御したいときは、設定画面にチェックボックス<br>でも適当に追加です。<br><br>/* MRUリストへの登録 */<br>void CShareData::AddMRUList( FileInfo* pfi )<br>{<br>～ snip ～<br>&#9;int&#9;&#9;j;<br>//&#9;char*&#9;pszWork = new char[_MAX_PATH + 1];&#9;//@@@ 2001.03.29 Delete<br>//&#9;char*&#9;pszFolder = new char[_MAX_PATH + 1];&#9;//@@@ 2001.03.29 Delete<br>//&#9;int&#9;&#9;nCharChars;<br>&#9;char&#9;szDrive[_MAX_DRIVE];<br>&#9;char&#9;szDir[_MAX_DIR];<br><br>&#9;_splitpath( pfi-&gt;m_szPath, szDrive, szDir, NULL, NULL );<br><br>//@@@ 2001.03.29 Start by MIK<br>&#9;char&#9;szDriveType[_MAX_DRIVE+1];&#9;// "A:\"<br>&#9;long&#9;lngRet;<br>&#9;char&#9;c;<br><br>&#9;c = szDrive[0];<br>&#9;if( c &gt;= 'a' &amp;&amp; c &lt;= 'z' ){<br>&#9;&#9;c = c - ('a' - 'A');<br>&#9;}<br>&#9;if( c &gt;= 'A' &amp;&amp; c &lt;= 'Z' ){<br>&#9;&#9;sprintf( szDriveType, "%c:\\", c );<br>&#9;&#9;lngRet = GetDriveType( szDriveType );<br>&#9;&#9;if( DRIVE_REMOVABLE == lngRet<br>&#9;&#9; || DRIVE_CDROM     == lngRet){<br>&#9;&#9;&#9;return;<br>&#9;&#9;}<br>&#9;}<br><br>&#9;char*&#9;pszFolder = new char[_MAX_PATH + 1];<br>//@@@ 2001.03.29 End by MIK<br><br>&#9;strcpy( pszFolder, szDrive );<br>&#9;strcat( pszFolder, szDir );<br>～ snip ～<br>&#9;&#9;}<br>&#9;}<br>//&#9;delete [] pszWork;&#9;//@@@ 2001.03.29 Delete<br>&#9;delete [] pszFolder;<br>&#9;return;<br>}<br></div></section>
     <ul><li><section><h1 id=215>
     <span class="no">[215]</span>
-    <a class="title" href="#215">Re:リムーバブルメディアを履歴に入れない</a>
+    <a class="thread-title" href="#215">Re:リムーバブルメディアを履歴に入れない</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-03-30T00:28:19">2001年03月30日 00:28</time></h1>
     <div class="body">▼ みくさん<br>&gt; <br>&gt; /* MRUリストへの登録 */<br><br>掲示板だとインデントが崩れるので、eGroupsに修正ファイルをアップしてくれた方が嬉しいかも。。。<br>それに私の修正よりもよっぽど長いです。(^_^;)<br>・・・あ！！　でも記事から直接カット&amp;ペーストせずに、返信で取り込まれるウィンドウからコピーすれば引用記号は付くけど、ちゃんとタブでインデントされているのを発見！あとは＞を消せばOKです。</div></section>
     <ul><li><section><h1 id=217>
     <span class="no">[217]</span>
-    <a class="title" href="#217">Re:リムーバブルメディアを履歴に入れない</a>
+    <a class="thread-title" href="#217">Re:リムーバブルメディアを履歴に入れない</a>
     <span class="author">げんた</span>
     <time datetime="2001-03-30T09:24:46">2001年03月30日 09:24</time></h1>
     <div class="body">&gt;掲示板だとインデントが崩れる<br>私はINCMで取り込んでいるので正しくインデントされて見えます(^o^)<br><br>メールアドレスを公開したくない人はeGroupに書き込みにくいのでは？でも適当に無料の転送アドレスを使ってもらえばいいような気もしますけど。sourceforgeでもメールアドレスはもらえますしね。<br></div></section>

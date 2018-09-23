@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択行コメントアウトの勝手に改良版</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>選択行コメントアウトの勝手に改良版 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">544</span>
-    <a class="title" href="544.html#544">選択行コメントアウトの勝手に改良版</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=544>
+    <a class="thread-title" href="544.html#544">選択行コメントアウトの勝手に改良版</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=544>
     <span class="no">[544]</span>
-    <a class="title" href="#544">選択行コメントアウトの勝手に改良版</a>
+    <a class="thread-title" href="#544">選択行コメントアウトの勝手に改良版</a>
     <span class="author">beta</span>
     <time datetime="2011-12-11T16:19:51">2011年12月11日 16:19</time></h1>
     <div class="body">var aExt = new Array();<br><br>aExt[""] = "//"; //デフォルト<br><br>aExt["c"] = "//";   aExt["cpp"] = "//"; aExt["h"] = "//";<br>aExt["js"] = "//";  aExt["java"] = "//";<br>aExt["vbs"] = "'";  aExt["bas"] = "'";  aExt["frm"] = "'";  aExt["cls"] = "'";<br>aExt["mac"] = "//";<br>aExt["pl"] = "#";   aExt["pm"] = "#";   aExt["cgi"] = "#";<br>aExt["tex"] = "%";<br>aExt["php"] = "//";<br>aExt["asm"] = ";";<br>aExt["uws"] = "//";<br>aExt["conf"] = ";"; aExt["cnf"] = ";";  aExt["ini"] = ";";  aExt["inf"] = ";";<br>aExt["ppa"] = "//";<br>aExt["cmd"] = "rem ";    aExt["bat"] = "rem ";<br>aExt["sql"] = "--";<br> <br>//行選択されていなくても<br>GoLineTop(13);<br>sSelect = GetSelectedString(0);<br>if (sSelect.length == 0) GoLineEnd_Sel();<br><br>sSelect = GetSelectedString(0);<br> <br>//拡張子を切り出し<br>sExt = ExpandParameter("$f");<br>sExt = sExt.substring( sExt.lastIndexOf(".") + 1);<br>sExt = sExt.toLowerCase()<br><br>if(aExt[sExt] == null){<br>&#9;sExt = "";<br>}<br> <br>//選択範囲を置換<br>if(sSelect.substring(0, aExt[sExt].length) == aExt[sExt]){<br>&#9;//コメント解除用<br>&#9;ReplaceAll ("^([    \s]*)" + aExt[sExt], "$1", 148);<br>}<br>else{<br>&#9;//コメントアウト用<br>&#9;ReplaceAll ("^.", aExt[sExt] + "$&amp;", 148);<br>}<br><br>//正規表現検索を無理やり解除<br>ReplaceAll ("@@@@@@@@@@", "@@@@@@@@@@", 146);<br><br>CancelMode();<br>SearchClearMark();<br>ReDraw(0);<br></div></section>

@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>初心者</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>初心者 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7422</span>
-    <a class="title" href="7422.html#7422">初心者</a></div>
+    <a class="thread-title" href="7422.html#7422">初心者</a></div>
     <ul><li><div class="list-title">
     <span class="no">7423</span>
-    <a class="title" href="7422.html#7423">Re:初心者</a></div>
+    <a class="thread-title" href="7422.html#7423">Re:初心者</a></div>
     </li><li><div class="list-title">
     <span class="no">7426</span>
-    <a class="title" href="7422.html#7426">Re:初心者</a></div>
+    <a class="thread-title" href="7422.html#7426">Re:初心者</a></div>
     </li><li><div class="list-title">
     <span class="no">7427</span>
-    <a class="title" href="7422.html#7427">Re:初心者</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=7422>
+    <a class="thread-title" href="7422.html#7427">Re:初心者</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7422>
     <span class="no">[7422]</span>
-    <a class="title" href="#7422">初心者</a>
+    <a class="thread-title" href="#7422">初心者</a>
     <span class="author">ミヤビ</span>
     <time datetime="2011-09-06T10:42:35">2011年09月06日 10:42</time></h1>
     <div class="body">開いているファイルからキーとなる文字列を検索して<br>キー文字列のある上の行の文字列をコピーして開いて<br>いる別のファイルに保存をしたいのですが、上手くいかないです。<br><br>例） <br> gakusyutyu←(コピーしたい文字列)<br>               00000750         4   miyabi←(キー文字) 0<br><br>また上記のようなことをするのは可能でしょうか？</div></section>
     <ul><li><section><h1 id=7423>
     <span class="no">[7423]</span>
-    <a class="title" href="#7423">Re:初心者</a>
+    <a class="thread-title" href="#7423">Re:初心者</a>
     <span class="author">東方朔</span>
     <time datetime="2011-09-06T12:36:46">2011年09月06日 12:36</time></h1>
     <div class="body">▼ ミヤビさん<br><br>エディタでやろうとするより、スクリプト書いた方が早いような気がします。<br><br>↓↓↓↓↓↓ここから<br>var fso = new ActiveXObject('Scripting.FileSystemObject');<br>var args = WScript.Arguments;<br><br>if (args.length != 2)<br>{<br>   WScript.Echo("wscript search.js ファイル名 検索文字列")<br>   WScript.Quit();<br>}<br><br>var stream = fso.OpenTextFile(args(0), 1, false, -2);<br>var text = stream.ReadAll();<br>stream.Close();<br><br>var lines = text.split(/\r\n/);<br><br>for(var i = 0; i &lt; lines.length; i++){<br>      var position = lines[i].indexOf(args(1));<br>      if (position != -1 &amp;&amp; i != 0)<br>          WScript.Echo(lines[i-1]);<br>}<br>↑↑↑↑↑↑↑↑ここまで<br><br>を、search.js とかいうファイル名で保存して、コマンドプロンプトで<br><br>cscript search.js ファイル名 検索文字列 &gt; 結果.txt<br><br>と実行すれば、結果.txt にコピーしたい文字列だけが抽出されると思います。</div></section>
     </li><li><section><h1 id=7426>
     <span class="no">[7426]</span>
-    <a class="title" href="#7426">Re:初心者</a>
+    <a class="thread-title" href="#7426">Re:初心者</a>
     <span class="author">じゅうじ</span>
     <time datetime="2011-09-18T12:34:38">2011年09月18日 12:34</time></h1>
     <div class="body">▼ ミヤビさん　こゆことですね。<br>sakuraでgrepしたあるテキストファイルの内容が次のようなものだったとします。<br>D:\My Documents\homepage.html(24,<br>D:\My Documents\homepage.html(29,<br>D:\My Documents\homepage.html(30,<br>この時、"ファイル名"(行番号,だったとして<br>"ファイル名"で"行番号－１"の内容を、まとめて取得する方法はありますか？<br>１行目なら”LINE NUMBER 0 IS'T DEFINED”を埋め込みます。<br></div></section>
     </li><li><section><h1 id=7427>
     <span class="no">[7427]</span>
-    <a class="title" href="#7427">Re:初心者</a>
+    <a class="thread-title" href="#7427">Re:初心者</a>
     <span class="author">じゅうじ</span>
     <time datetime="2011-09-18T12:39:29">2011年09月18日 12:39</time></h1>
     <div class="body">▼ ミヤビさん　こゆことですね<br>sakuraでgrepしたあるテキストファイルの内容が次のようなものだったとします。<br>D:\My Documents\homepage.html(24,<br>D:\My Documents\homepage.html(29,<br>D:\My Documents\homepage.html(30,<br>この時、"ファイル名"(行番号,だったとして<br>"ファイル名"で"行番号－１"の内容を、まとめて取得する方法はありますか？<br>１行目なら”LINE NUMBER 0 IS'T DEFINED”を埋め込みます。</div></section>

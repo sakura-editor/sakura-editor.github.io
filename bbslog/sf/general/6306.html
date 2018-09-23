@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>VBみたいなコメントの色付け</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>VBみたいなコメントの色付け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6306</span>
-    <a class="title" href="6306.html#6306">VBみたいなコメントの色付け</a></div>
+    <a class="thread-title" href="6306.html#6306">VBみたいなコメントの色付け</a></div>
     <ul><li><div class="list-title">
     <span class="no">6309</span>
-    <a class="title" href="6306.html#6309">RE: VBみたいなコメントの色付け</a></div>
+    <a class="thread-title" href="6306.html#6309">RE: VBみたいなコメントの色付け</a></div>
     <ul><li><div class="list-title">
     <span class="no">6315</span>
-    <a class="title" href="6306.html#6315">Re2: VBみたいなコメントの色付け</a></div>
+    <a class="thread-title" href="6306.html#6315">Re2: VBみたいなコメントの色付け</a></div>
     <ul><li><div class="list-title">
     <span class="no">6317</span>
-    <a class="title" href="6306.html#6317">Re3: VBみたいなコメントの色付け</a></div>
+    <a class="thread-title" href="6306.html#6317">Re3: VBみたいなコメントの色付け</a></div>
     <ul><li><div class="list-title">
     <span class="no">6318</span>
-    <a class="title" href="6306.html#6318">Re4: VBみたいなコメントの色付け</a></div>
+    <a class="thread-title" href="6306.html#6318">Re4: VBみたいなコメントの色付け</a></div>
     <ul><li><div class="list-title">
     <span class="no">6319</span>
-    <a class="title" href="6306.html#6319">Re5: VBみたいなコメントの色付け</a></div>
+    <a class="thread-title" href="6306.html#6319">Re5: VBみたいなコメントの色付け</a></div>
     <ul><li><div class="list-title">
     <span class="no">6320</span>
-    <a class="title" href="6306.html#6320">Re6: VBみたいなコメントの色付け</a></div>
+    <a class="thread-title" href="6306.html#6320">Re6: VBみたいなコメントの色付け</a></div>
     </li><li><div class="list-title">
     <span class="no">6327</span>
-    <a class="title" href="6306.html#6327">Re6: VBみたいなコメントの色付け</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6306>
+    <a class="thread-title" href="6306.html#6327">Re6: VBみたいなコメントの色付け</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6306>
     <span class="no">[6306]</span>
-    <a class="title" href="#6306">VBみたいなコメントの色付け</a>
+    <a class="thread-title" href="#6306">VBみたいなコメントの色付け</a>
     <span class="author">TAKKKK</span>
     <time datetime="2007-09-13T11:28:07">2007年09月13日 11:28</time></h1>
     <div class="body">VBのような「'」で始まる行の色を変えるにはどう設定すればよいでしょうか。<br>「'」で囲まれた文字はまた違う色にしたいのですが。</div></section>
     <ul><li><section><h1 id=6309>
     <span class="no">[6309]</span>
-    <a class="title" href="#6309">RE: VBみたいなコメントの色付け</a>
+    <a class="thread-title" href="#6309">RE: VBみたいなコメントの色付け</a>
     <span class="author">すい</span>
     <time datetime="2007-09-13T20:15:45">2007年09月13日 20:15</time></h1>
     <div class="body">タイプ別設定にて、<br><br>[カラー] タブ<br>├ 「色指定」で「シングルクォーテーション文字列」のチェックをoffにする。<br>└ 「コメントスタイル」の「行型」には ' を登録しないように。<br><br>[正規表現キーワード] タブ<br>├ 「正規表現キーワードを使用する」のチェックon<br>└ 「正規表現キーワード」 以下の２個を設定しておく。<br>　　│ <br>　　├ キーワード：/^\s*'.*/k<br>　　│ 色　指　定：コメント<br>　　│ <br>　　└ キーワード：/'[^']*'/k<br>　　　 色　指　定：シングルクォーテーション文字列<br><br>かな？<br></div></section>
     <ul><li><section><h1 id=6315>
     <span class="no">[6315]</span>
-    <a class="title" href="#6315">Re2: VBみたいなコメントの色付け</a>
+    <a class="thread-title" href="#6315">Re2: VBみたいなコメントの色付け</a>
     <span class="author">TAKKKK</span>
     <time datetime="2007-09-14T09:42:19">2007年09月14日 09:42</time></h1>
     <div class="body">返信ありがとうございます。<br>できました。<br>正規表現についてもっと勉強しようと思います。<br><br><br>▼ すいさん<br>&gt; タイプ別設定にて、<br>&gt; <br>&gt; [カラー] タブ<br>&gt; ├ 「色指定」で「シングルクォーテーション文字列」のチェックをoffにする。<br>&gt; └ 「コメントスタイル」の「行型」には ' を登録しないように。<br>&gt; <br>&gt; [正規表現キーワード] タブ<br>&gt; ├ 「正規表現キーワードを使用する」のチェックon<br>&gt; └ 「正規表現キーワード」 以下の２個を設定しておく。<br>&gt; 　　│ <br>&gt; 　　├ キーワード：/^\s*'.*/k<br>&gt; 　　│ 色　指　定：コメント<br>&gt; 　　│ <br>&gt; 　　└ キーワード：/'[^']*'/k<br>&gt; 　　　 色　指　定：シングルクォーテーション文字列<br>&gt; <br>&gt; かな？</div></section>
     <ul><li><section><h1 id=6317>
     <span class="no">[6317]</span>
-    <a class="title" href="#6317">Re3: VBみたいなコメントの色付け</a>
+    <a class="thread-title" href="#6317">Re3: VBみたいなコメントの色付け</a>
     <span class="author">TAKKKK</span>
     <time datetime="2007-09-19T09:41:13">2007年09月19日 09:41</time></h1>
     <div class="body">色の変わるパターンの説明が足りなかったみたいでした。<br><br>Dim cnt&#9;&#9;'レコードカウント<br><br>みたいなやつは<br>どうすれば、コメント色になるでしょうか？<br>'の前が必ずタブって決まっているのなら<br>わかるのですが、スペースの場合でも動くようにしたいです。</div></section>
     <ul><li><section><h1 id=6318>
     <span class="no">[6318]</span>
-    <a class="title" href="#6318">Re4: VBみたいなコメントの色付け</a>
+    <a class="thread-title" href="#6318">Re4: VBみたいなコメントの色付け</a>
     <span class="author">すい</span>
     <time datetime="2007-09-20T00:02:30">2007年09月20日 00:02</time></h1>
     <div class="body">&gt;Dim cnt&#9;&#9;'レコードカウント<br>&gt;<br>&gt;みたいなやつは<br>&gt;どうすれば、コメント色になるでしょうか？<br><br>&gt;&gt; キーワード：/^\s*'.*/k<br>&gt;&gt; 色　指　定：コメント<br>&gt;&gt;<br>&gt;&gt; キーワード：/'[^']*'/k<br>&gt;&gt; 色　指　定：シングルクォーテーション文字列<br><br>↓最後に追加<br>・キーワード：/'.*/k<br>　色　指　定：コメント<br><br>とか？<br></div></section>
     <ul><li><section><h1 id=6319>
     <span class="no">[6319]</span>
-    <a class="title" href="#6319">Re5: VBみたいなコメントの色付け</a>
+    <a class="thread-title" href="#6319">Re5: VBみたいなコメントの色付け</a>
     <span class="author">TAKKKK</span>
     <time datetime="2007-09-20T09:36:25">2007年09月20日 09:36</time></h1>
     <div class="body">ありがとうございます。<br>追加してみます。<br>正規表現は何を参考に勉強されていますか？<br></div></section>
     <ul><li><section><h1 id=6320>
     <span class="no">[6320]</span>
-    <a class="title" href="#6320">Re6: VBみたいなコメントの色付け</a>
+    <a class="thread-title" href="#6320">Re6: VBみたいなコメントの色付け</a>
     <span class="author">じゅうじ</span>
     <time datetime="2007-09-20T22:58:13">2007年09月20日 22:58</time></h1>
     <div class="body">&gt; 正規表現は何を参考に勉強されていますか？<br>Perl for Newbie（Perl初心者の部屋）<br>引越しが有ったみたい<br><a href=http://www.harukaze.net/~mishima/perl/man/perlre.1.html target=_top><nobr>http://<wbr>www.<wbr>harukaze<wbr>.<wbr>net/~<wbr>mishima/<wbr>perl/<wbr>man/<wbr>perlre.<wbr>1.<wbr>html</nobr></a></div></section>
     </li><li><section><h1 id=6327>
     <span class="no">[6327]</span>
-    <a class="title" href="#6327">Re6: VBみたいなコメントの色付け</a>
+    <a class="thread-title" href="#6327">Re6: VBみたいなコメントの色付け</a>
     <span class="author">すい</span>
     <time datetime="2007-09-23T04:00:29">2007年09月23日 04:00</time></h1>
     <div class="body">すみません、勉強してないです、正規表現。<br>というか、勉強するような物ではないと思っていますし、<br>勉強して身に付くような物とも思っていないんです。<br><br>正規表現で一番大事なのは<br>「ユーティリティ毎に使用できる特殊機能の表現（メタ文字）が異なる」<br>という事実で、そのため、正規表現をサポートするユーティリティを<br>使用する場合、そのユーティリティ毎に<br>「このユーティリティは、どんな表現をサポートしているのかな？」<br>という事を１から調べ直す事。<br><br>↑これを欠かさない事が大事。<br><br>ただ、最近のユーティリティは結構色々、多種多様で複雑なメタ文字を<br>サポートしている物が多くなってきているので、調べても覚えきれない<br>事が多々あります。<br><br>そんな時は全部を覚えようとはしない事。<br>一応簡単に全部に目を通すだけ通し、無理せずに覚えられる分だけ<br>あるいは、今、必要としている分だけ覚えて使っていく。<br><br>また、別の機能（メタ文字）が必要になって来たら、その時に<br>調べ直せば良いんだし。と割り切る!!<br>学校のテストじゃないんだし、全部覚える必要なんてないですしね。<br><br>で、覚えたら、その覚えた範囲までで便利に使えるんですよ、<br>正規表現って。<br><br>もっと色々覚えればさらにもっと便利に高度な事が出来るんでしょうけど、<br>そんなのは、まぁ、いずれまた何か他の機能が必要になったら、<br>その時に説明文を読んで調べりゃ良いや～～。と割り切る事。<br><br>で、僅かでも覚えたなら、正規表現を日常的に使い倒す。<br>あくまで覚えた範囲で。<br>チャチな記述で充分なので、とにかく使って慣れていく。<br><br>日常的に使っていると「もっとこんな事も出来ないかな？」<br>とか欲が出て来るものです。<br>そしたら また ちょっとだけ調べて、ちょっとだけメタ文字を覚える。<br>で、覚えたら覚えた範囲までで便利に使える。<br><br>その繰り返しを延々と。<br>勉強とか構えず、「覚えたら覚えた範囲で便利に使える物」<br>と割り切り、無理をしない。そして、とにかく日々使い倒す。<br><br>あまり無理すると嫌気さしちゃったりしますからね。挫折しちゃうかも。<br><br>世の中には達人的に複雑怪奇な正規表現を繰り出してくる人々も<br>いますが、そんなのは無視する事が大事。<br>せいぜい「へ～ぇ、そんな事もできるんだ～」程度に思っておけば良し。<br>「オレも複雑怪奇な正規表現を記述しよう」なんて考えたら負け! です。<br><br>とにかく日常的に使って行く事。そして、あくまで必要に応じて、<br>無理しない範囲で少しずつメタ文字を覚えていけば、ふと気付いた時には<br>あなたも「達人的に複雑怪奇な正規表現を繰り出してくる人々」<br>の仲間入りしていてアラ手遅れ、あなたもすっかり正規表現ヲタク<br>なのね、と、なってしまう事でしょう。アーメン<br></div></section>

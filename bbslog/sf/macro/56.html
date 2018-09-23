@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ファイルを閉じないで、名前を付けて保存</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ファイルを閉じないで、名前を付けて保存 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">56</span>
-    <a class="title" href="56.html#56">ファイルを閉じないで、名前を付けて保存</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=56>
+    <a class="thread-title" href="56.html#56">ファイルを閉じないで、名前を付けて保存</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=56>
     <span class="no">[56]</span>
-    <a class="title" href="#56">ファイルを閉じないで、名前を付けて保存</a>
+    <a class="thread-title" href="#56">ファイルを閉じないで、名前を付けて保存</a>
     <span class="author">じゅうじ</span>
     <time datetime="2004-01-02T17:47:40">2004年01月02日 17:47</time></h1>
     <div class="body">// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに <br>// PPA.DLL を入れておいてください。<br>// また、マクロファイルの拡張子は .PPA でなくてはなりません。<br>// SAVEREOPEN.PPA<br>// ファイルを閉じないで、名前を付けて保存<br>var<br>  sa, ss: String;<br>begin<br>  sa := InputBox('一時保存ファイル名','ファイル名','');<br>  if sa = '' then Exit;<br>  ss := S_ExpandParameter('$F');<br>  S_FileSaveAs(sa,0,0);<br>  S_FileOpen(ss);<br>end.<br>// このマクロ何に使うのかと、関心の有る方は[ふぁんくらぶ part4] &lt;217&gt;,&lt;265&gt;をご覧下さい。<br></div></section>

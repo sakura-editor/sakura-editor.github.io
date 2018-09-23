@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現を使ったアウトライン解析機能</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現を使ったアウトライン解析機能 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1164</span>
-    <a class="title" href="1164.html#1164">正規表現を使ったアウトライン解析機能</a></div>
+    <a class="thread-title" href="1164.html#1164">正規表現を使ったアウトライン解析機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">1165</span>
-    <a class="title" href="1164.html#1165">Re:正規表現を使ったアウトライン解析機能</a></div>
+    <a class="thread-title" href="1164.html#1165">Re:正規表現を使ったアウトライン解析機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">1170</span>
-    <a class="title" href="1164.html#1170">Re2:正規表現を使ったアウトライン解析機能</a></div>
+    <a class="thread-title" href="1164.html#1170">Re2:正規表現を使ったアウトライン解析機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">1171</span>
-    <a class="title" href="1164.html#1171">Re3:正規表現を使ったアウトライン解析機能</a></div>
+    <a class="thread-title" href="1164.html#1171">Re3:正規表現を使ったアウトライン解析機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">1172</span>
-    <a class="title" href="1164.html#1172">Re4:正規表現を使ったアウトライン解析機能</a></div>
+    <a class="thread-title" href="1164.html#1172">Re4:正規表現を使ったアウトライン解析機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">1174</span>
-    <a class="title" href="1164.html#1174">Re4:正規表現を使ったアウトライン解析機能</a></div>
+    <a class="thread-title" href="1164.html#1174">Re4:正規表現を使ったアウトライン解析機能</a></div>
     </li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">1173</span>
-    <a class="title" href="1164.html#1173">Re:正規表現を使ったアウトライン解析機能</a></div>
+    <a class="thread-title" href="1164.html#1173">Re:正規表現を使ったアウトライン解析機能</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">1509</span>
-    <a class="title" href="1164.html#1509">RE: 正規表現を使ったアウトライン解析機能</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1164>
+    <a class="thread-title" href="1164.html#1509">RE: 正規表現を使ったアウトライン解析機能</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1164>
     <span class="no">[1164]</span>
-    <a class="title" href="#1164">正規表現を使ったアウトライン解析機能</a>
+    <a class="thread-title" href="#1164">正規表現を使ったアウトライン解析機能</a>
     <span class="author">みく</span>
     <time datetime="2002-01-15T18:47:41">2002年01月15日 18:47</time></h1>
     <div class="body">正規表現を使ったアウトライン解析機能の実装に関する独り言...<br><br>【できること】<br>・アウトライン解析が正規表現でユーザが自由に設定できるようになる。<br>・解析画面の見出しが編集画面でも色分けできる。<br><br>【できないこと】<br>・行単位でしか解析できない。<br><br>【変更】<br>・現在の「正規表現キーワード10」を「アウトライン解析(正規表現)」に変更する。<br>・この色指定での編集画面表示は従来どおり行う。<br>・解析方法に「正規表現」を追加する。<br>・アウトライン解析画面はリスト形式でタイトルは「見出し」とする。<br>・「正規表現」では「アウトライン解析(正規表現)」で指定された正規表現キーワードを使用して行解析を行う。マッチしたら見出しに登録する。<br>・設定ファイル保存は従来のまま(RKA)とする。<br>・CRegexKeyword.cppに指定の正規表現だけを使ってマッチするかしないかを検査する関数を追加する。<br>・CEditDoc(_new.cpp)に正規表現用アウトライン解析関数を追加する。<br><br>となり、意外と簡単に実装できるのではないかと思ったりするのであった。<br><br></div></section>
     <ul><li><section><h1 id=1165>
     <span class="no">[1165]</span>
-    <a class="title" href="#1165">Re:正規表現を使ったアウトライン解析機能</a>
+    <a class="thread-title" href="#1165">Re:正規表現を使ったアウトライン解析機能</a>
     <span class="author">hor</span>
     <time datetime="2002-01-15T19:24:20">2002年01月15日 19:24</time></h1>
     <div class="body">▼ みくさん<br>&gt; 正規表現を使ったアウトライン解析機能の実装に関する独り言...<br>&gt; <br>&gt; 【できること】<br>&gt; ・アウトライン解析が正規表現でユーザが自由に設定できるようになる。<br>&gt; ・解析画面の見出しが編集画面でも色分けできる。<br>&gt; <br><br>ちょっと方向性が違いますけど、関数ジャンプとかを簡単に実行でけへんかな～と思って、<br><br>１．検索・置換ダイアログに「該当行マーク」をくっつけて、<br>　　　検索パターンにマッチする行すべてにマークをつけられるようにする。<br>２．外部マクロから、指定した正規表現にマッチする行にブックマークをつけられるようにする。<br><br>ってゆうのをやりかけてます。<br>必要なければやめちゃいますけど・・・どう思います？</div></section>
     <ul><li><section><h1 id=1170>
     <span class="no">[1170]</span>
-    <a class="title" href="#1170">Re2:正規表現を使ったアウトライン解析機能</a>
+    <a class="thread-title" href="#1170">Re2:正規表現を使ったアウトライン解析機能</a>
     <span class="author">やざき</span>
     <time datetime="2002-01-16T00:18:29">2002年01月16日 00:18</time></h1>
     <div class="body">▼ horさん<br>&gt; ▼ みくさん<br>&gt; &gt; 正規表現を使ったアウトライン解析機能の実装に関する独り言...<br>&gt; &gt; <br>&gt; &gt; 【できること】<br>&gt; &gt; ・アウトライン解析が正規表現でユーザが自由に設定できるようになる。<br>&gt; &gt; ・解析画面の見出しが編集画面でも色分けできる。<br>&gt; &gt; <br>&gt; <br>&gt; ちょっと方向性が違いますけど、関数ジャンプとかを簡単に実行でけへんかな～と思って、<br>&gt; <br>&gt; １．検索・置換ダイアログに「該当行マーク」をくっつけて、<br>&gt; 　　　検索パターンにマッチする行すべてにマークをつけられるようにする。<br>&gt; ２．外部マクロから、指定した正規表現にマッチする行にブックマークをつけられるようにする。<br>&gt; <br>&gt; ってゆうのをやりかけてます。<br>&gt; 必要なければやめちゃいますけど・・・どう思います？<br><br>horさんは、ブックマーク＋正規表現を実装しようとしてて、<br>みくさんは、アウトライン解析＋正規表現を実装しようとしているってことでいいですか？<br><br>たぶんできあがりは同じようなものなので、ブックマーク＋正規表現にして、<br>いまあるアウトライン解析を、「２」の外部マクロから...というので再現すると、いいかなぁと<br>わたしは思いました。<br>「アウトライン解析＋正規表現」にすると、正規表現01～10とか作ることになってシンプルじゃなくなりそうな気配が。。。<br><br></div></section>
     <ul><li><section><h1 id=1171>
     <span class="no">[1171]</span>
-    <a class="title" href="#1171">Re3:正規表現を使ったアウトライン解析機能</a>
+    <a class="thread-title" href="#1171">Re3:正規表現を使ったアウトライン解析機能</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-16T09:02:52">2002年01月16日 09:02</time></h1>
     <div class="body">&gt;「アウトライン解析＋正規表現」にすると、正規表現01～10とか作ることになってシンプルじゃなくなりそうな<br>どうやって編集するかという問題は残りますけど，「アウトライン解析＋正規表現」の方が正規表現の中で()を使ってツリーに表示する文字列を選択するなど自由度が高くなると思います．あと，うまいこと階層構造の指定ができないかなぁと．<br><br>例えばdiffのアウトライン解析で<br>LEVEL 1: ^diff .*([^ ]+)[\n\r]*$<br>LEVEL 2: ^@@ (.* .*) @@<br>みたいにやりたいです．<br><br>あ，でも，検索キーワードを含む全ての行をBookmarkというのは以前から欲しいと思っていました(^^)<br></div></section>
     <ul><li><section><h1 id=1172>
     <span class="no">[1172]</span>
-    <a class="title" href="#1172">Re4:正規表現を使ったアウトライン解析機能</a>
+    <a class="thread-title" href="#1172">Re4:正規表現を使ったアウトライン解析機能</a>
     <span class="author">やざき</span>
     <time datetime="2002-01-16T11:28:05">2002年01月16日 11:28</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;「アウトライン解析＋正規表現」にすると、正規表現01～10とか作ることになってシンプルじゃなくなりそうな<br>&gt; どうやって編集するかという問題は残りますけど，「アウトライン解析＋正規表現」の方が正規表現の中で()を使ってツリーに表示する文字列を選択するなど自由度が高くなると思います．あと，うまいこと階層構造の指定ができないかなぁと．<br>&gt; <br>&gt; 例えばdiffのアウトライン解析で<br>&gt; LEVEL 1: ^diff .*([^ ]+)[\n\r]*$<br>&gt; LEVEL 2: ^@@ (.* .*) @@<br>&gt; みたいにやりたいです．<br>&gt; <br>&gt; あ，でも，検索キーワードを含む全ての行をBookmarkというのは以前から欲しいと思っていました(^^)<br><br>「ブックマーク＋正規表現」だと、一括でブックマークをつけたあとに要らないやつをオフにしたり、<br>さらに必要なところをオンにできるのは便利そう。<br><br>正規表現の()を。ということであれば、ブックマーク＋正規表現でもできると思うんですけど？<br><br>それと<br>&gt;２．外部マクロから、指定した正規表現にマッチする行にブックマークをつけられるようにする。<br><br>の「外部マクロ」からというところに、非常に魅力を感じました。<br>では～</div></section>
     <ul><li><section><h1 id=1174>
     <span class="no">[1174]</span>
-    <a class="title" href="#1174">Re4:正規表現を使ったアウトライン解析機能</a>
+    <a class="thread-title" href="#1174">Re4:正規表現を使ったアウトライン解析機能</a>
     <span class="author">みく</span>
     <time datetime="2002-01-16T19:32:44">2002年01月16日 19:32</time></h1>
     <div class="body">&gt;タイトル: Re4:正規表現を使ったアウトライン解析機能<br>&gt;発言者: やざき<br>&gt;▼ げんたさん<br>&gt;&gt; あと，うまいこと階層構造の指定ができないかなぁと．<br>&gt;&gt; <br>&gt;&gt; 例えばdiffのアウトライン解析で<br>&gt;&gt; LEVEL 1: ^diff .*([^ ]+)[\n\r]*$<br>&gt;&gt; LEVEL 2: ^@@ (.* .*) @@<br>&gt;&gt; みたいにやりたいです．<br><br>なるほど。ツリーにもできますね。<br>＃正規表現キーワードにレベル項目を追加すればできそうです。<br><br>ブックマーク＋正規表現はジャンプができるのがいいですね。<br><br>希望：<br>ファイルを開いたときに自動でブックマークを設定してくると便利だと思ったりします。<br>あと、正規表現は複数指定できる方がいいです。<br></div></section>
     </li></ul></li></ul></li></ul></li><li><section><h1 id=1173>
     <span class="no">[1173]</span>
-    <a class="title" href="#1173">Re:正規表現を使ったアウトライン解析機能</a>
+    <a class="thread-title" href="#1173">Re:正規表現を使ったアウトライン解析機能</a>
     <span class="author">みく</span>
     <time datetime="2002-01-16T19:32:42">2002年01月16日 19:32</time></h1>
     <div class="body">&gt;タイトル: Re:正規表現を使ったアウトライン解析機能<br>&gt;発言者: hor<br>&gt;ってゆうのをやりかけてます。<br>&gt;必要なければやめちゃいますけど・・・どう思います？<br><br>続けてください。<br>私はまだ何にもしてませんので。<br></div></section>
     </li></ul></li><li><section><h1 id=1509>
     <span class="no">[1509]</span>
-    <a class="title" href="#1509">RE: 正規表現を使ったアウトライン解析機能</a>
+    <a class="thread-title" href="#1509">RE: 正規表現を使ったアウトライン解析機能</a>
     <span class="author">みく</span>
     <time datetime="2002-02-08T21:48:20">2002年02月08日 21:48</time></h1>
     <div class="body"><br>メモです。<br><br>【概要】<br>正規表現キーワードを使用してアウトライン解析を行います。ユーザが設定可能にな<br>ります。タイプ別に設定可能です。<br>タイプ別の正規表現キーワードに「アウトライン解析に使用する」チェックボックス<br>を追加します。このチェックが入るとアウトライン解析に使用します。また、この<br>チェックを入れると「レベル」を指定可能になります。「レベル」は１～９までを指<br>定可能なコンボボックスです。<br>設定ファイルにはレベルを追加して記録するようにします。「アウトライン解析に使<br>用する」のチェックをオフにした場合は内部的にはレベル０として扱います。<br>設定ファイルは書式が変わってしまうため以下のようにします。<br>RxKey[999]=@2,レベル,色指定,キーワード<br>ここで@2はバージョンを表します。今回はバージョン２になります。@がない場合は<br>バージョン１形式ということになります。バージョン１のときはレベル０として扱い<br>ます。設定ファイルなら頭のバージョン表記で判別可能ですが、iniファイルのほうは<br>そうはいかないので上記のようなバージョン指定になります。<br>アウトライン解析はツリー形式で、レベルがツリーの深さになります。<br>いきなり深いレベルが出現したときの処理不明。<br>アウトライン解析のみに使用したい場合は色指定のチェックをはずしておきます。<br>アウトライン解析にも使うし色分けもすることも可能です。<br>しかもレベルに応じて色分けすることも可能です。<br><br><br>【変更箇所】<br>CPropTypesRegex.cpp<br>&#9;設定<br>CShareData.*<br>&#9;設定のロードとセーブ<br>CRegexKeyword.*<br>&#9;アウトライン解析用検索処理の追加<br>&#9;コンパイルなども<br>その他<br>&#9;アウトライン解析処理の追加<br></div></section>

@@ -1,108 +1,134 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>doxygen</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>doxygen | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1568</span>
-    <a class="title" href="1568.html#1568">doxygen</a></div>
+    <a class="thread-title" href="1568.html#1568">doxygen</a></div>
     <ul><li><div class="list-title">
     <span class="no">1569</span>
-    <a class="title" href="1568.html#1569">Re: doxygen</a></div>
+    <a class="thread-title" href="1568.html#1569">Re: doxygen</a></div>
     <ul><li><div class="list-title">
     <span class="no">1572</span>
-    <a class="title" href="1568.html#1572">Re2: doxygen</a></div>
+    <a class="thread-title" href="1568.html#1572">Re2: doxygen</a></div>
     <ul><li><div class="list-title">
     <span class="no">1574</span>
-    <a class="title" href="1568.html#1574">Re2: doxygen</a></div>
+    <a class="thread-title" href="1568.html#1574">Re2: doxygen</a></div>
     <ul><li><div class="list-title">
     <span class="no">1575</span>
-    <a class="title" href="1568.html#1575">Re3: doxygen</a></div>
+    <a class="thread-title" href="1568.html#1575">Re3: doxygen</a></div>
     <ul><li><div class="list-title">
     <span class="no">1578</span>
-    <a class="title" href="1568.html#1578">Re3: doxygen</a></div>
+    <a class="thread-title" href="1568.html#1578">Re3: doxygen</a></div>
     <ul><li><div class="list-title">
     <span class="no">1579</span>
-    <a class="title" href="1568.html#1579">Re4: doxygen</a></div>
+    <a class="thread-title" href="1568.html#1579">Re4: doxygen</a></div>
     <ul><li><div class="list-title">
     <span class="no">1580</span>
-    <a class="title" href="1568.html#1580">Re5: doxygen</a></div>
+    <a class="thread-title" href="1568.html#1580">Re5: doxygen</a></div>
     <ul><li><div class="list-title">
     <span class="no">1582</span>
-    <a class="title" href="1568.html#1582">Re5: doxygen</a></div>
+    <a class="thread-title" href="1568.html#1582">Re5: doxygen</a></div>
     <ul><li><div class="list-title">
     <span class="no">1583</span>
-    <a class="title" href="1568.html#1583">Re7: doxygen</a></div>
+    <a class="thread-title" href="1568.html#1583">Re7: doxygen</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">1617</span>
-    <a class="title" href="1568.html#1617">doxygen 1.2.14</a></div>
+    <a class="thread-title" href="1568.html#1617">doxygen 1.2.14</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">1581</span>
-    <a class="title" href="1568.html#1581">1.2.13.1のdoxygenはだめだ</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1568>
+    <a class="thread-title" href="1568.html#1581">1.2.13.1のdoxygenはだめだ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1568>
     <span class="no">[1568]</span>
-    <a class="title" href="#1568">doxygen</a>
+    <a class="thread-title" href="#1568">doxygen</a>
     <span class="author">やざき</span>
     <time datetime="2002-02-13T10:24:12">2002年02月13日 10:24</time></h1>
     <div class="body">doxygenを試してみたら、文字化けしまくりなのですが、何か確認すべき項目はありませんか？<br></div></section>
     <ul><li><section><h1 id=1569>
     <span class="no">[1569]</span>
-    <a class="title" href="#1569">Re: doxygen</a>
+    <a class="thread-title" href="#1569">Re: doxygen</a>
     <span class="author">げんた</span>
     <time datetime="2002-02-13T11:26:22">2002年02月13日 11:26</time></h1>
     <div class="body">&gt;doxygenを試してみたら、文字化けしまくりなのですが、何か確認すべき項目はありませんか？<br>漢字コードがEUCでないとうまくいきませんので，nkf32をGET(vectorにあったと思う)して以下の設定を行ってください．<br>INPUT_FILTER           = "nkf32 -e"<br>FILTER_SOURCE_FILES    = YES<br><br>dotというやつをインストールして使うように指定すると，インクルードファイルの関連も図にしてくれます．<br></div></section>
     <ul><li><section><h1 id=1572>
     <span class="no">[1572]</span>
-    <a class="title" href="#1572">Re2: doxygen</a>
+    <a class="thread-title" href="#1572">Re2: doxygen</a>
     <span class="author">やざき</span>
     <time datetime="2002-02-13T12:15:03">2002年02月13日 12:15</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;doxygenを試してみたら、文字化けしまくりなのですが、何か確認すべき項目はありませんか？<br>&gt; 漢字コードがEUCでないとうまくいきませんので，nkf32をGET(vectorにあったと思う)して以下の設定を行ってください．<br>&gt; INPUT_FILTER           = "nkf32 -e"<br>&gt; FILTER_SOURCE_FILES    = YES<br>&gt; <br>&gt; dotというやつをインストールして使うように指定すると，インクルードファイルの関連も図にしてくれます．<br><br>げんたさんが用意してくださっている、sakuracfg.txtを使ってみたので、すでに設定されているみたいです。<br><br>nkf32はココからダウンロードしました。<br>http://www.vector.co.jp/soft/win95/util/se031296.html<br><br>うーん。こまつた。</div></section>
     <ul><li><section><h1 id=1574>
     <span class="no">[1574]</span>
-    <a class="title" href="#1574">Re2: doxygen</a>
+    <a class="thread-title" href="#1574">Re2: doxygen</a>
     <span class="author">げんた</span>
     <time datetime="2002-02-13T12:43:01">2002年02月13日 12:43</time></h1>
     <div class="body">http://sakura-editor.sourceforge.net/sourcetree/ はちゃんと見えていますよね．<br>この生成に使った doxyfile をjunkフォルダに置きましたので試してみてください．<br></div></section>
     <ul><li><section><h1 id=1575>
     <span class="no">[1575]</span>
-    <a class="title" href="#1575">Re3: doxygen</a>
+    <a class="thread-title" href="#1575">Re3: doxygen</a>
     <span class="author">やざき</span>
     <time datetime="2002-02-13T13:08:44">2002年02月13日 13:08</time></h1>
     <div class="body">▼ げんたさん<br>&gt; http://sakura-editor.sourceforge.net/sourcetree/ はちゃんと見えていますよね．<br><br>見えてますね。<br><br>&gt; この生成に使った doxyfile をjunkフォルダに置きましたので試してみてください．<br><br>&gt;ファイル CShareData.cpp の解説<br>&gt;プロセス間共有データへのアクセス. より詳しく... <br><br>となるべきところが、<br><br>&gt;?t?@?C?? CShareData.cpp ?I?d?a<br>&gt;プロセス間共有データへのアクセス. ?a?e?U?ヵ=-... <br><br>となりました。ソースはEUCになってるけど、<br>doxygenが生成している部分のコード（なんだかわからず）と食い違っているみたいですね。<br>doxygenにも設定が必要だったりしますか？<br></div></section>
     <ul><li><section><h1 id=1578>
     <span class="no">[1578]</span>
-    <a class="title" href="#1578">Re3: doxygen</a>
+    <a class="thread-title" href="#1578">Re3: doxygen</a>
     <span class="author">げんた</span>
     <time datetime="2002-02-13T13:21:04">2002年02月13日 13:21</time></h1>
     <div class="body">&gt;となりました。ソースはEUCになってるけど、<br>&gt;doxygenが生成している部分のコード（なんだかわからず）と食い違っているみたいですね。<br>doxygenのChange Logを見ると1.2.13.1のNew FeaturesというところにSJISのサポートというのがあります．<br>ということは，1.2.13.1以降を使うときはNKFによる変換を行ってはいけないのでしょうね．<br>nkf部分を外してみてください．<br></div></section>
     <ul><li><section><h1 id=1579>
     <span class="no">[1579]</span>
-    <a class="title" href="#1579">Re4: doxygen</a>
+    <a class="thread-title" href="#1579">Re4: doxygen</a>
     <span class="author">やざき</span>
     <time datetime="2002-02-13T14:05:03">2002年02月13日 14:05</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;となりました。ソースはEUCになってるけど、<br>&gt; &gt;doxygenが生成している部分のコード（なんだかわからず）と食い違っているみたいですね。<br>&gt; doxygenのChange Logを見ると1.2.13.1のNew FeaturesというところにSJISのサポートというのがあります．<br>&gt; ということは，1.2.13.1以降を使うときはNKFによる変換を行ってはいけないのでしょうね．<br>&gt; nkf部分を外してみてください．<br><br>いろいろ調べたら、doxygenにSJISを取り込んだかたを発見。<br>http://www.geocities.co.jp/SiliconValley-SanJose/5153/<br><br>が、<br><br>&gt;なお，1.2.13.1はSJIS対応と書いてありますが、私がバグを入れてしまいました。大変すみません。コンパイル時にwindowsではsjis，unixではEUCを吐くはずなのですが、windowsでは文字化けしてしまいます。<br><br>だそうです。しくしく。</div></section>
     <ul><li><section><h1 id=1580>
     <span class="no">[1580]</span>
-    <a class="title" href="#1580">Re5: doxygen</a>
+    <a class="thread-title" href="#1580">Re5: doxygen</a>
     <span class="author">やざき</span>
     <time datetime="2002-02-13T14:12:06">2002年02月13日 14:12</time></h1>
     <div class="body">そして、<br>http://www.geocities.co.jp/SiliconValley-SanJose/5153/<br><br>の<br><br>バイナリ:doxygen-1.2.13.1-win-j-bin.zip<br><br>を使って、INPUT_FILTERを使わないようにしたところ、うまくいきました。<br>ありがとうございました &gt; げんたさん</div></section>
     <ul><li><section><h1 id=1582>
     <span class="no">[1582]</span>
-    <a class="title" href="#1582">Re5: doxygen</a>
+    <a class="thread-title" href="#1582">Re5: doxygen</a>
     <span class="author">げんた</span>
     <time datetime="2002-02-13T14:15:35">2002年02月13日 14:15</time></h1>
     <div class="body">&gt;http://www.geocities.co.jp/SiliconValley-SanJose/5153/<br>&gt;を使って、INPUT_FILTERを使わないようにしたところ、うまくいきました。<br>あ，情報どうもです．<br>漢字変換が無くなったせいか，かなりスピードアップしているように感じられます．<br></div></section>
     <ul><li><section><h1 id=1583>
     <span class="no">[1583]</span>
-    <a class="title" href="#1583">Re7: doxygen</a>
+    <a class="thread-title" href="#1583">Re7: doxygen</a>
     <span class="author">げんた</span>
     <time datetime="2002-02-13T14:16:16">2002年02月13日 14:16</time></h1>
     <div class="body">&gt;漢字変換<br>じゃなくてコード変換でした．<br></div></section>
     </li></ul></li></ul></li><li><section><h1 id=1617>
     <span class="no">[1617]</span>
-    <a class="title" href="#1617">doxygen 1.2.14</a>
+    <a class="thread-title" href="#1617">doxygen 1.2.14</a>
     <span class="author">げんた</span>
     <time datetime="2002-02-18T12:58:12">2002年02月18日 12:58</time></h1>
     <div class="body">doxygenの1.2.14では文字化けが直っています．<br></div></section>
     </li></ul></li><li><section><h1 id=1581>
     <span class="no">[1581]</span>
-    <a class="title" href="#1581">1.2.13.1のdoxygenはだめだ</a>
+    <a class="thread-title" href="#1581">1.2.13.1のdoxygenはだめだ</a>
     <span class="author">げんた</span>
     <time datetime="2002-02-13T14:12:35">2002年02月13日 14:12</time></h1>
     <div class="body">&gt;nkf部分を外してみてください．<br>確かに本文はSHIFT-JISでうまくいっているのですが，メッセージが文字化けしますね．<br>組み込みのメッセージがEUCのままなのに処理をSJISにしているのではないでしょうか．<br>とりあえずはLanguage=Englishで使うしかないかな．<br></div></section>

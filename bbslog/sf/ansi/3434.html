@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>（要望）DIFF差分</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>（要望）DIFF差分 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3434</span>
-    <a class="title" href="3434.html#3434">（要望）DIFF差分</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=3434>
+    <a class="thread-title" href="3434.html#3434">（要望）DIFF差分</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3434>
     <span class="no">[3434]</span>
-    <a class="title" href="#3434">（要望）DIFF差分</a>
+    <a class="thread-title" href="#3434">（要望）DIFF差分</a>
     <span class="author">じゅうじ</span>
     <time datetime="2004-02-22T04:21:53">2004年02月22日 04:21</time></h1>
     <div class="body">一般[3152]を修正して見ました。<br>最初のSendMessage()は、リストボックスのアクティブなアイテムの<br>選択を初期化するものでしたので削除しました。<br><br>*** コピー ～ CDlgDiff.cpp&#9;Sat Sep 20 01:41:16 2003<br>--- CDlgDiff.cpp&#9;Sun Feb 22 04:06:32 2004<br>***************<br>*** 126,130 ****<br>  &#9;&#9;//::EnableWindow( ::GetDlgItem( m_hWnd, IDC_BUTTON_DIFF_DST ), TRUE );<br>  &#9;&#9;//::EnableWindow( ::GetDlgItem( m_hWnd, IDC_LIST_DIFF_FILES ), FALSE );<br>! &#9;&#9;::SendMessage( ::GetDlgItem( m_hWnd, IDC_LIST_DIFF_FILES), LB_SETCURSEL, (WPARAM)-1, 0 );<br>  &#9;&#9;return TRUE;<br> <br>--- 126,130 ----<br>  &#9;&#9;//::EnableWindow( ::GetDlgItem( m_hWnd, IDC_BUTTON_DIFF_DST ), TRUE );<br>  &#9;&#9;//::EnableWindow( ::GetDlgItem( m_hWnd, IDC_LIST_DIFF_FILES ), FALSE );<br>! &#9;&#9;//::SendMessage( ::GetDlgItem( m_hWnd, IDC_LIST_DIFF_FILES), LB_SETCURSEL, (WPARAM)-1, 0 );<br>  &#9;&#9;return TRUE;<br> <br>***************<br>*** 191,196 ****<br> <br>  &#9;/* 相手ファイルの選択 */<br>! &#9;::CheckDlgButton( m_hWnd, IDC_RADIO_DIFF_DST1, TRUE );<br>! &#9;::CheckDlgButton( m_hWnd, IDC_RADIO_DIFF_DST2, FALSE );<br> <br>  &#9;/* 見つからないときメッセージを表示 */<br>--- 191,196 ----<br> <br>  &#9;/* 相手ファイルの選択 */<br>! &#9;//::CheckDlgButton( m_hWnd, IDC_RADIO_DIFF_DST1, TRUE );<br>! &#9;//::CheckDlgButton( m_hWnd, IDC_RADIO_DIFF_DST2, FALSE );<br> <br>  &#9;/* 見つからないときメッセージを表示 */<br>***************<br>*** 281,287 ****<br>--- 281,302 ----<br>  &#9;&#9;if( count == 0 )<br>  &#9;&#9;{<br>+ &#9;&#9;&#9;/* 相手ファイルの選択 */<br>+ &#9;&#9;&#9;::CheckDlgButton( m_hWnd, IDC_RADIO_DIFF_DST1, TRUE );<br>+ &#9;&#9;&#9;::CheckDlgButton( m_hWnd, IDC_RADIO_DIFF_DST2, FALSE );<br>  &#9;&#9;&#9;/* その他の編集中リストはなし */<br>  &#9;&#9;&#9;::EnableWindow( ::GetDlgItem( m_hWnd, IDC_RADIO_DIFF_DST2 ), FALSE );<br>  &#9;&#9;&#9;::EnableWindow( ::GetDlgItem( m_hWnd, IDC_LIST_DIFF_FILES ), FALSE );<br>+ &#9;&#9;}<br>+ &#9;&#9;else<br>+ &#9;&#9;{<br>+ &#9;&#9;&#9;/* 相手ファイルの選択 */<br>+ &#9;&#9;&#9;::CheckDlgButton( m_hWnd, IDC_RADIO_DIFF_DST1, FALSE );<br>+ &#9;&#9;&#9;::CheckDlgButton( m_hWnd, IDC_RADIO_DIFF_DST2, TRUE );<br>+ &#9;&#9;&#9;//&#9;ListBoxが選択されていなかったら，先頭のファイルを選択する．<br>+ &#9;&#9;&#9;HWND hwndList = GetDlgItem( m_hWnd, IDC_LIST_DIFF_FILES );<br>+ &#9;&#9;&#9;if( ::SendMessage( hwndList, LB_GETCURSEL, 0, 0 ) == LB_ERR )<br>+ &#9;&#9;&#9;{<br>+ &#9;&#9;&#9;    ::SendMessage( hwndList, LB_SETCURSEL, 0 /*先頭アイテム*/, 0 );<br>+ &#9;&#9;&#9;}<br>  &#9;&#9;}<br>  &#9;}<br></div></section>

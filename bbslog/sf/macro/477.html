@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>SQL*Plusで編集中のファイルを実行してアウトプットウィンドウに出力</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>SQL*Plusで編集中のファイルを実行してアウトプットウィンドウに出力 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">477</span>
-    <a class="title" href="477.html#477">SQL*Plusで編集中のファイルを実行してアウトプットウィンドウに出力</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=477>
+    <a class="thread-title" href="477.html#477">SQL*Plusで編集中のファイルを実行してアウトプットウィンドウに出力</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=477>
     <span class="no">[477]</span>
-    <a class="title" href="#477">SQL*Plusで編集中のファイルを実行してアウトプットウィンドウに出力</a>
+    <a class="thread-title" href="#477">SQL*Plusで編集中のファイルを実行してアウトプットウィンドウに出力</a>
     <span class="author">foohogehoge</span>
     <time datetime="2009-10-20T22:04:01">2009年10月20日 22:04</time></h1>
     <div class="body">SQL*Plusのもっさいウインドウを常時表示させとくのはウザいので。<br>一時ファイルにカレントのファイル名と quit コマンドを書き出して、<br>それをSQL*Plusに渡す。出力はアウトプットウィンドウへ。<br>接続情報を対話式で入力できたらいいんだけど。<br><br>var SQLPLUS_HOME = "C:\\oracle\\product\\x.x.x\\OraHome\\BIN";<br>var TMP_FILENAME = "temp.sql";<br>var USER = "USER";<br>var TNS  = "TNS";<br>var PWD  = "PASSWORD";<br><br>var WshShell;<br>var objFso;<br>var objOutput;<br>var tempFilePath;<br><br>// Shellオブジェクトを取得<br>WshShell = new ActiveXObject("WScript.Shell");<br><br>// 一時ファイル名を決定<br>tempFilePath = WshShell.ExpandEnvironmentStrings("%TEMP%") + "\\" + TMP_FILENAME;<br><br>// 出力ストリームを開く(上書き)<br>objFso = new ActiveXObject("Scripting.FileSystemObject");<br>objOutput = objFso.CreateTextFile(tempFilePath , true);<br><br>// 一時ファイルにSQLスクリプトを出力<br>objOutput.WriteLine("set LINESIZE 20000;");                             // select実行時に悲しいことにならないように<br>objOutput.WriteLine("ALTER SESSION SET PLSQL_WARNINGS='ENABLE:ALL';");  // PL/SQLのコンパイル警告は全部見たい<br>objOutput.WriteLine("start " + Editor.ExpandParameter("$F") + ";");     // ファイルを実行<br>objOutput.WriteLine("show errors;");                                    // コンパイルエラーがあれば表示<br>objOutput.WriteLine("quit;");<br><br>// 出力ストリームを閉じる<br>objOutput.close();<br>objOutput = null;<br><br>// 本当はここらへんでアウトプットウィンドウをクリアしたい<br><br>// 一時ファイルをSQL*Plusで実行(アウトプットウィンドウに標準出力を得る)<br>Editor.ExecCommand(SQLPLUS_HOME + "\\sqlplus.exe " + USER + "/" + PWD + "@" + TNS + " @" + tempFilePath, 1);<br>objFso = null;<br>WshShell = null;<br><br>// 一応アウトプットウィンドウをアクティブにしておく<br>Editor.ActivateWinOutput();</div></section>

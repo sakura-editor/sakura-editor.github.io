@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">480</span>
-    <a class="title" href="480.html#480">Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a></div>
+    <a class="thread-title" href="480.html#480">Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a></div>
     <ul><li><div class="list-title">
     <span class="no">482</span>
-    <a class="title" href="480.html#482">動作不全？</a></div>
+    <a class="thread-title" href="480.html#482">動作不全？</a></div>
     <ul><li><div class="list-title">
     <span class="no">483</span>
-    <a class="title" href="480.html#483">Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善（バグ修正）</a></div>
+    <a class="thread-title" href="480.html#483">Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善（バグ修正）</a></div>
     <ul><li><div class="list-title">
     <span class="no">484</span>
-    <a class="title" href="480.html#484">Re:Commit報告:(Keep) 保存時の拡張子補完の機能改善（修正）</a></div>
+    <a class="thread-title" href="480.html#484">Re:Commit報告:(Keep) 保存時の拡張子補完の機能改善（修正）</a></div>
     <ul><li><div class="list-title">
     <span class="no">492</span>
-    <a class="title" href="480.html#492">Re2:Commit報告:(Keep) 保存時の拡張子補完の機能改善（修正）</a></div>
+    <a class="thread-title" href="480.html#492">Re2:Commit報告:(Keep) 保存時の拡張子補完の機能改善（修正）</a></div>
     </li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">485</span>
-    <a class="title" href="480.html#485">Re:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a></div>
+    <a class="thread-title" href="480.html#485">Re:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a></div>
     <ul><li><div class="list-title">
     <span class="no">487</span>
-    <a class="title" href="480.html#487">Re2:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a></div>
+    <a class="thread-title" href="480.html#487">Re2:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a></div>
     </li><li><div class="list-title">
     <span class="no">493</span>
-    <a class="title" href="480.html#493">Re2:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=480>
+    <a class="thread-title" href="480.html#493">Re2:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=480>
     <span class="no">[480]</span>
-    <a class="title" href="#480">Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a>
+    <a class="thread-title" href="#480">Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a>
     <span class="author">Uchi</span>
     <time datetime="2008-06-15T09:18:32">2008年06月15日 09:18</time></h1>
     <div class="body">リビジョン：<br>　rev1386<br><br>変更種別：<br>　機能改善、バグ修正？<br><br>内容：<br>&#9;1) 『名前を付けて保存』時に補完する拡張子のリストを『タイプ別設定』の『ファイル拡張子』から持ってくるようにしました。<br>    2) ・.で終了したファイル名の場合には、拡張子なしとして作成するようにしました。<br>    3) 『タイプ別設定』で『一時適用』した場合には、その『タイプ別設定』から拡張子のリストを持ってくるようにしました。<br>       補完する拡張子は、『ファイル拡張子』の最初のものになります。<br>    4) コマンドラインからのコード指定を、ファイルの指定が無い場合でも効く様にしました。<br><br>    あとお願いなのですが、ソースの末尾の改行のみの行を削除するようにしてほしいです。<br>    理由は、パッチを当てるとき、ソース末尾に改行のみの行があると、1行改行のみの行が作成されるためです。<br>    よろしくお願いします。<br></div></section>
     <ul><li><section><h1 id=482>
     <span class="no">[482]</span>
-    <a class="title" href="#482">動作不全？</a>
+    <a class="thread-title" href="#482">動作不全？</a>
     <span class="author">ryoji</span>
     <time datetime="2008-06-15T12:02:55">2008年06月15日 12:02</time></h1>
     <div class="body">[共通設定]-[ファイル]の、<br><br>「新規から保存時は全ファイル表示」<br>「新規以外から保存時は全ファイル表示」<br><br>オプションの動作がおかしくなってしまっている気がします。新規から保存時でも「新規以外から保存時は…」のオプションのほうが適用されてしまっているような？<br>※ソースコードの修正内容については未確認です</div></section>
     <ul><li><section><h1 id=483>
     <span class="no">[483]</span>
-    <a class="title" href="#483">Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善（バグ修正）</a>
+    <a class="thread-title" href="#483">Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善（バグ修正）</a>
     <span class="author">Uchi</span>
     <time datetime="2008-06-15T14:50:50">2008年06月15日 14:50</time></h1>
     <div class="body">リビジョン：<br>　rev1387<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>    rev1387の修正で<br>        「新規から保存時は全ファイル表示」<br>        「新規以外から保存時は全ファイル表示」<br>    オプションがおかしくなっていたのを修正しました。<br><br>    以前自分が指摘したバグを出してしまいました。<br>    ryojiさんご報告ありがとうございます。<br></div></section>
     <ul><li><section><h1 id=484>
     <span class="no">[484]</span>
-    <a class="title" href="#484">Re:Commit報告:(Keep) 保存時の拡張子補完の機能改善（修正）</a>
+    <a class="thread-title" href="#484">Re:Commit報告:(Keep) 保存時の拡張子補完の機能改善（修正）</a>
     <span class="author">ryoji</span>
     <time datetime="2008-06-15T15:42:40">2008年06月15日 15:42</time></h1>
     <div class="body">リビジョン：<br>　rev1388<br><br>変更種別：<br>　保守<br><br>内容：<br>　汎用テキストマッピング非適用個所の修正<br><br>　Uchiさんのコード変更内容(rev1386,1387)はほとんど読んでいないのですが(^^;、ぱっと見た目、_T('\0') のような記法を使ったほうがよさげな箇所だけ、そうしておきました。</div></section>
     <ul><li><section><h1 id=492>
     <span class="no">[492]</span>
-    <a class="title" href="#492">Re2:Commit報告:(Keep) 保存時の拡張子補完の機能改善（修正）</a>
+    <a class="thread-title" href="#492">Re2:Commit報告:(Keep) 保存時の拡張子補完の機能改善（修正）</a>
     <span class="author">kobake</span>
     <time datetime="2008-06-16T23:11:51">2008年06月16日 23:11</time></h1>
     <div class="body">＞rev1386,1387,1388<br>コードさらっと流し読みしました。特に問題は見つかりませんでした。<br><br>＞ryojiさん<br>コミット報告の発言では、サブジェクトを振り直していただけると助かります。<br>リビジョンの詳細を追うときに、サブジェクトをたよりに掲示板から情報収集していますので。。<br></div></section>
     </li></ul></li></ul></li></ul></li><li><section><h1 id=485>
     <span class="no">[485]</span>
-    <a class="title" href="#485">Re:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a>
+    <a class="thread-title" href="#485">Re:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a>
     <span class="author">ryoji</span>
     <time datetime="2008-06-15T16:08:12">2008年06月15日 16:08</time></h1>
     <div class="body">▼ Uchiさん<br>&gt;     あとお願いなのですが、ソースの末尾の改行のみの行を削除するようにしてほしいです。<br>&gt;     理由は、パッチを当てるとき、ソース末尾に改行のみの行があると、1行改行のみの行が作成されるためです。<br><br>もとは、末尾には改行のみの行ではなく/*[EOF]*/という行が入っていたので、そういう問題が起きることはありませんでした。<br>入っていないものには気が向いた時には入れるようにしてきたのですが、UNICODE版ではそれは廃止する方向のようです。<br><br>僕はそういう問題が起きない TSVN バージョンを意図的に選んで使っているので、どっちでもいいんですけど…<br>＃TSVN 1.5（まだRC版）では修正されています。</div></section>
     <ul><li><section><h1 id=487>
     <span class="no">[487]</span>
-    <a class="title" href="#487">Re2:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a>
+    <a class="thread-title" href="#487">Re2:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a>
     <span class="author">なすこじ</span>
     <time datetime="2008-06-15T21:32:57">2008年06月15日 21:32</time></h1>
     <div class="body">▼ ryojiさん<br>&gt; もとは、末尾には改行のみの行ではなく/*[EOF]*/という行が入っていたので、そういう問題が起きることはありませんでした。<br><br>なんで/*[EOF]*/という行があるのかなぁとか、差分作ると最後の行が変になる事があるなぁとか思ってましたが、やっと理由が解りました (^^;<br><br>&gt; 僕はそういう問題が起きない TSVN バージョンを意図的に選んで使っているので、どっちでもいいんですけど…<br>&gt; ＃TSVN 1.5（まだRC版）では修正されています。<br><br>1ヶ月もしないうちに1.5がリリースされそうな感じなので、1.5にすることで解決？でしょうかね。<br></div></section>
     </li><li><section><h1 id=493>
     <span class="no">[493]</span>
-    <a class="title" href="#493">Re2:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a>
+    <a class="thread-title" href="#493">Re2:Commit報告:(Imp/Fix) 保存時の拡張子補完の機能改善</a>
     <span class="author">kobake</span>
     <time datetime="2008-06-16T23:25:24">2008年06月16日 23:25</time></h1>
     <div class="body">▼ ryojiさん<br>&gt; ▼ Uchiさん<br>&gt; &gt;     あとお願いなのですが、ソースの末尾の改行のみの行を削除するようにしてほしいです。<br>&gt; &gt;     理由は、パッチを当てるとき、ソース末尾に改行のみの行があると、1行改行のみの行が作成されるためです。<br>&gt; <br>&gt; もとは、末尾には改行のみの行ではなく/*[EOF]*/という行が入っていたので、そういう問題が起きることはありませんでした。<br><br><a href=http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?log=unicode&tree=s25 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>unicode&amp;<wbr>tree=<wbr>s25</nobr></a><br>の最後の発言で言及されてますね。<br>見落としていました…。<br>それ以外の発言を見ると、「特に理由もわからず」そうしているように見えたので、<br>それを削除する方針にした次第です。<br><br><br>&gt; 入っていないものには気が向いた時には入れるようにしてきたのですが<br><br>意図が理解できた今となっては納得できることなのですが、<br>せめてそれをドキュメントに残すなどの手段で認識合わせをしないと意味が無い気がします。<br><br><br>個人的には、ファイル終端の記号入れ、復活させても構いません。<br>ただ、"[EOF]"という文字列はサクラエディタ内で重要な意味を持つ文字列であり、<br>検索によるソースコード分析などの際に邪魔になるので、<br>"{EOF}" 等の (一例です) 別の表現にしていただきたいです。<br><br><br>&gt; 僕はそういう問題が起きない TSVN バージョンを意図的に選んで使っているので、どっちでもいいんですけど…<br>&gt; ＃TSVN 1.5（まだRC版）では修正されています。<br><br>正直なところ、自分もどっちでもいい派です。<br></div></section>

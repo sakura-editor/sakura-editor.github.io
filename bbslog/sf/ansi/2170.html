@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>キーボードマクロ改善</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>キーボードマクロ改善 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2170</span>
-    <a class="title" href="2170.html#2170">キーボードマクロ改善</a></div>
+    <a class="thread-title" href="2170.html#2170">キーボードマクロ改善</a></div>
     <ul><li><div class="list-title">
     <span class="no">2173</span>
-    <a class="title" href="2170.html#2173">Re: キーボードマクロ改善</a></div>
+    <a class="thread-title" href="2170.html#2173">Re: キーボードマクロ改善</a></div>
     <ul><li><div class="list-title">
     <span class="no">2174</span>
-    <a class="title" href="2170.html#2174">Re2: キーボードマクロ改善</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2170>
+    <a class="thread-title" href="2170.html#2174">Re2: キーボードマクロ改善</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2170>
     <span class="no">[2170]</span>
-    <a class="title" href="#2170">キーボードマクロ改善</a>
+    <a class="thread-title" href="#2170">キーボードマクロ改善</a>
     <span class="author">げんた</span>
     <time datetime="2002-06-16T22:49:01">2002年06月16日 22:49</time></h1>
     <div class="body">macfix.zip で，以下の点を直しました．<br><br>・マクロの読み込みでキーボードマクロ以外も読み込めるように．<br>・マクロ中の空行を無視するようにする．(これまではエラーになっていた)<br>・文字列表現にsingle/doubleの両方のquotationを使えるようにした．(旧マクロとの互換性向上)<br>・マクロロード時のエラーチェック強化<br>* 引数型チェック<br>* 文法チェック<br>* 閉じ忘れた引用符チェック<br>・ロード中にエラーがあったら実行しないように．<br>・実行時のエラーチェックとデフォルト引数処理追加．アプリケーションエラーが出ないように．<br><br>WSHの対応まではできなかった...m(_ _)m<br></div></section>
     <ul><li><section><h1 id=2173>
     <span class="no">[2173]</span>
-    <a class="title" href="#2173">Re: キーボードマクロ改善</a>
+    <a class="thread-title" href="#2173">Re: キーボードマクロ改善</a>
     <span class="author">げんた</span>
     <time datetime="2002-06-17T13:47:03">2002年06月17日 13:47</time></h1>
     <div class="body">追加です．<br>&gt;・マクロの読み込みでキーボードマクロ以外も読み込めるように．<br>バッファの種別を調べてキーボードマクロ以外なら「保存」メニューが使えなくなるようにしたのですが，読み込みではファイル名の設定しか行っていないために，1回は実行しないと「保存」の可・不可が正しく反映されません．<br><br>Loadではファイル名設定だけとしたのはキーボードマクロを一時的にファイルに保存する都合上こうなっているのでしょうか．<br><br>また，dynamic_castを使っているので，実行時型情報(RTTI)を使う設定にしないとコンパイルできません．差分にはプロジェクトファイルの差分も入っているので，パッチをちゃんと適用した場合は設定されるはずです．<br></div></section>
     <ul><li><section><h1 id=2174>
     <span class="no">[2174]</span>
-    <a class="title" href="#2174">Re2: キーボードマクロ改善</a>
+    <a class="thread-title" href="#2174">Re2: キーボードマクロ改善</a>
     <span class="author">やざき</span>
     <time datetime="2002-06-17T15:19:08">2002年06月17日 15:19</time></h1>
     <div class="body"><br>&gt;Loadではファイル名設定だけとしたのはキーボードマクロを一時的にファイルに保存する都合上こうなっているのでしょうか．<br><br>そうだったと思います。妙案があれば歓迎します。<br></div></section>

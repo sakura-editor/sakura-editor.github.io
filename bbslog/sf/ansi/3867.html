@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>外字のリンクについて質問です。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>外字のリンクについて質問です。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3867</span>
-    <a class="title" href="3867.html#3867">外字のリンクについて質問です。</a></div>
+    <a class="thread-title" href="3867.html#3867">外字のリンクについて質問です。</a></div>
     <ul><li><div class="list-title">
     <span class="no">3876</span>
-    <a class="title" href="3867.html#3876">Re: 外字のリンクについて質問です。</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3867>
+    <a class="thread-title" href="3867.html#3876">Re: 外字のリンクについて質問です。</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3867>
     <span class="no">[3867]</span>
-    <a class="title" href="#3867">外字のリンクについて質問です。</a>
+    <a class="thread-title" href="#3867">外字のリンクについて質問です。</a>
     <span class="author">ootomo</span>
     <time datetime="2005-03-03T21:31:19">2005年03月03日 21:31</time></h1>
     <div class="body">突然の質問で失礼します。<br><br>さくらエディタのソースをカスタマイズして使わせて<br>いただいております。<br><br>外字のリンクが切れていたらリンクを設定しなおす<br>処理を搭載しようとおもったのですが、<br>現在外字のリンクが切れているかどうかを判定する<br>方法がわかりません。<br>(素人なりに一生懸命調べたのですが・・・)<br><br>知っている方いらっしゃいましたら<br>教えていただけませんでしょうか？</div></section>
     <ul><li><section><h1 id=3876>
     <span class="no">[3876]</span>
-    <a class="title" href="#3876">Re: 外字のリンクについて質問です。</a>
+    <a class="thread-title" href="#3876">Re: 外字のリンクについて質問です。</a>
     <span class="author">げんた</span>
     <time datetime="2005-03-13T21:43:20">2005年03月13日 21:43</time></h1>
     <div class="body">&gt;現在外字のリンクが切れているかどうかを判定する<br>&gt;方法がわかりません。<br>外字のリンクという言葉自体初めて聞いたので調べてみました．<br><br>とりあえず結論：<br>レジストリのHKEY_CURRENT_USER\EUDC\932(ここはcodepageらしい)というキーに<br>リンク先フォント名を名前に持つ文字列値を作成して，そこにファイルのパスを書くとリンクされるようです．<br>切れているというのはそこに書かれたファイルが存在しないと言うことでしょうかね．(使ったこと無いのでよくわかりません)<br><br>外字関連ソフトをソース付きで配布している方がいるようですので，参考にしてみてはいかがでしょうか．<br>http://jjworkshop.ciao.jp/download_cc.shtml<br></div></section>

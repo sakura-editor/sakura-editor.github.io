@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>カーソル移動の性能改善</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>カーソル移動の性能改善 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1424</span>
-    <a class="title" href="1424.html#1424">カーソル移動の性能改善</a></div>
+    <a class="thread-title" href="1424.html#1424">カーソル移動の性能改善</a></div>
     <ul><li><div class="list-title">
     <span class="no">1433</span>
-    <a class="title" href="1424.html#1433">Commit報告(Imp) カーソル移動の性能改善</a></div>
+    <a class="thread-title" href="1424.html#1433">Commit報告(Imp) カーソル移動の性能改善</a></div>
     <ul><li><div class="list-title">
     <span class="no">1444</span>
-    <a class="title" href="1424.html#1444">Commit報告(Fix) IS_KEYWORD_CHAR判定ロジック修正ミス</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1424>
+    <a class="thread-title" href="1424.html#1444">Commit報告(Fix) IS_KEYWORD_CHAR判定ロジック修正ミス</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1424>
     <span class="no">[1424]</span>
-    <a class="title" href="#1424">カーソル移動の性能改善</a>
+    <a class="thread-title" href="#1424">カーソル移動の性能改善</a>
     <span class="author">syat</span>
     <time datetime="2010-11-27T21:08:43">2010年11月27日 21:08</time></h1>
     <div class="body">ごぶさたしてます。syatです<br>6月ごろから本業が手一杯になっていて、そのまま１サクラユーザーに戻っていました。<br>少し落ち着いてきたのでまたこちらに出没するかもしれません。<br>バージョンがついに２になりましたね^^<br><br>それはさておき、<br>一行の文字数が多いCSVを開いたとき、カーソル移動でもたつくように感じたため、ツールでどこが時間食っているかを調べました。<br>3か所ほど改善できそうなところを修正するパッチをアップします。<br>PatchUnicode:3120525<br></div></section>
     <ul><li><section><h1 id=1433>
     <span class="no">[1433]</span>
-    <a class="title" href="#1433">Commit報告(Imp) カーソル移動の性能改善</a>
+    <a class="thread-title" href="#1433">Commit報告(Imp) カーソル移動の性能改善</a>
     <span class="author">syat</span>
     <time datetime="2010-12-19T10:52:56">2010年12月19日 10:52</time></h1>
     <div class="body">リビジョン1861でコミットしました。</div></section>
     <ul><li><section><h1 id=1444>
     <span class="no">[1444]</span>
-    <a class="title" href="#1444">Commit報告(Fix) IS_KEYWORD_CHAR判定ロジック修正ミス</a>
+    <a class="thread-title" href="#1444">Commit報告(Fix) IS_KEYWORD_CHAR判定ロジック修正ミス</a>
     <span class="author">syat</span>
     <time datetime="2011-01-04T06:15:44">2011年01月04日 06:15</time></h1>
     <div class="body">r1861の変更にバグを見つけたので修正しました。<br><br>[現象]<br>HTMLのタグが強調されない<br>[原因]<br>IS_KEYWORD_CHAR()の判定ミス（´Д｀;<br>[修正リビジョン]<br>1867</div></section>

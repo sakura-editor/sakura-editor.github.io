@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>プラグインコマンドの問題点</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>プラグインコマンドの問題点 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1295</span>
-    <a class="title" href="1295.html#1295">プラグインコマンドの問題点</a></div>
+    <a class="thread-title" href="1295.html#1295">プラグインコマンドの問題点</a></div>
     <ul><li><div class="list-title">
     <span class="no">1298</span>
-    <a class="title" href="1295.html#1298">Re:プラグインコマンドの問題点</a></div>
+    <a class="thread-title" href="1295.html#1298">Re:プラグインコマンドの問題点</a></div>
     <ul><li><div class="list-title">
     <span class="no">1300</span>
-    <a class="title" href="1295.html#1300">Re2:プラグインコマンドの問題点</a></div>
+    <a class="thread-title" href="1295.html#1300">Re2:プラグインコマンドの問題点</a></div>
     <ul><li><div class="list-title">
     <span class="no">1301</span>
-    <a class="title" href="1295.html#1301">Re3:プラグインコマンドの問題点</a></div>
+    <a class="thread-title" href="1295.html#1301">Re3:プラグインコマンドの問題点</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">1330</span>
-    <a class="title" href="1295.html#1330">Re: プラグインコマンドの問題点</a></div>
+    <a class="thread-title" href="1295.html#1330">Re: プラグインコマンドの問題点</a></div>
     <ul><li><div class="list-title">
     <span class="no">1337</span>
-    <a class="title" href="1295.html#1337">Re2: プラグインコマンドの問題点</a></div>
+    <a class="thread-title" href="1295.html#1337">Re2: プラグインコマンドの問題点</a></div>
     <ul><li><div class="list-title">
     <span class="no">1345</span>
-    <a class="title" href="1295.html#1345">Re3: プラグインコマンドの問題点</a></div>
+    <a class="thread-title" href="1295.html#1345">Re3: プラグインコマンドの問題点</a></div>
     <ul><li><div class="list-title">
     <span class="no">1348</span>
-    <a class="title" href="1295.html#1348">Re4: プラグインコマンドの問題点</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1295>
+    <a class="thread-title" href="1295.html#1348">Re4: プラグインコマンドの問題点</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1295>
     <span class="no">[1295]</span>
-    <a class="title" href="#1295">プラグインコマンドの問題点</a>
+    <a class="thread-title" href="#1295">プラグインコマンドの問題点</a>
     <span class="author">syat</span>
     <time datetime="2010-06-30T07:47:25">2010年06月30日 07:47</time></h1>
     <div class="body">ICONの話で見つかったプラグインについての問題のまとめです。<br>&gt;&gt;unicode:1272 もかさん<br>&gt; 1. 新しいウィンドウでプラグインを追加してツールバー・メニューに入れると古い方では、プラグインとアイコンが一致しないので、ツールバーの再表示でおかしくなるかも<br>&gt; 2. プラグインコマンドをツールバーに登録した後、そのコマンドより先にコマンド登録されるプラグインでコマンドが増えると、登録したものがずれるようにみえる<br>&gt; 3. PlugId と PluginId が混同されているみたい。 ついでに両方とも変数名が m_idなのでなおさら区別がつかない<br>&gt; 4. 今は20個のプラグインしか登録できないけど、私のはすでに9番目まで使用中<br>&gt;&gt;unicode:1273 Uchiさん<br>&gt; 内部的に自動割当されている番号（コマンド番号、ツールバー番号等）を、外部ファイルの sakuraW.ini に書き出しているのが問題なのだと思います。<br>&gt; このあたりを如何にかすべきでしょう。<br>&gt;&gt;unicode:1277 Uchiさん<br>&gt; プラグインのｉｎｉファイルへの書き込み（Pluginh本体ではなく、 Toolbar,CustMenu,KeyBind）を文字列化（PluginId/番号の形）で行うパッチ PatchUnicode#3020889<br>&gt;&gt;unicode:1281 もかさん<br>&gt; ・プラグインのボタン番号の内部仕様<br>&gt; 次からはプラグイン(とマクロのアイコン超過分)だけFuncCodeにしておく<br>&gt; ・プラグインのボタン番号のini仕様<br>&gt; 過去のUnicode版との互換性は放棄して上記内部コードで保持すれば今後の分は互換性保てるだろう派<br>&gt; m_sIdベースにするのもいいかもしれないけど、クラス/関数の依存関係の調査や互換性の検討と末永い保守が必要<br>&gt; indexの代わりにコマンド番号にするパッチ PatchUnicode#3020183 B案 <br><br>こんなかんじでしょうか。<br></div></section>
     <ul><li><section><h1 id=1298>
     <span class="no">[1298]</span>
-    <a class="title" href="#1298">Re:プラグインコマンドの問題点</a>
+    <a class="thread-title" href="#1298">Re:プラグインコマンドの問題点</a>
     <span class="author">Uchi</span>
     <time datetime="2010-07-01T00:37:27">2010年07月01日 00:37</time></h1>
     <div class="body">▼ syatさん<br>&gt; ICONの話で見つかったプラグインについての問題のまとめです。<br><br>私的に抜けていると思うものを追加させてもらいます。<br>&gt; ICONの話で見つかったプラグインについての問題のまとめです。<br>&gt;&gt;unicode:1281 もかさん<br>&gt;また今の仕組みだと、プラグインを削除→再登録した場合は、プラグイン番号が変更になり、カスタムメニューなどで使えません。<br>&gt;(これは、私のパッチでもUchiさんのパッチでも発生します)<br>&gt;これは、共通設定画面で削除待ちのものを復活させるように同じ番号に戻せば改善されると思います<br><br>また、ICONの事とは直接関係しませんが、<br>プラグインを追加し、再起動しないで、そのまま作業を続けると落ちます。<br>3回ほど落ちましたが100％です。以降プラグイン追加後は再起動しているので現象は確認できていません。<br>落ちるまで行った作業はさまざまですが、新しいウインドウでの作業がほとんででした。<br><br>もかさんは、落ちないで作業されているようですが、何か違いがあるのでしょうか？<br><br><br></div></section>
     <ul><li><section><h1 id=1300>
     <span class="no">[1300]</span>
-    <a class="title" href="#1300">Re2:プラグインコマンドの問題点</a>
+    <a class="thread-title" href="#1300">Re2:プラグインコマンドの問題点</a>
     <span class="author">もか</span>
     <time datetime="2010-07-01T02:39:51">2010年07月01日 02:39</time></h1>
     <div class="body">&gt;また、ICONの事とは直接関係しませんが、<br>&gt;プラグインを追加し、再起動しないで、そのまま作業を続けると落ちます。<br>&gt;3回ほど落ちましたが100％です。以降プラグイン追加後は再起動しているので現象は確認できていません。<br>&gt;落ちるまで行った作業はさまざまですが、新しいウインドウでの作業がほとんででした。<br>落ちるのは優先度高だとおもいます。<br>それはsyatさんのU2パッチを適用後それともrev1779でしょうか。<br>エラーコードはなんだったんでしょうか。0x00000005 ならぬるぽ、0xc000000dならstrcpy_sなどの誰かだとおもいます。<br>VC Express はJITデバッガがないのでトレース実行かアタッチしないと使えないけど、dumpファイルをWinDbgで開くと場所はわかるはずです。<br>&gt;もかさんは、落ちないで作業されているようですが、何か違いがあるのでしょうか？<br>なんででしょう。まだ基本的にサクラ帳2010 SP3d使いなので rev1768ベースです。<br>パッチ作成時にはrev1779で作業したけどコード修正後のバイナリで多少確認したぐらいで、rev1779の状態では、ほとんどテストしたことがないです。<br></div></section>
     <ul><li><section><h1 id=1301>
     <span class="no">[1301]</span>
-    <a class="title" href="#1301">Re3:プラグインコマンドの問題点</a>
+    <a class="thread-title" href="#1301">Re3:プラグインコマンドの問題点</a>
     <span class="author">Uchi</span>
     <time datetime="2010-07-01T21:39:30">2010年07月01日 21:39</time></h1>
     <div class="body">▼ もかさん<br>&gt; &gt;また、ICONの事とは直接関係しませんが、<br>&gt; &gt;プラグインを追加し、再起動しないで、そのまま作業を続けると落ちます。<br>&gt; &gt;3回ほど落ちましたが100％です。以降プラグイン追加後は再起動しているので現象は確認できていません。<br>&gt; &gt;落ちるまで行った作業はさまざまですが、新しいウインドウでの作業がほとんででした。<br>&gt; 落ちるのは優先度高だとおもいます。<br>&gt; それはsyatさんのU2パッチを適用後それともrev1779でしょうか。<br>&gt; エラーコードはなんだったんでしょうか。0x00000005 ならぬるぽ、0xc000000dならstrcpy_sなどの誰かだとおもいます。<br>&gt; VC Express はJITデバッガがないのでトレース実行かアタッチしないと使えないけど、dumpファイルをWinDbgで開くと場所はわかるはずです。<br>&gt; &gt;もかさんは、落ちないで作業されているようですが、何か違いがあるのでしょうか？<br>&gt; なんででしょう。まだ基本的にサクラ帳2010 SP3d使いなので rev1768ベースです。<br>&gt; パッチ作成時にはrev1779で作業したけどコード修正後のバイナリで多少確認したぐらいで、rev1779の状態では、ほとんどテストしたことがないです。<br>４月（プラグインのオプション画面を作った後）ぐらいの話です。<br>その後はプラグインの追加時には必ず、再起動しています、ので現象は見ていません。<br>プラグインの設定時の読み込みを行えば、OKまたはそのときに原因究明しようということで（回避方法もはっきりしているので）、後回しにしていました。<br>再度確認してみます。<br>記憶に残っているのは、MSのエラー画面も残さず、何もなかったように落ちました。<br><br>再度確認してみます。</div></section>
     </li></ul></li></ul></li><li><section><h1 id=1330>
     <span class="no">[1330]</span>
-    <a class="title" href="#1330">Re: プラグインコマンドの問題点</a>
+    <a class="thread-title" href="#1330">Re: プラグインコマンドの問題点</a>
     <span class="author">もか</span>
     <time datetime="2010-07-16T02:09:39">2010年07月16日 02:09</time></h1>
     <div class="body">Pluginのm_sIdをiniに書き込むなら m_sId自体の問題も解決しないといけないので、その問題のまとめです。<br>かなり前に元の原稿は書いたまま放置してました。<br><br>&gt;&gt;unicode:1136<br>と、Uchiさんのパッチを評価するときに、m_sId周りについて調べてわかったこと。<br>Pluginの識別方法が4種類ある。<br>フォルダ名、CPlugin#m_sId、CPlugin#m_id、DLLSHAREDATAのID(m_szId)<br>フォルダ名==DLLSHAREDATA(DLLSHARE)のPluginRec#m_szName==saura.iniだとName<br>Pluginは、フォルダ名ベースで読みこみ<br>CPlugin#m_sIdは、plugin.defの値。プラグイン更新などでplugin.defが変更されるとDLLSHAREと不一致になる<br>DLLSHAREのm_szIdは設定画面でのプラグインインストール時に一意性を確認。m_szIdは更新処理されないので最初のときの値のまま。Pluginの設定ファイルはフォルダ名ベースなので同一m_sIdの影響を受けない<br>これらの作用で更新後にplugin.defのIDが変わったプラグインをコピーしても「別のプラグイン」として問題なく動いてしまう<br><br>現時点でユニークであることを保証できるのは、PluginRec#m_szName(フォルダ名)かCPlugin#m_Id<br>ただしNameもsakuraw.ini を直接書き換えることにより重複できるので、完全にユニークなのはCPlugin#m_idのみ<br>　Uchiさんの新パッチでは旧パッチでCPlugin#m_sIdだったものがDLLSHAREのm_szIdになったので、その辺の矛盾の影響は、正規ルートでは問題なくなりました。<br><br>設定画面のときに、既存のプラグインのDLLSHAREのm_szIdを更新確認するようにして、<br>プラグイン読み込み時に、CPlugin#m_sIdとDLLSHAREのm_szIdが違ったら無効にしてしまえば、より安全かなと。<br>でも更新してしまうと、既存プロセスのIdが一致しなくなる。<br><br>▼ env/CommonSetting.h PluginRec<br>&gt;m_szName[MAX_PLUGIN_NAME];&#9;//!&lt; プラグイン和名<br>コメントがなんかおかしいような。<br>PluginRec#m_szName/フォルダ名と、CPlugin#m_sName/plugin.defのName=和名が混ざってます。<br><br>プラグインのコマンド番号が、「プラグインの更新」を考慮してくれない。という問題もあります。<br>コマンド番号は維持しないと[名前/番号]で保持しようが、各種設定がずれてしまいます。<br>・プラグイン更新時に3番目のコマンドを削除するとかができない<br>・並び替えたいときに、コマンド番号をただ並び替えると困る<br>プラグ番号とコマンド用番号を2重管理できるような項目を追加すれば解決できるかもしれない。<br></div></section>
     <ul><li><section><h1 id=1337>
     <span class="no">[1337]</span>
-    <a class="title" href="#1337">Re2: プラグインコマンドの問題点</a>
+    <a class="thread-title" href="#1337">Re2: プラグインコマンドの問題点</a>
     <span class="author">syat</span>
     <time datetime="2010-07-18T12:35:15">2010年07月18日 12:35</time></h1>
     <div class="body">▼ もかさん<br>&gt; 設定画面のときに、既存のプラグインのDLLSHAREのm_szIdを更新確認するようにして、<br>&gt; プラグイン読み込み時に、CPlugin#m_sIdとDLLSHAREのm_szIdが違ったら無効にしてしまえば、より安全かなと。<br>そう思います。<br>&gt; でも更新してしまうと、既存プロセスのIdが一致しなくなる。<br>今のところ起動時にしかId見てないので既存プロセスの不一致は無視できるとおもいます。<br><br>&gt; ▼ env/CommonSetting.h PluginRec<br>&gt; &gt;m_szName[MAX_PLUGIN_NAME];&#9;//!&lt; プラグイン和名<br>&gt; コメントがなんかおかしいような。<br>はい。現状フォルダ名以外のなにものでもありません。<br><br>&gt; プラグインのコマンド番号が、「プラグインの更新」を考慮してくれない。という問題もあります。<br>&gt; コマンド番号は維持しないと[名前/番号]で保持しようが、各種設定がずれてしまいます。<br>&gt; ・プラグイン更新時に3番目のコマンドを削除するとかができない<br>&gt; ・並び替えたいときに、コマンド番号をただ並び替えると困る<br>&gt; プラグ番号とコマンド用番号を2重管理できるような項目を追加すれば解決できるかもしれない。<br>コマンド番号はプラグイン作者側で維持して欲しかった…。C[n].Idとかつけますか。<br>たしかに3番目のコマンドを単純に削除すると2番目までしか読み込まない動きなので、抜けがあっても最後まで読み込む改造は必要かも。<br>（あれ、何でプラグはvectorにしたんだっけ？）<br></div></section>
     <ul><li><section><h1 id=1345>
     <span class="no">[1345]</span>
-    <a class="title" href="#1345">Re3: プラグインコマンドの問題点</a>
+    <a class="thread-title" href="#1345">Re3: プラグインコマンドの問題点</a>
     <span class="author">syat</span>
     <time datetime="2010-07-23T07:05:01">2010年07月23日 07:05</time></h1>
     <div class="body">▼ もかさん<br>&gt; プラグインのコマンド番号が、「プラグインの更新」を考慮してくれない。という問題もあります。<br>&gt; コマンド番号は維持しないと[名前/番号]で保持しようが、各種設定がずれてしまいます。<br>確かにそうなのですが、それはサクラ本体も同じで今の方式でうまくいっているのはコマンド番号が途中で変わったりしないからです。プラグインも同様に開発者側で番号を変えないよう努力してもらうべきと思います。<br>C[n].Idのような文字列IDをくっつけても、その文字列を変えたくなるのが人情ですし、あんまり汎用的にせずシンプルがよいのでは。<br><br>&gt; ・プラグイン更新時に3番目のコマンドを削除するとかができない<br>コマンド番号死守で行くなら、途中のコマンドを削除したいときのために抜けがあっても最期まで（n=1～99）見るよう改造がいります。<br><br>&gt; ・並び替えたいときに、コマンド番号をただ並び替えると困る<br>並び替えないでください。となります。(plugins.def内の位置を入れ替えるのは自由ですが)<br><br>&gt; プラグ番号とコマンド用番号を2重管理できるような項目を追加すれば解決できるかもしれない。<br>どういうものかはわからないですが、さらに複雑になる気がします。<br><br>コマンド番号の話がこれでよければ、Uchiさんの文字列化パッチ3020889でOKかと思っています。<br><br>＃プラグイン毎のコマンド数を減らして使えるプラグインを増やすという話は個人的に賛成なのであとでパッチあげるかもしれません。<br></div></section>
     <ul><li><section><h1 id=1348>
     <span class="no">[1348]</span>
-    <a class="title" href="#1348">Re4: プラグインコマンドの問題点</a>
+    <a class="thread-title" href="#1348">Re4: プラグインコマンドの問題点</a>
     <span class="author">もか</span>
     <time datetime="2010-07-24T03:13:29">2010年07月24日 03:13</time></h1>
     <div class="body">(前後ひっくり返します)<br>&gt;コマンド番号の話がこれでよければ、Uchiさんの文字列化パッチ3020889でOKかと思っています。<br>コマンド番号の上位の部分は、文字列化でOKです。<br>文字列化パッチ3020889 での外部仕様で、私も問題ないと思います。<br>アイコン番号なのか、ボタン番号なのかという話はありますけど、はるか昔の記事でげんたさんもアイコン番号と発言してますし。<br>個人的には、myButtonのindexとiBitmapとは、特にUchiさんのパッチ後では、+1の関係が崩れてくるので、<br>ボタン番号に統一したいところだけど、動作上は違わないので、後で気が向いたときに考えます。<br>static類と、DLLSHAREで保持するのが若干引っかかるけど、それは内部仕様なので修正可能です。<br><br>&gt;&gt; プラグ番号とコマンド用番号を2重管理できるような項目を追加すれば解決できるかもしれない。<br>&gt;どういうものかはわからないですが、さらに複雑になる気がします。<br>ちょっと、テストパッチをこさえてみます。しかしご指摘の通り複雑になりそうです。作ってから考えます。<br>こんな感じのものです。<br>[Command]<br>C[1].Order=1<br>C[2].Label=追加<br>C[2].Order=3<br>C[2].Label=複製<br>C[3].Deleted=true<br>C[3].Label=削除済みコマンド<br>C[4].Order=2<br>C[4].Label=更新<br>それかあきらめて最大のID番号を書いておくとか。<br>MaxCount=4<br>ついでに、Disableフラグを検討中です。ビューモードではグレーダウンとかです。<br></div></section>

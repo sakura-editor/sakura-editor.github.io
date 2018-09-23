@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現の表し方</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現の表し方 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5862</span>
-    <a class="title" href="5862.html#5862">正規表現の表し方</a></div>
+    <a class="thread-title" href="5862.html#5862">正規表現の表し方</a></div>
     <ul><li><div class="list-title">
     <span class="no">5864</span>
-    <a class="title" href="5862.html#5864">RE: 正規表現の表し方</a></div>
+    <a class="thread-title" href="5862.html#5864">RE: 正規表現の表し方</a></div>
     <ul><li><div class="list-title">
     <span class="no">5865</span>
-    <a class="title" href="5862.html#5865">Re2: 正規表現の表し方</a></div>
+    <a class="thread-title" href="5862.html#5865">Re2: 正規表現の表し方</a></div>
     <ul><li><div class="list-title">
     <span class="no">5866</span>
-    <a class="title" href="5862.html#5866">Re3: 正規表現の表し方</a></div>
+    <a class="thread-title" href="5862.html#5866">Re3: 正規表現の表し方</a></div>
     <ul><li><div class="list-title">
     <span class="no">5867</span>
-    <a class="title" href="5862.html#5867">Re4: 正規表現の表し方</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5862>
+    <a class="thread-title" href="5862.html#5867">Re4: 正規表現の表し方</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5862>
     <span class="no">[5862]</span>
-    <a class="title" href="#5862">正規表現の表し方</a>
+    <a class="thread-title" href="#5862">正規表現の表し方</a>
     <span class="author">超初心者</span>
     <time datetime="2007-02-24T01:45:29">2007年02月24日 01:45</time></h1>
     <div class="body">次の文では、記号(?,.など)の前にスペースが入っているのですが、このスペースを削除するとき、置換前を「スペース(.|,|?|!|"|'|:|;|)」と設定すると、置換後はどのように設定したらよいでしょうか？<br>Have you lived in this town for a long <br>time ? --- Yes , I have .</div></section>
     <ul><li><section><h1 id=5864>
     <span class="no">[5864]</span>
-    <a class="title" href="#5864">RE: 正規表現の表し方</a>
+    <a class="thread-title" href="#5864">RE: 正規表現の表し方</a>
     <span class="author">げんた</span>
     <time datetime="2007-02-24T02:19:12">2007年02月24日 02:19</time></h1>
     <div class="body">&gt;タイトル: RE: 正規表現の表し方<br>&gt;発言者: 超初心者<br>&gt;次の文では、記号(?,.など)の前にスペースが入っているのですが、このスペースを削除するとき、置換前を「スペース(.|,|?|!|"|'|:|;|)」と設定すると、置換後はどのように設定したらよいでしょうか？<br>&gt;Have you lived in this town for a long <br>&gt;time ? --- Yes , I have . <br><br>一文字の羅列なら，(|)より[]を使った方が良いと思います．?や.のエスケープが不要になりますし．<br><br>置換前: \s+([.,?!"':;])<br>置換後: $1<br></div></section>
     <ul><li><section><h1 id=5865>
     <span class="no">[5865]</span>
-    <a class="title" href="#5865">Re2: 正規表現の表し方</a>
+    <a class="thread-title" href="#5865">Re2: 正規表現の表し方</a>
     <span class="author">超初心者</span>
     <time datetime="2007-02-24T10:04:28">2007年02月24日 10:04</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 置換前: \s+([.,?!"':;])<br>&gt; 置換後: $1<br><br>げんたさん、ありがとうございます。<br>記号の前に、スペースが一つ以上であれば、「\s+」で、<br>スペースが一つの場合であれば、「\s」という理解でよいでしょうか？<br>お手を煩わせすみません。</div></section>
     <ul><li><section><h1 id=5866>
     <span class="no">[5866]</span>
-    <a class="title" href="#5866">Re3: 正規表現の表し方</a>
+    <a class="thread-title" href="#5866">Re3: 正規表現の表し方</a>
     <span class="author">げんた</span>
     <time datetime="2007-02-24T11:00:51">2007年02月24日 11:00</time></h1>
     <div class="body">&gt;記号の前に、スペースが一つ以上であれば、「\s+」で、<br>&gt;スペースが一つの場合であれば、「\s」という理解でよいでしょうか？<br>はい．<br><br>\sは空白文字にヒットするので，スペースだけを対象とするなら普通にスペースを使った方が良いかも．<br>+は一回以上の繰り返しです．<br></div></section>
     <ul><li><section><h1 id=5867>
     <span class="no">[5867]</span>
-    <a class="title" href="#5867">Re4: 正規表現の表し方</a>
+    <a class="thread-title" href="#5867">Re4: 正規表現の表し方</a>
     <span class="author">超初心者</span>
     <time datetime="2007-02-24T11:34:23">2007年02月24日 11:34</time></h1>
     <div class="body">▼ げんたさん<br>すっきりしました。ありがとうございます。</div></section>

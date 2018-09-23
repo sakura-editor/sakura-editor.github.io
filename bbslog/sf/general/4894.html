@@ -1,90 +1,116 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>C/C++ アウトライン解析</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>C/C++ アウトライン解析 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">4894</span>
-    <a class="title" href="4894.html#4894">C/C++ アウトライン解析</a></div>
+    <a class="thread-title" href="4894.html#4894">C/C++ アウトライン解析</a></div>
     <ul><li><div class="list-title">
     <span class="no">4896</span>
-    <a class="title" href="4894.html#4896">Re:C/C++ アウトライン解析</a></div>
+    <a class="thread-title" href="4894.html#4896">Re:C/C++ アウトライン解析</a></div>
     </li><li><div class="list-title">
     <span class="no">4899</span>
-    <a class="title" href="4894.html#4899">Re:C/C++ アウトライン解析</a></div>
+    <a class="thread-title" href="4894.html#4899">Re:C/C++ アウトライン解析</a></div>
     <ul><li><div class="list-title">
     <span class="no">4900</span>
-    <a class="title" href="4894.html#4900">Re2:C/C++ アウトライン解析</a></div>
+    <a class="thread-title" href="4894.html#4900">Re2:C/C++ アウトライン解析</a></div>
     <ul><li><div class="list-title">
     <span class="no">4901</span>
-    <a class="title" href="4894.html#4901">Re3:C/C++ アウトライン解析</a></div>
+    <a class="thread-title" href="4894.html#4901">Re3:C/C++ アウトライン解析</a></div>
     </li><li><div class="list-title">
     <span class="no">4902</span>
-    <a class="title" href="4894.html#4902">Re3:C/C++ アウトライン解析</a></div>
+    <a class="thread-title" href="4894.html#4902">Re3:C/C++ アウトライン解析</a></div>
     <ul><li><div class="list-title">
     <span class="no">4904</span>
-    <a class="title" href="4894.html#4904">Re4:C/C++ アウトライン解析</a></div>
+    <a class="thread-title" href="4894.html#4904">Re4:C/C++ アウトライン解析</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">4903</span>
-    <a class="title" href="4894.html#4903">Re3:C/C++ アウトライン解析</a></div>
+    <a class="thread-title" href="4894.html#4903">Re3:C/C++ アウトライン解析</a></div>
     <ul><li><div class="list-title">
     <span class="no">4940</span>
-    <a class="title" href="4894.html#4940">Re4:C/C++ アウトライン解析</a></div>
+    <a class="thread-title" href="4894.html#4940">Re4:C/C++ アウトライン解析</a></div>
     <ul><li><div class="list-title">
     <span class="no">4946</span>
-    <a class="title" href="4894.html#4946">Re5:C/C++ アウトライン解析</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4894>
+    <a class="thread-title" href="4894.html#4946">Re5:C/C++ アウトライン解析</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4894>
     <span class="no">[4894]</span>
-    <a class="title" href="#4894">C/C++ アウトライン解析</a>
+    <a class="thread-title" href="#4894">C/C++ アウトライン解析</a>
     <span class="author">じゅうじ</span>
     <time datetime="2005-12-01T14:26:46">2005年12月01日 14:26</time></h1>
     <div class="body">アウトライン解析では、初投稿です。<br>コメント終わりの前に￥が有ると、それ以降の関数が表示されません。<br><br>main(){}<br>sub(){/* \*/}<br>sub2(){}<br><br>Ver. 1.5.8.0<br>よろしくお願いします。</div></section>
     <ul><li><section><h1 id=4896>
     <span class="no">[4896]</span>
-    <a class="title" href="#4896">Re:C/C++ アウトライン解析</a>
+    <a class="thread-title" href="#4896">Re:C/C++ アウトライン解析</a>
     <span class="author">すす</span>
     <time datetime="2005-12-02T14:49:20">2005年12月02日 14:49</time></h1>
     <div class="body">▼ じゅうじさん<br>main(){}<br>sub(){/* \*/}<br>sub2(){}<br>/* */<br>sub3(){}<br><br>のようになってるとsub3はでてくるので<br>アウトライン解析のときだけブロックコメントの終了判定がおかしいのかもしれません。<br><br>ver.1.5.8.1でも同じ現象を確認しました</div></section>
     </li><li><section><h1 id=4899>
     <span class="no">[4899]</span>
-    <a class="title" href="#4899">Re:C/C++ アウトライン解析</a>
+    <a class="thread-title" href="#4899">Re:C/C++ アウトライン解析</a>
     <span class="author">無人駅</span>
     <time datetime="2005-12-04T05:11:58">2005年12月04日 05:11</time></h1>
     <div class="body">▼ じゅうじさん<br>私が見つけたものと多分、同じ原因だと思いますが、漢字も２バイト目が0x5c（＝'\'）であれば、同様の現象がでます。<br>しかし、'能'（＝0x945c）の直後にスペースを入れると、発生しなくなります。<br><br>main(){}<br>sub(){<br>&#9;//機能<br>}<br>sub2(){}<br><br>Ver. 1.5.7.1<br>よろしくお願いします。</div></section>
     <ul><li><section><h1 id=4900>
     <span class="no">[4900]</span>
-    <a class="title" href="#4900">Re2:C/C++ アウトライン解析</a>
+    <a class="thread-title" href="#4900">Re2:C/C++ アウトライン解析</a>
     <span class="author">じゅうじ</span>
     <time datetime="2005-12-04T16:47:26">2005年12月04日 16:47</time></h1>
     <div class="body">▼ 無人駅さん<br>&gt;私が見つけたものと多分、同じ原因だと思いますが、<br><br>main(){}<br>sub(){/* \<br> */}<br>sub2(){}<br><br>Ｃ で試してみた所では、良いようです。<br><br>&gt;&gt;dev:4199 すす<br>ところで、ソースのこれらの行は、Win 2000 環境なら、コメントにしても大丈夫ですか。<br>#define WANT_GETLONGPATHNAME_WRAPPER<br>#include &lt;NewApis.h&gt;<br><br>VC++ 6.0</div></section>
     <ul><li><section><h1 id=4901>
     <span class="no">[4901]</span>
-    <a class="title" href="#4901">Re3:C/C++ アウトライン解析</a>
+    <a class="thread-title" href="#4901">Re3:C/C++ アウトライン解析</a>
     <span class="author">too</span>
     <time datetime="2005-12-05T09:46:54">2005年12月05日 09:46</time></h1>
     <div class="body">&gt; ところで、ソースのこれらの行は、Win 2000 環境なら、コメントにしても大丈夫ですか。<br>&gt; #define WANT_GETLONGPATHNAME_WRAPPER<br>&gt; #include &lt;NewApis.h&gt;<br><br>&gt;&gt;dev:4043<br>そのままにしておいた方がよいのでわ？<br>私はソースを見てないですし、詳しいことはわかりませんけどね；</div></section>
     </li><li><section><h1 id=4902>
     <span class="no">[4902]</span>
-    <a class="title" href="#4902">Re3:C/C++ アウトライン解析</a>
+    <a class="thread-title" href="#4902">Re3:C/C++ アウトライン解析</a>
     <span class="author">すす</span>
     <time datetime="2005-12-05T12:06:18">2005年12月05日 12:06</time></h1>
     <div class="body">▼ じゅうじさん<br>&gt; ▼ 無人駅さん<br>&gt; &gt;&gt;dev:4199 すす<br>&gt; ところで、ソースのこれらの行は、Win 2000 環境なら、コメントにしても大丈夫ですか。<br>&gt; #define WANT_GETLONGPATHNAME_WRAPPER<br>&gt; #include &lt;NewApis.h&gt;<br>わたしは本当に一部にしかソースを追っていないため、なんともいえません。<br>ビルドできないとか、であれば最新のPlathomeSDKをインストールして環境を設定すればいいので<br>試してみてください。</div></section>
     <ul><li><section><h1 id=4904>
     <span class="no">[4904]</span>
-    <a class="title" href="#4904">Re4:C/C++ アウトライン解析</a>
+    <a class="thread-title" href="#4904">Re4:C/C++ アウトライン解析</a>
     <span class="author">ryoji</span>
     <time datetime="2005-12-05T23:46:52">2005年12月05日 23:46</time></h1>
     <div class="body">▼ すすさん<br>&gt; ビルドできないとか、であれば最新のPlathomeSDKをインストールして環境を設定すればいいので<br>&gt; 試してみてください。<br><br>↓最新版PSDKはVC++6.0に非対応という罠。<br><a href=http://forums.belution.com/ja/vc/000/316/47s.shtml target=_top><nobr>http://<wbr>forums.<wbr>belution<wbr>.<wbr>com/<wbr>ja/<wbr>vc/<wbr>000/<wbr>316/<wbr>47s.<wbr>shtml</nobr></a><br>自分はVC++6.0には最終対応版のPSDKでNewAPIs.hのバグ部分を修正して使用してます。<br>＃VC++6.0最終対応版PSDKと最新版PSDKのNewAPIs.hの差分は実際のところ１行だけ</div></section>
     </li></ul></li><li><section><h1 id=4903>
     <span class="no">[4903]</span>
-    <a class="title" href="#4903">Re3:C/C++ アウトライン解析</a>
+    <a class="thread-title" href="#4903">Re3:C/C++ アウトライン解析</a>
     <span class="author">じゅうじ</span>
     <time datetime="2005-12-05T14:08:06">2005年12月05日 14:08</time></h1>
     <div class="body">▼ tooさん<br>▼ すすさん<br>有難う御座います。<br><br>Platform SDK の64bit の方をインストールしようとしていた様で、32bit なら上手く行きそうです。<br><br><a href=http://download.microsoft.com/download/a/5/f/a5f0d781-e201-4ab6-8c6a-9bb4efed1e1a/PSDK-x86.exe target=_top><nobr>http://<wbr>download<wbr>.<wbr>microsof<wbr>t.<wbr>com/<wbr>download<wbr>/<wbr>a/<wbr>5/<wbr>f/<wbr>a5f0d781<wbr>-<wbr>e201-<wbr>4ab6-<wbr>8c6a-<wbr>9bb4efed<wbr>1e1a/<wbr>PSDK-<wbr>x86.<wbr>exe</nobr></a><br></div></section>
     <ul><li><section><h1 id=4940>
     <span class="no">[4940]</span>
-    <a class="title" href="#4940">Re4:C/C++ アウトライン解析</a>
+    <a class="thread-title" href="#4940">Re4:C/C++ アウトライン解析</a>
     <span class="author">ガリバー</span>
     <time datetime="2005-12-31T04:57:34">2005年12月31日 04:57</time></h1>
     <div class="body">▼ じゅうじさん<br>&gt; ▼ tooさん<br>&gt; ▼ すすさん<br>&gt; 有難う御座います。<br>&gt; <br>&gt; Platform SDK の64bit の方をインストールしようとしていた様で、32bit なら上手く行きそうです。<br>&gt; <br>&gt; <a href=http://download.microsoft.com/download/a/5/f/a5f0d781-e201-4ab6-8c6a-9bb4efed1e1a/PSDK-x86.exe target=_top><nobr>http://<wbr>download<wbr>.<wbr>microsof<wbr>t.<wbr>com/<wbr>download<wbr>/<wbr>a/<wbr>5/<wbr>f/<wbr>a5f0d781<wbr>-<wbr>e201-<wbr>4ab6-<wbr>8c6a-<wbr>9bb4efed<wbr>1e1a/<wbr>PSDK-<wbr>x86.<wbr>exe</nobr></a><br><br>32bitでうまくいったでしょうか？<br>うまくいくなら私も同じようにしようかとおもっておりますが、<br>NewApis.h<br>のファイルコメントに<br><br>Win95/NTの 4.0 sp3 "未満"のOSを使用している環境では、<br>実装されていない…ということがかかれてあるようです。<br><br>ですので、<br>4.0 sp3 "以上"のOSであれば、このNewApis.hを使う必要がない<br>ということだと思われます。<br><br>しゅうじさんは、<br>etc_uty.c<br>でのコンパイル・リンクエラーでひっかかっているのでしょうか？<br>私は、<br>etc_uty.h<br>の、#define WANT_GETLONGPATHNAME_WRAPPER<br>をコメントアウトすることでリンクまでできました。<br><br>ちなみに、私の環境はWinXPです。<br><br>以上</div></section>
     <ul><li><section><h1 id=4946>
     <span class="no">[4946]</span>
-    <a class="title" href="#4946">Re5:C/C++ アウトライン解析</a>
+    <a class="thread-title" href="#4946">Re5:C/C++ アウトライン解析</a>
     <span class="author">じゅうじ</span>
     <time datetime="2006-01-05T16:54:13">2006年01月05日 16:54</time></h1>
     <div class="body">▼ ガリバーさん<br>&gt; ちなみに、私の環境はWinXPです。<br><br>今解る範囲でご返事申し上げます。<br><br>&gt;&gt;dev:4043 げんたさん<br>　Windows NT4.0/Windows 95 で SAKURA.EXE を使用するのでなければ、NewAPIs.h をインクルードしてエミュレーション関数を呼び出す必要無いと、過去ログに有りました。再掲です、すみません。<br><br>　上記リンクの最新 PlatformSDK からコピーした NewAPIs.h であれば、VC++ 6.0 でコンパイルエラーは出なったと思います。▼ すすさん　有難うございます。<br><br>MicrosoftR Windows Server 2003 SP1 Platform SDK - April 2005 Edition<br>　コンパイル済みのライブラリー(.lib)が対応していないだけで、NewAPIs.h をインクルードするだけならば、VC++ 6.0 でも問題無いと、判断しています。▼ ryojiさん　有難うございます。</div></section>

@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ修正です</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バグ修正です | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2643</span>
-    <a class="title" href="2643.html#2643">バグ修正です</a></div>
+    <a class="thread-title" href="2643.html#2643">バグ修正です</a></div>
     <ul><li><div class="list-title">
     <span class="no">2646</span>
-    <a class="title" href="2643.html#2646">Re: バグ修正です</a></div>
+    <a class="thread-title" href="2643.html#2646">Re: バグ修正です</a></div>
     <ul><li><div class="list-title">
     <span class="no">2651</span>
-    <a class="title" href="2643.html#2651">Re2: バグ修正です</a></div>
+    <a class="thread-title" href="2643.html#2651">Re2: バグ修正です</a></div>
     <ul><li><div class="list-title">
     <span class="no">2655</span>
-    <a class="title" href="2643.html#2655">Re3: バグ修正です</a></div>
+    <a class="thread-title" href="2643.html#2655">Re3: バグ修正です</a></div>
     <ul><li><div class="list-title">
     <span class="no">2660</span>
-    <a class="title" href="2643.html#2660">Re4: バグ修正です</a></div>
+    <a class="thread-title" href="2643.html#2660">Re4: バグ修正です</a></div>
     <ul><li><div class="list-title">
     <span class="no">2664</span>
-    <a class="title" href="2643.html#2664">タブ矢印の初期値</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2643>
+    <a class="thread-title" href="2643.html#2664">タブ矢印の初期値</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2643>
     <span class="no">[2643]</span>
-    <a class="title" href="#2643">バグ修正です</a>
+    <a class="thread-title" href="#2643">バグ修正です</a>
     <span class="author">みく</span>
     <time datetime="2003-03-31T18:42:40">2003年03月31日 18:42</time></h1>
     <div class="body"><br>初回起動時、共有メモリのタイプ別設定のタイプ０の情報が初期化されません。<br><br>CShareData.cpp:<br>1060行目を削除。（885行目で初期化済みのため）<br>1061～1069行目を1055行目の前(for文の前)に移動。<br></div></section>
     <ul><li><section><h1 id=2646>
     <span class="no">[2646]</span>
-    <a class="title" href="#2646">Re: バグ修正です</a>
+    <a class="thread-title" href="#2646">Re: バグ修正です</a>
     <span class="author">げんた</span>
     <time datetime="2003-04-01T01:58:31">2003年04月01日 01:58</time></h1>
     <div class="body">&gt;初回起動時、共有メモリのタイプ別設定のタイプ０の情報が初期化されません。<br>&gt;<br>&gt;CShareData.cpp:<br>&gt;1060行目を削除。（885行目で初期化済みのため）<br>885行目はIndex = 0, 1060行目はIndex = 1,2,... では？<br><br>&gt;1061～1069行目を1055行目の前(for文の前)に移動。<br>移動してしまうとIndex = 1以降は禁則の初期化がされなくなるように思いますが。<br></div></section>
     <ul><li><section><h1 id=2651>
     <span class="no">[2651]</span>
-    <a class="title" href="#2651">Re2: バグ修正です</a>
+    <a class="thread-title" href="#2651">Re2: バグ修正です</a>
     <span class="author">みく</span>
     <time datetime="2003-04-01T18:40:13">2003年04月01日 18:40</time></h1>
     <div class="body"><br>1059行目のfor文より前はIndex=0に対する初期化で、<br>1059行目のfor文の中(1060行目)でIndex=1,2,...,nにコピーしています。<br>1075行目以降は個別の設定です。<br><br>なので、今のままではfor文の中で個別に設定している情報について、<br>Index=0の情報が初期化されるタイミングがありません。<br></div></section>
     <ul><li><section><h1 id=2655>
     <span class="no">[2655]</span>
-    <a class="title" href="#2655">Re3: バグ修正です</a>
+    <a class="thread-title" href="#2655">Re3: バグ修正です</a>
     <span class="author">げんた</span>
     <time datetime="2003-04-02T00:32:20">2003年04月02日 00:32</time></h1>
     <div class="body">&gt;1059行目のfor文より前はIndex=0に対する初期化で、<br>という時点で行番号が食い違っているので話がおかしくなっているのだと思います。<br>1.3.8.1ではfor文は1055行目だと思いますが。<br><br>念のため行の内容を示してもらえません？<br></div></section>
     <ul><li><section><h1 id=2660>
     <span class="no">[2660]</span>
-    <a class="title" href="#2660">Re4: バグ修正です</a>
+    <a class="thread-title" href="#2660">Re4: バグ修正です</a>
     <span class="author">みく</span>
     <time datetime="2003-04-02T18:42:11">2003年04月02日 18:42</time></h1>
     <div class="body"><br>ssrc_2003-04-01版ベースで、<br><br>1055:for( nIdx = 1; nIdx &lt; MAX_TYPES; ++nIdx ){<br>1056:m_pShareData-&gt;m_Types[nIdx] = m_pShareData-&gt;m_Types[0];<br>1057:m_pShareData-&gt;m_Types[nIdx].m_nIdx = nIdx;<br>1058:strcpy( m_pShareData-&gt;m_Types[nIdx].m_szTypeName, pszTypeNameArr[nIdx] );<br>1059:strcpy( m_pShareData-&gt;m_Types[nIdx].m_szTypeExts, pszTypeExts[nIdx] );<br>1060:m_pShareData-&gt;m_Types[nIdx].m_nKeyW<br>ordSetIdx2 = -1;<br>...<br>1070:}<br><br>1056行目が構造体のコピーになっているので、それより前で<br>Index=0の初期化を済ませておかなければなりません。<br><br>今の状態だと未初期化の項目を含めて構造体をコピーした後、<br>未初期化の項目を設定しています。<br>よってIndex=1～nは初期化されますが、Index=0は未初期化のままです。<br><br>修正：<br>1060行目を削除(885行目で初期化済みのため)<br>1061～1069行目をfor文の前に移動<br></div></section>
     <ul><li><section><h1 id=2664>
     <span class="no">[2664]</span>
-    <a class="title" href="#2664">タブ矢印の初期値</a>
+    <a class="thread-title" href="#2664">タブ矢印の初期値</a>
     <span class="author">げんた</span>
     <time datetime="2003-04-04T04:18:11">2003年04月04日 04:18</time></h1>
     <div class="body">直接関係ないですが、<br>889行目<br>m_pShareData-&gt;m_Types[nIdx].m_bTabArrow = FALSE;<br>/* タブ矢印表示 */&#9;// 2001.12.03 hor<br>は初期値をTRUEにしてもよいかなと思っています。<br>これまでの^と比べてどうでしょうかね。<br><br>修正コメントまでコピーされちゃってますけど、これは直しましょう。<br></div></section>

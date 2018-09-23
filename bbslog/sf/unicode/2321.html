@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ロシア文字の判別</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ロシア文字の判別 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2321</span>
-    <a class="title" href="2321.html#2321">ロシア文字の判別</a></div>
+    <a class="thread-title" href="2321.html#2321">ロシア文字の判別</a></div>
     <ul><li><div class="list-title">
     <span class="no">2336</span>
-    <a class="title" href="2321.html#2336">Re:ロシア文字の判別</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2321>
+    <a class="thread-title" href="2321.html#2336">Re:ロシア文字の判別</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2321>
     <span class="no">[2321]</span>
-    <a class="title" href="#2321">ロシア文字の判別</a>
+    <a class="thread-title" href="#2321">ロシア文字の判別</a>
     <span class="author">stonee</span>
     <time datetime="2015-12-24T15:18:51">2015年12月24日 15:18</time></h1>
     <div class="body">v2.3.0.0 にて、<br>ロシア文字の判別にЁ(U+0401)、ё(U+0451)が含まれていないため、<br>たとえば「ПЁТР」のような単語がダブルクリックで選択できません。<br>対応策としては以下のような案でいかがでしょうか。<br><br>対応策１）<br>SJISに対応コードがあるЁ(U+0401)、ё(U+0451)<br>を暫定的に追加しておく。<br><br>対応策２）<br>UNICODEブロックの定義どおり、<br>  0400-04FF Cyrillic<br>  0500-052F Cyrillic Supplement<br>  2DE0-2DFF Cyrillic Extended-A<br>  A640-A69F Cyrillic Extended-B<br>をロシア文字の範囲とする。<br></div></section>
     <ul><li><section><h1 id=2336>
     <span class="no">[2336]</span>
-    <a class="title" href="#2336">Re:ロシア文字の判別</a>
+    <a class="thread-title" href="#2336">Re:ロシア文字の判別</a>
     <span class="author">もか</span>
     <time datetime="2016-02-29T22:00:42">2016年02月29日 22:00</time></h1>
     <div class="body">&gt; 対応策２）<br>&gt; UNICODEブロックの定義どおり、<br>これのパッチを登録しました。PatchUnicode#1022<br></div></section>

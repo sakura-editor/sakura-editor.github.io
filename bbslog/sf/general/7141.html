@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>フォルダの階層「/」をTabに変換するには？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>フォルダの階層「/」をTabに変換するには？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7141</span>
-    <a class="title" href="7141.html#7141">フォルダの階層「/」をTabに変換するには？</a></div>
+    <a class="thread-title" href="7141.html#7141">フォルダの階層「/」をTabに変換するには？</a></div>
     <ul><li><div class="list-title">
     <span class="no">7142</span>
-    <a class="title" href="7141.html#7142">RE: フォルダの階層「/」をTabに変換するには？</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=7141>
+    <a class="thread-title" href="7141.html#7142">RE: フォルダの階層「/」をTabに変換するには？</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7141>
     <span class="no">[7141]</span>
-    <a class="title" href="#7141">フォルダの階層「/」をTabに変換するには？</a>
+    <a class="thread-title" href="#7141">フォルダの階層「/」をTabに変換するには？</a>
     <span class="author">M</span>
     <time datetime="2010-02-19T10:24:34">2010年02月19日 10:24</time></h1>
     <div class="body">LOGデータを変換する際に使用しています。フォルダの階層「/」をTabに変更したいのですが、<br>１.「/」→「スペース」に置換<br>２.「スペース」→「Tab」変換<br>としても２．でうまくいきません。<br><br>自分で試しに入力した「スペース」は問題なくTabに変換されたので、<br>「/」から変換された「スペース」に問題がある？ということでしょうか。<br>他に「/」→Tabへのよい変換方法がありましたらご教授ください。m(_ _)m</div></section>
     <ul><li><section><h1 id=7142>
     <span class="no">[7142]</span>
-    <a class="title" href="#7142">RE: フォルダの階層「/」をTabに変換するには？</a>
+    <a class="thread-title" href="#7142">RE: フォルダの階層「/」をTabに変換するには？</a>
     <span class="author">すい</span>
     <time datetime="2010-02-20T02:20:21">2010年02月20日 02:20</time></h1>
     <div class="body">&gt;LOGデータを変換する際に使用しています。フォルダの階層「/」をTabに変更したいのですが、<br>&gt;１.「/」→「スペース」に置換<br>&gt;２.「スペース」→「Tab」変換<br>&gt;としても２．でうまくいきません。<br><br>“「スペース」→「Tab」変換”というのがメニューの<br>[変換(C)] → [空白→TAB(T)] の事をさしているのでしたら<br>無理でしょうね。<br><br>それは単純にスペースをTABに変換する機能ではなく、<br>TABの表示幅を考慮に入れた上で、見た目上、他の文字位置が<br>変わらずにTABに変換できるスペースのみをTABに変換する機能<br>ですから、ほとんどのスペースは何も変換されないでしょう。<br><br>&gt;自分で試しに入力した「スペース」は問題なくTabに変換されたので、<br>&gt;「/」から変換された「スペース」に問題がある？ということでしょうか。<br>&gt;他に「/」→Tabへのよい変換方法がありましたらご教授ください。m(_ _)m<br><br>置換で<br>・置換前：/<br>・置換後：\t<br>・正規表現  ← チェックする<br>で置換すれば？<br></div></section>

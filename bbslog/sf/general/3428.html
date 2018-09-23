@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Unicode版の行方</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Unicode版の行方 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3428</span>
-    <a class="title" href="3428.html#3428">Unicode版の行方</a></div>
+    <a class="thread-title" href="3428.html#3428">Unicode版の行方</a></div>
     <ul><li><div class="list-title">
     <span class="no">3431</span>
-    <a class="title" href="3428.html#3431">Re: Unicode版の行方</a></div>
+    <a class="thread-title" href="3428.html#3431">Re: Unicode版の行方</a></div>
     <ul><li><div class="list-title">
     <span class="no">3436</span>
-    <a class="title" href="3428.html#3436">Re2: Unicode版の行方</a></div>
+    <a class="thread-title" href="3428.html#3436">Re2: Unicode版の行方</a></div>
     <ul><li><div class="list-title">
     <span class="no">3438</span>
-    <a class="title" href="3428.html#3438">Re2: Unicode版の行方</a></div>
+    <a class="thread-title" href="3428.html#3438">Re2: Unicode版の行方</a></div>
     <ul><li><div class="list-title">
     <span class="no">3491</span>
-    <a class="title" href="3428.html#3491">Re3: Unicode版の行方</a></div>
+    <a class="thread-title" href="3428.html#3491">Re3: Unicode版の行方</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">3439</span>
-    <a class="title" href="3428.html#3439">Re2: Unicode版の行方</a></div>
+    <a class="thread-title" href="3428.html#3439">Re2: Unicode版の行方</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">3557</span>
-    <a class="title" href="3428.html#3557">Sakura-Editor Unicode版 Ver1.4.3.1 V/W への要望 2つ</a></div>
+    <a class="thread-title" href="3428.html#3557">Sakura-Editor Unicode版 Ver1.4.3.1 V/W への要望 2つ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3563</span>
-    <a class="title" href="3428.html#3563">Re: Unicode版 1.4.3.1 V/W への要望 2つ</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3428>
+    <a class="thread-title" href="3428.html#3563">Re: Unicode版 1.4.3.1 V/W への要望 2つ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3428>
     <span class="no">[3428]</span>
-    <a class="title" href="#3428">Unicode版の行方</a>
+    <a class="thread-title" href="#3428">Unicode版の行方</a>
     <span class="author">もか</span>
     <time datetime="2003-10-21T00:47:45">2003年10月21日 00:47</time></h1>
     <div class="body">技術評価レベルでまだ実用段階でなない状態ですが、Unicode版を先日からHPで公開しています。<br>興味のある方は、お試しください。<br>上書きインストールはできないので注意してください。<br><br>　そのUnicode版ですが、結局どうしようか困っています。<br>サクラエディタプロジェクトとしては、どのような方針で進めたいのか皆様のご意見をお願いします。<br>* 1. ANSI版/Unicode版の関係について<br>1A. ソースコードのみ統合できるようにして、ANSI版Unicode版の両方を公開してしく<br>1B. ソース自体は統合せず、Unicode版は別系統で開発・公開をする<br>1C. プロジェクトとしては当面Unicode化しない=Unicode版は出さない<br><br>* 2. Unicode化の目的と実装水準<br>1Cならここで話し合う必要はまったく無いのですが、試作品では単純に<br>2A. SJISに含まれる文字は今までと同じように編集できる<br>2B. SJISに含まれないUnicode固有文字は保持できる<br>という水準です。<br>それ以上の水準で実装するのかどうかというのが焦点です。<br><br>* 3. 正規表現<br>これも結構問題です。<br>・ライセンスの問題が解決できる<br>・バイナリデータが使える<br>・行先頭の問題が解決できる<br>・場合によってはSJIS(コードページ)/Unicode両対応<br>・できれば複数行の問題も解決できる<br>・できればWin64でも動く<br>#そんなのあるのか？<br></div></section>
     <ul><li><section><h1 id=3431>
     <span class="no">[3431]</span>
-    <a class="title" href="#3431">Re: Unicode版の行方</a>
+    <a class="thread-title" href="#3431">Re: Unicode版の行方</a>
     <span class="author">げんた</span>
     <time datetime="2003-10-21T02:10:39">2003年10月21日 02:10</time></h1>
     <div class="body">&gt;　そのUnicode版ですが、結局どうしようか困っています。<br>_UNICODEを定義していればAPIのWIDE版を呼びだすことになると思いますが，そうするとWin98系のサポートがなんか危うくなるような気がするのですが．うまく両方に対応できれば良いのでしょうけど．<br><br>&gt;* 1. ANSI版/Unicode版の関係について<br>&gt;1A. ソースコードのみ統合できるようにして、ANSI版Unicode版の両方を公開してしく<br>&gt;1B. ソース自体は統合せず、Unicode版は別系統で開発・公開をする<br>&gt;1C. プロジェクトとしては当面Unicode化しない=Unicode版は出さない<br>1Bは煩雑になるので避けたいです．<br><br>&gt;* 2. Unicode化の目的と実装水準<br>&gt;2B. SJISに含まれないUnicode固有文字は保持できる<br>ということは編集はできない？<br>いまいちよくわからないのですけど．<br><br>&gt;* 3. 正規表現<br>おにぐるま？<br>boost?<br></div></section>
     <ul><li><section><h1 id=3436>
     <span class="no">[3436]</span>
-    <a class="title" href="#3436">Re2: Unicode版の行方</a>
+    <a class="thread-title" href="#3436">Re2: Unicode版の行方</a>
     <span class="author">みく</span>
     <time datetime="2003-10-21T21:16:28">2003年10月21日 21:16</time></h1>
     <div class="body"><br>&gt;そうするとWin98系のサポートがなんか危うくなるような気がするのですが．<br><br>Win98系のために、ANSI版を残すという捕らえ方もできるかと...<br><br><br>&gt;&gt;* 1. ANSI版/Unicode版の関係について<br>&gt;&gt;1A. ソースコードのみ統合できるようにして、ANSI版Unicode版の両方を公開してしく<br>&gt;&gt;1B. ソース自体は統合せず、Unicode版は別系統で開発・公開をする<br>&gt;&gt;1C. プロジェクトとしては当面Unicode化しない=Unicode版は出さない<br>&gt;1Bは煩雑になるので避けたいです．<br><br>やっぱり1Aでしょうか。<br>とりあえず、「ANSI版でのコンパイルが正常」な状態を保ちつつTCHAR化(WIDE化)を進めていく<br>というのが現実的かな。<br><br><br>&gt;&gt;* 3. 正規表現<br>&gt;おにぐるま？<br>&gt;boost?<br><br>結論：ANSI版=SJISとWIDE版=UTF16の両方をサポートしているライブラリがないので、<br>同じ正規表現ライブラリは使えません。<br>と、私は認識していますので、CBregexp周りを大幅に書き直す必要があるかと思います。<br>（POSIXはバイナリを扱えないので問題外）<br><br>oniguruma: ASCII,SJIS,EUC,UTF8<br>boost: ASCII,UTF16<br>pcre: ASCII,UTF8<br>JRE32: SJIS<br>BREGEXP: SJIS<br><br>＃onigurumaあたりをUTF16対応させるか...<br></div></section>
     <ul><li><section><h1 id=3438>
     <span class="no">[3438]</span>
-    <a class="title" href="#3438">Re2: Unicode版の行方</a>
+    <a class="thread-title" href="#3438">Re2: Unicode版の行方</a>
     <span class="author">もか</span>
     <time datetime="2003-10-21T23:16:02">2003年10月21日 23:16</time></h1>
     <div class="body"><br>* 1. ANSI版/Unicode版の関係について<br>&gt;1Bは煩雑になるので避けたいです．<br>&gt;とりあえず、「ANSI版でのコンパイルが正常」な状態を保ちつつTCHAR化(WIDE化)を進めていく<br>&gt;というのが現実的かな。<br>統合できる状態にもっていけるのかが、勝負です。<br>ちなみに、ANSI版と書いたのはAPIではなく行データ(CDocLineのCMemoryとか)のことでして、<br>ANSI版の利点は、少メモリ、少スペース、SJISファイルやバイナリの親和性、他にも色々。<br>最悪の場合、ANSI版、Unicode版(WinNT系用)、API-ANSI/内部データ-Unicode版(Win9x用)の3種類できますね。<br>(あ、64bit版もあった)<br>将来的に、ANSI版を廃止するのかどうかも気になるところです。2010年頃か..<br><br>* 3. 正規表現<br>&gt;結論：ANSI版=SJISとWIDE版=UTF16の両方をサポートしているライブラリがないので、<br>&gt;同じ正規表現ライブラリは使えません。<br>&gt;＃onigurumaあたりをUTF16対応させるか... <br>BREGEXPのlinux用ソースをUTF-16対応させて、DLLを作ろうかとも思いましたが、<br>それなら機能面やbregexpは無限ループするとか考えると、<br>みくさんの言うようにonigurumaをUTF-16化したほうが良いですよね。<br><br>* 4. UnicodeとWin9x<br>&gt;&gt;そうするとWin98系のサポートがなんか危うくなるような気がするのですが．<br>&gt;Win98系のために、ANSI版を残すという捕らえ方もできるかと...<br>4つ目の問題としておきます。<br>MSLUやExtTextOutWでサポートできるものの、機能制限はやっぱりあります。<br>実際にやってみないと分からないので、MSLUを使った試作品を作ってみます。<br>ダイアログなどの標準ウィンドウクラスがUnicode未サポートだったような。<br><br>#ついでに書いておきますが、Unicode化とUIの多言語化は別問題ですので、英語版とかの話は別でお願いします。<br></div></section>
     <ul><li><section><h1 id=3491>
     <span class="no">[3491]</span>
-    <a class="title" href="#3491">Re3: Unicode版の行方</a>
+    <a class="thread-title" href="#3491">Re3: Unicode版の行方</a>
     <span class="author">みく</span>
     <time datetime="2003-11-14T21:02:04">2003年11月14日 21:02</time></h1>
     <div class="body"><br>&gt;* 1. ANSI版/Unicode版の関係について<br>&gt;とりあえず、「ANSI版でのコンパイルが正常」な状態を保ちつつTCHAR化(WIDE化)を進めていく<br>&gt;というのが現実的かな。<br><br>分岐させるにしても、共通の修正としてやっておくべきことがあるということです。<br><br><br>&gt;* 3. 正規表現<br>&gt;みくさんの言うようにonigurumaをUTF-16化したほうが良いですよね。<br><br>ちょっと見てみましたが、無理っぽいですね。<br>ちゃんと文字コード別に1文字分処理しているところもあれば、そうでないところもある。<br>1バイト文字ならどの文字コードも同じという前提で動作しているっぽい。<br><br>巷の内部UNICODE版エディタって、どうしてるんでしょうかねぇ。<br></div></section>
     </li></ul></li></ul></li><li><section><h1 id=3439>
     <span class="no">[3439]</span>
-    <a class="title" href="#3439">Re2: Unicode版の行方</a>
+    <a class="thread-title" href="#3439">Re2: Unicode版の行方</a>
     <span class="author">もか</span>
     <time datetime="2003-10-21T23:16:20">2003年10月21日 23:16</time></h1>
     <div class="body">サイズオーバのため分割。<br>&gt;&gt;2B. SJISに含まれないUnicode固有文字は保持できる<br>&gt;ということは編集はできない？<br>&gt;いまいちよくわからないのですけど．<br>すみません、ちょいと説明します。<br>とりあえず、日本語を使っている分にはほとんど支障がありません。<br>アラビア系は入力できても文字が本来の並びとは逆向きに並ぶので使い物にはなりません。<br>あと、合成文字とかも表示が分かれてしまうので、本来とは違う表示になってしまいます。<br>Unicodeには、前の文字と一つになって表示する「合成可能」な文字があります。<br>日本語(JIS X 0123に含まれる文字をUnicodeで使うときに必要)だと半濁点、濁点が該当します。<br>例えば、U+304B U+3099は「が」と表示されるべきものが、「か゛」となるわけです。<br>「が」ならすでに合成済みの「が(U+304c)」というものがあるのでましですけど、<br>かの鼻濁音の「か゜（U+304b U+309a）」だと駄目です。<br>しかも本来は、この「合成済み文字」と「合成して表現する文字」は等価であるため、<br>検索でどちらも同じようにヒットするべきです。<br>ついでに、文字幅が0という文字もありますが、試作品では現状1文字分占領するはずです。<br>この種の文字を使う人は、サクラエディタではスペースが入って読みにくいのではないかと。<br>さらに、IMEが入っている日本ではそれほど問題ではありませんが、Unicode文字をコードポイントで入力する機能がないと大変です。(RichText3.0にはその機能があり、Alt+テンキー入力で可能だったと思う)<br><br>まとめると、データは保持できるが、編集が困難な文字があり、表示が変な文字もあるという状態です。<br>そういう文字をまともに扱えるような機能をサポートすると1A(ソース統合)しにくくなり、泥沼に...<br>この辺は全部サポートしないけど勘弁してほしいというのが私の個人的な意見。<br></div></section>
     </li></ul></li><li><section><h1 id=3557>
     <span class="no">[3557]</span>
-    <a class="title" href="#3557">Sakura-Editor Unicode版 Ver1.4.3.1 V/W への要望 2つ</a>
+    <a class="thread-title" href="#3557">Sakura-Editor Unicode版 Ver1.4.3.1 V/W への要望 2つ</a>
     <span class="author">ASSA</span>
     <time datetime="2003-12-16T21:04:30">2003年12月16日 21:04</time></h1>
     <div class="body">こんばんわ。 始めまして。<br>私は 定年退職した 62歳の男性です。<br><br>▼もかさんの [3428]Unicode版の行方 で<br>Sakura-Editor Unicode版(Ver1.4.3.1 V/W)を知りました。<br>さっそくTestしてみました。<br>Testの結果 とりあえずご要望を2つ書きこませていただきます。<br><br>サクラエディタ Unicode版 2003/10/15 Moca<br>を拝見したところ Fontについては<br>次のようのに書かれていました。<br>&gt;■Unicodeとフォントの制限<br>&gt;Unicodeの機能（文字・制御文字）のサポート状況です。<br>&gt;・プロポーショナルフォント<br>&gt;未サポートです。<br>&gt;強制的に指定すると表示することはできるかもしれません。<br>&gt;ただし、その場合も、等角で表示されます。<br>&gt;・文字の表示幅<br>&gt;各文字の表示幅の決定は、コードポイントから直接決定しています。<br>&gt;現在は、フォントや言語の設定（ローケル）にかかわらず固定です。<br>&gt;・合成文字<br>&gt;すべて未サポートです。それぞれ別の字として扱われるはずです。<br><br>[要望 1]<br>プロポーショナルフォントのうちで 少なくとも<br>Tahoma<br>TimesNewRoman を<br>設定できる/画面表示できるように ぜひ 改良してください。<br><br>とくに Tahomaは Win2k/XPでは 特別な扱いで<br>Tahomaには含まれていない<br>漢字/かな/カナ/IPA発音記号/CombiningDiacriticalMarks<br>などなど が 表示できるような しくみが くみこまれています。<br><br>[要望 2]<br>Unicodeの合成文字が 正しく表示できるように改良してください。<br><br>『Tilde付の小文字q』のUnicode流の書き方<br>q(U+0071)+(その右隣に)CombiningTilde(U+0303)などは<br>Ver1.4.3.1 V/W では 適切なFontを選べないので<br>画面表示できません。<br>現実には 適切なFontが選べないので<br>Testもできない状況です。<br>(Ziro Editor Ver 0.119βでは 上の2点は 実現しています。)<br><br>上の2点の改良を ぜひ お願いいたします。<br><br>例: Unicode Ver4.0(Draft)にも含まれていない<br>『Tilde付の小文字q』を Unicode流の書き方<br>先にq(U+0071)を入力する<br>ついで(その右隣に)CombiningTilde(U+0303)を<br>入力することになります。<br><br>これは[3439]<br>&gt;Re2: Unicode版の行方<br>の中にある<br>&gt;前の文字と一つになって表示する「合成可能」な文字<br>の1例です。<br><br>今まで 使った実績やTestした範囲では<br><br>上の2点をClearしていて かつ<br>TahomaとTimesNewRomanで<br>「合成可能」な文字が 正しく画面表示されるのは<br><br>Ziro Editor Ver 0.119β(2001/05/25)<br>  開発者のHomePageがなくなってしまっていて<br>  開発はとまっています。<br>EmEditor Pro J Ver 4.00β16 <br>Word 2002<br><br>画面表示が乱れるのは<br><br>OpenOffice1.1.0ja　Write<br>CombiningDiacriticalMarkを入力すると<br>次の(その右隣の)文字との間が2文字分くらい広がる<br>（TimesNewRoman Ver 3.00/Win2k SP4)<br><br>秀丸Editor Ver 4.0.3<br>CombiningDiacriticalMarkを入力すると<br>前の(その左隣の)文字の右側が<br>CombiningDiacriticalMarkの幅だけ見えなくなる<br>その状態でCombiningDiacriticalMarkだけは<br>画面に表示される(Tahoma Ver 3.05/Win2k SP4)<br><br>POWER Mac G4も使っています(Mac OS X Ver 10.2.8)ので<br>Unicodeのほうが ぐあいがいいのです。<br><br>正直なところ Win95/98/98SE/Meには<br>もう まったく関心ありませんし<br>使う気持もありません。<br></div></section>
     <ul><li><section><h1 id=3563>
     <span class="no">[3563]</span>
-    <a class="title" href="#3563">Re: Unicode版 1.4.3.1 V/W への要望 2つ</a>
+    <a class="thread-title" href="#3563">Re: Unicode版 1.4.3.1 V/W への要望 2つ</a>
     <span class="author">もか</span>
     <time datetime="2003-12-18T00:54:26">2003年12月18日 00:54</time></h1>
     <div class="body">始めに、テストありがとうございます。<br>▼ASSAさん<br>&gt;[要望 1]<br>&gt;プロポーショナルフォントのうちで 少なくとも<br>&gt;Tahoma<br>&gt;TimesNewRoman を<br>&gt;設定できる/画面表示できるように ぜひ 改良してください。<br>sakura.iniに直接指定すれば使えなくも無いですが、大変なので、選択できるようにします。<br>表示のほうは、正確な文字幅での表示は実装の都合上、かなり難しいです。<br>で、現状では、@とかMなどの右端が欠けます。<br>タイプ別設定 - 文字の間隔 を広げれば回避できますが、かなり読みにくくなります。<br>しかも、合成文字の表示は不可能です。<br>&gt;[要望 2]<br>&gt;Unicodeの合成文字が 正しく表示できるように改良してください。<br>色々な都合上、実現できていません。<br>現段階ではアルファベット + 合成文字1つ 程度なら、何とかなるかもしれません。<br></div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現-全文から検索語だけ残したい。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現-全文から検索語だけ残したい。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7433</span>
-    <a class="title" href="7433.html#7433">正規表現-全文から検索語だけ残したい。</a></div>
+    <a class="thread-title" href="7433.html#7433">正規表現-全文から検索語だけ残したい。</a></div>
     <ul><li><div class="list-title">
     <span class="no">7443</span>
-    <a class="title" href="7433.html#7443">Re:正規表現-全文から検索語だけ残したい。</a></div>
+    <a class="thread-title" href="7433.html#7443">Re:正規表現-全文から検索語だけ残したい。</a></div>
     <ul><li><div class="list-title">
     <span class="no">7447</span>
-    <a class="title" href="7433.html#7447">Re2:正規表現-全文から検索語だけ残したい。</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7433>
+    <a class="thread-title" href="7433.html#7447">Re2:正規表現-全文から検索語だけ残したい。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7433>
     <span class="no">[7433]</span>
-    <a class="title" href="#7433">正規表現-全文から検索語だけ残したい。</a>
+    <a class="thread-title" href="#7433">正規表現-全文から検索語だけ残したい。</a>
     <span class="author">ろろ</span>
     <time datetime="2011-10-10T21:57:19">2011年10月10日 21:57</time></h1>
     <div class="body">教えてください。<br>例えば、検索語（数字）だけ残したいので、検索語（数字）以外を削除する。<br>input--------------------<br>abc123def456ghi<br>jk78l9m<br>output-------------------<br>,,1,2,3,,4,5,6,,,7,8,,9,<br><br>置換前 [^0-9]*|\n([0-9]+)[^0-9]*|\n<br>置換後 $1,<br><br>output-------------------<br>123,456,78,9<br>結果を上の行にする時はどうしたらいいですか。よろしくお願いします。<br></div></section>
     <ul><li><section><h1 id=7443>
     <span class="no">[7443]</span>
-    <a class="title" href="#7443">Re:正規表現-全文から検索語だけ残したい。</a>
+    <a class="thread-title" href="#7443">Re:正規表現-全文から検索語だけ残したい。</a>
     <span class="author">じゅうじ</span>
     <time datetime="2011-10-22T19:20:42">2011年10月22日 19:20</time></h1>
     <div class="body">　input--------------------<br>abc123def456ghi<br>jk78l9m<br>　regexp 1-----------------<br>　search:[\x09\x20-\x2F\x3A-\xFF]+<br>　replace:,<br>　output-&gt;-input-----------<br>,123,456,<br>,78,9,<br>　regexp 2-----------------<br>　search:(\d)<br>　replace:,$1<br>　output-&gt;-input-----------<br>,,1,2,3,,4,5,6,<br>,,7,8,,9,<br>　regexp 3-----------------<br>　search:\r\n<br>　replace:<br>　output-------------------<br>,,1,2,3,,4,5,6,,,7,8,,9,<br><br>３回の置換で出来ます。</div></section>
     <ul><li><section><h1 id=7447>
     <span class="no">[7447]</span>
-    <a class="title" href="#7447">Re2:正規表現-全文から検索語だけ残したい。</a>
+    <a class="thread-title" href="#7447">Re2:正規表現-全文から検索語だけ残したい。</a>
     <span class="author">ろろ</span>
     <time datetime="2011-10-30T06:59:06">2011年10月30日 06:59</time></h1>
     <div class="body">▼ じゅうじ様<br>ありがとうございます。２回の置換でも出来ました。<br>input--------------------<br>abc123def456ghi<br>jk78l9m<br>output1-------------------<br>123,456,78,9,<br>output2-------------------<br>123,456,78,9<br><br>置換前 ([^0-9]*|\r|\n)([0-9]+)([^0-9]*|\r|\n)<br>置換後 $2,<br><br>置換前 ,$<br>置換後 <br></div></section>

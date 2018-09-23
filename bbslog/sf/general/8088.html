@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>矩形選択について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>矩形選択について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">8088</span>
-    <a class="title" href="8088.html#8088">矩形選択について</a></div>
+    <a class="thread-title" href="8088.html#8088">矩形選択について</a></div>
     <ul><li><div class="list-title">
     <span class="no">8091</span>
-    <a class="title" href="8088.html#8091">Re:矩形選択について</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=8088>
+    <a class="thread-title" href="8088.html#8091">Re:矩形選択について</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8088>
     <span class="no">[8088]</span>
-    <a class="title" href="#8088">矩形選択について</a>
+    <a class="thread-title" href="#8088">矩形選択について</a>
     <span class="author">n</span>
     <time datetime="2015-12-05T21:59:20">2015年12月05日 21:59</time></h1>
     <div class="body">矩形選択は「Alt+ドラッグ」か「Alt+矢印キー」しかできませんか？<br>クリックからクリックの間を矩形選択したい。<br><br></div></section>
     <ul><li><section><h1 id=8091>
     <span class="no">[8091]</span>
-    <a class="title" href="#8091">Re:矩形選択について</a>
+    <a class="thread-title" href="#8091">Re:矩形選択について</a>
     <span class="author">もか</span>
     <time datetime="2015-12-08T22:01:21">2015年12月08日 22:01</time></h1>
     <div class="body">クリックに動作を割り当てることはできないので、かわりにダブルクリック間とかクリックしたあとファンクションキーかクリック+右クリックメニューとかに下記のようなマクロならできます。<br>ただし、下に書いたマクロ例では改行より後ろは選択できません。<br>あとShift+F6で矩形選択モードにすることもできます。クリックするとキャンセルされてしまうけど。<br>sakura 2.2以上ならAlt+矢印はデフォルトで矩形選択モードのロック状態になるようになっていて、Altキーを離しても移動系コマンドで選択したままになります。<br>(もっと古いバージョンはAlt+矢印はShift+F6と同じ機能です)<br><br>選択ロック中でのクリックはそのモードのままの選択終了点にするという機能提案はいいかもしれません。<br><br>//file name; boxsel.js<br>(function(){<br>var x = Editor.GetCookieDefault("window", "selx", "-1");<br>if(x == -1){<br>&#9;Editor.SetCookie("window", "selx", Editor.ExpandParameter("$x"));<br>&#9;Editor.SetCookie("window", "sely", Editor.ExpandParameter("$y"));<br>&#9;return;<br>}<br>var y = Editor.GetCookie("window", "sely");<br>Editor.SetCookie("window", "selx", "-1");<br>var tox = Editor.ExpandParameter("$x");<br>var toy = Editor.ExpandParameter("$y");<br>Editor.MoveCursor(y,x,0);<br>Editor.MoveCursor(toy,tox,2);<br>})();<br></div></section>

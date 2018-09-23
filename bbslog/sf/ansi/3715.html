@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Re: 【バグ報告】バックアップファイルが書き込み禁止</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Re: 【バグ報告】バックアップファイルが書き込み禁止 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3715</span>
-    <a class="title" href="3715.html#3715">Re: 【バグ報告】バックアップファイルが書き込み禁止</a></div>
+    <a class="thread-title" href="3715.html#3715">Re: 【バグ報告】バックアップファイルが書き込み禁止</a></div>
     <ul><li><div class="list-title">
     <span class="no">3716</span>
-    <a class="title" href="3715.html#3716">Re2: 【バグ報告】バックアップファイルが書き込み禁止</a></div>
+    <a class="thread-title" href="3715.html#3716">Re2: 【バグ報告】バックアップファイルが書き込み禁止</a></div>
     <ul><li><div class="list-title">
     <span class="no">3717</span>
-    <a class="title" href="3715.html#3717">Re3: 【バグ報告】バックアップファイルが書き込み禁止</a></div>
+    <a class="thread-title" href="3715.html#3717">Re3: 【バグ報告】バックアップファイルが書き込み禁止</a></div>
     <ul><li><div class="list-title">
     <span class="no">3719</span>
-    <a class="title" href="3715.html#3719">Re4: 【バグ報告】バックアップファイルが書き込み禁止</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3715>
+    <a class="thread-title" href="3715.html#3719">Re4: 【バグ報告】バックアップファイルが書き込み禁止</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3715>
     <span class="no">[3715]</span>
-    <a class="title" href="#3715">Re: 【バグ報告】バックアップファイルが書き込み禁止</a>
+    <a class="thread-title" href="#3715">Re: 【バグ報告】バックアップファイルが書き込み禁止</a>
     <span class="author">げんた</span>
     <time datetime="2004-08-18T23:37:42">2004年08月18日 23:37</time></h1>
     <div class="body">Windows APIのCopyFileでバックアップを作ると書き込み禁止属性も忠実にコピーされちゃうので，それ以降バックアップファイルが作れなくなるんですね．<br>えーっと，事前に削除すればいいのかな？でもRead onlyを単純にremoveしようとしても失敗しそうだし，だからといって勝手に解除していいのか？<br></div></section>
     <ul><li><section><h1 id=3716>
     <span class="no">[3716]</span>
-    <a class="title" href="#3716">Re2: 【バグ報告】バックアップファイルが書き込み禁止</a>
+    <a class="thread-title" href="#3716">Re2: 【バグ報告】バックアップファイルが書き込み禁止</a>
     <span class="author">じゅうじ</span>
     <time datetime="2004-08-19T00:03:00">2004年08月19日 00:03</time></h1>
     <div class="body">▼ げんたさん<br>&gt; Windows APIのCopyFileでバックアップを作ると書き込み禁止属性も忠実にコピーされちゃうので，それ以降バックアップファイルが作れなくなるんですね．<br>&gt; えーっと，事前に削除すればいいのかな？でもRead onlyを単純にremoveしようとしても失敗しそうだし，だからといって勝手に解除していいのか？<br><br>まとめると、<br>バックアップファイルは、Ｒ／Ｏ属性を変更しない。<br>この仕様でＯＫ？<br><br>追加すると、<br>Ｒ／Ｏファイルは修正の出来ないファイルではないでしょうか。<br>従って、Ｒ／Ｏファイルを修正して、そのファイル拡張子をＢＡＫにし、新しいファイルをＲ／Ｗで作る。<br>当然、２度目以降の修正は不可能になります。<br></div></section>
     <ul><li><section><h1 id=3717>
     <span class="no">[3717]</span>
-    <a class="title" href="#3717">Re3: 【バグ報告】バックアップファイルが書き込み禁止</a>
+    <a class="thread-title" href="#3717">Re3: 【バグ報告】バックアップファイルが書き込み禁止</a>
     <span class="author">げんた</span>
     <time datetime="2004-08-19T02:21:02">2004年08月19日 02:21</time></h1>
     <div class="body">&gt;Ｒ／Ｏファイルは修正の出来ないファイルではないでしょうか。<br>&gt;従って、Ｒ／Ｏファイルを修正して、そのファイル拡張子をＢＡＫにし、新しいファイルをＲ／Ｗで作る。<br>ちょっとちがうような．R/Oのファイルは内容も名前も変えて欲しく無いと解釈すべきでは？<br>だから書き込みが可能かどうかをバックアップ前に調べるしか無いと思うのですが．<br></div></section>
     <ul><li><section><h1 id=3719>
     <span class="no">[3719]</span>
-    <a class="title" href="#3719">Re4: 【バグ報告】バックアップファイルが書き込み禁止</a>
+    <a class="thread-title" href="#3719">Re4: 【バグ報告】バックアップファイルが書き込み禁止</a>
     <span class="author">じゅうじ</span>
     <time datetime="2004-08-22T00:42:32">2004年08月22日 00:42</time></h1>
     <div class="body">▼ げんたさん<br><br>既出ですが、「上書き禁止」と「読み取り専用」は、<br>１．ファイルがＲ／Ｏであれば、「上書き禁止」。<br>２．ファイルがＲ／Ｏではなく、「読み取り専用として開く」のであれば「読み取り専用」。<br>の違いがあるだけで、文字の追加削除が出来ない点では同じなので、<br>表示を「読み取り専用」等に統一する。<br><br>他に、「排他制御しない」時に、Ｒ／Ｏファイルを開くと、<br>文字の追加削除が出来るのに、保存は出来ない場合は、「上書き禁止」等を表示するようにする。<br><br>にしては、いかがでしょうか、私には無理ですが。<br></div></section>

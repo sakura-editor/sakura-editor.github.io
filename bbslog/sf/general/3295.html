@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>undoを大きく行ないたい</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>undoを大きく行ないたい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3295</span>
-    <a class="title" href="3295.html#3295">undoを大きく行ないたい</a></div>
+    <a class="thread-title" href="3295.html#3295">undoを大きく行ないたい</a></div>
     <ul><li><div class="list-title">
     <span class="no">3354</span>
-    <a class="title" href="3295.html#3354">Re:undoを大きく行ないたい</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3295>
+    <a class="thread-title" href="3295.html#3354">Re:undoを大きく行ないたい</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3295>
     <span class="no">[3295]</span>
-    <a class="title" href="#3295">undoを大きく行ないたい</a>
+    <a class="thread-title" href="#3295">undoを大きく行ないたい</a>
     <span class="author">ty</span>
     <time datetime="2003-09-16T09:17:53">2003年09月16日 09:17</time></h1>
     <div class="body">undoを、大きな単位で行なえないでしょうか。<br><br>例えば、文字列を打ってからサクラでundoを行なうと、その直前の動作だけがその対象になり、1文字1文字ずつ消えていきますが、これを連続したものを一回のundoで戻りたいのです。<br><br>例<br>「ああああああああ」<br>と連続して打ったものを一回undoすると、今のサクラでは、<br>「あああああああ」<br>と一文字しか戻りませんが、これを<br>「」とまで戻したいのです。<br>今のIEやMozillaのテキスト入力欄がこの方式をとっています。<br><br>良かったら、ご検討ください。</div></section>
     <ul><li><section><h1 id=3354>
     <span class="no">[3354]</span>
-    <a class="title" href="#3354">Re:undoを大きく行ないたい</a>
+    <a class="thread-title" href="#3354">Re:undoを大きく行ないたい</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-10-09T14:15:23">2003年10月09日 14:15</time></h1>
     <div class="body">ちょっと技術的な話を。<br>コマンドの連続はCEditView::HandleCommand中のbRepeatフラグで検出。<br>最適化のネックになっているCOpe*のpublicメンバーをメソッドで隠蔽し、連続かどうかのフラグを追加する。メモリが逼迫しているので、ここではビットフィールドを使うこと。<br>まとめてundoするコマンドはCommand_UNDOGROUPで実装する。共通設定にチェック項目「元に戻すときは処理をまとめて」を追加。<br></div></section>

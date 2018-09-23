@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>キャレット（カーソル）の点滅速度、形など</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>キャレット（カーソル）の点滅速度、形など | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">500</span>
-    <a class="title" href="500.html#500">キャレット（カーソル）の点滅速度、形など</a></div>
+    <a class="thread-title" href="500.html#500">キャレット（カーソル）の点滅速度、形など</a></div>
     <ul><li><div class="list-title">
     <span class="no">502</span>
-    <a class="title" href="500.html#502">Re:キャレット（カーソル）の点滅速度、形など</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=500>
+    <a class="thread-title" href="500.html#502">Re:キャレット（カーソル）の点滅速度、形など</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=500>
     <span class="no">[500]</span>
-    <a class="title" href="#500">キャレット（カーソル）の点滅速度、形など</a>
+    <a class="thread-title" href="#500">キャレット（カーソル）の点滅速度、形など</a>
     <span class="author">ああああ</span>
     <time datetime="2001-06-28T21:30:07">2001年06月28日 21:30</time></h1>
     <div class="body"><br>リファレンスでキャレット（カーソル）の点滅速度に<br>関する API 関数を見つけました。<br><br>UINT WINAPI GetCaretBlinkTime (VOID);<br>BOOL WINAPI SetCaretBlinkTime (uMSec);<br><br>これらの関数を WM_SETFOCUS および WM_ACTIVATE で fActite == WA_{ACTIVE,<br>CLICKACTIVE} のときに呼び、ついでにカーソルの形も CreateCaret() API で変え<br>て、DestroyCaret() で破棄しましょうか。<br><br>ただし、キャレットは共有資源なので、<br><br>    キーボードフォーカスを失う（WM_KILLFOCUS）、<br>    あるいは inactive になるとき（WM_ACTIVATEで fActive == WA_INACTIVE）、<br><br>点滅速度を復元するようにということです。<br><br><br>てきとーにまとめると、<br><br>    UINT uMilliSecOld, uMilliSec;<br><br>    Activated or SetFocus:<br>        //! 古い点滅速度を保存のため、取得。<br>        uMilliSecOld = ::GetCaretBlinkTime() <br>        //! 新しい点滅速度を設定。共有資源。<br>        ::SetCaretBlinkTime(uMilliSec);<br><br>        //! キャレットの形を作成・設定。共有資源。<br>        ::CreateCaret(...);<br><br>    Inactivated or KillFocus:<br>        //! 古い点滅速度に復元。共有資源。<br>        ::SetCaretBlinkTime(uMilliSecOld);<br><br>        //! 作成したキャレットの形を破棄・復元。共有資源。<br>        ::DestroyCaret(...);<br><br></div></section>
     <ul><li><section><h1 id=502>
     <span class="no">[502]</span>
-    <a class="title" href="#502">Re:キャレット（カーソル）の点滅速度、形など</a>
+    <a class="thread-title" href="#502">Re:キャレット（カーソル）の点滅速度、形など</a>
     <span class="author">げんた</span>
     <time datetime="2001-06-28T21:47:14">2001年06月28日 21:47</time></h1>
     <div class="body">解説どうもありがとうございました．キャレットの点滅を止めることが出来そうですね．速度変更したいという要望はあるかなぁ．変えたい人はWindowsの標準設定で変えているよね．<br>形と合わせてMS-DOS流とかUNIX流とか出来るかも．<br><br>UNIXのターミナルでよく見る，Focusがあると■で無いと□というのも良さそう．</div></section>

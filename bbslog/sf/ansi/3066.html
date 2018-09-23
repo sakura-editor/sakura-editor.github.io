@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>外部からのカーソルコントロール？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>外部からのカーソルコントロール？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3066</span>
-    <a class="title" href="3066.html#3066">外部からのカーソルコントロール？</a></div>
+    <a class="thread-title" href="3066.html#3066">外部からのカーソルコントロール？</a></div>
     <ul><li><div class="list-title">
     <span class="no">3067</span>
-    <a class="title" href="3066.html#3067">Re:外部からのカーソルコントロール？</a></div>
+    <a class="thread-title" href="3066.html#3067">Re:外部からのカーソルコントロール？</a></div>
     <ul><li><div class="list-title">
     <span class="no">3070</span>
-    <a class="title" href="3066.html#3070">Re2:外部からのカーソルコントロール？</a></div>
+    <a class="thread-title" href="3066.html#3070">Re2:外部からのカーソルコントロール？</a></div>
     <ul><li><div class="list-title">
     <span class="no">3073</span>
-    <a class="title" href="3066.html#3073">Re3:外部からのカーソルコントロール？</a></div>
+    <a class="thread-title" href="3066.html#3073">Re3:外部からのカーソルコントロール？</a></div>
     <ul><li><div class="list-title">
     <span class="no">3074</span>
-    <a class="title" href="3066.html#3074">Re4:外部からのカーソルコントロール？</a></div>
+    <a class="thread-title" href="3066.html#3074">Re4:外部からのカーソルコントロール？</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">3072</span>
-    <a class="title" href="3066.html#3072">Re2:外部からのカーソルコントロール？</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3066>
+    <a class="thread-title" href="3066.html#3072">Re2:外部からのカーソルコントロール？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3066>
     <span class="no">[3066]</span>
-    <a class="title" href="#3066">外部からのカーソルコントロール？</a>
+    <a class="thread-title" href="#3066">外部からのカーソルコントロール？</a>
     <span class="author">けいた</span>
     <time datetime="2003-09-01T13:55:38">2003年09月01日 13:55</time></h1>
     <div class="body">いつも利用させていただいています。<br><br>素晴らしいエディターで開発者の皆さんには脱帽<br>しています。<br><br>ところで外部アプリケーションより、一行スクロール<br>やジャンプなどのカーソルコントロールをすることは<br>できないでしょうか？<br><br>以下のように、<br>SetForegroundWindow(sakura_wnd)<br>keydb_event(VK_CONTROL,0,0,0);<br>keydb_event(VK_HOME,0,0,0);<br><br>や<br><br>SetForegroundWindow(sakura_wnd)<br>keydb_event(VK_DOWN,0,0,0);<br>keydb_event(VK_DOWN,0,KEYEVENT_KEYUP,0);<br><br>などのような処理で、ある程度はコントロールは<br>できるみたいなのですが、どこか追従性の問題など<br>不安定さがあり、確実に内部イベントをコントロール<br>する手段がないかと思っています。<br><br>アドバイスいただければ幸いです。<br></div></section>
     <ul><li><section><h1 id=3067>
     <span class="no">[3067]</span>
-    <a class="title" href="#3067">Re:外部からのカーソルコントロール？</a>
+    <a class="thread-title" href="#3067">Re:外部からのカーソルコントロール？</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-09-01T16:05:24">2003年09月01日 16:05</time></h1>
     <div class="body">UWSCというソフトを試して参考にしてください。関連カテゴリ：<br><a href=http://www.vector.co.jp/vpack/filearea/win95/util/operate/index.html target=_top><nobr>http://<wbr>www.<wbr>vector.<wbr>co.<wbr>jp/<wbr>vpack/<wbr>filearea<wbr>/<wbr>win95/<wbr>util/<wbr>operate/<wbr>index.<wbr>html</nobr></a><br><br>商業開発者の方で、本格的に外部アプリケーションを操作したいのであれば、DDE通信をお勧めします。<br><br>＃パソコン教材でブームになるかも？</div></section>
     <ul><li><section><h1 id=3070>
     <span class="no">[3070]</span>
-    <a class="title" href="#3070">Re2:外部からのカーソルコントロール？</a>
+    <a class="thread-title" href="#3070">Re2:外部からのカーソルコントロール？</a>
     <span class="author">げんた</span>
     <time datetime="2003-09-02T02:36:57">2003年09月02日 02:36</time></h1>
     <div class="body">&gt;UWSC<br>私もお世話になってます．<br><br>---<br>外部アプリというのが操作の自動化なのか別のソフトとの連携なのかがよくわからないのですが，このエディタの場合はWM_COMMANDを投げつけるという技もありかな，と．コマンド番号が変わると動かなくなっちゃいますが，まぁ変える人はいないでしょう．<br></div></section>
     <ul><li><section><h1 id=3073>
     <span class="no">[3073]</span>
-    <a class="title" href="#3073">Re3:外部からのカーソルコントロール？</a>
+    <a class="thread-title" href="#3073">Re3:外部からのカーソルコントロール？</a>
     <span class="author">けいた</span>
     <time datetime="2003-09-02T19:56:07">2003年09月02日 19:56</time></h1>
     <div class="body">&gt; このエディタの場合はWM_COMMANDを投げつけるという技も<br><br>これまた、試してみようかなと思ったのですが、やっぱり<br>コマンド番号を勝手に使うのは気が引けました。(^^;<br>でも、このコマンド番号って、どのあたりのソース、ヘッダー<br>を見れば判るでしょうか。ちょっと興味があります。<br>変えられても自己責任ということで．．．<br></div></section>
     <ul><li><section><h1 id=3074>
     <span class="no">[3074]</span>
-    <a class="title" href="#3074">Re4:外部からのカーソルコントロール？</a>
+    <a class="thread-title" href="#3074">Re4:外部からのカーソルコントロール？</a>
     <span class="author">げんた</span>
     <time datetime="2003-09-03T01:01:39">2003年09月03日 01:01</time></h1>
     <div class="body">▼けいたさん<br>&gt;&gt; このエディタの場合はWM_COMMANDを投げつけるという技も<br>&gt;でも、このコマンド番号って、どのあたりのソース、ヘッダー<br>&gt;を見れば判るでしょうか。<br>Funccode.hにすべて定義してあります．<br></div></section>
     </li></ul></li></ul></li><li><section><h1 id=3072>
     <span class="no">[3072]</span>
-    <a class="title" href="#3072">Re2:外部からのカーソルコントロール？</a>
+    <a class="thread-title" href="#3072">Re2:外部からのカーソルコントロール？</a>
     <span class="author">けいた</span>
     <time datetime="2003-09-02T19:50:00">2003年09月02日 19:50</time></h1>
     <div class="body">UWSCさっそく使ってみました。これは大変役立ちそうです。<br>私もモニターするプログラムを作ろうかと思ったことも<br>ありましたが挫折しました。<br>ご紹介いただき、ありがとうございました。<br><br>それからDDEの件、考えたことはあったのですが．．．<br>これはSAKURAエディター側にも仕組んでおく必要があります<br>よね。というか、既に仕組まれているのでしょうか。</div></section>

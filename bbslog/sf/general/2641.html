@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ：改行コード表示が欠ける</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バグ：改行コード表示が欠ける | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">2641</span>
-    <a class="title" href="2641.html#2641">バグ：改行コード表示が欠ける</a></div>
+    <a class="thread-title" href="2641.html#2641">バグ：改行コード表示が欠ける</a></div>
     <ul><li><div class="list-title">
     <span class="no">2642</span>
-    <a class="title" href="2641.html#2642">Re:バグ：改行コード表示が欠ける</a></div>
+    <a class="thread-title" href="2641.html#2642">Re:バグ：改行コード表示が欠ける</a></div>
     <ul><li><div class="list-title">
     <span class="no">2643</span>
-    <a class="title" href="2641.html#2643">Re2:バグ：改行コード表示が欠ける</a></div>
+    <a class="thread-title" href="2641.html#2643">Re2:バグ：改行コード表示が欠ける</a></div>
     <ul><li><div class="list-title">
     <span class="no">2644</span>
-    <a class="title" href="2641.html#2644">Re3:バグ：改行コード表示が欠ける</a></div>
+    <a class="thread-title" href="2641.html#2644">Re3:バグ：改行コード表示が欠ける</a></div>
     <ul><li><div class="list-title">
     <span class="no">2652</span>
-    <a class="title" href="2641.html#2652">Re4:バグ：改行コード表示が欠ける</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2641>
+    <a class="thread-title" href="2641.html#2652">Re4:バグ：改行コード表示が欠ける</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2641>
     <span class="no">[2641]</span>
-    <a class="title" href="#2641">バグ：改行コード表示が欠ける</a>
+    <a class="thread-title" href="#2641">バグ：改行コード表示が欠ける</a>
     <span class="author">みく</span>
     <time datetime="2003-01-04T14:49:23">2003年01月04日 14:49</time></h1>
     <div class="body"><br>タイプ設定をC言語にした状態<br>(typedef,structが強調表示、対括弧強調表示)<br>で以下の｛の右でリターンキーを押すと改行コード<br>表示が欠けます。<br>その後BSキーで改行を削除すると｝の次の行の改行<br>コード表示が欠けます。<br><br>typedef struct {<br>} A_T;<br><br>hoge<br><br><br>sakura 1.3.6.2 です。<br></div></section>
     <ul><li><section><h1 id=2642>
     <span class="no">[2642]</span>
-    <a class="title" href="#2642">Re:バグ：改行コード表示が欠ける</a>
+    <a class="thread-title" href="#2642">Re:バグ：改行コード表示が欠ける</a>
     <span class="author">かろと</span>
     <time datetime="2003-01-04T22:56:28">2003年01月04日 22:56</time></h1>
     <div class="body">▼ みくさん<br>&gt; で以下の｛の右でリターンキーを押すと改行コード<br>&gt; 表示が欠けます。<br><br>再現試みましたが、<br>こっちは、再現せず。<br><br>&gt; その後BSキーで改行を削除すると｝の次の行の改行<br>&gt; コード表示が欠けます。<br><br>こっちは、半角の「・」みたいなのが改行マークの上に表示されて、<br>改行マークが欠けます。<br><br>&gt; sakura 1.3.6.2 です。<br><br>1.3.6.2 でなりました。1.3.6.1 では　発生せず。<br></div></section>
     <ul><li><section><h1 id=2643>
     <span class="no">[2643]</span>
-    <a class="title" href="#2643">Re2:バグ：改行コード表示が欠ける</a>
+    <a class="thread-title" href="#2643">Re2:バグ：改行コード表示が欠ける</a>
     <span class="author">げんた</span>
     <time datetime="2003-01-10T00:02:59">2003年01月10日 00:02</time></h1>
     <div class="body">括弧の強調表示のために描画方法が変更されているので，そこで紛れ込んだのだと思います．<br><br>対応する括弧を書き換えるとき改行前に対応する括弧があった場所を再描画しているような気がする．</div></section>
     <ul><li><section><h1 id=2644>
     <span class="no">[2644]</span>
-    <a class="title" href="#2644">Re3:バグ：改行コード表示が欠ける</a>
+    <a class="thread-title" href="#2644">Re3:バグ：改行コード表示が欠ける</a>
     <span class="author">ai</span>
     <time datetime="2003-01-10T08:52:00">2003年01月10日 08:52</time></h1>
     <div class="body">申し訳ないです。まったくその通りです。<br>手元では修正してあります。応急処置的な対応となっていますが・・・(^^;<br>他に気になった所があったので調べていたのですが、この修正だけでも整理して週末にeGroupsに上げたいと思います。<br></div></section>
     <ul><li><section><h1 id=2652>
     <span class="no">[2652]</span>
-    <a class="title" href="#2652">Re4:バグ：改行コード表示が欠ける</a>
+    <a class="thread-title" href="#2652">Re4:バグ：改行コード表示が欠ける</a>
     <span class="author">ai</span>
     <time datetime="2003-01-12T00:07:55">2003年01月12日 00:07</time></h1>
     <div class="body">修正をeGroupsのSourceに置いておきました。<br>ssrc_2002-12-24_diff.zipです。</div></section>

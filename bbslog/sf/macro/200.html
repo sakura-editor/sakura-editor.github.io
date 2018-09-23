@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>複数行置換のPerlScript</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>複数行置換のPerlScript | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">200</span>
-    <a class="title" href="200.html#200">複数行置換のPerlScript</a></div>
+    <a class="thread-title" href="200.html#200">複数行置換のPerlScript</a></div>
     <ul><li><div class="list-title">
     <span class="no">201</span>
-    <a class="title" href="200.html#201">Re:複数行置換のPerlScript</a></div>
+    <a class="thread-title" href="200.html#201">Re:複数行置換のPerlScript</a></div>
     <ul><li><div class="list-title">
     <span class="no">202</span>
-    <a class="title" href="200.html#202">Re2:複数行置換のPerlScript</a></div>
+    <a class="thread-title" href="200.html#202">Re2:複数行置換のPerlScript</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">203</span>
-    <a class="title" href="200.html#203">Re:複数行置換のPerlScript</a></div>
+    <a class="thread-title" href="200.html#203">Re:複数行置換のPerlScript</a></div>
     <ul><li><div class="list-title">
     <span class="no">205</span>
-    <a class="title" href="200.html#205">Re2:複数行置換のPerlScript</a></div>
+    <a class="thread-title" href="200.html#205">Re2:複数行置換のPerlScript</a></div>
     <ul><li><div class="list-title">
     <span class="no">206</span>
-    <a class="title" href="200.html#206">Re3: 複数行置換のPerlScript</a></div>
+    <a class="thread-title" href="200.html#206">Re3: 複数行置換のPerlScript</a></div>
     <ul><li><div class="list-title">
     <span class="no">207</span>
-    <a class="title" href="200.html#207">Re4: 複数行置換のPerlScript</a></div>
+    <a class="thread-title" href="200.html#207">Re4: 複数行置換のPerlScript</a></div>
     <ul><li><div class="list-title">
     <span class="no">208</span>
-    <a class="title" href="200.html#208">Re5: 複数行置換のPerlScript</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=200>
+    <a class="thread-title" href="200.html#208">Re5: 複数行置換のPerlScript</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=200>
     <span class="no">[200]</span>
-    <a class="title" href="#200">複数行置換のPerlScript</a>
+    <a class="thread-title" href="#200">複数行置換のPerlScript</a>
     <span class="author">miau</span>
     <time datetime="2005-09-13T22:38:41">2005年09月13日 22:38</time></h1>
     <div class="body">PerlScript で選択範囲の置換を行うマクロを作ってみました。<br><a href=http://miau.s9.xrea.com/blog/index.php?itemid=398 target=_top><nobr>http://<wbr>miau.<wbr>s9.<wbr>xrea.<wbr>com/<wbr>blog/<wbr>index.<wbr>php?<wbr>itemid=<wbr>398</nobr></a><br>Perl で置換処理を行いますので、複数行置換なんかも行えます。<br><br>あと、PerlScript に関して色々試したことも書いてあります。<br><a href=http://miau.s9.xrea.com/blog/index.php?itemid=397 target=_top><nobr>http://<wbr>miau.<wbr>s9.<wbr>xrea.<wbr>com/<wbr>blog/<wbr>index.<wbr>php?<wbr>itemid=<wbr>397</nobr></a><br><br>概要としては、<br><br>・PerlScript で日本語を使う場合は、<br>　ファイル全体の文字数＞スクリプト部分のバイト数<br>　となるように調整する。<br><br>・PerlScript には MsgBox() なんて隠し関数がある模様。<br>（WScript.Shell の Popup() よりは楽？）<br><br>・ScriptControl を使えば VBScript 等も呼び出し可能。<br><br>・同一プロセスから Tk モジュールを複数回使用しようとすると、<br>　エラーとなる。（別プロセスで実行することで回避可能）<br><br>・ファイルパスを利用した変数（$0）、関数（require()）、<br>　モジュール（IPC::Open2）は使えない。<br>　ただし、open() や Cwd は問題なく使える模様。<br><br>こんな感じです。</div></section>
     <ul><li><section><h1 id=201>
     <span class="no">[201]</span>
-    <a class="title" href="#201">Re:複数行置換のPerlScript</a>
+    <a class="thread-title" href="#201">Re:複数行置換のPerlScript</a>
     <span class="author">maru</span>
     <time datetime="2005-09-14T01:04:58">2005年09月14日 01:04</time></h1>
     <div class="body">▼ miauさん<br><br>「サクラエディタでPerlScriptマクロを使うためのメモ」<br>どこにあるのでしょう？<br>なぜかリンクが辿れませんでした。</div></section>
     <ul><li><section><h1 id=202>
     <span class="no">[202]</span>
-    <a class="title" href="#202">Re2:複数行置換のPerlScript</a>
+    <a class="thread-title" href="#202">Re2:複数行置換のPerlScript</a>
     <span class="author">りーや</span>
     <time datetime="2005-09-14T06:37:25">2005年09月14日 06:37</time></h1>
     <div class="body">▼ maruさん<br>&gt; 「サクラエディタでPerlScriptマクロを使うためのメモ」<br>&gt; どこにあるのでしょう？<br>&gt; なぜかリンクが辿れませんでした。<br><br>えと、Yahoo eグループのジャンク品置き場のマクロのとこ<br><a href=http://groups.yahoo.co.jp/group/sakura-editor/files/User/MACRO/ target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>User/<wbr>MACRO/<wbr></nobr></a><br>です。<br>&gt;&gt;macro:140<br>場所は変わってないと思うんですが、リンクしてなかった私が悪いかったですね<br></div></section>
     </li></ul></li><li><section><h1 id=203>
     <span class="no">[203]</span>
-    <a class="title" href="#203">Re:複数行置換のPerlScript</a>
+    <a class="thread-title" href="#203">Re:複数行置換のPerlScript</a>
     <span class="author">りーや</span>
     <time datetime="2005-09-14T06:48:16">2005年09月14日 06:48</time></h1>
     <div class="body">miauさん、ようこそ！！<br><br>PerlScriptのマクロ作者さんの出現というのが私には一番うれしいコトです。<br>ここまでされるのに随分とsakura.exeのタスクをハングアップされたことと思います。<br>ドキュメントの方、私もありがたく参考にさせていただきます。<br><br>最近、ドンドン使いやすくって、言う事無いくらい素敵な sakuraエディタですが、複数行の置き換えはTeraPad使ったりPerlのパイプを通したりしてました。<br>痒いところに手が届いたこのマクロ。私も愛用させていただきます。<br></div></section>
     <ul><li><section><h1 id=205>
     <span class="no">[205]</span>
-    <a class="title" href="#205">Re2:複数行置換のPerlScript</a>
+    <a class="thread-title" href="#205">Re2:複数行置換のPerlScript</a>
     <span class="author">miau</span>
     <time datetime="2005-09-14T14:24:57">2005年09月14日 14:24</time></h1>
     <div class="body">▼ maruさん<br>&gt; なぜかリンクが辿れませんでした。<br><br>ご指摘ありがとうございます。<br>各ファイルに直リンクできないようですので修正しておきました。<br><br>▼ りーやさん<br><br>おかげさまで、PerlScript という便利なものを知ることができました。<br>blog のほうにもコメントくださって、ありがとうございます。<br><br>ところでちょっと勘違いしていたんですけど、<br>実行ディレクトリって編集中のファイルパスになるんですね。<br>サクラエディタのパスになると勘違いして平気で open() とかしてました…。<br>（ので、PerlReplace2.pls は動作させないほうがいいです。）<br><br>りーやさんは require() で外部ファイル読んだりされているとのことですけど、<br>パスの指定ってどうしてますか？<br>サクラエディタのパスを取得するマクロとかって無いですよね？</div></section>
     <ul><li><section><h1 id=206>
     <span class="no">[206]</span>
-    <a class="title" href="#206">Re3: 複数行置換のPerlScript</a>
+    <a class="thread-title" href="#206">Re3: 複数行置換のPerlScript</a>
     <span class="author">りーや</span>
     <time datetime="2005-09-14T19:08:51">2005年09月14日 19:08</time></h1>
     <div class="body">▼ miauさん<br>&gt;りーやさんは require() で外部ファイル読んだりされているとのことですけど、<br>&gt;パスの指定ってどうしてますか？<br><br>私の場合は、マクロ置き場とかは、よく開くフォルダなので(？)<br>マイドキュメント(C:\MyDocumentsに設定)の下に Sakura フォルダを置いて、<br>その下に Macro フォルダ があります。これは、共通設定のマクロのところ<br>で一度「参照(R)」ボタンでセットすると sakura.ini に書き込まれて、ツール-<br>キーマクロの読み込みで開かれるディレクトリとなるみたいです。<br>さらに、Macro フォルダの下に reauire フォルダも作って・・・<br><br>例えばこの中の MIMEencode.pl 呼び出すとすると Macroフォルダ側の<br>MIMEencode.pls での記述は<br><br>push @INC, ( 'C:/MyDocuments/Sakura/Macro/require' );<br>require "MIMEencode.pl";<br>または、一行でダイレクトに<br>require 'C:/MyDocuments/Sakura/Macro/require/MIMEencode.pl';<br>というようになります。<br><br><br>&gt;サクラエディタのパスを取得するマクロとかって無いですよね？<br><br>マクロ関数としてマクロファイル置き場のパスを取得する関数は無いと<br>思います。Perl(Script)での荒っぽい裏技としては、sakura.iniから読む<br>というテはあリかもです。（結構ストレスなく動きます）<br></div></section>
     <ul><li><section><h1 id=207>
     <span class="no">[207]</span>
-    <a class="title" href="#207">Re4: 複数行置換のPerlScript</a>
+    <a class="thread-title" href="#207">Re4: 複数行置換のPerlScript</a>
     <span class="author">maru</span>
     <time datetime="2005-09-14T22:34:22">2005年09月14日 22:34</time></h1>
     <div class="body">▼ りーやさん<br>&gt; ▼ miauさん<br>&gt; &gt;サクラエディタのパスを取得するマクロとかって無いですよね？<br>&gt; <br>&gt; マクロ関数としてマクロファイル置き場のパスを取得する関数は無いと<br><br>パス取得のマクロ関数はあったほうが良いかもしれませんね。<br></div></section>
     <ul><li><section><h1 id=208>
     <span class="no">[208]</span>
-    <a class="title" href="#208">Re5: 複数行置換のPerlScript</a>
+    <a class="thread-title" href="#208">Re5: 複数行置換のPerlScript</a>
     <span class="author">miau</span>
     <time datetime="2005-09-19T20:54:24">2005年09月19日 20:54</time></h1>
     <div class="body">▼ maruさん<br>&gt; パス取得のマクロ関数はあったほうが良いかもしれませんね。<br><br>早速FILEさんが実装してくださいました（&gt;&gt;dev:4044）ので、<br>これに対応したバージョンとして Ver 1.1 なんてものを作ってみました。<br>http://miau.s9.xrea.com/blog/index.php?itemid=398<br><br>ついでに下記の変更も加えていますので、<br>邪魔だったら付近の処理を消してしまってください。<br><br>・範囲選択されていない場合はあらかじめ全選択して処理<br>・置換時に、置換式をクリップボードに保存<br>・クリップボードの内容が置換式っぽければデフォルト値として使用<br></div></section>

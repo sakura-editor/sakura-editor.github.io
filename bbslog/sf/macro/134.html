@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>選択したテキストをファイル名として開く</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>選択したテキストをファイル名として開く | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">134</span>
-    <a class="title" href="134.html#134">選択したテキストをファイル名として開く</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=134>
+    <a class="thread-title" href="134.html#134">選択したテキストをファイル名として開く</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=134>
     <span class="no">[134]</span>
-    <a class="title" href="#134">選択したテキストをファイル名として開く</a>
+    <a class="thread-title" href="#134">選択したテキストをファイル名として開く</a>
     <span class="author">akkun</span>
     <time datetime="2004-11-23T18:31:30">2004年11月23日 18:31</time></h1>
     <div class="body">某エディタにあった機能をマネしてみました。<br><br>//openFile<br>//選択したテキストをファイル名として開く<br>//<br><br>var dir = Editor.getFilename();<br>var selected = Editor.GetSelectedString();<br>var p = 0;&#9;//親階層数<br><br>//選択文字列がフルパスならそのままオープン<br>if (selected.search(/^[a-z]:\\/i)&gt;=0){<br>&#9;Editor.FileOpen(selected);<br>}else{<br>&#9;//親階層の検索<br>&#9;while( selected.search(/^\.\.\\/) != -1 ){<br>&#9;&#9;selected = selected.substring(3);<br>&#9;&#9;p++;<br>&#9;}<br>&#9;//現在のファイルパスからファイル名を取り除く<br>&#9;do{<br>&#9;&#9;if ( (n = dir.lastIndexOf("\\")) != -1){<br>&#9;&#9;&#9;var dir = dir.substring(0,n);<br>&#9;&#9;}<br>&#9;&#9;p--;<br>&#9;}while(p&gt;=0);<br>&#9;Editor.FileOpen(dir + '\\' + selected);<br>}<br></div></section>

@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Win95でメニューが出ないのは</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Win95でメニューが出ないのは | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">658</span>
-    <a class="title" href="658.html#658">Win95でメニューが出ないのは</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=658>
+    <a class="thread-title" href="658.html#658">Win95でメニューが出ないのは</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=658>
     <span class="no">[658]</span>
-    <a class="title" href="#658">Win95でメニューが出ないのは</a>
+    <a class="thread-title" href="#658">Win95でメニューが出ないのは</a>
     <span class="author">げんた</span>
     <time datetime="2001-08-30T23:16:37">2001年08月30日 23:16</time></h1>
     <div class="body">Win95では，CMenuDrawer.cppの227行目:<br>::InsertMenuItem( hMenu, 0xFFFFFFFF, TRUE, &amp;mii );<br>でエラーが返ってきます．<br><br>第3引数がTRUEのときは第2引数に挿入位置を入れないといけないので，0xFFFFFFFFがエラーになるのは妥当な動作ではあります．<br><br>該当個所を<br>::InsertMenuItem( hMenu, ::GetMenuItemCount(hMenu), TRUE, &amp;mii );<br>としてみたのですが，Win95ではやはり駄目．<br><br>miiの中身がまずいのかな．mii.fMaskで使わない物まで常に有効にしているのも怪しそう．<br><br>SDKを見ると，Windows 98/Me/2000/XPではfTypeはfMaskにMIIM_FTYPEが設定されていないと使われないとなっているにもかかわらず，MIIM_FTYPEは設定されていない．でも動いている．<br><br>試しに，MIIM_FTYPEを設定したらWindows 2000でもメニューが出なくなった．ということは，fTypeの設定がまずいがWin98/2K等では無視されるのでエラーにならないと解釈するのが良さそうだ．<br><br>エラーの内容は「パラメータが間違っています」です．<br><br>--<br>とりあえず以上．何か気づいた人は教えてください．<br></div></section>

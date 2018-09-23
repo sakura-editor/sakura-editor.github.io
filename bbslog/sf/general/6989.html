@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>jsマクロが実行できない</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>jsマクロが実行できない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6989</span>
-    <a class="title" href="6989.html#6989">jsマクロが実行できない</a></div>
+    <a class="thread-title" href="6989.html#6989">jsマクロが実行できない</a></div>
     <ul><li><div class="list-title">
     <span class="no">6990</span>
-    <a class="title" href="6989.html#6990">Re:jsマクロが実行できない</a></div>
+    <a class="thread-title" href="6989.html#6990">Re:jsマクロが実行できない</a></div>
     <ul><li><div class="list-title">
     <span class="no">6991</span>
-    <a class="title" href="6989.html#6991">Re2:jsマクロが実行できない</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6989>
+    <a class="thread-title" href="6989.html#6991">Re2:jsマクロが実行できない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6989>
     <span class="no">[6989]</span>
-    <a class="title" href="#6989">jsマクロが実行できない</a>
+    <a class="thread-title" href="#6989">jsマクロが実行できない</a>
     <span class="author">ひろ</span>
     <time datetime="2009-07-03T18:32:08">2009年07月03日 18:32</time></h1>
     <div class="body">拡張子.jsのマクロが実行できずに困っています。(環境は後述)<br><br>目的は、「指定した文字列の出現頻度をカウントするマクロ」を作成したいのです。<br><br>マクロを作成するため、<a href=http://d.hatena.ne.jp/language_and_engineering/20081021/1224511689 target=_top><nobr>http://<wbr>d.<wbr>hatena.<wbr>ne.<wbr>jp/<wbr>language<wbr>_and_eng<wbr>ineering<wbr>/<wbr>20081021<wbr>/<wbr>12245116<wbr>89</nobr></a>を参考に、そのページに書かれているサンプル命令である<br>Editor.InsText("Hello,World!");<br>の命令を書いたHelloWorld.jsというファイルを作り、マクロ登録後に「登録済みマクロ」から実行すると「マクロ5(HelloWord.js)の実行に失敗しました。」<br>と表示されます。「名前を指定してマクロを実行」とすると「ファイルを開けませんでした。（ファイル名）」と表示されます。<br><br>JScriptがVisualStudio(以下VS)の関係でおかしくなったのかと思い、JavaScript5.7の導入を試みましたが、新しいバージョンが導入済みで不要という旨のメッセージ表示されました。<br><br>キーマクロは記録でき、再生できました。PPA.DLL導入後は拡張子.ppaのスクリプトも実行できました。<br><br>上記ファイル内にはCOM呼び出しが無いため、SarakuでJScriptControllerを呼び出せていれば問題ないとは<br>思いますが、あらゆるマクロ(.js)を作っても上記と同じ「ファイルが開けない」というメッセが出るので、<br>JScriptControllerを用いたスクリプト呼び出し部分が機能してないのではないかと頭に？を浮かべております。<br><br>小生の方法で間違いがありそうでしたら、ご連絡いただきたく存じます。<br><br>P.S コードを次の通り変更し、HelloWorld2.jsとしてもだめでしたが、拡張子を.macに変更したところうまく機能しました。<br>S_InsText("Hello,World!");<br>-------<br>・Windows Xp Pro. SP3<br>・Sakura Editor 1.6.3.0および1.6.4.0<br>（・VisualStudio2003.net Pro. + 同VS2008 Pro.導入済み）</div></section>
     <ul><li><section><h1 id=6990>
     <span class="no">[6990]</span>
-    <a class="title" href="#6990">Re:jsマクロが実行できない</a>
+    <a class="thread-title" href="#6990">Re:jsマクロが実行できない</a>
     <span class="author">syat</span>
     <time datetime="2009-07-04T07:45:52">2009年07月04日 07:45</time></h1>
     <div class="body">▼ ひろさん<br>少なくとも私の環境では同じやり方で実行できるので、手順が違うとか、エディタの根本的な不良ではないと思っています。<br><br>JScriptがシステムに登録されているか確かめるため、以下を確認していただけますでしょうか。<br>１. WScript.Echo("テスト");  という内容のファイルを作成（拡張子js）<br>２．コマンドプロンプトから以下を実行<br>   cscript.exe ファイル名<br>JScriptが正しく登録されていれば「テスト」と表示されるはずです。<br><br>それと、たまにやってしまうことで、実行しようとしているjsファイルをサクラエディタや他のソフトで開いていて、読み取り不可の排他がかかっていたときに読み込み失敗するというのがあります。<br><br></div></section>
     <ul><li><section><h1 id=6991>
     <span class="no">[6991]</span>
-    <a class="title" href="#6991">Re2:jsマクロが実行できない</a>
+    <a class="thread-title" href="#6991">Re2:jsマクロが実行できない</a>
     <span class="author">ひろ</span>
     <time datetime="2009-07-04T18:25:59">2009年07月04日 18:25</time></h1>
     <div class="body">▼ syatさん<br>ご回答ありがとうございます。syatさんが書かれた通りやってみたところ、<br><br>Microsoft (R) Windows Script Host Version 5.7<br>Copyright (C) Microsoft Corporation 1996-2001. All rights reserved.<br><br>入力エラー: ファイル拡張子 ".js" を持つスクリプト エンジンはありません。<br><br>と表示されました。<br><br>このエラーを検索したところ、次のようにレジストリを修正したらいいことがわかり、実行したところ、サクラエディタでも.jsを実行できるようになりました。<br>ありがとうございました。<br>[修正箇所]<br>　　[HKEY_CLASSES_ROOT＼.JS]<br>　　@="JSFile"<br>　　"Content Type"="application/x-javascript" <br>参照：<br><a href=http://www.atmarkit.co.jp/bbs/phpBB/viewtopic.php?topic=9981&forum=6 target=_top><nobr>http://<wbr>www.<wbr>atmarkit<wbr>.<wbr>co.<wbr>jp/<wbr>bbs/<wbr>phpBB/<wbr>viewtopi<wbr>c.<wbr>php?<wbr>topic=<wbr>9981&amp;<wbr>forum=<wbr>6</nobr></a><br><br>※レジストリが壊れて実行できなくなるような仕組みになさらないでほしいです＞MS様。</div></section>

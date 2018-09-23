@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>特定のソースでC++のアウトライン解析を実行すると落ちます</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>特定のソースでC++のアウトライン解析を実行すると落ちます | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2303</span>
-    <a class="title" href="2303.html#2303">特定のソースでC++のアウトライン解析を実行すると落ちます</a></div>
+    <a class="thread-title" href="2303.html#2303">特定のソースでC++のアウトライン解析を実行すると落ちます</a></div>
     <ul><li><div class="list-title">
     <span class="no">2304</span>
-    <a class="title" href="2303.html#2304">バージョン別再現結果(※網羅はしていません)</a></div>
+    <a class="thread-title" href="2303.html#2304">バージョン別再現結果(※網羅はしていません)</a></div>
     <ul><li><div class="list-title">
     <span class="no">2305</span>
-    <a class="title" href="2303.html#2305">Re:バージョン別再現結果(※網羅はしていません)</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2303>
+    <a class="thread-title" href="2303.html#2305">Re:バージョン別再現結果(※網羅はしていません)</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2303>
     <span class="no">[2303]</span>
-    <a class="title" href="#2303">特定のソースでC++のアウトライン解析を実行すると落ちます</a>
+    <a class="thread-title" href="#2303">特定のソースでC++のアウトライン解析を実行すると落ちます</a>
     <span class="author">さめたすたす</span>
     <time datetime="2015-10-19T12:29:56">2015年10月19日 12:29</time></h1>
     <div class="body">OS: Windows 8.1<br>ver: 2.2.0.1 / 2.3.0.0<br>現象：<br><br>題名の通りなのですがC++のとあるソースを開き「アウトライン解析」を<br>したところ落ちました。<br><br>該当ソースから落ちる現象が再現する部分のみを抜き出しましたが、<br>ちょっとタブとかが崩れるかもだったので再現するソースは pastebin<br>に投稿しました。<br><br><a href=http://pastebin.com/EjzYiics target=_top><nobr>http://<wbr>pastebin<wbr>.<wbr>com/<wbr>EjzYiics<wbr></nobr></a><br><br>再現できないなどあったらお知らせください。</div></section>
     <ul><li><section><h1 id=2304>
     <span class="no">[2304]</span>
-    <a class="title" href="#2304">バージョン別再現結果(※網羅はしていません)</a>
+    <a class="thread-title" href="#2304">バージョン別再現結果(※網羅はしていません)</a>
     <span class="author">ds14050</span>
     <time datetime="2015-10-20T20:53:35">2015年10月20日 20:53</time></h1>
     <div class="body">2.0.6.0 C++ メソッドツリーが表示されました。<br>2.0.7.1 C++ メソッドツリーが表示されました。<br>2.1.0.0 エディタがフェードアウト(終了)しました。<br>2.1.1.2 エディタがフェードアウト(終了)しました。<br>2.3.0.0 エディタがフェードアウト(終了)しました。<br></div></section>
     <ul><li><section><h1 id=2305>
     <span class="no">[2305]</span>
-    <a class="title" href="#2305">Re:バージョン別再現結果(※網羅はしていません)</a>
+    <a class="thread-title" href="#2305">Re:バージョン別再現結果(※網羅はしていません)</a>
     <span class="author">もか</span>
     <time datetime="2015-10-20T21:51:51">2015年10月20日 21:51</time></h1>
     <div class="body">template対応がらみの変更を入れた後からですね。<br>この件のパッチを登録しました。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1007/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1007/<wbr></nobr></a><br></div></section>

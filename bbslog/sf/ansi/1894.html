@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>CRLF改行でコピーのバグ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CRLF改行でコピーのバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1894</span>
-    <a class="title" href="1894.html#1894">CRLF改行でコピーのバグ</a></div>
+    <a class="thread-title" href="1894.html#1894">CRLF改行でコピーのバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">1899</span>
-    <a class="title" href="1894.html#1899">RE: CRLF改行でコピーのバグ</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1894>
+    <a class="thread-title" href="1894.html#1899">RE: CRLF改行でコピーのバグ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1894>
     <span class="no">[1894]</span>
-    <a class="title" href="#1894">CRLF改行でコピーのバグ</a>
+    <a class="thread-title" href="#1894">CRLF改行でコピーのバグ</a>
     <span class="author">げんた</span>
     <time datetime="2002-04-17T01:00:28">2002年04月17日 01:00</time></h1>
     <div class="body">CEditView_Command.cpp (357):<br>Command_COPY( FALSE, EOL_CRLF );<br><br>改行コードの指定は第3引数なので、<br>Command_COPY( FALSE, m_pShareData-&gt;m_Common.m_bAddCRLFWhenCop, EOL_CRLF );<br>が正解。</div></section>
     <ul><li><section><h1 id=1899>
     <span class="no">[1899]</span>
-    <a class="title" href="#1899">RE: CRLF改行でコピーのバグ</a>
+    <a class="thread-title" href="#1899">RE: CRLF改行でコピーのバグ</a>
     <span class="author">やざき</span>
     <time datetime="2002-04-17T16:32:51">2002年04月17日 16:32</time></h1>
     <div class="body"><br>Thanx。取り込みました。<br></div></section>

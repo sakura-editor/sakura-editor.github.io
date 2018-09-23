@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ブール値の扱い</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ブール値の扱い | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1334</span>
-    <a class="title" href="1334.html#1334">ブール値の扱い</a></div>
+    <a class="thread-title" href="1334.html#1334">ブール値の扱い</a></div>
     <ul><li><div class="list-title">
     <span class="no">1335</span>
-    <a class="title" href="1334.html#1335">Re: ブール値の扱い</a></div>
+    <a class="thread-title" href="1334.html#1335">Re: ブール値の扱い</a></div>
     <ul><li><div class="list-title">
     <span class="no">1351</span>
-    <a class="title" href="1334.html#1351">Re2: ブール値の扱い</a></div>
+    <a class="thread-title" href="1334.html#1351">Re2: ブール値の扱い</a></div>
     <ul><li><div class="list-title">
     <span class="no">1373</span>
-    <a class="title" href="1334.html#1373">Re3: ブール値の扱い</a></div>
+    <a class="thread-title" href="1334.html#1373">Re3: ブール値の扱い</a></div>
     </li><li><div class="list-title">
     <span class="no">1379</span>
-    <a class="title" href="1334.html#1379">今回の警告回避</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1334>
+    <a class="thread-title" href="1334.html#1379">今回の警告回避</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1334>
     <span class="no">[1334]</span>
-    <a class="title" href="#1334">ブール値の扱い</a>
+    <a class="thread-title" href="#1334">ブール値の扱い</a>
     <span class="author">やざき</span>
     <time datetime="2002-01-26T12:24:20">2002年01月26日 12:24</time></h1>
     <div class="body">warning C4800: 'int' : ブール値を 'true' または 'false' に強制的に設定します (警告の処理)<br><br>が出ています。すなわち、ブール値をboolにするかBOOL（int）にするかってことだと思うのですが、<br>どちらかに統一しておかないと、無用な警告が出て、必要な警告を見逃してしまいそうです。<br><br>今すぐ全ソースを見直すかどうかは置いといて、方針だけでも決められたらと思います。<br><br>わたしはどちらでもかまわないのですが、なんとなくBOOL（int）を使っています。<br>どうでしょう？</div></section>
     <ul><li><section><h1 id=1335>
     <span class="no">[1335]</span>
-    <a class="title" href="#1335">Re: ブール値の扱い</a>
+    <a class="thread-title" href="#1335">Re: ブール値の扱い</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-26T12:55:30">2002年01月26日 12:55</time></h1>
     <div class="body">▼やざき<br>&gt;どちらかに統一しておかないと、無用な警告が出て、必要な警告を見逃してしまいそうです。<br>&gt;わたしはどちらでもかまわないのですが、なんとなくBOOL（int）を使っています。<br>私はboolという型がせっかく用意されているのだから，そちらを使った方がいいように思います．<br><br>例えば if( bFlag ) と書いたとき bFlag がBOOL型なら この時点で BOOL (実はint) -&gt; boolに型変換されると考えられますし．<br><br>実装に影響の出る違いは BOOL=intは4byte消費するけど boolは1バイト消費という点でしょう．<br></div></section>
     <ul><li><section><h1 id=1351>
     <span class="no">[1351]</span>
-    <a class="title" href="#1351">Re2: ブール値の扱い</a>
+    <a class="thread-title" href="#1351">Re2: ブール値の扱い</a>
     <span class="author">あろか</span>
     <time datetime="2002-01-27T01:38:19">2002年01月27日 01:38</time></h1>
     <div class="body">▼ げんたさん<br>&gt; ▼やざき<br>&gt; &gt;どちらかに統一しておかないと、無用な警告が出て、必要な警告を見逃してしまいそうです。<br>&gt; &gt;わたしはどちらでもかまわないのですが、なんとなくBOOL（int）を使っています。<br>&gt; 私はboolという型がせっかく用意されているのだから，そちらを使った方がいいように思います．<br>&gt; <br>&gt; 例えば if( bFlag ) と書いたとき bFlag がBOOL型なら この時点で BOOL (実はint) -&gt; boolに型変換されると考えられますし．<br>&gt; <br>&gt; 実装に影響の出る違いは BOOL=intは4byte消費するけど boolは1バイト消費という点でしょう．<br>警告がでるのは戻り値がBOOLなのにboolで受けているとかそういうときではないでしょうか。<br>わたしはboolが多いです。<br>けどWindowsのAPIの引数、戻り値ならBOOLを使うべきと思います。<br><br>boolのサイズは（その他も）処理系依存です。<br>ので設定をバイナリで入出力するときはBOOLやUINT、DWORDなどにしないといやですね。<br><br></div></section>
     <ul><li><section><h1 id=1373>
     <span class="no">[1373]</span>
-    <a class="title" href="#1373">Re3: ブール値の扱い</a>
+    <a class="thread-title" href="#1373">Re3: ブール値の扱い</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-27T15:48:22">2002年01月27日 15:48</time></h1>
     <div class="body">▼あろかさん<br>&gt;WindowsのAPIの引数、戻り値ならBOOLを使うべきと思います。<br>&gt;設定をバイナリで入出力するときはBOOLやUINT、DWORDなどにしないといやですね。<br>上のことは一応了解しています．<br><br>私はBOOLとboolは異なることを一応考慮してはいますが，抜けがあったらごめんなさい．<br>相互の変換時には<br>( BOOL != TRUE ) → bool<br>bool ? TRUE : FALSE → BOOL<br>としています．<br><br>* BOOL == TRUEじゃなくて BOOL != FALSEというのは TRUE/FALSE以外が入っていたときの保険<br></div></section>
     </li><li><section><h1 id=1379>
     <span class="no">[1379]</span>
-    <a class="title" href="#1379">今回の警告回避</a>
+    <a class="thread-title" href="#1379">今回の警告回避</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-28T10:02:10">2002年01月28日 10:02</time></h1>
     <div class="body">&gt;警告がでるのは戻り値がBOOLなのにboolで受けているとかそういうときではないでしょうか。<br><br>問題の箇所は私が作ったSetModified(bool,bool)だけなので，<br>SetModified(bool,BOOL)とSetModified(BOOL,bool)というのを作って回避しました．<br><br>引数の型に応じて3つのうちのどれかが使われます．後ろの2つは型変換してSetModified(bool,bool)を呼ぶだけのもの．<br><br>これはバグフィックス扱いで次回リリースに含めたいと思います．<br></div></section>

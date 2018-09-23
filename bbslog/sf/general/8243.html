@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ファイル名で置換</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ファイル名で置換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">8243</span>
-    <a class="title" href="8243.html#8243">ファイル名で置換</a></div>
+    <a class="thread-title" href="8243.html#8243">ファイル名で置換</a></div>
     <ul><li><div class="list-title">
     <span class="no">8244</span>
-    <a class="title" href="8243.html#8244">Re:ファイル名で置換</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=8243>
+    <a class="thread-title" href="8243.html#8244">Re:ファイル名で置換</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8243>
     <span class="no">[8243]</span>
-    <a class="title" href="#8243">ファイル名で置換</a>
+    <a class="thread-title" href="#8243">ファイル名で置換</a>
     <span class="author">アツシ</span>
     <time datetime="2017-05-16T07:09:04">2017年05月16日 07:09</time></h1>
     <div class="body">開いているファイル名を取得し置換したいのですが、<br>そのような方法はあるのでしょうか？<br><br>----------------------------<br>■ファイル名<br>aaa.txt<br><br>■aaa.txtの中身<br>このファイル名はfilenameです。<br><br>●置換したい作業<br>「filename→aaa」<br>このファイル名はaaaです。<br>----------------------------<br><br><br>右クリックでファイル名をコピーし、手動で置換をかけてゆく方法もありますが、ファイルが複数あるためできるだけ手動作業は最小限にしたいと考えています。</div></section>
     <ul><li><section><h1 id=8244>
     <span class="no">[8244]</span>
-    <a class="title" href="#8244">Re:ファイル名で置換</a>
+    <a class="thread-title" href="#8244">Re:ファイル名で置換</a>
     <span class="author">ばぼ</span>
     <time datetime="2017-05-16T22:52:53">2017年05月16日 22:52</time></h1>
     <div class="body">▼ アツシさん<br>&gt; 開いているファイル名を取得し置換したいのですが、<br>&gt; そのような方法はあるのでしょうか？<br><br>マクロを使えば可能です。<br><br>開いているファイル名を取得するマクロ関数があります。<br><br>１、キーマクロの記録でマクロの記録を開始。<br>２、「filename」を検索。<br>３、適当な文字列で「filename」を置換。<br>４、キーマクロの記録終了<br>５、キーマクロの保存（２～３の操作がマクロに変換される）<br>６、保存したマクロファイルを開いて「適当な文字列」を上記のマクロで置き換え。<br><br>作業対象が大量にあるならキー割り当てでショートカットキーを登録してしまえばさらに作業が楽になると思います。<br></div></section>

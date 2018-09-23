@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>複数の強調表示が重なるときの処理について質問</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>複数の強調表示が重なるときの処理について質問 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5016</span>
-    <a class="title" href="5016.html#5016">複数の強調表示が重なるときの処理について質問</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=5016>
+    <a class="thread-title" href="5016.html#5016">複数の強調表示が重なるときの処理について質問</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=5016>
     <span class="no">[5016]</span>
-    <a class="title" href="#5016">複数の強調表示が重なるときの処理について質問</a>
+    <a class="thread-title" href="#5016">複数の強調表示が重なるときの処理について質問</a>
     <span class="author">magicmonkey</span>
     <time datetime="2006-02-01T16:02:10">2006年02月01日 16:02</time></h1>
     <div class="body">毎日サクラエディタにお世話になっています。<br>今バッチ用の色変更ファイルに、強調を追加しており、<br>その中でecho文中でも環境変数は色分けしたいと思っています。<br><br>そこで以下のような強調を定義しました。<br><br>環境変数用<br>　　通常<br>　　[%!][^%!|\\|\:|\=| |"]+(:~[0-9]*,{0,1}[0-9]*)*[%!]<br><br>　　引数用<br>　　%{1}(~[fdpnxsatz]+)*(\$[Pp][Aa][Tt][Hh]<br>:){0,1}[0-9]<br> <br>　　for用<br>　　%{2}(~[fdpnxsatz]+)*(\$[Pp][Aa][Tt][Hh]<br>:){0,1}[a-zA-Z]<br><br><br>echoの中身用<br>　　(^|\t| |\|)@{0,1}[Ee][Cc][Hh][Oo][ \.\t\-\/=\*]+[^|&gt;]*<br><br><br>この４つを定義しましたが、echoの定義を最初にしても最後にしても<br>echo文の中で、環境変数の強調表示がされません。<br>多分強調表示の仕様によるものかと思いますが、<br>何か解決策は無いでしょうか？<br><br>ご存じの方が居たらよろしくお願いします。<br>これらの設定をした、強力なバッチ用の強調ファイルを<br>幾つかのエディタ向けに作りました。<br>もう少ししたらどこかにアップします。<br></div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>検索結果をExcelへ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>検索結果をExcelへ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">8118</span>
-    <a class="title" href="8118.html#8118">検索結果をExcelへ</a></div>
+    <a class="thread-title" href="8118.html#8118">検索結果をExcelへ</a></div>
     <ul><li><div class="list-title">
     <span class="no">8119</span>
-    <a class="title" href="8118.html#8119">Re:検索結果をExcelへ</a></div>
+    <a class="thread-title" href="8118.html#8119">Re:検索結果をExcelへ</a></div>
     <ul><li><div class="list-title">
     <span class="no">8120</span>
-    <a class="title" href="8118.html#8120">Re2:検索結果をExcelへ</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=8118>
+    <a class="thread-title" href="8118.html#8120">Re2:検索結果をExcelへ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8118>
     <span class="no">[8118]</span>
-    <a class="title" href="#8118">検索結果をExcelへ</a>
+    <a class="thread-title" href="#8118">検索結果をExcelへ</a>
     <span class="author">Grep検索愛用</span>
     <time datetime="2016-02-09T06:44:17">2016年02月09日 06:44</time></h1>
     <div class="body">Grepの検索結果をExcelへ貼り付けて加工しているのですが、<br>検索結果の行数と検索内容（:以降）を1列として抽出したいのですが、<br>貼り付ける前にサクラエディタ側でどのように加工すればよいでしょうか。</div></section>
     <ul><li><section><h1 id=8119>
     <span class="no">[8119]</span>
-    <a class="title" href="#8119">Re:検索結果をExcelへ</a>
+    <a class="thread-title" href="#8119">Re:検索結果をExcelへ</a>
     <span class="author">もか</span>
     <time datetime="2016-02-11T00:13:02">2016年02月11日 00:13</time></h1>
     <div class="body">▼ Grep検索愛用さん<br>好きなように加工すればいいと思いますが…<br>Grepファイル毎でしたあと正規表現置換で<br>置換前「^・\(( *)([0-9]+),[0-9]+( *)\): 」<br>置換後「$2」<br>行数と内容を別のセルにしたいなら<br>置換後「$2\t」<br>とかですかね<br></div></section>
     <ul><li><section><h1 id=8120>
     <span class="no">[8120]</span>
-    <a class="title" href="#8120">Re2:検索結果をExcelへ</a>
+    <a class="thread-title" href="#8120">Re2:検索結果をExcelへ</a>
     <span class="author">通りすがり</span>
     <time datetime="2016-02-11T09:58:05">2016年02月11日 09:58</time></h1>
     <div class="body">GREPした結果文字列に\tが含まれているかもしれません。<br></div></section>

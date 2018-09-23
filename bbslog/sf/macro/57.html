@@ -1,63 +1,89 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>英語数計算PPAマクロ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>英語数計算PPAマクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">57</span>
-    <a class="title" href="57.html#57">英語数計算PPAマクロ</a></div>
+    <a class="thread-title" href="57.html#57">英語数計算PPAマクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">138</span>
-    <a class="title" href="57.html#138">Re:英語数計算PPAマクロ</a></div>
+    <a class="thread-title" href="57.html#138">Re:英語数計算PPAマクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">148</span>
-    <a class="title" href="57.html#148">Re2:英語数計算PPAマクロ</a></div>
+    <a class="thread-title" href="57.html#148">Re2:英語数計算PPAマクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">149</span>
-    <a class="title" href="57.html#149">WCのJScript版ですが</a></div>
+    <a class="thread-title" href="57.html#149">WCのJScript版ですが</a></div>
     <ul><li><div class="list-title">
     <span class="no">193</span>
-    <a class="title" href="57.html#193">Re:WCのJScript版ですが</a></div>
+    <a class="thread-title" href="57.html#193">Re:WCのJScript版ですが</a></div>
     <ul><li><div class="list-title">
     <span class="no">194</span>
-    <a class="title" href="57.html#194">Re2: WCのJScript版ですが</a></div>
+    <a class="thread-title" href="57.html#194">Re2: WCのJScript版ですが</a></div>
     <ul><li><div class="list-title">
     <span class="no">195</span>
-    <a class="title" href="57.html#195">Re3: 御礼</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=57>
+    <a class="thread-title" href="57.html#195">Re3: 御礼</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=57>
     <span class="no">[57]</span>
-    <a class="title" href="#57">英語数計算PPAマクロ</a>
+    <a class="thread-title" href="#57">英語数計算PPAマクロ</a>
     <span class="author">豹悟郎</span>
     <time datetime="2004-01-11T15:46:08">2004年01月11日 15:46</time></h1>
     <div class="body">// ワード数計算マクロ(EWCount.ppa)--スペース＋ダッシュVer<br>// 2004.1.7　堀内悟（豹悟郎）作成<br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに <br>// PPA.DLL を入れておいてください。<br>// また、マクロファイルの拡張子は .PPA でなくてはなりません<br><br>var<br> WordC,DC: Integer; //ワード数, ダッシュ数<br> p,d : Integer;  //(空白, ダッシュ)の文字列内位置<br> StrLen : Integer;  //選択文字列長<br> Str,tmpStr : String; //選択文字列, 調査中現行文字列<br> SPC,DSH : String;&#9;  //シングルスペース, ダッシュ<br><br>//処理の流れ<br>//文字列内の空白の位置を調べる、空白があればワード数を１増<br>//文字列先頭からその位置までを削除→tmpStrに格納<br>//tmpStrをTrim+Deleteで加工、先頭に戻る<br>//空白なし→ループ終了<br>//ダッシュ'--'についても同様のループ<br>//最後にダッシュの分を語数に足す<br><br>begin<br> Str := Trim(S_GetSelectedString(0));<br> StrLen := Length(Str);<br> WordC := 0;<br> SPC := ' ';<br> DSH := '--';&#9;//em dash<br> tmpStr := Str;<br><br>if StrLen = 0 then<br>begin<br> MessageBox('文字が選択されていません。', 'エラー',0);<br> Exit;<br>end;<br><br>p := Pos(SPC, tmpStr);<br><br>while (p &lt;&gt; 0) do<br>begin<br> p := Pos(SPC, tmpStr);&#9;//空白の位置を調べる<br> if p = 0 then Break;<br> WordC := WordC + 1;<br> tmpStr := Trim(Delete(tmpStr, 1, p));  //先頭から空白まで削除<br>end;<br><br>//ダッシュ数計算<br> tmpStr := Str;&#9;//検査対象文字列を復元<br> d := Pos(DSH, tmpStr);<br><br>while (d &lt;&gt; 0) do<br>begin<br> d := Pos(DSH, tmpStr);&#9;//ダッシュの位置を調べる<br> if d = 0 then Break;<br> DC := DC + 1;<br> tmpStr := Trim(Delete(tmpStr, 1, d+1));&#9;//先頭からダッシュまで削除<br>end;<br><br>//語数集計<br>WordC := WordC+1+DC;<br>MessageBox(IntToStr(WordC) + '語です。', '計算結果',0);<br>end<br><br>//注　後続語がないダッシュ(例: 会話文末の「--"」)も１語とみなす<br>//語間スペースと--を数えるだけなので英語以外でも使えると思います<br></div></section>
     <ul><li><section><h1 id=138>
     <span class="no">[138]</span>
-    <a class="title" href="#138">Re:英語数計算PPAマクロ</a>
+    <a class="thread-title" href="#138">Re:英語数計算PPAマクロ</a>
     <span class="author">ki</span>
     <time datetime="2005-02-05T14:50:31">2005年02月05日 14:50</time></h1>
     <div class="body">▼ 豹悟郎さん<br>&gt; // ワード数計算マクロ(EWCount.ppa)<br><br>英単語数の計算マクロと思いこれはありがたいということで早速利用させていただいたのですが、質問があります。<br>以下の英文の単語数をEWCount.ppaで計算しますと10語となります。しかし、実際は12語なのです。原因はおわかりでしょうか？<br>うまく計算できますと大変便利なマクロなのですが。うまい対処方法はないでしょうか？<br>Hello, everyone.<br>My name is Tom Brown.<br>I'm staying with Ken's family.<br></div></section>
     <ul><li><section><h1 id=148>
     <span class="no">[148]</span>
-    <a class="title" href="#148">Re2:英語数計算PPAマクロ</a>
+    <a class="thread-title" href="#148">Re2:英語数計算PPAマクロ</a>
     <span class="author">豹悟郎</span>
     <time datetime="2005-06-15T00:43:42">2005年06月15日 00:43</time></h1>
     <div class="body">　改行する前にスペースが入っていると12語と数えるようです。改行を丁寧に扱う必要があるようです。<br>　現在諸事情により直せませんのでどなたかの御好意に期待するしかありません。<br><br>▼ kiさん<br>&gt; ▼ 豹悟郎さん<br>&gt; &gt; // ワード数計算マクロ(EWCount.ppa)<br>&gt; <br>&gt; 英単語数の計算マクロと思いこれはありがたいということで早速利用させていただいたのですが、質問があります。<br>&gt; 以下の英文の単語数をEWCount.ppaで計算しますと10語となります。しかし、実際は12語なのです。原因はおわかりでしょうか？<br>&gt; うまく計算できますと大変便利なマクロなのですが。うまい対処方法はないでしょうか？<br>&gt; Hello, everyone.<br>&gt; My name is Tom Brown.<br>&gt; I'm staying with Ken's family.</div></section>
     <ul><li><section><h1 id=149>
     <span class="no">[149]</span>
-    <a class="title" href="#149">WCのJScript版ですが</a>
+    <a class="thread-title" href="#149">WCのJScript版ですが</a>
     <span class="author">りーや</span>
     <time datetime="2005-06-16T08:49:10">2005年06月16日 08:49</time></h1>
     <div class="body">アプローチ違ってUNIXに古くからある WC コマンドをJScript に移植したのを拾ってきて、サクラエディタのマクロにしたものがあります。WC コマンドと同じ結果は得られるようで、行数・単語数・文字数を表示します。<br>あまり古くないＩＥがあれば特に必要なものはなく、切り取り線の内側テキストファイルとしてマクロの置き場所収めれば普通に使えると思います。<br><br>-----^ wc.js ( date:05-06-16 time:08:47 ) ----&lt; cut hear<br>// WC JScript<br>var WshShell =  new ActiveXObject("WScript.Shell");<br>var nl = 0, nw = 0, nc = 0;<br>// line, word and character counters<br><br>var selStr = Editor.GetSelectedString(0);<br>if(selStr.length &gt; 0) {<br>  nc = selStr.length;<br>  var words = selStr.split(/\s+/);<br>  nw = words.length;<br>  var lines = selStr.split(/\n/);<br>  nl = lines.length;<br>}<br><br>var outStr = "lines:" + nl.toString();<br>outStr += " words:" + nw.toString();<br>outStr += " chars:" + nc.toString();<br><br>WshShell.Popup(outStr, 0 , "Word Count", 0);<br>-----$ wc.js ( line:19 charset:ascii) --------&lt; cut hear<br></div></section>
     <ul><li><section><h1 id=193>
     <span class="no">[193]</span>
-    <a class="title" href="#193">Re:WCのJScript版ですが</a>
+    <a class="thread-title" href="#193">Re:WCのJScript版ですが</a>
     <span class="author">ki</span>
     <time datetime="2005-07-24T14:05:07">2005年07月24日 14:05</time></h1>
     <div class="body">▼ りーやさん<br>&gt; アプローチ違ってUNIXに古くからある WC コマンドをJScript に移植したのを拾ってきて、サクラエディタのマクロにしたものがあります。WC コマンドと同じ結果は得られるようで、行数・単語数・文字数を表示します。<br>&gt; あまり古くないＩＥがあれば特に必要なものはなく、切り取り線の内側テキストファイルとしてマクロの置き場所収めれば普通に使えると思います。<br>&gt; <br>&gt; -----^ wc.js ( date:05-06-16 time:08:47 ) ----&lt; cut hear<br>&gt; // WC JScript<br>&gt; var WshShell =  new ActiveXObject("WScript.Shell");<br>&gt; var nl = 0, nw = 0, nc = 0;<br>&gt; // line, word and character counters<br>&gt; <br>&gt; var selStr = Editor.GetSelectedString(0);<br>&gt; if(selStr.length &gt; 0) {<br>&gt;   nc = selStr.length;<br>&gt;   var words = selStr.split(/\s+/);<br>&gt;   nw = words.length;<br>&gt;   var lines = selStr.split(/\n/);<br>&gt;   nl = lines.length;<br>&gt; }<br>&gt; <br>&gt; var outStr = "lines:" + nl.toString();<br>&gt; outStr += " words:" + nw.toString();<br>&gt; outStr += " chars:" + nc.toString();<br>&gt; <br>&gt; WshShell.Popup(outStr, 0 , "Word Count", 0);<br>&gt; -----$ wc.js ( line:19 charset:ascii) --------&lt; cut hear<br>ありがとうございました。早速ためさせていただきました。以下のようなエラーが出てしまいましたがお分かりでしょうか？<br>Macro読み込みエラー<br>Line 2: var WshShell = new ActiveXObjectは存在しない関数です。<br></div></section>
     <ul><li><section><h1 id=194>
     <span class="no">[194]</span>
-    <a class="title" href="#194">Re2: WCのJScript版ですが</a>
+    <a class="thread-title" href="#194">Re2: WCのJScript版ですが</a>
     <span class="author">りーや</span>
     <time datetime="2005-07-25T23:52:08">2005年07月25日 23:52</time></h1>
     <div class="body">▼ kiさん<br>&gt;ありがとうございました。早速ためさせていただきました。<br><br>えっと、ひと月以上前のモノ、早速といわれても・・・<br>しかも、その間に選択するたげで、 行数とバイト数がステータスバーに表示される というサクラエディタの 素敵なバージョンアップがあって、 七割方はもう無用の長物マクロだし (^^)V<br><br>&gt;Macro読み込みエラー<br>&gt;Line 2: var WshShell = new ActiveXObjectは存在しない関数です。<br><br>このエラーメッセージは、 マクロファイルがJScriptのWSHマクロ として認識されてないような気がします。<br>１．ファイルの拡張子が、.js のファイルとして保存していますか？<br>　　（ウチでは試しようがないのですが .ppa とかにしてるとそういうメッセージ になるのかも知れません。）<br>２．サクラエディタや Script エンジンの元になるＩＥ は、最新のものを使ってますか？<br>上記の２点を順に確認してもらえば、 多分エラーは無くなると思います。<br><br><br>ついでに、<br>var IEobj =  new ActiveXObject("InternetExplorer.Application");<br>IEobj.Navigate("about:blank");<br>IEobj.Document.parentWindow.clipboardData.setData("Text" , outStr);<br>の３行をマクロの最後に追加すると、 ポップアップの内容を、 クリップボードにもコピーするので、任意のところに「貼り付け(Cntl+V)」出来るようになります。<br></div></section>
     <ul><li><section><h1 id=195>
     <span class="no">[195]</span>
-    <a class="title" href="#195">Re3: 御礼</a>
+    <a class="thread-title" href="#195">Re3: 御礼</a>
     <span class="author">ki</span>
     <time datetime="2005-08-06T14:21:12">2005年08月06日 14:21</time></h1>
     <div class="body">りーやさん<br>すべてご指摘の通りです。ありがとうございました。英文ワープロとして使う人にもword数がわかり便利になりました。御礼。 </div></section>

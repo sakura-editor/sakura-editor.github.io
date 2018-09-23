@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>タブのバグ修正</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>タブのバグ修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3377</span>
-    <a class="title" href="3377.html#3377">タブのバグ修正</a></div>
+    <a class="thread-title" href="3377.html#3377">タブのバグ修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3380</span>
-    <a class="title" href="3377.html#3380">RE: タブのバグ修正</a></div>
+    <a class="thread-title" href="3377.html#3380">RE: タブのバグ修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3387</span>
-    <a class="title" href="3377.html#3387">RE2: タブのバグ修正</a></div>
+    <a class="thread-title" href="3377.html#3387">RE2: タブのバグ修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3400</span>
-    <a class="title" href="3377.html#3400">RE3: タブのバグ修正</a></div>
+    <a class="thread-title" href="3377.html#3400">RE3: タブのバグ修正</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">3413</span>
-    <a class="title" href="3377.html#3413">RE: タブのバグ修正</a></div>
+    <a class="thread-title" href="3377.html#3413">RE: タブのバグ修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">3414</span>
-    <a class="title" href="3377.html#3414">RE2: タブのバグ修正</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3377>
+    <a class="thread-title" href="3377.html#3414">RE2: タブのバグ修正</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3377>
     <span class="no">[3377]</span>
-    <a class="title" href="#3377">タブのバグ修正</a>
+    <a class="thread-title" href="#3377">タブのバグ修正</a>
     <span class="author">みく</span>
     <time datetime="2004-01-27T16:53:31">2004年01月27日 16:53</time></h1>
     <div class="body"><br>タブが消えることがあるバグ修正（多分）。<br>break漏れ。<br>CProfileのビルドエラー。<br>CTabWnd.cppのTCHAR化。<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/tabwnd20040127.LZH<br><br>(ssrc_2004-01-25.tar.bz2 + 1435cprofile_to_dsk20040127.lzh に対する差分)<br></div></section>
     <ul><li><section><h1 id=3380>
     <span class="no">[3380]</span>
-    <a class="title" href="#3380">RE: タブのバグ修正</a>
+    <a class="thread-title" href="#3380">RE: タブのバグ修正</a>
     <span class="author">げんた</span>
     <time datetime="2004-01-28T00:54:33">2004年01月28日 00:54</time></h1>
     <div class="body">&gt;CTabWnd.cppのTCHAR化<br>ToolTip処理において文字列要求がANSIとWIDEの両方をサポートするように作られています．<br>動かしてみるとANSIでコンパイルしてもWIDE文字列を要求するメッセージが来るようですね．<br><br>SDKドキュメントによればCommonControlからのWM_NOTIFYMESSEAGEに対してNFR_ANSI/NFR_UNICODEを返すことでどっちを使うかを制御できると書いてあるんですが，WM_NOTIFYMESSEAGEでNFR_ANSIを返しても相変わらずWIDE文字列で要求が来るようです．そもそもデフォルトでは親ウィンドウのANSI/WIDE設定と同じになると書いてあるのに...<br><br>どーなってるんでしょう？この部分のifdef除去は無理なんでしょうか．<br></div></section>
     <ul><li><section><h1 id=3387>
     <span class="no">[3387]</span>
-    <a class="title" href="#3387">RE2: タブのバグ修正</a>
+    <a class="thread-title" href="#3387">RE2: タブのバグ修正</a>
     <span class="author">みく</span>
     <time datetime="2004-01-31T10:53:35">2004年01月31日 10:53</time></h1>
     <div class="body"><br>TCHAR化で勘違いしてたので修正しました。<br>（UNICODEのときは外部の変数もUNICODEなので...）<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/tabwnd20040131.LZH<br></div></section>
     <ul><li><section><h1 id=3400>
     <span class="no">[3400]</span>
-    <a class="title" href="#3400">RE3: タブのバグ修正</a>
+    <a class="thread-title" href="#3400">RE3: タブのバグ修正</a>
     <span class="author">みく</span>
     <time datetime="2004-02-03T23:24:35">2004年02月03日 23:24</time></h1>
     <div class="body"><br>ときおり、タブが左右いっぱいに表示されることがあります。<br>（左詰めでなくなる）<br><br>＃TCS_RAGGEDRIGHTあたりかなぁ。<br></div></section>
     </li></ul></li></ul></li><li><section><h1 id=3413>
     <span class="no">[3413]</span>
-    <a class="title" href="#3413">RE: タブのバグ修正</a>
+    <a class="thread-title" href="#3413">RE: タブのバグ修正</a>
     <span class="author">げんた</span>
     <time datetime="2004-02-14T11:57:43">2004年02月14日 11:57</time></h1>
     <div class="body">ふぁんくらぶ360によると，タブが完全は表示されないらしいんだけど．<br></div></section>
     <ul><li><section><h1 id=3414>
     <span class="no">[3414]</span>
-    <a class="title" href="#3414">RE2: タブのバグ修正</a>
+    <a class="thread-title" href="#3414">RE2: タブのバグ修正</a>
     <span class="author">みく</span>
     <time datetime="2004-02-14T14:35:12">2004年02月14日 14:35</time></h1>
     <div class="body"><br>すいません。<br>マルチライン化の試作が残ってました。<br>開発記事 &gt;&gt;3411 で修正しました。<br></div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行を含む正規表現での色分け</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>改行を含む正規表現での色分け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5799</span>
-    <a class="title" href="5799.html#5799">改行を含む正規表現での色分け</a></div>
+    <a class="thread-title" href="5799.html#5799">改行を含む正規表現での色分け</a></div>
     <ul><li><div class="list-title">
     <span class="no">5802</span>
-    <a class="title" href="5799.html#5802">Re:改行を含む正規表現での色分け</a></div>
+    <a class="thread-title" href="5799.html#5802">Re:改行を含む正規表現での色分け</a></div>
     <ul><li><div class="list-title">
     <span class="no">5803</span>
-    <a class="title" href="5799.html#5803">Re2:改行を含む正規表現での色分け</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5799>
+    <a class="thread-title" href="5799.html#5803">Re2:改行を含む正規表現での色分け</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5799>
     <span class="no">[5799]</span>
-    <a class="title" href="#5799">改行を含む正規表現での色分け</a>
+    <a class="thread-title" href="#5799">改行を含む正規表現での色分け</a>
     <span class="author">こもも</span>
     <time datetime="2007-02-05T15:13:12">2007年02月05日 15:13</time></h1>
     <div class="body">Sakuraエディタ初心者です。<br>過去ログ見てもわかりませんでしたので、<br>ご存知のかたおられましたら、以下ご教授お願いいたします。<br><br>C/C++でコメント種類によって色分けしようとしています。<br>/* ～ */ はコメントとして色分け可能です。<br>しかし例えば、/*- ～ */ のコメントは違う色で色分けしたいとします。<br>そこで正規表現を使って色分けしようとして、<br>１行ぶんであれば次のようにして可能でした /\/\*(.|\n)*\*\//k<br><br>しかしコメントが改行を含め複数行になると上記の正規表現では<br>マッチしないため、/\/\*(.|\n|$)*\*\//k<br>というようにしてみました。<br>するとSakuraエディタが終了してしまいます．．．<br>1.5.13.1と1.5.10.0　で試しましたが共に再現します。<br><br>何か良い方法はないでしょうか？<br>上記方法の間違いや良い方法など、ご教授の程、<br>よろしくお願いいたします。<br></div></section>
     <ul><li><section><h1 id=5802>
     <span class="no">[5802]</span>
-    <a class="title" href="#5802">Re:改行を含む正規表現での色分け</a>
+    <a class="thread-title" href="#5802">Re:改行を含む正規表現での色分け</a>
     <span class="author">peak</span>
     <time datetime="2007-02-05T22:22:09">2007年02月05日 22:22</time></h1>
     <div class="body">正規表現は/\/\*(.|\n)*?(\*\/|$)/kのほうが正しいような…<br>どちらにせよ複数行マッチはできないと思います。<br></div></section>
     <ul><li><section><h1 id=5803>
     <span class="no">[5803]</span>
-    <a class="title" href="#5803">Re2:改行を含む正規表現での色分け</a>
+    <a class="thread-title" href="#5803">Re2:改行を含む正規表現での色分け</a>
     <span class="author">こもも</span>
     <time datetime="2007-02-05T23:29:33">2007年02月05日 23:29</time></h1>
     <div class="body">正規表現の基本がわかっていませんでした。<br>ありがとうございました。<br></div></section>

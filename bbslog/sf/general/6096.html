@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>こんな置換はできますか？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>こんな置換はできますか？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6096</span>
-    <a class="title" href="6096.html#6096">こんな置換はできますか？</a></div>
+    <a class="thread-title" href="6096.html#6096">こんな置換はできますか？</a></div>
     <ul><li><div class="list-title">
     <span class="no">6097</span>
-    <a class="title" href="6096.html#6097">Re:こんな置換はできますか？</a></div>
+    <a class="thread-title" href="6096.html#6097">Re:こんな置換はできますか？</a></div>
     <ul><li><div class="list-title">
     <span class="no">6098</span>
-    <a class="title" href="6096.html#6098">Re2:こんな置換はできますか？</a></div>
+    <a class="thread-title" href="6096.html#6098">Re2:こんな置換はできますか？</a></div>
     <ul><li><div class="list-title">
     <span class="no">6099</span>
-    <a class="title" href="6096.html#6099">Re3:こんな置換はできますか？</a></div>
+    <a class="thread-title" href="6096.html#6099">Re3:こんな置換はできますか？</a></div>
     <ul><li><div class="list-title">
     <span class="no">6100</span>
-    <a class="title" href="6096.html#6100">Re4:こんな置換はできますか？</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6096>
+    <a class="thread-title" href="6096.html#6100">Re4:こんな置換はできますか？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6096>
     <span class="no">[6096]</span>
-    <a class="title" href="#6096">こんな置換はできますか？</a>
+    <a class="thread-title" href="#6096">こんな置換はできますか？</a>
     <span class="author">もも</span>
     <time datetime="2007-06-11T11:11:10">2007年06月11日 11:11</time></h1>
     <div class="body">いつもありがとうございますぅ。<br><br>下のような状態のファイルを置換でスッキリと処理したいのですが、できますでしょうか？<br><br>行頭に英単語の行と（意味のない）英文字１～２文字の行が縦にランダムに並んでいる状態です。<br>↓<br>英文字１～２文字の行を削除して英単語のみの行を取り出したいのですが。。。<br>（つまり、行頭の１～２文字がある行のみを指定して削除したいのですが。。。）<br>なんとなく無理みたいな気もしますが。。。　何か良い方法はありますでしょうか？どなたかお知恵をくださいませ。<br><br><br>例）<br><br>x<br>pen<br>wd<br>pencil <br>a<br>gt<br>penpal<br>jh<br><br>↓<br><br>pen<br><br>pencil <br><br><br>penpal<br></div></section>
     <ul><li><section><h1 id=6097>
     <span class="no">[6097]</span>
-    <a class="title" href="#6097">Re:こんな置換はできますか？</a>
+    <a class="thread-title" href="#6097">Re:こんな置換はできますか？</a>
     <span class="author">ふみゅf(^_^)</span>
     <time datetime="2007-06-11T13:19:29">2007年06月11日 13:19</time></h1>
     <div class="body">▼ ももさん<br>&gt; 下のような状態のファイルを置換でスッキリと処理したいのですが、できますでしょうか？<br>&gt; <br>&gt; 行頭に英単語の行と（意味のない）英文字１～２文字の行が縦にランダムに並んでいる状態です。<br>&gt; ↓<br>&gt; 英文字１～２文字の行を削除して英単語のみの行を取り出したいのですが。。。<br><br>置換前:^\w{0,2}\r\n<br>置換後:\r\n<br><br>なお改行も不要であれば、置換後は 何も無し に成ります。<br><br>解説<br>^     行頭<br>\w    英単語の構成文字<br>{0,2} 直前のパターンの 0 回以上、2 回以下の繰り返し<br>\r\n  改行(復帰)</div></section>
     <ul><li><section><h1 id=6098>
     <span class="no">[6098]</span>
-    <a class="title" href="#6098">Re2:こんな置換はできますか？</a>
+    <a class="thread-title" href="#6098">Re2:こんな置換はできますか？</a>
     <span class="author">もも</span>
     <time datetime="2007-06-11T14:06:57">2007年06月11日 14:06</time></h1>
     <div class="body">▼ ふみゅf(^_^)さん<br>ありがとうございます！！サクラエディターってスゴーイ！まだ使い始めて１週間くらいなのですが、UNIXとかの知識のないバリバリ文系の私でもほんとうに使いやすくて助かります！<br>たびたび、すみませんが、英字とともに#や?といった記号も混在している場合には\wのところをどのようにすればよいのでしょうか？（早速、ためしてみましたら、いろいろと記号も同じように混じっていたことに気づきましたので。#$ とか?\とか!!とかですぅ。できましたら、いっしょに削除したいのですが。。。２回以上の処理でも構いません。ｍ○ｍ）<br><br></div></section>
     <ul><li><section><h1 id=6099>
     <span class="no">[6099]</span>
-    <a class="title" href="#6099">Re3:こんな置換はできますか？</a>
+    <a class="thread-title" href="#6099">Re3:こんな置換はできますか？</a>
     <span class="author">ふみゅ f(^_^)</span>
     <time datetime="2007-06-11T16:50:14">2007年06月11日 16:50</time></h1>
     <div class="body">▼ ももさん<br>&gt; 英字とともに#や?といった記号も混在している場合には\wのところを<br>&gt; どのようにすればよいのでしょうか？<br><br>"." [ドット(ピリオド)]ですかね f(^_^)<br>ちなみに、ヘルプに使える(かもしれない)表現が記載されていますので一読願います。<br>[サクラエディタ ヘルプ目次]-[サクラエディタ概要]-[正規表現ライブラリについて]</div></section>
     <ul><li><section><h1 id=6100>
     <span class="no">[6100]</span>
-    <a class="title" href="#6100">Re4:こんな置換はできますか？</a>
+    <a class="thread-title" href="#6100">Re4:こんな置換はできますか？</a>
     <span class="author">もも</span>
     <time datetime="2007-06-11T22:29:33">2007年06月11日 22:29</time></h1>
     <div class="body">▼ ふみゅ f(^_^)さん<br>ありがとうございま～～すぅ！（レスが遅くなってスミマセン）<br>がんばりま～～～す。</div></section>

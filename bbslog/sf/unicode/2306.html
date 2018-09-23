@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>CアウトラインでK&amp;R関数定義がおかしい</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CアウトラインでK&amp;R関数定義がおかしい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2306</span>
-    <a class="title" href="2306.html#2306">CアウトラインでK&amp;R関数定義がおかしい</a></div>
+    <a class="thread-title" href="2306.html#2306">CアウトラインでK&amp;R関数定義がおかしい</a></div>
     <ul><li><div class="list-title">
     <span class="no">2307</span>
-    <a class="title" href="2306.html#2307">Re:CアウトラインでK&amp;R関数定義がおかしい</a></div>
+    <a class="thread-title" href="2306.html#2307">Re:CアウトラインでK&amp;R関数定義がおかしい</a></div>
     <ul><li><div class="list-title">
     <span class="no">2308</span>
-    <a class="title" href="2306.html#2308">Re2:CアウトラインでK&amp;R関数定義がおかしい</a></div>
+    <a class="thread-title" href="2306.html#2308">Re2:CアウトラインでK&amp;R関数定義がおかしい</a></div>
     <ul><li><div class="list-title">
     <span class="no">2312</span>
-    <a class="title" href="2306.html#2312">Re3:CアウトラインでK&amp;R関数定義がおかしい</a></div>
+    <a class="thread-title" href="2306.html#2312">Re3:CアウトラインでK&amp;R関数定義がおかしい</a></div>
     <ul><li><div class="list-title">
     <span class="no">2313</span>
-    <a class="title" href="2306.html#2313">Re4:CアウトラインでK&amp;R関数定義がおかしい</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2306>
+    <a class="thread-title" href="2306.html#2313">Re4:CアウトラインでK&amp;R関数定義がおかしい</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2306>
     <span class="no">[2306]</span>
-    <a class="title" href="#2306">CアウトラインでK&amp;R関数定義がおかしい</a>
+    <a class="thread-title" href="#2306">CアウトラインでK&amp;R関数定義がおかしい</a>
     <span class="author">もか</span>
     <time datetime="2015-10-24T19:42:11">2015年10月24日 19:42</time></h1>
     <div class="body">K&amp;Rの<br>int func(arg,length)<br>char* arg;<br>int length;<br>{<br>&#9;int i;<br>&#9;func2();<br>&#9;i = test(arg, length);<br>&#9;return (i);<br>}<br>みたいな記述でいつからかはわからないのですがfunc2,　returnが関数宣言扱いになってます。<br></div></section>
     <ul><li><section><h1 id=2307>
     <span class="no">[2307]</span>
-    <a class="title" href="#2307">Re:CアウトラインでK&amp;R関数定義がおかしい</a>
+    <a class="thread-title" href="#2307">Re:CアウトラインでK&amp;R関数定義がおかしい</a>
     <span class="author">novice</span>
     <time datetime="2015-10-24T21:28:42">2015年10月24日 21:28</time></h1>
     <div class="body">▼ もかさん<br>&gt; K&amp;Rの<br>&gt; みたいな記述でいつからかはわからないのですがfunc2,　returnが関数宣言扱いになってます。<br><br>調べてみたら、<br>r2995 o<br>r2996 x<br>でした。<br><br><a href=https://sourceforge.net/p/sakura-editor/code/2996/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>2996/<wbr></nobr></a><br><br></div></section>
     <ul><li><section><h1 id=2308>
     <span class="no">[2308]</span>
-    <a class="title" href="#2308">Re2:CアウトラインでK&amp;R関数定義がおかしい</a>
+    <a class="thread-title" href="#2308">Re2:CアウトラインでK&amp;R関数定義がおかしい</a>
     <span class="author">もか</span>
     <time datetime="2015-10-24T21:45:03">2015年10月24日 21:45</time></h1>
     <div class="body">C++の関数宣言の後ろに何かくっついてる状態と、<br>K&amp;Rの関数定義は、マクロまで考えると両方同時にサポートするのは<br>かなり厳しそうです。<br>class,publicなどのキーワードやstruct内関数,::の使用や、<br>ファイル拡張子などでC++かC(K&amp;R)かを識別して処理を分ける方法ぐらいしか思いつきません。<br>他にはK&amp;Rの場合は、引数リストのところが変数名のみになっていて、<br>それ以外では型と変数名の2つ以上のキーワードからできてるはずなので<br>それで識別可能かもしれません。<br>void func_k_and_r<br>(arg1, arg2)←これが変数名のみである<br>int arg1;<br><br>void func_cpp<br>(int arg1, int arg2)←これが必ず型名を含む(2つ以上の単語でできてる)<br>_THROW2((hoge, fuga));<br>とりあえず私はすぐに対応するのは無理そうです。<br></div></section>
     <ul><li><section><h1 id=2312>
     <span class="no">[2312]</span>
-    <a class="title" href="#2312">Re3:CアウトラインでK&amp;R関数定義がおかしい</a>
+    <a class="thread-title" href="#2312">Re3:CアウトラインでK&amp;R関数定義がおかしい</a>
     <span class="author">もか</span>
     <time datetime="2015-11-14T01:27:00">2015年11月14日 01:27</time></h1>
     <div class="body">拡張子が.cの時のC言語モードのときK&amp;R定義を読めるようにしたパッチを登録しました。<br>patchunicode:1012</div></section>
     <ul><li><section><h1 id=2313>
     <span class="no">[2313]</span>
-    <a class="title" href="#2313">Re4:CアウトラインでK&amp;R関数定義がおかしい</a>
+    <a class="thread-title" href="#2313">Re4:CアウトラインでK&amp;R関数定義がおかしい</a>
     <span class="author">novice</span>
     <time datetime="2015-11-17T00:39:47">2015年11月17日 00:39</time></h1>
     <div class="body">▼ もかさん<br>&gt; 拡張子が.cの時のC言語モードのときK&amp;R定義を読めるようにしたパッチを登録しました。<br>&gt; patchunicode:1012<br><br>サンプルコードを貼り付けて、<br>Eclipse CDTの動作を見てみましたが、<br>拡張子がcのときは問題なし、<br>拡張子がcppのときはsyntax errorが表示されます。<br>ということで、今回のパッチのように<br>自動判定＆手動設定もできれば問題ないと思います。<br></div></section>

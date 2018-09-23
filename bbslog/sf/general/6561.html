@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>漢字の正規表現について教えて下さい。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>漢字の正規表現について教えて下さい。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6561</span>
-    <a class="title" href="6561.html#6561">漢字の正規表現について教えて下さい。</a></div>
+    <a class="thread-title" href="6561.html#6561">漢字の正規表現について教えて下さい。</a></div>
     <ul><li><div class="list-title">
     <span class="no">6562</span>
-    <a class="title" href="6561.html#6562">Re:漢字の正規表現について教えて下さい。</a></div>
+    <a class="thread-title" href="6561.html#6562">Re:漢字の正規表現について教えて下さい。</a></div>
     <ul><li><div class="list-title">
     <span class="no">6566</span>
-    <a class="title" href="6561.html#6566">Re2:漢字の正規表現について教えて下さい。</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=6561>
+    <a class="thread-title" href="6561.html#6566">Re2:漢字の正規表現について教えて下さい。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6561>
     <span class="no">[6561]</span>
-    <a class="title" href="#6561">漢字の正規表現について教えて下さい。</a>
+    <a class="thread-title" href="#6561">漢字の正規表現について教えて下さい。</a>
     <span class="author">ろろ</span>
     <time datetime="2008-01-17T23:54:00">2008年01月17日 23:54</time></h1>
     <div class="body">(入力)以下の1行です。<br>第百五十一条 　和解の申立て又は民事調停法 （昭和二十六年法律第二百二十二号）若しくは家事審判法<br>(出力)<br>民事調停法 昭和二十六年法 家事審判法<br>(目的)<br>○○○法 漢字の連続+"法"の抽出を正規表現で出力可能でしょうか?<br>よろしくお願いします。<br></div></section>
     <ul><li><section><h1 id=6562>
     <span class="no">[6562]</span>
-    <a class="title" href="#6562">Re:漢字の正規表現について教えて下さい。</a>
+    <a class="thread-title" href="#6562">Re:漢字の正規表現について教えて下さい。</a>
     <span class="author">じゅうじ</span>
     <time datetime="2008-01-18T01:30:54">2008年01月18日 01:30</time></h1>
     <div class="body">置換前 .*?([亜-熙]+法律?)<br>置換後 $1,<br>v正規表現<br> すべて置換　click<br><br>perl 正規表現</div></section>
     <ul><li><section><h1 id=6566>
     <span class="no">[6566]</span>
-    <a class="title" href="#6566">Re2:漢字の正規表現について教えて下さい。</a>
+    <a class="thread-title" href="#6566">Re2:漢字の正規表現について教えて下さい。</a>
     <span class="author">ろろ</span>
     <time datetime="2008-01-19T13:38:47">2008年01月19日 13:38</time></h1>
     <div class="body">▼ じゅうじさん<br>ありがとうございます。<br>nkf -e input | gawk '{gsub(/法/,"法\n");print}' | gawk '{gsub(/[^亜-熙]+/,"\n ");print}' | gawk '/法$/'<br>vlinelinux3.2 awk版<br>参考<a href=http://sunone.dyndns.org/qmemo/memo.php?memo_id=40 target=_top><nobr>http://<wbr>sunone.<wbr>dyndns.<wbr>org/<wbr>qmemo/<wbr>memo.<wbr>php?<wbr>memo_id=<wbr>40</nobr></a><br>____<a href=http://phpspot.org/blog/archives/2005/11/php_17.html target=_top><nobr>http://<wbr>phpspot.<wbr>org/<wbr>blog/<wbr>archives<wbr>/<wbr>2005/<wbr>11/<wbr>php_17.<wbr>html</nobr></a></div></section>

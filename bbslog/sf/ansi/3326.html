@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>^. 置換（不具合？）</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>^. 置換（不具合？） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3326</span>
-    <a class="title" href="3326.html#3326">^. 置換（不具合？）</a></div>
+    <a class="thread-title" href="3326.html#3326">^. 置換（不具合？）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3327</span>
-    <a class="title" href="3326.html#3327">Re:^. 置換（不具合？）</a></div>
+    <a class="thread-title" href="3326.html#3327">Re:^. 置換（不具合？）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3331</span>
-    <a class="title" href="3326.html#3331">Re2:^. 置換（不具合？）</a></div>
+    <a class="thread-title" href="3326.html#3331">Re2:^. 置換（不具合？）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3332</span>
-    <a class="title" href="3326.html#3332">Re3:^. 置換（不具合？）</a></div>
+    <a class="thread-title" href="3326.html#3332">Re3:^. 置換（不具合？）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3333</span>
-    <a class="title" href="3326.html#3333">Re4:^. 置換（不具合？）</a></div>
+    <a class="thread-title" href="3326.html#3333">Re4:^. 置換（不具合？）</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">3334</span>
-    <a class="title" href="3326.html#3334">Re3:^. 置換（不具合？）</a></div>
+    <a class="thread-title" href="3326.html#3334">Re3:^. 置換（不具合？）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3336</span>
-    <a class="title" href="3326.html#3336">Re4:^. 置換（不具合？）</a></div>
+    <a class="thread-title" href="3326.html#3336">Re4:^. 置換（不具合？）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3339</span>
-    <a class="title" href="3326.html#3339">Re5:^. 置換（不具合？）</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3326>
+    <a class="thread-title" href="3326.html#3339">Re5:^. 置換（不具合？）</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3326>
     <span class="no">[3326]</span>
-    <a class="title" href="#3326">^. 置換（不具合？）</a>
+    <a class="thread-title" href="#3326">^. 置換（不具合？）</a>
     <span class="author">kenji</span>
     <time datetime="2003-12-08T15:21:58">2003年12月08日 15:21</time></h1>
     <div class="body">ふと気づいたので報告します。<br><br>各行の先頭1文字を削除したかったので、置換で正規表現を使って<br>「^.」→「」<br>と指定して「すべて置換」したら、全部の文字が消えてしまいました。<br><br>「置換」で1ステップずつ置換してみると、先頭1文字削除した結果に対して<br>また先頭1文字削除、というのを繰り返してるみたいです。<br></div></section>
     <ul><li><section><h1 id=3327>
     <span class="no">[3327]</span>
-    <a class="title" href="#3327">Re:^. 置換（不具合？）</a>
+    <a class="thread-title" href="#3327">Re:^. 置換（不具合？）</a>
     <span class="author">kenji</span>
     <time datetime="2003-12-08T16:01:09">2003年12月08日 16:01</time></h1>
     <div class="body">ちょっと気になったんで、手元にあった他のツールでも同じ操作（「^.」→「」）をやってみました。<br><br>全部消える……サクラ, 秀丸(HMJRE&amp;JRE32), Dana, Wz<br>先頭1文字だけ消える……sed, ActivePerl, ViVi, WSH5(RegExp.Replace()), BASP21(Replace())<br>正しい動作は先頭1文字削除のほうですよね？<br></div></section>
     <ul><li><section><h1 id=3331>
     <span class="no">[3331]</span>
-    <a class="title" href="#3331">Re2:^. 置換（不具合？）</a>
+    <a class="thread-title" href="#3331">Re2:^. 置換（不具合？）</a>
     <span class="author">かろと</span>
     <time datetime="2003-12-11T00:24:34">2003年12月11日 00:24</time></h1>
     <div class="body">&gt;タイトル: Re2:^. 置換（不具合？）<br>&gt;発言者: kenji<br>&gt;ちょっと気になったんで、手元にあった他のツールでも同じ操作（「^.」→「」）をやってみました。<br>&gt;<br>&gt;全部消える……サクラ, 秀丸(HMJRE&amp;JRE32), Dana, Wz<br>&gt;先頭1文字だけ消える……sed, ActivePerl, ViVi, WSH5(RegExp.Replace()), BASP21(Replace())<br>&gt;正しい動作は先頭1文字削除のほうですよね？<br><br>かろとです。<br><br>どっちが正しいというのは難しいですねぇ。<br><br>一度ファイルを指定したら、ファイルの最後までユーザに操作させない<br>ストリームエディタ系なら、<br>ある行に対する行頭置換処理は、１回だけでいいかな？と思いますが、<br>（sed, perl, WSH, などは、同じ行で何度も同じ置換をしたければ、その行に同じ操作を行うように書けばいいはず）<br><br><br>スクリーンエディタのように、置換するごとにユーザに操作を戻す形態だと、<br>その行に対して何度も処理するのも、ありかなと思ったりします。<br><br><br>もし前者のように、先頭の一文字削除しかしない、スクリーンエディタがあって、<br><br>「abcd」<br>というテキストがあり、「^.」→「」の置換をすると、<br>１回目は<br>「bcd」になる。<br>で、ユーザに操作が戻って、<br>ここで、ユーザがもう一度「^.」→「」の置換をすると、<br>「cd」となって欲しいと思う人もいるはずですが、<br>先頭の一文字削除した後なので、「bcd」のまま残すのです。<br><br>操作している人の意志がどちらなのか、難しい問題のように思います。<br><br>どうでしょう？<br></div></section>
     <ul><li><section><h1 id=3332>
     <span class="no">[3332]</span>
-    <a class="title" href="#3332">Re3:^. 置換（不具合？）</a>
+    <a class="thread-title" href="#3332">Re3:^. 置換（不具合？）</a>
     <span class="author">じゅうじ</span>
     <time datetime="2003-12-12T01:30:30">2003年12月12日 01:30</time></h1>
     <div class="body">▼ かろとさん<br>&gt; 操作している人の意志がどちらなのか、難しい問題のように思います。<br><br>意見です。<br>「^.」⇒「a」では１行ずつ進みます。<br>「^.」⇒「」では１文字ずつ進みます。<br>すべて置換(A)は良いのですが、行頭の ^ + 正規表現が変ですよ。<br><br>例えば、次の２行で、<br>aaaab<br>aabcd<br>「^aa」⇒「a」で先頭から２回置換すると、<br>aab<br>aabcd<br>となっても良いはずですが、成りません。</div></section>
     <ul><li><section><h1 id=3333>
     <span class="no">[3333]</span>
-    <a class="title" href="#3333">Re4:^. 置換（不具合？）</a>
+    <a class="thread-title" href="#3333">Re4:^. 置換（不具合？）</a>
     <span class="author">かろと</span>
     <time datetime="2003-12-13T00:56:49">2003年12月13日 00:56</time></h1>
     <div class="body"><br><br>なんでなんだ？って思うのもわかりますので、<br>今回は、現在の動作が、なんでそうなるのかを説明しますね。<br><br>&gt;例えば、次の２行で、<br>&gt;aaaab<br>&gt;aabcd<br>&gt;「^aa」⇒「a」で先頭から２回置換すると、<br>&gt;aab<br>&gt;aabcd<br>&gt;となっても良いはずですが、成りません。<br><br>サクラエディタの検索は(多分多くのスクリーンエディタも)、カーソル位置起点に始まるので、<br>じゅうじさんの期待通りにならないです。<br><br>以下に説明しますので、<br>カーソル位置がどこかに注意を払ってみてください。<br>（下記の例では、I でカーソル位置を表します）<br><br>まず、カーソル位置は、行頭にあります。<br>Iaaaab<br> aabcd<br><br>１回目の「^aa」⇒「a」で置換すると、カーソルが行頭にあるので、<br>行頭の「aa」が「a」に置換されて、カーソルは置換された「a」の後にきます。<br>(この「a」の後ろにくるってのがミソなのですが、これも恐らく自然な動作だと思います)<br>aIaab<br>a abcd<br><br>ここで、<br>２回目の「^aa」⇒「a」で置換しようとしますが、カーソル位置が行頭にないので、<br>「^aa」（＝行頭から２文字のa）は、マッチしません。<br>したがって、次の行頭の２文字のaにマッチし、置換する動作となります。<br><br><br>これをふまえて、<br><br>&gt;意見です。<br>&gt;「^.」⇒「a」では１行ずつ進みます。<br>&gt;「^.」⇒「」では１文字ずつ進みます。<br>&gt;すべて置換(A)は良いのですが、行頭の ^ + 正規表現が変ですよ。<br><br>上の例のように、<br><br>&gt;「^.」⇒「a」では１行ずつ進みます。<br>の場合は、「a」に置換された後「a」の後ろにカーソル位置がくるため、２回目の置換は次の行になり<br>１行ずつ進みます。<br><br>&gt;「^.」⇒「」では１文字ずつ進みます。<br>の場合は、「」に置換された後「」の後ろにカーソル位置がきて、これが行頭であるため、<br>２回目の置換は、再度この行で行われます。<br><br>現在の動作はこのようになっております。<br><br>現状は、こんな感じになっていて、これでいいのか？というと、<br>実は私も整理できてないのです・・・(--;<br></div></section>
     </li></ul></li><li><section><h1 id=3334>
     <span class="no">[3334]</span>
-    <a class="title" href="#3334">Re3:^. 置換（不具合？）</a>
+    <a class="thread-title" href="#3334">Re3:^. 置換（不具合？）</a>
     <span class="author">じゅうじ</span>
     <time datetime="2003-12-13T23:22:47">2003年12月13日 23:22</time></h1>
     <div class="body">▼ かろとさん<br>そうですか、間違えました。<br><br>行頭の ^ を置換した後、次の行に進まないのですか？<br>すべて置換(A)に問題が有りそうですね。<br><br>ちなみに、会社の ex エディター(ViVi)では、<br>s/^.//g<br>で、先頭の１文字だけが消えました。(^_^)</div></section>
     <ul><li><section><h1 id=3336>
     <span class="no">[3336]</span>
-    <a class="title" href="#3336">Re4:^. 置換（不具合？）</a>
+    <a class="thread-title" href="#3336">Re4:^. 置換（不具合？）</a>
     <span class="author">かろと</span>
     <time datetime="2003-12-14T20:54:44">2003年12月14日 20:54</time></h1>
     <div class="body">&gt;タイトル: Re4:^. 置換（不具合？）<br>&gt;発言者: じゅうじ<br>&gt;▼ かろとさん<br>&gt;そうですか、間違えました。<br><br>いえいえ、間違えてはいないですよ。<br>私はあくまで、現状を説明しただけですから。<br><br>&gt;行頭の ^ を置換した後、次の行に進まないのですか？<br>&gt;すべて置換(A)に問題が有りそうですね。<br><br>これは、すべて置換側の動作だけ変えた方がいいという意味でしょうか？<br>つまり、毎回「置換」ボタンを押すなら、次の行に進まず、全部の文字が消えて、<br>「すべて置換」ボタンを押せば、次の行に進んで、先頭の文字だけが消える。<br>という動作になって欲しいと？<br><br><br>&gt;ちなみに、会社の ex エディター(ViVi)では、<br>&gt;s/^.//g<br>&gt;で、先頭の１文字だけが消えました。(^_^)<br><br>kenjiさんの報告にあるように、エディタ毎に、この扱いは異なるようです。<br><br>どちらの動作が良いのかは、他のみなさんの意見も聞きたいところです。<br></div></section>
     <ul><li><section><h1 id=3339>
     <span class="no">[3339]</span>
-    <a class="title" href="#3339">Re5:^. 置換（不具合？）</a>
+    <a class="thread-title" href="#3339">Re5:^. 置換（不具合？）</a>
     <span class="author">じゅうじ</span>
     <time datetime="2003-12-15T22:29:55">2003年12月15日 22:29</time></h1>
     <div class="body">▼ かろとさん<br>&gt; これは、すべて置換側の動作だけ変えた方がいいという意味でしょうか？<br>&gt; つまり、毎回「置換」ボタンを押すなら、次の行に進まず、全部の文字が消えて、<br>&gt; 「すべて置換」ボタンを押せば、次の行に進んで、先頭の文字だけが消える。<br>&gt; という動作になって欲しいと？<br><br>有難うございます。<br><br>はい、おっしゃるとおりです。「^.」⇒「」の場合、<br>１行だけ選択して、すべて置換(A)の場合でも、先頭の１文字だけを削除出来るのが良いですね。<br>但し、繰り返し、置換(R)が押された場合はすべて置換(A)とは、違う結果になると思います。<br></div></section>

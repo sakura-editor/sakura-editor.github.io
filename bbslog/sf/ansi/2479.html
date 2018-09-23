@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>編集中ファイルをDIFFできるように</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>編集中ファイルをDIFFできるように | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2479</span>
-    <a class="title" href="2479.html#2479">編集中ファイルをDIFFできるように</a></div>
+    <a class="thread-title" href="2479.html#2479">編集中ファイルをDIFFできるように</a></div>
     <ul><li><div class="list-title">
     <span class="no">2485</span>
-    <a class="title" href="2479.html#2485">Re: 編集中ファイルをDIFFできるように</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2479>
+    <a class="thread-title" href="2479.html#2485">Re: 編集中ファイルをDIFFできるように</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2479>
     <span class="no">[2479]</span>
-    <a class="title" href="#2479">編集中ファイルをDIFFできるように</a>
+    <a class="thread-title" href="#2479">編集中ファイルをDIFFできるように</a>
     <span class="author">みく</span>
     <time datetime="2002-11-09T20:06:18">2002年11月09日 20:06</time></h1>
     <div class="body"><br>編集中のファイルをDIFFできるようにしました。<br>　→diff20021109.zip<br>ssrc_2002_11_07に対する差分です。<br><br>TMP環境変数で指定されたフォルダ(詳細は_tempnam関数仕様)<br>に sakura_diff_* という作業ファイルを一時的に作成します。<br><br>最初からだとは思いますが、SJISでないファイルは差分表示がでたらめになるはず。<br>また、改行コードもCRLF以外でもだめだと思います。<br></div></section>
     <ul><li><section><h1 id=2485>
     <span class="no">[2485]</span>
-    <a class="title" href="#2485">Re: 編集中ファイルをDIFFできるように</a>
+    <a class="thread-title" href="#2485">Re: 編集中ファイルをDIFFできるように</a>
     <span class="author">げんた</span>
     <time datetime="2002-11-16T01:08:19">2002年11月16日 01:08</time></h1>
     <div class="body">私見を言わせてもらうと，MakeDiffTmpFile()というのがちょっと気に入りません．<br><br>編集中ファイルの外部マクロへの受け渡しのために，<br>・ 現在のファイル(もしくは選択部分)をファイル名を変えずに別名保存<br>・ 外部ファイル(もしくは選択部分)を編集中ファイル名を変えずに読み込み<br>という機能が必要だと考えていました．<br>MakeDiffTmpFile()はまさにこの前者の機能に当たるのですが，Diffのためだけに使うという点と既存のファイル保存部とは全く独立に作っている点がちょっともったいないと感じています．<br><br>ついでにもう少し願望を述べさせていただくと，現在文字列の変換作業を行うとその結果にかかわらず全て編集済みマークになってしまいますが，diff機能を利用して本当に変化のあった行のみを編集済みにできないでしょうかね．<br></div></section>

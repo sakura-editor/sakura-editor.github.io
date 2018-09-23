@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>KeyBindのバグ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>KeyBindのバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">192</span>
-    <a class="title" href="192.html#192">KeyBindのバグ</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=192>
+    <a class="thread-title" href="192.html#192">KeyBindのバグ</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=192>
     <span class="no">[192]</span>
-    <a class="title" href="#192">KeyBindのバグ</a>
+    <a class="thread-title" href="#192">KeyBindのバグ</a>
     <span class="author">みく</span>
     <time datetime="2001-03-17T16:59:15">2001年03月17日 16:59</time></h1>
     <div class="body"><br>以前VUP時にキーアクセラレータのリソース不足が出るのがありました。<br>それとは別にキー割り当てをテキスト化できないかとソースを眺めていたら<br>バグらしいもの発見です。<br>KEYDATA構造体には、名前、配列０～７、キーコードがあるのに、<br>キーコードをiniファイルに保存していません。<br>おそらく初期化時に設定された値をそのまま使ってるので問題ないのでしょうが、<br>キー割り当てが追加になったりするとずれるのでおかしくなるのでしょう。<br>インポート、エクスポートは構造体をそっくりセーブ・ロードするから問題ないです。<br></div></section>

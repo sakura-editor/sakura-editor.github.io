@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>複数単語単位検索について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>複数単語単位検索について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1830</span>
-    <a class="title" href="1830.html#1830">複数単語単位検索について</a></div>
+    <a class="thread-title" href="1830.html#1830">複数単語単位検索について</a></div>
     <ul><li><div class="list-title">
     <span class="no">1831</span>
-    <a class="title" href="1830.html#1831">当事者として呼ばれた気がしました。</a></div>
+    <a class="thread-title" href="1830.html#1831">当事者として呼ばれた気がしました。</a></div>
     <ul><li><div class="list-title">
     <span class="no">1833</span>
-    <a class="title" href="1830.html#1833">Re:パッチ:複数単語検索のブックマーク・Grep対応</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1830>
+    <a class="thread-title" href="1830.html#1833">Re:パッチ:複数単語検索のブックマーク・Grep対応</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1830>
     <span class="no">[1830]</span>
-    <a class="title" href="#1830">複数単語単位検索について</a>
+    <a class="thread-title" href="#1830">複数単語単位検索について</a>
     <span class="author">もか</span>
     <time datetime="2012-06-26T18:50:13">2012年06月26日 18:50</time></h1>
     <div class="body">そういえば以前複数単語に対応しましたが、<br>・該当行マーク<br>・Grep<br>は未対応のままなんですよね？<br></div></section>
     <ul><li><section><h1 id=1831>
     <span class="no">[1831]</span>
-    <a class="title" href="#1831">当事者として呼ばれた気がしました。</a>
+    <a class="thread-title" href="#1831">当事者として呼ばれた気がしました。</a>
     <span class="author">ds14050</span>
     <time datetime="2012-06-27T22:56:11">2012年06月27日 22:56</time></h1>
     <div class="body">該当行マークと Grepが共有してるのが検索条件だけで検<br>索を行うコードを独自に持っているとは知りませんでした。<br><br>該当行マークは CSearchAgent::SearchWordにすべてを<br>任せるように書き換えられると対応できますが、Grepは<br>* 一行ごとに検索<br>* 検索対象が外部ファイル<br>という違いがあるために CSearchAgent::SearchWordが<br>使えません。CSearchAgent::SearchWordから呼ばれて<br>通常検索を担う CSearchAgent::SearchString関数の<br>単語検索バージョン(※これの名前こそ SearchWordにし<br>たかった)を用意することで Grepからもコードが共有で<br>きるのではないかと思います。と、今は考えているだけな<br>のでパッチがおありでしたらどうぞコミットしてください。<br></div></section>
     <ul><li><section><h1 id=1833>
     <span class="no">[1833]</span>
-    <a class="title" href="#1833">Re:パッチ:複数単語検索のブックマーク・Grep対応</a>
+    <a class="thread-title" href="#1833">Re:パッチ:複数単語検索のブックマーク・Grep対応</a>
     <span class="author">もか</span>
     <time datetime="2012-06-30T16:59:23">2012年06月30日 16:59</time></h1>
     <div class="body">パッチ作ってみました。<br>https://sourceforge.net/tracker/?func=detail&amp;aid=3539115&amp;group_id=12488&amp;atid=1013762<br></div></section>

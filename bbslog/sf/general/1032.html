@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>フリーズしちゃうのはなぜ？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>フリーズしちゃうのはなぜ？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">1032</span>
-    <a class="title" href="1032.html#1032">フリーズしちゃうのはなぜ？</a></div>
+    <a class="thread-title" href="1032.html#1032">フリーズしちゃうのはなぜ？</a></div>
     <ul><li><div class="list-title">
     <span class="no">1033</span>
-    <a class="title" href="1032.html#1033">Re:フリーズしちゃうのはなぜ？</a></div>
+    <a class="thread-title" href="1032.html#1033">Re:フリーズしちゃうのはなぜ？</a></div>
     <ul><li><div class="list-title">
     <span class="no">1034</span>
-    <a class="title" href="1032.html#1034">Re2:フリーズしちゃうのはなぜ？</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1032>
+    <a class="thread-title" href="1032.html#1034">Re2:フリーズしちゃうのはなぜ？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1032>
     <span class="no">[1032]</span>
-    <a class="title" href="#1032">フリーズしちゃうのはなぜ？</a>
+    <a class="thread-title" href="#1032">フリーズしちゃうのはなぜ？</a>
     <span class="author">kou</span>
     <time datetime="2001-12-23T06:05:51">2001年12月23日 06:05</time></h1>
     <div class="body">はじめまして。kouといいます。<br><br>最近、キーマクロで記憶できないマクロがあることを知り、<br><br>&#9;ExecCommand("bcc32 $F");<br><br>と、記述してやってみたんですがフリーズしました。<br>というよりも、<br><br>&#9;ExecCommand("bcc32");<br><br>これだけでフリーズするのですが。。。<br>ExecCommand は、ツール→外部コマンド実行 とは、<br>違う物なのでしょうか？<br><br>バージョンは、1.2.104.1 と 1.2.101.1 共に駄目でした。<br><br>それと、マクロ一覧みたいのってありますか？<br></div></section>
     <ul><li><section><h1 id=1033>
     <span class="no">[1033]</span>
-    <a class="title" href="#1033">Re:フリーズしちゃうのはなぜ？</a>
+    <a class="thread-title" href="#1033">Re:フリーズしちゃうのはなぜ？</a>
     <span class="author">げんた</span>
     <time datetime="2001-12-23T16:27:13">2001年12月23日 16:27</time></h1>
     <div class="body">▼ kouさん<br>&gt; &#9;ExecCommand("bcc32 $F");<br>&gt; と、記述してやってみたんですがフリーズしました。<br>すいません。既知のバグです。<br>文字列引数をとるマクロを、マクロの読み込み→実行で実行しようとするとフリーズします。<br>「共通設定－マクロ」で登録した上で使えば実行できます。<br><br>&gt; それと、マクロ一覧みたいのってありますか？<br>特殊なもの(4つ)はヘルプに載っていますが、それ以外はソース内にしかありません。<br></div></section>
     <ul><li><section><h1 id=1034>
     <span class="no">[1034]</span>
-    <a class="title" href="#1034">Re2:フリーズしちゃうのはなぜ？</a>
+    <a class="thread-title" href="#1034">Re2:フリーズしちゃうのはなぜ？</a>
     <span class="author">kou</span>
     <time datetime="2001-12-23T17:29:33">2001年12月23日 17:29</time></h1>
     <div class="body">&gt; 文字列引数をとるマクロを、マクロの読み込み→実行で実行しようとするとフリーズします。<br>&gt; 「共通設定－マクロ」で登録した上で使えば実行できます。<br>有難うございます。無事出来ました。<br> <br>&gt; &gt; それと、マクロ一覧みたいのってありますか？<br>&gt; 特殊なもの(4つ)はヘルプに載っていますが、それ以外はソース内にしかありません。<br>ソースをＤＬしました。色々とあったんですね。<br><br>有難うございます。</div></section>

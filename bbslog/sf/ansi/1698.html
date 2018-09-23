@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグです。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バグです。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1698</span>
-    <a class="title" href="1698.html#1698">バグです。</a></div>
+    <a class="thread-title" href="1698.html#1698">バグです。</a></div>
     <ul><li><div class="list-title">
     <span class="no">1699</span>
-    <a class="title" href="1698.html#1699">Re:バグです。</a></div>
+    <a class="thread-title" href="1698.html#1699">Re:バグです。</a></div>
     <ul><li><div class="list-title">
     <span class="no">1741</span>
-    <a class="title" href="1698.html#1741">Re:バグです。</a></div>
+    <a class="thread-title" href="1698.html#1741">Re:バグです。</a></div>
     <ul><li><div class="list-title">
     <span class="no">1742</span>
-    <a class="title" href="1698.html#1742">Re2:バグです。</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1698>
+    <a class="thread-title" href="1698.html#1742">Re2:バグです。</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1698>
     <span class="no">[1698]</span>
-    <a class="title" href="#1698">バグです。</a>
+    <a class="thread-title" href="#1698">バグです。</a>
     <span class="author">KK</span>
     <time datetime="2002-03-06T02:06:54">2002年03月06日 02:06</time></h1>
     <div class="body">先日ルーラのちらつきをなくすパッチを投稿したKKですが、<br>そのパッチに修正漏れがありました。ごめんなさい・・・。<br><br>水平スクロールバーをいろいろクリックした時の挙動がうまく行きません。<br>やざきさんが気付いて直してくれたのですが、<br>スクロールバー端のボタンを押した後、その逆側のスクロールバーの<br>薄いグレーのとこ（押すと一気にスクロールする所）を<br>押したりすると、ルーラがスクロールしないときがあります。<br>水平スクロールする関数内でルーラを書きなおす指定をして<br>やれば直ります。パッチは後ほど。<br><br>気付いたのですが、キャレットが左端にあるとき、<br>水平スクロールバーの右端のボタンを押してスクロールさせると、<br>キャレットが行番号の領域に表示されてしまいます。<br>これは12月19日版でも確認できたので、昔からそうみたい。<br>ルーラの表示がちょっとおかしくなるので直せたら直してみます。<br><br>とりあえず報告まで。</div></section>
     <ul><li><section><h1 id=1699>
     <span class="no">[1699]</span>
-    <a class="title" href="#1699">Re:バグです。</a>
+    <a class="thread-title" href="#1699">Re:バグです。</a>
     <span class="author">やざき</span>
     <time datetime="2002-03-06T11:03:24">2002年03月06日 11:03</time></h1>
     <div class="body">▼ KKさん<br><br>確かにスクロールバーのつまみを動かすとルーラがついてきてくれないみたいですね。<br><br>&gt; 気付いたのですが、キャレットが左端にあるとき、<br>&gt; 水平スクロールバーの右端のボタンを押してスクロールさせると、<br>&gt; キャレットが行番号の領域に表示されてしまいます。<br>&gt; これは12月19日版でも確認できたので、昔からそうみたい。<br>&gt; ルーラの表示がちょっとおかしくなるので直せたら直してみます。<br><br>そうそう、それにルーラにもキャレットが食い込むこともあるみたいです。<br>＃詳しく調べたかったのですが、そこまで手が回ってなくて申し訳なく思ってました。。。</div></section>
     <ul><li><section><h1 id=1741>
     <span class="no">[1741]</span>
-    <a class="title" href="#1741">Re:バグです。</a>
+    <a class="thread-title" href="#1741">Re:バグです。</a>
     <span class="author">げんた</span>
     <time datetime="2002-03-18T10:38:39">2002年03月18日 10:38</time></h1>
     <div class="body">▼ やざき<br>&gt;確かにスクロールバーのつまみを動かすとルーラがついてきてくれないみたいですね。<br>CEditView::OnHScroll()のcase文中に2カ所ある<br>&#9;m_bRedrawRuler = true; // YAZAKI<br>をCEditView::OnHScroll()先頭に移動してSB_THUMBPOSITION/SB_THUMBTRACKでも再描画ONにすれば，横スクロールにも追従するようになります．<br></div></section>
     <ul><li><section><h1 id=1742>
     <span class="no">[1742]</span>
-    <a class="title" href="#1742">Re2:バグです。</a>
+    <a class="thread-title" href="#1742">Re2:バグです。</a>
     <span class="author">やざき</span>
     <time datetime="2002-03-18T11:05:37">2002年03月18日 11:05</time></h1>
     <div class="body">▼ げんたさん<br>&gt; ▼ やざき<br>&gt; &gt;確かにスクロールバーのつまみを動かすとルーラがついてきてくれないみたいですね。<br>&gt; CEditView::OnHScroll()のcase文中に2カ所ある<br>&gt; &#9;m_bRedrawRuler = true; // YAZAKI<br>&gt; をCEditView::OnHScroll()先頭に移動してSB_THUMBPOSITION/SB_THUMBTRACKでも再描画ONにすれば，横スクロールにも追従するようになります．<br><br>ありがとう～。取り込みます。</div></section>

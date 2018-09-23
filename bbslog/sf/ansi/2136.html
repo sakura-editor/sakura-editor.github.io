@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>キャレットの表示</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>キャレットの表示 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2136</span>
-    <a class="title" href="2136.html#2136">キャレットの表示</a></div>
+    <a class="thread-title" href="2136.html#2136">キャレットの表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">2141</span>
-    <a class="title" href="2136.html#2141">RE: キャレットの表示</a></div>
+    <a class="thread-title" href="2136.html#2141">RE: キャレットの表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">2148</span>
-    <a class="title" href="2136.html#2148">RE2: キャレットの表示</a></div>
+    <a class="thread-title" href="2136.html#2148">RE2: キャレットの表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">2160</span>
-    <a class="title" href="2136.html#2160">RE3: キャレットの表示</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2136>
+    <a class="thread-title" href="2136.html#2160">RE3: キャレットの表示</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2136>
     <span class="no">[2136]</span>
-    <a class="title" href="#2136">キャレットの表示</a>
+    <a class="thread-title" href="#2136">キャレットの表示</a>
     <span class="author">ai</span>
     <time datetime="2002-06-03T20:13:54">2002年06月03日 20:13</time></h1>
     <div class="body">キャレットが行番号やルーラー上に表示されるのを、表示しないようにしてみました。<br>ベースはssrc_2002-05-20です。<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/ShowEditCaret.zip<br></div></section>
     <ul><li><section><h1 id=2141>
     <span class="no">[2141]</span>
-    <a class="title" href="#2141">RE: キャレットの表示</a>
+    <a class="thread-title" href="#2141">RE: キャレットの表示</a>
     <span class="author">やざき</span>
     <time datetime="2002-06-05T00:16:16">2002年06月05日 00:16</time></h1>
     <div class="body">&gt;タイトル: RE: キャレットの表示<br>&gt;発言者: ai<br>&gt;キャレットが行番号やルーラー上に表示されるのを、表示しないようにしてみました。<br>&gt;ベースはssrc_2002-05-20です。<br>&gt;<br>&gt;http://www.egroups.co.jp/files/sakura-editor/Developer/Source/ShowEditCaret.zip<br><br>取り込みました。Thanx!<br></div></section>
     <ul><li><section><h1 id=2148>
     <span class="no">[2148]</span>
-    <a class="title" href="#2148">RE2: キャレットの表示</a>
+    <a class="thread-title" href="#2148">RE2: キャレットの表示</a>
     <span class="author">ai</span>
     <time datetime="2002-06-05T12:57:57">2002年06月05日 12:57</time></h1>
     <div class="body">取り込んでいただきありがとうございます。<br>が、問題ありでした。<br>ウィンドウを分割した状態で、アクティブでない側のウィンドウ(?)のスクロールバーをクリック後に編集を行なおうとするとキャレットが表示されません。<br>HideCaretとShowCaretをしている箇所全てを下記のように修正する必要がありそうです。<br><br>::HideCaret( m_hWnd );<br>&#9;↓<br>if (m_bCaretShowFlag == true){<br>&#9;::HideCaret( m_hWnd );<br>&#9;m_bCaretShowFlag = false;<br>}<br><br>::ShowCaret( m_hWnd );<br>&#9;↓<br>::ShowCaret( m_hWnd );<br>m_bCaretShowFlag = true;<br></div></section>
     <ul><li><section><h1 id=2160>
     <span class="no">[2160]</span>
-    <a class="title" href="#2160">RE3: キャレットの表示</a>
+    <a class="thread-title" href="#2160">RE3: キャレットの表示</a>
     <span class="author">みく</span>
     <time datetime="2002-06-07T19:25:55">2002年06月07日 19:25</time></h1>
     <div class="body"><br>DIFF差分表示のパッチ(diff0607.zip)に合わせて入れておきました。<br></div></section>

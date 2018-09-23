@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>ヘルプ目次</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>ヘルプ目次 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1670</span>
-    <a class="title" href="1670.html#1670">ヘルプ目次</a></div>
+    <a class="thread-title" href="1670.html#1670">ヘルプ目次</a></div>
     <ul><li><div class="list-title">
     <span class="no">1672</span>
-    <a class="title" href="1670.html#1672">Re:ヘルプ目次</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1670>
+    <a class="thread-title" href="1670.html#1672">Re:ヘルプ目次</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1670>
     <span class="no">[1670]</span>
-    <a class="title" href="#1670">ヘルプ目次</a>
+    <a class="thread-title" href="#1670">ヘルプ目次</a>
     <span class="author">みく</span>
     <time datetime="2002-02-28T19:03:16">2002年02月28日 19:03</time></h1>
     <div class="body"><br>こんな感じでしょうか（机上のみで試してません）。<br>ここまでくると共通関数化したほうがよいですね。<br>＃さらに引数を増やして「検索」とかも指定できるようにすればWinHelpコールをある程度まとめることができます。<br><br>void ShowWinHelp( HWND hwnd, LPCTSTR lpszHelp )<br>{<br>&#9;OSVERSIONINFO osVer;<br>&#9;osVer.dwOSVersionInfoSize = sizeof(osVer);<br>&#9;GetVersionEx(&amp;osVer);<br><br>&#9;/* NT4のときだけ */<br>&#9;if ((osVer.dwPlatformId == VER_PLATFORM_WIN32_NT)  /* NT系列 */<br>&#9; &amp;&amp; (osVer.dwMajorVersion &lt;= 4) /* NT4以下 */<br>&#9;/* &amp;&amp; (osVer.dwMajorVersion == 5 &amp;&amp; osVer.dwMinorVersion == 0)*/  /* W2K */<br>&#9;/* &amp;&amp; (osVer.dwMajorVersion == 5 &amp;&amp; osVer.dwMinorVersion == 1)*/  /* XP */<br>&#9;)<br>&#9;{<br>&#9;&#9;/* 目次ページを表示する */<br>&#9;&#9;::WinHelp( hwnd, lpszHelp, HELP_CONTENTS , 0 );<br>&#9;&#9;return;<br>&#9;}<br><br>&#9;/* 目次タブを表示する */<br>&#9;::WinHelp( hwnd, lpszHelp, HELP_COMMAND, (unsigned long)"CONTENTS()" );<br>&#9;return;<br>}<br></div></section>
     <ul><li><section><h1 id=1672>
     <span class="no">[1672]</span>
-    <a class="title" href="#1672">Re:ヘルプ目次</a>
+    <a class="thread-title" href="#1672">Re:ヘルプ目次</a>
     <span class="author">やざき</span>
     <time datetime="2002-03-01T08:03:12">2002年03月01日 08:03</time></h1>
     <div class="body">▼ みくさん<br>ひとまず取り込んでみます。さんくす<br>WinHelp関連と、OSVERSIONINFO関連は、それぞれ1クラスにしたほうがいいかな？<br></div></section>

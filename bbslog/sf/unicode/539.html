@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>メニューバーの文字コード表示</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>メニューバーの文字コード表示 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">539</span>
-    <a class="title" href="539.html#539">メニューバーの文字コード表示</a></div>
+    <a class="thread-title" href="539.html#539">メニューバーの文字コード表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">541</span>
-    <a class="title" href="539.html#541">Re:メニューバーの文字コード表示</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=539>
+    <a class="thread-title" href="539.html#541">Re:メニューバーの文字コード表示</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=539>
     <span class="no">[539]</span>
-    <a class="title" href="#539">メニューバーの文字コード表示</a>
+    <a class="thread-title" href="#539">メニューバーの文字コード表示</a>
     <span class="author">ryoji</span>
     <time datetime="2008-06-29T08:47:01">2008年06月29日 08:47</time></h1>
     <div class="body">&gt;&gt;unicode:526にあるようにステータスバーの文字コード表示領域が拡大されていますが、ステータスバーを非表示にしたときにメニューバーに表示されるステータス領域は以前のままですね。コードが４文字以内なら「行：桁」の'：'の表示位置がずれないようになっているんですが、５文字以上になると増えた文字数だけ右にずれ、列番号の表示域が狭くなっていきます。<br>メニューバーのステータス領域を広げるか、広げると少々邪魔になるのでこのままにしておくか...、微妙なところですね。<br><br>メモ：<br>メニューバーの「行：桁」の'：'位置は、CCaret::ShowCaretPosInfo()関数内、CCaret.cpp(662-683)付近にある２つの auto_sprintf で調整しています。</div></section>
     <ul><li><section><h1 id=541>
     <span class="no">[541]</span>
-    <a class="title" href="#541">Re:メニューバーの文字コード表示</a>
+    <a class="thread-title" href="#541">Re:メニューバーの文字コード表示</a>
     <span class="author">Uchi</span>
     <time datetime="2008-06-29T19:05:50">2008年06月29日 19:05</time></h1>
     <div class="body">▼ ryojiさん<br>&gt; メニューバーのステータス領域を広げるか、広げると少々邪魔になるのでこのままにしておくか...、微妙なところですね。<br> メニューバーは狭いのでそのサイズにしています。<br>Unicodeのコードポイント表示であれば、BMPであれば5文字、<br>SJIS、JIS、EUCは現在サポートしている範囲で4文字ですので、<br>通常の使用方法では、問題にはならないとの判断です。<br>オーバーするのは、UTF-8での仮名、漢字等の表示、サロゲート領域の表示です。<br>これぐらいならば何とかなるか、ぐらいの感じです。<br>もし、UTF-8のバイト表示を多用するようであれば、あと2文字分程度広げた法がいいのかもしれませんが。<br>どうしましょうか？</div></section>

@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>コマンドライン -Y=num ＜バグ＞ フリーカーソル以外で</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>コマンドライン -Y=num ＜バグ＞ フリーカーソル以外で | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">6223</span>
-    <a class="title" href="6223.html#6223">コマンドライン -Y=num ＜バグ＞ フリーカーソル以外で</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=6223>
+    <a class="thread-title" href="6223.html#6223">コマンドライン -Y=num ＜バグ＞ フリーカーソル以外で</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=6223>
     <span class="no">[6223]</span>
-    <a class="title" href="#6223">コマンドライン -Y=num ＜バグ＞ フリーカーソル以外で</a>
+    <a class="thread-title" href="#6223">コマンドライン -Y=num ＜バグ＞ フリーカーソル以外で</a>
     <span class="author">山茶花</span>
     <time datetime="2007-08-17T13:54:14">2007年08月17日 13:54</time></h1>
     <div class="body">コマンドラインパラメータの -Y=num にバグがあります。<br>環境はサクラエディタ Ver. 1.5.17.0 (V 1310) on Windows 98/ME です。<br>行の長さが違うファイル file1.txt があって、桁の短い行が<br>４行目にあり、長い行が３行目あったとします。まずサクラエ<br>ディタをフリーカーソルでないように設定し、このファイルを<br>開き、４行目の改行以降に当たる３行目の桁位置へカーソルを<br>移動します。そして、<br>＞ sakura -Y=4 file1.txt<br>とすると、フリーカーソルでないのにカーソルが改行の次の位<br>置へきてしまいます。この状態で Backspace を押すと改行が<br>削除され行が連結ほか、Del を押すと次の行の先頭へ移動しま<br>す。<br>ファイルが開いている状態で<br>＞ sakura -Y=4 -X=500 file1.txt<br>と桁位置を越えてもこうなりますが、ファイルが開いていない<br>状態ではこうなりません。<br></div></section>

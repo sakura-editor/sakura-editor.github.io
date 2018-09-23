@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>整形の実現</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>整形の実現 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5743</span>
-    <a class="title" href="5743.html#5743">整形の実現</a></div>
+    <a class="thread-title" href="5743.html#5743">整形の実現</a></div>
     <ul><li><div class="list-title">
     <span class="no">5745</span>
-    <a class="title" href="5743.html#5745">RE: 整形の実現</a></div>
+    <a class="thread-title" href="5743.html#5745">RE: 整形の実現</a></div>
     <ul><li><div class="list-title">
     <span class="no">5765</span>
-    <a class="title" href="5743.html#5765">Re2: 整形の実現</a></div>
+    <a class="thread-title" href="5743.html#5765">Re2: 整形の実現</a></div>
     </li><li><div class="list-title">
     <span class="no">5766</span>
-    <a class="title" href="5743.html#5766">Re2: 整形の実現</a></div>
+    <a class="thread-title" href="5743.html#5766">Re2: 整形の実現</a></div>
     </li><li><div class="list-title">
     <span class="no">5767</span>
-    <a class="title" href="5743.html#5767">Re2: 整形の実現</a></div>
+    <a class="thread-title" href="5743.html#5767">Re2: 整形の実現</a></div>
     </li><li><div class="list-title">
     <span class="no">5768</span>
-    <a class="title" href="5743.html#5768">Re2: 整形の実現</a></div>
+    <a class="thread-title" href="5743.html#5768">Re2: 整形の実現</a></div>
     </li><li><div class="list-title">
     <span class="no">5769</span>
-    <a class="title" href="5743.html#5769">Re2: 整形の実現</a></div>
+    <a class="thread-title" href="5743.html#5769">Re2: 整形の実現</a></div>
     </li><li><div class="list-title">
     <span class="no">5770</span>
-    <a class="title" href="5743.html#5770">Re2: 整形の実現</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5743>
+    <a class="thread-title" href="5743.html#5770">Re2: 整形の実現</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5743>
     <span class="no">[5743]</span>
-    <a class="title" href="#5743">整形の実現</a>
+    <a class="thread-title" href="#5743">整形の実現</a>
     <span class="author">しまけん</span>
     <time datetime="2007-01-14T05:46:09">2007年01月14日 05:46</time></h1>
     <div class="body">Eclipse の format 機能のように、事前設定通りに整形するにはどうしたらいいでしょうか？<br><br>具体的に言うと、<br><br>Select USER_NAME, USER_id <br>from<br> t_users<br>where sal &gt;     10 and entry_date = (select entry_date from t_date where id = '9')<br><br>を<br><br>SELECT user_name<br>     , user_id<br>  FROM t_users<br> WHERE sal &gt; 10<br>   AND entry_date = ( SELECT entry_date<br>                        FROM t_date<br>                       WHERE id = '9'<br>                    )<br><br>というようにしたいです。<br>マクロを組むしかないですかね？<br></div></section>
     <ul><li><section><h1 id=5745>
     <span class="no">[5745]</span>
-    <a class="title" href="#5745">RE: 整形の実現</a>
+    <a class="thread-title" href="#5745">RE: 整形の実現</a>
     <span class="author">maru</span>
     <time datetime="2007-01-16T01:51:37">2007年01月16日 01:51</time></h1>
     <div class="body">&gt;Eclipse の format 機能のように、事前設定通りに整形するにはどうしたらいいでしょうか？<br>&gt;具体的に言うと～<br>なかなかお利巧な機能ですね。地道にマクロで挑戦するしか…。<br></div></section>
     <ul><li><section><h1 id=5765>
     <span class="no">[5765]</span>
-    <a class="title" href="#5765">Re2: 整形の実現</a>
+    <a class="thread-title" href="#5765">Re2: 整形の実現</a>
     <span class="author">すす</span>
     <time datetime="2007-01-25T12:06:29">2007年01月25日 12:06</time></h1>
     <div class="body">▼ maruさん<br>&gt; なかなかお利巧な機能ですね。地道にマクロで挑戦するしか…。<br>ppaマクロ初心者が書いたらこんなになりました。<br>びっくりするぐらい遅いです。<br><br>var<br>&#9;mess:String;&#9;&#9;&#9;&#9;&#9;&#9;// メッセージ出力用変数<br>&#9;org_str,target,w_str:String;&#9;&#9;// 文字保存用変数<br>&#9;tmp1,tmp2,w_tmp:String;&#9;&#9;&#9;&#9;// 文字判定用ワーク変数<br>&#9;CRLF,TAB:String;&#9;&#9;&#9;&#9;&#9;// 制御コード保持用変数<br>&#9;byte:Integer;&#9;&#9;&#9;&#9;&#9;&#9;// 変換対象文字列サイズ<br>&#9;pt:Integer;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// 変換対象文字列ポインター<br>&#9;t_flg:Integer;&#9;&#9;&#9;&#9;&#9;&#9;// インデント数<br>&#9;i_cnt:Integer;&#9;&#9;&#9;&#9;&#9;&#9;// インデント挿入用カウンター<br>&#9;f_flg:Integer;&#9;&#9;&#9;&#9;&#9;&#9;// '('のあと副問い合わせがある場合')'でインデント数を-2するフラグ<br>&#9;s_flg:Integer;&#9;&#9;&#9;&#9;&#9;&#9;// '('の前にキーワードがある場合改行するフラグ<br><br>begin<br>&#9;CRLF  := '<br>';<br>&#9;TAB  := '&#9;';<br>&#9;org_str := S_GetSelectedString(0);<br>&#9;byte := Length(org_str);<br>&#9;if (byte=0) then<br>&#9;&#9;begin<br>&#9;&#9;&#9;S_SelectAll();<br>&#9;&#9;&#9;org_str := S_GetSelectedString(0);<br>&#9;&#9;&#9;byte := Length(org_str);<br>&#9;&#9;end<br>&#9;;<br>&#9;pt := 1;<br>&#9;t_flg := 0;<br>&#9;f_flg := 0;<br>&#9;s_flg := 0;<br><br>&#9;target := '';<br>&#9;w_str := '';<br><br>&#9;while (pt &lt;= byte) do<br>&#9;begin<br>&#9;&#9;tmp1 := Copy(org_str,pt,1);<br>&#9;&#9;tmp2 := Copy(org_str,pt,2);<br>&#9;&#9;if ((tmp1=' ') or (tmp1=TAB) or (tmp1=',') or (tmp2 = CRLF) or (tmp1='(') or (tmp1=')') or (tmp1 = ';') ) then<br>&#9;&#9;&#9;begin<br></div></section>
     </li><li><section><h1 id=5766>
     <span class="no">[5766]</span>
-    <a class="title" href="#5766">Re2: 整形の実現</a>
+    <a class="thread-title" href="#5766">Re2: 整形の実現</a>
     <span class="author">すす</span>
     <time datetime="2007-01-25T12:44:10">2007年01月25日 12:44</time></h1>
     <div class="body">続き<br>&#9;&#9;&#9;&#9;w_tmp := LowerCase(Trim(w_str));<br>&#9;&#9;&#9;&#9;if ((w_tmp='select') or (w_tmp='update') or (w_tmp='commit') or (w_tmp='rollback') or (w_tmp='insert') or (w_tmp='delete') or (w_tmp='create') or (w_tmp='drop') or (w_tmp='truncate') or (w_tmp='alter')) then<br>&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;s_flg := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;if (f_flg&lt;&gt;0) then f_flg := 2;<br>&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;while (i_cnt &lt; t_flg) do<br>&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + TAB;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := i_cnt + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;end;<br>&#9;&#9;&#9;&#9;&#9;&#9;if ((w_tmp='select') or (w_tmp='update') or (w_tmp='commit') or (w_tmp='rollback')) then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;t_flg := t_flg + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str) + CRLF;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;else<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str) + ' ';<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;;<br>&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;else if ((w_tmp='values') or (w_tmp='set') or (w_tmp='from') or (w_tmp='where') or (w_tmp='having') or (w_tmp='group') or (w_tmp='order')) then<br>&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;if (w_tmp='values') then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9; &#9;&#9;s_flg := 2;<br>&#9;&#9;&#9;&#9;&#9;&#9; &#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9; else<br></div></section>
     </li><li><section><h1 id=5767>
     <span class="no">[5767]</span>
-    <a class="title" href="#5767">Re2: 整形の実現</a>
+    <a class="thread-title" href="#5767">Re2: 整形の実現</a>
     <span class="author">すす</span>
     <time datetime="2007-01-25T12:45:02">2007年01月25日 12:45</time></h1>
     <div class="body">続き<br>&#9;&#9;&#9;&#9;&#9;&#9; &#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9; &#9;&#9;s_flg := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + CRLF;<br>&#9;&#9;&#9;&#9;&#9;&#9; &#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9; ;<br>&#9;&#9;&#9;&#9;&#9;&#9;if (f_flg&lt;&gt;0) then f_flg := 2;<br>&#9;&#9;&#9;&#9;&#9;&#9;t_flg := t_flg - 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;while (i_cnt &lt; t_flg) do<br>&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + TAB;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := i_cnt + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;end;<br>&#9;&#9;&#9;&#9;&#9;&#9;if ((w_tmp='group') or (w_tmp='order')) then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str) + ' ';<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;else<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;t_flg := t_flg + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str) + CRLF;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;;<br>&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;else if ((w_tmp='and') or (w_tmp='or') or (w_tmp='table') or (w_tmp='view') or (w_tmp='index') or (w_tmp='by') or (w_tmp='into')) then<br>&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;s_flg := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;if ((w_tmp='table') or (w_tmp='view') or (w_tmp='index')) then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target :=target + Trim(w_str) + ' ';<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;else if ((w_tmp='by') or (w_tmp='into')) then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str) + CRLF;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;t_flg := t_flg + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br></div></section>
     </li><li><section><h1 id=5768>
     <span class="no">[5768]</span>
-    <a class="title" href="#5768">Re2: 整形の実現</a>
+    <a class="thread-title" href="#5768">Re2: 整形の実現</a>
     <span class="author">すす</span>
     <time datetime="2007-01-25T12:45:49">2007年01月25日 12:45</time></h1>
     <div class="body">続き<br><br>&#9;&#9;&#9;&#9;&#9;&#9;else<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target :=target + ' ' + Trim(w_str) + CRLF;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;;<br>&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;else if (tmp1=',') then<br>&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;s_flg := 2;<br>&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;while (i_cnt &lt; t_flg) do<br>&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + TAB;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := i_cnt + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;end;<br>&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str) + tmp1 + CRLF;<br>&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;else if (tmp1='(') then<br>&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;f_flg := 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;if (s_flg=1) then target := target + CRLF;<br>&#9;&#9;&#9;&#9;&#9;&#9;if (Length(w_tmp) &lt;&gt; 0) then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;s_flg := 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;while (i_cnt &lt; t_flg) do<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + TAB;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := i_cnt + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;end;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str) + CRLF;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;;<br>&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;while (i_cnt &lt; t_flg) do<br>&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + TAB;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := i_cnt + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;end;<br>&#9;&#9;&#9;&#9;&#9;&#9;t_flg := t_flg + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;target := target + tmp1 + CRLF;<br>&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;else if (tmp1=')') then<br></div></section>
     </li><li><section><h1 id=5769>
     <span class="no">[5769]</span>
-    <a class="title" href="#5769">Re2: 整形の実現</a>
+    <a class="thread-title" href="#5769">Re2: 整形の実現</a>
     <span class="author">すす</span>
     <time datetime="2007-01-25T12:46:42">2007年01月25日 12:46</time></h1>
     <div class="body">続き<br>&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;if (Length(w_tmp) &lt;&gt; 0) then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;while (i_cnt &lt; t_flg) do<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + TAB;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := i_cnt + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;end;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;;<br>&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str) + CRLF;<br>// mess := 'f_flg[' +inttostr(f_flg) + ']' + target + CRLF;<br>// MessageBox(mess,'選択中の文字列',0);<br>&#9;&#9;&#9;&#9;&#9;&#9;if (f_flg=2) then t_flg := t_flg - 2 else t_flg := t_flg - 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;while (i_cnt &lt; t_flg) do<br>&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + TAB;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := i_cnt + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;end;<br>&#9;&#9;&#9;&#9;&#9;&#9;target := target + tmp1 + CRLF;<br>&#9;&#9;&#9;&#9;&#9;&#9;if (t_flg&lt;0) then t_flg := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;f_flg := 0;<br>&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;else if (tmp1=';') then<br>&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;if (Length(w_tmp) &lt;&gt; 0) then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;while (i_cnt &lt; t_flg) do<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + TAB;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := i_cnt + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;end;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;;<br>&#9;&#9;&#9;&#9;&#9;&#9;t_flg := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;f_flg := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;s_flg := 0;<br></div></section>
     </li><li><section><h1 id=5770>
     <span class="no">[5770]</span>
-    <a class="title" href="#5770">Re2: 整形の実現</a>
+    <a class="thread-title" href="#5770">Re2: 整形の実現</a>
     <span class="author">すす</span>
     <time datetime="2007-01-25T12:47:17">2007年01月25日 12:47</time></h1>
     <div class="body">最後<br>&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str) + ';' + CRLF;<br>&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;else<br>&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;if (Length(w_tmp) &lt;&gt; 0) then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;while (i_cnt &lt; t_flg) do<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + TAB;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;i_cnt := i_cnt + 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;end;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;;<br>&#9;&#9;&#9;&#9;&#9;&#9;if (tmp2 = CRLF) then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str);<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;if (Length(w_tmp) &lt;&gt; 0) then s_flg := 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;else<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;if ((tmp1&lt;&gt;TAB) and (tmp1&lt;&gt;' ')) then<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str) + tmp1;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;s_flg := 0;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;else<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;target := target + Trim(w_str);<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;if (s_flg&lt;&gt;2) then s_flg := 1;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;;<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;&#9;&#9;;<br>&#9;&#9;&#9;&#9;&#9;end<br>&#9;&#9;&#9;&#9;;<br>&#9;&#9;&#9;&#9;w_str := '';<br>&#9;&#9;&#9;end<br>&#9;&#9;else<br>&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;w_str := w_str + tmp1;<br>&#9;&#9;&#9;end<br>&#9;&#9;;<br>&#9;&#9;pt := pt + 1;<br>&#9;end;<br>&#9;if (w_str&lt;&gt;'') then target := target + Trim(w_str);<br>&#9;target := target + CRLF;<br>&#9;S_Delete();<br>&#9;S_InsText(target);<br>end;<br></div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix) CEditAppの解放忘れ修正</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告:(Fix) CEditAppの解放忘れ修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">298</span>
-    <a class="title" href="298.html#298">Commit報告:(Fix) CEditAppの解放忘れ修正</a></div>
+    <a class="thread-title" href="298.html#298">Commit報告:(Fix) CEditAppの解放忘れ修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">303</span>
-    <a class="title" href="298.html#303">Re:Commit報告:(Fix) CEditAppの解放忘れ修正</a></div>
+    <a class="thread-title" href="298.html#303">Re:Commit報告:(Fix) CEditAppの解放忘れ修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">307</span>
-    <a class="title" href="298.html#307">Re2:Commit報告:(Fix) CEditAppの解放忘れ修正</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=298>
+    <a class="thread-title" href="298.html#307">Re2:Commit報告:(Fix) CEditAppの解放忘れ修正</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=298>
     <span class="no">[298]</span>
-    <a class="title" href="#298">Commit報告:(Fix) CEditAppの解放忘れ修正</a>
+    <a class="thread-title" href="#298">Commit報告:(Fix) CEditAppの解放忘れ修正</a>
     <span class="author">kobake</span>
     <time datetime="2008-04-20T12:25:11">2008年04月20日 12:25</time></h1>
     <div class="body">リビジョン：<br>　rev1287<br><br>変更種別：<br>　バグ修正。（ユーザ視点では変化無し）<br><br>内容：<br>　アプリ終了時に CEditApp を解放するのを忘れていたので、解放するように修正。<br><br>メモリをはじめとする消費リソースは、アプリ終了時にOSが勝手に解放してくれるので、<br>なんとか大丈夫な状態でした。<br>が、明示的に解放しないと気分的に気持ち悪いので、修正。<br></div></section>
     <ul><li><section><h1 id=303>
     <span class="no">[303]</span>
-    <a class="title" href="#303">Re:Commit報告:(Fix) CEditAppの解放忘れ修正</a>
+    <a class="thread-title" href="#303">Re:Commit報告:(Fix) CEditAppの解放忘れ修正</a>
     <span class="author">Uchi</span>
     <time datetime="2008-04-20T16:11:51">2008年04月20日 16:11</time></h1>
     <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1287<br>不具合報告をさせていただきます。<br>1) Grep で『ファイル毎』を指定した結果の『ファイル名』（行ではなく）をダブルクリックすると、ディレクトリ指定部が重複したファイルを開こうとし、<br>        上記ファイル名は不正です。…<br>    のエラーメッセージが表示されます。<br>    （行のダブルクリックはOKです）<br>2) Grepで『オプション』（『単語単位で探す』等）の設定が利かない。<br>    Grep画面内でのGrepは問題なし。他のファイルからのGrepで発生する。<br>    Grep 呼び出しのとき -GOPT=が設定されていないようです。<br>    以前に報告し、修正されたのを確認したと思ったのですが、再発したのでしょうか？<br>3) 拡張子にかかわらず、起動直後は『基本』で表示される。<br>    内部的な選択は拡張子で設定されているようです。<br>    『上書き保存』等を行うと選択された『タイプ別設定』で再表示されます。<br>    286の1)で報告したものはこれのようです。<br>4) ファイルを閉じるときに落ちる。<br>        問題が発生したため、sakuraW.exeを終了します。…<br>    のメッセージが出ます。<br>    exeでダウンロードした物では発生せず、SVNでチェックアウトしコンパイルしたもので発生します。<br>    コンパイル環境 Visual C++ 2005 Express Edition<br>以上4点です。<br>参考にしてください。<br>4) に関してはおそらくそちらでは再現しない可能性が高そうなので、こちらで少しデバッグしてみます。</div></section>
     <ul><li><section><h1 id=307>
     <span class="no">[307]</span>
-    <a class="title" href="#307">Re2:Commit報告:(Fix) CEditAppの解放忘れ修正</a>
+    <a class="thread-title" href="#307">Re2:Commit報告:(Fix) CEditAppの解放忘れ修正</a>
     <span class="author">Uchi</span>
     <time datetime="2008-04-20T20:50:51">2008年04月20日 20:50</time></h1>
     <div class="body">&gt; 4) ファイルを閉じるときに落ちる。<br>&gt;         問題が発生したため、sakuraW.exeを終了します。…<br>&gt;     のメッセージが出ます。<br>&gt;     exeでダウンロードした物では発生せず、SVNでチェックアウトしコンパイルしたもので発生します。<br>&gt;     コンパイル環境 Visual C++ 2005 Express Edition<br>CEditApp のデストラクタの破棄順番の問題だと思います。<br><br>CEditApp.cpp のデストラクタを以下のように変更しいただけたら思います。<br><br>CEditApp::~CEditApp()<br>{<br>    delete m_pcSMacroMgr;<br>    delete m_pcPropertyManager;<br>    delete m_pcMruListener;<br>//  delete m_pcEditWnd;     // move to<br>    delete m_pcGrepAgent;<br>    delete m_pcVisualProgress;<br>    delete m_pcSaveAgent;<br>    delete m_pcLoadAgent;<br>    delete m_pcEditDoc;     // この中で m_pcEditWnd を使用しています。<br>    delete m_pcEditWnd;     // move from<br>}<br></div></section>

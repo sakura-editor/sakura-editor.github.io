@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>テキストの改行を取りたいのですが・・・</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>テキストの改行を取りたいのですが・・・ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">385</span>
-    <a class="title" href="385.html#385">テキストの改行を取りたいのですが・・・</a></div>
+    <a class="thread-title" href="385.html#385">テキストの改行を取りたいのですが・・・</a></div>
     <ul><li><div class="list-title">
     <span class="no">386</span>
-    <a class="title" href="385.html#386">RE: テキストの改行を取りたいのですが・・・</a></div>
+    <a class="thread-title" href="385.html#386">RE: テキストの改行を取りたいのですが・・・</a></div>
     <ul><li><div class="list-title">
     <span class="no">387</span>
-    <a class="title" href="385.html#387">Re2: テキストの改行を取りたいのですが・・・</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=385>
+    <a class="thread-title" href="385.html#387">Re2: テキストの改行を取りたいのですが・・・</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=385>
     <span class="no">[385]</span>
-    <a class="title" href="#385">テキストの改行を取りたいのですが・・・</a>
+    <a class="thread-title" href="#385">テキストの改行を取りたいのですが・・・</a>
     <span class="author">naka</span>
     <time datetime="2007-08-19T11:47:14">2007年08月19日 11:47</time></h1>
     <div class="body">テキスト用に使っています。<br>選択した範囲の改行を取りたいのですがどなたか教えていただけませんか。<br><br>ＡＡＡＡＡＡＡ<br>ＢＢＢＢＢＢＢＢ<br>ＣＣＣＣ<br>ＤＤＤＤＤＤＤ<br><br>これを<br><br>ＡＡＡＡＡＡＡＢＢＢＢＢＢＢＢＣＣＣＣＤＤＤＤＤＤＤ<br><br>というように改行なしにしたいと思うのですが<br>宜しくお願いいたします。</div></section>
     <ul><li><section><h1 id=386>
     <span class="no">[386]</span>
-    <a class="title" href="#386">RE: テキストの改行を取りたいのですが・・・</a>
+    <a class="thread-title" href="#386">RE: テキストの改行を取りたいのですが・・・</a>
     <span class="author">すい</span>
     <time datetime="2007-08-19T16:10:45">2007年08月19日 16:10</time></h1>
     <div class="body">普通に置換するだけで ok ですね、処理としては。<br><br>範囲選択してから置換ダイアログを出して、<br><br>・置換前(N)：[\r\n]+<br>・置換後(P)：<br><br>・正規表現(E) ←チェックon<br><br>・範囲<br>　　選択範囲(S) ←を選択する<br><br>の状態で [すべて置換(A)] する。<br><br>マクロ化したいなら、「キーマクロ記録開始」してから<br>置換ダイアログ出して上記設定で [すべて置換(A)] してから<br>「キーマクロの記録終了」すれば RECKEY.MAC にマクロ化<br>されますので、あとは好きな名前に変えて使えばよし。<br><br>↓こうなるハズ<br>-----<br>//キーボードマクロのファイル<br><br>// 選択範囲の改行を削除する。<br><br>S_ReplaceAll( '[\\r\\n]+' , '' , 148 );&#9;// 148=1001.0100(2進数)<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// ↑bit7：選択範囲<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// ↑bit4：置換ダイアログを自動的に閉じる<br>&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// ↑bit2：正規表現<br>S_ReDraw(0);&#9;// 再描画<br>-----<br></div></section>
     <ul><li><section><h1 id=387>
     <span class="no">[387]</span>
-    <a class="title" href="#387">Re2: テキストの改行を取りたいのですが・・・</a>
+    <a class="thread-title" href="#387">Re2: テキストの改行を取りたいのですが・・・</a>
     <span class="author">naka</span>
     <time datetime="2007-08-20T14:36:49">2007年08月20日 14:36</time></h1>
     <div class="body">すいさん<br><br>ありがとうございました。<br>助かりました。<br><br>naka<br><br><br>▼ すいさん<br><br><br>&gt; 普通に置換するだけで ok ですね、処理としては。<br>&gt; <br>&gt; 範囲選択してから置換ダイアログを出して、<br>&gt; <br>&gt; ・置換前(N)：[\r\n]+<br>&gt; ・置換後(P)：<br>&gt; <br>&gt; ・正規表現(E) ←チェックon<br>&gt; <br>&gt; ・範囲<br>&gt; 　　選択範囲(S) ←を選択する<br>&gt; <br>&gt; の状態で [すべて置換(A)] する。<br>&gt; <br>&gt; マクロ化したいなら、「キーマクロ記録開始」してから<br>&gt; 置換ダイアログ出して上記設定で [すべて置換(A)] してから<br>&gt; 「キーマクロの記録終了」すれば RECKEY.MAC にマクロ化<br>&gt; されますので、あとは好きな名前に変えて使えばよし。<br>&gt; <br>&gt; ↓こうなるハズ<br>&gt; -----<br>&gt; //キーボードマクロのファイル<br>&gt; <br>&gt; // 選択範囲の改行を削除する。<br>&gt; <br>&gt; S_ReplaceAll( '[\\r\\n]+' , '' , 148 );&#9;// 148=1001.0100(2進数)<br>&gt; &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// ↑bit7：選択範囲<br>&gt; &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// ↑bit4：置換ダイアログを自動的に閉じる<br>&gt; &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// ↑bit2：正規表現<br>&gt; S_ReDraw(0);&#9;// 再描画<br>&gt; -----</div></section>

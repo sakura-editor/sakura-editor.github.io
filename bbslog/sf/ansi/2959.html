@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現ライブラリの不具合</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現ライブラリの不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2959</span>
-    <a class="title" href="2959.html#2959">正規表現ライブラリの不具合</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=2959>
+    <a class="thread-title" href="2959.html#2959">正規表現ライブラリの不具合</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=2959>
     <span class="no">[2959]</span>
-    <a class="title" href="#2959">正規表現ライブラリの不具合</a>
+    <a class="thread-title" href="#2959">正規表現ライブラリの不具合</a>
     <span class="author">げんた</span>
     <time datetime="2003-07-21T03:35:28">2003年07月21日 03:35</time></h1>
     <div class="body"><a href=http://www.fides.dti.ne.jp/~oka-t/history-2001.html target=_top><nobr>http://<wbr>www.<wbr>fides.<wbr>dti.<wbr>ne.<wbr>jp/~<wbr>oka-<wbr>t/<wbr>history-<wbr>2001.<wbr>html</nobr></a><br>でPerlの正規表現の不具合について触れられていた．<br><br>試してみると確かに<br>::1234::5678901234567890::::1234567890::<br>888:<br>に対して<br>^([0-9]+|::)*$<br>で検索するとフリーズする．（よい子は真似をしないでください）<br><br>Perl 5.8ではフリーズしなかった．<br></div></section>

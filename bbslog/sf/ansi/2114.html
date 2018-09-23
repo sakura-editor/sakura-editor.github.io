@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>UnicodeBigEndian対応について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>UnicodeBigEndian対応について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2114</span>
-    <a class="title" href="2114.html#2114">UnicodeBigEndian対応について</a></div>
+    <a class="thread-title" href="2114.html#2114">UnicodeBigEndian対応について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2116</span>
-    <a class="title" href="2114.html#2116">RE: UnicodeBigEndian対応について</a></div>
+    <a class="thread-title" href="2114.html#2116">RE: UnicodeBigEndian対応について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2123</span>
-    <a class="title" href="2114.html#2123">RE: UnicodeBigEndian対応について</a></div>
+    <a class="thread-title" href="2114.html#2123">RE: UnicodeBigEndian対応について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2124</span>
-    <a class="title" href="2114.html#2124">Re3: UnicodeBigEndian対応について</a></div>
+    <a class="thread-title" href="2114.html#2124">Re3: UnicodeBigEndian対応について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2135</span>
-    <a class="title" href="2114.html#2135">RE: Re4: UnicodeBigEndian対応について</a></div>
+    <a class="thread-title" href="2114.html#2135">RE: Re4: UnicodeBigEndian対応について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2153</span>
-    <a class="title" href="2114.html#2153">Re5: UnicodeBigEndian対応について</a></div>
+    <a class="thread-title" href="2114.html#2153">Re5: UnicodeBigEndian対応について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2154</span>
-    <a class="title" href="2114.html#2154">Re6: UnicodeBigEndian対応について</a></div>
+    <a class="thread-title" href="2114.html#2154">Re6: UnicodeBigEndian対応について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2158</span>
-    <a class="title" href="2114.html#2158">Re7: UnicodeBigEndian対応について</a></div>
+    <a class="thread-title" href="2114.html#2158">Re7: UnicodeBigEndian対応について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2176</span>
-    <a class="title" href="2114.html#2176">Re8: UnicodeBigEndian対応について</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2114>
+    <a class="thread-title" href="2114.html#2176">Re8: UnicodeBigEndian対応について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2114>
     <span class="no">[2114]</span>
-    <a class="title" href="#2114">UnicodeBigEndian対応について</a>
+    <a class="thread-title" href="#2114">UnicodeBigEndian対応について</a>
     <span class="author">もか</span>
     <time datetime="2002-05-27T12:24:50">2002年05月27日 12:24</time></h1>
     <div class="body"> 現在UnicodeBigEndianの対応をしようと思っています<br> そこでいくつか分からないことがあるので教えてください。＞みなさま<br><br>・CMemory<br> 最近 NULL終端のことや、文字コード系の話題が出てますが、<br> 近いうちにクラスの構造が変わるなどの予定などはあるんですか？<br><br>・影響する範囲<br> おまけも含めて、変更を加えたファイルが現時点で26個あり、<br> その景況範囲が計り知れない<br><br>・その他<br> ソースを変更するときの決まり事などはありますか？<br></div></section>
     <ul><li><section><h1 id=2116>
     <span class="no">[2116]</span>
-    <a class="title" href="#2116">RE: UnicodeBigEndian対応について</a>
+    <a class="thread-title" href="#2116">RE: UnicodeBigEndian対応について</a>
     <span class="author">やざき</span>
     <time datetime="2002-05-27T13:13:07">2002年05月27日 13:13</time></h1>
     <div class="body"><br>&gt;・CMemory<br>&gt; 最近 NULL終端のことや、文字コード系の話題が出てますが、<br>&gt; 近いうちにクラスの構造が変わるなどの予定などはあるんですか？<br><br>NULL終端はCMemoryとは別の話なので、安心してくださいまし。<br>みくさんのパッチをまだ取り込んでいないので、その辺だけでしょうか。<br>文字コード系というのは何のことだろう？<br><br><br>&gt;・影響する範囲<br>&gt; おまけも含めて、変更を加えたファイルが現時点で26個あり、<br>&gt; その景況範囲が計り知れない<br><br>むぎゅ。慎重にどうぞよろしく(笑)<br><br><br>&gt;・その他<br>&gt; ソースを変更するときの決まり事などはありますか？<br><br>うーん。なるべく周りと書きかたを合わせて欲しい。<br><br>ということで、どうぞよろしく!!<br><br>最近いろいろとパッチを出してもらったりexeを出してもらって感謝感謝!!<br>はやいうちにまとめて出しなおそうと思っているので、しばし待たれよ!! &gt; みなさま<br>ごめんなさい。。。<br></div></section>
     <ul><li><section><h1 id=2123>
     <span class="no">[2123]</span>
-    <a class="title" href="#2123">RE: UnicodeBigEndian対応について</a>
+    <a class="thread-title" href="#2123">RE: UnicodeBigEndian対応について</a>
     <span class="author">もか</span>
     <time datetime="2002-05-30T22:59:14">2002年05月30日 22:59</time></h1>
     <div class="body"><br>アップロードしました。<br><br>アイコンがありませんが、できれば適当に作っていただけるとうれしいです<br><br> egroups/source/UniBE0520-0530.zip<br></div></section>
     <ul><li><section><h1 id=2124>
     <span class="no">[2124]</span>
-    <a class="title" href="#2124">Re3: UnicodeBigEndian対応について</a>
+    <a class="thread-title" href="#2124">Re3: UnicodeBigEndian対応について</a>
     <span class="author">もか</span>
     <time datetime="2002-05-31T15:42:57">2002年05月31日 15:42</time></h1>
     <div class="body"><br>&gt;アイコンがありませんが、できれば適当に作っていただけるとうれしいです<br><br>こう書いていますが、自分で作りました.<br>"もし各自で利用する場合はアイコンは各自で作って使ってくれると嬉しいです"<br>もとはこのような意味で書いたんですが、読み返したらアイコン作れと言っているようにも読み取れるので補足します。。<br>言葉足らずですみません。<br><br>各所に点在していた文字コード名はgm_pszCodeNameArr_1 / 2 / 3 を利用するように変更したんですが、UnicodeBEの追加とともに<br>gm_pszCodeNameArr_3 を "[SJIS]"  -&gt;  "  [SJIS]"<br>のようにスペースから始まる文字列に仕様変更しています。<br>自分で見ても変な感じなので、やっぱり変でしょうか<br><br>なお、同時に文字コード絡み以外でいくつかの修正をしています<br><br>・スクロールバー構造体のnTrackPosの扱いが変だったのを修正<br>・同じ構造体の fMask SIF_ALL -&gt; SIF_PAGE | SIF_POS | SIF_RANGE に変更<br>&#9;SIF_DISABLENOSCROLLはコメントアウトしてあります<br>・辞書Tipの右クリックで&amp;の考慮<br>・辞書Tipをクリップボードにコピーする時 \nをCRLEに変換<br><br> 今すぐには取り込まないようお願いします<br></div></section>
     <ul><li><section><h1 id=2135>
     <span class="no">[2135]</span>
-    <a class="title" href="#2135">RE: Re4: UnicodeBigEndian対応について</a>
+    <a class="thread-title" href="#2135">RE: Re4: UnicodeBigEndian対応について</a>
     <span class="author">もか</span>
     <time datetime="2002-06-03T12:29:58">2002年06月03日 12:29</time></h1>
     <div class="body"><br>SIF_DISABLENOSCROLLのコメントアウトを外す<br>アイコン追加<br><br>ssrc_2002-05-20 からの差分です<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/UniBe_0520-0602.diff<br></div></section>
     <ul><li><section><h1 id=2153>
     <span class="no">[2153]</span>
-    <a class="title" href="#2153">Re5: UnicodeBigEndian対応について</a>
+    <a class="thread-title" href="#2153">Re5: UnicodeBigEndian対応について</a>
     <span class="author">もか</span>
     <time datetime="2002-06-06T14:49:29">2002年06月06日 14:49</time></h1>
     <div class="body"><br>ssrc_2002-06-05 からの差分にしました<br><br>・前回までのパッチで、1箇所 CODE_JIS と CODE_SJIS を間違えていたのを修正<br>・そのほかちょこちょこ修正<br><br>問題点<br>・需要がなさそう<br>・大きいファイルを開くときに他の文字コード変換にくらべ効率が悪い<br>・あいかわらずBOMなしファイルは自動判定できない<br><br>と問題が多いですが最終更新にする予定です。<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/UniBE0605-0606.zip<br><br>#もし取り込んでもらえるようなら作業のほうよろしくお願いします<br></div></section>
     <ul><li><section><h1 id=2154>
     <span class="no">[2154]</span>
-    <a class="title" href="#2154">Re6: UnicodeBigEndian対応について</a>
+    <a class="thread-title" href="#2154">Re6: UnicodeBigEndian対応について</a>
     <span class="author">やざき</span>
     <time datetime="2002-06-06T15:31:31">2002年06月06日 15:31</time></h1>
     <div class="body"><br>&gt;問題点<br>&gt;・需要がなさそう<br>&gt;・大きいファイルを開くときに他の文字コード変換にくらべ効率が悪い<br>&gt;・あいかわらずBOMなしファイルは自動判定できない<br>&gt;<br>&gt;と問題が多いですが最終更新にする予定です。<br>&gt;<br>&gt;http://www.egroups.co.jp/files/sakura-editor/Developer/Source/UniBE0605-0606.zip<br>&gt;<br>&gt;#もし取り込んでもらえるようなら作業のほうよろしくお願いします<br><br>ありがとうございますっ。次回取り込みます。より多くの人が使うようになれば、より多くの人がコードを見ることになるでしょう。<br>期待しましょう。ということで、取り込み後に何か出てきたら、どうぞよろしくおねがいします(^-^)<br></div></section>
     <ul><li><section><h1 id=2158>
     <span class="no">[2158]</span>
-    <a class="title" href="#2158">Re7: UnicodeBigEndian対応について</a>
+    <a class="thread-title" href="#2158">Re7: UnicodeBigEndian対応について</a>
     <span class="author">もか</span>
     <time datetime="2002-06-07T09:00:13">2002年06月07日 09:00</time></h1>
     <div class="body"><br>0バイトのファイルを開くとNULLポインタを参照して落ちるバグを含んでました<br><br> CDocLineMgr.cpp (600行目付近)<br>  IsUnicodeBom( (const unsigned char*)pBuf, 3 ) <br>    ↓<br>  IsUnicodeBom( (const unsigned char*)pBuf, nFileLength )<br><br> に変えれば大丈夫だと思います<br> <br> お手数かけます。m(_ _)m<br><br>下の差分は安全性向上のため他数箇所変えました<br><br> http://www.egroups.co.jp/files/sakura-editor/Developer/Source/UniBE0605-0607.zip<br></div></section>
     <ul><li><section><h1 id=2176>
     <span class="no">[2176]</span>
-    <a class="title" href="#2176">Re8: UnicodeBigEndian対応について</a>
+    <a class="thread-title" href="#2176">Re8: UnicodeBigEndian対応について</a>
     <span class="author">やざき</span>
     <time datetime="2002-06-17T23:52:23">2002年06月17日 23:52</time></h1>
     <div class="body"><br>取り込みましたー。<br></div></section>

@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>特定文字行の特定文字以降を削除したい。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>特定文字行の特定文字以降を削除したい。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">566</span>
-    <a class="title" href="566.html#566">特定文字行の特定文字以降を削除したい。</a></div>
+    <a class="thread-title" href="566.html#566">特定文字行の特定文字以降を削除したい。</a></div>
     <ul><li><div class="list-title">
     <span class="no">567</span>
-    <a class="title" href="566.html#567">Re:特定文字行の特定文字以降を削除したい。</a></div>
+    <a class="thread-title" href="566.html#567">Re:特定文字行の特定文字以降を削除したい。</a></div>
     <ul><li><div class="list-title">
     <span class="no">568</span>
-    <a class="title" href="566.html#568">Re2:特定文字行の特定文字以降を削除したい。</a></div>
+    <a class="thread-title" href="566.html#568">Re2:特定文字行の特定文字以降を削除したい。</a></div>
     <ul><li><div class="list-title">
     <span class="no">569</span>
-    <a class="title" href="566.html#569">Re3:特定文字行の特定文字以降を削除したい。</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=566>
+    <a class="thread-title" href="566.html#569">Re3:特定文字行の特定文字以降を削除したい。</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=566>
     <span class="no">[566]</span>
-    <a class="title" href="#566">特定文字行の特定文字以降を削除したい。</a>
+    <a class="thread-title" href="#566">特定文字行の特定文字以降を削除したい。</a>
     <span class="author">さいとう</span>
     <time datetime="2013-04-21T11:49:12">2013年04月21日 11:49</time></h1>
     <div class="body">お世話になります。<br>ネットの世界を探してみたんですが、見当たらなかったので、こちらで質問させて頂きます。<br>（探し方が悪かったらごめんなさい）<br><br>例：/ABC/DEFGHIJKLM/OPQRSTU.A<br><br>２万行ある中から、上記の先頭４文字「ABC/」該当する行の最後の<br>「.A」のみ削除したいのですが、マクロで対応可能でしょうか？<br><br>すみませんが、どなたかご存知の方がいらっしゃいましたら、お教え下さい。<br>よろしくお願いします。</div></section>
     <ul><li><section><h1 id=567>
     <span class="no">[567]</span>
-    <a class="title" href="#567">Re:特定文字行の特定文字以降を削除したい。</a>
+    <a class="thread-title" href="#567">Re:特定文字行の特定文字以降を削除したい。</a>
     <span class="author">novice</span>
     <time datetime="2013-04-21T16:59:25">2013年04月21日 16:59</time></h1>
     <div class="body">▼ さいとうさん<br>&gt; 例：/ABC/DEFGHIJKLM/OPQRSTU.A<br>&gt; <br>&gt; ２万行ある中から、上記の先頭４文字「ABC/」該当する行の最後の<br>&gt; 「.A」のみ削除したいのですが、マクロで対応可能でしょうか？<br><br>マクロ関数のS_ReplaceAll()を使えば実現可能と思います。<br><a href=http://www.geocities.jp/maru3128/SakuraMacro/reference/find/S_ReplaceAll.html target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>maru3128<wbr>/<wbr>SakuraMa<wbr>cro/<wbr>referenc<wbr>e/<wbr>find/<wbr>S_Replac<wbr>eAll.<wbr>html</nobr></a><br></div></section>
     <ul><li><section><h1 id=568>
     <span class="no">[568]</span>
-    <a class="title" href="#568">Re2:特定文字行の特定文字以降を削除したい。</a>
+    <a class="thread-title" href="#568">Re2:特定文字行の特定文字以降を削除したい。</a>
     <span class="author">さいとう</span>
     <time datetime="2013-04-21T19:33:21">2013年04月21日 19:33</time></h1>
     <div class="body">▼ noviceさん<br>&gt; ▼ さいとうさん<br>&gt; &gt; 例：/ABC/DEFGHIJKLM/OPQRSTU.A<br>&gt; &gt; <br>&gt; &gt; ２万行ある中から、上記の先頭４文字「ABC/」該当する行の最後の<br>&gt; &gt; 「.A」のみ削除したいのですが、マクロで対応可能でしょうか？<br>&gt; <br>&gt; マクロ関数のS_ReplaceAll()を使えば実現可能と思います。<br>&gt; <a href=http://www.geocities.jp/maru3128/SakuraMacro/reference/find/S_ReplaceAll.html target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>maru3128<wbr>/<wbr>SakuraMa<wbr>cro/<wbr>referenc<wbr>e/<wbr>find/<wbr>S_Replac<wbr>eAll.<wbr>html</nobr></a><br><br>早速のレス有り難うございます。<br>確認してみます。<br></div></section>
     <ul><li><section><h1 id=569>
     <span class="no">[569]</span>
-    <a class="title" href="#569">Re3:特定文字行の特定文字以降を削除したい。</a>
+    <a class="thread-title" href="#569">Re3:特定文字行の特定文字以降を削除したい。</a>
     <span class="author">もか</span>
     <time datetime="2013-04-21T20:38:30">2013年04月21日 20:38</time></h1>
     <div class="body">正規表現の置換で、<br>置換前：^(/ABC/.+)\.A<br>置換後：$1<br>と書くだけでできそうな気がします。<br>マクロで書くところの<br>S_ReplaceAll('^(/ABC/.+)\\.A', '$1', 38);<br>です。<br></div></section>

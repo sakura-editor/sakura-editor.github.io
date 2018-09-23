@@ -1,72 +1,98 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ報告</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バグ報告 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7626</span>
-    <a class="title" href="7626.html#7626">バグ報告</a></div>
+    <a class="thread-title" href="7626.html#7626">バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">7628</span>
-    <a class="title" href="7626.html#7628">RE: バグ報告</a></div>
+    <a class="thread-title" href="7626.html#7628">RE: バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">7629</span>
-    <a class="title" href="7626.html#7629">RE2: バグ報告</a></div>
+    <a class="thread-title" href="7626.html#7629">RE2: バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">7630</span>
-    <a class="title" href="7626.html#7630">RE3: バグ報告</a></div>
+    <a class="thread-title" href="7626.html#7630">RE3: バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">7633</span>
-    <a class="title" href="7626.html#7633">Re4: バグ報告</a></div>
+    <a class="thread-title" href="7626.html#7633">Re4: バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">7640</span>
-    <a class="title" href="7626.html#7640">Re5: バグ報告</a></div>
+    <a class="thread-title" href="7626.html#7640">Re5: バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">7643</span>
-    <a class="title" href="7626.html#7643">Re6: バグ報告</a></div>
+    <a class="thread-title" href="7626.html#7643">Re6: バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">7644</span>
-    <a class="title" href="7626.html#7644">Re7: バグ報告</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7626>
+    <a class="thread-title" href="7626.html#7644">Re7: バグ報告</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7626>
     <span class="no">[7626]</span>
-    <a class="title" href="#7626">バグ報告</a>
+    <a class="thread-title" href="#7626">バグ報告</a>
     <span class="author">mariko</span>
     <time datetime="2013-05-12T07:59:33">2013年05月12日 07:59</time></h1>
     <div class="body">モナッシュ大学のedictの辞書ファイル(<a href=http://ftp.monash.edu.au/pub/nihongo/00INDEX.html) target=_top><nobr>http://<wbr>ftp.<wbr>monash.<wbr>edu.<wbr>au/<wbr>pub/<wbr>nihongo/<wbr>00INDEX.<wbr>html)<wbr></nobr></a>を，<br>PDICとatok用の和英辞書に変換して利用しています。<br>元のedict.zipファイルは文字コードecu-jp,改行コードLFで，<br>これを文字コードSJIS，改行コードCR＋LFに変換する必要があります。<br>edictファイルを開き，文字コード, 改行コードを変えて，ファイル名を<br>edict for pdic.txtで保存しようとすると，エディタがフリーズしてしまいます。<br>xyzzyでは問題がなく，行えます。<br><br>OS: windows 7 HP<br>sakura: v.2.0.7.1<br><br>よろしくお願いします。</div></section>
     <ul><li><section><h1 id=7628>
     <span class="no">[7628]</span>
-    <a class="title" href="#7628">RE: バグ報告</a>
+    <a class="thread-title" href="#7628">RE: バグ報告</a>
     <span class="author">もか</span>
     <time datetime="2013-05-12T10:43:48">2013年05月12日 10:43</time></h1>
     <div class="body">edictファイルはこれでしょうか。<br>http://ftp.monash.edu.au/pub/nihongo/edict.zip<br>うちでは sakura 2.0.7.1 だと8秒ぐらいでできました。<br>保存の直前に改行コード置換処理があるのですが、この処理の間は固まったように見えます。<br>ただし、「プロポーショナル+おまけ 0.13」だと40秒ぐらいかかりました。<br>これはたぶん既存のバグで手元では直ってます。<br>改行コード変換処理中にも進捗＋処理受付をするようにしたらいいのかな。<br></div></section>
     <ul><li><section><h1 id=7629>
     <span class="no">[7629]</span>
-    <a class="title" href="#7629">RE2: バグ報告</a>
+    <a class="thread-title" href="#7629">RE2: バグ報告</a>
     <span class="author">もか</span>
     <time datetime="2013-05-12T11:39:11">2013年05月12日 11:39</time></h1>
     <div class="body">&gt;ただし、「プロポーショナル+おまけ 0.13」だと40秒ぐらいかかりました。<br>&gt;これはたぶん既存のバグで手元では直ってます。<br>もう少し色々やってみたところ、どうも既存バグではなさそうです。<br>自分用設定のプロポーショナル+おまけでは40秒ですが、<br>sakura 2.0.7.1 + 自分用設定や<br>sakura 2.0.7.1 + 初期設定や<br>プロポーショナル+おまけ 0.14pre + 初期設定<br>などでは8秒です。<br>ひょっと原因がつかめないです。<br></div></section>
     <ul><li><section><h1 id=7630>
     <span class="no">[7630]</span>
-    <a class="title" href="#7630">RE3: バグ報告</a>
+    <a class="thread-title" href="#7630">RE3: バグ報告</a>
     <span class="author">もか</span>
     <time datetime="2013-05-12T13:23:23">2013年05月12日 13:23</time></h1>
     <div class="body">すみません<br>&gt;sakura 2.0.7.1 + 自分用設定<br>でも再現しました。設定によるのかもしれません。<br></div></section>
     <ul><li><section><h1 id=7633>
     <span class="no">[7633]</span>
-    <a class="title" href="#7633">Re4: バグ報告</a>
+    <a class="thread-title" href="#7633">Re4: バグ報告</a>
     <span class="author">もか</span>
     <time datetime="2013-05-12T16:10:45">2013年05月12日 16:10</time></h1>
     <div class="body">テキストが折り返されていると遅いことがわかりました。<br>基本のデフォルトでは10240桁ですが、自分の設定は120桁にしていました。<br>パッチを作りました。<br>LogicToLayoutが遅いその2<br>https://sourceforge.net/p/sakura-editor/patchunicode/530/<br>今回の例では40秒が6秒ぐらいになります。<br></div></section>
     <ul><li><section><h1 id=7640>
     <span class="no">[7640]</span>
-    <a class="title" href="#7640">Re5: バグ報告</a>
+    <a class="thread-title" href="#7640">Re5: バグ報告</a>
     <span class="author">mariko</span>
     <time datetime="2013-05-13T09:04:19">2013年05月13日 09:04</time></h1>
     <div class="body">patchを当ててみました。文字コード，改行コードの変換ともに，<br>問題なくできました。<br><br>迅速な対応，ありがとうございました。</div></section>
     <ul><li><section><h1 id=7643>
     <span class="no">[7643]</span>
-    <a class="title" href="#7643">Re6: バグ報告</a>
+    <a class="thread-title" href="#7643">Re6: バグ報告</a>
     <span class="author">mariko</span>
     <time datetime="2013-05-13T17:17:38">2013年05月13日 17:17</time></h1>
     <div class="body">2.0.8.0でまた，フリーズしました。<br></div></section>
     <ul><li><section><h1 id=7644>
     <span class="no">[7644]</span>
-    <a class="title" href="#7644">Re7: バグ報告</a>
+    <a class="thread-title" href="#7644">Re7: バグ報告</a>
     <span class="author">もか</span>
     <time datetime="2013-05-13T17:36:04">2013年05月13日 17:36</time></h1>
     <div class="body">2.0.8.0ではまだこのパッチは当たっていません。<br></div></section>

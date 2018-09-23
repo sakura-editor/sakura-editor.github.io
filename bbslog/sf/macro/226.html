@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>複数のパターンで置換処理を行う PerlScript</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>複数のパターンで置換処理を行う PerlScript | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">226</span>
-    <a class="title" href="226.html#226">複数のパターンで置換処理を行う PerlScript</a></div>
+    <a class="thread-title" href="226.html#226">複数のパターンで置換処理を行う PerlScript</a></div>
     <ul><li><div class="list-title">
     <span class="no">303</span>
-    <a class="title" href="226.html#303">管理人削除</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=226>
+    <a class="thread-title" href="226.html#303">管理人削除</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=226>
     <span class="no">[226]</span>
-    <a class="title" href="#226">複数のパターンで置換処理を行う PerlScript</a>
+    <a class="thread-title" href="#226">複数のパターンで置換処理を行う PerlScript</a>
     <span class="author">miau</span>
     <time datetime="2005-11-07T01:38:49">2005年11月07日 01:38</time></h1>
     <div class="body"><a href=../macro#200 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>macro&amp;<wbr>tree=<wbr>c200</nobr></a> を流用して作ってみました。<br>（URL にちょっとだけ説明があります）<br><br>=head1 NAME<br><br>MultiReplace.pls - 複数のパターンに基づく置換処理<br><br>=head1 DESCRIPTION<br><br>パターンファイル（MultiReplace.txt）の記述に基づいて、選択部分の置換処理を行う。<br><br>パターンファイルの各行には「B&lt;pattern&gt;\tB&lt;replacement&gt;」を記述してください。<br><br>（例）<br><br>&#9;&amp;&#9;&amp;amp;<br>&#9;&lt;&#9;&amp;lt;<br>&#9;&gt;&#9;&amp;gt;<br><br>※POD なので先頭に TAB 入れてますが、実際は記述不要です。<br><br>置換は先頭から順に処理されます。<br><br>未選択状態の場合、パターンファイルを開きます。<br><br>=cut<br><br>use strict;<br>use warnings;<br><br>use encoding 'cp932';<br>binmode(STDERR, ':raw :encoding(cp932)');<br><br>use Encode;<br><br>use Win32::OLE qw/CP_UTF8/;<br>Win32::OLE-&gt;Option(CP =&gt; CP_UTF8);&#9;&#9;&#9;# OLE のインターフェイスを UTF8 に<br><br># パターンファイルの名称取得<br>my $macfile = ExpandParameter('$M');&#9;&#9;# マクロファイル名<br>(my $patfile = $macfile) =~ s/[^.]+$/txt/;&#9;# パターンファイル名は拡張子を .txt にしたもの<br><br># 選択部分の取得<br>unless (IsTextSelected()) {<br>&#9;# 未選択時はパターンファイルを開いて終了<br>&#9;FileOpen($patfile);<br>&#9;exit(0);<br>}<br>my $seltext = GetSelectedString(0);<br><br># パターンファイルの読み込み<br>$patfile = encode('cp932', $patfile);&#9;&#9;# ファイル名は cp932<br>open PAT, "&lt;:encoding(cp932)", $patfile or die "can't open $patfile: $!";<br>my @lines = &lt;PAT&gt;;<br>close PAT;<br><br># 置換箇所のカウント<br>my $count = 0;<br><br>foreach my $line (@lines) {<br>&#9;# 改行の除去<br>&#9;$line =~ s/\r?\n//;<br>&#9;my ($pattern, $replacement) = split(/\t/, $line, 2);<br> <br>&#9;# 置換処理の実行<br>&#9;eval { $count += ($seltext =~ s/$pattern/$replacement/g); };<br> <br>&#9;# エラー時<br>&#9;if ($@) {<br>&#9;&#9;MsgBox($@);&#9;&#9;&#9;&#9;&#9;&#9;&#9;# エラー表示<br>&#9;&#9;FileOpen($patfile);&#9;&#9;&#9;&#9;&#9;# パターンファイルを開く<br>&#9;&#9;exit(1);<br>&#9;}<br>}<br><br># 置換結果の出力<br>InsText($seltext);<br><br># 件数の出力<br>$count = 0 if $count eq '';<br>MsgBox(encode('cp932', "$count 箇所を置換しました。"));<br><br>#...............................................................................<br>#...............................................................................<br>#...............................................................................<br>#...............................................................................<br></div></section>
     <ul><li><section><h1 id=303>
     <span class="no">[303]</span>
-    <a class="title" href="#303">管理人削除</a>
+    <a class="thread-title" href="#303">管理人削除</a>
     <span class="author">-</span>
     <time datetime="2006-10-30T21:20:14">2006年10月30日 21:20</time></h1>
     <div class="body">-</div></section>

@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>文字認識テスト版</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>文字認識テスト版 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5317</span>
-    <a class="title" href="5317.html#5317">文字認識テスト版</a></div>
+    <a class="thread-title" href="5317.html#5317">文字認識テスト版</a></div>
     <ul><li><div class="list-title">
     <span class="no">5319</span>
-    <a class="title" href="5317.html#5319">Re:文字認識テスト版</a></div>
+    <a class="thread-title" href="5317.html#5319">Re:文字認識テスト版</a></div>
     <ul><li><div class="list-title">
     <span class="no">5320</span>
-    <a class="title" href="5317.html#5320">Re2:文字認識テスト版</a></div>
+    <a class="thread-title" href="5317.html#5320">Re2:文字認識テスト版</a></div>
     <ul><li><div class="list-title">
     <span class="no">5322</span>
-    <a class="title" href="5317.html#5322">Re3:文字認識テスト版</a></div>
+    <a class="thread-title" href="5317.html#5322">Re3:文字認識テスト版</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">5321</span>
-    <a class="title" href="5317.html#5321">Re:文字認識テスト版</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=5317>
+    <a class="thread-title" href="5317.html#5321">Re:文字認識テスト版</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5317>
     <span class="no">[5317]</span>
-    <a class="title" href="#5317">文字認識テスト版</a>
+    <a class="thread-title" href="#5317">文字認識テスト版</a>
     <span class="author">げんた</span>
     <time datetime="2006-07-01T13:59:45">2006年07月01日 13:59</time></h1>
     <div class="body">ラスティブさんが作成された文字コードの自動認識方式の変更を入れてテスト版バイナリを作成しました．<br>最新リリース版1.5.10.1とは互換性がありますので同時起動が可能です．<br><br><a href=http://members.at.infoseek.co.jp/sakura_editor/snapshot/sakura_2006-07-01_charcodetest.zip target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>snapshot<wbr>/<wbr>sakura_2<wbr>006-<wbr>07-<wbr>01_charc<wbr>odetest.<wbr>zip</nobr></a><br><br>ソースはsakura/trunk#982＋ラスティブさん作パッチ Patches #1513775 です．バージョン番号は末尾を333としてあります．<br>認識状況を見るために，ファイル(F)→ファイルのプロパティ(T)にて認識状況の詳細が出るようにしてあります．<br><br>オリジナル版では誤認識した物が直った，あるいはその逆というものがありましたら情報をお寄せください．<br></div></section>
     <ul><li><section><h1 id=5319>
     <span class="no">[5319]</span>
-    <a class="title" href="#5319">Re:文字認識テスト版</a>
+    <a class="thread-title" href="#5319">Re:文字認識テスト版</a>
     <span class="author">ryoji</span>
     <time datetime="2006-07-01T15:07:35">2006年07月01日 15:07</time></h1>
     <div class="body">UTF-8漢字の認識がきちんとできるようになっているようですね。<br>真魚の作者さんの日記ページにある誤認識文字パターン<br><a href=http://wantech.ikuto.com/diary/02soft/2006/06_0405_1024.htm target=_top><nobr>http://<wbr>wantech.<wbr>ikuto.<wbr>com/<wbr>diary/<wbr>02soft/<wbr>2006/<wbr>06_0405_<wbr>1024.<wbr>htm</nobr></a><br>も従来版はNGでしたがOKになってます。<br><br>一方、漢字がひらがな・カタカナと同格になったためでしょうが、<br>（判定における「ひらカタ」の優先度が相対的に下がっていて）<br>半角カナのみのEUCファイルはS-JISと認識されます。<br>まぁ、これはS-JIS漢字と完全にかぶっている箇所なので<br>しかたない話と思いますが。<br><br>あと、これは Patches にコメントしたほうがいいかもしれないことですが、<br>ソースコードの記述は入念にされている印象を受けました。<br>コメントがきちんと書かれているのがいいですね。<br>コメント中の参考URLから出典等も辿れますし、<br>大筋は結構なモノのように思いました。<br>私は文字コード関連には疎いので、レビューするよりむしろ勉強させて<br>いただくのに良いなぁ、なんて思ったりして... (^^;<br></div></section>
     <ul><li><section><h1 id=5320>
     <span class="no">[5320]</span>
-    <a class="title" href="#5320">Re2:文字認識テスト版</a>
+    <a class="thread-title" href="#5320">Re2:文字認識テスト版</a>
     <span class="author">ryoji</span>
     <time datetime="2006-07-01T15:21:05">2006年07月01日 15:21</time></h1>
     <div class="body">あ、あとBOM無しUTF-32も自動認識してくれるようになってますね。</div></section>
     <ul><li><section><h1 id=5322>
     <span class="no">[5322]</span>
-    <a class="title" href="#5322">Re3:文字認識テスト版</a>
+    <a class="thread-title" href="#5322">Re3:文字認識テスト版</a>
     <span class="author">ryoji</span>
     <time datetime="2006-07-01T17:33:59">2006年07月01日 17:33</time></h1>
     <div class="body">&gt; あ、あとBOM無しUTF-32も自動認識してくれるようになってますね。<br>すんません。UTF-16の誤記です。(^^ゞ</div></section>
     </li></ul></li></ul></li><li><section><h1 id=5321>
     <span class="no">[5321]</span>
-    <a class="title" href="#5321">Re:文字認識テスト版</a>
+    <a class="thread-title" href="#5321">Re:文字認識テスト版</a>
     <span class="author">トーリス・ガリー</span>
     <time datetime="2006-07-01T16:31:40">2006年07月01日 16:31</time></h1>
     <div class="body">▼ げんたさん<br>&gt; オリジナル版では誤認識した物が直った，あるいはその逆というものがありましたら情報をお寄せください．<br><br>早速使ってみました。<br>SJISとUTF-8しか試していませんが、とてもいい感じです！<br>UTF-8のファイルでダイアログ出ずに非常に快適です。<br>ありがとう、ラスティブさん！げんたさん！</div></section>

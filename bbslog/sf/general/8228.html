@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>文字コード変換の仕方教えてください</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>文字コード変換の仕方教えてください | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">8228</span>
-    <a class="title" href="8228.html#8228">文字コード変換の仕方教えてください</a></div>
+    <a class="thread-title" href="8228.html#8228">文字コード変換の仕方教えてください</a></div>
     <ul><li><div class="list-title">
     <span class="no">8229</span>
-    <a class="title" href="8228.html#8229">Re:文字コード変換の仕方教えてください</a></div>
+    <a class="thread-title" href="8228.html#8229">Re:文字コード変換の仕方教えてください</a></div>
     <ul><li><div class="list-title">
     <span class="no">8230</span>
-    <a class="title" href="8228.html#8230">Re2:文字コード変換の仕方教えてください</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=8228>
+    <a class="thread-title" href="8228.html#8230">Re2:文字コード変換の仕方教えてください</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8228>
     <span class="no">[8228]</span>
-    <a class="title" href="#8228">文字コード変換の仕方教えてください</a>
+    <a class="thread-title" href="#8228">文字コード変換の仕方教えてください</a>
     <span class="author">はら</span>
     <time datetime="2017-04-11T17:04:13">2017年04月11日 17:04</time></h1>
     <div class="body">お知恵を拝借したく<br><br>サクラエディタで以下の文字列のコード変換ができず困ってます。<br>?us-ascii?q?A1AA9QBvW+xY/9sGjNJCGoI6CIEcgQZ/D?= =?us-ascii?q?INmqG2QdAOELxQDAQEBAQEBAWtq<br>AQEDCQKESwIeAUYgJQMLFAsDSQQlAxKJdAY?= =?us-ascii?q?ENosJnVgBgiomAosNgQiNT4EiAQ<br>GGAAWHHAcmgVyHRYwQAYYPcYtQCYJUiCeGR?= =?us-ascii?q?osniFk2IYEFcEGFEIFZZ4JhgxKB<br>PYIuAQEB?=<br><br>文字列を選択し、変換メニューから変換を行っても、どのコードでもうまくいきません。<br>すでに変換が異常なのかとも思いましたが、asciiが読めないのが理解できず困ってます。<br><br></div></section>
     <ul><li><section><h1 id=8229>
     <span class="no">[8229]</span>
-    <a class="title" href="#8229">Re:文字コード変換の仕方教えてください</a>
+    <a class="thread-title" href="#8229">Re:文字コード変換の仕方教えてください</a>
     <span class="author">もか</span>
     <time datetime="2017-04-12T00:16:37">2017年04月12日 00:16</time></h1>
     <div class="body">?us-ascii?q? というのはMIMEのQuoted-PrintableのUS-ASCIIです。<br>ASCIIですから、内容が英語なら一部記号以外はそのまま読めます。<br>またQuotedが指定されているものの、Quotedになっている文字が1文字もないです。<br><br>そしてサクラエディタはiso-2022-jp以外のヘッダ文字列には未対応です。<br><br>いろいろ試してみましたが、日本語・英語文字列っぽい感じがしません。<br>どちらかというと、大文字が多いところや、+や/がたまにでてくるところからすると<br>base-64でエンコードされたプログラム内のデータに見えます。<br>適当だけどASP.NETとかの、ポストされるときに送られてくるタイプのデータとかです。<br>もしくは、8ビット目が欠落したなんらかの文字列です。<br>全部8ビット目を立てて保存してみて、いろいろなエンコードで見てみるというのも手ですが、<br>Shift_JISだった場合は、8ビット目が欠落したデータと、8ビット目が0のデータが混ざるのでデコードは困難です。<br></div></section>
     <ul><li><section><h1 id=8230>
     <span class="no">[8230]</span>
-    <a class="title" href="#8230">Re2:文字コード変換の仕方教えてください</a>
+    <a class="thread-title" href="#8230">Re2:文字コード変換の仕方教えてください</a>
     <span class="author">はら</span>
     <time datetime="2017-04-18T11:44:45">2017年04月18日 11:44</time></h1>
     <div class="body">もかさん<br><br>返信ありがとうございます。<br>私も読めると思っていたので悩んでます。<br>回答いただいた内容を手掛かりに<br>もう少し勉強してみます。</div></section>

@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>CoInitialize</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CoInitialize | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">4409</span>
-    <a class="title" href="4409.html#4409">CoInitialize</a></div>
+    <a class="thread-title" href="4409.html#4409">CoInitialize</a></div>
     <ul><li><div class="list-title">
     <span class="no">4410</span>
-    <a class="title" href="4409.html#4410">RE: CoInitialize</a></div>
+    <a class="thread-title" href="4409.html#4410">RE: CoInitialize</a></div>
     <ul><li><div class="list-title">
     <span class="no">4433</span>
-    <a class="title" href="4409.html#4433">RE2: CoInitialize</a></div>
+    <a class="thread-title" href="4409.html#4433">RE2: CoInitialize</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">4415</span>
-    <a class="title" href="4409.html#4415">InitCommonControls</a></div>
+    <a class="thread-title" href="4409.html#4415">InitCommonControls</a></div>
     <ul><li><div class="list-title">
     <span class="no">4417</span>
-    <a class="title" href="4409.html#4417">FillSolidRect</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4409>
+    <a class="thread-title" href="4409.html#4417">FillSolidRect</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4409>
     <span class="no">[4409]</span>
-    <a class="title" href="#4409">CoInitialize</a>
+    <a class="thread-title" href="#4409">CoInitialize</a>
     <span class="author">みく</span>
     <time datetime="2005-04-13T18:45:05">2005年04月13日 18:45</time></h1>
     <div class="body"><br>WinMain.cpp:WinMain()<br>最初に ::OleInitialize(NULL);<br>最後に ::OleUnInitialize();<br>を追加。<br><br>etc_uty.cpp:ResolveShortcutLink()<br>CoInitialize()、CoUninitialize()を削除<br><br>CDropTarget.cpp:Initialize()<br>COleLibrary::Initialize()のOleInitialize()を削除<br>COleLibrary::~COleLibrary()のOleUninitialize()を削除<br></div></section>
     <ul><li><section><h1 id=4410>
     <span class="no">[4410]</span>
-    <a class="title" href="#4410">RE: CoInitialize</a>
+    <a class="thread-title" href="#4410">RE: CoInitialize</a>
     <span class="author">みく</span>
     <time datetime="2005-04-13T19:08:51">2005年04月13日 19:08</time></h1>
     <div class="body"><br>＃しまった、開発掲示板に書いたつもりが...<br>&gt;&gt;data:4402の件で最初のファイル解析にバグあるんでないの？と<br>思いながらソース見てたんですが、いきなりCoInitialize/CoUninitialize<br>しちゃったらまずいっしょ。<br><br>#あとは、関数の内部変数領域を戻り値にしてしまってるとことかないだろうか。<br></div></section>
     <ul><li><section><h1 id=4433>
     <span class="no">[4433]</span>
-    <a class="title" href="#4433">RE2: CoInitialize</a>
+    <a class="thread-title" href="#4433">RE2: CoInitialize</a>
     <span class="author">みく</span>
     <time datetime="2005-04-26T21:04:07">2005年04月26日 21:04</time></h1>
     <div class="body"><br>CEditViewが4個あって、4回 ::OleInitialize されるのはOKなのか。<br></div></section>
     </li></ul></li><li><section><h1 id=4415>
     <span class="no">[4415]</span>
-    <a class="title" href="#4415">InitCommonControls</a>
+    <a class="thread-title" href="#4415">InitCommonControls</a>
     <span class="author">みく</span>
     <time datetime="2005-04-14T18:41:14">2005年04月14日 18:41</time></h1>
     <div class="body"><br>これもまずいっしょ。<br><br>CEditWnd.cpp:CreateToolBar()<br>InitCommonControls()を削除<br><br>WinMain.cpp:WinMain()の最初に<br>::InitCommonControls();<br>を追加。<br></div></section>
     <ul><li><section><h1 id=4417>
     <span class="no">[4417]</span>
-    <a class="title" href="#4417">FillSolidRect</a>
+    <a class="thread-title" href="#4417">FillSolidRect</a>
     <span class="author">みく</span>
     <time datetime="2005-04-14T20:24:28">2005年04月14日 20:24</time></h1>
     <div class="body"><br>あちこちに同名の関数FillSolidRectが存在してます。<br>（使ってません）<br></div></section>

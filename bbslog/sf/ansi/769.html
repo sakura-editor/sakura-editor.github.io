@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>マクロ登録機能</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>マクロ登録機能 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">769</span>
-    <a class="title" href="769.html#769">マクロ登録機能</a></div>
+    <a class="thread-title" href="769.html#769">マクロ登録機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">773</span>
-    <a class="title" href="769.html#773">Re:マクロ登録機能</a></div>
+    <a class="thread-title" href="769.html#773">Re:マクロ登録機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">774</span>
-    <a class="title" href="769.html#774">Re2:マクロ登録機能</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=769>
+    <a class="thread-title" href="769.html#774">Re2:マクロ登録機能</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=769>
     <span class="no">[769]</span>
-    <a class="title" href="#769">マクロ登録機能</a>
+    <a class="thread-title" href="#769">マクロ登録機能</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-10-13T15:23:55">2001年10月13日 15:23</time></h1>
     <div class="body">サクラエディタのマクロは大昔に使ってみようとしてうまく効かなかったのでそれ以降使ってませんが、今回登録可能になったので再チャレンジしてみましたがやっぱりうまくいきませんね。<br>もともとマクロファイルのサンプルが同梱されていないし、ユーザ提供サンプルファイルが皆無なのも他のエディタユーザに比べ寂しい。色設定やキーワードファイルもバラバラだし。(&gt;_&lt;)<br>私は便利なマクロは作るより利用させてほしい口です。(^_^;)うまく出来ないから。<br>それはさておき、いくつかQです。<br>Q1．[登録済みマクロ]のアクセラレータキーBはどういう意味ですか？　Bが空いていたから、というだけなら浸透しないうちにregistered macroのうちはじめから見ていって使ってないアルファベットにしたほうがいいと思いますけど。<br>Q2.　解除ボタンがなくなってますね。名前を消して「設定」を押せば解除ということになるようですが、この辺はヘルプにでも書いてないとわかりにくいでしょう。<br>Q3.　iniを見ると三桁でマクロ番号をとっていますが実際には20個です。2桁でも原理上は100個（！）登録できるのだから2桁で十分では？<br>関連してファイル名とマクロ名の2つをiniに記録するのはちょっともったいない気もします。メモリもその分使うし。K2Editorではマクロファイルにマクロ名（マクロの説明）を先頭行に書き込めるようにしてますね。だからファイル名だけでよい。マクロ名はエディタが登録マクロの先頭行から取得して来る仕組み。<br>ただこうすると動的にチェックしにいくので結局無駄になるのかしら。<br>サクラエディタのマクロファイルの先頭行はマクロファイルかどうかのチェック機能としては意味がないので同じようにできると思いますが、登録済みマクロのメニューにもマクロ名を表示するので難しいかも。</div></section>
     <ul><li><section><h1 id=773>
     <span class="no">[773]</span>
-    <a class="title" href="#773">Re:マクロ登録機能</a>
+    <a class="thread-title" href="#773">Re:マクロ登録機能</a>
     <span class="author">すとーにぃ</span>
     <time datetime="2001-10-15T12:54:51">2001年10月15日 12:54</time></h1>
     <div class="body">▼ じぇぷろさん<br>&gt; Q2.　解除ボタンがなくなってますね。名前を消して「設定」を押せば解除ということになるようですが、この辺はヘルプにでも書いてないとわかりにくいでしょう。<br>ではヘルプもそのように修正します。<br><br>一行挿入のマクロを作ろうとして、↓こういうのを定義したのですが、<br><br>//insertline.mac<br>GoLineTop();&#9;/* 行頭に移動(折り返し単位) */<br>Char(13);&#9;/* 文字入力 */<br>Up();&#9;/* カーソル上移動 */<br><br>「行頭に移動」で、行の先頭にスペースやタブがあると、最初に文字がある部分に移動してしまい、<br>うまくいきません。<br>これはこれで編集時には便利な気もしますが....こういう仕様なのでしょうか？<br></div></section>
     <ul><li><section><h1 id=774>
     <span class="no">[774]</span>
-    <a class="title" href="#774">Re2:マクロ登録機能</a>
+    <a class="thread-title" href="#774">Re2:マクロ登録機能</a>
     <span class="author">げんた</span>
     <time datetime="2001-10-15T17:48:58">2001年10月15日 17:48</time></h1>
     <div class="body">&gt;「行頭に移動」で、行の先頭にスペースやタブがあると、最初に文字がある部分に移動してしまい、うまくいきません。<br>現在のカーソル位置によって動作が変わるようなコマンドは確かにマクロでは使いにくいです．今後こういう事例をもとに少しずつコマンドのほうを変えていくしかないと思います．<br><br>マクロもエディタ上のコマンド発行もHandleCommandという関数に機能番号と引数を渡すのですが，エディタから実行した場合には引数は常に０であるのに対して，マクロから実行する場合には１つ引数を渡すことができます．これをうまく利用すれば同じ名前で引数によって動作を変えることができます．<br><br>たとえば GoLineTop() で GoLineTop(1)は絶対行頭，GoLineTop(2)はスペースを除いた行頭とか．<br><br>こういう提案が次々と出そうであればマクロ開発掲示板を新設してもいいかと思っています．要望，実装，ヘルプと話が3つの掲示板にまたがるよりは専門のを１つ作る方がわかりやすい感じがします．<br></div></section>

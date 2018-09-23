@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Chg) 履歴の管理ダイアログの機能強化</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告(Chg) 履歴の管理ダイアログの機能強化 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1315</span>
-    <a class="title" href="1315.html#1315">Commit報告(Chg) 履歴の管理ダイアログの機能強化</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=1315>
+    <a class="thread-title" href="1315.html#1315">Commit報告(Chg) 履歴の管理ダイアログの機能強化</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1315>
     <span class="no">[1315]</span>
-    <a class="title" href="#1315">Commit報告(Chg) 履歴の管理ダイアログの機能強化</a>
+    <a class="thread-title" href="#1315">Commit報告(Chg) 履歴の管理ダイアログの機能強化</a>
     <span class="author">もか</span>
     <time datetime="2010-07-11T03:09:56">2010年07月11日 03:09</time></h1>
     <div class="body">リビジョン：<br>  rev1792<br><br>変更種別：<br>  仕様変更<br><br>内容：<br>Chg:履歴の管理ダイアログの機能強化<br>PatchUnicode#3000126<br><br>詳細でいうと、<br>Chg:タイトルを「履歴とお気に入りの管理」に変更<br>&#9;メニュー・機能名は長いのでそのままです。<br>Chg: サイズを横長に変更(VGA範囲内)<br>Chg: すべて削除/お気に入り以外削除を分離<br>&#9;[はい][いいえ][キャンセル]を間違えて[はい]を押すことがあるので変更<br>Chg: [OK][キャンセル]ボタンの廃止。<br>&#9;従来はキャンセルでも、お気に入りフラグ/削除は適用済みになってしまい「キャンセル」の意味がないので廃止しました。<br>Imp: 複数選択/選択項目/存在しないパスの削除。DELキーでも削除できます。<br>Imp: リストのソート機能<br>Keep: StaticTypeをCRecentで使うとデバッグでassert_warningがでるのを修正<br><br>今のところは表示中に、裏で検索キーワードなどが書き換わった場合おかしくなります。<br></div></section>

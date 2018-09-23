@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Fix) ファイル書込時バグ修正</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告:(Fix) ファイル書込時バグ修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">292</span>
-    <a class="title" href="292.html#292">Commit報告:(Fix) ファイル書込時バグ修正</a></div>
+    <a class="thread-title" href="292.html#292">Commit報告:(Fix) ファイル書込時バグ修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">299</span>
-    <a class="title" href="292.html#299">Re:Commit報告:(Fix) ファイル書込時バグ修正</a></div>
+    <a class="thread-title" href="292.html#299">Re:Commit報告:(Fix) ファイル書込時バグ修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">300</span>
-    <a class="title" href="292.html#300">Re2:Commit報告:(Fix) ファイル書込時バグ修正</a></div>
+    <a class="thread-title" href="292.html#300">Re2:Commit報告:(Fix) ファイル書込時バグ修正</a></div>
     <ul><li><div class="list-title">
     <span class="no">304</span>
-    <a class="title" href="292.html#304">Re3:Commit報告:(Fix) ファイル書込時バグ修正</a></div>
+    <a class="thread-title" href="292.html#304">Re3:Commit報告:(Fix) ファイル書込時バグ修正</a></div>
     </li><li><div class="list-title">
     <span class="no">306</span>
-    <a class="title" href="292.html#306">Re3:Commit報告:(Fix) ファイル書込時バグ修正</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=292>
+    <a class="thread-title" href="292.html#306">Re3:Commit報告:(Fix) ファイル書込時バグ修正</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=292>
     <span class="no">[292]</span>
-    <a class="title" href="#292">Commit報告:(Fix) ファイル書込時バグ修正</a>
+    <a class="thread-title" href="#292">Commit報告:(Fix) ファイル書込時バグ修正</a>
     <span class="author">kobake</span>
     <time datetime="2008-04-20T05:56:55">2008年04月20日 05:56</time></h1>
     <div class="body">リビジョン：<br>　rev1286<br><br>変更種別：<br>　バグ修正。<br><br>内容：<br>　・上書き禁止のファイルを開き、その文書を名前を付けて保存したとき、<br>　　「上書き禁止」の状態が残ってしまう問題を修正しました。<br>　・書込を行えないファイルに対して保存を行ったとき、<br>　　ファイル保存失敗するにも関わらず、<br>　　その後の処理（ロック試行やキャプション変更など）が<br>　　行われてしまう問題を修正しました。<br><br>結果的に、以下のバグが解決しました。<br>&gt; 1) 他のプログラムの排他制御で上書き禁止になっているファイルをオープンすると、<br>&gt;     【上書き禁止】モードになり、そのファイルを『名前をつけて保存』で保存しても【上書き禁止】モードのままになっている。<br>&gt; 3) 『読み取り専用』にチェックが付いているファイルをオープンしすると、<br>&gt;     【上書き禁止】モード（ビューモード）になり、のファイルを『名前をつけて保存』で保存しても【上書き禁止】モードのままになっている。<br>&gt; 4) すでに開いているファイルを他のプログラムが「排他」で使用したときに、『上書き保存』した場合、<br>&gt;         ファイルを保存できません。<br>&gt;         パスが存在しないか、他のアプリケーションで使用されている可能性があります。<br>&gt;     でOKすると、バックアップは作成され、ファイルの書込みは行われず、『上書き保存』のアイコンはdesableになる。<br>&gt;     問題点は、書込みされていないのに内部的に書込みがなされているようになっていることです。<br></div></section>
     <ul><li><section><h1 id=299>
     <span class="no">[299]</span>
-    <a class="title" href="#299">Re:Commit報告:(Fix) ファイル書込時バグ修正</a>
+    <a class="thread-title" href="#299">Re:Commit報告:(Fix) ファイル書込時バグ修正</a>
     <span class="author">Uchi</span>
     <time datetime="2008-04-20T13:18:00">2008年04月20日 13:18</time></h1>
     <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1286<br>&gt; <br>&gt; 変更種別：<br>&gt; 　バグ修正。<br>&gt; <br>&gt; 内容：<br>&gt; 　・上書き禁止のファイルを開き、その文書を名前を付けて保存したとき、<br>&gt; 　　「上書き禁止」の状態が残ってしまう問題を修正しました。<br>&gt; 　・書込を行えないファイルに対して保存を行ったとき、<br>&gt; 　　ファイル保存失敗するにも関わらず、<br>&gt; 　　その後の処理（ロック試行やキャプション変更など）が<br>&gt; 　　行われてしまう問題を修正しました。<br>&gt; <br>&gt; 結果的に、以下のバグが解決しました。<br>&gt; &gt; 1) 他のプログラムの排他制御で上書き禁止になっているファイルをオープンすると、<br>&gt; &gt;     【上書き禁止】モードになり、そのファイルを『名前をつけて保存』で保存しても【上書き禁止】モードのままになっている。<br>&gt; &gt; 3) 『読み取り専用』にチェックが付いているファイルをオープンしすると、<br>&gt; &gt;     【上書き禁止】モード（ビューモード）になり、のファイルを『名前をつけて保存』で保存しても【上書き禁止】モードのままになっている。<br>&gt; &gt; 4) すでに開いているファイルを他のプログラムが「排他」で使用したときに、『上書き保存』した場合、<br>&gt; &gt;         ファイルを保存できません。<br>&gt; &gt;         パスが存在しないか、他のアプリケーションで使用されている可能性があります。<br>&gt; &gt;     でOKすると、バックアップは作成され、ファイルの書込みは行われず、『上書き保存』のアイコンはdesableになる。<br>&gt; &gt;     問題点は、書込みされていないのに内部的に書込みがなされているようになっていることです。<br>確認報告をさせていただきます。<br>上記3点修正されていることを確認しました。<br><br>ところで上記3点と同時に報告した、<br>2) 『ファイルの排他制御』で『更新の監視』をつけていてる場合で、<br>    他のプログラムの排他制御で上書き禁止になっているファイルをオープンすると、【上書き禁止】モードになる。<br>    次に排他制御を行っているプログラムを終了し、ファイルが書込み可能になっても【上書き禁止】モードのままになっている。<br>は、更新のチェックを行っているところで、排他の監視を行うことで解決できると思うのですが、いかがでしょうか？</div></section>
     <ul><li><section><h1 id=300>
     <span class="no">[300]</span>
-    <a class="title" href="#300">Re2:Commit報告:(Fix) ファイル書込時バグ修正</a>
+    <a class="thread-title" href="#300">Re2:Commit報告:(Fix) ファイル書込時バグ修正</a>
     <span class="author">kobake</span>
     <time datetime="2008-04-20T13:31:15">2008年04月20日 13:31</time></h1>
     <div class="body">ご確認ありがとうございます。<br><br>▼ Uchiさん<br>&gt; ところで上記3点と同時に報告した、<br>&gt; 2) 『ファイルの排他制御』で『更新の監視』をつけていてる場合で、<br>&gt;     他のプログラムの排他制御で上書き禁止になっているファイルをオープンすると、【上書き禁止】モードになる。<br>&gt;     次に排他制御を行っているプログラムを終了し、ファイルが書込み可能になっても【上書き禁止】モードのままになっている。<br>&gt; は、更新のチェックを行っているところで、排他の監視を行うことで解決できると思うのですが、いかがでしょうか？<br><br>「更新の監視」に関しては、いまいちどういう動作が正なのか<br>よくわかってないので、保留してました。<br><br>そもそもファイルの排他制御をオフにすると、<br>本家ANSI版では、「上書き禁止」モード自体にならなないんですよね…。<br>だから、更新の監視によって「上書き禁止」モードが変化することも無い、と。<br><br>根本的な思想として、<br>「更新の監視」が何を監視する意図の機能なのかも、<br>よくわかっていません。<br><br><br>要するに、「仕様がよくわからないから、なんか手を付けにくい」という状況です（汗）。<br></div></section>
     <ul><li><section><h1 id=304>
     <span class="no">[304]</span>
-    <a class="title" href="#304">Re3:Commit報告:(Fix) ファイル書込時バグ修正</a>
+    <a class="thread-title" href="#304">Re3:Commit報告:(Fix) ファイル書込時バグ修正</a>
     <span class="author">Uchi</span>
     <time datetime="2008-04-20T17:09:32">2008年04月20日 17:09</time></h1>
     <div class="body">▼ kobakeさん<br>&gt; <br>&gt; 「更新の監視」に関しては、いまいちどういう動作が正なのか<br>&gt; よくわかってないので、保留してました。<br>&gt; <br>私は、いつもは「更新の監視」をONにして使用しています。<br>ソースを追っているわけではないので、表面的な話になりますが、<br>画面が非アクティブからアクティブになった時に、<br>オープンしているファイルが他のアプリケーションにより変更されているかをチェックし、<br>変更されていれば、ダイアログを表示し、再読み込みを行うかを選択する。<br>というのがANSI版での仕様だと思います。<br><br>エディタ単独では、必要の無い機能です。<br>他のアプリケーションとの組み合わせで使用するものでしょう。<br>&gt; <br>&gt; そもそもファイルの排他制御をオフにすると、<br>&gt; 本家ANSI版では、「上書き禁止」モード自体にならなないんですよね…。<br>&gt; だから、更新の監視によって「上書き禁止」モードが変化することも無い、と。<br>&gt; <br>ANSI版では排他で『書込み禁止』のファイルをオープンしても、エディタのモードとしては、<br>普通のオープンモードなので、書き込み時に『書込み禁止』になっていなければ、書き込み可能です。<br>また、書き込み時に排他で『書込み禁止』になっていても、エディタ自体のモードは変更されないので、<br>次回の書き込みが可能です。<br><br>現在のUnicode版ではオープン時、排他で『書込み禁止』ならば、『上書き禁止』モードになる様に変更されています。<br>また、書き込み時に排他で『書込み禁止』になっていれば、『上書き禁止』モードに変更されます。<br><br>これは、問題の無い（より良い）実装だと思います。<br>がしかし、書き込みできないから『上書き禁止』にしたならば、書き込みできるようになったならば、『上書き禁止』を解除できなければ片手落ちでしょう。<br>『上書き禁止』モードへの移行は「書き込み」というタイミングが取れますが、解除は基本的にエディタの操作ができない『上書き禁止』モードでは『更新の監視』のタイミングあたりが妥当だと思います。</div></section>
     </li><li><section><h1 id=306>
     <span class="no">[306]</span>
-    <a class="title" href="#306">Re3:Commit報告:(Fix) ファイル書込時バグ修正</a>
+    <a class="thread-title" href="#306">Re3:Commit報告:(Fix) ファイル書込時バグ修正</a>
     <span class="author">anonymous</span>
     <time datetime="2008-04-20T19:17:34">2008年04月20日 19:17</time></h1>
     <div class="body">▼ kobakeさん<br>「更新の監視」が何を監視する意図の機能<br><br>例：<br>デバッグ等でログファイルを開いて閲覧するときに使う。<br>ログファイルなのでエディタでロックしてはだめ。</div></section>

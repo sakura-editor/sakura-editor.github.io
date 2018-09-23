@@ -1,90 +1,116 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>タブが消える問題</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>タブが消える問題 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">4376</span>
-    <a class="title" href="4376.html#4376">タブが消える問題</a></div>
+    <a class="thread-title" href="4376.html#4376">タブが消える問題</a></div>
     <ul><li><div class="list-title">
     <span class="no">4377</span>
-    <a class="title" href="4376.html#4377">Re:タブが消える問題</a></div>
+    <a class="thread-title" href="4376.html#4377">Re:タブが消える問題</a></div>
     <ul><li><div class="list-title">
     <span class="no">4378</span>
-    <a class="title" href="4376.html#4378">Re2:タブが消える問題</a></div>
+    <a class="thread-title" href="4376.html#4378">Re2:タブが消える問題</a></div>
     <ul><li><div class="list-title">
     <span class="no">4379</span>
-    <a class="title" href="4376.html#4379">Re3:タブが消える問題</a></div>
+    <a class="thread-title" href="4376.html#4379">Re3:タブが消える問題</a></div>
     <ul><li><div class="list-title">
     <span class="no">4380</span>
-    <a class="title" href="4376.html#4380">Re4:タブが消える問題</a></div>
+    <a class="thread-title" href="4376.html#4380">Re4:タブが消える問題</a></div>
     <ul><li><div class="list-title">
     <span class="no">4381</span>
-    <a class="title" href="4376.html#4381">Re5:タブが消える問題</a></div>
+    <a class="thread-title" href="4376.html#4381">Re5:タブが消える問題</a></div>
     </li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">4382</span>
-    <a class="title" href="4376.html#4382">Re2:タブが消える問題</a></div>
+    <a class="thread-title" href="4376.html#4382">Re2:タブが消える問題</a></div>
     </li><li><div class="list-title">
     <span class="no">4385</span>
-    <a class="title" href="4376.html#4385">Re2:タブが消える問題</a></div>
+    <a class="thread-title" href="4376.html#4385">Re2:タブが消える問題</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">4400</span>
-    <a class="title" href="4376.html#4400">Re:タブが消える問題</a></div>
+    <a class="thread-title" href="4376.html#4400">Re:タブが消える問題</a></div>
     </li><li><div class="list-title">
     <span class="no">4404</span>
-    <a class="title" href="4376.html#4404">Re:タブが消える問題</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=4376>
+    <a class="thread-title" href="4376.html#4404">Re:タブが消える問題</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4376>
     <span class="no">[4376]</span>
-    <a class="title" href="#4376">タブが消える問題</a>
+    <a class="thread-title" href="#4376">タブが消える問題</a>
     <span class="author">げんた</span>
     <time datetime="2006-04-06T08:37:41">2006年04月06日 08:37</time></h1>
     <div class="body">Patchesの方にもコメントしましたが，現在でも初期化処理はMutexで順番に処理されているはずで，競合が起こっているとすればまずはMutexの獲得・解放のタイミングを見直すことで解決できないのかなと思うのですが．<br></div></section>
     <ul><li><section><h1 id=4377>
     <span class="no">[4377]</span>
-    <a class="title" href="#4377">Re:タブが消える問題</a>
+    <a class="thread-title" href="#4377">Re:タブが消える問題</a>
     <span class="author">ryoji</span>
     <time datetime="2006-04-06T19:12:46">2006年04月06日 19:12</time></h1>
     <div class="body">▼ げんたさん<br>&gt; Patchesの方にもコメントしましたが，現在でも初期化処理はMutexで順番に処理されているはずで，競合が起こっているとすればまずはMutexの獲得・解放のタイミングを見直すことで解決できないのかなと思うのですが．<br>現状のMutexのみでは競合を避けることはできても順番は保証できないんじゃないでしょうか。<br>他にまったく方法が無いとまでは断言できませんが、同期オブジェクト追加よりも良策はちょっと思い浮かばないです。<br><br>ところで、GSTR_MUTEX_SAKURA Mutex は現状では不要に思えましたが、どこかで使われてますか？</div></section>
     <ul><li><section><h1 id=4378>
     <span class="no">[4378]</span>
-    <a class="title" href="#4378">Re2:タブが消える問題</a>
+    <a class="thread-title" href="#4378">Re2:タブが消える問題</a>
     <span class="author">かろと</span>
     <time datetime="2006-04-06T23:58:27">2006年04月06日 23:58</time></h1>
     <div class="body">&gt;タイトル: Re2:タブが消える問題<br>&gt;発言者: ryoji<br>&gt;▼ げんたさん<br>&gt;&gt; Patchesの方にもコメントしましたが，現在でも初期化処理はMutexで順番に処理されているはずで，競合が起こっているとすればまずはMutexの獲得・解放のタイミングを見直すことで解決できないのかなと思うのですが．<br>&gt;現状のMutexのみでは競合を避けることはできても順番は保証できないんじゃないでしょうか。<br>&gt;他にまったく方法が無いとまでは断言できませんが、同期オブジェクト追加よりも良策はちょっと思い浮かばないです。<br><br>私もMutexに一票なので、Patchesに案を書いてみました。<br></div></section>
     <ul><li><section><h1 id=4379>
     <span class="no">[4379]</span>
-    <a class="title" href="#4379">Re3:タブが消える問題</a>
+    <a class="thread-title" href="#4379">Re3:タブが消える問題</a>
     <span class="author">ryoji</span>
     <time datetime="2006-04-07T00:16:11">2006年04月07日 00:16</time></h1>
     <div class="body">すいません。Patchesに返答書いちゃいました。<br>「以後はどなたかが別パッチを出されたときに<br>レビューする側に回ります。」<br>ということで、了解願います。</div></section>
     <ul><li><section><h1 id=4380>
     <span class="no">[4380]</span>
-    <a class="title" href="#4380">Re4:タブが消える問題</a>
+    <a class="thread-title" href="#4380">Re4:タブが消える問題</a>
     <span class="author">かろと</span>
     <time datetime="2006-04-07T00:22:13">2006年04月07日 00:22</time></h1>
     <div class="body">&gt;タイトル: Re4:タブが消える問題<br>&gt;発言者: ryoji<br>&gt;すいません。Patchesに返答書いちゃいました。<br>&gt;「以後はどなたかが別パッチを出されたときに<br>&gt;レビューする側に回ります。」<br>&gt;ということで、了解願います。<br><br>ごめんなさい。<br>横やりいれて、モチベーション下げてしまったみたいです。m(__)m<br></div></section>
     <ul><li><section><h1 id=4381>
     <span class="no">[4381]</span>
-    <a class="title" href="#4381">Re5:タブが消える問題</a>
+    <a class="thread-title" href="#4381">Re5:タブが消える問題</a>
     <span class="author">ryoji</span>
     <time datetime="2006-04-07T00:51:38">2006年04月07日 00:51</time></h1>
     <div class="body">&gt; 横やりいれて、モチベーション下げてしまったみたいです。m(__)m<br>あ、いや、そんなことはないのであまり気になさらないでください。(^^;</div></section>
     </li></ul></li></ul></li></ul></li><li><section><h1 id=4382>
     <span class="no">[4382]</span>
-    <a class="title" href="#4382">Re2:タブが消える問題</a>
+    <a class="thread-title" href="#4382">Re2:タブが消える問題</a>
     <span class="author">あろか</span>
     <time datetime="2006-04-07T01:56:45">2006年04月07日 01:56</time></h1>
     <div class="body">▼ ryojiさん<br>&gt; ところで、GSTR_MUTEX_SAKURA Mutex は現状では不要に思えましたが、どこかで使われてますか？<br> 2002年初に起動処理を見直していたとき、Mutexの名前と使い方を変更しました。<br>この影響で古いバージョンと同時に起動したときに「異なるバージョンを同時に使用することはできません」というメッセージが二回出ることを回避するため、<br>旧バージョンと互換性のあるMutexをCreateしています。<br><br> 当時の記録は &gt;&gt;dev:1336<br> 「古いバージョン」は具体的には1.2.104.1以前を指します。４年以上前のバージョンなのでほとんどが引退したかな？<br></div></section>
     </li><li><section><h1 id=4385>
     <span class="no">[4385]</span>
-    <a class="title" href="#4385">Re2:タブが消える問題</a>
+    <a class="thread-title" href="#4385">Re2:タブが消える問題</a>
     <span class="author">げんた</span>
     <time datetime="2006-04-07T02:54:36">2006年04月07日 02:54</time></h1>
     <div class="body">▼ ryojiさん<br>&gt; 現状のMutexのみでは競合を避けることはできても順番は保証できないんじゃないでしょうか。<br>私の理解が不十分なままコメントしてしまい申し訳ありませんでした．<br><br>ryojiさんの説明を読んでから再度自分で見直して，MUTEXの使い方と現象を自分なりにまとめてPatchesにコメントしました．<br></div></section>
     </li></ul></li><li><section><h1 id=4400>
     <span class="no">[4400]</span>
-    <a class="title" href="#4400">Re:タブが消える問題</a>
+    <a class="thread-title" href="#4400">Re:タブが消える問題</a>
     <span class="author">ryoji</span>
     <time datetime="2006-04-11T23:23:15">2006年04月11日 23:23</time></h1>
     <div class="body">Patchesに「ほぼ完成版」をUpしました。<br>大差無さそうなのが２種類あるんですが...<br>ご意見ください。</div></section>
     </li><li><section><h1 id=4404>
     <span class="no">[4404]</span>
-    <a class="title" href="#4404">Re:タブが消える問題</a>
+    <a class="thread-title" href="#4404">Re:タブが消える問題</a>
     <span class="author">ryoji</span>
     <time datetime="2006-04-15T02:00:59">2006年04月15日 02:00</time></h1>
     <div class="body">対策をsakura/trunk#961でCommitしました。</div></section>

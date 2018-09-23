@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>メニューバー変更</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>メニューバー変更 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">217</span>
-    <a class="title" href="217.html#217">メニューバー変更</a></div>
+    <a class="thread-title" href="217.html#217">メニューバー変更</a></div>
     <ul><li><div class="list-title">
     <span class="no">218</span>
-    <a class="title" href="217.html#218">[キー割り当て…]の行末コードは解決</a></div>
+    <a class="thread-title" href="217.html#218">[キー割り当て…]の行末コードは解決</a></div>
     <ul><li><div class="list-title">
     <span class="no">222</span>
-    <a class="title" href="217.html#222">Re:ついで：行末コード</a></div>
+    <a class="thread-title" href="217.html#222">Re:ついで：行末コード</a></div>
     <ul><li><div class="list-title">
     <span class="no">224</span>
-    <a class="title" href="217.html#224">ついでとはいかないみたい</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=217>
+    <a class="thread-title" href="217.html#224">ついでとはいかないみたい</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=217>
     <span class="no">[217]</span>
-    <a class="title" href="#217">メニューバー変更</a>
+    <a class="thread-title" href="#217">メニューバー変更</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-02-17T01:19:52">2001年02月17日 01:19</time></h1>
     <div class="body">ここらで[移動(M)]と[選択(R)]を[編集(E)]配下に移動しますかね？<br>|：<br>|：<br>[高度な操作(V)]<br>[移動(O)]<br>[選択(S)]<br>[矩形選択(E)]<br>という感じ。高度・・・の下にもっていく。<br>アクセスキーは[編集]下でぶつからないようにこのように変更。<br>特に意見が出なければ多分こうすると思います。ついでにバグの一つでも直したいところですが・・・<br>[キー割り当て一覧をコピー]の行末コードくらいなら直せるかなあ。<br>なんか一緒にできない限り(無駄が多くなるので)アップロードはしないつもりです。<br>＃移動、選択以外はだいたいヘルプにぶちこみました。細かい修正や整理はすとーにぃ氏を中心においおいやっていってくれることを大いに期待しちゃってます。<br>ともかく形だけでも項目を一揃え作って一応の体裁を確保したかったんで、ブラッシュアップはそのうちという安易な考えです。。。。(^^ゞ<br><br></div></section>
     <ul><li><section><h1 id=218>
     <span class="no">[218]</span>
-    <a class="title" href="#218">[キー割り当て…]の行末コードは解決</a>
+    <a class="thread-title" href="#218">[キー割り当て…]の行末コードは解決</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-02-17T11:55:47">2001年02月17日 11:55</time></h1>
     <div class="body">▼ じぇぷろさん<br>&gt; [キー割り当て一覧をコピー]の行末コードくらいなら直せるかなあ。<br>これはすぐ修正できました。ただ、これだけをアップするのもアホらしい(URの更新の間隔が短いとダイアルアップでのDLの負担が馬鹿にならない)のと、メニューの修正の件でせめて数日程度はユーザの意見を待ってみたいのとでしばらくはアップしません。<br><br>&gt; [指定行へジャンプ]の[ジャンプ]や[検索]の[上検索]と[下検索]ボタンで行番号や条件を入れてない時に押すと警告音を鳴らしてさっさとダイアログを閉じてしまうが、[置換]と同じように注意のメッセージを表示して、ダイアログに戻り入力できるようになっていてほしいです。いじりかけましたが、30を出すのがまた延びるので止めました。<br>これも合わせてやれればいいかなと思ってます。(できればの話)<br>ホントはもっと自分が使いたい機能としてTeX用のアウトライン解析を他の解析方法を真似て作りたいところなんですが。。。多分「テキスト」と同程度のごく簡単なものでできるはずです。単に特定のキーワードを拾うだけなので。<br>#サクラエディタはTeX用に使えるエディタとして紹介されてもいるのに(下記URL参照)、TeXがらみの要望が出てきませんね。TeXユーザはやっぱり秀丸に尽きるのかなあ。このエディタでTeXを使っている人がいたら教えてください。<br><a href=http://www.nifty.ne.jp/forum/fprint/ftex/project/soft/win.htm#edit target=_top>http://www.nifty.ne.jp/forum/fprint/ftex<br>/project/soft/win.htm#edit</a><br><br>一部引用すると(原作版に対する評価です)：<br><br>【お勧め度】 ★★★★ <br>【コメント】 フリーで動作も軽く，正規表現を使用した検索やTeXの強調表示や入力補完機能があります。普通のエディタとしてもクセがなく幅広く使え，一押しです。<br><br><br></div></section>
     <ul><li><section><h1 id=222>
     <span class="no">[222]</span>
-    <a class="title" href="#222">Re:ついで：行末コード</a>
+    <a class="thread-title" href="#222">Re:ついで：行末コード</a>
     <span class="author">すい</span>
     <time datetime="2001-02-17T19:30:41">2001年02月17日 19:30</time></h1>
     <div class="body">▼ じぇぷろさん<br>&gt; &gt; [キー割り当て一覧をコピー]の行末コードくらいなら直せるかなあ。<br>&gt; これはすぐ修正できました。ただ、これだけをアップするのもアホらしい．．．<br><br>ありゃ、簡単に直ったのですか。<br>では似た問題で、ファイル末尾で「矩形貼り付け」を実行した時の改行コードはどうでしょう？<br>こちらもコードが変になります。（ CR(0x0d)になります）<br>普通に複数行選択して「コピー」でクリップボードに取り込んだ文字列でも「矩形貼り付け」すると変わるようで。(^^;</div></section>
     <ul><li><section><h1 id=224>
     <span class="no">[224]</span>
-    <a class="title" href="#224">ついでとはいかないみたい</a>
+    <a class="thread-title" href="#224">ついでとはいかないみたい</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-02-17T20:54:13">2001年02月17日 20:54</time></h1>
     <div class="body">▼ すいさん<br>&gt; &gt; &gt; [キー割り当て一覧をコピー]の行末コード<br>これはホントに簡単で\nとなっていたのを\r\nにしただけです。(^_^;)<br><br>&gt; では似た問題で、ファイル末尾で「矩形貼り付け」を実行した時の改行コード<br>&gt; こちらもコードが変になります。（ CR(0x0d)になります）<br>現象は確認しました。似て非なるものとはよくいいますが、「矩形貼り付け」はコマンド自体が非常に複雑に出来ています。とてもすぐにはわかりませんです。(T_T)<br>一覧のほうは勝手に中でデータを作ってクリップボードにおくだけですが、こちらはすでにあるデータの取り込みから始まります。<br>そのときの行末コードの解析やら何やらでゴチャゴチャしてます。それらしきところは見えるのですが何せ勘でやってますんで迂闊には触れません。CEditView_CommandのCommand_PASTEBOX関数の2626行目からの<br>if( nPos - nBgn &gt; 0 ){<br>    /* 現在位置にデータを挿入 */<br>    cMem.SetData( &amp;lptstr[nBgn], nPos - nBgn );<br>    if( m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount() &lt;= nCurYOld + nCount ){<br>        cMem += CR;<br>の最後のCRが怪しいと睨んだんですが、CRLF、LFとしてもだめでした。げんた氏かすとーにぃ氏あるいは他の精鋭諸氏に期待するしかありませんね。</div></section>

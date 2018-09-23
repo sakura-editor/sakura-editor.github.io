@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>EUC変換ミス？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>EUC変換ミス？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2382</span>
-    <a class="title" href="2382.html#2382">EUC変換ミス？</a></div>
+    <a class="thread-title" href="2382.html#2382">EUC変換ミス？</a></div>
     <ul><li><div class="list-title">
     <span class="no">2383</span>
-    <a class="title" href="2382.html#2383">RE: EUC変換ミス？</a></div>
+    <a class="thread-title" href="2382.html#2383">RE: EUC変換ミス？</a></div>
     </li><li><div class="list-title">
     <span class="no">2384</span>
-    <a class="title" href="2382.html#2384">Re: EUC変換ミス？</a></div>
+    <a class="thread-title" href="2382.html#2384">Re: EUC変換ミス？</a></div>
     <ul><li><div class="list-title">
     <span class="no">2385</span>
-    <a class="title" href="2382.html#2385">Re2: EUC変換ミス？</a></div>
+    <a class="thread-title" href="2382.html#2385">Re2: EUC変換ミス？</a></div>
     <ul><li><div class="list-title">
     <span class="no">2386</span>
-    <a class="title" href="2382.html#2386">Re3: EUC変換ミス？</a></div>
+    <a class="thread-title" href="2382.html#2386">Re3: EUC変換ミス？</a></div>
     </li><li><div class="list-title">
     <span class="no">2387</span>
-    <a class="title" href="2382.html#2387">Re3: EUC変換ミス？</a></div>
+    <a class="thread-title" href="2382.html#2387">Re3: EUC変換ミス？</a></div>
     <ul><li><div class="list-title">
     <span class="no">2388</span>
-    <a class="title" href="2382.html#2388">Re4: EUC変換ミス？</a></div>
+    <a class="thread-title" href="2382.html#2388">Re4: EUC変換ミス？</a></div>
     <ul><li><div class="list-title">
     <span class="no">2398</span>
-    <a class="title" href="2382.html#2398">Re5: EUC変換ミス？</a></div>
+    <a class="thread-title" href="2382.html#2398">Re5: EUC変換ミス？</a></div>
     <ul><li><div class="list-title">
     <span class="no">2403</span>
-    <a class="title" href="2382.html#2403">Re6: EUC変換ミス？</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2382>
+    <a class="thread-title" href="2382.html#2403">Re6: EUC変換ミス？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2382>
     <span class="no">[2382]</span>
-    <a class="title" href="#2382">EUC変換ミス？</a>
+    <a class="thread-title" href="#2382">EUC変換ミス？</a>
     <span class="author">BrainOfKeios</span>
     <time datetime="2002-10-03T09:26:40">2002年10月03日 09:26</time></h1>
     <div class="body">えっと～仕様なのかもしれませんが、<br>Windows XPでSAKURA　1.3.2.4 を使った場合、<br>「鄕」「髙」の漢字を含んだ文章をEUCで保存すると<br>下記のような文字化けが起こるのですが・・・<br>皛&lt;= 鄕 <br>鄕&lt;= 髙</div></section>
     <ul><li><section><h1 id=2383>
     <span class="no">[2383]</span>
-    <a class="title" href="#2383">RE: EUC変換ミス？</a>
+    <a class="thread-title" href="#2383">RE: EUC変換ミス？</a>
     <span class="author">すい</span>
     <time datetime="2002-10-03T12:58:17">2002年10月03日 12:58</time></h1>
     <div class="body">それ以前に、そもそもそんな文字 JIS や EUC にありましたっけ？<br>確かその漢字がある領域（FA40～FC4B）は Shift_JIS の特殊な領域、それも<br>ＭＳゴシックや ＭＳ明朝 独自の漢字だから MS-DOS やなんかですら表示<br>できない文字のはずだし。<br><br>確か JIS にも無いから E-Mail やなんかでも送れないことが多く、<br>「インターネット関連では使うなや」って感じな漢字だったような。<br><br>Unicode なら、その漢字あるみたいですけど。<br></div></section>
     </li><li><section><h1 id=2384>
     <span class="no">[2384]</span>
-    <a class="title" href="#2384">Re: EUC変換ミス？</a>
+    <a class="thread-title" href="#2384">Re: EUC変換ミス？</a>
     <span class="author">げんた</span>
     <time datetime="2002-10-03T13:27:12">2002年10月03日 13:27</time></h1>
     <div class="body">&gt;「鄕」「髙」の漢字を含んだ文章をEUCで保存すると<br>jis/sjis変換に使っている _mbcjistojms() が対応していないのだと思います．<br>これらの文字はIBM拡張漢字と言われているもので，単純なコード変換以上のことをやらないといけないみたいです．<br><br>鄕が皛に化けるのをもっと詳細に見ると，IBM拡張漢字(fb73)ではなくNEC拡張文字(ee57)の皛になります．気を利かせたつもりでどこか抜けているのか．<br><br>＃ということをわかっていて「仕様かもしれない」と書いたのかしら．<br></div></section>
     <ul><li><section><h1 id=2385>
     <span class="no">[2385]</span>
-    <a class="title" href="#2385">Re2: EUC変換ミス？</a>
+    <a class="thread-title" href="#2385">Re2: EUC変換ミス？</a>
     <span class="author">すい</span>
     <time datetime="2002-10-03T18:08:47">2002年10月03日 18:08</time></h1>
     <div class="body">&gt;jis/sjis変換に使っている _mbcjistojms() が対応していないのだと思います．<br>&gt;これらの文字はIBM拡張漢字と言われているもので，単純なコード変換以上のことをやらないといけないみたいです．<br>&gt;<br>&gt;鄕が皛に化けるのをもっと詳細に見ると，IBM拡張漢字(fb73)ではなくNEC拡張文字(ee57)の皛になります．気を利かせたつもりでどこか抜けているのか．<br><br>fa40～fc4b の領域って単純なコード変換処理で JIS に変換すると漢字として<br>認められないような領域になってしまうような領域だったような？（違うかも）<br><br>で、そういった類の事を一切何も考えずに、単純に機械的にコード変換処理しちゃう<br>から、こういう化け方をするのかと。<br><br>Shift_JIS で fa40～fc4b の範囲の文字なら ed40～eefc または 8754～879a の文字に<br>変換↓してから JIS や EUC に変換するようにすれば、見た目上は問題は解決すると思いますが。<br><br>|ⅰ (fa40)→ ⅰ (eeef)<br>|ⅱ (fa41)→ ⅱ (eef0)<br>|．<br>|Ⅰ (fa4a)→ Ⅰ (8754)<br>|Ⅱ (fa4b)→ Ⅱ (8755)<br>|．<br>|纊 (fa5c)→ 纊 (ed40)<br>|褜 (fa5d)→ 褜 (ed41)<br>|．<br>|鄕 (fbb8)→ 鄕 (ee9c)<br>|．<br>|髙 (fbfc)→ 髙 (eee0)<br>|．<br>|．<br>|黑 (fc4b)→ 黑 (eeec)<br><br>ただその場合、Shift_JIS → EUC → Shift_JIS の順に変換すると勝手に文字コードが<br>“fa40～fc4bの領域の文字” → “ed40～eefcの領域の文字”に変わっちゃう<br>（元に戻らない）事になりますけど良いのかな？<br>どうなんでしょう？<br></div></section>
     <ul><li><section><h1 id=2386>
     <span class="no">[2386]</span>
-    <a class="title" href="#2386">Re3: EUC変換ミス？</a>
+    <a class="thread-title" href="#2386">Re3: EUC変換ミス？</a>
     <span class="author">すい</span>
     <time datetime="2002-10-03T18:56:49">2002年10月03日 18:56</time></h1>
     <div class="body">&gt;fa40～fc4b の領域って単純なコード変換処理で JIS に変換すると漢字として<br>&gt;認められないような領域になってしまうような領域だったような？（違うかも）<br><br>違いました。<br><br>よく確認してみたら、<br>「 fa40～fc4b の領域の漢字は Shift_JIS → EUC 変換処理にかけても EUC に変換されない」<br>んですね。Shift_JIS のまんまです。<br><br>で、その変換されていない Shift_JIS の fa40～fc4b のままの漢字を EUC と<br>みなして開くから、結果として化ける。そりゃ化けますわぃ。<br>Shift_JIS のままの文字を強制的に EUC とみなして開こうとしているんですから。<br><br>逆に言うと、つまり“この領域の文字は EUC に変換不可能な領域”という事でしょうか？<br>やはり変換処理しないと駄目っぽいですね。<br></div></section>
     </li><li><section><h1 id=2387>
     <span class="no">[2387]</span>
-    <a class="title" href="#2387">Re3: EUC変換ミス？</a>
+    <a class="thread-title" href="#2387">Re3: EUC変換ミス？</a>
     <span class="author">すい</span>
     <time datetime="2002-10-03T21:30:51">2002年10月03日 21:30</time></h1>
     <div class="body">&gt;Shift_JIS で fa40～fc4b の範囲の文字なら ed40～eefc または 8754～879a の文字に<br>&gt;変換↓してから JIS や EUC に変換するようにすれば、見た目上は問題は解決すると思いますが。<br><br>もし、この変換処理をやるなら↓こんな感じってことで。（小さな関数 １個）<br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/CONV.LZH<br># 対して大きくないんですけど、サイズオーバーでここには書き込めませんでした。(;_;)<br><br>*pszSrc 内の文字列を直接書換えます。<br><br>これを関数名 conv は適当に変えて、sakura_core/CMemory.cpp 中にでもコピーし、<br>Shift_JIS → EUC 変換処理、Shift_JIS → JIS 変換処理それぞれの頭の方で呼び出すようにして。。。<br># 例のごとく動作確認は LSI-C でやってます。<br></div></section>
     <ul><li><section><h1 id=2388>
     <span class="no">[2388]</span>
-    <a class="title" href="#2388">Re4: EUC変換ミス？</a>
+    <a class="thread-title" href="#2388">Re4: EUC変換ミス？</a>
     <span class="author">げんた</span>
     <time datetime="2002-10-04T00:48:57">2002年10月04日 00:48</time></h1>
     <div class="body">ありがとうございました．早速取り込みました．<br><br>行単位の変換を文字単位の変換とし，CMemoryクラスに追加しました．<br></div></section>
     <ul><li><section><h1 id=2398>
     <span class="no">[2398]</span>
-    <a class="title" href="#2398">Re5: EUC変換ミス？</a>
+    <a class="thread-title" href="#2398">Re5: EUC変換ミス？</a>
     <span class="author">すい</span>
     <time datetime="2002-10-04T12:31:55">2002年10月04日 12:31</time></h1>
     <div class="body">&gt;早速取り込みました．<br>すみません、注釈が間違っていました。<br>注釈なので、動作には全く影響しないのですが、他の方が後から見たり弄ったり<br>するときに混乱しないよう、修正しておいて頂けると幸いです。<br><br>変換部の行末尾、一部、文字コード（数値）の記述が誤っていました。<br>↓矩形の切り貼りで修正願います。<br>----- ここから -----<br>/* fa40～fa49 → eeef～eef8 (ⅰ～ⅹ) */<br>/* fa4a～fa53 → 8754～875d (Ⅰ～Ⅹ) */<br>/* fa54～fa57 → eef9～eefc (￢～＂) */<br>/* ㈱ */<br>/* № */<br>/* ℡ */<br>/* ∵ */<br>/* fa5c～fa7e → ed40～ed62 (纊～兊) */<br>/* fa80～fa9b → ed63～ed7e (兤～﨏) */<br>/* fa9c～fafc → ed80～ede0 (塚～浯) */<br>/* fb40～fb5b → ede1～edfc (涖～犱) */<br>/* fb5c～fb7e → ee40～ee62 (犾～神) */<br>/* fb80～fb9b → ee63～ee7e (祥～蕙) */<br>/* fb9c～fbfc → ee80～eee0 (蕫～髙) */<br>/* fc40～fc4b → eee1～eeec (髜～黑) */<br>----- ここまで -----<br><br>よろしくお願いします。<br></div></section>
     <ul><li><section><h1 id=2403>
     <span class="no">[2403]</span>
-    <a class="title" href="#2403">Re6: EUC変換ミス？</a>
+    <a class="thread-title" href="#2403">Re6: EUC変換ミス？</a>
     <span class="author">げんた</span>
     <time datetime="2002-10-06T02:57:24">2002年10月06日 02:57</time></h1>
     <div class="body">&gt;すみません、注釈が間違っていました。<br>しまった．1.3.5.1で入れ忘れた．<br><br>今なおしましたので，次回にはちゃんと直ります．<br></div></section>

@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Win95系でWSHが動きました</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Win95系でWSHが動きました | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3308</span>
-    <a class="title" href="3308.html#3308">Win95系でWSHが動きました</a></div>
+    <a class="thread-title" href="3308.html#3308">Win95系でWSHが動きました</a></div>
     <ul><li><div class="list-title">
     <span class="no">3311</span>
-    <a class="title" href="3308.html#3311">RE: Win95系でWSHが動きました</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3308>
+    <a class="thread-title" href="3308.html#3311">RE: Win95系でWSHが動きました</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3308>
     <span class="no">[3308]</span>
-    <a class="title" href="#3308">Win95系でWSHが動きました</a>
+    <a class="thread-title" href="#3308">Win95系でWSHが動きました</a>
     <span class="author">FILE</span>
     <time datetime="2003-11-11T02:50:48">2003年11月11日 02:50</time></h1>
     <div class="body">　初めまして。Win95系(Win95/98)でWSHが動作しない<br>と言うのが悔しくて、少しいじってみました。<br><br>・Ver. 1.4.3.3の CWSH.cpp をベースに変更し、Win95<br>とWinMeで現在のファイルのパスを取得する動作を確認<br>いたしました。(Editor.GetFileName()の呼び出し成功)<br><br>diff --dos -u1 CWSH_pre.cpp CWSH_aft.cpp &gt; CWSH.diff<br><br>--- CWSH_Pre.cpp&#9;Sun Mar 09 02:05:58 2003<br>+++ CWSH_Aft.cpp&#9;Mon Nov 10 12:54:22 2003<br>@@ -205,3 +205,4 @@<br> #endif<br>-&#9;&#9;if(lstrcmpiW(pstrName, L"Editor") == 0)<br>+&#9;&#9;//&#9;Nov. 10, 2003 FILE Win9Xでは、[lstrcmpiW]が無効のため、[_wcsicmp]に修正<br>+&#9;&#9;if(_wcsicmp(pstrName, L"Editor") == 0)<br> &#9;&#9;{<br>@@ -263,3 +264,4 @@<br> &#9;&#9;&#9;&#9;wchar_t *Message = new wchar_t[SysStringLen(Info.bstrDescription) + 128];<br>-&#9;&#9;&#9;&#9;wsprintfW(Message, L"[Line %d] %ls", Line + 1, Info.bstrDescription);<br>+&#9;&#9;&#9;&#9;//&#9;Nov. 10, 2003 FILE Win9Xでは、[wsprintfW]が無効のため、[swprintf]に修正<br>+&#9;&#9;&#9;&#9;swprintf(Message, L"[Line %d] %ls", Line + 1, Info.bstrDescription);<br> &#9;&#9;&#9;&#9;SysReAllocString(&amp;Info.bstrDescription, Message);<br>@@ -409,3 +411,4 @@<br> &#9;&#9;{<br>-&#9;&#9;&#9;if(lstrcmpiW(rgszNames[I], m_Methods[J].Name) == 0)<br>+&#9;&#9;&#9;//&#9;Nov. 10, 2003 FILE Win9Xでは、[lstrcmpiW]が無効のため、[_wcsicmp]に修正<br>+&#9;&#9;&#9;if(_wcsicmp(rgszNames[I], m_Methods[J].Name) == 0)<br> &#9;&#9;&#9;{<br>@@ -431,3 +434,4 @@<br> &#9;Info-&gt;Desc.lprgelemdescParam = Info-&gt;Arguments;<br>-&#9;lstrcpyW(Info-&gt;Name, Name);<br>+&#9;//&#9;Nov. 10, 2003 FILE Win9Xでは、[lstrcpyW]が無効のため、[wcscpy]に修正<br>+&#9;wcscpy(Info-&gt;Name, Name);<br> &#9;Info-&gt;Method = Method;<br>@@ -670,4 +674,5 @@<br> &#9;&#9;}<br>-&#9;&#9;delete Buffer;<br>-&#9;&#9;delete WideBuffer;<br>+&#9;&#9;//&#9;Nov. 10, 2003 FILE 配列の破棄なので、[括弧]を追加<br>+&#9;&#9;delete [] Buffer;<br>+&#9;&#9;delete [] WideBuffer;<br> &#9;&#9;CloseHandle(File);<br><br>・つまり原因は、Win9X系で正常に動作しない関数の使用で、<br>「新規エディタウィンドウが起動」は、lstrcmpiW()が常に<br>０を返すため、最初のコマンドが起動していると思われます。<br><br>　識者の方、検証をお願いできますでしょうか？<br>　特に、Win2KやWinXPでも動作するかどうかや、VC++ 6.0以外<br>でもコンパイル可能かどうか等。<br><br>以上、長文失礼致しました。<br></div></section>
     <ul><li><section><h1 id=3311>
     <span class="no">[3311]</span>
-    <a class="title" href="#3311">RE: Win95系でWSHが動きました</a>
+    <a class="thread-title" href="#3311">RE: Win95系でWSHが動きました</a>
     <span class="author">げんた</span>
     <time datetime="2003-11-15T11:08:09">2003年11月15日 11:08</time></h1>
     <div class="body">&gt;・つまり原因は、Win9X系で正常に動作しない関数の使用で、<br>&gt;「新規エディタウィンドウが起動」は、lstrcmpiW()が常に<br>&gt;０を返すため、最初のコマンドが起動していると思われます。<br>lstrcmpiはたしかにPlatform SDKを見ると Microsoft Layer for Unicode on Windows 95/98/Me System が必要だと書いてありますね．<br><br>Windows XPではVisual C++, Borland C++の両方でコンパイル＆実行できました。<br>使用したのはGetSelectedString, InsTextです。<br></div></section>

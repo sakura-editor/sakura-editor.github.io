@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>VariantChangeType対応</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>VariantChangeType対応 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">4155</span>
-    <a class="title" href="4155.html#4155">VariantChangeType対応</a></div>
+    <a class="thread-title" href="4155.html#4155">VariantChangeType対応</a></div>
     <ul><li><div class="list-title">
     <span class="no">4172</span>
-    <a class="title" href="4155.html#4172">RE: VariantChangeType対応</a></div>
+    <a class="thread-title" href="4155.html#4172">RE: VariantChangeType対応</a></div>
     <ul><li><div class="list-title">
     <span class="no">4187</span>
-    <a class="title" href="4155.html#4187">Re2: CMacro::HandleFunction()について</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4155>
+    <a class="thread-title" href="4155.html#4187">Re2: CMacro::HandleFunction()について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4155>
     <span class="no">[4155]</span>
-    <a class="title" href="#4155">VariantChangeType対応</a>
+    <a class="thread-title" href="#4155">VariantChangeType対応</a>
     <span class="author">FILE</span>
     <time datetime="2005-11-20T20:07:15">2005年11月20日 20:07</time></h1>
     <div class="body">　(&gt;&gt;dev:3926)で紹介させていただきました、VariantChangeType()を<br>使用してみました。<br><br>　更新履歴(<a href=http://members.at.infoseek.co.jp/sakura_editor/bin_changelog.html) target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>bin_chan<wbr>gelog.<wbr>html)<wbr></nobr></a>の<br>「Win95系OSでWSHが一応うごくように．」から、「一応」を取り除く事が目標です。<br><br>　(&gt;&gt;macro:110)のようなキャスト(？)を行う必要が無くなり、VBScriptで書かれた<br>マクロが増えると嬉しいです。<br><br>　差分ファイルは、以下のアドレスに(最低１ヶ月ぐらい)置いておきます。<br><br>www001.upp.so-net.ne.jp/folder/Z6LQNzJu/051120-Sakura_Diff/ssrc_2005-11-06_VariantChangeType.diff<br><br>　この対応により、CMacro::HandleFunction()を大幅に変更してしまいました。<br>　処理内容はそのままに、慎重に書き換えましたので大丈夫かとは思いますが、<br>ご確認いただけますでしょうか。<br><br>　Ver. 1.5.8.0(2005-11-06)をベースに変更し、<br>Win95(+IE5.5), WinMe(+IE5.5), WinXP(+IE6)<br>の環境で動作確認いたしました。<br></div></section>
     <ul><li><section><h1 id=4172>
     <span class="no">[4172]</span>
-    <a class="title" href="#4172">RE: VariantChangeType対応</a>
+    <a class="thread-title" href="#4172">RE: VariantChangeType対応</a>
     <span class="author">げんた</span>
     <time datetime="2005-11-27T11:54:17">2005年11月27日 11:54</time></h1>
     <div class="body">[CMacro::HandleFunction()について]<br><br>case F_GETSELECTED: で判定の!が消えているようです．<br>---<br>VariantClearを行うためにreturnを最後に持ってきていますが，<br>VariantInitとVariantClearを行うクラスを設けた方が，途中でreturnしてしまうミスを防げると思います．<br><br>class Varantなんとか {<br>VARIANT varCopy<br>public:<br>VARINT&amp; get() { return varCopy; }<br>Variantなんとか() { VariantInit(&amp;varCopy); }<br>~Variantなんとか() { VariantClear(&amp;varCopy); }<br>}<br></div></section>
     <ul><li><section><h1 id=4187>
     <span class="no">[4187]</span>
-    <a class="title" href="#4187">Re2: CMacro::HandleFunction()について</a>
+    <a class="thread-title" href="#4187">Re2: CMacro::HandleFunction()について</a>
     <span class="author">FILE</span>
     <time datetime="2005-12-01T00:17:24">2005年12月01日 00:17</time></h1>
     <div class="body">ご確認ありがとうございます。<br><br>&gt; case F_GETSELECTED: で判定の!が消えているようです．<br><br>これは意図的な変更で、こちらの環境では正常に動作していました。<br><br>&gt; VariantClearを行うためにreturnを最後に持ってきていますが，<br>&gt; VariantInitとVariantClearを行うクラスを設けた方が，途中でreturnしてしまうミスを防げると思います．<br><br>一瞬頭をよぎりましたが、この関数内だけの変更にしたかったのと、<br>(C++の認識不足による)メモリリーク等が怖かったので、上記の仕様<br>にしていました。<br><br>&gt; class Variantなんとか {<br>&gt;   (中略)<br>&gt; }<br><br>既にOleTypes.hにstruct Variantがありましたので、勉強のためにも<br>これを使用して、修正してみました。(差分がかなり減りました)<br><br>Ver.1.5.8.1(2005-11-27)をベースにした差分ファイルを、<br>以下のアドレスに(最低１ヶ月ぐらい)置いておきます。<br><br>www001.upp.so-net.ne.jp/folder/YMr2vU63/051130-Sakura_Diff/ssrc_2005-11-27_VariantChangeType.diff<br><br><br>・差分ファイルについてメモ<br><br>差分ファイルをsakura_coreの一つ上のフォルダで作成する場合<br>diff -ur --dos -u1 sakura_core_Org sakura_core &gt; 差分ファイル.diff<br>  (-u1:差分少な目 / sakura_core_Org:変更前のフォルダのコピー)<br><br>差分ファイルを作成したフォルダ(sakura_coreの一つ上)で実行する場合<br>patch -p0 --dos &lt; 差分ファイル.diff<br><br>適用対象ファイルと同じフォルダ(sakura_core内)で実行する場合<br>patch -p1 --dos &lt; 差分ファイル.diff<br></div></section>

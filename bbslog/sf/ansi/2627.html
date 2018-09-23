@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行の真ん中にカーソル</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>改行の真ん中にカーソル | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2627</span>
-    <a class="title" href="2627.html#2627">改行の真ん中にカーソル</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=2627>
+    <a class="thread-title" href="2627.html#2627">改行の真ん中にカーソル</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=2627>
     <span class="no">[2627]</span>
-    <a class="title" href="#2627">改行の真ん中にカーソル</a>
+    <a class="thread-title" href="#2627">改行の真ん中にカーソル</a>
     <span class="author">みく</span>
     <time datetime="2003-03-28T19:12:16">2003年03月28日 19:12</time></h1>
     <div class="body"><br>CEditDoc.cpp:729<br> m_cEditViewArr[m_nActivePaneIndex].m_nVi<br>ewLeftCol = fi.m_nViewLeftCol; // 2001/10/20 novice<br>+//改行の真ん中にカーソルが来ないように。<br>+CDocLine *pTmpDocLine = m_cDocLineMgr.GetLineInfo( nCaretPosY );<br>+if( pTmpDocLine ){<br>+&#9;if( pTmpDocLine-&gt;GetLengthWithoutEOL() &lt; fi.m_nX ) nCaretPosX--;<br>+}<br> m_cEditViewArr[m_nActivePaneIndex].MoveC<br>ursor( nCaretPosX, nCaretPosY, TRUE );<br><br>CNormalProcess.cpp:27<br>+#include "CDocLine.h"<br><br>CNormalProcess.cpp:206<br> if( nPosY &lt; m_pcEditWnd-&gt;m_cEditDoc.m_cLayoutMgr.GetLineCount() ){<br>+&#9;//改行の真ん中にカーソルが来ないように。<br>+&#9;CDocLine *pTmpDocLine = m_pcEditWnd-&gt;m_cEditDoc.m_cDocLineMgr.GetLineInfo( nPosY );<br>+&#9;if( pTmpDocLine ){<br>+&#9;&#9;if( pTmpDocLine-&gt;GetLengthWithoutEOL() &lt; fi.m_nX ) nPosX--;<br>+&#9;}<br> &#9;m_pcEditWnd-&gt;m_cEditDoc.m_cEditViewArr[0].MoveCursor( nPosX, nPosY, TRUE );<br></div></section>

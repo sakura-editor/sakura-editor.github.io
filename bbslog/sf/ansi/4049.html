@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>カーソル残骸の修正</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>カーソル残骸の修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">4049</span>
-    <a class="title" href="4049.html#4049">カーソル残骸の修正</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=4049>
+    <a class="thread-title" href="4049.html#4049">カーソル残骸の修正</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=4049>
     <span class="no">[4049]</span>
-    <a class="title" href="#4049">カーソル残骸の修正</a>
+    <a class="thread-title" href="#4049">カーソル残骸の修正</a>
     <span class="author">ryoji</span>
     <time datetime="2005-09-29T22:25:27">2005年09月29日 22:25</time></h1>
     <div class="body">&gt;&gt;data:4599 カーソルの残骸<br>修正パッチです。<br><br>--- ssrc_2005-09-03\sakura_core/CEditView_New2.cpp&#9;Sat Sep 03 03:35:13 2005<br>+++ ssrc_2005-09-03_2\sakura_core/CEditView_New2.cpp&#9;Thu Sep 29 19:03:26 2005<br>@@ -482,8 +482,10 @@<br> &#9;&#9;&#9;rcClip.bottom = y + nLineHeight;<br> &#9;&#9;&#9;// 2005/04/02 かろと ０文字マッチだと反転幅が０となり反転されないので、1/3文字幅だけ反転させる<br> &#9;&#9;&#9;// 2005/06/26 zenryaku 選択解除でキャレットの残骸が残る問題を修正<br>+&#9;&#9;&#9;// 2005/09/29 ryoji スクロール時にキャレットのようなゴミが表示される問題を修正<br> &#9;&#9;&#9;if (IsTextSelected() &amp;&amp; rcClip.right == rcClip.left &amp;&amp;<br>-&#9;&#9;&#9;&#9;m_nSelectLineFrom == m_nSelectLineTo)<br>+&#9;&#9;&#9;&#9;m_nSelectLineFrom == m_nSelectLineTo &amp;&amp;<br>+&#9;&#9;&#9;&#9;m_nSelectColmFrom &gt;= m_nViewLeftCol)<br> &#9;&#9;&#9;{<br> &#9;&#9;&#9;&#9;rcClip.right = rcClip.left + (nCharWidth/3 == 0 ? 1 : nCharWidth/3);<br> &#9;&#9;&#9;}<br></div></section>

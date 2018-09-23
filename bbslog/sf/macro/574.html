@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>TagJump()後にSearchNext()できない？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>TagJump()後にSearchNext()できない？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">574</span>
-    <a class="title" href="574.html#574">TagJump()後にSearchNext()できない？</a></div>
+    <a class="thread-title" href="574.html#574">TagJump()後にSearchNext()できない？</a></div>
     <ul><li><div class="list-title">
     <span class="no">575</span>
-    <a class="title" href="574.html#575">Re: TagJump()後にSearchNext()できない？</a></div>
+    <a class="thread-title" href="574.html#575">Re: TagJump()後にSearchNext()できない？</a></div>
     <ul><li><div class="list-title">
     <span class="no">576</span>
-    <a class="title" href="574.html#576">Re2: TagJump()後にSearchNext()できない？</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=574>
+    <a class="thread-title" href="574.html#576">Re2: TagJump()後にSearchNext()できない？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=574>
     <span class="no">[574]</span>
-    <a class="title" href="#574">TagJump()後にSearchNext()できない？</a>
+    <a class="thread-title" href="#574">TagJump()後にSearchNext()できない？</a>
     <span class="author">sea_show</span>
     <time datetime="2013-10-29T00:51:42">2013年10月29日 00:51</time></h1>
     <div class="body">jscriptで、TagJump()したあとにSearchNext()しているのですが、<br>同じファイル内をジャンプした場合はちゃんと検索するのですが、<br>別のファイルへジャンプした場合に検索してくれません。<br>Sleep(100);やってみてもダメなのですが、<br>なにかおまじないが必要なのでしょうか？<br><br>sakura2.1.0.0 です<br></div></section>
     <ul><li><section><h1 id=575>
     <span class="no">[575]</span>
-    <a class="title" href="#575">Re: TagJump()後にSearchNext()できない？</a>
+    <a class="thread-title" href="#575">Re: TagJump()後にSearchNext()できない？</a>
     <span class="author">もか</span>
     <time datetime="2013-10-29T02:19:04">2013年10月29日 02:19</time></h1>
     <div class="body">&gt;別のファイルへジャンプした場合に検索してくれません。<br>別のファイル内でSearchNextしたい、という意味なら無理です。<br>Editor.SearchNextのEditorオブジェクトは、そのマクロを実行したウィンドウが対象なので。<br>ためしてみてませんが、SearchNext&amp;SendKeys("{F3}")を使うとか、UWSC等、ほかの方法が必要です。<br></div></section>
     <ul><li><section><h1 id=576>
     <span class="no">[576]</span>
-    <a class="title" href="#576">Re2: TagJump()後にSearchNext()できない？</a>
+    <a class="thread-title" href="#576">Re2: TagJump()後にSearchNext()できない？</a>
     <span class="author">sea_show</span>
     <time datetime="2013-11-11T01:26:34">2013年11月11日 01:26</time></h1>
     <div class="body">わかりました。いろいろ試してみます。<br><br>そもそもの目的は、ファイルを編集するとtagsの情報（行番号）がズレるので、ジャンプしたときにズレるのを何とかしたいと思い、対策を考えて実験していた次第です。<br><br>対策1.タグジャンプしたあと検索すればヒットするはず。<br>対策2.タグファイル生成をバックグラウンドで自動でやる。<br></div></section>

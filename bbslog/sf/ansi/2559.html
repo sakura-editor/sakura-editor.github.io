@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>マルチユーザモード（案）</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>マルチユーザモード（案） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2559</span>
-    <a class="title" href="2559.html#2559">マルチユーザモード（案）</a></div>
+    <a class="thread-title" href="2559.html#2559">マルチユーザモード（案）</a></div>
     <ul><li><div class="list-title">
     <span class="no">2561</span>
-    <a class="title" href="2559.html#2561">RE: マルチユーザモード（案）</a></div>
+    <a class="thread-title" href="2559.html#2561">RE: マルチユーザモード（案）</a></div>
     </li><li><div class="list-title">
     <span class="no">2562</span>
-    <a class="title" href="2559.html#2562">Re: マルチユーザモード（案）</a></div>
+    <a class="thread-title" href="2559.html#2562">Re: マルチユーザモード（案）</a></div>
     </li><li><div class="list-title">
     <span class="no">2563</span>
-    <a class="title" href="2559.html#2563">Re:マルチユーザモード（案）</a></div>
+    <a class="thread-title" href="2559.html#2563">Re:マルチユーザモード（案）</a></div>
     <ul><li><div class="list-title">
     <span class="no">2564</span>
-    <a class="title" href="2559.html#2564">Re2:マルチユーザモード（案）</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2559>
+    <a class="thread-title" href="2559.html#2564">Re2:マルチユーザモード（案）</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2559>
     <span class="no">[2559]</span>
-    <a class="title" href="#2559">マルチユーザモード（案）</a>
+    <a class="thread-title" href="#2559">マルチユーザモード（案）</a>
     <span class="author">みく</span>
     <time datetime="2003-02-10T19:05:42">2003年02月10日 19:05</time></h1>
     <div class="body"><br>実行ファイル名を sakuram.exe とかに改名するとマルチユーザモードになり、<br>C:\Documents and Settings\ユーザ名\Application Data\sakura\sakura.ini<br>(%USERPROFILE%\Application Data\sakura\sakura.ini)<br>の設定ファイルを使うようになるとか。<br>→CShareDataからCProfileに渡すファイル名変えるだけ。<br><br>このとき、共有メモリの識別名にもユーザ名を付加して区別するように。<br><br>＃最初はコマンドラインオプションも考えたが面倒。<br></div></section>
     <ul><li><section><h1 id=2561>
     <span class="no">[2561]</span>
-    <a class="title" href="#2561">RE: マルチユーザモード（案）</a>
+    <a class="thread-title" href="#2561">RE: マルチユーザモード（案）</a>
     <span class="author">みく</span>
     <time datetime="2003-02-10T20:37:54">2003年02月10日 20:37</time></h1>
     <div class="body"><br>Win95/98/Me のときは、exeと同じフォルダで<br>sakura-ユーザ名.ini という名前にする。<br></div></section>
     </li><li><section><h1 id=2562>
     <span class="no">[2562]</span>
-    <a class="title" href="#2562">Re: マルチユーザモード（案）</a>
+    <a class="thread-title" href="#2562">Re: マルチユーザモード（案）</a>
     <span class="author">もか</span>
     <time datetime="2003-02-11T01:19:54">2003年02月11日 01:19</time></h1>
     <div class="body">▼ みくさん<br>&gt;実行ファイル名を sakuram.exe とかに改名するとマルチユーザモードになり、<br>実行ファイル名を 任意の文字列1.exe などにすると文字コードがその数字の文字コード(この場合EUC-JPに)固定されるという機能があるから<br>.*m\.exe ならマルチユーザモードで、<br>.*[0-9]+m?\.exe なら文字コード固定とかにすればいいのかもしれません。<br><br>アンインストールはどうしましょう？<br></div></section>
     </li><li><section><h1 id=2563>
     <span class="no">[2563]</span>
-    <a class="title" href="#2563">Re:マルチユーザモード（案）</a>
+    <a class="thread-title" href="#2563">Re:マルチユーザモード（案）</a>
     <span class="author">おに</span>
     <time datetime="2003-02-11T04:55:02">2003年02月11日 04:55</time></h1>
     <div class="body">あのう、sakura.exeと同じ位置に、例えばsakura.cmdlineが存在すればまずそれを読んで、書いてある内容をコマンドラインオプションとして解釈、とかじゃ駄目なのでしょうか？<br>ファイル名変えるのはトリッキーというか、他用途でファイル名を変えられなくなるというか。<br>(例:notepad.exeにリネームしてWinフォルダにコピー…いえ、もちろんそんなことはしませんが)</div></section>
     <ul><li><section><h1 id=2564>
     <span class="no">[2564]</span>
-    <a class="title" href="#2564">Re2:マルチユーザモード（案）</a>
+    <a class="thread-title" href="#2564">Re2:マルチユーザモード（案）</a>
     <span class="author">みく</span>
     <time datetime="2003-02-11T11:43:39">2003年02月11日 11:43</time></h1>
     <div class="body"><br>&gt;実行ファイル名を 任意の文字列1.exe などにすると文字コードがその数字の文字コード(この場合EUC-JPに)固定されるという機能があるから<br><br>そんな機能があるとは知らなかった...<br><br><br>&gt;あのう、sakura.exeと同じ位置に、例えばsakura.cmdlineが存在すればまずそれを読んで、書いてある内容をコマンドラインオプションとして解釈、とかじゃ駄目なのでしょうか？<br><br>それもありでしょう。<br>マルチユーザオプション以外のオプションを指定しておけ<br>るという効果も期待しているものと思います。<br><br>でも、マルチユーザ設定してあるときに、あるユーザが<br>sakura.cmdlineを書き換えたりしてしまったら<br>別のユーザは勝手にマルチユーザモードを解除されてし<br>まうってことですよね。<br>それを防止するためにsakura.cmdlineはAdministrator権限<br>でしか編集できないようにしておく必要はあると思います。<br>でもAdministrator権限でしか編集できないと、あるユーザが<br>自分だけ特別な設定をしたいときに設定できない、と。<br><br>結局、マルチユーザ対応であるのにsakura.cmdlineという<br>ファイルはシングルユーザなのね。<br>＃あと、アイコンファイルも。<br><br>そもそも、今の状況だと、Administratorで実行した後、<br>一般制限ユーザで実行するとiniファイルに書き込み権<br>がないような。。。<br><br><br>結論：自分のところに全部コピーして使う。<br></div></section>

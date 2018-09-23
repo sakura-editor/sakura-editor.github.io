@@ -1,117 +1,143 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>GetSelectedString</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>GetSelectedString | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2554</span>
-    <a class="title" href="2554.html#2554">GetSelectedString</a></div>
+    <a class="thread-title" href="2554.html#2554">GetSelectedString</a></div>
     <ul><li><div class="list-title">
     <span class="no">2556</span>
-    <a class="title" href="2554.html#2556">RE: GetSelectedString</a></div>
+    <a class="thread-title" href="2554.html#2556">RE: GetSelectedString</a></div>
     <ul><li><div class="list-title">
     <span class="no">2557</span>
-    <a class="title" href="2554.html#2557">Re2: GetSelectedString</a></div>
+    <a class="thread-title" href="2554.html#2557">Re2: GetSelectedString</a></div>
     <ul><li><div class="list-title">
     <span class="no">2582</span>
-    <a class="title" href="2554.html#2582">Re3: GetSelectedString</a></div>
+    <a class="thread-title" href="2554.html#2582">Re3: GetSelectedString</a></div>
     <ul><li><div class="list-title">
     <span class="no">2585</span>
-    <a class="title" href="2554.html#2585">Re4: GetSelectedString</a></div>
+    <a class="thread-title" href="2554.html#2585">Re4: GetSelectedString</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">2586</span>
-    <a class="title" href="2554.html#2586">マクロ関数の共通処理</a></div>
+    <a class="thread-title" href="2554.html#2586">マクロ関数の共通処理</a></div>
     <ul><li><div class="list-title">
     <span class="no">2587</span>
-    <a class="title" href="2554.html#2587">Re:マクロ関数の共通処理</a></div>
+    <a class="thread-title" href="2554.html#2587">Re:マクロ関数の共通処理</a></div>
     <ul><li><div class="list-title">
     <span class="no">2592</span>
-    <a class="title" href="2554.html#2592">Re2:マクロ関数の共通処理</a></div>
+    <a class="thread-title" href="2554.html#2592">Re2:マクロ関数の共通処理</a></div>
     <ul><li><div class="list-title">
     <span class="no">2593</span>
-    <a class="title" href="2554.html#2593">Re3:マクロ関数の共通処理</a></div>
+    <a class="thread-title" href="2554.html#2593">Re3:マクロ関数の共通処理</a></div>
     </li><li><div class="list-title">
     <span class="no">2607</span>
-    <a class="title" href="2554.html#2607">Re3:マクロ関数の共通処理</a></div>
+    <a class="thread-title" href="2554.html#2607">Re3:マクロ関数の共通処理</a></div>
     <ul><li><div class="list-title">
     <span class="no">2614</span>
-    <a class="title" href="2554.html#2614">いいわけ</a></div>
+    <a class="thread-title" href="2554.html#2614">いいわけ</a></div>
     </li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">2588</span>
-    <a class="title" href="2554.html#2588">Re: マクロ関数の共通処理</a></div>
+    <a class="thread-title" href="2554.html#2588">Re: マクロ関数の共通処理</a></div>
     <ul><li><div class="list-title">
     <span class="no">2589</span>
-    <a class="title" href="2554.html#2589">Re2: マクロ関数の共通処理</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2554>
+    <a class="thread-title" href="2554.html#2589">Re2: マクロ関数の共通処理</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2554>
     <span class="no">[2554]</span>
-    <a class="title" href="#2554">GetSelectedString</a>
+    <a class="thread-title" href="#2554">GetSelectedString</a>
     <span class="author">おに</span>
     <time datetime="2003-02-03T00:14:21">2003年02月03日 00:14</time></h1>
     <div class="body">一般のほうでGetSelectedStringについて尋ねたのですが、いただいた返答によりますと「SelectedString」なのに「検索ダイアログに取り込まれる文字列」を返すようなので、複数行選択されていても二行目以降の取得ができない様子。<br>なので、「選択文字列」を返すように書き換えてみました。<br><br>//CWSH.cppの"case F_GETSELECTED:"以下の部分を修正<br><br>if(Result != NULL)<br>{<br>&#9;if(View-&gt;IsTextSelected())<br>&#9;{<br>&#9;&#9;CMemory cMem;<br>&#9;&#9;if(!View-&gt;GetSelectedData(cMem, FALSE, NULL, FALSE, FALSE)) break; //??<br>&#9;&#9;int Length = cMem.GetLength();<br>&#9;&#9;wchar_t *buf = new wchar_t[Length + 1];<br>&#9;&#9;buf[MultiByteToWideChar(CP_ACP, 0, cMem.GetPtr(), Length, buf, Length)] = 0;<br>&#9;&#9;Result-&gt;vt = VT_BSTR;<br>&#9;&#9;Result-&gt;bstrVal = SysAllocString(buf);<br>&#9;&#9;delete[] buf;<br>&#9;}<br>&#9;else<br>&#9;{<br>&#9;&#9;Result-&gt;vt = VT_BSTR;<br>&#9;&#9;Result-&gt;bstrVal = SysAllocString(L"");<br>&#9;}<br>}<br>break;<br><br>//テスト<br><br>var s = Editor.GetSelectedString(0);<br>Editor.InsText("&lt;code&gt;" + s + "&lt;/code&gt;");<br><br>…何も考えずにごそっと入れ換えてますが、「検索ダイアログに取り込まれる文字列」に理由があったらどうしよう(-_-;</div></section>
     <ul><li><section><h1 id=2556>
     <span class="no">[2556]</span>
-    <a class="title" href="#2556">RE: GetSelectedString</a>
+    <a class="thread-title" href="#2556">RE: GetSelectedString</a>
     <span class="author">もか</span>
     <time datetime="2003-02-06T18:57:22">2003年02月06日 18:57</time></h1>
     <div class="body">▼ おにさん<br>CPPA.cpp のほうはこんな感じでしょうか？<br>&#9;case F_GETSELECTED: <br>&#9;&#9;cMem.SetDataSz( "" );<br>&#9;&#9;*ResultValue = cMem.GetPtr();<br>&#9;&#9;if( View-&gt;IsTextSelected() ){<br>&#9;&#9;&#9;if( View-&gt;GetSelectedData(cMem, FALSE, NULL, FALSE, FALSE) )<br>&#9;&#9;&#9;&#9;*ResultValue = cMem.GetPtr();<br>&#9;&#9;}<br>&#9;&#9;break;<br><br>#選択中のデータにNULが含まれていたら仕様上、NULより後ろは切り捨てられます。<br><br>CMacro::HandleCommand()のように、値を返す関数も共通部分をまとめられると<br>関数の追加・保守が楽になるかも。<br><br><br>&gt;「検索ダイアログに取り込まれる文字列」に理由があったらどうしよう(-_-;<br>MACRO掲示板のほうに書いたExpandParameter(仮名)を追加すれば<br>Editor.ExpandParameter( "$s" ); <br>で、代用可能なのでばっさり書き換えてもいいと思います。<br></div></section>
     <ul><li><section><h1 id=2557>
     <span class="no">[2557]</span>
-    <a class="title" href="#2557">Re2: GetSelectedString</a>
+    <a class="thread-title" href="#2557">Re2: GetSelectedString</a>
     <span class="author">おに</span>
     <time datetime="2003-02-06T21:25:01">2003年02月06日 21:25</time></h1>
     <div class="body">▼ もかさん<br>&gt; #選択中のデータにNULが含まれていたら仕様上、NULより後ろは切り捨てられます。<br>あーっ、そうですよねえ。<br>[2554]で僕が書いたコードでもSysAllocStringの仕様上そうなりますね。<br>SysAllocStringLenで割り当てて自前でコピー、かな？<br><br>&gt; Editor.ExpandParameter( "$s" ); <br>&gt; で、代用可能なのでばっさり書き換えてもいいと思います。<br>よかった。<br>それでは、GetSelectedStringの引数もう要りませんよね、とか言ってみたりして^^</div></section>
     <ul><li><section><h1 id=2582>
     <span class="no">[2582]</span>
-    <a class="title" href="#2582">Re3: GetSelectedString</a>
+    <a class="thread-title" href="#2582">Re3: GetSelectedString</a>
     <span class="author">げんた</span>
     <time datetime="2003-02-18T02:42:24">2003年02月18日 02:42</time></h1>
     <div class="body">&gt;&gt; Editor.ExpandParameter( "$s" ); <br>&gt;&gt; で、代用可能なのでばっさり書き換えてもいいと思います。<br>&gt;よかった。<br>ってまだ実装されてませんってば。気が早いなぁ。<br><br>&gt;それでは、GetSelectedStringの引数もう要りませんよね、とか言ってみたりして^^<br>今のやつは明示的に選択しなくてもキャレット位置の単語を取り込んでくれるからそれなりに使えそうかな～なんて。<br>引数どうしましょうか。置き換えた方がいいのか、引数が1のとき複数行対応とすべきか。<br></div></section>
     <ul><li><section><h1 id=2585>
     <span class="no">[2585]</span>
-    <a class="title" href="#2585">Re4: GetSelectedString</a>
+    <a class="thread-title" href="#2585">Re4: GetSelectedString</a>
     <span class="author">おに</span>
     <time datetime="2003-02-19T07:16:48">2003年02月19日 07:16</time></h1>
     <div class="body">ExpandParameterを実装するに一票。<br>他の情報も取得できますし。<br>GetSelectedStringは名前の通り純粋に選択文字列だけを返す単純な関数でいいと思います。引数も要らないんじゃないかな。<br>(マクロから使うときは、選択が無い場合は空文字列が返ってくる方が便利なので)<br><br>えーと、CEditDoc.ExpandParameterを呼ぶだけでいいから…<br>(↑はい、気が早いです^^)</div></section>
     </li></ul></li></ul></li><li><section><h1 id=2586>
     <span class="no">[2586]</span>
-    <a class="title" href="#2586">マクロ関数の共通処理</a>
+    <a class="thread-title" href="#2586">マクロ関数の共通処理</a>
     <span class="author">おに</span>
     <time datetime="2003-02-21T07:26:03">2003年02月21日 07:26</time></h1>
     <div class="body">ExpandParameterを実装するより先に、<br>▼もかさん<br>&gt;CMacro::HandleCommand()のように、値を返す関数も共通部分をまとめられると関数の追加・保守が楽になるかも。<br>をやってしまったほうが楽かなあ、と思いまして、CMacro.hにHandleCommandと並べて、次の関数を追加したいのですが、仕様はよろしいでしょうか？<br><br>static bool HandleFunction(CEditView* View, int Index, VARIANT* Arguments, int ArgSize, VARIANT &amp;Result);<br><br>成功時Resultに中身を詰めてtrueを返し(Resultの中身の破棄は呼び出し側)、失敗時はfalseを返しResultは無変化。<br>VARIANTは、複数の型を詰められる構造体なら何でもいいのですが、折角CSMacroMgr.cppのテーブルをVT_...にしていただいたので、これならCWSH.cppからは無変換でいける、という手抜きを考えております。<br>実はPPAを知らないので、PPAに都合のいい形式があるならそれに合わせた方がいいかも知れません。<br><br>ところで、CSMacroMgr.h/cppの、Sには意味があるのでしょうか？<br>CMacro*から見て、関連するファイル名が並んで無いと不便だなと思っただけなのですけど。</div></section>
     <ul><li><section><h1 id=2587>
     <span class="no">[2587]</span>
-    <a class="title" href="#2587">Re:マクロ関数の共通処理</a>
+    <a class="thread-title" href="#2587">Re:マクロ関数の共通処理</a>
     <span class="author">おに</span>
     <time datetime="2003-02-21T10:25:26">2003年02月21日 10:25</time></h1>
     <div class="body">考えれば考えるほど書いてしまいたくなったので実装。<br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/macro_handlefunction.zip<br><br>WSHからはHandleFunctionを呼ぶようにしています。<br>PPAは、申し訳ありませんがわかる人よろしくです。<br>ExpandParameterは、HandleFunction中では書いてますが、機能テーブルへは追加していない状態です。<br>//追加の仕方が、全部で何箇所を弄ればいいか把握できなかった…これもわかる人よろしくです。<br><br>OleTypes.hは、VARIANTを簡単に使うためのラッパーです。<br>なんか無駄なMBCS←→Wide変換だらけですが、内部がUnicode化されれば無駄な変換も無くなるということでお許しをm(_ _</div></section>
     <ul><li><section><h1 id=2592>
     <span class="no">[2592]</span>
-    <a class="title" href="#2592">Re2:マクロ関数の共通処理</a>
+    <a class="thread-title" href="#2592">Re2:マクロ関数の共通処理</a>
     <span class="author">もか</span>
     <time datetime="2003-02-24T23:25:25">2003年02月24日 23:25</time></h1>
     <div class="body">▼おにさん<br>&gt;//追加の仕方が、全部で何箇所を弄ればいいか<br>あとは、機能テーブルへ追加するだけだと思います。<br>&gt;OleTypes.hは、VARIANTを簡単に使うためのラッパーです。<br>#ifディレクティブで、sizeof演算子は使えないためエラーになってしまいます。<br>何とかして、構造体とラッパー用クラスの変換(reinterpret_cast)が可能かチェックしたいけれど、いい方法が分かりません。<br>sizeof演算子でWrap実行時にチェックというのはどうかと思うしなぁ。<br><br>&gt;PPAは、申し訳ありませんがわかる人よろしくです。<br>よくはわかっていないのですが、PPA付属のソースを参考に、ためしに実装してみました。<br>現時点の実装ではエラーの内容が分かりません。<br>引数リストの過不足はPPA.dllが判断してエラーを返すはずです。<br><br>macro_handlefunction.zipにPPAの処理を追加し、コンパイルエラーの修正をしたものです。<br>テストの都合上、機能テーブルへ追加してしまいました。<br>1.3.7.0(ssrc_2003-02-18)からの差分になっています。<br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/<br>変更されたファイル一式:macFuncPPA.zip<br>上のDIFF版:macFuncPPA_diff.lzh<br><br>*その他<br>MacroFuncInfo.m_pszDataの用途がわかりません。<br>CPPA.cppでデータを格納していますが、このデータも利用してはいません。<br>削除しても問題ないでしょうか？<br><br>#CSMacroMgrのSは昔マクロがShareDataに保存されていた(らしい)ときの名残のSかも<br></div></section>
     <ul><li><section><h1 id=2593>
     <span class="no">[2593]</span>
-    <a class="title" href="#2593">Re3:マクロ関数の共通処理</a>
+    <a class="thread-title" href="#2593">Re3:マクロ関数の共通処理</a>
     <span class="author">おに</span>
     <time datetime="2003-02-25T11:24:16">2003年02月25日 11:24</time></h1>
     <div class="body">▼ もかさん<br>&gt; #ifディレクティブで、sizeof演算子は使えないためエラーになってしまいます。<br>あれ、bccではできましたよ。<br>(でも#ifdefで__BORLANDC__の時だけチェックするのは？？)<br><br>「エラー」というのは、型が違った時などにユーザーに通知する情報って事…ですよね。<br><br>//case文見てると、OleTypes.hにVariant.AsInteger()等も追加した方が良さそうに思えてきました。<br>//なおローカル変数ではラッパークラスVariantを使えばInit/Clearの手間は無い筈です。<br>//それ以前にAnsi/Wide変換をどうにかした方がいいかも…。<br><br>&gt; テストの都合上、機能テーブルへ追加してしまいました。<br>ありがとうございます。<br>丸投げにして申し訳ないです(汗<br>ExpandParameterが動くのを確認しました。<br><br>&gt; #CSMacroMgrのSは昔マクロがShareDataに保存されていた(らしい)ときの名残のSかも<br>なるほど</div></section>
     </li><li><section><h1 id=2607>
     <span class="no">[2607]</span>
-    <a class="title" href="#2607">Re3:マクロ関数の共通処理</a>
+    <a class="thread-title" href="#2607">Re3:マクロ関数の共通処理</a>
     <span class="author">げんた</span>
     <time datetime="2003-03-08T21:30:47">2003年03月08日 21:30</time></h1>
     <div class="body">超久しぶりにソースをチェックしています。<br>寒い上に平日は疲れて頭がウニになっていた日が多かったのですが、だんだん暖かくなってやりやすくなってきました。<br><br>手始めにおにさん、Mocaさんの提供してくださったマクロ関数を見ています。<br><br>* OleTypes.h<br>引数で参照型を使っているところはすべてconstをつけた方がよいかと思って試したら、VARIANTはコピー元がconstだとダメなんですね。う～む。SysStringの方も::SysStringLen()がconst BSTRじゃなくてBSTRを引数にとるので、thisがconstだとエラーになってしまう。単にconst_cast&lt;&gt;で逃げても問題ないのだろうか。それともconstではまずい理由があるのだろうか。(とAPIの文句を言ってもしょうがないかもしれませんが)。COM/OLE周りはあまり詳しくないので、だれか教えてくださいまし。<br><br>char/wcharからの変換で、const char*ではなくchar const*としてあるのは何か理由があるのでしょうか。<br><br>SysString::Get()で得られる文字列をパラメータSで受け取るようになっていますが、戻り値で返した方がstd::auto_ptr&lt;&gt;に直接入れたりできて便利じゃないでしょうか。<br><br>operator=(SysString&amp;)があるけど operator=(BSTR&amp;)が無いので、BSTRが与えられたときはSysStringの一時オブジェクトを経由することになってコピーが2回発生することになるのでは？というのは考え過ぎかな。<br><br>*CPPA.cpp<br>329行目で CMemory::SetDataに文字列長としてlen+1を渡していますが、最後の\0を含めない長さを与えることになっているので+1は不要だと思います。<br></div></section>
     <ul><li><section><h1 id=2614>
     <span class="no">[2614]</span>
-    <a class="title" href="#2614">いいわけ</a>
+    <a class="thread-title" href="#2614">いいわけ</a>
     <span class="author">おに</span>
     <time datetime="2003-03-10T08:47:39">2003年03月10日 08:47</time></h1>
     <div class="body">▼ げんたさん<br>&gt; * OleTypes.h<br>&gt; char/wcharからの変換で、const char*ではなくchar const*としてあるのは何か理由があるのでしょうか。<br>僕は(あくまで最近ですが)「constは左にかかる」という単純なルールでもってコーディングしてるので、そう書いただけです。(^^<br>(意味は変わらないはず)<br><br>&gt; SysString::Get()で得られる文字列をパラメータSで受け取るようになっていますが、戻り値で返した方がstd::auto_ptr&lt;&gt;に直接入れたりできて便利じゃないでしょうか。<br>えーと…「文字列」と「長さ」というふたつの結果を返すのに、どちらかだけ戻り値でどちらかだけ引数というのも…と思ったので。<br>(実はstd::stringで返すのが一番よかったかも)<br><br>&gt; operator=(SysString&amp;)があるけど operator=(BSTR&amp;)が無いので、BSTRが与えられたときはSysStringの一時オブジェクトを経由することになってコピーが2回発生することになるのでは？というのは考え過ぎかな。<br>デフォルトの代入演算子だとまずいなー書いとかないと、程度で、その辺何も考えてませんでした。<br>コンストラクタのBSTR版に、explicit付けた方が確実かも知れませんね。<br><br>constは…。<br>ごめんなさい、わかりません。</div></section>
     </li></ul></li></ul></li></ul></li><li><section><h1 id=2588>
     <span class="no">[2588]</span>
-    <a class="title" href="#2588">Re: マクロ関数の共通処理</a>
+    <a class="thread-title" href="#2588">Re: マクロ関数の共通処理</a>
     <span class="author">げんた</span>
     <time datetime="2003-02-22T03:25:39">2003年02月22日 03:25</time></h1>
     <div class="body">&gt;ところで、CSMacroMgr.h/cppの、Sには意味があるのでしょうか？<br>&gt;CMacro*から見て、関連するファイル名が並んで無いと不便だなと思っただけなのですけど。<br>ごめんなさい。私も思い出せません。<br>確実に言えることは、深い意味はないってことだけです。<br><br>でも、ソース管理の都合上ファイル名変更は行わないでくださいね。<br></div></section>
     <ul><li><section><h1 id=2589>
     <span class="no">[2589]</span>
-    <a class="title" href="#2589">Re2: マクロ関数の共通処理</a>
+    <a class="thread-title" href="#2589">Re2: マクロ関数の共通処理</a>
     <span class="author">おに</span>
     <time datetime="2003-02-22T09:56:12">2003年02月22日 09:56</time></h1>
     <div class="body">▼ げんたさん<br>&gt; でも、ソース管理の都合上ファイル名変更は行わないでくださいね。<br>はい、わかってます。<br><br>…でも、my*とか見てると、etc_utyと併せて機能別に整理したくなったり…いえいえ、やりませんから。思うだけ(w</div></section>

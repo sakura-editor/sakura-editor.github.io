@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>$検索で無応答になる</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>$検索で無応答になる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1055</span>
-    <a class="title" href="1055.html#1055">$検索で無応答になる</a></div>
+    <a class="thread-title" href="1055.html#1055">$検索で無応答になる</a></div>
     <ul><li><div class="list-title">
     <span class="no">1056</span>
-    <a class="title" href="1055.html#1056">Re:$検索で無応答になる</a></div>
+    <a class="thread-title" href="1055.html#1056">Re:$検索で無応答になる</a></div>
     </li><li><div class="list-title">
     <span class="no">1061</span>
-    <a class="title" href="1055.html#1061">範囲選択開始(F6)点がずれる。</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1055>
+    <a class="thread-title" href="1055.html#1061">範囲選択開始(F6)点がずれる。</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1055>
     <span class="no">[1055]</span>
-    <a class="title" href="#1055">$検索で無応答になる</a>
+    <a class="thread-title" href="#1055">$検索で無応答になる</a>
     <span class="author">ryoji</span>
     <time datetime="2009-11-26T21:12:02">2009年11月26日 21:12</time></h1>
     <div class="body">範囲選択開始(F6)の状態にしておいて、正規表現の$指定で行末を検索すると動作がおかしくなります。<br>下方向へは1回しか検索が進みません。<br>上方向へ検索した後、下方向へ検索すると無応答になってしまいます。<br>rev1662以後のリビジョンで上記の現象が発生します。</div></section>
     <ul><li><section><h1 id=1056>
     <span class="no">[1056]</span>
-    <a class="title" href="#1056">Re:$検索で無応答になる</a>
+    <a class="thread-title" href="#1056">Re:$検索で無応答になる</a>
     <span class="author">ds14050</span>
     <time datetime="2009-11-27T02:14:29">2009年11月27日 02:14</time></h1>
     <div class="body">おそらく幅0マッチによる検索のその場足踏み対策を、現在の選択範囲が0幅か<br>どうかのチェックで代用していることの問題が、$ がそのマッチ範囲に改行文<br>字を含まなくなったことで顕在化したのだと思います。<br>sakura.exe(ANSI, 1.6.5.0)でも、(?=\r\n) のような検索条件で起こります。<br>UNICODE版(1.6.5.0)で無応答になるのは確認できませんでした。<br><br>!訂正@2009-11-27 19:38<br>選択開始位置より前の行にキャレットがある状態で下検索すると無応答になりました。<br>ANSI版もです。<br></div></section>
     </li><li><section><h1 id=1061>
     <span class="no">[1061]</span>
-    <a class="title" href="#1061">範囲選択開始(F6)点がずれる。</a>
+    <a class="thread-title" href="#1061">範囲選択開始(F6)点がずれる。</a>
     <span class="author">ds14050</span>
     <time datetime="2009-12-02T01:58:17">2009年12月02日 01:58</time></h1>
     <div class="body">修正箇所が同じなのでここにぶらさげます。<br><br>1. たとえば a で埋め尽くされたテキストの中ほどで F6を押し、範囲選択ロック状態にします。<br>2. そして、「a」を連続して下検索(F3)や上検索(Shift+F3)して、選択の開始点をいったりきたりします。<br>3. 上検索が選択開始点を超えるタイミングで選択範囲が後ろに一つはみ出した状態になり、始点も前に移動します。<br></div></section>

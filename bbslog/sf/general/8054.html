@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>自動入力補完</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>自動入力補完 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">8054</span>
-    <a class="title" href="8054.html#8054">自動入力補完</a></div>
+    <a class="thread-title" href="8054.html#8054">自動入力補完</a></div>
     <ul><li><div class="list-title">
     <span class="no">8055</span>
-    <a class="title" href="8054.html#8055">Re:自動入力補完</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=8054>
+    <a class="thread-title" href="8054.html#8055">Re:自動入力補完</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8054>
     <span class="no">[8054]</span>
-    <a class="title" href="#8054">自動入力補完</a>
+    <a class="thread-title" href="#8054">自動入力補完</a>
     <span class="author">ななし</span>
     <time datetime="2015-09-14T00:41:14">2015年09月14日 00:41</time></h1>
     <div class="body">入力補完を自動で(Ctrl+/を押さなくても、何か文字を入力するたびに)行うようにする方法はありませんか？<br></div></section>
     <ul><li><section><h1 id=8055>
     <span class="no">[8055]</span>
-    <a class="title" href="#8055">Re:自動入力補完</a>
+    <a class="thread-title" href="#8055">Re:自動入力補完</a>
     <span class="author">もか</span>
     <time datetime="2015-09-14T01:59:59">2015年09月14日 01:59</time></h1>
     <div class="body">function AutoCompIndent(ch)<br>{<br>&#9;var ch = Indent.GetChar();<br>&#9;if( ch == "\r" ){<br>&#9;&#9;return;<br>&#9;}<br>&#9;var x = Editor.ExpandParameter("$x") - 0;<br>&#9;var s = Editor.GetLineStr(0).substr(0, x);<br>&#9;var re = s.match(/[\w]{0,100}$/)<br>&#9;if( re &amp;&amp; 3 &lt; re[0].length ){<br>&#9;&#9;Editor.Complete();<br>&#9;}<br>}<br>AutoCompIndent();<br>こんな感じのインデントプラグインを放り込んでおくと使えるかもしれない<br>けど、強引なので使い勝手はいまいち<br>特に候補が1個しかないときは強制的に入力されるところとか<br></div></section>

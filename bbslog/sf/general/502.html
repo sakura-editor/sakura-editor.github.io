@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>共有違反</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>共有違反 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">502</span>
-    <a class="title" href="502.html#502">共有違反</a></div>
+    <a class="thread-title" href="502.html#502">共有違反</a></div>
     <ul><li><div class="list-title">
     <span class="no">503</span>
-    <a class="title" href="502.html#503">Re:共有違反</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=502>
+    <a class="thread-title" href="502.html#503">Re:共有違反</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=502>
     <span class="no">[502]</span>
-    <a class="title" href="#502">共有違反</a>
+    <a class="thread-title" href="#502">共有違反</a>
     <span class="author">SETA Takahiro</span>
     <time datetime="2001-06-30T19:33:55">2001年06月30日 19:33</time></h1>
     <div class="body">いつも、さくらエディタを使わせてもらっています。<br>そこで、ひとつ気になることがあったので投稿しました。<br><br>分からないこととは、<br>適当なディレクトリの中の適当なファイルを開いた後、<br>そのディレクトリごと、(またはもっと上のディレクトリごと)<br>移動、削除しようとすると、共有違反になってしまうということです。(開いたファイルそのものは問題なく動かせます。)<br>タスクトレイにある、さくらエディタを終了させてしまえば問題は解決します。<br><br>どういう状況で気になっているかというと、<br>ソフトウェアをダウンロードして、readmeを読んで、<br>役に立つと思っても、プログラム用のディレクトリに移したり出来ず、<br>あまり役に立たないと思っても、削除したりとかできないというようなことです。<br><br>昔、WINDOWS98を使っていたころは、<br>気づかなかったので、WINDOWS2000が悪いのかもしれません。<br></div></section>
     <ul><li><section><h1 id=503>
     <span class="no">[503]</span>
-    <a class="title" href="#503">Re:共有違反</a>
+    <a class="thread-title" href="#503">Re:共有違反</a>
     <span class="author"> げんた</span>
     <time datetime="2001-06-30T19:45:26">2001年06月30日 19:45</time></h1>
     <div class="body">▼ SETA Takahiroさん<br>&gt; 適当なディレクトリの中の適当なファイルを開いた後、<br>&gt; そのディレクトリごと、(またはもっと上のディレクトリごと)<br>&gt; 移動、削除しようとすると、共有違反になってしまうということです。(開いたファイルそのものは問題なく動かせます。)<br>このエディタはファイルを開くとそのフォルダにカレントディレクトリを移動します。<br>タスクトレイのプロセスは、初めてエディタが実行されたディレクトリをカレントディレクトリとして常駐します。<br>Windowsでカレントディレクトリとなっているディレクトリを削除しようとすると共有違反になります。<br><br>常駐プロセスのカレントディレクトリは開いたファイルの位置ではない方がいいのかもしれません。</div></section>

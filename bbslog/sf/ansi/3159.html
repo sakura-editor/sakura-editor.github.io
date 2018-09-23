@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>IA64/AMD64版モジュール</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>IA64/AMD64版モジュール | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3159</span>
-    <a class="title" href="3159.html#3159">IA64/AMD64版モジュール</a></div>
+    <a class="thread-title" href="3159.html#3159">IA64/AMD64版モジュール</a></div>
     <ul><li><div class="list-title">
     <span class="no">3161</span>
-    <a class="title" href="3159.html#3161">RE: IA64/AMD64版モジュール</a></div>
+    <a class="thread-title" href="3159.html#3161">RE: IA64/AMD64版モジュール</a></div>
     <ul><li><div class="list-title">
     <span class="no">3162</span>
-    <a class="title" href="3159.html#3162">Re2: IA64/AMD64版モジュール</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3159>
+    <a class="thread-title" href="3159.html#3162">Re2: IA64/AMD64版モジュール</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3159>
     <span class="no">[3159]</span>
-    <a class="title" href="#3159">IA64/AMD64版モジュール</a>
+    <a class="thread-title" href="#3159">IA64/AMD64版モジュール</a>
     <span class="author">KEITA</span>
     <time datetime="2003-09-19T17:25:59">2003年09月19日 17:25</time></h1>
     <div class="body">　64bit版のサクラエディタですが、当初コンパイルエラー<br>だけは無くしてやろうというところから始まったのですが、<br>もかさんのご協力もあり、どうしてどうして私にとっては<br>ですが、しっかり動作するようになりました。確認はIA64版<br>だけで、私はもうこれで満足です。<br><br>　とりあえずMSDN事務局や、もかさんとも相談させていただ<br>いたのですが、実行モジュールも公開しても問題ないような<br>ので、<a href=http://www.egroups.co.jp/files/sakura-editor/Junk/ target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Junk/<wbr></nobr></a><br>にアップロードさせていただきました。<br><br>　アップロードさせていただいたのは、<br><br>sakura_2003-09-07_ia64.zip  --- IA64版sakura.exeと<br>                                manifestファイル<br><br>sakura_2003-09-07_amd64.zip --- AMD64版sakura.exeと<br>                                manifestファイル<br><br>ssrc_2003-09-07_dev64.zip   --- IA64/AMD64版修正ソース<br>                  &amp;コンパイルリンク用のバッチファイル <br>の３つです。<br><br>　まだまだ64bitマシンの実機を持つ人は少ないかとは思い<br>ますが、これを機会に興味を持ち、未テストのAMD64版なども<br>フィードバックが出てきてて誰かが修正してくれる、もしく<br>は自分で修正する人が出てくれば幸いというところでしょうか。<br><br>　それからアップロードした64bit版修正ソースは、32bit版<br>と共有しても問題はありませんので、できましたら少しずつ<br>でもマスターに反映していただければ幸いです。アドレッシ<br>ングが変わっても互換性のあるコードになりますので悪くは<br>ないと思います。まだまだ64bit向けコンパイラではワーニン<br>グは出まくりですが...<br><br>　基本的にロジック変更はありませんが、「バージョン情報」<br>ぐらいは違いを見たいということもあり、とりあえず<br>CDlgAbout.cpp内で、以下の部分だけ挿入し間借りさせてい<br>いただいてます。今ひとつな感じもありますが、コンパイラ<br>も異なりますので、外しているわけではありません。<br><br>#elif defined(_MSC_VER)<br>#if defined(_M_IA64)<br>#  define COMPILER_TYPE "V_I64"<br>#elif defined(_M_AMD64)<br>#  define COMPILER_TYPE "V_A64"<br>#else<br>#  define COMPILER_TYPE "V"<br>#endif<br>#else<br><br>　egroupの容量の制限などもあるようですので、もし圧迫<br>するようでしたらご指摘下さい。削除させていただきます。</div></section>
     <ul><li><section><h1 id=3161>
     <span class="no">[3161]</span>
-    <a class="title" href="#3161">RE: IA64/AMD64版モジュール</a>
+    <a class="thread-title" href="#3161">RE: IA64/AMD64版モジュール</a>
     <span class="author">げんた</span>
     <time datetime="2003-09-20T01:30:08">2003年09月20日 01:30</time></h1>
     <div class="body">&gt;ですが、しっかり動作するようになりました。確認はIA64版<br>&gt;だけで、私はもうこれで満足です。<br>IA64ネイティブなソフトというのはまだまだ少ないんでしょうか．<br><br>&gt;　それからアップロードした64bit版修正ソースは、32bit版<br>&gt;と共有しても問題はありませんので、できましたら少しずつ<br>&gt;でもマスターに反映していただければ幸いです。<br>差分を一通り確認しましたが，基本的には<br>・Callback<br>・WinHelp<br>・GetWindowLongPtr<br>・LPARAM/WPARAM<br>の修正がほとんどですので，次のバージョンのソースに一括して取り込みたいと思います．<br>しかし，Borland C++版のようにことあるごとにコンパイルできなくなって直すということを繰り返しそうな気もしますけど...<br><br>&gt;　egroupの容量の制限などもあるようですので、もし圧迫<br>&gt;するようでしたらご指摘下さい。削除させていただきます。<br>eGroupsにはバイナリはなるべく置かないようにしたいので，私のページにバイナリを移動して専用のダウンロードページを設置させて頂きました．<br>http://members.at.infoseek.co.jp/sakura_editor/64bit.html<br>eGroupsのバイナリは削除して頂いて結構です．<br></div></section>
     <ul><li><section><h1 id=3162>
     <span class="no">[3162]</span>
-    <a class="title" href="#3162">Re2: IA64/AMD64版モジュール</a>
+    <a class="thread-title" href="#3162">Re2: IA64/AMD64版モジュール</a>
     <span class="author">KEITA</span>
     <time datetime="2003-09-20T07:35:37">2003年09月20日 07:35</time></h1>
     <div class="body">さっそく場所を用意していただきありがとうございます。<br>eGroupsよりバイナリは削除しておきました。<br><br>&gt;IA64ネイティブなソフトというのはまだまだ少ないんでしょうか．<br><br>OS(Linux,HP-UX,Windows)やDriverソフトは、そろそろ<br>出回ってきていますが、アプリケーションは皆無です。<br>世界的にもです。Sourceforgeなどで公開されれば注目<br>されるかもしれませんね。そういう意味でも英語版は<br>大賛成です。<br><br>&gt; しかし，Borland C++版のようにことあるごとにコンパイルできなくなって直すということを繰り返しそうな気もしますけど...<br><br>GetWindowLongPtrの互換性についてはMicrosoftも<br>推奨しているようですし、なんとか条件分岐ifdefの<br>順番を工夫してでも乗りきっておきたいですね。</div></section>

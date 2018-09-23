@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>名前を統一しよう</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>名前を統一しよう | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1350</span>
-    <a class="title" href="1350.html#1350">名前を統一しよう</a></div>
+    <a class="thread-title" href="1350.html#1350">名前を統一しよう</a></div>
     <ul><li><div class="list-title">
     <span class="no">1351</span>
-    <a class="title" href="1350.html#1351">RE: 名前を統一しよう</a></div>
+    <a class="thread-title" href="1350.html#1351">RE: 名前を統一しよう</a></div>
     </li><li><div class="list-title">
     <span class="no">1352</span>
-    <a class="title" href="1350.html#1352">Re:名前を統一しよう</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1350>
+    <a class="thread-title" href="1350.html#1352">Re:名前を統一しよう</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1350>
     <span class="no">[1350]</span>
-    <a class="title" href="#1350">名前を統一しよう</a>
+    <a class="thread-title" href="#1350">名前を統一しよう</a>
     <span class="author">もか</span>
     <time datetime="2010-07-25T16:05:39">2010年07月25日 16:05</time></h1>
     <div class="body">未統一の名前は不具合の原因になったり、検索したり会話をするのに統一したほうが便利です。<br>・物理/論理/レイアウト/ロジック<br>昔やざきさんが物理座標/レイアウト座標に統一してくれました。<br>いまは、kobakeさん式表記ではロジック/レイアウトと読んでいます。 <br>ロジックの賛成意見：英語/英語のほうが用語として対応している<br>ロジックの反対意見：業務ロジック、「ロジック書き直し」「ロジック修正」などと被る<br><br>・キーボードマクロ/キーマクロ<br>GUI的表記はキーマクロです。<br>ソースコード上は、キーボードマクロが多く、ヘルプもキーワードマクロです。<br>→メニュー名は短いほうがいいという理由で短いので、そちらにあわせてキーマクロにする<br><br>・キーマクロ/マクロ<br>WSH/PPA/キーマクロを3つ合わせた名称は、単にマクロと呼ぶらしい。<br><br>・外部マクロ/登録済みマクロ/ユーザマクロ/カスタムマクロ<br>MAX_CUSTMENUがMAX_CUSTMACROになっていたバグをUchiさんが修正した形跡あり。ANSIは未確認<br>これもGUIにあわせて、登録済みマクロに統一したい。<br><br>・機能番号/ファンクションコード/機能コード/コマンド番号<br>英語類はEFunctionCode/FuncID/CommandId/FuncCode<br>統一するなら"コード"はソースコードと番号体系の両方の意味で使うので避けたい。<br>扱う値も16bit制限範囲とマクロなどの拡張用定義と上位ビットには、判定フラグが混ざっています。<br>マクロ/プラグイン系関数定義ではキャストで無理をしています(以前にds14050も指摘)。<br>メニュー・アクセスキー・ツールバー・マクロ・プラグインと、それからカスタムメニュー設定・メインメニュー設定があるのかな。<br>右クリックコンテキスト、タスクトレイ(通知領域)メニューと。<br>統一するなら、<br>基本的なメニュー・ツールバーのコマンド番号(16bit系)と<br>それ以外のフラグイン・マクロ用番号の２種類ぐらいに分けたいです。<br>必要ならそれに、コマンド+フラグの３種類目です。<br><br>・番外(ただの趣味)：日付<br>YYYY.MM.DD が好き。ソートできる。パッと見てわかる。ソースコード中にあっても引き算として評価されない。<br>BugsInfo.txt がこのフォーマット<br><br>ご意見ありましたら聞かせてください。<br></div></section>
     <ul><li><section><h1 id=1351>
     <span class="no">[1351]</span>
-    <a class="title" href="#1351">RE: 名前を統一しよう</a>
+    <a class="thread-title" href="#1351">RE: 名前を統一しよう</a>
     <span class="author">もか</span>
     <time datetime="2010-07-25T20:34:15">2010年07月25日 20:34</time></h1>
     <div class="body">&gt;・番外(ただの趣味)：日付<br>すみません。これは、既存コードを直すつもりはないです。意味がないので。<br><br>Jun. 06 2002 なんだかを変更<br>2004/12/24 なんだかを追加<br>2008-08-06 なんだかをさらに変更<br>2010.06.12 仕様変更<br>と並んでるのがあってもコード統合時も旧表記を大抵引き継いで移動しています。<br>管理者がいないんだな。と一発でわかる瞬間ですが。<br>で、どういう基準でみんなその表記を採用しているのかなと。<br>ISO基準なら-区切りです。<br><br>あと、アイコン番号と、ツールバーボタンの番号の名前。<br></div></section>
     </li><li><section><h1 id=1352>
     <span class="no">[1352]</span>
-    <a class="title" href="#1352">Re:名前を統一しよう</a>
+    <a class="thread-title" href="#1352">Re:名前を統一しよう</a>
     <span class="author">ds14050</span>
     <time datetime="2010-07-27T00:38:26">2010年07月27日 00:38</time></h1>
     <div class="body">&gt; ・物理/論理/レイアウト/ロジック<br>ANSI版は物理、論理⇔レイアウト。<br>Unicode版はロジック⇔レイアウトという印象です。<br>新参には Unicode版のロジック⇔レイアウトがわかりやすかったです。<br>理由はもちろんソースコードの CLogicInt, CLayoutIntと対応しているから。<br>「物理(座標|行|桁)」という用語は間違いを生みやすい気がしていて使う気は<br>ありません。物理……ときくと cmや inchを単位にした座標系を想像してしまう<br>のですが、これらは DPIや PPIの値を使ってディスプレイ座標に変換できるも<br>のです。そして、ディスプレイに表現されているものはレイアウトなわけで……。<br>それでなくとも、Unicode版から入った人間にはロジック(論理)、レイアウト<br>の対比はわかっても 3番目の用語(物理)がどちらに対応するのかは悩みます。<br><br>&gt; ・番外：日付<br>自分が使うのは YYYY-MM-DDで、理由は標準的っぽい(標準化されてる?)から。<br>SQLでも使う。でも人に見せるためのフォーマットではない気がする。<br>スラッシュ区切りを使わないのは、年月日の並びがいろいろありすぎるから。<br>ときどき Julなどの英名を混ぜたフォーマットもいいかなと思う理由は、少な<br>くとも月日をとり違える心配がなくなり、年は 4桁あることで年だと識別できる<br>ので晴れて全てを区別できるようになるから。(年を下2桁で表すなんて論外！)<br>チラ裏でした。<br></div></section>

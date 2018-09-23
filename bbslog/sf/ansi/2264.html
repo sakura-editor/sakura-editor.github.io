@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>編集処理の複雑さ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>編集処理の複雑さ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2264</span>
-    <a class="title" href="2264.html#2264">編集処理の複雑さ</a></div>
+    <a class="thread-title" href="2264.html#2264">編集処理の複雑さ</a></div>
     <ul><li><div class="list-title">
     <span class="no">2265</span>
-    <a class="title" href="2264.html#2265">Re:編集処理の複雑さ</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2264>
+    <a class="thread-title" href="2264.html#2265">Re:編集処理の複雑さ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2264>
     <span class="no">[2264]</span>
-    <a class="title" href="#2264">編集処理の複雑さ</a>
+    <a class="thread-title" href="#2264">編集処理の複雑さ</a>
     <span class="author">げんた</span>
     <time datetime="2002-07-28T02:51:22">2002年07月28日 02:51</time></h1>
     <div class="body">編集関連の処理では，<br>・選択無し<br>・選択有り<br>・箱形選択有り<br>の3パターンの考慮が必要で，さらにそれぞれに対して<br>・UNDO中<br>・UNDO中でない<br>の考慮が必要です．<br><br>これらがif文で激しく分岐して1関数が肥大化している部分も多々見られます．<br><br>なんかうまく整理できないでしょうか．<br></div></section>
     <ul><li><section><h1 id=2265>
     <span class="no">[2265]</span>
-    <a class="title" href="#2265">Re:編集処理の複雑さ</a>
+    <a class="thread-title" href="#2265">Re:編集処理の複雑さ</a>
     <span class="author">novice</span>
     <time datetime="2002-07-28T16:03:49">2002年07月28日 16:03</time></h1>
     <div class="body">&gt; なんかうまく整理できないでしょうか．<br>例えば、<br>・選択無し<br>・選択有り<br>を2つの関数に分割します(関数の中で判別処理をしない)。<br><br>具体的には、下記サンプルをご参照下さい。<br>(サンプルなので、組み込まないようにお願いします)<br><br>変更対象ファイル<br>ssrc_2002-07-26.tar.bz2<br><br>差分ファイル<br>http://www.egroups.co.jp/files/sakura-editor/Junk/diff_ssrc_2002-07-26.lzh<br><br>判別処理を上位関数側に持ってくることで、判別処理を共通化できるようになると思います。<br></div></section>

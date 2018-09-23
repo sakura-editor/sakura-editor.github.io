@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>[報告]ファンクションキー表示切替えが常に有効</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>[報告]ファンクションキー表示切替えが常に有効 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">1930</span>
-    <a class="title" href="1930.html#1930">[報告]ファンクションキー表示切替えが常に有効</a></div>
+    <a class="thread-title" href="1930.html#1930">[報告]ファンクションキー表示切替えが常に有効</a></div>
     <ul><li><div class="list-title">
     <span class="no">1962</span>
-    <a class="title" href="1930.html#1962">RE: [報告]ファンクションキー表示切替えが常に有効</a></div>
+    <a class="thread-title" href="1930.html#1962">RE: [報告]ファンクションキー表示切替えが常に有効</a></div>
     <ul><li><div class="list-title">
     <span class="no">1963</span>
-    <a class="title" href="1930.html#1963">Re2: [報告]ファンクションキー表示切替えが常に有効</a></div>
+    <a class="thread-title" href="1930.html#1963">Re2: [報告]ファンクションキー表示切替えが常に有効</a></div>
     </li><li><div class="list-title">
     <span class="no">1970</span>
-    <a class="title" href="1930.html#1970">RE2: [報告]ファンクションキー表示切替えが常に有効</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1930>
+    <a class="thread-title" href="1930.html#1970">RE2: [報告]ファンクションキー表示切替えが常に有効</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1930>
     <span class="no">[1930]</span>
-    <a class="title" href="#1930">[報告]ファンクションキー表示切替えが常に有効</a>
+    <a class="thread-title" href="#1930">[報告]ファンクションキー表示切替えが常に有効</a>
     <span class="author">龍</span>
     <time datetime="2002-05-25T02:01:39">2002年05月25日 02:01</time></h1>
     <div class="body">いつも便利に使わせてもらってます。<br><br>さて、ファンクションキーを表示させている場合、Ctrlキー、Shiftキー、Altキーを押すとファンクション表示が切り替わりますが、<br><br>１）サクラエディタと他アプリを起動し、他アプリをアクティブ（サクラエディタを非アクティブ）とした場合<br>２）複数サクラエディタを起動した場合、<br><br>いづれも、アクティブ／非アクティブすべてのサクラエディタのファンクションキー表示が同時に切り替わります。<br>ただし、ファンクションキーが有効なのは、１）２）とも、アクティブウィンドウだけです。<br><br>操作に支障はありませんが、非アクティブなのにとドキッとします。<br>「アクティブな時以外は、ファンクションキー表示切り替えは行わない」<br>という具合になるといいのですが。。。。。<br>よろしくお願いします。<br></div></section>
     <ul><li><section><h1 id=1962>
     <span class="no">[1962]</span>
-    <a class="title" href="#1962">RE: [報告]ファンクションキー表示切替えが常に有効</a>
+    <a class="thread-title" href="#1962">RE: [報告]ファンクションキー表示切替えが常に有効</a>
     <span class="author">みく</span>
     <time datetime="2002-06-02T21:28:52">2002年06月02日 21:28</time></h1>
     <div class="body"><br>以下の修正で。<br><br>CFuncKeyWnd.cpp:OnTimer()関数中(375付近)<br>&#9;int&#9;&#9;&#9;nFuncCode;<br>&#9;int&#9;&#9;&#9;nOffF1;<br><br>//&#9;if( GetForegroundWindow() != m_hwndParent )<br>&#9;if( GetActiveWindow() != m_hwndParent )<br>&#9;{<br>&#9;&#9;return 0;<br>&#9;}<br><br>&#9;nIdx = 0;<br>&#9;/* ALTキーが押されていたか */<br><br>GetForegroundWindowとGetActiveWindowはどう違うかわからんです。<br></div></section>
     <ul><li><section><h1 id=1963>
     <span class="no">[1963]</span>
-    <a class="title" href="#1963">Re2: [報告]ファンクションキー表示切替えが常に有効</a>
+    <a class="thread-title" href="#1963">Re2: [報告]ファンクションキー表示切替えが常に有効</a>
     <span class="author">龍</span>
     <time datetime="2002-06-03T12:07:34">2002年06月03日 12:07</time></h1>
     <div class="body">▼ みくさん<br>&gt; <br>&gt; 以下の修正で。<br>&gt; <br>&gt; CFuncKeyWnd.cpp:OnTimer()関数中(375付近)<br>&gt; &#9;int&#9;&#9;&#9;nFuncCode;<br>&gt; &#9;int&#9;&#9;&#9;nOffF1;<br>&gt; <br>&gt; //&#9;if( GetForegroundWindow() != m_hwndParent )<br>&gt; &#9;if( GetActiveWindow() != m_hwndParent )<br>&gt; &#9;{<br>&gt; &#9;&#9;return 0;<br>&gt; &#9;}<br>（以下略）<br><br>5/20版ソースを修正して、アクティブな時以外はファンクションキー表示が切り替わらないことを確認しました。<br>勉強になりました。。。。　　感謝&amp;合掌<br></div></section>
     </li><li><section><h1 id=1970>
     <span class="no">[1970]</span>
-    <a class="title" href="#1970">RE2: [報告]ファンクションキー表示切替えが常に有効</a>
+    <a class="thread-title" href="#1970">RE2: [報告]ファンクションキー表示切替えが常に有効</a>
     <span class="author">やざき</span>
     <time datetime="2002-06-04T22:14:06">2002年06月04日 22:14</time></h1>
     <div class="body"><br>取り込みました。Thanx!<br></div></section>

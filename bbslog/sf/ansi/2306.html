@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>コンパイルエラー(2002-09-12)</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>コンパイルエラー(2002-09-12) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2306</span>
-    <a class="title" href="2306.html#2306">コンパイルエラー(2002-09-12)</a></div>
+    <a class="thread-title" href="2306.html#2306">コンパイルエラー(2002-09-12)</a></div>
     <ul><li><div class="list-title">
     <span class="no">2308</span>
-    <a class="title" href="2306.html#2308">Re: コンパイルエラー(2002-09-12)</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2306>
+    <a class="thread-title" href="2306.html#2308">Re: コンパイルエラー(2002-09-12)</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2306>
     <span class="no">[2306]</span>
-    <a class="title" href="#2306">コンパイルエラー(2002-09-12)</a>
+    <a class="thread-title" href="#2306">コンパイルエラー(2002-09-12)</a>
     <span class="author">かろと</span>
     <time datetime="2002-09-18T03:39:30">2002年09月18日 03:39</time></h1>
     <div class="body">こんばんは　かろとです。初投稿です。<br><br>WinME + VC++ Ver6 SP5 + Microsoft SDK<br>という環境で、<br>ダウンロードしてきた ssrc_2002-09-12 をコンパイルかけたのですが、<br><br>CEditView.h の<br>RECONVERTSTRING<br>が再定義されているとエラーになってしまいます。<br>見てみると、imm.hに同じ定義があります。<br>typedef なので、 #ifndef では外せていないと思われます。<br>本家の imm.h では WINVER &gt;= 0x040A でのみ typedef するようですので、<br>以下のように、逃げましたが、本来はどうすれば良いのでしょうか？<br><br><br>#ifndef RECONVERTSTRING<br>#if (WINVER &lt; 0x040A)<br>typedef struct tagRECONVERTSTRING {<br>    DWORD dwSize;<br>    DWORD dwVersion;<br>    DWORD dwStrLen;<br>    DWORD dwStrOffset;<br>    DWORD dwCompStrLen;<br>    DWORD dwCompStrOffset;<br>    DWORD dwTargetStrLen;<br>    DWORD dwTargetStrOffset;<br>} RECONVERTSTRING, *PRECONVERTSTRING;<br>#endif /* WINVER &gt;= 0x040A */<br>#endif // RECONVERTSTRING</div></section>
     <ul><li><section><h1 id=2308>
     <span class="no">[2308]</span>
-    <a class="title" href="#2308">Re: コンパイルエラー(2002-09-12)</a>
+    <a class="thread-title" href="#2308">Re: コンパイルエラー(2002-09-12)</a>
     <span class="author">げんた</span>
     <time datetime="2002-09-18T09:35:43">2002年09月18日 09:35</time></h1>
     <div class="body">Visual C++ 6 SP3 on Windows 2kでは問題は出ておりませんので，MS SDKを入れた場合のみ問題が起こるのかもしれません．<br><br>&gt;本家の imm.h では WINVER &gt;= 0x040A でのみ typedef するようですので、<br><br>#if !defined(RECONVERTSTRING) &amp;&amp; (WINVER &lt; 0x040A)<br><br>としてみました．特に問題はなさそうなので，変更しておきます．<br></div></section>

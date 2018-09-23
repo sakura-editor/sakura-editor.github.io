@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>プレビュー時の移動キーとハンドドラッグ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>プレビュー時の移動キーとハンドドラッグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3196</span>
-    <a class="title" href="3196.html#3196">プレビュー時の移動キーとハンドドラッグ</a></div>
+    <a class="thread-title" href="3196.html#3196">プレビュー時の移動キーとハンドドラッグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3220</span>
-    <a class="title" href="3196.html#3220">RE: プレビュー時の移動キーとハンドドラッグ</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3196>
+    <a class="thread-title" href="3196.html#3220">RE: プレビュー時の移動キーとハンドドラッグ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3196>
     <span class="no">[3196]</span>
-    <a class="title" href="#3196">プレビュー時の移動キーとハンドドラッグ</a>
+    <a class="thread-title" href="#3196">プレビュー時の移動キーとハンドドラッグ</a>
     <span class="author">サイコジプシー</span>
     <time datetime="2003-09-29T11:11:38">2003年09月29日 11:11</time></h1>
     <div class="body">// CEditWnd::DispatchEvent_PPB<br>...<br>case WM_KEYDOWN:<br> switch(wParam){<br>  case VK_UP:<br>   OnVScroll(MAKEWPARAM(SB_LINEUP, 0), m_hwndVScrollBar);<br>   break;<br>  case VK_DOWN: ... break;<br>  case VK_PAGEUP:<br>   // トップを表示していれば前のページへ。さもなければ上にずらす。<br>   GetScrollInfo(m_hwndVScr~, SB_CTL|SB_VERT, &amp;m_si);<br>   if(m_si.nPos == 0 || m_si.nPos == m_si.nMin)<br>    OnVScroll(MAKEWPARAM(SB_PAGEUP, 0), m_hwndVSc~);<br>   else OnPreviewGoPage(m_nCurPageNum-1); ... break;<br>  case VK_PAGEDOWN: ...<br><br>SCROLLINFOをメンバーに加えれば(m_si)、{G,S}etScroll{Pos,Range}を{G,S}etScrollInfoに吸収合併できるし、コードの節約になる。<br><br>できたら、WM_LBUTTON{DOWN,UP},WM_MOUSEMOVEをハンドルして、ハンドドラッグを実装してください。プレビュー時に手の形のカーソルにし、ドラッグしたらスクロールするように。制限時間30分。</div></section>
     <ul><li><section><h1 id=3220>
     <span class="no">[3220]</span>
-    <a class="title" href="#3220">RE: プレビュー時の移動キーとハンドドラッグ</a>
+    <a class="thread-title" href="#3220">RE: プレビュー時の移動キーとハンドドラッグ</a>
     <span class="author">げんた</span>
     <time datetime="2003-10-09T00:05:00">2003年10月09日 00:05</time></h1>
     <div class="body">&gt;ハンドドラッグを実装してください。プレビュー時に手の形のカーソルにし、ドラッグしたらスクロールするように。<br>ん？既にできるんじゃない？<br>カーソルの形は変わらないようだけど．<br></div></section>

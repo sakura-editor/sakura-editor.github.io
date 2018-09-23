@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>設定画面のテキストデータが1文字欠ける</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>設定画面のテキストデータが1文字欠ける | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">797</span>
-    <a class="title" href="797.html#797">設定画面のテキストデータが1文字欠ける</a></div>
+    <a class="thread-title" href="797.html#797">設定画面のテキストデータが1文字欠ける</a></div>
     <ul><li><div class="list-title">
     <span class="no">798</span>
-    <a class="title" href="797.html#798">Re:設定画面のテキストデータが1文字欠ける</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=797>
+    <a class="thread-title" href="797.html#798">Re:設定画面のテキストデータが1文字欠ける</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=797>
     <span class="no">[797]</span>
-    <a class="title" href="#797">設定画面のテキストデータが1文字欠ける</a>
+    <a class="thread-title" href="#797">設定画面のテキストデータが1文字欠ける</a>
     <span class="author">anonymous</span>
     <time datetime="2009-02-01T09:02:30">2009年02月01日 09:02</time></h1>
     <div class="body">設定処理上のバグがありますので報告します。<br>（共通設定、タイプ別設定のテキスト入力項目です。他にもあるかもしれませんが未確認です）<br><br>例：<br>char buff[10];という保存用バッファがあり、<br>EM_LIMITTEXTでTextBoxの最大入力文字数を9(buffに格納するため9文字+終端1個)としているとき<br><br>そのデータの取得GetDlgItemTextで指定する最大文字数は10(文字数9+終端1個)です<br>現状、GetDlgItemTextでも9を指定しているため8文字+終端1個となり1文字分が消えます<br><br>＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊<br>GetDlgItemTextで指定する最大文字数は終端文字を含みます<br>＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊<br>（試したところ、終端文字はGetDlgItemText APIで自動的に書き込まれます）<br><br>たとえば、タイプ別設定＞その他のインデント文字はバッファとして<br>６４文字（終端を含む）確保されており、６３文字（終端を含まない）<br>まで入力できますが、設定後開くと６２文字（最後の１文字が消えている）<br>しかありません。<br></div></section>
     <ul><li><section><h1 id=798>
     <span class="no">[798]</span>
-    <a class="title" href="#798">Re:設定画面のテキストデータが1文字欠ける</a>
+    <a class="thread-title" href="#798">Re:設定画面のテキストデータが1文字欠ける</a>
     <span class="author">ryoji</span>
     <time datetime="2009-02-01T15:48:56">2009年02月01日 15:48</time></h1>
     <div class="body">EM_LIMITTEXT使ってる個所はたくさんあると思いますが、[その他のインデント文字]以外に気付いている個所があるようでしたら教えてください。<br><br>全体を一斉に見直すにしろ、報告され次第順次手直ししていくにしろ、今わかっている分の修正漏れがあったりするのはナンセンスだと思いますので。<br><br>自分がざっと見た感じでは、軒並み間違えているということもなく、たまたまうっかりミスが混入している程度のように思えます。</div></section>

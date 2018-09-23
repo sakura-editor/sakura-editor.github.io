@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>BCCでのコンパイルで</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>BCCでのコンパイルで | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1381</span>
-    <a class="title" href="1381.html#1381">BCCでのコンパイルで</a></div>
+    <a class="thread-title" href="1381.html#1381">BCCでのコンパイルで</a></div>
     <ul><li><div class="list-title">
     <span class="no">1387</span>
-    <a class="title" href="1381.html#1387">Re: BCCでのコンパイルで</a></div>
+    <a class="thread-title" href="1381.html#1387">Re: BCCでのコンパイルで</a></div>
     </li><li><div class="list-title">
     <span class="no">1396</span>
-    <a class="title" href="1381.html#1396">Re:BCCでのコンパイルで</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1381>
+    <a class="thread-title" href="1381.html#1396">Re:BCCでのコンパイルで</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1381>
     <span class="no">[1381]</span>
-    <a class="title" href="#1381">BCCでのコンパイルで</a>
+    <a class="thread-title" href="#1381">BCCでのコンパイルで</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-28T10:43:17">2002年01月28日 10:43</time></h1>
     <div class="body">1. makeファイルが直っていなかったので直しました．<br>2. sakura_core.cpp/h はDLLを作らないなら不要．<br>3. ceditview_command.cpp (8761): 変数iが宣言されていないエラー<br>for( int i = 1;... ってところ<br>Visual C++ 6ではintを書くとエラーになる．<br><br>Visual C++ 6は古いANSI C++規格に従っているように見えますが，なんかオプションで切り替えるとかいうのはない？<br>とりあえず i の宣言を前に出します．<br></div></section>
     <ul><li><section><h1 id=1387>
     <span class="no">[1387]</span>
-    <a class="title" href="#1387">Re: BCCでのコンパイルで</a>
+    <a class="thread-title" href="#1387">Re: BCCでのコンパイルで</a>
     <span class="author">げんた</span>
     <time datetime="2002-01-28T14:06:20">2002年01月28日 14:06</time></h1>
     <div class="body">&gt;1. makeファイルが直っていなかったので直しました．<br>&gt;3. ceditview_command.cpp (8761): 変数iが宣言されていないエラー<br>これに加えて<br>SetModifiedの警告除去 (関数追加)<br>IsURLの周辺をきれいにした．<br><br>ものをUPしました．2002-01-27_patch1です．<br></div></section>
     </li><li><section><h1 id=1396>
     <span class="no">[1396]</span>
-    <a class="title" href="#1396">Re:BCCでのコンパイルで</a>
+    <a class="thread-title" href="#1396">Re:BCCでのコンパイルで</a>
     <span class="author">あろか</span>
     <time datetime="2002-01-29T01:08:31">2002年01月29日 01:08</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 3. ceditview_command.cpp (8761): 変数iが宣言されていないエラー<br>&gt; for( int i = 1;... ってところ<br>&gt; Visual C++ 6ではintを書くとエラーになる．<br>&gt; <br>&gt; Visual C++ 6は古いANSI C++規格に従っているように見えますが，なんかオプションで切り替えるとかいうのはない？<br>&gt; とりあえず i の宣言を前に出します．<br>#define　for　　if(0);else for<br>というマクロがありますが、どうですか？</div></section>

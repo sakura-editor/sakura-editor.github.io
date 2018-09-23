@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アイコンが真っ黒に</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アイコンが真っ黒に | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2636</span>
-    <a class="title" href="2636.html#2636">アイコンが真っ黒に</a></div>
+    <a class="thread-title" href="2636.html#2636">アイコンが真っ黒に</a></div>
     <ul><li><div class="list-title">
     <span class="no">2777</span>
-    <a class="title" href="2636.html#2777">同じ現象でしょうか？</a></div>
+    <a class="thread-title" href="2636.html#2777">同じ現象でしょうか？</a></div>
     </li><li><div class="list-title">
     <span class="no">2792</span>
-    <a class="title" href="2636.html#2792">Re: アイコンが真っ黒に</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2636>
+    <a class="thread-title" href="2636.html#2792">Re: アイコンが真っ黒に</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2636>
     <span class="no">[2636]</span>
-    <a class="title" href="#2636">アイコンが真っ黒に</a>
+    <a class="thread-title" href="#2636">アイコンが真っ黒に</a>
     <span class="author">げんた</span>
     <time datetime="2003-03-30T03:06:10">2003年03月30日 03:06</time></h1>
     <div class="body">WinCVSからファイルを指定したエディタ＝サクラエディタで開くとアイコンが真っ黒になることがあります。エクスプローラから開いたり新規ウィンドウを作ったりしても問題ありません。<br><br>特定のソフトから開くとリソースが取得できないなんてことあるんでしょうか。<br><br>OSはWindows XPです。<br></div></section>
     <ul><li><section><h1 id=2777>
     <span class="no">[2777]</span>
-    <a class="title" href="#2777">同じ現象でしょうか？</a>
+    <a class="thread-title" href="#2777">同じ現象でしょうか？</a>
     <span class="author">akasa</span>
     <time datetime="2003-05-19T17:42:28">2003年05月19日 17:42</time></h1>
     <div class="body">初めまして。<br>1.3.6.3を使ってみて不思議だった現象なのですが、もしかしたら同じでしょうか。<br><br>すでに起動しているサクラエディタのウィンドウにファイルをドロップすると、新しく開いたウィンドウでツールバーのアイコンが黒くなってしまいます。<br><br>①フォルダ名が半角8～10文字であること。<br>②ファイル名がindex.htmlであること。<br><br>この２つが絡んで発生したようなんですが、でも絶対ではありませんでした。<br>自分でソースを見ようと思いつつ...すみません報告だけです。<br>環境は、OSがWindowsNT4.0+SP6a、IEが6.0+SP1です（会社のパソコン）。<br><br>全然違う現象だったらすみません。</div></section>
     </li><li><section><h1 id=2792>
     <span class="no">[2792]</span>
-    <a class="title" href="#2792">Re: アイコンが真っ黒に</a>
+    <a class="thread-title" href="#2792">Re: アイコンが真っ黒に</a>
     <span class="author">げんた</span>
     <time datetime="2003-05-22T00:35:38">2003年05月22日 00:35</time></h1>
     <div class="body">どうも開くファイルのパス名とsakura.exe自身のパス名の両方に関係しているようです．特定の長さのパス名だと発生します．デバッグビルドでも確認できました．<br>ただ，デバッガで動かすと出なくなってしまいます．<br><br>そのほか，<br>sakura.exe.manifestを削除すると出なくなる．<br>パスを別の場所に移動すると出なくなる．<br>sakura.iniを消しても同様の問題が出る．<br><br>問題のパスは<br>C:\temp1234\sakur\sakura.exe<br>これよりパス名が1文字長くても短くても発生しない．<br>manifestファイルあり．<br><br>そのバイナリでC:\temp1234\012345\1234.txt を開くと発生．<br>ファイル名が4文字以上でおかしくなる．4文字だと透明だが，ファイル名を長くすると黒くなる．ディレクトリ名01234は01234だと出ないが長くしても発生．<br></div></section>

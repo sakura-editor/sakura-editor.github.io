@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>コード"E9"がeのダッシュ付きで表示されない</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>コード"E9"がeのダッシュ付きで表示されない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5351</span>
-    <a class="title" href="5351.html#5351">コード"E9"がeのダッシュ付きで表示されない</a></div>
+    <a class="thread-title" href="5351.html#5351">コード"E9"がeのダッシュ付きで表示されない</a></div>
     <ul><li><div class="list-title">
     <span class="no">5352</span>
-    <a class="title" href="5351.html#5352">Re:コード"E9"がeのダッシュ付きで表示されない</a></div>
+    <a class="thread-title" href="5351.html#5352">Re:コード"E9"がeのダッシュ付きで表示されない</a></div>
     </li><li><div class="list-title">
     <span class="no">5353</span>
-    <a class="title" href="5351.html#5353">RE: コード"E9"がeのダッシュ付きで表示されない</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=5351>
+    <a class="thread-title" href="5351.html#5353">RE: コード"E9"がeのダッシュ付きで表示されない</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5351>
     <span class="no">[5351]</span>
-    <a class="title" href="#5351">コード"E9"がeのダッシュ付きで表示されない</a>
+    <a class="thread-title" href="#5351">コード"E9"がeのダッシュ付きで表示されない</a>
     <span class="author">PAL</span>
     <time datetime="2006-07-20T14:33:21">2006年07月20日 14:33</time></h1>
     <div class="body">ここに投稿すれば良いのか分かりませんが、<br><br>コード"E9"がeのダッシュ付きで表示されない<br><br>事で悩んでおります。<br>ファイル形式はunicodeで作成し、unicodeで表示しています。<br><br>秀丸エディタでは表示できるのですが、<br><br>１．エディタの実装方法による仕様<br>２．フォントの問題<br>３．その他<br><br>で判断がつきません。<br>ココを調べろなどでも良いのでご助言いただけませんでしょうか？</div></section>
     <ul><li><section><h1 id=5352>
     <span class="no">[5352]</span>
-    <a class="title" href="#5352">Re:コード"E9"がeのダッシュ付きで表示されない</a>
+    <a class="thread-title" href="#5352">Re:コード"E9"がeのダッシュ付きで表示されない</a>
     <span class="author">一居</span>
     <time datetime="2006-07-20T21:14:06">2006年07月20日 21:14</time></h1>
     <div class="body">　こんにちは。手元で試してみました。<br>WindowsXP SP2 で、U+00E9 をバイナリエディタで入力し、<br>いくつかのエディタで、unicodeとして開いて見ました。<br>フォントは、FixedSysか、Terminalというものを使いました。<br><br>notepad.exe - ダッシュ付き<br>サクラエディタ - ただの e<br>ＱＸエディタ - 文字コードが直接表示される<br>GreenPad - ダッシュ付き<br>内部バッファーがunicodeのあるエディタ - ダッシュ付き<br><br>次に、notepad.exeでコピーし、<br>先ほどのエディタにペーストしてみました。<br><br>サクラエディタ - ただの e<br>ＱＸエディタ - ただの e<br>GreenPad - ダッシュ付き<br>内部データがunicodeのあるエディタ - ダッシュ付き<br><br>clipbrd.exe でクリップボード内の情報を見ると、<br>フォーマットが、CF_TEXTの場合には、ただの e に<br>なっていました。<br><br>これらの結果から推測するに、内部データを<br>非unicodeで持っているエディタの場合、unicodeから、<br>ShiftJISに変換される過程（エディタの変換ルーチンやクリップボード）<br>が入ると、ただの e になっちゃうんじゃないでしょうか。<br>非unicodeでも、Latin-1 という文字コードを扱える<br>環境なら、うまく変換されるんでしょう。<br><br>▼ PALさん<br>&gt; １．エディタの実装方法による仕様<br>&gt; ２．フォントの問題<br>&gt; ３．その他<br>&gt; <br>&gt; で判断がつきません。<br><br>とすると、「１．」および、文字コード変換の問題？<br></div></section>
     </li><li><section><h1 id=5353>
     <span class="no">[5353]</span>
-    <a class="title" href="#5353">RE: コード"E9"がeのダッシュ付きで表示されない</a>
+    <a class="thread-title" href="#5353">RE: コード"E9"がeのダッシュ付きで表示されない</a>
     <span class="author">すい</span>
     <time datetime="2006-07-22T02:58:12">2006年07月22日 02:58</time></h1>
     <div class="body">このエディタは日本語Shift_JISコードのエディタです。<br><br>他の文字コード、例えば Unicode のファイルを開く場合は、<br>ファイルを開くときに Unicode → Shift_JIS 変換して、<br>それら Shift_JIS 文字の編集状態になり、保存時には<br>自動的に Shift_JIS → Unicode 変換しながらファイルに<br>保存しているだけです。<br><br>ですから Shift_JIS に無い文字は一切取り扱い不可能です。<br><br>&gt;コード"E9"がeのダッシュ付きで表示されない<br>&gt;事で悩んでおります。<br>&gt;ファイル形式はunicodeで作成し、unicodeで表示しています。<br><br>これは Unicode の文字(Shift_JIS には存在しない文字)なので、<br>このエディタでは取り扱い不可。<br><br><br>内部を Unicode化したサクラエディタなら取り扱えるんじゃないかなと思います。<br><br># Mocaさん が内部 Unicode化したサクラエディタを公開されています。<br># http://www.geocities.jp/moca_skr/<br># → 特殊用本体 → ワイドキャラクタ版 別ページ →  0.7.x系<br><br>ただ、内部 Unicode化のサクラエディタは色々制約があるので<br>アレだと思いますけど。<br></div></section>

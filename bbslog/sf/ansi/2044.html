@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>再描画するときの注意</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>再描画するときの注意 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2044</span>
-    <a class="title" href="2044.html#2044">再描画するときの注意</a></div>
+    <a class="thread-title" href="2044.html#2044">再描画するときの注意</a></div>
     <ul><li><div class="list-title">
     <span class="no">2045</span>
-    <a class="title" href="2044.html#2045">RE: 再描画するときの注意</a></div>
+    <a class="thread-title" href="2044.html#2045">RE: 再描画するときの注意</a></div>
     </li><li><div class="list-title">
     <span class="no">2046</span>
-    <a class="title" href="2044.html#2046">Re:再描画するときの注意</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2044>
+    <a class="thread-title" href="2044.html#2046">Re:再描画するときの注意</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2044>
     <span class="no">[2044]</span>
-    <a class="title" href="#2044">再描画するときの注意</a>
+    <a class="thread-title" href="#2044">再描画するときの注意</a>
     <span class="author">やざき</span>
     <time datetime="2002-05-12T01:21:13">2002年05月12日 01:21</time></h1>
     <div class="body"><br>アンダーラインの描画を追っているうちに、だんだんわかってきたのですが、05-08までは、再描画するときに、<br>OnKillFocus();<br>OnPaint();<br>OnSetFocus();<br>を1セットで呼び出していますが、ここでは、OnKillFocus()とOnSetFocus()は、ルーラの再描画と、キャレットの再描画、それからIMEの変換中の文字を表示する位置を変更するために呼び出しているようです。<br>ただ、OnKillFocust/OnSetFocus()は、他の処理も少しやっているのと、後々なんでそんなのを呼び出しているのかわからなくなってしまうので、次のような決まりにしましょう。<br><br>■決まり<br>ルーラーを再描画しなければいけないときは、DispRuler()<br>キャレットを再描画しなければいけないときは、ShowEditCaret()<br>をそれぞれ（名指しで）呼びましょう。<br><br><br>ということで、キャレット位置が変わっちゃう例の件は、RedrawAll()を呼ばなくても、ShowEditCaret()を呼べばスマートに解決するかもしれません &gt; おにさん<br></div></section>
     <ul><li><section><h1 id=2045>
     <span class="no">[2045]</span>
-    <a class="title" href="#2045">RE: 再描画するときの注意</a>
+    <a class="thread-title" href="#2045">RE: 再描画するときの注意</a>
     <span class="author">やざき</span>
     <time datetime="2002-05-12T01:21:51">2002年05月12日 01:21</time></h1>
     <div class="body"><br>&gt;■決まり<br>&gt;ルーラーを再描画しなければいけないときは、DispRuler()<br>&gt;キャレットを再描画しなければいけないときは、ShowEditCaret()<br>&gt;をそれぞれ（名指しで）呼びましょう。<br><br>っと書き忘れましたが、この決まりで手元では直しました。<br></div></section>
     </li><li><section><h1 id=2046>
     <span class="no">[2046]</span>
-    <a class="title" href="#2046">Re:再描画するときの注意</a>
+    <a class="thread-title" href="#2046">Re:再描画するときの注意</a>
     <span class="author">おに</span>
     <time datetime="2002-05-12T09:32:31">2002年05月12日 09:32</time></h1>
     <div class="body">&gt;キャレット位置が変わっちゃう例の件は、RedrawAll()を呼ばなくても、ShowEditCaret()を呼べばスマートに解決するかもしれません<br>了解です。<br><br>ついでに、アンダーラインを消すために<br>その行のそれぞれの文字の背景色でアンダーラインのラインだけを上書きするメソッドを…(しつこい^^)</div></section>

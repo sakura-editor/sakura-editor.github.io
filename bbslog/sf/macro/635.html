@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>S_Merge()連続した重複行の削除(uniq)のダイアログ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>S_Merge()連続した重複行の削除(uniq)のダイアログ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">635</span>
-    <a class="title" href="635.html#635">S_Merge()連続した重複行の削除(uniq)のダイアログ</a></div>
+    <a class="thread-title" href="635.html#635">S_Merge()連続した重複行の削除(uniq)のダイアログ</a></div>
     <ul><li><div class="list-title">
     <span class="no">638</span>
-    <a class="title" href="635.html#638">Re:S_Merge()連続した重複行の削除(uniq)のダイアログ</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=635>
+    <a class="thread-title" href="635.html#638">Re:S_Merge()連続した重複行の削除(uniq)のダイアログ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=635>
     <span class="no">[635]</span>
-    <a class="title" href="#635">S_Merge()連続した重複行の削除(uniq)のダイアログ</a>
+    <a class="thread-title" href="#635">S_Merge()連続した重複行の削除(uniq)のダイアログ</a>
     <span class="author">ino</span>
     <time datetime="2017-05-27T17:46:07">2017年05月27日 17:46</time></h1>
     <div class="body">「n行をマージしました。」というのを出さないようにはできないのでしょうか</div></section>
     <ul><li><section><h1 id=638>
     <span class="no">[638]</span>
-    <a class="title" href="#638">Re:S_Merge()連続した重複行の削除(uniq)のダイアログ</a>
+    <a class="thread-title" href="#638">Re:S_Merge()連続した重複行の削除(uniq)のダイアログ</a>
     <span class="author">SNK</span>
     <time datetime="2017-06-17T09:35:55">2017年06月17日 09:35</time></h1>
     <div class="body">▼ inoさん<br>&gt; 「n行をマージしました。」というのを出さないようにはできないのでしょうか<br><br>現在のバージョンでは「できない」仕様となっています。<br>ただ、このダイアログを出したくないという要求はありそうですし、メッセージはステータスバーに出せば良いという考えもあるかと思われますので、今後のバージョンで仕様変更余地はあると思います。<br><br>なお、ソースコード見てみましたが、今は特にオンオフできる仕様になっていないですね。<br>void CViewCommander::Command_MERGE(void)とか、MessageBox 系の動作仕様が関係していそうです。<br></div></section>

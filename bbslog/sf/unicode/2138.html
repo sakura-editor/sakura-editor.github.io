@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Grep検索について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Grep検索について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2138</span>
-    <a class="title" href="2138.html#2138">Grep検索について</a></div>
+    <a class="thread-title" href="2138.html#2138">Grep検索について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2139</span>
-    <a class="title" href="2138.html#2139">Re:Grep検索について</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=2138>
+    <a class="thread-title" href="2138.html#2139">Re:Grep検索について</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2138>
     <span class="no">[2138]</span>
-    <a class="title" href="#2138">Grep検索について</a>
+    <a class="thread-title" href="#2138">Grep検索について</a>
     <span class="author">SS9</span>
     <time datetime="2014-03-09T17:37:09">2014年03月09日 17:37</time></h1>
     <div class="body">Grap検索ですがたとえば "d:\test\test.txt" で<br>文字列 "test" を検索した後に再検索で フォルダを <br>"d:\" に書き換えても 検索ボタンを押すと検索対象フォルダが<br>"d:\test " に戻ってしまうのは仕様でしょうか。<br><br><br>ver2.1.1.0 ver2.1.1.1 Windows XP Windows7 で確認しました。<br></div></section>
     <ul><li><section><h1 id=2139>
     <span class="no">[2139]</span>
-    <a class="title" href="#2139">Re:Grep検索について</a>
+    <a class="thread-title" href="#2139">Re:Grep検索について</a>
     <span class="author">novice</span>
     <time datetime="2014-03-09T19:48:12">2014年03月09日 19:48</time></h1>
     <div class="body">▼ SS9さん<br>&gt; Grap検索ですがたとえば "d:\test\test.txt" で<br>&gt; 文字列 "test" を検索した後に再検索で フォルダを <br>&gt; "d:\" に書き換えても 検索ボタンを押すと検索対象フォルダが<br>&gt; "d:\test " に戻ってしまうのは仕様でしょうか。<br><br>"d:\"のようなドライブ直下のフォルダを指定すると戻るようです(r3153～)。<br>2.0.8.1　○(戻らない)<br>2.1.0.0　×(戻る)<br>2.1.1.0　×(戻る)<br>2.1.1.1　×(戻る)<br><br>patchを登録しました。<br><a href=http://sourceforge.net/p/sakura-editor/patchunicode/785/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>785/<wbr></nobr></a><br></div></section>

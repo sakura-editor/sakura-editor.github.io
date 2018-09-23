@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現での検索について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現での検索について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">4927</span>
-    <a class="title" href="4927.html#4927">正規表現での検索について</a></div>
+    <a class="thread-title" href="4927.html#4927">正規表現での検索について</a></div>
     <ul><li><div class="list-title">
     <span class="no">4930</span>
-    <a class="title" href="4927.html#4930">Re:正規表現での検索について</a></div>
+    <a class="thread-title" href="4927.html#4930">Re:正規表現での検索について</a></div>
     <ul><li><div class="list-title">
     <span class="no">4937</span>
-    <a class="title" href="4927.html#4937">正規表現での検索について</a></div>
+    <a class="thread-title" href="4927.html#4937">正規表現での検索について</a></div>
     <ul><li><div class="list-title">
     <span class="no">4939</span>
-    <a class="title" href="4927.html#4939">RE: 正規表現での検索について</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4927>
+    <a class="thread-title" href="4927.html#4939">RE: 正規表現での検索について</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4927>
     <span class="no">[4927]</span>
-    <a class="title" href="#4927">正規表現での検索について</a>
+    <a class="thread-title" href="#4927">正規表現での検索について</a>
     <span class="author">kirin-original</span>
     <time datetime="2005-12-25T23:19:23">2005年12月25日 23:19</time></h1>
     <div class="body">はじめまして。 kirin-original といいます。<br><br>さっそくですが、正規表現で「検索」「該当行マーク」などするとき、 ;$ は検索できますが ;$} だと実際にはマッチできるはずのパターンが存在するのに１件もマッチしません。<br><br>どうも「改行をまたぐ前後の文字列」という指定だとマッチに失敗しているようです。<br><br>こういう検索をしたいことがけっこうあるので、不便で困っています。<br><br>正規表現自体あまり詳しくないです。 ;\n} とか ;\r\n} とか ;$\} などとやってもみましたがどれもダメで…。<br><br>検索の方法が間違っているようでしたら、ご指摘いただけたらとても助かります。<br></div></section>
     <ul><li><section><h1 id=4930>
     <span class="no">[4930]</span>
-    <a class="title" href="#4930">Re:正規表現での検索について</a>
+    <a class="thread-title" href="#4930">Re:正規表現での検索について</a>
     <span class="author">too</span>
     <time datetime="2005-12-26T13:29:05">2005年12月26日 13:29</time></h1>
     <div class="body">FAQにもありますが、サクラエディタでは複数行にまたがった正規表現の検索は出来ないようです。<br>私はサクラエディタのコードは見たことがありませんが、<br>FAQの「画面サイズに合わせて折り返して欲しいのですが」の内容を見る限り<br># 上記から内部データの持ちかたを推測すると、<br>今後も対応は難しいのでは無いかと思われます。</div></section>
     <ul><li><section><h1 id=4937>
     <span class="no">[4937]</span>
-    <a class="title" href="#4937">正規表現での検索について</a>
+    <a class="thread-title" href="#4937">正規表現での検索について</a>
     <span class="author">kirin-original</span>
     <time datetime="2005-12-28T01:48:46">2005年12月28日 01:48</time></h1>
     <div class="body">▼ tooさん<br>&gt; FAQにもありますが、サクラエディタでは複数行にまたがった正規表現の検索は出来ないようです。<br>あう、本当ですね…。<br>FAQ を見逃してしまっておりました。できないという予想をしていませんでした。<br><br>&gt; 私はサクラエディタのコードは見たことがありませんが、<br>&gt; FAQの「画面サイズに合わせて折り返して欲しいのですが」の内容を見る限り<br>&gt; # 上記から内部データの持ちかたを推測すると、<br>&gt; 今後も対応は難しいのでは無いかと思われます。<br>読んでみましたが、折り返し位置のお話から今回との関連は私には推測はできませんでした。<br>実際に開発にかかわっておられる方からコメントが付かないのでなんとも想像もできませんが、無理だとしたら残念です。<br><br>コメントありがとうございました。&gt;tooさま</div></section>
     <ul><li><section><h1 id=4939>
     <span class="no">[4939]</span>
-    <a class="title" href="#4939">RE: 正規表現での検索について</a>
+    <a class="thread-title" href="#4939">RE: 正規表現での検索について</a>
     <span class="author">げんた</span>
     <time datetime="2005-12-28T22:22:20">2005年12月28日 22:22</time></h1>
     <div class="body">私がこういうこと言っちゃ身も蓋もないですが...<br>http://qwerty.s2.xrea.com/storage/sakura/comment.html<br><br>こちらに独自正規表現エンジンを組み込んで複数行の検索が出来るサクラエディタがあります．<br></div></section>

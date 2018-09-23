@@ -1,63 +1,89 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>sakura_2002-05-20.zip</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>sakura_2002-05-20.zip | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">1873</span>
-    <a class="title" href="1873.html#1873">sakura_2002-05-20.zip</a></div>
+    <a class="thread-title" href="1873.html#1873">sakura_2002-05-20.zip</a></div>
     <ul><li><div class="list-title">
     <span class="no">1879</span>
-    <a class="title" href="1873.html#1879">バグ報告</a></div>
+    <a class="thread-title" href="1873.html#1879">バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">1880</span>
-    <a class="title" href="1873.html#1880">RE: バグ報告</a></div>
+    <a class="thread-title" href="1873.html#1880">RE: バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">1882</span>
-    <a class="title" href="1873.html#1882">RE2: バグ報告</a></div>
+    <a class="thread-title" href="1873.html#1882">RE2: バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">1883</span>
-    <a class="title" href="1873.html#1883">Re3: バグ報告</a></div>
+    <a class="thread-title" href="1873.html#1883">Re3: バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">1884</span>
-    <a class="title" href="1873.html#1884">Re4: バグ報告</a></div>
+    <a class="thread-title" href="1873.html#1884">Re4: バグ報告</a></div>
     <ul><li><div class="list-title">
     <span class="no">1887</span>
-    <a class="title" href="1873.html#1887">マクロ</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1873>
+    <a class="thread-title" href="1873.html#1887">マクロ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1873>
     <span class="no">[1873]</span>
-    <a class="title" href="#1873">sakura_2002-05-20.zip</a>
+    <a class="thread-title" href="#1873">sakura_2002-05-20.zip</a>
     <span class="author">やざき</span>
     <time datetime="2002-05-20T15:33:34">2002年05月20日 15:33</time></h1>
     <div class="body"><br>アップロードしました。<br><br><a href=http://sakura-editor.sourceforge.net/snapshot/sakura_2002-05-20.zip target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>snapshot<wbr>/<wbr>sakura_2<wbr>002-<wbr>05-<wbr>20.<wbr>zip</nobr></a><br><br>・改行単位の行頭ジャンプ実装。<br>　今のところマクロでしか使えません。<br>　Oakさんに感謝～。<br><br>・リソースを過剰に消費するバグ修正<br>　あろかさんに大感謝!!<br><br>・横スクロールバーで横スクロールしてもルーラーがついてこないバグ修正。<br>　みくさんに感謝!<br><br>ということで、ようやくまともに動いてくれるのではないかと思われます。<br></div></section>
     <ul><li><section><h1 id=1879>
     <span class="no">[1879]</span>
-    <a class="title" href="#1879">バグ報告</a>
+    <a class="thread-title" href="#1879">バグ報告</a>
     <span class="author">猫美</span>
     <time datetime="2002-05-21T09:57:49">2002年05月21日 09:57</time></h1>
     <div class="body">いつもありがたく使用させていただいております。<br><br>ここしばらく問題も無かったのでバージョンアップを控えていたのですが、<br>久しぶりにバージョンアップをしてみました。<br><br>そうしたら、以下のマクロが使用出来なくなっていました。<br><br>S_FileSaveAs(S_GetFilename(), 0, 1); // SJIS,CR+LFで保存<br><br>Windows98SE , NT4(SP6a)で終了します。<br><br>OleMainThreadWndName : sakura.exe - アプリケーションエラー<br>"0x77e4f812"の命令が"0x00000000"のメモリを参照しました。<br>メモリが"read"になることはできませんでした。<br><br>と、まぁ、ありがちなエラーなのですが・・・私にはよく解らないのでまるまる書いてみました。<br><br>ちなみに・・・４月２０日版まで遡ったら正常に動作しました。<br>以上、報告まで。<br><br>・・・仕様が変わりました。なんてオチだと恥ずかしかったりもする(^^;)</div></section>
     <ul><li><section><h1 id=1880>
     <span class="no">[1880]</span>
-    <a class="title" href="#1880">RE: バグ報告</a>
+    <a class="thread-title" href="#1880">RE: バグ報告</a>
     <span class="author">やざき</span>
     <time datetime="2002-05-21T11:13:53">2002年05月21日 11:13</time></h1>
     <div class="body"><br>&gt;そうしたら、以下のマクロが使用出来なくなっていました。<br>&gt;<br>&gt;S_FileSaveAs(S_GetFilename(), 0, 1); // SJIS,CR+LFで保存<br><br>PPA.DLLが無いと動かないと思います。<br>が、あっても動かなくなっていました。ごめんなさいぃ。<br>次回!<br></div></section>
     <ul><li><section><h1 id=1882>
     <span class="no">[1882]</span>
-    <a class="title" href="#1882">RE2: バグ報告</a>
+    <a class="thread-title" href="#1882">RE2: バグ報告</a>
     <span class="author">やざき</span>
     <time datetime="2002-05-21T12:00:26">2002年05月21日 12:00</time></h1>
     <div class="body"><br>&gt;PPA.DLLが無いと動かないと思います。<br>&gt;が、あっても動かなくなっていました。ごめんなさいぃ。<br>&gt;次回!<br><br>キーマクロは標準のマクロしか使えなくなってます？ &gt; げんたさん<br>キーマクロの読み込みで、*.ppaを読み込んだらPPA.DLL用のマクロが動くのでもいいと思うのですが。。。<br></div></section>
     <ul><li><section><h1 id=1883>
     <span class="no">[1883]</span>
-    <a class="title" href="#1883">Re3: バグ報告</a>
+    <a class="thread-title" href="#1883">Re3: バグ報告</a>
     <span class="author">げんた</span>
     <time datetime="2002-05-21T17:57:01">2002年05月21日 17:57</time></h1>
     <div class="body">&gt;キーマクロは標準のマクロしか使えなくなってます？ &gt; げんたさん<br>あ、そうしてます。というのは、標準のマクロクラスにしか保存機能＆インターフェースを用意してないからです。<br><br>&gt;キーマクロの読み込みで、*.ppaを読み込んだらPPA.DLL用のマクロが動くのでもいいと思うのですが。。。<br>キーマクロは一時的に使うだけか、またはマクロのスケルトンを簡単に作るためのもので頻繁に使う機能は機能に割り付けてくださいね、っというつもりでした。<br><br>キーマクロは共有メモリではなく、所定の名前のマクロファイルに自動保存するようになっているので、再生と保存を別クラスにするのもありかも。<br><br>---<br>あと、パラメータが不足しているとアプリケーションエラーになるのは何とかしたいなぁ。<br></div></section>
     <ul><li><section><h1 id=1884>
     <span class="no">[1884]</span>
-    <a class="title" href="#1884">Re4: バグ報告</a>
+    <a class="thread-title" href="#1884">Re4: バグ報告</a>
     <span class="author">やざき</span>
     <time datetime="2002-05-21T19:12:16">2002年05月21日 19:12</time></h1>
     <div class="body"><br>&gt;&gt;キーマクロの読み込みで、*.ppaを読み込んだらPPA.DLL用のマクロが動くのでもいいと思うのですが。。。<br>&gt;キーマクロは一時的に使うだけか、またはマクロのスケルトンを簡単に作るためのもので頻繁に使う機能は機能に割り付けてくださいね、っというつもりでした。<br><br>とはいえ、ppaとかjsなんかも気軽に使いたいという需要はあるとおもうのです。<br>なんとかできないでしょうか？？<br></div></section>
     <ul><li><section><h1 id=1887>
     <span class="no">[1887]</span>
-    <a class="title" href="#1887">マクロ</a>
+    <a class="thread-title" href="#1887">マクロ</a>
     <span class="author">おに</span>
     <time datetime="2002-05-22T00:07:23">2002年05月22日 00:07</time></h1>
     <div class="body">&gt; js<br>こちらで聞くべきではないかも知れませんが、"js"を見つけてしまったので…(w<br>結局CMacroFactoryと*.iniファイルの件はどうなったのでしょうか？<br>(個人的には実はWSHは不採用でも問題なかったり)</div></section>

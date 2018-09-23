@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現の否定?について教えて下さい</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現の否定?について教えて下さい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7902</span>
-    <a class="title" href="7902.html#7902">正規表現の否定?について教えて下さい</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=7902>
+    <a class="thread-title" href="7902.html#7902">正規表現の否定?について教えて下さい</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=7902>
     <span class="no">[7902]</span>
-    <a class="title" href="#7902">正規表現の否定?について教えて下さい</a>
+    <a class="thread-title" href="#7902">正規表現の否定?について教えて下さい</a>
     <span class="author">ろろ</span>
     <time datetime="2014-11-06T22:33:23">2014年11月06日 22:33</time></h1>
     <div class="body">「直近のtrタグで囲まれた部分を検索」より<br><a href=http://www.geocities.jp/oraclesqlpuzzle/regex/regex-4-28.html target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>oraclesq<wbr>lpuzzle/<wbr>regex/<wbr>regex-<wbr>4-<wbr>28.<wbr>html</nobr></a><br>2-1から左方向に一番近い&lt;tr&gt;から、右方向に一番近い&lt;/tr&gt;までを検索する<br>&lt;tr&gt;&lt;td&gt;2-1&lt;/td&gt;&lt;td&gt;2-2&lt;/td&gt;&lt;/tr&gt;<br>&lt;tr&gt;&lt;td&gt;1-1&lt;/td&gt;&lt;td&gt;1-2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;2-1&lt;/td&gt;&lt;td&gt;2-2&lt;/td&gt;&lt;/tr&gt;<br>&lt;tr&gt;&lt;td&gt;2-1&lt;/td&gt;&lt;td&gt;2-2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;3-1&lt;/td&gt;&lt;td&gt;3-2&lt;/td&gt;&lt;/tr&gt;<br>&lt;tr&gt;&lt;td&gt;1-1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;2-1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;3-1&lt;/td&gt;&lt;/tr&gt;<br><br>&lt;tr&gt;(?=(.(?!&lt;tr&gt;))*2-1).*?&gt;&lt;/tr&gt;<br>&lt;tr&gt;(.(?!&lt;tr&gt;))*2-1.*?&lt;/tr&gt;<br><br>いつもお世話になっております。<br>①2-1以外のtrタグの検索は可能でしょうか。<br>②正規表現の検索の否定を教えて下さい。<br>よろしくお願いします。</div></section>

@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3359</span>
-    <a class="title" href="3359.html#3359">Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a></div>
+    <a class="thread-title" href="3359.html#3359">Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a></div>
     <ul><li><div class="list-title">
     <span class="no">3360</span>
-    <a class="title" href="3359.html#3360">Re:Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a></div>
+    <a class="thread-title" href="3359.html#3360">Re:Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a></div>
     </li><li><div class="list-title">
     <span class="no">3361</span>
-    <a class="title" href="3359.html#3361">Re: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a></div>
+    <a class="thread-title" href="3359.html#3361">Re: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a></div>
     <ul><li><div class="list-title">
     <span class="no">3362</span>
-    <a class="title" href="3359.html#3362">Re2: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a></div>
+    <a class="thread-title" href="3359.html#3362">Re2: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a></div>
     <ul><li><div class="list-title">
     <span class="no">3364</span>
-    <a class="title" href="3359.html#3364">Re3: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3359>
+    <a class="thread-title" href="3359.html#3364">Re3: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3359>
     <span class="no">[3359]</span>
-    <a class="title" href="#3359">Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a>
+    <a class="thread-title" href="#3359">Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a>
     <span class="author">クルクル</span>
     <time datetime="2004-01-16T02:08:20">2004年01月16日 02:08</time></h1>
     <div class="body">開発者でない上に高度な話ばかりで恐縮ですが、<br>『・2003.09.19 □  ----.--.-- Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる』<br>↑のバージョン情報のアイコンが小さくなるの原因がわかったのでテストしたコードを（長くなってしまうので省略したら分かりにくてすみません）<br>あと、カーソルが砂時計になるは再現できませんでした。環境はWinMeでVC5です（工夫次第でエラーは出ますがコンパイルは可能でした）。<br><br>下には変更してみたソースを載せましたが単純にLR_SHAREDを外せばアイコンは別々に読み込まれるので大きなアイコンで表示されるみたいです。<br>LR_SHAREDが指定されているとインスタンス毎に１つしか読み込まれないのではないでしょうか。<br><br>■変更<br>ソースファイル<br>HICON GetAppIcon( HINSTANCE hInst, int nResource, const char* szFile, bool bSmall )<br>↓<br>HICON GetAppIcon( HINSTANCE hInst, int nResource, const char* szFile, bool bSmall, bool bShare )<br><br>■変更<br>ヘッダーファイル<br>HICON GetAppIcon( HINSTANCE hInst, int nResource, const char* szFile, bool bSmall = false);<br>↓<br>HICON GetAppIcon( HINSTANCE hInst, int nResource, const char* szFile, bool bSmall = false, bool bShare = true);<br><br><br>■追加 class CDlgAbout::OnInitDialog<br>&#9;//&#9;From Here Dec. 2, 2002 genta<br>&#9;//&#9;アイコンをカスタマイズアイコンに合わせる<br>&#9;HICON hIcon = GetAppIcon( m_hInstance, ICON_DEFAULT_APP, FN_APP_ICON, false );<br>&#9;HWND hIconWnd = GetDlgItem( m_hWnd, IDC_STATIC_MYICON );<br>↓<br>&#9;//&#9;From Here Dec. 2, 2002 genta<br>&#9;//&#9;アイコンをカスタマイズアイコンに合わせる<br>&#9;//&#9;アイコンは非共有でロードされるので破壊するべき？<br>&#9;HICON hIcon = GetAppIcon( m_hInstance, ICON_DEFAULT_APP, FN_APP_ICON, false, false );<br>&#9;HWND hIconWnd = GetDlgItem( m_hWnd, IDC_STATIC_MYICON );</div></section>
     <ul><li><section><h1 id=3360>
     <span class="no">[3360]</span>
-    <a class="title" href="#3360">Re:Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a>
+    <a class="thread-title" href="#3360">Re:Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a>
     <span class="author">クルクル</span>
     <time datetime="2004-01-16T02:08:43">2004年01月16日 02:08</time></h1>
     <div class="body">続きです。<br><br>■追加 GetAppIcon<br>&#9;// ファイルからの読み込みをまず試みる<br>&#9;hIcon = (HICON)::LoadImage( NULL, szPath, IMAGE_ICON, size, size,<br>&#9;&#9;&#9;LR_SHARED | LR_LOADFROMFILE );<br>&#9;if( hIcon != NULL ){<br>&#9;&#9;return hIcon;<br>&#9;}<br> <br>&#9;//&#9;ファイルからの読み込みに失敗したらリソースから取得<br>&#9;hIcon = (HICON)::LoadImage( hInst, MAKEINTRESOURCE(nResource),<br>&#9;&#9;IMAGE_ICON, size, size, LR_SHARED );<br>↓<br>&#9;// ファイルからの読み込みをまず試みる<br>&#9;hIcon = (HICON)::LoadImage( NULL, szPath, IMAGE_ICON, size, size,<br>&#9;&#9;&#9;(bShare ? LR_SHARED : 0) | LR_LOADFROMFILE );<br>&#9;if( hIcon != NULL ){<br>&#9;&#9;return hIcon;<br>&#9;}<br> <br>&#9;//&#9;ファイルからの読み込みに失敗したらリソースから取得<br>&#9;hIcon = (HICON)::LoadImage( hInst, MAKEINTRESOURCE(nResource),<br>&#9;&#9;IMAGE_ICON, size, size, bShare ? LR_SHARED : 0 );<br><br>■追加 class CDlgAbout<br>protected:<br>&#9;BOOL OnInitDialog( HWND, WPARAM, LPARAM );<br>&#9;BOOL OnBnClicked( int );<br>&#9;LPVOID GetHelpIdTable(void);&#9;//@@@ 2002.01.18 add<br>↓<br>protected:<br>&#9;BOOL OnInitDialog( HWND, WPARAM, LPARAM );<br>&#9;BOOL OnDestroy( void );<br>&#9;BOOL OnBnClicked( int );<br>&#9;LPVOID GetHelpIdTable(void);&#9;//@@@ 2002.01.18 add<br><br><br>■追加<br>BOOL CDlgAbout::OnDestroy( void )<br>{<br>&#9;// 非共有でロードされたアイコンを破壊する。<br>&#9;// これは必要でしょうか？<br>&#9;HWND hIconWnd = GetDlgItem( m_hWnd, IDC_STATIC_MYICON );<br>&#9;DestroyIcon( (HICON)::SendMessage( hIconWnd, STM_GETICON, 0, 0 ) );<br><br>&#9;/* 基底クラスメンバ */<br>&#9;return CDialog::OnDestroy();<br>}</div></section>
     </li><li><section><h1 id=3361>
     <span class="no">[3361]</span>
-    <a class="title" href="#3361">Re: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a>
+    <a class="thread-title" href="#3361">Re: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a>
     <span class="author">げんた</span>
     <time datetime="2004-01-16T23:35:52">2004年01月16日 23:35</time></h1>
     <div class="body">いろいろとありがとうございます．<br><br>アイコン管理が面倒くさかったのでSharedIconに変更してこの不具合には目をつぶったつもりだったのですが，今よくよくソースを見てみるとSharedIconにDestroyIconしているところを発見...やばすぎ．<br>SHAREDは使わない方向でもう一度見直してみます．<br></div></section>
     <ul><li><section><h1 id=3362>
     <span class="no">[3362]</span>
-    <a class="title" href="#3362">Re2: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a>
+    <a class="thread-title" href="#3362">Re2: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a>
     <span class="author">げんた</span>
     <time datetime="2004-01-17T11:41:35">2004年01月17日 11:41</time></h1>
     <div class="body">Iconには共有アイコンと非共有アイコンがあって，共有アイコンは使用後に破棄してはならず，非共有アイコンは破棄しなければならない．しかし，windowに関連づけられているアイコンなどシステムで用意されたアイコンがどっちなのかが記述されていない上にウィンドウが消えたときに破棄されるかどうかも記述がない．<br><br>結局どうすればいいのか...<br><br>Static controlでは関連づけられたアイコンハンドルは破棄されるとの記述があったのでAbout Dialogboxでは非共有アイコンを割り当てて破棄は省略できるとわかるんですが．<br></div></section>
     <ul><li><section><h1 id=3364>
     <span class="no">[3364]</span>
-    <a class="title" href="#3364">Re3: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a>
+    <a class="thread-title" href="#3364">Re3: Windows98 でタスクトレイアイコンからバージョン情報を開くとアイコンが16x16になる</a>
     <span class="author">もか</span>
     <time datetime="2004-01-18T00:28:55">2004年01月18日 00:28</time></h1>
     <div class="body">▼げんた<br>&gt;結局どうすればいいのか... <br><br>▼MSDNのLoadImage<br>&gt;LR_SHARED を指定しないでロードした..アイコンを使い終わったときは、..関数(DestroyIcon)を呼び出すことによって、対応するメモリを解放できます。 <br>&gt;リソースを使っているプロセスが終了すると、システムがそのリソースを自動的に削除します。<br>&gt;(..部分は略)<br>というのは楽観的に読むと、削除して節約してもいいけど、しなくてもいい、と取れます。<br>LR_SHAREDつきのときは、削除するに越したことは無いので、非共有でロードした | してない・不明 のフラグでも追加して、非共有のときだけ削除するという手段にでることもできますが..どうでしょうか？<br></div></section>

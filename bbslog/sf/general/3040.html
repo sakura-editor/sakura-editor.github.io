@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>（無題）</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>（無題） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3040</span>
-    <a class="title" href="3040.html#3040">（無題）</a></div>
+    <a class="thread-title" href="3040.html#3040">（無題）</a></div>
     <ul><li><div class="list-title">
     <span class="no">3041</span>
-    <a class="title" href="3040.html#3041">Re: テキストデーターのバイナリコード表示</a></div>
+    <a class="thread-title" href="3040.html#3041">Re: テキストデーターのバイナリコード表示</a></div>
     <ul><li><div class="list-title">
     <span class="no">3042</span>
-    <a class="title" href="3040.html#3042">Re2: テキストデーターのバイナリコード表示</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3040>
+    <a class="thread-title" href="3040.html#3042">Re2: テキストデーターのバイナリコード表示</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3040>
     <span class="no">[3040]</span>
-    <a class="title" href="#3040">（無題）</a>
+    <a class="thread-title" href="#3040">（無題）</a>
     <span class="author">葵</span>
     <time datetime="2003-06-27T01:43:04">2003年06月27日 01:43</time></h1>
     <div class="body">どうも始めまして。<br>サクラエディタを利用させていただいております。<br>こちら、使用しておりまして不具合を見つけましたので<br>報告をさせてもらいます。<br><br>テキストデーターのバイナリコード表示なのですが、<br>eucのテキストにてsjisのコードを出力するケースがあります。<br><br>当方で確認したものは、<br><br>"耳"　sjis '8EA8' euc 'BCAA'なのですが<br>サクラエディタでは両方とも '8EA8'と出力されます。<br><br>こちらの修正をお願いします。<br><br>#このようなケースを４種類ほど見つけたのですが、<br>#ソースを消失しており、確認が出来ませんが、<br>#法則性はある模様です。<br></div></section>
     <ul><li><section><h1 id=3041>
     <span class="no">[3041]</span>
-    <a class="title" href="#3041">Re: テキストデーターのバイナリコード表示</a>
+    <a class="thread-title" href="#3041">Re: テキストデーターのバイナリコード表示</a>
     <span class="author">げんた</span>
     <time datetime="2003-06-27T02:29:08">2003年06月27日 02:29</time></h1>
     <div class="body">ステータスバーに出てくる文字コードは漢字コード種別にかかわらず常にSJISになってしまいます．<br>という話ですか？<br><br>それだとどの文字でも同じことが起こるので<br>&gt; #このようなケースを４種類ほど見つけたのですが、<br>とおっしゃっているところを見ると違うのかな？<br></div></section>
     <ul><li><section><h1 id=3042>
     <span class="no">[3042]</span>
-    <a class="title" href="#3042">Re2: テキストデーターのバイナリコード表示</a>
+    <a class="thread-title" href="#3042">Re2: テキストデーターのバイナリコード表示</a>
     <span class="author">葵</span>
     <time datetime="2003-06-27T05:37:04">2003年06月27日 05:37</time></h1>
     <div class="body">すみません。勘違いをしておりました。<br>不具合ではなく、要望にかえさせていただきます。<br><br>例えば<br><br>"耳"と入力した場合<br><br>sjis　 8E A8<br>euc　　BC AA<br>utf-8　E8 80 B3<br>ucs2　 33 80<br><br>コード的にはこうなるかと思うのですが、sakuraエディタではsjisのバイナリコードを表示しています。<br>内部処理自体がsjisなので、このような仕様になっていると思われますが、漢字コードに沿ったコードを表示してほしいのです。<br><br>utfに関しては、不可能かと思われますのでucs2なりucs4なりで出力して頂けたらと思いますが如何な物でしょうか？</div></section>

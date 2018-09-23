@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>動作環境について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>動作環境について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2208</span>
-    <a class="title" href="2208.html#2208">動作環境について</a></div>
+    <a class="thread-title" href="2208.html#2208">動作環境について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2213</span>
-    <a class="title" href="2208.html#2213">RE: 動作環境について</a></div>
+    <a class="thread-title" href="2208.html#2213">RE: 動作環境について</a></div>
     </li><li><div class="list-title">
     <span class="no">2216</span>
-    <a class="title" href="2208.html#2216">RE: 動作環境について</a></div>
+    <a class="thread-title" href="2208.html#2216">RE: 動作環境について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2218</span>
-    <a class="title" href="2208.html#2218">RE2: 動作環境について</a></div>
+    <a class="thread-title" href="2208.html#2218">RE2: 動作環境について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2232</span>
-    <a class="title" href="2208.html#2232">RE3: 動作環境について</a></div>
+    <a class="thread-title" href="2208.html#2232">RE3: 動作環境について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2235</span>
-    <a class="title" href="2208.html#2235">RE4: 動作環境について</a></div>
+    <a class="thread-title" href="2208.html#2235">RE4: 動作環境について</a></div>
     <ul><li><div class="list-title">
     <span class="no">2251</span>
-    <a class="title" href="2208.html#2251">Re5: 動作環境について</a></div>
+    <a class="thread-title" href="2208.html#2251">Re5: 動作環境について</a></div>
     </li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">2219</span>
-    <a class="title" href="2208.html#2219">設定画面の件</a></div>
+    <a class="thread-title" href="2208.html#2219">設定画面の件</a></div>
     <ul><li><div class="list-title">
     <span class="no">2221</span>
-    <a class="title" href="2208.html#2221">RE: 設定画面の件</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2208>
+    <a class="thread-title" href="2208.html#2221">RE: 設定画面の件</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2208>
     <span class="no">[2208]</span>
-    <a class="title" href="#2208">動作環境について</a>
+    <a class="thread-title" href="#2208">動作環境について</a>
     <span class="author">すい</span>
     <time datetime="2002-06-27T20:29:10">2002年06月27日 20:29</time></h1>
     <div class="body">素に近い Windows95 (IE4無し)にてサクラエディタを動作させてみました。<br><br>１．設定画面が出ない<br>　・○：タイプ別設定一覧<br>　・×：タイプ別設定<br>　・×：共通設定<br>　・○：フォント設定<br>　[タイプ別設定]を出そうとすると<br>　　| 作者に教えて欲しいエラー<br>　　| CPropTypes::DoPropertySheet()内でエラーが出ました。<br>　　| psh.nStartPage=[0]<br>　　| ::PropertySheet()失敗。<br>　　|<br>　　| 処理は正常に終了しました。<br>　　|           [OK]<br>　[共通設定]を出そうとすると<br>　　| 作者に教えて欲しいエラー<br>　　| CPropCommon::DoPropertySheet()内でエラーが出ました。<br>　　| psh.nStartPage=[0]<br>　　| ::PropertySheet()失敗<br>　　|<br>　　| 指定されたパスは無効です。<br>　　|           [OK]<br>　とダイアログが出ます。<br><br>２．ツールバーが表示されない。<br>　ツールバーを出していると、何も絵が表示されず、単にノッペラボウの灰色の領域が出るだけです。<br>　ボタンがあるであろう領域をマウスでクリックすると、それなりの反応をしてくれます。 :-)<br>　ただ、なにぶん、絵も境界も何も無いので、どこを押せば何が起こるやらドキドキ。ゲームみたい。:-D<br><br>昔のバージョンでは全て正常に動作していたんですが、いつの間に？<br>両者とも COMCTL32.DLL のバージョンを上げれば正常動作するようになります。<br>１．設定画面　は COMCTL32.DLL を IE4 以上に付属の物にすれば正常に動作します。<br>２．ツールバーは COMCTL32.DLL を IE3 以上に付属の物にすれば正常に動作します。<br><br>今まで誰からも報告が無かったのは？<br>・素の Win95 ユーザーが少ない。<br>・素の Win95 ユーザーは、試しに入れてみた時点で「使えん!!」と、放り投げて使われなかった。<br>どちらか（どちらも）でしょうか？<br><br>ひょっとしたらこの現象は、素の WinNT4.0 でも出るかもしれませんね。<br>ただ私の所には NT は無いので分かりませんが。<br><br>対応は<br>・対応１：素の Windows 95 でも動くように修正する。<br>・対応２：そのままで、ドキュメント類の手直しで対応する。<br>が考えられますが、いかがします？<br><br>とりあえずは、動作対応環境から素の Win95 は取り払って、<br>「 Windows95 の場合は、新しいバージョンの COMCTL32.DLL を入れるか、<br>　または Internet Explorer 4 以上を入れておく必要があります。<br>　新しいバージョンの COMCTL32.DLL は Microsoft のサイト &lt;http://asia.microsoft.com/msdownload/ieplatform/ie/comctrlx86.asp&gt;<br>　より入手できます。<br>　※ COMCTL32.DLL パッケージの“401comupd.exe (x86)”,“50comupd.exe (x86)”は、<br>　　バージョンが少し異なる（50comupd.exeの方が新しい）だけで、サクラエディタを<br>　　使用するにはどちらでも大丈夫です。ただし、50comupd.exe の方を入れると、<br>　　パソコンの動作速度が極めて遅くなりますので要注意です。」<br>とでもしておきませう。<br></div></section>
     <ul><li><section><h1 id=2213>
     <span class="no">[2213]</span>
-    <a class="title" href="#2213">RE: 動作環境について</a>
+    <a class="thread-title" href="#2213">RE: 動作環境について</a>
     <span class="author">げんた</span>
     <time datetime="2002-06-27T23:06:27">2002年06月27日 23:06</time></h1>
     <div class="body">&gt;素に近い Windows95 (IE4無し)にてサクラエディタを動作させてみました。<br>&gt;１．設定画面が出ない<br>&gt;２．ツールバーが表示されない。<br>結構致命的ですね．<br><br>&gt;対応は<br>&gt;・対応１：素の Windows 95 でも動くように修正する。<br>&gt;・対応２：そのままで、ドキュメント類の手直しで対応する。<br>&gt;が考えられますが、いかがします？<br>既存ユーザの切り捨ては行いたくないので，制限付きでもいいので動くようにしたいですね．<br><br>最大の問題はWindows 95のマシンが無いので動作確認がとれないこと．<br></div></section>
     </li><li><section><h1 id=2216>
     <span class="no">[2216]</span>
-    <a class="title" href="#2216">RE: 動作環境について</a>
+    <a class="thread-title" href="#2216">RE: 動作環境について</a>
     <span class="author">みく</span>
     <time datetime="2002-06-28T18:57:54">2002年06月28日 18:57</time></h1>
     <div class="body">&gt;タイトル: RE: 動作環境について<br>&gt;発言者: すい<br>&gt;素に近い Windows95 (IE4無し)にてサクラエディタを動作させてみました。<br>&gt;<br>&gt;１．設定画面が出ない<br>&gt;　・○：タイプ別設定一覧<br>&gt;　・×：タイプ別設定<br>&gt;　・×：共通設定<br>&gt;　・○：フォント設定<br>&gt;　[タイプ別設定]を出そうとすると<br>&gt;　　| 作者に教えて欲しいエラー<br>&gt;　　| CPropTypes::DoPropertySheet()内でエラーが出ました。<br>&gt;　　| psh.nStartPage=[0]<br>&gt;　　| ::PropertySheet()失敗。<br>&gt;　　|<br>&gt;　　| 処理は正常に終了しました。<br>&gt;　　|           [OK]<br>&gt;　[共通設定]を出そうとすると<br>&gt;　　| 作者に教えて欲しいエラー<br>&gt;　　| CPropCommon::DoPropertySheet()内でエラーが出ました。<br>&gt;　　| psh.nStartPage=[0]<br>&gt;　　| ::PropertySheet()失敗<br>&gt;　　|<br>&gt;　　| 指定されたパスは無効です。<br>&gt;　　|           [OK]<br>&gt;　とダイアログが出ます。<br><br>ListViewはIE3,IE4に関係ありますが、画面自体が出ないのはわからん。<br>動作確認環境があれば、すぐ解決しそうな気もするんだけどねぇ。<br><br><br>&gt;<br>&gt;２．ツールバーが表示されない。<br>&gt;　ツールバーを出していると、何も絵が表示されず、単にノッペラボウの灰色の領域が出るだけです。<br>&gt;　ボタンがあるであろう領域をマウスでクリックすると、それなりの反応をしてくれます。 :-)<br>&gt;　ただ、なにぶん、絵も境界も何も無いので、どこを押せば何が起こるやらドキドキ。ゲームみたい。:-D<br><br>「共通設定」－「ツールバー」－「フラットなボタン」の意味は？<br><br>＃その画面が出ないというつっこみはなし。<br></div></section>
     <ul><li><section><h1 id=2218>
     <span class="no">[2218]</span>
-    <a class="title" href="#2218">RE2: 動作環境について</a>
+    <a class="thread-title" href="#2218">RE2: 動作環境について</a>
     <span class="author">すい</span>
     <time datetime="2002-06-28T21:59:01">2002年06月28日 21:59</time></h1>
     <div class="body">あぅ、こっちにも書かれてました。<br>下にも書いたのですが念のため、というか話の流れ上はこちらの方が<br>適していそうなので、こちらに書き込み直しておきます。<br><br>&gt;&gt;２．ツールバーが表示されない。<br>&gt;<br>&gt;「共通設定」－「ツールバー」－「フラットなボタン」の意味は？<br>&gt;<br>&gt;＃その画面が出ないというつっこみはなし。<br><br>そのチェックを外した設定でも状況は変わらず、何も表示されませんでした。<br><br>ちょこちょこっとソースをいじってみたいけど、コンパイラは手に入らない(ftp腐ってる(;;))し<br>試して見た“素の Win95 環境”も頻繁にいじれる状況の物じゃないし。<br>多分、ツールバーの方は些細な所だと思うんですけど．．．<br></div></section>
     <ul><li><section><h1 id=2232>
     <span class="no">[2232]</span>
-    <a class="title" href="#2232">RE3: 動作環境について</a>
+    <a class="thread-title" href="#2232">RE3: 動作環境について</a>
     <span class="author">みく</span>
     <time datetime="2002-07-02T18:44:38">2002年07月02日 18:44</time></h1>
     <div class="body"><br><br>&gt;&gt;&gt;２．ツールバーが表示されない。<br><br>CImageListMgr.h:SetToolBarImages()で使用している<br>TB_SETIMAGELIST がIE3以降ですね。<br>このため、イメージが表示されないと考えられます。<br><br>昔は TB_ADDBITMAP を使っていたようです。<br></div></section>
     <ul><li><section><h1 id=2235>
     <span class="no">[2235]</span>
-    <a class="title" href="#2235">RE4: 動作環境について</a>
+    <a class="thread-title" href="#2235">RE4: 動作環境について</a>
     <span class="author">げんた</span>
     <time datetime="2002-07-03T01:58:55">2002年07月03日 01:58</time></h1>
     <div class="body">&gt;CImageListMgr.h:SetToolBarImages()で使用している<br>&gt;TB_SETIMAGELIST がIE3以降ですね。<br>&gt;このため、イメージが表示されないと考えられます。<br>&gt;<br>&gt;昔は TB_ADDBITMAP を使っていたようです。<br>言われてみれば確かにそうでした．<br><br>アイコンを使っているそれぞれの場所でリソースから直接取り出していたのをイメージリストにまとめて，その後bitmapの形式を変更した覚えがある．<br><br>TB_ADDBITMAPを使うためにはイメージリストからいちいちイメージを取り出してそれを登録すればいいのかな．なんか非効率だけどしょうがない．それともDLLやOSバージョンに応じて異なるコードを使うようにする方がいいのか．<br></div></section>
     <ul><li><section><h1 id=2251>
     <span class="no">[2251]</span>
-    <a class="title" href="#2251">Re5: 動作環境について</a>
+    <a class="thread-title" href="#2251">Re5: 動作環境について</a>
     <span class="author">あろか</span>
     <time datetime="2002-07-07T23:32:30">2002年07月07日 23:32</time></h1>
     <div class="body">&gt; &gt;CImageListMgr.h:SetToolBarImages()で使用している<br>&gt; &gt;TB_SETIMAGELIST がIE3以降ですね。<br>&gt; &gt;このため、イメージが表示されないと考えられます。<br>&gt; &gt;<br>他にも TBBUTTONINFO,TBIF_SIZE,NMKEY 等がIE3,4以降でないといけないようです。<br>Bcc の makefile の設定では "-DWINVER=0x400 -D_WIN32_WINNT=0 -D_WIN32_IE=0x300" になっていますが、この設定だとコンパイルに失敗します。<br>＃あれ？ これだと Win95/NT+IE2 では動かないことになる！<br><br></div></section>
     </li></ul></li></ul></li></ul></li><li><section><h1 id=2219>
     <span class="no">[2219]</span>
-    <a class="title" href="#2219">設定画面の件</a>
+    <a class="thread-title" href="#2219">設定画面の件</a>
     <span class="author">こおり</span>
     <time datetime="2002-06-29T00:31:04">2002年06月29日 00:31</time></h1>
     <div class="body">すぐそばにIE3入りWindows95があったので試してみたところ、<br>やっぱり設定画面が出ませんでした。<br><br>これは<br>http://win32lab.com/tips/tips16.html<br>に書かれている事が原因みたいです。<br><br>試しに<br>const size_t sizeof_old_PROPSHEETHEADER=40;<br>として<br>sizeof( PROPSHEETHEADER )を<br>sizeof_old_PROPSHEETHEADERに書き換えたところ、<br>Windows2000でコンパイルした物でも<br>Windows95で設定画面が出せるようになりました。</div></section>
     <ul><li><section><h1 id=2221>
     <span class="no">[2221]</span>
-    <a class="title" href="#2221">RE: 設定画面の件</a>
+    <a class="thread-title" href="#2221">RE: 設定画面の件</a>
     <span class="author">げんた</span>
     <time datetime="2002-06-29T04:04:16">2002年06月29日 04:04</time></h1>
     <div class="body">&gt;const size_t sizeof_old_PROPSHEETHEADER=40;<br>&gt;として<br>&gt;sizeof( PROPSHEETHEADER )を<br>&gt;sizeof_old_PROPSHEETHEADERに書き換えたところ、<br>なんか，メニュー関連でも似たようなことがありました．<br>Windows 95はサイズが増えた場合の想定が漏れている箇所があるんですね．<br></div></section>

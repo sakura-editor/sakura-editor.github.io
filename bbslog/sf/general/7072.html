@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>場合分け置換</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>場合分け置換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7072</span>
-    <a class="title" href="7072.html#7072">場合分け置換</a></div>
+    <a class="thread-title" href="7072.html#7072">場合分け置換</a></div>
     <ul><li><div class="list-title">
     <span class="no">7074</span>
-    <a class="title" href="7072.html#7074">Re:場合分け置換</a></div>
+    <a class="thread-title" href="7072.html#7074">Re:場合分け置換</a></div>
     <ul><li><div class="list-title">
     <span class="no">7081</span>
-    <a class="title" href="7072.html#7081">Re2:場合分け置換</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=7072>
+    <a class="thread-title" href="7072.html#7081">Re2:場合分け置換</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7072>
     <span class="no">[7072]</span>
-    <a class="title" href="#7072">場合分け置換</a>
+    <a class="thread-title" href="#7072">場合分け置換</a>
     <span class="author">じゅん</span>
     <time datetime="2009-10-24T21:16:17">2009年10月24日 21:16</time></h1>
     <div class="body">サクラエディタの置換についての質問です。<br>よろしくお願いします。<br>環境はサクラエディタＷ　ver1.6.5.0<br><br>【やりたいこと】<br>以下のような置換がしたいです。<br>(置換前)<br>　　　.2<br>(置換後)<br>　　　.3<br>のように.1だったら.2、.2だったら.3に置換がしたいです。<br><br>【やってみたこと】<br>(置換前)<br>行頭でタブか全角・半角空白が0回以上で、.数字<br>(置換後)<br>行頭でタブか全角・半角空白が0回以上で、.数字に1足されたもの<br><br>以上のことを実現するために、以下のような置換をしました。<br><br>(置換前)<br>^([　| |\t]*\.)([1-9])<br>(置換後)<br>\1\2+1<br><br>置換後は.2+1のようにただ数字に+1がついているだけとなってしまいました。<br>希望の置換をするにはどうしたらよいでしょうか？</div></section>
     <ul><li><section><h1 id=7074>
     <span class="no">[7074]</span>
-    <a class="title" href="#7074">Re:場合分け置換</a>
+    <a class="thread-title" href="#7074">Re:場合分け置換</a>
     <span class="author">743</span>
     <time datetime="2009-10-25T11:33:55">2009年10月25日 11:33</time></h1>
     <div class="body">553 ：549 [↓] ：2009/09/13(日) 12:03:38 ID:2wEbzZZn0<br>ありがとうございます<br>例えばA数字に5を足す置換をするにはどうすればいいでしょうか<br>A123B456A789D012（置換前の文章）<br>A128B456A794D012（置換後の文章）<br>こういう置換は可能でしょうか？<br><br>562 ：名無しさん＠お腹いっぱい。 [↓] ：2009/09/13(日) 14:05:47 ID:9LBNC4VR0<br>＞＞５５３<br>ViVi なら下記の式置換で可能なんだけどねぇ<br><br>:%s/A(\d+)/"A" + (int($1) + 1)/e</div></section>
     <ul><li><section><h1 id=7081>
     <span class="no">[7081]</span>
-    <a class="title" href="#7081">Re2:場合分け置換</a>
+    <a class="thread-title" href="#7081">Re2:場合分け置換</a>
     <span class="author">じゅん</span>
     <time datetime="2009-10-29T20:33:18">2009年10月29日 20:33</time></h1>
     <div class="body">743さん回答ありがとうございます。<br>ViViならできるんですね。<br>サクラエディタでは普通の置換では出来ないみたいなので、キーマクロを試してみました。<br>キーマクロ自体が初めてなので、「キーマクロの記録作成」で作って、<br>ちょっといじって以下のようになり、望み通りの動作をさせる事ができました<br><br>↓～・～・～・～・～・～・～・～・～・～・～↓<br>↓～・～・～・～・～・～・～・～・～・～・～↓<br>//キーボードマクロのファイル<br>S_ReplaceAll('^([　| |\\t]*)\.3', '\1\.4', 188);<br>S_ReplaceAll('^([　| |\\t]*)\.2', '\1\.3', 188);<br>S_ReplaceAll('^([　| |\\t]*)\.1', '\1\.2', 188);<br>↑～・～・～・～・～・～・～・～・～・～・～↑<br>↑～・～・～・～・～・～・～・～・～・～・～↑</div></section>

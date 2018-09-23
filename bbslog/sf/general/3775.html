@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>フォントについて教えて下さい</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>フォントについて教えて下さい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3775</span>
-    <a class="title" href="3775.html#3775">フォントについて教えて下さい</a></div>
+    <a class="thread-title" href="3775.html#3775">フォントについて教えて下さい</a></div>
     <ul><li><div class="list-title">
     <span class="no">3782</span>
-    <a class="title" href="3775.html#3782">Re: フォントについて教えて下さい</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3775>
+    <a class="thread-title" href="3775.html#3782">Re: フォントについて教えて下さい</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3775>
     <span class="no">[3775]</span>
-    <a class="title" href="#3775">フォントについて教えて下さい</a>
+    <a class="thread-title" href="#3775">フォントについて教えて下さい</a>
     <span class="author">無人駅</span>
     <time datetime="2004-04-06T18:39:59">2004年04月06日 18:39</time></h1>
     <div class="body">v1.4.5.0<br>Win2000 Pro<br><br>フォント設定で、Lucida Consoleを選択し、日本語が表示できないのを確認した後、いつものMSゴシックに戻しました。<br>しかし、表示はかわらず、『日本語が表示できなくなった。。。。』とあせりました。<br><br>フォント設定　－　書体の種類　が、欧文となっており、それを日本語にすると直りました。<br>MSゴシックの欧文ってどういう意味があるのですか？<br>日本語表示にすることはできませんか？<br><br>ちなみに秀丸は、MSゴシックの欧文に設定しても、日本語表示しました。<br>ちなみに２　別マシン別VER（V1.4.3.6 win98）では、MSゴシックに変えたときに、欧文から日本語に自動的に戻ります。<br>この設定に戻りませんか？日本語しか使わないもので。<br></div></section>
     <ul><li><section><h1 id=3782>
     <span class="no">[3782]</span>
-    <a class="title" href="#3782">Re: フォントについて教えて下さい</a>
+    <a class="thread-title" href="#3782">Re: フォントについて教えて下さい</a>
     <span class="author">もか</span>
     <time datetime="2004-04-08T00:34:40">2004年04月08日 00:34</time></h1>
     <div class="body">Windows 2000 SP4 Proの日本語版で実際やってみました。<br>&gt;MSゴシックの欧文ってどういう意味があるのですか？<br>書体の種類の項目は、フォント自体に利用できる種類のリストが含まれていて、フォント作成者(この場合、MSやリコーあたり)が、決めるものです。<br>MS ゴシックに限っていえば、英語・欧州版WindowsでもMSゴシック(MS Gothic)が使えようにするためとかでしょう。<br>MSゴシックでは考慮されていないようですが、この図形の種類を変えると、一部のフォントで、英文を選ぶと半角の円マークが、バックスラッシュに変わるなど、実際に図形が変化します。<br>何に使うかというと、ASCIIで書かれたアスキーアートを見たいときなどに必要な場合があります。<br>あとは、ASCIIの一部文字を他の言語用に改変した文書を読むのにも使えます。<br>&gt;ちなみに秀丸は、MSゴシックの欧文に設定しても、日本語表示しました。<br>Unicode版APIを使ったサクラエディタでは「ＭＳ　ゴシック」の欧文でも、日本語を表示します。<br>ソースコードや仕様書がないので正確にはわかりませんけど、秀丸についても同様にだと思えます。<br>Unicode対応フォント(ユニコードの文字番号と図形番号の対応表を持ったフォント)とUnicodeアプリを使う場合は、図形の種類は利用されませんので表示できてしまいます。<br>それ以外のフォントとアプリの組み合わせではこの図形の種類を選択しないと、秀丸でも正確に表示できないはずです。(未確認)<br><br>&gt;ちなみに別マシン別VER（V1.4.3.6 win98）では、MSゴシックに変えたときに、欧文から日本語に自動的に戻ります。<br>別にエディタは何もしていないので、OSがやっている処理です。<br><br>まとめると、すべての現象はOSの仕様ですので、エディタでどうこうする事ではないと考えています。<br></div></section>

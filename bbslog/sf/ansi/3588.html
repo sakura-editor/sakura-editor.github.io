@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>コード簡略化計画(ごみ削除)</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>コード簡略化計画(ごみ削除) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3588</span>
-    <a class="title" href="3588.html#3588">コード簡略化計画(ごみ削除)</a></div>
+    <a class="thread-title" href="3588.html#3588">コード簡略化計画(ごみ削除)</a></div>
     <ul><li><div class="list-title">
     <span class="no">3590</span>
-    <a class="title" href="3588.html#3590">コード簡略化計画</a></div>
+    <a class="thread-title" href="3588.html#3590">コード簡略化計画</a></div>
     <ul><li><div class="list-title">
     <span class="no">3599</span>
-    <a class="title" href="3588.html#3599">RE: コード簡略化計画</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3588>
+    <a class="thread-title" href="3588.html#3599">RE: コード簡略化計画</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3588>
     <span class="no">[3588]</span>
-    <a class="title" href="#3588">コード簡略化計画(ごみ削除)</a>
+    <a class="thread-title" href="#3588">コード簡略化計画(ごみ削除)</a>
     <span class="author">みく</span>
     <time datetime="2004-05-26T18:40:13">2004年05月26日 18:40</time></h1>
     <div class="body"><br>CTabWnd.h:84<br>-&#9;void CreateTabButtons( void );&#9;/*!&lt; ボタンの生成 */<br><br>CEditView_New.cpp:426<br>-&#9;fuOptions = ETO_CLIPPED | ETO_OPAQUE;<br></div></section>
     <ul><li><section><h1 id=3590>
     <span class="no">[3590]</span>
-    <a class="title" href="#3590">コード簡略化計画</a>
+    <a class="thread-title" href="#3590">コード簡略化計画</a>
     <span class="author">みく</span>
     <time datetime="2004-05-26T18:56:30">2004年05月26日 18:56</time></h1>
     <div class="body"><br>・CEditView_New.cpp:DispLineNew()<br>引数のbDispBkBitmapって結局使ってない...<br><br><br>・CEditView_New.cpp:DispLineNew()<br>EOFの描画部分が3箇所あるので関数にまとめれば少しは...<br>こんな感じ.<br><br>/* EOF記号の表示 */<br>if( TypeDataPtr-&gt;m_ColorInfoArr[COLORIDX_EOF<br>].m_bDisp ){<br>&#9;nX += DispEOF( hdc, x, y, nCharWidth, fuOptions, TypeDataPtr-&gt;m_ColorInfoArr[COLORIDX_EOF<br>] );<br>}<br><br>#第2引数xは1箇所だけ違う。<br><br><br>・CDlgOpenFile.cpp:776,878,1004,1145<br>って基本的に同じっす。<br></div></section>
     <ul><li><section><h1 id=3599>
     <span class="no">[3599]</span>
-    <a class="title" href="#3599">RE: コード簡略化計画</a>
+    <a class="thread-title" href="#3599">RE: コード簡略化計画</a>
     <span class="author">げんた</span>
     <time datetime="2004-05-29T11:27:05">2004年05月29日 11:27</time></h1>
     <div class="body">&gt;・CEditView_New.cpp:DispLineNew()<br>&gt;EOFの描画部分が3箇所あるので関数にまとめれば少しは... <br>&gt;・CDlgOpenFile.cpp:776,878,1004,1145<br>&gt;って基本的に同じっす。<br>と &gt;&gt;3588 は取り込み予定<br></div></section>

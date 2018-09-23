@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現置換の不具合</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現置換の不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">769</span>
-    <a class="title" href="769.html#769">正規表現置換の不具合</a></div>
+    <a class="thread-title" href="769.html#769">正規表現置換の不具合</a></div>
     <ul><li><div class="list-title">
     <span class="no">771</span>
-    <a class="title" href="769.html#771">Re: 正規表現置換の不具合</a></div>
+    <a class="thread-title" href="769.html#771">Re: 正規表現置換の不具合</a></div>
     <ul><li><div class="list-title">
     <span class="no">775</span>
-    <a class="title" href="769.html#775">Re: 正規表現置換の不具合</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=769>
+    <a class="thread-title" href="769.html#775">Re: 正規表現置換の不具合</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=769>
     <span class="no">[769]</span>
-    <a class="title" href="#769">正規表現置換の不具合</a>
+    <a class="thread-title" href="#769">正規表現置換の不具合</a>
     <span class="author">もは</span>
     <time datetime="2001-10-16T23:57:38">2001年10月16日 23:57</time></h1>
     <div class="body">Win98SE と Win2000 で、1.2.33.0、1.2.34.3（JRE32 最終版）、1.2.100.1 で確認しました。<br>------<br>a<br><br>b<br>c<br>-----<br>というテキストで、b と c の前にそれぞれ X を挿入したいとします。<br>検索文字列「^」、置換文字列「X」として、b の行頭にカーソルを置いて、正規表現で [置換] ボタンを押します。<br>すると、JRE32 版では、<br>------<br>a<br>X<br>b<br>c<br>-----<br>と b の行ではなくその前の行に挿入されてしまいます。<br><br>BREGEXP 版で（/^/ と指定して）実行すると、1 度はうまくいきますが、置換してもマッチが移動せず、2 度ボタンを押すと<br>------<br>a<br><br>XXb<br>c<br>-----<br>となります。<br><br><br>ほかに、範囲選択している状態で [置換] メニューを開くと、[選択範囲] のラジオボタンが有効になっています。<br>過去ログによると、まだ実装されていないので殺してあるとのことですが、うまく殺されていないようです。<br></div></section>
     <ul><li><section><h1 id=771>
     <span class="no">[771]</span>
-    <a class="title" href="#771">Re: 正規表現置換の不具合</a>
+    <a class="thread-title" href="#771">Re: 正規表現置換の不具合</a>
     <span class="author">げんた</span>
     <time datetime="2001-10-17T10:21:59">2001年10月17日 10:21</time></h1>
     <div class="body">&gt;BREGEXP 版で（/^/ と指定して）実行すると、1 度はうまくいきますが、置換してもマッチが移動せず、<br>マッチは移動しています．問題は正規表現の「行頭」指定がうまく働いていないことにあります．<br><br>基本的には行単位で1行ずつ探していくので2行目以降では行頭指定は正しく動くのですが，1行目は検索位置を行頭だと勘違いしてしまいます．今回の場合は検索→一文字進むを繰り返すと全ての位置でマッチしてしまいますので，報告されたような動作になります．<br></div></section>
     <ul><li><section><h1 id=775>
     <span class="no">[775]</span>
-    <a class="title" href="#775">Re: 正規表現置換の不具合</a>
+    <a class="thread-title" href="#775">Re: 正規表現置換の不具合</a>
     <span class="author">もは</span>
     <time datetime="2001-10-18T22:53:34">2001年10月18日 22:53</time></h1>
     <div class="body"><br>&gt;マッチは移動しています．問題は正規表現の「行頭」指定がうまく働いていないことにあります．<br>確かにマッチ位置が移動してますね。報告が不正確でした。すみません。<br></div></section>

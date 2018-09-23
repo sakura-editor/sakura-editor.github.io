@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告:(Keep) 文字コード判定機能の整理</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告:(Keep) 文字コード判定機能の整理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">301</span>
-    <a class="title" href="301.html#301">Commit報告:(Keep) 文字コード判定機能の整理</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=301>
+    <a class="thread-title" href="301.html#301">Commit報告:(Keep) 文字コード判定機能の整理</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=301>
     <span class="no">[301]</span>
-    <a class="title" href="#301">Commit報告:(Keep) 文字コード判定機能の整理</a>
+    <a class="thread-title" href="#301">Commit報告:(Keep) 文字コード判定機能の整理</a>
     <span class="author">kobake</span>
     <time datetime="2008-04-20T14:46:27">2008年04月20日 14:46</time></h1>
     <div class="body">リビジョン：<br>　rev1288<br><br>変更種別：<br>　リファクタリング。<br><br>内容：<br>　charcode のファイル容量が大きく、保守性が低下していたため、<br>　その中の文字コード判定の機能を CESI および各種文字コードクラスへ分離、<br>　および、それに伴う整理を行いました。<br>　結果的に charcode の中身がほぼ空になったので、元の charcode を削除し、<br>　charcode2 を charcode にリネームしました。<br></div></section>

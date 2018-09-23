@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>新規保存時の既定のフォルダについて</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>新規保存時の既定のフォルダについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1071</span>
-    <a class="title" href="1071.html#1071">新規保存時の既定のフォルダについて</a></div>
+    <a class="thread-title" href="1071.html#1071">新規保存時の既定のフォルダについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">1072</span>
-    <a class="title" href="1071.html#1072">Re:新規保存時の既定のフォルダについて</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1071>
+    <a class="thread-title" href="1071.html#1072">Re:新規保存時の既定のフォルダについて</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1071>
     <span class="no">[1071]</span>
-    <a class="title" href="#1071">新規保存時の既定のフォルダについて</a>
+    <a class="thread-title" href="#1071">新規保存時の既定のフォルダについて</a>
     <span class="author">sakurauser</span>
     <time datetime="2009-12-15T19:27:34">2009年12月15日 19:27</time></h1>
     <div class="body">新規に保存しようとすると、<br>強制的にプログラムのあるフォルダにされてしまうのは<br>極めて不適切である。<br>(例:C:\Program Files\sakura\)<br>マイドキュメント等にするべきであり、<br>絶対に是正しなければならないものである。<br></div></section>
     <ul><li><section><h1 id=1072>
     <span class="no">[1072]</span>
-    <a class="title" href="#1072">Re:新規保存時の既定のフォルダについて</a>
+    <a class="thread-title" href="#1072">Re:新規保存時の既定のフォルダについて</a>
     <span class="author">anonymouse</span>
     <time datetime="2009-12-15T22:09:38">2009年12月15日 22:09</time></h1>
     <div class="body">新規ファイルのデフォルトの保存先を変更するには、<br><a href=http://sakura.qp.land.to/?FAQ%2F21 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>FAQ%<wbr>2F21</nobr></a><br>のようにすればいいようです。<br><br>詳しくないので間違ってるかもしれないですが、<br>新規起動サクラのデフォルト保存先は起動元プログラムのカレントフォルダを引き継ぐ仕組みになっているような気がします。<br>例えばデスクトップ上のreadme.txtを開いているサクラから新規起動されたサクラのデフォルト保存先はデスクトップになるし、マイドキュメントのreadme.txtを開いているサクラから新規起動されたサクラのデフォルト保存先はマイドキュメントになるし、もちろん、そのルールからしてプログラムフォルダ上のreadme.txtを開いているサクラから新規起動されたサクラのデフォルト保存先はプログラムフォルダになる、という動きをするようになっているのかなぁ？、と思います。<br>で、起動元は別プログラムかもしれないけれど、起動元のカレントを引き継ぐ、と。<br>たぶん、サクラ自身は起動元が何かを意識せずに動いているので、シェルからの新規起動では、ショートカットで作業フォルダ指定が必要になる、ということなのかなぁ、と思うのですが...<br><br>sakurauserさんの例の場合、明示指定した覚えはないけれど、たまたま起動元のカレントフォルダがC:\Program Files\sakura\になってしまっていた、ということではないのかな？</div></section>

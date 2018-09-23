@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>MinGW(gcc) のインストールとコンパイル</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>MinGW(gcc) のインストールとコンパイル | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">711</span>
-    <a class="title" href="711.html#711">MinGW(gcc) のインストールとコンパイル</a></div>
+    <a class="thread-title" href="711.html#711">MinGW(gcc) のインストールとコンパイル</a></div>
     <ul><li><div class="list-title">
     <span class="no">712</span>
-    <a class="title" href="711.html#712">Re:MinGW(gcc) のインストールとコンパイル</a></div>
+    <a class="thread-title" href="711.html#712">Re:MinGW(gcc) のインストールとコンパイル</a></div>
     <ul><li><div class="list-title">
     <span class="no">727</span>
-    <a class="title" href="711.html#727">Re2:MinGW(gcc) のインストールとコンパイル</a></div>
+    <a class="thread-title" href="711.html#727">Re2:MinGW(gcc) のインストールとコンパイル</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">715</span>
-    <a class="title" href="711.html#715">gcc用の便利ツール</a></div>
+    <a class="thread-title" href="711.html#715">gcc用の便利ツール</a></div>
     <ul><li><div class="list-title">
     <span class="no">716</span>
-    <a class="title" href="711.html#716">Re:gcc用の便利ツール</a></div>
+    <a class="thread-title" href="711.html#716">Re:gcc用の便利ツール</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">2567</span>
-    <a class="title" href="711.html#2567">RE: MinGW(gcc) のインストールとコンパイル</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=711>
+    <a class="thread-title" href="711.html#2567">RE: MinGW(gcc) のインストールとコンパイル</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=711>
     <span class="no">[711]</span>
-    <a class="title" href="#711">MinGW(gcc) のインストールとコンパイル</a>
+    <a class="thread-title" href="#711">MinGW(gcc) のインストールとコンパイル</a>
     <span class="author">あああ</span>
     <time datetime="2001-09-28T20:07:39">2001年09月28日 20:07</time></h1>
     <div class="body">MinGW のインストールとコンパイルの方法について述べます。<br><br>最新版(10.1MB) <a href=http://prdownloads.sourceforge.net/mingw/MinGW-1.1.tar.gz target=_top><nobr>http://<wbr>prdownlo<wbr>ads.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>mingw/<wbr>MinGW-<wbr>1.<wbr>1.<wbr>tar.<wbr>gz</nobr></a> をダウンロードして、このファイルを「解凍レンジ」 <a href=http://www.vector.co.jp/soft/win95/util/se094501.html target=_top><nobr>http://<wbr>www.<wbr>vector.<wbr>co.<wbr>jp/<wbr>soft/<wbr>win95/<wbr>util/<wbr>se094501<wbr>.<wbr>html</nobr></a> などで展開し、適当な場所において次のように \autoexec.bat と \config.sys を変更して再起動すれば、インストール完了だと思います（自信無し）。<br><br>REM ### \autoexec.bat<br>REM ### 各種環境変数の設定。<br>....<br>set MINGW=d:\mingw など<br>set PATH=%MINGW%\bin;%MINGW%\lib\gcc-lib\mingw32\295~1.3-6;%PATH%<br>set GCC_EXEC_PREFIX=%MINGW%\lib\gcc-lib\mingw32\295~1.3-6<br>set LIBRARY_PATH=%MINGW%\lib;%MINGW%\lib\gcc-lib\mingw32\295~1.3-6<br>set C_INCLUDE_PATH=%MINGW%\include<br>set CPLUS_INCLUDE_PATH=%MINGW%\include\g++-3<br>set OBJC_INCLUDE_PATH=%MINGW%\lib\gcc-lib\mingw32\295~1.3-6\include\obj<br>REM set LANG=C-SJIS<br>...<br><br>REM ### \config.sys<br>REM ### 環境変数を確保するサイズに余裕を持たせておく。<br>shell=C:\WINDOWS\COMMAND.COM /P /E:4096<br><br>これで gcc test.c -o test.exe などでコンパイル可能です。make も使えます。ただ、この MinGW は半角円文字 (\) を含むマルチバイト文字列（シフトJISの「表示」など）を認識しませんので <a href=http://homepage2.nifty.com/tenk/lib/index.htm target=_top><nobr>http://<wbr>homepage<wbr>2.<wbr>nifty.<wbr>com/<wbr>tenk/<wbr>lib/<wbr>index.<wbr>htm</nobr></a> から czenyen v1.11 (40KB)をダウンロードして、ソースファイルを変換しなければいけません。実際にソースの変換を行う場合、<br><br>mkdir ..\new<br>for %a in (*.cpp *.h) do czenyen -a %a ..\new\%a<br><br>とすることで一度に変換できます。これをバッチファイルで行う場合は % を2重にしてください。<br></div></section>
     <ul><li><section><h1 id=712>
     <span class="no">[712]</span>
-    <a class="title" href="#712">Re:MinGW(gcc) のインストールとコンパイル</a>
+    <a class="thread-title" href="#712">Re:MinGW(gcc) のインストールとコンパイル</a>
     <span class="author">あろか</span>
     <time datetime="2001-09-30T00:29:12">2001年09月30日 00:29</time></h1>
     <div class="body">▼ あああさん<br>&gt; mkdir ..\new<br>&gt; for %a in (*.cpp *.h) do czenyen -a %a ..\new\%a<br>&gt; <br>&gt; とすることで一度に変換できます。<br>質問です。リソースファイル(sakura_rc.rc)は変換が必要ありませんか？<br></div></section>
     <ul><li><section><h1 id=727>
     <span class="no">[727]</span>
-    <a class="title" href="#727">Re2:MinGW(gcc) のインストールとコンパイル</a>
+    <a class="thread-title" href="#727">Re2:MinGW(gcc) のインストールとコンパイル</a>
     <span class="author">あああ</span>
     <time datetime="2001-10-02T09:20:24">2001年10月02日 09:20</time></h1>
     <div class="body">▼ あろかさん<br>&gt; 質問です。リソースファイル(sakura_rc.rc)は変換が必要ありませんか？<br><br>面倒くさいけど、必要なんです。リソースファイルのコンパイルは windres を使って：<br><br>czenyen -a test.rc test_new.rc<br>windres -O res -i test_new.rc -o test.res<br><br>とするとできるでしょう。res以外の形式でも出力可能です。詳しくは windres --help |more を実行したり %MINGW%\info フォルダのファイルをご覧下さい。<br></div></section>
     </li></ul></li><li><section><h1 id=715>
     <span class="no">[715]</span>
-    <a class="title" href="#715">gcc用の便利ツール</a>
+    <a class="thread-title" href="#715">gcc用の便利ツール</a>
     <span class="author">(謎)のユーザー</span>
     <time datetime="2001-09-30T11:34:18">2001年09月30日 11:34</time></h1>
     <div class="body">・ObjectCentral<br>　　<a href=http://objectcentral.com/ target=_top><nobr>http://<wbr>objectce<wbr>ntral.<wbr>com/<wbr></nobr></a><br>…V-IDEというgccやbcc、etc...用のIDE(統合開発環境)や<br>リソースエディタWeditRes、gdb用GUIフロントエンドが<br>入手可能。但し全部英語。<br><br>・Bloodshed<br>　　<a href=http://www.bloodshed.net/ target=_top><nobr>http://<wbr>www.<wbr>bloodshe<wbr>d.<wbr>net/<wbr></nobr></a><br>…gcc+IDEであるDev-C++が入手可能。これも英語。<br><br>・ResourceHacker<br>　　<a href=http://rpi.net.au/~ajohnson/resourcehacker/ target=_top><nobr>http://<wbr>rpi.<wbr>net.<wbr>au/~<wbr>ajohnson<wbr>/<wbr>resource<wbr>hacker/<wbr></nobr></a><br>…本当はリソース書換ツールですが、リソースエディタ<br>としても使えます。日本語が通るので非常に便利。<br><br>★おまけ：<br>・NASM<br>　　<a href=http://www.web-sites.co.uk/nasm/ target=_top><nobr>http://<wbr>www.<wbr>web-<wbr>sites.<wbr>co.<wbr>uk/<wbr>nasm/<wbr></nobr></a><br>…MASM互換のフリーアセンブラ。<br><br>・Open Watcom Project<br>　　<a href=http://www.openwatcom.org/download.html target=_top><nobr>http://<wbr>www.<wbr>openwatc<wbr>om.<wbr>org/<wbr>download<wbr>.<wbr>html</nobr></a><br>…海外で人気のコンパイラ、watcom C/C++ の<br>オープン化プロジェクト。全然更新されない。(^^;</div></section>
     <ul><li><section><h1 id=716>
     <span class="no">[716]</span>
-    <a class="title" href="#716">Re:gcc用の便利ツール</a>
+    <a class="thread-title" href="#716">Re:gcc用の便利ツール</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-09-30T18:05:07">2001年09月30日 18:05</time></h1>
     <div class="body">▼ (謎)のユーザーさん<br>&gt; ・Open Watcom Project<br>&gt; 　　<a href=http://www.openwatcom.org/download.html target=_top><nobr>http://<wbr>www.<wbr>openwatc<wbr>om.<wbr>org/<wbr>download<wbr>.<wbr>html</nobr></a><br>&gt; …海外で人気のコンパイラ、watcom C/C++ の<br>&gt; オープン化プロジェクト。全然更新されない。(^^;<br><br>結局のところ、サクラエディタを開発する環境はgccでは（今のところ）構築できなさそうですね。<br>sakura-editor English Edition なら作れそうですが、誰かトライしないかな？　エディタとしてあまり利用価値なかな、(^_^;)<br>bccは日本語版なのがいいですね。他にもフリーにしているTurbo C,<br>Turbo Pascalは英語版ですもんね。フリーのコンパイルがあるといっても、日本語ソフトを作るなら日本語が通らないとねえ。<br>open pascal とかも英語版でしょ、たぶん。watcom言語はたしかライフボート（今はソフトボート）が販売していましたね。日本語版にして売ってたのかな。<br>雑誌やＷｅｂでもそうですが取り上げるときは日本語版かどうかを明確にしてほしいといつも思います。</div></section>
     </li></ul></li><li><section><h1 id=2567>
     <span class="no">[2567]</span>
-    <a class="title" href="#2567">RE: MinGW(gcc) のインストールとコンパイル</a>
+    <a class="thread-title" href="#2567">RE: MinGW(gcc) のインストールとコンパイル</a>
     <span class="author">みく</span>
     <time datetime="2003-02-13T20:00:48">2003年02月13日 20:00</time></h1>
     <div class="body"><br>誰か通した人いないのかしらん。<br><br>・MinGWインストール<br>・sakura_core\*.cpp,*.c,*.h,*.hh,*.hm,*.rcの全角2バイト目0x5cのものをすべて\x??\x5cに変換<br>・rcをwindresで.oにコンパイル<br>　＞afxres.hを以下の内容で作成<br>    #include &lt;windows.h&gt;<br>    #include &lt;winnt.h&gt;<br>　＞CONTROLディレクティブでIDC_STATIC,"Static",SS_BITMAPという行のものは"Static",を削除<br>　＞IDD_FILEOPEN DLGINITのところのBEGIN-END間の行末に","を追加<br>・makeのときに以下の定義<br>　-D_WIN32_IE=0x0400<br>　-D_WINVER=0x0400<br>　-D__forceinline=inline<br>　-DSAKURA_NO_DLL<br>　など。<br>・あとはソースをコンパイル<br>　＞TB_SETIMAGELISTがない<br>　＞NMKEYがない<br><br>MinGWのヘッダには未定義のものがいっぱいで、ここまでであきらめました。<br></div></section>

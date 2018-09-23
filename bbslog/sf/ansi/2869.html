@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>BugsInfo.txtの確認</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>BugsInfo.txtの確認 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2869</span>
-    <a class="title" href="2869.html#2869">BugsInfo.txtの確認</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=2869>
+    <a class="thread-title" href="2869.html#2869">BugsInfo.txtの確認</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=2869>
     <span class="no">[2869]</span>
-    <a class="title" href="#2869">BugsInfo.txtの確認</a>
+    <a class="thread-title" href="#2869">BugsInfo.txtの確認</a>
     <span class="author">もか</span>
     <time datetime="2003-06-19T10:46:03">2003年06月19日 10:46</time></h1>
     <div class="body">以下の項目はすでに修正されているようです。<br><br>・2002.10.29 □  ----.--.-- 折り返し幅よりTAB幅の方が大きいと無限ループに陥る<br>げんたさんが修正していた記憶あり。<br>・2002.07.23 □  ----.--.-- 色分けされた部分の'.'の下半分がキャレット位置によって欠ける．<br>特定のOSとフォントによる仕様だったような<br>・2002.07.22 □  ----.--.-- SmartIndent_CPPでメモリの扱いが誤っている<br>修正済みのはず。<br>・2002.03.06 □  ----.--.-- 水平スクロールバーを操作してもルーラーがついてこないことがある。<br>まだ、ついてこないことありますか？<br>・2002.02.14 □  ----.--.-- バージョンアップしたときに強調キーワードが壊れることがある<br>NULを扱えないエディタで編集するのが原因で、もともとバグではない。<br>今は、TABになってサクラエディタ以外でも編集できる。<br>とはいえ、たまに設定がすべて消えることがある人がいるらしいので、なんとも。<br>・2000.08.?? □  ----.--.-- [キー割り当て]タブでAltのAをアクセスキーに設定してもフォーカスしかできない (ソース上のバグ)<br>ソース上のコメントから推測すると、隠れ[適用(&amp;A)]ボタンが原因で、修正済み。<br>・2001.01.14 □  ----.--.-- Ctrl+Iにキーを割り振ってないのにTAB挿入になる  その他にもキー未定義で動作するものがある<br>WM_CHARでコントロールコードを入力できなくしたので修正済み？<br>・1998.06.26 □  ----.--.-- バイナリデータを含むファイルは保存時の改行コードがCRLFになる仕様→読込み時に警告すべきかも<br>今は改行コードは無変換・各行ごと保持なので、修正済み。<br></div></section>

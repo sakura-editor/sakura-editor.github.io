@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>文字列の検索結果を検出したい</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>文字列の検索結果を検出したい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">105</span>
-    <a class="title" href="105.html#105">文字列の検索結果を検出したい</a></div>
+    <a class="thread-title" href="105.html#105">文字列の検索結果を検出したい</a></div>
     <ul><li><div class="list-title">
     <span class="no">106</span>
-    <a class="title" href="105.html#106">Re: 文字列の検索結果を検出したい</a></div>
+    <a class="thread-title" href="105.html#106">Re: 文字列の検索結果を検出したい</a></div>
     <ul><li><div class="list-title">
     <span class="no">107</span>
-    <a class="title" href="105.html#107">Re2: 文字列の検索結果を検出したい</a></div>
+    <a class="thread-title" href="105.html#107">Re2: 文字列の検索結果を検出したい</a></div>
     <ul><li><div class="list-title">
     <span class="no">108</span>
-    <a class="title" href="105.html#108">Re3: 文字列の検索結果を検出したい</a></div>
+    <a class="thread-title" href="105.html#108">Re3: 文字列の検索結果を検出したい</a></div>
     <ul><li><div class="list-title">
     <span class="no">109</span>
-    <a class="title" href="105.html#109">Re4: 文字列の検索結果を検出したい</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=105>
+    <a class="thread-title" href="105.html#109">Re4: 文字列の検索結果を検出したい</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=105>
     <span class="no">[105]</span>
-    <a class="title" href="#105">文字列の検索結果を検出したい</a>
+    <a class="thread-title" href="#105">文字列の検索結果を検出したい</a>
     <span class="author">NEGI</span>
     <time datetime="2004-09-09T19:13:28">2004年09月09日 19:13</time></h1>
     <div class="body">はじめまして。<br><br>文字列を順次検索して、検索文字列が存在する行を<br>全て削除するという処理を行いたいのですが、検索<br>終了を検出する方法が分かりません。以下のように<br>PPAマクロを作成してみたのですが、「S_SearchNext」<br>で検索がHITしたかを検出する方法はないでしょうか？<br><br>var<br>    str: String;<br>    word,ignr,re,option: Integer;<br>begin<br>    word   := $01;&#9;// bit0：単語単位で探す<br>    ignr   := $02;&#9;// bit1：英大文字と小文字を区別する<br>    re     := $04;&#9;// bit2：正規表現<br>    option := re;<br>    str := InputBox('検索文字列入力', '', '');<br>    S_GoFileTop(0);<br>    while ( 1 ) do<br>    begin<br>        S_SearchNext(str, re);<br>        // ここでBreakしたい<br>        S_GoLineTop(0);<br>        S_BeginSelect(0);<br>        S_Down_Sel(0);<br>        S_Delete(0);<br>    end;<br>end</div></section>
     <ul><li><section><h1 id=106>
     <span class="no">[106]</span>
-    <a class="title" href="#106">Re: 文字列の検索結果を検出したい</a>
+    <a class="thread-title" href="#106">Re: 文字列の検索結果を検出したい</a>
     <span class="author">げんた</span>
     <time datetime="2004-09-09T22:58:01">2004年09月09日 22:58</time></h1>
     <div class="body">&gt;文字列を順次検索して、検索文字列が存在する行を<br>&gt;全て削除するという処理を行いたい<br>この目的であれば，正規表現置換で<br>置換元: ^.*検索文字列.*\n<br>置換先: 空欄<br>で「すべて置換」すればお望みの動作になると思います．<br></div></section>
     <ul><li><section><h1 id=107>
     <span class="no">[107]</span>
-    <a class="title" href="#107">Re2: 文字列の検索結果を検出したい</a>
+    <a class="thread-title" href="#107">Re2: 文字列の検索結果を検出したい</a>
     <span class="author">NEGI</span>
     <time datetime="2004-09-10T21:35:29">2004年09月10日 21:35</time></h1>
     <div class="body">ご指摘ありがとうございます。<br>もう一点質問したいのですが<br><br>&gt; 置換元: ^.*検索文字列.*\n<br>&gt; 置換先: 空欄<br>&gt; で「すべて置換」すればお望みの動作になると思います．<br><br>を参考にして、上記"検索文字列"の箇所に検索したい<br>文字列(data)を<br><br>S_ReplaceAll('^.*data.*\n', '', option);<br><br>というように直書きした場合はうまくいったのですが<br><br>str := InputBox('検索文字列入力', '', '');<br><br>で取得したstrを上記"検索文字列"に代入するには<br>どのように記述すればよいのでしょうか？</div></section>
     <ul><li><section><h1 id=108>
     <span class="no">[108]</span>
-    <a class="title" href="#108">Re3: 文字列の検索結果を検出したい</a>
+    <a class="thread-title" href="#108">Re3: 文字列の検索結果を検出したい</a>
     <span class="author">すい</span>
     <time datetime="2004-09-11T06:43:17">2004年09月11日 06:43</time></h1>
     <div class="body">// TAB=4<br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに PPA.DLL を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>var&#9;&#9;// 変数を用意する<br>&#9;str:String;&#9;// 文字列型変数 str を用意<br>begin&#9;// ここから処理内容<br>&#9;str := InputBox( '検索文字列行を削除','検索文字列を入力して下さい。' , '' );<br><br>&#9;if(str = '') then&#9;Exit;&#9;// 文字列が空なら何もせずにマクロ終了する。<br><br>&#9;S_ReplaceAll( '.*'+str+'.*[\r\n]+' , '', 148);&#9;// 148(10進数) == 1001.0100(2進数):選択範囲,ダイアログを自動的に閉じる,正規表現<br>&#9;S_ReDraw(0);&#9;// 再描画<br>end;<br></div></section>
     <ul><li><section><h1 id=109>
     <span class="no">[109]</span>
-    <a class="title" href="#109">Re4: 文字列の検索結果を検出したい</a>
+    <a class="thread-title" href="#109">Re4: 文字列の検索結果を検出したい</a>
     <span class="author">NEGI</span>
     <time datetime="2004-09-14T22:12:10">2004年09月14日 22:12</time></h1>
     <div class="body">目的通りの動作が行えました。<br>ありがとうございます。</div></section>

@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>行末の空白を削除して改行マクロ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>行末の空白を削除して改行マクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">27</span>
-    <a class="title" href="27.html#27">行末の空白を削除して改行マクロ</a></div>
+    <a class="thread-title" href="27.html#27">行末の空白を削除して改行マクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">28</span>
-    <a class="title" href="27.html#28">Re:行末の空白を削除して改行マクロ</a></div>
+    <a class="thread-title" href="27.html#28">Re:行末の空白を削除して改行マクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">30</span>
-    <a class="title" href="27.html#30">Re2:行末の空白を削除して改行マクロ</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=27>
+    <a class="thread-title" href="27.html#30">Re2:行末の空白を削除して改行マクロ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=27>
     <span class="no">[27]</span>
-    <a class="title" href="#27">行末の空白を削除して改行マクロ</a>
+    <a class="thread-title" href="#27">行末の空白を削除して改行マクロ</a>
     <span class="author">ryoji</span>
     <time datetime="2003-05-04T17:52:15">2003年05月04日 17:52</time></h1>
     <div class="body">行末の空白を削除して改行するマクロを作ってみました。<br><br>// RTrimNL.mac<br>// 行末の空白を削除して改行<br>S_Char(13); // 文字入力(改行)<br>S_MoveHistSet(); // 現在位置を移動履歴に登録<br>S_Up(); // カーソル上移動<br>S_RTrim(); // 右(末尾)の空白を削除<br>S_MoveHistPrev(); // 移動履歴: 前へ<br><br>私はこれを Enter キーに直接割り当てて使っています。<br>一般掲示板の「[2614] 空白だけの行の削除」のような要望に合うのではないでしょうか。<br>＃この場合、通常改行は Shift+Enter または、<br>＃S_Char(13)；の一行マクロでやればよいと思います。<br></div></section>
     <ul><li><section><h1 id=28>
     <span class="no">[28]</span>
-    <a class="title" href="#28">Re:行末の空白を削除して改行マクロ</a>
+    <a class="thread-title" href="#28">Re:行末の空白を削除して改行マクロ</a>
     <span class="author">MMX</span>
     <time datetime="2003-05-07T11:49:51">2003年05月07日 11:49</time></h1>
     <div class="body">▼ ryojiさん<br>正規表現の定石では<br>//キーボードマクロのファイル<br>S_ReplaceAll('\\s+\\r\\n', '\\r\\n', 36);&#9;// <br>S_ReDraw(0);&#9;// 再描画<br>あたりです、これは全置換になっていますが<br>範囲置換でもできます。（DOS改行ですが）<br><br>あとは、ファイル保存時の動作設定で<br>行末の空白消去のあるエディタもあります。</div></section>
     <ul><li><section><h1 id=30>
     <span class="no">[30]</span>
-    <a class="title" href="#30">Re2:行末の空白を削除して改行マクロ</a>
+    <a class="thread-title" href="#30">Re2:行末の空白を削除して改行マクロ</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-07-23T14:09:45">2003年07月23日 14:09</time></h1>
     <div class="body">▼ MMXさん<br>&gt; S_ReplaceAll('\\s+\\r\\n', '\\r\\n', 36);<br>&gt;これは全置換になっていますが<br>&gt;範囲置換でもできます。（DOS改行ですが）<br><br><br>甘いねぇ。すべての改行コードに対応するなら、次のように。<br><br>S_ReplaceAll('[ \\t]+([\\r\\n])', '$1', 36);<br>S_ReDraw(0);<br><br></div></section>

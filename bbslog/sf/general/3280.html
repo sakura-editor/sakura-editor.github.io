@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Atokを使用してのShift+スペースキーの入力不具合</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Atokを使用してのShift+スペースキーの入力不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3280</span>
-    <a class="title" href="3280.html#3280">Atokを使用してのShift+スペースキーの入力不具合</a></div>
+    <a class="thread-title" href="3280.html#3280">Atokを使用してのShift+スペースキーの入力不具合</a></div>
     <ul><li><div class="list-title">
     <span class="no">3282</span>
-    <a class="title" href="3280.html#3282">RE: Atokを使用してのShift+スペースキーの入力不具合</a></div>
+    <a class="thread-title" href="3280.html#3282">RE: Atokを使用してのShift+スペースキーの入力不具合</a></div>
     <ul><li><div class="list-title">
     <span class="no">3289</span>
-    <a class="title" href="3280.html#3289">Re2: Atokを使用してのShift+スペースキーの入力不具合</a></div>
+    <a class="thread-title" href="3280.html#3289">Re2: Atokを使用してのShift+スペースキーの入力不具合</a></div>
     <ul><li><div class="list-title">
     <span class="no">3290</span>
-    <a class="title" href="3280.html#3290">Re3: Atokを使用してのShift+スペースキーの入力不具合</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3280>
+    <a class="thread-title" href="3280.html#3290">Re3: Atokを使用してのShift+スペースキーの入力不具合</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3280>
     <span class="no">[3280]</span>
-    <a class="title" href="#3280">Atokを使用してのShift+スペースキーの入力不具合</a>
+    <a class="thread-title" href="#3280">Atokを使用してのShift+スペースキーの入力不具合</a>
     <span class="author">やんも</span>
     <time datetime="2003-09-12T15:09:47">2003年09月12日 15:09</time></h1>
     <div class="body">大変重宝しております。。サクラエディタ様さま。<br>ひらがな入力オンの状態で半角スペースを入力したいのですが、<br>Shift+スペースキーを押すと、"★逆タブインデントは選択してから"<br>と表示されて入力できません。<br><br>素直にひらがな入力オフにして普通にスペースキーを押せば問題は<br>ないのですが。<br>過去のバージョンでは入力できていたので、どうにかなりませんか？<br><br>当方の環境は、Windows2000SP4 , Atok16 , sakura 1.4.3.1 です。<br>あら、IME2000だと正常に動きますね。。。</div></section>
     <ul><li><section><h1 id=3282>
     <span class="no">[3282]</span>
-    <a class="title" href="#3282">RE: Atokを使用してのShift+スペースキーの入力不具合</a>
+    <a class="thread-title" href="#3282">RE: Atokを使用してのShift+スペースキーの入力不具合</a>
     <span class="author">げんた</span>
     <time datetime="2003-09-13T00:43:40">2003年09月13日 00:43</time></h1>
     <div class="body">&gt;Shift+スペースキーを押すと、"★逆タブインデントは選択してから"<br>&gt;と表示されて入力できません。<br>元々Shift+スペースは「逆スペースインデント」という機能が割り当てられていました．<br>しかし，選択範囲が無い場合には単なるスペースとして扱っていました．<br><br>しかし選択しないと逆タブインデントが動作しないことがわかりにくかったものの未選択状態から実行できるようにするのは容易ではなかったためとりあえずはメッセージを出して選択を促すようにしました．その際に逆スペースインデントも逆タブインデントと同じ動作にあわせました．<br><br>で，問題の回避方法ですが，Shift+スペースに割り当てられている「逆スペースインデント」を解除してください．<br>そうすれば単なるスペースになります．<br></div></section>
     <ul><li><section><h1 id=3289>
     <span class="no">[3289]</span>
-    <a class="title" href="#3289">Re2: Atokを使用してのShift+スペースキーの入力不具合</a>
+    <a class="thread-title" href="#3289">Re2: Atokを使用してのShift+スペースキーの入力不具合</a>
     <span class="author">やんも</span>
     <time datetime="2003-09-15T11:52:39">2003年09月15日 11:52</time></h1>
     <div class="body">返事ありがとうございます。<br>えっと…逆タブの機能も使いたいので、選択していない場合のShift+スペース入力時は、<br>"★…"のメッセージをだしてスペースも入るようにはなりませんか？<br>わがままですみません。</div></section>
     <ul><li><section><h1 id=3290>
     <span class="no">[3290]</span>
-    <a class="title" href="#3290">Re3: Atokを使用してのShift+スペースキーの入力不具合</a>
+    <a class="thread-title" href="#3290">Re3: Atokを使用してのShift+スペースキーの入力不具合</a>
     <span class="author">げんた</span>
     <time datetime="2003-09-15T13:44:35">2003年09月15日 13:44</time></h1>
     <div class="body">&gt;えっと…逆タブの機能も使いたいので、選択していない場合のShift+スペース入力時は、<br>&gt;"★…"のメッセージをだしてスペースも入るようにはなりませんか？<br>なるほど．警告を出しつつスペースも入ると．ではそうしてみますか．<br></div></section>

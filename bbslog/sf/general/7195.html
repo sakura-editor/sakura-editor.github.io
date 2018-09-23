@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現の不安定動作？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現の不安定動作？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">7195</span>
-    <a class="title" href="7195.html#7195">正規表現の不安定動作？</a></div>
+    <a class="thread-title" href="7195.html#7195">正規表現の不安定動作？</a></div>
     <ul><li><div class="list-title">
     <span class="no">7196</span>
-    <a class="title" href="7195.html#7196">途中報告</a></div>
+    <a class="thread-title" href="7195.html#7196">途中報告</a></div>
     </li><li><div class="list-title">
     <span class="no">7197</span>
-    <a class="title" href="7195.html#7197">一人言</a></div>
+    <a class="thread-title" href="7195.html#7197">一人言</a></div>
     <ul><li><div class="list-title">
     <span class="no">7200</span>
-    <a class="title" href="7195.html#7200">Re:一人言</a></div>
+    <a class="thread-title" href="7195.html#7200">Re:一人言</a></div>
     <ul><li><div class="list-title">
     <span class="no">7201</span>
-    <a class="title" href="7195.html#7201">Re2:動作確認しました</a></div>
+    <a class="thread-title" href="7195.html#7201">Re2:動作確認しました</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">7198</span>
-    <a class="title" href="7195.html#7198">Re:正規表現の不安定動作？</a></div>
+    <a class="thread-title" href="7195.html#7198">Re:正規表現の不安定動作？</a></div>
     </li><li><div class="list-title">
     <span class="no">7199</span>
-    <a class="title" href="7195.html#7199">自己レス</a></div>
+    <a class="thread-title" href="7195.html#7199">自己レス</a></div>
     </li><li><div class="list-title">
     <span class="no">7202</span>
-    <a class="title" href="7195.html#7202">結果報告</a></div>
+    <a class="thread-title" href="7195.html#7202">結果報告</a></div>
     </li><li><div class="list-title">
     <span class="no">7210</span>
-    <a class="title" href="7195.html#7210">後日談（機能要望）</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=7195>
+    <a class="thread-title" href="7195.html#7210">後日談（機能要望）</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7195>
     <span class="no">[7195]</span>
-    <a class="title" href="#7195">正規表現の不安定動作？</a>
+    <a class="thread-title" href="#7195">正規表現の不安定動作？</a>
     <span class="author">System_UPJ</span>
     <time datetime="2010-05-25T02:07:52">2010年05月25日 02:07</time></h1>
     <div class="body">正規表現の実装で困っています。(Ver1.6.5.0)<br>青空文庫形式の正規表現色分けを行うため、以下の記述を行いました。<br>（実装しているのは百字に近い、非常に長いものです）<br>（以下は、現象を再現できる範囲で単純化したものです）<br><br>正規表現キーワード１（赤色強調）<br>/(?&lt;=』)[^」]*?」/k<br>正規表現キーワード２（青色強調）<br>/(?&lt;=」)[^』]*?』/k<br><br>以上の設定により、以下の文字列が赤・青交互に強調されるよう意図しています。<br>』初」二』三」四』五」六』七」八』九」<br><br>しかし、実際の現象として、四』と八』のみ青色に強調されないのです。<br><br>正規表現キーワード１と２の順番を入れ替えると、今度は三」と七」のみ強調されなくなります。<br>この現象を回避する方法がありましたら、ご教授いただければ幸いです。<br></div></section>
     <ul><li><section><h1 id=7196>
     <span class="no">[7196]</span>
-    <a class="title" href="#7196">途中報告</a>
+    <a class="thread-title" href="#7196">途中報告</a>
     <span class="author">ds14050</span>
     <time datetime="2010-05-25T18:10:57">2010年05月25日 18:10</time></h1>
     <div class="body">1. たしかにおっしゃる通りの現象が見られました。<br><br>2.Ruby1.9の鬼車では 四』と八』もマッチしますから<br>  サクラエディタの問題です。<br><br>3.試しに色設定を正規表現キーワード2から<br>  URL(青色・下線・クリッカブル)に変更すると<br>  四』と八』の文字色は黒にもかかわらずマウスカーソルは<br>  手の形に変化に変化しました。<br></div></section>
     </li><li><section><h1 id=7197>
     <span class="no">[7197]</span>
-    <a class="title" href="#7197">一人言</a>
+    <a class="thread-title" href="#7197">一人言</a>
     <span class="author">ds14050</span>
     <time datetime="2010-05-25T18:47:53">2010年05月25日 18:47</time></h1>
     <div class="body">トラッカーがエラーで開けない。<br><br>戻り読みが使える = bregonig.dll = BMatchExが使える。<br>というわけで、BMatchExが使えるときはそちらを使うことで直りました。<br><br>登録の順番に依存して、片方のキーワードにしか問題が生じない<br>理由がわからない。<br></div></section>
     <ul><li><section><h1 id=7200>
     <span class="no">[7200]</span>
-    <a class="title" href="#7200">Re:一人言</a>
+    <a class="thread-title" href="#7200">Re:一人言</a>
     <span class="author">ryoji</span>
     <time datetime="2010-05-26T00:30:50">2010年05月26日 00:30</time></h1>
     <div class="body">▼ ds14050さん<br>&gt; 戻り読みが使える = bregonig.dll = BMatchExが使える。<br>&gt; というわけで、BMatchExが使えるときはそちらを使うことで直りました。<br><br>まだちゃんと確認してませんが、たぶんこれで大丈夫そうですね。<br><br>&gt; 登録の順番に依存して、片方のキーワードにしか問題が生じない<br>&gt; 理由がわからない。<br><br>自分は、行頭や色が変わる位置で CRegexKeyword::RegexIsKeyword() の動作をじっくり追っかけてみたら理由がわかりました。</div></section>
     <ul><li><section><h1 id=7201>
     <span class="no">[7201]</span>
-    <a class="title" href="#7201">Re2:動作確認しました</a>
+    <a class="thread-title" href="#7201">Re2:動作確認しました</a>
     <span class="author">ryoji</span>
     <time datetime="2010-05-26T19:06:28">2010年05月26日 19:06</time></h1>
     <div class="body">&gt; まだちゃんと確認してませんが、たぶんこれで大丈夫そうですね。<br>確認しました。ＯＫと思います。</div></section>
     </li></ul></li></ul></li><li><section><h1 id=7198>
     <span class="no">[7198]</span>
-    <a class="title" href="#7198">Re:正規表現の不安定動作？</a>
+    <a class="thread-title" href="#7198">Re:正規表現の不安定動作？</a>
     <span class="author">ds14050</span>
     <time datetime="2010-05-25T19:52:55">2010年05月25日 19:52</time></h1>
     <div class="body">System_UPJさんがすぐに行える回避策で自分が思いつくのは、<br>戻り読みを使わずに先読みなどで代用することです。<br>代用できない場合はバージョンアップを待つ必要があると思います。<br><br># トラッカーの、group_idが指定されていないというエラーが<br># なくなっていたので Patchesの方へパッチを投稿しました。<br></div></section>
     </li><li><section><h1 id=7199>
     <span class="no">[7199]</span>
-    <a class="title" href="#7199">自己レス</a>
+    <a class="thread-title" href="#7199">自己レス</a>
     <span class="author">System_UPJ</span>
     <time datetime="2010-05-25T21:18:19">2010年05月25日 21:18</time></h1>
     <div class="body">ds14050さん、検証およびアドバイス、ありがとうございます。<br>現象の再現性が確認できたようですので、<br>バージョンアップを気長に待ちたいと思います。m(_ _)m<br><br>●余談１●<br>&gt; 正規表現キーワード１（赤色強調）<br>&gt; /(?&lt;=』)[^」]*?」/k<br>&gt; 正規表現キーワード２（青色強調）<br>&gt; /(?&lt;=」)[^』]*?』/k<br><br>問題を起こす上記２行を、以下の４行で書き換えると、問題を回避できます。<br>しかしこれだと、独立した」』も染まってしまうので、意図した動作となりません。<br>かといって、可変長の戻り読みは使えないので・・・と、思案中です。<br>/(?&lt;=』)[^」]*?(?=」)/k<br>/(?&lt;=」)[^』]*?(?=』)/k<br>/』/k<br>/」/k<br><br><br>●余談２●<br>上記問題に関係しているのは、青空文庫形式に対応する以下の正規表現です。<br>２種の鍵カッコを、交互ネストを許容しつつ、かつ連続ネストを否定しながら、<br>他種の全角カッコ｜《》［］を避けて染めることを意図しています。<br><br>他記号含む「」『』内　先端<br>（赤）/「[^｜《》［］「」『』]*?(?=[｜《［『].*?」)/k<br>（青）/『[^｜《》［］「」『』]*?(?=[｜《［「].*?』)/k<br><br>他記号含む「」『』内　他記号間<br>（赤）/(?&lt;=[》］』])[^｜《》［］「」『』]+?(?=[｜《［『][^「]*?」)/k<br>（青）/(?&lt;=[》］」])[^｜《》［］「」『』]+?(?=[｜《［「][^『]*?』)/k<br><br>他記号含む「」『』内　終端<br>（赤）/(?&lt;=[》］』])[^｜《》［］「」『』]*?」/k<br>（青）/(?&lt;=[》］」])[^｜《》［］「」『』]*?』/k<br><br>この最後の２行がうまく動かず、思案しているところです。<br>問題が解決しましたら、青空文庫編集用マクロ・設定集としてまとめ、<br>どこかで公表したいと思っています。<br><br>よろしくお願いします。</div></section>
     </li><li><section><h1 id=7202>
     <span class="no">[7202]</span>
-    <a class="title" href="#7202">結果報告</a>
+    <a class="thread-title" href="#7202">結果報告</a>
     <span class="author">ds14050</span>
     <time datetime="2010-05-27T03:16:32">2010年05月27日 03:16</time></h1>
     <div class="body">ソースコードを修正しましたので次の版では直っているはずです。<br>わかりやすい報告をありがとうございました。<br><br>&gt;余談<br>他のパターンは試されていると考えるのが当然でした。これは難しい。<br></div></section>
     </li><li><section><h1 id=7210>
     <span class="no">[7210]</span>
-    <a class="title" href="#7210">後日談（機能要望）</a>
+    <a class="thread-title" href="#7210">後日談（機能要望）</a>
     <span class="author">System_UPJ</span>
     <time datetime="2010-06-09T01:21:44">2010年06月09日 01:21</time></h1>
     <div class="body">お世話になっております。<br>その後も、折を見ては正規表現を書いています。<br>｜《》［］「」『』（）の全角記号をネストチェックしつつ染めることが目標ですが、文字数制限（９９字）が厳しい。<br>下の９行で目指す機能を実現できる（と思う）のですが、１行の文字数が１５０字(byte)程度に達してしまいます。<br><br>/「[^｜《》［］「」『』（）]*?(?=[｜《［『（])(?=([^［］「」『』（）]|［[^［］]*?］|「[^「」]*?」|『[^『』]*?』|（[^（）]*?）)*?」)/k<br>/『[^｜《》［］「」『』（）]*?(?=[｜《［「（])(?=([^［］「」『』（）]|［[^［］]*?］|「[^「」]*?」|『[^『』]*?』|（[^（）]*?）)*?』)/k<br>/（[^｜《》［］「」『』（）]*?(?=[｜《［「『])(?=([^［］「」『』（）]|［[^［］]*?］|「[^「」]*?」|『[^『』]*?』|（[^（）]*?）)*?）)/k<br>/(?&lt;=[》］』）])[^｜《》［］「」『』（）]+?(?=[｜《［『（])(?=([^［］「」『』（）]|［[^［］]*?］|「[^「」]*?」|『[^『』]*?』|（[^（）]*?）)*?」)/k<br>/(?&lt;=[》］」）])[^｜《》［］「」『』（）]+?(?=[｜《［「（])(?=([^［］「」『』（）]|［[^［］]*?］|「[^「」]*?」|『[^『』]*?』|（[^（）]*?）)*?』)/k<br>/(?&lt;=[》］」』])[^｜《》［］「」『』（）]+?(?=[｜《［「『])(?=([^［］「」『』（）]|［[^［］]*?］|「[^「」]*?」|『[^『』]*?』|（[^（）]*?）)*?）)/k<br>/(?&lt;=[》］』）])[^｜《》［］「『』（）]*?」/k<br>/(?&lt;=[》］」）])[^｜《》［］「」『（）]*?』/k<br>/(?&lt;=[》］」』])[^｜《》［］「」『』（]*?）/k<br><br>可能であれば、バージョンアップ時に制限文字数を拡大してしていただけるよう、リクエストします。<br>（外部ライブラリの制限だとすれば難しいでしょうが・・・？）<br></div></section>

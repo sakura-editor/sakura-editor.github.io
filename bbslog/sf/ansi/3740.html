@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アクティブなタブとウィンドウが食い違うバグ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アクティブなタブとウィンドウが食い違うバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3740</span>
-    <a class="title" href="3740.html#3740">アクティブなタブとウィンドウが食い違うバグ</a></div>
+    <a class="thread-title" href="3740.html#3740">アクティブなタブとウィンドウが食い違うバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3980</span>
-    <a class="title" href="3740.html#3980">Re:アクティブなタブとウィンドウが食い違うバグ</a></div>
+    <a class="thread-title" href="3740.html#3980">Re:アクティブなタブとウィンドウが食い違うバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3981</span>
-    <a class="title" href="3740.html#3981">Re2:アクティブなタブとウィンドウが食い違うバグ</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3740>
+    <a class="thread-title" href="3740.html#3981">Re2:アクティブなタブとウィンドウが食い違うバグ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3740>
     <span class="no">[3740]</span>
-    <a class="title" href="#3740">アクティブなタブとウィンドウが食い違うバグ</a>
+    <a class="thread-title" href="#3740">アクティブなタブとウィンドウが食い違うバグ</a>
     <span class="author">もか</span>
     <time datetime="2004-09-06T22:57:19">2004年09月06日 22:57</time></h1>
     <div class="body">WinXP。sakura 1.4.8.1、タブ表示、まとめる/まとめない。<br>サクラエディタをウィンドウを３つ以上開きます。<br>まとめているときは、他のソフトをすべて閉じます。<br>(そうしないと、再現できないようですが、理由は、不明）<br>するとタスクバーにはサクラエディタが1つだけある状態になるはずです。<br>一番左側以外のウィンドウを順番に表示します。<br>一番左側以外のウィンドウを閉じると、タブは一番左のタブがアクティブになっているように表示されます。<br>実際に表示されているウィンドウは、Zオーダーの高いもの(閉じたウィンドウの前に表示したウィンドウ)が表示されています。<br></div></section>
     <ul><li><section><h1 id=3980>
     <span class="no">[3980]</span>
-    <a class="title" href="#3980">Re:アクティブなタブとウィンドウが食い違うバグ</a>
+    <a class="thread-title" href="#3980">Re:アクティブなタブとウィンドウが食い違うバグ</a>
     <span class="author">ryoji</span>
     <time datetime="2005-07-19T01:52:30">2005年07月19日 01:52</time></h1>
     <div class="body">CTabWnd.cpp の TWNT_DEL 時のタブ選択処理がおかしいようです。<br><br>WM_DESTROY 時には既にウィンドウが非表示になっているため、<br>その時点ではもう別のウィンドウがアクティブ化されています。<br><br>ウィンドウをまとめていないとき<br>WM_DESTROY よりも以前に、ひとつ前のウィンドウに WM_SETFOCUS が<br>届くので、TWNT_ORDER、TWNT_DEL の順にメッセージをポストする<br>結果になっている。<br><br>＃ポストを実行するプロセスが別なので、その順序どおりになるとは<br>＃限らないと思いますが、まぁ、概ねその順になってるみたいです。<br><br>ウィンドウをまとめているとき<br>他のソフトが閉じられていると、非表示の先頭ウィンドウに<br>WM_ACTIVATEAPP が届くみたいです。<br>これだけなら、まだ問題なさそうなのですが、<br>サクラエディタでは WM_ACTIVATEAPP で SetFocus() してるので、<br>WM_SETFOCUS がすぐに実行されてしまい、その後実際に画面が表示されも<br>WM_SETFOCUS が来なくなります。<br>ですので、この場合も TWNT_ORDER が TWNT_DEL よりも先にポストされる<br>結果になるようです。<br><br>で、TWNT_DEL のほうのタブ選択処理がおかしいので間違ったタブ選択<br>になっています。</div></section>
     <ul><li><section><h1 id=3981>
     <span class="no">[3981]</span>
-    <a class="title" href="#3981">Re2:アクティブなタブとウィンドウが食い違うバグ</a>
+    <a class="thread-title" href="#3981">Re2:アクティブなタブとウィンドウが食い違うバグ</a>
     <span class="author">ryoji</span>
     <time datetime="2005-07-19T01:54:25">2005年07月19日 01:54</time></h1>
     <div class="body">以下、TWNT_DEL 時のタブ選択処理修正です。<br><br>@@ -519,24 +519,25 @@<br>        nIndex = FindTabIndexByHWND( (HWND)lParam );<br>        if( -1 != nIndex )<br>        {<br>-           //  2004.05.22 MIK<br>-           //  TABがすべて消えるのを防ぐため，<br>-           //  Active Tabを削除する前にフォーカスを外す<br>-           int nIndexOld = nIndex;<br>-<br>-           //次のウインドウが自分ならアクティブに<br>-           nIndex = GetFirstOpenedWindow();<br>-           if( -1 != nIndex )<br>+           int nArr;<br>+           nArr = GetFirstOpenedWindow();<br>+           if( -1 != nArr )<br>            {<br>                //  2004.05.22 MIK<br>                //  TABがすべて消えるのを防ぐため，<br>                //  対象Active Tabだったら<br>                //  削除前にフォーカスをはずす<br>-               TabCtrl_SetCurSel( m_hwndTab, nIndex );<br>-               TabCtrl_SetCurFocus( m_hwndTab, nIndex );<br>-               //TabCtrl_HighlightItem( m_hwndTab, nIndex, TRUE );<br>+               int nSel;<br>+               nSel = FindTabIndexByHWND( m_pShareData-&gt;m_pEditArr[ nArr ].m_hWnd );   // 2005.07.18 ryoji<br>+               if( -1 != nSel )<br>+               {<br>+                   TabCtrl_SetCurSel( m_hwndTab, nSel );<br>+                   TabCtrl_SetCurFocus( m_hwndTab, nSel );<br>+                   //TabCtrl_HighlightItem( m_hwndTab, nIndex, TRUE );<br>+               }<br> <br>-               if( m_pShareData-&gt;m_pEditArr[ nIndex ].m_hWnd == m_hwndParent )<br>+               //次のウインドウが自分ならアクティブに<br>+               if( m_pShareData-&gt;m_pEditArr[ nArr ].m_hWnd == m_hwndParent )<br>                {<br>                    if( //TRUE  == m_pShareData-&gt;m_Common.m_bDispTabWnd //2004.02.02<br>                     //&amp;&amp; FALSE == m_pShareData-&gt;m_Common.m_bDispTabWndMultiWin<br>@@ -547,7 +548,7 @@<br>                    }<br>                }<br>            }<br>-           TabCtrl_DeleteItem( m_hwndTab, nIndexOld  );<br>+           TabCtrl_DeleteItem( m_hwndTab, nIndex );<br>        }<br>        break;<br></div></section>

@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>亜種Commit報告:(Chg) 描画設計見直し</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>亜種Commit報告:(Chg) 描画設計見直し | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">414</span>
-    <a class="title" href="414.html#414">亜種Commit報告:(Chg) 描画設計見直し</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=414>
+    <a class="thread-title" href="414.html#414">亜種Commit報告:(Chg) 描画設計見直し</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=414>
     <span class="no">[414]</span>
-    <a class="title" href="#414">亜種Commit報告:(Chg) 描画設計見直し</a>
+    <a class="thread-title" href="#414">亜種Commit報告:(Chg) 描画設計見直し</a>
     <span class="author">kobake</span>
     <time datetime="2008-05-19T01:07:07">2008年05月19日 01:07</time></h1>
     <div class="body">リビジョン：<br>　rev1346 新ブランチ unicode2_draw を作成<br>　rev1347 Chg: 描画設計整理に伴う動作変更  Keep: 共有メモリ構造体の整理<br>　rev1348 Fix: rev1347の不足ファイル (sakura_core/view/colors/*) を追加<br><br>変更種別：<br>　機能変更を伴うリファクタリング。<br><br>内容：<br>　branch/unicode2(rev1345) から分岐して branch/unicode2_draw という名前のブランチを作成し、描画ルーチン整理に関する作業を開始しております。実行注意。バグバグです。描画ルーチン以外には、DLLSHAREDATA の大幅整理を行ったので、覗いてみると面白いかもです。<br><br><br>描画ルーチンの大幅な見直しを行っております。<br>けっこう規模が大きいので、ブランチ (unicode2_draw) にて作業させてください。<br><br>以下、長文になってしまったので、先に要点をまとめて伝えますと、<br>新しくブランチ unicode2_draw を作成して、これからちょくちょくコミット報告 (亜種コミット報告) しますが、unicode2 の作業とはまったく別物だから、折り合いはまったく意識しなくて良いです、ということです。<br><br><br>-- -- 以下、めんどくさい長文 -- --<br><br>基本的に、unicode2_draw の存在はまったく意識しなくて構わないです。<br>皆様のほうでは、今まで通りに、unicode2 への作業を引き続きお願い致します。<br>unicode2 はバイナリ公開版としての役割を担います。<br>unicode2_draw は暫定ブランチであり、基本的にバイナリ公開は考えてないです。<br><br>unicode2_draw の存在意義は何か、というと、<br>「並行してこんな作業がされているんだ」程度の情報を得られる、くらいの材料として活用していただければ、という程度のものです。長期間音沙汰無いと思っていたら、ある日突然でっかいコミットが来て、変更箇所を追うのが大変、という歯がゆい状況を緩和するために、こちらの作業状況がちょくちょく伝わるようにしたいな、と考えております。<br>もうひとつ、重要な役目として、自分が迷走しているときに、アドバイスやダメ出し（お手柔らかに…）の機会ができる、ということがあります。お時間と興味のある方がいらっしゃいましたら、ちょくちょく作業状況を覗いて建設的なツッコミを入れていただけると、自分一人の作業では気づかない改善も行えるかと思います。<br>もちろん、ツッコミだけではなく、可能であれば改善コミットも歓迎致します（ただ、unicode2 よりもさらにコード変更が流動的で、とっつきにくさ倍増な感じなので、無理に作業いただかなくても結構です…。コンフリクト上等！な思想だと助かります）。<br><br>unicode2 へのコミット時に、unicode2_draw とのコンフリクトを考慮する必要はありません。こちらのほうで unicode2 をウォッチしつつ、うまーく調整します。最終的には unicode2 と再びマージする予定です。<br></div></section>

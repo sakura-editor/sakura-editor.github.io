@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>pluginのヘッダの実装</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>pluginのヘッダの実装 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1132</span>
-    <a class="title" href="1132.html#1132">pluginのヘッダの実装</a></div>
+    <a class="thread-title" href="1132.html#1132">pluginのヘッダの実装</a></div>
     <ul><li><div class="list-title">
     <span class="no">1138</span>
-    <a class="title" href="1132.html#1138">Re:pluginのヘッダの実装</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1132>
+    <a class="thread-title" href="1132.html#1138">Re:pluginのヘッダの実装</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1132>
     <span class="no">[1132]</span>
-    <a class="title" href="#1132">pluginのヘッダの実装</a>
+    <a class="thread-title" href="#1132">pluginのヘッダの実装</a>
     <span class="author">もか</span>
     <time datetime="2010-03-22T00:59:59">2010年03月22日 00:59</time></h1>
     <div class="body">C++プロフェッショナルではないので、はずしてるかもしれませんが、<br>plugin/CPluginIfObj.h<br>plugin/COutlineIfObj.h<br>MacroFuncInfo CPluginIfObj::m_MacroFuncInfoArr 系の定義<br>がヘッダーファイルに書かれていて、他のファイルでインクルードすると実体が2つになるような気がします。<br>そしてリンクでエラーになりそうな...やってみたらなりました。<br><br>意図的なのかそうでないのか判断できなかったので、<br>他のファイルからは直接includeされない、どこかのソースファイルの一部になるような従属的ファイルなら、<br>ヘッダの頭にそう書いてあるとありがたいです。<br>そうでないなら、内容はどこか.cppへ移動したいのだけど、CPluginIfObj.cpp/COutlineIfObj.cppでいいのかな。<br></div></section>
     <ul><li><section><h1 id=1138>
     <span class="no">[1138]</span>
-    <a class="title" href="#1138">Re:pluginのヘッダの実装</a>
+    <a class="thread-title" href="#1138">Re:pluginのヘッダの実装</a>
     <span class="author">syat</span>
     <time datetime="2010-03-22T22:08:42">2010年03月22日 22:08</time></h1>
     <div class="body">.hと.cppに分けるべきだと思います。<br><br>なぜヘッダで実装してしまったのかというと、自分の頭がすでにC#化していてその方が書きやすかったというのが第一ですが、<br>小さなクラスを定義するだけでファイルが２個ずつ増えていくことに心理的な抵抗を感じました。<br>ちなみにこの後もスマートインデント用IfObjを追加する予定でまた2個増えてしまうのですが、どなたかうまいやり方をご存知でしたら教えてほしいです。<br>IfObj.hとIfObj.cppに全部つっこんでしまおうかな？<br></div></section>

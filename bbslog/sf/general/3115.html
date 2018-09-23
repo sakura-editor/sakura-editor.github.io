@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>コメントの色分けのバグ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>コメントの色分けのバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3115</span>
-    <a class="title" href="3115.html#3115">コメントの色分けのバグ</a></div>
+    <a class="thread-title" href="3115.html#3115">コメントの色分けのバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3117</span>
-    <a class="title" href="3115.html#3117">Re:コメントの色分けのバグ</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3115>
+    <a class="thread-title" href="3115.html#3117">Re:コメントの色分けのバグ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3115>
     <span class="no">[3115]</span>
-    <a class="title" href="#3115">コメントの色分けのバグ</a>
+    <a class="thread-title" href="#3115">コメントの色分けのバグ</a>
     <span class="author">ＡＤち</span>
     <time datetime="2003-07-25T14:28:12">2003年07月25日 14:28</time></h1>
     <div class="body">はじめまして。ＡＤちと申します。<br><br>&lt;2434&gt;の記事にあったバグだと思いますが・・・。<br>&gt;４．Cのブロックコメントの終わりを認識しないことがまれにある。<br>下記の方法で再現します。<br><br><br>動作環境は<br>sakura editer 1.4.1.0<br>Windows XP Professional Service Pack 1<br><br>サクラエディタで.cファイルを開いた状態で行います。<br><br>・パターン１<br>先にコメントの範囲を書きます。<br>/*<br><br>*/<br>[EOF]<br><br>の時に<br>１、コメント"へのへのもへじ"(何でもいいけど)を記入する<br>２、コメントの下に"char"(何でもいいけど)を書くと<br><br>/*                   // コメント色<br>へのへのもへじ       // コメント色<br>*/                   // コメント色<br>char[EOF]            // コメント色　おかしい。<br><br>になります。<br><br>/*<br><br>*/[EOF]<br><br>この時に上記の方法を行うと<br><br>/*                   // コメント色<br>へのへのもへじ       // コメント色<br>*/                   // コメント色<br>char[EOF]            // テキスト(強調キーワード)色<br><br>になり、正常に動作します。<br>※*/の行にスペースとかをいれると<br>本来コメント色ではない箇所がテキスト色になる。<br><br><br>・パターン２<br><br>まず、コメントの始めを書く。<br>/*<br>[EOF]<br><br><br>コメント上部になんでもいいので記述。<br>１、２、どちらかの操作を行う。<br>}<br>/*             // １、ここで改行し"*/"を記述すると"*/"がコメント色になる<br>[EOF]          // ２、ここで"*/"を記述すると"*/"がテキスト色になる<br><br><br>※/*の行にスペースとかを入れると<br>*/などのテキスト色がコメント色になる。<br><br><br>・パターン３<br>下のようなコメントがあるとする<br>/* abc<br>*/[EOF]<br><br>この時点ではコメントの色になってますが、<br>*/をBSキーで削除し、Ctrl+Zで戻すと<br><br>/* abc<br>*/[EOF]<br><br>*/がテキスト色になります。<br><br>・見た感じでは[EOF]しかない行に入力すると直前に<br>入力したカラー属性（コメント色かテキスト色）のようなもの<br>を引き継いでる感じがしますけど。<br><br>書き順の問題かもしれませんが、再描画でも直らないので<br>できれば修正をお願いします。</div></section>
     <ul><li><section><h1 id=3117>
     <span class="no">[3117]</span>
-    <a class="title" href="#3117">Re:コメントの色分けのバグ</a>
+    <a class="thread-title" href="#3117">Re:コメントの色分けのバグ</a>
     <span class="author">ＡＤち</span>
     <time datetime="2003-07-25T14:46:49">2003年07月25日 14:46</time></h1>
     <div class="body">「*で始まる行(箇条書き用)は本文と異なる色で表示されます」<br>と言う文を読んでなかったので所々箇条書き用になってますが<br>そこは無視して普通のテキストとしてください。<br><br>すみません。</div></section>

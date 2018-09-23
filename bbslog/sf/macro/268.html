@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>固定長テキストデータを改行</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>固定長テキストデータを改行 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">268</span>
-    <a class="title" href="268.html#268">固定長テキストデータを改行</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=268>
+    <a class="thread-title" href="268.html#268">固定長テキストデータを改行</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=268>
     <span class="no">[268]</span>
-    <a class="title" href="#268">固定長テキストデータを改行</a>
+    <a class="thread-title" href="#268">固定長テキストデータを改行</a>
     <span class="author">じゅうじ</span>
     <time datetime="2006-05-12T04:12:50">2006年05月12日 04:12</time></h1>
     <div class="body">// タイトル：固定長テキストデータを改行<br>// LEFT_DOWN.PPA<br>// マクロを実行前に、カーソルを<br>// 最初に改行させたい位置に置きます。<br>// あらかじめ途中に改行の有るデータはそこまでで終了します。<br>var s1, s2 : String;<br>begin<br>  while True do<br>  begin<br>    S_Char(13);<br>    S_Left();<br>    s1 := S_ExpandParameter('$x');<br>    S_Down();<br>    s2 := S_ExpandParameter('$x');<br>    if StrToInt(s1) &lt;&gt; StrToInt(s2) then<br>      break; // EOFか、または全角文字で終わる。<br>  end;<br>end.<br>// index to &gt;&gt;Part7:23</div></section>

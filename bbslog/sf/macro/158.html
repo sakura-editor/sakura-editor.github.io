@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>テキスト電卓＋</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>テキスト電卓＋ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">158</span>
-    <a class="title" href="158.html#158">テキスト電卓＋</a></div>
+    <a class="thread-title" href="158.html#158">テキスト電卓＋</a></div>
     <ul><li><div class="list-title">
     <span class="no">159</span>
-    <a class="title" href="158.html#159">テキスト電卓＃２ PerlScript版</a></div>
+    <a class="thread-title" href="158.html#159">テキスト電卓＃２ PerlScript版</a></div>
     </li><li><div class="list-title">
     <span class="no">164</span>
-    <a class="title" href="158.html#164">Re:テキスト電卓＋ バージョンアップ</a></div>
+    <a class="thread-title" href="158.html#164">Re:テキスト電卓＋ バージョンアップ</a></div>
     <ul><li><div class="list-title">
     <span class="no">165</span>
-    <a class="title" href="158.html#165">Re2:テキスト電卓＋ 使い方など</a></div>
+    <a class="thread-title" href="158.html#165">Re2:テキスト電卓＋ 使い方など</a></div>
     </li><li><div class="list-title">
     <span class="no">166</span>
-    <a class="title" href="158.html#166">Re2:テキスト電卓＋ 支援ソフト？</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=158>
+    <a class="thread-title" href="158.html#166">Re2:テキスト電卓＋ 支援ソフト？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=158>
     <span class="no">[158]</span>
-    <a class="title" href="#158">テキスト電卓＋</a>
+    <a class="thread-title" href="#158">テキスト電卓＋</a>
     <span class="author">りーや</span>
     <time datetime="2005-06-21T14:01:24">2005年06月21日 14:01</time></h1>
     <div class="body">テキストで書かれた式を計算(評価)して計算結果を貼り付けます。<br><br>選択範囲があればその範囲を、無ければカーソル位置から直前の<br>タブか行頭までを選択状態にして、計算対象とします。<br><br>計算結果だけでなく、計算式も残しておきたいときは、右端に = <br>を付けます。<br> (600+55)*3= → (600+55)*3=1965<br> (600+55)*3  → 1965<br>という感じです。<br><br>ちょっとした計算をさせたいときに、タブを置いてから<br>計算式を入力して利用できます。<br>&#9;666/32=20.8125&#9;四捨五入&#9;Math.round(666/32)=21<br>剰余&#9;10%3=1<br>累乗&#9;Math.pow(3,2)=9<br>&#9;Math.pow(3,0.5)=1.7320508075688772<br>ビットシフト&#9;256&gt;&gt;2=64<br>位取りのカンマは使えません<br>5,500*3=1500<br>5と500*3と捕らえて、後の方の結果が返ってきます。<br>その他、実はJScriptとして実行結果を返しているだけ<br>なので、使える式などはJScriptの入門などを検索・参照<br>して下さい。<br>※判らない方は気にしなくて良いですが、数行のJScriptマクロ<br>　を書いて、結果に置き換えるなんてのも出来るハズです<br><br>// テキスト電卓＋<br>var i , col , outStr;<br>var selStr = Editor.GetSelectedString(0);   // 選択文字列を取得<br>Editor.MoveHistSet();   // 現在位置を移動履歴に登録<br>if(selStr == ""){   // 選択範囲がないなら以下を行なう<br>    Editor.BeginSelect();   // 範囲選択開始<br>    Editor.GoLineTop(1);    // 行頭に移動(折り返し単位)<br>    selStr = Editor.GetSelectedString(0);   // 選択文字列を取得<br>    col = selStr.lastIndexOf("\t");         // タブを探して<br>    if(col &gt; 0)     // タブがもしあれば　タブの右側まで<br>        for(i=0; i&lt;=col; i++) Editor.Right();   // カーソル移動<br>    selStr = Editor.GetSelectedString(0);   // 選択文字列の再取得<br>}<br>try {<br>    if(selStr.match(/^(.+)=[ \t\r\n]*$/) != null){  // = で終っている<br>        outStr = eval(RegExp.$1);               // ならばその前を評価<br>        outStr = selStr + outStr;               // 式と結果を<br>    } else {                                    // そうでなければ<br>        outStr = eval(selStr);                  // 式を結果で置き換えて<br>    }<br>    Editor.InsText(outStr);             // 選択範囲部分に貼り付ける<br>} catch (error) {  // eval のエラーをトラップ？<br>    var WshShell = new ActiveXObject("WScript.Shell");<br>    WshShell.Popup(selStr+"\n"+error ,0,"計算式に間違い",0);<br>    Editor.CancelMode();    // 各種モードの取り消し<br>    Editor.MoveHistPrev();  // 移動履歴:前へ<br>}<br></div></section>
     <ul><li><section><h1 id=159>
     <span class="no">[159]</span>
-    <a class="title" href="#159">テキスト電卓＃２ PerlScript版</a>
+    <a class="thread-title" href="#159">テキスト電卓＃２ PerlScript版</a>
     <span class="author">りーや</span>
     <time datetime="2005-06-21T17:30:25">2005年06月21日 17:30</time></h1>
     <div class="body">PerlScript版です<br><br>使い方など同じですが、ActivePerlを持っている方はこちらをどうぞ<br>言語の力の差そのままに強力で少しは自然です。<br>演算子や関数はC言語ライクです。<br><br>べき乗&#9;2**0.5=1.4142135623731<br>平方根&#9;sqrt(2)=1.4142135623731<br>π&#9;atan2(1,1) * 4 = 3.14159265358979<br>sin(3.14159265358979/180*45)=0.707106781186547<br>exp(1)=2.71828182845905<br>sprintf("Howdy! World")=Howdy! World<br><br>今ひとつ理解不足のJScriptと違って、evalのエラー<br>も捕まえて一応後処理しています。<br><br>-----^ eval.pls ( date:05-06-21 time:17:11 ) -----&lt; cut hear<br># eval.pls<br>$selStr = GetSelectedString(0);<br>unless($selStr){<br>&#9;MoveHistSet();  BeginSelect();  GoLineTop(1);<br>&#9;$selStr = GetSelectedString(0);<br>&#9;$selStr =~ /^(.+)\t(.*)$/;<br>&#9;if($2){<br>    &#9;$selStr = $2;<br>&#9;&#9;$preFix = $1 . "\t";<br>    }<br>}<br>if($selStr =~ /^(.+)=[ \t\r\n]*$/){<br>    $outStr = eval $1;<br>    $outStr = $selStr . $outStr;<br>} else {<br>    $outStr = eval $selStr;<br>}<br>if($@){<br>    use Win32::OLE;<br>    $WshShell = Win32::OLE-&gt;CreateObject("WScript.Shell");<br>    $WshShell-&gt;Popup("$selStr\n$@",undef,"Abend",0);<br>    CancelMode();  MoveHistPrev();<br>    exit;<br>} else {<br>    InsText($preFix . $outStr);<br>}<br>-----$ eval.pls ( line:26 charset:ascii) ---------&lt; cut hear<br></div></section>
     </li><li><section><h1 id=164>
     <span class="no">[164]</span>
-    <a class="title" href="#164">Re:テキスト電卓＋ バージョンアップ</a>
+    <a class="thread-title" href="#164">Re:テキスト電卓＋ バージョンアップ</a>
     <span class="author">りーや</span>
     <time datetime="2005-06-25T17:11:44">2005年06月25日 17:11</time></h1>
     <div class="body">早くも大幅に書き直しです。(^^;<br><br>// calcPlus.js -------------<br>// テキスト電卓＋<br>var WshShell = new ActiveXObject("WScript.Shell");<br>var outStr="" , calStr="" , preStr="" , postStr="";<br>var re = /(abs|acos|asin|atan|atan2|ceil|cos|exp|floor|log|max|min|pow|random|round|sin|s<br>qrt|tan)/g;<br>var selStr = Editor.GetSelectedString(0);   // 選択文字列を取得<br>Editor.MoveHistSet();   // 現在位置を移動履歴に登録<br>if(selStr == ""){   // 選択範囲がないなら以下を行なう<br>    Editor.BeginSelect();   // 範囲選択開始<br>    Editor.GoLineTop(1);    // 行頭に移動(折り返し単位)<br>    selStr = Editor.GetSelectedString(0);   // 選択文字列を取得<br>    selStr.match(/^(.*?)([ %&amp;(-/0-9&lt;&gt;M^a-il-uwx|~゜゜°]+)( *?=? *?)$/);<br>    preStr = RegExp.$1;     // 計算式の前<br>    calStr = RegExp.$2;     // 計算式部分<br>    postStr = RegExp.$3;    // 計算式の後<br>    if(calStr != ""){       // 計算式と思われるものがあるなら<br>        selStr = calStr;    // selStr は作業用エリアとして利用コピー退避<br>    } else {                // 計算式が見つからないとき(マッチしてない)<br>        preStr = selStr;    // 行が消えないようにすべてを残す<br>    }<br>} else {                    // 明示的に選択範囲により計算式の指定がある<br>    calStr = selStr;        // ので、そのまま計算式とする。<br>}<br>if(calStr.match(/Math\./) == null)          // Math. が使われてないなら<br>    calStr = calStr.replace(re, "Math\.$&amp;");  // 算術関数名にMath.付け<br>calStr = calStr.replace(/(°|゜|゜)/g, "*3.141592653589793238/180");  // Deg→Rad<br>try {<br>    outStr = eval(calStr);                  // 式を結果で置き換えて<br>    if(postStr != "") outStr = selStr + postStr + outStr;<br>    if(preStr != "") outStr = preStr + outStr;<br>    Editor.InsText(outStr);             // 選択範囲部分に貼り付ける<br>    try {   // 計算式の表示、まさにトライ<br>        var tryStr = "calcPopup.vbs \"" + selStr + "\""<br>        eval("WshShell.run(tryStr);");<br>    } catch (error) {<br>    // エラーでもスルーする<br>    }<br>} catch (error) {  // eval のエラーをトラップ？<br>    WshShell.Popup(calStr+"\n"+error ,0,"計算式に間違い",0);<br>    Editor.CancelMode();    // 各種モードの取り消し<br>    Editor.MoveHistPrev();  // 移動履歴:前へ<br>}<br><br></div></section>
     <ul><li><section><h1 id=165>
     <span class="no">[165]</span>
-    <a class="title" href="#165">Re2:テキスト電卓＋ 使い方など</a>
+    <a class="thread-title" href="#165">Re2:テキスト電卓＋ 使い方など</a>
     <span class="author">りーや</span>
     <time datetime="2005-06-25T17:12:48">2005年06月25日 17:12</time></h1>
     <div class="body">電卓用途に便利にとバージョンアップしました。かなり書き換わってます。<br>選択範囲で明示的に式を示すのは優先してますが、もっと手軽に式を打ち込んだところでこのマクロを使えば、出来るだけマクロの方が式の範囲を見つけて計算する。<br>また、途中経過を出しながら計算を続けて進めていけるようにしました。<br><br>この下からの各行末にカーソルで試してください<br>まずは加減乗除 6 + 4 - 2 * 3 / 6 = <br>括弧で計算順を(6 + 4 - 2) * 3 / 6 =<br>単価は1440/12<br>1440/12=<br>1440/12=120*30=<br>1440/12=120*30=3600-1500<br>十を三で割った余は10%3<br>べき乗はpow(2,3)=<br>＾はべき乗ではなく論理演算 6^3=<br>°(度)や半濁音記号は*π/180でラジアンにtan(45゜) = <br>前が半角だと式を誤りエラー表示もThis is 3*2<br>そういう場合はタブか=などを式の前にThis is &#9;3*2<br>以下の算術関数が使えます。<br>abs acos asin atan atan2 ceil cos exp floor <br>log max min pow random round sin sqrt tan <br><br></div></section>
     </li><li><section><h1 id=166>
     <span class="no">[166]</span>
-    <a class="title" href="#166">Re2:テキスト電卓＋ 支援ソフト？</a>
+    <a class="thread-title" href="#166">Re2:テキスト電卓＋ 支援ソフト？</a>
     <span class="author">りーや</span>
     <time datetime="2005-06-25T17:14:11">2005年06月25日 17:14</time></h1>
     <div class="body">マクロが何を計算式と判断したか、自動で消えるポップアップで表示させたい、と思ったのですがサクラエディタの下では自動で消えてくれないので外だししました。<br><br>以下のVBScriptを calcPopup.vbs という名前でパスの通ったところに置いておくと、計算式が２秒間表示されて自動的に消えます。<br>無くても、テキスト電卓＋の動きには支障ありません。のハズ<br><br>#ウチの時代遅れノートだと、初回は間の抜けたタイミングの表示で２回目からまとも<br><br>// calcPopup.vbs --------------------<br>Dim WshShell, wk<br>set args = WScript.Arguments<br>set WshShell = WScript.CreateObject("WScript.Shell")<br>wk = WshShell.Popup(args(0), 2 ,"計算式")<br><br></div></section>

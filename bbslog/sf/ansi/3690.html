@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>CEditDoc::FileRead()について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CEditDoc::FileRead()について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3690</span>
-    <a class="title" href="3690.html#3690">CEditDoc::FileRead()について</a></div>
+    <a class="thread-title" href="3690.html#3690">CEditDoc::FileRead()について</a></div>
     <ul><li><div class="list-title">
     <span class="no">3692</span>
-    <a class="title" href="3690.html#3692">Re: CEditDoc::FileRead()について</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3690>
+    <a class="thread-title" href="3690.html#3692">Re: CEditDoc::FileRead()について</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3690>
     <span class="no">[3690]</span>
-    <a class="title" href="#3690">CEditDoc::FileRead()について</a>
+    <a class="thread-title" href="#3690">CEditDoc::FileRead()について</a>
     <span class="author">げんた</span>
     <time datetime="2004-08-06T22:38:18">2004年08月06日 22:38</time></h1>
     <div class="body">遅ればせながらもかさんのパッチ確認中です．<br>＃ここ3週間ほど連続して土日に外出していたので...<br><br>CEditDoc::FileRead()のpbOpenedの初期化漏れを修正したとありましたので，戻り値とpbOpenedの関係を調べてみました．<br>指定ファイルを開けた : return = TRUE/pbOpened=FALSE<br>指定ファイルは既に開かれている: return = FALSE/pbOpened=TRUE<br>ファイルオープンエラー: return = FALSE/pbOpened=FALSE<br>となっているので，エラーの際にpbOpened=FALSEとなっていないと既に開かれた場合と区別できないんですね．<br><br>しかし，3パターンだけならpbOpenedを使わずに戻り値を3種類にした方がスマートな気がします．<br>この関数もちょっと長すぎるので見直した方がいいかもしれませんね．<br><br>まあ今回のパッチは取り込みますのでまた次回以降と言うことで．<br></div></section>
     <ul><li><section><h1 id=3692>
     <span class="no">[3692]</span>
-    <a class="title" href="#3692">Re: CEditDoc::FileRead()について</a>
+    <a class="thread-title" href="#3692">Re: CEditDoc::FileRead()について</a>
     <span class="author">げんた</span>
     <time datetime="2004-08-07T00:57:04">2004年08月07日 00:57</time></h1>
     <div class="body"> &gt;&gt;3613 でもかさん自ら調査済みでした．失礼しました．<br><br>戻り値は一応理にかなってはいるけど説明がないとわかりにくいので，コメントを追加しました．<br></div></section>

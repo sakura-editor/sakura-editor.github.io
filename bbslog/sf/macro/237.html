@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>TeX用マクロ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>TeX用マクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">237</span>
-    <a class="title" href="237.html#237">TeX用マクロ</a></div>
+    <a class="thread-title" href="237.html#237">TeX用マクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">238</span>
-    <a class="title" href="237.html#238">Re:TeX用マクロ</a></div>
+    <a class="thread-title" href="237.html#238">Re:TeX用マクロ</a></div>
     <ul><li><div class="list-title">
     <span class="no">239</span>
-    <a class="title" href="237.html#239">Re2:TeX用マクロ</a></div>
+    <a class="thread-title" href="237.html#239">Re2:TeX用マクロ</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">241</span>
-    <a class="title" href="237.html#241">Re:TeX用マクロ改</a></div>
+    <a class="thread-title" href="237.html#241">Re:TeX用マクロ改</a></div>
     <ul><li><div class="list-title">
     <span class="no">242</span>
-    <a class="title" href="237.html#242">初心者ですが</a></div>
+    <a class="thread-title" href="237.html#242">初心者ですが</a></div>
     <ul><li><div class="list-title">
     <span class="no">243</span>
-    <a class="title" href="237.html#243">Re:初心者ですが</a></div>
+    <a class="thread-title" href="237.html#243">Re:初心者ですが</a></div>
     <ul><li><div class="list-title">
     <span class="no">244</span>
-    <a class="title" href="237.html#244">Re2:初心者ですが</a></div>
+    <a class="thread-title" href="237.html#244">Re2:初心者ですが</a></div>
     </li></ul></li></ul></li></ul></li><li><div class="list-title">
     <span class="no">245</span>
-    <a class="title" href="237.html#245">新TeX用マクロ</a></div>
+    <a class="thread-title" href="237.html#245">新TeX用マクロ</a></div>
     </li><li><div class="list-title">
     <span class="no">246</span>
-    <a class="title" href="237.html#246">TeX→PDF用マクロ</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=237>
+    <a class="thread-title" href="237.html#246">TeX→PDF用マクロ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=237>
     <span class="no">[237]</span>
-    <a class="title" href="#237">TeX用マクロ</a>
+    <a class="thread-title" href="#237">TeX用マクロ</a>
     <span class="author">てふにしゃん</span>
     <time datetime="2006-02-02T10:44:00">2006年02月02日 10:44</time></h1>
     <div class="body">　サクラエディタ用のTeXマクロってありませんかね？<br>なけりゃ作りますが。<br>ボタン一発で、TeXでコンパイル→dvioutで表示、をしてくれるようなマクロ<br></div></section>
     <ul><li><section><h1 id=238>
     <span class="no">[238]</span>
-    <a class="title" href="#238">Re:TeX用マクロ</a>
+    <a class="thread-title" href="#238">Re:TeX用マクロ</a>
     <span class="author">てふにしゃん</span>
     <time datetime="2006-02-02T20:03:24">2006年02月02日 20:03</time></h1>
     <div class="body">ググっても見つからないので、作ってみました。<br><br>var objShell = new ActiveXObject("WScript.Shell");<br>var i;<br>var FileName;&#9;&#9;//原型ファイル名格納用<br>var TeXFileName;&#9;//TeXファイル名格納用<br>var DviFileName;&#9;//DVIファイル名格納用<br><br>Editor.FileSave();&#9;&#9;//ファイル上書き保存<br>FileName=Editor.GetFileName();&#9;//ファイルパスの取得<br>TeXFileName="";&#9;&#9;&#9;//初期化<br>DviFileName="";&#9;&#9;&#9;//初期化<br><br>for(i=0;i&lt;FileName.length;i++){<br>&#9;if(FileName.charAt(i)=="\\"){&#9;//ファイルパスの「\」を「/」に変換<br>&#9;&#9;TeXFileName=TeXFileName+"/";<br>&#9;}else{<br>&#9;&#9;TeXFileName=TeXFileName+FileName.charAt(i);<br>&#9;}<br>&#9;if(i&lt;FileName.length-3){&#9;//拡張子をdviに変換<br>&#9;&#9;DviFileName=DviFileName+TeXFileName.charAt(i);<br>&#9;}else{<br>&#9;&#9;if(i==FileName.length-3)DviFileName=DviFileName+"d";<br>&#9;&#9;if(i==FileName.length-2)DviFileName=DviFileName+"v";<br>&#9;&#9;if(i==FileName.length-1)DviFileName=DviFileName+"i";<br>&#9;}<br>}<br>objShell.Run("X:/LaTeX/bin/jlatex "+TeXFileName,1,1);&#9;&#9;//TeXコンパイラ実行(各自でパス変更)<br>objShell.Run("X:/LaTeX/dviout/dviout.exe "+DviFileName,1,0);&#9;//DVIビューアの実行(各自でパス変更)</div></section>
     <ul><li><section><h1 id=239>
     <span class="no">[239]</span>
-    <a class="title" href="#239">Re2:TeX用マクロ</a>
+    <a class="thread-title" href="#239">Re2:TeX用マクロ</a>
     <span class="author">てふにしゃん</span>
     <time datetime="2006-02-02T20:38:48">2006年02月02日 20:38</time></h1>
     <div class="body">ファイル名は「*.js」<br>当方の環境での動作は確認済み<br><br>WinXPsp2<br>JTeX Version 3.141592-1.9.1 (Web2C 7.5.5)<br>dviout for Windows Ver.3.17</div></section>
     </li></ul></li><li><section><h1 id=241>
     <span class="no">[241]</span>
-    <a class="title" href="#241">Re:TeX用マクロ改</a>
+    <a class="thread-title" href="#241">Re:TeX用マクロ改</a>
     <span class="author">てふにしゃん</span>
     <time datetime="2006-02-08T10:37:49">2006年02月08日 10:37</time></h1>
     <div class="body">var objShell = new ActiveXObject("WScript.Shell");<br>var i;<br>var FileName;&#9;&#9;//原型ファイル名格納用<br>var TeXFileName;&#9;//TeXファイル名格納用<br>var DviFileName;&#9;//DVIファイル名格納用<br><br>Editor.FileSave();&#9;&#9;//ファイル上書き保存<br>FileName=Editor.GetFileName();&#9;//ファイルパスの取得<br>TeXFileName="";&#9;&#9;&#9;//初期化<br>DviFileName="";&#9;&#9;&#9;//初期化<br><br>for(i=0;i&lt;FileName.length;i++){<br>&#9;if(FileName.charAt(i)=="\\"){&#9;//ファイルパスの「\」を「/」に変換<br>&#9;&#9;TeXFileName=TeXFileName+"/";<br>&#9;}else{<br>&#9;&#9;TeXFileName=TeXFileName+FileName.charAt(i);<br>&#9;}<br>&#9;if(i&lt;FileName.length-3){&#9;//拡張子をdviに変換<br>&#9;&#9;DviFileName=DviFileName+TeXFileName.charAt(i);<br>&#9;}else{<br>&#9;&#9;if(i==FileName.length-3)DviFileName=DviFileName+"d";<br>&#9;&#9;if(i==FileName.length-2)DviFileName=DviFileName+"v";<br>&#9;&#9;if(i==FileName.length-1)DviFileName=DviFileName+"i";<br>&#9;}<br>}<br>objShell.Run("C:/usr/local/bin/jlatex "+TeXFileName,1,1);&#9;&#9;//TeXコンパイラ実行(各自でパス変更)<br>objShell.Run("C:/dviout/dviout.exe -1 "+DviFileName,1,0);&#9;//DVIビューアの実行(各自でパス変更)(改良)<br><br>------<br><br>dvioutが複数起動しないように改良しました</div></section>
     <ul><li><section><h1 id=242>
     <span class="no">[242]</span>
-    <a class="title" href="#242">初心者ですが</a>
+    <a class="thread-title" href="#242">初心者ですが</a>
     <span class="author">円</span>
     <time datetime="2006-02-08T15:00:58">2006年02月08日 15:00</time></h1>
     <div class="body">TexはWinShellをいつも使っているのですが、<br>このマクロを実行するとplatex2eのフォーマット<br>が必要だといわれるのですが。</div></section>
     <ul><li><section><h1 id=243>
     <span class="no">[243]</span>
-    <a class="title" href="#243">Re:初心者ですが</a>
+    <a class="thread-title" href="#243">Re:初心者ですが</a>
     <span class="author">てふにしゃん</span>
     <time datetime="2006-02-08T16:11:57">2006年02月08日 16:11</time></h1>
     <div class="body">こちらではjarticleでも問題なく動いていますが<br>どうなんでしょうか<br><br>まあコンパイラはパスの部分を<br>書き換えるだけで変えられると思います</div></section>
     <ul><li><section><h1 id=244>
     <span class="no">[244]</span>
-    <a class="title" href="#244">Re2:初心者ですが</a>
+    <a class="thread-title" href="#244">Re2:初心者ですが</a>
     <span class="author">円</span>
     <time datetime="2006-02-08T16:53:25">2006年02月08日 16:53</time></h1>
     <div class="body">できました、platexでjarticle,jsarticleどちらも<br>コンパイルできました。ありがとうございました。<br>m(__)m</div></section>
     </li></ul></li></ul></li></ul></li><li><section><h1 id=245>
     <span class="no">[245]</span>
-    <a class="title" href="#245">新TeX用マクロ</a>
+    <a class="thread-title" href="#245">新TeX用マクロ</a>
     <span class="author">てふにしゃん</span>
     <time datetime="2006-02-09T11:36:02">2006年02月09日 11:36</time></h1>
     <div class="body">画像挿入、数式挿入がボタン一発でできるマクロ<br><br>-------画像用 TeXmacroFig.js<br><br>Editor.InsText('\\begin{figure}[h]\r\n');<br>Editor.InsText('&#9;\\begin{center}\r\n');<br>Editor.InsText('&#9;&#9;\\includegraphics[width=80mm,clip]{Fig■.eps}\r\n');<br>Editor.InsText('&#9;&#9;\\caption{■}\r\n');<br>Editor.InsText('&#9;&#9;\\label{fig:■}\r\n');<br>Editor.InsText('&#9;\\end{center}\r\n');<br>Editor.InsText('\\end{figure}\r\n');<br><br><br>-------数式用 TeXmacroEqu.js<br><br>Editor.InsText('&#9;\\begin{equation}\r\n');<br>Editor.InsText('&#9;&#9;■ \\label{eq:■}\r\n');<br>Editor.InsText('&#9;\\end{equation}\r\n');<br><br></div></section>
     </li><li><section><h1 id=246>
     <span class="no">[246]</span>
-    <a class="title" href="#246">TeX→PDF用マクロ</a>
+    <a class="thread-title" href="#246">TeX→PDF用マクロ</a>
     <span class="author">てふにしゃん</span>
     <time datetime="2006-02-10T14:29:22">2006年02月10日 14:29</time></h1>
     <div class="body">var objShell = new ActiveXObject("WScript.Shell");<br>var i;<br>var FileName;&#9;&#9;//原型ファイル名格納用<br>var TeXFileName;&#9;//TeXファイル名格納用<br>var DviFileName;&#9;//DVIファイル名格納用<br>var PdfFileName;&#9;//PDFファイル名格納用<br><br>Editor.FileSave();&#9;&#9;//ファイル上書き保存<br>FileName=Editor.GetFileName();&#9;//ファイルパスの取得<br>TeXFileName="";&#9;&#9;&#9;//初期化<br>DviFileName="";&#9;&#9;&#9;//初期化<br>PdfFileName="";&#9;&#9;&#9;//初期化<br><br>for(i=0;i&lt;FileName.length;i++){<br>&#9;if(FileName.charAt(i)=="\\"){&#9;//ファイルパスの「\」を「/」に変換<br>&#9;&#9;TeXFileName=TeXFileName+"/";<br>&#9;}else{<br>&#9;&#9;TeXFileName=TeXFileName+FileName.charAt(i);<br>&#9;}<br>&#9;if(i&lt;FileName.length-3){&#9;//拡張子をdvi、pdfに変換<br>&#9;&#9;DviFileName=DviFileName+TeXFileName.charAt(i);<br>&#9;&#9;PdfFileName=PdfFileName+FileName.charAt(i);<br>&#9;}else{<br>&#9;&#9;if(i==FileName.length-3)DviFileName=DviFileName+"d";<br>&#9;&#9;if(i==FileName.length-2)DviFileName=DviFileName+"v";<br>&#9;&#9;if(i==FileName.length-1)DviFileName=DviFileName+"i";<br> <br>&#9;&#9;if(i==FileName.length-3)PdfFileName=PdfFileName+"p";<br>&#9;&#9;if(i==FileName.length-2)PdfFileName=PdfFileName+"d";<br>&#9;&#9;if(i==FileName.length-1)PdfFileName=PdfFileName+"f";<br>&#9;}<br>}<br>objShell.Run("C:/usr/local/bin/platex "+TeXFileName,1,1);&#9;//TeXコンパイラ実行(各自でパス変更)<br>objShell.Run("C:/usr/local/bin/dvipdfmx "+DviFileName,1,1);&#9;//PDFに変換(各自でパス変更)<br>objShell.Run('"C:\\Program Files\\Adobe\\Acrobat 7.0\\Acrobat\\Acrobat"'+PdfFileName,1,0);&#9;//PDF表示(各自でパス変更)<br><br>-------<br><br>人によってTeX→PDFの作り方は違うと思いますが、dvipdfmxで作る方法でのマクロを晒しときます。<br>(拡張子変換するところがアホっぽい)<br>アクロバットを一々閉じないとだめっぽいですね。多分ファイルがロックされているんだろうと思います。</div></section>

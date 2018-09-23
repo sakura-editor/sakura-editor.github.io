@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>CEncoderクラス</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CEncoderクラス | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3865</span>
-    <a class="title" href="3865.html#3865">CEncoderクラス</a></div>
+    <a class="thread-title" href="3865.html#3865">CEncoderクラス</a></div>
     <ul><li><div class="list-title">
     <span class="no">3866</span>
-    <a class="title" href="3865.html#3866">RE: CEncoderクラス</a></div>
+    <a class="thread-title" href="3865.html#3866">RE: CEncoderクラス</a></div>
     <ul><li><div class="list-title">
     <span class="no">3919</span>
-    <a class="title" href="3865.html#3919">Re2: CEncoderクラス</a></div>
+    <a class="thread-title" href="3865.html#3919">Re2: CEncoderクラス</a></div>
     <ul><li><div class="list-title">
     <span class="no">3920</span>
-    <a class="title" href="3865.html#3920">Re3: CEncoderクラス</a></div>
+    <a class="thread-title" href="3865.html#3920">Re3: CEncoderクラス</a></div>
     <ul><li><div class="list-title">
     <span class="no">3947</span>
-    <a class="title" href="3865.html#3947">Re4: CEncoderクラス</a></div>
+    <a class="thread-title" href="3865.html#3947">Re4: CEncoderクラス</a></div>
     <ul><li><div class="list-title">
     <span class="no">3957</span>
-    <a class="title" href="3865.html#3957">Re5: CEncoderクラス</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3865>
+    <a class="thread-title" href="3865.html#3957">Re5: CEncoderクラス</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3865>
     <span class="no">[3865]</span>
-    <a class="title" href="#3865">CEncoderクラス</a>
+    <a class="thread-title" href="#3865">CEncoderクラス</a>
     <span class="author">dskoba</span>
     <time datetime="2005-02-25T01:55:29">2005年02月25日 01:55</time></h1>
     <div class="body">ファイルの入出力などで使用している，エンコード関連の関数をCMemoryから独立させてみました。<br>基本的な部分が出来たので公開します。<br><a href=http://www2.wbs.ne.jp/~dskoba/sakura/1521dsk20050225.lzh target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>sakura/<wbr>1521dsk2<wbr>0050225.<wbr>lzh</nobr></a><br><br>・JIS(ISO-2022-JP)は変換を1文字ずつに変更(遅くなるがコードが分かりやすくなるので)<br>・JIS(ISO-2022-JP)は行末でASCIIに戻らなくてもJIS X 208と認識するように変更(次の行になればASCIIに戻っているので)<br>・Unicode関係(Unicode/UnicodeBE/UTF-8/UTF-7)はPlatformSDKにまかせる。<br></div></section>
     <ul><li><section><h1 id=3866>
     <span class="no">[3866]</span>
-    <a class="title" href="#3866">RE: CEncoderクラス</a>
+    <a class="thread-title" href="#3866">RE: CEncoderクラス</a>
     <span class="author">もか</span>
     <time datetime="2005-02-25T16:34:26">2005年02月25日 16:34</time></h1>
     <div class="body">&gt;・Unicode関係(Unicode/UnicodeBE/UTF-8/UTF-7)はPlatformSDKにまかせる。<br>Windows 95は、MSDN ライブラリによると、<br>&gt;Windows 95: Under the Microsoft Layer for Unicode, MultiByteToWideChar also supports CP_UTF7 and CP_UTF8.<br>だそうです。(日本語版には、この記述はありません。)<br>ですから、UTF-7とUTF-8の変換は、自前で実装する必要があります。<br><br>▼dskobaさんのCEncoder内<br>&gt;stdlib.hの_swab()の方が速いかも(誰か計測してください)<br>VC7.1の_swabは、添付のソースを読むかぎりでは、普通にバイトごとに入れ替え操作をしています。<br>昔実装するときに計測した結果では、<br>CPU環境：i486DX2, Celeron 366MHz, Crusoe 600MHz, Athlon 700MHz<br>比較対象：4バイトごとシフト、1バイトごと普通に交換。だだし_swap関数は未使用<br>1KB～10MB程度のデータを処理したときの、時間(観測できるように10～60秒ほどループ処理)を計測。<br>結果：<br>4バイト境界で整列されたデータでは、バイトごとの操作より、4バイトごとシフト操作したほうが明らかに高速でした。<br></div></section>
     <ul><li><section><h1 id=3919>
     <span class="no">[3919]</span>
-    <a class="title" href="#3919">Re2: CEncoderクラス</a>
+    <a class="thread-title" href="#3919">Re2: CEncoderクラス</a>
     <span class="author">dskoba</span>
     <time datetime="2005-04-17T22:50:58">2005年04月17日 22:50</time></h1>
     <div class="body">&gt; ですから、UTF-7とUTF-8の変換は、自前で実装する必要があります。<br><br>UTF-8を実装しました。UTF-7はまだ途中。<br><br>http://www2.wbs.ne.jp/~dskoba/sakura/1521dsk20050417.lzh<br></div></section>
     <ul><li><section><h1 id=3920>
     <span class="no">[3920]</span>
-    <a class="title" href="#3920">Re3: CEncoderクラス</a>
+    <a class="thread-title" href="#3920">Re3: CEncoderクラス</a>
     <span class="author">dskoba</span>
     <time datetime="2005-04-18T21:50:10">2005年04月18日 21:50</time></h1>
     <div class="body">delete [] をあちこち忘れていたので修正。それ以外は変わってません。<br><br>http://www2.wbs.ne.jp/~dskoba/sakura/1521dsk20050418.lzh</div></section>
     <ul><li><section><h1 id=3947>
     <span class="no">[3947]</span>
-    <a class="title" href="#3947">Re4: CEncoderクラス</a>
+    <a class="thread-title" href="#3947">Re4: CEncoderクラス</a>
     <span class="author">dskoba</span>
     <time datetime="2005-06-16T23:14:34">2005年06月16日 23:14</time></h1>
     <div class="body">http://www2.wbs.ne.jp/~dskoba/sakura/1521dsk20050616.lzh<br><br>UTF-7での保存を実装。UTF-7からの読み込みはまだ。<br><br>'+'の取り扱いを変更。<br>現状Base64エンコード文字の後ろの'+'はBase64でエンコードしているが，<br>今回'+'は必ず"+-"でエンコード。</div></section>
     <ul><li><section><h1 id=3957>
     <span class="no">[3957]</span>
-    <a class="title" href="#3957">Re5: CEncoderクラス</a>
+    <a class="thread-title" href="#3957">Re5: CEncoderクラス</a>
     <span class="author">dskoba</span>
     <time datetime="2005-06-19T23:44:17">2005年06月19日 23:44</time></h1>
     <div class="body">http://www2.wbs.ne.jp/~dskoba/sakura/1531dsk20050619.lzh<br><br>・テンプレートを使うように変更<br>読みやすいコードになったと思う。<br>・保存でエラーが起きる場合があるのを修正<br>エンコード時のバッファサイズを修正した。<br></div></section>

@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Grepの多重起動時のエラーの原因</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Grepの多重起動時のエラーの原因 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">225</span>
-    <a class="title" href="225.html#225">Grepの多重起動時のエラーの原因</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=225>
+    <a class="thread-title" href="225.html#225">Grepの多重起動時のエラーの原因</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=225>
     <span class="no">[225]</span>
-    <a class="title" href="#225">Grepの多重起動時のエラーの原因</a>
+    <a class="thread-title" href="#225">Grepの多重起動時のエラーの原因</a>
     <span class="author">すとーにぃ</span>
     <time datetime="2001-04-02T21:45:50">2001年04月02日 21:45</time></h1>
     <div class="body">以前話題に出ていた、「タスクトレイからGrepを多重起動すると、最後のダイアログが<br>閉じない」現象についてです。<br><br>CEditApp.cppの340行目前後の、<br><br>|LRESULT CEditApp::DispatchEvent(<br>| (中略)<br>|&#9;static CDlgGrep&#9;cDlgGrep;  //staticだからダイアログを多重起動しても変数は一つ<br><br>がひっかかっているようで、この部分を含めてGrepの起動を別関数にしたら直りました。<br>手元のソースが3/17版からの修正なのですが、とりあえずアップしときます。<br><br><a href=http://www.hoops.livedoor.com/~stonee_/sakura/junk/CEditApp.lzh target=_top>http://www.hoops.livedoor.com/~stonee_/s<br>akura/junk/CEditApp.lzh</a> (23KB)<br></div></section>

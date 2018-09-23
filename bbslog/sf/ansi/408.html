@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>5/28からのまとめ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>5/28からのまとめ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">408</span>
-    <a class="title" href="408.html#408">5/28からのまとめ</a></div>
+    <a class="thread-title" href="408.html#408">5/28からのまとめ</a></div>
     <ul><li><div class="list-title">
     <span class="no">457</span>
-    <a class="title" href="408.html#457">6/22からのまとめ</a></div>
+    <a class="thread-title" href="408.html#457">6/22からのまとめ</a></div>
     <ul><li><div class="list-title">
     <span class="no">562</span>
-    <a class="title" href="408.html#562">6/25からのまとめ</a></div>
+    <a class="thread-title" href="408.html#562">6/25からのまとめ</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">459</span>
-    <a class="title" href="408.html#459">Re:5/28からのまとめ</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=408>
+    <a class="thread-title" href="408.html#459">Re:5/28からのまとめ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=408>
     <span class="no">[408]</span>
-    <a class="title" href="#408">5/28からのまとめ</a>
+    <a class="thread-title" href="#408">5/28からのまとめ</a>
     <span class="author">げんた</span>
     <time datetime="2001-06-22T16:48:16">2001年06月22日 16:48</time></h1>
     <div class="body">何やったのかよくわからなくなってきたのでまとめます。間違い、抜け等ありましたら指摘してください。<br><br>▼げんた<br>* 共通設定ダイアログのWindow Procedure部分の変更。<br>* CPropComm_p7.cpp削除<br>* 行コメント桁位置のチェック状態に応じて桁位置入力部をEnable/Disableするようにした<br>* それに伴い、じぇぷろさんが作りかけてあきらめた形跡をソースから削除した<br>* Fortran用隠し機能を削除<br>* 『サクラエディタ』に名称変更<br><br>▼GPL関連<br>* about box修正(名称/GPL/ソースコード入手先を明示)<br>* license.txt/how-to-apply.txt追加<br>* GPL V2のライセンス規定をソースコードセットに含める。<br>* 全ソースコード(*.h/*.cpp)先頭にCopyright表示と以下の文面を挿入<br><br><br>▼じぇぷろさん<br>* [空白→TAB]のアイコンを追加<br>* 3つ目の行コメントを有効化<br>* [TAB→空白(T)]と[空白→TAB(S)]のアクセスキーを逆にした<br>* サクラ花のアイコンの16dot版を入れた<br>* タイプ別設定のCOBOLの拡張子や行コメントを追加・修正<br>* タイプ別設定のダイアログを少し修正(ラベルや大きさなど)<br>* ダイアログでコンテキストヘルプが未チェックだった個所にチェックを入れた<br>* タイプ別設定のコンテキストヘルプ修正のため CPropTypes.cppも修正<br><br>▼asa-oさん<br>* バックアップファイルに入る日付に前回の保存時の日付を使えるようにした<br>* キーワードヘルプ・補完をタイプ別設定できるようにした<br>* 補完候補の隣にキーワードヘルプが出る<br>* 補完候補が1つだけならウィンドウを表示しない<br>* 画面分割時の同期スクロール<br></div></section>
     <ul><li><section><h1 id=457>
     <span class="no">[457]</span>
-    <a class="title" href="#457">6/22からのまとめ</a>
+    <a class="thread-title" href="#457">6/22からのまとめ</a>
     <span class="author">げんた</span>
     <time datetime="2001-06-25T20:29:20">2001年06月25日 20:29</time></h1>
     <div class="body">前回への追加分です。<br><br>▼nakataniさん<br>■単語単位の検索機能を追加<br>　・検索、置換、Grepのダイアログに単語単位で探す(W)を追加<br>　・検索文字の色分け部分を修正<br>　・Grep用のコマンドラインオプションを判別できるようにした<br>　・Grepでの単語単位の検索は実装していません。実装したい人はいませんか?<br>■外部コマンド実行<br>　・標準出力アウトプット用ウインドウがいっぱいできる不具合を修正<br>　・アウトプットウインドウから標準出力をコマンド実行するとまったく出力されない不具合を修正<br>　・アウトプット結果が正しくない不具合を少しだけ修正    まだおかしいかも。<br><br>■VisulaBasicのアウトライン解析機能を追加<br><br>▼stoneeさん<br>* 中括弧をURLの一部と見なさないようにする。<br></div></section>
     <ul><li><section><h1 id=562>
     <span class="no">[562]</span>
-    <a class="title" href="#562">6/25からのまとめ</a>
+    <a class="thread-title" href="#562">6/25からのまとめ</a>
     <span class="author">げんた</span>
     <time datetime="2001-07-03T10:13:45">2001年07月03日 10:13</time></h1>
     <div class="body">前回への追加分です。<br>* タスクトレイからのGrepダイアログ多重起動を抑制<br>* 置換ダイアログの多重起動を抑制(RC4予定)<br>* タスクトレイアイコンに16dotのアイコンを使うよう修正(RC4予定)<br>* 設定、時刻、日付等アイコン修正<br><br>▼GAEさん<br>* 外部コマンド実行<br>* アイコンデータのファイルからの読み込み<br></div></section>
     </li></ul></li><li><section><h1 id=459>
     <span class="no">[459]</span>
-    <a class="title" href="#459">Re:5/28からのまとめ</a>
+    <a class="thread-title" href="#459">Re:5/28からのまとめ</a>
     <span class="author">じぇぷろ</span>
     <time datetime="2001-06-25T22:44:20">2001年06月25日 22:44</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 何やったのかよくわからなくなってきたのでまとめます。間違い、抜け等ありましたら指摘してください。<br>&gt; ▼asa-oさん<br>編集した内容が他のペインにすぐに反映されるようにしました。<br>記事394</div></section>

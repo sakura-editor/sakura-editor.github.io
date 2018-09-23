@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>特殊文字列の連番方法。</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>特殊文字列の連番方法。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">456</span>
-    <a class="title" href="456.html#456">特殊文字列の連番方法。</a></div>
+    <a class="thread-title" href="456.html#456">特殊文字列の連番方法。</a></div>
     <ul><li><div class="list-title">
     <span class="no">457</span>
-    <a class="title" href="456.html#457">Pascal で組むの?</a></div>
+    <a class="thread-title" href="456.html#457">Pascal で組むの?</a></div>
     <ul><li><div class="list-title">
     <span class="no">458</span>
-    <a class="title" href="456.html#458">Re:ありがとうございます。</a></div>
+    <a class="thread-title" href="456.html#458">Re:ありがとうございます。</a></div>
     </li></ul></li><li><div class="list-title">
     <span class="no">460</span>
-    <a class="title" href="456.html#460">RE: 特殊文字列の連番方法。</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=456>
+    <a class="thread-title" href="456.html#460">RE: 特殊文字列の連番方法。</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=456>
     <span class="no">[456]</span>
-    <a class="title" href="#456">特殊文字列の連番方法。</a>
+    <a class="thread-title" href="#456">特殊文字列の連番方法。</a>
     <span class="author">正志</span>
     <time datetime="2009-02-22T14:23:27">2009年02月22日 14:23</time></h1>
     <div class="body">はじめまして。<br>自分なりに調べてみたんですが、分からなかったので質問させて頂きます。<br><br>「':i001:' =&gt; 'i001.gif',」のカッコ内の様な文字を縦に連番で並べたいと考えています。<br><br>■例<br>':i001:' =&gt; 'i001.gif',<br>':i002:' =&gt; 'i002.gif',<br>':i003:' =&gt; 'i003.gif',<br>～中略～<br>':i100:' =&gt; 'i100.gif',<br>':i101:' =&gt; 'i101.gif',<br>':i102:' =&gt; 'i102.gif',<br><br>といった具合です。<br>普通の数字であれば、マクロを発見することができたんですが<br>どうしても、上記の様な文字列でも実行可能なものを発見出来ませんでした。<br>お教え頂けませんでしょうか。宜しくお願い致します。</div></section>
     <ul><li><section><h1 id=457>
     <span class="no">[457]</span>
-    <a class="title" href="#457">Pascal で組むの?</a>
+    <a class="thread-title" href="#457">Pascal で組むの?</a>
     <span class="author">じゅうじ</span>
     <time datetime="2009-02-22T15:08:22">2009年02月22日 15:08</time></h1>
     <div class="body">スクリプト言語 gawk をインストールして、プログラムすると出来る。<br><a href=http://www.vector.co.jp/soft/win95/util/se376460.html target=_top><nobr>http://<wbr>www.<wbr>vector.<wbr>co.<wbr>jp/<wbr>soft/<wbr>win95/<wbr>util/<wbr>se376460<wbr>.<wbr>html</nobr></a><br><br>Sakura での実行は、ツールメニューの外部コマンド実行で、<br>「gawk -f "D:\My Documents\gawk\seqno.awk"」<br>標準出力を編集中のウィンドウで得るオプションを使うといい。<br><br>------ちなみに awk スクリプトは<br>#!/usr/bin/gawk<br>BEGIN { for (i=1; i&lt;=102; i++)<br>&#9;printf("':i%03d:' =&gt; 'i%03d.gif',\n", i, i); }<br>------ここまで</div></section>
     <ul><li><section><h1 id=458>
     <span class="no">[458]</span>
-    <a class="title" href="#458">Re:ありがとうございます。</a>
+    <a class="thread-title" href="#458">Re:ありがとうございます。</a>
     <span class="author">正志</span>
     <time datetime="2009-02-22T15:47:13">2009年02月22日 15:47</time></h1>
     <div class="body">スクリプト言語 gawk のインストールが分からなかったんですが<br><a href=http://www.tmk-s.com/gaihen/awkinst.html target=_top><nobr>http://<wbr>www.<wbr>tmk-<wbr>s.<wbr>com/<wbr>gaihen/<wbr>awkinst.<wbr>html</nobr></a><br>で解決する事ができました。<br><br>Sakuraで実行してみた所、しょぼいノートパソコンではりましたが<br>ものの3秒位で終わりました。<br>本当にありがとうございます。</div></section>
     </li></ul></li><li><section><h1 id=460>
     <span class="no">[460]</span>
-    <a class="title" href="#460">RE: 特殊文字列の連番方法。</a>
+    <a class="thread-title" href="#460">RE: 特殊文字列の連番方法。</a>
     <span class="author">げんた</span>
     <time datetime="2009-02-28T18:30:00">2009年02月28日 18:30</time></h1>
     <div class="body">&gt;■例<br>&gt;':i001:' =&gt; 'i001.gif',<br>&gt;<br>&gt;といった具合です。<br>表計算ソフトを使えば一発ですが，それでは回答になっていないんですよね...<br><br>OpenOffice Calcで<br>="':" &amp; TEXT(A1;"000")&amp;":' =&gt; '"&amp; TEXT(A1;"000") &amp;".gif"<br>':001:' =&gt; '001.gif'<br>':002:' =&gt; '002.gif'<br>':003:' =&gt; '003.gif'<br>...<br>それをCopy &amp; Pasteする<br></div></section>

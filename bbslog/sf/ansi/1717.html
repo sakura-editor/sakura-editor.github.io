@@ -1,81 +1,107 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>PPAで最後に読み込んだスクリプトだけが実行される件</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>PPAで最後に読み込んだスクリプトだけが実行される件 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1717</span>
-    <a class="title" href="1717.html#1717">PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
+    <a class="thread-title" href="1717.html#1717">PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
     <ul><li><div class="list-title">
     <span class="no">1718</span>
-    <a class="title" href="1717.html#1718">Re:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
+    <a class="thread-title" href="1717.html#1718">Re:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
     <ul><li><div class="list-title">
     <span class="no">1724</span>
-    <a class="title" href="1717.html#1724">Re2:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
+    <a class="thread-title" href="1717.html#1724">Re2:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
     <ul><li><div class="list-title">
     <span class="no">1726</span>
-    <a class="title" href="1717.html#1726">Re3:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
+    <a class="thread-title" href="1717.html#1726">Re3:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
     <ul><li><div class="list-title">
     <span class="no">1727</span>
-    <a class="title" href="1717.html#1727">Re4:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
+    <a class="thread-title" href="1717.html#1727">Re4:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
     <ul><li><div class="list-title">
     <span class="no">1728</span>
-    <a class="title" href="1717.html#1728">Re5:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
+    <a class="thread-title" href="1717.html#1728">Re5:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
     <ul><li><div class="list-title">
     <span class="no">1729</span>
-    <a class="title" href="1717.html#1729">Re6:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
+    <a class="thread-title" href="1717.html#1729">Re6:PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
     <ul><li><div class="list-title">
     <span class="no">1730</span>
-    <a class="title" href="1717.html#1730">Re7: PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
+    <a class="thread-title" href="1717.html#1730">Re7: PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
     <ul><li><div class="list-title">
     <span class="no">1732</span>
-    <a class="title" href="1717.html#1732">Re8: PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1717>
+    <a class="thread-title" href="1717.html#1732">Re8: PPAで最後に読み込んだスクリプトだけが実行される件</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1717>
     <span class="no">[1717]</span>
-    <a class="title" href="#1717">PPAで最後に読み込んだスクリプトだけが実行される件</a>
+    <a class="thread-title" href="#1717">PPAで最後に読み込んだスクリプトだけが実行される件</a>
     <span class="author">げんた</span>
     <time datetime="2002-03-09T00:13:35">2002年03月09日 00:13</time></h1>
     <div class="body">LoadでCPPAにソースをセットして，実行時にExecで呼び出していますが，バッファが1つしかないので最後に読み込んだものしかバッファに残りませんね．<br><br>PPA側では複数のバッファを持っていないようなので，エディタ側で保持するしかないのかなぁ．<br></div></section>
     <ul><li><section><h1 id=1718>
     <span class="no">[1718]</span>
-    <a class="title" href="#1718">Re:PPAで最後に読み込んだスクリプトだけが実行される件</a>
+    <a class="thread-title" href="#1718">Re:PPAで最後に読み込んだスクリプトだけが実行される件</a>
     <span class="author">やざき まこと</span>
     <time datetime="2002-03-09T00:40:40">2002年03月09日 00:40</time></h1>
     <div class="body">▼ げんたさん<br>&gt; LoadでCPPAにソースをセットして，実行時にExecで呼び出していますが，バッファが1つしかないので最後に読み込んだものしかバッファに残りませんね．<br>&gt; <br>&gt; PPA側では複数のバッファを持っていないようなので，エディタ側で保持するしかないのかなぁ．<br><br>毎回読み込んだほうがいいかな？<br>マクロを修正して実行、修正して実行と繰り返すときに便利そう。<br></div></section>
     <ul><li><section><h1 id=1724>
     <span class="no">[1724]</span>
-    <a class="title" href="#1724">Re2:PPAで最後に読み込んだスクリプトだけが実行される件</a>
+    <a class="thread-title" href="#1724">Re2:PPAで最後に読み込んだスクリプトだけが実行される件</a>
     <span class="author">やざき</span>
     <time datetime="2002-03-10T00:18:23">2002年03月10日 00:18</time></h1>
     <div class="body">&gt; &gt; LoadでCPPAにソースをセットして，実行時にExecで呼び出していますが，バッファが1つしかないので最後に読み込んだものしかバッファに残りませんね．<br>&gt; &gt; <br>&gt; &gt; PPA側では複数のバッファを持っていないようなので，エディタ側で保持するしかないのかなぁ．<br>&gt; <br>&gt; 毎回読み込んだほうがいいかな？<br>&gt; マクロを修正して実行、修正して実行と繰り返すときに便利そう。<br><br>サクラ側でバッファを持つように修正しつつ、マクロごとに実行時に読み込みなおすか否かを設定できるようにしてみました。<br>標準では、初めて目的のマクロを実行したときに一度だけ読み込み、あとは使いまわします。<br>「共通設定」→「マクロ」→「マクロを実行するたびにファイルを読み込みなおす」にチェックをつけて「設定」をおしておけば、<br>実行するたびにファイルを読み込みなおします。<br><br>誰かが作ったマクロを実行するときは、標準の動作で充分です。<br>ただマクロを作るときは、いままではウィンドウを開きなおさなくてはいけませんでしたが、<br>マクロを実行するたびにファイルを読み込むようにしておけば、いくらか便利かも。<br></div></section>
     <ul><li><section><h1 id=1726>
     <span class="no">[1726]</span>
-    <a class="title" href="#1726">Re3:PPAで最後に読み込んだスクリプトだけが実行される件</a>
+    <a class="thread-title" href="#1726">Re3:PPAで最後に読み込んだスクリプトだけが実行される件</a>
     <span class="author">げんた</span>
     <time datetime="2002-03-10T01:40:45">2002年03月10日 01:40</time></h1>
     <div class="body">連続して同じマクロを実行した場合は２回目以降はLoadを行わないようにできればパフォーマンスが向上できそうですが、難しいですかね？<br></div></section>
     <ul><li><section><h1 id=1727>
     <span class="no">[1727]</span>
-    <a class="title" href="#1727">Re4:PPAで最後に読み込んだスクリプトだけが実行される件</a>
+    <a class="thread-title" href="#1727">Re4:PPAで最後に読み込んだスクリプトだけが実行される件</a>
     <span class="author">やざき</span>
     <time datetime="2002-03-10T11:29:47">2002年03月10日 11:29</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 連続して同じマクロを実行した場合は２回目以降はLoadを行わないようにできればパフォーマンスが向上できそうですが、難しいですかね？<br><br>毎回読み込むオプションをオフにして使えばそうなりますけど、そういうことではなく？</div></section>
     <ul><li><section><h1 id=1728>
     <span class="no">[1728]</span>
-    <a class="title" href="#1728">Re5:PPAで最後に読み込んだスクリプトだけが実行される件</a>
+    <a class="thread-title" href="#1728">Re5:PPAで最後に読み込んだスクリプトだけが実行される件</a>
     <span class="author">げんた</span>
     <time datetime="2002-03-10T14:35:32">2002年03月10日 14:35</time></h1>
     <div class="body">&gt;毎回読み込むオプションをオフにして使えばそうなりますけど、そういうことではなく？<br>Loadというのは，ファイル→エディタではなくてエディタ→PPAエンジン部分の話です．<br><br>SetSourceを行うと文法チェックとかを毎回する事になるのでパフォーマンスが低下するのではないかと．<br></div></section>
     <ul><li><section><h1 id=1729>
     <span class="no">[1729]</span>
-    <a class="title" href="#1729">Re6:PPAで最後に読み込んだスクリプトだけが実行される件</a>
+    <a class="thread-title" href="#1729">Re6:PPAで最後に読み込んだスクリプトだけが実行される件</a>
     <span class="author">やざき</span>
     <time datetime="2002-03-10T17:06:57">2002年03月10日 17:06</time></h1>
     <div class="body">▼ げんたさん<br>&gt; &gt;毎回読み込むオプションをオフにして使えばそうなりますけど、そういうことではなく？<br>&gt; Loadというのは，ファイル→エディタではなくてエディタ→PPAエンジン部分の話です．<br>&gt; <br>&gt; SetSourceを行うと文法チェックとかを毎回する事になるのでパフォーマンスが低下するのではないかと．<br><br>もし本当に気になっているなら、PPAの開発陣に効いてみて欲しいんだけど、<br>PPAのヘルプを見る限りでは、<br><br>&gt; ExecuteメソッドはSourceプロパティに設定されたPascalインタプリタのソースコードを解釈、実行します。<br><br>とかかれているので、SetSourceでは文法チェックなんかしないのではないかしら？<br>だからそこまで考えても意味が無いような。</div></section>
     <ul><li><section><h1 id=1730>
     <span class="no">[1730]</span>
-    <a class="title" href="#1730">Re7: PPAで最後に読み込んだスクリプトだけが実行される件</a>
+    <a class="thread-title" href="#1730">Re7: PPAで最後に読み込んだスクリプトだけが実行される件</a>
     <span class="author">げんた</span>
     <time datetime="2002-03-10T17:24:24">2002年03月10日 17:24</time></h1>
     <div class="body">▼ やざきさん<br>&gt;&gt; ExecuteメソッドはSourceプロパティに設定されたPascalインタプリタのソースコードを解釈、実行します。<br>&gt;とかかれているので、SetSourceでは文法チェックなんかしないのではないかしら？<br>&gt;だからそこまで考えても意味が無いような。<br>確かに．実行時に初めてエラーが出ますからね．<br></div></section>
     <ul><li><section><h1 id=1732>
     <span class="no">[1732]</span>
-    <a class="title" href="#1732">Re8: PPAで最後に読み込んだスクリプトだけが実行される件</a>
+    <a class="thread-title" href="#1732">Re8: PPAで最後に読み込んだスクリプトだけが実行される件</a>
     <span class="author">DEKO</span>
     <time datetime="2002-03-13T00:16:49">2002年03月13日 00:16</time></h1>
     <div class="body">&gt;Execute,SetSource<br><br>　SetSourceでは文法チェックは行いません。...というより<br>PPAには「構文チェック」機能がありません。実行時エラー<br>のみが実装されています(Lex/Yacc使ってないものだから...)。<br><br>#一応、本人ですのでご心配なく(^^;<br><br>　本当は「PPAのページに登録が遅れてすみませんでした」と<br>どこかに書くつもりでした(^^;<br><br>　掲示板違いかもしれませんが、TEADのHelpソースがあると<br>便利なのでしたらお送りしますが...。<br><br>#要Mail。<br> </div></section>

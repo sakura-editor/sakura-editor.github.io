@@ -1,63 +1,89 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>UTF-7の自動判別止められないすか？</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>UTF-7の自動判別止められないすか？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3455</span>
-    <a class="title" href="3455.html#3455">UTF-7の自動判別止められないすか？</a></div>
+    <a class="thread-title" href="3455.html#3455">UTF-7の自動判別止められないすか？</a></div>
     <ul><li><div class="list-title">
     <span class="no">3456</span>
-    <a class="title" href="3455.html#3456">判定方法を見直します．</a></div>
+    <a class="thread-title" href="3455.html#3456">判定方法を見直します．</a></div>
     <ul><li><div class="list-title">
     <span class="no">3457</span>
-    <a class="title" href="3455.html#3457">Re:判定方法を見直します．</a></div>
+    <a class="thread-title" href="3455.html#3457">Re:判定方法を見直します．</a></div>
     <ul><li><div class="list-title">
     <span class="no">3458</span>
-    <a class="title" href="3455.html#3458">Re2:判定方法を見直します．</a></div>
+    <a class="thread-title" href="3455.html#3458">Re2:判定方法を見直します．</a></div>
     <ul><li><div class="list-title">
     <span class="no">3459</span>
-    <a class="title" href="3455.html#3459">Re3:判定方法を見直します．</a></div>
+    <a class="thread-title" href="3455.html#3459">Re3:判定方法を見直します．</a></div>
     </li></ul></li></ul></li><li><div class="list-title">
     <span class="no">3461</span>
-    <a class="title" href="3455.html#3461">Re:判定方法を見直します．</a></div>
+    <a class="thread-title" href="3455.html#3461">Re:判定方法を見直します．</a></div>
     <ul><li><div class="list-title">
     <span class="no">3462</span>
-    <a class="title" href="3455.html#3462">Re2:判定方法を見直します．</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3455>
+    <a class="thread-title" href="3455.html#3462">Re2:判定方法を見直します．</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3455>
     <span class="no">[3455]</span>
-    <a class="title" href="#3455">UTF-7の自動判別止められないすか？</a>
+    <a class="thread-title" href="#3455">UTF-7の自動判別止められないすか？</a>
     <span class="author">ｓけいし</span>
     <time datetime="2003-11-03T06:16:40">2003年11月03日 06:16</time></h1>
     <div class="body">Cのプログラムのエディットに便利に遣わさせて頂いてます。<br><br>ファイルを開くときに　なぜかUTF-7と判別されるファイルが<br>ありまして困ってます。<br><a href=http://winump.sourceforge.jp/sakura_mondai.zip target=_top><nobr>http://<wbr>winump.<wbr>sourcefo<wbr>rge.<wbr>jp/<wbr>sakura_m<wbr>ondai.<wbr>zip</nobr></a><br><br><br>気づかずそのまま編集すると＋が＋－になったり他が<br>文字化けしたりで、とんでもないことになります。<br>もちろんコンパイルエラーがでまくります。<br><br>”+R○-&gt;ほにゃらら”がいけないみたいで<br>”+(R○-&gt;ほにゃらら)”にしたらなおるようです。<br><br>自動判別機能の見直しが難しいなら、<br>せめてオフにできるようにしてほしいです。</div></section>
     <ul><li><section><h1 id=3456>
     <span class="no">[3456]</span>
-    <a class="title" href="#3456">判定方法を見直します．</a>
+    <a class="thread-title" href="#3456">判定方法を見直します．</a>
     <span class="author">げんた</span>
     <time datetime="2003-11-03T15:39:51">2003年11月03日 15:39</time></h1>
     <div class="body">以前もこの話が出たときは「記号の前後にスペースいれないと見にくいだろー」とごまかしたような気がします．しかし他人のソースだとそうも言っていられませんよね．<br><br>RFC2152 <a href=http://www.faqs.org/rfcs/rfc2152.html target=_top><nobr>http://<wbr>www.<wbr>faqs.<wbr>org/<wbr>rfcs/<wbr>rfc2152.<wbr>html</nobr></a> によると直接記入して良い文字から =(等号), \(バックスラッシュ), ~(チルダ)の3文字が除外されていますので，これらの文字が現れたときは必ず「UTF-7ではありえない」と判定するように判定をより厳しくします．<br><br>たぶん等号が1つも現れないCソースってのはあまり無いでしょうから関数本体はこれでほぼ大丈夫ではないでしょうか．<br><br>しかしC++のヘッダファイルで return var1+hoge-&gt;foobar; みたいなアクセスメソッドと宣言のみが来てしまうとやばいかも．そういうときは+の後ろにスペース入れて逃げてもらう...じゃだめか...<br><br><a href=http://sakura-editor.sourceforge.net/snapshot/sakura_2003-11-03_UTF7.zip target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>snapshot<wbr>/<wbr>sakura_2<wbr>003-<wbr>11-<wbr>03_UTF7.<wbr>zip</nobr></a> バイナリ置いておきますのでお試しください．<br></div></section>
     <ul><li><section><h1 id=3457>
     <span class="no">[3457]</span>
-    <a class="title" href="#3457">Re:判定方法を見直します．</a>
+    <a class="thread-title" href="#3457">Re:判定方法を見直します．</a>
     <span class="author">じゅうじ</span>
     <time datetime="2003-11-03T16:18:46">2003年11月03日 16:18</time></h1>
     <div class="body">▼ げんたさん<br>&gt; 以前もこの話が出たときは「記号の前後にスペースいれないと見にくいだろー」とごまかしたような気がします．しかし他人のソースだとそうも言っていられませんよね．<br>&gt; <a href=http://sakura-editor.sourceforge.net/snapshot/sakura_2003-11-03_UTF7.zip target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>snapshot<wbr>/<wbr>sakura_2<wbr>003-<wbr>11-<wbr>03_UTF7.<wbr>zip</nobr></a> <br><br>ご無沙汰しております。<br>早速ですが、問題解決になっていない様です。<br>４個のファイルで試しましたが、２番目と３番目が駄目です。<br>[rever5ok.txt]<br>++REVERB-<br>[rever7.txt]<br>+REVERB-<br>[rtsyn1.txt]<br>++RTSYN-<br>[rtsyn2ok.txt]<br>+RTSYN-<br><br>なお、ファイルの最後に改行は必要ありません。</div></section>
     <ul><li><section><h1 id=3458>
     <span class="no">[3458]</span>
-    <a class="title" href="#3458">Re2:判定方法を見直します．</a>
+    <a class="thread-title" href="#3458">Re2:判定方法を見直します．</a>
     <span class="author">げんた</span>
     <time datetime="2003-11-03T17:47:22">2003年11月03日 17:47</time></h1>
     <div class="body">&gt;ご無沙汰しております。<br>&gt;早速ですが、問題解決になっていない様です。<br>&gt;[rever7.txt]<br>&gt;+REVERB-<br>&gt;[rtsyn1.txt]<br>&gt;++RTSYN-<br><br>まずはじめに上の文字列がUTF-7であるかないかはそこだけ見てもわかりませんので，全体としてUTF-7らしいかどうかを判定するときにUTF-7で「無い」証拠があればUTF-7ではないと見なしましょうとしたつもりなのですが．その上で，=をUTF-7でない証拠と見なすことで大抵のCソースでは問題を回避できるのではないかなと考えたわけです．<br>ですから，上の文字列がUTF-7であるかどうかはそこだけ見ても判定不能かと思います．<br><br>ただ，rtsyn1.txtの++となっている部分はUTF-7としては変なので，そこが原因でカウントされているとすればカウント対象外とすべきかも．さらなる判定精度向上についてはもう一度RFC見直して考えてみます．<br></div></section>
     <ul><li><section><h1 id=3459>
     <span class="no">[3459]</span>
-    <a class="title" href="#3459">Re3:判定方法を見直します．</a>
+    <a class="thread-title" href="#3459">Re3:判定方法を見直します．</a>
     <span class="author">じゅうじ</span>
     <time datetime="2003-11-03T22:48:01">2003年11月03日 22:48</time></h1>
     <div class="body">▼ げんたさん<br>&gt; まずはじめに上の文字列がUTF-7であるかないかはそこだけ見てもわかりませんので，全体としてUTF-7らしいかどうかを判定するときにUTF-7で「無い」証拠があればUTF-7ではないと見なしましょうとしたつもりなのですが．その上で，=をUTF-7でない証拠と見なすことで大抵のCソースでは問題を回避できるのではないかなと考えたわけです．<br>&gt; ですから，上の文字列がUTF-7であるかどうかはそこだけ見ても判定不能かと思います．<br><br>多分ですが、<br>UTF-7で開けるファイルは、全てSJISで開けるのであれば、UTF-7を自動判定に入れない方法も有ると思います。<br><br>diff -U 2 "E:\Program Files\Sakura\ssrc_2003-10-13\sakura_core<br>\CMemory.cpp"<br>@@ -2544,5 +2544,6 @@<br> &#9;||日本語コードセット判別: UTF-7か？<br> &#9;*/<br>-&#9;CMemory::CheckKanjiCode_UTF7( pBuf, nBufLen, &amp;nUTF7MojiNum, &amp;nUTF7CodeNum );<br>+&#9;nUTF7MojiNum = nUTF7CodeNum = 0;<br>+//&#9;CMemory::CheckKanjiCode_UTF7( pBuf, nBufLen, &amp;nUTF7MojiNum, &amp;nUTF7CodeNum );<br> <br> &#9;if( nEUCCodeNum &gt; 0<br><br>終了コード: 1<br></div></section>
     </li></ul></li></ul></li><li><section><h1 id=3461>
     <span class="no">[3461]</span>
-    <a class="title" href="#3461">Re:判定方法を見直します．</a>
+    <a class="thread-title" href="#3461">Re:判定方法を見直します．</a>
     <span class="author">ｓけいし</span>
     <time datetime="2003-11-04T02:37:27">2003年11月04日 02:37</time></h1>
     <div class="body">早速の対応ありがとうございます。<br>ちゃんと開けることを確認しました。<br><br>＞「記号の前後にスペースいれないと見にくいだろー」<br>なぜ醜いソースになったかというと、TiMidity++の変数・関数<br>呼び出しを構造体を使った方法に改造の途中で <br>何も考えずどんどん自動で置き換えていったからでした。<br><br>この手の作業ではさくらエディタは非常に強力ですね。<br><br>完全な自動判別が難しいのであれば、やはり開くファイルの<br>種類を固定するオプションをつけてほしいです。<br>プログラムソースの場合、コメントが読めないときに他の形式で<br>開きなおすのはそれほど苦ではないですから。<br></div></section>
     <ul><li><section><h1 id=3462>
     <span class="no">[3462]</span>
-    <a class="title" href="#3462">Re2:判定方法を見直します．</a>
+    <a class="thread-title" href="#3462">Re2:判定方法を見直します．</a>
     <span class="author">げんた</span>
     <time datetime="2003-11-05T02:21:50">2003年11月05日 02:21</time></h1>
     <div class="body">&gt;完全な自動判別が難しいのであれば、やはり開くファイルの<br>&gt;種類を固定するオプションをつけてほしいです。<br>特定の文字コードに固定するコマンドラインオプションは既に存在します．-CODE=0 でSJIS固定になります(ヘルプ参照)．ただし単純にショートカットにオプションを付けてそこにファイルをドラッグしてもオプションが無視されますので注意．右クリックメニューに「SJISで開く」とか入れるのが良いかなと思います．<br></div></section>

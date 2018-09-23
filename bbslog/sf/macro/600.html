@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>マクロファイルをまとめて登録することはできないですか?</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>マクロファイルをまとめて登録することはできないですか? | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">600</span>
-    <a class="title" href="600.html#600">マクロファイルをまとめて登録することはできないですか?</a></div>
+    <a class="thread-title" href="600.html#600">マクロファイルをまとめて登録することはできないですか?</a></div>
     <ul><li><div class="list-title">
     <span class="no">601</span>
-    <a class="title" href="600.html#601">Re:マクロファイルをまとめて登録することはできないですか?</a></div>
+    <a class="thread-title" href="600.html#601">Re:マクロファイルをまとめて登録することはできないですか?</a></div>
     <ul><li><div class="list-title">
     <span class="no">602</span>
-    <a class="title" href="600.html#602">Re2:マクロファイルをまとめて登録することはできないですか?</a></div>
+    <a class="thread-title" href="600.html#602">Re2:マクロファイルをまとめて登録することはできないですか?</a></div>
     </li><li><div class="list-title">
     <span class="no">603</span>
-    <a class="title" href="600.html#603">Re2:マクロファイルをまとめて登録することはできないですか?</a></div>
+    <a class="thread-title" href="600.html#603">Re2:マクロファイルをまとめて登録することはできないですか?</a></div>
     <ul><li><div class="list-title">
     <span class="no">604</span>
-    <a class="title" href="600.html#604">Re3:マクロファイルをまとめて登録することはできないですか?</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=600>
+    <a class="thread-title" href="600.html#604">Re3:マクロファイルをまとめて登録することはできないですか?</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=600>
     <span class="no">[600]</span>
-    <a class="title" href="#600">マクロファイルをまとめて登録することはできないですか?</a>
+    <a class="thread-title" href="#600">マクロファイルをまとめて登録することはできないですか?</a>
     <span class="author">　forzando</span>
     <time datetime="2016-03-10T23:26:47">2016年03月10日 23:26</time></h1>
     <div class="body">この掲示板に投稿するのは初めてです。FAQかもしれませんがご容赦ください。<br>他のPCからサクラエディタのマクロを持ってくる必要に迫られたのですが、<br>他のPCから持ってきた.jsファイルを、共通設定→マクロのタブで一つ一つ登録する以外に方法がないように思っています。<br>複数のマクロファイルをまとめて登録するような方法はないのでしょうか。<br>また、共通設定→マクロタブによる設定では、他のPCで使っていたマクロ名をもう一度いちいち打ち込まないといけませんね。<br>ここらへんは自動化されていないのでしょうか。</div></section>
     <ul><li><section><h1 id=601>
     <span class="no">[601]</span>
-    <a class="title" href="#601">Re:マクロファイルをまとめて登録することはできないですか?</a>
+    <a class="thread-title" href="#601">Re:マクロファイルをまとめて登録することはできないですか?</a>
     <span class="author">もか</span>
     <time datetime="2016-03-11T21:34:46">2016年03月11日 21:34</time></h1>
     <div class="body">自動化されていません。<br>他のPCからsakura.iniをコピーしてきて上書きするか、<br>iniを開いて[Macro]セクションをコピーするのが今できる簡単な方法です。<br>PC1台ならそれでいいですが、定期的にマクロ設定をするとか<br>10台設定しないといけないとかだと、なんか方法があった方がいいと思います。<br>沢山設定するならマクロをプラグインにしてまとめるとインストール各PC1回でできます。<br><br>どんな機能が欲しいですか？例えば、<br>1. マクロのD&amp;Dで一覧に追加+名前自動設定<br>マクロ内のtitle:と書かれた行を名前に自動設定(これは手元では開発済)<br>D&amp;Dだと並び順に不満があると現状のUIでは困る気がします。<br>2. マクロ一覧のインポート、エクスポート<br>これは[Macro]セクションのコピーを自動化しただけですね。<br><br>名前はいっそのことファイル名を日本語にするという手段もあります。<br>(名前が未設定だとファイル名が表示されます)<br></div></section>
     <ul><li><section><h1 id=602>
     <span class="no">[602]</span>
-    <a class="title" href="#602">Re2:マクロファイルをまとめて登録することはできないですか?</a>
+    <a class="thread-title" href="#602">Re2:マクロファイルをまとめて登録することはできないですか?</a>
     <span class="author">SNK</span>
     <time datetime="2016-03-14T08:10:44">2016年03月14日 08:10</time></h1>
     <div class="body">&gt; 2. マクロ一覧のインポート、エクスポート<br>&gt; これは[Macro]セクションのコピーを自動化しただけですね。<br><br>iniファイルの一部分をインポート・エクスポートできる仕組みでしょうか。。<br>でも、これが実現できるとうれしい。<br>さらに、 マクロファイルだけでなく色設定等含めてセットで登録したいです。<br><br>やりたいことは、<br>・あるプログラム言語向けの設定を、まとめて配布したい。<br>・配布者は、設定GUIから必要な項目をひとつひとつexportし、テキストファイル編集でiniファイルを整理<br>・各個人のPCでは、<br>    マクロや設定ファイルを設定フォルダにコピーしたあと、<br>    配布されたiniファイル(一つまたは複数)をimportする。<br>です。<br>もうすでに今のサクラエディタでも、上記を実現する方法があるのかもしれませんが、知らないです。<br>今の標準のやり方だと、GUIでポチポチ設定する作業を各人に強制することになり、かなり面倒です。<br><br>「設定のXXタブをクリックしてXXをimport」の繰り返し作業を回避できれば、、。<br>もしかして、現状でも個々の設定のXXタブに移動しなくても、ひとつの画面から色々なiniをimportできたりします？<br></div></section>
     </li><li><section><h1 id=603>
     <span class="no">[603]</span>
-    <a class="title" href="#603">Re2:マクロファイルをまとめて登録することはできないですか?</a>
+    <a class="thread-title" href="#603">Re2:マクロファイルをまとめて登録することはできないですか?</a>
     <span class="author">　forzando</span>
     <time datetime="2016-03-21T18:45:21">2016年03月21日 18:45</time></h1>
     <div class="body">リプライありがとうございます。<br><br>▼ もかさん<br>&gt; iniを開いて[Macro]セクションをコピーするのが今できる簡単な方法です。<br>私はとりあえずPC1台なのでこれでやってみます。<br><br>&gt; 沢山設定するならマクロをプラグインにしてまとめるとインストール各PC1回でできます。<br>プラグイン作成は開発っぽくて敷居が高いですね(私が食わず嫌いなだけでほんとは低いのかな?)。<br>GUIからできる方法が一つあったほうがいいと思います。<br> <br>&gt; マクロ内のtitle:と書かれた行を名前に自動設定(これは手元では開発済)<br>これいいですね。リリースしていただけたら嬉しく思います。<br><br>&gt; D&amp;Dだと並び順に不満があると現状のUIでは困る気がします。<br>私は並び順はどうでもいい(私のマクロはキーを割り当てて動かす)ので<br>これにはこだわりませんが、<br>すでに登録したマクロの並び順をD&amp;Dとかで変更できたりすると<br>便利かもしれません。<br><br>&gt; 2. マクロ一覧のインポート、エクスポート<br>これが私が欲しかった機能です。<br><br>&gt; (名前が未設定だとファイル名が表示されます)<br>なるほど。当面これで対応しようと思います。</div></section>
     <ul><li><section><h1 id=604>
     <span class="no">[604]</span>
-    <a class="title" href="#604">Re3:マクロファイルをまとめて登録することはできないですか?</a>
+    <a class="thread-title" href="#604">Re3:マクロファイルをまとめて登録することはできないですか?</a>
     <span class="author">もか</span>
     <time datetime="2016-03-22T02:51:58">2016年03月22日 02:51</time></h1>
     <div class="body">登録済マクロの機能強化<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1040/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1040/<wbr></nobr></a><br>お試し版バイナリも上げました。<br><a href=http://mocaskr.web.fc2.com/weekly/sakura_weekly.html target=_top><nobr>http://<wbr>mocaskr.<wbr>web.<wbr>fc2.<wbr>com/<wbr>weekly/<wbr>sakura_w<wbr>eekly.<wbr>html</nobr></a><br>インポート、D&amp;D(一覧および下のファイル名枠)、マクロを開く、自動名前付け、上下入れ替え<br>など地味な機能強化ですができるようにしてみたものです。<br>D&amp;Dできることは気が付かないので、ファイルを開くで一括追加のほうがいいのかもしれないけど。<br></div></section>

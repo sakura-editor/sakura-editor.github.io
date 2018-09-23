@@ -1,63 +1,89 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>grep実行結果を標準出力する機能</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>grep実行結果を標準出力する機能 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2091</span>
-    <a class="title" href="2091.html#2091">grep実行結果を標準出力する機能</a></div>
+    <a class="thread-title" href="2091.html#2091">grep実行結果を標準出力する機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">2092</span>
-    <a class="title" href="2091.html#2092">Re:grep実行結果を標準出力する機能</a></div>
+    <a class="thread-title" href="2091.html#2092">Re:grep実行結果を標準出力する機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">2093</span>
-    <a class="title" href="2091.html#2093">Re2:grep実行結果を標準出力する機能</a></div>
+    <a class="thread-title" href="2091.html#2093">Re2:grep実行結果を標準出力する機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">2094</span>
-    <a class="title" href="2091.html#2094">Re3:grep実行結果を標準出力する機能</a></div>
+    <a class="thread-title" href="2091.html#2094">Re3:grep実行結果を標準出力する機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">2095</span>
-    <a class="title" href="2091.html#2095">Re4:grep実行結果を標準出力する機能</a></div>
+    <a class="thread-title" href="2091.html#2095">Re4:grep実行結果を標準出力する機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">2096</span>
-    <a class="title" href="2091.html#2096">Re5:grep実行結果を標準出力する機能</a></div>
+    <a class="thread-title" href="2091.html#2096">Re5:grep実行結果を標準出力する機能</a></div>
     <ul><li><div class="list-title">
     <span class="no">2097</span>
-    <a class="title" href="2091.html#2097">Re6:grep実行結果を標準出力する機能</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2091>
+    <a class="thread-title" href="2091.html#2097">Re6:grep実行結果を標準出力する機能</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2091>
     <span class="no">[2091]</span>
-    <a class="title" href="#2091">grep実行結果を標準出力する機能</a>
+    <a class="thread-title" href="#2091">grep実行結果を標準出力する機能</a>
     <span class="author">sajim</span>
     <time datetime="2014-01-26T19:09:38">2014年01月26日 19:09</time></h1>
     <div class="body">開発の現場でsakuraエディタを使っています。<br>ソースコードを一部改変して必要機能を追加しているのですが、<br>追加した機能とソースの修正箇所などを共有したいと思います。<br>問題なければ時期リリースに組み込んでいただきたいです。<br><br>＜背景＞<br>複数回のgrep実行(正規表現あり)をバッチ等で連続実行したい。<br><br>＜要求＞<br>windowsコンソールからsakuraをgrep実行し、<br>grep結果をコンソール（標準出力）に出力したい。<br>具体的には以下を満たすように改善したい。<br><br>①grep終了後、sakuraがプロセス終了すること。<br>②grep結果を標準出力に出力できること。<br><br>＜実現方法＞<br>①にかかわる修正<br>・修正箇所<br>　Source File   : CViewCommander_Clipboard.cpp<br>　Function Name : Command_ADDTAIL<br>・修正内容<br>　Command_ADDTAIの最終行に以下を追記<br>  　std::wcout.imbue(std::locale(”japanese”));<br>  　std::wcout &lt;&lt; pszData;<br>②にかかわる修正<br>・修正箇所<br>　Source File   : CNormalProcess.cpp<br>　Function Name : InitializeProcess<br>  ※”if( !bGrepDlg ){”のIF処理内部<br>・修正内容<br>　return true;をreturn false;に変更し、<br>　プロセスを終了させるように変更する。<br><br>＜影響・デグレ等＞<br>②について<br>　コンソールでgrep実行後、プロセスが落ちるようになる。<br>　現行仕様ではコンソールでGUI起動しているが、そもそも需要はあるのか？<br><br>以上、ご確認お願いいたします。</div></section>
     <ul><li><section><h1 id=2092>
     <span class="no">[2092]</span>
-    <a class="title" href="#2092">Re:grep実行結果を標準出力する機能</a>
+    <a class="thread-title" href="#2092">Re:grep実行結果を標準出力する機能</a>
     <span class="author">もか</span>
     <time datetime="2014-01-26T23:15:09">2014年01月26日 23:15</time></h1>
     <div class="body">GREPの引数にオプションを追加して対応することになると思います。<br>あとGrep結果には、3000文字ぐらいの制限があるので、結果を使う場合注意する必要があります。<br>&gt;  　std::wcout.imbue(std::locale(”japanese”));<br>&gt;  　std::wcout &lt;&lt; pszData;<br>とりあえず、それだとNUL文字以降が切れるので困るケースがあるとおもいます。<br><br>C++のWide系処理群はいろいろバグがあるような気がします。<br>なんか、下記URLなどを読むと不安です。<br><a href=http://cpplover.blogspot.jp/2007/07/locale.html target=_top><nobr>http://<wbr>cpplover<wbr>.<wbr>blogspot<wbr>.<wbr>jp/<wbr>2007/<wbr>07/<wbr>locale.<wbr>html</nobr></a><br><a href=http://d.hatena.ne.jp/ir9Ex/20060820/1156018812 target=_top><nobr>http://<wbr>d.<wbr>hatena.<wbr>ne.<wbr>jp/<wbr>ir9Ex/<wbr>20060820<wbr>/<wbr>11560188<wbr>12</nobr></a><br><a href=http://0xc000013a.blog96.fc2.com/?mode=m&no=226 target=_top><nobr>http://<wbr>0xc00001<wbr>3a.<wbr>blog96.<wbr>fc2.<wbr>com/?<wbr>mode=<wbr>m&amp;<wbr>no=<wbr>226</nobr></a><br>　MSのライブラリの影響(とmingwとかの場合で違ったりすると困る)を抑えたいので、<br>std::wcoutは、利用したくないです。<br>サクラエディタのCShiftJisを使うと、NEC選定とIBM選定文字などが化けずに出力できる利点もあります。<br><br>&gt; return false;<br>それだといろいろ後処理が走らなくなるので、MYWM_CLOSEをPostするようにしてみました。<br>-GOPT=O を指定すると、このモードになるようにしてあります。<br>という感じのものをトラッカーに登録しました。<br>確認してください。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/762/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>762/<wbr></nobr></a><br></div></section>
     <ul><li><section><h1 id=2093>
     <span class="no">[2093]</span>
-    <a class="title" href="#2093">Re2:grep実行結果を標準出力する機能</a>
+    <a class="thread-title" href="#2093">Re2:grep実行結果を標準出力する機能</a>
     <span class="author">LR4</span>
     <time datetime="2014-01-26T23:54:38">2014年01月26日 23:54</time></h1>
     <div class="body">▼ もかさん<br>昔、他のアプリで似たようなことをやろうとして、何日もかけて調査したのですが、/SUBSYSTEM:WINDOWSで作成したGUIアプリは、WinMainに到達するよりも前に起動元コンソールの標準入出力（stdin,stdout）から切り離されてしまうようで、できませんでした。<br>無理やり起動元コンソールにWriteFileで何か書き込むことはできても、パイプやリダイレクトなどは全くできず標準出力として機能しなかった覚えがあります。<br>（起動元とは別のコンソールを開いてそこに出すというのも意味がないですし…）<br>当時は不可能だと断念したのですが、できるものなのでしょうか？<br><br>&gt; <a href=https://sourceforge.net/p/sakura-editor/patchunicode/762/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>762/<wbr></nobr></a><br>ちょっと動かしてみましたが、標準出力には何も出ませんでした。<br>コンソールはコマンドを叩いてすぐ、プログラムの終了を待たずに、次のコマンド入力待ちになりました。（プログラムが動作開始するよりも前にプロンプトはそのプログラムを切り離し、次のプログラムを受け入れる準備まで整えている状態）</div></section>
     <ul><li><section><h1 id=2094>
     <span class="no">[2094]</span>
-    <a class="title" href="#2094">Re3:grep実行結果を標準出力する機能</a>
+    <a class="thread-title" href="#2094">Re3:grep実行結果を標準出力する機能</a>
     <span class="author">もか</span>
     <time datetime="2014-01-27T00:33:01">2014年01月27日 00:33</time></h1>
     <div class="body">CMDの画面には何も出ませんが、リダイレクトするとファイルに出力されますよ。<br>&gt;sakura -GREPMODE -GOPT=O (中略) | TYPE CON<br>だとだめですが、<br>&gt;sakura -GREPMODE -GOPT=O (中略) | catのようなもの<br>だと画面に表示されました。<br>あと、サクラエディタの外部コマンド実行で実行すると結果を取得できます。<br><br>XPのときには使えたと思います。確認したのはWin7です。<br></div></section>
     <ul><li><section><h1 id=2095>
     <span class="no">[2095]</span>
-    <a class="title" href="#2095">Re4:grep実行結果を標準出力する機能</a>
+    <a class="thread-title" href="#2095">Re4:grep実行結果を標準出力する機能</a>
     <span class="author">LR4</span>
     <time datetime="2014-01-27T00:54:09">2014年01月27日 00:54</time></h1>
     <div class="body">▼ もかさん<br>&gt; &gt;sakura -GREPMODE -GOPT=O (中略) | catのようなもの<br>&gt; だと画面に表示されました。<br><br>をぉ、なんと、| more で表示できました。&gt; grep.txt でファイル出力も。<br>普通には何も表示されないので、できないとばかり思ってました。<br>目から鱗です。<br>実装されるとしたら、ヘルプに説明が必要ですね。</div></section>
     <ul><li><section><h1 id=2096>
     <span class="no">[2096]</span>
-    <a class="title" href="#2096">Re5:grep実行結果を標準出力する機能</a>
+    <a class="thread-title" href="#2096">Re5:grep実行結果を標準出力する機能</a>
     <span class="author">sajim</span>
     <time datetime="2014-01-28T13:20:53">2014年01月28日 13:20</time></h1>
     <div class="body">&gt;LR4さん<br>&gt;もかさん<br><br>ご検証いただきありがとうございます。<br>標準出力はうまくできているようでいろいろ問題があったようですね。<br><br>結果をlogフォルダに格納する、そもそもGUI起動にしないとかいかがでしょうか？<br>後者は既存ロジックにかなり手が入ることになってしまいますが・・・。<br><br>引き続きご検討お願いいたします。<br><br></div></section>
     <ul><li><section><h1 id=2097>
     <span class="no">[2097]</span>
-    <a class="title" href="#2097">Re6:grep実行結果を標準出力する機能</a>
+    <a class="thread-title" href="#2097">Re6:grep実行結果を標準出力する機能</a>
     <span class="author">もか</span>
     <time datetime="2014-01-28T22:27:37">2014年01月28日 22:27</time></h1>
     <div class="body">&gt;GUI起動にしない<br>する・しないではなくexeファイルのヘッダ情報に「CUI/GUIフラグ」があって、<br>それがGUIになっているとこうなります。<br>CUI(/SUBSYSTEM:CONSOLE)にすると普通の起動のときにコマンドウィンドウが表示されるようになるので、<br>変更するわけにもいきません。<br><br>v3に更新しました。<br>・出力するエンコードをファイルのエンコードに変更<br></div></section>

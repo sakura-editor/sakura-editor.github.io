@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>掲示板システムを変えよう</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Webトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>掲示板システムを変えよう | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Webトップへ</a>
+        <li><div class="list-title">
     <span class="no">136</span>
-    <a class="title" href="136.html#136">掲示板システムを変えよう</a></div>
+    <a class="thread-title" href="136.html#136">掲示板システムを変えよう</a></div>
     <ul><li><div class="list-title">
     <span class="no">137</span>
-    <a class="title" href="136.html#137">Re:掲示板システムを変えよう</a></div>
+    <a class="thread-title" href="136.html#137">Re:掲示板システムを変えよう</a></div>
     </li><li><div class="list-title">
     <span class="no">138</span>
-    <a class="title" href="136.html#138">Re: 掲示板システムを変えよう</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=136>
+    <a class="thread-title" href="136.html#138">Re: 掲示板システムを変えよう</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=136>
     <span class="no">[136]</span>
-    <a class="title" href="#136">掲示板システムを変えよう</a>
+    <a class="thread-title" href="#136">掲示板システムを変えよう</a>
     <span class="author">wmlhq</span>
     <time datetime="2003-10-14T14:27:04">2003年10月14日 14:27</time></h1>
     <div class="body">現行のBBSは時代遅れです。リニューアルしませんか。以下のような機能の追加を要望いたします。<br><br>・過去の記事を番号で参照する機能。<br>テキストに [136], &gt;&gt;136, [3::136] などが含まれていたら、番号136の記事を参照するハイパーリンクを付加するように。検索すれば過去の記事を見つけられるけど、余計な手間はなくそう。<br><br>・原因の究明、問題が解決したかどうか、ソースを更新したかどうか、などの情報を各スレッドに含める機能。<br>開発掲示板の誰かさんが管理に困っているので、提案。<br><br>・発言者特定のためのパスワードとIDで、本人かどうか確認できる機能。<br>これは荒らし対策ですね、ふふふ。<br><br>・掲示板の内容に応じて、BugsInfo.txtとrequest.txtを自動的に更新する機能。<br>これは君たちのプロとしての心意気を見せつける練習問題として。<br><br>・関連スレッドを閲覧できる機能や内容を要約する機能。</div></section>
     <ul><li><section><h1 id=137>
     <span class="no">[137]</span>
-    <a class="title" href="#137">Re:掲示板システムを変えよう</a>
+    <a class="thread-title" href="#137">Re:掲示板システムを変えよう</a>
     <span class="author">mage</span>
     <time datetime="2003-10-16T23:42:55">2003年10月16日 23:42</time></h1>
     <div class="body">▼ wmlhqさん<br>&gt; ・原因の究明、問題が解決したかどうか、ソースを更新したかどうか、などの情報を各スレッドに含める機能。<br>&gt; 開発掲示板の誰かさんが管理に困っているので、提案。<br><br>ついでに、「対応します」と言っておいて、放りっぱなしにならないように、<br>パッチ提供か、できません。宣言するまで、フォローする機能も。ですな。<br></div></section>
     </li><li><section><h1 id=138>
     <span class="no">[138]</span>
-    <a class="title" href="#138">Re: 掲示板システムを変えよう</a>
+    <a class="thread-title" href="#138">Re: 掲示板システムを変えよう</a>
     <span class="author">げんた</span>
     <time datetime="2003-10-18T16:27:23">2003年10月18日 16:27</time></h1>
     <div class="body">&gt;・問題が解決したかどうか、ソースを更新したかどうか、などの情報を各スレッドに含める機能。<br>&gt;開発掲示板の誰かさんが管理に困っているので、提案。<br>問題管理に「影舞」http://www.daifukuya.com/kagemai/ を使ってみたいとは思うのですが，Rubyで作られているとCGIで動かせる場所が非常に限られてしまいます．<br><br>sourceforge.jpでは使えますがsourceforge.netでは使えない．<br>そもそもsourceforge.jp取るくらいならそこの問題管理使えばいいじゃんって話になるわけで自分で設置する意味は無くなりますけど．本当ならsourceforge.netの管理システムが日本語をまともに扱えれば是非使いたい....10月にリニューアルするとあったので期待しないで待っているところです．<br></div></section>

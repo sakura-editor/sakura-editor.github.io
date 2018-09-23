@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>アウトライン解析のリロード</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>アウトライン解析のリロード | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">1193</span>
-    <a class="title" href="1193.html#1193">アウトライン解析のリロード</a></div>
+    <a class="thread-title" href="1193.html#1193">アウトライン解析のリロード</a></div>
     <ul><li><div class="list-title">
     <span class="no">1194</span>
-    <a class="title" href="1193.html#1194">Re:アウトライン解析のリロード</a></div>
+    <a class="thread-title" href="1193.html#1194">Re:アウトライン解析のリロード</a></div>
     <ul><li><div class="list-title">
     <span class="no">1195</span>
-    <a class="title" href="1193.html#1195">Re2:アウトライン解析のリロード</a></div>
+    <a class="thread-title" href="1193.html#1195">Re2:アウトライン解析のリロード</a></div>
     <ul><li><div class="list-title">
     <span class="no">1196</span>
-    <a class="title" href="1193.html#1196">Re3:アウトライン解析のリロード</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=1193>
+    <a class="thread-title" href="1193.html#1196">Re3:アウトライン解析のリロード</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1193>
     <span class="no">[1193]</span>
-    <a class="title" href="#1193">アウトライン解析のリロード</a>
+    <a class="thread-title" href="#1193">アウトライン解析のリロード</a>
     <span class="author">T女の竹田</span>
     <time datetime="2002-01-31T12:04:38">2002年01月31日 12:04</time></h1>
     <div class="body">こんにちは。いつもサクラエディタを使わせて<br>いただいております。<br>私はPerl使いで、スクリプトの編集の際に<br>アウトライン解析を使うことが多いのですが、<br>編集するうちに関数の行数が大きく変わり、<br>アウトライン解析をいったん閉じてから開いて<br>リロードするという操作をよく行います。<br>もしよろしければ、この機能の実装を検討して<br>いただけないでしょうか？<br></div></section>
     <ul><li><section><h1 id=1194>
     <span class="no">[1194]</span>
-    <a class="title" href="#1194">Re:アウトライン解析のリロード</a>
+    <a class="thread-title" href="#1194">Re:アウトライン解析のリロード</a>
     <span class="author">hor</span>
     <time datetime="2002-01-31T22:20:08">2002年01月31日 22:20</time></h1>
     <div class="body">▼ T女の竹田さん<br>&gt; こんにちは。いつもサクラエディタを使わせて<br>&gt; いただいております。<br>&gt; 私はPerl使いで、スクリプトの編集の際に<br>&gt; アウトライン解析を使うことが多いのですが、<br>&gt; 編集するうちに関数の行数が大きく変わり、<br>&gt; アウトライン解析をいったん閉じてから開いて<br>&gt; リロードするという操作をよく行います。<br>&gt; もしよろしければ、この機能の実装を検討して<br>&gt; いただけないでしょうか？<br><br>今はリリース版の調整中のようなので、<br>たぶん次の次のリリース版くらいには取り入れてもらえるかな、と思います。<br><br>↓試しに手元のソースで実装した内容はこんな感じなのですが…いかがでしょう？<br><br>「アウトライン解析」または「ブックマークの一覧」ダイアログがアクティブになっている状態で、<br>・「ウィンドウの再描画」に割当てたキーを押すとアウトライン解析結果(orブクマーク一覧)の更新<br>・「アウトライン解析」　に割当てたキーを押すとアウトライン解析結果の更新(orブクマーク一覧から切替え)<br>・「ブクマークの一覧」　に割当てたキーを押すとブクマーク一覧の更新(orアウトライン解析結果から切替え)<br>・「ブクマークの設定」　に割当てたキーを押すとジャンプ＆行マークの切替わる<br><br>「リロード」ボタンみたいなのもあったほうが良いでしょうか？</div></section>
     <ul><li><section><h1 id=1195>
     <span class="no">[1195]</span>
-    <a class="title" href="#1195">Re2:アウトライン解析のリロード</a>
+    <a class="thread-title" href="#1195">Re2:アウトライン解析のリロード</a>
     <span class="author">T女の竹田</span>
     <time datetime="2002-02-01T14:30:28">2002年02月01日 14:30</time></h1>
     <div class="body">▼ horさん<br>&gt; 今はリリース版の調整中のようなので、<br>&gt; たぶん次の次のリリース版くらいには取り入れてもらえるかな、と思います。<br>あ、そうだったんですね。気長に待ちます^^<br><br>&gt; ↓試しに手元のソースで実装した内容はこんな感じなのですが…いかがでしょう？<br>！もう実装されたんですか？ すごいですね。<br><br>&gt; 「アウトライン解析」または「ブックマークの一覧」ダイアログがアクティブになっている状態で、<br>&gt; ・「ウィンドウの再描画」に割当てたキーを押すとアウトライン解析結果(orブクマーク一覧)の更新<br>&gt; ・「アウトライン解析」　に割当てたキーを押すとアウトライン解析結果の更新(orブクマーク一覧から切替え)<br>&gt; ・「ブクマークの一覧」　に割当てたキーを押すとブクマーク一覧の更新(orアウトライン解析結果から切替え)<br>&gt; ・「ブクマークの設定」　に割当てたキーを押すとジャンプ＆行マークの切替わる<br>ふむふむ。使いやすそうですね。それでいいと思います。<br>ただ、私の好みでいえば、<br>「ダイアログがアクティブになっている状態で<br>割り当てキーを押すと更新」<br>は、「ダイアログがすでに出ている時」<br>割り当てキーを押すと更新、のほうがいいです。<br>割り当てキーでアクティブにするのは、たいてい<br>ジャンプするときなので。<br><br>&gt; 「リロード」ボタンみたいなのもあったほうが良いでしょうか？<br>ボタンですか、キーボードの場合しか考えていませんでしたが、<br>あればマウスを手に持っているときに使うと思います。<br>（なくても大丈夫ですが）<br><br>使うのが楽しみです^^ これからもがんばってください！<br></div></section>
     <ul><li><section><h1 id=1196>
     <span class="no">[1196]</span>
-    <a class="title" href="#1196">Re3:アウトライン解析のリロード</a>
+    <a class="thread-title" href="#1196">Re3:アウトライン解析のリロード</a>
     <span class="author">hor</span>
     <time datetime="2002-02-01T17:01:32">2002年02月01日 17:01</time></h1>
     <div class="body">▼ T女の竹田さん<br>&gt; 「ダイアログがアクティブになっている状態で<br>&gt; 割り当てキーを押すと更新」<br>&gt; は、「ダイアログがすでに出ている時」<br>&gt; 割り当てキーを押すと更新、のほうがいいです。<br>&gt; 割り当てキーでアクティブにするのは、たいてい<br>&gt; ジャンプするときなので。<br><br>更新＝ダイアログ内のリスト(orツリー)を再作成してカーソル位置の近所を選択した状態にする<br>ってことなので、ダイアログがアクティブじゃないときにキー操作でいきなり更新してしまうと、<br> ①.ダイアログ内のリスト(orツリー)で適当な位置を選択してジャンプ(ダイアログだしっぱなし)<br> ②.文書内でカーソル移動<br> ③.ダイアログをアクティブにして①で選択した位置でもっかいジャンプ<br>みたいなことが出来なくなってしまいます。<br><br>ダイアログが出てるけどアクティブじゃないときに<br>すぐに最新のアウトライン解析(ブックマーク一覧)を表示したいときは<br>それぞれに割当てられたキーを２回押すってことでいいかな…と思っています。<br><br>ところで、ダイアログを出しっぱなしでジャンプしたときって、<br>文書の方にキャレットを移動した方が使いやすいような気がするのですが…みなさんはどう思います？</div></section>

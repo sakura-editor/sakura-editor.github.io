@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>「最近つかったファイル」のバグ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>「最近つかったファイル」のバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">1859</span>
-    <a class="title" href="1859.html#1859">「最近つかったファイル」のバグ</a></div>
+    <a class="thread-title" href="1859.html#1859">「最近つかったファイル」のバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">1861</span>
-    <a class="title" href="1859.html#1861">Re: 「最近つかったファイル」のバグ</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=1859>
+    <a class="thread-title" href="1859.html#1861">Re: 「最近つかったファイル」のバグ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1859>
     <span class="no">[1859]</span>
-    <a class="title" href="#1859">「最近つかったファイル」のバグ</a>
+    <a class="thread-title" href="#1859">「最近つかったファイル」のバグ</a>
     <span class="author">ＫＤＭ</span>
     <time datetime="2002-05-15T10:56:30">2002年05月15日 10:56</time></h1>
     <div class="body">ファイルメニューを開くとアプリが落ちる現象が発生しまして<br>iniファイルをチェックしましたら<br>MRU[05].nViewTopLine=75<br>MRU[05].nViewLeftCol=0<br>MRU[05].nX=0<br>MRU[05].nY=0<br>MRU[05].nCharCode=0<br>MRU[05].szPath=C:\aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>aaaaaaaaaaaaaaaaaaa<br>MRU[05].szMark=<br>のような記述がありました．<br>そこでszPathを適当にメモ帳で切り詰めると，ファイルメニューで<br>落ちる現象が発生しなくなりました．<br>// szPathは２５８文字のファイル名でした．<br><br>一応検索でざくっとログを調べましたが既出でしたらすいません．<br>削除キー6666</div></section>
     <ul><li><section><h1 id=1861>
     <span class="no">[1861]</span>
-    <a class="title" href="#1861">Re: 「最近つかったファイル」のバグ</a>
+    <a class="thread-title" href="#1861">Re: 「最近つかったファイル」のバグ</a>
     <span class="author">げんた</span>
     <time datetime="2002-05-15T18:38:01">2002年05月15日 18:38</time></h1>
     <div class="body">&gt;// szPathは２５８文字のファイル名でした．<br>iniからの読み込みはサイズチェックが非常に甘いところが多々あり、長さの最大値をチェックする機構は入っているのですがほとんどの箇所で使わない設定になっています。<br><br>見直そうと思ってはいたのですが、放置されています。m(_ _)m<br></div></section>

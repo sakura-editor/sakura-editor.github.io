@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>正規表現キーワードと日本語空白の色分けについて</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>正規表現キーワードと日本語空白の色分けについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">3764</span>
-    <a class="title" href="3764.html#3764">正規表現キーワードと日本語空白の色分けについて</a></div>
+    <a class="thread-title" href="3764.html#3764">正規表現キーワードと日本語空白の色分けについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">3765</span>
-    <a class="title" href="3764.html#3765">Re: 正規表現キーワードと日本語空白の色分けについて</a></div>
+    <a class="thread-title" href="3764.html#3765">Re: 正規表現キーワードと日本語空白の色分けについて</a></div>
     <ul><li><div class="list-title">
     <span class="no">3778</span>
-    <a class="title" href="3764.html#3778">Re2: 正規表現キーワードと日本語空白の色分けについて</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3764>
+    <a class="thread-title" href="3764.html#3778">Re2: 正規表現キーワードと日本語空白の色分けについて</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3764>
     <span class="no">[3764]</span>
-    <a class="title" href="#3764">正規表現キーワードと日本語空白の色分けについて</a>
+    <a class="thread-title" href="#3764">正規表現キーワードと日本語空白の色分けについて</a>
     <span class="author">トレイ</span>
     <time datetime="2004-04-05T21:28:38">2004年04月05日 21:28</time></h1>
     <div class="body">現在わたしは、正規表現キーワードでコメントの色分けを<br>しています。<br>で尚且つ、エディタのメニュー「設定」-「タイプ別設定」<br>の「カラータブ」-「色指定」で TAB記号、日本語空白に<br>色分け表示のチェックを付けてます。<br><br>ですが、正規表現の色分けしているコメント中で、<br>TAB記号はちゃんと色分け表示されるのですが、日本語空白<br>が色分け表示されません。<br>これっていわゆる仕様ってやつなんですかね(T_T)？<br>私的には、TAB記号と同じく日本語空白を目視できるよう<br>にしたい感じです。<br>（バージョン1.4.3.6で確認）<br><br>お粗末ながら、ソースを落として追いかけてみたところ、<br>どうも、CEditView_New.cpp 1185、1186行目が色分けを<br>制御する部分のようですが、1185行目がコメントになって<br>代わりに1186行目が @@@ 2002.01.04 に 追加されている<br>目的がわからず ストップしてしまいました。<br>識者の方ご協力願えますか。<br></div></section>
     <ul><li><section><h1 id=3765>
     <span class="no">[3765]</span>
-    <a class="title" href="#3765">Re: 正規表現キーワードと日本語空白の色分けについて</a>
+    <a class="thread-title" href="#3765">Re: 正規表現キーワードと日本語空白の色分けについて</a>
     <span class="author">げんた</span>
     <time datetime="2004-04-05T23:23:48">2004年04月05日 23:23</time></h1>
     <div class="body">&gt;1185行目がコメントになって<br>&gt;代わりに1186行目が @@@ 2002.01.04 に 追加されている<br>上の方を見るとわかりますが，たぶん最初に正規表現キーワードとして1000を設定したが，その後複数使えるように変更するために1000～1099までをキーワード領域にしたのだと思います．ただ正規表現キーワードが1000だけか1000～1099かはどうでもいいことです．<br><br>問題はどうして正規表現キーワードでは空白が色分け対象外になっているかですが，半角空白やTABの表示を有効にするとその部分を何色で表示すべきか困るからというのがその理由ではないかと思います．<br><br>設定された色で表示するとキーワードの背景色を変更した場合に空白だけ反転されずに浮いてしまう．<br>キーワード色で表示すると空白と文字が同じ色で表示されてわかりにくい．<br><br>検索文字列の反転表示ではすべて有効(上の後者)なので，スペースを含む文字列を検索してみればどのように見えるかだいたいわかると思います．<br><br>TABが表示される件は単に入れ忘れただけか，文字と同じ色で表示されてもたぶん容易に判別できるとの判断でしょうか．<br></div></section>
     <ul><li><section><h1 id=3778>
     <span class="no">[3778]</span>
-    <a class="title" href="#3778">Re2: 正規表現キーワードと日本語空白の色分けについて</a>
+    <a class="thread-title" href="#3778">Re2: 正規表現キーワードと日本語空白の色分けについて</a>
     <span class="author">トレイ</span>
     <time datetime="2004-04-07T12:00:03">2004年04月07日 12:00</time></h1>
     <div class="body">げんたさんレスありがとうございます。m(_ _)m<br><br>&gt; 問題はどうして正規表現キーワードでは空白が色分け対象外になっているかですが，半角空白やTABの表示を有効にするとその部分を何色で表示すべきか困るからというのがその理由ではないかと思います．<br>&gt; <br>&gt; 設定された色で表示するとキーワードの背景色を変更した場合に空白だけ反転されずに浮いてしまう．<br>&gt; キーワード色で表示すると空白と文字が同じ色で表示されてわかりにくい．<br>&gt; <br>&gt; 検索文字列の反転表示ではすべて有効(上の後者)なので，スペースを含む文字列を検索してみればどのように見えるかだいたいわかると思います．<br><br>なるほど。<br>現在に至った経緯はそういう感じなんですかね。<br><br>でも、正規表現キーワードでコメントの色分けを<br>しないで、普通にコメントスタイルでコメントの<br>色分けをしてる場合と色分けの動きが違うと思う<br>のですが・・・(T_T)<br><br>私的には、正規表現キーワードの色分けよりも<br>TAB、全角空白といった曲者の色分け表示を特別<br>扱いして欲しいです。<br>この仕様って今更ながら変わりえないでしょうか？<br>（すみません。B型自己中でm(_ _)m）<br><br>&gt; TABが表示される件は単に入れ忘れただけか，文字と同じ色で表示されてもたぶん容易に判別できるとの判断でしょうか．<br><br>むむー、もしTABが入れ忘れというのであれば、<br>全角空白もTABと同様に入れ忘れて欲しいーです。(T_T)<br>・・・半角空白はどうでも良いけど。<br></div></section>

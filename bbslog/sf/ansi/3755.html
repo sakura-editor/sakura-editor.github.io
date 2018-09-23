@@ -1,36 +1,62 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>英語版</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>英語版 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3755</span>
-    <a class="title" href="3755.html#3755">英語版</a></div>
+    <a class="thread-title" href="3755.html#3755">英語版</a></div>
     <ul><li><div class="list-title">
     <span class="no">3757</span>
-    <a class="title" href="3755.html#3757">注意点 (Re: 英語版)</a></div>
+    <a class="thread-title" href="3755.html#3757">注意点 (Re: 英語版)</a></div>
     </li><li><div class="list-title">
     <span class="no">3758</span>
-    <a class="title" href="3755.html#3758">Re: 英語版</a></div>
+    <a class="thread-title" href="3755.html#3758">Re: 英語版</a></div>
     </li><li><div class="list-title">
     <span class="no">3759</span>
-    <a class="title" href="3755.html#3759">RE: 英語版</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3755>
+    <a class="thread-title" href="3755.html#3759">RE: 英語版</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3755>
     <span class="no">[3755]</span>
-    <a class="title" href="#3755">英語版</a>
+    <a class="thread-title" href="#3755">英語版</a>
     <span class="author">みく</span>
     <time datetime="2004-10-03T12:48:38">2004年10月03日 12:48</time></h1>
     <div class="body"><br>&gt;&gt;dev:3082<br><br>余計なことなんて考えなくて、<br><br>・ソースから日本語メッセージを抜き出す。(msgget.cpp)<br>・サクラエディタで sort &amp; uniq する。(約1500個)<br>・英語メッセージ対応リストを作る。(jp2en.txt)<br>・英語（他言語）に変換する。(jp2en.cpp)<br><br>で、終わりのような気がしますが。<br>英語版は jp2en.txt の管理のみで、<br>変更が入って未変換の部分がないかチェックするには<br>変換後のソースに対してもういちど日本語メッセージを<br>抜き出せばよい。<br><br>本来同じ方がよいのに、異なる言い回しのメッセージや<br>無駄に日本語になっているメッセージは<br>元のソースを直してしまえばよい。<br><br>例：用紙選択の”、”とか<br>メニュー名と設定画面でのメニュー名とか<br><br>eGroups:Junk/jp2en.ZIP<br></div></section>
     <ul><li><section><h1 id=3757>
     <span class="no">[3757]</span>
-    <a class="title" href="#3757">注意点 (Re: 英語版)</a>
+    <a class="thread-title" href="#3757">注意点 (Re: 英語版)</a>
     <span class="author">げんた</span>
     <time datetime="2004-10-03T16:01:46">2004年10月03日 16:01</time></h1>
     <div class="body">早速試してます．<br>文字列とその長さを対にして使っている部分があると思いますが，文字列の長さが変わるとバッファが不足する危険性があるのでそういったところを全てsizeofで置き換えないといけませんね．<br></div></section>
     </li><li><section><h1 id=3758>
     <span class="no">[3758]</span>
-    <a class="title" href="#3758">Re: 英語版</a>
+    <a class="thread-title" href="#3758">Re: 英語版</a>
     <span class="author">もか</span>
     <time datetime="2004-10-03T17:17:07">2004年10月03日 17:17</time></h1>
     <div class="body">これなら、比較的お手軽そうですね。<br>過去にメニューなどを英語にしたものを作りかけたことはあるのですが、ソース中の文字列を識別子に置き換えてしまったため、元の日本語がさっぱり分からず、苦労しました。<br><br>wchar版の別系で失敗作ですが、参考にアップロードしました。<br>http://www.geocities.co.jp/SiliconValley-Oakland/6358/unicode/<br>の一番下<br>sakura_2003-09-20wc_en.zip   バイナリ(WinNT系/i386専用)<br>sakura_2003-09-20wchar09.tar.gz   ソース<br></div></section>
     </li><li><section><h1 id=3759>
     <span class="no">[3759]</span>
-    <a class="title" href="#3759">RE: 英語版</a>
+    <a class="thread-title" href="#3759">RE: 英語版</a>
     <span class="author">みく</span>
     <time datetime="2004-10-03T21:06:40">2004年10月03日 21:06</time></h1>
     <div class="body"><br>適当に作ったからバグがいっぱいあるようだ。<br><br>jp2en.cpp:20<br>for( int i = strlen( s ) - 1; i &gt; 0; i-- ){<br>                                      ^^<br>jp2en.cpp:177<br>modify( name, buff );<br>        ^^^^<br></div></section>

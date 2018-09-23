@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>近況報告</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>近況報告 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3804</span>
-    <a class="title" href="3804.html#3804">近況報告</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=3804>
+    <a class="thread-title" href="3804.html#3804">近況報告</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3804>
     <span class="no">[3804]</span>
-    <a class="title" href="#3804">近況報告</a>
+    <a class="thread-title" href="#3804">近況報告</a>
     <span class="author">げんた</span>
     <time datetime="2004-12-11T14:24:17">2004年12月11日 14:24</time></h1>
     <div class="body">migemoとemacsインデントを入れて次のバージョンと考えていたのですが，どちらも既存のキー(機能)の動作を無理矢理置き換えるようになっているのが気になっていました．このまま行くとコマンド処理がフラグ判定のif文だらけになってしまいそう．<br><br>[目的]<br>今後キーの動作を状態に応じて置き換えられるようにしたい．<br><br>[案]<br>マクロ記録の前にTranslateCommand，マクロ記録の後にExecuteCommandを呼ぶようにする．<br>・TranslateCommand: 状況に応じて別の機能コードに変換(F_CHAR→別の機能など)<br>・マクロ記録判定＆記録<br>・ExecuteCommand内で新機能を実装<br><br>[困ったこと]<br>関連機能を1まとまりにしたいが，コマンド判定，コマンド実行，コマンド名定義，マクロ実装，マクロ名定義，アイコンなど影響が多岐にわたる．それらを動的に登録・解除する実装にするとコマンド実行の負荷が上がりそうなのでコンパイル時に何とか展開してしまう方法はないだろうか．(考え過ぎか？)<br><br><br>--<br>とりあえず既に混ざっているGrepModeを分離を試みようとしてその後いろいろ忙しくなり2ヶ月経過です．<br><br>その他<br>・emacsインデントのソフトタブ対応<br>・C++アウトライン解析でテンプレートをクラスに含む関数名(テンプレートの特殊化)で関数名が正しく出ない．<br></div></section>

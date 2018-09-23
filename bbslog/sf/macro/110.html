@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>vbScriptで正規表現検索</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>vbScriptで正規表現検索 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">110</span>
-    <a class="title" href="110.html#110">vbScriptで正規表現検索</a></div>
+    <a class="thread-title" href="110.html#110">vbScriptで正規表現検索</a></div>
     <ul><li><div class="list-title">
     <span class="no">111</span>
-    <a class="title" href="110.html#111">Re:vbScriptで正規表現検索</a></div>
+    <a class="thread-title" href="110.html#111">Re:vbScriptで正規表現検索</a></div>
     <ul><li><div class="list-title">
     <span class="no">112</span>
-    <a class="title" href="110.html#112">Re2:vbScriptで正規表現検索</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=110>
+    <a class="thread-title" href="110.html#112">Re2:vbScriptで正規表現検索</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=110>
     <span class="no">[110]</span>
-    <a class="title" href="#110">vbScriptで正規表現検索</a>
+    <a class="thread-title" href="#110">vbScriptで正規表現検索</a>
     <span class="author">とっち</span>
     <time datetime="2004-11-06T14:09:48">2004年11月06日 14:09</time></h1>
     <div class="body">vbScriptでSearchPrevとSearchNextメソッドを正規表現<br>(Bit2)をオンにして使用しても、正規表現で検索して<br>くれないみたいです。<br>同じスクリプトをJScriptにしてみましたが、こちらでは<br>動作しました。vbScriptでは使えないということでしょう<br>か？既知の問題でしたらすいません。</div></section>
     <ul><li><section><h1 id=111>
     <span class="no">[111]</span>
-    <a class="title" href="#111">Re:vbScriptで正規表現検索</a>
+    <a class="thread-title" href="#111">Re:vbScriptで正規表現検索</a>
     <span class="author">FILE</span>
     <time datetime="2004-11-10T22:58:17">2004年11月10日 22:58</time></h1>
     <div class="body">　こんばんは。<br>　お試しになったスクリプトの内容が分からないので、<br>間違っている可能性がありますが、こちらの環境(WinXP:1.4.9.0)では、<br>以下のコードで、SearchNextが実行されました。<br><br>'例：行末検索<br>Call Editor.SearchNext(CStr("$"), CLng(&amp;H04))<br><br>以上、ご確認よろしくお願いいたします。 <br><br><br>追記：<br><br>　VBScriptからサクラエディタの関数を呼ぶ場合、<br>現時点では、引数に細工をする必要がある模様です。<br><br>・数値の場合は、CLng()で囲む。<br>・文字列の場合は、CStr()で囲む。(こちらは不要かもしれません)<br><br>　この件に関しては、<br>&gt;&gt;dev:3454 「WSHの引数の型」<br>の記事が関連していると思われます。<br>　(現在、VT_I4とVT_BSTRにしか対応していない？)<br></div></section>
     <ul><li><section><h1 id=112>
     <span class="no">[112]</span>
-    <a class="title" href="#112">Re2:vbScriptで正規表現検索</a>
+    <a class="thread-title" href="#112">Re2:vbScriptで正規表現検索</a>
     <span class="author">とっち</span>
     <time datetime="2004-11-12T10:57:40">2004年11月12日 10:57</time></h1>
     <div class="body">FILEさんありがとうございます。<br>返信が遅れて申し訳ありません。<br>CLngで解決しました。<br>変数の型とは気付きませんでした。</div></section>

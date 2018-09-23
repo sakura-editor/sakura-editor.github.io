@@ -1,27 +1,53 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>diff0705.txtの変更点</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>diff0705.txtの変更点 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">2249</span>
-    <a class="title" href="2249.html#2249">diff0705.txtの変更点</a></div>
+    <a class="thread-title" href="2249.html#2249">diff0705.txtの変更点</a></div>
     <ul><li><div class="list-title">
     <span class="no">2252</span>
-    <a class="title" href="2249.html#2252">Re: diff0705.txtの変更点</a></div>
+    <a class="thread-title" href="2249.html#2252">Re: diff0705.txtの変更点</a></div>
     <ul><li><div class="list-title">
     <span class="no">2253</span>
-    <a class="title" href="2249.html#2253">Re2: diff0705.txtの変更点</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=2249>
+    <a class="thread-title" href="2249.html#2253">Re2: diff0705.txtの変更点</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2249>
     <span class="no">[2249]</span>
-    <a class="title" href="#2249">diff0705.txtの変更点</a>
+    <a class="thread-title" href="#2249">diff0705.txtの変更点</a>
     <span class="author">Mr.Nak</span>
     <time datetime="2002-07-05T22:00:29">2002年07月05日 22:00</time></h1>
     <div class="body">初めまして、Mr.Nakです。<br>diff0705.txtを共有掲示板にUploadしました。<br>主にPerlの編集に便利な機能を付けました。<br><br>変更点(ssrc_2002-07-04から)：<br>・正規表現キーワード１を補完キーワードに追加<br>・↑を実現するためCLayoutMgrにm_cRegexKeywordを追加し、CEditViewのm_cRegexKeywordを削除<br>　→CEditViewのm_cRegexKeywordはCEditDoc-&gt;m_cLayoutMgr.m_cRegexKeywordで実現可能<br>・１文字の記号,１文字の記号+英数で１単語に<br>　→オプションにした方がいいかもしれません。<br>・１バイト文字の前もしくは後にキャレット挿入<br></div></section>
     <ul><li><section><h1 id=2252>
     <span class="no">[2252]</span>
-    <a class="title" href="#2252">Re: diff0705.txtの変更点</a>
+    <a class="thread-title" href="#2252">Re: diff0705.txtの変更点</a>
     <span class="author">げんた</span>
     <time datetime="2002-07-12T19:02:22">2002年07月12日 19:02</time></h1>
     <div class="body">新機能の意味がよくわからなかったのですが，差分ソースを見てやっと理解しました．<br><br>&gt;・正規表現キーワード１を補完キーワードに追加<br>これは，文中で正規表現1に相当する文字列があったらそれが自動的に候補に加えられるということですよね．↓と併せて変数名の自動補完を目的にしているのでしょうか．<br>&gt;・１文字の記号,１文字の記号+英数で１単語に<br>記号に括弧が含まれるのであれば，これが標準で有効になってしまうとCなどで困りそうです．強調表示されなくなる例としては<br>(int) のint<br>=new のnewとか<br>sizeof(a)/sizeof(a[0])の2つ目のsizeofとか．<br><br>一般的にはアルファベットと記号の間に空白を入れるから，影響を受けるのはキャストくらいですかね．でも，他人が書いたコードを見るときに使うことを考えるとそうも言っていられないか．<br><br>&gt;・１バイト文字の前もしくは後にキャレット挿入<br>これは以前2ch等で指摘されていたマウスクリック時の文字選択開始位置の件ですか．<br><br>また，行をスキャンするたびに補完候補の操作が発生するのですが，数が増えるとパフォーマンスが落ちないかちょっと心配です．<br><br>--<br>パッチを出していただくときのお願いです．<br>1. diffはunified diffでお願いします．(-uオプション)<br>普通のdiffだと行番号と該当箇所しか入っていないので，パッチを見ただけではその正当性が確認できない上，元のファイルが1行でもずれると使い物にならなくなってしまいます．<br><br>2. 上でも書きましたが，記号と識別子の間にはスペースを入れるようにしてください．<br>このエディタは+と-で挟まれた箇所があるファイルをUTF-7と誤認識することがありますし(笑)．<br><br>無理に作り直していただく必要はありませんが，私も面倒くさいのは後回しにする傾向にありますので...(^^;)<br></div></section>
     <ul><li><section><h1 id=2253>
     <span class="no">[2253]</span>
-    <a class="title" href="#2253">Re2: diff0705.txtの変更点</a>
+    <a class="thread-title" href="#2253">Re2: diff0705.txtの変更点</a>
     <span class="author">Mr.Nak</span>
     <time datetime="2002-07-15T14:34:08">2002年07月15日 14:34</time></h1>
     <div class="body">こんにちわ。Mr.Nakです。<br>&gt; 新機能の意味がよくわからなかったのですが，差分ソースを見てやっと理解しました．<br>すみません(^^;;文才がないもので・・・<br>&gt; &gt;・正規表現キーワード１を補完キーワードに追加<br>&gt; これは，文中で正規表現1に相当する文字列があったらそれが自動的に候補に加えられるということですよね．↓と併せて変数名の自動補完を目的にしているのでしょうか．<br>はい。そのつもりでつけました。<br>&gt; &gt;・１文字の記号,１文字の記号+英数で１単語に<br>&gt; 記号に括弧が含まれるのであれば，これが標準で有効になってしまうとCなどで困りそうです。<br>そうですね。この機能ははずして、他の方法で変数名の自動補完を実現した方が良さそうです。<br>&gt; &gt;・１バイト文字の前もしくは後にキャレット挿入<br>&gt; これは以前2ch等で指摘されていたマウスクリック時の文字選択開始位置の件ですか．<br>2chはみてなかったんですが(汗)今見た所ふぁんくらぶPert2の360-363のことを修正したと思います。<br>&gt; また，行をスキャンするたびに補完候補の操作が発生するのですが，数が増えるとパフォーマンスが落ちないかちょっと心配です．<br>パフォーマンスは落ちると思われます(^^;;<br>何かの方法で無効に出来たりとか、キーワード取得専用のクラスを用意した方がいいかもしれません。<br><br>これからもちょくちょくいじってみようとおもいます。<br>とはいえまだC++初めて日が浅いのでいつになるやら・・・</div></section>

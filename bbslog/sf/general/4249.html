@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>1行に極端に文字数の多いファイルを開くと落ちます</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>1行に極端に文字数の多いファイルを開くと落ちます | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">4249</span>
-    <a class="title" href="4249.html#4249">1行に極端に文字数の多いファイルを開くと落ちます</a></div>
+    <a class="thread-title" href="4249.html#4249">1行に極端に文字数の多いファイルを開くと落ちます</a></div>
     <ul><li><div class="list-title">
     <span class="no">4251</span>
-    <a class="title" href="4249.html#4251">RE: 1行に極端に文字数の多いファイルを開くと落ちます</a></div>
+    <a class="thread-title" href="4249.html#4251">RE: 1行に極端に文字数の多いファイルを開くと落ちます</a></div>
     <ul><li><div class="list-title">
     <span class="no">4258</span>
-    <a class="title" href="4249.html#4258">ダイアログ期待します</a></div>
+    <a class="thread-title" href="4249.html#4258">ダイアログ期待します</a></div>
     <ul><li><div class="list-title">
     <span class="no">4267</span>
-    <a class="title" href="4249.html#4267">RE: ダイアログ期待します</a></div>
+    <a class="thread-title" href="4249.html#4267">RE: ダイアログ期待します</a></div>
     <ul><li><div class="list-title">
     <span class="no">4271</span>
-    <a class="title" href="4249.html#4271">Re2: ダイアログ期待します</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=4249>
+    <a class="thread-title" href="4249.html#4271">Re2: ダイアログ期待します</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4249>
     <span class="no">[4249]</span>
-    <a class="title" href="#4249">1行に極端に文字数の多いファイルを開くと落ちます</a>
+    <a class="thread-title" href="#4249">1行に極端に文字数の多いファイルを開くと落ちます</a>
     <span class="author">渡辺真</span>
     <time datetime="2005-01-31T20:35:35">2005年01月31日 20:35</time></h1>
     <div class="body">1行に518,143文字のファイルを開いたら、サクラエディタが落ちました。<br><br>ちなみに、EmEditorフリーや、xyzzyでは開けました。<br>Peggy Padでは、「65,000文字で切り捨てました」とコメントが有って開きます。<br><br>このようなケースはまれでしょうから、対応ムリなら、Peggy Pad方式をお願いします。</div></section>
     <ul><li><section><h1 id=4251>
     <span class="no">[4251]</span>
-    <a class="title" href="#4251">RE: 1行に極端に文字数の多いファイルを開くと落ちます</a>
+    <a class="thread-title" href="#4251">RE: 1行に極端に文字数の多いファイルを開くと落ちます</a>
     <span class="author">もか</span>
     <time datetime="2005-01-31T21:48:15">2005年01月31日 21:48</time></h1>
     <div class="body">タイプ別の「正規表現キーワード」を使用すると、長い行を含んできると、Bregexp.dllで強制的に落とされることがあります。<br>このとき、強制終了のダイアログなどは表示されず、いきなり消えます。<br>正規表現キーワードをoffにして回避する以外ないと思います。<br>もしかしたら、正規表現「* +」の使用をやめて、{1,40}のように文字数制限を行うと落ちにくいかもしれませんが未確認です。<br><br>#前から一部の人には知られているバグではありますが放置されています。<br><br>以下余談。<br>aを85,000桁ほど並べて、<br>a{1,32766}と検索すると先頭から 32,766 文字が選択状態になる、<br>a{1,32767}と検索すると全部選択される！<br></div></section>
     <ul><li><section><h1 id=4258>
     <span class="no">[4258]</span>
-    <a class="title" href="#4258">ダイアログ期待します</a>
+    <a class="thread-title" href="#4258">ダイアログ期待します</a>
     <span class="author">渡辺真</span>
     <time datetime="2005-02-02T23:54:53">2005年02月02日 23:54</time></h1>
     <div class="body">回答有難うございました。<br><br>状況は理解しました。<br><br>サクラ側で、<br>「32,766 を超えています。強制的に落とされることがあります。」<br>と一言、挨拶のダイアログなど表示してもらえると、心理的にも不安がなくなります。<br><br>何かの機会に、よろしくお願いいたします。<br></div></section>
     <ul><li><section><h1 id=4267>
     <span class="no">[4267]</span>
-    <a class="title" href="#4267">RE: ダイアログ期待します</a>
+    <a class="thread-title" href="#4267">RE: ダイアログ期待します</a>
     <span class="author">すい</span>
     <time datetime="2005-02-05T11:56:11">2005年02月05日 11:56</time></h1>
     <div class="body">正規表現キーワードON状態で、長～い行があるファイルを開いた時に<br>落ちる現象でしたら、以前、私が調べたときは「何文字で落ちるか」は<br>環境ごとにマチマチでしたよ。<br><br>同じバージョン、同じ正規表現キーワードの設定で<br>全角文字が 12377字で落ちる環境とか、同 12337字で落ちる環境とか。<br><br>あと、文字数によっては<br>「開いただけでは落ちないけど、開いた後、[End] で行末へ飛んだりすると落ちる」<br>とかもありましたし。<br>↑この辺は使用している正規表現にも依存するのかも。(よく分からなかったです)<br><br><br>ですので、<br>&gt;サクラ側で、<br>&gt;「32,766 を超えています。強制的に落とされることがあります。」<br>&gt;と一言、挨拶のダイアログなど表示してもらえると、心理的にも不安がなくなります。<br>こんな事できるのかなぁ？<br><br>もっとも「何文字（何バイト）以上だと落ちる危険性がある」という<br>限界値があるなら私も知りたいですね。<br></div></section>
     <ul><li><section><h1 id=4271>
     <span class="no">[4271]</span>
-    <a class="title" href="#4271">Re2: ダイアログ期待します</a>
+    <a class="thread-title" href="#4271">Re2: ダイアログ期待します</a>
     <span class="author">げんた</span>
     <time datetime="2005-02-05T23:31:19">2005年02月05日 23:31</time></h1>
     <div class="body">&gt;もっとも「何文字（何バイト）以上だと落ちる危険性がある」という<br>&gt;限界値があるなら私も知りたいですね。<br>アプリケーションエラーを出さずにプロセスが消失するのでスタックオーバーフローではないかと思います．だとすると，スタックをどの程度必要とするかは検索パターンと文字列に依存するのでは？状態数が無茶無茶多いパターンが落ちやすいとか．<br><br>ちなみにさかのぼって調べてみると，<br>2001/12/14 &gt;&gt;dev:924 でみくさんが<br>&gt;正規表現キーワードを使うにして、バイナリファイル<br>&gt;を開くと、まれにアプリケーションで落ちます。<br>&gt;場所はBREGEXP.DLLです。どうしよう。<br>と書いてあるのが最初ですかね...<br></div></section>

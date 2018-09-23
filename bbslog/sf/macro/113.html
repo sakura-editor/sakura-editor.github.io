@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>たいしたことないマクロ－HTML変換</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←マクロトップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>たいしたことないマクロ－HTML変換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
     <span class="no">113</span>
-    <a class="title" href="113.html#113">たいしたことないマクロ－HTML変換</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=113>
+    <a class="thread-title" href="113.html#113">たいしたことないマクロ－HTML変換</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=113>
     <span class="no">[113]</span>
-    <a class="title" href="#113">たいしたことないマクロ－HTML変換</a>
+    <a class="thread-title" href="#113">たいしたことないマクロ－HTML変換</a>
     <span class="author">ぺけ</span>
     <time datetime="2004-11-13T22:44:00">2004年11月13日 22:44</time></h1>
     <div class="body">大したことないマクロですが、選択文字列中のHTML特殊文字を変換するマクロを作成しました。<br>需要もあまりないでしょうが、興味ある方は使ってみてください。<br>ちなみに、JScript なので、拡張子JSで保存してマクロに登録してください。<br><br><br>// 選択されている文字列中の HTML の特殊文字をマークアップ文字列に変換する<br><br>var SelectedText = Editor.GetSelectedString();    // 選択されている部分の文字列<br><br>var spaceConvFlag = true;                        // 半角文字列を &amp;nbsp; に変換するかどうか<br>var retConvFlag = false;                        // 改行を &lt;br&gt; に変換するかどうか<br><br>//var spaceConvFlag = false;<br>//var retConvFlag = true;<br><br>SelectedText = toHtml( SelectedText );<br>Editor.InsText(SelectedText);<br><br>// HTML特殊文字変換<br>function toHtml(str){<br>    str = str.replace(/&amp;/g, "&amp;amp;");<br>    str = str.replace(/&lt;/g, "&amp;lt;");<br>    str = str.replace(/&gt;/g, "&amp;gt;");<br>    str = str.replace(/\"/g, "&amp;quot;");<br>    str = str.replace(/\t/g, "    ");<br>    if (spaceConvFlag) str = str.replace(/ /g, "&amp;nbsp;");<br>    if (retConvFlag) str = str.replace(/\r\n/g, "&lt;br&gt;\r\n");<br> <br>    return str;<br>}<br><br></div></section>

@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Cアウトラインのバグ</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Cアウトラインのバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3660</span>
-    <a class="title" href="3660.html#3660">Cアウトラインのバグ</a></div>
+    <a class="thread-title" href="3660.html#3660">Cアウトラインのバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3664</span>
-    <a class="title" href="3660.html#3664">Re:Cアウトラインのバグ</a></div>
+    <a class="thread-title" href="3660.html#3664">Re:Cアウトラインのバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3665</span>
-    <a class="title" href="3660.html#3665">Re2:Cアウトラインのバグ</a></div>
+    <a class="thread-title" href="3660.html#3665">Re2:Cアウトラインのバグ</a></div>
     </li><li><div class="list-title">
     <span class="no">3670</span>
-    <a class="title" href="3660.html#3670">Re2:Cアウトラインのバグ</a></div>
+    <a class="thread-title" href="3660.html#3670">Re2:Cアウトラインのバグ</a></div>
     <ul><li><div class="list-title">
     <span class="no">3681</span>
-    <a class="title" href="3660.html#3681">Re3:Cアウトラインのバグ</a></div>
-    </li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3660>
+    <a class="thread-title" href="3660.html#3681">Re3:Cアウトラインのバグ</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3660>
     <span class="no">[3660]</span>
-    <a class="title" href="#3660">Cアウトラインのバグ</a>
+    <a class="thread-title" href="#3660">Cアウトラインのバグ</a>
     <span class="author">げんた</span>
     <time datetime="2004-07-08T22:24:54">2004年07月08日 22:24</time></h1>
     <div class="body">enum/struct等を解析対象にしたときからだと思いますが，型の宣言以外の場所でこれらのキーワードを使うと解析がおかしくなります．<br>たとえば，<br>struct ABCが定義されているとき，Cでは<br>int function( struct ABC xyz ){<br>}<br>のように型名のstructを省略できませんが，このように書くとここが関数と認識されなくなった上にそのあともずっと変になります．<br>CEditDoc.cppのMakeFuncList_Cにある<br><br>else if( nNestLevel_func == 0 &amp;&amp; nMode2 == M2_NORMAL )<br>{<br>&#9;nItemFuncId = 0;<br>&#9;if( strcmp(szWord,"class")==0 )<br>&#9;&#9;nItemFuncId = 3;<br>&#9;if( strcmp(szWord,"struct")==0 )<br>&#9;&#9;nItemFuncId = 4;<br>&#9;else if( strcmp(szWord,"namespace")==0 )<br>&#9;&#9;nItemFuncId = 7;<br>&#9;else if( strcmp(szWord,"enum")==0 )<br>&#9;&#9;nItemFuncId = 5;<br>&#9;else if( strcmp(szWord,"union")==0 )<br>&#9;&#9;nItemFuncId = 6;<br>&#9;if( nItemFuncId != 0 )<br>&#9;{<br>&#9;&#9;nMode2 = M2_NAMESPACE_SAVE;<br>&#9;&#9;nItemLine = nLineCount + 1;<br>&#9;&#9;strcpy(szItemName,"無名");<br>&#9;}<br>}<br>という部分をコメントアウトすれば，型の解析はできなくなりますが上記の問題は起こらなくなります．<br></div></section>
     <ul><li><section><h1 id=3664>
     <span class="no">[3664]</span>
-    <a class="title" href="#3664">Re:Cアウトラインのバグ</a>
+    <a class="thread-title" href="#3664">Re:Cアウトラインのバグ</a>
     <span class="author">(全略)</span>
     <time datetime="2004-07-09T21:54:53">2004年07月09日 21:54</time></h1>
     <div class="body">▼ げんたさん<br>&gt; という部分をコメントアウトすれば，型の解析はできなくなりますが上記の問題は起こらなくなります．<br>型の一覧とかはけっこうお世話になってるのでなくならないで欲しいですね^^;<br><br>とりあえず案出しておきます<br>Cの文法で()の中にstructってもって来れましたっけ?<br>() の中にstructがある時って言う具合に弾いてはどうでしょう?<br><br>- if( strcmp(szWord,"struct")==0 )<br>-     nItemFuncId = 4;<br>+ if( strcmp(szWord,"struct")==0 &amp;&amp; nNestLevel_fparam == 0 )<br>+     nItemFuncId = 4;<br>こんな感じで<br><br>ただそれだけだと struct HOGE* fuga(int hoo) は崩れてしまいますけど</div></section>
     <ul><li><section><h1 id=3665>
     <span class="no">[3665]</span>
-    <a class="title" href="#3665">Re2:Cアウトラインのバグ</a>
+    <a class="thread-title" href="#3665">Re2:Cアウトラインのバグ</a>
     <span class="author">げんた</span>
     <time datetime="2004-07-10T04:54:03">2004年07月10日 04:54</time></h1>
     <div class="body">&gt;&gt; という部分をコメントアウトすれば，型の解析はできなくなりますが上記の問題は起こらなくなります．<br>&gt;型の一覧とかはけっこうお世話になってるのでなくならないで欲しいですね^^;<br>&gt;ただそれだけだと struct HOGE* fuga(int hoo) は崩れてしまいますけど<br>うーん，最近私が出会ったCのファイルでは<br>enum 型名 func( struct 構造体名1 param1, struct 構造体名2 param2 )<br>といった形で定義されているので戻り値にキーワードが来ているパターンも認識してもらえないとちょっと困るんです．<br><br>コメントを見ると__declspec( なんちゃら ) のように括弧を含んだ部分を無視してキーワードを拾えるようにしたとあるのですが，このせいで関数が思いっきり無視されてしまいます．<br><br>struct/enum/class等を予約語と書くことにすると<br>&gt; 予約語 型 関数名( 予約語 型 引数名 ){<br>と<br>&gt; 予約語 型 修飾子( 独自キーワード ) 定義する型名 {<br>を区別する必要がありますよね．<br>ポイントは)と{の間に文字列があるかどうかです．ここに名前があったら型定義．無ければ関数．ただし"const"の場合は関数．<br>さらに関数名や型名は クラス名/ネームスペース名::型名 となることもあるのでそれも考慮しないと...<br><br>ちなみにこの勢いで関数ポインタを含むケースも何とかならないかな．<br></div></section>
     </li><li><section><h1 id=3670>
     <span class="no">[3670]</span>
-    <a class="title" href="#3670">Re2:Cアウトラインのバグ</a>
+    <a class="thread-title" href="#3670">Re2:Cアウトラインのバグ</a>
     <span class="author">げんた</span>
     <time datetime="2004-07-11T14:15:11">2004年07月11日 14:15</time></h1>
     <div class="body">ここ見落としていました．<br>&gt;Cの文法で()の中にstructってもって来れましたっけ?<br>構造体そのままは入れられなかったかもしれませんが，ポインタで渡すとしても同じことが起きますよね．<br></div></section>
     <ul><li><section><h1 id=3681>
     <span class="no">[3681]</span>
-    <a class="title" href="#3681">Re3:Cアウトラインのバグ</a>
+    <a class="thread-title" href="#3681">Re3:Cアウトラインのバグ</a>
     <span class="author">(全略)</span>
     <time datetime="2004-07-15T07:40:28">2004年07月15日 07:40</time></h1>
     <div class="body">▼ げんたさん<br>&gt; struct/enum/class等を予約語と書くことにすると<br>&gt; &gt; 予約語 型 関数名( 予約語 型 引数名 ){<br>&gt; と<br>&gt; &gt; 予約語 型 修飾子( 独自キーワード ) 定義する型名 {<br>&gt; を区別する必要がありますよね．<br>下の奴、、、独自キーワードってなんでしょう、__declspecの事でしょうか?<br>とりあえず、もう一度見直してみます<br><br>&gt; 構造体そのままは入れられなかったかもしれませんが，ポインタで渡すとしても同じことが起きますよね．<br>言葉足らずでした<br>Cの文法で()の中に構造体宣言ってもってこれないですよね?<br>どうせ、宣言以外は必要がないので<br>だから()の中のstructは読み飛ばしちゃいませんか、ってのが前に言いたかったことでしたm(_ _)m<br></div></section>

@@ -1,18 +1,44 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>改行コードが食い違う</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>改行コードが食い違う | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3752</span>
-    <a class="title" href="3752.html#3752">改行コードが食い違う</a></div>
+    <a class="thread-title" href="3752.html#3752">改行コードが食い違う</a></div>
     <ul><li><div class="list-title">
     <span class="no">3753</span>
-    <a class="title" href="3752.html#3753">Re: 改行コードが食い違う</a></div>
-    </li></ul></li></ul><ul class="main"><li><section><h1 id=3752>
+    <a class="thread-title" href="3752.html#3753">Re: 改行コードが食い違う</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3752>
     <span class="no">[3752]</span>
-    <a class="title" href="#3752">改行コードが食い違う</a>
+    <a class="thread-title" href="#3752">改行コードが食い違う</a>
     <span class="author">もか</span>
     <time datetime="2004-09-27T17:34:26">2004年09月27日 17:34</time></h1>
     <div class="body">上書き保存したファイルとエディタが保持しているデータで、改行コードが異なることがあります。<br><br>1. 名前をつけて保存で、改行コードを変換する指定で保存<br>2. リロードされた後、入力改行コード指定により、1.で指定した改行コード以外を選択<br>3. 改行を入力<br>4. 上書き保存。このとき、2.で指定された改行コードで保存される<br>この時点でリロードされないので、保存したファイルと、エディタ上のデータで食い違いが発生します。<br><br>同様に、Shift_JIS以外では、ファイルとエディタ上のデータで、実際には異なる(=リロードするとデータが変わる)ことがありますが、<br>こちらは下手にリロードすると、保存時に文字化けした場合は修正するチャンスを失うことになります。<br></div></section>
     <ul><li><section><h1 id=3753>
     <span class="no">[3753]</span>
-    <a class="title" href="#3753">Re: 改行コードが食い違う</a>
+    <a class="thread-title" href="#3753">Re: 改行コードが食い違う</a>
     <span class="author">げんた</span>
     <time datetime="2004-10-02T12:21:51">2004年10月02日 12:21</time></h1>
     <div class="body">現象を確認しました．<br>要するに名前を付けて保存で指定したコード指定がその後の上書き保存でも生きているのが問題というわけですよね．そもそも保存時のコード指定がメンバ変数としてずっと保持されているのが不思議な気がします．<br>でも改行コードなんか気にしないで，他の文書からコピーしたものを保存したときに常にコードが統一されて欲しいという人もいるかもしれない．かといって保存の都度reloadするのは無駄ですし．<br><br>・保存時のコード指定は保存しない<br>・毎回コードを指定して上書きしたい人はマクロで対応してもらう<br>というのでいいように思います．<br></div></section>

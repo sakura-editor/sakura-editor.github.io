@@ -1,45 +1,71 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>CProfile STL版</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>CProfile STL版 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3272</span>
-    <a class="title" href="3272.html#3272">CProfile STL版</a></div>
+    <a class="thread-title" href="3272.html#3272">CProfile STL版</a></div>
     <ul><li><div class="list-title">
     <span class="no">3274</span>
-    <a class="title" href="3272.html#3274">CProfile STL版02</a></div>
+    <a class="thread-title" href="3272.html#3274">CProfile STL版02</a></div>
     </li><li><div class="list-title">
     <span class="no">3285</span>
-    <a class="title" href="3272.html#3285">Re:CProfile STL版03</a></div>
+    <a class="thread-title" href="3272.html#3285">Re:CProfile STL版03</a></div>
     </li><li><div class="list-title">
     <span class="no">3290</span>
-    <a class="title" href="3272.html#3290">CProfile STL版04</a></div>
+    <a class="thread-title" href="3272.html#3290">CProfile STL版04</a></div>
     <ul><li><div class="list-title">
     <span class="no">3292</span>
-    <a class="title" href="3272.html#3292">Re:CProfile STL版04</a></div>
-    </li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3272>
+    <a class="thread-title" href="3272.html#3292">Re:CProfile STL版04</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3272>
     <span class="no">[3272]</span>
-    <a class="title" href="#3272">CProfile STL版</a>
+    <a class="thread-title" href="#3272">CProfile STL版</a>
     <span class="author">dskoba</span>
     <time datetime="2003-10-22T00:55:55">2003年10月22日 00:55</time></h1>
     <div class="body">CProfileをSTLで書き直してみました。<br><a href=http://www2.wbs.ne.jp/~dskoba/products/cprofile_stl01.lzh target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>products<wbr>/<wbr>cprofile<wbr>_stl01.<wbr>lzh</nobr></a><br><br>特徴としては<br>・配列ではなくvectorとmapを使っているので，セクション数，エントリ数の制限がメモリ依存<br>・STLのためにバイナリサイズが増加<br>・iniファイルでエントリがアルファベット順にソートされて出力される<br><br>現在タブ区切りと末尾￥０で格納している強調キーワードを分けて格納することができると思います。<br><br>(関数のコメントは良いと思うのですが，ファイルヘッダの書き方がよく分かりませんでしたのでてきとうに書いてあります)</div></section>
     <ul><li><section><h1 id=3274>
     <span class="no">[3274]</span>
-    <a class="title" href="#3274">CProfile STL版02</a>
+    <a class="thread-title" href="#3274">CProfile STL版02</a>
     <span class="author">dskoba</span>
     <time datetime="2003-10-23T01:16:08">2003年10月23日 01:16</time></h1>
     <div class="body">更新<br>http://www2.wbs.ne.jp/~dskoba/products/cprofile_stl02.lzh</div></section>
     </li><li><section><h1 id=3285>
     <span class="no">[3285]</span>
-    <a class="title" href="#3285">Re:CProfile STL版03</a>
+    <a class="thread-title" href="#3285">Re:CProfile STL版03</a>
     <span class="author">dskoba</span>
     <time datetime="2003-10-26T23:17:26">2003年10月26日 23:17</time></h1>
     <div class="body">更新<br><a href=http://www2.wbs.ne.jp/~dskoba/products/cprofile_stl03.lzh target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>products<wbr>/<wbr>cprofile<wbr>_stl03.<wbr>lzh</nobr></a><br>・delete を delete[] に修正<br>・引数付きコンストラクタ追加<br>・typedef や struct をCProfileスコープ内に移動<br></div></section>
     </li><li><section><h1 id=3290>
     <span class="no">[3290]</span>
-    <a class="title" href="#3290">CProfile STL版04</a>
+    <a class="thread-title" href="#3290">CProfile STL版04</a>
     <span class="author">dskoba</span>
     <time datetime="2003-11-01T01:33:17">2003年11月01日 01:33</time></h1>
     <div class="body">更新<br><a href=http://www2.wbs.ne.jp/~dskoba/products/cprofile_stl04.lzh target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>products<wbr>/<wbr>cprofile<wbr>_stl04.<wbr>lzh</nobr></a><br>・データを文字列 に／から 変換する際にstd::basic_stringstreamを使用<br>・bool型を扱えるように<br>・強調キーワード保存時にNULL文字を含めない(Tab文字までを保存)<br>・char → TCHAR(ただし Unicode 化できているかは不明)</div></section>
     <ul><li><section><h1 id=3292>
     <span class="no">[3292]</span>
-    <a class="title" href="#3292">Re:CProfile STL版04</a>
+    <a class="thread-title" href="#3292">Re:CProfile STL版04</a>
     <span class="author">かろと</span>
     <time datetime="2003-11-02T01:14:32">2003年11月02日 01:14</time></h1>
     <div class="body">▼ dskobaさん<br>&gt; ・bool型を扱えるように<br><br>おお！早速対応していただいて、感無量です。<br></div></section>

@@ -1,9 +1,35 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>Commit報告(Keep) maxdata 等配列長の最大値確認など</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←Unicode版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Commit報告(Keep) maxdata 等配列長の最大値確認など | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">1312</span>
-    <a class="title" href="1312.html#1312">Commit報告(Keep) maxdata 等配列長の最大値確認など</a></div>
-    </li></ul><ul class="main"><li><section><h1 id=1312>
+    <a class="thread-title" href="1312.html#1312">Commit報告(Keep) maxdata 等配列長の最大値確認など</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1312>
     <span class="no">[1312]</span>
-    <a class="title" href="#1312">Commit報告(Keep) maxdata 等配列長の最大値確認など</a>
+    <a class="thread-title" href="#1312">Commit報告(Keep) maxdata 等配列長の最大値確認など</a>
     <span class="author">もか</span>
     <time datetime="2010-07-10T23:43:37">2010年07月10日 23:43</time></h1>
     <div class="body"><br>リビジョン：<br>  rev1788<br><br>変更種別：<br>  保守<br><br>内容：<br>Keep: maxdata 等配列長の最大値確認など<br><br>配列系のサイズをiniに記録し、読みこんでいる物について、データ数を超えた場合は、扱える範囲に修正します。<br>いままでは、超えた場合もそのまま読み書きして動作するので、超過部分のデータが壊れます。<br><br>　ついでに<br>・正規表現キーワード数を変更しても動作するように(現在100個)<br>・正規表現キーワードの文字数を変更しても動作するように(現在100文字)<br>毎回iniから3000回正規表現キーワードを読み込んでいたものを、必要な数(最低で30回)だけiniから読み込むようになります。<br></div></section>

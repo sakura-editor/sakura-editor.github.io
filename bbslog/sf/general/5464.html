@@ -1,54 +1,80 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>行を超えた置換について</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←一般トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>行を超えた置換について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
     <span class="no">5464</span>
-    <a class="title" href="5464.html#5464">行を超えた置換について</a></div>
+    <a class="thread-title" href="5464.html#5464">行を超えた置換について</a></div>
     <ul><li><div class="list-title">
     <span class="no">5465</span>
-    <a class="title" href="5464.html#5465">Re:行を超えた置換について</a></div>
+    <a class="thread-title" href="5464.html#5465">Re:行を超えた置換について</a></div>
     <ul><li><div class="list-title">
     <span class="no">5466</span>
-    <a class="title" href="5464.html#5466">Re2:行を超えた置換について</a></div>
+    <a class="thread-title" href="5464.html#5466">Re2:行を超えた置換について</a></div>
     <ul><li><div class="list-title">
     <span class="no">5467</span>
-    <a class="title" href="5464.html#5467">Re3:行を超えた置換について</a></div>
+    <a class="thread-title" href="5464.html#5467">Re3:行を超えた置換について</a></div>
     <ul><li><div class="list-title">
     <span class="no">5468</span>
-    <a class="title" href="5464.html#5468">Re4:行を超えた置換について</a></div>
+    <a class="thread-title" href="5464.html#5468">Re4:行を超えた置換について</a></div>
     <ul><li><div class="list-title">
     <span class="no">5469</span>
-    <a class="title" href="5464.html#5469">Re5:行を超えた置換について</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=5464>
+    <a class="thread-title" href="5464.html#5469">Re5:行を超えた置換について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5464>
     <span class="no">[5464]</span>
-    <a class="title" href="#5464">行を超えた置換について</a>
+    <a class="thread-title" href="#5464">行を超えた置換について</a>
     <span class="author">青木</span>
     <time datetime="2006-09-28T15:37:02">2006年09月28日 15:37</time></h1>
     <div class="body">複数行にわたる検索や置換をする方法はありませんでしょうか<br>たとえば次の行の行頭に空白がない場合の改行を削って<br>一つの行に置換するようなことをしたいです。<br><br>置換前：<br>test1 <br>test2<br> test3<br>test4<br><br>置換後：<br>test1 test2<br> test3test4<br></div></section>
     <ul><li><section><h1 id=5465>
     <span class="no">[5465]</span>
-    <a class="title" href="#5465">Re:行を超えた置換について</a>
+    <a class="thread-title" href="#5465">Re:行を超えた置換について</a>
     <span class="author">しみづ</span>
     <time datetime="2006-09-28T16:10:47">2006年09月28日 16:10</time></h1>
     <div class="body">▼ 青木さん<br>&gt;&gt;data:5097 を参考に。<br></div></section>
     <ul><li><section><h1 id=5466>
     <span class="no">[5466]</span>
-    <a class="title" href="#5466">Re2:行を超えた置換について</a>
+    <a class="thread-title" href="#5466">Re2:行を超えた置換について</a>
     <span class="author">青木</span>
     <time datetime="2006-09-28T17:20:34">2006年09月28日 17:20</time></h1>
     <div class="body">▼ しみづさん<br>ありがとうございます。<br>JRegex版を用いて「?\N」を用いる事で<br>複数行にマッチさせて置換することが出来ました。<br>ただ、一行が128byteあたりを超えると<br>正規表現を用いた置換が行われないなど挙動不審になるようです。</div></section>
     <ul><li><section><h1 id=5467>
     <span class="no">[5467]</span>
-    <a class="title" href="#5467">Re3:行を超えた置換について</a>
+    <a class="thread-title" href="#5467">Re3:行を超えた置換について</a>
     <span class="author">しみづ</span>
     <time datetime="2006-09-28T19:13:30">2006年09月28日 19:13</time></h1>
     <div class="body">　こういうことは、Perlとかを使ってするのが普通じゃないのかな。<br><br></div></section>
     <ul><li><section><h1 id=5468>
     <span class="no">[5468]</span>
-    <a class="title" href="#5468">Re4:行を超えた置換について</a>
+    <a class="thread-title" href="#5468">Re4:行を超えた置換について</a>
     <span class="author">青木</span>
     <time datetime="2006-09-28T23:49:53">2006年09月28日 23:49</time></h1>
     <div class="body">▼ しみづさん<br>私が10年前使っていたエディタでは普通に複数行の検索や置換を行っていました。<br>残念ながらそのエディタが動いていたOSは既に絶滅したので今となっては常用する事はできませんけどね。</div></section>
     <ul><li><section><h1 id=5469>
     <span class="no">[5469]</span>
-    <a class="title" href="#5469">Re5:行を超えた置換について</a>
+    <a class="thread-title" href="#5469">Re5:行を超えた置換について</a>
     <span class="author">maru</span>
     <time datetime="2006-09-28T23:55:05">2006年09月28日 23:55</time></h1>
     <div class="body">▼ 青木さん<br>手前味噌ですが・・・。<br><a href=http://sakura.qp.land.to/?Macro%2F%C5%EA%B9%C6%2F146 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Macro%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6%<wbr>2F146</nobr></a><br>インターフェイスが貧弱ですが、できなくもない。<br><br>s/\r\n(?=[^ ])//g<br></div></section>

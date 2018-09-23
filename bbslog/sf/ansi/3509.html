@@ -1,99 +1,125 @@
-<!DOCTYPE html><html><head><meta charset='utf-8'><title>バグ修正とかその４</title><link rel='stylesheet' href='../bbs.css' /><script src='../bbs.js'></script><body><ul class="side"><a href="./" class="toindex">←ANSI版開発トップへ</a><li><div class="list-title">
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-120820034-1');
+  </script>
+
+  <link href="../bbs.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>バグ修正とかその４ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
     <span class="no">3509</span>
-    <a class="title" href="3509.html#3509">バグ修正とかその４</a></div>
+    <a class="thread-title" href="3509.html#3509">バグ修正とかその４</a></div>
     <ul><li><div class="list-title">
     <span class="no">3514</span>
-    <a class="title" href="3509.html#3514">RE: バグ修正とかその４</a></div>
+    <a class="thread-title" href="3509.html#3514">RE: バグ修正とかその４</a></div>
     <ul><li><div class="list-title">
     <span class="no">3517</span>
-    <a class="title" href="3509.html#3517">Re2: バグ修正とかその４</a></div>
+    <a class="thread-title" href="3509.html#3517">Re2: バグ修正とかその４</a></div>
     <ul><li><div class="list-title">
     <span class="no">3518</span>
-    <a class="title" href="3509.html#3518">Re3: バグ修正とかその４</a></div>
+    <a class="thread-title" href="3509.html#3518">Re3: バグ修正とかその４</a></div>
     <ul><li><div class="list-title">
     <span class="no">3522</span>
-    <a class="title" href="3509.html#3522">Re4: 改定１ fix030428d</a></div>
+    <a class="thread-title" href="3509.html#3522">Re4: 改定１ fix030428d</a></div>
     <ul><li><div class="list-title">
     <span class="no">3523</span>
-    <a class="title" href="3509.html#3523">Re5: 改定１ fix030428d</a></div>
+    <a class="thread-title" href="3509.html#3523">Re5: 改定１ fix030428d</a></div>
     </li><li><div class="list-title">
     <span class="no">3525</span>
-    <a class="title" href="3509.html#3525">Re5: fix030428d レビュー中</a></div>
+    <a class="thread-title" href="3509.html#3525">Re5: fix030428d レビュー中</a></div>
     <ul><li><div class="list-title">
     <span class="no">3526</span>
-    <a class="title" href="3509.html#3526">Re6: fix030428d レビュー中</a></div>
+    <a class="thread-title" href="3509.html#3526">Re6: fix030428d レビュー中</a></div>
     </li><li><div class="list-title">
     <span class="no">3527</span>
-    <a class="title" href="3509.html#3527">Re6: fix030428d レビュー中</a></div>
+    <a class="thread-title" href="3509.html#3527">Re6: fix030428d レビュー中</a></div>
     <ul><li><div class="list-title">
     <span class="no">3528</span>
-    <a class="title" href="3509.html#3528">Re7: fix030428d レビュー中</a></div>
+    <a class="thread-title" href="3509.html#3528">Re7: fix030428d レビュー中</a></div>
     <ul><li><div class="list-title">
     <span class="no">3529</span>
-    <a class="title" href="3509.html#3529">Re8: fix030428d レビュー中</a></div>
-    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul class="main"><li><section><h1 id=3509>
+    <a class="thread-title" href="3509.html#3529">Re8: fix030428d レビュー中</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3509>
     <span class="no">[3509]</span>
-    <a class="title" href="#3509">バグ修正とかその４</a>
+    <a class="thread-title" href="#3509">バグ修正とかその４</a>
     <span class="author">もか</span>
     <time datetime="2004-03-28T23:47:43">2004年03月28日 23:47</time></h1>
     <div class="body">幾つかのバグ修正と、開発3456だったけど取り下げたものの一部です。<br>それと、ファイルの最上部・最下部への移動を高速化しました。<br>その代わり、次の行への移動とかで、数ns遅くなってしまうかも<br><br>修正した(はずの)バグは、<br>・カーソルがEOFのみの行以降にあると、移動しただけで落ちるバグ<br>&gt;&gt;data:3473<br>・コメント後の最終行に文字列を入力したときブロックコメントと認識されることがある(BugsInfo登録名)<br>&gt;&gt;data:3115 ほか。ちょっと家のincmログが足りないみたいで関連記事は未調査。<br>・論理行先頭でインデントされた行にタブが含まれると、折り返し位置が間違っている<br>&gt;&gt;dev:3490<br><br>ヤフーグループのブリーフケース fix030428c.zipの予定です。(すぐアップします)<br></div></section>
     <ul><li><section><h1 id=3514>
     <span class="no">[3514]</span>
-    <a class="title" href="#3514">RE: バグ修正とかその４</a>
+    <a class="thread-title" href="#3514">RE: バグ修正とかその４</a>
     <span class="author">もか</span>
     <time datetime="2004-04-01T15:04:52">2004年04月01日 15:04</time></h1>
     <div class="body">&gt;・カーソルがEOFのみの行以降にあると、移動しただけで落ちるバグ<br>&gt;&gt;data:3725 も直したつもり。。<br></div></section>
     <ul><li><section><h1 id=3517>
     <span class="no">[3517]</span>
-    <a class="title" href="#3517">Re2: バグ修正とかその４</a>
+    <a class="thread-title" href="#3517">Re2: バグ修正とかその４</a>
     <span class="author">FILE</span>
     <time datetime="2004-04-02T01:55:09">2004年04月02日 01:55</time></h1>
     <div class="body">▼ もかさん<br>&gt; &gt;・カーソルがEOFのみの行以降にあると、移動しただけで落ちるバグ<br>&gt; &gt;&gt;data:3725 も直したつもり。。<br><br>　こんばんは。ご対応ありがとうございます。<br><br>　fix040328c.zipをダウンロードし、patchを当てて<br>みましたが、Access Violationとなってしまいました。<br>(Win95でデバッグ実行時)<br><br>　CLayoutMgr.cppのInsertData_CLayoutMgr関数内で、<br>「空でないテキストの最後に行を作る場合」ではなく、<br>「空でないテキストの最後に行を変更する場合」で<br>NULLポインタにアクセスしようとしている模様です。<br>(pLayoutに代入するm_pLayoutPrevReferの値が0x00000000)<br><br>　また、この時、nLineLenが初期化されていないのも、<br>気になっております。<br><br>以上、解決の手がかりになれば幸いです。<br></div></section>
     <ul><li><section><h1 id=3518>
     <span class="no">[3518]</span>
-    <a class="title" href="#3518">Re3: バグ修正とかその４</a>
+    <a class="thread-title" href="#3518">Re3: バグ修正とかその４</a>
     <span class="author">もか</span>
     <time datetime="2004-04-02T02:32:03">2004年04月02日 02:32</time></h1>
     <div class="body">ぬぬぬ。なるほど、また（今度）見てみます。<br>で、私もやってみると落ちました。がーん。<br>カーソル移動は大丈夫だけど、データを変更すると落ちると。<br><br>このパッチを当てても(まだ|よけい)変な動きするので、統合はお待ちください。<br><br>そもそも、Viewを移動してフォーカスが戻ってきたとき、カーソル位置を有効な位置に移動(だたしCRとLFの間は有効位置)させないと、根本的解決にならないかも。<br><br># 早い者勝ちですので、わかるかた、お先にどうぞ。<br></div></section>
     <ul><li><section><h1 id=3522>
     <span class="no">[3522]</span>
-    <a class="title" href="#3522">Re4: 改定１ fix030428d</a>
+    <a class="thread-title" href="#3522">Re4: 改定１ fix030428d</a>
     <span class="author">もか</span>
     <time datetime="2004-04-03T02:35:13">2004年04月03日 02:35</time></h1>
     <div class="body">cパッチで、[EOF]だけ折り返されたときに[EOF]の左に移動できなくなっていたのを修正<br>EOF位置に移動する座標計算部分を関数化<br>前回の桁位置(m_nCaretPosX_Prev)を設定したほうがよさそうな場所は設定<br>コマンドラインオプションで、EOF以降を指定したとき、ファイルの末尾に移動しなかったのを修正<br><br>&gt;&gt;data:3725 (変なカーソル位置で、文字挿入で落ちる)<br>に対応していなかったので、対応しました。<br>▼FILE氏<br>&gt;&gt;CLayoutMgr.cppのInsertData_CLayoutMgr関数内でNULLポインタにアクセス<br>の側だけ修正しようとしたら、再作画されないし、変な行へのデータ挿入要求は困ってしまうから、<br>&gt;Viewを移動してフォーカスが戻ってきたとき、カーソル位置を有効な位置に移動<br>するようにしました。<br>fix030428d.zip ってやつです。<br><br># CLayoutMgr::CaretPos_Phys2Log EOFだけ折り返しに未対応ぽい？<br></div></section>
     <ul><li><section><h1 id=3523>
     <span class="no">[3523]</span>
-    <a class="title" href="#3523">Re5: 改定１ fix030428d</a>
+    <a class="thread-title" href="#3523">Re5: 改定１ fix030428d</a>
     <span class="author">FILE</span>
     <time datetime="2004-04-03T19:48:29">2004年04月03日 19:48</time></h1>
     <div class="body">▼ もかさん<br>&gt; &gt;&gt;CLayoutMgr.cppのInsertData_CLayoutMgr関数内でNULLポインタにアクセス<br>&gt; の側だけ修正しようとしたら、再作画されないし、変な行へのデータ挿入要求は困ってしまうから、<br>&gt; &gt;Viewを移動してフォーカスが戻ってきたとき、カーソル位置を有効な位置に移動<br>&gt; するようにしました。<br>&gt; fix030428d.zip ってやつです。<br><br>　こんばんは。<br><br>　fix040328d.zipをダウンロードし、patchを当ててると<br>落ちなくなりました。<br><br>ご対応、ありがとうございました。<br></div></section>
     </li><li><section><h1 id=3525>
     <span class="no">[3525]</span>
-    <a class="title" href="#3525">Re5: fix030428d レビュー中</a>
+    <a class="thread-title" href="#3525">Re5: fix030428d レビュー中</a>
     <span class="author">げんた</span>
     <time datetime="2004-04-10T17:25:48">2004年04月10日 17:25</time></h1>
     <div class="body">朝から変更箇所を確認していたのですがよくわからなくて途中で寝ちゃいました．で終わらせるわけにも行きませんので質問です．<br>1. CEditView_Command.cpp<br>CEditView::Command_LEFT()で<br>＞//  2004.03.28 Moca EOFだけの行以降の途中にカーソルがあると落ちるバグ修正<br>＞else if( pcLayout ){<br>となっていますが，EOF以降にキャレットがある場合に左移動を指示した場合にMoveCursor以外なにもしていませんが，MoveCursorの改良のおかげで適切な位置にキャレットを移動してもらえるという動作でOKでしょうか．<br><br>＞CEditView::Command_RIGHT()<br>＞if( NULL == pcLayout ){<br>＞&#9;goto end_of_func;<br>＞}<br>end_of_funcに飛ばす代わりにnPosX = 0を設定してカーソル位置＋選択範囲設定を行うようになっていますが，pcLayoutがNULLのときにそれがどういう違いをうむのかよくわかりませんでした．<br><br>2. CLayoutMgr_New.cpp<br>Layoutの両関数においてnPosXの意味を変更していますが，禁則処理で行頭での処理を避ける判定部分を<br>&amp;&amp; nPosXの部分を→&amp;&amp; ( nPosX &gt; nIndent ) する処理が漏れているようです．<br><br>nPosXとnMaxLineSizeの両方ともnIndentだけ増えているので<br>・比較の両辺に上の変数が共に現れている物は影響なし<br>・TAB幅の算出にnPosXを使っている部分は意図通り<br>と考えてnPosXを追跡すると残るのは上の条件文だけとなります．<br><br>＞m_nLineTypeBot = nCOMMENTMODE;<br>というのが一部削除されていますが「一部」というところが何となく謎なんですが...なんか説明して頂けます？<br><br>この2つ以外は取り込み完了しています．また追加変更に対してパッチの作り直しはしてくださらなくて結構です．(というかもう上記以外は取り込んでしまったので...)<br><br>---<br>何のためになおしたのか説明が全然書いてないと，意図を確認するところから始めないといけないのでえらく大変．(;_;)<br>適当に理解した内容をコメントに追加しながら進めていますが...<br><br>CEditView::m_nCaretPosX_Prev の意味も本日初めてわかったのでコメントを追加しておきました．<br>(不明だけどと但し書きして修正した2年前の自分のコメントを発見して...)<br></div></section>
     <ul><li><section><h1 id=3526>
     <span class="no">[3526]</span>
-    <a class="title" href="#3526">Re6: fix030428d レビュー中</a>
+    <a class="thread-title" href="#3526">Re6: fix030428d レビュー中</a>
     <span class="author">もか</span>
     <time datetime="2004-04-11T00:46:59">2004年04月11日 00:46</time></h1>
     <div class="body">&gt;1. CEditView_Command.cpp<br>&gt;＞else if( pcLayout ){<br>そういう意味でOKです。<br>&gt;CEditView::Command_RIGHT()<br>&gt;＞if( NULL == pcLayout ){<br>&gt;＞&#9;goto end_of_func;<br>&gt;＞}<br>いままでは、EOF以降にカーソルがあったときに右を押しても何も起きなかったのを、EOFに移動するようになります。<br>実際には、考慮漏れがないかぎり、カーソルがEOFより後ろにはこないので、変わらないかも。<br>&gt;2. CLayoutMgr_New.cpp<br>&gt;&amp;&amp; nPosXの部分を→&amp;&amp; ( nPosX &gt; nIndent ) する処理が漏れているようです．<br>はい、たしかに。すみません。<br><br>&gt;＞m_nLineTypeBot = nCOMMENTMODE;<br>CLayoutMgr::DoLayout_Rangeでは、今まで、ご承知のとおり、レイアウト各行の色分けが終わると、それをm_nLineTypeBot = nCOMMENTMODEとしていました。<br>しかし、ファイルの終端まで色分けを変更しないことがあるため、m_nLineTypeBotに、「変更した範囲内で最後に見た行の後ろの色」を設定していました。<br>関数の最後で、最後に色を再設定した行が最終行であるかを確認して変更するようにしてあります。<br><br>&gt;CEditView::m_nCaretPosX_Prev の意味も本日初めてわかったのでコメントを追加しておきました．<br>&gt;(不明だけどと但し書きして修正した2年前の自分のコメントを発見して...)<br>↑たしか、CNormalProssessだったような。<br><br># かなり巨大なプログラムゆえ、未だにほとんど読んだことがない部分が結構あるんですよね。<br># 自分で作ったわけでもないので、仮定している範囲がからないし。<br></div></section>
     </li><li><section><h1 id=3527>
     <span class="no">[3527]</span>
-    <a class="title" href="#3527">Re6: fix030428d レビュー中</a>
+    <a class="thread-title" href="#3527">Re6: fix030428d レビュー中</a>
     <span class="author">げんた</span>
     <time datetime="2004-04-11T16:05:43">2004年04月11日 16:05</time></h1>
     <div class="body">もう1点コメント<br><br>CEditView::Command_RIGHT()でMoveCursorを削除することで，右を押して選択が解除された後にキャレットを選択範囲末尾に移動しないように変更していますが，Command_LEFTの方は従来通りですと右と左で処理の一貫性が無くなるため，ここは変更しない方がいいと思います．<br></div></section>
     <ul><li><section><h1 id=3528>
     <span class="no">[3528]</span>
-    <a class="title" href="#3528">Re7: fix030428d レビュー中</a>
+    <a class="thread-title" href="#3528">Re7: fix030428d レビュー中</a>
     <span class="author">もか</span>
     <time datetime="2004-04-11T17:47:59">2004年04月11日 17:47</time></h1>
     <div class="body">&gt;CEditView::Command_RIGHT()でMoveCursorを削除することで，<br>該当個所が見つからないのですが、どこのことでしょうか。<br><br># CommandRIGHT/LEFT<br>#&#9;goto end_of_func (LEFTのみ)<br># end_of_func:;<br># &#9;}<br># &#9;return;<br># 直下にgotoとか、end_of_funcなのに、ループ中だったりして、リピートを後でつけた名残なのかな<br></div></section>
     <ul><li><section><h1 id=3529>
     <span class="no">[3529]</span>
-    <a class="title" href="#3529">Re8: fix030428d レビュー中</a>
+    <a class="thread-title" href="#3529">Re8: fix030428d レビュー中</a>
     <span class="author">げんた</span>
     <time datetime="2004-04-11T18:09:28">2004年04月11日 18:09</time></h1>
     <div class="body">&gt;&gt;CEditView::Command_RIGHT()でMoveCursorを削除することで，<br>&gt;該当個所が見つからないのですが、どこのことでしょうか。<br>本当だ．diffファイルにはないですね．<br>私が色々やっている間に間違って消してしまったのかも．危ないところだった((;・・ヘ)<br></div></section>
