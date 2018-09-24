@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>関連づけツールwrapper | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5070</span>
+    <a class="thread-title" href="5070.html#5070">関連づけツールwrapper</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5071</span>
+    <a class="thread-title" href="5070.html#5071">Re:関連づけツールwrapper</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5070>
+    <span class="no">[5070]</span>
+    <a class="thread-title" href="#5070">関連づけツールwrapper</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-27T02:15:09">2007年09月27日 02:15</time></h1>
+    <div class="body">ryojiさんの作成した関連づけツールラッパーではCのライブラリを呼びだしている箇所がほとんど無かったので，Cライブラリの依存性を除去してみました．ファイルサイズが24KBから4KBに減少しました．<br>http://sakura.qp.land.to/?Develop%2Fsakuraext<br><br>ZeroMemoryは実はmemsetへのマクロだったんですね．初めて知りました．memsetを使って欲しくなかったのでSecureZeroMemory()に置き換えました．<br></div></section>
+    <ul><li><section><h1 id=5071>
+    <span class="no">[5071]</span>
+    <a class="thread-title" href="#5071">Re:関連づけツールwrapper</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-09-27T02:54:59">2007年09月27日 02:54</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ZeroMemoryは実はmemsetへのマクロだったんですね．初めて知りました．memsetを使って欲しくなかったのでSecureZeroMemory()に置き換えました．<br>メモリ転送系のAPIやCRT呼び出しは、コンパイラや最適化オプション、扱う長さによっていろいろ変化すると思います。<br>＃16バイトのmemmove()などは最適化でアセンブラのmov命令４個になったり。</div></section>
+    </li></ul></li></ul></body></html>

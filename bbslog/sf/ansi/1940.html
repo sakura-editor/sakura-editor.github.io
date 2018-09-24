@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ブラウズの設定 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1940</span>
+    <a class="thread-title" href="1940.html#1940">ブラウズの設定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1943</span>
+    <a class="thread-title" href="1940.html#1943">RE: ブラウズの設定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1944</span>
+    <a class="thread-title" href="1940.html#1944">RE2: ブラウズの設定</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1940>
+    <span class="no">[1940]</span>
+    <a class="thread-title" href="#1940">ブラウズの設定</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-20T21:39:58">2002年04月20日 21:39</time></h1>
+    <div class="body"><br>http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?tree=c1703<br>で書かれている件ですが、どうやら、<br>Sleipnir（http://www20.pos.to/~sleipnir/）の関連付けかたが、ちょっと困ったことの原因のようでした。<br>"open"には、iexplorerがいままでどおり残っていて、<br>"Sleipnir"なるアクションを作って、それを標準にしているようなのです。<br><br>そうなると、<br>::ShellExecute( NULL, "open", szURL, NULL, NULL, SW_SHOW );<br>では対応できず、<br>::ShellExecute( NULL, "Sleipnir", szURL, NULL, NULL, SW_SHOW );<br>としなければいけなくて、うまくない。<br>どうにかして、標準のアクションを、ShellExecuteで呼べればいいのだけれど、その方法もわからず。。。<br><br>困った困った。<br>情報求む。<br></div></section>
+    <ul><li><section><h1 id=1943>
+    <span class="no">[1943]</span>
+    <a class="thread-title" href="#1943">RE: ブラウズの設定</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-20T22:28:02">2002年04月20日 22:28</time></h1>
+    <div class="body"><br>ShellExecuteExで"open"の代わりにNULLを指定してください。<br></div></section>
+    <ul><li><section><h1 id=1944>
+    <span class="no">[1944]</span>
+    <a class="thread-title" href="#1944">RE2: ブラウズの設定</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-20T23:07:05">2002年04月20日 23:07</time></h1>
+    <div class="body">&gt;タイトル: RE2: ブラウズの設定<br>&gt;発言者: みく<br>&gt;ShellExecuteExで"open"の代わりにNULLを指定してください。<br><br>をを。できました。ありがとうございます。とりあえずここまででアップロードしておきます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

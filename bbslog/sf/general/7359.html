@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>外部コマンドでsedのスクリプトが反映されない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7359</span>
+    <a class="thread-title" href="7359.html#7359">外部コマンドでsedのスクリプトが反映されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7364</span>
+    <a class="thread-title" href="7359.html#7364">Re: 外部コマンドでsedのスクリプトが反映されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7365</span>
+    <a class="thread-title" href="7359.html#7365">Re2: 外部コマンドでsedのスクリプトが反映されない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7359>
+    <span class="no">[7359]</span>
+    <a class="thread-title" href="#7359">外部コマンドでsedのスクリプトが反映されない</a>
+    <span class="author">Hk</span>
+    <time datetime="2011-05-11T21:53:21">2011年05月11日 21:53</time></h1>
+    <div class="body">はじめましてHkと申します。<br>サクラエディタの外部コマンドですが、<br>sedのスクリプトを使ってテキスト整形をするため<br>sed -f test.sed (スクリプトの内容は　s/5/abc/)<br>と入力し実行しましたが反映されませんでした<br>尚、sed.exeとスクリプトファイルはpathの通したところにあります<br>外部コマンドでオプションは使えないのでしょうか<br>それとも、外部コマンドの入力の仕方が間違っているのでしょうか<br>よろしくお願いします<br></div></section>
+    <ul><li><section><h1 id=7364>
+    <span class="no">[7364]</span>
+    <a class="thread-title" href="#7364">Re: 外部コマンドでsedのスクリプトが反映されない</a>
+    <span class="author">しみづ</span>
+    <time datetime="2011-05-13T09:25:52">2011年05月13日 09:25</time></h1>
+    <div class="body"><br>&gt;sed -f test.sed (スクリプトの内容は　s/5/abc/)<br>&gt;と入力し実行しましたが反映されませんでした<br><br>　「現在開いているファイルを入力とできる」とどこかに書いてありましたか？　入力ファイルを$fなどを使って指定すればいいのでは。<br> <br></div></section>
+    <ul><li><section><h1 id=7365>
+    <span class="no">[7365]</span>
+    <a class="thread-title" href="#7365">Re2: 外部コマンドでsedのスクリプトが反映されない</a>
+    <span class="author">Hk</span>
+    <time datetime="2011-05-13T12:14:11">2011年05月13日 12:14</time></h1>
+    <div class="body">▼ しみづさん<br>&gt; <br>&gt; &gt;sed -f test.sed (スクリプトの内容は　s/5/abc/)<br>&gt; &gt;と入力し実行しましたが反映されませんでした<br>&gt; <br>&gt; 　「現在開いているファイルを入力とできる」とどこかに書いてありましたか？　入力ファイルを$fなどを使って指定すればいいのでは。<br><br>あらためてsed -f test.sed　でためしてみたらできました<br>$Fを指定しなくても現在開いているファイルにできました。<br>お返事ありがとうございました </div></section>
+    </li></ul></li></ul></li></ul></body></html>

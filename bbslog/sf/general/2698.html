@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>キーカスタマイズについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2698</span>
+    <a class="thread-title" href="2698.html#2698">キーカスタマイズについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2799</span>
+    <a class="thread-title" href="2698.html#2799">Re: キーカスタマイズについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2807</span>
+    <a class="thread-title" href="2698.html#2807">Re2: キーカスタマイズについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2809</span>
+    <a class="thread-title" href="2698.html#2809">Re3: キーカスタマイズについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2812</span>
+    <a class="thread-title" href="2698.html#2812">Re4: キーカスタマイズについて</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2698>
+    <span class="no">[2698]</span>
+    <a class="thread-title" href="#2698">キーカスタマイズについて</a>
+    <span class="author">KDM</span>
+    <time datetime="2003-02-05T14:35:31">2003年02月05日 14:35</time></h1>
+    <div class="body">現在英語キーボードつかっているんですけども<br>Ctrl+Alt+'(Enterの右側にあるシングルクォート) に<br>機能を割り当てたいのですが可能なのでしょうか？<br>キー割り当てタブの右ペインに'も"もないようなのですが・・<br>Ver 1.3.6.3 V です．<br></div></section>
+    <ul><li><section><h1 id=2799>
+    <span class="no">[2799]</span>
+    <a class="thread-title" href="#2799">Re: キーカスタマイズについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-03-09T01:05:10">2003年03月09日 01:05</time></h1>
+    <div class="body">&gt;Ctrl+Alt+'(Enterの右側にあるシングルクォート) に<br>&gt;機能を割り当てたいのですが可能なのでしょうか？<br>キーコードがわかれば対応できますが...<br><br>何かキーコードを調べるいいツールないかな...<br></div></section>
+    <ul><li><section><h1 id=2807>
+    <span class="no">[2807]</span>
+    <a class="thread-title" href="#2807">Re2: キーカスタマイズについて</a>
+    <span class="author">KDM</span>
+    <time datetime="2003-03-11T10:38:33">2003年03月11日 10:38</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;Ctrl+Alt+'(Enterの右側にあるシングルクォート) に<br>&gt; &gt;機能を割り当てたいのですが可能なのでしょうか<br>&gt; キーコードがわかれば対応できますが...<br>&gt; <br>&gt; 何かキーコードを調べるいいツールないかな...<br><br>Ctrl+Alt+' のキーコードですよね．<br>'のキーコードなら40(DEC)らしいんですけど・・・ref.↓<br>http://www.compaq.co.jp/products/dvf/docs/vf-html/lr/lr18_03_01.htm</div></section>
+    <ul><li><section><h1 id=2809>
+    <span class="no">[2809]</span>
+    <a class="thread-title" href="#2809">Re3: キーカスタマイズについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-03-12T00:53:22">2003年03月12日 00:53</time></h1>
+    <div class="body">&gt;Ctrl+Alt+' のキーコードですよね．<br>&gt;'のキーコードなら40(DEC)らしいんですけど・・・ref.↓<br>すいません。キーボードのスキャンコードじゃなくて、Windows内部で使われる仮想キーコードのことでした。<br><br>Windows SDKのWinUser.hを見たら、USキーボードに関しても定義してありました。<br>#define VK_OEM_7          0xDE  //  ''"' for US<br>この値は、日本語キーボードの^と同じようです。<br><br>ついでに、左上の<br>#define VK_OEM_3          0xC0   // '`~' for US<br>は日本語キーボードの＠と同じようです。<br><br>他にもPC-98の=とか、OASYSキーボードの特殊キーとか、Win2K以降専用ながらキーボードにおまけで付いてるマルチメディア用ボタンみたいなのもヘッダには定義されていますね。<br></div></section>
+    <ul><li><section><h1 id=2812>
+    <span class="no">[2812]</span>
+    <a class="thread-title" href="#2812">Re4: キーカスタマイズについて</a>
+    <span class="author">KDM</span>
+    <time datetime="2003-03-12T11:46:32">2003年03月12日 11:46</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; #define VK_OEM_7          0xDE  //  ''"' for US<br>&gt; この値は、日本語キーボードの^と同じようです。<br>^に設定したら，'"(forUS)をカスタマイズ出来るようになりました．<br>ちょっと設定時が気持ち悪いけど，英語キーボードユーザは少数派だから・・・<br><br>どうもありがとうございました．</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

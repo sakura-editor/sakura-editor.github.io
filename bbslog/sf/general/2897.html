@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>行頭が強調表示されず | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2897</span>
+    <a class="thread-title" href="2897.html#2897">行頭が強調表示されず</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2899</span>
+    <a class="thread-title" href="2897.html#2899">RE: 行頭が強調表示されず</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2897>
+    <span class="no">[2897]</span>
+    <a class="thread-title" href="#2897">行頭が強調表示されず</a>
+    <span class="author">loop</span>
+    <time datetime="2003-05-08T10:50:11">2003年05月08日 10:50</time></h1>
+    <div class="body">以下の手順で行頭の正規表現キーワードが強調表示されない様です。<br><br>1.対括弧の強調表示のチェックを入れておく<br>2.正規表現キーワードで対になる括弧を含む文字列(例えば"\(.*\)"など)を<br>  指定する<br>3.その文字列を行頭に表示させる<br>4.括弧のところ(左右どちらでも)にカーソルを持っていく<br>5.他の場所へカーソルを持っていく<br><br>3で正規表現の強調表示，4で対括弧の強調表示されますが，5で行頭の括弧<br>だけ正規表現の強調表示に戻らず通常表示のままになってしまいます。<br>再描写すると直ります。<br></div></section>
+    <ul><li><section><h1 id=2899>
+    <span class="no">[2899]</span>
+    <a class="thread-title" href="#2899">RE: 行頭が強調表示されず</a>
+    <span class="author">ai</span>
+    <time datetime="2003-05-09T18:10:43">2003年05月09日 18:10</time></h1>
+    <div class="body">対応しました。<br>合わせて下の修正も行なっています。<br>・折り返された行に正規表現等で色分けされた括弧があり、その括弧が強調表示された後に元の色に戻らなくなる。<br>ssrc_2003-04-24.tar.bz2からの差分です。<br><br>diff -ur sakura_core.orig/CEditView.cpp sakura_core/CEditView.cpp<br>--- sakura_core.orig/CEditView.cpp&#9;Mon Apr 21 04:35:42 2003<br>+++ sakura_core/CEditView.cpp&#9;Fri May 09 10:08:57 2003<br>@@ -8615,7 +8615,13 @@<br> &#9;&#9;&#9;&#9;&#9;nColorIndex = COLORIDX_BRACKET_PAIR;<br> &#9;&#9;&#9;&#9;}else{<br> &#9;&#9;&#9;&#9;&#9;if( IsBracket( pLine, OutputX, m_nCharSize ) ){<br>-&#9;&#9;&#9;&#9;&#9;&#9;nColorIndex = GetColorIndex( hdc, pcLayout, OutputX );<br>+&#9;&#9;&#9;&#9;&#9;&#9;// 03/04/30 ai Start<br>+&#9;&#9;&#9;&#9;&#9;&#9;if( i == 0 ){<br>+&#9;&#9;&#9;&#9;&#9;&#9;&#9;nColorIndex = GetColorIndex( hdc, pcLayout, m_nBracketCaretPosX_PHY );<br>+&#9;&#9;&#9;&#9;&#9;&#9;}else{<br>+&#9;&#9;&#9;&#9;&#9;&#9;&#9;nColorIndex = GetColorIndex( hdc, pcLayout, m_nBracketPairPosX_PHY );<br>+&#9;&#9;&#9;&#9;&#9;&#9;}<br>+&#9;&#9;&#9;&#9;&#9;&#9;// 03/04/30 ai End<br> &#9;&#9;&#9;&#9;&#9;}else{<br> &#9;&#9;&#9;&#9;&#9;&#9;SetBracketPairPos( false );<br> &#9;&#9;&#9;&#9;&#9;&#9;//::MessageBeep( MB_ICONSTOP );<br>@@ -8728,8 +8734,10 @@<br> &#9;/* 論理行データの取得 */<br> &#9;if( NULL != pcLayout ){<br> &#9;&#9;// 2002/2/10 aroka CMemory変更<br>-&#9;&#9;nLineLen = pcLayout-&gt;m_pCDocLine-&gt;m_pLine-&gt;GetLengt<br>h() - pcLayout-&gt;m_nOffset;<br>-&#9;&#9;pLine = pcLayout-&gt;m_pCDocLine-&gt;m_pLine-&gt;GetPtr() + pcLayout-&gt;m_nOffset;<br>+&#9;&#9;// 03/04/30 ai Start<br>+&#9;&#9;nLineLen = pcLayout-&gt;m_pCDocLine-&gt;m_pLine-&gt;GetLengt<br>h();<br>+&#9;&#9;pLine = pcLayout-&gt;m_pCDocLine-&gt;m_pLine-&gt;GetPtr()<br>;<br>+&#9;&#9;// 03/04/30 ai End<br> &#9;&#9;nCOMMENTMODE = pcLayout-&gt;m_nTypePrev;&#9;/* タイプ 0=通常 1=行コメント 2=ブロックコメント 3=シングルクォーテーション文字列 4=ダブルクォーテーション文字列 */<br> &#9;&#9;nCOMMENTEND = 0;<br> &#9;&#9;pcLayout2 = pcLayout;<br>@@ -8760,7 +8768,7 @@<br> &#9;&#9;}<br> &#9;&#9;//@@@ 2001.11.17 add end MIK<br> <br>-&#9;&#9;while( nPos &lt; nCol ){&#9;// 02/12/18 ai<br>+&#9;&#9;while( nPos &lt;= nCol ){&#9;// 03/05/08 ai 2897@一般掲示板対応<br> <br> &#9;&#9;&#9;nBgn = nPos;<br> &#9;&#9;&#9;nLineBgn = nBgn;<br>@@ -9267,7 +9275,7 @@<br> &#9;&#9;&#9;&#9;}<br> &#9;&#9;&#9;&#9;nPos+= nCharChars;<br> &#9;&#9;&#9;} //end of while( nPos - nLineBgn &lt; pcLayout2-&gt;m_nLength ){<br>-&#9;&#9;&#9;if( nPos &gt;= nCol ){&#9;// 02/12/18 ai<br>+&#9;&#9;&#9;if( nPos &gt; nCol ){&#9;// 03/05/08 ai 2897@一般掲示板対応<br> &#9;&#9;&#9;&#9;break;<br> &#9;&#9;&#9;}<br> &#9;&#9;}<br><br>※遅くなりましたが、メニューが残る件の対応ありがとうございました。 &gt;げんたさん、みくさん<br></div></section>
+    </li></ul></li></ul></body></html>

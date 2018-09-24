@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>&#9;全角→半角で単体の濁点・半濁点が変換されない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1821</span>
+    <a class="thread-title" href="1821.html#1821">&#9;全角→半角で単体の濁点・半濁点が変換されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1822</span>
+    <a class="thread-title" href="1821.html#1822">Re:&#9;全角→半角で単体の濁点・半濁点が変換されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1823</span>
+    <a class="thread-title" href="1821.html#1823">Re2:&#9;全角→半角で単体の濁点・半濁点が変換されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1824</span>
+    <a class="thread-title" href="1821.html#1824">Re3:&#9;全角→半角で単体の濁点・半濁点が変換されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1825</span>
+    <a class="thread-title" href="1821.html#1825">Re4:&#9;全角→半角で単体の濁点・半濁点が変換されない</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1826</span>
+    <a class="thread-title" href="1821.html#1826">Re4:&#9;全角→半角で単体の濁点・半濁点が変換されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1827</span>
+    <a class="thread-title" href="1821.html#1827">Re5:&#9;全角→半角で単体の濁点・半濁点が変換されない</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1821>
+    <span class="no">[1821]</span>
+    <a class="thread-title" href="#1821">&#9;全角→半角で単体の濁点・半濁点が変換されない</a>
+    <span class="author">syat</span>
+    <time datetime="2012-06-05T00:49:01">2012年06月05日 00:49</time></h1>
+    <div class="body">ふぁんくらぶの&gt;&gt;378でコメントのあった、全角→半角で単体の「゛」「゜」が変換されないのを修正するパッチを投稿しました。<br>PatchUnicode:3531937<br>Unicode版だと、「全角カタカナ→半角カタカナ」は変換OK、「全角→半角」はNG。<br>ANSI版だと、どちらもOKだったので、ANSI版に合わせます。<br><br>さらに、ANSI版の「全角カタカナ→半角カタカナ」は、濁点が単独の場合（前にカタカナがない場合）は半角変換しませんが、Unicode版では変換してしまうという差分があります。<br>そちらはまだ修正していません。<br></div></section>
+    <ul><li><section><h1 id=1822>
+    <span class="no">[1822]</span>
+    <a class="thread-title" href="#1822">Re:&#9;全角→半角で単体の濁点・半濁点が変換されない</a>
+    <span class="author">petit</span>
+    <time datetime="2012-06-05T09:04:59">2012年06月05日 09:04</time></h1>
+    <div class="body">「ゐ(U+3090)」「ゑ(U+3091)」の全角→半角変換も違ってるみたいです。<br>A版：「イ(U+FF72)」「エ(U+FF74)」<br>U版：「ヰ(U+30F0)」「ヱ(U+30F1)」<br><br>U版だと「ヰ(U+30F0)」「ヱ(U+30F1)」の全角→半角も変換されませんね。</div></section>
+    <ul><li><section><h1 id=1823>
+    <span class="no">[1823]</span>
+    <a class="thread-title" href="#1823">Re2:&#9;全角→半角で単体の濁点・半濁点が変換されない</a>
+    <span class="author">syat</span>
+    <time datetime="2012-06-07T07:02:09">2012年06月07日 07:02</time></h1>
+    <div class="body">▼ petitさん<br>&gt; 「ゐ(U+3090)」「ゑ(U+3091)」の全角→半角変換も違ってるみたいです。<br>&gt; A版：「イ(U+FF72)」「エ(U+FF74)」<br>&gt; U版：「ヰ(U+30F0)」「ヱ(U+30F1)」<br>&gt; <br>&gt; U版だと「ヰ(U+30F0)」「ヱ(U+30F1)」の全角→半角も変換されませんね。<br><br>全角→半角が、一度全角カタカナに直してから半角かという処理なので、ヰヱが半角化できないというのが根本原因ですね。<br>ANSI版は_mbctombbという関数を使っていたのが、Unicode版では独自実装になっています。<br><br>ヮヰヱヵヶがANSI版ではワイエカケになりますが、UNICODE版では変換されません。<br>Unicode版のソースを見ると、対応する半角文字がないので除外した、というようなコメントがありますが、とりあえずANSI版の動作に合わせましょうか。<br></div></section>
+    <ul><li><section><h1 id=1824>
+    <span class="no">[1824]</span>
+    <a class="thread-title" href="#1824">Re3:&#9;全角→半角で単体の濁点・半濁点が変換されない</a>
+    <span class="author">神楽</span>
+    <time datetime="2012-06-16T13:41:08">2012年06月16日 13:41</time></h1>
+    <div class="body">▼ syatさん<br>&gt; ヮヰヱヵヶがANSI版ではワイエカケになりますが、UNICODE版では変換されません。<br>&gt; Unicode版のソースを見ると、対応する半角文字がないので除外した、というようなコメントがありますが、とりあえずANSI版の動作に合わせましょうか。<br><br>全角小文字のヵヶが半角大文字のカケになるのをバグとみなしている人もいます。<br><a href=http://sakura.qp.land.to/?BugReport%2F81 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F81</nobr></a><br><br>ですので、ANS版1.5.15.0互換の動作にするというオプション化<br>の方が良いのではないでしょうか？<br><a href=http://sakura.qp.land.to/?FAQ%2F29 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>FAQ%<wbr>2F29</nobr></a><br><br>個人的意見としては全角カナと半角カナの変換は1対1対応であるべきと思いますので、<br>ヮヰヱヵヶは変換されない仕様が良いです。</div></section>
+    <ul><li><section><h1 id=1825>
+    <span class="no">[1825]</span>
+    <a class="thread-title" href="#1825">Re4:&#9;全角→半角で単体の濁点・半濁点が変換されない</a>
+    <span class="author">もか</span>
+    <time datetime="2012-06-16T16:04:26">2012年06月16日 16:04</time></h1>
+    <div class="body">Unicodeには合成用の濁点もあるので、半角→全角との双方向変換はあきらめて、可能な限り変換するのがいいと思います。<br>ただのオプション化はマクロの互換性が下がるので、できればそれも考慮してほしいです。<br>変換は色々好みがあるようなので、内臓のものにはあまり手を付けないでマクロを提供したほうがいいんじゃないかな。<br></div></section>
+    </li><li><section><h1 id=1826>
+    <span class="no">[1826]</span>
+    <a class="thread-title" href="#1826">Re4:&#9;全角→半角で単体の濁点・半濁点が変換されない</a>
+    <span class="author">syat</span>
+    <time datetime="2012-06-16T16:38:09">2012年06月16日 16:38</time></h1>
+    <div class="body">▼ 神楽さん<br>&gt; ですので、ANS版1.5.15.0互換の動作にするというオプション化<br>&gt; の方が良いのではないでしょうか？<br>&gt; <a href=http://sakura.qp.land.to/?FAQ%2F29 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>FAQ%<wbr>2F29</nobr></a><br><br>ご指摘ありがとうございます。昔から議論されてきている話題のようですね。<br>&gt;&gt;unicode:1412によるとUNICODE版はrev1849でヵヶヮを半角化しない修正が入っているようです（日付から見てBugReport/81とは関係なさそう）。<br><br>1.5.14.0をダウンロードして調査してみました。（とりあえず記号含まないカナのみ）<br><a href=https://docs.google.com/spreadsheet/pub?key=0ApwYIi1qasEzdE9jYzF5MXR2VFNjeW9GZ2pNSE target=_top><nobr>https://<wbr>docs.<wbr>google.<wbr>com/<wbr>spreadsh<wbr>eet/<wbr>pub?<wbr>key=<wbr>0ApwYIi1<wbr>qasEzdE9<wbr>jYzF5MXR<wbr>2VFNjeW9<wbr>GZ2pNSE</nobr></a><br>ZleEE&amp;output=html<br>少なくとも1.5.14.0以降ではANSI版は「ヮヰヱヵヶ」を半角変換できたので、UNICODE版から変わったことになりますが、仕様変更であればヘルプなどにもしっかり書く必要があります。<br>オプション化するのは全然構いませんが、デフォルト動作はなるべく変更しない方がよいのでは。<br></div></section>
+    <ul><li><section><h1 id=1827>
+    <span class="no">[1827]</span>
+    <a class="thread-title" href="#1827">Re5:&#9;全角→半角で単体の濁点・半濁点が変換されない</a>
+    <span class="author">神楽</span>
+    <time datetime="2012-06-16T23:23:57">2012年06月16日 23:23</time></h1>
+    <div class="body">▼ もかさん<br>&gt; Unicodeには合成用の濁点もあるので、半角→全角との双方向変換はあきらめて、可能な限り変換するのがいいと思います。<br>&gt; ただのオプション化はマクロの互換性が下がるので、できればそれも考慮してほしいです。<br>&gt; 変換は色々好みがあるようなので、内臓のものにはあまり手を付けないでマクロを提供したほうがいいんじゃないかな。<br><br>確かに結合文字は全角→半角変換の対象になって欲しいので、<br>1対1対応であるべきという前言は撤回します。<br><br><br>▼ syatさん<br>&gt; 1.5.14.0をダウンロードして調査してみました。（とりあえず記号含まないカナのみ）<br>&gt; <a href=https://docs.google.com/spreadsheet/pub?key=0ApwYIi1qasEzdE9jYzF5MXR2VFNjeW9GZ2pNSE target=_top><nobr>https://<wbr>docs.<wbr>google.<wbr>com/<wbr>spreadsh<wbr>eet/<wbr>pub?<wbr>key=<wbr>0ApwYIi1<wbr>qasEzdE9<wbr>jYzF5MXR<wbr>2VFNjeW9<wbr>GZ2pNSE</nobr></a><br>&gt; ZleEE&amp;output=html<br>&gt; 少なくとも1.5.14.0以降ではANSI版は「ヮヰヱヵヶ」を半角変換できたので、UNICODE版から変わったことになりますが、仕様変更であればヘルプなどにもしっかり書く必要があります。<br>&gt; オプション化するのは全然構いませんが、デフォルト動作はなるべく変更しない方がよいのでは。<br><br>もかさんのご意見もありますし、デフォルト動作をANSI版相当に戻すことに異論ありません。<br>正直に申し上げますと、サクラエディタ利用歴は長いですが、<br>あまり変換メニューは利用していません（IMEの逆変換で済ませることが多いです）。<br><br>ですので、Unicode版2.0.0.0～2.0.4.0の動作の方をオプション化という方が良さそうですね<br>（個人的にはオプション化せずに変換動作を完全にANSI版時代に戻して頂いても構いません）。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

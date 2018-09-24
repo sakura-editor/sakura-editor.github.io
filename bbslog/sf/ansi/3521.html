@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>有効なカーソル位置の謎 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3521</span>
+    <a class="thread-title" href="3521.html#3521">有効なカーソル位置の謎</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3547</span>
+    <a class="thread-title" href="3521.html#3547">Re: 有効なカーソル位置の謎</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3521>
+    <span class="no">[3521]</span>
+    <a class="thread-title" href="#3521">有効なカーソル位置の謎</a>
+    <span class="author">もか</span>
+    <time datetime="2004-04-03T00:28:05">2004年04月03日 00:28</time></h1>
+    <div class="body"><br>あと、有効なカーソル位置ってどの範囲なのか、いまいちわかりません。<br>私が認識している動作は、フリーカーソルモードか、矩形選択中・終了後の位置としてEOFにまつわる位置だけに絞っても、<br>1. [EOF]だけの行(データの終端は改行)は行頭以外却下。<br>2. [EOF]だけのレイアウト行(データの終端は普通の文字)は行頭以外却下。<br> 不思議なのは、レイアウト折り返し時はインデントされないし、カーソル座標表示も変かも。。<br>3. 普通の文字の後ろについた[EOF]より後ろ（正確には右側かつウィンドウ折り返し線より左側）は有効。<br>で次の行（EOFマークの次の行だから存在していない行）は不正。<br><br>あと、矩形選択で、折り返し位置にカーソルを移動しようとしても、行頭に飛ばされてしまって、最後の1文字が選択できません。<br>ただし、EOFの表示のみ折り返される場合は、選択できてしまいます。<br>選択できるようにすると、今度は、論理座標との双方向変換の1対1対応が保証されなくなるので、たぶんこまります。<br><br>おそらく関係各記事<br>&gt;&gt;2473 EOFで落ちる<br>&gt;&gt;2718 EOFで行削除した後のカーソル位置について<br>&gt;&gt;3239 EOF行の行番号と、空データ論理行<br>&gt;&gt;3509 修正中のパッチ ←これ上記2.の考慮が抜けてます<br></div></section>
+    <ul><li><section><h1 id=3547>
+    <span class="no">[3547]</span>
+    <a class="thread-title" href="#3547">Re: 有効なカーソル位置の謎</a>
+    <span class="author">もか</span>
+    <time datetime="2004-04-25T00:28:34">2004年04月25日 00:28</time></h1>
+    <div class="body">&gt;あと、矩形選択で、折り返し位置にカーソルを移動しようとしても、行頭に飛ばされてしまって、最後の1文字が選択できません。<br>&gt;ただし、EOFの表示のみ折り返される場合は、選択できてしまいます。<br>&gt;選択できるようにすると、今度は、論理座標との双方向変換の1対1対応が保証されなくなるので、たぶんこまります。<br>行選択しようとすると、折り返される直前の文字が含まれません。<br>マウスで選択する場合も、最後の文字の右半分の位置にマウスカーソルがあれば選択できるのですが、文字より右だと最後の文字だけ選択されません。<br><br>メモ帳とかの動作を見ると、折り返し行の右側は、有効な位置なのが普通みたいです。<br></div></section>
+    </li></ul></li></ul></body></html>

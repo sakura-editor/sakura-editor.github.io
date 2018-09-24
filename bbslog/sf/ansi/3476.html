@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ウィンドウ→重ねて表示について＆ソース(1) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3476</span>
+    <a class="thread-title" href="3476.html#3476">ウィンドウ→重ねて表示について＆ソース(1)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3477</span>
+    <a class="thread-title" href="3476.html#3477">ウィンドウ→重ねて表示について＆ソース(2)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3483</span>
+    <a class="thread-title" href="3476.html#3483">RE: ウィンドウ→重ねて表示について＆ソース(2)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3486</span>
+    <a class="thread-title" href="3476.html#3486">Re: ウィンドウ→重ねて表示について＆ソース(2)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3488</span>
+    <a class="thread-title" href="3476.html#3488">Re2: ウィンドウ→重ねて表示について＆ソース(2)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3489</span>
+    <a class="thread-title" href="3476.html#3489">Re2: ウィンドウ→重ねて表示について＆ソース(2)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3491</span>
+    <a class="thread-title" href="3476.html#3491">重ねて表示＿座標計算してみました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3492</span>
+    <a class="thread-title" href="3476.html#3492">RE: 重ねて表示＿座標計算してみました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3493</span>
+    <a class="thread-title" href="3476.html#3493">Re2: 重ねて表示＿座標計算してみました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3496</span>
+    <a class="thread-title" href="3476.html#3496">重ねて表示■座標計算の構築</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3497</span>
+    <a class="thread-title" href="3476.html#3497">テスト不可能・・・</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3503</span>
+    <a class="thread-title" href="3476.html#3503">RE: 重ねて表示＿座標計算してみました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3513</span>
+    <a class="thread-title" href="3476.html#3513">ありました！！</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3478</span>
+    <a class="thread-title" href="3476.html#3478">ウィンドウ→重ねて表示について＆ソース(3)-1</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3479</span>
+    <a class="thread-title" href="3476.html#3479">ウィンドウ→重ねて表示について＆ソース(3)-2</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3480</span>
+    <a class="thread-title" href="3476.html#3480">ウィンドウ→重ねて表示について＆ソース(3)-3</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3484</span>
+    <a class="thread-title" href="3476.html#3484">RE: ウィンドウ→重ねて表示について＆ソース(1)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3485</span>
+    <a class="thread-title" href="3476.html#3485">Re2: ウィンドウ→重ねて表示について＆ソース(1)</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3476>
+    <span class="no">[3476]</span>
+    <a class="thread-title" href="#3476">ウィンドウ→重ねて表示について＆ソース(1)</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-03-20T00:33:33">2004年03月20日 00:33</time></h1>
+    <div class="body">初めてまして。みなさん。<br><br>ネット上で何かフリーのいいエディタはないか色々探していたところ<br>オープンソースのティストエディタがあるというので<br>起動してみたら淡い桜色の画面がとても新鮮で素敵でした。<br>目のアイコンボタンに愛嬌があって面白いなぁとも、思いました。<br>機能もとてもたくさんあって、使い切れないくらいいっぱいです。<br>フリーソフトでこんなにできるなんて！！<br>しかもフリーで使えるなんて！！<br>オープンソースって<br>すごいなぁって、改めて思いました。<br>今はサクラエディタを使ってます。<br><br>原作者の「たけ」さんをはじめ、<br>げんたさん。もかさん。。みくさん。。。<br>サクラエディタ開発関係者の方々に感謝すると共に<br>この場を借りて何か言いたい！<br>という気持ちにもさせられ<br>こうやって、今、書いているわけです。<br><br>素敵なエディタですが、、、<br>使い始めて少し残念な事がありました。<br>全体的なインターフェイスです。<br>機能を順次追加していくために回避不能なのかもしれませんが<br>一般の人が使うのに、<br>例えばですが、メニュー検索から検索やブックマークはよく使うでしょうが<br>ブックマークは下のほうです。「コマンドキーを使え！」と、<br>言われれば、それまでですが、、、<br>アウトライン解析は、ほとんど手を出さないように思います。<br>しかしダイアログ名にあるように「テキスト トピックツリー」<br>という表示ならヘルプなしでもすぐにポインタが動くように思えます。<br><br>「オープンソースなんだからメニューの位置を変えてコンパイラすれば？」<br>との声もあがりそうですが、それくらいの器量のある方なら<br>掲示板に要望を書いたりしないかと思います。<br>少しさかのぼって読みましたが、<br>いつも手前にサクラエディタを置いておきたい！<br>他のアプリを差し置いて、デスクトップの手前はいつもサクラエディタ！<br>素敵なことじゃないですか！<br>細かいところですが、初心者でも使いやすいインタフェース！<br>というのを一考願えれば幸いです。m(_ _)m<br><br>全ての機能を使ってるわけではないので分かりませんが<br>かくゆう私もどうしても、最初に、これは使えない。。。。。<br>という大きな部分と、気づいた点ですが、思ったことがありました。<br>以下にその旨を書きたいと思います。<br>項目書きなので、切り離したような言い方は<br>あらかじめご了承ください。m(_ _)m<br>また、過去ログが膨大ではっきりいって読んでおりません。<br>既出であるにせよ、現状の問題点としてとらえています。<br></div></section>
+    <ul><li><section><h1 id=3477>
+    <span class="no">[3477]</span>
+    <a class="thread-title" href="#3477">ウィンドウ→重ねて表示について＆ソース(2)</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-03-20T00:36:48">2004年03月20日 00:36</time></h1>
+    <div class="body">１■「ツール」から「タブを表示」<br> タブ表示の切り替えのインターフェイスについて。<br> タブを隠す状態から、複数ファイルを開いていて、メニュー「ツール」→「タブを表示」した場合、<br> カレントのウィンドウはタブ表示される。<br> しかし、他のウィンドウのタブをクリックして、<br> 移動すると同時にタスクバーから最初のウィンドウが消える（消えたように見える）、<br> 移動先のウィンドウはタブ表示でないため、<br> 最初のウィンドウに戻るには、メニューのウィンドウから選択、もしくは<br> アクティブになったウィンドウからもう一度「ツール」→「タブを表示」してから選択しなければならない。<br> 使うときに最初から最後までウィンドウかタブかのどちらか決めておけばよいのだが、、、。<br> タブの機能のインターフェースとして見た場合、使いづらい。<br> 現状としては初期設定として組み込むだけの方がベターな気がする。<br> <br> ○案<br> メニューから簡易に切り替えができるなら<br> 「タブを表示」（隠す）の切り替え設定は、開いている全ウィンドウ共通なものとして適用する。<br> <br>２■「ウィンドウ」の「重ねて表示」<br> 複数のウィンドウを開いたとき<br> 全てのウィンドウを”見やすく”するために順に並べるわけだが、<br> 肝心のキャプションが隠れてしまうウィンドウもあり、きれいに並ばない。<br> また、タスクバーが上にあると、タスクバーの下にウィンドウが隠れてしまう。<br> <br>３■「ウィンドウ」の「上下に並べて表示」<br> タスクバーが上にあると、タスクバーの下にウィンドウが隠れてしまう。<br> （なぜか「ウィンドウ」の「左右に並べて表示」はＯＫ）<br> <br>４■タスクバーからのウィンドウ名と実際のウィンドウの配列のとり方の順が違ってる。<br> （カレントウィンドウのメニューバーからの選択はＯＫ）<br> <br>５■ウィンドウへの複数のファイルのドラッグ＆ドロップはできるが、<br> 本体（アプリケーション）への複数ファイルのドラッグ＆ドロップに対応していない。<br> （これは個人的な利便性です。問題ではありません）<br> <br>とりあえず５項目です。<br>■２に付いて<br>YAZAKIさんMIKさんGentaさんの修正が行われておりましたが、<br>微力ながら、全体的な修正ソースをつくりました。<br>■３に付いては一行のみです。<br>■４については、ソースをみておりません。m(_ _)m<br>しかしながら、ウィンドウの方のソースをそのまま持ってくればいいかと思います。<br>決まった処理のユーザー関数は使いまわしができると、<br>ファットにならずに、いいのでしょうが・・・<br><br>ソースをＹａｈｏｏの方にアップしようかと思いましたが、、、<br>よくかりません。。。。（汗）<br>差分の書き方も。。。。よくわかりません（汗）<br>重ね重ね、すみません。<br>一部の関数で、短いものなので、ここにはっちゃいます。<br>ご一考ください。<br>（なお、全体をみているわけではないで、エクスプローラーの関係が<br>よくわからないまま書きました・・・ん～）<br></div></section>
+    <ul><li><section><h1 id=3483>
+    <span class="no">[3483]</span>
+    <a class="thread-title" href="#3483">RE: ウィンドウ→重ねて表示について＆ソース(2)</a>
+    <span class="author">みく</span>
+    <time datetime="2004-03-20T07:16:35">2004年03月20日 07:16</time></h1>
+    <div class="body">&gt;タイトル: RE: ウィンドウ→重ねて表示について＆ソース(2)<br>&gt;発言者: ぜん<br>&gt;１■「ツール」から「タブを表示」<br>... <br>&gt; ○案<br>&gt; メニューから簡易に切り替えができるなら<br>&gt; 「タブを表示」（隠す）の切り替え設定は、開いている全ウィンドウ共通なものとして適用する。<br><br>タブの実装者として、今のところ対応する予定はありません。<br></div></section>
+    </li><li><section><h1 id=3486>
+    <span class="no">[3486]</span>
+    <a class="thread-title" href="#3486">Re: ウィンドウ→重ねて表示について＆ソース(2)</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-20T17:47:17">2004年03月20日 17:47</time></h1>
+    <div class="body">&gt;２■「ウィンドウ」の「重ねて表示」<br>&gt; 複数のウィンドウを開いたとき<br>&gt; 全てのウィンドウを”見やすく”するために順に並べるわけだが、<br>&gt; 肝心のキャプションが隠れてしまうウィンドウもあり、きれいに並ばない。<br>&gt; また、タスクバーが上にあると、タスクバーの下にウィンドウが隠れてしまう。<br><br>ぜんさんのコードを参考にして直してみました．<br><a href=http://members.at.infoseek.co.jp/sakura_editor/snapshot/sakura_2003-03-20_test1.zip target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>snapshot<wbr>/<wbr>sakura_2<wbr>003-<wbr>03-<wbr>20_test1<wbr>.<wbr>zip</nobr></a><br>バイナリ＋diff差分です．<br><br>うちはWinXPなのですが，ぜんさんの方法でもやはり途中のウィンドウが上に来たりしていましたので，ウィンドウを並べるところは別の方法で実装してあります．SetWindowPosが指定ウィンドウの「下」に配置する機能を提供しているのに必死に下から上に並べようとするから無理があるのではないかと思い，一旦すべてのウィンドウの座標を計算したあとで一番上から順番に下に向かって配置するようにしてみました．<br><br>ぜんさんの2周目以降右にずらしていく機能も取り込んでみましたが，2周目に行くと1周目のアイコンが隠れてしまいますよね．<br>左上から各数値(数値の大きいほど上)がウィンドウのアイコン位置として<br>１５<br>→２６<br>→→３７<br>→→→４８<br>と並び替えられたところを考えてみると，2は5の下に，3は6の下に入ってしまいます．<br><br>１２<br>→３４<br>→→５６<br>→→→７８<br>の方が(Windows標準とは違いますが)アイコンがすべて見えていいんではないかと思いますが，どうでしょう？<br></div></section>
+    <ul><li><section><h1 id=3488>
+    <span class="no">[3488]</span>
+    <a class="thread-title" href="#3488">Re2: ウィンドウ→重ねて表示について＆ソース(2)</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-03-21T09:42:39">2004年03月21日 09:42</time></h1>
+    <div class="body">やはり同時進行は無理がありましたか・・・<br>計算してから描画というのが普通なのでしょうが、<br>なるべくオリジナルのソースを壊さないようにと思って加筆いたしました<br>つたないソースを掲載してすみません。<br><br>&gt; の方が(Windows標準とは違いますが)アイコンがすべて見えていいんではないかと思いますが，どうでしょう？<br>大満足です！！<br>ありがとうございましたm(_ _)m &gt;げんたさん<br></div></section>
+    </li><li><section><h1 id=3489>
+    <span class="no">[3489]</span>
+    <a class="thread-title" href="#3489">Re2: ウィンドウ→重ねて表示について＆ソース(2)</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-21T13:03:37">2004年03月21日 13:03</time></h1>
+    <div class="body">&gt;１２<br>&gt;→３４<br>&gt;→→５６<br>&gt;→→→７８<br>&gt;の方<br>手動(笑)でイメージだけ作ってみました．<br><a href=http://members.at.infoseek.co.jp/sakura_editor/snapshot/sakura-cascade1.png target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>snapshot<wbr>/<wbr>sakura-<wbr>cascade1<wbr>.<wbr>png</nobr></a><br>実際にやろうとすると結構計算が面倒くさそうなので，今回はやめておきます．<br></div></section>
+    <ul><li><section><h1 id=3491>
+    <span class="no">[3491]</span>
+    <a class="thread-title" href="#3491">重ねて表示＿座標計算してみました</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-03-22T23:55:43">2004年03月22日 23:55</time></h1>
+    <div class="body">イメージ見ました！！<br>きれい！！<br>いい！！<br>計算・・・ちょっと（いや、かなり試行錯誤）面倒でした（汗）<br>ファイルアップしようとブリーフケースまでいきましたが、、<br>追加できませんでした。。。ので<br>こちらにアップしておきた。<br><a href=http://www.geocities.co.jp/HeartLand-Momiji/6138/dl.html target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>co.<wbr>jp/<wbr>HeartLan<wbr>d-<wbr>Momiji/<wbr>6138/<wbr>dl.<wbr>html</nobr></a><br>CEditView-Command_CASCADE-icon-za-test1.txt<br>座標計算のところだけです。<br>が！！<br>私の環境ノートOS-98SEですとシステムリソースが足りなくなり、<br>１４枚くらいしか開けません。。。（汗<br>一応、画面いっぱいを何度も重ねてもＯＫな仕様にしたつもりなのですが、確認できません。。。<br>（滝汗<br>暇なときにでも見てください。m(_ _)M</div></section>
+    <ul><li><section><h1 id=3492>
+    <span class="no">[3492]</span>
+    <a class="thread-title" href="#3492">RE: 重ねて表示＿座標計算してみました</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-23T03:26:35">2004年03月23日 03:26</time></h1>
+    <div class="body">43枚開いてみました．結論は「惜しい」．<br>私が難しいと言ったのは，<br>1. 重ねて表示と同様に縦方向を優先した形に並べようとした<br>2. 横に並ぶ数が断によって異なる（下に行くほど少なくなる）<br>からです．残念ながら下の方でウィンドウの右側がはみ出ることがあります．<br><br>基本的には縦横とも(画面サイズ－ウィンドウサイズ)/ずらし幅＋１のます目で構成された長方形の左下(■)を除いた部分に並べる問題と同じです．<br><br>□□□□□□<br>■□□□□□<br>■■□□□□<br>■■■□□□<br>に<br>１５９□□□<br>■２６Ａ□□<br>■■３７□□<br>■■■４８□<br>の形で<br>１２３□□□<br>■４５６□□<br>■■７８□□<br>■■■９Ａ□<br>4列目からは一番下の段までは入らないのがわかりますよね．<br><br>---<br>画面サイズとして縦長のケースというのも考えると<br>□□□□□<br>■□□□□<br>■■□□□<br>■■■□□<br>■■■■□<br>■■■■■<br>どうでしょう？<br>良いアルゴリズムが思いつきましたか？私は思いついていませんが(汗<br></div></section>
+    <ul><li><section><h1 id=3493>
+    <span class="no">[3493]</span>
+    <a class="thread-title" href="#3493">Re2: 重ねて表示＿座標計算してみました</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-03-23T09:23:59">2004年03月23日 09:23</time></h1>
+    <div class="body">見直してみました。<br>条件文の構造体が不充分でした・・・（汗<br>もうちょい検討してみます。。。<br><br>テストありがとうございましたm(_ _)m<br></div></section>
+    </li><li><section><h1 id=3496>
+    <span class="no">[3496]</span>
+    <a class="thread-title" href="#3496">重ねて表示■座標計算の構築</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-03-25T03:38:23">2004年03月25日 03:38</time></h1>
+    <div class="body">面倒でしたが、なんとなく形になりました。<br>ウィンドウのサイズをデフォルト値から計算して<br>調整してあります。<br>不都合があったら言ってください。<br>http://www.geocities.co.jp/HeartLand-Momiji/6138/dl.html<br>■CEditView_Command.cpp_za_test2-3.txt(ウィンドウ重ねて表示座標計算test2-3)<br>デスクトップ画面半分を限界値としています。<br>いくつになるのか、さっぱりですが・・・<br></div></section>
+    </li><li><section><h1 id=3497>
+    <span class="no">[3497]</span>
+    <a class="thread-title" href="#3497">テスト不可能・・・</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-03-25T12:21:25">2004年03月25日 12:21</time></h1>
+    <div class="body">私の環境により、テスト不可能ですが、、、<br>たぶん、、、大丈夫だと思います。。。<br>げんたさんの発想もあり、<br>「重ねて表示」は一般のユーザーにも使いやすい<br>インターフェイスになったと思います。<br><br>不具合があったら<br>適当に修正してもらうと嬉しいです。<br>ご面倒かけますが、よろしくお願いしますm(_ _)m<br><br>これからもがんばってください。<br></div></section>
+    </li></ul></li><li><section><h1 id=3503>
+    <span class="no">[3503]</span>
+    <a class="thread-title" href="#3503">RE: 重ねて表示＿座標計算してみました</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-27T10:36:25">2004年03月27日 10:36</time></h1>
+    <div class="body">&gt;ファイルアップしようとブリーフケースまでいきましたが、、<br>&gt;追加できませんでした<br><br>Yahooにログイン(無ければID取得)→グループに参加<br>でファイルを書き込めるようになるはずです．<br><br>http://members.at.infoseek.co.jp/sakura_editor/developer.html<br></div></section>
+    <ul><li><section><h1 id=3513>
+    <span class="no">[3513]</span>
+    <a class="thread-title" href="#3513">ありました！！</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-04-01T14:21:55">2004年04月01日 14:21</time></h1>
+    <div class="body">右上の[ 参加 ] ボタン押した後・・・<br>キョロキョロ・・・あっちにいったり、こっちにいったり<br>ヘルプをみたり、、ウロウロ・・<br>(￣＾￣；)んー…なぜ？？？<br>画面で一番下にさらに「参加」のボタンがありました！！<br>（気づかなかった！ってか見えなかった！）<br>(o＿ ＿)oパタッ・・・<br>お手数かけました。<br><br>と、いうことで<br>http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/<br>CASCADE_za-all-wnd_20040330.zip <br>「重ねて表示」座標計算で全てのウィンドウを表示 <br><br>アップでけた！！わーい！！<br>（￣▽￣）oころん♪o（＿△＿）oころん♪o（￣▽￣）oころん♪<br><br>一応イメージ画像はこちらに<br>http://www.geocities.co.jp/HeartLand-Momiji/6138/dl/CASCADE_image.gif<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=3478>
+    <span class="no">[3478]</span>
+    <a class="thread-title" href="#3478">ウィンドウ→重ねて表示について＆ソース(3)-1</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-03-20T00:41:23">2004年03月20日 00:41</time></h1>
+    <div class="body">修正加筆添削個所は、//crayonzenと示したところです。（大体）<br><br>----------------------------------------<br>------------------------------<br>アプリケーションバージョン<br>sakura ver1.4.3.7B<br>----------------------------------------<br>------------------------------<br>ソースファイル<br>//    $Id: CEditView_Command.cpp,v 1.95 2003/11/15 01:17:17 genta Exp $<br>----------------------------------------<br>------------------------------<br><br>行 7255 //重ねて表示<br>void CEditView::Command_CASCADE( void )<br>{<br>    int i;<br><br>    //タブウインドウ時は禁止    //@@@ 2003.06.12 MIK<br>    if( TRUE  == m_pShareData-&gt;m_Common.m_bDispTabWnd<br>     &amp;&amp; FALSE == m_pShareData-&gt;m_Common.m_bDispTabWndMultiWin ) return;<br><br>    /* 現在開いている編集窓のリストを取得する */<br>    EditNode*    pEditNodeArr;<br>    int            nRowNum = CShareData::getInstance()-&gt;GetOpenedWind<br>owArr( &amp;pEditNodeArr, TRUE/*FALSE*/ );<br><br>    if( nRowNum &gt; 0 ){<br>        HWND*    phwndArr = new HWND[nRowNum];<br>        int        count = 0;<br> <br>        for( i = 0; i &lt; nRowNum; ++i ){<br>            //if( ::IsIconic( pEditNodeArr[i].m_hWnd ) ){    //    最小化しているウィンドウは無視。<br>                //continue;<br>            //}<br>            //Mar. 19, 2004 crayonzen カレントウィンドウが２回目のfor文でカウントが反映されない？のでif文を下へ<br> <br>            phwndArr[count] = pEditNodeArr[i].m_hWnd;<br>            count++;<br>        }<br> <br>        //    デスクトップサイズを得る<br>        RECT    rcDesktop;<br>        ::SystemParametersInfo( SPI_GETWORKAREA, NULL, &amp;rcDesktop, 0 );<br> <br>        int width = (rcDesktop.right - rcDesktop.left ) * 4 / 5; // Mar. 9, 2003 genta 整数演算のみにする<br>        int height = (rcDesktop.bottom - rcDesktop.top ) * 4 / 5;<br>        int w_delta = ::GetSystemMetrics(SM_CXSIZEFRAME) + ::GetSystemMetrics(SM_CXSIZE);<br>        int h_delta = ::GetSystemMetrics(SM_CYSIZEFRAME) + ::GetSystemMetrics(SM_CYSIZE);<br>        //int w_offset = 0;<br>        //int h_offset = 0;<br>        int w_offset = rcDesktop.left; //Mar. 19, 2004 crayonzen 絶対値だとエクスプローラーのウィンドウに重なるので～<br>        int h_offset = rcDesktop.top; //～初期値をデスクトップ内に収める。<br>        int j = 0; //crayonzen カレント用<br>        int n = 0; //２度目の描画以降で使用するカウント<br>        int sw_offset = w_delta; //右スライドの値（暫定）<br><br>//(3)-2へつづく</div></section>
+    </li><li><section><h1 id=3479>
+    <span class="no">[3479]</span>
+    <a class="thread-title" href="#3479">ウィンドウ→重ねて表示について＆ソース(3)-2</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-03-20T00:48:50">2004年03月20日 00:48</time></h1>
+    <div class="body">        for(i = 0; i &lt; count; ++i ){<br>            if( pEditNodeArr[i].m_hWnd == m_pcEditDoc-&gt;m_hwndParent ){ //crayonzen 現在のウィンドウは無視して最後に<br>                j = i; //最初のウィンドウの値を保存<br>                continue;<br>            }<br>            else if( ::IsIconic( pEditNodeArr[i].m_hWnd ) ){ //最小化しているウィンドウは無視。<br>                continue;<br>            }<br>            else {<br>                if (w_offset + width &gt; rcDesktop.right || h_offset + height &gt; rcDesktop.bottom){<br>                    //craonzen 幅のみをみてスライダのカウンタ初期化<br>                    if (rcDesktop.left + sw_offset * n &gt; rcDesktop.right - width){<br>                        n = 0;<br>                    }<br>                    n += 1;<br>                    //w_offset = 0;<br>                    //h_offset = 0;<br>                    w_offset = rcDesktop.left + sw_offset * n;//craonzen 初期値修正(２度目以降の描画で少しづつスライド・・)<br>                    h_offset = rcDesktop.top; //<br>                }<br>                //::SetWindowPos(<br>                //phwndArr[i], HWND_TOP,<br>                //w_offset, h_offset,<br>                //width, height,<br>                //0<br>                //);<br>                ::SetWindowPos(<br>                phwndArr[i], 0,<br>                w_offset, h_offset,<br>                width, height,<br>                SWP_NOOWNERZORDER | SWP_NOZORDER<br>                ); //の方がいいのかな？？？crayonzen<br> <br>                //ActivateFrameWindow( phwndArr[i] );<br>                ::BringWindowToTop( phwndArr[i] );//crayonzen API アクティブにする（ウィンドウ）<br>#ifdef  _WIN32<br>                ::SetForegroundWindow(phwndArr[i]); //crayonzen &amp; for 32bit API アクティブにする（スレッド用）<br>#endif<br>                //::UpdateWindow(phwndArr[i]); //crayonzen<br>                w_offset += w_delta;<br>                h_offset += h_delta;<br>            }<br>        }<br><br>//(3)-3へつづく</div></section>
+    </li><li><section><h1 id=3480>
+    <span class="no">[3480]</span>
+    <a class="thread-title" href="#3480">ウィンドウ→重ねて表示について＆ソース(3)-3</a>
+    <span class="author">ぜん</span>
+    <time datetime="2004-03-20T00:45:00">2004年03月20日 00:45</time></h1>
+    <div class="body">        //crayonzen 再計算して最初のウィンドウ<br>        //if( j == count - 1 ){ // jが最後の場合deltaが加算されないので。と思ったのだが・・・<br>            //w_offset += w_delta;<br>            //h_offset += h_delta;<br>        //}<br>        if (w_offset + width &gt; rcDesktop.right || h_offset + height &gt; rcDesktop.bottom){<br>            if (rcDesktop.left + sw_offset * n &gt; rcDesktop.right - width){<br>                n = 0;<br>            }<br>            n += 1;<br>            w_offset = rcDesktop.left + sw_offset * n;<br>            h_offset = rcDesktop.top; //<br>        }<br>        ::SetWindowPos(phwndArr[j], HWND_TOP, w_offset, h_offset, width, height, 0 );<br>        ::BringWindowToTop( phwndArr[j] );<br>#ifdef  _WIN32<br>        ::SetForegroundWindow(phwndArr[j]);<br>#endif<br>        ::SetFocus( phwndArr[j] );//MIKさんに習って一応念のためm(_ _)m<br><br>        delete [] phwndArr;<br>        delete [] pEditNodeArr;<br>    }<br>    return;<br>}<br><br><br>----------------------------------------<br>------------------------------<br><br><br>行 7367 //上下に並べて表示<br>void CEditView::Command_TILE_V( void )<br>{<br><br>--略--<br><br>行 7406     ::SetWindowPos(<br>                phwndArr[i], 0,<br>                //rcDesktop.left, height * i,<br>                rcDesktop.left, rcDesktop.top + height * i , //Mar. 19, 2004 crayonzen<br>                rcDesktop.right - rcDesktop.left, height,<br>                SWP_NOOWNERZORDER | SWP_NOZORDER<br>            ); <br> <br>----------------------------------------<br>------------------------------<br><br>枚数が多いと上手く表示されない事もありました。。。<br>OS win98SE ノートでやってるので、メモリがきついです。。。<br>いや、システムヒープだから16bitの方でした。いたし方ありません。<br>原因は・・・分かりません。。。<br><br>みなさん。がんばってくださいね！<br></div></section>
+    </li><li><section><h1 id=3484>
+    <span class="no">[3484]</span>
+    <a class="thread-title" href="#3484">RE: ウィンドウ→重ねて表示について＆ソース(1)</a>
+    <span class="author">みく</span>
+    <time datetime="2004-03-20T07:16:44">2004年03月20日 07:16</time></h1>
+    <div class="body"><br>&gt;一般の人が使うのに、<br><br>一般の人って誰？<br><br>&gt;例えばですが、メニュー検索から検索やブックマークはよく使うでしょうが<br><br>検索はツールバーにあるものを使いますがなにか。<br><br>&gt;ブックマークは下のほうです。「コマンドキーを使え！」と、<br>&gt;言われれば、それまでですが、、、<br><br>私はまったく使いませんがなにか。<br><br>&gt;アウトライン解析は、ほとんど手を出さないように思います。<br><br>私は頻繁に使いますがなにか。<br></div></section>
+    <ul><li><section><h1 id=3485>
+    <span class="no">[3485]</span>
+    <a class="thread-title" href="#3485">Re2: ウィンドウ→重ねて表示について＆ソース(1)</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-20T14:24:07">2004年03月20日 14:24</time></h1>
+    <div class="body">煽りは放置で．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

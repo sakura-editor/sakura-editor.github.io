@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>もかさんの再変換拡張抑制について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3835</span>
+    <a class="thread-title" href="3835.html#3835">もかさんの再変換拡張抑制について</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3835>
+    <span class="no">[3835]</span>
+    <a class="thread-title" href="#3835">もかさんの再変換拡張抑制について</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-01-30T22:38:51">2005年01月30日 22:38</time></h1>
+    <div class="body">試してみましたが，残念ながら期待通りに動きませんでした．<br><br>MS IMEでは期待通り動くのですが，ATOKだとIMR_CONFIRMRECONVERTSTRINGで0を返してもキャンセルと認識してくれないみたい．<br>(SDKの解説を見る限りではATOKが仕様通り実装されていないんだと思いますが)<br>なので，再変換範囲とエディタの選択範囲のミスマッチが起こって確定orキャンセル後にカーソル位置に別の場所の文字が入ってしまいます．<br><br>作ってしまったGUI部分を<br>reconv_selectext_gui.diff<br>として共有フォルダにおいておきます．</div></section>
+    </li></ul></body></html>

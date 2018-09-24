@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>1.5.9.90beta版修正パッチ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4274</span>
+    <a class="thread-title" href="4274.html#4274">1.5.9.90beta版修正パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4275</span>
+    <a class="thread-title" href="4274.html#4275">Re:1.5.9.90beta版修正パッチ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4284</span>
+    <a class="thread-title" href="4274.html#4284">Re:1.5.9.90beta版修正パッチ2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4286</span>
+    <a class="thread-title" href="4274.html#4286">アップロード手違い</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4289</span>
+    <a class="thread-title" href="4274.html#4289">Re:1.5.9.90beta版修正パッチ2.2</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4274>
+    <span class="no">[4274]</span>
+    <a class="thread-title" href="#4274">1.5.9.90beta版修正パッチ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-02-20T23:02:22">2006年02月20日 23:02</time></h1>
+    <div class="body">1.5.9.90beta版修正パッチ<br><br>ブリーフケース/Developer/Source<br>→ sdiff_2006-02-19_BetaFix.zip<br><br>・CProfile.cppでDebugコンパイルエラー<br>・バージョン情報のコンパイラVer表示が途中で切れる<br>・CTabWnd イメージ初期化エラー時に拡張子マップ初期化忘れ<br><br>他に何か気付いたら追加修正したいと思います。<br>（修正ミスなどあればご指摘ください）<br>何も無いことを期待しつつ...</div></section>
+    <ul><li><section><h1 id=4275>
+    <span class="no">[4275]</span>
+    <a class="thread-title" href="#4275">Re:1.5.9.90beta版修正パッチ</a>
+    <span class="author">dskoba</span>
+    <time datetime="2006-02-21T01:26:27">2006年02月21日 01:26</time></h1>
+    <div class="body">&gt; ・CProfile.cppでDebugコンパイルエラー<br><br>申し訳ありませんでした。<br>修正を1つずつ手動で行ったため，変更し忘れたようです。</div></section>
+    </li><li><section><h1 id=4284>
+    <span class="no">[4284]</span>
+    <a class="thread-title" href="#4284">Re:1.5.9.90beta版修正パッチ2</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-02-23T00:12:09">2006年02月23日 00:12</time></h1>
+    <div class="body">性能改善版です。<br><br>ブリーフケース/Developer/Source<br> → sdiff_2006-02-19_BetaFix2.zip</div></section>
+    <ul><li><section><h1 id=4286>
+    <span class="no">[4286]</span>
+    <a class="thread-title" href="#4286">アップロード手違い</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-02-23T12:20:53">2006年02月23日 12:20</time></h1>
+    <div class="body">誤って１個古いのをアップしてしまいました。<br>&gt; ブリーフケース/Developer/Source<br>&gt;  → sdiff_2006-02-19_BetaFix2.zip<br>を削除して新しいのを入れました。m(__)m<br>sdiff_2006-02-19_BetaFix2_1.zip です。<br><br>＃お試し実行ファイルももしかして１個古いかもしれないですが<br>＃システム的な異常発生時の処理がちょっと違うだけで<br>＃普通の動作に変わりは無いのでそのまま置いておきます</div></section>
+    </li></ul></li><li><section><h1 id=4289>
+    <span class="no">[4289]</span>
+    <a class="thread-title" href="#4289">Re:1.5.9.90beta版修正パッチ2.2</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-03-03T00:55:01">2006年03月03日 00:55</time></h1>
+    <div class="body">&gt;&gt;data:5064 の対策を追加してみました。<br>sdiff_2006-02-19_BetaFix2_2.zip<br><br>CEditWnd::TabWnd_SucceedWindowPlacement(<br>) 相当の処理を各所にばらまくかわりに、ActivateFrameWnd()の中に画面位置を復元する処理を追加してます。<br>ActivateFrameWnd()自体はちょっと不細工な感じになったかもしれません。<br>これで動作自体は特に問題なさそうな気がするのですが...</div></section>
+    </li></ul></li></ul></body></html>

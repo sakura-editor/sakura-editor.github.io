@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>止まってしまいます；； | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4470</span>
+    <a class="thread-title" href="4470.html#4470">止まってしまいます；；</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4477</span>
+    <a class="thread-title" href="4470.html#4477">RE: 止まってしまいます；；</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4478</span>
+    <a class="thread-title" href="4470.html#4478">止まってしまいます；；</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4470>
+    <span class="no">[4470]</span>
+    <a class="thread-title" href="#4470">止まってしまいます；；</a>
+    <span class="author">Ｋ</span>
+    <time datetime="2005-05-20T16:36:04">2005年05月20日 16:36</time></h1>
+    <div class="body">サクラエディタの1.4.9.0を使っています。<br>検索や置換をしようとすると、応答がなくなってしまいました。<br><br>検索対象(もしくは置換前)として<br>　　.+=(\w+[^*?]+)+\n<br>としています。<br>　「?」や「*」が入らない行を見つける(もしくは、置換後を空にしてその行を削除)<br>ということをしたいと思っています。<br><br>対象ファイルはclamAV0.83のmain.dbなんですが、途中まで平気でも、ある部分から先に行くと、サクラエディタ自体が<br>「応答なし」<br>になってしまいました。<br>すべて置換としてももちろん応答なしになりますし、<br>応答なしになる少し前までを削除し、そこから1つずつ検索(もしくは置換)をしようとしても応答なしになります。<br><br>行数が多いので、処理に時間がかかっているだけかも、と最初は思ったのですが、1時間ほど放置しても処理が終わらず、かつ、ある部分にくると必ず止まるので、何かあるのではと思いました。<br><br>これは、私の正規表現が悪いからなってしまうことなのでしょうか？<br>それとも、何かのバグでしょうか？<br><br>あ、ある部分というのは、<br>マッチしない行を画面内に入れた瞬間です。<br>ウィンドウサイズを1行分にすれば、マッチしない行がその1行に入らなければ、無事です。<br>ウィンドウサイズを50行分にすれば、マッチしない行が50行目に入ってしまえば止まってしまいます。<br><br>何か対処の仕方がありましたら、教えていただけないでしょうか。<br>よろしくお願いいたします。</div></section>
+    <ul><li><section><h1 id=4477>
+    <span class="no">[4477]</span>
+    <a class="thread-title" href="#4477">RE: 止まってしまいます；；</a>
+    <span class="author">すい</span>
+    <time datetime="2005-05-24T01:37:34">2005年05月24日 01:37</time></h1>
+    <div class="body">&gt;　「?」や「*」が入らない行を見つける(もしくは、置換後を空にしてその行を削除)<br>&gt;ということをしたいと思っています。<br><br>単純に検索文字列<br>^[^*?]*[\r\n]+<br>だけで良さそうな．．．<br></div></section>
+    <ul><li><section><h1 id=4478>
+    <span class="no">[4478]</span>
+    <a class="thread-title" href="#4478">止まってしまいます；；</a>
+    <span class="author">Ｋ</span>
+    <time datetime="2005-05-25T15:22:07">2005年05月25日 15:22</time></h1>
+    <div class="body">おぉぉぉ！できちゃいました！！<br>ありがとうございます；；<br><br>ということは、やはり私の正規表現がおかしかったんですね(´；ω；`)…<br><br>▼ すいさん<br>&gt; &gt;　「?」や「*」が入らない行を見つける(もしくは、置換後を空にしてその行を削除)<br>&gt; &gt;ということをしたいと思っています。<br>&gt; <br>&gt; 単純に検索文字列<br>&gt; ^[^*?]*[\r\n]+<br>&gt; だけで良さそうな．．．</div></section>
+    </li></ul></li></ul></li></ul></body></html>

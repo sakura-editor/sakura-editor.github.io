@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タグ付き正規表現？について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3537</span>
+    <a class="thread-title" href="3537.html#3537">タグ付き正規表現？について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3538</span>
+    <a class="thread-title" href="3537.html#3538">Re:タグ付き正規表現？について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3539</span>
+    <a class="thread-title" href="3537.html#3539">RE: タグ付き正規表現？について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3568</span>
+    <a class="thread-title" href="3537.html#3568">Re2: タグ付き正規表現？について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3537>
+    <span class="no">[3537]</span>
+    <a class="thread-title" href="#3537">タグ付き正規表現？について</a>
+    <span class="author">BTW</span>
+    <time datetime="2003-12-07T13:55:29">2003年12月07日 13:55</time></h1>
+    <div class="body">一つお聞きしたいのですが、秀丸でいうタグ付き正規表現の機能はないのでしょうか？<br><br>例えば<br>&lt;b&gt;あいうえお&lt;/b&gt;<br>を秀丸で<br><br>検索：&lt;b&gt;\f.+\f&lt;/b&gt;<br>置換：&lt;i&gt;\1&lt;/i&gt;<br>とやると<br><br>結果：&lt;i&gt;あいうえお&lt;/i&gt;<br><br>となるような機能です。<br>これさえあれば秀丸なんかポイできるんですが<br></div></section>
+    <ul><li><section><h1 id=3538>
+    <span class="no">[3538]</span>
+    <a class="thread-title" href="#3538">Re:タグ付き正規表現？について</a>
+    <span class="author">BTW</span>
+    <time datetime="2003-12-07T13:58:37">2003年12月07日 13:58</time></h1>
+    <div class="body">いま思ったら例文がよくないですね・・・<br>&lt;b&gt;を&lt;i&gt;で置き換えればいいじゃん、って突っ込みは無しでお願いします。<br></div></section>
+    </li><li><section><h1 id=3539>
+    <span class="no">[3539]</span>
+    <a class="thread-title" href="#3539">RE: タグ付き正規表現？について</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-12-07T19:05:55">2003年12月07日 19:05</time></h1>
+    <div class="body">&gt;一つお聞きしたいのですが、秀丸でいうタグ付き正規表現の機能はないのでしょうか？<br>正規表現ライブラリが入っていれば<br><br>置換前: &lt;b&gt;([^&lt;&gt;]+)&lt;/b&gt;<br>置換後: &lt;i&gt;\1&lt;/i&gt;<br>でいいんじゃないですか？<br><br>置換前の()が左から順に\1,\2,\3...として置換後のパターンで使えます．<br></div></section>
+    <ul><li><section><h1 id=3568>
+    <span class="no">[3568]</span>
+    <a class="thread-title" href="#3568">Re2: タグ付き正規表現？について</a>
+    <span class="author">BTW</span>
+    <time datetime="2003-12-26T09:53:53">2003年12月26日 09:53</time></h1>
+    <div class="body">&gt; 置換前: &lt;b&gt;([^&lt;&gt;]+)&lt;/b&gt;<br>&gt; 置換後: &lt;i&gt;\1&lt;/i&gt;<br>&gt; でいいんじゃないですか？<br><br>随分遅くなりましたが、ありがとうございました。<br>これでやっと秀丸とサクラの使い分けをしなくてすみそうです。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

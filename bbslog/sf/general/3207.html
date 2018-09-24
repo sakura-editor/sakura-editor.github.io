@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>1.4.3.0 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3207</span>
+    <a class="thread-title" href="3207.html#3207">1.4.3.0</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3208</span>
+    <a class="thread-title" href="3207.html#3208">Re:1.4.3.0</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3207>
+    <span class="no">[3207]</span>
+    <a class="thread-title" href="#3207">1.4.3.0</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-08-20T00:44:53">2003年08月20日 00:44</time></h1>
+    <div class="body">1.4.3.0をリリースしました．<br><br>変更点はもかさんのnextパッチ一式と掲示板で出た以下の変更です．<br><br>一般3051: スペースを含むファイルでのGrepが動作せず (もかさんのパッチに含まれている)<br>一般3087: 改行マークが欠ける (ryojiさん)<br>一般3143: アクセスキー表記を統一<br>一般3171: タイムスタンプが古い方に変更された場合もファイルの更新とみなして通知する (wmlhqさん)<br>一般3197: 改行マークが行番号に重なる (ryojiさん)<br>一般3202: ウィンドウの横幅をきわめて狭くしたときに編集領域が行番号から離れてしまう(ryojiさん)<br>開発2967: CImageList でイメージリストを使わない．代わりにツールバーのOwnerdrawを使う．<br>開発2988: BOM有無オプション (ryojiさん)<br>開発3007: CFileExt::ConvertTypesExtToDlgExt() 141,142行目の戻り値はfalseでないとだめです。(MIKさん)<br>開発3008: 8/14 VarFileInfoでTranslationのスペルミス (Mocaさん)<br><br>開発3175は入っていません．というか，一般3087の変更後報告されているような不具合が観測できなかったので改行コードに関してはちょっと確認できていません．<br><br>ファイル更新通知後に選択状態になってしまう件は入っていません．<br></div></section>
+    <ul><li><section><h1 id=3208>
+    <span class="no">[3208]</span>
+    <a class="thread-title" href="#3208">Re:1.4.3.0</a>
+    <span class="author">ryoji</span>
+    <time datetime="2003-08-20T09:46:50">2003年08月20日 09:46</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 一般3197: 改行マークが行番号に重なる (ryojiさん)<br><br>これは入ってないようです。<br>画面左端に改行マークの右半分だけが表示される状態に水平スクロールしてF5キーで再描画すると左半分が行番号に重なって（行番号とテキストの間に隙間を入れている設定の場合はその隙間に）表示されてます。</div></section>
+    </li></ul></li></ul></body></html>

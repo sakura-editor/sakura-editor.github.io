@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>[要望]Javaのアウトライン解析 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2343</span>
+    <a class="thread-title" href="2343.html#2343">[要望]Javaのアウトライン解析</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2354</span>
+    <a class="thread-title" href="2343.html#2354">Re: [要望]Javaのアウトライン解析</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2357</span>
+    <a class="thread-title" href="2343.html#2357">Re2: [要望]Javaのアウトライン解析</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2343>
+    <span class="no">[2343]</span>
+    <a class="thread-title" href="#2343">[要望]Javaのアウトライン解析</a>
+    <span class="author">りっちぃ</span>
+    <time datetime="2002-10-07T12:31:02">2002年10月07日 12:31</time></h1>
+    <div class="body">はじめまして、サクラエディタを使わせて頂いております、<br>りっちぃと申します。いくつかのエディタの中で、これが<br>一番使いやすく思い、もはや手放すことが出来ません。<br>開発者の皆様には大変感謝しております。<br><br>便利だと思ったのがアウトライン解析で、普段Javaでの<br>プログラム開発にとても役立っております。ただ、いくつか<br>気になった箇所がありましたので、今後のバージョンアップの<br>際に要望の一つとして加えて頂ければ幸いです。<br><br>以下のようなソースファイルで、<br><br>(1)<br>3行目のキャストを変数宣言と間違って（？）「a(宣言)」と表示されます。<br>4行目の「int b」は表示されないので、誤判定か何かでしょうか。<br>実際にもアウトライン解析の画面には表示されない方が嬉しいです。<br><br>(2)<br>interface、およびその内部のメソッド定義をアウトライン表示して<br>くれないので、これも通常クラスと同様に解析の対象として欲しい。<br><br>この２点をご検討くださいますよう、よろしくお願いします。<br><br>  1:public class Sample {<br>  2:    public static void main(String[] args) {<br>  3:        int a = (int)0.00;<br>  4:        int b = 0;<br>  5:    }<br>  6:}<br>  7:<br>  8:interface Test {<br>  9:    public void hogehoge();<br> 10:}<br> 11:<br> 12:class TestImpl implements Test {<br> 13:    public void hogehoge() { System.out.println("hogehoge"); }<br> 14:}<br> 15:</div></section>
+    <ul><li><section><h1 id=2354>
+    <span class="no">[2354]</span>
+    <a class="thread-title" href="#2354">Re: [要望]Javaのアウトライン解析</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-10T11:29:28">2002年10月10日 11:29</time></h1>
+    <div class="body">&gt;キャストを変数宣言と間違って（？）「a(宣言)」と表示されます。<br>メソッド定義の中では関数判定を行わないようにしました．<br>Javaでこの書式が使われるのはabstract methodだけでしょうか．<br><br>&gt;interface<br>こちらも追加しました．<br><br>いずれも次版で改善されます．<br></div></section>
+    <ul><li><section><h1 id=2357>
+    <span class="no">[2357]</span>
+    <a class="thread-title" href="#2357">Re2: [要望]Javaのアウトライン解析</a>
+    <span class="author">りっちぃ</span>
+    <time datetime="2002-10-10T16:58:22">2002年10月10日 16:58</time></h1>
+    <div class="body">▼ げんたさん<br>ご対応ありがとうございました。次版楽しみにしております。<br><br>&gt; Javaでこの書式が使われるのはabstract methodだけでしょうか．<br><br>そう言えば、abstract method も表示されないのを忘れておりました。<br><br> 1:abstract public class Sample {<br> 2:    abstract public void test1();<br> 3:    public abstract void test2();<br> 4:}<br><br>私の使っている 1.3.5.1 ではどちらも表示されませんが、これも<br>次版では「test1(宣言)」「test2(宣言)」などと表示されるので<br>しょうか。だとしたらとても嬉しいです(^-^<br><br>どうもありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

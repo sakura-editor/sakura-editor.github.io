@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>文字コード判別改善パッチ（２）の補足 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5151</span>
+    <a class="thread-title" href="5151.html#5151">文字コード判別改善パッチ（２）の補足</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=5151>
+    <span class="no">[5151]</span>
+    <a class="thread-title" href="#5151">文字コード判別改善パッチ（２）の補足</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-11-01T23:50:13">2007年11月01日 23:50</time></h1>
+    <div class="body">一般の方に投稿しようかと思ったのですが<br>どうも内容が開発者向きっぽいのでこちらへカキコ。<br><br>&gt;&gt;dev:4558 に書かれているような意見も<br>ありますね・・・。一応、自動実行マクロ応援派です。<br><br>「優先したい文字コード設定」は、お披露目が<br>さり気なく期待されている（？）自動実行マクロによって<br>例えば以下のコードを実行させるのと、動作が似ています。<br><br>S_FileReopenEUC(0); // EUCで開き直す<br><br>確かに似ていますが、自動判別機能によるものでは<br>「自動判別しない」にチェックが入っていなければ、<br>入力ファイルに対して不適切な文字コードが優先されて<br>いる場合にやんわりと文字化けを回避したり（バグではなく）、<br>「自動判別しない」場合でも Unicode BOM だけは優先する<br>文字コード指定に関わらず感知する仕様だったりと<br>（これまた不具合ではない）、ただ選択するのと比べると<br>微妙に違っています。ですので念のため申し上げますが、<br>文字コード判別改善パッチによって自動実行マクロの<br>守備範囲が狭くなるようなことはありません（＾＾）<br><br>本当に強制的に文字コードを初期設定したい場合や、<br>対象に特化した自動判別を独自に設けたい場合には、<br>来る自動実行マクロが活躍するかと思います。</div></section>
+    </li></ul></body></html>

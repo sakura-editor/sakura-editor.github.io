@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ツールバーのアイコンがすべて黒くなる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5011</span>
+    <a class="thread-title" href="5011.html#5011">ツールバーのアイコンがすべて黒くなる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5019</span>
+    <a class="thread-title" href="5011.html#5019">Re:ツールバーのアイコンがすべて黒くなる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5021</span>
+    <a class="thread-title" href="5011.html#5021">Re2:ツールバーのアイコンがすべて黒くなる</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5011>
+    <span class="no">[5011]</span>
+    <a class="thread-title" href="#5011">ツールバーのアイコンがすべて黒くなる</a>
+    <span class="author">すす</span>
+    <time datetime="2006-01-30T17:04:37">2006年01月30日 17:04</time></h1>
+    <div class="body">私の環境でツールバーのアイコンがすべて黒くなるのが再現しました。<br>他のＡＰとの関連があるかはわからないですが、以下の操作で必ず（）<br>再現します。<br><br>・ルートディレクトリから２階層以上下のディレクトリであること。<br>・フルパス名が74バイト以上である点<br>・同じフォルダ内のファイル（何でもいい）を１度開くこと。<br>・ファイルの中が関係してるかも、空では発生しなかった<br>・tab表示は行っていない<br>・ファイルの形式はSJIS、textファイル<br>・さくらエディタver1.5.9.1<br>・ＯＳはWindowsXP Pro SP1<br>・<br><br>参考までにファイルの内容は以下のとおり<br><br>ここから～～～～～～～～～～～～～～～～～～～～～～～～～<br>４８．iniファイルから文字列を取得する<br><br>＜　使用用途　＞<br>データを読み込む時などに用いる<br><br><br>----------------------------------------<br>----------------------------------------<br><br>＜　説明　＞<br>ＡＰＩ関数のGetPrivateProfileStringを使用します。<br>GetPrivateProfileString ＝＞iniファイルから文字列を取得する<br>　　＜引数＞<br>　　　　　lpAppName：セクション名<br>　　　　　lpKeyName：キー名<br>　　　　　lpDefault：キーが見つからなかった場合のデフォルトの文字列<br>　　　　　lpReturnedString：取得した文字列が入る<br>　　　　　nSize：同、文字数<br>　　　　　inifilename：ＩＮＩファイル名<br>　　＠戻り値＠ <br>　　　　　取得した文字列<br>ここまで～～～～～～～～～～～～～～～～～～～～～～～～～</div></section>
+    <ul><li><section><h1 id=5019>
+    <span class="no">[5019]</span>
+    <a class="thread-title" href="#5019">Re:ツールバーのアイコンがすべて黒くなる</a>
+    <span class="author">さり</span>
+    <time datetime="2006-02-02T11:13:57">2006年02月02日 11:13</time></h1>
+    <div class="body">初めて投稿します。<br>いつもsakuraエディタを大変気に入って愛用しております。<br><br>▼ すすさん<br>&gt; 私の環境でツールバーのアイコンがすべて黒くなるのが再現しました。<br>&gt; 他のＡＰとの関連があるかはわからないですが、以下の操作で必ず（）<br>&gt; 再現します。<br><br>私も以前からこの現象に出会っています。<br>以下の検証結果からフルパス名（パス及びファイル名）に起因する原因と推測しております。<br><br><br>■あるフォルダにおいてあるファイルを開くとツールバーのアイコンが黒くなる<br>□同じファイルをデスクトップに移動して開くと黒くならない<br>■同じディレクトリの他のファイル（ファイル名はほぼ同じ）を開くと同じく黒くなる<br>■そのファイルの中味を空にしてから開いても黒くなる<br>□タスクバーにsakura常駐が起動していない場合、黒くならない<br>☆現象が発生するフォルダでファイル名を変更すると、ファイル名によって黒くなる場合と黒くならない場合がある<br>　２バイト文字の有無では明確な違いが出ず<br>　ファイル名が短くても長くても発生せずある長さのみ発生<br>　ex）0000000000000.txt　　←黒くならない<br>　　　00000000000000.txt　 ←黒くなる<br>　　　0000000000000000.txt　←黒くならない<br><br>・sakura1.5.4.1<br>・WindowsXP Pro SP2<br><br>※■：現象発生<br>　□：現象発生せず<br>　☆：現象混在<br><br>以上、宜しくお願い致します。</div></section>
+    <ul><li><section><h1 id=5021>
+    <span class="no">[5021]</span>
+    <a class="thread-title" href="#5021">Re2:ツールバーのアイコンがすべて黒くなる</a>
+    <span class="author">すす</span>
+    <time datetime="2006-02-02T15:18:37">2006年02月02日 15:18</time></h1>
+    <div class="body">▼ さりさん<br>&gt; 初めて投稿します。<br>&gt; いつもsakuraエディタを大変気に入って愛用しております。<br>私の環境で必ず再現するフルパスは<br>D:\tmpaa\DocumentsandSettings12asuzaMydo<br>aument\GetPrivateProfileString.txt<br>です。<br>このファイルを最初（常駐前）に開くときは問題なく開きます。<br>確かにパスを途中短くすると再現しません。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

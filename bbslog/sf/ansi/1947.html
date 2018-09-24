@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バージョン番号の付け方について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1947</span>
+    <a class="thread-title" href="1947.html#1947">バージョン番号の付け方について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1948</span>
+    <a class="thread-title" href="1947.html#1948">RE: バージョン番号の付け方について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1951</span>
+    <a class="thread-title" href="1947.html#1951">RE2: バージョン番号の付け方について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1953</span>
+    <a class="thread-title" href="1947.html#1953">RE3: バージョン番号の付け方について</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1947>
+    <span class="no">[1947]</span>
+    <a class="thread-title" href="#1947">バージョン番号の付け方について</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-21T01:13:14">2002年04月21日 01:13</time></h1>
+    <div class="body">最近は機能追加やバグフィックスの大小に関係なく最後の一桁だけがあげられているようですが、<br>一応、<br>1桁目 とりあえず予約<br>2桁目 とても大きな変更(だったと思う)<br>3桁目 機能追加<br>4桁目 バグフィックスのみ<br>というルールでやってきたので、適宜3桁目を上げるか4桁目を上げるかを判断していただけたらと思います。<br></div></section>
+    <ul><li><section><h1 id=1948>
+    <span class="no">[1948]</span>
+    <a class="thread-title" href="#1948">RE: バージョン番号の付け方について</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-21T12:02:34">2002年04月21日 12:02</time></h1>
+    <div class="body"><br>でも、段落移動なんて微妙な機能を追加したときは、どうするなんて話をしていると面倒なので、<br>4桁目が9になるまでは、4桁目をあげるだけでいいか。などと思っていました。<br><br>そしたら、次からは基本的に3桁目をあげればいいのかな。<br><br>それと、とても大きな変更というのは、どの程度？禁則処理とか、システムアイコンD&amp;Dなどは結構大きな変更だったと思うのですが、どの程度の変更を基準にしまするか？<br><br><br>これを機に1.3.0にして、あとは2桁目を機能追加。3桁目をバグフィックスのみ。1桁目は気が変わったとき。<br>などとしてもわかりやすいかと思いまする。<br></div></section>
+    <ul><li><section><h1 id=1951>
+    <span class="no">[1951]</span>
+    <a class="thread-title" href="#1951">RE2: バージョン番号の付け方について</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-21T18:05:12">2002年04月21日 18:05</time></h1>
+    <div class="body">&gt;段落移動なんて微妙な機能を追加したときは、どうする<br>私は機能追加0の時だけ4桁目を上げていました．<br><br>&gt;4桁目が9になるまでは、4桁目をあげるだけでいいか。などと思っていました。<br>これ絶対反対．1.9の次は1.10でないと'.'の意味が無いじゃない．<br>4桁目を上げるだけなら100でも1000でも4桁目だけで粘って欲しい(って本気にしないで)<br><br>&gt; どの程度の変更を基準にしまするか？<br>編集・描画周りなど既存部分のあちこちに変更を加えたり処理の流れが変わったりしたときは基幹部分が変わっているからバグ増えてるかもという警告の意味で上位桁を上げるのもいいのでは？<br><br>&gt;禁則処理とか<br>これは大きな変更だったと思っております．<br><br>&gt;システムアイコンD&amp;Dなどは結構大きな変更だったと思うのですが、<br>こっちはそうでもないかな．編集機能は影響を受けていないので．<br><br>バージョンの上の方が変わっていると「おおっ，大きくバージョンアップしている」(から試してみよう/から安定するまで待とう)というメッセージが伝わることが重要だと思います．(じぇぷろさんが昔言っていたなぁ)．そうなると次のパッケージには1.3.x.xを収録したいなぁと．<br><br>&gt;これを機に1.3.0にして、あとは2桁目を機能追加。3桁目をバグフィックスのみ。<br>開発が常に直線であるとは限らないとすると，どこかをブランチ用番号として予約しておく案もありますね．<br>例えば，<br>1桁目 メジャーバージョン<br>2桁目 マイナーバージョン<br>3桁目 ブランチ番号 (0以外ならテスト版)<br>4桁目 ブランチ内でのバージョン番号<br><br>&gt; 1桁目は気が変わったとき。<br>1桁目を上げるのは，1プロセス複数ファイル・複数ウィンドウ対応になったとき，って勝手に妄想してます(^^;)<br></div></section>
+    <ul><li><section><h1 id=1953>
+    <span class="no">[1953]</span>
+    <a class="thread-title" href="#1953">RE3: バージョン番号の付け方について</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-21T22:52:37">2002年04月21日 22:52</time></h1>
+    <div class="body"><br>ではそういうことにします。<br><br>＃特にポリシーはなく、前のバージョンから何かが変わっていて、話をするときにバージョン番号で区別ができればいいと思っているので。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

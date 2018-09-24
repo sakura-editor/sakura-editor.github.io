@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>アウトライン解析での「＊」の使用 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7110</span>
+    <a class="thread-title" href="7110.html#7110">アウトライン解析での「＊」の使用</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7111</span>
+    <a class="thread-title" href="7110.html#7111">Re:アウトライン解析での「＊」の使用</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7112</span>
+    <a class="thread-title" href="7110.html#7112">Re2:アウトライン解析での「＊」の使用</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7110>
+    <span class="no">[7110]</span>
+    <a class="thread-title" href="#7110">アウトライン解析での「＊」の使用</a>
+    <span class="author">ヘム</span>
+    <time datetime="2009-12-09T18:34:37">2009年12月09日 18:34</time></h1>
+    <div class="body">アウトライン解析のルールの書き方で<br>*をワイルドカードではなく、扱わせる方法はあるでしょうか？<br><br>*を行頭に書かれるテキストデータを扱っており、もう少し<br>*に続くキーワードで解析させたいのですがうまく設定できません。<br><br>良い方法があれば教えてください。</div></section>
+    <ul><li><section><h1 id=7111>
+    <span class="no">[7111]</span>
+    <a class="thread-title" href="#7111">Re:アウトライン解析での「＊」の使用</a>
+    <span class="author">もか</span>
+    <time datetime="2009-12-09T22:50:10">2009年12月09日 22:50</time></h1>
+    <div class="body">実装コードをみてみました。<br>今のところ*が書いてあってもワイルドカードとしては機能していないようです。<br>ruleファイルをたとえば下記のように記述していませんか？<br>*head /// astarisk<br>*impriment /// astarisk<br>* /// astarisk<br>これだと///の後ろが３つとも同じなので同一階層になります。<br>ちなみに最終行の後ろにも改行が必要です。<br>*head /// ahead<br>*impriment /// aimp<br>* /// astarisk<br>のように書くと階層構造になります。<br>たとえば、<br>*head test<br>*impriment test<br>*impriment test2<br>*etc ee<br>*head hoge<br>*impriment hoge<br>*imprimentpiyo<br>*head<br>*bad format<br>*impriment fuga<br>というファイルだったら下記のようにアウトラインになります。<br>_*head test<br>___*impriment test<br>___*impriment test2<br>_____*etc ee<br>_*head_hoge<br>___*impriment hoge<br>___*imprimentpiyo<br>_*head<br>___*bad format<br>_____*impriment fuga<br><br>なおruleファイルで指定した順番に階層になるわけではなくて<br>解析対象のファイルに現れた順番で階層表示になります<br>*impriment<br>*head<br>というファイルなら*imprimentの子要素に*headがなります。<br></div></section>
+    <ul><li><section><h1 id=7112>
+    <span class="no">[7112]</span>
+    <a class="thread-title" href="#7112">Re2:アウトライン解析での「＊」の使用</a>
+    <span class="author">ヘム</span>
+    <time datetime="2009-12-10T13:20:59">2009年12月10日 13:20</time></h1>
+    <div class="body">ありがとうございました。<br><br>&gt; 今のところ*が書いてあってもワイルドカードとしては機能していないようです。<br>&gt; ruleファイルをたとえば下記のように記述していませんか？<br><br>単純に、自分の理解不足だったんですね。<br><br>具体的な例を挙げていただいたので、望む設定のイメージができました。<br>やってみたいと思います。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

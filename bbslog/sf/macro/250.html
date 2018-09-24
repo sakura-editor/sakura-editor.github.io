@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>C++ 行コメントの追加 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">250</span>
+    <a class="thread-title" href="250.html#250">C++ 行コメントの追加</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=250>
+    <span class="no">[250]</span>
+    <a class="thread-title" href="#250">C++ 行コメントの追加</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-02-27T22:05:26">2006年02月27日 22:05</time></h1>
+    <div class="body">// C++ macro 範囲選択またはキャレット移動でＣ＋＋行コメント<br>// 2006.02.27 by じゅうじ<br>// PPA.DLL を SAKURA.EXE と同じディレクトリに置く。<br>if nil = S_GetSelectedString(0)<br>  then  // 範囲選択なし<br>    begin<br>      S_GoLineTop(9);<br>      S_Replace('^(.*)\n', '//\1\n', 4); // 行頭置換（//は、Ｃ＋＋行コメント）<br>      S_GoLineTop(9);<br>    end<br>  else S_ReplaceAll('^(.*)\n', '//\1\n', 132); // 選択範囲置換<br>S_SearchClearMark(0); // 検索マークのクリア<br></div></section>
+    </li></ul></body></html>

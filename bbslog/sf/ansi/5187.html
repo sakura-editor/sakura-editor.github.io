@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>現状まとめ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5187</span>
+    <a class="thread-title" href="5187.html#5187">現状まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5188</span>
+    <a class="thread-title" href="5187.html#5188">Re:現状まとめ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5199</span>
+    <a class="thread-title" href="5187.html#5199">RE: 現状まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5200</span>
+    <a class="thread-title" href="5187.html#5200">Re2: 現状まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5201</span>
+    <a class="thread-title" href="5187.html#5201">Re3: 現状まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5208</span>
+    <a class="thread-title" href="5187.html#5208">Re4: 現状まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5209</span>
+    <a class="thread-title" href="5187.html#5209">Re5: 現状まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5212</span>
+    <a class="thread-title" href="5187.html#5212">Re6: 現状まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5213</span>
+    <a class="thread-title" href="5187.html#5213">Re7: 現状まとめ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5203</span>
+    <a class="thread-title" href="5187.html#5203">Re2: 現状まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5210</span>
+    <a class="thread-title" href="5187.html#5210">Re3: 現状まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5211</span>
+    <a class="thread-title" href="5187.html#5211">Re4: 現状まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5216</span>
+    <a class="thread-title" href="5187.html#5216">タイプ別設定の最大設定数は？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5217</span>
+    <a class="thread-title" href="5187.html#5217">Re:タイプ別設定の最大設定数は？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5187>
+    <span class="no">[5187]</span>
+    <a class="thread-title" href="#5187">現状まとめ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-11-17T13:53:57">2007年11月17日 13:53</time></h1>
+    <div class="body">▼Commit待ち<br>-[[patches:1827485]] モーダルダイアログがモードレス化する FixModalToModeless1.patch<br>-[[patches:1814571]] IME Watcher 対応 FocusActiveView2.patch<br><br>▼内容確認待ち<br>-[[patches:1810231]] トリプルクリック対応 TripleClick16_1163.diff<br>しばらく使っていますが，動作はほぼOKかなと思ってます．<br><br>-[[patches:1733921]] C++のAttribute対応 atloutline1.diff<br>あんまり相手にしてくれる人がいないみたいです．<br><br>-[[patches:1791110]] カーソル位置の縦線 curvertical_v11_r1138.diff<br>mocaさんが作られた部分に関しては確認済みです．<br>内部バッファの扱いに関連して，設定変更時にバッファ使用オプションを即時反映する変更を私の方で加えていますが，その部分のみ未確認です．<br><br>-[[patches:1812307]] ツールバーに未定義アイコンが登録できる FuncAssign1_2.patch<br>-[[patches:1724317]] 文字コード判別改善（２）codechecker_fix9-2__r1160.tgz<br>内容・動作とも未確認です<br><br>▼保留<br>-[[patches:1550557]] 自動実行マクロ AutoExecMacro5_a3_1112.patch<br>基本的にはOKなのですが，PPAエンジンがリエントラントでない点の扱いがペンディングになっています．<br>PPAマクロを自動実行に割り当てたまま，PPAマクロから自動実行を伴う機能を起動すると落ちます．<br>どちらかがPPAでないか，マクロ内部から使用しなければOKなんですけど．<br><br>Global対応パッチが更新されています<br>http://sakura.qp.land.to/?Junk%2F31<br></div></section>
+    <ul><li><section><h1 id=5188>
+    <span class="no">[5188]</span>
+    <a class="thread-title" href="#5188">Re:現状まとめ</a>
+    <span class="author">AC</span>
+    <time datetime="2007-11-17T14:30:41">2007年11月17日 14:30</time></h1>
+    <div class="body">&gt; -[[patches:1733921]] C++のAttribute対応 atloutline1.diff<br>&gt; あんまり相手にしてくれる人がいないみたいです．<br><br>返事しておりませんですた。失礼しました。<br>問題ないみたいです。（特殊なパターンですし・・・</div></section>
+    </li><li><section><h1 id=5199>
+    <span class="no">[5199]</span>
+    <a class="thread-title" href="#5199">RE: 現状まとめ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-12-01T13:20:20">2007年12月01日 13:20</time></h1>
+    <div class="body">▼Commit済み<br>-[[patches:1827485]] モーダルダイアログがモードレス化する FixModalToModeless1.patch<br>-[[patches:1814571]] IME Watcher 対応 FocusActiveView2.patch<br>-[[patches:1810231]] トリプルクリック対応 TripleClick16_1163.diff<br><br>▼内容確認待ち<br>-[[patches:1733921]] C++のAttribute対応 atloutline1.diff<br>-[[patches:1791110]] カーソル位置の縦線 curvertical_v11_r1138.diff<br>この2点は動作確認はOKなので，誰も突っ込まないようならCommitしたいのですが...<br>縦線，C/C++アウトラインとも使っていますが特に問題は出ておりません．<br><br>-[[patches:1812307]] ツールバーに未定義アイコンが登録できる FuncAssign1_2.patch<br>確認中<br><br>&gt;-[[patches:1724317]] 文字コード判別改善（２）codechecker_fix9-2__r1160.tgz<br>&gt;内容・動作とも未確認です<br><br>▼保留<br>&gt;-[[patches:1550557]] 自動実行マクロ AutoExecMacro5_a3_1112.patch<br>&gt;基本的にはOKなのですが，PPAエンジンがリエントラントでない点の扱いがペンディングになっています．<br>&gt;PPAマクロを自動実行に割り当てたまま，PPAマクロから自動実行を伴う機能を起動すると落ちます．<br>&gt;どちらかがPPAでないか，マクロ内部から使用しなければOKなんですけど．<br>&gt;<br>&gt;Global対応パッチが更新されています<br>&gt;http://sakura.qp.land.to/?Junk%2F31<br></div></section>
+    <ul><li><section><h1 id=5200>
+    <span class="no">[5200]</span>
+    <a class="thread-title" href="#5200">Re2: 現状まとめ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-12-01T16:13:20">2007年12月01日 16:13</time></h1>
+    <div class="body">&gt; ▼内容確認待ち<br>&gt; -[[patches:1791110]] カーソル位置の縦線 curvertical_v11_r1138.diff<br><br>ちらつきが激しすぎるのではないかと、少し気になっています。<br>PCのスペックが上がれば解消されるようなら問題にならないかな<br>とは思いますけれども。<br>それ以外の使用上の問題はないように感じました。</div></section>
+    <ul><li><section><h1 id=5201>
+    <span class="no">[5201]</span>
+    <a class="thread-title" href="#5201">Re3: 現状まとめ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-12-01T17:43:18">2007年12月01日 17:43</time></h1>
+    <div class="body">&gt;&gt; -[[patches:1791110]] カーソル位置の縦線 curvertical_v11_r1138.diff<br>&gt;ちらつきが激しすぎるのではないかと、少し気になっています。<br>参考までに以下の点を教えていただけませんか．<br>- PC(CPU)のスペック<br>- 縦線表示をOFFにしてもちらつくか<br>- 画面キャッシュON/OFFで変化するか<br><br>私がCoreDuoのPCで使っている限りはちらつきが気になることはありませんでした．<br>縦線OFFで現象が発生しなければ従来ユーザに迷惑をかけることはないのかなと思います．<br><br>描画時は画面キャッシュありだと縦線部分のみ転送，無しだと書き直しかと思います．<br>書き直しの時は消さずに上書きだからちらつかないと思っていたのですが違うのかな？<br>クリッピングして変更領域に絞るなどの対策が必要ですかね．<br></div></section>
+    <ul><li><section><h1 id=5208>
+    <span class="no">[5208]</span>
+    <a class="thread-title" href="#5208">Re4: 現状まとめ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-12-01T21:40:59">2007年12月01日 21:40</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt; &gt; -[[patches:1791110]] カーソル位置の縦線 curvertical_v11_r1138.diff<br>&gt; &gt; ちらつきが激しすぎるのではないかと、少し気になっています。<br>&gt; 参考までに以下の点を教えていただけませんか．<br> <br>- PC(CPU)のスペック<br><br>Mobile Intel(R) Pentium(R) 4 - M CPU 1.80GHz 1.18GHz<br>（システムのプロパティ情報より）<br><br>- 縦線表示をOFFにしてもちらつくか<br><br>ちらつきません。<br><br>- 画面キャッシュON/OFFで変化するか<br><br>あー、変化しました。<br>右方向キーを押しっぱなしにするとカーソルが消えるほど<br>ちららついていた症状が治りました。<br><br>縦罫線を使うときは画面キャッシュをONにすることで<br>解決ですね。お騒がせしました。</div></section>
+    <ul><li><section><h1 id=5209>
+    <span class="no">[5209]</span>
+    <a class="thread-title" href="#5209">Re5: 現状まとめ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-12-01T22:09:12">2007年12月01日 22:09</time></h1>
+    <div class="body">&gt;Mobile Intel(R) Pentium(R) 4 - M CPU 1.80GHz 1.18GHz<br>そんなに低いスペックではないですね．<br><br>PCのスペックだけでなく，表示処理の複雑度も影響すると思います．<br>一番効いてくるのが正規表現キーワードの使用量かなと．<br><br>本当は縦線付近以外をクリッピングすればちらつかなくなるのかもしれませんが，当面回避策があるので，またの機会に持ち越したいと思います．<br></div></section>
+    <ul><li><section><h1 id=5212>
+    <span class="no">[5212]</span>
+    <a class="thread-title" href="#5212">Re6: 現状まとめ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-12-02T17:03:53">2007年12月02日 17:03</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt; Mobile Intel(R) Pentium(R) 4 - M CPU 1.80GHz 1.18GHz<br>&gt; そんなに低いスペックではないですね．<br>&gt; <br>&gt; PCのスペックだけでなく，表示処理の複雑度も影響すると思い<br>&gt; ます．一番効いてくるのが正規表現キーワードの使用量かなと．<br><br>正確な情報を提示するために捕捉させて下さい。<br><br>画面キャッシュON/OFFのちらつき変化についての調査は、<br>タイプ設定“基本”（初期値のまま）に縦罫線カラーの色付け設定を<br>変更しただけのものを使いましたので、正規表現キーワード機能の<br>負荷は極力少なくなっていると思います。<br><br>くどいと言われるかもしれませんけれど（汗）<br>何かの参考になれば幸いです。</div></section>
+    <ul><li><section><h1 id=5213>
+    <span class="no">[5213]</span>
+    <a class="thread-title" href="#5213">Re7: 現状まとめ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-12-02T17:08:00">2007年12月02日 17:08</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; タイプ設定“基本”（初期値のまま）に縦罫線カラーの色付け設定を<br><br>縦罫線カラーじゃなくてカーソル位置縦線です orz.<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=5203>
+    <span class="no">[5203]</span>
+    <a class="thread-title" href="#5203">Re2: 現状まとめ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-01T17:47:10">2007年12月01日 17:47</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼内容確認待ち<br>&gt; -[[patches:1733921]] C++のAttribute対応 atloutline1.diff<br>&gt; -[[patches:1791110]] カーソル位置の縦線 curvertical_v11_r1138.diff<br>&gt; この2点は動作確認はOKなので，誰も突っ込まないようならCommitしたいのですが...<br>テスト版のほうでずっと普段使用していますが、特にこれに絡んでいると思われるような問題は見られません。<br>げんたさんが修正内容を把握されているのであれば、潜在問題が発現した場合でも迅速対処が可能だと思いますので、commitしていただいて良いように思います。</div></section>
+    <ul><li><section><h1 id=5210>
+    <span class="no">[5210]</span>
+    <a class="thread-title" href="#5210">Re3: 現状まとめ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-12-02T00:30:43">2007年12月02日 00:30</time></h1>
+    <div class="body">Commitしちゃいました．<br><br>-[[patches:1812307]] ツールバーに未定義アイコンが登録できる FuncAssign1_2.patch<br>(確認OK)<br>と，一般掲示板に書いたキーワードセット数の拡張でReleaseしようと思ってます．<br><br>キーワードセット数拡張の添付にパッチも入れてあるのですが，あの定数１つ変えるだけですよね．<br>けちけちしないで25-&gt;100くらいに拡張したいと思います．<br></div></section>
+    <ul><li><section><h1 id=5211>
+    <span class="no">[5211]</span>
+    <a class="thread-title" href="#5211">Re4: 現状まとめ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-02T01:07:31">2007年12月02日 01:07</time></h1>
+    <div class="body">&gt; キーワードセット数拡張の添付にパッチも入れてあるのですが，あの定数１つ変えるだけですよね．<br>以前見た記憶によれば、それで良かったような．．．<br>タイプ別設定の最大設定数(MAX_TYPES)も何度か要望を見た気がするんですけど、そっちはどうなんでしょう。<br>キーワード最大登録数は十分なのかしら？</div></section>
+    <ul><li><section><h1 id=5216>
+    <span class="no">[5216]</span>
+    <a class="thread-title" href="#5216">タイプ別設定の最大設定数は？</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-14T01:32:33">2007年12月14日 01:32</time></h1>
+    <div class="body">&gt; タイプ別設定の最大設定数(MAX_TYPES)<br>やっぱりこちらも増やしませんか？(Request/226)<br>20→30とすると共有メモリ消費は1.8MB→2.1MBになります。<br>最後に増やしたのが2001年（16→20）で、きっと当時の最低ラインPC環境（Win9x, 16MB or 32MB RAM？）でも快適感を損なわないよう無難にちょっとだけ増加しておいたのかな～と思いますが．．．<br>    歓迎する人 &gt;&gt;&gt;&gt;&gt; 嘆く人<br>ではないでしょうか。</div></section>
+    <ul><li><section><h1 id=5217>
+    <span class="no">[5217]</span>
+    <a class="thread-title" href="#5217">Re:タイプ別設定の最大設定数は？</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-12-14T02:23:45">2007年12月14日 02:23</time></h1>
+    <div class="body">&gt; 20→30とすると共有メモリ消費は1.8MB→2.1MBになります。<br>増やしてみました。<br>Patches#1850199</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

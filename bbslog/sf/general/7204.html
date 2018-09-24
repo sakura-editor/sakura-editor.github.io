@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>関数呼出し( コールスタック ) を見る機能 などあるでしょうか？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7204</span>
+    <a class="thread-title" href="7204.html#7204">関数呼出し( コールスタック ) を見る機能 などあるでしょうか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7205</span>
+    <a class="thread-title" href="7204.html#7205">Re:関数呼出し( コールスタック ) を見る機能 などあるでしょうか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7206</span>
+    <a class="thread-title" href="7204.html#7206">Re2:関数呼出し( コールスタック ) を見る機能 などあるでしょうか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7207</span>
+    <a class="thread-title" href="7204.html#7207">Re3:関数呼出し( コールスタック ) を見る機能 などあるでしょうか？</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7204>
+    <span class="no">[7204]</span>
+    <a class="thread-title" href="#7204">関数呼出し( コールスタック ) を見る機能 などあるでしょうか？</a>
+    <span class="author">カズ</span>
+    <time datetime="2010-05-30T12:07:31">2010年05月30日 12:07</time></h1>
+    <div class="body">サクラエディタユーザーです。<br>組込み開発でお世話になっています。<br>下記のような、[要望機能]を実現する方法は<br>今現在あるでしょうか？ それとも開発しなければ<br>実現できないでしょうか？<br><br>[要望機能]<br>膨大なプログラムを解析する場合に、<br>この関数がどこからコールされているかをmain()まで<br>追って行く機能、<br>デバッガなどの開発環境がない中での話しです。<br>エディタだけで実現できる方法です。<br><br><br>[注釈]<br>[要望機能]を実現させる方法としては、<br>Visual Studio などの開発環境ではデバッガの機能として<br>関数呼出し(コールスタック)の機能がありますよね。<br>ある関数のところにブレークをおいて、そこから<br>ブレークした関数がどこから呼び出されているかを<br>表示させて、[要望機能]を実現するわけですが、<br><br>組込み開発環境では、自由にデバッグ環境を使えない<br>場合もあるので、ソースコードをエディタで<br>開いている環境のみで、[要望機能]を実現させたいわけです。<br><br>今のエディタ環境では、関数を何回もGrepして、<br>main()まで追っていくので、<br>それを一度の検索で見渡せると<br>作業効率が上がるわけです。<br><br>ご存知のかたいましたら助言お願いします。<br><br><br></div></section>
+    <ul><li><section><h1 id=7205>
+    <span class="no">[7205]</span>
+    <a class="thread-title" href="#7205">Re:関数呼出し( コールスタック ) を見る機能 などあるでしょうか？</a>
+    <span class="author">anonymous</span>
+    <time datetime="2010-05-30T16:09:53">2010年05月30日 16:09</time></h1>
+    <div class="body">Cならcflowとか呼び出しをツリー化するソフトが有ります<br>C++ならオーバーライドとかあるので静的に解析するには限界があります。<br><br>いずれにせよエディタの仕事ではありません<br></div></section>
+    <ul><li><section><h1 id=7206>
+    <span class="no">[7206]</span>
+    <a class="thread-title" href="#7206">Re2:関数呼出し( コールスタック ) を見る機能 などあるでしょうか？</a>
+    <span class="author">カズ</span>
+    <time datetime="2010-05-30T18:28:34">2010年05月30日 18:28</time></h1>
+    <div class="body">▼ anonymousさん<br>&gt; Cならcflowとか呼び出しをツリー化するソフトが有ります<br><br>カズです。<br>アドバイスありがとうございます。<br>使ってみようと思います。<br><br>&gt; C++ならオーバーライドとかあるので静的に解析するには限界があります。<br>&gt; <br>&gt; いずれにせよエディタの仕事ではありません<br><br>限界はありますが、C++にも静的解析対応<br>してくれるものがあると有難いですね。<br>ご助言有難うございました。<br><br></div></section>
+    <ul><li><section><h1 id=7207>
+    <span class="no">[7207]</span>
+    <a class="thread-title" href="#7207">Re3:関数呼出し( コールスタック ) を見る機能 などあるでしょうか？</a>
+    <span class="author">anonymous</span>
+    <time datetime="2010-05-30T20:00:21">2010年05月30日 20:00</time></h1>
+    <div class="body">補足：<br><br>クラスの階層構造についてはdoxygenで出力できます。<br>サクラエディタWikiにサクラエディタのdoxygenがあります。<br><br>関数の参照先程度でよいのであればglobalツールがあります。<br>Junk/31です。（<a href=http://sakura.qp.land.to/?Junk%2F31 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F31</nobr></a>）<br><br>使えるかどうか参考にしてください。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

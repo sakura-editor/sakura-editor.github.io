@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>diff.exe無しでDIFF差分表示を実行すると... | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2538</span>
+    <a class="thread-title" href="2538.html#2538">diff.exe無しでDIFF差分表示を実行すると...</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=2538>
+    <span class="no">[2538]</span>
+    <a class="thread-title" href="#2538">diff.exe無しでDIFF差分表示を実行すると...</a>
+    <span class="author">みく</span>
+    <time datetime="2002-12-28T11:00:12">2002年12月28日 11:00</time></h1>
+    <div class="body"><br>「diff.exe無しでDIFF差分表示を実行すると，差分無しの正常終了に見えてしまう．」<br>の修正です。(ssrc_2002-12-24版)<br><br>CEditView_Diff.cpp:239行目<br><br>wsprintf( cmdline, "%s\\%s", szExeFolder, "diff.exe" );<br>if( -1 == ::GetFileAttributes( cmdline ) )<br>{<br>&#9;::MYMESSAGEBOX( m_hWnd,&#9;MB_OK | MB_ICONEXCLAMATION, GSTR_APPNAME, "差分コマンド実行は失敗しました。\nDIFF.EXE が見つかりません。" );<br>&#9;return;<br>}<br></div></section>
+    </li></ul></body></html>

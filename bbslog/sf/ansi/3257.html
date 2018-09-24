@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>折り返し線の不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3257</span>
+    <a class="thread-title" href="3257.html#3257">折り返し線の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3312</span>
+    <a class="thread-title" href="3257.html#3312">Re: 折り返し線の不具合</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3257>
+    <span class="no">[3257]</span>
+    <a class="thread-title" href="#3257">折り返し線の不具合</a>
+    <span class="author">もか</span>
+    <time datetime="2003-10-15T23:21:50">2003年10月15日 23:21</time></h1>
+    <div class="body">Win98(95/Me)で、折り返し位置の縦線？を、X座標0x10046<br>とかに作画しようとするので、変なところに作画されます。<br><br>CEditView_New.cpp<br>264行目付近:<br> nX = (縦線の座標計算..省略);<br>+if( nX &lt; 0x10000 ){<br>　　/* 折り返し記号の色のペンを作成 */<br>　　(縦線を作画する6行..省略)<br>+}<br>でいいのかな。</div></section>
+    <ul><li><section><h1 id=3312>
+    <span class="no">[3312]</span>
+    <a class="thread-title" href="#3312">Re: 折り返し線の不具合</a>
+    <span class="author">もか</span>
+    <time datetime="2003-11-15T16:03:45">2003年11月15日 16:03</time></h1>
+    <div class="body">次更新するときは、これも混ぜて下さい。<br></div></section>
+    </li></ul></li></ul></body></html>

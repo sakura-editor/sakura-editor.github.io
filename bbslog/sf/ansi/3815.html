@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>強調キーワード10個 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3815</span>
+    <a class="thread-title" href="3815.html#3815">強調キーワード10個</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3821</span>
+    <a class="thread-title" href="3815.html#3821">Red: 強調キーワード10個</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3815>
+    <span class="no">[3815]</span>
+    <a class="thread-title" href="#3815">強調キーワード10個</a>
+    <span class="author">みく</span>
+    <time datetime="2005-01-14T19:06:22">2005年01月14日 19:06</time></h1>
+    <div class="body"><br>久々のパッチです。<br>自分用に作ってたものを改造して使えるようにしてみました。<br><br>eGroups:keyword10.diff<br>ssrc_2005-01-10に対する差分です。<br><br>変更内容：<br>１．タイプ別設定画面のカラー設定タブの強調キーワード2を削除し、代わりにボタンを追加。<br>ボタンを押すと強調キーワード設定画面が表示され、1～10までのキーワードを設定できます。<br>強調キーワード1については、親画面でも指定できます。<br><br>２．共通設定画面のキーワードタブで、キーワードの最大文字数、登録キーワード数、<br>総登録可能キーワード数が右下に表示されます。<br><br>３．強調キーワードの最大文字数を100から64に変更。<br>強調キーワードの登録可能数を1000から3000に変更。<br>（適当に変更してください。この設定値が見えるように２の変更をしました）<br>＃この変更でメモリ使用量が約2倍になります。<br><br>仕様みたいなもの：<br>強調キーワードを空欄にすると、それ以降の強調キーワードは処理しません。<br>色指定でチェックをはずしているだけの場合は、それ以降の強調キーワードは処理します。<br>（このへん変更するには、CEditView.cpp/CEditView_New.cppの当該箇所のbreakを直してください）<br><br>あと、makefileの差分を忘れているので、<br>CDlgKeywordSelect.cpp/.h/.oを追加してください。<br></div></section>
+    <ul><li><section><h1 id=3821>
+    <span class="no">[3821]</span>
+    <a class="thread-title" href="#3821">Red: 強調キーワード10個</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-01-23T21:46:18">2005年01月23日 21:46</time></h1>
+    <div class="body">取り込みに向けて作業中です．<br>*Keywordセット数の10がばらまかれていたので定数定義にしました．<br>*変更日時と名前の記入がない部分を追加．<br>*ダイアログボックスのTAB orderとアクセスキー調整<br><br>キーワード数はセット数×最大数×最大長で，上限値3000というのはそれぞれのセットに対する値ですよね．<br>ですが今のところ上限が問題になっているのはPHPキーワードだけなので，10個も使えるならキーワードファイルを3つに分割してもらうことにして，代わりにセット数を少し増やす(20→25)ことでメモリ増加を押さえつつ目的が果たせるように思います．<br>最終的には可変長パッチを取り込むことになるとは思いますが...<br><br>キーワード設定の途中に未設定の項目があるとそれ以降が無視されるのは混乱を招きそうだったので，新設のダイアログを閉じたときに設定の前詰めを行うようにしました．<br>ただし，直接指定できるキーワード1をクリアした場合は設定したとたんに次の設定が繰り上がってくると，意図通りに動かないように見えるのでそこはそのままにしています．まあ１のクリアはキーワード不要の意思表示と見ても良いかなと．<br><br>ヘルプに対してコンテキストID HLP000286 が指定されていましたが，これは直し忘れ？<br>でもこのダイアログボックスにはヘルプボタンがないのでこれは不要ですよね．<br><br>--<br>あと，全く関係ないですがCPropTypesのメンバーを全てprivateにしました．<br>Typesの設定だけ支障があったので，アクセス関数を追加しています．<br></div></section>
+    </li></ul></li></ul></body></html>

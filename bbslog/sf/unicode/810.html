@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Fix) 描画関連の問題修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">810</span>
+    <a class="thread-title" href="810.html#810">Commit報告:(Fix) 描画関連の問題修正</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=810>
+    <span class="no">[810]</span>
+    <a class="thread-title" href="#810">Commit報告:(Fix) 描画関連の問題修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-02-07T23:21:41">2009年02月07日 23:21</time></h1>
+    <div class="body">リビジョン：<br>　rev1521<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>　Fix: 何度も折り返される長い行内でカーソル移動すると表示が崩れる（先頭行が複数表示される）<br>　　&gt;&gt;data:6889<br><br>　Fix: ワードラップ折り返し行が画面上端を出入りするとルーラの表示が崩れる<br><br>　Fix: 折り返し2行目以後で対括弧表示がOFFになるとき括弧の色が折り返し先頭行の末尾の文字色になる（例：最初の折り返しが文字列だと括弧が文字列外でも文字列色になる）<br><br>　Fix: 矩形選択を再描画すると行末以後の選択反転表示が逆転する（矩形選択範囲の拡大・縮小に伴って画面スクロールが発生するときも逆転する）<br><br>　Fix: U+0600の文字以後からカーソルの桁位置がずれる<br>　　Wiki BugReport/29(<a href=http://sakura.qp.land.to/?BugReport%2F29) target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F29)<wbr></nobr></a><br><br>各現象には微妙に固有の発動条件があったりします。例えば[画面キャッシュを使う]の設定がOFFの場合だけ、とか。</div></section>
+    </li></ul></body></html>

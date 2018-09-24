@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Popup Helpの実装方法について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1197</span>
+    <a class="thread-title" href="1197.html#1197">Popup Helpの実装方法について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1205</span>
+    <a class="thread-title" href="1197.html#1205">Re:Popup Helpの実装方法について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1215</span>
+    <a class="thread-title" href="1197.html#1215">Re2:Popup Helpの実装方法について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1232</span>
+    <a class="thread-title" href="1197.html#1232">Re2:Popup Helpの実装方法について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1233</span>
+    <a class="thread-title" href="1197.html#1233">Re3:Popup Helpの実装方法について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1234</span>
+    <a class="thread-title" href="1197.html#1234">Re4:Popup Helpの実装方法について</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1239</span>
+    <a class="thread-title" href="1197.html#1239">Re3:Popup Helpの実装方法について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1240</span>
+    <a class="thread-title" href="1197.html#1240">Re3:Popup Helpの実装方法について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1249</span>
+    <a class="thread-title" href="1197.html#1249">Re4:Popup Helpの実装方法について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1250</span>
+    <a class="thread-title" href="1197.html#1250">Re4:Popup Helpの実装方法について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1254</span>
+    <a class="thread-title" href="1197.html#1254">Re5:Popup Helpの実装方法について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1197>
+    <span class="no">[1197]</span>
+    <a class="thread-title" href="#1197">Popup Helpの実装方法について</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-18T13:51:06">2002年01月18日 13:51</time></h1>
+    <div class="body">Popup Help/Context Menuのために，全てのダイアログにOnPopupHelpが追加されていますが，全く同じOnPopupHelpを各クラスにちりばめるより以下のようにCDialogにまとめた方がプログラムサイズの減少と保守性の向上が見込まれると思います．<br>処理が変わるわけではないので動作には全く影響ないですけど，<br>それに，共通設定とタイプ別設定には適用できないのか(T_T)<br><br>CDialog.hで<br><br> <br>&#9;virtual BOOL OnPopupHelp( WPARAM, LPARAM );&#9;//@@@ 2002.01.07 add<br>&#9;virtual BOOL OnContextMenu( WPARAM, LPARAM );&#9;//@@@ 2002.01.07 add<br>&#9;virtual LPVOID GetHelpIdTable(void);<br><br>---<br>CDialog.cppで<br><br>&#9;case WM_HELP:&#9;&#9;return OnPopupHelp( wParam, lParam );<br>&#9;case WM_CONTEXTMENU:return OnContextMenu( wParam, lParam );<br><br>BOOL CDlgAbout::OnPopupHelp( WPARAM wPara, LPARAM lParam )<br>{<br>&#9;HELPINFO *p = (HELPINFO *)lParam;<br>&#9;::WinHelp( (HWND)p-&gt;hItemHandle, m_szHelpFile, HELP_WM_HELP, (DWORD)(LPVOID)GetHelpIdTable() );<br>&#9;return TRUE;<br>}<br><br>BOOL CDlgAbout::OnContextMenu( WPARAM wPara, LPARAM lParam )<br>&#9;::WinHelp( m_hWnd, m_szHelpFile, HELP_CONTEXTMENU, (DWORD)(LPVOID)GetHelpIdTable() );<br>&#9;return TRUE;<br>}<br><br>---<br>以下の関数を各クラスに追加<br>DWORD* C***Dialog::GetHelpIdTable(void)<br>{<br>&#9;return p_helpids;<br>}<br></div></section>
+    <ul><li><section><h1 id=1205>
+    <span class="no">[1205]</span>
+    <a class="thread-title" href="#1205">Re:Popup Helpの実装方法について</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-18T20:29:07">2002年01月18日 20:29</time></h1>
+    <div class="body">そのように修正したものを 20020117help.zip<br>としてアップしました。<br>p_helpids[]のstaticをはずさないとAPエラー<br>になるのは、そういうものなんでしょうか？<br><br>ssrc_2002-01-17.lzh<br>ssrc_2002-01-17_plus.lzh<br>に対してpatchを当ててください。<br></div></section>
+    <ul><li><section><h1 id=1215>
+    <span class="no">[1215]</span>
+    <a class="thread-title" href="#1215">Re2:Popup Helpの実装方法について</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-19T07:35:27">2002年01月19日 07:35</time></h1>
+    <div class="body">マクロ画面のエディット項目の左のラベル<br>のヘルプが間違ってるので、タブオーダー<br>を変更しました。<br>  20020117help2.zip<br></div></section>
+    <ul><li><section><h1 id=1232>
+    <span class="no">[1232]</span>
+    <a class="thread-title" href="#1232">Re2:Popup Helpの実装方法について</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-20T08:27:38">2002年01月20日 08:27</time></h1>
+    <div class="body"><br>NewMainでリソースファイルが元に戻ってしまうようなので再アップします。<br>あと、CDialog.cpp で p_helpids の static をはずしました<br>(他ははずしたのにここだけはずし忘れてました)。<br><br>＃NewMainがビルドできないんですが...<br></div></section>
+    <ul><li><section><h1 id=1233>
+    <span class="no">[1233]</span>
+    <a class="thread-title" href="#1233">Re3:Popup Helpの実装方法について</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-20T13:09:09">2002年01月20日 13:09</time></h1>
+    <div class="body">▼ みくさん<br>&gt; <br>&gt; NewMainでリソースファイルが元に戻ってしまうようなので再アップします。<br>&gt; あと、CDialog.cpp で p_helpids の static をはずしました<br>&gt; (他ははずしたのにここだけはずし忘れてました)。<br>&gt; <br>&gt; ＃NewMainがビルドできないんですが...<br><br>たしかに、VCではビルドできませんね。<br><br>#ifdef _DEBUG<br>&#9;#ifndef&#9;GSTR_MUTEX_SAKURA<br>&#9;#define&#9;GSTR_MUTEX_SAKURA "MutexSakuraEditor_DEBUG"<br>&#9;#define&#9;GSTR_MUTEX_SAKURA_CP _T("MutexSakuraEditorCP_DEBUG")<br>&#9;#define&#9;GSTR_MUTEX_SAKURA_INIT _T("MutexSakuraEditorInit_DEBUG")<br>&#9;#endif<br>#else<br>&#9;#ifndef&#9;GSTR_MUTEX_SAKURA<br>&#9;#define&#9;GSTR_MUTEX_SAKURA "MutexSakuraEditor"<br>&#9;#define&#9;GSTR_MUTEX_SAKURA_CP _T("MutexSakuraEditorCP")<br>&#9;#define&#9;GSTR_MUTEX_SAKURA_INIT _T("MutexSakuraEditorInit")<br>&#9;#endif<br>#endif<br><br>の_Tって何者ですか？</div></section>
+    <ul><li><section><h1 id=1234>
+    <span class="no">[1234]</span>
+    <a class="thread-title" href="#1234">Re4:Popup Helpの実装方法について</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-20T13:21:29">2002年01月20日 13:21</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; の_Tって何者ですか？<br><br>って調べろってことでしたね。<br>_Tが未定義というエラーがでるところで、<br>#include &lt;tchar.h&gt;<br>して、<br>CCommandLine.hにあった<br>CCommandLine* CCommandLine::_instance=0;<br>を<br>CCommandLine.cppに移動したらビルドできましたよ &gt; みくさん<br></div></section>
+    </li></ul></li><li><section><h1 id=1239>
+    <span class="no">[1239]</span>
+    <a class="thread-title" href="#1239">Re3:Popup Helpの実装方法について</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-20T16:05:51">2002年01月20日 16:05</time></h1>
+    <div class="body">▼ みくさん<br>&gt; NewMainでリソースファイルが元に戻ってしまうようなので再アップします。<br><br>[タイプ別設定]-[スクリーン]-「SPACEの挿入」で表示されるヘルプが【文字色】になってます。<br>すでに修正済みでしたらごめんなさい。</div></section>
+    <ul><li><section><h1 id=1240>
+    <span class="no">[1240]</span>
+    <a class="thread-title" href="#1240">Re3:Popup Helpの実装方法について</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-20T17:01:02">2002年01月20日 17:01</time></h1>
+    <div class="body">&gt;発言者: hor<br>&gt;[タイプ別設定]-[スクリーン]-「SPACEの挿入」で表示されるヘルプが【文字色】になってます。<br><br>報告ありがとうございます。<br>確かにソースが間違ってます。<br><br>#次回差分をアップする機会に修正します。<br><br>CPropTypes.cpp:115行目(以下のように修正)<br>    IDC_CHECK_INS_SPACE, HIDC_CHECK_INS_SPACE, //スペースの挿入<br><br>sakura.hh:357行目(以下の行を追加)<br>#define HIDC_CHECK_INS_SPACE 11311 //スペースの挿入<br><br>sakura.rtf(以下を追加)<br>\trowd\pard\plain\f0\fs20<br>#{\footnote HIDC_CHECK_INS_SPACE}<br>${\footnote SPACEの挿入}<br>【SPACEの挿入】\par<br>タブの代わりにタブ幅に相当するスペースを挿入します。\par<br>\page<br></div></section>
+    <ul><li><section><h1 id=1249>
+    <span class="no">[1249]</span>
+    <a class="thread-title" href="#1249">Re4:Popup Helpの実装方法について</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-01-20T22:06:11">2002年01月20日 22:06</time></h1>
+    <div class="body">ごめんなさい。＞All<br>&gt; ＃NewMainがビルドできないんですが...<br>警告削減につづきまたやってしまいました、すみません。気をつけます。<br>20020117plusと20020117help,2とhelp20020117があって、多分パッチをひとつ当て忘れたのです。<br>＃さらに0103版で行った修正に0108,0114版で行った修正とをマージしてるうちに消えて（戻して）しまったのかも。<br><br>&gt; CCommandLine.hにあった<br>&gt; CCommandLine* CCommandLine::_instance=0;<br>VCではヘッダに置けない仕様のようですね。<br>アップロードしたあとに他のサイトでこの制限を知りましたが修正する前に寝てしまいました。<br><br>&gt; の_Tって何者ですか？<br>CreateMutexの第３引数は LPCTSTR のようなので _T をつけました。<br>こうすると内部がユニコード処理でもそのままでソースが使えるとかそういうことだったと思います。サクラには必要なかったかも。。。<br></div></section>
+    <ul><li><section><h1 id=1250>
+    <span class="no">[1250]</span>
+    <a class="thread-title" href="#1250">Re4:Popup Helpの実装方法について</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-20T23:15:25">2002年01月20日 23:15</time></h1>
+    <div class="body"><br>&gt;20020117plusと20020117help,2とhelp20020117があって、多分パッチをひとつ当て忘れたのです。<br>&gt;＃さらに0103版で行った修正に0108,0114版で行った修正とをマージしてるうちに消えて（戻して）しまったのかも。<br><br>いえいえ。これは私がアップするファイル名とかが<br>わかりづらかったのが原因です。今後はもっとわか<br>りやすくするよう気をつけます。<br>＃今回は修正が重なっていないので、差分ファイルは後から当てても大丈夫みたいです。<br></div></section>
+    </li><li><section><h1 id=1254>
+    <span class="no">[1254]</span>
+    <a class="thread-title" href="#1254">Re5:Popup Helpの実装方法について</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-21T09:45:26">2002年01月21日 09:45</time></h1>
+    <div class="body">&gt;&gt; CCommandLine* CCommandLine::_instance=0;<br>&gt;VCではヘッダに置けない仕様のようですね。<br>普通はこういう変数宣言をヘッダに書くと，2つ以上のオブジェクトに実体ができて重複シンボル検出でリンクエラーになりますよね．<br><br>エラーにならない方がどうかしているのでは？<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

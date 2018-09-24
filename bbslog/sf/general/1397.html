@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>キーマクロの保存 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1397</span>
+    <a class="thread-title" href="1397.html#1397">キーマクロの保存</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1398</span>
+    <a class="thread-title" href="1397.html#1398">Re:キーマクロの保存</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1399</span>
+    <a class="thread-title" href="1397.html#1399">Re2:キーマクロの保存</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1702</span>
+    <a class="thread-title" href="1397.html#1702">RE: キーマクロの保存</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1721</span>
+    <a class="thread-title" href="1397.html#1721">マクロについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1724</span>
+    <a class="thread-title" href="1397.html#1724">Re:マクロについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1733</span>
+    <a class="thread-title" href="1397.html#1733">Re2:マクロについて</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1736</span>
+    <a class="thread-title" href="1397.html#1736">Re2:マクロについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1737</span>
+    <a class="thread-title" href="1397.html#1737">WSH</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1397>
+    <span class="no">[1397]</span>
+    <a class="thread-title" href="#1397">キーマクロの保存</a>
+    <span class="author">おきた</span>
+    <time datetime="2002-03-14T19:27:23">2002年03月14日 19:27</time></h1>
+    <div class="body">キーマクロで検索や置換等する場合に円記号を条件に入れると<br>保存したときに円記号がエスケープ（\が\\となる）されます<br>が、PPA.DLL有りの時このマクロが実行されません。<br><br>自分で円記号を１個削除すれば実行できるのでそれほど問題<br>ではないのですが。とりあえず報告します。<br><br><br></div></section>
+    <ul><li><section><h1 id=1398>
+    <span class="no">[1398]</span>
+    <a class="thread-title" href="#1398">Re:キーマクロの保存</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-15T00:36:00">2002年03月15日 00:36</time></h1>
+    <div class="body">▼ おきたさん<br>&gt; 自分で円記号を１個削除すれば実行できるのでそれほど問題<br>&gt; ではないのですが。とりあえず報告します。<br><br>ありゃ。ほんとだ。\は\でエスケープする文化はないのかなぁ？<br>詳しい人のコメント求む。</div></section>
+    <ul><li><section><h1 id=1399>
+    <span class="no">[1399]</span>
+    <a class="thread-title" href="#1399">Re2:キーマクロの保存</a>
+    <span class="author">Lionel</span>
+    <time datetime="2002-03-15T11:31:05">2002年03月15日 11:31</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ありゃ。ほんとだ。\は\でエスケープする文化はないのかなぁ？<br>&gt; 詳しい人のコメント求む。<br><br>当方、なんちゃって Delphi 使いのため詳しいわけじゃないですが…(^^;<br>Pascal に関しては、\ は特別な意味を持つ文字ではないのと、<br>そもそも文字列ブロックの中に特殊な制御文字を入れることは出来ないので<br>エスケープをする必要はありません。\r, \n, \t などは、Pascal では<br>それぞれ #13, #10, #9 となり、かつ文字列ブロックの外に記述します。<br><br>C, Java ... string = "foo\r\nbar";<br>Pascal  ... string := 'foo'#13#10'bar';<br><br>---<br><br>余談ですが、これを試そうとして、マクロで<br><br>S_InsText('foo'#13#10'bar');<br><br>と書いて実行してみたところ、Pascal の仕様どおり<br><br>foo(改行)<br>bar<br><br>と出力されます。<br>しかし、この時キャレットは 'f' の手前で動かないまま点滅してます。<br>にもかかわらず BackSpace キーを押すと２行目末尾の 'r' が削除されます。<br>どうも、内部的な位置はちゃんと末尾 'r' の後ろに動いてるのに<br>画面上の描画だけは先頭 'f' の手前に残ってる、という感じですね。<br><br>些細なことですが、一応ご報告までに。<br><br>sakura.exe 1.2.106.8<br>PPA.DLL 1.24<br>Windows2000 Professional</div></section>
+    </li></ul></li><li><section><h1 id=1702>
+    <span class="no">[1702]</span>
+    <a class="thread-title" href="#1702">RE: キーマクロの保存</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-20T00:07:29">2002年04月20日 00:07</time></h1>
+    <div class="body"><br>&gt;キーマクロで検索や置換等する場合に円記号を条件に入れると<br>&gt;保存したときに円記号がエスケープ（\が\\となる）されます<br>&gt;が、PPA.DLL有りの時このマクロが実行されません。<br><br>この問題、すっかり保留にしたまま進んでしまっていますが、さしあたっては、<br><br>1.PPA.DLLにあわせよう!<br>2.いまのまま<br><br>の2つの道があると思うのですが、どうしましょう？<br>げんたさんが提案された、いろいろなマクロに対応するための案も非常に興味深いのですが、とりあえずバグっているのでなんとかしたいです。<br>コメント求む。<br></div></section>
+    <ul><li><section><h1 id=1721>
+    <span class="no">[1721]</span>
+    <a class="thread-title" href="#1721">マクロについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-21T01:41:57">2002年04月21日 01:41</time></h1>
+    <div class="body">現在ではPPA.DLLにあわせないと期待した結果が得られないのですから、とりあえずはあわせるしかないと思います。<br><br>&gt;いろいろなマクロに対応するための案<br>上位互換を守ろうとするとこちらは必須だろうと考えています。<br><br>最近マクロコマンドのいくつかに引数が追加されました。<br>しかしながら、引数が変わるとPPAでは書式間違いと怒られて実行できなくなります。<br>PPAでデフォルト引数が指定できないのであればこちらはあきらめるしかないのですが、せめてキーボードマクロだけは上位互換を維持していきたいとすると、マクロ保存で作った方はデフォルト引数を扱える形にして内部機能で常に実行し、PPAで実行するのは専用のマクロのみとする必要があると思います。<br><br>マクロ言語については複数サポートするとユーザ間での再利用性が損なわれると思ったのですが、Ruby, WSH, (Pythonも?)を使っている人が多そうだということ、たいていは自分のために作っているので使い慣れた言語を使いたいであろうということから複数マクロのサポートが望ましいと思います。</div></section>
+    <ul><li><section><h1 id=1724>
+    <span class="no">[1724]</span>
+    <a class="thread-title" href="#1724">Re:マクロについて</a>
+    <span class="author">おに</span>
+    <time datetime="2002-04-21T02:04:51">2002年04月21日 02:04</time></h1>
+    <div class="body">横槍を失礼します。<br>ActiveScriptRuby, ActivePythonがある以上、WSH対応すればこのふたつにも対応したことになりますが…。<br>承知で発言なされているのであれば、失礼をご容赦下さい。<br>(僕はRubyやPythonに中途半端に手を出して失敗した前歴有りです^_^)</div></section>
+    <ul><li><section><h1 id=1733>
+    <span class="no">[1733]</span>
+    <a class="thread-title" href="#1733">Re2:マクロについて</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-21T11:55:28">2002年04月21日 11:55</time></h1>
+    <div class="body"><br>WSH対応できるとハッピーだよね。前に少し調べたけど手間がかかりそうでやめた経験アリです。<br></div></section>
+    </li><li><section><h1 id=1736>
+    <span class="no">[1736]</span>
+    <a class="thread-title" href="#1736">Re2:マクロについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-21T18:05:17">2002年04月21日 18:05</time></h1>
+    <div class="body">&gt;ActiveScriptRuby, ActivePythonがある以上、WSH対応すればこのふたつにも対応したことになりますが…。<br>ActivePerlもあるからWSHだけ対応すればよい？<br><br>ただ，1つWSHで気になっていることがあります．<br>WSHから機能を使うためには VBScriptだと CreateObject( "object.in.registry" )みたいにする必要があるのでobject.in.registryの名前をレジストリに登録しなくてはならないと思うのですが，それをやってしまうと「レジストリは書き換えない」というこのエディタのポリシーに反してしまいます．<br></div></section>
+    <ul><li><section><h1 id=1737>
+    <span class="no">[1737]</span>
+    <a class="thread-title" href="#1737">WSH</a>
+    <span class="author">おに</span>
+    <time datetime="2002-04-21T18:16:42">2002年04月21日 18:16</time></h1>
+    <div class="body">&gt; WSHから機能を使うためには VBScriptだと CreateObject( "object.in.registry" )みたいにする必要があるのでobject.in.registryの名前をレジストリに登録しなくてはならないと思うのですが，それをやってしまうと「レジストリは書き換えない」というこのエディタのポリシーに反してしまいます．<br><br>cscript/wscriptからスクリプトを起動した場合、WScriptという名前のオブジェクトがcscript/wscriptから投入されて来ます。<br>で、スクリプトはWScript.echo("Hello");とかできるのですが、これはレジストリに無かったと思います。<br>このようにAddNamedItemを使って渡してしまえばスクリプト側でCreateObjectしてもらう必要はありません。<br>短いサンプルが、確かActiveScriptRubyのサイトに置かれていたと思います。<br>直接リンク貼っていいのかな？<br><a href=http://www.geocities.co.jp/SiliconValley-PaloAlto/9251/ruby/c.html target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>co.<wbr>jp/<wbr>SiliconV<wbr>alley-<wbr>PaloAlto<wbr>/<wbr>9251/<wbr>ruby/<wbr>c.<wbr>html</nobr></a><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

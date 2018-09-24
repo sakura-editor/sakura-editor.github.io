@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>「右の空白を削除」の不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4738</span>
+    <a class="thread-title" href="4738.html#4738">「右の空白を削除」の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4739</span>
+    <a class="thread-title" href="4738.html#4739">Re:「右の空白を削除」の不具合</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4738>
+    <span class="no">[4738]</span>
+    <a class="thread-title" href="#4738">「右の空白を削除」の不具合</a>
+    <span class="author">ootomo</span>
+    <time datetime="2005-10-11T13:54:57">2005年10月11日 13:54</time></h1>
+    <div class="body">+-----------------------------<br>|� <br>|� <br>|� <br>|� <br>+-----------------------------<br>この状態で「右の空白を削除」すると<br>全角のａが右半分切れた状態になります。<br><br>「ａ@」の 82 81 40 のバイト並びに全角空白が<br>            ^^^^^^<br>あると勘違いしているようです。</div></section>
+    <ul><li><section><h1 id=4739>
+    <span class="no">[4739]</span>
+    <a class="thread-title" href="#4739">Re:「右の空白を削除」の不具合</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-10-11T23:25:02">2005年10月11日 23:25</time></h1>
+    <div class="body">▼ ootomoさん<br>例のほうは文字化けしているみたいですが...<br>&gt; 「ａ@」の 82 81 40 のバイト並びに全角空白が<br>&gt;             ^^^^^^<br>&gt; あると勘違いしているようです。<br>確かに行末空白の前に「ａ@」があると全角空白と誤認していますね。<br>&gt;&gt;dev:4055 に修正パッチを提示しておきました。</div></section>
+    </li></ul></li></ul></body></html>

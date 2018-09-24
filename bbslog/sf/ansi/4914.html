@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ダブルクリックからドラッグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4914</span>
+    <a class="thread-title" href="4914.html#4914">ダブルクリックからドラッグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4916</span>
+    <a class="thread-title" href="4914.html#4916">RE: ダブルクリックからドラッグ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4917</span>
+    <a class="thread-title" href="4914.html#4917">Re:ダブルクリックからドラッグ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4914>
+    <span class="no">[4914]</span>
+    <a class="thread-title" href="#4914">ダブルクリックからドラッグ</a>
+    <span class="author">maru</span>
+    <time datetime="2007-07-08T21:10:24">2007年07月08日 21:10</time></h1>
+    <div class="body">&gt;&gt;macro:380ですが、CEditView::OnLBUTTONDBLCLKではダブルクリックして左ボタンを離さずにそのままドラッグしたときに、範囲選択できるようにしているみたいです。<br>で、メッセージボックスなどを表示させるマクロを実行すると、CEditView::OnLBUTTONUPを通過しないので、おかしなことになります。<br>ダブルクリックからのドラッグによる範囲選択の動作は、ダブルクリックに単語選択がキー割り当てられていることを前提にしているように思えますが、それ以外にこの動きを期待するのはどんな状況を想定したらいいのでしょうか。<br>単純にこのダブルクリックドラッグ？(変な名前ですが)を無効化したら、やっぱりマズい？<br></div></section>
+    <ul><li><section><h1 id=4916>
+    <span class="no">[4916]</span>
+    <a class="thread-title" href="#4916">RE: ダブルクリックからドラッグ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-08T23:38:17">2007年07月08日 23:38</time></h1>
+    <div class="body">&gt;ダブルクリックからのドラッグ<br>少なくとも私は使ったことが無いです．<br><br>よく見ると，問題の現象の時は行単位の選択になるんですよね．<br></div></section>
+    </li><li><section><h1 id=4917>
+    <span class="no">[4917]</span>
+    <a class="thread-title" href="#4917">Re:ダブルクリックからドラッグ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-09T13:36:32">2007年07月09日 13:36</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ダブルクリックからのドラッグによる範囲選択の動作は、ダブルクリックに単語選択がキー割り当てられていることを前提にしているように思えますが、それ以外にこの動きを期待するのはどんな状況を想定したらいいのでしょうか。<br>CEditView.cpp(4568)<br>    m_bBeginWordSelect = TRUE; /* 単語単位選択中 */<br>から察するに「ダブルクリック＝単語選択」を前提とした処理になってると思います。<br>例えば「ダブルクリック＝全選択」とした場合だったら、続けて単語単位選択モードに突入するのは変ですよね。<br><br>&gt; 単純にこのダブルクリックドラッグ？(変な名前ですが)を無効化したら、やっぱりマズい？<br>ダブルクリックドラッグで単語選択継続するのはメモ帳をはじめとして標準的なエディタ挙動だと思うので、使っている人の多少に係らず残しておくのが無難かと思います。<br>というわけで、「ダブルクリック＝単語選択」の場合だけダブルクリックドラッグで単語選択継続するのが妥当なのでわ？</div></section>
+    </li></ul></li></ul></body></html>

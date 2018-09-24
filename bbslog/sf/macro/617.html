@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>行を選択するマクロについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">617</span>
+    <a class="thread-title" href="617.html#617">行を選択するマクロについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">618</span>
+    <a class="thread-title" href="617.html#618">Re:行を選択するマクロについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">619</span>
+    <a class="thread-title" href="617.html#619">Re2:行を選択するマクロについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">620</span>
+    <a class="thread-title" href="617.html#620">Re3:行を選択するマクロについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">621</span>
+    <a class="thread-title" href="617.html#621">Re4:行を選択するマクロについて</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=617>
+    <span class="no">[617]</span>
+    <a class="thread-title" href="#617">行を選択するマクロについて</a>
+    <span class="author">いっち</span>
+    <time datetime="2017-03-30T02:53:41">2017年03月30日 02:53</time></h1>
+    <div class="body">テキスト非選択状態の時、下記のマクロを実行させると、<br><br>if(Editor.IsTextSelected() == 0) {<br>  Editor.GoLineTop(1000);<br>  Editor.GoLineEnd_Sel(0x08);<br>}<br><br>行を折り返しているか、いないか、にかかわらず、同じように<br>先頭の半角スペースを除外して、その行を選択してくれます。<br><br>しかし、キャレット(カーソル)が、行頭の最後の半角スペースと<br>最初の文字の間にある場合だけは例外で、行頭の半角スペースを<br>含んで、選択してしまうようです。(sakura 2.3.1.0)<br><br>これは仕方がないことでしょうか。<br></div></section>
+    <ul><li><section><h1 id=618>
+    <span class="no">[618]</span>
+    <a class="thread-title" href="#618">Re:行を選択するマクロについて</a>
+    <span class="author">もか</span>
+    <time datetime="2017-03-30T19:51:22">2017年03月30日 19:51</time></h1>
+    <div class="body">▼ いっちさん<br>&gt;   Editor.GoLineTop(1000);<br>これはGoLineTo(0x3e8)なので<br><a href=http://sakura-editor.sourceforge.net/htmlhelp2/HLP000224.html target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>htmlhelp<wbr>2/<wbr>HLP00022<wbr>4.<wbr>html</nobr></a><br>改行単位の行頭に移動します。<br><br>&gt;しかし、キャレット(カーソル)が、行頭の最後の半角スペースと<br>&gt;最初の文字の間にある場合だけは例外で、行頭の半角スペースを<br>&gt;含んで、選択してしまうようです。(sakura 2.3.1.0)<br>これは仕様です。<br>先頭の空白の後ろ側の位置にカーソルがある場合は、行頭(^)に移動します。<br>複数回実行するとこの2か所を往復します。<br><br>未テストですがこんな感じですかね。<br><br>Editor.GoLineTop(8);<br>var x = Editor.ExpandParameter("$x") - 0;<br>if( x == 1 ){<br>    // 行頭に移動ならスペースの後ろへもう一度移動<br>    Editor.GoLineTop(8);<br>}<br>Editor.GoLineEnd_Sel(0x08);<br>こういう風に対処するか<br><br>var s = Editor.GetLineStr(0);<br>var len = s.match(/^[\s]*/)[0].length;<br>var y = Editor.ExpandParameter("$y") - 0;<br>Editor.MoveCorsor(y, len + 1, 0);<br>Editor.GoLineEnd_Sel(0x08);<br>でデータを取ってきて自力で移動する必要があります。<br></div></section>
+    <ul><li><section><h1 id=619>
+    <span class="no">[619]</span>
+    <a class="thread-title" href="#619">Re2:行を選択するマクロについて</a>
+    <span class="author">いっち</span>
+    <time datetime="2017-03-30T20:49:21">2017年03月30日 20:49</time></h1>
+    <div class="body">▼ もかさん<br><br>お返事ありがとうございます。<br><br>何故か、Editor.MoveCorsor(y, len + 1, 0);<br>の行でエラーが出る為、標準のサクラエディター 2.3.1.0にて、<br>MoveCorsor というのがあるかどうか（私には）解らなかったのですが、<br><br>Editor.GoLineTop(8);<br>var x = Editor.ExpandParameter("$x") - 0;<br>if( x == 1 ){<br>    // 行頭に移動ならスペースの後ろへもう一度移動<br>    Editor.GoLineTop(8);<br>}<br>Editor.GoLineEnd_Sel(0x08);<br><br>の方は、正常動作を確認しました。<br><br>ありがとうございます。<br></div></section>
+    <ul><li><section><h1 id=620>
+    <span class="no">[620]</span>
+    <a class="thread-title" href="#620">Re3:行を選択するマクロについて</a>
+    <span class="author">もか</span>
+    <time datetime="2017-03-30T23:53:33">2017年03月30日 23:53</time></h1>
+    <div class="body">×：MoveCorsor<br>○：MoveCursor<br>でした。<br></div></section>
+    <ul><li><section><h1 id=621>
+    <span class="no">[621]</span>
+    <a class="thread-title" href="#621">Re4:行を選択するマクロについて</a>
+    <span class="author">いっち</span>
+    <time datetime="2017-03-31T00:26:08">2017年03月31日 00:26</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ×：MoveCorsor<br>&gt; ○：MoveCursor<br>&gt; でした。<br><br>確認しました。<br>ありがとうございます。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>不具合報告（未修正）2件 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5328</span>
+    <a class="thread-title" href="5328.html#5328">不具合報告（未修正）2件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5337</span>
+    <a class="thread-title" href="5328.html#5337">片方のパッチを作成しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5341</span>
+    <a class="thread-title" href="5328.html#5341">Re:片方のパッチを作成しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5342</span>
+    <a class="thread-title" href="5328.html#5342">Re2:片方のパッチを作成しました</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5328>
+    <span class="no">[5328]</span>
+    <a class="thread-title" href="#5328">不具合報告（未修正）2件</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-05T21:45:05">2008年06月05日 21:45</time></h1>
+    <div class="body">報告だけです。余裕が無くて調べていません m(_ _)m<br><br>１．上下分割で編集すると非アクティブなビューの強調表示が取り残される<br>　再現方法<br>　・ウィンドウを上下に分割する<br>　・表示領域が下側となるビューで文字列選択を行う<br>　・別のビューで改行を入力する<br><br>　改行を入力すると、非アクティブのビューも改行の影響でテキストがずれますが、この時選択範囲の強調表示が取り残されます。<br><br>２．行番号エリアでカーソルが点滅する<br>　カーソル位置が表示エリアの少し左にある状態（行番号エリアにあるイメージ）でウィンドウサイズを変更すると、行番号エリアでカーソルが点滅します。<br><br>unicode版でも発生します。</div></section>
+    <ul><li><section><h1 id=5337>
+    <span class="no">[5337]</span>
+    <a class="thread-title" href="#5337">片方のパッチを作成しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-08T22:33:16">2008年06月08日 22:33</time></h1>
+    <div class="body">上記２．についてのパッチを作成しました。<br><br>行番号表示エリアやルーラ表示エリアでもキャレットが表示される<br>Patches #1988108<br><br>CEditView::OnPaint()にて無条件にキャレットを表示しているため、キャレットが（イメージ的に）行番号エリア上やルーラ上にある時でも、フォーカス移動やウィンドウサイズ移動を行うとキャレットが表示されてしまいました。<br><br>表示領域内にキャレット位置がある場合のみキャレットを表示するようにしました。<br></div></section>
+    <ul><li><section><h1 id=5341>
+    <span class="no">[5341]</span>
+    <a class="thread-title" href="#5341">Re:片方のパッチを作成しました</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-10T21:30:46">2008年06月10日 21:30</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; 表示領域内にキャレット位置がある場合のみキャレットを表示するようにしました。<br><br>状況判断によるキャレットの表示／非表示の制御は、CEditView::ShowEditCaret()でやるもののような気がします。<br>ちょっと別案も作ってみました。</div></section>
+    <ul><li><section><h1 id=5342>
+    <span class="no">[5342]</span>
+    <a class="thread-title" href="#5342">Re2:片方のパッチを作成しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-11T21:40:05">2008年06月11日 21:40</time></h1>
+    <div class="body">▼ ryojiさん<br>確認しました。こっちで行きましょう。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

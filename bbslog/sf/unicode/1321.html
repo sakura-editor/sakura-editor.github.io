@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>URL選択が不正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1321</span>
+    <a class="thread-title" href="1321.html#1321">URL選択が不正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1324</span>
+    <a class="thread-title" href="1321.html#1324">Re:URL選択が不正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1325</span>
+    <a class="thread-title" href="1321.html#1325">Re2:URL選択が不正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1328</span>
+    <a class="thread-title" href="1321.html#1328">Re3:URL選択が不正(マウスでの範囲選択の変更の遊びを追加パッチ)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1389</span>
+    <a class="thread-title" href="1321.html#1389">Re4:Commit報告(Fix) マウスでの範囲選択の変更の遊びを追加</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1321>
+    <span class="no">[1321]</span>
+    <a class="thread-title" href="#1321">URL選択が不正</a>
+    <span class="author">もか</span>
+    <time datetime="2010-07-14T21:17:52">2010年07月14日 21:17</time></h1>
+    <div class="body">&gt;&gt;data:7217 grepでファイル名検索時に現れるハイパーリンクについて  from ichiさん<br>をみて試していたら、URLを選択すると一瞬だけ選択された後、マウスカーソルのある位置より左側しか選択されません。<br>私のPCのみなのかもしれませんが昔はできていたので、さかのぼってみたところ、<br>sakura_2002-11-07 1.3.5.6 異常 現在に同じ<br>sakura_2002-10-03 1.3.5.0 正常 URL全体が選択可能<br>でした。デフォルトONだけど誰も使ってないのかな？今のURL選択の動作について使用感を聞いてみたいです。<br>今のカーソル位置より左選択がいいならもう少し考えてみる必要があるけど、そうでないなら即刻修正します。<br><br>sakura_core/view/CEditView_Mouse.cpp&#9;(リビジョン 1794)<br>CEditView::OnLBUTTONDOWN内<br>@@ -471,6 +471,9 @@<br> <br> &#9;&#9;&#9;&#9;&#9;/* 選択領域描画 */<br> &#9;&#9;&#9;&#9;&#9;GetSelectionInfo().DrawSelectArea()<br>;<br>+ <br>+&#9;&#9;&#9;&#9;&#9;// 2010.07.14 Moca URLが選択解除されるバグの修正<br>+&#9;&#9;&#9;&#9;&#9;GetSelectionInfo().SelectEnd();<br> &#9;&#9;&#9;&#9;}<br> &#9;&#9;&#9;}<br> &#9;&#9;}<br><br>#ALT+クリックでの矩形範囲が通常選択とまったく違う動きだったり、ALT+矢印で移動できなかったり、いまだに改善されていないけど、そろそろ直したいですなぁ<br></div></section>
+    <ul><li><section><h1 id=1324>
+    <span class="no">[1324]</span>
+    <a class="thread-title" href="#1324">Re:URL選択が不正</a>
+    <span class="author">ds14050</span>
+    <time datetime="2010-07-15T01:27:08">2010年07月15日 01:27</time></h1>
+    <div class="body">sakuraW.exeの 2009年12月27日版で httpで始まる URLを使って試しましたが<br><br>1.クリックで URL全体選択<br>2.ボタンを上げる前(クリック前)にポインタを動かすと URL先頭からポインタ位置まで選択<br><br>という動作でした。全体を選択できないということはありません。<br>2の機能のために 1の操作が難しいものになっている(※)、と<br>いうことはありますが、自分にとっては 2の機能が新発見でした<br>(普通に全体選択できていた)。<br><br>※マウスでその場クリックは難易度の高い操作らしい。トラックボールだとマシだとか。<br>※環境によっては不可能だったりする？<br></div></section>
+    <ul><li><section><h1 id=1325>
+    <span class="no">[1325]</span>
+    <a class="thread-title" href="#1325">Re2:URL選択が不正</a>
+    <span class="author">もか</span>
+    <time datetime="2010-07-15T03:08:38">2010年07月15日 03:08</time></h1>
+    <div class="body">確認ありがとうございます。<br>違うPCでやってみると、確かにds14050さんのいうような動作になりました。<br>私のノートPCでは、Spy++してみると WM_LBUTTONDOWN → WM_MOUSEMOVE → WM_LBUTTONUP が順番に同一座標で送られてきています。<br>いろいろON/OFFしてみたところ IME Watcher が主因のようです。<br>ですので、修正は別の方法を考えることにします。<br>タブレットもつないでいますが、こちらは１ドットも動かさないでクリックするのは大変です。<br>あとダブルクリックの単語選択 + マウス移動と動きが違うのはどうなんだろう、ユースケースを考えると自然ではあるんだけど。<br><br>#URL選択の調整機能のはなし、昔見たような記憶があるんだけど、これも見つからない<br></div></section>
+    <ul><li><section><h1 id=1328>
+    <span class="no">[1328]</span>
+    <a class="thread-title" href="#1328">Re3:URL選択が不正(マウスでの範囲選択の変更の遊びを追加パッチ)</a>
+    <span class="author">もか</span>
+    <time datetime="2010-07-16T01:31:24">2010年07月16日 01:31</time></h1>
+    <div class="body">マウスでの範囲選択の変更の遊びを追加 パッチを登録しました。PatchUnicode#3030120<br><br>WM_LBUTTONDOWNから上下左右0-2pxまでの、選択中のWM_MOUSEMOVEを遊びとして処理するパッチを書きました。<br>もとからあるDRAG &amp; DROP のほうはOSの設定を見るようになっています。<br>しかし範囲選択では広い範囲を遊びにしても不自然だし、カーソル位置のすぐ右まで選択したいというのもあると思います。<br>文字の半分の幅とかでも良いかと思ったけど、文字サイズが大きいと遊びが不自然に大きいような気がするので、<br>フィーリングでクリック地点から2pxずつ離れた範囲にしてみました。<br>　URL選択以外の選択範囲変更でも遊びは有効ですが、いまのところあまり関係ないとおもいます。<br></div></section>
+    <ul><li><section><h1 id=1389>
+    <span class="no">[1389]</span>
+    <a class="thread-title" href="#1389">Re4:Commit報告(Fix) マウスでの範囲選択の変更の遊びを追加</a>
+    <span class="author">もか</span>
+    <time datetime="2010-09-12T00:42:22">2010年09月12日 00:42</time></h1>
+    <div class="body">rev: 1819<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

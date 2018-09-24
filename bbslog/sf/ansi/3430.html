@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>[蟲報告/修正案]「(選択)ファイル先頭に移動」における選択範囲不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3430</span>
+    <a class="thread-title" href="3430.html#3430">[蟲報告/修正案]「(選択)ファイル先頭に移動」における選択範囲不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3431</span>
+    <a class="thread-title" href="3430.html#3431">「矩形範囲選択開始」をトグル化</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3430>
+    <span class="no">[3430]</span>
+    <a class="thread-title" href="#3430">[蟲報告/修正案]「(選択)ファイル先頭に移動」における選択範囲不具合</a>
+    <span class="author">gis_dur</span>
+    <time datetime="2004-02-21T17:23:55">2004年02月21日 17:23</time></h1>
+    <div class="body">過去ログより<br>▼Azumaiyaさん(2002.05.25)<br>&gt; &gt;&gt;2113<br>&gt; 1. 選択しながらの「ファイル先頭に移動」を使ったとき<br>&gt; に、選択開始位置よりも、ファイル先頭行が短いと選択<br>&gt; 範囲がおかしかったのを修正。<br>とありますが、どうやらバグが取りきられていなかったよう<br>です。以下、バグ状況と修正案です。<br><br>【環境】<br>WinXP-Home + sakura 1.4.3.7<br><br>【再現手順】<br>hoge \n<br>hogefoohogefoo | (←キャレット位置)<br>などとして、矩形でない通常の選択をしながらファイル先頭<br>に移動する。フリーカーソルモードはオフ。<br><br>【期待される動作】<br>[hoge \n]<br>[hogefoohogefoo] が選択され Caret は先頭に移動する。<br><br>【1.4.3.7での動作】<br> hoge \n[      ]<br>[hogefoohogefoo] が選択され Caret は先頭に移動する。<br>後の Cut, Copy, Paste の対象に一行目のhogeは含まれず。<br><br>【修正案】<br>sakura_core/CEditView_Command.cpp<br>関数 CEditView::Command_GOFILETOP<br>return文の直前、1304 行目に以下の４行を追加する。<br><br>if( bSelect ){<br>    /* 現在のカーソル位置によって選択範囲を変更 */<br>    ChangeSelectAreaByCurrentCursor( m_nCaretPosX, 0 );<br>}<br><br># 関連した他の関数では上記の処理が行われているので、お<br># そらく単なる書き忘れですね。揚げ足取りになってしまい<br># すみません。とは言え、一通りソースを読む良い機会に<br># なりました。こんな物と日夜格闘している皆さんに敬服。<br></div></section>
+    <ul><li><section><h1 id=3431>
+    <span class="no">[3431]</span>
+    <a class="thread-title" href="#3431">「矩形範囲選択開始」をトグル化</a>
+    <span class="author">gis_dur</span>
+    <time datetime="2004-02-21T17:36:13">2004年02月21日 17:36</time></h1>
+    <div class="body">ついでに「矩形範囲選択開始」を、「開始／中止」のトグル<br>動作に変えてみました。自分の癖のための改造ですが、同じ<br>癖の持ち主の方はご参考までに。<br><br>【トグル化改造案】<br>sakura_core/CEditView_Command.cpp<br>関数 CEditView::Command_BEGIN_BOXSELECT<br>１つ目と２つ目の if block の間、4036行目付近に<br>以下の if block ５行を追加する。<br><br>if( m_bBeginBoxSelect ) { /* 矩形範囲選択中 */<br>    /* 現在の選択範囲を非選択状態に戻す */<br>    DisableSelectArea( TRUE );<br>    return;<br>}<br><br># 特に利点も無さそうですが、覚えるキーが１つ減ります。<br># 人の顔と名前となると益々覚えられません。:-p<br><br>長文駄文、ご容赦ください。<br>ギス<br></div></section>
+    </li></ul></li></ul></body></html>

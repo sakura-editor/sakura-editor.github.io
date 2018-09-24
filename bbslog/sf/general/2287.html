@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>変換でちょっと(^^; | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2287</span>
+    <a class="thread-title" href="2287.html#2287">変換でちょっと(^^;</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=2287>
+    <span class="no">[2287]</span>
+    <a class="thread-title" href="#2287">変換でちょっと(^^;</a>
+    <span class="author">すい</span>
+    <time datetime="2002-09-13T20:00:52">2002年09月13日 20:00</time></h1>
+    <div class="body">変換機能ですが、<br>・全角英数→半角英数<br>・半角英数→全角英数<br>の対応が取れていないので違和感があります。(;^^a<br><br>「半角英数→全角英数」は [0-9A-Za-z] の他、ASCIIコードでその周辺に<br>散らばっている一般的な記号も全角文字に変換します。<br>具体的には 0x20(スペース)～0x7e(~) まで全てが変換対象になっています。<br>&gt;   0123456789ABCDEF<br>&gt;20: !"#$%&amp;'()*+,-./<br>&gt;30:0123456789:;&lt;=&gt;?<br>&gt;40:@ABCDEFGHIJKLMNO<br>&gt;50:PQRSTUVWXYZ[\]^_<br>&gt;60:`abcdefghijklmno<br>&gt;70:pqrstuvwxyz{|}~<br><br>一方「全角英数→半角英数」は本当にタイトル通り純粋に [０-９Ａ-Ｚａ-ｚ] しか半角に変換しません。<br><br>という事で使っていてちょっと変な感じです。<br>「全角英数→半角英数」の方がタイトル通りの変換機能なのですが、<br>「半角英数→全角英数」のように一般的な記号も変換してくれた方が実用的な気がします。<br>「全角英数→半角英数」の方がソースも綺麗に整理されていて弄りやすそ．．．(を)<br>名前を 半角英数記号 とかに変更しちゃったりして。<br># ちょっとこの辺は No Try でソース弄るのは恐いので どなたか<br># CMemory.cpp 内<br># void CMemory::ToZenkaku() 半角→全角（なんかグチャグチャ (^^;）<br># void CMemory::ToHankaku() 全角→半角<br># の中<br><br>あと、<br>・英大文字→英小文字<br>・英小文字→英大文字<br>ですが、全角文字のアルファベット類も変換してくれる事は知っているのですが．．．<br>変換対象は<br>・半角文字の A～Z ⇔ a～z<br>・全角文字のアルファベット Ａ～Ｚ ⇔ ａ～ｚ<br>・全角文字のギリシャ文字 Α～Ω ⇔ α～ω<br>・全角文字のロシア文字 А～Я ⇔ а～я<br>のみで「全角文字の数字 Ⅰ～Ⅹ ⇔ ⅰ～ⅹ」が変換対象になっていません！！<br>&gt; ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ(8754～875d) ⇔ ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹ(eeef～eef8)<br><br>あ、いえ、ちょっと PPA.DLL の仕様をキーワードヘルプにまとめていたんですが、<br>PPA.DLL には LowerCase(S)/UpperCase(S) という物があって、これがまた全角文字にしっかりと対応しているんですよ。<br>んで、こちらはしっかりと<br>・半角文字の A～Z ⇔ a～z<br>・全角文字のアルファベット Ａ～Ｚ ⇔ ａ～ｚ <br>・全角文字のギリシャ文字 Α～Ω ⇔ α～ω<br>・全角文字のロシア文字 А～Я ⇔ а～я<br>・全角文字の数字 Ⅰ～Ⅹ ⇔ ⅰ～ⅹ<br>全て変換してくれていて、負けている。← のが、ちょっと悔しいゾ、というお話しなのですが。<br>こんなの使わない気もしますが(爆)<br><br># CMemory.cpp 内<br># void CMemory::ToLower()<br># void CMemory::ToUpper()<br># の中<br></div></section>
+    </li></ul></body></html>

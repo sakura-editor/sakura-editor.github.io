@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Imp)『共通設定』『ステータスバー』を修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">532</span>
+    <a class="thread-title" href="532.html#532">Commit報告:(Imp)『共通設定』『ステータスバー』を修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">547</span>
+    <a class="thread-title" href="532.html#547">Re:Commit報告:(Imp)『共通設定』『ステータスバー』を修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">550</span>
+    <a class="thread-title" href="532.html#550">Re2:Commit報告:(Imp)『共通設定』『ステータスバー』を修正</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=532>
+    <span class="no">[532]</span>
+    <a class="thread-title" href="#532">Commit報告:(Imp)『共通設定』『ステータスバー』を修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-22T11:47:16">2008年06月22日 11:47</time></h1>
+    <div class="body">リビジョン：<br>  rev1400<br><br>変更種別：<br>  機能修正<br><br>内容：<br>  rev1393の再修正<br>  『共通設定』『ステータスバー』を修正しました。<br>  Unicodeのコードポイント値の場合、u00a1のように表示するようにしました。<br><br>  『共通設定』<br>    『ステータスバー』<br>      『表示文字コードの指定』<br>        ■ UTF-8をコードポイントで表示する(&amp;8)<br><br>  sakuraW.ini の設定は、<br>    [Statusbar]<br>    DispUtf8Codepoint=1<br>  のようになります。</div></section>
+    <ul><li><section><h1 id=547>
+    <span class="no">[547]</span>
+    <a class="thread-title" href="#547">Re:Commit報告:(Imp)『共通設定』『ステータスバー』を修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-07-06T06:17:46">2008年07月06日 06:17</time></h1>
+    <div class="body">「UTF-8をコードポイントで表示する」のオプション影響があべこべになっています（ソースおよび動作で確認）。同じく「サロゲートペアをコードポイントで表示する」もあべこべでないでしょうか（ソースのみ確認）。<br><br>(決して鬼の首をとる気で以下の指摘をするわけではありませんが)<br>なんでこんなミスが起こるか、というと<br>&gt;&gt;530 でも指摘しました、(ユーザインターフェースにおいても変数管理においても) 一貫性が無いことがひとつの要因かと思われますが、どうでしょうか。<br><br>文字コードの表示形式は、大きな観点的に<br>(A)「UNICODEで表示する」<br>(B)「元のコードで表示する」<br>の2通りでありますが、<br><br>ユーザインターフェース上では、<br><br>「SJISで文字コード値をUnicodeで表示する」<br>「JISで文字コード値をUnicodeで表示する」<br>「EUCで文字コード値をUnicodeで表示する」<br>の意味が (A) であるのに対し、<br><br>「UTF-8をコードポイントで表示する」<br>「サロゲートペアをコードポイントで表示する」<br>の意味が (B) となっています。<br><br>チェックボックスをONすることの意味が、せめて(A)か(B)のどちらか一方に<br>統一されたほうがコーディングミスを減らすためにも、ユーザ理解を楽に<br>するためにも、好ましいと思うのですが、どうでしょうか。<br>これを機に、該当機能のオプションの一貫性について再度ご検討いただけませんか？<br><br><br>＃個人的好みを言えば、エンコーディング別にチェックボックスを設けるのではなく、<br>　単純に(A)(B)を選べるチェックボックスが1つあれば良いと思っています。<br></div></section>
+    <ul><li><section><h1 id=550>
+    <span class="no">[550]</span>
+    <a class="thread-title" href="#550">Re2:Commit報告:(Imp)『共通設定』『ステータスバー』を修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-07-06T10:57:14">2008年07月06日 10:57</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; 「UTF-8をコードポイントで表示する」のオプション影響があべこべになっています（ソースおよび動作で確認）。同じく「サロゲートペアをコードポイントで表示する」もあべこべでないでしょうか（ソースのみ確認）。<br>&gt; <br>&gt; (決して鬼の首をとる気で以下の指摘をするわけではありませんが)<br>&gt; なんでこんなミスが起こるか、というと<br>&gt; &gt;&gt;530 でも指摘しました、(ユーザインターフェースにおいても変数管理においても) 一貫性が無いことがひとつの要因かと思われますが、どうでしょうか。<br>&gt; <br>&gt; 文字コードの表示形式は、大きな観点的に<br>&gt; (A)「UNICODEで表示する」<br>&gt; (B)「元のコードで表示する」<br>&gt; の2通りでありますが、<br>&gt; <br>&gt; ユーザインターフェース上では、<br>&gt; <br>&gt; 「SJISで文字コード値をUnicodeで表示する」<br>&gt; 「JISで文字コード値をUnicodeで表示する」<br>&gt; 「EUCで文字コード値をUnicodeで表示する」<br>&gt; の意味が (A) であるのに対し、<br>&gt; <br>&gt; 「UTF-8をコードポイントで表示する」<br>&gt; 「サロゲートペアをコードポイントで表示する」<br>&gt; の意味が (B) となっています。<br>&gt; <br>&gt; チェックボックスをONすることの意味が、せめて(A)か(B)のどちらか一方に<br>&gt; 統一されたほうがコーディングミスを減らすためにも、ユーザ理解を楽に<br>&gt; するためにも、好ましいと思うのですが、どうでしょうか。<br>&gt; これを機に、該当機能のオプションの一貫性について再度ご検討いただけませんか？<br>&gt; <br>&gt; <br>&gt; ＃個人的好みを言えば、エンコーディング別にチェックボックスを設けるのではなく、<br>&gt; 　単純に(A)(B)を選べるチェックボックスが1つあれば良いと思っています。<br>こちらで動作確認したところ問題はありませんでした。<br>仕様的には、チェックをつけるとUnicodeのコードポイント値（通常はU+xxxxと書かれている値をuxxxx で1文字分節約しています）を表示し、<br>チェックが外れいてれば、元のコードを表示するにしています。<br>sakuraエディタでは、『Unicode』でUTF-16をあらわしているので瓦解が生じているように思います。<br>文字コードの『Unicode』『UnicodeBE』を『UTF-16LE』『UTF-16BE』の様に変更が必要なのではないでしょうか？<br><br>(A)(B)を選べるチェックボックスが1つあれば良いとのことですが、私の使用環境では、SJISはSJISのコード値で、Unicode(UTF-16,UTF-8) はUnicodeのコードポイントでの表示がほしいのです。<br>したがって、Sjis,EUC,JISあたりはまとめても良いと思いますが、Unicodeとの共用は勘弁してくださいということです。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

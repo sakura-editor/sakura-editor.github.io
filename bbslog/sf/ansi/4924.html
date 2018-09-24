@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>接続されていないハードウェアにあるファイルの開き方について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4924</span>
+    <a class="thread-title" href="4924.html#4924">接続されていないハードウェアにあるファイルの開き方について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4925</span>
+    <a class="thread-title" href="4924.html#4925">RE: 接続されていないハードウェアにあるファイルの開き方について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4929</span>
+    <a class="thread-title" href="4924.html#4929">Re:接続されていないハードウェアにあるファイルの開き方について</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4924>
+    <span class="no">[4924]</span>
+    <a class="thread-title" href="#4924">接続されていないハードウェアにあるファイルの開き方について</a>
+    <span class="author">サクラ使用者</span>
+    <time datetime="2007-07-11T13:10:08">2007年07月11日 13:10</time></h1>
+    <div class="body">重要ではないものの改善した方がよいと思われる<br>箇所がありましたので報告させて頂きます。<br><br>「最近使ったファイル」で接続されていない<br>ハードウェアにあるファイルを開くと、<br>存在しないのにも関わらず開いた状態になってしまいます。<br>USBスティックの使用でこの状態を確認しています。<br><br>さらにこの擬似的に「開いた」状態でハードウェアを接続し<br>開いても、すでにファイルを開いた状態と見なされ、一旦<br>ウィンドウを閉じない限り開くことが出来ません。<br><br>バージョンは1.5.15.3です。<br>些細な事項で失礼しました。</div></section>
+    <ul><li><section><h1 id=4925>
+    <span class="no">[4925]</span>
+    <a class="thread-title" href="#4925">RE: 接続されていないハードウェアにあるファイルの開き方について</a>
+    <span class="author">maru</span>
+    <time datetime="2007-07-11T22:27:38">2007年07月11日 22:27</time></h1>
+    <div class="body">&gt;「最近使ったファイル」で接続されていない<br>&gt;ハードウェアにあるファイルを開くと、<br>&gt;存在しないのにも関わらず開いた状態になってしまいます。<br>&gt;USBスティックの使用でこの状態を確認しています。<br>存在しないファイルを開けること自体は仕様だと思います。<br>その証拠というか、「開こうとしたファイルが存在しないときに警告する」という設定があります。<br>今回問題なのは、ファイルの存在よりも、パスが存在しないことが問題なのでしょう。<br><br>存在しないファイルを開く手段としては下記があります。<br>１．最近使ったファイル<br>２．コマンドラインからの起動<br>３．開くダイアログで存在しないファイル名を入力<br>　　(ただし、ディレクトリは必要)<br>４．マクロによるファイルを開く操作<br><br>３以外では、存在しないローカルパス以下やUNCパス以下を指定すると、仮の状態で開きます。<br>いずれの手段においても、保存先となるパスが存在しなければどのみち保存できないので、パス名のチェックはしたほうが親切かも知れません。<br></div></section>
+    </li><li><section><h1 id=4929>
+    <span class="no">[4929]</span>
+    <a class="thread-title" href="#4929">Re:接続されていないハードウェアにあるファイルの開き方について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-12T23:45:45">2007年07月12日 23:45</time></h1>
+    <div class="body">▼ サクラ使用者さん<br>&gt; ウィンドウを閉じない限り開くことが出来ません。<br>ウィンドウは閉じなくても[ファイル]-[開き直す]で開けると思います。</div></section>
+    </li></ul></li></ul></body></html>

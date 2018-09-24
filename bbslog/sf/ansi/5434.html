@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タブあるいはスペースについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5434</span>
+    <a class="thread-title" href="5434.html#5434">タブあるいはスペースについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5436</span>
+    <a class="thread-title" href="5434.html#5436">Re:タブあるいはスペースについて</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5446</span>
+    <a class="thread-title" href="5434.html#5446">Re:タブあるいはスペースについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5449</span>
+    <a class="thread-title" href="5434.html#5449">Re2:タブあるいはスペースについて</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5434>
+    <span class="no">[5434]</span>
+    <a class="thread-title" href="#5434">タブあるいはスペースについて</a>
+    <span class="author">初心者</span>
+    <time datetime="2008-10-03T16:27:14">2008年10月03日 16:27</time></h1>
+    <div class="body">一行にいくつか異なる長さのデータはタブスペースに<br>よって、区切っていましたが、そのようなデータが<br>沢山あると、データが一列ずつに位置を対応する機能が<br>ありますか？<br>例：<br>2.3 34 56 xyz<br>2.89945 3 4433 abcert<br>欲しいデータ形式：左優先①<br>2.3     34 56   xyz<br>2.89945 3  4433 abcert<br>欲しいデータ形式：右優先②<br>    2.3 34   56 xyz<br>2.89945  3 4433 abcert<br></div></section>
+    <ul><li><section><h1 id=5436>
+    <span class="no">[5436]</span>
+    <a class="thread-title" href="#5436">Re:タブあるいはスペースについて</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2008-10-08T00:47:48">2008年10月08日 00:47</time></h1>
+    <div class="body">▼ 初心者さん<br>左詰めならTAB数を8くらいにして領域選択後、このマクロを実行。<br>//キーボードマクロのファイル<br>S_ReplaceAll('[ \\t]+', '\\t', 133);&#9;// $85<br>S_TABToSPACE(0);&#9;// TAB→空白<br><br>右詰めは今のところ無い。</div></section>
+    </li><li><section><h1 id=5446>
+    <span class="no">[5446]</span>
+    <a class="thread-title" href="#5446">Re:タブあるいはスペースについて</a>
+    <span class="author">ぜっと</span>
+    <time datetime="2008-10-16T13:32:53">2008年10月16日 13:32</time></h1>
+    <div class="body">簡単なものでよければ &gt;&gt;macro:446 に投稿したマクロなどでどうでしょうか。</div></section>
+    <ul><li><section><h1 id=5449>
+    <span class="no">[5449]</span>
+    <a class="thread-title" href="#5449">Re2:タブあるいはスペースについて</a>
+    <span class="author">初心者</span>
+    <time datetime="2008-10-27T15:21:25">2008年10月27日 15:21</time></h1>
+    <div class="body">▼ ぜっとさん<br>&gt; 簡単なものでよければ &gt;&gt;macro:446 に投稿したマクロなどでどうでしょうか。<br>いいマクロですが、やってみた結果は異なる幅の行に対して幅を同じになった。<br>ちょっと私は質問仕方が良くなかったので、申し訳ございませんでした。<br>簡単にいうと、C言語の“%6d”の6の数字は行によって不定である。<br>例：(３列処理したいデータ)<br>一行目：%4s %3d %24s<br>二行目：%6s %8d %20s<br>三行目：%3s %7d %20s<br>簡単な例：(処理後のデータ)<br>一行目：%6s %8d %24s<br>二行目：%6s %8d %24s<br>三行目：%6s %8d %24s<br><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

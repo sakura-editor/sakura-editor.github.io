@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>修正要望 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">196</span>
+    <a class="thread-title" href="196.html#196">修正要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">206</span>
+    <a class="thread-title" href="196.html#206">Re:修正要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">254</span>
+    <a class="thread-title" href="196.html#254">Re2:修正要望</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=196>
+    <span class="no">[196]</span>
+    <a class="thread-title" href="#196">修正要望</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-03-08T10:52:52">2008年03月08日 10:52</time></h1>
+    <div class="body">ファイルのセーブ・ロードの整理を行っているようですが、<br>そのあたりの所の修正をお願いいたします。<br><br>現在のUnicode版では英数のみのファイルで1GB（Unicodeで2GB）で落ちるようですが、<br>まず、落ちないようにしてほしい。<br>そして、1GB以上のファイルを読み込めるようにしてほしい。<br><br>以上2点お願いしたいと思います。<br><br>2つ目は、ファイルのロードだけではないと思うので難しいでしょうがお願いいたします。</div></section>
+    <ul><li><section><h1 id=206>
+    <span class="no">[206]</span>
+    <a class="thread-title" href="#206">Re:修正要望</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-09T00:40:03">2008年03月09日 00:40</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; ファイルのセーブ・ロードの整理を行っているようですが、<br>&gt; そのあたりの所の修正をお願いいたします。<br>&gt; <br>&gt; 現在のUnicode版では英数のみのファイルで1GB（Unicodeで2GB）で落ちるようですが、<br>&gt; まず、落ちないようにしてほしい。<br>&gt; そして、1GB以上のファイルを読み込めるようにしてほしい。<br>&gt; <br>&gt; 以上2点お願いしたいと思います。<br>&gt; <br>&gt; 2つ目は、ファイルのロードだけではないと思うので難しいでしょうがお願いいたします。<br><br>要望として認識しておきます。<br>が、この変更に関してはけっこう手間がかかりそうなので先延ばしにさせてください。<br><br>1GB読み込めるようにするにしても、<br>今のロジックでは読み込み完了まで操作が効かないので、<br>個人的にはまずそこを直したいっすねー。<br><br><br>ちなみに自分のPCは物理メモリ2GBですが、<br>1GBのANSI英字テキストファイルを<br>サクラエディタ1.6.1.0でロードしようとしたら<br>途中で異常終了しました。<br><br>Uchiさんの環境でUNICODE版サクラエディタが落ちた原因は<br>UNICODE版固有のロジック的な問題ではなく、単にメモリの枯渇だと想像しています。<br>UNICODE版では単純計算でANSI版の2倍のメモリを消費するので<br>メモリ枯渇に達するのが早いはずです。<br><br>兎にも角にもメモリ枯渇時の対処はあるにこしたことはありません。<br>最も簡単な実装としては（根本的な解決策では無いですが）、<br>ロード前に理論上の使用メモリを算出し、<br>それがハードの限界を超えるようであれば<br>警告メッセージを出す、くらいが初期の策としては妥当かな、と考えています。<br>（作業対効果のコストパフォーマンス的に）</div></section>
+    <ul><li><section><h1 id=254>
+    <span class="no">[254]</span>
+    <a class="thread-title" href="#254">Re2:修正要望</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-03-15T13:51:01">2008年03月15日 13:51</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; Uchiさんの環境でUNICODE版サクラエディタが落ちた原因は<br>&gt; UNICODE版固有のロジック的な問題ではなく、単にメモリの枯渇だと想像しています。<br>&gt; UNICODE版では単純計算でANSI版の2倍のメモリを消費するので<br>&gt; メモリ枯渇に達するのが早いはずです。<br>&gt; <br>&gt; 兎にも角にもメモリ枯渇時の対処はあるにこしたことはありません。<br>&gt; 最も簡単な実装としては（根本的な解決策では無いですが）、<br>&gt; ロード前に理論上の使用メモリを算出し、<br>&gt; それがハードの限界を超えるようであれば<br>&gt; 警告メッセージを出す、くらいが初期の策としては妥当かな、と考えています。<br>&gt; （作業対効果のコストパフォーマンス的に）<br>返事が遅くなってすみませんでした。<br>メモリの件は承りました。<br><br>ただし、メモリ枯渇以外にもおそらくバッファのインデックスにint（32ビット）を使用しているためにおかしくなっている部分があると思います。<br>ANSI版の話で数年前の話ですが、メモリ4G、Win2003Serverで2G以上のファイルを開こうとしていたときのことですが、メモリにはまだ余裕がある（物理メモリではなくコミットチャージベースで）のに落ちてしまう現象がありました。<br>ファイルファイルサイズを1.9..G程度にしたら読み込むことが出来ました。<br>（2Gでは読み込むことが出来ませんでした）<br>またそのファイルは、1.5G、WinXpでも読み込むことが出来た（半日かかりました）ので、メモリのでは無く、ロジック的なところ（intの限界）に問題がありそうです。<br><br>現実的には、GB over のファイルを扱うことは多くは無いので入り口でチェックしてもらえればＯＫかなと思います。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

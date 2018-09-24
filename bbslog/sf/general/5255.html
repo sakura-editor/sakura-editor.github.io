@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タグ付き正規表現 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5255</span>
+    <a class="thread-title" href="5255.html#5255">タグ付き正規表現</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5257</span>
+    <a class="thread-title" href="5255.html#5257">Re:タグ付き正規表現</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5260</span>
+    <a class="thread-title" href="5255.html#5260">Re2:タグ付き正規表現</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5258</span>
+    <a class="thread-title" href="5255.html#5258">RE: タグ付き正規表現</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5255>
+    <span class="no">[5255]</span>
+    <a class="thread-title" href="#5255">タグ付き正規表現</a>
+    <span class="author">もー</span>
+    <time datetime="2006-06-01T17:08:45">2006年06月01日 17:08</time></h1>
+    <div class="body">この↓文字列を<br>「000133000800000000000001000C01020006000233000800000000000001000D01020005000333000900000900000000000001040005」<br><br>以下のように置換したいのですが、可能でしょうか<br>0001 33000800 00000000 0001000C 0102 0006<br>0002 33000800 00000000 0001000D 0102 0005<br>0003 33000900 00090000 00000000 0104 0005<br><br>なお、秀丸のHMJRE.DLLでは<br><br>置換前 : [0-9A-F]{4}\f[0-9A-F]{8}\f[0-9A-F]{8}\f[0-9A-F]{8}\f[0-9A-F]{4}\f[0-9A-F]{4}<br>置換後 : \0 \1 \2 \3 \4 \5\n<br><br>で可能でしたが、サクラだと(というかBREGEXP.DLL?)だと\fは使えないようでした。<br></div></section>
+    <ul><li><section><h1 id=5257>
+    <span class="no">[5257]</span>
+    <a class="thread-title" href="#5257">Re:タグ付き正規表現</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-06-01T20:55:43">2006年06月01日 20:55</time></h1>
+    <div class="body">▼ もーさん<br>//キーボードマクロのファイル BINARYHEX.MAC<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_IndentSpace(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_IndentSpace(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_IndentSpace(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_IndentSpace(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_IndentSpace(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Right(0);<br>S_Char(13);<br></div></section>
+    <ul><li><section><h1 id=5260>
+    <span class="no">[5260]</span>
+    <a class="thread-title" href="#5260">Re2:タグ付き正規表現</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-06-03T01:34:04">2006年06月03日 01:34</time></h1>
+    <div class="body">&gt; ▼ もーさん<br>秀丸の正規表現￥ｆタグ付き正規表現<br><br>タグ付き正規表現２個の場合<br>ＨＩＤＥＭＡＲＵ<br>Ａ￥ｆＢ<br><br>ＳＡＫＵＲＡ<br>（Ａ）（Ｂ）<br><br>タグ付き正規表現３個の場合<br>ＨＩＤＥＭＡＲＵ<br>Ａ￥ｆＢ￥ｆＣ<br><br>ＳＡＫＵＲＡ<br>（Ａ）（Ｂ）（Ｃ）<br><br>以下同様に、４個、５個、．．．<br>置換後のタグの番号は\１から始まります。<br><br>従って、<br>置換前 : (.{4})(.{8})(.{8})(.{8})(.{4})(.{4})<br>置換後 : \1 \2 \3 \4 \5 \6\n<br>全て置換<br><br>どうぞ、これで、試して見て下さい。</div></section>
+    </li></ul></li><li><section><h1 id=5258>
+    <span class="no">[5258]</span>
+    <a class="thread-title" href="#5258">RE: タグ付き正規表現</a>
+    <span class="author">すい</span>
+    <time datetime="2006-06-02T00:25:55">2006年06月02日 00:25</time></h1>
+    <div class="body">&gt;サクラだと(というかBREGEXP.DLL?)だと\fは使えないようでした。<br><br>正規表現タグで「\f で区切る」なんていう滅茶苦茶ヘンテコな記述を<br>するのは秀丸くらいではないかと。 (;^^Ａ<br>世の中の一般的な正規表現が使えるユーティリティでは、<br>「何らかの括弧で括る」というのが一般的です。<br>\(～\) とか {～} とか．．．<br>括弧の種類がユーティリティ毎にまちまちです。<br><br>で、サクラエディタで使用されている BREGEXP.DLL は perl という<br>ユーティリティと ほぼ互換の正規表現で、タグは (～) で括る事に<br>なっています。<br><br>(～) で括られた範囲の検索語にマッチした文字列が、先頭の括弧から順に<br>・検索文字列中　：\1 , \2 , \3 , ...<br>・置換後文字列中：$1 , $2 , $3 , ...<br>に入ります。<br><br>例えば、検索文字列が「(.*)\t(.*)\t\2\t\1」ならば<br><br>## 「→　」がタブとする。<br><br>ABC→　DEF→　DEF→　ABC<br><br>のような文字列を検索する事が出来ます。<br><br>また、(～) 表記部分は、一塊の文字列として取り扱えます。<br>例えば「([0-9A-F]{4}\t){2}」とか。<br>{2} の「２回」の表記は、その前の一塊「([0-9A-F]{4}\t)」<br>にかかります。つまり「[0-9A-F]{4}\t[0-9A-F]{4}\t」という表記と<br>等価です。<br><br>もちろん括弧を入れ子にする事も可能なわけで、「(([0-9A-F]{4}\t){2})」<br>とすれば、「([0-9A-F]{4}\t){2}」にマッチした文字列部分が \1 に<br>入るわよ、と。<br># こういう表記が秀丸の \f では無理かな。<br><br>なお、置換する場合には置換後文字列中では \1 , \2 , \3 ,... ではなく、<br>$1 , $2 , $3 を使うという事に注意。この辺がちょっと嫌らしい所<br>なのですが。<br><br>置換後文字列に \1 , \2 , \3 を使っても、大抵は それっぽく<br>動作しますが、perl では稀に \1 , \2 ,... では駄目なパターンも<br>あるらしいので、置換後文字列中では $1 , $2 の表記を使用するように<br>した方が無難かと。<br><br>他、置換後文字列中では $&amp; が「検索にマッチした文字列全体」と<br>なります。<br><br>・置換前：(([0-9A-F]{4}\t){2})<br>・置換後：$1 だわさ<br><br>のような置換の場合、検索文字列全体をわざわざ (～) で括らなくても $&amp; を使って<br><br>・置換前：([0-9A-F]{4}\t){2}<br>・置換後：$&amp; だわさ<br><br>で OK という事で。<br><br>他、まだまだ色々なメタ文字とかがありますが、詳しい事は perl の<br>正規表現を調べるとよろしいのではないかと。<br></div></section>
+    </li></ul></li></ul></body></html>

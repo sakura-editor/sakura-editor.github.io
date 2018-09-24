@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>$と$の色分けを正規表現で | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7172</span>
+    <a class="thread-title" href="7172.html#7172">$と$の色分けを正規表現で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7173</span>
+    <a class="thread-title" href="7172.html#7173">Re:$と$の色分けを正規表現で</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7174</span>
+    <a class="thread-title" href="7172.html#7174">Re:$と$の色分けを正規表現で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7175</span>
+    <a class="thread-title" href="7172.html#7175">Re2:$と$の色分けを正規表現で</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7172>
+    <span class="no">[7172]</span>
+    <a class="thread-title" href="#7172">$と$の色分けを正規表現で</a>
+    <span class="author">桜でtex</span>
+    <time datetime="2010-04-21T23:53:00">2010年04月21日 23:53</time></h1>
+    <div class="body">サクラエディタでtexをやっています．<br><br>$と$で囲まれた部分の色を変えるために，<br>正規表現で /\$.*\$/k と登録しました．<br><br>それで一応出来ましたが，<br>その行に $ が３個以上ありますと，<br>最初の $ から最後の $ まで全部色が変わってしまいます…<br><br>やりたいこととしましては，<br> $ を２個セットで色変化させたいのです．<br>たとえば，<br>今日は $1+1=2$ という計算と $1*1=1$ を勉強した．<br>という文で，<br>「$1+1=2$」と「$1*1=1$」の二箇所の色を変化させたいのです．<br>「という計算と」という部分は変化させたくないのです．<br>イメージとしましては，カラー設定の中のブロックと同じです．<br><br>どなたか教えていただけませんでしょうか．<br>よろしくお願いします．</div></section>
+    <ul><li><section><h1 id=7173>
+    <span class="no">[7173]</span>
+    <a class="thread-title" href="#7173">Re:$と$の色分けを正規表現で</a>
+    <span class="author">ds14050</span>
+    <time datetime="2010-04-22T01:34:28">2010年04月22日 01:34</time></h1>
+    <div class="body">/\$[^$]*\$/k でどうでしょう。<br>正規表現は基本的に最左最長一致です。<br></div></section>
+    </li><li><section><h1 id=7174>
+    <span class="no">[7174]</span>
+    <a class="thread-title" href="#7174">Re:$と$の色分けを正規表現で</a>
+    <span class="author">a</span>
+    <time datetime="2010-04-22T08:25:04">2010年04月22日 08:25</time></h1>
+    <div class="body">/\$.*?\$/k でも大丈夫だと思います。<br>「.*?」の最後の?は最短一致を意味します。</div></section>
+    <ul><li><section><h1 id=7175>
+    <span class="no">[7175]</span>
+    <a class="thread-title" href="#7175">Re2:$と$の色分けを正規表現で</a>
+    <span class="author">桜でtex</span>
+    <time datetime="2010-04-24T19:59:35">2010年04月24日 19:59</time></h1>
+    <div class="body">＞ds14050さん，aさん<br>どちらででも出来ました！<br>ありがとうございます！かなり助かりました．<br>マクロとかいろいろ作り，やっと出来るようになったのに，<br>こういうバグが出てきてかなり凹んでしまいましたが，<br>救われた気分です．<br>本当にありがとうございます！！</div></section>
+    </li></ul></li></ul></li></ul></body></html>

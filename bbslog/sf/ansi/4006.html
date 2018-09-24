@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ツールバーの折り返し | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4006</span>
+    <a class="thread-title" href="4006.html#4006">ツールバーの折り返し</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4007</span>
+    <a class="thread-title" href="4006.html#4007">Re:ツールバーの折り返し</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4021</span>
+    <a class="thread-title" href="4006.html#4021">ツールバーの折り返し で見つけた問題</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4006>
+    <span class="no">[4006]</span>
+    <a class="thread-title" href="#4006">ツールバーの折り返し</a>
+    <span class="author">あろか</span>
+    <time datetime="2005-08-09T01:46:00">2005年08月09日 01:46</time></h1>
+    <div class="body">padyさんの要望(data:4585)にあったツールバーの折り返しを実装してみました。<br><br>表示しないボタンの導入して、実装にすこし無理があるためか、<br>ちらつきが多くなったように感じます。<br>また、コマンドIDに32768を使っているためWin95では動かないかも。<br></div></section>
+    <ul><li><section><h1 id=4007>
+    <span class="no">[4007]</span>
+    <a class="thread-title" href="#4007">Re:ツールバーの折り返し</a>
+    <span class="author">あろか</span>
+    <time datetime="2005-08-11T01:33:55">2005年08月11日 01:33</time></h1>
+    <div class="body">▼ あろか<br>プロパティにバグがあったので修正しました。<br>パッチはブリーフケース→AddWrapToolbar_base1540.diff です。<br><br></div></section>
+    <ul><li><section><h1 id=4021>
+    <span class="no">[4021]</span>
+    <a class="thread-title" href="#4021">ツールバーの折り返し で見つけた問題</a>
+    <span class="author">あろか</span>
+    <time datetime="2005-08-20T23:51:23">2005年08月20日 23:51</time></h1>
+    <div class="body">最適化オプションをいじっていて発見しました。<br>_fastcallにするとインクリメンタルサーチ時にエディタが異常終了してしまうため、<br>  CBregExp.h、CMigemo.h のtypedefに __cedclが必要です。<br>例：typedef migemo* (__cdecl *Proc_migemo_open)(char* dict);<br>  CHtmlHelp.h、CMultiMonitor.h、CPPA.hは対処済みのようです。(WINAPIが付いている)<br><br>また、my_icmpの.hと.cppは宣言が一致していません。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

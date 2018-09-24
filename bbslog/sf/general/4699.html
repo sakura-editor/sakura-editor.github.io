@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>【要望】カーソルの行頭&lt;-&gt;行末を抑制 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4699</span>
+    <a class="thread-title" href="4699.html#4699">【要望】カーソルの行頭&lt;-&gt;行末を抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4700</span>
+    <a class="thread-title" href="4699.html#4700">Re:【要望】カーソルの行頭&lt;-&gt;行末を抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4701</span>
+    <a class="thread-title" href="4699.html#4701">Re2:【要望】カーソルの行頭&lt;-&gt;行末を抑制</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4699>
+    <span class="no">[4699]</span>
+    <a class="thread-title" href="#4699">【要望】カーソルの行頭&lt;-&gt;行末を抑制</a>
+    <span class="author">遊月</span>
+    <time datetime="2005-09-21T20:47:12">2005年09月21日 20:47</time></h1>
+    <div class="body">お世話になります。<br><br>サクラエディタを便利に使わせていただいております。<br>カーソルの移動をフリーカーソルで使用していますが、<br>行頭&lt;-&gt;行末を抑制する設定があるといいなと思いました。<br>フリーカーソルの場合、行頭-&gt;行末の一方通行なので・・・<br><br>ご検討いただけるとうれしいです。<br>また、既存の設定で変更できるようでしたら申し訳ありません（＝＝<br>よろしくお願いします。<br><br>追記...<br>要望とは関係ないでのすが、<br>強調キーワードや正規表現キーワードで<br>ヒットした「行」の色を変更するということは、<br>簡単にできるものなのでしょうか？<br>（使用例としては関数名の行を変更など）</div></section>
+    <ul><li><section><h1 id=4700>
+    <span class="no">[4700]</span>
+    <a class="thread-title" href="#4700">Re:【要望】カーソルの行頭&lt;-&gt;行末を抑制</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-09-21T22:25:26">2005年09月21日 22:25</time></h1>
+    <div class="body">&gt; サクラエディタを便利に使わせていただいております。<br>&gt; カーソルの移動をフリーカーソルで使用していますが、<br>&gt; 行頭&lt;-&gt;行末を抑制する設定があるといいなと思いました。<br>&gt; フリーカーソルの場合、行頭-&gt;行末の一方通行なので・・・<br>言われていることがイマイチ分からないのですけど<br><br>行頭-&gt;行末の抑止なら↓のマクロを左キーに割り当てればいけませんかね?<br>If Int( ExpandParameter("$x") ) &gt; 1 Then Editor.Left()<br><br>行末-&gt;行頭の抑止も同じような方法で抑止できると思いますが<br>現在は折り返し幅をマクロ側で取得する方法がない(よね?)ので環境に合わせて作ってもらうのがいいかと<br><br># ハズしてたら、ゴメンなさいね ^^;<br><br>&gt; 強調キーワードや正規表現キーワードで<br>&gt; ヒットした「行」の色を変更するということは、<br>できません<br>検索-&gt;該当行マーク でガマンガマン</div></section>
+    <ul><li><section><h1 id=4701>
+    <span class="no">[4701]</span>
+    <a class="thread-title" href="#4701">Re2:【要望】カーソルの行頭&lt;-&gt;行末を抑制</a>
+    <span class="author">遊月</span>
+    <time datetime="2005-09-22T01:17:35">2005年09月22日 01:17</time></h1>
+    <div class="body">▼ (全略)さん<br>&gt; &gt; サクラエディタを便利に使わせていただいております。<br>&gt; &gt; カーソルの移動をフリーカーソルで使用していますが、<br>&gt; &gt; 行頭&lt;-&gt;行末を抑制する設定があるといいなと思いました。<br>&gt; &gt; フリーカーソルの場合、行頭-&gt;行末の一方通行なので・・・<br>&gt; 言われていることがイマイチ分からないのですけど<br>&gt; <br>&gt; 行頭-&gt;行末の抑止なら↓のマクロを左キーに割り当てればいけませんかね?<br>&gt; If Int( ExpandParameter("$x") ) &gt; 1 Then Editor.Left()<br>&gt; <br>&gt; 行末-&gt;行頭の抑止も同じような方法で抑止できると思いますが<br>&gt; 現在は折り返し幅をマクロ側で取得する方法がない(よね?)ので環境に合わせて作ってもらうのがいいかと<br>&gt; <br>&gt; # ハズしてたら、ゴメンなさいね ^^;<br>&gt; <br>&gt; &gt; 強調キーワードや正規表現キーワードで<br>&gt; &gt; ヒットした「行」の色を変更するということは、<br>&gt; できません<br>&gt; 検索-&gt;該当行マーク でガマンガマン<br><br>ご返信ありがとうございます。<br>説明がヘタで申し訳ないです（涙<br>行末-&gt;行頭はマクロで望みのことができました。<br>マクロで簡単にできちゃうんですね・・・<br><br>要望出す前にいろいろ試してみることにします。<br>丁寧な解説ありがとうございましたー</div></section>
+    </li></ul></li></ul></li></ul></body></html>

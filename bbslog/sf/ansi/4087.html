@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タブ表示時のGrep検索 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4087</span>
+    <a class="thread-title" href="4087.html#4087">タブ表示時のGrep検索</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=4087>
+    <span class="no">[4087]</span>
+    <a class="thread-title" href="#4087">タブ表示時のGrep検索</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-05T11:42:26">2005年11月05日 11:42</time></h1>
+    <div class="body">&gt;&gt;data:4740 の修正パッチです。<br>他の動作への影響は無いと思います。たぶん。(^^;<br><br>--- sakura_core_org/CTabWnd.cpp&#9;Sun Oct 02 11:02:21 2005<br>+++ sakura_core/CTabWnd.cpp&#9;Sat Nov 05 11:25:33 2005<br>@@ -1124,6 +1124,13 @@<br> {<br> &#9;if ( bForeground )<br> &#9;{<br>+&#9;&#9;// 2005.11.05 ryoji 対象ウィンドウのプロセスが既にフォアグラウンドなら切替え済みなので何もしないでおく<br>+&#9;&#9;DWORD dwPid1, dwPid2;<br>+&#9;&#9;::GetWindowThreadProcessId( hwnd, &amp;dwPid1 );<br>+&#9;&#9;::GetWindowThreadProcessId( ::GetForegroundWindow(), &amp;dwPid2 );<br>+&#9;&#9;if( dwPid1 == dwPid2 )<br>+&#9;&#9;&#9;return;<br>+<br> &#9;&#9;if( ::IsIconic( hwnd ) )<br> &#9;&#9;{<br> &#9;&#9;&#9;::ShowWindow( hwnd, SW_RESTORE );&#9;// Nov. 7. 2003 MIK アイコン時は元のサイズに戻す<br></div></section>
+    </li></ul></body></html>

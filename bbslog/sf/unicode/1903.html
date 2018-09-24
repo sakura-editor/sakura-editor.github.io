@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ver2.0.6.0の検索ダイアログ表示について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1903</span>
+    <a class="thread-title" href="1903.html#1903">ver2.0.6.0の検索ダイアログ表示について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1904</span>
+    <a class="thread-title" href="1903.html#1904">Re:ver2.0.6.0の検索ダイアログ表示について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1905</span>
+    <a class="thread-title" href="1903.html#1905">Re2:ver2.0.6.0の検索ダイアログ表示について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1906</span>
+    <a class="thread-title" href="1903.html#1906">Re3:ver2.0.6.0の検索ダイアログ表示について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1907</span>
+    <a class="thread-title" href="1903.html#1907">Re4:ver2.0.6.0の検索ダイアログ表示について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1908</span>
+    <a class="thread-title" href="1903.html#1908">Re5:ver2.0.6.0の検索ダイアログ表示について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1903>
+    <span class="no">[1903]</span>
+    <a class="thread-title" href="#1903">ver2.0.6.0の検索ダイアログ表示について</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-16T00:44:44">2013年04月16日 00:44</time></h1>
+    <div class="body">&gt;&gt;data:7600 の件ですが、 発生箇所を調べると、<br>CDialog::SetMainFont()を呼び出しているようです。<br>#フォントの作成に失敗している？<br></div></section>
+    <ul><li><section><h1 id=1904>
+    <span class="no">[1904]</span>
+    <a class="thread-title" href="#1904">Re:ver2.0.6.0の検索ダイアログ表示について</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-16T19:38:13">2013年04月16日 19:38</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; &gt;&gt;data:7600 の件ですが、 発生箇所を調べると、<br>&gt; CDialog::SetMainFont()を呼び出しているようです。<br>&gt; #フォントの作成に失敗している？<br>今手元にXPが無いんではっきりしたことは言えないんですが、<br>画像を見た感じではSmall Fontsで表示されている様です。<br>FixedSys 9ポを指定してFixedSysが14ポしかないので<br>フォント変更が掛かったのだと思います。</div></section>
+    <ul><li><section><h1 id=1905>
+    <span class="no">[1905]</span>
+    <a class="thread-title" href="#1905">Re2:ver2.0.6.0の検索ダイアログ表示について</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-16T22:04:26">2013年04月16日 22:04</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; FixedSys 9ポを指定してFixedSysが14ポしかないので<br>&gt; フォント変更が掛かったのだと思います。<br><br>CDialog::SetMainFont()でTerminalの9ポイント(-12)のフォントを作成していました。<br>サポートしていないフォントサイズなので変なことになっているのではないかと。<br><br>検索ダイアログ表示時に、CDialog::SetMainFont()が呼ばれたときの各変数の情報は下記の通りです。<br><br>・m_Common.m_sView.m_lfに格納されているフォント情報<br>lfHeight -12 long<br>lfWidth 0 long<br>lfEscapement 0 long<br>lfOrientation 0 long<br>lfWeight 400 long<br>lfItalic 0 unsigned char<br>lfUnderline 0 unsigned char<br>lfStrikeOut 0 unsigned char<br>lfCharSet 128 '&amp;#128;' unsigned char<br>lfOutPrecision 0 unsigned char<br>lfClipPrecision 0 unsigned char<br>lfQuality 0 unsigned char<br>lfPitchAndFamily 50 '2' unsigned char<br>lfFaceName 0x0012bb50 "ＭＳ Ｐゴシック" wchar_t [32]<br><br>・GetObject()で取得したフォント情報<br>lfHeight -13 long<br>lfWidth 0 long<br>lfEscapement 0 long<br>lfOrientation 0 long<br>lfWeight 400 long<br>lfItalic 0 unsigned char<br>lfUnderline 0 unsigned char<br>lfStrikeOut 0 unsigned char<br>lfCharSet 128 '&amp;#128;' unsigned char<br>lfOutPrecision 1 '?' unsigned char<br>lfClipPrecision 2 '?' unsigned char<br>lfQuality 1 '?' unsigned char<br>lfPitchAndFamily 1 '?' unsigned char<br>lfFaceName 0x0012bb50 "Terminal" wchar_t [32]<br></div></section>
+    <ul><li><section><h1 id=1906>
+    <span class="no">[1906]</span>
+    <a class="thread-title" href="#1906">Re3:ver2.0.6.0の検索ダイアログ表示について</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-16T22:41:14">2013年04月16日 22:41</time></h1>
+    <div class="body">▼ noviceさん<br>原因がわかりました。<br>Windowsとしては規定の動作でした。<br>フォントとして Terminal を指定した場合、<br>12ドット(lfHeightが-12)のサイズが無いので<br>6ドット(4.5ポ)のサイズを探し出し、それを２倍にして表示<br>と言う形です。<br>で、今パッチを作成しています。<br>出来上がったらPatchUnicodeに上げます。 </div></section>
+    <ul><li><section><h1 id=1907>
+    <span class="no">[1907]</span>
+    <a class="thread-title" href="#1907">Re4:ver2.0.6.0の検索ダイアログ表示について</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-16T23:13:18">2013年04月16日 23:13</time></h1>
+    <div class="body">パッチを上げました。<br>フォント名がTerminalと判っていればかなり早く原因が探れたんですが。<br>問題が無い様であればコミットします。</div></section>
+    <ul><li><section><h1 id=1908>
+    <span class="no">[1908]</span>
+    <a class="thread-title" href="#1908">Re5:ver2.0.6.0の検索ダイアログ表示について</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-17T00:24:09">2013年04月17日 00:24</time></h1>
+    <div class="body">リビジョン 2860 でコミットしました</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

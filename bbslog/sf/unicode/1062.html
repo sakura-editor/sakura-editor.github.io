@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ステータスバーに表示されるショートカットキーが変 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1062</span>
+    <a class="thread-title" href="1062.html#1062">ステータスバーに表示されるショートカットキーが変</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1064</span>
+    <a class="thread-title" href="1062.html#1064">Re:ステータスバーに表示されるショートカットキーが変</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1062>
+    <span class="no">[1062]</span>
+    <a class="thread-title" href="#1062">ステータスバーに表示されるショートカットキーが変</a>
+    <span class="author">もか</span>
+    <time datetime="2009-12-10T02:58:36">2009年12月10日 02:58</time></h1>
+    <div class="body">たとえば、「切り取り(T)」をフォーカスすると<br>ステータスバーの表示が「F7, LShift+Del, LCtrl+X」になります。<br><br>window\CEditWnd.cpp(884):&#9;cmemWork.AppendString(_T(" , L"));<br>cmemWork.AppendString(_T(" , "));<br>だとおもいます。<br></div></section>
+    <ul><li><section><h1 id=1064>
+    <span class="no">[1064]</span>
+    <a class="thread-title" href="#1064">Re:ステータスバーに表示されるショートカットキーが変</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-10T09:03:52">2009年12月10日 09:03</time></h1>
+    <div class="body">▼ もかさん<br>&gt; cmemWork.AppendString(_T(" , "));<br>&gt; だとおもいます。<br><br>タイポみたいですね。<br>上記のように修正しておきました。(&gt;&gt;unicode:1063)</div></section>
+    </li></ul></li></ul></body></html>

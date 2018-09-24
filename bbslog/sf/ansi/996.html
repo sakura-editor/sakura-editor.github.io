@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CMacro.cpp | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">996</span>
+    <a class="thread-title" href="996.html#996">CMacro.cpp</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">998</span>
+    <a class="thread-title" href="996.html#998">Re:CMacro.cpp</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">999</span>
+    <a class="thread-title" href="996.html#999">Re2:CMacro.cpp</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=996>
+    <span class="no">[996]</span>
+    <a class="thread-title" href="#996">CMacro.cpp</a>
+    <span class="author">みく</span>
+    <time datetime="2001-12-23T17:43:58">2001年12月23日 17:43</time></h1>
+    <div class="body">単語削除のマクロ名の綴りが間違ってます。<br>＃マージも同様<br></div></section>
+    <ul><li><section><h1 id=998>
+    <span class="no">[998]</span>
+    <a class="thread-title" href="#998">Re:CMacro.cpp</a>
+    <span class="author">みく</span>
+    <time datetime="2001-12-23T18:09:26">2001年12月23日 18:09</time></h1>
+    <div class="body">(矩形選択)半ページダウンの綴りもおかしいです。<br>HalfPAgeDown_Box<br></div></section>
+    <ul><li><section><h1 id=999>
+    <span class="no">[999]</span>
+    <a class="thread-title" href="#999">Re2:CMacro.cpp</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-24T09:58:15">2001年12月24日 09:58</time></h1>
+    <div class="body">▼ みくさん<br>&gt; (矩形選択)半ページダウンの綴りもおかしいです。<br>&gt; HalfPAgeDown_Box<br>↑コメント内のようなので問題ないかと。<br><br>単語削除・マージについては既存のマクロを生かすために、<br>以下のようにしてはいかがでしょうか？<br><br>F_WordDelete , "WordDelete",  //単語削除<br>F_WordDelete , "WordDleete",  // for Old Ver<br>F_MARGE      , "Merge",       //マージ<br>F_MARGE      , "Marge",       // for Old Ver<br><br>F_MARGE,Command_MARGE については次回ソースを公開される時にでも置換しておいていただけるとうれしいです。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

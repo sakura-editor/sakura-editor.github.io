@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>外部コマンド実行での不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">694</span>
+    <a class="thread-title" href="694.html#694">外部コマンド実行での不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">697</span>
+    <a class="thread-title" href="694.html#697">Re: 外部コマンド実行での不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">700</span>
+    <a class="thread-title" href="694.html#700">ファイル内容比較でも。。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=694>
+    <span class="no">[694]</span>
+    <a class="thread-title" href="#694">外部コマンド実行での不具合</a>
+    <span class="author">やんも</span>
+    <time datetime="2001-09-19T00:08:40">2001年09月19日 00:08</time></h1>
+    <div class="body">下記の操作にて不具合を見つけたので報告します。<br><br>１．外部コマンド実行にて $F だけを指定して実行<br>２．１でのウィンドウ（アウトプットではなく）にて名前を付けて保存を選び、保存せずにキャンセル。<br>３．再び外部コマンド実行にて $F だけを指定して実行<br><br>にて３の結果でファイル名の後に空白が入ります。<br>また、$Fの後に文字を付けたり消したりしていてもおかしくなります。<br><br>不具合を報告することしかできませんが、よろしくお願いします。<br><br>環境は RC7.1 と Win2k,Win98 です。</div></section>
+    <ul><li><section><h1 id=697>
+    <span class="no">[697]</span>
+    <a class="thread-title" href="#697">Re: 外部コマンド実行での不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-09-19T09:58:28">2001年09月19日 09:58</time></h1>
+    <div class="body">ポインタの扱いに誤りがあって1バイトずれており，関係ない文字がファイル名の後ろに入っていたようです．次回直ります．<br></div></section>
+    <ul><li><section><h1 id=700>
+    <span class="no">[700]</span>
+    <a class="thread-title" href="#700">ファイル内容比較でも。。</a>
+    <span class="author">やんも</span>
+    <time datetime="2001-09-21T22:15:01">2001年09月21日 22:15</time></h1>
+    <div class="body">対応ありがとうございます。<br><br>それから、もう一つ。（何度もすみません。）<br>RC7.1とWin98の環境で、ファイル内容比較のコマンドが<br>別窓で開いているファイル名が一覧になく使えないようです。<br>こちらもお願いします。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

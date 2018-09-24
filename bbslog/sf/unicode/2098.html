@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CDialog::SetMainFont | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2098</span>
+    <a class="thread-title" href="2098.html#2098">CDialog::SetMainFont</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2099</span>
+    <a class="thread-title" href="2098.html#2099">Re:CDialog::SetMainFont</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2100</span>
+    <a class="thread-title" href="2098.html#2100">Re2:CDialog::SetMainFont</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2098>
+    <span class="no">[2098]</span>
+    <a class="thread-title" href="#2098">CDialog::SetMainFont</a>
+    <span class="author">もか</span>
+    <time datetime="2014-01-30T18:17:13">2014年01月30日 18:17</time></h1>
+    <div class="body">SetDataで設定してますが、これリソースリークしてませんか？<br></div></section>
+    <ul><li><section><h1 id=2099>
+    <span class="no">[2099]</span>
+    <a class="thread-title" href="#2099">Re:CDialog::SetMainFont</a>
+    <span class="author">a2</span>
+    <time datetime="2014-01-30T18:59:49">2014年01月30日 18:59</time></h1>
+    <div class="body">▼ もかさん<br>&gt; SetDataで設定してますが、これリソースリークしてませんか？<br><br>GDIオブジェクト数が約170の状態から130回ほど、ctrl-f, Escを繰り返したら約300になりました。<br>これが原因かと。</div></section>
+    <ul><li><section><h1 id=2100>
+    <span class="no">[2100]</span>
+    <a class="thread-title" href="#2100">Re2:CDialog::SetMainFont</a>
+    <span class="author">もか</span>
+    <time datetime="2014-01-30T22:15:46">2014年01月30日 22:15</time></h1>
+    <div class="body">ついでに、設定画面のフォントと、メインメニューのハンドルリークも修正したパッチを登録しました。<br>設定画面は、フォントを変更したときだけリークします。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/764/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>764/<wbr></nobr></a><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

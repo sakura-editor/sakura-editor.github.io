@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>折り返し設定がクリアになってしまう | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7147</span>
+    <a class="thread-title" href="7147.html#7147">折り返し設定がクリアになってしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7148</span>
+    <a class="thread-title" href="7147.html#7148">Re: 折り返し設定がクリアになってしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7149</span>
+    <a class="thread-title" href="7147.html#7149">Re2: 折り返し設定がクリアになってしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7150</span>
+    <a class="thread-title" href="7147.html#7150">Re3: 折り返し設定がクリアになってしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7154</span>
+    <a class="thread-title" href="7147.html#7154">Re4: 折り返し設定がクリアになってしまう</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">7421</span>
+    <a class="thread-title" href="7147.html#7421">-</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7147>
+    <span class="no">[7147]</span>
+    <a class="thread-title" href="#7147">折り返し設定がクリアになってしまう</a>
+    <span class="author">ぽじとろん</span>
+    <time datetime="2010-03-03T10:18:25">2010年03月03日 10:18</time></h1>
+    <div class="body">仕事で使っています。<br>WinXP(SP2)です。<br>v1.6.4.0を使っています。<br><br>HTMLやCSSを記述するのに使っているのですが、設定→タイプ別設定→スクリーン→折り返し方法で「右端で折り返す」に設定するのですが、1日経つと設定が「折り返さない」に戻ってしまいます。<br>設定が戻らないようにするにはどうしたらいいでしょうか。<br>お知恵をお貸しください。<br><br>よろしくお願いいたします。</div></section>
+    <ul><li><section><h1 id=7148>
+    <span class="no">[7148]</span>
+    <a class="thread-title" href="#7148">Re: 折り返し設定がクリアになってしまう</a>
+    <span class="author">もか</span>
+    <time datetime="2010-03-03T16:55:34">2010年03月03日 16:55</time></h1>
+    <div class="body">&gt;1日経つと設定が「折り返さない」に戻ってしまいます。<br>sakura v1.6.4.0 ANSIでエディタを全終了させるなどしてみましたが、再現できません・・・・・・<br>1日経つ間に何か起こっているのではないでしょうか？<br><br>設定がファイルに保存されるのは、今のところサクラエディタを全終了したときだけです。<br>設定ファイルから設定を読み込むのも、初めてサクラエディタが起動したときだけです。<br>(ただし常駐しない設定にすると、編集画面が0個になったときに全終了します)<br>なおsakura.iniは書き込めなくてもエラーが出ません。(たぶん)<br><br>とりあえず、起動→設定変更→全終了→再度起動ファイルを開いてどうなるか確認してください。<br>大きく分けて原因は2種類です。書き込めていないか、誰かに上書きされているかです。<br><br>環境が詳しく書かれていませんので、いろいろ想像してみます。<br>・設定したタイプ別と自動適用されるタイプ別が実は違った<br>・sakura.iniが保存されていなくて戻っている(読み取り専用、RAM-DISK)<br>・ノートン ゴースト/ドライブシールドのようなHDD復元ソフトでsakura.iniが元に戻っている<br>・ネットワーク共有上にsakura.iniがあり、違うPCがsakura.iniを上書きしている<br>・簡易デスクトップ切り替えで、同じPCの違うユーザがsakura.iniを上書きしている→ユーザ別設定推奨<br>・ログイン種別が一般ユーザ以下などで、C:\Program files\sakura\sakura.iniに書き込む権限がない→ユーザ別設定推奨<br>タイプ別設定ダイアログの左下に[設定フォルダ(/)&gt;&gt;]が表示されているなら<br>%APPDATA%\sakura\sakura.ini にあります。<br>・何らかの都合でユーザープロファイルが元に戻ってる<br>・ドメイン ネットワーク上で同一ユーザで複数ログインしている(できるよね?)→あとで終了した人に上書きされる<br></div></section>
+    <ul><li><section><h1 id=7149>
+    <span class="no">[7149]</span>
+    <a class="thread-title" href="#7149">Re2: 折り返し設定がクリアになってしまう</a>
+    <span class="author">ぽじとろん</span>
+    <time datetime="2010-03-04T11:30:52">2010年03月04日 11:30</time></h1>
+    <div class="body">もかさん<br>レスありがとうございます。<br><br>情報が少ない中、いろいろとご考察いただき、恐縮です。<br><br>&gt; ・ログイン種別が一般ユーザ以下などで、C:\Program files\sakura\sakura.iniに書き込む権限がない<br><br>↑が当たりでした。<br>ログオフしたときに設定がクリアになり、C:\Program filesへの書き込み権限もありませんでした。<br><br>そこで、ヘルプにしたがってC:\Documents and Settings\&lt;username&gt;\My Documents\sakura_settings\sakura.iniを作成し、以下のように書き込みました。<br><br>[Settings]<br>MultiUser=1<br>UserRootFolder=2<br>UserSubFolder=sakura_settings<br><br>この後はどうしたらいいでしょうか。<br>タイプ別設定ダイアログの左下に[設定フォルダ(/)&gt;&gt;]が表示されていないので、設定フォルダの変更ができません。<br><br>よろしくお願いいたします。</div></section>
+    <ul><li><section><h1 id=7150>
+    <span class="no">[7150]</span>
+    <a class="thread-title" href="#7150">Re3: 折り返し設定がクリアになってしまう</a>
+    <span class="author">もか</span>
+    <time datetime="2010-03-04T16:52:30">2010年03月04日 16:52</time></h1>
+    <div class="body">&gt;そこで、ヘルプにしたがってC:\Documents and Settings\&lt;username&gt;\My Documents\sakura_settings\sakura.iniを作成し、以下のように書き込みました。<br>&gt;<br>&gt;[Settings]<br>&gt;MultiUser=1<br>&gt;UserRootFolder=2<br>&gt;UserSubFolder=sakura_settings<br>例2ですね。<br>これ、ヘルプの該当ページの上のほうをよく読むと、自分のフォルダの sakura.ini ではなくて、<br>上記内容を「sakura.exe.iniという名前で、sakura.exeと同じフォルダに置く」必要があることがわかります。<br>つまり、設定するには管理者権限(正確にはPower Users以上)が必要です。<br><br>もし管理者権限は利用不可で、個別のアプリケーションのインストール許可がある場合は、sakuraを自分のプロファイル(C:\Documents and Settings\&lt;username&gt;\以下)に別でインストール(プログラムファイルをコピペ)することもできます。<br>マイドキュメントの中のsakura_settingsにおいても問題ありません。<br>この場合は、sakura.exe.iniはあっても動きますが不要です。<br><br>どっちも不可能の場合は、管理者にご相談ください。<br><br>共通インストール+個別でサクラエディタを使う場合のファイルの関連付けは、やこしいことになります。<br>一般ユーザで運用されているので、知っているかもしれませんが、他の人にも参考になるように書いておきます。<br>従来の方法で関連付けを変更すると自分以外はファイルを開けなくなりますので、以下の手順で、<br>自分の関連付けだけ変更するようにします。<br>sakurauserの部分は、末尾が数字でないならなんでもいいです。<br>ちなみに個人のほうをUnicode版にすると、「サクラエディタW」になるので区別できて楽です。<br>以下の手順は Windows XP SP3 Home の制限付きアカウント(=一般ユーザ)で確認しています。<br>Proは場合によって違うかも。<br>1. 自分のsakura.exeを改名してsakurauser.exe 等にする<br>  これは、OSの関連付けシステムが実行ファイル名のみで区別しているために変更を推奨します<br>2. 自分が起動するのは、必ずsakurauser.exeのほうにする<br>3. インストーラ付属の関連付けツールは(使えないと思うけど)使わない<br>4. ファイルを右クリックして「プログラムから開く(H)&gt;]-[プログラムから選択]で関連付けを変更<br>・もしwebから探すかどうか表示されたら「一覧からプログラムを選ぶ」で選ぶ<br>・[この種類(中略)いつも使う]をチェック←これがユーザ別関連付けの指示<br>・一覧に「サクラエディタ」があるかもしれないですが、これは共通インストールの方だと思うので選ばない<br>・[参照]で、自分のsakurauser.exeを選ぶ<br>・一覧に前からあれば「サクラエディタ」が2つ表示される。今[参照]で選んだほうが自動で選択された状態になる<br>・「ファイルを開くプログラムを選択」を[OK]で閉じる<br>関連付けをエクスプローラのフォルダオプションで変更..とおもったら制限付きアカウントではできませんでした。<br></div></section>
+    <ul><li><section><h1 id=7154>
+    <span class="no">[7154]</span>
+    <a class="thread-title" href="#7154">Re4: 折り返し設定がクリアになってしまう</a>
+    <span class="author">ぽじととん</span>
+    <time datetime="2010-03-10T14:28:11">2010年03月10日 14:28</time></h1>
+    <div class="body">もかさん<br><br>くわしいご説明ありがとうございます。<br><br>&gt; 上記内容を「sakura.exe.iniという名前で、sakura.exeと同じフォルダに置く」必要があることがわかります。<br>管理者に相談して、上記のようにしてもらいました。<br><br>ほんとにありがとうございました。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=7421>
+    <span class="no">[7421]</span>
+    <a class="thread-title" href="#7421">-</a>
+    <span class="author">管理者削除</span>
+    <time datetime="2011-08-22T15:22:07">2011年08月22日 15:22</time></h1>
+    <div class="body">-</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>[バグ]改行を含むダブルコーテーションの上書きで、継続行の色がかわりません | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">8154</span>
+    <a class="thread-title" href="8154.html#8154">[バグ]改行を含むダブルコーテーションの上書きで、継続行の色がかわりません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8156</span>
+    <a class="thread-title" href="8154.html#8156">Re:[バグ]改行を含むダブルコーテーションの上書きで、継続行の色がかわりません</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8154>
+    <span class="no">[8154]</span>
+    <a class="thread-title" href="#8154">[バグ]改行を含むダブルコーテーションの上書きで、継続行の色がかわりません</a>
+    <span class="author">mmm</span>
+    <time datetime="2016-07-16T07:34:09">2016年07月16日 07:34</time></h1>
+    <div class="body">Javascriptファイル(.js)などで、複数の行に渡る文字列を色分けしているとき、引用符や二重引用符を入力すると、以降の行を含め文字列の色になります。<br><br>ところが、これにたいして、上書きモードで、引用符や二重引用符を他の文字で上書きしても、色がかわる範囲がその行だけで、次の行以降の色が変わりません。<br><br>文字の上書きではなく、削除などでは正しく色が反映されます。<br><br>Ver 2.3.0.0 で確認しました。<br></div></section>
+    <ul><li><section><h1 id=8156>
+    <span class="no">[8156]</span>
+    <a class="thread-title" href="#8156">Re:[バグ]改行を含むダブルコーテーションの上書きで、継続行の色がかわりません</a>
+    <span class="author">もか</span>
+    <time datetime="2016-07-23T21:37:42">2016年07月23日 21:37</time></h1>
+    <div class="body">報告ありがとうございます。<br>該当バグを確認しました。<br>バグのコードの該当箇所を見た感じではかなり昔から発生するようです。<br>1.6.6.0 x<br>2.0.0.0 x<br><br>なお、文字列の色以外にコメント色などでも発生するはずです。<br>暫定パッチを登録しました。patchunicode#1081です。<br></div></section>
+    </li></ul></li></ul></body></html>

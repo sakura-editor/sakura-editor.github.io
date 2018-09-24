@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>画面がとても大きいと選択範囲が反転しない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4333</span>
+    <a class="thread-title" href="4333.html#4333">画面がとても大きいと選択範囲が反転しない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4341</span>
+    <a class="thread-title" href="4333.html#4341">Re: 画面がとても大きいと選択範囲が反転しない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4347</span>
+    <a class="thread-title" href="4333.html#4347">Re2: 画面がとても大きいと選択範囲が反転しない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4387</span>
+    <a class="thread-title" href="4333.html#4387">Re3: 画面がとても大きいと選択範囲が反転しない</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4333>
+    <span class="no">[4333]</span>
+    <a class="thread-title" href="#4333">画面がとても大きいと選択範囲が反転しない</a>
+    <span class="author">もか</span>
+    <time datetime="2006-03-24T21:59:37">2006年03月24日 21:59</time></h1>
+    <div class="body">画面の幅が大きく、3000px超えて選択した時に、右側が反転しません。<br>1280x1024の画面をマルチディスプレー構成で3つ横に並べて表示すると超えるので<br>あり得ない幅では無いです。<br><br>CEditView_New2.cpp<br>CEditView::DispTextSelected<br>493行目以下の<br>&#9;&#9;&#9;if( rcClip.right - rcClip.left &gt; 3000 ){<br>&#9;&#9;&#9;&#9;rcClip.right = rcClip.left + 3000;<br>&#9;&#9;&#9;}<br><br>この処理を削除すると、何か問題が出るかは未検証です。<br><br># ディスプレイ３つも持ってないけど。<br></div></section>
+    <ul><li><section><h1 id=4341>
+    <span class="no">[4341]</span>
+    <a class="thread-title" href="#4341">Re: 画面がとても大きいと選択範囲が反転しない</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-03-26T00:55:05">2006年03月26日 00:55</time></h1>
+    <div class="body">&gt;CEditView_New2.cpp<br>&gt;CEditView::DispTextSelected<br>&gt;493行目以下の<br>CEditView.cpp(2192)のCEditView::DrawSelectAreaLine()でも同様の処理がありますね．<br>初期ソースから入っていましたので，理由はわかりません．選択範囲だけというのも妙です．<br>あんまり意味がないような気はします．<br></div></section>
+    <ul><li><section><h1 id=4347>
+    <span class="no">[4347]</span>
+    <a class="thread-title" href="#4347">Re2: 画面がとても大きいと選択範囲が反転しない</a>
+    <span class="author">もか</span>
+    <time datetime="2006-03-29T02:13:26">2006年03月29日 02:13</time></h1>
+    <div class="body">&gt;CEditView.cpp(2192)のCEditView::DrawSelectAreaLine()でも同様の処理がありますね．<br>&gt;初期ソースから入っていましたので，理由はわかりません．選択範囲だけというのも妙です．<br>&gt;あんまり意味がないような気はします．<br>Win9xの16bit制限に絡んで、おかしくなるのかとも考えましたが<br>うまく再現できなかったので、安全優先で画面内に抑えるように修正しました。<br>CEditView::DrawSelectAreaLine()も合わせて変更し、<br>ついでに処理の効率化をしたつもりです。<br><br>TortoiseSVN 便利ですね。<br>rev 954 からの差分を改行コードだけCRLFに変えてYahoo Groupにアップしました。<br>今回は直接コミットするには大きい・ブランチには小さいのでパッチにしました。<br>sdiff_r954_select_draw_fix.zip <br>です。<br></div></section>
+    <ul><li><section><h1 id=4387>
+    <span class="no">[4387]</span>
+    <a class="thread-title" href="#4387">Re3: 画面がとても大きいと選択範囲が反転しない</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-04-08T11:25:03">2006年04月08日 11:25</time></h1>
+    <div class="body">sakura/trunk#957でCommitしました．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

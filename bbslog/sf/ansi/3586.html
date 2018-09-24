@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ブロック型のコメント | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3586</span>
+    <a class="thread-title" href="3586.html#3586">ブロック型のコメント</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3587</span>
+    <a class="thread-title" href="3586.html#3587">Re: ブロック型のコメント</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3598</span>
+    <a class="thread-title" href="3586.html#3598">Re2: ブロック型のコメント</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3586>
+    <span class="no">[3586]</span>
+    <a class="thread-title" href="#3586">ブロック型のコメント</a>
+    <span class="author">ロキ</span>
+    <time datetime="2004-05-26T00:53:31">2004年05月26日 00:53</time></h1>
+    <div class="body">はじめまして<br>以前からサクラエディタをありがたく使わせていただいております<br><br>さて掲題の件ですが、最近C言語のソースを見るようになり<br>ブロック型のコメントの変色範囲が括弧の判定と同じようにならないかな<br>と思いここに書かせていただきました。<br><br>現在では以下のようになっていますが<br>/* コメント色  /* ここもコメント色 */ ここは通常色 */<br><br>以下のように変更できないでしょうか？<br>/* コメント色 /* ここもコメント色 */ ここもコメント色 */<br><br>括弧の判定では似たような動作になっていますので、<br>できないのかな？と思っていますが、なにぶんまだ素人ですので・・・<br><br>可能でしたらよろしくお願いいたします<br></div></section>
+    <ul><li><section><h1 id=3587>
+    <span class="no">[3587]</span>
+    <a class="thread-title" href="#3587">Re: ブロック型のコメント</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-05-26T07:41:21">2004年05月26日 07:41</time></h1>
+    <div class="body">C言語に限った話をすれば，コメントのネストは許されていませんので<br>&gt;現在では以下のようになっていますが<br>&gt;/* コメント色  /* ここもコメント色 */ ここは通常色 */<br>が規格通りの解釈です．<br><br>&gt;以下のように変更できないでしょうか？<br>&gt;/* コメント色 /* ここもコメント色 */ ここもコメント色 */<br>のつもりで書くとコンパイルエラーになりますよ．<br><br>&gt;括弧の判定では似たような動作になっていますので、<br>&gt;できないのかな？と思っていますが、なにぶんまだ素人ですので・・・<br>色分け部分はべたべたに実装されているので，柔軟には変更できません．<br>1関数で1000行を超えているので直すのも大変．<br>誰か汎用的な物に作り直してくれないかなぁ．<br></div></section>
+    <ul><li><section><h1 id=3598>
+    <span class="no">[3598]</span>
+    <a class="thread-title" href="#3598">Re2: ブロック型のコメント</a>
+    <span class="author">ロキ</span>
+    <time datetime="2004-05-28T13:15:26">2004年05月28日 13:15</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; C言語に限った話をすれば，コメントのネストは許されていませんので<br>&gt; &gt;現在では以下のようになっていますが<br>&gt; &gt;/* コメント色  /* ここもコメント色 */ ここは通常色 */<br>&gt; が規格通りの解釈です．<br>ひゃ～(&gt;_&lt;)<br>大変失礼しました<br>しかも自分の見たソースは<br>#if 0～#endifになってました<br><br>#if 0<br>コメント色<br>#ifdef A<br>コメント色<br>#endif<br>通常色　　　←ここがコメント色になってほしかった<br>#endif<br><br>こんな感じでした<br>1000行超えてるんですか！！<br>それは大変ですね・・・</div></section>
+    </li></ul></li></ul></li></ul></body></html>

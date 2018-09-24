@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ssrc_2001-12-31.zip | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1068</span>
+    <a class="thread-title" href="1068.html#1068">ssrc_2001-12-31.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1072</span>
+    <a class="thread-title" href="1068.html#1072">Re:ssrc_2001-12-31.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1073</span>
+    <a class="thread-title" href="1068.html#1073">Re2:ssrc_2001-12-31.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1074</span>
+    <a class="thread-title" href="1068.html#1074">Re3:ssrc_2001-12-31.zip</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1075</span>
+    <a class="thread-title" href="1068.html#1075">Re3:ssrc_2001-12-31.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1088</span>
+    <a class="thread-title" href="1068.html#1088">Re4:ssrc_2001-12-31.zip</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1080</span>
+    <a class="thread-title" href="1068.html#1080">Re: ssrc_2001-12-31.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1082</span>
+    <a class="thread-title" href="1068.html#1082">Re2: ssrc_2001-12-31.zip</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1068>
+    <span class="no">[1068]</span>
+    <a class="thread-title" href="#1068">ssrc_2001-12-31.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-31T15:35:06">2001年12月31日 15:35</time></h1>
+    <div class="body">アップロードしました。<br>ssrc_2001-12-27.zipからの変更点やメモは次のとおりです。<br><br>・CShareDataのSingleton化は見送り。<br>　よりよい実装があると思うので。<br><br>・「working ...」問題に対処しました。<br>　報告してくれたtomさん、ありがとう。<br>　修正に協力してくれた、あろかさん、げんたさんありがとう。<br><br>・btoolのバグ修正と、sakurabc.makを取り込みました。<br>　あろかさんありがとう。<br><br>・VC++で、DLL無し版を作成するプロジェクトファイルとヘッダファイルの修正を取り込みました。<br>　みくさんありがとう。<br><br>・DrawEOLでPenを削除していなかった問題に対処。<br>　気が付いて教えてくれたあろかさん、ありがとう。<br><br>あとは2chにかかれていたことを少々。<br>・ホイールのスクロール行を10行上限→30行上限に変更。<br>　2chの542の要望にこたえました。<br>　コントロールパネルにあるホイールマウスの設定が30行上限だったので。<br><br>・共通設定のタスクトレイ関係の挙動を少し変えてみました。<br><br>では、よいお年を～。</div></section>
+    <ul><li><section><h1 id=1072>
+    <span class="no">[1072]</span>
+    <a class="thread-title" href="#1072">Re:ssrc_2001-12-31.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-03T01:08:56">2002年01月03日 01:08</time></h1>
+    <div class="body">途中経過メモです。<br><br>BugsInfo.txtにある次のバグは修正しました。<br>・メニューのツール-&gt;共通設定-&gt;マクロにあるヘルプボタンが反応しない<br>　→ヘルプでも対応してください、よろしくお願いします。<br><br>・[共通設定]、[タイプ別設定]でタブを数度切り替えると前回アクティブのタブを正しく覚えていない<br>　→PSN_SETACTIVEを拾って、m_nPageNumを変更するようにしました。<br><br>この2つはユーザ掲示板のほうにも書いたことと同じです。<br><br>さらに、<br>・共通設定でOKを押さなくてもTABを切り替えるだけで外部マクロの設定が反映されてしまう<br>　→CPropCommonに、<br>　　MacroRec m_MacroTable[MAX_CUSTMACRO]; //!&lt; キー割り当て用マクロテーブル<br>　　char     m_szMACROFOLDER[_MAX_PATH];  /* マクロ用フォルダ */<br>　　を追加。関係する処理も追加。<br><br>も修正しました。<br><br>では～。</div></section>
+    <ul><li><section><h1 id=1073>
+    <span class="no">[1073]</span>
+    <a class="thread-title" href="#1073">Re2:ssrc_2001-12-31.zip</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-03T08:58:58">2002年01月03日 08:58</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; 途中経過メモです。<br>&gt; <br>&gt; BugsInfo.txtにある次のバグは修正しました。<br>&gt; ・メニューのツール-&gt;共通設定-&gt;マクロにあるヘルプボタンが反応しない<br>&gt; 　→ヘルプでも対応してください、よろしくお願いします。<br><br>コードが実装されてません。<br>eGroupsに差分をアップしておきました。<br><br></div></section>
+    <ul><li><section><h1 id=1074>
+    <span class="no">[1074]</span>
+    <a class="thread-title" href="#1074">Re3:ssrc_2001-12-31.zip</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-03T10:21:33">2002年01月03日 10:21</time></h1>
+    <div class="body">&gt; コードが実装されてません。<br>&gt; eGroupsに差分をアップしておきました。<br><br>popuphelp.txtにはその他のダイアログに関する<br>修正方法も載せてますが、ファイルを開く等のヘ<br>ルプがどう動作するかわからないです(試してない)。<br></div></section>
+    </li><li><section><h1 id=1075>
+    <span class="no">[1075]</span>
+    <a class="thread-title" href="#1075">Re3:ssrc_2001-12-31.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-03T11:42:41">2002年01月03日 11:42</time></h1>
+    <div class="body">▼ みくさん<br>&gt; ▼ やざきさん<br>&gt; &gt; 途中経過メモです。<br>&gt; &gt; <br>&gt; &gt; BugsInfo.txtにある次のバグは修正しました。<br>&gt; &gt; ・メニューのツール-&gt;共通設定-&gt;マクロにあるヘルプボタンが反応しない<br>&gt; &gt; 　→ヘルプでも対応してください、よろしくお願いします。<br>&gt; <br>&gt; コードが実装されてません。<br>&gt; eGroupsに差分をアップしておきました。<br>&gt; <br><br>ありがとうございます。取り込みます。<br>今日か、明日には、ここまでの成果をアップロードしたいと思います。<br><br>で、Undoしたりすると、変更してない行も変更行として表示されちゃうバグに手をつけようかと思ってます。（挫折するかもしれませんが）<br><br>では～</div></section>
+    <ul><li><section><h1 id=1088>
+    <span class="no">[1088]</span>
+    <a class="thread-title" href="#1088">Re4:ssrc_2001-12-31.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-06T11:00:11">2002年01月06日 11:00</time></h1>
+    <div class="body">&gt; で、Undoしたりすると、変更してない行も変更行として表示されちゃうバグに手をつけようかと思ってます。（挫折するかもしれませんが）<br><br>この変更行として表示されてしまうバグは、修正しようとするとどんどん深みにはまっていくので、いったん手を引きます。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=1080>
+    <span class="no">[1080]</span>
+    <a class="thread-title" href="#1080">Re: ssrc_2001-12-31.zip</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-04T16:53:43">2002年01月04日 16:53</time></h1>
+    <div class="body">&gt;・「working ...」問題に対処しました。<br>一般掲示板で書いたようにディレクトリを対象外にする方法の方が柔軟だと思いますが。<br><br>そもそもWorking...で変にジャンプして困る人はいないと思いますが、他の文字列で始まる場合にタグジャンプしなくなって困る人はいると思いますよ。もし前者で困る人がいるとすればWorking...の後ろに本当のファイル名が書かれているはずで、今回の対応では役に立たないわけですし。<br><br>あと、データ領域の長さを調べないでmemcmpで14byteも比較するのは危険です。空行でTAGJUMPを実行すると後ろにはみ出して、場合によってはアプリケーションエラーになります。<br></div></section>
+    <ul><li><section><h1 id=1082>
+    <span class="no">[1082]</span>
+    <a class="thread-title" href="#1082">Re2: ssrc_2001-12-31.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-04T18:03:23">2002年01月04日 18:03</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;・「working ...」問題に対処しました。<br>&gt; 一般掲示板で書いたようにディレクトリを対象外にする方法の方が柔軟だと思いますが。<br>&gt; <br>&gt; そもそもWorking...で変にジャンプして困る人はいないと思いますが、他の文字列で始まる場合にタグジャンプしなくなって困る人はいると思いますよ。もし前者で困る人がいるとすればWorking...の後ろに本当のファイル名が書かれているはずで、今回の対応では役に立たないわけですし。<br><br>ディレクトリにジャンプするのも絶対使えないとは言い切れないと思いますし、そもそもの目的「Borland形式のものには対応し、working ...でタグジャンプさせない。エラーメッセージも出さない。」を達成できているので、私はいいと思っています。<br>この件については、げんたさんが強く興味をもたれていたようなので、げんたさんによる修正を期待していました。:-)<br>今も期待しています。<br> <br>&gt; あと、データ領域の長さを調べないでmemcmpで14byteも比較するのは危険です。空行でTAGJUMPを実行すると後ろにはみ出して、場合によってはアプリケーションエラーになります。<br><br>こちらは、げんたさんパッチができあがるまでは問題が残るので、手元では修正しておきました。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

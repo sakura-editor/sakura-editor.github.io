@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>先読み対応置換での不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3942</span>
+    <a class="thread-title" href="3942.html#3942">先読み対応置換での不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3948</span>
+    <a class="thread-title" href="3942.html#3948">Re: 先読み対応置換での不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3949</span>
+    <a class="thread-title" href="3942.html#3949">Re2: 先読み対応置換での不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3950</span>
+    <a class="thread-title" href="3942.html#3950">Re3: 先読み対応置換での不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3951</span>
+    <a class="thread-title" href="3942.html#3951">Re4: 先読み対応置換での不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3952</span>
+    <a class="thread-title" href="3942.html#3952">Re5: 先読み対応置換での不具合</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4090</span>
+    <a class="thread-title" href="3942.html#4090">Re5: 先読み対応置換での不具合</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3942>
+    <span class="no">[3942]</span>
+    <a class="thread-title" href="#3942">先読み対応置換での不具合</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-06-08T00:25:26">2005年06月08日 00:25</time></h1>
+    <div class="body">開発3937<br>一般4487<br>での不具合対応です。<br><br>実行形式：(1.5.3.0:tarballが1.5.3.0だったので)<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_20050608.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_2<wbr>0050608.<wbr>lzh</nobr></a><br><br>差分(1.5.3.0)：<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_R1531_sabun.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_R<wbr>1531_sab<wbr>un.<wbr>lzh</nobr></a><br><br></div></section>
+    <ul><li><section><h1 id=3948>
+    <span class="no">[3948]</span>
+    <a class="thread-title" href="#3948">Re: 先読み対応置換での不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-06-16T23:32:20">2005年06月16日 23:32</time></h1>
+    <div class="body">試してみました．<br>通常の置換と結果を前に挿入するのはうまく動きましたが，置換結果をマッチの後ろに挿入するように指定した場合に，何故か行頭に挿入されてしまうようです．<br></div></section>
+    <ul><li><section><h1 id=3949>
+    <span class="no">[3949]</span>
+    <a class="thread-title" href="#3949">Re2: 先読み対応置換での不具合</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-06-18T00:50:18">2005年06月18日 00:50</time></h1>
+    <div class="body">&gt;タイトル: Re2: 先読み対応置換での不具合<br>&gt;発言者: げんた<br>&gt;試してみました．<br>&gt;通常の置換と結果を前に挿入するのはうまく動きましたが，置換結果をマッチの後ろに挿入するように指定した場合に，何故か行頭に挿入されてしまうようです．<br><br>後ろに挿入する場合、マッチ文字が行末だと次の行の行頭に挿入する「仕様」みたいですが、<br>それのことかな？<br></div></section>
+    <ul><li><section><h1 id=3950>
+    <span class="no">[3950]</span>
+    <a class="thread-title" href="#3950">Re3: 先読み対応置換での不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-06-18T09:39:23">2005年06月18日 09:39</time></h1>
+    <div class="body">&gt;後ろに挿入する場合、マッチ文字が行末だと次の行の行頭に挿入する「仕様」みたいですが、<br>ぬ～，そんな仕様だったのですか．<br>ですが，どうもパターンによっては最後に1文字マッチしない文字がある場合でも次の行に送られてしまうパターンがあるようです．<br><br>たとえば，<br>abcdefg234<br>abcdefg234<br>abcdefg234<br>に対して<br><br>結果を後ろに挿入する設定でefg23→Aと正規表現置換するとAが次の行の行頭に入ります．正規表現でなければ正しく4の前に入るようです．<br></div></section>
+    <ul><li><section><h1 id=3951>
+    <span class="no">[3951]</span>
+    <a class="thread-title" href="#3951">Re4: 先読み対応置換での不具合</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-06-18T14:59:44">2005年06月18日 14:59</time></h1>
+    <div class="body">&gt;タイトル: Re4: 先読み対応置換での不具合<br>&gt;発言者: げんた<br>&gt;&gt;後ろに挿入する場合、マッチ文字が行末だと次の行の行頭に挿入する「仕様」みたいですが、<br>&gt;ぬ～，そんな仕様だったのですか．<br><br>経緯は分からないのですが、<br>コメントに書いてあるので仕様だと思われます。<br>&#9;&#9;&#9;&#9;//検索後の文字が改行やったら次の行の先頭へ移動<br>こんな風に・・・<br><br>実は、微妙に気持ち悪いなとは思っていたのですが・・・このままでいいですか？<br><br>&gt;ですが，どうもパターンによっては最後に1文字マッチしない文字がある場合でも次の行に送られてしまうパターンがあるようです．<br>ほんとうだ！１文字ずれてる。どうやら昔からあるバグみたいです（笑）<br>先ほどのコメントのある、「改行やったら」の判定に等号が要らないようです。（下記２カ所）<br><br>---------------------------<br>diff --dos -ur -x CVS -x tags -x sakura_rc.aps -x *.obj -x *.RES -x *.rc sakura_core_R1_5_3_1/CEditView_Command.cpp sakura_core/CEditView_Command.cpp<br>--- sakura_core_R1_5_3_1/CEditView_Command.cpp&#9;Sat Apr 23 08:48:20 2005<br>+++ sakura_core/CEditView_Command.cpp&#9;Sat Jun 18 14:55:14 2005<br>@@ -7482,7 +7482,7 @@<br> &#9;&#9;&#9;&#9;const CLayout* pcLayout;<br> &#9;&#9;&#9;&#9;const char*&#9;pLine = m_pcEditDoc-&gt;m_cLayoutMgr.GetLineStr( m_nSelectLineTo, &amp;nLineLen, &amp;pcLayout );<br> &#9;&#9;&#9;&#9;if( NULL != pLine &amp;&amp;<br>-&#9;&#9;&#9;&#9;&#9;colTmp &gt;= nLineLen - (pcLayout-&gt;m_cEol.GetLen()) ){<br>+&#9;&#9;&#9;&#9;&#9;colTmp &gt; nLineLen - (pcLayout-&gt;m_cEol.GetLen()) ){<br> &#9;&#9;&#9;&#9;&#9;m_nSelectColmTo=0;<br> &#9;&#9;&#9;&#9;&#9;m_nSelectLineTo++;<br> &#9;&#9;&#9;&#9;}<br>@@ -7934,7 +7899,7 @@<br> &#9;&#9;&#9;&#9;{<br> &#9;&#9;&#9;&#9;&#9;pLine = rLayoutMgr.GetLineStr( m_nSelectLineTo, &amp;nLineLen, &amp;pcLayout );<br> &#9;&#9;&#9;&#9;&#9;if( NULL != pLine &amp;&amp;<br>-&#9;&#9;&#9;&#9;&#9;&#9;colTmp &gt;= nLineLen - (pcLayout-&gt;m_cEol.GetLen()) ){<br>+&#9;&#9;&#9;&#9;&#9;&#9;colTmp &gt; nLineLen - (pcLayout-&gt;m_cEol.GetLen()) ){<br> &#9;&#9;&#9;&#9;&#9;&#9;bLineOffset=TRUE;<br> &#9;&#9;&#9;&#9;&#9;}<br> &#9;&#9;&#9;&#9;}<br>---------------------------<br></div></section>
+    <ul><li><section><h1 id=3952>
+    <span class="no">[3952]</span>
+    <a class="thread-title" href="#3952">Re5: 先読み対応置換での不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-06-18T16:15:22">2005年06月18日 16:15</time></h1>
+    <div class="body">&gt;実は、微妙に気持ち悪いなとは思っていたのですが・・・このままでいいですか？<br>&gt;ほんとうだ！１文字ずれてる。どうやら昔からあるバグみたいです（笑）<br>パッチありがとうございました．<br>昔からあるバグなのに誰も気付いていないってことは，誰もこの機能使ってないのかなぁ...(^^;)<br></div></section>
+    </li><li><section><h1 id=4090>
+    <span class="no">[4090]</span>
+    <a class="thread-title" href="#4090">Re5: 先読み対応置換での不具合</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-11-06T01:08:03">2005年11月06日 01:08</time></h1>
+    <div class="body">&gt; &gt;タイトル: Re4: 先読み対応置換での不具合<br>&gt; &gt;発言者: げんた<br>&gt; &gt;&gt;後ろに挿入する場合、マッチ文字が行末だと次の行の行頭に挿入する「仕様」みたいですが、<br>&gt; &gt;ぬ～，そんな仕様だったのですか．<br>&gt; <br>&gt; 経緯は分からないのですが、<br>&gt; コメントに書いてあるので仕様だと思われます。<br>&gt; &#9;&#9;&#9;&#9;//検索後の文字が改行やったら次の行の先頭へ移動<br>&gt; こんな風に・・・<br>&gt; <br>&gt; 実は、微妙に気持ち悪いなとは思っていたのですが・・・このままでいいですか？<br><br>リポジトリをさかのぼってみましたが、<br>置換の処理をCDlgReplace.cppでやっていた頃にさかのぼって、<br>Rev 1.7 ～ 1.8 になる時に、追加される時にすでに<br>&#9;&#9;&#9;&#9;//検索後の文字が改行やったら次の行の先頭へ移動<br>の処理がありますね・・・<br><br>このままでいいですか？の問いにレスポンスもなかったのですが、<br>げんたさんが仕様であることを知らなかったことも考慮に入れて、<br>動作自体も直感的な動作じゃないし、この処理、やめてみようかと思います。<br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

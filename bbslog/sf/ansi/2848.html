@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バグ：ウインドウメニューのウインドウリスト | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2848</span>
+    <a class="thread-title" href="2848.html#2848">バグ：ウインドウメニューのウインドウリスト</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2866</span>
+    <a class="thread-title" href="2848.html#2866">RE: バグ：ウインドウメニューのウインドウリスト</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2848>
+    <span class="no">[2848]</span>
+    <a class="thread-title" href="#2848">バグ：ウインドウメニューのウインドウリスト</a>
+    <span class="author">みく</span>
+    <time datetime="2003-06-14T08:06:32">2003年06月14日 08:06</time></h1>
+    <div class="body"><br>ウインドウメニューのウインドウリスト（開いた順）と<br>トレイ左メニューのウインドウリスト（最近使った順）の<br>並び順が違います。<br><br>ウインドウ切り替え処理では、最近使った順のインデックスを使う<br>ので、選んだウインドウと違うウインドウに飛びます。<br><br>CEditWnd::InitMenu()<br>nRowNum = CShareData::getInstance()-&gt;GetOpenedWind<br>owArr( &amp;pEditNodeArr, FALSE );<br><br>引数をTRUE(開いた順)→FALSE(最近使った順)に変更<br></div></section>
+    <ul><li><section><h1 id=2866>
+    <span class="no">[2866]</span>
+    <a class="thread-title" href="#2866">RE: バグ：ウインドウメニューのウインドウリスト</a>
+    <span class="author">みく</span>
+    <time datetime="2003-06-17T18:41:13">2003年06月17日 18:41</time></h1>
+    <div class="body"><br>取り消します。<br>タブ用のソースのバグでした。<br><br>CShareData::GetOpenedWindowArr()<br>が返す情報のインデックス(m_nIndex)は、m_pEditArr[]の配列番号でした。<br><br><br>でも、よく見ると、オリジナルもバグってるような。。。<br>もしもIsEditWnd()==FALSEのウインドウがあるときに、<br>インデックスがずれるような気がします。<br>＃そんなウインドウがあるかどうかはわかりませんけど。<br></div></section>
+    </li></ul></li></ul></body></html>

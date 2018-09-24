@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バグ？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2820</span>
+    <a class="thread-title" href="2820.html#2820">バグ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2846</span>
+    <a class="thread-title" href="2820.html#2846">Re: バグ？</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2820>
+    <span class="no">[2820]</span>
+    <a class="thread-title" href="#2820">バグ？</a>
+    <span class="author">みく</span>
+    <time datetime="2003-03-12T18:44:08">2003年03月12日 18:44</time></h1>
+    <div class="body"><br>CDocLineMgr.cpp:2186行目<br>if( pData[nIdx] &gt;= (char)0xa1 &amp;&amp; pData[nIdx] &lt;= (char)0xfd ){<br></div></section>
+    <ul><li><section><h1 id=2846>
+    <span class="no">[2846]</span>
+    <a class="thread-title" href="#2846">Re: バグ？</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-03-30T04:26:27">2003年03月30日 04:26</time></h1>
+    <div class="body">&gt;CDocLineMgr.cpp:2186行目<br>&gt;if( pData[nIdx] &gt;= (char)0xa1 &amp;&amp; pData[nIdx] &lt;= (char)0xfd ){<br>if( pData[nIdx] &gt;= (char)0xa1 &amp;&amp; pData[nIdx] &lt;= (char)0xdf )<br>が正解っぽいですね。<br><br>しかし、2バイトコードの領域は1つ前のifで分岐済みなので実害は無し、と。<br></div></section>
+    </li></ul></li></ul></body></html>

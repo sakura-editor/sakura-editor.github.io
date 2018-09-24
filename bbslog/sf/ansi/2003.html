@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ssrc_2002-05-01.zip | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2003</span>
+    <a class="thread-title" href="2003.html#2003">ssrc_2002-05-01.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2004</span>
+    <a class="thread-title" href="2003.html#2004">RE: ssrc_2002-05-01.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2009</span>
+    <a class="thread-title" href="2003.html#2009">Re2: ssrc_2002-05-01.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2013</span>
+    <a class="thread-title" href="2003.html#2013">ssrc_2002-05-01.zipをbcc32で</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2017</span>
+    <a class="thread-title" href="2003.html#2017">Re3: ssrc_2002-05-01.zip</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2010</span>
+    <a class="thread-title" href="2003.html#2010">Re:ssrc_2002-05-01.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2014</span>
+    <a class="thread-title" href="2003.html#2014">Re2:ssrc_2002-05-01.zip</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2016</span>
+    <a class="thread-title" href="2003.html#2016">Re2:ssrc_2002-05-01.zip</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2003>
+    <span class="no">[2003]</span>
+    <a class="thread-title" href="#2003">ssrc_2002-05-01.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-05-01T15:32:05">2002年05月01日 15:32</time></h1>
+    <div class="body"><br>アップロードしました。<br>http://sakura-editor.sourceforge.net/snapshot/ssrc_2002-04-27.zip<br><br>詳しくは、一般のほうをごらんあれ。<br>data#1765<br><br>・MacroFuncInfoを、VARTYPEを使うように変更。<br><br>ということで、WSH対応に期待!<br></div></section>
+    <ul><li><section><h1 id=2004>
+    <span class="no">[2004]</span>
+    <a class="thread-title" href="#2004">RE: ssrc_2002-05-01.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-05-01T15:33:11">2002年05月01日 15:33</time></h1>
+    <div class="body"><br>間違い<br><br>アップロードしました。<br><a href=http://sakura-editor.sourceforge.net/snapshot/ssrc_2002-05-01.zip target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>snapshot<wbr>/<wbr>ssrc_200<wbr>2-<wbr>05-<wbr>01.<wbr>zip</nobr></a><br><br>詳しくは、一般のほうをごらんあれ。<br><a href=../data#1792 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>data&<wbr>tree=<wbr>c1792</nobr></a><br><br>でした。<br></div></section>
+    <ul><li><section><h1 id=2009>
+    <span class="no">[2009]</span>
+    <a class="thread-title" href="#2009">Re2: ssrc_2002-05-01.zip</a>
+    <span class="author">おに</span>
+    <time datetime="2002-05-01T21:55:43">2002年05月01日 21:55</time></h1>
+    <div class="body">bcc32でコンパイルできなくなっています。<br>・makefileに$(SRCDIR)\CMacroFactory.objが無い<br>・CEditView_Command.cppで#include順によりCDlgAbout.hの内容が読まれない(理由は不明)<br>はいじれば通らせることはできましたが、CMacroFactory.cpp(55行)のSTLとtolowerを組み合わせている箇所で起きるコンパイルエラーが解決できません。<br>とりあえずtolowerはbcc32ではstd::名前空間にあるみたいです。<br>(STLわかりません… ;_;)</div></section>
+    <ul><li><section><h1 id=2013>
+    <span class="no">[2013]</span>
+    <a class="thread-title" href="#2013">ssrc_2002-05-01.zipをbcc32で</a>
+    <span class="author">おに</span>
+    <time datetime="2002-05-02T21:54:47">2002年05月02日 21:54</time></h1>
+    <div class="body">・CMacroFactoryとCMacroManagerBaseをmakefileに追加。<br>・CEditView_CommandでCDlgAbout.hを先頭で#include(理由は不明)<br>・tolowerはbcc32ではintを返すので小文字化はforで行う<br><br>ようにすれば、通るようになりました。</div></section>
+    </li><li><section><h1 id=2017>
+    <span class="no">[2017]</span>
+    <a class="thread-title" href="#2017">Re3: ssrc_2002-05-01.zip</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-04T01:58:10">2002年05月04日 01:58</time></h1>
+    <div class="body">&gt;・makefileに$(SRCDIR)\CMacroFactory.objが無い<br>BCCは無料ダウンロードできますのでリリース前にコンパイルを試していただけるとありがたいんですが。＞やざきさん<br><br>&gt;・CEditView_Command.cppで#include順によりCDlgAbout.hの内容が読まれない(理由は不明)<br>1つ上でも下でもこのエラーは出ませんね。<br>場所を変えずともCDlgAbout.hの先頭にある<br>class CDlgAbout;<br>を削除したらうまくいきました。<br><br>CDlgAboutの定義の前にわざわざclass CDlgAbout;としている理由は何なんでしょう？<br>他のヘッダファイルでもクラス定義の前に先行宣言を行っているようですが。<br><br>&gt; CMacroFactory.cpp(55行)のSTLとtolowerを組み合わせている箇所で起きるコンパイルエラーが解決できません。<br>まず、ctype.hのインクルードを忘れていました。m(_ _)m<br><br>tolowerを(int (*)(int))でキャストしたらエラーが出なくなりました。エラーメッセージを見る限りtolowerの型を(int (*)(int))と認識しているはずなのに何故...<br><br>BCCのctype.hではtolowerは_ltolowerを呼び出すインライン関数として定義されているのでtolowerの代わりに_ltolowerにしてもエラーは出なくなりました。理由は...よくわかってません。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=2010>
+    <span class="no">[2010]</span>
+    <a class="thread-title" href="#2010">Re:ssrc_2002-05-01.zip</a>
+    <span class="author">Azumaiya</span>
+    <time datetime="2002-05-02T01:53:37">2002年05月02日 01:53</time></h1>
+    <div class="body"> .NET で、コンパイルしてみたのですが、2箇所で引っかかったので、報告です。<br> 1箇所目は、CHtmlHelp.h の 46 行目の<br>&#9;CHtmlhelp();<br>で、<br>&#9;CHtmlHelp(){};<br>にすると直りました。<br> 2箇所目は CMarkMgr.h の 102 行目の<br>&#9;typedef std::vector&lt;CMark&gt;::iterator&#9;CMarkIterator;<br>を<br>&#9;typedef std::vector&lt;CMark&gt;::const_iterator&#9;CMarkIterator;<br>としました。<br><br> ですが、2カ所目については、iterator を const_itarator にしてしまって他の環境で問題があるのかどうかわかりません。<br> どうなんでしょうか？<br></div></section>
+    <ul><li><section><h1 id=2014>
+    <span class="no">[2014]</span>
+    <a class="thread-title" href="#2014">Re2:ssrc_2002-05-01.zip</a>
+    <span class="author">おに</span>
+    <time datetime="2002-05-02T22:02:06">2002年05月02日 22:02</time></h1>
+    <div class="body">bcc32(Borland C++ Compiler 5.5.1)では大丈夫でした。</div></section>
+    </li><li><section><h1 id=2016>
+    <span class="no">[2016]</span>
+    <a class="thread-title" href="#2016">Re2:ssrc_2002-05-01.zip</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-04T01:58:06">2002年05月04日 01:58</time></h1>
+    <div class="body">&gt; .NET で、コンパイルしてみたのですが、2箇所で引っかかったので、報告です。<br>&gt; 1箇所目は、CHtmlHelp.h の 46 行目の<br>&gt;&#9;CHtmlhelp();<br>&gt;で、<br>&gt;&#9;CHtmlHelp(){};<br>&gt;にすると直りました。<br>確かにCHtmlHelp.cppにCHtmlhelp::CHtmlhelpの実体がありませんね。<br><br>&gt; 2箇所目は CMarkMgr.h の 102 行目の<br>&gt;&#9;typedef std::vector&lt;CMark&gt;::iterator&#9;CMarkIterator;<br>&gt;を<br>&gt;&#9;typedef std::vector&lt;CMark&gt;::const_iterator&#9;CMarkIterator;<br>&gt;としました。<br>これは、begin()がconst_iteratorを返すからでしょうか。<br>CMarkMgr::CurrentPos/Begin/Endに謎のキャストが...<br><br>＃両方とも私が書いたところだ...トホホ。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

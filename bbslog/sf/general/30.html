@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バグ報告 [特定フォルダのファイル] | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">30</span>
+    <a class="thread-title" href="30.html#30">バグ報告 [特定フォルダのファイル]</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">31</span>
+    <a class="thread-title" href="30.html#31">Re:バグ報告 [特定フォルダのファイル]</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">37</span>
+    <a class="thread-title" href="30.html#37">Re2:バグ報告 [特定フォルダのファイル]</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=30>
+    <span class="no">[30]</span>
+    <a class="thread-title" href="#30">バグ報告 [特定フォルダのファイル]</a>
+    <span class="author">ハノイ</span>
+    <time datetime="2001-01-28T12:17:03">2001年01月28日 12:17</time></h1>
+    <div class="body">開発ご苦労様です。<br>バグらしきものを見つけましたので報告します。<br>症状は、特定フォルダのテキストエディタに<br>関連付けされたファイルを(ダブル)クリックで<br>オープンしようとるすと、ファイルが読み込まれずに<br>[ファイル]→[開く]のダイアログが出てきてしまう<br>というものです。<br>特定フォルダというのは例えば、<br>　E:\Desktop\新しいフォルダ (2)<br>です。E:\DesktopはWindowsのデスクトップに<br>指定してあります。フォルダ名を色々変えて試して<br>みましたが、いまいち規則性が分かりませんでした。<br><br>最後に使用環境を書いておきます。<br>・テキストエディタ　１月２６日バージョン<br>・ＯＳ　Windows98SE 日本語版<br><br></div></section>
+    <ul><li><section><h1 id=31>
+    <span class="no">[31]</span>
+    <a class="thread-title" href="#31">Re:バグ報告 [特定フォルダのファイル]</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-01-28T13:29:53">2001年01月28日 13:29</time></h1>
+    <div class="body">▼ ハノイさん<br>&gt; 開発ご苦労様です。<br>&gt; 症状は、特定フォルダのテキストエディタに<br>&gt; 関連付けされたファイルを(ダブル)クリックで<br>&gt; オープンしようとるすと、ファイルが読み込まれずに<br>&gt; [ファイル]→[開く]のダイアログが出てきてしまう<br>再現できません。(T_T)<br>関連付けが正しく設定されているかどうか確認してもらえませんか。具体的にはsakura.exeの後に　"%1" というのがきちんとついていますか?これが無いと空白を含むフォルダ名があった場合にご指摘の動作をします。<br><br>このエディタでは１つめのパラメータに一致するファイルが無かった場合、後ろのパラメータをつないだ形で再度ファイルを探しに行きます。このとき偶然にも1つ目のパラメータに一致するフォルダがあるとそれを開こうとしてしまいます。<br>例えばC:\Program というフォルダと C:\Program Filesというフォルダがある場合にProgram Files中のファイルを開こうとするとC:\Programに対する『開く』ダイアログボックスが出ます。</div></section>
+    <ul><li><section><h1 id=37>
+    <span class="no">[37]</span>
+    <a class="thread-title" href="#37">Re2:バグ報告 [特定フォルダのファイル]</a>
+    <span class="author">ハノイ</span>
+    <time datetime="2001-01-28T16:27:12">2001年01月28日 16:27</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼ ハノイさん<br>&gt; &gt; 開発ご苦労様です。<br>&gt; &gt; 症状は、特定フォルダのテキストエディタに<br>&gt; &gt; 関連付けされたファイルを(ダブル)クリックで<br>&gt; &gt; オープンしようとるすと、ファイルが読み込まれずに<br>&gt; &gt; [ファイル]→[開く]のダイアログが出てきてしまう<br>&gt; 再現できません。(T_T)<br>&gt; 関連付けが正しく設定されているかどうか確認してもらえませんか。具体的にはsakura.exeの後に　"%1" というのがきちんとついていますか?これが無いと空白を含むフォルダ名があった場合にご指摘の動作をします。<br>&gt; <br>&gt; このエディタでは１つめのパラメータに一致するファイルが無かった場合、後ろのパラメータをつないだ形で再度ファイルを探しに行きます。このとき偶然にも1つ目のパラメータに一致するフォルダがあるとそれを開こうとしてしまいます。<br>&gt; 例えばC:\Program というフォルダと C:\Program Filesというフォルダがある場合にProgram Files中のファイルを開こうとするとC:\Programに対する『開く』ダイアログボックスが出ます。<br><br>お返事ありがとうございます。<br>試しにC:\Program Filesにうまく開けなかったファイルのコピーつくり、それをクリックしてみると上手く開けてしまいます。<br>単順に「空白があるとダメ」というわけでもなさそうです。<br><br>しかしパラメータをダブルクオートしてからは、どこのフォルダのファイルも正常に読み込めるようになりましたので今回の件は一応解決しました。<br>有難うございました。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

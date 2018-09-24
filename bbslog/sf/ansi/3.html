@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CShareData.hについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3</span>
+    <a class="thread-title" href="3.html#3">CShareData.hについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4</span>
+    <a class="thread-title" href="3.html#4">Re:CShareData.hについて</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7</span>
+    <a class="thread-title" href="3.html#7">Re:CShareData.hについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8</span>
+    <a class="thread-title" href="3.html#8">Re2:CShareData.hについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">15</span>
+    <a class="thread-title" href="3.html#15">Re3:CShareData.hについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">16</span>
+    <a class="thread-title" href="3.html#16">Re4:CShareData.hについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">18</span>
+    <a class="thread-title" href="3.html#18">Re5:CShareData.hについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">19</span>
+    <a class="thread-title" href="3.html#19">Re6:CShareData.hについて</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3>
+    <span class="no">[3]</span>
+    <a class="thread-title" href="#3">CShareData.hについて</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-02-05T14:39:50">2001年02月05日 14:39</time></h1>
+    <div class="body">&gt;struct PRINTSETTING {<br>&gt; ...中略<br>&gt;BOOL   m_bHeaderUse[3];  //ヘッダを使用するかどうか<br>&gt;BOOL   m_bFooterUse[3];  //フッタを使用するかどうか<br><br>の部分は配列で3個定義できるようになってますが、この仕様にいたった経緯を<br>ご存じの方いらっしゃるでしょうか？<br>int型に変更して、0-なし, 1-左寄せ, 2-中央, 3-右寄せ, とするのはいかがでしょうか。<br><br>＃現在このメンバは定義だけで使用されていないみたいですが....<br></div></section>
+    <ul><li><section><h1 id=4>
+    <span class="no">[4]</span>
+    <a class="thread-title" href="#4">Re:CShareData.hについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-02-05T22:34:08">2001年02月05日 22:34</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; この仕様にいたった経緯をご存じの方いらっしゃるでしょうか？<br>私は印刷機能はぜんぜん使っていませんから、その辺の内容はぜんぜん気にかけていませんでした。<br>もっとちゃんとした印刷機能を用意してくれる人が現れると嬉しいんですが...<br><br>推測ですがMS Excelのようにヘッダを３種類定義して使う・使わないとやりたかったのではないでしょうか。左上にファイル名、右上に日付というような場合を想定しているのだと思います。</div></section>
+    </li><li><section><h1 id=7>
+    <span class="no">[7]</span>
+    <a class="thread-title" href="#7">Re:CShareData.hについて</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-02-06T02:08:09">2001年02月06日 02:08</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; &gt; ...中略<br>&gt; int型に変更して、0-なし, 1-左寄せ, 2-中央, 3-右寄せ, とするのはいかがでしょうか。<br>&gt; ＃現在このメンバは定義だけで使用されていないみたいですが....<br>ヘッダ、フッタはほとんど未実装ですね。確かヘルプに「開発中」とだけ書いてあったような気がします。過去にヘッダでファイル名を左ではなく右に出したいという要望がありました。左だとファイルにして綴じたとき見にくくなるから、という理由でした。<br>確かにそう思います。むしろデフォルトは右がいいですね。ヘッダフッタの設定ができたらシェアウェア(1000円程度)になってもいい、なんてのもありました。しかし私も印刷機能は全然使ってません。印刷機能は望めばきりがない部分もあるので。。。でもメモ帳やワードパッド、IEくらいの設定はできると便利だと思います。</div></section>
+    <ul><li><section><h1 id=8>
+    <span class="no">[8]</span>
+    <a class="thread-title" href="#8">Re2:CShareData.hについて</a>
+    <span class="author">KENCH</span>
+    <time datetime="2001-02-06T09:08:05">2001年02月06日 09:08</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; ▼ すとーにぃさん<br>&gt; &gt; &gt; ...中略<br>&gt; &gt; int型に変更して、0-なし, 1-左寄せ, 2-中央, 3-右寄せ, とするのはいかがでしょうか。<br>&gt; &gt; ＃現在このメンバは定義だけで使用されていないみたいですが....<br>&gt; ヘッダ、フッタはほとんど未実装ですね。確かヘルプに「開発中」とだけ書いてあったような気がします。過去にヘッダでファイル名を左ではなく右に出したいという要望がありました。右だとファイルにして綴じたとき見にくくなるから、という理由でした。<br>&gt; 確かにそう思います。むしろデフォルトは右がいいですね。ヘッダフッタの設定ができたらシェアウェア(1000円程度)になってもいい、なんてのもありました。しかし私も印刷機能は全然使ってません。印刷機能は望めばきりがない部分もあるので。。。でもメモ帳やワードパッド、IEくらいの設定はできると便利だと思います。<br><br>　おそらくExcelの様に、左に寄ったもの（例えば日付）、中央のもの（例えば文書名）、右に寄ったもの（例えばページ）等を別々に指定できるようにということかもしれません。<br>私は、ソースの印刷の際に、テキストエディタの印刷機能を利用しています。<br>２段組して６ポイントで印刷すると、非常に紙＆トナーの節約になります。<br>あったら使うし、なければWordを使うかもしれません。<br>重装備は確かに必要ないですね。</div></section>
+    <ul><li><section><h1 id=15>
+    <span class="no">[15]</span>
+    <a class="thread-title" href="#15">Re3:CShareData.hについて</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-02-07T12:39:52">2001年02月07日 12:39</time></h1>
+    <div class="body">▼ KENCHさん<br>&gt; 　おそらくExcelの様に、左に寄ったもの（例えば日付）、中央のもの（例えば文書名）、右に寄ったもの（例えばページ）等を別々に指定できるようにということかもしれません。<br>  .....φ(..;)<br><br>&gt; 重装備は確かに必要ないですね。<br>同感です。ヘッダ・フッタのON/OFFとファイル名・ページ番号・日付の出力ができればOKかなと思います。<br></div></section>
+    <ul><li><section><h1 id=16>
+    <span class="no">[16]</span>
+    <a class="thread-title" href="#16">Re4:CShareData.hについて</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-02-07T13:19:15">2001年02月07日 13:19</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; ▼ KENCHさん<br>&gt; &gt; 重装備は確かに必要ないですね。<br>&gt; 同感です。ヘッダ・フッタのON/OFFとファイル名・ページ番号・日付の出力ができればOKかなと思います。<br>ただ、位置もそうですが、ファイル名なら、フルパスか、ファイル名のみか、や日付なら短縮形かフルか、程度はあるといいように思うんですが。いらない？</div></section>
+    <ul><li><section><h1 id=18>
+    <span class="no">[18]</span>
+    <a class="thread-title" href="#18">Re5:CShareData.hについて</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-02-07T15:33:25">2001年02月07日 15:33</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; &gt; 同感です。ヘッダ・フッタのON/OFFとファイル名・ページ番号・日付の出力ができればOKかなと思います。<br>&gt; ただ、位置もそうですが、ファイル名なら、フルパスか、ファイル名のみか、や日付なら短縮形かフルか、程度はあるといいように思うんですが。いらない？<br><br>MIFES風に、<br><br>%p - ページ番号<br>%f - ファイルのフルパス<br>%F - パス抜きのファイル名<br>%y - 西暦<br>%g - 元号<br>%m - 月<br>%d - 日<br>%t - 時刻<br>%c - コントロールパネルの設定に従ったフォーマットで時刻を出力<br><br>あたりがサポートされていればOKでしょうか？<br><br>＃時刻のフォーマットとコンパネの設定の連動は仕様を詰める必要あり<br></div></section>
+    <ul><li><section><h1 id=19>
+    <span class="no">[19]</span>
+    <a class="thread-title" href="#19">Re6:CShareData.hについて</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-02-07T16:56:27">2001年02月07日 16:56</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; %p - ページ番号<br>&gt; %f - ファイルのフルパス<br>(途中省略)<br>&gt; %t - 時刻<br>&gt; %c - コントロールパネルの設定に従ったフォーマットで時刻を出力<br>&gt; <br>&gt; あたりがサポートされていればOKでしょうか？<br><br>十分すぎるんじゃないんですか？(笑)</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

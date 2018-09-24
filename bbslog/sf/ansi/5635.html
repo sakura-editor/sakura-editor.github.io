@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>メールアドレスクリック時の挙動について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5635</span>
+    <a class="thread-title" href="5635.html#5635">メールアドレスクリック時の挙動について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5636</span>
+    <a class="thread-title" href="5635.html#5636">Re:メールアドレスクリック時の挙動について</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5635>
+    <span class="no">[5635]</span>
+    <a class="thread-title" href="#5635">メールアドレスクリック時の挙動について</a>
+    <span class="author">増倉 盛倫</span>
+    <time datetime="2009-12-10T20:10:04">2009年12月10日 20:10</time></h1>
+    <div class="body">こんばんは。<br><br>バグを1件報告いたします。<br><br>【参考】<a href=mailto:reg@hoge.com><nobr>reg@<wbr>hoge.<wbr>com</nobr></a><br>↑の1行をサクラエディタの新規ファイルにコピーペーストし、<br>メールアドレスが自動リンクされた後にクリックすると、<br>立ち上がったメーラーのメール作成画面では、メールアドレスに<br>余計な文字が付加されます。<br><br>上記をクリックすると、<a href=mailto:reg@hoge.com><nobr>reg@<wbr>hoge.<wbr>com</nobr></a>となるところが<a href=mailto:zreg@hoge.com><nobr>zreg@<wbr>hoge.<wbr>com</nobr></a>となりました。<br>【<a href=mailto:reg@hoge.com><nobr>reg@<wbr>hoge.<wbr>com</nobr></a> で試すと、<a href=mailto:yreg@hoge.com><nobr>yreg@<wbr>hoge.<wbr>com</nobr></a>となりました。<br><br>サクラエディタのバージョンは 1.6.3.0(V1310)<br>メーラーは Outlook Express6 (6.00.2900.5512) を使用しております。<br><br>以上、よろしくお願いたします。<br></div></section>
+    <ul><li><section><h1 id=5636>
+    <span class="no">[5636]</span>
+    <a class="thread-title" href="#5636">Re:メールアドレスクリック時の挙動について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-10T21:41:36">2009年12月10日 21:41</time></h1>
+    <div class="body">別件（&gt;&gt;data:7103）のついでに、こういう誤認も起きないような改善処置も施しておきました。次回リリースでは改善されたものになっていると思います。<br><br>ただし、ANSI 版サクラではどうしてもマウスへの追従性能に影響が及んでしまうため、完璧に誤認を排除するまでにはできていません。極めて特殊なケースでは誤認の可能性が残っています。<br>UNICODE 版のほうは ANSI 版ほどややこしい事情はないので現行β版（rev1684）で誤認が発生しないようにできています。</div></section>
+    </li></ul></li></ul></body></html>

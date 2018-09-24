@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Z オーダーの問題 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4004</span>
+    <a class="thread-title" href="4004.html#4004">Z オーダーの問題</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4005</span>
+    <a class="thread-title" href="4004.html#4005">Re:Z オーダーの問題対策？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4009</span>
+    <a class="thread-title" href="4004.html#4009">Re2:Z オーダーの問題対策？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4011</span>
+    <a class="thread-title" href="4004.html#4011">Re3:Z オーダーの問題対策？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4015</span>
+    <a class="thread-title" href="4004.html#4015">Re4:Z オーダーの問題対策？</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4012</span>
+    <a class="thread-title" href="4004.html#4012">Re2:Z オーダーの問題対策？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4014</span>
+    <a class="thread-title" href="4004.html#4014">Re3:Z オーダーの問題対策？</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4004>
+    <span class="no">[4004]</span>
+    <a class="thread-title" href="#4004">Z オーダーの問題</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-08-07T03:11:59">2005年08月07日 03:11</time></h1>
+    <div class="body">環境：Ver. 1.5.4.1 (WinXP Pro)<br><br>１．結合表示解除時の問題<br>ウィンドウをまとめる設定で２個新規作成画面を開く（２個目がアクティブになる）<br>タブで１個目をクリックしてアクティブにする<br>結合表示を解除<br>以上の操作で、２個目の画面が非アクティブなまま１個目の画面の手前に表示される<br><br>２．重ねて表示・並べて表示時の問題<br>ウィンドウをまとめない設定の状態で３つ新規作成画面を開く（３個目がアクティブになる）<br>１個目、２個目の順にアクティブにする<br>重ねて表示を実行（左上から１個目、３個目、２個目という順序になる）<br>以上の操作で３個目の画面（左上からの順では中央）が１番奥に表示される<br>ウィンドウをまとめる設定の状態から上記の操作をした場合には、<br>左上の画面ほど手前に表示され、一番奥にある画面（２個目の画面）がアクティブになっている</div></section>
+    <ul><li><section><h1 id=4005>
+    <span class="no">[4005]</span>
+    <a class="thread-title" href="#4005">Re:Z オーダーの問題対策？</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-08-07T03:45:02">2005年08月07日 03:45</time></h1>
+    <div class="body">&gt; １．結合表示解除時の問題<br><br>CTabWnd.cpp(860) [CTabWnd::TabWnd_ActivateFrameWindow関数]<br>  ::ShowWindow( hwnd, SW_SHOWNA );<br>の非表示-&gt;表示切替で何故か Z オーダーが変化してしまっているみたい。<br>  ::SetWindowPos( m_hwndParent, NULL,0,0,0,0,<br>      SWP_SHOWWINDOW | SWP_NOACTIVATE<br>      | SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER );<br>のようにすると Z オーダー変化無しで切り替えることができるっぽい。<br><br>&gt; ２．重ねて表示・並べて表示時の問題<br><br>何だか SetWindowPos による Z オーダー操作がうまくいっていないような感じです。<br>重ね表示については、<br>CEditView_Command.cpp(7000 - 7026) [CEditView::Command_CASCADE関数]<br>あたり。<br>レスポンスは落ちるけれど単純に、<br>    for( i = 0; i &lt; count; i++ )<br>    {<br>        ::ShowWindow( pWndArr[i].hWnd, SW_SHOWNOACTIVATE );<br>        ::MoveWindow(<br>            pWndArr[i].hWnd, <br>            pWndArr[i].newX, pWndArr[i].newY,<br>            width, height, TRUE);<br>        ::SetForegroundWindow( pWndArr[i].hWnd );<br>    }<br>のようにしたほうがうまくいく模様。<br><br>いろいろ試してみて（DeferWindowPos を使ってみるとか）、結局このあたりの策しか今のところ私には見当たりませんでした。(^^;</div></section>
+    <ul><li><section><h1 id=4009>
+    <span class="no">[4009]</span>
+    <a class="thread-title" href="#4009">Re2:Z オーダーの問題対策？</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-08-11T21:31:53">2005年08月11日 21:31</time></h1>
+    <div class="body">&gt; &gt; ２．重ねて表示・並べて表示時の問題<br><br>こちらは、タブ用ツールチップの TOPMOST 設定をやめると SetWindowPos での Z オーダー操作が意図通りに動くようになるみたいです。<br>CTabWnd::Open() 内のツールチップ作成用の CreateWindowEx の WS_EX_TOPMOST および次の SetWindowPos を除去すると、CEditView_Command.cpp は従来のままでも問題は起きなくなりました。<br>そうすると他ウィンドウの背後にある場合にツールチップが手前のウィンドウの後ろになりますが．．．<br>非アクティブなときにはツールバーと同様にツールチップ表示そのものがなくてもいいような気もします。</div></section>
+    <ul><li><section><h1 id=4011>
+    <span class="no">[4011]</span>
+    <a class="thread-title" href="#4011">Re3:Z オーダーの問題対策？</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-08-14T03:54:08">2005年08月14日 03:54</time></h1>
+    <div class="body">&gt;タブ用ツールチップの TOPMOST 設定をやめる<br>非アクティブなウィンドウのツールチップが最上位に来る必要も無さそうなので，これを取り入れることにします．<br></div></section>
+    <ul><li><section><h1 id=4015>
+    <span class="no">[4015]</span>
+    <a class="thread-title" href="#4015">Re4:Z オーダーの問題対策？</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-08-16T22:35:30">2005年08月16日 22:35</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;タブ用ツールチップの TOPMOST 設定をやめる<br>&gt; 非アクティブなウィンドウのツールチップが最上位に来る必要も無さそうなので，これを取り入れることにします．<br><br>これとは別に、CEditView::Command_CASCADE関数でちょっと気になった部分があります。<br>最大化の解除のところ、CEditView_Command.cpp(6998)<br>::ShowWindow( pWndArr[i].hWnd, SW_RESTORE | SW_SHOWNA );<br>になってますが、<br>#define SW_SHOWNA   8<br>#define SW_RESTORE  9<br>なので OR の意味がありません（OR しても SW_RESTORE と同じ）。<br>SW_SHOWNOACTIVATE を意図しているのでしょうか？<br>Command_TILE_H / Command_TILE_V のところでは SW_RESTORE になってますが．．．</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4012>
+    <span class="no">[4012]</span>
+    <a class="thread-title" href="#4012">Re2:Z オーダーの問題対策？</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-08-14T03:54:09">2005年08月14日 03:54</time></h1>
+    <div class="body">&gt;  ::SetWindowPos( m_hwndParent, NULL,0,0,0,0,<br>&gt;      SWP_SHOWWINDOW | SWP_NOACTIVATE<br>&gt;      | SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER );<br>&gt;のようにすると Z オーダー変化無しで切り替えることができるっぽい。<br>これを入れてみたら，「結合して表示」解除時に非Activeなものが表示されないようなのですが...<br>SHOWWINDOWと書いてあるのに何故だろう...<br><br>OSはWindows XP SP2 です．<br></div></section>
+    <ul><li><section><h1 id=4014>
+    <span class="no">[4014]</span>
+    <a class="thread-title" href="#4014">Re3:Z オーダーの問題対策？</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-08-16T21:47:42">2005年08月16日 21:47</time></h1>
+    <div class="body">&gt; &gt;  ::SetWindowPos( m_hwndParent, NULL,0,0,0,0,<br>m_hwndParent は hwnd の間違いです。(^^;<br>でも、<br>&gt; これを入れてみたら，「結合して表示」解除時に非Activeなものが表示されないようなのですが...<br>&gt; SHOWWINDOWと書いてあるのに何故だろう...<br>この操作ではどちらでも同じはずですけどねぇ。<br>&gt; OSはWindows XP SP2 です．<br>XP SP2 の環境２機種でやってみましたが、どちらも問題なく非Activeなものも非表示から表示になっています。<br>[4004]の１の操作の場合は、非ActiveウィンドウはActiveウィンドウと同じ位置・大きさで背後に表示されるはずなのですが。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

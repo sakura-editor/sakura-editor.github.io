@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>gccでコンパイルはどうなの？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">706</span>
+    <a class="thread-title" href="706.html#706">gccでコンパイルはどうなの？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">707</span>
+    <a class="thread-title" href="706.html#707">Re:gccでコンパイルはどうなの？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">708</span>
+    <a class="thread-title" href="706.html#708">Re2:gccでコンパイルはどうなの？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">709</span>
+    <a class="thread-title" href="706.html#709">Re3:gccでコンパイルはどうなの？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">710</span>
+    <a class="thread-title" href="706.html#710">Re4:gccでコンパイルはどうなの？</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">714</span>
+    <a class="thread-title" href="706.html#714">gccはWin32API用のファイルが不足してます。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">726</span>
+    <a class="thread-title" href="706.html#726">Re:gccはWin32API用のファイルが不足してます。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">728</span>
+    <a class="thread-title" href="706.html#728">Re2:gccはWin32API用のファイルが不足してます。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">729</span>
+    <a class="thread-title" href="706.html#729">Re3:gccはWin32API用のファイルが不足してます。</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=706>
+    <span class="no">[706]</span>
+    <a class="thread-title" href="#706">gccでコンパイルはどうなの？</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-09-28T15:02:37">2001年09月28日 15:02</time></h1>
+    <div class="body">gccを入れている人もいると思います。そういう人は敢えてbccまで別個に入れることはしないかもしれませんね。<br>よく知らないのですが,gcc developer station　とかいうVC++開発環境を目指したものもあったと思います。<br>gccで日本語のWindowsアプリ、つまりサクラエディタを開発することも可能なんですか？それが可能になればまたぐっと開発者人口の可能性が広がりますね。</div></section>
+    <ul><li><section><h1 id=707>
+    <span class="no">[707]</span>
+    <a class="thread-title" href="#707">Re:gccでコンパイルはどうなの？</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-09-28T17:04:01">2001年09月28日 17:04</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; gccを入れている人もいると思います。そういう人は敢えてbccまで別個に入れることはしないかもしれませんね。<br><br>Windows 用の gcc は最近 MinGW と呼ばれていまして、コンパイルが少し容易になりました。<br>通常、binutils を付けて、make などを実行することが可能です。確かに bcc よりも性能は良いかもしれませんが、スペックやサポートの面で劣っています。<br>よく似たものに DJGPP や cygwin があります。cygwin は UNIX と互換性を高める GUI アプリを作成するときに使います。DJGPP については知りません。<br><br>Shift-JIS の文字列がうまく解釈されないことが多く（「表示」など）、ソースの変換が必要です。詳しくは次のサイトをご覧下さい。<br><br><a href=http://homepage2.nifty.com/tenk/lib/doc/czenyen.txt target=_top><nobr>http://<wbr>homepage<wbr>2.<wbr>nifty.<wbr>com/<wbr>tenk/<wbr>lib/<wbr>doc/<wbr>czenyen.<wbr>txt</nobr></a><br><a href=http://www.mingw.org/ target=_top><nobr>http://<wbr>www.<wbr>mingw.<wbr>org/<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=708>
+    <span class="no">[708]</span>
+    <a class="thread-title" href="#708">Re2:gccでコンパイルはどうなの？</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-09-28T17:08:07">2001年09月28日 17:08</time></h1>
+    <div class="body">シフトJISとMinGW 関連で<br><a href=http://homepage2.nifty.com/tenk/prog/pmemo003.htm target=_top><nobr>http://<wbr>homepage<wbr>2.<wbr>nifty.<wbr>com/<wbr>tenk/<wbr>prog/<wbr>pmemo003<wbr>.<wbr>htm</nobr></a><br></div></section>
+    <ul><li><section><h1 id=709>
+    <span class="no">[709]</span>
+    <a class="thread-title" href="#709">Re3:gccでコンパイルはどうなの？</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-09-28T18:15:38">2001年09月28日 18:15</time></h1>
+    <div class="body">訂正。MinGW は、gcc, binutils, make などを含んだパッケージでした。<br>gcc.info-7 によると set LANG=C-SJIS でうまくいくようです。<br>gcc.info-7 を読んで、環境変数 PATH, GCC_EXEC_PREFIX, C_INCLUDE_PATH, CPLUS_INCLUDE_PATH, OBJC_INCLUDE_PATH, LANG を設定することが必要です。<br></div></section>
+    <ul><li><section><h1 id=710>
+    <span class="no">[710]</span>
+    <a class="thread-title" href="#710">Re4:gccでコンパイルはどうなの？</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-09-28T19:03:06">2001年09月28日 19:03</time></h1>
+    <div class="body">▼ あああさん<br>&gt; gcc.info-7 によると set LANG=C-SJIS でうまくいくようです。<br><br>またまた訂正。シフトJISを認識するようにコンパイルされた MinGW は出回っていない。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=714>
+    <span class="no">[714]</span>
+    <a class="thread-title" href="#714">gccはWin32API用のファイルが不足してます。</a>
+    <span class="author">(謎)のユーザー</span>
+    <time datetime="2001-09-30T11:15:59">2001年09月30日 11:15</time></h1>
+    <div class="body">確かOLE2などのヘッダやインポート用ライブラリが<br>不足していたはず…<br>あとgcc developer station は、作者が行方不明で<br>現在入手不可です。(^^;<br>#Dev-C++やV-IDE等の、海外製IDEなら沢山ありますが。<br></div></section>
+    <ul><li><section><h1 id=726>
+    <span class="no">[726]</span>
+    <a class="thread-title" href="#726">Re:gccはWin32API用のファイルが不足してます。</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-10-02T09:08:53">2001年10月02日 09:08</time></h1>
+    <div class="body">▼ (謎)のユーザーさん<br>&gt; 確かOLE2などのヘッダやインポート用ライブラリが<br>&gt; 不足していたはず…<br><br>mbstring.h がないとか、最新のシェル関数をサポートしていないとか。<br>でも、最新版は ole2.h, dde.h, cguid.h も有りましたよ。<br>詳しいことは調べてみないと分からないね。<br><br>サクラエディタのソースについて、次のチェック項目を調べてください。<br><br>[A1.] 匿名構造体、匿名共用体、匿名列挙型などを使っていないか。<br>[A2.] COM あるいは OLE を使っていないか。<br>[A3.] mbstring.h, tchar.h の関数およびマクロを利用していないか。<br><br>&gt; あとgcc developer station は、作者が行方不明で<br>&gt; 現在入手不可です。(^^;<br><br>行方不明の作者の了承なく、<br><a href=http://hp.vector.co.jp/authors/VA018507/gds2k1127.lzh target=_top><nobr>http://<wbr>hp.<wbr>vector.<wbr>co.<wbr>jp/<wbr>authors/<wbr>VA018507<wbr>/<wbr>gds2k112<wbr>7.<wbr>lzh</nobr></a><br>から入手できるけど、利点は少ないと思う。<br><br>Win98/95/Me の場合、[711] に述べた方法でインストールできるでしょう。<br>Win2000/NT の場合はコントロールパネルから同じように環境変数を設定できるかもしれません。<br><br>▼(謎)のユーザー <br>&gt;・ResourceHacker<br>&gt;　　<a href=http://rpi.net.au/~ajohnson/resourcehacker/ target=_top><nobr>http://<wbr>rpi.<wbr>net.<wbr>au/~<wbr>ajohnson<wbr>/<wbr>resource<wbr>hacker/<wbr></nobr></a><br><br>これは使える。日本語版もあるし。<br></div></section>
+    <ul><li><section><h1 id=728>
+    <span class="no">[728]</span>
+    <a class="thread-title" href="#728">Re2:gccはWin32API用のファイルが不足してます。</a>
+    <span class="author">KENCH</span>
+    <time datetime="2001-10-02T13:25:30">2001年10月02日 13:25</time></h1>
+    <div class="body"><br>&gt; 行方不明の作者の了承なく、<br>&gt; <a href=http://hp.vector.co.jp/authors/VA018507/gds2k1127.lzh target=_top><nobr>http://<wbr>hp.<wbr>vector.<wbr>co.<wbr>jp/<wbr>authors/<wbr>VA018507<wbr>/<wbr>gds2k112<wbr>7.<wbr>lzh</nobr></a><br>&gt; から入手できるけど、利点は少ないと思う。<br>　作者の了承えてダウンロードできるサイト、<br>　<a href=http://popup.tok2.com/home/choro/ target=_top><nobr>http://<wbr>popup.<wbr>tok2.<wbr>com/<wbr>home/<wbr>choro/<wbr></nobr></a><br><br>　あと、趣がちょっと違いますが、WideStudioと言うRADツールもあります。<br>　<a href=http://www.asahi-net.or.jp/~uj3s-hrby/ target=_top><nobr>http://<wbr>www.<wbr>asahi-<wbr>net.<wbr>or.<wbr>jp/~<wbr>uj3s-<wbr>hrby/<wbr></nobr></a><br>　SJISもコンバートしてくれるし、gccの環境も作ってくれるし、クロスプラットホームってのが魅力かも、、、<br></div></section>
+    <ul><li><section><h1 id=729>
+    <span class="no">[729]</span>
+    <a class="thread-title" href="#729">Re3:gccはWin32API用のファイルが不足してます。</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-10-02T14:34:40">2001年10月02日 14:34</time></h1>
+    <div class="body">▼ KENCHさん<br> gcc Developer Station 2000 <br>&gt; 　作者の了承えてダウンロードできるサイト、<br>&gt; 　<a href=http://popup.tok2.com/home/choro/ target=_top><nobr>http://<wbr>popup.<wbr>tok2.<wbr>com/<wbr>home/<wbr>choro/<wbr></nobr></a><br><br>&gt; 　あと、趣がちょっと違いますが、WideStudioと言うRADツールもあります。<br>&gt; 　<a href=http://www.asahi-net.or.jp/~uj3s-hrby/ target=_top><nobr>http://<wbr>www.<wbr>asahi-<wbr>net.<wbr>or.<wbr>jp/~<wbr>uj3s-<wbr>hrby/<wbr></nobr></a><br>&gt; 　SJISもコンバートしてくれるし、gccの環境も作ってくれるし、クロスプラットホームってのが魅力かも、<br><br>どちらもいいですね。誰かサクラエディタをコンパイルするTipsにチャレンジしてくれないかな？<br>要するに「開発者のさらなる参加を大いに期待！」（わたしゃもうとっくに限界超えてますんで。。。(._.)）</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

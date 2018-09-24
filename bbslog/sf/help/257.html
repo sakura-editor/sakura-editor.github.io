@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現のサンプルミス | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">257</span>
+    <a class="thread-title" href="257.html#257">正規表現のサンプルミス</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">258</span>
+    <a class="thread-title" href="257.html#258">Re:正規表現のサンプルミス</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">259</span>
+    <a class="thread-title" href="257.html#259">Re2:正規表現のサンプルミス</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">260</span>
+    <a class="thread-title" href="257.html#260">Re3:正規表現のサンプルミス</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">263</span>
+    <a class="thread-title" href="257.html#263">Re4:正規表現のサンプルミス</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">261</span>
+    <a class="thread-title" href="257.html#261">Re3:正規表現のサンプルミス</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">262</span>
+    <a class="thread-title" href="257.html#262">Re4:正規表現のサンプルミス</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=257>
+    <span class="no">[257]</span>
+    <a class="thread-title" href="#257">正規表現のサンプルミス</a>
+    <span class="author">neko</span>
+    <time datetime="2006-09-18T17:22:16">2006年09月18日 17:22</time></h1>
+    <div class="body">正規表現ライブラリのヘルプで、<br>ーーー引用ーーーーーーーーーーーーーーー<br>最大一致、最小一致<br><br>正規表現Aを[A-Z_]*PROC 、正規表現Bを[A-Z_]*?PROC とします。<br><br> SAKURA_COLLBACKPROC_BREXP_PROC<br>という文字列中で、最初にマッチするのは以下のようになります。<br>&#9;Aの場合: SAKURA_COLLBACKPROC_BREXP_PROC<br>&#9;Bの場合: SAKURA_PROC<br>ーーー引用終了ーーーーーーーーーーーーー<br>とありますが、Bの場合<br>SAKURA_COLLBACKPROC<br>ではないでしょうか？<br>というか、SAKURA_PROCという文字自体でてきてないような、、、</div></section>
+    <ul><li><section><h1 id=258>
+    <span class="no">[258]</span>
+    <a class="thread-title" href="#258">Re:正規表現のサンプルミス</a>
+    <span class="author">maru</span>
+    <time datetime="2006-09-19T01:08:33">2006年09月19日 01:08</time></h1>
+    <div class="body">▼ nekoさん<br>&gt; SAKURA_COLLBACKPROC<br>&gt; ではないでしょうか？<br>ご指摘のとおりだと思います。誤記でしょう。<br><br>▼ noviceさん<br>Subversionでの運用になったらお手伝いさせてください。</div></section>
+    <ul><li><section><h1 id=259>
+    <span class="no">[259]</span>
+    <a class="thread-title" href="#259">Re2:正規表現のサンプルミス</a>
+    <span class="author">novice</span>
+    <time datetime="2006-10-01T23:35:49">2006年10月01日 23:35</time></h1>
+    <div class="body">更新しました。<br><br>■作成ファイル(共有フォルダ)<br>help_20061001.zip <br><br>■今回やったこと<br>(1)「sakura.hdp」更新<br>・Ver. 1.5.12.0の変更履歴を入れてみました(from SakuraEditorWiki)。<br>→「キーワードヘルプ拡張」の説明をヘルプに追加する必要があります。<br>・正規表現のサンプルミスを訂正しました。<br><br>(2)画像ファイル変換<br>BMP形式→PNG形式に変更しました。<br><br>(3)sakura.exe更新。<br>「trunk#1001」に「HtmlHelp_2b.patch」を適用(VC++.NET2003でコンパイル)<br>HtmlHelp_2b.patch = HtmlHelp_2.patch(Patches#1526879) + α<br><br>▼ maruさん<br>&gt; ▼ noviceさん<br>&gt; Subversionでの運用になったらお手伝いさせてください<br><br>変換作業は終わっているので、ディレクトリ構成＆変換後のファイル内容で問題なければ、<br>Subversionに移行してもいいのではと思うのですが如何でしょうか？<br></div></section>
+    <ul><li><section><h1 id=260>
+    <span class="no">[260]</span>
+    <a class="thread-title" href="#260">Re3:正規表現のサンプルミス</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-02T23:53:29">2006年10月02日 23:53</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; Subversionに移行してもいいのでは<br>とくに問題ないと思います。<br><br>sakura.hdpはどうしますか？<br>個人的には以下のような感じを想像していました。<br>ヘルプましんで運用する前提の案です。<br><br>■HTMLヘルプ変換のため使用されたもので削除してもよいと思われるファイル<br> ./_RESOURCE/sakura.hdp<br> ./_RESOURCE/hd2html.rb<br> ./flow.png<br> ./HtmlHelp_2b.patch<br> ./ReadMe.txt<br> ./sakura.chm<br> ./sakura.exe<br><br>■help/trunkのIgnore属性<br> *.Log<br> *.chm<br> *.hhc<br> *.hhk<br> *.HHP<br> COMPILE.HTML<br> *.chm.bak<br></div></section>
+    <ul><li><section><h1 id=263>
+    <span class="no">[263]</span>
+    <a class="thread-title" href="#263">Re4:正規表現のサンプルミス</a>
+    <span class="author">novice</span>
+    <time datetime="2006-10-04T00:27:57">2006年10月04日 00:27</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ▼ noviceさん<br>&gt; &gt; Subversionに移行してもいいのでは<br>&gt; とくに問題ないと思います。<br>&gt; <br>&gt; sakura.hdpはどうしますか？<br><br>「sakura.chm」を作成するために最低限必要なファイルだけで問題ないと思います。<br>→sakura.hdpも削除対象にしましょう。<br></div></section>
+    </li></ul></li><li><section><h1 id=261>
+    <span class="no">[261]</span>
+    <a class="thread-title" href="#261">Re3:正規表現のサンプルミス</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-03T01:12:04">2006年10月03日 01:12</time></h1>
+    <div class="body">&gt;HtmlHelp_2b.patch = HtmlHelp_2.patch(Patches#1526879) + α<br>HtmlHelp_2bではHtmlHelp_2aに入っていた本体GUI関連の修正が削られているようですが，何か理由があるのでしょうか．<br>別のパッチとして分離するつもりでしょうか．<br></div></section>
+    <ul><li><section><h1 id=262>
+    <span class="no">[262]</span>
+    <a class="thread-title" href="#262">Re4:正規表現のサンプルミス</a>
+    <span class="author">novice</span>
+    <time datetime="2006-10-04T00:21:34">2006年10月04日 00:21</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; HtmlHelp_2bではHtmlHelp_2aに入っていた本体GUI関連の修正が削られているようですが，何か理由があるのでしょうか．<br>&gt; 別のパッチとして分離するつもりでしょうか．<br><br>HTML Helpに関係ないので削除しちゃいました。<br>別パッチでリリースします。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

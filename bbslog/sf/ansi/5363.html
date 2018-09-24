@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>長過ぎるパス名で落ちる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5363</span>
+    <a class="thread-title" href="5363.html#5363">長過ぎるパス名で落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5364</span>
+    <a class="thread-title" href="5363.html#5364">Re:長過ぎるパス名で落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5365</span>
+    <a class="thread-title" href="5363.html#5365">Re2:長過ぎるパス名で落ちる</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5366</span>
+    <a class="thread-title" href="5363.html#5366">Re:長過ぎるパス名で落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5367</span>
+    <a class="thread-title" href="5363.html#5367">Re2:長過ぎるパス名で落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5368</span>
+    <a class="thread-title" href="5363.html#5368">Re3:長過ぎるパス名で落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5369</span>
+    <a class="thread-title" href="5363.html#5369">Re4:長過ぎるパス名で落ちる</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5370</span>
+    <a class="thread-title" href="5363.html#5370">Re:長過ぎるパス名で落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5376</span>
+    <a class="thread-title" href="5363.html#5376">Re2:長過ぎるパス名で落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5377</span>
+    <a class="thread-title" href="5363.html#5377">Re3:長過ぎるパス名で落ちる</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5388</span>
+    <a class="thread-title" href="5363.html#5388">そろそろコミットしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5396</span>
+    <a class="thread-title" href="5363.html#5396">Re:そろそろコミットしたい</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5363>
+    <span class="no">[5363]</span>
+    <a class="thread-title" href="#5363">長過ぎるパス名で落ちる</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-23T04:07:51">2008年06月23日 04:07</time></h1>
+    <div class="body">&gt;&gt;data:6689も同様と思われる、長過ぎるパスのファイルを開くと落ちる既知の不具合についてです。<br><br>下記4箇所で_MAX_PATHを .nMaxFile に設定しますが、_MAX_PATH以上のファイルパスとなるとバッファに'\0'が無い状態となって突き抜けています。<br><br>CDlgOpenFile.cpp<br>　DoModal_GetOpenFileName()<br>　DoModal_GetSaveFileName()<br>　DoModalOpenDlg()<br>　DoModalSaveDlg()<br><br>下記のようにすることで取りあえず落ちるのは回避できるんですが、真っ当な方法じゃないような気もします。<br>　m_ofn.nMaxFile = _MAX_PATH - 1;<br>　memset( m_ofn.lpstrFile, 0, _MAX_PATH );　　// 最後2文字を0にするだけでもOK<br><br>どうすべきでしょうか？<br></div></section>
+    <ul><li><section><h1 id=5364>
+    <span class="no">[5364]</span>
+    <a class="thread-title" href="#5364">Re:長過ぎるパス名で落ちる</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2008-06-23T11:02:28">2008年06月23日 11:02</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; 　DoModal_GetOpenFileName()<br>&gt; 　DoModal_GetSaveFileName()<br>&gt; 　DoModalOpenDlg()<br>&gt; 　DoModalSaveDlg()<br>この、４個のメソッドを呼び出している所だけでしたら、２８ヶ所のみでした。<br>呼び出すすべての前の所で０クリアしてはどうでしょう。<br>char szPath[_MAX_PATH + 1];<br>szPath[sizeof(szPath)-1] = '\0';<br><br>私ちなみに、よく分かっていないのですが、<br>なぜ最後１バイトでなく、２バイトクリアするのでしょうか？</div></section>
+    <ul><li><section><h1 id=5365>
+    <span class="no">[5365]</span>
+    <a class="thread-title" href="#5365">Re2:長過ぎるパス名で落ちる</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-23T21:17:43">2008年06月23日 21:17</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; なぜ最後１バイトでなく、２バイトクリアするのでしょうか？<br><br>2バイト文字で切れた場合もう1つ前もゴミとなることがあるためだったのですが、&gt;&gt;data:6694にて要望されたようにメッセージを表示してあげないとまずいということで、前回のものは撤回して下記のようにしようかと思います。<br><br>下記関数において、GetOpenFileNameRecover()またはGetSaveFileNameRecover()の戻り値がTRUEの時、バッファ内に'\0'が存在しなければエラーを表示してFALSEを返す。<br>　DoModal_GetOpenFileName()<br>  DoModal_GetSaveFileName()<br>  DoModalOpenDlg()<br>  DoModalSaveDlg()<br><br>上記の4箇所で.nMaxFileに_MAX_PATHを設定しているので、ここでチェックするのが良いと思ったのですが、さらに上位でチェックすべきでしょうか？<br></div></section>
+    </li></ul></li><li><section><h1 id=5366>
+    <span class="no">[5366]</span>
+    <a class="thread-title" href="#5366">Re:長過ぎるパス名で落ちる</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-23T23:31:13">2008年06月23日 23:31</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; 下記のようにすることで取りあえず落ちるのは回避できるんですが、真っ当な方法じゃないような気もします。<br>&gt; 　m_ofn.nMaxFile = _MAX_PATH - 1;<br>&gt; 　memset( m_ofn.lpstrFile, 0, _MAX_PATH );　　// 最後2文字を0にするだけでもOK<br>&gt; <br>&gt; どうすべきでしょうか？<br><br>MSDNを見ましょう。<br>GetOpenFileName が FALSE を返したときは lpstrFile を見るのが真っ当な作法ではないでしょうか。確保すべき容量がわかるので、バッファを動的に確保して再試行すれば良いです。たぶん。<br><br>MSDN引用<br>&gt; lpstrFile <br>&gt; …(略)…<br>&gt; If the buffer is too small, the function returns FALSE. In this case, the first two bytes of the lpstrFile buffer contain the required size, in bytes or characters. <br></div></section>
+    <ul><li><section><h1 id=5367>
+    <span class="no">[5367]</span>
+    <a class="thread-title" href="#5367">Re2:長過ぎるパス名で落ちる</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-24T12:25:16">2008年06月24日 12:25</time></h1>
+    <div class="body">▼ kobakeさん<br>いえ、FALSEは返ってきません。<br>エラー処理は元々実装されているので、FALSEが来れば最初から問題無いです。<br>APIがおかしいのか .nMaxFile をよほど小さくしないとtoo smallは返ってこないので別の対応が必要です。まぁ使い方がおかしいだけかもしれませんが……<br><br>ANSIなので絶対パスは260バイト以下なわけですが、260バイト目まで文字を詰め込んできます。切れ目が2バイト文字の途中の場合、259バイト目まで詰め込んで260バイト目に0を書かずに返ってきます。<br><br>仮に今回too smallが来たとしても、ANSIで260バイトを超える絶対パスはMSの取り決めに反します。<br>260バイトを超えた絶対パスでいくとどうなるかは私は知りません。<br></div></section>
+    <ul><li><section><h1 id=5368>
+    <span class="no">[5368]</span>
+    <a class="thread-title" href="#5368">Re3:長過ぎるパス名で落ちる</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-24T23:33:31">2008年06月24日 23:33</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; ▼ kobakeさん<br>&gt; いえ、FALSEは返ってきません。<br>&gt; エラー処理は元々実装されているので、FALSEが来れば最初から問題無いです。<br>&gt; APIがおかしいのか .nMaxFile をよほど小さくしないとtoo smallは返ってこないので別の対応が必要です。まぁ使い方がおかしいだけかもしれませんが……<br>&gt; <br>&gt; ANSIなので絶対パスは260バイト以下なわけですが、260バイト目まで文字を詰め込んできます。切れ目が2バイト文字の途中の場合、259バイト目まで詰め込んで260バイト目に0を書かずに返ってきます。<br>&gt; <br>&gt; 仮に今回too smallが来たとしても、ANSIで260バイトを超える絶対パスはMSの取り決めに反します。<br>&gt; 260バイトを超えた絶対パスでいくとどうなるかは私は知りません。<br><br>なるほど、失礼しました。確かに試すとTRUEが返りますね。<br>がっつりエラーチェックをするならこんな↓感じですかね (ここまでやるか、っつー極端な例かもしれませんが)。<br><br>OPENFILENAME ofn;<br>…<br>BOOL bRet = GetOpenFileName(&amp;ofn);<br>DWORD dwErr = GetLastError();<br>if(dwErr==ERROR_INVALID_PARAMETER){<br>&#9;//想定外。プログラム側の問題 (だと思う)。<br>}<br>else if(dwErr==ERROR_OUTOFMEMORY){<br>&#9;//メモリ不足。<br>}<br>else if(dwErr==ERROR_INSUFFICIENT_BUFFER){<br>&#9;//バッファが足りない。バッファをもうちょい確保して再試行する or 失敗メッセージを出す？<br>}<br>else if(bRet){<br>&#9;//成功。ユーザの入力したパスが正常に取得できた。<br>}<br>else{<br>&#9;//ユーザキャンセル。<br>}<br><br><br>ちなみに環境依存かもしれないですけど(？)、Windows Vista Home Edition の環境では、<br>バッファを最初から _MAX_PATH*2 確保しておくと、んまぁ一応正常動作しました。結果論ですが。<br></div></section>
+    <ul><li><section><h1 id=5369>
+    <span class="no">[5369]</span>
+    <a class="thread-title" href="#5369">Re4:長過ぎるパス名で落ちる</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-25T12:43:47">2008年06月25日 12:43</time></h1>
+    <div class="body">▼ kobakeさん<br>API側がANSIなのに文字カウントをunicodeで行なっている様な変な動作をしているので、おっしゃる様な処理をしないと厳密にはできないですね。<br><br>&gt; ちなみに環境依存かもしれないですけど(？)、Windows Vista Home Edition の環境では、<br>&gt; バッファを最初から _MAX_PATH*2 確保しておくと、んまぁ一応正常動作しました。結果論ですが。<br><br>確認ありがとうございます。98,NT以降で大丈夫なのかもしれませんが、<br>・undocumentedな動作である<br>・沢山の所で_MAX_PATHが使われているので拡張すると確認が大変<br>・unicode版なら長いパスを正しく扱えるのでANSI版が対応してなくても大丈夫<br><br>ということで、バッファの拡張は行なわずにオーバーフローチェック＆エラー表示するだけのパッチを作りました。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=5370>
+    <span class="no">[5370]</span>
+    <a class="thread-title" href="#5370">Re:長過ぎるパス名で落ちる</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-25T12:52:09">2008年06月25日 12:52</time></h1>
+    <div class="body">長過ぎるパスが指定されたらエラーを表示して処理をキャンセルするパッチを作成しました。<br><br>Patches #2002211</div></section>
+    <ul><li><section><h1 id=5376>
+    <span class="no">[5376]</span>
+    <a class="thread-title" href="#5376">Re2:長過ぎるパス名で落ちる</a>
+    <span class="author">もか</span>
+    <time datetime="2008-06-26T23:20:03">2008年06月26日 23:20</time></h1>
+    <div class="body">&gt;Patches #2002211<br>コマンドラインから_MAX_PATH以上のファイル名を送ると落ちるので、<br>その対策パッチを追加しておきました。<br>なすこじさんのパッチを確認したかったのですがXP SP3しか環境が無いのでパスします。。<br><br>ダイアログの方は、「DBCSのファイル名でMAX_PATH以上」でないと変にならないんですね。<br>ASCIIだけでMAX_PATH越えにしたら、エクスプローラの右クリックがおかしいし、<br>ダイアログで「ファイル名が無効」とでてそもそも開けなくなりました。<br></div></section>
+    <ul><li><section><h1 id=5377>
+    <span class="no">[5377]</span>
+    <a class="thread-title" href="#5377">Re3:長過ぎるパス名で落ちる</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-27T22:14:54">2008年06月27日 22:14</time></h1>
+    <div class="body">▼ もかさん<br>&gt; &gt;Patches #2002211<br>&gt; コマンドラインから_MAX_PATH以上のファイル名を送ると落ちるので、<br>&gt; その対策パッチを追加しておきました。<br><br>どうもありがとうございます。<br>ソースコードおよび動作を確認しました。<br><br>あと、私の修正の方で260バイト目がSJISの1バイト目だった時にエラーとならないことがあったので修正しました。<br><br>Windows98はちょっと動作が違うようで本修正が有効に働きませんでした。<br>異常終了しないような感じなので、取りあえずはそのままです (^^;<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=5388>
+    <span class="no">[5388]</span>
+    <a class="thread-title" href="#5388">そろそろコミットしたい</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-16T19:10:42">2008年07月16日 19:10</time></h1>
+    <div class="body">まだ対応に抜けがあるかもしれませんが、ターゲットにした操作へのコードに変な所が無ければコミットしたいです。<br><br>その後、落ちる操作が見つかる度にしらみつぶしにしていけば良いのでは？と思います。<br><br>というわけで、どなたか構って下さい (^^;</div></section>
+    <ul><li><section><h1 id=5396>
+    <span class="no">[5396]</span>
+    <a class="thread-title" href="#5396">Re:そろそろコミットしたい</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-28T02:09:25">2008年07月28日 02:09</time></h1>
+    <div class="body">編集ウィンドウへのドロップでも落ちていたので対策を施しました。<br><br>Patchesの方でも書きましたが、Win98では'\0'を含めて261バイトのパスの時に落ちてしまう事があります。<br>WinAPIの中で落ちるため本対策では救えません。<br><br>それ以外では多分大丈夫です。<br>一応Win2k SP4, WinXP SP2, Vistaで確認しました。<br><br>落ちるという致命的な不具合なので、速やかにコミットまで行きたいのですが……</div></section>
+    </li></ul></li></ul></li></ul></body></html>

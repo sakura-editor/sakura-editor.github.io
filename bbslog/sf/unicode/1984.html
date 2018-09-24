@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ビルドが出来ません | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1984</span>
+    <a class="thread-title" href="1984.html#1984">ビルドが出来ません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1985</span>
+    <a class="thread-title" href="1984.html#1985">Re:ビルドが出来ません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1987</span>
+    <a class="thread-title" href="1984.html#1987">Re2:ビルドが出来ません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1988</span>
+    <a class="thread-title" href="1984.html#1988">Re3:ビルドが出来ません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1989</span>
+    <a class="thread-title" href="1984.html#1989">Re4:ビルドが出来ません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1990</span>
+    <a class="thread-title" href="1984.html#1990">Re5:ビルドが出来ません</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1993</span>
+    <a class="thread-title" href="1984.html#1993">Re6:ビルドが出来ません</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1984>
+    <span class="no">[1984]</span>
+    <a class="thread-title" href="#1984">ビルドが出来ません</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-06-13T20:03:02">2013年06月13日 20:03</time></h1>
+    <div class="body">VS2005Express+PlatformSDKでビルドできなくなっています<br>VS2008へ移行ならそれでも良いのですが</div></section>
+    <ul><li><section><h1 id=1985>
+    <span class="no">[1985]</span>
+    <a class="thread-title" href="#1985">Re:ビルドが出来ません</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-06-13T21:03:13">2013年06月13日 21:03</time></h1>
+    <div class="body">r3124<br>New: タブを閉じるボタン<br>upatchid:214<br>からビルド出来なくなっています。</div></section>
+    <ul><li><section><h1 id=1987>
+    <span class="no">[1987]</span>
+    <a class="thread-title" href="#1987">Re2:ビルドが出来ません</a>
+    <span class="author">もか</span>
+    <time datetime="2013-06-13T23:38:20">2013年06月13日 23:38</time></h1>
+    <div class="body">VC2005Express + Windows SDK v7.0ではできています。<br>Windows SDKのバージョンは？<br>vsstyle.hがらみかと推測しますが、<br>エラーの内容かパッチを書いてくれないとよくわかりません。<br>ちょこっと#ifndef NANIGASI #define NANIGASIするだけで直るような内容でしょうか。<br></div></section>
+    <ul><li><section><h1 id=1988>
+    <span class="no">[1988]</span>
+    <a class="thread-title" href="#1988">Re3:ビルドが出来ません</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-06-14T00:16:05">2013年06月14日 00:16</time></h1>
+    <div class="body">▼ もかさん<br>&gt; VC2005Express + Windows SDK v7.0ではできています。<br>&gt; Windows SDKのバージョンは？<br>&gt; vsstyle.hがらみかと推測しますが、<br>&gt; エラーの内容かパッチを書いてくれないとよくわかりません。<br>&gt; ちょこっと#ifndef NANIGASI #define NANIGASIするだけで直るような内容でしょうか。<br>Windows Server 2003 sp2用です。<br>v7.0だとVS2008用じゃないでしょうか。<br><br>vsstyle.hは存在していないんでかなりきついんじゃないでしょうか？<br>他にHTHEMEが駄目みたいです。<br></div></section>
+    <ul><li><section><h1 id=1989>
+    <span class="no">[1989]</span>
+    <a class="thread-title" href="#1989">Re4:ビルドが出来ません</a>
+    <span class="author">もか</span>
+    <time datetime="2013-06-14T02:46:38">2013年06月14日 02:46</time></h1>
+    <div class="body">ビルドできるようにパッチも書きましたが、<br>VC2005+SDK 7.0は下記のKBの修正を適用すると使えます。<br>http://support.microsoft.com/kb/949009/ja<br></div></section>
+    <ul><li><section><h1 id=1990>
+    <span class="no">[1990]</span>
+    <a class="thread-title" href="#1990">Re5:ビルドが出来ません</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-06-14T06:33:06">2013年06月14日 06:33</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ビルドできるようにパッチも書きましたが、<br>&gt; VC2005+SDK 7.0は下記のKBの修正を適用すると使えます。<br>&gt; http://support.microsoft.com/kb/949009/ja<br>VC2005Expressは検証用で使用しているのでVC2005+SDK 7.0というのは考えていません。<br>VC2005+SDK 7.0ならば素直にVC2008Expressを使えば良いからです。</div></section>
+    <ul><li><section><h1 id=1993>
+    <span class="no">[1993]</span>
+    <a class="thread-title" href="#1993">Re6:ビルドが出来ません</a>
+    <span class="author">syat</span>
+    <time datetime="2013-06-17T23:58:11">2013年06月17日 23:58</time></h1>
+    <div class="body">▼みなさま<br>お手数をおかけしました。。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

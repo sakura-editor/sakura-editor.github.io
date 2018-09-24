@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>外部コマンドを使った文字列加工 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2072</span>
+    <a class="thread-title" href="2072.html#2072">外部コマンドを使った文字列加工</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2184</span>
+    <a class="thread-title" href="2072.html#2184">RE: 外部コマンドを使った文字列加工</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2186</span>
+    <a class="thread-title" href="2072.html#2186">Re2: 外部コマンドを使った文字列加工</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2187</span>
+    <a class="thread-title" href="2072.html#2187">なんちゅぅエディタだ...</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2248</span>
+    <a class="thread-title" href="2072.html#2248">RE: お薦め clip</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2072>
+    <span class="no">[2072]</span>
+    <a class="thread-title" href="#2072">外部コマンドを使った文字列加工</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-07-01T01:32:52">2002年07月01日 01:32</time></h1>
+    <div class="body">外部コマンドを使った文字列変換機能のキーへの割り当てを試みてみました．<br><br>▼原理<br>クリップボードのデータを外部コマンドで加工して貼り付ける．<br><br>▼Trial 1<br>clip.exe http://members.tripod.co.jp/hishoh/arc/clip.html というクリップボードと標準入出力を組み合わせるツールを利用．<br><br>以下のようなマクロを作る．<br>S_Copy();<br>S_ExecCommand( 'cmd.exe /c "clip p|perl test.pl|clip"', 0);<br>S_Paste();<br><br>clipはclip.exeに予めパスを通すか，あるいはフルパス表記にします．<br>test.plは適当に作ったperlスクリプト．<br>$i=1;<br>while(&lt;&gt;){<br>&#9;printf( "%05d : %s", $i++, $_ );<br>}<br>行番号を振るだけの物です．<br><br>結果は失敗．理由は2行目の実行結果を待たずにPasteが実行されてしまうので，加工結果が反映されないため．<br><br>実行終了を待つためにPPAを使うことにした．<br>▼Trial 2<br><br>以下のマクロを作る．<br>S_Copy;&#9;// コピー<br>Exec('cmd.exe', '/c "clip p|perl test.pl|clip"', True);<br>S_Paste;<br><br>保存時に拡張子をppaにするのを忘れずに．<br><br>こちらは成功．キーに割り当てたら1キー変換ができるようになりました．<br><br>しかし，難あり．<br>・コマンドプロンプトのウィンドウが開いてしまう．<br>・実行に数秒～数十秒かかる<br>時間がかかるからウィンドウが出た方が実行中とわかっていいかも(笑)<br><br>以上，やったままレポートでした．<br></div></section>
+    <ul><li><section><h1 id=2184>
+    <span class="no">[2184]</span>
+    <a class="thread-title" href="#2184">RE: 外部コマンドを使った文字列加工</a>
+    <span class="author">すい</span>
+    <time datetime="2002-08-09T20:21:04">2002年08月09日 20:21</time></h1>
+    <div class="body">&gt;以下のようなマクロを作る．<br>&gt;S_Copy();<br>&gt;S_ExecCommand( 'cmd.exe /c "clip p|perl test.pl|clip"', 0);<br>&gt;S_Paste();<br><br>これ、もっと根本的な点でダメっぽいです。(*^～^*)<br><br>S_Copy ですが、共通設定→編集→「コピーしたら選択解除」の設定状況によって<br>動作が異なってしまいます。チェックが ON になっていると S_Copy 実行時、<br>範囲選択が解除されてしまうため、その後、S_Paste で変更後の文字列が *追加*<br>されてしまう、と。置換されるんじゃなく。<br><br>まぁ、Copy → Cut にすれば、見た目解決しますけど、でもマクロの汎用性(?)<br>とかの点から考えると、個人の設定状況によってここまで動作が変わってしまう<br>というのはマズイかと。<br><br>改良案１<br>　マクロでの S_Copy 自身は常に範囲選択解除しないようにする。<br>　キーボードマクロ記録時に<br><br>　・コピーしたら選択解除 チェック OFF 時<br>　　S_Copy(0);&#9;// コピー<br>　　のみ出力する。<br><br>　・コピーしたら選択解除 チェック ON 時<br>　　S_Copy(0);&#9;// コピー<br>　　S_CancelMode(0);&#9;// 各種モードの取り消し<br>　　の２行を出力する。<br><br>これだと CEditView_Command.cpp 内 void CEditView::Command_COPY() の末尾<br>if( m_pShareData-&gt;m_Common.m_bCopyAndDisablSelection ){&#9;/* コピーしたら選択解除 */<br>&#9;/* テキストが選択されているか */<br>&#9;if( IsTextSelected() ){<br>&#9;&#9;/* 現在の選択範囲を非選択状態に戻す */<br>&#9;&#9;DisableSelectArea( TRUE );<br>&#9;}<br>}<br>を<br>if( m_bExecutingKeyMacro == FALSE ){&#9;/* キーボードマクロの実行中ではない */<br>&#9;if( m_pShareData-&gt;m_Common.m_bCopyAndDisablSelection ){&#9;/* コピーしたら選択解除 */<br>&#9;&#9;/* テキストが選択されているか */<br>&#9;&#9;if( IsTextSelected() ){<br>&#9;&#9;&#9;/* 現在の選択範囲を非選択状態に戻す */<br>&#9;&#9;&#9;HandleCommand( F_CANCEL_MODE, TRUE, 0, 0, 0, 0 );&#9;// 各種モードの取り消し &amp; キーボードマクロ登録<br>&#9;&#9;}<br>&#9;}<br>}<br>とでもすれば良いのかな？(未確認)<br><br>改良案２<br>　S_Copy の機能を拡張する。<br>　・S_Copy(0) だと範囲選択解除しない<br>　・S_Copy(1) だと範囲選択解除する<br>　にするとか。<br></div></section>
+    <ul><li><section><h1 id=2186>
+    <span class="no">[2186]</span>
+    <a class="thread-title" href="#2186">Re2: 外部コマンドを使った文字列加工</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-08-10T01:31:44">2002年08月10日 01:31</time></h1>
+    <div class="body">&gt;S_Copy ですが、共通設定→編集→「コピーしたら選択解除」の設定状況によって<br>&gt;動作が異なってしまいます。<br>ぐぎゃぁ．知らんかった．<br>選択状況やオプションによって振る舞いが変わるコマンドはやりにくい．<br></div></section>
+    </li><li><section><h1 id=2187>
+    <span class="no">[2187]</span>
+    <a class="thread-title" href="#2187">なんちゅぅエディタだ...</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-08-10T02:01:12">2002年08月10日 02:01</time></h1>
+    <div class="body">&gt;　S_Copy の機能を拡張する。<br>Copyの引数によって選択解除を抑制できるようにしようと思ったのですが，じつは「折り返しに改行を付けてコピー」なんていう設定があるじゃないですか．これがONになっているとかなり悲惨なことになりそう．<br><br>折り返しに改行を付けてコピーというコマンドがある（追加された）のだから，この設定は廃止してもいいように思います．<br></div></section>
+    </li></ul></li><li><section><h1 id=2248>
+    <span class="no">[2248]</span>
+    <a class="thread-title" href="#2248">RE: お薦め clip</a>
+    <span class="author">すい</span>
+    <time datetime="2002-08-29T20:59:47">2002年08月29日 20:59</time></h1>
+    <div class="body">&gt;clip.exe http://members.tripod.co.jp/hishoh/arc/clip.html というクリップボードと標準入出力を組み合わせるツールを利用．<br>&gt;<br>&gt;以下のようなマクロを作る．<br>&gt;S_Copy();<br>&gt;S_ExecCommand( 'cmd.exe /c "clip p|perl test.pl|clip"', 0);<br>&gt;S_Paste();<br><br>ようやく見つけました。<br><br>いえ、実は私も以前からこれと同じような clip.exe を使っていて、<br>そちらの方が より高機能で、より使い易いんですが、入手元を失念してしまっていて<br>「これ、どっから手に入れたんだ～～」と、ずぅっと探し回っていたんですよ、実は。<br><br>というわけで私が使っている clip.exe は こちら。<br>→ http://membres.lycos.fr/irori/<br><br>特徴は、今、自分が入力側なのか出力側なのかを clip.exe 自身が自動的に判別して<br>それに適した動作をしてくれること。なので、<br><br>clip | sort | clip<br><br>な感じで clip にオプションパラメータ不要、微妙に使い心地良し。<br>もちろんオプションパラメータで動作を明示することも可能ですが、通常は使いません。<br><br>で、ついでに、もうほんのちょっと高機能。クリップボードの現在のデータの末尾に<br>標準入力からのデータを追記してくれる a オプション(append)あり。<br><br>それでありながら exe のファイルサイズは、こちらの方が小さかったりするのです、微妙に(笑)。<br>http://members.tripod.co.jp/hishoh/arc/clip.html の方とは違ってソースは付いて来ませんが。<br><br>お薦めです。<br></div></section>
+    </li></ul></li></ul></body></html>

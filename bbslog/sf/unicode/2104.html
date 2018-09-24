@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タスクトレイのプロセスが異常終了します | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2104</span>
+    <a class="thread-title" href="2104.html#2104">タスクトレイのプロセスが異常終了します</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2106</span>
+    <a class="thread-title" href="2104.html#2106">Re:タスクトレイのプロセスが異常終了します</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2108</span>
+    <a class="thread-title" href="2104.html#2108">Re2:タスクトレイのプロセスが異常終了します</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2110</span>
+    <a class="thread-title" href="2104.html#2110">Re3:タスクトレイのプロセスが異常終了します</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2118</span>
+    <a class="thread-title" href="2104.html#2118">Re3:タスクトレイのプロセスが異常終了します</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2119</span>
+    <a class="thread-title" href="2104.html#2119">Re4:タスクトレイのプロセスが異常終了します</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2123</span>
+    <a class="thread-title" href="2104.html#2123">Re5:タスクトレイのプロセスが異常終了します</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2109</span>
+    <a class="thread-title" href="2104.html#2109">Re2:タスクトレイのプロセスが異常終了します</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2120</span>
+    <a class="thread-title" href="2104.html#2120">リクルート</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2121</span>
+    <a class="thread-title" href="2104.html#2121">Re:リクルート</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2126</span>
+    <a class="thread-title" href="2104.html#2126">Re2:リクルート</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2104>
+    <span class="no">[2104]</span>
+    <a class="thread-title" href="#2104">タスクトレイのプロセスが異常終了します</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-02-06T19:28:55">2014年02月06日 19:28</time></h1>
+    <div class="body">v2.1.1.0ですが、起動時にタスクトレイのプロセスが異常終了してしまうことがあります。<br>自分の環境(Win7 Pro 32bit)では「アイコン付きメニュー」のON/OFF切替え後の再起動で異常終了することがありました。<br>タスクトレイ常駐はOFFにしています。<br>異常終了時のsakura.iniを見るとszLanguageDllに文字化けした長い文字列が入っていました。<br>szLanguageDll=の行を削除するととりあえず正常起動しますが、設定変更後の全終了→再起動で同じように異常終了することがあります。<br><br>直接の原因かわかりませんが、CShareData::InitShareData()でszLanguageDllが初期化されていないみたいな気がします。<br>以下のような行の追加が必要なのではないでしょうか。<br>m_pShareData-&gt;m_Common.m_sWindow.m_szLanguageDll[0] = _T('\0');</div></section>
+    <ul><li><section><h1 id=2106>
+    <span class="no">[2106]</span>
+    <a class="thread-title" href="#2106">Re:タスクトレイのプロセスが異常終了します</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-02-06T20:33:25">2014年02月06日 20:33</time></h1>
+    <div class="body">今のところ、以下の手順でszLanguageDll行の文字化けは100%再現します。<br><br>(1) sakura.iniを削除しておく<br>(2) sakura.exeをダブルクリックで起動<br>(3) [共通設定]-[ウィンドウ]-[アイコン付きメニュー]をOFFにする<br>(4) [ファイル]-[サクラエディタの全終了]<br><br>(4)の後、sakura.iniを別エディタで見るとszLanguageDllの行が文字化けしている。<br>ただし、文字化けはしていても次回起動で異常終了しない場合もあります。<br><br>&gt; m_pShareData-&gt;m_Common.m_sWindow.m_szLanguageDll[0] = _T('\0');<br><br>手元の環境で上記の行を追加してビルドしてみましたが、それでも改善しませんでした。orz<br>他にも何か修正が必要なのでしょうか…</div></section>
+    <ul><li><section><h1 id=2108>
+    <span class="no">[2108]</span>
+    <a class="thread-title" href="#2108">Re2:タスクトレイのプロセスが異常終了します</a>
+    <span class="author">novice</span>
+    <time datetime="2014-02-06T22:20:56">2014年02月06日 22:20</time></h1>
+    <div class="body">▼ LR4さん<br>&gt; 手元の環境で上記の行を追加してビルドしてみましたが、それでも改善しませんでした。orz<br>&gt; 他にも何か修正が必要なのでしょうか…<br><br>SSelLangInfo構造体のメンバ変数szDllNameを初期化してないのが問題のようです。<br>コンストラクタで下記のように初期化すればよさそうです。<br>szDllName[0] = _T('\0');<br><br>他のメンバ変数も初期化したほうがよさそうです。<br></div></section>
+    <ul><li><section><h1 id=2110>
+    <span class="no">[2110]</span>
+    <a class="thread-title" href="#2110">Re3:タスクトレイのプロセスが異常終了します</a>
+    <span class="author">syat</span>
+    <time datetime="2014-02-06T23:01:04">2014年02月06日 23:01</time></h1>
+    <div class="body">▼ noviceさん<br>▼ LR4さん<br><br>ちょっと心当たりがあったのでパッチを作成しました。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/768/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>768/<wbr></nobr></a><br>リリース前に余計なことをしたような…</div></section>
+    </li><li><section><h1 id=2118>
+    <span class="no">[2118]</span>
+    <a class="thread-title" href="#2118">Re3:タスクトレイのプロセスが異常終了します</a>
+    <span class="author">novice</span>
+    <time datetime="2014-02-08T00:22:44">2014年02月08日 00:22</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; SSelLangInfo構造体のメンバ変数szDllNameを初期化してないのが問題のようです。<br>&gt; コンストラクタで下記のように初期化すればよさそうです。<br>&gt; szDllName[0] = _T('\0');<br>&gt; <br>&gt; 他のメンバ変数も初期化したほうがよさそうです。<br><br>少し調べてみました。<br>SSelLangInfo構造体は、POD型なので<br>new SSelLangInfo();<br>のように括弧を付けるとゼロで初期化されるようです。<br>new SSelLangInfo;<br>だとゼロで初期化されないので文字化けします。<br><br><a href=http://msdn.microsoft.com/ja-jp/library/80ks028k%28v=vs.90%29.aspx target=_top><nobr>http://<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>ja-<wbr>jp/<wbr>library/<wbr>80ks028k<wbr>%<wbr>28v=<wbr>vs.<wbr>90%<wbr>29.<wbr>aspx</nobr></a><br><br>古いコンパイラ(2003)でもゼロで初期化されました。<br></div></section>
+    <ul><li><section><h1 id=2119>
+    <span class="no">[2119]</span>
+    <a class="thread-title" href="#2119">Re4:タスクトレイのプロセスが異常終了します</a>
+    <span class="author">syat</span>
+    <time datetime="2014-02-08T11:29:13">2014年02月08日 11:29</time></h1>
+    <div class="body">build_config.h にある USE_LEAK_CHECK_WITH_CRTDBG を使用すると、<br>「warning C4345: 動作変更 : 形式 () の初期化子で構築される POD 型のオブジェクトは既定初期化されます。」<br>という警告が出るのを解消したかったのです。<br><br><a href=http://d.hatena.ne.jp/hiiragi_corona/20120618/1340012843 target=_top><nobr>http://<wbr>d.<wbr>hatena.<wbr>ne.<wbr>jp/<wbr>hiiragi_<wbr>corona/<wbr>20120618<wbr>/<wbr>13400128<wbr>43</nobr></a><br>こちらを見ると、①警告を無視する、②クラスにする、③コンストラクタ呼ばないのどれかということなので、③をやろうとしましたがNGでした。<br>とりあえず無視してよい警告のようなので修正を戻しました。<br></div></section>
+    <ul><li><section><h1 id=2123>
+    <span class="no">[2123]</span>
+    <a class="thread-title" href="#2123">Re5:タスクトレイのプロセスが異常終了します</a>
+    <span class="author">novice</span>
+    <time datetime="2014-02-08T14:02:03">2014年02月08日 14:02</time></h1>
+    <div class="body">▼ syatさん<br>&gt; build_config.h にある USE_LEAK_CHECK_WITH_CRTDBG を使用すると、<br>&gt; 「warning C4345: 動作変更 : 形式 () の初期化子で構築される POD 型のオブジェクトは既定初期化されます。」<br>&gt; という警告が出るのを解消したかったのです。<br><br>自分もUSE_LEAK_CHECK_WITH_CRTDBGは有効にしていて、コンパイル時にC4345が表示されていたので気にはなっていたのですが、POD型の意味がよく分からずにほったらかしてました。<br>(そういう経緯があったので、少し調べてみました)<br><br>参考までに、もっと古いコンパイラ(VC6)だとゼロで初期化されませんでした。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=2109>
+    <span class="no">[2109]</span>
+    <a class="thread-title" href="#2109">Re2:タスクトレイのプロセスが異常終了します</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-02-06T22:32:22">2014年02月06日 22:32</time></h1>
+    <div class="body">&gt; &gt; m_pShareData-&gt;m_Common.m_sWindow.m_szLanguageDll[0] = _T('\0');<br><br>上記の修正に加えて、CSelectLang::InitializeLanguageEnvironm<br>ent()内に、<br>psLangInfo-&gt;szDllName[0] = _T('\0');<br>の行を追加したら文字化けしなくなりました。<br><br>正しい対処かわかりませんが、ご確認願います。</div></section>
+    <ul><li><section><h1 id=2120>
+    <span class="no">[2120]</span>
+    <a class="thread-title" href="#2120">リクルート</a>
+    <span class="author">syat</span>
+    <time datetime="2014-02-08T11:48:45">2014年02月08日 11:48</time></h1>
+    <div class="body">▼ LR4さん<br><br>スレッドの趣旨と関係ないのですが、掲示板で名前をお見かけするので、開発メンバーになりませんか？<br>管理掲示板とかでSourceforgeアカウントを名乗っていただければコミット権限をつけます。<br><br>アクティブメンバー数維持のため最近活動している方に声かけ中です。Wikiでも みけCATさんに勧誘コメントを残しました。<br>他の方も、ちょっと手伝ってもよいとか、やってみたい事がある、という方を歓迎しますので、管理掲示板で名乗ってください。<br>イタズラ目的でないと判断できたら権限を付けます。<br><br>以上リクルートでした。</div></section>
+    <ul><li><section><h1 id=2121>
+    <span class="no">[2121]</span>
+    <a class="thread-title" href="#2121">Re:リクルート</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-02-08T13:11:47">2014年02月08日 13:11</time></h1>
+    <div class="body">▼ syatさん<br>お誘いいただけて光栄ですが、今回は遠慮させていただきます。<br>お役に立ちたくても能力足りてないですし、”修業中”ってことでお願いします。<br>(^^;;;</div></section>
+    <ul><li><section><h1 id=2126>
+    <span class="no">[2126]</span>
+    <a class="thread-title" href="#2126">Re2:リクルート</a>
+    <span class="author">syat</span>
+    <time datetime="2014-02-09T09:25:10">2014年02月09日 09:25</time></h1>
+    <div class="body">▼ LR4さん<br>そうですか。気が向いたらいつでもどうぞ^^</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

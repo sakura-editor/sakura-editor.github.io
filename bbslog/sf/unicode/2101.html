@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>メニュー表示バグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2101</span>
+    <a class="thread-title" href="2101.html#2101">メニュー表示バグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2102</span>
+    <a class="thread-title" href="2101.html#2102">Re:メニュー表示バグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2103</span>
+    <a class="thread-title" href="2101.html#2103">Re2:メニュー表示バグ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2101>
+    <span class="no">[2101]</span>
+    <a class="thread-title" href="#2101">メニュー表示バグ</a>
+    <span class="author">もか</span>
+    <time datetime="2014-02-02T18:41:46">2014年02月02日 18:41</time></h1>
+    <div class="body">「整形」と「高度な操作」のメニューラベルが反対です。<br><br>String_Define.h の定義を反対にすれば、<br>2.1.1.0ユーザーもバージョンアップすれば直ります。<br></div></section>
+    <ul><li><section><h1 id=2102>
+    <span class="no">[2102]</span>
+    <a class="thread-title" href="#2102">Re:メニュー表示バグ</a>
+    <span class="author">syat</span>
+    <time datetime="2014-02-04T01:08:15">2014年02月04日 01:08</time></h1>
+    <div class="body">うーん。気づかなかった。。<br>パッチを作成しました。<br>https://sourceforge.net/p/sakura-editor/patchunicode/767/<br><br>かっこ悪いので2.1.1.1で修正してからインストーラを作ろうと思います。<br>ほかに一緒にいれたいバグ修正があればコミットしてください。<br></div></section>
+    <ul><li><section><h1 id=2103>
+    <span class="no">[2103]</span>
+    <a class="thread-title" href="#2103">Re2:メニュー表示バグ</a>
+    <span class="author">もか</span>
+    <time datetime="2014-02-04T23:13:21">2014年02月04日 23:13</time></h1>
+    <div class="body">&gt;ほかに一緒にいれたいバグ修正があればコミットしてください。<br>ハンドルリークのほうはコミットしました。<br>整数オーバーフローの修正のほうは、あまり検証していないので保留にします。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

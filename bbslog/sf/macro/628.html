@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ファイル名を取得し、そのファイル名で置換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">628</span>
+    <a class="thread-title" href="628.html#628">ファイル名を取得し、そのファイル名で置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">629</span>
+    <a class="thread-title" href="628.html#629">Re:ファイル名を取得し、そのファイル名で置換</a></div>
+    </li><li><div class="list-title">
+    <span class="no">632</span>
+    <a class="thread-title" href="628.html#632">Re:ファイル名を取得し、そのファイル名で置換</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=628>
+    <span class="no">[628]</span>
+    <a class="thread-title" href="#628">ファイル名を取得し、そのファイル名で置換</a>
+    <span class="author">アツシ</span>
+    <time datetime="2017-05-10T23:28:06">2017年05月10日 23:28</time></h1>
+    <div class="body">次のようなファイルがあったとします。<br>これらのファイル群に対して「ファイル名を取得し、ファイル内に書かれた●●を拡張子つきのファイル名で置換する」ということは可能なのでしょうか？　マクロ/Grepで色々試してみましたが、上手くいきません。<br><br>------------------<br>■ファイル群<br>aaa.txt<br>bbb.txt<br>ccc.txt<br>ddd.txt<br>eee.txt<br><br>■各ファイルの中身<br>このファイル名は●●●です。<br>------------------<br>　↓<br>実現したい結果<br>　↓<br>----------------------------<br>aaa.txt<br>　（中身）このファイル名はaaaです。<br><br>bbb.txt<br>　（中身）このファイル名はbbbです。<br><br>ccc.txt<br>　（中身）このファイル名はcccです。<br><br>ddd.txt<br>　（中身）このファイル名はdddです。<br><br>eee.txt<br>　（中身）このファイル名はeeeです。<br>----------------------------</div></section>
+    <ul><li><section><h1 id=629>
+    <span class="no">[629]</span>
+    <a class="thread-title" href="#629">Re:ファイル名を取得し、そのファイル名で置換</a>
+    <span class="author">TKR</span>
+    <time datetime="2017-05-16T11:58:14">2017年05月16日 11:58</time></h1>
+    <div class="body">まず、一般掲示板にも似たようなこと投稿してるけど、<br>類似の多重投稿は控え、重複したスレは消すべき。<br><br><br>さて本題ですが、サクラエディタに備わっている機能<br><br>メニューバーより<br>「編集」＞「高度な操作」＞「このファイル名をコピー」<br>ショートカットキー：Ctrl+-<br><br>これを使ってマクロ化すればよいと思います。</div></section>
+    </li><li><section><h1 id=632>
+    <span class="no">[632]</span>
+    <a class="thread-title" href="#632">Re:ファイル名を取得し、そのファイル名で置換</a>
+    <span class="author">神楽</span>
+    <time datetime="2017-05-20T18:51:44">2017年05月20日 18:51</time></h1>
+    <div class="body">●●●をExpandParameter('$g')に置換するように<br>ReplaceAll関数（ <a href=http://sakura-editor.sourceforge.net/htmlhelp2/HLP000293.html target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>htmlhelp<wbr>2/<wbr>HLP00029<wbr>3.<wbr>html</nobr></a> ）<br>で指定するというのはどうでしょうか？<br><br>ExpandParameterで使える特殊記号等は以下参照<br><a href=http://sakura-editor.sourceforge.net/htmlhelp2/HLP000284.html target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>htmlhelp<wbr>2/<wbr>HLP00028<wbr>4.<wbr>html</nobr></a></div></section>
+    </li></ul></li></ul></body></html>

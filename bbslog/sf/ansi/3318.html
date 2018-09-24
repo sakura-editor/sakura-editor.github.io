@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>同一ファイルを複数開ける | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3318</span>
+    <a class="thread-title" href="3318.html#3318">同一ファイルを複数開ける</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3318>
+    <span class="no">[3318]</span>
+    <a class="thread-title" href="#3318">同一ファイルを複数開ける</a>
+    <span class="author">もか</span>
+    <time datetime="2003-11-25T18:39:04">2003年11月25日 18:39</time></h1>
+    <div class="body">http://support.microsoft.com/default.aspx?scid=kb;ja;418746<br>を見て、初めて知ったのですが、そんなバカ仕様だったとは（泣<br>全角英字のファイル名なんて付けないので知りませんでした。<br>この情報とは逆に、題名の通りでNT系でファイル名を比較するときに限り、全角英字も大文字小文字を区別しないと駄目ですね。<br>  ちなみに、どこかでGetLongFileName()を呼び忘れているためか、8.3形式のDOSファイル名でも同じファイルを開くことが出来ます。<br>::SHGetPathFromIDList() した後は、DOS名も大文字小文字も統一されるので問題なさそうですけど。<br><br>同じNT系でもUnicode対応状況によっては「大文字と小文字を区別する」文字が<br>当然違ってくるわけで、どの文字が区別されないのかは完全にOSに依存することになりそう。<br></div></section>
+    </li></ul></body></html>

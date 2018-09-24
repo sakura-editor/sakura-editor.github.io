@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ssrc_2002-07-04コンパイルエラー | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2254</span>
+    <a class="thread-title" href="2254.html#2254">ssrc_2002-07-04コンパイルエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2255</span>
+    <a class="thread-title" href="2254.html#2255">Re:ssrc_2002-07-04コンパイルエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2256</span>
+    <a class="thread-title" href="2254.html#2256">Re2:ssrc_2002-07-04コンパイルエラー</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2254>
+    <span class="no">[2254]</span>
+    <a class="thread-title" href="#2254">ssrc_2002-07-04コンパイルエラー</a>
+    <span class="author">もぐ</span>
+    <time datetime="2002-07-21T00:38:21">2002年07月21日 00:38</time></h1>
+    <div class="body">こんにちは、もぐです。<br>以前、桁数誤表示に即対応していただきありがとうございました。<br><br>早速ですが、報告します。<br>"ssrc_2002-07-04.tar.bz2"ですが、BCC5.5でコンパイルエラーがでます。<br>"NMKEY"と"TBBUTTONINFO"が定義されていないようです。<br>この２つを使っているところをコメントにしたところ実行ファイルができました。<br>このエラーは、"ssrc_2002-06-23"から出ているようです。</div></section>
+    <ul><li><section><h1 id=2255>
+    <span class="no">[2255]</span>
+    <a class="thread-title" href="#2255">Re:ssrc_2002-07-04コンパイルエラー</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-07-21T02:57:44">2002年07月21日 02:57</time></h1>
+    <div class="body">▼ もぐさん<br>&gt; "ssrc_2002-07-04.tar.bz2"ですが、BCC5.5でコンパイルエラーがでます。<br>&gt; "NMKEY"と"TBBUTTONINFO"が定義されていないようです。<br><br>対策方法：<br>  -D_WIN32_IE=0x300 の 300 を 400 に変えてみてください。<br>  この実行ファイルは、多分IE4.0以降が必須になります<br><br><br>＃ #2251でエラーになる。っていったきり対策をアナウンスしてませんでした。 <br></div></section>
+    <ul><li><section><h1 id=2256>
+    <span class="no">[2256]</span>
+    <a class="thread-title" href="#2256">Re2:ssrc_2002-07-04コンパイルエラー</a>
+    <span class="author">もぐ</span>
+    <time datetime="2002-07-21T10:05:52">2002年07月21日 10:05</time></h1>
+    <div class="body"><br>&gt; 対策方法：<br>&gt;   -D_WIN32_IE=0x300 の 300 を 400 に変えてみてください。<br>&gt;   この実行ファイルは、多分IE4.0以降が必須になります<br>あっできた。。ありがとうございます。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

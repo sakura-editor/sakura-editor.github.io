@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>パッチ：オートスクロール | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1829</span>
+    <a class="thread-title" href="1829.html#1829">パッチ：オートスクロール</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1841</span>
+    <a class="thread-title" href="1829.html#1841">Re:パッチ：オートスクロール</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1842</span>
+    <a class="thread-title" href="1829.html#1842">Re2:パッチ：オートスクロール</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1843</span>
+    <a class="thread-title" href="1829.html#1843">Re3:パッチ：オートスクロール</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1856</span>
+    <a class="thread-title" href="1829.html#1856">Re3:パッチ：オートスクロール</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1857</span>
+    <a class="thread-title" href="1829.html#1857">Re4:パッチ：オートスクロール</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2042</span>
+    <a class="thread-title" href="1829.html#2042">www.87wg.com</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1829>
+    <span class="no">[1829]</span>
+    <a class="thread-title" href="#1829">パッチ：オートスクロール</a>
+    <span class="author">もか</span>
+    <time datetime="2012-06-26T18:17:00">2012年06月26日 18:17</time></h1>
+    <div class="body">いまさら感がありますが、オートスクロールを実装してみました。<br>https://sourceforge.net/tracker/?func=detail&amp;aid=3538052&amp;group_id=12488&amp;atid=1013762<br><br>バイナリ<br>http://ux.getuploader.com/sakura_editor/download/41/skrw_autoscroll_bin.zip<br><br>#古いパッチのフォローありがとうございます。放置してすみません。<br></div></section>
+    <ul><li><section><h1 id=1841>
+    <span class="no">[1841]</span>
+    <a class="thread-title" href="#1841">Re:パッチ：オートスクロール</a>
+    <span class="author">通りすがれ</span>
+    <time datetime="2012-10-18T16:59:24">2012年10月18日 16:59</time></h1>
+    <div class="body">▼ もかさん<br>［PatchUnicode］にアップされている［skrw_new_autoscroll.zip］ですが、<br>・sakura_core\window\CAutoScrollWnd.cpp<br>・sakura_core\window\CAutoScrollWnd.h<br>　が存在しないためか、コンパイルできません。<br>　よろしければ上記2ファイルを含めたアーカイブを再アップして下さいますようお願い致します。</div></section>
+    <ul><li><section><h1 id=1842>
+    <span class="no">[1842]</span>
+    <a class="thread-title" href="#1842">Re2:パッチ：オートスクロール</a>
+    <span class="author">もか</span>
+    <time datetime="2012-10-19T11:23:04">2012年10月19日 11:23</time></h1>
+    <div class="body">&gt;・sakura_core\window\CAutoScrollWnd.cpp<br>&gt;・sakura_core\window\CAutoScrollWnd.h<br>すみません。<br>addしてpatchし直しました。<br></div></section>
+    <ul><li><section><h1 id=1843>
+    <span class="no">[1843]</span>
+    <a class="thread-title" href="#1843">Re3:パッチ：オートスクロール</a>
+    <span class="author">通りすがれ</span>
+    <time datetime="2012-10-21T00:55:35">2012年10月21日 00:55</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ・sakura_core\window\CAutoScrollWnd.cpp<br>&gt; ・sakura_core\window\CAutoScrollWnd.h<br>　度々すみません。<br>　新しくアップして頂いた［skrw_new_autoscroll_v1_1.zip］内の［skrw_new_autoscroll_v1_1.patch］を適用しましたが、上記の二つのファイルが作成されないようです。<br>「TortoiseSVN」の最新版を使用しているのですが、何か手順がおかしいのでしょうか？<br>　解決策を教えて頂ければ幸いです。</div></section>
+    </li><li><section><h1 id=1856>
+    <span class="no">[1856]</span>
+    <a class="thread-title" href="#1856">Re3:パッチ：オートスクロール</a>
+    <span class="author">通りすがれ</span>
+    <time datetime="2012-11-17T00:15:54">2012年11月17日 00:15</time></h1>
+    <div class="body">▼ もかさん<br>　TortoiseSVN Ver.1.7.10 Build 23359 を使用してサクラエディタの最新のソースコード（Rev.2468）を入手し、何もパッチを適用しない状態でビルドに失敗してしまいます。<br>　エラーメッセージは下記の通りです。<br><br>　c1xx : fatal error C1083: ソース ファイルを開けません。'..\sakura_core\window\CAutoScrollWnd.cpp': No such file or directory<br><br>　どうやら『パッチ：オートスクロール』関連のファイルが足りないようですが、私のやり方がまずいのか［PatchUnicode］にアップされている［skrw_new_autoscroll_v1_1.patch］を適用しても、<br><br>・sakura_core\window\CAutoScrollWnd.cpp<br>・sakura_core\window\CAutoScrollWnd.h<br><br>　の二つのファイルは作成されません。<br>（ちなみに［skrw_new_autoscroll_v1_1.patch］を右クリックして［TortoiseSVN］→［パッチを適用］を選択しています）<br><br>　苦肉の策で［skrw_new_autoscroll_v1_1.patch］に記述されている上記二つのファイルの内容をコピーして手作業でファイルを作成しましたが、至る所で AutoScroll 関連のエラーが頻発してしまいました。<br>　その後改めて［skrw_new_autoscroll_v1_1.patch］を適用してもエラーが出てしまいます。<br>（今回は Patch ファイル適用時に上記の二つのファイル名が表示されたことから、存在しないファイルは作成されないようですね。何かおかしいのでしょうか）</div></section>
+    <ul><li><section><h1 id=1857>
+    <span class="no">[1857]</span>
+    <a class="thread-title" href="#1857">Re4:パッチ：オートスクロール</a>
+    <span class="author">もか</span>
+    <time datetime="2012-11-17T09:35:45">2012年11月17日 09:35</time></h1>
+    <div class="body">「パッチ適用」の後に、ファイル名が並んだウインドウで[patch all]か何かをしないとパッチは適用されないみたいです。<br>私もやってみましたが、ちゃんと適用されました。<br>何が悪いのかはすみません。わかりません。<br></div></section>
+    </li><li><section><h1 id=2042>
+    <span class="no">[2042]</span>
+    <a class="thread-title" href="#2042">www.87wg.com</a>
+    <span class="author">www.87wg.com</span>
+    <time datetime="2013-08-22T06:36:10">2013年08月22日 06:36</time></h1>
+    <div class="body">SAKURA Development BBS(UNICODE) oakley www.87wg.com<br>[url=http://www.87wg.com/]www.87wg.com[/url]</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

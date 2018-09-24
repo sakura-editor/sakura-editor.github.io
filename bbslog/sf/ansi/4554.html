@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>お試し版でのアプリケーションエラーについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4554</span>
+    <a class="thread-title" href="4554.html#4554">お試し版でのアプリケーションエラーについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4555</span>
+    <a class="thread-title" href="4554.html#4555">Re:お試し版でのアプリケーションエラーについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4556</span>
+    <a class="thread-title" href="4554.html#4556">Re2:お試し版でのアプリケーションエラーについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4557</span>
+    <a class="thread-title" href="4554.html#4557">Re3:お試し版でのアプリケーションエラーについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4559</span>
+    <a class="thread-title" href="4554.html#4559">ん，わかったかも</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4587</span>
+    <a class="thread-title" href="4554.html#4587">Re:ん，わかったかも</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4588</span>
+    <a class="thread-title" href="4554.html#4588">自動判別精度</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4590</span>
+    <a class="thread-title" href="4554.html#4590">Re:自動判別精度</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4596</span>
+    <a class="thread-title" href="4554.html#4596">Re2:自動判別精度</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4597</span>
+    <a class="thread-title" href="4554.html#4597">本日の誤判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4598</span>
+    <a class="thread-title" href="4554.html#4598">Re:本日の誤判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4599</span>
+    <a class="thread-title" href="4554.html#4599">Re2:本日の誤判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4600</span>
+    <a class="thread-title" href="4554.html#4600">Re3:本日の誤判定</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4554>
+    <span class="no">[4554]</span>
+    <a class="thread-title" href="#4554">お試し版でのアプリケーションエラーについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-08-29T08:12:18">2006年08月29日 08:12</time></h1>
+    <div class="body">文字コード自動認識を入れ換えたお試し版でgrepを行うとアプリケーションエラーになることがあります．<br>mapファイルがあるバージョンで再現したのでアドレスを調べたところ，charcode.cppのCheckEucJpChar()に不正なアドレスが渡されているようでした．<br></div></section>
+    <ul><li><section><h1 id=4555>
+    <span class="no">[4555]</span>
+    <a class="thread-title" href="#4555">Re:お試し版でのアプリケーションエラーについて</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-08-29T23:10:59">2006年08月29日 23:10</time></h1>
+    <div class="body">まだ使い込みが足りないせいか、自分の環境ではいまのところエラーには出くわしていません。<br>何か条件があるんでしょうかね？</div></section>
+    <ul><li><section><h1 id=4556>
+    <span class="no">[4556]</span>
+    <a class="thread-title" href="#4556">Re2:お試し版でのアプリケーションエラーについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-08-30T01:06:43">2006年08月30日 01:06</time></h1>
+    <div class="body">&gt;まだ使い込みが足りないせいか、自分の環境ではいまのところエラーには出くわしていません。<br>&gt;何か条件があるんでしょうかね？<br>私は，海外物のソフトのソースコードにgrepを掛けたときに発生しました．<br>しかし，職場のPCでは発生するのに自分のPCでは発生しません．<br>そして，これまた困ったことにDebug buildで試しましたが全然発生しませんでした．<br><br>ちなみに，渡されたアドレスの周辺をVisual Studioのメモリダンプで見たら?? ?? ??でしたので，メモリマップから外れたアドレスなのでしょう．ですが，charcode.cppでとんでもなく外れたアドレスが渡される可能性があるんでしょうか？？<br><br>実に謎です．<br></div></section>
+    <ul><li><section><h1 id=4557>
+    <span class="no">[4557]</span>
+    <a class="thread-title" href="#4557">Re3:お試し版でのアプリケーションエラーについて</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-08-30T13:57:40">2006年08月30日 13:57</time></h1>
+    <div class="body">遅ればせながら，<br>ご無沙汰しております．<br><br>デバッグビルドでは通るがリリースビルドで落ちる…<br>ということは，charcode.cpp のどこかで<br>変数の初期化が抜けている可能性があります．<br><br>SourceForge Patches にも<br>いろいろとご指摘いただいておりますのに，<br>こちら少々お取り込み中でして；；<br>環境が整い次第修正を入れようと思います～<br></div></section>
+    <ul><li><section><h1 id=4559>
+    <span class="no">[4559]</span>
+    <a class="thread-title" href="#4559">ん，わかったかも</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-08-31T10:31:21">2006年08月31日 10:31</time></h1>
+    <div class="body">落ちたときのスタックダンプからCheckEucJpCharが nLen=0 で呼びだされていることがわかりました．<br>nLen = 0ということはバッファのデータを全て読み終わった後ですよね．<br>ということは，pSはバッファの末尾の次を指しているのでアクセスしてはまずいはず．<br>int CheckEucJpChar( const uchar_t* pS, const int nLen )<br>{<br>　　uchar_t uc = *pS; &lt;--- ここ！<br><br>　　if( 0 &lt; nLen ){<br>　　　　if( (uc &amp; 0x80) == 0 ){<br>　　　　　　// ASCII またはローマ字です.  (JIS X 0201 Roman.)<br><br>なので，1文字読み出すのは長さ判定より後ろになくてはなりません．<br></div></section>
+    <ul><li><section><h1 id=4587>
+    <span class="no">[4587]</span>
+    <a class="thread-title" href="#4587">Re:ん，わかったかも</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-09-21T16:18:31">2006年09月21日 16:18</time></h1>
+    <div class="body">CheckEucJpChar() 内で落ちるバグの修正パッチを，<br>Patches#1513775 の方にアップしました．<br><br># 追伸：<br># Visual C++ 6.0 で最新のソースコードをコンパイルしようとすると，<br># sakura_core\CPropTypesKeyHelp.cpp(284) : error C2065: 'ListView_SetCheckState' : 定義されていない識別子です。<br># と出てコンパイルできなかったので，<br># http://www14.cds.ne.jp/~neg/pro/piyo1/clc/lvscs.html<br># このページを参考にしてコンパイルのテストをしました…．<br></div></section>
+    <ul><li><section><h1 id=4588>
+    <span class="no">[4588]</span>
+    <a class="thread-title" href="#4588">自動判別精度</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-09-23T00:55:52">2006年09月23日 00:55</time></h1>
+    <div class="body">最近，ラスティブさんの自動判別が入ったファイルを使っているのですが，EUCのファイルをよくUnicodeと誤判別されてしまいます．<br>ほとんど英数字のファイルとかソースコードで，たまにEUCで日本語が入っていたり，謎のバイナリデータがちょろっと混ざっているようなデータです．<br><br>日本語が少ないと，SJIS/EUC/JISに比べてUnicodeに大きく加点されてしまうのでしょうか．<br>現行のアルゴリズムではUnicodeへの誤判別というのはあまり無かったように感じます．<br></div></section>
+    <ul><li><section><h1 id=4590>
+    <span class="no">[4590]</span>
+    <a class="thread-title" href="#4590">Re:自動判別精度</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-09-23T12:17:02">2006年09月23日 12:17</time></h1>
+    <div class="body">ユニコード固有値として認識される値の範囲を<br>狭めたものを Patches #1513775 の方にアップしました．<br><br>▼ げんたさん<br>&gt; 日本語が少ないと，SJIS/EUC/JISに比べて<br>&gt; Unicodeに大きく加点されてしまうのでしょうか．<br>&gt; 現行のアルゴリズムではUnicodeへの誤判別というのは<br>&gt; あまり無かったように感じます．<br><br>そうとは言い切れないところがありそうです．<br>Unicode として検査したときに不正な値が１バイトも<br>見つからず，それ以外の文字コードでみたときは<br>すべて不正バイトが検出された場合に，Unicode と<br>判別されてしまう，つまり，特有バイト数より<br>不正バイト数の方を優先的にみていることが<br>原因となっているかもしれず…；；<br></div></section>
+    <ul><li><section><h1 id=4596>
+    <span class="no">[4596]</span>
+    <a class="thread-title" href="#4596">Re2:自動判別精度</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-09-26T23:54:37">2006年09月26日 23:54</time></h1>
+    <div class="body">誤判別はEUCの半角かなの部分が不正な文字としてカウントされていたことが原因のようです．<br>修正してテスト版を作り直しました．<br><a href=http://sakura.qp.land.to/?Junk%2F1 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F1</nobr></a><br><br>▼ ラスティブさん<br>&gt;ユニコード固有値として認識される値の範囲を<br>&gt;狭めたものを Patches #1513775 の方にアップしました．<br>こちらはあんまり関係なかったみたいです．<br><br>▼ ラスティブさん<br>&gt;不正バイト数の方を優先的にみていることが<br>&gt;原因となっているかもしれず…；；<br>例えばSJISの中に何かの都合でEUCが混ざっているようなファイルを開くと，SJIS, EUCともに不正バイトが検出され，どちらでもないUnicodeで開かれてしまう可能性がありますよね．判定時にまず不正バイトの文字数を比較していますが，不正な文字数が同じになるケースというのはほとんど0ではないでしょうか．とすると不正な文字が出た時点でアウト．<br><br>SJIS，EUC，JISあたりで間違われる分には良いのですが，Unicodeに間違われると改行が改行とみなされないので全部1行になってしまうのが気持ち悪いですし，<br><br>例えばある程度の長さの文書であれば改行が入っているのが当然．と仮定するとCRLFがたくさん入っていたら文字列的にはUnicodeと解釈できてもUnicodeではないだろうとか，そういうのも考慮に入れることはできないでしょうか．<br></div></section>
+    <ul><li><section><h1 id=4597>
+    <span class="no">[4597]</span>
+    <a class="thread-title" href="#4597">本日の誤判定</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-09-29T00:19:04">2006年09月29日 00:19</time></h1>
+    <div class="body">本日も誤判定に遭遇したので一応書いておきます．<br><br>1. ファイルに0xff 0xff 0xff 0xffが含まれるASCIIファイル．<br>1バイト系のコードはこの4バイト全てが不正文字になったのですが，<br>最初の0xffの前にスペースがあったので，Unicodeでは中央のffffのみが不正と判断されて不正文字は2バイト．<br>よってUnicodeで開かれてしまいました．<br><br>2.欧米のアクセント文字が混ざっていたアスキーファイル<br>問題の文字は1文字だけだったのですが，EUC/SJISどちらでも不正な文字だったためにUnicodeで開かれてしまいました．<br><br>ということで，日本語主体の場合はよいのですが，1バイト文字主体の場合にUnicode行きになりやすいです．<br><br>しかし，単純に文字集合に入っているかどうかだけでは判断は無理かなと感じています．</div></section>
+    <ul><li><section><h1 id=4598>
+    <span class="no">[4598]</span>
+    <a class="thread-title" href="#4598">Re:本日の誤判定</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-10-01T12:17:55">2006年10月01日 12:17</time></h1>
+    <div class="body">&gt;&gt;dev:4596<br>&gt; 誤判別はEUCの半角かなの部分が不正な文字として<br>&gt; カウントされていたことが原因のようです．<br><br>&gt;&gt;dev:4597<br>&gt; 1. ファイルに0xff 0xff 0xff 0xffが含まれるASCIIファイル．<br>&gt; 1バイト系のコードはこの4バイト全てが不正文字に<br>&gt; なったのですが，最初の0xffの前にスペースがあったので，<br>&gt; Unicodeでは中央のffffのみが不正と判断されて<br>&gt; 不正文字は2バイト．<br>&gt; よってUnicodeで開かれてしまいました．<br>&gt;<br>&gt; 2.欧米のアクセント文字が混ざっていたアスキーファイル<br>&gt; 問題の文字は1文字だけだったのですが，<br>&gt; EUC/SJISどちらでも不正な文字だったために<br>&gt; Unicodeで開かれてしまいました．<br><br>不具合ご報告ありがとうございます～．<br>暫定パッチを Patches #1513775 の方にアップしました．<br>Unicode への誤判別に関しては，<br>作り間違ってたところが主な原因だったようでした；；<br><br><br>&gt;&gt;dev:4596<br>&gt; JISの中に何かの都合でEUCが混ざっているような<br>&gt; ファイルを開くと，SJIS, EUCともに不正バイトが<br>&gt; 検出され，どちらでもないUnicodeで開かれてしまう<br>&gt; 可能性がありますよね．<br><br>Charcode::DetectEncodingType 関数が入力データを<br>Unicode または Unicode BE と判別した場合，<br>入力データの不正バイトが検出されていないときは<br>DetectEncodingType の判別結果に従い，<br>検出されているときは SJIS を返すようにしていますので，<br>この例の場合，どちらでもない Unicode で開かれる可能性は<br>低いにしても…，EUC と UTF-8 の組み合わせとかなら，<br>どちらでもない SJIS で開かれる可能性があります，はい．<br><br>Unicode または Unicode BE が判別候補に出る場合は，<br>もう一つ Unicode 以外の候補を見つけるようにすると<br>解決できるような気がします．<br>が，この問題に関してはしばらくかかりそうです；；<br><br><br>&gt;&gt;dev:4596<br>&gt; 例えばある程度の長さの文書であれば改行が入って<br>&gt; いるのが当然．と仮定するとCRLFがたくさん入って<br>&gt; いたら文字列的にはUnicodeと解釈できても<br>&gt; Unicodeではないだろうとか，そういうのも考慮に<br>&gt; 入れることはできないでしょうか．<br><br>新たに構造体を定義して改行情報も含められるよう，<br>コツコツやってこうかと思います．<br></div></section>
+    <ul><li><section><h1 id=4599>
+    <span class="no">[4599]</span>
+    <a class="thread-title" href="#4599">Re2:本日の誤判定</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-04T00:29:42">2006年10月04日 00:29</time></h1>
+    <div class="body">▼ ラスティブ<br>仮にUnicodeとして有効バイトが大多数なら、不正バイトが少しくらい(１％未満とか)あっても素直にUnicodeで開いてほしい気もします。<br><br>&gt; 改行が改行とみなされないので全部1行…<br>&gt; CRLFがたくさん入っていたら…<br>ここ賛成です。<br><br>▼ げんたさん<br>&gt; Properyページに詳細を出す<br>これは評価版専用の機能ですよね。<br>サイズが０ＫＢのファイルでプロパティを表示すると強制終了してしまうので。</div></section>
+    <ul><li><section><h1 id=4600>
+    <span class="no">[4600]</span>
+    <a class="thread-title" href="#4600">Re3:本日の誤判定</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-04T00:50:38">2006年10月04日 00:50</time></h1>
+    <div class="body">&gt;サイズが０ＫＢのファイルでプロパティを表示すると強制終了してしまうので。<br>あ，本当だ．０でわり算しちゃいます．<br><br>ここはDEBUGコードなので普通は使われないのですが，直した方がいいですね．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

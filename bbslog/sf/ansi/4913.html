@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>コンパイルエラー | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4913</span>
+    <a class="thread-title" href="4913.html#4913">コンパイルエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4915</span>
+    <a class="thread-title" href="4913.html#4915">RE: コンパイルエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4918</span>
+    <a class="thread-title" href="4913.html#4918">Re2: コンパイルエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4919</span>
+    <a class="thread-title" href="4913.html#4919">Re3: コンパイルエラー</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4920</span>
+    <a class="thread-title" href="4913.html#4920">Re3: コンパイルエラー</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4913>
+    <span class="no">[4913]</span>
+    <a class="thread-title" href="#4913">コンパイルエラー</a>
+    <span class="author">AC</span>
+    <time datetime="2007-07-08T18:31:49">2007年07月08日 18:31</time></h1>
+    <div class="body">VC6標準だと未定義でコンパイルエラー発生<br>CPropTypeKeyHelp.cpp:ListView_SetCheckState<br>etc_uty.cpp-&gt;HtmlHelp.h:DWORD_PTR<br></div></section>
+    <ul><li><section><h1 id=4915>
+    <span class="no">[4915]</span>
+    <a class="thread-title" href="#4915">RE: コンパイルエラー</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-08T23:36:58">2007年07月08日 23:36</time></h1>
+    <div class="body">&gt;VC6標準だと未定義でコンパイルエラー発生<br>&gt;etc_uty.cpp-&gt;HtmlHelp.h:DWORD_PTR<br>DWORD_PTRはVC6標準のSDKでは定義されていません．<br>これは今日に始まったことではないです．<br>Platform SDKは別途入れてもらうことにしています．<br>(そうしないと新機能に対応できない)<br><br>インクルードパスの設定はどうなっていますか？<br>VC6の標準パスが上位に来ていると古いSDKが使われてしまいます．<br></div></section>
+    <ul><li><section><h1 id=4918>
+    <span class="no">[4918]</span>
+    <a class="thread-title" href="#4918">Re2: コンパイルエラー</a>
+    <span class="author">AC</span>
+    <time datetime="2007-07-09T21:29:42">2007年07月09日 21:29</time></h1>
+    <div class="body">DWORD_PTRはglobal.hに定義あり<br>ListView_SetCheckStateはCDlgFavorite.cppに定義あり<br><br>コンパイラ、バージョン間の互換性の対応に一貫性がないのだー<br></div></section>
+    <ul><li><section><h1 id=4919>
+    <span class="no">[4919]</span>
+    <a class="thread-title" href="#4919">Re3: コンパイルエラー</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-09T22:29:52">2007年07月09日 22:29</time></h1>
+    <div class="body">▼ ACさん<br>&gt; コンパイラ、バージョン間の互換性の対応に一貫性がないのだー<br>たぶん、当初はVC6だけで何とかしようとしていた時期があって、その後VC6+HtmlHelp Workshopで何とかしようとしていた時期もあって、さらに現在はVC6+PSDKになっているのであって、そうした歴史的変遷の名残があるんだと思います。<br>で、何か弊害があるかといえば特に無いから、まずいと思うならそれに気づいた人がその場その場で直してくれればそれでいいんじゃないでしょうか。(^^;</div></section>
+    </li><li><section><h1 id=4920>
+    <span class="no">[4920]</span>
+    <a class="thread-title" href="#4920">Re3: コンパイルエラー</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-09T23:03:39">2007年07月09日 23:03</time></h1>
+    <div class="body">&gt;DWORD_PTRはglobal.hに定義あり<br>&gt;ListView_SetCheckStateはCDlgFavorite.cppに定義あり<br>あ，etc_uty.cppはglobal.hをincludeしてないのですね．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マクロから操作可能な永続データ領域 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4870</span>
+    <a class="thread-title" href="4870.html#4870">マクロから操作可能な永続データ領域</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4871</span>
+    <a class="thread-title" href="4870.html#4871">RE: マクロから操作可能な永続データ領域</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4872</span>
+    <a class="thread-title" href="4870.html#4872">Re:マクロから操作可能な永続データ領域</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4870>
+    <span class="no">[4870]</span>
+    <a class="thread-title" href="#4870">マクロから操作可能な永続データ領域</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-06-16T14:06:41">2007年06月16日 14:06</time></h1>
+    <div class="body">自動実行マクロを試していて思ったのですが，マクロから操作できるPersistentなデータ領域があると便利じゃないでしょうか．<br>マクロを関数として扱って引数を渡そうとするのは容易ではないですが，決められた変数に値を設定して呼び出すようにするのはそんなに難しくないように思います．<br><br>たとえば，<br>* SetParams( 番号, 設定文字列 )<br>* var c = GetParams( 番号 )<br>変数というよりレジスタに近いですが，こんなものでもだいたい十分かなと．<br><br>自動実行マクロでいえば，<br>保存前：保存後のファイル名を1番と2番に入れて渡すようにすれば<br>GetSaveFilename()と専用マクロを用意する必要がなくなります．<br><br>もう1つの使い方は実行の都度連番を振っていくようなマクロです．<br>(アイディア自体は遠い昔のMIFESからの借用ですけど)<br><br>与え方は番号(数値)，名前のどちらがよいか<br>名前ならr0-r7, i0-i8, g0-g7とか(SPARC風)<br>数値の方が変換のオーバーヘッドが少な...くはないのか．現在の構造では．<br><br>エディタからパラメータを渡すのに4つくらい<br>マクロが自由に使うために16個くらい．<br>(可能ならエディタをまたがって使えるglobalなものを同数)<br></div></section>
+    <ul><li><section><h1 id=4871>
+    <span class="no">[4871]</span>
+    <a class="thread-title" href="#4871">RE: マクロから操作可能な永続データ領域</a>
+    <span class="author">maru</span>
+    <time datetime="2007-06-16T15:02:16">2007年06月16日 15:02</time></h1>
+    <div class="body">&gt;自動実行マクロを試していて思ったのですが，マクロから操作できるPersistentなデータ領域があると便利じゃないでしょうか．<br>いいですねぇ。ファイル入出力マクロでファイル名とか格納したいです。<br></div></section>
+    </li><li><section><h1 id=4872>
+    <span class="no">[4872]</span>
+    <a class="thread-title" href="#4872">Re:マクロから操作可能な永続データ領域</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-06-18T00:27:06">2007年06月18日 00:27</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 自動実行マクロを試していて思ったのですが，マクロから操作できるPersistentなデータ領域があると便利じゃないでしょうか．<br>現在の自動実行マクロは僕が提案パッチ作成したものなんですが、すいません、ちょっと別の作業にとりかかってまして、これにはしばらく手をつけられないと思います。<br><br>以下、別作業の状況報告。<br>別作業というのはタブのグループ化（切り離し・結合）です。<br>まだ実験中だけど、続行します。面倒くさくなって断念しなければ、そのうちパッチ出せるかな～ (^^;<br>今のところD&amp;D操作部分だけ実験コード作成してあって、それっぽく動いてます。<br>まとめて閉じる／保存するなど、連係動作部分の修正やコマンド追加がいろいろ必要そうだけど、それはこれから。</div></section>
+    </li></ul></li></ul></body></html>

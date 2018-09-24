@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>選択範囲を並べ替え | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">282</span>
+    <a class="thread-title" href="282.html#282">選択範囲を並べ替え</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">283</span>
+    <a class="thread-title" href="282.html#283">Re:選択範囲を並べ替え</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">284</span>
+    <a class="thread-title" href="282.html#284">Re2:選択範囲を並べ替え</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">285</span>
+    <a class="thread-title" href="282.html#285">Re3:選択範囲を並べ替え</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">286</span>
+    <a class="thread-title" href="282.html#286">Re4:選択範囲を並べ替え</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">287</span>
+    <a class="thread-title" href="282.html#287">Re5:選択範囲を並べ替え</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=282>
+    <span class="no">[282]</span>
+    <a class="thread-title" href="#282">選択範囲を並べ替え</a>
+    <span class="author">giraffe</span>
+    <time datetime="2006-06-27T01:04:34">2006年06月27日 01:04</time></h1>
+    <div class="body">テキストファイルの選択範囲を指定の順序でソートしたいのですが<br>＜選択行の昇順ソート＞では、目的が達成できません。<br>以下のようなファイルを編集しています。<br>----<br>ELBO */JIS.B.2220:90L_10  10 .....<br>ELBO */JIS.B.2220:90L_100 100 ....<br>ELBO */JIS.B.2220:90L_200 200 ....<br>ELBO */JIS.B.2220:90L_20  20 .....<br>ELBO */JIS.B.2220:90L_25  25 .....<br><br>＜選択行の昇順ソート＞を行うと<br>ELBO */JIS.B.2220:90L_10  10 .....<br>ELBO */JIS.B.2220:90L_100 100 .....<br>ELBO */JIS.B.2220:90L_20  20 .....<br>ELBO */JIS.B.2220:90L_200 200 .....<br>ELBO */JIS.B.2220:90L_25  25 .....<br><br>あたりまえなのですが、此れを以下のようにソートしたいのですが<br>可能でしょうか？<br><br>ELBO */JIS.B.2220:90L_10  10 .....<br>ELBO */JIS.B.2220:90L_20  20 .....<br>ELBO */JIS.B.2220:90L_25  25 .....<br>ELBO */JIS.B.2220:90L_100 100 .....<br>ELBO */JIS.B.2220:90L_200 200 .....<br><br>指定順序でのソートを可能にする方法は、マクロで記載すれば<br>可能なのでしょうか？<br>指定順序とは．．．<br>10&lt;20&lt;25&lt;....&lt;100&lt;200の順番に並べたいのですが<br>マクロの記述の仕方をお教えください。<br>お願いします。<br></div></section>
+    <ul><li><section><h1 id=283>
+    <span class="no">[283]</span>
+    <a class="thread-title" href="#283">Re:選択範囲を並べ替え</a>
+    <span class="author">maru</span>
+    <time datetime="2006-06-27T01:58:20">2006年06月27日 01:58</time></h1>
+    <div class="body">▼ giraffeさん<br>ひとことで言えばこんな感じなんでしょうが<br>全く汎用性がなく、ほとんど決めうちです。<br>サンプルファイルのフォーマットのうち<br>条件が固定されるのは、どのくらいなのでしょう。<br><br>一定条件の作業がある程度連続しないかぎり<br>この手の作業はマクロを用意するよりも<br>手作業で置換・ソート操作したほうが早い気がします。<br><br>他のやり方としては、半角スペースを'\t'に置換して<br>Excelに貼り付けてソートするとか。<br><br>//ELBO_Sort.mac<br>// 選択行の '_' + 2桁のところに前ゼロを付加<br>S_ReplaceAll('_([0-9][0-9]) ', '_0$1 ', 132);<br>// 選択行の昇順ソート<br>S_SortAsc(0);<br>// 選択行の前ゼロを取り除く<br>S_ReplaceAll('_0', '_', 128);<br>// 再描画<br>S_ReDraw(0);<br></div></section>
+    <ul><li><section><h1 id=284>
+    <span class="no">[284]</span>
+    <a class="thread-title" href="#284">Re2:選択範囲を並べ替え</a>
+    <span class="author">giraffe</span>
+    <time datetime="2006-06-27T09:31:36">2006年06月27日 09:31</time></h1>
+    <div class="body">▼ maruさん<br>解答ありがとうございます。<br>早速試してみました、手で作業するより、やっぱり早いですね<br><br>&gt; サンプルファイルのフォーマットのうち<br>&gt; 条件が固定されるのは、どのくらいなのでしょう。<br><br>ELBO   */JIS.B2312:45L_15 15.00<br>TUBE   */JIS.G3454:650 650.00<br>上のように、スペース区切りのファイルでして<br>固定されている部分は、<br>:45L_15の次の"15.00"<br>::650 の次の"650.00"の部分となると思います。<br><br>&gt; 一定条件の作業がある程度連続しないかぎり<br>&gt; この手の作業はマクロを用意するよりも<br>&gt; 手作業で置換・ソート操作したほうが早い気がします。<br><br>実際、今は手作業でしてるのですが．．．１ファイル約2千行の<br>ファイルが、20個ありまして、時間がかかってしょうがないので<br>何かいい手はないかと、此方の掲示板に書かせていただきました。<br><br>&gt; 他のやり方としては、半角スペースを'\t'に置換して<br>&gt; Excelに貼り付けてソートするとか。<br><br>これは、Excelでは、少し作業をしてみたのですが<br>個人的に”Excel”は、あまり好きではないのと、編集作業が<br>エディタでするよりかかってしまって、手作業でパチパチといまやっています。<br><br>&gt; //ELBO_Sort.mac<br>&gt; // 選択行の '_' + 2桁のところに前ゼロを付加<br>&gt; S_ReplaceAll('_([0-9][0-9]) ', '_0$1 ', 132);<br>&gt; // 選択行の昇順ソート<br>&gt; S_SortAsc(0);<br>&gt; // 選択行の前ゼロを取り除く<br>&gt; S_ReplaceAll('_0', '_', 128);<br>&gt; // 再描画<br>&gt; S_ReDraw(0);<br><br>上記、マクロですが、動かしてみると目的に合ったように<br>ソートしてくれました。<br>中身を、確認して他の記述に合うように変更してみます。<br>ありがとうございました。</div></section>
+    <ul><li><section><h1 id=285>
+    <span class="no">[285]</span>
+    <a class="thread-title" href="#285">Re3:選択範囲を並べ替え</a>
+    <span class="author">giraffe</span>
+    <time datetime="2006-06-27T19:56:03">2006年06月27日 19:56</time></h1>
+    <div class="body">▼maruさん<br>ごそごそと、ファイルをいじって何とか目的の結果が得られる<br>ようになりました。<br>ありがとうございました。<br>おかげさまで、編集効率が格段にアップしました。<br><br>もう少し、スマートにしたいのですが．．．<br>まっ結果が同じなら、よいかな？なんて思っていますが。<br>--<br>次は、半角スペースで文字桁揃えができればいうことなしなのですが．．．<br><br>----------以下マクロ記載内容----------------<br>//SPEC_Sort.mac<br>// 選択行の '_' + 2桁のところに前ゼロを付加<br>// NAME部の"_"選択し、";"へ変換<br>S_ReplaceAll('([A-Z][_])', '$1;', 132);<br>S_ReplaceAll('_;', ';', 132);<br><br>// サイズ変化ありを選択<br>S_ReplaceAll(';([0-9][0-9][_])', ';0$1', 132);<br><br>// サイズ変化側を選択<br>S_ReplaceAll('_([0-9][0-9]\b)', '_0$1', 132);<br><br>// サイズ変化なしを選択<br>S_ReplaceAll(';([0-9][0-9]\b)', ';0$1', 132);<br><br><br>// 選択行の昇順ソート<br>S_SortAsc(0);<br><br>// 選択行の前ゼロを取り除く<br>S_ReplaceAll(';0', ';', 128);<br>S_ReplaceAll('_0', '_', 128);<br><br><br>// 再描画<br>S_ReDraw(0);<br>----------------------------------------------------<br></div></section>
+    <ul><li><section><h1 id=286>
+    <span class="no">[286]</span>
+    <a class="thread-title" href="#286">Re4:選択範囲を並べ替え</a>
+    <span class="author">maru</span>
+    <time datetime="2006-06-28T00:28:25">2006年06月28日 00:28</time></h1>
+    <div class="body">▼ giraffeさん<br>&gt; 次は、半角スペースで文字桁揃えができればいうことなしなのですが．．．<br>前半部分の動作がどんなケースを想定した処理なのか<br>よくわからないので、半角スペースの桁揃え部分の<br>アイディアだけ掲示しておきます。<br><br><br>// Script from here -----------------------<br>// ppa.dllがあれば以下をコメントアウトし拡張子を.ppaにする。<br>// なければタイプ別設定でタブ幅を大きくしておく。<br>//S_ChangeTabWidth(16);<br><br>// うしろに数値が続く半角スペースをタブに置換<br>S_ReplaceAll(' (?=[1-9])', '\t', 132);<br><br>// タブを空白に置換<br>S_TABToSPACE();<br><br>// うしろに '.' が続く2桁の数字の前に半角スペースを付加<br>S_ReplaceAll('( [1-9][0-9])(?=\.)', ' $1', 132);<br>// Script to here ------------------------------------</div></section>
+    <ul><li><section><h1 id=287>
+    <span class="no">[287]</span>
+    <a class="thread-title" href="#287">Re5:選択範囲を並べ替え</a>
+    <span class="author">giraffe</span>
+    <time datetime="2006-06-29T23:00:56">2006年06月29日 23:00</time></h1>
+    <div class="body">▼ maruさん<br>またまた、回答有難うございます。<br>&gt; 前半部分の動作がどんなケースを想定した処理なのか<br>&gt; よくわからないので、半角スペースの桁揃え部分の<br>&gt; アイディアだけ掲示しておきます。<br> <br>記載いただいた、マクロ（PPA）の方で、少しカスタマイズさせて頂き<br>無事、桁揃えが可能となりました。<br>ほんとに有難うございました。<br>－－－<br>なんとなく編集した結果、無事目的を達成できたのですが<br>自分でも、はじめからマクロを作成できるよう、少し勉強しようと<br>考えています。<br>”マクロって便利ですね！”<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

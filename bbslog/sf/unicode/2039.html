@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>S_ExecCommand の不具合？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2039</span>
+    <a class="thread-title" href="2039.html#2039">S_ExecCommand の不具合？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2040</span>
+    <a class="thread-title" href="2039.html#2040">RE: S_ExecCommand の不具合？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2041</span>
+    <a class="thread-title" href="2039.html#2041">Re2: S_ExecCommand の不具合？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2039>
+    <span class="no">[2039]</span>
+    <a class="thread-title" href="#2039">S_ExecCommand の不具合？</a>
+    <span class="author">RG</span>
+    <time datetime="2013-08-14T13:20:10">2013年08月14日 13:20</time></h1>
+    <div class="body">Ver. 2.0.8.1 から 2.1.0.0 へ更新したところ<br>下記のマクロ platex.ppa が<br><br>PPA実行エラー<br>文法エラーです[]<br><br>と表示され機能しなくなってしまいました．<br>&gt; マクロExecCommandの引数がおかしい (svn:3196 upatchid:619 Moca)<br>に起因するものでしょうか？<br>確認頂ければ幸いです．<br>OS は Win7 64bit です．<br><br>// platex.ppa<br>S_FileSave();<br>S_ExecCommand('C:\Program1\sakura\macro\<br>platex.bat '+'"'+S_GetFilename+'"',0);</div></section>
+    <ul><li><section><h1 id=2040>
+    <span class="no">[2040]</span>
+    <a class="thread-title" href="#2040">RE: S_ExecCommand の不具合？</a>
+    <span class="author">もか</span>
+    <time datetime="2013-08-14T18:18:36">2013年08月14日 18:18</time></h1>
+    <div class="body">ExecCommandに限らず、PPAの場合は引数が追加されたマクロは修正が必要です。<br>&gt;S_ExecCommand('C:\Program1\sakura\macro<br>\platex.bat '+'"'+S_GetFilename+'"',0,"");<br>で動くようになりませんか。<br></div></section>
+    <ul><li><section><h1 id=2041>
+    <span class="no">[2041]</span>
+    <a class="thread-title" href="#2041">Re2: S_ExecCommand の不具合？</a>
+    <span class="author">RG</span>
+    <time datetime="2013-08-15T09:50:52">2013年08月15日 09:50</time></h1>
+    <div class="body">失礼しました．<br>3つ目の引数を見逃していました．<br>ありがとうございます．<br><br>S_ExecCommand('C:\Program1\sakura\macro\<br>platex.bat '+'"'+S_GetFilename+'"',0,'');<br><br>で今まで通り機能しました．</div></section>
+    </li></ul></li></ul></li></ul></body></html>

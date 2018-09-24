@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>横スクロールの高速化 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">936</span>
+    <a class="thread-title" href="936.html#936">横スクロールの高速化</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=936>
+    <span class="no">[936]</span>
+    <a class="thread-title" href="#936">横スクロールの高速化</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-17T09:16:00">2001年12月17日 09:16</time></h1>
+    <div class="body">横スクロールの高速化のためには，現在のウィンドウの左右端での色分け(内部状態)及び表示桁と内部表現の対応みたいなのを記録しておく必要があるのではないかと思います．<br><br>CEditViewに対して1つずつCLayoutCacheMgrというクラスを作ってその中に上のような情報を格納します．<br><br>画面の再表示やスクロールの時は画面表示ではそれらの情報を使って表示を行い，文字の入力が行われたときは色分け情報の変化が無い限り画面外部分の色判定スキャンを行わないようにすればどうでしょうか．結構大改造になってしまいますけど．<br><br>現在CLayoutMgr::DoLayout3_NewとCEditView::DispLineNewにある色分け処理もレイアウトと画面表示の2カ所で使うので別クラス(CWordColorとか)にまとめた方がいいでしょう．<br><br>ただ，左スクロールは行頭からスキャンせざるを得ないので速度が改善できないかも．<br></div></section>
+    </li></ul></body></html>

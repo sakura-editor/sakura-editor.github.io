@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>IMEの表示位置がおかしくなります | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3685</span>
+    <a class="thread-title" href="3685.html#3685">IMEの表示位置がおかしくなります</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3686</span>
+    <a class="thread-title" href="3685.html#3686">Re:IMEの表示位置がおかしくなります</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3775</span>
+    <a class="thread-title" href="3685.html#3775">Re2:IMEの表示位置がおかしくなります</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3818</span>
+    <a class="thread-title" href="3685.html#3818">Re3:IMEの表示位置がおかしくなります</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3685>
+    <span class="no">[3685]</span>
+    <a class="thread-title" href="#3685">IMEの表示位置がおかしくなります</a>
+    <span class="author">fotomo</span>
+    <time datetime="2004-07-21T14:16:36">2004年07月21日 14:16</time></h1>
+    <div class="body">ツールバー上の検索ボックスにフォーカスがある状態で、<br>TABキーで編集エリアにフォーカスを移します。<br>　↓<br>Alt＋半角全角 を押して全角文字入力状態にします。<br>　↓<br>２行下の位置に未確定文字が表示されます。</div></section>
+    <ul><li><section><h1 id=3686>
+    <span class="no">[3686]</span>
+    <a class="thread-title" href="#3686">Re:IMEの表示位置がおかしくなります</a>
+    <span class="author">fotomo</span>
+    <time datetime="2004-07-26T12:59:07">2004年07月26日 12:59</time></h1>
+    <div class="body">原因がわかったので、取り下げます。<br><br>(検索ボックスからフォーカスが外れるときに、<br> CEditViewクラスのウィンドウにフォーカス<br> を当てているのが間違いらしいです。<br> CEditWndクラスのウィンドウにフォーカス<br> を当てないといけないらしいです。)</div></section>
+    <ul><li><section><h1 id=3775>
+    <span class="no">[3775]</span>
+    <a class="thread-title" href="#3775">Re2:IMEの表示位置がおかしくなります</a>
+    <span class="author">みく</span>
+    <time datetime="2004-10-27T22:26:58">2004年10月27日 22:26</time></h1>
+    <div class="body"><br>CEditWnd.cpp:ProcSearchBox():3796,3810行目を以下のように変更する。<br>-&#9;::SetFocus( m_cEditDoc.m_cEditViewArr[m_cEditDoc.m_nActivePaneIndex].m_hWnd );<br>+&#9;::SetFocus( m_hWnd );<br></div></section>
+    <ul><li><section><h1 id=3818>
+    <span class="no">[3818]</span>
+    <a class="thread-title" href="#3818">Re3:IMEの表示位置がおかしくなります</a>
+    <span class="author">みく</span>
+    <time datetime="2005-01-20T18:25:27">2005年01月20日 18:25</time></h1>
+    <div class="body"><br>age<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>コピーと切り取り | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4824</span>
+    <a class="thread-title" href="4824.html#4824">コピーと切り取り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4827</span>
+    <a class="thread-title" href="4824.html#4827">Re:コピーと切り取り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4833</span>
+    <a class="thread-title" href="4824.html#4833">Re2:コピーと切り取り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4835</span>
+    <a class="thread-title" href="4824.html#4835">Re3:コピーと切り取り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4838</span>
+    <a class="thread-title" href="4824.html#4838">Re4:コピーと切り取り</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4824>
+    <span class="no">[4824]</span>
+    <a class="thread-title" href="#4824">コピーと切り取り</a>
+    <span class="author">かて</span>
+    <time datetime="2005-11-08T18:05:03">2005年11月08日 18:05</time></h1>
+    <div class="body">文字列を選択せずに Ctrl+X や Ctrl+C でコピーや切り取りを行った場合、<br>カーソル行全体を切り取ったり、コピーしたりしますよね？<br><br>できれば、この行全体に対する処理の有効／無効を設定できるようにしてもらえるとありがたいのですが・・・<br><br>ご検討よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=4827>
+    <span class="no">[4827]</span>
+    <a class="thread-title" href="#4827">Re:コピーと切り取り</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-11-08T22:38:21">2005年11月08日 22:38</time></h1>
+    <div class="body">▼ かてさん<br>&gt; 文字列を選択せずに Ctrl+X や Ctrl+C でコピーや切り取りを行った場合、<br>&gt; カーソル行全体を切り取ったり、コピーしたりしますよね？<br>&gt; <br>&gt; できれば、この行全体に対する処理の有効／無効を設定できるようにしてもらえるとありがたいのですが・・・<br>選択していた時のみコピー、切り取りは<br><br>If GetSelectedString( 0 ) &lt;&gt; "" Then Call Cut()<br>If GetSelectedString( 0 ) &lt;&gt; "" Then Call Copy()<br><br>ってなマクロをCtrl-X、Ctrl-Cに外部マクロとして割り当てたらどうでしょう?</div></section>
+    <ul><li><section><h1 id=4833>
+    <span class="no">[4833]</span>
+    <a class="thread-title" href="#4833">Re2:コピーと切り取り</a>
+    <span class="author">かて</span>
+    <time datetime="2005-11-09T09:33:39">2005年11月09日 09:33</time></h1>
+    <div class="body">▼ (全略)さん<br>&gt; If GetSelectedString( 0 ) &lt;&gt; "" Then Call Cut()<br>&gt; If GetSelectedString( 0 ) &lt;&gt; "" Then Call Copy()<br>&gt; <br>&gt; ってなマクロをCtrl-X、Ctrl-Cに外部マクロとして割り当てたらどうでしょう?<br><br>さっそく試してみましたが、<br>「If GetSelectedStringは存在しない関数です」<br>とのエラーメッセージが出て実行できませんでした。<br><br>自分なりに調べてみたところ、<br>「If」が使用できるのは通常のマクロファイル（.mac）ではなく、<br>PPAマクロ（.ppa）と呼ばれるものだというところまでは分かったのですが、<br>そこからどうしたらいいかが分かりませんでした・・・。<br><br>申し訳ありませんが、ご教示お願いできますでしょうか。<br></div></section>
+    <ul><li><section><h1 id=4835>
+    <span class="no">[4835]</span>
+    <a class="thread-title" href="#4835">Re3:コピーと切り取り</a>
+    <span class="author">too</span>
+    <time datetime="2005-11-09T15:29:49">2005年11月09日 15:29</time></h1>
+    <div class="body">VBScriptつかって例えば、「SelectedCut.vbs」とかファイル名で下記内容のファイルを作って、<br>マクロ用のディレクトリに置けば良いのではないでしょうかね。<br># で、「共通設定」-「マクロ」タブにて設定<br># Copyも同様<br>-------<br>If Editor.GetSelectedString( 0 ) &lt;&gt; "" Then<br>&#9;Editor.Cut()<br>End if<br>-------</div></section>
+    <ul><li><section><h1 id=4838>
+    <span class="no">[4838]</span>
+    <a class="thread-title" href="#4838">Re4:コピーと切り取り</a>
+    <span class="author">かて</span>
+    <time datetime="2005-11-09T17:01:40">2005年11月09日 17:01</time></h1>
+    <div class="body">▼ tooさん<br>選択時のみのコピー＆切り取りができるようになりました。<br>(全略)さん、tooさん、ありがとうございます。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

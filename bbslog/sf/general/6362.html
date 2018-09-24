@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ツールバー編集時の横線 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6362</span>
+    <a class="thread-title" href="6362.html#6362">ツールバー編集時の横線</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6363</span>
+    <a class="thread-title" href="6362.html#6363">RE: ツールバー編集時の横線</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6373</span>
+    <a class="thread-title" href="6362.html#6373">Re2: ツールバー編集時の横線</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6376</span>
+    <a class="thread-title" href="6362.html#6376">Re3: ツールバー編集時の横線</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6382</span>
+    <a class="thread-title" href="6362.html#6382">Re4: ツールバー編集時の横線</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6384</span>
+    <a class="thread-title" href="6362.html#6384">Re5: ツールバー編集時の横線</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6387</span>
+    <a class="thread-title" href="6362.html#6387">Re5: ツールバー編集時の横線</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6403</span>
+    <a class="thread-title" href="6362.html#6403">Re6: ツールバー編集時の横線</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6362>
+    <span class="no">[6362]</span>
+    <a class="thread-title" href="#6362">ツールバー編集時の横線</a>
+    <span class="author">かて</span>
+    <time datetime="2007-10-12T17:32:36">2007年10月12日 17:32</time></h1>
+    <div class="body">共通設定のツールバーから、編集を行なう際に、左枠内に表示される「種別」で「その他」を選んだ時に出てくる横線を「→」ボタンで右枠内に追加したものと、「---」ボタンで追加したセパレータが、右枠内では同じ表示のため区別が付きません。<br><br>そのため、セパレータを追加したものと思って、OKを押すと、ツールバーには「未定義」アイコンが複数表示され、とまどってしまいます。<br>「その他」にはこの横線しか無いので、普通にセパレータと勘違いして追加してしまうと思うのですが・・・。（私は実際にやってしまいました）<br><br><br>よく見ると、外部マクロの未登録部分にも同じ横線が幾つもあったり、ヘルプにも「---」ボタンがセパレータと書いてあったりするので、すぐに分かることなのですが、セパレータと未定義が同じ表示っていうのは不自然に感じます。<br><br>未定義部分は、横線ではなくて（未定義）などで良いと思うのですが、いかがでしょうか？？<br></div></section>
+    <ul><li><section><h1 id=6363>
+    <span class="no">[6363]</span>
+    <a class="thread-title" href="#6363">RE: ツールバー編集時の横線</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-10-12T23:56:21">2007年10月12日 23:56</time></h1>
+    <div class="body">&gt;共通設定のツールバーから、編集を行なう際に、左枠内に表示される「種別」で「その他」を選んだ時に出てくる横線を「→」ボタンで右枠内に追加したものと、「---」ボタンで追加したセパレータが、右枠内では同じ表示のため区別が付きません。<br>すいません．ほんとうはセパレータと同じ物だったのですが，2005年8月にツールバーの折り返し機能を入れた際にセパレータではなくなってしまったようです．<br>早いうちに直します．<br></div></section>
+    <ul><li><section><h1 id=6373>
+    <span class="no">[6373]</span>
+    <a class="thread-title" href="#6373">Re2: ツールバー編集時の横線</a>
+    <span class="author">かて</span>
+    <time datetime="2007-10-16T16:10:50">2007年10月16日 16:10</time></h1>
+    <div class="body">テスト版205で対応が入っていたようなので、色々と試してみたところ<br>・未定義<br>・何も割り当てていない外部マクロ<br>の２つがツールバーに登録できなくなっていることを確認しました。<br><br>しかし、<br>１．共通設定→マクロバー→０番に任意のマクロを登録→OKボタンで、共通設定ダイアログを閉じる<br>２．共通設定→ツールバー→外部マクロの０番を「→」ボタンでツールバーに追加→OKで閉じる<br>３．共通設定→マクロバー→０番に割り当てたマクロを削除<br>の手順で操作を行なうと、通常はツールバーに登録できないはずの「何も割り当てていない外部マクロ」をツールバーに表示させることができ、さらにこのアイコンをクリックすると登録を解除したはずのマクロが実行されてしまいますう。<br><br><br>「未定義」は現状のままでいいと思いますが、「何も割り当てていない外部マクロ」はツールバーに登録できても良い（クリックしても何も実行せず、あとからマクロを割り当てれば使用可能になる）と思うのですが、如何でしょう？<br>現状だと、登録できるのか出来ないのかが曖昧ですし、もし完全に登録できないようにしようと思うと、上記の手順２でマクロの割り当てを解除したときにツールバーから勝手に削除しなければならず、動作として不自然だと思いますので。<br></div></section>
+    <ul><li><section><h1 id=6376>
+    <span class="no">[6376]</span>
+    <a class="thread-title" href="#6376">Re3: ツールバー編集時の横線</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-10-17T21:05:39">2007年10月17日 21:05</time></h1>
+    <div class="body">&gt; このアイコンをクリックすると登録を解除したはずのマクロが実行されてしまいます<br>これは，マクロ登録時に「マクロを実行するたびにファイルを読み直す」をチェックしていないためです．<br>マクロ登録は頻繁に入れ替わるらないだろうと考えて，このチェックが入っていない場合はエディタを終了しない限りマクロ割り当ては変わりません．このチェックボックスはマクロ開発用です．<br><br>&gt;「何も割り当てていない外部マクロ」はツールバーに登録できても良い<br>ここはメニューに登録したマクロだけ表示する処理と同じなので，今のままにしたい...<br><br>&gt;クリックしても何も実行せず<br>残念ながらマクロxx番が実行できません　というようなメッセージが出ます．<br><br>わかりにくいですかね．<br></div></section>
+    <ul><li><section><h1 id=6382>
+    <span class="no">[6382]</span>
+    <a class="thread-title" href="#6382">Re4: ツールバー編集時の横線</a>
+    <span class="author">かて</span>
+    <time datetime="2007-10-18T10:55:57">2007年10月18日 10:55</time></h1>
+    <div class="body">&gt; これは，マクロ登録時に「マクロを実行するたびにファイルを読み直す」をチェックしていないためです．<br>「マクロを実行するたびにファイルを読み直す」のチェックは、"エディタ起動中にマクロを編集した時でも、編集後のマクロを動的に実行できる"という意味で、割り当てを解除した場合は別問題だと思っていたのですが、そうではないのでしょうか？？<br>※割り当てそのものを解除しているのだから、ファイルを読み直す云々以前に、特定のマクロファイルを実行しようとすること自体が不自然、という認識です<br><br><br>&gt; ここはメニューに登録したマクロだけ表示する処理と同じなので，今のままにしたい...<br>同じ処理とのことですが、メニューの登録済みマクロでは20番以降に登録しているマクロも表示されますが、共通設定のツールバーでは20番以降のマクロは表示されていません。<br>何か違いがあるっぽいのですが・・・。<br></div></section>
+    <ul><li><section><h1 id=6384>
+    <span class="no">[6384]</span>
+    <a class="thread-title" href="#6384">Re5: ツールバー編集時の横線</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-10-19T21:38:21">2007年10月19日 21:38</time></h1>
+    <div class="body">&gt;&gt; これは，マクロ登録時に「マクロを実行するたびにファイルを読み直す」をチェックしていないためです．<br>&gt;割り当てを解除した場合は別問題<br>確かにそうですね．<br><br>&gt;&gt; ここはメニューに登録したマクロだけ表示する処理と同じなので，今のままにしたい... <br>&gt;共通設定のツールバーでは20番以降のマクロは表示されていません。<br>1-20しかアイコンが割り当てられていないために，21～はアイコンの候補としては出てこないだけです．<br>本当はマクロごとにアイコンを自由に選べるとよいのかもしれませんけどね．<br></div></section>
+    </li><li><section><h1 id=6387>
+    <span class="no">[6387]</span>
+    <a class="thread-title" href="#6387">Re5: ツールバー編集時の横線</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-10-20T00:56:20">2007年10月20日 00:56</time></h1>
+    <div class="body">&gt;割り当てを解除した場合は別問題<br>テスト版1.6.1.201にて対策しましたのでご確認ください．<br></div></section>
+    <ul><li><section><h1 id=6403>
+    <span class="no">[6403]</span>
+    <a class="thread-title" href="#6403">Re6: ツールバー編集時の横線</a>
+    <span class="author">かて</span>
+    <time datetime="2007-10-25T12:06:12">2007年10月25日 12:06</time></h1>
+    <div class="body">&gt; テスト版1.6.1.201にて対策<br><br>やはり、あとから割り当てを解除した場合にツールバーに残ってしまう曖昧さが気になりますが、他は問題なさそうです。<br><br>まぁ、あまり頻繁に行なうようなことでも無いので、そこまで気にすることでも無いでしょうが(^^;<br><br>早急な対応ありがとうございました！<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

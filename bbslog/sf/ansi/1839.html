@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>メニューから再変換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1839</span>
+    <a class="thread-title" href="1839.html#1839">メニューから再変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1840</span>
+    <a class="thread-title" href="1839.html#1840">Re:メニューから再変換</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1841</span>
+    <a class="thread-title" href="1839.html#1841">Re:メニューから再変換</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1846</span>
+    <a class="thread-title" href="1839.html#1846">Re:メニューから再変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1848</span>
+    <a class="thread-title" href="1839.html#1848">Re2:メニューから再変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1849</span>
+    <a class="thread-title" href="1839.html#1849">Re3:メニューから再変換</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1839>
+    <span class="no">[1839]</span>
+    <a class="thread-title" href="#1839">メニューから再変換</a>
+    <span class="author">minfu</span>
+    <time datetime="2002-04-11T01:54:01">2002年04月11日 01:54</time></h1>
+    <div class="body">編集メニューから[再変換]できるようにしてみました。<br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/Reconv2002-04-11.zip target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>Reconv20<wbr>02-<wbr>04-<wbr>11.<wbr>zip</nobr></a><br>ssrc_2002_04_08から変更したファイルを入れてあります。<br><br>主な変更内容は<br>・選択しなくても再変換できるようにしました。<br>・再変換文字列の前後を考慮するようにしました。<br><br>アイコンまで作る元気がなかったのでどなたかお願いします。ｍ（＿＿）ｍ<br></div></section>
+    <ul><li><section><h1 id=1840>
+    <span class="no">[1840]</span>
+    <a class="thread-title" href="#1840">Re:メニューから再変換</a>
+    <span class="author">minfu</span>
+    <time datetime="2002-04-11T01:56:25">2002年04月11日 01:56</time></h1>
+    <div class="body">自分が変更した部分のライセンスは何でもいいです。<br>そんなに変更してないですが、いちおう念のため、<br></div></section>
+    </li><li><section><h1 id=1841>
+    <span class="no">[1841]</span>
+    <a class="thread-title" href="#1841">Re:メニューから再変換</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-11T10:08:03">2002年04月11日 10:08</time></h1>
+    <div class="body">▼ minfuさん<br>&gt; 編集メニューから[再変換]できるようにしてみました。<br><br>すばらしぃ。取り込みます。</div></section>
+    </li><li><section><h1 id=1846>
+    <span class="no">[1846]</span>
+    <a class="thread-title" href="#1846">Re:メニューから再変換</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-12T00:06:18">2002年04月12日 00:06</time></h1>
+    <div class="body">▼ minfuさん<br>&gt; 編集メニューから[再変換]できるようにしてみました。<br><br>再変換できたー。すばらしい。でもやっぱり[↓]キーで確定はできないのね...しくしく...<br><br>ところで、コンパイラがWARNINGを吐きました。<br><br>LRESULT CEditView::SetReconvertStruct(PRECONVERT<br>STRING pReconv, bool bUnicode)<br>の中で、nLineLenに値を入れる前に、<br>nSelectedEndIndex = nLineLen;<br>されているみたいです。<br><br>これって、↓こんな感じにしておけばいいのかな？？ &gt; minfuさん<br><br>pcCurDocLine = m_pcEditDoc-&gt;m_cDocLineMgr.GetLineInfo(nCurrentLine);&#9;//&#9;YAZ<br>nLineLen = pcCurDocLine-&gt;m_pLine-&gt;GetLength();&#9;&#9;&#9;&#9;&#9;<br>&#9;&#9;//&#9;YAZ<br>nSelectedEndIndex = nLineLen;<br><br>よろしくお願いしますっ。</div></section>
+    <ul><li><section><h1 id=1848>
+    <span class="no">[1848]</span>
+    <a class="thread-title" href="#1848">Re2:メニューから再変換</a>
+    <span class="author">minfu</span>
+    <time datetime="2002-04-12T13:53:34">2002年04月12日 13:53</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; 再変換できたー。すばらしい。でもやっぱり[↓]キーで確定はできないのね...しくしく...<br>&gt; <br>&gt; ところで、コンパイラがWARNINGを吐きました。<br>&gt; <br>&gt; LRESULT CEditView::SetReconvertStruct(PRECONVERT<br>&gt; STRING pReconv, bool bUnicode)<br>&gt; の中で、nLineLenに値を入れる前に、<br>&gt; nSelectedEndIndex = nLineLen;<br>&gt; されているみたいです。<br>&gt; <br>&gt; これって、↓こんな感じにしておけばいいのかな？？ &gt; minfuさん<br>&gt; <br>&gt; pcCurDocLine = m_pcEditDoc-&gt;m_cDocLineMgr.GetLineInfo(nCurrentLine);&#9;//&#9;YAZ<br>&gt; nLineLen = pcCurDocLine-&gt;m_pLine-&gt;GetLength(); <br>&gt; &#9;&#9;//&#9;YAZ<br>&gt; nSelectedEndIndex = nLineLen;<br>&gt; <br>&gt; よろしくお願いしますっ。<br><br>あらら、大変失礼致しました。ご指摘通りの修正でお願いします。<br><br>ついでに、同じ関数の<br>char sz[1024];<br>はいらないので消してください。デバッグの時のが残ってました。<br><br></div></section>
+    <ul><li><section><h1 id=1849>
+    <span class="no">[1849]</span>
+    <a class="thread-title" href="#1849">Re3:メニューから再変換</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-12T18:27:33">2002年04月12日 18:27</time></h1>
+    <div class="body">▼ minfuさん<br>&gt; ついでに、同じ関数の<br>&gt; char sz[1024];<br>&gt; はいらないので消してください。デバッグの時のが残ってました。<br><br>了解ですっ。ほかにも使われてない変数があったみたいなので、いっしょに消しておきました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

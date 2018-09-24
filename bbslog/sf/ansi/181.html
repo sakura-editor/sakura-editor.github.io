@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>カスタムアウトライン解析 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">181</span>
+    <a class="thread-title" href="181.html#181">カスタムアウトライン解析</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">182</span>
+    <a class="thread-title" href="181.html#182">Re: カスタムアウトライン解析</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">185</span>
+    <a class="thread-title" href="181.html#185">Re2: カスタムアウトライン解析</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=181>
+    <span class="no">[181]</span>
+    <a class="thread-title" href="#181">カスタムアウトライン解析</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-03-15T18:19:47">2001年03月15日 18:19</time></h1>
+    <div class="body">TeX用のアウトライン解析ができないものか、と思案していましたが、もっと一般的に次のような機能を追加できれば便利ではないかという思い付きです。<br>それはキーワードの指定と階層を登録出来るというものです。今あるアウトライン解析はユーザの指定出来る部分は全くありません。すべて実装されたままでの利用になります。唯一の例外はタイプ「テキスト」で、見出し記号だけは追加・削除できます。<br>それでも十分なのかもしれませんが、少々不満が残ります。さしあたりカスタムアウトラインとして1つユーザが作れれば便利かなと思うのは、キーワードを見つけたらそれをトピックツリーのノードにするというもので、同一階層はキーワードが出てくる順番にし、下の階層は適宜指定します。たとえば<br>keyword11,keyword12,keyword13;keyword21,keyword22;keyword31 というように指定して；の間は同一階層、前から順に下の階層のキーワードになっていきます。<br>実際にkeyword12......keyword21......keyword13.....keyword22...keyword31<br>とあればkeyword12--keyword21<br>　　　　　　｜<br>　　　　keyword13--keyword22--keyword31<br><br>というツリーを作る感じ。実際にはkeywordそのものではなく、それに続く文字列をタイトルに取るようにします。セパレータはブランクか{}でその次またはその中の文字列を取ってくるということに。<br>このようなユーザ指定を他のタイプにも追加できませんかね。せめて「テキスト」だけでもいいかなあ。あるいははじめに書いたように「カスタムアウトライン解析」というものを新規に追加してこのような指定ができるといい。。。<br><br>TeXに使うにはこれで事足りますね。kwd=\chapter;\section:\subsection;\subsubsection title={}内<br>#今は外部コマンドが使えないので、TeXのコンパイルやプレヴューをサクラエディタと連繋して使えません。一生懸命作ったTeX用キーワードですが、結局他のエディタでTeXするしかない。やっぱりこのエディタはTeXには向かないかなと思ったりもする。。。(-.-)<br></div></section>
+    <ul><li><section><h1 id=182>
+    <span class="no">[182]</span>
+    <a class="thread-title" href="#182">Re: カスタムアウトライン解析</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-03-15T20:49:52">2001年03月15日 20:49</time></h1>
+    <div class="body">▼じぇぷろさん<br>&gt;TeX用のアウトライン解析ができないものか<br>やはり、アウトライン解析のPlug-in化を早急に検討した方が良さそうですね。ただ、いったん決めたインターフェースは簡単には変えられないので焦るのはよくありません。１つのDLLで複数機能を実装する事を考えると、機能ごとに統一がとれていないインターフェースになるのはよろしくないです。<br><br>&gt;やっぱりこのエディタはTeXには向かないかな<br>最近はTeXを使っていないんですが、やっぱりemacs + yatex ?<br></div></section>
+    <ul><li><section><h1 id=185>
+    <span class="no">[185]</span>
+    <a class="thread-title" href="#185">Re2: カスタムアウトライン解析</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-03-16T21:17:45">2001年03月16日 21:17</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼じぇぷろさん<br>&gt; &gt;やっぱりこのエディタはTeXには向かないかな<br>&gt; 最近はTeXを使っていないんですが、やっぱりemacs + yatex ?<br>Windowsエディタしか使いません。TeX専用Editorを使ったり色々です。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

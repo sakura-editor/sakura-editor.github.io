@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>最小化の操作でタブが切り替わる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5137</span>
+    <a class="thread-title" href="5137.html#5137">最小化の操作でタブが切り替わる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5190</span>
+    <a class="thread-title" href="5137.html#5190">Re:最小化の操作でタブが切り替わる</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5137>
+    <span class="no">[5137]</span>
+    <a class="thread-title" href="#5137">最小化の操作でタブが切り替わる</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-10-23T21:15:42">2007年10月23日 21:15</time></h1>
+    <div class="body">ふぁんくらぶ part9 #616 の件の修正パッチを作成しました。<br>→Patches#1818501 FixTabGroupMinimize1.patch<br><br>タブのグループ化を実装したあたりで、ポップアップウィンドウをアクティブ化した場合は親の編集ウィンドウを先頭に持ってくるようにしましたが、その副作用で、非アクティブタブで何かポップアップウィンドウを出しているとき、最小化の操作で最小化ではなくタブが切り替わるようになってしまいました。<br>タブで非アクティブになる場合、従属するポップアップも編集ウィンドウとともに隠すようにしています。<br>表示されていると何気に都合が良い場合もあるのでしょうが、混乱もしやすい（ファイルを開くダイアログやメッセージボックスが背後で表示されている場合もある）ので...</div></section>
+    <ul><li><section><h1 id=5190>
+    <span class="no">[5190]</span>
+    <a class="thread-title" href="#5190">Re:最小化の操作でタブが切り替わる</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-11-21T23:40:34">2007年11月21日 23:40</time></h1>
+    <div class="body">遅ればせながら、<br>対応して頂きありがとうございました。<br>要望の内容を書き込んでおきます。<br><br>ふぁんくらぶ part9<br>616 ：名無しさん＠お腹いっぱい。：2007/10/22(月) 05:36:20 ID:ZdkyXVlY0<br>    設定はタブを表示するモードで、[ウインドウをまとめてグループ化する]と<br>    [最後のファイルを閉じたとき（無題）文書を残す]とにチェックが入っている<br>    状態です。このとき２つのファイルを開いていて、片一方のタブでは<br>    アウトライン解析ウインドウが開いていました。ウインドウを最小化しようと、<br>    アウトライン解析ウインドウが開いている方のウインドウ最小化ボタンを<br>    押すとちゃんと最小化されたけど、そうでない方の最小化ボタンを押すと<br>    アウトライン解析ウインドウが表示されたということないですか？<br></div></section>
+    </li></ul></li></ul></body></html>

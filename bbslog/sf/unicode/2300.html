@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>USE_CRASHDUMPが有効になっていない？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2300</span>
+    <a class="thread-title" href="2300.html#2300">USE_CRASHDUMPが有効になっていない？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2301</span>
+    <a class="thread-title" href="2300.html#2301">Re:USE_CRASHDUMPが有効になっていない？</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2300>
+    <span class="no">[2300]</span>
+    <a class="thread-title" href="#2300">USE_CRASHDUMPが有効になっていない？</a>
+    <span class="author">LR4</span>
+    <time datetime="2015-10-13T18:28:51">2015年10月13日 18:28</time></h1>
+    <div class="body">2.3.0.0 の CProcess.h ですが、<br><br> 22:#ifdef MINIDUMP_TYPE<br> 23:#define USE_CRASHDUMP<br> 24:#endif<br><br>これでは USE_CRASHDUMP は有効になっていないように見受けられますが、どうなのでしょうか。<br>MINIDUMP_TYPE というシンボルは ImageHlp.h で定義されてますが、<br>#defineではなくenum変数なので…</div></section>
+    <ul><li><section><h1 id=2301>
+    <span class="no">[2301]</span>
+    <a class="thread-title" href="#2301">Re:USE_CRASHDUMPが有効になっていない？</a>
+    <span class="author">syat</span>
+    <time datetime="2015-10-13T21:18:06">2015年10月13日 21:18</time></h1>
+    <div class="body">▼ LR4さん<br>すみません。これはバグ（あまり緊急度の高くない）ですので、次版で直します。<br>MinGWでImageHlp.hが無いことの対策でしたが、#ifdef _IMAGEHLP_ とするべきかもしれません。</div></section>
+    </li></ul></li></ul></body></html>

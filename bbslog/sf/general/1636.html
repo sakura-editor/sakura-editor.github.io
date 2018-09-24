@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ドラッグ元になれたら便利 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1636</span>
+    <a class="thread-title" href="1636.html#1636">ドラッグ元になれたら便利</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1638</span>
+    <a class="thread-title" href="1636.html#1638">Re:ドラッグ元になれたら便利</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1640</span>
+    <a class="thread-title" href="1636.html#1640">Re2:ドラッグ元になれたら便利</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1644</span>
+    <a class="thread-title" href="1636.html#1644">Re3:ドラッグ元になれたら便利</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1641</span>
+    <a class="thread-title" href="1636.html#1641">Re2:ドラッグ元になれたら便利</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1642</span>
+    <a class="thread-title" href="1636.html#1642">Re: ドラッグ元になれたら便利</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1645</span>
+    <a class="thread-title" href="1636.html#1645">タイトルバーのアイコンに一票</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1646</span>
+    <a class="thread-title" href="1636.html#1646">RE: タイトルバーのアイコンに一票</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1647</span>
+    <a class="thread-title" href="1636.html#1647">Re2: タイトルバーのアイコンに一票</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1648</span>
+    <a class="thread-title" href="1636.html#1648">Re3: タイトルバーのアイコンに一票</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1651</span>
+    <a class="thread-title" href="1636.html#1651">Re4: タイトルバーのアイコンに一票</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1662</span>
+    <a class="thread-title" href="1636.html#1662">段々自分の考え無しが明らかになってきました(w</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1663</span>
+    <a class="thread-title" href="1636.html#1663">Re5: タイトルバーのアイコンに一票</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1636>
+    <span class="no">[1636]</span>
+    <a class="thread-title" href="#1636">ドラッグ元になれたら便利</a>
+    <span class="author">おに</span>
+    <time datetime="2002-04-17T02:28:51">2002年04月17日 02:28</time></h1>
+    <div class="body">初めまして。<br>様々なエディタをさまよい歩いてサクラエディタに辿り着いた者です。<br>サクラエディタの高機能と速い起動速度のお陰で、<br>テキスト編集作業そのものは大幅に改善されたのですが、<br>そうなると欲が出て来てしまいました。<br><br>エディタでソースなどのテキストを書いて、<br>そのファイルをエクスプローラから何か(FTPクライアントやインタプリタなど)に<br>ドラッグ＆ドロップという作業を日常的に行っていると、<br>エディタからドラッグできれば楽なのに、と思う時があります。<br><br>他のエディタでも見かけない機能ですが、<br>ステータスバーの空きとかルーラーの左とか何処かに(どこでもいいです)<br>「編集中のファイルをドラッグ開始できる場所」を配置していただけませんか？</div></section>
+    <ul><li><section><h1 id=1638>
+    <span class="no">[1638]</span>
+    <a class="thread-title" href="#1638">Re:ドラッグ元になれたら便利</a>
+    <span class="author">おに</span>
+    <time datetime="2002-04-17T04:17:26">2002年04月17日 04:17</time></h1>
+    <div class="body">ソースコードをダウンロードしてBCC32で試してみました。<br>(とても読みやすいソースですね)<br>とりあえずメニューバーの右端に四角を描くようWM_NCPAINTの処理を追加しました。<br>ここからドラッグ開始…までは僕にもできそうです。<br><br>というわけで質問です。<br>現在編集中のファイル名は、CEditWndのメソッドから<br>どう取得すればいいのでしょうか？<br>m_filenameみたいなものが見当たらなかったので…。<br><br>後、もし実装できたとして、<br>僕は改変したソースをどうすればいいのでしょうか？</div></section>
+    <ul><li><section><h1 id=1640>
+    <span class="no">[1640]</span>
+    <a class="thread-title" href="#1640">Re2:ドラッグ元になれたら便利</a>
+    <span class="author">KENCH</span>
+    <time datetime="2002-04-17T09:29:14">2002年04月17日 09:29</time></h1>
+    <div class="body">▼ おにさん<br>ようこそ。<br>えっと、まず、編集中の選択されているテキストのドラッグが出来るのはご存知ですか？<br>ファイルのドラッグで移動してしまうと、編集中のテキストを破棄するのかどうか、色々と動作を規定する必要があるかと思います。<br><br>で、次に開発に関してですが、専用の会議室が別途ありますので、次回からそちらで御発言ください。<br>また開発に参加していただくときは、<br><a href=http://members.tripod.co.jp/sakura_editor/dev.html target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>dev.<wbr>html</nobr></a><br>こちらをお読みください。<br>よろしくお願い致します。</div></section>
+    <ul><li><section><h1 id=1644>
+    <span class="no">[1644]</span>
+    <a class="thread-title" href="#1644">Re3:ドラッグ元になれたら便利</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-17T13:10:14">2002年04月17日 13:10</time></h1>
+    <div class="body">&gt;ファイルのドラッグで移動してしまうと、編集中のテキストを破棄するのかどうか、色々と動作を規定する必要があるかと思います<br>インタプリタとか書いているところを見ると，例えばファイルをデスクトップのアイコンにD&amp;Dして実行するようなことを考えているのではないでしょうか．<br><br>ただ，そういう目的ではマクロを定義してメニューに入れた方が使いやすいような気はしますが．<br></div></section>
+    </li></ul></li><li><section><h1 id=1641>
+    <span class="no">[1641]</span>
+    <a class="thread-title" href="#1641">Re2:ドラッグ元になれたら便利</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-17T11:07:43">2002年04月17日 11:07</time></h1>
+    <div class="body"><br>いいっすねー。<br><br>&gt;というわけで質問です。<br>&gt;現在編集中のファイル名は、CEditWndのメソッドから<br>&gt;どう取得すればいいのでしょうか？<br>&gt;m_filenameみたいなものが見当たらなかったので…。<br><br>上書き保存するあたりを読むとわかるかも～（ってすんません、いま時間が無いので。。。）<br><br><br>&gt;後、もし実装できたとして、<br>&gt;僕は改変したソースをどうすればいいのでしょうか？<br><br>てっとりばやい回答です。<br>eGroupにアップロードして、なんとかして開発陣にお知らせください。<br>期待してます☆<br></div></section>
+    </li></ul></li><li><section><h1 id=1642>
+    <span class="no">[1642]</span>
+    <a class="thread-title" href="#1642">Re: ドラッグ元になれたら便利</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-17T13:01:09">2002年04月17日 13:01</time></h1>
+    <div class="body">&gt;ステータスバーの空きとかルーラーの左とか何処かに(どこでもいいです)<br>&gt;「編集中のファイルをドラッグ開始できる場所」を配置していただけませんか？<br>エクスプローラみたいにタイトルバーのアイコンをドラッグ開始に使うというのはどうでしょう？<br></div></section>
+    <ul><li><section><h1 id=1645>
+    <span class="no">[1645]</span>
+    <a class="thread-title" href="#1645">タイトルバーのアイコンに一票</a>
+    <span class="author">hideto</span>
+    <time datetime="2002-04-17T13:19:54">2002年04月17日 13:19</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;ステータスバーの空きとかルーラーの左とか何処かに(どこでもいいです)<br>&gt; &gt;「編集中のファイルをドラッグ開始できる場所」を配置していただけませんか？<br>&gt; エクスプローラみたいにタイトルバーのアイコンをドラッグ開始に使うというのはどうでしょう？<br><br>タイトルバーのアイコンをドラッグ開始に使うに一票！<br></div></section>
+    <ul><li><section><h1 id=1646>
+    <span class="no">[1646]</span>
+    <a class="thread-title" href="#1646">RE: タイトルバーのアイコンに一票</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-17T14:46:02">2002年04月17日 14:46</time></h1>
+    <div class="body"><br>&gt;&gt; エクスプローラみたいにタイトルバーのアイコンをドラッグ開始に使うというのはどうでしょう？<br>&gt;<br>&gt;タイトルバーのアイコンをドラッグ開始に使うに一票！<br><br>そうそう、それがいいよね。同じく一票！<br></div></section>
+    <ul><li><section><h1 id=1647>
+    <span class="no">[1647]</span>
+    <a class="thread-title" href="#1647">Re2: タイトルバーのアイコンに一票</a>
+    <span class="author">おに</span>
+    <time datetime="2002-04-17T15:20:54">2002年04月17日 15:20</time></h1>
+    <div class="body">&gt;エクスプローラみたいにタイトルバーのアイコンをドラッグ開始に使うというのはどうでしょう？<br>エクスプローラでそんなことができるなんて知りませんでした。<br>(IEでそうやってURLショートカット作れるのは知ってましたが、使わないので忘れてました)<br>というわけで僕も一票(w<br><br>&gt;ファイルのドラッグで移動してしまうと、<br>&gt;編集中のテキストを破棄するのかどうか、<br>&gt;色々と動作を規定する必要があるかと思います。<br>移動を禁止して、コピーとリンクだけ許可するようなことは<br>OLE Drag&amp;Dropでは可能だったと思います。<br><br>&gt;ただ，そういう目的ではマクロを定義して<br>&gt;メニューに入れた方が使いやすいような気はしますが．<br>FTPクライアントなどは特定の場所(ディレクトリの上)に<br>ドロップしないと意図したところにアップしてくれませんよね。<br>インタプリタも、既に開いているインタプリタに対して<br>追加でソースを読ませたい時などもあります。<br>他に、コマンドプロンプトにドロップすれば<br>ファイル名を入力する手間が省けるとか、そんなことを考えています。<br><br>&gt;開発に関してですが、専用の会議室が別途ありますので、<br>&gt;次回からそちらで御発言ください<br>すいません。<br>次からは開発用の会議室で発言させていただきます。</div></section>
+    <ul><li><section><h1 id=1648>
+    <span class="no">[1648]</span>
+    <a class="thread-title" href="#1648">Re3: タイトルバーのアイコンに一票</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-17T16:42:08">2002年04月17日 16:42</time></h1>
+    <div class="body">&gt;移動を禁止して、コピーとリンクだけ許可するようなことは<br>&gt;OLE Drag&amp;Dropでは可能だったと思います。<br>もう一つ問題になるのは，保存しないでそれを行うと編集前のものがわたってしまう点．D&amp;Dのときに保存するかどうか問い合せるダイアログを出すのって可能なのでしょうか．<br><br>&gt;FTPクライアントなどは特定の場所(ディレクトリの上)に<br>&gt;ドロップしないと意図したところにアップしてくれませんよね。<br>&gt;インタプリタも、既に開いているインタプリタに対して<br>&gt;追加でソースを読ませたい時などもあります。<br>なるほど．わかりました．<br></div></section>
+    <ul><li><section><h1 id=1651>
+    <span class="no">[1651]</span>
+    <a class="thread-title" href="#1651">Re4: タイトルバーのアイコンに一票</a>
+    <span class="author">KENCH</span>
+    <time datetime="2002-04-17T21:00:22">2002年04月17日 21:00</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; もう一つ問題になるのは，保存しないでそれを行うと編集前のものがわたってしまう点．D&amp;Dのときに保存するかどうか問い合せるダイアログを出すのって可能なのでしょうか．<br>そそ、編集中のファイルは、まだ保存されていないファイルになりますよね。<br>あと、排他してたらどうするんでしょ？</div></section>
+    <ul><li><section><h1 id=1662>
+    <span class="no">[1662]</span>
+    <a class="thread-title" href="#1662">段々自分の考え無しが明らかになってきました(w</a>
+    <span class="author">おに</span>
+    <time datetime="2002-04-18T00:15:36">2002年04月18日 00:15</time></h1>
+    <div class="body">&gt;保存しないでそれを行うと編集前のものがわたってしまう点．<br>[OK]を押すためにはマウスのボタンを離さなければいけないので<br>ダイアログは無理と思います。<br>その都度手動で上書きしてからD&amp;Dを開始するか、<br>「D&amp;D開始時自動で保存する」オプションを設けていただくか…。<br><br>&gt; あと、排他してたらどうするんでしょ？<br>サクラ側が「他からの書き込みを禁止」していた場合でも<br>使う側は問題ありませんよね？<br>「他からの読み込みを禁止」していた場合…<br>それでもファイル名の情報に意味があると考えて<br>(ファイル名入力欄にドロップを受け入れるアプリがある)<br>そのままでいいと思います。<br>ちなみに僕は「他からの書き込みを禁止」にしています。<br><br>進行報告をすると、現在、WM_LBUTTONDOWNでマウスをキャプチャーして<br>そのまま離せばシステムメニュー、ダブルクリックでクローズ、<br>移動でドラッグ開始(の判定)までできました。<br>後はHDROPを保持するIDataObjectを作るだけです。<br>(「上書保存するあたり」はこれから探します^^)<br><br>開発掲示板のほうに移動しようと思ったのですが、<br>流れとしてこのままのほうがいいかな、と思ったのでここで書かせていただきました。</div></section>
+    </li><li><section><h1 id=1663>
+    <span class="no">[1663]</span>
+    <a class="thread-title" href="#1663">Re5: タイトルバーのアイコンに一票</a>
+    <span class="author">kyoko</span>
+    <time datetime="2002-04-18T00:21:13">2002年04月18日 00:21</time></h1>
+    <div class="body">▼ KENCHさん<br>&gt; ▼ げんたさん<br>&gt; &gt; もう一つ問題になるのは，保存しないでそれを行うと編集前のものがわたってしまう点．D&amp;Dのときに保存するかどうか問い合せるダイアログを出すのって可能なのでしょうか．<br>&gt; そそ、編集中のファイルは、まだ保存されていないファイルになりますよね。<br>&gt; あと、排他してたらどうするんでしょ？<br><br>こんばんは、kyokoと申します。余所者ですがちょっと気がついたので、参考までに・・・<br><br>タイトルバーアイコンのドラッグ＆ドロップ、秀丸ではできるみたいです。<br>（コピーではなく移動されてしまいますが）<br>今試してみましたが、以下のような感じです。<br><br>ファイルを開いて、アイコンをＤ＆Ｄすると、まずファイルが移動されてから<br>「ファイルが削除または移動されました。破棄して終了します。」というダイアログが表示されます。<br>ＯＫを選択するとエディタが閉じますが、キャンセルを選択するとエディタはそのまま残ります。<br>（でもタイトルバーには移動前のパス名が表示されてて、上書き保存すると元のところに保存されます・・・ちょっと変かも）<br>ちなみに排他されているファイルを開いてＤ＆Ｄすると、「○○を移動できません。アクセスできません。」となります（エクスプローラで出るのと同じ）<br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現ライブラリ差し替え完了 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">479</span>
+    <a class="thread-title" href="479.html#479">正規表現ライブラリ差し替え完了</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=479>
+    <span class="no">[479]</span>
+    <a class="thread-title" href="#479">正規表現ライブラリ差し替え完了</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-06-28T11:30:21">2001年06月28日 11:30</time></h1>
+    <div class="body">正規表現ライブラリの差し替えが完了しました。とりあえずそっくりそのまま入れ替えただけなので以下のような制限(?)が存在します。<br>* 表記方法の違い<br>正規表現はPerl互換となります。また、BREGEXPの仕様により/パターン/ または m/パターン/ とPerl風表記にする必要があります。<br>(前後の/が無くても自動的に補う機能は今後の課題)<br><br>* 改行の扱い<br>1行には行末コードが含まれていると解釈されます。ですから置換する文字列で$を使って行末まで置換すると改行が無くなって行がつながってしまいます。後に続く文字列を表す(?=\r\n)を使うことで改行コードがパターンにマッチしないようにすることで回避可能です。(詳細はperlのマニュアル参照)<br></div></section>
+    </li></ul></body></html>

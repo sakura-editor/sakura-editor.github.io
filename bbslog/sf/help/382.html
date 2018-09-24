@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ヘルプ運用変更案その２ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">382</span>
+    <a class="thread-title" href="382.html#382">ヘルプ運用変更案その２</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">383</span>
+    <a class="thread-title" href="382.html#383">Re:ヘルプ運用変更案その２</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">388</span>
+    <a class="thread-title" href="382.html#388">Re2:ヘルプ運用変更案その２</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">389</span>
+    <a class="thread-title" href="382.html#389">Re3:ヘルプ運用変更案その２</a></div>
+    </li><li><div class="list-title">
+    <span class="no">390</span>
+    <a class="thread-title" href="382.html#390">ngはヘルプましん形式のXHP,XHCですよね？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">392</span>
+    <a class="thread-title" href="382.html#392">RE: ngはヘルプましん形式のXHP,XHCですよね？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">394</span>
+    <a class="thread-title" href="382.html#394">Re2: ngはヘルプましん形式のXHP,XHCですよね？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">395</span>
+    <a class="thread-title" href="382.html#395">Re3: ngはヘルプましん形式のXHP,XHCですよね？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=382>
+    <span class="no">[382]</span>
+    <a class="thread-title" href="#382">ヘルプ運用変更案その２</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-09T03:02:49">2007年10月09日 03:02</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt;#このHELP Documentスレって上がらないですね。<br>あげました(笑)<br>というか深くなってきたので、そのついでに。<br><br>&gt;新規作成は、HTML Workshop以外の何かのツールで、既に終わってるようなのです。<br>そんなことないですよ。svn#1129以降にコミットしたhhcはすべて、一旦ヘルプましんを通したものですから。<br>なので、現時点でのソースマスターは正真正銘ヘルプましんです。<br><br>ただし、ヘルプましんの生成するhhcは、HTML workshopの出力とかなり似ていますが微妙に異なっていて、ネストの深さに対してインデントの深さが一致しないという問題があります。<br>それらをすべて修正し、ついでにテキストベースで管理しやすいように&lt;UL&gt;&lt;/UL&gt;内の構造を変えています。<br>タイトルとファイル名が１行に表示されたほうがGrepで追いかけやすいので便利でしょ？<br>変更点を漏れなく反映させるために、こういった手段は欲しかったりします。<br><br>関連事項 &gt;&gt;help:345<br><br>&gt;ヘルプリリース1.6.0.0のhhcがHTML Workshopの出力と微妙に異なります。<br>前述の説明にありますが、確かにこれはご指摘の通りです。<br>よって、ヘルプましんの出力とWorkshopの出力のいずれとも異なる第３のファイル形式です。<br>metaタグのGENERATORをsakura editorに変更して地味に主張しています(^^)<br><br>ところで、自分でヘルプをコンパイルして自家製ヘルプを作成する人ってどのくらいいるのでしょうか。<br>パッチの交換が難しいヘルプましんにおいては、共同作業に起因する運用統一の問題はあまり気にしなくて良いでしょうから、運用を変更して問題が出るのは自家製ヘルプを作っている人だけだと思うのです。<br>なんとなく大昔の記憶を含めて推察すると、じゅうじさんは自家製ヘルプを作ってそうですが、もし自家製ヘルプを作っていらっしゃるなら、参考までに何を変えているのか教えていただけませんか？<br></div></section>
+    <ul><li><section><h1 id=383>
+    <span class="no">[383]</span>
+    <a class="thread-title" href="#383">Re:ヘルプ運用変更案その２</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-10-09T07:16:46">2007年10月09日 07:16</time></h1>
+    <div class="body">▼ maruさん<br>&gt; パッチの交換が難しいヘルプましんにおいては、共同作業に起因する運用統一の問題はあまり気にしなくて良いでしょうから、運用を変更して問題が出るのは自家製ヘルプを作っている人だけだと思うのです。<br>&gt; なんとなく大昔の記憶を含めて推察すると、じゅうじさんは自家製ヘルプを作ってそうですが、もし自家製ヘルプを作っていらっしゃるなら、参考までに何を変えているのか教えていただけませんか？<br><br>hhcについてです。<br>maruさんのなさろうとしている事が分からなくなってます。<br>また、ヘルプましんに話が戻って恐縮ですが、<br>ヘルプましんの出力hhcも、HTML Workshopの出力hhcも要するに<br>(編集が必要なので)使わないのですか？<br>私は、noviceさんの発言ではヘルプましんの出力hhcだと受け取っていました。<br>ヘルプましん出力とのdiff,HELP Workshop出力とのdiff,最新SVNとのdiff、合計3種類のdiffが作れます。<br>XHP,XHCを削除した場合でも、2種類です。<br>編集：HHPファイルのフルパス削除、hhcファイル最後の&lt;/UL&gt;削除の事。<br><br>私が持っている、sakura.chm との事ですが、特に有りません。<br>&gt; 別件で Document/コンテンツツリー にパッチをアップされていらっしゃいますが、これをXHCに反映するのはかなり面倒なはずです。<br>&gt; 手順としては<br>  &gt;&gt;help:373<br><br>svn#1129は、私全く見ていませんが、1.6.0.0 svn#1137のXHPは、Wiki Document/の方に書きましたが、１カ所逆になっています。<br></div></section>
+    <ul><li><section><h1 id=388>
+    <span class="no">[388]</span>
+    <a class="thread-title" href="#388">Re2:ヘルプ運用変更案その２</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-10T01:58:54">2007年10月10日 01:58</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt;maruさんのなさろうとしている事が分からなくなってます。<br>&gt;ヘルプましんの出力hhcも、HTML Workshopの出力hhcも要するに<br>&gt;(編集が必要なので)使わないのですか？<br><br>はじめの書き込みから一貫してそう主張しているつもりですが、分かりにくい？<br><br>&gt;&gt;help:353<br>&gt;&gt;*.hhcファイルはエディタで編集する方針で進めたいと思っています。<br><br>&gt;&gt;help:374<br>&gt;&gt;これまでHTMLWorkshopのフロントエンドがヘルプましんだったものを、今度からテキストエディタ(普通はサクラエディタ)に変更しよう、という話です。<br><br>&gt;&gt;help:378<br>&gt;&gt;直接テキストを編集したほうが手軽だと思うのですが。<br><br>&gt;&gt;help:382<br>&gt;&gt;ヘルプましんの出力とWorkshopの出力のいずれとも異なる第３のファイル形式です。metaタグのGENERATORをsakura editorに変更して地味に主張しています(^^)<br><br>&gt;&gt;help:345<br>&gt;&gt;ただ、hhcをエディタで編集してしまえば何の問題も起こらないので<br><br>で、妥協案が&gt;&gt;help:376のULの修正のみテキストエディタ、という話です。<br>&gt;&gt;Workshopで編集＋UL修正、という運用でも私は構いませんので、やはりヘルプましんからの離脱を推進したい<br><br><br>&gt;私が持っている、sakura.chm との事ですが、特に有りません。<br>&gt;&gt; 別件で Document/コンテンツツリー にパッチをアップされていらっしゃいますが、これをXHCに反映するのはかなり面倒なはずです。<br>&gt;&gt; 手順としては<br>&gt;  &gt;&gt;help:373<br>それは分かっています。私が言いたいのは、ヘルプのバグを発見した人が自分の修正内容を提供する手段がないということです。<br>せっかくじゅうじさんが修正されても、その成果物を本流にフィードバックできないのはデメリットだと思いませんか？<br><br>&gt;1.6.0.0 svn#1137のXHPは、～(略)～１カ所逆になっています。<br>リンク先との関係は合っているので、このくらいは許してあげて(^^;;<br><br>&gt;もし自家製ヘルプを作っていらっしゃるなら、参考までに何を変えているのか教えていただけませんか？<br>じゅうじさんが自家製ヘルプをつくっていらっしゃるなら、その変更点を本流のヘルプに吸収すれば皆幸せかと思ったのですが、そういう次元ではない？<br><br>&gt;エディタで直接編集するしか無い訳で、それはかなり面倒だと思います。<br>今回の提案の目的はメンテナンスの軽量化であり、私の場合直接編集するのが一番軽いので直接編集の運用を最初に希望したわけですが、かえって面倒だとする意見が出たため、それを標準化するのはあきらめます。<br><br>～続く～<br></div></section>
+    <ul><li><section><h1 id=389>
+    <span class="no">[389]</span>
+    <a class="thread-title" href="#389">Re3:ヘルプ運用変更案その２</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-10T02:00:01">2007年10月10日 02:00</time></h1>
+    <div class="body">&gt;&gt;help:376の妥協案をベースに運用ルール案をまとめました。<br>コミット前の新機能なパッチが並んできたので、そろそろ1.6.0.1に照準を合わせたい(汗)<br><br>１．ヘルプのリリースにあたり、リリース担当者はヘルプましん or Workshopのどちらの形式を使っても良いものとする。<br><br>２．workshopでリリースする者は、ヘルプましん形式のファイルを保持・保証する責務を負わない。<br><br>３．workshopでの作業の場合、HTML helpの仕様の範囲内でその機能を利用することに制限はないものとする。(ヘルプましんがサポートしている機能かどうかを確認しなくてよい。)<br><br>４．workshopでの作業の場合、テキストの直接編集 or Workshopでの編集のどちらで行っても良いこととする。<br><br>５．リリース担当者がworkshopの利用者とは限らないので、差分の提供を受け付けるかどうかはリリース担当者の判断とする。<br><br>６．リリース担当者が差分の提供を受け付ける場合、提供者はSVN差分(推奨)もしくはdiff差分により行うものとする。<br><br>７．差分以外の提供方式(ファイル丸ごとなど)の場合は、当人同士の了解で適宜対応のこと。<br><br>８．Workshop編集でのUL位置や、ヘルプましんでの絶対パスについては、リリース担当者の責任で修正のこと。<br><br>９．ヘルプのコミットにあたり、上記１～４に準ずる。<br></div></section>
+    </li><li><section><h1 id=390>
+    <span class="no">[390]</span>
+    <a class="thread-title" href="#390">ngはヘルプましん形式のXHP,XHCですよね？</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-10-10T19:31:01">2007年10月10日 19:31</time></h1>
+    <div class="body">▼ maruさん<br>話をまとめると、ファイル形式には、次の種類が有りますね。<br>1.ヘルプましん入力 XHP,XHC<br>2.ヘルプましん出力 HHP,hhc,hhk<br>3.HTML Workshop出力 hhp,hhc,hhk<br>4.svnエディタ修正 hhp,hhc,hhk<br><br>提供するのは、最初は1.が駄目という話でしたが、結論は2.が駄目でした？<br>理由は、2.を作る為には1.の入力ファイルが不可欠であり、1.の提供とイコールな為。<br><br>4.が受け入れられる理由は、HTML Workshopに入力して、3.と差分比較出来る為。<br>あれ？ 2.であっても、HTML Workshopに入力して、3.と差分比較出来ますね？ 直接比較は出来ませんが。<br><br>Document/「カスタムメニュー」... の diff_20071009.txt は差分ですが、全体のファイル3個と、削除する_RESOURCEの一覧ではない方が良いですね。<br><br>&gt;&gt;もし自家製ヘルプを作っていらっしゃるなら、参考までに何を変えているのか教えていただけませんか？<br>&gt;じゅうじさんが自家製ヘルプをつくっていらっしゃるなら、その変更点を本流のヘルプに吸収すれば皆幸せかと思ったのですが、そういう次元ではない？<br>maruさん、ここに一緒に書いてしまいますが、私の使っているヘルプへのリンクです。<br>http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Help/<br></div></section>
+    <ul><li><section><h1 id=392>
+    <span class="no">[392]</span>
+    <a class="thread-title" href="#392">RE: ngはヘルプましん形式のXHP,XHCですよね？</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-10T23:16:18">2007年10月10日 23:16</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt;提供するのは、最初は1.が駄目という話でしたが、結論は2.が駄目でした？<br>結論から言えば、１～４すべてＯＫです。ただしこれは、あくまでルール上の話で、実際には運用上の自然な流れを経て、そこそこ一定の手段に絞られていくと予想しています。「1.の提供とイコールな為」などのような背景が、そのときのベクトルに大きく影響するからです。<br><br>また、そのように自然発生した暗黙のルール(のようなもの)は流動的であって良く、例えば、途中から別のタイプの出力に変遷していく可能性もあるでしょう。<br><br>ルール自体は、従来よりも大幅に制限が少なくなったと思っていただければ結構です。細かいところは運用を積み重ねながら・・・。<br><br><br>&gt;・・・全体のファイル3個と、削除する_RESOURCEの一覧ではない方が良いですね。<br>すいません、ここは意味が分かりませんでした。<br><br>&gt;maruさん、ここに一緒に書いてしまいますが、私の使っているヘルプへのリンクです。<br>&gt;http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Help/<br>今もSakuraMacro.chmをお使いなのでしょうか。&gt;&gt;help:324に関連の書き込みがありますね・・・。<br>最新版(と言っても１年も前ですが)の http://sakura.qp.land.to/?Macro%2Fchm じゃ駄目なの？とも思いましたが、もしかしたら&gt;&gt;help:253を見過ごされているだけなのかも知れないので、一度ご確認いただけますか。<br></div></section>
+    <ul><li><section><h1 id=394>
+    <span class="no">[394]</span>
+    <a class="thread-title" href="#394">Re2: ngはヘルプましん形式のXHP,XHCですよね？</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-10-11T11:45:59">2007年10月11日 11:45</time></h1>
+    <div class="body">▼ maruさん<br>[merge]指定に関して、macro.chm から ppa.chm を、改めて、過去削除されていたんですね。<br>こうゆう提案はどうでしょう？（私のPCでしているだけの話の可能性も）<br>sakura.chm →sakura.exeと同じフォルダ<br>+macro.chm →外部HTMLで指定<br>++ppa.chm  →外部HTMLで指定したフォルダ<br>++script56.chm<br><br>#sakura.chmからppa.chmを削除して、macro.chmにppa.chmを戻す。<br>#メリットは、sakura.chm の画面表示がすっきりする。<br>#同じフォルダに全部のchmを置く場合でも、ppa.chm が二重にならない。</div></section>
+    <ul><li><section><h1 id=395>
+    <span class="no">[395]</span>
+    <a class="thread-title" href="#395">Re3: ngはヘルプましん形式のXHP,XHCですよね？</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-12T03:41:28">2007年10月12日 03:41</time></h1>
+    <div class="body">&gt;#sakura.chmからppa.chmを削除して、macro.chmにppa.chmを戻す。<br>&gt;#メリットは、sakura.chm の画面表示がすっきりする。<br>&gt;#同じフォルダに全部のchmを置く場合でも、ppa.chm が二重にならない。<br><br>なるほど。<br>確かにそういう方法もありかもしれませんが、「ppa.chm が二重にならない。」はすでに対策済みですから、それをわざわざ元に戻して、さらに設定も変更してまで「画面表示がすっきりする」を追求するほどのメリットには思えないのですが・・・。<br>ppa.chmを使っている全ユーザーに影響を与えるので、今になって変更するのは控えたほうがよいのでは？<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

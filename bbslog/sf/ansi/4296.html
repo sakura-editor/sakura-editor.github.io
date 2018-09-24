@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Subversion準備中 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4296</span>
+    <a class="thread-title" href="4296.html#4296">Subversion準備中</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4309</span>
+    <a class="thread-title" href="4296.html#4309">Subversion準備完了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4311</span>
+    <a class="thread-title" href="4296.html#4311">Re:Subversion準備完了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4314</span>
+    <a class="thread-title" href="4296.html#4314">Re2:Subversion準備完了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4317</span>
+    <a class="thread-title" href="4296.html#4317">Re3:Subversion準備完了</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4315</span>
+    <a class="thread-title" href="4296.html#4315">Re2:Subversion準備完了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4316</span>
+    <a class="thread-title" href="4296.html#4316">Re3:Subversion準備完了</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4296>
+    <span class="no">[4296]</span>
+    <a class="thread-title" href="#4296">Subversion準備中</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-03-12T01:25:02">2006年03月12日 01:25</time></h1>
+    <div class="body">3月はじめからSourceforge.netのSubversionが開放されていたことに今頃やっと気付きまして，ただいま準備を進めています．<br>Subversion機能は早速利用可能としましたが，まだ空っぽです．<br><br>混乱無く作業が進められるようにガイドライン草案を作りました．<br><a href=http://members.at.infoseek.co.jp/sakura_editor/repositorymgmt.html target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>reposito<wbr>rymgmt.<wbr>html</nobr></a><br>誤り，わかりづらい点，考慮漏れ等の指摘や方針に対する意見がありましたら遠慮無く挙げてください．<br><br>これとは別に実際の作業手順を説明するページの作成を考えていますが，まだ0に近い状態ですので協力して頂ける方がいればお願いします．<br><a href=http://members.at.infoseek.co.jp/sakura_editor/subversion.html target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>subversi<wbr>on.<wbr>html</nobr></a><br><br>ちなみに最新のCVSリポジトリは...まだ最後に出したβ版のままです．<br>変更の取り込みは全然進めていません．すいません...<br><br>Sourceforge.netのID取得手順も説明を作った方がいいのかな...<br></div></section>
+    <ul><li><section><h1 id=4309>
+    <span class="no">[4309]</span>
+    <a class="thread-title" href="#4309">Subversion準備完了</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-03-19T08:37:36">2006年03月19日 08:37</time></h1>
+    <div class="body">CVSリポジトリを整理してSourceForgeに登録しました．<br><a href=http://svn.sourceforge.net/viewcvs.cgi/sakura-editor/ target=_top><nobr>http://<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>viewcvs.<wbr>cgi/<wbr>sakura-<wbr>editor/<wbr></nobr></a><br>ホームページのドキュメントも更新しました．<br>リポジトリがpublicになったので追っかけとかするのが多少は楽になったかな...<br><br>クライアントですが，WindowsではTortoiseSVNがお手軽で，内蔵のdiffも秀逸です．<br><a href=http://tortoisesvn.tigris.org/ target=_top><nobr>http://<wbr>tortoise<wbr>svn.<wbr>tigris.<wbr>org/<wbr></nobr></a><br>インストールした後，空のディレクトリでSVN Checkout...を実行して<br><a href=https://svn.sourceforge.net/svnroot/sakura-editor/sakura/trunk target=_top><nobr>https://<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>svnroot/<wbr>sakura-<wbr>editor/<wbr>sakura/<wbr>trunk</nobr></a> を指定すれば最新ソースコードが取得できます．<br>試してみたところ最初数秒待たされますが，データが流れ出してからは速く，サクラエディタのソースコード取得は25秒かかりました．<br>更新時は差分転送となるのでもう少し速いはずです．<br><br>そして編集してCommit...するためにはSourceforge.netのアカウントが必要となります．<br>ryojiさんっ，みくさんっ，もかさんっ，あろかさんっ，えっと他には...<br>アカウント取ってくださいね～．<br><br>---<br>rsyncでリポジトリ全体を取得することも出来ます．<br></div></section>
+    <ul><li><section><h1 id=4311>
+    <span class="no">[4311]</span>
+    <a class="thread-title" href="#4311">Re:Subversion準備完了</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-03-19T22:03:23">2006年03月19日 22:03</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; CVSリポジトリを整理してSourceForgeに登録しました．<br>お疲れ様です。<br><br>&gt; クライアントですが，WindowsではTortoiseSVNがお手軽で，内蔵のdiffも秀逸です．<br>&gt; http://tortoisesvn.tigris.org/<br>&gt; インストールした後，空のディレクトリでSVN Checkout...を実行して<br>&gt; https://svn.sourceforge.net/svnroot/sakura-editor/sakura/trunk を指定すれば最新ソースコードが取得できます．<br>取得できました。(^^)v<br>これは便利そうですね。使い方覚えなきゃ。<br>ぢつは、まともにバージョン管理システム使ったことないσ(^^;<br><br>&gt; ryojiさんっ，みくさんっ，もかさんっ，あろかさんっ，えっと他には...<br>&gt; アカウント取ってくださいね～．<br>これも取得（汗）<br><br>リポジトリ使用ガイドラインにもざっと目をとおしてみました。<br>・変更が完全かつ軽微な場合にはtrunkへCommitする．そうでない場合（すなわち副作用によるバグが出そうな場合）には個人用ブランチを作成した上でそこへCommitする．<br>とありますが、ここでいう個人用ブランチというのは、<br>work/COMMITER_NAME/branch/ (開発用trunk等．機能毎に複数．)<br>のほうですよね？<br>基本的にこれまで Yahoo! の ブリーフケース/Source に置いてたものはそこでいいのかしら。<br>ブランチ名称に悩みそうですが、こんな具合にすると良さそう、というお勧めはありますか？</div></section>
+    <ul><li><section><h1 id=4314>
+    <span class="no">[4314]</span>
+    <a class="thread-title" href="#4314">Re2:Subversion準備完了</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-03-20T03:30:00">2006年03月20日 03:30</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; まともにバージョン管理システム使ったことない<br>私もSubversion使うのは初めてだったり...<br>特にmergeを練習しないと失敗しそう．<br><br>&gt; &gt; アカウント<br>developerに登録したうえで権限設定しないとアクセスできませんよ．<br>メールでいいのでアカウントを教えてください．<br><br>かろとさんからはメールが来ていたのですがどうもsourceforge.netのWebからメールを出すと日本語が全部化けるっぽい...<br>メールアドレスからわかったのでとりあえず登録だけしましたけど．<br><br>&gt; 個人用ブランチというのは、<br>&gt; work/COMMITER_NAME/branch/<br>&gt; のほうですよね？<br>そのつもりです．今はworkしか作ってないので，COMMITER_NAME以下は自分で作ってください．<br>workを最初にnon-recursiveでcheckoutして，必要なを作成してaddして，最後にcommitでいいはずです．<br>svn:ignoreというpropertyを登録しておくと，変なファイルを登録してしまうことを避けられます．<br>(具体的な設定方法は要調査...)<br><br>練習したければTortoiseSVNのCreate repository hereというのでローカルHDDにでもRepositoryを作成すると<br>file:///C:/path/to/dir<br>のようなURLでアクセスできますので，そこでディレクトリを作ったりブランチを作ったりマージしたりしてみてください．<br><br>一番注意しないといけないのは，登録したら消せない点です．最新からは消せますが旧版は残ります．<br>どうしても消すときはRepositoryを全部ダンプして再構築しないといけないようです．<br><br>つづく</div></section>
+    <ul><li><section><h1 id=4317>
+    <span class="no">[4317]</span>
+    <a class="thread-title" href="#4317">Re3:Subversion準備完了</a>
+    <span class="author">かろと</span>
+    <time datetime="2006-03-20T22:39:26">2006年03月20日 22:39</time></h1>
+    <div class="body">&gt;タイトル: Re3:Subversion準備完了<br>&gt;発言者: げんた<br>&gt;かろとさんからはメールが来ていたのですがどうもsourceforge.netのWebからメールを出すと日本語が全部化けるっぽい... <br>&gt;メールアドレスからわかったのでとりあえず登録だけしましたけど．<br><br>あ、やはり日本語化けましたか・・ちょっと予感はしたのですが・・（笑）<br>本文は大したこと書いてなかったと思うので、登録されれば用は足りていると思います（笑）<br>たぶん、<br>お役に立てるかどうかわかりませんが登録お願いします。<br>ってことと<br>CVSしか使ったことないので、subversionお勉強します。<br>ってことくらいを書いたかと・・<br></div></section>
+    </li></ul></li><li><section><h1 id=4315>
+    <span class="no">[4315]</span>
+    <a class="thread-title" href="#4315">Re2:Subversion準備完了</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-03-20T03:30:53">2006年03月20日 03:30</time></h1>
+    <div class="body">続きです<br><br>&gt; 基本的にこれまで Yahoo! の ブリーフケース/Source に置いてたものはそこでいいのかしら。<br>branchごとにアクセス権を与えるようなことができないので，ある程度中身に信頼がおける人にだけアクセス権を与えるつもりです．ので，通りすがりのパッチを入れてもらう場所は今後も必要です．<br><br>しかしですが，他のプロジェクトで開発者個人の作業ブランチとして使わせているところは見たこと無いです．<br>個人毎と言うよりは機能毎なんでしょうけど，特に開発者が一人だけならあんまりブランチにする意味はほとんど無いと思います．<br>ではなぜブランチでといったかと言うと，ブラウザだけでreviewできるというのがいいかなと思ったので．<br><br>ソースコードを見るような人がworking copyを持っていないはずはないので，patch確認用エリアを１つ作ってもらって，そこにチェックアウトしたソースにTortoiseSVNのpatch当て機能でパッチを当てる．<br>そして，差分を見終わったらRevertで元に戻すようにしたほうがブラウザより操作性もいいですよね．<br><br>実は個人用ブランチというのは，Jregex版のサクラエディタを作っている(全略)さんのように息の長いケース念頭に置いていたので...<br><br>&gt; ブランチ名称に悩みそうですが、こんな具合にすると良さそう、というお勧めはありますか？<br>好みではありますが，サブディレクトリを作るかどうかとかもありますし...<br>sakuraしかさわらないならsakura-なんとか とか．<br>基本的に単機能用ブランチはtrunkに取り込まれたらdeleteで消してくださいという代物です．<br>たくさん作るとmergeしきれなくて放置されたり，そうでなくても放置されたり...(自分のことか(汗)<br><br>そう考えるとやっぱりworkはやめますか．一人の場合はパッチで対応．二人以上が共同でなんかしたい場合にブランチを作っても良いと．<br>早速ですが近々変更します．変わりに操作手順の方にcase studyを追加する形で対応したいと思います．<br><br>そうするとCOMMITER_NAMEというのはどうしようか...<br></div></section>
+    <ul><li><section><h1 id=4316>
+    <span class="no">[4316]</span>
+    <a class="thread-title" href="#4316">Re3:Subversion準備完了</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-03-20T03:35:17">2006年03月20日 03:35</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; そう考えるとやっぱりworkはやめますか．一人の場合はパッチで対応．二人以上が共同でなんかしたい場合にブランチを作っても良いと．<br>なんか訳があってメインに取り込まれない機能を入れた亜流版を継続的に公開したいような場合もOKとしたいですね．<br>この場合は一応別の人がメインで管理してますよということでCOMMITTER_NAMEが意味を持つ．のかなぁ．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

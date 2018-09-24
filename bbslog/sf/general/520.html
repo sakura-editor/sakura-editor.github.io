@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>半角数値の色分け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">520</span>
+    <a class="thread-title" href="520.html#520">半角数値の色分け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">521</span>
+    <a class="thread-title" href="520.html#521">文字列の色分け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">536</span>
+    <a class="thread-title" href="520.html#536">Re:文字列の色分け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">537</span>
+    <a class="thread-title" href="520.html#537">Re2:文字列の色分け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">538</span>
+    <a class="thread-title" href="520.html#538">Re3:文字列の色分け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">541</span>
+    <a class="thread-title" href="520.html#541">Re4:文字列の色分け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">542</span>
+    <a class="thread-title" href="520.html#542">Re5:文字列の色分け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">543</span>
+    <a class="thread-title" href="520.html#543">Re6:文字列の色分け</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">547</span>
+    <a class="thread-title" href="520.html#547">正確な色分け</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=520>
+    <span class="no">[520]</span>
+    <a class="thread-title" href="#520">半角数値の色分け</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-07-06T09:48:39">2001年07月06日 09:48</time></h1>
+    <div class="body">...で、小数点を含む数値の色分けをさせた副作用だと思いますが、IPAddressの表記でドットが赤と黒交互になります。<br><br>例：　255.255.255.0　で、二番目の点だけが黒い<br><br>全部色分けされるか、「ドットは一切色分けしない」とするかどちらかだとよいのですが。<br>でもここを直すと別の副作用がでそう。。。？<br></div></section>
+    <ul><li><section><h1 id=521>
+    <span class="no">[521]</span>
+    <a class="thread-title" href="#521">文字列の色分け</a>
+    <span class="author">GAE</span>
+    <time datetime="2001-07-06T21:16:40">2001年07月06日 21:16</time></h1>
+    <div class="body">数字の色分けは便利に使ってます。<br>あまりIPアドレスは書かないので気付きませんでしたが…。<br><br>私はダブル/シングルクォート文字列の色が、<br>「\"」のようにエスケープしたとき、文字列の終了が認識されなくて、<br>それ以降のテキストがすべて「文字列の色」になってしまうのが嫌で<br>文字列の色は変えないようにしています。<br><br>言語によってエスケープの方法がいろいろあるかもしれないので、<br>完全な対応は難しいかもしれませんが、とりあえず「改行で文字列は終了」という<br>ルールでテキストの色を戻してもらえるとうれしいです。<br></div></section>
+    <ul><li><section><h1 id=536>
+    <span class="no">[536]</span>
+    <a class="thread-title" href="#536">Re:文字列の色分け</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-07-10T18:10:34">2001年07月10日 18:10</time></h1>
+    <div class="body">▼ GAEさん<br>&gt; 私はダブル/シングルクォート文字列の色が、<br>&gt; 「\"」のようにエスケープしたとき、文字列の終了が認識されなくて、<br>&gt; それ以降のテキストがすべて「文字列の色」になってしまうのが嫌で<br>&gt; 文字列の色は変えないようにしています。<br>&gt; <br>&gt; 言語によってエスケープの方法がいろいろあるかもしれないので、<br>&gt; 完全な対応は難しいかもしれませんが、とりあえず「改行で文字列は終了」という<br>&gt; ルールでテキストの色を戻してもらえるとうれしいです。<br>それも応急措置的にはよさそうですが、クォーテーションであることを教えるルールをいれた方がいいでしょうね。クォーテーションを使うのは<br>１．単に3.5インチを3.5”と書くようなレベル<br>２．クォーテーション自体を記述したい<br><br>１．の場合は文字列を”や’で囲うという使い方を意識してないのだから色分けをしないで使うのが正しいでしょう。考慮すればいいのは２のケースだけ。文字列中のエスケープなら今でもうまくいくわけですが、文字列中でなくてもエスケープできるようにすればいいのでは？<br>文字としてのクォーテーションを書きたいとき、言語によってその書き方が違うので、それを行コメント等と同じように指定できるようにしておけばいいと思います。難しいのでしょうか？<br></div></section>
+    <ul><li><section><h1 id=537>
+    <span class="no">[537]</span>
+    <a class="thread-title" href="#537">Re2:文字列の色分け</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-07-10T21:33:35">2001年07月10日 21:33</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; １．単に3.5インチを3.5”と書くようなレベル<br>&gt; ２．クォーテーション自体を記述したい<br><br>それもあるのですが、どこかの行で色分けに失敗すると文書末まで色分けが正しくなくなってしまうのがちょっと悲しいです。<br>「構文エラーの発見に役立つ」といえばそうなのですが。<br>クォーテーション中に改行記号の記述を許している言語はそう多くないと思うので、<br>「改行に行き当たったらテキスト色に戻す」<br>ようなチェックボックスがあるとよいのかも。<br></div></section>
+    <ul><li><section><h1 id=538>
+    <span class="no">[538]</span>
+    <a class="thread-title" href="#538">Re3:文字列の色分け</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-07-10T23:01:32">2001年07月10日 23:01</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; ▼ じぇぷろさん<br>&gt; &gt; ２．クォーテーション自体を記述したい<br>&gt; <br>&gt; それもあるのですが、どこかの行で色分けに失敗すると文書末まで色分けが正しくなくなってしまうのがちょっと悲しいです。<br>えっと、そのつもりで書いたんですが。。。色分けに失敗というのはむしろちゃんと閉じてないという書き間違いですか？<br>書き方があっていても空白の有無でクォーテーションの識別に失敗することもあるのかもしれませんが。<br><br>&gt; クォーテーション中に改行記号の記述を許している言語はそう多くないと思うので、<br>&gt; 「改行に行き当たったらテキスト色に戻す」<br>&gt; ようなチェックボックスがあるとよいのかも。<br>応急的には。。。OK。</div></section>
+    <ul><li><section><h1 id=541>
+    <span class="no">[541]</span>
+    <a class="thread-title" href="#541">Re4:文字列の色分け</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-07-11T15:09:05">2001年07月11日 15:09</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; えっと、そのつもりで書いたんですが。。。<br>...φ(..;)<br><br>&gt; 色分けに失敗というのはむしろちゃんと閉じてないという書き間違いですか？<br>前の投稿を出してから思いついたのですが、書き間違いのほかに、HTMLやASPでVBScriptとJavaScriptが混在している場合が厄介です。<br>属性(＜Ａ ＨＲＥＦ＝"..."＞や＜ＦＯＲＭ ＩＤ＝"..."＞など)の部分は目立たせたいけど、VBScriptとJavaScriptが混在している場合はエスケープ方法をどちらに設定しても色分けに失敗する行がでてしまいます。(;_;)<br></div></section>
+    <ul><li><section><h1 id=542>
+    <span class="no">[542]</span>
+    <a class="thread-title" href="#542">Re5:文字列の色分け</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-07-11T15:38:58">2001年07月11日 15:38</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt;HTMLやASPでVBScriptとJavaScriptが混在している場合が厄介<br>&gt; 属性(＜Ａ ＨＲＥＦ＝"..."＞や＜ＦＯＲＭ ＩＤ＝"..."＞など)の部分は目立たせたいけど、VBScriptとJavaScriptが混在している場合はエスケープ方法をどちらに設定しても色分けに失敗<br>どちらも知らないのでぴんとこないのですが、具体的にどんなところでそうなるのでしょうか？</div></section>
+    <ul><li><section><h1 id=543>
+    <span class="no">[543]</span>
+    <a class="thread-title" href="#543">Re6:文字列の色分け</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-07-11T16:17:46">2001年07月11日 16:17</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; 具体的にどんなところでそうなるのでしょうか？<br><br>例文：念のため、タグを全角にしています。<br><br>＜ＳＣＲＩＰＴ language="javascript"＞<br>    var sTest = "\""<br>    //その他のいろいろな処理<br>＜／ＳＣＲＩＰＴ＞<br>＜％<br>    'ここはVBScript<br>    Dim sTest2, sTest3<br>    sTest2 = "\"<br>    sTest3 = """"<br>    'その他のいろいろな処理<br>％＞<br></div></section>
+    </li></ul></li><li><section><h1 id=547>
+    <span class="no">[547]</span>
+    <a class="thread-title" href="#547">正確な色分け</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-07-11T19:51:55">2001年07月11日 19:51</time></h1>
+    <div class="body">正確な色分けをするのはなかなか難しいです。特にperlでは$'(マッチしたパターンの後ろ側を返す変数)があったりq{}, qq{}という書き方があったりとかなり独特。<br><br>ブロックコメントやクォーテーションは内部的には状態遷移を管理しています。複数の状態を定義してそれぞれにおけるキーワード、色分けルール、状態遷移タイミング（指定文字列の前・後など）などを設定できるようにすれば相当複雑なことまでできそうですが、作るのも使うのも大変そう。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

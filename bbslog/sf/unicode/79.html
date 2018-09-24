@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>速度測定 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">79</span>
+    <a class="thread-title" href="79.html#79">速度測定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">90</span>
+    <a class="thread-title" href="79.html#90">Re:速度測定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">156</span>
+    <a class="thread-title" href="79.html#156">Re2:速度測定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">157</span>
+    <a class="thread-title" href="79.html#157">Re3:速度測定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">158</span>
+    <a class="thread-title" href="79.html#158">Re4:速度測定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">159</span>
+    <a class="thread-title" href="79.html#159">Re5:速度測定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">160</span>
+    <a class="thread-title" href="79.html#160">Re6:速度測定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">161</span>
+    <a class="thread-title" href="79.html#161">Re7:速度測定</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">93</span>
+    <a class="thread-title" href="79.html#93">Re:速度測定</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=79>
+    <span class="no">[79]</span>
+    <a class="thread-title" href="#79">速度測定</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-12-01T12:34:32">2007年12月01日 12:34</time></h1>
+    <div class="body">CRunningTimer使用時のコンパイルエラーを修正するパッチを出しました．<br>PatchUnicode#1842107<br><br>TCHARで作り直した方がよいのでしょうかね．<br><br>ちなみに速度測定結果ですが，CLayoutMgr::DoLayout()が妙に遅いです．<br>ANSI: 46msec -&gt; Unicode: 1297msec<br><br>もう少し計測点を増やして原因を追った方がいいかも．<br><br>[ANSI]<br>  1:"CDocLineMgr::ReadFile" : Enter <br>  1:"CDocLineMgr::ReadFile", 31㍉秒 : Exit Scope<br>  1:"CLayoutMgr::SetLayoutInfo" : Enter <br>  2:"CLayoutMgr::DoLayout" : Enter <br>  2:"CLayoutMgr::DoLayout", 46㍉秒 : Exit Scope<br>  1:"CLayoutMgr::SetLayoutInfo", 62㍉秒 : Exit Scope<br>  1:"CEditView::OnPaint" : Enter <br>  2:"CEditView::DispLineNew" : Enter <br>  2:"CEditView::DispLineNew", 0㍉秒 : Exit Scope<br>  1:"CEditView::OnPaint", 16㍉秒 : Exit Scope<br>  1:"CEditView::OnPaint" : Enter <br>  2:"CEditView::DispLineNew" : Enter <br>  2:"CEditView::DispLineNew", 0㍉秒 : Exit Scope<br>  1:"CEditView::OnPaint", 16㍉秒 : Exit Scope<br>  1:"CEditView::OnPaint", 172㍉秒 : Exit Scope<br><br>[UNICODE]<br>  1:"CDocLineMgr::ReadFile" : Enter <br>  1:"CDocLineMgr::ReadFile", 62㍉秒 : Exit Scope<br>  1:"CLayoutMgr::SetLayoutInfo" : Enter <br>  2:"CLayoutMgr::DoLayout" : Enter <br>  2:"CLayoutMgr::DoLayout", 1297㍉秒 : Exit Scope<br>  1:"CLayoutMgr::SetLayoutInfo", 1328㍉秒 : Exit Scope<br>  1:"CEditView::OnPaint" : Enter <br>  2:"CEditView::DispLineNew" : Enter <br>  2:"CEditView::DispLineNew", 16㍉秒 : Exit Scope<br>  1:"CEditView::OnPaint", 16㍉秒 : Exit Scope<br>  1:"CEditView::OnPaint" : Enter <br>  2:"CEditView::DispLineNew" : Enter <br>  2:"CEditView::DispLineNew", 0㍉秒 : Exit Scope<br>  1:"CEditView::OnPaint", 0㍉秒 : Exit Scope<br>  1:"CEditView::OnPaint" : Enter <br>  1:"CEditView::OnPaint", 203㍉秒 : Exit Scope<br></div></section>
+    <ul><li><section><h1 id=90>
+    <span class="no">[90]</span>
+    <a class="thread-title" href="#90">Re:速度測定</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-12-06T01:13:27">2007年12月06日 01:13</time></h1>
+    <div class="body">確信犯的に遅くなる要因が2つあります。<br><br>・TextOut系のAPIを呼ぶ毎にダミーのSetPixelを呼んでいる (デバッグビルド時のみ)。<br>　(理由)<br>　ステップ実行時に、TextOut系のAPIを呼んだだけだと、見た目に反映されないことがある。<br>　SetPixelを呼ぶことによって、それまでの描画APIの結果が即反映される性質を利用し、デバッグをしやすくしている<br>　(今後)<br>　config/build_config.h 内の定数定義で、SetPixelを呼ぶ／呼ばないを制御させる予定です。<br> <br>・初回の文字幅取得時に、けっこうガッツリ計算をしまくってる<br>　(挙動)<br>　既に計算が済んだ (キャッシュが準備された) 文字の幅を取得する際には、<br>　負荷はほとんど生じません。<br>　(今後)<br>　この「ガッツリっぷり」はまだまだ改善の余地があるので、今後修正します。<br>　コントロールプロセスの共有メモリ側にキャッシュを置くのが理想な気がします。<br><br>DoLayoutが劇的に遅いのは、たぶん上に挙げた要因のうち、後者の影響だと思います。<br>さすがに「1秒」かかるのは許せませんねぇ。<br>「止まらない (落ちない) から良いや」程度に考えていて後回しにしてましたが、<br>割と近いうちに対応したいと思います。</div></section>
+    <ul><li><section><h1 id=156>
+    <span class="no">[156]</span>
+    <a class="thread-title" href="#156">Re2:速度測定</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-02-25T20:14:04">2008年02月25日 20:14</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; ・初回の文字幅取得時に、けっこうガッツリ計算をしまくってる<br>&gt; 　(挙動)<br>&gt; 　既に計算が済んだ (キャッシュが準備された) 文字の幅を取得する際には、<br>&gt; 　負荷はほとんど生じません。<br>&gt; 　(今後)<br>&gt; 　この「ガッツリっぷり」はまだまだ改善の余地があるので、今後修正します。<br><br>もう着手されているかもしれませんが．．．<br>動的文字幅計算の部分での無駄をちょっと省いてみました。<br>そこそこ速くなった気がします。<br>→PatchUnicode#1901281<br></div></section>
+    <ul><li><section><h1 id=157>
+    <span class="no">[157]</span>
+    <a class="thread-title" href="#157">Re3:速度測定</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-02-25T20:36:17">2008年02月25日 20:36</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; ▼ kobakeさん<br>&gt; &gt; ・初回の文字幅取得時に、けっこうガッツリ計算をしまくってる<br>&gt; &gt; 　(挙動)<br>&gt; &gt; 　既に計算が済んだ (キャッシュが準備された) 文字の幅を取得する際には、<br>&gt; &gt; 　負荷はほとんど生じません。<br>&gt; &gt; 　(今後)<br>&gt; &gt; 　この「ガッツリっぷり」はまだまだ改善の余地があるので、今後修正します。<br>&gt; <br>&gt; もう着手されているかもしれませんが．．．<br>&gt; 動的文字幅計算の部分での無駄をちょっと省いてみました。<br>&gt; そこそこ速くなった気がします。<br>&gt; →PatchUnicode#1901281<br><br>ご対応ありがとうございます。<br><br>ちょっと自分ではテストする余力が無いので、<br>テストする方にお願いしたいのですが、<br><br>パッチ適用した状態で、<br><a href=http://mofmof.nsf.tc/soft/wforum/wforum.cgi?mode=allread&no=34 target=_top><nobr>http://<wbr>mofmof.<wbr>nsf.<wbr>tc/<wbr>soft/<wbr>wforum/<wbr>wforum.<wbr>cgi?<wbr>mode=<wbr>allread&amp;<wbr>no=<wbr>34</nobr></a><br>「10.  JIS範囲外の文字が多数あるファイルの読み込みでおかしくなる」<br>この問題が発生しないこともテストしていただきたいです。<br><br>Sourceforge側コメントによると、<br>＞周辺256文字をまとめて計算する<br>＞のもやめています。<br>とのことですが、周辺256文字をまとめて計算しているのは<br>上記10番バグに対応するためだったので。<br><br>たしかそのときは GetDC, ReleaseDC が連呼されているせいで<br>描画が崩れていたと記憶しています。</div></section>
+    <ul><li><section><h1 id=158>
+    <span class="no">[158]</span>
+    <a class="thread-title" href="#158">Re4:速度測定</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-02-25T20:52:17">2008年02月25日 20:52</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; たしかそのときは GetDC, ReleaseDC が連呼されているせいで<br>&gt; 描画が崩れていたと記憶しています。<br><br>書き忘れましたが、元のソースでは関数が呼ばれるたびにフォントをCreateしまくっていて、いっさいDeleteObjectしていないようでした。<br>リソースリークでパンクしていたということは無いでしょうか？<br>今回のパッチでは起動時に１度フォント作成するだけなので、上記のことが原因なら大丈夫だと思いますが．．．<br><br>＃メニューやツールバーが黒くなったり表示されなくなるというのはリソースリークの典型的な症状じゃないかしら</div></section>
+    <ul><li><section><h1 id=159>
+    <span class="no">[159]</span>
+    <a class="thread-title" href="#159">Re5:速度測定</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-02-25T21:24:28">2008年02月25日 21:24</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; ▼ kobakeさん<br>&gt; &gt; たしかそのときは GetDC, ReleaseDC が連呼されているせいで<br>&gt; &gt; 描画が崩れていたと記憶しています。<br>&gt; <br>&gt; 書き忘れましたが、元のソースでは関数が呼ばれるたびにフォントをCreateしまくっていて、いっさいDeleteObjectしていないようでした。<br>&gt; リソースリークでパンクしていたということは無いでしょうか？<br>&gt; 今回のパッチでは起動時に１度フォント作成するだけなので、上記のことが原因なら大丈夫だと思いますが．．．<br><br>なるほどっ！ぜんぜん気づいてませんでした。<br>そっちが原因っぽいですね。<br>失礼致しました。<br>今回のパッチで速度向上に加えてリソースリーク修正、となりそうです。<br></div></section>
+    <ul><li><section><h1 id=160>
+    <span class="no">[160]</span>
+    <a class="thread-title" href="#160">Re6:速度測定</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-02-28T00:28:08">2008年02月28日 00:28</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; なるほどっ！ぜんぜん気づいてませんでした。<br>&gt; そっちが原因っぽいですね。<br>CJK統合漢字（U+4E00 ～ U+9FA5）すべてを含むファイルで自己確認してみました。<br>従来コードで１文字づつ判定させるようにした場合（旧版相当）は問題の現象が見られましたが、パッチ適用版では問題ありませんでした。<br>ちなみに、タスクマネージャでGDIオブジェクト数を見ると、パッチ適用版では151なのに旧版相当では9,999になっていました。<br>旧版での問題の原因はリソースリークに確定ですね。</div></section>
+    <ul><li><section><h1 id=161>
+    <span class="no">[161]</span>
+    <a class="thread-title" href="#161">Re7:速度測定</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-01T11:47:08">2008年03月01日 11:47</time></h1>
+    <div class="body">レビューを行いました。コミットして問題無いと思います。<br><br>多数の文字種を含むファイルを読み込んだときに、<br>旧版ではGDIオブジェクト数が増えてしまうのに対して、<br>パッチ適用版ではGDIオブジェクト数が増えないことを確認しました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=93>
+    <span class="no">[93]</span>
+    <a class="thread-title" href="#93">Re:速度測定</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-12-12T23:29:32">2007年12月12日 23:29</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; CRunningTimer使用時のコンパイルエラーを修正するパッチを出しました．<br>&gt; PatchUnicode#1842107<br><br>遅くなりましたが、レビューを行いました。<br>コミットして問題ないと思います。<br><br>&gt; TCHARで作り直した方がよいのでしょうかね．<br><br>UNICODE系OSでchar文字列を吐き出すときに、多少の変換オーバーヘッドは生じると思います。<br>でも個人的には、気にするレベルでは無いと思います。<br>今のままで十分使えてるので、このままで良いかなぁ、と。</div></section>
+    </li></ul></li></ul></body></html>

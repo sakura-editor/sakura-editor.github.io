@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>HTML編集時のタグ外のクォートの扱い | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2497</span>
+    <a class="thread-title" href="2497.html#2497">HTML編集時のタグ外のクォートの扱い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2498</span>
+    <a class="thread-title" href="2497.html#2498">Re:HTML編集時のタグ外のクォートの扱い</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2497>
+    <span class="no">[2497]</span>
+    <a class="thread-title" href="#2497">HTML編集時のタグ外のクォートの扱い</a>
+    <span class="author">GANO</span>
+    <time datetime="2002-11-28T01:53:20">2002年11月28日 01:53</time></h1>
+    <div class="body">バグ報告というか、要望というか…<br><br>一部例外を除き、シングルクォート・ダブルクォート<br>が来ると文字列開始の合図になってますが、<br>HTMLファイルの編集時に、タグ外の場合は除外してほしいです。<br>例えば、↓このようなHTMLファイルを開いたとき…<br>&lt;/body&gt;と&lt;/html&gt;がデフォルトで文字列色で表示<br>されてしまいますが、これって非常にマズいですよね？<br>（理想としては文字列色で表示されるのはwhiteとblueのみ）<br> &lt;html&gt;<br> &lt;body text='white' bgcolor='blue'&gt;<br> '<br> &lt;/body&gt;<br> &lt;/html&gt;<br><br>過去ログにも同じような要望？があったのですが、<br>いまだに反映されていないようですので（1.3.5.7で確認）、<br>こうして書込みさせて戴きました。<br><br>以上、宜しくお願いします。</div></section>
+    <ul><li><section><h1 id=2498>
+    <span class="no">[2498]</span>
+    <a class="thread-title" href="#2498">Re:HTML編集時のタグ外のクォートの扱い</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-11-28T02:05:24">2002年11月28日 02:05</time></h1>
+    <div class="body">▼ GANOさん<br>&gt; HTMLファイルの編集時に、タグ外の場合は除外してほしい<br>&gt; 過去ログにも同じような要望？があったのですが、<br>はい，確かにあったような．<br><br>&gt; いまだに反映されていないようですので（1.3.5.7で確認）、<br>&gt; こうして書込みさせて戴きました。<br>実装上はHTML専用に特殊なコードを埋め込むわけにも行かないのでちょっと難しいですね．最もこれに限らず，内部状態遷移と判定順序をコントロールできないと複雑な色分けの要望には応えられないのです．<br><br>コメント範囲を&gt;から&lt;に指定して，コメント色を黒にするとめでたくTAGの中だけ色分けされるようになるという技もあるようです．テキスト色をコメント色にすれば本物のコメントもコメントに見える．<br><br>TAGとその属性はキーワードだから標準色に影響されないし，属性の値もクォートで囲まれているから問題なし．とよく考えた物だと改めて感心．<br></div></section>
+    </li></ul></li></ul></body></html>

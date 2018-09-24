@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>EOF以降にカーソルでアプリケーションエラー | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3473</span>
+    <a class="thread-title" href="3473.html#3473">EOF以降にカーソルでアプリケーションエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3494</span>
+    <a class="thread-title" href="3473.html#3494">Re: EOF以降にカーソルでアプリケーションエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3500</span>
+    <a class="thread-title" href="3473.html#3500">Re2: EOF以降にカーソルでアプリケーションエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3501</span>
+    <a class="thread-title" href="3473.html#3501">Re3: EOF以降にカーソルでアプリケーションエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3512</span>
+    <a class="thread-title" href="3473.html#3512">Re4: EOF以降にカーソルでアプリケーションエラー</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3473>
+    <span class="no">[3473]</span>
+    <a class="thread-title" href="#3473">EOF以降にカーソルでアプリケーションエラー</a>
+    <span class="author">みく</span>
+    <time datetime="2003-11-08T08:50:25">2003年11月08日 08:50</time></h1>
+    <div class="body"><br>開いているファイル（＊）が他で編集されてファイルサイズが小さくなったときに<br>「ファイルを開き直す」をすると、カーソルがEOF以降に出現することがよくあります。<br>この状態でカーソルを動かそうとすると、アプリケーションエラーで落ちました。<br>（ちなみに、アプリケーションエラーで落ちたときのファイルサイズは０バイトでした）<br><br>＊<br>開いていたファイルは、デバッグ用のログファイルで<br>頻繁に書き込み（追加）が行われトランケートも行われるファイルです。<br></div></section>
+    <ul><li><section><h1 id=3494>
+    <span class="no">[3494]</span>
+    <a class="thread-title" href="#3494">Re: EOF以降にカーソルでアプリケーションエラー</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-11-15T11:20:08">2003年11月15日 11:20</time></h1>
+    <div class="body">&gt;「ファイルを開き直す」をすると、カーソルがEOF以降に出現することがよくあります。<br>reload処理では全部クリアして開きなおした後で元のカーソル位置に戻すようになっています．<br>カーソル位置を戻すのにはCEditView::MoveCursor()を使っていますが，ここでは入力値チェックを行っているように見えます．<br>じゃあなんでだろう？<br></div></section>
+    <ul><li><section><h1 id=3500>
+    <span class="no">[3500]</span>
+    <a class="thread-title" href="#3500">Re2: EOF以降にカーソルでアプリケーションエラー</a>
+    <span class="author">みく</span>
+    <time datetime="2003-11-17T20:06:37">2003年11月17日 20:06</time></h1>
+    <div class="body"><br>100%再現できました。<br><br>・サクラエディタでファイルを開いて複数行のデータを入力する。<br>----- test.txt -----<br>&lt;CR&gt;<br>123&lt;CR&gt;<br>[EOF]<br>----- test.txt -----<br>・"3"のところにカーソルを移動してファイルを閉じる。<br>・サクラエディタでファイルを開く。<br>・メモ帳で同ファイルを開いて、データをすべて削除して上書き保存する。<br>・サクラエディタにフォーカスを移す。<br>・「開き直す」か更新チェックの「再読み込み」を行う。<br>・EOF以降にカーソルが出現する。（過去の桁位置にカーソルがある）<br>・カーソルを移動すると、アプリケーションエラー。<br><br>データなしの場合に桁制御ができてないと思われます。<br></div></section>
+    <ul><li><section><h1 id=3501>
+    <span class="no">[3501]</span>
+    <a class="thread-title" href="#3501">Re3: EOF以降にカーソルでアプリケーションエラー</a>
+    <span class="author">みく</span>
+    <time datetime="2003-11-17T20:11:39">2003年11月17日 20:11</time></h1>
+    <div class="body"><br>追記：<br>ファイルサイズが０バイトでない場合でも、<br>EOF以降にカーソルが出現する場合にはアプリケーションエラーになりました。<br><br>改行以降にカーソルが出現した場合は、<br>アプリケーションエラーにはなりません。<br></div></section>
+    <ul><li><section><h1 id=3512>
+    <span class="no">[3512]</span>
+    <a class="thread-title" href="#3512">Re4: EOF以降にカーソルでアプリケーションエラー</a>
+    <span class="author">みく</span>
+    <time datetime="2003-11-23T15:11:36">2003年11月23日 15:11</time></h1>
+    <div class="body"><br>＞改行以降にカーソルが出現した場合は、<br>＞アプリケーションエラーにはなりません。<br><br>何の疑いもなく書いてしまいましたが、<br>確か以前修正されたような記憶があるんですけど、<br>改行以降にカーソルが出現するようになってますねぇ。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

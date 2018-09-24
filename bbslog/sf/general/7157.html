@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>カーソル移動について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7157</span>
+    <a class="thread-title" href="7157.html#7157">カーソル移動について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7159</span>
+    <a class="thread-title" href="7157.html#7159">Re: カーソル移動について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7160</span>
+    <a class="thread-title" href="7157.html#7160">Re2: カーソル移動について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7157>
+    <span class="no">[7157]</span>
+    <a class="thread-title" href="#7157">カーソル移動について</a>
+    <span class="author">駒蔦</span>
+    <time datetime="2010-04-04T09:05:45">2010年04月04日 09:05</time></h1>
+    <div class="body">上書きモードでENTERを押しても挿入モードと同じように空白<br>行が作られます。そのまま次の行へ行くには↓キーで行くし<br>かないのでしょうか。<br></div></section>
+    <ul><li><section><h1 id=7159>
+    <span class="no">[7159]</span>
+    <a class="thread-title" href="#7159">Re: カーソル移動について</a>
+    <span class="author">もか</span>
+    <time datetime="2010-04-04T23:28:52">2010年04月04日 23:28</time></h1>
+    <div class="body">&gt;上書きモードでENTERを押しても挿入モードと同じように空白<br>&gt;行が作られます。そのまま次の行へ行くには↓キーで行くし<br>&gt;かないのでしょうか。<br>マクロでよければ、下記のように書いて設定すればできると思います。<br>Enterで下に移動後、10文字戻るとか直前のスペースまで戻るとかも、書けばできます。<br>設定するとき「マクロ」「設定」→OKで閉じる。「キー割り当て」でEnterに割付と２段階必要です。<br><br>// enter_insmode_down.js とかでmacroフォルダに保存<br>// Enterにキー割り当て<br>if( 1 == Editor.IsInsMode() ){<br>&#9;// 挿入モードなら改行入力<br>&#9;Editor.Char( 10 );<br>}else{<br>&#9;// 上書きモードなら下移動<br>&#9;Editor.Down();<br>&#9;// 行頭へ移動。必要ならコメントをはずしてください<br>&#9;// Editor.GoLineTop( 0 ):<br>}<br><br><br>Char( 10 );<br>の１行をenter.macとかで保存して、Shift+Enterなどに登録すれば、<br>上書きモード中でも改行できるようにもできます。<br></div></section>
+    <ul><li><section><h1 id=7160>
+    <span class="no">[7160]</span>
+    <a class="thread-title" href="#7160">Re2: カーソル移動について</a>
+    <span class="author">駒蔦</span>
+    <time datetime="2010-04-05T09:51:29">2010年04月05日 09:51</time></h1>
+    <div class="body">もかさん、ありがとうございます。うまくいきました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

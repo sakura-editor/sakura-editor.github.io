@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>キーワードの単語単位での指定 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2480</span>
+    <a class="thread-title" href="2480.html#2480">キーワードの単語単位での指定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2488</span>
+    <a class="thread-title" href="2480.html#2488">Re:キーワードの単語単位での指定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2489</span>
+    <a class="thread-title" href="2480.html#2489">Re2:キーワードの単語単位での指定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2490</span>
+    <a class="thread-title" href="2480.html#2490">Re3:キーワードの単語単位での指定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2493</span>
+    <a class="thread-title" href="2480.html#2493">Re4:キーワードの単語単位での指定 - 補足</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2494</span>
+    <a class="thread-title" href="2480.html#2494">Re5:キーワードの単語単位での指定 - 補足</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2480>
+    <span class="no">[2480]</span>
+    <a class="thread-title" href="#2480">キーワードの単語単位での指定</a>
+    <span class="author">nami</span>
+    <time datetime="2002-11-05T20:46:57">2002年11月05日 20:46</time></h1>
+    <div class="body">初めまして、namiです。<br><br>sakuraエディタで強調単語を単語単位で指定することは出来ますか?<br>いま、特殊な言語のキーワードファイルを作成しているのですが、短い単語だと、変数名などに被ってしまうのです。<br>出来たら、単語単位で色づけが出来ると良いなぁと思っています。<br>同じく、正規表現キーワードも出来たらな、と思います。<br>職場のコーディングルールで色づけをしているのですが、これも被ってしまいます。<br>頭に空白をつけるようなこともしてみたのですが、これだと、行頭に来たときに、今度は色づけの対象でなくなってしまうのです。<br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=2488>
+    <span class="no">[2488]</span>
+    <a class="thread-title" href="#2488">Re:キーワードの単語単位での指定</a>
+    <span class="author">よしだ</span>
+    <time datetime="2002-11-06T21:37:13">2002年11月06日 21:37</time></h1>
+    <div class="body">▼ namiさん<br>&gt; 初めまして、namiです。<br>はじめまして、よしだです。<br><br>&gt; いま、特殊な言語のキーワードファイルを作成しているのですが、短い単語だと、変数名などに被ってしまうのです。<br>&gt; 出来たら、単語単位で色づけが出来ると良いなぁと思っています。<br>正規表現キーワード(*.rkw)を作成すれば柔軟な色分け指定が出来るはずですが・・・<br>もし違うのでしたら、具体的なケースをあげていただくとありがたいです。<br></div></section>
+    <ul><li><section><h1 id=2489>
+    <span class="no">[2489]</span>
+    <a class="thread-title" href="#2489">Re2:キーワードの単語単位での指定</a>
+    <span class="author">nami</span>
+    <time datetime="2002-11-07T00:23:52">2002年11月07日 00:23</time></h1>
+    <div class="body">▼ よしださん<br>&gt; 正規表現キーワード(*.rkw)を作成すれば柔軟な色分け指定が出来るはずですが・・・<br>&gt; もし違うのでしたら、具体的なケースをあげていただくとありがたいです。<br>&gt;<br>どうもです。<br><br>例えば、頭が「t_」で始まるものを特定のキーワードする、という風にして、正規表現で「t_[0-9a-zA-Z]+」を指定した場合、「aaat_iii」とかあった場合も、色づけの対象になってしまう、というものなんです。<br>で、これを「\x20t_[0-9a-zA-Z]とすると、前の文字が空白だと問題ないのですが、今度は、該当する単語が行頭だと、色づけの対象にならないのです。<br>これをうまく解決したいのです。<br>何か、良い方法はありますでしょうか。</div></section>
+    <ul><li><section><h1 id=2490>
+    <span class="no">[2490]</span>
+    <a class="thread-title" href="#2490">Re3:キーワードの単語単位での指定</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-11-07T00:32:33">2002年11月07日 00:32</time></h1>
+    <div class="body">&gt;正規表現で「t_[0-9a-zA-Z]+」を指定した場合、「aaat_iii」とかあった場合も、色づけの対象になってしまう<br>単語境界を表す\bを使って，\bt_[0-9a-zA-Z]+ とすればお望みの動作になるかと．<br></div></section>
+    <ul><li><section><h1 id=2493>
+    <span class="no">[2493]</span>
+    <a class="thread-title" href="#2493">Re4:キーワードの単語単位での指定 - 補足</a>
+    <span class="author">すい</span>
+    <time datetime="2002-11-07T13:11:12">2002年11月07日 13:11</time></h1>
+    <div class="body">&gt;&gt;正規表現で「t_[0-9a-zA-Z]+」を指定した場合、「aaat_iii」とかあった場合も、色づけの対象になってしまう<br>&gt;単語境界を表す\bを使って，\bt_[0-9a-zA-Z]+ とすればお望みの動作になるかと．<br><br>\b 使って /\bt_[0-9a-zA-Z]+/k にすると<br>aaat_iii ← ○：色分けされない<br>t_iii　　← ○：色分けされる<br>１t_iii　← ×：色分けされない<br>になるので注意。<br><br>もし↑の最後の異常が嫌な場合、次の２個を登録します。<br>/[0-9a-zA-Z]t_[0-9a-zA-Z]+/k → 色指定：テキスト<br>/t_[0-9a-zA-Z]+/k → 色指定：使いたい色を指定する<br><br># 先に「“[0-9a-zA-Z]t_～～”は通常のテキストだよ」で at_iii 等の文字列をテキスト色で乗っ取ってしまう<br><br>これで<br>aaat_iii ← ○：色分けされない<br>t_iii　　← ○：色分けされる<br>１t_iii　← ○：色分けされる<br>と、出来ます。<br><br>文字列の乗っ取り合い (^^; をうまくコントロールすれば色々複雑なことが出来ます。<br></div></section>
+    <ul><li><section><h1 id=2494>
+    <span class="no">[2494]</span>
+    <a class="thread-title" href="#2494">Re5:キーワードの単語単位での指定 - 補足</a>
+    <span class="author">nami</span>
+    <time datetime="2002-11-07T20:44:06">2002年11月07日 20:44</time></h1>
+    <div class="body">みなさん、ありがとうございます。<br>「\b」を前に置く方法で出来ました!<br>ほぼ、これで満足です。<br><br>これからも、よろしくお願いいたします。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

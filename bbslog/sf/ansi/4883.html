@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>テストバイナリのバージョン名 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4883</span>
+    <a class="thread-title" href="4883.html#4883">テストバイナリのバージョン名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4884</span>
+    <a class="thread-title" href="4883.html#4884">Re:テストバイナリのバージョン名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4885</span>
+    <a class="thread-title" href="4883.html#4885">Re2:テストバイナリのバージョン名</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4883>
+    <span class="no">[4883]</span>
+    <a class="thread-title" href="#4883">テストバイナリのバージョン名</a>
+    <span class="author">maru</span>
+    <time datetime="2007-06-22T00:37:10">2007年06月22日 00:37</time></h1>
+    <div class="body">テストバイナリのバージョン名について，下3桁はどのような法則で決められるのでしょう．<br>特に決まりがないなら，1.5.16.x00の 'x' の桁は元バージョンの数値を当てはめるとか、なんらかでルール化しませんか．<br>後々マイナーアップしたとき，各テストバイナリがどこから派生したものか分かりやすくなって良いかと．<br></div></section>
+    <ul><li><section><h1 id=4884>
+    <span class="no">[4884]</span>
+    <a class="thread-title" href="#4884">Re:テストバイナリのバージョン名</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-06-22T00:46:44">2007年06月22日 00:46</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 下3桁は<br>現在は適当に開いている番号で衝突しないものを勝手に選んでいるだけですね．<br><br>少なくともまとめバイナリは今後も続きそうですので専用の場所を確保しても良いと思います．<br>100～200とか．<br><br>元バージョンの番号を使う案ですが，本当はリリース版では最後の桁はよほどのバグフィックスでない限り使わない方が良いんですよね．1.5.15.3の時点で16にすれば良かったとちょっと後悔．<br>派生元のバージョンは単体のテスト用の場合はあまり重要視する必要は無いのでは？<br><br>Wikiに番号管理用テンプレートを作って使うとか...<br><br>番号管理1.5.16.x<br>0xx: リリース用<br>10x: まとめ (1.5.16.0より)<br>1xx,2xx: まとめ用予約<br>30: Junk/xx (1.5.16.0より)<br>31:<br>32:<br>33:<br>...<br><br>面倒くさいかな？</div></section>
+    <ul><li><section><h1 id=4885>
+    <span class="no">[4885]</span>
+    <a class="thread-title" href="#4885">Re2:テストバイナリのバージョン名</a>
+    <span class="author">maru</span>
+    <time datetime="2007-06-22T22:48:55">2007年06月22日 22:48</time></h1>
+    <div class="body">&gt;少なくともまとめバイナリは今後も続きそうですので専用の場所を確保しても良いと思います．<br>&gt;100～200とか．<br>&gt;Wikiに番号管理用テンプレートを作って使うとか... <br>&gt;面倒くさいかな？<br><br>個人の好みで言うと桁ごとに定義するのとか大好きです(笑)<br>が、あまり細かくルールを準備しても皆に認識されないと意味がないので、とりあえずまとめバイナリ用の場所だけ予約しますか。<br><br><br>a.b.c.xyzにおいて<br>　abc<br>　　元バージョンの値<br>　x<br>　　0はリリース用<br>　　1～2はまとめバイナリ用に予約<br>　　3～9は単体用（バイナリ作成者が任意の番号を指定）<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>[要望]DExploreのヘルプのサポート | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4023</span>
+    <a class="thread-title" href="4023.html#4023">[要望]DExploreのヘルプのサポート</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4024</span>
+    <a class="thread-title" href="4023.html#4024">Re:[要望]DExploreのヘルプのサポート</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4026</span>
+    <a class="thread-title" href="4023.html#4026">Re2:[要望]DExploreのヘルプのサポート</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4028</span>
+    <a class="thread-title" href="4023.html#4028">Re:[要望]DExploreのヘルプのサポート</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4023>
+    <span class="no">[4023]</span>
+    <a class="thread-title" href="#4023">[要望]DExploreのヘルプのサポート</a>
+    <span class="author">もか</span>
+    <time datetime="2004-08-30T22:12:58">2004年08月30日 22:12</time></h1>
+    <div class="body">最近、Visual Stduio 2003 .NETを触るようになったのですが、あれのヘルプも参照してキーワード検索ができるようになるとうれしいです。<br>どうも、コマンドラインでは指定できないようです。<br><br># COM経由で、キーワード指定が出来るらしいですが、その時点でおなか一杯です。<br># man hogehoge のほうが楽...<br></div></section>
+    <ul><li><section><h1 id=4024>
+    <span class="no">[4024]</span>
+    <a class="thread-title" href="#4024">Re:[要望]DExploreのヘルプのサポート</a>
+    <span class="author">(全略)</span>
+    <time datetime="2004-09-01T00:21:56">2004年09月01日 00:21</time></h1>
+    <div class="body">▼ もかさん<br>&gt; # COM経由で、キーワード指定が出来るらしいですが、その時点でおなか一杯です。<br>&gt; # man hogehoge のほうが楽...<br>あぁ、あれCOMで操作するのですか、いいことを知りました^-^<br><br>で、VBSのマクロの形で書いてみたのですけど<br>分からないことがあるのでお知恵を拝借できますか?<br><br>'----- dexplore.vbs<br>' 選択位置、カーソル位置の単語をMSDNのdexploreから検索<br>Dim helpuri<br><br>helpuri = "ms-help://MS.MSDNQTR.2003JAN.1041/"<br><br><br>Dim keyword<br>keyword = Editor.GetSelectedString(0)<br>If keyword = "" Then<br>&#9;Editor.SelectWord<br>&#9;keyword = Editor.GetSelectedString(0)<br>End If<br>If keyword &lt;&gt; "" Then<br><br>&#9;Dim help<br>&#9;Set help = CreateObject("DExplore.AppObj")<br><br>&#9;help.SetCollection helpuri, "" 'none-filter<br>&#9;help.Contents<br>&#9;help.DisplayTopicFromF1Keyword keyword<br>&#9;help.SyncIndex keyword, 1<br>&#9;help.IndexResults<br><br>&#9;MsgBox "とりあえずエラーをおこしておく"<br><br>End If<br><br>MSDNを起動してもすぐマクロが終わってしまってMSDNごと終わってしまいます<br>なんかいい方法ないすかね、、、<br># 最後に MsgBox いれてマクロが終わるのを止めてます(ないけど、、&gt;_&lt;;;)</div></section>
+    <ul><li><section><h1 id=4026>
+    <span class="no">[4026]</span>
+    <a class="thread-title" href="#4026">Re2:[要望]DExploreのヘルプのサポート</a>
+    <span class="author">もか</span>
+    <time datetime="2004-09-02T00:02:34">2004年09月02日 00:02</time></h1>
+    <div class="body">サクラエディタから外部コマンド実行で、キーワードをコマンドラインで送り、<br>Wscriptとかで、コムコムするとかどうでしょうか。<br>少なくとも、MsgBoxが使える...<br></div></section>
+    </li></ul></li><li><section><h1 id=4028>
+    <span class="no">[4028]</span>
+    <a class="thread-title" href="#4028">Re:[要望]DExploreのヘルプのサポート</a>
+    <span class="author">roku</span>
+    <time datetime="2004-09-05T17:52:53">2004年09月05日 17:52</time></h1>
+    <div class="body">ちょっとトリッキーですがマクロで作ってみました。<br><br>■使い方<br>ファイルは二つです。<br><br>・mshelp2_macro.js<br>　これをエディタに登録する。<br>　mshelp2_core.jsのパス設定を忘れずに。<br><br>・mshelp2_core.js<br>　通常のスクリプトとしてmshelp2_macro.jsから実行される。(sleep()を使いたかったので)<br>　コレクション名やフィルタ名は各自で変えてください。<br><br>http://www7a.biglobe.ne.jp/~siromoji/download/macro/mshelp2.zip</div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>選択開始(F6)→次を検索(F3)で落ちるバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3469</span>
+    <a class="thread-title" href="3469.html#3469">選択開始(F6)→次を検索(F3)で落ちるバグ</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3469>
+    <span class="no">[3469]</span>
+    <a class="thread-title" href="#3469">選択開始(F6)→次を検索(F3)で落ちるバグ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-18T00:03:41">2004年03月18日 00:03</time></h1>
+    <div class="body">&gt;&gt;data:3695<br><br>GetLineStrが pcLayout == NULL, pLine == NULL のときに nLineLenを設定しないのがそもそも問題なのかもしれませんけど。<br>呼び出し側で考慮しろってことでしょうね。きっと。<br><br>diff -ur sakura_core_org/CEditView_Command.cpp sakura_core/CEditView_Command.cpp<br>--- sakura_core_org/CEditView_Command.cpp&#9;Mon Mar 01 00:33:09 2004<br>+++ sakura_core/CEditView_Command.cpp&#9;Wed Mar 17 23:14:03 2004<br>@@ -3821,6 +3821,7 @@<br> &#9;&#9;}<br> &#9;}<br> &#9;nLineNum = m_nCaretPosY;<br>+&#9;nLineLen = 0; // 2004.03.17 Moca NULL == pLineのとき、nLineLenが未設定になり落ちるバグ対策<br> &#9;pLine = m_pcEditDoc-&gt;m_cLayoutMgr.GetLineStr(nLineNum, &amp;nLineLen, &amp;pcLayout);<br> &#9;/* 指定された桁に対応する行のデータ内の位置を調べる */<br> // 2002.02.08 hor EOFのみの行からも次検索しても再検索可能に (2/2)<br></div></section>
+    </li></ul></body></html>

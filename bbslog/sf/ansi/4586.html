@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>VC8アプリをWin95で動作させる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4586</span>
+    <a class="thread-title" href="4586.html#4586">VC8アプリをWin95で動作させる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4589</span>
+    <a class="thread-title" href="4586.html#4589">Re:VC8アプリをWin95で動作させる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4591</span>
+    <a class="thread-title" href="4586.html#4591">Re2:VC8アプリをWin95で動作させる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4592</span>
+    <a class="thread-title" href="4586.html#4592">Re3:VC8アプリをWin95で動作させる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4594</span>
+    <a class="thread-title" href="4586.html#4594">Re4:VC8アプリをWin95で動作させる</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4593</span>
+    <a class="thread-title" href="4586.html#4593">Re3:VC8アプリをWin95で動作させる</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4586>
+    <span class="no">[4586]</span>
+    <a class="thread-title" href="#4586">VC8アプリをWin95で動作させる</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-21T00:18:24">2006年09月21日 00:18</time></h1>
+    <div class="body">&gt;&gt;dev:4259 より<br>&gt; VS2005 でコンパイルすると、Release 設定でも Kernel32.dll の IsDebuggerPresent() を参照しにいくようになるため、Win95 では動作しなくなります。<br><br>裏技があるようです。<br><br><a href=http://jet.breeze.jp/program/tips/forceimp.htm target=_top><nobr>http://<wbr>jet.<wbr>breeze.<wbr>jp/<wbr>program/<wbr>tips/<wbr>forceimp<wbr>.<wbr>htm</nobr></a><br><br>| 以下のコードを自分のソースファイルに入れるだけです。<br>| EXTERN_C BOOL WINAPI _imp__IsDebuggerPresent(void)<br>|     { return FALSE; }<br>| ※ ソースファイルが C の場合は、EXTERN_C は不要です。<br><br>だそうな。<br><br>ちょっとやってみたら確かに Win95 でも動きました。</div></section>
+    <ul><li><section><h1 id=4589>
+    <span class="no">[4589]</span>
+    <a class="thread-title" href="#4589">Re:VC8アプリをWin95で動作させる</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-09-23T11:53:39">2006年09月23日 11:53</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; <a href=http://jet.breeze.jp/program/tips/forceimp.htm target=_top><nobr>http://<wbr>jet.<wbr>breeze.<wbr>jp/<wbr>program/<wbr>tips/<wbr>forceimp<wbr>.<wbr>htm</nobr></a><br>&gt; ちょっとやってみたら確かに Win95 でも動きました。<br>これで問題が無くなるなら，リリース版もVS2005でbuildしたほうが良いですよね．<br>現在はVS2003 Toolkitでbuildしているのですが，ライブラリがシングルスレッドしか無いというのも(今のところは問題ないですが)ちょっと気になってますし．<br></div></section>
+    <ul><li><section><h1 id=4591>
+    <span class="no">[4591]</span>
+    <a class="thread-title" href="#4591">Re2:VC8アプリをWin95で動作させる</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-23T19:03:54">2006年09月23日 19:03</time></h1>
+    <div class="body">&gt; これで問題が無くなるなら，リリース版もVS2005でbuildしたほうが良いですよね．<br>C ランタイムの中から IsDebuggerPresent() が呼ばれるようにデバッガから設定して動かしてみたところ、自前の _imp__IsDebuggerPresent() には来ないでぜんぜん違う場所（メモリ内容 ?? になっている場所）にすっ飛んで行ってしまいました。<br>逆アセンブルでは自前関数への正しいアドレスを指しているように見えるのですが...<br>ちょっとわけがわかりません。<br>IsDebuggerPresent()が呼ばれるのは、異常を自己検出した場合なので正常動作している間は問題無さそうですが、ちょっと妖しいですね。<br><br>&gt; 現在はVS2003 Toolkitでbuildしているのですが，ライブラリがシングルスレッドしか無いというのも(今のところは問題ないですが)ちょっと気になってますし．<br>自分のところの Toolkit にはマルチスレッド版も入ってますけど？<br>libcmt.lib : C マルチスレッド、静的リンク<br>libcpmt.lib : C++ マルチスレッド、静的リンク</div></section>
+    <ul><li><section><h1 id=4592>
+    <span class="no">[4592]</span>
+    <a class="thread-title" href="#4592">Re3:VC8アプリをWin95で動作させる</a>
+    <span class="author">ジェット</span>
+    <time datetime="2006-09-24T01:24:50">2006年09月24日 01:24</time></h1>
+    <div class="body">&gt; <a href=http://jet.breeze.jp/program/tips/forceimp.htm target=_top><nobr>http://<wbr>jet.<wbr>breeze.<wbr>jp/<wbr>program/<wbr>tips/<wbr>forceimp<wbr>.<wbr>htm</nobr></a><br>の記事を書いた当事者です。<br><br>| EXTERN_C BOOL WINAPI _imp__IsDebuggerPresent(void)<br>|     { return FALSE; }<br><br>だけでは問題があることを、こちらでも確認しました。<br><br>理由としては、もともと「__imp__IsDebuggerPresent@0」(装飾済み)は関数ではなく変数であり、例えば CRT が IsDebuggerPresent を呼び出す、invarg.c 171行目<br><br>| wasDebuggerPresent = IsDebuggerPresent();<br><br>では、アセンブラは「変数 __imp__IsDebuggerPresent@0」から関数アドレスを取得して実行していることが分かりました。<br><br>そこで新しい回避コードを作成しました。上記のページに更新してあるのでそちらを利用してください。なお、新しいコードは Windows 95 でもテスト(呼び出しテスト)をしているので大丈夫だと思われます。<br><br>お手数かけますがよろしくお願いします。</div></section>
+    <ul><li><section><h1 id=4594>
+    <span class="no">[4594]</span>
+    <a class="thread-title" href="#4594">Re4:VC8アプリをWin95で動作させる</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-24T01:50:31">2006年09月24日 01:50</time></h1>
+    <div class="body">▼ ジェットさん<br>うわ、当事者さんが現れてくださるとは。<br>4593とすれ違い（汗）<br><br>&gt; そこで新しい回避コードを作成しました。上記のページに更新してあるのでそちらを利用してください。なお、新しいコードは Windows 95 でもテスト(呼び出しテスト)をしているので大丈夫だと思われます。<br>このコードはちょっと強引ですね...<br>いや、同様のをたまにやることありますけど。σ(^^;</div></section>
+    </li></ul></li><li><section><h1 id=4593>
+    <span class="no">[4593]</span>
+    <a class="thread-title" href="#4593">Re3:VC8アプリをWin95で動作させる</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-24T01:35:19">2006年09月24日 01:35</time></h1>
+    <div class="body">&gt; 逆アセンブルでは自前関数への正しいアドレスを指しているように見えるのですが...<br><br>正しくなかったです。<br>_imp__IsDebuggerPresent() の先頭にある４バイトが 33 C0 C3 8B で、8BC3C033 に飛んでる。<br>処理として実行されるつもりの箇所は実は間接コールのアドレスとして扱われるところなのでした。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

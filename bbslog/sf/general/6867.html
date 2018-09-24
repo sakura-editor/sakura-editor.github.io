@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>二重カッコの表示について質問です | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6867</span>
+    <a class="thread-title" href="6867.html#6867">二重カッコの表示について質問です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6868</span>
+    <a class="thread-title" href="6867.html#6868">Re:二重カッコの表示について質問です</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6867>
+    <span class="no">[6867]</span>
+    <a class="thread-title" href="#6867">二重カッコの表示について質問です</a>
+    <span class="author">二重カッコ</span>
+    <time datetime="2009-01-09T23:39:45">2009年01月09日 23:39</time></h1>
+    <div class="body">Windows上で使える二重カッコが以下3種類<br>　"&amp;#187;" 　chr(187) <br>　"≫"　chr(8811)<br>　"》"　chr(12299)<br><br>あると思いますが、<br>このうち本エディタ上では"&amp;#187;"(chr(187))が"≫"(chr(8811))に自動変換されてしまいます。<br><br>他2つは正常に表示/保存可能なのですが、これは仕様なのでしょうか？<br>ご確認ください。</div></section>
+    <ul><li><section><h1 id=6868>
+    <span class="no">[6868]</span>
+    <a class="thread-title" href="#6868">Re:二重カッコの表示について質問です</a>
+    <span class="author">syat</span>
+    <time datetime="2009-01-10T09:22:30">2009年01月10日 09:22</time></h1>
+    <div class="body">▼ 二重カッコさん<br>サクラエディタではデータの文字コードを内部でSJISに変換して処理するようになっています。<br><br>3種類の二重カッコ<br>「&amp;#187;」187、u00bb<br>「≫」8811、u226b<br>「》」12299、u300b<br>はUNICODEだと全て存在しますが、SJISだと最初の文字が存在しないため自動的に似た字に変換されます。つまり仕様です。<br><br>現在開発中のUNICODE版サクラエディタなら使い分けることが可能です。SJISで保存すると同じになっちゃいますけど。<br></div></section>
+    </li></ul></li></ul></body></html>

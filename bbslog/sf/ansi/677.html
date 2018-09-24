@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ヘッダ・フッダ文字列の変換方法 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">677</span>
+    <a class="thread-title" href="677.html#677">ヘッダ・フッダ文字列の変換方法</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=677>
+    <span class="no">[677]</span>
+    <a class="thread-title" href="#677">ヘッダ・フッダ文字列の変換方法</a>
+    <span class="author">ああああ</span>
+    <time datetime="2001-09-14T10:42:45">2001年09月14日 10:42</time></h1>
+    <div class="body">ご参考に：<br><br>int nLen;<br>char *pchSrc, *pchDest, szBuf[BUF_SIZE];<br><br>pchSrc = ヘッダかフッダ文字列;  pchDest = szBuf;<br>while (*pchSrc) {<br> if(*pchSrc == '&amp;') { pchSrc++;<br>  switch(*pchSrc) {<br>  case 'f':<br>   nLen = lstrlen(ファイル名);<br>   // lstrcpyn はゼロ文字も含める<br>   lstrcpyn(pchDest, ファイル名, nLen+1);<br>   pchSrc += nLen; pchDest += nLen;<br>   break;<br>  case 'P'<br>   pchDest += sprintf(pchDest, "%ld", ページ番号);<br>   break;<br>  .....<br>  default: pchSrc--;<br>  }<br> }<br> *pchDest = *pchSrc;<br> pchSrc = _mbsinc(pchSrc);<br> pchDest = _mbsinc(pchDest);<br>}<br> *pchDest = '\0';<br>// (szBuf：変換・格納された文字列)</div></section>
+    </li></ul></body></html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バグ報告 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2434</span>
+    <a class="thread-title" href="2434.html#2434">バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2435</span>
+    <a class="thread-title" href="2434.html#2435">Re: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2443</span>
+    <a class="thread-title" href="2434.html#2443">Re2: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2458</span>
+    <a class="thread-title" href="2434.html#2458">Re3: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2462</span>
+    <a class="thread-title" href="2434.html#2462">Re4: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2475</span>
+    <a class="thread-title" href="2434.html#2475">Re5: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2492</span>
+    <a class="thread-title" href="2434.html#2492">Re6: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2495</span>
+    <a class="thread-title" href="2434.html#2495">Re7: バグ報告</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2477</span>
+    <a class="thread-title" href="2434.html#2477">Re4: バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2487</span>
+    <a class="thread-title" href="2434.html#2487">Re5: バグ報告</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2444</span>
+    <a class="thread-title" href="2434.html#2444">Re2: バグ報告</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2434>
+    <span class="no">[2434]</span>
+    <a class="thread-title" href="#2434">バグ報告</a>
+    <span class="author">みく</span>
+    <time datetime="2002-10-29T20:12:05">2002年10月29日 20:12</time></h1>
+    <div class="body"><br>いくつか怪しい事象があったので報告しておきます。<br><br>１．.cppファイルを開くと応答なし。<br>　iniを消して同じファイルを開くと問題なく開けた。<br>２．タイプ別設定の基本設定のカラーの多くに下線チェックが入っている。<br>　テキストにも下線チェックが入っているので、どうしようもできない。<br>　他のカラーをインポートして正常な状態に戻した。<br>　結局、１．の問題でini消したけど。<br>３．他のAPで開いているファイルが開けない。<br>　結構つらい。しかたないのでメモ帳を使ってます。<br>４．Cのブロックコメントの終わりを認識しないことがまれにある。<br><br>/*<br>...<br>*/<br><br>abc<br><br>のときabcがコメント色のまま表示されてしまう。<br>abcを消して入力しなおしても、違う行(*/より下)に文字を入力してもコメント色のままである。<br>*/を消してもう一度*/を入力したら正常に色分けされた。<br><br><br>sakura 1.3.5.4　です。<br></div></section>
+    <ul><li><section><h1 id=2435>
+    <span class="no">[2435]</span>
+    <a class="thread-title" href="#2435">Re: バグ報告</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-29T20:23:54">2002年10月29日 20:23</time></h1>
+    <div class="body">&gt;　iniを消して同じファイルを開くと問題なく開けた。<br>こういう場合，問題の再現を行えるようにiniを保存していただいた方が良いと思います．<br><br>&gt;３．他のAPで開いているファイルが開けない。<br>すいません．次直ります．<br><br>&gt;４．Cのブロックコメントの終わりを認識しないことがまれにある。<br>これは私も1回見ました．他にも今やってみたら*/を貼り付けてもコメント色にならなかったり．ちょっと再現方法がよくわからないんですが．<br></div></section>
+    <ul><li><section><h1 id=2443>
+    <span class="no">[2443]</span>
+    <a class="thread-title" href="#2443">Re2: バグ報告</a>
+    <span class="author">みく</span>
+    <time datetime="2002-10-30T20:15:19">2002年10月30日 20:15</time></h1>
+    <div class="body"><br>＞１．.cppファイルを開くと応答なし。<br><br>CLayoutMgr_new.cpp:DoLayout()内の<br>GetActualTabSpace()関数がとんでもない値を返すため、<br>暴走しているようです。<br>m_nTabSpaceが初期化されないままDoLayout()が呼ばれているようです。<br></div></section>
+    <ul><li><section><h1 id=2458>
+    <span class="no">[2458]</span>
+    <a class="thread-title" href="#2458">Re3: バグ報告</a>
+    <span class="author">みく</span>
+    <time datetime="2002-10-31T20:21:17">2002年10月31日 20:21</time></h1>
+    <div class="body"><br>&gt;CLayoutMgr_new.cpp:DoLayout()内の<br>&gt;GetActualTabSpace()関数がとんでもない値を返すため、<br>&gt;暴走しているようです。<br>&gt;m_nTabSpaceが初期化されないままDoLayout()が呼ばれているようです。<br><br>それ以前に、TAB幅にでかい値が設定されていました。<br>普段はTAB4に設定しているので、何かの拍子に共有メモリを破壊しているようです。<br>設定ファイルを見ると、他の項目もたくさん破壊されているのですが、<br>メモリ上連続している項目ではなさそう。<br><br>カラー設定のインデックス番号が範囲外だったり、<br>テキスト項目に制御コードが入っていたり。。。<br><br>読み込み時に、値の最低限のチェックはしないといけないみたい。<br></div></section>
+    <ul><li><section><h1 id=2462>
+    <span class="no">[2462]</span>
+    <a class="thread-title" href="#2462">Re4: バグ報告</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-11-01T00:06:14">2002年11月01日 00:06</time></h1>
+    <div class="body">&gt;普段はTAB4に設定しているので、何かの拍子に共有メモリを破壊しているようです。<br>こういうときはPurifyに限る．誰か試していただける方いらっしゃいませんか．<br>個人で買える代物ではないので．<br><br>ただ，再現パターンがつかめないと検出は難しいと思います．<br><br>&gt;読み込み時に、値の最低限のチェックはしないといけないみたい。<br>先日文字列長の制限とか値とかある程度は追加したんですが，TABについては最大値を拡大したのがあだになったかも．<br><br>画面の横幅よりもTAB幅を大きくしたら...なんて怖くて試せません．(^^;)<br></div></section>
+    <ul><li><section><h1 id=2475>
+    <span class="no">[2475]</span>
+    <a class="thread-title" href="#2475">Re5: バグ報告</a>
+    <span class="author">みく</span>
+    <time datetime="2002-11-02T22:43:42">2002年11月02日 22:43</time></h1>
+    <div class="body">&gt;タイトル: Re5: バグ報告<br>&gt;発言者: げんた<br>&gt;&gt;普段はTAB4に設定しているので、何かの拍子に共有メモリを破壊しているようです。<br>&gt;こういうときはPurifyに限る．誰か試していただける方いらっしゃいませんか．<br>&gt;個人で買える代物ではないので．<br><br>開発系の話になりますが、crtdbg.hの<br>_CrtDumpMemoryLeaks<br>とか駄目なんでしょうか。<br>使い方はわからないんですけど。<br></div></section>
+    <ul><li><section><h1 id=2492>
+    <span class="no">[2492]</span>
+    <a class="thread-title" href="#2492">Re6: バグ報告</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-11-07T00:54:07">2002年11月07日 00:54</time></h1>
+    <div class="body">&gt;開発系の話になりますが、crtdbg.hの<br>&gt;_CrtDumpMemoryLeaks<br>&gt;とか駄目なんでしょうか。<br>これはメモリリークの検出はできますが，不当なメモリアクセスの検出はできません．<br>また，やってみるとわかるのですが，検出位置が全部crtdbg.hの中＝new演算子の定義位置になってしまって，メモリリーク場所も全然わかりません．<br></div></section>
+    <ul><li><section><h1 id=2495>
+    <span class="no">[2495]</span>
+    <a class="thread-title" href="#2495">Re7: バグ報告</a>
+    <span class="author">みく</span>
+    <time datetime="2002-11-07T21:17:42">2002年11月07日 21:17</time></h1>
+    <div class="body">&gt;タイトル: Re7: バグ報告<br>&gt;発言者: げんた<br>&gt;&gt;開発系の話になりますが、crtdbg.hの<br>&gt;&gt;_CrtDumpMemoryLeaks<br>&gt;&gt;とか駄目なんでしょうか。<br>&gt;これはメモリリークの検出はできますが，不当なメモリアクセスの検出はできません．<br><br>いきなり違うメモリに書き込むコードはないと思うので、<br>まずはメモリリークを探してみるのがいいんじゃないでしょうか。<br><br>&gt;また，やってみるとわかるのですが，検出位置が全部crtdbg.hの中＝new演算子の定義位置になってしまって，メモリリーク場所も全然わかりません．<br><br>オリジナルのままだとそうなんですが、Webで探してみると<br>検出位置を特定できるようにする方法があるみたいです。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=2477>
+    <span class="no">[2477]</span>
+    <a class="thread-title" href="#2477">Re4: バグ報告</a>
+    <span class="author">みく</span>
+    <time datetime="2002-11-04T09:42:34">2002年11月04日 09:42</time></h1>
+    <div class="body">&gt;タイトル: Re4: バグ報告<br>&gt;発言者: みく<br>&gt;&gt;CLayoutMgr_new.cpp:DoLayout()内の<br>&gt;&gt;GetActualTabSpace()関数がとんでもない値を返すため、<br>&gt;&gt;暴走しているようです。<br>&gt;&gt;m_nTabSpaceが初期化されないままDoLayout()が呼ばれているようです。<br><br>原因判明です。<br><br>CLayoutMgr::DoLayout()<br>TAB幅が折り返し桁数より大きい場合に nPos がカウントアップ<br>されないので、無限ループします。<br><br>#CLayoutMgr::DoLayout_Range()も同様かな。<br></div></section>
+    <ul><li><section><h1 id=2487>
+    <span class="no">[2487]</span>
+    <a class="thread-title" href="#2487">Re5: バグ報告</a>
+    <span class="author">みく</span>
+    <time datetime="2002-11-06T19:08:46">2002年11月06日 19:08</time></h1>
+    <div class="body"><br>TABを処理しようとしたら折り返しを超えたので次行に追い出す。<br>次行でも、追い出されたTABを処理しようとしたら折り返しを超えたので次行に追い出す。<br>ということがシステムの許す限り実行され、最後はシステムのメモリ不足で終わる。<br><br>対処として、処理するTABがレイアウト行の先頭(nPosX==0?)にあるときは、<br>追い出ししないでその行に描いてしまう。<br>というので良いのではないでしょうか。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=2444>
+    <span class="no">[2444]</span>
+    <a class="thread-title" href="#2444">Re2: バグ報告</a>
+    <span class="author">みく</span>
+    <time datetime="2002-10-30T20:24:30">2002年10月30日 20:24</time></h1>
+    <div class="body"><br>&gt;&gt;３．他のAPで開いているファイルが開けない。<br>&gt;すいません．次直ります．<br><br>1.3.5.5 で問題ないことを確認しました。<br><br><br>&gt;&gt;４．Cのブロックコメントの終わりを認識しないことがまれにある。<br>&gt;これは私も1回見ました．他にも今やってみたら*/を貼り付けてもコメント色にならなかったり．ちょっと再現方法がよくわからないんですが．<br><br>/*<br>...<br>*/<br>という行を貼り付けた記憶がありますが、再現しないです。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Cをコーディング時括弧の位置が正しく判定してもらえない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5592</span>
+    <a class="thread-title" href="5592.html#5592">Cをコーディング時括弧の位置が正しく判定してもらえない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5593</span>
+    <a class="thread-title" href="5592.html#5593">Re: Cをコーディング時括弧の位置が正しく判定してもらえない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5604</span>
+    <a class="thread-title" href="5592.html#5604">Re2: Cをコーディング時括弧の位置が正しく判定してもらえない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5606</span>
+    <a class="thread-title" href="5592.html#5606">Re3: Cをコーディング時括弧の位置が正しく判定してもらえない</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5609</span>
+    <a class="thread-title" href="5592.html#5609">Re3: Cをコーディング時括弧の位置が正しく判定してもらえない</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5592>
+    <span class="no">[5592]</span>
+    <a class="thread-title" href="#5592">Cをコーディング時括弧の位置が正しく判定してもらえない</a>
+    <span class="author">サクラ大好き</span>
+    <time datetime="2006-11-12T13:49:55">2006年11月12日 13:49</time></h1>
+    <div class="body">サクラエディタを愛用させていただいています。<br>C/C++のコーディングで使用させていただいているのですが、<br>括弧の位置を調べるのにコメント内の括弧まで検査対象と<br>なってしまい不便に感じています。<br><br>下記のような関数で一番下の括弧に対応する<br>括弧正しく認識されません。<br><br>何か良い方法はないでしょうか？<br>できれば、何も設定せず正しく対応できるとありがたいです。<br><br>ココから----------<br>test()<br>{<br>//&#9;if( aaa == 0 ) {<br>&#9;if( aaa == 1) {<br>&#9;}<br>}<br>-----------ココまで<br></div></section>
+    <ul><li><section><h1 id=5593>
+    <span class="no">[5593]</span>
+    <a class="thread-title" href="#5593">Re: Cをコーディング時括弧の位置が正しく判定してもらえない</a>
+    <span class="author">しみづ</span>
+    <time datetime="2006-11-12T15:16:49">2006年11月12日 15:16</time></h1>
+    <div class="body"><br>　私は、こうします。<br><br>ココから----------<br>test()<br>{<br>//&#9;if( aaa == 0 ) {<br>&#9;if( aaa == 1) {<br>&#9;}<br>//&#9;}<br>}<br>-----------ココまで<br></div></section>
+    <ul><li><section><h1 id=5604>
+    <span class="no">[5604]</span>
+    <a class="thread-title" href="#5604">Re2: Cをコーディング時括弧の位置が正しく判定してもらえない</a>
+    <span class="author">サクラ大好き</span>
+    <time datetime="2006-11-15T00:57:40">2006年11月15日 00:57</time></h1>
+    <div class="body">▼ しみづさん<br>&gt; <br>&gt; 　私は、こうします。<br>&gt; <br>&gt; ココから----------<br>&gt; test()<br>&gt; {<br>&gt; //&#9;if( aaa == 0 ) {<br>&gt; &#9;if( aaa == 1) {<br>&gt; &#9;}<br>&gt; //&#9;}<br>&gt; }<br>&gt; -----------ココまで<br>なるほど、、、たしかに。<br>参考になります。<br></div></section>
+    <ul><li><section><h1 id=5606>
+    <span class="no">[5606]</span>
+    <a class="thread-title" href="#5606">Re3: Cをコーディング時括弧の位置が正しく判定してもらえない</a>
+    <span class="author">横から失礼</span>
+    <time datetime="2006-11-15T01:00:36">2006年11月15日 01:00</time></h1>
+    <div class="body">▼ サクラ大好きさん<br>&gt; ▼ しみづさん<br>&gt; &gt; <br>&gt; &gt; 　私は、こうします。<br>&gt; &gt; <br>&gt; &gt; ココから----------<br>&gt; &gt; test()<br>&gt; &gt; {<br>&gt; &gt; //&#9;if( aaa == 0 ) {<br>&gt; &gt; &#9;if( aaa == 1) {<br>&gt; &gt; &#9;}<br>&gt; &gt; //&#9;}<br>&gt; &gt; }<br>&gt; &gt; -----------ココまで<br>&gt; なるほど、、、たしかに。<br>&gt; 参考になります。<br>本当は、ココまでしなくても<br>括弧判定のときにコメント内をムシしてもらえると<br>助かるとのだけどそんな機能とりこんでほしいって<br>言いたいんじゃない？</div></section>
+    </li><li><section><h1 id=5609>
+    <span class="no">[5609]</span>
+    <a class="thread-title" href="#5609">Re3: Cをコーディング時括弧の位置が正しく判定してもらえない</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-11-15T05:27:44">2006年11月15日 05:27</time></h1>
+    <div class="body">▼サクラ大好きさん<br>Ｃ系のコーディングなら、<br>ココから----------<br>test()<br>{<br>//　　　　if( aaa == 0 )<br>　　　　if( aaa == 1)<br>　　　　{<br>　　　　}<br>}<br>-----------ココまで<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

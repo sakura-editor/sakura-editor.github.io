@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>選択範囲置換で行連結すると選択状態が解除される | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4113</span>
+    <a class="thread-title" href="4113.html#4113">選択範囲置換で行連結すると選択状態が解除される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4123</span>
+    <a class="thread-title" href="4113.html#4123">Re:選択範囲置換で行連結すると選択状態が解除される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4140</span>
+    <a class="thread-title" href="4113.html#4140">Re2:選択範囲置換で行連結すると選択状態が解除される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4141</span>
+    <a class="thread-title" href="4113.html#4141">Re3:選択範囲置換で行連結すると選択状態が解除される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4150</span>
+    <a class="thread-title" href="4113.html#4150">Re4:選択範囲置換で行連結すると選択状態が解除される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4151</span>
+    <a class="thread-title" href="4113.html#4151">Re5:選択範囲置換で行連結すると選択状態が解除される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4166</span>
+    <a class="thread-title" href="4113.html#4166">Re6:選択範囲置換で行連結すると選択状態が解除される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4168</span>
+    <a class="thread-title" href="4113.html#4168">Re7:選択範囲置換で行連結すると選択状態が解除される</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4170</span>
+    <a class="thread-title" href="4113.html#4170">Re6:選択範囲置換で行連結すると選択状態が解除される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4178</span>
+    <a class="thread-title" href="4113.html#4178">Re7:選択範囲置換で行連結すると選択状態が解除される</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4113>
+    <span class="no">[4113]</span>
+    <a class="thread-title" href="#4113">選択範囲置換で行連結すると選択状態が解除される</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-11-11T23:02:34">2005年11月11日 23:02</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 最後に？、これはたぶん以前からだろうと思うのですが、どうやら選択範囲置換のときに選択が一部解除されてしまうことがあるんですね。<br>&gt; 具体例で言うと、行選択状態で\r\nを空に変換して行を繋げると選択状態が解除されます。<br>&gt; これも何とかなると嬉しいんですが...<br><br>ちゃんと理解できてないので、怪しいですが、<br>どうやら行連結して行が減った場合の「カラム位置」の調整がうまくないようです。<br><br>とりあえず手を入れてみましたのでお試しください。<br><br>実行形式：(1.5.8.0ベース)<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_20051111.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_2<wbr>0051111.<wbr>lzh</nobr></a><br></div></section>
+    <ul><li><section><h1 id=4123>
+    <span class="no">[4123]</span>
+    <a class="thread-title" href="#4123">Re:選択範囲置換で行連結すると選択状態が解除される</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-12T21:33:25">2005年11月12日 21:33</time></h1>
+    <div class="body">------------<br>1998-2001<br>2000-2001<br>------------<br>の２行を選択し、<br>\r\n -&gt; 空<br>とすると、<br>1998-20012000-20012001<br>になりますが、<br>このとき 1998-20012000-200 までしか選択されてませんでした。<br><br>＃今は見てないけど、ある行の途中から別の行の途中まで<br>＃選択状態だった場合とか、大丈夫かしら？</div></section>
+    <ul><li><section><h1 id=4140>
+    <span class="no">[4140]</span>
+    <a class="thread-title" href="#4140">Re2:選択範囲置換で行連結すると選択状態が解除される</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-11-15T22:08:08">2005年11月15日 22:08</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 1998-20012000-20012001<br>&gt; になりますが、<br>&gt; このとき 1998-20012000-200 までしか選択されてませんでした。<br><br>レイアウト行での改行文字数を数え損ねてただけでした。m(__)m<br>この修正と、あと、\r\n → \n という置換の場合も変になるのを修正しました。<br><br>&gt; ＃今は見てないけど、ある行の途中から別の行の途中まで<br>&gt; ＃選択状態だった場合とか、大丈夫かしら？<br><br>プログラムを解読してみましたが、<br>選択範囲の最終位置を調整する必要があるのですが、<br>行調整は毎置換毎に行なわないといけないが、<br>桁位置調整は、最終行のみやればいいので、<br>行の途中は、うまく処理できているようです。<br><br>うまく、処理できなかったのは、<br>・最終行が行連結される場合の桁位置を負（前行の桁位置）に調整する手段がなかった。<br>・最終前行の改行を置換した結果、置換後のカーソル位置が最終行にきてしまった場合に<br>　最終行での置換と誤判断していた。<br>というあたりのようです。<br><br><br>実行形式：(1.5.8.0)<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_20051115.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_2<wbr>0051115.<wbr>lzh</nobr></a><br><br>差分：(1.5.8.0)前回の差分含みますが、差分ファイルの最後のところが今回分<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_R1580_1115.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_R<wbr>1580_111<wbr>5.<wbr>lzh</nobr></a><br></div></section>
+    <ul><li><section><h1 id=4141>
+    <span class="no">[4141]</span>
+    <a class="thread-title" href="#4141">Re3:選択範囲置換で行連結すると選択状態が解除される</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-11-16T02:44:47">2005年11月16日 02:44</time></h1>
+    <div class="body">自己フォローです。<br><br>▼ かろとさん<br>&gt; ・最終行が行連結される場合の桁位置を負（前行の桁位置）に調整する手段がなかった。<br><br>差分のコメントに書いてた最終行の行連結チェックは<br>ちゃんとやらないと、以下のパターンでまずいことに<br>気が付きました。<br>やっぱり、手抜きは良くない・・・(--;<br><br>まずいパターン<br>2000-2001<br>2001-2002<br>2003-2004<br>のテキストを、2001～2003まで選択して、<br>「(00|\r\n)」 → 「」<br>の置換で、00と改行を消すと、位置がずれる。<br><br>を修正しました。<br><br>実行形式：(1.5.8.0)<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_20051116.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_2<wbr>0051116.<wbr>lzh</nobr></a><br><br>差分：(1.5.8.0)前回の差分含みますが、差分ファイルの最後のところが今回分<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_R1580_1116.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_R<wbr>1580_111<wbr>6.<wbr>lzh</nobr></a><br></div></section>
+    <ul><li><section><h1 id=4150>
+    <span class="no">[4150]</span>
+    <a class="thread-title" href="#4150">Re4:選択範囲置換で行連結すると選択状態が解除される</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-19T17:49:48">2005年11月19日 17:49</time></h1>
+    <div class="body">お疲れ様です。<br>まだあまり試せていないのですが、気がついたところだけ報告します。<br>------------<br>1998-2001<br>2000-2001<br>------------<br>の先頭から２行目の2000までを選択し、<br>\n -&gt; abc<br>とした場合に、<br>------------<br>1998-2001<br>abc2000-2001<br>------------<br>２行目のabc2までしか選択が残らないようです。</div></section>
+    <ul><li><section><h1 id=4151>
+    <span class="no">[4151]</span>
+    <a class="thread-title" href="#4151">Re5:選択範囲置換で行連結すると選択状態が解除される</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-11-19T22:52:51">2005年11月19日 22:52</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; お疲れ様です。<br>&gt; ------------<br>&gt; 1998-2001<br>&gt; abc2000-2001<br>&gt; ------------<br>&gt; ２行目のabc2までしか選択が残らないようです。<br><br>あ～、その部分は前回の方が良かったわけですね(--;<br><br>最終行の置換時、置換前後で行位置が変わった（行連結含む）場合に、<br>置換前後の桁位置の変化に、置換前の行の長さを足しこむという最初の修正方法が<br>良かったようです。難しいですね。<br><br><br>実行形式：(1.5.8.0)<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_20051119.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_2<wbr>0051119.<wbr>lzh</nobr></a><br><br>差分：(1.5.8.0)前回の差分含みますが、差分ファイルの最後のところが今回分<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_R1580_1119.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_R<wbr>1580_111<wbr>9.<wbr>lzh</nobr></a><br></div></section>
+    <ul><li><section><h1 id=4166>
+    <span class="no">[4166]</span>
+    <a class="thread-title" href="#4166">Re6:選択範囲置換で行連結すると選択状態が解除される</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-26T14:51:36">2005年11月26日 14:51</time></h1>
+    <div class="body">\r\n改行に対して、<br>選択前:\n<br>選択後:(空または任意文字列)<br>選択始点挿入<br>で「すべて置換」したときに無限に置換が行われるように<br>なってしまっているようです。<br>この際、余分に半角スペースも挿入されている感じです。</div></section>
+    <ul><li><section><h1 id=4168>
+    <span class="no">[4168]</span>
+    <a class="thread-title" href="#4168">Re7:選択範囲置換で行連結すると選択状態が解除される</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-26T15:39:30">2005年11月26日 15:39</time></h1>
+    <div class="body">すいません。<br>誤って現行バージョン(1.5.8.0)のほうを動かしていたみたいです。<br>[4166]の報告は無視してください。m(__)m</div></section>
+    </li></ul></li><li><section><h1 id=4170>
+    <span class="no">[4170]</span>
+    <a class="thread-title" href="#4170">Re6:選択範囲置換で行連結すると選択状態が解除される</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-26T22:22:32">2005年11月26日 22:22</time></h1>
+    <div class="body">▼ かろとさん<br>&gt; 実行形式：(1.5.8.0)<br>&gt; <a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_20051119.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_2<wbr>0051119.<wbr>lzh</nobr></a><br>&gt; <br>&gt; 差分：(1.5.8.0)前回の差分含みますが、差分ファイルの最後のところが今回分<br>&gt; <a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_R1580_1119.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_R<wbr>1580_111<wbr>9.<wbr>lzh</nobr></a><br><br>返事が遅れてすいませんでした。<br>ようやく確認できました。(^^;<br>この修正で、今回の選択状態関連、および<br>&gt;&gt;dev:4059 「\r」が「\r\n」にマッチする件<br>の一連の課題はクリアされているように思います。<br>対処ありがとうございます。<br>＃修正コードの内容までは読めていないですけど、<br>＃あれこれ試した感じではＯＫかな、とσ(^^;</div></section>
+    <ul><li><section><h1 id=4178>
+    <span class="no">[4178]</span>
+    <a class="thread-title" href="#4178">Re7:選択範囲置換で行連結すると選択状態が解除される</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-11-27T23:59:21">2005年11月27日 23:59</time></h1>
+    <div class="body">&gt;発言者: ryoji<br>&gt;返事が遅れてすいませんでした。<br>&gt;ようやく確認できました。(^^;<br>&gt;この修正で、今回の選択状態関連、および<br>&gt;&gt;&gt;dev:4059 「\r」が「\r\n」にマッチする件<br>&gt;の一連の課題はクリアされているように思います。<br>&gt;対処ありがとうございます。<br><br>いえいえ、こちらこそ、確認ありがとうございます。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

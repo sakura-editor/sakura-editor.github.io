@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>行番号の描画についてご教示頂けないでしょうか。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5441</span>
+    <a class="thread-title" href="5441.html#5441">行番号の描画についてご教示頂けないでしょうか。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5443</span>
+    <a class="thread-title" href="5441.html#5443">Re:行番号の描画についてご教示頂けないでしょうか。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5447</span>
+    <a class="thread-title" href="5441.html#5447">Re2:行番号の描画についてご教示頂けないでしょうか。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5441>
+    <span class="no">[5441]</span>
+    <a class="thread-title" href="#5441">行番号の描画についてご教示頂けないでしょうか。</a>
+    <span class="author">ゆ</span>
+    <time datetime="2008-10-13T01:31:08">2008年10月13日 01:31</time></h1>
+    <div class="body">お世話になります。<br>いつも便利に使わせて頂いております。<br><br>時間を見つけて自分なりに修正を加えているのですが、<br>分からないことがあり、ご教示頂ければと思い<br>失礼ながら書き込みをさせて頂きます。<br><br><br>行番号の桁数が多くなると、見づらくく感じてしまうため<br>10行単位で表示、またはカーソル行の行番号を表示というように<br>ボーランドのIDEにあるようなモノにしようと思っております。<br>下記はイメージです。<br><br>2430|<br>  ・|<br>  ・|<br>  ・|<br>  ・|<br>  －|<br>  ・|<br>  ・|<br>  ・|<br>  ・|<br>2440|<br>  ・|<br>  ・|<br><br>10行単位での表示にすることは問題なくできたのですが、<br>カーソル行の位置への行番号を表示させる所でつまづいております。<br><br>やりたいこととしましては、<br>カーソルを動かしたときに行番号の再描画を行うことです。<br>前回位置を消して、今回の位置に行番号を描画するのかと思いますが、<br>処理を把握し切れていないため修正箇所がわからない状態です。<br><br>開発に参加しているわけでもなく、おこがましいかとは思いますが、<br>修正するに当たり、関連する箇所などをご教示しては頂けないでしょうか。<br><br><br>以上です。<br>宜しくお願い致します。</div></section>
+    <ul><li><section><h1 id=5443>
+    <span class="no">[5443]</span>
+    <a class="thread-title" href="#5443">Re:行番号の描画についてご教示頂けないでしょうか。</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-10-14T13:43:54">2008年10月14日 13:43</time></h1>
+    <div class="body">▼ ゆさん<br>CEditView.cppのMoveCursor()にて::InvalidateRect()を呼び出せばいけるような気がします。<br></div></section>
+    <ul><li><section><h1 id=5447>
+    <span class="no">[5447]</span>
+    <a class="thread-title" href="#5447">Re2:行番号の描画についてご教示頂けないでしょうか。</a>
+    <span class="author">ゆ</span>
+    <time datetime="2008-10-17T01:56:59">2008年10月17日 01:56</time></h1>
+    <div class="body">▼ なすこじさん<br>ありがとうございます。<br>そのあたり、いろいろいじってみようと思います。<br><br>ふと思ったのですが、指定桁縦線って<br>描画順は一番最後なのでしょうか？<br>文字が縦線で上書きされていたりしたので…<br><br>ではでは。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

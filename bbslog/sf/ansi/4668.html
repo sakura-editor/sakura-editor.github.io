@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>最終行がソートされない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4668</span>
+    <a class="thread-title" href="4668.html#4668">最終行がソートされない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4670</span>
+    <a class="thread-title" href="4668.html#4670">RE: 最終行がソートされない</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4668>
+    <span class="no">[4668]</span>
+    <a class="thread-title" href="#4668">最終行がソートされない</a>
+    <span class="author">maru</span>
+    <time datetime="2007-01-28T02:13:21">2007年01月28日 02:13</time></h1>
+    <div class="body">最終行に改行がない状態で、ファイル全体を選択してソートすると、最終行の選択が解除されソート対象から除外されます。<br>いつ頃からなのか未確認ですが、1.5.15.0で発生を確認しました。<br>取り急ぎ報告まで。<br></div></section>
+    <ul><li><section><h1 id=4670>
+    <span class="no">[4670]</span>
+    <a class="thread-title" href="#4670">RE: 最終行がソートされない</a>
+    <span class="author">maru</span>
+    <time datetime="2007-01-31T23:32:52">2007年01月31日 23:32</time></h1>
+    <div class="body">&gt; 最終行に改行がない状態で、ファイル全体を選択して<br>&gt; ソートすると、最終行の選択が解除されソート対象から<br>&gt; 除外されます。<br><br>CEditView::Command_SORTのコメントにある通り<br>これは仕様ですね。失礼しました。<br>改行コードの混在をサポートしたエディタでは、<br>改行のない行は処理しようがないですね。<br><br>ついでに、ソースを見て思いましたが、ソート結果を<br>CMemに書き戻すときにAppendSzを使用しているので<br>Null文字を含む行を処理すると結果が崩れてしまう<br>ので、ちょっと注意が必要です。<br></div></section>
+    </li></ul></li></ul></body></html>

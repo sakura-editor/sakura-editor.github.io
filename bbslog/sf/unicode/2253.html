@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Grep置換の単語単位 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2253</span>
+    <a class="thread-title" href="2253.html#2253">Grep置換の単語単位</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2255</span>
+    <a class="thread-title" href="2253.html#2255">Re:Grep置換の単語単位</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2256</span>
+    <a class="thread-title" href="2253.html#2256">Re2:Grep置換の単語単位</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2260</span>
+    <a class="thread-title" href="2253.html#2260">Re3:Grep置換の単語単位</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2261</span>
+    <a class="thread-title" href="2253.html#2261">Re:Grep置換がなんか違う</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2262</span>
+    <a class="thread-title" href="2253.html#2262">Re2:Grep置換がなんか違う</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2271</span>
+    <a class="thread-title" href="2253.html#2271">Re3:Grep置換がなんか違う</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2253>
+    <span class="no">[2253]</span>
+    <a class="thread-title" href="#2253">Grep置換の単語単位</a>
+    <span class="author">もか</span>
+    <time datetime="2015-02-11T20:06:24">2015年02月11日 20:06</time></h1>
+    <div class="body">Grep置換での単語単位と、通常のすべて置換の単語単位の動作が異なることに気が付きました。<br>テキスト「ABCあいうABCあいうABCあいう」<br>置換前「ABCあいう」<br>置換後「DEF」<br>通常の全置換は「DEFDEFABCDEFABCDEF」<br>Grep置換では「DEFDEFDEFDEFDEFDEF」<br>になります。<br>すべて置換の単語単位は、置換ごとの繰り返しで、2こ目以降の置換前文字列が異なるためです。<br>すべて置換<br>「[ABC]あいうABCあいうABCあいう」<br>「DEF[あいう]ABCあいうABCあいう」<br>「DEFDEFABC[あいう]ABCあいう」<br>「DEFDEFABCDEFABC[あいう]」<br>「DEFDEFABCDEFABCDEF」<br>Grep置換<br>「[ABC]あいうABCあいうABCあいう」=&gt;「DEFあいうABCあいうABCあいう」<br>「ABC[あいう]ABCあいうABCあいう」=&gt;「DEFDEFABCあいうABCあいう」<br>「ABCあいう[ABC]あいうABCあいう」=&gt;「DEFDEFDEFあいうABCあいう」<br>「ABCあいうABC[あいう]ABCあいう」=&gt;「DEFDEFDEFDEFABCあいう」<br>「ABCあいうABCあいう[ABC]あいう」=&gt;「DEFDEFDEFDEFDEFあいう」<br>「ABCあいうABCあいうABC[あいう]」=&gt;「DEFDEFDEFDEFDEFDEF」<br><br>どうします？<br></div></section>
+    <ul><li><section><h1 id=2255>
+    <span class="no">[2255]</span>
+    <a class="thread-title" href="#2255">Re:Grep置換の単語単位</a>
+    <span class="author">サクラエディタ利用者</span>
+    <time datetime="2015-02-12T15:49:49">2015年02月12日 15:49</time></h1>
+    <div class="body">&gt; どうします？<br><br>個人的には、「すべて置換」の挙動に統一してもらえると<br>ありがたいです。でも他のユーザは、どう思っているのかな？<br></div></section>
+    <ul><li><section><h1 id=2256>
+    <span class="no">[2256]</span>
+    <a class="thread-title" href="#2256">Re2:Grep置換の単語単位</a>
+    <span class="author">サクラエディタ利用者</span>
+    <time datetime="2015-02-12T15:56:36">2015年02月12日 15:56</time></h1>
+    <div class="body">×：個人的には、「すべて置換」の挙動に統一してもらえると<br>○：個人的には、「Grep置換」の挙動に統一してもらえると<br><br>間違って書き込みしました、申し訳ありません。<br>「Grep置換」の挙動に統一して欲しいです。<br>理由としては、「Grep置換」の挙動の方が<br>より直感的な置換処理な気がするからです。<br></div></section>
+    <ul><li><section><h1 id=2260>
+    <span class="no">[2260]</span>
+    <a class="thread-title" href="#2260">Re3:Grep置換の単語単位</a>
+    <span class="author">もか</span>
+    <time datetime="2015-02-21T22:31:35">2015年02月21日 22:31</time></h1>
+    <div class="body">&gt;「Grep置換」の挙動に統一して欲しいです。<br>&gt;理由としては、「Grep置換」の挙動の方が<br>&gt;より直感的な置換処理な気がするからです。<br>私もそう思うので、<br>「とりあえず 2.2.0.0では現状維持とする」<br>に1票入れておきます。<br>REPLACEALLをいじるのはかなり面倒なので。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=2261>
+    <span class="no">[2261]</span>
+    <a class="thread-title" href="#2261">Re:Grep置換がなんか違う</a>
+    <span class="author">もか</span>
+    <time datetime="2015-03-07T01:18:32">2015年03月07日 01:18</time></h1>
+    <div class="body">違うパターンその2です。<br>正規表現で^と改行までを改行を削除して置換するような処理<br>置換前「^hoge\n」<br>置換後「hoge」<br>みたいな場合の動作が、「すべて置換」と「Grep置換」で違います。<br>hogeはあまりないかもしれませんが、<br>&lt;br&gt;<br>&lt;br&gt;<br>みたいなのを置換する場合に影響すると思われます。<br>データが<br>「hoge\n<br>hoge\n<br>hoge\n<br>x」<br>の場合に、すべて置換：<br>「hogehoge\n<br>hogex\n<br>」<br>Grep置換：<br>「hogehogehogex」<br></div></section>
+    <ul><li><section><h1 id=2262>
+    <span class="no">[2262]</span>
+    <a class="thread-title" href="#2262">Re2:Grep置換がなんか違う</a>
+    <span class="author">サクラエディタ利用者</span>
+    <time datetime="2015-03-07T16:09:52">2015年03月07日 16:09</time></h1>
+    <div class="body">&gt; 違うパターンその2です。<br><br>こういうケースでも、Grep置換の挙動に統一して欲しいです。<br>・・・他のユーザは、どうして意見を言ってくれないのかなあ？</div></section>
+    <ul><li><section><h1 id=2271>
+    <span class="no">[2271]</span>
+    <a class="thread-title" href="#2271">Re3:Grep置換がなんか違う</a>
+    <span class="author">ななし</span>
+    <time datetime="2015-07-23T17:05:21">2015年07月23日 17:05</time></h1>
+    <div class="body">&gt; ・・・他のユーザは、どうして意見を言ってくれないのかなあ？<br>掲示板を見てないとか、挙動の変更に繋がる質疑だと思ってないとか、<br>バージョンアップをさぼっててGrep置換について触ったことがないとか(←私)<br><br>Grep置換の挙動のほうが良いと思いますけど、余り手軽に直せないようなら保留でも良い気がします。<br>そして(いつかきっときてほしい)複数行対応の時にまとめて改良されたりすればとっても嬉しい。<br># 複数行対応する時がこないなら…鬼雲諦めて、特殊ケースは全てWSH/JSで誤魔化し続けます…orz</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>コンパイルエラーの報告（参考） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3710</span>
+    <a class="thread-title" href="3710.html#3710">コンパイルエラーの報告（参考）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3711</span>
+    <a class="thread-title" href="3710.html#3711">Re: コンパイルエラーの報告（参考）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3712</span>
+    <a class="thread-title" href="3710.html#3712">Re2: コンパイルエラーの報告（参考）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3713</span>
+    <a class="thread-title" href="3710.html#3713">Re3: コンパイルエラーの報告（参考）</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3720</span>
+    <a class="thread-title" href="3710.html#3720">Win64バイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3721</span>
+    <a class="thread-title" href="3710.html#3721">Re:Win64バイナリ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3722</span>
+    <a class="thread-title" href="3710.html#3722">Re:Win64バイナリ アップロードしました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3724</span>
+    <a class="thread-title" href="3710.html#3724">Re2:Win64バイナリ アップロードしました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3725</span>
+    <a class="thread-title" href="3710.html#3725">Re3:Win64バイナリ アップロードしました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3726</span>
+    <a class="thread-title" href="3710.html#3726">Re4:Win64バイナリ アップロードしました。</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3723</span>
+    <a class="thread-title" href="3710.html#3723">Win64環境(OS,CPU,コンパイラ)＜参考＞</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3710>
+    <span class="no">[3710]</span>
+    <a class="thread-title" href="#3710">コンパイルエラーの報告（参考）</a>
+    <span class="author">KEITA</span>
+    <time datetime="2004-08-16T17:43:20">2004年08月16日 17:43</time></h1>
+    <div class="body">　ご無沙汰してます。<br><br>　現在Microsoftが提供している最新VS2005(Beta1)でコンパイル<br>しますと、"return DlgProc( ..." の行で必ずエラーが発生して<br>しまいます。<br><br>例：<br>error C4867: 'CPropCommon::DispatchEvent_PROP_BACKUP'<br>:<br> function call missing argument list;<br> use '&amp;CPropCommon::DispatchEvent_PROP_BACKUP<br>'<br>　to create a pointer to member<br><br>　例えばCPropComBackup.cpp 内では、<br>return DlgProc( DispatchEvent_PROP_BACKUP,<br>の行ですが、じっくりソースは見ていませんが、ひとまず第一引数に<br>以下のように&amp;を挿入しますと<br>return DlgProc( &amp;DispatchEvent_PROP_BACKUP,<br>正常にコンパイルできます。<br><br>　現在の最新ソースの中には15箇所ほど"return DlgProc"の行が<br>ありますが、全て同様でした。<br><br>　本来どうあるべきなのでしょうか？<br><br>　もうひとつ、<br>CLayoutMgr_New.cpp の中で_mbsstr関数が使われていますが、<br>AMD64モードでは、undefinedになってしまいました。<br>ここは strstr の利用に変更できないでしょうか？</div></section>
+    <ul><li><section><h1 id=3711>
+    <span class="no">[3711]</span>
+    <a class="thread-title" href="#3711">Re: コンパイルエラーの報告（参考）</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-16T21:26:42">2004年08月16日 21:26</time></h1>
+    <div class="body">&gt; &amp;CPropCommon::DispatchEvent_PROP_BACKUP<br>同様のエラーを見たことあります．行の折り返し方法を制御するCLayoutMgr::SetLayoutInfo()で，処理メンバ関数を変数に入れていますが，getIndentOffset_Tx2xとメンバ名だけ書かれているとVisual Cでない何かでコンパイルエラーになるとのことで&amp;CLayoutMgr::getIndentOffset_Tx2x;と書き直しました．<br><br>てなわけで要修正だと思います．<br>しかしなぜこっちはそのまま残ってしまったのでしょうね．<br><br>&gt;_mbsstr<br>うーん，AMD64だけでundefinedというのは謎な仕様ですが...<br>その他のインデント対象文字に記述されている全角の連続の途中にヒットしないように_mbsstr()を使っているわけですから，帰るとすれば独自実装しかないと思います．<br></div></section>
+    <ul><li><section><h1 id=3712>
+    <span class="no">[3712]</span>
+    <a class="thread-title" href="#3712">Re2: コンパイルエラーの報告（参考）</a>
+    <span class="author">もか</span>
+    <time datetime="2004-08-17T00:09:05">2004年08月17日 00:09</time></h1>
+    <div class="body">&gt;&gt;_mbsstr<br>#include &lt;mbstring.h&gt; してないからとかでは？<br></div></section>
+    <ul><li><section><h1 id=3713>
+    <span class="no">[3713]</span>
+    <a class="thread-title" href="#3713">Re3: コンパイルエラーの報告（参考）</a>
+    <span class="author">KEITA</span>
+    <time datetime="2004-08-17T06:48:24">2004年08月17日 06:48</time></h1>
+    <div class="body">&gt; &gt;&gt;_mbsstr<br>&gt; #include &lt;mbstring.h&gt; してないからとかでは？<br><br>そうでした。<br><br>なぜか32bitはなくてもOKでしたが、AMD64もIA64もないとNGのようです。<br>頭の方で、<br>#include &lt;mbstring.h&gt;<br>を挿入しておいていただければと．．．</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=3720>
+    <span class="no">[3720]</span>
+    <a class="thread-title" href="#3720">Win64バイナリ</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-24T09:53:05">2004年08月24日 09:53</time></h1>
+    <div class="body">そういえば最近Win64バイナリ更新していませんが，コンパイル済みのバイナリを提供して頂ければホームページの方を更新します．<br>でも今頃Win64使っているのって開発者の人だけだからソース提供で問題ないのかなぁ.<br></div></section>
+    <ul><li><section><h1 id=3721>
+    <span class="no">[3721]</span>
+    <a class="thread-title" href="#3721">Re:Win64バイナリ</a>
+    <span class="author">KEITA</span>
+    <time datetime="2004-08-24T17:55:41">2004年08月24日 17:55</time></h1>
+    <div class="body">おっと、そうでしたね。了解いたしました。<br>整理してアップロードさせていただきます。<br>数日お待ち下さい。</div></section>
+    </li><li><section><h1 id=3722>
+    <span class="no">[3722]</span>
+    <a class="thread-title" href="#3722">Re:Win64バイナリ アップロードしました。</a>
+    <span class="author">KEITA</span>
+    <time datetime="2004-08-25T13:48:34">2004年08月25日 13:48</time></h1>
+    <div class="body">Yahoo! Group<br>http://groups.yahoo.co.jp/group/sakura-editor/files/<br><br>Developer/Source に以下の修正版ソースをアップロードしました。<br>ssrc_2004-07-12_for_win64.zip  (IA64/AMD64版向け修正ソース)<br>これに伴い以前の<br>ssrc_2003-10-24_dev64.zip は削除いたしました。<br><br>また、<br>実行モジュールは、Junk側にアップロードしておきました。<br>sakura_2004-07-12_amd64.zip<br>sakura_2004-07-12_ia64.zip<br>同時に以下のファイルは削除いたしました。<br>sakura64_diff_core.lzh<br><br>実行モジュールの方は掲載されましたら削除しておきます。<br><br>IA64/AMD64版ともに単純な動作テストは行っています。</div></section>
+    <ul><li><section><h1 id=3724>
+    <span class="no">[3724]</span>
+    <a class="thread-title" href="#3724">Re2:Win64バイナリ アップロードしました。</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-25T23:48:27">2004年08月25日 23:48</time></h1>
+    <div class="body">ありがとうございました．ホームページの方に転載させて頂きました．<br><br>&gt;Developer/Source に以下の修正版ソースをアップロードしました。<br>&gt;ssrc_2004-07-12_for_win64.zip  (IA64/AMD64版向け修正ソース)<br><br>&gt;1.return DlgProc<br>&gt;2.#include &lt;mbstring.h&gt;<br>上記2点は最新ソースで反映済みです．<br><br>&gt;3.以下のようなワーニング<br>比較してみましたが本当にスペースの有無しか違いがないですね．<br>Unicodeで0082のコードって一体...(@_@)??<br><br>&gt;5.WIN64用コンパイラ名称<br>これはメインソースにも反映したいと思います．忘れなければ(^^ゞ<br><br>&gt; IA64のコンパイル時のみ以下のようなワーニングが連発<br>&gt;WinNT.h(2998) : warning C4163: '_interlockedbittestandset' : not available as an intrinsic function<br>intrinsic functionてのはアセンブラ固有の命令を使った関数ということらしいので，_interlockedbittestandsetに相当する命令はIA64に無いから直接は展開されない(関数コールになる？)ってことではないでしょうか．<br>x86でLOCK prefixとXCHG命令でアトミックにデータを入れ替えらるといったことがIA64は出来ないのかな．<br></div></section>
+    <ul><li><section><h1 id=3725>
+    <span class="no">[3725]</span>
+    <a class="thread-title" href="#3725">Re3:Win64バイナリ アップロードしました。</a>
+    <span class="author">KEITA</span>
+    <time datetime="2004-08-26T09:35:54">2004年08月26日 09:35</time></h1>
+    <div class="body">&gt; ありがとうございました．ホームページの方に転載させて頂きました．<br><br>あれれ、リンクが切れているような？<br>以前のものはダウンロードできるみたいですが．．．<br>junkから削除してしまったのですが大丈夫ですか？</div></section>
+    <ul><li><section><h1 id=3726>
+    <span class="no">[3726]</span>
+    <a class="thread-title" href="#3726">Re4:Win64バイナリ アップロードしました。</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-26T23:48:19">2004年08月26日 23:48</time></h1>
+    <div class="body">&gt;あれれ、リンクが切れているような？<br>失礼しました．アップロードするディレクトリを間違えていました．<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=3723>
+    <span class="no">[3723]</span>
+    <a class="thread-title" href="#3723">Win64環境(OS,CPU,コンパイラ)＜参考＞</a>
+    <span class="author">KEITA</span>
+    <time datetime="2004-08-25T14:19:35">2004年08月25日 14:19</time></h1>
+    <div class="body">OSについて<br><br>現在64bitWindowsは、マイクロソフトから無償配布されています。<br>以下のものはAMD64版ですが、最近ではIntelがAMD64互換のEM64T版を<br>リリースし始めたので総称してx64版とか64bit拡張版とか言われて<br>いるようです。マイクロソフトのIntelへの気使いだと思われます。<br>http://www.microsoft.com/windowsxp/64bit/evaluation/upgrade.mspx<br><br>上記ページのものをダウンロード(iso形式)してCDに焼けばインス<br>トールCDが出来ます。インストール時の注意としては、英語版です<br>ので、インストール中の言語設定で"East Asian"をチェックして<br>日本語モードにしておくことと、インストール後にKeyboardのドラ<br>イバーをjapanese106/109に変更しておく必要があります。<br><br><br>CPUについて<br><br>　上記OSのSupported processorsは以下です。<br>AMD Athlon 64<br>AMD Opteron<br>Intel Xeon including Intel EM64T<br>Intel Pentium 4 including Intel EM64T<br><br>最新Xeon(Nocona)や新しいPentium4はEM64T対応されはじめました<br>ので、今後は普通にPCを購入しても、中身は64bitマシンになって<br>いる場合が多いかと思います。<br><br><br>コンパイラについて<br><br>　64bit Windows向けのコンパイラですが、以下のページにあるよう<br>に配布されはじめました。<br>http://www.microsoft.com/japan/msdn/vstudio/2005/beta/<br>このVisual Studio 2005 日本語ベータ 1 をインストールする時に、<br>インストール項目の選択画面が表示されますが、この中のC++の項目<br>の中に64bit環境のチェック項目がありますので、そこにチェックを<br>入れてからインストールして下さい。この状態でインストールすれば、<br>WIN32,IA64,AMD64の環境のモジュールが作成できます。<br>　sakuraの現行プロジェクトファイルも不可逆変換ながらも一応は<br>読み込めるようです。<br><br>-----------------<br>　参考までに当方の環境は、<br>Athlon64 3200+マシンに、マルチブートで上記OSをインストールし、<br>このOS上にVisual Studio 2005 日本語ベータ 1をインストールして<br>コンパイル・リンクしました。（※AMD64版はその場でテスト可能）</div></section>
+    </li></ul></li></ul></li></ul></body></html>

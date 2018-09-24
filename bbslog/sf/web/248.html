@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>wikiがまた変な… | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Webトップへ</a>
+        <li><div class="list-title">
+    <span class="no">248</span>
+    <a class="thread-title" href="248.html#248">wikiがまた変な…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">249</span>
+    <a class="thread-title" href="248.html#249">RE: wikiがまた変な…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">250</span>
+    <a class="thread-title" href="248.html#250">Re2: wikiがまた変な…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">251</span>
+    <a class="thread-title" href="248.html#251">Re3: wikiがまた変な…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">252</span>
+    <a class="thread-title" href="248.html#252">Re4: wikiがまた変な…</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=248>
+    <span class="no">[248]</span>
+    <a class="thread-title" href="#248">wikiがまた変な…</a>
+    <span class="author">maru</span>
+    <time datetime="2006-12-13T01:43:32">2006年12月13日 01:43</time></h1>
+    <div class="body">ファイルシステムのトラブルにも見える…。<br>明日、復旧していることを祈ります。<br><br>日常のバックアップはwikiまかせで<br>ローカルへのバックアップは不定期手動なので<br>ちょっと困った（＾＾；</div></section>
+    <ul><li><section><h1 id=249>
+    <span class="no">[249]</span>
+    <a class="thread-title" href="#249">RE: wikiがまた変な…</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-12-14T01:26:55">2006年12月14日 01:26</time></h1>
+    <div class="body">&gt;ローカルへのバックアップは不定期手動なので<br>差分バックアップに対応したcgiがあればcronで対応出来そう．どこかにないかな．<br>(FTPだとアカウントを教えてもらわないと出来ないので．maruさん自身しか出来ないですよね)<br><br>定期的に動かせるのであれば，FTPソフトでミラーリングした上で，そのままCVSかSubversionにcommitすれば記録が全部取れますけどね．<br><br>という私も，sourcefogeの掲示板は内部でバックアップを取っているだけですけど(^^ゞ<br></div></section>
+    <ul><li><section><h1 id=250>
+    <span class="no">[250]</span>
+    <a class="thread-title" href="#250">Re2: wikiがまた変な…</a>
+    <span class="author">maru</span>
+    <time datetime="2006-12-16T13:32:58">2006年12月16日 13:32</time></h1>
+    <div class="body">原因はディスク容量制限のような気配です。<br><br>■容量制限<br>land.toの最大使用量：100MB<br><br>■これまでの使用量内訳<br>（１）wiki自体が使用している容量：約50MB<br>（２）wiki全体をbz2で固めたもの：30MB弱<br>（３）wiki設置時に作成した一時ファイル：約16MB<br><br>■障害範囲<br>（１）カウンタファイルがぶっ飛んだ<br>（２）2006-12-13の編集内容が正しく反映していないかも<br><br><br>■対策<br>（１）一時ファイルは現在不要のため削除<br>（２）bz2は復元用とローカルへのダウンロードのための１次バックアップですが、ローカルにのみバックアップするように変更しました。（cronで１日１回、１週間ローテーション）<br><br>■今後の課題<br>すでに容量制限100MBの半分を消費しているので、あと２～３ヶ月でオーバーフローしそう。<br>別サイトに引越しするか、junkとか容量消費の激しい部分を外だしするなど要検討。<br></div></section>
+    <ul><li><section><h1 id=251>
+    <span class="no">[251]</span>
+    <a class="thread-title" href="#251">Re3: wikiがまた変な…</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-12-16T19:56:30">2006年12月16日 19:56</time></h1>
+    <div class="body">&gt;■今後の課題<br>&gt;すでに容量制限100MBの半分を消費しているので、あと２～３ヶ月でオーバーフローしそう。<br>&gt;別サイトに引越しするか、junkとか容量消費の激しい部分を外だしするなど要検討。<br>とりあえず，commit済みのテストバイナリはどんどん消しましょう．<br><br>やっぱり，フリーサービスでは限界があるのかな...<br><br>以前 editor.sakura.ne.jp を1GBのスタンダードサービスで借りようか迷ったんです．年間5000円は払えない金額ではないのですが，私が死んだら消滅してしまうようなのはあまりよろしくないと思っていたら，他の人が取ってしまいました．<br>個人の好意だと不意に終わる可能性があるので，フリーサービスだけでやっていくのが理想ではあります．<br></div></section>
+    <ul><li><section><h1 id=252>
+    <span class="no">[252]</span>
+    <a class="thread-title" href="#252">Re4: wikiがまた変な…</a>
+    <span class="author">P2P</span>
+    <time datetime="2006-12-17T11:48:05">2006年12月17日 11:48</time></h1>
+    <div class="body">&gt; 個人の好意だと不意に終わる可能性があるので，フリーサービスだけでやっていくのが理想ではあります．<br><br>そこでP2P！<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

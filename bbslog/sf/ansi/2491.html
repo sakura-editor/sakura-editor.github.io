@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>localeと*icmp関数について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2491</span>
+    <a class="thread-title" href="2491.html#2491">localeと*icmp関数について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2503</span>
+    <a class="thread-title" href="2491.html#2503">Re: icmp021127.zip</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2491>
+    <span class="no">[2491]</span>
+    <a class="thread-title" href="#2491">localeと*icmp関数について</a>
+    <span class="author">もか</span>
+    <time datetime="2002-11-26T20:21:53">2002年11月26日 20:21</time></h1>
+    <div class="body">・「イ.txt」と「ツ.txt」というファイル名を区別できない<br>・同様の現況が各所である<br>等がありました。<br>実験結果をまとめて報告しておきます。<br><br>○:同じと判定=区別しない<br>×:違うと判定=区別する<br>VC:Microsoft Visual C++ 6.0 Pro SP5<br>BC:Borland C++ 5.5.1<br>(C):setlocal( CL_ALL, "C")のとき<br>(J):setlocal( CL_ALL, "Japanese")のとき<br>OSはWindows XP Home 日本語版(OEM)<br><br>■結果<br>比較文字列, A/a, 日/英, ア/ヂ, Ａ/ａ<br> stricmp (C)VC, ○,×,○,×<br> stricmp (C)BC, ○,×,○,×<br> stricmp (J)VC, ○,×,○,×<br> stricmp (J)BC, ○,○,○,○<br>_mbsicmp (C)VC, ○,×,×,○<br>_mbsicmp (C)BC, ○,×,×,×<br>_mbsicmp (J)VC, ○,×,×,○<br>_mbsicmp (J)BC, ○,×,×,×<br><br>期待する動作は，<br>ファイル名規則 , ○,×,×,×<br>全角大小同一視 , ○,×,×,○<br><br>コンパイラに異存する<br>_stricmpと_mbsicmpは動作が違う<br>特に_stricmpはSJISに未対応<br>ファイル名判定にはつかえない<br><br>■結論<br>stricmp/_mbsicmp/memicmpを使うときは，基本的に<br>my_icmp.cpp/h を利用しましょう。<br></div></section>
+    <ul><li><section><h1 id=2503>
+    <span class="no">[2503]</span>
+    <a class="thread-title" href="#2503">Re: icmp021127.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2002-12-02T10:16:33">2002年12月02日 10:16</time></h1>
+    <div class="body">&gt;stricmp/_mbsicmp/memicmpを使うときは，基本的に<br>&gt;my_icmp.cpp/h を利用しましょう。<br>ということで，<br>my_icmp.h をインクルードするようにしたパッチです。<br><br>[バグ修正]<br>・「イ.txt」と「ツ.txt」というファイル名を区別できない(stricmp)<br>・「タイプ別設定『スクリーン』タブ」のタブオーダーがおかしい<br>・[その他のインデント対象文字]が日本語に対応していない(「・」を登録すると，「E」が追加される)<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/icmp021127.zip<br></div></section>
+    </li></ul></li></ul></body></html>

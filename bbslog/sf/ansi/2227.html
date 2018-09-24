@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CDocLine | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2227</span>
+    <a class="thread-title" href="2227.html#2227">CDocLine</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=2227>
+    <span class="no">[2227]</span>
+    <a class="thread-title" href="#2227">CDocLine</a>
+    <span class="author">みく</span>
+    <time datetime="2002-07-01T19:37:59">2002年07月01日 19:37</time></h1>
+    <div class="body"><br>DIFF差分表示機能追加でマーク系の変数をビット管理にしたのだけれども、<br>よくよく考えると4バイト境界でしかないので、無駄だということが判明。<br>タスクマネージャで見てもメモリ使用量は変わりませんでした。<br><br>bool&#9;m_bModify;<br>bool&#9;m_bBookMark;<br>unsigned char&#9;m_bDiffMark;<br>＃全部で3バイトね。<br><br>として関数類は元に戻してしまった方が、ビット演算がなくなる分だけ処理速度は速くなります。<br><br>＃もちろん、将来さらに管理データが増加するときにはメモリ使用量削減の有効な方法だとは思います。<br></div></section>
+    </li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>途中経過(ソース) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3226</span>
+    <a class="thread-title" href="3226.html#3226">途中経過(ソース)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3228</span>
+    <a class="thread-title" href="3226.html#3228">Re:途中経過(ソース)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3229</span>
+    <a class="thread-title" href="3226.html#3229">Re:途中経過(ソース)</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3226>
+    <span class="no">[3226]</span>
+    <a class="thread-title" href="#3226">途中経過(ソース)</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-10-09T03:15:45">2003年10月09日 03:15</time></h1>
+    <div class="body">http://sakura-editor.sourceforge.net/snapshot/ssrc_2003-10-09.tar.bz2<br><br>▼中身<br>*[3103] Grepコマンドライン起動時の設定漏れ<br>*[3199] アイコンビットマップの読み込みをLoadImageとして，CreateDIBSectionを付けた<br>*CLoadImageでDeleteDCする前にbitmapをDCから切り離していなかったのを切り離すようにした．<br>*[3205] バージョン情報ダイアログでのFindFirstFile Handleクローズ忘れ<br>*[3221] AboutBoxのURL改善<br><br>古いSDKでもコンパイルできるようにするための定義をglobal.hに入れるのは9/20でもう入れたんだったかな．<br></div></section>
+    <ul><li><section><h1 id=3228>
+    <span class="no">[3228]</span>
+    <a class="thread-title" href="#3228">Re:途中経過(ソース)</a>
+    <span class="author">(全略)</span>
+    <time datetime="2003-10-09T16:06:47">2003年10月09日 16:06</time></h1>
+    <div class="body"><br>&gt; 古いSDKでもコンパイルできるようにするための定義をglobal.hに入れるのは9/20でもう入れたんだったかな．</div></section>
+    </li><li><section><h1 id=3229>
+    <span class="no">[3229]</span>
+    <a class="thread-title" href="#3229">Re:途中経過(ソース)</a>
+    <span class="author">(全略)</span>
+    <time datetime="2003-10-09T16:18:56">2003年10月09日 16:18</time></h1>
+    <div class="body">▼ げんたさん<br>まず最初に、すいません<br>誤って送信してしまいました<br><br>適当な案ですので意にそぐわなければスルーしてください<br><br>新規ファイルを編集中自動保存のタイミングで保存できねーよ、ってエラーダイアログが出ます<br>CEditDoc_new.cpp 528行目の条件に IsFilePathAvailable() 入れてやれば新規ファイルは保存自体しないように出来るようですが<br><br><br>あと、途中経過とのことなので次にやる予定なのかもしれませんが、前に指摘された↓<br>http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?tree=r3280<br>CEditView_Command.cpp 6040行目コメントアウトするだけでいけました<br>自分でも間違えまくったので、、、<br><br><br>&gt; 古いSDKでもコンパイルできるようにするための定義をglobal.hに入れるのは9/20でもう入れたんだったかな．<br>SDK入れてない会社のマシンでコンパイル通ったのでOKかと</div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現「(?=regexp)」での置換ができない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3868</span>
+    <a class="thread-title" href="3868.html#3868">正規表現「(?=regexp)」での置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3882</span>
+    <a class="thread-title" href="3868.html#3882">RE: 正規表現「(?=regexp)」での置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3883</span>
+    <a class="thread-title" href="3868.html#3883">RE2: 正規表現「(?=regexp)」での置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3889</span>
+    <a class="thread-title" href="3868.html#3889">RE3: 正規表現「(?=regexp)」での置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3896</span>
+    <a class="thread-title" href="3868.html#3896">Re4: 正規表現「(?=regexp)」での置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3899</span>
+    <a class="thread-title" href="3868.html#3899">Re5: 正規表現「(?=regexp)」での置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3900</span>
+    <a class="thread-title" href="3868.html#3900">Re6: 正規表現「(?=regexp)」での置換ができない</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3903</span>
+    <a class="thread-title" href="3868.html#3903">Re5: 正規表現「(?=regexp)」での置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3904</span>
+    <a class="thread-title" href="3868.html#3904">Re6: 正規表現「(?=regexp)」での置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3916</span>
+    <a class="thread-title" href="3868.html#3916">Re7: 正規表現「(?=regexp)」での置換ができない</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3908</span>
+    <a class="thread-title" href="3868.html#3908">CBregexpでのEntry Pointの取り扱いについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3910</span>
+    <a class="thread-title" href="3868.html#3910">RE: CBregexpでのEntry Pointの取り扱いについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3911</span>
+    <a class="thread-title" href="3868.html#3911">Re2: CBregexpでのEntry Pointの取り扱いについて</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3912</span>
+    <a class="thread-title" href="3868.html#3912">Re2: CBregexpでのEntry Pointの取り扱いについて</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3913</span>
+    <a class="thread-title" href="3868.html#3913">RE: CBregexpでのEntry Pointの取り扱いについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3914</span>
+    <a class="thread-title" href="3868.html#3914">RE2: CBregexpでのEntry Pointの取り扱いについて</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3868>
+    <span class="no">[3868]</span>
+    <a class="thread-title" href="#3868">正規表現「(?=regexp)」での置換ができない</a>
+    <span class="author">ありさん</span>
+    <time datetime="2005-03-06T19:47:42">2005年03月06日 19:47</time></h1>
+    <div class="body">バグ報告です。<br>(?=regexp)を使用して置換しようとしましたが<br>置換できません。<br><br>例：<br>テキストが<br>aaabbbb<br>aaabbbb<br>となっているときに<br>置換前に<br>aaa(?=b+)<br>置換後に<br>ccc<br>と入力。検索では上記の正規表現でaaaの部分に<br>マッチするのですが、置換が行われません。<br>なお、(?!regexp)を使用した検索・置換処理はできます。<br></div></section>
+    <ul><li><section><h1 id=3882>
+    <span class="no">[3882]</span>
+    <a class="thread-title" href="#3882">RE: 正規表現「(?=regexp)」での置換ができない</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-03-30T23:10:32">2005年03月30日 23:10</time></h1>
+    <div class="body">&gt;タイトル: RE: 正規表現「(?=regexp)」での置換ができない<br>&gt;発言者: ありさん<br>&gt;バグ報告です。<br>&gt;(?=regexp)を使用して置換しようとしましたが<br>&gt;置換できません。<br><br>浦島フォローになりますが・・・・<br>まず、置換できない理由を説明します。<br><br>例の「aaa(?=b+)」で検索すると、「aaabbbb」の「aaa」の部分にマッチします。<br>サクラでは、このマッチした文字列を切り出して、切り出した文字列に対して<br>再度、正規表現ライブラリにて置換処理を行うのですが、<br>切り出した文字列は、「aaa」ですから、「aaa(?=b+)」では置換に失敗します。<br>＃逆に「aaa(?!b+)は、切り出した文字列に対して置換してもマッチするので成功します。<br><br>なんでわざわざ、「aaa」を切り出すんだ？っことなのですが、<br>今回のような「先読み」をしなければ問題にならないし、<br>恐らく、「置換対象」を「選択文字」「選択始点」「選択終点」と３つ選べるようになっていて、<br>正規表現以外の置換と同様に扱うには、これが都合が良かったのかもしれません。<br>＃推測に過ぎませんが・・・（笑）<br><br>だから、今回の問題に対応するためには、マッチした文字列を切り出さずに、行末までの文字列をそのまま<br>正規表現ライブラリに渡すという変更をする必要があります。<br><br>もうすぐお試し版できそうです。<br></div></section>
+    <ul><li><section><h1 id=3883>
+    <span class="no">[3883]</span>
+    <a class="thread-title" href="#3883">RE2: 正規表現「(?=regexp)」での置換ができない</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-03-30T23:54:45">2005年03月30日 23:54</time></h1>
+    <div class="body">&gt;タイトル: RE2: 正規表現「(?=regexp)」での置換ができない<br>&gt;発言者: かろと<br>&gt;&gt;タイトル: RE: 正規表現「(?=regexp)」での置換ができない<br>&gt;&gt;発言者: ありさん<br>&gt;&gt;バグ報告です。<br>&gt;&gt;(?=regexp)を使用して置換しようとしましたが<br>&gt;&gt;置換できません。<br><br>&gt;<br>&gt;もうすぐお試し版できそうです。<br><br>こちらをお試しください。<br>ちなみに、大改造だったのですが、動作は従来通りと思われます。<br><br>http://homepage1.nifty.com/~karoto/Archive/sakura_lookahead.lzh<br><br>1.5.2.1 ベースです。<br></div></section>
+    <ul><li><section><h1 id=3889>
+    <span class="no">[3889]</span>
+    <a class="thread-title" href="#3889">RE3: 正規表現「(?=regexp)」での置換ができない</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-04-03T02:23:46">2005年04月03日 02:23</time></h1>
+    <div class="body"><br>・先読みで置換できない不具合<br>に加えて、<br>・以下のような０幅マッチで置換対象が分からない不具合<br><br>を対処しました。<br><br>&gt;&gt; (8)「^」⇒「abc」&#9;行頭に abc を挿入<br>&gt;&gt; 　△[置換(R)] で１個ずつ置換していく場合、処理自体は正常。<br>&gt;&gt; 　　ただし、カーソルも何も表示たれないため、次、どこが置換対象になっているのかが分からないので<br>&gt;&gt; 　　「この行頭は [置換(R)] する、次の行頭とその次の行頭は [下検索(D)] で飛ばしてその次の行頭を [置換(R)]．．．」<br><br><br>http://homepage1.nifty.com/~karoto/Archive/sakura_lookahead2.lzh<br><br>1.5.2.1 ベースです。<br></div></section>
+    <ul><li><section><h1 id=3896>
+    <span class="no">[3896]</span>
+    <a class="thread-title" href="#3896">Re4: 正規表現「(?=regexp)」での置換ができない</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-04-05T20:28:08">2005年04月05日 20:28</time></h1>
+    <div class="body">▼ かろとさん<br>&gt; ・先読みで置換できない不具合<br>&gt; に加えて、<br>&gt; ・以下のような０幅マッチで置換対象が分からない不具合<br><br>一般4289で、<br>&gt;&gt;&gt; 興味本位の質問ですが、検索で、後半部分だけを検索する方法は無いのでしょうか。<br>&gt;&gt;(?!^)■.*<br>&gt;&gt;でどうでしょう？<br>&gt;(置換は、なぜか、げんたさんか、もかさんの方法しか使えませんね。)<br><br>がありますが、前回までの変更だけではこれに対応できませんでした。<br>この置換をするためには、結局のところ<br>置換時にも、１行まるごと正規表現ライブラリに渡してやる必要があります。<br>＃この対応には正規表現ライブラリの変更も必要<br><br>変更点をまとめますと、<br>１．０文字マッチの置換対象がわからない不具合対応<br>２．先読み置換が出来ない不具合に対応(一般4289含む)<br>３．(^abc|cc)等検索で abc cc の後半ccにマッチしない不具合(開発2858)<br>です。<br><br>実行形式：<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sakura_lookahead3.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sakura_l<wbr>ookahead<wbr>3.<wbr>lzh</nobr></a><br><br>差分(1.5.2.1)：<br><a href=http://karoto.hp.infoseek.co.jp/Archive/sabun_lookahead3.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>sabun_lo<wbr>okahead3<wbr>.<wbr>lzh</nobr></a><br><br>正規表現ライブラリ(MatchEx, SubstExが増えてます。Match,Substは従来通りのため互換性あり）<br><a href=http://karoto.hp.infoseek.co.jp/Archive/BREGEXP.lzh target=_top><nobr>http://<wbr>karoto.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>Archive/<wbr>BREGEXP.<wbr>lzh</nobr></a><br><br></div></section>
+    <ul><li><section><h1 id=3899>
+    <span class="no">[3899]</span>
+    <a class="thread-title" href="#3899">Re5: 正規表現「(?=regexp)」での置換ができない</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-04-06T11:20:50">2005年04月06日 11:20</time></h1>
+    <div class="body">横ヤリ失礼します<br><br>▼ かろとさん<br>&gt; １．０文字マッチの置換対象がわからない不具合対応<br>これいいですね^^<br>ただ普通の検索ダイアログからの検索の時にもマッチ位置が分かってほしいので、ちょっと変更してみてはどうでしょう<br><br>diff --dos -ru backup_sakura_core/CDlgFind.cpp sakura_core/CDlgFind.cpp<br>--- backup_sakura_core/CDlgFind.cpp&#9;Sat Oct 05 14:17:40 2002<br>+++ sakura_core/CDlgFind.cpp&#9;Wed Apr 06 10:52:11 2005<br>@@ -278,6 +278,8 @@<br> <br> &#9;&#9;&#9;&#9;/* 前を検索 */<br> &#9;&#9;&#9;&#9;pcEditView-&gt;HandleCommand( F_SEARCH_PREV, TRUE, (LPARAM)m_hWnd, 0, 0, 0 );<br>+&#9;&#9;&#9;&#9;/* 再描画 2005.04.06 zenryaku 0文字幅マッチでキャレットを表示するため */<br>+&#9;&#9;&#9;&#9;pcEditView-&gt;HandleCommand( F_REDRAW, TRUE, 0, 0, 0, 0 );<br> <br> &#9;&#9;&#9;&#9;// 02/06/26 ai Start<br> &#9;&#9;&#9;&#9;// 検索開始位置を登録<br>@@ -321,6 +323,8 @@<br> <br> &#9;&#9;&#9;&#9;/* 次を検索 */<br> &#9;&#9;&#9;&#9;pcEditView-&gt;HandleCommand( F_SEARCH_NEXT, TRUE, (LPARAM)m_hWnd, 0, 0, 0 );<br>+&#9;&#9;&#9;&#9;/* 再描画 2005.04.06 zenryaku 0文字幅マッチでキャレットを表示するため */<br>+&#9;&#9;&#9;&#9;pcEditView-&gt;HandleCommand( F_REDRAW, TRUE, 0, 0, 0, 0 );<br> <br> &#9;&#9;&#9;&#9;// 02/06/26 ai Start<br> &#9;&#9;&#9;&#9;// 検索開始位置を登録<br></div></section>
+    <ul><li><section><h1 id=3900>
+    <span class="no">[3900]</span>
+    <a class="thread-title" href="#3900">Re6: 正規表現「(?=regexp)」での置換ができない</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-04-06T23:03:36">2005年04月06日 23:03</time></h1>
+    <div class="body">&gt;<br>&gt;▼ かろとさん<br>&gt;&gt; １．０文字マッチの置換対象がわからない不具合対応<br>&gt;これいいですね^^<br>&gt;ただ普通の検索ダイアログからの検索の時にもマッチ位置が分かってほしいので、ちょっと変更してみてはどうでしょう<br><br>検索ダイアログは「自動的に閉じる」設定だったので同じ事が起こっている事に気付きませんでした（笑）<br><br>変更に賛成です。<br></div></section>
+    </li></ul></li><li><section><h1 id=3903>
+    <span class="no">[3903]</span>
+    <a class="thread-title" href="#3903">Re5: 正規表現「(?=regexp)」での置換ができない</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-04-10T02:18:33">2005年04月10日 02:18</time></h1>
+    <div class="body">&gt;正規表現ライブラリ(MatchEx, SubstExが増えてます。Match,Substは従来通りのため互換性あり）<br>&gt;http://karoto.hp.infoseek.co.jp/Archive/BREGEXP.lzh<br>これはBREGEXP.dllのlinux版ソースを元に作ったものですか？<br><br>Artistic Licenseの日本語訳<br>http://www.opensource.jp/artistic/ja/Artistic-ja.html<br>によれば以下のような取り決めがなされています．<br><br>改変を公開して良い場合:<br>* 改変部分を標準版の作者が利用して良いことを明記した上で<br>* バイナリと共にソースも配布すること<br><br>改変を公開したくない場合:<br>* 実行ファイル名を変更<br>* 標準版との違いを明記<br>* 標準版の入手先を明記<br><br>なので，BREGEXP.DLLという名前のままでソース非公開というのはまずいと思います．<br>本体に取り込む以上はこれの配布についても考える必要がありますので突っ込ませて頂きました．<br><br>でもDllHandlerって，失敗したときに別の名前でRetryするように作って無いんですよね.<br>名前のリストを渡すか，複数のうちの指定された1つを返すように仕様変更しますかな．<br>それかLoadLibraryもvirtualにしてoverloadしてしまうか．<br></div></section>
+    <ul><li><section><h1 id=3904>
+    <span class="no">[3904]</span>
+    <a class="thread-title" href="#3904">Re6: 正規表現「(?=regexp)」での置換ができない</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-04-10T10:24:22">2005年04月10日 10:24</time></h1>
+    <div class="body">&gt;発言者: げんた<br>&gt;&gt;正規表現ライブラリ(MatchEx, SubstExが増えてます。Match,Substは従来通りのため互換性あり）<br>&gt;&gt;http://karoto.hp.infoseek.co.jp/Archive/BREGEXP.lzh<br>&gt;これはBREGEXP.dllのlinux版ソースを元に作ったものですか？<br>&gt;なので，BREGEXP.DLLという名前のままでソース非公開というのはまずいと思います．<br>&gt;本体に取り込む以上はこれの配布についても考える必要がありますので突っ込ませて頂きました．<br><br>つっこみありがとうございます。どっちかというと公開する方が楽かなと思ってました。<br>別にたいそうな変更しているわけでもないですし。<br>公開しちゃって、誰でもいじれる方がサクラっぽいですし。<br>リポジトリはげんたさん管理って方が統一感あっていいですのでもらっていただけるとうれしい。（笑）<br><br>http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/BRegExp_cvsrep.lzh <br><br><br>&gt;でもDllHandlerって，失敗したときに別の名前でRetryするように作って無いんですよね. <br>&gt;名前のリストを渡すか，複数のうちの指定された1つを返すように仕様変更しますかな．<br>&gt;それかLoadLibraryもvirtualにしてoverloadしてしまうか．<br><br>そうなんですよね。別の実行ファイル名にする(K2はこれを選んでる）手も考えたのですが、<br>これをするとおっしゃるように複数のDLLを指定して・・・みたいなことをしたくなり、<br>ハードルが高くて、手をこまねいてました。<br></div></section>
+    <ul><li><section><h1 id=3916>
+    <span class="no">[3916]</span>
+    <a class="thread-title" href="#3916">Re7: 正規表現「(?=regexp)」での置換ができない</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-04-17T16:56:17">2005年04月17日 16:56</time></h1>
+    <div class="body">とりあえずBREGEXP改をsourceforgeのダウンロードに登録しました．<br>公開したソースには元のバージョンからの変更点とコードの取り扱いについて記述を追加しました．<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=3908>
+    <span class="no">[3908]</span>
+    <a class="thread-title" href="#3908">CBregexpでのEntry Pointの取り扱いについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-04-11T01:11:03">2005年04月11日 01:11</time></h1>
+    <div class="body">staticな変数にDLLから取得したEntry Pointを格納して，それがNULLでないときだけ初期化するようになっていますが<br>1. デストラクタでFreeLibraryが呼ばれているので，オブジェクトを破棄するとそれ以降の動作が保証されないのでは？<br>検索・置換ではCEditViewのオブジェクトを使い回しているので問題ないと思いますが，CBregexpから派生したCRegexKeywordは動的にオブジェクトを生成・破棄されるので，正規表現キーワードを使うとやばいことになりそうです．<br><br>2. コンストラクタでInitを呼んでいますが，そこをたどっていくと仮想関数が使われています．<br>コンストラクタでは仮想関数が動かないというお約束になっているのでDLL名も取得できないような気がするんですが，なんで動くんだろう？？<br><br>1について，動作が冗長な理由はクラスコメントに書いてあるとおり効率より安全を優先したためです．毎回ロードするのが無駄と感じるのであれば，CBregexpとは別にDLLの管理だけを行うCBregexpDllとかの別のクラスをシングルトンとして作り，CBregexpのコンストラクタでオブジェクトを取得するような形にする必要があるかと思います．<br><br>class CBregexpDll : public CDllHandler {<br>public:<br>  static CBregexpDll* GetInstance();<br>...<br>};<br><br>CBregexp::CBregexp() : <br>  m_dllptr( CBregexpDll::GetInstance() )<br>{}<br><br>でもDLL呼び出しのオーバーヘッドが(ポインタ参照1回分)大きくなって，あんまり効果なさそう．<br>::LoadLibraryの2回目以降がWindows内部でカウントしているだけなら手間をかけた割に効果が薄いように思いますが...<br><br>---<br>あとクラスで使う定数は#defineではなくてenumを使ってください．そのわけはスコープがクラス内に閉じこめられるからです．ただ今回の場合は定数を使うのがCBregexpの内部処理だけのようなので，クラスとは関係なくcppファイルの方で定義した方がいいかも．<br></div></section>
+    <ul><li><section><h1 id=3910>
+    <span class="no">[3910]</span>
+    <a class="thread-title" href="#3910">RE: CBregexpでのEntry Pointの取り扱いについて</a>
+    <span class="author">みく</span>
+    <time datetime="2005-04-11T19:21:08">2005年04月11日 19:21</time></h1>
+    <div class="body"><br>(全略)さん作のjregexって、どうなったんだろう。<br>とか、囁いてみたりする。<br></div></section>
+    <ul><li><section><h1 id=3911>
+    <span class="no">[3911]</span>
+    <a class="thread-title" href="#3911">Re2: CBregexpでのEntry Pointの取り扱いについて</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-04-11T19:58:30">2005年04月11日 19:58</time></h1>
+    <div class="body">▼ みくさん<br>&gt; (全略)さん作のjregexって、どうなったんだろう。<br>&gt; とか、囁いてみたりする。<br>まいど^^;<br>一応↓でこっそり公開はしています<br>http://qwerty.s2.xrea.com/storage/sakura/comment.html<br><br>複数行検索とかが中途半端にしかできないのでそれがちゃんとできるようになったら<br>改めて持ってこようかと考えて早1年、、、なーんもやってません^^;<br>普通の正規表現による単一行の検索ではあまり問題もなさそうですので、よかったら遊んでみてくださいな<br><br><br>オフトピだけだとアレなのでバグ報告<br>かろとさんの0文字マッチのパッチですが<br>矩形選択で横に一文字も選択せずに複数行選択し文字を入力するとキャレット(?)が残るみたいです</div></section>
+    </li><li><section><h1 id=3912>
+    <span class="no">[3912]</span>
+    <a class="thread-title" href="#3912">Re2: CBregexpでのEntry Pointの取り扱いについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-04-11T22:45:06">2005年04月11日 22:45</time></h1>
+    <div class="body">前回試したときにはNFAをそのまま実装したようなコードで，Perlの正規表現に比べるとパフォーマンスの面で劣るのではないかと考えて見送ったままになっておりました．単純NFAだと2^n回探索するようなパターンでもPerlは速度が劣化しないですし，ワイルドカードが使われていないときは別のアルゴリズムを使うとか．(Perlの正規表現エンジンと比較すること自体酷ですが...)<br><br>---<br>ところで，普通に正規表現検索を実装するとある位置から比較して受理されなかったら1文字進んでとなるわけですが，マッチしないとわかった範囲を一気に読み飛ばすアルゴリズムって無いんでしょうかね，BM法みたいに．例えば.*AAだったらAAというパターンが出ない限りは絶対マッチしないので，固定部分を探してから逆に戻るとか．(後方参照があると使えないか...)<br></div></section>
+    </li></ul></li><li><section><h1 id=3913>
+    <span class="no">[3913]</span>
+    <a class="thread-title" href="#3913">RE: CBregexpでのEntry Pointの取り扱いについて</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-04-12T00:35:49">2005年04月12日 00:35</time></h1>
+    <div class="body">&gt;タイトル: RE: CBregexpでのEntry Pointの取り扱いについて<br>&gt;発言者: げんた<br><br>チェックありがとうございます。<br><br>&gt;staticな変数にDLLから取得したEntry Pointを格納して，それがNULLでないときだけ初期化するようになっていますが<br>&gt;1. デストラクタでFreeLibraryが呼ばれているので，オブジェクトを破棄するとそれ以降の動作が保証されないのでは？<br>&gt;検索・置換ではCEditViewのオブジェクトを使い回しているので問題ないと思いますが，CBregexpから派生したCRegexKeywordは動的にオブジェクトを生成・破棄されるので，正規表現キーワードを使うとやばいことになりそうです．<br><br>うむ、やばいことになりそうです。<br>なんで動いているのか？と思ったら、結局 CRegexKeywordコンストラクタやら InitRegexp() やらで、<br>Init()呼ばれてて、LoadLibrary()してるんですね。（笑）<br>CBregexpのコンストラクタで Init()するしない・・・ってのは意味ないのに気が付いてませんでした。<br><br>最初に思ったのは、Entry Pointがインスタンス毎にある必要ないよなぁと思って staticにしましたが、<br>m_hInstanceも同じようにしないと片手落ちですね。<br>とりあえず、staticにするのは、再検討ということで、元に戻します。<br><br><br>&gt;2. コンストラクタでInitを呼んでいますが，そこをたどっていくと仮想関数が使われています．<br>&gt;コンストラクタでは仮想関数が動かないというお約束になっているのでDLL名も取得できないような気がするんですが，なんで動くんだろう？？<br><br>そんなお約束が！なんで動くんでしょうね・・デバッグモードで追いかけても仮想関数呼ばれてますね。。<br><br><br>&gt;1について，動作が冗長な理由はクラスコメントに書いてあるとおり効率より安全を優先したためです．毎回ロードするのが無駄と感じるのであれば，CBregexpとは別にDLLの管理だけを行うCBregexpDllとかの別のクラスをシングルトンとして作り，CBregexpのコンストラクタでオブジェクトを取得するような形にする必要があるかと思います．<br><br>ふむふむ。今回はパスして、元に戻すことにします。<br><br><br>&gt;あとクラスで使う定数は#defineではなくてenumを使ってください．そのわけはスコープがクラス内に閉じこめられるからです．ただ今回の場合は定数を使うのがCBregexpの内部処理だけのようなので，クラスとは関係なくcppファイルの方で定義した方がいいかも．<br><br>enumだとスコープがクラス内になるのは知っていたので、もちろんそうしたかったのですが、<br>enumにすると、 m_ePatType &amp; PAT_BOTTOM　というのが出来ないと思ったので、define使ってしまいました。<br>でも、m_ePatTypeを enum型にしなければ良かったんですね・・・まずは、enumに修正します。<br></div></section>
+    <ul><li><section><h1 id=3914>
+    <span class="no">[3914]</span>
+    <a class="thread-title" href="#3914">RE2: CBregexpでのEntry Pointの取り扱いについて</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-04-12T00:49:04">2005年04月12日 00:49</time></h1>
+    <div class="body"><br>修正版は、<br><br>http://karoto.hp.infoseek.co.jp/Archive/sabun_lookahead4.lzh<br><br>です。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

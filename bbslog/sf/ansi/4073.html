@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ファイルダイアログ関連変更 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4073</span>
+    <a class="thread-title" href="4073.html#4073">ファイルダイアログ関連変更</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4075</span>
+    <a class="thread-title" href="4073.html#4075">Re:ファイルダイアログ関連変更</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4080</span>
+    <a class="thread-title" href="4073.html#4080">Re2:ファイルダイアログ関連変更</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4073>
+    <span class="no">[4073]</span>
+    <a class="thread-title" href="#4073">ファイルダイアログ関連変更</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-10-29T13:43:48">2005年10月29日 13:43</time></h1>
+    <div class="body">ファイルダイアログ関連のパッチを作成しました。<br>[ssrc_2005-10-22との差分]<br><a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/ssrc_2005-10-22_OpenFile.zip target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr>ssrc_200<wbr>5-<wbr>10-<wbr>22_OpenF<wbr>ile.<wbr>zip</nobr></a><br><br>・ファイルダイアログへプレースバー追加 &gt;&gt;data:4504<br>・最近のファイル/フォルダコンボのドロップダウンリストをアイテムの最大表示幅にあわせて広げる<br><br>動作確認: Windows XP(SP2),2000(SP4),NT4(SP6a),98/98SE<br>（XP,2000は実機、その他はVPC/VMware環境）</div></section>
+    <ul><li><section><h1 id=4075>
+    <span class="no">[4075]</span>
+    <a class="thread-title" href="#4075">Re:ファイルダイアログ関連変更</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-10-30T15:10:46">2005年10月30日 15:10</time></h1>
+    <div class="body">Windows 2000スタイルの場合に、フォルダコンボ選択で自動的にフォルダ移動する機能が動作しなくなっていたので修正しました。<br>また、サイズ変更時に追加コントロールが少しちらつく場合があるようなので子ダイアログに WS_CLIPCHILDREN を追加しました。<br>これらの修正を反映したパッチを Up しておきます。<br><a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/ssrc_2005-10-22_OpenFile2.zip target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr>ssrc_200<wbr>5-<wbr>10-<wbr>22_OpenF<wbr>ile2.<wbr>zip</nobr></a><br><br>前の、<br>&gt; <a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/ssrc_2005-10-22_OpenFile.zip target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr>ssrc_200<wbr>5-<wbr>10-<wbr>22_OpenF<wbr>ile.<wbr>zip</nobr></a><br>は削除しました。</div></section>
+    <ul><li><section><h1 id=4080>
+    <span class="no">[4080]</span>
+    <a class="thread-title" href="#4080">Re2:ファイルダイアログ関連変更</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-02T23:28:27">2005年11月02日 23:28</time></h1>
+    <div class="body">さらに改良版です。(^^;<br><a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/ssrc_2005-10-22_OpenFile3.zip target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr>ssrc_200<wbr>5-<wbr>10-<wbr>22_OpenF<wbr>ile3.<wbr>zip</nobr></a><br><br>Windows Me でも 2000 タイプのダイアログ表示になるようにしました。<br>また、TweakUI や regedit などでコモンダイアログのカスタマイズを行っている場合でもレイアウトが崩れたり動作に支障が出たりしないように改善。<br>↑NoPlacesBar（プレースバー非表示）や NoFileMru（ファイル名にエディットボックス使用）の設定<br><br>内部処理としてはダイアログテンプレートを２つ用意して切り替える方式から、１つにして各コントロールを移動する方式に変えています。<br>テスト環境に Me(VPC) を加え、各種OS/設定で再度動作確認しました。<br>※Win95 はやってません。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

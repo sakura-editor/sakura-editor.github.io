@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タブ区切りテキストの桁そろえ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">446</span>
+    <a class="thread-title" href="446.html#446">タブ区切りテキストの桁そろえ</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=446>
+    <span class="no">[446]</span>
+    <a class="thread-title" href="#446">タブ区切りテキストの桁そろえ</a>
+    <span class="author">ぜっと</span>
+    <time datetime="2008-10-16T13:21:12">2008年10月16日 13:21</time></h1>
+    <div class="body">タブ区切り(TSV)テキストを桁そろえするマクロです。<br>JavaScriptで書いていますので拡張子 .js で保存してください。<br><br>ごく単純な方法でやっていますので速度は期待できませんし、<br>コメントにも記載しているようにエスケープされたフィールドは正しく処理できません。<br><br>右詰めにしたい場合は桁そろえ部分の出力順を入れ替えればOKです<br><br>－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－<br>// TSVで記載されたテキストの桁そろえを行います。 <br>// 対象となる文字列を選択してマクロを実行してください <br>// <br>// 注意<br>// ・ダブルクォートなどで囲んでタブをエスケープしたフィールドには対応していません。<br>// ・同様に改行を含むフィールドにも対応していません。<br><br><br>// 設定ぽいもの <br>var&#9;FIELD_SPLITTER&#9;= "\t";&#9;&#9;&#9;// 行内のフィールドを区切る文字列 <br>//var&#9;FIELD_SPLITTER&#9;= new RegExp( "\s+", "g" );&#9;&#9;&#9;// もしくは正規表現オブジェクト(こちらの形式を使うと、空のフィールドは詰められます) <br>var&#9;FIELD_SEPARATOR&#9;= " ";&#9;&#9;&#9;// 整形する際に、フィールド間に入れる文字列<br>var&#9;EOL&#9;&#9;&#9;&#9;= "\r\n";&#9;&#9;// 改行コード <br><br>// C言語風に。。。 <br>Main();<br><br>function Main()<br>{<br>&#9;// 選択状態をチェック <br>&#9;if( !Editor.IsTextSelected() ){<br>&#9;&#9;// 未選択なら何もしない <br>&#9;&#9;return;<br>&#9;}<br> <br>&#9;// 選択文字列の取得 <br>&#9;var&#9;selectedStr&#9;&#9;= Editor.GetSelectedString( 0 );<br> <br>&#9;// 選択文字列を改行で分割 <br>&#9;var&#9;splitedLines&#9;= selectedStr.split( /[\r\n]+/g );<br> <br>&#9;// 各行のフィールド分割とフィールド毎の最大文字数算出 <br>&#9;var&#9;lineFields = new Array();<br>&#9;var&#9;fieldSize  = new Array();<br>&#9;var lineCnt;<br>&#9;var fldCnt;<br>&#9;for( lineCnt = 0; lineCnt &lt; splitedLines.length; lineCnt++ ){<br>&#9;&#9;// 行をフィールドに分割 <br>&#9;&#9;// ※ Microsoft JScriptの仕様により、正規表現オブジェクトを利用して分割した場合は空のフィールドが削除された分割結果となるようです <br>&#9;&#9;lineFields[lineCnt] = splitedLines[lineCnt].split( FIELD_SPLITTER );<br><br>&#9;&#9;// 各フィールドの最大文字数算出 <br>&#9;&#9;for( fldCnt = 0; fldCnt &lt; lineFields[lineCnt].length; fldCnt++ ){<br>&#9;&#9;&#9;var&#9;fieldWidth = GetStrWidth( lineFields[lineCnt][fldCnt] );<br>&#9;&#9;&#9;if( !fieldSize[fldCnt]&#9;&#9;&#9;&#9;&#9;// このフィールドの最大幅がまだ保持されてない <br>&#9;&#9;&#9; || (fieldSize[fldCnt] &lt; fieldWidth) ){&#9;// 保持している最大幅より大きい今回のフィールド幅が大きい <br>&#9;&#9;&#9;&#9;fieldSize[fldCnt]  = fieldWidth;<br>&#9;&#9;&#9;}<br>&#9;&#9;}<br>&#9;}<br>&#9;// 桁をそろえた文字列として結合する <br>&#9;var&#9;formattedStr = "";<br>&#9;for( lineCnt = 0; lineCnt &lt; splitedLines.length; lineCnt++ ){<br>&#9;&#9;for( fldCnt = 0; fldCnt &lt; lineFields[lineCnt].length; fldCnt++ ){<br> <br>&#9;&#9;&#9;// 右詰めとするには、フィールド追加とスペース埋めの順を逆にすればOK <br> <br>&#9;&#9;&#9;// フィールド文字列結合 <br>&#9;&#9;&#9;formattedStr += lineFields[lineCnt][fldCnt];<br> <br>&#9;&#9;&#9;// 最大フィールドサイズとの差数分の半角空白を追加 <br>&#9;&#9;&#9;var spaceNum = fieldSize[fldCnt] - GetStrWidth( lineFields[lineCnt][fldCnt] );<br>&#9;&#9;&#9;for( var cnt = 0; cnt &lt; spaceNum; cnt++ ){<br>&#9;&#9;&#9;&#9;formattedStr += " ";<br>&#9;&#9;&#9;}<br> <br>&#9;&#9;&#9;// フィールドを区切り文字列の追加 <br>&#9;&#9;&#9;formattedStr += FIELD_SEPARATOR;<br>&#9;&#9;}<br>&#9;&#9;formattedStr += EOL;<br>&#9;}<br> <br>&#9;// エディタに書き戻す <br>&#9;Editor.InsText( formattedStr );<br>}<br><br>// 半角を 1 ，全角を 2 とカウントした文字列の幅を取得する <br>function GetStrWidth( str )<br>{<br>&#9;// 半角文字を削除 <br>&#9;var&#9;delHalfWidth = str.replace( /[\u0001-\u00FF]/g, "" );<br> <br>&#9;// 文字列の幅(?) = (残った全角文字の数 * 2) + (消えた半角文字の数)<br>&#9;var&#9;strWidth = (delHalfWidth.length * 2) + (str.length - delHalfWidth.length);<br> <br>&#9;return strWidth;<br>}<br>－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－<br><br></div></section>
+    </li></ul></body></html>

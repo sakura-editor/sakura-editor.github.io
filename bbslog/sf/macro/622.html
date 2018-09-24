@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>特定のキーワードの上に改行を入れるマクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">622</span>
+    <a class="thread-title" href="622.html#622">特定のキーワードの上に改行を入れるマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">623</span>
+    <a class="thread-title" href="622.html#623">Re:特定のキーワードの上に改行を入れるマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">636</span>
+    <a class="thread-title" href="622.html#636">Re2:特定のキーワードの上に改行を入れるマクロ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=622>
+    <span class="no">[622]</span>
+    <a class="thread-title" href="#622">特定のキーワードの上に改行を入れるマクロ</a>
+    <span class="author">なかの</span>
+    <time datetime="2017-04-28T01:38:28">2017年04月28日 01:38</time></h1>
+    <div class="body">どうしても上手くいかないのですが良い方法ありませんか？</div></section>
+    <ul><li><section><h1 id=623>
+    <span class="no">[623]</span>
+    <a class="thread-title" href="#623">Re:特定のキーワードの上に改行を入れるマクロ</a>
+    <span class="author">なかの</span>
+    <time datetime="2017-04-30T20:00:57">2017年04月30日 20:00</time></h1>
+    <div class="body">改行入れれました。特定のキーワードが複数ある場合、<br>例えば10回の場合は10回だけ発生するように繰り返し<br>行いたいのですが、今の所分かっていません。</div></section>
+    <ul><li><section><h1 id=636>
+    <span class="no">[636]</span>
+    <a class="thread-title" href="#636">Re2:特定のキーワードの上に改行を入れるマクロ</a>
+    <span class="author">SNK</span>
+    <time datetime="2017-06-12T00:54:49">2017年06月12日 00:54</time></h1>
+    <div class="body">普通に置換機能でうまくいきませんか？<br>たとえば、メニュー＞検索＞置換  のダイアログにて、<br> - 置換前  mykeyword<br> - 置換後  mykeyword\n <br> - [レ]正規表現(E)  にチェックを入れる。<br>として置換してみたらいかがでしょうか？<br><br>なお、これを「キーマクロの記録」すると、<br>```<br>ReplaceAll('abc', 'abc\\n', 132);&#9;// すべて置換<br>```<br>というマクロになります。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

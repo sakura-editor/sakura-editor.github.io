@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>置換による行削除ができなくなった？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3562</span>
+    <a class="thread-title" href="3562.html#3562">置換による行削除ができなくなった？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3565</span>
+    <a class="thread-title" href="3562.html#3565">Re: 置換による行削除ができなくなった？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3566</span>
+    <a class="thread-title" href="3562.html#3566">Re2: 置換による行削除ができなくなった？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3567</span>
+    <a class="thread-title" href="3562.html#3567">Re3: 置換による行削除ができなくなった？</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3569</span>
+    <a class="thread-title" href="3562.html#3569">Re3: 置換による行削除ができなくなった？</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3562>
+    <span class="no">[3562]</span>
+    <a class="thread-title" href="#3562">置換による行削除ができなくなった？</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-05-02T22:19:18">2004年05月02日 22:19</time></h1>
+    <div class="body">正規表現置換で<br><br>^hogehoge.*\r$<br>で以前は行全体を削除できたはずなのですが，最新版で試すとLFが残っちゃいますね．<br>^hogehoge.*[\r\n]$<br>^hogehoge.*[\r\n]+$<br>^hogehoge.*\r\n<br><br>とか色々試しましたが，全部同じです．<br></div></section>
+    <ul><li><section><h1 id=3565>
+    <span class="no">[3565]</span>
+    <a class="thread-title" href="#3565">Re: 置換による行削除ができなくなった？</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-03T23:17:17">2004年05月03日 23:17</time></h1>
+    <div class="body">^hoge.*[\r\n]?<br>でできました。複数行にマッチしないのを逆手にとったやり方です。<br><br>$の扱いは,1.3.10.1あたりで変更されているから、その影響でしょう。<br>$ → hogehogeで、hogehogeを改行の手前と、EOF直前に挿入できるようにした関係で、<br>昔は、$の動作がMulti-Lineな行末(改行コードより後ろの1行の末尾)にマッチしていました。<br>今は、動作上は改行コード(\nおよび\r)の直前にマッチしているように振舞う(Single Lineっていうのかな)ってことみたいです。<br><br>ということで、ヘルプの一部記述は現状の動作と違います。(^_^;<br></div></section>
+    <ul><li><section><h1 id=3566>
+    <span class="no">[3566]</span>
+    <a class="thread-title" href="#3566">Re2: 置換による行削除ができなくなった？</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-03T23:31:53">2004年05月03日 23:31</time></h1>
+    <div class="body">2点訂正します。<br>&gt;^hoge.*[\r\n]?<br>これだと、\n\rの改行にマッチできませんでした。<br>正：^hoge.*[\r\n]*<br><br>&gt;$ → hogehogeで、hogehogeを改行の手前と、EOF直前に挿入できるようにした関係で、<br>EOF直前、というか改行コードがない行にはマッチしませんでした。<br>誤：hogehogeを改行の手前と、EOF直前に挿入<br>正：hogehogeを改行の手前に挿入<br></div></section>
+    <ul><li><section><h1 id=3567>
+    <span class="no">[3567]</span>
+    <a class="thread-title" href="#3567">Re3: 置換による行削除ができなくなった？</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-03T23:51:32">2004年05月03日 23:51</time></h1>
+    <div class="body">連続投稿、すみません。<br>Multi-LineとSingle-Lineという書き方も間違ってたようです。<br>昔は、Multi-Lineの改行直前(\n)と行末の両方にマッチしていたはずです。<br>今は、改行手前(\rまたは\n)にのみマッチしているような振る舞いになったというのが正しいのかな。<br># なんだか、頭の中がよけい混乱してきました。<br></div></section>
+    </li><li><section><h1 id=3569>
+    <span class="no">[3569]</span>
+    <a class="thread-title" href="#3569">Re3: 置換による行削除ができなくなった？</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2004-05-06T02:46:53">2004年05月06日 02:46</time></h1>
+    <div class="body">▼ もかさん<br> ^hogehoge.*[\r\n][\r\n]?<br>が、正解だ思うのですが、<br>&gt;^hogehoge.*\r\n<br>が、駄目なのは、改行がCR+LF以外だったのでは？<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

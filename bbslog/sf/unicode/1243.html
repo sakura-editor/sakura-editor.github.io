@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告(Keep) 検索・置換画面での冗長なキャレット消失対策を処分 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1243</span>
+    <a class="thread-title" href="1243.html#1243">Commit報告(Keep) 検索・置換画面での冗長なキャレット消失対策を処分</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1243>
+    <span class="no">[1243]</span>
+    <a class="thread-title" href="#1243">Commit報告(Keep) 検索・置換画面での冗長なキャレット消失対策を処分</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-06-12T15:55:47">2010年06月12日 15:55</time></h1>
+    <div class="body">リビジョン：<br>　rev1770<br><br>変更種別：<br>　保守<br><br>内容：<br>Keep: 検索・置換画面での冗長なキャレット消失対策を処分<br><br>以前は、コンボボックス上でEnterキーを押して下検索するとコンボボックスからキャレットが消えてしまっていて、その対症療法として、下検索したら無理やりコンボにフォーカスを戻す処理を入れていたようです(rev207-)。<br>そのため、[下検索]ボタンを押した場合でもコンボにフォーカスが戻るという、やや奇妙な動作になってしまっていました。<br>とっくの昔にコンボ上のEnterキーでもキャレットが消えることはないように抜本対策されている(rev265-)のに、対症療法のほうだけまだ残っていたようなので、これを除去し、[下検索]ボタンを押した場合は[下検索]ボタンにフォーカスが残るようにしました。<br><br>（参考）<br>キャレット消失の原因だった箇所<br>(ANSI 版ソース ssrc_2002-02-01.tar.bz2 解析結果)<br><br>CFindDlg::OnBnClicked<br>└→CEditView::HandleCommand<br>　　└→CEditView::Command_SEARCH_NEXT<br>　　　　└→CEditView::ChangeCurRegexp<br>　　　　　　└→CEditView::RedrawAll<br>　　　　　　　　└→CEditView::OnKillFocus<br>　　　　　　　　　　└→::DestroyCaret<br><br>今はRedrawAll()からDestroyCaret()に至るルートは無いのでキャレットが破棄されることはありません。</div></section>
+    </li></ul></body></html>

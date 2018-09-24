@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バグ修正用パッチ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3974</span>
+    <a class="thread-title" href="3974.html#3974">バグ修正用パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3975</span>
+    <a class="thread-title" href="3974.html#3975">Re: バグ修正用パッチ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3976</span>
+    <a class="thread-title" href="3974.html#3976">選択処理について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3977</span>
+    <a class="thread-title" href="3974.html#3977">RE: バグ修正用パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3978</span>
+    <a class="thread-title" href="3974.html#3978">RE2: バグ修正用パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3979</span>
+    <a class="thread-title" href="3974.html#3979">RE3: バグ修正用パッチ</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3974>
+    <span class="no">[3974]</span>
+    <a class="thread-title" href="#3974">バグ修正用パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2005-07-11T23:53:34">2005年07月11日 23:53</time></h1>
+    <div class="body">バグ修正パッチです。内容は以下の通りです。<br>e-groups の fix050711.zip です。<br>[バグ修正]<br>・アウトプットウィンドウの状態のままファイルを開いてしまう<br>    &gt;&gt;data:4485<br>    Grepウィンドウと同じようにしました。<br>    ファイルを開くと、他のウィンドウを作りそちらに表示します。<br>    閉じて(無題)をすると、空の普通のウィンドウになります。<br>・NULを含むファイルをUTF-7で保存するとNULが復号できなくなる<br>    2002年10月から、コントロールコードもBASE64で保存するように変えましたが、<br>    UTF-7で使用する修正BASE64は、BASE64文字列の最後にあるNULをパディング扱いするため、復号時に削除されていました。<br>・UTF-7の自動認識のポイントが高くなっていた<br>    SJISに変換できる・できないに関わらず、ポイントが加算されてました。<br>[その他]<br>・通常の範囲選択部分をまとめた<br></div></section>
+    <ul><li><section><h1 id=3975>
+    <span class="no">[3975]</span>
+    <a class="thread-title" href="#3975">Re: バグ修正用パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2005-07-12T22:57:40">2005年07月12日 22:57</time></h1>
+    <div class="body">&gt;・NULを含むファイルをUTF-7で保存するとNULが復号できなくなる<br>&gt;    2002年10月から、コントロールコードもBASE64で保存するように変えましたが、<br>&gt;    UTF-7で使用する修正BASE64は、BASE64文字列の最後にあるNULをパディング扱いするため、復号時に削除されていました。<br>お手数かけて、すみません。<br>これは、元のコードで、まったく問題ありませんでした。<br><br>パッチ中の、CMemory.cpp<br>+&#9;@date 2005.07.11 Moca NULはBASE64復号時に削除されるため、NULを直接エンコードするように変更<br>(中略)<br>+&#9;&#9;L'\x00' == wc || // NUL<br>以上の2行は無視してください。<br><br><br>改めて調べ直してみたらUTF-7は、そもそも24bit(3byte)になるようにパッドを付けない仕様でした。<br>ただし、6bitの倍数になるように1-5bitを付加され、それが0でない場合、本来は不正です。<br>しかしサクラエディタの場合は、問答無用で無視します。<br>例えば「+AAB-」でも、「+AAA-」と同じと見なしてデコードされます。<br></div></section>
+    </li><li><section><h1 id=3976>
+    <span class="no">[3976]</span>
+    <a class="thread-title" href="#3976">選択処理について</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-07-12T23:52:06">2005年07月12日 23:52</time></h1>
+    <div class="body">&gt;・通常の範囲選択部分をまとめた<br>選択処理については先日選択範囲の文字数計算を作ったときにいろいろと見たのですが，3種類の座標の意味がわかりにくいですよね．<br>一番ダメだと思ったのはCEditView::m_nSelect**Oldの変数で，これは実質的にDrawSelectArea()のパラメータとしてしか使われないのでDrawSelectArea()を呼ぶたびに明示的に引数で渡すべきだと思います．<br>と考えると始点～終点を表す座標4変数はまとめて1つの構造体として扱えるようにしておくのがいいかな．<br><br>選択処理だけ別クラスに分けるべきなのかなー．<br></div></section>
+    </li><li><section><h1 id=3977>
+    <span class="no">[3977]</span>
+    <a class="thread-title" href="#3977">RE: バグ修正用パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-07-14T00:07:15">2005年07月14日 00:07</time></h1>
+    <div class="body">&gt;・通常の範囲選択部分をまとめた<br>CEditView::Command_SELECTALL()で<br>[変更前]<br>m_nSelectLineBgnFrom = 0;&#9;/* 範囲選択開始行(原点) */<br>m_nSelectColmBgnFrom = 0;&#9;/* 範囲選択開始桁(原点) */<br>m_nSelectLineBgnTo = 0;&#9;&#9;/* 範囲選択開始行(原点) */<br>m_nSelectColmBgnTo = 0;&#9;&#9;/* 範囲選択開始桁(原点) */<br><br>m_nSelectLineFrom =&#9;0;<br>m_nSelectColmFrom = 0;<br>m_nSelectLineTo = m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount();<br>m_nSelectColmTo = 0;<br><br>[変更後]<br>SetSelectArea( 0, 0, m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount(), 0 );<br>とm_nSelectLineBgnToに設定される値が異なっていますが，これはOK？<br><br>---<br>CEditWnd::SetDebugModeOFF()が新たに作られていますが，アウトプットウィンドウとは出力結果を取り込むための「バッファ」が本質だと思うので，CEditDocに追加した方がいいと思います．そうすればDebugModeフラグも中でチェックできますし．<br><br>---<br>CMemory::CheckKanjiCode_UTF7()でバッファとして<br>char szMbChar[4];<br>を取っていますが，ここはきちんとマニュアル通りlimits.hをインクルードした上で<br>char szMbChar[MB_LEN_MAX];<br>とした方が行儀がよいのでは？<br></div></section>
+    <ul><li><section><h1 id=3978>
+    <span class="no">[3978]</span>
+    <a class="thread-title" href="#3978">RE2: バグ修正用パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2005-07-14T02:10:10">2005年07月14日 02:10</time></h1>
+    <div class="body">毎回レビュー等ありがとうございます。<br># 変な所多くて、すみません。<br><br>&gt;[変更後]<br>&gt;SetSelectArea( 0, 0, m_pcEditDoc-&gt;m_cLayoutMgr.GetLineCount(), 0 );<br>&gt;とm_nSelectLineBgnToに設定される値が異なっていますが，これはOK？<br>定義は以下のようになってますから<br>設定される値は変更前と同じですよね？<br>SetSelectArea( A, B, C, D ){<br>m_nSelectLineBgnFrom = A;<br>m_nSelectColmBgnFrom = B;<br>m_nSelectLineBgnTo = A;<br>m_nSelectColmBgnTo = B;<br>m_nSelectLineFrom = A;<br>m_nSelectColmFrom = B;<br>m_nSelectLineTo = C;<br>m_nSelectColmTo = D;<br>}<br><br>&gt;---<br>&gt;CEditWnd::SetDebugModeOFF() (中略.. )(は)CEditDocに追加した方がいいと思います．<br>私もそう思ったのですが、SetDebugModeON()があったのと、m_pShareData-&gt;m_hwndDebugのデバッグのウィンドウ指定があるので、とりあえずWndのほうに置いておきました。<br>でも、新分割画面を考えると......<br><br><br>&gt;CMemory::CheckKanjiCode_UTF7()でバッファとして<br>&gt;char szMbChar[4];<br>&gt;を取っていますが，ここはきちんとマニュアル通りlimits.hをインクルードした上で<br>&gt;char szMbChar[MB_LEN_MAX];<br>&gt;とした方が行儀がよいのでは？<br>MB_LEN_MAXはVC6のヘッダだと 2、VC71のヘッダだと 5 に設定されていました。<br>gentaさんの言うように、MB_LEN_MAXを使わないとまずいようです。<br></div></section>
+    <ul><li><section><h1 id=3979>
+    <span class="no">[3979]</span>
+    <a class="thread-title" href="#3979">RE3: バグ修正用パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-07-14T02:57:21">2005年07月14日 02:57</time></h1>
+    <div class="body">&gt;設定される値は変更前と同じですよね？<br>確かに，よく見たらそうでした．私の方がちょっと勘違いしていました．<br><br>&gt;&gt;---<br>&gt;&gt;CEditWnd::SetDebugModeOFF() (中略.. )(は)CEditDocに追加した方がいいと思います．<br>&gt;私もそう思ったのですが、SetDebugModeON()があったのと、m_pShareData-&gt;m_hwndDebugのデバッグのウィンドウ指定があるので、とりあえずWndのほうに置いておきました。<br>確かにONもありますね．でも，m_bDebugModeはCEditDocですし...<br>CEditWndを通さずにCEditDocに外から直接メッセージを送れればこんなことしなくていいんでしょうけど．<br><br>&gt;でも、新分割画面を考えると...... <br>(∩゜д゜)アーアーきこえなーい...また今度見直すか...<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

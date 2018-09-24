@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Vista バージョン番号 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4482</span>
+    <a class="thread-title" href="4482.html#4482">Vista バージョン番号</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4489</span>
+    <a class="thread-title" href="4482.html#4489">Vista β2でのタブアイコン表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4490</span>
+    <a class="thread-title" href="4482.html#4490">RE: Vista β2でのタブアイコン表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4491</span>
+    <a class="thread-title" href="4482.html#4491">Re2: Vista β2でのタブアイコン表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4492</span>
+    <a class="thread-title" href="4482.html#4492">manifestの優先順位</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4482>
+    <span class="no">[4482]</span>
+    <a class="thread-title" href="#4482">Vista バージョン番号</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-06-17T02:30:06">2006年06月17日 02:30</time></h1>
+    <div class="body">Windows Vista β2で、COsVersionInfo::IsLuna() が<br>FALSE になってしまっています。<br>Windows Ver6.0 も TRUE になるように...<br><br>Index: sakura_core/COsVersionInfo.h<br>===================================================================<br>--- sakura_core/COsVersionInfo.h&#9;(revision 975)<br>+++ sakura_core/COsVersionInfo.h&#9;(working copy)<br>@@ -109,8 +110,8 @@<br> &#9;&#9;@date 2003.09.06 genta<br> &#9;*/<br> &#9;BOOL IsLuna(){<br>-&#9;&#9;return (m_cOsVersionInfo.dwMajorVersion &gt;= 5 &amp;&amp;<br>-&#9;&#9;&#9;m_cOsVersionInfo.dwMinorVersion &gt;= 1 );<br>+&#9;&#9;return ( m_cOsVersionInfo.dwMajorVersion &gt;= 6 ||&#9;// Ver 6.0も含める<br>+&#9;&#9;&#9;(m_cOsVersionInfo.dwMajorVersion &gt;= 5 &amp;&amp; m_cOsVersionInfo.dwMinorVersion &gt;= 1) );<br> &#9;}<br> <br> &#9;/*! Windows 2000以上か調べる<br><br>■別件<br>Vistaではタブのアイコンが表示されなかった orz<br>（落ちたりはしないので、操作に問題はないけど）<br>やりかたを変えないとだめなのかしら？</div></section>
+    <ul><li><section><h1 id=4489>
+    <span class="no">[4489]</span>
+    <a class="thread-title" href="#4489">Vista β2でのタブアイコン表示</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-06-20T22:09:30">2006年06月20日 22:09</time></h1>
+    <div class="body">&gt; Vistaではタブのアイコンが表示されなかった orz<br><br>ImageList_Duplicate() が NULL を返していました。<br>以下の修正で表示されるようになります。<br><br>Index: sakura_core/CTabWnd.cpp<br>===================================================================<br>--- sakura_core/CTabWnd.cpp&#9;(revision 977)<br>+++ sakura_core/CTabWnd.cpp&#9;(working copy)<br>@@ -1591,13 +1591,18 @@<br> HIMAGELIST CTabWnd::ImageList_Duplicate( HIMAGELIST himl )<br> {<br> &#9;// 本物の ImageList_Duplicate() があればそれを呼び出す<br>+&#9;HIMAGELIST hImlNew;<br> &#9;if( m_RealImageList_Duplicate )<br>-&#9;&#9;return m_RealImageList_Duplicate( himl );<br>+&#9;{<br>+&#9;&#9;hImlNew = m_RealImageList_Duplicate( himl );<br>+&#9;&#9;if( NULL != hImlNew )<br>+&#9;&#9;&#9;return hImlNew;<br>+&#9;&#9;m_RealImageList_Duplicate = NULL;&#9;// 2006.06.20 ryoji 失敗時は代替処理に切り替え<br>+&#9;}<br> <br> &#9;// 本物の ImageList_Duplicate() の代替処理<br> &#9;// 新しいイメージリストを作成してアイコン単位でコピーする<br> &#9;//（この場合、多色アイコンは綺麗には表示されないかもしれない）<br>-&#9;HIMAGELIST hImlNew;<br> &#9;hImlNew = ImageList_Create( CX_SMICON, CY_SMICON, ILC_COLOR32 | ILC_MASK, 4, 4 );<br> &#9;if( hImlNew )<br> &#9;{<br><br>NULL を返すようなら ImageList_Duplicate() が存在しないのと同じ扱いにしてます。<br>正式版 Vista では従来通りでも動くようになるかと思われますが、<br>エラー処理としても妥当な気がするので修正しておくのがいいかもしれません。<br></div></section>
+    <ul><li><section><h1 id=4490>
+    <span class="no">[4490]</span>
+    <a class="thread-title" href="#4490">RE: Vista β2でのタブアイコン表示</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-06-21T07:39:18">2006年06月21日 07:39</time></h1>
+    <div class="body">&gt;&gt; Vistaではタブのアイコンが表示されなかった orz<br>VISTA対応のこの2件，他に影響は出なさそうなので忘れないうちにcommitnしておいてください．<br></div></section>
+    <ul><li><section><h1 id=4491>
+    <span class="no">[4491]</span>
+    <a class="thread-title" href="#4491">Re2: Vista β2でのタブアイコン表示</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-06-21T23:11:16">2006年06月21日 23:11</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;&gt; Vistaではタブのアイコンが表示されなかった orz<br>&gt; VISTA対応のこの2件，他に影響は出なさそうなので忘れないうちにcommitnしておいてください．<br><br>Vista 対応の上記 2 件と、やはり Vista 絡みの 1 件を commit しました。<br>追加の 1 件（trunk#980）は次の通りです。<br><br>・VC2005 用に /manifestdependency リンカオプションを追加<br><br>Vista では外部マニフェスト（.exe.manifest）よりも埋め込みマニフェストが優先されるようです。<br>trunk#980 よりも前のソースを VC2005 で .dsw 変換してそのままビルドした sakura.exe には空のマニフェストが埋め込まれるため、Vista 上ではビジュアルスタイル適用のための sakura.exe.manifest は無効果です。<br>プロジェクトのプロパティで埋め込みマニフェストを作成しないように設定変更すれば大丈夫ですが、その場合は空の sakura.exe.manifest が作成されて紛らわしいです。<br>なので、ビジュアルスタイル適用のためのマニフェストが自動生成されるようにしました。<br><br>■VC2005 ユーザー用の説明<br>trunk#980 以後のソースを VC2005 で .dsw 変換してそのままビルドした sakura.exe にはビジュアルスタイル適用のためのマニフェストが自動的に埋め込まれます。<br>従って、Windows XP 以降の環境では sakura.exe.manifest 無しでもビジュアルスタイルが適用されます。<br>正式リリース版と同様にマニフェスト埋め込みの無い sakura.exe を作成したいときは、プロジェクトのプロパティページ画面で [マニフェストツール]-[入力と出力] を選択し、[埋め込みマニフェスト]を「いいえ」に変更してリビルドしてください。<br>そうすると、sakura.exe からマニフェストが分離され、別にビジュアルスタイル適用のための sakura.exe.manifest が作成されるようになります。<br></div></section>
+    <ul><li><section><h1 id=4492>
+    <span class="no">[4492]</span>
+    <a class="thread-title" href="#4492">manifestの優先順位</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-06-22T21:42:11">2006年06月22日 21:42</time></h1>
+    <div class="body">補足です。<br><br>&gt; Vista では外部マニフェスト（.exe.manifest）よりも埋め込みマニフェストが優先されるようです。<br><br>実際に Vista β2 ではそうなっているわけですが、<br>MSDNライブラリ「C/C++ 分離アプリケーションおよび side-by-side アセンブリのトラブルシューティング」の項に Windows Server 2003 以降は XP とは優先順位が変わるとの記述もあります。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

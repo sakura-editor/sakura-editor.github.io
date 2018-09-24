@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>パッチ更新 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4937</span>
+    <a class="thread-title" href="4937.html#4937">パッチ更新</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4942</span>
+    <a class="thread-title" href="4937.html#4942">Re:パッチ更新</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4943</span>
+    <a class="thread-title" href="4937.html#4943">Re2:パッチ更新</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4945</span>
+    <a class="thread-title" href="4937.html#4945">Re3:パッチ更新</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4947</span>
+    <a class="thread-title" href="4937.html#4947">Re4: 正規表現パッチ更新</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4950</span>
+    <a class="thread-title" href="4937.html#4950">Re4:パッチ更新</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4954</span>
+    <a class="thread-title" href="4937.html#4954">Re5:パッチ更新</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4956</span>
+    <a class="thread-title" href="4937.html#4956">Re6:パッチ更新</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4960</span>
+    <a class="thread-title" href="4937.html#4960">再現方法です。</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4944</span>
+    <a class="thread-title" href="4937.html#4944">Re2:正規表現パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4946</span>
+    <a class="thread-title" href="4937.html#4946">Re3:正規表現パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4948</span>
+    <a class="thread-title" href="4937.html#4948">Re4:正規表現パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4949</span>
+    <a class="thread-title" href="4937.html#4949">Re5:正規表現パッチ</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4953</span>
+    <a class="thread-title" href="4937.html#4953">Re3:正規表現パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4955</span>
+    <a class="thread-title" href="4937.html#4955">Re4:正規表現パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4959</span>
+    <a class="thread-title" href="4937.html#4959">Re5:正規表現パッチ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4937>
+    <span class="no">[4937]</span>
+    <a class="thread-title" href="#4937">パッチ更新</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-22T16:18:24">2007年07月22日 16:18</time></h1>
+    <div class="body">Patches#1550557 自動実行マクロ<br>Patches#1742481 bregonig.dll対応<br>更新しました．(疲れた～，暑いし)<br><br>暇な方がいらっしゃいましたら，まとめバイナリを作っていただけるとありがたいです．<br></div></section>
+    <ul><li><section><h1 id=4942>
+    <span class="no">[4942]</span>
+    <a class="thread-title" href="#4942">Re:パッチ更新</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-24T23:17:18">2007年07月24日 23:17</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; Patches#1742481 bregonig.dll対応<br>ちょっと動かしてみました。<br>選択変更したのに変更が反映されないケースがあって直観的に「おや？」と感じました。<br>一方を選択して、それが無ければ他方が使用されるようになっているんですね．．．<br>選択DLLが無いときは正規表現が機能しないようになるほうが単純に状況が把握しやすいかな？と感じましたが、それだと何か他に問題があるでしょうか。<br>他方を使いたいときは別途入手が必要なのだとわからせたほうがいいかしら？、と。<br>種類が増えたりしたら、優先順位はどうするのかな？とか。そんなの今は考えなくていいか。<br>ごく直観的で些細な話、どっちが都合が良いのかもよくわからないので、今の動作のままでもいいような気もしますけど。(^^;;;<br><br>蛇足：<br>一部TCHAR化が入ってますが、TCHAR*とかconst TCHAR*って、自分はWin APIの記載にあわせてLPTSTRやLPCTSTRと記述することが多いです。<br>皆さんはどうなんでしょう。<br>あ、ヘルプサポート（sakura.hh）の修正はまだ入ってないんですね。</div></section>
+    <ul><li><section><h1 id=4943>
+    <span class="no">[4943]</span>
+    <a class="thread-title" href="#4943">Re2:パッチ更新</a>
+    <span class="author">maru</span>
+    <time datetime="2007-07-25T00:24:49">2007年07月25日 00:24</time></h1>
+    <div class="body">&gt;選択DLLが無いときは正規表現が機能しないようになるほうが単純に状況が把握しやすい<br>ユーザー指定可能にするなら「無ければ機能しない」案に1票です。<br><br>なまじ設定画面で指定できるだけに、仕様をよく理解していない場合、両方持っているつもりで使っていたら…みたなシナリオになったとき微妙な気がして。<br>さらに親切するなら、DLLがないものは指定できない(非表示)＋機能しないの２段構えとか。<br><br>個人的には、ユーザー指定できない(ファイルの有無から自動決定する)ような最初の仕様でも問題ないです。<br>「BREGEXP.DLLを優先する」などと、表示だけ修正っていう案もありますが。<br><br>もし「無ければ機能しない」にする場合は、設定が空のときのデフォルト値はちょっと配慮が必要ですね。<br>例えば、既存ユーザーでBREGEXP.DLLを使っていた人が意図的に設定をリセット(iniファイルを削除)したら、bregonig.dllがなくて怒られる、みたいなことにならないように。<br></div></section>
+    <ul><li><section><h1 id=4945>
+    <span class="no">[4945]</span>
+    <a class="thread-title" href="#4945">Re3:パッチ更新</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-25T00:43:49">2007年07月25日 00:43</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 個人的には、ユーザー指定できない(ファイルの有無から自動決定する)ような最初の仕様でも問題ないです。<br>&gt; 「BREGEXP.DLLを優先する」などと、表示だけ修正っていう案もありますが。<br>記法修正ということなら、<br>[正規表現DLLの優先順位]<br>・bregonig.dll-&gt;BREGEXP.DLL<br>・BREGEXP.DLL-&gt;bregonig.dll<br>の二択にするとか．．．</div></section>
+    <ul><li><section><h1 id=4947>
+    <span class="no">[4947]</span>
+    <a class="thread-title" href="#4947">Re4: 正規表現パッチ更新</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-25T01:49:58">2007年07月25日 01:49</time></h1>
+    <div class="body">とりあえずこちらの案で修正してみました．<br>あと，const TCHAR*もLPCTSTRに直しました．<br></div></section>
+    </li><li><section><h1 id=4950>
+    <span class="no">[4950]</span>
+    <a class="thread-title" href="#4950">Re4:パッチ更新</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-07-25T03:57:54">2007年07月25日 03:57</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 記法修正ということなら、<br>&gt; [正規表現DLLの優先順位]<br>&gt; ・bregonig.dll-&gt;BREGEXP.DLL<br>&gt;・BREGEXP.DLL-&gt;bregonig.dll<br>&gt; の二択にするとか．．．<br><br>改訂版でも、<br>□　正規表現　DLL名　バージョン<br>で、無理ですか？<br><br>BREGEXP.DLL があれば、DLL名にはBREGEXPが、<br>BREGONIG.DLL があれば、DLL名にはBREGONIGが、<br>ボタンとか、表示が増えない方向がいいのかと。<br><br>DLLファイルが両方あれば、BREGONIGを優先でいいのかと。<br>＃理由は、新しく追加された機能を優先したほうが、<br>＃やはりいいのかなと。ラジオボタンで選ぶのは最初だけ<br>＃と仮定して、ファイルの有無で判定するだけの機能では<br>＃だめですか。</div></section>
+    <ul><li><section><h1 id=4954>
+    <span class="no">[4954]</span>
+    <a class="thread-title" href="#4954">Re5:パッチ更新</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-26T00:32:30">2007年07月26日 00:32</time></h1>
+    <div class="body">選択できる作りにすると，後からbregonig.dllを持ってきても設定を変えるまで有効にならないですよね．<br><br>新しくDLLをコピーすること自体が意思表示と考えるとこんな感じでしょうか．<br><br>1) 前回使った正規表現DLLの種別を記録するようにする．<br>その上で<br><br>2) bregonigが見つかった場合<br>2-a) 前回もbregonig→そのまま使う<br>2-b) 前回BREGEXPで両方見つかった→bregonigが新しく見つかったから使うかどうかを尋ねる<br>2-b-イ) 「はい」ならbregonigを今後も使う<br>2-b-ロ) 「いいえ」なら次回また問い合わせる<br>2-b-ハ) 「無視」なら問い合わせない (これは不要か？)<br>2-c) 前回BREGEXPでbregonigのみ見つかった→bregonigを使う旨を通知<br>2-d) 前回のDLLの記録無し→bregonigを使う旨を通知<br><br>3) BREGEXPが見つかった場合<br>3-a) 前回BREGEXP→そのまま使う<br>3-b) 前回bregonig→代わりにBREGEXPを使う旨を通知<br>3-c) 前回のDLLの記録無し→BREGEXPを使う旨を通知<br><br>いろいろ案は出てくるものの，まとまりそうにないですねぇ<br></div></section>
+    <ul><li><section><h1 id=4956>
+    <span class="no">[4956]</span>
+    <a class="thread-title" href="#4956">Re6:パッチ更新</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-07-26T23:11:19">2007年07月26日 23:11</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 記法修正ということなら、<br>&gt; [正規表現DLLの優先順位]<br>&gt; ・bregonig.dll-&gt;BREGEXP.DLL<br>&gt; ・BREGEXP.DLL-&gt;bregonig.dll<br>&gt; の二択にするとか．．．<br>&gt;<br>&gt; 1) 前回使った正規表現DLLの種別を記録するようにする．<br>&gt; その上で<br><br>表示上は、bregexp.dllで、bregonig.dllが動いてました。<br>bregonig.dllを削除して気づきました。<br></div></section>
+    </li><li><section><h1 id=4960>
+    <span class="no">[4960]</span>
+    <a class="thread-title" href="#4960">再現方法です。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-08-13T07:36:14">2007年08月13日 07:36</time></h1>
+    <div class="body">表示上は、bregexp.dllで、bregonig.dllが動いてました。<br>bregonig.dllを削除して気づきました。<br><br><br>サクラの全終了から始める　「優先する」BREGEXP.DLL　「優先する」bregonig.dll<br>BREGEXP.DLLのみ&#9;1&#9;2<br>bregonig.dllのみ&#9;3&#9;4<br>両方のＤＬＬが有る&#9;5&#9;6<br><br>正規表現キーワード&#9;/\b([0-9A-F]{2})+(?=h)?/k<br><br>テキスト&#9;TimeStamp:   2A425E19 Sat Jun 20 07:22:17 1992<br><br>１．「優先する」はBREGEXP.DLLの設定で、BREGEXP.DLLのみが存在<br>色分け&#9;される（BREGEXP.DLL）&#9;ok<br>「検索」メニュー&#9;BREGEXP.DLLを表示&#9;ok<br>「優先する」でbregonig.dllにした場合&#9;BREGEXP.DLLを表示&#9;ok<br><br><br>２．「優先する」はbregonig.dllの設定で、BREGEXP.DLLのみが存在<br>色分け&#9;される（BREGEXP.DLL）&#9;ok<br>「検索」メニュー&#9;BREGEXP.DLLを表示&#9;ok<br>「優先する」でBREGEXP.DLLにした場合&#9;BREGEXP.DLLを表示&#9;ok<br><br><br>３．「優先する」はBREGEXP.DLLの設定で、bregonig.dllのみが存在<br>色分け&#9;されない（bregonig.dll）&#9;ok<br>「検索」メニュー&#9;BREGEXP.DLLを表示&#9;ng<br>「優先する」でbregonig.dllにした場合&#9;bregonig.dllを表示&#9;ok<br><br><br>４．「優先する」はbregonig.dllの設定で、bregonig.dllのみが存在<br>色分け&#9;されない（bregonig.dll）&#9;ok<br>「検索」メニュー&#9;bregonig.dllを表示&#9;ok<br>「優先する」でBREGEXP.DLLにした場合&#9;BREGEXP.DLLを表示&#9;ng<br><br><br>５．「優先する」はBREGEXP.DLLの設定で、両方のDLLが存在<br>色分け&#9;されない（bregonig.dll）&#9;ng<br>「検索」メニュー&#9;BREGEXP.DLLを表示&#9;ok<br>「優先する」でbregonig.dllにした場合&#9;bregonig.dllを表示&#9;ng<br><br><br>６．「優先する」はbregonig.dllの設定で、両方のDLLが存在<br>色分け&#9;されない（bregonig.dll）&#9;ok<br>「検索」メニュー&#9;bregonig.dllを表示&#9;ok<br>「優先する」でBREGEXP.DLLにした場合&#9;BREGEXP.DLLを表示&#9;ng<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=4944>
+    <span class="no">[4944]</span>
+    <a class="thread-title" href="#4944">Re2:正規表現パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-25T00:25:19">2007年07月25日 00:25</time></h1>
+    <div class="body">&gt;選択DLLが無いときは正規表現が機能しないようになるほうが単純に状況が把握しやすいかな？と感じましたが、それだと何か他に問題があるでしょうか。<br>BREGEXP.DLLについて色々と苦情が出ているため，今回から新規の場合はbregonig.dllをデフォルトにしています．<br><br>これまでは設定がなかったのでBREGEXP.DLLを入れれば正規表現が使えました．<br>もし，bregonigをデフォルトにしたままでもう一方の読み込みを行わないようにすると，Webや過去ログで見つかる「サクラエディタで正規表現を使う方法」が全て誤った記述となり，掲示板が「正規表現が使えません」という投稿で溢れます．<br><br>そもそも鬼車自身Perl正規表現を考慮して作られているので両者の非互換は僅かで，それを使い分けたい人はかなりのマニアだと思います．正規表現そのものがなんだかわからないようなレベルの使用者にもそのマニアックな設定を行わせるというのはやり過ぎではないでしょうか．よくわからないから「サクラエディタ　正規表現」で検索して，最初に見つかったページの手順通りやればとりあえず使えるようにはなることが重要かと思います．<br><br>＃早速検索してみましたが，有用なページが上位に来ないのにがっかり...(T_T)<br><br>&gt;他方を使いたいときは別途入手が必要なのだとわからせたほうがいいかしら？、と。<br>単に有効にならないだけで，この(新規追加された)設定に思い当たる人はいないのでは？<br>特に昔から使っている人ほど混乱すると思います．入手先URLまで画面に表示してもわかってもらえるかどうか．<br><br><br>&gt;LPTSTRやLPCTSTRと記述することが多いです。<br>えっと...綴りがわからなかったのでconst TCHAR* なんて書いちゃいました(..;)<br>格好悪いので直します．(Windowsのヘッダを見ろと叱られそう...)<br></div></section>
+    <ul><li><section><h1 id=4946>
+    <span class="no">[4946]</span>
+    <a class="thread-title" href="#4946">Re3:正規表現パッチ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-25T01:46:59">2007年07月25日 01:46</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; もし，bregonigをデフォルトにしたままでもう一方の読み込みを行わないようにすると，Webや過去ログで見つかる「サクラエディタで正規表現を使う方法」が全て誤った記述となり，掲示板が「正規表現が使えません」という投稿で溢れます．<br>できればパッケージ版には同機能のものを複数は入れたくないですよね。<br>bregonig.dllだけ入っているとして、今の形だとBREGEXP.DLLを選択しても検索画面にはbregonigだと表示されるわけです。<br>そういうつまらないことで「何これ？」な質問が溢れたりはしないかな、とか感じてしまうんです。<br>．．．どっちもどっちなのかなぁ。<br><br>あ、それと、関連の別件でもうひとつ。<br>migemo設定も[支援]タブから[検索]タブに移動したほうが据わりが良さそうかな、と思いました。</div></section>
+    <ul><li><section><h1 id=4948>
+    <span class="no">[4948]</span>
+    <a class="thread-title" href="#4948">Re4:正規表現パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-25T01:57:39">2007年07月25日 01:57</time></h1>
+    <div class="body">&gt;BREGEXP.DLLを選択しても検索画面にはbregonigだと表示されるわけです。<br>&gt;そういうつまらないことで「何これ？」な質問が溢れたりはしないかな、とか感じてしまうんです。<br>そういう見方もありますか...<br><br>ただ，どちらを選んでも動作が変わらない問題は興味本位の質問で，正規表現が使えない問題は(ユーザにとって)切迫した問題だと思いませんか？<br><br>もふぁんくらぶの方で「正規表現キーワードが使えない」という質問に皆さんが親切に答えてくださっているのを見ると特にそう思います．<br></div></section>
+    <ul><li><section><h1 id=4949>
+    <span class="no">[4949]</span>
+    <a class="thread-title" href="#4949">Re5:正規表現パッチ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-25T02:24:06">2007年07月25日 02:24</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;BREGEXP.DLLを選択しても検索画面にはbregonigだと表示されるわけです。<br>&gt; &gt;そういうつまらないことで「何これ？」な質問が溢れたりはしないかな、とか感じてしまうんです。<br>&gt; そういう見方もありますか...<br>これはあまり考えずに、ちょこちょこっとだけいじってみて「あれ？」だったので、同様の感触を持つ人はいるだろうな～、と。<br><br>&gt; もふぁんくらぶの方で「正規表現キーワードが使えない」という質問に皆さんが親切に答えてくださっているのを見ると特にそう思います．<br>これも真摯に気にかけるなら、単体配布にもbregonig.dll同梱、とか。<br>でも、ほとんどexeしか変わらないのに同梱は無駄かしら。(^^;</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4953>
+    <span class="no">[4953]</span>
+    <a class="thread-title" href="#4953">Re3:正規表現パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-26T00:02:45">2007年07月26日 00:02</time></h1>
+    <div class="body">具体的なシナリオを考えてみました．<br><br>[単体配布]<br>a-1) 現在のsakura.exeをアップデート→BREGXP.DLLをそのまま使う<br>a-2) 新規にダウンロード→sakura downではBREGEXP.DLLにしか対応していない？<br> sourceforgeにBREGEXPがあるので混乱を招く？<br>a-3) 現在のsakuraを使っている人が新しいsakura.exeのみを(PC買い換え等を機に)新規にセットアップ<br><br>[bregonnigを含むインストーラ]<br>b-1) 新規→bregonigを含める<br>b-2) 上書きインストール→BREGEXPとbregonigの両方が共存<br>b-3) アンインストール(sakura.iniを残す)の後に同じ場所へインストール<br><br>新規: bregonig, 上書き: BREGEXPの条件で不一致が起こるのは上のa-2, b-3, のシナリオです．a-3も微妙です．<br>常にBREGEXP優先なら問題は発生しないが現状維持になってしまう．<br><br>---<br>そもそも両者の差は非互換性であって機能的にはbregonigのみで全てまかなえると思います．正規表現マニアな人は両者を使い分ける必要もなくbregonigのみを使えば事足りる，とすると両方サポートの本質は新しいバージョンに精通していなくても従来の知識が役立たずになったりバージョンアップで突然何かが変わったりしないことを保証するためと考えます．<br><br>正規表現を使わないことは検索オプションで選べる以上，使えそうなDLLを敢えて無視する意味があるとは思えないのですけど．<br></div></section>
+    <ul><li><section><h1 id=4955>
+    <span class="no">[4955]</span>
+    <a class="thread-title" href="#4955">Re4:正規表現パッチ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-26T01:05:12">2007年07月26日 01:05</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 正規表現を使わないことは検索オプションで選べる以上，使えそうなDLLを敢えて無視する意味があるとは思えないのですけど．<br>一方が無ければ他方を使う、というのはげんたさんのご説明の通りで、そのほうがいいのだと思います。<br>本当に些細なことだけど、当初のUIでは結果に不審を抱きそうなので、あまり相応しくないかしら、というだけで。<br>なんだか説明に無理に労力を使わせてしまった気がして、申し訳ないです。m(__)m<br><br>で、設定のUI部なんですが、その場での存在チェックとか、さほど凝る必要も無い気がします。<br><br>優先する正規表現DLL名: [  テキストボックス（規定値は空）   ]<br><br>でもいいかなと思いました。<br>DLLの検索順は、<br>１．テキストボックスに記載された名称のDLL<br>２．bregonig.dll<br>３．BREGEXP.DLL<br>たぶん、目的のDLLの存在を事前確認している人しか使わない。<br>１が空かロードエラーなら２、３へ進む。<br>migemo.dllのテキストボックスも空なら既定の検索パスでmigemo.dllを探すようになっていますし。</div></section>
+    <ul><li><section><h1 id=4959>
+    <span class="no">[4959]</span>
+    <a class="thread-title" href="#4959">Re5:正規表現パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-08-12T23:18:26">2007年08月12日 23:18</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 優先する正規表現DLL名: [  テキストボックス（規定値は空）   ]<br>&gt; <br>&gt; でもいいかなと思いました。<br>で，実装してみました．フルパスの指定も可能ですが，どうせDLL名でしか設定しないだろうと考えて「参照」ボタンは付けていません．<br>一応フォーカスが移ったときに選択されたDLLのバージョンを表示するようにしています．</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

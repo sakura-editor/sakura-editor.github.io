@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>リファクタリング：メッセージとビープの整理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">133</span>
+    <a class="thread-title" href="133.html#133">リファクタリング：メッセージとビープの整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">139</span>
+    <a class="thread-title" href="133.html#139">Re:リファクタリング：メッセージとビープの整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">140</span>
+    <a class="thread-title" href="133.html#140">レビュー方針</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">142</span>
+    <a class="thread-title" href="133.html#142">Re:レビュー方針</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">143</span>
+    <a class="thread-title" href="133.html#143">Re2:レビュー方針</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">144</span>
+    <a class="thread-title" href="133.html#144">Re:リファクタリング：メッセージとビープの整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">145</span>
+    <a class="thread-title" href="133.html#145">Re2:リファクタリング：メッセージとビープの整理</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">148</span>
+    <a class="thread-title" href="133.html#148">Re:リファクタリング：メッセージとビープの整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">149</span>
+    <a class="thread-title" href="133.html#149">Re2:リファクタリング：メッセージとビープの整理</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=133>
+    <span class="no">[133]</span>
+    <a class="thread-title" href="#133">リファクタリング：メッセージとビープの整理</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-01-27T02:35:50">2008年01月27日 02:35</time></h1>
+    <div class="body">PatchUnicode#1880350<br>PatchUnicode#1880351<br>PatchUnicode#1880352<br><br>メッセージボックスとビープの処理において、<br>同じようなコードが各所に散在していたので<br>それを集中管理するようにしました。<br><br>動作は変わっていません。<br><br>変更箇所が多かったため、パッチを3つに分けました。<br>各パッチ同士に依存関係はないため、それぞれ独立してApplyできます。<br>皆様のレビューをお待ちしております。</div></section>
+    <ul><li><section><h1 id=139>
+    <span class="no">[139]</span>
+    <a class="thread-title" href="#139">Re:リファクタリング：メッセージとビープの整理</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-01-29T00:11:31">2008年01月29日 00:11</time></h1>
+    <div class="body">#1880350についてソースコードを確認しました。<br><br>動作は下記のものしかチェックしていません (^^;<br>内容からすると目視チェックだけでも良いかなという感じですが、どうなんでしょうか？<br><br>・検索ダイアログで検索文字列を入れずに上検索・下検索する。<br>　　”検索条件を指定してください。”が表示される。<br><br>・grepで存在しないフォルダを指定する。<br>　　”検索対象フォルダが正しくありません。”が表示される<br><br>・行ジャンプダイアログにて数字以外を入れる。<br>　　”正しく行番号を入力してください。”が表示される<br><br>・すべて置換を実行する。<br>　　”？箇所を置換しました。”が表示される。<br><br>・置換条件を指定せずにすべて置換を実行する。<br>　　”置換条件を指定してください。”が表示される。<br><br></div></section>
+    <ul><li><section><h1 id=140>
+    <span class="no">[140]</span>
+    <a class="thread-title" href="#140">レビュー方針</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-01-29T00:44:17">2008年01月29日 00:44</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; 内容からすると目視チェックだけでも良いかなという感じですが、どうなんでしょうか？<br><br>レビュー作業ありがとうございます。<br><br>少なくともtrunkの場合はすべて動作チェックすべきなのかもしれません。<br>branchはある程度緩くても良い気はします。<br><br>なんにしろ今回は量が多いです。<br>ぜんぶ合わせるとメッセージボックスだけで100箇所以上変更がある気がします。<br><br><br>特に論拠は無いですが、方針を定めようと思います。<br>リファクタリングパッチに関しては、<br>・ソースコードの変更箇所は全部目を通す<br>・その過程で「ん？」と思ったところは実行して動作を確かめる<br>・「ん？」と思わなかった所でも、サンプリングとして変更量の1割程度は動作確認をする<br>という感じでどうでしょうか。<br><br><br>論拠が無い上に、解釈によってどうとでも取れる表現も見受けられますが(汗)、<br>何も無いよりはレビューの助けになるかと。<br><br>とりあえずtrunkへの合流を最優先事項とさせてください。<br>問題があったらあったでその後に軌道修正バグ修正すれば良いということで。<br></div></section>
+    <ul><li><section><h1 id=142>
+    <span class="no">[142]</span>
+    <a class="thread-title" href="#142">Re:レビュー方針</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-01-29T21:54:26">2008年01月29日 21:54</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; 特に論拠は無いですが、方針を定めようと思います。<br>&gt; リファクタリングパッチに関しては、<br>&gt; ・ソースコードの変更箇所は全部目を通す<br>&gt; ・その過程で「ん？」と思ったところは実行して動作を確かめる<br>&gt; ・「ん？」と思わなかった所でも、サンプリングとして変更量の1割程度は動作確認をする<br>&gt; という感じでどうでしょうか。<br>&gt; <br>&gt; <br>&gt; 論拠が無い上に、解釈によってどうとでも取れる表現も見受けられますが(汗)、<br>&gt; 何も無いよりはレビューの助けになるかと。<br>&gt; <br>&gt; とりあえずtrunkへの合流を最優先事項とさせてください。<br>&gt; 問題があったらあったでその後に軌道修正バグ修正すれば良いということで。<br><br>了解です。<br>その辺りを最低限としてできるだけ確認する方向でやります。<br></div></section>
+    <ul><li><section><h1 id=143>
+    <span class="no">[143]</span>
+    <a class="thread-title" href="#143">Re2:レビュー方針</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-01-30T01:38:46">2008年01月30日 01:38</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; &gt; 特に論拠は無いですが、方針を定めようと思います。<br>&gt; 了解です。<br>&gt; その辺りを最低限としてできるだけ確認する方向でやります。<br><br>ご理解ありがとうございます。<br>引き続きご協力いただければ幸いです。<br><br>コピペですが(汗)、wiki側にも方針を転記しました。<br><a href=http://mofmof.nsf.tc/soft/sakura_unicode/index.php?%E3%83%AC%E3%83%93%E3%83%A5%E3%83%B target=_top><nobr>http://<wbr>mofmof.<wbr>nsf.<wbr>tc/<wbr>soft/<wbr>sakura_u<wbr>nicode/<wbr>index.<wbr>php?%<wbr>E3%<wbr>83%<wbr>AC%<wbr>E3%<wbr>83%<wbr>93%<wbr>E3%<wbr>83%<wbr>A5%<wbr>E3%<wbr>83%<wbr>B</nobr></a><br>C%E6%96%B9%E9%87%9D<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=144>
+    <span class="no">[144]</span>
+    <a class="thread-title" href="#144">Re:リファクタリング：メッセージとビープの整理</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-01-30T01:56:39">2008年01月30日 01:56</time></h1>
+    <div class="body">#1880351について、ソースコードの確認と一部の動作を確認しました。<br><br>下記の箇所に %ls となっている箇所がありますが、%ts にすべきでしょうか？<br>ANSI版が可能となった時に問題となるのかなと思いました。<br><br>080127_3_MsgAndBeepA.patch<br>　Line 156　　_T("\'%ls\'\nプロセスの起動に失敗しました。"),<br>　Line 280　　_T("エラー:%ls"),<br><br>080127_4_MsgAndBeepB.patch<br>　Line 41　　_T("%ls\nというファイルは存在しません...<br>　Line 69　　_T("%ls\nを%lsでロックできませんでした...<br>　Line 341　 _T("\'%ls\'\nコントロールプロセスの起動に失敗しました。")<br><br>080127_5_MsgAndBeepC.patch<br>　Line 40　　_T("ファイルへエクスポートしました。\n\n%ls")<br>　Line 291　 _T("ファイルへエクスポートしました。\n\n%ls")<br></div></section>
+    <ul><li><section><h1 id=145>
+    <span class="no">[145]</span>
+    <a class="thread-title" href="#145">Re2:リファクタリング：メッセージとビープの整理</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-01-30T02:42:31">2008年01月30日 02:42</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; #1880351について、ソースコードの確認と一部の動作を確認しました。<br>&gt; <br>&gt; 下記の箇所に %ls となっている箇所がありますが、%ts にすべきでしょうか？<br>&gt; ANSI版が可能となった時に問題となるのかなと思いました。<br><br>レビュー作業ありがとうございます。<br><br>今のところはUNICODE動作さえ保障されれば良いので、<br>「%ts」対応は保留で良いかな、と思っています。<br>…というと随分軽い体制かと思われるかもしれませんが、重い理由として下記を考えています。<br><br>1つの理由としては、<br>数が多く、非常に時間がかかること。<br>(しらみつぶしにソースの整合性をチェックし修正することも、その動作チェックをすることも)<br><br>もう1つの理由としては、<br>TCHAR解決のための「%ts」の策自体が (個人的に) 最良では無いと思っていること。<br>trunkへ統合された後にでも、皆様との議論を交えて、<br>この策のままで行くか、別の策で行くかを検討するフェーズがあると思います。<br>「思います」というか、そういうフェーズを提供することを現実的に考えています。<br>つまり、今の時点で「%ts」を細かくチェックした場合、その労力は水の泡となる可能性があります。<br><br><br>ちなみに、自分は気が向いた所をちょこちょこ直していますが。。それはただの趣味です（落ち葉拾いのようなものです）。<br>(「気が付いた所」では無いところがミソ。気が付いてもあえて無視している所が多数です)<br><br><br>渡している型はTCHARのくせにprintfフォーマット指定は「%ls」かよっ、<br>という、ソースコード文脈的に「もやもやした」感じは残りますが、<br>branchプロジェクトの方針としては「基本放置。修正は禁止しない」で行きたいと思います。<br><br>よろしくお願い致します。<br></div></section>
+    </li></ul></li><li><section><h1 id=148>
+    <span class="no">[148]</span>
+    <a class="thread-title" href="#148">Re:リファクタリング：メッセージとビープの整理</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-01-31T00:36:06">2008年01月31日 00:36</time></h1>
+    <div class="body">#1880352について、ソースコードの確認と一部の動作を確認しました。<br><br>というわけで「リファクタリング：メッセージとビープの整理」3部作はコミットOKと思います。<br>&gt; PatchUnicode#1880350<br>&gt; PatchUnicode#1880351<br>&gt; PatchUnicode#1880352<br><br>&gt;&gt;unicode:145 の%lsの件了解しました。<br>%tsに直している箇所とそのままの箇所があったので修正もれかと勘違いしたのですが、そういえばその様な議論を見た様な気がします (^^;<br></div></section>
+    <ul><li><section><h1 id=149>
+    <span class="no">[149]</span>
+    <a class="thread-title" href="#149">Re2:リファクタリング：メッセージとビープの整理</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-01-31T01:19:25">2008年01月31日 01:19</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; #1880352について、ソースコードの確認と一部の動作を確認しました。<br>&gt; <br>&gt; というわけで「リファクタリング：メッセージとビープの整理」3部作はコミットOKと思います。<br>&gt; &gt; PatchUnicode#1880350<br>&gt; &gt; PatchUnicode#1880351<br>&gt; &gt; PatchUnicode#1880352<br><br>さっそくのＯＫサインありがとうございます。非常に助かります。<br>上の3パッチをまとめてコミットしました。(rev1221)<br><br><br>&gt; &gt;&gt;unicode:145 の%lsの件了解しました。<br>&gt; %tsに直している箇所とそのままの箇所があったので修正もれかと勘違いしたのですが、そういえばその様な議論を見た様な気がします (^^;<br><br>勘違いして当然です。orz<br>重要な情報はちゃんと整理して皆の目の付くところに<br>置かなきゃダメっすね。。週末にでも整理作業をしようと思います。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

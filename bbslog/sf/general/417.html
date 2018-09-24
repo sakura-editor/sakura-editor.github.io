@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>34.1の動作 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">417</span>
+    <a class="thread-title" href="417.html#417">34.1の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">418</span>
+    <a class="thread-title" href="417.html#418">Re:34.1の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">420</span>
+    <a class="thread-title" href="417.html#420">Re2:34.1の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">422</span>
+    <a class="thread-title" href="417.html#422">Re3:34.1の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">423</span>
+    <a class="thread-title" href="417.html#423">ちょっと誤解してた？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">424</span>
+    <a class="thread-title" href="417.html#424">Re: ちょっと誤解してた？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=417>
+    <span class="no">[417]</span>
+    <a class="thread-title" href="#417">34.1の動作</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-19T00:01:26">2001年05月19日 00:01</time></h1>
+    <div class="body">動作確認してませんが、前に書いた桁位置は1からに直ってますか？<br>例えば行頭は1カラム目です。FORTRANの継続行は6カラム目に記号を書きます。(コメントとは関係ありませんが桁の数え方の例として。)<br>それと変更履歴に[上書き禁止...]とありますが、読み込み専用で読み込んだ場合の誤りでは？上書き禁止ファイルは最終的にはOS側で防御されているので上書きされる心配はないので。記事でもそう書いてます。「読み込み専用の場合はウッカリ上書きが心配だから・・・」という話でした。上書きされたくないから安全のために読み取り専用で読み込むわけですし。</div></section>
+    <ul><li><section><h1 id=418>
+    <span class="no">[418]</span>
+    <a class="thread-title" href="#418">Re:34.1の動作</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-19T12:28:40">2001年05月19日 12:28</time></h1>
+    <div class="body">▼ じぇぷろ<br>動作確認したところ、桁位置は直ってませんでした。それともCOBOLでは0から数える習慣があるのでしょうか？<br>&gt;変更履歴に[上書き禁止...]とありますが、<br>[上書き禁止でないときは]は[読み込み専用オプションで読み込んでない限り]の誤りだと思います。</div></section>
+    <ul><li><section><h1 id=420>
+    <span class="no">[420]</span>
+    <a class="thread-title" href="#420">Re2:34.1の動作</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-05-19T20:20:16">2001年05月19日 20:20</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; ▼ じぇぷろ<br>&gt; 動作確認したところ、桁位置は直ってませんでした。<br>単に忘れていただけです．<br><br>&gt; [上書き禁止でないときは]は[読み込み専用オプションで読み込んでない限り]の誤りだと思います。<br>修正しました．</div></section>
+    <ul><li><section><h1 id=422>
+    <span class="no">[422]</span>
+    <a class="thread-title" href="#422">Re3:34.1の動作</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-19T21:15:14">2001年05月19日 21:15</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼ じぇぷろさん<br>」&gt; &gt; [上書き禁止でないときは]は[読み込み専用オプションで読み込んでない限り]の誤りだと思います。<br>&gt; 修正しました．<br>うーーーん、まだどうもすっきりしないものが・・・。ファイルの属性で「上書き禁止」というのは実はなくて「読み取り専用」なんですよね。（ファイルのプロパティ）ここで問題にしているのはそういうファイルの持つ属性とは関係なく、サクラエディタの起動時のオプション指定による「読み取り専用」のことですよね？だとするとその違いが文面からはわからない、というよりも人によっては前者の意味（要するに前と同じ意味）に取るのではないかと思います。起動オプションを指定する使い方はほとんどの人はしてないと想像されるからです。<br>＃だからどうでもいい、って？そりゃないよ、ウソはいかん、ウソは。(誤解しやすい曖昧なのも)<br>＃閲覧モードができればリードオンリーオプションもほとんど不要ですが。(必要なのはバッチ起動時くらい)</div></section>
+    <ul><li><section><h1 id=423>
+    <span class="no">[423]</span>
+    <a class="thread-title" href="#423">ちょっと誤解してた？</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-19T21:42:07">2001年05月19日 21:42</time></h1>
+    <div class="body">▼ じぇぷろ<br>&gt; ▼ げんたさん<br>&gt; &gt; ▼ じぇぷろ<br>&gt; 」&gt; &gt; [上書き禁止でないときは]は[読み込み専用オプションで読み込んでない限り]の誤りだと思います。<br>&gt; &gt; 修正しました．<br>&gt; サクラエディタの起動時のオプション指定による「読み取り専用」のことですよね？<br>これもそうなんだけど。。。<br>&gt;起動オプションを指定する使い方はほとんどの人はしてないと想像されるからです。<br>むしろ普通の人は「開く」ときの「読み取り専用として開く」チェックボックスですね。これなら使っている人も少しはいそう。私の場合開くファイルがはっきりしている時は起動してから開くなんてことしないので。。。サクラにファイルを渡してしまいます。<br>それはともかく、「ファイルを読み取り専用で開いた場合を除き」でどうでしょう？「読み取り専用(上書き禁止)の（属性を持つ）ファイル」とは違うことがわかると思います。(苦しいかな？)</div></section>
+    <ul><li><section><h1 id=424>
+    <span class="no">[424]</span>
+    <a class="thread-title" href="#424">Re: ちょっと誤解してた？</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-05-21T09:53:22">2001年05月21日 09:53</time></h1>
+    <div class="body">&gt;それはともかく、「ファイルを読み取り専用で開いた場合を除き」でどうでしょう？<br>秀●と同じ「閲覧モード」に名称変更するのが一番わかりやすいんじゃないですか。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

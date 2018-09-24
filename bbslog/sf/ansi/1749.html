@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>印刷について(不具合報告) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1749</span>
+    <a class="thread-title" href="1749.html#1749">印刷について(不具合報告)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1750</span>
+    <a class="thread-title" href="1749.html#1750">Re:印刷について(不具合報告)</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1749>
+    <span class="no">[1749]</span>
+    <a class="thread-title" href="#1749">印刷について(不具合報告)</a>
+    <span class="author">たこ</span>
+    <time datetime="2002-03-19T22:09:32">2002年03月19日 22:09</time></h1>
+    <div class="body">半年くらい前から使わせてもらってます。<br>最近のレベルアップで非常に使いやすくなり、もはや手放せなくなりました。<br><br>しかし、２月１日以降のスナップショットで、印刷時に、ヘッダ／フッタの位置がずれて印刷されます。<br>ちなみにプレビューはちゃんと表示されています。<br>当方の環境は、Win98SE+EPSON LP-8700 , Win2K+LP-8700 , Win2K+ Acrobat4で、すべての環境で発生しています。<br>とりあず、当方はスナップショットのソースが出る度にパッチを当てて使っています。<br><br>印刷メソッド内のヘッダフッタの領域?のcRectの計算がおかしい様な感じです。<br>(Javaは理解しているのですが、C++には疎いので詳しくはなんともいえませんが・・・)<br><br>お手数ですが、ご確認をお願いします。<br></div></section>
+    <ul><li><section><h1 id=1750>
+    <span class="no">[1750]</span>
+    <a class="thread-title" href="#1750">Re:印刷について(不具合報告)</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-19T22:48:11">2002年03月19日 22:48</time></h1>
+    <div class="body">▼ たこさん<br>&gt; 印刷メソッド内のヘッダフッタの領域?のcRectの計算がおかしい様な感じです。<br>&gt; (Javaは理解しているのですが、C++には疎いので詳しくはなんともいえませんが・・・)<br>&gt; <br>&gt; お手数ですが、ご確認をお願いします。<br><br>早速確認いたしました。<br>ご指摘のとおり、cRectの計算がおかしいようすで、印刷結果が確かにずれていました。<br>手元では修正できましたので、次回お試し版（もしくはパッケージ）のリリースからは修正無用となると思います。<br><br>ご連絡、ありがとうございました。</div></section>
+    </li></ul></li></ul></body></html>

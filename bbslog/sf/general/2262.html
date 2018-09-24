@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ppaマクロで単語選択して検索したい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2262</span>
+    <a class="thread-title" href="2262.html#2262">ppaマクロで単語選択して検索したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2263</span>
+    <a class="thread-title" href="2262.html#2263">RE: ppaマクロで単語選択して検索したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2264</span>
+    <a class="thread-title" href="2262.html#2264">Re2: ppaマクロで単語選択して検索したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2266</span>
+    <a class="thread-title" href="2262.html#2266">Re3: ppaマクロで単語選択して検索したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2267</span>
+    <a class="thread-title" href="2262.html#2267">Re4: ppaマクロで単語選択して検索したい</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2268</span>
+    <a class="thread-title" href="2262.html#2268">Re3: ppaマクロで単語選択して検索したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2269</span>
+    <a class="thread-title" href="2262.html#2269">Re4: ppaマクロで単語選択して検索したい</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2262>
+    <span class="no">[2262]</span>
+    <a class="thread-title" href="#2262">ppaマクロで単語選択して検索したい</a>
+    <span class="author">どんくん</span>
+    <time datetime="2002-09-02T11:34:10">2002年09月02日 11:34</time></h1>
+    <div class="body">はじめまして。先週からさくらエディタを使わせていただいてます。<br><br>早速質問です。<br>ppaを利用したマクロで、<br>S_SelectWord を使って、単語選択してその単語を検索、<br>ってなことをやりたいのですが、うまくいきません。<br><br>僕がマクロ関数とppaとのやり取りをよくわかってないからだと<br>思うのですが、どなたか ppa の変数に エディタにある文字を<br>代入する方法を教えてください。<br><br></div></section>
+    <ul><li><section><h1 id=2263>
+    <span class="no">[2263]</span>
+    <a class="thread-title" href="#2263">RE: ppaマクロで単語選択して検索したい</a>
+    <span class="author">すい</span>
+    <time datetime="2002-09-02T12:43:40">2002年09月02日 12:43</time></h1>
+    <div class="body">&gt;ppaを利用したマクロで、<br>&gt;S_SelectWord を使って、単語選択してその単語を検索、<br>&gt;ってなことをやりたいのですが、うまくいきません。<br>&gt;<br>&gt;僕がマクロ関数とppaとのやり取りをよくわかってないからだと<br>&gt;思うのですが、どなたか ppa の変数に エディタにある文字を<br>&gt;代入する方法を教えてください。<br><br>いえ、残念ながら、今現在、サクラエディタ側の関数(?)で何らかの値を返すのは<br>S_GetFilename();&#9;// ファイル名を返す(編集中のファイルのフルパス名)<br>だけで、他の機能は一切、数値も文字列も何も返さないので、、、<br><br>残念ながら出来ないかと。 (ノ;_；)<br></div></section>
+    <ul><li><section><h1 id=2264>
+    <span class="no">[2264]</span>
+    <a class="thread-title" href="#2264">Re2: ppaマクロで単語選択して検索したい</a>
+    <span class="author">どんくん</span>
+    <time datetime="2002-09-02T13:18:40">2002年09月02日 13:18</time></h1>
+    <div class="body">&gt; いえ、残念ながら、今現在、サクラエディタ側の関数(?)で何らかの値を返すのは<br>&gt; S_GetFilename();&#9;// ファイル名を返す(編集中のファイルのフルパス名)<br>&gt; だけで、他の機能は一切、数値も文字列も何も返さないので、、、<br>&gt; <br>&gt; 残念ながら出来ないかと。 (ノ;_；)<br><br>そうですか・・・。<br>旧来の関数（S_ で始まる関数) だけで実現<br>できればいいんですね。<br><br>S_SelectWord(0);&#9;// 現在位置の単語選択<br>S_SearchNext(xxxx, 18);&#9;// 次を検索<br>のxxxx の部分に単語を入れるには、旧来のやり方<br>だとどうすればいいんでしょう？<br><br>もう一つ、質問です。<br>旧来のマクロ関数のヘルプあればそれをみたいんですが、<br>どこかのArchiveにあるんでしょうか？<br><br></div></section>
+    <ul><li><section><h1 id=2266>
+    <span class="no">[2266]</span>
+    <a class="thread-title" href="#2266">Re3: ppaマクロで単語選択して検索したい</a>
+    <span class="author">すい</span>
+    <time datetime="2002-09-02T20:24:01">2002年09月02日 20:24</time></h1>
+    <div class="body">&gt;S_SelectWord(0);&#9;// 現在位置の単語選択<br>&gt;S_SearchNext(xxxx, 18);&#9;// 次を検索<br>&gt;のxxxx の部分に単語を入れるには、旧来のやり方<br>&gt;だとどうすればいいんでしょう？<br><br>いぇ、現状、そういう処理はできないんです。<br>そういう処理をするなら、当然、どんくんさん が初めにおっしゃっているような<br>変数を使うやり方しかないでしょう。<br>↑でも、現状、それが出来ない。<br>　↑よって、そのような処理は出来ません。<br><br>という事で。<br><br>&gt;もう一つ、質問です。<br>&gt;旧来のマクロ関数のヘルプあればそれをみたいんですが、<br>&gt;どこかのArchiveにあるんでしょうか？<br><br>・PPA については PPA.DLL の配布パッケージ内のヘルプをみる。<br>・サクラエディタの S_xxxx についてはソースをみて解析．．．<br>というのも悲しい現状です。<br><br>ソース内の sakura_core/CSMacroMgr.cpp に関数名の一覧と、<br>そのプロトタイプ宣言みたいなのがされていますので、それを見るしかないです。<br><br>文字列型：VT_BSTR<br>整数数値型：VT_I4<br>無し：VT_EMPTY<br>で、<br><br>{F_FILESAVEAS, "FileSaveAs", {VT_BSTR, VT_I4, VT_I4, VT_EMPTY}, VT_EMPTY, NULL}, //名前を付けて保存<br><br>↑なら、<br>{<br>　　F_FILESAVEAS,<br>　　"FileSaveAs",　　← 関数名<br>　　{<br>　　　　VT_BSTR, VT_I4, VT_I4, VT_EMPTY　　← 引数の型<br>　　},<br>　　VT_EMPTY,　　← 返り値の型<br>　　NULL<br>}, //名前を付けて保存<br><br>↑という事で↓こういう事、とか。<br><br>void    S_FileSaveAs( 文字列型 , 整数数値型 , 整数数値型 );<br><br>さらに引数の中身・意味については、トライアンドエラーで試しまくって確認するか<br>ソースの奥地まで探検しまわって確認しなければなりません。<br>現在、私は探検しながら PPA &amp; MAC の強調キーワード，キーワードヘルプ作成中です．．．<br># いつになるやら :-|<br></div></section>
+    <ul><li><section><h1 id=2267>
+    <span class="no">[2267]</span>
+    <a class="thread-title" href="#2267">Re4: ppaマクロで単語選択して検索したい</a>
+    <span class="author">どんくん</span>
+    <time datetime="2002-09-03T11:11:14">2002年09月03日 11:11</time></h1>
+    <div class="body">&gt; いぇ、現状、そういう処理はできないんです。<br>&gt; そういう処理をするなら、当然、どんくんさん が初めにおっしゃっているような<br>&gt; 変数を使うやり方しかないでしょう。<br>&gt; ↑でも、現状、それが出来ない。<br>&gt; 　↑よって、そのような処理は出来ません。<br>&gt; <br>&gt; という事で。<br>&gt; <br>&gt; &gt;もう一つ、質問です。<br>&gt; &gt;旧来のマクロ関数のヘルプあればそれをみたいんですが、<br>&gt; &gt;どこかのArchiveにあるんでしょうか？<br>&gt; <br>&gt; ・PPA については PPA.DLL の配布パッケージ内のヘルプをみる。<br>&gt; ・サクラエディタの S_xxxx についてはソースをみて解析．．．<br>&gt; というのも悲しい現状です。<br>&gt; <br>&gt; ソース内の sakura_core/CSMacroMgr.cpp に関数名の一覧と、<br>&gt; そのプロトタイプ宣言みたいなのがされていますので、それを見るしかないです。<br>&gt; <br>(中略)<br>&gt; さらに引数の中身・意味については、トライアンドエラーで試しまくって確認するか<br>&gt; ソースの奥地まで探検しまわって確認しなければなりません。<br>&gt; 現在、私は探検しながら PPA &amp; MAC の強調キーワード，キーワードヘルプ作成中です．．．<br>&gt; # いつになるやら :-|<br><br>そうですかー。ご丁寧にご回答ありがとうございます。<br><br>マクロ機能は、まだ発展段階ということなんですね、たぶん。<br>メインには秀○を使用しているのですが、秀○にはない「アウトライン解析」や「豊富なバックアップ機能」の充実が大変気に入ったので、<br>さくらをメインにしようと考えているので、ここらへんの開発が待ち遠しいですね＾＾<br></div></section>
+    </li></ul></li><li><section><h1 id=2268>
+    <span class="no">[2268]</span>
+    <a class="thread-title" href="#2268">Re3: ppaマクロで単語選択して検索したい</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-09-03T15:17:43">2002年09月03日 15:17</time></h1>
+    <div class="body">&gt;S_SelectWord(0);&#9;// 現在位置の単語選択<br>&gt;S_SearchNext(xxxx, 18);&#9;// 次を検索<br>&gt;のxxxx の部分に単語を入れるには、旧来のやり方<br>&gt;だとどうすればいいんでしょう？<br>文字列を取得することはできないのですが，S_SearchNextの第一引数が空文字列だった場合は前回の検索文字列を引き続き検索します．<br><br>で，これとは別に現在の選択範囲を検索文字列としてセットするコマンドがあります．<br>S_SearchClearMark(0);&#9;// 検索マークの切替え<br>標準だと Ctrl + F3だったかな．<br><br>結局<br>S_SelectWord(0);&#9;// 現在位置の単語選択<br>S_SearchClearMark(0);&#9;// 検索マークの切替え<br>S_SearchNext('', 18);&#9;// 次を検索<br>で希望の動作になる...と思ったのですが，実際にやってみると最後のSearchNextで検索位置は動くのですけれどキャレット位置が動きません(T_T)．バグっぽいです．<br></div></section>
+    <ul><li><section><h1 id=2269>
+    <span class="no">[2269]</span>
+    <a class="thread-title" href="#2269">Re4: ppaマクロで単語選択して検索したい</a>
+    <span class="author">すい</span>
+    <time datetime="2002-09-03T21:26:50">2002年09月03日 21:26</time></h1>
+    <div class="body">&gt;S_SelectWord(0);&#9;// 現在位置の単語選択<br>&gt;S_SearchClearMark(0);&#9;// 検索マークの切替え<br>&gt;S_SearchNext('', 18);&#9;// 次を検索<br>&gt;で希望の動作になる...と思ったのですが，実際にやってみると最後のSearchNextで検索位置は動くのですけれどキャレット位置が動きません(T_T)．バグっぽいです．<br><br>私も↑これは考えてやってみたんですが、そもそも S_SearchClearMark() の方が駄目でしたよ。SearchNext じゃなく。<br>例えば、今、検索対象文字列が 'BBB' に設定されている時に、文字列 'AAA' の所でこのマクロを実行してみる。<br>と、結果、正常に 'AAA' を検索するようになる事も希にありますが、検索対象が 'BBB' のままになる事が多く。。。<br>つまり、検索対象文字が切り替わらない。結局、そっちの方が問題で使えなかったり。<br><br>ってよくよく考えてみれば、それもバグだぁ。 (^^ゞ<br>それが直れば使えそうですね。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>最新版で不都合が | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">8038</span>
+    <a class="thread-title" href="8038.html#8038">最新版で不都合が</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8039</span>
+    <a class="thread-title" href="8038.html#8039">Re:最新版で不都合が</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8040</span>
+    <a class="thread-title" href="8038.html#8040">Re2:最新版で不都合が</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8038>
+    <span class="no">[8038]</span>
+    <a class="thread-title" href="#8038">最新版で不都合が</a>
+    <span class="author">TAXI</span>
+    <time datetime="2015-05-25T16:24:56">2015年05月25日 16:24</time></h1>
+    <div class="body">現在、Ver.2.1.1.1を使用中です。<br><br>sakura_install2-1-1-4.exeで最新版にしたところ、以下のような不具合が出ました。<br><br>・IE10のソース表示にサクラエディタを設定。<br>SHIFT-JISのページを閲覧し、ソースを表示させると、日本語部分が文字化けします。<br>なにかアラートが出ていましたが、現在Ver.2.1.1.1に戻しており、再確認できてはおりません。<br><br>また、サクラエディタをIEのソース表示に指定いている場合、Windows Live メールやWindows メール(Vista)で、HTMLメッセージを表示させ、[Ctrl]+[F2]でソース表示ができるのですが、同じように警告が出て文字化けします。<br><br>Ver.2.1.1.1では発生しないので、戻しておりますが、不具合でしたら修正していただきたいと思います。<br>不具合ではなく、仕様変更によるものでしたら、残念です。<br><br>環境<br>①Windows Vista Ultimate 32bit IE10<br>②Windows 7 Pro 32bit IE10</div></section>
+    <ul><li><section><h1 id=8039>
+    <span class="no">[8039]</span>
+    <a class="thread-title" href="#8039">Re:最新版で不都合が</a>
+    <span class="author">匿名</span>
+    <time datetime="2015-05-26T00:03:46">2015年05月26日 00:03</time></h1>
+    <div class="body">「なにかアラート」の表示が「前回と同じ文字コード...」だった場合、あなたが正しく答えなかったりすると文字化けします。<br>サクラエディタは前回開いたときの文字コードを覚えていて、それと違う文字コードっぽいのを検出すると確認ダイアログを出します。<br>自動検出は完璧に検出できるわけではないので間違えることもあります。<br><br>文字化けしていた場合、ステータスバーの文字コード名表示を確認して、実際と異なる場合は、<br>「ファイル」→「開き直す」→「xxxで開き直す」で実際のエンコードを選びましょう。<br>それでも直らないなら他のエンコードの開き直すも試してみてください。<br><br>2.1.1.1 → 2.1.1.4の間で、「デフォルト文字コードの設定が適用されない」バグが<br>修正されているので挙動が違うのかもしれません。<br>このバグはファイル名に応じた「タイプ別」のデフォルトコードが適用されるべきところで<br>「基本」のデフォルトコードが適用されていたバグなので、その辺をいじったのなら設定を確認してください。<br>サクラエディタは文字コード判別にファイルの先頭付近しかみないので、<br>長いJavaScriptとかCSSとかヘッダが先頭に大量についているとデフォルトコードが選択されやすいです。<br>2.1.1.4では「基本」のデフォルトコード以外に各タイプ別のデフォルトコードも設定が必要という意味です。<br></div></section>
+    <ul><li><section><h1 id=8040>
+    <span class="no">[8040]</span>
+    <a class="thread-title" href="#8040">Re2:最新版で不都合が</a>
+    <span class="author">TAXI</span>
+    <time datetime="2015-05-26T10:36:14">2015年05月26日 10:36</time></h1>
+    <div class="body">▼ 匿名さん、ありがとうございます。<br><br>「UTF-8」のHTMLメールメッセージで、逆にver.2.1.1.1を使い「開きなおす」から「JIS」を選択。すると同じ状況になりました。<br>アラートは「一部の文字情報が、ロード時の変換により失われました」でした。<br>匿名さんのご指摘にて理由が判明。こんな簡単なことがわからず投稿したことが恥ずかしく思います。<br><br>ver.2.2.0.1にアップデート後、確かに「開き直す」で文字化けは解消します。<br>ver.2.1.1.1では即{UTF-8」で開いてくれていたのに、ver.2.2.0.1ですと、毎回開きなおさなければならないのが面倒ではあります。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

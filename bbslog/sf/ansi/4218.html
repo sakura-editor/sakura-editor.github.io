@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>subversionへの移行 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4218</span>
+    <a class="thread-title" href="4218.html#4218">subversionへの移行</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4221</span>
+    <a class="thread-title" href="4218.html#4221">RE: subversionへの移行</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4218>
+    <span class="no">[4218]</span>
+    <a class="thread-title" href="#4218">subversionへの移行</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-01-07T02:45:38">2006年01月07日 02:45</time></h1>
+    <div class="body">Sourceforge.netからのお知らせにSubversionによるソース管理が近々できるようになるとかかれていました．具体的には1月から50プロジェクトでベータテスト，3月から一般公開だそうです．<br><br>最近パッチが溜まりまくっているのに全然できていないので，これを機に手元で管理しているCVS RepositoryをSubversionに変換した上でSourceforge.netに登録し，複数の人が更新できる体制にすることでパッチの取り込みを加速できればと思っております．Repositoryの変換がCVS2SVNでうまくできることは確認済みです．<br><br>近々ホームページに操作手順やcommit時の取り決めなどを掲載する予定です．送っていただいたパッチではコメントが不十分なものが多いので，その点も明確に記載してcommitする人が客観的に判断できるようにしたいと考えています．<br><br>その他private branchを作ってよいことにして，各種の勝手なバージョンやprivate patchもより自由に試せる形にしたいと思っております．<br><br>もかさん，ryojiさん，あろかさん，(全略)さん，かろとさん等がcommiterとして協力して頂けないかなと期待しております．(ここに名前がない方を排除しているわけではありません)</div></section>
+    <ul><li><section><h1 id=4221>
+    <span class="no">[4221]</span>
+    <a class="thread-title" href="#4221">RE: subversionへの移行</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-01-09T15:28:41">2006年01月09日 15:28</time></h1>
+    <div class="body">最新のCVS repositoryをSVNに変換してみたのですが，リポジトリサイズ60MB，ダンプファイルをbzip圧縮しても40MB．<br>CVSとは桁違いにでかいです．<br><br>でもがんばって最新のリポジトリのdumpをWebにおきましたので，試したい方はどうぞ．(自分で変換すると7分くらいなのでそっちの方が早いかもしれませんが)<br>http://members.at.infoseek.co.jp/sakura_editor/snapshot/cvs2svn-dump.bz2<br><br>svnadmin create /path/to/repository<br>bzip2 -dc cvs2svn-dump.bz2 | svnadmin load --parent-dir sakura /path/to/repository<br></div></section>
+    </li></ul></li></ul></body></html>

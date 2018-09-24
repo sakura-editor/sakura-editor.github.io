@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>重複改行の置換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4099</span>
+    <a class="thread-title" href="4099.html#4099">重複改行の置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4101</span>
+    <a class="thread-title" href="4099.html#4101">RE: 重複改行の置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4106</span>
+    <a class="thread-title" href="4099.html#4106">RE2: 重複改行の置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4109</span>
+    <a class="thread-title" href="4099.html#4109">RE3: 重複改行の置換</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4099>
+    <span class="no">[4099]</span>
+    <a class="thread-title" href="#4099">重複改行の置換</a>
+    <span class="author">xla</span>
+    <time datetime="2004-10-17T13:30:14">2004年10月17日 13:30</time></h1>
+    <div class="body">改行が重なって２行空きになっているのを１行空きにしたいとき、<br>秀丸だと\n\n\n→\n\nの置換でできたんですが、sakuraエディタ<br>だとどうすればいいんでしょうか。</div></section>
+    <ul><li><section><h1 id=4101>
+    <span class="no">[4101]</span>
+    <a class="thread-title" href="#4101">RE: 重複改行の置換</a>
+    <span class="author">すい</span>
+    <time datetime="2004-10-18T01:16:14">2004年10月18日 01:16</time></h1>
+    <div class="body">&gt;改行が重なって２行空きになっているのを１行空きにしたいとき、<br>&gt;秀丸だと\n\n\n→\n\nの置換でできたんですが、sakuraエディタ<br>&gt;だとどうすればいいんでしょうか。<br><br>私は<br><br>1) 全改行コードを \x01 とかの「普通テキスト中には有り得ないコード」に置換する。<br>　　[\r\n]+ ⇒ \x01<br><br>2) 変換後の「連続している \x01」を置換でまとめる。<br>　　\x01\x01+ ⇒ \x01\x01<br><br>3) \x01 を改行コードに置換して戻す。<br>　　\x01 ⇒ \r\n<br><br>というような処理をおこなうマクロ用意してやっています。<br><br><br>↓ DelBLDup.MAC という名前でマクロフォルダに保存して利用。<br>-----<br>//キーボードマクロのファイル<br><br>// 選択範囲の連続した空行を削除する。<br>// 範囲選択せずに実行した時はファイル全体に対して処理される。<br><br>S_ReplaceAll('[\\r\\n]+', '\\x01', 148);&#9;&#9;// <br>S_ReplaceAll('\\x01\\x01+', '\\x01\\x01', 148);&#9;// <br>S_ReplaceAll('^\\x01+', '\\x01', 148);&#9;&#9;&#9;// <br>S_ReplaceAll('\\x01', '\\r\\n', 148);&#9;&#9;&#9;// <br>S_ReDraw(0);&#9;// 再描画<br>-----<br>「マクロの 作り方/使い方 のヒント」 # これももう内容古いな<br>http://www.egroups.co.jp/files/sakura-editor/User/MACRO/HINT.TXT<br></div></section>
+    <ul><li><section><h1 id=4106>
+    <span class="no">[4106]</span>
+    <a class="thread-title" href="#4106">RE2: 重複改行の置換</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-10-20T00:02:15">2004年10月20日 00:02</time></h1>
+    <div class="body">&gt;1) 全改行コードを \x01 とかの「普通テキスト中には有り得ないコード」に置換する。<br>&gt;　　[\r\n]+ ⇒ \x01<br>1行1固まりのメモリでデータを管理しているので，大きいファイルに対してこのように1行にまとめる操作をするとメモリコピーが頻発してめちゃめちゃ遅くなりそうですが...<br></div></section>
+    <ul><li><section><h1 id=4109>
+    <span class="no">[4109]</span>
+    <a class="thread-title" href="#4109">RE3: 重複改行の置換</a>
+    <span class="author">すい</span>
+    <time datetime="2004-10-20T04:22:05">2004年10月20日 04:22</time></h1>
+    <div class="body">&gt;&gt;1) 全改行コードを \x01 とかの「普通テキスト中には有り得ないコード」に置換する。<br>&gt;&gt;　　[\r\n]+ ⇒ \x01<br>&gt;1行1固まりのメモリでデータを管理しているので，大きいファイルに対してこのように1行にまとめる操作をするとメモリコピーが頻発してめちゃめちゃ遅くなりそうですが... <br><br>はい。特に長い行が多い場合、処理に時間がかかります。<br>ファイルサイズが大きい場合もやはり時間がかかります。<br>でも他に手が無いので。<br>手作業なんかよりはるかにマシだし、ってことで。<br>PPAやなんかのマクロで一生懸命処理させるともっと時間かかりますし。<br>ファイル全体に対して処理するとかなら perl やなんかに投げるという手もありかもしれませんが。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

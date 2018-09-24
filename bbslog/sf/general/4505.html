@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現の置換について(行頭) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4505</span>
+    <a class="thread-title" href="4505.html#4505">正規表現の置換について(行頭)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4511</span>
+    <a class="thread-title" href="4505.html#4511">RE: 正規表現の置換について(行頭)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4514</span>
+    <a class="thread-title" href="4505.html#4514">Re2: 正規表現の置換について(行頭)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4515</span>
+    <a class="thread-title" href="4505.html#4515">Re3: 正規表現の置換について(行頭)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4522</span>
+    <a class="thread-title" href="4505.html#4522">Re3: 正規表現の置換について(行頭)</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4558</span>
+    <a class="thread-title" href="4505.html#4558">Re2: 正規表現の置換について(行頭)</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4505>
+    <span class="no">[4505]</span>
+    <a class="thread-title" href="#4505">正規表現の置換について(行頭)</a>
+    <span class="author">f</span>
+    <time datetime="2005-06-20T14:59:04">2005年06月20日 14:59</time></h1>
+    <div class="body">いつも大変便利に使わせて頂いております。<br><br>サクラエディタ1.5.3.2にて、下記の置換（正規表現）<br>を実行すると、期待と異なる結果になりました。<br><br>【元のテキスト】<br>--------------------------------<br>ab<br>aab<br>aaab<br>aaaab<br>--------------------------------<br><br>【置換】<br>置換前「^a」<br>置換後「」<br><br>【期待する結果】<br>--------------------------------<br>b<br>ab<br>aab<br>aaab<br>--------------------------------<br><br>【実際の結果】<br>--------------------------------<br>b<br>b<br>b<br>b<br>--------------------------------<br><br>以上、宜しくお願い致します。<br></div></section>
+    <ul><li><section><h1 id=4511>
+    <span class="no">[4511]</span>
+    <a class="thread-title" href="#4511">RE: 正規表現の置換について(行頭)</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-06-22T23:06:14">2005年06月22日 23:06</time></h1>
+    <div class="body">&gt;タイトル: RE: 正規表現の置換について(行頭)<br>&gt;発言者: f<br>&gt;いつも大変便利に使わせて頂いております。<br>&gt;<br>&gt;サクラエディタ1.5.3.2にて、下記の置換（正規表現）<br>&gt;を実行すると、期待と異なる結果になりました。<br><br>これ、以前から話題にはなっているのですが、<br>現状は、残念ながらfさんの期待する結果とならない仕様です。<br><br>世の中のエディタで動作がまちまちなところで、昔のkenjiさんの<br>投稿によると、<br><br>&gt;&gt; 全部消える……サクラ, 秀丸(HMJRE&amp;JRE32), Dana, Wz<br>&gt;&gt; 先頭1文字だけ消える……sed, ActivePerl, ViVi, WSH5(RegExp.Replace()), BASP21(Replace())<br><br>となっており、行毎にしか編集しないストリームエディタでは、fさんの期待通り、<br>スクリーンエディタでは、全部消えてしまうことが多いようです。<br><br>先頭１文字だけ消えるようにするのは、なんだか難しいみたい。だと思ってください。<br><br>私も、fさんの期待する結果になって欲しいと思うのですが・・・<br></div></section>
+    <ul><li><section><h1 id=4514>
+    <span class="no">[4514]</span>
+    <a class="thread-title" href="#4514">Re2: 正規表現の置換について(行頭)</a>
+    <span class="author">せんば</span>
+    <time datetime="2005-06-23T13:00:05">2005年06月23日 13:00</time></h1>
+    <div class="body">▼ かろとさん<br>&gt; &gt;サクラエディタ1.5.3.2にて、下記の置換（正規表現）<br>&gt; &gt;を実行すると、期待と異なる結果になりました。<br>&gt; <br>&gt; これ、以前から話題にはなっているのですが、<br>&gt; 現状は、残念ながらfさんの期待する結果とならない仕様です。<br><br>既出かもしれませんが、以下の正規表現だと<br>先頭１文字だけ消えました。<br>置換前：^a(\w*)<br>置換後：$1<br><br>内部処理的に、どういう違いがあるんでしょうね...(^^;<br><br>sakura 1.5.3.2<br>Bregexp.dll V1.1 Build 22</div></section>
+    <ul><li><section><h1 id=4515>
+    <span class="no">[4515]</span>
+    <a class="thread-title" href="#4515">Re3: 正規表現の置換について(行頭)</a>
+    <span class="author">f</span>
+    <time datetime="2005-06-23T14:20:22">2005年06月23日 14:20</time></h1>
+    <div class="body">かろとさん、せんばさん<br>ご回答ありがとうございました。<br><br>過去ログ見てませんでした。<br>失礼致しました。<br></div></section>
+    </li><li><section><h1 id=4522>
+    <span class="no">[4522]</span>
+    <a class="thread-title" href="#4522">Re3: 正規表現の置換について(行頭)</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-06-24T23:46:49">2005年06月24日 23:46</time></h1>
+    <div class="body">&gt;タイトル: Re3: 正規表現の置換について(行頭)<br>&gt;発言者: せんば<br>&gt;内部処理的に、どういう違いがあるんでしょうね...(^^;<br><br>置換後のキャレット位置に違いがあります。<br></div></section>
+    </li></ul></li><li><section><h1 id=4558>
+    <span class="no">[4558]</span>
+    <a class="thread-title" href="#4558">Re2: 正規表現の置換について(行頭)</a>
+    <span class="author">Thor</span>
+    <time datetime="2005-07-19T20:15:59">2005年07月19日 20:15</time></h1>
+    <div class="body">BRegexp.dll自体ではグローバルオプション付きの置換で先頭だけが置換されるので、<br>全置換は、単純にBRegexp.dllでグローバル置換を使えばいいのではないでしょうか<br><br>置換対象ですが、置換対象文字列全体は「$&amp;」で呼び出せるので、<br>選択始点挿入にしたときは「置換後の文字列＋$&amp;」<br>選択終点追加にしたときは「$&amp;＋置換後の文字列」<br>とすれば、一つ一つ文字列を切り分けてから置換せずとも、<br>一行全体を全置換できると思うのですが<br><br>Jmeditor2では、BRegexp.dllで普通にグローバル置換をしているようで、<br>先頭文字だけが置換されます。<br>おなじく、K2Editorでも、先頭文字だけが置換されます。<br><br><br>正規表現エンジンがない場合のときとか、プログラムの都合とか<br>よく分かってないので、変なこと言ってたらすいません。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

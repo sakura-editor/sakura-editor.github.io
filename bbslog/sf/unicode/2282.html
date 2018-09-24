@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>プロポーショナル版の変更点について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2282</span>
+    <a class="thread-title" href="2282.html#2282">プロポーショナル版の変更点について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2283</span>
+    <a class="thread-title" href="2282.html#2283">Re:プロポーショナル版の変更点について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2284</span>
+    <a class="thread-title" href="2282.html#2284">Re2:プロポーショナル版の変更点について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2285</span>
+    <a class="thread-title" href="2282.html#2285">Re3:プロポーショナル版の変更点について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2286</span>
+    <a class="thread-title" href="2282.html#2286">Re4:プロポーショナル版の変更点について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2287</span>
+    <a class="thread-title" href="2282.html#2287">Re5:プロポーショナル版の変更点について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2288</span>
+    <a class="thread-title" href="2282.html#2288">Re6:プロポーショナル版の変更点について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2289</span>
+    <a class="thread-title" href="2282.html#2289">Re7:プロポーショナル版の変更点について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2293</span>
+    <a class="thread-title" href="2282.html#2293">Re8:プロポーショナル版の変更点について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2294</span>
+    <a class="thread-title" href="2282.html#2294">Re:プロポーショナル版の変更点について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2295</span>
+    <a class="thread-title" href="2282.html#2295">Re2:プロポーショナル版の変更点について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2296</span>
+    <a class="thread-title" href="2282.html#2296">Re3:プロポーショナル版の変更点について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2297</span>
+    <a class="thread-title" href="2282.html#2297">Re4:プロポーショナル版の変更点について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2282>
+    <span class="no">[2282]</span>
+    <a class="thread-title" href="#2282">プロポーショナル版の変更点について</a>
+    <span class="author">もか</span>
+    <time datetime="2015-09-20T23:34:17">2015年09月20日 23:34</time></h1>
+    <div class="body">■ステータスバーの桁数ですべての文字が1桁扱いになります。<br>いままではTAB=タブ幅,全角=2桁,半角1桁(=以降旧桁数)扱いでした。<br>■GetSelectColmFrom,GetSelectColmTo<br>の各値がpx単位になります。いままでは旧桁数と同じ値でした。<br>■LineColumnToIndex,LineIndexToColumn,MoveCursorLayout,GetStrLayoutLength,SetViewLeft,GetViewColumn<br>レイアウト桁がpx数になります。今までは旧桁数でした。<br>■GetDefaultCharLength<br>ルーラー1文字分の幅が返ります。この幅はA～Za～zの幅の平均値px数です。<br>折り返し桁数やタブ幅はこの幅を基準に計算されます。今までは1でした。<br>等幅フォントの場合GetStrLayoutLength/GetDefaultCharLengthで旧桁数とほぼ同等の値を取得することができます。<br>■左右移動の改行以降の移動がpx単位の移動になります。<br>いままでは1文字幅単位でした。<br>■単語の左端に移動で改行以降の移動がルーラーの1文字分移動になります。<br>いままでは改行位置に移動していました。<br>■単語の右端に移動はルーラー1文字分右移動でいままでと変わりません。<br>■改行コードは内部幅は1px扱いで表示だけ1ルーラー文字分+4pxになっています。<br>改行コードを表示しない場合は表示幅は2pxです。<br>いままでは内部1文字幅表示2文字幅(旧バージョン・反転選択では表示1文字幅)でした<br>■TAB幅の計算は、最低でもルーラー1文字幅分以上の隙間が確保される状態での次のタブ位置までです。<br>最大で1文字幅-1px+タブ幅分確保されるので最大値は以前より約1文字分大きくなります。<br>■等幅フォントの場合であっても以前は幅が固定されていたコードポイントがありましたが、<br>コントロールコードを除くすべての文字がフォントを基準に可変長になります。<br>また最低幅は1px以上なのでUnicodeの0幅文字でも1px幅の文字として扱われて<br>等幅フォントであったとしても文字幅が1px単位でずれることがあります。<br></div></section>
+    <ul><li><section><h1 id=2283>
+    <span class="no">[2283]</span>
+    <a class="thread-title" href="#2283">Re:プロポーショナル版の変更点について</a>
+    <span class="author">syat</span>
+    <time datetime="2015-09-20T23:53:14">2015年09月20日 23:53</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ■ステータスバーの桁数ですべての文字が1桁扱いになります。<br>&gt; いままではTAB=タブ幅,全角=2桁,半角1桁(=以降旧桁数)扱いでした。<br><br>これはちょっとリリースはストップですね。ご指摘ありがとうございました。<br>プロポーショナル修正をコミットしてしまったので戻した状態で再チャレンジします。<br><br></div></section>
+    <ul><li><section><h1 id=2284>
+    <span class="no">[2284]</span>
+    <a class="thread-title" href="#2284">Re2:プロポーショナル版の変更点について</a>
+    <span class="author">もか</span>
+    <time datetime="2015-09-21T02:40:13">2015年09月21日 02:40</time></h1>
+    <div class="body">やっぱだめかな？(判断はお任せします)<br>桁表示にcol(px数をルーラー幅で整数割りした物)を使うとプロポーショナルフォントでガタガタになるので、<br>そうなるのなら計算コストの一番安いCLogicInt+1で表示するようにしようと考えてました。<br>これは$xとかタグジャンプの桁表示と同じものです。<br>メモ帳はじめほとんどのエディタ・開発環境は1文字で1つづ表示するのが今は主流みたいですし。<br>今までの実装はすごく長い行の後ろ側で1文字づつの修正を繰り返すような動作のときに顕著に重いです。<br>表示上のタブを中途半端に含めた桁数が知りたいときはルーラーを見ればある程度は分かるかなと。<br>なお矩形選択時は、colとpxが表示されます。<br>昔のように正確でない表示もどうかと思いますし、かといって無意味に重いのもどうかと思います。<br>　もしいままでと同じような値にしたい場合は、タブ幅を含め文字幅固定で計算してやる必要があります。<br>折り返し単位で表示のときも、今までは低コストで表示するだけでしたが1レイアウト行分計算が必要になります。<br>レイアウト行の行頭インデントがある場合は1行目のインデント分を固定文字幅で先に計算しておく必要もありそうです。<br>そういえばCNativeW::GetKetaOfCharはサロゲートペアに固定で2を返す等の理由により、厳密には実際の表示幅と同じになりません。<br>もうちょっと改造が必要かもしれないです。<br>TabToSpace/SpaceToTabに似たような処理がありますが、こちらはサロゲートペアにそもそも未対応のようです。<br>色々な人の意見も聞いてみたいですがあんまり人いないんですよね。<br></div></section>
+    <ul><li><section><h1 id=2285>
+    <span class="no">[2285]</span>
+    <a class="thread-title" href="#2285">Re3:プロポーショナル版の変更点について</a>
+    <span class="author">もか</span>
+    <time datetime="2015-09-21T03:22:50">2015年09月21日 03:22</time></h1>
+    <div class="body">色々書いたけどF_GETSTRWIDTHをコピペだけである程度いい気がしてきた<br></div></section>
+    <ul><li><section><h1 id=2286>
+    <span class="no">[2286]</span>
+    <a class="thread-title" href="#2286">Re4:プロポーショナル版の変更点について</a>
+    <span class="author">syat</span>
+    <time datetime="2015-09-21T23:20:49">2015年09月21日 23:20</time></h1>
+    <div class="body">▼ もかさん<br>パッチとして整合性とれてるからいけるかな、と思ったのですが、既存の動きから大きく変わってしまうのは躊躇してしまいます。<br>内部の計算はプロポーショナル版のでよいので、マクロ関数と桁数表示のような外部と接する部分に旧Ｖｅｒとの互換性を持たせられるとよいと思いました。<br></div></section>
+    <ul><li><section><h1 id=2287>
+    <span class="no">[2287]</span>
+    <a class="thread-title" href="#2287">Re5:プロポーショナル版の変更点について</a>
+    <span class="author">もか</span>
+    <time datetime="2015-09-22T01:01:20">2015年09月22日 01:01</time></h1>
+    <div class="body">▼ syatさん<br>&gt; パッチとして整合性とれてるからいけるかな、と思ったのですが、既存の動きから大きく変わってしまうのは躊躇してしまいます。<br>&gt; 内部の計算はプロポーショナル版のでよいので、マクロ関数と桁数表示のような外部と接する部分に旧Ｖｅｒとの互換性を持たせられるとよいと思いました。<br>全角だから2とか決め打ちせずLogicLayout変換関数群をちゃんと使ってあるマクロは互換性があります。<br>例えばこれ<br><a href=http://sakura.qp.land.to/?Macro%2F%C5%EA%B9%C6%2F222 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Macro%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6%<wbr>2F222</nobr></a><br>あとはSimpleCmdの切り取り・貼り付けコマンドとかです。<br>既存マクロ関数を等幅専用にされると既存マクロのプロポーショナル対応(作者が意図的でないのも含む)で書かれたものが等幅フォントを選ばないとちゃんと動かないものになります。<br>もっとも互換性があるように書いた人が私以外にいるかどうかはあやしいところです。<br>あとマクロのヘルプでSetViewLeft,GetViewColumns等でプロポーショナル対応の記述が既にあります。<br>ANSI-&gt;Unicodeのときも座標系の相違はすでにあり特に目立った混乱も観測していないので影響は限定的かなという印象です。<br>AUのときは罫線マクロとURLエンコードマクロが動かないなどの例はありました(PPAは除く)。<br>0.0.1バージョン上げで切り替えるにはちょっと乱暴だとは正直思いました。<br></div></section>
+    <ul><li><section><h1 id=2288>
+    <span class="no">[2288]</span>
+    <a class="thread-title" href="#2288">Re6:プロポーショナル版の変更点について</a>
+    <span class="author">syat</span>
+    <time datetime="2015-09-24T21:38:09">2015年09月24日 21:38</time></h1>
+    <div class="body">プロポーショナル対応の動きを整理しますと、<br>・旧レイアウト桁・・・半角１、全角2の桁<br>・新レイアウト桁・・・ピクセル単位のｘ座標<br>・新ルーラー桁・・・半角文字の平均幅を1桁とする<br>として、<br><br>【論理桁（変化なし）】<br>ExpandParameter('$x')<br><br>【旧レイアウト桁→論理桁】<br>ステータスバーの桁<br><br>【旧レイアウト（変化なし）】<br>GetStrWidth()<br><br>【旧レイアウト桁→新レイアウト桁】<br>GetSelectColmFrom()、GetSelectColmTo()、GetStrLayoutLength()、GetViewColumns()<br><br>【旧レイアウト桁→新ルーラー桁】<br>ルーラー、右端折り返し、タブ、指定桁縦線<br><br>みたいになっています。レイアウト座標が桁からピクセルに変更されたと考えれば全体的に辻褄があっています。<br><br>一案ですが、ステータスバーの桁とマクロ関数が返す桁は、ピクセル座標をルーラー桁幅で割り算したものを返せば、等幅フォントを使う人には互換性が保たれて良いんじゃないでしょうか？<br>レイアウト～ロジックの正確な計算をするにはピクセル座標が必須なので、GetSelectColmFrom2()などでピクセル座標を返せるようにするとか。<br>個人的には、マクロ関数はどっちでもよいですが、ステータスバーの桁は変わらないでくれるとありがたいです。<br></div></section>
+    <ul><li><section><h1 id=2289>
+    <span class="no">[2289]</span>
+    <a class="thread-title" href="#2289">Re7:プロポーショナル版の変更点について</a>
+    <span class="author">もか</span>
+    <time datetime="2015-09-25T01:51:31">2015年09月25日 01:51</time></h1>
+    <div class="body">&gt;【旧レイアウト桁→論理桁】<br>&gt;ステータスバーの桁、GetStrWidth()<br>GetStrWidthは旧レイアウト桁のままです。<br><br>&gt;一案ですが、ステータスバーの桁とマクロ関数が返す桁は、ピクセル座標をルーラー桁幅で割り算したものを返せば、等幅フォントを使う人には互換性が保たれて良いんじゃないでしょうか？<br>ステータスバーの桁についてプロポーショナルの時もその表示にするんですか？<br>ABCとかは1桁進んでWとかは2桁進んで.とかでは桁は増えないみたいな動きになり実質無意味な値が表示されるようになりますけど。<br>&gt;個人的には、マクロ関数はどっちでもよいですが、ステータスバーの桁は変わらないでくれるとありがたいです。<br>等幅版と変わらない感じに表示するものをweeklyの下のところにアップしておきました(パッチ付き)。<br>M案1は、改行単位のときは旧レイアウト互換計算、折り返し単位のときは新ルーラー桁で表示します。<br>M案2は、改行単位のときも新ルーラー桁(折り返しインデント抜き)で表示します。<br>以前はあった行が長い時のキャッシュはとりあえずなので復活させてません。<br>用途とか好みの都合だから選択できるようにすりゃあいいんじゃないかという気もしますが。<br>マクロのほうは意見保留。</div></section>
+    <ul><li><section><h1 id=2293>
+    <span class="no">[2293]</span>
+    <a class="thread-title" href="#2293">Re8:プロポーショナル版の変更点について</a>
+    <span class="author">syat</span>
+    <time datetime="2015-09-30T01:06:37">2015年09月30日 01:06</time></h1>
+    <div class="body">▼ もかさん<br>&gt; GetStrWidthは旧レイアウト桁のままです。<br>そうでしたね。修正しました。<br><br><br>&gt; 等幅版と変わらない感じに表示するものをweeklyの下のところにアップしておきました(パッチ付き)。<br>&gt; M案1は、改行単位のときは旧レイアウト互換計算、折り返し単位のときは新ルーラー桁で表示します。<br>&gt; M案2は、改行単位のときも新ルーラー桁(折り返しインデント抜き)で表示します。<br>M案2のほうが私のイメージでした。<br>M案2か物理桁かのオプションがあると良いかもしれません。<br>M案1はあまりいらないかな。プロポーショナルでは全角半角あまり気にしない気がします。<br><br><br>&gt; マクロのほうは意見保留。<br>GetSelectColmFrom()、GetSelectColmTo()、GetStrLayoutLength()、GetViewColumns() は、プロポーショナル対応にともない仕様が変わったってことで、このままで良いんじゃないでしょうか。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=2294>
+    <span class="no">[2294]</span>
+    <a class="thread-title" href="#2294">Re:プロポーショナル版の変更点について</a>
+    <span class="author">もか</span>
+    <time datetime="2015-09-30T03:57:22">2015年09月30日 03:57</time></h1>
+    <div class="body">すっかり忘れていた変更点<br>文字の間隔が半角1:全角2だったのが、文字毎に1になったので<br>等幅フォントで文字の間隔を設定すると全角と半角の混ざった表示が等幅じゃなくなる<br>これはすっかり忘れてた暫定仕様だった。<br>直すのは結構大変<br></div></section>
+    <ul><li><section><h1 id=2295>
+    <span class="no">[2295]</span>
+    <a class="thread-title" href="#2295">Re2:プロポーショナル版の変更点について</a>
+    <span class="author">syat</span>
+    <time datetime="2015-09-30T21:55:24">2015年09月30日 21:55</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 直すのは結構大変<br><br>等幅の互換性を優先して、全角文字だったら2倍にするのは難しいでしょうか？<br>CTextMetirics.cppとCMemoryIterator.hを直せばいけそうな気がするのですが。</div></section>
+    <ul><li><section><h1 id=2296>
+    <span class="no">[2296]</span>
+    <a class="thread-title" href="#2296">Re3:プロポーショナル版の変更点について</a>
+    <span class="author">もか</span>
+    <time datetime="2015-10-01T01:24:11">2015年10月01日 01:24</time></h1>
+    <div class="body">▼ syatさん<br>&gt; 等幅の互換性を優先して、全角文字だったら2倍にするのは難しいでしょうか？<br>&gt; CTextMetirics.cppとCMemoryIterator.hを直せばいけそうな気がするのですが。<br>大変かと思っていたのですがそうでもなかったです。<br>その2つとCLayoutMgr::GetLayoutXOfCharを直せばだいたいいけました。<br>→patchunicode:1003<br>関連バグ2件をパッチに含んでいます。(状況によってパッチから分離して適用してください)<br>修正・適用はご自由にどうぞ。<br><br>プロポーショナル的にはCSSのletter-spacingプロパティと同じ挙動のほうが<br>見た目が良いような気もしますが私はいつも0にしているのでどういうのが正解かいまいちわかりません。<br><br>それともう1点、ASCII以外の半角文字(半角カナ等)で印刷に使われるフォントが<br>全角から半角のものに変更になっています。<br>フォントサイズ指定が幅から高さに変更になっているので場合によっては今までと<br>微妙に文字の大きさが異なるかもしれません。<br></div></section>
+    <ul><li><section><h1 id=2297>
+    <span class="no">[2297]</span>
+    <a class="thread-title" href="#2297">Re4:プロポーショナル版の変更点について</a>
+    <span class="author">もか</span>
+    <time datetime="2015-10-07T00:23:08">2015年10月07日 00:23</time></h1>
+    <div class="body">中ボタンによるマウススクロールで、左右移動が等幅版と比べて遅いみたいです。<br>等幅版3文字分移動、ＰＰ版3px移動になってる気がする。<br>他にもまだあるかも。うむむ<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

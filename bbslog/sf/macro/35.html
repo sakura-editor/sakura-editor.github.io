@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ActiveScriptRubyのマクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">35</span>
+    <a class="thread-title" href="35.html#35">ActiveScriptRubyのマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">36</span>
+    <a class="thread-title" href="35.html#36">RE: ActiveScriptRubyのマクロ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">52</span>
+    <a class="thread-title" href="35.html#52">Re:ActiveScriptRubyのマクロ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=35>
+    <span class="no">[35]</span>
+    <a class="thread-title" href="#35">ActiveScriptRubyのマクロ</a>
+    <span class="author">佐野剛史</span>
+    <time datetime="2003-09-02T00:21:03">2003年09月02日 00:21</time></h1>
+    <div class="body">サクラエディタの開発に携わっておられる皆さん、<br>はじめまして＆ありがとうございます。いつも快<br>適に使わせていただいております。<br><br>本題ですが、WSH経由でActiveScriptRubyによるサ<br>クラエディタ用マクロを作ってみました。そして<br>動きました！（感激）<br><br>しかし、マクロを一回目に実行したときには何事<br>もなく無事終了するのですが、2回目に実行すると<br>サクラエディタごと落ちます。<br><br>WSHはまだ推奨されていないのはわかっているので<br>すが、どうしてもrubyが使いたくて…。原因と解<br>決法がお分かりでしたら教えていただきたく存じ<br>ます。<br><br>環境は<br>- ActiveScriptRuby1.8.0.4<br>- WindowsXP SP1<br>です。<br><br>ちなみに、作成したスクリプトは次のものです。<br><br># Word count macro for Sakura Editor<br># Ruby Version<br># Created by Takashi Sano<br><br>$KCODE = 's'<br><br>shell = WIN32OLE.new("WScript.Shell")<br><br>file = Editor.GetFileName<br><br>words = chars = 0<br>IO.foreach(file) {|line|<br>  words += line.split.length<br>  chars += line.gsub(/\s/,'').length<br>}<br><br>shell.Popup "単語数：#{words}\n" +<br>            "文字数：#{chars}\n", <br>            0, '文字・単語数カウント', 64<br><br>shell = nil<br><br></div></section>
+    <ul><li><section><h1 id=36>
+    <span class="no">[36]</span>
+    <a class="thread-title" href="#36">RE: ActiveScriptRubyのマクロ</a>
+    <span class="author">すい</span>
+    <time datetime="2003-09-03T00:01:13">2003年09月03日 00:01</time></h1>
+    <div class="body">&gt;WSHはまだ推奨されていないのはわかっているので<br>&gt;すが、どうしてもrubyが使いたくて…。原因と解<br>&gt;決法がお分かりでしたら教えていただきたく存じ<br>&gt;ます。<br><br>別に「WSHはまだ推奨されていない」というわけじゃないです。<br>単に「WSHは正常に動作しないから使えない」というだけの お話しで。<br>つまり「推奨する/しない」以前の状態、「正常動作しない」だけなのです。<br><br>現状、サクラエディタでWSHは<br><br>・Win95系(Win95/98)では全く正常動作しない。<br><br>・WinNT系(WinNT4/2000/Xp) では一応動作するように見えるけど、<br>　（同じOSであっても）パソコンごとに挙動が異なる。<br>　同一のマクロがこっちのパソコンでは動くけど、同じ環境（だと思える）の<br>　あっちのパソコンでは動かない、とか。色々とってもぁゃιぃ。<br><br>という状態のようです。<br><br>ですから原因もへったくれも何もないですね。<br>「万が一、動いちゃったらラッキー。動かなかったらそういう物だと思って諦めてくれ。はっはっは。」なのです。<br><br>「解決法」はサクラエディタのソースをみてWSH関連の不具合箇所を探し出して<br>修正して頂くしかないです。<br>↑これが出来る方がいないので、ず～っと そのままになっているのですよ。<br><br>残念ながらそういう事で。<br></div></section>
+    </li><li><section><h1 id=52>
+    <span class="no">[52]</span>
+    <a class="thread-title" href="#52">Re:ActiveScriptRubyのマクロ</a>
+    <span class="author">DClock</span>
+    <time datetime="2003-11-30T02:04:36">2003年11月30日 02:04</time></h1>
+    <div class="body">&gt; しかし、マクロを一回目に実行したときには何事<br>&gt; もなく無事終了するのですが、2回目に実行すると<br>&gt; サクラエディタごと落ちます。<br>試してみました。<br>msvcrt-ruby18.dllの中でStackOverFlowしてますね。二回目<br>というのがひっかかりますが、evalかな...。<br>サクラというか、ActiveRuby側を調べる必要があるかも。<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>辞書引きソフトのJammingを呼び出し語義を調べる方法 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4268</span>
+    <a class="thread-title" href="4268.html#4268">辞書引きソフトのJammingを呼び出し語義を調べる方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4270</span>
+    <a class="thread-title" href="4268.html#4270">RE: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4272</span>
+    <a class="thread-title" href="4268.html#4272">Re2: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4274</span>
+    <a class="thread-title" href="4268.html#4274">Re3: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4275</span>
+    <a class="thread-title" href="4268.html#4275">Re2: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4276</span>
+    <a class="thread-title" href="4268.html#4276">Re3: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4277</span>
+    <a class="thread-title" href="4268.html#4277">Re4: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4292</span>
+    <a class="thread-title" href="4268.html#4292">Re5: これでどうでしょうか（ご報告）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4293</span>
+    <a class="thread-title" href="4268.html#4293">Re6: これでどうでしょうか（ご報告）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4294</span>
+    <a class="thread-title" href="4268.html#4294">Re7: これでどうでしょうか（ご報告）</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4268>
+    <span class="no">[4268]</span>
+    <a class="thread-title" href="#4268">辞書引きソフトのJammingを呼び出し語義を調べる方法</a>
+    <span class="author">ki</span>
+    <time datetime="2005-02-05T14:06:45">2005年02月05日 14:06</time></h1>
+    <div class="body">サクラエディタでの作成文書で、選択した単語を辞書引きソフトのJammingに渡して、辞書の定義を調べることが可能になると便利なのですが、そういうことはできますでしょうか？どなたかご教示願えませんでしょうか。</div></section>
+    <ul><li><section><h1 id=4270>
+    <span class="no">[4270]</span>
+    <a class="thread-title" href="#4270">RE: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-02-05T23:31:18">2005年02月05日 23:31</time></h1>
+    <div class="body">&gt;サクラエディタでの作成文書で、選択した単語を辞書引きソフトのJammingに渡して、辞書の定義を調べることが可能になると便利なのですが、そういうことはできますでしょうか？どなたかご教示願えませんでしょうか。<br>Jammingのマニュアルによれば，<br>  Jamming.exe -w"検索文字列" -f<br>の形で実行すれば検索できるとのことですので，外部コマンド実行を含むマクロを作れば...<br>と書いて思い出しましたが，ExpandParameterマクロで文字列を取得してそれを外部コマンド実行に渡す必要があるので標準のマクロでは出来なかったような気が...(変数が必要になるので)<br>PPAを使ったマクロなら出来ると思います．<br></div></section>
+    <ul><li><section><h1 id=4272>
+    <span class="no">[4272]</span>
+    <a class="thread-title" href="#4272">Re2: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a>
+    <span class="author">もか</span>
+    <time datetime="2005-02-05T23:42:19">2005年02月05日 23:42</time></h1>
+    <div class="body">&gt;ExpandParameterマクロで文字列を取得してそれを外部コマンド実行に渡す必要があるので標準のマクロでは出来なかったような気<br>「外部コマンド実行(ExecCommand)」マクロの引数は、ExpandParameterの展開を行うため、<br>マクロを記録→外部コマンド実行「Jamming.exe -w"$C" -f」→キーマクロの保存。<br>で、保存したものを登録するなりして呼び出す。<br>だけでいけませんか？<br></div></section>
+    <ul><li><section><h1 id=4274>
+    <span class="no">[4274]</span>
+    <a class="thread-title" href="#4274">Re3: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a>
+    <span class="author">ki</span>
+    <time datetime="2005-02-06T00:26:26">2005年02月06日 00:26</time></h1>
+    <div class="body">▼ もかさん<br>&gt; &gt;ExpandParameterマクロで文字列を取得してそれを外部コマンド実行に渡す必要があるので標準のマクロでは出来なかったような気<br>&gt; 「外部コマンド実行(ExecCommand)」マクロの引数は、ExpandParameterの展開を行うため、<br>&gt; マクロを記録→外部コマンド実行「Jamming.exe -w"$C" -f」→キーマクロの保存。<br>&gt; で、保存したものを登録するなりして呼び出す。<br>&gt; だけでいけませんか<br><br>もかさん<br>ありがとうございます。「Jamming.exe -w"$C" -f」を外部コマンドに入力し、文書中の単語を選択し試したところ、Jammingは起動するのですが、選択した単語は自動に引いてくれませんでした。自動に引いてくれるところまで行くと助かるのですが。どうも欲が深くていけません。げんたさんの「PPAを使ったマクロならできると思います」ということですが、こういうマクロを書くことは可能なのでしょうか？</div></section>
+    </li></ul></li><li><section><h1 id=4275>
+    <span class="no">[4275]</span>
+    <a class="thread-title" href="#4275">Re2: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a>
+    <span class="author">ki</span>
+    <time datetime="2005-02-06T01:20:47">2005年02月06日 01:20</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;サクラエディタでの作成文書で、選択した単語を辞書引きソフトのJammingに渡して、辞書の定義を調べることが可能になると便利なのですが、そういうことはできますでしょうか？どなたかご教示願えませんでしょうか。<br>&gt; Jammingのマニュアルによれば，<br>&gt;   Jamming.exe -w"検索文字列" -f<br>&gt; の形で実行すれば検索できるとのことですので，外部コマンド実行を含むマクロを作れば...<br>&gt; と書いて思い出しましたが，ExpandParameterマクロで文字列を取得してそれを外部コマンド実行に渡す必要があるので標準のマクロでは出来なかったような気が...(変数が必要になるので)<br>&gt; PPAを使ったマクロなら出来ると思います．<br><br>げんたさん<br>ありがとうございます。<br>もかさんからもアドバイスをいただき感謝しています。以前、げんたさんがお書きくださったプログラムをやっと見つけました。非常に使いやすいプログラムであったことを記憶しています。かなり前にコンピュータを変えたために見つけ出すに手間取ってしまいました。これをJamming用に変更することは可能でしょうか？<br><br>// DDWinで現在位置の単語を検索<br>//<br>// 秀丸マクロの移植版<br>// Oct. 21, 2002 genta<br>// ↑の PPA.DLL 移植版<br>// マクロファイルの拡張子は必ず .PPA にすること。PPA.DLL 必須。<br><br>var // 変数を確保する場所<br>word,group:String; // 文字変数を用意<br>begin<br>word  := S_GetSelectedString(0);<br>group := '外国語';<br><br>if word &lt;&gt; '' then<br>begin<br>if      Copy(word,length(word)-2,3) = 'ies' then<br>word := Copy(word,1,length(word)-3) + 'y'<br>else if Copy(word,length(word)-3,4) = 'ness' then<br>word := Copy(word,1,length(word)-4) + '*'<br>else if Copy(word,length(word)-2,3) = 'ing' then<br>word := Copy(word,1,length(word)-3) + '*'<br>else if Copy(word,length(word)-2,3) = 'est' then<br>word := Copy(word,1,length(word)-3) + '*'<br>else if Copy(word,length(word)-1,2) = 'es' then<br>word := Copy(word,1,length(word)-2) + '*'<br>else if Copy(word,length(word)-3,4) = 'pped' then<br>word := Copy(word,1,length(word)-4) + 'p*'<br>else if Copy(word,length(word)-3,4) = 'mmed' then<br>word := Copy(word,1,length(word)-4) + 'm*'<br>else if Copy(word,length(word)-3,4) = 'tted' then<br>word := Copy(word,1,length(word)-4) + 't*'<br>else if Copy(word,length(word)-3,4) = 'gged' then<br>word := Copy(word,1,length(word)-4) + 'g*'<br>else if Copy(word,length(word)-2,3) = 'ied' then<br>word := Copy(word,1,length(word)-3) + 'y*'<br>else if Copy(word,length(word)-1,2) = 'ed' then<br>word := Copy(word,1,length(word)-2) + '*'<br>else if Copy(word,length(word)-1,2) = 'er' then<br>word := Copy(word,1,length(word)-2) + '*'<br>else if Copy(word,length(word)-0,1) = 's' then<br>word := Copy(word,1,length(word)-1) + '*'<br>;<br><br>// MessageBox(word,'',0); // for Debug<br>// MessageBox( '"C:\Program Files\DDwin\ddwin.bat" ,2,' + group + ',g1,' + word ,'',0); // for Debug<br>S_ExecCommand ( '"C:\Program Files\DDwin\ddwin.exe" ,2,' + group + ',g1,' + word , 0 );<br>end;<br>end;<br></div></section>
+    <ul><li><section><h1 id=4276>
+    <span class="no">[4276]</span>
+    <a class="thread-title" href="#4276">Re3: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-02-06T14:10:41">2005年02月06日 14:10</time></h1>
+    <div class="body">&gt;以前、げんたさんがお書きくださったプログラムをやっと見つけました。<br>本人はすっかり忘れていましたが...(^^;)<br>活用形から検索できるようになっているんですよね．<br><br>&gt;これをJamming用に変更することは可能でしょうか？<br>Jammingには「語尾補正」という機能があるようですので，-m"語尾補正" オプションを付ければ1行マクロで行けるのではないかと．<br><br>インストールして試してみましたが<br>C:\Program Files\Jamming\Jamming.exe -w"$C" -m"語尾補正" -f<br>を外部コマンド実行したら検索できましたよ．<br></div></section>
+    <ul><li><section><h1 id=4277>
+    <span class="no">[4277]</span>
+    <a class="thread-title" href="#4277">Re4: 辞書引きソフトのJammingを呼び出し語義を調べる方法</a>
+    <span class="author">ki</span>
+    <time datetime="2005-02-06T19:13:57">2005年02月06日 19:13</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;以前、げんたさんがお書きくださったプログラムをやっと見つけました。<br>&gt; 本人はすっかり忘れていましたが...(^^;)<br>&gt; 活用形から検索できるようになっているんですよね．<br>&gt; <br>&gt; &gt;これをJamming用に変更することは可能でしょうか？<br>&gt; Jammingには「語尾補正」という機能があるようですので，-m"語尾補正" オプションを付ければ1行マクロで行けるのではないかと．<br>&gt; <br>&gt; インストールして試してみましたが<br>&gt; C:\Program Files\Jamming\Jamming.exe -w"$C" -m"語尾補正" -f<br>&gt; を外部コマンド実行したら検索できましたよ．<br><br>げんたさん<br>ありがとうございます。私も試してみました。Jammingの検索ウインドウにC:\Program Files\Jamming\Jamming.exe -w"$C" -m"語尾補正" -fの検索式が残ってしまい、肝心の単語が表れないのが残念です。でも選択した単語は引くことができました。げんたさん、ここでお伺いしたいのですがこれをマクロに書いて[ツール]ー[登録済みマクロ]で呼び出して検索するにはどのようにマクロを書いて保存したらよいのでしょうか？ご教示願えますでしょうか？お手数をおかけします。</div></section>
+    <ul><li><section><h1 id=4292>
+    <span class="no">[4292]</span>
+    <a class="thread-title" href="#4292">Re5: これでどうでしょうか（ご報告）</a>
+    <span class="author">ki</span>
+    <time datetime="2005-02-11T18:34:34">2005年02月11日 18:34</time></h1>
+    <div class="body">おかげさまで、以下のマクロで辞書引きソフトを使用することができるようになりました。<br>やたらとシングルコーテーションが多いのと、最後の,0の意味が気になっております。<br>//Jamming<br>S_ExecCommand('D:\\Jamming\\Jamming.exe '-w"$C"' '-m"語尾補正"' '-f'', 0);</div></section>
+    <ul><li><section><h1 id=4293>
+    <span class="no">[4293]</span>
+    <a class="thread-title" href="#4293">Re6: これでどうでしょうか（ご報告）</a>
+    <span class="author">もか</span>
+    <time datetime="2005-02-12T20:43:06">2005年02月12日 20:43</time></h1>
+    <div class="body">先日メールチェックしたばっかりです（汗<br>できるようになって良かったです。<br><br>最後の「,0」ですが、「標準出力を得る」が オフだと 0,  オンだと 1 です。<br>ちなみに、ウィンドウ付きのアプリケーションでは絶対にオン(チェックをつける)にしないことをお勧めします。<br><br>なお、「なんたら.mac」であれば、途中の'なしで下記のように書けるはずです。<br>S_ExecCommand('C:\\Program Files\\Jamming\\Jamming.exe -w"$C" -m"語尾補正" -f', 0);<br></div></section>
+    <ul><li><section><h1 id=4294>
+    <span class="no">[4294]</span>
+    <a class="thread-title" href="#4294">Re7: これでどうでしょうか（ご報告）</a>
+    <span class="author">ki</span>
+    <time datetime="2005-02-12T21:28:44">2005年02月12日 21:28</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 先日メールチェックしたばっかりです（汗<br>&gt; できるようになって良かったです。<br>&gt; <br>&gt; 最後の「,0」ですが、「標準出力を得る」が オフだと 0,  オンだと 1 です。<br>&gt; ちなみに、ウィンドウ付きのアプリケーションでは絶対にオン(チェックをつける)にしないことをお勧めします。<br>&gt; <br>&gt; なお、「なんたら.mac」であれば、途中の'なしで下記のように書けるはずです。<br>&gt; S_ExecCommand('C:\\Program Files\\Jamming\\Jamming.exe -w"$C" -m"語尾補正" -f', 0);<br><br>もかさん、ありがとうございます。<br>これで外部コマンド実行からマクロの作成(.mac)がすこしわかるようになりました。何度もありがとうございました。感謝。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

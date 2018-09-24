@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>デフォルト文字コード設定 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4553</span>
+    <a class="thread-title" href="4553.html#4553">デフォルト文字コード設定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4558</span>
+    <a class="thread-title" href="4553.html#4558">Re:デフォルト文字コード設定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4647</span>
+    <a class="thread-title" href="4553.html#4647">Re2:デフォルト文字コード設定</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4553>
+    <span class="no">[4553]</span>
+    <a class="thread-title" href="#4553">デフォルト文字コード設定</a>
+    <span class="author">fum</span>
+    <time datetime="2006-08-28T07:44:21">2006年08月28日 07:44</time></h1>
+    <div class="body">EUCで文書を作成したい場合などに不便を感じていましたので、デフォルト文字コードを設定出来るようにしました。 仕様的に不都合がないようでしたら、Commitをお願いします。 <br>文字コードが混在している場合にも、何かしらの対応ができると、もっと良いのですが。<br># 現物はSakuraeditorWIKIのJunk6にアップさせてもらいました。<br># DefaultCharCode.diff<br>---<br>・新規作成、日本語文字コードを含まないファイル、改行コードを含まないファイルを開いた場合に、［共通設定］－［全般］の「デフォルトコード」設定に従ってファイルを開くようにした。<br>・初期設定値は、現行版のSJIS+CRLFとした。</div></section>
+    <ul><li><section><h1 id=4558>
+    <span class="no">[4558]</span>
+    <a class="thread-title" href="#4558">Re:デフォルト文字コード設定</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-08-30T19:11:43">2006年08月30日 19:11</time></h1>
+    <div class="body">▼ fumさん<br>&gt; ・新規作成、日本語文字コードを含まないファイル、改行コードを含まないファイルを開いた場合に、［共通設定］－［全般］の「デフォルトコード」設定に従ってファイルを開くようにした。<br><br>新規作成時にマクロを一発実行するのと似たようなものですね。<br><br>S_FileReopenEUC(0);&#9;// EUCで開き直す<br>S_ChgmodEOL(3);&#9;// 入力改行コード指定<br><br>利用者数と利用のしやすさ、保守性、柔軟性を考えると、今は直接的に本体オプションに組み込むよりもスタートアップマクロ（&gt;&gt;dev:4501）を実装し、必要な人にはマクロで対処してもらうようにするのが良いように思えるのですが、どうでしょうか？<br>タイプ別設定を「一時適用」で変更したときの自動実行マクロもあれば、タイプ別にコード種別変更することもきっと可能ですよね。<br>（.txtはSJIS、.cppはEUC、.htmはUTF8とか）<br>「Shiftキーを押しながらのときは自動実行しない」などもできたらいいな。</div></section>
+    <ul><li><section><h1 id=4647>
+    <span class="no">[4647]</span>
+    <a class="thread-title" href="#4647">Re2:デフォルト文字コード設定</a>
+    <span class="author">fum</span>
+    <time datetime="2006-12-17T17:22:34">2006年12月17日 17:22</time></h1>
+    <div class="body">デフォルトコード指定の使い勝手が今ひとつでしたので、タイプごとに自動か指定かを選択できるようにしました。<br>ついでに、上書き禁止解除機能もアップしておきます。<br>Wikiの[[Develop/3]]デフォルト文字コード設定 にアップさせてもらっています。<br><br>スタートアップマクロ（&gt;&gt;dev:4501）は、自由度が格段に向上しますから賛成です。実装が待ち遠しいです。<br><br>以下、機能概要を記載しておきます。<br>キーワード：2006/12/17 fum OpenCodeSelect<br> 新規作成、日本語文字コードを含まないファイル、改行コードを含まないファイルを開いた場合、<br> ［タイプ別設定］－［支援］の「デフォルトコード」設定に従ってファイルを開く。<br> ［タイプ別設定］－［支援］の「デフォルトコード」設定に文字コード自動判別ON/OFFを追加。<br><br>キーワード：2006/12/17 fum ForceSave<br> ファイル保存時、上書き禁止の場合上書き禁止を解除して保存する機能を追加。<br> ［共通設定］－［ファイル］の「"上書き禁止"解除の問い合わせを行う」設定にて制御する。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

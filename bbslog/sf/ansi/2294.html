@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>矩形選択の動作について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2294</span>
+    <a class="thread-title" href="2294.html#2294">矩形選択の動作について</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=2294>
+    <span class="no">[2294]</span>
+    <a class="thread-title" href="#2294">矩形選択の動作について</a>
+    <span class="author">すなふき</span>
+    <time datetime="2002-09-05T00:12:36">2002年09月05日 00:12</time></h1>
+    <div class="body">こんにちは。<br><br>矩形処理中に「あれっ？」って思ったことがありました。<br>これが仕様でしたらあきらめますが、できれば修正してほしいです。<br><br><br>ソースを見たところ、矩形選択時に m_nCaretPosX_Prev が有効になって<br>いるようです。<br><br><br>int CEditView::Cursor_UPDOWN( int nMoveLines, int bSelect )<br>内の nPosX の値を設定する条件を修正するか、<br><br>void CEditView::BeginSelectArea( void )<br>で return の直前にでも、<br>m_nCaretPosX_Prev = m_nCaretPosX;<br>とするのは、どうでしょうか？<br><br><br>エディターバージョン  ssrc_2002-08-18<br>Windows98 + Service Pack1<br>MS Visual Studio Ver6.0 + Service Pack5<br><br><br>再現手順<br><br>↓ここから<br>ああああああああああああああああ[改行]<br>いいいいい[改行]<br>[改行]<br>↑ここまで<br><br>1. フリーカーソルモードなら、フリーカーソルモードのチェックをはずす。<br>2. 上の内容を貼り付け、カーソルを"あ"行の最後に移動する。<br>3. 「↓」を 1 回押して、"い"行の最後へカーソルを移動。<br>4. メニューの「矩形範囲選択開始」を選択する。<br>5. 「↓」を押すと、広い範囲で矩形選択される。（うっ、うまく説明できない・・・）<br></div></section>
+    </li></ul></body></html>

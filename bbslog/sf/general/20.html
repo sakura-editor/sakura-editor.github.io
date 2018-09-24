@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>UR1.2.25.2(あらためて) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">20</span>
+    <a class="thread-title" href="20.html#20">UR1.2.25.2(あらためて)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">26</span>
+    <a class="thread-title" href="20.html#26">UR1.2.25.2予定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">28</span>
+    <a class="thread-title" href="20.html#28">ソース管理バージョン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">32</span>
+    <a class="thread-title" href="20.html#32">Re:ソース管理バージョン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">34</span>
+    <a class="thread-title" href="20.html#34">Re2:ソース管理バージョン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">45</span>
+    <a class="thread-title" href="20.html#45">Re3:ソース管理バージョン</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=20>
+    <span class="no">[20]</span>
+    <a class="thread-title" href="#20">UR1.2.25.2(あらためて)</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-01-27T15:10:44">2001年01月27日 15:10</time></h1>
+    <div class="body">UR1.2.25.1からの変更内容：<br>[バグ修正]<br>・[キー割り当て一覧をコピー]にショートカットキーを割り付けても動作しなかった不具合を修正 (by げんた氏)<br>・ファイルやフォルダ名に&amp;があるとき[ウィンドウ]の編集ファイル一覧で&amp;とアクセスキーが正しく表示できなかった不具合を<br>例によって&amp;2倍化法で暫定修正. (誰か本式に修正してくれんかいのー)<br><br>[デフォルト設定値の追加・変更]<br>・カスタムメニュー21-24、[キー割り当て一覧をコピー]にもショートカットキーを割り付けた．これで今ある全ての項目に<br>　割り振ったことになる．<br>・UR1.2.25.1でCtrl+X を[カスタムメニュー1]→未定義にしたつもりだったが、直し忘れていたので改めて変更<br>・Ctrl+T に[タグジャンプ]、Shift＋Ctrl+T に[タグジャンプバック]、Ctrl+I に[行の二重化]を追加．ファンクションキーだと<br> 　IMEのプロパティになってしまうことがあるため．<br>・TABの表示色(グレー)が薄くて判別しにくいので濃いグレーに変更．<br>・キーワード2の表示色をキーワード1とは違う色に変更．<br>・キーワードセットTeX2(\コマンド以外；環境、スタイルオプション等)を追加し、TeXのキーワード2に設定．<br><br>[内部的変更]<br>・Ver.upのときに修正個所がProductVersionの2箇所で済むように、FileVersionの方は当面1.2固定とした．<br>・色設定Ver3にしたときの注意書きメッセージ(の素案)を埋め込んだ．<br>・その他細かい修正<br><br>[ドキュメント]<br>・BugsInfo.txtとrequest.txtを構成し直した．</div></section>
+    <ul><li><section><h1 id=26>
+    <span class="no">[26]</span>
+    <a class="thread-title" href="#26">UR1.2.25.2予定</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-01-27T23:56:05">2001年01月27日 23:56</time></h1>
+    <div class="body">じぇぷろさんへ。パッチどうもありがとうございました。<br>月曜日中には公開したいと想います。<br></div></section>
+    <ul><li><section><h1 id=28>
+    <span class="no">[28]</span>
+    <a class="thread-title" href="#28">ソース管理バージョン</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-01-28T01:40:48">2001年01月28日 01:40</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 月曜日中には公開したいと想います。<br><br>しげしげとdiffファイルを見てみるとファイルの管理バージョンno.<br>が逆戻りになってしまっている...これ自体はコンパイルや実行に<br>影響しないが、気持ち悪いのでこの際もう一度そこだけ修正して<br>明日固め直したのを送る事にします。キレイさっぱり全部破棄<br>しちゃってください。もう当ててしまっているならし方ないですが。。。<br>(原因は1.2.25.1ではなく私が1.2.25.0からそのまま更新していた<br>から。25.1も私のUpなので実質変わらないがソース管理no.だけは<br>25.1ソースの通りではなく25.0のままだったちゅーわけ。)<br></div></section>
+    <ul><li><section><h1 id=32>
+    <span class="no">[32]</span>
+    <a class="thread-title" href="#32">Re:ソース管理バージョン</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-01-28T13:41:17">2001年01月28日 13:41</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; キレイさっぱり全部破棄しちゃってください。<br>251to252.zipが130Kと大きく、sasikae.zipとsasikae2.zipが20KBくらいなのですが、破棄するのはsasikae.zipだけですか？<br>それとも251to252もふ含めてですか? サイズから考えると251to252を当てた後で差し替えなのかなと思いましたが。<br></div></section>
+    <ul><li><section><h1 id=34>
+    <span class="no">[34]</span>
+    <a class="thread-title" href="#34">Re2:ソース管理バージョン</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-01-28T15:56:39">2001年01月28日 15:56</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼ じぇぷろさん<br>&gt; &gt; キレイさっぱり全部破棄しちゃってください。<br>&gt; 251to252.zipが130Kと大きく、sasikae.zipとsasikae2.zipが20KBくらいなのですが、破棄するのはsasikae.zipだけですか？<br>&gt; それとも251to252もふ含めてですか? サイズから考えると251to252を当てた後で差し替えなのかなと思いましたが。<br><br>251to252.zipを解凍すれば分かりますが、diffの他にRequests.txtとBugsInfo.txtが入ってます。後者2つは差分にしてません。<br>要望の方のファイル名を少し変えたというのと、diffにするとかえって大きくなる(ほとんど書き換えになっているので)と思った<br>からです。で、sashikae.zipとsashikae2.zipは後者の丸ごと差し替えです。sahikae.zipで要望を追加し,　sashikae2.zipで<br>スペルミスなどをちょこっと訂正しました。diffとってみればわかります。(因みにこれをやるときも別のエディタでやってます(^^ゞ)<br><br>だから、ともかく送ったのぜーーーんぶポイしちゃってください。</div></section>
+    <ul><li><section><h1 id=45>
+    <span class="no">[45]</span>
+    <a class="thread-title" href="#45">Re3:ソース管理バージョン</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-01-29T14:27:45">2001年01月29日 14:27</time></h1>
+    <div class="body">▼ じぇぷろ<br>&gt; 251to252.zipを解凍すれば分かりますが、diffの他にRequests.txtとBugsInfo.txtが入ってます。後者2つは差分にしてません。<br>&gt; 要望の方のファイル名を少し変えたというのと、<br><br>こう書いたんですけど、ソースを解凍してみたらファイル名が前のrequest.txtになってた・・・BugsInfo.txtの中でもRequests.txtと<br>書いてるので整合がとれないなあ。この両者はバージョン管理されてないファイルだったのでそっくりコピーして古いrequest.txtを<br>削除してもれえればよかったんですが。BugsInfo.txtに合わせて大文字から始めて複数形にしたんです(要望が1個だけになることはない？)<br>今となってはこのファイルもバージョン管理下に入ってしまったようだし、ウーーーム。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

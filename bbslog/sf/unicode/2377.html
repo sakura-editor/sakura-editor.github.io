@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>クリップボード関数の謎引数 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2377</span>
+    <a class="thread-title" href="2377.html#2377">クリップボード関数の謎引数</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2378</span>
+    <a class="thread-title" href="2377.html#2378">Re:クリップボード関数の謎引数</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2379</span>
+    <a class="thread-title" href="2377.html#2379">Re:クリップボード関数の謎引数</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2380</span>
+    <a class="thread-title" href="2377.html#2380">Re2:クリップボード関数の謎引数</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2381</span>
+    <a class="thread-title" href="2377.html#2381">Re2:クリップボード関数の謎引数</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2377>
+    <span class="no">[2377]</span>
+    <a class="thread-title" href="#2377">クリップボード関数の謎引数</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-08-26T17:31:08">2016年08月26日 17:31</time></h1>
+    <div class="body">愚痴です。<br>v2.1で実装されたマクロ専用関数の引数定義が<br>「なんかおかしくね？」というネタなので、<br>大多数のユーザーには関係のない話かと思います。<br><br>CClipboard::GetClipboradByFormat<br>CClipboard::SetClipboradByFormat<br><br>nMode -2:通常のサクラの処理, -1:バイナリモード, それ以外:文字コード<br>nEndMode -1:文字コードに依存 0:GlobalSize 1:strlen 2:wcslen 4:wchar32_tの文字列<br><br>nMode==-2は良いのです。<br>通常のサクラ＝unicode、ですから。<br>nMode==-1が存在する理由と、文字コードの意味が分からんとです。<br><br>windowsはCF_UNICODETEXT形式が存在する場合、<br>CF_TEXT形式を要求したUNICODE非対応アプリに対して、<br>ACPによる自動変換を提供します。<br>つまり、自前で変換する必要はありません。<br>自前で変換してCF_TEXTを突っ込むと副作用もありますし。<br><br>サクラはwindowsロケールが対応しないコードページの、<br>いくつかに対応しています。(JisとかEucとかUnicodeとか)<br><br>SetClipboradByFormat("美乳", "CF_TEXT", 2, -1)<br>※"美乳"はEUCにしか存在しないコード値を持つ。<br><br>とした場合、windowsはCF_TEXTにEUCの"美乳"を突っ込みます。<br>この状態でCF_UNICODETEXTを要求した場合、<br>windowsによる自動変換は"ja-JP.932"で行われます。<br>当然、化けますよね。。。<br>アプリの作りとしては、windowsロケールが対応しないコードページを使っている場合には、引数指定をガン無視してUNICODEで突っ込む対応が必要になるような気がするのです。<br><br>でも、そうすると引数の存在意義が…<br>「意味わからん」というのはそういうことです。<br><br>nEndModeについては存在意義が不明です。<br>CF_TEXTとCF_UNICODETEXTを指定した場合のデータサイズは、<br>それぞれcharとwchar_tのNUL終端までと決まっています。<br>これはWindowsAPIの仕様なので勝手に処理してはいかんです。<br>windowsロケールはunicodeファミリを扱えないので、<br>UTF32を扱うにはUTF16BEに変換し、unicodeとして突っ込むべきです。<br><br><br>ググってみた感じだと<br>nMode=0(SJIS)、<br>nEndMode=-1(文字コード依存)<br>で使われているみたいです。<br>※このマクロ関数が実装されてるのはv2系なので<br>　常に無駄な変換(U→A)が発生するが、<br>　windowsが勝手に登録するCF_LOCALEは矛盾しないので問題ない。<br><br>取得、設定するデータに「文字列以外」を扱えるなら<br>別な突っ込みになるんですけど、<br>定義を見る限り、第一引数はVT_BSTR想定だし。。。<br><br>第一引数がVT_ARRAYを受け付ける前提で、<br>nMode==-1(バイナリ)、かつ<br>nEndMode==0(サイズをGlobalSizeで取得)な場合だけ<br>意味があるnEndModeの存在意義。<br><br>かと言って、VT_ARRAYにして<br>CF_DIBとか使えるようにしたとして、<br>そういうマクロを書く人がいるのかどうかとか、<br>すっごく微妙。。。<br><br><br></div></section>
+    <ul><li><section><h1 id=2378>
+    <span class="no">[2378]</span>
+    <a class="thread-title" href="#2378">Re:クリップボード関数の謎引数</a>
+    <span class="author">もか</span>
+    <time datetime="2016-08-26T20:06:54">2016年08月26日 20:06</time></h1>
+    <div class="body">&gt; nMode -1:バイナリモード<br>このモードは、ビットマップとかCF_LOCALE、他のエディタのクリップボード形式などを読み書きする時に使います。<br>これらの関数は、CF_TEXT/CF_UNICODETEXTでも読み書きが可能なように実装されていますが、主戦場は特殊用途です。<br>普通のテキストは、Get(Set)Clipboard関数を使ってください、という方針です。<br>サクラでは、一番使うのは矩形データの確認、登録です。<br><br>CygwinのときにCF_TEXTがUTF-8だったりします(最近は不明)。<br>Visual StudioのCF_TEXTもUTF-8になっているらしいです。<br>そういう場合には、コード指定が必要です。<br>参考：<a href=https://github.com/xyzzy-022/xyzzy/issues/73 target=_top><nobr>https://<wbr>github.<wbr>com/<wbr>xyzzy-<wbr>022/<wbr>xyzzy/<wbr>issues/<wbr>73</nobr></a><br><br>また日本語環境でNEC/IBM拡張漢字を区別して扱う場合に必須です。<br>どういうことかというと、<br>1. テキストファイルにはNEC/IBM拡張漢字がある<br>2. サクラv2で読み込むとたぶんNECはUnicodeに変換されIBMは特殊なサロゲート断片になる<br>3. それをそのまま普通にコピーすると、相手のソフトでIBMがゴミとして貼り付く<br>4. SetClipboardByFormat(data, "CF_TEXT", 0, -1)で貼り付けると、クリップボードがIBMが元の符号位置に戻ったSJISデータになる<br>6. 相手に貼り付けると、無事IBM/NECが区別されるか、WindowsのCF_UNICODETEXTの自動変換で統合されて貼り付けられる<br>という風になっていて、データが変更されると困る用途に適しています。<br></div></section>
+    </li><li><section><h1 id=2379>
+    <span class="no">[2379]</span>
+    <a class="thread-title" href="#2379">Re:クリップボード関数の謎引数</a>
+    <span class="author">もか</span>
+    <time datetime="2016-08-26T20:08:53">2016年08月26日 20:08</time></h1>
+    <div class="body">(続き)<br>&gt;SetClipboradByFormat("美乳", "CF_TEXT", 2, -1)<br>&gt;当然、化けますよね。。。<br>EUC-jpをCF_TEXTに突っ込むのは想定外ですが、そういうアプリが存在していてもおかしくないのです。<br>例えば、存在するかしりませんがEUC-JPに設定されたCygwinとか。<br>var s = GetClipboradByFormat("CF_TEXT", 2, -1)<br>InsText(s);<br>で「美乳」が貼り付けられるので、そういう変なアプリと通信したい場合には、これでいいと思います。<br>もちろんCF_UNICODETEXTで読み書きするとおかしいですが、それは想定内です。<br>CF_UNICODETEXTでも同時に読み書きができるようにしたければ、自分でCF_UNICODETEXTを設定すれば問題ないです。<br>マイクロソフトが何といってるか知りませんが、ロケールって言ってるけど、UTF-8というロケールは存在しないので「言語」で「エンコード」を縛ることはできません。<br><br>汎用的なnModeの使い方としては、<br>SetClipboardByFormat(data, "HTML Format", 4, -1);<br>が代表例です。HTML FormatはUTF-8と決まっています。<br><br>&gt;nEndMode<br>他のエディタを見れば分かりますが<br>「クリップボードを最後まで読み込む」関数と<br>「クリップボードをNUL文字まで読み込む」関数<br>が用意されていることがあります。それに対応するための処置です。<br>WindowsのCF_(UNICODE)TEXTではNUL文字までと決まっていますが、実情はそうとは限りません。<br>あとは独自フォーマットでは、NUL終端の後に違うデータが続いていることもあります。<br>例えば、サクラが設定したCF_(UNICODE)TEXT形式では途中にNUL文字が含まれることがあります。<br>UTF-32についてはおまけですが、独自形式のフォーマットがUTF-32形式互換である場合を想定していて、<br>決してCF_(UNICODE)TEXTで使うためではありません。<br><br>SetClipboradByFormatでCF_TEXTを登録するとき、サクラがCF_LOCALEを正しく登録しないのは、<br>うまく動くか分かりませんが、"CF_LOCALE"も使えるようになっているので、自分で設定すればいいんだと思います。<br><br>とりあえず、引数に意味不明な組み合わせがあることは確かです。<br>そのへんは、汎用性のために犠牲になったと思ってください。<br></div></section>
+    <ul><li><section><h1 id=2380>
+    <span class="no">[2380]</span>
+    <a class="thread-title" href="#2380">Re2:クリップボード関数の謎引数</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-08-27T13:49:42">2016年08月27日 13:49</time></h1>
+    <div class="body">あるべき姿について、了解しました。<br><br>▼ もかさん<br>&gt; 主戦場は特殊用途です。<br><br>結局、第一引数（Getのout引数）は「配列」ってことですね。<br><br><br>&gt; CygwinのときにCF_TEXTがUTF-8だったりします<br><br>ぶっちゃけ、それはCygwinのバグですね。<br>Cygwinとの互換性は、意識的に意識しないようにしております。<br><br>元々Windows95にPOSIXレイヤを構築するプロジェクトです。<br>POSIX依存のプログラムをWindows95で利用するためのもので、<br>Windows向けに書かれたプログラムのためのものじゃないです。<br><br>もちろん、win7向けのCygwinというのも存在しますが、<br>「POSIXプログラムのための環境」がCygwinの本質です。<br>Windows向けプログラムをビルドしようとするのは誤りです。<br>WindowsでGCCを使うためのMinGWとは目的が違います。<br>目的外利用で発生した問題は、ユーザの責任じゃないっす。<br><br><br>&gt; また日本語環境でNEC/IBM拡張漢字を区別して扱う場合に必須です。<br><br>この問題の対処法を「独自ロジック廃止」で考えてるから<br>話があわないんだろうな…と感じました（マテ<br><br><br>&gt; マイクロソフトが何といってるか知りませんが、ロケールって言ってるけど、UTF-8というロケールは存在しないので「言語」で「エンコード」を縛ることはできません。<br><br>MS&gt; ロケール関数にunicodeを指定すると失敗します。（サポートしません。）<br><br>windowsロケールはansiのmultibyteをunicodeのwidecharに変換するためのものなので、unicodeファミリ内の変換は自分でやってね、ということらしいです。その割にはAPIがCP_UTF8に対応しとるんですが。<br><br><br>続く...<br></div></section>
+    </li><li><section><h1 id=2381>
+    <span class="no">[2381]</span>
+    <a class="thread-title" href="#2381">Re2:クリップボード関数の謎引数</a>
+    <span class="author">ばぼ</span>
+    <time datetime="2016-08-27T13:50:52">2016年08月27日 13:50</time></h1>
+    <div class="body">そういえば、visual studioでコピーすると、<br>Rich Text Formatなデータも追加されるんですが、<br>サクラはこれには対応しないんでしょうか？<br><br>(続き)<br><br>&gt; 汎用的なnModeの使い方としては、<br>&gt; SetClipboardByFormat(data, "HTML Format", 4, -1);<br>&gt; が代表例です。HTML FormatはUTF-8と決まっています。<br><br>CF_HTMLはテキストじゃないので自動変換されないです。<br>ビットマップとかと同じバイナリデータ。<br><br>たしかにjavascript内でutf8作るとかありえませんし、便利ですね。<br>ただ、4=UTF-8を覚えるには熟練を要しそうです。<br>文字列リテラルによる指定を可能にする改善提案…(何を受け付けるかでモメそうですが)<br><br>&gt; &gt;nEndMode<br>&gt; 他のエディタを見れば分かりますが<br><br>「他のエディタが対応してるから」は<br>機能が適切かどうかの指標にならんとです。<br>たぶんそういう場合、本来のネイティブデータが<br>別形式で登録されているはずなので、<br>そちらに対応するのが正しいあり方な気がします。<br>というか、エディタ側にはその機能ありませんよね(ご愛敬)<br><br>&gt; "CF_LOCALE"も使えるようになっているので、<br>&gt; 自分で設定すればいいんだと思います。<br><br>サイズとエンディアンの問題があるので<br>スクリプトから突っ込もうとすると微妙な感じになります。<br><br>uint32_t lcid = 0x411; //日本語<br>char pLcid1[] = { 0x11, 0x04, 0, 0 }; //普通のCPU<br>char pLcid2[] = { 0, 0, 0x04, 0x11 }; //古いmacとかサーバー機<br>SetClipboardByFormat(data, "CF_LOCALE", -1, 0);<br><br>powerpc搭載型の旧式macは無視してよいので、<br>pLcid1の値をdataに埋め込んでやれば一応動く...<br><br><br>&gt; とりあえず、引数に意味不明な組み合わせがあることは確かです。<br>&gt; そのへんは、汎用性のために犠牲になったと思ってください。<br><br>というわけで、思いついたときに「見直し」をかけて<br>パラメタチェックを追加してみたりするのもいいんではないかと。。。(鬼<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

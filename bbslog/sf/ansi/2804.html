@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バグ？DIFF差分表示について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2804</span>
+    <a class="thread-title" href="2804.html#2804">バグ？DIFF差分表示について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2809</span>
+    <a class="thread-title" href="2804.html#2809">RE: バグ？DIFF差分表示について</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2804>
+    <span class="no">[2804]</span>
+    <a class="thread-title" href="#2804">バグ？DIFF差分表示について</a>
+    <span class="author">きこあん</span>
+    <time datetime="2003-05-27T18:00:07">2003年05月27日 18:00</time></h1>
+    <div class="body">DIFF差分表示機能で、比較するファイルの一方に<br>コントロールコード(私がひっかかったのは文字コード00)<br>が入ってると処理がキャンセルされるようです。<br>ちなみにコマンドラインでdiff.exeを使う分には<br>動くようです。<br><br>ということでご報告まで。</div></section>
+    <ul><li><section><h1 id=2809>
+    <span class="no">[2809]</span>
+    <a class="thread-title" href="#2809">RE: バグ？DIFF差分表示について</a>
+    <span class="author">みく</span>
+    <time datetime="2003-05-29T19:57:23">2003年05月29日 19:57</time></h1>
+    <div class="body">&gt;タイトル: RE: バグ？DIFF差分表示について<br>&gt;発言者: きこあん<br>&gt;DIFF差分表示機能で、比較するファイルの一方に<br>&gt;コントロールコード(私がひっかかったのは文字コード00)<br>&gt;が入ってると処理がキャンセルされるようです。<br><br>diff としては<br>Binary files [1] and [2]<br>というメッセージを出して終わってますが、<br>エディタ側はそれをチェックしてないので差異なしと誤った認識をしてしまってますね。<br></div></section>
+    </li></ul></li></ul></body></html>

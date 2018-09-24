@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ネットワークドライブのマクロの実行に失敗する。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5683</span>
+    <a class="thread-title" href="5683.html#5683">ネットワークドライブのマクロの実行に失敗する。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5684</span>
+    <a class="thread-title" href="5683.html#5684">Re:ネットワークドライブのマクロの実行に失敗する。</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5683>
+    <span class="no">[5683]</span>
+    <a class="thread-title" href="#5683">ネットワークドライブのマクロの実行に失敗する。</a>
+    <span class="author">たけ(tk)</span>
+    <time datetime="2010-09-23T19:17:54">2010年09月23日 19:17</time></h1>
+    <div class="body">ネットワークドライブ（ドライブ名に割り当て済み）にあるマクロの実行に失敗しました。<br>エクスプローラで見ると「切断したネットワークドライブ」という表示になっているときに失敗し、<br>エクスプローラでクリックしてフォルダーを開いた後であれば成功する。<br>これは、他のアプリでの経験によると、WindowsXP のＳＰ３以降で出るようになった症状で、起動時にネットワークへの接続を試みなうようにWindowsの仕様が変ったために生じるようです。<br>対策としては、ファイルのオープンに失敗した時に　WNetAddConnection3　で接続してから再度試みれば良いはずです。<br><br>対策をお願いできますか？</div></section>
+    <ul><li><section><h1 id=5684>
+    <span class="no">[5684]</span>
+    <a class="thread-title" href="#5684">Re:ネットワークドライブのマクロの実行に失敗する。</a>
+    <span class="author">まくろ初心者</span>
+    <time datetime="2010-09-24T21:44:51">2010年09月24日 21:44</time></h1>
+    <div class="body">▼ たけ(tk)さん<br>&gt; ネットワークドライブ（ドライブ名に割り当て済み）にあるマクロの実行に失敗しました。<br>&gt; エクスプローラで見ると「切断したネットワークドライブ」という表示になっているときに失敗し、<br>&gt; エクスプローラでクリックしてフォルダーを開いた後であれば成功する。<br>&gt; これは、他のアプリでの経験によると、WindowsXP のＳＰ３以降で出るようになった症状で、起動時にネットワークへの接続を試みなうようにWindowsの仕様が変ったために生じるようです。<br>&gt; 対策としては、ファイルのオープンに失敗した時に　WNetAddConnection3　で接続してから再度試みれば良いはずです。<br>&gt; <br>&gt; 対策をお願いできますか？<br><br>開発者でもないのにアレですが、たけさんのご指摘の内容は、どちらかというと個人的な要望にしか見えません。<br><br>&gt; 対策としては、ファイルのオープンに失敗した時に　WNetAddConnection3　で接続してから再度試みれば良いはずです。<br><br>ファイルのオープンに失敗＝物理的 or 論理的に読めないので、現状の動作は正しいかと思います。<br>ネットワークドライブ前提で動作するものであれば対応するのは納得しますが、ネットワークドライブ経由でマクロ実行というのが、そもそもレアケースだと思うので、対応する必要はないのでは？と思ってしまい、書き込んだ次第です。<br><br>起動時が絡んでいるのであれば、起動時に WSH なり バッチファイルを実行するなりで解決できるのではないでしょうか？<br>もしくは、スケジュールタスクで1日1回同期をとるなど、別のアプローチを考えることで解決すできるかと思います。<br></div></section>
+    </li></ul></li></ul></body></html>

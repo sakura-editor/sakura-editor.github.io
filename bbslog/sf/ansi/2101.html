@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>スクロールバーが他ウィンドウで上書きされる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2101</span>
+    <a class="thread-title" href="2101.html#2101">スクロールバーが他ウィンドウで上書きされる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2115</span>
+    <a class="thread-title" href="2101.html#2115">RE: スクロールバーが他ウィンドウで上書きされる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2118</span>
+    <a class="thread-title" href="2101.html#2118">Re2: スクロールバーが他ウィンドウで上書きされる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2138</span>
+    <a class="thread-title" href="2101.html#2138">Re3: スクロールバーが他ウィンドウで上書きされる</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2101>
+    <span class="no">[2101]</span>
+    <a class="thread-title" href="#2101">スクロールバーが他ウィンドウで上書きされる</a>
+    <span class="author">龍</span>
+    <time datetime="2002-05-23T20:10:16">2002年05月23日 20:10</time></h1>
+    <div class="body">いつも大変便利に使わせていただいています。<br>スクロールバーが他ウィンドウで上書きされる現象を報告します。<br><br>[現象]<br>１）ドキュメント指定なしでサクラエディタを起動する<br>２）縦スクロールバーのスクロールボックス（真ん中の長方形）をクリックする<br>３）サクラエディタのスクロールバー上を、他のウィンドウで上書き（移動）する<br>４）縦スクロールバーが上書き状態のままとなる（再描画されていない）<br>※ウィンドウの縦範囲に収まるテキストを表示した場合には、再現する<br>※横スクロールバーも、「ツール」→「現ウィンドウ幅で折り返す」を設定すると、同様の現象となる<br><br>★ソースを見たのですが知識不足で、再描画させる処理やタイミングがよく分かりませんでした。<br>（参考）<br>・ウィンドウ範囲に収まる場合、スクロールバーをクリックしても、マウスイベントが発生しない。<br>　（ウィンドウ範囲に収まらずスクロールバーが有効の場合は、同様の操作でマウスイベントが発生している）<br>・WM_PAINTのイベントは発生するが、クライアント領域を更新するだけである。<br><br>よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=2115>
+    <span class="no">[2115]</span>
+    <a class="thread-title" href="#2115">RE: スクロールバーが他ウィンドウで上書きされる</a>
+    <span class="author">もか</span>
+    <time datetime="2002-05-27T12:52:43">2002年05月27日 12:52</time></h1>
+    <div class="body"><br>▼ 龍さん<br>&gt; スクロールバーが他ウィンドウで上書きされる現象を報告します。<br>&gt;<br>&gt; [現象]<br>&gt; １）ドキュメント指定なしでサクラエディタを起動する<br>&gt; ２）縦スクロールバーのスクロールボックス（真ん中の長方形）をクリックする<br>&gt; ３）サクラエディタのスクロールバー上を、他のウィンドウで上書き（移動）する<br>&gt; ４）縦スクロールバーが上書き状態のままとなる（再描画されていない）<br>&gt; ※ウィンドウの縦範囲に収まるテキストを表示した場合には、再現する<br>&gt; ※横スクロールバーも、「ツール」→「現ウィンドウ幅で折り返す」を設定すると、同様の現象となる<br>&gt;<br>&gt; ・ウィンドウ範囲に収まる場合、スクロールバーをクリックしても、マウスイベントが発生しない。<br>&gt; 　（ウィンドウ範囲に収まらずスクロールバーが有効の場合は、同様の操作でマウスイベントが発生している）<br>&gt; ・WM_PAINTのイベントは発生するが、クライアント領域を更新するだけである。<br><br>私もたまに消えていたんですが、最近やっと再現することができました<br>ただし、WindowsXP限定です。もしほかのOSだった場合は別の<br>ことが起こっている可能性大です。<br><br>以下の手順で再現しました。<br>ウインドウの表示域の行数より全行数が短い場合、<br>要するにスクロールバーのつまみが動かないときに<br>そのつまみをクリック<br>するとそのスクロールバーがなくなっちゃいます<br>この後、ウィンドウを移動してみると分かります<br><br>  ただし、XPでmanifestファイルがあるときにだけで<br>  XP/クラシックどちらのスタイルでも発生します<br><br>SIF_DISABLENOSCROLL をつけると消滅は防げます<br>ただし、上のほうの行が画面に表示されてなくても<br>スクロールバーが DISABLE になることがあるので、<br>そのときは少し不便になります。<br>どうしたらいいか、ご意見募集中です<br><br><br>#このあたりを機会にちょくちょく開発に参加させてもらいたいと思います<br>#なおDOS時代をまったく知らない若輩者なのでお手柔らかに(^_^;<br></div></section>
+    <ul><li><section><h1 id=2118>
+    <span class="no">[2118]</span>
+    <a class="thread-title" href="#2118">Re2: スクロールバーが他ウィンドウで上書きされる</a>
+    <span class="author">龍</span>
+    <time datetime="2002-05-27T19:59:24">2002年05月27日 19:59</time></h1>
+    <div class="body">▼ もかさん<br>&gt; <br>(途中略）<br>&gt; <br>&gt; 私もたまに消えていたんですが、最近やっと再現することができました<br>&gt; ただし、WindowsXP限定です。もしほかのOSだった場合は別の<br>&gt; ことが起こっている可能性大です。<br><br>たしかに、WindowsXPでmanifestファイルがある時だけでした。<br>（再現環境を明記していなくてすみませんでした）<br><br>(途中略）<br>&gt; SIF_DISABLENOSCROLL をつけると消滅は防げます<br>&gt; ただし、上のほうの行が画面に表示されてなくても<br>&gt; スクロールバーが DISABLE になることがあるので、<br>&gt; そのときは少し不便になります。<br><br>SSRC_2002-05-20\SAKURA_CORE\CEditView.cpp (Line:651,678,2587,2598,2608)<br>　si.fMask = SIF_ALL;<br>を<br>　si.fMask = SIF_ALL | DISABLENOSCROLL;<br>と変更すると問題なくなりました。<br>（もかさんが指摘しているような、問題点は今のところ確認できていません。）<br><br>勉強になりました。　　　　感謝＆合掌<br></div></section>
+    <ul><li><section><h1 id=2138>
+    <span class="no">[2138]</span>
+    <a class="thread-title" href="#2138">Re3: スクロールバーが他ウィンドウで上書きされる</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-06-04T23:59:47">2002年06月04日 23:59</time></h1>
+    <div class="body"><br>&gt;SSRC_2002-05-20\SAKURA_CORE\CEditView.cpp (Line:651,678,2587,2598,2608)<br>&gt;　si.fMask = SIF_ALL;<br>&gt;を<br>&gt;　si.fMask = SIF_ALL | DISABLENOSCROLL;<br>&gt;と変更すると問題なくなりました。<br>&gt;（もかさんが指摘しているような、問題点は今のところ確認できていません。）<br>&gt;<br>&gt;勉強になりました。　　　　感謝＆合掌<br><br>取り込みました。Thanx!<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

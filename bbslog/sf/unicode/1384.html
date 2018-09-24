@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>パッチ：ユーザの意図しないプログラム実行の抑制 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1384</span>
+    <a class="thread-title" href="1384.html#1384">パッチ：ユーザの意図しないプログラム実行の抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1399</span>
+    <a class="thread-title" href="1384.html#1399">Commit報告(Fix) ユーザの意図しないプログラム実行の抑制</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1400</span>
+    <a class="thread-title" href="1384.html#1400">Re:パッチ：ユーザの意図しないプログラム実行の抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1401</span>
+    <a class="thread-title" href="1384.html#1401">Re2:パッチ：ユーザの意図しないプログラム実行の抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1402</span>
+    <a class="thread-title" href="1384.html#1402">Re3:パッチ：ユーザの意図しないプログラム実行の抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1404</span>
+    <a class="thread-title" href="1384.html#1404">Re4:パッチ：ユーザの意図しないプログラム実行の抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1408</span>
+    <a class="thread-title" href="1384.html#1408">Re5:パッチ：ユーザの意図しないプログラム実行の抑制</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1403</span>
+    <a class="thread-title" href="1384.html#1403">Re3:パッチ：ユーザの意図しないプログラム実行の抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1405</span>
+    <a class="thread-title" href="1384.html#1405">Re4:パッチ：ユーザの意図しないプログラム実行の抑制</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1407</span>
+    <a class="thread-title" href="1384.html#1407">Re2:パッチ：ユーザの意図しないプログラム実行の抑制</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1409</span>
+    <a class="thread-title" href="1384.html#1409">Re:パッチ：ユーザの意図しないプログラム実行の抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1410</span>
+    <a class="thread-title" href="1384.html#1410">Re2:パッチ：ユーザの意図しないプログラム実行の抑制</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1384>
+    <span class="no">[1384]</span>
+    <a class="thread-title" href="#1384">パッチ：ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">もか</span>
+    <time datetime="2010-08-30T13:59:30">2010年08月30日 13:59</time></h1>
+    <div class="body">PatchUnicode#3055709 ユーザの意図しないプログラム実行の抑制<br>例のアレです。<br>A用 &gt;&gt;dev:5679<br></div></section>
+    <ul><li><section><h1 id=1399>
+    <span class="no">[1399]</span>
+    <a class="thread-title" href="#1399">Commit報告(Fix) ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">もか</span>
+    <time datetime="2010-10-16T00:54:04">2010年10月16日 00:54</time></h1>
+    <div class="body">rev1840 でcommitしました。<br><br>ブラックリスト方式ですから"完璧"ではないけど、ないよりはましだと思います。<br></div></section>
+    </li><li><section><h1 id=1400>
+    <span class="no">[1400]</span>
+    <a class="thread-title" href="#1400">Re:パッチ：ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">anonymous</span>
+    <time datetime="2010-10-16T08:08:53">2010年10月16日 08:08</time></h1>
+    <div class="body">この脆弱性の対応方法を間違ってます。<br>・DLL名にサクラのEXEの絶対パスを付けて一意にしてしまう<br>・DLL検索パスをデフォルトからサクラパス(必要ならWindowsのSYSTEMパスも含む)のみにしてしまう<br>　（検索パスを変更するWinAPIがあるはず）<br>そのあとDLLをロードします。<br></div></section>
+    <ul><li><section><h1 id=1401>
+    <span class="no">[1401]</span>
+    <a class="thread-title" href="#1401">Re2:パッチ：ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">999</span>
+    <time datetime="2010-10-16T09:19:29">2010年10月16日 09:19</time></h1>
+    <div class="body">&gt; この脆弱性の対応方法を間違ってます<br>commitされたやりかたのどんな点が「間違い」なのでしょうか？<br>カレントディレクトリを移動するのは正しい方法のひとつだと思いますが．．．<br><br>&gt; ・DLL名にサクラのEXEの絶対パスを付けて一意にしてしまう<br>利便性の点から私は各種dllをWindowsディレクトリに置いています。<br>サクラEXEの絶対パスで一意に固定されてしまうと不便です。<br><br>&gt; 　（検索パスを変更するWinAPIがあるはず）<br>そのAPIはXP SP1以後くらいからしか使えないので、それ以前のOSに対策できませんよね？<br>念のためにダイナミックロードでそのAPIを実行しておけば、より安心かもしれませんが。</div></section>
+    <ul><li><section><h1 id=1402>
+    <span class="no">[1402]</span>
+    <a class="thread-title" href="#1402">Re3:パッチ：ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">anonymous</span>
+    <time datetime="2010-10-17T16:47:29">2010年10月17日 16:47</time></h1>
+    <div class="body">EXEフォルダに移動してWindowsフォルダのDLLをロードしたいのですか？<br><br>それは検索パスの順序をすりかえられると脆弱性にひっかかります<br></div></section>
+    <ul><li><section><h1 id=1404>
+    <span class="no">[1404]</span>
+    <a class="thread-title" href="#1404">Re4:パッチ：ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">999</span>
+    <time datetime="2010-10-17T18:22:26">2010年10月17日 18:22</time></h1>
+    <div class="body">&gt; EXEフォルダに移動してWindowsフォルダのDLLをロードしたいのですか？<br>EXEフォルダへは移動してもしなくてもどっちでもいいです。<br>EXEフォルダもしくはWindowsフォルダのどちらかにDLLを置いたときにそれがロードできればいいです。<br>両方にあるときはどちらが優先でもいいです（自分は片方にしか置かない）。<br>開いているドキュメントのフォルダからロードされるのだけが不要です。<br><br>&gt; それは検索パスの順序をすりかえられると脆弱性にひっかかります<br>これはどういうことですか？<br><br>（開いているドキュメントのフォルダにあるDLLをロードしてしまうというのであれば、そのフォルダがネットワーク共有フォルダの場合、そのフォルダに悪意のDLLを設置するだけで任意のコードが実行可能、という点で問題があると思いますけど）<br><br>「検索パスの順序をすりかえ」なんていうことがネットワーク越しでも容易にできるのでしょうか？<br>それをしただけで「任意のコードを実行」などという凶悪な状況になるのでしょうか？（できるのは、せいぜいユーザーが意図したフォルダにあるのとは別の、旧バージョンのDLLをロードさせることができる”かもしれない”、という程度ですよね）<br>すりかえができるとすれば、それ（すりかえできること）が本来の脆弱性なのであって、その脆弱性が先に塞がれるべきではないでしょうか？<br><br>攻撃者の能力を過度に見積もって、別の脆弱性が破られた状況まで前提にしてしまえば何でもかんでも「脆弱」ということになると思います。そういうのは無理なシナリオをでっちあげて不安を煽るための詭弁です。<br><br>例） EXEフォルダのDLLをすりかえられると任意のコードを実行できるのでEXEフォルダからDLLをロードするアプリには脆弱性がある<br>↑この例は、ネットワーク共有されていないローカルフォルダに攻撃者が自由にDLLを設置できるという前提。そんなことができるならもう手のうちようがない状況。こんなことを言い出す人は頭がおかしい。<br><br>「JVNの脆弱性情報で掲載（公開）されない程度の対策を施す」というのがリーズナブル（公的機関からとやかく言われるほどでないものは無視してよい）なように思えますが、現状の対策では不足なのでしょうか？<br><br>自分はあまり詳しくないので、ぜひ、そのあたりの判断基準をお教えいただけると嬉しいです。現状の対策では足りないことが明示された文書（社会的に信用された公的文書）があればご紹介ください。<br><br>＃今回サクラでどう対処するかに興味があるだけでなく自身の開発物件でもその判断基準を参考にしたいです。（なので、はぐらかしのないよう、できれば上記「？」のある箇所ひとつひとつにそれぞれ回答いただきたいです）</div></section>
+    <ul><li><section><h1 id=1408>
+    <span class="no">[1408]</span>
+    <a class="thread-title" href="#1408">Re5:パッチ：ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">anonymous</span>
+    <time datetime="2010-10-18T22:41:26">2010年10月18日 22:41</time></h1>
+    <div class="body">↑この例は、ネットワーク共有されていないローカルフォルダに攻撃者が自由にDLLを設置できるという前提。そんなことができるならもう手のうちようがない状況。こんなことを言い出す人は頭がおかしい。<br><br>そうして脆弱性が作りこまれます</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=1403>
+    <span class="no">[1403]</span>
+    <a class="thread-title" href="#1403">Re3:パッチ：ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">anonymous</span>
+    <time datetime="2010-10-17T16:49:56">2010年10月17日 16:49</time></h1>
+    <div class="body">DLLを勝手に検索してくれる便利さを突いた脆弱性なのですから<br>それを排除するしかないです。<br></div></section>
+    <ul><li><section><h1 id=1405>
+    <span class="no">[1405]</span>
+    <a class="thread-title" href="#1405">Re4:パッチ：ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">999</span>
+    <time datetime="2010-10-17T21:35:50">2010年10月17日 21:35</time></h1>
+    <div class="body">▼ anonymousさん<br>&gt; DLLを勝手に検索してくれる便利さを突いた脆弱性なのですから<br>&gt; それを排除するしかないです。<br>最近、Windows側の脆弱性修正で、カレントフォルダからのDLLロードを塞ぐ手立ても用意されるようになったようです。が、それにはユーザーの意思によるレジストリ変更が必要で、必要性を意識している人にしか提供されません。塞ぐのをデフォルトにしないのは、過去との互換性（利便性優先）が考慮されているのだと思われます。そのせいで、結局のところ対策はアプリ個別にも必要なまま改善されてないわけですが。<br>http://support.microsoft.com/kb/2264107<br><br>サクラエディタでだって、脆弱性を公的機関に非難されない程度の範囲で過去の互換性（利便性優先）は維持してもらいたいです。今回、対策をしていただいたおかげでドキュメントフォルダからDLLがロードされることはなくなっていると思います。ろくな知見も持ち合わせていないくせに過度にセキュリティを騒ぎ立てるユーザーの意見こそ排除していただきたいと思います。<br><br>再度回答してください。<br>現状の方法は「間違い（修正しないと高い知見を有する公的機関に非難される）」ですか？<br>「間違い」の根拠となる具体的なシナリオはどのようなものですか？<br>そのシナリオは無理のないもの（攻撃者の能力を過度に見積もってはいない／他の脆弱性が前提ではない／ユーザーの落ち度が前提ではない）ですか？</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=1407>
+    <span class="no">[1407]</span>
+    <a class="thread-title" href="#1407">Re2:パッチ：ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">1000</span>
+    <time datetime="2010-10-18T13:18:41">2010年10月18日 13:18</time></h1>
+    <div class="body">&gt; この脆弱性の対応方法を間違ってます。<br><br>JVN のこの件に関する情報ページ<br><a href=http://jvn.jp/cert/JVNVU707943/ target=_top><nobr>http://<wbr>jvn.<wbr>jp/<wbr>cert/<wbr>JVNVU707<wbr>943/<wbr></nobr></a><br><br>の中の、「プログラム開発者向けの対策方法」にて<br>Microsoft 提供情報<br>"Another technique for Fixing DLL Preloading attacks"<br><a href=http://blogs.msdn.com/b/david_leblanc/archive/2010/08/23/another-technique-for-fixing-dll-preloading-attacks.aspx target=_top><nobr>http://<wbr>blogs.<wbr>msdn.<wbr>com/<wbr>b/<wbr>david_le<wbr>blanc/<wbr>archive/<wbr>2010/<wbr>08/<wbr>23/<wbr>another-<wbr>techniqu<wbr>e-<wbr>for-<wbr>fixing-<wbr>dll-<wbr>preloadi<wbr>ng-<wbr>attacks.<wbr>aspx</nobr></a><br><br>カレントディレクトリを安全なディレクトリに移動して<br>からDLLロードする対策方法が明示されてます。<br><br>なので、JVNやMicrosoftでのダメ出しはないでしょう。</div></section>
+    </li></ul></li><li><section><h1 id=1409>
+    <span class="no">[1409]</span>
+    <a class="thread-title" href="#1409">Re:パッチ：ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">anonymous</span>
+    <time datetime="2010-10-18T22:45:35">2010年10月18日 22:45</time></h1>
+    <div class="body">あなたの修正に対しての指摘が気分を害されたようで申し訳ありません。<br>今後あなたの修正に対しては一切指摘しないようにします。<br></div></section>
+    <ul><li><section><h1 id=1410>
+    <span class="no">[1410]</span>
+    <a class="thread-title" href="#1410">Re2:パッチ：ユーザの意図しないプログラム実行の抑制</a>
+    <span class="author">もか</span>
+    <time datetime="2010-10-19T15:21:42">2010年10月19日 15:21</time></h1>
+    <div class="body">&gt;あなたの修正に対しては一切指摘しないようにします。<br>もかです。<br>「あなたの」は私に掛かっているようなのですが999さんも1000さんも(anonymousさんも)私ではないです。<br>私(Moca,もか,moca_skr,モカ)が他の名義でこの掲示板に書いたりすることは、ほぼ確実にありません。<br>掲示板上で話し合うような内容ではないので発言を控えていました。<br>できればOpenID等を含めIDでのTracker(Private)か直接メールかIPAを通じて報告していだだけるとありがたいです。<br><br>この掲示板でユーザの"同一性"を証明することが困難なのは承知しています。<br>例えIDの騙りを排除できても違うID２人が同一人物か否かを判断するには直接会う以外の方法がないのです。<br>さらに言えば私は個人ですが、IDを共有している人が居る可能性も考慮すると、それも証明になりません。<br>このID同一性は、昔げんたさんが似たようなものを書いていたと思います。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

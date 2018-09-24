@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>diffのアウトライン解析tips | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1581</span>
+    <a class="thread-title" href="1581.html#1581">diffのアウトライン解析tips</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1582</span>
+    <a class="thread-title" href="1581.html#1582">Re:diffのアウトライン解析tips</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1584</span>
+    <a class="thread-title" href="1581.html#1584">Re2:diffのアウトライン解析tips</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1585</span>
+    <a class="thread-title" href="1581.html#1585">Re3:diffのアウトライン解析tips</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1581>
+    <span class="no">[1581]</span>
+    <a class="thread-title" href="#1581">diffのアウトライン解析tips</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-11T17:58:30">2002年04月11日 17:58</time></h1>
+    <div class="body">diff  /// タイトル<br>@@  /// diff<br><br>こんな感じで、ちょっとステキ。</div></section>
+    <ul><li><section><h1 id=1582>
+    <span class="no">[1582]</span>
+    <a class="thread-title" href="#1582">Re:diffのアウトライン解析tips</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-11T18:03:42">2002年04月11日 18:03</time></h1>
+    <div class="body">diff  /// タイトル<br>---  /// diff<br>+++  /// diff<br>@@  /// diff<br>+ /// 変更<br>- /// 変更<br><br>こういうのでもいいかも。「変更」の部分はお好みで。</div></section>
+    <ul><li><section><h1 id=1584>
+    <span class="no">[1584]</span>
+    <a class="thread-title" href="#1584">Re2:diffのアウトライン解析tips</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-11T23:12:40">2002年04月11日 23:12</time></h1>
+    <div class="body"><br>差分表示で思いつき（アウトライン解析とは無関係です）。<br><br>sakuraの差分表示は1文字毎なので、、、というのが以前ありました。<br>行単位の差分表示に対応するために、以下のような仕組みはどうでしょう。<br><br>現在、マーク用に bool を割り当てており、マークなら行番号のところ<br>に表示するようになってます。<br>&#9;CMarkMgr,CDocLine,CEditView ?<br>このboolをビット扱いにして管理できるデータ数を増加させます。<br>boolは1バイトだから8個までならデータ量が同じで済みます。<br>マークは変数を直接アクセスするのではなく、関数によって参照・設定<br>しているので対応可能です。<br>そして、そのうちの幾つかをdiff用に割り当てます(diffだけに限る必要<br>はないが)。<br>bit:1&#9;通常のマーク<br>bit:2&#9;diff+<br>bit:3&#9;diff-<br>みたいになります。<br>ファイルの差分をdiff外部コマンドで行い、その結果をもらってマーク<br>を設定します。<br>表示ルーチンのところでは、bit値に従って行番号のところにマークを<br>(色・形を変えて)表示します。<br><br>できそうな気がしませんか。<br></div></section>
+    <ul><li><section><h1 id=1585>
+    <span class="no">[1585]</span>
+    <a class="thread-title" href="#1585">Re3:diffのアウトライン解析tips</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-12T09:33:35">2002年04月12日 09:33</time></h1>
+    <div class="body">▼ みくさん<br>&gt; できそうな気がしませんか。<br><br>する。いい感じ。ぜひぜひ。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>GREPで質問です。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2431</span>
+    <a class="thread-title" href="2431.html#2431">GREPで質問です。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2433</span>
+    <a class="thread-title" href="2431.html#2433">Re2: GREPで質問です。</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2431>
+    <span class="no">[2431]</span>
+    <a class="thread-title" href="#2431">GREPで質問です。</a>
+    <span class="author">きき</span>
+    <time datetime="2002-10-29T00:36:27">2002年10月29日 00:36</time></h1>
+    <div class="body">GREPで質問なのですが、コマンドラインからさくらエディター<br>のGREPを立ち上げることは可能でしょうか？<br><br>可能な場合は、sakura.exeのあとに続くオプションは何と入力<br>すればよいでしょうか？<br><br>宜しくお願いします。<br></div></section>
+    <ul><li><section><h1 id=2433>
+    <span class="no">[2433]</span>
+    <a class="thread-title" href="#2433">Re2: GREPで質問です。</a>
+    <span class="author">もか</span>
+    <time datetime="2002-10-29T19:55:23">2002年10月29日 19:55</time></h1>
+    <div class="body">▼ きき<br>&gt; GREPで質問なのですが、コマンドラインからさくらエディター<br>&gt; のGREPを立ち上げることは可能でしょうか？<br>&gt; 可能な場合は、sakura.exeのあとに続くオプションは何と入力<br>&gt; すればよいでしょうか？<br><br>可能です。<br>直接GREPで検索したい場合は，例えば<br>&gt; sakura.exe -GREPMODE -GKEY="KeyWord" -GFILE="FileName" -GFOLDER="Folder" -GOPT=SP2 -GCODE=99<br>と長いですが，入力します。<br>-GFOLDERは指定しないと，変になります。カレントディレクトリで検索したい場合は，-GFOLDER="."でOKのようです。<br>詳しくは，ヘルプに載っていますが，ヘルプに載っていないオプションは以下のようになっています。<br><br>・-GREPDLG<br>&#9;起動すると同時にGrepダイアログを表示します。<br>・-GCODE=<br>&#9;Grepでの文字コードを指定します。<br>&#9;(0=SJIS, 1=JIS, 2=EUC, 3=Unicode, 4=UTF-8, 5=UTF-7, 6=UnicodeBE, 99=自動選択/自動判別)です。<br>・-GOPT=[S][L][R][P][W][1 | 2][K]<br>&#9;[S][L][R][P] オンラインヘルプをご覧ください<br>&#9;[W] 単語単位で探す<br>&#9;[1 | 2] 結果出力形式。1か2のどちらかを指定します。(1=ノーマル、2=ファイル毎)<br>&#9;[K] -GCODE=99と同じ意味です。互換性のためだけに残されています。 <br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>WSH(不明) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3395</span>
+    <a class="thread-title" href="3395.html#3395">WSH(不明)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3406</span>
+    <a class="thread-title" href="3395.html#3406">RE: WSH(不明)</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3395>
+    <span class="no">[3395]</span>
+    <a class="thread-title" href="#3395">WSH(不明)</a>
+    <span class="author">みく</span>
+    <time datetime="2004-02-02T20:06:43">2004年02月02日 20:06</time></h1>
+    <div class="body"><br>WSH.cpp:314<br>HRESULT STDMETHODCALLTYPE CInterfaceObjectTypeInfo::GetNames( <br>の引数の MEMBERID memid は DISPID なので、<br>m_Object-&gt;m_Methods[memid].Name<br>とするのは間違いでは...<br><br>#GetFuncDesc()の index は配列番号だと思うが...<br></div></section>
+    <ul><li><section><h1 id=3406>
+    <span class="no">[3406]</span>
+    <a class="thread-title" href="#3406">RE: WSH(不明)</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-02-08T23:26:53">2004年02月08日 23:26</time></h1>
+    <div class="body">&gt;HRESULT STDMETHODCALLTYPE CInterfaceObjectTypeInfo::GetNames( <br>&gt;の引数の MEMBERID memid は DISPID なので、<br>&gt;m_Object-&gt;m_Methods[memid].Name<br>&gt;とするのは間違いでは... <br>&gt;#GetFuncDesc()の index は配列番号だと思うが... <br>CInterfaceObject::GetIDsOfNames()の名前→idの変換でdispidとしてm_Methods()のindexを返しているのでWSHとしてはindex==dispidと考えて問題ないはず．Invoke()でもdispidを配列のindexとして与えている．<br></div></section>
+    </li></ul></li></ul></body></html>

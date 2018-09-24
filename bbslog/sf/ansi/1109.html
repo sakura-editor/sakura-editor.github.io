@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>WinMain分解のテスト | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1109</span>
+    <a class="thread-title" href="1109.html#1109">WinMain分解のテスト</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1112</span>
+    <a class="thread-title" href="1109.html#1112">Re:WinMain分解のテスト</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1121</span>
+    <a class="thread-title" href="1109.html#1121">Re:WinMain分解のテスト</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1230</span>
+    <a class="thread-title" href="1109.html#1230">Re2:WinMain分解のテスト</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1109>
+    <span class="no">[1109]</span>
+    <a class="thread-title" href="#1109">WinMain分解のテスト</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-01-08T23:01:59">2002年01月08日 23:01</time></h1>
+    <div class="body">WinMainがスパゲッティだったので思いきってほぐしてみました。<br>必要なら取りこんでください。ソースはJunkに置いてます。<br></div></section>
+    <ul><li><section><h1 id=1112>
+    <span class="no">[1112]</span>
+    <a class="thread-title" href="#1112">Re:WinMain分解のテスト</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-08T23:43:54">2002年01月08日 23:43</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; WinMainがスパゲッティだったので思いきってほぐしてみました。<br>&gt; 必要なら取りこんでください。ソースはJunkに置いてます。<br><br>TestMainがすごく短くてCooooool（Goooooogle風）ですね!<br><br>個人的には、いますぐにでも取り込みたいけど、起動にかかわるちょっと大掛かりな変更なので、<br>リリース予定が近いのならば、現在の最新ソースでパッケージ作って一般ユーザー向けにリリースしてから、TestMainを取り込むのを提案します。<br><br>ってそもそも前回の一般向けリリースは12/19だったようですが、次回のリリース予定はいつごろなんでしょう？<br></div></section>
+    <ul><li><section><h1 id=1121>
+    <span class="no">[1121]</span>
+    <a class="thread-title" href="#1121">Re:WinMain分解のテスト</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-09T14:03:51">2002年01月09日 14:03</time></h1>
+    <div class="body">&gt;次回のリリース予定はいつごろなんでしょう？<br>変更が落ち着いたらと思っています。<br><br>個人的事情で今週は無理。<br></div></section>
+    </li><li><section><h1 id=1230>
+    <span class="no">[1230]</span>
+    <a class="thread-title" href="#1230">Re2:WinMain分解のテスト</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-01-20T02:45:26">2002年01月20日 02:45</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ▼ あろかさん<br>&gt; &gt; WinMainがスパゲッティだったので思いきってほぐしてみました。<br>&gt; &gt; 必要なら取りこんでください。ソースはJunkに置いてます。<br>&gt; <br>ようやく虫が取れました。<br>1/17版にげんたさんのdel_commentまで追加した状態をベースにして、修正のあるファイルをまとめました。<br>*従来版と同時に起動させるとおかしくなるのでCShareDataバージョンを１つあげました。<br>*ついでにリソースのバージョンも1.2.105.1にあげました。<br>*コマンドライン解析部を singleton コンテナにして解析を一回だけ行うようにしました。<br>*異なるバージョンを起動した時にダイアログが２個でます。<br>*とりこんでしまえ。ということでしたので TestMain.cpp を WinMain.cpp にリネームしました。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

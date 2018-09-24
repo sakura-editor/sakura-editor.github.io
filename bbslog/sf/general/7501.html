@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>何がなんでもブラウズしたい。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7501</span>
+    <a class="thread-title" href="7501.html#7501">何がなんでもブラウズしたい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7502</span>
+    <a class="thread-title" href="7501.html#7502">Re:何がなんでもブラウズしたい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7505</span>
+    <a class="thread-title" href="7501.html#7505">Re2:何がなんでもブラウズしたい。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7501>
+    <span class="no">[7501]</span>
+    <a class="thread-title" href="#7501">何がなんでもブラウズしたい。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2012-04-30T11:10:22">2012年04月30日 11:10</time></h1>
+    <div class="body">いつもお世話になっております。<br>①（新規）（更新）ファイル<br>②readme.txt<br>③readme.tmp<br>など、ブラウズする方法を教えて下さい。<br>よろしくお願いします。<br><br>以下　ヘルプより<br>ブラウズ(ctrl+b)<br>編集中のファイルをWebブラウザ等でブラウズします。<br>【例】<br>hogehoge.html → インターネットエクスプローラで開く<br>readme.txt → サクラエディタで開く(何も起こらない)<br></div></section>
+    <ul><li><section><h1 id=7502>
+    <span class="no">[7502]</span>
+    <a class="thread-title" href="#7502">Re:何がなんでもブラウズしたい。</a>
+    <span class="author">syat</span>
+    <time datetime="2012-05-01T06:43:00">2012年05月01日 06:43</time></h1>
+    <div class="body">&gt; ①（新規）（更新）ファイル<br>はちょっと難しいと思います。<br>本文を一時ファイルに書き出して開くマクロを組めばできますが。<br><br>&gt; ②readme.txt<br>&gt; ③readme.tmp<br>は、以下のようなマクロで可能です。<br><br>「ForceBrowse.mac」<br>----<br>S_ExecCommand('"c:\\Program Files\\Internet Explorer\\iexplore.exe" "$F"');<br>----<br></div></section>
+    <ul><li><section><h1 id=7505>
+    <span class="no">[7505]</span>
+    <a class="thread-title" href="#7505">Re2:何がなんでもブラウズしたい。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2012-05-03T07:08:05">2012年05月03日 07:08</time></h1>
+    <div class="body">▼ syatさん<br>ありがとうございます。<br>&gt; &gt; ①（新規）（更新）ファイル<br>本文を一時ファイルに書き出して開くマクロを組んでみました。<br><br>//キーボードマクロのファイル<br>S_SelectAll(0);// すべて選択<br>S_Copy(0);// コピー<br>S_FileSaveAs('C:\WINDOWS\デスクトップ\htm.htm',0,0); <br>S_FileClose();<br>S_ExecCommand('"c:\\Program Files\\Internet<br>  Explorer\\iexplore.exe" "C:\WINDOWS\デスクトップ\htm.htm"');<br>S_Paste();<br><br>要望に追加しました。<br><a href=http://sakura.qp.land.to/?Request%2F402 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Request%<wbr>2F402</nobr></a></div></section>
+    </li></ul></li></ul></li></ul></body></html>

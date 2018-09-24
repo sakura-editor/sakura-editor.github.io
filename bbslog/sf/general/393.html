@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>GREPで円記号を含む文字列を検索 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">393</span>
+    <a class="thread-title" href="393.html#393">GREPで円記号を含む文字列を検索</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">398</span>
+    <a class="thread-title" href="393.html#398">Re: GREPで円記号を含む文字列を検索</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">399</span>
+    <a class="thread-title" href="393.html#399">Re2: GREPで円記号を含む文字列を検索</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">402</span>
+    <a class="thread-title" href="393.html#402">Re3: GREPで円記号を含む文字列を検索</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">407</span>
+    <a class="thread-title" href="393.html#407">Re4: GREPで円記号を含む文字列を検索</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=393>
+    <span class="no">[393]</span>
+    <a class="thread-title" href="#393">GREPで円記号を含む文字列を検索</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-05-15T15:29:28">2001年05月15日 15:29</time></h1>
+    <div class="body">GREPで「"C:\xxx"という文字列」を検索すると、検索結果自体は正常なのですが、結果表示の先頭が<br><br>|検索条件  "C:\\xxx"<br><br>と、円記号が二重になって表示されます。<br></div></section>
+    <ul><li><section><h1 id=398>
+    <span class="no">[398]</span>
+    <a class="thread-title" href="#398">Re: GREPで円記号を含む文字列を検索</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-05-16T13:36:44">2001年05月16日 13:36</time></h1>
+    <div class="body">&gt;|検索条件  "C:\\xxx"<br>&gt;<br>&gt;と、円記号が二重になって表示されます。<br>意図的にそうしているようなんですが、何かメリットがあるんでしょうかね。<br></div></section>
+    <ul><li><section><h1 id=399>
+    <span class="no">[399]</span>
+    <a class="thread-title" href="#399">Re2: GREPで円記号を含む文字列を検索</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-16T16:55:20">2001年05月16日 16:55</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;|検索条件  "C:\\xxx"<br>&gt; &gt;<br>&gt; &gt;と、円記号が二重になって表示されます。<br>&gt; 意図的にそうしているようなんですが、何かメリット<br><br>単純に入力ミスのバグのように思いますが。<br></div></section>
+    <ul><li><section><h1 id=402>
+    <span class="no">[402]</span>
+    <a class="thread-title" href="#402">Re3: GREPで円記号を含む文字列を検索</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-05-16T19:20:39">2001年05月16日 19:20</time></h1>
+    <div class="body">&gt;▼じぇぷろさん<br>&gt;単純に入力ミスのバグのように思いますが。<br>ソースコードを見ると、文字列内でのクォーテーションをエスケープする方法（タイプ別－カラーで設定）によって振る舞いを変更するようになっています。ここまで作ってあると単純ミスとは言えないような気がしますが。<br></div></section>
+    <ul><li><section><h1 id=407>
+    <span class="no">[407]</span>
+    <a class="thread-title" href="#407">Re4: GREPで円記号を含む文字列を検索</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-05-17T00:06:48">2001年05月17日 00:06</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;▼じぇぷろさん<br>&gt; &gt;単純に入力ミスのバグのように思いますが。<br>&gt; ソースコードを見ると、文字列内でのクォーテーションをエスケープする方法（タイプ別－カラーで設定）によって振る舞いを変更するようになっています。ここまで作ってあると単純ミスとは言えないような気がしますが。<br><br>CEditView.cppの6200行あたりですね。<br>円が一つだと、色分け表示で<br><br>|検索条件  "C:\"<br><br>の \" 以降がすべてダブルクォーテーションの内側とみなされるので、その対策でしょうか？<br><br>|検索条件  [C:\]<br><br>などと表記すればOKかとも思いましたが、検索文字列そのものの中に<br>[']["][\'][\"]という表記があった場合が問題です。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

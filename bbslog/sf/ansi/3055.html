@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>複合代入で | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3055</span>
+    <a class="thread-title" href="3055.html#3055">複合代入で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3057</span>
+    <a class="thread-title" href="3055.html#3057">Re:複合代入で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3058</span>
+    <a class="thread-title" href="3055.html#3058">Re2:複合代入で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3065</span>
+    <a class="thread-title" href="3055.html#3065">Re3:複合代入で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3097</span>
+    <a class="thread-title" href="3055.html#3097">Re4:複合代入で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3098</span>
+    <a class="thread-title" href="3055.html#3098">Re5:複合代入で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3099</span>
+    <a class="thread-title" href="3055.html#3099">Re6:複合代入で</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3149</span>
+    <a class="thread-title" href="3055.html#3149">Re6:複合代入で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3166</span>
+    <a class="thread-title" href="3055.html#3166">Re7:複合代入で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3170</span>
+    <a class="thread-title" href="3055.html#3170">Re8:複合代入で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3175</span>
+    <a class="thread-title" href="3055.html#3175">Re9:複合代入で</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3167</span>
+    <a class="thread-title" href="3055.html#3167">Re7:複合代入で</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3222</span>
+    <a class="thread-title" href="3055.html#3222">キャストと符号拡張</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3230</span>
+    <a class="thread-title" href="3055.html#3230">Re:キャストと符号拡張</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3092</span>
+    <a class="thread-title" href="3055.html#3092">Re3:複合代入で</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3055>
+    <span class="no">[3055]</span>
+    <a class="thread-title" href="#3055">複合代入で</a>
+    <span class="author">みく</span>
+    <time datetime="2003-08-31T16:53:32">2003年08月31日 16:53</time></h1>
+    <div class="body"><br>複合代入で左辺をキャストしている箇所が2箇所あるのですが、<br>これも修正されないかなぁ、なんて。<br></div></section>
+    <ul><li><section><h1 id=3057>
+    <span class="no">[3057]</span>
+    <a class="thread-title" href="#3057">Re:複合代入で</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-08-31T17:33:38">2003年08月31日 17:33</time></h1>
+    <div class="body">▼ みくさん<br>&gt; 複合代入で左辺をキャストしている箇所が2箇所あるのですが、<br><br>個所が分かってたら、diffか行番号書いてくれよ</div></section>
+    <ul><li><section><h1 id=3058>
+    <span class="no">[3058]</span>
+    <a class="thread-title" href="#3058">Re2:複合代入で</a>
+    <span class="author">みく</span>
+    <time datetime="2003-08-31T18:50:25">2003年08月31日 18:50</time></h1>
+    <div class="body"><br>CEditView_New2.cpp:910行あたり<br>　(int)(*mode) |= 4;<br><br>CMemory.cpp:405行目あたり<br>　(unsigned char)pszWork[j] -= (unsigned char)0x80;<br><br><br>-----<br><br>わかる方がいたら教えてください。<br><br>MinGWでビルドするとき、<br>タイプ別設定画面系では問題ないのですが、<br>共通画面系のCPropCom*.cppでエラーになります。<br>どうすればいいんでしょう？<br><br>../sakura_core_mingw/CPropComBackup.cpp: In static member function `static int<br>   CPropCommon::DlgProc_PROP_BACKUP(HWND__*<br>, unsigned int, unsigned int, long<br>   int)':<br>../sakura_core_mingw/CPropComBackup.cpp:82: error: no matching function for<br>   call to `CPropCommon::DlgProc(&lt;unknown type&gt;, HWND__*&amp;, UINT&amp;, WPARAM&amp;,<br>   LPARAM&amp;)'<br>../sakura_core_mingw/CPropCommon.h:138: error: candidates are: static int<br>   CPropCommon::DlgProc(int (CPropCommon::*)(HWND__*, unsigned int, unsigned<br>   int, long int), HWND__*, unsigned int, unsigned int, long int)<br>mingw32-make: *** [..\sakura_core_mingw\CPropComBackup.o] Error 1<br></div></section>
+    <ul><li><section><h1 id=3065>
+    <span class="no">[3065]</span>
+    <a class="thread-title" href="#3065">Re3:複合代入で</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-01T12:47:48">2003年09月01日 12:47</time></h1>
+    <div class="body">CPropCommon::DlgProc_PROP_BACKUPの中で<br>CPropCommon::DlgProcが変な宣言のため、第一引数の型なんて分かるかー、ってぼやいてるのです。「candidates are」の後をヒントにして修正しといて。<br><br>コンパイラ屋さん、ひまでしたら片っ端から無駄なキャストと警告を取り除いてくださいね。見通しが悪すぎますから。</div></section>
+    <ul><li><section><h1 id=3097>
+    <span class="no">[3097]</span>
+    <a class="thread-title" href="#3097">Re4:複合代入で</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-09-07T17:51:27">2003年09月07日 17:51</time></h1>
+    <div class="body">▼ wmlhqさん<br>&gt; コンパイラ屋さん、ひまでしたら片っ端から無駄なキャストと警告を取り除いてくださいね。見通しが悪すぎますから。<br><br>関数のパラメータ以外の場合、定数の前のキャストは必要無い。<br>「[^C]\) *([0-9]|')」で探すと、約120個有ります。<br><br>以上</div></section>
+    <ul><li><section><h1 id=3098>
+    <span class="no">[3098]</span>
+    <a class="thread-title" href="#3098">Re5:複合代入で</a>
+    <span class="author">みく</span>
+    <time datetime="2003-09-07T18:15:48">2003年09月07日 18:15</time></h1>
+    <div class="body"><br>&gt;関数のパラメータ以外の場合、定数の前のキャストは必要無い。<br><br>本当に？<br></div></section>
+    <ul><li><section><h1 id=3099>
+    <span class="no">[3099]</span>
+    <a class="thread-title" href="#3099">Re6:複合代入で</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-09-07T19:18:55">2003年09月07日 19:18</time></h1>
+    <div class="body">▼ みくさん<br>&gt; <br>&gt; &gt;関数のパラメータ以外の場合、定数の前のキャストは必要無い。<br><br>すみません、一般的にではなくて、符号を取るような、<br>(unsigned short) -1<br>は、別です。</div></section>
+    </li><li><section><h1 id=3149>
+    <span class="no">[3149]</span>
+    <a class="thread-title" href="#3149">Re6:複合代入で</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-09-17T22:57:55">2003年09月17日 22:57</time></h1>
+    <div class="body">▼ みくさん<br>&gt; <br>&gt; &gt;関数のパラメータ以外の場合、定数の前のキャストは必要無い。<br><br>間違えました、半角カナも負の値でした。<br>(unsigned char)'゜'<br><br>眠い目を擦りながら、なんと！見つけたのではないでしょうか？ &gt;&gt;単語単位で探す(W)<br>CDocLineMgr.cpp(2236,) <br>- if( pData[nIdx] &gt;= (char)0xa1 &amp;&amp; pData[nIdx] &lt;= (char)0xdf ){ // Mar. 30, 2003 genta fd<br>+ if( (unsigned char)pData[nIdx] &gt;= 0xa1 &amp;&amp; (unsigned char)pData[nIdx] &lt;= 0xdf ){ // Mar. 30, 2003 genta fd<br></div></section>
+    <ul><li><section><h1 id=3166>
+    <span class="no">[3166]</span>
+    <a class="thread-title" href="#3166">Re7:複合代入で</a>
+    <span class="author">もか</span>
+    <time datetime="2003-09-20T15:16:51">2003年09月20日 15:16</time></h1>
+    <div class="body">複合代入でも、キャストでもないんですが、代入のバグです。<br><br>■"CEditView_Command.cpp"<br>・(6693,19): if( p[1] == '\\\\' )&#9;//ネットワークパスか？<br>'\\\\' → '\\'<br></div></section>
+    <ul><li><section><h1 id=3170>
+    <span class="no">[3170]</span>
+    <a class="thread-title" href="#3170">Re8:複合代入で</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-09-21T14:08:06">2003年09月21日 14:08</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 複合代入でも、キャストでもないんですが、代入のバグです。<br><br>冗談、比較してます。<br>- if( p[1] == '\\\\' )&#9;//ネットワークパスか？<br>+ if( p[1] == (char)'\\\\' )&#9;//ネットワークパスか？<br></div></section>
+    <ul><li><section><h1 id=3175>
+    <span class="no">[3175]</span>
+    <a class="thread-title" href="#3175">Re9:複合代入で</a>
+    <span class="author">もか</span>
+    <time datetime="2003-09-22T16:41:03">2003年09月22日 16:41</time></h1>
+    <div class="body">&gt;&gt; 複合代入でも、キャストでもないんですが、代入のバグです。<br>&gt;▼ じゅうじさん<br>&gt;冗談、比較してます。<br>たしかに比較ですね。(^^;<br><br>&gt;- if( p[1] == '\\\\' )&#9;//ネットワークパスか？<br>&gt;+ if( p[1] == (char)'\\\\' )&#9;//ネットワークパスか？<br><br>if( p[0] == '\\' )&#9;//ドライブなし絶対パスか？<br>{<br>-&#9;if( p[1] == '\\\\' )&#9;//ネットワークパスか？<br>+&#9;if( p[1] == '\\' )&#9;//ネットワークパスか？<br>前の行が上記で、1文字比較で、'\\'でいいはずです。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=3167>
+    <span class="no">[3167]</span>
+    <a class="thread-title" href="#3167">Re7:複合代入で</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-09-21T00:13:04">2003年09月21日 00:13</time></h1>
+    <div class="body">続きです。（頭突き？）<br>(char)0xA1 == -0x5F<br>(char)0xDF == -0x21<br><br>ついでながら、<br>CLayoutMgr_New.cpp(1279,)<br>-  it.getCurrentChar() == (char)0x81 &amp;&amp; it.getCurrentPos()[1] == (char)0x40 ))<br>+  (unsigned char)it.getCurrentChar() == 0x81 &amp;&amp; it.getCurrentPos()[1] == 0x40 ))<br></div></section>
+    </li><li><section><h1 id=3222>
+    <span class="no">[3222]</span>
+    <a class="thread-title" href="#3222">キャストと符号拡張</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-10-09T01:33:30">2003年10月09日 01:33</time></h1>
+    <div class="body">&gt;眠い目を擦りながら、なんと！見つけたのではないでしょうか？ &gt;&gt;単語単位で探す(W)<br>&gt;- if( pData[nIdx] &gt;= (char)0xa1 &amp;&amp; pData[nIdx] &lt;= (char)0xdf ){ // Mar. 30, 2003 genta fd<br>0x80をまたいでいないので，*pData 0xa1, 0xdfがすべてcharであればintに拡張したとき負の値と見なされますが値の大小比較では問題ないのでは？<br><br>＃この下の行のコメントをなおし忘れているのはさておき．<br><br>&gt;it.getCurrentChar() == (char)0x81 &amp;&amp; it.getCurrentPos()[1] == (char)0x40<br>こちらもcharに合わせて定数もcharとすることで，同一の値になって問題ないのでは？<br><br>じゅうじさんの<br>&gt;(unsigned char)it.getCurrentChar() == 0x81<br>ではcharの負の値をunsigned charにキャストすることになって正しい値が入らないのではないかと思います．(未確認)<br>char*をunsigned char*で読み替えるのはうまくいきますけどcharにunsigned charのキャストをかぶせてもどう変換されるのか？？<br><br>&gt;p[1] == '\\'<br>Cでは文字定数はintだけど，C++ではcharと解釈されて問題ないはず．<br></div></section>
+    <ul><li><section><h1 id=3230>
+    <span class="no">[3230]</span>
+    <a class="thread-title" href="#3230">Re:キャストと符号拡張</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-10-09T21:36:31">2003年10月09日 21:36</time></h1>
+    <div class="body">▼ げんたさん<br>ご指導有り難う御座います。<br><br>(unsigned char)のキャストは、どちらの方法でも同じです。<br>               it.getCurrentChar() == (char)0x81<br>(unsigned char)it.getCurrentChar() == 0x81<br><br>               -0x7F == (char)0x81<br>(unsigned char)-0x7F == 0x81<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=3092>
+    <span class="no">[3092]</span>
+    <a class="thread-title" href="#3092">Re3:複合代入で</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-07T13:23:15">2003年09月07日 13:23</time></h1>
+    <div class="body">&gt;CEditView_New2.cpp:910行あたり<br>&gt;　(int)(*mode) |= 4;<br>int *mode なのだからintのキャストは不要なのになぜ付いているのだろう？<br><br>&gt;<br>&gt;CMemory.cpp:405行目あたり<br>&gt;　(unsigned char)pszWork[j] -= (unsigned char)0x80;<br>こっちも pszWorkはunsigned char* なのだから冗長ですね．取り除いておきます．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

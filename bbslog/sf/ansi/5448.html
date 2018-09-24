@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>「名前を指定してマクロ実行」コマンド追加パッチ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5448</span>
+    <a class="thread-title" href="5448.html#5448">「名前を指定してマクロ実行」コマンド追加パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5452</span>
+    <a class="thread-title" href="5448.html#5452">Commit報告:「名前を指定してマクロ実行」コマンド追加パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5453</span>
+    <a class="thread-title" href="5448.html#5453">Re:Commit報告:「名前を指定してマクロ実行」コマンド追加パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5454</span>
+    <a class="thread-title" href="5448.html#5454">Re2:Commit報告:「名前を指定してマクロ実行」コマンド追加パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5455</span>
+    <a class="thread-title" href="5448.html#5455">自己レス</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5456</span>
+    <a class="thread-title" href="5448.html#5456">Re3:Commit報告:「名前を指定してマクロ実行」コマンド追加パッチ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5448>
+    <span class="no">[5448]</span>
+    <a class="thread-title" href="#5448">「名前を指定してマクロ実行」コマンド追加パッチ</a>
+    <span class="author">syat</span>
+    <time datetime="2008-10-23T13:44:04">2008年10月23日 13:44</time></h1>
+    <div class="body">おつかれさまです。syatです。<br><br>「名前を指定してマクロ実行」コマンドを追加するパッチを投稿しました。<br><a href=https://sourceforge.net/tracker2/?func=detail&aid=2188437&group_id=12488&atid=312488 target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker2<wbr>/?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>2188437&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>312488</nobr></a><br><br>現在UNICODE版にもパッチとして出ています。特に問題がなければ一緒にコミットしたいと思っています。<br><br>ANSI版で「自動実行マクロ」というパッチがかなり前からあるのですが、いろいろかぶる部分が多いと思うので、そのあたりのコメントを頂けるとありがたいです。<br></div></section>
+    <ul><li><section><h1 id=5452>
+    <span class="no">[5452]</span>
+    <a class="thread-title" href="#5452">Commit報告:「名前を指定してマクロ実行」コマンド追加パッチ</a>
+    <span class="author">syat</span>
+    <time datetime="2008-11-02T12:02:28">2008年11月02日 12:02</time></h1>
+    <div class="body">rev1461でコミットしました</div></section>
+    <ul><li><section><h1 id=5453>
+    <span class="no">[5453]</span>
+    <a class="thread-title" href="#5453">Re:Commit報告:「名前を指定してマクロ実行」コマンド追加パッチ</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-11-02T19:08:48">2008年11月02日 19:08</time></h1>
+    <div class="body">▼ syatさん<br>&gt; rev1461でコミットしました<br><br>ANSI版は安定性重視ということで一応ピアレビュー方式になっていますので、いきなりコミットはちょっと問題が……<br>まあ、慢性的なレビュア不足なので、それはそれで先に進めなくなってしまいますけどね (^^;<br><br>取りあえずソースコードおよび動作の確認を行ないました。<br>ただ、ソースが全て理解できたわけではないのがちょっと情けないのですが、動作上から1点。<br>タブ幅を変更する下記の1行マクロを実行してみましたが何も変化しませんでした。<br>S_ChangeWrapColm( S_ChangeWrapColm(0) + 2 );<br><br>S_Up();など引き数を伴わないものは実行されますので、引き数が無視されてしまうのでしょうか？<br><br>ではでは。</div></section>
+    <ul><li><section><h1 id=5454>
+    <span class="no">[5454]</span>
+    <a class="thread-title" href="#5454">Re2:Commit報告:「名前を指定してマクロ実行」コマンド追加パッチ</a>
+    <span class="author">syat</span>
+    <time datetime="2008-11-02T21:14:16">2008年11月02日 21:14</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; ANSI版は安定性重視ということで一応ピアレビュー方式になっていますので、いきなりコミットはちょっと問題が……<br>&gt; まあ、慢性的なレビュア不足なので、それはそれで先に進めなくなってしまいますけどね (^^;<br>すみません。皆さん忙しいのかなと思ってえぃやぁで入れてしまいました。<br>ちょっと辛抱足りなかったと反省してます。<br><br>&gt; 取りあえずソースコードおよび動作の確認を行ないました。<br>ありがとうございます。<br><br>&gt; タブ幅を変更する下記の1行マクロを実行してみましたが何も変化しませんでした。<br>&gt; S_ChangeWrapColm( S_ChangeWrapColm(0) + 2 );<br>その関数は「折り返し桁変更」ですね。<br>この内容を～～.ppaという名前で保存し（PPA.DLLが必要）、実行してみたところ折り返し桁がちゃんと２桁増えます（地味にw）。<br><br>タブ幅変更でも動きました。<br>S_ChangeTabWidth( S_ChangeTabWidth(0) + 2 );<br><br>ただ、<br>拡張子を.macにしてキーマクロとして実行しようとしたら、「S_ChangeWrapColmは存在しない関数です」エラーになってしまいました。なぜ？？</div></section>
+    <ul><li><section><h1 id=5455>
+    <span class="no">[5455]</span>
+    <a class="thread-title" href="#5455">自己レス</a>
+    <span class="author">syat</span>
+    <time datetime="2008-11-02T21:34:44">2008年11月02日 21:34</time></h1>
+    <div class="body">&gt; ただ、<br>&gt; 拡張子を.macにしてキーマクロとして実行しようとしたら、「S_ChangeWrapColmは存在しない関数です」エラーになってしまいました。なぜ？？<br>S_ChangeWrapColmはコマンドじゃない機能だからキーマクロの対象外、なんだろうか。<br>m_MacroFuncInfoArrではなくm_MacroFuncInfoNotCommandArrに登録されているため、関数名から関数情報を持ってくるところでエラーとして弾かれていました。<br>m_MacroFuncInfoNotCommandArrをサーチするだけで対応できるのでは？<br></div></section>
+    </li><li><section><h1 id=5456>
+    <span class="no">[5456]</span>
+    <a class="thread-title" href="#5456">Re3:Commit報告:「名前を指定してマクロ実行」コマンド追加パッチ</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-11-02T21:59:20">2008年11月02日 21:59</time></h1>
+    <div class="body">▼ syatさん<br>&gt; &gt; タブ幅を変更する下記の1行マクロを実行してみましたが何も変化しませんでした。<br>&gt; &gt; S_ChangeWrapColm( S_ChangeWrapColm(0) + 2 );<br>&gt; その関数は「折り返し桁変更」ですね。<br>&gt; この内容を～～.ppaという名前で保存し（PPA.DLLが必要）、実行してみたところ折り返し桁がちゃんと２桁増えます（地味にw）。<br>&gt; <br>&gt; タブ幅変更でも動きました。<br>&gt; S_ChangeTabWidth( S_ChangeTabWidth(0) + 2 );<br><br>すみません、動かすマクロを間違えていました m(_ _)m<br>おっしゃる通りppaだと動作しますね。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

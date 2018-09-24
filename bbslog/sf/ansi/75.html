@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>OLEのドラッグ&amp;ドロップで… | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">75</span>
+    <a class="thread-title" href="75.html#75">OLEのドラッグ&amp;ドロップで…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">84</span>
+    <a class="thread-title" href="75.html#84">Re:OLEのドラッグ&amp;ドロップで…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">86</span>
+    <a class="thread-title" href="75.html#86">Re:OLEのドラッグ&amp;ドロップで…</a></div>
+    </li><li><div class="list-title">
+    <span class="no">90</span>
+    <a class="thread-title" href="75.html#90">Re2:OLEのドラッグ&amp;ドロップで…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">91</span>
+    <a class="thread-title" href="75.html#91">Re3:OLEのドラッグ&amp;ドロップで…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">99</span>
+    <a class="thread-title" href="75.html#99">eGroupなどの説明</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=75>
+    <span class="no">[75]</span>
+    <a class="thread-title" href="#75">OLEのドラッグ&amp;ドロップで…</a>
+    <span class="author">蛭子屋双六</span>
+    <time datetime="2001-02-22T22:04:07">2001年02月22日 22:04</time></h1>
+    <div class="body">昔たけさんにやいやい言ってOLEのドラッグ&amp;ドロップを<br>実装して貰った張本人です。<br>＃SourceForgeの方に書き込んだんですが<br>＃そっちはあんまり使われてないんですね<br><br>そのときにサンプルとしてコードを提供したんですが、<br>その中にIDrataObjectの仕様を誤解していたことによる<br>バグが潜んでいます。 <br>IDataObjectの使い方によっては、<br>つまりドロップ先のアプリの実装によっては、<br>ちゃんとドロップされないことがあります。<br><br>具体的な修正方法は、CDropTarget.cppの<br>CDropTarget::GetDataの中でm_hDataを<br>そのまま渡してしまっているのを、<br>新しいHGLOBALを確保してそいつにデータを<br>コピーしてをそいつを渡すようにするんですが、<br>どうすればいいでしょう?修正したコードを<br>どなたかに送ればいいんでしょうか?</div></section>
+    <ul><li><section><h1 id=84>
+    <span class="no">[84]</span>
+    <a class="thread-title" href="#84">Re:OLEのドラッグ&amp;ドロップで…</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-02-24T18:26:25">2001年02月24日 18:26</time></h1>
+    <div class="body">▼ 蛭子屋双六さん<br>&gt; 修正したコードをどなたかに送ればいいんでしょうか?<br>げんた氏に渡すのが相場なんですが、げんた氏の事情により更新が遅れる事もあるようなので、eGroupsのほうへ送っていただければ関心のある方はその部分のファイルをDLすると思います。<br>このバグに関してげんた氏から返信がありませんが、もしよければ私の改修部分をげんた氏に送る際に双六氏の分も一緒にして差分ファイルをげんた氏に送りたいと思います。なお、すとーにぃ氏の分もすでにこっちでマージしてあります。あまり細かくアップせずにバグや修正はまとめてできるだけ一回で更新したほうがいいと思うからです。<br></div></section>
+    <ul><li><section><h1 id=86>
+    <span class="no">[86]</span>
+    <a class="thread-title" href="#86">Re:OLEのドラッグ&amp;ドロップで…</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-02-26T00:38:26">2001年02月26日 00:38</time></h1>
+    <div class="body">▼じぇぷろさん<br>&gt;双六氏の分も一緒にして差分ファイルをげんた氏に送りたいと思います。<br>それではお願いします。<br><br>みくさんの分は私の方で動作を確認した後、ソースのみeGroupか自分のところにUpします。それにじぇぷろさんの分をマージしてもらって公開ということでどうでしょうか。<br></div></section>
+    </li><li><section><h1 id=90>
+    <span class="no">[90]</span>
+    <a class="thread-title" href="#90">Re2:OLEのドラッグ&amp;ドロップで…</a>
+    <span class="author">蛭子屋双六</span>
+    <time datetime="2001-02-26T11:13:00">2001年02月26日 11:13</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; げんた氏に渡すのが相場なんですが、げんた氏の事情に<br>&gt; より更新が遅れる事もあるようなので、eGroupsのほうへ<br>&gt; 送っていただければ関心のある方はその部分のファイルを<br>&gt; DLすると思います。<br><br>すいません。eGroupsの方へ送るってのがよくわからなかったのでとりあえず<br><br>http://cgisv.chldren.net/%7Eyebisuya/CDr<br>opTarget.LZH<br><br>に置きました。<br><br>#ifdef ENABLED_YEBISUYA_ADDITION～#else<br>に囲まれた部分が修正した箇所です。<br><br>こちらではフルコンパイルできる環境がない(貧弱なマシンしか<br>ないのでビルド中にVCが不正終了(;_;))のですが、一応修正した<br>cppだけはコンパイルしてerrorやwarningが出ないようにはしま<br>した。<br></div></section>
+    <ul><li><section><h1 id=91>
+    <span class="no">[91]</span>
+    <a class="thread-title" href="#91">Re3:OLEのドラッグ&amp;ドロップで…</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-02-26T17:08:41">2001年02月26日 17:08</time></h1>
+    <div class="body">▼ 蛭子屋双六さん<br>&gt; すいません。eGroupsの方へ送るってのがよくわからなかったのでとりあえず<br>&gt; http://cgisv.chldren.net/%7Eyebisuya/CDr<br>&gt; opTarget.LZH <br>&gt; に置きました。<br><br>DLしました。eGroupsへアップする場合はユーザ登録が必要です。DLや見るだけなら不要です。その辺も含めてURLなどどこかのHP(非公式版の扉あたり)に書いておかないとわからないですね。<br>なおここ(開発掲示板)のKENCH氏の記事No.40(と41)に参加要領があります。<br></div></section>
+    <ul><li><section><h1 id=99>
+    <span class="no">[99]</span>
+    <a class="thread-title" href="#99">eGroupなどの説明</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-02-28T06:45:38">2001年02月28日 06:45</time></h1>
+    <div class="body">&gt;その辺も含めてURLなどどこかのHP(非公式版の扉あたり)に書いておかないと<br>説明文を追加しました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

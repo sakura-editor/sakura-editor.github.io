@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>[報告]キャレットが浮いた状態でCtrl+Delete | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3559</span>
+    <a class="thread-title" href="3559.html#3559">[報告]キャレットが浮いた状態でCtrl+Delete</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3560</span>
+    <a class="thread-title" href="3559.html#3560">Re: [報告]キャレットが浮いた状態でCtrl+Delete</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3561</span>
+    <a class="thread-title" href="3559.html#3561">Re2: [報告]キャレットが浮いた状態でCtrl+Delete</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3559>
+    <span class="no">[3559]</span>
+    <a class="thread-title" href="#3559">[報告]キャレットが浮いた状態でCtrl+Delete</a>
+    <span class="author">FILE</span>
+    <time datetime="2004-05-02T13:33:29">2004年05月02日 13:33</time></h1>
+    <div class="body">　こんにちは。<br>　下記の現象が発生しましたので、ご報告いたします。<br><br>現象／再現手順：<br>　０．サクラエディタ起動(無題)<br>　１．F4, Enter, ↑, Tab, Ctrl+Tab, Delete, Shift+Ctrl+Tab<br>　　　この時点でキャレット(文字カーソル)が浮いた状態に。<br>　　　(ビュー毎に位置を覚えているから？)<br>　２．ここで、Ctrl+Delete(単語の右端まで削除)すると、[EOF]が<br>　　　２つになる。　再描画(F5)すると、下の[EOF]は消える。<br>　３．半角の"・"(0x0d)が残っているが、BackSpaceやDeleteでは<br>　　　削除できない。ただし、選択すれば削除可能。<br><br>試したバージョン：<br>　WinMe 1.4.6.0<br><br>以上、ご確認よろしくお願いいたします。<br></div></section>
+    <ul><li><section><h1 id=3560>
+    <span class="no">[3560]</span>
+    <a class="thread-title" href="#3560">Re: [報告]キャレットが浮いた状態でCtrl+Delete</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-05-02T19:56:28">2004年05月02日 19:56</time></h1>
+    <div class="body">CEditView::GetAdjustCursorPos()でファイル末尾だけでなくX座標の調整も行わないとダメみたいですね．<br></div></section>
+    <ul><li><section><h1 id=3561>
+    <span class="no">[3561]</span>
+    <a class="thread-title" href="#3561">Re2: [報告]キャレットが浮いた状態でCtrl+Delete</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-02T22:10:27">2004年05月02日 22:10</time></h1>
+    <div class="body">GetAdjustCursorPosで、改行以降のX座標位置を調整していないのは、意図的な実装です。<br>というのも、矩形選択中と直後やフリーカーソルモードの場合は、改行以降でも正しい座標だからです。<br>そうすると、単語の右端まで削除の動作が変だということになります。<br>GetAdjustCursorPosは色々な場所から間接的に呼ばれるため、この関数でX座標を考慮し、動作モードと選択の状態に依存するように修正すると、思わぬ副作用がでるかもしれません。<br>例えば、置換で改行コードの真中にカーソルを移動したい場合などがあります。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

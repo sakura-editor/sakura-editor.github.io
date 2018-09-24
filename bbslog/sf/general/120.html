@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>改行コードについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">120</span>
+    <a class="thread-title" href="120.html#120">改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">127</span>
+    <a class="thread-title" href="120.html#127">Re:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">130</span>
+    <a class="thread-title" href="120.html#130">Re2:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">133</span>
+    <a class="thread-title" href="120.html#133">Re3:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">136</span>
+    <a class="thread-title" href="120.html#136">Re4:改行コードについて</a></div>
+    </li><li><div class="list-title">
+    <span class="no">139</span>
+    <a class="thread-title" href="120.html#139">Re5:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">144</span>
+    <a class="thread-title" href="120.html#144">Re6:改行コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">159</span>
+    <a class="thread-title" href="120.html#159">Re7:改行コードについて</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=120>
+    <span class="no">[120]</span>
+    <a class="thread-title" href="#120">改行コードについて</a>
+    <span class="author">あらねこ</span>
+    <time datetime="2001-02-03T00:46:56">2001年02月03日 00:46</time></h1>
+    <div class="body">初めまして、あらねこといいます。<br>以前から「テキストエディタ」を使っていますが、一カ所だけ前々から不便に感じている場所があります。それは、改行コードが変更できない点です。<br>それで、よろしければこちらの方でファイルの別名保存時に文字コードの選択のように改行コードも選択できるように(変更しない,CRLF,LF,CRというふうに)していただけないでしょうか？<br>大変勝手な要望ですが、よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=127>
+    <span class="no">[127]</span>
+    <a class="thread-title" href="#127">Re:改行コードについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-02-03T11:06:39">2001年02月03日 11:06</time></h1>
+    <div class="body">▼ あらねこさん<br>&gt; 改行コードが変更できない<br>この話は昨年の5月頃議論になりました．そのときの話は，改行コードと関係なく新規に追加された行の行末がCRLFになってしまうという話で，そのとき保存時に変更したいという話もでました．<br>このエディタでは各行で改行コードを管理しているのですが，データの中に改行コード自身も含まれているのでちょっと扱いがやっかいでして，そのときはあきらめました．<br>その後Clipboardに貼り付けるときに改行がCRLFでないと他のアプリでおかしくなると言うことで「CRLF改行でコピー」というのは付けました．他のコードに変換してコピーというのも付けられるのですが需要がなさそうだったので見送りました．<br><br>CRLFで保存したいときは全部選択→CRLF改行でコピー→貼り付けで何とかなると思います．<br><br>この要望についてはまた考えます．</div></section>
+    <ul><li><section><h1 id=130>
+    <span class="no">[130]</span>
+    <a class="thread-title" href="#130">Re2:改行コードについて</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-02-03T15:08:35">2001年02月03日 15:08</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼ あらねこさん<br>&gt; &gt; 改行コードが変更できない<br>&gt;(途中略) このエディタでは各行で改行コードを管理しているのですが，データの中に改行コード自身も含まれているのでちょっと扱いがやっかいでして，そのときはあきらめました．<br><br>ヘルプの仕様を見てみると直前を否定するような不思議な書き方になってますね。ファイル内に改行コードが混在するのはどのくらい需要があるのでしょう。むしろUNIXファイル、マックファイル、DOS/Winファイルほとんどで、EUC+LF,　SJIS?+CR(マックは良く知らない), SJIS+CRLFの組になっているほうが便利なように思います。<br>勿論保存時に意識して組み合わせをセットしたり、変えてもいいのですが、[文字コードとセットにする]オプションがあってデフォルトではそうなっている方が楽ではないでしょうかか？<br>これは保存時だけでなく、読み直す時もそうなっている方が自然な気がします。混在したい場合はセットにするオプション<br>をはずす。混在している場合は・・・あるがままで、ということになるのかなあ。わからん。<br><br>&gt;CRLFで保存したいときは<br>私は例えばEUCの文字コードで保存したいときに改行コードもLFにしたい、というような話と受け止めたのですがどうなんしょう。&gt;あらねこ氏<br>もっとも、UNIXシステムにFTPなどで転送する時は変換するようにできるものもあるから気にしなくていいのかも?(それなら文字コードも同じか？)変換ができないようなFTPソフトでは必要ですね。</div></section>
+    <ul><li><section><h1 id=133>
+    <span class="no">[133]</span>
+    <a class="thread-title" href="#133">Re3:改行コードについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-02-03T21:04:11">2001年02月03日 21:04</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; ファイル内に改行コードが混在するのはどのくらい需要があるのでしょう。<br>テキストファイルでは需要はないと思いますが、バイナリを変更するときには勝手にコードを変更されない方がいいでしょう。（って“テキスト”エディタでしょ）<br><br>&gt; EUC+LF,　SJIS?+CR(マックは良く知らない), SJIS+CRLFの組<br>UNIX=EUCとは限りません。この掲示板もLinux上で動いていますが、漢字コードはSJISですし。そもそもPerl(jperlではない)は日本語ということを意識していないのでどちらを使うかは設計に依存します。<br>ただ、UNIXのPerlはCRを異常な文字と見なしてしまうので行末はLFというのは守らないと行けません。<br><br>漢字コードと行末コードは全く異なる話なので、下手に組み合わせたりしない方がいいと思います。<br></div></section>
+    <ul><li><section><h1 id=136>
+    <span class="no">[136]</span>
+    <a class="thread-title" href="#136">Re4:改行コードについて</a>
+    <span class="author">あらねこ</span>
+    <time datetime="2001-02-03T23:50:50">2001年02月03日 23:50</time></h1>
+    <div class="body">私の文章が具体性に欠けていたようなので、下に私が改行コードを変換する場合をあげておきます。<br><br>１、Perlによるプログラミング時にLF保存が必要<br>Perlの実行ファイルやデータファイル、設定ファイル等はすべてUNIX標準のEUC+LFに統一しているので、それに関係するファイルを作成する場合にLF変換します。確かに、じぇぷろ氏の言うようにFTP転送時に変換しても良いのですが、他の人にそのファイルを回すときに変換してもらわなければならなかったり、デュアルブートのUNIXから読む際にCRLFのままになってしまいます。<br><br>２、CRLFファイル⇔LFファイルの相互変換<br>ファイルを改行コードの変換だけしたい場合でも、中身を見ながら変換できたりするので、変換ソフトを使わずにテキストエディターで変換することもよくあります。<br><br>以上のように私は使っております。なお、２に関しては改行コード変更の上コピーして新規文書に張り付けるよりも保存時に変更できた方が利便性はあがると思います。<br><br>あと、文字コードと改行コードのセット化についてですが、げんた氏の言うとおりむやみに組み合わせない方がいいと私は思います。しかしながら、文字コードと改行コードの組み合わせがOSによってだいたい決まっているのも事実ですので検討の余地は残されていると思います。<br><br>自分から提起した話題であるのに、かなり偉そうな文面になってしまい申し訳ありません。</div></section>
+    </li><li><section><h1 id=139>
+    <span class="no">[139]</span>
+    <a class="thread-title" href="#139">Re5:改行コードについて</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-02-04T23:10:51">2001年02月04日 23:10</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼ じぇぷろさん<br>&gt; &gt; EUC+LF,　SJIS?+CR(マックは良く知らない), SJIS+CRLFの組<br>&gt; UNIX=EUCとは限りません。この掲示板もLinux上で動いていますが、漢字コードはSJISですし。そもそもPerl(jperlではない)は日本語ということを意識していないのでどちらを使うかは設計に依存します。<br>&gt; 漢字コードと行末コードは全く異なる話なので、下手に組み合わせたりしない方がいいと思います。<br>UNIX=EUCしかないとはいってないんですが。<br><br>あらねこ氏&gt;げんた氏の言うとおりむやみに組み合わせない方がいいと私は思います。<br><br>無闇に組み合わせるとも言ってはいなんです。とりあえず保存時のことだけに限定すれば、文字コードとは別に改行コードを選択できれば、一応の用は足りるでしょう。ただUNIX=EUCが標準であって、デフォルトとはそういう設定のことをいうのだからセットにするオプションをチェックしておけば文字コードにEUCを選択したとき、その下に来るであろう改行コードが自動的に[LF]選択になってくれて、選び直す手間が省ける、ということです。<br>LFにしたくなければそこで選び直してもいいわけです。同様にSJISを選べばCRLFになると楽。セット利用の方が実際上多いでしょうということです。そういう使い方をしたくない人はセットオプションをはずしていつも両方指定すればいいわけです。毎度のことになりますが、初心者はせいぜいUNIXファイル、Winファイルという捕らえ方なので。<br>せっかく読み込みや文字コード変換までできるのなら、nkfやqkcのようなことをサクラエディタで出来れば一層便利ということです。</div></section>
+    <ul><li><section><h1 id=144>
+    <span class="no">[144]</span>
+    <a class="thread-title" href="#144">Re6:改行コードについて</a>
+    <span class="author">しかく丸</span>
+    <time datetime="2001-02-06T05:30:56">2001年02月06日 05:30</time></h1>
+    <div class="body">こんにちは、しかく丸と言います。<br>途中で割り込んですみません。<br>ちょうどCRLFで保存する方法を探していたところです。<br>Sakuraを使っていて、気がついたら改行がCRのみになっていました。<br>（OSはNT4.0sp6）<br>なんとか直そうと四苦八苦していたのですが...「CRLF改行でコピー」は気になっていたのですが試していませんでした。<br>できれば任意の改行コードで統一できる機能があると嬉しく思います。<br></div></section>
+    <ul><li><section><h1 id=159>
+    <span class="no">[159]</span>
+    <a class="thread-title" href="#159">Re7:改行コードについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-02-08T00:37:53">2001年02月08日 00:37</time></h1>
+    <div class="body">▼ しかく丸さん<br>&gt; できれば任意の改行コードで統一できる機能があると嬉しく思います。<br>内部的な扱いにおいて，改行コードを変更してもデータ領域をさわらなくて良いように変更してからと思ったのですが，思っただけでした．<br>具体的にはデータ末尾の改行コードを保管しないように変更したかったのですが，影響範囲がつかみきれなくて...<br><br>内部では改行を取り除くが，現在のメソッドは（処理が遅くなるが）インターフェースを保ち，改行無しのデータを返す新しいメソッドを用意した上でだんだんとそちらを使うように書き換えるというのが現実的かな．<br><br>実装方法についての話がある人は開発掲示板の方にお願いします．</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

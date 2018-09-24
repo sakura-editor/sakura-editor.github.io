@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title> 2.0.6.0 リリース | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7576</span>
+    <a class="thread-title" href="7576.html#7576"> 2.0.6.0 リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7581</span>
+    <a class="thread-title" href="7576.html#7581">Re: 2.0.6.0 リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7582</span>
+    <a class="thread-title" href="7576.html#7582">Re2: 2.0.6.0 リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7583</span>
+    <a class="thread-title" href="7576.html#7583">Re3: 2.0.6.0 リリース</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">7589</span>
+    <a class="thread-title" href="7576.html#7589">Re: 2.0.6.0 リリース</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7576>
+    <span class="no">[7576]</span>
+    <a class="thread-title" href="#7576"> 2.0.6.0 リリース</a>
+    <span class="author">novice</span>
+    <time datetime="2013-03-11T20:44:27">2013年03月11日 20:44</time></h1>
+    <div class="body">サクラエディタ V2 (UNICODE版) の 2.0.6.0 をリリースしました。<br><br>インストーラパッケージ<br>なし<br><br>単体配布版<br><a href=http://sourceforge.net/projects/sakura-editor/files/sakura2/2.0.6.0/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>projects<wbr>/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>sakura2/<wbr>2.<wbr>0.<wbr>6.<wbr>0/<wbr></nobr></a><br><br>64bit（x64）単体配布 *テスト* 版<br>なし<br><br>更新履歴<br><a href=http://sakura.qp.land.to/?History%2F2.0.6.0 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>History%<wbr>2F2.<wbr>0.<wbr>6.<wbr>0</nobr></a><br></div></section>
+    <ul><li><section><h1 id=7581>
+    <span class="no">[7581]</span>
+    <a class="thread-title" href="#7581">Re: 2.0.6.0 リリース</a>
+    <span class="author">神楽</span>
+    <time datetime="2013-03-17T21:14:07">2013年03月17日 21:14</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; 更新履歴<br>&gt; <a href=http://sakura.qp.land.to/?History%2F2.0.6.0 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>History%<wbr>2F2.<wbr>0.<wbr>6.<wbr>0</nobr></a><br>ファイルダイアログの初期位置を指定 (svn:2569 upatchid:280 Moca)<br><br>共通設定 の『編集』タブの、ファイルダイアログの初期位置で<br>『指定フォルダ』にチェックしても、タスクトレイ（コントロールプロセス？）では<br>依然としてMRU0番のフォルダがカレントフォルダとなっています。<br>この仕様ですと最後に開いたファイルの親フォルダのリネームができないことがありますので、<br>タスクトレイでファイルを開く際のダイアログのカレントフォルダも『指定フォルダ』で<br>指定可能にして頂きたいです。<br><br>同じような要望は以前から上がっていたりします。<br><a href=http://sakura.qp.land.to/?BugReport%2F78 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F78</nobr></a><br>タスクトレイのプロセスや未保存の無題やアウトプット等のウインドウがフォルダにロックかけててフォルダの削除やリネームできないことがあります。この対策も兼ねて保存済みファイルオープン中以外のsakura.exeプロセスのカレントディレクトリを明示できるオプションが必要かと思います。 -- 2011-05-04 (水) 15:59:59</div></section>
+    <ul><li><section><h1 id=7582>
+    <span class="no">[7582]</span>
+    <a class="thread-title" href="#7582">Re2: 2.0.6.0 リリース</a>
+    <span class="author">novice</span>
+    <time datetime="2013-03-18T19:06:10">2013年03月18日 19:06</time></h1>
+    <div class="body">▼ 神楽さん<br>&gt; タスクトレイでファイルを開く際のダイアログのカレントフォルダも『指定フォルダ』で<br>&gt; 指定可能にして頂きたいです。<br><br>パッチ作成しました。<br><a href=http://sourceforge.net/p/sakura-editor/patchunicode/358/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>358/<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=7583>
+    <span class="no">[7583]</span>
+    <a class="thread-title" href="#7583">Re3: 2.0.6.0 リリース</a>
+    <span class="author">神楽</span>
+    <time datetime="2013-03-23T07:39:12">2013年03月23日 07:39</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; ▼ 神楽さん<br>&gt; &gt; タスクトレイでファイルを開く際のダイアログのカレントフォルダも『指定フォルダ』で<br>&gt; &gt; 指定可能にして頂きたいです。<br>&gt; <br>&gt; パッチ作成しました。<br>&gt; <a href=http://sourceforge.net/p/sakura-editor/patchunicode/358/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>358/<wbr></nobr></a><br>お返事遅くなり申し訳ありません。<br>早速のご対応、どうもありがとうございました。</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=7589>
+    <span class="no">[7589]</span>
+    <a class="thread-title" href="#7589">Re: 2.0.6.0 リリース</a>
+    <span class="author">novice</span>
+    <time datetime="2013-03-31T14:37:53">2013年03月31日 14:37</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; サクラエディタ V2 (UNICODE版) の 2.0.6.0 をリリースしました。<br><br>ヘルプファイル<br><a href=http://sourceforge.net/projects/sakura-editor/files/help2/2.0.6.0/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>projects<wbr>/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>help2/<wbr>2.<wbr>0.<wbr>6.<wbr>0/<wbr></nobr></a><br></div></section>
+    </li></ul></li></ul></body></html>

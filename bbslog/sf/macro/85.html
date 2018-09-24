@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ある文を切り取って他のファイルのある部分に貼り付ける | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">85</span>
+    <a class="thread-title" href="85.html#85">ある文を切り取って他のファイルのある部分に貼り付ける</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">89</span>
+    <a class="thread-title" href="85.html#89">RE: ある文を切り取って他のファイルのある部分に貼り付ける</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">91</span>
+    <a class="thread-title" href="85.html#91">Re2: ある文を切り取って他のファイルのある部分に貼り付ける</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=85>
+    <span class="no">[85]</span>
+    <a class="thread-title" href="#85">ある文を切り取って他のファイルのある部分に貼り付ける</a>
+    <span class="author">方程式</span>
+    <time datetime="2004-08-21T00:39:38">2004年08月21日 00:39</time></h1>
+    <div class="body">マクロは全くの初心者です。ヘルプを見てちょこちょこやっているのですが<br>うまくできません（キーマクロ）。<br><br>題名にあるような操作<br>ある文を切り取って他のファイルのある部分に貼り付ける<br>をマクロを使って出来るのでしょうか？<br>ホームページの更新に便利かなぁと思って試してみたのですがいまいちなんです。<br></div></section>
+    <ul><li><section><h1 id=89>
+    <span class="no">[89]</span>
+    <a class="thread-title" href="#89">RE: ある文を切り取って他のファイルのある部分に貼り付ける</a>
+    <span class="author">すい</span>
+    <time datetime="2004-08-26T04:31:50">2004年08月26日 04:31</time></h1>
+    <div class="body">&gt;ある文を切り取って他のファイルのある部分に貼り付ける<br>&gt;をマクロを使って出来るのでしょうか？<br><br>これは出来ないと思います。<br><br>サクラエディタのマクロは、エディタのウィンドウが複数<br>開いている場合、マクロでコントロール出来るのは<br>「マクロを実行開始したエディタのウィンドウ」<br>だけですので。<br><br>つまり「ファイルA」と「ファイルB」の２ファイルを編集中、<br>「ファイルA」のウィンドウでマクロを実行開始したら「ファイルA」<br>のウィンドウしかマクロで弄る事ができない、「ファイルB」<br>にはマクロでは触れないのです。<br><br><br>エディタのウィンドウ１個で全て処理しても良いなら<br>処理としては可能になると思いますが。<br><br>始めに「ファイルA」だけを開いた状態で、そこでマクロを実行。<br>以降がマクロの処理内容<br><br>「ファイルA」内のテキストを切り取り。<br>　　↓<br>「ファイルA」を上書き保存  S_FileSave();<br>　　↓<br>「ファイルA」を閉じて無題  S_FileClose();<br>　　↓<br>「ファイルB」を開く  S_FileOpen('ファイルB');<br>　　↓<br>貼り付け<br><br>という流れなら可能ではないかと。<br><br>### ちょー使いにくそうな気が<br><br>ちなみに S_FileSave とか、この辺のファイル操作関係の機能は<br>「キーマクロの記録開始」やなんかの機能では記録されない機能<br>になっていますので、「キーマクロの記録開始」を使ってマクロ<br>にして保存する事は出来ません。<br>拡張子 .MAC のファイルに直接 S_FileClose(); とかを<br>キー入力していかなくてはなりません。<br></div></section>
+    <ul><li><section><h1 id=91>
+    <span class="no">[91]</span>
+    <a class="thread-title" href="#91">Re2: ある文を切り取って他のファイルのある部分に貼り付ける</a>
+    <span class="author">方程式</span>
+    <time datetime="2004-08-26T16:12:19">2004年08月26日 16:12</time></h1>
+    <div class="body">そうですか、ありがとうございます。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

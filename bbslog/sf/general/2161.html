@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>検索をマクロから実行時の不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2161</span>
+    <a class="thread-title" href="2161.html#2161">検索をマクロから実行時の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2163</span>
+    <a class="thread-title" href="2161.html#2163">RE: 検索をマクロから実行時の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2164</span>
+    <a class="thread-title" href="2161.html#2164">RE2: 検索をマクロから実行時の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2165</span>
+    <a class="thread-title" href="2161.html#2165">RE3: 検索をマクロから実行時の不具合</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2161>
+    <span class="no">[2161]</span>
+    <a class="thread-title" href="#2161">検索をマクロから実行時の不具合</a>
+    <span class="author">ai</span>
+    <time datetime="2002-08-05T11:38:24">2002年08月05日 11:38</time></h1>
+    <div class="body"><br>「関数の先頭 / 次の関数の先頭へジャンプ」をマクロで実現できないものかと思い、<br>キーマクロの記録を使い試しに作成してみました。(保存しただけですけど・・・)<br><br>S_SearchPrev('^[_a-zA-Z][^\\(=;:]*::[^\\<br>(;]+\\([^;]*$', 23);&#9;// 前を検索<br><br>関数名はヒットし色分けもされるのですが、カーソルが移動しません。<br>文字を入力すると関数名の所に入力されるので、内部的(？)には移動しているようです。<br></div></section>
+    <ul><li><section><h1 id=2163>
+    <span class="no">[2163]</span>
+    <a class="thread-title" href="#2163">RE: 検索をマクロから実行時の不具合</a>
+    <span class="author">ai</span>
+    <time datetime="2002-08-06T12:06:51">2002年08月06日 12:06</time></h1>
+    <div class="body"><br>S_SearchPrev の後に S_CurLineCenter を追加したところ希望通りの動作になりました。不具合ではなく仕様ってことでよろしいんでしょうか(^^;<br></div></section>
+    <ul><li><section><h1 id=2164>
+    <span class="no">[2164]</span>
+    <a class="thread-title" href="#2164">RE2: 検索をマクロから実行時の不具合</a>
+    <span class="author">すい</span>
+    <time datetime="2002-08-06T21:42:34">2002年08月06日 21:42</time></h1>
+    <div class="body">&gt;S_SearchPrev の後に S_CurLineCenter を追加したところ希望通りの動作になりました。不具合ではなく仕様ってことでよろしいんでしょうか(^^;<br>不具合でしょうけど。。。<br>「S_SearchPrev の後に S_CurLineCenter」じゃぁ解決になっていなかったりして。ぢつは。 :-P<br>例えば、<br>・現在のカーソル行が 100行とかちょっと後ろの方にある。<br>・次に S_SearchPrev でヒットする文字列の行がファイル先頭（2行目とか）の方にある。<br>という場合。<br>カーソル位置がファイル先頭の方にある場合、困った事に S_CurLineCenter は全く動作してくれませんから．．．<br><br># 何の解決にもなってなくてすみません。m(_ _)m<br></div></section>
+    <ul><li><section><h1 id=2165>
+    <span class="no">[2165]</span>
+    <a class="thread-title" href="#2165">RE3: 検索をマクロから実行時の不具合</a>
+    <span class="author">ai</span>
+    <time datetime="2002-08-07T08:42:47">2002年08月07日 08:42</time></h1>
+    <div class="body">&gt;「S_SearchPrev の後に S_CurLineCenter」じゃぁ解決になっていなかったりして。ぢつは。 :-P<br>あ、本当ですね。気付きませんでした。<br>カーソル位置を取得するマクロを追加して、PPA.DLLを使っていろいろと考えていたのですが・・・無理みたいですね。<br><br>&gt;# 何の解決にもなってなくてすみません。m(_ _)m<br>いえいえ、レスありがとうございます。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

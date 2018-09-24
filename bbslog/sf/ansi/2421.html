@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>キャレット移動時の不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2421</span>
+    <a class="thread-title" href="2421.html#2421">キャレット移動時の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2423</span>
+    <a class="thread-title" href="2421.html#2423">RE: キャレット移動時の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2426</span>
+    <a class="thread-title" href="2421.html#2426">RE2: キャレット移動時の不具合</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2421>
+    <span class="no">[2421]</span>
+    <a class="thread-title" href="#2421">キャレット移動時の不具合</a>
+    <span class="author">ai</span>
+    <time datetime="2002-10-18T09:31:19">2002年10月18日 09:31</time></h1>
+    <div class="body"><br>[2420]の対括弧強調表示の不具合の現象を再現しようとしたら、別の不具合が見つかりました。<br><br>1.新規作成<br>2.TAB入力<br>3.←キー<br><br>とすると、キャレットの移動がおかしいです。TABのはずなのに1文字づつ移動します。<br>これは、1.3.5.2からのようです。1.3.5.1では正常でした。<br></div></section>
+    <ul><li><section><h1 id=2423>
+    <span class="no">[2423]</span>
+    <a class="thread-title" href="#2423">RE: キャレット移動時の不具合</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-10-18T10:59:56">2002年10月18日 10:59</time></h1>
+    <div class="body"><br>&gt;とすると、キャレットの移動がおかしいです。TABのはずなのに1文字づつ移動します。<br><br>すみません。のちほどパッチを出します。<br>・改行記号の直前にタブ<br>・EOFの直前にタブ<br>で再現します。<br></div></section>
+    <ul><li><section><h1 id=2426>
+    <span class="no">[2426]</span>
+    <a class="thread-title" href="#2426">RE2: キャレット移動時の不具合</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-10-18T17:52:40">2002年10月18日 17:52</time></h1>
+    <div class="body">&gt;タイトル: RE2: キャレット移動時の不具合<br>&gt;発言者: やざき<br>&gt;&gt;とすると、キャレットの移動がおかしいです。TABのはずなのに1文字づつ移動します。<br>&gt;<br>&gt;すみません。のちほどパッチを出します。<br>&gt;・改行記号の直前にタブ<br>&gt;・EOFの直前にタブ<br>&gt;で再現します。<br><br>ほかの修正と混ぜようと思ったのですが、とりあえずこれだけ。<br>よろしくお願いしますぅ。<br><br>diff -rc D:\サクラエディタ\ssrc_2002-10-16_org/sakura_core/CEditView_Command.cpp D:\サクラエディタ\ssrc_2002-10-16/sakura_core/CEditView_Command.cpp<br>*** D:\サクラエディタ\ssrc_2002-10-16_org/sakura_core/CEditView_Command.cpp&#9;Mon Oct 14 04:09:36 2002<br>--- D:\サクラエディタ\ssrc_2002-10-16/sakura_core/CEditView_Command.cpp&#9;Wed Oct 16 20:40:36 2002<br>***************<br>*** 802,808 ****<br>  &#9;&#9;&#9;&#9;it.addDelta();<br>  &#9;&#9;&#9;}<br>  &#9;&#9;&#9;nPosX += it.getColumn() - it.getColumnDelta();<br>! &#9;&#9;&#9;if( it.getIndex() + it.getColumnDelta() &gt; pcLayout-&gt;GetLengthWithEOL() ){<br>  &#9;&#9;&#9;&#9;nPosX = m_nCaretPosX - 1;<br>  &#9;&#9;&#9;}<br>  &#9;&#9;}<br>--- 802,808 ----<br>  &#9;&#9;&#9;&#9;it.addDelta();<br>  &#9;&#9;&#9;}<br>  &#9;&#9;&#9;nPosX += it.getColumn() - it.getColumnDelta();<br>! &#9;&#9;&#9;if( it.getIndex() &gt;= pcLayout-&gt;GetLengthWithEOL() ){<br>  &#9;&#9;&#9;&#9;nPosX = m_nCaretPosX - 1;<br>  &#9;&#9;&#9;}<br>  &#9;&#9;}<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

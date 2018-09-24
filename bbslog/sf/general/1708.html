@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>不具合？マクロ：「ソ」の検索の記録 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1708</span>
+    <a class="thread-title" href="1708.html#1708">不具合？マクロ：「ソ」の検索の記録</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1742</span>
+    <a class="thread-title" href="1708.html#1742">RE: 不具合？マクロ：「ソ」の検索の記録</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1743</span>
+    <a class="thread-title" href="1708.html#1743">Re2: 不具合？マクロ：「ソ」の検索の記録</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1744</span>
+    <a class="thread-title" href="1708.html#1744">Re3: 不具合？マクロ：「ソ」の検索の記録</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1749</span>
+    <a class="thread-title" href="1708.html#1749">Re4: 不具合？マクロ：「ソ」の検索の記録</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1780</span>
+    <a class="thread-title" href="1708.html#1780">Re5: 不具合？マクロ：「ソ」の検索の記録</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1708>
+    <span class="no">[1708]</span>
+    <a class="thread-title" href="#1708">不具合？マクロ：「ソ」の検索の記録</a>
+    <span class="author">jeak</span>
+    <time datetime="2002-04-20T19:06:56">2002年04月20日 19:06</time></h1>
+    <div class="body">　続けざまの投稿で申し訳ありません。<br>　「キーマクロの記録開始」を押した後、「ソ」の検索を<br>実行しマクロを保存すると<br><br>&gt; S_SearchNext('ソ\', 16);&#9;// 次を検索<br><br>のように記録されてしまいます。</div></section>
+    <ul><li><section><h1 id=1742>
+    <span class="no">[1742]</span>
+    <a class="thread-title" href="#1742">RE: 不具合？マクロ：「ソ」の検索の記録</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-22T19:39:04">2002年04月22日 19:39</time></h1>
+    <div class="body"><br>&gt;　「キーマクロの記録開始」を押した後、「ソ」の検索を<br>&gt;実行しマクロを保存すると<br>&gt;<br>&gt;&gt; S_SearchNext('ソ\', 16);&#9;// 次を検索<br>&gt;<br>&gt;のように記録されてしまいます。<br><br>これは、日本語の2バイト目が0x5cだからですね。<br>（CMemory:Replace()で文字列を日本語としてみていないです。）<br></div></section>
+    <ul><li><section><h1 id=1743>
+    <span class="no">[1743]</span>
+    <a class="thread-title" href="#1743">Re2: 不具合？マクロ：「ソ」の検索の記録</a>
+    <span class="author">jeak</span>
+    <time datetime="2002-04-22T21:06:55">2002年04月22日 21:06</time></h1>
+    <div class="body">&gt; これは、日本語の2バイト目が0x5cだからですね。<br>&gt; （CMemory:Replace()で文字列を日本語としてみ<br>&gt; ていないです。）<br><br>お返事ありがとうございます。これをヒントに調べてみたところ、<br>どうやらサクラエディタ固有の問題ではないようですね。お手数を<br>おかけして申し訳ありません。</div></section>
+    <ul><li><section><h1 id=1744>
+    <span class="no">[1744]</span>
+    <a class="thread-title" href="#1744">Re3: 不具合？マクロ：「ソ」の検索の記録</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-22T21:24:22">2002年04月22日 21:24</time></h1>
+    <div class="body">&gt;タイトル: Re3: 不具合？マクロ：「ソ」の検索の記録<br>&gt;発言者: jeak<br>&gt;&gt; これは、日本語の2バイト目が0x5cだからですね。<br>&gt;&gt; （CMemory:Replace()で文字列を日本語としてみ<br>&gt;&gt; ていないです。）<br>&gt;<br>&gt;お返事ありがとうございます。これをヒントに調べてみたところ、<br>&gt;どうやらサクラエディタ固有の問題ではないようですね。お手数を<br>&gt;おかけして申し訳ありません。<br><br>開発掲示板に書くほうがよいけども、<br>CMemory.cpp:Replace()で、<br>&#9;&#9;}else{<br>&#9;&#9;&#9;nBgn++;<br>&#9;&#9;}<br>のところがマルチバイト文字を無視しているので、<br><br>}else{<br>&#9;unsigned char c = (unsigned char)m_pData[nBgn];<br>&#9;if( (c &gt;= 0x81 &amp;&amp; c &lt;= 0x9f) || (c &gt;= 0xe0 &amp;&amp; c &lt;= 0xfc) ) nBgn++;<br>&#9;nBgn++;<br>}<br><br>とでも修正すればよさそう。<br></div></section>
+    <ul><li><section><h1 id=1749>
+    <span class="no">[1749]</span>
+    <a class="thread-title" href="#1749">Re4: 不具合？マクロ：「ソ」の検索の記録</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-23T18:54:11">2002年04月23日 18:54</time></h1>
+    <div class="body"><br>この修正でおおむねいいんだけども、<br>バイナリファイルを開いてしまって、たまたま日本語の<br>1バイト目の次が終端だったらバッファオーバーランし<br>てしまうことに気づいた。<br></div></section>
+    <ul><li><section><h1 id=1780>
+    <span class="no">[1780]</span>
+    <a class="thread-title" href="#1780">Re5: 不具合？マクロ：「ソ」の検索の記録</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-28T23:32:15">2002年04月28日 23:32</time></h1>
+    <div class="body"><br>&gt;この修正でおおむねいいんだけども、<br>&gt;バイナリファイルを開いてしまって、たまたま日本語の<br>&gt;1バイト目の次が終端だったらバッファオーバーランし<br>&gt;てしまうことに気づいた。<br><br>ということなので、Replaceを拡張せずに対応しました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

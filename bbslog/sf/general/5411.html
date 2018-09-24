@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>短形選択中の空白挿入挙動 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5411</span>
+    <a class="thread-title" href="5411.html#5411">短形選択中の空白挿入挙動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5414</span>
+    <a class="thread-title" href="5411.html#5414">RE: 短形選択中の空白挿入挙動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5415</span>
+    <a class="thread-title" href="5411.html#5415">Re2: 短形選択中の空白挿入挙動</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5416</span>
+    <a class="thread-title" href="5411.html#5416">Re2: 短形選択中の空白挿入挙動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5417</span>
+    <a class="thread-title" href="5411.html#5417">Re3: 短形選択中の空白挿入挙動</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5411>
+    <span class="no">[5411]</span>
+    <a class="thread-title" href="#5411">短形選択中の空白挿入挙動</a>
+    <span class="author">neko</span>
+    <time datetime="2006-09-01T12:18:01">2006年09月01日 12:18</time></h1>
+    <div class="body">一文字も選択してない状態の短形選択（わかりにくいですね）でスペースを押すと、次の二パターンの動作をします。<br>一度選択範囲が変わってしまうのはバグだと思うのですが、修正していただけませんか？<br>1.行末以外<br>　スペースが挿入されず、短形選択範囲されている行の短形選択範囲より後ろが選択されます。その後、もう一度押すと空白が挿入されます。<br>　以下サンプル。<br>　|が短形選択範囲をしている部分。スペースを一度押すと、各行のdefが選択され、二回目のスペースで空白が入ります。<br><br>  step 1<br>　abc|def<br>　abc|def<br>　abc|def<br><br>  step 2(defが選択される)<br>　abc|def<br>　abc|def<br>　abc|def<br><br>  step 3(スペースの挿入。アンダーバーで表現)<br>　abc_|def<br>　abc_|def<br>　abc_|def<br><br>2.行末<br>　短形選択範囲されている行の短形選択範囲より後ろが選択されるまでは同じですが、その後短形選択範囲の行がすべて選択されてしまい、もう一度スペースを押すと行頭に空白が入ってしまう。<br>　以下サンプル。<br>　|が短形選択範囲をしている部分。スペースを一度押すと、各行の行末より後ろが選択され、二回目のスペースで行全体が選択され、三回目のスペースで"行頭に"空白が入ります。<br><br>　step 1<br>　abcdef|<br>　abcdef|<br>　abcdef|<br><br>　step 2(行末から後ろが選択されている)<br>　abcdef|<br>　abcdef|<br>　abcdef|<br><br>　step 3(行全体が選択される)<br>　abcdef<br>　abcdef<br>　abcdef<br><br>　step 4(先頭に空白が挿入される。アンダーバーで表現)<br>　_abcdef<br>　_abcdef<br>　_abcdef<br><br>選択範囲の変化、および望んでいない部分への空白の挿入はバグだと思いますので、修正お願いします。</div></section>
+    <ul><li><section><h1 id=5414>
+    <span class="no">[5414]</span>
+    <a class="thread-title" href="#5414">RE: 短形選択中の空白挿入挙動</a>
+    <span class="author">すい</span>
+    <time datetime="2006-09-06T00:27:47">2006年09月06日 00:27</time></h1>
+    <div class="body">&gt;一文字も選択してない状態の短形選択（わかりにくいですね）でスペースを押すと、次の二パターンの動作をします。<br>&gt;一度選択範囲が変わってしまうのはバグだと思うのですが、修正していただけませんか？<br>&gt;1.行末以外<br>&gt;　スペースが挿入されず、短形選択範囲されている行の短形選択範囲より後ろが選択されます。その後、もう一度押すと空白が挿入されます。<br>&gt;　以下サンプル。<br>&gt;　|が短形選択範囲をしている部分。スペースを一度押すと、各行のdefが選択され、二回目のスペースで空白が入ります。<br><br>１回目のスペースで、スペースが入力されないのは仕様ですね。<br>矩形選択の入力で、インデント（半角スペースorタブ文字）入力時は<br>インデント揃えも出来るよう、特別な動作仕様になっています。<br><br>詳細は &gt;&gt;dev:4103 を一通り目を通してください。<br><br>その特別な動作仕様のため、矩形選択の選択幅が 0 の場合はインデント文字は<br>入力されません。<br><br>で、スペース入力時、矩形選択の幅が広がる動作の方ですが、こちらは恐らくですが、<br><br>「選択幅が 0 だとスペースは入力できなくなる仕様なのに、その幅 0 の状態で<br>　スペースがキー入力された→スペースを入力したいのだろうから<br>　選択幅を広げて次回からスペースが入力できるようにしてあげよう」<br><br>という親切機能なのかな？と推測しています。<br><br>&gt;2.行末<br>&gt;　短形選択範囲されている行の短形選択範囲より後ろが選択されるまでは同じですが、その後短形選択範囲の行がすべて選択されてしまい、もう一度スペースを押すと行頭に空白が入ってしまう。<br><br>こちらも仕様だったと記憶しています。<br>なぜかは分かりませんが、<br>行末に対してインデント文字を矩形入力する事は出来ない、<br>行末に対してインデント文字を矩形入力しようとすると、<br>行頭へのインデント入力になる、という仕様。<br><br>わざとそういう作りになっていたと思いました。<br>でも、なぜそういう動作に されたのか？は私にも不明です。<br><br>私も行末に矩形入力でインデント文字を入力したい事がよくあるのですが、<br>それが出来ずに苦労します。<br>こちらは、仕様通りの動作ではあるらしいのですが、私個人にとっては困る仕様なのですが。<br>どういう理由があってこういう動作になっているのでしょうかねぇ？<br></div></section>
+    <ul><li><section><h1 id=5415>
+    <span class="no">[5415]</span>
+    <a class="thread-title" href="#5415">Re2: 短形選択中の空白挿入挙動</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-09-06T01:24:50">2006年09月06日 01:24</time></h1>
+    <div class="body">私も経緯がよくわかりませんが，ソースコードに<br>// From Here 2001.12.03 hor<br>/* SPACEorTABインンデントで矩形選択桁がゼロの時は選択範囲を最大にする */<br>ってのがありますので，意図的でしょうね．<br><br>機能的にはこれを削除すれば済む話かと思いますが，どういう意図なんでしょうかね？<br></div></section>
+    </li><li><section><h1 id=5416>
+    <span class="no">[5416]</span>
+    <a class="thread-title" href="#5416">Re2: 短形選択中の空白挿入挙動</a>
+    <span class="author">neko</span>
+    <time datetime="2006-09-06T02:26:08">2006年09月06日 02:26</time></h1>
+    <div class="body">&gt; １回目のスペースで、スペースが入力されないのは仕様ですね。<br>&gt; 矩形選択の入力で、インデント（半角スペースorタブ文字）入力時は<br>&gt; インデント揃えも出来るよう、特別な動作仕様になっています。<br>&gt; <br>&gt; 詳細は &gt;&gt;dev:4103 を一通り目を通してください。<br><br>なるほど、ちゃんと意図があったのですね。<br>少々面倒ですが、二回押せばいいので、この部分は仕様ということで我慢します。<br>（できれば設定で変更できるといいのですが。でもどんな名前にするか悩みますね）<br><br><br>▼ すいさん<br>&gt; 私も行末に矩形入力でインデント文字を入力したい事がよくあるのですが、<br>&gt; それが出来ずに苦労します。<br>&gt; こちらは、仕様通りの動作ではあるらしいのですが、私個人にとっては困る仕様なのですが。<br>&gt; どういう理由があってこういう動作になっているのでしょうかねぇ？<br>▼ げんたさん<br>&gt; 私も経緯がよくわかりませんが，ソースコードに<br>&gt; // From Here 2001.12.03 hor<br>&gt; /* SPACEorTABインンデントで矩形選択桁がゼロの時は選択範囲を最大にする */<br>&gt; ってのがありますので，意図的でしょうね．<br>&gt; <br>&gt; 機能的にはこれを削除すれば済む話かと思いますが，どういう意図なんでしょうかね？<br><br>特に理由がないのなら、削除したほうが理想的な動作をする気がしますね。<br>ひとまずソースを落としてきて、その行をコメントアウトして使って見ます。</div></section>
+    <ul><li><section><h1 id=5417>
+    <span class="no">[5417]</span>
+    <a class="thread-title" href="#5417">Re3: 短形選択中の空白挿入挙動</a>
+    <span class="author">neko</span>
+    <time datetime="2006-09-06T02:48:55">2006年09月06日 02:48</time></h1>
+    <div class="body">&gt; 特に理由がないのなら、削除したほうが理想的な動作をする気がしますね。<br>&gt; ひとまずソースを落としてきて、その行をコメントアウトして使って見ます。<br>コメントアウトして使ってみました。<br>結果、選択文字がない短形選択でスペースを押しても空白が入らないという自体に、、、<br>ちゃんとソースを追っかけて直したほうがよさそうです。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>右→左へ表記する各言語の扱いについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">713</span>
+    <a class="thread-title" href="713.html#713">右→左へ表記する各言語の扱いについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">714</span>
+    <a class="thread-title" href="713.html#714">Re:右→左へ表記する各言語の扱いについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">715</span>
+    <a class="thread-title" href="713.html#715">Re2:右→左へ表記する各言語の扱いについて</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">716</span>
+    <a class="thread-title" href="713.html#716">Re:右→左へ表記する各言語の扱いについて</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=713>
+    <span class="no">[713]</span>
+    <a class="thread-title" href="#713">右→左へ表記する各言語の扱いについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-11-26T01:13:23">2008年11月26日 01:13</time></h1>
+    <div class="body">最近かじったヘブライ文字を入力してみると，以下のようになります．<br>* ヘブライ語入力中はキャレットの左側に新規文字が入るが，カーソル位置は(相対的には)動かない<br>* BackSpaceを押すとキャレットの無い側から消えるので潜在的にはヘブライ語文字列の左端に位置している<br>* 矢印の左を押すとキャレットが一文字左に移動するが，そこで文字を入力すると左から2文字目に挿入される．<br><br>ヘブライ文字部分においてははキャレット，BackSpace, Delete等の左右の動作が逆になるために，表示上の位置とキャレット座標がずれています．<br><br>もう少し具体的に説明します．以下の部分で0-9がヘブライ文字(右→左表記)，a-zがアルファベット(左→右表記)とします．<br>abcd56789 と入力すると，<br>98765|abcd (|がカーソル) と表示されますが本当のキャレット位置は9の左側なので，ここで0を入力すると<br>098765|abcd になります．<br>ここで左矢印を押すと<br>09876|5abcd と表示されますが，ここで 3 を押すと<br>039876|5abcd と，左から2番目に入ります．<br>ちなみに 3 の代わりに z と入れると，0と9の間に z が入りますが zはヘブライ文字でないのでそこで右→左表記が途切れて<br>98765z|0abcd となります．<br><br>以上，参考まで．<br></div></section>
+    <ul><li><section><h1 id=714>
+    <span class="no">[714]</span>
+    <a class="thread-title" href="#714">Re:右→左へ表記する各言語の扱いについて</a>
+    <span class="author">syat</span>
+    <time datetime="2008-12-03T22:55:12">2008年12月03日 22:55</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 最近かじったヘブライ文字を入力してみると，以下のようになります．<br>&gt; * ヘブライ語入力中はキャレットの左側に新規文字が入るが，カーソル位置は(相対的には)動かない<br>&gt; * BackSpaceを押すとキャレットの無い側から消えるので潜在的にはヘブライ語文字列の左端に位置している<br>&gt; * 矢印の左を押すとキャレットが一文字左に移動するが，そこで文字を入力すると左から2文字目に挿入される．<br>&gt; <br>ちなみにヘブライ文字を入力するのは何を使っていますか?<br>手元にあるIMEパッドの文字一覧で試したところ、挙動が少し違いました。<br>*文字を押すと未確定文字の左端に追加される 例）abc0 → abc10 → abc210 （abcの後ろにヘブライ文字0,1,2を入力）<br>*確定すると入力順に文字が挿入される 上の例） → abc012<br><br>アラビア語とかは、右→左に入力するモードを作らないと実用には耐えない気がしますね。<br>その言語を読める有志（と需要）が集まったらの話ですけど<br></div></section>
+    <ul><li><section><h1 id=715>
+    <span class="no">[715]</span>
+    <a class="thread-title" href="#715">Re2:右→左へ表記する各言語の扱いについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-12-04T07:11:08">2008年12月04日 07:11</time></h1>
+    <div class="body">&gt;手元にあるIMEパッドの文字一覧で試したところ、挙動が少し違いました。<br>&gt;*文字を押すと未確定文字の左端に追加される 例）abc0 → abc10 → abc210 （abcの後ろにヘブライ文字0,1,2を入力）<br>すいません，私の書いた方が誤っています．<br><br>前の例 98765|abcd になるのはabcd56789ではなく56789abcdです．<br>ですので，syatさんの試された方法と同じ結果となります．<br></div></section>
+    </li></ul></li><li><section><h1 id=716>
+    <span class="no">[716]</span>
+    <a class="thread-title" href="#716">Re:右→左へ表記する各言語の扱いについて</a>
+    <span class="author">AC</span>
+    <time datetime="2008-12-07T00:11:07">2008年12月07日 00:11</time></h1>
+    <div class="body">RTLですか。<br><br>テキストエディタ alpha の作者さんの日記<br>http://alpha.sourceforge.jp/diary/0504.html<br>あたりを見ると、いろいろ大変そうですよ。<br><br>実装なさるなら、相当な準備と覚悟と労力が要るんじゃないでしょうか。</div></section>
+    </li></ul></li></ul></body></html>

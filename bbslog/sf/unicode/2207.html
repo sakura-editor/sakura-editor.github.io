@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>「Grepファイル名で正規表現フィルター」の接頭文字について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2207</span>
+    <a class="thread-title" href="2207.html#2207">「Grepファイル名で正規表現フィルター」の接頭文字について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2208</span>
+    <a class="thread-title" href="2207.html#2208">Re: 「Grepファイル名で正規表現フィルター」の接頭文字について</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2207>
+    <span class="no">[2207]</span>
+    <a class="thread-title" href="#2207">「Grepファイル名で正規表現フィルター」の接頭文字について</a>
+    <span class="author">神楽</span>
+    <time datetime="2014-10-08T07:43:27">2014年10月08日 07:43</time></h1>
+    <div class="body">「Grepファイル名で正規表現フィルター」の接頭文字について、<br>大なり小なり記号ではなくマッチ正規表現フィルターは/開始、<br>アンマッチ正規表現フィルターは!/開始といった具合の仕様にして頂けないでしょうか。<br>大なり小なり記号ですと、どちらが否定でどちらが肯定かをイメージできず、直感的には使いづらいと思います。</div></section>
+    <ul><li><section><h1 id=2208>
+    <span class="no">[2208]</span>
+    <a class="thread-title" href="#2208">Re: 「Grepファイル名で正規表現フィルター」の接頭文字について</a>
+    <span class="author">もか</span>
+    <time datetime="2014-10-09T00:44:07">2014年10月09日 00:44</time></h1>
+    <div class="body">どっちが否定なのか分かりにくいというのには同意しますが、<br>/はパス区切りに使うという伝統があるので、初版ではやめておきました。<br>いまのところ、ちゃんと動かないけど<br>*.* #/Users/username/Path/*.mac<br>は<br>*.* #C:\Users\username\Path\*.mac<br>と同じような動作をするべきな気がします。<br>(否定のフルパスを書くのはちょっと動作が遅いけどサポートされています)<br>/folder/*.ext<br>は、いまのところ実行結果は<br>folder/*.ext<br>と同じような物になってます(C:\basepath\/folder/fileaname.extになってる)<br>ファイル名の所にフルパスは指定できないことにしてあるので、<br>/で始まったものをルートフォルダと解釈せずに正規表現とみなすようにしても、構文的に困ることはないかもしれませんね。<br><br>こうかな<br>!NotFile<br>#NotFolder<br>/RegexFile<br>!/RegexNotFile<br>#/RegexFolder<br>#!/RegexNotFolder<br>こうやって並べてみると、フォルダ除外は#に変更しないで!#か元の!\にしておけばよかった<br>他の人の意見も聞いてみたいです。<br></div></section>
+    </li></ul></li></ul></body></html>

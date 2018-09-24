@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ファイル名の印刷について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2517</span>
+    <a class="thread-title" href="2517.html#2517">ファイル名の印刷について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2521</span>
+    <a class="thread-title" href="2517.html#2521">Re: ファイル名の印刷について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2524</span>
+    <a class="thread-title" href="2517.html#2524">Re2: ファイル名の印刷について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2525</span>
+    <a class="thread-title" href="2517.html#2525">Re3: ファイル名の印刷について</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2527</span>
+    <a class="thread-title" href="2517.html#2527">Re2: 正解はこちら</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2531</span>
+    <a class="thread-title" href="2517.html#2531">感謝</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2532</span>
+    <a class="thread-title" href="2517.html#2532">感謝</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2517>
+    <span class="no">[2517]</span>
+    <a class="thread-title" href="#2517">ファイル名の印刷について</a>
+    <span class="author">かとひで</span>
+    <time datetime="2002-12-11T19:28:28">2002年12月11日 19:28</time></h1>
+    <div class="body">はじめまして。<br>印刷したら下記の現象が起こったので<br>書かせていただきます。<br><br>【手順】<br>ファイル名をヘッダに出力するように設定し、<br>「予約状況.txt」ファイルを印刷。<br><br>【結果】<br>ファイル名が「約状況.txt」となっており、<br>「予」が抜けてしまう。<br><br>使用しているVerは1.3.2.4vです。<br>アドバイスください。<br>宜しくお願いします。</div></section>
+    <ul><li><section><h1 id=2521>
+    <span class="no">[2521]</span>
+    <a class="thread-title" href="#2521">Re: ファイル名の印刷について</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-12-11T22:45:18">2002年12月11日 22:45</time></h1>
+    <div class="body">&gt;ファイル名が「約状況.txt」となっており、<br>&gt;「予」が抜けてしまう。<br>プレビューの段階で既に欠けているのでしょうか．<br>また，ファイル名の位置は左，中，右のどこですか？<br><br>1.3.6.0で試したところ，プレビューでは正しく表示されていました．<br>印刷関係は1.3.2.4からは特に変わっていません．<br></div></section>
+    <ul><li><section><h1 id=2524>
+    <span class="no">[2524]</span>
+    <a class="thread-title" href="#2524">Re2: ファイル名の印刷について</a>
+    <span class="author">かとひで</span>
+    <time datetime="2002-12-12T19:07:53">2002年12月12日 19:07</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; プレビューの段階で既に欠けているのでしょうか．<br>&gt; また，ファイル名の位置は左，中，右のどこですか？<br><br>はい。プレビューの段階で欠けています。<br>あと、ファイル名の位置をどこにしても<br>欠けてしまっています。(フッタもです)<br><br>試しに下記のことをやってみました。<br><br>【手順】<br>前回同様ファイル名をヘッダに出力するように設定し、<br>「１２３予約状況.txt」ファイルをプレビュー。<br><br>【結果】<br>「約状況.txt」となりました。<br>「予」が欠けるのではなく、<br>「予」以前全てが無くなってしまうようです。<br><br>アドバイスを頂くために必要な情報を記載したいのですが、<br>どのようなことを書けばよいかわかりません。<br>こちらについてもアドバイスください。<br>宜しくお願いします。</div></section>
+    <ul><li><section><h1 id=2525>
+    <span class="no">[2525]</span>
+    <a class="thread-title" href="#2525">Re3: ファイル名の印刷について</a>
+    <span class="author">かろと</span>
+    <time datetime="2002-12-12T21:37:40">2002年12月12日 21:37</time></h1>
+    <div class="body">▼ かとひでさん<br>&gt; 【結果】<br>&gt; 「約状況.txt」となりました。<br>&gt; 「予」が欠けるのではなく、<br>&gt; 「予」以前全てが無くなってしまうようです。<br><br>予の　２バイト目が '\'(0x5c)なので、パスの区切りを探す処理の<br>問題ですが、最近このあたり修正されていたような・・<br><br>最新版でも　同じですか？<br></div></section>
+    </li></ul></li><li><section><h1 id=2527>
+    <span class="no">[2527]</span>
+    <a class="thread-title" href="#2527">Re2: 正解はこちら</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-12T21:43:04">2002年12月12日 21:43</time></h1>
+    <div class="body">&gt;印刷関係は1.3.2.4からは特に変わっていません．<br>うっそ～～(笑)<br><br>1.3.2.4 = sakura_2002-07-26.zip で試してみたら再現しましたよ。(*^^*)<br><br>先祖帰りしたら（×：不具合再現/○：正常動作）<br><br>× 1.3.5.4 = sakura_2002-10-23.zip<br>○ 1.3.5.5 = sakura_2002-10-30.zip<br>○ 1.3.5.6 = sakura_2002-11-07.zip<br>○ 1.3.5.7 = sakura_2002-11-27.zip<br><br>1.3.5.5 辺りで何か。<br><br>という事で、最新版にしてね（はぁと） ＞ かとひで さん<br></div></section>
+    </li></ul></li><li><section><h1 id=2531>
+    <span class="no">[2531]</span>
+    <a class="thread-title" href="#2531">感謝</a>
+    <span class="author">かとひで</span>
+    <time datetime="2002-12-14T08:43:48">2002年12月14日 08:43</time></h1>
+    <div class="body">げんたさん、かろとさん、もかさん<br><br>最新版をインストールしました。<br>ＯＫでした。(^o^)<br><br>アドバイス有難うございました。</div></section>
+    </li><li><section><h1 id=2532>
+    <span class="no">[2532]</span>
+    <a class="thread-title" href="#2532">感謝</a>
+    <span class="author">かとひで</span>
+    <time datetime="2002-12-16T10:44:29">2002年12月16日 10:44</time></h1>
+    <div class="body">げんたさん、かろとさん、すいさん<br><br>最新版をインストールしました。<br>ＯＫでした。(^o^)<br><br>アドバイス有難うございました。</div></section>
+    </li></ul></li></ul></body></html>

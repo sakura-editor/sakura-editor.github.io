@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CEditDoc::ExpandParameterで条件分岐 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2647</span>
+    <a class="thread-title" href="2647.html#2647">CEditDoc::ExpandParameterで条件分岐</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=2647>
+    <span class="no">[2647]</span>
+    <a class="thread-title" href="#2647">CEditDoc::ExpandParameterで条件分岐</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-04-01T01:58:33">2003年04月01日 01:58</time></h1>
+    <div class="body">CEditDoc::ExpandParameterに以下のような条件分岐構文を導入してみました。<br><br>${条件?文1$:文2$:文3$}<br><br>条件は短い文字列で、プログラムで定義します。条件の評価によって後ろにある文のうちのいずれかが評価されます。たとえば ${U?更新$} とすると、ファイルが更新されている場合のみ更新という文字列に置き換えるといった具合です。<br><br>ウィンドウキャプションのカスタマイズにExpandParameterを使いたいと思ったのですが、更新や読みとり専用の状態に応じて文字列を変更する必要があります。単純に条件と文字列のマッピングを固定して$xとして定義するよりも文字列を指定できた方が柔軟性が高いと思い、このようなものを考えてみました。<br><br>分岐自体は既に作成済みですが、現在のキャプションと同程度のことができるようにするためにバージョン情報、省略ファイル名の取得、Grep文字列の取得あたりを新規に追加する必要がありますので、まだもう少しかかりそうです。<br><br>ところで、${と$[と迷ったのですが$[の方がいいですかねぇ。<br></div></section>
+    </li></ul></body></html>

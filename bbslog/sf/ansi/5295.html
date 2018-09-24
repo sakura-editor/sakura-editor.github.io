@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>XP+タブ表示で水平スクロールバーが機能しなくなる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5295</span>
+    <a class="thread-title" href="5295.html#5295">XP+タブ表示で水平スクロールバーが機能しなくなる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5297</span>
+    <a class="thread-title" href="5295.html#5297">Re:XP+タブ表示で水平スクロールバーが機能しなくなる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5298</span>
+    <a class="thread-title" href="5295.html#5298">Re2:XP+タブ表示で水平スクロールバーが機能しなくなる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5300</span>
+    <a class="thread-title" href="5295.html#5300">Re3:XP+タブ表示で水平スクロールバーが機能しなくなる</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5295>
+    <span class="no">[5295]</span>
+    <a class="thread-title" href="#5295">XP+タブ表示で水平スクロールバーが機能しなくなる</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-05-22T04:13:21">2008年05月22日 04:13</time></h1>
+    <div class="body">スクロールバー周辺の処理をいじっていて気がついたのですが、WinXPにて下記操作をすると水平スクロールバーが機能しなくなります。<br>・折り返し幅の違う2つのタイプ（A:1000文字、B:100文字とする）の文書をタブ表示する<br>・Bを表示してウィンドウの横幅を100文字未満とする<br>・A表示に切り替えて横幅を100文字超とする<br>・B表示に切り替える<br>・（なぜか有効なままとなっている）スクロールバーをクリックする<br>上記でスクロールバーが無効化するが、その後ウィンドウサイズを変更してもスクロールバーが無効なままとなる。<br>Win2kでは発生しませんでした。<br>また、unicode版ではXP,2kどちらでも発生しませんでした。<br>XPについては一応2台のPCで確認しましたが、ddbug環境が無いこともあって原因は調査できてません。<br></div></section>
+    <ul><li><section><h1 id=5297>
+    <span class="no">[5297]</span>
+    <a class="thread-title" href="#5297">Re:XP+タブ表示で水平スクロールバーが機能しなくなる</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-05-24T14:00:06">2008年05月24日 14:00</time></h1>
+    <div class="body">修正パッチを作成しました。<br>→Patches#1971010<br><br>&gt; （なぜか有効なままとなっている）<br><br>まずこれ自体が変ですね。この部分も修正しました（この部分の修正が無くても「機能しなくなる」までには発展しないように別の箇所の修正もしてあります）。<br>95/98/NT/2000/XP/Vistaで確認しましたが、この変な状態には全ＯＳでなってしまうようです。<br><br>&gt; Win2kでは発生しませんでした。<br><br>「機能しなくなる」まで発展するのはXPとVistaだけでした。<br><br>&gt; また、unicode版ではXP,2kどちらでも発生しませんでした。<br><br>UNICODE版でもANSI版とまったく同じ現象が起きます～(^^;</div></section>
+    <ul><li><section><h1 id=5298>
+    <span class="no">[5298]</span>
+    <a class="thread-title" href="#5298">Re2:XP+タブ表示で水平スクロールバーが機能しなくなる</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-05-25T00:48:38">2008年05月25日 00:48</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 修正パッチを作成しました。<br>&gt; →Patches#1971010<br>&gt; <br>&gt; &gt; （なぜか有効なままとなっている）<br>&gt; <br>&gt; まずこれ自体が変ですね。この部分も修正しました（この部分の修正が無くても「機能しなくなる」までには発展しないように別の箇所の修正もしてあります）。<br>&gt; 95/98/NT/2000/XP/Vistaで確認しましたが、この変な状態には全ＯＳでなってしまうようです。<br><br>パッチありがとうございます。<br>ソースコードおよび動作を確認しました。<br><br>すみません、変な動作の方は実害なさそうなので気にしませんでした (^^;<br></div></section>
+    <ul><li><section><h1 id=5300>
+    <span class="no">[5300]</span>
+    <a class="thread-title" href="#5300">Re3:XP+タブ表示で水平スクロールバーが機能しなくなる</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-05-25T15:11:28">2008年05月25日 15:11</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; ソースコードおよび動作を確認しました。<br><br>確認ありがとうございます。commitしておきました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

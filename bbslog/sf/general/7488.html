@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>[UNI版] [Win7] ウィンドウが初期化されてしまう | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7488</span>
+    <a class="thread-title" href="7488.html#7488">[UNI版] [Win7] ウィンドウが初期化されてしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7489</span>
+    <a class="thread-title" href="7488.html#7489">Re:[UNI版] [Win7] ウィンドウが初期化されてしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7490</span>
+    <a class="thread-title" href="7488.html#7490">Re2:[UNI版] [Win7] ウィンドウが初期化されてしまう</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">7491</span>
+    <a class="thread-title" href="7488.html#7491">Re:[UNI版] [Win7] ウィンドウが初期化されてしまう</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7492</span>
+    <a class="thread-title" href="7488.html#7492">Re2:[UNI版] [Win7] ウィンドウが初期化されてしまう</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7493</span>
+    <a class="thread-title" href="7488.html#7493">Re2:[UNI版] [Win7] 追記</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7528</span>
+    <a class="thread-title" href="7488.html#7528">Re3:[UNI版] [Win7] 追記</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7488>
+    <span class="no">[7488]</span>
+    <a class="thread-title" href="#7488">[UNI版] [Win7] ウィンドウが初期化されてしまう</a>
+    <span class="author">popcorn</span>
+    <time datetime="2012-03-26T13:29:22">2012年03月26日 13:29</time></h1>
+    <div class="body">宜しくお願いします。私の使用環境は下記参照下さい。<br>Windows起動直後およびサクラエディタ再起動時、必ずメニュー、ツール、タブが初期化されてしまいます。対処方法をご教授願えませんでしょうか。<br><br>希望は共通設定とタブ機能の設定が、再起動後も引き継がれて有効になっている状態で利用できることです。<br>sakura.exe.manifestは組み込んでいます。<br>サクラエディタ本体はANSI版をインストール後にUNICODE版のexeファイルで上書きさせて利用しています。<br>宜しくお願いします。<br>---<br>[環境]Windows7 pro(x64)</div></section>
+    <ul><li><section><h1 id=7489>
+    <span class="no">[7489]</span>
+    <a class="thread-title" href="#7489">Re:[UNI版] [Win7] ウィンドウが初期化されてしまう</a>
+    <span class="author">AC</span>
+    <time datetime="2012-03-27T00:26:38">2012年03月27日 00:26</time></h1>
+    <div class="body">エディタが書き込む設定と読み込む設定が別々のファイルになってるんでしょうか。<br>エディタのディレクトリ、AppData\Roamingの下の方、AppData\Local\VirtualStore<br>の下の方に余計な sakura.iniがありませんか。<br><br>または何らかの理由で sakura.exe.manifestで指定した保存先に<br>sakura.iniを書き込むことができていないなど。エクスプローラで<br>その場所に新規テキストファイルを作ることはできますか。<br><br><br></div></section>
+    <ul><li><section><h1 id=7490>
+    <span class="no">[7490]</span>
+    <a class="thread-title" href="#7490">Re2:[UNI版] [Win7] ウィンドウが初期化されてしまう</a>
+    <span class="author">popcorn</span>
+    <time datetime="2012-04-01T22:02:57">2012年04月01日 22:02</time></h1>
+    <div class="body">&gt;ACさん<br>助言いただき、有難うございます。<br>途中経過になりますが、まだ解決に至っていません。<br>助言頂いたsakura.exe.manifestの件ですが、マニフェストで保存先は指定していません。<br>私の認識理解不足あるかもしれません。<br>何か進捗あれば書かせて頂きます。有難うございます。<br></div></section>
+    </li></ul></li><li><section><h1 id=7491>
+    <span class="no">[7491]</span>
+    <a class="thread-title" href="#7491">Re:[UNI版] [Win7] ウィンドウが初期化されてしまう</a>
+    <span class="author">petit</span>
+    <time datetime="2012-04-01T23:23:26">2012年04月01日 23:23</time></h1>
+    <div class="body">&gt; Windows起動直後およびサクラエディタ再起動時、必ずメニュー、ツール、タブが初期化されてしまいます。対処方法をご教授願えませんでしょうか。<br><br>これは、<br>・インストール先がProgram Files下（C:\Program FilesやC:\Program Files (x86)）<br>・シングルユーザ指定<br>でインストールした後、インストーラが設置した適切なマニフェストファイルを誤って別のマニフェストファイルで上書きしまった場合に起きる現象ではないかと。<br><br>ヘルプの「Virtual Store」や「ユーザー別設定」の項をよく読めば手動で手直しすることも可能と思いますが、一度アンインストールし、フォルダごと完全に削除してから、Unicode版のインストーラで再インストールするのが手っ取り早いかと。<br><br>その際、下記(1), (2)のどっちかにしたほうがいいと思います。<br>(1) Program Files下にインストールしたいならマルチユーザ指定（設定をユーザーごとに個別に管理する）にしておく<br>(2) シングルユーザ指定にしたいならProgram Files下以外の場所にインストールする<br>　（C:\App など、自分で作成した別フォルダにインストールする）<br><br>デフォルトのままインストールを進めると自動的に(1)になると思います。</div></section>
+    <ul><li><section><h1 id=7492>
+    <span class="no">[7492]</span>
+    <a class="thread-title" href="#7492">Re2:[UNI版] [Win7] ウィンドウが初期化されてしまう</a>
+    <span class="author">popcorn</span>
+    <time datetime="2012-04-06T11:26:01">2012年04月06日 11:26</time></h1>
+    <div class="body">&gt;petitさん<br>ご助言頂き有難うございます^^<br>再インストールだけで、解決しました。<br><br>ですが、共通設定がアンインストール前に設定したものが<br>そのまま適用されているという妙な結果です。フォルダごと<br>削除したにも拘らず。<br>デフォルトではタブバー表示は無効、タスクトレイ（左クリックメニュー...）は有効だったはずですが。<br>使用上は問題ないため使って行きたいと思いますが、原因不明<br>なのがちょっと気になります。<br><br>とりあえず本件「CLOSE」させて頂きます。ご助言頂いた方々には感謝です。有難うございました。<br></div></section>
+    </li><li><section><h1 id=7493>
+    <span class="no">[7493]</span>
+    <a class="thread-title" href="#7493">Re2:[UNI版] [Win7] 追記</a>
+    <span class="author">popcorn</span>
+    <time datetime="2012-04-06T12:27:39">2012年04月06日 12:27</time></h1>
+    <div class="body">C:\Users\（ユーザー名）\AppData\Roaming\sakura配下のファイルも削除せずに再インストールすると、共通設定の書式/見出し記号などが文字化け＋ビジー状態が頻発しました。<br>ローミング配下のサクラフォルダを削除するか、同フォルダ内のiniファイルを削除したうえで再インストールすると解決することを確認しました。<br>その他で気になった点あれば、このスレに追記します。<br></div></section>
+    <ul><li><section><h1 id=7528>
+    <span class="no">[7528]</span>
+    <a class="thread-title" href="#7528">Re3:[UNI版] [Win7] 追記</a>
+    <span class="author">y_yamakz</span>
+    <time datetime="2012-09-10T08:21:38">2012年09月10日 08:21</time></h1>
+    <div class="body">この再インストールの問題ですが、自分の環境でも頻発しました。<br>ファイルオープン時の自動マクロ実行機能が欲しくて、数年ぶり<br>にサクラエディタのバージョンを新しくしましたが、<br>「ビジー状態で動きません」みたいなメッセージが出たり<br>出なかったりで、何がエラーの原因か全然分からなかった<br>です。<br><br>sakuraから他のエディタに乗り換えようと思いましたが、<br>解決法があるようなので、試してみたいと思います。<br><br>▼ popcornさん<br>&gt; C:\Users\（ユーザー名）\AppData\Roaming\sakura配下のファイルも削除せずに再インストールすると、共通設定の書式/見出し記号などが文字化け＋ビジー状態が頻発しました。<br>&gt; ローミング配下のサクラフォルダを削除するか、同フォルダ内のiniファイルを削除したうえで再インストールすると解決することを確認しました。<br>&gt; その他で気になった点あれば、このスレに追記します。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

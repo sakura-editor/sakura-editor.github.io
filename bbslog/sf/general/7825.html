@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>カーソル移動のバグ？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7825</span>
+    <a class="thread-title" href="7825.html#7825">カーソル移動のバグ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7826</span>
+    <a class="thread-title" href="7825.html#7826">Re:カーソル移動のバグ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7827</span>
+    <a class="thread-title" href="7825.html#7827">Re2:カーソル移動のバグ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7828</span>
+    <a class="thread-title" href="7825.html#7828">Re3:カーソル移動のバグ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7829</span>
+    <a class="thread-title" href="7825.html#7829">Re4:カーソル移動のバグ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7830</span>
+    <a class="thread-title" href="7825.html#7830">Re5:カーソル移動のバグ？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7825>
+    <span class="no">[7825]</span>
+    <a class="thread-title" href="#7825">カーソル移動のバグ？</a>
+    <span class="author">sawada</span>
+    <time datetime="2014-05-08T09:23:51">2014年05月08日 09:23</time></h1>
+    <div class="body">サクラエディタ起動後、<br>"1" "Enter" "2" "Enter" "333" "Enter"<br>と入力後 "←" を押したままにしてオートリピートすると<br>カーソルが 1 の後ろ(右側)で止まる。<br>(1 の前に行かない)<br>一度 "←" を放してもう一度 "←" を押すと<br>1 の前(左側)に移動する。<br><br>Ver2.1.1.2 unicode<br>Win7 pro 32bit</div></section>
+    <ul><li><section><h1 id=7826>
+    <span class="no">[7826]</span>
+    <a class="thread-title" href="#7826">Re:カーソル移動のバグ？</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-05-08T13:03:37">2014年05月08日 13:03</time></h1>
+    <div class="body">↓また当て推量ですが…<br><br>--- sakura_core/cmd/CViewCommander_Cursor.cpp&#9;(リビジョン 3706)<br>+++ sakura_core/cmd/CViewCommander_Cursor.cpp&#9;(作業コピー)<br>@@ -205,6 +205,10 @@<br> &#9;&#9;&#9;&#9;ptPos.x += it.getColumn() - it.getColumnDelta();<br> &#9;&#9;&#9;&#9;ptPos.y --;<br> &#9;&#9;&#9;} else {<br>+&#9;&#9;&#9;&#9;if( 0 &lt; nRepCount ){<br>+&#9;&#9;&#9;&#9;&#9;GetCaret().MoveCursor( ptCaretMove, true, _CARETMARGINRATE, bUnderlineDoNotOFF );<br>+&#9;&#9;&#9;&#9;&#9;GetCaret().m_nCaretPosX_Prev = GetCaret().GetCaretLayoutPos().GetX2();<br>+&#9;&#9;&#9;&#9;}<br> &#9;&#9;&#9;&#9;nRes = 0;<br> &#9;&#9;&#9;&#9;break; // これ以上左に動けぬ。<br> &#9;&#9;&#9;}<br></div></section>
+    <ul><li><section><h1 id=7827>
+    <span class="no">[7827]</span>
+    <a class="thread-title" href="#7827">Re2:カーソル移動のバグ？</a>
+    <span class="author">もか</span>
+    <time datetime="2014-05-08T18:22:00">2014年05月08日 18:22</time></h1>
+    <div class="body">LR4さんのコードでパッチを登録しました<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/813/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>813/<wbr></nobr></a><br>・左移動で左隅に移動することを確認<br>・左選択も正常に反映されることを確認<br></div></section>
+    <ul><li><section><h1 id=7828>
+    <span class="no">[7828]</span>
+    <a class="thread-title" href="#7828">Re3:カーソル移動のバグ？</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-05-08T19:35:02">2014年05月08日 19:35</time></h1>
+    <div class="body">▼ もかさん<br>&gt; LR4さんのコードでパッチを登録しました<br><br>ご確認ありがとうございます。<br>提示したコードとパッチではMoveCursorの第１引数に違いがあるようです。<br>ptPosではなくptCaretMoveを使うほうが良いのでは？と思いました。<br>※ptPosとした場合の実害についてはよくわかりませんが。(^^;;;</div></section>
+    <ul><li><section><h1 id=7829>
+    <span class="no">[7829]</span>
+    <a class="thread-title" href="#7829">Re4:カーソル移動のバグ？</a>
+    <span class="author">もか</span>
+    <time datetime="2014-05-08T23:11:17">2014年05月08日 23:11</time></h1>
+    <div class="body">すみません、下のほうからコピペしてきたら違っていたようです。<br>もっとも、ptPosもptCaretMoveも0,0を指しているはずなので、このif内では中身は同じです。<br>パッチを更新しました。<br></div></section>
+    <ul><li><section><h1 id=7830>
+    <span class="no">[7830]</span>
+    <a class="thread-title" href="#7830">Re5:カーソル移動のバグ？</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-05-08T23:41:41">2014年05月08日 23:41</time></h1>
+    <div class="body">蛇足ですが、<br><br>&gt; もっとも、ptPosもptCaretMoveも0,0を指しているはずなので、このif内では中身は同じです。<br><br>矩形選択を拡張している最中だとy!=0でもif内に入るかな？なんて思いました。さらに、折り返しインデントの設定が「論理行先頭」になっていて、カーソル位置が折り返し行頭に到達した場合はx!=0でも入りそうな気がするです。<br>なので、やはりptCaretMoveのほうが適切かと…</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

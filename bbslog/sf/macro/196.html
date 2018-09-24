@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マクロの部分実行 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">196</span>
+    <a class="thread-title" href="196.html#196">マクロの部分実行</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">204</span>
+    <a class="thread-title" href="196.html#204">Re: マクロの部分実行</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=196>
+    <span class="no">[196]</span>
+    <a class="thread-title" href="#196">マクロの部分実行</a>
+    <span class="author">maru</span>
+    <time datetime="2005-08-08T18:28:14">2005年08月08日 18:28</time></h1>
+    <div class="body">マクロを部分実行するためのものです。<br>実行したい部分をクリップボードにコピーして<br>本マクロを実行します。<br><br>選択範囲を部分実行、にすると自分自身を<br>破壊することになるため、クリップボード経由です。<br><br>//-------------------------------------------------------------<br>//ClipMacro.js<br>//JSマクロの部分実行用<br>//スクリプトのテストしたい部分をクリップボードに保存し<br>//テスト環境で本マクロを実行します<br>var oIE = new ActiveXObject("InternetExplorer.Application");<br>oIE.Navigate("about:blank");<br>var sRet = oIE.Document.parentWindow.clipboardData.getData("Text");<br>eval(sRet);<br>//EOF<br><br><br>'-----------------------------------------------------<br>'ClipMacro.vbs<br>'VBSマクロの部分実行用<br>'スクリプトのテストしたい部分をクリップボードに保存し<br>'テスト環境で本マクロを実行します<br>Set oIE = CreateObject("InternetExplorer.Application")<br>oIE.Navigate("about:blank")<br>sRet = oIE.Document.parentWindow.clipboardData.getData("Text")<br>Set oIE = Nothing<br>Execute sRet<br>'EOF</div></section>
+    <ul><li><section><h1 id=204>
+    <span class="no">[204]</span>
+    <a class="thread-title" href="#204">Re: マクロの部分実行</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-09-14T12:27:02">2005年09月14日 12:27</time></h1>
+    <div class="body">登録前のマクロ作成中のテストに結構便利ですね。<br><br>ということで、PerlScript版です。<br><br>miau さん方式で、さっそく日本語コメント入りです。これは便利＼(^o^)／<br>（__END__以下を生成するマクロとかも欲しいかも・・・）<br><br>#---------------------------------------------------<br># ClipMacro.pls<br># PerlScriptマクロの部分?実行用<br># スクリプトのテストしたい部分をクリップボードに保存し<br># テスト環境で本マクロを実行します<br><br>use Win32::Clipboard;<br>$CLIP = Win32::Clipboard();<br>eval($CLIP-&gt;GetText());<br>__END__<br># ------------------------------<br># END<br></div></section>
+    </li></ul></li></ul></body></html>

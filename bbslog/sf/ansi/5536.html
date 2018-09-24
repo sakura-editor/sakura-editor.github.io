@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>修正: 折り返し行末へ入力した文字が描画されない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5536</span>
+    <a class="thread-title" href="5536.html#5536">修正: 折り返し行末へ入力した文字が描画されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5557</span>
+    <a class="thread-title" href="5536.html#5557">Re:修正: 折り返し行末へ入力した文字が描画されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5558</span>
+    <a class="thread-title" href="5536.html#5558">Re2:修正: 折り返し行末へ入力した文字が描画されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5559</span>
+    <a class="thread-title" href="5536.html#5559">Re3:修正: 折り返し行末へ入力した文字が描画されない</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5560</span>
+    <a class="thread-title" href="5536.html#5560">Re3:修正: 折り返し行末へ入力した文字が描画されない</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5536>
+    <span class="no">[5536]</span>
+    <a class="thread-title" href="#5536">修正: 折り返し行末へ入力した文字が描画されない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-02-18T23:34:01">2009年02月18日 23:34</time></h1>
+    <div class="body">Patches#2612830<br><br>&gt;&gt;unicode:841(rev1535)の「画面キャッシュONかつ禁則ONで折り返し行末へ文字入力すると次行に回った入力文字が描画されない」の問題修正と同等のANSI版修正パッチです。</div></section>
+    <ul><li><section><h1 id=5557>
+    <span class="no">[5557]</span>
+    <a class="thread-title" href="#5557">Re:修正: 折り返し行末へ入力した文字が描画されない</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-03-09T22:50:44">2009年03月09日 22:50</time></h1>
+    <div class="body">▼ ryojiさん<br>すみません、元の現象が出せません ＞＜</div></section>
+    <ul><li><section><h1 id=5558>
+    <span class="no">[5558]</span>
+    <a class="thread-title" href="#5558">Re2:修正: 折り返し行末へ入力した文字が描画されない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-03-10T00:55:11">2009年03月10日 00:55</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; すみません、元の現象が出せません ＞＜<br><br>Patchesのほうでは、デフォルトの「テキスト」タイプの設定で起きるような説明をしてしまいましたが、ちょっと違ってました。<br><br>再現方法の一例を以下に示します。<br><br>まず、sakura.iniが無い初期状態で起動し、サクラのソースにある BugsInfo.txt を読み込みます。<br><br>次に、<br><br>[共通設定]-[全般]で、<br>●[画面キャッシュを使う]をON<br><br>[タイプ別設定]-[スクリーン]で、<br>●[折り返し桁数]を100<br>●[英文ワードラップ]をON<br><br>に変更します。<br><br>そうすると、３行目が"も"の文字の右で折り返されるので、その"も"の中央よりも右側をクリックして折り返し記号の手前にカーソルを置きます。<br>そこで、何か半角英字を入力すると、次の行に入ったはずの半角英字が描画されず、単にカーソルが次の行の先頭の"っ"の文字の中央に移動しただけのように見えると思います。<br>（F5キーで再描画すれば入力した文字が描画されます）<br><br>上記では[英文ワードラップ]をONにしていますが、「その他」グループの中の[文書アイコンを使う]以外のどれかひとつでもONにすると再現するはずです。<br><br>自分としてはどういうロジックでそうなってしまうのかまで十分に把握できているのですが、ちょっとややこしいので、それを人にうまく説明するのは難しいです。(^^;;;</div></section>
+    <ul><li><section><h1 id=5559>
+    <span class="no">[5559]</span>
+    <a class="thread-title" href="#5559">Re3:修正: 折り返し行末へ入力した文字が描画されない</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-03-10T20:00:19">2009年03月10日 20:00</time></h1>
+    <div class="body">▼ ryojiさん<br>確認できました。<br>折り返し直前の文字の右側にはカーソルが行かないという先入観があって、操作を間違ってました (^^;<br><br>コミットOKと思います。<br></div></section>
+    </li><li><section><h1 id=5560>
+    <span class="no">[5560]</span>
+    <a class="thread-title" href="#5560">Re3:修正: 折り返し行末へ入力した文字が描画されない</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-03-11T00:35:24">2009年03月11日 00:35</time></h1>
+    <div class="body">▼ ryojiさん<br>そういえばコメントの日付が2箇所2007年になってました。<br>まあ気にする程のことでもないですが、そのくらいしか気付かなかったので…… (^^;<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

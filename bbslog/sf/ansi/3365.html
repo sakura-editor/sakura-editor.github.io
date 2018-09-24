@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>DIFF差分・外部コマンド実行で、待たされる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3365</span>
+    <a class="thread-title" href="3365.html#3365">DIFF差分・外部コマンド実行で、待たされる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3366</span>
+    <a class="thread-title" href="3365.html#3366">RE: DIFF差分・外部コマンド実行で、待たされる</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3365>
+    <span class="no">[3365]</span>
+    <a class="thread-title" href="#3365">DIFF差分・外部コマンド実行で、待たされる</a>
+    <span class="author">もか</span>
+    <time datetime="2004-01-20T00:58:12">2004年01月20日 00:58</time></h1>
+    <div class="body">CPU消費削減対策として、WaitForSingleObjectの待ち時間を200msecにしたので、<br>例えば、計算上は200KBのデータを読み取るのに、40秒掛かってしまうようです。<br></div></section>
+    <ul><li><section><h1 id=3366>
+    <span class="no">[3366]</span>
+    <a class="thread-title" href="#3366">RE: DIFF差分・外部コマンド実行で、待たされる</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-01-24T11:37:38">2004年01月24日 11:37</time></h1>
+    <div class="body">&gt;CPU消費削減対策として、WaitForSingleObjectの待ち時間を200msecにしたので、<br>&gt;例えば、計算上は200KBのデータを読み取るのに、40秒掛かってしまうようです。<br>たしかに，パイプが詰まっちゃいますね．<br>300KBくらいのファイルで試したら1分20秒かかりました．<br><br>待ち時間の短縮と，パイプにデータがある間は実行し続ける変更で数秒に短縮できました．<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マーク行を/集めてクリップボード/すべて削除 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">199</span>
+    <a class="thread-title" href="199.html#199">マーク行を/集めてクリップボード/すべて削除</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=199>
+    <span class="no">[199]</span>
+    <a class="thread-title" href="#199">マーク行を/集めてクリップボード/すべて削除</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-09-11T09:56:38">2005年09月11日 09:56</time></h1>
+    <div class="body">わりと自分の中で利用頻度が高いのですが、類似ものが見当たらないので、、、<br>面倒なのでPerlScriptのままです。<br><br>データ系のちょっとした操作などに便利です<br><br>◇マーク行を集めてクリップボード<br>MoveHistSet();<br>GoFileTop();<br>BookmarkNext();<br>$newLn = ExpandParameter('$y');<br>while($oldLn &lt; $newLn){<br>&#9;GoLineTop(1);<br>&#9;GoLineEnd_Sel();<br>&#9;$str = GetSelectedString(0);<br>&#9;GoLineTop(1);<br>&#9;if($oldLn &lt; $newLn){<br>&#9;&#9;$outStr = $outStr . $str . "\r\n";<br>&#9;&#9;$oldLn = $newLn;<br>&#9;&#9;BookmarkNext();<br>&#9;&#9;$newLn = ExpandParameter('$y');<br>&#9;}<br>}<br>use Win32::Clipboard;<br>$CLIP = Win32::Clipboard();<br>$str = GetSelectedString();<br>$CLIP-&gt;Set( $outStr );<br>MoveHistPrev();<br><br><br>◇マーク行をすべて削除<br>MoveHistSet();<br>GoFileEnd();<br>$oldLn = ExpandParameter('$y') + 1;<br>BookmarkPrev();<br>$newLn = ExpandParameter('$y');<br>while($oldLn &gt; $newLn){<br>&#9;GoLineTop(1);<br>&#9;if($oldLn &gt; $newLn){<br>&#9;&#9;LineDeleteToEnd();<br>&#9;&#9;Delete();<br>&#9;&#9;$oldLn = $newLn;<br>&#9;&#9;BookmarkPrev();<br>&#9;&#9;$newLn = ExpandParameter('$y');<br>&#9;}<br>}<br>MoveHistPrev();<br></div></section>
+    </li></ul></body></html>

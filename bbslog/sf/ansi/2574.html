@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ここまでのパッチまとめ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2574</span>
+    <a class="thread-title" href="2574.html#2574">ここまでのパッチまとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2577</span>
+    <a class="thread-title" href="2574.html#2577">Re: ここまでのパッチまとめ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2574>
+    <span class="no">[2574]</span>
+    <a class="thread-title" href="#2574">ここまでのパッチまとめ</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-02-17T00:46:43">2003年02月17日 00:46</time></h1>
+    <div class="body">これまで出してくれたパッチをまとめようと思います。<br><br>出てきたのは以下で全部だと思いますが抜けがあったら教えてください。<br><br>*開発:2544 まつもさん<br>タグジャンプのgccのエラー出力対応<br><br>*開発:2550 もかさん<br>mydoc08.zip<br><br>*開発:2551 すいさん<br>mydoc08.zipの%の扱い修正<br><br>*開発:2552 みくさん<br>DIFFエラー時にMessageBoxでダイアログを出すことがあるが、エラーメッセージをダイアログのタイトルのところに出してしまってます。<br><br>*開発:2554 おにさん<br>GetSelectedString()の複数行対応<br><br>*開発:2565 Mr.Nakさん<br>CProfile::WriteProfile()でlwrite→fwrite<br><br>*一般:2711 みくさん<br>検索ボックス位置を１ドット下にずらす<br><br>MinGW対応のバグ修正はちょっとおいておきます。<br><br>--<br>あと最近出てきたバグ報告＆要望も追い切れてないので、追えている方がまとめてくれると助かります。Bugsinfo.txtとRequest.txtの更新をしたいので。<br></div></section>
+    <ul><li><section><h1 id=2577>
+    <span class="no">[2577]</span>
+    <a class="thread-title" href="#2577">Re: ここまでのパッチまとめ</a>
+    <span class="author">もか</span>
+    <time datetime="2003-02-17T17:38:39">2003年02月17日 17:38</time></h1>
+    <div class="body">*ヘルプ 167 noviceさん<br>パッチではないのですが、help_src_20021221e.lzhのsakura.hhも追加対象だと思います。<br><br>本来なら、そのsakura.hhに合わせてetc_utyのFuncID_To_HelpContextIDも修正したい所です。<br><br>&gt; mydoc08.zip<br>sakura.hhで定義されているHLPIDが最新のhelp_src_20021121e.lzhとバッティングする箇所があるため修正する必要があります。<br>厄介なことにetc_uty.cppも修正対象です。<br># HLP000xxxを機能名にすればetc_utyは修正しなくてすむのですが、そうなっているからしょうがない<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Sleipnirブラウザー・MDIEのようなタブ操作に改善して頂けますか？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5450</span>
+    <a class="thread-title" href="5450.html#5450">Sleipnirブラウザー・MDIEのようなタブ操作に改善して頂けますか？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5467</span>
+    <a class="thread-title" href="5450.html#5467">パッチを投稿しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5481</span>
+    <a class="thread-title" href="5450.html#5481">RE: パッチを投稿しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5485</span>
+    <a class="thread-title" href="5450.html#5485">Re2: パッチを投稿しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5486</span>
+    <a class="thread-title" href="5450.html#5486">Re3: パッチを投稿しました</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5450>
+    <span class="no">[5450]</span>
+    <a class="thread-title" href="#5450">Sleipnirブラウザー・MDIEのようなタブ操作に改善して頂けますか？</a>
+    <span class="author">豊臣家康</span>
+    <time datetime="2008-10-30T11:40:39">2008年10月30日 11:40</time></h1>
+    <div class="body">以下の操作があれば、有難いと思います。<br>①左をすべて閉じる<br>②右をすべて閉じる<br>③これ以外をすべて閉じる<br>④すべて閉じる</div></section>
+    <ul><li><section><h1 id=5467>
+    <span class="no">[5467]</span>
+    <a class="thread-title" href="#5467">パッチを投稿しました</a>
+    <span class="author">syat</span>
+    <time datetime="2008-11-22T21:39:03">2008年11月22日 21:39</time></h1>
+    <div class="body">▼ 豊臣家康さん<br>&gt; 以下の操作があれば、有難いと思います。<br>&gt; ①左をすべて閉じる<br>&gt; ②右をすべて閉じる<br>&gt; ③これ以外をすべて閉じる<br>&gt; ④すべて閉じる<br>&gt;&gt;data:6789<br><br>①～③を追加するパッチを作ってみました。<br>④は「グループを閉じる」という名前で既存です。<br>Patches:2326632<br><br>タブの右クリックメニューに登録する方法は、<br>　・共通設定のカスタムメニュータブで<br>　・種別は「ウィンドウ系」<br>　・選択は「タブメニュー」<br>でできます。<br></div></section>
+    <ul><li><section><h1 id=5481>
+    <span class="no">[5481]</span>
+    <a class="thread-title" href="#5481">RE: パッチを投稿しました</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-11-26T00:42:59">2008年11月26日 00:42</time></h1>
+    <div class="body">&gt;①～③を追加するパッチを作ってみました。<br>判定条件以外同じ処理なのでうまく共通部分をまとめられると良いのですが．特に複数の編集ウィンドウを閉じる場合の警告判定部分がコードに何度も現れるのは今後が心配です．<br><br>そもそもCloseAllEditorがCEditAppにあるのが何故？複数ウィンドウを閉じる場合に警告出すことを意識しなくても良くなるように，警告を出す処理を取り入れたCloseSomeEditor(?)を作った方が自然な拡張になるんではないでしょうか．<br>(判定関数を関数ポインタで渡すとか？)<br></div></section>
+    <ul><li><section><h1 id=5485>
+    <span class="no">[5485]</span>
+    <a class="thread-title" href="#5485">Re2: パッチを投稿しました</a>
+    <span class="author">syat</span>
+    <time datetime="2008-11-29T13:25:29">2008年11月29日 13:25</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 判定条件以外同じ処理なのでうまく共通部分をまとめられると良いのですが．特に複数の編集ウィンドウを閉じる場合の警告判定部分がコードに何度も現れるのは今後が心配です．<br>はい。警告メッセージを複数箇所にベタ書きするのはまずいなと自分でも思ってました。<br><br>修正パッチを投稿しました。<br>共通部分をなるべくRequestCloseSomeEditorに移しています。CEditAppのCloseAllEditorはReques～の方を呼ぶだけ。<br>また変動部分は関数ポインタでまとめきれなかったので、個別にクラス化してみました。<br></div></section>
+    <ul><li><section><h1 id=5486>
+    <span class="no">[5486]</span>
+    <a class="thread-title" href="#5486">Re3: パッチを投稿しました</a>
+    <span class="author">syat</span>
+    <time datetime="2008-11-29T20:33:36">2008年11月29日 20:33</time></h1>
+    <div class="body">クラスの使い捨てはムダすぎる気がするので、もっとシンプルなパッチ３を投稿しました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

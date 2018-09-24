@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タブのファイル名 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2939</span>
+    <a class="thread-title" href="2939.html#2939">タブのファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3006</span>
+    <a class="thread-title" href="2939.html#3006">RE: タブのファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3114</span>
+    <a class="thread-title" href="2939.html#3114">RE2: タブのファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3121</span>
+    <a class="thread-title" href="2939.html#3121">RE3: タブのファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3243</span>
+    <a class="thread-title" href="2939.html#3243">RE4: タブのファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3245</span>
+    <a class="thread-title" href="2939.html#3245">RE5: タブのファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3256</span>
+    <a class="thread-title" href="2939.html#3256">RE6: タブのファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3259</span>
+    <a class="thread-title" href="2939.html#3259">Re7: タブのファイル名</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3305</span>
+    <a class="thread-title" href="2939.html#3305">RE5: タブのファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3306</span>
+    <a class="thread-title" href="2939.html#3306">Re6: タブのファイル名</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2939>
+    <span class="no">[2939]</span>
+    <a class="thread-title" href="#2939">タブのファイル名</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-07-09T00:03:24">2003年07月09日 00:03</time></h1>
+    <div class="body">タブにファイル名が表示されるけど、<br>Grep した時は、ファイル名でなく、<br>【Grep】検索文字列<br>が表示されるのだが、<br>検索文字列が、「\bhogehoge\b」のようになっていると、ｂしか表示されない。<br>ツールチップはちゃんと表示されるのに・・・<br><br></div></section>
+    <ul><li><section><h1 id=3006>
+    <span class="no">[3006]</span>
+    <a class="thread-title" href="#3006">RE: タブのファイル名</a>
+    <span class="author">みく</span>
+    <time datetime="2003-08-14T18:52:47">2003年08月14日 18:52</time></h1>
+    <div class="body"><br>・CEditDoc::SetParentCaption()でExpandParameterでキャプション文字列を生成している。<br>・CTabWnd::TabWndDispatchEvent()ではファイルパス名だと思って\以降のファイル名のみ取り出している。<br><br>という矛盾のため、\bhogehoge\bの最後のbをファイル名だと思って表示してしまってます。<br><br>＃どう修正しようか。。。<br></div></section>
+    <ul><li><section><h1 id=3114>
+    <span class="no">[3114]</span>
+    <a class="thread-title" href="#3114">RE2: タブのファイル名</a>
+    <span class="author">みく</span>
+    <time datetime="2003-09-11T20:22:57">2003年09月11日 20:22</time></h1>
+    <div class="body"><br>タブのツールチップの不具合修正差分を<br>tab20030911.lzh として置きました。<br><br>なお、バージョンアップされる方は、<br>キャプションがフルパスで表示されますので、<br>共通設定画面のウインドウタブのタイトルバー（タブ）の値の中の<br>$F を $f に直してください。<br></div></section>
+    <ul><li><section><h1 id=3121>
+    <span class="no">[3121]</span>
+    <a class="thread-title" href="#3121">RE3: タブのファイル名</a>
+    <span class="author">みく</span>
+    <time datetime="2003-09-12T22:04:53">2003年09月12日 22:04</time></h1>
+    <div class="body"><br>&gt;タブのツールチップの不具合修正差分を<br>タブキャプションとツールチップの不具合修正差分を<br><br><br>あと、構造が変わっていますので、共有メモリのバージョン番号を＋１してください。<br></div></section>
+    <ul><li><section><h1 id=3243>
+    <span class="no">[3243]</span>
+    <a class="thread-title" href="#3243">RE4: タブのファイル名</a>
+    <span class="author">みく</span>
+    <time datetime="2003-10-13T14:00:24">2003年10月13日 14:00</time></h1>
+    <div class="body"><br>tab20031013.lzh<br><br>#TeraPadはいずこへ<br></div></section>
+    <ul><li><section><h1 id=3245>
+    <span class="no">[3245]</span>
+    <a class="thread-title" href="#3245">RE5: タブのファイル名</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-10-13T16:45:16">2003年10月13日 16:45</time></h1>
+    <div class="body">あ～，ここにも見落としが...<br><br>一応全部見ているつもりではあるんですが，掲示板のみで管理するのはもう限界かも．<br></div></section>
+    <ul><li><section><h1 id=3256>
+    <span class="no">[3256]</span>
+    <a class="thread-title" href="#3256">RE6: タブのファイル名</a>
+    <span class="author">みく</span>
+    <time datetime="2003-10-15T22:57:16">2003年10月15日 22:57</time></h1>
+    <div class="body"><br>INCM使っているのでしたら、とりあえずカラーラベル使ってみては。<br></div></section>
+    <ul><li><section><h1 id=3259>
+    <span class="no">[3259]</span>
+    <a class="thread-title" href="#3259">Re7: タブのファイル名</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-10-16T01:03:13">2003年10月16日 01:03</time></h1>
+    <div class="body">&gt;INCM使っているのでしたら、とりあえずカラーラベル使ってみては。<br>もちろん使っていますが，カラーラベルでソートするような機能がないから検索かスクロールで見ていくしかないんですよね．<br><br>直接抜き出せるような外部ツールを作った方がいいかな．<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=3305>
+    <span class="no">[3305]</span>
+    <a class="thread-title" href="#3305">RE5: タブのファイル名</a>
+    <span class="author">みく</span>
+    <time datetime="2003-11-08T12:24:12">2003年11月08日 12:24</time></h1>
+    <div class="body"><br>age<br></div></section>
+    <ul><li><section><h1 id=3306>
+    <span class="no">[3306]</span>
+    <a class="thread-title" href="#3306">Re6: タブのファイル名</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-11-08T13:10:01">2003年11月08日 13:10</time></h1>
+    <div class="body">&gt;age<br>またやってしまった...<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

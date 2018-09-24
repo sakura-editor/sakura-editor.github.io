@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>権限のないファイルの編集 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5905</span>
+    <a class="thread-title" href="5905.html#5905">権限のないファイルの編集</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5925</span>
+    <a class="thread-title" href="5905.html#5925">Re: 権限のないファイルの編集</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5933</span>
+    <a class="thread-title" href="5905.html#5933">Re2: 権限のないファイルの編集</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5905>
+    <span class="no">[5905]</span>
+    <a class="thread-title" href="#5905">権限のないファイルの編集</a>
+    <span class="author">ななし</span>
+    <time datetime="2007-03-02T19:02:26">2007年03月02日 19:02</time></h1>
+    <div class="body">環境はWindows Vistaです。<br>サクラエディタで書き込み権限のないファイルを変更し、保存しようとすると<br>何事もなく保存されたかのような動作をします。<br>しかしながら、メモ帳や他のエディタでそのファイルを開くと<br>変更が保存されていません。<br>サクラエディタでもう一度そのファイルを開くと<br>保存した内容がちゃんと復元されます。<br><br>なぜこのような動作をするのかよくわからないんですが、<br>よろしければ対応をお願いします。<br>1.5.15.2で確認しました。</div></section>
+    <ul><li><section><h1 id=5925>
+    <span class="no">[5925]</span>
+    <a class="thread-title" href="#5925">Re: 権限のないファイルの編集</a>
+    <span class="author">もか</span>
+    <time datetime="2007-03-05T01:25:38">2007年03月05日 01:25</time></h1>
+    <div class="body">&gt;権限のないファイルを変更し<br>ということですから、<br>Vista には 書き込み権限の無いProgram Filesなどを別の所に転送する<br>Virtual store という機能がある(らしい)ようです。<br>http://msdn2.microsoft.com/en-us/library/aa480152.aspx<br>や<br>http://itpro.nikkeibp.co.jp/article/COLUMN/20060306/231812/<br>とかを参照してください。<br>そういうOSですので、<br>&gt;よろしければ対応をお願いします。<br>といわれてもアプリケーション側では無理だと考えられます。<br><br>また64bit版の場合もWOW64と言うものがあり、<br>64bitプログラムと32bitプログラムで同じパスでも違うものが見える場所があるそうです。<br>http://support.microsoft.com/kb/896456/ja<br>「レジストリとファイルのリダイレクト」あたりに記述されています。<br><br>Vistaの"種類"とパスの情報が不明なのでこれ以上はなんとも言えません。<br><br>#あとVistaを所有していないので、詳細な事まではわかりません。<br></div></section>
+    <ul><li><section><h1 id=5933>
+    <span class="no">[5933]</span>
+    <a class="thread-title" href="#5933">Re2: 権限のないファイルの編集</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-06T00:12:52">2007年03月06日 00:12</time></h1>
+    <div class="body">&gt;Vista には 書き込み権限の無いProgram Filesなどを別の所に転送する<br>&gt;Virtual store という機能がある(らしい)ようです。<br>情報Thanksです．奇っ怪な現象なのでOSで何か仕組まれているような気はしていましたが...<br><br>&gt;http://msdn2.microsoft.com/en-us/library/aa480152.aspx<br>アプリケーション開発者は，これをちゃんと読まなくてはならないのですね．<br><br>http://msdn2.microsoft.com/en-us/library/aa480150.aspx#accprotvista_topic4<br><br>&gt;&gt;よろしければ対応をお願いします。<br>&gt;といわれてもアプリケーション側では無理だと考えられます。<br>対象となるファイルの権限を調べるAPIがわかれば書き込み禁止措置を執る等の対策も可能かとは思いますが...<br><br>---<br><br>When the application writes to a system location (like \Program Files\...), Windows redirects it to a user-specific path under the \Virtual Store\... directory. Later, when the application reads back this file, the system will provide the one in the Virtual Store. As far as the application is concerned, it was able to successfully read and write directly to Program Files.<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

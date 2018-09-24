@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>共有メモリのバージョン管理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2189</span>
+    <a class="thread-title" href="2189.html#2189">共有メモリのバージョン管理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2193</span>
+    <a class="thread-title" href="2189.html#2193">Re: 共有メモリのバージョン管理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2195</span>
+    <a class="thread-title" href="2189.html#2195">Re2: 共有メモリのバージョン管理</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2189>
+    <span class="no">[2189]</span>
+    <a class="thread-title" href="#2189">共有メモリのバージョン管理</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-21T19:46:28">2002年06月21日 19:46</time></h1>
+    <div class="body"><br>ふと思ったのですが、現在はuShareDataVersionで手動管理してますが、<br>実は、ビルド日時をuShareDataVersion値にするか、<br>ファイルマッピング名にビルド日時を付加すれば解決するのではないかと。<br></div></section>
+    <ul><li><section><h1 id=2193>
+    <span class="no">[2193]</span>
+    <a class="thread-title" href="#2193">Re: 共有メモリのバージョン管理</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-06-24T10:52:19">2002年06月24日 10:52</time></h1>
+    <div class="body">&gt;実は、ビルド日時をuShareDataVersion値にするか、<br>&gt;ファイルマッピング名にビルド日時を付加すれば解決するのではないかと。<br>バージョンが上がっても共有メモリの構造が変わっていないときは変更されない方がやりやすいように思いますが．<br><br>CShareData.h のバージョンを使うのが妥当なところでしょうかね．(CVS管理してないとだめだけど)．<br></div></section>
+    <ul><li><section><h1 id=2195>
+    <span class="no">[2195]</span>
+    <a class="thread-title" href="#2195">Re2: 共有メモリのバージョン管理</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-06-24T12:24:36">2002年06月24日 12:24</time></h1>
+    <div class="body"><br>&gt;&gt;実は、ビルド日時をuShareDataVersion値にするか、<br>&gt;&gt;ファイルマッピング名にビルド日時を付加すれば解決するのではないかと。<br>&gt;バージョンが上がっても共有メモリの構造が変わっていないときは変更されない方がやりやすいように思いますが．<br>&gt;<br>&gt;CShareData.h のバージョンを使うのが妥当なところでしょうかね．(CVS管理してないとだめだけど)．<br><br>CShareData.hも他の情報が多すぎて、関係ないときにバージョン番号があがって困りそう。<br>なので、やはり手作業がよいのでは!!(そんなわけないか)<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

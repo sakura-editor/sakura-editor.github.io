@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>LaTeXコンパイルマクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">637</span>
+    <a class="thread-title" href="637.html#637">LaTeXコンパイルマクロ</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=637>
+    <span class="no">[637]</span>
+    <a class="thread-title" href="#637">LaTeXコンパイルマクロ</a>
+    <span class="author">IWAZATO</span>
+    <time datetime="2017-06-17T09:20:06">2017年06月17日 09:20</time></h1>
+    <div class="body">最近サクラエディタを使いはじめたものです。<br>LaTeXも昔から使っていて、サクラエディタからLaTeXを<br>コンパイルするDOSコマンドを発行するマクロを探したのですが、<br>見当たらないようなので、他の方のマクロを参考に、作ってみました。<br><br>ただ、この方法がよいかどうかよくわかってません。<br>もっとよい方法があれば、教えていただけないでしょうか？<br><br>よろしくお願いします。<br><br>//----- ここから -------<br>var AXsh = new ActiveXObject("WScript.Shell");<br>var path = GetFilename;<br>var parPath = path.replace(/[^\\]*$/""); // パス抽出<br>var Fname   = path.replace(/^.*\\/,"");  // ファイル名抽出<br><br>AXsh.run("cmd.exe /k cd " + parPath + " &amp; platex " + Fname + " &amp; exit");<br></div></section>
+    </li></ul></body></html>

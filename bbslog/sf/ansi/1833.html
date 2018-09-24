@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ファイル保存のバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1833</span>
+    <a class="thread-title" href="1833.html#1833">ファイル保存のバグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1837</span>
+    <a class="thread-title" href="1833.html#1837">RE: ファイル保存のバグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1842</span>
+    <a class="thread-title" href="1833.html#1842">Re2: ファイル保存のバグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1843</span>
+    <a class="thread-title" href="1833.html#1843">Re3: ファイル保存のバグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1844</span>
+    <a class="thread-title" href="1833.html#1844">Re4: ファイル保存のバグ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1845</span>
+    <a class="thread-title" href="1833.html#1845">Re5: ファイル保存のバグ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1833>
+    <span class="no">[1833]</span>
+    <a class="thread-title" href="#1833">ファイル保存のバグ</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-09T18:19:07">2002年04月09日 18:19</time></h1>
+    <div class="body"><br>Flushをしないとタイムスタンプが正しくなく、<br>またm_FileTimeに保存される情報はGetFileTimeで取得した情報です。<br><br>CDocLineMgr.cpp:WriteFile():1020行付近<br>FlushFileBuffers(hFile);&#9;//追加<br>if( ::GetFileTime( (HANDLE)hFile, NULL, NULL, pFileTime ) ){<br>//&#9;::FileTimeToLocalFileTime( pFileTime, pFileTime );&#9;//削除<br></div></section>
+    <ul><li><section><h1 id=1837>
+    <span class="no">[1837]</span>
+    <a class="thread-title" href="#1837">RE: ファイル保存のバグ</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-10T18:17:37">2002年04月10日 18:17</time></h1>
+    <div class="body"><br>フラッシュするだけでは不十分でした。<br>（フラッシュしてもマシンによっては更新後の時刻が取得できません。）<br><br>よって、いったんハンドルをクローズしてから再オープンする<br>必要があります。<br><br>dwFileAttribute = ::GetFileAttributes(pszPath);<br>if ( dwFileAttribute == (DWORD)-1 )<br>{<br>&#9;dwFileAttribute = FILE_ATTRIBUTE_NORMAL;<br>}<br>hFile = ::CreateFile(<br>&#9;pszPath,&#9;&#9;// 開くファイル名<br>&#9;GENERIC_READ,&#9;&#9;// 読み込みモードで開く。<br>&#9;0,&#9;&#9;&#9;// 共有しない。<br>&#9;NULL,&#9;&#9;&#9;// ハンドルを継承しない。<br>&#9;OPEN_EXISTING,&#9;&#9;// 存在するファイルを開く。<br>&#9;dwFileAttribute,&#9;// ファイル属性。<br>&#9;NULL&#9;&#9;&#9;// テンプレートファイルを使わない。<br>&#9;);<br>if ( hFile != INVALID_HANDLE_VALUE )<br>{<br>&#9;::GetFileTime( (HANDLE)hFile, NULL, NULL, pFileTime );<br>&#9;::CloseHandle(hFile);<br>}<br></div></section>
+    <ul><li><section><h1 id=1842>
+    <span class="no">[1842]</span>
+    <a class="thread-title" href="#1842">Re2: ファイル保存のバグ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-11T18:11:13">2002年04月11日 18:11</time></h1>
+    <div class="body">▼ みくさん<br>この修正はどこに差し込めばよいの？<br>ssrc_2002-04-08.zipからの再patch切望～。（すみません）</div></section>
+    <ul><li><section><h1 id=1843>
+    <span class="no">[1843]</span>
+    <a class="thread-title" href="#1843">Re3: ファイル保存のバグ</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-11T22:07:46">2002年04月11日 22:07</time></h1>
+    <div class="body"><br>kinsoku0410.zip<br>として置いてあります。このファイルの中の<br>file_write_time.diff<br>が、このバグの修正部分です。<br>（禁則部分は4/9から修正はありません）<br><br>このバグは、排他制御なし＋更新監視の設定で上書き保存すると<br>再現します。<br></div></section>
+    <ul><li><section><h1 id=1844>
+    <span class="no">[1844]</span>
+    <a class="thread-title" href="#1844">Re4: ファイル保存のバグ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-11T23:45:28">2002年04月11日 23:45</time></h1>
+    <div class="body">▼ みくさん<br>&gt; <br>&gt; kinsoku0410.zip<br>&gt; として置いてあります。このファイルの中の<br>&gt; file_write_time.diff<br>&gt; が、このバグの修正部分です。<br>&gt; （禁則部分は4/9から修正はありません）<br>&gt; <br>&gt; このバグは、排他制御なし＋更新監視の設定で上書き保存すると<br>&gt; 再現します。<br><br>いただきましたー。パッチをあてましたが起動できずです。<br><br>void CEditView::OnPaint( HDC hdc, PAINTSTRUCT *pPs, BOOL bUseMemoryDC )<br>の<br>int nMaxRollBackLineNum = 260 / TypeDataPtr-&gt;m_nMaxLineSize + 1;<br>で、Divide by 0でした。ぬう。</div></section>
+    <ul><li><section><h1 id=1845>
+    <span class="no">[1845]</span>
+    <a class="thread-title" href="#1845">Re5: ファイル保存のバグ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-11T23:49:06">2002年04月11日 23:49</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; void CEditView::OnPaint( HDC hdc, PAINTSTRUCT *pPs, BOOL bUseMemoryDC )<br>&gt; の<br>&gt; int nMaxRollBackLineNum = 260 / TypeDataPtr-&gt;m_nMaxLineSize + 1;<br>&gt; で、Divide by 0でした。ぬう。<br><br>ああ、ひらめきました。<br>const unsigned int uShareDataVersion = 27;<br>の数字をあげときますね。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

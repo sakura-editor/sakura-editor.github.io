@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>エディタ部分テキストの文字コード管理について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5031</span>
+    <a class="thread-title" href="5031.html#5031">エディタ部分テキストの文字コード管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5032</span>
+    <a class="thread-title" href="5031.html#5032">(続き) エディタ部分テキストの文字コード管理について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5033</span>
+    <a class="thread-title" href="5031.html#5033">Re:エディタ部分テキストの文字コード管理について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5034</span>
+    <a class="thread-title" href="5031.html#5034">RE: エディタ部分テキストの文字コード管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5035</span>
+    <a class="thread-title" href="5031.html#5035">RE2: エディタ部分テキストの文字コード管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5037</span>
+    <a class="thread-title" href="5031.html#5037">Re3: エディタ部分テキストの文字コード管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5040</span>
+    <a class="thread-title" href="5031.html#5040">Re4: エディタ部分テキストの文字コード管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5041</span>
+    <a class="thread-title" href="5031.html#5041">Re5: エディタ部分テキストの文字コード管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5042</span>
+    <a class="thread-title" href="5031.html#5042">Re6: エディタ部分テキストの文字コード管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5043</span>
+    <a class="thread-title" href="5031.html#5043">Re7: エディタ部分テキストの文字コード管理について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5044</span>
+    <a class="thread-title" href="5031.html#5044">Re7: エディタ部分テキストの文字コード管理について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5045</span>
+    <a class="thread-title" href="5031.html#5045">Re8: エディタ部分テキストの文字コード管理について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5038</span>
+    <a class="thread-title" href="5031.html#5038">(続き) Re3: エディタ部分テキストの文字コード管理について</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5031>
+    <span class="no">[5031]</span>
+    <a class="thread-title" href="#5031">エディタ部分テキストの文字コード管理について</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-09-15T10:47:55">2007年09月15日 10:47</time></h1>
+    <div class="body">長文になってしまったので、先に要点だけ述べますと、<br>やはりテキストデータの管理をwchar_tに絞って行いたいのですが、<br>どうでしょうか、という意見を挙げさせていただきます。<br><br><br>前のコメントで触れましたが、UNICODEビルドができるようになりました。<br>ANSIビルド(ビルドが通るだけでなく、W系APIを使わないビルド)も通るようにするため、<br>現在 TCHAR化を少しずつ進めています。<br>エディタ部分を除くUI部分は、(時間はかかりますが)難はなさそうです。<br><br>問題はエディタに関わるテキスト解析の部分で、<br>コアとなる部分だけでも膨大な量である上に、<br>プログラム言語の色分け機能のような、オプション的なテキスト解析系のコードも加わり、<br>恐ろしいほどの手間と注意力が必要になりそうです。<br><br><br>議論をぶり返して申し訳ないのですが、<br>エディタ部分に関わるテキスト管理はwchar_tで行い、<br>それに関するAPI呼び出しのときだけ、<br>ビルドオプションに応じた文字コードに変換する、<br>といった実装方法を提案したいのですが、どうでしょうか。<br><br>要するに、必要最小限のAPI (TextOut系) をラップし、<br>wchar_t を描画してるように見えるけど、内部ではANSIに変換してA系APIを呼び出す、<br>といった形です。(または W系API をエミュレートするような関数を自作する？)<br>unicows的な処理を自前でやる、という。<br><br>実行時の負荷は増えてしまいますけど、コーディングの負荷は大幅に減らすことができます。<br>これは今回のようなコアな箇所をいじるときの負荷だけではなく、<br>今後、拡張機能を付けるときにも TCHAR を気にすることがなくなり、開発にとっつきやすくなると思います。<br>可読性も増します。<br><br>GetSizeOfCharのような関数を用いて、char, wchar_t 両者を同時対応することは、理想ではありますが、<br>どうしても時間がかかります。両者対応しつつ、UNICODE化を進めるよりは、<br>UNICODE化を完了した後で、charのデータ管理にも対応したコードに手直しする、といった流れのほうが、<br>個人的には問題が発生しにくいと思います。<br><br>(文字数制限があるようなので、次のコメントに続きます)</div></section>
+    <ul><li><section><h1 id=5032>
+    <span class="no">[5032]</span>
+    <a class="thread-title" href="#5032">(続き) エディタ部分テキストの文字コード管理について</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-09-15T10:48:37">2007年09月15日 10:48</time></h1>
+    <div class="body">(続き)<br><br>これはまだ自分の頭の中だけでしか検証していないプランなのですが、<br><br>　　-- 現在の自分のコード --<br>　　//ポインタを進める<br>　　whcar_t* p;<br>　　p++;<br>　　//桁を進める<br>　　int nX_Layout;<br>　　nX_Layout+=W::GetKetaOfChar(*p); //今回のUNICODE化で自分が作成した関数です<br>　　//文字比較<br>　　if(*p==L'あ'){}<br><br>　　↓<br> <br>　　上で述べましたとおり、<br>　　個人的にはここで本家に結合してもいいのではないか、と考えています。<br><br>　　↓<br> <br>　　-- 次段階 --<br>　　//ポインタを進める<br>　　WCharPointer p; //自前クラス<br>　　p++;            //自前演算子(内部実装は変わらない。余裕があればサロゲートペア対応)<br>　　//桁を進める<br>　　int nX_Layout;<br>　　nX_Layout+=p.GetKeta(); //自前関数<br>　　//文字比較<br>　　if(*p==L'あ'){} //「*」は自前演算子<br> <br>　　↓<br> <br>　　-- さらに次段階 (必要であれば) --<br>　　//ポインタを進める<br>　　TCharPointer p; //自前クラス(ビルド種により、自動切り替え)<br>　　p++;            //自前演算子<br>　　//桁を進める<br>　　int nX_Layout;<br>　　nX_Layout+=p.GetKeta(); //自前関数<br>　　//文字比較<br>　　if(*p==_T('あ')){} //「*」は自前演算子<br><br>というコーディングが頭に浮かんでいます。<br><br><br>長文になってしまいましたが、一時的(または了解とパフォーマンスが得られれば永続的かも)に<br>テキスト管理をwchar_tに絞りたい、というのが自分の伝えたい意見です。<br><br>皆様のご意見よろしくお願い致します。</div></section>
+    </li><li><section><h1 id=5033>
+    <span class="no">[5033]</span>
+    <a class="thread-title" href="#5033">Re:エディタ部分テキストの文字コード管理について</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-09-15T10:53:23">2007年09月15日 10:53</time></h1>
+    <div class="body">補足ですが、ブランチ作成は<br>UNICODEビルド、ANSIビルド、どちらも通るようになり、<br>ソースコードの整理ができ、<br>それに関するドキュメントを作成し終えたところで<br>行いたいと考えています。<br><br>その後のブランチの修正には、<br>可能であれば皆様のご協力をお願いしたいです。<br>まだ先のことですが、そのときはよろしくお願い致します。<br></div></section>
+    </li><li><section><h1 id=5034>
+    <span class="no">[5034]</span>
+    <a class="thread-title" href="#5034">RE: エディタ部分テキストの文字コード管理について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-15T12:06:33">2007年09月15日 12:06</time></h1>
+    <div class="body">&gt;議論をぶり返して申し訳ないのですが、<br>&gt;エディタ部分に関わるテキスト管理はwchar_tで行い、<br>&gt;それに関するAPI呼び出しのときだけ、<br>&gt;ビルドオプションに応じた文字コードに変換する、<br><br>TCHARで進めると決まったときの経緯を再度考え直してみると，<br><br>0. ANSI版は打ち止めにしてUNICODE版に切り替えるのはどうか？<br>1. ANSI版の開発を継続すると，UNICODE版が使えるまでは両方を変更しなくてはならない<br>2. UNICODE版に専念すると完成するまで全くリリースできません<br>3. それがいつのことかわからないので未来永劫新バージョンは出ないかもしれない<br>4. それはリスクが高すぎ．<br>5. TCHARならコードが分岐することなく，少しずつ進められる．<br><br>となったわけです．ですが，kobakeさんの登場によって1が可能になり，3のリスクも相当低くなったのであれば，UNICODEブランチを独立して進め，両者の機能が同等になったところでANSIはおしまいでも良いような気がしてきました．<br><br>kobakeさんの案ですとANSI版は内部unicodeでメモリを2倍使い，表示の度にUNICODE&lt;-&gt;ANSIの変換が動くことになり，メモリの少ないWin 95/98マシンで使っている人にとってみればUNICODEの割を食っただけで何も良いことがないと思いませんか．それにコードが大きく変わるのでANSI版も隅々まで動作確認が必要になりますが，これも割を食っただけ．<br>そういう意味では先日commitしたVistaのマルチユーザ設定も同じですが．<br><br>コードを分けることで文字コードに対するテンプレートを使わなくて済み，結果としてVC6でコンパイルできるコードが保たれるかも？<br><br>もちろんTCHARを使っておくと後で変更を簡単に両方へ入れられる..というメリットがないほど手が入っていますかね...文字コードの特性に関わらないところ L""の代わりに_T("")と書いたり wchar_tの代わりにTCHARと書くだけで済む部分はそうしておいた方が良いとは思います．<br></div></section>
+    <ul><li><section><h1 id=5035>
+    <span class="no">[5035]</span>
+    <a class="thread-title" href="#5035">RE2: エディタ部分テキストの文字コード管理について</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-15T12:21:56">2007年09月15日 12:21</time></h1>
+    <div class="body">無責任な言い方と思われるかもしれませんが，とりあえずはkobakeさんの考え方で進めていただいて，できてから後のことを考えればよいかなと思います．<br><br>ANSIの人にメリットがないと書きましたが，それは使う人が決めればよいこと．それに，後から両立するためのうまいアイディアが出てくるかもしれない．<br></div></section>
+    <ul><li><section><h1 id=5037>
+    <span class="no">[5037]</span>
+    <a class="thread-title" href="#5037">Re3: エディタ部分テキストの文字コード管理について</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-09-15T13:13:10">2007年09月15日 13:13</time></h1>
+    <div class="body">▼ げんたさん(5035)<br>&gt; 無責任な言い方と思われるかもしれませんが，とりあえずはkobakeさんの考え方で進めていただいて，できてから後のことを考えればよいかなと思います．<br><br>後押しありがとうございます。他の皆様のご意見もお聞きしたいです。<br><br>&gt;&gt;dev:5035を拝見する前に&gt;&gt;dev:5034への返信を書いてしまっていたので、<br>それもここに書いておきます。<br><br><br>▼ げんたさん(5034)<br>&gt; kobakeさんの案ですとANSI版は内部unicodeでメモリを2倍使い，表示の度にUNICODE&lt;-&gt;ANSIの変換が動くことになり，メモリの少ないWin 95/98マシンで使っている人にとってみればUNICODEの割を食っただけで何も良いことがないと思いませんか．それにコードが大きく変わるのでANSI版も隅々まで動作確認が必要になりますが，これも割を食っただけ．<br><br>おっしゃる通り、wchar_tにしてしまった時点では、<br>ANSI版ユーザにとってメリットはひとつもありません。<br><br>ただ、wchar_tにしたことで、今後の開発効率が上がるとしたら、<br> (1バイト文字、2バイト文字を気にした、可読性もメンテナンスも大変なコードよりも<br> wchar_tを用いたシンプルなコーディングは能率も上がるしバグも出にくい。<br> もちろん、GetSizeOfCharのような関数を使って、マルチバイトの特性を意識しないように<br> 書かれている箇所は見受けられますが、それでも、まだマルチバイト依存のコードは<br> 多く残っています。。)<br>今後の新しい機能をより早くバグの少ない状態で提供できることになります。<br>それは、ユーザに、今後、パフォーマンスの代わりに、より多彩な機能を提供できるということです。<br><br>そしてまた、<br>wchar_tにしてしまった後の、再度のchar化は、<br>charからwchar_tにするのに比べると、<br>割とスムーズに行えるのでは、と自分は考えています。<br>(自分が &gt;&gt;dev:5031 で書いた擬似コードのような流れで)<br><br>wchar_t化することは、<br>少なくとも、ANSI版を (重くはなるけど、動くという意味で)「捨てる」ことではありません。<br>そして、自分が最も重要だと考えていることは、<br>UNICODE版を「出来る限り早期に」本家トランクに結合させること、です。<br>他の方が編集されているコードとのコンフリクト量を出来る限り小さく収めたいのです。<br>そのためには、効率を上げるために、何かを捨てなければならず、<br>「後で拾えるであろう」charを、今は捨ててしまうのはどうか、と提案したく思っております。<br><br><br>(文字数制限のため、次のコメントへ続く)</div></section>
+    <ul><li><section><h1 id=5040>
+    <span class="no">[5040]</span>
+    <a class="thread-title" href="#5040">Re4: エディタ部分テキストの文字コード管理について</a>
+    <span class="author">Uchi</span>
+    <time datetime="2007-09-15T22:22:23">2007年09月15日 22:22</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; ▼ げんたさん(5035)<br>&gt; &gt; 無責任な言い方と思われるかもしれませんが，とりあえずはkobakeさんの考え方で進めていただいて，できてから後のことを考えればよいかなと思います．<br>&gt; <br>&gt; 後押しありがとうございます。他の皆様のご意見もお聞きしたいです。<br>&gt; <br>SakuraはSjisのファイルを直接（未コード分やUnicodeに対する重複マッピング部も）扱えるほぼ唯一のエディタです。<br>私がSakuraを使用している最大の理由のひとつです。<br>単純に内部Unicode化をおこなった場合には、未コード分やUnicodeに対する重複マッピング部が壊れ、読み込んだファイルを書き出した場合、元と同じになりません。<br>Unicode版は欲しいのですが（モカさんのUnicode版を2ndエディタとして使用しています）、この変更はやめてほしいです。<br>よろしくお願いいたします。<br></div></section>
+    <ul><li><section><h1 id=5041>
+    <span class="no">[5041]</span>
+    <a class="thread-title" href="#5041">Re5: エディタ部分テキストの文字コード管理について</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-09-16T00:11:09">2007年09月16日 00:11</time></h1>
+    <div class="body">▼ Uchi さん<br>&gt; SakuraはSjisのファイルを直接<br>&gt; （未コード分やUnicodeに対する重複マッピング部も）<br>&gt; 扱えるほぼ唯一のエディタです。<br><br>ちょっと個人的にアンケートさせて下さい。<br>SJIS のファイルを直接扱う必要性がある場面を、<br>具体的に教えていただけますか・・・？ (^^;<br></div></section>
+    <ul><li><section><h1 id=5042>
+    <span class="no">[5042]</span>
+    <a class="thread-title" href="#5042">Re6: エディタ部分テキストの文字コード管理について</a>
+    <span class="author">Uchi</span>
+    <time datetime="2007-09-16T09:53:41">2007年09月16日 09:53</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; ▼ Uchi さん<br>&gt; &gt; SakuraはSjisのファイルを直接<br>&gt; &gt; （未コード分やUnicodeに対する重複マッピング部も）<br>&gt; &gt; 扱えるほぼ唯一のエディタです。<br>&gt; <br>&gt; ちょっと個人的にアンケートさせて下さい。<br>&gt; SJIS のファイルを直接扱う必要性がある場面を、<br>&gt; 具体的に教えていただけますか・・・？ (^^;<br>いろいろありますが、<br>1. システム外字として、IBMの外字ではなく、NECの外字を使用しなければならないファイル。<br>2. CP1252等のSJIS外のコードが入り混じったファイル。<br>ｓjis部分だけの修正でしたのでそのままのコードが書き戻せればOKでした。<br>3. exeファイル。<br>すでにソースが無い状態で、メッセージだけを書き換えなければならない状態で。<br>4. EBCDIC文字が混じったファイル。<br>汎用機とのインターフェース用のファイルでありました。<br><br>以上のような状況で重宝させていただきました。<br>ほぼ過去とのしがらみなのですが。<br>これからは、UTF-8等に移行等でこういった状況は減るとは思います。<br><br>読み込んで、書き込むだけで内容が変更されるのは気持ちが悪いです。<br>Unicode版でもバイナリの保存ができればいいのですが。</div></section>
+    <ul><li><section><h1 id=5043>
+    <span class="no">[5043]</span>
+    <a class="thread-title" href="#5043">Re7: エディタ部分テキストの文字コード管理について</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-09-16T13:15:15">2007年09月16日 13:15</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; 1. システム外字として、IBMの外字ではなく、NECの外字を使用しなければならないファイル。<br>&gt; 2. CP1252等のSJIS外のコードが入り混じったファイル。<br>&gt; ｓjis部分だけの修正でしたのでそのままのコードが書き戻せればOKでした。<br>&gt; 3. exeファイル。<br>&gt; すでにソースが無い状態で、メッセージだけを書き換えなければならない状態で。<br>&gt; 4. EBCDIC文字が混じったファイル。<br>&gt; 汎用機とのインターフェース用のファイルでありました。<br><br>テキストを書けるバイナリエディタ「Thebe」を<br>お使い頂ければ、<br>恐らくその要件は満たされると思います・・・。<br>いかがでしょうか？<br><br><a href=http://panathenaia.halfmoon.jp/thebe/ target=_top><nobr>http://<wbr>panathen<wbr>aia.<wbr>halfmoon<wbr>.<wbr>jp/<wbr>thebe/<wbr></nobr></a><br><br>それに、どうもかなりの少数派の意見のようです。<br>その辺のことは・・・ちょっと微妙な状態です。<br></div></section>
+    </li><li><section><h1 id=5044>
+    <span class="no">[5044]</span>
+    <a class="thread-title" href="#5044">Re7: エディタ部分テキストの文字コード管理について</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-09-16T13:37:21">2007年09月16日 13:37</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; &gt; ちょっと個人的にアンケートさせて下さい。<br>&gt; &gt; SJIS のファイルを直接扱う必要性がある場面を、<br>&gt; &gt; 具体的に教えていただけますか・・・？ (^^;<br>&gt; いろいろありますが、<br>&gt; 1. システム外字として、IBMの外字ではなく、NECの外字を使用しなければならないファイル。<br>&gt; 2. CP1252等のSJIS外のコードが入り混じったファイル。<br>&gt; ｓjis部分だけの修正でしたのでそのままのコードが書き戻せればOKでした。<br>&gt; 3. exeファイル。<br>&gt; すでにソースが無い状態で、メッセージだけを書き換えなければならない状態で。<br>&gt; 4. EBCDIC文字が混じったファイル。<br>&gt; 汎用機とのインターフェース用のファイルでありました。<br><br>なるほど、そういった使い方もあるのですね。盲点でした。<br>貴重な情報をありがとうございます。<br>内部コードのwchar_t化の影響として、動作パフォーマンス以外に失うものは無い、<br>と自分は思いこんでいましたが、たしかにこれは重要なリスクです。<br><br>ただ、自分のビジョンを述べさせていただきますと、<br>wchar_t管理にしてしまうことによる、開発サイドへの悪影響が生じるのであれば、<br>今すぐにでも作業方針を見直そうと考えていましたが、<br>逆に、(快適なANSI版を望む)ユーザの方々には、申し訳ありませんが、<br>開発サイドが安定するまで、少しの間お待ちいただきたいと考えている次第です。<br><br>UNICODE化したばかりの、サクラエディタでは、<br>それに付随するANSI版には、Uchiさんがおっしゃるような不具合(恐縮ですが、その時点での仕様とも言えます)が生じるはずです。<br>当然、そのような動作の差が生まれたとしたら、互換性を考え、現行のANSI版サクラエディタも公開したままにしておき、<br>ユーザがどちらを使うか選べる状態にしておきます (、、よね？＞げんたさん、ラスティブさん)。<br><br>実装上の話になってしまい恐縮ですが、<br>&gt;&gt;dev:5037に書きました通り、内部wchar_t化した後の、再度のchar対応は<br>可能ではあります。<br>要望があるのであれば、先のことになってしまうと思いますが、<br>その作業を行い、新しいバージョンのサクラエディタでも<br>Uchiさんのおっしゃるような機能(つまり、現行のANSI版と互換性のある機能)を<br>提供できると思います。<br><br>ただ、数の暴力ととられるかもしれませんが、<br>時代を考えると、UNICODE版を主ターゲットとした開発がメインとなり、<br>ANSI版への細かい要望がなかなか反映されない、という状況が予感されるのも事実です。<br><br>そのときは、現在、Uchiさんが<br>現行のサクラエディタをメイン(？)に使い、モカさんのUNICODE版を2ndエディタとして使っていますように、<br>UNICODE版開発が主流になってしまった(場合の)未来には、<br>そのときから見れば古い(2007年現在の)ANSI版サクラエディタをメインに使っていただき、<br>新しいUNICODE版サクラエディタを2ndエディタとして使っていただくという選択肢を<br>提案させていただきたいと思うのですが、どうでしょうか。<br><br>と、書いてる間に<br>ラスティブさんからも「Thebe」というソフトがご紹介されていますね。<br>残念ですが、そういった別ソフトを使っていただく、<br>というのも選択肢としてお考えいただきたいです。<br><br>否定的な返答になってしまい、申し訳なく思っています。<br>ただ、Uchiさんがおっしゃるようなリスクがあることは念頭に置いておきます。<br>貴重なご意見ありがとうございました。</div></section>
+    <ul><li><section><h1 id=5045>
+    <span class="no">[5045]</span>
+    <a class="thread-title" href="#5045">Re8: エディタ部分テキストの文字コード管理について</a>
+    <span class="author">ラスティブ(代弁モード)</span>
+    <time datetime="2007-09-17T01:01:08">2007年09月17日 01:01</time></h1>
+    <div class="body">振られてしまいました・・・。<br><br>　爆速 kobake さんの作業を滞りなく進められる環境を作り<br>　まず物を完成させていただいた後、<br>　どーしても必要があるところは、パッチを取り直す。<br>　その後、状況を見計らって ANSI 版は開発終了？　まぁ適当に。<br><br>こういった動きが強まっていますので、<br>爆速で仕上げにかかることが求められているようです（^^;<br><br>開発陣はこんな感じです。<br><br>以上です。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=5038>
+    <span class="no">[5038]</span>
+    <a class="thread-title" href="#5038">(続き) Re3: エディタ部分テキストの文字コード管理について</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-09-15T13:14:04">2007年09月15日 13:14</time></h1>
+    <div class="body">(上コメントからの続き)<br><br>▼ げんたさん(5034)<br>&gt; もちろんTCHARを使っておくと後で変更を簡単に両方へ入れられる..というメリットがないほど手が入っていますかね...文字コードの特性に関わらないところ L""の代わりに_T("")と書いたり wchar_tの代わりにTCHARと書くだけで済む部分はそうしておいた方が良いとは思います．<br><br>ちょっと今の時点ではwchar_t決め打ちでコーディングしてしまった箇所が多い状態ではあります。<br>ただ、これも「まずは動かすため」の暫定的に採った手段なので<br>皆様のご意見をお聞きした上で、今後のソースコード整理の方針を考えていきたいです。<br><br>エディタ関連のテキスト処理部分で L"" となってしまってる部分を<br>単純に _T("") と書くことは、今の時点ではできませんが、<br>代わりに、_T2("") のような書き方をするようにしておきます。(「_T2」という名前は仮です)<br><br>  (今の時点でできること)<br>  #define _T2 LTEXT //LTEXTはリテラルを強制的にL扱いにする、自作のマクロです<br><br>  (今後、管理コードがcharもサポートするようになったら、_T2の定義を変更)<br>  #define _T2 _T<br> </div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

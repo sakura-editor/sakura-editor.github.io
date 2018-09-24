@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>矩形選択時に選択範囲の全置換ができない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5024</span>
+    <a class="thread-title" href="5024.html#5024">矩形選択時に選択範囲の全置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5030</span>
+    <a class="thread-title" href="5024.html#5030">RE: 矩形選択時に選択範囲の全置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5046</span>
+    <a class="thread-title" href="5024.html#5046">Re2: 矩形選択時に選択範囲の全置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5047</span>
+    <a class="thread-title" href="5024.html#5047">Re3: 矩形選択時に選択範囲の全置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5048</span>
+    <a class="thread-title" href="5024.html#5048">Re4: 矩形選択時に選択範囲の全置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5049</span>
+    <a class="thread-title" href="5024.html#5049">Re5: 矩形選択時に選択範囲の全置換ができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5050</span>
+    <a class="thread-title" href="5024.html#5050">Re6: 矩形選択時に選択範囲の全置換ができない</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5024>
+    <span class="no">[5024]</span>
+    <a class="thread-title" href="#5024">矩形選択時に選択範囲の全置換ができない</a>
+    <span class="author">神楽</span>
+    <time datetime="2007-09-15T00:46:26">2007年09月15日 00:46</time></h1>
+    <div class="body">Ver.5.17.201で確認しました</div></section>
+    <ul><li><section><h1 id=5030>
+    <span class="no">[5030]</span>
+    <a class="thread-title" href="#5030">RE: 矩形選択時に選択範囲の全置換ができない</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-15T09:38:20">2007年09月15日 09:38</time></h1>
+    <div class="body">1.5.17.201, 206で試しましたが，普通にできるように見えますけど...<br></div></section>
+    <ul><li><section><h1 id=5046>
+    <span class="no">[5046]</span>
+    <a class="thread-title" href="#5046">Re2: 矩形選択時に選択範囲の全置換ができない</a>
+    <span class="author">神楽</span>
+    <time datetime="2007-09-20T07:27:24">2007年09月20日 07:27</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 1.5.17.201, 206で試しましたが，普通にできるように見えますけど...<br>発生条件が未確定で申し訳ありません。<br>どうも下から右上に向かって矩形選択した際に選択範囲内の全置換ができないようです。<br>詳細はまたのちほど。</div></section>
+    <ul><li><section><h1 id=5047>
+    <span class="no">[5047]</span>
+    <a class="thread-title" href="#5047">Re3: 矩形選択時に選択範囲の全置換ができない</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-20T08:42:43">2007年09月20日 08:42</time></h1>
+    <div class="body">&gt;どうも下から右上に向かって矩形選択した際に選択範囲内の全置換ができないようです。<br>うわー，ありがち....<br>確かに再現しました．置換数0個と言われますね．<br><br>「コンピュータは、むずかしすぎて使えない！」(アラン・クーパー)という本に出てきた事例を思い出しました．<br></div></section>
+    <ul><li><section><h1 id=5048>
+    <span class="no">[5048]</span>
+    <a class="thread-title" href="#5048">Re4: 矩形選択時に選択範囲の全置換ができない</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-21T00:14:46">2007年09月21日 00:14</time></h1>
+    <div class="body">&gt;&gt;どうも下から右上に向かって矩形選択した際に選択範囲内の全置換ができないようです。<br>&gt;確かに再現しました．置換数0個と言われますね．<br>修正パッチ作成しました．<br>patches 1798850<br></div></section>
+    <ul><li><section><h1 id=5049>
+    <span class="no">[5049]</span>
+    <a class="thread-title" href="#5049">Re5: 矩形選択時に選択範囲の全置換ができない</a>
+    <span class="author">神楽</span>
+    <time datetime="2007-09-21T08:08:58">2007年09月21日 08:08</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;&gt;どうも下から右上に向かって矩形選択した際に選択範囲内の全置換ができないようです。<br>&gt; &gt;確かに再現しました．置換数0個と言われますね．<br>&gt; 修正パッチ作成しました．<br>&gt; patches 1798850<br>いまさらな報告ですが上から左下への矩形選択でも同じ現象が発生しますね。<br>一応ご報告まで。</div></section>
+    <ul><li><section><h1 id=5050>
+    <span class="no">[5050]</span>
+    <a class="thread-title" href="#5050">Re6: 矩形選択時に選択範囲の全置換ができない</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-21T08:55:56">2007年09月21日 08:55</time></h1>
+    <div class="body">&gt;いまさらな報告ですが上から左下への矩形選択でも同じ現象が発生しますね。<br>はい．それも含めて直ってます．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

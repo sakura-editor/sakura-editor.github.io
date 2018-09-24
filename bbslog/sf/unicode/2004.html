@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>選択範囲の半透明で太線指定のときのタブ文字 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2004</span>
+    <a class="thread-title" href="2004.html#2004">選択範囲の半透明で太線指定のときのタブ文字</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2005</span>
+    <a class="thread-title" href="2004.html#2005">Re: 選択範囲の半透明で太線指定のときのタブ文字</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2006</span>
+    <a class="thread-title" href="2004.html#2006">Re2: 選択範囲の半透明で太線指定のときのタブ文字</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2004>
+    <span class="no">[2004]</span>
+    <a class="thread-title" href="#2004">選択範囲の半透明で太線指定のときのタブ文字</a>
+    <span class="author">もか</span>
+    <time datetime="2013-06-30T00:06:19">2013年06月30日 00:06</time></h1>
+    <div class="body">選択範囲の半透明で選択範囲が太線指定のとき、タブ文字だけ太くなります。<br>下線指定はテキスト等と同じように無視されるようです。<br></div></section>
+    <ul><li><section><h1 id=2005>
+    <span class="no">[2005]</span>
+    <a class="thread-title" href="#2005">Re: 選択範囲の半透明で太線指定のときのタブ文字</a>
+    <span class="author">もか</span>
+    <time datetime="2013-06-30T00:10:12">2013年06月30日 00:10</time></h1>
+    <div class="body">選択範囲が半透明のときに、太線・下線を無視するのは<br>特に深い意味があってそうしたわけではないので、<br>逆に通常文字類も太くなるべきだというなら、そういう風にしてもいいです。<br></div></section>
+    <ul><li><section><h1 id=2006>
+    <span class="no">[2006]</span>
+    <a class="thread-title" href="#2006">Re2: 選択範囲の半透明で太線指定のときのタブ文字</a>
+    <span class="author">もか</span>
+    <time datetime="2013-06-30T02:10:15">2013年06月30日 02:10</time></h1>
+    <div class="body">タブだけではなくて、スペース類も該当していました。<br>プロポーショナル+おまけでは修正されていたので長いこと気が付きませんでしたが、<br>選択範囲の色分け実装時からおかしかったようです。<br>半透明のときは「コメント」「文字列」「キーワード」等の<br>普通の色分け情報を見るように修正したパッチをアップしました。<br>https://sourceforge.net/p/sakura-editor/patchunicode/631/<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

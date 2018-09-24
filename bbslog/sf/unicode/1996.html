@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>プリンタ切り替えの不調 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1996</span>
+    <a class="thread-title" href="1996.html#1996">プリンタ切り替えの不調</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1997</span>
+    <a class="thread-title" href="1996.html#1997">Re: プリンタ切り替えの不調</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1998</span>
+    <a class="thread-title" href="1996.html#1998">Re2: プリンタ切り替えの不調</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1999</span>
+    <a class="thread-title" href="1996.html#1999">Re:プリンタ切り替えの不調</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2000</span>
+    <a class="thread-title" href="1996.html#2000">Re2:プリンタ切り替えの不調</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2001</span>
+    <a class="thread-title" href="1996.html#2001">Re3:プリンタ切り替えの不調</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2003</span>
+    <a class="thread-title" href="1996.html#2003">Re4:プリンタ切り替えの不調</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1996>
+    <span class="no">[1996]</span>
+    <a class="thread-title" href="#1996">プリンタ切り替えの不調</a>
+    <span class="author">syat</span>
+    <time datetime="2013-06-22T15:07:52">2013年06月22日 15:07</time></h1>
+    <div class="body">印刷プレビューのプリンタボタンを押して、プリンタを切り替えてOKを押すとクラッシュすることがあります。何度か同じ操作をしていると印刷プレビューを開いただけで落ちるようになります。<br>バイナリはSVNの最新でビルドしたバイナリ、OSはWindows8です。<br>OSのせいかな、とも思いましたが、1.6.7.0 や 2.0.8.0 だと何度切り替えても落ちません。<br><br></div></section>
+    <ul><li><section><h1 id=1997>
+    <span class="no">[1997]</span>
+    <a class="thread-title" href="#1997">Re: プリンタ切り替えの不調</a>
+    <span class="author">もか</span>
+    <time datetime="2013-06-22T17:16:57">2013年06月22日 17:16</time></h1>
+    <div class="body">最近、プリンタ設定の適用周りをいじったのでそのせいだと思います。<br>調査してみます。<br></div></section>
+    <ul><li><section><h1 id=1998>
+    <span class="no">[1998]</span>
+    <a class="thread-title" href="#1998">Re2: プリンタ切り替えの不調</a>
+    <span class="author">もか</span>
+    <time datetime="2013-06-22T20:51:00">2013年06月22日 20:51</time></h1>
+    <div class="body">見つかった問題点：<br>1. ロック機構が働いていない<br>OnPrintの中でプリンタ設定が変わったのを検出すると、<br>印刷中にOnChangeSetting/OnChangePrintSettingが実行されてしまう。<br>2. プリンタ選択画面の結果を適用していない<br>プロセス固有の設定のキャッシュのほうだけ更新されてその後の<br>SendMessage経由のOnChangeSettingで元の設定に書き戻されていた<br><br>というのは見つかりましたが、落ちるのの再現・原因の予想はできませんでした。<br>https://sourceforge.net/p/sakura-editor/patchunicode/583/<br>にパッチを添付しました。<br></div></section>
+    </li></ul></li><li><section><h1 id=1999>
+    <span class="no">[1999]</span>
+    <a class="thread-title" href="#1999">Re:プリンタ切り替えの不調</a>
+    <span class="author">petit</span>
+    <time datetime="2013-06-23T01:39:50">2013年06月23日 01:39</time></h1>
+    <div class="body">▼ syatさん<br>クラッシュ時にミニダンプが出力されてませんか？（CProcess::WriteDump()）<br>それを VS にかければクラッシュ位置・スタック情報が取れると思います。</div></section>
+    <ul><li><section><h1 id=2000>
+    <span class="no">[2000]</span>
+    <a class="thread-title" href="#2000">Re2:プリンタ切り替えの不調</a>
+    <span class="author">syat</span>
+    <time datetime="2013-06-23T12:09:52">2013年06月23日 12:09</time></h1>
+    <div class="body">もかさんのパッチで改善しました。<br><br>ただ再現しないとのことなので、一応ダンプを上げます。<br><a href=http://ux.getuploader.com/sakura_editor/download/81/sakura.dmp.20130623.zip target=_top><nobr>http://<wbr>ux.<wbr>getuploa<wbr>der.<wbr>com/<wbr>sakura_e<wbr>ditor/<wbr>download<wbr>/<wbr>81/<wbr>sakura.<wbr>dmp.<wbr>20130623<wbr>.<wbr>zip</nobr></a><br><br>（最近のOSだとダンプが C:\Users\○○\AppData\Local\CrashDumps にできるんですねー。気づかずiniのフォルダをずっと探してました^^）</div></section>
+    <ul><li><section><h1 id=2001>
+    <span class="no">[2001]</span>
+    <a class="thread-title" href="#2001">Re3:プリンタ切り替えの不調</a>
+    <span class="author">もか</span>
+    <time datetime="2013-06-23T14:58:43">2013年06月23日 14:58</time></h1>
+    <div class="body">memcpyでアクセス違反っぽいのはわかりましたが、<br>miniDumpだけではmapファイルかpdbがないと厳しいです。<br>スタックトレースの情報(STACK_TEXT)もCProcess.cppのMiniDump作成のところを指してるみたいで、<br>落ちたところのスタックはよくわかりませんでした。<br>CProcessのものではなく、Windowsの機能の方でミニダンプをとらないと、<br>ひょっとするとスタックが再現できないのかも。<br></div></section>
+    <ul><li><section><h1 id=2003>
+    <span class="no">[2003]</span>
+    <a class="thread-title" href="#2003">Re4:プリンタ切り替えの不調</a>
+    <span class="author">syat</span>
+    <time datetime="2013-06-29T01:50:28">2013年06月29日 01:50</time></h1>
+    <div class="body">遅くなりましたが、もう一度ダンプとpdbを取りました。<br>http://ux.getuploader.com/sakura_editor/download/82/sakura.exe.20130629.zip<br><br><br>rpcrt4.dllの中で落ちているようです。どうもプリンタドライバ側のような。。よくわかりません。<br>もかさんのパッチは有効なのでぜひコミットしていただきたいです。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

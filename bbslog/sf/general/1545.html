@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>上書きモードで日本語入力のキーマクロを記録できない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1545</span>
+    <a class="thread-title" href="1545.html#1545">上書きモードで日本語入力のキーマクロを記録できない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1546</span>
+    <a class="thread-title" href="1545.html#1546">同じキー入力でも記録されるマクロは違う？</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1553</span>
+    <a class="thread-title" href="1545.html#1553">Re:上書きモードで日本語入力のキーマクロを記録できない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1679</span>
+    <a class="thread-title" href="1545.html#1679">Re2:上書きモードで日本語入力のキーマクロを記録できない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1545>
+    <span class="no">[1545]</span>
+    <a class="thread-title" href="#1545">上書きモードで日本語入力のキーマクロを記録できない</a>
+    <span class="author">こおり</span>
+    <time datetime="2002-04-08T04:22:29">2002年04月08日 04:22</time></h1>
+    <div class="body">はじめまして。<br>キーマクロが手軽で非常に便利なので<br>サクラエディタをよく使わせて頂いています。<br><br>で、表題の件なのですが<br>上書きモードで日本語入力のキーマクロを記録しようとすると<br>マクロファイルには<br><br>CMacro::GetFuncInfoByID()に、バグがあるのでエラーが出ましたぁぁぁぁぁぁあああ<br><br>と、記録され、それを実行しようとすると<br><br>CMacro::GetFuncInfoByIDは、存在しない関数です。詳しくはヘルプをご覧ください。<br>マクロの実行を終了します。<br><br>というダイアログが出てしまいました。<br>環境は Windows 2000 + SakuraEditor 2002-04-01です。<br><br>普段は挿入モードしか使わないので、<br>とくに不便なことはないのですが、とりあえず報告だけ。</div></section>
+    <ul><li><section><h1 id=1546>
+    <span class="no">[1546]</span>
+    <a class="thread-title" href="#1546">同じキー入力でも記録されるマクロは違う？</a>
+    <span class="author">こおり</span>
+    <time datetime="2002-04-08T04:49:27">2002年04月08日 04:49</time></h1>
+    <div class="body">さっきまで、上書きモードのことをすっかり忘れて<br>「S_Charが二つ以上並んでいたらS_InsTextにまとめる関数」<br>なんてものを作っていました。<br><br>で、上書きモード時にこれを行うと<br>マクロの動作を変えてしまう事に気づいてから、<br>「あれ？S_InsTextは上書きモードで挿入を行うのに、<br>日本語の上書きはどうやって記録されているんだ？」<br>と疑問に思って試してみたら、<br>あのエラーになってしまいました。<br><br>ちょっとソースを見てみたのですが、<br>上書きモード時と挿入モード時では<br>日本語入力のマクロ関数が違っているみたいですね。<br><br>同じキー入力で違うマクロが記録されるのは<br>ちょっと違和感があったのですが、<br>サクラエディタとしてはそういう仕様なのでしょうか？<br><br>同じキー入力で違うマクロが記録されるのは変だ！<br>ということではなく、それが仕様なら<br>「S_Charが二つ以上並んでいたらS_InsTextにまとめる関数」<br>を挿入モード時だけ使うのもいいかな～<br>と、思ったので....。</div></section>
+    </li><li><section><h1 id=1553>
+    <span class="no">[1553]</span>
+    <a class="thread-title" href="#1553">Re:上書きモードで日本語入力のキーマクロを記録できない</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-08T15:34:19">2002年04月08日 15:34</time></h1>
+    <div class="body">▼ こおりさん<br>&gt; はじめまして。<br>&gt; キーマクロが手軽で非常に便利なので<br>&gt; サクラエディタをよく使わせて頂いています。<br>&gt; <br>&gt; で、表題の件なのですが<br>&gt; 上書きモードで日本語入力のキーマクロを記録しようとすると<br>&gt; マクロファイルには<br>&gt; <br>&gt; CMacro::GetFuncInfoByID()に、バグがあるのでエラーが出ましたぁぁぁぁぁぁあああ<br>&gt; <br>&gt; と、記録され、それを実行しようとすると<br>&gt; <br>&gt; CMacro::GetFuncInfoByIDは、存在しない関数です。詳しくはヘルプをご覧ください。<br>&gt; マクロの実行を終了します。<br>&gt; <br>&gt; というダイアログが出てしまいました。<br>&gt; 環境は Windows 2000 + SakuraEditor 2002-04-01です。<br>&gt; <br>&gt; 普段は挿入モードしか使わないので、<br>&gt; とくに不便なことはないのですが、とりあえず報告だけ。<br><br>あらま。確かに。確認しました。Thanx!</div></section>
+    <ul><li><section><h1 id=1679>
+    <span class="no">[1679]</span>
+    <a class="thread-title" href="#1679">Re2:上書きモードで日本語入力のキーマクロを記録できない</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-18T17:18:15">2002年04月18日 17:18</time></h1>
+    <div class="body"><br>修正しましたっ。遅くなって申し訳ない！<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

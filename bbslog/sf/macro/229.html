@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Count.ppaをjsで書き換えてみました | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">229</span>
+    <a class="thread-title" href="229.html#229">Count.ppaをjsで書き換えてみました</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=229>
+    <span class="no">[229]</span>
+    <a class="thread-title" href="#229">Count.ppaをjsで書き換えてみました</a>
+    <span class="author">ひよこ枕</span>
+    <time datetime="2006-01-08T21:21:33">2006年01月08日 21:21</time></h1>
+    <div class="body">はじめまして。<br>最近マクロに手を出し始めました。<br><br>私の環境のせいなのかどうかは分かりませんが、数の多い文字数をCount.ppaでカウントしようとすると時間がかかってしまいます。<br>（例えばCount.ppaを開いて全選択して実行すると、10秒くらいCPU全開になります）<br>そこで、JScriptで書き直してみたら速くなったので、そのソースを投稿してみます。<br><br>/***** ここからソース *****/<br>var CR = 0xd;<br>var LF = 0xa;<br><br>var oShell = new ActiveXObject("WScript.Shell");<br>var str,msg;<br>var c,prec=0;<br>var i;<br>var iSize  = 0;<br>var i1Byte = 0;<br>var i2Byte = 0;<br>var iCRLF  = 0;<br>var iCR    = 0;<br>var iLF    = 0;<br><br>str = Editor.GetSelectedString(0);<br>//選択文字のサイズ（半角1、全角2でカウント）、半角文字数、全角文字数、改行数をカウント<br>for(i = 0; i &lt; str.length; ++i) {<br>&#9;c = str.charCodeAt(i);<br>&#9;//半角文字にあたるコードの場合、1バイトとしてカウント。<br>&#9;if ( (c &gt;= 0x0 &amp;&amp; c &lt;= 0x7d) || (c == 0xf8f0) || (c &gt;= 0xff61 &amp;&amp; c &lt;= 0xff9f) || (c &gt;= 0xf8f1 &amp;&amp; c &lt; 0xf8f4)) {<br>&#9;&#9;//1Byte文字<br>&#9;&#9;iSize  += 1;<br>&#9;&#9;//改行コード解析<br>&#9;&#9;if       (c == CR) {<br>&#9;&#9;&#9;iCR += 1;<br>&#9;&#9;} else if (c == LF) {<br>&#9;&#9;&#9;//前の文字がCRだったら<br>&#9;&#9;&#9;if (prec == CR) {<br>&#9;&#9;&#9;&#9;iCR -= 1;&#9;//CR数を戻して<br>&#9;&#9;&#9;&#9;iCRLF += 1;&#9;//CRLF数をインクリメント<br>&#9;&#9;&#9;} else {<br>&#9;&#9;&#9;&#9;iLF += 1;<br>&#9;&#9;&#9;}<br>&#9;&#9;} else {<br>&#9;&#9;&#9;i1Byte += 1;<br>&#9;&#9;}<br>&#9;} else {<br>&#9;&#9;//2Byte文字<br>&#9;&#9;iSize  += 2;<br>&#9;&#9;i2Byte += 1;<br>&#9;}<br>&#9;prec = c;//CRLF検査用に保存<br>&#9;//oShell.Popup("第" + i + "文字：" + c , 0 , "マクロ実行の確認",1);<br>}<br><br>//出力文字列作成<br>msg  = "";<br>msg += "サイズ　：" + iSize + "バイト\n";<br>msg += "半角文字：" + i1Byte + "文字\n" ;<br>msg += "全角文字：" + i2Byte + "文字\n" ;<br>//改行数は0の場合出さないようにしておく<br>if (iCR   &gt; 0) msg += "CR改行　：" + iCR    + "文字\n" ;<br>if (iLF   &gt; 0) msg += "LF改行　：" + iLF    + "文字\n" ;<br>if (iCRLF &gt; 0) msg += "CRLF改行：" + iCRLF  + "文字" ;<br>oShell.Popup(msg,0,"文字数カウント結果",0);<br><br>/***** ここまでソース *****/<br><br>ロジックはだいたい同じにしたつもりなんですけど、どこで速度に違いが出てるんでしょう？</div></section>
+    </li></ul></body></html>

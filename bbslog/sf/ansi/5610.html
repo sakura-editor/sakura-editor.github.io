@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>プロファイラ very sleepy | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5610</span>
+    <a class="thread-title" href="5610.html#5610">プロファイラ very sleepy</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5613</span>
+    <a class="thread-title" href="5610.html#5613">Re:プロファイラ very sleepy</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5610>
+    <span class="no">[5610]</span>
+    <a class="thread-title" href="#5610">プロファイラ very sleepy</a>
+    <span class="author">げんた</span>
+    <time datetime="2009-08-14T22:15:42">2009年08月14日 22:15</time></h1>
+    <div class="body">「テキスト折り返し方法の追加（その2）」の評価のためにフリーのプロファイラが無いかと見ていたら，very sleepy というツールを見つけました．<br><br>http://www.codersnotes.com/sleepy/<br><br>sleepyというのが本家で，その派生版らしいです．<br><br>シンボル情報が付いたバイナリを実行してから，very sleepyを起動し，タスク一覧で調査対象スレッドを選択します．<br>OKを押してから評価したい操作を行い，その後プロファイラを停止すると，実行された関数の一覧が表示されます．<br><br>----<br>「テキスト折り返し方法の追加（その2）」を適用したバイナリで最終行に置いた最長行(500byteくらい)をBSリピートで削除する操作を行ってみました．<br><br>CEditView::Command_DELETE_BACK の実行 51.834% に対して<br>* CEditView::DeleteDataの実行が 39.339% (DELETE_BACKの75.9%)<br>* CLayoutMgr::RelaceData_CLayoutMgr() が17.653% (DELETE_BACKの34.1%)<br>* CalculateTextWidth()が16.709% (DELETE_BACKの32.2%)<br>でした．<br><br>長いファイルのうちの最長行をBS連打でたくさん削除するという条件自体ものすごく発生するとも思えないですから，これくらいなら気にしなくてもいいですかね．<br><br>特異なパターンとして，上から長い順に並べた行に対して全置換を行うことで新たな最長行が置換対象行の次へ移っていく場合も試しましたが，こっちの方がCalculateTextWidthの占める割合は低いみたいです．<br></div></section>
+    <ul><li><section><h1 id=5613>
+    <span class="no">[5613]</span>
+    <a class="thread-title" href="#5613">Re:プロファイラ very sleepy</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-08-16T00:43:17">2009年08月16日 00:43</time></h1>
+    <div class="body">▼ げんたさん<br>やはりCalculateTextWidth()の負荷が高いですね。低スペックなPCでは辛いかも (^^;<br><br>まぁ「折り返さない」自体は追加機能ですし使用しないという選択も可能ですので、ある程度のスペックを要求することになっても良いかなぁと個人的には思います。<br><br>ではでは。</div></section>
+    </li></ul></li></ul></body></html>

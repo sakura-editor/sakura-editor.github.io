@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>manifest ファイルについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3139</span>
+    <a class="thread-title" href="3139.html#3139">manifest ファイルについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3141</span>
+    <a class="thread-title" href="3139.html#3141">Re:manifest ファイルについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3144</span>
+    <a class="thread-title" href="3139.html#3144">Re2:manifest ファイルについて</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3139>
+    <span class="no">[3139]</span>
+    <a class="thread-title" href="#3139">manifest ファイルについて</a>
+    <span class="author">KEITA</span>
+    <time datetime="2003-09-14T18:48:26">2003年09月14日 18:48</time></h1>
+    <div class="body">sakura.exe.manifest ファイルについての情報ですが、<br>&lt;3109&gt;で書き込みました、64bit Windows(IA64版)上での<br>64bit版サクラの起動問題については、結局manifestフ<br>ァイルをインストールフォルダから削除すれば、問題は<br>なくなることがわかりました。<br><br>manifestファイルを置いた状態で起動させようとするならば、<br><br>sakura.exe.manifest ファイル内の<br>            processorArchitecture="X86"<br>の設定を<br>            processorArchitecture="ia64"<br>に変更すれば問題なく動作することがわかりました。<br>たぶんAMD64版は、ここを"amd64"か"AMD64"にすれば<br>良いのだろうと予想されます。<br>これはSide by Sideの資料などにも書かれているので、<br>当然だと思われる方もいらっしゃるかもしれませんが。<br><br>しかし、ここで注意しなければならないのは、気を効か<br>し過ぎて<br>            type="win32"<br>を<br>            type="win64"<br>に変更するとNGになってしまうことです。ここで結構<br>悩んでしまいました。なんで？と言いたくなってしまう<br>のですが．．．<br><br>一応以下２つのWindows共にそのようになっています。<br>Windows Server2003(64bit) の日本語版<br>Windows XP 64bit Edition(English/日本語対応)<br><br>ただし、64bitWindowsではWindowスタイルは、なぜか<br>現時点ではクラシックスタイルしか対応されていません。<br>（やっぱり仕様に問題あったのでしょうか？）<br>チェックの色も黒でしか表示されません。<br><br>ところで、sakura.exe.manifest をインストールフォ<br>ルダに入れた経緯というのは、DLLの干渉の問題から<br>なのでしょうか？</div></section>
+    <ul><li><section><h1 id=3141>
+    <span class="no">[3141]</span>
+    <a class="thread-title" href="#3141">Re:manifest ファイルについて</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-15T12:58:07">2003年09月15日 12:58</time></h1>
+    <div class="body">▼ KEITAさん<br>&gt; type="win64"に変更するとNGになってしまう <br><br>sakura_rc.rcのVERSIONINFOの問題かなあ。<br><br>VS_VERSION_INFO VERSIONINFO<br>...<br> FILEOS 0x40004L<br>...<br><br>etc_uty.cppにGetSystemResourcesというwin32依存コードがあったかも。とりあえず "32|ver|Ver|VER|OS" で正規表現検索だな。</div></section>
+    <ul><li><section><h1 id=3144>
+    <span class="no">[3144]</span>
+    <a class="thread-title" href="#3144">Re2:manifest ファイルについて</a>
+    <span class="author">KEITA</span>
+    <time datetime="2003-09-16T18:42:53">2003年09月16日 18:42</time></h1>
+    <div class="body">他のwin64アプリを試したのですが、同じ現象ですので、大した<br>意味は無いのかもしれません。<br><br>そもそもリソースコンパイラ自体も64bit版でも同じものを使う<br>ようなので、とりあえずwin32でチェックをかけてしまっている<br>ということなのかもしれませんね。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

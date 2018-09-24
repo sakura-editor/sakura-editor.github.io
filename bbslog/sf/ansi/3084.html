@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>64bit版コンパイル/リンク/テスト報告 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3084</span>
+    <a class="thread-title" href="3084.html#3084">64bit版コンパイル/リンク/テスト報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3085</span>
+    <a class="thread-title" href="3084.html#3085">Re:64bit版コンパイル/リンク/テスト報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3087</span>
+    <a class="thread-title" href="3084.html#3087">Re2:64bit版コンパイル/リンク/テスト報告</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3089</span>
+    <a class="thread-title" href="3084.html#3089">Re2:64bit版コンパイル/リンク/テスト報告</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3090</span>
+    <a class="thread-title" href="3084.html#3090">Re2:64bit版コンパイル/リンク/テスト報告 &lt;補足＞</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3096</span>
+    <a class="thread-title" href="3084.html#3096">Re3:64bit版</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3100</span>
+    <a class="thread-title" href="3084.html#3100">Re4:64bit版</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3104</span>
+    <a class="thread-title" href="3084.html#3104">Re5:64bit版</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3107</span>
+    <a class="thread-title" href="3084.html#3107">Re6:64bit版 見事に動きました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3109</span>
+    <a class="thread-title" href="3084.html#3109">Re6:64bit版 見事に動きました＜一部訂正＞</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3084>
+    <span class="no">[3084]</span>
+    <a class="thread-title" href="#3084">64bit版コンパイル/リンク/テスト報告</a>
+    <span class="author">KEITA</span>
+    <time datetime="2003-09-05T18:33:37">2003年09月05日 18:33</time></h1>
+    <div class="body">と書きますと、何なの？　と思われるかもしれませんが、<br>諸事情があり64bitアプリケーションを開発せざるを得ない<br>ことになりまして、ついでにSAKURAもやってみようかと．．．<br><br>せっかくなので、そのときの状況を報告しておきます。<br><br>60ヶ所程"#ifdef _WIN64"で修正を挿入、約350個ほどWarning<br>がでますが．．．IA64,AMD64双方とも無事実行モジュールは<br>できました。<br><br>IA64上にて実行すると、残念ながらCreateFileMappingで<br>エラーで終了するようなので、<br>CShareData.cpp内のCreateFileMappingの第一引数を、<br>なんとなく、いいかげんな修正ですが、<br>0xFFFFFFFF -&gt; 0xFFFFFFFFFFFFFFFF<br>に変更して実行すると、運良く？実行できました。<br>タスクトレイ？にもサクラエディターのアイコンが無事<br>表示されましたが、肝心のエディター画面が表示されない<br>ことと、タスクトレイのアイコンをRBUTTONDOWNしても<br>LBUTTONDOWNしても、その５秒後ぐらいにタスクトレイから<br>消えてしまうという問題があるようです。何が問題そうか<br>わかる人がいらっしゃいましたらお教え下さい。<br><br>結局まともに起動できなかったのですが、ワーニングなども<br>全て取り去って再テストすれば多少は状況が変わるのかも<br>しれませんね。全くダメということも想定されるところの<br>ものでしょうから、まあまあ本気でやれば乗り切れるのか<br>もしれません。<br><br>テキストエディターを64bitアドレッシングにして、どこが<br>良くなるというものでもないかもしれないので、程々な<br>ところでトライは止めようと思いますが．．．<br><br>もし必要でしたら、修正個所やワーニング一覧、修正ソース<br>などもアップロードさせていただきます。と言っても必要な<br>人はいないですよねぇ(^^;<br><br>※名前「けいた」-&gt;「KEITA」に変更します。</div></section>
+    <ul><li><section><h1 id=3085>
+    <span class="no">[3085]</span>
+    <a class="thread-title" href="#3085">Re:64bit版コンパイル/リンク/テスト報告</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-06T10:37:38">2003年09月06日 10:37</time></h1>
+    <div class="body">▼ KEITAさん<br>&gt; 0xFFFFFFFF -&gt; 0xFFFFFFFFFFFFFFFF<br>&gt; に変更して実行すると、運良く？実行できました。<br>これはINVALID_HANDLE_VALUEですよ。余分なキャストをするな、定数を埋め込むなって新人に言ってるんですが、守れない輩がいるようです。この前もNULLとINVALID_HANDLE_VALUEを間違える人がいて苦労しました。<br><br>&gt; タスクトレイ？にもサクラエディターのアイコンが無事<br>&gt; 表示されましたが、肝心のエディター画面が表示されない<br>&gt; ことと、タスクトレイのアイコンをRBUTTONDOWNしても<br>&gt; LBUTTONDOWNしても、その５秒後ぐらいにタスクトレイから<br>&gt; 消えてしまうという問題があるようです。<br>p[-1]のようなマイナスの添え字はだめらしいです。UINT_PTRなどの型もご勉強ください。<br><br>Porting Issues Checklist (Kernel-Mode Driver Architecture Windows DDK)<br><a href=http://msdn.microsoft.com/library/en-us/kmarch/hh/kmarch/other_66cn.asp?frame=true target=_top><nobr>http://<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>library/<wbr>en-<wbr>us/<wbr>kmarch/<wbr>hh/<wbr>kmarch/<wbr>other_66<wbr>cn.<wbr>asp?<wbr>frame=<wbr>true</nobr></a><br><br>General Porting Guidelines (64-bit Windows Programming Platform SDK)<br><a href=http://msdn.microsoft.com/library/en-us/win64/win64/general_porting_guidelines.asp?frame=true target=_top><nobr>http://<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>library/<wbr>en-<wbr>us/<wbr>win64/<wbr>win64/<wbr>general_<wbr>porting_<wbr>guidelin<wbr>es.<wbr>asp?<wbr>frame=<wbr>true</nobr></a><br><br>The New Data Types (Kernel-Mode Driver Architecture Windows DDK)<br><a href=http://msdn.microsoft.com/library/en-us/kmarch/hh/kmarch/other_5btz.asp?frame=true target=_top><nobr>http://<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>library/<wbr>en-<wbr>us/<wbr>kmarch/<wbr>hh/<wbr>kmarch/<wbr>other_5b<wbr>tz.<wbr>asp?<wbr>frame=<wbr>true</nobr></a><br><br>&gt; もし必要でしたら、修正個所やワーニング一覧、修正ソース<br>&gt; などもアップロードさせていただきます。と言っても必要な<br>&gt; 人はいないですよねぇ(^^;<br><br>そんなことありませんよ。これから64bit時代が来るんですから。私も互換性の研究をしているので、ぜひとも参考にしたいです。</div></section>
+    <ul><li><section><h1 id=3087>
+    <span class="no">[3087]</span>
+    <a class="thread-title" href="#3087">Re2:64bit版コンパイル/リンク/テスト報告</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-06T12:55:18">2003年09月06日 12:55</time></h1>
+    <div class="body">▼ wmlhqさん<br>&gt; これはINVALID_HANDLE_VALUEですよ。<br>早速直しました．<br><br>以下余談<br><br>&gt;余分なキャストをするな<br>const char*をLPSTRでキャストしてstrcpyするやつとか....<br>CStringの空文字列が化けたりして(汗<br></div></section>
+    </li><li><section><h1 id=3089>
+    <span class="no">[3089]</span>
+    <a class="thread-title" href="#3089">Re2:64bit版コンパイル/リンク/テスト報告</a>
+    <span class="author">KEITA</span>
+    <time datetime="2003-09-06T21:56:47">2003年09月06日 21:56</time></h1>
+    <div class="body">とりあえずですが、<br>e-groupの共有フォルダ : Developer : Source の<br>sakura64_diff_core.lzh でアップロードしておきました。<br><br>8月20日版に対して修正したものだけです。<br>詳細は、sakura_core内の<br>README.TXT<br>DIFFLIST.TXT<br>WARINIG.TXT<br>をご参照下さい。<br><br>※32bit版でも副作用の無い修正をしたつもりです。<br><br>※アドレス幅が倍になっていることもあり、WARNINGは、<br>あえて全て残すようにしました。エラーよりむしろ<br>WARNINGの修正がくせものだろうということで．．．<br>全体像をつかんでいる方々に見ていただければ幸いです。</div></section>
+    </li><li><section><h1 id=3090>
+    <span class="no">[3090]</span>
+    <a class="thread-title" href="#3090">Re2:64bit版コンパイル/リンク/テスト報告 &lt;補足＞</a>
+    <span class="author">KEITA</span>
+    <time datetime="2003-09-06T22:18:12">2003年09月06日 22:18</time></h1>
+    <div class="body">書き忘れました。補足ですが、<br><br>DIFFLIST.TXTをご参照いただければわかりますが、<br>時々空白やTABを削除したり行を削除するような<br>修正が入っています。これは特にAMD64向け版<br>コンパイラのエラーを回避しようとした最小限の<br>修正なのですが、ほんとうの原因、エラーの分岐点<br>は判っていません。<br></div></section>
+    <ul><li><section><h1 id=3096>
+    <span class="no">[3096]</span>
+    <a class="thread-title" href="#3096">Re3:64bit版</a>
+    <span class="author">もか</span>
+    <time datetime="2003-09-07T16:53:20">2003年09月07日 16:53</time></h1>
+    <div class="body">&gt;修正なのですが、ほんとうの原因、エラーの分岐点は判っていません。<br>*オリジナル<br>pSApp = ( CEditApp* )::GetWindowLong( hwnd, GWL_USERDATA );<br>*64Bit版<br>pSApp = ( CEditApp* )::GetWindowLong( hwnd, GWLP_USERDATA );<br>となっていますが、<br>pSApp = ( CEditApp* )::GetWindowLongPtr( hwnd, GWLP_USERDATA );<br>でなくて大丈夫でしょうか？<br>同様に、SetWindowLongPtrも。<br>興味はありますが、実機が無くてテストできていません。<br><br>&gt;肝心のエディター画面が表示されないことと、<br>&gt;タスクトレイのアイコンをRBUTTONDOWNしてもLBUTTONDOWNしても、<br>&gt;その５秒後ぐらいにタスクトレイから消えてしまう<br>という部分はこれで直るかもしれません。<br></div></section>
+    <ul><li><section><h1 id=3100>
+    <span class="no">[3100]</span>
+    <a class="thread-title" href="#3100">Re4:64bit版</a>
+    <span class="author">KEITA</span>
+    <time datetime="2003-09-07T23:53:45">2003年09月07日 23:53</time></h1>
+    <div class="body">アドバイスありがとうございます。<br>早々、いろいろと試してみましたが、<br>GetWindowLongPtr,SetWindowLongPtr に<br>変えても症状は同じでした。<br><br>ちょっと、追っかけてみたのですが、<br>void CEditWnd::CreateToolBar(void)の<br>CreateWindowExでなぜか返ってこないようです。<br><br>まあ、ぼちぼちやって見ます。<br>また何かありましたらご指摘下さい。<br>トライしたいと思います。</div></section>
+    <ul><li><section><h1 id=3104>
+    <span class="no">[3104]</span>
+    <a class="thread-title" href="#3104">Re5:64bit版</a>
+    <span class="author">もか</span>
+    <time datetime="2003-09-09T14:32:15">2003年09月09日 14:32</time></h1>
+    <div class="body">▼ KEITAさん<br>&gt;ちょっと、追っかけてみたのですが、<br>&gt;void CEditWnd::CreateToolBar(void)の<br>&gt;CreateWindowExでなぜか返ってこないようです。<br>さっそく、トライしてもらったようで、ありがとうございます。<br>KEITAさんのソースを元に適当に修正してみました。<br>可能な限り条件コンパイルをやめコードを共有するように書き換えました。<br>MSDN付属のコンパイラを使った実行ファイル(2MB超)は公開してはまずそうなので、<br>ソースの差分をe-Groups/Junkにssrc_2003-09-07win64.zipとしてアップロードしておきます。<br>IA-64機をお持ちでコンパイラがある人は、時間があるときにでも、お試しください。<br><br>以下修正内容<br>・::InitCommonControls() を一回も呼び出していない問題を修正<br>　ツールバーのCreateWindowEx問題がなおるかも。<br>・明示されたキャストでerrorもwarningも出さずに値が失われている場所をある程度修正<br>　把握しきれません。まだあるかも<br>・API/コールバックプロシージャの型修正<br>・64bit版では構造体のサイズ代入を本来のsizeof()の値に変更<br>　サクラでは、Win95/NT救済のために値を決め打ちしていた部分があります。<br>・Set/GetWindowLongPtrと、拡張ウィンドウメモリの修正<br></div></section>
+    <ul><li><section><h1 id=3107>
+    <span class="no">[3107]</span>
+    <a class="thread-title" href="#3107">Re6:64bit版 見事に動きました</a>
+    <span class="author">KEITA</span>
+    <time datetime="2003-09-10T10:07:12">2003年09月10日 10:07</time></h1>
+    <div class="body">早々のパッチあて、ありがとうございます。<br><br>まずは第一報ですが、64bit版サクラエディター見事に<br>動作いたしました。なんとなく感動を覚えました。<br>それから、つくずくオープンソースの凄さを見た感じが<br>します。<br><br>十分なテストは行えていませんが、とりあえずキー<br>マクロの記録保存再生テストはOKのようです。<br>この状況からすると、あとは大きな問題はないのかも<br>しれませんね。<br><br>ひとつ確認ですが、このdiffは、８月２０日版に対する<br>差分ですよね。この差分を当てて、さらに再度、先の書き<br>込みのINVALID_HANDLE_VALUEを指定しなおすと、うまく<br>起動できました。（diff/patch慣れてないもんだから、<br>ちょっと手間取りました。0d0a改行入れたり...）<br><br>IA64上では32bitアプリケーションはソフトエミュレー<br>ションをかけるので若干レスポンスが悪くなるのですが、<br>これでスッキリしそうです。<br><br>AMD64（Opteron/Athlon64)あたりは、十万円強で実機も<br>手に入りそうですから、徐々にテストされる方々も増えて<br>くるかもしれませんね。<br></div></section>
+    </li><li><section><h1 id=3109>
+    <span class="no">[3109]</span>
+    <a class="thread-title" href="#3109">Re6:64bit版 見事に動きました＜一部訂正＞</a>
+    <span class="author">KEITA</span>
+    <time datetime="2003-09-10T16:12:50">2003年09月10日 16:12</time></h1>
+    <div class="body">上の書き込みに訂正です。<br><br>　9/7版が公開されていたのですね。つまり9/7版からの差分ということ<br>だったわけですね。ちょっと回り道していたみたいです。(^^;<br><br>　色々と操作してみましたが、エミュレーションのオーバーヘッドが<br>ないためか大変快適(精神的な問題？)です。<br><br>　それから64bitWindowsとの兼ね合いの問題で、たぶん本体の問題では<br>ないものと思うのですが、<br><br>通常(32bit)のサクラエディターをインストーラーでセットアップ後、<br>64bitのサクラを"Sakura.exe"の名称で起動しようとすると、<br><br>「このアプリケーションの構成が正しくないため、アプリケーションを<br>開始できませんでした。アプリケーションを再度インストールすること<br>により問題解決する場合があります。」<br><br>というメッセージダイアログが出て起動できないようです。<br><br>　しかし"Sakura64.exe"のように別名にして起動する場合は、問題なく<br>動作することと、一度アンインストールしてからであれば、64bit版の<br>"Sakura.exe"の名称にしたものを起動する場合も問題は出ません。<br><br>　ということから、OSのどこか? でWIN32アプリかWIN64アプリかの判定を<br>行っているところがあるのかなと思ったのですが．．．いずれにせよ<br>大した問題ではないと思いますが、とりあえず報告まで。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>改行コードの変換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5929</span>
+    <a class="thread-title" href="5929.html#5929">改行コードの変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5930</span>
+    <a class="thread-title" href="5929.html#5930">RE: 改行コードの変換</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5932</span>
+    <a class="thread-title" href="5929.html#5932">Re:改行コードの変換</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5934</span>
+    <a class="thread-title" href="5929.html#5934">解決＆お礼</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5929>
+    <span class="no">[5929]</span>
+    <a class="thread-title" href="#5929">改行コードの変換</a>
+    <span class="author">たけ</span>
+    <time datetime="2007-03-05T20:38:02">2007年03月05日 20:38</time></h1>
+    <div class="body">開いたファイルにある<br>LFをCRLF<br>に全置換したいのですが<br>どのようにしたら良いのでしょうか。<br>入力改行コードの指定はできるようですが<br>すでにあるものを置換したいもので．．．<br>ご教授いただきたく<br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=5930>
+    <span class="no">[5930]</span>
+    <a class="thread-title" href="#5930">RE: 改行コードの変換</a>
+    <span class="author">すい</span>
+    <time datetime="2007-03-05T23:25:00">2007年03月05日 23:25</time></h1>
+    <div class="body">&gt;開いたファイルにある<br>&gt;LFをCRLF<br>&gt;に全置換したいのですが<br><br>置換前：[\r\n]+<br>置換後：\r\n<br>正規表現 チェック ON で置換します。<br><br>http://groups.yahoo.co.jp/group/sakura-editor/files/User/MACRO/<br>に行けば、マクロにした物もあります。<br><br>「マクロ集：改行コードを変換する(CRLF⇔LF⇔CR)」<br>には<br>・選択範囲内の改行コードを CRLF に変換する。(MS-DOS/Windows)<br>・選択範囲内の改行コードを LF に変換する。(UNIX)<br>・選択範囲内の改行コードを CR に変換する。(MAC)<br>・選択範囲内の改行を文字列 \n にに変換する。<br>・選択範囲内の文字列 \n を改行にに変換する。<br>といったマクロが入っています。<br><br>私はこれらをマウス右クリックメニューに登録して使っています。<br></div></section>
+    </li><li><section><h1 id=5932>
+    <span class="no">[5932]</span>
+    <a class="thread-title" href="#5932">Re:改行コードの変換</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-03-06T00:09:56">2007年03月06日 00:09</time></h1>
+    <div class="body">▼ たけさん<br>&gt; 開いたファイルにある<br>&gt; LFをCRLF<br>&gt; に全置換したいのですが<br>「名前を付けて保存」で改行コードをCRLF指定すれば<br>LF改行もCR改行も全部CRLF改行になると思いますが．．．</div></section>
+    </li><li><section><h1 id=5934>
+    <span class="no">[5934]</span>
+    <a class="thread-title" href="#5934">解決＆お礼</a>
+    <span class="author">たけ</span>
+    <time datetime="2007-03-06T11:49:36">2007年03月06日 11:49</time></h1>
+    <div class="body">▼ たけさん<br>みなさんありがとうございます。<br>助かりました。</div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>メニューヘルプの穴埋め | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">264</span>
+    <a class="thread-title" href="264.html#264">メニューヘルプの穴埋め</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">266</span>
+    <a class="thread-title" href="264.html#266">HtmlHelp関連本体パッチ修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">277</span>
+    <a class="thread-title" href="264.html#277">Re:HtmlHelp関連本体パッチ修正</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=264>
+    <span class="no">[264]</span>
+    <a class="thread-title" href="#264">メニューヘルプの穴埋め</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-06T00:46:35">2006年10月06日 00:46</time></h1>
+    <div class="body">メニュー上でF1キーを押したときに表示されるヘルプについて、不足分の穴埋めパッチを作成しました（本体側）。<br>Patches#1571506<br>「ウィンドウ一覧」メニューについては新規番号HLP000314を使ってヘルプへの記載を追加していただく必要があります。<br><br>あと、関連箇所でヘルプの誤記を見つけました。<br>「正規表現後方インクリメンタルサーチ」、「MIGEMO後方インクリメンタルサーチ」の各説明で、マウスカーソルが「前方」アイコンになると記載されていますが、「後方」アイコンの誤りです。<br>修正のほう、よろしくお願いします～。</div></section>
+    <ul><li><section><h1 id=266>
+    <span class="no">[266]</span>
+    <a class="thread-title" href="#266">HtmlHelp関連本体パッチ修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-07T07:55:27">2006年10月07日 07:55</time></h1>
+    <div class="body">Patches#1526879 HtmlHelp移行確認用本体パッチ<br>Patches#1571506  ヘルプの穴埋め・修正用本体パッチ<br>に修正を加えました。<br><br>#1526879はWinHelpのかわりにHtmlHelpを呼び出す処理のみにしています。<br>（その他の修正、追加は#1571506のほうに統合）<br><br>#1526879は最終的には外部ヘルプ用のWinHelpだけ残し、それ以外を全部ローカルなMyWinHelp呼び出しにする予定です。<br>（多数のファイルにまたがって呼び出し元に一斉置換を施す）<br>現状のパッチは"騙し"であらゆるヘルプがHtmlHelp呼び出しになるようになってます。</div></section>
+    <ul><li><section><h1 id=277>
+    <span class="no">[277]</span>
+    <a class="thread-title" href="#277">Re:HtmlHelp関連本体パッチ修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-10-09T17:52:46">2006年10月09日 17:52</time></h1>
+    <div class="body">&gt; #1526879は最終的には外部ヘルプ用のWinHelpだけ残し、それ以外を全部ローカルなMyWinHelp呼び出しにする予定です。<br>&gt; （多数のファイルにまたがって呼び出し元に一斉置換を施す）<br>&gt; 現状のパッチは"騙し"であらゆるヘルプがHtmlHelp呼び出しになるようになってます。<br><br>help/trunk#1003でヘルプのほうはほとんど完成のように思えるので、Patches#1571506（MakeUpHelp_2.patch）ベースの本格パッチを作成しました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

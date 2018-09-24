@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>[提案]メタ文字を展開するマクロコマンド | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">12</span>
+    <a class="thread-title" href="12.html#12">[提案]メタ文字を展開するマクロコマンド</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=12>
+    <span class="no">[12]</span>
+    <a class="thread-title" href="#12">[提案]メタ文字を展開するマクロコマンド</a>
+    <span class="author">もか</span>
+    <time datetime="2002-12-18T19:04:40">2002年12月18日 19:04</time></h1>
+    <div class="body">PPA風で書くと<br>function S_ExpandParameter( str1: string ): string;<br>というのを追加してはどうでしょうか。<br><br>■引数<br> str1 : 展開される文字列<br><br>■戻り値<br> str1を展開した文字列<br><br>■解説<br>str1で指定した文字列中の特殊文字を展開して返します。<br>特殊文字は「外部コマンド実行」で利用できるものと同じです。<br><br>■利用例<br>// このファイルのパス名とカーソル位置を挿入 for JScript<br>Editor.InsText( Editor.ExpandParameter( "$F ($x,$y): " ) );<br><br>&gt; 外部コマンドのところの$x、$yのように<br>というのも文字列になりますが、取得できるようなりますね。<br></div></section>
+    </li></ul></body></html>

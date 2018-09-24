@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>UTF-7障害 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1924</span>
+    <a class="thread-title" href="1924.html#1924">UTF-7障害</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1926</span>
+    <a class="thread-title" href="1924.html#1926">Re: UTF-7障害</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1928</span>
+    <a class="thread-title" href="1924.html#1928">Re2: UTF-7障害</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1924>
+    <span class="no">[1924]</span>
+    <a class="thread-title" href="#1924">UTF-7障害</a>
+    <span class="author">村上</span>
+    <time datetime="2002-05-24T19:00:04">2002年05月24日 19:00</time></h1>
+    <div class="body">はじめまして、村上といいます。<br>サクラエディタ使わせて頂いています。<br><br>C言語のプログラムをかじっているのですが、<br>そのなかで、ソースコード上"+len-"の文字列が入っている<br>S JISファイルを作ったところ、開く時にはUTF-7と認識し<br>ソースコード上で"髟"と表示されます。<br>コンパイルエラーになるまで気付きませんでした。<br>■  文字コード判別不具合(SJISをUTF-7に)<br>という事で、修正済みということでしたが、<br>現在使用しているのは1.2.107.2版です。<br><br>もしよろしければ、「文字コード判別不具合」の件<br>再調査していただけませんでしょうか？<br><br>よろしくお願いします。<br><br></div></section>
+    <ul><li><section><h1 id=1926>
+    <span class="no">[1926]</span>
+    <a class="thread-title" href="#1926">Re: UTF-7障害</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-24T20:18:50">2002年05月24日 20:18</time></h1>
+    <div class="body">&gt;"+len-"の文字列が入っている<br>&gt;S JISファイルを作ったところ、開く時にはUTF-7と認識し<br>このエディタの自動判別ではそれぞれの文字コードと仮定して得点を付け、もっとも得点の高かったコードを採用します。日本語が含まれている場合は大抵そちらのコードに加点されるのでこういう問題は無いのですが、1バイト文字のみで構成されたファイルにこういうのがあると他の文字コードが0点でUTF-7にのみ加点されてしまい、結果としてUTF-7と認識されます。<br><br>回避するためには + len - と演算子の前後に空白を入れてください(^^;) +len- のように変数名と演算子をくっつけて書くのは見にくくなるのでおすすめしません。くっつけると*がポインタか乗算かわかりにくくなるし。a***bではなくa * **b と書くべき。<br><br>このエディタのソースもほとんど演算子の前後には空白が入っているはず。(というか、みなさんそうしてください)<br></div></section>
+    <ul><li><section><h1 id=1928>
+    <span class="no">[1928]</span>
+    <a class="thread-title" href="#1928">Re2: UTF-7障害</a>
+    <span class="author">村上</span>
+    <time datetime="2002-05-25T00:58:53">2002年05月25日 00:58</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;"+len-"の文字列が入っている<br>&gt; &gt;S JISファイルを作ったところ、開く時にはUTF-7と認識し<br>&gt; このエディタの自動判別ではそれぞれの文字コードと仮定して得点を付け、もっとも得点の高かったコードを採用します。日本語が含まれている場合は大抵そちらのコードに加点されるのでこういう問題は無いのですが、1バイト文字のみで構成されたファイルにこういうのがあると他の文字コードが0点でUTF-7にのみ加点されてしまい、結果としてUTF-7と認識されます。<br>&gt; <br>&gt; 回避するためには + len - と演算子の前後に空白を入れてください(^^;) +len- のように変数名と演算子をくっつけて書くのは見にくくなるのでおすすめしません。くっつけると*がポインタか乗算かわかりにくくなるし。a***bではなくa * **b と書くべき。<br>&gt; <br>&gt; このエディタのソースもほとんど演算子の前後には空白が入っているはず。(というか、みなさんそうしてください)<br><br>げんたさん解説ありがとうございます。<br>今後のソース書きで注意します。<br><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

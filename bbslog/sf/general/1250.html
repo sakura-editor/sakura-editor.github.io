@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>スマートインデントの仕様 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1250</span>
+    <a class="thread-title" href="1250.html#1250">スマートインデントの仕様</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1290</span>
+    <a class="thread-title" href="1250.html#1290">Re:スマートインデントの仕様</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1250>
+    <span class="no">[1250]</span>
+    <a class="thread-title" href="#1250">スマートインデントの仕様</a>
+    <span class="author">Y.T</span>
+    <time datetime="2002-02-19T15:54:20">2002年02月19日 15:54</time></h1>
+    <div class="body">Ｃ/Ｃ＋＋のスマートインデントに<br>ついてなんですが、<br>仕様では、直前の "{" から＋１インデント<br>のようですが、<br>下記のようなプログラムを記述するとき、<br>#include &lt;stdio.h&gt;<br><br>int main(void)<br>{<br>    |← "{" を入力し改行した後に<br>        ここにカーソルがくるように<br>        ならないでしょうか。<br>    ・<br>    ・<br>}<br></div></section>
+    <ul><li><section><h1 id=1290>
+    <span class="no">[1290]</span>
+    <a class="thread-title" href="#1290">Re:スマートインデントの仕様</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-05T03:11:23">2002年03月05日 03:11</time></h1>
+    <div class="body">▼ Y.Tさん<br>いまさらで申し訳ないです。<br>確かに、<br>　-----<br>1:int main(void)<br>2:<br>3:[EOF]<br>　-----<br>となっているときに、<br>2行目に"{"を入れるとインデントされるけど、<br>　-----<br>1:int main(void)<br>2:[EOF]<br>　-----<br>となっているときに、<br>2行目に"{"を入れてもインデントされないですね。<br>不思議。<br></div></section>
+    </li></ul></li></ul></body></html>

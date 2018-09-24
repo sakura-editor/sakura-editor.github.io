@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現の「戻り読み」について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6125</span>
+    <a class="thread-title" href="6125.html#6125">正規表現の「戻り読み」について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6126</span>
+    <a class="thread-title" href="6125.html#6126">Re:正規表現の「戻り読み」について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6128</span>
+    <a class="thread-title" href="6125.html#6128">Re2:正規表現の「戻り読み」について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6125>
+    <span class="no">[6125]</span>
+    <a class="thread-title" href="#6125">正規表現の「戻り読み」について</a>
+    <span class="author">line</span>
+    <time datetime="2007-07-01T07:12:12">2007年07月01日 07:12</time></h1>
+    <div class="body">タイプ別の設定で新たな強調表示を作っています。<br><br>xxx = { aaa = { bbb = ccc } }　#コメント<br>xxx = { ddd = eee }<br>yyy = { fff = ggg } #コメント<br><br>たとえばこのようなコードの中で、先頭にxxx = {が存在する場合のみ、最後の（対応する）}を強調表示したいのです。<br>「戻り読み」というのを使えば出来るかな？と思い、鬼車のdllを導入して<br>/(?&lt;=xxx.*)}(?!.*}.*)(?=(?:\s*|\s*#|#).*\n)/k<br>という正規表現を作ってみたのですがエラーが出てしまいました。<br>正規表現テスターのテストではうまくいったのですが、エディタでは戻り読みでは量指定子を伴って使う事は出来ないのでしょうか？<br>また、別の方法で実現出来そうならばアドバイスをいただけると幸いです。<br></div></section>
+    <ul><li><section><h1 id=6126>
+    <span class="no">[6126]</span>
+    <a class="thread-title" href="#6126">Re:正規表現の「戻り読み」について</a>
+    <span class="author">K.Takata</span>
+    <time datetime="2007-07-01T10:58:33">2007年07月01日 10:58</time></h1>
+    <div class="body">▼ lineさん<br>&gt; エディタでは戻り読みでは量指定子を伴って使う事は出来ないのでしょうか？<br><br>これは鬼車の制限です。鬼車のドキュメント(*)に書かれているとおり、戻り読みの式は固定文字長でなければなりません。<br><br>(*)<a href=http://www.geocities.jp/kosako3/oniguruma/doc/RE.ja.txt target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>kosako3/<wbr>onigurum<wbr>a/<wbr>doc/<wbr>RE.<wbr>ja.<wbr>txt</nobr></a><br></div></section>
+    <ul><li><section><h1 id=6128>
+    <span class="no">[6128]</span>
+    <a class="thread-title" href="#6128">Re2:正規表現の「戻り読み」について</a>
+    <span class="author">line</span>
+    <time datetime="2007-07-02T21:49:20">2007年07月02日 21:49</time></h1>
+    <div class="body">takataさん、解説ありがとうございます。<br>これはbregonig.dllにおいてもあくまで固定長の文字列で文字数が違うものを一度に|で扱うことができ、*や+は使用できないという事ですよね。<br>鬼車でこういった条件を扱うのは難しいようですね。}に色をつけるのはいったんあきらめる事にします。<br><br>早いレスありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

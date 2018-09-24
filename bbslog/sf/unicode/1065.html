@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告(Imp) VS2010対応 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1065</span>
+    <a class="thread-title" href="1065.html#1065">Commit報告(Imp) VS2010対応</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1065>
+    <span class="no">[1065]</span>
+    <a class="thread-title" href="#1065">Commit報告(Imp) VS2010対応</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-10T19:12:10">2009年12月10日 19:12</time></h1>
+    <div class="body">リビジョン：<br>　rev1690<br><br>変更種別：<br>　改善<br><br>内容：<br>Imp: VS2010(Beta2)対応<br><br>VS2010 （←まだβ2ですが）でも sakura.sln を開いてプロジェクトを自動変換するだけでビルドが通るように .vcproj ファイルを修正しました。<br>従来のまま VS2010 にもっていくと、次のような問題が起きるのを修正しています。<br>・マニフェスト作成エラーでビルド失敗<br>・TargetPath が Linker's OutputFile と不一致の警告が出る<br>ソリューションエクスプローラで表示される内部的なプロジェクト名を sakura から sakuraW に変更し、.exe や .manifest など各種出力ファイル名がその内部プロジェクト名に連動するようにしています。内部プロジェクト名だけ sakura に戻せば、作成される実行ファイル名も sakura.exe になるはずです。<br>VS2005/2008 でも一通りビルドが通ることは確認してあります。</div></section>
+    </li></ul></body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現で固定長にする方法 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5423</span>
+    <a class="thread-title" href="5423.html#5423">正規表現で固定長にする方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5425</span>
+    <a class="thread-title" href="5423.html#5425">RE: 正規表現で固定長にする方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5431</span>
+    <a class="thread-title" href="5423.html#5431">説明が不足していました。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5433</span>
+    <a class="thread-title" href="5423.html#5433">Re2: 正規表現で固定長にする方法の目的</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5427</span>
+    <a class="thread-title" href="5423.html#5427">Re:正規表現で固定長にする方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5432</span>
+    <a class="thread-title" href="5423.html#5432">できました。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5423>
+    <span class="no">[5423]</span>
+    <a class="thread-title" href="#5423">正規表現で固定長にする方法</a>
+    <span class="author">ろろ</span>
+    <time datetime="2006-09-13T20:44:21">2006年09月13日 20:44</time></h1>
+    <div class="body">「正規表現で固定長にする方法」を教えて下さい。<br>他に方法があればよろしくお願いします。</div></section>
+    <ul><li><section><h1 id=5425>
+    <span class="no">[5425]</span>
+    <a class="thread-title" href="#5425">RE: 正規表現で固定長にする方法</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-09-13T22:28:55">2006年09月13日 22:28</time></h1>
+    <div class="body">&gt;「正規表現で固定長にする方法」を教えて下さい。<br>すいません．意味がさっぱりわからないのですが．<br>もう少し具体的に説明して頂けますか？<br><br>ちなみに，文字数を指定したいなら .{4} で任意の4文字にヒットみたいなことはできますよ．<br>7桁目にある場合のみを検索したいなら<br>^.{6}(目的のパターン)<br>とか<br></div></section>
+    <ul><li><section><h1 id=5431>
+    <span class="no">[5431]</span>
+    <a class="thread-title" href="#5431">説明が不足していました。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2006-09-19T20:23:44">2006年09月19日 20:23</time></h1>
+    <div class="body">すいません．<br>固定長ファイル(1行当りの改行までの文字数が一定のファイル)です。<br>abcdefgh△△△△△△△△△△改行               abcdefgh△△△△△△△△△△改行                       abcdefgh改行<br>456789△△△改行                  ----&gt; 固定長 456789△△△△△△△△△△△改行    Ctrl+A ALT+R----&gt;  456789改行<br>wxyz△△△△△△△△改行                       wxyz△△△△△△△△△△△△改行                       wxyz改行<br>(△は,半角スペースです。)<br></div></section>
+    </li><li><section><h1 id=5433>
+    <span class="no">[5433]</span>
+    <a class="thread-title" href="#5433">Re2: 正規表現で固定長にする方法の目的</a>
+    <span class="author">ろろ</span>
+    <time datetime="2006-09-19T20:45:06">2006年09月19日 20:45</time></h1>
+    <div class="body">▼ げんたさん<br>カラム指定のソートに,固定長を使えると思います。<br>矩形編集で,1カラム目に移動して,編集(E)整形(K)選択行の昇順ソート(A)で,矩形編集で元にもどす。<br><br>下ののマクロも使わせてもらっています。<br>http://muumoo.jp/news/2006/05/25/0linenumbermacro.html<br>25  管理人日記  テキストに行番号を追加するsakuraエディタのマクロ</div></section>
+    </li></ul></li><li><section><h1 id=5427>
+    <span class="no">[5427]</span>
+    <a class="thread-title" href="#5427">Re:正規表現で固定長にする方法</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-09-14T03:08:17">2006年09月14日 03:08</time></h1>
+    <div class="body">▼ ろろさん<br>&gt; 「正規表現で固定長にする方法」を教えて下さい。<br>&gt; 他に方法があればよろしくお願いします。<br><br>//キーボードマクロのファイル（拡張子.MAC）<br>S_IndentSpace(0);&#9;// SPACEインデント<br>S_Down(0);&#9;// カーソル下移動<br>S_Left(0);&#9;// カーソル左移動<br><br>共通設定でフリーカーソルモードにしておきます。あらかじめ作成しておいた、上のキーボードマクロを読み込み、Ctrl+Shift+Lで、1行目から繰り返し実行します。<br>ちなみに、ここでは正規表現ではなく、キーボードマクロを使っています。<br><br>開発者の方へ、フリーカーソルモードでの、矩形選択して半角空白入力した時の挙動がヘン！とだけ、言っておきます。</div></section>
+    <ul><li><section><h1 id=5432>
+    <span class="no">[5432]</span>
+    <a class="thread-title" href="#5432">できました。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2006-09-19T20:41:31">2006年09月19日 20:41</time></h1>
+    <div class="body">▼ じゅうじさん<br>スクリプト言語(現在検索中。勉強中?)を使うより,はやそうです。<br>Ctrl+Shift+Lを実行していて,<br>フリーカーソル,改行マーク非表示,カーソル行アンダーライン非表示の設定が<br>見やすいような気がしてきました。ありがとうございました。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>diffの差分移動 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5046</span>
+    <a class="thread-title" href="5046.html#5046">diffの差分移動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5048</span>
+    <a class="thread-title" href="5046.html#5048">Re:diffの差分移動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5049</span>
+    <a class="thread-title" href="5046.html#5049">Re2:diffの差分移動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5050</span>
+    <a class="thread-title" href="5046.html#5050">Re3:diffの差分移動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5074</span>
+    <a class="thread-title" href="5046.html#5074">Re4:diffの差分移動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5075</span>
+    <a class="thread-title" href="5046.html#5075">Re5:diffの差分移動</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5076</span>
+    <a class="thread-title" href="5046.html#5076">Re6:diffの差分移動</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5046>
+    <span class="no">[5046]</span>
+    <a class="thread-title" href="#5046">diffの差分移動</a>
+    <span class="author">かて</span>
+    <time datetime="2006-02-21T14:13:20">2006年02月21日 14:13</time></h1>
+    <div class="body">diffで差分を表示させて、『次の差分へ』『前の差分へ』で移動した場合、<br>現在のバージョンでは連続して追加された行でも１行ずつ移動するようになっていると思いますが、<br>これを差分のブロック単位で移動できる方法はありますでしょうか？<br><br>例えば、連続して１０行追加されていた場合には、その１０行を一つのブロックとして『次の差分へ』で移動した時に一気に飛ばしたい、ということです。<br><br>宜しくお願いします。<br></div></section>
+    <ul><li><section><h1 id=5048>
+    <span class="no">[5048]</span>
+    <a class="thread-title" href="#5048">Re:diffの差分移動</a>
+    <span class="author">DLできん</span>
+    <time datetime="2006-02-21T23:32:05">2006年02月21日 23:32</time></h1>
+    <div class="body">それ欲しいときありますが、ソース修正が必要でしょう。<br>（マークに登録しちゃうとかすれば簡単な修正でいけそう）<br><br>＃人気のパッチをeGroupsに置いちゃうと、ダウンロード制限<br>に引っかかっちゃいますYO！<br><br></div></section>
+    <ul><li><section><h1 id=5049>
+    <span class="no">[5049]</span>
+    <a class="thread-title" href="#5049">Re2:diffの差分移動</a>
+    <span class="author">maru</span>
+    <time datetime="2006-02-22T00:13:30">2006年02月22日 00:13</time></h1>
+    <div class="body">なるほど、確かに便利そうですね。<br>マクロで妥協できるなら、<br><br>' DiffNextBlock.vbs From Here --------------------------<br>Do<br>    lngBefore = ExpandParameter("$y")<br>    DiffNext()<br>Loop While CLng(lngBefore) + 1 = CLng(ExpandParameter("$y"))<br>' DiffNextBlock.vbs To Here --------------------------<br><br>「前の差分へ」の動作はどんな動きを期待したらよいのでしょう？<br>下記例は、連続したブロックの各先頭を探します。<br>つまり「次の差分へ」での移動位置を、逆順にたどる方式。<br>それとも連続したブロックの下端が必要でしょうか？<br>' DiffPrevBlock.vbs From Here -------------------------------<br>Call Main<br>Sub Main<br>    lngBefore = ExpandParameter("$y")<br>    DiffPrev()<br>    If CLng(lngBefore) = CLng(ExpandParameter("$y")) Then Exit Sub<br> <br>    Do While (1)<br>        lngBefore = ExpandParameter("$y")<br>        DiffPrev()<br>        Select Case CLng(ExpandParameter("$y"))<br>        Case CLng(lngBefore)<br>            Exit Sub<br>        Case CLng(lngBefore) - 1<br>        Case Else<br>            DiffNext()<br>            Exit Do<br>        End Select<br>    Loop<br>End Sub<br>' DiffPrevBlock.vbs To Here -------------------------------<br></div></section>
+    <ul><li><section><h1 id=5050>
+    <span class="no">[5050]</span>
+    <a class="thread-title" href="#5050">Re3:diffの差分移動</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-02-22T05:41:16">2006年02月22日 05:41</time></h1>
+    <div class="body">▼ maruさん<br>もうすぐ、３月の予感です。<br><br>問題なければ、逆順がいい。普通、<br>下のキーを押したら、上のキーを押したくなる、その時、元の場所に戻ったほうがいい。<br></div></section>
+    <ul><li><section><h1 id=5074>
+    <span class="no">[5074]</span>
+    <a class="thread-title" href="#5074">Re4:diffの差分移動</a>
+    <span class="author">かて</span>
+    <time datetime="2006-03-06T15:51:17">2006年03月06日 15:51</time></h1>
+    <div class="body">＞maruさん<br>遅くなりましたが、マクロを登録して実行してみたところ、ブロック単位で移動してくれるようになり、大変満足しています。<br>ありがとうございました。<br><br>自分なりにさらに使いやすくしようと思い、マクロの最後に<br>『カーソル行をウィンドウの中央へ』<br>のコマンドを追加しようと思ったのですが、<br>CurLineCenter();<br>ではうまくいきません。<br><br>どなたか、どうすればよいか教えて頂けませんでしょうか？<br>よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=5075>
+    <span class="no">[5075]</span>
+    <a class="thread-title" href="#5075">Re5:diffの差分移動</a>
+    <span class="author">maru</span>
+    <time datetime="2006-03-07T01:36:34">2006年03月07日 01:36</time></h1>
+    <div class="body">' DiffNextBlock.vbs From Here --------------------------<br>Do<br>    lngBefore = ExpandParameter("$y")<br>    DiffNext()<br>Loop While CLng(lngBefore) + 1 = CLng(ExpandParameter("$y"))<br>CurLineCenter()<br>' DiffNextBlock.vbs To Here --------------------------<br><br>再現しませんね・・・。もしかしてセミコロン。</div></section>
+    <ul><li><section><h1 id=5076>
+    <span class="no">[5076]</span>
+    <a class="thread-title" href="#5076">Re6:diffの差分移動</a>
+    <span class="author">かて</span>
+    <time datetime="2006-03-07T09:11:41">2006年03月07日 09:11</time></h1>
+    <div class="body">▼ maruさん<br>&gt; 再現しませんね・・・。もしかしてセミコロン。<br>マクロに登録して使用していたのですが、セミコロンを外して、マクロに登録し直すとできました。<br>度々ありがとうございます。<br><br>あとは、比較対象ファイルがシンクロしてくれたら最高なんですけどね（と、さりげなく言ってみる）<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

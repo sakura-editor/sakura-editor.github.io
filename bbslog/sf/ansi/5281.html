@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>WSH マクロの Ruby、PHP、Phython 対応 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5281</span>
+    <a class="thread-title" href="5281.html#5281">WSH マクロの Ruby、PHP、Phython 対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5284</span>
+    <a class="thread-title" href="5281.html#5284">Re:WSH マクロの Ruby、PHP、Phython 対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5285</span>
+    <a class="thread-title" href="5281.html#5285">Re2:WSH マクロの Ruby、PHP、Phython 対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5286</span>
+    <a class="thread-title" href="5281.html#5286">Re3:WSH マクロの Ruby、PHP、Phython 対応</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5350</span>
+    <a class="thread-title" href="5281.html#5350">Re:WSH マクロの Ruby、PHP、Phython 対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5354</span>
+    <a class="thread-title" href="5281.html#5354">Re2:WSH マクロの Ruby、PHP、Phython 対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5362</span>
+    <a class="thread-title" href="5281.html#5362">Re3:WSH マクロの Ruby、PHP、Phython 対応</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5281>
+    <span class="no">[5281]</span>
+    <a class="thread-title" href="#5281">WSH マクロの Ruby、PHP、Phython 対応</a>
+    <span class="author">miau</span>
+    <time datetime="2008-03-30T22:30:45">2008年03月30日 22:30</time></h1>
+    <div class="body">&gt;&gt;macro:412 で Ruby マクロの話が出ていたので、Ruby、PHP、Python で作成した WSH<br>マクロを実行できるようにしてみました。<br><br>Patches#1929358<br><br>Patch の説明ページにも書いたんですが、AddNamedItem で SCRIPTITEM_GLOBALMEMBERS を指定すると Ruby が落ちてしまうようなので、このフラグを外しています。<br>そのためこのパッチを適用すると今まで InsText("hoge"); と書けていたところを Editor.InsText("hoge"); のように書く必要が出てくるんですが・・・このフラグは意図的につけていたものでしょうか？<br>Ruby の需要はそれなりにありそうですので、もし問題ないのであれば外してしまいたいのですが・・・。<br></div></section>
+    <ul><li><section><h1 id=5284>
+    <span class="no">[5284]</span>
+    <a class="thread-title" href="#5284">Re:WSH マクロの Ruby、PHP、Phython 対応</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2008-04-18T05:31:43">2008年04月18日 05:31</time></h1>
+    <div class="body">&gt;&gt;macro:421 anonymousさん<br>旧のコードに対応という意味で、<br>[v]「$Editor-&gt;」が省略されたWSHマクロ<br>を、デフォルトに。<br></div></section>
+    <ul><li><section><h1 id=5285>
+    <span class="no">[5285]</span>
+    <a class="thread-title" href="#5285">Re2:WSH マクロの Ruby、PHP、Phython 対応</a>
+    <span class="author">wakura</span>
+    <time datetime="2008-04-18T18:03:02">2008年04月18日 18:03</time></h1>
+    <div class="body">▼ じゅうじさん<br>アプリケーションエラーで落ちるので反対します。</div></section>
+    <ul><li><section><h1 id=5286>
+    <span class="no">[5286]</span>
+    <a class="thread-title" href="#5286">Re3:WSH マクロの Ruby、PHP、Phython 対応</a>
+    <span class="author">wakura</span>
+    <time datetime="2008-04-18T18:08:02">2008年04月18日 18:08</time></h1>
+    <div class="body">&gt; アプリケーションエラーで落ちるので反対します。<br>言葉足らずだったので補足。<br>アプリケーションエラーで落ちるような動作をデフォルト設定にするのはおかしいという意味です。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=5350>
+    <span class="no">[5350]</span>
+    <a class="thread-title" href="#5350">Re:WSH マクロの Ruby、PHP、Phython 対応</a>
+    <span class="author">とおりすがり</span>
+    <time datetime="2008-06-19T10:32:07">2008年06月19日 10:32</time></h1>
+    <div class="body">それでいつ頃対応されるのですか？<br>デフォルト設定はどうでもいいので、早く使えるようになってほしいです。<br></div></section>
+    <ul><li><section><h1 id=5354>
+    <span class="no">[5354]</span>
+    <a class="thread-title" href="#5354">Re2:WSH マクロの Ruby、PHP、Phython 対応</a>
+    <span class="author">miau</span>
+    <time datetime="2008-06-20T06:11:40">2008年06月20日 06:11</time></h1>
+    <div class="body">▼ とおりすがりさん<br>&gt; それでいつ頃対応されるのですか？<br>&gt; デフォルト設定はどうでもいいので、早く使えるようになってほしいです。<br><br>&gt;&gt;macro:422 にも書いたんですが、できれば現行の仕様（Editor を省略可）<br>のまま Ruby に対応したいと考えています。参考書籍の入手が遅れているので、<br>私のほうで調査を開始するのは 7 月以降になりそうです。<br>（Python マクロが環境によって動かなかったりするのも併せて調査予定です。）<br><br>・・・と書いてて気づいたのですが、オプションを設ける方法以外に<br>「Ruby マクロであれば SCRIPTITEM_GLOBALMEMBERS しない」<br>というような分岐処理をする方法もありますね。<br>調査に時間がかかる可能性もありますし、一旦この状態で取り込んでいただく、<br>というのもいいかもしれません。<br></div></section>
+    <ul><li><section><h1 id=5362>
+    <span class="no">[5362]</span>
+    <a class="thread-title" href="#5362">Re3:WSH マクロの Ruby、PHP、Phython 対応</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-06-23T02:08:53">2008年06月23日 02:08</time></h1>
+    <div class="body">▼ miauさん<br>この状態でコミットするのもちょっと変な感じですが、調査が進展・解決するまでストップというのも何だかもったいない感じですね。<br><br>Ruby、PHP、Phythonを使いたい人には制限があっても有用でしょうから、派生版・改造版としてJunkなりmiauさんのサイトなりにビルドしたファイルをアップするというのはどうでしょうか？<br>Wikiの方に派生版のリンクが何個か存在するようですし……<br>ただ、バージョン表記やタイトルバーの文字列をいじる必要はあるかも？<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

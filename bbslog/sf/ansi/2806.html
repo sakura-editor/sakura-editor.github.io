@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>HPプリンタで印刷できない件 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2806</span>
+    <a class="thread-title" href="2806.html#2806">HPプリンタで印刷できない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2807</span>
+    <a class="thread-title" href="2806.html#2807">Re: HPプリンタで印刷できない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2817</span>
+    <a class="thread-title" href="2806.html#2817">Re2: HPプリンタで印刷できない件</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2808</span>
+    <a class="thread-title" href="2806.html#2808">Re:HPプリンタで印刷できない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2816</span>
+    <a class="thread-title" href="2806.html#2816">Re2:HPプリンタで印刷できない件</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2860</span>
+    <a class="thread-title" href="2806.html#2860">RE: HPプリンタで印刷できない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2861</span>
+    <a class="thread-title" href="2806.html#2861">Re2: HPプリンタで印刷できない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2863</span>
+    <a class="thread-title" href="2806.html#2863">Re3: HPプリンタで印刷できない件</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2806>
+    <span class="no">[2806]</span>
+    <a class="thread-title" href="#2806">HPプリンタで印刷できない件</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-05-27T23:33:33">2003年05月27日 23:33</time></h1>
+    <div class="body">私も皆目見当が付きませんが，まず現象を確認することが大切だと思います．<br><br>で，見つけたのがこのソフト<br><a href=http://rd.vector.co.jp/soft/win95/writing/se057284.html target=_top><nobr>http://<wbr>rd.<wbr>vector.<wbr>co.<wbr>jp/<wbr>soft/<wbr>win95/<wbr>writing/<wbr>se057284<wbr>.<wbr>html</nobr></a><br>使えそうですか？<br><br>私は自宅にはプリンタが無いので試せませんが...<br></div></section>
+    <ul><li><section><h1 id=2807>
+    <span class="no">[2807]</span>
+    <a class="thread-title" href="#2807">Re: HPプリンタで印刷できない件</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-05-28T00:22:55">2003年05月28日 00:22</time></h1>
+    <div class="body">マッピングモードを印刷時もプレビュー時もMM_ANISOTROPICに設定しているのですが，印刷時はSetWindowExtEx()を実行していないようです．これはデフォルト値で大丈夫なんでしょうか．<br>CPrintPreview.cpp: 817<br><br>CPrintPreview.cpp: 827<br>直接関係ないですが，印刷時の領域計算でmm単位のものと1/10mm単位のものが引き算されているように見えるのは何なのでしょう？<br></div></section>
+    <ul><li><section><h1 id=2817>
+    <span class="no">[2817]</span>
+    <a class="thread-title" href="#2817">Re2: HPプリンタで印刷できない件</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-31T02:01:05">2003年05月31日 02:01</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; マッピングモードを印刷時もプレビュー時もMM_ANISOTROPICに設定しているのですが，印刷時はSetWindowExtEx()を実行していないようです．これはデフォルト値で大丈夫なんでしょうか．<br><br>マッピングモードも理解していないのですが、<br>SetWindowExtEx()は、プレビューの倍率を変えるときに使っているように見えました。<br>となると、印刷時はあんまり関係ないのかな？（という印象）<br><br><br></div></section>
+    </li></ul></li><li><section><h1 id=2808>
+    <span class="no">[2808]</span>
+    <a class="thread-title" href="#2808">Re:HPプリンタで印刷できない件</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-28T22:57:51">2003年05月28日 22:57</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; で，見つけたのがこのソフト<br>&gt; <a href=http://rd.vector.co.jp/soft/win95/writing/se057284.html target=_top><nobr>http://<wbr>rd.<wbr>vector.<wbr>co.<wbr>jp/<wbr>soft/<wbr>win95/<wbr>writing/<wbr>se057284<wbr>.<wbr>html</nobr></a><br>&gt; 使えそうですか？<br><br>ソフト見てみました。使えるかもしれませんのでやってみます。<br><br></div></section>
+    <ul><li><section><h1 id=2816>
+    <span class="no">[2816]</span>
+    <a class="thread-title" href="#2816">Re2:HPプリンタで印刷できない件</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-31T01:57:32">2003年05月31日 01:57</time></h1>
+    <div class="body">ソフトをダウンロードして、<br>京セラ(LS6800)とＨＰ(870CXi)のプリンタドライバインストールして、<br>自分のプリンタ(BJC-430J)と比べてみました。<br><br>気になったのが、DEVMODEの<br>dmPaperLength(initialized): 2970[0.1mm]<br>dmPaperWidth(initialized): 2100[0.1mm]<br>が、自分のBJC<br>dmPaperLength(uninit): 0[0.1mm]<br>dmPaperWidth(uninit): 0[0.1mm]<br>が、京セラとＨＰで、これがくさいと思って、ちょっといじってみた結果が一般掲示板です。<br>そもそも、これが０で計算してたら、プレビューも表示できないみたいだし、見当違いみたいです。<br><br>あと、<br>プリンタがないので印刷できないけど、プリントダイアログで、ファイルに出力で見てみても、やっぱり何も出力していないと思えるくらいの大きさのファイルしかできなかった。<br>このあたりから、何か見えないかなーと思いつつ・・・今週末は時間があまりないので、また今度。<br><br></div></section>
+    </li></ul></li><li><section><h1 id=2860>
+    <span class="no">[2860]</span>
+    <a class="thread-title" href="#2860">RE: HPプリンタで印刷できない件</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-06-16T02:04:20">2003年06月16日 02:04</time></h1>
+    <div class="body">&gt;タイトル: RE: HPプリンタで印刷できない件<br>&gt;発言者: げんた<br>&gt;私も皆目見当が付きませんが，まず現象を確認することが大切だと思います．<br>&gt;<br>&gt;で，見つけたのがこのソフト<br>&gt;http://rd.vector.co.jp/soft/win95/writing/se057284.html<br>&gt;使えそうですか？<br>&gt;<br>&gt;私は自宅にはプリンタが無いので試せませんが... <br><br>ちょっと気になってます。<br>このソフトで表示される  DeviceCapabilitiesの「DC_ORIENTATION」が、90だとあかんのじゃないかと・・・<br><br>印刷できないプリンタの方々調べてみてもらえませんか？<br></div></section>
+    <ul><li><section><h1 id=2861>
+    <span class="no">[2861]</span>
+    <a class="thread-title" href="#2861">Re2: HPプリンタで印刷できない件</a>
+    <span class="author">覆面</span>
+    <time datetime="2003-06-16T09:43:42">2003年06月16日 09:43</time></h1>
+    <div class="body">こんにちは、初めまして。<br>覆面って奴です。<br>うちのHP Deskjet 300Jでもサクラから印刷する事が出来ません。<br>OSはWindows ME でサクラはかろとさんのsakura_test_20030528です。<br>「DC_ORIENTATION」は270でした。</div></section>
+    <ul><li><section><h1 id=2863>
+    <span class="no">[2863]</span>
+    <a class="thread-title" href="#2863">Re3: HPプリンタで印刷できない件</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-06-16T22:09:36">2003年06月16日 22:09</time></h1>
+    <div class="body">&gt;覆面って奴です。<br>&gt;「DC_ORIENTATION」は270でした。<br><br>確認ありがとうございます。<br>そうですか、270でしたか・・・見当違いでしたね・・うーん。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

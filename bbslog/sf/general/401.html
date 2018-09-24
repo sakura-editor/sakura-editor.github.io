@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>whileの中の判定 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">401</span>
+    <a class="thread-title" href="401.html#401">whileの中の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">406</span>
+    <a class="thread-title" href="401.html#406">Re:whileの中の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">408</span>
+    <a class="thread-title" href="401.html#408">Re2:whileの中の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">415</span>
+    <a class="thread-title" href="401.html#415">Re3:whileの中の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">416</span>
+    <a class="thread-title" href="401.html#416">Re4:whileの中の判定</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">419</span>
+    <a class="thread-title" href="401.html#419">Re3:whileの中の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">421</span>
+    <a class="thread-title" href="401.html#421">Re4:whileの中の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">425</span>
+    <a class="thread-title" href="401.html#425">Re5:whileの中の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">426</span>
+    <a class="thread-title" href="401.html#426">Re6:whileの中の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">427</span>
+    <a class="thread-title" href="401.html#427">少しウソの部分訂正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">428</span>
+    <a class="thread-title" href="401.html#428">Re: 少しウソの部分訂正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">429</span>
+    <a class="thread-title" href="401.html#429">Re2: 少しウソの部分訂正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">430</span>
+    <a class="thread-title" href="401.html#430">Re3: 少しウソの部分訂正</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=401>
+    <span class="no">[401]</span>
+    <a class="thread-title" href="#401">whileの中の判定</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-16T18:47:29">2001年05月16日 18:47</time></h1>
+    <div class="body">全然関係ない話で恐縮ですが、C言語のことでわかる方教えて頂けないでしょうか？某所でQしたのですがAが付かなくて。。。(T_T)<br>それは単精度と倍精度の話です。<br>単精度でのマシンエプシロンを計算するために<br>float a=1.0f;<br>while(1.0f+a&gt;1.0f){<br>　　a*=0.5f;<br>　　printf("a=%24.20e\n",a);<br>}<br>とやっても倍精度の値が出てしまいます。VC++6.0のコマンドライン版MS-C12.0使用。LSI-Cでも同様でした。UNIXのCCコマンドも。ところがMacのCやLinuxのgccではちゃんと単精度で出ました。またjavaでも。コンパイラによるということはわかったのですが、限りなくバグに近い気もします。while((b=1.0f+a)&gt;1.0f) (bもfloat宣言)でもダメでしたが、(b&gt;1.0f)とするとOKでした。<br>Cの言語仕様としてこれはどうなんでしょう？　単精度も一度倍精度化してから演算するコンパイラがあるらしいのでそれによって'＋' しているのかなと思いますが、while内の'&gt;'の判定もそうなってしまうんでしょうか？こういう理解でいいのかな？すっきりしないけど。プログラマの意図を汲んでくれないなんて。。。<br></div></section>
+    <ul><li><section><h1 id=406>
+    <span class="no">[406]</span>
+    <a class="thread-title" href="#406">Re:whileの中の判定</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-05-16T23:32:41">2001年05月16日 23:32</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; それは単精度と倍精度の話です。<br> 略_(._.)_<br>&gt; Cの言語仕様としてこれはどうなんでしょう？　単精度も一度倍精度化してから演算するコンパイラがあるらしいので<br><br>このへんの動作を書いた記事が下記のURLにありました。<br><a href=http://www.pro.or.jp/~fuji/mybooks/cdiag/cdiag.4.4.html target=_top>http://www.pro.or.jp/~fuji/mybooks/cdiag<br>/cdiag.4.4.html</a><br><br>目次はここです。<br><a href=http://www.pro.or.jp/~fuji/mybooks/cdiag/index.html target=_top>http://www.pro.or.jp/~fuji/mybooks/cdiag<br>/index.html</a><br></div></section>
+    <ul><li><section><h1 id=408>
+    <span class="no">[408]</span>
+    <a class="thread-title" href="#408">Re2:whileの中の判定</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-17T00:54:31">2001年05月17日 00:54</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; このへんの動作を書いた記事が下記のURLにありました。<br>&gt; <a href=http://www.pro.or.jp/~fuji/mybooks/cdiag/cdiag.4.4.html target=_top>http://www.pro.or.jp/~fuji/mybooks/cdiag<br>/cdiag.4.4.html</a><br>どうも有難うございます。なーるほど、といいたいところですが、私も一応某所でQする前にWebであれこれ調べておりまして、それでもわからなかったので質問に及んだのです。<br>自助努力するには便利な時代ですからね。それでわかれば話が早いし。で、このページも見ました。というか本自体持ってます。(いい本です)<br>じぇぷろ&gt;単精度も一度倍精度化してから演算するコンパイラがあるらしいので<br>がまさにそれで知った情報です。ただ別の本では早くなるようにfloat同士で計算するように設計されているものもある(ものが多いだったか？)と書いてました。<br>しかし私の問題にしているのは計算速度ではないんですよね。比較演算子もダブルでやってくれちゃうの？私はご丁寧に定数にもｆ付けてるのに。(ーー;)<br>という点なんです。さらにいうとwhileの前と中でb=1.0f+a;を二度書きしなくてもいいCの利点を使ってせっかくwhile((b=1.0f+a)&gt;1.0f)にしてるのにこれじゃだめで<br>while(b&gt;1.0f)でしか思う通りに動作しない(コンパイラもある)という点なんです。演算自体はdoubleでやってもいいけど、比較演算子はfloatでやれよ、みたいな。それくらいCの仕様で固定しとけよ、みたいな。</div></section>
+    <ul><li><section><h1 id=415>
+    <span class="no">[415]</span>
+    <a class="thread-title" href="#415">Re3:whileの中の判定</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-05-18T21:24:05">2001年05月18日 21:24</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; で、このページも見ました。というか本自体持ってます。(いい本です)<br>....φ(..;;<br><br>&gt; while((b=1.0f+a)&gt;1.0f)にしてるのにこれじゃだめで<br>左辺がdouble, 右辺がsingleに展開される－＞倍精度で比較<br>とか。。。<br><br>＃ヘルプを２ヶ月ぶりに更新しました。<br></div></section>
+    <ul><li><section><h1 id=416>
+    <span class="no">[416]</span>
+    <a class="thread-title" href="#416">Re4:whileの中の判定</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-18T22:05:59">2001年05月18日 22:05</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; ▼ じぇぷろ<br>&gt; &gt; while((b=1.0f+a)&gt;1.0f)にしてるのにこれじゃだめで<br>&gt; 左辺がdouble, 右辺がsingleに展開される－＞倍精度で比較<br><br>bもfloatにしてあってもダメなんす。1+aをダブルで計算し、bに単精度で入れる。ケド比較はダブルでやってる<br>＃そういう意味じゃなかった？<br>＃あ、もしかして式の値が右辺を使うから？そういう意味？比較はbとではなく1+aでやってるから？<br>＃while( (b=(float)(a+1.0f)) &gt; 1.0f ) にしてもやっぱりだめだった。結局できなんだな。<br><br>因みに昨日WinソフトであるCodewarriorのCでやってみましたがこれでもだめでした。gccとMacのシマンテックCだけエライ。<br><br>&gt; ＃ヘルプを２ヶ月ぶりに更新しました。<br>お疲れ様。これからDLして鑑賞します。(^^ゞ</div></section>
+    </li></ul></li><li><section><h1 id=419>
+    <span class="no">[419]</span>
+    <a class="thread-title" href="#419">Re3:whileの中の判定</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-05-19T20:10:18">2001年05月19日 20:10</time></h1>
+    <div class="body">これは、仮数部の精度を調べているんですよね．<br><br>▼ じぇぷろさん<br>&gt; while((b=1.0f+a)&gt;1.0f)にしてるのにこれじゃだめで<br>&gt; while(b&gt;1.0f)でしか思う通りに動作しない<br>VC6でアセンブラ出力を吐き出させて、どうなっているか確認してみました．<br><br>結論から言えば、1.0f+a&gt;1.0fはFPUで1.0f+aの計算を行って引き続き1.0fと比較しています．ということはFPUのレジスタ精度(80bit浮動小数点)で演算が行われているはずです．となると、FPUでは80bitの形式で演算＆比較を行っているのにどうして倍精度の値しか出ないのかが逆に不思議．10^(-20)くらいの値が出てきてもおかしくないのに．<br>IA-32 Intel Architecture Software Manual↓<br><a href=http://developer.intel.com/design/Pentium4/manuals/24547003.pdf target=_top>http://developer.intel.com/design/Pentiu<br>m4/manuals/24547003.pdf</a><br><br>あと、最適化オプションによっては変数bを介しても倍精度の結果が出ました．これは規格から外れた動作らしく、それを防ぐオプション(/Op)が用意されています．</div></section>
+    <ul><li><section><h1 id=421>
+    <span class="no">[421]</span>
+    <a class="thread-title" href="#421">Re4:whileの中の判定</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-19T21:01:12">2001年05月19日 21:01</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; これは、仮数部の精度を調べているんですよね．<br>そうです。<br><br>&gt; ▼ じぇぷろ<br>&gt; &gt; while((b=1.0f+a)&gt;1.0f)にしてるのにこれじゃだめで<br>&gt; &gt; while(b&gt;1.0f)でしか思う通りに動作しない<br>&gt; VC6でアセンブラ出力を吐き出させて、どうなっているか確認<br><br>&gt; 結論から言えば、1.0f+a&gt;1.0fはFPUで1.0f+aの計算を行って引き続き1.0fと比較しています．ということはFPUのレジスタ精度(80bit浮動小数点)で演算が行われているはずです．となると、FPUでは80bitの形式で演算＆比較を行っているのにどうして倍精度の値しか出ないのかが逆に不思議．<br>どうもお手間を取らせました。有難うございます。m(__)m　後半はわかりませんが、一応推測通りだったわけですね。あー一応すっきりした。処理のし方自体は納得いかない(不満という意味)けど。どう頑張っても単精度変数に一度落としてからでないと比較できないなんてアルゴリズム上の問題じゃないよなあ。<br><br>&gt; あと、最適化オプションによっては変数bを介しても倍精度の結果が出ました．これは規格から外れた動作らしく、それを防ぐオプション(/Op)が用意されています．<br>困ったモンです。&gt;MS それに引き換えgccはフリーなのにさすがだな。変数も定数も単精度指定してるんだから比較も単精度でやってくれるものと思うでしょ、普通。</div></section>
+    <ul><li><section><h1 id=425>
+    <span class="no">[425]</span>
+    <a class="thread-title" href="#425">Re5:whileの中の判定</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-05-21T09:53:24">2001年05月21日 09:53</time></h1>
+    <div class="body">&gt; どう頑張っても単精度変数に一度落としてからでないと比較できないなんてアルゴリズム上の問題じゃないよなあ。<br>ISO C++ Standard<br>http://www.cygnus.com/misc/wp/dec96pub/c<br>oversheet.html<br>のChapter 5<br>http://www.cygnus.com/misc/wp/dec96pub/e<br>xpr.html<br>項目10によれば、<br><br>10. The values of the floating operands and the results of floating expressions may be represented in greater precision and range than that required by the type; the types are not changed thereby.2)<br>となっているので、そういうものだと思うしか無いと思います。今回のように無理矢理精度を落としたいという方がまれだと思いますが。<br><br>C++には表現できる値の範囲を調べるためのlimitsというライブラリ(Chapter 18)がありますけど、それじゃだめなの？<br><br>floatをdoubleに変換するという話はAnnex C (Compatibility)の1.1.1の項目3に<br>3 Single-precision  floating  point arithmetic may be used for float expressions; _basic.fundamental_ and _conv.double_. This is also in ISO C.<br>とありますので、昔はdoubleに変換するのがスタンダードな動作だったが1985年の規格制定時に改められたと解釈できそうです。でもこれは、今回の話とはたぶん関係ない。<br><br>&gt; 困ったモンです。&gt;MS それに引き換えgccはフリーなのにさすがだな。<br>うーん、どうだか。1.0+a==1.0というのは明らかに間違いですからaの精度以上に正しい結果(1.0+a&gt;1.0)を出す方が親切と考える人がいてもおかしくない。それに、いちいち精度を変換して比較するのはそれだけ遅くなっているとも考えられますし。<br></div></section>
+    <ul><li><section><h1 id=426>
+    <span class="no">[426]</span>
+    <a class="thread-title" href="#426">Re6:whileの中の判定</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-21T17:54:14">2001年05月21日 17:54</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt; どう頑張っても単精度変数に一度落としてからでないと比較できないなんてアルゴリズム上の問題じゃないよなあ。<br>&gt; そういうものだと思うしか無いと思います。今回のように無理矢理精度を落としたいという方がまれだと思いますが。<br>(途中省略)<br>&gt; &gt; 困ったモンです。&gt;MS それに引き換えgccはフリーなのにさすがだな。<br>&gt; うーん、どうだか。1.0+a==1.0というのは明らかに間違いですからaの精度以上に正しい結果(1.0+a&gt;1.0)を出す方が親切と考える人がいてもおかしくない。それに、いちいち精度を変換して比較するのはそれだけ遅くなっているとも考えられますし。<br><br>そういうことではないんです。主旨は「計算には精度というものがあり、その範囲でしか計算結果を信用してはいけない」という教育的内容なわけです。だから内部的には1.0+a=1.0ということも起こり得るという意味で誤りではありません。精度よく計算したい場合には、あるいは予期しない結果になっていた場合には精度の影響が考えられるので高精度で計算しなさいという主旨。<br>Fortranでは倍精度の他に四倍精度もほぼ標準的にあります。(JIS規格かまでは知りませんが)<br>一方Cは長精度は処理系によってはありますが、長さまで規定されてないし、1.5倍とかいい加減です。<br>言語の標準精度はだいたい単精度で、Cのみ倍精度とちょっと変わっている、と思っているのですが、最近のPascal(Delphi)やBasic(VB)、javaなどはどうなんでしょ？<br>別に倍精度と長精度の比較でもいいんですが、標準的ではないのと処理系によって異なるというのを嫌ったわけです。結果的にはそれも(プログラムの書き方により)処理系によってしまったわけですが。長精度でやっても今度は長精度で比較してほしいところを倍精度で比較されてしまうわけだから(ですよね？)やっぱり良くない仕様だと思います。<br>単精度は電卓にも劣る精度だとかわざわざ精度を落として計算するのはあほらしい、とか今では単精度の方がむしろ時間がかかる、というのは精度ということを知ることとは別の次元の、むしろもっと泥臭い話です。コンパイラの作りによるわけだから。<br>精度という考えはどの計算用言語にもある話です(よね？)。結局、C言語では単精度を使うといろいろ予期しないが起こり得るし、使うメリットもほとんどないので倍精度で計算しなさい、というあまり明解でない回答になってしまいます。</div></section>
+    <ul><li><section><h1 id=427>
+    <span class="no">[427]</span>
+    <a class="thread-title" href="#427">少しウソの部分訂正</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-22T10:54:25">2001年05月22日 10:54</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; Fortranでは四倍精度<br>JIS規格には規定されてないようです<br>&gt; Cは長精度は処理系によってはありますが、長さまで規定されてないし、1.5倍とかいい加減です。<br>長精度は正確には拡張倍精度というみたい。長さは単4バイト、倍8バイト、拡張倍10バイトだから1.25倍が正しい<br>げんた氏の疑問の有効桁数約20桁(16x1.25)はこれから出てくるのでは？　結局実はCは(拡張)倍精度しかもってないのか？<br>短くして単精度、目一杯とって拡張倍精度といってるだけ？ようわからん。</div></section>
+    <ul><li><section><h1 id=428>
+    <span class="no">[428]</span>
+    <a class="thread-title" href="#428">Re: 少しウソの部分訂正</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-05-22T16:21:05">2001年05月22日 16:21</time></h1>
+    <div class="body">&gt;長精度は正確には拡張倍精度というみたい。長さは単4バイト、倍8バイト、拡張倍10バイト<br>規格上はdoubleはfloatと同等以上の精度と数値範囲、long doubleはdoubleと同等以上の精度と数値範囲としか記載されていないのでコンパイラやOSを指定しないでこういう表現を使うのは誤解を招くと思います。(3.9.1  Fundamental typesの第8項参照)<br><br>極端な話 float == double == long doubleという処理系もOKなわけで、処理系依存だからこそsizeof演算子とかlimitsライブラリとかがあるわけです。<br><br>規格をよく見たら4.6 Floating point promotionという項がありまして、<br>http://www.cygnus.com/misc/wp/dec96pub/c<br>onv.html#conv.fpprom<br>1 An rvalue of type float can be converted to an rvalue of type  double. The value is unchanged.<br>だそうです。ですから前回のと併せて考えてdoubleに変換するもしないも処理系依存と言えます。<br></div></section>
+    <ul><li><section><h1 id=429>
+    <span class="no">[429]</span>
+    <a class="thread-title" href="#429">Re2: 少しウソの部分訂正</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-05-22T20:48:52">2001年05月22日 20:48</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;長精度は正確には拡張倍精度というみたい。長さは単4バイト、倍8バイト、拡張倍10バイト<br>&gt;コンパイラやOSを指定しないでこういう表現を使うのは誤解を招く<br>&gt; 極端な話 float == double == long doubleという処理系もOK<br>可能性としてはあるのでしょうが、そんなのはないと思うし、あっても誰も使わないでしょう。ごく一般的な、普通の（したがって良く使われている）コンパイラを対象にいっているのです。JIS規格のCといいかえてもいいですがどこまで規定しているのかははっきりしません。ただDOS系では拡張倍精度は10バイトが多いらしいことは本に書いてあります。<br><br>&gt; doubleに変換するもしないも処理系依存と言えます。<br>処理系依存部分が多いというのは規格の主旨としてはどうかな？がちがちなのも困るけど緩すぎるのも規格の意味が薄れる。ともかくCはそんなもんだと思うしかない。</div></section>
+    <ul><li><section><h1 id=430>
+    <span class="no">[430]</span>
+    <a class="thread-title" href="#430">Re3: 少しウソの部分訂正</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-05-22T21:23:59">2001年05月22日 21:23</time></h1>
+    <div class="body">&gt;可能性としてはあるのでしょうが、そんなのはないと思うし、<br>double == long double という処理系は見たことがあるような気がします。。<br><br>&gt;&gt; doubleに変換するもしないも処理系依存と言えます。<br>&gt; ともかくCはそんなもんだと思うしかない。<br>16bit CPUではsizeof(int) == sizeof(short int) == 2だったけど、32bitになったらsizeof(int) == sizeof(long int) == 4 とかね。既に広まってしまったものを規格化したのでこうなったのでしょうか。個人的にはCは雰囲気が比較的アセンブラに近いというイメージを持っています。コンパイル後のイメージが想像できる。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

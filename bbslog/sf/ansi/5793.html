@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>「キーマクロの記録開始」がショートカットキーで実行できない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5793</span>
+    <a class="thread-title" href="5793.html#5793">「キーマクロの記録開始」がショートカットキーで実行できない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5794</span>
+    <a class="thread-title" href="5793.html#5794">Re:「キーマクロの記録開始」がショートカットキーで実行できない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5795</span>
+    <a class="thread-title" href="5793.html#5795">Re2:「キーマクロの記録開始」がショートカットキーで実行できない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5793>
+    <span class="no">[5793]</span>
+    <a class="thread-title" href="#5793">「キーマクロの記録開始」がショートカットキーで実行できない</a>
+    <span class="author">だいじん</span>
+    <time datetime="2017-02-11T16:25:18">2017年02月11日 16:25</time></h1>
+    <div class="body">キーマクロの記録開始が、メニューからは出来るのですが、<br>キーボードショートカットのCtrl + Shift + Mで出来ないです。<br><br>試しに、割り当てされていなかった、Ctrl + Shift + Vに割り当てて、<br>実行してみたのですが、そちらは動きました。<br><br>バグでしょうか？会社のWindows7もなっていたので、<br>個人環境の問題でもないかも？と、思い質問しました。<br>同じ現象の人いないですかね？<br><br>サクラエディタ   Ver. 2.3.1.0<br><br>      Share Ver: 170<br>      Compile Info: V1500 WPR WIN500/I501/C000/N500<br>      Last Modified: 2017/2/11 15:22:39<br></div></section>
+    <ul><li><section><h1 id=5794>
+    <span class="no">[5794]</span>
+    <a class="thread-title" href="#5794">Re:「キーマクロの記録開始」がショートカットキーで実行できない</a>
+    <span class="author">もか</span>
+    <time datetime="2017-02-12T13:50:33">2017年02月12日 13:50</time></h1>
+    <div class="body">会社と自宅のPCは同じメーカーとかになっていませんか？<br>たまに、PCメーカー付属ソフトやグラフィックドライバのホットキーとして<br>使われることがあります。<br>キーボード自体の制約で、特定の組み合わせが動かないというのもありますが、<br>CtrlやShiftはそうならないように普通はなっているので、レアだと思います。<br>A+S+Dが同時に押せないとかはものによって結構あります。<br><br>うちのPCではCtrl+Shift+MでRecKeyは動きました。<br>サクラ本体のバグではなさそうです。<br></div></section>
+    <ul><li><section><h1 id=5795>
+    <span class="no">[5795]</span>
+    <a class="thread-title" href="#5795">Re2:「キーマクロの記録開始」がショートカットキーで実行できない</a>
+    <span class="author">だいじん</span>
+    <time datetime="2017-02-15T00:08:12">2017年02月15日 00:08</time></h1>
+    <div class="body">▼ もかさん<br>返信遅くなりました。コメントありがとうございます。<br><br>もかさんのおかげで解決しました。結果から言いますと、<br>AMD GPUのドライバに付いていた、<br>「Radeon Software Crimson ReLive」が悪さをしていたようです。<br>（プロセスを落としたら、コマンドが動きました。。。）<br><br>また、会社のマシンは試したところ動いたので、<br>ただの誤認だったようです。すみません。<br><br>一応、下記は調査したときの手順です。<br><br>自宅マシンで動かないことを確認後、<br>もかさんの言う通り、立ち上がっているソフトが怪しいだろうということで、<br>セーフモードで起動してコマンドを試してみたところ、動きました。<br><br>その後、通常モードで起動後、即、<br>サクラエディタ開いてコマンドを<br>試してみたところ、動きました。<br><br>そのまま、コマンドを打ち続けていたら、<br>途中から動かなくなったので、<br>起動時に立ち上がるソフトウェアが怪しいと思って、<br>順番に消していったら、radeonのドライバを<br>インストールした時に、オプションで入れた、<br>「Crimson ReLive」が犯人だと特定できました。<br><br>お騒がせしましたm(_ _)m<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

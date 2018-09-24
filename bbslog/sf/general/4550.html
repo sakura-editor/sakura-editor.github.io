@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>要望 タブジャンプバックでファイルを閉じる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4550</span>
+    <a class="thread-title" href="4550.html#4550">要望 タブジャンプバックでファイルを閉じる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4555</span>
+    <a class="thread-title" href="4550.html#4555">Re:要望 タブジャンプバックでファイルを閉じる</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4550>
+    <span class="no">[4550]</span>
+    <a class="thread-title" href="#4550">要望 タブジャンプバックでファイルを閉じる</a>
+    <span class="author">Mod</span>
+    <time datetime="2005-07-16T20:02:56">2005年07月16日 20:02</time></h1>
+    <div class="body">タグジャンプバック時の要望です。<br><br>タグジャンプで開いたファイルからタグジャンプバックするときはそのファイル<br>を閉じるように出来ないでしょうか？<br>閲覧する為だけでタグジャンプを繰り返していると気づくと30～40程のファイルを<br>開いていることがありますので。<br><br>ただ、編集目的でタグジャンプしたときは閉じて欲しくないのでタグジャンプバック<br>するときにファイルが編集されていたら閉じないとか動作が選べればうれしいです。<br></div></section>
+    <ul><li><section><h1 id=4555>
+    <span class="no">[4555]</span>
+    <a class="thread-title" href="#4555">Re:要望 タブジャンプバックでファイルを閉じる</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-07-19T17:01:13">2005年07月19日 17:01</time></h1>
+    <div class="body">▼ Modさん<br>&gt; ファイルが編集されていたら閉じないとか動作が選べればうれしいです。<br><br>動作を選びたいならキーボードマクロですみます。<br><br>// CloseJumpBack.mac<br>S_WinClose();&#9;// ウィンドウを閉じて<br>S_TagJumpBack(0);&#9;// タグジャンプバック<br><br>これで、編集されていればウインドウ・クローズ時に確認が出るから編集するならキャンセル<br><br>マクロで自動的に判断させるなら JScript マクロになり<br><br>// CloseJumpBack.js<br>var stat = Editor.ExpandParameter("${U?更新されている$:更新されていない$}");<br>if(stat == "更新されていない") Editor.WinClose();&#9;// ウィンドウを閉じて<br>Editor.TagJumpBack(0);&#9;// タグジャンプバック<br><br>で、動くみたいです<br></div></section>
+    </li></ul></li></ul></body></html>

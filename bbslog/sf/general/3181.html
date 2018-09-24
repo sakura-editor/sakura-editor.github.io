@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>排他制御とファイル保存 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3181</span>
+    <a class="thread-title" href="3181.html#3181">排他制御とファイル保存</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3185</span>
+    <a class="thread-title" href="3181.html#3185">Re:排他制御とファイル保存</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3189</span>
+    <a class="thread-title" href="3181.html#3189">Re2:排他制御とファイル保存</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3204</span>
+    <a class="thread-title" href="3181.html#3204">Re3:排他制御とファイル保存</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3181>
+    <span class="no">[3181]</span>
+    <a class="thread-title" href="#3181">排他制御とファイル保存</a>
+    <span class="author">ありんこ</span>
+    <time datetime="2003-08-15T16:38:46">2003年08月15日 16:38</time></h1>
+    <div class="body"><br>今年初め頃から、便利に使わせて頂いてます。<br>さて、先日、いつものようにファイルを複数開き、<br>編集を行っていたところ、別アプリケーションで<br>サクラエディタで既に開いているファイルを変更するという<br>事を、何度か行っていると<br>サクラエディッタが不意に不正終了してしまいました。<br>また、サクラエディッタが開いていたファイルが<br>途中段階でブッツリ切れて無くなっていました。<br><br>最初は、他のアプリケーションからの影響や<br>新機能のタブを使っていたのが原因かと思い、<br>タブ機能をオフにして、以前のように使っていたのですが<br>再度、同じような事が起こりました。<br>（ファイルがちょん切れてしまう）<br><br>排他制御の設定は、<br>排他制御しない（更新の監視にチェック）<br>の状態です。<br><br>原因らしき現象が特定できればよかったのですが、<br>おそらく、排他制御と保存処理の関係ではないかと<br>感じられます。（あくまで主観ですので根拠はない）<br><br>ちなみにバージョンは1.4.1.0のwin2k sp3です。<br><br>また時間があればソースを呼んで勉強させて頂きます。<br>ではでは。<br></div></section>
+    <ul><li><section><h1 id=3185>
+    <span class="no">[3185]</span>
+    <a class="thread-title" href="#3185">Re:排他制御とファイル保存</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-08-16T11:19:08">2003年08月16日 11:19</time></h1>
+    <div class="body">やはり、排他関係で致命的な不具合があるようです。<br>特に「排他制御しない（更新の監視にチェック）」を使っている人は、バックアップを忘れないでください。</div></section>
+    <ul><li><section><h1 id=3189>
+    <span class="no">[3189]</span>
+    <a class="thread-title" href="#3189">Re2:排他制御とファイル保存</a>
+    <span class="author">ありんこ</span>
+    <time datetime="2003-08-16T23:19:09">2003年08月16日 23:19</time></h1>
+    <div class="body">▼ wmlhqさん<br>&gt; やはり、排他関係で致命的な不具合があるようです。<br>&gt; 特に「排他制御しない（更新の監視にチェック）」を使っている人は、バックアップを忘れないでください。<br><br>了解です。<br>その現象が起こった時の記憶を遡ってみると、<br><br>別アプリから変更を行った後、<br>サクラエディタをアクティブにした際に、再読込しますか？の<br>ダイアログが出る前に、上書き保存が出来たのかも知れません。<br>（おぼろげな記憶なので、嘘を書いているかも知れません）<br>左下に、保存中のプログレスが出ている途中に<br>不正終了したような、感じがしたので・・・<br><br></div></section>
+    <ul><li><section><h1 id=3204>
+    <span class="no">[3204]</span>
+    <a class="thread-title" href="#3204">Re3:排他制御とファイル保存</a>
+    <span class="author">ありんこ</span>
+    <time datetime="2003-08-19T01:52:43">2003年08月19日 01:52</time></h1>
+    <div class="body">&gt; その現象が起こった時の記憶を遡ってみると、<br>&gt; <br>&gt; 別アプリから変更を行った後、<br>&gt; サクラエディタをアクティブにした際に、再読込しますか？の<br>&gt; ダイアログが出る前に、上書き保存が出来たのかも知れません。<br>&gt; （おぼろげな記憶なので、嘘を書いているかも知れません）<br>&gt; 左下に、保存中のプログレスが出ている途中に<br>&gt; 不正終了したような、感じがしたので・・・<br><br>今日また気がついたので、追記を。<br>上書き保存ではなく、再読込中のプログレスを<br>見たようです。その途中で不正終了をおこしたと思われます。<br><br><br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

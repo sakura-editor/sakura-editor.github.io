@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6581</span>
+    <a class="thread-title" href="6581.html#6581">正規表現について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6583</span>
+    <a class="thread-title" href="6581.html#6583">Re:正規表現について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6584</span>
+    <a class="thread-title" href="6581.html#6584">Re2:正規表現について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6585</span>
+    <a class="thread-title" href="6581.html#6585">Re2:正規表現について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6601</span>
+    <a class="thread-title" href="6581.html#6601">Re3:正規表現について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6602</span>
+    <a class="thread-title" href="6581.html#6602">Re4:正規表現について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6611</span>
+    <a class="thread-title" href="6581.html#6611">Re5:正規表現について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6612</span>
+    <a class="thread-title" href="6581.html#6612">Re6:正規表現について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6616</span>
+    <a class="thread-title" href="6581.html#6616">Re7:正規表現について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6618</span>
+    <a class="thread-title" href="6581.html#6618">Re8:正規表現について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6581>
+    <span class="no">[6581]</span>
+    <a class="thread-title" href="#6581">正規表現について</a>
+    <span class="author">ストーム</span>
+    <time datetime="2008-02-11T14:10:09">2008年02月11日 14:10</time></h1>
+    <div class="body">久々にサクラエディタのバージョンを上げてみたのですが<br>正規表現の動作が変になったのでちょいと調べてみました。<br><br>------------------<br>x - テスト１<br>C - テスト２<br>テスト５０<br>G - テスト３<br>j - テスト４<br>テスト５１<br>y - テスト５<br>z - テスト６<br>A - テスト７<br>テスト５２<br>B - テスト８<br>D - テスト９<br>n - テスト１０<br>------------------<br>上記のような文章で頭がアルファベットで<br>ないものを削除しようとしていたのですが<br><br>「^[^a-zA-Z].*\r\n」で削除しようとした所<br>大文字のものは選択されないのですが<br>何故か頭が小文字のものまで選択されてしまいます。<br><br>「^[a-zA-Z].*\r\n」では正常に動いているように思えるので<br>否定の部分でおかしいように思われます。<br><br>バージョンは<br><br>Windows XP Pro SP2<br>サクラエディタ Ver.1.6.2.0 (V 1310)<br>bregonig.dll ver.1.42 with Oniguruma 5.9.0<br><br>以前のバージョンでは問題なかったと思ったので<br>調べてみたところ<br><br>BREGEXP.DLL<br><a href=http://www.hi-ho.ne.jp/babaq/bregexp.html target=_top><nobr>http://<wbr>www.<wbr>hi-<wbr>ho.<wbr>ne.<wbr>jp/<wbr>babaq/<wbr>bregexp.<wbr>html</nobr></a><br>Bregexp.dll for SAKURA<br><a href=http://sourceforge.net/project/showfiles.php?group_id=12488&package_id=66411 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>project/<wbr>showfile<wbr>s.<wbr>php?<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>package_<wbr>id=<wbr>66411</nobr></a><br><br>上記2つのDLLでは大丈夫なのですが<br>以下のDLLの場合でのみそうなるようです<br><br>bregonig.dll<br><a href=http://homepage3.nifty.com/k-takata/mysoft/bregonig.html target=_top><nobr>http://<wbr>homepage<wbr>3.<wbr>nifty.<wbr>com/<wbr>k-<wbr>takata/<wbr>mysoft/<wbr>bregonig<wbr>.<wbr>html</nobr></a><br><br>「\w は2バイト文字も含む。」って変更が怪しいのかな<br>とも思いましたが、それとも違うのかなと<br><br>ちょっと分からなかったので、ここで聞いてみる事にしました<br>何か回避策ありましたら教えて下さい。<br></div></section>
+    <ul><li><section><h1 id=6583>
+    <span class="no">[6583]</span>
+    <a class="thread-title" href="#6583">Re:正規表現について</a>
+    <span class="author">K.Takata</span>
+    <time datetime="2008-02-12T02:36:10">2008年02月12日 02:36</time></h1>
+    <div class="body">現在忙しいため原因を調べることができませんが、<br>「英大文字と小文字を区別する」<br>にチェックを入れればお望みの結果になるかと思います。</div></section>
+    <ul><li><section><h1 id=6584>
+    <span class="no">[6584]</span>
+    <a class="thread-title" href="#6584">Re2:正規表現について</a>
+    <span class="author">ストーム</span>
+    <time datetime="2008-02-12T20:59:38">2008年02月12日 20:59</time></h1>
+    <div class="body">ありがとうございます。<br>これで使ってみます。<br><br>ツールを作るのは大変な労力だと思います。<br>私には報告ぐらいしか出来ませんので<br>体に気をつけて頑張って下さい。<br></div></section>
+    </li><li><section><h1 id=6585>
+    <span class="no">[6585]</span>
+    <a class="thread-title" href="#6585">Re2:正規表現について</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2008-02-13T05:07:04">2008年02月13日 05:07</time></h1>
+    <div class="body">なるほど、大文字と小文字を区別しない場合、<br>bregonigは、[と]で囲まれた文字列の先頭の^で<br>変ですね。[^a-z]と、[^A-Z]で違う結果になりました。<br>大文字小文字を区別しないはず。<br>さらに試して、[^A-Z]と[^a-zA-Z]と[^A-Za-z]は、同じ結果です。<br><br>▼ストームさん<br>朝の５時、早いので、また寝ます、お休みなさい。</div></section>
+    <ul><li><section><h1 id=6601>
+    <span class="no">[6601]</span>
+    <a class="thread-title" href="#6601">Re3:正規表現について</a>
+    <span class="author">otomo</span>
+    <time datetime="2008-03-03T12:58:34">2008年03月03日 12:58</time></h1>
+    <div class="body">&gt; なるほど、大文字と小文字を区別しない場合、<br>&gt; bregonigは、[と]で囲まれた文字列の先頭の^で<br>&gt; 変ですね。[^a-z]と、[^A-Z]で違う結果になりました。<br>&gt; 大文字小文字を区別しないはず。<br>&gt; さらに試して、[^A-Z]と[^a-zA-Z]と[^A-Za-z]は、同じ結果です。<br>これはbregonig.dllの不具合ですか？<br>それとも鬼車の不具合なのでしょうか？<br></div></section>
+    <ul><li><section><h1 id=6602>
+    <span class="no">[6602]</span>
+    <a class="thread-title" href="#6602">Re4:正規表現について</a>
+    <span class="author">K.Takata</span>
+    <time datetime="2008-03-04T01:35:15">2008年03月04日 01:35</time></h1>
+    <div class="body">▼ otomoさん<br>&gt; これはbregonig.dllの不具合ですか？<br>&gt; それとも鬼車の不具合なのでしょうか？<br><br>鬼車 5.9.0 の不具合のようで、5.9.1 で修正されているようです。<br>bregonig.dll の対応はもうしばらくお待ちください。</div></section>
+    <ul><li><section><h1 id=6611>
+    <span class="no">[6611]</span>
+    <a class="thread-title" href="#6611">Re5:正規表現について</a>
+    <span class="author">K.Takata</span>
+    <time datetime="2008-03-12T22:33:47">2008年03月12日 22:33</time></h1>
+    <div class="body">bregonig Ver.1.43 を公開しました。</div></section>
+    <ul><li><section><h1 id=6612>
+    <span class="no">[6612]</span>
+    <a class="thread-title" href="#6612">Re6:正規表現について</a>
+    <span class="author">di</span>
+    <time datetime="2008-03-13T11:10:23">2008年03月13日 11:10</time></h1>
+    <div class="body">▼ K.Takataさん<br>&gt; bregonig Ver.1.43 を公開しました。<br><br>ここで報告するのは筋が違うかもしれませんが、<br>K.Takataさんのサイトで公開されておりますファイルが<br>リンク上「bron142.lzh」のままであり、NotFoundになっています。<br>（SakuraDownでも142のファイルを取得しようとするようです）<br>リンクのファイル名を「bron143.lzh」にしてみたところダウンロードできました。<br><br>また、このv1.43で親コメントの内容が正常に動作したことも併せてご報告いたします。</div></section>
+    <ul><li><section><h1 id=6616>
+    <span class="no">[6616]</span>
+    <a class="thread-title" href="#6616">Re7:正規表現について</a>
+    <span class="author">K.Takata</span>
+    <time datetime="2008-03-14T22:15:21">2008年03月14日 22:15</time></h1>
+    <div class="body">▼ diさん<br>&gt; NotFoundになっています。<br><br>古いキャッシュが残っていただけではないでしょうか。</div></section>
+    <ul><li><section><h1 id=6618>
+    <span class="no">[6618]</span>
+    <a class="thread-title" href="#6618">Re8:正規表現について</a>
+    <span class="author">di</span>
+    <time datetime="2008-03-15T03:27:52">2008年03月15日 03:27</time></h1>
+    <div class="body">▼ K.Takataさん<br>&gt; ▼ diさん<br>&gt; &gt; NotFoundになっています。<br>&gt; <br>&gt; 古いキャッシュが残っていただけではないでしょうか。<br><br>どうやらそのようです。失礼しました</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>折り返された論理行すべてを選択する | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">404</span>
+    <a class="thread-title" href="404.html#404">折り返された論理行すべてを選択する</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=404>
+    <span class="no">[404]</span>
+    <a class="thread-title" href="#404">折り返された論理行すべてを選択する</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2007-10-08T16:54:17">2007年10月08日 16:54</time></h1>
+    <div class="body">何回も描き直しております (^^;<br><br>&gt;&gt;dev:5096で出てきた「折り返された論理行すべてを選択する（改行含まず）」を作ってみました。<br>思ったより長い……<br>変な所があったら修正をお願いします m(_ _)m<br><br>＝＝ ここから ＝＝<br>// SelectLogicalLine.ppa by nasukoji<br>// カーソルのある論理行を最後の改行を除いて選択します。<br>// PPA.DLL を SAKURA.EXE と同じディレクトリに置いてください。<br>// マクロファイルの拡張子は.PPAとしてください。<br>// 選択行が1000行を超える可能性がある場合はuntil行を変更してください。<br>var<br>&#9;yStart : integer;<br>&#9;yEnd : integer;<br>&#9;yNext : integer;<br>&#9;yPrev : integer;<br>&#9;count : integer;<br>begin<br>&#9;S_GoLineTop(9);<br>&#9;S_BeginSelect();<br>&#9;yStart := S_GetSelectLineFrom();&#9;// レイアウト行取得<br>&#9;S_CancelMode();<br><br>&#9;yNext := yStart;<br>&#9;count := 0;<br>&#9;repeat<br>&#9;// {<br>&#9;&#9;count := count + 1;&#9;// 保険用のカウンタ（あまり意味は無い）<br>&#9;&#9;yPrev := yNext;<br>&#9;&#9;yNext := yNext + 1;&#9;&#9;// 次の行番号を作成<br>&#9;&#9;S_Jump(yNext, 0);&#9;&#9;// レイアウト行にジャンプ<br>&#9;&#9;S_BeginSelect();<br>&#9;&#9;yEnd := S_GetSelectLineFrom();&#9;// 行番号を取得<br>&#9;&#9;S_CancelMode();<br><br>&#9;&#9;if(yPrev = yEnd) then break;&#9;// 最終行（移動できなかった）<br><br>&#9;&#9;S_GoLineTop(9);&#9;&#9;&#9;// 改行単位の行頭へ移動<br>&#9;&#9;S_BeginSelect();<br>&#9;&#9;yEnd := S_GetSelectLineFrom();&#9;// 行番号を取得<br>&#9;&#9;S_CancelMode();<br><br>&#9;&#9;if(yStart &lt; yEnd) then&#9;&#9;// 次の論理行となった<br>&#9;&#9;&#9;begin<br>&#9;&#9;&#9;&#9;yEnd := yEnd - 1;&#9;// 1行前までが選択範囲<br>&#9;&#9;&#9;&#9;break;<br>&#9;&#9;&#9;end<br>&#9;// }<br>&#9;until count &gt; 1000;&#9;&#9;// ただの永久ループしない保険<br><br>&#9;// 後ろに向かって選択する場合<br>&#9;S_Jump(yStart, 0);&#9;// 選択開始行にジャンプ<br>&#9;S_BeginSelect();&#9;// 選択モード開始<br>&#9;S_Jump(yEnd, 0);&#9;// 選択終了行にジャンプ<br>&#9;S_GoLineEnd_Sel();&#9;// 改行の前まで移動<br>&#9;S_BeginSelect();&#9;// 選択モード終了<br><br>&#9;// 前に向かって選択する場合<br>//&#9;S_Jump(yEnd, 0);<br>//&#9;S_GoLineEnd();<br>//&#9;S_BeginSelect();<br>//&#9;S_Jump(yStart, 0);<br>//&#9;S_GoLineTop(9);<br>//&#9;S_BeginSelect();<br>end;<br>＝＝ ここまで ＝＝</div></section>
+    </li></ul></body></html>

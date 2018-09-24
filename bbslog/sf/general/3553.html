@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>複数行への一括挿入 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3553</span>
+    <a class="thread-title" href="3553.html#3553">複数行への一括挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3554</span>
+    <a class="thread-title" href="3553.html#3554">Re:複数行への一括挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3555</span>
+    <a class="thread-title" href="3553.html#3555">Re2:複数行への一括挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3556</span>
+    <a class="thread-title" href="3553.html#3556">Re3:複数行への一括挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3558</span>
+    <a class="thread-title" href="3553.html#3558">Re4:複数行への一括挿入</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3560</span>
+    <a class="thread-title" href="3553.html#3560">Re5:複数行への一括挿入</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3562</span>
+    <a class="thread-title" href="3553.html#3562">Re5:複数行への一括挿入</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3553>
+    <span class="no">[3553]</span>
+    <a class="thread-title" href="#3553">複数行への一括挿入</a>
+    <span class="author">TypeD</span>
+    <time datetime="2003-12-16T18:57:42">2003年12月16日 18:57</time></h1>
+    <div class="body">複数の行に対して一度に行頭、行末に文字列の挿入を行う事って出来ますか？<br>例えば<br><br>AAA<br>BBBBB<br>CCC<br><br>となっているテキストを<br><br>REM AAA<br>REM BBBBB<br>REM CCC<br><br>といった感じに。<br>行頭だけでなく行末にも一度に文字列を入れたり出来ると非常に便利なのですが<br>sakuraでの操作方法がよくわかりません。<br>よろしくおねがいします。</div></section>
+    <ul><li><section><h1 id=3554>
+    <span class="no">[3554]</span>
+    <a class="thread-title" href="#3554">Re:複数行への一括挿入</a>
+    <span class="author">KENCH</span>
+    <time datetime="2003-12-16T19:03:31">2003年12月16日 19:03</time></h1>
+    <div class="body">▼ TypeDさん<br>&gt; 複数の行に対して一度に行頭、行末に文字列の挿入を行う事って出来ますか？<br>　矩形を使えば行頭は簡単に出来ます。<br>　ただ行末は、<br> 例えば<br><br> AAA<br> BBBBB<br> CCC<br> <br> となっているテキストを<br> <br> AAAあ<br> BBBBBあ<br> CCCあ<br><br>　とするのは難しいかも（正規表現使うとできるのかな？）<br><br> AAA  あ<br> BBBBBあ<br> CCC  あ<br><br>　こうするのは、同じく矩形を使えば出来るかと。</div></section>
+    <ul><li><section><h1 id=3555>
+    <span class="no">[3555]</span>
+    <a class="thread-title" href="#3555">Re2:複数行への一括挿入</a>
+    <span class="author">TypeD</span>
+    <time datetime="2003-12-16T19:18:00">2003年12月16日 19:18</time></h1>
+    <div class="body">KENCHさん　音速レスありがとうございました。<br>（リロードしたらレス来てたのでビビりました（＾＾）<br><br>短形を使ってみては？<br>との事でしたので早速短形を使って操作をしてみました。<br>私のsakuaへの認識がまだまだ浅い為KENCHさんの意図とズレているかもしれません。<br>わかった範囲で件の操作を行おうとすると事前に<br><br>REM <br>REM <br>REM <br><br>という文字列をクリップボード上にコピーしておかなければないという認識で合ってますでしょうか？</div></section>
+    <ul><li><section><h1 id=3556>
+    <span class="no">[3556]</span>
+    <a class="thread-title" href="#3556">Re3:複数行への一括挿入</a>
+    <span class="author">ななし</span>
+    <time datetime="2003-12-16T21:02:57">2003年12月16日 21:02</time></h1>
+    <div class="body">▼ TypeDさん<br>&gt; という文字列をクリップボード上にコピーしておかなければないという認識で合ってますでしょうか？<br>横レスですけど<br><br> AAA<br> BBBBB<br> CCC<br><br>があった場合にALTキーを押しながらマウスで範囲選択<br>例えば以下のような前の部分のみを矩形選択します。<br><br> AA<br> BB<br> CC<br><br>で、その後普通にキー入力すれば、望みの操作ができると思います。<br><br>正規表現使った置換えなら、<br>^ で行頭<br>$ で行末<br>になるので、それを任意の文字列に置き換えればいけるはず。</div></section>
+    <ul><li><section><h1 id=3558>
+    <span class="no">[3558]</span>
+    <a class="thread-title" href="#3558">Re4:複数行への一括挿入</a>
+    <span class="author">TypeD</span>
+    <time datetime="2003-12-16T22:23:54">2003年12月16日 22:23</time></h1>
+    <div class="body">▼ ななしさん<br><br>うおっ！？<br>ってな感じです。<br><br>オンラインヘルプにも書いてありましたが短形選択そのものを<br>どうも誤解していたようで使えないと決めつけて読み飛ばしてました。<br><br>お二方にはお手間取らせてしまって申し訳ないです。m(__)m<br></div></section>
+    <ul><li><section><h1 id=3560>
+    <span class="no">[3560]</span>
+    <a class="thread-title" href="#3560">Re5:複数行への一括挿入</a>
+    <span class="author">ひでと</span>
+    <time datetime="2003-12-17T09:20:26">2003年12月17日 09:20</time></h1>
+    <div class="body">▼ TypeDさん<br>&gt; ▼ ななしさん<br>&gt; <br>&gt; うおっ！？<br>&gt; ってな感じです。<br>&gt; <br>&gt; オンラインヘルプにも書いてありましたが短形選択そのものを<br>&gt; どうも誤解していたようで使えないと決めつけて読み飛ばしてました。<br><br>サクラエディタはそんな動きをするんですねえ。<br>長年使っていましたが知りませんでした。<br>矩形選択の機能というよりは、独自仕様でしょうから、誤解ではないかも。<br></div></section>
+    </li><li><section><h1 id=3562>
+    <span class="no">[3562]</span>
+    <a class="thread-title" href="#3562">Re5:複数行への一括挿入</a>
+    <span class="author">KENCH</span>
+    <time datetime="2003-12-17T12:54:20">2003年12月17日 12:54</time></h1>
+    <div class="body">▼ TypeDさん<br>&gt; ▼ ななしさん<br>&gt; お二方にはお手間取らせてしまって申し訳ないです。m(__)m<br>　説明言葉足らずですいません。<br>　//ななしさん、フォローどもです。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

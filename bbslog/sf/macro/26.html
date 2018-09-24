@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>文字数カウント マクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">26</span>
+    <a class="thread-title" href="26.html#26">文字数カウント マクロ</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=26>
+    <span class="no">[26]</span>
+    <a class="thread-title" href="#26">文字数カウント マクロ</a>
+    <span class="author">すい</span>
+    <time datetime="2003-04-08T03:40:12">2003年04月08日 03:40</time></h1>
+    <div class="body">選択中の文字列の文字数を数えてダイアログに表示するマクロです。<br>http://www.egroups.co.jp/files/sakura-editor/User/MACRO/<br>⇒ count_20030408.cab<br><br>大分前に作ったのですが、当時は S_GetSelectedString() の仕様により<br>・複数行が選択されていても選択範囲中の先頭の１行しか見ない。（改行コードも含みません。）<br>・文字列が 259 バイト以上選択されている場合、調査できない。<br>という制約があったために、あまりにも使い物にならなかったので、<br>お蔵入り＆非公開にしていました。<br><br>サクラエディタの最近のバージョンで S_GetSelectedString() の仕様が<br>かなり良くなり、上記制約が全くなくなったので、今回若干手直しをして公開。<br><br>実行すると、選択中の文字列の<br>・バイト数<br>・文字数<br>　・半角文字の文字数<br>　・全角文字の文字数<br>・改行コード数<br>　・CRLF改行の数<br>　・CR改行の数<br>　・LF改行の数<br>を表示します。<br></div></section>
+    </li></ul></body></html>

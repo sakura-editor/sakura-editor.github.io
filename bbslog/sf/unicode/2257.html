@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>GREP中断で表示されるメッセージが文字化け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2257</span>
+    <a class="thread-title" href="2257.html#2257">GREP中断で表示されるメッセージが文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2258</span>
+    <a class="thread-title" href="2257.html#2258">Re: GREP中断で表示されるメッセージが文字化け</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2257>
+    <span class="no">[2257]</span>
+    <a class="thread-title" href="#2257">GREP中断で表示されるメッセージが文字化け</a>
+    <span class="author">anonymous</span>
+    <time datetime="2015-02-12T19:50:21">2015年02月12日 19:50</time></h1>
+    <div class="body">GREP中にキャンセルを押したときに出力されるメッセージ「中断しました。」が文字化けします。<br><br>CGrepAgent::DoGrepの以下がおかしいです。<br>const wchar_t* p = LSW( STR_GREP_SUSPENDED );&#9;//L"中断しました。\r\n"<br>pcViewDst-&gt;GetCommander().Command_ADDTAI<br>L( p, -1 );<br>LSWした文字列をCommand_ADDTAILに渡す前にいったん一時変数に代入すれば文字化けしません。<br><br>sakura2.1.1.4<br></div></section>
+    <ul><li><section><h1 id=2258>
+    <span class="no">[2258]</span>
+    <a class="thread-title" href="#2258">Re: GREP中断で表示されるメッセージが文字化け</a>
+    <span class="author">もか</span>
+    <time datetime="2015-02-12T21:25:42">2015年02月12日 21:25</time></h1>
+    <div class="body">該当箇所はtrunk2/HEADでは他のパッチによりCNativeW経由になってるので問題ないようです。<br></div></section>
+    </li></ul></li></ul></body></html>

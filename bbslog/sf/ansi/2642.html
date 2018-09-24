@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現での置換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2642</span>
+    <a class="thread-title" href="2642.html#2642">正規表現での置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2662</span>
+    <a class="thread-title" href="2642.html#2662">RE: 正規表現での置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2663</span>
+    <a class="thread-title" href="2642.html#2663">RE2: 正規表現での置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2680</span>
+    <a class="thread-title" href="2642.html#2680">RE3: 正規表現での置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2681</span>
+    <a class="thread-title" href="2642.html#2681">RE4: 正規表現での置換</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2642>
+    <span class="no">[2642]</span>
+    <a class="thread-title" href="#2642">正規表現での置換</a>
+    <span class="author">みく</span>
+    <time datetime="2003-03-31T18:41:21">2003年03月31日 18:41</time></h1>
+    <div class="body"><br>選択始点挿入が動作しない件：<br><br>CEditView_Command.cpp:7459,7484行目で選択範囲をクリア<br>してしまっているので、7506行目のGetSelectedData()関数<br>入り口でのIsTextSelected()関数がFALSEを返してしまい、<br>置換が行われません。<br></div></section>
+    <ul><li><section><h1 id=2662>
+    <span class="no">[2662]</span>
+    <a class="thread-title" href="#2662">RE: 正規表現での置換</a>
+    <span class="author">みく</span>
+    <time datetime="2003-04-02T18:55:33">2003年04月02日 18:55</time></h1>
+    <div class="body"><br>正規表現での選択始点挿入：<br>それっぽく動きますが、テストしてません。<br><br><br>以下の行をCEditView_Command.cpp:Command_REPLACE():7454行目に挿入<br><br>CMemory cmemory;<br><br><br>以下の行をCEditView_Command.cpp:Command_REPLACE():7457,7482行目に挿入<br><br>if( (!nPaste) &amp;&amp; bRegularExp ){<br>  GetSelectedData( cmemory, FALSE, NULL, FALSE, m_pShareData-&gt;m_Common.m_bAddCRLFWhenCopy /*, EOL_NONE 2002/1/26 novice */ );<br>}<br><br><br>CEditView_Command.cpp:Command_REPLACE():7498行目を削除<br><br>//CMemory cmemory;<br><br><br>CEditView_Command.cpp:Command_REPLACE():7506-7508行目を削除<br><br>//if( FALSE == GetSelectedData( cmemory, FALSE, NULL, FALSE, m_pShareData-&gt;m_Common.m_bAddCRLFWhenCopy /*, EOL_NONE 2002/1/26 novice */ ) ){<br>//::MessageBeep( MB_ICONHAND );<br>//}<br></div></section>
+    <ul><li><section><h1 id=2663>
+    <span class="no">[2663]</span>
+    <a class="thread-title" href="#2663">RE2: 正規表現での置換</a>
+    <span class="author">みく</span>
+    <time datetime="2003-04-03T19:29:32">2003年04月03日 19:29</time></h1>
+    <div class="body"><br>ぜんぜん駄目でしたので、取り消します。<br></div></section>
+    <ul><li><section><h1 id=2680>
+    <span class="no">[2680]</span>
+    <a class="thread-title" href="#2680">RE3: 正規表現での置換</a>
+    <span class="author">みく</span>
+    <time datetime="2003-04-15T19:37:49">2003年04月15日 19:37</time></h1>
+    <div class="body"><br>正規表現の置換で、<br>選択始点挿入、<br>選択終点追加<br>をできるようにしてみました。<br><br>なお、"^.*$" のように "$" を使用すると、<br>0x0aコードが挿入されてしまいます。<br>多分、改行コード 0x0d0x0a のうち $は0x0dにだけマッチして<br>0x0aが残ってしまうものと思われます。<br>"^.*\r\n" としてください。<br><br>#全置換のほうは直してません。<br></div></section>
+    <ul><li><section><h1 id=2681>
+    <span class="no">[2681]</span>
+    <a class="thread-title" href="#2681">RE4: 正規表現での置換</a>
+    <span class="author">みく</span>
+    <time datetime="2003-04-15T19:39:25">2003年04月15日 19:39</time></h1>
+    <div class="body"><br>→replace20030415.zip です。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

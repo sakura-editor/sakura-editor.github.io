@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>対応文字コードについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5572</span>
+    <a class="thread-title" href="5572.html#5572">対応文字コードについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5590</span>
+    <a class="thread-title" href="5572.html#5590">RE: 対応文字コードについて</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5572>
+    <span class="no">[5572]</span>
+    <a class="thread-title" href="#5572">対応文字コードについて</a>
+    <span class="author">こぼらぁ</span>
+    <time datetime="2009-07-04T09:38:52">2009年07月04日 09:38</time></h1>
+    <div class="body">　突然ですが、文字コード「EBCDIC」＆「EBCDIK」(IBM漢字も？！)の対応というのは、<br>IBMの著作権かライセンス等、何かが絡むのでしょうか？<br><br>　IBMホストのDLファイル（COBOLソース＆テキストデータ)を扱う事が多く、<br>「EBCDIC」＆「EBCDIK」コードをサポートしている他のエディタを使っています。<br><br>　個人的にお世話になって慣れ親しんでいるサクラエディタを、<br>仕事でも使いたいと、最近思い始めたのですが、<br>「EBCDIC」＆「EBCDIK」コードがさぽーとされていないらしいのと、<br>試しに自動判別で認識されないものかと試してみたのですが、<br>やはり、文字化けしてしまい、ダメでした。<br><br>　もし、特に著作権やライセンス(料)の関係等に問題が無ければ、<br>「EBCDIC」＆「EBCDIK」の文字コードがサポートされると嬉しいのですが・・・。<br>（欲を言えば、IBM漢字も対応して貰えると、さらに嬉しいのですが！)<br><br>　きっと、「少数意見なんだろうなぁ」と思いつつも、<br>かすかな希望を託して、投稿してみました。<br><br> m(_ _)m ゴメンネ!<br></div></section>
+    <ul><li><section><h1 id=5590>
+    <span class="no">[5590]</span>
+    <a class="thread-title" href="#5590">RE: 対応文字コードについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2009-08-04T23:51:52">2009年08月04日 23:51</time></h1>
+    <div class="body">&gt;「EBCDIC」＆「EBCDIK」の文字コードがサポートされると嬉しいのですが・・・。<br>http://www.wdic.org/w/WDIC/EBCDIK<br><br>EBCDIKってメーカー毎にこんなに種類があったらどうやって対応すればよいのやら...<br><br>--<br>こういう特殊な物はエディタによるファイルの読み書きで独自のフィルタを入れられるように作ってあるとうまく解決できるのでしょうけどね．<br><br>読み出しはフィルタの標準出力をEditorに取り込み，書き出しはフィルタに標準入力として保存．<br><br>フィルタを拡張子毎に設定可能にすれば，*.gzを直接読み書きすることもできるようになりますし，EBCDICでも何でも自由自在にカスタマイズできそうです．EBCDICではおそらく1:1で置き換えるだけなので，perlのtr///を使ったスクリプトをフィルタに設定できればうまくいきそう．<br></div></section>
+    </li></ul></li></ul></body></html>

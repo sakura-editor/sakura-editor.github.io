@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>SubversionのTagが作れないんですけど... | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4651</span>
+    <a class="thread-title" href="4651.html#4651">SubversionのTagが作れないんですけど...</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4655</span>
+    <a class="thread-title" href="4651.html#4655">Re:SubversionのTagが作れないんですけど...</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4656</span>
+    <a class="thread-title" href="4651.html#4656">Re2:SubversionのTagが作れないんですけど... </a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4657</span>
+    <a class="thread-title" href="4651.html#4657">Re: svnアクセス方法が変わってます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4691</span>
+    <a class="thread-title" href="4651.html#4691">管理人削除</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4651>
+    <span class="no">[4651]</span>
+    <a class="thread-title" href="#4651">SubversionのTagが作れないんですけど...</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-12-21T01:45:07">2006年12月21日 01:45</time></h1>
+    <div class="body">既に気付かれている方がいるかもしれませんが，前回の1.5.13.0からsakura/tags/にリリースラベルを作っていません．<br>さぼっているだけに見えるかもしれませんが，実はコピーしようとしても403 Permission deniedと怒られてしまうんです．<br><br>TortoiseSVNのRepository browserでやろうとして失敗し，working copyからSVNメニューのBranch/tagから実行してもやはりダメ．<br><br>何が悪いのかわかる方いませんか？<br>うまくできるようでしたら代わりにラベル作ってください．(と書いて同じのが二つ作られちゃったらショックですけど...)<br></div></section>
+    <ul><li><section><h1 id=4655>
+    <span class="no">[4655]</span>
+    <a class="thread-title" href="#4655">Re:SubversionのTagが作れないんですけど...</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-12-22T21:32:19">2006年12月22日 21:32</time></h1>
+    <div class="body">▼ げんたさん<br>&gt;403 Permission deniedと怒られてしまうんです．<br>自分は403 Forbiddenと出ました。<br><br>&gt; 何が悪いのかわかる方いませんか？<br><a href=http://www.everes.net/2006/dec/13/svn-copy-on-sourceforge-net/ target=_top><nobr>http://<wbr>www.<wbr>everes.<wbr>net/<wbr>2006/<wbr>dec/<wbr>13/<wbr>svn-<wbr>copy-<wbr>on-<wbr>sourcefo<wbr>rge-<wbr>net/<wbr></nobr></a><br>に解決策が出ていました。<br><a href=https://svn.sourceforge.net/svnroot/sakura-editor/sakura/trunk target=_top><nobr>https://<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>svnroot/<wbr>sakura-<wbr>editor/<wbr>sakura/<wbr>trunk</nobr></a><br>ではなく、<br><a href=https://sakura.svn.sourceforge.net/svnroot/sakura-editor/sakura/trunk target=_top><nobr>https://<wbr>sakura.<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>svnroot/<wbr>sakura-<wbr>editor/<wbr>sakura/<wbr>trunk</nobr></a><br>でチェックアウトして作業すればいけるみたいです。<br><br>&gt; うまくできるようでしたら代わりにラベル作ってください．(と書いて同じのが二つ作られちゃったらショックですけど...)<br>作っておきました。<br>svn:1024 -&gt; tags/R1.5.13.1<br>svn:1035 -&gt; tags/R1.5.14.0<br>慣れない作業で重ねてミスってしまい、その訂正のためにちょっとリビジョングラフが汚くなってしまいました。すいません。m(__)m<br></div></section>
+    <ul><li><section><h1 id=4656>
+    <span class="no">[4656]</span>
+    <a class="thread-title" href="#4656">Re2:SubversionのTagが作れないんですけど... </a>
+    <span class="author">げんた</span>
+    <time datetime="2006-12-23T02:32:15">2006年12月23日 02:32</time></h1>
+    <div class="body">プロジェクトのSVNのページ<br>http://sourceforge.net/svn/?group_id=12488<br><br>を見たら確かにプロジェクト名.svn.sourceforge.net と書いてありますね．<br>どこかで変わったのかな？と，ドキュメントhttp://sourceforge.net/docs/E09#documentation を見ると...<br><br>On November 31, 2006 the access method for Subversion changed<br><br>ですって．負荷が高くなりすぎてサーバを分割したんでしょうか．<br><br>いつもはこう言うときsourceforge.netからニュースみたいなメールが来るんですが，今回は全然お知らせ来ませんでした．<br><br>既にcheckoutされているところは，relocateしてくださいね．<br>ホームページの記述も修正しておきました．<br></div></section>
+    <ul><li><section><h1 id=4657>
+    <span class="no">[4657]</span>
+    <a class="thread-title" href="#4657">Re: svnアクセス方法が変わってます</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-12-23T02:53:20">2006年12月23日 02:53</time></h1>
+    <div class="body">rsyncのアクセスがproxy設定の要らない方法に変わっていました．<br>早速試してみたらうまく取得出来たので，1日1回バックアップを取るようにcronを仕掛けました．<br>ただし1世代のみです．<br></div></section>
+    <ul><li><section><h1 id=4691>
+    <span class="no">[4691]</span>
+    <a class="thread-title" href="#4691">管理人削除</a>
+    <span class="author">syou</span>
+    <time datetime="2007-02-22T20:31:11">2007年02月22日 20:31</time></h1>
+    <div class="body">--</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

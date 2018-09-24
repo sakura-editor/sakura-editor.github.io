@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>1.5.15.2 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5875</span>
+    <a class="thread-title" href="5875.html#5875">1.5.15.2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5879</span>
+    <a class="thread-title" href="5875.html#5879">Re:1.5.15.2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5880</span>
+    <a class="thread-title" href="5875.html#5880">Re2:1.5.15.2</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5881</span>
+    <a class="thread-title" href="5875.html#5881">Re2:1.5.15.2</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5887</span>
+    <a class="thread-title" href="5875.html#5887">RE: 1.5.15.2</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5888</span>
+    <a class="thread-title" href="5875.html#5888">Re:1.5.15.2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5895</span>
+    <a class="thread-title" href="5875.html#5895">Re2:1.5.15.2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5896</span>
+    <a class="thread-title" href="5875.html#5896">Re3:1.5.15.2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5897</span>
+    <a class="thread-title" href="5875.html#5897">Re4:1.5.15.2</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5901</span>
+    <a class="thread-title" href="5875.html#5901">タブ一覧の改善お試し版</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5909</span>
+    <a class="thread-title" href="5875.html#5909">RE: タブ一覧の改善お試し版</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5916</span>
+    <a class="thread-title" href="5875.html#5916">Re2: タブ一覧の改善お試し版</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5918</span>
+    <a class="thread-title" href="5875.html#5918">Re3: タブ一覧の改善お試し版</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5875>
+    <span class="no">[5875]</span>
+    <a class="thread-title" href="#5875">1.5.15.2</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-02-25T04:06:11">2007年02月25日 04:06</time></h1>
+    <div class="body">1.5.15.0で変更したタブモード時の閉じるボタン[X]の動作を従来の挙動に戻すオプションを新設しました．<br>「共通設定」→「タブバー」で設定できます．<br><br>デフォルト動作はWindows標準に近いものとなっています．<br><br>また，共通設定でタブ関連の設定を新設した「タブバー」にまとめました．クリッカブルURLシートにあった項目は「編集」に移動しました．<br></div></section>
+    <ul><li><section><h1 id=5879>
+    <span class="no">[5879]</span>
+    <a class="thread-title" href="#5879">Re:1.5.15.2</a>
+    <span class="author">名無しさん</span>
+    <time datetime="2007-02-25T18:35:37">2007年02月25日 18:35</time></h1>
+    <div class="body">387 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/02/25(日) 17:10:38 ID:7lxtXOGz0<br>「タブを閉じる」ボタンと「タブ一覧」ボタンが近すぎると思う。<br>「タブを閉じる」ボタンは各タブの右に配置するか<br>「タブ一覧」ボタンをタブバー全体の一番左に移すかして欲しい。<br></div></section>
+    <ul><li><section><h1 id=5880>
+    <span class="no">[5880]</span>
+    <a class="thread-title" href="#5880">Re2:1.5.15.2</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-02-25T19:27:32">2007年02月25日 19:27</time></h1>
+    <div class="body">▼ 名無しさん<br>&gt; 「タブ一覧」ボタンをタブバー全体の一番左に移すかして欲しい。<br>IE7 は左ですね。<br>左にするなら、以下のパッチでできます。<br>僕は左右どっちでもいいです。<br><br>Index: sakura_core/CTabWnd.cpp<br>========================================<br>===========================<br>--- sakura_core/CTabWnd.cpp&#9;(revision 1070)<br>+++ sakura_core/CTabWnd.cpp&#9;(working copy)<br>@@ -56,8 +56,8 @@<br> // 2006.01.30 ryoji タブのサイズ／位置に関する定義<br> #define TAB_WINDOW_HEIGHT&#9;24<br> #define TAB_MARGIN_TOP&#9;&#9;3<br>-#define TAB_MARGIN_LEFT&#9;&#9;1<br>-#define TAB_MARGIN_RIGHT&#9;42<br>+#define TAB_MARGIN_LEFT&#9;&#9;23<br>+#define TAB_MARGIN_RIGHT&#9;23<br> #define TAB_ITEM_HEIGHT&#9;&#9;(TAB_WINDOW_HEIGHT - 5)<br> #define MAX_TABITEM_WIDTH&#9;200<br> #define MIN_TABITEM_WIDTH&#9;60<br>@@ -1888,7 +1888,7 @@<br> void CTabWnd::GetListBtnRect( const LPRECT lprcClient, LPRECT lprc )<br> {<br> &#9;*lprc = rcBtnBase;<br>-&#9;::OffsetRect(lprc, lprcClient-&gt;right - TAB_MARGIN_RIGHT + 4, lprcClient-&gt;top + TAB_MARGIN_TOP + 2 );<br>+&#9;::OffsetRect(lprc, 3, lprcClient-&gt;top + TAB_MARGIN_TOP + 2 );<br> }<br> <br> /*! 閉じるボタンの矩形取得処理<br>@@ -1897,7 +1897,7 @@<br> void CTabWnd::GetCloseBtnRect( const LPRECT lprcClient, LPRECT lprc )<br> {<br> &#9;*lprc = rcBtnBase;<br>-&#9;::OffsetRect(lprc, lprcClient-&gt;right - TAB_MARGIN_RIGHT + 4 + 18, lprcClient-&gt;top + TAB_MARGIN_TOP + 2 );<br>+&#9;::OffsetRect(lprc, lprcClient-&gt;right - TAB_MARGIN_RIGHT + 4, lprcClient-&gt;top + TAB_MARGIN_TOP + 2 );<br> }<br> <br> <br></div></section>
+    </li><li><section><h1 id=5881>
+    <span class="no">[5881]</span>
+    <a class="thread-title" href="#5881">Re2:1.5.15.2</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-02-25T20:03:47">2007年02月25日 20:03</time></h1>
+    <div class="body">ちょっとパッチ訂正(^^ゞ<br><br>Index: sakura_core/CTabWnd.cpp<br>===================================================================<br>--- sakura_core/CTabWnd.cpp&#9;(revision 1070)<br>+++ sakura_core/CTabWnd.cpp&#9;(working copy)<br>@@ -56,8 +56,8 @@<br> // 2006.01.30 ryoji タブのサイズ／位置に関する定義<br> #define TAB_WINDOW_HEIGHT&#9;24<br> #define TAB_MARGIN_TOP&#9;&#9;3<br>-#define TAB_MARGIN_LEFT&#9;&#9;1<br>-#define TAB_MARGIN_RIGHT&#9;42<br>+#define TAB_MARGIN_LEFT&#9;&#9;23<br>+#define TAB_MARGIN_RIGHT&#9;23<br> #define TAB_ITEM_HEIGHT&#9;&#9;(TAB_WINDOW_HEIGHT - 5)<br> #define MAX_TABITEM_WIDTH&#9;200<br> #define MIN_TABITEM_WIDTH&#9;60<br>@@ -1888,7 +1888,7 @@<br> void CTabWnd::GetListBtnRect( const LPRECT lprcClient, LPRECT lprc )<br> {<br> &#9;*lprc = rcBtnBase;<br>-&#9;::OffsetRect(lprc, lprcClient-&gt;right - TAB_MARGIN_RIGHT + 4, lprcClient-&gt;top + TAB_MARGIN_TOP + 2 );<br>+&#9;::OffsetRect(lprc, lprcClient-&gt;left + 3, lprcClient-&gt;top + TAB_MARGIN_TOP + 2 );<br> }<br> <br> /*! 閉じるボタンの矩形取得処理<br>@@ -1897,7 +1897,7 @@<br> void CTabWnd::GetCloseBtnRect( const LPRECT lprcClient, LPRECT lprc )<br> {<br> &#9;*lprc = rcBtnBase;<br>-&#9;::OffsetRect(lprc, lprcClient-&gt;right - TAB_MARGIN_RIGHT + 4 + 18, lprcClient-&gt;top + TAB_MARGIN_TOP + 2 );<br>+&#9;::OffsetRect(lprc, lprcClient-&gt;right - TAB_MARGIN_RIGHT + 4, lprcClient-&gt;top + TAB_MARGIN_TOP + 2 );<br> }<br> <br> <br></div></section>
+    </li></ul></li><li><section><h1 id=5887>
+    <span class="no">[5887]</span>
+    <a class="thread-title" href="#5887">RE: 1.5.15.2</a>
+    <span class="author">maru</span>
+    <time datetime="2007-02-27T01:22:41">2007年02月27日 01:22</time></h1>
+    <div class="body">共通設定まわりなど大きく変更されたので、一旦ヘルプリリースしました。<br>やっつけ仕事のため更新漏れとかリンク切れとかが心配です。<br>適宜ご指摘願います。<br></div></section>
+    </li><li><section><h1 id=5888>
+    <span class="no">[5888]</span>
+    <a class="thread-title" href="#5888">Re:1.5.15.2</a>
+    <span class="author">名無しさん</span>
+    <time datetime="2007-02-27T08:17:50">2007年02月27日 08:17</time></h1>
+    <div class="body">▼ ryojiさん<br>パッチ作成ありがとうございます。<br><br><br>395 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/02/25(日) 23:01:21 ID:B+nasP7O0<br>&gt;&gt;387<br>&gt;「タブを閉じる」ボタンと「タブ一覧」ボタンが近すぎると思う。<br>&gt;「タブを閉じる」ボタンは各タブの右に配置するか<br>&gt;「タブ一覧」ボタンをタブバー全体の一番左に移すかして欲しい。<br>マウスホバーでボタンの周囲に枠が描画されるから、<br>あまり押し間違えるってこともないんじゃないかなぁ？<br>MDIの「閉じる」と「元に戻す」なんてもっと近いけど。<br>好みだけで言わせてもらうと、Visual Studo風の今の並びが好み。<br><br>396 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/02/26(月) 00:59:49 ID:JII2Pq7J0<br>タブ一覧ってのはたくさんタブを表示したときに必要になるものだよね。<br>たくさんタブを表示すると、タブをスクロールするボタンがタブの右側に表示されるよね。<br>タブのスクロールボタンは左にはもってこれないはずだから、一覧も右でいいと思う。<br><br>397 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/02/27(火) 00:52:02 ID:nC9q8EK+0<br>両方にタブ一覧を配置すればおｋ<br><br><br>左右両方にタブ一覧を配置するか、オプション設定で配置をカスタマイズするというのは可能でしょうか？</div></section>
+    <ul><li><section><h1 id=5895>
+    <span class="no">[5895]</span>
+    <a class="thread-title" href="#5895">Re2:1.5.15.2</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-02-28T00:58:14">2007年02月28日 00:58</time></h1>
+    <div class="body">▼ 名無しさん<br>&gt; 左右両方にタブ一覧を配置するか、オプション設定で配置をカスタマイズするというのは可能でしょうか？<br><br>自分としては後者のほうがいいかな、と思います。<br>が、ボタンが近すぎるというのがそもそものお話なので、<br>オプションは作らずに小さな改善修正でお試し版を作成しました。<br><br><a href=http://sakura.qp.land.to/?Junk%2F27 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F27</nobr></a><br><br>・ボタン間の隙間を少し広げてセパレータで区切る<br>・アクセラレータキー以外からの[ウィンドウ一覧]はマウス位置に表示する<br><br>ボタン間を広げたので、「ちょっと気になる」程度に思っていた方ならこれで良いかと思います。<br>もとの隙間は、他アプリと比べれば少し広めのVS2005のそれと同程度にしていたんですが...<br>それでも×ボタンが怖くて躊躇する、という人は、ツールバーに[ウィンドウ一覧]を登録するか、マウスの中ボタンに[ウィンドウ一覧]を割り当てて使ってみてください。<br><br>元の要望が、実は、<br>・「タブを閉じる」ボタンは各タブの右に<br>・「タブ一覧」ボタンをタブバー全体の一番左に<br>という、「自分の好みにあわせた設定がしたい」との希望も含んでいるのかもしれませんが、そういうのは別途。<br><br>以下、ひとりごとです。(^^;;;<br>僕個人としては、前回の「閉じる挙動を自然なものにする」をもって、自身が望んでいたタブの基本機能部分は概ね揃ったと思っています。<br>人によってはまだまだ欲しい機能が色々あるとは思いますし、ふぁんくらぶにもそのような要望が書き込まれているのも知っています。<br>ですが、タブバー利用者に限定された追加機能やカスタマイズよりも、今は、ずっと以前から要望されているのにまだオプション化されていない編集関連の機能とかのほうがむしろ気になっています。<br>ですので、タブバー関連機能への注力は一時勢いを無くすことになるかもしれません（まだちょっと気になってる部分はあり）。<br>自分自身、タブマニアというわけでもないので、機能を厳選するにも適してはいないかな～、と自覚してます。<br>＃FireFoxのタブ機能を素のまま使っている自分。σ(^^;<br>じゃあ俺が、と思われる方がいらしたら応援します。</div></section>
+    <ul><li><section><h1 id=5896>
+    <span class="no">[5896]</span>
+    <a class="thread-title" href="#5896">Re3:1.5.15.2</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-02-28T02:24:39">2007年02月28日 02:24</time></h1>
+    <div class="body">あ、それとワンポイント。<br>タブ一覧ボタンは押し下げたまま、選択したいメニュー項目までドラッグして離せば目的のタブを選択することができます。<br>×ボタンは押し下げたまま、ドラッグしてボタン外で離せば利かないので、上記のようなドラッグ操作でタブ一覧を使うようにすれば安全です。</div></section>
+    <ul><li><section><h1 id=5897>
+    <span class="no">[5897]</span>
+    <a class="thread-title" href="#5897">Re4:1.5.15.2</a>
+    <span class="author">名無しさん</span>
+    <time datetime="2007-02-28T12:10:02">2007年02月28日 12:10</time></h1>
+    <div class="body">▼ ryojiさん<br>何度もありがとうございます。<br><br>&gt; それでも×ボタンが怖くて躊躇する、という人は、ツールバーに[ウィンドウ一覧]を登録するか、マウスの中ボタンに[ウィンドウ一覧]を割り当てて使ってみてください。<br>タブ一覧ボタンを左クリックした動作に相当するものが、<br>ウインドウメニューにあるとは知りませんでしたOrz<br>でもタブ一覧ボタンを右クリックした時のフルパス一覧表示は<br>ウインドウメニューにはないようですね。追加して頂けないでしょうか？<br><br><br>&gt; あ、それとワンポイント。<br>&gt; タブ一覧ボタンは押し下げたまま、選択したいメニュー項目までドラッグして離せば目的のタブを選択することができます。<br>&gt; ×ボタンは押し下げたまま、ドラッグしてボタン外で離せば利かないので、上記のようなドラッグ操作でタブ一覧を使うようにすれば安全です。<br>これまた右クリックから起動のフルパス一覧の場合には使えないテクですね。<br>もっともサクラが右クリックで決定動作ができないのはこの機能に限ったことではないので、<br>こればかりはどうしようもないのかもしれませんが。</div></section>
+    <ul><li><section><h1 id=5901>
+    <span class="no">[5901]</span>
+    <a class="thread-title" href="#5901">タブ一覧の改善お試し版</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-02-28T22:15:41">2007年02月28日 22:15</time></h1>
+    <div class="body">▼ 名無しさん<br>&gt; でもタブ一覧ボタンを右クリックした時のフルパス一覧表示は<br>&gt; ウインドウメニューにはないようですね。追加して頂けないでしょうか？<br>[ウィンドウ一覧]メニューが作成された当時、２個もメニューを使うのはちょっと．．．、ということだったと思います。<br>１個のメニューだけで済むようにタブ一覧自身に切替え機能をつけてみました。<br><a href=http://sakura.qp.land.to/?Junk%2F27 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F27</nobr></a><br>操作性はどうか？試してみてください。</div></section>
+    <ul><li><section><h1 id=5909>
+    <span class="no">[5909]</span>
+    <a class="thread-title" href="#5909">RE: タブ一覧の改善お試し版</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-03T08:38:59">2007年03月03日 08:38</time></h1>
+    <div class="body">&gt;[ウィンドウ一覧]メニューが作成された当時、２個もメニューを使うのはちょっと．．．、ということだったと思います。<br>&gt;１個のメニューだけで済むようにタブ一覧自身に切替え機能をつけてみました。<br>切り替えるメニューにキーを割り当てた方が良いと思います．(W)とか．<br>割り当てるとき両方同じ文字にした方が使いやすそう．<br><br>リストボタン上での右クリックを完全に廃止していますが，もし使っている人がいると操作性が変わって戸惑うのではないかと思います．(気付いてない人の方が多そうですが...)<br>でも，そのままにする意味も無いですしねぇ．<br></div></section>
+    <ul><li><section><h1 id=5916>
+    <span class="no">[5916]</span>
+    <a class="thread-title" href="#5916">Re2: タブ一覧の改善お試し版</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-03-03T23:20:28">2007年03月03日 23:20</time></h1>
+    <div class="body">▼ げんたさん<br>別案をUpしました。<br>何故かテキストのほうは編集できないのでファイル添付だけです。<br><a href=http://sakura.qp.land.to/?Junk%2F27 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F27</nobr></a><br>→TabList3_2007-03-03.zip<br><br>・一覧ボタンは元の動作のまま（左右のボタンで切替）<br>・タブバーのボタン上でツールチップを表示する（気付きやすいように）<br>・[ウィンドウ一覧]は切替メニューで切替</div></section>
+    <ul><li><section><h1 id=5918>
+    <span class="no">[5918]</span>
+    <a class="thread-title" href="#5918">Re3: タブ一覧の改善お試し版</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-03-04T00:58:06">2007年03月04日 00:58</time></h1>
+    <div class="body">[XX]ボタンになっているときのツールチップを修正しました。(^^;<br><a href=http://sakura.qp.land.to/?Junk%2F27 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2F27</nobr></a><br>→TabList3_1_2007-03-03.zip</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

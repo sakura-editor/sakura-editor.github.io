@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>FUNCLISTの無駄な余白 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2063</span>
+    <a class="thread-title" href="2063.html#2063">FUNCLISTの無駄な余白</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2064</span>
+    <a class="thread-title" href="2063.html#2064">Re:FUNCLISTの無駄な余白</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2063>
+    <span class="no">[2063]</span>
+    <a class="thread-title" href="#2063">FUNCLISTの無駄な余白</a>
+    <span class="author">LR4</span>
+    <time datetime="2013-11-30T13:22:11">2013年11月30日 13:22</time></h1>
+    <div class="body">ふぁんくらぶpart16の198の件です。<br>rev2608あたりからでしょうか。<br><br>正しいかわかりませんが...<br><br>Index: sakura_rc.rc<br>========================================<br>===========================<br>--- sakura_rc.rc&#9;(リビジョン 3471)<br>+++ sakura_rc.rc&#9;(作業コピー)<br>@@ -173,7 +173,7 @@<br>                     WS_BORDER | WS_TABSTOP,0,17,234,235<br>     CONTROL         "List1",IDC_LIST_FL,"SysListView32",LVS_REPORT | <br>                     LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,0,<br>-                    17,234,235<br>+                    0,234,252<br>     PUSHBUTTON      "▼",IDC_BUTTON_MENU,1,255,10,14,NOT WS_TABSTOP<br>     CONTROL         "■",IDC_BUTTON_WINSIZE,"Button",BS_AUTOCHECKBOX | <br>                     BS_PUSHLIKE,12,255,10,14<br></div></section>
+    <ul><li><section><h1 id=2064>
+    <span class="no">[2064]</span>
+    <a class="thread-title" href="#2064">Re:FUNCLISTの無駄な余白</a>
+    <span class="author">novice</span>
+    <time datetime="2013-11-30T16:33:17">2013年11月30日 16:33</time></h1>
+    <div class="body">▼ LR4さん<br>&gt; ふぁんくらぶpart16の198の件です。<br>&gt; rev2608あたりからでしょうか。<br>&gt; <br>&gt; 正しいかわかりませんが...<br><br>パッチを作成しました。<br><a href=http://sourceforge.net/p/sakura-editor/patchunicode/698/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>698/<wbr></nobr></a><br><br>リソースエディタで見たときにレイアウトが重なる箇所があったのでおかしい？と思ったのですが、ソースコードを見ると動作に応じて表示を切り替えているのでこれで正しいようです。<br></div></section>
+    </li></ul></li></ul></body></html>

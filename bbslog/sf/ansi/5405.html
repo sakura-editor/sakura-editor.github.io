@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>HTMLアウトライン解析の段落処理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5405</span>
+    <a class="thread-title" href="5405.html#5405">HTMLアウトライン解析の段落処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5407</span>
+    <a class="thread-title" href="5405.html#5407">Re:HTMLアウトライン解析の段落処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5408</span>
+    <a class="thread-title" href="5405.html#5408">Re2:HTMLアウトライン解析の段落処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5409</span>
+    <a class="thread-title" href="5405.html#5409">Re3:HTMLアウトライン解析の段落処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5410</span>
+    <a class="thread-title" href="5405.html#5410">Re4:HTMLアウトライン解析の段落処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5411</span>
+    <a class="thread-title" href="5405.html#5411">Re5:HTMLアウトライン解析の段落処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5412</span>
+    <a class="thread-title" href="5405.html#5412">Re6:HTMLアウトライン解析の段落処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5413</span>
+    <a class="thread-title" href="5405.html#5413">Re7:HTMLアウトライン解析の段落処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5415</span>
+    <a class="thread-title" href="5405.html#5415">Re8:HTMLアウトライン解析の段落処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5425</span>
+    <a class="thread-title" href="5405.html#5425">Re9:HTMLアウトライン解析の段落処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5427</span>
+    <a class="thread-title" href="5405.html#5427">Re10:HTMLアウトライン解析の段落処理</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5649</span>
+    <a class="thread-title" href="5405.html#5649">管理者削除</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5405>
+    <span class="no">[5405]</span>
+    <a class="thread-title" href="#5405">HTMLアウトライン解析の段落処理</a>
+    <span class="author">あろか</span>
+    <time datetime="2008-08-15T04:15:30">2008年08月15日 04:15</time></h1>
+    <div class="body">HTMLのルールでは&lt;p&gt;(段落)は省略可能で、ほかのブロック要素が現れたときは自動的に終了することになっているようです。ところがサクラエディタのアウトライン解析は、&lt;p&gt;を&lt;/p&gt;で明示的に終了しないで&lt;p&gt;を繰り返したり&lt;pre&gt;や&lt;div&gt;を続けたとき、トピックツリーがだんだん深くなってしまいます。<br>アウトラインを見るのに都合が悪かったので変更して、SFにパッチを用意しました。<br>見出しの深さ調整処理や、文字修飾タグ(boldやitalic)をツリーに入れない処理なども追加したため否定意見もあると思います。ご意見ください。<br></div></section>
+    <ul><li><section><h1 id=5407>
+    <span class="no">[5407]</span>
+    <a class="thread-title" href="#5407">Re:HTMLアウトライン解析の段落処理</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-08-23T17:18:59">2008年08月23日 17:18</time></h1>
+    <div class="body">▼ あろかさん<br>パッチを試してみようと思ったのですが、「パッチを適用」にて MakeHTMLTopic.diff を選択すると「未知の改行コードが、行 180 で見つかりました！」のエラーとなってしまいます。<br><br>パッチの中を見てみるとコード部分にCRLFのところが２箇所あったのでLFに直してみましたが現象は変わりませんでした。<br><br>Windows2000 SP4 + TortoiseSVN 1.4.5 build 10425 にて試しました。<br></div></section>
+    <ul><li><section><h1 id=5408>
+    <span class="no">[5408]</span>
+    <a class="thread-title" href="#5408">Re2:HTMLアウトライン解析の段落処理</a>
+    <span class="author">あろか</span>
+    <time datetime="2008-08-24T19:00:03">2008年08月24日 19:00</time></h1>
+    <div class="body">▼ なすこじさん<br>お手数かけました。こちらでも失敗していましたのでdiffファイルを作り直しました。<br>SF.netは失敗したのでWikiのDevelop/8にアップロードしました。<br><br>PS.「&lt;p&gt;(段落)は省略可能で」は「&lt;p&gt;(段落)は&lt;/p&gt;が省略可能で」の誤りです。</div></section>
+    <ul><li><section><h1 id=5409>
+    <span class="no">[5409]</span>
+    <a class="thread-title" href="#5409">Re3:HTMLアウトライン解析の段落処理</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-08-25T04:40:46">2008年08月25日 04:40</time></h1>
+    <div class="body">パッチの最後の方に Patches #2028628 が混入してませんか？<br><br>その部分を削除して試してみました。<br>タグを小文字で書くとOKですが、大文字で書くとおかしくなる<br>みたいです。<br><br>metaをMETAと書くとツリーを形成してしまいます。<br>同様に&lt;P&gt;や&lt;BR&gt;でも発生します。<br>タグを&lt;p&gt;&lt;br&gt;の様に小文字で書くと大丈夫です。<br><br>&lt;html&gt;<br>&lt;head&gt;<br>&lt;title&gt;アウトライン解析テスト用1&lt;/title&gt;<br>&lt;META NAME=GENERATOR CONTENT="HANDMADE"&gt;<br>&lt;META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Shift_JIS"&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;P&gt;パラグラフ1<br>&lt;P&gt;パラグラフ2&lt;BR&gt;<br>&lt;BR&gt;<br>&lt;P&gt;パラグラフ3&lt;BR&gt;&lt;/P&gt;<br>&lt;P&gt;パラグラフ4<br>&lt;P&gt;パラグラフ5&lt;/P&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br><br><br>番号付きのリストでツリーになりません。<br>これも&lt;OL&gt;を&lt;ol&gt;とするとツリーとなります。<br>パラグラフ1の&lt;p&gt;が関係しているようです。&lt;P&gt;にすると&lt;OL&gt;は<br>ツリーとなります。<br><br>&lt;html&gt;<br>&lt;head&gt;<br>&lt;title&gt;アウトライン解析テスト用2&lt;/title&gt;<br>&lt;META NAME=GENERATOR CONTENT="HANDMADE"&gt;<br>&lt;META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Shift_JIS"&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;p&gt;パラグラフ1&lt;/p&gt;<br>&lt;OL&gt;<br>&lt;li&gt;<br>階層1A<br>&lt;/li&gt;<br>&lt;li&gt;<br>階層1B<br>&lt;/li&gt;<br>&lt;OL&gt;<br>&lt;li&gt;<br>階層2A<br>&lt;/li&gt;<br>&lt;li&gt;<br>階層2B<br>&lt;/li&gt;<br>&lt;/OL&gt;<br>&lt;/OL&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br><br>とりあえず動作だけ見てみました。<br>コードはまだ見れていないです。<br><br>ではでは。<br></div></section>
+    <ul><li><section><h1 id=5410>
+    <span class="no">[5410]</span>
+    <a class="thread-title" href="#5410">Re4:HTMLアウトライン解析の段落処理</a>
+    <span class="author">あろか</span>
+    <time datetime="2008-08-25T09:29:00">2008年08月25日 09:29</time></h1>
+    <div class="body">▼ なすこじさん<br>確認ありがとうございます。<br><br>&gt; パッチの最後の方に Patches #2028628 が混入してませんか？<br>はい。すみません。<br><br>&gt; タグを小文字で書くとOKですが、大文字で書くとおかしくなる<br>&gt; みたいです。<br>ラベルを szLabel にコピーしたとき、strlwr のつもりで tolower になっていました。<br>このため、大文字がまったくおかしな振る舞いになっていました。</div></section>
+    <ul><li><section><h1 id=5411>
+    <span class="no">[5411]</span>
+    <a class="thread-title" href="#5411">Re5:HTMLアウトライン解析の段落処理</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-08-25T18:44:41">2008年08月25日 18:44</time></h1>
+    <div class="body">▼ あろかさん<br>大文字の件は_tolowerをstrlwrに変更することで解決しました。<br>他に気づいた点をば。<br><br>1) Pエレメント内にAエレメントがあった場合<br>　インラインエレメントに関しては、パッチ適用前と同様にPに<br>　ぶら下がる形になるべきではないでしょうか？<br><br>2) P以外で終了タグが省略可能なもの<br>　HEAD,BODY,LI,DT,DD,TR,TH,TD,OPTIONなどが終了タグ省略<br>　可能なようですが、対処漏れがあると思います。<br><br>3) TDエレメント内にPエレメントがあった場合<br>　次のTRエレメントのアウトラインがおかしくなるようです。<br><br>&lt;html&gt;<br>&lt;head&gt;<br>&lt;title&gt;アウトライン解析テスト用3&lt;/title&gt;<br>  &lt;meta NAME=GENERATOR CONTENT="HANDMADE"&gt;<br>  &lt;meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Shift_JIS"&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&lt;p&gt;パラグラフ1　&lt;a href="http://sourceforge.net/"&gt;リンク1&lt;/a&gt;&lt;/p&gt;<br>&lt;ol&gt;<br>&lt;li&gt;<br>階層1A<br>&lt;li&gt;<br>階層1B<br>&lt;/li&gt;<br>&lt;/ol&gt;<br>&lt;table border=1&gt;<br>&lt;tr&gt;&lt;th&gt;ヘッダ1&lt;/th&gt;&lt;th&gt;ヘッダ2&lt;/th&gt;&lt;/tr&gt;<br>&lt;tr&gt;&lt;td&gt;データ1A　&lt;p&gt;&lt;a href="http://sourceforge.net/"&gt;リンク2&lt;/a&gt;&lt;/td&gt;&lt;td&gt;データ1B&lt;/td&gt;&lt;/tr&gt;<br>&lt;tr&gt;&lt;td&gt;データ2A&lt;/td&gt;&lt;td&gt;データ2B&lt;/td&gt;&lt;/tr&gt;<br>&lt;/table&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br></div></section>
+    <ul><li><section><h1 id=5412>
+    <span class="no">[5412]</span>
+    <a class="thread-title" href="#5412">Re6:HTMLアウトライン解析の段落処理</a>
+    <span class="author">あろか</span>
+    <time datetime="2008-08-29T08:11:14">2008年08月29日 08:11</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; 1) Pエレメント内にAエレメントがあった場合<br>&gt; 　インラインエレメントに関しては、パッチ適用前と同様にPに<br>&gt; 　ぶら下がる形になるべきではないでしょうか？<br>そうですね。アウトラインに残すなら適用前の振る舞いに直したいです。<br>逆にインラインエレメント自体アウトラインに不要かと思ったのですがその点はいかがでしょうか。<br><br>&gt; 2) P以外で終了タグが省略可能なもの<br>&gt; 　HEAD,BODY,LI,DT,DD,TR,TH,TD,OPTIONなどが終了タグ省略<br>&gt; 　可能なようですが、対処漏れがあると思います。<br>まずはpだけの改善をするつもりでした。<br>全部に対応しようとすると結構面倒なので諦めたのですが、やっぱりちゃんとやらないとまずいですかね。<br><br>&gt; 3) TDエレメント内にPエレメントがあった場合<br>&gt; 　次のTRエレメントのアウトラインがおかしくなるようです。<br>修正します。<br></div></section>
+    <ul><li><section><h1 id=5413>
+    <span class="no">[5413]</span>
+    <a class="thread-title" href="#5413">Re7:HTMLアウトライン解析の段落処理</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-08-31T05:54:22">2008年08月31日 05:54</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; &gt; 1) Pエレメント内にAエレメントがあった場合<br>&gt; &gt; 　インラインエレメントに関しては、パッチ適用前と同様にPに<br>&gt; &gt; 　ぶら下がる形になるべきではないでしょうか？<br>&gt; そうですね。アウトラインに残すなら適用前の振る舞いに直したいです。<br>&gt; 逆にインラインエレメント自体アウトラインに不要かと思ったのですがその点はいかがでしょうか。<br><br>AやIMGの存在が分かると便利かもと思いましたが、アウトラインという観点からするとインラインエレメントは不要なのかもしれませんね。<br>なので、無くても良いと思います。<br><br>&gt; &gt; 2) P以外で終了タグが省略可能なもの<br>&gt; &gt; 　HEAD,BODY,LI,DT,DD,TR,TH,TD,OPTIONなどが終了タグ省略<br>&gt; &gt; 　可能なようですが、対処漏れがあると思います。<br>&gt; まずはpだけの改善をするつもりでした。<br>&gt; 全部に対応しようとすると結構面倒なので諦めたのですが、やっぱりちゃんとやらないとまずいですかね。<br><br>そういう事でしたら、まずはPだけでも良いと思います。<br><br>ではでは。<br></div></section>
+    <ul><li><section><h1 id=5415>
+    <span class="no">[5415]</span>
+    <a class="thread-title" href="#5415">Re8:HTMLアウトライン解析の段落処理</a>
+    <span class="author">あろか</span>
+    <time datetime="2008-09-08T01:09:21">2008年09月08日 01:09</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; 3) TDエレメント内にPエレメントがあった場合<br>&gt; 　次のTRエレメントのアウトラインがおかしくなるようです。<br>修正しました。pの終わりを判定する場所が不適切でした。<br><br>&gt; AやIMGの存在が分かると便利かもと思いましたが、アウトラインという観点からするとインラインエレメントは不要なのかもしれませんね。<br>&gt; なので、無くても良いと思います。<br>確かに便利ですね。<br>テキスト飾りとルビ要素はアウトラインから外すようにしましたが、他は従来どおりにしてあります。<br><br>diffをWikiのDevelop/8にアップロードしました。</div></section>
+    <ul><li><section><h1 id=5425>
+    <span class="no">[5425]</span>
+    <a class="thread-title" href="#5425">Re9:HTMLアウトライン解析の段落処理</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-09-11T04:20:44">2008年09月11日 04:20</time></h1>
+    <div class="body">▼ あろかさん<br>ソースコードおよび動作を確認しました。<br>コミットOKと思います。<br> <br>1点確認ですが、CEditDoc.cppの2955,2958行でpLineのみ更新してiを更新していないのは意識的なものでしょうか？<br>動作に大きな影響は無さそうですがちょっと気になりました。<br></div></section>
+    <ul><li><section><h1 id=5427>
+    <span class="no">[5427]</span>
+    <a class="thread-title" href="#5427">Re10:HTMLアウトライン解析の段落処理</a>
+    <span class="author">あろか</span>
+    <time datetime="2008-09-14T15:05:38">2008年09月14日 15:05</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; ▼ あろかさん<br>&gt; ソースコードおよび動作を確認しました。<br>&gt; コミットOKと思います。<br>&gt; <br>&gt; 1点確認ですが、CEditDoc.cppの2955,2958行でpLineのみ更新してiを更新していないのは意識的なものでしょうか？<br>&gt; 動作に大きな影響は無さそうですがちょっと気になりました。<br><br>度々の確認ありがとうございます。<br>ご指摘の二箇所にi++;を加えてコミットしました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=5649>
+    <span class="no">[5649]</span>
+    <a class="thread-title" href="#5649">管理者削除</a>
+    <span class="author">-</span>
+    <time datetime="2010-01-05T12:52:51">2010年01月05日 12:52</time></h1>
+    <div class="body">-</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

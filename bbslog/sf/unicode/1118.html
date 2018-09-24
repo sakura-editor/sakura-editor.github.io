@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>pluginのOutLine仕様について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1118</span>
+    <a class="thread-title" href="1118.html#1118">pluginのOutLine仕様について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1119</span>
+    <a class="thread-title" href="1118.html#1119">Re: pluginのOutLine仕様について(つづき)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1121</span>
+    <a class="thread-title" href="1118.html#1121">Re2: pluginのOutLine仕様について(つづき)</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1120</span>
+    <a class="thread-title" href="1118.html#1120">Re:pluginのOutLine仕様について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1122</span>
+    <a class="thread-title" href="1118.html#1122">Re2:pluginのOutLine仕様について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1123</span>
+    <a class="thread-title" href="1118.html#1123">Re3:pluginのOutLine仕様について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1125</span>
+    <a class="thread-title" href="1118.html#1125">Re4:pluginのOutLine仕様について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1126</span>
+    <a class="thread-title" href="1118.html#1126">Re5:pluginのOutLine仕様について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1118>
+    <span class="no">[1118]</span>
+    <a class="thread-title" href="#1118">pluginのOutLine仕様について</a>
+    <span class="author">もか</span>
+    <time datetime="2010-02-20T22:35:31">2010年02月20日 22:35</time></h1>
+    <div class="body">WSH汎用プラグインができたと聞いて、よろこんでテスト中です。<br>今使ってるのは Junk/48「プラグイン機能 」のsakuraW_pluginU6.zipです。<br>非常に有用で将来を左右しそうだからきびしめに書きます。<br>#要求だけ書いてコードを書いてないので申し訳ないです。<br>まだアウトラインしかためしてないので内容はOutLineオブジェクトについてのみです。<br><br>それで、私ですら普段使っていない下記のOUTLINE DLLをJScriptにいそいそと移植中です。<br>http://www.geocities.jp/moca_skr/bin_other.html<br>sdiff_2006-04-20myedit.tar.gz<br><br>　以下の案ではANSI移植を考えてありますが、ANSI移植はしないのでも別にかまわないので、どっちの予定なのか教えてもらえると助かります。<br>■2. OutLine.AddFuncInfo/2のレイアウト行<br>OutLine.AddFuncInfo/2の第2引数なのですが、レイアウト行番号になってます。<br>マクロからどうやって取得したらいいんでしょうか？<br>RubyOutline/outline.jsでは、物理=レイアウトになってました。<br>普通のEditor系マクロ関数にも実装されている覚えがないです。<br><br>今考えた案：<br>*1-A. 以下のようなマクロ関数を追加<br>Editor.GetNativeLength(str:string) : integer<br>　文字列のnativeな長さを取得します。<br>　Unicode版ではJScriptのString.lengthと同じです。すなわちUTF-16のバイト数/2です。<br>　ANSI版ではShift_JISでのバイト数です。<br>　CRとLFも１文字として数えます。(おそらく)<br><br>変換関数群は以下のような感じ<br>1行80だとしてたとえば<br>Editor.GetLayoutLineNumberByPhysical(1,95) =&gt; 2<br>(おまけ)Editor.GetLayoutColmNumberByPhysical(1,95) =&gt; 15<br>(おまけ)Editor.GetPhysicalLineNumberByLayout(2)    =&gt; 1<br>のように変換します。これで現状のAddFuncInfoの第2引数に指定できます。<br><br>*1-B. AddFuncInfo/2の引数を行桁にする<br>OutLine.AddFuncInfo( 論理行, 行頭からのオフセット, 文字列, 付加情報 )<br>にして、レイアウト行はサクラ側が設定します。<br>CFuncInfoのm_nFuncLineLAYOUTは、<br>・カーソル位置のアウトラインを選択<br>・PL/SQLのジャンプ<br>・リスト表示のときで行番号が折り返し単位のときの行番号表示<br>でしか使っていないみたいなので、いっそCFuncInfoArr.AddFuncのときは-1とかにしておいて、使うときに後で計算して設定するようにしても良いかもしれません。<br>ただし、ファイルが大きくて仮想メモリが使われていると、アウトライン解析プラグインが１行読むときにその行のレイアウトを取得したほうが、表示の時に取得するよりスワップが少なくて高速です。<br>この場合もEditor.GetNativeLengthはANSI対応時はほしいです。<br></div></section>
+    <ul><li><section><h1 id=1119>
+    <span class="no">[1119]</span>
+    <a class="thread-title" href="#1119">Re: pluginのOutLine仕様について(つづき)</a>
+    <span class="author">もか</span>
+    <time datetime="2010-02-20T22:38:56">2010年02月20日 22:38</time></h1>
+    <div class="body">■2. OutLine.AddFuncInfo/2で列指定したい<br>XML解析では、行番号だけだと不便なときがあるので、列番号指定がほしいです。<br>これはプラグインというよりサクラ側のOutLineの拡張ですが1-Bを採用すれば、サクラエディタ側が実装していなくてもプラグイン側からは同じに見えます。<br>1-Aにすると、AddFuncInfoの引数が(論理行、論理オフセット、レイアウト行、レイアウトオフセット、文字列、付加情報)になります。<br><br>■3. OutLine.AddFuncInfoでもオプションを設定したい<br>汎用ツリー解析で、クリップボード無視の処理が可能なので設定できるようにしてほしいです。<br>現状はFUNCINFO_NOCLIPTEXTしかありませんが、たぶん使えます。<br><br>■4.SetListTypeの引数<br>基本的に、解析機能を乗っ取ってアウトライン解析ダイアログに表示させているからだとは思うのですが、エディタの内部番号なので分かりにくいと思います。<br>OUTLINE_BOOKMARKとか指定すると後でずれそうです。<br>「xxxxで使ってる表示方法を指定する」より「Treeで表示する」とか「クラスツリーで表示する」というなら、必ず同じ数字になるほうが良いと思います。<br>0,2,6,7,14,(15),(17以上) List表示<br>1,13 TreeJava(true)表示<br>3,9,10,11,12 Tree表示<br>13 Tree(true)表示<br>4,5, TreeJava(false)表示<br>8 VB表示<br>16 Bookmarkモード表示(ただし数字は変化します)<br>では、説明にも困るし、たとえばC++の内蔵解析を更新して標準Treeを使うようにしたらC++を指定していたものがおかしくなります。<br>面倒ですが別の値を設定して、切り分けたほうが懸命だと思います。<br><br>■5.プラグインIDの件<br>プラグインIDがずれるとタイプ別設定での指定と一致しなくなり、違うアウトラインプラグインが使われる気がします。<br>タイプ別設定の構造体を変える以外いい解決方法がうかばないけれど、なるべく何とかしたいです。<br>タイプ別設定もインポートできるようにしたいと妄想しているので、一意に識別できるもののほうがうれしいです。<br></div></section>
+    <ul><li><section><h1 id=1121>
+    <span class="no">[1121]</span>
+    <a class="thread-title" href="#1121">Re2: pluginのOutLine仕様について(つづき)</a>
+    <span class="author">syat</span>
+    <time datetime="2010-02-21T21:32:32">2010年02月21日 21:32</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ■2. OutLine.AddFuncInfo/2で列指定したい<br>同意です。<br><br>&gt; ■3. OutLine.AddFuncInfoでもオプションを設定したい<br>サクラエディタのマクロ関数は引数を４個までしか受け取れず、これを変えるのはやや躊躇します。<br>対応するなら第４引数に混ぜ込む形でどうにかしたいところ。<br>すごく汎用的なツリー／リストを用意して、その第４引数を万能にしておくとか。<br><br>&gt; ■4.SetListTypeの引数<br>&gt; 基本的に、解析機能を乗っ取ってアウトライン解析ダイアログに表示させているからだとは思うのですが、エディタの内部番号なので分かりにくいと思います。<br>&gt; 面倒ですが別の値を設定して、切り分けたほうが懸命だと思います。<br>課題ですね。<br><br>&gt; ■5.プラグインIDの件<br>&gt; プラグインIDがずれるとタイプ別設定での指定と一致しなくなり、違うアウトラインプラグインが使われる気がします。<br>&gt; タイプ別設定の構造体を変える以外いい解決方法がうかばないけれど、なるべく何とかしたいです。<br>&gt; タイプ別設定もインポートできるようにしたいと妄想しているので、一意に識別できるもののほうがうれしいです。<br>パッチページでも議論していましたが、一意な識別子を入れようとすると修正が大変で。。。<br>プラグインのバージョンアップであれば古いプラグインに上書きするだけで正常に動作するはずです。また、INIをまるごとコピーすれば設定の引き継ぎは問題ありません。しかし部分的なインポート／エクスポートは考えていませんでした。<br>プラグイン設定タブを強化してプラグインIDを変更できるようにするとか、いっそプラグイン設定も一緒に(im|ex)portしてもらうとか。<br></div></section>
+    </li></ul></li><li><section><h1 id=1120>
+    <span class="no">[1120]</span>
+    <a class="thread-title" href="#1120">Re:pluginのOutLine仕様について</a>
+    <span class="author">syat</span>
+    <time datetime="2010-02-21T20:11:22">2010年02月21日 20:11</time></h1>
+    <div class="body">▼ もかさん<br>&gt;WSH汎用プラグインができたと聞いて、よろこんでテスト中です。<br>感謝です＾＾<br><br>&gt;以下の案ではANSI移植を考えてありますが、ANSI移植はしないのでも別にかまわないので、どっちの予定なのか教えてもらえると助かります。<br>今のところANSI移植は考えていません。ただマクロIFオブジェクトの改造はANSIと差分が大きくなってしまったのでそこだけ移植するかもしれません。<br>プラグイン機能は全く新しい機能なのでANSI版に入れるのは必須ではないと思っています。（Uの正式リリース時期にもよりますが…）<br><br>&gt; ■2. OutLine.AddFuncInfo/2のレイアウト行<br>&gt; OutLine.AddFuncInfo/2の第2引数なのですが、レイアウト行番号になってます。<br>レイアウト行が実際にどのように使われているのかが見極められなかったため、とりあえず的に引数に含めました。(土管とも言います)<br>もかさんの言うとおり現状レイアウト行を求める方法がないので謎な引数になっています。<br>マクロ関数の引数４個制限のことを考えると、私は1-Bの案がよいかなと思います。<br><br>&gt; この場合もEditor.GetNativeLengthはANSI対応時はほしいです。<br>これは、ANSIとUNICODEで論理桁($x)の数え方が変わっているため、プラグインを共通にするなら差分吸収のため必要ということですね。<br><br></div></section>
+    <ul><li><section><h1 id=1122>
+    <span class="no">[1122]</span>
+    <a class="thread-title" href="#1122">Re2:pluginのOutLine仕様について</a>
+    <span class="author">もか</span>
+    <time datetime="2010-02-25T03:22:52">2010年02月25日 03:22</time></h1>
+    <div class="body">Functionの引数が4つまでしか定義できないのは(関数定義見てたのに)忘れてました。<br>今は1-Bあたりにして、拡張はあんまり要望集まらないけど、要望とかの様子を見ながらにしますか。<br><br>*[共通設定]-[プラグイン]<br>もしかしなくても「追加」したあと「OK」押すまで本物の設定には読み込まれなくて、一時的な状態なんですね。<br>ここで、プラグインを削除して新しいのを追加すると、一覧の「プラグイン名」と説明が古いままなので一致しなくて混乱します。<br>追加して稼動になったあとフォルダを改名か削除して設定画面で「削除」するとエディタがフリーズして全滅します。<br>それからIDが同じでも複数読み込める？みたいで、その辺よく分かりません。<br><br>*[タイプ別設定]-[スクリーン]-「アウトライン解析方法」標準ルール<br>プラグインの順番とアウトラインの順番が一致しないというか毎回違うようです。<br>実用上の問題はないけど不思議です。なんでだろう。<br><br>wikiのほうに、XML+XHTML+HTMLモドキ+JS+CSSアウトライン解析をアップしました。<br>ベータ版ですが重さとかの検証にどうぞ。コードはスパゲティーが進んでいるのでmini化してごまかしてあります。<br>コードが悪いのもあって内蔵のアウトラインとくらべると若干待たされる感があります。<br>しかしアウトライン解析のコードを弄繰り回したりするときの楽さはスクリプトが圧勝です。<br>言語固有のコードを長く書いても、本体のソース・バイナリの肥大を気にしなくていいというのもうれしいです。<br>デバッグはすこしノウハウが必要かもしれません。<br>Editor.TraceOutに直接なげないでバッファリングしたりブラウザを使う等すると少し楽できます。<br></div></section>
+    <ul><li><section><h1 id=1123>
+    <span class="no">[1123]</span>
+    <a class="thread-title" href="#1123">Re3:pluginのOutLine仕様について</a>
+    <span class="author">syat</span>
+    <time datetime="2010-03-01T02:04:26">2010年03月01日 02:04</time></h1>
+    <div class="body">プラグインの追加／削除まわりを見直して、状態の表示を詳しくしてみました。テストバイナリをwikiに上げておきます。<br><br>&gt; 追加して稼動になったあとフォルダを改名か削除して設定画面で「削除」するとエディタがフリーズして全滅します。<br>修正済みです。<br>&gt; それからIDが同じでも複数読み込める？みたいで、その辺よく分かりません。<br>すみません；実装が中途半端だったので直しました。<br></div></section>
+    <ul><li><section><h1 id=1125>
+    <span class="no">[1125]</span>
+    <a class="thread-title" href="#1125">Re4:pluginのOutLine仕様について</a>
+    <span class="author">もか</span>
+    <time datetime="2010-03-03T23:46:52">2010年03月03日 23:46</time></h1>
+    <div class="body">新しいの昨日確認しました。落ちないし良いと思います。<br>PatchUnicodeのほうにコメントしてあります。<br><br>たった今気がついたのですが、Editor.Outline()が存在しているんですね。<br>Editorは省略可能ということになっているので、Outlineと<br>Outline.xxxと被るけれど、意図的でしょうか？<br>プラグインをマクロで実行すると...とか0.3mmぐらい心配します。<br></div></section>
+    <ul><li><section><h1 id=1126>
+    <span class="no">[1126]</span>
+    <a class="thread-title" href="#1126">Re5:pluginのOutLine仕様について</a>
+    <span class="author">syat</span>
+    <time datetime="2010-03-18T00:11:40">2010年03月18日 00:11</time></h1>
+    <div class="body">すこし時間が空いてしまいましたが、アウトライン解析の桁追加を実装してみました。<br>PatchUnicode:2971992<br>レイアウト行/桁は論理行/桁から変換できたので、代わりに論理桁を指定できるようになりました。<br>オフセットではなく桁番号なので1から始まることに注意。<br><br>FUNCINFO_NOCLIPTEXTオプションは、AddFuncInfo2の第4引数（深さ）に足し算して指定できるようにしました。<br>今のところ汎用ツリーのみに実装されていますが、リストのほうも同じく第4引数にANDすれば対応できます。<br><br>Editor.Outline()とOutlineオブジェクトの被りは気付きませんでした。<br>JScriptとVBScriptで試したかぎり、プラグインとしては問題なさそうですが、今後RubyとかPHPが入ってきたらどうなるかわかりません。言語実装依存になってしまうのがちょっと嫌なので「Funclistオブジェクト」とかに改名するのも一つの手ですが。あまり関数名とオブジェクト名にしばりを入れたくないなぁ。<br>なおマクロで実行した場合はOutlineオブジェクトが見えないため混同はありません。<br>ただし、プラグイン内部からEditor.Outline()を呼ぶと大変なことになったので、そこは再入できないよう制限を入れました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

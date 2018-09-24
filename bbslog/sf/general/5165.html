@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>TABインデントの問題？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5165</span>
+    <a class="thread-title" href="5165.html#5165">TABインデントの問題？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5166</span>
+    <a class="thread-title" href="5165.html#5166">Re:TABインデントの問題</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5190</span>
+    <a class="thread-title" href="5165.html#5190">Re2:TABインデントの問題</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5165>
+    <span class="no">[5165]</span>
+    <a class="thread-title" href="#5165">TABインデントの問題？</a>
+    <span class="author">スターヨッシー</span>
+    <time datetime="2006-04-13T21:17:45">2006年04月13日 21:17</time></h1>
+    <div class="body">どうも初めまして。サクラエディタを迚も愛用しているスターヨッシーと申します。今後とも宜しく御願いします。<br><br>突然で申し訳御座いませんが要望・・？の様なものです。<br><br>・・・と云うのは、いつも気になっているのですが、TABインデントの際、空白の行をインデントしてもインデントされないのです。此れは、仕様ですか・・？例えば・・<br><br>1:abc<br>2:<br>3:abc<br><br>の３行の行を全て選択し、TABキーを押してインデントしても、<br><br>1:&#9;abc<br>2:<br>3:&#9;abc<br><br>となって2行目がインデントされません。</div></section>
+    <ul><li><section><h1 id=5166>
+    <span class="no">[5166]</span>
+    <a class="thread-title" href="#5166">Re:TABインデントの問題</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-04-14T21:47:16">2006年04月14日 21:47</time></h1>
+    <div class="body">▼ スターヨッシーさん　よろしくお願いします。<br><br>仕様かどうかは、分かりませんが、ご希望の動作を実現する方法はあります。<br><br>ON-正規表現<br>置換「^」⇒「\t」<br>です。<br><br>この置換を、標準のTABインデント機能にしてしまうと、<br>行に文字の無い場合はインデントしたくないという<br>動作を実現する事が困難になると思われます。</div></section>
+    <ul><li><section><h1 id=5190>
+    <span class="no">[5190]</span>
+    <a class="thread-title" href="#5190">Re2:TABインデントの問題</a>
+    <span class="author">スターヨッシー</span>
+    <time datetime="2006-04-24T00:03:21">2006年04月24日 00:03</time></h1>
+    <div class="body">少し古い記事を上げてしまって申し訳御座いません。<br><br>＞この置換を、標準のTABインデント機能にしてしまうと、<br>行に文字の無い場合はインデントしたくないという<br>動作を実現する事が困難になると思われます。<br><br>Tera padには「空行のインデント」がありました。併し、出来れば<br>サクラエディタにも此の昨日を搭載して欲しいのですが、(タイプ別設定で変更可能)<br>難しいでしょうか・・・。下手な事を行って申し訳御座いません。<br><br>＊後で気が付いたのですが、タブインデントとタブ文字の挿入は違いました・・。<br><br>▲スレ違いなマクロ・・<br><br>// 改行コードの変更<br>var Code =&#9;GetLineCode() == 0 ? "\r\n" :<br>&#9;&#9;&#9;GetLineCode() == 1 ? "\r" : "\n";<br>var text = GetSelectedString();<br><br>if(GetSelectedString() == Code || text.match(RegExp(Code + Code), "g")){<br>&#9;InsText(text.replace(RegExp(Code, "g"), "\t" + Code));<br> <br>&#9;Up();<br>}<br>else{<br>&#9;// インデント<br>&#9;IndentTab();<br>}</div></section>
+    </li></ul></li></ul></li></ul></body></html>

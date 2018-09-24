@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バグ報告 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">123</span>
+    <a class="thread-title" href="123.html#123">バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">124</span>
+    <a class="thread-title" href="123.html#124">バグ修正：URLダブルクリックで落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">127</span>
+    <a class="thread-title" href="123.html#127">Re:バグ修正：URLダブルクリックで落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">128</span>
+    <a class="thread-title" href="123.html#128">Re2:バグ修正：URLダブルクリックで落ちる</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=123>
+    <span class="no">[123]</span>
+    <a class="thread-title" href="#123">バグ報告</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-01-18T16:51:47">2008年01月18日 16:51</time></h1>
+    <div class="body">URLをダブルクリックで開こうとしたときエラーで落ちます<br>環境は、WinXopPro, CPU Sempron2600+ Memory 1.18G<br>ブラウザはOpera 9.25<br>Debug_Unicodeでコンパイルしています。<br><br>落ちたときのダイアログが<br>Microsoft Visual C++ Debug Library<br>Debug Erroe!<br><br>Program: ...\sakuraW.exe<br>Moduke: ...\sakuraW.exe<br>File: ...\ceditciew.cpp<br>Line: 2770<br><br>Run-Time Check Failure #3 - The Variable 'pszWork' is being used without being initialized.<br><br>(Press Return to debug the application)<br><br>となっています<br></div></section>
+    <ul><li><section><h1 id=124>
+    <span class="no">[124]</span>
+    <a class="thread-title" href="#124">バグ修正：URLダブルクリックで落ちる</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-01-18T23:12:50">2008年01月18日 23:12</time></h1>
+    <div class="body">ご報告ありがとうございます。<br>修正パッチを登録しました。<br>PatchUnicode#1874676</div></section>
+    <ul><li><section><h1 id=127>
+    <span class="no">[127]</span>
+    <a class="thread-title" href="#127">Re:バグ修正：URLダブルクリックで落ちる</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-01-19T14:58:24">2008年01月19日 14:58</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; ご報告ありがとうございます。<br>&gt; 修正パッチを登録しました。<br>&gt; PatchUnicode#1874676<br><br>動作確認しました。<br>問題は無い様です。<br><br>すばやい対応ありがとうございます。</div></section>
+    <ul><li><section><h1 id=128>
+    <span class="no">[128]</span>
+    <a class="thread-title" href="#128">Re2:バグ修正：URLダブルクリックで落ちる</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-01-19T23:51:15">2008年01月19日 23:51</time></h1>
+    <div class="body">ご確認ありがとうございます。<br>コミットしました。(rev1218)</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

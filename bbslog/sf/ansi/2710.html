@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>UTF-8のBOMが違う | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2710</span>
+    <a class="thread-title" href="2710.html#2710">UTF-8のBOMが違う</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2711</span>
+    <a class="thread-title" href="2710.html#2711">Re:UTF-8のBOMが違う</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2712</span>
+    <a class="thread-title" href="2710.html#2712">Re2:UTF-8のBOMが違う</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2713</span>
+    <a class="thread-title" href="2710.html#2713">Re3:UTF-8のBOMが違う</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2852</span>
+    <a class="thread-title" href="2710.html#2852">Re4:UTF-8のBOMが違う</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2710>
+    <span class="no">[2710]</span>
+    <a class="thread-title" href="#2710">UTF-8のBOMが違う</a>
+    <span class="author">もか</span>
+    <time datetime="2003-05-04T15:52:21">2003年05月04日 15:52</time></h1>
+    <div class="body">コメント内ですが、UTF-8のBOMが微妙に間違っていました。<br>CDocLineMgr.cpp<br>CDocLineMgr::WriteFile<br>706行目<br>-//&#9;case CODE_UTF8: // 2002.06.06 Moca 普通は付けないらしいのでコメントアウト<br>-//&#9;&#9;file.Write( "\xff\xbb\xbf", sizeof(char) * 3 );<br>+//&#9;case CODE_UTF8: // 2003.05.04 Moca BOMの間違いを訂正<br>+//&#9;&#9;file.Write( "\xfe\xbb\xbf", sizeof(char) * 3 );<br><br>#「普通はつけない」と自分が書いていますけど、今の時代はBOM無しは普通ではないようです。<br></div></section>
+    <ul><li><section><h1 id=2711>
+    <span class="no">[2711]</span>
+    <a class="thread-title" href="#2711">Re:UTF-8のBOMが違う</a>
+    <span class="author">おに</span>
+    <time datetime="2003-05-05T21:02:50">2003年05月05日 21:02</time></h1>
+    <div class="body">えー、付けない方が良かったのに(^^<br>読み込んだ時BOMが付いていれば付ける、でなければ付けない、といった具合にはできません？<br><br>HTMLの先頭に広告とかが挿入された場合、BOMが文字として表示されてしまう(もちろん黒い点)のを見た事があります。<br>以後、HTMLをメモ帳では編集しなくなった僕。</div></section>
+    <ul><li><section><h1 id=2712>
+    <span class="no">[2712]</span>
+    <a class="thread-title" href="#2712">Re2:UTF-8のBOMが違う</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-05-06T01:30:14">2003年05月06日 01:30</time></h1>
+    <div class="body">&gt;&gt;コメント内ですが<br>と書かれているので、動作には変更無しですよね？<br></div></section>
+    <ul><li><section><h1 id=2713>
+    <span class="no">[2713]</span>
+    <a class="thread-title" href="#2713">Re3:UTF-8のBOMが違う</a>
+    <span class="author">おに</span>
+    <time datetime="2003-05-06T07:26:37">2003年05月06日 07:26</time></h1>
+    <div class="body">&gt; &gt;&gt;コメント内ですが<br>あ…。<br>ごめんなさい。先走ってしまいました。</div></section>
+    <ul><li><section><h1 id=2852>
+    <span class="no">[2852]</span>
+    <a class="thread-title" href="#2852">Re4:UTF-8のBOMが違う</a>
+    <span class="author">もか</span>
+    <time datetime="2003-06-14T13:28:39">2003年06月14日 13:28</time></h1>
+    <div class="body">\xfe\xbb\xbf<br>というのも間違いでした。<br>"\xef\xbb\xbf" が正解です。<br>m(__)m<br><br>&gt;読み込んだ時BOMが付いていれば付ける、でなければ付けない、といった具合にはできません？<br>そのうちできそうです。半分ほど出来てますが...<br>・デフォルトはどうするのか<br>  UTF-8はOFF、Unicode/UnicodeはON？他は元からなし<br>・Unicode/UnicodeBEはBOMがないとサクラエディタでは自動選択できない<br>  BOMなしでも自動選択できるように作らないとだめ？<br>・タスクバーとかに表示はしなくていいのか<br>  都合よく右から2番目が空いてますが、どうしましょう？<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

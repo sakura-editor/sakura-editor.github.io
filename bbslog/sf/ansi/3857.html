@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>サクラエディタでGrep | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3857</span>
+    <a class="thread-title" href="3857.html#3857">サクラエディタでGrep</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3857>
+    <span class="no">[3857]</span>
+    <a class="thread-title" href="#3857">サクラエディタでGrep</a>
+    <span class="author">ごく</span>
+    <time datetime="2005-02-22T11:27:27">2005年02月22日 11:27</time></h1>
+    <div class="body">昔どこかの掲示板に書き込みしたことがあると思いますが、始めましてごくです。<br>私はマクロの弱さからサクラエディタの使用をやめてしまったのですが、HDDから秀丸でGrepのパクリが出てきたのでこちらに貼り付けさせていただきます。<br>すでに同等の機能が実装されていたり、起動オプションが変更されていたらごめんなさい。<br>GrepHere.infとして保存し右クリックでインストールでOKなはずです。<br><br>;<br>; GrepHere.inf - Explorerから秀丸でGrep Version 0.03<br>; をパクってGrepHere.inf - ExplorerからSakura EditorでGrep Version 0.01<br>;  Copyright(C) 1998 <a href=mailto:ymori@nisiq.net><nobr>ymori@<wbr>nisiq.<wbr>net</nobr></a><br>;  Copyright(C) 2002 gok<br><br>[version]<br>signature="$CHICAGO$"<br><br>[DefaultInstall]<br>CopyFiles=Inf.Copy<br>AddReg=GrepHere.Reg<br><br>[DefaultInstall.ntx86]<br>CopyFiles=Inf.Copy<br>AddReg=GrepHere.Reg.ntx86<br><br>[DefaultUninstall]<br>DelFiles=Inf.Copy<br>DelReg=GrepHere.Reg<br><br>[DefaultUninstall.ntx86]<br>DelFiles=Inf.Copy<br>DelReg=GrepHere.Reg.ntx86<br><br>[Inf.Copy]<br>GREPHERE.INF<br>; GREPHERE.TXT<br><br>[SourceDisksNames]<br>55=%TITLE%,"",1<br><br>[SourceDisksFiles]<br>Inf.Copy=55<br><br>[DestinationDirs]<br>Inf.Copy=17<br><br>[GrepHere.Reg]<br>HKCR,%DIRSG%<br>HKCR,%DIRSG%,,,%MENU%<br>HKCR,%DIRSG%\command\,,,%CMD%<br>HKCR,%DRVSG%<br>HKCR,%DRVSG%,,,%MENU%<br>HKCR,%DRVSG%\command\,,,%CMD%<br>HKLM,%SMWCUG%<br>HKLM,%SMWCUG%,DisplayName,,%TITLE%<br>HKLM,%SMWCUG%,UninstallString,,"rundll.exe setupx.dll,InstallHinfSection DefaultUninstall 132 %17%\GREPHERE.INF"<br><br>[GrepHere.Reg.ntx86]<br>HKCR,%DIRSG%<br>HKCR,%DIRSG%,,,%MENU%<br>HKCR,%DIRSG%\command\,,,%CMD%<br>HKCR,%DRVSG%<br>HKCR,%DRVSG%,,,%MENU%<br>HKCR,%DRVSG%\command\,,,%CMD%<br>HKLM,%SMWCUG%<br>HKLM,%SMWCUG%,DisplayName,,%TITLE%<br>HKLM,%SMWCUG%,UninstallString,,"RunDll32.exe syssetup.dll,SetupInfObjectInstallAction DefaultUninstall.ntx86 132 %17%\GREPHERE.INF"<br><br>[Strings]<br>DIRSG="DIRECTORY\shell\GrepHere"<br>DRVSG="DRIVE\shell\GrepHere"<br>MENU="Grep(&amp;G)"<br>CMD="SAKURA.EXE -GREPDLG -GREPMODE -GFILE=""*.*"" -GFOLDER=""%1"" -GOPT=S"<br>SMWCUG="Software\Microsoft\Windows\CurrentVers<br>ion\Uninstall\GrepHere"<br>TITLE="サクラエディタでGrep"<br><br></div></section>
+    </li></ul></body></html>

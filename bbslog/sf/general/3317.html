@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>スマートインデントC/C++で半角スペースを入れたい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3317</span>
+    <a class="thread-title" href="3317.html#3317">スマートインデントC/C++で半角スペースを入れたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3341</span>
+    <a class="thread-title" href="3317.html#3341">Re:スマートインデントC/C++で半角スペースを入れたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3342</span>
+    <a class="thread-title" href="3317.html#3342">Re2:スマートインデントC/C++で半角スペースを入れたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3343</span>
+    <a class="thread-title" href="3317.html#3343">Re3:スマートインデントC/C++で半角スペースを入れたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3344</span>
+    <a class="thread-title" href="3317.html#3344">Re4:スマートインデントC/C++で半角スペースを入れたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3405</span>
+    <a class="thread-title" href="3317.html#3405">Re5:スマートインデントC/C++で半角スペースを入れたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3422</span>
+    <a class="thread-title" href="3317.html#3422">Re6:スマートインデントC/C++で半角スペースを入れたい</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3317>
+    <span class="no">[3317]</span>
+    <a class="thread-title" href="#3317">スマートインデントC/C++で半角スペースを入れたい</a>
+    <span class="author">ジャム</span>
+    <time datetime="2003-09-25T19:23:17">2003年09月25日 19:23</time></h1>
+    <div class="body">タイプ別設定の<br>スマートインデント C/C++ を選択したときに<br>半角スペースでインデントしたいのですが、<br>必ずタブでインデントされてしまいます。<br><br>タイプ別設定のレイアウトでSPACEの挿入をチェックしたときは<br>半角スペースでインデントしてもらいたいと思うのですが<br>仕様なのでしょうか？<br><br>例：<br>  void main(){<br>  ^ int test;<br>  ↑ここに半角スペースを挿入したい。<br><br>環境：<br>SAKURA Ver.1.3.10.2<br>Windows 2000 pro<br></div></section>
+    <ul><li><section><h1 id=3341>
+    <span class="no">[3341]</span>
+    <a class="thread-title" href="#3341">Re:スマートインデントC/C++で半角スペースを入れたい</a>
+    <span class="author">ジャム</span>
+    <time datetime="2003-10-03T11:20:07">2003年10月03日 11:20</time></h1>
+    <div class="body"><br>マクロで、保存する前にタブをスペースに<br>置き換えることでも解決しそうですが、<br>スマートインデント C/C++ を使ったとき<br>だけ動作が違うようですので、<br>根本的にバグでしょう。<br>直してもらった方が良さそうです。<br><br>ユーザーの要望として<br><br>「タイプ別設定のレイアウトでSPACEの挿入をチェック<br>  したときは、スマートインデント C/C++ を選択した<br>  ときも、タブでは無く SPACE でインデントする。」<br><br>ように修正を願います。<br></div></section>
+    <ul><li><section><h1 id=3342>
+    <span class="no">[3342]</span>
+    <a class="thread-title" href="#3342">Re2:スマートインデントC/C++で半角スペースを入れたい</a>
+    <span class="author">すい</span>
+    <time datetime="2003-10-04T04:07:24">2003年10月04日 04:07</time></h1>
+    <div class="body">当分は直らないでしょう(汗)<br><br>↓詳しくはこの掲示板の過去ログこの辺、見てね<br>2763番 2003/02/25<br>2710番 2003/02/10<br>1797番 2002/05/02<br><br>スマートインデント C/C++ の箇所はソースが複雑に入り組んでいて。<br>メモリリークなんかのバグもあるらしく。<br>んで、動作仕様的に単純なスマートインデントじゃなくて<br>「そこまでやられると却って余計なお世話」的な動作も含まれていて。<br>「これ、１から作り直した方が良いんじゃ．．．」と言う声もあり、、、<br>「誰か一から作り直してくれないかな～」と思いつつ、<br>しかし、どのような動作仕様が良いのか仕様もまとまらず。<br>常連衆は軒並み諦めモードでスマートインデント C/C++なんて使っておらず。。。<br><br>な、感じです。まとめると。<br>皆、「この機能を不満に思って直してくれる方」が現れるのを待っている状態です。<br></div></section>
+    <ul><li><section><h1 id=3343>
+    <span class="no">[3343]</span>
+    <a class="thread-title" href="#3343">Re3:スマートインデントC/C++で半角スペースを入れたい</a>
+    <span class="author">ジャム</span>
+    <time datetime="2003-10-06T12:04:30">2003年10月06日 12:04</time></h1>
+    <div class="body">すいさん、ご回答ありがとうございます。<br><br>そのような背景があったとは。。。<br><br>という訳で、<br>試しにソースコードを見てみました。<br><br>class:  CEditView<br>Method:   SmartIndent_CPP( char cChar )<br><br>のところですね。<br>メソッドの中程に、タブコードを直接入れ混んでいる<br>ところがありました。<br>ここを直せばと思いますが、<br>確かに、このアルゴリズムを理解した上で<br>修正するのは苦しそうですね。<br><br>SAKURAをプログラミングに使っているユーザーとして、<br>ちゃんとしたスマートインデントは是非欲しい～<br>と思いますが惜しいな。。。<br></div></section>
+    <ul><li><section><h1 id=3344>
+    <span class="no">[3344]</span>
+    <a class="thread-title" href="#3344">Re4:スマートインデントC/C++で半角スペースを入れたい</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-10-06T13:40:34">2003年10月06日 13:40</time></h1>
+    <div class="body">無償サポート期間は終わったけど、惨めな奴が多すぎるので手伝ったろう。<br>ここの処理のゴールは<br><br>&#9;ReplaceData_CEditView<br>&#9;MoveCursor<br>&#9;m_pcOpeBlk, nCaretPos*を更新する<br><br>だから、ReplaceData_CEditViewの引数見やがれ。pszData、nDataLenを置いてんだろ？<br><br>&#9;pszData[nDataLen] = '\t';<br>&#9;pszData[nDataLen + 1] = '\0';<br>&#9;++nDataLen;<br><br>それから、ひとまず'('、')'に対するインデントをコメント化して無効にしとけ。</div></section>
+    <ul><li><section><h1 id=3405>
+    <span class="no">[3405]</span>
+    <a class="thread-title" href="#3405">Re5:スマートインデントC/C++で半角スペースを入れたい</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-10-17T15:07:57">2003年10月17日 15:07</time></h1>
+    <div class="body">これでテストお願い。<br>+&#9;int nTab = m_pcEditDoc-&gt;m_cLayoutMgr.GetTabSpace();<br>&#9;...<br><br>&#9;&#9;&#9;// キャレットがタブストップ位置にあると仮定する。<br>&#9;&#9;&#9;nDataLen = m;<br>-&#9;&#9;&#9;pszData = new char[nDataLen + 2]; // strlen("\t\0") == 2<br>+&#9;&#9;&#9;pszData = new char[nDataLen + nTab + 1];<br>&#9;&#9;&#9;memcpy( pszData, pLine2, nDataLen );<br>&#9;&#9;&#9;if( CR  == cChar<br>&#9;&#9;&#9; || '{' == cChar<br>&#9;&#9;&#9; || '(' == cChar<br>&#9;&#9;&#9;){<br>-&#9;&#9;&#9;&#9;pszData[nDataLen] = '\t';<br>-&#9;&#9;&#9;&#9;pszData[nDataLen + 1] = '\0';<br>+&#9;&#9;&#9;&#9;memset(pszData[nDataLen], ' ', nTab);<br>+&#9;&#9;&#9;&#9;pszData[nDataLen + nTab + 1] = '\0';<br>-&#9;&#9;&#9;&#9;++nDataLen;<br>+&#9;&#9;&#9;&#9;nDataLen += nTab;<br>&#9;&#9;&#9;}else{<br>&#9;&#9;&#9;&#9;pszData[nDataLen] = '\0';<br></div></section>
+    <ul><li><section><h1 id=3422>
+    <span class="no">[3422]</span>
+    <a class="thread-title" href="#3422">Re6:スマートインデントC/C++で半角スペースを入れたい</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-10-18T18:28:46">2003年10月18日 18:28</time></h1>
+    <div class="body">&gt;+&#9;&#9;&#9;&#9;memset(pszData[nDataLen], ' ', nTab);<br>これだと，常にTAB幅のスペースを入れることになるので次のTAB位置には移動しないのではないかと．<br><br>---<br>ついでに一言．<br>コードの話やパッチは(一般掲示板で報告された内容でも)開発掲示板の方に書き込んでください．<br>こちらでは仕様に関する話を中心に．と，掲示板説明には書いてあるのですが(T_T)<br><br>理由は，実装の話で一般掲示板のスレッドを延ばしたくないのが１つ．もう１つは後から取り込むときにチェックする場所を1つにしたい．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

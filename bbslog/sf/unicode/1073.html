@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告(Fix) 名前を付けて保存時にカレントディレクトリが変更されない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1073</span>
+    <a class="thread-title" href="1073.html#1073">Commit報告(Fix) 名前を付けて保存時にカレントディレクトリが変更されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1081</span>
+    <a class="thread-title" href="1073.html#1081">Re:Commit報告(Fix) 名前を付けて保存時にカレントディレクトリが変更されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1082</span>
+    <a class="thread-title" href="1073.html#1082">Re2:Commit報告(Fix) 名前を付けて保存時にカレントディレクトリが変更されない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1073>
+    <span class="no">[1073]</span>
+    <a class="thread-title" href="#1073">Commit報告(Fix) 名前を付けて保存時にカレントディレクトリが変更されない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-16T21:46:40">2009年12月16日 21:46</time></h1>
+    <div class="body">リビジョン：<br>　rev1693<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: 名前を付けて保存時にカレントディレクトリが変更されない<br><br>名前を付けて保存したら、保存後にカレントディレクトリを保存先ファイルのディレクトリに変更する必要があるが、保存前のディレクトリのまま変更されていませんでした。（保存前と保存後に[外部コマンド]で dir を実行したときの結果が同じ）<br>A版-&gt;U版への移植時に加えられた改造（リロード処理の省略）に伴うミスです。<br><br>新規から保存しようとしたときに保存ダイアログに表示される規定フォルダが適切になっているかどうか（&gt;&gt;unicode:1071）とは別の話で、保存した後のカレントディレクトリがおかしくなっていた、ということです。<br>※&gt;&gt;unicode:1071のほうの対策は、&gt;&gt;unicode:1072のとおり、起動ショートカットでの「作業フォルダ指定」であることに変わりはありません。</div></section>
+    <ul><li><section><h1 id=1081>
+    <span class="no">[1081]</span>
+    <a class="thread-title" href="#1081">Re:Commit報告(Fix) 名前を付けて保存時にカレントディレクトリが変更されない</a>
+    <span class="author">神楽</span>
+    <time datetime="2009-12-20T17:23:27">2009年12月20日 17:23</time></h1>
+    <div class="body">▼ ryojiさん<br>いつも対応ご苦労様です。<br><br><br>&gt; 新規から保存しようとしたときに保存ダイアログに表示される規定フォルダが適切になっているかどうか（&gt;&gt;unicode:1071）とは別の話で、保存した後のカレントディレクトリがおかしくなっていた、ということです。<br>&gt; ※&gt;&gt;unicode:1071のほうの対策は、&gt;&gt;unicode:1072のとおり、起動ショートカットでの「作業フォルダ指定」であることに変わりはありません。<br><br>カレントフォルダの明示的な変更機能の追加は難しいということでしょうか？<br>（それともANSI版と同じ動作にするのが目的の修正でしょうか？）<br>上記が難しいのであれば代替案としてExpandParameterに「カレントフォルダ表示」機能追加<br>というのはいかがでしょうか？<br><a href=http://sakura.qp.land.to/?Request%2F321 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Request%<wbr>2F321</nobr></a><br><br>気が向いた時で構いませんので、ご検討頂ければと思います。</div></section>
+    <ul><li><section><h1 id=1082>
+    <span class="no">[1082]</span>
+    <a class="thread-title" href="#1082">Re2:Commit報告(Fix) 名前を付けて保存時にカレントディレクトリが変更されない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-20T21:52:23">2009年12月20日 21:52</time></h1>
+    <div class="body">▼ 神楽さん<br>&gt; カレントフォルダの明示的な変更機能の追加は難しいということでしょうか？<br>&gt; （それともANSI版と同じ動作にするのが目的の修正でしょうか？）<br><br>単なるバグ（A版-&gt;U版移植ミス）の修正です。<br>自分はこのところ、数行修正で済むような、ごく簡単なことしかできてないです。<br>数はこなしてるように見えてるかもしれないけど、実態は… (^^;;;</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,64 @@
+.no {
+    background-color: #EEE;
+    font-size: 0.8em;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding: 1px;
+    display: inline-block;
+    line-height: 1em;
+    min-width: 1em;
+    text-align: center;
+}
+
+time{
+    font-size: 80%;
+    color: #666
+}
+
+ul {
+    list-style: none !important;
+    padding-left: 1em;
+}
+
+li a {
+    text-decoration: none;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+li {
+    line-height: 1.5rem;
+}
+
+ul li ul {
+    margin-left: 0em;
+    padding-left: 1em;
+}
+
+ul li ul li {
+    position: relative;
+}
+
+ul li ul li::before {
+    content: "";
+    position: absolute;
+    left: -0.5em;
+    height: 100%;
+    border-left: 1px solid #999;
+    top: -0.1em;
+}
+
+ul li ul li:last-child::before {
+    height: 0.9em;
+}
+
+ul li ul li::after {
+    content: "";
+    position: absolute;
+    top: 0.8em;
+    left: -0.5em;
+    width: 0.5em;
+    border-bottom: 1px solid #999;
+}

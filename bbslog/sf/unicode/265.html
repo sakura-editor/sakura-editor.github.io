@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>コミット報告：タイプ別設定プロパティシート整理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">265</span>
+    <a class="thread-title" href="265.html#265">コミット報告：タイプ別設定プロパティシート整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">266</span>
+    <a class="thread-title" href="265.html#266">Re:コミット報告：タイプ別設定プロパティシート整理</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=265>
+    <span class="no">[265]</span>
+    <a class="thread-title" href="#265">コミット報告：タイプ別設定プロパティシート整理</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-12T18:01:16">2008年04月12日 18:01</time></h1>
+    <div class="body">リビジョン：<br>　rev1271, rev1272<br><br>変更種別：<br>　リファクタリング。動作変更無し。<br><br>内容：<br>　タイプ別設定プロパティシート CPropTypes のソースが巨大で<br>　保守性が低い状態であったため、整理を行いました。<br>　・クラス内メンバ定義順序をページ毎に整理<br>　・ページ毎にソースを分離<br>　等。<br><br><br>長い間ご無沙汰してました。。<br>ぜんぜん作業してなかったです。すみません。<br>また作業再開します。<br><br>今回の作業はUchiさん報告バグの<br>「拡張子にかかわらず、『基本』に開かれる。」への対応の布石です。<br><br><br>ところで、上のような感じでコミット報告してみましたが、<br>別に報告フォーマットを定めるつもりではないです。<br>＃もちろん、フォーマットを定めるべき、という意見があれば検討します。<br><br>コミット内容に問題があれば<br>・この掲示板へのコメントでご指摘<br>・直接コミットにより修正した上でそのご報告<br>のような形で応えていただければ、と思います。</div></section>
+    <ul><li><section><h1 id=266>
+    <span class="no">[266]</span>
+    <a class="thread-title" href="#266">Re:コミット報告：タイプ別設定プロパティシート整理</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-04-12T21:56:56">2008年04月12日 21:56</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1271, rev1272<br><br>不具合報告させていただきます。<br>前回報告の<br>1) 拡張子にかかわらず、『基本』に開かれる。<br>2) Grepで『オプション』（『単語単位で探す』等）の設定が利かない。<br>        Grep画面内でのGrepは問題なし。他のファイルからのGrepで発生する。<br>        Grep 呼び出しのとき -GOPT=が設定されていないようです。<br>3) sakuraW.iniがない場合に作成されるiniファイルに『読み取り専用』のアトリビュートが立っているため、sakuraW.iniが更新されない。<br>4) 『共通設定』の『ファイル』の『ファイルの排他制御』で『他プロセスから読み書きを禁止する』を選択し、『バックアップ』の『保存時にバックアップを作成する』にすると<br>    上書き保存時、「バックアップの作成に失敗しました.元ファイルへの上書きを継続しますか.」のメッセージが表示される。<br>の内 2）は正常になりました。<br>1) 3) 4)は同様の結果でした。<br><br>以下追加です。<br>5) ファイルの排他制御を『排他制御しない』選択し、『更新の監視』をチェックした場合、<br>    ファイルをほかのプログラムで書き換え、ファイルの再読み込みのダイアログで<br>    再読み込みを選択しても、再読み込みしない。<br>6) 『開きなおす』が動作しない（コードを変更して開きなおすも同じです）。<br><br>リファクタリングということで、バグ修正は先のこととは思いますが、<br>参考にしてください。</div></section>
+    </li></ul></li></ul></body></html>

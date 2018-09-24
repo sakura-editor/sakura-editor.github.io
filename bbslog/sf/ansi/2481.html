@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>dlgfix021107.zip | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2481</span>
+    <a class="thread-title" href="2481.html#2481">dlgfix021107.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2482</span>
+    <a class="thread-title" href="2481.html#2482">Re: dlgfix021107.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2484</span>
+    <a class="thread-title" href="2481.html#2484">Re2: dlgfix021107.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2486</span>
+    <a class="thread-title" href="2481.html#2486">Re3: dlgfix021107.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2487</span>
+    <a class="thread-title" href="2481.html#2487">Re4: dlgfix021107.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2489</span>
+    <a class="thread-title" href="2481.html#2489">Re5: dlgfix021107.zip</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2481>
+    <span class="no">[2481]</span>
+    <a class="thread-title" href="#2481">dlgfix021107.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2002-11-13T16:00:56">2002年11月13日 16:00</time></h1>
+    <div class="body"><br>ダイアログ周りのバグ修正が主な内容です。<br><br>詳細は，添付のdlgfix_readme.txtをご覧ください<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/diff20021109.zip<br></div></section>
+    <ul><li><section><h1 id=2482>
+    <span class="no">[2482]</span>
+    <a class="thread-title" href="#2482">Re: dlgfix021107.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2002-11-14T13:46:48">2002年11月14日 13:46</time></h1>
+    <div class="body"><br>&gt;http://www.egroups.co.jp/files/sakura-editor/Developer/Source/diff20021109.zip<br>リンク先が間違ってました。(リンクにもなっていませんが)<br>&gt;diff20021109.zip<br>は，みくさん作の「編集中ファイルをDIFFできるように」です。<br>みくさん並びに皆さん，すみません。<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/dlgfix021107.zip<br></div></section>
+    <ul><li><section><h1 id=2484>
+    <span class="no">[2484]</span>
+    <a class="thread-title" href="#2484">Re2: dlgfix021107.zip</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-11-16T00:45:19">2002年11月16日 00:45</time></h1>
+    <div class="body">動作確認結果です．<br>&gt; [機能追加]<br>&gt; &#9;・ファンクションバーのグループあたりのボタン数を1-12で設定できるように<br>確認しました．<br>設定後にファンクションキー表示を明示的に再表示しないと変更されないのは昔からの仕様のようですね．<br><br>&gt; [バグ修正]<br>&gt; &#9;・「タイプ別設定」の色選択で，最下項目の色をクリックすると<br>&gt; &#9;  スクロールしてしまい1つ下の項目の設定になる(WinXPのみ)<br>未確認です．<br><br>&gt; &#9;・「共通設定『キーボード割り当て』」で[機能に割り当てられているキー]の選択を変更すると，<br>&gt; &#9;  [キー]の表示と[Shift]/[Ctrl]/[Alt]が食い違う<br>すいません．どういう問題があったのかよくわかりませんでした．<br><br>&gt; &#9;・「DIFF」と「ファイル内容比較」でファイル名が入りきらない問題を改善<br>横スクロールバーを確認<br><br>&gt; &#9;・テキスト・ルールファイルの「アウトライン解析」で，32階層を越えると落ちる<br>現象・修正を確認しました．ところで，テキストのアウトライン解析において数字，ローマ数字，○付き数字は同一階層と見なされるのに，漢数字がなぜか文字毎に異なる階層に分類されてしまいますね．昔からこうだったのだろうとは思いますが．<br><br>&gt; &#9;・バックアップ(連番)とバックアップ(日付・日時)のポップアップヘルプが逆<br>現象・修正を確認しました．よく見つけた物だと感心．<br><br>&gt; &#9;・アウトライン解析の順序が{アルファベット順}を選択して，ダイアログ開きなおすとソートされていない<br>現象・修正を確認しました．<br><br>&gt; &#9;・アウトライン解析の順序がCPP/JAVAの時，{デフォルト}→{アルファベット順}→{デフォルト}とすると元の順序に戻らない<br>現象・修正を確認しました．<br><br>&gt; &#9;・正規表現で検索した後，検索マークの切り替えで色分けができない<br>現象・修正を確認しました．<br><br>&gt; &#9;・「アウトライン解析」で再解析すると[順序]の項目が増える<br>現象・修正を確認しました．<br><br>&gt; &#9;・DIFFダイアログの現在ファイルが旧ファイルのアクセスキーがOKと重複していた<br>現象・修正を確認しました．<br><br>--<br>最後に．コメントに日付を入れるのは@dataじゃなくて@dateですよ．<br></div></section>
+    <ul><li><section><h1 id=2486>
+    <span class="no">[2486]</span>
+    <a class="thread-title" href="#2486">Re3: dlgfix021107.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2002-11-19T16:59:06">2002年11月19日 16:59</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 動作確認結果です．<br><br>&gt;&gt; ・「共通設定『キーボード割り当て』」で[機能に割り当てられているキー]の選択を変更すると，<br>&gt;&gt;   [キー]の表示と[Shift]/[Ctrl]/[Alt]が食い違う<br>&gt; どういう問題があったのかよくわかりませんでした．<br>例えば，<br>[種別]-{選択系}，[機能]-{単語選択}を選びます。<br>すると，[機能に割り当てられているキー]リストに{Alt+ダブルクリック}{Ctrl+ダブルクリック}等，ショートカットが表示されます。<br>これらを選択すると，選択したキーに合わせて右側の[キー]リストの選択が変わり，Alt等のチェックボックスも選択したキーに合わせて更新されます。<br>しかし，今度はこの[Alt]チェックボックスと右側の[キー]リストが一致しなくなっている。<br>というものです。<br><br>修正してから気が付きましたが，{Ctrl+Alt+Enter}のようにリストに表示していると「E」キーを押してリストから{Enter}を選択するということができない(すべて「CtrlのC」になる)ので，常に{Enter}のように表示したほうがアクセス性が向上しますね。<br>ただし，分かりにくくなること必至ですが。<br><br>&gt; テキストのアウトライン解析において漢数字がなぜか文字毎に異なる階層に分類されてしまいますね．<br>確かに，妙ですね。気が付かなかった<br>ついでにJIS X 0213の記号類も対応すると最強なんですけど<br>ルールファイルで対応すれば同じ効果が得られることだし，<br>まだ誰もSakuraでは使わないか。<br><br>&gt;&gt; ・バックアップ(連番)とバックアップ(日付・日時)のポップアップヘルプが逆<br>&gt;現象・修正を確認しました．よく見つけた物だと感心．<br>ちなみに，「折り返しインデント」(Staticのほう)のポップアップヘルプも変だぁ<br><br>&gt;最後に．コメントに日付を入れるのは@dataじゃなくて@dateですよ．<br>データになってますな。しかもGrepすると過去にも1箇所。。。<br><br>#土日はネットにアクセスできないため，返信が遅れます。ご了承ください<br></div></section>
+    <ul><li><section><h1 id=2487>
+    <span class="no">[2487]</span>
+    <a class="thread-title" href="#2487">Re4: dlgfix021107.zip</a>
+    <span class="author">すい</span>
+    <time datetime="2002-11-19T20:23:08">2002年11月19日 20:23</time></h1>
+    <div class="body">&gt;常に{Enter}のように表示したほうがアクセス性が向上しますね。<br>&gt;ただし，分かりにくくなること必至ですが。<br>単純に逆にしちゃダメなんでしょうかね？<br>Enter + Ctrl + ...<br>変？<br></div></section>
+    <ul><li><section><h1 id=2489>
+    <span class="no">[2489]</span>
+    <a class="thread-title" href="#2489">Re5: dlgfix021107.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2002-11-20T15:26:55">2002年11月20日 15:26</time></h1>
+    <div class="body">&gt;&gt;常に{Enter}のように表示したほうがアクセス性が向上しますね。<br>&gt;&gt;ただし，分かりにくくなること必至ですが。<br>&gt;単純に逆にしちゃダメなんでしょうかね？<br>&gt;Enter + Ctrl + ... <br>&gt;変？<br>多少変ですが，その案に賛成です。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

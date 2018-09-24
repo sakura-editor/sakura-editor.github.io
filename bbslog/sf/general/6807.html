@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>エスケープシーケンスの色分け不具合？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6807</span>
+    <a class="thread-title" href="6807.html#6807">エスケープシーケンスの色分け不具合？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6809</span>
+    <a class="thread-title" href="6807.html#6809">Re: エスケープシーケンスの色分け不具合？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6811</span>
+    <a class="thread-title" href="6807.html#6811">Re2: エスケープシーケンスの色分け不具合？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6807>
+    <span class="no">[6807]</span>
+    <a class="thread-title" href="#6807">エスケープシーケンスの色分け不具合？</a>
+    <span class="author">たかろーひ</span>
+    <time datetime="2008-11-18T12:31:06">2008年11月18日 12:31</time></h1>
+    <div class="body">はじめまして、たかろーひと申します。<br>早速ですが、質問があります。（既出だったらすいません）<br><br>以下のようなコードを書くと、「"」をエスケープとみなせず、これ以降をダブルクォーテーション内の文字とみなしてしまい、色分け表示がめちゃくちゃになります。<br>何か回避方法があったら、ご教示いただきたく。<br><br>if ('\"' == tmp_str[0]){<br>    // Do something<br>}<br></div></section>
+    <ul><li><section><h1 id=6809>
+    <span class="no">[6809]</span>
+    <a class="thread-title" href="#6809">Re: エスケープシーケンスの色分け不具合？</a>
+    <span class="author">もか</span>
+    <time datetime="2008-11-20T12:27:07">2008年11月20日 12:27</time></h1>
+    <div class="body">C言語設定の話だとして、私の所では普通に色分けされます。<br>サクラエディタの種類とバージョン(日付)はなんですか？<br><br>タイプ別設定で単純にシングルクォーテーションが色分けされていなくてダブルクォーテーションだけ色分けされているのではないでしょうか。<br>他には、シングルクォーテーションの色分けだけ正規表現を利用してるとか。<br>そうすると次行からダブルクォーテーションの色になるはずです。<br>ややこしいのですが、行をまたぐ色分け情報の決定では正規表現の色分けを無視しています。<br></div></section>
+    <ul><li><section><h1 id=6811>
+    <span class="no">[6811]</span>
+    <a class="thread-title" href="#6811">Re2: エスケープシーケンスの色分け不具合？</a>
+    <span class="author">たかろーひ</span>
+    <time datetime="2008-11-20T22:42:02">2008年11月20日 22:42</time></h1>
+    <div class="body">▼ もかさん<br>&gt; C言語設定の話だとして、私の所では普通に色分けされます。<br>&gt; サクラエディタの種類とバージョン(日付)はなんですか？<br>&gt; <br>&gt; タイプ別設定で単純にシングルクォーテーションが色分けされていなくてダブルクォーテーションだけ色分けされているのではないでしょうか。<br>&gt; 他には、シングルクォーテーションの色分けだけ正規表現を利用してるとか。<br>&gt; そうすると次行からダブルクォーテーションの色になるはずです。<br>&gt; ややこしいのですが、行をまたぐ色分け情報の決定では正規表現の色分けを無視しています。<br><br>もかさん、返信ありがとうございました。<br>ご指摘のとおり、シングルクォーテーションの色分けをしていませんでした。<br>勉強不足でした。お恥ずかしい限りです。<br>バージョンはつい最近アップデートしたので、最新のでした。<br><br>どうもありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

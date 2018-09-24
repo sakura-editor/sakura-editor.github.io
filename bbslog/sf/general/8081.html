@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ctrl+ホイール の拡大縮小がフォント設定によっては動作しない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">8081</span>
+    <a class="thread-title" href="8081.html#8081">ctrl+ホイール の拡大縮小がフォント設定によっては動作しない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8082</span>
+    <a class="thread-title" href="8081.html#8082">Re:ctrl+ホイール の拡大縮小がフォント設定によっては動作しない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8083</span>
+    <a class="thread-title" href="8081.html#8083">Re2:ctrl+ホイール の拡大縮小がフォント設定によっては動作しない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8081>
+    <span class="no">[8081]</span>
+    <a class="thread-title" href="#8081">ctrl+ホイール の拡大縮小がフォント設定によっては動作しない</a>
+    <span class="author">yuru</span>
+    <time datetime="2015-11-17T22:24:01">2015年11月17日 22:24</time></h1>
+    <div class="body">一部のフォントを設定していると ctrl+ホイール での表示倍率変更ができなくなるようです。<br>現在確認できているものでは、「源ノ角ゴシック Code JP」「源ノ角ゴシック JP」を設定したときに事象が再現することを確認しています。<br>（設定フォントがotfファイルだと発生？）</div></section>
+    <ul><li><section><h1 id=8082>
+    <span class="no">[8082]</span>
+    <a class="thread-title" href="#8082">Re:ctrl+ホイール の拡大縮小がフォント設定によっては動作しない</a>
+    <span class="author">もか</span>
+    <time datetime="2015-11-18T03:00:09">2015年11月18日 03:00</time></h1>
+    <div class="body">▼ yuruさん<br>&gt; （設定フォントがotfファイルだと発生？）<br>源ノ角ゴシック Code JPで調べてみたところ10(OUT_PS_ONLY_PRECIS)でした。<br><br>Index: sakura_core/cmd/CViewCommander_Settings.cpp<br>===================================================================<br>--- sakura_core/cmd/CViewCommander_Settings.cpp&#9;(リビジョン 4050)<br>+++ sakura_core/cmd/CViewCommander_Settings.cpp&#9;(作業コピー)<br>@@ -284,7 +284,7 @@<br> &#9;INT nPointSize;<br> <br> &#9;// TrueTypeのみ対応<br>-&#9;if( OUT_STROKE_PRECIS != lf.lfOutPrecision) {<br>+&#9;if( OUT_STROKE_PRECIS != lf.lfOutPrecision &amp;&amp; OUT_PS_ONLY_PRECIS != lf.lfOutPrecision ) {<br> &#9;&#9;return;<br> &#9;}<br> <br></div></section>
+    <ul><li><section><h1 id=8083>
+    <span class="no">[8083]</span>
+    <a class="thread-title" href="#8083">Re2:ctrl+ホイール の拡大縮小がフォント設定によっては動作しない</a>
+    <span class="author">yuru</span>
+    <time datetime="2015-11-23T00:02:44">2015年11月23日 00:02</time></h1>
+    <div class="body">▼ もかさん<br>調査ありがとうございます！<br>ご提示通り修正したところ、ctrl+ホイール効くようになりました。<br>これで満足に使えそうです＾＾<br><br>他、報告までにですが、上記修正を加えた後、sakura.iniに設定が上書きされなくなる事象に遭遇しました。<br>その影響でsakuraプロセスが落ちるのが遅くなり、素早く再度sakuraを起動させた際に<br>「エディタ間の対話に失敗しました。権限レベルの異なるエディタが既に起動している可能性があります。」<br>というエラーが表示されました。<br><br>どうも、sakura.iniの"KeyBind[000]"行が下記のようになっていて上記事象が発生していたようです。<br>------<br>KeyBind[000]=010b,30181,30181,30181,30181,30181,30181,30181,30181,FileOpenData<br>------<br><br>デフォルトのsakura.iniに倣って下記に書き換えたところ、事象は起きなくなりました。<br>------<br>KeyBind[000]=0100,30400,30400,30400,30400,30400,30400,30400,30400,ダブルクリック<br>------<br><br>sakura.iniを代々使い回していたので、いつからKeyBindの値が変わっていたのかは不明ですが。。。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

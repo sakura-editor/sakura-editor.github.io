@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>C言語を書く時に、操作が解らない所があります。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5485</span>
+    <a class="thread-title" href="5485.html#5485">C言語を書く時に、操作が解らない所があります。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5490</span>
+    <a class="thread-title" href="5485.html#5490">Re:C言語を書く時に、操作が解らない所があります。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5491</span>
+    <a class="thread-title" href="5485.html#5491">Re:C言語を書く時に、操作が解らない所があります。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5492</span>
+    <a class="thread-title" href="5485.html#5492">Re2:C言語を書く時に、操作が解らない所があります。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5485>
+    <span class="no">[5485]</span>
+    <a class="thread-title" href="#5485">C言語を書く時に、操作が解らない所があります。</a>
+    <span class="author">ヤス</span>
+    <time datetime="2006-10-11T16:32:30">2006年10月11日 16:32</time></h1>
+    <div class="body">会社で、人のパソコンをいじりながらC言語の勉強をしています。<br>サクラエディタでソースを書いており、結構快適に作業が行えるのですが、一点解らない点があります。<br><br>if文等で、以下のような文章を書いたとします。<br><br>    if(1)<br>    {<br>        /* 何かしらの処理 */<br>    }<br>    else<br>    {<br>        /* 何かしらの処理 */<br>    }<br><br>この時、"{"の文字を入力した瞬間に、行頭まで勝手にカーソルが移動してしまうのです。<br>if文を書く時、何度も位置をそろえなくてはならず、とてもストレスがたまります。<br>バージョンは、1.5.12.0です。<br>皆様はどうなさっているのでしょうか？<br><br>何というか、テキストエディタの初歩的な操作のような気がするので、本来はここで聞く事では無いのかも知れません。<br>申し訳ありませんが、どうか教えてください。</div></section>
+    <ul><li><section><h1 id=5490>
+    <span class="no">[5490]</span>
+    <a class="thread-title" href="#5490">Re:C言語を書く時に、操作が解らない所があります。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-12T20:30:56">2006年10月12日 20:30</time></h1>
+    <div class="body">▼ ヤスさん<br>&gt; 会社で、人のパソコンをいじりながらC言語の勉強をしています。<br>&gt; サクラエディタでソースを書いており、結構快適に作業が行えるのですが、一点解らない点があります。<br><br>設定→タイプ別設定→スクリーン→インデント→スマートインデントが、「C/C++」になっていませんか。スマートインデントを、「なし」にすれば、｛を入れたら動くという事は無くなりませんか。<br></div></section>
+    </li><li><section><h1 id=5491>
+    <span class="no">[5491]</span>
+    <a class="thread-title" href="#5491">Re:C言語を書く時に、操作が解らない所があります。</a>
+    <span class="author">すす</span>
+    <time datetime="2006-10-13T11:00:11">2006年10月13日 11:00</time></h1>
+    <div class="body">▼ ヤスさん<br>&gt; 会社で、人のパソコンをいじりながらC言語の勉強をしています。<br>&gt; サクラエディタでソースを書いており、結構快適に作業が行えるのですが、一点解らない点があります。<br>さきに関数名を書けば<br>func()<br>{<br>&#9;if(1)<br>&#9;{<br>.....<br>というようになりますよ<br>いきなり処理を書くと<br>ヤスさんのおっしゃるような動作しますね。<br>コーデイングの仕方なので、人それぞれですが<br>func()<br>{<br>}<br>のように関数の枠部分を書いてから<br>処理内容を書けばインデントもきちんと動作しますよ。</div></section>
+    <ul><li><section><h1 id=5492>
+    <span class="no">[5492]</span>
+    <a class="thread-title" href="#5492">Re2:C言語を書く時に、操作が解らない所があります。</a>
+    <span class="author">すす</span>
+    <time datetime="2006-10-13T11:04:47">2006年10月13日 11:04</time></h1>
+    <div class="body">▼ すすさん<br>&gt; ▼ ヤスさん<br>&gt; &gt; 会社で、人のパソコンをいじりながらC言語の勉強をしています。<br>&gt; &gt; サクラエディタでソースを書いており、結構快適に作業が行えるのですが、一点解らない点があります。<br>&gt; さきに関数名を書けば<br>&gt; func()<br>&gt; {<br>&gt; &#9;if(1)<br>&gt; &#9;{<br>&gt; .....<br>&gt; というようになりますよ<br>&gt; いきなり処理を書くと<br>&gt; ヤスさんのおっしゃるような動作しますね。<br>&gt; コーデイングの仕方なので、人それぞれですが<br>&gt; func()<br>&gt; {<br>&gt; }<br>&gt; のように関数の枠部分を書いてから<br>&gt; 処理内容を書けばインデントもきちんと動作しますよ。<br><br>じゅうじさんがおっしゃるようにスマートインデントが「C/C++」であることが前提ですが<br>.c等のファイルのデフォルトはスマートインデント「C/C++」がデフォルトですね。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

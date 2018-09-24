@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>行末の矩形選択 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7083</span>
+    <a class="thread-title" href="7083.html#7083">行末の矩形選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7087</span>
+    <a class="thread-title" href="7083.html#7087">Re:行末の矩形選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7092</span>
+    <a class="thread-title" href="7083.html#7092">Re2:行末の矩形選択</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7095</span>
+    <a class="thread-title" href="7083.html#7095">Re3:行末の矩形選択</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7083>
+    <span class="no">[7083]</span>
+    <a class="thread-title" href="#7083">行末の矩形選択</a>
+    <span class="author">ななし</span>
+    <time datetime="2009-11-05T22:42:51">2009年11月05日 22:42</time></h1>
+    <div class="body">rev 1674 trunk2 を使用しています。<br><br>AAA<br>AAA<br>AAA<br><br>と入力した状態から、行末を矩形選択して文字を入力したとき<br>普通の文字とスペースで、入力したときの挙動が異なります。<br>スペースを入力したときも、普通の文字と同じようになってほしいです。<br><br>ちなみに<br><br>AAA[スペース]<br>AAA<br>AAA<br><br>という状態で同じことを行うと、私の思い通りになります。<br><br>それからこれは全く関係ない話ですが<br>trunk2/sakura_core/convert/CConvert_Base64Decode.{h,cpp}<br>を削除し忘れだと思います。<br></div></section>
+    <ul><li><section><h1 id=7087>
+    <span class="no">[7087]</span>
+    <a class="thread-title" href="#7087">Re:行末の矩形選択</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-11-08T16:48:20">2009年11月08日 16:48</time></h1>
+    <div class="body">&gt;&gt;dev:4051 も同件ですね。<br><br>矩形選択時のSPACE/TAB動作に手を入れる場合、実装上、&gt;&gt;dev:4103 あたりのSPACE/TABインデント仕様を実現するための実装部が絡んできそうです。<br>この、SPACE/TABインデント仕様については現行のヘルプには未記載ですが、horさん（矩形SPACE/TABのもともとの実装者？）がWikiに公開されている「非公式hor版バイナリ＆ヘルプ 」のヘルプには記載されているようです。<br><a href=http://sakura.qp.land.to/?Develop%2F10 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2F10</nobr></a><br><br>インデント機能と文字入力とが複雑に絡んでいるみたいで、どうバランスさせればいいのか自分にはよくわからない…<br><br>＃「矩形選択時のSPACE/TABによるインデント揃え機能」って、<br>＃ほとんど誰も知らないような．．．<br>＃（&gt;&gt;dev:4103 読むまで自分は知らなかった）</div></section>
+    <ul><li><section><h1 id=7092>
+    <span class="no">[7092]</span>
+    <a class="thread-title" href="#7092">Re2:行末の矩形選択</a>
+    <span class="author">ななし</span>
+    <time datetime="2009-11-10T01:01:02">2009年11月10日 01:01</time></h1>
+    <div class="body">なるほど。複雑なんですね…。<br><br>行末を選択してスペースを押すと先頭にカーソルが戻る理由は<br>そこの流れだけではよくわからなかったですが…。<br>ソースを追えばわかるのでしょうか。<br><br>ありがとうございました。<br></div></section>
+    <ul><li><section><h1 id=7095>
+    <span class="no">[7095]</span>
+    <a class="thread-title" href="#7095">Re3:行末の矩形選択</a>
+    <span class="author">ななし</span>
+    <time datetime="2009-11-11T00:20:52">2009年11月11日 00:20</time></h1>
+    <div class="body">CViewCommander.cpp の 4859 行目 /*インデント時は空白行に書込まない*/<br><br>と<br><br>4890行目 /* インデント時は空白行に書込まない */<br><br>の 2つで、インデント時は挿入をスキップするようになっているんだけれども<br>それだけだと幅 0 の矩形選択時に<br>スペースキーに何の反応もしないようになってしまうので<br><br>4789行目に /* SPACEorTABインンデントで矩形選択桁がゼロの時は選択範囲を最大にする */<br><br>が加筆されているのですね。<br>だから行末だけを幅0で選択しているときに、カーソルが行頭に戻ってしまう、と。<br><br>理解しました。何とかなりそうです。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

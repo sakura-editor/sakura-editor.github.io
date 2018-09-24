@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>強調キーワードの制限 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1511</span>
+    <a class="thread-title" href="1511.html#1511">強調キーワードの制限</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1529</span>
+    <a class="thread-title" href="1511.html#1529">Re:強調キーワードの制限</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1536</span>
+    <a class="thread-title" href="1511.html#1536">Re2:強調キーワードの制限</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1537</span>
+    <a class="thread-title" href="1511.html#1537">Re3:強調キーワードの制限</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1547</span>
+    <a class="thread-title" href="1511.html#1547">Re3:強調キーワードの制限</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1543</span>
+    <a class="thread-title" href="1511.html#1543">Re2:強調キーワードの制限</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1544</span>
+    <a class="thread-title" href="1511.html#1544">Re3:強調キーワードの制限</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1548</span>
+    <a class="thread-title" href="1511.html#1548">Re4:強調キーワードの制限</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1565</span>
+    <a class="thread-title" href="1511.html#1565">Re5:強調キーワードの制限</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1573</span>
+    <a class="thread-title" href="1511.html#1573">補完と強調は別物です</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1574</span>
+    <a class="thread-title" href="1511.html#1574">Re:補完と強調は別物です</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1586</span>
+    <a class="thread-title" href="1511.html#1586">Re:補完と強調は別物です</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1627</span>
+    <a class="thread-title" href="1511.html#1627">Re:強調キーワードの制限</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1511>
+    <span class="no">[1511]</span>
+    <a class="thread-title" href="#1511">強調キーワードの制限</a>
+    <span class="author">tetti</span>
+    <time datetime="2002-04-01T10:34:09">2002年04月01日 10:34</time></h1>
+    <div class="body">強調キーワードには現在 "_","#","$","@","\" 以外の記号は使えないとありますが、この制限を無くすことはできないのでしょうか。<br>是非制限を無くして欲しいのですが、技術的に難しいのでしょうか？<br><br>もし、制限撤廃不可能ならユーザーが使えない文字を登録しようとしたらダイアログを出すなり注意してはどうでしょう。<br>登録されるのに強調されないので困惑します。</div></section>
+    <ul><li><section><h1 id=1529>
+    <span class="no">[1529]</span>
+    <a class="thread-title" href="#1529">Re:強調キーワードの制限</a>
+    <span class="author">Youma</span>
+    <time datetime="2002-04-04T10:50:36">2002年04月04日 10:50</time></h1>
+    <div class="body">▼ tettiさん<br>&gt; 強調キーワードには現在 "_","#","$","@","\" 以外の記号は使えないとありますが、この制限を無くすことはできないのでしょうか。<br>&gt; 是非制限を無くして欲しいのですが、技術的に難しいのでしょうか？<br>&gt; <br>&gt; もし、制限撤廃不可能ならユーザーが使えない文字を登録しようとしたらダイアログを出すなり注意してはどうでしょう。<br>&gt; 登録されるのに強調されないので困惑します。<br><br>・・・あ！　これが原因なのかな？<br>私は　[ document.location.hostname ]　とか<br>[ .hostname ]とか色々なパターン試したんですが<br>[ . ]が含まれる情報は強調表示されないんですよねTT<br>さらに[ .hostname ]等を入力補完しようとし、<br>[ . ]入力後に入力補完を起動すると補完リスト内に[ .hostname ]が<br>入ってるけど、続きの[ h ]を入力した瞬間、[ . ]の情報が消えて<br>[ h ]から始まる対象だけが補完リストに・・・<br>その為[ .hostname ]はリストから姿を消します。<br>この挙動は悲しいですよねぇ～。</div></section>
+    <ul><li><section><h1 id=1536>
+    <span class="no">[1536]</span>
+    <a class="thread-title" href="#1536">Re2:強調キーワードの制限</a>
+    <span class="author">tetti</span>
+    <time datetime="2002-04-05T23:47:59">2002年04月05日 23:47</time></h1>
+    <div class="body">私もいろいろな場面で悲しい思いをしてます。<br>とにかくこの制限のせいで、いろんな可能性を失っている気がします。<br>新しい機能追加よりもこちらを改善していただきたいのですが、かなり昔から引きずってるみたいで、それほど難しいのでしょうか？ ＞開発に携わっている方々</div></section>
+    <ul><li><section><h1 id=1537>
+    <span class="no">[1537]</span>
+    <a class="thread-title" href="#1537">Re3:強調キーワードの制限</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-06T00:38:36">2002年04月06日 00:38</time></h1>
+    <div class="body">▼ tettiさん<br>&gt; 私もいろいろな場面で悲しい思いをしてます。<br>&gt; とにかくこの制限のせいで、いろんな可能性を失っている気がします。<br>&gt; 新しい機能追加よりもこちらを改善していただきたいのですが、かなり昔から引きずってるみたいで、それほど難しいのでしょうか？ ＞開発に携わっている方々<br><br>さて、どうなんでしょうね。<br>強調キーワードのあたりのソースコードを読んだことが無いので、私には今すぐには修正できません。<br>と回答することしかできません。<br>開発に協力していただければ幸いです &gt; tettiさん</div></section>
+    </li><li><section><h1 id=1547>
+    <span class="no">[1547]</span>
+    <a class="thread-title" href="#1547">Re3:強調キーワードの制限</a>
+    <span class="author">KENCH</span>
+    <time datetime="2002-04-08T08:59:45">2002年04月08日 08:59</time></h1>
+    <div class="body">▼ tettiさん<br>&gt; 新しい機能追加よりもこちらを改善していただきたいのですが、かなり昔から引きずってるみたいで、それほど難しいのでしょうか？ ＞開発に携わっている方々<br>　sakuraのソースを調べて話しているわけではありませんが、一般的には、"\"などの文字は漢字の２バイト目に使われているので単純に組み入れると漢字の半分が強調されたりとかメタメタになりそうです。<br>あとか、トークン解析など幾つかのロジック的な要因があるかもしれませんが、記号は良く考えて実装しないとどこで歪みが出るか（というかロジックをかなり見直してテストしないと）難しそうです。<br></div></section>
+    </li></ul></li><li><section><h1 id=1543>
+    <span class="no">[1543]</span>
+    <a class="thread-title" href="#1543">Re2:強調キーワードの制限</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-07T01:43:45">2002年04月07日 01:43</time></h1>
+    <div class="body">▼ Youmaさん<br>&gt; [ . ]入力後に入力補完を起動すると補完リスト内に[ .hostname ]が<br>&gt; 入ってるけど、続きの[ h ]を入力した瞬間、[ . ]の情報が消えて<br>&gt; [ h ]から始まる対象だけが補完リストに・・・<br>&gt; その為[ .hostname ]はリストから姿を消します。<br><br>現在の作りで'.'を対象に加えてしまうと、abcdeを候補に加えてもhoge.abcdeは候補に出ないことになってしまうような気がします。(hoge.abcdeとabcdeを先頭から比較するので)<br>これだともっと都合が悪くないですか？<br><br>もちろんロジックを見直せば改善可能だとは思いますが。</div></section>
+    <ul><li><section><h1 id=1544>
+    <span class="no">[1544]</span>
+    <a class="thread-title" href="#1544">Re3:強調キーワードの制限</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-07T02:10:09">2002年04月07日 02:10</time></h1>
+    <div class="body">現在は、<br>1. 現在位置の単語取得<br>2. 候補の一覧<br>というのを候補が表示されている間毎回行われる感じです。<br>1. は共通関数を使っているので記号類を候補に加えるのは全ての単語区切り(ダブルクリック時の選択範囲など)に影響します。<br><br>それを避けるためにはロジックの見直しが必要でしょう。<br>現在は常に単語を元に再検索していますが、候補が表示されている間は比較開始位置が変わらないことを考慮することはできるのかな。(未調査)</div></section>
+    <ul><li><section><h1 id=1548>
+    <span class="no">[1548]</span>
+    <a class="thread-title" href="#1548">Re4:強調キーワードの制限</a>
+    <span class="author">Youma</span>
+    <time datetime="2002-04-08T10:54:23">2002年04月08日 10:54</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 現在は、<br>&gt; 1. 現在位置の単語取得<br>&gt; 2. 候補の一覧<br>&gt; というのを候補が表示されている間毎回行われる感じです。<br>&gt; 1. は共通関数を使っているので記号類を候補に加えるのは全ての単語区切り(ダブルクリック時の選択範囲など)に影響します。<br>&gt; <br>&gt; それを避けるためにはロジックの見直しが必要でしょう。<br>&gt; 現在は常に単語を元に再検索していますが、候補が表示されている間は比較開始位置が変わらないことを考慮することはできるのかな。(未調査)<br><br>うーん、なんだか難しそうだ（ーー；<br>特に、単語選択（左ダブルクリック）の時、「 . 」が有効に<br>なってしまうのは痛いかもしれないです。<br><br>通常の補完の場合を考えるなら、「　.　」を一文字と考えて<br>「　.hoge　」 と　「　hoge　」は別物とすればいい気もします。<br>（　単語ファイルは美しくなくなりますが…（W)　）<br><br>---イメージしていた最低限の補完---<br>hoge<br>.hoge<br>huga.hoge<br><br>.hogeがある時は　.h 補完変換が可能になる//<br>huga.hoge がある時は　huga. 補完変換が可能になる//<br><br>当然、　hoge　が無ければ　h 補完変換時に　hoge は出てこない。<br>（.hoge があっても）<br><br>-------------------------------<br><br>只、上記仕様だと、<br>abc.item<br>hoge.item<br><br>と、abc / hoge のどちらにも　item　という　プロパティが<br>ある場合、　abc. 等で補完させる為には<br>abc.item / hoge.item と両方用意しないと駄目なんですよね<br>（ちと面倒。　が、しかたない。）<br><br>まぁ、それもこれも「 . 」を補完候補内で「普通の文字」と<br>扱わせる事が可能な時のみですよね。<br><br>…ダブルクリック選択時に　[ . ]　も含まってしまうと、<br>ものすごい、不都合がありそうですし。<br>その問題がある限りはちょっと無理っぽいですね（TT)<br></div></section>
+    <ul><li><section><h1 id=1565>
+    <span class="no">[1565]</span>
+    <a class="thread-title" href="#1565">Re5:強調キーワードの制限</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-09T00:47:21">2002年04月09日 00:47</time></h1>
+    <div class="body">▼ Youmaさん<br>&gt; うーん、なんだか難しそうだ（ーー；<br>&gt; 特に、単語選択（左ダブルクリック）の時、「 . 」が有効に<br>&gt; なってしまうのは痛いかもしれないです。<br>ダブルクリックしても補完で使える@や\は選択対象にならないので私の推論は間違っている可能性が高いです。<br>（ちゃんとソースを追っていませんでしたので...）<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=1573>
+    <span class="no">[1573]</span>
+    <a class="thread-title" href="#1573">補完と強調は別物です</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-09T23:50:56">2002年04月09日 23:50</time></h1>
+    <div class="body">Youmaさんにつられて補完について答えてしまいましたが、tettiさんの元々の話は強調キーワードについてでしたね。<br><br>この２つは内部的には別物です。補完の方は現在でも@#_$\といった記号類を含む文字列を認識しません。<br><br>強調キーワードに関しては単語の一部だけが強調されることを防ぐためにアルファベットとそれ以外(だったかな？)を境にワードを切り出して比較しています。<br>強調に使える記号類はここでの切り出しにおいてアルファベットと一続きと認識するようになっています。<br>ただ、こちらも補完と同様の問題がありまして、たとえば単に'.'を認識するようにすると、キーワードabcを設定してもabc.efgが強調されなくなってしまいます。<br>すでに現在でもこの状態では@abcや\abcは強調表示されません。</div></section>
+    <ul><li><section><h1 id=1574>
+    <span class="no">[1574]</span>
+    <a class="thread-title" href="#1574">Re:補完と強調は別物です</a>
+    <span class="author">Youma</span>
+    <time datetime="2002-04-10T10:08:30">2002年04月10日 10:08</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; Youmaさんにつられて補完について答えてしまいましたが、tettiさんの元々の話は強調キーワードについてでしたね。<br>&gt; <br>&gt; この２つは内部的には別物です。補完の方は現在でも@#_$\といった記号類を含む文字列を認識しません。<br>&gt; <br>&gt; 強調キーワードに関しては単語の一部だけが強調されることを防ぐためにアルファベットとそれ以外(だったかな？)を境にワードを切り出して比較しています。<br>&gt; 強調に使える記号類はここでの切り出しにおいてアルファベットと一続きと認識するようになっています。<br>&gt; ただ、こちらも補完と同様の問題がありまして、たとえば単に'.'を認識するようにすると、キーワードabcを設定してもabc.efgが強調されなくなってしまいます。<br>&gt; すでに現在でもこの状態では@abcや\abcは強調表示されません。<br><br><br>…あ、なるほど！　となると、私が考えていたような強調/補完ファイルは<br>確実に無理ですね（ＴＴ）<br><br>１）補完では[ . ]を文字として認識させる<br>２）強調表示時は[ . ]は記号として区別する…<br><br>と、内部的な処理を分けたとすると…<br>それにあわせた各強調表示用ファイル　と　入力補完用ファイルが<br>必要になってしまう…うーん、メンドイ。<br>[ . ]の扱いに関してはあきらめときますぅ～。<br><br>ここは素直に、Tettiさんの案の強調表示されるはずの単語リストから、<br>実際に強調表示されない物は登録できない/リストから外す…<br>というのが良さそうですねぇ～。<br>それはそれで難しそうですが（--;）<br></div></section>
+    </li><li><section><h1 id=1586>
+    <span class="no">[1586]</span>
+    <a class="thread-title" href="#1586">Re:補完と強調は別物です</a>
+    <span class="author">tetti</span>
+    <time datetime="2002-04-12T14:29:39">2002年04月12日 14:29</time></h1>
+    <div class="body">PCがいかれて返信が遅くなってしまいました。<br><br>▼ げんたさん<br>&gt; Youmaさんにつられて補完について答えてしまいましたが、tettiさんの元々の話は強調キーワードについてでしたね。<br>&gt; <br>&gt; この２つは内部的には別物です。補完の方は現在でも@#_$\といった記号類を含む文字列を認識しません。<br>&gt; <br>&gt; 強調キーワードに関しては単語の一部だけが強調されることを防ぐためにアルファベットとそれ以外(だったかな？)を境にワードを切り出して比較しています。<br>&gt; 強調に使える記号類はここでの切り出しにおいてアルファベットと一続きと認識するようになっています。<br>&gt; ただ、こちらも補完と同様の問題がありまして、たとえば単に'.'を認識するようにすると、キーワードabcを設定してもabc.efgが強調されなくなってしまいます。<br>&gt; すでに現在でもこの状態では@abcや\abcは強調表示されません。<br><br>丁寧な説明ありがとうございます。<br>なるほど、設計段階からの単語処理との関係で、現状の実装ではあっちを立てるとこっちが立たずになってるんですね。<br>長い間、修正されない理由が分かった気がします。<br><br>単語処理と切り離してアレコレなんて自分で直せればいいのですが、Web以外の言語に疎い私には無理そうです。(^_^;<br>きっとえらく難しいんでしょうね。</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=1627>
+    <span class="no">[1627]</span>
+    <a class="thread-title" href="#1627">Re:強調キーワードの制限</a>
+    <span class="author">錯乱坊</span>
+    <time datetime="2002-04-16T15:01:49">2002年04月16日 15:01</time></h1>
+    <div class="body">▼ tettiさん<br>&gt; 強調キーワードには現在 "_","#","$","@","\" 以外の記号は使えないとありますが、この制限を無くすことはできないのでしょうか。<br>&gt; 是非制限を無くして欲しいのですが、技術的に難しいのでしょうか？<br>&gt; <br>&gt; もし、制限撤廃不可能ならユーザーが使えない文字を登録しようとしたらダイアログを出すなり注意してはどうでしょう。<br>&gt; 登録されるのに強調されないので困惑します。<br><br>私は、正規表現キーワードで逃げてます。結構使えます。「.」なら /.hostname/k を登録して、正規表現キーワードの色を強調キーワードと同じにすれば良いのではないでしょうか。正規表現キーワードは 10個あるので、色々出来そうですよ。</div></section>
+    </li></ul></li></ul></body></html>

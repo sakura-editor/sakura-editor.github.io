@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現での複数行対応 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5378</span>
+    <a class="thread-title" href="5378.html#5378">正規表現での複数行対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5379</span>
+    <a class="thread-title" href="5378.html#5379">Re:正規表現での複数行対応</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5380</span>
+    <a class="thread-title" href="5378.html#5380">Re:正規表現での複数行対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5381</span>
+    <a class="thread-title" href="5378.html#5381">Re2:正規表現での複数行対応</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5382</span>
+    <a class="thread-title" href="5378.html#5382">中途半端ですがパッチ作りました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5383</span>
+    <a class="thread-title" href="5378.html#5383">Patchesにアップしました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5386</span>
+    <a class="thread-title" href="5378.html#5386">PatchesにAssignをお願いします</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5378>
+    <span class="no">[5378]</span>
+    <a class="thread-title" href="#5378">正規表現での複数行対応</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-03T03:46:45">2008年07月03日 03:46</time></h1>
+    <div class="body">簡易的ではありますが、鬼車使用のまま複数行への対応を考えています。<br> <br>取りあえず検索とgrepは確認できましたが、マッチする箇所に問題があります。<br> <br>aaaaaaというテキストに対してaaaで検索した場合に何ヶ所にマッチするかという問題で、私としては4箇所にマッチして欲しかったのですが必死の過去ログ検索により2箇所が仕様という事が分かりました。<br> <br>これに引っかかっていまして、例えば、<br>a<br>a<br>a<br>a<br>a<br>a<br>に対してa\r\na\r\naで検索すると、上からの検索は2箇所、下からは4箇所マッチします。<br>これは、下からの複数行検索は「次の検索開始位置はマッチした文字列の終了位置から」という仕様の影響を受けないためですが、それを加味する様な修正も難しい感じです。<br> <br>で、いっそのこと正規表現での検索時は「次の検索開始位置はマッチした文字列の開始位置の次から」に変更してはどうだろうかと思うのですがまずいでしょうか？<br></div></section>
+    <ul><li><section><h1 id=5379>
+    <span class="no">[5379]</span>
+    <a class="thread-title" href="#5379">Re:正規表現での複数行対応</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-03T10:09:26">2008年07月03日 10:09</time></h1>
+    <div class="body">前言撤回。<br>やはり既存動作を変更するのは面白くないので、<br>“正規表現での検索時は「次の検索開始位置はマッチした文字列の開始位置の次から」”<br>ではなく、<br>“上からの検索且つマッチした文字列が複数行の場合「次の検索開始位置はマッチした文字列の開始位置の次行の行頭から」”<br>にしようと思います。<br> <br>こうすれば横方向の動作を変更せずに縦方向の動作を統一できます。<br>ただ、横方向の動作と縦方向の動作が違って分かりにくく感じるかもしれませんが……<br></div></section>
+    </li><li><section><h1 id=5380>
+    <span class="no">[5380]</span>
+    <a class="thread-title" href="#5380">Re:正規表現での複数行対応</a>
+    <span class="author">神楽</span>
+    <time datetime="2008-07-04T08:32:29">2008年07月04日 08:32</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; 簡易的ではありますが、鬼車使用のまま複数行への対応を考えています。<br>&gt; <br>&gt; 取りあえず検索とgrepは確認できましたが、マッチする箇所に問題があります。<br><br>Grepで改行をまたいでマッチした場合は、出力表示はどのようになるのでしょうか？</div></section>
+    <ul><li><section><h1 id=5381>
+    <span class="no">[5381]</span>
+    <a class="thread-title" href="#5381">Re2:正規表現での複数行対応</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-04T19:39:50">2008年07月04日 19:39</time></h1>
+    <div class="body">▼ 神楽さん<br>&gt; Grepで改行をまたいでマッチした場合は、出力表示はどのようになるのでしょうか？<br><br>現在は最初の行だけが出力されます。<br>まだ骨組みを作っているような状態なので (^^;<br></div></section>
+    </li></ul></li><li><section><h1 id=5382>
+    <span class="no">[5382]</span>
+    <a class="thread-title" href="#5382">中途半端ですがパッチ作りました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-07T03:24:59">2008年07月07日 03:24</time></h1>
+    <div class="body">「正規表現での複数行検索／Grep／置換対応（簡易版）」のパッチを作りました。<br><br>ただし、まだ中途半端なので自サイトにアップしています。<br>ダウンロードページの12<br>　<a href=http://www.geocities.jp/nasukoji_7/download/download_sakuraeditor.html target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>nasukoji<wbr>_7/<wbr>download<wbr>/<wbr>download<wbr>_sakurae<wbr>ditor.<wbr>html</nobr></a><br><br>サクラエディタに対応した正規表現ライブラリの鬼車を用いたまま複数行の検索／Grep／置換に対応します。<br>複数行つなぎ合わせたバッファを正規表現ライブラリに渡す事で複数行に対応します。<br>検索／Grep／置換ダイアログにて行数を指定して下さい。<br>指定可能な行数は1～9999です。1を指定すると、ほぼ今までどおりの動作となります。<br>（巨大な数字を指定しても遅くなるだけで意味は殆どありません）<br><br>現状できること<br>・検索<br>・Grep<br>・置換（複数行時のすべて置換を除く）<br><br>中途半端にできること（動作するが行数指定の方法を提供していないので前回値で動作する）<br>・正規表現インクリメンタルサーチ<br>・マクロによる正規表現検索／Grep<br><br>できないこと（未設計）<br>・複数行時のすべて置換<br>・複数行時の検索文字列のカラーリング<br><br>ご意見いただけると幸いです。<br></div></section>
+    </li><li><section><h1 id=5383>
+    <span class="no">[5383]</span>
+    <a class="thread-title" href="#5383">Patchesにアップしました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-12T00:10:13">2008年07月12日 00:10</time></h1>
+    <div class="body">すべて置換に対応したところまででPatchsにアップしました。<br>（ログインするのを忘れてしまったが……）<br><br>Patches #2016120<br><br>現状できること<br>・検索<br>・Grep<br>・置換<br><br>中途半端にできること（動作するが行数指定の方法を<br>提供していないので前回値で動作する）<br>・正規表現インクリメンタルサーチ<br>・マクロによる正規表現検索／Grep／置換<br><br>できないこと（未設計）<br>・複数行時の検索文字列のカラーリング<br></div></section>
+    </li><li><section><h1 id=5386>
+    <span class="no">[5386]</span>
+    <a class="thread-title" href="#5386">PatchesにAssignをお願いします</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-16T18:48:42">2008年07月16日 18:48</time></h1>
+    <div class="body">CShareData.cppのバージョン番号の変更を忘れていたのでアップし直そうと思ったのですが、Submitteed Byがnobodyなためアップできなくなってしまったようです (^^;<br><br>申し訳ありませんが、どなたか管理者権限で私にAssigned Toをしておいて頂けないでしょうか？<br><br>宜しくお願いいたします m(_ _)m<br></div></section>
+    </li></ul></li></ul></body></html>

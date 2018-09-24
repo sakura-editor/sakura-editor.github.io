@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>シンプルなC/C++インデント | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3632</span>
+    <a class="thread-title" href="3632.html#3632">シンプルなC/C++インデント</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3633</span>
+    <a class="thread-title" href="3632.html#3633">Re: シンプルなC/C++インデント</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3635</span>
+    <a class="thread-title" href="3632.html#3635">Re2: シンプルなC/C++インデント</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3632>
+    <span class="no">[3632]</span>
+    <a class="thread-title" href="#3632">シンプルなC/C++インデント</a>
+    <span class="author">j2</span>
+    <time datetime="2004-06-12T17:05:13">2004年06月12日 17:05</time></h1>
+    <div class="body"><br>サクラエディタ初心者です。<br>C/C++のスマートインデントで半角空白を使いたくて<br><br>"{"直後に改行を入力した場合<br>タブ、半角空白だけの行で"}"を入力した場合<br><br>に限定したシンプルな仕様にお試しで改造してみました。<br><br>（CEditView::Command_CHARを肥大化させてしまったので<br>　実装はシンプルとは....いえない状態です）<br><br>smartindent20040612.lzh<br>(ssrc_2004-06-05.tar.bz2との差分です。）<br><br>オートインデントに依存した割には<br>全角空白やその他のインデント対応文字の対応が<br>中途半端("}"は対応していない）なのは<br>"C/C++用"だからということで.....。<br><br>過去、見て見ぬフリが続いているスマートインデントなので、<br>こんな改造で済むわけないのでしょうが<br>自分の書いた、稚拙なコードをたくさんの方に<br>みてもらうチャンスなので思い切ってＵＰしてみました。<br><br><br></div></section>
+    <ul><li><section><h1 id=3633>
+    <span class="no">[3633]</span>
+    <a class="thread-title" href="#3633">Re: シンプルなC/C++インデント</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-06-13T02:39:58">2004年06月13日 02:39</time></h1>
+    <div class="body">パッチを拝見しました．従来のSmartIndent_CPP()が全く使われていなくてびっくり．<br>私としてはこの仕様が良いのか悪いのかはちょっと判断できません．こういうのは「期待通り動く」ことが重要ですから．<br><br>smart indentに関しては#を入れたらインデントをキャンセルしたいとか for/whike等の次の行は中括弧が無くても印田として欲しいとか要望が色々出ており，たぶん今回の変更も含めて汎用的に行うためには特定の文字が入力されたら特別な関数を呼ぶ or マクロ実行といったことができる仕組みを入れる必要があるかと思います．<br></div></section>
+    <ul><li><section><h1 id=3635>
+    <span class="no">[3635]</span>
+    <a class="thread-title" href="#3635">Re2: シンプルなC/C++インデント</a>
+    <span class="author">j2</span>
+    <time datetime="2004-06-13T18:04:42">2004年06月13日 18:04</time></h1>
+    <div class="body">げんたさん　コメントありがとうございます。<br><br>&gt; パッチを拝見しました．従来のSmartIndent_CPP()が全く使われていなくてびっくり．<br>&gt; 私としてはこの仕様が良いのか悪いのかはちょっと判断できません．こういうのは「期待通り動く」ことが重要ですから．<br>&gt; <br>&gt; smart indentに関しては#を入れたらインデントをキャンセルしたいとか for/whike等の次の行は中括弧が無くても印田として欲しいとか要望が色々出ており，たぶん今回の変更も含めて汎用的に行うためには特定の文字が入力されたら特別な関数を呼ぶ or マクロ実行といったことができる仕組みを入れる必要があるかと思います．<br><br>for,whileで中括弧なしの場合のインデントですが<br>確かに便利な事もありますが、逆に<br>for (;;)<br>{<br>   /* .... */<br>}<br>というスタイルで記述する人にとっては迷惑だったりします。<br>思考を妨げないのがスマートなインデントだとすると<br>デフォルトをOFFにしておくのが一番無難だったりします。<br>（コーディングスタイルは人それぞれなので...）<br><br>それはさておき、今回の変更ですが、<br>最初　一般掲示板のwmlhqさんの修正(#3405)と<br>同じような修正をしてみました。<br>で、いろいろと触ってみて、<br>現状の実装はオーバースペックに感じて....。<br>で、余計なインデントされるよりは<br>インデントが不足する場面があるほうが<br>無難という判断の元に作成したのが今回の変更です。<br>あくまで、せっかく作ったので、<br>必要な方はどうぞレベルというレベルです。<br>取り込まれるとは思っていませんので。<br><br>最後に、あまり汎用的に作ろうと構えてしまうと<br>沈み込んでしまうのではないかと心配です。<br>また、完成したとしても、<br>何でもできる＝何にもできない<br>に陥ってしまう、または<br>Emacsのように<br>マクロがエディタを覆ってしまうなんて事に<br>ならなければいいのですが...。<br><br><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

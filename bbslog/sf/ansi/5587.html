@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Wineでの動作について（修正） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5587</span>
+    <a class="thread-title" href="5587.html#5587">Wineでの動作について（修正）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5588</span>
+    <a class="thread-title" href="5587.html#5588">Re:Wineでの動作について（修正）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5589</span>
+    <a class="thread-title" href="5587.html#5589">Re2:Wineでの動作について（修正）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5591</span>
+    <a class="thread-title" href="5587.html#5591">Re3:Wineでの動作について（修正）</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5595</span>
+    <a class="thread-title" href="5587.html#5595">Re3:Wineでの動作について（修正）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5600</span>
+    <a class="thread-title" href="5587.html#5600">Re4:Wineでの動作について（修正）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5604</span>
+    <a class="thread-title" href="5587.html#5604">Re5:Wineでの動作について（修正）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5605</span>
+    <a class="thread-title" href="5587.html#5605">Re6:Wineでの動作について（修正）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5611</span>
+    <a class="thread-title" href="5587.html#5611">Re7:Wineでの動作について（修正）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5614</span>
+    <a class="thread-title" href="5587.html#5614">Re8:Wineでの動作について（修正）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5615</span>
+    <a class="thread-title" href="5587.html#5615">Re9:Wineでの動作について（修正）</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5587>
+    <span class="no">[5587]</span>
+    <a class="thread-title" href="#5587">Wineでの動作について（修正）</a>
+    <span class="author">Hidetaka Sakai</span>
+    <time datetime="2009-08-02T17:07:40">2009年08月02日 17:07</time></h1>
+    <div class="body">Unix系でのOSでのサクラエディタ使用はWineを使用すると<br>FAQ（<a href=http://sakura.qp.land.to/?FAQ%2F47 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>FAQ%<wbr>2F47</nobr></a>）にあるのですが、<br>矢印キー、BackSpace、CTRL+Cなどが効かないという<br>現象が発生しております。<br><br>そもそもWine側の問題ではあるとは思うのですが、<br>サクラエディタ側の修正で対応版を作成してみました。<br><a href=http://sakaihdt.gozaru.jp/sakura.html target=_top><nobr>http://<wbr>sakaihdt<wbr>.<wbr>gozaru.<wbr>jp/<wbr>sakura.<wbr>html</nobr></a><br><br>問題(Wine側のですが・・・)は、アクセラレータ<br>テーブルが共有メモリにあることのようです。<br>TranslateAccelerator呼び出し前に、<br>ローカル変数にアクセラレータテーブルを<br>生成することで、Wineでも正常に動作することが<br>できます。<br><br><br>修正に関して取り込んでいただけるかどうか、<br>ご検討をお願い申し上げます。<br>＞＞開発メンバー殿</div></section>
+    <ul><li><section><h1 id=5588>
+    <span class="no">[5588]</span>
+    <a class="thread-title" href="#5588">Re:Wineでの動作について（修正）</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-08-04T18:00:46">2009年08月04日 18:00</time></h1>
+    <div class="body">▼ Hidetaka Sakaiさん<br>こんにちは。<br><br>共有メモリにあるというより、プロセス間で共有できるのかということですよね？<br>1つのAccelerator Tableをプロセスを跨いで使用できるのはundocumentedじゃなかったと思うのですが、ちょっと憶えていません (^^;<br><br>で、Wineのソースをちょろっと見てみました。<br>CreateAcceleratorTableがGlobalAlloc16でメモリを取りにいっているようですが、最終的にプロセスヒープから割り当てられたりしていないでしょうか？<br>processHeapという変数へ行き着いているのが気になります。<br>そのため、プロセスを跨げなくなっているとか？<br><br>まぁ、私の間違いの可能性の方が大きいですが…… (^^;<br><br>サクラエディタのソースの修正部分については、毎回Accelerator Tableを作って破棄するのはちょっとコストが高いかなと思いましたが、そんなに大量のコードが走るわけでもないので大丈夫でしょうか。<br>Wineでの使用時に速度低下とかしてませんか？<br><br>ではでは。<br></div></section>
+    <ul><li><section><h1 id=5589>
+    <span class="no">[5589]</span>
+    <a class="thread-title" href="#5589">Re2:Wineでの動作について（修正）</a>
+    <span class="author">Hidetaka Sakai</span>
+    <time datetime="2009-08-04T23:44:31">2009年08月04日 23:44</time></h1>
+    <div class="body">▼ なすこじさん<br>こんばんわ。<br><br>ご確認ありがとうございます。<br>（Wine側まで見ていただけるとは・・・）<br><br>Accelerator Tableの仕様について、まだ未調査です。<br>なすこじさんの情報も含め調べてみます。<br>(2chでの情報提供もありましたので）<br>Wine側には、調査後報告するようにします。<br>（ちょっと時間が開くかもしれませんが、<br>　またこのBBSに報告します。）<br><br>&gt; サクラエディタのソースの修正部分については、<br>&gt; 毎回Accelerator Tableを作って破棄するのは<br>&gt; ちょっとコストが高いかなと思いましたが、<br>&gt; そんなに大量のコードが走るわけでもないので大丈夫でしょうか。<br>&gt; Wineでの使用時に速度低下とかしてませんか？<br><br>「CEditWnd::MessageLoop」関数の、<br>初めに生成し、最後に開放しています。<br><br>ブレークポイントをはって確認しましたが、<br>生成は、起動時に１回しか呼び出されていないようです。<br></div></section>
+    <ul><li><section><h1 id=5591>
+    <span class="no">[5591]</span>
+    <a class="thread-title" href="#5591">Re3:Wineでの動作について（修正）</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-08-05T00:36:23">2009年08月05日 00:36</time></h1>
+    <div class="body">▼ Hidetaka Sakaiさん<br>&gt; ブレークポイントをはって確認しましたが、<br>&gt; 生成は、起動時に１回しか呼び出されていないようです。<br><br>現状、起動時にCEditApp::CEditApp()で生成してる以外に、<br>共通設定画面がOKで閉じられた時も再生成してるです。<br>↑<br>CEditDoc::OpenPropertySheet()の中で、<br>トレイウィンドウにMYWM_CHANGESETTINGを送っていて、<br>これを受けてCEditApp::DispatchEvent()で破棄＆生成。</div></section>
+    </li><li><section><h1 id=5595>
+    <span class="no">[5595]</span>
+    <a class="thread-title" href="#5595">Re3:Wineでの動作について（修正）</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-08-06T04:17:44">2009年08月06日 04:17</time></h1>
+    <div class="body">▼ Hidetaka Sakaiさん<br>&gt; (2chでの情報提供もありましたので）<br> <br>確認しました。<br>User Objectsの項でしたね。ありがとうございます。<br> <br>2chから遡ってBug 19368にたどり着きました。<br>共有メモリにあるのはAcceletor Tableのハンドルだけです。実体はデスクトップヒープに作られると思います<br>なので、他のプロセスからも参照できるが、Destroyを忘れるとアプリを終了してもメモリに残る……と思う。<br> <br>一方Wineではプロセスヒープに作られてしまい他のプロセスから見れなくなっているのでは？というのが私の推測です。<br>怪しいですが (^^;<br> <br>&gt; 生成は、起動時に１回しか呼び出されていないようです。<br> <br>ご、ごめんなさい m(_ _)m<br>再作成のために毎回やっていると思い込んでいました。確かにループの外にありますね。<br> <br>&gt; Wine側には、調査後報告するようにします。<br>&gt; （ちょっと時間が開くかもしれませんが、<br>&gt; 　またこのBBSに報告します。）<br> <br>お手数をお掛けしますが宜しくお願いします。<br> <br>ではでは。</div></section>
+    <ul><li><section><h1 id=5600>
+    <span class="no">[5600]</span>
+    <a class="thread-title" href="#5600">Re4:Wineでの動作について（修正）</a>
+    <span class="author">Hidetaka Sakai</span>
+    <time datetime="2009-08-06T22:37:30">2009年08月06日 22:37</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; 確認しました。<br>&gt; User Objectsの項でしたね。ありがとうございます。<br>&gt; <br>&gt; 2chから遡ってBug 19368にたどり着きました。<br>すみません。リンク貼っとけばよかったですね。<br>今更だけど。。。<br><a href=http://bugs.winehq.org/show_bug.cgi?id=19368 target=_top><nobr>http://<wbr>bugs.<wbr>winehq.<wbr>org/<wbr>show_bug<wbr>.<wbr>cgi?<wbr>id=<wbr>19368</nobr></a><br><br>&gt; 共有メモリにあるのはAcceletor Tableのハンドルだけです。実体はデスクトップヒープに作られると思います<br>&gt; なので、他のプロセスからも参照できるが、Destroyを忘れるとアプリを終了してもメモリに残る……と思う。<br>そのようですね。<br>Dmitry Timoshkov 氏の解答によるとによると、<br>Acceletor Tableは、user32 kernel objectとして<br>作成されるから、複数プロセスからも参照できる。<br>だそうです。（解釈あってるか不安ですが。。。）<br><br># In Windows an accelerator is a user32 kernel object, <br># like windows and menus, and an accelerator created <br># in one process is visible to anotherone. <br><br><br>&gt; 一方Wineではプロセスヒープに作られてしまい<br>&gt; 他のプロセスから見れなくなっているのでは？<br>&gt; というのが私の推測です。<br>&gt; 怪しいですが (^^;<br>これはYesでしょうね。<br>なすこじさんがが教えてくださったAlloc16は<br>最終的にヒープを取得しているようです。<br><br>Dmitry Timoshkov 氏の解答によると、<br>Wineは、window handleしか、<br>user32 kernel object実装していない<br>とのこと。（和訳あってるかしら・・・）<br><br># Wine implements this only for window handles.<br><br><br>&gt; &gt; 生成は、起動時に１回しか呼び出されていないようです。<br>&gt; <br>&gt; ご、ごめんなさい m(_ _)m<br>&gt; 再作成のために毎回やっていると思い込んでいました。確かにループの外にありますね。<br><br>ryoji さんが報告してくださった箇所でも<br>Acceletor Tableは生成されているようですが、<br>文章を書くのに支障はでないのではとおもいます。<br>（ryojiさんありがとうございます。）<br><br><br>&gt; &gt; Wine側には、調査後報告するようにします。<br>&gt; &gt; （ちょっと時間が開くかもしれませんが、<br>&gt; &gt; 　またこのBBSに報告します。）<br>&gt; <br>&gt; お手数をお掛けしますが宜しくお願いします。<br><br>報告しちゃいました。。。。<br><br>今度は、Wine側ソースを追っかけしてみます、<br><br>ではでは。</div></section>
+    <ul><li><section><h1 id=5604>
+    <span class="no">[5604]</span>
+    <a class="thread-title" href="#5604">Re5:Wineでの動作について（修正）</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-08-09T02:57:56">2009年08月09日 02:57</time></h1>
+    <div class="body">▼ Hidetaka Sakaiさん<br>報告どうもありがとうございます。<br><br>&gt; Dmitry Timoshkov 氏の解答によると、<br>&gt; Wineは、window handleしか、<br>&gt; user32 kernel object実装していない<br>&gt; とのこと。（和訳あってるかしら・・・）<br>&gt; <br>&gt; # Wine implements this only for window handles.<br><br>最低でもWindowは対応していないとマズいよなぁ、と思ったらWindowだけなんですね。<br><br>氏の回答からは、対応予定が有るのか無いの分からないのがちょっと困る (^^;<br><br>取りあえず対応パッチを作っておこうと思いますが、修正部分のライセンスはzlib/libpngで良いでしょうか？<br><br>　ライセンス明確化推進計画<br>　　<a href=http://sakura.qp.land.to/?Develop%2FLicenses target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2FLicens<wbr>es</nobr></a><br><br>ではでは。<br></div></section>
+    <ul><li><section><h1 id=5605>
+    <span class="no">[5605]</span>
+    <a class="thread-title" href="#5605">Re6:Wineでの動作について（修正）</a>
+    <span class="author">Hidetaka Sakai</span>
+    <time datetime="2009-08-09T16:07:06">2009年08月09日 16:07</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; &gt; # Wine implements this only for window handles.<br>&gt; <br>&gt; 最低でもWindowは対応していないとマズいよなぁ、と思ったらWindowだけなんですね。<br>&gt; 氏の回答からは、対応予定が有るのか無いの分からないのがちょっと困る (^^;<br><br>いつ修正か、わからないですね。<br>Wine側をなおせるようなら直したいのですが、<br>まだ着手できておりません。<br>１０月ぐらいにチャレンジしたいとは思いますが。。。。<br><br><br>&gt; 取りあえず対応パッチを作っておこうと思いますが、<br>&gt; 修正部分のライセンスはzlib/libpngで良いでしょうか？<br>&gt; <br>&gt; 　ライセンス明確化推進計画<br>&gt; 　　<a href=http://sakura.qp.land.to/?Develop%2FLicenses target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2FLicens<wbr>es</nobr></a><br><br>取り込んでいただけるんですか？<br>（いやぁうれしい！！）<br><br>私個人は著作権を破棄します。<br>できないのであれば、zlibライセンスで構いません。<br><br>ではでは。</div></section>
+    <ul><li><section><h1 id=5611>
+    <span class="no">[5611]</span>
+    <a class="thread-title" href="#5611">Re7:Wineでの動作について（修正）</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-08-15T20:13:01">2009年08月15日 20:13</time></h1>
+    <div class="body">▼ Hidetaka Sakaiさん<br>&gt; 私個人は著作権を破棄します。<br>&gt; できないのであれば、zlibライセンスで構いません。<br><br>ありがとうございます。<a href=http://sakura.qp.land.to/?Develop%2FLicenses target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2FLicens<wbr>es</nobr></a> に記載させていただきました。<br><br>また、テスト用のバイナリを作成しましたのでWineにて試していただけますでしょうか？<br>　<a href=http://www.geocities.jp/nasukoji_7/download/download_sakuraeditor.html target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>nasukoji<wbr>_7/<wbr>download<wbr>/<wbr>download<wbr>_sakurae<wbr>ditor.<wbr>html</nobr></a><br>　「13. sakura_20090815_for_Wine.zip」<br><br>「共通設定」の「キー割り当て」に「ウィンドウ毎にアクセラレータテーブルを作成する(Wine用)」のオプションがありますので、それにチェックを入れてカーソルキーやバックスペースを押してみて下さい。<br><br>ではでは。</div></section>
+    <ul><li><section><h1 id=5614>
+    <span class="no">[5614]</span>
+    <a class="thread-title" href="#5614">Re8:Wineでの動作について（修正）</a>
+    <span class="author">Hidetaka Sakai</span>
+    <time datetime="2009-08-16T09:55:51">2009年08月16日 09:55</time></h1>
+    <div class="body">▼ なすこじさん<br><br>&gt; &gt; 私個人は著作権を破棄します。<br>&gt; &gt; できないのであれば、zlibライセンスで構いません。<br>&gt; <br>&gt; ありがとうございます。<a href=http://sakura.qp.land.to/?Develop%2FLicenses target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2FLicens<wbr>es</nobr></a> に記載させていただきました。<br><br>確認致しました。<br><br>&gt; また、テスト用のバイナリを作成しましたのでWineにて試していただけますでしょうか？<br>&gt; 　<a href=http://www.geocities.jp/nasukoji_7/download/download_sakuraeditor.html target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>nasukoji<wbr>_7/<wbr>download<wbr>/<wbr>download<wbr>_sakurae<wbr>ditor.<wbr>html</nobr></a><br>&gt; 　「13. sakura_20090815_for_Wine.zip」<br>&gt; <br>&gt; 「共通設定」の「キー割り当て」に「ウィンドウ毎にアクセラレータテーブルを作成する(Wine用)」のオプションがありますので、それにチェックを入れてカーソルキーやバックスペースを押してみて下さい。<br><br>ありがとうございます。<br>確認致しました。問題ございません。<br><br>FAQに追記が必要ですね。<br><a href=http://sakura.qp.land.to/?FAQ%2F47 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>FAQ%<wbr>2F47</nobr></a><br><br>リリースが決まれば、<br>WikiのFAQ（<a href=http://sakura.qp.land.to/?FAQ%2F47 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>FAQ%<wbr>2F47</nobr></a>）に<br>設定方法の追記が必要かと思います。<br>（私でよろしければ、追記致しますので、<br>　ご連絡ください。）<br><br><br>ではでは。</div></section>
+    <ul><li><section><h1 id=5615>
+    <span class="no">[5615]</span>
+    <a class="thread-title" href="#5615">Re9:Wineでの動作について（修正）</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-08-18T22:06:11">2009年08月18日 22:06</time></h1>
+    <div class="body">▼ Hidetaka Sakaiさん<br>確認どうもありがとうございます。<br>FAQの方はパッチの動向を見て考えることにします。<br><br>ではでは。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

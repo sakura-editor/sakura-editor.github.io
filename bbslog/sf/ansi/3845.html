@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>MAX_TYPESを増やしてコンパイルすると | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3845</span>
+    <a class="thread-title" href="3845.html#3845">MAX_TYPESを増やしてコンパイルすると</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3845>
+    <span class="no">[3845]</span>
+    <a class="thread-title" href="#3845">MAX_TYPESを増やしてコンパイルすると</a>
+    <span class="author">りんご</span>
+    <time datetime="2005-02-20T16:08:56">2005年02月20日 16:08</time></h1>
+    <div class="body">2005-02-04版のソースを元に<br>CShareData.h(47)の MAX_TYPES の値を変更し、<br>タイプ別設定を増やして使用したところ、<br><br>CShareData.cpp(4781)の<br>strcpy( pShareData-&gt;m_Types[nIdx].m_szTypeName, pszTypeNameArr[nIdx] );<br>strcpy( pShareData-&gt;m_Types[nIdx].m_szTypeExts, pszTypeExts[nIdx] );<br><br>でアクセス違反が発生してしまった為、下記のように変更を行いました。<br><br>const char* pszTypeName;<br>const char* pszTypeExt;<br>if(nIdx &lt; (sizeof(pszTypeNameArr)/sizeof(char*)))<br>&#9;pszTypeName = pszTypeNameArr[nIdx];<br>else<br>&#9;pszTypeName = "未定義";<br>if(nIdx &lt; (sizeof(pszTypeExts)/sizeof(char*)))<br>&#9;pszTypeExt = pszTypeExts[nIdx];<br>else<br>&#9;pszTypeExt = "";<br>strcpy( m_pShareData-&gt;m_Types[nIdx].m_szTypeName, pszTypeName );<br>strcpy( m_pShareData-&gt;m_Types[nIdx].m_szTypeExts, pszTypeExt );<br><br>MAX_TYPESの値を変えない限り問題が無い部分ですが<br>取り込んで頂けると幸いです。</div></section>
+    </li></ul></body></html>

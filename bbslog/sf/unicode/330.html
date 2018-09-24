@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Chg) オープン時文字コード確認ルーチン修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">330</span>
+    <a class="thread-title" href="330.html#330">Commit報告:(Chg) オープン時文字コード確認ルーチン修正</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=330>
+    <span class="no">[330]</span>
+    <a class="thread-title" href="#330">Commit報告:(Chg) オープン時文字コード確認ルーチン修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-29T14:54:26">2008年04月29日 14:54</time></h1>
+    <div class="body">リビジョン：<br>　rev1304<br><br>変更種別：<br>　バグ修正。<br><br>内容：<br>　以下のバグを修正しました、<br>　&gt; 2) 『共通設定』『ファイル』『前回と異なる文字コードのとき問い合わせを行う』がオンのとき、<br>　&gt;     文字コードがSJIS以外のファイルの２回目以降のオープン時<br>　&gt;     （最近使ったファイルに残っているファイルのオープン時）、<br>　&gt;         このファイルは、前回は別の文字コードxxxで開かれています。<br>　&gt;         前回と同じ文字コードを使いますか?<br>　&gt;         ・[(はい(Y))] ＝xxx<br>　&gt;         ・[(いいえ(N))]＝SJIS<br>　&gt;         ・[(キャンセル)]＝開きません<br>　&gt;     のメッセージがでる。<br>　&gt;     （xxxは前回の文字コード)<br>　&gt; 3) 2)の場合、選択をYでもNでも今回のファイルの文字コードの自動判定に従いファイルを開く。<br>　&gt; 4) 『共通設定』『ファイル』『前回と異なる文字コードのとき問い合わせを行う』がオフのとき、<br>　&gt;     文字コードがSJIS以外のファイルの２回目以降のオープン時<br>　&gt;     （最近使ったファイルに残っているファイルのオープン時）、<br>　&gt;     前回の文字コードを無視し、自動判定の文字コードで開く。<br></div></section>
+    </li></ul></body></html>

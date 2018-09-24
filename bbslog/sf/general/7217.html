@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>grepでファイル名検索時に現れるハイパーリンクについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7217</span>
+    <a class="thread-title" href="7217.html#7217">grepでファイル名検索時に現れるハイパーリンクについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7218</span>
+    <a class="thread-title" href="7217.html#7218">Re:grepでファイル名検索時に現れるハイパーリンクについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7219</span>
+    <a class="thread-title" href="7217.html#7219">Re2:grepでファイル名検索時に現れるハイパーリンクについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7220</span>
+    <a class="thread-title" href="7217.html#7220">Re3:grepでファイル名検索時に現れるハイパーリンクについて</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7217>
+    <span class="no">[7217]</span>
+    <a class="thread-title" href="#7217">grepでファイル名検索時に現れるハイパーリンクについて</a>
+    <span class="author">ichi</span>
+    <time datetime="2010-07-13T02:54:07">2010年07月13日 02:54</time></h1>
+    <div class="body">題名の件、フォルダ名にスペースが入っていると<br>ハイパーリンクの表示がそのスペースの手前までで、<br>終えてしまい、実際にフォルダにもリンクがされていません。<br>最後のファイル名までリンクがかかって欲しいのですが、<br>如何なる方法で実現出来るのでしょうか。</div></section>
+    <ul><li><section><h1 id=7218>
+    <span class="no">[7218]</span>
+    <a class="thread-title" href="#7218">Re:grepでファイル名検索時に現れるハイパーリンクについて</a>
+    <span class="author">ぴぃ</span>
+    <time datetime="2010-07-13T18:25:35">2010年07月13日 18:25</time></h1>
+    <div class="body">▼ ichiさん<br>&gt; 題名の件、フォルダ名にスペースが入っていると<br>&gt; ハイパーリンクの表示がそのスペースの手前までで、<br>&gt; 終えてしまい、実際にフォルダにもリンクがされていません。<br>&gt; 最後のファイル名までリンクがかかって欲しいのですが、<br>&gt; 如何なる方法で実現出来るのでしょうか。<br><br>[タイプ別設定]-[正規表現キーワード]の[正規表現キーワードを使用する]チェックボックスをOFFにすると良いと思います。（以前はデフォルトでそうなっていました）<br>こうするとハイパーリンク表示は消えますが、grep画面でのダブルクリックによるジャンプは有効で、ちゃんと目的のファイルにジャンプできるようになると思います。<br><br>以下、さしでがましいような気がしますが、本件に関する意見／質問です。<br>最新版(1.6.5.0)では何故か[基本]タイプで上記設定のデフォルトがONに変更されたようですが、以前のようにデフォルトはOFFになっていたほうがいいのではないでしょうか？<br>もしかして[テキスト]に施すつもりの初期設定変更を、間違って[基本]のほうに施してしまったとか？</div></section>
+    <ul><li><section><h1 id=7219>
+    <span class="no">[7219]</span>
+    <a class="thread-title" href="#7219">Re2:grepでファイル名検索時に現れるハイパーリンクについて</a>
+    <span class="author">ichi</span>
+    <time datetime="2010-07-14T14:04:43">2010年07月14日 14:04</time></h1>
+    <div class="body">▼ ぴぃさん<br>回答有難う御座います。<br><br>&gt; [タイプ別設定]-[正規表現キーワード]の[正規表現キーワードを使用する]チェックボックスをOFFにすると良いと思います。（以前はデフォルトでそうなっていました）<br>&gt; こうするとハイパーリンク表示は消えますが、grep画面でのダブルクリックによるジャンプは有効で、ちゃんと目的のファイルにジャンプできるようになると思います。<br> <br>grep画面で、検索された一つのテキストファイルを<br>ダブルクリックすると、そのテキストフアイルではなく<br>関係のない複数のフルパスファイルがリストアッップされて<br>しまいます。<br>何か他にサジェスチョンあれば、よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=7220>
+    <span class="no">[7220]</span>
+    <a class="thread-title" href="#7220">Re3:grepでファイル名検索時に現れるハイパーリンクについて</a>
+    <span class="author">ぴぃ</span>
+    <time datetime="2010-07-14T18:03:56">2010年07月14日 18:03</time></h1>
+    <div class="body">&gt; grep画面で、検索された一つのテキストファイルを<br>&gt; ダブルクリックすると、そのテキストフアイルではなく<br>&gt; 関係のない複数のフルパスファイルがリストアッップされて<br>&gt; しまいます。<br>自分は、そういう現象はまるで経験したことがなく、快適に使えています。<br>普通はそんな具合にはならないと思うのですが、どうなっちゃってるんでしょうね。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

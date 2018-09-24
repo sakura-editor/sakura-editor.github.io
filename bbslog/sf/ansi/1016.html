@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CShareData_new2.cpp | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1016</span>
+    <a class="thread-title" href="1016.html#1016">CShareData_new2.cpp</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1027</span>
+    <a class="thread-title" href="1016.html#1027">Re:CShareData_new2.cpp</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1016>
+    <span class="no">[1016]</span>
+    <a class="thread-title" href="#1016">CShareData_new2.cpp</a>
+    <span class="author">みく</span>
+    <time datetime="2001-12-26T18:59:40">2001年12月26日 18:59</time></h1>
+    <div class="body">TBUTTONDATA tbd[] = {<br>の初期化データが1個足りなくないですか?<br>＃353:F_SENDMAILをコメントにしてるから<br><br></div></section>
+    <ul><li><section><h1 id=1027>
+    <span class="no">[1027]</span>
+    <a class="thread-title" href="#1027">Re:CShareData_new2.cpp</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-27T23:02:08">2001年12月27日 23:02</time></h1>
+    <div class="body">▼ みくさん<br>&gt; TBUTTONDATA tbd[] = {<br>&gt; の初期化データが1個足りなくないですか?<br>&gt; ＃353:F_SENDMAILをコメントにしてるから<br>&gt; <br><br>今回は初期化データが1個足りないままにしました。<br>というのは、件の関数で、tbd定義直後にちょっと問題がありました。<br><br>int tbd_num = sizeof( tbd ) / sizeof( tbd[0] );<br>で、tbdの要素数を計算してます。初期化データ追加前は＝383でした。<br><br>そして2行下、<br>&amp;m_tbMyButton[i+1],<br>で、なぜかi+1を参照してます。<br>んで、m_tbMyButtonは384までしか用意されていないので、<br><br>tbdの要素を1つ増やすと、tbd_num=384になって、<br>m_tbMyButton[384+1]<br>とあふれてしまいます。<br><br>初期化データが1個足りないのはおかしいと思いますが、今のところそれで害があるわけではないので、今回は取り込まないことにしました。<br>このあたりの不整合について、どなたか情報お持ちでしょうか？</div></section>
+    </li></ul></li></ul></body></html>

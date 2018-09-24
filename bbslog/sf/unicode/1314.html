@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告(New/Fix) 外部コマンド実行の修正/機能追加 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1314</span>
+    <a class="thread-title" href="1314.html#1314">Commit報告(New/Fix) 外部コマンド実行の修正/機能追加</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1314>
+    <span class="no">[1314]</span>
+    <a class="thread-title" href="#1314">Commit報告(New/Fix) 外部コマンド実行の修正/機能追加</a>
+    <span class="author">もか</span>
+    <time datetime="2010-07-11T02:39:42">2010年07月11日 02:39</time></h1>
+    <div class="body"><br>リビジョン：<br>  rev1791<br><br>変更種別：<br>  機能追加/バグ修正<br><br>内容：<br>New: ExeCmdの引数のフラグを追加<br>0x20 情報出力する<br>0x40 情報出力しない<br>コマンド出力の「ヘッダ」と「リターンコード」情報の出力を切り替えます。<br>標準出力を得るでアウトプット・編集中ウィンドウの状態に依存せずに強制的にON/OFFします。<br>どちらも指定しない場合は、互換性のため従来と同じ動作をします。<br>　ダイアログ画面とマクロの記録は従来のままです。手書きマクロのみ利用可能。<br><br>Fix: 標準出力でUnicodeを使用した場合のCarry周りが不正(rが付く。1文字消える。UNICODE版固有)<br>Fix: 外部コマンド実行中ダイアログにコマンド文字列が設定されていない<br>Fix: 大量の出力をしていると中止するのが難しい<br>Fix: 出力データのNUL以降が出力に取り込まれない(バイナリセーフでない)<br>Fix: WM_QUIT受信時に直ちに終了しない/子プロセスをKillしていない<br>Fix: 出力の取り込みバッファが小さいために遅い<br></div></section>
+    </li></ul></body></html>

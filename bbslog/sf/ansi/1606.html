@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ssrc_2002-02-11_p1 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1606</span>
+    <a class="thread-title" href="1606.html#1606">ssrc_2002-02-11_p1</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1610</span>
+    <a class="thread-title" href="1606.html#1610">Re:ssrc_2002-02-11_p1</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1611</span>
+    <a class="thread-title" href="1606.html#1611">Re2:ssrc_2002-02-11_p1</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1606>
+    <span class="no">[1606]</span>
+    <a class="thread-title" href="#1606">ssrc_2002-02-11_p1</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-16T02:26:03">2002年02月16日 02:26</time></h1>
+    <div class="body">ssrc_2002-02-11 からの変更箇所です。ご参考まで。<br><br>□Grep<br>    ・フォルダの初期値をカレントフォルダにするかどうかを選択可能に(マクロは未対応)<br>□アウトライン<br>    ・ツリー上でダブルクリックしてもフォーカス移動できないのを修正（暫定）<br>    ・ブックマーク一覧の「コピー」でクリップボードに送られる文字が変だったのを修正<br>    ・ブックマークの「空行を無視する」オプションが非表示なのにAlt+Bで切り替わってしまうのを修正<br>    ・ブックマークの「空行を無視する」オプションを変更したらリストを再表示するように<br>    ・「自動的に閉じる」オプションが有効はときはフォーカス移動オプションを操作不可に<br>    ・「自動的に閉じる」「フォーカスを移す」はジャンプした時だけのオプションとして扱うように<br>    ・「カット」「コピー」キーもツリーorリスト上で使えるように<br>    ・「フォーカスを移す」と「空行を無視する」のタブオーダーを修正<br>□その他<br>    ・INIファイル内に記述された印刷ページ設定のヘッダー,フッターが古い形式で設定されてたら新しい形式に読み替えるように<br>    ・「すべて置換」の後の「元に戻す」を少しだけ快適に<br>    ・EOF周辺で矩形選択した時に反転表示の残像が残るのを対策するコードを見直してちらつきを抑止<br>    ・ウィンドウ幅より長いパターンで次を検索し続けると左右に表示がぶれるのを修正<br>□その他のその他<br>    ・[Ctrl+Home]or[Ctrl+End]後に[Down]or[Up]したときの挙動を見直し・・・以下変更個所<br>       １.矩形選択中に[Ctrl+Home]or[Ctrl+End]して[Down]or[Up]したとき以外は普通にカーソル移動<br>       ２.選択を解除したあとは普通にカーソル移動<br>    ・使用されてないダイアログを削除してバイナリのサイズを縮小<br>       149, 1537, 5100, IDD_ABOUT1, IDD_EXTCMD, IDD_OUTLINES,<br>       IDD_PROP_MAIL, IDD_SETUP, IDD_TYPELIST_PROP, IDD_WORDS</div></section>
+    <ul><li><section><h1 id=1610>
+    <span class="no">[1610]</span>
+    <a class="thread-title" href="#1610">Re:ssrc_2002-02-11_p1</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-16T17:25:34">2002年02月16日 17:25</time></h1>
+    <div class="body">いただきましたー。すばらしいですね。Grepが特にすばらしい :-)<br><br>&gt; □その他<br>&gt;     ・INIファイル内に記述された印刷ページ設定のヘッダー,フッターが古い形式で設定されてたら新しい形式に読み替えるように<br><br>こちらもすばらしいです。ありがとうございます～。<br><br><br>&gt;     ・[Ctrl+Home]or[Ctrl+End]後に[Down]or[Up]したときの挙動を見直し・・・以下変更個所<br>&gt;        １.矩形選択中に[Ctrl+Home]or[Ctrl+End]して[Down]or[Up]したとき以外は普通にカーソル移動<br>&gt;        ２.選択を解除したあとは普通にカーソル移動<br><br>でもやっぱり、30桁くらいの位置にカーソルがあって、<br>[Shift+F6]で矩形選択をはじめてから、<br>[Ctrl+Home]してカーソルを、0行0桁に移動してるのに、<br>[Down]したら1行30桁に移動するのは変な気がするんですけど。。。<br>そういうもの？？<br>詳しくは、一般のほうで。<br><br>＃同意する意見を得られなくてさびしいんだけど、気になってるのって私だけ？？<br></div></section>
+    <ul><li><section><h1 id=1611>
+    <span class="no">[1611]</span>
+    <a class="thread-title" href="#1611">Re2:ssrc_2002-02-11_p1</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-16T17:50:00">2002年02月16日 17:50</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ＃同意する意見を得られなくてさびしいんだけど、気になってるのって私だけ？？<br>私はCtrl+Home/EndはJumpの代わりくらいにしか思っていなかったので、桁位置なんて気にしたことがなかった。<br><br>矩形選択も滅多に使わないし。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

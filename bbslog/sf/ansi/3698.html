@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Cアウトライン解析のプリプロセッサ対応 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3698</span>
+    <a class="thread-title" href="3698.html#3698">Cアウトライン解析のプリプロセッサ対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3700</span>
+    <a class="thread-title" href="3698.html#3700">Re: Cアウトライン解析のプリプロセッサ対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3702</span>
+    <a class="thread-title" href="3698.html#3702">Re2: Cアウトライン解析のプリプロセッサ対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3703</span>
+    <a class="thread-title" href="3698.html#3703">Re3: Cアウトライン解析のプリプロセッサ対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3704</span>
+    <a class="thread-title" href="3698.html#3704">Re4: Cアウトライン解析のプリプロセッサ対応</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3705</span>
+    <a class="thread-title" href="3698.html#3705">Re4: Cアウトライン解析のプリプロセッサ対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3706</span>
+    <a class="thread-title" href="3698.html#3706">Re5: Cアウトライン解析のプリプロセッサ対応</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3707</span>
+    <a class="thread-title" href="3698.html#3707">Re4: Cアウトライン解析のプリプロセッサ対応</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3708</span>
+    <a class="thread-title" href="3698.html#3708">Re4: Cアウトライン解析のプリプロセッサ対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3709</span>
+    <a class="thread-title" href="3698.html#3709">Re5: Cアウトライン解析のプリプロセッサ対応</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3698>
+    <span class="no">[3698]</span>
+    <a class="thread-title" href="#3698">Cアウトライン解析のプリプロセッサ対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-11T02:06:52">2004年08月11日 02:06</time></h1>
+    <div class="body">C/C++アウトライン解析で#if-#else-#endifにインチキながら対応しました．<br>#if 0～#endif攻撃でも括弧の対応を間違えなくなりました．<br><br>判定はかなりインチキです．<br>#if 0はelse以降を，それ以外のif/ifdef/ifndefは最初のブロックを使います．<br>コメント代わりに#elif使っているところを見たこと無いのでelifは無視しました．<br><br>差分ファイル: c-outline-ifdef.zip <br>関連関数が増えてきたのでC/C++アウトラインを新規ファイルに移動しました．<br><br>---<br>問題がなければ次のバージョンに入れたいと思います．<br></div></section>
+    <ul><li><section><h1 id=3700>
+    <span class="no">[3700]</span>
+    <a class="thread-title" href="#3700">Re: Cアウトライン解析のプリプロセッサ対応</a>
+    <span class="author">もか</span>
+    <time datetime="2004-08-11T18:48:57">2004年08月11日 18:48</time></h1>
+    <div class="body">CEditDoc_FuncLinst1.cpp 526行以降を無効化しているため、<br>class Hoge{<br>&#9;Hoge();<br>};<br>のようなclass宣言の中にある関数が、グローバルに追加されてしまいます。<br>namespace等も同様です。<br></div></section>
+    <ul><li><section><h1 id=3702>
+    <span class="no">[3702]</span>
+    <a class="thread-title" href="#3702">Re2: Cアウトライン解析のプリプロセッサ対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-12T01:47:46">2004年08月12日 01:47</time></h1>
+    <div class="body">&gt;CEditDoc_FuncLinst1.cpp 526行以降を無効化している<br>失礼．自分用に無効化したままでした．<br><br>以前報告したようにここを無効にしないと struct/union/enum等が型に含まれていると解析がおかしくなるので．<br></div></section>
+    <ul><li><section><h1 id=3703>
+    <span class="no">[3703]</span>
+    <a class="thread-title" href="#3703">Re3: Cアウトライン解析のプリプロセッサ対応</a>
+    <span class="author">(全略)</span>
+    <time datetime="2004-08-12T19:48:06">2004年08月12日 19:48</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 以前報告したようにここを無効にしないと struct/union/enum等が型に含まれていると解析がおかしくなるので．<br>修正してみました<br>共有フォルダの c_outline_ifdef_zenu20040812.tar.bz2 です<br><br><br>げんたさんの CEditDoc_FuncLinst1.cpp にさらに追加という形で作っています<br>一応試したテストパターンを同梱の struct.c に書いてあります<br><br>1. 関数の戻り値にstruct や classが来ても大丈夫なように<br>2. K&amp;Rスタイルの関数もちゃんと表示できるように<br>3. GNUのソースコードで出くわした変な書き方に対処<br><br>3番目はいらないかも、ですけど(^-^;</div></section>
+    <ul><li><section><h1 id=3704>
+    <span class="no">[3704]</span>
+    <a class="thread-title" href="#3704">Re4: Cアウトライン解析のプリプロセッサ対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-12T23:05:10">2004年08月12日 23:05</time></h1>
+    <div class="body">&gt;修正してみました<br>おおっ，超ありがたい．早速試してみます．<br></div></section>
+    </li><li><section><h1 id=3705>
+    <span class="no">[3705]</span>
+    <a class="thread-title" href="#3705">Re4: Cアウトライン解析のプリプロセッサ対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-13T00:07:00">2004年08月13日 00:07</time></h1>
+    <div class="body">ナイスすぎるのでバイナリをホームページに置きました．<br><a href=http://members.at.infoseek.co.jp/sakura_editor/snapshot/sakura-2004-08-12-outline.zip target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>snapshot<wbr>/<wbr>sakura-<wbr>2004-<wbr>08-<wbr>12-<wbr>outline.<wbr>zip</nobr></a><br><br>Cプログラマの皆さん，極悪コードでいろいろお試しください．<br><br>---<br>関係ないけど対括弧検索でもコメント内部を無視できればなぁ...<br></div></section>
+    <ul><li><section><h1 id=3706>
+    <span class="no">[3706]</span>
+    <a class="thread-title" href="#3706">Re5: Cアウトライン解析のプリプロセッサ対応</a>
+    <span class="author">すい</span>
+    <time datetime="2004-08-13T01:10:08">2004年08月13日 01:10</time></h1>
+    <div class="body">横から関係無い話しですみませんが<br><br>&gt;関係ないけど対括弧検索でもコメント内部を無視できればなぁ... <br><br>もし仮に、↑コレ、この通り素直にやられたら非常に困ると思います。<br><br>C や perl や LISP みたいに括弧構成の言語なら確かに<br>「単純にコメント内は無視」で良いでしょうけど、世の中には<br>括弧構成ではない言語類もある訳ですから。<br><br>例えばこのエディタで使われているマクロ PPA とかでも<br>ループはだとかは「begin ～ end」だし。<br>で、この手の言語でループの開始位置⇔終端位置の行き来のために<br>注釈で対応するように括弧を記述しておく、というのはよくある手<br>だと思います。<br># もちろん対括弧検索の機能付きのエディタとかを使っていないと<br># こんな事しても意味無いわけですが。<br><br>私も PPAマクロ中で良く使っています。<br><br>↓begin や end の後ろの「 //{ 」が対括弧検索用のコメント括弧<br>-----<br>for chn :=1 to 7 do　　 // 7種類の置換を順におこなう。<br>begin //{<br>　　case chn of //{<br>　　　　1:　begin　 bef:='%';　 aft:='%25';　　 end;　　// ループ1回目では '%' ⇒ '%25' 変換<br>　　　　2:　begin　 bef:='#';　 aft:='%23';　　 end;　　// ループ2回目では '#' ⇒ '%23' 変換<br>　　　　3:　begin　 bef:='&amp;';　 aft:='%26';　　 end;　　// ループ3回目では '&amp;' ⇒ '%26' 変換<br>　　　　4:　begin　 bef:='=';　 aft:='%3D';　　 end;　　// ループ4回目では '=' ⇒ '%3D' 変換<br>　　　　5:　begin　 bef:='?';　 aft:='%3F';　　 end;　　// ループ5回目では '?' ⇒ '%3F' 変換<br>　　　　6:　begin　 bef:='+';　 aft:='%2B';　　 end;　　// ループ6回目では '+' ⇒ '%2B' 変換<br>　　　　7:　begin　 bef:=' ';　 aft:='+'　;　　 end;　　// ループ7回目では ' ' ⇒ '+'　 変換<br>　　end; //}<br><br>　　＜略＞<br>end; //}<br>-----<br><br>他にも HTML で↓みたいな。長い ＜table＞ とかで開始位置⇔終端位置行き来用の括弧を注釈で。<br>-----<br>＜table＞＜!-- {<br>--＞<br>　　＜tr＞<br><br>　　＜略＞<br><br>　　＜/tr＞<br>＜/table＞＜!-- <br>}--＞<br>-----<br><br>ですので、もし仮に仕様変更するとするなら<br>「コメント内の括弧はコメント内の括弧同士で検索し合う」<br>「コメント外の括弧はコメント外の括弧同士で検索し合う」<br>みたいなのが理想的なのでしょうか。<br></div></section>
+    </li></ul></li><li><section><h1 id=3707>
+    <span class="no">[3707]</span>
+    <a class="thread-title" href="#3707">Re4: Cアウトライン解析のプリプロセッサ対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-13T08:37:05">2004年08月13日 08:37</time></h1>
+    <div class="body">残念ながら戻り値の型にstruct/class/enum等があって引数がある場合に、最初の引数名が関数名としてでてしまいます。<br><br>struct XXX func( int param1, int param2 ){}<br>の関数名が param1 とでます。</div></section>
+    </li><li><section><h1 id=3708>
+    <span class="no">[3708]</span>
+    <a class="thread-title" href="#3708">Re4: Cアウトライン解析のプリプロセッサ対応</a>
+    <span class="author">(全略)</span>
+    <time datetime="2004-08-13T21:39:49">2004年08月13日 21:39</time></h1>
+    <div class="body">&gt; 残念ながら戻り値の型にstruct/class/enum等があって引数がある場合に、最初の引数名が関数名としてでてしまいます。<br>もういっちょ修正してみました<br>バイナリ込みなので自分の所にあげておきました<br>http://qwerty.s2.xrea.com/data/c_outline_ifdef_zenu20040813.tar.bz2<br><br>今のところ試した中では↓の関数ポインタが関数と区別が付かないですが<br>int (*Vi) (int p0) ;<br><br>基本方針はこんな感じです<br>C言語では 括弧の中には式、引数リスト、関数ポインタしかこないとおもうので<br>  (これが違うともうカーニハンとリッチーに謝るしかありません ^^;)<br>関数一覧が必要とする関数定義、関数、クラス等、メンバ関数は括弧の中には含まれないので括弧内を全て対象外にしています<br><br>何度もすみませんが、よければ取り入れて下さい</div></section>
+    <ul><li><section><h1 id=3709>
+    <span class="no">[3709]</span>
+    <a class="thread-title" href="#3709">Re5: Cアウトライン解析のプリプロセッサ対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-08-14T00:41:14">2004年08月14日 00:41</time></h1>
+    <div class="body">試してみました．今度は大丈夫そうです．<br><br>あと，継続行の扱いはすっかり頭から漏れていました．どうもありがとうございます．<br>#define＋継続行で関数丸ごと定義というソースもありますからね．<br><br>---<br>しかし状態遷移が入り組んでいる上に行数も長くなってさっぱりわかりません．<br>ステップ実行してかろうじて理解できるレベル．<br><br>状態遷移ものに読んでわかるコードを期待するのがどだい無理な話なのか...<br><br>---<br>ステップ実行でわかったこと:<br>・ScanLineにバグがあった(空行で戻り値-1だった)<br>・operator = が認識できない件はoperatorという文字列がクリアされていたため．<br>・関数外に書いたoperator演算子の実体がglobalになってしまう(operatorの後ろにブランクを入れた場合)<br>・なんか一文字ずつ読んでいるけど，word単位でまとまって読んだ方が速くない？<br><br>やっぱり作り直しかなぁ...5000億年後に(汗)<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

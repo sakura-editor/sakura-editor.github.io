@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>IME Watcher対応について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5129</span>
+    <a class="thread-title" href="5129.html#5129">IME Watcher対応について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5130</span>
+    <a class="thread-title" href="5129.html#5130">Re:IME Watcher対応について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5131</span>
+    <a class="thread-title" href="5129.html#5131">Re2:IME Watcher対応について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5132</span>
+    <a class="thread-title" href="5129.html#5132">Re3:IME Watcher対応について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5133</span>
+    <a class="thread-title" href="5129.html#5133">Re4:IME Watcher対応について</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5138</span>
+    <a class="thread-title" href="5129.html#5138">Re:IME Watcher対応について</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5129>
+    <span class="no">[5129]</span>
+    <a class="thread-title" href="#5129">IME Watcher対応について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-10-17T02:02:41">2007年10月17日 02:02</time></h1>
+    <div class="body">data:6367 「IME Watcher 併用時の不具合」の件です。<br>IME Watcherは、キャレット所有ウィンドウのクライアント領域内のキャレット位置を取得し、キャレット所有ウィンドウ＝フォーカスウィンドウとみなしてフォーカスウィンドウからの位置で情報表示しているものと思われます。<br>ごく一般的な処理構造のアプリではそれでＯＫなのですが、サクラではキャレット所有ウィンドウは各ビューであり、フォーカスはフレームウィンドウが持っています。<br>IME Watcherはサクラがそのような動作になっていることを知らないので、その分だけ上方に表示がずれているものと思われます。<br><br>一般的な処理構造になるようにしてみました。<br>→Patches#1814571 FocusActiveView1.patch<br>従来は普段CEditWndがフォーカスを持ち、CEditViewがキャレットを表示していましたが、フォーカスをCEditViewに持たせるように変更しています。<br>CEditWndのWM_SETFOCUSでCEditViewにフォーカスを移動し、キーボードからのコマンドはフォーカスを持っているCEditViewからCEditWndへルーティングするようにしています。</div></section>
+    <ul><li><section><h1 id=5130>
+    <span class="no">[5130]</span>
+    <a class="thread-title" href="#5130">Re:IME Watcher対応について</a>
+    <span class="author">AC</span>
+    <time datetime="2007-10-17T21:45:15">2007年10月17日 21:45</time></h1>
+    <div class="body">▼ ryojiさん<br>すぐに確認できないのですが、<br>Alt+Tabで出る情報が違ったものになることないですか</div></section>
+    <ul><li><section><h1 id=5131>
+    <span class="no">[5131]</span>
+    <a class="thread-title" href="#5131">Re2:IME Watcher対応について</a>
+    <span class="author">AC</span>
+    <time datetime="2007-10-17T22:06:05">2007年10月17日 22:06</time></h1>
+    <div class="body">追記：<br>昔あったなと思って検索したら↓でした。<br><br>[671] フォーカスが戻らない <br>▽ 2001/9/8 <br></div></section>
+    <ul><li><section><h1 id=5132>
+    <span class="no">[5132]</span>
+    <a class="thread-title" href="#5132">Re3:IME Watcher対応について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-10-18T00:42:48">2007年10月18日 00:42</time></h1>
+    <div class="body">▼ ACさん<br>&gt; [671] フォーカスが戻らない <br>&gt; ▽ 2001/9/8 <br>↑の報告をもとにWin98で再現テストしてみました。<br>・当時のバージョンでは[671]の現象が再現<br>・1.6.1.0+Patches#1814571では問題なし<br>でした。<br>当時の現象としては、フォーカスが戻らないというよりフォアグラウンドにもアクティブにもならなかったんですね。<br>以前、CTipWndはフォアグラウンドにいなければ不可視になるようにした覚えがあるので、おそらく間違っても当時のような現象は起きないと思います。<br>ちなみに、当時のバージョンでもフレームウィンドウがフォーカスを持つという構造は現在と同じだったようですね～。</div></section>
+    <ul><li><section><h1 id=5133>
+    <span class="no">[5133]</span>
+    <a class="thread-title" href="#5133">Re4:IME Watcher対応について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-10-18T01:03:40">2007年10月18日 01:03</time></h1>
+    <div class="body">&gt; 以前、CTipWndはフォアグラウンドにいなければ不可視になるようにした覚えがあるので、おそらく間違っても当時のような現象は起きないと思います。<br>ユーザに見せるとき以外は常時不可視にしたのでした。(^^;<br>&gt;&gt;data:4952 Re3: クリップアウト2000<br>そういえば、これも外部ツール対応の処置だった...</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=5138>
+    <span class="no">[5138]</span>
+    <a class="thread-title" href="#5138">Re:IME Watcher対応について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-10-25T03:53:16">2007年10月25日 03:53</time></h1>
+    <div class="body">＞サクラではキャレット所有ウィンドウは各ビューであり、フォーカスはフレームウィンドウが持っています。<br>アウトライン解析画面で、<br>自動的に閉じる:OFF<br>フォーカスを移す:ON<br>でフォーカス移動したとき<br><br>検索画面で、<br>検索ダイアログを自動的に閉じる:OFF<br>で検索して検索文字列が見つかったとき<br><br>などは、現状でもフォーカスがビューに移るんですね～。<br>このあたりの動作はちょっと由来が不明です．．．(^^;</div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バグ報告 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">136</span>
+    <a class="thread-title" href="136.html#136">バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">137</span>
+    <a class="thread-title" href="136.html#137">バグ修正：「右(末尾)の空白を削除」で文字が消える</a></div>
+    </li><li><div class="list-title">
+    <span class="no">138</span>
+    <a class="thread-title" href="136.html#138">Re:バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">141</span>
+    <a class="thread-title" href="136.html#141">Re2:バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">147</span>
+    <a class="thread-title" href="136.html#147">Re3:バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">152</span>
+    <a class="thread-title" href="136.html#152">Re4:バグ報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">153</span>
+    <a class="thread-title" href="136.html#153">Re5:バグ報告</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=136>
+    <span class="no">[136]</span>
+    <a class="thread-title" href="#136">バグ報告</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-01-28T12:16:33">2008年01月28日 12:16</time></h1>
+    <div class="body">2件ほどバグ報告させていただきます<br><br>1.「右(末尾)の空白を削除」のの実行でで空白以外の文字が消える<br>2.「印刷ページ設定」で「設定名変更」が出来ない<br><br>sakuraW_r1219_p1880185_p1880317.zipで確認しています。<br>確認環境は<br>OS：WinXPPro<br>CPU: Sempron 2600+<br>Memory:1.2G<br>開発用Wikiのバグ情報にも入れておきました<br>です</div></section>
+    <ul><li><section><h1 id=137>
+    <span class="no">[137]</span>
+    <a class="thread-title" href="#137">バグ修正：「右(末尾)の空白を削除」で文字が消える</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-01-28T23:47:22">2008年01月28日 23:47</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; 1.「右(末尾)の空白を削除」のの実行でで空白以外の文字が消える<br>&gt; 2.「印刷ページ設定」で「設定名変更」が出来ない<br><br>ご報告ありがとうございます。<br>(1)のバグの修正パッチを登録しました。<br>PatchUnicode#1881187<br><br>(2)についても近日中に確認と修正をしようと思います。</div></section>
+    </li><li><section><h1 id=138>
+    <span class="no">[138]</span>
+    <a class="thread-title" href="#138">Re:バグ報告</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-01-28T23:59:28">2008年01月28日 23:59</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; 1.「右(末尾)の空白を削除」のの実行でで空白以外の文字が消える<br>&gt; 2.「印刷ページ設定」で「設定名変更」が出来ない<br><br>(2) が再現できませんでした。<br>・Windows Vista Home Edition<br>・Virtual PC 上の Windows 2000 Professional<br>の2つの環境で試した限りでは、ページ設定での設定名変更は行えました。<br><br>状況を詳しく教えていただけますでしょうか。<br>・設定名変更が押せない？<br>・設定名変更を押してもダイアログが出ない？<br>・設定名の変更ダイアログでＯＫを押しても名称変更が反映されない？<br>上記のような問題を想像していますが、Uchiさんの環境では<br>どの時点で不具合が出ていましたでしょうか。<br></div></section>
+    <ul><li><section><h1 id=141>
+    <span class="no">[141]</span>
+    <a class="thread-title" href="#141">Re2:バグ報告</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-01-29T05:16:09">2008年01月29日 05:16</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; (2) が再現できませんでした。<br>&gt; ・Windows Vista Home Edition<br>&gt; ・Virtual PC 上の Windows 2000 Professional<br>&gt; の2つの環境で試した限りでは、ページ設定での設定名変更は行えました。<br>&gt; <br>&gt; 状況を詳しく教えていただけますでしょうか。<br>&gt; ・設定名変更が押せない？<br>&gt; ・設定名変更を押してもダイアログが出ない？<br>&gt; ・設定名の変更ダイアログでＯＫを押しても名称変更が反映されない？<br>&gt; 上記のような問題を想像していますが、Uchiさんの環境では<br>&gt; どの時点で不具合が出ていましたでしょうか。<br>・設定名の変更ダイアログでＯＫを押しても名称変更が反映されない？<br>です。<br>別の環境（XPHome）で試したところ再現しませんでした。<br>もう少しテストしてみます。</div></section>
+    <ul><li><section><h1 id=147>
+    <span class="no">[147]</span>
+    <a class="thread-title" href="#147">Re3:バグ報告</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-01-30T03:09:18">2008年01月30日 03:09</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; ・設定名の変更ダイアログでＯＫを押しても名称変更が反映されない？<br>&gt; です。<br>&gt; 別の環境（XPHome）で試したところ再現しませんでした。<br>&gt; もう少しテストしてみます。<br><br>お手数おかけします。。<br>少し後になりますが、ご報告いただいた問題箇所に絞って<br>ソースコードチェックもしてみます。</div></section>
+    <ul><li><section><h1 id=152>
+    <span class="no">[152]</span>
+    <a class="thread-title" href="#152">Re4:バグ報告</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-02-01T21:50:53">2008年02月01日 21:50</time></h1>
+    <div class="body">&gt; 1.「右(末尾)の空白を削除」のの実行でで空白以外の文字が消える<br>動作確認しました。<br>ソースも確認し、Commit OK と思います。<br><br>&gt; 2.「印刷ページ設定」で「設定名変更」が出来ない<br>発生したマシンでも再現しませんでした。<br>一応私の評価ミスということ慰してください。<br><br>少し遅くなりましたが報告いたします。</div></section>
+    <ul><li><section><h1 id=153>
+    <span class="no">[153]</span>
+    <a class="thread-title" href="#153">Re5:バグ報告</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-02-01T23:22:32">2008年02月01日 23:22</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; &gt; 1.「右(末尾)の空白を削除」のの実行でで空白以外の文字が消える<br>&gt; 動作確認しました。<br>&gt; ソースも確認し、Commit OK と思います。<br><br>レビューありがとうございます。<br>コミットしました。(rev1222)<br><br>&gt; &gt; 2.「印刷ページ設定」で「設定名変更」が出来ない<br>&gt; 発生したマシンでも再現しませんでした。<br>&gt; 一応私の評価ミスということ慰してください。<br><br>了解しました。追加確認ありがとうございます。<br>トラッカー状態を「一応解決」にしました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

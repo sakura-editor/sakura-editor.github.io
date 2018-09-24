@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1281</span>
+    <a class="thread-title" href="1281.html#1281">マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1283</span>
+    <a class="thread-title" href="1281.html#1283">Re:マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1288</span>
+    <a class="thread-title" href="1281.html#1288">Re2:マクロ</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1304</span>
+    <a class="thread-title" href="1281.html#1304">Re:マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1305</span>
+    <a class="thread-title" href="1281.html#1305">Re2:マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1308</span>
+    <a class="thread-title" href="1281.html#1308">Re3:マクロ</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1312</span>
+    <a class="thread-title" href="1281.html#1312">Re:マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1313</span>
+    <a class="thread-title" href="1281.html#1313">Re2:マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1315</span>
+    <a class="thread-title" href="1281.html#1315">Re2:マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1316</span>
+    <a class="thread-title" href="1281.html#1316">Re2:マクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1322</span>
+    <a class="thread-title" href="1281.html#1322">PPA.DLLはちょっと...</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1323</span>
+    <a class="thread-title" href="1281.html#1323">Re:PPA.DLLはちょっと...</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1324</span>
+    <a class="thread-title" href="1281.html#1324">Re:PPA.DLLはちょっと...</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1281>
+    <span class="no">[1281]</span>
+    <a class="thread-title" href="#1281">マクロ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-22T23:57:52">2002年01月22日 23:57</time></h1>
+    <div class="body">マクロをいじっています。<br>CKeyMacroMgrが、CShareDataにありますが、これってなぜでしょう？<br><br>CEditDocに持たせたらどうかと思うのですが。<br><br>もし、CShareDataにあるのが、あるウィンドウで記録したキーマクロを、別のウィンドウで使うためであれば、<br>記録したキーマクロは、そのウィンドウでしか使えなくて、別のウィンドウで使うには、保存して読み込んでもらうってことにしたら<br>だめでしょうか。<br><br>最終的にはCSMacroMgrとあわせて、今みたいに、あっちではできるけど、こっちではできないよ。<br>ってことが無いようにしちゃいたいんだけど。。。いかがでしょう？</div></section>
+    <ul><li><section><h1 id=1283>
+    <span class="no">[1283]</span>
+    <a class="thread-title" href="#1283">Re:マクロ</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-23T01:14:47">2002年01月23日 01:14</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; CKeyMacroMgrが、CShareDataにありますが、これってなぜでしょう？<br>CShareDataでなくてDLLSHAREですね。たぶんはじめから。<br><br>DLLSHAREだとコンストラクタが動かないというもっと重大な問題があります。だからここから出した方がいいというのには同意。<br><br>&gt; CEditDocに持たせたらどうかと思うのですが。<br>本来はドキュメントとマクロは密接に関係すべきではないのでCEditDocというのはなんかやな感じですが...<br>将来的に１プロセス複数ドキュメントを目指したいと妄想しているので。<br><br>&gt; 記録したキーマクロは、そのウィンドウでしか使えなくて<br>これはちょっとねぇ...<br><br>共通メモリに入れるのはやめて、記録終了時に別の共有メモリを取るというのはうまくいかないかな？<br>他のウィンドウがまだメモリを開いているときに新規に共有メモリを作るためには名前を変えないとうまくいかないですし、結構複雑かな？<br><br>&gt; 最終的にはCSMacroMgrとあわせて<br>統一する案には賛成です。</div></section>
+    <ul><li><section><h1 id=1288>
+    <span class="no">[1288]</span>
+    <a class="thread-title" href="#1288">Re2:マクロ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-23T01:58:33">2002年01月23日 01:58</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt; 最終的にはCSMacroMgrとあわせて<br>&gt; 統一する案には賛成です。<br><br>どもども～。<br>確かにCEditDocに入れるのは気持ち悪いといえば気持ち悪いですね。<br>でもまぁそのあたりの整理はまた後ほどやるとして。。。<br><br>こういうのはどうでしょう？（ってもう実装してたりするけど）<br><br>キーマクロは、デフォルトでマクロ保存用フォルダにRecKey.macというファイルを作るようにします。<br>DLLSHARE（共通メモリ）に、そのファイル名（今のところRecKey.macに固定）を入れるようにします。<br><br>で、キーマクロを実行するときは、DLLSHAREにかかれているファイル（RecKey.mac）を読み込んで実行する。<br>そうすれば、共通メモリに入れておくのはCKeyMacroMgrではなくて、ファイル名だけになってグー。<br><br>こうしておけば、「記録したキーマクロが、そのウィンドウでしか使えない」という制限はなくなるし、<br>CKeyMacroMgrにどんとかまえたメモリ領域（下記）<br><br>#define MAX_STRLEN&#9;&#9;&#9;70<br>#define MAX_KEYMACRONUM&#9;&#9;10000<br>KeyMacroData&#9;m_pKeyMacroDataArr[MAX_KEYMACRONUM];<br>char&#9;&#9;&#9;m_szKeyMacroDataArr[MAX_KEYMACRONUM][<br>MAX_STRLEN];<br><br>を、リストにして、メモリの節約もできるという具合。<br>今のところうまく動いているみたいです。<br><br>今日はこの辺にして、また後日CSMacroMgrと混ぜ合わせに挑戦してみます。では。</div></section>
+    </li></ul></li><li><section><h1 id=1304>
+    <span class="no">[1304]</span>
+    <a class="thread-title" href="#1304">Re:マクロ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-23T23:49:24">2002年01月23日 23:49</time></h1>
+    <div class="body">・CSMacroMgr<br>　登録済みマクロ20個を管理。<br>　実際の「実行」「読み込み」は、次のCKeyMacroMgrに委譲。<br><br>・CKeyMacroMgr<br>　ひとつ（一式）のキーマクロを管理。<br>　（次のCMacro（マクロコマンド）をつなげたものを管理。）<br>　マクロファイルを「読み込み」、CMacroの生成を担当する。<br>　実際の「実行」「保存」は、次のCMacroに委譲。<br><br>・CMacro<br>　マクロコマンド（InsTextひとつなど）を管理。<br>　「実行」「保存」を行う。<br><br>ようにしました。<br>保存をCMacroでやるか、CKeyMacroMgrでやるか、<br>それに読込をCMacroでやるか、CKeyMacroMgrでやるかが<br>相談のしどころですかねぇ。<br></div></section>
+    <ul><li><section><h1 id=1305>
+    <span class="no">[1305]</span>
+    <a class="thread-title" href="#1305">Re2:マクロ</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-24T00:12:04">2002年01月24日 00:12</time></h1>
+    <div class="body">▼やざきさん<br>&gt;・CSMacroMgr<br>&gt;・CKeyMacroMgr<br>&gt;・CMacro<br>&gt;ようにしました。<br>検討すべきクラスを1つ忘れていますよ．<br>CSMacroMgr::Macro1 というマクロを「1つ」管理する(貧弱な)クラスがあります．(structだけど一応クラスね)<br><br>これはCMacroに統合した方がいいかも．<br><br>&gt;保存をCMacroでやるか、CKeyMacroMgrでやるか、<br>&gt;それに読込をCMacroでやるか、CKeyMacroMgrでやるかが<br>1マクロに関することはCMacroだけど，ファイル処理までやらせるのは荷が重い...ってことですよね．<br><br>ファイルのopen/close処理はCKeyMacroManagerで行い，実際の文字列化はCMacroで行うのはどうですか．<br><br>ofstream fp( "macro.mac" );<br>fp &lt;&lt; macros[n];<br><br>if( !fp ){<br>  error handling<br>}<br>--<br>ifstream fp( "macro.mac" );<br>macros[n].clear();<br>fp &gt;&gt; macros[n]<br><br>if( !macros[n].ready() ){<br>  error handling<br>}<br>--<br>ostream&amp; operator&lt;&lt;( ostream&amp;, CMacro&amp; );<br>istream&amp; operator&gt;&gt;( istream&amp;, CMacro&amp; );<br><br>って感じで．わかってもらえました？<br></div></section>
+    <ul><li><section><h1 id=1308>
+    <span class="no">[1308]</span>
+    <a class="thread-title" href="#1308">Re3:マクロ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-24T00:28:43">2002年01月24日 00:28</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼やざきさん<br>&gt; &gt;・CSMacroMgr<br>&gt; &gt;・CKeyMacroMgr<br>&gt; &gt;・CMacro<br>&gt; &gt;ようにしました。<br>&gt; 検討すべきクラスを1つ忘れていますよ．<br>&gt; CSMacroMgr::Macro1 というマクロを「1つ」管理する(貧弱な)クラスがあります．(structだけど一応クラスね)<br>&gt; <br>&gt; これはCMacroに統合した方がいいかも．<br><br>ああ、削除しました。<br>というかCMacroに統合かな。Readyフラグだけ、CMacroで仮採用しました。<br>で、できあがったのが前記の3つのクラスです。<br><br><br>&gt; ファイルのopen/close処理はCKeyMacroManagerで行い，実際の文字列化はCMacroで行うのはどうですか．<br><br>とりあえずその案ですすめてみます。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=1312>
+    <span class="no">[1312]</span>
+    <a class="thread-title" href="#1312">Re:マクロ</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-24T11:16:37">2002年01月24日 11:16</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; マクロをいじっています。<br><br>ご苦労様です。<br><br>マクロで扱える引数を CEditView::HandleCommand にあわせて最大４っつにしていただけると<br>置換や、外部コマンド実行のオプションを扱えるように変更するのも難しくないかな、と思うのですが<br>…いかがでしょう？</div></section>
+    <ul><li><section><h1 id=1313>
+    <span class="no">[1313]</span>
+    <a class="thread-title" href="#1313">Re2:マクロ</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-24T11:41:40">2002年01月24日 11:41</time></h1>
+    <div class="body">▼ horさん<br>&gt; ▼ やざきさん<br>&gt; &gt; マクロをいじっています。<br>&gt; <br>&gt; ご苦労様です。<br>&gt; <br>&gt; マクロで扱える引数を CEditView::HandleCommand にあわせて最大４っつにしていただけると<br>&gt; 置換や、外部コマンド実行のオプションを扱えるように変更するのも難しくないかな、と思うのですが<br>&gt; …いかがでしょう？<br><br>をを、グッドアイディアですね。<br>いま内部でも引数ひとつしか扱えないので、できる限り扱えるようにしてみます。<br></div></section>
+    <ul><li><section><h1 id=1315>
+    <span class="no">[1315]</span>
+    <a class="thread-title" href="#1315">Re2:マクロ</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-24T12:36:48">2002年01月24日 12:36</time></h1>
+    <div class="body">▼やざきさん<br>&gt;いま内部でも引数ひとつしか扱えないので、できる限り扱えるようにしてみます。<br>本当はHandleCommandも4つではなくて可変長引数が扱える構造の方がいいんでしょうけどねぇ．配列＋要素数を渡すとか．<br>ポインタも無理矢理CASTではなくて，文字と数字を区別できる構造だといいのでしょうが．<br><br>--<br>全部見直すなら制御構文と変数...は簡単ではないか．<br>フリーで使えるスクリプトエンジンを探してはいるのですが，なかなか評価できていません．それにGPLのものはライセンス上使えないし．(LGPLはOK)<br></div></section>
+    <ul><li><section><h1 id=1316>
+    <span class="no">[1316]</span>
+    <a class="thread-title" href="#1316">Re2:マクロ</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-24T23:39:06">2002年01月24日 23:39</time></h1>
+    <div class="body">&gt;タイトル: Re2:マクロ<br>&gt;発言者: げんた<br>&gt;フリーで使えるスクリプトエンジンを探してはいるのですが，なかなか評価できていません．それにGPLのものはライセンス上使えないし．(LGPLはOK)<br><br>PPA.DLL。フリー。<br>日本人が作ってて活動中というのがいい。<br></div></section>
+    <ul><li><section><h1 id=1322>
+    <span class="no">[1322]</span>
+    <a class="thread-title" href="#1322">PPA.DLLはちょっと...</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-25T08:56:43">2002年01月25日 08:56</time></h1>
+    <div class="body">▼PPADLL.TXTより転載<br>&gt; オリジナルPPAとの違いについて<br>&gt; <br>&gt;   1)ユーザ定義関数・手続きへの引数は３２個までしか使用出来ま<br>&gt;     せん。それを越えるとエラーとなります。<br><br>ちょっと足り無くないですか？<br>全て CallSakuraFunc( "機能名", 引数... ) とすれば1つで十分なのかもしれませんが，使いづらそう．<br></div></section>
+    <ul><li><section><h1 id=1323>
+    <span class="no">[1323]</span>
+    <a class="thread-title" href="#1323">Re:PPA.DLLはちょっと...</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-25T09:47:39">2002年01月25日 09:47</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼PPADLL.TXTより転載<br>&gt; &gt; オリジナルPPAとの違いについて<br>&gt; &gt; <br>&gt; &gt;   1)ユーザ定義関数・手続きへの引数は３２個までしか使用出来ま<br>&gt; &gt;     せん。それを越えるとエラーとなります。<br>&gt; <br>&gt; ちょっと足り無くないですか？<br>&gt; 全て CallSakuraFunc( "機能名", 引数... ) とすれば1つで十分なのかもしれませんが，使いづらそう．<br><br>引数の制限が３２個…充分じゃないですか？<br>~~~~</div></section>
+    <ul><li><section><h1 id=1324>
+    <span class="no">[1324]</span>
+    <a class="thread-title" href="#1324">Re:PPA.DLLはちょっと...</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-25T10:43:12">2002年01月25日 10:43</time></h1>
+    <div class="body">▼horさん<br>&gt;引数の制限が３２個…充分じゃないですか？<br>&gt;~~~~<br>失礼．ユーザ定義関数の数が32個と勘違いしていました．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

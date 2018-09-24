@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>色分け関連の不具合(rev1454) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">678</span>
+    <a class="thread-title" href="678.html#678">色分け関連の不具合(rev1454)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">680</span>
+    <a class="thread-title" href="678.html#680">Re:色分け関連の不具合(rev1454)</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=678>
+    <span class="no">[678]</span>
+    <a class="thread-title" href="#678">色分け関連の不具合(rev1454)</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-10-16T03:02:27">2008年10月16日 03:02</time></h1>
+    <div class="body">自分はこの先しばらくの間、手をつけれそうにない気がするので、ひとまず報告だけ。<br><br>現在の最新リビジョン(rev1454)ですが、ウィンドウ分割時に正規表現キーワードと検索文字列の色分けがおかしくなります。<br><br>それぞれが色分けされた状態でウィンドウを左右に分割すると、右側のビューでは正規表現キーワードが色分けされなかったり別の色がついたりします。その状態から、右側のビューをアクティブにすると正規表現キーワードが正しく色分けされるかわりに検索文字列の色分けが消えます。<br><br>これ、CColor_Found や CColor_RegexKeyword が描画対象のビューではなくアクティブビューを対象として処理してしまっているからのようなのですが、これらのクラスから描画対象のビューを取得する手段がありません。離れた所から芋づる式に関数の引数で渡していけば何とかできるかもしれませんが、見たところ、それもかなり汚い感じがします。<br><br>なんだか CColorStrategy のポリシー（？）が破綻してしまっているような、ちょっと嫌な予感です。<br><br><br>■その他<br><br>行をまたいだ文字列について、文字列を括る引用符を追加・削除すると文字列として色分けされる範囲がおかしくなることがあります。<br><br>行頭から行末までの正規表現キーワード（例：/^\+.*$/k）を使用していて、色分けされた行を編集（文字の入力や削除など）すると、以後の行の色分けがおかしくなることがあります。</div></section>
+    <ul><li><section><h1 id=680>
+    <span class="no">[680]</span>
+    <a class="thread-title" href="#680">Re:色分け関連の不具合(rev1454)</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-10-16T22:36:42">2008年10月16日 22:36</time></h1>
+    <div class="body">▼ ryojiさん<br>> 自分はこの先しばらくの間、手をつけれそうにない気がするので、ひとまず報告だけ。<br>> <br>> 現在の最新リビジョン(rev1454)ですが、ウィンドウ分割時に正規表現キーワードと検索文字列の色分けがおかしくなります。<br>> <br>> それぞれが色分けされた状態でウィンドウを左右に分割すると、右側のビューでは正規表現キーワードが色分けされなかったり別の色がついたりします。その状態から、右側のビューをアクティブにすると正規表現キーワードが正しく色分けされるかわりに検索文字列の色分けが消えます。<br>> <br>> これ、CColor_Found や CColor_RegexKeyword が描画対象のビューではなくアクティブビューを対象として処理してしまっているからのようなのですが、これらのクラスから描画対象のビューを取得する手段がありません。離れた所から芋づる式に関数の引数で渡していけば何とかできるかもしれませんが、見たところ、それもかなり汚い感じがします。<br>> <br>> なんだか CColorStrategy のポリシー（？）が破綻してしまっているような、ちょっと嫌な予感です。<br>> <br>> <br>> ■その他<br>> <br>> 行をまたいだ文字列について、文字列を括る引用符を追加・削除すると文字列として色分けされる範囲がおかしくなることがあります。<br>> <br>> 行頭から行末までの正規表現キーワード（例：/^\+.*$/k）を使用していて、色分けされた行を編集（文字の入力や削除など）すると、以後の行の色分けがおかしくなることがあります。<br><br>ご報告ありがとうございます。<br>ここは自分が手を付けないとダメそうな予感ですね。。見ておきます。</div></section>
+    </li></ul></li></ul></body></html>

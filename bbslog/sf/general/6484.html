@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>文字化け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6484</span>
+    <a class="thread-title" href="6484.html#6484">文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6487</span>
+    <a class="thread-title" href="6484.html#6487">Re:文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6491</span>
+    <a class="thread-title" href="6484.html#6491">Re2:文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6492</span>
+    <a class="thread-title" href="6484.html#6492">Re3:文字化け</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6493</span>
+    <a class="thread-title" href="6484.html#6493">Re3:文字化け</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6484>
+    <span class="no">[6484]</span>
+    <a class="thread-title" href="#6484">文字化け</a>
+    <span class="author">使い始め</span>
+    <time datetime="2007-11-26T12:28:40">2007年11月26日 12:28</time></h1>
+    <div class="body">SJISの半角カナが文字化けしてしまいます。<br>OSはXPです。<br>現象は下記のとおりです。<br>1.メモ帳で「アイウエオ」と入力し保存したファイルをサクラで開くと文字化けする。<br>2.サクラエディタで「アイウエオ」と入力し、SJISで保存し再度開くと文字化けしない。<br>3.2.で作ったファイル名をエクスプローラ上で変更したあとに開くと文字化けする。<br><br>設定する場所や過去ログをみてみたのですがわかりません。<br>他のエディタでは文字化けしませんし、何のコードで入っているが<br>分かるエディタで確認しましたが上記ファイルの「アイウエオ」<br>SJISで入っていることを確認しています。<br><br>他になにか設定する場所があるのでしょうか。<br>ちなみにダウンロードして自分で設定を変更した場所はありません。<br><br><br></div></section>
+    <ul><li><section><h1 id=6487>
+    <span class="no">[6487]</span>
+    <a class="thread-title" href="#6487">Re:文字化け</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-11-27T14:22:49">2007年11月27日 14:22</time></h1>
+    <div class="body">▼ 使い始めさん<br>&gt; SJISの半角カナが文字化けしてしまいます。<br><br>バージョン1.5.15.0辺りから出現した不具合らしきものです。<br>ちなみにバージョン1.5.16.0辺りからは、1度SJISで開きなおすと<br>それが履歴に残って、次回開く時はちゃんとSJISで開いてくれます。<br>便利です。<br><br>っと、対応状況は&gt;&gt;data:6433あたりをご参照下さい。<br>取り留めのない内容になっちゃっていて申し訳ないですが。<br></div></section>
+    <ul><li><section><h1 id=6491>
+    <span class="no">[6491]</span>
+    <a class="thread-title" href="#6491">Re2:文字化け</a>
+    <span class="author">使い始め</span>
+    <time datetime="2007-11-29T18:39:19">2007年11月29日 18:39</time></h1>
+    <div class="body">▼ ラスティブさん<br>回答ありがとうございます。<br>バージョンは 1.6.1.0です。<br>data:6433も見たのですが、解決できそうにありません。<br>というのも、SJISで開いても化けるのです。<br><br>サクラエディタで作成したデータをSJISで保存したあと、<br>ファイル名を変えずに開くと「前回は・・・・SJISで開くかEUC<br>で開くか・・・」というメッセージが出て、SJISで開くという指定<br>ができ、化けません。しかしそのファイルの<br>ファイル名を変更したあとに開くと、このメッセージが出ず、<br>文字化けするのです。</div></section>
+    <ul><li><section><h1 id=6492>
+    <span class="no">[6492]</span>
+    <a class="thread-title" href="#6492">Re3:文字化け</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-11-29T20:17:56">2007年11月29日 20:17</time></h1>
+    <div class="body">▼ 使い始めさん<br><br>&gt; サクラエディタで作成したデータをSJISで保存したあと、<br>&gt; ファイル名を変えずに開くと「前回は・・・・SJISで開くかEUC<br>&gt; で開くか・・・」というメッセージが出て、SJISで開くという<br>&gt; 指定ができ、化けません。<br><br>すみません。重要なことを書き忘れていました。<br>SJIS半角カタカナだけのファイルですとたぶん、自動判別の<br>結果(EUC) と前回開いた履歴情報(SJIS)が違ってますが<br>どう致しましょうかという問い合わせで、この問い合わせを<br>無くして常に履歴の方を優先させたい場合は、共通設定の<br>[ファイル]タブにある<br>“前回と異なる文字コードのとき問い合わせを行う”<br>オプションのチェックをはずして下さい。<br><br>&gt; しかしそのファイルのファイル名を変更したあとに開くと、<br>&gt; このメッセージが出ず、文字化けするのです。<br><br>ファイル名が変わったため履歴から前回使った文字コードを<br>探し当てることが出来なくなり、（文字コードを指定せず開いた<br>場合）自動判別逝きになった結果、あえなく誤認識されて<br>しまったかもしれません。・・・。<br><br>以下のものを代わりに使ってみては如何でしょうか。<br>設定次第で文字化けを回避できます。<br>SJIS半角カタカナを相手にするのであれば、<br>デフォルト設定で大丈夫だと思います。<br><br><a href=http://sakura.qp.land.to/?Junk%2Ftest-1.6.1.0 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Junk%<wbr>2Ftest-<wbr>1.<wbr>6.<wbr>1.<wbr>0</nobr></a></div></section>
+    </li><li><section><h1 id=6493>
+    <span class="no">[6493]</span>
+    <a class="thread-title" href="#6493">Re3:文字化け</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-11-29T20:51:35">2007年11月29日 20:51</time></h1>
+    <div class="body">&gt;&gt;6492 の補足です。<br><br>該当する設定はタイプ別設定の、[支援]タブにある<br>文字コード自動判別のところにあります・・・</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>メモ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1069</span>
+    <a class="thread-title" href="1069.html#1069">メモ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1079</span>
+    <a class="thread-title" href="1069.html#1079">&amp;二重化関数</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1069>
+    <span class="no">[1069]</span>
+    <a class="thread-title" href="#1069">メモ</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-31T21:49:21">2001年12月31日 21:49</time></h1>
+    <div class="body">* EOL_NONE == pcLayout-&gt;m_cEol.GetLen() となっているところは全て EOL_NONE == pcLayout-&gt;m_cEol、またはEOL_NONE == pcLayout-&gt;m_cEol.GetType()の誤り。<br>値が同じなので偶然動作しますが...<br>* MRUのクラス化などで大量にコメントアウトされている箇所はばっさり削除してもいいのではないか。<br>代わりにCVSリポジトリ(2000年9月頃～)を公開しますので。CVSで差分を見たときはコメント化されて残っていると見にくい。<br>* CMRUとCMRUFolderの共通の基底クラスを作ろうかと思ったが、CMRU::AddからCMRUFolder::Addが呼び出されるなど非対称なところあり、あまり効果がなさそう。<br>とりあえず&amp;の二重化は別関数を作ったが、この機能はCMenuDrawerのstatic関数にするのが良さそうだ。<br><br>どうもカーソルの動きが緩慢だと思ったら、単にキーリピート速度が遅いだけだった。<br></div></section>
+    <ul><li><section><h1 id=1079>
+    <span class="no">[1079]</span>
+    <a class="thread-title" href="#1079">&amp;二重化関数</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-04T16:53:42">2002年01月04日 16:53</time></h1>
+    <div class="body">&gt;CMRU<br>&gt;とりあえず&amp;の二重化は別関数<br>/*! &amp;の二重化<br> <br>    @param org [in] 変換したい文字列<br>    @param out [out] 返還後の文字列を入れるバッファ<br> <br>    @note 変換後のデータは最大で元の文字列の2倍になる<br> <br>    @author genta<br>    @date 2002/01/04<br>*/<br>void dupamp(const char* org, char* out)<br>{<br>    for( ; *org != '\0'; ++org, ++out ){<br>        *out = *org;<br>        if( *org == '&amp;' ){<br>            *(++out) = '&amp;';<br>        }<br>    }<br>    *out = '\0';<br>}<br></div></section>
+    </li></ul></li></ul></body></html>

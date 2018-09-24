@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>gcode.zip Grepでの文字コードセット | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2336</span>
+    <a class="thread-title" href="2336.html#2336">gcode.zip Grepでの文字コードセット</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=2336>
+    <span class="no">[2336]</span>
+    <a class="thread-title" href="#2336">gcode.zip Grepでの文字コードセット</a>
+    <span class="author">もか</span>
+    <time datetime="2002-09-25T11:55:00">2002年09月25日 11:55</time></h1>
+    <div class="body">Unicodeファイルを扱う上でのバグ修正と、Grepでの文字コード指定です。<br><br>[バグ修正]<br>・UnicodeLE/BEの読み込みで，改行がCRまたはLFの場合に，CRLFまたはLFCRと誤判定して，次の行の1文字目が消える<br>上のバグはかなり致命的なのでsakur 1.3.3.0 以上を利用している方はご注意ください。<br># CEOL::GetEOLTypeUniBE/GetEOLTypeUniの2つの関数中で、<br># memcmp(略,略 * sizeof(wchar_t))にすれば直ります<br># 私が追加した箇所です ごめんなさい<br>・ファイルをUnicode+{無変換}で保存すると，CR0LF0 の改行コードがゴミに変換される(1.3.1.2～)<br>・-CODE オプションが動作しない<br><br>[機能追加]<br>・Grepでの文字コードセット指定<br>→[文字コード自動判別]のチェックボタンは廃止しました。<br>・-GCODE を追加 Grepの文字コードセットを指定します。<br>  使い方は-CODEと同じです。  (-GPOT=K も動作します)<br>  マクロのS_Grepの場合は、第4引数に「文字コードの値(0=SJIS,1=JIS等)*256」にした数値を加えることで指定できます。<br><br>[その他変更]<br>・CR0LF0(EOL_CRLF_UNICODE)を廃止<br>★CRLF0が廃止されると困る方がいましたら、レスお願いします。<br>・共有データ構造体 Version 36 に変更(本来は37かな？)<br><br>eGroupsにおいてあります。<br>ssrc_2002_09_21.tar.gz に対する差分です。<br></div></section>
+    </li></ul></body></html>

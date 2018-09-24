@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現の置換について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7653</span>
+    <a class="thread-title" href="7653.html#7653">正規表現の置換について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7654</span>
+    <a class="thread-title" href="7653.html#7654">Re: 正規表現の置換について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7655</span>
+    <a class="thread-title" href="7653.html#7655">Re2: 正規表現の置換について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7653>
+    <span class="no">[7653]</span>
+    <a class="thread-title" href="#7653">正規表現の置換について</a>
+    <span class="author">develop</span>
+    <time datetime="2013-05-16T08:52:39">2013年05月16日 08:52</time></h1>
+    <div class="body"><br>developと申します。よろしくお願いします。<br><br>このような置換を行いたいのですがどのようにすれば<br>よろしいでしょうか。<br><br>置換前<br>{文字列1} //{文字列2}<br><br>置換後<br>/// &lt;summary&gt;<br>/// {文字列2}<br>/// &lt;/summary&gt;<br>{文字列1}<br><br>それでは失礼します。</div></section>
+    <ul><li><section><h1 id=7654>
+    <span class="no">[7654]</span>
+    <a class="thread-title" href="#7654">Re: 正規表現の置換について</a>
+    <span class="author">もか</span>
+    <time datetime="2013-05-16T13:01:52">2013年05月16日 13:01</time></h1>
+    <div class="body">こんな感じでしょうか<br>置換前：(.*[^/])//([^/][^\r\n]*)<br>置換後：/// &lt;summary&gt;\r\n/// $2\r\n/// &lt;/summary&gt;\r\n$1<br>改行コードがLFなら\r\nは\nにしてください。<br></div></section>
+    <ul><li><section><h1 id=7655>
+    <span class="no">[7655]</span>
+    <a class="thread-title" href="#7655">Re2: 正規表現の置換について</a>
+    <span class="author">develop</span>
+    <time datetime="2013-05-16T16:56:39">2013年05月16日 16:56</time></h1>
+    <div class="body"><br>うまく置換できました。もかさんありがとうございます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

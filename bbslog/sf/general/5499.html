@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CSV形式ファイルのフィールドのデータの交換を,正規表現の置換でできますか。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5499</span>
+    <a class="thread-title" href="5499.html#5499">CSV形式ファイルのフィールドのデータの交換を,正規表現の置換でできますか。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5500</span>
+    <a class="thread-title" href="5499.html#5500">Re:CSV形式ファイルのフィールドのデータの交換を,正規表現の置換でできますか。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5501</span>
+    <a class="thread-title" href="5499.html#5501">Re2:CSV形式ファイルのフィールドのデータの交換を,正規表現の置換でできますか。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5506</span>
+    <a class="thread-title" href="5499.html#5506">$1,$2,$5,$4,$3,$6\rでもできました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5514</span>
+    <a class="thread-title" href="5499.html#5514">RE: $1,$2,$5,$4,$3,$6\rでもできました。</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5530</span>
+    <a class="thread-title" href="5499.html#5530">Re:CSV形式ファイルのフィールドのデータの交換を,正規表現の置換でできますか。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5533</span>
+    <a class="thread-title" href="5499.html#5533">Re2:CSV形式ファイルのフィールドのデータの交換を,正規表現の置換でできますか。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5499>
+    <span class="no">[5499]</span>
+    <a class="thread-title" href="#5499">CSV形式ファイルのフィールドのデータの交換を,正規表現の置換でできますか。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2006-10-19T20:15:00">2006年10月19日 20:15</time></h1>
+    <div class="body">例えば,フィールド3とフィールド5を交換したい。<br>置換前(N) $3,$4,$5      「`awk'プログラム中でフィールドを参照するには、ドル符号`$'のあとに参照した<br>置換後(P) $5,$4,$3        いフィールド番号を付けます。」<br>試み1)エクセルでcsvファイルを開いたら,数字が変わった。<br>      1:1   ---&gt;1:01:00   1:1000---&gt;0.736111   1:200 ---&gt;0.180556<br>試み2)csvエディタを使う。<br>試み3)awk,perl等を使う。<br>Q.サクラエディタVer 1.4.3.5 ■Perl5互換の正規表現(オンラインヘルプより)の置換で,何を入力すればできますか？<br>よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=5500>
+    <span class="no">[5500]</span>
+    <a class="thread-title" href="#5500">Re:CSV形式ファイルのフィールドのデータの交換を,正規表現の置換でできますか。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-20T01:09:20">2006年10月20日 01:09</time></h1>
+    <div class="body">▼ ろろさん<br>&gt; 例えば,フィールド3とフィールド5を交換したい。<br>&gt; 試み1)エクセルでcsvファイルを開いたら,数字が変わった。<br>&gt;       1:1   ---&gt;1:01:00   1:1000---&gt;0.736111   1:200 ---&gt;0.180556<br><br>試み１）エクセルの説明です。<br>1時間と1分は、1:1。59分を超えるとexcelは表示方法が変わる。<br>1時間と1000分は、1000分は16時間と40分なので、17:40。これは、1日を1とすると、17.667/24=0.736111<br>1時間と200分は、200分は3時間と20分なので、4:20。これは、1日を1とすると、4.333/24=0.180555。<br>試み２）SAKURAではない？<br>試み３）<br>置換前　(.*?):(.*?):(.*?):(.*?):(.*?):(.*)\r<br>置換後　\1:\2:\5:\4:\3:\6\r<br>これは、最後だけ？が無くて、最長一致です。他は最短一致。</div></section>
+    <ul><li><section><h1 id=5501>
+    <span class="no">[5501]</span>
+    <a class="thread-title" href="#5501">Re2:CSV形式ファイルのフィールドのデータの交換を,正規表現の置換でできますか。</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-20T02:23:27">2006年10月20日 02:23</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; 置換前　(.*?):(.*?):(.*?):(.*?):(.*?):(.*)\r<br>&gt; 置換後　\1:\2:\5:\4:\3:\6\r<br><br>置換前　(.*?),(.*?),(.*?),(.*?),(.*?),(.*)\r<br>置換後　\1,\2,\5,\4,\3,\6\r<br>の勘違い？</div></section>
+    </li><li><section><h1 id=5506>
+    <span class="no">[5506]</span>
+    <a class="thread-title" href="#5506">$1,$2,$5,$4,$3,$6\rでもできました。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2006-10-21T12:13:58">2006年10月21日 12:13</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; 試み２）SAKURAではない？<br><a href=http://www.asukaze.net/soft/cassava/ target=_top><nobr>http://<wbr>www.<wbr>asukaze.<wbr>net/<wbr>soft/<wbr>cassava/<wbr></nobr></a><br>&gt; 試み３）<br>(サクラエディタVer 1.4.3.5ヘルプファイル 正規表現ライブラリについてより<br> \1,\2,...：検索文字の中で( )で括られた範囲にマッチした文字列。<br> 文字列の前方から( )の登場順に\1,\2,\3,...となる。)<br>(perlre.1.txtのPerl manpages Last change: Release 5.0 Patchlevel 00 4より<br>  s/^([^ ]*) *([^ ]*)/$2 $1/;     # 最初の 2 語を入替える)<br>置換後 \1,\2,\5,\4,\3,\6\r 置換後 $1,$2,$5,$4,$3,$6\r<br>どちらでもできました。違いは,何でしょうか？<br></div></section>
+    <ul><li><section><h1 id=5514>
+    <span class="no">[5514]</span>
+    <a class="thread-title" href="#5514">RE: $1,$2,$5,$4,$3,$6\rでもできました。</a>
+    <span class="author">すい</span>
+    <time datetime="2006-10-22T00:26:37">2006年10月22日 00:26</time></h1>
+    <div class="body">&gt;置換後 \1,\2,\5,\4,\3,\6\r 置換後 $1,$2,$5,$4,$3,$6\r<br>&gt;どちらでもできました。違いは,何でしょうか？<br><br>サクラエディタで使用されている正規表現の機能 BREGEXP.DLL は<br>perl というユーティリティと互換の物となっています。<br><br>perl では、<br>----------<br>◎ \1,\2,\3,...<br>　正規表現の中では () にマッチした箇所を後方参照する。<br><br>◎ $1,$2,$3,...<br>　正規表現の中で () にマッチした箇所を、正規表現の外で参照する。<br><br>正規表現の中：検索文字列そのものの事。<br>正規表現の外：検索文字列の他の場所。置換後文字列もこちら。<br>----------<br>と、なっています。<br>そして「正規表現の外」では \&lt;数値&gt; には他の機能が与えられています。<br><br>perl 以外のユーティリティでは検索文字列中でも置換後文字列中でも<br>どちらでも () などにマッチした箇所を \1,\2,\3,... で参照するように<br>なっている物が多いため、perl でも置換後文字列中では あまり<br>違和感が無いように \1,\2,\3,... でも極力それっぽく動くように<br>作られてはいますが、それは perl としては あくまで特例扱いの<br>処置だし<br>（検索文字列以外では本来 \&lt;数値&gt; には他の機能があるし）<br>常に期待通りに動くとは限らないそうです。<br><br>perl の世界では置換後文字列中で \1,\2,\3,... は使うべきではない、<br>\1,\2,\3,... を使うのは悪癖である、$1,$2,$3,... を使うべき<br>と されています。<br><br><br>で、サクラエディタの中では置換後文字列中では \1,\2,\3,...<br>を使うか $1,$2,$3,... を使うか、となると、それは使っている<br>BREGEXP.DLL が、どの程度 perl と互換に作られているかにも<br>よるので、、、<br>→ BREGEXP.DLL の作者さんのみぞ知る。<br><br>まあ、perl互換をうたっている以上は、使っている BREGEXP.DLL の<br>ドキュメントに特記事項で「\1,\2,\3,...」の使用を推奨したりでも<br>していない限り「$1,$2,$3,...」を使う方が無難でしょう。<br><br>問題なのは、最近、あちこちで BREGEXP.DLL と互換の<br>「～～版 BREGEXP.DLL」が色々出てきているので、<br>その使用している「～～版 BREGEXP.DLL」毎に その辺の<br>お話しも変わってくるので．．．<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=5530>
+    <span class="no">[5530]</span>
+    <a class="thread-title" href="#5530">Re:CSV形式ファイルのフィールドのデータの交換を,正規表現の置換でできますか。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-28T11:56:58">2006年10月28日 11:56</time></h1>
+    <div class="body">▼ ろろさん<br>&gt; 例えば,フィールド3とフィールド5を交換したい。<br>&gt; 試み1)エクセルでcsvファイルを開いたら,数字が変わった。<br>&gt;       1:1   ---&gt;1:01:00   1:1000---&gt;0.736111   1:200 ---&gt;0.180556<br><br>Excelの話です。<br>準備、並び替えるファイルの内容が変更できなくても大丈夫、ファイル名を変える事が出来れば拡張子を.CSV以外に変更して下さい。<br>Excelのファイルメニューから開くを選び、並べ替えたいファイルをメニューから選びます。<br>カンマ区切りを指定して、右端の桁まで表示し、Shift+左クリックで全て選択し、文字形式で読み込みます。<br><br>ちなみに、最新のSAKURAで、検索に「(.*?),」を30個指定すると固まります。（バージョン略）</div></section>
+    <ul><li><section><h1 id=5533>
+    <span class="no">[5533]</span>
+    <a class="thread-title" href="#5533">Re2:CSV形式ファイルのフィールドのデータの交換を,正規表現の置換でできますか。</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-29T00:04:38">2006年10月29日 00:04</time></h1>
+    <div class="body">&gt;検索に「(.*?),」を30個指定すると固まります。<br>30個までは行かなくても固まりますね．<br>((.*?),){30} だと固まらない．<br><br>正規表現でマッチする長さによって計算量が指数的に増えるパターンで固まることはあります．<br>カンマに出くわしたときに.*?の部分がカンマを含む場合と含まない場合の両方を試す必要があるので検索パターンにカンマがたくさんあると指数的に計算時間が増加するのではないかと思います．<br>.*?を[^,]*に変えると固まらなくなります．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>bcc32でコンパイルエラー | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2468</span>
+    <a class="thread-title" href="2468.html#2468">bcc32でコンパイルエラー</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2469</span>
+    <a class="thread-title" href="2468.html#2469">Re: bcc32でコンパイルエラー</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2470</span>
+    <a class="thread-title" href="2468.html#2470">WSHエラー行番号</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2468>
+    <span class="no">[2468]</span>
+    <a class="thread-title" href="#2468">bcc32でコンパイルエラー</a>
+    <span class="author">おに</span>
+    <time datetime="2002-11-01T02:59:04">2002年11月01日 02:59</time></h1>
+    <div class="body">久しぶりに…と、最新のソースをmakeにかけたら、CLayoutMgr.cppがコンパイルできなくなっていました。<br><br>getIndentOffset(getIndentOffset_Normal)<br>　↓<br>getIndentOffset(&amp;CLayoutMgr::getIndentOf<br>fset_Normal)<br><br>この手の修正が4箇所程必要でした。<br><br>/*自分が複雑なマクロを使わないもので放置しておりました…＼(_ _);<br>エラー行番号はIActiveScriptErrorから全情報を受けとれば、またMsgBoxはIActiveScriptSiteWindowを実装すれば(自分はJS派なので他の手段のほうが嬉しいです)、どうにかなると推測はしてますが…*/</div></section>
+    <ul><li><section><h1 id=2469>
+    <span class="no">[2469]</span>
+    <a class="thread-title" href="#2469">Re: bcc32でコンパイルエラー</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-11-01T17:18:57">2002年11月01日 17:18</time></h1>
+    <div class="body">おお，久しぶりです．<br><br>メソッドを呼び出すと空のウィンドウが開いてしまう現象が特定の環境で発生するようなので，こちらも手助けしていただけるとありがたいです．<br></div></section>
+    </li><li><section><h1 id=2470>
+    <span class="no">[2470]</span>
+    <a class="thread-title" href="#2470">WSHエラー行番号</a>
+    <span class="author">おに</span>
+    <time datetime="2002-11-03T01:07:09">2002年11月03日 01:07</time></h1>
+    <div class="body">割と簡単にできました。短いのでここに貼ってしまいます。<br><br>▼CWSHSite::OnScriptErrorを置き換え<br>virtual HRESULT STDMETHODCALLTYPE OnScriptError(<br>  /* [in] */ IActiveScriptError *pscripterror)<br>{ <br>  EXCEPINFO Info;<br>  if(pscripterror-&gt;GetExceptionInfo(&amp;Info) == S_OK)<br>  {<br>    DWORD Context;<br>    ULONG Line;<br>    LONG Pos;<br>    if(pscripterror-&gt;GetSourcePosition(&amp;Cont<br>ext, &amp;Line, &amp;Pos) == S_OK)<br>    {<br>      wchar_t *Message = new wchar_t[SysStringLen(Info.bstrDescription) + 128];<br>      wsprintfW(Message, L"[Line %d] %ls", Line + 1, Info.bstrDescription);<br>      SysReAllocString(&amp;Info.bstrDescription, Message);<br>      delete[] Message;<br>    }<br>    m_Client-&gt;Error(Info.bstrDescription, Info.bstrSource);<br>    SysFreeString(Info.bstrSource);<br>    SysFreeString(Info.bstrDescription);<br>    SysFreeString(Info.bstrHelpFile);<br>  }<br>  return S_OK;<br>};<br><br>それと、エラー報告のMessageBoxですが、どうにかしてError()に統一できないかな…。</div></section>
+    </li></ul></li></ul></body></html>

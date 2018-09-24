@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>samba上のファイルを開くと落ちます | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4660</span>
+    <a class="thread-title" href="4660.html#4660">samba上のファイルを開くと落ちます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4661</span>
+    <a class="thread-title" href="4660.html#4661">Re: samba上のファイルを開くと落ちます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4662</span>
+    <a class="thread-title" href="4660.html#4662">アンチウィルスソフトが原因でした</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4660>
+    <span class="no">[4660]</span>
+    <a class="thread-title" href="#4660">samba上のファイルを開くと落ちます</a>
+    <span class="author">きくりん</span>
+    <time datetime="2007-01-17T11:14:02">2007年01月17日 11:14</time></h1>
+    <div class="body">FreeBSD上で動いているsambaとWindowsで<br>ファイル共有を行っているのですが、sakuraで<br>samba上のファイルを開くと、マシンごとおちます。</div></section>
+    <ul><li><section><h1 id=4661>
+    <span class="no">[4661]</span>
+    <a class="thread-title" href="#4661">Re: samba上のファイルを開くと落ちます</a>
+    <span class="author">もか</span>
+    <time datetime="2007-01-18T00:56:23">2007年01月18日 00:56</time></h1>
+    <div class="body">　情報が少ないのでなんとも言えないのですけれど、<br>sakura の読込部分は普通のWin32 APIですので sakura が原因で落ちるとは考えにくいです。<br>　落ちるのはサクラエディタで読込んだ場合のWinマシンだけでしょうか？<br><br>原因として考えられるものを、私の私的な基準で高い順に並べると、<br>・Winマシンのネットワークドライバ<br>・アンチウィルス製品<br>・パーソナルファイヤーウォール製品<br>・FreeBSD の samba の実装(ともしかしたら上記ソフトとの関連も)<br>・マルチプロセッサ環境や64bit環境での上記ソフト群の挙動<br>あたりだと思います。<br><br>　また、もうちょっと詳しい状況を説明してもらえると、同じような症状の人の報告が<br>得られるかもしれません。<br></div></section>
+    <ul><li><section><h1 id=4662>
+    <span class="no">[4662]</span>
+    <a class="thread-title" href="#4662">アンチウィルスソフトが原因でした</a>
+    <span class="author">きくりん</span>
+    <time datetime="2007-01-18T17:27:54">2007年01月18日 17:27</time></h1>
+    <div class="body">上に上げられたものを順にチェックしましたところ、<br>アンチウィルスソフト（のリアルタイム監視）が原因だと判明しました。<br>使用していたのはKINGSOFT InternetSecurityです。<br>同ソフトを利用している方は注意されたほうがいいと思います。<br>(アップデートで状況が変わることもあると思いますが)<br><br>ご助言ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

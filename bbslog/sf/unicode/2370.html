@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>TAB幅の設定のバグ? | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2370</span>
+    <a class="thread-title" href="2370.html#2370">TAB幅の設定のバグ?</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2371</span>
+    <a class="thread-title" href="2370.html#2371">Re:TAB幅の設定のバグ?</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2376</span>
+    <a class="thread-title" href="2370.html#2376">Re2:TAB幅の設定のバグ?</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2370>
+    <span class="no">[2370]</span>
+    <a class="thread-title" href="#2370">TAB幅の設定のバグ?</a>
+    <span class="author">sss</span>
+    <time datetime="2016-07-10T17:13:16">2016年07月10日 17:13</time></h1>
+    <div class="body">タイプ別設定 『スクリーン』プロパティ<br>&lt;レイアウト&gt;TAB幅の設定<br>TAB記号を展開する桁数 1～7の場合 : 設定桁数で展開される <br>TAB記号を展開する桁数 8以上の場合 : 4桁で展開される</div></section>
+    <ul><li><section><h1 id=2371>
+    <span class="no">[2371]</span>
+    <a class="thread-title" href="#2371">Re:TAB幅の設定のバグ?</a>
+    <span class="author">もか</span>
+    <time datetime="2016-07-10T20:30:06">2016年07月10日 20:30</time></h1>
+    <div class="body">報告ありがとうございます。<br>掲示板には載っていませんけど現象は確認済みです。<br>2.3.0.0(2.2.1.0以降)のみで発生。<br>桁数というか、タブを展開後のタブ幅のピクセル数が画面折り返し文字数を超えると発生します。<br>パッチはこちら<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/1078/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1078/<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=2376>
+    <span class="no">[2376]</span>
+    <a class="thread-title" href="#2376">Re2:TAB幅の設定のバグ?</a>
+    <span class="author">sss</span>
+    <time datetime="2016-08-20T15:29:24">2016年08月20日 15:29</time></h1>
+    <div class="body">Ver.2.3.1.0がリリースされましたが、<br>・タブ幅がフォントサイズが大きいと4固定になる (upatchid:1078 Moca)<br>には対応されていないようですね。<br>当面、2.3.0.0 r4122(=r4119) update9 を使っていく予定です。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

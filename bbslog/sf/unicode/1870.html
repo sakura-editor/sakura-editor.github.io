@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1870</span>
+    <a class="thread-title" href="1870.html#1870">Commit報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1871</span>
+    <a class="thread-title" href="1870.html#1871">Re:Commit報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1872</span>
+    <a class="thread-title" href="1870.html#1872">Re2:Commit報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1873</span>
+    <a class="thread-title" href="1870.html#1873">Re3:Commit報告</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1874</span>
+    <a class="thread-title" href="1870.html#1874">Re4:Commit報告</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1870>
+    <span class="no">[1870]</span>
+    <a class="thread-title" href="#1870">Commit報告</a>
+    <span class="author">もか</span>
+    <time datetime="2013-01-03T18:24:57">2013年01月03日 18:24</time></h1>
+    <div class="body">MigGW対応パッチをコミットしました。<br>これからは、gccのことも頭の片隅にでもおいてコードを書いていただけると幸いです。<br></div></section>
+    <ul><li><section><h1 id=1871>
+    <span class="no">[1871]</span>
+    <a class="thread-title" href="#1871">Re:Commit報告</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-01-05T22:31:46">2013年01月05日 22:31</time></h1>
+    <div class="body">▼ もかさん<br>&gt; MigGW対応パッチをコミットしました。<br>&gt; これからは、gccのことも頭の片隅にでもおいてコードを書いていただけると幸いです。<br>具体的には如何いったことに気をつければいいんでしょうか<br>注意点を列挙していただけたら、それを注意していきたいと思いますが</div></section>
+    <ul><li><section><h1 id=1872>
+    <span class="no">[1872]</span>
+    <a class="thread-title" href="#1872">Re2:Commit報告</a>
+    <span class="author">もか</span>
+    <time datetime="2013-01-06T19:50:21">2013年01月06日 19:50</time></h1>
+    <div class="body">・constにうるさい vector&lt;const xxxx&gt;はエラーになる。文字列はconst (w)char*型<br>・__xxx は要注意 __superとか<br>・templateにエラーの記述があると使っていなくてもエラーになる(vcは遅延評価)<br>・templateでbaseクラスのメンバーを使うとき、using xx と書かないとエラーになる<br>・VCはinclude の記述がなくてもなぜかエラーにならない。のでちゃんと必要なら書く<br>・enumは前方宣言のまま実体を書くことができない(intサイズかlong longサイズか分からないので)<br>・jumpを使っているところは、変数の未初期化エラーになりやすい<br>・引数がconstでない場合は引数の部分で宣言された一時オブジェクトを参照渡しの引数にすることができない<br>　test_func( std::wstring("" ) ); ←こういうの<br>・結果的に同じ内容のtypedefを2回書くことができない。wstring/tstring等<br>・結果的に同じ内容のtemplateの実体化を書くことができない(CRecentImpの末尾とか)<br>・MinGWはVC6のmsvcrtを使うのでVC7以上専用の関数は使えない<br>・auto_ptrの初期化で=は使えない。()を使う<br><br>他にもあるとは思いますが、今回修正した範囲ではこんな感じでした。<br></div></section>
+    <ul><li><section><h1 id=1873>
+    <span class="no">[1873]</span>
+    <a class="thread-title" href="#1873">Re3:Commit報告</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-01-06T22:47:52">2013年01月06日 22:47</time></h1>
+    <div class="body">情報ありがとうございます<br>できるだけ注意してみますが実際にmakeの予定は無いんで漏れが出るとは思います<br><br>&gt; ・MinGWはVC6のmsvcrtを使うのでVC7以上専用の関数は使えない<br>ちょうど今日これにひっかる修正を書いてました</div></section>
+    <ul><li><section><h1 id=1874>
+    <span class="no">[1874]</span>
+    <a class="thread-title" href="#1874">Re4:Commit報告</a>
+    <span class="author">もか</span>
+    <time datetime="2013-01-07T20:19:40">2013年01月07日 20:19</time></h1>
+    <div class="body">.cppを追加した場合には、Makefile に .o を追加するのも忘れないでください。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>登録マクロが挙動不審？（長文） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1323</span>
+    <a class="thread-title" href="1323.html#1323">登録マクロが挙動不審？（長文）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1324</span>
+    <a class="thread-title" href="1323.html#1324">Re:登録マクロが挙動不審？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1325</span>
+    <a class="thread-title" href="1323.html#1325">Re2:登録マクロが挙動不審？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1326</span>
+    <a class="thread-title" href="1323.html#1326">Re3:登録マクロが挙動不審？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1327</span>
+    <a class="thread-title" href="1323.html#1327">Re4:登録マクロが挙動不審？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1335</span>
+    <a class="thread-title" href="1323.html#1335">Re5:登録マクロが挙動不審？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1341</span>
+    <a class="thread-title" href="1323.html#1341">Re6:登録マクロが挙動不審？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1343</span>
+    <a class="thread-title" href="1323.html#1343">文書タイプ強制指定の使い方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1358</span>
+    <a class="thread-title" href="1323.html#1358">Re:文書タイプ強制指定の使い方</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1366</span>
+    <a class="thread-title" href="1323.html#1366">Re:文書タイプ強制指定の使い方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1368</span>
+    <a class="thread-title" href="1323.html#1368">Re2:文書タイプ強制指定の使い方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1371</span>
+    <a class="thread-title" href="1323.html#1371">Re3:文書タイプ強制指定の使い方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1377</span>
+    <a class="thread-title" href="1323.html#1377">Re4:文書タイプ強制指定の使い方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1379</span>
+    <a class="thread-title" href="1323.html#1379">Re5:文書タイプ強制指定の使い方</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1323>
+    <span class="no">[1323]</span>
+    <a class="thread-title" href="#1323">登録マクロが挙動不審？（長文）</a>
+    <span class="author">Lionel</span>
+    <time datetime="2002-03-08T14:41:27">2002年03月08日 14:41</time></h1>
+    <div class="body">こんにちは。サクラエディタ、便利に使わせて頂いております。<br><br>今回は、登録マクロの挙動についてちょっとおかしな点を発見したので、<br>ご報告に伺いました。<br><br>まず、以下の２ファイルを用意します。<br><br>---------- (BR.mac)<br>S_InsText('&lt;BR&gt;');<br>S_Char(13);<br>----------<br><br>---------- (HR.mac)<br>S_InsText('&lt;HR&gt;');<br>S_Char(13);<br>----------<br><br>ご覧のとおり、それぞれ HTML の改行と水平線を挿入するマクロです。<br><br>次に、メニューの「ツール」「共通設定」で共通設定ダイアログを開き<br>「マクロ」タブにて上記２ファイルを０番、１番に登録します。<br><br>するとメニューの「ツール」「登録済みマクロ」に上記２マクロが表示<br>されますので、まず「BR」を実行しますと、正常に &lt;BR&gt; が出力されます。<br>次に「HR」を実行すると、これまた正常に &lt;HR&gt; が出力されます。<br><br>ここまではいいのですが、次に「BR」を実行すると、なぜか画面には<br>&lt;HR&gt; が出力されます。以降、そのウィンドウを落とすまでどちらを<br>選んでも、マクロ「HR」だけが実行されます。<br>BR と HR の実行順を逆にしても再現されます。<br><br>以上の方法を、サクラエディタを新規インストールした状態で試した<br>ところ、１００％現象が発生します。既存の環境で「sakura.ini」を<br>いったん削除して試しても同じでした。<br><br>使用バージョンは、「sinst_B020201_H020120.exe」をベースにして<br>実行ファイルだけ「sakura_2002-03-08.zip」に置き換えてあります。<br>ＯＳは Windows2000 Professional です。<br><br>よろしければ、ご調査のほど宜しくお願いします。<br>長文申し訳ありません。</div></section>
+    <ul><li><section><h1 id=1324>
+    <span class="no">[1324]</span>
+    <a class="thread-title" href="#1324">Re:登録マクロが挙動不審？</a>
+    <span class="author">Lionel</span>
+    <time datetime="2002-03-08T14:53:14">2002年03月08日 14:53</time></h1>
+    <div class="body">自己レスでちょっと追加です。<br>３つのマクロ（Ａ、Ｂ、Ｃとします）を用意して同様の実験を試したところ、<br><br>Ａを実行 -&gt; Ａが実行される<br>Ｂを実行 -&gt; Ｂが実行される<br>Ａを実行 -&gt; Ｂが実行される<br>Ｂを実行 -&gt; Ｂが実行される<br>Ｃを実行 -&gt; Ｃが実行される<br>Ａを実行 -&gt; Ｃが実行される<br>Ｂを実行 -&gt; Ｃが実行される<br><br>という結果になっています。<br>想像するに、何を選んでも「最後にロードしたマクロ」が<br>実行されているような感じです。<br><br>＃でも、今まで報告例が無いのが気になる…。<br>＃再現するの私だけだったりして(^^;</div></section>
+    <ul><li><section><h1 id=1325>
+    <span class="no">[1325]</span>
+    <a class="thread-title" href="#1325">Re2:登録マクロが挙動不審？</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-08T16:28:28">2002年03月08日 16:28</time></h1>
+    <div class="body">▼ Lionelさん<br><br>をを、いい動作報告＆不具合報告ですね。お手数おかけしました。ありがとうございます。<br><br>確かにそうなりますね。<br>最後にロードしたマクロが実行されるというのもかなり鋭い。<br>不具合として認定いたします。（認定するものじゃないですね^^;;）<br><br>ちなみにPPA.DLLありでもそうなります？<br></div></section>
+    <ul><li><section><h1 id=1326>
+    <span class="no">[1326]</span>
+    <a class="thread-title" href="#1326">Re3:登録マクロが挙動不審？</a>
+    <span class="author">Lionel</span>
+    <time datetime="2002-03-08T17:16:48">2002年03月08日 17:16</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; をを、いい動作報告＆不具合報告ですね。お手数おかけしました。ありがとうございます。<br>&gt; <br>&gt; 確かにそうなりますね。<br>&gt; 最後にロードしたマクロが実行されるというのもかなり鋭い。<br>&gt; 不具合として認定いたします。（認定するものじゃないですね^^;;）<br>&gt; <br>&gt; ちなみにPPA.DLLありでもそうなります？<br><br>あは、お褒めにあずかり光栄です(^^;<br>上に書いた状態は PPA.DLL ありの状態のものです（これ書くの忘れてました）。<br>ちなみに DLL は、今まで使ってた version1.23 と、今日出たばかりの 1.24 の<br>両方で試してみましたがやはり同じでした。<br><br>DLL 無しで今試してみましたが、こちらは正常に動作しました。</div></section>
+    <ul><li><section><h1 id=1327>
+    <span class="no">[1327]</span>
+    <a class="thread-title" href="#1327">Re4:登録マクロが挙動不審？</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-08T19:23:14">2002年03月08日 19:23</time></h1>
+    <div class="body">&gt; DLL 無しで今試してみましたが、こちらは正常に動作しました。<br><br>ありがとうございました。ちょっと考えてみます。</div></section>
+    <ul><li><section><h1 id=1335>
+    <span class="no">[1335]</span>
+    <a class="thread-title" href="#1335">Re5:登録マクロが挙動不審？</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-10T00:23:16">2002年03月10日 00:23</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; &gt; DLL 無しで今試してみましたが、こちらは正常に動作しました。<br>&gt; <br>&gt; ありがとうございました。ちょっと考えてみます。<br><br>それっぽく直してみました。次回をお楽しみに～。</div></section>
+    <ul><li><section><h1 id=1341>
+    <span class="no">[1341]</span>
+    <a class="thread-title" href="#1341">Re6:登録マクロが挙動不審？</a>
+    <span class="author">Lionel</span>
+    <time datetime="2002-03-11T11:12:28">2002年03月11日 11:12</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; それっぽく直してみました。次回をお楽しみに～。<br><br>さっそくのご対応、ありがとうございました。<br>楽しみに待っています～。<br><br>余談ですが、開発掲示板の方でげんたさんが書かれていた<br>「文書タイプの強制指定」ですが、私もこれが欲しくて<br>次の要望として出そうかと思っておりました。<br>ますます次のバージョンが楽しみです(^^</div></section>
+    <ul><li><section><h1 id=1343>
+    <span class="no">[1343]</span>
+    <a class="thread-title" href="#1343">文書タイプ強制指定の使い方</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-03-11T13:51:24">2002年03月11日 13:51</time></h1>
+    <div class="body">▼ Lionelさん<br>&gt;余談ですが、開発掲示板の方でげんたさんが書かれていた<br>&gt;「文書タイプの強制指定」ですが、私もこれが欲しくて<br>&gt;次の要望として出そうかと思っておりました。<br><br>次のバージョンがまだ出ていませんが，フライングで使い方説明です．<br><br>[コマンドラインオプション]<br>-TYPE=タイプ名 または -TYPE:タイプ名<br><br>* タイプ名は関連づけられている拡張子<br>* タイプ名は7文字以下<br><br>[例1] メールの色分け<br>1. メール用の色分け(引用符など)設定<br>2. メール設定に拡張子割り当て．例えば*m<br>3. メーラーのエディタ設定にオプション -TYPE=*m を追加．<br><br>[例2] IEのソースViewer<br>ソースViewerの設定ではパラメータを理解してくれないようなのでArgHelperを使います．<br><br>1. arghelper.exeを適当な名前(例えばsakurahtml.exe)に変えてどこかに置く．<br>2. 上の名前と同じiniファイル(sakurahtml.ini)を同じフォルダに作成する．<br>iniファイルの中身:<br>1行目: サクラエディタの絶対パス<br>2行目: -TYPE=html<br><br>レジストリ変更または窓の手でソース閲覧用エディタとして上で作ったsakurahtml.exeを指定．<br><br>窓の手を使わない場合に変更するレジストリの場所:<br>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\In<br>ternet Explorer\View Source Editor\Editor Name<br><br>ArgHelper <a href=http://members.tripod.co.jp/sakura_editor/other_tools.html target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>other_to<wbr>ols.<wbr>html</nobr></a><br>↑よく見たらページをリニューアルしたときにリンクが切れていました．m(_ _)m<br></div></section>
+    <ul><li><section><h1 id=1358>
+    <span class="no">[1358]</span>
+    <a class="thread-title" href="#1358">Re:文書タイプ強制指定の使い方</a>
+    <span class="author">Lionel</span>
+    <time datetime="2002-03-12T10:57:57">2002年03月12日 10:57</time></h1>
+    <div class="body">新バージョンの 1.2.106.8、さっそく使わせて頂いております。<br>ご報告したバグ症状は直ってますね。これで思う存分マクロを使いまくれます。<br><br>▼ げんたさん<br>&gt; 次のバージョンがまだ出ていませんが，フライングで使い方説明です．<br>&gt; （中略）<br>&gt; [例2] IEのソースViewer<br><br>そうそう、まさにこれがやりたかったんです（笑）<br>で、ご説明の通りに試してみましたが、ばっちり色分けされて表示されてます。<br>また一段と使い勝手がよくなりました(^^<br><br>開発者の皆様の、素早いご対応には頭が下がるばかりです。<br>これからも頑張ってください。応援してます。</div></section>
+    </li><li><section><h1 id=1366>
+    <span class="no">[1366]</span>
+    <a class="thread-title" href="#1366">Re:文書タイプ強制指定の使い方</a>
+    <span class="author">Youma</span>
+    <time datetime="2002-03-12T18:53:33">2002年03月12日 18:53</time></h1>
+    <div class="body">▼ げんたさん<br>&gt;例2] IEのソースViewer<br>&gt;ソースViewerの設定ではパラメータを理解してくれないようなのでArgHelperを使います．<br>&gt;1. arghelper.exeを適当な名前(例えばsakurahtml.exe)に変えてどこかに置く．<br>&gt;2. 上の名前と同じiniファイル(sakurahtml.ini)を同じフォルダに作成する．<br>&gt;iniファイルの中身:<br>&gt;1行目: サクラエディタの絶対パス<br>&gt;2行目: -TYPE=html<br><br>丁寧な説明のおかげでやれました（W<br>窓の手落としてきて実行してみました。<br>いやぁ、便利です。憧れのソースのカラー表示が出来ました。<br><br>＞～欲張り要望～<br>　欲をいうならソースの表示で立ち上がるSAKURAの場合は<br>タスクバーでの表示色等が変わると良いなぁ～（違いが目立てばいい　【】で括られるとか）<br><br>（いや、今もファイルの絶対パスが表示されてる場合は修正途中のソースで<br>　ファイル名だけが表示されてる場合はソースの表示で開いたTmpファイル…とわかるけど…）<br><br>…というのも、いま、馬鹿な事にソースの表示で立ち上がったSAKURAを<br>必死に修正してて「反映されないよー(TT)」とかいいながら時間を無駄遣いしてたもんで（^^;)<br><br><br>実現方法としてはちっとシステムと分断してるんで関連付け出来ないですけどねぇ。<br>＜どっから立ち上げたか？なんて判断しようがないし。<br><br>やれそうな所でいったら<br>SAKURAで開いているファイルが*\Tmp\　配下にある場合は<br>いつもと違った表示がされる（タスクバーの表示や色が変わる）<br>…とかだとソースの表示をしながら修正する時に混乱しないですむんですよねぇ。<br>（ソースの表示…ってやると、マイドキュメントのある辺りのTmpフォルダ配下ですよね？　大概。<br>　VSS等のソースのバージョン管理ソフトでもどっかにあるTmpフォルダ配下にファイルを作成してそれを見せてるし）<br>*\TEMP\配下に出来るOSとかあるのかな？<br>&lt;&lt;VSSなどのバージョン管理ソフトでのソース閲覧はTEMPフォルダ配下でした。<br>tmp と　temp　のフォルダの下のファイルを開いている時は<br>【hoge.txt】見たいに表示されると開発しやすいっすね。<br>（OSをWinXPにしてもタスクバーでの表示名に変化があれば<br>　区別つきやすいのは変わらないだろうし。）<br><br>…こんな贅沢いうのは無謀ですね（W　秀丸だってやってないし。</div></section>
+    <ul><li><section><h1 id=1368>
+    <span class="no">[1368]</span>
+    <a class="thread-title" href="#1368">Re2:文書タイプ強制指定の使い方</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-12T19:01:31">2002年03月12日 19:01</time></h1>
+    <div class="body">▼ Youmaさん<br>&gt; …というのも、いま、馬鹿な事にソースの表示で立ち上がったSAKURAを<br>&gt; 必死に修正してて「反映されないよー(TT)」とかいいながら時間を無駄遣いしてたもんで（^^;)<br><br>か、読取専用でひらくとかどうでしょう。<br>起動直後は編集できないから、間違って編集しなくなるかな？<br><br>それでも起動オプションを追加しないとだめだ（＝私の専門から外れてしまふ。すなわち無責任発言だ）けど。。。</div></section>
+    <ul><li><section><h1 id=1371>
+    <span class="no">[1371]</span>
+    <a class="thread-title" href="#1371">Re3:文書タイプ強制指定の使い方</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-03-13T01:20:07">2002年03月13日 01:20</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; か、読取専用でひらくとかどうでしょう。<br>&gt; それでも起動オプションを追加しないとだめだ<br>読みとり専用オプションは今もありますよ。たぶん -R</div></section>
+    <ul><li><section><h1 id=1377>
+    <span class="no">[1377]</span>
+    <a class="thread-title" href="#1377">Re4:文書タイプ強制指定の使い方</a>
+    <span class="author">Youma</span>
+    <time datetime="2002-03-13T11:42:09">2002年03月13日 11:42</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼ やざきさん<br>&gt; &gt; か、読取専用でひらくとかどうでしょう。<br>&gt; &gt; それでも起動オプションを追加しないとだめだ<br>&gt; 読みとり専用オプションは今もありますよ。たぶん -R<br><br>お？ ArgHelperに-Rのオプションを加えたところ<br>あっさり読み取り専用に出来ました♪<br>これで間違って編集する事は無くなりますね（笑）</div></section>
+    <ul><li><section><h1 id=1379>
+    <span class="no">[1379]</span>
+    <a class="thread-title" href="#1379">Re5:文書タイプ強制指定の使い方</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-13T11:50:58">2002年03月13日 11:50</time></h1>
+    <div class="body">▼ Youmaさん<br>&gt; お？ ArgHelperに-Rのオプションを加えたところ<br>&gt; あっさり読み取り専用に出来ました♪<br>&gt; これで間違って編集する事は無くなりますね（笑）<br><br>あら、あったんですね。<br>ということで、この件は忘れちゃいますね。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ディスクフルで保存するとファイルが壊れる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5633</span>
+    <a class="thread-title" href="5633.html#5633">ディスクフルで保存するとファイルが壊れる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5634</span>
+    <a class="thread-title" href="5633.html#5634">Re:ディスクフルで保存するとファイルが壊れる</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5633>
+    <span class="no">[5633]</span>
+    <a class="thread-title" href="#5633">ディスクフルで保存するとファイルが壊れる</a>
+    <span class="author">トーリス</span>
+    <time datetime="2009-12-08T00:08:29">2009年12月08日 00:08</time></h1>
+    <div class="body">バグ報告<br>ディスクフルの状態でファイルを更新して保存すると、何のエラーメッセージも無く一見保存できたかに見えますが、開いてみると内容が\0の羅列に置き換わっています。<br><br>ちなみにメモ帳だと「ディスクフルです」とメッセージが表示され保存されないようになっています。<br><br>Windows XP SP3です。</div></section>
+    <ul><li><section><h1 id=5634>
+    <span class="no">[5634]</span>
+    <a class="thread-title" href="#5634">Re:ディスクフルで保存するとファイルが壊れる</a>
+    <span class="author">もか</span>
+    <time datetime="2009-12-09T23:57:27">2009年12月09日 23:57</time></h1>
+    <div class="body">バグ報告ありがとうございます。<br>エラーは受け取ってるのにメッセージを表示していないですね。<br><br>事前に容量チェックをするにしても<br>ほかのプロセスが並列で書き込んでいたら意味ないし、<br>ネットワーク上やNTFSのマウントが使われていた場合はややこしいことになりそうです。<br>クオーターもありますよね。<br><br>▼CDocLineMgr.cpp<br>&gt;&#9;catch(CError_FileOpen)<br>&gt;&#9;{<br>&gt;&#9;&#9;::MYMESSAGEBOX(<br>...<br>&gt;&#9;&#9;&#9;ファイルを保存できません。\nパスが存在しないか<br>...<br>&gt;&#9;}<br>&gt;&#9;catch(CError_FileWrite)<br>&gt;&#9;{<br>ここ。<br>&gt;&#9;&#9;nRetVal = FALSE;<br>&gt;&#9;}<br><br>以下開発メモ的なことをついでに書いておきます。<br>Unixだとこういう話もあります。<br>(別名で書き込んで、renameするといい)<br><a href=http://slashdot.jp/comments.pl?sid=442678&cid=1530766 target=_top><nobr>http://<wbr>slashdot<wbr>.<wbr>jp/<wbr>comments<wbr>.<wbr>pl?<wbr>sid=<wbr>442678&amp;<wbr>cid=<wbr>1530766</nobr></a><br>・これだとディスクの1/2以下しか書き込めない<br>・ちゃんとコードを書かないとアクセス権/ファイル属性がおかしくなる<br>・元のファイルを上書きできるかどうかは全内容をファイルに書き込んだ後に分かる<br>・TomcatやTortoiseSVNみたいな監視ソフトがいると一時ファイルの書き込みに反応して何かが動くことがある<br>これは、ファイルの改名時にエラーになる原因になったりする。<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告(Fix) カーソル位置縦線の描画不正(その2) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1369</span>
+    <a class="thread-title" href="1369.html#1369">Commit報告(Fix) カーソル位置縦線の描画不正(その2)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1377</span>
+    <a class="thread-title" href="1369.html#1377">別のパターンで線が残る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1378</span>
+    <a class="thread-title" href="1369.html#1378">Re: 別のパターンで線が残る</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1369>
+    <span class="no">[1369]</span>
+    <a class="thread-title" href="#1369">Commit報告(Fix) カーソル位置縦線の描画不正(その2)</a>
+    <span class="author">もか</span>
+    <time datetime="2010-08-21T01:50:11">2010年08月21日 01:50</time></h1>
+    <div class="body">リビジョン：<br>  rev1809<br><br>変更種別：<br>  バグ修正<br><br>内容：<br>rev1806でカーソル位置縦線の従来判定が意図せず削除されている &gt;&gt;1366<br>太線の時スクロールすると左端にカーソル位置縦線が残る(ANSI縦線実装時からのバグ)<br><br>判定の共通化と作画位置の保持変数を初期化するようにしてあります。<br>-2/座標が設定されているけど作画範囲外で判定関数で無視される動作は-1に統合しました。<br><br>TODOと気になるところ:<br>線の判定の仕様変更。<br>CaretUnderLineOFFでの座標判定自体がいらないか、比較判定の値がONで線を作画した時点と違う可能性もありそう。<br>CaretUnderLineOFFでGetDCで作画している都合でカーソル移動で下線/縦線がチラつく。<br>対括弧の強調表示が縦線の上にくる。<br></div></section>
+    <ul><li><section><h1 id=1377>
+    <span class="no">[1377]</span>
+    <a class="thread-title" href="#1377">別のパターンで線が残る</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-08-23T17:55:33">2010年08月23日 17:55</time></h1>
+    <div class="body">この rev1809 ですが、<br>何かの操作で、カーソルを移動しても以前のカーソル位置縦横線が残ることがあるみたいです。<br>自分が少し試した範囲では、非選択状態で現在位置の単語を拾い出す以下の操作で現象を確認しています。<br>・「検索」/「置換」/「Grep」で何もせずにダイアログを閉じた後<br>・「外部ヘルプ1」/「外部HTMLヘルプ」を実行した後<br>のカーソル移動です。<br>他のパターンでも起きることがあるか？は不明です。</div></section>
+    <ul><li><section><h1 id=1378>
+    <span class="no">[1378]</span>
+    <a class="thread-title" href="#1378">Re: 別のパターンで線が残る</a>
+    <span class="author">もか</span>
+    <time datetime="2010-08-24T02:29:06">2010年08月24日 02:29</time></h1>
+    <div class="body">&gt;何かの操作で、カーソルを移動しても以前のカーソル位置縦横線が残ることがあるみたいです。<br>報告ありがとうございます。失礼しました。<br>UnderLineON作画→UnderLineON未作画→UnderLineOFF作画みたいなことがあるんだった。<br>UnderLineONの最初の方で m_nOld** = -1 するように追加した部分を削除して対処しました。<br>&gt;&gt;1379<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

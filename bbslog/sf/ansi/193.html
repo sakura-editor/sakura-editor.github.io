@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バックアップファイル名 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">193</span>
+    <a class="thread-title" href="193.html#193">バックアップファイル名</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">194</span>
+    <a class="thread-title" href="193.html#194">Re:バックアップファイル名</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=193>
+    <span class="no">[193]</span>
+    <a class="thread-title" href="#193">バックアップファイル名</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-03-17T21:33:08">2001年03月17日 21:33</time></h1>
+    <div class="body">これは他で出ていた要望ですが、こっちでも同じことがあるので書いてます。(要望のパクリ(^_^;))<br>現在バックアップファイルは拡張子をbakあるいは世代b00-98にするパタンと、ファイル名の後ろに日時などを追加して拡張子はそのままにするパタンの2種類あります。<br>しかしファイル名は同じで拡張子だけが違うというファイルもよくあります。また拡張子が変わってしまうとそのファイルの属性が不明になり、例えば関連付けも無効になってしまいます。.bxxではエディタで即開けませんよね。そこでバックアップファイル名は拡張子変更ではなく、日時と同じように拡張子は変えずにファイル名に追加するようにしてはどうでしょうか？<br>今あるものはそのままにして、「ファイルの後ろに連番を付加したもの」の追加です。aaa.txt→aaa_b00.txt　一つのみの場合(bak)もありますが、1世代(b00)で代替すればいいでしょう。それよりかなり前にげんた氏が実装したときに「してない」だけのI/Fを付けて、ユーザがある程度文字列を変えられるようになっているといいと思います。こんな感じでしょうか：<br>　・ファイル名の後ろに付加 <br>　・拡張子を変更<br>　　　　バックアップファイルを表す文字 [b]  保存する世代数  [1-99] (b00-98) <br><br>第一世代(bak)の場合も一緒に出来るとなおいいですが。その場合は<br>　・ファイル名の後ろに付加 <br>　・拡張子を変更<br>　　　・バックアップファイルを表す文字 [bak]　(半角3文字限定で十分でしょう)<br>　　　・バックアップファイルを表す文字 [b]　保存する世代数  [1-99] (b00-98)<br>(・はラジオボタン; [　]内の文字(列)／数はユーザが変更可能)<br><br>#今あるキャプションは「ファイルの後ろ」の説明が少しわかりにくいですね。<br></div></section>
+    <ul><li><section><h1 id=194>
+    <span class="no">[194]</span>
+    <a class="thread-title" href="#194">Re:バックアップファイル名</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-03-17T22:04:38">2001年03月17日 22:04</time></h1>
+    <div class="body">この内容は外部仕様の変更なので、一般掲示板に続けます。</div></section>
+    </li></ul></li></ul></body></html>

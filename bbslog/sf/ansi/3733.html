@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>-GREPDLG が機能していない？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3733</span>
+    <a class="thread-title" href="3733.html#3733">-GREPDLG が機能していない？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3734</span>
+    <a class="thread-title" href="3733.html#3734">Re:-GREPDLG が機能していない？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3736</span>
+    <a class="thread-title" href="3733.html#3736">Re2:-GREPDLG が機能していない？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3733>
+    <span class="no">[3733]</span>
+    <a class="thread-title" href="#3733">-GREPDLG が機能していない？</a>
+    <span class="author">あまのじゃっく</span>
+    <time datetime="2004-09-01T17:24:30">2004年09月01日 17:24</time></h1>
+    <div class="body">-GREPDLG　サクラエディタが起動すると同時にGrepダイアログを表示します。<br><br>というようにヘルプに書かれているのですが起動しません。<br>タスクバーに常駐してアイコンからのGrepの起動は出来るのですが…。<br>確認をお願いします。<br><br>OS : Windows 2000 Professional<br>サクラエディタ Ver. : インストーラから入れた1.4.7<br>事象 : <br>　"%ProgramFiles%\sakura\sakura.exe" -GREPMODEと指定するが、<br>　新規ウインドウが表示されるだけの状態<br>　（本来ならば、Grep条件入力のダイアログが出るはず？）<br>　フルパスで指定しても、カレントディレクトリで実行しても起動せず。<br></div></section>
+    <ul><li><section><h1 id=3734>
+    <span class="no">[3734]</span>
+    <a class="thread-title" href="#3734">Re:-GREPDLG が機能していない？</a>
+    <span class="author">maru</span>
+    <time datetime="2004-09-01T20:51:03">2004年09月01日 20:51</time></h1>
+    <div class="body">▼ あまのじゃっくさん<br>&gt; 　"%ProgramFiles%\sakura\sakura.exe" -GREPMODEと指定するが、<br>-GREPMODE -GREPDLG<br>と、両方指定しないと駄目だったと思いますが<br>そういう問題ではなくて？</div></section>
+    <ul><li><section><h1 id=3736>
+    <span class="no">[3736]</span>
+    <a class="thread-title" href="#3736">Re2:-GREPDLG が機能していない？</a>
+    <span class="author">あまのじゃっく</span>
+    <time datetime="2004-09-02T15:41:14">2004年09月02日 15:41</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ▼ あまのじゃっくさん<br>&gt; &gt; 　"%ProgramFiles%\sakura\sakura.exe" -GREPMODEと指定するが、<br>&gt; -GREPMODE -GREPDLG<br>&gt; と、両方指定しないと駄目だったと思いますが<br>&gt; そういう問題ではなくて？<br><br>そういう問題でした。ゴメンナサイ。<br>文字コード指定でファイルを開く時に、開くファイルを指定するのが当たり前なように、<br>GREP実行モードで起動する場合、例え他のGrepに関するオプションがなんであろうと必ず -GREPMODE を指定しなければならないのですね。<br>ヘルプファイルを読む限りでは、-GREPMODEが必須の指定であることが読み取りにくいと思いますので、分かりやすい説明や例があるといいですね。<br>Tipsに含まれるような項目のため、詳細な説明は特に設けてないのでしょうか。<br>（普通の人はコマンドラインオプションを使う必要はないでしょう、とヘルプファイルに記述されていますし。）<br><br>maruさん、返信ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

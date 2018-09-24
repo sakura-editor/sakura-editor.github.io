@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Fix) タイプ別設定のデフォルト値を修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">471</span>
+    <a class="thread-title" href="471.html#471">Commit報告:(Fix) タイプ別設定のデフォルト値を修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">474</span>
+    <a class="thread-title" href="471.html#474">Re:Commit報告:(Fix) タイプ別設定のデフォルト値を修正</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=471>
+    <span class="no">[471]</span>
+    <a class="thread-title" href="#471">Commit報告:(Fix) タイプ別設定のデフォルト値を修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-08T19:28:06">2008年06月08日 19:28</time></h1>
+    <div class="body">リビジョン：<br>　rev1377<br><br>変更種別：<br>　修正<br><br>内容：<br>　タイプ別設定のデフォルト値が本家版と食い違ってしまっていたので、<br>　本家版に合うように修正しました。<br>　たとえばCPPデフォルト設定のクォーテーション文字列色替えは、<br>　本家版ではONですが、UNICODE版ではOFFになってしまっていました。<br><br><br>動作のフローを以下に説明します。<br><br>前リビジョンまでは、以下のようになってしまっていました。<br>本家版：<br>　共通 (UNICODE版で言うところの _DefaultConfig ) のデフォルト値を元に<br>　タイプ別設定のデフォルト値を構築<br>UNICODE版：<br>　「基本」(UNICODE版で言うところの CType_Basis ) のデフォルト値を元に<br>　タイプ別設定のデフォルト値を構築<br><br>今回の修正で本家版に合わせ、以下のようにしました。<br>UNICODE版：<br>　共通 (UNICODE版で言うところの _DefaultConfig ) のデフォルト値を元に<br>　タイプ別設定のデフォルト値を構築<br></div></section>
+    <ul><li><section><h1 id=474>
+    <span class="no">[474]</span>
+    <a class="thread-title" href="#474">Re:Commit報告:(Fix) タイプ別設定のデフォルト値を修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-08T22:16:39">2008年06月08日 22:16</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1377<br>&gt; <br>&gt; 変更種別：<br>&gt; 　修正<br>&gt; <br>&gt; 内容：<br>&gt; 　タイプ別設定のデフォルト値が本家版と食い違ってしまっていたので、<br>&gt; 　本家版に合うように修正しました。<br>大雑把にですが、動作確認しました。</div></section>
+    </li></ul></li></ul></body></html>

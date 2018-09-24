@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ウィンドウ作成時の座標バグ修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4171</span>
+    <a class="thread-title" href="4171.html#4171">ウィンドウ作成時の座標バグ修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4173</span>
+    <a class="thread-title" href="4171.html#4173">Re: ウィンドウ作成時の座標バグ修正</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4171>
+    <span class="no">[4171]</span>
+    <a class="thread-title" href="#4171">ウィンドウ作成時の座標バグ修正</a>
+    <span class="author">もか</span>
+    <time datetime="2005-11-27T02:47:42">2005年11月27日 02:47</time></h1>
+    <div class="body">・起動時の位置＝継承設定の場合、新規ウィンドウがずれる<br>タスクバーが上か左にあると、その幅分ずれてました。<br>・新規ウィンドウの画面位置・サイズ調整がマイナス座標を考慮していない<br>起動位置がマイナス座標になると、モニタが一つでも変です。<br>マルチモニタで非プライマリ モニタで画面からはみ出したとき、補正値が正しくないことがあります。<br>　たとえば、新規ウィンドウ位置を継承などしていて、「２」を左(マイナス座標)に置いて、<br>　ウィンドウが右側にはみ出ていると、プライマリに飛ばされます。<br><br>以上2点を修正したパッチです。<br>ブリーフケースにfimd001.zipとして置いておきます。<br><br>▼げんたさん<br>&gt;&gt;data:3816 1.4.6.0 <br>&gt;マルチモニタ対応<br>&gt;タブウィンドウ時に新規ウィンドウを開くところがそのままになっていますが，大丈夫かな？<br>タスクバーが上・左にあった場合は、非プライマリモニタで新規ウィンドウがずれます。<br>新規ウィンドウかを問わず、GetWindowPlacementとSetWindowPlacementの実行される間に、<br>タスクバーやクイック起動バーなどを移動してワークエリアが変更されれば、ずれることがあります。<br>これは、放置してあります。<br></div></section>
+    <ul><li><section><h1 id=4173>
+    <span class="no">[4173]</span>
+    <a class="thread-title" href="#4173">Re: ウィンドウ作成時の座標バグ修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-11-27T13:00:46">2005年11月27日 13:00</time></h1>
+    <div class="body">マルチモニター環境が無いので確認できませんが，とりあえず信じて入れておきます．<br></div></section>
+    </li></ul></li></ul></body></html>

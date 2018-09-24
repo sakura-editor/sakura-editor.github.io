@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Borland C++でのmake | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3870</span>
+    <a class="thread-title" href="3870.html#3870">Borland C++でのmake</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3871</span>
+    <a class="thread-title" href="3870.html#3871">Re:Borland C++でのmake</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3872</span>
+    <a class="thread-title" href="3870.html#3872">Re: Borland C++でのmake</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3875</span>
+    <a class="thread-title" href="3870.html#3875">Re2: Borland C++でのmake</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3879</span>
+    <a class="thread-title" href="3870.html#3879">Re3: Borland C++でのmake</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3881</span>
+    <a class="thread-title" href="3870.html#3881">Re3: Borland C++でのmake</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3870>
+    <span class="no">[3870]</span>
+    <a class="thread-title" href="#3870">Borland C++でのmake</a>
+    <span class="author">と</span>
+    <time datetime="2005-03-12T12:43:53">2005年03月12日 12:43</time></h1>
+    <div class="body">コマンドラインが長すぎて Borland C++でコンパイルできませんでした。<br>バージョン：1.5.2.0用<br></div></section>
+    <ul><li><section><h1 id=3871>
+    <span class="no">[3871]</span>
+    <a class="thread-title" href="#3871">Re:Borland C++でのmake</a>
+    <span class="author">tty</span>
+    <time datetime="2005-03-12T15:23:09">2005年03月12日 15:23</time></h1>
+    <div class="body">▼ とさん<br>&gt; コマンドラインが長すぎて Borland C++でコンパイルできませんでした。<br>&gt; バージョン：1.5.2.0用<br>レスポンスファイルを使用してください。<br></div></section>
+    </li><li><section><h1 id=3872>
+    <span class="no">[3872]</span>
+    <a class="thread-title" href="#3872">Re: Borland C++でのmake</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-03-12T20:30:41">2005年03月12日 20:30</time></h1>
+    <div class="body">レスポンスファイルを使うようにmakefile書き換えないとまずいんですね．<br></div></section>
+    <ul><li><section><h1 id=3875>
+    <span class="no">[3875]</span>
+    <a class="thread-title" href="#3875">Re2: Borland C++でのmake</a>
+    <span class="author">tty</span>
+    <time datetime="2005-03-12T23:51:04">2005年03月12日 23:51</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; レスポンスファイルを使うようにmakefile書き換えないとまずいんですね．<br>ちなにみ、<br><br>sakura_rc.exe : $(OBJS)<br>&#9;$(CC) $(CPPFLAGS) $(OPTFLAGS) -W -e$(OUTDIR)\$. @respfile<br><br>と<br><br>.cpp.obj :<br>&#9;$(CC) $(CPPFLAGS) $(OPTFLAGS) -o$@ -c $&lt;<br>&#9;echo $@&gt;&gt;respfile<br><br>.c.obj :<br>&#9;$(CC) $(CPPFLAGS) $(OPTFLAGS) -o$@ -c $&lt;<br>&#9;echo $@&gt;&gt;respfile<br><br><br>だけでいけるかと。…試してないですが。<br></div></section>
+    <ul><li><section><h1 id=3879>
+    <span class="no">[3879]</span>
+    <a class="thread-title" href="#3879">Re3: Borland C++でのmake</a>
+    <span class="author">と</span>
+    <time datetime="2005-03-19T11:43:39">2005年03月19日 11:43</time></h1>
+    <div class="body"><br>ttyさんありがとうございます。<br><br>上の方法でコンパイルできるようになりました。<br><br>何度か失敗したので注意点をいくつかあげておきます<br>・makefileを修正したらまずmake cleanする<br>・コンパイルするたびにrespfileが大きくなる<br>  ↓を追加してときどきrespfileを掃除するようにしました<br><br>clobber:<br>  &#9; ...<br>  &#9; erase $(OUTDIR)\respfile<br></div></section>
+    </li><li><section><h1 id=3881>
+    <span class="no">[3881]</span>
+    <a class="thread-title" href="#3881">Re3: Borland C++でのmake</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-03-19T19:09:40">2005年03月19日 19:09</time></h1>
+    <div class="body">&gt;タイトル: Re3: Borland C++でのmake<br>&gt;発言者: tty<br>&gt;▼ げんたさん<br>&gt;&gt; レスポンスファイルを使うようにmakefile書き換えないとまずいんですね．<br><br>ご無沙汰してます。かろとです。<br><br>ボーランドのmakeなので、<br><br>sakura_rc.exe : $(OBJS)<br>&#9;$(CC) $(CPPFLAGS) $(OPTFLAGS) -W -e$(OUTDIR)\$. @&amp;&amp;! <br>$**<br>!<br><br>とやって、レスポンスファイルを作成させることができます。<br>（@&amp;&amp;! は、次の!までをファイルにして、レスポンスファイルとしてね。という意味）<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

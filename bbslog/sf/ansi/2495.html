@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>パスの縮小表現のテスト実装 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2495</span>
+    <a class="thread-title" href="2495.html#2495">パスの縮小表現のテスト実装</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2496</span>
+    <a class="thread-title" href="2495.html#2496">RE: パスの縮小表現のテスト実装</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2499</span>
+    <a class="thread-title" href="2495.html#2499">RE: パスの縮小表現のテスト実装</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2502</span>
+    <a class="thread-title" href="2495.html#2502">Re2: パスの縮小表現のテスト実装</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2504</span>
+    <a class="thread-title" href="2495.html#2504">mydoc2.zip</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2505</span>
+    <a class="thread-title" href="2495.html#2505">Re3: パスの縮小表現のテスト実装</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2508</span>
+    <a class="thread-title" href="2495.html#2508">Re4: mydoc2.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2509</span>
+    <a class="thread-title" href="2495.html#2509">Re5: mydoc2.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2512</span>
+    <a class="thread-title" href="2495.html#2512">Re6: mydoc4.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2513</span>
+    <a class="thread-title" href="2495.html#2513">Re7: mydoc4.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2515</span>
+    <a class="thread-title" href="2495.html#2515">Re8: mydoc4.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2518</span>
+    <a class="thread-title" href="2495.html#2518">Re9: mydoc5.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2522</span>
+    <a class="thread-title" href="2495.html#2522">Re10: sted01.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2529</span>
+    <a class="thread-title" href="2495.html#2529">Re11: sted01.zip</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2528</span>
+    <a class="thread-title" href="2495.html#2528">Re10: mydoc5.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2546</span>
+    <a class="thread-title" href="2495.html#2546">Re11: mydoc7.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2547</span>
+    <a class="thread-title" href="2495.html#2547">Re12: mydoc7.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2548</span>
+    <a class="thread-title" href="2495.html#2548">Re13: mydoc7.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2550</span>
+    <a class="thread-title" href="2495.html#2550">Re14: mydoc8.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2551</span>
+    <a class="thread-title" href="2495.html#2551">Re15: mydoc8.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2553</span>
+    <a class="thread-title" href="2495.html#2553">Re16: mydoc8.zip</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2495>
+    <span class="no">[2495]</span>
+    <a class="thread-title" href="#2495">パスの縮小表現のテスト実装</a>
+    <span class="author">もか</span>
+    <time datetime="2002-11-27T11:07:35">2002年11月27日 11:07</time></h1>
+    <div class="body">昔(2002/02/12) 開発掲示板で<br>▼ [1562]やざきさん<br>&gt; マイドキュメントとか、デスクトップにあるファイルは、フルパスを書かないで<br>&gt; 「マイドキュメント\Bugsinfo.txt」<br>&gt; などと表示されると素敵じゃない？<br>というアイディアを元に，テスト実装してみました。<br>なお，開発中に付き仕様変更がありえます。<br>まだダイアログで設定できません。<br><br>■バイナリ版<br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/sakura_2002-11-26_mydoc1.zip<br>※sakura 1.3.5.6 の皮をかぶった特殊版です。<br>readme.txt に仕様，設定方法などが書いてあります。<br><br>差分/ソースファイルはすみません。まだ用意できていません。<br><br>#WinXPでしかテストしてません。<br></div></section>
+    <ul><li><section><h1 id=2496>
+    <span class="no">[2496]</span>
+    <a class="thread-title" href="#2496">RE: パスの縮小表現のテスト実装</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-11-27T23:22:19">2002年11月27日 23:22</time></h1>
+    <div class="body"><br>&gt;&gt; マイドキュメントとか、デスクトップにあるファイルは、フルパスを書かないで<br>&gt;&gt; 「マイドキュメント\Bugsinfo.txt」<br>&gt;&gt; などと表示されると素敵じゃない？<br>&gt;というアイディアを元に，テスト実装してみました。<br><br>w2kで動かしてみました。すばらしい。あたくし的には絶賛。<br></div></section>
+    </li><li><section><h1 id=2499>
+    <span class="no">[2499]</span>
+    <a class="thread-title" href="#2499">RE: パスの縮小表現のテスト実装</a>
+    <span class="author">すい</span>
+    <time datetime="2002-11-28T18:55:27">2002年11月28日 18:55</time></h1>
+    <div class="body">&gt;http://www.egroups.co.jp/files/sakura-editor/Developer/Source/sakura_2002-11-26_mydoc1.zip<br><br>なんか基本機能が変だわさ。<br><br>MS-DOS バッチファイルを開いてみる。するとなんかキーワードが強調表示されない。<br>強調される物もあるけどされない物もあり。<br><br>COPY とか Copy なんかは強調されるけど copy だと強調されない。<br>REN は強調されるけど ren や Ren は強調されない。<br><br>SAKURA.INI が異常になっている可能性を考え、<br>・エディタ全終了 → SAKURA.INI 削除 → エディタ起動 でデフォルト環境にしてみてもダメ。<br>・SAKURA.INI はそのままで SAKURA.EXE を 1.3.5.7 に入れ替えてみると正常に動作する。<br>という事で INI ファイルのせいでもないようで。<br><br><br>仕様としては非常にGoodな感じですわん。正式版に取り込まれる事に期待してます。<br>ただ、デフォルトの [～] 表示の [　] って目立たないですね。「最近使ったファイル」とかタイトルバーを見て思いました。<br>&lt;～&gt; に変えてみたけど．．．う～ん、いまいち。適度に目立つ文字．．．難しい。<br><br><br>%IECACHE% ですけど、IE 5 以上だと実際のキャッシュは Temporary Internet Files の<br>さらに階層下の CONTENT.IE5 というフォルダの下になるので %IECACHE% だけだと<br>CONTENT.IE5\～ になってしまうんですけど、この CONTENT.IE5 もいらない気がします。<br>今は設定で<br>From03=%IECACHE%\CONTENT.IE5<br>To03=&lt;IE&gt;<br>とかやってますけど、%IECACHE% の指示だけで CONTENT.IE5 も含むようにはできませんか？<br># あ、逆に それは やって欲しくないっていう人がいますかね？やるのはやめときます？<br><br><br>とりあえず README.TXT 読んだうえでよろこんで常用してます。<br>&gt;常用には使わないことを強く推奨します。<br>なんて書かれたら常用せずにいられませんし。(をぃ＞私)<br></div></section>
+    <ul><li><section><h1 id=2502>
+    <span class="no">[2502]</span>
+    <a class="thread-title" href="#2502">Re2: パスの縮小表現のテスト実装</a>
+    <span class="author">もか</span>
+    <time datetime="2002-12-02T10:16:31">2002年12月02日 10:16</time></h1>
+    <div class="body">まずは，やざきさんすいさん確認ありがとうございます。<br><br>▼ やざきさん<br>&gt; w2kで動かしてみました。すばらしい。あたくし的には絶賛。<br>どうもありがとうございます。<br>長らく放置されていた案なので，ひょっとしたら必要なのは<br>自分くらいかと思ってました。<br><br>▼ すいさん<br>&gt; なんか基本機能が変だわさ。<br>&gt; COPY とか Copy なんかは強調されるけど copy だと強調されない。<br>確認&amp;手元では修正しました。<br>バグ付きパッチアップするところでした。感謝します。<br><br>&gt; デフォルトの [～] 表示の [　] って目立たない<br>デフォルトをどうするか迷いますねぇ。うーん<br>1.そのまま(%MYDOCS% -&gt; マイドキュメント など)<br>2.＜～＞<br>3.[～]<br>&gt; %IECACHE%<br>%IECACHE% に \CONTENT.IE5 を含めても特に問題はないと思います。<br>CONTENT.IE5なしで指定したい場合は直接パスで記載すれば使えるので。<br><br>しまった，外部仕様は一般掲示板に移動しないと...<br><br>■バイナリ・パッチ付き版<br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/sakura_2002-12-02_mydoc2.zip<br>※sakura 1.3.5.7 を元に変更を加えた特殊版です。<br>前回との違いは<br>・強調表示のバグを修正<br>・%IECACHE%に\CONTENT.IE5を含める特殊処理を追加<br>・ほかバグ修正<br>・デフォルト設定変更<br>・パッチのソース付き<br>ダイアログで設定できないのは同じです。<br></div></section>
+    <ul><li><section><h1 id=2504>
+    <span class="no">[2504]</span>
+    <a class="thread-title" href="#2504">mydoc2.zip</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-02T18:34:50">2002年12月02日 18:34</time></h1>
+    <div class="body">&gt;確認&amp;手元では修正しました。<br><br>どもです。修正されている事を確認しました。(*^o^*)<br><br>ん？今度はもっと致命的だわさ。PPAのマクロが動作しないわさ。(ノ;＿；)<br>「文法エラーです[)]」って起こられるんだわさ。<br><br>&gt;デフォルトをどうするか迷いますねぇ。うーん<br>今度は<br>デスクトップ\～～<br>ですか。う～ん、これが結構デフォルト設定としては無難なセンかもしれませんね。(^^)<br># 極端な好き嫌いなどの好みも出にくそうで。<br><br>&gt;%IECACHE% に \CONTENT.IE5 を含めても特に問題はないと思います。<br><br>あれ？っという事が。<br><br>1) %IECACHE% だけの設定で、環境によって「IEキャッシュ」の後ろに Content.IE5 が<br>　 出たり出なかったり．．．<br><br>2) IE3 の環境で手作業で<br>　 HKEY_CURRENT_USER\Software\Microsoft\Win<br>dows\CurrentVersion\Explorer\Shell Folders<br>　 に Cache の値を設定してみたけど、「IEキャッシュ」表示にならないぞ!?<br><br>という症状が (;^^;)<br><br>調べて見たら<br>1) の環境では Cache の値は "C:\WINDOWS\Temporary Internet Files\"（末尾に \ があり）<br>でした。末尾に \ があると Content.IE5 が出てしまうようで。<br>でも、この \ をレジストリエディタで削除しても IE 起動時に自動的に \ 付きに<br>修正されてしまう。埒あかんっす。<br><br>2) は逆に "C:\WINDOWS\Temporary Internet Files"（末尾に \ 無し）という値を設定したから<br>らしい。"C:\WINDOWS\Temporary Internet Files\" と \ 付きにしたらちゃんと<br>「IEキャッシュ」表示になりました。でも他の環境や値を見ても末尾に \ 無いのって普通では。。<br><br>まとめると<br>・レジストリ値の末尾に \ があったり無かったりの違いで動作が違うみたい。<br>・世の中にはレジストリ値の末尾に \ がある環境と無い環境がある。<br>ということのようで．．．うにゃ。<br><br><br>使っているうちに欲が出てきました。<br>今だと sakura.exe にプログラミングされている文字列しか使えませんよね？<br>つまり %DESKTOP%,%MYDOCS%,%MYPICS%,%MYMUSIC%,%I<br>ECACHE%,%SAKURA% だけ。<br>たとえば「AppData」を登録したいという人や「お気に入り」や「Cookies」を<br>登録したい、なんていう人が出たらどうしようもないですよね。<br># そんな設定する人は少ない気もしますけど。<br><br>なので、プログラミング中に文字列を入れておくのをやめて<br>「%～～% という文字列があったら HKEY_CURRENT_USER\...\Shell Folders から<br>　～～ という値が無いか探して、その値を使う」<br>というように出来ませんか？（もちろん %SAKURA% は別なわけですが。）<br>%My Pictures% とか %Start Menu% みたいな感じに設定する。<br># ちょっと文字列処理が増えそうですけど。<br><br>その方がより汎用．．．もっともマイドキュメントは %Personal% と指示するとか、<br>設定が直感的ではなくなってしまう物もありますけど。<br><br>んで、さらにレジストリ値だけでなく、レジストリに値がない場合は getenv で<br>環境変数の値も取って見るようになると %TEMP% なんかが設定できて幸せ～～。<br>%TEMP% 内のファイルいじり、よくやるもので。<br><br>UNIX好きな人も %HOME% なんて設定できそ で 幸せかも。<br></div></section>
+    </li><li><section><h1 id=2505>
+    <span class="no">[2505]</span>
+    <a class="thread-title" href="#2505">Re3: パスの縮小表現のテスト実装</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-12-02T21:30:35">2002年12月02日 21:30</time></h1>
+    <div class="body"><br>&gt;どうもありがとうございます。<br>&gt;長らく放置されていた案なので，ひょっとしたら必要なのは<br>&gt;自分くらいかと思ってました。<br><br>いやいや、思いつきでデスクトップで作業したりすることがあるので、すごく便利だと思ってます。<br><br><br>&gt;&gt; デフォルトの [～] 表示の [　] って目立たない<br>&gt;デフォルトをどうするか迷いますねぇ。うーん<br>&gt;1.そのまま(%MYDOCS% -&gt; マイドキュメント など)<br>&gt;2.＜～＞<br>&gt;3.[～]<br><br>「そのまま」が意外によい感じだと思ったので、デフォルトが違うものになっても私は「そのまま」で使うと思いますっ。<br>環境変数を見たりとかは、あまりうれしさを感じないので、賛成はしません。反対もしません(^-^;<br></div></section>
+    <ul><li><section><h1 id=2508>
+    <span class="no">[2508]</span>
+    <a class="thread-title" href="#2508">Re4: mydoc2.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2002-12-05T14:58:48">2002年12月05日 14:58</time></h1>
+    <div class="body">&gt;ん？今度はもっと致命的だわさ。PPAのマクロが動作しないわさ。(ノ;＿；)<br>&gt;「文法エラーです[)]」って起こられるんだわさ。<br>VC6.0Proの最適化オプションを「実行速度優先(sakuraでの初期設定)」でコンパイルすると発生するようです。<br>原因が良くわかりませんでしたが，<br>CPPA.cppだけコンパイルオプションを変更したところ回避できました。<br>なお，バージョンをさかのぼってコンパイル＆テストしたところ，<br>1.3.2.0～1.3.1.5(ssrc_2002-06-24?)の付近の時点からエラーが発生します。<br>#このバグの調査で時間を使ってしまい，本題のほうはおろそかです。<br><br>&gt;&gt; %IECACHE% の \CONTENT.IE5<br>&gt;あれ？っという事が。<br>末尾の\に対する処理を考慮したつもりがバグってました。<br>手元ではちゃんと付加されるように修正しました。<br><br>■%～%の仕様について<br>%～%自体は「ファイルパスを短く表示する」機能とはソースの通り別関数です。<br>例えば，ルールファイル名の指定に使えば，「%SAKURA%\Rule\diff.rule」と指定できるようになります。<br>このように将来を考えれば，汎用性は高いほうが良いことは確かです。<br>もしこのように使うのであれば，環境変数を見るというのは重要かも。<br>そういう意味では，Content.IE5を付加する処理はないほうが良いとかもと，いまさら思いました。<br><br>#ほとんど，command.com/CMDですね。<br><br>レジストリ名直指定をするなら，<br>&gt; 設定が直感的ではなくなってしまう物もありますけど。<br>そういうものには，現在の実装のようにエイリアス名(%My Documents%=Personalとか)をつけておく。<br>というのはどうでしょうか？<br></div></section>
+    <ul><li><section><h1 id=2509>
+    <span class="no">[2509]</span>
+    <a class="thread-title" href="#2509">Re5: mydoc2.zip</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-06T12:59:22">2002年12月06日 12:59</time></h1>
+    <div class="body">&gt;&gt;PPAのマクロが動作しない<br>&gt;VC6.0Proの最適化オプションを「実行速度優先(sakuraでの初期設定)」でコンパイルすると発生するようです。<br>&gt;原因が良くわかりませんでしたが，<br>&gt;CPPA.cppだけコンパイルオプションを変更したところ回避できました。<br>&gt;なお，バージョンをさかのぼってコンパイル＆テストしたところ，<br>&gt;1.3.2.0～1.3.1.5(ssrc_2002-06-24?)の付近の時点からエラーが発生します。<br>&gt;#このバグの調査で時間を使ってしまい，本題のほうはおろそかです。<br><br>「う～ん、この機能とは関係なさそうなところなのにぃ」と思っていたらそういうカラクリでしたか。<br>調査、ご苦労様です。<br><br><br>&gt;■%～%の仕様について<br>&gt;%～%自体は「ファイルパスを短く表示する」機能とはソースの通り別関数です。<br>&gt;例えば，ルールファイル名の指定に使えば，「%SAKURA%\Rule\diff.rule」と指定できるようになります。<br><br>ありゃ、ソースを見ていませんでしたが、そういう事もできるんですか。<br>それはますますもってありがたいです。ソースも見てみます。<br>コンピュータによってインストール先ドライブとかが異なる場合、<br>設定をコピーするのが楽（ほとんどsakura.iniのコピーだけに近くなる）になりますね。<br><br>&gt;レジストリ名直指定をするなら，<br>&gt;&gt; 設定が直感的ではなくなってしまう物もありますけど。<br>&gt;そういうものには，現在の実装のようにエイリアス名(%My Documents%=Personalとか)をつけておく。<br>&gt;というのはどうでしょうか？<br><br>その手の事までやるとそれだけプログラムが複雑に．．．プログラムはシンプルな方が、、と思っての提案だったのですが。(^^;<br>出来るのでしたらそこまでやった方が一般ユーザーには分かり易そうですね。<br></div></section>
+    <ul><li><section><h1 id=2512>
+    <span class="no">[2512]</span>
+    <a class="thread-title" href="#2512">Re6: mydoc4.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2002-12-09T19:56:58">2002年12月09日 19:56</time></h1>
+    <div class="body"><br>#すいません。時間がないので手短に書きます。<br><br>レジストリ，環境変数を読むように仕様変更<br>共通設定で設定できるようになりました。<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/sakura_2002-12-09_mydoc4.zip<br><br>mydoc2と同時起動すると落ちるので注意してください。<br></div></section>
+    <ul><li><section><h1 id=2513>
+    <span class="no">[2513]</span>
+    <a class="thread-title" href="#2513">Re7: mydoc4.zip</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-09T21:25:06">2002年12月09日 21:25</time></h1>
+    <div class="body">&gt;レジストリ，環境変数を読むように仕様変更<br>&gt;共通設定で設定できるようになりました。<br><br># お、my_appicon.ico 対応版ですね。<br><br>すごいすごい!! very good ですわん。<br><br>デフォルト設定値もこんな感じなら万人向けでよろしいのではないかと。<br>私的には満足満足 大満足なかんじです。<br># 今のところ特に不具合も無さげです。<br></div></section>
+    <ul><li><section><h1 id=2515>
+    <span class="no">[2515]</span>
+    <a class="thread-title" href="#2515">Re8: mydoc4.zip</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-10T12:25:23">2002年12月10日 12:25</time></h1>
+    <div class="body">&gt;# 今のところ特に不具合も無さげです。<br>ごめんなさい。m(_ _)m<br>見落としがありました。<br><br>ソース中<br><br>&gt; static const MetaAlias[] = {<br>&gt; 　　　・・・<br>&gt; {  _T("COMDOC"),   7, _T("Common Documents")   },<br>&gt; 　　　・・・<br>&gt; }<br><br>"COMDOC" は 6文字。7文字になってる。<br>%COMDOC% で指示すると「共有ドキュメント\\hogehoge\hoge」みたいに \\ になってしまふ。<br><br>そういえば前のバージョン（sakura_2002-12-02_mydoc2）も<br>MACRODIR (8文字)が 7文字になってましたね。こちらも動かなかったのでは。どのみちコメントアウトされてましたけど。<br></div></section>
+    <ul><li><section><h1 id=2518>
+    <span class="no">[2518]</span>
+    <a class="thread-title" href="#2518">Re9: mydoc5.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2002-12-11T19:48:24">2002年12月11日 19:48</time></h1>
+    <div class="body">mydoc5 をegroupsにアップロードしました。<br><br>&gt;&gt; static const MetaAlias[] = {<br>&gt;&gt; 　　　・・・<br>&gt;&gt; {  _T("COMDOC"),   7, _T("Common Documents")   },<br>&gt;&gt; 　　　・・・<br>&gt;&gt; }<br>&gt;"COMDOC" は 6文字。7文字になってる。<br>&gt;%COMDOC% で指示すると「共有ドキュメント\\hogehoge\hoge」みたいに \\ になってしまふ。<br>報告ありがとうございます。訂正しました。<br><br>他に以下の修正があります。<br>・『ファイル名表示』タブ[更新]をすると，置換後の文字列がリストビューとエディットボックスで，交換される<br>  もしや、と思いテストしてみるとタイプ別設定『正規表現キーワード』の[色指定]も同様に交換されます。<br>  こっちは直してません。<br>#誰か～<br>・CPropComFileName.cppを入れ忘れていたから入れた<br>・全角英数→半角英数と半角英数→全角英数の名前が逆なのを修正<br><br>■バイナリ&amp;パッチ(ソース)版<br>sakura_2002-12-11_mydoc5.zip<br><br>■パッチ(ソース)版<br>mydoc05.zip<br><br>ついでに，アウトライン解析にsted formatを追加するパッチも作ってみました。<br>sted01.zip<br></div></section>
+    <ul><li><section><h1 id=2522>
+    <span class="no">[2522]</span>
+    <a class="thread-title" href="#2522">Re10: sted01.zip</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-12-11T22:45:19">2002年12月11日 22:45</time></h1>
+    <div class="body">&gt;ついでに，アウトライン解析にsted formatを追加するパッチも作ってみました。<br>アウトラインタイトルの末尾にCRLFが入ってしまい，それが画面上で・・として見えてしまうのが気になります．<br><br>CEditDoc::MakeTopicTree_sted()の<br>_tcsncpy( szTitle, pLine, MAX_TITLE );<br>szTitle[MAX_TITLE] = '\0';<br>で，最後の改行コードを除いてコピーしないといけないと思いますが，Unicodeでも動くようにするにはどう書けばいい？ CMemoryクラスを直して行末コード末尾の文字数を適切に返すようにする必要ってありますか？<br></div></section>
+    <ul><li><section><h1 id=2529>
+    <span class="no">[2529]</span>
+    <a class="thread-title" href="#2529">Re11: sted01.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2002-12-13T13:13:38">2002年12月13日 13:13</time></h1>
+    <div class="body"><br>▼ げんたさん<br>&gt;アウトラインタイトルの末尾にCRLFが入ってしまい，それが画面上で・・として見えてしまうのが気になります．<br>&gt;<br>&gt;CEditDoc::MakeTopicTree_sted()の<br>&gt;_tcsncpy( szTitle, pLine, MAX_TITLE );<br>&gt;szTitle[MAX_TITLE] = '\0';<br>&gt;で，最後の改行コードを除いてコピーしないといけないと思いますが，Unicodeでも動くようにするにはどう書けばいい？<br>...たしかにその通りです。ご指摘ありがとうございます。<br><br>この関数に関してだけは<br>_tcsncpy( szTitle, pLine, min(nLineLen, MAX_TITLE) );<br>szTitle[min(nLineLen, MAX_TITLE)] = '\0';<br>でどうでしょうか。<br><br>&gt;CMemoryクラスを直して行末コード末尾の文字数を適切に返すようにする必要ってありますか？<br>今の所(MakeTopicTree_stedにおいては)必要はないようです。<br>サクラ全体を見るとどうなんでしょう？<br><br>#どうゆうわけか、WinXPではツリー末尾が・・になりませんでした。妙なところが賢くなってますね&gt;WinXP<br></div></section>
+    </li></ul></li><li><section><h1 id=2528>
+    <span class="no">[2528]</span>
+    <a class="thread-title" href="#2528">Re10: mydoc5.zip</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-12T23:42:28">2002年12月12日 23:42</time></h1>
+    <div class="body">&gt;mydoc5 をegroupsにアップロードしました。<br><br>Alias の %MYDOC% は動くのに %MYPICT%,%COMDOC% なんかが動作しませんね。<br>MetaAlias の検索部が変わったせい？<br><br>他は異常無しっぽいです。<br></div></section>
+    <ul><li><section><h1 id=2546>
+    <span class="no">[2546]</span>
+    <a class="thread-title" href="#2546">Re11: mydoc7.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2003-01-16T17:05:22">2003年01月16日 17:05</time></h1>
+    <div class="body">ようやくアップしました。<br></div></section>
+    <ul><li><section><h1 id=2547>
+    <span class="no">[2547]</span>
+    <a class="thread-title" href="#2547">Re12: mydoc7.zip</a>
+    <span class="author">すい</span>
+    <time datetime="2003-01-17T12:16:52">2003年01月17日 12:16</time></h1>
+    <div class="body">指をくわえて眺めています。(;_;) （バイナリが無いようなので）<br><br># 個人的にはマクロフォルダ %MACRODIR% の復帰(? とは言わないかも？(^^;) )希望。<br><br>レジストリから文字列を取得後、「// 最後のフォルダ区切り記号を削除する」<br>していますが、その処理中で「// SJIS読み飛ばし」していますが、<br>これでは読み飛ばしていないのでは？と思いました。<br>&gt; if( _IS_SJIS_1( (unsigned char)*pStr ) &amp;&amp; _IS_SJIS_2( (unsigned char)pStr[1] ) ){<br>&gt; 　　// SJIS読み飛ばし<br>&gt; }else<br>「// SJIS読み飛ばし」の場所で「pStr++」しないと。<br>現状では２バイト文字の１バイト目の時は“文字列末尾の '\\' 判定処理”しませんが、<br>次のループでは pStr が +１されて２バイト文字の２バイト目の文字をそのまま<br>“文字列末尾の '\\' 判定処理”しちゃいそう。<br>レジストリから取得した文字列の末尾が '表' だったりしたら２バイト目の 0x5C が消えちゃいませんか？<br>試していない（試せない）んですけど。<br><br>他<br>今、処理が<br><br>１．%～% の ～ の値をレジストリから取得する。<br>　　取得できたら、末尾から '\\' 削除。<br><br>２．レジストリから所得できなかったら ～ の値を環境変数から取得する。<br>　　取得できたら “短いファイル名”⇒“長いファイル名” 変換する。<br><br>３．取得できなかったらそのまま %～% という文字列を使用する。<br><br>になっていますが、<br><br>１．%～% の ～ の値をレジストリから取得する。<br><br>２．レジストリから所得できなかったら ～ の値を環境変数から取得する。<br><br>３．レジストリまたは環境変数から文字列を取得できたら、<br>　　{<br>　　　　“短いファイル名”⇒“長いファイル名” 変換<br>　　　　末尾の '\\' を削除<br>　　}<br>　　して使用する。<br><br>４．取得できなかったらそのまま %～% という文字列を使用する。<br><br>にした方が良さげな気が。<br>万が一、レジストリから取得した文字列が“短いファイル名”だったら？とか<br>環境変数から取得した文字列の末尾に '\\' が付いていたら？とか。<br># あんまり あり得なさそうな気はしますが。<br>文字列が見つかった後の置換処理も１箇所で済みますし。<br></div></section>
+    <ul><li><section><h1 id=2548>
+    <span class="no">[2548]</span>
+    <a class="thread-title" href="#2548">Re13: mydoc7.zip</a>
+    <span class="author">すい</span>
+    <time datetime="2003-01-17T12:43:51">2003年01月17日 12:43</time></h1>
+    <div class="body">&gt;１．%～% の ～ の値をレジストリから取得する。<br>&gt;２．レジストリから所得できなかったら ～ の値を環境変数から取得する。<br>&gt;３．レジストリまたは環境変数から文字列を取得できたら、<br>&gt;　　{<br>&gt;　　　　“短いファイル名”⇒“長いファイル名” 変換<br>&gt;　　　　末尾の '\\' を削除<br>&gt;　　}<br>&gt;　　して使用する。<br>&gt;４．取得できなかったらそのまま %～% という文字列を使用する。<br><br>if %SAKURA% {<br>　　nMetaLen = 6<br>　　szPath = エディタのパス<br>}<br>else if %MACRODIR%{<br>　　nMetaLen = 8<br>　　szPath = マクロのパス<br>}<br>else{<br>　　ALIAS 処理<br>　　szPath = レジストリから取得<br>　　取得できなかった{<br>　　　　szPath = 環境変数から取得<br>　　　　取得できなかった {<br>　　　　　　%～～% をそのまま使用して continue;<br>　　　　}<br>　　}<br>}<br><br>“短いファイル名”⇒“長いファイル名” 変換<br>末尾の '\\' 削除<br><br>nPathLen = _tcslen( szPath );<br>if( pd + nPathLen &lt; pd_end &amp;&amp; nPathLen != 0 ){<br>　　_tmemcpy( pd, szPath, nPathLen );<br>　　pd += nPathLen;<br>　　ps += nMetaLen;<br>}else{<br>　　*pd = '\0';<br>　　return false;<br>}<br>continue;<br><br>なんて雰囲気にしておけば、後々 %SAKURA% なんかの「独自のメタ文字列」の<br>追加も楽かな～～？とか思ったりしました。(^^)ゞ<br></div></section>
+    <ul><li><section><h1 id=2550>
+    <span class="no">[2550]</span>
+    <a class="thread-title" href="#2550">Re14: mydoc8.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2003-01-28T17:39:36">2003年01月28日 17:39</time></h1>
+    <div class="body">▼すいさん<br>&gt;「// SJIS読み飛ばし」の場所で「pStr++」しないと。<br>みごとに読み飛ばしてないみたいですね。<br><br>以下変更点概要です。<br>・SJISを読み飛ばしていなかったのを修正<br>・すいさんの書いたような流れに書き換え<br>・短いファイル名→長いファイル名変換に時間がかかるようなので、メタ文字の展開をキャッシュするように変更<br>・トレイメニューも簡易表示を行うように追加<br><br>%MACRODIR%はとりあえず保留としておきます。<br><br>#もう、2ヶ月経過したのか。。<br></div></section>
+    <ul><li><section><h1 id=2551>
+    <span class="no">[2551]</span>
+    <a class="thread-title" href="#2551">Re15: mydoc8.zip</a>
+    <span class="author">すい</span>
+    <time datetime="2003-01-29T20:53:10">2003年01月29日 20:53</time></h1>
+    <div class="body">大体うまいこと動いています。<br><br>「%% は %」の処理、ps++ が抜けてるっぽいわん。<br>ポインタ ps を１文字余計に進めないと。<br>実際に試して見ると %% を % とみなす処理が機能していませんね。%% の扱いのまま。<br><br>// %% は %<br>if( '%' == ps[1] ){<br>　　*pd = '%';<br>　　pd++;<br>　　ps++;　　← 必要<br>　　continue;<br>}<br><br>他はソースを追えていないです。キャッシュとか。  # 眠ひ (_ _)/..zzZZZ<br>でも動作を見た感じでは問題無いようですので。すんばらしいっす。<br></div></section>
+    <ul><li><section><h1 id=2553>
+    <span class="no">[2553]</span>
+    <a class="thread-title" href="#2553">Re16: mydoc8.zip</a>
+    <span class="author">もか</span>
+    <time datetime="2003-02-01T19:02:26">2003年02月01日 19:02</time></h1>
+    <div class="body">▼すい<br>&gt;大体うまいこと動いています。<br>&gt;「%% は %」の処理、ps++ が抜けてるっぽいわん。<br>&gt;ポインタ ps を１文字余計に進めないと。<br>毎度、お世話になります。m(__)m<br><br>#Ctrl + Tab を押しつづけると、ウィンドウタイトルがアクティブでなくても<br>#フルパスのままになってしまうようですが、昔からそうだったのかな？<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

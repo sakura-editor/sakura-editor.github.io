@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>トピック番号(一般掲示板から移動) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">116</span>
+    <a class="thread-title" href="116.html#116">トピック番号(一般掲示板から移動)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">117</span>
+    <a class="thread-title" href="116.html#117">Re:トピック番号(一般掲示板から移動)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">118</span>
+    <a class="thread-title" href="116.html#118">Re2:トピック番号(一般掲示板から移動)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">119</span>
+    <a class="thread-title" href="116.html#119">Re3:トピック番号(一般掲示板から移動)</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=116>
+    <span class="no">[116]</span>
+    <a class="thread-title" href="#116">トピック番号(一般掲示板から移動)</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-12-11T13:01:52">2001年12月11日 13:01</time></h1>
+    <div class="body">▼ やざきさん<br>&gt;   それなら一気に変えないで、まずは<br>&gt;   FuncID_To_HelpContextID()<br>&gt;   で、sakura.hhを参照するように、変更してみませんか？<br><br>これは早めにやりたいですね。<br>これもGPL化問題で、sakura.hhの扱いをどうするか考えようとしたところで止まってます。<br>そのときの案としてはsakura_coreフォルダあたりにsakura.hhのコピーを置いて参照しようと<br>していたと思います。<br><br>&gt; 実はIDが足りてなかったとか、<br>３月頃にトピック番号はFuncID_To_HelpContextID()経由で取得するように<br>変更したのですが(更新履歴参照)、それ以降に追加されたダイアログに対応する<br>ポップアップヘルプで説明文がないものがあるかも。<br><br>&gt; ヘルプと本体で、異なるIDを割り当てられてたとか<br>これは多分なさそう？<br><br>&gt; これなら、F_FILENEWなどに変えてしまって、弊害があった<br>&gt; というわけでもなさそうかな？<br><br>やることになったとして、FuncID_To_HelpContextID()の中身を<br>　switch( nFuncID ){<br>　　　case xxx: return xxxx;<br>　　　case xxx: return xxxx;<br>　　　default: return nFuncID;<br>　}<br>とかでしょうか。<br></div></section>
+    <ul><li><section><h1 id=117>
+    <span class="no">[117]</span>
+    <a class="thread-title" href="#117">Re:トピック番号(一般掲示板から移動)</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-11T16:51:55">2001年12月11日 16:51</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; ▼ やざきさん<br>&gt; &gt;   それなら一気に変えないで、まずは<br>&gt; &gt;   FuncID_To_HelpContextID()<br>&gt; &gt;   で、sakura.hhを参照するように、変更してみませんか？<br>&gt; <br>&gt; これは早めにやりたいですね。<br>&gt; これもGPL化問題で、sakura.hhの扱いをどうするか考えようとしたところで止まってます。<br>&gt; そのときの案としてはsakura_coreフォルダあたりにsakura.hhのコピーを置いて参照しようと<br>&gt; していたと思います。<br><br>GPL化問題でsakura.hhの扱いをどうするかって、<br>何が問題だったんですか？<br><br>よくわかってないんですけど、どこかログを読めば<br>経緯（とか問題とされている点）がわかったりしますか？<br><br><br>&gt; やることになったとして、FuncID_To_HelpContextID()の中身を<br>&gt; 　switch( nFuncID ){<br>&gt; 　　　case xxx: return xxxx;<br>&gt; 　　　case xxx: return xxxx;<br>&gt; 　　　default: return nFuncID;<br>&gt; 　}<br>&gt; とかでしょうか。<br><br>暫定的に、sakura.hhを参照するようにしたとして、<br>問題がなければ最終的には、<br><br>int FuncID_To_HelpContextID( int nFuncID )<br>{<br>  switch( nFuncID ){<br>    case F_UNINDENT_TAB: return F_INDENT_TAB;<br>    case F_UNINDENT_SPACE: return F_INDENT_SPACE;<br>    default: return nFuncID;<br>  }<br>}<br><br>ですかね。<br><br>ひとまず、sakura.hhを参照するように変えてみます。</div></section>
+    <ul><li><section><h1 id=118>
+    <span class="no">[118]</span>
+    <a class="thread-title" href="#118">Re2:トピック番号(一般掲示板から移動)</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-11T17:40:38">2001年12月11日 17:40</time></h1>
+    <div class="body">&gt; ひとまず、sakura.hhを参照するように変えてみます。<br><br>というわけで変えてみました。<br>eGroupにアップロードしてあります。<br><br>スクリプトで、sakura.hhのコメントと、etc_uty.cppの<br>コメントが同一か否かを判断したかったため、<br>適宜sakura.hhのコメントを、etc_uty.cppのコメントに<br>あわせています。<br><br>致命的かもしれませんが、コンパイル＆テストをしていません。。。</div></section>
+    <ul><li><section><h1 id=119>
+    <span class="no">[119]</span>
+    <a class="thread-title" href="#119">Re3:トピック番号(一般掲示板から移動)</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-12-19T13:11:53">2001年12月19日 13:11</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; &gt; ひとまず、sakura.hhを参照するように変えてみます。<br>&gt; <br>&gt; というわけで変えてみました。<br>&gt; eGroupにアップロードしてあります。<br>ありがとうございます。m(_ _)m<br><br>&gt; GPL化問題でsakura.hhの扱いをどうするかって、<br>&gt; 何が問題だったんですか？<br><br>開発掲示板の[330]付近ですが、既に記事が消えてますね。<br>（本体とヘルプの両方からsakura.hhを参照させる→本体とヘルプ、それぞれのライセンス規定と矛盾するパターンは生じないか？）<br>とりあえずsakura.hhのコピーをsakura_coreにおいといて、問題が出たら考えることにしましょう。<br><br>▼ 私<br>&gt; やることになったとして、FuncID_To_HelpContextID()の中身を<br>&gt; 　switch( nFuncID ){<br>&gt; 　　　case xxx: return xxxx;<br>&gt; 　　　case xxx: return xxxx;<br>&gt; 　　　default: return nFuncID;<br>&gt; 　}<br>&gt; とかでしょうか。<br><br>と書いたものの、新機能を追加したくなったときに、機能番号を決めるのにポップアップヘルプや総合情報で<br>使われているトピック番号を気にしながら、というのではかえってメンテナンスが不便かも。。。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

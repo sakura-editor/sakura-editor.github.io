@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タブのバグ修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3301</span>
+    <a class="thread-title" href="3301.html#3301">タブのバグ修正</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3301>
+    <span class="no">[3301]</span>
+    <a class="thread-title" href="#3301">タブのバグ修正</a>
+    <span class="author">みく</span>
+    <time datetime="2003-11-07T23:41:44">2003年11月07日 23:41</time></h1>
+    <div class="body"><br>・タブ表示＆まとめないモードで、ウインドウを2個開く。<br>・一方を最小化する。<br>・もう一方で最小化したほうのタブをクリックする。<br>・何も起こらない。<br><br>CTabWnd.cpp:780行目<br>void CTabWnd::TabWnd_ActivateFrameWindow( HWND hwnd )<br>{<br>&#9;if( ::IsIconic( hwnd ) )<br>&#9;{<br>&#9;&#9;::ShowWindow( hwnd, SW_RESTORE );<br>&#9;}<br></div></section>
+    </li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>プラグイン定義ファイル(plugin.def) の記載方法について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7461</span>
+    <a class="thread-title" href="7461.html#7461">プラグイン定義ファイル(plugin.def) の記載方法について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7462</span>
+    <a class="thread-title" href="7461.html#7462">Re:プラグイン定義ファイル(plugin.def) の記載方法について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7464</span>
+    <a class="thread-title" href="7461.html#7464">Re2:プラグイン定義ファイル(plugin.def) の記載方法について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7461>
+    <span class="no">[7461]</span>
+    <a class="thread-title" href="#7461">プラグイン定義ファイル(plugin.def) の記載方法について</a>
+    <span class="author">deh</span>
+    <time datetime="2011-11-13T12:18:16">2011年11月13日 12:18</time></h1>
+    <div class="body">プラグインの作成に関連して、教えていただきたいことがあります。<br><br>プラグイン仕様_20110628 によりますと、<br> 「Plugin.GetDef(section, key) にて定義ファイルの値を取得する」<br> とありますが、プラグイン定義ファイル(plugin.def)に値を設定する方法が分かりません。<br> <br>試しに、plugin.defに<br>[Option]<br>O[1]            = "TEST"<br>O[1].Section    = Section<br>O[1].Key        = Key<br>O[1].Type       = Str<br><br>と記述して、"TEST"という値の取得を試みたのですが、何も取得できませんでした。<br>記載の方法が間違っているのでしょうか。<br>もし、分かる方いらっしゃいましたら、ご教授願います。<br></div></section>
+    <ul><li><section><h1 id=7462>
+    <span class="no">[7462]</span>
+    <a class="thread-title" href="#7462">Re:プラグイン定義ファイル(plugin.def) の記載方法について</a>
+    <span class="author">syat</span>
+    <time datetime="2011-11-14T01:17:16">2011年11月14日 01:17</time></h1>
+    <div class="body">▼ dehさん<br>&gt; [Option]<br>&gt; O[1]            = "TEST"<br><br>キー名のあとに続くスペースもキー名の一部と認識されるようで、イコールの左右のスペースを削除して、<br>O[1]="TEST"<br>とすれば、Plugin.GetDef('Option', 'O[1]')で取得できます。<br><br>プラグイン仕様の3.1.の記述、キー名と説明の間に = を置いたのはただの飾りだったのですが、まぎらわしかったですね。<br></div></section>
+    <ul><li><section><h1 id=7464>
+    <span class="no">[7464]</span>
+    <a class="thread-title" href="#7464">Re2:プラグイン定義ファイル(plugin.def) の記載方法について</a>
+    <span class="author">deh</span>
+    <time datetime="2011-11-14T20:57:19">2011年11月14日 20:57</time></h1>
+    <div class="body">▼ syatさん<br>&gt; ▼ dehさん<br>&gt; &gt; [Option]<br>&gt; &gt; O[1]            = "TEST"<br>&gt; <br>&gt; キー名のあとに続くスペースもキー名の一部と認識されるようで、イコールの左右のスペースを削除して、<br>&gt; O[1]="TEST"<br>&gt; とすれば、Plugin.GetDef('Option', 'O[1]')で取得できます。<br>&gt; <br>&gt; プラグイン仕様の3.1.の記述、キー名と説明の間に = を置いたのはただの飾りだったのですが、まぎらわしかったですね。<br><br>できました！ありがとうございました！<br><br>定義ファイル（plugin.def）からPlugin.GetDefを使って取得する場合は、Section名を'Option'、Key名を'O[1]'のように指定するんですね。オプションファイル（xxxxx.ini）からPlugin.GetOptionを使って取得する場合の、Section名、Key名と混同していました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>行番号エリアのShift+ドラッグがちょっと妙 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5202</span>
+    <a class="thread-title" href="5202.html#5202">行番号エリアのShift+ドラッグがちょっと妙</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5204</span>
+    <a class="thread-title" href="5202.html#5204">RE: 行番号エリアのShift+ドラッグがちょっと妙</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5205</span>
+    <a class="thread-title" href="5202.html#5205">RE: 行番号エリアのShift+ドラッグがちょっと妙</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5206</span>
+    <a class="thread-title" href="5202.html#5206">RE2: 行番号エリアのShift+ドラッグがちょっと妙</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5207</span>
+    <a class="thread-title" href="5202.html#5207">Re3: 行番号エリアのShift+ドラッグがちょっと妙</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5214</span>
+    <a class="thread-title" href="5202.html#5214">Re4: 行番号エリアのShift+ドラッグがちょっと妙</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5215</span>
+    <a class="thread-title" href="5202.html#5215">Re5: 行番号エリアのShift+ドラッグがちょっと妙</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5242</span>
+    <a class="thread-title" href="5202.html#5242">Re6: 行番号エリアのShift+ドラッグがちょっと妙</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5202>
+    <span class="no">[5202]</span>
+    <a class="thread-title" href="#5202">行番号エリアのShift+ドラッグがちょっと妙</a>
+    <span class="author">maru</span>
+    <time datetime="2007-12-01T17:44:11">2007年12月01日 17:44</time></h1>
+    <div class="body">行番号エリアをShift+クリックすると、カーソル位置からクリックした行までが選択されますが、そこからドラッグしたときの話です。<br><br>上から下(行番号の小さい方から大きい方)にドラッグしたときは、カーソル位置からドラッグ現在行までが選択範囲になります。<br><br>一方、下から上にドラッグしたときは、カーソル位置をまたがるようにドラッグすると、カーソル位置は無視されてドラッグ開始行からドラッグ現在行までが選択範囲になるようです。<br><br>バグとは言うにはちょっと微妙ですが、かなり違和感を感じます。<br></div></section>
+    <ul><li><section><h1 id=5204>
+    <span class="no">[5204]</span>
+    <a class="thread-title" href="#5204">RE: 行番号エリアのShift+ドラッグがちょっと妙</a>
+    <span class="author">maru</span>
+    <time datetime="2007-12-01T18:05:09">2007年12月01日 18:05</time></h1>
+    <div class="body">小出しにしてすいません。<br><br>範囲選択状態からのShift+行番号クリックでも、微妙な感じです。<br><br>事前の範囲選択の状態が次のふたつの場合で、Shift+行番号クリックの結果が異なります。<br><br>１．カーソルが選択終了位置にある場合<br>２．カーソルが選択開始位置にある場合<br><br>また、Shift+行番号クリックを複数回繰り返すような操作では、&gt;&gt;dev:5202と似たような現象になりますね。<br></div></section>
+    </li><li><section><h1 id=5205>
+    <span class="no">[5205]</span>
+    <a class="thread-title" href="#5205">RE: 行番号エリアのShift+ドラッグがちょっと妙</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-12-01T18:17:06">2007年12月01日 18:17</time></h1>
+    <div class="body">初めて試してみました(笑)<br><br>このあたりの動作はかつて話題に上ったことがあるような気がします．<br>基本的には単語選択～範囲拡張と同じ考え方になっていて，最初の範囲を含んだ状態で領域を拡張しているのでしょう．<br>単語選択→Shift＋カーソルで選択範囲変更 を行うと，範囲は小さいですが同様の動作になります．<br><br>論理的に考えれば一貫性があるように思えなくもないですが...<br><br>行番号クリックの際にどこまでを初期範囲とみなすかが焦点ですね．<br></div></section>
+    <ul><li><section><h1 id=5206>
+    <span class="no">[5206]</span>
+    <a class="thread-title" href="#5206">RE2: 行番号エリアのShift+ドラッグがちょっと妙</a>
+    <span class="author">maru</span>
+    <time datetime="2007-12-01T18:49:23">2007年12月01日 18:49</time></h1>
+    <div class="body">▼ げんたさん<br>&gt;・・・範囲は小さいですが同様の動作になります．<br>言われてみれば、統一した動作ですね。&gt;&gt;dev:5204は期待通りということで。<br><br>ドラッグの下から上は、行番号エリアでカーソル位置をまたがるドラッグのときだけ動作が異なるので、やっぱり変じゃないですか？<br><br>例えば、3行目にカーソルがあって、5行目から1行目まで行番号エリアをShift+ドラッグです。<br></div></section>
+    <ul><li><section><h1 id=5207>
+    <span class="no">[5207]</span>
+    <a class="thread-title" href="#5207">Re3: 行番号エリアのShift+ドラッグがちょっと妙</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2007-12-01T20:44:14">2007年12月01日 20:44</time></h1>
+    <div class="body">・行番号エリアの左クリックで行選択<br>・Shift + 左クリックで選択開始位置からクリック位置まで選択<br><br>上記2つがからみ合って不自然な動作になっているのではないでしょうか？<br>個人的には、Shift + 行番号エリアの左クリック時のクリックは行頭クリックとして扱った方が良いと思います。<br><br>これは、編集エリアにてShiftを押しながらマウスダウンし行番号エリアまでドラッグした時と同じ動作です。<br></div></section>
+    <ul><li><section><h1 id=5214>
+    <span class="no">[5214]</span>
+    <a class="thread-title" href="#5214">Re4: 行番号エリアのShift+ドラッグがちょっと妙</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2007-12-09T01:06:31">2007年12月09日 01:06</time></h1>
+    <div class="body">「Shift + 行番号エリアのクリックは行頭クリックとして扱う」パッチを作りました。<br>と言っても1行変更してるだけです (^^;<br><br>#1846786 ShiftClick01_1207.diff</div></section>
+    <ul><li><section><h1 id=5215>
+    <span class="no">[5215]</span>
+    <a class="thread-title" href="#5215">Re5: 行番号エリアのShift+ドラッグがちょっと妙</a>
+    <span class="author">maru</span>
+    <time datetime="2007-12-09T16:34:09">2007年12月09日 16:34</time></h1>
+    <div class="body">ソースを眺めてみましたが、なんだか難しそうですね。<br>（１）行選択をまたがるShift+行番号ドラッグで上からの場合と下からの場合<br>（２）行内の一部分のみ選択されている場合のShift+行番号ドラッグ<br>（３）行選択範囲が複数行の場合のShift+行番号ドラッグ<br><br>すべてのケースで、単語選択からの範囲拡張のときと同じ法則で動作させるのはなんだか難しそう。<br><br>&gt;「Shift + 行番号エリアのクリックは行頭クリックとして扱う」<br>&gt;#1846786 ShiftClick01_1207.diff<br><br>このパッチなら、少なくとも（１）が解消されるため、以前より統一感があっていいですね。（２）（３）は、こういう動作だと思えば、それほど違和感もありませんし。<br></div></section>
+    <ul><li><section><h1 id=5242>
+    <span class="no">[5242]</span>
+    <a class="thread-title" href="#5242">Re6: 行番号エリアのShift+ドラッグがちょっと妙</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2008-01-13T16:16:41">2008年01月13日 16:16</time></h1>
+    <div class="body">そもそもの“単語選択～範囲拡張”の操作、やってみましたけれど、<br>単語選択した後の選択範囲変更操作において、<br>・単語の左端へ移動[Shift+Ctrl+←] → Sift+左方向キーで範囲拡張<br>・右方向キーで範囲拡張<br>以外の、例えば単語選択した後にSift+左方向キーを押しっぱなして<br>拡張していくというような操作は、あまり馴染める感覚では<br>ありませんでした。途中で選択開始位置が変わる為かなあと、<br>何も分からず使う分には感じます。<br>慣れれば便利なのかもしれませんが ＾＾<br><br>なので、単語選択からの範囲拡張は珍しい動作かなという<br>初印象を受けた（笑）ので、&gt;&gt;5215 の流れに<br>賛同します（・・；</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

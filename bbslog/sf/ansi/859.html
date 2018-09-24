@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ブックマークなど | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">859</span>
+    <a class="thread-title" href="859.html#859">ブックマークなど</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">863</span>
+    <a class="thread-title" href="859.html#863">Re: ブックマークなど</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">864</span>
+    <a class="thread-title" href="859.html#864">Re2: ブックマークなど</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">872</span>
+    <a class="thread-title" href="859.html#872">Re2: ブックマーク＋気づいたこと＋妄想少々</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">873</span>
+    <a class="thread-title" href="859.html#873">Re3: ブックマーク＋気づいたこと＋妄想少々</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">877</span>
+    <a class="thread-title" href="859.html#877">Re3: ブックマーク＋気づいたこと＋妄想少々</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">865</span>
+    <a class="thread-title" href="859.html#865">Re2: ブックマークなど</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">866</span>
+    <a class="thread-title" href="859.html#866">Re3: ブックマークなど</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">867</span>
+    <a class="thread-title" href="859.html#867">Re:ブックマークなど</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">870</span>
+    <a class="thread-title" href="859.html#870">Re2:ブックマークなど</a></div>
+    </li><li><div class="list-title">
+    <span class="no">871</span>
+    <a class="thread-title" href="859.html#871">Re3:ブックマークなど</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=859>
+    <span class="no">[859]</span>
+    <a class="thread-title" href="#859">ブックマークなど</a>
+    <span class="author">hor</span>
+    <time datetime="2001-11-29T18:57:49">2001年11月29日 18:57</time></h1>
+    <div class="body">始めまして！ C++初心者です。<br><br>ssrc_2001-11-09.zip にブックマークや範囲内置換の<br>機能を追加してみました。<br><br>更新したファイルをJunk/ssrc_2001-11-09_plus.lzh<br>に置いておきましたので良かったら使ってみて下さい。</div></section>
+    <ul><li><section><h1 id=863>
+    <span class="no">[863]</span>
+    <a class="thread-title" href="#863">Re: ブックマークなど</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-11-30T10:09:51">2001年11月30日 10:09</time></h1>
+    <div class="body">&gt;ssrc_2001-11-09.zip にブックマークや範囲内置換の<br>&gt;機能を追加してみました。<br>sakura_rc.rcが入っていません．<br><br>sakura_rc.hmのコメントが全部失われていますが，これってVC4で編集するとこうなっちゃうのかな？このファイルって手作りなんでしたっけ ＞みくさん<br><br>CEditView::Command_FUNCLIST の追加引数はBookmark ON/OFFフラグではなくてアウトライン解析方法を直接指定するようにした方が後々のことを考えるといいとおもいます．例えば構造化エディタに対応させようとすると似たような機能が必要になりますので．<br>OUTLINE_DEFAULT = -1 とかいうのを定義して，それが指定されたら標準の解析方法を使うようにし，それ以外なら指定の解析方法を使うようにすれば良いと思います．<br><br>CShareData.cppの uShareDataVersion は17にしてください．<br><br>あと，機能変更が行われている点は現行動作と使い比べてもう少し意見を聞く必要があると思います．<br><br>* 箱型選択時でも上書モードを有効に<br>* 共通設定のタスクトレイがらみのEnable制御を廃止（使いにくかったので・・・）<br>* １ページスクロールの雰囲気をメモ帳ライクに<br>* １ページスクロールと半ページスクロールのデフォルトキー割当を入れ替え<br><br>→「検索マークのクリア」を「検索マークの切替え」に変更<br>* 文字を選択した状態で実行すると.......選択文字をマーク<br>* 文字を選択してない状態で実行すると...マークのクリア<br><br>□置換オプションの拡張<br>* クリップボードから張り付け<br>* 検索文字列の前に挿入<br>* 検索文字列の後に追加<br>* 選択範囲内で置換（ 複数行選択時にデフォルトON ）<br></div></section>
+    <ul><li><section><h1 id=864>
+    <span class="no">[864]</span>
+    <a class="thread-title" href="#864">Re2: ブックマークなど</a>
+    <span class="author">hor</span>
+    <time datetime="2001-11-30T11:43:40">2001年11月30日 11:43</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; sakura_rc.rcが入っていません．<br>&gt; <br>&gt; CEditView::Command_FUNCLIST の追加引数はBookmark ON/OFFフラグではなくてアウトライン解析方法を直接指定するようにした方が後々のことを考えるといいとおもいます．例えば構造化エディタに対応させようとすると似たような機能が必要になりますので．<br>&gt; OUTLINE_DEFAULT = -1 とかいうのを定義して，それが指定されたら標準の解析方法を使うようにし，それ以外なら指定の解析方法を使うようにすれば良いと思います．<br>&gt; <br>&gt; CShareData.cppの uShareDataVersion は17にしてください．<br>&gt; <br><br>変更したファイルを Junk に置きました。<br>・・・よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=872>
+    <span class="no">[872]</span>
+    <a class="thread-title" href="#872">Re2: ブックマーク＋気づいたこと＋妄想少々</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-04T19:03:07">2001年12月04日 19:03</time></h1>
+    <div class="body"><br>Bookmark機能はかなりいい感じですね．Outlineに関しても，Bookmarkと同様にマークを入れることで前後の関数へジャンプできるようになるとさらにいいけど，それは後々の話．そのときは複数種のマークを使い分ける必要がありますね．<br>そのときは CEditView::Command_BOOKMARK_PREV( int bookmark_type ) みたいにして１つの関数で何とかなるかも．<br><br>そこまで考えると，Outlineの解析自体→マーク登録→必要に応じてツリーorリスト表示となるのかなぁ．ただ，ツリー構造をどうやって覚えておくかが問題だな．<br><br>&gt;変更したファイルを Junk に置きました。<br>▼気づいたこと<br>テキストのアウトライン解析がBookmark表示になってしまうようです．<br><br>置換で「クリップボードから貼り付け」のときは置換後文字列が意味を持たないのでDisableにした方がいいと思います．<br><br>矩形選択での上書きで文字を入力すると上書き後に矩形全体が削除された上で1文字挿入されますが，矩形が同じサイズで残っているのでもう1文字入力するとさらに同じサイズが消えてしまいます．これは意図した動作ですか？<br><br>Bookmarkアイコンが追加されているのですが，MIKさん，じぇぷろさん，26さんが作ったアイコンファイルには入っていませんよね．<br>この辺の折り合いはどうすればいいのだろうか．アイコン編集ツールが本気で欲しくなってきた．<br><br>最後に，sakura_rc.hmのコメントを何とか保存できないですか？<br><br>ソースの確認はまだ行っていません．<br></div></section>
+    <ul><li><section><h1 id=873>
+    <span class="no">[873]</span>
+    <a class="thread-title" href="#873">Re3: ブックマーク＋気づいたこと＋妄想少々</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-05T09:30:39">2001年12月05日 09:30</time></h1>
+    <div class="body">コメントありがとうございます。<br><br>▼ げんたさん<br>&gt; Outlineの解析自体→マーク登録→必要に応じてツリーorリスト表示となるのかなぁ．<br>&gt; ただ，ツリー構造をどうやって覚えておくかが問題だな．<br><br>タイプ別設定の変更時やテキスト編集時の振る舞いが大変そうな気もしますので、<br>Outlineの解析結果から「マークの切替え」,「すべてにマーク」などを実行可能に<br>するってゆうのが現実的かな、と思うのですがいかがでしょう？<br><br>&gt; テキストのアウトライン解析がBookmark表示になってしまうようです．<br>&gt; 置換で「クリップボードから貼り付け」のときは置換後文字列が意味を持たないのでDisableにした方がいいと思います．<br><br>次回Upするときに修正しておきます。<br><br>&gt; 矩形選択での上書きで文字を入力すると上書き後に矩形全体が削除された上で1文字挿入されますが，矩形が同じサイズで残っているのでもう1文字入力するとさらに同じサイズが消えてしまいます．<br>&gt; これは意図した動作ですか？<br><br>一応、意図した動作なのですが、使い道がなさそうな気がしてます。<br>いきおいで追加してしまいました。<br><br>&gt; Bookmarkアイコンが追加されているのですが，MIKさん，じぇぷろさん，26さんが作ったアイコンファイルには入っていませんよね．<br>&gt; この辺の折り合いはどうすればいいのだろうか．<br><br>デフォルトのアイコンは、げんたさんのお好みで・・・<br>それ以外は「カスタムアイコン集」って雰囲気で共有フォルダ上に<br>整理するようにしてみてはいかがでしょうか？<br><br>&gt; sakura_rc.hmのコメントを何とか保存できないですか？<br><br>次回Upするときに修正しておきます。<br><br><br>以上、長文失礼しました。</div></section>
+    <ul><li><section><h1 id=877>
+    <span class="no">[877]</span>
+    <a class="thread-title" href="#877">Re3: ブックマーク＋気づいたこと＋妄想少々</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-05T22:38:56">2001年12月05日 22:38</time></h1>
+    <div class="body">▼horさん<br>&gt;&gt; Bookmarkアイコンが追加されているのですが，MIKさん，じぇぷろさん，26さんが作ったアイコンファイルには入っていませんよね．<br>&gt;&gt; この辺の折り合いはどうすればいいのだろうか．<br>&gt;<br>&gt;デフォルトのアイコンは、げんたさんのお好みで・・・<br>&gt;それ以外は「カスタムアイコン集」って雰囲気で共有フォルダ上に<br>&gt;整理するようにしてみてはいかがでしょうか？<br><br>カスタム用bitmapを公開するのは良いのですが，現行のbitmapにはbookmark用のアイコンがないのでその部分が真っ白になってしまいます．できれば従来のbitmapにもアイコンを追加したい！<br>たぶん今後もアイコン追加でこういったことが起こると思われますが，どうやってそれに対処するかという問題提起です．<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=865>
+    <span class="no">[865]</span>
+    <a class="thread-title" href="#865">Re2: ブックマークなど</a>
+    <span class="author">みく</span>
+    <time datetime="2001-11-30T18:46:30">2001年11月30日 18:46</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; sakura_rc.hmのコメントが全部失われていますが，これってVC4で編集するとこうなっちゃうのかな？このファイルって手作りなんでしたっけ ＞みくさん<br>自動生成です。<br><br>あと、const unsigned char* から const char* <br>へのキャストで何箇所かエラーになってます。<br>＃GetNextLine()の戻り値格納時だったかな。<br></div></section>
+    <ul><li><section><h1 id=866>
+    <span class="no">[866]</span>
+    <a class="thread-title" href="#866">Re3: ブックマークなど</a>
+    <span class="author">hor</span>
+    <time datetime="2001-11-30T19:36:41">2001年11月30日 19:36</time></h1>
+    <div class="body">▼ みくさん<br>&gt; あと、const unsigned char* から const char* <br>&gt; へのキャストで何箇所かエラーになってます。<br>&gt; ＃GetNextLine()の戻り値格納時だったかな。<br><br>Borland C++ Compiler は何も教えてくれませんでした・・・<br>Junk/ssrc_2001-11-09_plus1.lzh で解決しますか？<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=867>
+    <span class="no">[867]</span>
+    <a class="thread-title" href="#867">Re:ブックマークなど</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-01T11:45:34">2001年12月01日 11:45</time></h1>
+    <div class="body">1.2.103.0のリリースでリソースIDが追加されており、horさんの追加分と値が衝突していますので、お手数をおかけしますが衝突しないようにヘッダファイルの値を変更してください。<br></div></section>
+    <ul><li><section><h1 id=870>
+    <span class="no">[870]</span>
+    <a class="thread-title" href="#870">Re2:ブックマークなど</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-03T09:41:03">2001年12月03日 09:41</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 1.2.103.0のリリースでリソースIDが追加されており、horさんの追加分と値が衝突していますので、お手数をおかけしますが衝突しないようにヘッダファイルの値を変更してください。<br>2001-12-1版を基準に編集してみます。<br>Junk内のファイルは削除しました。</div></section>
+    </li><li><section><h1 id=871>
+    <span class="no">[871]</span>
+    <a class="thread-title" href="#871">Re3:ブックマークなど</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-03T14:59:18">2001年12月03日 14:59</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 1.2.103.0のリリースでリソースIDが追加されており、horさんの追加分と値が衝突していますので、お手数をおかけしますが衝突しないようにヘッダファイルの値を変更してください。<br><br>Source/ssrc_2001-12-01.zip からの変更分を、<br>  Junk/ssrc_2001-12-01_plus.lzh にUpしました。<br><br>ちょっとだけアイコンファイルも変わってます。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

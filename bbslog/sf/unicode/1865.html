@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>設定ファイル読み込み時のエラー処理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1865</span>
+    <a class="thread-title" href="1865.html#1865">設定ファイル読み込み時のエラー処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1866</span>
+    <a class="thread-title" href="1865.html#1866">Re:設定ファイル読み込み時のエラー処理</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1865>
+    <span class="no">[1865]</span>
+    <a class="thread-title" href="#1865">設定ファイル読み込み時のエラー処理</a>
+    <span class="author">あろか</span>
+    <time datetime="2012-12-14T23:30:21">2012年12月14日 23:30</time></h1>
+    <div class="body">V2ではsakura.iniやImportしたファイルの値が、ちょっとでもバッファより長いパラメータを読むと黙って落ちるようになっています。<br><br>とあるパッチをUchiさんに見てもらい、酷いなあと言って貰えたので何かしようと思いますが<br>ここを見ている皆さんはどんなエラー処理がよいですか？<br>a. 該当項目を捨てる/後ろを切り詰める<br>b. セクション単位で捨てる<br><br>1. ひっそりと aかb<br>2. ステータスバーに一行「設定ファイルの一部が無視されました」と表示して aかb<br>3. 「XXセクションのZZパラメータが規定の長さを超えています」みたいなダイアログでポップアップ<br></div></section>
+    <ul><li><section><h1 id=1866>
+    <span class="no">[1866]</span>
+    <a class="thread-title" href="#1866">Re:設定ファイル読み込み時のエラー処理</a>
+    <span class="author">Uchi</span>
+    <time datetime="2012-12-16T13:16:31">2012年12月16日 13:16</time></h1>
+    <div class="body">▼ あろかさん<br>2aが良いと思います<br>1aでも問題は無いと思います<br>3のダイアログは起動中のiniファイルとの絡みもあり避けたほうが無難ではないでしょうか</div></section>
+    </li></ul></li></ul></body></html>

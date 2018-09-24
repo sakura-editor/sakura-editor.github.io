@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ISO-8859-1対応 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6774</span>
+    <a class="thread-title" href="6774.html#6774">ISO-8859-1対応</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=6774>
+    <span class="no">[6774]</span>
+    <a class="thread-title" href="#6774">ISO-8859-1対応</a>
+    <span class="author">HAMO</span>
+    <time datetime="2008-09-30T17:17:06">2008年09月30日 17:17</time></h1>
+    <div class="body">ドイツ語のウムラウトなどASCII外のLatin-1文字を含み、<br>ISO-8859-1（Windows上では厳密にはCP1252）でエンコード<br>されているテキストを扱えるようになりませんか？<br><br>サクラエディタANSI版では、SJISで開き、欧文用フォントを<br>指定すれば表示、編集、保存が可能ですが、日本語の2バイト<br>文字として認識されるため、文字カウントやキャレット<br>移動は不適切になっています。これはShift-JISで内部処理<br>しているので当然ですね。<br><br>現在（rev1428）のUnicode版では、SJISで開くと、欧文<br>フォントでも日本語として認識され文字化けします。<br>UTF-7として開くと、日本語用フォントでも文字化けせず<br>表示され、文字カウントやキャレット移動も適切です。<br>しかし、保存するとUTF-7でエンコードされてしまいます。<br>（ちなみにUTF-8として開くと、ウムラウト付き文字などが<br>削除されて表示、保存されます）<br><br>Shift-JISとバイトコード上区別がつかないので、自動判別は<br>しなくてもかまいません（できれば優先設定があれば）。<br>対応していただけませんでしょうか。</div></section>
+    </li></ul></body></html>

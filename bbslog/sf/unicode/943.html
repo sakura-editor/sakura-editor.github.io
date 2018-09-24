@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告(Fix) ファイルサイズ警告の誤動作 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">943</span>
+    <a class="thread-title" href="943.html#943">Commit報告(Fix) ファイルサイズ警告の誤動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">947</span>
+    <a class="thread-title" href="943.html#947">Re:Commit報告(Fix) ファイルサイズ警告の誤動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">948</span>
+    <a class="thread-title" href="943.html#948">Re2:Commit報告(Fix) ファイルサイズ警告の誤動作</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=943>
+    <span class="no">[943]</span>
+    <a class="thread-title" href="#943">Commit報告(Fix) ファイルサイズ警告の誤動作</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-06-06T15:53:06">2009年06月06日 15:53</time></h1>
+    <div class="body">リビジョン：<br>　rev1583<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: 特定の条件で読み込むファイルのサイズ警告が誤動作する<br><br>以下の修正です。<br>・上限値の2048MBを指定するとどんなに小さなファイルでも警告が出る<br>・ファイルサイズ64bitの上位32bitを無視しているため超巨大ファイルを無警告で開こうとする場合がある<br>・設定画面で当該設定項目の文字の下側が切れている（表示領域不足）</div></section>
+    <ul><li><section><h1 id=947>
+    <span class="no">[947]</span>
+    <a class="thread-title" href="#947">Re:Commit報告(Fix) ファイルサイズ警告の誤動作</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-06-10T13:59:12">2009年06月10日 13:59</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; リビジョン：<br>&gt; 　rev1583<br>&gt; <br>&gt; 変更種別：<br>&gt; 　バグ修正<br>&gt; <br>&gt; 内容：<br>&gt; Fix: 特定の条件で読み込むファイルのサイズ警告が誤動作する<br>&gt; <br>&gt; 以下の修正です。<br>&gt; ・上限値の2048MBを指定するとどんなに小さなファイルでも警告が出る<br>&gt; ・ファイルサイズ64bitの上位32bitを無視しているため超巨大ファイルを無警告で開こうとする場合がある<br>&gt; ・設定画面で当該設定項目の文字の下側が切れている（表示領域不足）<br><br><br>見落としていたバグを修正していただいて恐縮です。<br>自分の適当な性格がにじみ出ております（汗<br><br>ところで、修正部分を見てみましたが、<br><br>74:&#9;&#9;LARGE_INTEGER nFileSize;<br>75:&#9;&#9;nFileSize.HighPart = wfd.nFileSizeHigh;<br>76:&#9;&#9;nFileSize.LowPart = wfd.nFileSizeLow;<br><br>この部分の LARGE_INTEGER は、MSDNを参照すると<br>Windows 2000 Professional 以上の環境が必要と<br>書いてあるのですが、Windows95 に対しては<br>大丈夫でしょうか。<br></div></section>
+    <ul><li><section><h1 id=948>
+    <span class="no">[948]</span>
+    <a class="thread-title" href="#948">Re2:Commit報告(Fix) ファイルサイズ警告の誤動作</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-06-10T15:02:48">2009年06月10日 15:02</time></h1>
+    <div class="body">&gt; この部分の LARGE_INTEGER は、MSDNを参照すると<br>&gt; Windows 2000 Professional 以上の環境が必要と<br>&gt; 書いてあるのですが、Windows95 に対しては<br>&gt; 大丈夫でしょうか。<br><br>大丈夫ですよ。<br>VC++6.0に付属のMSDNには、<br>  Windows NT: Requires version 3.1 or later.<br>  Windows: Requires Windows 95 or later.<br>とあります。<br>自分は昔からWin9x対応アプリで使ってますし。<br><br>最近のVS2008に付属のMSDNではWindows 2000よりも以前のOSを完全に無視した記載がところどころに見られますね～。<br>例えば、OutputDebugStringさえWindows 2000以降、と記載されています。（をいをい、ソレはないだろ～）<br>...酷いモノです。(^^;</div></section>
+    </li></ul></li></ul></li></ul></body></html>

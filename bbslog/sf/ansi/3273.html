@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CProfile cProfile;  が変？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3273</span>
+    <a class="thread-title" href="3273.html#3273">CProfile cProfile;  が変？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3277</span>
+    <a class="thread-title" href="3273.html#3277">RE: CProfile cProfile;  が変？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3280</span>
+    <a class="thread-title" href="3273.html#3280">Re2: CProfile cProfile;  が変？</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3283</span>
+    <a class="thread-title" href="3273.html#3283">Re:CProfile cProfile;  が変？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3284</span>
+    <a class="thread-title" href="3273.html#3284">訂正</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3273>
+    <span class="no">[3273]</span>
+    <a class="thread-title" href="#3273">CProfile cProfile;  が変？</a>
+    <span class="author">KEITA</span>
+    <time datetime="2003-10-22T21:31:47">2003年10月22日 21:31</time></h1>
+    <div class="body">AMD64版自ら公開しておきながら未テストのままでしたが、<br>Athlon64 + XP64bit-Edition(beta)で試しましたら、<br>どうもコントロールプロセスの起動に失敗。<br><br>今、調査したところ、CShareData_new.cpp の中の<br><br>CProfile  cProfile;<br><br>でNGになっているようです。まだしっかりと見ていませんが、<br>とりあえず乱暴ながらも関数の外に出す(グローバル)と正常に<br>動作はしますが．．．<br><br>はてさて．．．いかがなもんでしょう？<br><br>他にもCPropTypes.cpp内にも２ヶ所、カラーのインポート、<br>エクスポートの部分も同様です。<br></div></section>
+    <ul><li><section><h1 id=3277>
+    <span class="no">[3277]</span>
+    <a class="thread-title" href="#3277">RE: CProfile cProfile;  が変？</a>
+    <span class="author">もか</span>
+    <time datetime="2003-10-23T20:09:20">2003年10月23日 20:09</time></h1>
+    <div class="body">&gt;Athlon64 + XP64bit-Edition(beta)で<br>&gt;CShareData_new.cpp の中の<br>&gt;CProfile  cProfile;<br>&gt;でNGになっているようです。まだしっかりと見ていませんが、<br>&gt;とりあえず乱暴ながらも関数の外に出す(グローバル)と正常に<br>&gt;動作はしますが．．．<br>CProfileの64bit版での大きさをざっと計算してみたら、1MB超えます。<br>そのためスタックに入らないのだと思います。<br>*1. CProfileを動的確保に<br>  CProfile  cProfile;<br>  を以下のように書くとか<br>  CProfile&amp; cProfile = *(new CProfile());<br>  スコープの最後で「delete &amp;cProfile;」するのを忘れずに。<br>*2. 丁度いいタイミングでdskobaさんが作ってくれたSTL版を使う<br>のどちらかが良いと思います。<br><br>#AMD64版のスタックサイズはいくつなんでしょうか？<br>#デフォルト値がまさか1MBのままだったりして。<br></div></section>
+    <ul><li><section><h1 id=3280>
+    <span class="no">[3280]</span>
+    <a class="thread-title" href="#3280">Re2: CProfile cProfile;  が変？</a>
+    <span class="author">KEITA</span>
+    <time datetime="2003-10-24T11:46:27">2003年10月24日 11:46</time></h1>
+    <div class="body">&gt; #AMD64版のスタックサイズはいくつなんでしょうか？<br>&gt; #デフォルト値がまさか1MBのままだったりして。<br><br>　やはり、そのまさかでした。(^^;<br><br>IA64が正常に動作するので、スタックの問題も考えにくいなと<br>思ったのですが、どうもAMD64向けコンパイラはまだBetaのためか、<br>1MBのままのようですね。<br><br>LINKオプションで、IA64,AMD64共に<br>/STACK:1049000 を指定すると、OK<br>/STACK:1048000 を指定すると、NG<br>になるようです。<br>48KB強ほどオーバーしていることになりますね。<br><br>ということはIA64版コンパイラは、しっかり初期値が増やされて<br>いて問題が表面化しなかったことになります。<br><br>とりあえず、LINKオプションで対応したAMD64版とバッチファイル<br>の更新版はJunkに入れておきました。<br>http://www.egroups.co.jp/files/sakura-editor/Junk/<br><br>ちなみに<br>CProfile&amp; cProfile = *(new CProfile());<br>delete &amp;cProfile;<br>の組み合わせでもOKですし、dskobaさんのSTL版でもOKになる<br>はずですが、ちょっとテストしましたところ、まだAMD64版コン<br>パイラ側が十分に対応しきれていないようです。あまり突っ込む<br>とコンパイラのテスターになってしまうので、このあたりで<br>止めておきます。</div></section>
+    </li></ul></li><li><section><h1 id=3283>
+    <span class="no">[3283]</span>
+    <a class="thread-title" href="#3283">Re:CProfile cProfile;  が変？</a>
+    <span class="author">dskoba</span>
+    <time datetime="2003-10-25T17:09:12">2003年10月25日 17:09</time></h1>
+    <div class="body">CProfileを(STL版を使わずに)変更することで対処するなら<br><br>CMemory* m_pDataNameArr[MAX_SECNUM][MAX_SECDATA]<br>をやめて<br>CMemory*** m_pDataNameArr;<br>として<br><br>CProfile::CProfile()<br>{<br>  m_pDataNameArr = new CMemory**[MAX_SECNUM];<br>  for(int i = 0; i &lt; MAX_SECNUM; ++i ){<br>    m_pDataNameArr[i] = new CMemory*[MAX_SECDATA];<br>    for(int j = 0; j &lt; MAX_SECDATA; ++j ){<br>      m_pDataNameArr[i][j] = NULL;<br>    }<br>  }<br>}<br><br>CProfile::~CProfile()<br>{<br>  for(int i = 0; i &lt; MAX_SECNUM; ++i ){<br>    for(int j = 0; j &lt; MAX_SECDATA; ++j ){<br>      if( NULL != m_pDataNameArr[i][j] ){<br>        delete m_pDataNameArr[i][j];<br>      }<br>    }<br>    delete m_pDataNameArr[i];<br>  }<br>  delete m_pDataNameArr;<br>}<br>m_pSecNameArr, m_pDataArr も同様に動的確保へ変更する</div></section>
+    <ul><li><section><h1 id=3284>
+    <span class="no">[3284]</span>
+    <a class="thread-title" href="#3284">訂正</a>
+    <span class="author">dskoba</span>
+    <time datetime="2003-10-26T02:30:06">2003年10月26日 02:30</time></h1>
+    <div class="body">CProfile::~CProfile()<br>{<br>  for(int i = 0; i &lt; MAX_SECNUM; ++i ){<br>    for(int j = 0; j &lt; MAX_SECDATA; ++j ){<br>      if( NULL != m_pDataNameArr[i][j] ){<br>        delete m_pDataNameArr[i][j];<br>      }<br>    }<br>    delete[] m_pDataNameArr[i];<br>  }<br>  delete[] m_pDataNameArr;<br>}<br><br>delete ではなく delete[] でした。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

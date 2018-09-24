@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Fix/Imp) ANSI版rev1323相当の修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">382</span>
+    <a class="thread-title" href="382.html#382">Commit報告:(Fix/Imp) ANSI版rev1323相当の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">387</span>
+    <a class="thread-title" href="382.html#387">Re:Commit報告:(Fix/Imp) ANSI版rev1323相当の修正</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=382>
+    <span class="no">[382]</span>
+    <a class="thread-title" href="#382">Commit報告:(Fix/Imp) ANSI版rev1323相当の修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-05-10T13:57:04">2008年05月10日 13:57</time></h1>
+    <div class="body">ANSI版の最新trunk(rev1323)に相当する修正をcommitしておきました。<br><br>rev1324 Fix: [A済]印刷プレビューでホイールスクロールができなくなる<br>rev1325 Fix: [A済]ATOK16/2007の単語登録操作時に単語欄に選択範囲の語句が表示されない<br>rev1326 Fix: [A済][同名のC/C++ヘッダファイルを開く]と[同名のC/C++ソースファイルを開く]の動作が逆<br>rev1327 Imp: [A済]MyGetAncestorの動作修正<br>rev1328 Imp: [A済]TortoiseSVN 1.5 との併用で発生する問題対策<br>rev1329 Imp: [A済]タイプ別設定最大数拡張<br>rev1330 Fix: [A済]CEditWnd::OnMouseMoveでCDropSourceがメモリリークする<br>rev1331 [A済]BugsInfo.txt更新<br><br>rev1329に関する補足説明：<br>UNICODE版では、IOProfileData関数にエラー値を引数追加してあるようでしたが、現状これは使われておらず、省略値だとかえって初期設定値を破壊して都合が悪いため、エラー時は値を変更しないようにしています（以前と等価動作）。<br>そうしておかないとバージョンアップ時のオプション拡張で拡張された分のデフォルト値が…</div></section>
+    <ul><li><section><h1 id=387>
+    <span class="no">[387]</span>
+    <a class="thread-title" href="#387">Re:Commit報告:(Fix/Imp) ANSI版rev1323相当の修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-05-10T17:26:41">2008年05月10日 17:26</time></h1>
+    <div class="body">たくさんの対応ありがとうございます。m(_ _)m<br><br>&gt; rev1329に関する補足説明：<br>&gt; UNICODE版では、IOProfileData関数にエラー値を引数追加してあるようでしたが、現状これは使われておらず、省略値だとかえって初期設定値を破壊して都合が悪いため、エラー時は値を変更しないようにしています（以前と等価動作）。<br>&gt; そうしておかないとバージョンアップ時のオプション拡張で拡張された分のデフォルト値が…<br><br>なるほど、了解しました。<br>IOProfileData についてはけっこう前にいじったので、あまり覚えてないですが、<br>全体の流れ（デフォルト値設定→INI読み取り、という処理の順序）を見通すことが難しかったため、そのあたりを理解せずに、いじってしまっていた気がします。<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>【バグ報告】ノート線、対括弧の強調表示が有効な場合に括弧部分のノート線が欠ける。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7936</span>
+    <a class="thread-title" href="7936.html#7936">【バグ報告】ノート線、対括弧の強調表示が有効な場合に括弧部分のノート線が欠ける。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7937</span>
+    <a class="thread-title" href="7936.html#7937">RE: 【バグ報告】ノート線、対括弧の強調表示が有効な場合に括弧部分のノート線が欠ける。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7947</span>
+    <a class="thread-title" href="7936.html#7947">Re2: 【バグ報告】ノート線、対括弧の強調表示が有効な場合に括弧部分のノート線が欠ける。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7936>
+    <span class="no">[7936]</span>
+    <a class="thread-title" href="#7936">【バグ報告】ノート線、対括弧の強調表示が有効な場合に括弧部分のノート線が欠ける。</a>
+    <span class="author">皓い鴉</span>
+    <time datetime="2015-01-28T01:53:52">2015年01月28日 01:53</time></h1>
+    <div class="body">　お疲れ様です。<br>　もかさんの私用版（sakura 2.1.1.4 mocaskr_ver 010.20150101-r3911）にて確認しました。<br>　ノート線と対括弧の強調表示を有効にしている場合、カーソルを括弧に移動させて強調表示された後カーソルを他の場所へ移動させると、強調表示されていた両方の括弧の下に描画されていたノート線が欠けてしまいます。<br>　PatchUnicode #951「対括弧表示でも色分けのスキップ処理をする」の影響でしょうか？<br><br>　また別件ですが「Trunk2/sakura_core/prop」下にある「CPropCommon.cpp」と「CPropCommon.h」の状態がおかしくないでしょうか？<br>「TortoiseSVN」を使用しているのですが、変更ありのアイコンがオーバーレイ表示されているので一旦削除して「SVN更新」で最新化しようとしてもできません。<br>　しかしその二つのファイルがないとビルドできないので必要なファイルだと思うのですが、何か手順が間違っているのでしょうか？<br><br>　以上です。<br>　よろしくお願い致します。</div></section>
+    <ul><li><section><h1 id=7937>
+    <span class="no">[7937]</span>
+    <a class="thread-title" href="#7937">RE: 【バグ報告】ノート線、対括弧の強調表示が有効な場合に括弧部分のノート線が欠ける。</a>
+    <span class="author">もか</span>
+    <time datetime="2015-01-28T19:46:37">2015年01月28日 19:46</time></h1>
+    <div class="body">ノート線が欠ける現象確認しました。<br>原因は、通常の描画と対括弧の描画は別々で対括弧の方ではノート線を描画していないので、消えるんだと思います。<br>これはノート線実装時からのバグです。<br>sakura_core/view/CEditView_Paint_Bracket.cpp:240 CEditView::DrawBracketPair<br><br>&gt;また別件ですが「Trunk2/sakura_core/prop」下にある「CPropCommon.cpp」と「CPropCommon.h」の状態がおかしくないでしょうか？<br>うちでは特におかしくはないですね。<br>TortoiseSVNはたまにおかしい表示になることがありますが、だいたいはそのうち直ります。<br>conflict状態になるとSvn Updateしても最新にならない等あるので<br>TortoiseSVN＞Check for modificationsとかで確認してみるのをお勧めします。<br></div></section>
+    <ul><li><section><h1 id=7947>
+    <span class="no">[7947]</span>
+    <a class="thread-title" href="#7947">Re2: 【バグ報告】ノート線、対括弧の強調表示が有効な場合に括弧部分のノート線が欠ける。</a>
+    <span class="author">皓い鴉</span>
+    <time datetime="2015-02-15T11:02:54">2015年02月15日 11:02</time></h1>
+    <div class="body">▼ もかさん<br>　お疲れ様です。いつもお世話になっております。<br><br>&gt; これはノート線実装時からのバグです。<br><br>　あ、そうでしたか。見当違いなことを言ってしまい、申し訳ありませんでした。m(_ _)m<br><br>&gt; &gt;また別件ですが「Trunk2/sakura_core/prop」下にある「CPropCommon.cpp」と「CPropCommon.h」の状態がおかしくないでしょうか？<br>&gt; うちでは特におかしくはないですね。<br>&gt; TortoiseSVNはたまにおかしい表示になることがありますが、だいたいはそのうち直ります。<br>&gt; conflict状態になるとSvn Updateしても最新にならない等あるので<br>&gt; TortoiseSVN＞Check for modificationsとかで確認してみるのをお勧めします。<br><br>　助言、ありがとうございます。<br>　あれから色々と試してみたのですが、いつの間にやら直ってしまったようです。<br>　原因が不明なのですっきりしませんが、今のところまともに使えるようになったのでよしとしています。<br>　重ね重ねありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

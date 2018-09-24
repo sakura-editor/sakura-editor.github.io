@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>指定桁で折り返すを設定している時、1行の文字数が多いときに表示が崩れる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6889</span>
+    <a class="thread-title" href="6889.html#6889">指定桁で折り返すを設定している時、1行の文字数が多いときに表示が崩れる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6895</span>
+    <a class="thread-title" href="6889.html#6895">Re:指定桁で折り返すを設定している時、1行の文字数が多いときに表示が崩れる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6897</span>
+    <a class="thread-title" href="6889.html#6897">Re2:指定桁で折り返すを設定している時、1行の文字数が多いときに表示が崩れる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6899</span>
+    <a class="thread-title" href="6889.html#6899">Re3:指定桁で折り返すを設定している時、1行の文字数が多いときに表示が崩れる</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">6898</span>
+    <a class="thread-title" href="6889.html#6898">Re2:指定桁で折り返すを設定している時、1行の文字数が多いときに表示が崩れる</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6889>
+    <span class="no">[6889]</span>
+    <a class="thread-title" href="#6889">指定桁で折り返すを設定している時、1行の文字数が多いときに表示が崩れる</a>
+    <span class="author">Leta</span>
+    <time datetime="2009-02-04T00:39:49">2009年02月04日 00:39</time></h1>
+    <div class="body">Unicode版rev1519を使用させていただいておりますが、<br>表題の現象が起こりましたのでご報告いたします。<br><br>以下の手順で再現しました。<br>・折り返し方法を「指定桁で折り返す」に、折り返し桁数を10にする。<br>・281文字以上の改行を含まない文字を貼り付けるか入力する。<br>　(折り返し桁数に比例して異常が起こり始める文字数が変化します。)<br>・行末付近でカーソルを移動させていると折り返し桁以降に表示されたり、<br>　同一行が複数表示されたりします。<br><br>rev1428では再現しませんでした。<br></div></section>
+    <ul><li><section><h1 id=6895>
+    <span class="no">[6895]</span>
+    <a class="thread-title" href="#6895">Re:指定桁で折り返すを設定している時、1行の文字数が多いときに表示が崩れる</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-02-15T01:21:52">2009年02月15日 01:21</time></h1>
+    <div class="body">rev1532で修正されています。</div></section>
+    <ul><li><section><h1 id=6897>
+    <span class="no">[6897]</span>
+    <a class="thread-title" href="#6897">Re2:指定桁で折り返すを設定している時、1行の文字数が多いときに表示が崩れる</a>
+    <span class="author">Leta</span>
+    <time datetime="2009-02-16T15:08:29">2009年02月16日 15:08</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; rev1532で修正されています。<br>修正されたのを確認しました。ありがとうございました。<br><br>しかし、折り返しがらみで別の問題発見しましたのでお知らせします。<br><br>[EOF]が行末にあり、折り返ししてカーソルが次行の先頭桁にあるときに、<br><br>1.文字を入力してカーソルが2桁目に移動すると、前行末の[EOF]が画面から消えずに残る。<br>※Unicode版rev1519では、画面キャッシュONの時のみ発生しますが、<br>　rev1532では、画面キャッシュの設定の如何に関わらず発生します。<br><br>2.ステータスバーの桁数表示が折り返しをしているにもかかわらず1になっている。<br>※ANSI版でも同様の問題を確認しました。<br><br>どちらもBSやカーソル移動をした時、カーソルが[EOF]の直前にない時には発生しないようです。<br></div></section>
+    <ul><li><section><h1 id=6899>
+    <span class="no">[6899]</span>
+    <a class="thread-title" href="#6899">Re3:指定桁で折り返すを設定している時、1行の文字数が多いときに表示が崩れる</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-02-18T19:54:01">2009年02月18日 19:54</time></h1>
+    <div class="body">▼ Letaさん<br>&gt; [EOF]が行末にあり、折り返ししてカーソルが次行の先頭桁にあるときに、<br><br>カーソルが[EOF]より後ろにあるような感じになっていて、この状態自体が変ですね。(^^;<br>[EOF]も折り返すか、カーソルが[EOF]を超えないようにしないといけない感じ。<br><br>ANSI版では[EOF]も折り返してますが、<br><br>&gt; 2.ステータスバーの桁数表示が折り返しをしているにもかかわらず1になっている。<br>&gt; ※ANSI版でも同様の問題を確認しました。<br><br>の他に、<br><br>3.折り返しインデントが[EOF]折り返しに反映されない<br>4.開きなおすと[EOF]直前にあったカーソルが前の行末に行ってしまう<br><br>などというように細かい問題が（ANSI版にも）残っているようです。<br><br>・「[EOF]折り返し」には従来から苦労の跡（固有処理）が見られる<br>・にもかかわらず上記のような問題がまだ残っている<br>・UNICODE版を「[EOF]折り返し」に戻すのは手間がかかる<br>・他エディタを見ても「[EOF]折り返し」が主流ということはない<br><br>ということで、UNICODE版のほうは「[EOF]折り返し」に戻すのはやめて、折り返した場所（[EOF]を越えた場所）にカーソルが行かないようにしようかな？と思います。<br>＃「[EOF]折り返し」を完璧にやろうという意欲はちょっと湧きそうにない</div></section>
+    </li></ul></li><li><section><h1 id=6898>
+    <span class="no">[6898]</span>
+    <a class="thread-title" href="#6898">Re2:指定桁で折り返すを設定している時、1行の文字数が多いときに表示が崩れる</a>
+    <span class="author">Leta</span>
+    <time datetime="2009-02-16T15:30:06">2009年02月16日 15:30</time></h1>
+    <div class="body">もうひとつ、<br>Shift+Tab、Shift+Spaceが、先頭行を含まない折り返し以降の範囲選択では、<br>動作しないというものがあります。<br><br>このとき選択範囲を論理行全体に拡大してもらえるとうれしいのですが。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>全て行置換の結果 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5734</span>
+    <a class="thread-title" href="5734.html#5734">全て行置換の結果</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5735</span>
+    <a class="thread-title" href="5734.html#5735">Re:全て行置換の結果</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5736</span>
+    <a class="thread-title" href="5734.html#5736">Re2:全て行置換の結果</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5737</span>
+    <a class="thread-title" href="5734.html#5737">Re3:全て行置換の結果</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5738</span>
+    <a class="thread-title" href="5734.html#5738">Re:全て行置換の結果</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5739</span>
+    <a class="thread-title" href="5734.html#5739">Re2:全て行置換の結果</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5740</span>
+    <a class="thread-title" href="5734.html#5740">Re3:全て行置換の結果</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5741</span>
+    <a class="thread-title" href="5734.html#5741">Re3:全て行置換の結果</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5742</span>
+    <a class="thread-title" href="5734.html#5742">Re3:全て行置換の結果</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5752</span>
+    <a class="thread-title" href="5734.html#5752">Re2:全て行置換の結果</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5753</span>
+    <a class="thread-title" href="5734.html#5753">答えは、最後まで読んで下さい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5755</span>
+    <a class="thread-title" href="5734.html#5755">RE: 答えは、最後まで読んで下さい。</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5734>
+    <span class="no">[5734]</span>
+    <a class="thread-title" href="#5734">全て行置換の結果</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-01-12T00:26:47">2007年01月12日 00:26</time></h1>
+    <div class="body">新年おめでとう御座います。<br>早速ですが、<br>行置換なのに、正規表現が、vi/ex の s///g の動きをします。<br><br>DATE:2007/01/01 01:23:45<br><br>１．正規表現「..:」→「-」全て置換<br>DA-2007/1/1 --45<br><br>２．正規表現「..:」→「-」全て行置換<br>DA-2007/1/1 --45<br><br>３．正規表現「.*?:」→「-」全て置換<br>---45<br><br>４．正規表現「.*?:」→「-」全て行置換<br>---45<br><br>２．行置換なのに、DA-2007/01/01 01:23:45　にならない<br>４．行置換なのに、-2007/01/01 01:23:45　にならない<br>Bregexp.dll V1.02 Jul 15 2006<br>SAKURA 1.5.14.0</div></section>
+    <ul><li><section><h1 id=5735>
+    <span class="no">[5735]</span>
+    <a class="thread-title" href="#5735">Re:全て行置換の結果</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-01-12T19:23:14">2007年01月12日 19:23</time></h1>
+    <div class="body">あれれ？<br><br>ABAB===ABAB<br><br>のようなテキストを、<br>正規表現「^AB」で検索すると行頭のABだけが強調表示<br>正規表現「\bAB」で検索すると行頭と===の後のABふたつが強調表示<br>なのに、<br>空文字に「すべて置換」したときには<br><br>===ABAB<br>や、<br>===<br><br>になるのが困る、<br><br>AB===ABAB<br>や、<br>AB===AB<br><br>になって欲しい、<br>という人がいるから「すべて行置換」でそのような動き（/g）にしたのではなかったですか？<br><br>...てか、&gt;&gt;dev:4369 でじゅうじさんご自身が「今の「すべて置換」は無くなっても済ませられると思います。」って言ってるし～。(´_｀)<br>「すべて行置換」という名称は、やっぱり？だけど．．．</div></section>
+    <ul><li><section><h1 id=5736>
+    <span class="no">[5736]</span>
+    <a class="thread-title" href="#5736">Re2:全て行置換の結果</a>
+    <span class="author">かろと</span>
+    <time datetime="2007-01-12T22:29:51">2007年01月12日 22:29</time></h1>
+    <div class="body"><br>張本人なので、一応コメントしときます。<br><br>&gt;になって欲しい、<br>&gt;という人がいるから「すべて行置換」でそのような動き（/g）にしたのではなかったですか？<br><br>まさに、その通りです。<br><br>&gt;「すべて行置換」という名称は、やっぱり？だけど．．．<br><br>これは、良い表現があれば変えればいいと思います。<br>僕も、やっぱり？と思ってます（笑）が、他に思いつかなかっただけですので。<br></div></section>
+    <ul><li><section><h1 id=5737>
+    <span class="no">[5737]</span>
+    <a class="thread-title" href="#5737">Re3:全て行置換の結果</a>
+    <span class="author">maru</span>
+    <time datetime="2007-01-13T01:14:49">2007年01月13日 01:14</time></h1>
+    <div class="body">&gt;&gt;「すべて行置換」という名称は、やっぱり？だけど．．．<br>&gt;僕も、やっぱり？と思ってます（笑）が、他に思いつかなかっただけですので。<br>いまさらですが、例えば「行単位で処理する」みたいな名称のチェックボックスにならないですかね？<br>さらに、チェックが入っているときは単発の置換でも行単位で処理するようにして<br>「置換」と「すべて置換」の動作を同期させる感じで。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=5738>
+    <span class="no">[5738]</span>
+    <a class="thread-title" href="#5738">Re:全て行置換の結果</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-01-13T16:14:25">2007年01月13日 16:14</time></h1>
+    <div class="body">&gt;いまさらですが、例えば「行単位で処理する」みたいな名称のチェックボックスにならないですかね？<br>&gt;さらに、チェックが入っているときは単発の置換でも行単位で処理するようにして<br>&gt;「置換」と「すべて置換」の動作を同期させる感じで。<br>賛成です、そうすれば、「すべて置換」の１個のボタンで済みますから、迷わなくて済みます。同期？「置換」は１回だけですので、同じ文字が連続していなければ「すべて置換」も「行置換」も同じ動作です。<br><br>名称は、「すべて行置換」だと、ショートカットが見えません。上のと合わせて、両方「全て…」にすれば１文字節約出来ます。<br><br>仰るとおり、「すべて行置換」は分かりずらいので、上「繰返し置換(A)」と下「すべて置換(A)」。それに、追加機能で「全て行置換(A)」は、vi/ex のs/で /g 無しの動き。<br>(A)は仮のalphabet.　でどうでしょうか？</div></section>
+    <ul><li><section><h1 id=5739>
+    <span class="no">[5739]</span>
+    <a class="thread-title" href="#5739">Re2:全て行置換の結果</a>
+    <span class="author">maru</span>
+    <time datetime="2007-01-13T17:54:50">2007年01月13日 17:54</time></h1>
+    <div class="body">同期の意味がわかりにくいでしょうか。<br>お察しの通り、「すべて置換」と「すべて行置換」をまとめてひとつのボタンにするのが目的ですが<br>「置換」の動作においても、チェックボックスの状態に応じて変化させたい、という話です。<br>下の提案内容の５と６にあたります。<br>「置換」の連続実行と「すべて置換」の結果を同じにするのが目的です。<br><br>■置換前<br>1行目：ABABC<br>2行目：ABABC<br>この状態で、カーソルがファイルの先頭にあり「^AB」を「」に「置換」<br><br>■置換後<br>1行目：ABC<br>2行目：ABABC<br>というシナリオを想定してください。<br><br>■提案内容<br>１．「すべて置換」と「すべて行置換」をまとめてひとつのボタンにする。<br>２．行置換を指示するチェックボックスを新設。<br>３．チェックボックスオフで「すべて置換」は、現在の「すべて置換」と同じ結果。<br>４．チェックボックスオンで「すべて置換」は、現在の「すべて行置換」と同じ結果。<br>５．チェックボックスがオフのときは「置換」後の選択範囲は1行目のABになる。<br>　　「置換」を繰り返し押せば、現在の「すべて置換」と同じ結果。<br>６．チェックボックスがオンのときは「置換」後の選択範囲は2行目先頭のABになる。<br>　　「置換」を繰り返し押せば、現在の「すべて行置換」と同じ結果。<br></div></section>
+    <ul><li><section><h1 id=5740>
+    <span class="no">[5740]</span>
+    <a class="thread-title" href="#5740">Re3:全て行置換の結果</a>
+    <span class="author">かろと</span>
+    <time datetime="2007-01-13T18:46:53">2007年01月13日 18:46</time></h1>
+    <div class="body"><br>&gt;１．「すべて置換」と「すべて行置換」をまとめてひとつのボタンにする。<br>&gt;２．行置換を指示するチェックボックスを新設。<br>&gt;３．チェックボックスオフで「すべて置換」は、現在の「すべて置換」と同じ結果。<br>&gt;４．チェックボックスオンで「すべて置換」は、現在の「すべて行置換」と同じ結果。<br>&gt;５．チェックボックスがオフのときは「置換」後の選択範囲は1行目のABになる。<br>&gt;　　「置換」を繰り返し押せば、現在の「すべて置換」と同じ結果。<br>&gt;６．チェックボックスがオンのときは「置換」後の選択範囲は2行目先頭のABになる。<br>&gt;　　「置換」を繰り返し押せば、現在の「すべて行置換」と同じ結果。<br><br>当時の事、忘れてきましたが、<br>まず、もともと個人的には要らない機能だったのですが、何度か要望が出てたので、簡易的に入れました。<br><br>簡易的にというのは、maruさんの提案のようにチェックボックスにする方法も、ちらっと頭には浮かんでいたのですが、<br>記憶が定かでないですが、<br>「置換」が、「検索」「置換」を繰り返して処理してるので、そのまま実現しようとすると「置換」だけの問題でなく、<br>「検索」側も一緒に変える必要があることと、そうすると検索文字を反転させる処理も一緒に変える必要があって<br>けっこう面倒なんじゃないかと思って、簡易的に「すべて行置換」なんていうことにしちゃいました。<br><br>誰か、その当たりも加味して、やってくれると助かります。<br></div></section>
+    </li><li><section><h1 id=5741>
+    <span class="no">[5741]</span>
+    <a class="thread-title" href="#5741">Re3:全て行置換の結果</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-01-13T20:58:45">2007年01月13日 20:58</time></h1>
+    <div class="body">▼ maruさん<br>&gt;■置換前<br>1行目：A&gt;ABAB&gt;AB<br>2行目：A&gt;ABAB&gt;AB<br>&gt;この状態で、カーソルがファイルの先頭にあり「^AB」を「」に「置換」<br>&gt;<br>&gt;■置換後<br>1行目：A&gt;AB&gt;AB<br>2行目：A&gt;ABAB&gt;AB<br>&gt;というシナリオを想定してください。<br>&gt;<br>&gt;■提案内容<br><br>置換前の最初の状態で、正規表現の「\bAB」→「」で「置換」ボタン後、<br>チェックボックスがオンの時、１行目のA&gt;AB&gt;[AB] が白黒反転<br>チェックボックスがオフの時、１行目のA&gt;[AB]&gt;AB が白黒反転<br>これは、一体どうなんでしょう。仰っている同期の意味は分かりました。<br><br>失礼、今まで勘違いしてました、ファイル全体「置換」ボタンというのは、<br>置換して、次の検索じゃなくて、最初検索して、置換ですね。<br>なので、始めに「下検索」はしなくて良いんですね。（HELPに有ります）<br>その辺意識しないで使ってる人も多いと思います。<br>だから、「上検索」して「置換」しても上に行かないなあ、とか。<br><br>▼ かろとさん<br>折角チェックボックスにしても、ボタン２個が１個になるだけでは無駄ということでしょうか。</div></section>
+    </li><li><section><h1 id=5742>
+    <span class="no">[5742]</span>
+    <a class="thread-title" href="#5742">Re3:全て行置換の結果</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-01-14T03:48:22">2007年01月14日 03:48</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ■提案内容<br>個人的には、「すべて行置換」ボタンのかわりに[正規表現]のサブオプションとして[「すべて置換」は置換の繰返し]のような名称のチェックボックスがあれば十分ですけど．．．<br>ONのときは今の「すべて置換」と同じ動作<br>OFFのときは今の「すべて行置換」と同じ動作<br>あとで複数行にまたがる置換をサポートするようなことがあっても、この名称のままでいけるかな～、なんて。<br><br>単発の行置換、というのはやるとしたら正規表現以外の場合でもやらないと、それはそれで変なので、追加作業量は結構多くなるんじゃないでしょうか。<br>（よく見てないけど、今の「すべて行置換」は正規表現ONのときだけ「すべて置換」と違う動作にしてるのでは？）<br>他エディタにも見当たらない機能なので、「便利だから欲しい」と思う人自身がやらなければ、きっと誰もやらないような気がします。<br>※あとで複数行にまたがる置換をサポートしようとしたときは、行置換を残したままやらないといけなくなるので、その作業はますます複雑化するでしょうね</div></section>
+    </li></ul></li><li><section><h1 id=5752>
+    <span class="no">[5752]</span>
+    <a class="thread-title" href="#5752">Re2:全て行置換の結果</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-01-19T00:54:14">2007年01月19日 00:54</time></h1>
+    <div class="body">&gt;「全て…」にすれば１文字節約出来ます。<br>昔，メニューなどで「すべて」と「全て」が混在していたので統一しようと言うことで全部「すべて」とひらがなに直したことがあります．「すべて」のままで何か良い方法が考えられませんか？<br></div></section>
+    <ul><li><section><h1 id=5753>
+    <span class="no">[5753]</span>
+    <a class="thread-title" href="#5753">答えは、最後まで読んで下さい。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-01-19T12:16:08">2007年01月19日 12:16</time></h1>
+    <div class="body">▼ げんたさん<br>今年も雪降るんでしょうか。<br><br>&gt; &gt;「全て…」にすれば１文字節約出来ます。<br>&gt; 昔，メニューなどで「すべて」と「全て」が混在していたので統一しようと言うことで全部「すべて」とひらがなに直したことがあります．「すべて」のままで何か良い方法が考えられませんか？<br><br>上から、<br>　置換(R)<br>繰返し置換(A)<br>すべて置換(?)<br>以上3行になります。<br>ショートカットと、ボタンの位置は変更無しということです。</div></section>
+    <ul><li><section><h1 id=5755>
+    <span class="no">[5755]</span>
+    <a class="thread-title" href="#5755">RE: 答えは、最後まで読んで下さい。</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-01-20T00:48:05">2007年01月20日 00:48</time></h1>
+    <div class="body">すいません．せっかくお試し版を作ってくださったのに，見る前に書き込んだのがバレバレですね<br>m(_ _)m．<br><br>&gt;今年も雪降るんでしょうか。<br>これは...何かの暗号？<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

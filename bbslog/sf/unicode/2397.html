@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>文字コード自動判別の不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2397</span>
+    <a class="thread-title" href="2397.html#2397">文字コード自動判別の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2398</span>
+    <a class="thread-title" href="2397.html#2398">Re:文字コード自動判別の不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2400</span>
+    <a class="thread-title" href="2397.html#2400">Re2:文字コード自動判別の不具合</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2397>
+    <span class="no">[2397]</span>
+    <a class="thread-title" href="#2397">文字コード自動判別の不具合</a>
+    <span class="author">amewo</span>
+    <time datetime="2017-02-26T03:28:56">2017年02月26日 03:28</time></h1>
+    <div class="body">デフォルトをUTF-8にしているのですが、<br>+npc[EOF]<br>と打つとSJISに<br>+npc<br>[EOF]<br>と打つとUTF-7になってしまいます。<br><br><br>怪しいのは全て0ポイントにして、<br>ユーザー側で文字コードの優先度やフィルタリングの設定できたほうが<br>いいと思うのですがいかがでしょうか？</div></section>
+    <ul><li><section><h1 id=2398>
+    <span class="no">[2398]</span>
+    <a class="thread-title" href="#2398">Re:文字コード自動判別の不具合</a>
+    <span class="author">もか</span>
+    <time datetime="2017-02-26T16:14:40">2017年02月26日 16:14</time></h1>
+    <div class="body">&gt;UTF-7自動認識を厳しくする (svn:4163 upatchid:988 Moca)<br>この変更でこのような「-」が+のエンコード文字列の末尾にない場合、<br>UTF-7のポイントとして加算しなくなったので、<br>次のバージョンからこのようなことは、あまり起きなくなります。<br>UTF-7はほとんど使われていないので、自動判定から外してもいいとは思いますが。<br><br>&gt;デフォルトをUTF-8にしているのですが、<br>&gt;+npc[EOF]<br>&gt;と打つとSJISに<br>これは、なんか違う所がおかしいのではないかと。<br>0ポイントならUTF-8になるはずです。<br>ちなみに2.xの特定のバージョンのデフォルト文字コード設定にはバグがあって、<br>ファイル名によらずに「基本」のデフォルト文字コードが適用されることがあります。<br>本来はタイプ別ごとに設定できるものなので、その辺かもしれません。<br><br>ややこしいのはサクラの場合、デフォルト設定とかとは別に、<br>履歴でも現在のエンコードを覚えているので、そちらが適用されている場合もあります。<br></div></section>
+    <ul><li><section><h1 id=2400>
+    <span class="no">[2400]</span>
+    <a class="thread-title" href="#2400">Re2:文字コード自動判別の不具合</a>
+    <span class="author">amewo</span>
+    <time datetime="2017-02-26T18:18:34">2017年02月26日 18:18</time></h1>
+    <div class="body">&gt;デフォルトをUTF-8にしているのですが、<br>&gt;+npc[EOF]<br>&gt;と打つとSJISに<br>すみません。<br>これは自分の勘違いでした。<br>デフォルト文字コードがタイプ別なのを忘れてました</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>【要望】カーソル位置の判定 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4780</span>
+    <a class="thread-title" href="4780.html#4780">【要望】カーソル位置の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4788</span>
+    <a class="thread-title" href="4780.html#4788">Re:【要望】カーソル位置の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4810</span>
+    <a class="thread-title" href="4780.html#4810">Re2:【要望】カーソル位置の判定</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4923</span>
+    <a class="thread-title" href="4780.html#4923">RE: 【要望】カーソル位置の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4993</span>
+    <a class="thread-title" href="4780.html#4993">Re2: 【要望】カーソル位置の判定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4994</span>
+    <a class="thread-title" href="4780.html#4994">Re3: 【要望】カーソル位置の判定</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4780>
+    <span class="no">[4780]</span>
+    <a class="thread-title" href="#4780">【要望】カーソル位置の判定</a>
+    <span class="author">サンデイ</span>
+    <time datetime="2005-11-03T21:19:47">2005年11月03日 21:19</time></h1>
+    <div class="body">皆さんこんにちは。<br>当方WinXP(SP2)上でサクラエディタ1.5.7.2を使用しています。<br>また先日よりIME Watcher for XPというソフトをインストールしました。<br>これはカーソル位置にIMEの状態を表示することができます。<br><br>IME状態表示をカーソル右下に設定しますと、サクラエディタではちょうどカーソルすぐ右に表示されてしまいます。<br>つまりカーソル位置情報が一般的なソフトではカーソル下に設定されていて、<br>一方サクラではカーソル上に設定されているようです。<br>この点を修正していただければと思います。</div></section>
+    <ul><li><section><h1 id=4788>
+    <span class="no">[4788]</span>
+    <a class="thread-title" href="#4788">Re:【要望】カーソル位置の判定</a>
+    <span class="author">すす</span>
+    <time datetime="2005-11-04T16:06:20">2005年11月04日 16:06</time></h1>
+    <div class="body">▼ サンデイさん<br>IME Watcher for XPのバグなんじゃ？と思ったんだけど。。。<br><br><a href=http://homepage3.nifty.com/takubon_world/software/IMEWatcher/faqC007.html target=_top><nobr>http://<wbr>homepage<wbr>3.<wbr>nifty.<wbr>com/<wbr>takubon_<wbr>world/<wbr>software<wbr>/<wbr>IMEWatch<wbr>er/<wbr>faqC007.<wbr>html</nobr></a><br>に対応してほしいってことですか。<br>sakuraエディタだけではだめなんじゃないかな？</div></section>
+    <ul><li><section><h1 id=4810>
+    <span class="no">[4810]</span>
+    <a class="thread-title" href="#4810">Re2:【要望】カーソル位置の判定</a>
+    <span class="author">サンデイ</span>
+    <time datetime="2005-11-05T17:38:00">2005年11月05日 17:38</time></h1>
+    <div class="body">▼ すすさん<br>FAQ見ました。<br>そちらのバグみたいですね、ありがとうございました。</div></section>
+    </li></ul></li><li><section><h1 id=4923>
+    <span class="no">[4923]</span>
+    <a class="thread-title" href="#4923">RE: 【要望】カーソル位置の判定</a>
+    <span class="author">みく</span>
+    <time datetime="2005-12-15T21:55:58">2005年12月15日 21:55</time></h1>
+    <div class="body"><br>CEditView::SetIMECompFormPos()で、<br>ClientToScreen()に使っているハンドルがなぜ<br>CEditViewではなくその親なんだろう...<br></div></section>
+    <ul><li><section><h1 id=4993>
+    <span class="no">[4993]</span>
+    <a class="thread-title" href="#4993">Re2: 【要望】カーソル位置の判定</a>
+    <span class="author">もか</span>
+    <time datetime="2006-01-18T00:15:57">2006年01月18日 00:15</time></h1>
+    <div class="body"><br>&gt;また先日よりIME Watcher for XPというソフトをインストールしました。<br>&gt;IME状態表示をカーソル右下に設定しますと、サクラエディタではちょうどカーソルすぐ右に表示されてしまいます。<br>原因が分かりましたので、報告します。<br>　サクラエディタでは、フォーカスが外側のウィンドウになっているのに、<br>キャレットは、分割後の子ウィンドウの座標になっいます。<br>　(ソースを書き換えて)フォーカスを、子ウィンドウに変更したら通常に表示できました。<br>　おまけで、エレコム ホイール ユーティリティ2で、横スクロール(Shift+ホイールに割り当てた)もできるようになりました。<br>&gt;&gt;data:4943<br>&gt;インテリマウスのチルトホイールによる横スクロールに対応して欲しいです。<br>未確認ですが、これもできるようになるかも。<br><br>&gt;CEditView::SetIMECompFormPos()で、<br>&gt;ClientToScreen()に使っているハンドルがなぜ<br>&gt;CEditViewではなくその親なんだろう... <br>ImmSetCompositionWindowのCFS_POINTでは、TOPレベルウィンドウ(CEditWnd)のクライアント座標で設定していて、その計算に使っている模様です。<br><br>そのうち、開発板にパッチ出します。<br></div></section>
+    <ul><li><section><h1 id=4994>
+    <span class="no">[4994]</span>
+    <a class="thread-title" href="#4994">Re3: 【要望】カーソル位置の判定</a>
+    <span class="author">もか</span>
+    <time datetime="2006-01-18T00:27:47">2006年01月18日 00:27</time></h1>
+    <div class="body">&gt;おまけで、エレコム ホイール ユーティリティ2で、横スクロール(Shift+ホイールに割り当てた)もできるようになりました。<br>一点追記:<br>ユーティリティの設定で、[フォーカスのあるウィンドウがスクロール]を選んだ場合です。<br>[カーソル下ウィンドウがスクロール]を選択している場合は、普通に動作します。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

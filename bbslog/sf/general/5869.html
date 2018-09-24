@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>コメントのエスケープ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5869</span>
+    <a class="thread-title" href="5869.html#5869">コメントのエスケープ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5872</span>
+    <a class="thread-title" href="5869.html#5872">Re:コメントのエスケープ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5873</span>
+    <a class="thread-title" href="5869.html#5873">Re2:コメントのエスケープ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5877</span>
+    <a class="thread-title" href="5869.html#5877">Re3:コメントのエスケープ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5878</span>
+    <a class="thread-title" href="5869.html#5878">Re3:コメントのエスケープ</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5869>
+    <span class="no">[5869]</span>
+    <a class="thread-title" href="#5869">コメントのエスケープ</a>
+    <span class="author">sf</span>
+    <time datetime="2007-02-24T12:34:53">2007年02月24日 12:34</time></h1>
+    <div class="body">コメント文字のエスケープをさせたいのですがどのように<br>すればいいでしょうか?<br>・具体的には<br>#  ←行コメント<br>\# ←コメントにしたくない</div></section>
+    <ul><li><section><h1 id=5872>
+    <span class="no">[5872]</span>
+    <a class="thread-title" href="#5872">Re:コメントのエスケープ</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-02-24T18:10:42">2007年02月24日 18:10</time></h1>
+    <div class="body">▼ sfさん<br>/([^\\]|^)#.*/k<br><br>正規表現キーワードをONにして、設定します。<br># dd<br>\# dd<br> # dd<br> \# dd<br>ff # dd<br>ff \# dd<br>ff [# dd<br>ff [\# dd<br>ff '#f' dd<br>ff '\#f' dd<br>ff "#f" dd<br>ff "\#f" dd<br></div></section>
+    <ul><li><section><h1 id=5873>
+    <span class="no">[5873]</span>
+    <a class="thread-title" href="#5873">Re2:コメントのエスケープ</a>
+    <span class="author">sf</span>
+    <time datetime="2007-02-24T19:47:37">2007年02月24日 19:47</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; ▼ sfさん<br>&gt; /([^\\]|^)#.*/k<br>&gt; <br>&gt; 正規表現キーワードをONにして、設定します。<br>&gt; # dd<br>&gt; \# dd<br>&gt;  # dd<br>&gt;  \# dd<br>&gt; ff # dd<br>&gt; ff \# dd<br>&gt; ff [# dd<br>&gt; ff [\# dd<br>&gt; ff '#f' dd<br>&gt; ff '\#f' dd<br>&gt; ff "#f" dd<br>&gt; ff "\#f" dd<br>解答ありがとうございます。<br>すみません。もう一点質問があります。<br>この場合<br>a#<br>などとすると「a#」がコメントとして認識されるかと思います。<br>正規表現を使って、前方不一致検索などの方法で指定することはできないでしょうか？<br>（無ければあきらめます。）</div></section>
+    <ul><li><section><h1 id=5877>
+    <span class="no">[5877]</span>
+    <a class="thread-title" href="#5877">Re3:コメントのエスケープ</a>
+    <span class="author">すい</span>
+    <time datetime="2007-02-25T13:03:58">2007年02月25日 13:03</time></h1>
+    <div class="body">&gt;正規表現を使って、前方不一致検索などの方法で指定することはできないでしょうか？<br>&gt;（無ければあきらめます。）<br><br>私なら普通に正規表現キーワードに<br><br>/#.*/k → コメント<br>/\\#/k → テキスト<br><br>の２個を定義しますね。<br></div></section>
+    </li><li><section><h1 id=5878>
+    <span class="no">[5878]</span>
+    <a class="thread-title" href="#5878">Re3:コメントのエスケープ</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-02-25T16:25:05">2007年02月25日 16:25</time></h1>
+    <div class="body">▼ すい君<br>どうもありがとう。<br><br>▼ sfさん<br>最初の Perl5 では、後方参照（後読み）は無いんですね。<br>正規表現キーワードの優先順位に気をつけて、前方参照（先読み）。<br><br>/\\#.*?(?!\\#)/k　テキスト<br>/\\#.*?(?=#)/k　テキスト<br>/\\#.*/k　テキスト<br><br>コメントスタイルの行型に、#を追加。<br>（省略）<br>ff \# ee [# dd<br>ff [# ee \# dd<br>ff \# ee [# dd #<br>ff [# ee \# dd #<br>ff \# ee [# dd \#<br>ff [# ee \# dd \#<br>ff \# ee \# dd [#</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

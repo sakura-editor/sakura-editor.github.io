@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>MSofficeファイルは「自動選択」でunicodeにならない？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3885</span>
+    <a class="thread-title" href="3885.html#3885">MSofficeファイルは「自動選択」でunicodeにならない？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3886</span>
+    <a class="thread-title" href="3885.html#3886">RE: MSofficeファイルは「自動選択」でunicodeにならない？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3887</span>
+    <a class="thread-title" href="3885.html#3887">Re2: MSofficeファイルは「自動選択」でunicodeにならない？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3888</span>
+    <a class="thread-title" href="3885.html#3888">Re3: MSofficeファイルは「自動選択」でunicodeにならない？</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3885>
+    <span class="no">[3885]</span>
+    <a class="thread-title" href="#3885">MSofficeファイルは「自動選択」でunicodeにならない？</a>
+    <span class="author">maru</span>
+    <time datetime="2004-06-12T12:01:45">2004年06月12日 12:01</time></h1>
+    <div class="body">お世話になっております。<br><br>今まであまり気にならなかったのですが<br>MSofficeのファイルは「開きなおす」を使えば<br>内容を表示できますが、これって自動選択されないですよね？<br><br>実装するのは難しいのでしょうか？<br>それともウチの環境がおかしいのかなぁ。</div></section>
+    <ul><li><section><h1 id=3886>
+    <span class="no">[3886]</span>
+    <a class="thread-title" href="#3886">RE: MSofficeファイルは「自動選択」でunicodeにならない？</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-06-13T03:06:32">2004年06月13日 03:06</time></h1>
+    <div class="body">&gt;MSofficeのファイルは「開きなおす」を使えば<br>&gt;内容を表示できますが、これって自動選択されないですよね？<br>現状ではファイルの先頭から16KBを読み込んで文字判定をしますが，その中にUnicodチェックが含まれていません．<br>Unicodeの特徴って無いんでしょうかね＞識者の方．<br>Word文書のように先頭にゴミが入っているとBOMでの識別はできませんし．<br></div></section>
+    <ul><li><section><h1 id=3887>
+    <span class="no">[3887]</span>
+    <a class="thread-title" href="#3887">Re2: MSofficeファイルは「自動選択」でunicodeにならない？</a>
+    <span class="author">もか</span>
+    <time datetime="2004-06-14T03:02:05">2004年06月14日 03:02</time></h1>
+    <div class="body">「テキストが空」のWord 2002のファイルは、新規作成段階で10KB、開いて保存すると19KB位あり、「本文より他のデータのほうが多い」です。<br>ワードドキュメントは、文字、レイアウト情報、画像、動画などを入れる箱です。実際サクラで開いてみると、一部分はShift_JISです。<br>BOMなしのUTF-16LEの自動判別が可能にしても、ノイズの量からして、ワードファイルの自動判別には、たいして役に立たないといえます。<br>私のイメージとしては、MPEG-4や拡張子がAVIのファイルを読めるようにすることと同等だと思います。<br>ようするに、ワードファイルとして認識する以外にまともには読めません。<br><br>Unicode(UTF-16)の特徴は、0000～FFFDまで文字がほとんど割り当てられている。<br>言語ごとに、ブロックでいちよう分かれているので、日本語に限定すれば自動認識も不可能ではない。<br>サロゲート領域は、順番があるがほとんど使われない。<br>逆に用途によっては、ほとんどサロゲート領域の文字だけで構成されることもある。<br>といことで、自動認識はしにくい。<br></div></section>
+    <ul><li><section><h1 id=3888>
+    <span class="no">[3888]</span>
+    <a class="thread-title" href="#3888">Re3: MSofficeファイルは「自動選択」でunicodeにならない？</a>
+    <span class="author">maru</span>
+    <time datetime="2004-06-18T12:57:01">2004年06月18日 12:57</time></h1>
+    <div class="body">返信遅くなりました。<br>レスありがとうございます。<br><br>なるほど。<br>普通に開くだけなら、余り意味がないですね。<br><br>たとえば「word/excelを対象に含めてgrep」<br>といった用途なら、自動判別が役に立ちそうな。<br><br>word/excelなどのファイル内の文字列を検索する場合<br>状況にもよりますが、私はたいていsakuraを使います。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

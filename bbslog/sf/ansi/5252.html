@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CDocLineMgrのメモリリーク | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5252</span>
+    <a class="thread-title" href="5252.html#5252">CDocLineMgrのメモリリーク</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5253</span>
+    <a class="thread-title" href="5252.html#5253">Re:CDocLineMgrのメモリリーク</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5254</span>
+    <a class="thread-title" href="5252.html#5254">Re2:CDocLineMgrのメモリリーク</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5255</span>
+    <a class="thread-title" href="5252.html#5255">Re2:CDocLineMgrのメモリリーク</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5252>
+    <span class="no">[5252]</span>
+    <a class="thread-title" href="#5252">CDocLineMgrのメモリリーク</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-21T02:06:28">2008年03月21日 02:06</time></h1>
+    <div class="body">バグ報告です。<br><br>行数が1のときに CDocLineMgr::DeleteNode が呼ばれると<br>CDocLine が解放されないまま変数クリアが行われるので<br>メモリリークが発生します。<br><br>行の無い状態から、行を作って消して作って消してを繰り返すと<br>無尽蔵に（一回の量はすごく小さいですけど）メモリが消費されると思われます。</div></section>
+    <ul><li><section><h1 id=5253>
+    <span class="no">[5253]</span>
+    <a class="thread-title" href="#5253">Re:CDocLineMgrのメモリリーク</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-03-21T02:50:05">2008年03月21日 02:50</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; 行数が1のときに CDocLineMgr::DeleteNode が呼ばれると<br>&gt; CDocLine が解放されないまま変数クリアが行われるので<br>&gt; メモリリークが発生します。<br><br>次のような簡単なパッチでいいんでしょうか？<br>もしこれで良さそうならPatchesにSubmitしておこうと思いますが．．．<br><br>--- sakura_core/CDocLineMgr.cpp&#9;(revision 1230)<br>+++ sakura_core/CDocLineMgr.cpp&#9;(working copy)<br>@@ -2458,6 +2458,7 @@<br> &#9;m_nLines--;&#9;/* 全行数 */<br> &#9;if( 0 == m_nLines ){<br> &#9;&#9;/* データがなくなった */<br>+&#9;&#9;delete pCDocLine;<br> &#9;&#9;Init();<br> &#9;&#9;return;<br> &#9;}<br></div></section>
+    <ul><li><section><h1 id=5254>
+    <span class="no">[5254]</span>
+    <a class="thread-title" href="#5254">Re2:CDocLineMgrのメモリリーク</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-21T04:07:49">2008年03月21日 04:07</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; ▼ kobakeさん<br>&gt; &gt; 行数が1のときに CDocLineMgr::DeleteNode が呼ばれると<br>&gt; &gt; CDocLine が解放されないまま変数クリアが行われるので<br>&gt; &gt; メモリリークが発生します。<br>&gt; <br>&gt; 次のような簡単なパッチでいいんでしょうか？<br>&gt; もしこれで良さそうならPatchesにSubmitしておこうと思いますが．．．<br>&gt; <br>&gt; --- sakura_core/CDocLineMgr.cpp&#9;(revision 1230)<br>&gt; +++ sakura_core/CDocLineMgr.cpp&#9;(working copy)<br>&gt; @@ -2458,6 +2458,7 @@<br>&gt;  &#9;m_nLines--;&#9;/* 全行数 */<br>&gt;  &#9;if( 0 == m_nLines ){<br>&gt;  &#9;&#9;/* データがなくなった */<br>&gt; +&#9;&#9;delete pCDocLine;<br>&gt;  &#9;&#9;Init();<br>&gt;  &#9;&#9;return;<br>&gt;  &#9;}<br><br>はい、それでOKだと思います。<br>ただ、今のところは自分はANSI版への協力（「ちゃんとした」レビューなど）はできないと思うので、自分以外の他の方にレビューをお願いしたいです。</div></section>
+    </li><li><section><h1 id=5255>
+    <span class="no">[5255]</span>
+    <a class="thread-title" href="#5255">Re2:CDocLineMgrのメモリリーク</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-21T06:43:46">2008年03月21日 06:43</time></h1>
+    <div class="body">追記です。<br>UNICODE版ソースコードでは既に修正を行っています。<br>（まだ公開できていませんけど）</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>行の強調 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6910</span>
+    <a class="thread-title" href="6910.html#6910">行の強調</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6912</span>
+    <a class="thread-title" href="6910.html#6912">Re:行の強調</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6916</span>
+    <a class="thread-title" href="6910.html#6916">Re2:行の強調</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6917</span>
+    <a class="thread-title" href="6910.html#6917">Re3:行の強調</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6918</span>
+    <a class="thread-title" href="6910.html#6918">Re4:行の強調</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6919</span>
+    <a class="thread-title" href="6910.html#6919">Re5:行の強調</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6920</span>
+    <a class="thread-title" href="6910.html#6920">Re6:行の強調</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6910>
+    <span class="no">[6910]</span>
+    <a class="thread-title" href="#6910">行の強調</a>
+    <span class="author">mori</span>
+    <time datetime="2009-03-04T12:48:00">2009年03月04日 12:48</time></h1>
+    <div class="body">初心者ですが、お願いします。<br>先頭が「0」の行を、1行まるごと強調したいのですが（色を変える、フォントを変える等）<br>そんなことは出来るのでしょうか？<br>出来るのであれば、ぜひ教えてください。</div></section>
+    <ul><li><section><h1 id=6912>
+    <span class="no">[6912]</span>
+    <a class="thread-title" href="#6912">Re:行の強調</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2009-03-05T09:41:01">2009年03月05日 09:41</time></h1>
+    <div class="body">▼ moriさん<br>&gt; 先頭が「0」の行を、1行まるごと強調したいのですが（色を変える、フォントを変える等）<br><br>&gt;&gt;data:6911 を参考に、正規表現は以下を使う。<br>/^0.*/k<br><br>^ は行頭を表す。.* は行末までを表す。<br>また、/^[ \t]*0.*/k でも良い。</div></section>
+    <ul><li><section><h1 id=6916>
+    <span class="no">[6916]</span>
+    <a class="thread-title" href="#6916">Re2:行の強調</a>
+    <span class="author">mori</span>
+    <time datetime="2009-03-10T09:29:23">2009年03月10日 09:29</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; &gt;&gt;data:6911 を参考に、正規表現は以下を使う。<br>&gt; /^0.*/k<br>&gt; <br>&gt; ^ は行頭を表す。.* は行末までを表す。<br>&gt; また、/^[ \t]*0.*/k でも良い。<br><br>ありがとうございました。<br>早速ためしていたのですが、何も変化がありません。<br>訳があって最新版はダウンロードできず、ver.1.5.5.0なのですが、古いのが原因でしょうか。</div></section>
+    <ul><li><section><h1 id=6917>
+    <span class="no">[6917]</span>
+    <a class="thread-title" href="#6917">Re3:行の強調</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2009-03-10T11:00:18">2009年03月10日 11:00</time></h1>
+    <div class="body">▼ moriさん<br>&gt; 早速ためしていたのですが、何も変化がありません。<br>正規表現DLLは、DownLoadして取って来ましたか？</div></section>
+    <ul><li><section><h1 id=6918>
+    <span class="no">[6918]</span>
+    <a class="thread-title" href="#6918">Re4:行の強調</a>
+    <span class="author">mori</span>
+    <time datetime="2009-03-10T14:49:32">2009年03月10日 14:49</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; ▼ moriさん<br>&gt; &gt; 早速ためしていたのですが、何も変化がありません。<br>&gt; 正規表現DLLは、DownLoadして取って来ましたか<br><br>DownLoadですか？<br>ごめんなさい。ためしに「正規表現DLL」で検索してみたのですが「DLL」と付くファイルはいくつもあるようで、<br>プログラムに疎いわたしでは、どうしたらいいのか分かりません。<br>また、ダウンロードできたとしても、その後、そのファイルをどうしたらいいのかなど、全く分かりません。<br><br>こんな初心者にお付き合いいただけるのなら、時間のあるときにでも教えていただけると助かります。<br>ご無理でしたら、わたしには縁のないソフトなのだとあきらめます。<br>ありがとうございました。</div></section>
+    <ul><li><section><h1 id=6919>
+    <span class="no">[6919]</span>
+    <a class="thread-title" href="#6919">Re5:行の強調</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2009-03-10T18:07:48">2009年03月10日 18:07</time></h1>
+    <div class="body">▼ moriさん<br>設定⇒タイプ別設定<br>⇒正規表現キーワード⇒正規表現キーワードを使用する<br>の、時に「正規表現キーワードは使えません。」のエラーが出なければ<br><br>⇒カラー⇒色指定⇒正規表現キーワード１⇒色分け/表示<br>チェックボックスをｖにしてみてください。<br><br><a href=http://sakura.qp.land.to/?FAQ/34 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>FAQ/<wbr>34</nobr></a></div></section>
+    <ul><li><section><h1 id=6920>
+    <span class="no">[6920]</span>
+    <a class="thread-title" href="#6920">Re6:行の強調</a>
+    <span class="author">mori</span>
+    <time datetime="2009-03-11T10:54:04">2009年03月11日 10:54</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; ⇒カラー⇒色指定⇒正規表現キーワード１⇒色分け/表示<br>&gt; チェックボックスをｖにしてみてください。<br><br>できました。<br>ご親切に、本当にありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

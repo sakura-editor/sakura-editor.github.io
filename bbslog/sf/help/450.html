@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>プラグイン開発ガイド | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">450</span>
+    <a class="thread-title" href="450.html#450">プラグイン開発ガイド</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">451</span>
+    <a class="thread-title" href="450.html#451">Re:プラグイン開発ガイド</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">452</span>
+    <a class="thread-title" href="450.html#452">Re2:プラグイン開発ガイド</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">453</span>
+    <a class="thread-title" href="450.html#453">Re3:プラグイン開発ガイド</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">454</span>
+    <a class="thread-title" href="450.html#454">Re4:プラグイン開発ガイド</a></div>
+    </li><li><div class="list-title">
+    <span class="no">455</span>
+    <a class="thread-title" href="450.html#455">Re4:プラグイン開発ガイド</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">456</span>
+    <a class="thread-title" href="450.html#456">Re5:プラグイン開発ガイド</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">457</span>
+    <a class="thread-title" href="450.html#457">Re6:プラグイン開発ガイド</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">458</span>
+    <a class="thread-title" href="450.html#458">Re7:プラグイン開発ガイド</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=450>
+    <span class="no">[450]</span>
+    <a class="thread-title" href="#450">プラグイン開発ガイド</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-19T21:53:24">2013年04月19日 21:53</time></h1>
+    <div class="body">「プラグイン開発ガイド」をsvnに上げました。</div></section>
+    <ul><li><section><h1 id=451>
+    <span class="no">[451]</span>
+    <a class="thread-title" href="#451">Re:プラグイン開発ガイド</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-20T12:13:44">2013年04月20日 12:13</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; 「プラグイン開発ガイド」をsvnに上げました。<br><br>リポジトリを覗いてみました。<br>運用ルールがあるわけではないですが<br>svnの一般的な運用方法と、現状のリポジトリ構成を尊重するなら<br>下記のどちらかのほうがよいのではと思います。<br><br>(1)help/trunk2以下に作る<br>Helpファイルなのでまとめたい<br>(2)直下にディレクトリを作る<br>プロジェクトごとに分けたい、必要なファイルだけチェックアウトしたい<br><br>個人的には、(2)がいいのではないかと思います。<br>(マクロリファレンスも登録したい)<br><br>help<br>  plugin(今回登録した場所)<br>  tags<br>  branches<br>  trunk<br>  trunk2<br>    (1)の場所<br><br>installer<br>  trunk<br>  trunk2<br><br>sakura<br>  tags<br>  branches<br>  trunk<br>  trunk2<br><br>(2)の場所<br>  trunk2<br></div></section>
+    <ul><li><section><h1 id=452>
+    <span class="no">[452]</span>
+    <a class="thread-title" href="#452">Re2:プラグイン開発ガイド</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-20T19:58:03">2013年04月20日 19:58</time></h1>
+    <div class="body">これは私の感覚なんですが、<br>ヘルプファイルで有るのでhelpの下におきたい<br>sakura.chmと並ぶものなので其処との並びにおいた<br>と言う感じでです。<br><br>noviceさんの考えでも良いのですが、(1)は自分的には受容れ難い感じです。<br>plugin.chmはsakura.chmの配下のファイルと言う感じではなく、<br>別のSDKとでも言う物だからです。<br>マクロリファレンスも同様ですね。<br>チェックアウトの都合からも(1)では無いほうがいいと思います。<br><br>(2)で良ければ、(2)の場所の名前が出た時点で移します。</div></section>
+    <ul><li><section><h1 id=453>
+    <span class="no">[453]</span>
+    <a class="thread-title" href="#453">Re3:プラグイン開発ガイド</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-20T20:43:32">2013年04月20日 20:43</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; noviceさんの考えでも良いのですが、(1)は自分的には受容れ難い感じです。<br>&gt; plugin.chmはsakura.chmの配下のファイルと言う感じではなく、<br>&gt; 別のSDKとでも言う物だからです。<br>&gt; マクロリファレンスも同様ですね。<br>&gt; チェックアウトの都合からも(1)では無いほうがいいと思います。<br><br>(1)案の根拠は、現状のサクラエディタのヘルプファイルが<br>マクロヘルプとPPAヘルプとWSHヘルプを連結できるようになっているので<br>同じディレクトリにまとめたい、という要望があるのではと思いました。<br><br><br>&gt; (2)で良ければ、(2)の場所の名前が出た時点で移します。<br><br>ディレクトリの名前も含めて記載しました。<br>また、マクロヘルプも追加する前提で記載しました。<br>もっとこうしたほうがよい、とかあればコメントください。<br><br>(1)案<br>help<br>  tags<br>  branches<br>  trunk<br>    help(従来のヘルプファイル、ディレクトリを一段下げる)<br>    help_macro(マクロヘルプ)<br>  trunk2<br>    help(従来のヘルプファイル、ディレクトリを一段下げる)<br>    help_macro(マクロヘルプ)<br>    help_plugin(プラグイン開発ガイド)<br><br>installer<br><br>sakura<br><br>※ヘルプファイルというのが分かるので接頭語(help_)は不要?<br><br><br>(2)案<br>help<br><br>help_macro(マクロヘルプ)<br>  tags<br>  trunk<br>  trunk2<br><br>help_plugin(プラグイン開発ガイド)<br>  tags<br>  trunk(必要になったら)<br>  trunk2<br><br>installer<br><br>sakura<br><br></div></section>
+    <ul><li><section><h1 id=454>
+    <span class="no">[454]</span>
+    <a class="thread-title" href="#454">Re4:プラグイン開発ガイド</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-20T23:09:13">2013年04月20日 23:09</time></h1>
+    <div class="body">▼ noviceさん<br>(1)案でmacro,pluginに接頭語(help_)無しと言うのは魅力的ですが、<br>現行ヘルプファイルを移動すると言うのが難ですね。<br><br>(2)案のような形で一段深くして<br>sdk_help<br>   macro(マクロヘルプ)<br>      tags<br>      trunk<br>      trunk2<br><br>   plugin(プラグイン開発ガイド)<br>      tags<br>      trunk2<br><br>見たいな感じが自分の好みですね。</div></section>
+    </li><li><section><h1 id=455>
+    <span class="no">[455]</span>
+    <a class="thread-title" href="#455">Re4:プラグイン開発ガイド</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-21T17:41:00">2013年04月21日 17:41</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; ディレクトリの名前も含めて記載しました。<br>&gt; また、マクロヘルプも追加する前提で記載しました。<br>&gt; もっとこうしたほうがよい、とかあればコメントください。<br><br>過去ログを調べていたら、<br>&gt;&gt;help:405<br>にSVNのリポジトリについて書き込みがありました。<br>helpファイルのほかにサンプルマクロも同梱するのであれば、<br>下記のような感じでしょうか。<br><br>macro<br>  tags<br>  trunk<br>  trunk2<br>    help(マクロヘルプ)<br>    sample(サンプル)<br><br>plugin<br>  tags<br>  trunk(必要になったら)<br>  trunk2<br>    help(プラグイン開発ガイド)<br>    sample(サンプル)<br></div></section>
+    <ul><li><section><h1 id=456>
+    <span class="no">[456]</span>
+    <a class="thread-title" href="#456">Re5:プラグイン開発ガイド</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-21T22:07:30">2013年04月21日 22:07</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; plugin<br>&gt;   trunk2<br>&gt;     help(プラグイン開発ガイド)<br>の位置へ移動しますね<br>tagsやsample等は必要になったら作るということで</div></section>
+    <ul><li><section><h1 id=457>
+    <span class="no">[457]</span>
+    <a class="thread-title" href="#457">Re6:プラグイン開発ガイド</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-21T22:52:17">2013年04月21日 22:52</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; ▼ noviceさん<br>&gt; &gt; plugin<br>&gt; &gt;   trunk2<br>&gt; &gt;     help(プラグイン開発ガイド)<br>&gt; の位置へ移動しますね<br>&gt; tagsやsample等は必要になったら作るということで<br><br>Wikiのディレクトリ構成を更新しました。<br><a href=http://sourceforge.net/p/sakura-editor/wiki/RepoDirectory/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>wiki/<wbr>RepoDire<wbr>ctory/<wbr></nobr></a><br><br>ディレクトリ構成変更時に、こちらも変更して頂けると助かります。<br></div></section>
+    <ul><li><section><h1 id=458>
+    <span class="no">[458]</span>
+    <a class="thread-title" href="#458">Re7:プラグイン開発ガイド</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-21T23:18:23">2013年04月21日 23:18</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; Wikiのディレクトリ構成を更新しました。<br>&gt; <a href=http://sourceforge.net/p/sakura-editor/wiki/RepoDirectory/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>wiki/<wbr>RepoDire<wbr>ctory/<wbr></nobr></a><br>&gt; <br>&gt; ディレクトリ構成変更時に、こちらも変更して頂けると助かります。<br><br>了解しました</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

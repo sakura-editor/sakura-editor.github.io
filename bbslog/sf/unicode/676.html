@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>変換のTAB→空白で桁がずれる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">676</span>
+    <a class="thread-title" href="676.html#676">変換のTAB→空白で桁がずれる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">677</span>
+    <a class="thread-title" href="676.html#677">Re:変換のTAB→空白で桁がずれる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">681</span>
+    <a class="thread-title" href="676.html#681">Re2:変換のTAB→空白で桁がずれる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">684</span>
+    <a class="thread-title" href="676.html#684">Re3:変換のTAB→空白で桁がずれる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">686</span>
+    <a class="thread-title" href="676.html#686">Re4:変換のTAB→空白で桁がずれる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">687</span>
+    <a class="thread-title" href="676.html#687">Re5:変換のTAB→空白で桁がずれる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">689</span>
+    <a class="thread-title" href="676.html#689">Re6:変換のTAB→空白で桁がずれる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">694</span>
+    <a class="thread-title" href="676.html#694">Re7:変換のTAB→空白で桁がずれる</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">688</span>
+    <a class="thread-title" href="676.html#688">ライセンスへの意思表明をお願いします</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">690</span>
+    <a class="thread-title" href="676.html#690">Re:ライセンスへの意思表明をお願いします</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=676>
+    <span class="no">[676]</span>
+    <a class="thread-title" href="#676">変換のTAB→空白で桁がずれる</a>
+    <span class="author">まつも</span>
+    <time datetime="2008-10-15T16:24:50">2008年10月15日 16:24</time></h1>
+    <div class="body">rev1428で4タブの設定で以下のような文字列を、<br>「TAB→空白」すると<br>aaa bbb<br>あ  ccc<br>以下のように全角文字を含んだ部分がずれてしまいます<br>aaa bbb<br>あ   ccc<br><br>原因の想像はつくので時間が取れたらソースを見てパッチを作ってみます。<br><br>ちなみに、「空白→TAB」も同じようにずれてます。</div></section>
+    <ul><li><section><h1 id=677>
+    <span class="no">[677]</span>
+    <a class="thread-title" href="#677">Re:変換のTAB→空白で桁がずれる</a>
+    <span class="author">まつも</span>
+    <time datetime="2008-10-15T18:16:44">2008年10月15日 18:16</time></h1>
+    <div class="body">パッチをあげました。<br>よろしればご利用ください。<br><a href=http://sourceforge.net/tracker/index.php?func=detail&atid=1013762&aid=2167926&group_id=12488 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>atid=<wbr>1013762&amp;<wbr>aid=<wbr>2167926&amp;<wbr>group_id<wbr>=<wbr>12488</nobr></a></div></section>
+    <ul><li><section><h1 id=681>
+    <span class="no">[681]</span>
+    <a class="thread-title" href="#681">Re2:変換のTAB→空白で桁がずれる</a>
+    <span class="author">syat</span>
+    <time datetime="2008-10-17T00:26:06">2008年10月17日 00:26</time></h1>
+    <div class="body">▼ まつもさん<br>こんにちは。<br>問題点とパッチを確認しました。コミットして大丈夫だと思います。<br>空白→TABもきっと同様の理由なんでしょうね（じっくり見てません^^;)<br><br>パッチを作るときは修正したファイルを右クリックしてTortoiseSVNの「パッチの作成」から作るとよいと思います。<br>そうすると同じくTortoiseSVNの「パッチを適用」から取り込みやすいです。<br>（まつもさんのパッチを適用しようとしたら.orgが見つからないと言われました。手反映できますけどね）<br></div></section>
+    <ul><li><section><h1 id=684>
+    <span class="no">[684]</span>
+    <a class="thread-title" href="#684">Re3:変換のTAB→空白で桁がずれる</a>
+    <span class="author">まつも</span>
+    <time datetime="2008-10-17T23:33:30">2008年10月17日 23:33</time></h1>
+    <div class="body">&gt; パッチを作るときは修正したファイルを右クリックしてTortoiseSVNの「パッチの作成」から作るとよいと思います。<br>失礼いたしました。(tarballで落としたソースをいじっていたので…)<br><br>空白→Tabのパッチも合わせて<br>TortoiseSVNでパッチを作り直しました<br><a href=http://sourceforge.net/tracker/index.php?func=detail&atid=1013762&aid=2174920&group_id=12488 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>atid=<wbr>1013762&amp;<wbr>aid=<wbr>2174920&amp;<wbr>group_id<wbr>=<wbr>12488</nobr></a><br></div></section>
+    <ul><li><section><h1 id=686>
+    <span class="no">[686]</span>
+    <a class="thread-title" href="#686">Re4:変換のTAB→空白で桁がずれる</a>
+    <span class="author">syat</span>
+    <time datetime="2008-10-18T22:37:52">2008年10月18日 22:37</time></h1>
+    <div class="body">▼ まつもさん<br>&gt; 空白→Tabのパッチも合わせて<br>&gt; TortoiseSVNでパッチを作り直しました<br>確認しました。すみませんわがまま言って<br><br>コミットは代わりにやりましょうか？<br>または権限をつけてもらってご自身でコミットするでもよいです。（私は権限のつけかたわからないのですが）<br></div></section>
+    <ul><li><section><h1 id=687>
+    <span class="no">[687]</span>
+    <a class="thread-title" href="#687">Re5:変換のTAB→空白で桁がずれる</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-10-19T01:05:36">2008年10月19日 01:05</time></h1>
+    <div class="body">▼ syatさん<br>> ▼ まつもさん<br>> > 空白→Tabのパッチも合わせて<br>> > TortoiseSVNでパッチを作り直しました<br>> 確認しました。すみませんわがまま言って<br>> <br>> コミットは代わりにやりましょうか？<br>> または権限をつけてもらってご自身でコミットするでもよいです。（私は権限のつけかたわからないのですが）<br><br>＞まつもさん<br>必要であればコミット権限付けますので、<br>その際はSourceforge登録し、ユーザ名をお教えください。<br>（本来は私の役割では無いですが、げんたさんが忙しいようなので、代わりにやります。<br>幸いAdmin権限を持っていますので。。）<br><br>「ご自身でコミットする」or「パッチ提供だけして、コミットは誰かにやってもらう」<br>どちらの姿勢を取るかはお任せします（一概にどちらがBetterとは言い難いですし、プロジェクトとしてもどちらがBetterの姿勢であるかを言明されていないようですし)。<br><br></div></section>
+    <ul><li><section><h1 id=689>
+    <span class="no">[689]</span>
+    <a class="thread-title" href="#689">Re6:変換のTAB→空白で桁がずれる</a>
+    <span class="author">まつも</span>
+    <time datetime="2008-10-20T21:16:38">2008年10月20日 21:16</time></h1>
+    <div class="body">&gt; 必要であればコミット権限付けますので、<br>&gt; その際はSourceforge登録し、ユーザ名をお教えください。<br>&gt; （本来は私の役割では無いですが、げんたさんが忙しいようなので、代わりにやります。<br>&gt; 幸いAdmin権限を持っていますので。。）<br>&gt; <br>&gt; 「ご自身でコミットする」or「パッチ提供だけして、コミットは誰かにやってもらう」<br>&gt; どちらの姿勢を取るかはお任せします（一概にどちらがBetterとは言い難いですし、プロジェクトとしてもどちらがBetterの姿勢であるかを言明されていないようですし)。<br>&gt; <br>パッチ提供のみでコミットは開発者の方にお願いいたします。<br>Sourceforgeのアカウントは持ってるのですが、開発者として登録していただいてもそこまでのご協力はできないと思いますので…<br>そうは言っても、今後も、気づいたことやバグを見つけた際には、できるだけご協力したいと思います。<br></div></section>
+    <ul><li><section><h1 id=694>
+    <span class="no">[694]</span>
+    <a class="thread-title" href="#694">Re7:変換のTAB→空白で桁がずれる</a>
+    <span class="author">syat</span>
+    <time datetime="2008-10-23T13:04:18">2008年10月23日 13:04</time></h1>
+    <div class="body">▼ まつもさん<br>&gt; パッチ提供のみでコミットは開発者の方にお願いいたします。<br>了解です。rev1457でコミット完了しました。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=688>
+    <span class="no">[688]</span>
+    <a class="thread-title" href="#688">ライセンスへの意思表明をお願いします</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-10-19T17:34:01">2008年10月19日 17:34</time></h1>
+    <div class="body">▼ syatさん、まつもさん<br>wikiを眺めていて思い出しましたが (^^; zlib/libpngライセンスへの<br>統一を推進中ですので、下記1,2のリンク先を読んだ後できれば3の<br>リンク先にて意思表明をお願いします。<br><br>1. zlib/libpngライセンス（OSI承認ライセンス 日本語参考訳）<br>　<a href=http://sourceforge.jp/projects/opensource/wiki/licenses%2Fzlib_libpng_license target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>jp/<wbr>projects<wbr>/<wbr>opensour<wbr>ce/<wbr>wiki/<wbr>licenses<wbr>%<wbr>2Fzlib_l<wbr>ibpng_li<wbr>cense</nobr></a><br><br>2. オープンソースの定義<br>　<a href=http://www.opensource.jp/osd/osd-japanese.html target=_top><nobr>http://<wbr>www.<wbr>opensour<wbr>ce.<wbr>jp/<wbr>osd/<wbr>osd-<wbr>japanese<wbr>.<wbr>html</nobr></a><br><br>3. ライセンス明確化推進計画<br>　<a href=http://sakura.qp.land.to/?Develop%2FLicenses target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2FLicens<wbr>es</nobr></a><br><br>ではでは。<br></div></section>
+    <ul><li><section><h1 id=690>
+    <span class="no">[690]</span>
+    <a class="thread-title" href="#690">Re:ライセンスへの意思表明をお願いします</a>
+    <span class="author">まつも</span>
+    <time datetime="2008-10-20T21:18:21">2008年10月20日 21:18</time></h1>
+    <div class="body">&gt; wikiを眺めていて思い出しましたが (^^; zlib/libpngライセンスへの<br>&gt; 統一を推進中ですので、下記1,2のリンク先を読んだ後できれば3の<br>&gt; リンク先にて意思表明をお願いします。<br>WiKi更新しました。<br>昔パッチを提供したことがあるので、同一人物(のはず)です。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>長すぎるパス名(続き) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5484</span>
+    <a class="thread-title" href="5484.html#5484">長すぎるパス名(続き)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5487</span>
+    <a class="thread-title" href="5484.html#5487">Re:長すぎるパス名(続き)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5500</span>
+    <a class="thread-title" href="5484.html#5500">Re:長すぎるパス名(続き)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5525</span>
+    <a class="thread-title" href="5484.html#5525">Re2:長すぎるパス名(続き)</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5484>
+    <span class="no">[5484]</span>
+    <a class="thread-title" href="#5484">長すぎるパス名(続き)</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-11-29T13:03:30">2008年11月29日 13:03</time></h1>
+    <div class="body">&gt;&gt;data:6818 を見てGrep処理を追ってみたところ，CEditView::DoGrep()の中でバッファオーバーランの可能性が残ってますね．<br><br>途中<br>char szFile[_MAX_PATH];<br>...<br>strcpy( szFile, pcmGrepFile-&gt;GetPtr( /* &amp;nDummy */ ) );<br><br>となっておりますが，GrepFileにはファイル名ではなくファイル名の検索パターン(セミコロン区切り)が与えられるので，_MAX_PATH以下との仮定は完全に誤りです．<br><br>ちなみに，szFile自体は受け渡しにしか使われていないので，ここでコピーする意味が分かりませんね．pcmGrepFile-&gt;GetPtr()をそのまま渡せばこの問題は解決しそうです．<br></div></section>
+    <ul><li><section><h1 id=5487>
+    <span class="no">[5487]</span>
+    <a class="thread-title" href="#5487">Re:長すぎるパス名(続き)</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2008-11-29T23:27:57">2008年11月29日 23:27</time></h1>
+    <div class="body">あちこちにMAX_PATHの処理があるからまずいわけで、<br>ファイルパスクラスでも作って隠蔽したほうがいい<br>んじゃないかと思いました。<br></div></section>
+    </li><li><section><h1 id=5500>
+    <span class="no">[5500]</span>
+    <a class="thread-title" href="#5500">Re:長すぎるパス名(続き)</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-12-08T00:19:03">2008年12月08日 00:19</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ちなみに，szFile自体は受け渡しにしか使われていないので，ここでコピーする意味が分かりませんね．pcmGrepFile-&gt;GetPtr()をそのまま渡せばこの問題は解決しそうです．<br><br>パッチを作成しました。<br>Patches #2402850<br></div></section>
+    <ul><li><section><h1 id=5525>
+    <span class="no">[5525]</span>
+    <a class="thread-title" href="#5525">Re2:長すぎるパス名(続き)</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-01-15T22:48:27">2009年01月15日 22:48</time></h1>
+    <div class="body">rev1510でコミットしました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

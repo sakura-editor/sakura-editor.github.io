@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>\r「復帰」とは？　空白行の削除 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6092</span>
+    <a class="thread-title" href="6092.html#6092">\r「復帰」とは？　空白行の削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6093</span>
+    <a class="thread-title" href="6092.html#6093">RE: \r「復帰」とは？　空白行の削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6094</span>
+    <a class="thread-title" href="6092.html#6094">Re2: \r「復帰」とは？　空白行の削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6095</span>
+    <a class="thread-title" href="6092.html#6095">Re3: \r「復帰」とは？　空白行の削除</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6092>
+    <span class="no">[6092]</span>
+    <a class="thread-title" href="#6092">\r「復帰」とは？　空白行の削除</a>
+    <span class="author">もも</span>
+    <time datetime="2007-06-08T18:02:10">2007年06月08日 18:02</time></h1>
+    <div class="body">前に置換の処理で教えていただいたのですが、（サクラエディタの正規表現のページには）\nが「改行」、\rが復帰とありますが「復帰」とはどのような意味なのでしょうか？（\n「改行」は「改行なのね。」っとわかるのですが。\r「復帰」って？？？<br>それから、前に（空白行の削除と改行削除のやり方を教えていただいたときに）\r\nというの教えてただいたのですが、もし、ただ空白行だけを削除する場合にはどのようにしたらよいのでしょうか？<br><br>例えば、以下では空白行が１、２、０とバラバラなのを↓の下にあるようにしたいのですが。<br><br>What is this?<br><br>This is a pen.<br><br><br>What is that?<br>That is a book.<br><br>↓<br><br>What is this?<br>This is a pen.<br>What is that?<br>That is a book.<br><br><br></div></section>
+    <ul><li><section><h1 id=6093>
+    <span class="no">[6093]</span>
+    <a class="thread-title" href="#6093">RE: \r「復帰」とは？　空白行の削除</a>
+    <span class="author">maru</span>
+    <time datetime="2007-06-08T23:40:58">2007年06月08日 23:40</time></h1>
+    <div class="body">&gt;\nが「改行」、\rが復帰とありますが「復帰」とはどのような意味なのでしょうか？<br>一般にMicrosoftの環境においての改行とは、改行復帰のことだと思ってください。<br>これには歴史的な事情があり、より正確な説明はこのあたりを参考にしてください。<br>http://ja.wikipedia.org/wiki/%E6%94%B9%E8%A1%8C%E3%82%B3%E3%83%BC%E3<br>%83%89<br><br>&gt;ただ空白行だけを削除する場合にはどのようにしたらよいのでしょうか？<br>「^\r\n」→「」行の先頭にある改行コードを削除です。<br></div></section>
+    <ul><li><section><h1 id=6094>
+    <span class="no">[6094]</span>
+    <a class="thread-title" href="#6094">Re2: \r「復帰」とは？　空白行の削除</a>
+    <span class="author">maru</span>
+    <time datetime="2007-06-08T23:44:07">2007年06月08日 23:44</time></h1>
+    <div class="body">アドレスの途中で途切れましたが、ここです。<br>&gt; <a href=http://ja.wikipedia.org/wiki/%E6%94%B9%E8%A1%8C%E3%82%B3%E3%83%BC%E3%83%89 target=_top><nobr>http://<wbr>ja.<wbr>wikipedi<wbr>a.<wbr>org/<wbr>wiki/%<wbr>E6%<wbr>94%<wbr>B9%<wbr>E8%<wbr>A1%<wbr>8C%<wbr>E3%<wbr>82%<wbr>B3%<wbr>E3%<wbr>83%<wbr>BC%<wbr>E3%<wbr>83%<wbr>89</nobr></a><br></div></section>
+    <ul><li><section><h1 id=6095>
+    <span class="no">[6095]</span>
+    <a class="thread-title" href="#6095">Re3: \r「復帰」とは？　空白行の削除</a>
+    <span class="author">もも</span>
+    <time datetime="2007-06-09T00:38:22">2007年06月09日 00:38</time></h1>
+    <div class="body">maruさん<br><br>またまたありがとうございました！できました！！<br><br>最近、エディターによって正規表現のコマンド（こう呼んでいいのでしょうか？　\nとかのことです。）が微妙に異なることを知って、ますます奥が深いなぁって（と同時に大変だぁとも）実感しています。ではまた～。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

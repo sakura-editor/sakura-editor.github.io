@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>[要望]ブラウズの設定 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1703</span>
+    <a class="thread-title" href="1703.html#1703">[要望]ブラウズの設定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1704</span>
+    <a class="thread-title" href="1703.html#1704">RE: [要望]ブラウズの設定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1706</span>
+    <a class="thread-title" href="1703.html#1706">Re2: [要望]ブラウズの設定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1707</span>
+    <a class="thread-title" href="1703.html#1707">Re3: [要望]ブラウズの設定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1714</span>
+    <a class="thread-title" href="1703.html#1714">Re4: [要望]ブラウズの設定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1716</span>
+    <a class="thread-title" href="1703.html#1716">Re5: [要望]ブラウズの設定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1732</span>
+    <a class="thread-title" href="1703.html#1732">Re6: [要望]ブラウズの設定</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1703>
+    <span class="no">[1703]</span>
+    <a class="thread-title" href="#1703">[要望]ブラウズの設定</a>
+    <span class="author">jeak</span>
+    <time datetime="2002-04-20T00:08:58">2002年04月20日 00:08</time></h1>
+    <div class="body">　はじめまして。快適に使わせていただいております。開発者の<br>皆様、本当にご苦労様です。<br>　要望なのですが、現在HTMLファイルの編集中にファイル-ファ<br>イル操作-ブラウズを実行するとIEが起動されますが、これを任<br>意のプログラムあるいは関連付けられているプログラムで起動で<br>きるようなオプションの追加をお願いできませんでしょうか。</div></section>
+    <ul><li><section><h1 id=1704>
+    <span class="no">[1704]</span>
+    <a class="thread-title" href="#1704">RE: [要望]ブラウズの設定</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-20T00:16:16">2002年04月20日 00:16</time></h1>
+    <div class="body"><br>はじめまして。<br><br>&gt;　要望なのですが、現在HTMLファイルの編集中にファイル-ファ<br>&gt;イル操作-ブラウズを実行するとIEが起動されますが、これを任<br>&gt;意のプログラムあるいは関連付けられているプログラムで起動で<br>&gt;きるようなオプションの追加をお願いできませんでしょうか。<br><br>現状、関連付けられているプログラムで起動されると思うのですが、どうでしょう？<br>それから、起動するプログラムを設定するのであれば、マクロを使うのをオススメします。<br>登録済みマクロにしておけば、キー定義も設定できるしツールバーにもおけるし、<br>何しろ、バージョンアップを待たずに済みます :)<br><br>S_ExecCommand('notepad.exe "$F"', 0x00);<br><br>のような感じで。<br><br>標準出力を取得したいときは、<br><br>S_ExecCommand('notepad.exe "$F"', 0x01);<br><br>でござんす。<br><br>これでいかがでしょう？？<br></div></section>
+    <ul><li><section><h1 id=1706>
+    <span class="no">[1706]</span>
+    <a class="thread-title" href="#1706">Re2: [要望]ブラウズの設定</a>
+    <span class="author">jeak</span>
+    <time datetime="2002-04-20T13:42:28">2002年04月20日 13:42</time></h1>
+    <div class="body">　すばやい返信ありがとうございます。<br><br>&gt; 現状、関連付けられているプログラムで起動されると<br>思うのですが、どうでしょう？<br><br>　私は拡張子HTML、HTMにIEコンポーネントタブブラウザである<br>Sleipnir（<a href=http://www20.pos.to/~sleipnir/ target=_top><nobr>http://<wbr>www20.<wbr>pos.<wbr>to/~<wbr>sleipnir<wbr>/<wbr></nobr></a>）を関連付けて<br>いるのですがそれでもIEが起動しています。<br><br>&gt; それから、起動するプログラムを設定するのであれば、マクロを使うのをオススメします。<br>&gt; 登録済みマクロにしておけば、キー定義も設定できるしツールバーにもおけるし、<br>&gt; 何しろ、バージョンアップを待たずに済みます :)<br><br>　わざわざサンプルまで書いていただいて恐縮です。おか<br>げで希望どおりの挙動を得る事が出来ました。ありがとうござい<br>ます。</div></section>
+    <ul><li><section><h1 id=1707>
+    <span class="no">[1707]</span>
+    <a class="thread-title" href="#1707">Re3: [要望]ブラウズの設定</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-20T17:33:51">2002年04月20日 17:33</time></h1>
+    <div class="body"><br>&gt;　私は拡張子HTML、HTMにIEコンポーネントタブブラウザである<br>&gt;Sleipnir（http://www20.pos.to/~sleipnir/）を関連付けて<br>&gt;いるのですがそれでもIEが起動しています。<br><br>ありゃま。ほんとですね。確認しました。<br></div></section>
+    <ul><li><section><h1 id=1714>
+    <span class="no">[1714]</span>
+    <a class="thread-title" href="#1714">Re4: [要望]ブラウズの設定</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-20T23:57:55">2002年04月20日 23:57</time></h1>
+    <div class="body"><br>&gt;&gt;　私は拡張子HTML、HTMにIEコンポーネントタブブラウザである<br>&gt;&gt;Sleipnir（http://www20.pos.to/~sleipnir/）を関連付けて<br>&gt;&gt;いるのですがそれでもIEが起動しています。<br><br>これなのですが、さきほどアップロードした最新のものでは、Sleipnirが起動するものの、ファイル名にスペースが含まれるとうまく開けないみたいです。<br><br>サクラの問題か、Sleipnirの問題か、いまいち自信がないのですが、とりあえずIEを標準にすると動くので、ごめんなさい。今のところはここまででご容赦を。何かわかったら教えてください。(__;<br></div></section>
+    <ul><li><section><h1 id=1716>
+    <span class="no">[1716]</span>
+    <a class="thread-title" href="#1716">Re5: [要望]ブラウズの設定</a>
+    <span class="author">jeak</span>
+    <time datetime="2002-04-21T00:41:12">2002年04月21日 00:41</time></h1>
+    <div class="body">すばやい対応ありがとうございます。<br><br>&gt; これなのですが、さきほどアップロードした最新のもの<br>&gt; では、Sleipnirが起動するものの、ファイル名にスペー<br>&gt; スが含まれるとうまく開けないみたいです。<br><br>私の環境では半角、全角ともにキチンと開けました。<br>Windows2000<br>IE5.5<br><br>おそらく関連付けの設定の問題ではないでしょうか。</div></section>
+    <ul><li><section><h1 id=1732>
+    <span class="no">[1732]</span>
+    <a class="thread-title" href="#1732">Re6: [要望]ブラウズの設定</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-21T11:55:28">2002年04月21日 11:55</time></h1>
+    <div class="body"><br>&gt;おそらく関連付けの設定の問題ではないでしょうか。<br><br>あ、ほんとだ、関連付けが%1だけになっていました。"%1"ですね。しくしくしく。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

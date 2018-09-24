@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Grepでアクセスバイオレーション | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">770</span>
+    <a class="thread-title" href="770.html#770">Grepでアクセスバイオレーション</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">771</span>
+    <a class="thread-title" href="770.html#771">Re:Grepでアクセスバイオレーション</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">774</span>
+    <a class="thread-title" href="770.html#774">Re2:Grepでアクセスバイオレーション</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">776</span>
+    <a class="thread-title" href="770.html#776">Re3:Grepでアクセスバイオレーション</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">777</span>
+    <a class="thread-title" href="770.html#777">「CheckKanjiCode の修正(rev1472)」の問題かしら？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">778</span>
+    <a class="thread-title" href="770.html#778">Re: 「CheckKanjiCode の修正(rev1472)」の問題かしら？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">781</span>
+    <a class="thread-title" href="770.html#781">Re2: 「CheckKanjiCode の修正(rev1472)」の問題かしら？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">783</span>
+    <a class="thread-title" href="770.html#783">Re3: 「CheckKanjiCode の修正(rev1472)」の問題かしら？</a></div>
+    </li><li><div class="list-title">
+    <span class="no">784</span>
+    <a class="thread-title" href="770.html#784">Re3: 「CheckKanjiCode の修正(rev1472)」の問題かしら？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">772</span>
+    <a class="thread-title" href="770.html#772">Re:Grepでアクセスバイオレーション</a></div>
+    </li><li><div class="list-title">
+    <span class="no">773</span>
+    <a class="thread-title" href="770.html#773">Re:Grepでアクセスバイオレーション</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">775</span>
+    <a class="thread-title" href="770.html#775">Re2:Grepでアクセスバイオレーション</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">782</span>
+    <a class="thread-title" href="770.html#782">Re3:Grepでアクセスバイオレーション</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=770>
+    <span class="no">[770]</span>
+    <a class="thread-title" href="#770">Grepでアクセスバイオレーション</a>
+    <span class="author">anonymous</span>
+    <time datetime="2009-01-19T11:43:46">2009年01月19日 11:43</time></h1>
+    <div class="body">rev1495以降のテストバイナリで、Grep時にアクセスバイオレーションが発生します。<br>rev1495、rev1501、rev1516で確認しています。rev1428以前やANSI版では発生しません。<br>Grep中、一定量の検索をすると落ちるように見えます。<br>現状詳しい再現条件はわかりません。<br><br>他の方々の報告がないため、当方の環境に起因するものかとも考えましたが、<br>ダウンロードしてきたテストバイナリをそのまま起動しても現象は発生しました。<br><br>下記のどの環境でも発生しました。<br>・Win XP SP2 (JP)<br>・Win XP SP3 (JP)<br>・Win XP SP2 (ENG)<br>・Win XP SP2 (ENG)<br>・Win 2000 SP4 (ENG)<br><br>再現手順や詳細などが必要でしたらその旨お伝えください。<br>できる限りの情報を集めようと思います。<br><br><br></div></section>
+    <ul><li><section><h1 id=771>
+    <span class="no">[771]</span>
+    <a class="thread-title" href="#771">Re:Grepでアクセスバイオレーション</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-01-19T21:03:09">2009年01月19日 21:03</time></h1>
+    <div class="body">単純にGrepするだけでは自分の環境では起きないみたいです。<br>クラッシュ時にミニダンプを採取するようにしたものを作ったので、それを使ってanonymousさんのWin XP SP3 (JP)環境で再現させて、ダンプファイル（35KB程度）をUpしていただけないでしょうか？<br><br>BugReport/25<br><a href=http://sakura.qp.land.to/?BugReport%2F25 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F25</nobr></a></div></section>
+    <ul><li><section><h1 id=774>
+    <span class="no">[774]</span>
+    <a class="thread-title" href="#774">Re2:Grepでアクセスバイオレーション</a>
+    <span class="author">anonymous</span>
+    <time datetime="2009-01-20T19:32:02">2009年01月20日 19:32</time></h1>
+    <div class="body">素早いレス、ありがとうございます。<br><br>Platform SDKはインストールしておらず、みなさんで再現できる条件ではないかもしれないのが心苦しいですが・・・。<br>trunk2などのソースで再現してみようとしましたが、再現しませんでした。<br><br>以下、詳細情報になります。<br><br>・D:\xampp 下で、"src"をGrep<br>・Grep条件入力のチェックボックスは、サブフォルダからも検索するにチェック、それ以外はチェック無し<br>・結果出力、結果出力形式はそれぞれどちらでも再現<br>・リアルタイム表示のチェックの有無に関わらず発生<br>・Grep中の窓では784件、リアルタイム表示では793行目まで表示されたあたりで落ちる。(Grepの終了前)<br><br>ひとまずこれくらいあげておきます。<br>切り分けに必要な手順等あれば情報ください。</div></section>
+    <ul><li><section><h1 id=776>
+    <span class="no">[776]</span>
+    <a class="thread-title" href="#776">Re3:Grepでアクセスバイオレーション</a>
+    <span class="author">anonymous</span>
+    <time datetime="2009-01-20T22:34:41">2009年01月20日 22:34</time></h1>
+    <div class="body">肝心なことを・・・。<br>ダンプファイル、以下にあげておきました。<br>BugReport/25<br><a href=http://sakura.qp.land.to/?BugReport%2F25 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F25</nobr></a><br><br>syatさんの環境でも再現できたようなのでもうあまり必要ではないかもしれませんが・・・。</div></section>
+    <ul><li><section><h1 id=777>
+    <span class="no">[777]</span>
+    <a class="thread-title" href="#777">「CheckKanjiCode の修正(rev1472)」の問題かしら？</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-01-21T00:01:06">2009年01月21日 00:01</time></h1>
+    <div class="body">ダンプファイルを見てみました。<br>解析状況を報告しておきます。<br><br>発生しているエラー内容:<br>0x00422e30 (sakuraW.exe) でハンドルされていない例外が発生しました: 0xC0000005: 場所 0x09647bf8 を読み込み中にアクセス違反が発生しました。<br><br>エラー箇所:<br>ECodeType CCodeMediator::DetectUnicode( CESI* pcesi ) の最終行<br>CCodeMediator.cpp(118):<br>&#9;return pcesi-&gt;m_aWcInfo[ pcesi-&gt;GetBOMType() ].eCodeID;<br>のところで落ちています。<br>この関数は、<br>rev1472 [Fix] CheckKanjiCode の修正＋α(&gt;&gt;unicode:711)<br>で追加されたもののようなので、rev1472 を境に問題が起きるようになった可能性があります。<br>＃自分はまだこの周辺のコードを読んでないので、今のところ原因まではわかりません。<br><br>呼び出し元を辿ると、<br><br>ECodeType CCodeMediator::CheckKanjiCode( const char* pBuf, int nBufLen )<br>CCodeMediator.cpp(158)<br>↑<br>ECodeType CFileLoad::FileOpen( LPCTSTR pFileName, ECodeType CharCode, int nFlag, bool* pbBomExist )<br>CFileLoad.cpp(147)<br>↑<br>int CGrepAgent::DoGrepFile(<br>CGrepAgent.cpp(1021)<br><br>になってます。</div></section>
+    <ul><li><section><h1 id=778>
+    <span class="no">[778]</span>
+    <a class="thread-title" href="#778">Re: 「CheckKanjiCode の修正(rev1472)」の問題かしら？</a>
+    <span class="author">げんた</span>
+    <time datetime="2009-01-21T00:28:58">2009年01月21日 00:28</time></h1>
+    <div class="body">&gt;エラー箇所:<br>&gt;ECodeType CCodeMediator::DetectUnicode( CESI* pcesi ) の最終行<br>&gt;CCodeMediator.cpp(118):<br>&gt;&#9;return pcesi-&gt;m_aWcInfo[ pcesi-&gt;GetBOMType() ].eCodeID;<br>&gt;のところで落ちています。<br>GetBOMType()が取り得る値の1つにESI_BOMTYPE_UNKNOWNがあり，CESI.hでこれが -1 と定義されています．<br>ESI_BOMTYPE_LE,ESI_BOMTYPE_BEのどちらとも判定できなかった場合に確保したアドレスより手前にアクセスしてしまうのではないでしょうか．<br><br>あ，でも手前には他の変数がありますね．<br>逆に直後にあるm_eWcBomTypeが何か別の値で上書きされて，その後ここを通るととんでもないところにアクセスするのでしょうか．<br><br>アクセスしたアドレスとpcesiのアドレスからm_aWcInfo[]のインデックスが分かるとヒントになるかもしれませんね．<br>(外してたらごめんなさい)</div></section>
+    <ul><li><section><h1 id=781>
+    <span class="no">[781]</span>
+    <a class="thread-title" href="#781">Re2: 「CheckKanjiCode の修正(rev1472)」の問題かしら？</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-01-21T18:42:23">2009年01月21日 18:42</time></h1>
+    <div class="body">修正してコミットしました（&gt;&gt;unicode:779）<br><br>対象とするファイルのサイズがゼロのとき、<br>CCodeMediator::CheckKanjiCode()の<br>&#9;pcesi-&gt;SetInformation()<br>がfalseを返すのにそのまま<br>&#9;nret = DetectUnicode( pcesi );<br>に突入してしまうのがまずかったようです。<br>pcesi-&gt;m_eWcBomType<br>の値が不確定のままなのでm_aWcInfo[]のインデックスがとんでもない値になってました。</div></section>
+    <ul><li><section><h1 id=783>
+    <span class="no">[783]</span>
+    <a class="thread-title" href="#783">Re3: 「CheckKanjiCode の修正(rev1472)」の問題かしら？</a>
+    <span class="author">anonymous</span>
+    <time datetime="2009-01-22T00:59:24">2009年01月22日 00:59</time></h1>
+    <div class="body">&gt; 修正してコミットしました（&gt;&gt;unicode:779）<br>対応ありがとうございます。<br>rev1519のバイナリにて、思う存分Grepできています。<br><br>当方、試用、不具合報告くらいしか協力できませんが、応援しております。</div></section>
+    </li><li><section><h1 id=784>
+    <span class="no">[784]</span>
+    <a class="thread-title" href="#784">Re3: 「CheckKanjiCode の修正(rev1472)」の問題かしら？</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2009-01-22T14:26:19">2009年01月22日 14:26</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 修正してコミットしました（&gt;&gt;unicode:779）<br>&gt; <br>&gt; 対象とするファイルのサイズがゼロのとき、<br>&gt; CCodeMediator::CheckKanjiCode()の<br>&gt; &#9;pcesi-&gt;SetInformation()<br>&gt; がfalseを返すのにそのまま<br>&gt; &#9;nret = DetectUnicode( pcesi );<br>&gt; に突入してしまうのがまずかったようです。<br>&gt; pcesi-&gt;m_eWcBomType<br>&gt; の値が不確定のままなのでm_aWcInfo[]のインデックスがとんでもない値になってました。<br><br>ANSI 版のパッチに反映させました。<br>修正ありがとうございました。メモリリークのほうなど、<br>すっかり見落としていて自分では見つけられそうになかったです（汗）<br>重ね重ね、ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=772>
+    <span class="no">[772]</span>
+    <a class="thread-title" href="#772">Re:Grepでアクセスバイオレーション</a>
+    <span class="author">di</span>
+    <time datetime="2009-01-20T12:52:35">2009年01月20日 12:52</time></h1>
+    <div class="body">私の環境でも同様にGrepで稀に落ちるようになりました。<br>発生し始めたリビジョンも同じかと。<br>拡張子のフィルタリング等で母体数を減らすと落ちなくなっている感じです。<br>環境はWinXP SP3です。<br><br>#ダンプの取得に協力したいのは山々ですが、職場のセキュリティの関係で<br>#ファイルのアップロードが出来ません．．．無念。orz</div></section>
+    </li><li><section><h1 id=773>
+    <span class="no">[773]</span>
+    <a class="thread-title" href="#773">Re:Grepでアクセスバイオレーション</a>
+    <span class="author">anonymous</span>
+    <time datetime="2009-01-20T18:34:07">2009年01月20日 18:34</time></h1>
+    <div class="body">もう少し詳細情報をください。<br>・Grep条件は、何文字くらい？全角文字を含む？<br>・ファイルは、*.*のみ？　除外指定してる？<br>・単語単位で探す、大文字小文字区別などのチェック状態は？<br>・正規表現は使ってます？<br>・検索ファイル数は何ファイルくらい？単に母体数が多いと言われても人それぞれですから<br>・ヒット数は何件くらい？<br>・たとえば、Program Files\Platform SDK\Samplesを検索するとかなら他の人もできます<br></div></section>
+    <ul><li><section><h1 id=775>
+    <span class="no">[775]</span>
+    <a class="thread-title" href="#775">Re2:Grepでアクセスバイオレーション</a>
+    <span class="author">syat</span>
+    <time datetime="2009-01-20T21:49:38">2009年01月20日 21:49</time></h1>
+    <div class="body">私の環境でも再現しました。<br><a href=http://www.apachefriends.org/jp/xampp-windows.html target=_top><nobr>http://<wbr>www.<wbr>apachefr<wbr>iends.<wbr>org/<wbr>jp/<wbr>xampp-<wbr>windows.<wbr>html</nobr></a><br>xamppのzipを適当な場所に解凍し、その中でsrcをGrepすると落ちます。鉄板。<br>バイナリファイル内を検索したときに落ちている雰囲気です。<br></div></section>
+    <ul><li><section><h1 id=782>
+    <span class="no">[782]</span>
+    <a class="thread-title" href="#782">Re3:Grepでアクセスバイオレーション</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-01-21T18:45:03">2009年01月21日 18:45</time></h1>
+    <div class="body">▼ syatさん<br>&gt; 私の環境でも再現しました。<br><br>情報ありがとうございます。<br>僕のところでもこれで再現しました。(^^;<br>コミットした修正(&gt;&gt;unicode:779)での動作確認に使用しました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

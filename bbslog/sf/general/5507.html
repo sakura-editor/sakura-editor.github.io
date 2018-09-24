@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>grepの正規表現で\1を検索できません。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5507</span>
+    <a class="thread-title" href="5507.html#5507">grepの正規表現で\1を検索できません。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5510</span>
+    <a class="thread-title" href="5507.html#5510">Re:grepの正規表現で\1を検索できません。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5511</span>
+    <a class="thread-title" href="5507.html#5511">bug? Re2:grepの正規表現で\1を検索できません。</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5513</span>
+    <a class="thread-title" href="5507.html#5513">RE: grepの正規表現で\1を検索できません。</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5507>
+    <span class="no">[5507]</span>
+    <a class="thread-title" href="#5507">grepの正規表現で\1を検索できません。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2006-10-21T12:18:13">2006年10月21日 12:18</time></h1>
+    <div class="body">正規表現のチェックマークをはずせばできますが,<br>正規表現で\1を検索すると,□検索条件  "\\1"となってしまいます。<br>無理ですか？よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=5510>
+    <span class="no">[5510]</span>
+    <a class="thread-title" href="#5510">Re:grepの正規表現で\1を検索できません。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-21T14:38:47">2006年10月21日 14:38</time></h1>
+    <div class="body">▼ ろろさん<br>&gt; 正規表現で\1を検索すると,□検索条件  "\\1"となってしまいます。<br><br>grep正規表現の検索文字列に「\\1」を入れるとエラーになりません。<br>どんな操作状況で"\\1"となってしまうんですか？<br>こちらでは「正規表現エラー」になります。</div></section>
+    <ul><li><section><h1 id=5511>
+    <span class="no">[5511]</span>
+    <a class="thread-title" href="#5511">bug? Re2:grepの正規表現で\1を検索できません。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-10-21T17:13:21">2006年10月21日 17:13</time></h1>
+    <div class="body">&gt; &gt; 正規表現のチェックマークをはずせばできますが,<br>&gt; &gt; 正規表現で\1を検索すると,□検索条件  "\\1"となってしまいます。<br>&gt; どんな操作状況で"\\1"となってしまうんですか？<br>&gt; こちらでは「正規表現エラー」になります。<br>sakura.exe Ver 1.5.10.1 でした、すみません。<br><br>確認できました sakura.exe Ver 1.5.12.1 です。<br>「Grepの処理中です。」のダイアログが出て、SAKURA を終了出来ていません。<br><br>正規表現をいつもONにして、「\\1」,「\1」を順にgrep検索する場合です。<br>その後で、「\\1」をもう一度grep検索すると終了できます。</div></section>
+    </li></ul></li><li><section><h1 id=5513>
+    <span class="no">[5513]</span>
+    <a class="thread-title" href="#5513">RE: grepの正規表現で\1を検索できません。</a>
+    <span class="author">すい</span>
+    <time datetime="2006-10-21T23:03:05">2006年10月21日 23:03</time></h1>
+    <div class="body">&gt;正規表現のチェックマークをはずせばできますが,<br>&gt;正規表現で\1を検索すると,□検索条件  "\\1"となってしまいます。<br>&gt;無理ですか？よろしくお願いします。<br><br>Grep検索結果ウィンドウでの表示の事ならそれで良し。<br>何故かは分かりませんが、正規表現onの場合、<br>Grep検索結果ウィンドウには検索文字列中の<br>\ が \\ と表示されます。(あくまで表示上だけのお話し)<br>当然、\1 を検索すればGrep検索結果ウィンドウには \\1 と表示されます。<br>でもGrep検索自体はちゃんと \1 で行われています。<br>表示だけのお話し。それだけのお話し。<br><br>それより、どのような検索文字列で検索しているのですか？<br>そもそも、正規表現中での \1 の意味や使い方を<br>ちゃんと分かって使っているのですか？<br></div></section>
+    </li></ul></li></ul></body></html>

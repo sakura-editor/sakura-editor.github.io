@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>今後の開発について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5429</span>
+    <a class="thread-title" href="5429.html#5429">今後の開発について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5431</span>
+    <a class="thread-title" href="5429.html#5431">Re:今後の開発について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5432</span>
+    <a class="thread-title" href="5429.html#5432">Re2:今後の開発について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5433</span>
+    <a class="thread-title" href="5429.html#5433">Re3:今後の開発について</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5429>
+    <span class="no">[5429]</span>
+    <a class="thread-title" href="#5429">今後の開発について</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-09-21T00:55:19">2008年09月21日 00:55</time></h1>
+    <div class="body">ご存じの通り公式版(以下ANSI版)の他にUNICODE版の開発が行われています．<br>UNICODE版はソースが整理されており普通に使えるレベルには達しているそうなので，ANSI版とUNICODE版で機能的に分岐するのを避ける意味で，今後ANSI版「だけ」への機能拡張は入れない方針にしたいと思います．<br><br>改良を行いたい方はまずUNICODE版へ変更(あるいはパッチ)を入れ，その後ANSI版でも必要であればバックポートの形にしてください．<br><br>以上よろしくお願いします．<br><br><a href=http://sakura-editor.wiki.sourceforge.net/MainStreamPolicy target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>wiki.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>MainStre<wbr>amPolicy<wbr></nobr></a></div></section>
+    <ul><li><section><h1 id=5431>
+    <span class="no">[5431]</span>
+    <a class="thread-title" href="#5431">Re:今後の開発について</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-09-23T20:51:57">2008年09月23日 20:51</time></h1>
+    <div class="body">▼ げんたさん<br>UNICODE版をメインストリームにするのは頃合いだと思うのですが、ANSI版のテストバージョンのリリースも打止めですか？<br><br>まぁ今もそういう状態なんですが、不具合報告に対して不具合修正パッチを作ってもバイナリが出ないとビルド環境を持っている人しか使えないので、何らかの方法を考えて欲しいです。</div></section>
+    <ul><li><section><h1 id=5432>
+    <span class="no">[5432]</span>
+    <a class="thread-title" href="#5432">Re2:今後の開発について</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-09-24T07:03:00">2008年09月24日 07:03</time></h1>
+    <div class="body">&gt;ANSI版のテストバージョンのリリースも打止めですか？<br>テストバージョンのバイナリは，継続して作った方が良いですね．wikiの方はなすこじさんが作成されたバイナリがあればそれをupしていただければとりあえずはOKかな(^^;)と．リリース候補みたいな形で，Commit分のみのバイナリを作ってもらえるとありがたいです．<br>sourceforge.netの最新版については昨年末以来全然更新していないので，Commit完了分までは1.6.3.0として正式版を作成する必要があると考えています．Patchesを見ると，すぐにcommitできそうなパッチも残っていますね．<br>(最新が#1432なのにHistoryに全然書かれていないので，先にそちらの整理が必要ですが...)<br><br>最近のバージョンの動作確認とか全然していなかったので，明日すぐとはいきませんが，近いうちに<br></div></section>
+    <ul><li><section><h1 id=5433>
+    <span class="no">[5433]</span>
+    <a class="thread-title" href="#5433">Re3:今後の開発について</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-09-25T01:05:12">2008年09月25日 01:05</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;ANSI版のテストバージョンのリリースも打止めですか？<br>&gt; テストバージョンのバイナリは，継続して作った方が良いですね．wikiの方はなすこじさんが作成されたバイナリがあればそれをupしていただければとりあえずはOKかな(^^;)と．リリース候補みたいな形で，Commit分のみのバイナリを作ってもらえるとありがたいです．<br><br>了解です。<br>テストバージョンの必要性を感じた人などが発行すればOKということですね。<br>もっと堅苦しいことを考えていました (^^;<br><br>1ヶ月程後になるかも？ということでしたのでテスト版を発行しておきました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

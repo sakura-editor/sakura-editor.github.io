@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>\の色分け不具合について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6810</span>
+    <a class="thread-title" href="6810.html#6810">\の色分け不具合について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6812</span>
+    <a class="thread-title" href="6810.html#6812">Re: "\"の色分け不具合について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6813</span>
+    <a class="thread-title" href="6810.html#6813">Re:"\"の色分け不具合について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6814</span>
+    <a class="thread-title" href="6810.html#6814">Re2:"\"の色分け不具合について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6815</span>
+    <a class="thread-title" href="6810.html#6815">Re3:"\"の色分け不具合について</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6810>
+    <span class="no">[6810]</span>
+    <a class="thread-title" href="#6810">\の色分け不具合について</a>
+    <span class="author">しま</span>
+    <time datetime="2008-11-20T22:04:03">2008年11月20日 22:04</time></h1>
+    <div class="body">JapaScript + WSHのタイプ別設定を使っているのですが、<br>ダブルクォーテーションで囲んだ円サイン（"\"）がコードに入ると、<br>それ以降のコードが全て茶色（ダブルクォーテーションで囲んだ色）になります。<br>インストールしたのは最新のパッケージです。<br>不具合でしょうか？<br>どこか設定でミスをしてしまったのでしょうか？<br>わかる方がいらっしゃいましたら、よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=6812>
+    <span class="no">[6812]</span>
+    <a class="thread-title" href="#6812">Re: "\"の色分け不具合について</a>
+    <span class="author">しみづ</span>
+    <time datetime="2008-11-21T13:01:27">2008年11月21日 13:01</time></h1>
+    <div class="body">　タイプ別設定のカラータブにエスケープ設定があります。<br></div></section>
+    </li><li><section><h1 id=6813>
+    <span class="no">[6813]</span>
+    <a class="thread-title" href="#6813">Re:"\"の色分け不具合について</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2008-11-21T15:45:49">2008年11月21日 15:45</time></h1>
+    <div class="body">▼ しまさん<br>&gt; JapaScript + WSHのタイプ別設定を使っているのですが、<br>&gt; ダブルクォーテーションで囲んだ円サイン（"\"）がコードに入ると、<br>&gt; それ以降のコードが全て茶色（ダブルクォーテーションで囲んだ色）になります。<br>&gt; インストールしたのは最新のパッケージです。<br>&gt; 不具合でしょうか？<br>&gt; どこか設定でミスをしてしまったのでしょうか？<br>&gt; わかる方がいらっしゃいましたら、よろしくお願いします。<br><br>　これは、仕様上正しい状況で、不具合でも設定ミスでもありません。<br>捉え方の問題です。<br>（この後の説明は、知っている人にとってはくどい様ですが、<br>　「理解出来ないと意味がない！」ので、念の為、細かく書きます。<br><br>　「"\"」という文字列は、Sakuraエディタの認識として、<br>「"」と「\"」となっています。<br><br>　前の「"」はプログラム中の文字列先頭を意味する「ダブルクォーテーション」、<br>続く「\"」は、「"」文字その物として扱う為のエスケープシーケンス。<br><br>　Sakuraエディタは、前の「"」に対応する文字列の末尾を意味する「"」が認識出来ない為、<br>以降の全ての文字を一連の文字列として、色分けしてしまいます。<br><br>　JavaScriptも「\」をエスケープシーケンスを表す為の特殊文字として扱う様なので、<br>もし、「\」（円マーク）文字その物が必要な場合なら、「"\\"」と記述すべきです。<br><br>　それ以外の目的で「"\"」を使っているのならば、この「"\"」の用途が分かるように、<br>前後それぞれ２～３行位の文を一緒に付けて、再度質問する必要があると思います。<br></div></section>
+    <ul><li><section><h1 id=6814>
+    <span class="no">[6814]</span>
+    <a class="thread-title" href="#6814">Re2:"\"の色分け不具合について</a>
+    <span class="author">しま</span>
+    <time datetime="2008-11-22T08:32:05">2008年11月22日 08:32</time></h1>
+    <div class="body">なるほど！<br>エスケープシーケンスというものを認識していませんでした。<br>申し訳ございません。<br><br>ありがとうございました。<br></div></section>
+    <ul><li><section><h1 id=6815>
+    <span class="no">[6815]</span>
+    <a class="thread-title" href="#6815">Re3:"\"の色分け不具合について</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2008-11-24T11:13:05">2008年11月24日 11:13</time></h1>
+    <div class="body">▼ しまさん<br>&gt; なるほど！<br>&gt; エスケープシーケンスというものを認識していませんでした。<br>&gt; 申し訳ございません。<br>　こういう物はある程度の慣れがないと、せっかくのヘルプが有っても、<br>「どんな時に何処を見ればいいの?」って感じだと思うので、<br>こまめに、時々ヘルプを眺めて見るのも良いかと・・・。<br>&gt; <br>&gt; ありがとうございました。<br>　いえいえ、少しでもお役に立てたのであれば嬉しいですヨ。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

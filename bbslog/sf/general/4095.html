@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>改頁コード 0x0c で改頁するには？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4095</span>
+    <a class="thread-title" href="4095.html#4095">改頁コード 0x0c で改頁するには？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4096</span>
+    <a class="thread-title" href="4095.html#4096">Re: 改頁コード 0x0c で改頁するには？</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4097</span>
+    <a class="thread-title" href="4095.html#4097">Re:改頁コード 0x0c で改頁するには？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4098</span>
+    <a class="thread-title" href="4095.html#4098">Re2:改頁コード 0x0c で改頁するには？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4095>
+    <span class="no">[4095]</span>
+    <a class="thread-title" href="#4095">改頁コード 0x0c で改頁するには？</a>
+    <span class="author">Hiro-H</span>
+    <time datetime="2004-10-15T16:57:34">2004年10月15日 16:57</time></h1>
+    <div class="body">秀丸からの乗り換えを検討しています。<br><br>印刷時に強制改頁を行いたいのですが、<br>0x0c を挿入してもプレビューで見ると無視されています。<br>どこか設定を変更すれば、改頁が有効になるのでしょうか？<br>それとも、0x0c はそのままプリンタに<br>0x0c として送信されるようになっているのでしょうか？</div></section>
+    <ul><li><section><h1 id=4096>
+    <span class="no">[4096]</span>
+    <a class="thread-title" href="#4096">Re: 改頁コード 0x0c で改頁するには？</a>
+    <span class="author">もか</span>
+    <time datetime="2004-10-15T18:43:02">2004年10月15日 18:43</time></h1>
+    <div class="body">現状、改項はできません。<br>&gt;それとも、0x0c はそのままプリンタに<br>&gt;0x0c として送信されるようになっているのでしょうか？<br>エディタはWindowsには0x0cのまま、印刷するように渡しています。<br>Windowsは文字コード(と制御コード)をプリンターに直接送らずに、フォントを使って画像として送っているはずです。<br>ちなみに制御は、専用のAPI関数を使います。<br></div></section>
+    </li><li><section><h1 id=4097>
+    <span class="no">[4097]</span>
+    <a class="thread-title" href="#4097">Re:改頁コード 0x0c で改頁するには？</a>
+    <span class="author">すす</span>
+    <time datetime="2004-10-15T19:07:08">2004年10月15日 19:07</time></h1>
+    <div class="body">▼ Hiro-Hさん<br>&gt; 秀丸からの乗り換えを検討しています。<br>&gt; <br>&gt; 印刷時に強制改頁を行いたいのですが、<br>&gt; 0x0c を挿入してもプレビューで見ると無視されています。<br>&gt; どこか設定を変更すれば、改頁が有効になるのでしょうか？<br>&gt; それとも、0x0c はそのままプリンタに<br>&gt; 0x0c として送信されるようになっているのでしょうか？<br>プレビューはだめだけど印刷はちゃんと改ページされますね。。<br>ってそのぐらい自分で試してみましょうよ<br><br>バグでしょうか<br>1.4.9.0にて確認しました<br>改ページコードがあっても印刷プレビューで改ページされない<br>印刷自体は改ページされます<br></div></section>
+    <ul><li><section><h1 id=4098>
+    <span class="no">[4098]</span>
+    <a class="thread-title" href="#4098">Re2:改頁コード 0x0c で改頁するには？</a>
+    <span class="author">Hiro-H</span>
+    <time datetime="2004-10-15T21:37:07">2004年10月15日 21:37</time></h1>
+    <div class="body">▼ すすさん<br>&gt; プレビューはだめだけど印刷はちゃんと改ページされますね。。<br>&gt; ってそのぐらい自分で試してみましょうよ<br><br>実は Adobe PDF にて印刷（pdfファイルに変換）<br>したところ、全く改ページされていなかったので、<br>その時点で残念！だったのです。<br>というのも、紙に印刷するのが目的ではなく、<br>pdf ファイルに変換するのが私の意図していた<br>使用方法だったからです。<br><br>0x0c はそのまま送信されているようなので、<br>Adobe PDF プリンタの設定で 0x0c を改ページ<br>と認識するような設定がないかどうか探してみます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

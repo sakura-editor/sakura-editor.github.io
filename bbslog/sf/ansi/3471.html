@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>EOFを含む最終行削除で落ちる(一般3697) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3471</span>
+    <a class="thread-title" href="3471.html#3471">EOFを含む最終行削除で落ちる(一般3697)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3472</span>
+    <a class="thread-title" href="3471.html#3472">Re: EOFを含む最終行削除で落ちる(一般3697)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3473</span>
+    <a class="thread-title" href="3471.html#3473">Re2: EOFを含む最終行削除で落ちる(一般3697)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3474</span>
+    <a class="thread-title" href="3471.html#3474">Re2: EOFを含む最終行削除で落ちる(一般3697)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3475</span>
+    <a class="thread-title" href="3471.html#3475">Re3: EOFを含む最終行削除で落ちる(一般3697)</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3471>
+    <span class="no">[3471]</span>
+    <a class="thread-title" href="#3471">EOFを含む最終行削除で落ちる(一般3697)</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-19T00:27:49">2004年03月19日 00:27</time></h1>
+    <div class="body">&gt;&gt;data:3697 特定手順で落ちてしまいます<br>なか氏、あきひ氏、げんた氏に感謝します。<br>CDocLineMgrにて<br>ちょと前まで、メモリーリークしていたので、アクセス違反せずに、運良く動作していた模様。<br>m_pCodePrevRefer が、delete済みのCDocLineをさしていたのが原因のようです。<br>バグ修正と、妥当性診断付きDUMPの差分をアップロードしときます。<br>http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/<br>にある、fix040317b.tar.bz2 (URLは違うらしい)です。<br></div></section>
+    <ul><li><section><h1 id=3472>
+    <span class="no">[3472]</span>
+    <a class="thread-title" href="#3472">Re: EOFを含む最終行削除で落ちる(一般3697)</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-19T00:36:37">2004年03月19日 00:36</time></h1>
+    <div class="body">&gt;&gt;3470 とおんなじバグのことです。<br>10分もずれてるけどニアミスってことで勘弁。先に受信だけすればよかった。。<br></div></section>
+    <ul><li><section><h1 id=3473>
+    <span class="no">[3473]</span>
+    <a class="thread-title" href="#3473">Re2: EOFを含む最終行削除で落ちる(一般3697)</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-19T09:57:32">2004年03月19日 09:57</time></h1>
+    <div class="body">&gt; &gt;&gt;3470 とおんなじバグのことです。<br>&gt;10分もずれてるけどニアミスってことで勘弁。先に受信だけすればよかった。。<br>いやいや，私のほうはよくわからなかったのでそのまま寝ましたから(笑)．<br>ありがとうございました．見てみます．<br></div></section>
+    </li><li><section><h1 id=3474>
+    <span class="no">[3474]</span>
+    <a class="thread-title" href="#3474">Re2: EOFを含む最終行削除で落ちる(一般3697)</a>
+    <span class="author">fotomo</span>
+    <time datetime="2004-03-19T17:46:28">2004年03月19日 17:46</time></h1>
+    <div class="body">diffのファイル(fix040317b.diff)で質問があるのですが。<br><br>■56行目の<br>-&#9;//}<br>+#if 0<br>+&#9;}<br>+#endif<br>はどんな意味があるのでしょうか？<br><br>■147行目の<br>+&#9;if( 0 &gt; nLineNum || nLineNum &gt;= m_nLines ){<br>+#ifdef _DEBUG<br>+&#9;&#9;if( 0 &gt; nLineNum ){<br>+&#9;&#9;&#9;MYTRACE( "CLayoutMgr::Search() nLineNum = %d\n", nLineNum );<br>+&#9;&#9;}<br> &#9;&#9;return NULL;<br>+#endif<br>は、最後の「#endif」は「return NULL」の前では？<br>(違っていたらごめんなさい)<br></div></section>
+    <ul><li><section><h1 id=3475>
+    <span class="no">[3475]</span>
+    <a class="thread-title" href="#3475">Re3: EOFを含む最終行削除で落ちる(一般3697)</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-19T19:46:18">2004年03月19日 19:46</time></h1>
+    <div class="body">&gt;■56行目の#if 0<br>対応する開き括弧が、#if 0 ～ #endifによって無効化さているために、<br>プリプロセッサを読まないツール(サクラエディタのアウトラインを含む)で括弧の対応ができないという、<br>利便性の問題です。<br><br>&gt;■147行目の(中略..)は、最後の「#endif」は「return NULL」の前では？<br>ありがとうございます。その通りです。<br>取り込むとき、修正願います。(^^;<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>うう、外部ＨＴＭＬヘルプの起動をマクロ化出来ない（ＴＴ） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2087</span>
+    <a class="thread-title" href="2087.html#2087">うう、外部ＨＴＭＬヘルプの起動をマクロ化出来ない（ＴＴ）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2091</span>
+    <a class="thread-title" href="2087.html#2091">Re: うう、外部ＨＴＭＬヘルプの起動をマクロ化出来ない（ＴＴ）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2093</span>
+    <a class="thread-title" href="2087.html#2093">Re2: うう、外部ＨＴＭＬヘルプの起動をマクロ化出来ない（ＴＴ）</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2087>
+    <span class="no">[2087]</span>
+    <a class="thread-title" href="#2087">うう、外部ＨＴＭＬヘルプの起動をマクロ化出来ない（ＴＴ）</a>
+    <span class="author">youma</span>
+    <time datetime="2002-07-05T10:44:13">2002年07月05日 10:44</time></h1>
+    <div class="body">以前から、外部ＨＴＭＬヘルプを複数指定したかったので、<br>マクロ関連が少し落ち着くまでまってました。<br><br>最近は、すこーし、落ち着いたっぽいので暫定版として<br>つくろうとしてみましたが、見事失敗。<br><br>すみません、正しい記述方法を教えて下さい。<br><br><br>以下、やってみた事。<br><br>まず、外部コマンド実行＆マクロで出来るようになるはず・・・と、<br>以前、教えて頂いたので、記述。<br><br>S_ExecCommand('C:\HELP_DOC\VBSdocs\VBS55.CHM "$C"',0);<br><br>上記によって外部HTMLヘルプは『起動』はしました。<br>しかし、Sakuraで選択中の文字列を直接検索する事が出来ませんでした。<br><br>Ｓａｋｕｒａの基本機能の外部ＨＴＭＬヘルプの指定…で、<br><br>C:\HELP_DOC\VBSdocs\VBS55.CHM<br><br>を指定していた場合、選択中の文字列を直接検索する事は<br>可能でした。<br>そこで、<br><br>S_ExtHtmlHelp<br><br>をマクロで作成し実行してみましたところ、実行エラーで動きませんでした。<br>（PPA.DllがＳａｋｕｒａのフォルダ内にあります。)<br><br>なにか、良い手法はありませんでしょうか？</div></section>
+    <ul><li><section><h1 id=2091>
+    <span class="no">[2091]</span>
+    <a class="thread-title" href="#2091">Re: うう、外部ＨＴＭＬヘルプの起動をマクロ化出来ない（ＴＴ）</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-07-05T14:43:24">2002年07月05日 14:43</time></h1>
+    <div class="body"><a href=http://members.tripod.co.jp/sakura_editor/snapshot/sakura-2002-07-05p2.zip target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>snapshot<wbr>/<wbr>sakura-<wbr>2002-<wbr>07-<wbr>05p2.<wbr>zip</nobr></a><br>試してみてください．<br><br>以下の書式を拡張してあります．<br>・ExtHtmlHelp( ヘルプファイル, キーワード );<br>キーボードマクロではS_はあってもなくても同じです．(PPAでは必須)<br>ヘルプファイルを空文字列にするとデフォルトヘルプファイルを使います．<br>キーワードを省略あるいは空文字列にするとキャレット位置の単語or選択された文字列をキーワードとして開きます．<br><br>両方省略あるいは空文字列を指定したときは通常の「外部HTMLヘルプ」コマンドを実行したのと同じことになります．<br></div></section>
+    <ul><li><section><h1 id=2093>
+    <span class="no">[2093]</span>
+    <a class="thread-title" href="#2093">Re2: うう、外部ＨＴＭＬヘルプの起動をマクロ化出来ない（ＴＴ）</a>
+    <span class="author">youma</span>
+    <time datetime="2002-07-08T18:11:44">2002年07月08日 18:11</time></h1>
+    <div class="body">早速試してみました！<br><br>見事動作いたしました♪<br><br>ありがとうございます。<br><br>これで、私内での秀さん　ＶＳ　ＳＡＫＵＲＡでは<br>ＳＡＫＵＲＡに軍配が見事挙がりました。<br>（秀で、私がやってた事は、全てＳＡＫＵＲＡで実行可能なんですもん）<br><br>現時点でＳＡＫＵＲＡに欲しいと思う機能はほとんど<br>完備しちゃいました（すごい～）<br><br>これからも、どうぞよろしくお願いします。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>画面スクロールにて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7751</span>
+    <a class="thread-title" href="7751.html#7751">画面スクロールにて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7752</span>
+    <a class="thread-title" href="7751.html#7752">Re: 画面スクロールにて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7753</span>
+    <a class="thread-title" href="7751.html#7753">Re2: 画面スクロールにて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7754</span>
+    <a class="thread-title" href="7751.html#7754">Re3: 画面スクロールにて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7755</span>
+    <a class="thread-title" href="7751.html#7755">Re4: 画面スクロールにて</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7751>
+    <span class="no">[7751]</span>
+    <a class="thread-title" href="#7751">画面スクロールにて</a>
+    <span class="author">tn</span>
+    <time datetime="2014-01-10T18:45:08">2014年01月10日 18:45</time></h1>
+    <div class="body">スクロールバー操作と[PageUp][PageDown]キー操作との<br>相性について質問いたします．<br><br>①長いファイル，例えば1000行のファイルを開く．<br>　(各行は数十文字程度．画面の縦サイズは60行程度に．)<br>②100行目のところにカーソルを置く．<br>③その状態で「スクロールバーをマウスドラッグで操作」<br>　をして1000行目(最下部)に画面移動する．<br>④[PageUp]キーによりどんどん上にスクロールしようと<br>　すると，100行目に位置していたカーソルも上側に<br>　平行移動し，カーソルが先頭行に至った時点(850行前後を<br>　画面表示しているとき)で[PageUp]キーによるスクロールが<br>　できなくなります．<br>⑤このとき，[PageDown]キーを押すと再度下側にスクロール<br>　できますが，最下部に至るとそこで止まらず，<br>　次は「カーソルのある箇所から1画面下スクロールしたところ」<br>　が画面表示されてしまいます．<br>⑥上下逆のことをやっても同様のことが起こります．<br><br>　[PageUp][PageDown]キーで先頭から末尾まで内容を追いかけたい時が<br>多いのですが，上述の現象は仕様でしょうか？</div></section>
+    <ul><li><section><h1 id=7752>
+    <span class="no">[7752]</span>
+    <a class="thread-title" href="#7752">Re: 画面スクロールにて</a>
+    <span class="author">もか</span>
+    <time datetime="2014-01-10T20:07:21">2014年01月10日 20:07</time></h1>
+    <div class="body">&gt;　[PageUp][PageDown]キーで先頭から末尾まで内容を追いかけたい時が<br>&gt;多いのですが，上述の現象は仕様でしょうか？<br>少なくとも私は仕様ではないと思います。<br>1.6.6.0でもそうみたいですね。<br>直感的には[PageUp][PageDown]したら、[↑][↓]同様カーソル行が画面に見えるようになるんではないかと。<br></div></section>
+    <ul><li><section><h1 id=7753>
+    <span class="no">[7753]</span>
+    <a class="thread-title" href="#7753">Re2: 画面スクロールにて</a>
+    <span class="author">もか</span>
+    <time datetime="2014-01-10T20:22:19">2014年01月10日 20:22</time></h1>
+    <div class="body">「メモ帳ライクに、画面に対するカーソル位置はそのままで１ページアップ」<br>とコメントにありました。(2001年)<br>それ以前(2000年頃)は、上下キーと同じ動作だったようです。<br>上までスクロールできないのはバグだと思うんですが。<br>　そのWindows7のメモ帳では、PageUpだと画面のスクロール位置にカーソルが飛んでから1ページUPします。<br>サクラは、カーソル位置は元のまま1ページ分上に移動して、画面もカーソル移動量分だけ上に移動しますね。<br></div></section>
+    <ul><li><section><h1 id=7754>
+    <span class="no">[7754]</span>
+    <a class="thread-title" href="#7754">Re3: 画面スクロールにて</a>
+    <span class="author">もか</span>
+    <time datetime="2014-01-10T23:06:07">2014年01月10日 23:06</time></h1>
+    <div class="body">カーソルが先頭行に移動した後も、画面だけをスクロールするように修正しました。<br>パッチ：<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/749/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>749/<wbr></nobr></a><br><br>テスト版：<br><a href=http://ux.getuploader.com/sakura_editor/download/93/sakura_2-1-0-0_r3547_fix_pageupdown.zip target=_top><nobr>http://<wbr>ux.<wbr>getuploa<wbr>der.<wbr>com/<wbr>sakura_e<wbr>ditor/<wbr>download<wbr>/<wbr>93/<wbr>sakura_2<wbr>-<wbr>1-<wbr>0-<wbr>0_r3547_<wbr>fix_page<wbr>updown.<wbr>zip</nobr></a><br></div></section>
+    <ul><li><section><h1 id=7755>
+    <span class="no">[7755]</span>
+    <a class="thread-title" href="#7755">Re4: 画面スクロールにて</a>
+    <span class="author">tn</span>
+    <time datetime="2014-01-11T10:17:43">2014年01月11日 10:17</time></h1>
+    <div class="body">▼ もかさん<br>&gt; カーソルが先頭行に移動した後も，画面だけをスクロールするように修正しました。<br>試してみました．非常に使いやすくなり，<br>フラストレーションがなくなりました．<br>早速の御対応ありがとうございました．</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

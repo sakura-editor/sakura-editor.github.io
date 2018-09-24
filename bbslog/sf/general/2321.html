@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マクロ関数　S_FileSaveAs について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2321</span>
+    <a class="thread-title" href="2321.html#2321">マクロ関数　S_FileSaveAs について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2323</span>
+    <a class="thread-title" href="2321.html#2323">RE: マクロ関数　S_FileSaveAs について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2324</span>
+    <a class="thread-title" href="2321.html#2324">Re2: マクロ関数　S_FileSaveAs について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2321>
+    <span class="no">[2321]</span>
+    <a class="thread-title" href="#2321">マクロ関数　S_FileSaveAs について</a>
+    <span class="author">mshr</span>
+    <time datetime="2002-10-01T16:59:51">2002年10月01日 16:59</time></h1>
+    <div class="body">サクラエディタ，いつも愛用しています．<br>所で，S_FileSaveAs の使い方が分かりません．<br><br>例えば，<br><br>S_FileSaveAs(Filename,0,0);<br><br>とすれば Filename のファイルに書き込むことができる，<br>と解釈しているのですが．<br>エラーが出たり．何もおこらなかったり．<br>正しい使い方をご教授いただきたく存じます．</div></section>
+    <ul><li><section><h1 id=2323>
+    <span class="no">[2323]</span>
+    <a class="thread-title" href="#2323">RE: マクロ関数　S_FileSaveAs について</a>
+    <span class="author">すい</span>
+    <time datetime="2002-10-01T19:48:24">2002年10月01日 19:48</time></h1>
+    <div class="body">S_FileSaveAs ( S1 , i1 , i2 ) ;<br>名前を付けて保存<br><br>S1：文字列：保存するファイル名<br><br>i1：整数数値：文字コードセット {<br>    0：Shift_JIS<br>    1：JIS<br>    2：EUC<br>    3：Unicode<br>    4：UTF-8<br>    5：UTF-7<br>    6：UnicodeBE<br>}<br><br>i2：整数数値：改行コード {<br>    0：変更しない<br>    1：CRLF<br>    2：LF<br>    3：CR<br>}<br><br>エラーってどんなエラーです？<br>というより、具体的にどういうマクロを書いているのですか？<br>マクロそのものを実際に書き込んだ方が話が早そうな気が。<br></div></section>
+    <ul><li><section><h1 id=2324>
+    <span class="no">[2324]</span>
+    <a class="thread-title" href="#2324">Re2: マクロ関数　S_FileSaveAs について</a>
+    <span class="author">mshr</span>
+    <time datetime="2002-10-01T20:16:35">2002年10月01日 20:16</time></h1>
+    <div class="body">すいさん<br>どうもレスありがとうございます．<br><br>今，再び弄ってみたらできました．<br>'で filename を<br>くくらなかったためのようでして．．．<br>つまらないおちですみません．</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>フォルダをエクスプローラで開く | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5217</span>
+    <a class="thread-title" href="5217.html#5217">フォルダをエクスプローラで開く</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5218</span>
+    <a class="thread-title" href="5217.html#5218">Re:フォルダをエクスプローラで開く</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5219</span>
+    <a class="thread-title" href="5217.html#5219">Re:フォルダをエクスプローラで開く</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5220</span>
+    <a class="thread-title" href="5217.html#5220">RE: フォルダをエクスプローラで開く</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5222</span>
+    <a class="thread-title" href="5217.html#5222">Re2: フォルダをエクスプローラで開く</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5226</span>
+    <a class="thread-title" href="5217.html#5226">Re3: フォルダをエクスプローラで開く</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5223</span>
+    <a class="thread-title" href="5217.html#5223">Re:フォルダをエクスプローラで開く</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5217>
+    <span class="no">[5217]</span>
+    <a class="thread-title" href="#5217">フォルダをエクスプローラで開く</a>
+    <span class="author">かて</span>
+    <time datetime="2006-05-10T14:59:23">2006年05月10日 14:59</time></h1>
+    <div class="body">現在作業中のファイルが存在しているフォルダをエクスプローラで開きたいのですが、マクロで簡単に実行する事は可能でしょうか？<br>もし可能であれば、その方法を教えて頂けないでしょうか。<br><br>現在は以下の方法で実行しており、結構手間がかかっています。。<br>　１．「このファイルのパス名をコピー」を実行<br>　２．エクスプローラを開いて、アドレス欄に貼り付け<br>　３．アドレス欄からファイル名を削除して、ファイルが存在していたフォルダのパスに変更し表示させる<br><br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=5218>
+    <span class="no">[5218]</span>
+    <a class="thread-title" href="#5218">Re:フォルダをエクスプローラで開く</a>
+    <span class="author">(全略)</span>
+    <time datetime="2006-05-10T23:17:09">2006年05月10日 23:17</time></h1>
+    <div class="body">▼ かてさん<br>&gt; 現在作業中のファイルが存在しているフォルダをエクスプローラで開きたいのですが、マクロで簡単に実行する事は可能でしょうか？<br>&gt; もし可能であれば、その方法を教えて頂けないでしょうか。<br>こんなマクロでどうでしょう↓<br><br>ExecCommand "explorer """ &amp; CreateObject("Scripting.FileSystemObject").GetFile(GetFileName()).ParentFolder.Path &amp; """", 0</div></section>
+    </li><li><section><h1 id=5219>
+    <span class="no">[5219]</span>
+    <a class="thread-title" href="#5219">Re:フォルダをエクスプローラで開く</a>
+    <span class="author">maru</span>
+    <time datetime="2006-05-10T23:44:28">2006年05月10日 23:44</time></h1>
+    <div class="body">▼ かてさん<br>&gt; 現在作業中のファイルが存在しているフォルダをエクスプローラで開きたいのですが、マクロで簡単に実行する事は可能でしょうか？<br>マクロを使用せず、外部コマンドの実行で<br>explorer.exe /e,"$F\..\"<br>という手もありかも。<br><br>そのままをキーマクロに保存して<br>キー割り付けてもいいですが。</div></section>
+    </li><li><section><h1 id=5220>
+    <span class="no">[5220]</span>
+    <a class="thread-title" href="#5220">RE: フォルダをエクスプローラで開く</a>
+    <span class="author">すい</span>
+    <time datetime="2006-05-11T00:59:31">2006年05月11日 00:59</time></h1>
+    <div class="body">&gt;現在作業中のファイルが存在しているフォルダをエクスプローラで開きたいのですが、マクロで簡単に実行する事は可能でしょうか？<br><br>過去に全く同じ話が出たことがあります。<br>編集中ファイルのフォルダを（新規ウィンドウで）開きます。<br><br># 「既に起動中のエクスプローラで開きたい」という話だと、<br># このやり方では駄目ですが。<br><br>マクロだと次のように記述します。（内容は最後の１行。他行は注釈）<br>-------- OPENFOL.MAC --------<br>//キーボードマクロのファイル<br><br>// 編集中のファイルが存在するフォルダを開く<br>S_ExecCommand('explorer /select,"$F"', 0);&#9;// 外部コマンド実行<br>-----------------------------<br><br>オプションパラメータ /select を使用する事で、編集中のファイル名（フルパス）<br>をそのまま渡す事ができます。しかもフォルダが開かれた時、編集中のファイルが<br>選択された状態で開かれると言うオマケ付きで。<br><br>ツリー付きが良ければ<br>----------<br>S_ExecCommand('explorer /e,/select,"$F"', 0);&#9;// 外部コマンド実行<br>----------<br>だし。<br><br>/e を付ける/付けないとかの、各種オプションパラメータの意味は下記リンク参照<br><br>[Microsoft] Windows エクスプローラのコマンドライン オプション<br>└ http://support.microsoft.com/default.aspx?scid=kb;ja;152457<br></div></section>
+    <ul><li><section><h1 id=5222>
+    <span class="no">[5222]</span>
+    <a class="thread-title" href="#5222">Re2: フォルダをエクスプローラで開く</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-05-11T02:48:50">2006年05月11日 02:48</time></h1>
+    <div class="body">▼ すいさん<br>質問の趣旨と異なりますが、<br>１．explorer /select オプションは、１個開いているフォルダーでは、期待どうりの動作になりませんね。Windowsのバグ？<br>２．explorer "$F" だと、IEで、読取専用なテキストのビューアーになるんですね。Windowsの隠し機能？<br><br>質問が、現在作業中のファイル|をエクスプローラーで開きたいのですが…。<br>なら、ピッタリでした。”が置かれているフォルダ”かな？</div></section>
+    <ul><li><section><h1 id=5226>
+    <span class="no">[5226]</span>
+    <a class="thread-title" href="#5226">Re3: フォルダをエクスプローラで開く</a>
+    <span class="author">すい</span>
+    <time datetime="2006-05-12T03:39:55">2006年05月12日 03:39</time></h1>
+    <div class="body">&gt;１．explorer /select オプションは、１個開いているフォルダーでは、期待どうりの動作になりませんね。Windowsのバグ？<br><br>これ、いまいち意味が良くわからないのですが。<br>すでに開かれているフォルダ内のファイルを /select 付きで実行した場合の話でしょうか？<br><br>だとしたら編集中のファイルがあるフォルダが既に開かれている場合、/select 付き<br>で explorer を実行しても、指定されたファイルが選択されなかったりしますね。<br>これは比較的初期の頃 (Windows95) の explorer からそういう動作になったので、<br>わざとそういうふうに作られているの（つまり仕様）*かも* しれません。<br>私個人的には不便に思っているんですけど。<br><br>&gt;２．explorer "$F" だと、IEで、読取専用なテキストのビューアーになるんですね。Windowsの隠し機能？<br>&gt;<br>&gt;質問が、現在作業中のファイル|をエクスプローラーで開きたいのですが…。<br>&gt;なら、ピッタリでした。”が置かれているフォルダ”かな？<br><br>S_ExecCommand の中で $F は編集中のファイルのフルパスになるわけで。<br>ファイル名その物を渡す以上、フォルダを開くのならば常に /select オプションが必須でしょう。<br><br>で、explorer に /select オプション無しでファイル名を渡すと、そのファイルが<br>Internet Explorer (扱い)で開かれます。<br>html ファイルなら普通に HTML の表示がされますし、テキストファイルなら<br>参照されますし、.exe などの実行ファイルだとダウンロード(と同じ動作)が<br>開始されたりします。<br>explorer は Windows 標準の Shell なわけで、IE4 以降、Shell と IE は事実上<br>一体化しているような物なわけで、その辺の関係でそういう物ですね、としか。<br><br>逆にいうと、フォルダ名が渡された場合には「フォルダを取り扱うモジュール」で<br>開かれているだけなわけで。Explorer のウィンドウ内でも Internet Explorer の<br>ウィンドウ内でも。<br>ほら、Internet Explorer のアドレス入力欄にフォルダ名(フルパスで)を入れると<br>Explorer と同じ表示になるでしょ。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=5223>
+    <span class="no">[5223]</span>
+    <a class="thread-title" href="#5223">Re:フォルダをエクスプローラで開く</a>
+    <span class="author">かて</span>
+    <time datetime="2006-05-11T13:41:15">2006年05月11日 13:41</time></h1>
+    <div class="body">皆さん、ありがとうございます。<br>期待通りの動作ができるようになり、大変便利になりました。<br></div></section>
+    </li></ul></li></ul></body></html>

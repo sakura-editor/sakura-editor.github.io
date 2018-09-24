@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>アンダーラインが移動した後背景色や折り返し線が虫食い状態 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2040</span>
+    <a class="thread-title" href="2040.html#2040">アンダーラインが移動した後背景色や折り返し線が虫食い状態</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2041</span>
+    <a class="thread-title" href="2040.html#2041">Re:アンダーラインが移動した後背景色や折り返し線が虫食い状態</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2042</span>
+    <a class="thread-title" href="2040.html#2042">Re2:アンダーラインが移動した後背景色や折り返し線が虫食い状態</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2048</span>
+    <a class="thread-title" href="2040.html#2048">Re3:アンダーラインが移動した後背景色や折り返し線が虫食い状態</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2040>
+    <span class="no">[2040]</span>
+    <a class="thread-title" href="#2040">アンダーラインが移動した後背景色や折り返し線が虫食い状態</a>
+    <span class="author">おに</span>
+    <time datetime="2002-05-10T12:53:13">2002年05月10日 12:53</time></h1>
+    <div class="body">CaretUnderLineOFFで、単に一色で線を引いて消しているのが原因…までは突き止めたのですが、どう直していいかわかりません。<br>一行丸ごと描き直せば楽とは思いますが、ちらつき防止には一文字ごとそれぞれの背景色で線を引いて、折り返し線はSetPixelで一点だけ埋めるべき…？<br><br>…しかし、文字ごとの色を取るどころか、一行丸ごと描き直す方法もわかりません。<br>どなたかお導きを。<br><br>(これが気になって描画部分を探していたらRedrawAll→[2039]を見つけました^^)</div></section>
+    <ul><li><section><h1 id=2041>
+    <span class="no">[2041]</span>
+    <a class="thread-title" href="#2041">Re:アンダーラインが移動した後背景色や折り返し線が虫食い状態</a>
+    <span class="author">?</span>
+    <time datetime="2002-05-11T16:14:14">2002年05月11日 16:14</time></h1>
+    <div class="body">&#9;&#9;&#9;::SelectObject( hdc, hPenOld );<br>&#9;&#9;&#9;::DeleteObject( hPen );<br>&#9;&#9;// From<br>&#9;&#9;&#9;PAINTSTRUCT&#9;ps;<br>&#9;&#9;&#9;ps.rcPaint.left = 0;<br>&#9;&#9;&#9;ps.rcPaint.right = m_nViewAlignLeft + m_nViewCx;<br>&#9;&#9;&#9;ps.rcPaint.top = m_nOldUnderLineY;<br>&#9;&#9;&#9;ps.rcPaint.bottom = m_nOldUnderLineY;<br>&#9;&#9;&#9;OnPaint( hdc, &amp;ps, FALSE );<br>&#9;&#9;// To<br>&#9;&#9;&#9;::ReleaseDC( m_hWnd, hdc );<br></div></section>
+    <ul><li><section><h1 id=2042>
+    <span class="no">[2042]</span>
+    <a class="thread-title" href="#2042">Re2:アンダーラインが移動した後背景色や折り返し線が虫食い状態</a>
+    <span class="author">おに</span>
+    <time datetime="2002-05-11T20:47:53">2002年05月11日 20:47</time></h1>
+    <div class="body">?さん、ありがとうございます。<br>PAINTSTRUCTの中身を作る発想は新鮮でした。<br>そのままでは駄目でしたけどアンダーラインを非表示にしてからOnPaintを呼ぶことで目的の動作を得られました。<br><br>(CEditView.cppの8132行ReleaseDCの直前に追加)<br>m_pcEditDoc-&gt;GetDocumentAttribute().m_ColorInfoArr[COLORIDX_UNDERLINE].m_bDisp = FALSE;<br>PAINTSTRUCT ps;<br>ps.rcPaint.left = m_nViewAlignLeft;<br>ps.rcPaint.right = m_nViewAlignLeft + m_nViewCx;<br>ps.rcPaint.top = m_nOldUnderLineY;<br>ps.rcPaint.bottom = m_nOldUnderLineY;<br>int Saving = SaveDC(hdc);<br>OnPaint( hdc, &amp;ps, FALSE );<br>RestoreDC(hdc, Saving);<br>m_pcEditDoc-&gt;GetDocumentAttribute().m_ColorInfoArr[COLORIDX_UNDERLINE].m_bDisp = TRUE;<br><br>(…今ひとつスマートでは無い気もしますが、まあいいか^^)</div></section>
+    <ul><li><section><h1 id=2048>
+    <span class="no">[2048]</span>
+    <a class="thread-title" href="#2048">Re3:アンダーラインが移動した後背景色や折り返し線が虫食い状態</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-05-12T23:40:28">2002年05月12日 23:40</time></h1>
+    <div class="body"><br>&gt;(CEditView.cppの8132行ReleaseDCの直前に追加)<br>&gt;m_pcEditDoc-&gt;GetDocumentAttribute().m_C<br>olorInfoArr[COLORIDX_UNDERLINE].m_bDisp = FALSE;<br>&gt;PAINTSTRUCT ps;<br>&gt;ps.rcPaint.left = m_nViewAlignLeft;<br>&gt;ps.rcPaint.right = m_nViewAlignLeft + m_nViewCx;<br>&gt;ps.rcPaint.top = m_nOldUnderLineY;<br>&gt;ps.rcPaint.bottom = m_nOldUnderLineY;<br>&gt;int Saving = SaveDC(hdc);<br>&gt;OnPaint( hdc, &amp;ps, FALSE );<br>&gt;RestoreDC(hdc, Saving);<br>&gt;m_pcEditDoc-&gt;GetDocumentAttribute().m_C<br>olorInfoArr[COLORIDX_UNDERLINE].m_bDisp = TRUE;<br>&gt;<br>&gt;(…今ひとつスマートでは無い気もしますが、まあいいか^^)<br><br>OnPaintをもっとスマートに実装する必要がありますけれども、このコードを採用しました(^^;)<br>よりよいコードに期待します。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

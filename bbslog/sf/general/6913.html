@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>対括弧の検索について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6913</span>
+    <a class="thread-title" href="6913.html#6913">対括弧の検索について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6914</span>
+    <a class="thread-title" href="6913.html#6914">Re:対括弧の検索について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6915</span>
+    <a class="thread-title" href="6913.html#6915">Re2:対括弧の検索について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6913>
+    <span class="no">[6913]</span>
+    <a class="thread-title" href="#6913">対括弧の検索について</a>
+    <span class="author">いっしぃー</span>
+    <time datetime="2009-03-06T23:22:54">2009年03月06日 23:22</time></h1>
+    <div class="body">対括弧の検索で以下のコードの場合、コメント行に<br>移動しますが、コメント行は無視できないでしょうか。<br><br>if( a &gt; 0 )<br>{<br>//if( a &gt; 1 )<br>//{          //&lt;-ここへ飛んでしまう。<br>    a++;<br>}           //&lt;-ここから</div></section>
+    <ul><li><section><h1 id=6914>
+    <span class="no">[6914]</span>
+    <a class="thread-title" href="#6914">Re:対括弧の検索について</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2009-03-07T00:37:17">2009年03月07日 00:37</time></h1>
+    <div class="body">▼ いっしぃーさん<br>ソースコードの書き方を改めるしか、回避方法は無いです。<br><br>if( a &gt; 0 )<br>//if( a &gt; 1 )<br>{<br>    a++;<br>}           //&lt;-ここから<br><br>&gt; if( a &gt; 0 )<br>&gt; {<br>&gt; //if( a &gt; 1 )<br>&gt; //{          //&lt;-ここへ飛んでしまう。<br>&gt;     a++;<br>&gt; }           //&lt;-ここから</div></section>
+    <ul><li><section><h1 id=6915>
+    <span class="no">[6915]</span>
+    <a class="thread-title" href="#6915">Re2:対括弧の検索について</a>
+    <span class="author">いっしぃー</span>
+    <time datetime="2009-03-09T22:38:48">2009年03月09日 22:38</time></h1>
+    <div class="body">▼ じゅうじさん<br><br>秀丸を引き合いに出して申し訳ないですが、秀丸は<br>コメントは無視してくれています。<br>できれば、今後対応して頂ければ幸いです。<br>（分散開発をしていると、他部署のコードを変更できないのです。。。）<br><br>&gt; ▼ いっしぃーさん<br>&gt; ソースコードの書き方を改めるしか、回避方法は無いです。<br>&gt; <br>&gt; if( a &gt; 0 )<br>&gt; //if( a &gt; 1 )<br>&gt; {<br>&gt;     a++;<br>&gt; }           //&lt;-ここから<br>&gt; <br>&gt; &gt; if( a &gt; 0 )<br>&gt; &gt; {<br>&gt; &gt; //if( a &gt; 1 )<br>&gt; &gt; //{          //&lt;-ここへ飛んでしまう。<br>&gt; &gt;     a++;<br>&gt; &gt; }           //&lt;-ここから</div></section>
+    </li></ul></li></ul></li></ul></body></html>

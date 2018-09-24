@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Imp) 『共通設定』『ステータスバー』追加 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">516</span>
+    <a class="thread-title" href="516.html#516">Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">518</span>
+    <a class="thread-title" href="516.html#518">Re:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">519</span>
+    <a class="thread-title" href="516.html#519">Re2:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">525</span>
+    <a class="thread-title" href="516.html#525">Re:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">530</span>
+    <a class="thread-title" href="516.html#530">Re2:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">534</span>
+    <a class="thread-title" href="516.html#534">Re3:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">526</span>
+    <a class="thread-title" href="516.html#526">Re:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=516>
+    <span class="no">[516]</span>
+    <a class="thread-title" href="#516">Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-22T02:49:21">2008年06月22日 02:49</time></h1>
+    <div class="body">リビジョン：<br>  rev1394<br><br>変更種別：<br>  機能改善<br><br>内容：<br>  rev1383の再修正<br>  ステータスバーの文字コード値を文字コード種別で切り替える設定を追加しました。<br>  『共通設定』に『ステータスバー』を追加しました。<br>  ステータスバーの枠も広げました。<br><br>  『共通設定』<br>    『ステータスバー』<br>      『表示文字コードの指定』<br>        □ SJISで文字コード値をUnicodeで出力する(&amp;S)<br>        □ JISで文字コード値をUnicodeで出力する(&amp;J)<br>        □ EUCで文字コード値をUnicodeで出力する(&amp;E)<br>        □ UTF-8で表示をバイトコードで行う(&amp;8)<br>        ■ サロゲートペアをコードポイントで表示(&amp;P)<br><br>  sakuraW.ini の設定は、<br>    [Statusbar]<br>    DispSurrogatePairCodepoint=1<br>    DispUnicodeInEuc=0<br>    DispUnicodeInJis=0<br>    DispUnicodeInSjis=0<br>    DispUtf8Byte=0<br>  のようになります。</div></section>
+    <ul><li><section><h1 id=518>
+    <span class="no">[518]</span>
+    <a class="thread-title" href="#518">Re:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-22T03:07:12">2008年06月22日 03:07</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt;   ステータスバーの文字コード値を文字コード種別で切り替える設定を追加しました。<br>&gt;   『共通設定』に『ステータスバー』を追加しました。<br>&gt;   ステータスバーの枠も広げました。<br><br>ステータスバーのタブを増設するなら、「ウィンドウ」タブや「タブバー」タブ、あるいは「ツールバー」タブの隣にしたほうがいいと思います。<br>．．．というか、これらは全部並べたほうがいいかも。</div></section>
+    <ul><li><section><h1 id=519>
+    <span class="no">[519]</span>
+    <a class="thread-title" href="#519">Re2:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-22T03:28:42">2008年06月22日 03:28</time></h1>
+    <div class="body">&gt; これらは全部並べたほうがいいかも。<br><br>全部並べるのであれば、画面での上から順にあわせて、<br>[ウィンドウ][ツールバー][タブバー][ステータスバー]<br>かしら？</div></section>
+    </li></ul></li><li><section><h1 id=525>
+    <span class="no">[525]</span>
+    <a class="thread-title" href="#525">Re:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-22T07:11:49">2008年06月22日 07:11</time></h1>
+    <div class="body">ご対応ありがとうございます。<br><br>「表示文字コードの指定」ですが、<br>文字エンコーディング毎に設定を選べる必要ってあるのでしょうか。<br>個人的には「UNICODEで表示する」「元のコードで表示する」の2択でよいかなぁ、と思っていました。<br><br>エンコーディング毎に選べるにしても、<br>項目に一貫性が無いように感じました。<br>SJIS,JIS,EUCとUTF-8の設定概念が逆なので、<br>「常にUNICODEで表示したいからぜんぶチェック入れよう」のような<br>シンプルな思考に基づく設定ができません。<br><br>＃サロゲートペアは理解してないので、今回は触れてません(^^;;<br><br>＜＜常にUNICODEで表示したいケース＞＞<br>(ON)  SJISで文字コード値をUnicodeで出力する<br>(ON)  JISで文字コード値をUnicodeで出力する<br>(ON)  EUCで文字コード値をUnicodeで出力する<br>(OFF) UTF-8で表示をバイトコードで行う<br><br>＜＜常に元のコードで表示したいケース＞＞<br>(OFF)  SJISで文字コード値をUnicodeで出力する<br>(OFF)  JISで文字コード値をUnicodeで出力する<br>(OFF)  EUCで文字コード値をUnicodeで出力する<br>(ON)   UTF-8で表示をバイトコードで行う<br>※UnicodeBe, UTF-7は設定値が無いため、このケースは実現できない<br><br><br>改善策についてご検討いただければ幸いです。<br></div></section>
+    <ul><li><section><h1 id=530>
+    <span class="no">[530]</span>
+    <a class="thread-title" href="#530">Re2:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-22T10:16:20">2008年06月22日 10:16</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; ご対応ありがとうございます。<br>&gt; <br>&gt; 「表示文字コードの指定」ですが、<br>&gt; 文字エンコーディング毎に設定を選べる必要ってあるのでしょうか。<br>&gt; 個人的には「UNICODEで表示する」「元のコードで表示する」の2択でよいかなぁ、と思っていました。<br>&gt;<br>&gt; エンコーディング毎に選べるにしても、<br>&gt; 項目に一貫性が無いように感じました。<br>&gt; SJIS,JIS,EUCとUTF-8の設定概念が逆なので、<br>&gt; 「常にUNICODEで表示したいからぜんぶチェック入れよう」のような<br>&gt; シンプルな思考に基づく設定ができません。<br>&gt; <br>&gt; ＃サロゲートペアは理解してないので、今回は触れてません(^^;;<br>&gt; <br>&gt; ＜＜常にUNICODEで表示したいケース＞＞<br>&gt; (ON)  SJISで文字コード値をUnicodeで出力する<br>&gt; (ON)  JISで文字コード値をUnicodeで出力する<br>&gt; (ON)  EUCで文字コード値をUnicodeで出力する<br>&gt; (OFF) UTF-8で表示をバイトコードで行う<br>&gt; <br>&gt; ＜＜常に元のコードで表示したいケース＞＞<br>&gt; (OFF)  SJISで文字コード値をUnicodeで出力する<br>&gt; (OFF)  JISで文字コード値をUnicodeで出力する<br>&gt; (OFF)  EUCで文字コード値をUnicodeで出力する<br>&gt; (ON)   UTF-8で表示をバイトコードで行う<br>&gt; ※UnicodeBe, UTF-7は設定値が無いため、このケースは実現できない<br>&gt; <br>&gt; <br>&gt; 改善策についてご検討いただければ幸いです。<br>まず質問ですが、<br>Unicode（UTF-16BE）についてバイト表示が必要ですか？<br>Unicode（UTF-16BE）はバイト表示であれば、逆転して表示されることになります。<br><br>UnicodeBeは、バイト表示を行っても行わなくてBMPであれば、同じhex表現になります。<br>UTF-7を外すあるのは、1文字の単位がバイト単位ではないからというのが理由です。<br>前後の文字により、Hex表現が変わります。<br>これでは、Hexで表示する意味が無いと思いますので外してあります。</div></section>
+    <ul><li><section><h1 id=534>
+    <span class="no">[534]</span>
+    <a class="thread-title" href="#534">Re3:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-23T23:40:14">2008年06月23日 23:40</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; まず質問ですが、<br>&gt; Unicode（UTF-16BE）についてバイト表示が必要ですか？<br>&gt; Unicode（UTF-16BE）はバイト表示であれば、逆転して表示されることになります。<br>&gt; <br>&gt; UnicodeBeは、バイト表示を行っても行わなくてBMPであれば、同じhex表現になります。<br>&gt; UTF-7を外すあるのは、1文字の単位がバイト単位ではないからというのが理由です。<br>&gt; 前後の文字により、Hex表現が変わります。<br>&gt; これでは、Hexで表示する意味が無いと思いますので外してあります。<br><br>それがないと必要な情報が得られない、というわけではないので、そういう意味では必要ないです。元のバイト(ビット)表現が表示されなくとも、UNICODE表現から容易に判断付きます。<br><br>わかりやすい（混乱の生じにくい）ユーザーインターフェースを求めるという観点では必要と感じています。<br><br>また、わかりやすく拡張性のある設計を求めるという観点でも必要と感じています。<br>（自分の提案する仕様ですと、CCodeBase派生クラスは、元のバイト(ビット)表現を返す関数を提供するだけ、それ以降のケアはコアが面倒を見る、という設計にもできたと思うのですが）<br><br><br>強い要望ではないので、流していただいて結構です。<br>＃直感的にニュアンスが伝わるかな、と思って触れただけですので、<br>　伝わらなかったのであれば今回は深く踏み込みません。また別の機会にでも。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=526>
+    <span class="no">[526]</span>
+    <a class="thread-title" href="#526">Re:Commit報告:(Imp) 『共通設定』『ステータスバー』追加</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-22T07:14:30">2008年06月22日 07:14</time></h1>
+    <div class="body">ステータスバー内の文字コード表示領域ですが、横幅を多めに広げていただけたようなので、どうせならUNICODEコード表示時は常に「u」を付けても良いんじゃないか、と思いました。どうでしょう。<br></div></section>
+    </li></ul></li></ul></body></html>

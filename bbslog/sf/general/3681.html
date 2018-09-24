@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>grepの不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3681</span>
+    <a class="thread-title" href="3681.html#3681">grepの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3690</span>
+    <a class="thread-title" href="3681.html#3690">Re:grepの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3703</span>
+    <a class="thread-title" href="3681.html#3703">Re2:grepの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3859</span>
+    <a class="thread-title" href="3681.html#3859">Re3:grepの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3860</span>
+    <a class="thread-title" href="3681.html#3860">Re4:grepの不具合</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3681>
+    <span class="no">[3681]</span>
+    <a class="thread-title" href="#3681">grepの不具合</a>
+    <span class="author">しゃ</span>
+    <time datetime="2004-03-09T14:39:06">2004年03月09日 14:39</time></h1>
+    <div class="body">grepで得られた結果行をEnterでその行を開いて<br>ジャンプしますが、'c'というファイル名を開いている状態ですと<br>そのファイルが開いてしまいます。</div></section>
+    <ul><li><section><h1 id=3690>
+    <span class="no">[3690]</span>
+    <a class="thread-title" href="#3690">Re:grepの不具合</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-12T17:41:19">2004年03月12日 17:41</time></h1>
+    <div class="body">再現できないのですけど。いつでも起こる現象でしょうか？<br></div></section>
+    <ul><li><section><h1 id=3703>
+    <span class="no">[3703]</span>
+    <a class="thread-title" href="#3703">Re2:grepの不具合</a>
+    <span class="author">ふぃ</span>
+    <time datetime="2004-03-19T00:40:24">2004年03月19日 00:40</time></h1>
+    <div class="body">再現できたので報告します。<br><br>エディタを直接起動したときに「名前を付けて保存」で<br>最初に開くフォルダの直下に、ドライブ番号のファイル名<br>を付けたファイルを作っておきます。（'c'、'd'など）<br><br>その後、grep結果からファイルを開こうとすると、対象<br>ファイルのあるドライブ番号のファイルが開きます。</div></section>
+    <ul><li><section><h1 id=3859>
+    <span class="no">[3859]</span>
+    <a class="thread-title" href="#3859">Re3:grepの不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-05-29T10:10:49">2004年05月29日 10:10</time></h1>
+    <div class="body">&gt;最初に開くフォルダの直下に、ドライブ番号のファイル名<br>&gt;を付けたファイルを作っておきます。（'c'、'd'など）<br>&gt;<br>&gt;その後、grep結果からファイルを開こうとすると、対象<br>&gt;ファイルのあるドライブ番号のファイルが開きます。<br>どうもgcc対策が裏目に出ているようです．<br><br>gccのエラーメッセージではファイル名と行番号がコロン(:)で区切られるのでコロンが現れたときもファイルチェックを行います．そこでC:\だとCというファイルがカレントディレクトリにあるとマッチしてしまいますよね．<br><br>ファイル名の直後が数字かどうかのチェックを厳密にすれば誤判定は減りますが，あんまり厳しくすると逆にジャンプできなくなる場合もありそうですし...<br></div></section>
+    <ul><li><section><h1 id=3860>
+    <span class="no">[3860]</span>
+    <a class="thread-title" href="#3860">Re4:grepの不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-05-29T10:21:41">2004年05月29日 10:21</time></h1>
+    <div class="body">コロン区切りは3文字目以降のみ区切りと判定するようにします．<br>ファイル名1文字，拡張子無しのファイルをgccでコンパイルすることなんて無いでしょうから実質問題ないでしょう．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

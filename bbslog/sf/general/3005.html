@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Grep出力結果のバグっぽい仕様の変更(案) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3005</span>
+    <a class="thread-title" href="3005.html#3005">Grep出力結果のバグっぽい仕様の変更(案)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3015</span>
+    <a class="thread-title" href="3005.html#3015">[要望] Grepの仕様変更</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3066</span>
+    <a class="thread-title" href="3005.html#3066">Re:Grep出力結果のバグっぽい仕様の変更(案)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3069</span>
+    <a class="thread-title" href="3005.html#3069">Re2:Grep出力結果のバグっぽい仕様の変更(案)</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3005>
+    <span class="no">[3005]</span>
+    <a class="thread-title" href="#3005">Grep出力結果のバグっぽい仕様の変更(案)</a>
+    <span class="author">もか</span>
+    <time datetime="2003-06-10T11:03:45">2003年06月10日 11:03</time></h1>
+    <div class="body">Grepのバグのような仕様を以下のように変更したいと思います。<br>通常利用時の表示内容はあまり変わることはないと思いますが、エラーや、表示制限を超えた場合などの振る舞いが変わります。<br>仕様変更に問題や疑問などあれば、レスをお願いします。<br><br>■結果出力が該当部分の場合のヒット後の次の検索開始位置<br>変更前：<br>　前のヒット開始位置+1<br>変更後：<br>　検索にヒットした文字列の次の文字<br>　(もちろん正規表現により長さ0にマッチした場合は除く)<br><br>■結果出力が該当部分の場合の表示文字列の内容<br>変更前：<br>　単語単位または通常検索のとき、ヒットした文字列の内容ではなく、検索キーを表示していた<br>変更後：<br>　実際にヒットしたファイル側の文字列を表示するようにします。<br><br>■上2つの例<br>検索文字列「aaa」<br>ファイルの内容「aAaAAA」<br>大文字小文字を区別しない<br>該当部分を表示<br><br>変更前：<br>・(     1,1    ): aaa<br>・(     1,2    ): aaa<br>・(     1,3    ): aaa<br>・(     1,4    ): aaa<br>変更後：<br>・(     1,1    ): aAa<br>・(     1,4    ): AAA<br><br>■文字コードセットを自動選択にし、ファイルが読み込みエラーになった場合の振る舞い<br>*ファイル検索モード<br>変更前：<br>以下のようなエラーを表示し、見つかったファイル数にカウントされませんでした。<br>例：文字コードの判別処理でエラー [C:\MyData\Test.txt]<br><br>変更後：<br>文字コードを表示する部分が、(DetectError)になります。<br>ファイル自体は存在しているので、カウントには含まれるようにします。<br>例：C:\MyData\Test.txt  [(DetectError)]<br><br>*通常検索<br>変更前：<br>ファイル検索モードと同じエラーを返します。<br>例：文字コードの判別処理でエラー [C:\MyData\Test.txt]<br><br>変更後：<br>ファイルが開けなかったエラーメッセージを返します。<br>これは、文字コードセットを固定(SJISなど)で指定し、ファイルが開けなかった場合のエラーメッセージと同じ表示です。<br>例：file open error [C:\MyData\Test.txt]<br><br>■ヒットした文字列の表示文字数制限の変更<br>該当行の場合は、行頭からの表示されるバイト数、<br>該当部分の場合は、実際にヒットした文字列のうちの表示されるバイト数です。<br>変更前：<br> 結果表示が該当行の場合、1000バイトまで<br> 結果表示が該当部分の場合、2000バイトまで<br>変更後：<br> 結果出力形式がノーマル表示の場合、2000バイトまで<br> 結果出力形式がファイル毎の場合、2500バイトまで<br>すなわち、依存するオプションが変わります。<br><br>■ファイル検索モードの場合のオプションの出力<br>変更前：<br>未使用のオプションも結果に出力していました。<br>変更後：<br>ファイル検索モードでは効力のないオプションは非表示にします。<br><br>以上です。<br></div></section>
+    <ul><li><section><h1 id=3015>
+    <span class="no">[3015]</span>
+    <a class="thread-title" href="#3015">[要望] Grepの仕様変更</a>
+    <span class="author">もか</span>
+    <time datetime="2003-06-14T13:29:05">2003年06月14日 13:29</time></h1>
+    <div class="body">表示というよりGrepそのものの仕様変更の要望です。<br><br>■サブフォルダから検索する場合の検索順序<br>現在は、<br>サブフォルダのファイル　→　今の階層のファイル<br>という順に検索しますが、逆のほうがいいとおもいます。<br>&gt;DIR /S /B *.*<br>と検索した場合もサブフォルダは後に表示します。<br><br>■ファイル名のセパレータ<br>複数の指定を行うときのセパレータが「,;スペース」ですが、<br>その3種類ともWindowsファイル名の一部となりうるため、問題があります。<br>「file name.txt」というファイルを検索対象にしたい場合は、DOS名の「FILENA~1.TXT」のようにして検索しないといけないみたいです。<br>そこで、以下のどちらかにしてほしいです。<br>・""で囲うとその中を1つの区切りと認識<br>　例:<br>　「"file name.txt" *.html」<br>・セパレータを「|」に変更する<br>例:<br>　「file name.txt|*.html」<br></div></section>
+    </li><li><section><h1 id=3066>
+    <span class="no">[3066]</span>
+    <a class="thread-title" href="#3066">Re:Grep出力結果のバグっぽい仕様の変更(案)</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-07-09T12:40:15">2003年07月09日 12:40</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ■結果出力が該当部分の場合のヒット後の次の検索開始位置<br>&gt; ■上2つの例<br><br>この2つは、grepの仕様から外れると思います。<br><br>&gt; ■文字コードセットを自動選択にし、ファイルが読み込みエラーになった場合の振る舞い<br>&gt; 例：C:\MyData\Test.txt  [(DetectError)]<br>&gt; 例：file open error [C:\MyData\Test.txt]<br><br>できれば、bregexpの側で日本語エラーを返してほし。<br><br>&gt; ■ヒットした文字列の表示文字数制限の変更<br><br>利点がよくわかりません。<br><br>&gt; ■結果出力が該当部分の場合の表示文字列の内容<br>&gt; 変更前：<br>&gt; 　単語単位または通常検索のとき、ヒットした文字列の内容ではなく、検索キーを表示していた<br>&gt; 変更後：<br>&gt; 　実際にヒットしたファイル側の文字列を表示するようにします。<br><br>&gt; ■ファイル検索モードの場合のオプションの出力<br>&gt; 変更前：<br>&gt; 未使用のオプションも結果に出力していました。<br>&gt; 変更後：<br>&gt; ファイル検索モードでは効力のないオプションは非表示にします。<br><br>検討が必要ですね。</div></section>
+    <ul><li><section><h1 id=3069>
+    <span class="no">[3069]</span>
+    <a class="thread-title" href="#3069">Re2:Grep出力結果のバグっぽい仕様の変更(案)</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-07-09T22:08:25">2003年07月09日 22:08</time></h1>
+    <div class="body">▼wmlhqさん<br>&gt;&gt; ■文字コードセットを自動選択にし、ファイルが読み込みエラーになった場合の振る舞い<br>&gt;できれば、bregexpの側で日本語エラーを返してほし。<br>bregexpはメモリ上の文字列に対して処理を行うので，ファイルの読み込みエラーはbregexpとは無関係ですよね．<br><br>&gt;&gt; ■ヒットした文字列の表示文字数制限の変更<br>&gt;<br>&gt;利点がよくわかりません。<br>あまり意味はないかと．まあ前より長くなった(と思う)から気にしないのが吉(^^;)<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

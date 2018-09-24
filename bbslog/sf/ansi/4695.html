@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Borland C++5.5.1でクラッシュ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4695</span>
+    <a class="thread-title" href="4695.html#4695">Borland C++5.5.1でクラッシュ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4697</span>
+    <a class="thread-title" href="4695.html#4697">RE: Borland C++5.5.1でクラッシュ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4699</span>
+    <a class="thread-title" href="4695.html#4699">TSVNでの最終改行問題とか</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4700</span>
+    <a class="thread-title" href="4695.html#4700">RE: TSVNでの最終改行問題とか</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4704</span>
+    <a class="thread-title" href="4695.html#4704">RE2: TSVNでの最終改行問題とか</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4701</span>
+    <a class="thread-title" href="4695.html#4701">Re2: Borland C++5.5.1でクラッシュ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4707</span>
+    <a class="thread-title" href="4695.html#4707">Re3: Borland C++5.5.1でクラッシュ</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4709</span>
+    <a class="thread-title" href="4695.html#4709">RE2: Borland C++5.5.1でクラッシュ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4695>
+    <span class="no">[4695]</span>
+    <a class="thread-title" href="#4695">Borland C++5.5.1でクラッシュ</a>
+    <span class="author">Takky</span>
+    <time datetime="2007-03-05T17:46:56">2007年03月05日 17:46</time></h1>
+    <div class="body">当方だけの問題かもしれませんが、ご報告ということで。<br><br>２月２５日のソースをBorland C++5.5.1でコンパイルした<br>ものを実行するとエディタが異常終了してしまいました。<br>一つ前のバージョンも同じです。<br>デバッガで落ちるポイントを抑えようと思って-vを追加し<br>コンパイルして実行すると再現せず。最適化あたり？と<br>思って-O関係のオプションをいじってみると、-O1を削ると<br>問題なく動くものができます。<br><br>また、sakurabc.rcを生成されると、最後のendifが重複<br>されリソースをリンクする段階でNGになります。できた<br>ファイルの問題部分をコメントアウトするかsakura_rc.rcの<br>最後にあるifdefをまるごとコメントアウトすると問題なく<br>sakurabc.rcが生成できてます。</div></section>
+    <ul><li><section><h1 id=4697>
+    <span class="no">[4697]</span>
+    <a class="thread-title" href="#4697">RE: Borland C++5.5.1でクラッシュ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-05T23:44:23">2007年03月05日 23:44</time></h1>
+    <div class="body">&gt;２月２５日のソースをBorland C++5.5.1でコンパイルした<br>&gt;ものを実行するとエディタが異常終了してしまいました。<br>試してみましたが再現しませんでした．OSはWindows XP SP2です．<br><br>Dr.Watsonのログとexeを作ったときに一緒にできたmapファイルから問題の発生した位置を特定できます．<br>C:\Documents and Settings\All Users\Application Data\Microsoft\Dr Watson\drwtsn32.log<br><br>問題の起こるバイナリと対応するmapファイル，それと上に示したDr Watsonのログをwikiにでも置いて頂ければ暇なときに調べます．<br>&gt;また、sakurabc.rcを生成されると、最後のendifが重複<br>&gt;されリソースをリンクする段階でNGになります。<br>これは元々あるバグみたいです．最終行が空行だったために顕在化していなかっただけのようです．<br>修正パッチを出しました．#1674068<br></div></section>
+    <ul><li><section><h1 id=4699>
+    <span class="no">[4699]</span>
+    <a class="thread-title" href="#4699">TSVNでの最終改行問題とか</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-03-06T00:53:43">2007年03月06日 00:53</time></h1>
+    <div class="body">横道ですが．．．<br><br>&gt; 最終行が空行だったために顕在化していなかっただけのようです．<br>最終行の空行が削られたのはrev1051ですね。<br>おや？と思ったので覚えてます。<br><br>&gt;&gt;dev:4637<br>&gt; 最近のTortoiseSVN(1.4.0, 1.4.1)ってパッチ適用の操作をしたとき、元ファイルの最終行が改行のみの行だった場合余計に改行が追加されますよね？<br>&gt; 自分はまだ1.3.5を使ってます。<br>http://issues.tortoisesvn.net/?do=details&amp;task_id=336<br>の修正待ちで、今日見たらclosedになってました。<br>最新のNightly Builds(1.4.3.8845)で修正された模様です。<br>これで最終行の改行を気にしなくてもよくなるかな？</div></section>
+    <ul><li><section><h1 id=4700>
+    <span class="no">[4700]</span>
+    <a class="thread-title" href="#4700">RE: TSVNでの最終改行問題とか</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-06T07:48:59">2007年03月06日 07:48</time></h1>
+    <div class="body">&gt;&gt;&gt;dev:4637<br>&gt;&gt; 最近のTortoiseSVN(1.4.0, 1.4.1)ってパッチ適用の操作をしたとき、元ファイルの最終行が改行のみの行だった場合余計に改行が追加されますよね？<br>すっかり見落としていました．私は全然気付いていませんでした...(^^;)<br></div></section>
+    <ul><li><section><h1 id=4704>
+    <span class="no">[4704]</span>
+    <a class="thread-title" href="#4704">RE2: TSVNでの最終改行問題とか</a>
+    <span class="author">maru</span>
+    <time datetime="2007-03-06T21:33:31">2007年03月06日 21:33</time></h1>
+    <div class="body">&gt;&gt; 最終行が空行だったために顕在化していなかっただけのようです．<br>&gt;最終行の空行が削られたのはrev1051ですね。<br>勝手に改行が付くので、わざわざ削った記憶があります。<br>削ってはダメだったのですね。すいませんでした。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4701>
+    <span class="no">[4701]</span>
+    <a class="thread-title" href="#4701">Re2: Borland C++5.5.1でクラッシュ</a>
+    <span class="author">Takky</span>
+    <time datetime="2007-03-06T10:51:28">2007年03月06日 10:51</time></h1>
+    <div class="body">&gt; Dr.Watsonのログとexeを作ったときに一緒にできたmapファイルから問題の発生した位置を特定できます．<br>&gt; C:\Documents and Settings\All Users\Application Data\Microsoft\Dr Watson\drwtsn32.log<br>http://mio.servequake.com/~takky/se/sakura_log.zip<br>上記に置きましたのでよろしくお願いします。<br>ワトソンのログは上記に無かったのでワトソンを起動して該当のログを表示し、その中身をテキストにしてあります。<br><br>こちらもXP SP2です。気になるのはPlathomeSDKで、これはWindowsXP SP2用のを使用してます。<br>それ以外違いはわかりません。<br>また必要な情報が不足してましたら取得します。<br></div></section>
+    <ul><li><section><h1 id=4707>
+    <span class="no">[4707]</span>
+    <a class="thread-title" href="#4707">Re3: Borland C++5.5.1でクラッシュ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-07T04:28:59">2007年03月07日 04:28</time></h1>
+    <div class="body">&gt;上記に置きましたのでよろしくお願いします。<br>CKeyBind::GetFuncCode(unsigned short, int, KEYDATA *, int)<br>で落ちていますね．<br><br>ファンクションキーを表示させるとアプリケーションエラーで落ちるみたいです．<br>カスタムメニューを割り当てていなくても発生するので，先日直した問題とは別物のようです．<br><br>---<br>当該箇所を調べてみたところ，共通部分式最適化のバグっぽいですね．<br>値を設定していないローカル変数領域から読み出してアドレスを生成しているところがあり，そこへのアクセスで落ちています．<br><br>pKeyNameArr[i]の値を格納する前にその値を使ってKeyData.m_nFuncCodeArr[nState]を計算しようとしているみたいです．<br>GetFuncCodeAt() のインライン展開を越えての最適化は無理なのかも．<br></div></section>
+    </li></ul></li><li><section><h1 id=4709>
+    <span class="no">[4709]</span>
+    <a class="thread-title" href="#4709">RE2: Borland C++5.5.1でクラッシュ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-07T11:39:23">2007年03月07日 11:39</time></h1>
+    <div class="body">Wikiに詳細を載せました．<br><a href=http://sakura.qp.land.to/?Develop%2F6 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2F6</nobr></a><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

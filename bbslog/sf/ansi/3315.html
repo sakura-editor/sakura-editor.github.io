@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>複数行対応検索・置換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3315</span>
+    <a class="thread-title" href="3315.html#3315">複数行対応検索・置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3316</span>
+    <a class="thread-title" href="3315.html#3316">Re: 複数行対応検索・置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3317</span>
+    <a class="thread-title" href="3315.html#3317">Re2: 複数行対応検索・置換</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3315>
+    <span class="no">[3315]</span>
+    <a class="thread-title" href="#3315">複数行対応検索・置換</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-11-22T01:54:10">2003年11月22日 01:54</time></h1>
+    <div class="body"><br>R1.4.3.3ベースの<br>複数行対応　検索・置換の　お試し版です。<br><br>＜既知の不具合＞<br>・検索文字の色分けは、複数行検索をした場合に機能しません。<br>　（どうすればいいか、わからなかったりする・・）<br>・普通の検索でも変な動作があったハズなのだが、すっかり忘れてしまった。<br>　（仕方がないので、公開捜査に乗り出しました）<br><br><br>＜実行形式＞<br><a href=http://members.tripod.co.jp/karoto/Archive/sakura_test_20031121.lzh target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>karoto/<wbr>Archive/<wbr>sakura_t<wbr>est_2003<wbr>1121.<wbr>lzh</nobr></a><br><br><br></div></section>
+    <ul><li><section><h1 id=3316>
+    <span class="no">[3316]</span>
+    <a class="thread-title" href="#3316">Re: 複数行対応検索・置換</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-11-22T10:13:29">2003年11月22日 10:13</time></h1>
+    <div class="body">&gt;複数行対応　検索・置換の　お試し版です。<br>おっ，ええっ!?<br>どうやっているんですか？気になる...<br></div></section>
+    <ul><li><section><h1 id=3317>
+    <span class="no">[3317]</span>
+    <a class="thread-title" href="#3317">Re2: 複数行対応検索・置換</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-11-23T22:18:37">2003年11月23日 22:18</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;複数行対応　検索・置換の　お試し版です。<br>&gt; おっ，ええっ!?<br>&gt; どうやっているんですか？気になる...<br><br>気になられちゃったので、<br>まだまだ不具合も出てくるでしょうが、とりあえずのパッチ置いておきますので、詳しくはそちらを参照ください。<br><br><a href=http://members.tripod.co.jp/karoto/Archive/sakura_1_4_3_3_FukusuGyo.lzh target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>karoto/<wbr>Archive/<wbr>sakura_1<wbr>_4_3_3_F<wbr>ukusuGyo<wbr>.<wbr>lzh</nobr></a><br><br>簡単に説明しておきますと、以下のように結構普通にやってます。<br><br>１．検索パターンのコンパイル時に、検索行数を決める（結構いい加減なので難しい複数行検索は無理です）<br>２．１の行数分を合体させた文字列を作成し、BRegexp.dllに渡す<br><br>弊害として、複数行でないときも、BRegexpに渡す文字列を作成するので、遅くなります。<br><br>ちなみに、<br>パッチは、正規表現ライブラリの変更が容易になるように、CRegexpクラスの独立性を高める変更も入れてます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

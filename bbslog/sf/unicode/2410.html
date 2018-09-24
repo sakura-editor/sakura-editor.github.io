@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>「右端で折り返す」のオフ→オン時にテキストカーソル点滅位置が更新されない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2410</span>
+    <a class="thread-title" href="2410.html#2410">「右端で折り返す」のオフ→オン時にテキストカーソル点滅位置が更新されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2411</span>
+    <a class="thread-title" href="2410.html#2411">Re:「右端で折り返す」のオフ→オン時にテキストカーソル点滅位置が更新されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2412</span>
+    <a class="thread-title" href="2410.html#2412">Re2:「右端で折り返す」のオフ→オン時にテキストカーソル点滅位置が更新されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2414</span>
+    <a class="thread-title" href="2410.html#2414">Re3:「右端で折り返す」のオフ→オン時にテキストカーソル点滅位置が更新されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2415</span>
+    <a class="thread-title" href="2410.html#2415">Re4:「右端で折り返す」のオフ→オン時にテキストカーソル点滅位置が更新されない</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2410>
+    <span class="no">[2410]</span>
+    <a class="thread-title" href="#2410">「右端で折り返す」のオフ→オン時にテキストカーソル点滅位置が更新されない</a>
+    <span class="author">soappp</span>
+    <time datetime="2017-08-19T02:29:26">2017年08月19日 02:29</time></h1>
+    <div class="body">こんにちは。サクラエディタを使わせていただいております。<br>この度、表題の事象を確認いたしましたので、ご報告いたします。<br>確認したバージョンは 2.3.2.0、使用OSは Windows 7 Pro です。<br><br>●再現手順<br>・Ctrl+Alt+X「折り返さない」を選択。<br>・ウィンドウ幅よりも長い文字列がある行が、表示中の画面に1行以上存在する状態にする。<br>・それらの行よりも下にある、任意の行の任意の位置をクリックして、テキストカーソルを置く。<br>・Ctrl+Alt+W「右端で折り返す」を選択。<br>　→折り返しが発生することで、テキストカーソルが表示されるべき位置が変わるが、テキストカーソルの点滅位置は更新されない（おかしな場所で点滅することになる）。</div></section>
+    <ul><li><section><h1 id=2411>
+    <span class="no">[2411]</span>
+    <a class="thread-title" href="#2411">Re:「右端で折り返す」のオフ→オン時にテキストカーソル点滅位置が更新されない</a>
+    <span class="author">AC</span>
+    <time datetime="2017-08-19T23:02:16">2017年08月19日 23:02</time></h1>
+    <div class="body">手元にある過去バージョンで試してみたところ、<br>ver.2.1.1.2と ver.2.2.0.1の間で挙動が変わったようです。<br><br></div></section>
+    <ul><li><section><h1 id=2412>
+    <span class="no">[2412]</span>
+    <a class="thread-title" href="#2412">Re2:「右端で折り返す」のオフ→オン時にテキストカーソル点滅位置が更新されない</a>
+    <span class="author">berryzplus</span>
+    <time datetime="2017-08-26T15:59:02">2017年08月26日 15:59</time></h1>
+    <div class="body">▼ ACさん<br>&gt; 手元にある過去バージョンで試してみたところ、<br>&gt; ver.2.1.1.2と ver.2.2.0.1の間で挙動が変わったようです。<br>&gt; <br><br>再現方法を書いていただいたので、実機で検証してみました。<br>結論としてバグで、原因は設計不良みたいです。<br><br>とりあえず、調査報告をあげておきます。<br><br>過去バイナリとか持ってないのでバイナリはSVNソースからビルドしました。<br>ビルド環境はvs2005proのvc++です。<br>動作環境はwin8.1 pro x64です。<br><br>ver.2.1.1.4  (rev3825) ○再現せず<br>ver.2.1.1.4+ (rev3870) ○再現せず<br>ver.2.1.1.4+ (rev3871) △コンパイルエラーになった<br>ver.2.1.1.4+ (rev3872) △コンパイルエラーになった<br>ver.2.1.1.4+ (rev3873) ×再現<br><br><br>原因はrev3871～rev3873の変更です。<br>rev3871でコンパイルエラーになるバグを作りこんで<br>rev3873でコンパイルエラーを修正したようです。<br>rev3872は本件とはまったく関係のない軽微な仕様変更です。<br><br><br>★↓がrev3871のコミット時コメント<br>--<br>Fix: キャレットの更新でGetDrawSwitchフラグを見るように<br><br>[patchunicode:#913]<br>・マクロで高速にキャレットが更新されるので処理を省略するようにします。<br>--<br><br>マクロ絡みの動作でキャレットが更新されると困るケースがあったんですかね？<br><br><br>コミットコメントの内容からすると、<br>マクロ実行中はキャレット更新を抑制するように変更したい<br>というのが仕様のはずです。<br><br>rev3871～rev3873の変更内容を見ると、<br>特定条件下ではCCaret::ShowEditCaret()を呼び出しても、<br>キャレット位置を更新しないように修正しています。<br>変更仕様として読み取れる内容とは関係ない修正です。<br><br>効果が立証できない改善を残すより、実害のあるバグを潰すのが先だと思うので、<br>対応策としては、該当範囲の修正を一旦破棄するのがよいと思います。<br><br>もしキャレット更新のせいでマクロが遅くなるのなら<br>マクロ実行中はShowEditCaretを呼ばない、という対応を検討しましょう。<br><br>パッチのステータスがclosed(=完了)になっているのでこれを元に戻してやり直しですね。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/913/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>913/<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=2414>
+    <span class="no">[2414]</span>
+    <a class="thread-title" href="#2414">Re3:「右端で折り返す」のオフ→オン時にテキストカーソル点滅位置が更新されない</a>
+    <span class="author">ななし</span>
+    <time datetime="2017-08-27T00:58:34">2017年08月27日 00:58</time></h1>
+    <div class="body">time = new Date();<br>Editor.SetDrawSwitch(0)<br>for(line = 0; line &lt; 100; line++){<br>&#9;for(i = 0; i &lt; 1000; i++){<br>&#9;&#9;Editor.InsText("a");<br>&#9;}<br>&#9;Editor.InsText("\r\n");<br>}<br>Editor.SetDrawSwitch(1);<br>Editor.Redraw();<br>last = new Date();<br>Editor.InsText(last - time);<br></div></section>
+    <ul><li><section><h1 id=2415>
+    <span class="no">[2415]</span>
+    <a class="thread-title" href="#2415">Re4:「右端で折り返す」のオフ→オン時にテキストカーソル点滅位置が更新されない</a>
+    <span class="author">berryzplus</span>
+    <time datetime="2017-08-27T02:23:38">2017年08月27日 02:23</time></h1>
+    <div class="body">▼ ななしさん<br><br>言いたいことはなんとなく分かりました。<br>ぼくはマクロの実行速度なんて捨てちゃえ、と言いましたが、<br>事務用スペックの端末でこれを実行したら酷いことになりそうですね。<br><br>まぁ、ここまでのマクロを組める人なら、<br>この処理が実用的じゃないことは分かると思います。<br>同じことを1秒未満で完了させるスクリクプティング手法は、<br>他にいくらでもあります。<br><br>やりたいことを実現するのに最適な手段を選択できることも、<br>ある種のITスキルだと思います。<br><br><br>追記<br>投稿されたマクロの実行時間。<br>ver.2.1.1.4+ (rev3870) 26015ミリ秒<br>ver.2.1.1.4+ (rev3873)  9695ミリ秒<br><br>投稿マクロが遅い原因に対策した版での実行時間。<br>ver.2.1.1.4+ (rev3870)   105ミリ秒<br>ver.2.1.1.4+ (rev3873)   112ミリ秒<br><br>やはり、サクラエディタ側で対策する必要なんてない気がします。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

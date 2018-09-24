@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>「"」「'」の扱いについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4019</span>
+    <a class="thread-title" href="4019.html#4019">「"」「'」の扱いについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4020</span>
+    <a class="thread-title" href="4019.html#4020">Re:「"」「'」の扱いについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4021</span>
+    <a class="thread-title" href="4019.html#4021">Re2:「"」「'」の扱いについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4168</span>
+    <a class="thread-title" href="4019.html#4168">Re3:「"」「'」の扱いについて</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4019>
+    <span class="no">[4019]</span>
+    <a class="thread-title" href="#4019">「"」「'」の扱いについて</a>
+    <span class="author">いいやま</span>
+    <time datetime="2004-08-27T08:44:18">2004年08月27日 08:44</time></h1>
+    <div class="body">ダブルクォーテーション、シングルクォーテーションで<br>カラー表示するようにした際に例えば「B's reco」などと<br>いった文字列が存在するとその後「'」が出てくるまで他のカラー<br>は無視されてしまいます。<br>できれば<br>「"」「'」がある行にもう一つ「"」「'」がなくても次の行からは<br>カラー表示を行わないようにしていただきたいです。</div></section>
+    <ul><li><section><h1 id=4020>
+    <span class="no">[4020]</span>
+    <a class="thread-title" href="#4020">Re:「"」「'」の扱いについて</a>
+    <span class="author">ヤマモ</span>
+    <time datetime="2004-08-27T12:40:49">2004年08月27日 12:40</time></h1>
+    <div class="body">▼ いいやまさん<br>&gt; ダブルクォーテーション、シングルクォーテーションで<br>&gt; カラー表示するようにした際に例えば「B's reco」などと<br>&gt; いった文字列が存在するとその後「'」が出てくるまで他のカラー<br>&gt; は無視されてしまいます。<br>&gt; できれば<br>&gt; 「"」「'」がある行にもう一つ「"」「'」がなくても次の行からは<br>&gt; カラー表示を行わないようにしていただきたいです。<br><br>どもっ、上記の件でしたら、ガンバレば今の仕様で可能かな？と。<br>まず、タイプ別設定のカラータブにある<br>「シングルクォーテーション文字列」「ダブルクォーテーション文字列」<br>の[□色分け/表示]を無効にします。<br>それから、コレ→「/(["'])([\\].|[^\1])*?\1/k」<br>を正規表現キーワードとして登録します。<br>どうでしょう？ちと試してみてください。<br>（C言語風エスケープ対応版です）</div></section>
+    <ul><li><section><h1 id=4021>
+    <span class="no">[4021]</span>
+    <a class="thread-title" href="#4021">Re2:「"」「'」の扱いについて</a>
+    <span class="author">いいやま</span>
+    <time datetime="2004-08-28T00:11:54">2004年08月28日 00:11</time></h1>
+    <div class="body">▼ ヤマモさん<br>&gt; ▼ いいやまさん<br>&gt; &gt; ダブルクォーテーション、シングルクォーテーションで<br>&gt; &gt; カラー表示するようにした際に例えば「B's reco」などと<br>&gt; &gt; いった文字列が存在するとその後「'」が出てくるまで他のカラー<br>&gt; &gt; は無視されてしまいます。<br>&gt; &gt; できれば<br>&gt; &gt; 「"」「'」がある行にもう一つ「"」「'」がなくても次の行からは<br>&gt; &gt; カラー表示を行わないようにしていただきたいです。<br>&gt; <br>&gt; どもっ、上記の件でしたら、ガンバレば今の仕様で可能かな？と。<br>&gt; まず、タイプ別設定のカラータブにある<br>&gt; 「シングルクォーテーション文字列」「ダブルクォーテーション文字列」<br>&gt; の[□色分け/表示]を無効にします。<br>&gt; それから、コレ→「/(["'])([\\].|[^\1])*?\1/k」<br>&gt; を正規表現キーワードとして登録します。<br>&gt; どうでしょう？ちと試してみてください。<br>&gt; （C言語風エスケープ対応版です）<br><br>できました！<br>色を別にしたかったので<br>/(["])([\\].|[^\1])*?\1/k<br>/(['])([\\].|[^\1])*?\1/k<br>のように二種類登録しました。<br>ありがとうございました。</div></section>
+    <ul><li><section><h1 id=4168>
+    <span class="no">[4168]</span>
+    <a class="thread-title" href="#4168">Re3:「"」「'」の扱いについて</a>
+    <span class="author">武本ティモシー</span>
+    <time datetime="2004-12-01T10:51:53">2004年12月01日 10:51</time></h1>
+    <div class="body">これはいいですね。この正規表現の言語はPerlですか？<br><br>私は<br>~で始まる行<br>=で始まる行<br>をコメントとは違う色で表示したいですが、どうも。<br><br>マクロの掲示板ではよく使う置換表現の一覧表がありますように、<br>よく使う正規表現の一覧表を掲載いただけましたら幸いです。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

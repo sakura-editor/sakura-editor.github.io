@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>置換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6084</span>
+    <a class="thread-title" href="6084.html#6084">置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6085</span>
+    <a class="thread-title" href="6084.html#6085">RE: 置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6086</span>
+    <a class="thread-title" href="6084.html#6086">Re2: 置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6089</span>
+    <a class="thread-title" href="6084.html#6089">Re3: 置換</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6084>
+    <span class="no">[6084]</span>
+    <a class="thread-title" href="#6084">置換</a>
+    <span class="author">もも</span>
+    <time datetime="2007-06-05T15:40:26">2007年06月05日 15:40</time></h1>
+    <div class="body">初心者なのでやさしくお願いします。タグのついているヘッダーを削除して本文のみを抽出したいのです。<br>しかも、空白行・改行コードも削除して↓以下のように文章をつなげた状態で取り出したいのです。もし、一気にいかないようでしたら、２段階の作業をしてもいいので教えてくださいませ。<br><br>&lt;head&gt;<br>&lt;lesson&gt;01&lt;/lesson&gt;<br>&lt;/head&gt;<br>&lt;text&gt;<br>She is a little girl. Her name is Rose. <br>&lt;/text&gt;<br><br>&lt;head&gt;<br>&lt;lesson&gt;02&lt;/lesson&gt;<br>&lt;/head&gt;<br>&lt;text&gt;<br>He is a little boy. His name is Jack. <br>&lt;/text&gt;<br><br>↓<br><br>She is a little girl. Her name is Rose. He is a little boy. His name is Jack. <br><br><br></div></section>
+    <ul><li><section><h1 id=6085>
+    <span class="no">[6085]</span>
+    <a class="thread-title" href="#6085">RE: 置換</a>
+    <span class="author">maru</span>
+    <time datetime="2007-06-05T17:10:56">2007年06月05日 17:10</time></h1>
+    <div class="body">&gt;タグのついているヘッダーを削除して本文のみを抽出したいのです。<br>&gt;しかも、空白行・改行コードも削除して…<br><br>ヘッダの構造とかすべて、このままの繰り返しを期待してよいのでしょうか。<br>例文のままなら、たとえばこのような感じに２段階に置換(削除)するとか。<br><br>２回とも、正規表現にチェックを入れてください。<br>置換前１： &lt;.*&gt;<br>置換後１： <br>置換前２： \r\n<br>置換後２： <br></div></section>
+    <ul><li><section><h1 id=6086>
+    <span class="no">[6086]</span>
+    <a class="thread-title" href="#6086">Re2: 置換</a>
+    <span class="author">もも</span>
+    <time datetime="2007-06-05T18:08:30">2007年06月05日 18:08</time></h1>
+    <div class="body">ありがとうございますぅ。わーい！できましたー！<br>でも、わたしは超初心者なので、&lt;.*&gt;　と　\r\n　の正規表現の意味が？？？　簡単に解説してくださいませ。お手数ですがお願いしますぅ。<br><br><br></div></section>
+    <ul><li><section><h1 id=6089>
+    <span class="no">[6089]</span>
+    <a class="thread-title" href="#6089">Re3: 置換</a>
+    <span class="author">もも</span>
+    <time datetime="2007-06-05T19:30:55">2007年06月05日 19:30</time></h1>
+    <div class="body">早速のお返事ありがとうございますぅ！よくわかりましたぁ。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

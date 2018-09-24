@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Fix) 行の変更フラグが、セーブ後もリセットされないバグを修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">325</span>
+    <a class="thread-title" href="325.html#325">Commit報告:(Fix) 行の変更フラグが、セーブ後もリセットされないバグを修正</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=325>
+    <span class="no">[325]</span>
+    <a class="thread-title" href="#325">Commit報告:(Fix) 行の変更フラグが、セーブ後もリセットされないバグを修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-27T23:48:38">2008年04月27日 23:48</time></h1>
+    <div class="body">リビジョン：<br>　rev1301<br><br>変更種別：<br>　バグ修正。<br><br>内容：<br>　セーブ時に行の変更フラグがリセットされていなかったので、リセットするように修正。<br>　結果的に以下のバグが修正されました。<br>　&gt; 変更行の色分け：<br>　&gt; ・sakuraW_r1286のサクラエディタを起動（上記の設定で）<br>　&gt; ・a[ret]b[ret]c[ret]&lt;Ctrl+S&gt;c[ret]d[ret]f[ret]&lt;Ctrl+S&gt;と入力<br>　&gt; ---以下の状態---<br>　&gt; a<br>　&gt; b<br>　&gt; c<br>　&gt; d<br>　&gt; e<br>　&gt; f<br>　&gt; I[EOF]<br>　&gt; ・"d"の行(4行目)を修正すると4,5,6行目が変更行になる<br>　&gt; ・ウインドウ＞再描画、カーソル移動、マウスクリックでカーソル移動をするとカーソル以降が変更行表示に変化する<br></div></section>
+    </li></ul></body></html>

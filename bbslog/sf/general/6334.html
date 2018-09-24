@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>テスト版インストーラ sono 4 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6334</span>
+    <a class="thread-title" href="6334.html#6334">テスト版インストーラ sono 4</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6335</span>
+    <a class="thread-title" href="6334.html#6335">Re:テスト版インストーラ sono 4</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6338</span>
+    <a class="thread-title" href="6334.html#6338">Re2:テスト版インストーラ sono 4</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6334>
+    <span class="no">[6334]</span>
+    <a class="thread-title" href="#6334">テスト版インストーラ sono 4</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-27T01:52:59">2007年09月27日 01:52</time></h1>
+    <div class="body">本体のUAC対応は完了しましたが，関連づけツールが放置状態でしたので，関連づけツールのVista対応を行ったインストーラを作成しました．<br><br>Test 4が最新です．中身は1.5.17.208 + テスト版ヘルプです．<br>http://sakura-editor.wiki.sourceforge.net/Installer<br><br>manifest無しで一旦動かしてしまうと，後から入れたmanifestを読み込んでくれない現象を以前ryojiさんが報告してくれたかと思うのですが，あれって結局解決法は何だったかもう一度教えていただけませんか？(過去ログから見つからなかった)<br><br>テスト中にもインストールした関連づけツールが何故か管理者権限に昇格してくれない現象が発生し，manifestが誤っているのかと試行錯誤していたのですが，別のフォルダでは単独でインストールした場合は期待通り動くことを発見．しかし名前を変えたら動いたり動かなかったり．と繰り返しているうちに以前の「外部manifestを読み込んでくれない」報告を思い出しました．<br><br>その後別のディレクトリ名で新規インストールを行ったら，関連づけツールのショートカットに盾のマークが出てきましたので，一応動作確認は行えています．<br><br>ただ，既に旧版をインストールして関連づけツールを動かしてしまっていると，アンインストールして同じディレクトリに最新版をインストールしても関連づけツールが期待通り動作しないのはちょっとまずいような...<br></div></section>
+    <ul><li><section><h1 id=6335>
+    <span class="no">[6335]</span>
+    <a class="thread-title" href="#6335">Re:テスト版インストーラ sono 4</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-09-27T02:13:56">2007年09月27日 02:13</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; manifest無しで一旦動かしてしまうと，後から入れたmanifestを読み込んでくれない現象を以前ryojiさんが報告してくれたかと思うのですが，あれって結局解決法は何だったかもう一度教えていただけませんか？(過去ログから見つからなかった)<br>exeファイルのプロパティを開いて[互換性]タブでXP互換モードにして実行すればＯＫのはずです。<br>（１度実行したら以後は互換モードOFFに戻して良い）<br>関連付けツールのランチャー部分も外部マニフェストにしているんでしょうか？<br>埋め込みマニフェストにしてしまえば、そういう問題は起きないんじゃないかと思いますけど。</div></section>
+    <ul><li><section><h1 id=6338>
+    <span class="no">[6338]</span>
+    <a class="thread-title" href="#6338">Re2:テスト版インストーラ sono 4</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-28T00:54:39">2007年09月28日 00:54</time></h1>
+    <div class="body">&gt;埋め込みマニフェスト<br>そうですね．sakuext.exeのマニフェストを埋め込んだTest5を作成しました．<br>実行ファイル，ヘルプファイルも最新の物に差し替えてあります．<br>http://sakura-editor.wiki.sourceforge.net/Installer<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

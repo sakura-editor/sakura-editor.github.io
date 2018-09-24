@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>余分？なプロセスについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4941</span>
+    <a class="thread-title" href="4941.html#4941">余分？なプロセスについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4942</span>
+    <a class="thread-title" href="4941.html#4942">RE: 余分？なプロセスについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4945</span>
+    <a class="thread-title" href="4941.html#4945">Re2: 余分？なプロセスについて</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4941>
+    <span class="no">[4941]</span>
+    <a class="thread-title" href="#4941">余分？なプロセスについて</a>
+    <span class="author">おちと</span>
+    <time datetime="2006-01-01T21:38:57">2006年01月01日 21:38</time></h1>
+    <div class="body">サクラエディタを起動すると、<br>開いている文書の数より1個余分にsakura.exeが動いています。<br>これって仕様なんでしょうか。<br><br>タブ表示は使用せず、タスクトレイも使っていません。<br>余分なプロセスは、メモリ使用量が4,240KBでほぼ一定のようです。<br>バージョンは1.5.8.1、OSはWindowsXP SP1です。<br><br>つかぬ質問ですが、よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=4942>
+    <span class="no">[4942]</span>
+    <a class="thread-title" href="#4942">RE: 余分？なプロセスについて</a>
+    <span class="author">すい</span>
+    <time datetime="2006-01-02T00:41:08">2006年01月02日 00:41</time></h1>
+    <div class="body">エディタのウィンドウを複数出している場合に、その複数のエディタウィンドウ間で<br>使用される共有データをやり取りしたりするための、中央のプロセスだったかと思います。<br><br>例えばエディタウィンドウAにて、とある文字列を検索すると、その検索文字列が<br>他のエディタウィンドウBにも反映されて出てきますよね。<br>この手の検索文字列のようなデータのやり取り・管理等をやったりとか。他にも色々な事を。<br><br>エディタウィンドウA , ウィンドウB , ウィンドウC ...<br>のように複数のエディタウィンドウを起動している場合に、全てのウィンドウ間でデータを<br>やり取りするのに一番シンプルな手が、<br>・共有データを管理したりするための中央のプロセスを別途動作させておく。<br>・各エディタウィンドウA,B,C は、その中央プロセスと のみデータのやり取りを行うようにする。<br>という構造だったようで。<br></div></section>
+    <ul><li><section><h1 id=4945>
+    <span class="no">[4945]</span>
+    <a class="thread-title" href="#4945">Re2: 余分？なプロセスについて</a>
+    <span class="author">おちと</span>
+    <time datetime="2006-01-03T00:06:07">2006年01月03日 00:06</time></h1>
+    <div class="body">わかりやすい解説、ありがとうございます。<br>各プロセスのまとめ役みたいなものですね。<br><br>ひょってしてウイルスか何かでは、と思って、ちょっと気になってました。<br>まだ使い始めですが、安心していろいろ試そうかと思います。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

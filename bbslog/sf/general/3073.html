@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>要望：自動インデントとコメント | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3073</span>
+    <a class="thread-title" href="3073.html#3073">要望：自動インデントとコメント</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3076</span>
+    <a class="thread-title" href="3073.html#3076">RE: 要望：自動インデントとコメント</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3081</span>
+    <a class="thread-title" href="3073.html#3081">Re:要望：自動インデントとコメント</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3092</span>
+    <a class="thread-title" href="3073.html#3092">Re:要望：自動インデントとコメント</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3073>
+    <span class="no">[3073]</span>
+    <a class="thread-title" href="#3073">要望：自動インデントとコメント</a>
+    <span class="author">You</span>
+    <time datetime="2003-07-11T11:44:34">2003年07月11日 11:44</time></h1>
+    <div class="body">こんにちわ。<br>いつも便利に使用させて頂いてます。<br><br>機能追加の要望です。<br><br>自動インデント：<br>　現在、チェックを入れていると改行時に<br>　自動でインデントされますが、<br>　特定の操作(Shift + Enter？)時には、<br>　自動インデントを無効化するような機能を<br>　追加していただけないでしょうか？<br><br>コメント：<br>　選択行のコメントアウト・解除機能(単一行、複数行)<br>　を追加していただけないでしょうか？<br>　VBにあるようなコメントアウト、コメント解除<br>　のような感じです。<br><br>以上です、宜しくお願い致します。</div></section>
+    <ul><li><section><h1 id=3076>
+    <span class="no">[3076]</span>
+    <a class="thread-title" href="#3076">RE: 要望：自動インデントとコメント</a>
+    <span class="author">すい</span>
+    <time datetime="2003-07-12T06:05:24">2003年07月12日 06:05</time></h1>
+    <div class="body">&gt;自動インデント：<br>&gt;　現在、チェックを入れていると改行時に<br>&gt;　自動でインデントされますが、<br>&gt;　特定の操作(Shift + Enter？)時には、<br>&gt;　自動インデントを無効化するような機能を<br>&gt;　追加していただけないでしょうか？<br><br>マクロで出来るかと。<br><br>手順1.マクロ作成<br>1-1. [Shift]+[Ctrl]+[M] (ツール → キーマクロの記録開始)<br>　　（タイトルバーが「【キーマクロの記録中】」になる事を確認）<br><br>1-2.登録したい目的のキー操作を行う<br>　　[Enter]　　　　　　 （改行入力）<br>　　[Shift]+[Ctrl]+[U]　（編集 → 高度な操作 → 行頭まで削除(改行単位)）<br><br>1-3. [Shift]+[Ctrl]+[M] (ツール → キーマクロの記録終了)<br>　　（タイトルバーから「【キーマクロの記録中】」が消える事を確認）<br><br>1-4. 記録した操作を保存する。<br>　　[Ctrl]+[M] (ツール → キーマクロの記録終了&amp;保存)<br>　　にて、NoIndent.mac とか適当な名前を付けて保存する。<br><br>手順2.マクロ登録<br>2-1. [Ctrl]+[6] (ツール → 共通設定) → [マクロ]タブを開き、↓以下の操作。<br> 2-2.「マクロ一覧」にて空の行を選択状態にする。<br> 2-3.「File」で、作成したマクロ“NoIndent.mac”を選択する。<br> 2-4.「名前(N)」に分かりやすい名前を入力する。「改行 - インデント無し」とか<br> 2-5. [設定(A)] 押して登録する。<br>2-6.[OK] で共通設定を一旦閉じる。<br><br>手順3.キー割り当て<br>2-1. [Ctrl]+[6] (ツール → 共通設定) → [キー割り当て]タブを開き、↓以下の操作。<br> 2-2. 「種別(K)」で「外部マクロ」を選択。<br> 2-3. 「機能(F)」で登録したマクロ「改行 - インデント無し」を選択する。<br> 2-4. 登録したいキーを選択する。[Shift]+[Enter]なら、<br> 　　「キー(Y)」から「Enter」を選択し、「Shift」にチェックを付ける。<br> 2-5. [割付(B)] を押す。<br>2-6. [OK] で共通設定を閉じる。<br><br>かな？<br><br>&gt;コメント：<br>&gt;　選択行のコメントアウト・解除機能(単一行、複数行)<br>&gt;　を追加していただけないでしょうか？<br>&gt;　VBにあるようなコメントアウト、コメント解除<br>&gt;　のような感じです。<br><br>こっちはどういう機能か分からないのでパス。<br></div></section>
+    </li><li><section><h1 id=3081>
+    <span class="no">[3081]</span>
+    <a class="thread-title" href="#3081">Re:要望：自動インデントとコメント</a>
+    <span class="author">inotan</span>
+    <time datetime="2003-07-17T23:38:35">2003年07月17日 23:38</time></h1>
+    <div class="body">▼ Youさん<br>&gt; 自動インデント：<br>&gt; 　現在、チェックを入れていると改行時に<br>&gt; 　自動でインデントされますが、<br>&gt; 　特定の操作(Shift + Enter？)時には、<br>&gt; 　自動インデントを無効化するような機能を<br>&gt; 　追加していただけないでしょうか？<br>これは標準機能で欲しいですね。<br><br>&gt; コメント：<br>&gt; 　選択行のコメントアウト・解除機能(単一行、複数行)<br>&gt; 　を追加していただけないでしょうか？<br>&gt; 　VBにあるようなコメントアウト、コメント解除<br>&gt; 　のような感じです。<br>&gt; <br>&gt; 以上です、宜しくお願い致します。<br>短形選択で可能かと・・・</div></section>
+    </li><li><section><h1 id=3092>
+    <span class="no">[3092]</span>
+    <a class="thread-title" href="#3092">Re:要望：自動インデントとコメント</a>
+    <span class="author">loop</span>
+    <time datetime="2003-07-22T11:32:43">2003年07月22日 11:32</time></h1>
+    <div class="body">▼ Youさん<br>&gt; コメント：<br>&gt; 　選択行のコメントアウト・解除機能(単一行、複数行)<br>&gt; 　を追加していただけないでしょうか？<br>&gt; 　VBにあるようなコメントアウト、コメント解除<br>&gt; 　のような感じです。<br><br><a href=http://www.egroups.co.jp/files/sakura-editor/User/MACRO/ target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>User/<wbr>MACRO/<wbr></nobr></a><br>に「選択範囲の行頭に行コメントを付ける・削除する」というものがありますよ。<br></div></section>
+    </li></ul></li></ul></body></html>

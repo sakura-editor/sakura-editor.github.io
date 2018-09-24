@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告(Fix) MSDEVLineSelect形式の全置換がラインモード貼り付けにならない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1396</span>
+    <a class="thread-title" href="1396.html#1396">Commit報告(Fix) MSDEVLineSelect形式の全置換がラインモード貼り付けにならない</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1396>
+    <span class="no">[1396]</span>
+    <a class="thread-title" href="#1396">Commit報告(Fix) MSDEVLineSelect形式の全置換がラインモード貼り付けにならない</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-09-18T10:28:50">2010年09月18日 10:28</time></h1>
+    <div class="body">リビジョン：<br>  rev1825<br><br>変更種別：<br>  バグ修正<br><br>内容：<br>Fix: MSDEVLineSelect形式で「クリップボードから」全置換したときにラインモード貼り付けにならない<br>Fix: フリーカーソル時のデータ挿入がカーソル位置でなく次行頭への挿入になってしまうことがある<br><br>■Fix: MSDEVLineSelect形式で…」について<br>「置換」ではラインモード貼り付けで「全置換」では通常貼り付け、というように挙動が不統一になってました。<br>えぇ、実は、ラインモード貼り付け機能を実装した際、「クリップボードから貼り付ける置換」は考慮してませんでした…<br>未実装のままだとコードを読む際に意図不明に陥りそうですし、修正しておきました。<br>矩形(MSDEVColumnSelect形式)のほうは矩形貼り付けに統一されているので、MSDEVLineSelect形式もそれに倣ってラインモード貼り付けに統一しています。<br>（注：共通設定のオプションでOFFになっていれば通常貼り付けですけど）<br><br>なお、ラインモードでの「検索始点挿入」「検索終点追加」はどちらも同じような挙動になります。もともとラインモード貼り付けは同じ行内ならカーソル桁位置（挿入桁位置）が違っていても同じ結果になるので。<br><br>今回、Command_INSTEXT() にラインモード貼り付けの機能を追加して対処しましたが、結果、Command_PASTE() とほぼ同じに操作になったので、そのへんも整理・統合しておきました。<br>Command_PASTE() はクリップボードからデータを取り出した後は Command_INSTEXT() を呼び出してデータ挿入するように変更しています。<br><br>■「Fix: フリーカーソル時の…」について<br>細かいですが「Fix: フリーカーソル時の…」も、Command_INSTEXT() の見直しに伴う修正です。<br>具体的には、フリーカーソルの設定で行末よりも右側で範囲選択（行はまたがない）した状態から「日付挿入」などの挿入操作をした場合の挙動を、キーボード入力の場合の挙動と同様にしました。<br><br>修正前：次の行の先頭に指定データが挿入される<br>修正後：選択範囲の左端まで空白を挿入し、続けて指定データが挿入される<br><br>になります。</div></section>
+    </li></ul></body></html>

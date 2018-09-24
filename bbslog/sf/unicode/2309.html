@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>アウトライン解析で「@quoted string」以降が表示されない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2309</span>
+    <a class="thread-title" href="2309.html#2309">アウトライン解析で「@quoted string」以降が表示されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2310</span>
+    <a class="thread-title" href="2309.html#2310">Re:アウトライン解析で「@quoted string」以降が表示されない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2314</span>
+    <a class="thread-title" href="2309.html#2314">Re2:アウトライン解析で「@quoted string」以降が表示されない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2309>
+    <span class="no">[2309]</span>
+    <a class="thread-title" href="#2309">アウトライン解析で「@quoted string」以降が表示されない</a>
+    <span class="author">mike</span>
+    <time datetime="2015-11-02T20:22:06">2015年11月02日 20:22</time></h1>
+    <div class="body">C#でアウトライン解析を使用していた所、<br>「@quoted(クォート) string」が含まれていると、<br>それ以降の部分が出力されないようです。<br><br>以下のような、行があると、<br>それ以降の解析がうまく言っていないようです。<br>var dir = @"log\";<br><br>「@quoted(クォート) string」を使用しない表記の<br>こちらは大丈夫でした。<br>var dir = "log\\";<br><br>v2.1.1.1、v2.3.0.0で発生していました。<br></div></section>
+    <ul><li><section><h1 id=2310>
+    <span class="no">[2310]</span>
+    <a class="thread-title" href="#2310">Re:アウトライン解析で「@quoted string」以降が表示されない</a>
+    <span class="author">syat</span>
+    <time datetime="2015-11-03T13:49:37">2015年11月03日 13:49</time></h1>
+    <div class="body">▼ mikeさん<br>組み込みの「C/C++」アウトライン解析のことだと思いますが、現時点では＠文字列に対応していません。<br>（C++11の R"()"には対応しているけど）<br>タイプ別設定にある文字列エスケープの設定は、強調色分け表示にのみ効いています。<br></div></section>
+    <ul><li><section><h1 id=2314>
+    <span class="no">[2314]</span>
+    <a class="thread-title" href="#2314">Re2:アウトライン解析で「@quoted string」以降が表示されない</a>
+    <span class="author">mike</span>
+    <time datetime="2015-11-18T23:16:51">2015年11月18日 23:16</time></h1>
+    <div class="body">レスありがとうございました。<br>(こちらのレスが遅くて申し訳ありません。)<br><br>現時点では"@文字列"は未対応との事、<br>ご回答頂きありがとうございます。<br><br>レスにもあります通り、"C/C++”アウトライン解析を<br>C#に流用して使用していた中で気が付いた次第です。<br>将来的に、これらも利用できる様になったらうれしいです。<br><br>メンテナーさんに感謝しつつ、<br>サクラエディタの一ファンとして、<br>今後も使って行きたいとおもいます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

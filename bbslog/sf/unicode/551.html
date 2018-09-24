@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Imp) サロゲートペア対応 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">551</span>
+    <a class="thread-title" href="551.html#551">Commit報告:(Imp) サロゲートペア対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">553</span>
+    <a class="thread-title" href="551.html#553">Re:Commit報告:(Imp) サロゲートペア対応</a></div>
+    </li><li><div class="list-title">
+    <span class="no">554</span>
+    <a class="thread-title" href="551.html#554">Re:Commit報告:(Imp) サロゲートペア対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">555</span>
+    <a class="thread-title" href="551.html#555">Re2:Commit報告:(Imp) サロゲートペア対応</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">587</span>
+    <a class="thread-title" href="551.html#587">Re:Commit報告:(Imp) サロゲートペア対応</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=551>
+    <span class="no">[551]</span>
+    <a class="thread-title" href="#551">Commit報告:(Imp) サロゲートペア対応</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-07-06T11:00:54">2008年07月06日 11:00</time></h1>
+    <div class="body">リビジョン：<br>  rev1409<br><br>変更種別：<br>  機能修正<br><br>内容：<br>  サロゲートペア対応<br>    表示とカーソル移動に一応対応しました。</div></section>
+    <ul><li><section><h1 id=553>
+    <span class="no">[553]</span>
+    <a class="thread-title" href="#553">Re:Commit報告:(Imp) サロゲートペア対応</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-07-06T15:09:39">2008年07月06日 15:09</time></h1>
+    <div class="body">&gt;   サロゲートペア対応<br>&gt;     表示とカーソル移動に一応対応しました。<br><br>修正内容は確認していないですが、ちょっとだけ試してみました。<br>Del や Back space での文字削除ができないみたいです。</div></section>
+    </li><li><section><h1 id=554>
+    <span class="no">[554]</span>
+    <a class="thread-title" href="#554">Re:Commit報告:(Imp) サロゲートペア対応</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-08T15:55:50">2008年07月08日 15:55</time></h1>
+    <div class="body">▼ Uchiさん<br>Win2k,WinXPともにrev1409以降のリリース版で落ちる現象が発生しています。<br>ビルド環境はVC2005 Express Editionです。<br><br>下記のような操作で発生するのですが、必ず起こるわけでもないです。<br>・無題にテキストをドロップし、マウスにてスクロールバーを文書先頭へ移動する<br>・カーソルを表示エリア外にした後、設定ダイアログを開いてそのままOKする<br><br>WinXPでは「メモリが"read"になることはできませんでした。」<br>Win2kでは「エラーが発生したため、sakuraW.exeを終了します。プログラムをもう一度開始する必要があります。」<br><br>落ちる時に上記のエラーを表示しますが、デバッグ版では発生しない事もあり原因が分かりません。<br>ただ、rev1406以前では一度も発生しないので、rev1409の修正が絡んでいるのではないかと思います。<br><br>タブモードが入でも2枚以上開けば発生しました。タブモードが切なら1つの画面で発生しました。<br><br>ではでは。<br></div></section>
+    <ul><li><section><h1 id=555>
+    <span class="no">[555]</span>
+    <a class="thread-title" href="#555">Re2:Commit報告:(Imp) サロゲートペア対応</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-07-08T19:07:20">2008年07月08日 19:07</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; WinXPでは「メモリが"read"になることはできませんでした。」<br>&gt; Win2kでは「エラーが発生したため、sakuraW.exeを終了します。プログラムをもう一度開始する必要があります。」<br><br>僕のところ(XP)では、いろいろいじっているうちに、何度か<br>「sakuraW.exe の 0x004517c2 でハンドルされていない例外が発生しました: 0xC0000005: 場所 0x00f89000 を読み込み中にアクセス違反が発生しました。」<br>のようなエラーで落ちました。<br>エラーアドレス0x004517c2は、ソースでは CTextDrawer.cpp(119) の場所でした。<br>CTextDrawer::DispText()関数の中で、ExtTextOutW_AnyBuild()呼び出しの直前です。<br><br>                // サロゲートペア対策   2008/7/5 Uchi<br>                if (pDrawDxArray[nDrawLength] == 0) {<br>004517C2  cmp         dword ptr [ecx+edx*4],0 <br>004517C6  jne         CTextDrawer::DispText+17Fh (4517C9h) <br>                        nDrawLength++;<br>004517C8  inc         edx <br>                }<br><br>                //描画<br>                ::ExtTextOutW_AnyBuild(<br><br>※上記は混合モード（逆アセンブル）での表示</div></section>
+    </li></ul></li><li><section><h1 id=587>
+    <span class="no">[587]</span>
+    <a class="thread-title" href="#587">Re:Commit報告:(Imp) サロゲートペア対応</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-08-26T23:37:01">2008年08月26日 23:37</time></h1>
+    <div class="body">不正なメモリ位置を参照する箇所がありましたが、<br>rev1411で問題が修正されていることを確認しました。<br><br>サロゲートペアの実装アプローチにはとりあえずノーコメント。</div></section>
+    </li></ul></li></ul></body></html>

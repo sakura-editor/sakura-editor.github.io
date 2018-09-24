@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Fix) 新規保存時でもバックアップが作成されてしまうバグを修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">281</span>
+    <a class="thread-title" href="281.html#281">Commit報告:(Fix) 新規保存時でもバックアップが作成されてしまうバグを修正</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=281>
+    <span class="no">[281]</span>
+    <a class="thread-title" href="#281">Commit報告:(Fix) 新規保存時でもバックアップが作成されてしまうバグを修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-14T23:35:17">2008年04月14日 23:35</time></h1>
+    <div class="body">リビジョン：<br>　rev1281<br><br>変更種別：<br>　バグ修正。<br><br>内容：<br>　文書の新規保存時はバックアップ作成不要であるにも関わらず<br>　バックアップを作成してしまっていたバグを修正しました。<br> <br>　バックアップを作成するオプションをONにしている場合…<br>　・新しいファイルを作成する場合　　→　バックアップを作成しません。<br>　・既存のファイルに上書きする場合　→　バックアップを作成します。<br>　となります。<br> <br>　ここで言う、「上書き」は「上書き保存」でも発生しますし、<br>　「名前を付けて保存」でも発生します。</div></section>
+    </li></ul></body></html>

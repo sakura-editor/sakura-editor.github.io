@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Unicodeの枠組み | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4746</span>
+    <a class="thread-title" href="4746.html#4746">Unicodeの枠組み</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4747</span>
+    <a class="thread-title" href="4746.html#4747">Re:Unicodeの枠組み</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4750</span>
+    <a class="thread-title" href="4746.html#4750">Re2:Unicodeの枠組み</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4751</span>
+    <a class="thread-title" href="4746.html#4751">Re3:Unicodeの枠組み</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4753</span>
+    <a class="thread-title" href="4746.html#4753">Re4:Unicodeの枠組み</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4754</span>
+    <a class="thread-title" href="4746.html#4754">Re5:Unicodeの枠組み</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4755</span>
+    <a class="thread-title" href="4746.html#4755">Re5:Unicodeの枠組み</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4756</span>
+    <a class="thread-title" href="4746.html#4756">Re6:Unicodeの枠組み</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4746>
+    <span class="no">[4746]</span>
+    <a class="thread-title" href="#4746">Unicodeの枠組み</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-15T02:03:28">2007年03月15日 02:03</time></h1>
+    <div class="body">恥ずかしながらPlatform SDKを見ていて初めて初めて気付いたのですが，<br>TextOut, ExtTextOut, GetTextExtentPoint , MessageBox等はWin95でもWide版が使えるのですね．<br><br>Unicode版と聞くとすべてのAPIをWide版に切り替えなくてはならないと思っていましたが，文字列処理はUnicodeで作って，プログラム本体は今まで通りANSI版でコンパイルという選択肢も可能なんでしょうかね．<br><br>しかし，文書の内容以外にもANSI版だと日本語版以外のOSでメニュー等が文字化けしたり，Unicodeのファイル名が扱えなかったりという制限もありますので，後々禍根を残す中途半端な方法は止めた方が良いのかも．<br></div></section>
+    <ul><li><section><h1 id=4747>
+    <span class="no">[4747]</span>
+    <a class="thread-title" href="#4747">Re:Unicodeの枠組み</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-03-15T11:04:17">2007年03月15日 11:04</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; TextOut, ExtTextOut, GetTextExtentPoint , MessageBox等はWin95でもWide版が使えるのですね．<br><br>　上に挙げられている関数だと、API関数 ::TextOut() と ::MessageBox() の Unicode 版は、<br>例外的に、API 関数 ::TextOut() だけは Win95 から Unicode 版が<br>標準で搭載されているらしいです。その他のものは、<br>いつか知らんの過去ログにも掲載されていますように、<br>以下の変換レイヤーでエミュレートされるとの事です。<br><br>Microsoft Layer for Unicode on Windows Me/98/95 Systems (MSUL)<br><a href=http://msdn.microsoft.com/library/default.asp?url=/library/en-us/mslu/winprog/microsoft_layer_for_unicode_on_windows_ target=_top><nobr>http://<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>library/<wbr>default.<wbr>asp?<wbr>url=/<wbr>library/<wbr>en-<wbr>us/<wbr>mslu/<wbr>winprog/<wbr>microsof<wbr>t_layer_<wbr>for_unic<wbr>ode_on_w<wbr>indows_</nobr></a><br>95_98_me_systems.asp<br><br>&gt; 文字列処理はUnicodeで作って，プログラム本体は今まで通りANSI版でコンパイルという選択肢<br><br>　掲示板の過去ログを眺める限り、サクラエディタの Unicode 化の背景には、<br>こういう事情があるんじゃないかなと勝手に想像しています（^^;）<br><br>１．Unicode 版と ANSI 版のバイナリを分けたくない。<br>２．Unicode サポート済みのプラットフォームでは、API 関数の機能をフルに引き出したい。<br>３．コアの部分は、単体バイナリで動かしたい。<br><br>そうだとすると、１．の条件で、TCHAR の使用はできなくなり・・・<br>２．の条件で、Unicode 版と ANSI 版それぞれの関数テーブルを用意しておき、<br>ＯＳのバージョンを確認次第、起動時に切り替えることが要求されます。<br>３．の条件で、MSUL の導入に躊躇します。<br><br>　これらを踏まえると、選択肢として残ってくるのは、<br>_MBCS を無視して、自作の関数テーブルで対応する…うぅ、みたいな？<br></div></section>
+    <ul><li><section><h1 id=4750>
+    <span class="no">[4750]</span>
+    <a class="thread-title" href="#4750">Re2:Unicodeの枠組み</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-16T00:20:13">2007年03月16日 00:20</time></h1>
+    <div class="body">&gt;&gt; 文字列処理はUnicodeで作って，プログラム本体は今まで通りANSI版でコンパイルという選択肢<br>&gt;１．の条件で、TCHAR の使用はできなくなり・・・<br>&gt;２．の条件で、Unicode 版と ANSI 版それぞれの関数テーブルを用意しておき、<br>AとWでは文字列を含む引数の型が異なることを考えると，完全にWide版APIを使ったら同一バイナリは無理じゃないでしょうか．無理に入れてもほとんど実行されないコードが増えるだけになりそう．バイナリサイズも抑えたい，<br><br>&gt;３．コアの部分は、単体バイナリで動かしたい。<br>&gt;３．の条件で、MSUL の導入に躊躇します。<br>DLLを添付するのはたしかに格好悪いのですが，Ansi版を独立にテストしなくて良い方法はこれしかないような気もします．<br>今時Win 95/98でエディタを使う人が必要としている機能はもう十分に備えているからANSIは開発停止だけど，MSLUで一応救済…になってるかなぁ．<br></div></section>
+    <ul><li><section><h1 id=4751>
+    <span class="no">[4751]</span>
+    <a class="thread-title" href="#4751">Re3:Unicodeの枠組み</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-03-16T02:09:33">2007年03月16日 02:09</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ANSIは開発停止だけど，MSLUで一応救済…になってるかなぁ．<br>『Advanced Windows 改訂第４版』によるとWindows9xのW系関数にはいろいろバグがあるそうです。<br>特定フォントでは動かないとか、ヒープ破壊するとか、プリンタドライバがクラッシュするとか。<br>MSLU使うとどうなのかはわかんないですが、テストもどれだけできるやら。。。<br>何にせよ内部Unicode化に伴うWin9xでのテストは十分にはできないんじゃないでしょうか？<br>苦労してそこそこ両対応（のつもり）で作っても、9x系では恩恵も少なく不安要素抱えてるんじゃ、現行版を使い続けるほうがお勧め (&gt;_&lt;)<br>てことになっちゃいませんかね…</div></section>
+    <ul><li><section><h1 id=4753>
+    <span class="no">[4753]</span>
+    <a class="thread-title" href="#4753">Re4:Unicodeの枠組み</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-03-16T12:42:32">2007年03月16日 12:42</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt; 無理に入れてもほとんど実行されないコードが増えるだけになりそう．<br>▼ ryojiさん<br>&gt; 何にせよ内部Unicode化に伴うWin9xでのテストは十分にはできないんじゃないでしょうか？<br><br>　言われてみると、そうですね。緑色（コメント色）の残骸が目に浮かびます（x_x;）<br>すると、時代の要請（！？）による内部 Unicode 化を実施するにあたり、<br>以下の理由のため ANSI 版の開発を停止する流れになるんですね…（しょんぼり）<br>（これでいいんでしょうか？　＞皆さん）<br><br>　・今時Win 95/98でエディタを使う人が必要としている機能は十分に備えている<br>　・内部Unicode化に伴うWin9xでのテストは十分にできない<br><br>　ANSI 版の開発が停止すれば、会社などで、諸般の事情のため、<br>Win9x 系のプラットフォームを仕方なくつかっている方には痛手になりそうですけれど、<br>一方で Unicode版 が生まれることで、<br>内部 Unicode 化による大幅な変更の可能性を秘めていた部分に変更を加えることが、<br>気兼ねすることなく出来るようにはなりそう・・・な予感です。<br></div></section>
+    <ul><li><section><h1 id=4754>
+    <span class="no">[4754]</span>
+    <a class="thread-title" href="#4754">Re5:Unicodeの枠組み</a>
+    <span class="author">hideto</span>
+    <time datetime="2007-03-16T14:11:00">2007年03月16日 14:11</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; 　・今時Win 95/98でエディタを使う人が必要としている機能は十分に備えている<br><br>私はSEで、企業によってWin98を一部使用している場面もちらほら見かけますが、Grep結果からの複数ファイルにまたがる置換機能があったらいいなあとは思うものの、正直現状の機能で必要十分な気がします。<br>そもそも、Win98をまだ使ってるシステムの人は根性があり、今のサクラエディタに不満があっても、それすらものともしない開発者だ！というのは言いすぎですか（＾＾；<br><br>（ただし、今可能な限りの安定版を作成してからの移行を望みますが）<br><br>んな訳で、一般掲示板、または、特設ページで、「Win95/98切っちゃってもいいですか？」アンケートを実施するのがいいと思いますが如何でしょうか？</div></section>
+    </li><li><section><h1 id=4755>
+    <span class="no">[4755]</span>
+    <a class="thread-title" href="#4755">Re5:Unicodeの枠組み</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-03-16T21:59:35">2007年03月16日 21:59</time></h1>
+    <div class="body">開発停止後1年経って，ANSI版は相変わらず放置かつUnicodeもできあがる気配無しになる危険性も考えるといきなり放棄するのもちょっと怖い．という移行の問題に対するMSの解決策がTCHAR &amp; UNICODE定義なわけでして...単純に型をTCHARに変更できる物と，SJISの特性に大きく依存する物をまずは分離(できる限り関数化)し，ANSI版とUnicode版は1ファイルくらい差し替えるとできあがりというのが理想的かとは思います．<br>あまりに至極まっとうな結論になってしまいましたが...<br><br>と，いいつつ私も相変わらずchar*を量産しているので，必要なライブラリとガイドラインを揃えてからTCHAR*化を行うのが先決かなと思います．この部分はANSI版を残すかどうかとは無関係にWide版で必要な変更だと思いますので．<br>あ，Wide版でTCHARなのはAPIに渡す部分だけなので，単にchar*をTCHARにすればよいという物では無いのですよね．<br><br>いずれにしても，SJISの処理を残すかどうかはそこで改めて考えれば良いと思います．<br></div></section>
+    <ul><li><section><h1 id=4756>
+    <span class="no">[4756]</span>
+    <a class="thread-title" href="#4756">Re6:Unicodeの枠組み</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-03-17T20:15:58">2007年03月17日 20:15</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 開発停止後1年経って，ANSI版は相変わらず放置かつUnicodeもできあがる気配無しになる危険性も<br>&gt; 考えるといきなり放棄するのもちょっと怖い．<br>&gt; ・・・（中略）・・・<br>&gt; 必要なライブラリとガイドラインを揃えてからTCHAR*化を行うのが先決かなと思います．<br><br>結論としては・・・<br><br>・Unicode 版と、ANSI 版の２つのバイナリを１つのソースから<br>　コンパイルできるよう作業を進める。<br>・内部コードは SJIS または UTF-16 とする。<br><br>てことですね。<br><br>余談ですけれど、インクリメンタルサーチに使う C/Migemo は<br>すげ替えが必要なんじゃないか、と思いましたが、<br>よく調べてみるとそうでもなさそうでした・・・（お恥ずかしい）<br><br>&gt; あ，Wide版でTCHARなのはAPIに渡す部分だけなので，単にchar*をTCHARにすれば<br>&gt; よいという物では無いのですよね．<br><br>ですね。。。<br> template&lt; class TChar &gt; class CMemText { /*...*/ };<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

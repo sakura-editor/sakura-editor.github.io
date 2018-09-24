@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>メモです。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1408</span>
+    <a class="thread-title" href="1408.html#1408">メモです。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1442</span>
+    <a class="thread-title" href="1408.html#1442">Re:メモです。</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1408>
+    <span class="no">[1408]</span>
+    <a class="thread-title" href="#1408">メモです。</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-30T00:53:08">2002年01月30日 00:53</time></h1>
+    <div class="body">・改行位置より後ろにキャレットがあるときに正規表現で下検索を行うと、その行の改行位置に移動してしまう。<br>・ステータスバーがあればステータスバーに、無い時はウィンドウタイトルにメッセージを送ります。<br>      （ 置換ダイアログが出てるときはなぜかうまく行かない… ）<br><br>void CEditView::SendStatusMassage( const char* msg ){<br>    CEditWnd* pCEditWnd = ( CEditWnd* )::GetWindowLong( ::GetParent( m_hwndParent ) , GWL_USERDATA );<br>    if( NULL == pCEditWnd-&gt;m_hwndStatusBar ){<br>        HDC     hdc;<br>        POINT   po,poFrame;<br>        RECT    rc,rcFrame;<br>        HFONT   hFontOld;<br>        HWND    hwndFrame;<br>        int     nStrLen;<br>        char    szText[64];<br>        wsprintf( szText, "%s            ", msg );<br>        hwndFrame = ::GetParent( m_hwndParent );<br>        hdc = ::GetWindowDC( hwndFrame );<br>        poFrame.x = 0;<br>        poFrame.y = 0;<br>        ::ClientToScreen( hwndFrame, &amp;poFrame );<br>        ::GetWindowRect( hwndFrame, &amp;rcFrame );<br>        po.x = rcFrame.right - rcFrame.left;<br>        po.y = poFrame.y - rcFrame.top;<br>        hFontOld = (HFONT)::SelectObject( hdc, m_hFontCaretPosInfo );<br>        nStrLen = 30;<br>        rc.left = po.x - nStrLen * m_nCaretPosInfoCharWidth - 5;<br>        rc.right = rc.left + nStrLen * m_nCaretPosInfoCharWidth;<br>        rc.top = po.y - m_nCaretPosInfoCharHeight - 2;<br>        rc.bottom = rc.top + m_nCaretPosInfoCharHeight;<br>        ::SetTextColor( hdc, ::GetSysColor( COLOR_MENUTEXT ) );<br>        ::SetBkColor( hdc, ::GetSysColor( COLOR_MENU ) );<br>        ::ExtTextOut( hdc,rc.left,rc.top,ETO_OPAQUE,&amp;rc,szText,nStrLen,m_pnCaretPosInfoDx);<br>        ::SelectObject( hdc, hFontOld );<br>        ::ReleaseDC( hwndFrame, hdc );<br>    }else{<br>        ::SendMessage( pCEditWnd-&gt;m_hwndStatusBar,SB_SETTEXT,0 | SBT_NOBORDERS,(LPARAM) (LPINT)msg );<br>    }<br>}</div></section>
+    <ul><li><section><h1 id=1442>
+    <span class="no">[1442]</span>
+    <a class="thread-title" href="#1442">Re:メモです。</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-01T19:27:57">2002年02月01日 19:27</time></h1>
+    <div class="body">&gt; ・改行位置より後ろにキャレットがあるときに正規表現で下検索を行うと、その行の改行位置に移動してしまう。<br><br>CDocLineMgr.cpp(1842)<br>    if( pRegexp-&gt;GetMatchInfo( pLine, nLineLen, nIdxPos, &amp;pRegexpData ) ){<br>       ↓<br>    if( nIdxPos&lt;=(nLineLen-pDocLine-&gt;m_cEol.GetLen() ) &amp;&amp; <br>        pRegexp-&gt;GetMatchInfo( pLine, nLineLen, nIdxPos, &amp;pRegexpData ) ){<br>で解決。<br><br>&gt; ・ステータスバーがあればステータスバーに、無い時はウィンドウタイトルにメッセージを送ります。<br>&gt;       （ 置換ダイアログが出てるときはなぜかうまく行かない… ）<br><br>ウィンドウタイトルじゃなくて、メニューバー。</div></section>
+    </li></ul></li></ul></body></html>

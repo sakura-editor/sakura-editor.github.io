@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>sakura_rc.rc | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2134</span>
+    <a class="thread-title" href="2134.html#2134">sakura_rc.rc</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2135</span>
+    <a class="thread-title" href="2134.html#2135">Re: sakura_rc.rc</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2134>
+    <span class="no">[2134]</span>
+    <a class="thread-title" href="#2134">sakura_rc.rc</a>
+    <span class="author">DOVE</span>
+    <time datetime="2014-02-18T20:00:21">2014年02月18日 20:00</time></h1>
+    <div class="body">sakura_rc.rc(3862-3865あたり)で %ls と %s が混在していますが、正しいでしょうか。<br>STR_ERR_DLGKEYMACMGR4 ～ 6の定義です。「関数%sの」と「関数%lsの」。</div></section>
+    <ul><li><section><h1 id=2135>
+    <span class="no">[2135]</span>
+    <a class="thread-title" href="#2135">Re: sakura_rc.rc</a>
+    <span class="author">もか</span>
+    <time datetime="2014-02-18T20:46:21">2014年02月18日 20:46</time></h1>
+    <div class="body">Unicode版では%sは%tsか%lsに置き換える方針なのでよくないです。<br>LS(STR_ERR_DLGKEYMACMGR6)<br>WCHAR szFuncName<br>なので、%lsが正解です。<br>まぁANSIビルドのときしかその違いの影響を受けないので、動作上は問題ないです。<br></div></section>
+    </li></ul></li></ul></body></html>

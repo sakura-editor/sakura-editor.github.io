@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CMemory::GetPtrとGetPtr2を整理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1740</span>
+    <a class="thread-title" href="1740.html#1740">CMemory::GetPtrとGetPtr2を整理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4038</span>
+    <a class="thread-title" href="1740.html#4038">RE: ツールバーが化ける件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4039</span>
+    <a class="thread-title" href="1740.html#4039">Re2: ツールバーが化ける件</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4041</span>
+    <a class="thread-title" href="1740.html#4041">Re2: ツールバーが化ける件</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4043</span>
+    <a class="thread-title" href="1740.html#4043">Re2: ツールバーが化ける件</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1740>
+    <span class="no">[1740]</span>
+    <a class="thread-title" href="#1740">CMemory::GetPtrとGetPtr2を整理</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-17T15:24:12">2002年03月17日 15:24</time></h1>
+    <div class="body">紛らわしいので、GetPtr2をGetPtrに改名しましょう。<br>すると、こうなります↓<br><br>CMemory::GetPtr( int* )<br>CMemory::GetPtr()<br><br>で、現状GetPtr( NULL )と呼んでいるところは、GetPtr()に書き換えましょう。<br><br>とりあえずそれだけ。</div></section>
+    <ul><li><section><h1 id=4038>
+    <span class="no">[4038]</span>
+    <a class="thread-title" href="#4038">RE: ツールバーが化ける件</a>
+    <span class="author">みく</span>
+    <time datetime="2005-09-08T18:25:25">2005年09月08日 18:25</time></h1>
+    <div class="body"><br>えっと、再現環境ないので未確認ですが、99%これだと思われる箇所が<br>見つかりました。<br><br>SHGetDesktopFolder()を使ってますが、これをReleaseするタイミング<br>が間違っています。<br>正しくは、ITEMIDLISTを解放した後です。<br><br>etc_uty.cpp:<br>CreateItemIDList<br>DeleteItemIDList<br>GetLongFileName<br><br>これで解決するといいな。<br></div></section>
+    <ul><li><section><h1 id=4039>
+    <span class="no">[4039]</span>
+    <a class="thread-title" href="#4039">Re2: ツールバーが化ける件</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-09-08T23:23:11">2005年09月08日 23:23</time></h1>
+    <div class="body">CreateItemIDList, DeleteItemIDListはGetLongFileNameからのみ使われているようなので，<br>新たなGetLongFileNameとして作り直した方がいいかも．<br><br></div></section>
+    </li><li><section><h1 id=4041>
+    <span class="no">[4041]</span>
+    <a class="thread-title" href="#4041">Re2: ツールバーが化ける件</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-09-10T09:41:28">2005年09月10日 09:41</time></h1>
+    <div class="body">これって何処に記述があるんでしょうか．<br>Platform SDKのShell Programmer's guideのところを読んでもそれらしい記述が見つかりませんでした．<br></div></section>
+    </li><li><section><h1 id=4043>
+    <span class="no">[4043]</span>
+    <a class="thread-title" href="#4043">Re2: ツールバーが化ける件</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-09-10T14:12:43">2005年09月10日 14:12</time></h1>
+    <div class="body">Platform SDKによればGetLongPathName()がWindows 98/2000以降では使用可能で，<br>NT/95ではNewAPIs.hをインクルードすることで使えるようになるとあります．<br>NewApis.hではGetLongPathName()を関数ポインタに置き換えて，OSのバージョンによってKernel32の関数かエミュレーション関数かを設定するようになっています．<br><br>今ある関数は全部やめてそれをそのまま使う方が間違いも起きず良いのではと思います．<br><br>ちなみにNewApis.hを見ると，Shellを介する手法は同じですがSetLastErrorとかより忠実にエミュレーションしている感じです．<br><br>最初は判定関数を呼ぶようにポインタをセットしておき，初回呼び出し時にOSの判定を行ってポインタを書き換えるという手法は他にも応用できるかも．<br><br>---<br>以上を入れたのがブリーフケースのGetLongPathName.diffです．<br><br>注意: 古いSDKだとNewAPIs.hにバグがあってコンパイルエラーになります．<br>Probe_GetLongPathName()の<br>DWORD (CALLBACK *RealGetLongPathName)(LPCTSTR, LPTSTR, DWORD);<br>のDWORDがBOOLになっています．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

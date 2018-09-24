@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>* No Subject * | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4197</span>
+    <a class="thread-title" href="4197.html#4197">* No Subject *</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4198</span>
+    <a class="thread-title" href="4197.html#4198">Re:アウトライン解析</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4199</span>
+    <a class="thread-title" href="4197.html#4199">Re:* No Subject *</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4206</span>
+    <a class="thread-title" href="4197.html#4206">Re2: アウトライン解析</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4207</span>
+    <a class="thread-title" href="4197.html#4207">Re3: アウトライン解析</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4208</span>
+    <a class="thread-title" href="4197.html#4208">Re4: アウトライン解析</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4209</span>
+    <a class="thread-title" href="4197.html#4209">Re5: アウトライン解析</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4215</span>
+    <a class="thread-title" href="4197.html#4215">Re5: アウトライン解析</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4216</span>
+    <a class="thread-title" href="4197.html#4216">Re6: アウトライン解析</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4197>
+    <span class="no">[4197]</span>
+    <a class="thread-title" href="#4197">* No Subject *</a>
+    <span class="author">すす</span>
+    <time datetime="2005-12-02T15:24:00">2005年12月02日 15:24</time></h1>
+    <div class="body">&gt;&gt;data:4894 ですが<br>CEditDoc_FuncList1.cppのMakeFuncList_Cにて<br>コメント読み込み中もエスケープシーケンスの判定がされるのが原因のようです。<br>コメント読み込み中もエスケープシーケンスは常に取り除かなければならないのか<br><br>私では不明のためとりあえず報告のみしておきます。<br><br>げんたさん（authorはげんたさんになってる）、なにかレス返していただけるとありがたいです。<br></div></section>
+    <ul><li><section><h1 id=4198>
+    <span class="no">[4198]</span>
+    <a class="thread-title" href="#4198">Re:アウトライン解析</a>
+    <span class="author">すす</span>
+    <time datetime="2005-12-02T15:26:08">2005年12月02日 15:26</time></h1>
+    <div class="body">▼ すすさん<br>タイトル忘れました<br>タイトル必須にしていただけるとありがたいのですが。。。</div></section>
+    </li><li><section><h1 id=4199>
+    <span class="no">[4199]</span>
+    <a class="thread-title" href="#4199">Re:* No Subject *</a>
+    <span class="author">すす</span>
+    <time datetime="2005-12-02T16:07:55">2005年12月02日 16:07</time></h1>
+    <div class="body">▼ すすさん<br>問題がある気がしてきました。<br>エスケープシーケンスを常に取り除いたあとに以降の処理を行う<br>で合ってると思うのですが。<br>もし合っていれば下の修正で直ります。<br><br>*** D:\tmp\sakura\ssrc_2005-11-27\sakura_org<br>\CEditDoc_FuncList1.cpp&#9;Fri Dec  2 16:02:21 2005<br>--- D:\tmp\sakura\ssrc_2005-11-27\sakura_cor<br>e\CEditDoc_FuncList1.cpp&#9;Fri Dec  2 15:54:44 2005<br>***************<br>*** 377,383 ****<br>  &#9;&#9;&#9;/* エスケープシーケンスは常に取り除く */<br>  &#9;&#9;&#9;if( '\\' == pLine[i] ){<br>  &#9;&#9;&#9;&#9;++i;<br>! &#9;&#9;&#9;}else<br>  &#9;&#9;&#9;/* シングルクォーテーション文字列読み込み中 */<br>  &#9;&#9;&#9;if( 20 == nMode ){<br>  &#9;&#9;&#9;&#9;if( '\'' == pLine[i] ){<br>--- 377,384 ----<br>  &#9;&#9;&#9;/* エスケープシーケンスは常に取り除く */<br>  &#9;&#9;&#9;if( '\\' == pLine[i] ){<br>  &#9;&#9;&#9;&#9;++i;<br>! &#9;&#9;&#9;}<br>! //&#9;&#9;&#9;}else<br>  &#9;&#9;&#9;/* シングルクォーテーション文字列読み込み中 */<br>  &#9;&#9;&#9;if( 20 == nMode ){<br>  &#9;&#9;&#9;&#9;if( '\'' == pLine[i] ){<br></div></section>
+    <ul><li><section><h1 id=4206>
+    <span class="no">[4206]</span>
+    <a class="thread-title" href="#4206">Re2: アウトライン解析</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-12-06T02:59:02">2005年12月06日 02:59</time></h1>
+    <div class="body">CEditDoc_FuncList1.cpp を、一部残っていますが修正して見ました。<br><br>C_IsLineEsc() が、行単位で末尾の￥を見ないで、後ろから文字単位で見てますね。<br><br>//&#9;if( 8 != nMode )<br>&#9;if( 8 != nMode &amp;&amp; 10 != nMode )&#9;/* chg 2005/12/6 じゅうじ&#9;*/<br><br>     if()ブロックコメント<br>else if()ラインコメント<br>else if()エスケープ<br>else if()シングルクオーテーション<br>else if()ダブルクオーテーション<br>else if()以下変更無し<br><br>エスケープチェックの前にコメントのチェックを持って来ますので、<br>&gt;&gt;dev:4199 すす<br>の変更は無しで良いかと思います。</div></section>
+    <ul><li><section><h1 id=4207>
+    <span class="no">[4207]</span>
+    <a class="thread-title" href="#4207">Re3: アウトライン解析</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-12-07T01:36:17">2005年12月07日 01:36</time></h1>
+    <div class="body">/Developer/Source/CEditDoc_FuncList1_2005-10-09.diff<br>２個アップしましたが、前のでも、良かったです。<br><br>空行の場合、行コメントの継続が終わらなかった修正です。</div></section>
+    <ul><li><section><h1 id=4208>
+    <span class="no">[4208]</span>
+    <a class="thread-title" href="#4208">Re4: アウトライン解析</a>
+    <span class="author">すす</span>
+    <time datetime="2005-12-09T11:41:10">2005年12月09日 11:41</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; /Developer/Source/CEditDoc_FuncList1_2005-10-09.diff<br>&gt; ２個アップしましたが、前のでも、良かったです。<br>&gt; <br>&gt; 空行の場合、行コメントの継続が終わらなかった修正です。<br>CEditDoc_FuncList1_2005-10-09.diff2 の方で問題ないことを確認しました。<br><br>C_IsLineEsc() のこの辺って２バイト文字の２バイト目でないことのチェックであってます？<br>おかしいとか無駄では？とかではなく単純に知的好奇心（そんなもの持ち合わせていたのか？という突っ込みはなしで。）なのですが<br><br>nchar = CMemory::GetSizeOfChar( s, len , len-2 );<br>if ( nchar == 1 ) {<br> return(true);<br>}<br></div></section>
+    <ul><li><section><h1 id=4209>
+    <span class="no">[4209]</span>
+    <a class="thread-title" href="#4209">Re5: アウトライン解析</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-12-09T13:20:50">2005年12月09日 13:20</time></h1>
+    <div class="body">▼ すすさん<br>&gt; <br>&gt; C_IsLineEsc() のこの辺って２バイト文字の２バイト目でないことのチェックであってます？<br>&gt; おかしいとか無駄では？とかではなく単純に知的好奇心（そんなもの持ち合わせていたのか？という突っ込みはなしで。）なのですが<br>&gt; <br>&gt; nchar = CMemory::GetSizeOfChar( s, len , len-2 );<br>&gt; if ( nchar == 1 ) {<br>&gt;  return(true);<br>&gt; }<br><br>知的好奇心ですか。今思えば、len &gt;= 1　よりも len &gt; 0　がより良かったかなと…。</div></section>
+    </li><li><section><h1 id=4215>
+    <span class="no">[4215]</span>
+    <a class="thread-title" href="#4215">Re5: アウトライン解析</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-12-13T23:46:16">2005年12月13日 23:46</time></h1>
+    <div class="body">▼ すすさん<br>&gt; CEditDoc_FuncList1_2005-10-09.diff2 の方で問題ないことを確認しました。<br><br>文字コードの件、ご指摘有難う御座いました。<br><br>申し分けない、すすさんの.diff2に対してではなく、.diffを修正しました。<br>/Developer/Source/CEditDoc_FuncList1_2005-10-09.diff2<br>削除出来なかったので、こちらが最新です。</div></section>
+    <ul><li><section><h1 id=4216>
+    <span class="no">[4216]</span>
+    <a class="thread-title" href="#4216">Re6: アウトライン解析</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-12-14T23:25:36">2005年12月14日 23:25</time></h1>
+    <div class="body">指名されていたのに，放置していてすみません．<br>じゅうじさんも動作確認ありがとうございました．<br><br>私事で恐縮ですが，最近PCが不安定でいきなりリセットがかかることがあり，<br>そのときに開いていたファイルが消失することが何度かあったため，現在作業を控えております．<br>(実はINCMの過去ログも消えた(´Д⊂ぐすん)<br>マザーボードのコンデンサが4本液漏れしているのがどうも原因のようです．<br><br>今週末にはPCをなんとかするつもりですので，その後までお待ちください．</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

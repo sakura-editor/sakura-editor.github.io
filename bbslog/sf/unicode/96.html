@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>リファクタリング：ドキュメント種類を明示する型など | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">96</span>
+    <a class="thread-title" href="96.html#96">リファクタリング：ドキュメント種類を明示する型など</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=96>
+    <span class="no">[96]</span>
+    <a class="thread-title" href="#96">リファクタリング：ドキュメント種類を明示する型など</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-12-13T22:37:38">2007年12月13日 22:37</time></h1>
+    <div class="body">パッチ登録しました。<br>PatchUnicode#1850044<br><a href=http://sourceforge.net/tracker/index.php?func=detail&aid=1850044&group_id=12488&atid=1013762 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>1850044&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>1013762</nobr></a><br><br>文字コード関連の機能 (保存時に文字が失われる警告など) を実装しようと思い、<br>作業を始めましたが、その過程で、ドキュメント種類を示す変数が int で<br>ちょっと分かりにくい (というか引数の意味間違えちゃいそうだった) ので<br>ドキュメント種類を示す型 CDocumentType を作成しました。<br><br>このまま作業を続けると、とんでもない変更範囲のパッチになってしまいそうなので、<br>とりあえず型に関するリファクタリングだけ終えた状態のパッチを登録しました。<br>動作は変わっていない、、、はずです。<br><br>細かい変更が広い範囲にちょこちょこある感じです。<br>レビューが大変そうで恐縮ですが、よろしくお願いします。</div></section>
+    </li></ul></body></html>

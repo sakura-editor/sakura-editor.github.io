@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>パッチ状況まとめ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4905</span>
+    <a class="thread-title" href="4905.html#4905">パッチ状況まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4909</span>
+    <a class="thread-title" href="4905.html#4909">RE: パッチ状況まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4910</span>
+    <a class="thread-title" href="4905.html#4910">Re2: パッチ状況まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4911</span>
+    <a class="thread-title" href="4905.html#4911">Re3: パッチ状況まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4912</span>
+    <a class="thread-title" href="4905.html#4912">Re4: パッチ状況まとめ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4922</span>
+    <a class="thread-title" href="4905.html#4922">Re4: パッチ状況まとめ</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4940</span>
+    <a class="thread-title" href="4905.html#4940">Re:パッチ状況まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4941</span>
+    <a class="thread-title" href="4905.html#4941">Re2:パッチ状況まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4951</span>
+    <a class="thread-title" href="4905.html#4951">Re3:パッチ状況まとめ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4952</span>
+    <a class="thread-title" href="4905.html#4952">Re4:パッチ状況まとめ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4905>
+    <span class="no">[4905]</span>
+    <a class="thread-title" href="#4905">パッチ状況まとめ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-04T02:27:14">2007年07月04日 02:27</time></h1>
+    <div class="body">私の主観もかなり入っていますので参考程度と考えてください．<br><br>▼コミット済み<br>1738668 全角空白がインデント設定のときは行頭の判定にも作用させる<br><br>▼コミット待ち<br>1745896 エディタを閉じる確認メッセージが背後に隠れる<br>1742505 タブのグループ化<br>→レビュー，動作確認OK<br><br>ここまでcommitされたらとりあえずリリースする<br><br>▼Vista対応<br>1721425 Vista UACとマルチユーザへの対応<br>→レビュー待ち．不具合は特に無さそうだが，ユーザによる試験が不十分な気がする．<br><br>1742481 bregonig.dll対応<br>→レビュー，動作確認待ち．<br><br>Vista対応インストーラ<br>→動作確認OK．ただVista仕様の関連づけには対応していないのと(その他のプログラム)に出るようにする修正を入れていないが...<br><br>この3つはセット．<br><br>▼重点機能<br>1553455 パイプやリダイレクト記号を使えるようにする<br>→レビュー・動作確認待ち<br><br>1550557 自動実行マクロ<br>→レビュー，動作確認実施．不具合修正と動作の再確認待ち．<br>(Persistentなデータ領域を作ってから，それに合わせた方が良いかと思うが，着手できていない)<br><br>▼その他(レビュー・動作確認待ち)<br>1733921 C++のAttribute対応<br>1668208 Python用アウトライン解析<br>1724317 UTF-7 の読み取りミス(?) 対策＋α<br>Junk/29 右クリックメニューに「キーワード辞書に登録」<br><br>Junk/31 Global検索<br>→自動実行の後で<br></div></section>
+    <ul><li><section><h1 id=4909>
+    <span class="no">[4909]</span>
+    <a class="thread-title" href="#4909">RE: パッチ状況まとめ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-08T02:44:44">2007年07月08日 02:44</time></h1>
+    <div class="body">▼コミット待ち<br>&gt;1742505 タブのグループ化<br>再リリース＆確認OK<br><br>ここまでcommitされたらとりあえずリリースする<br>次回はβ版にする．<br><br>&gt;1742481 bregonig.dll対応<br>&gt;→レビュー，動作確認待ち．<br>どなたか確認していただけませんか．<br>次回パッケージよりbregonig.dllを含めたいと考えていますので．<br></div></section>
+    <ul><li><section><h1 id=4910>
+    <span class="no">[4910]</span>
+    <a class="thread-title" href="#4910">Re2: パッチ状況まとめ</a>
+    <span class="author">神楽</span>
+    <time datetime="2007-07-08T10:24:48">2007年07月08日 10:24</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;1742481 bregonig.dll対応<br>&gt; &gt;→レビュー，動作確認待ち．<br>&gt; どなたか確認していただけませんか．<br>&gt; 次回パッケージよりbregonig.dllを含めたいと考えていますので．<br><br>Ver.1.5.16.201、Last Modified:2007/6/25 02:11:32での操作確認ですが、<br>sakura.exeと同じフォルダにBREGEXP.DLLとbregonig.dllの両方が存在する場合は、<br>bregonig.dllが優先されるようですね。<br>鬼車をパッケージに含めて欲しいと提案した私が言うのもなんですが、<br>検索ダイアログか共通設定の検索タブから、使用する正規表現DLLを<br>選択できるようにした方が良いのではないでしょうか？<br>（デフォルトは従来通りのBREGEXP.DLLの方が良いかも）<br><br>あとここからは私の要望ですが、Grep結果ウインドウの7行目に<br>使用した正規表現DLLが明示的に表示されるようにして頂けないでしょうか？<br>こんな感じです。<br><br><br>□検索条件  "sakura"<br>検索対象   *<br>フォルダ   C:\Program Files\sakura\<br>    (サブフォルダも検索)<br>    (英大文字小文字を区別する)<br>    (正規表現bregonig.dll)<br>    (文字コードセットの自動判別)<br>    (一致した行を出力)<br><br><br>■"C:\Program Files\sakura\sakuext.exe"  [SJIS]<br>・(  1627,352  ): </div></section>
+    <ul><li><section><h1 id=4911>
+    <span class="no">[4911]</span>
+    <a class="thread-title" href="#4911">Re3: パッチ状況まとめ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-07-08T12:57:30">2007年07月08日 12:57</time></h1>
+    <div class="body">BREGEXP.DLLはスタックオーバーフロー問題を筆頭に不具合があり，機能的にも鬼車の方が優れているようなのでbregexp.dllを完全に置き換えるつもりでいたのですが<br>&gt;（デフォルトは従来通りのBREGEXP.DLLの方が良いかも）<br>とおっしゃる理由は何かあるのでしょうか．<br><br>正規表現の違いは\wの振る舞いと置換後文字列の \番号 の違いのみとのことでしたので完全な置き換えでも問題ないかと思ったのですけど．<br></div></section>
+    <ul><li><section><h1 id=4912>
+    <span class="no">[4912]</span>
+    <a class="thread-title" href="#4912">Re4: パッチ状況まとめ</a>
+    <span class="author">神楽</span>
+    <time datetime="2007-07-08T14:01:38">2007年07月08日 14:01</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; BREGEXP.DLLはスタックオーバーフロー問題を筆頭に不具合があり，機能的にも鬼車の方が優れているようなのでbregexp.dllを完全に置き換えるつもりでいたのですが<br>&gt; &gt;（デフォルトは従来通りのBREGEXP.DLLの方が良いかも）<br>&gt; とおっしゃる理由は何かあるのでしょうか．<br><br>dev#4878<br>&gt; ただ正規表現に若干の差異があるみたいなので...<br>というのがあったため書いてみました。<br>個人的にはbregonig.dllのみを同梱するので問題ないと思います。</div></section>
+    </li><li><section><h1 id=4922>
+    <span class="no">[4922]</span>
+    <a class="thread-title" href="#4922">Re4: パッチ状況まとめ</a>
+    <span class="author">K.Takata</span>
+    <time datetime="2007-07-10T23:12:43">2007年07月10日 23:12</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 正規表現の違いは\wの振る舞いと置換後文字列の \番号 の違いのみとのことでしたので完全な置き換えでも問題ないかと思ったのですけど．<br><br>もう一つ忘れていました。<br>Ver.1.30 で、文字集合の中で文字集合と演算子を使えるように仕様変更した副作用で、[] の中に [ を書くときは必ず \[ というようにエスケープしなければならなくなりました。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=4940>
+    <span class="no">[4940]</span>
+    <a class="thread-title" href="#4940">Re:パッチ状況まとめ</a>
+    <span class="author">あひる</span>
+    <time datetime="2007-07-24T19:32:49">2007年07月24日 19:32</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 私の主観もかなり入っていますので参考程度と考えてください．<br>&gt; <br>&gt; ▼コミット済み<br>&gt; 1738668 全角空白がインデント設定のときは行頭の判定にも作用させる<br>&gt; <br>&gt; ▼コミット待ち<br>&gt; 1745896 エディタを閉じる確認メッセージが背後に隠れる<br>&gt; 1742505 タブのグループ化<br>&gt; →レビュー，動作確認OK<br>&gt; <br>&gt; ここまでcommitされたらとりあえずリリースする<br>「1742505 タブのグループ化」ですが、下記対応時にXXボタンを「編集の全終了」を割り当てたままになっています。<br>XXボタン表示時は「グループを閉じる」を割り当てるべきでは？<br><br><br>[5875] 1.5.15.2 <br>▽ 2007/2/25 (日) 04:06:11 げんた <br>INCM1.23c <br>1.5.15.0で変更したタブモード時の閉じるボタン[X]の動作を従来の挙動に戻すオプションを新設しました．<br>「共通設定」→「タブバー」で設定できます．<br><br>デフォルト動作はWindows標準に近いものとなっています．<br><br>また，共通設定でタブ関連の設定を新設した「タブバー」にまとめました．クリッカブルURLシートにあった項目は「編集」に移動しました． <br><br><br>P.S.<br>XXボタンもＸボタンも表示しない設定にもできるとうれしいです。<br>他人にちょっと使わせた時に（その人に悪気はなかったが）編集中の全ファイルを閉じられてしまったことがあったので。 </div></section>
+    <ul><li><section><h1 id=4941>
+    <span class="no">[4941]</span>
+    <a class="thread-title" href="#4941">Re2:パッチ状況まとめ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-24T22:18:48">2007年07月24日 22:18</time></h1>
+    <div class="body">▼ あひるさん<br>&gt; 「1742505 タブのグループ化」ですが、下記対応時にXXボタンを「編集の全終了」を割り当てたままになっています。<br>&gt; XXボタン表示時は「グループを閉じる」を割り当てるべきでは？<br>「ウィンドウの閉じるボタンは現在のファイルのみ閉じる」のときですね。すっぽり見逃していました。ごめんなさい。orz...<br>↓修正パッチです。<br>Patches#1759555</div></section>
+    <ul><li><section><h1 id=4951>
+    <span class="no">[4951]</span>
+    <a class="thread-title" href="#4951">Re3:パッチ状況まとめ</a>
+    <span class="author">あひる</span>
+    <time datetime="2007-07-25T17:45:19">2007年07月25日 17:45</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; ▼ あひるさん<br>&gt; &gt; 「1742505 タブのグループ化」ですが、下記対応時にXXボタンを「編集の全終了」を割り当てたままになっています。<br>&gt; &gt; XXボタン表示時は「グループを閉じる」を割り当てるべきでは？<br>&gt; 「ウィンドウの閉じるボタンは現在のファイルのみ閉じる」のときですね。すっぽり見逃していました。ごめんなさい。orz...<br>&gt; ↓修正パッチです。<br>&gt; Patches#1759555<br>対応ありがごうございました。<br><br>もう1点気になったのでご確認。<br>ウインドウを最大化している時にタブ右クリックメニューで、<br>「新規グループ」が選択できないのは仕様でしょうか？</div></section>
+    <ul><li><section><h1 id=4952>
+    <span class="no">[4952]</span>
+    <a class="thread-title" href="#4952">Re4:パッチ状況まとめ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-25T23:42:58">2007年07月25日 23:42</time></h1>
+    <div class="body">▼ あひるさん<br>&gt; もう1点気になったのでご確認。<br>&gt; ウインドウを最大化している時にタブ右クリックメニューで、<br>&gt; 「新規グループ」が選択できないのは仕様でしょうか？<br>ご推察のとおり、最大化時は「新規グループ」「次の／前のグループに移動」を意図的に封印しています。<br>作り込んではあるんですが、それが正常に動作する見込みがないので。<br>指定した通りにWindows側が処理してくれないというか、そんな感じです。<br><br>ちなみに、自分はサクラと同様にSDIベースでタブのグループ化を実現しているエディタを２本知っているんですが（１つは定番と言われているやつ）、２つとも最大化から切り離すと、その後の動作がおかしくなります。<br>うまくいったように見えても、さらに結合・切り離しをしたら通常サイズになるはずのケースで最大化してしまったり、タブ切替したら勝手にグループ分離してしまったり。<br>そんな誤作動するくらいなら封印のほうがいいかと思って。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

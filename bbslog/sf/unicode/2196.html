@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>PatchUnicode#859が期待通りに動作しない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2196</span>
+    <a class="thread-title" href="2196.html#2196">PatchUnicode#859が期待通りに動作しない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2199</span>
+    <a class="thread-title" href="2196.html#2199">RE: PatchUnicode#859が期待通りに動作しない</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2196>
+    <span class="no">[2196]</span>
+    <a class="thread-title" href="#2196">PatchUnicode#859が期待通りに動作しない</a>
+    <span class="author">piko</span>
+    <time datetime="2014-07-06T12:02:52">2014年07月06日 12:02</time></h1>
+    <div class="body">PatchUnicode#859が期待通りに動作しない<br><br><a href=http://sourceforge.net/p/sakura-editor/patchunicode/859/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>859/<wbr></nobr></a><br>（#859 ファイルを開いた後落ちるとブックマークが消える）<br><br>上のパッチを試してみたところ、ファイル先頭のブックマークしか残りませんでした。<br>auto_strcpyを実行する時点で、eiOld.m_szMarkLinesの内容は、直前のCBookmarkManager::SetBookMarksの中のwcstokによって、「NULL区切り／連続2個のNULLで終端」という書式に書き換わっています。</div></section>
+    <ul><li><section><h1 id=2199>
+    <span class="no">[2199]</span>
+    <a class="thread-title" href="#2199">RE: PatchUnicode#859が期待通りに動作しない</a>
+    <span class="author">もか</span>
+    <time datetime="2014-07-06T18:36:41">2014年07月06日 18:36</time></h1>
+    <div class="body">報告ありがとうございます。<br>パッチ更新しました<br></div></section>
+    </li></ul></li></ul></body></html>

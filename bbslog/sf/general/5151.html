@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>読み取り専用ファイルの上書きについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5151</span>
+    <a class="thread-title" href="5151.html#5151">読み取り専用ファイルの上書きについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5155</span>
+    <a class="thread-title" href="5151.html#5155">Re:読み取り専用ファイルの上書きについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5156</span>
+    <a class="thread-title" href="5151.html#5156">Re2:読み取り専用ファイルの上書きについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5157</span>
+    <a class="thread-title" href="5151.html#5157">Re3:読み取り専用ファイルの上書きについて</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5151>
+    <span class="no">[5151]</span>
+    <a class="thread-title" href="#5151">読み取り専用ファイルの上書きについて</a>
+    <span class="author">nopnop</span>
+    <time datetime="2006-04-06T23:10:58">2006年04月06日 23:10</time></h1>
+    <div class="body">これ，バグでしょうか？<br><br>●現象<br>読み取り専用ファイルに上書きしようとすると<br>以下のエラーになる。<br>「ファイルを保存できません。<br>  パスが存在しないか、他のアプリケーションで使用されている可能性があります。」<br><br>本来は以下のような動きが望ましいと思います。<br>「読み取り専用ですが上書きしてよいですか？<br>  [はい] [いいえ]」<br>（以前はこういう動きだったような？）<br><br>●再現手順<br>(1) 読み取り専用ファイルをサクラエディタで開く。<br>(2) 保存しようとする。<br>    →上記エラーになる。<br><br>●環境<br>WindowsXP SP2<br>サクラエディタ 1.5.9.91beta<br>(1.5.9.1でも再現しました)<br></div></section>
+    <ul><li><section><h1 id=5155>
+    <span class="no">[5155]</span>
+    <a class="thread-title" href="#5155">Re:読み取り専用ファイルの上書きについて</a>
+    <span class="author">di</span>
+    <time datetime="2006-04-07T12:53:01">2006年04月07日 12:53</time></h1>
+    <div class="body">いちユーザですが．．．<br><br>これは完全に仕様だと思います。<br>ファイル自体が読み取り専用になっているのに保存できてしまうような動きこそ正しくありません。</div></section>
+    <ul><li><section><h1 id=5156>
+    <span class="no">[5156]</span>
+    <a class="thread-title" href="#5156">Re2:読み取り専用ファイルの上書きについて</a>
+    <span class="author">nopnop</span>
+    <time datetime="2006-04-07T14:38:38">2006年04月07日 14:38</time></h1>
+    <div class="body">（diさん，ご指摘ありがとうございます。<br>　一部要望が入っていたのでバグ報告のみに直します。）<br><br>以下の現象はバグではないでしょうか？<br><br>●現象<br>読み取り専用ファイルに上書きしようとすると<br>以下のエラーになる。<br>「ファイルを保存できません。<br>  パスが存在しないか、他のアプリケーションで使用されている可能性があります。」<br><br>●再現手順<br>(1) 読み取り専用ファイルをサクラエディタで開く。<br>(2) 内容を一部修正後，保存しようとする。<br>    →上記エラーになる。<br><br>●環境<br>WindowsXP SP2<br>サクラエディタ 1.5.9.91beta<br>(1.5.9.1でも再現しました)<br><br>●対策案<br>パスも存在してますし，他のアプリでもそのファイルを使用していないので<br>上記メッセージはユーザに不親切だと思います。<br>（そのファイルを他のアプリで使用してないか色々と確認してしまいました）<br><br>「読み取り専用のためファイルを保存できません」などのような<br>適切なエラーメッセージに変更してもらえませんか。<br></div></section>
+    <ul><li><section><h1 id=5157>
+    <span class="no">[5157]</span>
+    <a class="thread-title" href="#5157">Re3:読み取り専用ファイルの上書きについて</a>
+    <span class="author">di</span>
+    <time datetime="2006-04-07T18:08:13">2006年04月07日 18:08</time></h1>
+    <div class="body">メッセージが判りにくいという点については同意です。<br>でも間違ったメッセージでも無いんですよね。<br>保存できないのは事実ですし、既に書き込み禁止の同名のファイルが同じパスに存在してるワケですから。<br><br>なので便乗して、ファイルシステムでの読み取り専用が掛かってる事がタイトルバーにでも表示できたらいいなぁと思う次第です。<br>（正直一度判ってしまえば後は悩まないと思うので別に構わないような気もしますが．．．）</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

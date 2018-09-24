@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>.hhファイルと.hmファイル | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">12</span>
+    <a class="thread-title" href="12.html#12">.hhファイルと.hmファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">13</span>
+    <a class="thread-title" href="12.html#13">Re:.hhファイルと.hmファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">15</span>
+    <a class="thread-title" href="12.html#15">exeコンパイル時とhelpコンパイル時</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">16</span>
+    <a class="thread-title" href="12.html#16">Re:exeコンパイル時とhelpコンパイル時</a></div>
+    </li><li><div class="list-title">
+    <span class="no">17</span>
+    <a class="thread-title" href="12.html#17">Re:exeコンパイル時とhelpコンパイル時</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=12>
+    <span class="no">[12]</span>
+    <a class="thread-title" href="#12">.hhファイルと.hmファイル</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-04T15:17:29">2001年06月04日 15:17</time></h1>
+    <div class="body">ダイアログでコンテキストヘルプをチェックしておくと自動的に.hmファイルに<br>書き出してくれるようです。これと.hhファイルとの関係は特にないですか？<br>久しぶりにヘルプを修正しようと思ったらすっかりコンパイル方法まで忘れてる始末。(^_^;)<br>例えばインポートやエクスポートボタンは共通設定の何箇所かにありますが、これらのオブジェクト名(っていうの？)は同じになってます。コンテキストヘルプを付ける場合にはそれらが区別できるようにダイアログでの名前も違っている必要があるんでしょうか？それとも必要ないんでしょうか？</div></section>
+    <ul><li><section><h1 id=13>
+    <span class="no">[13]</span>
+    <a class="thread-title" href="#13">Re:.hhファイルと.hmファイル</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-06-04T20:03:39">2001年06月04日 20:03</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; ダイアログでコンテキストヘルプをチェックしておくと自動的に.hmファイルに<br>&gt; 書き出してくれるようです。これと.hhファイルとの関係は特にないですか？<br>コンパイル時にはhmファイルは使っていません。<br>みくさんがポップアップヘルプ機能を追加されたときの「修正要領」メモが<br>どこかにあるはずなのですが、発見できず。。。<br><br>&gt; 例えばインポートやエクスポートボタンは共通設定の何箇所かにありますが、これらのオブジェクト名(っていうの？)は同じになってます。コンテキストヘルプを付ける場合にはそれらが区別できるようにダイアログでの名前も違っている必要があるんでしょうか？それとも必要ないんでしょうか？<br>CPropComKeyword.cppやCPropComKeybind.cppはいずれもインポート・エクスポートボタンがありますが、<br>区別がついてると思います。<br></div></section>
+    <ul><li><section><h1 id=15>
+    <span class="no">[15]</span>
+    <a class="thread-title" href="#15">exeコンパイル時とhelpコンパイル時</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-04T20:52:58">2001年06月04日 20:52</time></h1>
+    <div class="body">▼ すとーにぃさん<br>&gt; CPropComKeyword.cppやCPropComKeybind.cppはいずれもインポート・エクスポートボタンがありますが、<br>&gt; 区別がついてると思います。<br>うーーん、なんかすっかり忘れてる。ヘルプの番号振りの件どういう段階まで進んでるんでしたっけ？（過去ログ見たら何段階か踏む予定でしたね。）exeコンパイル時に.hhファイルがsakura_coreになくても怒られないようですが。。。<br>というか、前はヘルプだけを別フォルダで作れてましたが今もそうですか？(実際そうやってますが。)前は.hmファイルを意識した記憶がないのですが、コンテキストヘルプ（？のやつ）を出すには.hhファイルに数値を書く必要があるみたいですね。その数字は.hmとシンクロしてなければならないらしいです（よね？）。しかし.hmのほうのdefineは16進で、.hhの方は10進。どう合わせるんでしょう？<br></div></section>
+    <ul><li><section><h1 id=16>
+    <span class="no">[16]</span>
+    <a class="thread-title" href="#16">Re:exeコンパイル時とhelpコンパイル時</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-06-05T12:38:56">2001年06月05日 12:38</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; ヘルプの番号振りの件どういう段階まで進んでるんでしたっけ？<br><br>5/19の修正で、<br><br>・ソース中のトピック番号を直接指定して呼んでいる部分を、「機能番号→トピック番号」に改める<br><br>ところまでできてます。以降、<br><br>・(etc_uty.cpp中の)FuncID_To_HelpContextID()の戻り値を、数値の決め打ちでなくsakura.hhを参照する。<br>・sakura.hhで定義された番号をリナンバリング<br><br>が続く予定です。（開発掲示板の [35]以下のスレッドを参照）<br>sakura.hhは3月の時点ではsakuraフォルダに置こうという話が出ていたと思います。<br><br>&gt; というか、前はヘルプだけを別フォルダで作れてましたが今もそうですか？<br><br>現在もヘルプ作成に必要なファイルは別フォルダに置いて作業しています。<br>sakura.hhがCVSの管理下に加わると、ヘルプ用フォルダとsakuraフォルダの両方に<br>sakura.hhを置いて、ミラーリングすることになります。<br><br>&gt; しかし.hmのほうのdefineは16進で、.hhの方は10進。どう合わせるんでしょう？<br><br>各ソース中で定義されている  const DWORD p_helpids[] = {....} と同じ番号を書くのでは。<br><br><a href=http://www.ceres.dti.ne.jp/~goto-ta/windows/winhelp.html target=_top><nobr>http://<wbr>www.<wbr>ceres.<wbr>dti.<wbr>ne.<wbr>jp/~<wbr>goto-<wbr>ta/<wbr>windows/<wbr>winhelp.<wbr>html</nobr></a><br></div></section>
+    </li><li><section><h1 id=17>
+    <span class="no">[17]</span>
+    <a class="thread-title" href="#17">Re:exeコンパイル時とhelpコンパイル時</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-05T12:39:41">2001年06月05日 12:39</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; ▼ すとーにぃさん<br>&gt; &gt; CPropComKeyword.cppやCPropComKeybind.cppはいずれもインポート・エクスポートボタンがありますが、<br>&gt; &gt; 区別がついてると思います。<br>確かにHIDCでは区別できるようにすとーにぃ氏が名前の下に_KEYBINDとかを追加してますね。でもやっぱりDialogのコントロール名からそうしたほうが.hmの自動生成時にdefineがかぶらないのでいいと思います。Grepで探して修正すればいいのだろうけど時間が。。。誰かに期待するということにしよう。<br><br>&gt;exeコンパイル時に.hhファイルがsakura_coreになくても怒られないようですが。。。<br>どうやらまだその段階までいってないようですね。<br><br>&gt;.hmのほうのdefineは16進で、.hhの方は10進。どう合わせるんでしょう？<br>これが一番わからなかったんですが、今はcoreにできる.rmは気にしないでHIDC名の確認程度に見ればよさそうですね。.hhの数字はCPropTypes.cppと同期すればいいことにようやく気づいて何とか修正できた。(&gt;_&lt;)</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

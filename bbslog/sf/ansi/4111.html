@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>PODの継承について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4111</span>
+    <a class="thread-title" href="4111.html#4111">PODの継承について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4115</span>
+    <a class="thread-title" href="4111.html#4115">Re:PODの継承について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4119</span>
+    <a class="thread-title" href="4111.html#4119">Re2:PODの継承について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4111>
+    <span class="no">[4111]</span>
+    <a class="thread-title" href="#4111">PODの継承について</a>
+    <span class="author">もか</span>
+    <time datetime="2005-11-11T22:55:00">2005年11月11日 22:55</time></h1>
+    <div class="body">&gt;struct OPENFILENAMEZ : public OPENFILENAME {<br>&gt;  void *        pvReserved;<br>&gt;  DWORD         dwReserved;<br>&gt;  DWORD         FlagsEx;<br>&gt;};<br>この記述は大抵のコンパイラで動作しそうですけど、どの程度信頼できるんでしょう。<br>データ型・整合性(alignment)が同じなら規格上同じとみなせるのでしょうか？<br><br>#C++の仕様がいまいち理解できていないので、思い切って聞いて見ます。<br>#特に64ビット版が不安です。<br></div></section>
+    <ul><li><section><h1 id=4115>
+    <span class="no">[4115]</span>
+    <a class="thread-title" href="#4115">Re:PODの継承について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-12T02:29:57">2005年11月12日 02:29</time></h1>
+    <div class="body">▼ もかさん<br>&gt; この記述は大抵のコンパイラで動作しそうですけど、どの程度信頼できるんでしょう。<br>&gt; データ型・整合性(alignment)が同じなら規格上同じとみなせるのでしょうか？<br>&gt; <br>&gt; #C++の仕様がいまいち理解できていないので、思い切って聞いて見ます。<br>&gt; #特に64ビット版が不安です。<br><br>ご指摘ありがとうございます。<br>すいません、厳密なことは考えてませんでした。<br><br>メモリ配置って C++ の規格外（実装依存）かな？でも、SDK のヘッダーファイルが利用可能なコンパイラだったら、VC と同じに配置するようになってるはず。<br>また、派生クラスの配置についても Winodows 用コンパイラを使う限りにおいて VC との差異は考えなくてもいいような気がします。<br>（でなきゃそのコンパイラは OLE/COM インターフェイス系の API をまともに扱えないんじゃないかしら？）<br><br>64ビット版については、VS2005β2 に付属の CommDlg.h から辿ってみると構造体のパック方式を明示指定するのが正解かもしれません。<br><br>#ifdef _WIN64<br>#include &lt;pshpack8.h&gt;<br>#else<br>#include &lt;pshpack1.h&gt;<br>#endif<br><br>（OPENFILENAMEZ 宣言）<br><br>#include &lt;poppack.h&gt;<br><br>かなぁ？<br>他コンパイラをあまり使ったことが無い、64ビット検証環境も無いので全部推測で、自信無しです。<br>あとは詳しい方のフォローをお待ちします。m(__)m</div></section>
+    <ul><li><section><h1 id=4119>
+    <span class="no">[4119]</span>
+    <a class="thread-title" href="#4119">Re2:PODの継承について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-12T03:15:49">2005年11月12日 03:15</time></h1>
+    <div class="body">&gt; また、派生クラスの配置についても Winodows 用コンパイラを使う限りにおいて VC との差異は考えなくてもいいような気がします。<br>&gt; （でなきゃそのコンパイラは OLE/COM インターフェイス系の API をまともに扱えないんじゃないかしら？）<br>もしかして OLE/COM で必要とされるメモリレイアウトの互換性は vtable だけ？？</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>JIS/UTF-7の選択のバイト数表示 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2273</span>
+    <a class="thread-title" href="2273.html#2273">JIS/UTF-7の選択のバイト数表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2274</span>
+    <a class="thread-title" href="2273.html#2274">Re:JIS/UTF-7の選択のバイト数表示</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2273>
+    <span class="no">[2273]</span>
+    <a class="thread-title" href="#2273">JIS/UTF-7の選択のバイト数表示</a>
+    <span class="author">もか</span>
+    <time datetime="2015-08-13T02:04:34">2015年08月13日 02:04</time></h1>
+    <div class="body">範囲選択のカウントをバイト数にして<br>ファイルをJIS/UTF-7にする<br>日本語を含む行を行単位などで選択(↓キーや行選択を使う)<br>1文字づつ範囲選択を減らしていくと、バイト数がマイナスになったりします<br>もちろん範囲を増やすと余分に増えます<br><br>コード見ればあたりまえですが「123あいう」<br>がUTF-7(例はもどき)では「123+aaabac-」<br>みたいになるのに対して「う」単体でも「+ac-」のようになり<br>プレフィックス等が余分にカウントされるからです<br></div></section>
+    <ul><li><section><h1 id=2274>
+    <span class="no">[2274]</span>
+    <a class="thread-title" href="#2274">Re:JIS/UTF-7の選択のバイト数表示</a>
+    <span class="author">もか</span>
+    <time datetime="2015-08-13T02:16:04">2015年08月13日 02:16</time></h1>
+    <div class="body">あと本家/turnk2の場合は、UTF-7でPS,LS,NELと次の行に日本語等を並べて使うと、<br>ファイル書き込み時に行ごとに分割されるはずの場所が連続してエンコードされるので<br>バイト数が書き込みと一致しなくなります<br></div></section>
+    </li></ul></li></ul></body></html>

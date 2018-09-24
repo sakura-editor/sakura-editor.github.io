@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>禁則処理 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3797</span>
+    <a class="thread-title" href="3797.html#3797">禁則処理</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3798</span>
+    <a class="thread-title" href="3797.html#3798">Re:禁則処理</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3797>
+    <span class="no">[3797]</span>
+    <a class="thread-title" href="#3797">禁則処理</a>
+    <span class="author">fotomo</span>
+    <time datetime="2004-04-13T20:06:16">2004年04月13日 20:06</time></h1>
+    <div class="body">行頭禁則を「あ」<br>行末禁則を「お」<br>に設定しまして、長い行を折り返しますと、<br><br>ええええええええお&lt;<br>いあいいい[EOF]<br><br>のように、「お」が行末禁則のはずなのに行末に<br>きてしまいます。<br><br>一応コンパイルできる環境なのですが、修正方法を<br>教えていただけませんでしょうか？</div></section>
+    <ul><li><section><h1 id=3798>
+    <span class="no">[3798]</span>
+    <a class="thread-title" href="#3798">Re:禁則処理</a>
+    <span class="author">もか</span>
+    <time datetime="2004-04-13T23:00:31">2004年04月13日 23:00</time></h1>
+    <div class="body">こんばんは。<br>今の仕様・実装は、禁則1文字分修正したらそれ以降は考慮しないからです。<br>無限に禁則処理しかねない(かも?)とか、実装が面倒だからかな<br>&gt;一応コンパイルできる環境なのですが、修正方法を教えていただけませんでしょうか？<br>CDocLineMgr_New.cppのDoLayout / DoLayoutRangeで禁則処理をしているので、ここを書き換えればOKです。<br><br># 続きは開発板のほうによろしくお願いします。<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現キーワード重複? | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3743</span>
+    <a class="thread-title" href="3743.html#3743">正規表現キーワード重複?</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3744</span>
+    <a class="thread-title" href="3743.html#3744">RE: 正規表現キーワード重複?</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3745</span>
+    <a class="thread-title" href="3743.html#3745">Re2: 正規表現キーワード重複?</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3743>
+    <span class="no">[3743]</span>
+    <a class="thread-title" href="#3743">正規表現キーワード重複?</a>
+    <span class="author">chikko</span>
+    <time datetime="2004-09-09T14:52:09">2004年09月09日 14:52</time></h1>
+    <div class="body">正規表現キーワードを設定して色分けしていたのですが、<br>どうしても上手く検出できないものがありました。<br><br>&lt;TAG Id=～<br><br>この部分でTAGとIdを別々の色になるようにしたくて、<br><br>&lt;TAG は /&lt;\s*\w+[\s|&gt;]/k<br>Id は /\s+\w+\s*=/k<br><br>の様にしましたが、Idの方がマッチされませんでした。<br>&lt;TAG  Id=～ とするとId=がマッチされるようでした。<br><br>Idがマッチされないのは、"&lt;TAG "で一度スペースがマッチ<br>されてしまったため、" Id="のスペースを用いた<br>マッチはできないのでしょうか？<br></div></section>
+    <ul><li><section><h1 id=3744>
+    <span class="no">[3744]</span>
+    <a class="thread-title" href="#3744">RE: 正規表現キーワード重複?</a>
+    <span class="author">すい</span>
+    <time datetime="2004-09-10T03:03:30">2004年09月10日 03:03</time></h1>
+    <div class="body">&gt; &lt;TAG は /&lt;\s*\w+[\s|&gt;]/k<br>&gt; Id は /\s+\w+\s*=/k<br><br>なぜ、&lt;TAG の方にスペースを含ませる必要があるのかがわからないのですが。<br>/&lt;\s*\w+&gt;?/ とかじゃ駄目なんでしょうか？<br><br><br>&gt; Idがマッチされないのは、"&lt;TAG "で一度スペースがマッチ<br>&gt; されてしまったため、" Id="のスペースを用いた<br>&gt; マッチはできないのでしょうか？<br><br>その通り。そういう仕様ですね。<br>一度、正規表現キーワードにマッチした文字は、以後、他の<br>正規表現キーワードにはマッチする事がありません。<br>そのルールをきちんと把握して、うまくコントロールする事が出来る<br>ようになれば、かなり複雑な色分けも させる事ができるようになります。<br>正規表現文字列の工夫次第です。<br><br><br>蛇足ですが、タグとか言っている所を見ると HTML に対して<br>正規表現キーワードを使用しようとしているように思えたのですが、<br>それならば やめた方がよろしいかと。<br><br>正規表現キーワードが ON の状態だと<br>「１行の文字数が非常に多い、長い行を含むファイル」<br>を開くと、エラーが発生してエディタが落ちてしまいますので。<br><br>HTML って、仕様上は改行を入れる必要が無いので、世の中には<br>改行が殆ど無くて、非常に長～い行を含む HTML が良く転がって<br>いますので。すごい物だと<br><br>「改行全く無し、＜HTML＞ ～ ＜/HTML＞ までが非常に長い１行に<br>　なっている HTML ファイル」<br><br>とか、良くありますよね。<br><br>その手の HTML ファイルを開いて見る事すら出来なくなりますよ。<br></div></section>
+    <ul><li><section><h1 id=3745>
+    <span class="no">[3745]</span>
+    <a class="thread-title" href="#3745">Re2: 正規表現キーワード重複?</a>
+    <span class="author">chikko</span>
+    <time datetime="2004-09-10T09:32:32">2004年09月10日 09:32</time></h1>
+    <div class="body">&gt; &gt; &lt;TAG は /&lt;\s*\w+[\s|&gt;]/k<br>&gt; &gt; Id は /\s+\w+\s*=/k<br>&gt; <br>&gt; なぜ、&lt;TAG の方にスペースを含ませる必要があるのかがわからないのですが。<br>&gt; /&lt;\s*\w+&gt;?/ とかじゃ駄目なんでしょうか？<br><br>そうですね。それをすれば確かに対応できますが、<br>"&lt;TAGID="を入力時に"="以外が全てマッチしてしまいますね。<br>この辺りは、もう好みの問題になってくると思いますが...<br><br>&gt; &gt; Idがマッチされないのは、"&lt;TAG "で一度スペースがマッチ<br>&gt; &gt; されてしまったため、" Id="のスペースを用いた<br>&gt; &gt; マッチはできないのでしょうか？<br> <br>&gt; その通り。そういう仕様ですね。<br>&gt; 一度、正規表現キーワードにマッチした文字は、以後、他の<br>&gt; 正規表現キーワードにはマッチする事がありません。<br>&gt; そのルールをきちんと把握して、うまくコントロールする事が出来る<br>&gt; ようになれば、かなり複雑な色分けも させる事ができるようになります。<br>&gt; 正規表現文字列の工夫次第です。<br><br>ということは、対応した()のみをマッチするという事は、<br>出来ないということですね。"&lt;****&gt;"などの表記の時に<br>"&lt;","&gt;"のみ別の色にしたりしたかったのですが残念です。 <br> <br>&gt; 蛇足ですが、タグとか言っている所を見ると HTML に対して<br>&gt; 正規表現キーワードを使用しようとしているように思えたのですが、<br><br>そうです。系統的には似ているXMLに対して使用しています。<br><br>&gt; 正規表現キーワードが ON の状態だと<br>&gt; 「１行の文字数が非常に多い、長い行を含むファイル」<br>&gt; を開くと、エラーが発生してエディタが落ちてしまいますので。<br><br>今の所、エラーが発生した事はありませんが、<br>注意したいと思います。<br><br>質問にお答え頂き有難うございました。<br><br><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

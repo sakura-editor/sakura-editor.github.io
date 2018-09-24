@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>VC++ 2005 Express Edition | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4158</span>
+    <a class="thread-title" href="4158.html#4158">VC++ 2005 Express Edition</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4160</span>
+    <a class="thread-title" href="4158.html#4160">Re:VC++ 2005 Express Edition</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4161</span>
+    <a class="thread-title" href="4158.html#4161">Re2:VC++ 2005 Express Edition</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4162</span>
+    <a class="thread-title" href="4158.html#4162">Re3:VC++ 2005 Express Edition</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4164</span>
+    <a class="thread-title" href="4158.html#4164">Re4:VC++ 2005 Express Edition</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4165</span>
+    <a class="thread-title" href="4158.html#4165">Re5:VC++ 2005 Express Edition</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4192</span>
+    <a class="thread-title" href="4158.html#4192">Re5:VC++ 2005 Express Edition</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4163</span>
+    <a class="thread-title" href="4158.html#4163">Re3:VC++ 2005 Express Edition</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4297</span>
+    <a class="thread-title" href="4158.html#4297">Re2:VC++ 2005 Express Edition</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4219</span>
+    <a class="thread-title" href="4158.html#4219">Re: VC++ 2005 Express Edition</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4634</span>
+    <a class="thread-title" href="4158.html#4634">削除</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4158>
+    <span class="no">[4158]</span>
+    <a class="thread-title" href="#4158">VC++ 2005 Express Edition</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-11-22T01:28:24">2005年11月22日 01:28</time></h1>
+    <div class="body">・VC++ 2005 Express Edition (英語版)<br>・Microsoft Platform SDK for Windows Server 2003 SP1 の Core SDK<br>でReleaseビルドしてみました。<br><br>結果：ビルドできない<br>・Core SDK には Shlwapi.h が入っていない<br>・CWSH.h のコンパイルに失敗する<br><br>ログ：<br><a href=http://www2.wbs.ne.jp/~dskoba/sakura/buildlog.lzh target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>sakura/<wbr>buildlog<wbr>.<wbr>lzh</nobr></a><br>[▼次</div></section>
+    <ul><li><section><h1 id=4160>
+    <span class="no">[4160]</span>
+    <a class="thread-title" href="#4160">Re:VC++ 2005 Express Edition</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-11-22T01:57:13">2005年11月22日 01:57</time></h1>
+    <div class="body">&gt; ・Core SDK には Shlwapi.h が入っていない<br><br>Web Workshop SDK に入っていました。</div></section>
+    <ul><li><section><h1 id=4161>
+    <span class="no">[4161]</span>
+    <a class="thread-title" href="#4161">Re2:VC++ 2005 Express Edition</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-11-22T21:17:08">2005年11月22日 21:17</time></h1>
+    <div class="body">&gt; ・CWSH.h のコンパイルに失敗する<br><br>CWSH.h の 40行目<br>- operator = (const ImplementsIUnknown &amp;);<br>+ const ImplementsIUnknown operator = (const ImplementsIUnknown &amp;);<br>とりあえずこれで。<br><br>・sakura_rc.rc で afxres.h が無いのでコンパイルできない<br><br>これは，includeディレクトリに<br>C:\Program Files\Microsoft Platform SDK\Include\mfc<br>を追加することで解決しました。<br><br>以上でビルドできました。</div></section>
+    <ul><li><section><h1 id=4162>
+    <span class="no">[4162]</span>
+    <a class="thread-title" href="#4162">Re3:VC++ 2005 Express Edition</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-11-22T21:56:49">2005年11月22日 21:56</time></h1>
+    <div class="body">&gt; ・sakura_rc.rc で afxres.h が無いのでコンパイルできない<br>これは<br>- #include "afxres.h"<br>+ #include &lt;windows.h&gt;<br>+ #define IDC_STATIC -1<br>でも良いようです。<br><br>ビルドしたバイナリのサイズは<br>・サイズ優先(/O1)で824KB<br>・速度優先(/O2)で944KB<br>という感じです。<br><br>やっと最適化コンパイラでは無い VC++.NET(2002)から解放されそうです。</div></section>
+    <ul><li><section><h1 id=4164>
+    <span class="no">[4164]</span>
+    <a class="thread-title" href="#4164">Re4:VC++ 2005 Express Edition</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-23T02:11:20">2005年11月23日 02:11</time></h1>
+    <div class="body">dskobaさん、げんたさんへのマルチレスになります。m(__)m<br><br>dskobaさんの報告とは別に修正版パッチ（1.5.8.0用）を<br>作成していたので、Up しておきます。<br>&gt;&gt;dev:4096 「1.5.8.0 プリコンパイル指定ミスってます」<br>も関連しているので、その修正も込みです。<br><a href=http://groups.yahoo.co.jp/group/sakura-editor/files/Developer/Source/ssrc_2005-11-06_stdafx.zip target=_top><nobr>http://<wbr>groups.<wbr>yahoo.<wbr>co.<wbr>jp/<wbr>group/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>Develope<wbr>r/<wbr>Source/<wbr>ssrc_200<wbr>5-<wbr>11-<wbr>06_stdaf<wbr>x.<wbr>zip</nobr></a><br><br>&gt;結果：ビルドできない<br>数日前にMSDNサブスクリプションダウンロードに登録された、<br>Microsoft Visual Studio 2005 Team Suite - JPN（リリース候補版）<br>でもまったく同様な警告・エラーが出てました。<br>警告が大量でウザいのでstdafx.hに<br>+#if _MSC_VER &gt;= 1400<br>+#pragma warning( disable : 4996 )<br>+#endif<br>を追加してあります（下位コンパイラ互換も考慮）。<br>CEditView.cpp(1979) : warning C4819<br>の警告理由が不明だけど、特に問題は無さそうなので放置してあります。<br>（ひょっとするとコンパイラのバグかもしれない）<br>修正パッチは VC++6.0/2003/2005(Express, Team Suite) でコンパイル確認済みです。<br><br>&gt;&gt;CWSH.h の 40行目<br>&gt;&gt;operator = (const ImplementsIUnknown &amp;);<br>&gt;これ戻り値の型が指定されていないから明らかに変ですよね．<br>&gt;なんでコンパイルエラーにならないんだろう？<br>自分が持っている昔のC++の教科書には戻り値なしの例が掲載<br>されてました。<br>この部分は、<br>「オブジェクトのコピーを禁止するのにコピーコンストラクタ<br>と代入演算子は private で宣言のみ行う」というやつですね。<br>私の修正では、<br>- operator = (const ImplementsIUnknown &amp;);<br>+ ImplementsIUnknown&amp; operator = (const ImplementsIUnknown &amp;);<br>としてあります。<br><br>&gt; ビルドしたバイナリのサイズは<br>&gt; ・サイズ優先(/O1)で824KB<br>これマジ？と思って確かめてみました。<br>Team Suiteでも同じサイズになってます！<br>ポータビリティも重要なので、これは嬉しいですね！！<br>通常、速度優先よりも安定性が高く、サイズが小さくなることで<br>むしろキャッシュ効率が良くなって速くなる場合もあるらしい。<br>MSも自社製品はこっちでリリースしていると聞きますし、<br>これをデフォルト設定にしても良さそうですね。<br><br>&gt; やっと最適化コンパイラでは無い VC++.NET(2002)から解放されそうです。<br>Express は無料提供というのが信じられないくらい充実してますね。<br>あとは MFC を付けろとまでは言わないけど、<br>Win32用のGUIなリソースエディタが付けば．．．</div></section>
+    <ul><li><section><h1 id=4165>
+    <span class="no">[4165]</span>
+    <a class="thread-title" href="#4165">Re5:VC++ 2005 Express Edition</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-23T02:41:06">2005年11月23日 02:41</time></h1>
+    <div class="body">以下、覚え書きです。<br>&gt; &gt;&gt;dev:4096 「1.5.8.0 プリコンパイル指定ミスってます」<br>&gt; も関連しているので、その修正も込みです。<br><br>これは .dsp と一部stdafx.hのincludeが抜けていた部分の修正です<br>デフォルト: プリコンパイル済みヘッダー ファイルを使用する (/Yu)<br>stdafx.cpp: プリコンパイル済みヘッダーを作成する (/Yc)<br>MY_SP.C: プリコンパイル済みヘッダーを使用しない<br>etc_uty.cpp: プリコンパイル済みヘッダーを使用しない<br>の設定にしてあります。<br>MY_SP.C は CコンパイルなのでC++ヘッダーが適用不可。<br>etc_uty.cpp はこれだけ #define COMPILE_NEWAPIS_STUBS に<br>する必要があるので除外、ということです。<br><br>VC++ 2005 では、「プリコンパイル済みヘッダーの自動使用(/YX)」<br>という設定が無くなった模様。<br>また、コンパイル時のC/C++ライブラリもシングルスレッド版が<br>無くなっており、プロジェクトの変換時にマルチスレッド版に<br>自動的に変換されています。</div></section>
+    </li><li><section><h1 id=4192>
+    <span class="no">[4192]</span>
+    <a class="thread-title" href="#4192">Re5:VC++ 2005 Express Edition</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-12-01T20:26:09">2005年12月01日 20:26</time></h1>
+    <div class="body">&gt; CEditView.cpp(1979) : warning C4819<br>&gt; の警告理由が不明だけど、特に問題は無さそうなので放置してあります。<br>&gt; （ひょっとするとコンパイラのバグかもしれない）<br><br>&gt;&gt;dev:4191 と類似してますが、こちらは新たに Product Feedback Center に報告を出しておきました。<br><a href=http://lab.msdn.microsoft.com/productfeedback/viewfeedback.aspx?feedbackid=6b6882e2-f052-46c6-85ca-086ff897b769 target=_top><nobr>http://<wbr>lab.<wbr>msdn.<wbr>microsof<wbr>t.<wbr>com/<wbr>productf<wbr>eedback/<wbr>viewfeed<wbr>back.<wbr>aspx?<wbr>feedback<wbr>id=<wbr>6b6882e2<wbr>-<wbr>f052-<wbr>46c6-<wbr>85ca-<wbr>086ff897<wbr>b769</nobr></a></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4163>
+    <span class="no">[4163]</span>
+    <a class="thread-title" href="#4163">Re3:VC++ 2005 Express Edition</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-11-23T00:55:47">2005年11月23日 00:55</time></h1>
+    <div class="body">&gt;CWSH.h の 40行目<br>&gt;operator = (const ImplementsIUnknown &amp;);<br>これ戻り値の型が指定されていないから明らかに変ですよね．<br>なんでコンパイルエラーにならないんだろう？<br></div></section>
+    </li></ul></li><li><section><h1 id=4297>
+    <span class="no">[4297]</span>
+    <a class="thread-title" href="#4297">Re2:VC++ 2005 Express Edition</a>
+    <span class="author">みく</span>
+    <time datetime="2006-03-12T14:37:54">2006年03月12日 14:37</time></h1>
+    <div class="body"><br>久々に時間できたのでインストールしてみた。<br><br>CProfile.cpp<br>MAP_STR_STR_ITER<br>がエラーなのはDEBUGなのでコメントアウトしてみた。<br>でも、<br><br>sakura - エラー 1193、警告 0<br>========== ビルド: 0 正常終了、1 失敗、0 更新、0 スキップ ==========<br><br>こりゃWinAPIが全部リンクエラーだわ。<br><br>Platform SDK もインストールしてるし、パスも設定したのに<br>リンクエラーになるんですけど。<br><br><br>.NET Framework関係でも変なエラー出てるし、インストールするんじゃなかったと反省...<br></div></section>
+    </li></ul></li><li><section><h1 id=4219>
+    <span class="no">[4219]</span>
+    <a class="thread-title" href="#4219">Re: VC++ 2005 Express Edition</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-01-08T20:51:21">2006年01月08日 20:51</time></h1>
+    <div class="body">&gt;・Core SDK には Shlwapi.h が入っていない<br>CDlgTagJumpList.cppでインクルードされていますが，それをコメントアウトしても問題なくコンパイルできたのでたぶん不要だと思います．コメントアウトしておきますね．<br></div></section>
+    </li><li><section><h1 id=4634>
+    <span class="no">[4634]</span>
+    <a class="thread-title" href="#4634">削除</a>
+    <span class="author">管理者</span>
+    <time datetime="2006-11-16T15:17:02">2006年11月16日 15:17</time></h1>
+    <div class="body">-</div></section>
+    </li></ul></li></ul></body></html>

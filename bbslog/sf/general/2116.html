@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>拡張子抜きファイル名Getマクロ？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2116</span>
+    <a class="thread-title" href="2116.html#2116">拡張子抜きファイル名Getマクロ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2121</span>
+    <a class="thread-title" href="2116.html#2121">RE: 拡張子抜きファイル名Getマクロ？</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2116>
+    <span class="no">[2116]</span>
+    <a class="thread-title" href="#2116">拡張子抜きファイル名Getマクロ？</a>
+    <span class="author">t@o</span>
+    <time datetime="2002-07-15T23:37:15">2002年07月15日 23:37</time></h1>
+    <div class="body">こんにちはt@oです。<br>拡張子抜きファイル名をgetしたいのですが<br>面倒なやり方でやっています・・・<br>今のやり方は<br>1.GetFilename()でフルパスGet<br>2.ファイル先頭にGetFilename()+\nで挿入<br>3.置換で拡張子をとる<br>4.置換で\までとる<br>5.切り取り<br>6.変数に代入<br><br>よい方法がありましたら教えてください。<br><br></div></section>
+    <ul><li><section><h1 id=2121>
+    <span class="no">[2121]</span>
+    <a class="thread-title" href="#2121">RE: 拡張子抜きファイル名Getマクロ？</a>
+    <span class="author">すい</span>
+    <time datetime="2002-07-17T12:39:43">2002年07月17日 12:39</time></h1>
+    <div class="body">&gt;拡張子抜きファイル名をgetしたいのですが<br>&gt;面倒なやり方でやっています・・・<br>&gt;今のやり方は<br>&gt;1.GetFilename()でフルパスGet<br>&gt;2.ファイル先頭にGetFilename()+\nで挿入<br>&gt;3.置換で拡張子をとる<br>&gt;4.置換で\までとる<br>&gt;5.切り取り<br>&gt;6.変数に代入<br>&gt;<br>&gt;よい方法がありましたら教えてください。<br><br>ふにゃふにゃ。何をやりたいんだろ？<br><br>pos で文字位置を探し出して<br>├→ Copy で必要部分を抜き取り<br>└→ Delete で不要部分を削除<br>で良いのでは。<br><br>最新の sakura.exe バイナリ + PPA.DLL にて動作確認<br>↓PPAマクロサンプル S_GetFilename()でファイル名を取得し、splitpath してみる <br>http://www.egroups.co.jp/files/sakura-editor/Junk/splitpath.lzh<br><br>ヘルプを見ながら適当に書いてみたのですが、こんな記述で良いのでしょうかねぇ？<br>Pascal って触った事がないので分かりません。<br></div></section>
+    </li></ul></li></ul></body></html>

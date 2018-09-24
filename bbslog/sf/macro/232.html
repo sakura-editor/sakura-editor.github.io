@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ウィンドウ切り替えができない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">232</span>
+    <a class="thread-title" href="232.html#232">ウィンドウ切り替えができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">233</span>
+    <a class="thread-title" href="232.html#233">Re:ウィンドウ切り替えができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">234</span>
+    <a class="thread-title" href="232.html#234">Re2:ウィンドウ切り替えができない</a></div>
+    </li><li><div class="list-title">
+    <span class="no">235</span>
+    <a class="thread-title" href="232.html#235">Re2:ウィンドウ切り替えができない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">236</span>
+    <a class="thread-title" href="232.html#236">Re3:ウィンドウ切り替えができない</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=232>
+    <span class="no">[232]</span>
+    <a class="thread-title" href="#232">ウィンドウ切り替えができない</a>
+    <span class="author">純</span>
+    <time datetime="2006-01-16T17:59:18">2006年01月16日 17:59</time></h1>
+    <div class="body">マクロのウィンドウ切り替えが動きません。<br>JSで記述してしますので、<br>------------------------------<br>Editor.NextWindow();<br><br>もしくは<br><br>Editor.PrevWindow();<br>------------------------------<br>となると思いますが、何がいけないのでしょうか？<br>この記述は全体の一部として使用していて、<br>それ以外の部分のみ（SearchNextとか）は<br>問題なく動いています。<br>ご教示よろしくお願いいたします。</div></section>
+    <ul><li><section><h1 id=233>
+    <span class="no">[233]</span>
+    <a class="thread-title" href="#233">Re:ウィンドウ切り替えができない</a>
+    <span class="author">maru</span>
+    <time datetime="2006-01-16T22:55:14">2006年01月16日 22:55</time></h1>
+    <div class="body">▼ 純さん<br>&gt; マクロのウィンドウ切り替えが動きません。<br>&gt; JSで記述してしますので、<br>&gt; ------------------------------<br>&gt; Editor.NextWindow();<br>&gt; <br>&gt; もしくは<br>&gt; <br>&gt; Editor.PrevWindow();<br>&gt; ------------------------------<br>たしか、これは仕様として準備されているだけで<br>実装されていません。<br><br>というか実装の見通しは、ないかもしれません。<br>基本的にマクロの動作は実行している自ウインドウしか<br>制御できない構造だったような…。<br><br>たとえば開いているウインドウを次々に検索(置換)する<br>ような動作をマクロだけで実装するのは難しいようです。</div></section>
+    <ul><li><section><h1 id=234>
+    <span class="no">[234]</span>
+    <a class="thread-title" href="#234">Re2:ウィンドウ切り替えができない</a>
+    <span class="author">純</span>
+    <time datetime="2006-01-17T08:29:22">2006年01月17日 08:29</time></h1>
+    <div class="body">▼ maruさん<br>&gt; たしか、これは仕様として準備されているだけで<br>&gt; 実装されていません。<br>&gt; <br>&gt; というか実装の見通しは、ないかもしれません。<br>&gt; 基本的にマクロの動作は実行している自ウインドウしか<br>&gt; 制御できない構造だったような…。<br>&gt; <br>&gt; たとえば開いているウインドウを次々に検索(置換)する<br>&gt; ような動作をマクロだけで実装するのは難しいようです。<br><br>maruさん、返信ありがとうございます。<br><br>実装されてなかったんですね(^^;<br>ファイル1で選択した文字列をファイル2で検索する<br>マクロを作成しようとしていたのですが、<br>サクラエディタでは無理でしたか。<br>別の方法を探ります。ありがとうございました。</div></section>
+    </li><li><section><h1 id=235>
+    <span class="no">[235]</span>
+    <a class="thread-title" href="#235">Re2:ウィンドウ切り替えができない</a>
+    <span class="author">miau</span>
+    <time datetime="2006-01-29T16:07:34">2006年01月29日 16:07</time></h1>
+    <div class="body">▼ maruさん<br>&gt; というか実装の見通しは、ないかもしれません。<br>&gt; 基本的にマクロの動作は実行している自ウインドウしか<br>&gt; 制御できない構造だったような…。<br>&gt; <br>&gt; たとえば開いているウインドウを次々に検索(置換)する<br>&gt; ような動作をマクロだけで実装するのは難しいようです。<br><br>私も「現在開いているファイルの名前を全て記憶する」<br>マクロを実装しようとして、挫折したことがあります。<br>別ウィンドウの操作はできないんですよね・・・。<br><br>この掲示板はマクロ拡張要望も出していいようですので、、<br>普段から「こういうことができればいいなー」と思っていることを<br>挙げてみます。<br><br>○各ウィンドウの情報取得＆操作<br>　現在実装されているマクロ関数が、<br>　他のウィンドウに対しても実行できると便利だと思います。<br> <br>　Excel.Application や Sleipnir.API のように、<br>　・ウィンドウそれぞれに Editor オブジェクトが割り当てられる<br>　・マクロ関数で Editor オブジェクトの一覧を取得する<br>　・各 Editor オブジェクトに対して操作を実行する<br>　造りであれば、色々な操作が可能なのですが。<br><br>○イベントハンドラの登録<br>　例えば「ファイルを開いた直後にこのマクロを実行する」<br>　というようなこともできると、便利かもしれません。<br><br>実現の容易性とかは度外視した意見なのですが、<br>他の方々はどう思いますか？</div></section>
+    <ul><li><section><h1 id=236>
+    <span class="no">[236]</span>
+    <a class="thread-title" href="#236">Re3:ウィンドウ切り替えができない</a>
+    <span class="author">maru</span>
+    <time datetime="2006-01-30T00:23:20">2006年01月30日 00:23</time></h1>
+    <div class="body">▼ miauさん<br>&gt; 実現の容易性とかは度外視した意見なのですが、<br>&gt; 他の方々はどう思いますか？<br><br>他ウインドウの制御とか、いいですねぇ。<br>しかし、マクロ応援隊は少数派なので<br>miauさんの活躍に期待するしかないかもです。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

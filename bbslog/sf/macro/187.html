@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マクロ内でステータスバー情報の取得 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">187</span>
+    <a class="thread-title" href="187.html#187">マクロ内でステータスバー情報の取得</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=187>
+    <span class="no">[187]</span>
+    <a class="thread-title" href="#187">マクロ内でステータスバー情報の取得</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-07-17T02:05:41">2005年07月17日 02:05</time></h1>
+    <div class="body">えっと、汎用性ありません (^^;<br>単品ダウンロードの見つからないv3のAutoItXを使っています。<br><a href=http://www.autoitscript.com/autoit3/index.php target=_top><nobr>http://<wbr>www.<wbr>autoitsc<wbr>ript.<wbr>com/<wbr>autoit3/<wbr>index.<wbr>php</nobr></a><br>汎用性をトレードオフしても、自分しか使わないマクロではますます重宝<br><br>' AutoItX3でステータスバーを表示 StatusBar.vbs<br>Dim wkStr, I<br>Set oAutoIt = CreateObject("AutoItX3.Control")<br>Set WshShell = CreateObject("WScript.Shell")<br>oAutoIt.AutoItSetOption "WinTitleMatchMode", 2<br>For I = 1 To 7<br>  wkStr = wkStr &amp; "|" &amp; oAutoIt.StatusbarGetText( "sakura", "",I)<br>Next<br>WshShell.Popup wkStr, 0, "Status Bar", 1<br></div></section>
+    </li></ul></body></html>

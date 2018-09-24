@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ちょっとしたバグ修正パッチ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3788</span>
+    <a class="thread-title" href="3788.html#3788">ちょっとしたバグ修正パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3789</span>
+    <a class="thread-title" href="3788.html#3789">Re: ちょっとしたバグ修正パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3790</span>
+    <a class="thread-title" href="3788.html#3790">Re2: ちょっとしたバグ修正パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3793</span>
+    <a class="thread-title" href="3788.html#3793">Re3: ちょっとしたバグ修正パッチ</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3788>
+    <span class="no">[3788]</span>
+    <a class="thread-title" href="#3788">ちょっとしたバグ修正パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-11-12T18:42:13">2004年11月12日 18:42</time></h1>
+    <div class="body">以下、3点の改善・修正パッチです。<br>&gt;&gt;3787 タグジャンプのバグ<br>&gt;&gt;data:4080 アウトラインのウィンドウ枠がもったいない<br>左右のマージンを消しました。<br>&gt;&gt;data:4131 行頭禁則に句読点を重複して多く登録すると落ちる<br>すすさん提案の、重複文字を設定文字列から消してくれる便利な機能は付けていません。<br>そっちのほうがいいなあ。<br><br>ヤフーブリーフケースの fix041002b.zip です。<br>とりあえずですが、あげておきます。<br></div></section>
+    <ul><li><section><h1 id=3789>
+    <span class="no">[3789]</span>
+    <a class="thread-title" href="#3789">Re: ちょっとしたバグ修正パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-11-13T03:49:06">2004年11月13日 03:49</time></h1>
+    <div class="body">etc_uty.cppのIsFilePath()で<br>&gt; //&#9;2004.11.10 Moca 先頭に上の文字がある場合の考慮を追加<br>&gt; if( i &gt;= 0 ){<br>&gt; &#9;goto can_not_tagjump;<br>&gt; }else<br>は変ですよね？ i&gt;=0は常に成立しますので．<br>(i == 0 || ( i &gt; 0 &amp;&amp; _IS_SJIS1(..))を条件に加えればif文を分離する必要は無いのでは？<br><br>関係ないですが，jがなんだか一瞬わからなかったので他の名前に変えようっと．<br><br>&gt;重複文字を設定文字列から消してくれる便利な機能は付けていません。<br>内部のリストに登録するときは重複チェックをするけど，設定上は重複したまま残るってことですよね．<br><br>---<br>あと細かいことですがSetLayoutInfo()の禁則処理部にunsigned char *rというのを追加していますが，if文の中でしか使われないのでそこで定義した方がbetterと思います．<br></div></section>
+    <ul><li><section><h1 id=3790>
+    <span class="no">[3790]</span>
+    <a class="thread-title" href="#3790">Re2: ちょっとしたバグ修正パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-11-13T14:12:53">2004年11月13日 14:12</time></h1>
+    <div class="body">&gt;は変ですよね？ i&gt;=0は常に成立しますので．<br>&gt;(i == 0 || ( i &gt; 0 &amp;&amp; _IS_SJIS1(..))を条件に加えればif文を分離する必要は無いのでは？<br>変ですね。i&lt;=0と書いたつもりでした。i&lt;0もありえませんが。<br>_IS_SJIS1(..)の前に !が抜けてる以外はそれでいいですね。<br>　他、ご指摘どおりなので、修正してください。m(__)m<br><br>#ながら作業は良くないぞ自分。頭の中でC89とC++の切り替えも中途半端..<br></div></section>
+    <ul><li><section><h1 id=3793>
+    <span class="no">[3793]</span>
+    <a class="thread-title" href="#3793">Re3: ちょっとしたバグ修正パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-11-15T21:52:50">2004年11月15日 21:52</time></h1>
+    <div class="body">もう少しちゃんと見てみると、<br>メ*ル<br>で、メの後続バイトが0x81で、_IS_SJIS1に一致するから<br>「メイル」「メール」なんていうファイルがあっても開いてしまいますね。<br>そんなファイル名付けないので、再現性が相当低いですけど(^ ^;<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

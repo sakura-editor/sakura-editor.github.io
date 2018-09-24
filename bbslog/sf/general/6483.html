@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>^[\d]+\r\n | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6483</span>
+    <a class="thread-title" href="6483.html#6483">^[\d]+\r\n</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6485</span>
+    <a class="thread-title" href="6483.html#6485">Re:^[\d]+\r\n</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6486</span>
+    <a class="thread-title" href="6483.html#6486">Re2:^[\d]+\r\n</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6488</span>
+    <a class="thread-title" href="6483.html#6488">まず事例で研究することをお勧めします</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6494</span>
+    <a class="thread-title" href="6483.html#6494">Re:まず事例で研究することをお勧めします</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6483>
+    <span class="no">[6483]</span>
+    <a class="thread-title" href="#6483">^[\d]+\r\n</a>
+    <span class="author">dnsbalancejp</span>
+    <time datetime="2007-11-26T11:30:53">2007年11月26日 11:30</time></h1>
+    <div class="body">サクラエディタVer1.5.4.1Vです。<br>初歩的なことなんでしょうが・・・・。<br><br>置換操作で、<br>^[\d]+\r\n　→→→　^[\d]+\t<br>と指定すると望む結果は得られません。<br><br>行頭半角数字を残して、改行をタブに変え、<br>次行と繋げて１行にしたいのですが。<br><br>ご教示下さいm(_)m<br></div></section>
+    <ul><li><section><h1 id=6485>
+    <span class="no">[6485]</span>
+    <a class="thread-title" href="#6485">Re:^[\d]+\r\n</a>
+    <span class="author">てふ</span>
+    <time datetime="2007-11-27T08:10:24">2007年11月27日 08:10</time></h1>
+    <div class="body">^([\d]+)\r\n   →→→  \1\t<br>とするとうまくいくのでは？<br>( )でグループ化した文字列を \1 で参照します。<br><br>＃改行をタブに置換すれば、とも思ったけど…<br><br>▼ dnsbalancejpさん<br>&gt; サクラエディタVer1.5.4.1Vです。<br>&gt; 初歩的なことなんでしょうが・・・・。<br>&gt; <br>&gt; 置換操作で、<br>&gt; ^[\d]+\r\n　→→→　^[\d]+\t<br>&gt; と指定すると望む結果は得られません。<br>&gt; <br>&gt; 行頭半角数字を残して、改行をタブに変え、<br>&gt; 次行と繋げて１行にしたいのですが。<br>&gt; <br>&gt; ご教示下さいm(_)m</div></section>
+    <ul><li><section><h1 id=6486>
+    <span class="no">[6486]</span>
+    <a class="thread-title" href="#6486">Re2:^[\d]+\r\n</a>
+    <span class="author">dnsbalancejp</span>
+    <time datetime="2007-11-27T09:13:35">2007年11月27日 09:13</time></h1>
+    <div class="body">▼ てふさん<br>&gt; ^([\d]+)\r\n   →→→  \1\t<br>&gt; とするとうまくいくのでは？<br><br>確かに望みの結果を得ました。感謝m(_)m<br><br>&gt; ( )でグループ化した文字列を \1 で参照します。<br><br>ヘルプにはパターンのグループ化とだけ書いてありますね。<br>正規表現がほとんど分っていません。<br>\1というのも知りませんでした。<br>どこかに易しい解説はないでしょうか。<br></div></section>
+    <ul><li><section><h1 id=6488>
+    <span class="no">[6488]</span>
+    <a class="thread-title" href="#6488">まず事例で研究することをお勧めします</a>
+    <span class="author">渡辺真</span>
+    <time datetime="2007-11-28T21:16:16">2007年11月28日 21:16</time></h1>
+    <div class="body">▼ dnsbalancejpさん<br>&gt; 正規表現がほとんど分っていません。<br>&gt; \1というのも知りませんでした。<br>&gt; どこかに易しい解説はないでしょうか。<br><br>易しくも無いし、解説と言うほどでもないですが、事例でやると理解できる場合も有ります。<br><br><a href=http://makotowatana.ld.infoseek.co.jp/tips.html#replace target=_top><nobr>http://<wbr>makotowa<wbr>tana.<wbr>ld.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>tips.<wbr>html#<wbr>replace</nobr></a></div></section>
+    <ul><li><section><h1 id=6494>
+    <span class="no">[6494]</span>
+    <a class="thread-title" href="#6494">Re:まず事例で研究することをお勧めします</a>
+    <span class="author">dnsbalancejp</span>
+    <time datetime="2007-11-30T00:43:01">2007年11月30日 00:43</time></h1>
+    <div class="body">▼ 渡辺真さん<br>&gt; <a href=http://makotowatana.ld.infoseek.co.jp/tips.html#replace target=_top><nobr>http://<wbr>makotowa<wbr>tana.<wbr>ld.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>tips.<wbr>html#<wbr>replace</nobr></a><br><br>参考になります、感謝m(_)m。<br><br>正規表現がもう少し使えるようになりたいですね。<br>パソコンが好きになれそうです。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

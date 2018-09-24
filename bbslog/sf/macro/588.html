@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>複数の単語で単語検索(色分け付)するマクロV2 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">588</span>
+    <a class="thread-title" href="588.html#588">複数の単語で単語検索(色分け付)するマクロV2</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=588>
+    <span class="no">[588]</span>
+    <a class="thread-title" href="#588">複数の単語で単語検索(色分け付)するマクロV2</a>
+    <span class="author">SNK</span>
+    <time datetime="2014-12-05T00:29:43">2014年12月05日 00:29</time></h1>
+    <div class="body">( 投稿[563]の改良版です )<br><br>最近のサクラエディタは、検索する際に「単語単位で探す」をオンにすると、<br>複数の単語を検索できます。しかも5色までの色分けまでしてくれます。<br><br>この便利な機能を、手軽に使うためのマクロを書いてみました。<br>Ctrl+ダブルクリックに割り当てると便利です。<br>単語を追加するたびに、新しい色をつけて次々とハイライトしていけます。<br>空行や行末など単語がない場所で起動すると、ハイライトをクリアします。<br><br>SearchWordsPlus.js<br>-----------------------------------<br>// *************************************************<br>// SearchWordsPlus.js (Ver.2)<br>//<br>// 環境  : sakura2.0.6.0以降専用<br>// 機能  : 複数の単語で単語検索を行う<br>// 使用例: Ctrl+ダブルクリック に割り当てする。<br>//         ダブルクリックに[Macro/投稿/116]の割り当て。<br>//         設定&gt;タイプ別設定&gt;カラー にて<br>//         検索文字列～5 の色を設定しておくこと。<br>// *************************************************<br><br>var strNewWord ;<br>var strLastWords ; <br>var strSearchWords ; <br><br>// -- 単語を選択 --<br>//Editor.SelectWord() ; <br>   //&lt;- マクロを Ctrl+ダブルクリックにアサインした場合、<br>   //  「Ctrl+左クリック」の時点で既に単語選択されるため、<br>   //   ここはコメントアウトしてください。<br><br>// -- 選択単語を追加する --<br>strNewWord  = Editor.GetSelectedString(0);<br><br>if ( strNewWord == "" ){ <br>  // -- 単語が存在しない場所で起動した場合はクリアする --<br>  Editor.SearchClearMark(0);<br>  Editor.SetCookie( "window", "SearchWords","");<br>} else {<br>  // -- 単語を"SearchWords"というCookieに保存し、複数単語検索する --<br>  strLastWords = Editor.GetCookie( "window", "SearchWords", "" );<br>  strSearchWords = strLastWords + " " + strNewWord;<br>  Editor.Left();<br>  Editor.SearchNext( strSearchWords, 2051 ); <br>     //&lt;- 2051 = 0x01+0x02+0x800 (単語単位+英大小区別+履歴非登録)<br>  Editor.SetCookie( "window", "SearchWords", strSearchWords  );<br>}<br>-----------------------------------<br>検索条件はプログラマ向けを想定しています。<br><br>Ver1は、前の検索文字列を取得するためにクリップボードを使っている点が難点でした。<br>Ver2では、サクラエディタ2.0.6.0以降の機能であるSetCookieを使用しています。<br><br>次のマクロと共存が可能です。<br>・[Macro/投稿/116] ダブルクリックして選択範囲と同じ単語をハイライト<br>   <a href=http://sakura.qp.land.to/?Macro%2F%C5%EA%B9%C6%2F116 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Macro%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6%<wbr>2F116</nobr></a><br>-----------------------------------<br>S_SelectWord(0);<br>S_SearchClearMark(0);<br>-----------------------------------<br><br>私は、<br>・ダブルクリックを、上の(投稿/116)の1単語の単語検索<br>・Ctrl+ダブルクリックを、今回の複数単語の単語検索<br>というようにキー割り当てを設定し、併用して使っています。<br></div></section>
+    </li></ul></body></html>

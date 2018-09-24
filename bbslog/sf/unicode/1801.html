@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>インストーラのキーワードファイルについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1801</span>
+    <a class="thread-title" href="1801.html#1801">インストーラのキーワードファイルについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1802</span>
+    <a class="thread-title" href="1801.html#1802">Re:インストーラのキーワードファイルについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1815</span>
+    <a class="thread-title" href="1801.html#1815">Re2:インストーラのキーワードファイルについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1819</span>
+    <a class="thread-title" href="1801.html#1819">Re3:インストーラのキーワードファイルについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1820</span>
+    <a class="thread-title" href="1801.html#1820">Re4:インストーラのキーワードファイルについて</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1801>
+    <span class="no">[1801]</span>
+    <a class="thread-title" href="#1801">インストーラのキーワードファイルについて</a>
+    <span class="author">syat</span>
+    <time datetime="2012-05-22T22:48:43">2012年05月22日 22:48</time></h1>
+    <div class="body">インストーラに同梱されているキーワードファイルですが、新しいものに差し替えたり、追加したいものがいくつかあります。（C#にget/set/varがないとか、HTML5とか、CSS3とか）<br>有志の方がWikiにアップしてもすぐ埋もれてしまうのはもったいないので、有益なものはインストーラに取り込まれると良いと思います。<br><br>そこで提案なのですが、キーワードファイルをSVNに登録して、随時更新できるようにしませんか？<br>現在インストーラの資材一式が圧縮して登録されていますが、解凍してファイル単位で更新できるようになっていれば、気付いたときに差し替えできます。<br>インストーラを作る時もリポジトリから最新を持ってくるだけで済みます。<br><br>また、リポジトリに登録するついでに、keywordフォルダ内をタイプ毎にフォルダを作って整理したらどうでしょうか？<br>タイプ別設定のエクスポートもインストーラに同梱してくれたら良いなぁと思っていて、keyword配下がさらにとっ散らかる前に整理しておきたいです。<br><br>次のリリースに向けて着手しようと思うので、ご意見ありましたらどうぞ。<br></div></section>
+    <ul><li><section><h1 id=1802>
+    <span class="no">[1802]</span>
+    <a class="thread-title" href="#1802">Re:インストーラのキーワードファイルについて</a>
+    <span class="author">ryoji</span>
+    <time datetime="2012-05-24T00:45:18">2012年05月24日 00:45</time></h1>
+    <div class="body">▼ syatさん<br>&gt; そこで提案なのですが、キーワードファイルをSVNに登録して、随時更新できるようにしませんか？<br>&gt; 現在インストーラの資材一式が圧縮して登録されていますが、解凍してファイル単位で更新できるようになっていれば、気付いたときに差し替えできます。<br><br>圧縮してまとめたのは、そうしないと次のように各ファイルの属性が変わるから、という理由からでした。<br><br>・タイムスタンプが変更される（&gt;&gt;unicode:1755）<br>・改行コードが変更されてしまいファイルサイズも変わる（&gt;&gt;unicode:1754）<br><br>キーワードファイルについては、個々に作成された方がそれぞれ異なるライセンスを主張されているようです。<br>自分は、それらのファイルを改変することに問題がないかどうかをいちいち確認するのが面倒だったので、タイムスタンプやサイズも含めてオリジナルと変わらないように圧縮しておきました。<br>その程度の違いなら問題ないと確認できれば、ご提案のようにするのがいいと思います。</div></section>
+    <ul><li><section><h1 id=1815>
+    <span class="no">[1815]</span>
+    <a class="thread-title" href="#1815">Re2:インストーラのキーワードファイルについて</a>
+    <span class="author">syat</span>
+    <time datetime="2012-05-30T07:03:11">2012年05月30日 07:03</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; ▼ syatさん<br>&gt; 圧縮してまとめたのは、そうしないと次のように各ファイルの属性が変わるから、という理由からでした。<br>&gt; <br>&gt; ・タイムスタンプが変更される（&gt;&gt;unicode:1755）<br>&gt; ・改行コードが変更されてしまいファイルサイズも変わる（&gt;&gt;unicode:1754）<br><br>なるほど。<br>古いファイルは1999年などあるので、ライセンスを確認するのはつらいかな…。<br><br>テクニカルに回避するなら、改行コードは各ファイルのSVNプロパティで改行コードを指定できます。<br>タイムスタンプを合わせるのはかなり面倒ですが、リビジョンのプロパティで指定できないこともないです。<br>具体的には、以下のようです。<br>・キーワードファイルを１ファイルずつコミット<br>・リビジョンのプロパティで過去日付を設定<br>・インストーラを作成するときは、TortoiseSVNの設定で「ファイルの更新日時を最後にコミットした日時に設定する」にチェックを入れて、チェックアウトor更新する<br><br>日付の変更は、Cソースだとビルドに影響しますが、キーワードファイルはとくに問題ないかなと思います。<br>時間があるとき試してみたいと思います<br></div></section>
+    <ul><li><section><h1 id=1819>
+    <span class="no">[1819]</span>
+    <a class="thread-title" href="#1819">Re3:インストーラのキーワードファイルについて</a>
+    <span class="author">syat</span>
+    <time datetime="2012-06-03T16:29:29">2012年06月03日 16:29</time></h1>
+    <div class="body">&gt; タイムスタンプを合わせるのはかなり面倒ですが、リビジョンのプロパティで指定できないこともないです。<br>&gt; 具体的には、以下のようです。<br>&gt; ・キーワードファイルを１ファイルずつコミット<br>&gt; ・リビジョンのプロパティで過去日付を設定<br>&gt; ・インストーラを作成するときは、TortoiseSVNの設定で「ファイルの更新日時を最後にコミットした日時に設定する」にチェックを入れて、チェックアウトor更新する<br>&gt; <br>&gt; 日付の変更は、Cソースだとビルドに影響しますが、キーワードファイルはとくに問題ないかなと思います。<br>&gt; 時間があるとき試してみたいと思います<br><br>時間があったので３時間ほどかけて１ファイルずつコミットし、リビジョン日時を設定してみました。<br>が、最後に改行コード属性を設定したら全ファイル最新日時になりやがりましたよ・・・<br>休日が・・・orz<br><br>こういうときSVNは決して後戻りできないですね。リポジトリ汚してすみません。。。<br>おそらくSVNと固定時刻は非常に相性が悪いので、あらかじめ一覧で記憶した時刻をファイルに設定するようなスクリプトなりツールを用意して、インストーラを作る前に走らせればよいんじゃないかと思いました。<br></div></section>
+    <ul><li><section><h1 id=1820>
+    <span class="no">[1820]</span>
+    <a class="thread-title" href="#1820">Re4:インストーラのキーワードファイルについて</a>
+    <span class="author">syat</span>
+    <time datetime="2012-06-03T21:34:45">2012年06月03日 21:34</time></h1>
+    <div class="body">現在のinstaller\trunk2の状況は以下です。<br><br>・アーカイブを展開した状態でコミット<br>・アーカイブは残してある<br>・sakura\keyword配下をタイプ毎にフォルダ分け<br>・keyword以下を再帰的に検索するようsakura.issを修正<br>・keyword以下のファイルの更新日時を復元するスクリプトを追加<br><br>インストーラを作成する際の注意ですが、<br>・TortoiseSVNの設定で、ファイルの更新日時を「最後にコミットした日時」に設定する、にチェックが入っていることを確認してください。<br>・チェックアウトしたら、trunk2直下にある set_time.js を右クリックで「開く」してください。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

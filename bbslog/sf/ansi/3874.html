@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>【パッチ】ウィンドウ幅へドキュメント追従 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3874</span>
+    <a class="thread-title" href="3874.html#3874">【パッチ】ウィンドウ幅へドキュメント追従</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4148</span>
+    <a class="thread-title" href="3874.html#4148">Re:【パッチ】ウィンドウ幅へドキュメント追従</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4149</span>
+    <a class="thread-title" href="3874.html#4149">Re:【パッチ】ウィンドウ幅へドキュメント追従</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3874>
+    <span class="no">[3874]</span>
+    <a class="thread-title" href="#3874">【パッチ】ウィンドウ幅へドキュメント追従</a>
+    <span class="author">seclan</span>
+    <time datetime="2005-03-12T22:12:55">2005年03月12日 22:12</time></h1>
+    <div class="body">　ウィンドウをリサイズするとその大きさにドキュメント幅も追従するパッチを作ってみました。パッチの内容は以下のとおりです。<br>* ウィンドウ幅へドキュメント追従<br>* 折り返し文字数を Types ごとではなくドキュメントごとに<br>* ドキュメント幅変更中に入力された文字を後でundoすると落ちるオリジナルのバグ(?)に対する対応<br><br>設定は次からどうぞ<br>*タイプ別設定-スクリーン-ウィンドウ幅ドキュメント追従<br>*共通設定-ウィンドウ-ウィンドウ幅ドキュメント追従 <br><br>パッチ＆お試し用バイナリ: <a href=http://seclan.dll.jp/sakura/ target=_top><nobr>http://<wbr>seclan.<wbr>dll.<wbr>jp/<wbr>sakura/<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=4148>
+    <span class="no">[4148]</span>
+    <a class="thread-title" href="#4148">Re:【パッチ】ウィンドウ幅へドキュメント追従</a>
+    <span class="author">seclan</span>
+    <time datetime="2005-11-17T21:38:32">2005年11月17日 21:38</time></h1>
+    <div class="body">保存に異常に時間がかかる問題が解決されました。<br>&gt;&gt;dev:4145 で言及されている問題と同じかもしれませんが、<br>Debug build で作成するとそうなるようです。<br>お試しバイナリを Release build のものに差し替えました。<br><br>あと作者特製の vz ライクなキーバインドの sakura.ini の<br>部分ファイルを置きましたので、すぐテストできるようになりました。<br><br><a href=http://seclan.dll.jp/sakura/ target=_top><nobr>http://<wbr>seclan.<wbr>dll.<wbr>jp/<wbr>sakura/<wbr></nobr></a><br></div></section>
+    </li><li><section><h1 id=4149>
+    <span class="no">[4149]</span>
+    <a class="thread-title" href="#4149">Re:【パッチ】ウィンドウ幅へドキュメント追従</a>
+    <span class="author">ryoji</span>
+    <time datetime="2005-11-18T10:29:39">2005年11月18日 10:29</time></h1>
+    <div class="body">▼ seclanさん<br>1.5.8.0 の「折り返し幅変更トグル機能」で自分はほぼ満足しているのですが、<br>このうえ自動追従を追加してくださるというのであれば、要望があります。<br><br>１．設定画面<br>共通設定：「現在のウィンドウ幅で折り返し」は自動折り返し（チェックボックス）<br>タイプ別設定：初期表示は現在のウィンドウ幅で折り返し（チェックボックス）<br>というような構成にしてほしいです。<br>タイプ別設定のほうは自分としては今のところ使う可能性が少ないですが、<br>共通設定のほうは、こういう設定なら使う可能性があります。<br><br>２．追従動作<br>追従するならサイズ変更中も自動折り返ししてほしいです。<br>ここでちょうどいい、っていうレイアウトのところでサイズ変更を<br>終わりにしたいからです。サイズ変更が終わってから変更する<br>のだと、更に微調整するのが面倒かな～、と。<br>動作速度は、メモ帳よりも速ければまぁいいか、と思います。<br></div></section>
+    </li></ul></li></ul></body></html>

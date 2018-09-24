@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>印刷プレビューでメモリリーク？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2111</span>
+    <a class="thread-title" href="2111.html#2111">印刷プレビューでメモリリーク？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2113</span>
+    <a class="thread-title" href="2111.html#2113">Re: 印刷プレビューでメモリリーク？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2116</span>
+    <a class="thread-title" href="2111.html#2116">Re2: 印刷プレビューでメモリリーク？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2111>
+    <span class="no">[2111]</span>
+    <a class="thread-title" href="#2111">印刷プレビューでメモリリーク？</a>
+    <span class="author">novice</span>
+    <time datetime="2014-02-06T23:09:23">2014年02月06日 23:09</time></h1>
+    <div class="body">r3604で下記動作を行うと、メモリリークを検出しました。<br>(1)適当なファイルを印刷プレビュー<br>(2)ページ設定からカラー印刷をチェックする<br>(3)印刷プレビューを終了後、サクラエディタを終了<br>(4)..\sakura_core\doc\layout\CLayoutMgr.cpp(364)で検出。<br><br>メモリリークを検出するには、USE_LEAK_CHECK_WITH_CRTDBGの定義を有効にしてコンパイルする必要があります。<br></div></section>
+    <ul><li><section><h1 id=2113>
+    <span class="no">[2113]</span>
+    <a class="thread-title" href="#2113">Re: 印刷プレビューでメモリリーク？</a>
+    <span class="author">もか</span>
+    <time datetime="2014-02-07T00:40:46">2014年02月07日 00:40</time></h1>
+    <div class="body">これは大発見ですね。<br>カラーかどうかは関係なくて、設定変更するとCLayoutが丸々リークするみたいです。<br>はるか昔からリークしてる可能性が。<br><br>CPrintPreview::OnChangePrintSetting()<br>m_pLayoutMgr_Print-&gt;Create()<br>で、CLayoutMgr::Create()は、Init()してるけどその前に_Empty()していないので。<br></div></section>
+    <ul><li><section><h1 id=2116>
+    <span class="no">[2116]</span>
+    <a class="thread-title" href="#2116">Re2: 印刷プレビューでメモリリーク？</a>
+    <span class="author">novice</span>
+    <time datetime="2014-02-07T21:51:37">2014年02月07日 21:51</time></h1>
+    <div class="body">▼ もかさん<br>&gt; はるか昔からリークしてる可能性が。<br><br>r215でCPrintPreview.cppが追加されているのですが、同様の構成でした。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

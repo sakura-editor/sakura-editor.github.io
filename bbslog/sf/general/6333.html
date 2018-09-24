@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>半角文字をクリックした時のカーソル位置 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6333</span>
+    <a class="thread-title" href="6333.html#6333">半角文字をクリックした時のカーソル位置</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=6333>
+    <span class="no">[6333]</span>
+    <a class="thread-title" href="#6333">半角文字をクリックした時のカーソル位置</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2007-09-25T23:06:34">2007年09月25日 23:06</time></h1>
+    <div class="body">こんにちは。<br>最近サクラエディタに移ってきて便利に使わせて頂いております m(_ _)m<br><br>殆ど満足なのですが、1点、半角文字をクリックした時のカーソル位置の決まり方に違和感があります。<br><br>サクラエディタの場合、例えば"ABC"という文字列の"B"のどの位置をクリックしても"B"の左側にカーソルが移動します。<br>秀丸やNotepadの場合、"B"の中心あたりに切れ目があり挙動が変わります。（"B"の右半分の位置をクリックすると"B"の右側にカーソルが移動します）<br>K2Editorの場合、文字の右端から数ドット左に切れ目があります。<br><br>全角文字とTAB文字は、サクラエディタでも文字の中心に切れ目があります。<br>秀丸やNotepadも同様に文字の中心に切れ目があります。<br>K2Editorは、やはり文字の右端から数ドット左に切れ目があります。<br><br>文字の間をアバウトにクリックすると、自分の思惑とは違う位置にカーソルが行ってしまうことがあるため、できれば全角文字と同様文字の中心に切れ目を持ってきて欲しいです。<br><br>一応 ssrc_2007-07-08.tar.bz2 をダウンロードして覗いてみて、CEditView.cpp の MoveCursorToPoint() でできるのではないかと思い修正を考えてみました。<br><br>（修正前）<br>3076～3078行目<br>　　if (nNewX &gt;= (pcLayout ? pcLayout-&gt;GetIndent() : 0) &amp;&amp; (it.getColumnDelta() &gt; 1) &amp;&amp; ((it.getColumn() + it.getColumnDelta() - nNewX) &lt;= it.getColumnDelta() / 2)){<br>　　　　nPosX += it.getColumnDelta();<br>　　}<br><br>（修正その１）<br>　　if (nNewX &gt;= (pcLayout ? pcLayout-&gt;GetIndent() : 0) &amp;&amp;<br>　　　　((it.getColumnDelta() &gt; 1) &amp;&amp; ((it.getColumn() + it.getColumnDelta() - nNewX) &lt;= it.getColumnDelta() / 2)) ||<br>　　　　((it.getColumnDelta() == 1) &amp;&amp; (((xPos - m_nViewAlignLeft) % ( m_nCharWidth + m_pcEditDoc-&gt;GetDocumentAttribute().m_nC<br>olmSpace )) &gt; (m_nCharWidth / 2))))<br>　　{<br>　　　　nPosX += it.getColumnDelta();<br>　　}<br><br>（修正その２）<br>　　if (nNewX &gt;= (pcLayout ? pcLayout-&gt;GetIndent() : 0) &amp;&amp; it.getColumnDelta()){<br>　　　　int w = m_nCharWidth + m_pcEditDoc-&gt;GetDocumentAttribute().m_nC<br>olmSpace;<br><br>　　　　if((((xPos - m_nViewAlignLeft) - (w * it.getColumn())) * 2) &gt; (w * it.getColumnDelta()))<br>　　　　　　nPosX += it.getColumnDelta();<br>　　}<br><br>こんな感じですが、どうでしょうか？<br>自分で試せば良いのですが、開発環境を入れるPCを準備しないといけないので暫く先になってしまいます。<br><br>ではでは。</div></section>
+    </li></ul></body></html>

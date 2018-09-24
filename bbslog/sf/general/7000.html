@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>クリッカブルを有効にしたい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7000</span>
+    <a class="thread-title" href="7000.html#7000">クリッカブルを有効にしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7001</span>
+    <a class="thread-title" href="7000.html#7001">Re:クリッカブルを有効にしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7005</span>
+    <a class="thread-title" href="7000.html#7005">Re2:クリッカブルを有効にしたい</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7000>
+    <span class="no">[7000]</span>
+    <a class="thread-title" href="#7000">クリッカブルを有効にしたい</a>
+    <span class="author">じゅん</span>
+    <time datetime="2009-07-25T20:45:39">2009年07月25日 20:45</time></h1>
+    <div class="body">●[やりたいこと]<br>サクラエディタのクリッカブルで全角・空白が含まれていても、ダブルクリックでパソコンに保存されたファイルを開きたいです。<br><br>●[環境]<br>WindowsXP Pro SP3<br>サクラエディタ　ver1.6.4.0<br><br>●[現在までにやったこと]<br>(1)file://フルパス(半角英数字)<br>　(ex)file://C:\abc\test.txt<br>(2)file://フルパス(全角・空白がフルパスに含まれる)<br>　(ex)file://C:\abc\テスト.txt<br>　(ex)file://C:\abc\te st.txt<br><br>(1)は文字をダブルクリックすると関連付けでファイルが開く。<br>(2)はクリッカブルが動作しない。フルパスに全角や空白が含まれているとその文字以降は文字色がURLの文字色ではなく、テキストの文字色になる。<br>(2)で、さらに試したこととして、正規キーワードでURLと同じ文字色にすることには成功したが、クリッカブルは動作しない。<br><br>上記(2)でもクリッカブルを有効にできるか教えてください。<br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=7001>
+    <span class="no">[7001]</span>
+    <a class="thread-title" href="#7001">Re:クリッカブルを有効にしたい</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-07-25T21:22:08">2009年07月25日 21:22</time></h1>
+    <div class="body">▼ じゅんさん<br>&gt; (2)で、さらに試したこととして、正規キーワードでURLと同じ文字色にすることには成功したが、クリッカブルは動作しない。<br>最新のUNICODE版（&gt;&gt;data:6996）では正規表現キーワードで色指定をURLに指定したものがクリッカブル動作するようになっています。<br>UNICODE版を使用する場合は、正規表現DLLのbregonig.dllもUNICODE版が必要になります。</div></section>
+    <ul><li><section><h1 id=7005>
+    <span class="no">[7005]</span>
+    <a class="thread-title" href="#7005">Re2:クリッカブルを有効にしたい</a>
+    <span class="author">じゅん</span>
+    <time datetime="2009-07-26T11:07:07">2009年07月26日 11:07</time></h1>
+    <div class="body">▼ ryojiさん<br>教えて頂きありがとうございました。<br>教えて頂いた事を加えて以下のようにしたら、全角・空白が含まれている「file://…」をクリックして、ファイルを起動することができるようになりました。<br>ありがとうございました。<br><br>・サクラエディタ　UNICODE版　v1601の導入<br>・正規表現DLLのbregonig.dllの導入<br>・正規表現キーワードで「m#.:.*[^\r\n]#k」にして「URL色」で指定。<br><br>&gt; ▼ じゅんさん<br>&gt; &gt; (2)で、さらに試したこととして、正規キーワードでURLと同じ文字色にすることには成功したが、クリッカブルは動作しない。<br>&gt; 最新のUNICODE版（&gt;&gt;data:6996）では正規表現キーワードで色指定をURLに指定したものがクリッカブル動作するようになっています。<br>&gt; UNICODE版を使用する場合は、正規表現DLLのbregonig.dllもUNICODE版が必要になります。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

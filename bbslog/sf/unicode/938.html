@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Imp) 空白記号の表示機能デグレード修復・改善 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">938</span>
+    <a class="thread-title" href="938.html#938">Commit報告:(Imp) 空白記号の表示機能デグレード修復・改善</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=938>
+    <span class="no">[938]</span>
+    <a class="thread-title" href="#938">Commit報告:(Imp) 空白記号の表示機能デグレード修復・改善</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-05-30T15:28:21">2009年05月30日 15:28</time></h1>
+    <div class="body">リビジョン：<br>　rev1578<br><br>変更種別：<br>　改善<br><br>内容：<br>Imp: 空白記号（半角・全角空白、タブ、改行）の表示機能デグレード修復・改善<br><br>検索文字列に太字や下線を指定してあっても、文字列内に含まれる空白記号に太字や下線が反映されないなどの問題修正、およびこういったケース（正規表現キーワードなどを含む）への対応方法の改善です。<br><br>空白記号類は特に明示指定した部分以外はなるべく周辺の指定に合わせるようにしています。<br>例えば、空白記号に下線を指定していない場合には、それが正規表現キーワード内なら正規表現キーワード側の下線指定に従う、というようにしています。<br><br>細部調整的なものなので普通に使用している分には、従来と変わっていることにあまり気がつかないかもしれません。<br>優先順位詳細は CFigureSpace::DrawImp() のコードに集約されています。</div></section>
+    </li></ul></body></html>

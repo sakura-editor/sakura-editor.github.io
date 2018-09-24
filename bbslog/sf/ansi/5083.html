@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>VS2003/2005エディタ互換の行コピー&amp;行貼り付け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5083</span>
+    <a class="thread-title" href="5083.html#5083">VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5104</span>
+    <a class="thread-title" href="5083.html#5104">Re:VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5105</span>
+    <a class="thread-title" href="5083.html#5105">Re2:VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5142</span>
+    <a class="thread-title" href="5083.html#5142">Re3:VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5143</span>
+    <a class="thread-title" href="5083.html#5143">Re4:VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5144</span>
+    <a class="thread-title" href="5083.html#5144">Re5:VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5083>
+    <span class="no">[5083]</span>
+    <a class="thread-title" href="#5083">VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-10-04T22:54:13">2007年10月04日 22:54</time></h1>
+    <div class="body">Patches#1807523に提案としてUPしておきました。<br>ちょっとした仕様変更の提案なので、こちらにもアナウンスしておきます。<br>タイトルだけで察しがつく人もいるかと思いますが、以下、動作説明です。<br><br>【変更内容】<br>何も選択しないでコピー操作をすると行コピー（現行通り）、<br>上記操作でコピーしたものについて貼り付け操作を行うと、<br>キャレット位置に関係なく、行貼り付けになります。<br>（キャレットのある行の前の行として貼り付く）<br><br>VS2003/2005のエディタで上記と同じように行コピーしたものも、sakuraで行貼り付けになります。その逆もできます。<br>その他のエディタでも同じ形式をサポートしていれば、相互動作可能だと思います。自分はそういうエディタをまだ見たことが無いので、ご存知の方がいれば教えてください。テストしてみたいと思います。<br><br>＃行を選択してコピーした場合の動作は従来どおりです<br></div></section>
+    <ul><li><section><h1 id=5104>
+    <span class="no">[5104]</span>
+    <a class="thread-title" href="#5104">Re:VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-10-09T01:10:46">2007年10月09日 01:10</time></h1>
+    <div class="body">&gt; VS2003/2005のエディタで上記と同じように行コピーしたものも、sakuraで行貼り付けになります。その逆もできます。<br>VC6でも[ラインモード貼り付けを可能にする]オプションをONにすれば行貼り付けができたんですね～。長いこと使っていたのに気付きませんでした。</div></section>
+    <ul><li><section><h1 id=5105>
+    <span class="no">[5105]</span>
+    <a class="thread-title" href="#5105">Re2:VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-10-09T22:26:02">2007年10月09日 22:26</time></h1>
+    <div class="body">&gt; VC6でも[ラインモード貼り付けを可能にする]オプションをONにすれば行貼り付けができたんですね～。<br>Patches#1807523にも同じオプションを追加してみました。</div></section>
+    <ul><li><section><h1 id=5142>
+    <span class="no">[5142]</span>
+    <a class="thread-title" href="#5142">Re3:VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-27T01:14:40">2007年10月27日 01:14</time></h1>
+    <div class="body">▼ ryojiさん<br>ラインモードの行コピーをしたあと、範囲選択してから貼り付けすると、選択範囲の削除＆１行上に挿入という動作になりますが、これはこういう仕様なんでしょうか？<br></div></section>
+    <ul><li><section><h1 id=5143>
+    <span class="no">[5143]</span>
+    <a class="thread-title" href="#5143">Re4:VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-10-27T02:33:28">2007年10月27日 02:33</time></h1>
+    <div class="body">▼ maruさん<br>&gt; ラインモードの行コピーをしたあと、範囲選択してから貼り付けすると、選択範囲の削除＆１行上に挿入という動作になりますが、これはこういう仕様なんでしょうか？<br>そうです。<br>そのあたりの挙動に関しては、いちいちどうしようか考えるのも面倒なので、VS2005のエディタで同様な操作をしてみて、それになるべく合わせるようにしてあります。<br>＃VC6ではちょっと違ってて、選択範囲と置き換えになるみたいですね。</div></section>
+    <ul><li><section><h1 id=5144>
+    <span class="no">[5144]</span>
+    <a class="thread-title" href="#5144">Re5:VS2003/2005エディタ互換の行コピー&amp;行貼り付け</a>
+    <span class="author">maru</span>
+    <time datetime="2007-10-27T11:55:34">2007年10月27日 11:55</time></h1>
+    <div class="body">&gt;VS2005のエディタで同様な操作をしてみて、それになるべく合わせるようにしてあります。<br>&gt;＃VC6ではちょっと違ってて、選択範囲と置き換えになるみたいですね。<br>了解しました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

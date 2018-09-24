@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>日本語入力時の... | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2804</span>
+    <a class="thread-title" href="2804.html#2804">日本語入力時の...</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2832</span>
+    <a class="thread-title" href="2804.html#2832">Re:日本語入力時の...</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2833</span>
+    <a class="thread-title" href="2804.html#2833">Re2:日本語入力時の... </a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2804>
+    <span class="no">[2804]</span>
+    <a class="thread-title" href="#2804">日本語入力時の...</a>
+    <span class="author">みく</span>
+    <time datetime="2003-03-10T19:10:54">2003年03月10日 19:10</time></h1>
+    <div class="body"><br>未確定文字の表示位置がずれることがあります。<br>2行下に表示(桁位置は正しい)されました。<br><br>再現しないのでよくわからないですが、一応報告しときます。<br></div></section>
+    <ul><li><section><h1 id=2832>
+    <span class="no">[2832]</span>
+    <a class="thread-title" href="#2832">Re:日本語入力時の...</a>
+    <span class="author">なん</span>
+    <time datetime="2003-03-25T23:11:30">2003年03月25日 23:11</time></h1>
+    <div class="body">▼ みくさん<br>&gt; <br>&gt; 未確定文字の表示位置がずれることがあります。<br>&gt; 2行下に表示(桁位置は正しい)されました。<br>&gt; <br>&gt; 再現しないのでよくわからないですが、一応報告しときます。<br><br>はじめまして、なんと申します。<br>いつもサクラエディタを利用させていただいています。<br>私もこの現象が起きたことがあるので報告します。<br>マウスのホイールを下に回した後に文字を入力するとなるようです。<br>WindowsNT4.0sp6aで、IME97か98です。<br>Win2K＋IME2002では、起きないようですが、<br>いかがでしょうか？<br></div></section>
+    <ul><li><section><h1 id=2833>
+    <span class="no">[2833]</span>
+    <a class="thread-title" href="#2833">Re2:日本語入力時の... </a>
+    <span class="author">すい</span>
+    <time datetime="2003-03-26T01:53:24">2003年03月26日 01:53</time></h1>
+    <div class="body">&gt;&gt; 未確定文字の表示位置がずれることがあります。<br>&gt;&gt; 2行下に表示(桁位置は正しい)されました。<br>&gt;&gt; <br>&gt;&gt; 再現しないのでよくわからないですが、一応報告しときます。<br>&gt;<br>&gt;マウスのホイールを下に回した後に文字を入力するとなるようです。<br>&gt;WindowsNT4.0sp6aで、IME97か98です。<br>&gt;Win2K＋IME2002では、起きないようですが、<br><br>私も意図的に(おそらく何処の環境でも)発生させる事が出来たりします。(爆)<br>ちょっと再現手順が特殊なので参考にならないかもしれませんが。<br><br>ちょっと前に X-Mouse を自作していまして。<br># Windows 98/2000 標準機能の X-Mouse だとマウスポインタが勝手に<br># アクティブなウィンドウ位置へ飛んでいってしまうので使い物に<br># ならないから (;^^;)<br># <br>で、その開発途中において、サクラエディタのクラス名 EditorClient の<br>ウィンドウハンドルに対して SetForegroundWindow すると、この現象が<br>発生しますね。その後、エディタの編集画面をマウスでクリックすると、<br>きちんとカーソル位置に未確定文字が表示されるように戻ります。<br><br>もちろんサクラエディタのウィンドウの一番親のウィンドウハンドル<br>TextEditorWindow に対して SetForegroundWindow した場合には<br>発生しません。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

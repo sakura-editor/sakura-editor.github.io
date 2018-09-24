@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>セミコロンを強調表示する方法がわからないのです | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4456</span>
+    <a class="thread-title" href="4456.html#4456">セミコロンを強調表示する方法がわからないのです</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4459</span>
+    <a class="thread-title" href="4456.html#4459">Re:セミコロンを強調表示する方法がわからないのです</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4464</span>
+    <a class="thread-title" href="4456.html#4464">Re2:セミコロンを強調表示する方法がわからないのです</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4456>
+    <span class="no">[4456]</span>
+    <a class="thread-title" href="#4456">セミコロンを強調表示する方法がわからないのです</a>
+    <span class="author">さいきゆみ</span>
+    <time datetime="2005-05-15T18:15:19">2005年05月15日 18:15</time></h1>
+    <div class="body">いつも無料で愛用させていただき感謝しています。<br>名前もアイコンもかわいいから好きです。<br><br>プログラムの初心者で;をよく忘れたりしますので、なんとか;を強調できないかと設定を見るのですが、<br>；は認識できないのでしょうか？<br><br>とっても簡単なことだと（作れないのに）思うのですが。<br><br>今は検索をかけて強調しておりますが、なんかめんどうくさいのです。<br><br>今のところサクラへの不満はそれだけでございます。<br>検索してもないってことは無理ってころですか？<br><br>マクロで登録とかできないでしょうか？</div></section>
+    <ul><li><section><h1 id=4459>
+    <span class="no">[4459]</span>
+    <a class="thread-title" href="#4459">Re:セミコロンを強調表示する方法がわからないのです</a>
+    <span class="author">かて</span>
+    <time datetime="2005-05-16T09:15:54">2005年05月16日 09:15</time></h1>
+    <div class="body">&gt; プログラムの初心者で;をよく忘れたりしますので、なんとか;を強調できないかと設定を見るのですが、<br>&gt; ；は認識できないのでしょうか？<br><br>「タイプ別設定」の「正規表現キーワード」タブを選択し、正規表現のところに<br>/;/k<br>を追加して、適当な色指定を選択。<br>「タイプ別設定」の「カラー」タブで、さっきの色指定を有効にして色を変えれば出来ないですか？<br><br>おそらく、行末の；を認識したいんでしょうけど、スペースやらタブやらコメントやらが入ると正規表現がややこしくなるので<br>今回は単純に。<br><br><br>ちなみに、私は正規表現を<br>/[!$-\.:-@[-^`{-~]/k<br>にして、<br>,()[]{}+-*/=<br>などの半角記号類をまとめて青色に指定してます。<br><br>半角記号はデフォルトで色設定があっても良いと思いますがいかがでしょう？＞開発してる方々<br></div></section>
+    <ul><li><section><h1 id=4464>
+    <span class="no">[4464]</span>
+    <a class="thread-title" href="#4464">Re2:セミコロンを強調表示する方法がわからないのです</a>
+    <span class="author">さいきゆみ</span>
+    <time datetime="2005-05-19T14:09:34">2005年05月19日 14:09</time></h1>
+    <div class="body">正規表現という言葉もよくわかっていないので、まったく気がつきませんでした。<br>色が正規表現キーワードを使うが基本と同じ色になっていたためすぐにはできませんでしたが、それに気がついて今できました。<br>たったこれだけのことがとっても便利になりました。<br>ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

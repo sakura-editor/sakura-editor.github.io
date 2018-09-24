@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>複数の単語で単語検索(色分け)を手軽に行うマクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">563</span>
+    <a class="thread-title" href="563.html#563">複数の単語で単語検索(色分け)を手軽に行うマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">589</span>
+    <a class="thread-title" href="563.html#589">Re:複数の単語で単語検索(色分け)を手軽に行うマクロ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=563>
+    <span class="no">[563]</span>
+    <a class="thread-title" href="#563">複数の単語で単語検索(色分け)を手軽に行うマクロ</a>
+    <span class="author">SNK</span>
+    <time datetime="2013-02-27T02:31:20">2013年02月27日 02:31</time></h1>
+    <div class="body">最近のサクラエディタって、検索にて単語検索をオンにすると、<br>複数の単語を検索できて、しかも色分けまでしてくれるんですね。<br>なかなか便利ですが、あまり知られていないような。<br><br>そこで、<br>「次々と単語を追加しながら単語検索」<br>するマクロを書いてみました。<br><br>Ctrl+ダブルクリックに割り当てると便利です。<br>次次と単語別に色分けハイライトできます。<br>プログラミングとかで便利かも。<br><br>SearchWordsPlus.js  ( Ctrl+ダブルクリックに割り当てると便利)<br>-----------------------------------<br>var strSel ;<br>var strClp ; <br><br>//Editor.SelectWord() ; <br>   //&lt;- マクロを Ctrl+ダブルクリックにアサインした場合、<br>   //   Ctrl+右クリック時点で既に単語選択されているため除外。<br>strSel = Editor.GetSelectedString();<br><br>strClp = Editor.GetClipboard(0);<br>strSch = strClp + " " + strSel;<br>Editor.SetClipboard( 0, strSch ); <br>    //&lt;-  次回の呼び出された時のために<br>    //    検索キーをクリップボードに保持しておく<br><br>Editor.Left();<br>Editor.SearchNext( strSch, 57 );<br>-----------------------------------<br><br><br>このマクロの難点は、前の検索文字列を取得するためにクリップボードを使っている点です。<br>もしも、「最後に行った検索文字列を取得するマクロ関数」みたいなの<br>が用意されていれば、もっと使いやすくなるのですが。。。<br>ExpandParameter()とかで出来ない？<br>それか、どなたかが改良していただけると助かります。<br><br>次の話題が関係します。<br>・[506] Re:検索文字列にアクセスできますか？<br>・[Macro/投稿/116] ダブルクリックして選択範囲と同じ単語をハイライト<br>   <a href=http://sakura.qp.land.to/?Macro%2F%C5%EA%B9%C6%2F116 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Macro%<wbr>2F%<wbr>C5%<wbr>EA%<wbr>B9%<wbr>C6%<wbr>2F116</nobr></a><br><br>(2013/3/24 タイトルと文章がわかりづらかったので修正しました ) <br></div></section>
+    <ul><li><section><h1 id=589>
+    <span class="no">[589]</span>
+    <a class="thread-title" href="#589">Re:複数の単語で単語検索(色分け)を手軽に行うマクロ</a>
+    <span class="author">SNK</span>
+    <time datetime="2014-12-05T00:38:52">2014年12月05日 00:38</time></h1>
+    <div class="body">投稿[588]に改良版を投稿しました。<br>サクラエディタ2.0.6以降の方は乗り換えてください。<br>こちらの旧版は、クリップボードを強引に使用しているので<br>お勧めしません。<br></div></section>
+    </li></ul></li></ul></body></html>

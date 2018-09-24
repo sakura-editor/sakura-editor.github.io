@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>.NET 2003 外部ツール連携 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4776</span>
+    <a class="thread-title" href="4776.html#4776">.NET 2003 外部ツール連携</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4782</span>
+    <a class="thread-title" href="4776.html#4782">Re: .NET 2003 外部ツール連携</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4784</span>
+    <a class="thread-title" href="4776.html#4784">Re2: .NET 2003 外部ツール連携</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4804</span>
+    <a class="thread-title" href="4776.html#4804">Re3: .NET 2003 外部ツール連携</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4807</span>
+    <a class="thread-title" href="4776.html#4807">Re4: .NET 2003 外部ツール連携</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4776>
+    <span class="no">[4776]</span>
+    <a class="thread-title" href="#4776">.NET 2003 外部ツール連携</a>
+    <span class="author">bName</span>
+    <time datetime="2005-11-02T19:09:57">2005年11月02日 19:09</time></h1>
+    <div class="body">サクラエディタ Ver.1.5.7.2<br><br>VisualStudio.NET2003(v.7.1.3091) で外部ツールにサクラエディタを登録し<br>ファイルを開こうとすると正常に開けません。<br><br>・設定<br>　　外部ツール<br>　　　　タイトル　　　　　　サクラエディタで開く<br>　　　　コマンド　　　　　　C:\Program Files\sakura\sakura.exe<br>　　　　引数　　　　　　　　-Y=$(CurLine) $(ItemFileName)$(ItemExt)<br>　　　　初期ディレクトリ　　$(ItemDir)<br><br>と設定します。<br>そして実際に 「C:\aaa\xxx.cpp」をVC上からサクラエディタで開こうとすると<br>「C:\aaa\xxx.cp というファイルは存在しません。ファイルを保存したときに、ディスク上にこのファイルが作成されます。」<br>等のメッセージが表示され、ファイルを開く事ができませんでした。<br>（ファイル名の最後の文字が1～3文字なくなってるようです）<br><br>そこで少し調べたのですが、VC側が引数として与える文字列に原因がある？、<br>上記の設定で実際にサクラエディタ側に渡される引数は <br>-Y="50" "xxx.cpp<br>となっており、最後のダブルクォーテーションが抜けていました。<br>(引数は WinMain の lpCmdLine を表示しました)<br><br>そこでWinMainの引数をいじって<br><br>　　process = aFactory.Create( hInstance, lpCmdLine );<br> <br>　　↓<br><br>　　char tmp[1024];<br>　　strcpy(tmp, lpCmdLine);<br>　　TCHAR *pTmp = NULL;<br>　　do {<br>　　　　pTmp = strchr(tmp, '"');<br>　　　　while (pTmp &amp;&amp; *pTmp) {<br>　　　　　　*pTmp = *(pTmp+1);<br>　　　　　　pTmp++;<br>　　　　}<br>　　} while (pTmp);<br>　　process = aFactory.Create( hInstance, tmp );<br><br>ように変更し、ダブルクォーテーションをすべて除去したらファイルを正常に開けました。<br>サクラエディタのバグではないのかもしれませんが、何かの形で対応して頂けたら嬉しいです。<br><br><br>以上よろしくお願いします。<br><br><br></div></section>
+    <ul><li><section><h1 id=4782>
+    <span class="no">[4782]</span>
+    <a class="thread-title" href="#4782">Re: .NET 2003 外部ツール連携</a>
+    <span class="author">もか</span>
+    <time datetime="2005-11-04T00:01:18">2005年11月04日 00:01</time></h1>
+    <div class="body">VS.NET 2003のバグでしょうけど、サクラエディタも変ですね。<br>ちなみに<br>「-Y=$(CurLine) $(ItemPath)""」<br>と書くと、<br>「-Y="50" "D:\dir\filename.cpp"」<br>として渡されるようです。<br></div></section>
+    <ul><li><section><h1 id=4784>
+    <span class="no">[4784]</span>
+    <a class="thread-title" href="#4784">Re2: .NET 2003 外部ツール連携</a>
+    <span class="author">bName</span>
+    <time datetime="2005-11-04T12:10:31">2005年11月04日 12:10</time></h1>
+    <div class="body">もかさんの記述とおり設定の最後に「""」を追加したら<br>正常に動作しました。<br><br>自前で改造したコードだと色々弊害があるようなので<br>（grepのダイレクトジャンプ等での挙動が変ぽい？）<br>とりあえず、最後に「""」を追加する方法で対処したいと思います。<br><br>情報ありがとうございました。<br></div></section>
+    <ul><li><section><h1 id=4804>
+    <span class="no">[4804]</span>
+    <a class="thread-title" href="#4804">Re3: .NET 2003 外部ツール連携</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-11-05T01:19:41">2005年11月05日 01:19</time></h1>
+    <div class="body">引用符が閉じられていない場合にファイル名の末尾が欠けてしまうようです．<br>これは引用符で始まっていたら最後の1文字も引用符に違いないと勝手に思って最後の1文字を捨ててしまうからです．<br>次回修正予定です．<br></div></section>
+    <ul><li><section><h1 id=4807>
+    <span class="no">[4807]</span>
+    <a class="thread-title" href="#4807">Re4: .NET 2003 外部ツール連携</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-11-05T11:08:10">2005年11月05日 11:08</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 次回修正予定です．<br><br>せっかちじゃないけど、次がないので。まとめ、<br><br>案１：<br>変更前：<br>OK "My Doc　→　My Do ？or　M ？<br>NG My Do"<br><br>変更後：<br>NG "My Do<br>NG My Do"<br><br>＜＜「上記のファイル名は無効です。」＞＞<br>先頭が「"」で、末尾が「"」でなければ、エラーにする。（普通はこれ）<br><br>案２:基底クラス：<br>先頭が「"」で、末尾が「"」でなければ、末尾に「"」を補う。<br>案２の案１：<br>末尾が「"」で、先頭が「"」でなければ、エラーにする。（.NET 2003対応）<br>案２の案２：<br>末尾が「"」で、先頭が「"」でなければ、先頭に「"」を補う。(桜的蝶親切)<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

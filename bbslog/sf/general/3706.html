@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>関係ない行が行番号(変更行)の色になる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3706</span>
+    <a class="thread-title" href="3706.html#3706">関係ない行が行番号(変更行)の色になる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3751</span>
+    <a class="thread-title" href="3706.html#3751">RE: 関係ない行が行番号(変更行)の色になる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3817</span>
+    <a class="thread-title" href="3706.html#3817">Re2: 関係ない行が行番号(変更行)の色になる</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3706>
+    <span class="no">[3706]</span>
+    <a class="thread-title" href="#3706">関係ない行が行番号(変更行)の色になる</a>
+    <span class="author">まってぃ</span>
+    <time datetime="2004-03-19T15:26:33">2004年03月19日 15:26</time></h1>
+    <div class="body">最近使い始めた者です。<br>既知でしたらすみません。<br><br>不特定の行を変更すると<br>関係ない行が行番号(変更行)の色になってしまいます。<br><br>これって私の環境だけの話でしょうか？<br><br>環境<br>サクラエディタ　Ver1.432<br>OS:Win2000<br></div></section>
+    <ul><li><section><h1 id=3751>
+    <span class="no">[3751]</span>
+    <a class="thread-title" href="#3751">RE: 関係ない行が行番号(変更行)の色になる</a>
+    <span class="author">すい</span>
+    <time datetime="2004-04-04T10:55:09">2004年04月04日 10:55</time></h1>
+    <div class="body">&gt;不特定の行を変更すると<br>&gt;関係ない行が行番号(変更行)の色になってしまいます。<br><br>これ、何か変更してから Undo（元に戻す）で元に戻して<br>「変更していない状態」に戻った行とかが、他の行を変更すると<br>また「変更された行」の表示に戻ってしまったりする、その<br>挙動の事ですよね。<br><br>それは仕様ですので。<br>少なくともバグ（プログラミングした人にとって意図していない動作）<br>ではありません。プログラミングした人にとって意図している通りの動作です。<br>まぁ、使う人にとっては不具合動作なわけですが。<br><br>かいつまんで説明しておきますと、元々、このエディタが原作者さんに<br>よって開発されていた頃、変更行の表示という機能がありませんでした。<br>で、「変更された行を色分け表示して欲しい」という要望がユーザーから<br>出て来たわけです。<br>ところが、このエディタの内部構造は そういう「変更行の色分け表示」<br>という機能を付けるには適したものではなく、、、<br><br>そこで致し方なく<br><br>「構造上、Undoとかで元に戻して“変更していない行”になった行とかが、<br>　後で“変更した行”に戻ってしまったりするなど、色々問題あるけど、<br>　とりあえず、暫定という事で付けておきます。後で構造を見直して<br>　きちんとした動作をする物に直．．．」<br><br>というような感じの内容のお話しで、(あくまで)暫定的に付けられたわけです。<br><br>で、その後、構造の根本的な改良などが行われる前に原作者さんが開発から<br>手を引いてしまい、その後、誰も手を付けていないわけで。。。<br><br>確かエディタのデータ保持に関わる内部構造を根本から見直さないと無理<br>とかいうお話しじゃぁなかったかな？<br>で、おいそれとやれる様な内容じゃぁないし、皆誰も手を出せずに現在に至る、と。<br><br>そういう訳なので、ユーザーは皆、この辺の挙動は<br>(あえて)あまり気にしないで使っています。<br>所詮はエディタの基本動作には無関係なオマケ機能ですし。<br><br>もちろん、直せる人が出て来て直してくれると、皆喜ぶと思いますけど．．．<br></div></section>
+    <ul><li><section><h1 id=3817>
+    <span class="no">[3817]</span>
+    <a class="thread-title" href="#3817">Re2: 関係ない行が行番号(変更行)の色になる</a>
+    <span class="author">まってぃ</span>
+    <time datetime="2004-05-01T23:33:08">2004年05月01日 23:33</time></h1>
+    <div class="body">▼ すいさん<br>&gt; &gt;不特定の行を変更すると<br>&gt; &gt;関係ない行が行番号(変更行)の色になってしまいます。<br>&gt; <br>&gt; これ、何か変更してから Undo（元に戻す）で元に戻して<br>&gt; 「変更していない状態」に戻った行とかが、他の行を変更すると<br>&gt; また「変更された行」の表示に戻ってしまったりする、その<br>&gt; 挙動の事ですよね。<br>&gt; <br>&gt; それは仕様ですので。<br><br>なるほど、そういうことでしたか…<br>御回答ありがとうございました。<br><br>個人的には、自分がどの行を書き換えたかを<br>確認してからファイルを更新したかったので。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

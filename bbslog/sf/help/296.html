@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>HELPのリリースはどうします？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ドキュメントトップへ</a>
+        <li><div class="list-title">
+    <span class="no">296</span>
+    <a class="thread-title" href="296.html#296">HELPのリリースはどうします？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">297</span>
+    <a class="thread-title" href="296.html#297">Re:HELPのリリースはどうします？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">298</span>
+    <a class="thread-title" href="296.html#298">Re2:HELPのリリースはどうします？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">300</span>
+    <a class="thread-title" href="296.html#300">Re3:HELPのリリースはどうします？</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=296>
+    <span class="no">[296]</span>
+    <a class="thread-title" href="#296">HELPのリリースはどうします？</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-29T17:00:44">2006年10月29日 17:00</time></h1>
+    <div class="body">本体をリリースしたときはsourceforge.netに登録していますが，HELPの方はどうしましょうか？<br><br>どなたか，本体と整合性を保ちながら時々リリース登録してもらえるとありがたいのですが．<br>例えばmaruさんとかmaruさんとかmaruさんとか．<br>本体の変更に追従して修正したときはリリースしてもらって，それ以外はお好みで．<br>ただ，本体より先走ってしまうとちょっと問題ありますが...といっても，svn上機能が変更されたらヘルプもその時点で修正が開始されると思うのでwebの方が先走ってしまうのは致し方ない．<br><br>要するに本体のリリースが遅すぎ＞自分<br><br>--<br>まとまって無くてすみません．適当に議論して頂いて，決まったらリリース係の方にはFile Release権限を付けます．(権限付与はryojiさんがやって頂いても結構です)．<br></div></section>
+    <ul><li><section><h1 id=297>
+    <span class="no">[297]</span>
+    <a class="thread-title" href="#297">Re:HELPのリリースはどうします？</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-29T22:14:52">2006年10月29日 22:14</time></h1>
+    <div class="body">&gt; 本体と整合性を保ちながら時々リリース登録して<br>私でよければ…。<br>本体リリースのタイミングと同期をとるのは難しいでしょうから、運用しながら具体化する方向で。<br>あと、HELPのtagsはどっちでもいい感じですが、あった方が良いのでしょうか。<br><br>&gt; webの方が先走ってしまうのは致し方ない<br>cronを止めて、ヘルプリリース時に手動でsakura-hh-update.shを実行するとかでしょうか。<br><br>とりあえずは「致し方ない」作戦としておいて、もし問題が出てきたら検討しましょう。<br><br>たとえば、本体バージョンアップ直後、一部の機能についてはヘルプ解説が未完成、などの理由でヘルプがリリースできないケースを考えると、webだけでも独立して更新された方がかえって便利かもしれません。<br><br>別件ですが、HELPのコミットのタイミングが難しいです。<br>過去から累積した誤記修正がひと通り終わるまでは、ある程度頻度が高くなるのは仕方ないかも知れませんが。<br></div></section>
+    <ul><li><section><h1 id=298>
+    <span class="no">[298]</span>
+    <a class="thread-title" href="#298">Re2:HELPのリリースはどうします？</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-10-29T23:44:38">2006年10月29日 23:44</time></h1>
+    <div class="body">&gt;私でよければ…。<br>無理矢理押しつけたみたいですみません．<br><br>&gt;本体リリースのタイミングと同期をとるのは難しいでしょうから、運用しながら具体化する方向で。<br>同時というつもりではなくて，本体のリリースを１つのマイルストーンと考えて，内容的に対応がとれてますよ～という物を登録するとわかりやすいのでは？という意味です．別にあわてなくて良いと思います．<br><br>&gt;HELPのtags<br>リリースするのはコンパイル済みのCHMファイルと対応するソースコードと考えて良いですよね．<br>対応するリビジョン番号だけ書いてあれば，後から取り出すことは出来ますけど...<br><br>&gt;cronを止めて、ヘルプリリース時に手動で<br>いや，これはあまりうれしくないと思います．どのみち，アクセスしてきた人がどのバージョンの本体を使っているかはわからないわけですから．<br><br>&gt;別件ですが、HELPのコミットのタイミングが難しいです。<br>&gt;過去から累積した誤記修正がひと通り終わるまでは、ある程度頻度が高くなるのは仕方ないかも知れませんが。<br>番号が上がるのは気にしないでこまめにcommitしてもらって良いと思います．バージョン管理の面から言うと，同一目的の変更は一度にcommit，異なる物は混ぜないのが理想ですが，誤記修正まとめみたいなものであればこの原則はあまり考えなくて良いと思います．<br></div></section>
+    <ul><li><section><h1 id=300>
+    <span class="no">[300]</span>
+    <a class="thread-title" href="#300">Re3:HELPのリリースはどうします？</a>
+    <span class="author">maru</span>
+    <time datetime="2006-10-30T23:28:12">2006年10月30日 23:28</time></h1>
+    <div class="body">&gt;無理矢理押しつけたみたいですみません．<br>いえいえ（笑）<br><br>&gt;１つのマイルストーンと考えて<br>了解です。<br><br>&gt;対応するリビジョン番号だけ書いてあれば…<br>こちらも了解です。<br><br>&gt;アクセスしてきた人がどのバージョンの本体を使っているかはわからない<br>なるほど、確かにそうですね。<br><br>&gt;誤記修正まとめみたいなものであればこの原則はあまり考えなくても<br>ここも了解です。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

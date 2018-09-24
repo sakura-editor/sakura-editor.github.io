@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>パッチ：不具合の修正類 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1718</span>
+    <a class="thread-title" href="1718.html#1718">パッチ：不具合の修正類</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1719</span>
+    <a class="thread-title" href="1718.html#1719">Re: パッチ：長い行の選択範囲描画が遅い</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1721</span>
+    <a class="thread-title" href="1718.html#1721">Re: パッチ：範囲選択の描画不正</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1723</span>
+    <a class="thread-title" href="1718.html#1723">Re: パッチ：不具合の修正類</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1724</span>
+    <a class="thread-title" href="1718.html#1724">Re: Commit報告(Fix/Chg) 不具合類の修正</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1718>
+    <span class="no">[1718]</span>
+    <a class="thread-title" href="#1718">パッチ：不具合の修正類</a>
+    <span class="author">もか</span>
+    <time datetime="2011-12-26T20:28:24">2011年12月26日 20:28</time></h1>
+    <div class="body">PatchUnicode#3465553&#9;折り返し行でのCalcLayoutWidth計算ミス<br>PatchUnicode#3465554&#9;折り返し行での再作画が不足している<br>PatchUnicode#3465564&#9;次検索で括弧でないものが対括弧強調表示される<br><br>下の2はこの前のカーソル移動の変更に合わせて、変な感じのところを直しました。<br>PatchUnicode#3465566&#9;データのあるEOF行の選択描画を変更<br>PatchUnicode#3465570&#9;EOF回りのカーソル移動の修正<br></div></section>
+    <ul><li><section><h1 id=1719>
+    <span class="no">[1719]</span>
+    <a class="thread-title" href="#1719">Re: パッチ：長い行の選択範囲描画が遅い</a>
+    <span class="author">もか</span>
+    <time datetime="2011-12-27T23:06:33">2011年12月27日 23:06</time></h1>
+    <div class="body">もう一つ追加しました。<br>PatchUnicode#3466060&#9;長い行の選択範囲描画が遅い<br>折り返さない行で行末付近を選択するとすごく遅いです。<br></div></section>
+    </li><li><section><h1 id=1721>
+    <span class="no">[1721]</span>
+    <a class="thread-title" href="#1721">Re: パッチ：範囲選択の描画不正</a>
+    <span class="author">もか</span>
+    <time datetime="2012-01-01T19:57:22">2012年01月01日 19:57</time></h1>
+    <div class="body">PatchUnicode#3468191 範囲選択の描画不正<br>　1行目が折り返されていて、選択中に2レイアウト行目の行頭をいったりきたりすると色がおかしくなります。<br><br>#2012年もよろしくお願いします。<br></div></section>
+    </li><li><section><h1 id=1723>
+    <span class="no">[1723]</span>
+    <a class="thread-title" href="#1723">Re: パッチ：不具合の修正類</a>
+    <span class="author">もか</span>
+    <time datetime="2012-01-07T20:24:20">2012年01月07日 20:24</time></h1>
+    <div class="body">3+1件追加しました。<br>PatchUnicode#3470597 iniを読み込むと行間が最大16に制限される<br>PatchUnicode#3470595 最終行のRedo/Undoでの色分けが正しくない<br>PatchUnicode#3470602 Editor.Char(0)が使えない<br><br>PatchUnicode#3470594 変更行が一致しない問題<br>変更行のパッチはアルファ版です。<br></div></section>
+    </li><li><section><h1 id=1724>
+    <span class="no">[1724]</span>
+    <a class="thread-title" href="#1724">Re: Commit報告(Fix/Chg) 不具合類の修正</a>
+    <span class="author">もか</span>
+    <time datetime="2012-01-14T15:43:28">2012年01月14日 15:43</time></h1>
+    <div class="body">リビジョン: 2002<br>Fix: iniを読み込むと行間が最大16に制限される<br>PatchUnicode#3470597<br><br>リビジョン: 2001<br>Fix: 最終行のRedo/Undoでの色分けが正しくない<br>PatchUnicode#3470595<br><br>リビジョン: 2000<br>Fix: 範囲選択の描画不正<br>PatchUnicode#3468191<br><br>リビジョン: 1999<br>Fix: 長い行の選択範囲描画が遅い<br>PatchUnicode#3466060<br><br>リビジョン: 1998<br>Chg: データのあるEOF行の選択描画を変更<br>PatchUnicode#3465566<br><br>リビジョン: 1997<br>Fix: 次検索で括弧でないものが対括弧強調表示される<br>PatchUnicode#3465564<br><br>リビジョン: 1996<br>Fix: 折り返し行でのCalcLayoutWidth計算ミス<br>PatchUnicode#3465553<br><br>リビジョン: 1995<br>Fix: [A済]Grep時のファイル名パターンのバッファオーバラン対策<br>PatchUnicode#3456201<br><br>リビジョン: 1994<br>Fix: isearchの色分け・次検索不一致の解消<br>PatchUnicode#3030851<br></div></section>
+    </li></ul></li></ul></body></html>

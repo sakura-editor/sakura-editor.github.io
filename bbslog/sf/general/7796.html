@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>サクラエディタは動作を停止しました（Windows7） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7796</span>
+    <a class="thread-title" href="7796.html#7796">サクラエディタは動作を停止しました（Windows7）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7797</span>
+    <a class="thread-title" href="7796.html#7797">Re:サクラエディタは動作を停止しました（Windows7）</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7796>
+    <span class="no">[7796]</span>
+    <a class="thread-title" href="#7796">サクラエディタは動作を停止しました（Windows7）</a>
+    <span class="author">コク</span>
+    <time datetime="2014-03-13T19:14:07">2014年03月13日 19:14</time></h1>
+    <div class="body">お世話になっております。いつも便利に使用させて頂いています。<br>現在、Windows7でサクラエディタ2.1.1.1（Unicode版）を<br>使用していますが、題名に書いたエラーが発生して、<br>メモ帳等で作成したテキストファイルが開けず、<br>サクラエディタでは、新規文書は書けるものの保存すると<br>同様のエラーメッセージが出てしまいます。<br>パソコンの再起動をしたり、コントロールパネルからアンインストールして再インストールしてみましたが状況変わらずです。<br><br>アンインストールした後、1.6.6.0のANSI版も試してみましたが同じでした。<br>以下、ANSIの実行エラーを添付しますので、どなたか解決策を教えて頂けないでしょうか。<br><br>----------------------------------------<br>--------<br>問題の署名:<br>  問題イベント名:&#9;APPCRASH<br>  アプリケーション名:&#9;sakura.exe<br>  アプリケーションのバージョン:&#9;1.6.6.0<br>  アプリケーションのタイムスタンプ:&#9;4cbaeff7<br>  障害モジュールの名前:&#9;StackHash_e285<br>  障害モジュールのバージョン:&#9;6.1.7601.18247<br>  障害モジュールのタイムスタンプ:&#9;521ea8e7<br>  例外コード:&#9;c0000374<br>  例外オフセット:&#9;000ce753<br>  OS バージョン:&#9;6.1.7601.2.1.0.256.48<br>  ロケール ID:&#9;1041<br>  追加情報 1:&#9;e285<br>  追加情報 2:&#9;e2850c4c1444f493ac651ad64551255b<br>  追加情報 3:&#9;8ef5<br>  追加情報 4:&#9;8ef578904a72c457be2c1c9fc899fca6<br><br>オンラインのプライバシーに関する声明をお読みください:<br>  <a href=http://go.microsoft.com/fwlink/?linkid=104288&clcid=0x0411 target=_top><nobr>http://<wbr>go.<wbr>microsof<wbr>t.<wbr>com/<wbr>fwlink/?<wbr>linkid=<wbr>104288&amp;<wbr>clcid=<wbr>0x0411</nobr></a><br><br>オンラインのプライバシーに関する声明が利用できない場合は、プライバシーに関する声明をオフラインでお読みください:<br>  C:\Windows\system32\ja-JP\erofflps.txt<br>----------------------------------------<br>--------<br><br>よろしくお願いいたします。</div></section>
+    <ul><li><section><h1 id=7797>
+    <span class="no">[7797]</span>
+    <a class="thread-title" href="#7797">Re:サクラエディタは動作を停止しました（Windows7）</a>
+    <span class="author">LR4</span>
+    <time datetime="2014-03-13T23:53:02">2014年03月13日 23:53</time></h1>
+    <div class="body">1.6.6.0のように十分な実績のある過去バージョンでも起きる<br>ということですので、外部要因かもですね。<br>障害モジュールの名前（StackHash）で検索すると、<br>障害が起き始める直前にインストールした常駐型のアプリが疑わしい、<br>というような話がいくつか出てきます。<br><br>参考までに、<br><a href=http://infopurge.tumblr.com/post/10438725843/what-is-stackhash target=_top><nobr>http://<wbr>infopurg<wbr>e.<wbr>tumblr.<wbr>com/<wbr>post/<wbr>10438725<wbr>843/<wbr>what-<wbr>is-<wbr>stackhas<wbr>h</nobr></a><br>の記載を貼り付けておきます。<br><br>Some of the reasons for StackHash crashes include…<br>・The application itself has a fault causing it to call a function in a piece of memory that does not contain any code as in the example above.<br>・A virus checker, virtual drive S/W, security systems (or other application) has injected a piece of code into the address space of the application that crashes for some reason. In this case there is no identifiable module so a StackHash_XXXX will be created.<br>・A virus has infected the machine and the virus code is executing in the context of the faulting application.<br>・There is a bug in the operating system or other shared component on the system.<br>・The application has become corrupted either by a disk error or virus.<br></div></section>
+    </li></ul></li></ul></body></html>

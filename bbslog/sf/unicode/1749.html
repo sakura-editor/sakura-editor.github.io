@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>インライン関数展開 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1749</span>
+    <a class="thread-title" href="1749.html#1749">インライン関数展開</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1749>
+    <span class="no">[1749]</span>
+    <a class="thread-title" href="#1749">インライン関数展開</a>
+    <span class="author">novice</span>
+    <time datetime="2012-02-04T16:49:59">2012年02月04日 16:49</time></h1>
+    <div class="body">trunk-&gt;trunk2の変更で<br>m_hWndのアクセスをGetHwnd()経由にしていますが、<br>変更前と変更後のバイナリに差分があったので<br>調査してみました。<br><br>もしかして、インライン関数展開されていない？と思ったのですが、<br>どちらかといえばインライン展開後の最適化がうまくいっていないような感じです。<br>#引数の評価順に制約がかかってしまう？<br><a href=http://sakura.qp.land.to/?Develop%2F5 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2F5</nobr></a><br><br>もしかしたらコンパイルオプションで解消できるかも？<br>と思ったのですが、残念ながら見つかりませんでした。<br><br>ご参考まで。<br></div></section>
+    </li></ul></body></html>

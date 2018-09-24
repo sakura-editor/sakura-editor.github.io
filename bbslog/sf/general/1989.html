@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現の改行コード検索 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1989</span>
+    <a class="thread-title" href="1989.html#1989">正規表現の改行コード検索</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2021</span>
+    <a class="thread-title" href="1989.html#2021">Re: 正規表現の改行コード検索</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1989>
+    <span class="no">[1989]</span>
+    <a class="thread-title" href="#1989">正規表現の改行コード検索</a>
+    <span class="author">愛好家Ａ</span>
+    <time datetime="2002-06-06T00:34:18">2002年06月06日 00:34</time></h1>
+    <div class="body">　秀丸と併用させていただいています。sakura はソースコードの編集に<br>もっぱら使っています。<br>　さて、正規表現の改行コード検索でお願いがあります（既出要望一覧をみましたが無いようでした）。<br><br>　正規表現検索で<br>　\r\n<br>とすればもちろん改行コードにヒットしますが<br>　\r\n\r\n<br>とした場合改行が連続しているところにヒットしません。<br>　webから拾い集めたテキストは無駄な改行コードが入っていることが多いためたとえば<br>　\r\n\r\n\r\n　⇒　\r\n\r\n       (1)<br>というような置換作業を行いたいのです。<br>　できれば改行コードは \n だけでヒットしてくれる方がうれしい(^^;)。<br>　ちなみに秀丸では(1)は<br>　\n\n\n　⇒　\n\n<br>でＯＫです。<br></div></section>
+    <ul><li><section><h1 id=2021>
+    <span class="no">[2021]</span>
+    <a class="thread-title" href="#2021">Re: 正規表現の改行コード検索</a>
+    <span class="author">もか</span>
+    <time datetime="2002-06-15T15:36:20">2002年06月15日 15:36</time></h1>
+    <div class="body"><br>▼ 愛好家Ａさん<br>&gt;　さて、正規表現の改行コード検索でお願いがあります（既出要望一覧をみましたが無いようでした）。<br>&gt;<br>&gt;　正規表現検索で<br>&gt;　\r\n<br>&gt;とすればもちろん改行コードにヒットしますが<br>&gt;　\r\n\r\n<br>&gt;とした場合改行が連続しているところにヒットしません。<br>&gt;　\r\n\r\n\r\n　⇒　\r\n\r\n       (1)<br>&gt;というような置換作業を行いたいのです。<br>(一部省略してあります)<br><br>私は秀丸をよく知らないので、そのエディタの動作については分かりませんが、<br>サクラエディタでは、データを行ごと別々に管理しているため、対応は難しいかも知れません<br>(私には効率のよい正規表現による複数行の置換について思いつきません)<br><br><br>とりあえず空の3行を2行にする場合は以下のようにして複数回置換すればなんとかなりそうです<br>  #@#@ は ファイル中に一回も出てこない文字列<br><br>  ^\r\n ⇒ #@#@<br>  #@#@#@#@#@#@ ⇒ \r\n\r\n<br>  #@#@ ⇒ \r\n<br><br>また2行以上の改行コードだけの行を1行にまとめるのであれば<br>[編集]-[整形]-[選択行のマージ] が使えると思います<br>ただし、同じ内容の行が連続していると、それも消してしまうので注意です<br><br>&gt;　できれば改行コードは \n だけでヒットしてくれる方がうれしい(^^;)。<br><br>私も基本的には賛成です。\r\nか\n\rなのか迷うんです。<br>しかしサクラエディタでは複数の改行コードを同一ファイル中で扱えるから、<br>\nにまとめてしまうと都合が悪い人もいるかも知れません(いないかも？)<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>開く(ドロップダウン) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2165</span>
+    <a class="thread-title" href="2165.html#2165">開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2166</span>
+    <a class="thread-title" href="2165.html#2166">RE: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2175</span>
+    <a class="thread-title" href="2165.html#2175">RE2: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2177</span>
+    <a class="thread-title" href="2165.html#2177">RE3: 開く(ドロップダウン)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2178</span>
+    <a class="thread-title" href="2165.html#2178">Re3: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2179</span>
+    <a class="thread-title" href="2165.html#2179">Re4: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2180</span>
+    <a class="thread-title" href="2165.html#2180">Re5: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2181</span>
+    <a class="thread-title" href="2165.html#2181">Re6: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2184</span>
+    <a class="thread-title" href="2165.html#2184">Re7: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2185</span>
+    <a class="thread-title" href="2165.html#2185">Re8: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2186</span>
+    <a class="thread-title" href="2165.html#2186">Re9: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2188</span>
+    <a class="thread-title" href="2165.html#2188">Re10: 開く(ドロップダウン)</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2192</span>
+    <a class="thread-title" href="2165.html#2192">Re5: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2210</span>
+    <a class="thread-title" href="2165.html#2210">Re6: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2211</span>
+    <a class="thread-title" href="2165.html#2211">Re7: 開く(ドロップダウン)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2217</span>
+    <a class="thread-title" href="2165.html#2217">Re8: 開く(ドロップダウン)</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2165>
+    <span class="no">[2165]</span>
+    <a class="thread-title" href="#2165">開く(ドロップダウン)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-15T08:19:36">2002年06月15日 08:19</time></h1>
+    <div class="body"><br>ツールバーに「開く...（ドロップダウン）」を置けるようにしました。<br>＃ツールバー以外で使うと通常の「開く...」です。<br><br>→dropdown0615.tgz<br>(ssrc_2002-06-05.tar.bz2 + diff0608.zip + diff0612plus.tgz に対するパッチ)<br><br>ツールバーでドロップダウンを使えるように拡張スタイルを使用するため、<br>このドロップダウンが動作するのは以下のOSバージョンのみと思います。<br>W2K/98以降<br>NT/95+IE4以降<br>これ以外の機種ではドロップダウンが押せないと思います（未確認）。<br><br>ビルドについては CMenuDrawer.hで#ifndefで定義してますのでどのOSで<br>もできるはずです。<br></div></section>
+    <ul><li><section><h1 id=2166>
+    <span class="no">[2166]</span>
+    <a class="thread-title" href="#2166">RE: 開く(ドロップダウン)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-15T08:23:45">2002年06月15日 08:23</time></h1>
+    <div class="body"><br>あと、ソースには検索ボックスをツールバーに貼り付けるための<br>修正の一部が入ってますがコンボボックスへのキー操作がうまく<br>動かないのでコメントアウトしてます。<br>＃多分CEditWndにイベントを取られてるんだろう。<br><br>誰かヘルプ。<br><br><br>質問：<br>CEditWnd::MessageLoopにHokanMgrのイベント処理のためのif文<br>がいくつも書かれてるんですが意味あるんですか？<br></div></section>
+    <ul><li><section><h1 id=2175>
+    <span class="no">[2175]</span>
+    <a class="thread-title" href="#2175">RE2: 開く(ドロップダウン)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-17T19:06:18">2002年06月17日 19:06</time></h1>
+    <div class="body"><br>&gt;あと、ソースには検索ボックスをツールバーに貼り付けるための<br>&gt;修正の一部が入ってますがコンボボックスへのキー操作がうまく<br>&gt;動かないのでコメントアウトしてます。<br>&gt;＃多分CEditWndにイベントを取られてるんだろう。<br><br>解決しました。<br>来週くらいにはできるかも。<br></div></section>
+    <ul><li><section><h1 id=2177>
+    <span class="no">[2177]</span>
+    <a class="thread-title" href="#2177">RE3: 開く(ドロップダウン)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-18T19:35:23">2002年06月18日 19:35</time></h1>
+    <div class="body"><br>開く(ドロップダウン)と検索(ボックス)をツールバーに置けるようにしました。<br><br>→dropdown0618.zip<br>(ssrc_2002-06-05.tar.bz2 + UniBE0605-0607.zip + diff0608.zip + diff0612plus.tgz + macfix.zip + makefile.zip に対するパッチ)<br></div></section>
+    </li><li><section><h1 id=2178>
+    <span class="no">[2178]</span>
+    <a class="thread-title" href="#2178">Re3: 開く(ドロップダウン)</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-06-18T21:12:23">2002年06月18日 21:12</time></h1>
+    <div class="body">[ファイル]-[開く]は既存のアイコンにドロップダウンを付ければ，新規にコマンドコードを用意する必要はないのでは？と言うほど単純ではないのでしょうか．<br><br>あと，検索ボックスの横に次を検索・前を検索ボタンを置いてあるとき，<br>ボックスに文字を入力→何気なく次を検索→古い文字列が検索される<br>というのはどうなんでしょう？<br>とは言うもののキーを押されたかボタンを押されたかの判定が今のところできないからボタンの場合だけ特別扱いは無理か．<br></div></section>
+    <ul><li><section><h1 id=2179>
+    <span class="no">[2179]</span>
+    <a class="thread-title" href="#2179">Re4: 開く(ドロップダウン)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-18T21:41:41">2002年06月18日 21:41</time></h1>
+    <div class="body">&gt;タイトル: Re4: 開く(ドロップダウン)<br>&gt;発言者: げんた<br>&gt;[ファイル]-[開く]は既存のアイコンにドロップダウンを付ければ，新規にコマンドコードを用意する必要はないのでは？と言うほど単純ではないのでしょうか．<br><br>ドロップダウンはOSバージョン依存なので一応分けてます。<br>ドロップダウンが嫌な人もいるかもしれないし。。。<br><br>&gt;あと，検索ボックスの横に次を検索・前を検索ボタンを置いてあるとき，<br>&gt;ボックスに文字を入力→何気なく次を検索→古い文字列が検索される<br>&gt;というのはどうなんでしょう？<br>&gt;とは言うもののキーを押されたかボタンを押されたかの判定が今のところできないからボタンの場合だけ特別扱いは無理か．<br><br>検索ボックスからフォーカスがはずれるときに、表示中の文字列を検索<br>キーワードに設定するようにしましょうか。<br></div></section>
+    <ul><li><section><h1 id=2180>
+    <span class="no">[2180]</span>
+    <a class="thread-title" href="#2180">Re5: 開く(ドロップダウン)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-19T18:43:10">2002年06月19日 18:43</time></h1>
+    <div class="body"><br>バグ発見：<br>検索ボックスにフォーカスがあるときに、ツールバーまたはメニューから<br>何か処理を行うとキャレットが消えます。<br><br>＃そもそもShowEditCaret()が怪しいような気もする。<br>＃m_nCaretWidth=0ならDestroyCaret状態なのだろうが、<br>＃矛盾が起きる処理がある。<br><br><br>&gt;&gt;あと，検索ボックスの横に次を検索・前を検索ボタンを置いてあるとき，<br>&gt;&gt;ボックスに文字を入力→何気なく次を検索→古い文字列が検索される<br>&gt;&gt;というのはどうなんでしょう？<br>&gt;&gt;とは言うもののキーを押されたかボタンを押されたかの判定が今のところできないからボタンの場合だけ特別扱いは無理か．<br>&gt;<br>&gt;検索ボックスからフォーカスがはずれるときに、表示中の文字列を検索<br>&gt;キーワードに設定するようにしましょうか。<br><br>ボタンを押したときはコンボボックスにWM_KILLFOCUSが発生しないので、面倒そう。<br></div></section>
+    <ul><li><section><h1 id=2181>
+    <span class="no">[2181]</span>
+    <a class="thread-title" href="#2181">Re6: 開く(ドロップダウン)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-19T19:12:28">2002年06月19日 19:12</time></h1>
+    <div class="body"><br>&gt;バグ発見：<br>&gt;検索ボックスにフォーカスがあるときに、ツールバーまたはメニューから<br>&gt;何か処理を行うとキャレットが消えます。<br><br>修正しました。<br>→dropdown0619.zip<br></div></section>
+    <ul><li><section><h1 id=2184>
+    <span class="no">[2184]</span>
+    <a class="thread-title" href="#2184">Re7: 開く(ドロップダウン)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-19T21:01:52">2002年06月19日 21:01</time></h1>
+    <div class="body"><br>&gt;あと，検索ボックスの横に次を検索・前を検索ボタンを置いてあるとき，<br>&gt;ボックスに文字を入力→何気なく次を検索→古い文字列が検索される<br>&gt;というのはどうなんでしょう？<br><br>動作の違うサンプルを<br>http://www.geocities.co.jp/SiliconValley-SanJose/3299/<br>にお試し版ということで2種類置きました。<br><br>・検索ボックスからフォーカスがはずれると前の検索キーワードに戻る。<br>・検索ボックスからフォーカスがはずれると、そのときの文字列を検索キーワードにしてしまう。<br>&#9;dropdown0619.zipソース中では、CEditWnd.cpp中1940行目の<br>&#9;#if 0をはずして有効にしてください。<br><br>どっちが使いやすそうかご確認ください。<br></div></section>
+    <ul><li><section><h1 id=2185>
+    <span class="no">[2185]</span>
+    <a class="thread-title" href="#2185">Re8: 開く(ドロップダウン)</a>
+    <span class="author">ai</span>
+    <time datetime="2002-06-20T14:01:58">2002年06月20日 14:01</time></h1>
+    <div class="body"><br>お試し版を使用しています。<br>ドロップダウンをクリックした際に下のようなメッセージが出続ける時があります。<br><br>CMenuDrawer::MyAppendMenu()エラー<br>CMenuDrawerが管理できるメニューアイテムの上限はCMenuDrawer::MAX_MENUITEMS==300です。<br><br>また、メニューに表示されているファイルと違うファイルが開かれることがあります。<br>必ずという訳ではないのですが、既に存在しないファイルを選択した場合(その次にドロップダウンをクリックした時？)に起こるような気がします。<br></div></section>
+    <ul><li><section><h1 id=2186>
+    <span class="no">[2186]</span>
+    <a class="thread-title" href="#2186">Re9: 開く(ドロップダウン)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-20T19:11:16">2002年06月20日 19:11</time></h1>
+    <div class="body">&gt;タイトル: Re9: 開く(ドロップダウン)<br>&gt;発言者: ai<br>&gt;お試し版を使用しています。<br>&gt;ドロップダウンをクリックした際に下のようなメッセージが出続ける時があります。<br>&gt;<br>&gt;CMenuDrawer::MyAppendMenu()エラー<br>&gt;CMenuDrawerが管理できるメニューアイテムの上限はCMenuDrawer::MAX_MENUITEMS==300です。<br>&gt;<br>&gt;また、メニューに表示されているファイルと違うファイルが開かれることがあります。<br>&gt;必ずという訳ではないのですが、既に存在しないファイルを選択した場合(その次にドロップダウンをクリックした時？)に起こるような気がします。<br><br>修正しました。<br>→dropdown0620.zip<br></div></section>
+    <ul><li><section><h1 id=2188>
+    <span class="no">[2188]</span>
+    <a class="thread-title" href="#2188">Re10: 開く(ドロップダウン)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-21T18:57:20">2002年06月21日 18:57</time></h1>
+    <div class="body"><br>ドロップダウンメニューの表示位置をボタンの下に固定しました。<br><br>→diff-dropdown-0621.zip<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=2192>
+    <span class="no">[2192]</span>
+    <a class="thread-title" href="#2192">Re5: 開く(ドロップダウン)</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-06-24T01:24:22">2002年06月24日 01:24</time></h1>
+    <div class="body">&gt;ドロップダウンはOSバージョン依存なので一応分けてます。<br>これは単にDropDownが出ないというだけではないの？<br>また，キーに割り当てた場合はメニューが出ないでボタンが押されたのと同じ動作になるんですね．それならなおさら同じコードで良いように思いますが．<br><br>&gt;ドロップダウンが嫌な人もいるかもしれないし。。。<br>嫌いな人は全部嫌いでしょうからOPTIONで対応した方がいいように思います．<br></div></section>
+    <ul><li><section><h1 id=2210>
+    <span class="no">[2210]</span>
+    <a class="thread-title" href="#2210">Re6: 開く(ドロップダウン)</a>
+    <span class="author">すい</span>
+    <time datetime="2002-06-27T20:29:16">2002年06月27日 20:29</time></h1>
+    <div class="body">&gt;&gt;ドロップダウンはOSバージョン依存なので一応分けてます。<br>&gt;これは単にDropDownが出ないというだけではないの？<br>&gt;また，キーに割り当てた場合はメニューが出ないでボタンが押されたのと同じ動作になるんですね．それならなおさら同じコードで良いように思いますが．<br><br>COMCTL32.DLL がそれぞれ<br>・素のWin95<br>　　そもそもツールバーが表示されないのですが．．．<br>　　ボタンがあるであろうと推測される場所を押すと「ファイルを開く」が登場する。<br>・IE3付属<br>　　ツールバーはドロップダウン[▼]が無い状態で表示される。<br>　　フォルダの絵を押すと、ドロップダウン登場。どうあがいても「ファイルを開く」が出ないみたい。<br>・401comupd.exe / 50comupd.exe &lt;http://asia.microsoft.com/msdownload/ieplatform/ie/comctrlx86.asp&gt;<br>　　表示・動作、共に正常。<br><br>IE3を使っている環境の場合が ちょっと致命的ですか。<br>一つにまとめるには COMCTL32.DLL がドロップダウンに対応しているかどうかを判定して動作を切り替える、とかにしないと。<br>というより、理想は全て独自実装にする？(笑)<br># ボタン押されたらポップアップメニューを．．．<br><br>ん？あ、現状ならば IE3の場合は通常の「開く...」と「開く...(ドロップダウン)」を並べて出しておけば良し、だ。(笑)<br>→ 何も違いが無いフォルダの絵が２個並ぶ。<br>　 片方は「ファイルを開く」が登場します。もう片方は過去に開いたファイルの一覧が出ます。<br><br>ところで、マウス「開く...(ドロップダウン)」のフォルダの絵をマウス右クリックしても何も起こらないのですが．．．<br>IE の [戻る] とかとは違うんですね。<br></div></section>
+    <ul><li><section><h1 id=2211>
+    <span class="no">[2211]</span>
+    <a class="thread-title" href="#2211">Re7: 開く(ドロップダウン)</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-27T21:12:48">2002年06月27日 21:12</time></h1>
+    <div class="body"><br>&gt;COMCTL32.DLL がそれぞれ<br>&gt;・素のWin95<br>&gt;　　そもそもツールバーが表示されないのですが．．．<br>&gt;　　ボタンがあるであろうと推測される場所を押すと「ファイルを開く」が登場する。<br><br>フラットツールバー(TBSTYLE_FLAT)はIE3以降です。<br><br>&gt;・IE3付属<br>&gt;　　ツールバーはドロップダウン[▼]が無い状態で表示される。<br>&gt;　　フォルダの絵を押すと、ドロップダウン登場。どうあがいても「ファイルを開く」が出ないみたい。<br><br>"ツールバーに置く"ドロップダウンボタンはIE4以降です。<br>なので、それ以前の方のために通常ボタンを残したのです。<br><br><br>&gt;ところで、マウス「開く...(ドロップダウン)」のフォルダの絵をマウス右クリックしても何も起こらないのですが．．．<br>&gt;IE の [戻る] とかとは違うんですね。<br><br>実装してくだい。<br></div></section>
+    <ul><li><section><h1 id=2217>
+    <span class="no">[2217]</span>
+    <a class="thread-title" href="#2217">Re8: 開く(ドロップダウン)</a>
+    <span class="author">すい</span>
+    <time datetime="2002-06-28T21:49:50">2002年06月28日 21:49</time></h1>
+    <div class="body">&gt;&gt;・素のWin95<br>&gt;&gt;　　そもそもツールバーが表示されないのですが．．．<br>&gt;フラットツールバー(TBSTYLE_FLAT)はIE3以降です。<br>これは、試してみましたが、フラットツールバーでなくても表示されないようです。<br># 共通設定 → ツールバー → フラットなボタン　チェックoff<br>別な原因がありそうです。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

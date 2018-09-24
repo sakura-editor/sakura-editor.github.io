@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>C++のアウトライン解析 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3459</span>
+    <a class="thread-title" href="3459.html#3459">C++のアウトライン解析</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3460</span>
+    <a class="thread-title" href="3459.html#3460">Re:C++のアウトライン解析</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3462</span>
+    <a class="thread-title" href="3459.html#3462">Re2:C++のアウトライン解析</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3461</span>
+    <a class="thread-title" href="3459.html#3461">RE: C++のアウトライン解析</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3459>
+    <span class="no">[3459]</span>
+    <a class="thread-title" href="#3459">C++のアウトライン解析</a>
+    <span class="author">じゅん</span>
+    <time datetime="2004-03-05T10:32:58">2004年03月05日 10:32</time></h1>
+    <div class="body">サクラエディタ気に入って使ってます。<br>ひとつ気になったところがあったので報告します。<br><br>アウトライン解析で１番目の関数が表示されないことがあります。<br>下記の場合CTEST00Viewが表示されません。<br><br>BEGIN_MESSAGE_MAP(CTEST00View, CView)<br>END_MESSAGE_MAP()<br>CTEST00View::CTEST00View()<br>{<br>}<br>CTEST00View::~CTEST00View()<br>{<br>}<br>過去の書き込みを検索しましたがヒットしなかったので書き込みました。<br><br></div></section>
+    <ul><li><section><h1 id=3460>
+    <span class="no">[3460]</span>
+    <a class="thread-title" href="#3460">Re:C++のアウトライン解析</a>
+    <span class="author">じゅん</span>
+    <time datetime="2004-03-05T10:48:43">2004年03月05日 10:48</time></h1>
+    <div class="body">バージョンを書くのを忘れていました。<br>1.4.3.7です。<br>1.4.4.0のダウンロードのやり方がわかりませんでした。<br>直ってたらごめんなさい。</div></section>
+    <ul><li><section><h1 id=3462>
+    <span class="no">[3462]</span>
+    <a class="thread-title" href="#3462">Re2:C++のアウトライン解析</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-06T01:44:00">2004年03月06日 01:44</time></h1>
+    <div class="body">&gt;1.4.4.0のダウンロードのやり方がわかりませんでした。<br>まだ公開していません．(汗<br></div></section>
+    </li></ul></li><li><section><h1 id=3461>
+    <span class="no">[3461]</span>
+    <a class="thread-title" href="#3461">RE: C++のアウトライン解析</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-06T01:44:01">2004年03月06日 01:44</time></h1>
+    <div class="body">&gt;アウトライン解析で１番目の関数が表示されないことがあります。<br>&gt;下記の場合CTEST00Viewが表示されません。<br>&gt;<br>&gt;BEGIN_MESSAGE_MAP(CTEST00View, CView)<br>&gt;END_MESSAGE_MAP()<br>&gt;CTEST00View::CTEST00View()<br><br>END_MESSAGE_MAP()というマクロがセミコロンで終わっていないので，CTEST00View::CTEST00View()が正しく認識できないんですね．たぶん．<br></div></section>
+    </li></ul></li></ul></body></html>

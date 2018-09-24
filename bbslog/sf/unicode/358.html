@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Fix) 改行コード指定保存で文章が乱れるバグを修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">358</span>
+    <a class="thread-title" href="358.html#358">Commit報告:(Fix) 改行コード指定保存で文章が乱れるバグを修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">371</span>
+    <a class="thread-title" href="358.html#371">Re:Commit報告:(Fix) 改行コード指定保存で文章が乱れるバグを修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">375</span>
+    <a class="thread-title" href="358.html#375">Re2:Commit報告:(Fix) 改行コード指定保存で文章が乱れるバグを修正</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=358>
+    <span class="no">[358]</span>
+    <a class="thread-title" href="#358">Commit報告:(Fix) 改行コード指定保存で文章が乱れるバグを修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-05-04T06:09:12">2008年05月04日 06:09</time></h1>
+    <div class="body">リビジョン：<br>　rev1318<br><br>変更種別：<br>　バグ修正。<br><br>内容：<br>　改行コード指定保存時の全行の改行コード変換にバグがあり、文章が乱れることがありました。修正。<br></div></section>
+    <ul><li><section><h1 id=371>
+    <span class="no">[371]</span>
+    <a class="thread-title" href="#371">Re:Commit報告:(Fix) 改行コード指定保存で文章が乱れるバグを修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-05-05T20:30:28">2008年05月05日 20:30</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; リビジョン：<br>&gt; 　rev1318<br>&gt; <br>&gt; 変更種別：<br>&gt; 　バグ修正。<br>&gt; <br>&gt; 内容：<br>&gt; 　改行コード指定保存時の全行の改行コード変換にバグがあり、文章が乱れることがありました。修正。<br>確認報告をさせていただきます。<br>&gt;　スクロール時に行番号表示が崩れるバグを修正しました。<br>&gt;　結果的に、以下のバグが修正されました。<br>&gt;　&gt; 8) 行削除後、行番号が描画されない場合がある。<br><br>&gt;　読み込んで未変更のファイルを『名前をつけて保存』でオープンしたファイルを指定し書き込んだ場合に、書き込まれないバグを修正。<br>以上2点修正されていることを確認しました。<br><br>私の報告した不具合で修正されていないのは、<br>261:<br>4) 『共通設定』の『ファイル』の『ファイルの排他制御』で『他プロセスから読み書きを禁止する』を選択し、『バックアップ』の『保存時にバックアップを作成する』にすると<br>    上書き保存時、「バックアップの作成に失敗しました.元ファイルへの上書きを継続しますか.」のメッセージが表示される。<br>274:<br>2）表示行の長さがエディタの幅よりも長い場合に、行選択すると画面がちらつく。<br>303:<br>1) Grep で『ファイル毎』を指定した結果の『ファイル名』（行ではなく）をダブルクリックすると、ディレクトリ指定部が重複したファイルを開こうとし、<br>        上記ファイル名は不正です。…<br>    のエラーメッセージが表示されます。<br>    （行のダブルクリックはOKです）<br>以上３点です。<br>参考にしてください。</div></section>
+    <ul><li><section><h1 id=375>
+    <span class="no">[375]</span>
+    <a class="thread-title" href="#375">Re2:Commit報告:(Fix) 改行コード指定保存で文章が乱れるバグを修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-05-08T00:27:13">2008年05月08日 00:27</time></h1>
+    <div class="body">ご確認およびご報告ありがとうございます。<br><br>&gt; 274:<br>&gt; 2）表示行の長さがエディタの幅よりも長い場合に、行選択すると画面がちらつく。<br><br>これに関しては、当方の環境がVistaであり現象を再現しずらいため、<br>対応は他の方にお任せしようかと思います。<br>それまでの間、ちらつきが気になる方は、<br>[共通設定] の [画面キャッシュを使う] オプションをONにすれば良いかと（？）。試してないので、それで解決するか分かりませんが。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

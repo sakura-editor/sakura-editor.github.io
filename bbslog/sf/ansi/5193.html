@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>選択した文字の反転色に関して | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5193</span>
+    <a class="thread-title" href="5193.html#5193">選択した文字の反転色に関して</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5194</span>
+    <a class="thread-title" href="5193.html#5194">Re:選択した文字の反転色に関して</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5193>
+    <span class="no">[5193]</span>
+    <a class="thread-title" href="#5193">選択した文字の反転色に関して</a>
+    <span class="author">inoue</span>
+    <time datetime="2007-11-27T18:08:19">2007年11月27日 18:08</time></h1>
+    <div class="body">現在の設定では、個々の選択文字・背景色ごとに反転色が反映されていると思うのですが。<br><br>選択文字・背景色を一律で設定できるようになればと、<br>自分でもソースコードのそれらしい箇所をいじってみましたが<br>思うような結果が得られませんでした。<br><br>具体的にソースコードのどの部分をいじれば、設定できるようになるのか<br>教えていただけないでしょうか。</div></section>
+    <ul><li><section><h1 id=5194>
+    <span class="no">[5194]</span>
+    <a class="thread-title" href="#5194">Re:選択した文字の反転色に関して</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-11-28T20:17:39">2007年11月28日 20:17</time></h1>
+    <div class="body">▼ inoueさん<br>&gt; 現在の設定では、個々の選択文字・背景色ごとに反転色が反映されていると思うのですが。<br>&gt; <br>&gt; 選択文字・背景色を一律で設定できるようになればと、<br>&gt; 自分でもソースコードのそれらしい箇所をいじってみましたが<br>&gt; 思うような結果が得られませんでした。<br>&gt; <br>&gt; 具体的にソースコードのどの部分をいじれば、設定できるようになるのか<br>&gt; 教えていただけないでしょうか。<br><br>選択範囲の反転は DrawSelectArea, DispTextSelected で行われているようです。<br>通常色で描画された矩形に対して反転処理 (SetROP2 + PaintRgn) を施している形です。<br>通常色の描画がどこで行われているか、というと、これは「どこ」と特定できないほど<br>いろんな箇所に管理が分散しています。<br>このような実装であるため、お望みの改造は実はかなり難しいです。</div></section>
+    </li></ul></li></ul></body></html>

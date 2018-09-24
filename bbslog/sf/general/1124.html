@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マクロ InsText, AddTail でフリーズ？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1124</span>
+    <a class="thread-title" href="1124.html#1124">マクロ InsText, AddTail でフリーズ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1125</span>
+    <a class="thread-title" href="1124.html#1125">Re: マクロ InsText, AddTail でフリーズ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1126</span>
+    <a class="thread-title" href="1124.html#1126">Re2: マクロ InsText, AddTail でフリーズ？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1127</span>
+    <a class="thread-title" href="1124.html#1127">Re3: マクロ InsText, AddTail でフリーズ？</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1124>
+    <span class="no">[1124]</span>
+    <a class="thread-title" href="#1124">マクロ InsText, AddTail でフリーズ？</a>
+    <span class="author">Lionel</span>
+    <time datetime="2002-01-22T15:37:10">2002年01月22日 15:37</time></h1>
+    <div class="body">はじめまして。<br>サクラエディタを愛用しております Lionel と申します。<br>これだけ優れたソフトをフリーで提供してくださっている<br>開発者の皆様には感謝の気持ちでいっぱいです(^^<br><br>現在、主に java ソースの記述に使わせて頂いておりますが、<br>その際 public static final void main ... だとか<br>javadoc 形式のコメントなどの定型文の記述が面倒なので<br>マクロで楽を出来ないかと試行錯誤していました。ところが、<br><br>InsText("string");<br><br>という１行だけのファイルを sample.mac として保存し、それを<br>ツール ＞ キーマクロの読み込み で読み込みますと、確実に<br>そのウィンドウがフリーズしてしまいます。<br>InsText を AddTail に替えてみても同じでした。<br><br>マクロの書式は合っていますよね？(^^;<br>これは私のＰＣだけの現象なのでしょうか。<br>環境は Win2000 SP-2 で、サクラエディタは 1.2.104.1 です。</div></section>
+    <ul><li><section><h1 id=1125>
+    <span class="no">[1125]</span>
+    <a class="thread-title" href="#1125">Re: マクロ InsText, AddTail でフリーズ？</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-22T16:02:59">2002年01月22日 16:02</time></h1>
+    <div class="body">&gt;という１行だけのファイルを sample.mac として保存し、それを<br>&gt;ツール ＞ キーマクロの読み込み で読み込みますと、確実に<br>&gt;そのウィンドウがフリーズしてしまいます。<br>すいません．既知のバグです．<br>共通設定－マクロで機能に割り当てれば動作します．<br><br>こっちは掲示板で答えるのがもう3回目ですが，こちらが悪いので「過去ログみろや～」とは決して申しません．<br>「キーマクロの読み込み」はバグが直るまで使用不可にしておいた方がいいかもしれませんね．<br></div></section>
+    <ul><li><section><h1 id=1126>
+    <span class="no">[1126]</span>
+    <a class="thread-title" href="#1126">Re2: マクロ InsText, AddTail でフリーズ？</a>
+    <span class="author">Lionel</span>
+    <time datetime="2002-01-22T18:38:27">2002年01月22日 18:38</time></h1>
+    <div class="body">&gt; すいません．既知のバグです．<br>&gt; 共通設定－マクロで機能に割り当てれば動作します．<br><br>動作確認しました。<br>&gt; こっちは掲示板で答えるのがもう3回目ですが，<br><br>あう、それは失礼しました m(__)m<br>質問前に一応「InsText」等のキーワードでログ検索は<br>かけたのですが、探し方が悪かったようですね。<br>今後は気をつけますのでご容赦を。<br><br>何はともあれ、これで目当ての機能は実現出来そうです。<br>ご返答ありがとうございました。</div></section>
+    <ul><li><section><h1 id=1127>
+    <span class="no">[1127]</span>
+    <a class="thread-title" href="#1127">Re3: マクロ InsText, AddTail でフリーズ？</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-22T21:32:22">2002年01月22日 21:32</time></h1>
+    <div class="body">▼ Lionelさん<br>&gt; &gt; すいません．既知のバグです．<br>&gt; &gt; 共通設定－マクロで機能に割り当てれば動作します．<br>&gt; <br>&gt; 動作確認しました。<br>&gt; &gt; こっちは掲示板で答えるのがもう3回目ですが，<br>&gt; <br>&gt; あう、それは失礼しました m(__)m<br>&gt; 質問前に一応「InsText」等のキーワードでログ検索は<br>&gt; かけたのですが、探し方が悪かったようですね。<br>&gt; 今後は気をつけますのでご容赦を。<br>&gt; <br>&gt; 何はともあれ、これで目当ての機能は実現出来そうです。<br>&gt; ご返答ありがとうございました。<br><br>はろう。<br>InsText("はろう");<br>が（手元では）動くようになりました。<br>今日最新のソースをリリースしたばかりなので、ソースに混ぜられるのはまた1週間後くらいだと思います。<br><br>ソースをコンパイルできる方は、<br>etc_uty.cppの1794行目<br>for( i = nBgn; i + 1 &lt; nTextLen; ++i ){<br>を<br>for( i = nBgn; i &lt; nTextLen; ++i ){<br>にしてみてくださいまし動くと思います。<br><br>では。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

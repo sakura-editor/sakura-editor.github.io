@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>unicode版で表示できないSJIS文字、他 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7312</span>
+    <a class="thread-title" href="7312.html#7312">unicode版で表示できないSJIS文字、他</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7315</span>
+    <a class="thread-title" href="7312.html#7315">Re:unicode版で表示できないSJIS文字、他</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7312>
+    <span class="no">[7312]</span>
+    <a class="thread-title" href="#7312">unicode版で表示できないSJIS文字、他</a>
+    <span class="author">匿名</span>
+    <time datetime="2011-02-09T00:13:24">2011年02月09日 00:13</time></h1>
+    <div class="body">質問１<br><br>従来版(v1.6.5.0)では表示できるのに、<br>unicode版(rev1860)で表示できない文字<br>があることに最近気づきました。<br><br>例えば、数学記号のルートという記号は<br>次の２つがあります。<br><br>区 点 JIS  SJIS EUC  UTF-8  UTF-16 字<br>02 69 2265 81E3 A2E5 E2889A 221A   √<br>13 85 2D75 8795 ADF5 ------ ------ √<br>(参照先: <a href=http://ash.jp/code/unitbl21.htm) target=_top><nobr>http://<wbr>ash.<wbr>jp/<wbr>code/<wbr>unitbl21<wbr>.<wbr>htm)<wbr></nobr></a><br><br>ここで、v.1.6.5 と unicode版で次の違いがあります。<br>1) v1.6.5 で、 SJISコード8795の記号√を書いた<br>  テキストファイルを作成する。<br>   v1.6.5 では正しく表示される<br>2) 同じテキストをunicode版で開くと文字化けする。<br><br><br>unicode版とはいえ、「SJISで開く」というモード<br>があるのになんで文字化けするの？という気がしますが、<br>これは仕方がないものでしょうか？<br><br><br>質問2:<br>上記とは逆のシチュエーションですが、<br>unicodeにあってSJISにない文字を、<br>SJISで保存しようとすると<br>「文字エンコードSJISで保存しょうとしていますが、<br>文字コード変換により一部の文字情報が失われます」<br>という警告メッセージがでますが、<br>このとき、実際にどの文字が文字化けする可能性があるか<br>を知る手段はないでしょうか？<br><br>よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=7315>
+    <span class="no">[7315]</span>
+    <a class="thread-title" href="#7315">Re:unicode版で表示できないSJIS文字、他</a>
+    <span class="author">Coward</span>
+    <time datetime="2011-02-09T11:15:19">2011年02月09日 11:15</time></h1>
+    <div class="body">&gt; 区 点 JIS  SJIS EUC  UTF-8  UTF-16 字<br>&gt; 02 69 2265 81E3 A2E5 E2889A 221A   √<br>&gt; 13 85 2D75 8795 ADF5 ------ ------ √<br>&gt; (参照先: <a href=http://ash.jp/code/unitbl21.htm) target=_top><nobr>http://<wbr>ash.<wbr>jp/<wbr>code/<wbr>unitbl21<wbr>.<wbr>htm)<wbr></nobr></a><br><br>SJIS 8795 には対応する UTF-16 文字がありませんね。<br>81E3 と同じ 221A に変換して内部保持するようにすれば、<br>表示は化けないと思いますが、上書き保存すると<br>元の 8795 ではなく81E3 になってしまうと思います。<br>メモ帳や他の内部UNICODEエディタの多くはそうなる<br>みたいです。<br><br>サクラでは上書き保存しても中身が変わらないように<br>していて、その代償として表示のほうを諦めているの<br>ではないかと思います。<br><br>ANSI版でも似たような話（'～'記号など）は昔からあって、<br>表示を諦めてでも中身を壊さないで欲しいという要望<br>のほうがいつも優先されているような気がします。<br>    <a href=http://sakura.qp.land.to/?FAQ%2F24 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>FAQ%<wbr>2F24</nobr></a><br><br>&gt; 1) v1.6.5 で、 SJISコード8795の記号√を書いた<br>&gt;   テキストファイルを作成する。<br><br>僕の環境では v1.6.5 でもそのようなファイルを作成<br>することができません。<br>IME パッドから 8795 を指定しても 81E3 が入ります。<br>ATOK 文字パレットからの 8795 指定でも 81E3 が入ります。<br>（もちろんバイナリエディタなら 8795 入力できますけど）<br>8795 に関しては普通には入力できない気がするので<br>問題ないのでわ？<br>他にどんな文字が表示できないか知りませんが、それも<br>いわゆる機種依存文字（使用は非推奨）に含まれる文字<br>のうち、ごく一部の文字ではないかと。<br><br>&gt; unicode版とはいえ、「SJISで開く」というモード<br>&gt; があるのになんで文字化けするの？という気がしますが、<br><br>ANSI版とはいえ、「Unicodeで開く」というモード<br>があるのにSJIS範囲外文字が文字化けするのと同じ<br>だと思いますけど。<br><br>&gt; このとき、実際にどの文字が文字化けする可能性があるか<br>&gt; を知る手段はないでしょうか？<br><br>今のところその手段はなさそうな気がしますね。</div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>PerlScriptマクロの使用法をマクロヘルプに | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">209</span>
+    <a class="thread-title" href="209.html#209">PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">210</span>
+    <a class="thread-title" href="209.html#210">Re: PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">212</span>
+    <a class="thread-title" href="209.html#212">Re2: PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">213</span>
+    <a class="thread-title" href="209.html#213">Re3: PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">211</span>
+    <a class="thread-title" href="209.html#211">Re:PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">214</span>
+    <a class="thread-title" href="209.html#214">Re2:PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">215</span>
+    <a class="thread-title" href="209.html#215">Re3: PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">216</span>
+    <a class="thread-title" href="209.html#216">Re4: PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">217</span>
+    <a class="thread-title" href="209.html#217">Re5: PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    </li><li><div class="list-title">
+    <span class="no">218</span>
+    <a class="thread-title" href="209.html#218">Re5: PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">219</span>
+    <a class="thread-title" href="209.html#219">Re3: PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">221</span>
+    <a class="thread-title" href="209.html#221">Re4: PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">222</span>
+    <a class="thread-title" href="209.html#222">Re5: PerlScriptマクロの使用法をマクロヘルプに</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=209>
+    <span class="no">[209]</span>
+    <a class="thread-title" href="#209">PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">maru</span>
+    <time datetime="2005-09-23T16:58:58">2005年09月23日 16:58</time></h1>
+    <div class="body">りーやさん、miauさんがPerlScriptについて<br>追求された成果がまとまってきましたので<br>Perlならではの注意点やTipsを整理して<br>SakuraMacro.chmに取り込みたいと思います。<br><br>PerlScriptはほとんど使わないので<br>いろいろとご教示いただきたく。<br><br>▼りーやさん<br>「PerlMacro.txt」にて以下の部分がわかりません。<br>文頭で無サポートをうたっていますが、教えてください。<br><br>&gt; これを $Editor-&gt;SPACEToTAB(); なんてやるとエラーになる。<br>このエラーはうちの環境では再現しません。<br>$Editor-&gt;マクロ関数名();<br>の記述はＮＧ、の意味？<br><br>▼miauさん<br>&gt; ファイル全体の文字数＞スクリプト部分のバイト数<br>コメント文中なら２バイト文字を無制限に使用できる、という<br>意味に見えますが、あってますか？</div></section>
+    <ul><li><section><h1 id=210>
+    <span class="no">[210]</span>
+    <a class="thread-title" href="#210">Re: PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-09-23T21:36:23">2005年09月23日 21:36</time></h1>
+    <div class="body">▼ maruさん<br>&gt;Perlならではの注意点やTipsを整理して<br>&gt;SakuraMacro.chmに取り込みたいと思います。<br><br>どうも、いつもご苦労さまです。<br><br>&gt;▼りーやさん<br>&gt;&gt; これを $Editor-&gt;SPACEToTAB(); なんてやるとエラーになる。<br>&gt;このエラーはうちの環境では再現しません。<br>&gt;$Editor-&gt;マクロ関数名();<br>&gt;の記述はＮＧ、の意味？<br><br>えっと、今のマクロヘルプだと「マクロの関数名について」に<br>なるのか？サクラエディタのオンラインヘルプのWSHマクロ<br>のところに以下のように書かれてます。<br>&gt;サクラエディタのオブジェクト名はEditorです。<br>&gt;メソッド名には、S_は付きません。<br>Perlの書き方だとこれは、$オブジェクト名-&gt;メソッド名のように<br>$Editor-&gt;InsText('&lt;br /&gt;');<br>のようにして試したくなったのですが、マクロの動く名前空間？<br>では、$Editor-&gt;InsText('&lt;br /&gt;');もEditor-&gt;InsText('&lt;br /&gt;');<br>もダメで、オブジェクト名なしのメソッド名のみがＯＫ。<br>InsText('&lt;br /&gt;');<br>が使えます。私にとっては経験則なので理由はわかりません。<br><br>ということなんですが・・・<br><br></div></section>
+    <ul><li><section><h1 id=212>
+    <span class="no">[212]</span>
+    <a class="thread-title" href="#212">Re2: PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-09-23T23:29:38">2005年09月23日 23:29</time></h1>
+    <div class="body">▼ りーやさん<br>&gt; えっと、今のマクロヘルプだと「マクロの関数名について」に<br>&gt; なるのか？サクラエディタのオンラインヘルプのWSHマクロ<br>&gt; のところに以下のように書かれてます。<br>&gt; &gt;サクラエディタのオブジェクト名はEditorです。<br>&gt; &gt;メソッド名には、S_は付きません。<br>&gt; Perlの書き方だとこれは、$オブジェクト名-&gt;メソッド名のように<br>&gt; $Editor-&gt;InsText('&lt;br /&gt;');<br>&gt; のようにして試したくなったのですが、マクロの動く名前空間？<br>&gt; では、$Editor-&gt;InsText('&lt;br /&gt;');もEditor-&gt;InsText('&lt;br /&gt;');<br>&gt; もダメで、オブジェクト名なしのメソッド名のみがＯＫ。<br>&gt; InsText('&lt;br /&gt;');<br>&gt; が使えます。私にとっては経験則なので理由はわかりません。<br>ご存じかもしれませんが<br><br>Editor.InsText('aaa');<br>&amp;InsText('ccc');<br>InsText('ddd');<br><br>が通るみたいですね、他にもあるのかな?</div></section>
+    <ul><li><section><h1 id=213>
+    <span class="no">[213]</span>
+    <a class="thread-title" href="#213">Re3: PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-09-24T10:27:24">2005年09月24日 10:27</time></h1>
+    <div class="body">▼ (全略)さん<br>&gt;ご存じかもしれませんが<br>&gt;<br>&gt;Editor.InsText('aaa');<br>&gt;&amp;InsText('ccc');<br>&gt;InsText('ddd');<br>&gt;<br>&gt;が通るみたいですね、他にもあるのかな?<br><br>しらなかったっす。。<br>ひとつ動くのを見つけたから、それまでで・・・<br><br>どうもピリオドは連接演算子のイメージ強いし、<br>サブルーチン呼び出しの書式も抵抗あるので<br>やはり一番下で続けようかと思うんですが、<br>なにが正しいんでしょ？<br><br>まぁ、動けばいいかぁ<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=211>
+    <span class="no">[211]</span>
+    <a class="thread-title" href="#211">Re:PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">miau</span>
+    <time datetime="2005-09-23T23:20:19">2005年09月23日 23:20</time></h1>
+    <div class="body">▼ maruさん<br>&gt; &gt; ファイル全体の文字数＞スクリプト部分のバイト数<br>&gt; コメント文中なら２バイト文字を無制限に使用できる、という<br>&gt; 意味に見えますが、あってますか？<br><br>わかりにくくてすいません。<br>ここで言う「スクリプト部分のバイト数」というのは、<br>ファイルの先頭から「ここまで実行させたい」という位置までのバイト数のことです。<br><br>例えば、<br><br># 選択部分の文字列を取得<br>$sel = GetSelectedString();<br>:<br>:（何か一連の処理）<br>:<br>MsgBox($result);<br>#padding<br>#padding<br>#padding<br><br>というようなスクリプトを書いた場合、<br>MsgBox の行末までを「スクリプト部分のバイト数」と表現しました。<br><br><br>あと、簡単な解析＆短い経験から<br>&gt;ファイル全体の文字数＞スクリプト部分のバイト数<br>になっていれば大丈夫だと思うんですが、<br>確実とは言えない気もしてきました。<br><br>代替策として PerlScript 5.8.7.813 用のパッチというのも作ってみました。<br><br><a href=http://miau.s9.xrea.com/blog/index.php?itemid=402 target=_top><nobr>http://<wbr>miau.<wbr>s9.<wbr>xrea.<wbr>com/<wbr>blog/<wbr>index.<wbr>php?<wbr>itemid=<wbr>402</nobr></a><br><br>好みに応じてこれを使っても大丈夫・・・だと思います。<br></div></section>
+    <ul><li><section><h1 id=214>
+    <span class="no">[214]</span>
+    <a class="thread-title" href="#214">Re2:PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">maru</span>
+    <time datetime="2005-09-24T16:32:59">2005年09月24日 16:32</time></h1>
+    <div class="body">皆様、回答ありがとうございます。<br><br>ある程度PealScriptの解説を取り混ぜて2005.09.24版とします。<br><a href=http://www.geocities.jp/maru3128/sakura.html#macrohelp target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>maru3128<wbr>/<wbr>sakura.<wbr>html#<wbr>macrohel<wbr>p</nobr></a><br><br>&gt;&gt;dev:4044の解説ついては本家に取り込まれるのを待つことにします。<br><br>追記事項・誤記などありましたらご指摘いただきたく。<br><br>▼りーやさん<br>&gt; オブジェクト名なしのメソッド名のみがＯＫ。<br>うちの環境では「$Editor-&gt;InsText('aaa');」は動作できました。<br>環境によって、ということでしょう。<br><br>▼ miauさん<br>&gt; ファイルの先頭から「ここまで実行させたい」という位置までのバイト数のことです。<br>了解しました。<br><br>&gt; 代替策として PerlScript 5.8.7.813 用のパッチというのも作ってみました。<br>&gt; <a href=http://miau.s9.xrea.com/blog/index.php?itemid=402 target=_top><nobr>http://<wbr>miau.<wbr>s9.<wbr>xrea.<wbr>com/<wbr>blog/<wbr>index.<wbr>php?<wbr>itemid=<wbr>402</nobr></a><br>なんだかややこしそうな力技ですね・・・。<br>おつかれさまです。<br><br><a href=http://www.geocities.jp/maru3128/sakura.html#file2 target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>maru3128<wbr>/<wbr>sakura.<wbr>html#<wbr>file2</nobr></a>＞支援ツール<br>からリンクを貼らせていただきました。</div></section>
+    <ul><li><section><h1 id=215>
+    <span class="no">[215]</span>
+    <a class="thread-title" href="#215">Re3: PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-09-24T16:51:19">2005年09月24日 16:51</time></h1>
+    <div class="body">▼ maruさん<br>&gt;うちの環境では「$Editor-&gt;InsText('aaa');」は動作できました。<br>&gt;環境によって、ということでしょう。<br><br>今やってみたらウチでも動作できました。<br>前はダメだったような気がするのですが・・・<br><br></div></section>
+    <ul><li><section><h1 id=216>
+    <span class="no">[216]</span>
+    <a class="thread-title" href="#216">Re4: PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">miau</span>
+    <time datetime="2005-09-24T18:01:21">2005年09月24日 18:01</time></h1>
+    <div class="body">▼ りーやさん<br>&gt; ▼ maruさん<br>&gt; &gt;うちの環境では「$Editor-&gt;InsText('aaa');」は動作できました。<br>&gt; &gt;環境によって、ということでしょう。<br>&gt; <br>&gt; 今やってみたらウチでも動作できました。<br>&gt; 前はダメだったような気がするのですが・・・<br><br>$Editor というグローバル変数があるみたいですね。<br>use strict してる場合は<br><br>our $Editor;<br><br>としてやらないと使えない、ということだと思います。<br><br>でもそうなると逆に、なぜ $Editor を省略しても<br>マクロ関数を呼べるのかが謎なんですが・・・</div></section>
+    <ul><li><section><h1 id=217>
+    <span class="no">[217]</span>
+    <a class="thread-title" href="#217">Re5: PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">maru</span>
+    <time datetime="2005-09-24T18:57:06">2005年09月24日 18:57</time></h1>
+    <div class="body">▼ miauさん<br>&gt; $Editor というグローバル変数があるみたいですね。<br>&gt; use strict してる場合は<br>&gt; our $Editor;<br>&gt; としてやらないと使えない、ということだと思います。<br><br>リファレンスのマクロ関数名のところ、修正しました。</div></section>
+    </li><li><section><h1 id=218>
+    <span class="no">[218]</span>
+    <a class="thread-title" href="#218">Re5: PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">もか</span>
+    <time datetime="2005-09-24T23:13:52">2005年09月24日 23:13</time></h1>
+    <div class="body">&gt;でもそうなると逆に、なぜ $Editor を省略しても<br>&gt;マクロ関数を呼べるのかが謎なんですが・・・<br>サクラエディタがスクリプトエンジンに渡す(聞かれる)<br>オブジェクト情報が正しくないために、その辺に関係するバグかもしれません。<br>言語側が元々使っている名前とバッティングしそうで怖いですよね。<br><br>#JScript/VBScript等でも呼び出せるため気にはしていたのですが、<br>#実装するのはすごく大変そうです。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=219>
+    <span class="no">[219]</span>
+    <a class="thread-title" href="#219">Re3: PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-09-25T07:15:27">2005年09月25日 07:15</time></h1>
+    <div class="body">▼ maruさん<br>&gt;ある程度PealScriptの解説を取り混ぜて2005.09.24版とします。<br>&gt;http://www.geocities.jp/maru3128/sakura.html#macrohelp<br><br>ごくろうさまです。すこし拝見しました。<br>ウチの環境でなんですが、「マクロを部分実行するには」の<br>ページが文字化けします。これはclipmacro.htmlをＩＥで開い<br>ても同じで、エンコードが自動認識で西ヨーロッパ言語に<br>認識されるみたいです。<br><br>あと、キーワード・タブの「このヘルプファイルについて」と<br>「マクロの関数名について」がページを表示できません。<br>となります。<br></div></section>
+    <ul><li><section><h1 id=221>
+    <span class="no">[221]</span>
+    <a class="thread-title" href="#221">Re4: PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">maru</span>
+    <time datetime="2005-09-25T14:23:26">2005年09月25日 14:23</time></h1>
+    <div class="body">▼ りーやさん<br>報告ありがとうございます。<br><br>&gt; ウチの環境でなんですが、「マクロを部分実行するには」の<br>&gt; ページが文字化けします。<br>文字コードの指定を入れました。<br><br><br>&gt; あと、キーワード・タブの「このヘルプファイルについて」と<br>&gt; 「マクロの関数名について」がページを表示できません。<br>&gt; となります。<br>キーワード・タブには不要？と思いますので削除しました。</div></section>
+    <ul><li><section><h1 id=222>
+    <span class="no">[222]</span>
+    <a class="thread-title" href="#222">Re5: PerlScriptマクロの使用法をマクロヘルプに</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-09-25T20:27:13">2005年09月25日 20:27</time></h1>
+    <div class="body">▼ maruさん<br>&gt;報告ありがとうございます。<br><br>素早いご対応、頭が下がります。<br>そこで小出しのようで恐縮なんですが・・・<br><br>メッセージボックスについてのサンプルの<br>RubyScript なんですが、私の環境では<br>(ActiveScriptRuby 1.8.2.0)、このスクリプト<br>を２回続けて行うとタスク終了してしまいます。<br><br>残念ながら、安定した Ruby マクロって今の<br>ところ難しそうです。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

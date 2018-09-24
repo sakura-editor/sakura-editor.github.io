@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>共通設定：ファイル名表示の修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3495</span>
+    <a class="thread-title" href="3495.html#3495">共通設定：ファイル名表示の修正</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=3495>
+    <span class="no">[3495]</span>
+    <a class="thread-title" href="#3495">共通設定：ファイル名表示の修正</a>
+    <span class="author">dskoba</span>
+    <time datetime="2004-03-24T23:39:06">2004年03月24日 23:39</time></h1>
+    <div class="body">先頭のアイテムを選択して「上へ」を押すとアイテムが消えるのを修正<br>(ついでに無駄な判定を修正)<br><br>CPropCommon::MoveListViewItem_FILENAME() で<br><br>-if( nIndex &gt;= nCount - 1 ){<br>+if( nIndex &gt; nCount - 1 ){<br>   nIndex = nCount - 1;<br> }<br>-if( nIndex2 &gt;= nCount - 1 ){<br>+if( nIndex2 &gt; nCount - 1 ){<br>   nIndex2 = nCount - 1;<br> }<br>+if( nIndex &lt; 0 ){<br>+  nIndex = 0;<br>+}<br>+if( nIndex2 &lt; 0 ){<br>+  nIndex2 = 0;<br>+}<br> if( nIndex == nIndex2 ){<br>   return -1;<br> }</div></section>
+    </li></ul></body></html>

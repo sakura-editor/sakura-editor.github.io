@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>FontLinkしたフォントが無視される | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">12</span>
+    <a class="thread-title" href="12.html#12">FontLinkしたフォントが無視される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">18</span>
+    <a class="thread-title" href="12.html#18">Re:FontLinkしたフォントが無視される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">62</span>
+    <a class="thread-title" href="12.html#62">Re2:FontLinkしたフォントが無視される</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=12>
+    <span class="no">[12]</span>
+    <a class="thread-title" href="#12">FontLinkしたフォントが無視される</a>
+    <span class="author">うえだ</span>
+    <time datetime="2007-11-15T13:47:12">2007年11月15日 13:47</time></h1>
+    <div class="body">題名のとおりですが、<br>XPのFontLonk機能で、欧文フォントと日本語フォントをリンクしましたが、欧文しか表示してくれません。<br>これは仕様でしょうか？<br><br>それぞれのフォントは、単体ではサクラエディタで使用できます。<br>FontLinkした状態で、サクラエディタ以外の私の使用しているソフト（例えばEmEditer）では、リンク設定どおりに使用できています。<br><br>できれば解決していただきたい機能です。<br><br></div></section>
+    <ul><li><section><h1 id=18>
+    <span class="no">[18]</span>
+    <a class="thread-title" href="#18">Re:FontLinkしたフォントが無視される</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-11-16T01:21:17">2007年11月16日 01:21</time></h1>
+    <div class="body">&gt; XPのFontLonk機能で、欧文フォントと日本語フォントをリンクしましたが、欧文しか表示してくれません。<br>&gt; これは仕様でしょうか？<br>UNICODE版ではリンク設定どおりに表示されるようです。<br><br>[開発A]のほうの話題になりますが、現行のANSI版でも文字出力にExtTextOutWを使うようにしてみたら表示されるようになる模様。<br>→Patches#1832567<br>&gt;&gt;data:5891のような話もあったけど、ExtTextOutWならCourier NewのようにもともとDEFAULT_CHARSETでFontLinkの明示指定が無いフォントでも、メモ帳と同様に日本語表示されるようになりますね。</div></section>
+    <ul><li><section><h1 id=62>
+    <span class="no">[62]</span>
+    <a class="thread-title" href="#62">Re2:FontLinkしたフォントが無視される</a>
+    <span class="author">うえだ</span>
+    <time datetime="2007-11-22T10:38:57">2007年11月22日 10:38</time></h1>
+    <div class="body">&gt;&gt;ryojiさん<br><br>お返事遅くなってすいません。<br>UNICODE版で確認しました。<br><br>FontLink設定どおり表示され、快適になりました<br>ありがとうございます</div></section>
+    </li></ul></li></ul></li></ul></body></html>

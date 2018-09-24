@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>キー割り当て設定画面のバグ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">808</span>
+    <a class="thread-title" href="808.html#808">キー割り当て設定画面のバグ</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=808>
+    <span class="no">[808]</span>
+    <a class="thread-title" href="#808">キー割り当て設定画面のバグ</a>
+    <span class="author">みく</span>
+    <time datetime="2001-11-07T19:27:56">2001年11月07日 19:27</time></h1>
+    <div class="body">インポートをしても機能に割り当てられているキー<br>リストが更新されない。<br>→CPropCommon::p5_Import_KeySetting()の<br>関数最後のreturn前の2行、IDC_LIST_KEYを<br>IDC_LIST_FUNCに変更する。<br><br>同じ関数内で、ファイル形式が異なる場合に<br>ファイルがクローズされずにリターンする。<br><br></div></section>
+    </li></ul></body></html>

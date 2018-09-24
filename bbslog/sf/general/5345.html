@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>関数一覧 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5345</span>
+    <a class="thread-title" href="5345.html#5345">関数一覧</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5346</span>
+    <a class="thread-title" href="5345.html#5346">RE: 関数一覧</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5347</span>
+    <a class="thread-title" href="5345.html#5347">Re2: 関数一覧</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5348</span>
+    <a class="thread-title" href="5345.html#5348">Re3: 関数一覧</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5349</span>
+    <a class="thread-title" href="5345.html#5349">Re3: 関数一覧</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5345>
+    <span class="no">[5345]</span>
+    <a class="thread-title" href="#5345">関数一覧</a>
+    <span class="author">GuiYM</span>
+    <time datetime="2006-07-15T16:13:20">2006年07月15日 16:13</time></h1>
+    <div class="body">関数一覧ってどんなロジックで検出してるんですか?</div></section>
+    <ul><li><section><h1 id=5346>
+    <span class="no">[5346]</span>
+    <a class="thread-title" href="#5346">RE: 関数一覧</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-07-15T22:17:16">2006年07月15日 22:17</time></h1>
+    <div class="body">&gt;関数一覧ってどんなロジックで検出してるんですか?<br>言語により異なります．<br>それぞれ専用の関数で，先頭からスキャンして探してます．<br></div></section>
+    <ul><li><section><h1 id=5347>
+    <span class="no">[5347]</span>
+    <a class="thread-title" href="#5347">Re2: 関数一覧</a>
+    <span class="author">GuiYM</span>
+    <time datetime="2006-07-15T22:40:01">2006年07月15日 22:40</time></h1>
+    <div class="body">C言語ですけど、教えていただけませんか?</div></section>
+    <ul><li><section><h1 id=5348>
+    <span class="no">[5348]</span>
+    <a class="thread-title" href="#5348">Re3: 関数一覧</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-07-16T06:32:04">2006年07月16日 06:32</time></h1>
+    <div class="body">&gt;C言語ですけど、教えていただけませんか?<br>じゃ，続きは開発掲示板 &gt;&gt;dev:4522 で<br></div></section>
+    </li><li><section><h1 id=5349>
+    <span class="no">[5349]</span>
+    <a class="thread-title" href="#5349">Re3: 関数一覧</a>
+    <span class="author">(全略)</span>
+    <time datetime="2006-07-17T02:08:22">2006年07月17日 02:08</time></h1>
+    <div class="body">▼ GuiYMさん<br>&gt; C言語ですけど、教えていただけませんか?<br>あまりこのエディタの構文解析は一般的じゃないのでよみづらいかも^^;<br>yaccとlexとか言うツールを使ってやると楽です。<br><br>C言語だと普通関数はこのような感じででてきますけど<br>unsigned int hoge ( ... ) { ... }<br><br>並び順で書くと<br><br>文字 文字 文字 括弧開き [いろいろ] 括弧閉じ ブラケット開き [いろいろ] ブラケット閉じ<br><br>こういう並びの時は関数になるわけです。<br>そして括弧開きの直前が関数名になります。<br> (もちろん他にもっと考慮する事はあるんですが)<br><br>yaccと言うツールはこの「指定の並びの文字がでてきたら処理する」みたいなことをします。<br><br># サクラエディタはこのへん自力でやってます、すごいです^^;</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

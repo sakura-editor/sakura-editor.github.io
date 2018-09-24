@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>フリーカーソル時のキャレット移動不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2319</span>
+    <a class="thread-title" href="2319.html#2319">フリーカーソル時のキャレット移動不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2320</span>
+    <a class="thread-title" href="2319.html#2320">Re:フリーカーソル時のキャレット移動不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2322</span>
+    <a class="thread-title" href="2319.html#2322">Re2:フリーカーソル時のキャレット移動不具合</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2323</span>
+    <a class="thread-title" href="2319.html#2323">Re2:フリーカーソル時のキャレット移動不具合</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2330</span>
+    <a class="thread-title" href="2319.html#2330">Re2:フリーカーソル時のキャレット移動不具合</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2319>
+    <span class="no">[2319]</span>
+    <a class="thread-title" href="#2319">フリーカーソル時のキャレット移動不具合</a>
+    <span class="author">hndred</span>
+    <time datetime="2015-12-20T02:34:50">2015年12月20日 02:34</time></h1>
+    <div class="body">【種別】<br>バグ報告<br><br>【確認環境】<br>バージョン： ver.2.3.0.0<br>ＯＳ      ： Windows Vista SP2<br><br>【内容】<br>上記バージョンでフリーカーソルONの際に、文字列がなにもない位置で矢印キー左右を使って移動すると移動速度がとても遅くなります。 <br>ver.2.2.0.1 までは一回のキーストロークで半角1文字分移動できていたのですが、 1/6 文字くらいの移動量に落ちてしまってます。<br>キャレットの移動量計算がおかしくなってしまったように見受けられます。 <br>間違いなければ、お手数ですが修正いただければ幸いです。<br><br>【補足】<br>Ctrl+←キーの「単語の左端に移動」だと何か単語があるところまで一気に移動していたのですが、こちらも半角1文字分だけしか移動しなくなってました。<br></div></section>
+    <ul><li><section><h1 id=2320>
+    <span class="no">[2320]</span>
+    <a class="thread-title" href="#2320">Re:フリーカーソル時のキャレット移動不具合</a>
+    <span class="author">ds14050</span>
+    <time datetime="2015-12-23T18:29:42">2015年12月23日 18:29</time></h1>
+    <div class="body">タイトルがあれで見つけにくいですが、矩形選択のこれと同根です。<br><a href=http://sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?log=data&v=8060#8060 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>data&amp;<wbr>v=<wbr>8060#<wbr>8060</nobr></a><br><br>それのパッチが一応ここにあります。<br><a href=http://sourceforge.net/p/sakura-editor/patchunicode/1006/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>1006/<wbr></nobr></a><br><br>単語の端に移動(Ctrl+←/Ctrl+→)の件については知りませんでしたが<br>これは意図された変更のようなんですね。<br><br>    // 矩形選択で、EOLより右側のときは１カラム単位で左移動<br>    // 矩形選択/フリーカーソルで、EOLより右側のときは１カラム単位で右移動<br>    <a href=http://sourceforge.net/p/sakura-editor/code/4035/#diff-6 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>4035/#<wbr>diff-<wbr>6</nobr></a><br><br>EOLより後ろのカーソル移動量を従来通り１カラム単位とするなら<br>EOLより後ろの単語単位カーソル移動も従来通り文字通り単語単位<br>にするのがいいような気がしますが、どうでしょうね(チラッ<br><br>他人の仕事をばっさり削除するだけの簡単なおしごと、というのは<br>その実、簡単でもなんでもないと思います。<br></div></section>
+    <ul><li><section><h1 id=2322>
+    <span class="no">[2322]</span>
+    <a class="thread-title" href="#2322">Re2:フリーカーソル時のキャレット移動不具合</a>
+    <span class="author">hndred</span>
+    <time datetime="2015-12-26T10:29:47">2015年12月26日 10:29</time></h1>
+    <div class="body">ds14050様、ご返信ありがとうございます。<br>お教えいただいた r2 パッチを適用したところ、問題が解決した<br>のを確認いたしました。大変有難うございます。<br><br>単語の端に移動(Ctrl+←/Ctrl+→)について、意図された変更の<br>ようだとのことも承知しました。<br><br>ただ、これですと大変使いにくいです。<br>フリーカーソル・モード利用者は少ないので、あまり問題とされ<br>無いのかもしれませんが、仰るように従来通り単語単位で止まる<br>動作にしていただけると大変嬉しいです。<br><br>自分で勝手にやれ、と言われると苦しいのですが...<br><br>ご検討いただければ幸いです。<br><br></div></section>
+    </li><li><section><h1 id=2323>
+    <span class="no">[2323]</span>
+    <a class="thread-title" href="#2323">Re2:フリーカーソル時のキャレット移動不具合</a>
+    <span class="author">anonymous</span>
+    <time datetime="2015-12-26T11:09:24">2015年12月26日 11:09</time></h1>
+    <div class="body">＞EOLより後ろのカーソル移動量を従来通り１カラム単位とするなら<br>＞EOLより後ろの単語単位カーソル移動も従来通り文字通り単語単位<br>＞にするのがいいような気がしますが、どうでしょうね(チラッ<br><br>元の仕様の「単語単位」に戻すに1票<br><br></div></section>
+    </li><li><section><h1 id=2330>
+    <span class="no">[2330]</span>
+    <a class="thread-title" href="#2330">Re2:フリーカーソル時のキャレット移動不具合</a>
+    <span class="author">もか</span>
+    <time datetime="2016-01-21T22:18:31">2016年01月21日 22:18</time></h1>
+    <div class="body">やっぱり「→」は文字単位にして<br>必要ならpx単位移動って関数を追加するのがいいかもしれない。<br>普通の文字の所でも文字の真ん中に移動できる奴。<br>そうすれば矩形選択であとちょっとだけ選択したい時に困らないとおもう。<br>で単語単位も元に戻すだけど、右移動は１文字ずつなのに左はEOLまで飛ぶって対象性を考えるともやっとする。<br>ただ従来動作に慣れてるから変更してほしくないっていう意見は納得できる。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

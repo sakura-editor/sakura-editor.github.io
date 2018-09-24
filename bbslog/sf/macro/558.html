@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>編集中のファイルパスを遡ってGrep | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">558</span>
+    <a class="thread-title" href="558.html#558">編集中のファイルパスを遡ってGrep</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">559</span>
+    <a class="thread-title" href="558.html#559">Re:編集中のファイルパスを遡ってGrep</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">560</span>
+    <a class="thread-title" href="558.html#560">Re2:編集中のファイルパスを遡ってGrep</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">561</span>
+    <a class="thread-title" href="558.html#561">Re3:編集中のファイルパスを遡ってGrep</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=558>
+    <span class="no">[558]</span>
+    <a class="thread-title" href="#558">編集中のファイルパスを遡ってGrep</a>
+    <span class="author">つんつく</span>
+    <time datetime="2012-08-08T21:08:09">2012年08月08日 21:08</time></h1>
+    <div class="body">マクロ初心者です。<br>次のようなマクロを作成したいのですが・・<br><br>編集中のファイルパスを遡ってGrepしたい。<br>＜例＞<br>D:\project\oooo\abc.c を編集中にカーソル上の単語を<br>①"D:\" <br>②"D:\project" <br>を対象にGrepしたいのです。<br>①②は別マクロでキーに割り当てます。<br>対象ファイルは"*.c *.h *.cpp"<br><br>どなたかアドバイスをお願いします</div></section>
+    <ul><li><section><h1 id=559>
+    <span class="no">[559]</span>
+    <a class="thread-title" href="#559">Re:編集中のファイルパスを遡ってGrep</a>
+    <span class="author">つんつく</span>
+    <time datetime="2012-08-10T00:13:17">2012年08月10日 00:13</time></h1>
+    <div class="body">&lt;400&gt;相対パスにある同名のCもしくはHファイルを..<br>を参考に作成してみました（初マクロ）<br><br>// カーソル語をルート直下SubDirでGrep<br>// TAB=4<br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに ppa.dll を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>var                // 変数を確保する場所<br>&#9;NewPath:String;<br>&#9;FullPath:String;<br>&#9;PDir,Dir,Fname,Ext:String;<br>&#9;pt:Integer;                // 整数数値変数<br>&#9;NL:String;<br>&#9;CurWord:String;<br>begin        // ここより処理内容        //{<br>&#9;// ↓改行を用意<br>&#9;NL := '<br>';<br>&#9;FullPath := S_GetFilename();        // 編集中のファイル名を取得する<br>&#9;CurWord := S_ExpandParameter('$C');&#9;//<br><br>&#9;// フルパスファイル名（FullPath）をディレクトリ(Dir)とファイル名(Fname)に分離する。<br>&#9;Fname := FullPath;<br>&#9;Dir := '';<br>&#9;repeat        //{<br>&#9;&#9;pt := Pos( '\' , Fname );<br>&#9;&#9;if( pt &gt; 0 ) then        begin<br>&#9;&#9;&#9;Dir   := Dir + Copy  ( Fname , 1 , pt );<br>&#9;&#9;&#9;Fname :=       Delete( Fname , 1 , pt );<br>&#9;&#9;end;<br>&#9;until ( pt &lt;= 0 );        //}<br><br>&#9;// ディレクトリ(Dir)を親ディレクトリ(PDir)とディレクトリ(Dir)に分離する。<br>&#9;if ( Length(Dir) &gt; 3 )        then        Dir := Delete(Dir,Length(Dir),1);<br>&#9;PDir := '';<br>&#9;repeat        //{<br>&#9;&#9;pt := Pos( '\' , Dir );<br>&#9;&#9;if( pt &gt; 0 ) then        begin<br>&#9;&#9;&#9;PDir := PDir + Copy  ( Dir , 1 , pt );<br>&#9;&#9;&#9;Dir  :=        Delete( Dir , 1 , pt );<br>&#9;&#9;end;<br>&#9;until ( pt &lt;= 0 );        //}<br><br>&#9;NewPath := PDir ;<br><br>// &#9;// ↓for デバッグ<br>// &#9;MessageBox(<br>// &#9;'[' + NewPath                + ']' + NL +<br>// &#9;'[' + FullPath                + ']' + NL +<br>// &#9;'[' + PDir                        + ']' + NL +<br>// &#9;'[' + Dir                        + ']' + NL +<br>// &#9;'[' + Fname                        + ']' + NL +<br>// &#9;'' , '確認' , 0 );<br><br>&#9;// NewPath が空で無ければ開く<br>&#9;if (NewPath &lt;&gt; '')        then        S_Grep(CurWord,'*.cpp;*.c;*.h',NewPath,1);<br>end;<br>//}<br></div></section>
+    <ul><li><section><h1 id=560>
+    <span class="no">[560]</span>
+    <a class="thread-title" href="#560">Re2:編集中のファイルパスを遡ってGrep</a>
+    <span class="author">♂つくん♂</span>
+    <time datetime="2012-08-10T21:29:10">2012年08月10日 21:29</time></h1>
+    <div class="body">これじゃダメだってことが判った。<br><br>家のWin7じゃOKだけど会社のXPじゃダメ。<br>なんだろう？</div></section>
+    <ul><li><section><h1 id=561>
+    <span class="no">[561]</span>
+    <a class="thread-title" href="#561">Re3:編集中のファイルパスを遡ってGrep</a>
+    <span class="author">♂つくん♂</span>
+    <time datetime="2012-08-13T00:25:41">2012年08月13日 00:25</time></h1>
+    <div class="body">// カーソル語をルート直下SubDirでGrep<br>// GrepSubDirCurWord.ppa<br><br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに ppa.dll を入れておいてください。<br>// マクロファイルの拡張子は .PPA でなくてはなりません。<br><br>var                // 変数を確保する場所<br>&#9;NewPath:String;<br>&#9;FullPath:String;<br>&#9;PDir,Dir,Fname,Ext:String;<br>&#9;pt:Integer;                // 整数数値変数<br>&#9;NL:String;<br>&#9;CurWord:String;<br>&#9;Cnt:Integer;                // 整数数値変数<br>begin        // ここより処理内容        //{<br>&#9;// ↓改行を用意<br>&#9;NL := '<br>';<br>&#9;FullPath := S_GetFilename();        // 編集中のファイル名を取得する<br>&#9;CurWord := S_ExpandParameter('$C');&#9;//<br><br>&#9;// フルパスファイル名（FullPath）をディレクトリ(Dir)とファイル名(Fname)に分離する。<br>&#9;Fname := FullPath;<br>&#9;Dir := '';<br>&#9;repeat        //{<br>&#9;&#9;pt := Pos( '\' , Fname );&#9;//'<br>&#9;&#9;if( pt &gt; 0 ) then        begin<br>&#9;&#9;&#9;Dir   := Dir + Copy  ( Fname , 1 , pt );<br>&#9;&#9;&#9;Fname :=       Delete( Fname , 1 , pt );<br>&#9;&#9;end;<br>&#9;until ( pt &lt;= 0 );        //}<br><br>&#9;// ディレクトリ(Dir)を親ディレクトリ(PDir)とディレクトリ(Dir)に分離する。<br>&#9;if ( Length(Dir) &gt; 3 )&#9;then&#9;Dir := Delete(Dir,Length(Dir),1);<br>&#9;PDir := '';<br>&#9;Cnt := 0;<br>&#9;repeat        //{<br>&#9;&#9;pt := Pos( '\' , Dir );&#9;&#9;//'<br>&#9;&#9;if( pt &gt; 0 ) then        begin<br>&#9;&#9;&#9;PDir := PDir + Copy  ( Dir , 1 , pt );<br>&#9;&#9;&#9;Dir  :=        Delete( Dir , 1 , pt );<br> &#9;&#9;&#9;Cnt := Cnt + 1;<br> &#9;&#9;&#9;if ( Cnt &gt; 1 ) then break;<br> &#9;&#9;end;<br>&#9;until ( pt &lt;= 0 );        //}<br><br>&#9;NewPath := PDir ;<br><br> &#9;// ↓for デバッグ<br>//  MessageBox(<br>//  '[' + NewPath                + ']' + NL +<br>//  '[' + FullPath                + ']' + NL +<br>//  '[' + PDir                        + ']' + NL +<br>//  '[' + Dir                        + ']' + NL +<br>//  '[' + Fname                        + ']' + NL +<br>//  '' , '確認.end' , 0 );<br><br>&#9;// NewPath が空で無ければ開く<br>&#9;if ( Length(CurWord) &gt; 1 )&#9;then<br>&#9;&#9;if (NewPath &lt;&gt; '')&#9;then&#9;S_Grep(CurWord,'*.cpp;*.c;*.h',NewPath,1);<br>&#9;end;<br>end;<br>//}<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

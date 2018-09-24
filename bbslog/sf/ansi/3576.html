@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ちょい機能強化パッチ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3576</span>
+    <a class="thread-title" href="3576.html#3576">ちょい機能強化パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3600</span>
+    <a class="thread-title" href="3576.html#3600">Re: ちょい機能強化パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3601</span>
+    <a class="thread-title" href="3576.html#3601">Re2: ちょい機能強化パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3603</span>
+    <a class="thread-title" href="3576.html#3603">Re3: ちょい機能強化パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3606</span>
+    <a class="thread-title" href="3576.html#3606">Re4: ちょい機能強化パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3607</span>
+    <a class="thread-title" href="3576.html#3607">Re5: ちょい機能強化パッチ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3610</span>
+    <a class="thread-title" href="3576.html#3610">その他追加質問 Re5: ちょい機能強化パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3612</span>
+    <a class="thread-title" href="3576.html#3612">RE: その他追加質問 Re5: ちょい機能強化パッチ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3621</span>
+    <a class="thread-title" href="3576.html#3621">RE: ちょい機能強化パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3622</span>
+    <a class="thread-title" href="3576.html#3622">Re2: ちょい機能強化パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3624</span>
+    <a class="thread-title" href="3576.html#3624">Re3: ちょい機能強化パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3625</span>
+    <a class="thread-title" href="3576.html#3625">Re4: ちょい機能強化パッチ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3576>
+    <span class="no">[3576]</span>
+    <a class="thread-title" href="#3576">ちょい機能強化パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-13T23:12:13">2004年05月13日 23:12</time></h1>
+    <div class="body">※削除による記事番号重複により、再投稿します。<br>レビュー段階ということでパッチだけ出します。<br>noviceさんのdiff_ssrc_2004-05-01.zipと一緒にパッチ当てると衝突するかもしれないっす。<br>内容自体は、衝突しないはず。<br>対象：ssrc_2004-05-01.tar.bz2<br>ファイル名：(e-Groups) plus040501_01.zip<br><br>  ・選択文字列でタグジャンプするように<br>  ・ファイル名のみのタグジャンプ時は、カーソル行桁位置を指定しない<br>  ・ファイル名指定なしまたは、指定したファイルがない場合でも-TYPEを利用可能<br>  ・-TYPEによる強制指定をした場合のパフォーマンス改善<br>  ・起動時のウィンドウ位置・サイズ（大きさ）の制御を強化<br>    位置とサイズをそれぞれ<br>      1. Windowsに任せる<br>      2. 最後に変更した状態を引き継ぐ（継承する）<br>      3. ユーザが設定した値を利用する<br>    の中から選ぶことが出来ます。<br>    なお、コマンドラインオプション(-SX,-SY,-WX,-WY)を指定した場合、コマンドラインが優先されます。<br>  ・「異なるバージョンのエディタを起動するとバージョン表示が最後に起動したエディタのものに」を修正<br>  ・iniにエディタのバージョンを記録する<br>    これは、みく氏のバージョンアップクラスの一部です。<br></div></section>
+    <ul><li><section><h1 id=3600>
+    <span class="no">[3600]</span>
+    <a class="thread-title" href="#3600">Re: ちょい機能強化パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-05-29T15:15:14">2004年05月29日 15:15</time></h1>
+    <div class="body">&gt;  ・ファイル名のみのタグジャンプ時は、カーソル行桁位置を指定しない<br>よく見ると，(既存部分ですが)行桁位置が-1のとき無指定とみなすルールを暗黙に使っていますね．<br>負の座標を受け入れるようにするとここも影響を受けますね．<br><br>&gt;  ・ファイル名指定なしまたは、指定したファイルがない場合でも-TYPEを利用可能<br>&gt;  ・-TYPEによる強制指定をした場合のパフォーマンス改善<br>これって効果あります？ファイル読み込みとはできるだけ分離する方向の方が良いと思いますが．<br>ファイルが無い場合のTYPE指定のためにFileReadの外で種別を設定しているのに，ファイルがある場合はFileReadの中に入れるのはわかりにくい．<br><br>--<br>ウィンドウ指定は機能的には早く取り込みたいですね．<br><br>部分的に取り込むか...<br></div></section>
+    <ul><li><section><h1 id=3601>
+    <span class="no">[3601]</span>
+    <a class="thread-title" href="#3601">Re2: ちょい機能強化パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-30T01:46:01">2004年05月30日 01:46</time></h1>
+    <div class="body">▼ げんたさん<br>&gt;&gt;  ・ファイル名のみのタグジャンプ時は、カーソル行桁位置を指定しない<br>&gt;よく見ると，(既存部分ですが)行桁位置が-1のとき無指定とみなすルールを暗黙に使っていますね．<br>&gt;負の座標を受け入れるようにするとここも影響を受けますね．<br>レビューありがとうございます。<br>負の座標を受け入れるのは、ウィンドウの左上の位置だけでいいのでは？<br>行桁位置は、FileInfoも-1のとき未指定の意ですし、負は使えませんです。<br><br>&gt;&gt;-TYPEによる強制指定<br>&gt;これって効果あります？ファイル読み込みとはできるだけ分離する方向の方が良いと思いますが．<br>&gt;(省略...実装方法が)わかりにくい．<br>効果ですが、<br>従来は、ファイル名の拡張子によるタイプ別を適用後、ファイルを読み込み、<br>その後、再度タイプ別を変更していたため、レイアウト解析を2回おこなっていました。<br>付属のtxtに記述したのですが、掲示板・ソース上には書いていませんでした。すみません。<br>実装のほうは、作った本人すら、わかりにくいと感じるレベルのためrev.04で書き直してみました。<br><br>&gt;ウィンドウ指定は機能的には早く取り込みたいですね．<br>&gt;部分的に取り込むか... <br>古い版はバグつきなので、plus040501_03.zip 以上でお願いします。<br><br>同_04.zip こちらは、げんたさんの意見を反映したつもりの修正案です。<br>マイナス座標を受け入れるようにした＆すこしだけわかりやすくしたもの。<br>(差分ファイルのみ更新、収録)<br>問題なければ、こちらで。<br></div></section>
+    <ul><li><section><h1 id=3603>
+    <span class="no">[3603]</span>
+    <a class="thread-title" href="#3603">Re3: ちょい機能強化パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-05-30T02:20:08">2004年05月30日 02:20</time></h1>
+    <div class="body">&gt;負の座標を受け入れるのは、ウィンドウの左上の位置だけでいいのでは？<br>&gt;行桁位置は、FileInfoも-1のとき未指定の意ですし、負は使えませんです。<br>失礼．ウィンドウ位置と勘違いしていました．<br><br>&gt;&gt;これって効果あります？ファイル読み込みとはできるだけ分離する方向の方が良いと思いますが．<br>&gt;&gt;(省略...実装方法が)わかりにくい．<br>&gt;効果ですが、<br>&gt;従来は、ファイル名の拡張子によるタイプ別を適用後、ファイルを読み込み、<br>&gt;その後、再度タイプ別を変更していたため、レイアウト解析を2回おこなっていました。<br>理論的にはその通りなのですが，目に見えるほどの効果が出ないのであればわかりやすさを優先した方が良いと思います，というつもりでした．しかしレイアウトの再生成が走るとファイルサイズによっては結構大きいかな？<br></div></section>
+    <ul><li><section><h1 id=3606>
+    <span class="no">[3606]</span>
+    <a class="thread-title" href="#3606">Re4: ちょい機能強化パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-30T21:16:54">2004年05月30日 21:16</time></h1>
+    <div class="body">&gt;&gt;その後、再度タイプ別を変更していたため、レイアウト解析を2回おこなっていました。<br>&gt;理論的にはその通りなのですが，目に見えるほどの効果が出ないのであればわかりやすさを優先した方が良いと思います，というつもりでした．しかしレイアウトの再生成が走るとファイルサイズによっては結構大きいかな？<br>実際に比較してやってみると、今の実装は危険なことが発覚しました。<br>しかも、このパッチを当てても大差ないです。<br>&gt;&gt;dev::3498 処理中のメッセージループ動作 と関係があるのですが、<br>レイアウト構築中(CLayout::DoLayout)に文字入力などを行うと、タイミングによりレイアウト情報が破壊されます。<br>CEditDoc::FileReadから呼び出されるレイアウト解析では、プログレスバーを表示しますが、<br>CEditDoc::OnChangeSetting経由で変更されるレイアウト解析では、プログレスバーの表示をしません。<br>強制指定によるレイアウト更新は、後者なのでプログレス表示がなく、「ファイルを開き終えた」ように見えますが、裏で2回目のレイアウト情報を作成中です。<br>そのため、このパッチ適用後でも、見た目は体感速度に差が現れにくいです。<br>同様に、ウィンドウ幅折り返しを行った直後も危険です。<br>ちなみにCeleron2.2Ghzで6MBのHTMLファイルだとレイアウト作成は、1秒前後です。<br></div></section>
+    <ul><li><section><h1 id=3607>
+    <span class="no">[3607]</span>
+    <a class="thread-title" href="#3607">Re5: ちょい機能強化パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-05-30T22:21:31">2004年05月30日 22:21</time></h1>
+    <div class="body">&gt;タイトル: Re5: ちょい機能強化パッチ<br>&gt;発言者: もか<br>&gt;&gt;&gt;その後、再度タイプ別を変更していたため、レイアウト解析を2回おこなっていました。<br>&gt;&gt;理論的にはその通りなのですが，目に見えるほどの効果が出ないのであればわかりやすさを優先した方が良いと思います，というつもりでした．しかしレイアウトの再生成が走るとファイルサイズによっては結構大きいかな？<br>&gt;実際に比較してやってみると、今の実装は危険なことが発覚しました。<br>&gt;レイアウト構築中(CLayout::DoLayout)に文字入力などを行うと、タイミングによりレイアウト情報が破壊されます。<br>まじですか．<br><br>----<br>早速パッチを作り直してもらったあとでこういうことを言うのは気が引けるのですが，あれからよく考えてみたところCEditDoc::FileRead()という関数はファイル読み込み時のCEditDoc関連設定を*すべて*行うと考えるのが妥当で，Crateではそれを流用していると考えるのが妥当でしょう．ですからタイプ設定を外に出すのはやっぱり好ましくないのかなと．<br>そう考えるとファイルタイプオプションを追加するバージョンの方がbetterなのかなと．<br>ついでに先にタイプを指定するとファイル読み込みに失敗して中断したときにちょっと変な感じ．<br></div></section>
+    </li><li><section><h1 id=3610>
+    <span class="no">[3610]</span>
+    <a class="thread-title" href="#3610">その他追加質問 Re5: ちょい機能強化パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-06-01T00:27:10">2004年06月01日 00:27</time></h1>
+    <div class="body">さっさとリリースしろと怒られそうですが，細かい点でよくわからないところがあったのでちょっと質問です．<br><br>CEditDoc.cpp:771<br>DrawCaretPosInfo();をSetNewLineCode()の後ろから移動しているのは1行目に改行がない場合に行桁位置が表示されないのかなと思ったのですが，実際試してみるとそんなことはない．ということはFile Openに失敗した場合にこの変更が効いてくるのですか？<br><br>CEditDoc.h:112<br>CEditView&amp; ActiveView(void)を追加していますが，そのすぐ上の<br>const CEditView&amp; ActiveView(void)は削除すべきでは？<br>戻り値のみが異なる関数はOverloadと見なされないはずですがなぜコンパイルエラーにならないのかな？<br><br>てゆーかconstが付いている方は，私のconstに対する理解が不十分だったためと思われるので恥ずかしいから消しておいて...(^^ゞ<br><br>CEditWnd.cpp:253<br>RegisterClassEx()の結果がNULLの時に処理を中断するようにしていますが，なぜ今まで処理中断がコメントアウトされていたと思いますか？(別に試しているわけではありません．私も不思議に思っています．)<br><br>CShareData.cpp:137<br>const unsigned int uShareDataVersion = 0x80010032; の0x80010032って一体...？？<br>その上のコメントとも合ってないですし....<br></div></section>
+    <ul><li><section><h1 id=3612>
+    <span class="no">[3612]</span>
+    <a class="thread-title" href="#3612">RE: その他追加質問 Re5: ちょい機能強化パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-06-01T02:25:27">2004年06月01日 02:25</time></h1>
+    <div class="body">&gt;CEditDoc.cpp:771<br>&gt;DrawCaretPosInfo();をSetNewLineCode()の後ろから移動しているのは1行目に改行がない場合に行桁位置が表示されないのかなと思ったのですが，実際試してみるとそんなことはない．ということはFile Openに失敗した場合にこの変更が効いてくるのですか？<br>特殊な状態だったか、標準入力がらみだったような気がします。なにぶん半年くらい前に書いたので、うろ覚えです。<br><br>&gt;CEditDoc.h:112<br>&gt;CEditView&amp; ActiveView(void)を追加していますが，そのすぐ上の<br>&gt;const CEditView&amp; ActiveView(void)は削除すべきでは？<br>&gt;戻り値のみが異なる関数はOverloadと見なされないはずですがなぜコンパイルエラーにならないのかな？<br>class hoge{<br>rettypeA Method() const;<br>rettypeB Method();<br>}<br>のように、constと非constは、Overload可能です。std::listとかそうなってます。<br>もっとも、最近知ったんですけど。<br>const CEditDoc経由で使うことがあれば取っといて損は無いかと。<br><br>&gt;CEditWnd.cpp:253<br>&gt;RegisterClassEx()の結果がNULLの時が，なぜ今まで処理中断がコメントアウト？<br>なんででしょう。私にもわかりません。<br>NULLになれば必然的に、次のCreateWindowExで失敗するはずなのですが、こちらも元ソースでは最後まで突き進むようだし。<br>RegisterClassExは、そうそう失敗しないから止めた、位しか思いつきません。<br>同じプロセスから同一名称を2回登録しようとすると2回目以降エラーになるのであれば(未確認)、マルチスレッド版のためにコメントアウトしたと推測できます。<br><br>&gt;CShareData.cpp:137<br>&gt;const unsigned int uShareDataVersion = 0x80010032; の0x80010032って一体...？？<br>&gt;その上のコメントとも合ってないですし.... <br>えーと。適当な値です。パッチが「テスト用」なんで、その…ゴミです。<br>noviceさんのが50で、これは51になるか、noviceさんのと合わせて50になると踏んでいたので。<br>#プライベートuShareDataVersionとかないですかね。<br>#私は、テスト用を常用しているけど、固定値を変更して独自コンパイルしている人とか、番号そのままだと危ないと思うのですが。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=3621>
+    <span class="no">[3621]</span>
+    <a class="thread-title" href="#3621">RE: ちょい機能強化パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-06-05T13:42:30">2004年06月05日 13:42</time></h1>
+    <div class="body">&gt;  ・選択文字列でタグジャンプするように<br>これの意味がソースを見てもどうもよくわからなかったのですが...<br>まず，WZ風のGrep出力の中(・か■で始まる行)では全く動作しませんよね．<br>また，ファイル名かどうかを判定するところで選択文字列全体を渡しているのでファイル名以外が入っていたらファイルがないと認識されます．しかし，タグジャンプならファイル名以外が入っていて当たり前なのでそこで必ず失敗しますよね．<br></div></section>
+    <ul><li><section><h1 id=3622>
+    <span class="no">[3622]</span>
+    <a class="thread-title" href="#3622">Re2: ちょい機能強化パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-06-05T15:48:39">2004年06月05日 15:48</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;  ・選択文字列でタグジャンプするように<br>&gt; しかし，タグジャンプならファイル名以外が入っていて当たり前なのでそこで必ず失敗しますよね．<br>#include "myhead.h" はファイル名でタグジャンプします。このパターンはどこぞの専用処理によりジャンプできます。<br>a href="link.html" は従来、がんばってもジャンプできません。<br></div></section>
+    <ul><li><section><h1 id=3624>
+    <span class="no">[3624]</span>
+    <a class="thread-title" href="#3624">Re3: ちょい機能強化パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-06-05T16:06:31">2004年06月05日 16:06</time></h1>
+    <div class="body">&gt;a href="link.html" は従来、がんばってもジャンプできません。<br>うーんなるほど．でもタグジャンプというとファイル名＋ジャンプ位置へ飛ぶのが普通でしょうから，ファイル名の後ろに行番号が付いているとジャンプできない物をタグジャンプと呼ぶのはちょっとなぁと思ってしまいます．<br><br>という前に，次回へ回してしまいました．<br></div></section>
+    <ul><li><section><h1 id=3625>
+    <span class="no">[3625]</span>
+    <a class="thread-title" href="#3625">Re4: ちょい機能強化パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-06-06T20:12:55">2004年06月06日 20:12</time></h1>
+    <div class="body">&gt;ファイル名の後ろに行番号が付いているとジャンプできない物をタグジャンプと呼ぶのはちょっとなぁと思ってしまいます．<br>歴史的な定義というか「タグでなはい」ものからジャンプしては、タグジャンプとは確かに言えないですね。<br>その辺を少し考慮して、ファイル名全部を正しく選択しない限り、ジャンプしないようにしたつもりでした。<br>&gt;まず，WZ風のGrep出力の中(・か■で始まる行)では全く動作しませんよね．<br>というのも、(答えてなかった..)Grep結果からのジャンプ動作には影響が無いように考慮したからです。<br>Grep結果内を再検索して、その行でタグジャンプした場合に問題になるからです。<br>...あ、Grepでないフォーマットだったら同様に問題ありです。<br>優先順位をひっくり返して <br>普通のタグジャンプ＞選択文字列をファイルとしてジャンプ＞ダイレクトタグジャンプ<br>普通のタグジャンプ＞ダイレクトタグジャンプ＞選択文字列をファイルとしてジャンプ<br>とかにしたほうがいいかもしれません。<br>ただし、こうすると、<br>+++ FileName.cpp&#9;Sun May 30 18:15:54 2004<br>という行は、FileName.cppの「30」行目にジャンプするしかなくなります。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

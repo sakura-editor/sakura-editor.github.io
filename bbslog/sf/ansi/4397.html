@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>cmemory修正アップ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4397</span>
+    <a class="thread-title" href="4397.html#4397">cmemory修正アップ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4402</span>
+    <a class="thread-title" href="4397.html#4402">Re:cmemory修正アップ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4403</span>
+    <a class="thread-title" href="4397.html#4403">Re2:cmemory修正アップ</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4451</span>
+    <a class="thread-title" href="4397.html#4451">Re:cmemory修正アップ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4452</span>
+    <a class="thread-title" href="4397.html#4452">Re2:cmemory修正アップ</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4456</span>
+    <a class="thread-title" href="4397.html#4456">Re:cmemory修正アップ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4459</span>
+    <a class="thread-title" href="4397.html#4459">Re:cmemory修正アップ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4460</span>
+    <a class="thread-title" href="4397.html#4460">Re2:cmemory修正アップ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4467</span>
+    <a class="thread-title" href="4397.html#4467">Re3:cmemory修正アップ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4469</span>
+    <a class="thread-title" href="4397.html#4469">Re4:cmemory修正アップ</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4470</span>
+    <a class="thread-title" href="4397.html#4470">Re3:cmemory修正アップ</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4476</span>
+    <a class="thread-title" href="4397.html#4476">Re:cmemory修正アップ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4477</span>
+    <a class="thread-title" href="4397.html#4477">Re2:cmemory修正アップ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4478</span>
+    <a class="thread-title" href="4397.html#4478">Re2:cmemory修正アップ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4397>
+    <span class="no">[4397]</span>
+    <a class="thread-title" href="#4397">cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-04-10T12:45:26">2006年04月10日 12:45</time></h1>
+    <div class="body">文字コード判別・変換処理を修正しました．<br>CEncoder モジュールを（I/Fやらなにやら刷新されてますけど）<br>最大限に活用したつもり…というか，ごった煮版になってる感じです．<br><br>ブリーフケース/Developer/Source/CMemoryFixed_0.1_b.zip<br><br>いろいろと荒削りなのでβバージョンです．<br>パッチにまとめてない，テスト環境そのまんまをパックしたものですがご容赦ください．<br><br>仕様変更：<br>・文字コード変換処理する際に，データがフィルタリングするようにした．<br>改良点：<br>・MIMEヘッダーのサブジェクトをデコードする際のチェックを強化した．<br>新機能：<br>・MIMEヘッダーのサブジェクトのデコードに，UTF-8を受け付けるようにしたつもり．<br>・CMemory wchar 版を見習って，Unicode のサロゲートペア処理実装．<br><br>今後は時間が取れなくなりそうなので，（今でもカメさん並ですが）<br>ゾウさん並に更新サイクルが遅くなりそうです．その間にどなたかコメントしていただければ…．<br><br>追記：<br>複数行一括選択時の処理を最適化するために，<br>CMemory がリスト型データを扱えるようにできるかどうか検討中です…．<br></div></section>
+    <ul><li><section><h1 id=4402>
+    <span class="no">[4402]</span>
+    <a class="thread-title" href="#4402">Re:cmemory修正アップ</a>
+    <span class="author">dskoba</span>
+    <time datetime="2006-04-13T00:01:23">2006年04月13日 00:01</time></h1>
+    <div class="body">お疲れ様です。<br>エンコーディング変換の関数で必要バイトを取得とか，MIMEヘッダのデコード部とか，途中だった部分が完成されているのを見ると嬉しいです。<br><br>中身はまだよく見ていませんが，ファイル名とネームスペース名が気になったので。<br>エンコーディング変換のみにするなら，<br>・CEncoder.h<br>・CEncoder.cpp<br>・namespace Encoder<br>の方が良くありませんかね。いずれ大文字&lt;-&gt;小文字とかもこっちに移動するなら<br>・CConverter.h<br>・CConverter.cpp<br>・namespace Converter<br>か，もしくは分けて<br>・CConverter.h<br>・CEncodingConverter.cpp / CXxxxxConverter.cpp<br>namespace Converter<br>{<br>  namespace Encoding<br>  {<br>    SJisToEucJp();<br>  }<br>  namespace Xxxxx<br>  {<br>    ToLower();<br>  }<br>}<br><br>む。そもそもクラスになってないので，ファイル名先頭のCは必要ないですね。</div></section>
+    <ul><li><section><h1 id=4403>
+    <span class="no">[4403]</span>
+    <a class="thread-title" href="#4403">Re2:cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-04-14T22:44:49">2006年04月14日 22:44</time></h1>
+    <div class="body">&gt;エンコーディング変換の関数で必要バイトを取得とか，<br>&gt;MIMEヘッダのデコード部とか，途中だった部分が完成されているのを見ると嬉しいです。<br>ありがとうございます(^^)<br><br>&gt;中身はまだよく見ていませんが，ファイル名とネームスペース名が気になったので。<br><br>ですね…；；<br>概ね dskoba さんの構想でいいと思うんですけど，<br>大文字&lt;-&gt;小文字変換てロケールに依存する処理なので，<br>Unicode 化するときのことを考えて，慎重にやっております．<br>とりあえず今できあがってる機能を端的に表すと，<br>EncodingConverter がしっくり来るので．<br>ファイルの名前は Converter.h に EncodingConverter.cpp …かな．<br>やたらと長くて指に負担がかかるのがアレですが．<br></div></section>
+    </li></ul></li><li><section><h1 id=4451>
+    <span class="no">[4451]</span>
+    <a class="thread-title" href="#4451">Re:cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-04-30T13:36:52">2006年04月30日 13:36</time></h1>
+    <div class="body">▼ ラスティブさん<br> 仕様変更：<br>&gt; ・文字コード変換処理する際に，データがフィルタリングするようにした．<br>&gt; 改良点：<br>&gt; 新機能：<br>&gt; ・MIMEヘッダーのサブジェクトのデコードに，UTF-8を受け付けるようにしたつもり．<br>&gt; ・CMemory wchar 版を見習って，Unicode のサロゲートペア処理実装．<br><br>cmemory 修正アップしました。パッチも一応まとめときました。<br>個人的な事情で Top Revision 960 向けのパッチなのですがご容赦下さい。<br>主な効能は、修正個所をできる限り記述した readme.txt に書きなぐってますのでご覧下さい。<br><br>ブリーフケース/Developer/Source/sdiff_R960_CMemoryFixed_0.7_b.zip<br># β版のバージョン値は気まぐれに上がってます。<br><br>&gt; ・MIMEヘッダーのサブジェクトをデコードする際のチェックを強化した．<br><br>というのは大嘘でした…。正しくは、<br>「CEncodingConverter.cpp（当時のファイル名） 修正個所内で、<br>  MIMEヘッダのサブジェクトを中途半端に選択した状態で変換するとデータが壊れる問題を修正。」<br>申し訳ありません；；<br><br>追記:<br>&gt; 複数行一括選択時の処理を最適化するために，<br>&gt; CMemory がリスト型データを扱えるようにできるかどうか検討中です…．<br>ちょい挫折。<br></div></section>
+    <ul><li><section><h1 id=4452>
+    <span class="no">[4452]</span>
+    <a class="thread-title" href="#4452">Re2:cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-04-30T13:43:58">2006年04月30日 13:43</time></h1>
+    <div class="body">そういえば readme.txt に書き忘れたことがあったので追記。<br><br>・global.h にあった改行コードのシンボルを CEOL.h に移転させた。<br></div></section>
+    </li></ul></li><li><section><h1 id=4456>
+    <span class="no">[4456]</span>
+    <a class="thread-title" href="#4456">Re:cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-05-02T17:00:05">2006年05月02日 17:00</time></h1>
+    <div class="body">cmemory 修正…というより、cmemory 更新版アップしました。<br><br>ブリーフケース/Developer/Source/sdiff_2006-04-20_CMemoryFixed_0.71_b.zip<br><br>・ファイル名を charcode.h から CharCode.h に変えていたせいで、パッチが当たらなかった問題を修正。すみません。<br>・CMem.h, CMemory.h 内で、コンストラクタの記述に致命的な誤りがあった問題を修正。<br>・CEditDoc.cpp 修正個所内で、データが正しく内部コードへ変換されない場合に出るメッセージ文をより具体的に。<br><br>ブリーフケース/Developer/Source/sdiff_2006-04-20_CMemoryFixed_0.71_b_TrialVer.zip<br><br>・sdiff_2006-04-20_CMemoryFixed_0.71_b の修正分。<br>・大量のデータを削除したら CPU 占有率100%状態でフリーズする問題を修正。<br><br>TrialVer のほうは、いろいろ問題があって挫折しかかっていたのですが、<br>どんな具合いになるのか試しに組み込んでみたものです。<br>従来のものと比べて、インターフェースの互換性は保たれてますけれど、内部構造が違うので、<br>従来のものと分けてパッチを作成しました。<br><br>個人的な事情で最新版ソースをダウンロードできなくて、GNU Unified Diff 形式なのですがご容赦下さい。<br></div></section>
+    </li><li><section><h1 id=4459>
+    <span class="no">[4459]</span>
+    <a class="thread-title" href="#4459">Re:cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-05-04T20:37:04">2006年05月04日 20:37</time></h1>
+    <div class="body">cmemory 修正アップです。<br><br>ブリーフケース/Developer/Source/sdiff_2006-04-20_CMemoryFixed_0.13_b.zip<br><br>readme.txt から転載します。<br><br>◆ 前回からの変更（大まかに）<br>・sdiff_2006-04-20_CMemoryFixed_0.71_b_TrialVer.diff(sdiff_2006-04-20_CMemoryFixed_0.7.1_b_TrialVerの間違い) の修正分．<br>・【バグ】CMemory.cpp 修正箇所内で，void CMemory::Append() が直前に確保したメモリ領域を有効に使わない動作になっていた問題を修正．<br>・CMem クラスへの関数追加．(CalcObjectSize, IsCapableSize, SetObjectSize, SetContainerSize.)<br>・前回作成した void CMemory::AppendBlock(const char*, size_t) インターフェースを void CMemory::Append(const char*, size_t) に統合．<br>・ChartypeConverter.cpp に CMemory::ToLower, CMemory::ToUpper, CMemory::ToZenkaku, CMemory::ToHankaku の中身を移植．<br>・英大文字←→英小文字 のインターフェース名を，ロシア語，ギリシャ文字も変換するのってことで，大文字←→小文字に変更．<br><br>◆これまでのまとめ<br>・改善：VC6 で，new が失敗したら bad_alloc() を飛ばすように．<br>・新機能：EUC-JP, UTF-8, Unicode, UnicodeBe を内部コード(今のところSJIS)へ変換できなかった場合に報告するように．<br>・改善：CMemory::Append() を大規模データに対してもある程度対応できる仕様に．<br>・改善か改悪か分からない変更：機能をより明確に表現するために，EUC を EUCJP に名称変更．<br>・改善か改悪か分からない変更：機能をより明確に表現するために，英大文字←→英小文字 を 大文字←→小文字 に名称変更．<br><br>当初の目的はこれでほぼ達成できた感じですので、<br>CMemoryFixed_0.13_b をもって個人的にバージョン 1.0 とさせて下さい。<br>（既存の SJIS 専用関数を Unicode に対応させる抽象化作業が残ってる…、けど構想練るにまだかかりそうで。）<br><br>仕様的にベータ版ですが、以上です。<br></div></section>
+    <ul><li><section><h1 id=4460>
+    <span class="no">[4460]</span>
+    <a class="thread-title" href="#4460">Re2:cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-05-05T19:44:21">2006年05月05日 19:44</time></h1>
+    <div class="body">cmemory修正アップです。<br>ファイル名とネームスペース名を変更したので、取り急ぎ報告。<br><br>ブリーフケース/Developer/Source/sdiff_2006-04-20_CMemoryFixed_0.13.1_b.zip<br><br>◆ 前回からの変更（大まかに）<br>・sdiff_2006-04-20_CMemoryFixed_0.13_b.diff の修正分．<br>・【バグ】EncodingConverter.cpp 修正箇所内で，UTF-16 → UTF-8 の際，サロゲートペア処理に不備があったところを机上デバッグにて修正．<br>・charcode.h で，unsigned char, unsigned short, unsigned long 型をそれぞれ uchar_t, uchar16_t, uchar32_t で typedef した．<br>・EncodingConverter.cpp 内で，unsigned char, wchar_t をそれぞれ uchar_t, uchar16_t に置き換えた．<br>・charcode.h, CharCode.cpp 内で，unsigned char, wchar_t をそれぞれ uchar_t, uchar16_t に置き換えた．<br>・概念的結びつきを強めるため，namespace CharCode {}  を namespace Charcode {}  に変更．<br>・概念的な混乱を避けるため，namespace Converter::Chartype {}  を namespace Converter::Typeface {}  に変更．<br>・ファイル名を CharCode.cpp から Charcode.cpp へ変更．<br>・ファイル名を ChartypeConverter.cpp から TypefaceConverter.cpp へ変更．<br>・【バグ】CMemory::ToZenkaku にバグを作り込んでしまっていたので、その周辺まとめてロールバック。←readme.txt に書き忘れ<br></div></section>
+    <ul><li><section><h1 id=4467>
+    <span class="no">[4467]</span>
+    <a class="thread-title" href="#4467">Re3:cmemory修正アップ</a>
+    <span class="author">あろか</span>
+    <time datetime="2006-05-13T16:23:28">2006年05月13日 16:23</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; cmemory修正アップです。<br>&gt; <br>&gt; ブリーフケース/Developer/Source/sdiff_2006-04-20_CMemoryFixed_0.13.1_b.zip<br>&gt;<br>差分をダウンロードしてみましたが、たとえば CMemory.cppに関する修正は両方に含まれています。patch当ててから上書きするのか、patchだけでよいのか、、<br>ファイル内の.diffとソースの関係はどうなっているか教えてください。<br><br>とりあえず現状ではBccでコンパイルできていないためソースコードの改修が必要そうです。<br></div></section>
+    <ul><li><section><h1 id=4469>
+    <span class="no">[4469]</span>
+    <a class="thread-title" href="#4469">Re4:cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-05-14T15:06:54">2006年05月14日 15:06</time></h1>
+    <div class="body">&gt; 差分をダウンロードしてみましたが、たとえば CMemory.cppに関する修正は両方に含まれています。patch当ててから上書きするのか、patchだけでよいのか、、<br>&gt; ファイル内の.diffとソースの関係はどうなっているか教えてください。<br><br>すみません．説明不足でご迷惑おかけします．<br><br>新規作成ファイルリストに含まれていないファイルの変更については，基本的に全て .diff のほうに含めているつもりですので，どちらの方法でも大丈夫です．差し替えとなりそうなファイルを，念のため確認用に同封したのですが，readme.txt に書き忘れておりました；；<br><br>&gt; 現状ではBccでコンパイルできていない<br><br>確認とっていませんでしたー（ぇ<br>アップしなおします．<br><br>手元にて，実験的に CMemory::TABToSPACE, CMemory::SPACEToTAB を SJIS と UNICODE の両方に対応させてみたものが桁外れな速度ダウンを生み出した結果に終わってしまっているのも…持っててもアレなので，近いうちに放出します．<br>「これじゃダメだった」という実装例として役に立てそうです．<br># このドッカン遅いのを我慢すると<br># ステータスバーに本来の文字値を表示することができるようになる．<br># という見通しはあるのですけれど，スキルが足りません．<br></div></section>
+    </li></ul></li><li><section><h1 id=4470>
+    <span class="no">[4470]</span>
+    <a class="thread-title" href="#4470">Re3:cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-05-14T20:16:26">2006年05月14日 20:16</time></h1>
+    <div class="body">cmemory 修正アップしました．<br>コメントが雑かったりひとつも書かれてなかったり日付が無かったり doxygen 仕様に従ってなかったりと．体裁面で不備がありますが…<br>コンパイルは通りましたということで．<br><br>共有フォルダ/Developer/Source/sdiff_r969_CMemoryFiexed_0.13.2_b.zip<br><br>前回からの変更点（大まかに）：<br>・いろいろ途中になっているものとか実装したけど使わなかったとか，不完全な修正をばっさり削除 or ロールバック．<br>・CMem にあった線形リスト系変数とアクセッサを削除．<br>・CMemory 内部データブロックとして，CMem クラスを継承させた CMemBlk クラスを新規作成（ポインタいっこ付け加えただけ．）<br>・EncodingConverter に UTF-8 ←→ SJIS 変換関数と一文字変換関数 CCnv*系 を追加．<br>・Borland C++ 5.5 でコンパイルできなかったところを修正．<br>・その他こまごまと．<br><br>以上です．</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4476>
+    <span class="no">[4476]</span>
+    <a class="thread-title" href="#4476">Re:cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-05-27T09:01:42">2006年05月27日 09:01</time></h1>
+    <div class="body">cmemory 修正アップしました．<br><br>共有フォルダ/Developer/Source/sdiff_r974_CMemoryFixed_0.13.4_b.zip<br><br>変更点リスト<br><br>・コンパイルエラー解消．（今更；；）<br>・CMemVec クラス新規作成．(名前を略しすぎて意味不明になった感があるので，名前だけ変更するかもしれぬ；；)<br>・COpeBlk のコンテナを CMemVec ベースに変更．<br>・CDocLineMgr の挿入削除処理のコードを整理．<br>・pcDocLine-&gt;m_pLine-&gt;GetPtr() 見たいな箇所を全部 pcDocLine-&gt;GetPtr() とし，メンバ変数 public: m_pLine を private: m_cmemLine とした．<br>・変換できない文字を '?' に変換するのがどうも紛らわしいので，0xff または 0xffff に変換するように変更．<br></div></section>
+    <ul><li><section><h1 id=4477>
+    <span class="no">[4477]</span>
+    <a class="thread-title" href="#4477">Re2:cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-05-27T09:52:32">2006年05月27日 09:52</time></h1>
+    <div class="body">&gt;&gt;dev:4476 の追記：<br>変換できない文字を0xff または 0xffff に変換する点において大きな問題を抱えています．<br>CDocLine にテキストデータとバイナリデータを持たせておくという手を思いついたのですが・・・<br><br>その辺りの解決策ついて，どなたかからのコメントをお待ちしてます．<br></div></section>
+    </li><li><section><h1 id=4478>
+    <span class="no">[4478]</span>
+    <a class="thread-title" href="#4478">Re2:cmemory修正アップ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2006-05-27T09:59:01">2006年05月27日 09:59</time></h1>
+    <div class="body">重要な変更点の報告を忘れてました．<br><br>変更点：<br>・CDocLineMgr::DeleteData_CDocLineMgr の８番目の引数を CMemory&amp; から CMemory* へ変更．<br><br># また妙な変更を紛れ込ませてしまいました；；<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

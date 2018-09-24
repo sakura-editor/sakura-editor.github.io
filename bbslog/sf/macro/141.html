@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>追加コピー・追加切り取り | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">141</span>
+    <a class="thread-title" href="141.html#141">追加コピー・追加切り取り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">142</span>
+    <a class="thread-title" href="141.html#142">Re:追加コピー・追加切り取り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">143</span>
+    <a class="thread-title" href="141.html#143">IEのオブジェクトで無理やり版</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">144</span>
+    <a class="thread-title" href="141.html#144">Re:IEのオブジェクトで無理やり版</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">145</span>
+    <a class="thread-title" href="141.html#145">よろこんでいただいてなによりです。</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=141>
+    <span class="no">[141]</span>
+    <a class="thread-title" href="#141">追加コピー・追加切り取り</a>
+    <span class="author">ごじ</span>
+    <time datetime="2005-05-27T17:31:16">2005年05月27日 17:31</time></h1>
+    <div class="body">追加コピー・追加切り取りのマクロって既出ですか？<br>一応探したんですけど見つけられなかったので。</div></section>
+    <ul><li><section><h1 id=142>
+    <span class="no">[142]</span>
+    <a class="thread-title" href="#142">Re:追加コピー・追加切り取り</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-05-27T20:58:13">2005年05月27日 20:58</time></h1>
+    <div class="body">サクラエディタのマクロ関数にクリップボードの中身を取得するものがないので普通のマクロでは出来ないと思われ<br>下は、サクラエディタのマクロで使える Perl言語の力を利用して実現しているので、Perl も入れれば外部マクロとして使えます。が、www.activestate.com からダウンロードしてインストールすると50MB 以上ディスクを使います。<br><br>VECTOR あたりで、クリップボードの拡張ソフトを探して併用した方が便利だと思う。作っては見たものの自分でも使いそうにない。私は ToMoClip というのを愛用してます。<br><br>追加コピー<br>-----^ AddCopy.pls ( date:105-04-27 time:20:41 )<br># AddCopy selection string -&gt; clipboard<br>use Win32::Clipboard;<br>$CLIP = Win32::Clipboard();<br>$str = GetSelectedString();<br>$clip = $CLIP-&gt;GetText();<br>$clip = $clip . $str;<br>$CLIP-&gt;Set( $clip );<br>InsText($str);<br>-----$ AddCopy.pls ( line:8 )<br><br>追加切り取り<br>-----^ AddCut.pls ( date:105-04-27 time:20:41 )<br># AddCut selection string -&gt; clipboard<br>use Win32::Clipboard;<br>$CLIP = Win32::Clipboard();<br>$str = GetSelectedString();<br>$clip = $CLIP-&gt;GetText();<br>$clip = $clip . $str;<br>$CLIP-&gt;Set( $clip );<br>InsText("");<br>-----$ AddCut.pls ( line:8 )<br></div></section>
+    <ul><li><section><h1 id=143>
+    <span class="no">[143]</span>
+    <a class="thread-title" href="#143">IEのオブジェクトで無理やり版</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-05-29T20:16:40">2005年05月29日 20:16</time></h1>
+    <div class="body">▼ りーやさん<br>&gt; 普通のマクロでは出来ないと思われ<br><br>WSH標準のJScriptで、IEのオブジェクトで実現？<br>今度は普通に WindowsXP で IE を消してなければたぶん、、、<br>自身ないし遅いけどウチでは動いてるみたい<br><br>追加コピー<br>-----^ AddCopy.js -----------&lt; cut hear<br>var IEobj =  new ActiveXObject("InternetExplorer.Application");<br>IEobj.Navigate("about:blank");<br>var Str = Editor.GetSelectedString();<br>var Clip = IEobj.Document.parentWindow.clipboardData.getData("Text");<br>var Outstr = Clip.concat(Str);<br>IEobj.Document.parentWindow.clipboardData.setData("Text" , Outstr);<br>Editor.InsText(Str);<br>-----$ AddCopy.js -----------&lt; cut hear<br><br>追加切り取り<br>-----^ AddCut.js ------------&lt; cut hear<br>var IEobj =  new ActiveXObject("InternetExplorer.Application");<br>IEobj.Navigate("about:blank");<br>var Str = Editor.GetSelectedString();<br>var Clip = IEobj.Document.parentWindow.clipboardData.getData("Text");<br>var Outstr = Clip.concat(Str);<br>IEobj.Document.parentWindow.clipboardData.setData("Text" , Outstr);<br>Editor.InsText("");<br>-----$ AddCut.js ------------&lt; cut hear<br></div></section>
+    <ul><li><section><h1 id=144>
+    <span class="no">[144]</span>
+    <a class="thread-title" href="#144">Re:IEのオブジェクトで無理やり版</a>
+    <span class="author">ごじ</span>
+    <time datetime="2005-05-30T12:20:12">2005年05月30日 12:20</time></h1>
+    <div class="body">▼ りーやさん<br>&gt; ▼ りーやさん<br>&gt; &gt; 普通のマクロでは出来ないと思われ<br>&gt; <br>&gt; WSH標準のJScriptで、IEのオブジェクトで実現？<br>&gt; 今度は普通に WindowsXP で IE を消してなければたぶん、、、<br>&gt; 自身ないし遅いけどウチでは動いてるみたい<br><br>ありがとうございます。<br>早速試させていただいて、<br>希望通りに動いてましたので使わせて頂きます。<br>確かに、一瞬IEコンポーネント（？）に制御が移るので<br>コピーや切り取りなどの既存のコマンドよりは遅いと感じますが、<br>今までクリップボード拡張ソフトを使用していた作業の手順が<br>３アクションくらい省略できるので、<br>私としては十分に作業効率が上がります。<br>本当にありがとうございました。</div></section>
+    <ul><li><section><h1 id=145>
+    <span class="no">[145]</span>
+    <a class="thread-title" href="#145">よろこんでいただいてなによりです。</a>
+    <span class="author">りーや</span>
+    <time datetime="2005-05-30T20:26:59">2005年05月30日 20:26</time></h1>
+    <div class="body"><br>そういうことならもうちょっとなんとかとMS Forms 版も作ってみたのですが、気まぐれにしか動かないので取り下げました<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

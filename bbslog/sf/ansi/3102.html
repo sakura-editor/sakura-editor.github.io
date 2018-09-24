@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マクロファイル作成失敗 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3102</span>
+    <a class="thread-title" href="3102.html#3102">マクロファイル作成失敗</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3110</span>
+    <a class="thread-title" href="3102.html#3110">Re: マクロファイル作成失敗</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3111</span>
+    <a class="thread-title" href="3102.html#3111">Re2: マクロファイル作成失敗</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3116</span>
+    <a class="thread-title" href="3102.html#3116">Re3: マクロファイル作成失敗</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3124</span>
+    <a class="thread-title" href="3102.html#3124">Re4: マクロファイル作成失敗</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3130</span>
+    <a class="thread-title" href="3102.html#3130">Re5: マクロファイル作成失敗</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3102>
+    <span class="no">[3102]</span>
+    <a class="thread-title" href="#3102">マクロファイル作成失敗</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-08T12:43:28">2003年09月08日 12:43</time></h1>
+    <div class="body">マクロ保存時になぜか失敗。Ctrl+C＆Ctrl+Vでメッセージボックスの内容を貼り付けると<br><br>---------------------------<br>sakura<br>---------------------------<br>マクロファイルを作成できませんでした。<br><br>C:\Program Files\sakura\RecKey.mac<br>---------------------------<br>OK <br>---------------------------<br><br>実行モジュールがネットワークパスを認識していないようだ。</div></section>
+    <ul><li><section><h1 id=3110>
+    <span class="no">[3110]</span>
+    <a class="thread-title" href="#3110">Re: マクロファイル作成失敗</a>
+    <span class="author">もか</span>
+    <time datetime="2003-09-10T21:41:40">2003年09月10日 21:41</time></h1>
+    <div class="body">▼wmlhqさん<br>&gt;マクロ保存時になぜか失敗。<br>&gt;C:\Program Files\sakura\RecKey.mac<br>&gt;実行モジュールがネットワークパスを認識していないようだ。<br>保存先ファイル名が、上のようになるのは、<br>共通設定-マクロ-マクロ一覧が「C:\Program Files\sakura\」になっているからで、<br>ここをネットワークパス(書き込み可能なところ)に設定すれば、いいと思います。<br></div></section>
+    <ul><li><section><h1 id=3111>
+    <span class="no">[3111]</span>
+    <a class="thread-title" href="#3111">Re2: マクロファイル作成失敗</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-11T10:27:50">2003年09月11日 10:27</time></h1>
+    <div class="body">良くないって。これは起動時かマクロ実行時に自動的に認識すべきことであって。。。</div></section>
+    <ul><li><section><h1 id=3116>
+    <span class="no">[3116]</span>
+    <a class="thread-title" href="#3116">Re3: マクロファイル作成失敗</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-11T23:01:06">2003年09月11日 23:01</time></h1>
+    <div class="body">&gt;これは起動時かマクロ実行時に自動的に認識すべきこと<br>この現象はインストール後に移動した場合，あるいはあるPCでインストールしたものを別のPCから使おうと思った場合に発生するわけですよね．<br><br>そもそもそういう使い方を想定していないので，両方から使うとiniファイルが上書きされてしまうとか問題は多々あるかと思います．<br><br>指定ディレクトリが存在しない場合は実行ファイルの配下のパスに強制設定というので良いものか．<br><br>RecKey.macについては完全に内部ファイルとの扱いだと思いますのでシステムの一時ディレクトリを使った方が良いのかなぁ．<br></div></section>
+    <ul><li><section><h1 id=3124>
+    <span class="no">[3124]</span>
+    <a class="thread-title" href="#3124">Re4: マクロファイル作成失敗</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-09-13T11:06:11">2003年09月13日 11:06</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; この現象はインストール後に移動した場合，あるいはあるPCでインストールしたものを別のPCから使おうと思った場合に発生するわけですよね．<br>ええ。特にLAN上で。<br><br>&gt; 両方から使うとiniファイルが上書きされてしまうとか問題<br>これは、ファイルの排他処理で回避できます。<br><br>&gt; 指定ディレクトリが存在しない場合は実行ファイルの配下のパスに強制設定というので良いものか．<br>iniファイルの読み込み方法が普通であればOKです。<br><br>&gt; RecKey.macについては完全に内部ファイルとの扱いだと思いますのでシステムの一時ディレクトリを使った方が良いのかなぁ．<br>「システムの一時ディレクトリ」の意図がよくわかりませんが、RecKey.macを他で使うことはありません。</div></section>
+    <ul><li><section><h1 id=3130>
+    <span class="no">[3130]</span>
+    <a class="thread-title" href="#3130">Re5: マクロファイル作成失敗</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-09-13T12:32:09">2003年09月13日 12:32</time></h1>
+    <div class="body">&gt;&gt; 両方から使うとiniファイルが上書きされてしまうとか問題<br>&gt;これは、ファイルの排他処理で回避できます。<br>sakura.iniはずっと開きっぱなしで押さえておいた方がよいと？<br><br>wmlhqさんは共有ディレクトリ上にあるバイナリを複数人が同時に実行する環境を想定しているのではないのですか？<br><br>&gt;&gt; RecKey.macについては完全に内部ファイルとの扱いだと思いますのでシステムの一時ディレクトリを使った方が良いのかなぁ．<br>&gt;「システムの一時ディレクトリ」の意図がよくわかりませんが、RecKey.macを他で使うことはありません。<br>sakura.exeのディレクトリに入れると他から使っている人とファイルが衝突するから別の場所に置いた方が良いのかなと．<br>一時ディレクトリというのは環境変数TEMPの指す場所とうような意味です．ユーザごとのtempディレクトリというのもありますのでその辺の総称のつもりでした．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

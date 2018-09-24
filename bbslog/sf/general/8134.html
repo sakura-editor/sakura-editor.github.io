@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>読み取り専用だがエディタ上では編集可能な状態でファイルを開くには | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">8134</span>
+    <a class="thread-title" href="8134.html#8134">読み取り専用だがエディタ上では編集可能な状態でファイルを開くには</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8135</span>
+    <a class="thread-title" href="8134.html#8135">Re:読み取り専用だがエディタ上では編集可能な状態でファイルを開くには</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8138</span>
+    <a class="thread-title" href="8134.html#8138">上書きは不可、かつエディタ上では編集可能な状態にするには</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8139</span>
+    <a class="thread-title" href="8134.html#8139">Re:上書きは不可、かつエディタ上では編集可能な状態にするには</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8142</span>
+    <a class="thread-title" href="8134.html#8142">Re2:上書きは不可、かつエディタ上では編集可能な状態にするには</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8147</span>
+    <a class="thread-title" href="8134.html#8147">THX!</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8134>
+    <span class="no">[8134]</span>
+    <a class="thread-title" href="#8134">読み取り専用だがエディタ上では編集可能な状態でファイルを開くには</a>
+    <span class="author">たんぶる</span>
+    <time datetime="2016-03-26T17:52:13">2016年03月26日 17:52</time></h1>
+    <div class="body">どのような方法がありますか？<br><br>もしくは、マクロ等で次の3つの状態を個別に制御できますか？<br>・元ファイルの排他制御<br>・元ファイルの上書き禁止<br>・エディタ上のバッファが編集可能か否か<br><br>常に書き込み可能でないと困るが上書きしたくないファイルの<br>内容確認をしたいのですが整形が必須なのです。<br>現在は一時的に排他制御をしないよう設定して<br>一旦コピーした上で開くようにしています。<br>読み取り専用で開くことができれば元ファイルを<br>直に指定でき、それに越したことはないと思いまして。</div></section>
+    <ul><li><section><h1 id=8135>
+    <span class="no">[8135]</span>
+    <a class="thread-title" href="#8135">Re:読み取り専用だがエディタ上では編集可能な状態でファイルを開くには</a>
+    <span class="author">もか</span>
+    <time datetime="2016-03-27T19:37:23">2016年03月27日 19:37</time></h1>
+    <div class="body">読み取り専用ファイルで上書きはできないけど、編集だけなら<br>共通設定-ファイル-ファイルの排他制御-上書き禁止検出時は編集禁止にする<br>のチェックを外せば、編集は可能。<br><br>マクロでは<br>・元ファイルの排他制御<br>WSH等でファイルを開いてみれば、エラーが出てそれでわかるはず<br>Scripting.FileSystemObject OpenTextFile<br>・元ファイルの上書き禁止<br>同上Attributesで操作すればたぶん可能<br>読み取りおよび、設定が可能<br><br>・エディタ上のバッファが編集可能か否か<br>読み取り/Vモードは検出可能<br>魔法の呪文でExpandParameter("${R?V$:R$:X$}")で、VならViewモード、Rなら上書き禁止、Xならその他<br>(上書き禁止)が、編集不可かどうかは設定依存。現在の設定は分からない<br>ビューモードはReadOnly()マクロでトグル切り替えが可能<br></div></section>
+    <ul><li><section><h1 id=8138>
+    <span class="no">[8138]</span>
+    <a class="thread-title" href="#8138">上書きは不可、かつエディタ上では編集可能な状態にするには</a>
+    <span class="author">たんぶる</span>
+    <time datetime="2016-04-03T19:42:42">2016年04月03日 19:42</time></h1>
+    <div class="body">返信ありがとうございました。<br>私の表現が変で誤解させてしまい申し訳ありませんでした。<br><br><br>どうすれば以下の条件を同時に満たすようにできるでしょうか。<br>・開く対象のファイルは読み取り専用属性がつくなどしていない<br>　普通のファイル<br>・サクラエディタによるファイルアクセスの排他制御はなし<br>・サクラエディタによるファイルの上書きはできない<br>・エディタ上で編集が可能<br><br>コマンドラインオプションを工夫するなどしてファイルを開いた時点で<br>全ての条件を満たしているのが理想ですが<br>サクラエディタで開いた後、サクラエディタのマクロ機能を使うなどして<br>後から設定変更するのでもOKです。<br>Excelで、編集可能なファイルを「読み取り専用で開く」<br>と指定して開いたときと同じような状態が理想的です。<br></div></section>
+    <ul><li><section><h1 id=8139>
+    <span class="no">[8139]</span>
+    <a class="thread-title" href="#8139">Re:上書きは不可、かつエディタ上では編集可能な状態にするには</a>
+    <span class="author">もか</span>
+    <time datetime="2016-04-03T23:50:46">2016年04月03日 23:50</time></h1>
+    <div class="body">読み違えてたみたいですね。すみません。<br>上書きが可能なファイルを編集はできるけど、上書き保存を許可しない方法ですか。<br>そのものずばりは標準機能にはないと思います。<br>ファイル名を表示しなくていいんなら、空ファイルにデータを貼り付ける系の方法です。<br><br>保存前マクロで保存をキャンセルするマクロコマンドとかはないと思います。<br>Ctrl+Sとかをマクロに割り当てれば、単独の保存はトラップできるけど、<br>「閉じる」ときに「上書きしますか？」って聞かれた場合は、間違って保存してしまう可能性があります。<br><br>・ファイルを開かないでマクロで空ファイルを開いておいて「InsFile」で読み込む<br>sakura.exe -MTYPE=js "-M=InsFile(""C:\\path\\filename.txt"",0,0)"<br>0,0の最初のほうの0は該当文字コードを指定します。<br>こんな感じでコマンドラインで開くのも可能です。<br>パスの\を\\にするのが面倒くさいです。<br>整形マクロでファイル名・パス情報が必要だったら、環境変数か-MにSetCookie等の方法で渡す。<br><br>・ファイルを開いた後以下のマクロを実行して(無題)にコピペする<br>// FileCloseCopy.js<br>SetCookie("window", "path", GetFilename());<br>SelectAll();<br>var data = GetSelectedString(0);<br>FileClose(); // 閉じて(無題)これが重要<br>// ChangeType(1)等で必要ならタイプ別を変更<br>InsText(data);<br>以降このウィンドウではGetCookie("window","path")でパスが取れます。<br>sakura.exe -MTYPE=file "-M=FileCloseCopy.js" "targetfile.txt"<br>ただ問題があって他のサクラが該当ファイルを開いているとうまく動きません。<br><br>(無題)にはしたくないという場合はすみません。いい方法は思いつきません。<br>面倒ですがjsマクロでInfoMsg(GetCookie("window","path"))でファイル名の確認はできます。<br></div></section>
+    <ul><li><section><h1 id=8142>
+    <span class="no">[8142]</span>
+    <a class="thread-title" href="#8142">Re2:上書きは不可、かつエディタ上では編集可能な状態にするには</a>
+    <span class="author">NaKIT</span>
+    <time datetime="2016-04-10T21:27:25">2016年04月10日 21:27</time></h1>
+    <div class="body">たんぶる さんの「一旦コピーした上で開く」を，そのままマクロにすればよいのではないでしょうか？<br>たとえば，以下のようなマクロを用意し，<br>  sakura.exe -M=OpenAsSandBox.js targetfile.txt<br>で開けば，Windows の temp フォルダに同名で保存し，以後，これを編集することになります。<br><br>// OpenAsSandBox.js<br>var FS = new ActiveXObject('Scripting.FileSystemObject');<br>var tempFilePath = FS.BuildPath(FS.GetSpecialFolder(2), ExpandParameter('$f'));<br>FileSaveAs(tempFilePath, -1, 0);<br></div></section>
+    <ul><li><section><h1 id=8147>
+    <span class="no">[8147]</span>
+    <a class="thread-title" href="#8147">THX!</a>
+    <span class="author">たんぶる</span>
+    <time datetime="2016-05-03T08:31:57">2016年05月03日 08:31</time></h1>
+    <div class="body">遅くなりましたが．．．<br>もかさん、NaKITさんありがとうございました。<br>今回はInsFile方式でいくことにします。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

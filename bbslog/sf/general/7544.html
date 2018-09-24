@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バグ：上書きで矩形選択入力するとおかしい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7544</span>
+    <a class="thread-title" href="7544.html#7544">バグ：上書きで矩形選択入力するとおかしい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7545</span>
+    <a class="thread-title" href="7544.html#7545">Re:バグ：上書きで矩形選択入力するとおかしい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7546</span>
+    <a class="thread-title" href="7544.html#7546">Re2:バグ：上書きで矩形選択入力するとおかしい</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7544>
+    <span class="no">[7544]</span>
+    <a class="thread-title" href="#7544">バグ：上書きで矩形選択入力するとおかしい</a>
+    <span class="author">もか</span>
+    <time datetime="2012-10-30T18:22:26">2012年10月30日 18:22</time></h1>
+    <div class="body">タイトルの通りなんか各行で行数分文字が消されるみたいです。<br></div></section>
+    <ul><li><section><h1 id=7545>
+    <span class="no">[7545]</span>
+    <a class="thread-title" href="#7545">Re:バグ：上書きで矩形選択入力するとおかしい</a>
+    <span class="author">ds14050</span>
+    <time datetime="2012-10-31T06:03:11">2012年10月31日 06:03</time></h1>
+    <div class="body">目に付いた一番古いバージョン(1.3.2.3)からそうみたいですから<br>正しい動作をはっきりさせる必要がありませんか？<br><br>自分が期待するのはこうです。<br>1.選択範囲の各行を入力された文字で置き換えたあと(&lt;これまでと同じ)<br>2.(続けて文字を挿入できるように)矩形選択状態を維持するが幅を０にする(&lt;幅を変更するだけ)<br>※全角/半角が混じったときに入力した文字が連続した位置に挿入されることの確認が必要。<br><br>秀丸さんは上書き/挿入モード関係なく、サクラエディタの挿入モード・矩形選択入力<br>と同じ動作でした。これだと対応するのは楽そう。<br><br>サクラエディタの挿入モード・矩形選択入力の挙動から判断すると、矩形選択のときは<br>選択範囲を置き換えるつもりがないみたいなので、秀丸方式が順当なんでしょうね。<br>(矩形)選択範囲の幅が意味をもたないことになるのがユーザーの操作を無視するようで<br>アレですが今更。最後にDeleteキーを叩くことにも慣れてしまいました。<br></div></section>
+    <ul><li><section><h1 id=7546>
+    <span class="no">[7546]</span>
+    <a class="thread-title" href="#7546">Re2:バグ：上書きで矩形選択入力するとおかしい</a>
+    <span class="author">もか</span>
+    <time datetime="2012-11-04T17:58:10">2012年11月04日 17:58</time></h1>
+    <div class="body">ソースコードによると、オリジナルのテキストエディタでは挿入モードと同じ動作だったようですね。<br>その後、今の仕様にしたようです。<br>幅を０にするのもありかなとも思いましたが、あれだとtabとスペースを入力できないのと、<br>本当は上書きモードでは、１行毎に入力した文字分だけ消えるのが正しそうな動作かなとも思うのですが、<br>他より修正するのがCommand_INDENTを見ると難しそうなので、<br>私は挿入モードと同じ動作にするのがいいんじゃないかと思います。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

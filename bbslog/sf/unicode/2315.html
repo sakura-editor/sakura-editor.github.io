@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>特定文字を入力＆操作後に Runtime Error | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2315</span>
+    <a class="thread-title" href="2315.html#2315">特定文字を入力＆操作後に Runtime Error</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2316</span>
+    <a class="thread-title" href="2315.html#2316">Re:特定文字を入力＆操作後に Runtime Error</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2317</span>
+    <a class="thread-title" href="2315.html#2317">Re2:特定文字を入力＆操作後に Runtime Error</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2318</span>
+    <a class="thread-title" href="2315.html#2318">Re3:特定文字を入力＆操作後に Runtime Error</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2315>
+    <span class="no">[2315]</span>
+    <a class="thread-title" href="#2315">特定文字を入力＆操作後に Runtime Error</a>
+    <span class="author">さめたすたす</span>
+    <time datetime="2015-11-21T01:26:32">2015年11月21日 01:26</time></h1>
+    <div class="body">また、怪しい動きを見つけました。<br><br>再現できないなどあれば教えてください。<br><br>OS: Windows 8.1<br>ver: 後述<br>現象：<br><br>特定文字を入力＆操作後に Runtime Error! で落ちる。<br><br>■ 手順<br><br>1. 設定→「タイプ別設定一覧」→「C/C++」を選び一時適用<br>2. スペース１文字とスラッシュ２文字を入力<br>     ________________<br>   1| //[EOF]<br>   ↑みたいな状態<br>3. ３文字左に戻り「Enter」を入力<br>     ________________<br>   1|&amp;#8626;<br>    | //[EOF]<br>   ↑みたいな状態<br><br>で↓<br><br>---------------------------<br>Microsoft Visual C++ Runtime Library<br>---------------------------<br>Runtime Error!<br><br>Program: C:\*****\sakura.exe<br><br>abnormal program termination<br>---------------------------<br>OK<br>---------------------------<br><br>■ 問題なし<br><br>v2.2.0.0<br><br>■ Runtime Error!<br><br>v2.2.1.0 r4029+プロポーショナル<br>※ <a href=../unicode#2279 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>unicode&amp;<wbr>tree=<wbr>r2279</nobr></a> で公開されている物<br><br>v2.3.0.0</div></section>
+    <ul><li><section><h1 id=2316>
+    <span class="no">[2316]</span>
+    <a class="thread-title" href="#2316">Re:特定文字を入力＆操作後に Runtime Error</a>
+    <span class="author">ds14050</span>
+    <time datetime="2015-11-23T16:56:32">2015年11月23日 16:56</time></h1>
+    <div class="body">スマートインデント関連で無限ループに入ってメモリを食いつぶしている感じです。<br><br>n = 0 から n = nLineLen2-1 までのループの中で n に k を代入してるのがこちらです。<br><a href=http://sourceforge.net/p/sakura-editor/code/4035/tree/sakura/trunk2/sakura_core/types/CType_Cpp.cpp#l1427 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>4035/<wbr>tree/<wbr>sakura/<wbr>trunk2/<wbr>sakura_c<wbr>ore/<wbr>types/<wbr>CType_Cp<wbr>p.<wbr>cpp#<wbr>l1427</nobr></a><br>デバッガでは n = 1; k = 0; nLineLen2 = 3 に見えますので、n = 1 のターンが永遠に続きます。<br><br>行コメントを見つけたときに通るパスのようなので、行末までスキップ、という<br>コードなのかなと思いますが、n = k の k に何を期待しているのか、k という<br>ほとんど無名に等しい変数が何者なのか、よくわかりません。<br></div></section>
+    <ul><li><section><h1 id=2317>
+    <span class="no">[2317]</span>
+    <a class="thread-title" href="#2317">Re2:特定文字を入力＆操作後に Runtime Error</a>
+    <span class="author">もか</span>
+    <time datetime="2015-11-23T20:10:23">2015年11月23日 20:10</time></h1>
+    <div class="body">n=k<br>↓<br>n=nLineLen2 でよさそうですね。<br>だいぶ前に書いたので忘れたけどループの処理を見た感じだと<br>for(n=0;n&lt;k;n++)にしたほうが若干無駄が少ないかもしれません<br></div></section>
+    <ul><li><section><h1 id=2318>
+    <span class="no">[2318]</span>
+    <a class="thread-title" href="#2318">Re3:特定文字を入力＆操作後に Runtime Error</a>
+    <span class="author">ds14050</span>
+    <time datetime="2015-11-24T17:24:00">2015年11月24日 17:24</time></h1>
+    <div class="body">&gt; for(n=0;n&lt;k;n++)<br>についてはコメントできるほど知りませんが、<br><br>&gt; n=nLineLen2<br>については、ループ継続判定の前に n++ されることを考えると<br>n=nLineLen2-1 の方が適切ではないかなと思います。<br>結果は同じですけどね。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

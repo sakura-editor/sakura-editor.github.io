@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>全置換で強制終了 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3937</span>
+    <a class="thread-title" href="3937.html#3937">全置換で強制終了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3940</span>
+    <a class="thread-title" href="3937.html#3940">Re:全置換で強制終了</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3941</span>
+    <a class="thread-title" href="3937.html#3941">Re2:全置換で強制終了</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3937>
+    <span class="no">[3937]</span>
+    <a class="thread-title" href="#3937">全置換で強制終了</a>
+    <span class="author">berupon</span>
+    <time datetime="2005-06-01T11:01:56">2005年06月01日 11:01</time></h1>
+    <div class="body">Ver. 1.5.3.1を使っています。<br><br>テキストの内容は、<br>\r\r\n\r (0D 0D 0A 0D)<br>で、<br><br>置換機能で正規表現にチェックを付けて、<br>  置換前 : \r$<br>  置換後 : (空)<br>で、全て置換を行うと、<br><br>"0x00413707" の命令が "0x00000000" のメモリを参照しました。メモリが "read" になることはできませんでした。<br>～～<br><br>と表示されるアプリケーションエラーを起こしてしまいます。</div></section>
+    <ul><li><section><h1 id=3940>
+    <span class="no">[3940]</span>
+    <a class="thread-title" href="#3940">Re:全置換で強制終了</a>
+    <span class="author">berupon</span>
+    <time datetime="2005-06-01T23:55:55">2005年06月01日 23:55</time></h1>
+    <div class="body">ちょっと追ってみたところ、<br>CEditView_Command.cpp<br>void CEditView::Command_REPLACE_ALL( void )<br>8032行目、<br>&gt;&gt; // 置換後文字列への書き換え<br>&gt;&gt; Command_INSTEXT( FALSE, cRegexp.GetString(), cRegexp.GetStringLen(), TRUE );<br>で、cRegexp.GetString()はNULLを返しているのですが、<br>cRegexp.GetStringLen()は0を返していないのが原因のように思えます。<br><br>CBregexp.h の145行目<br>int CBregexp::GetStringLen(void)<br>に、<br>  if (!m_pRegExp-&gt;outendp || !m_pRegExp-&gt;outp)<br>    return 0;<br>とか追加すれば解決するような気がします。<br></div></section>
+    <ul><li><section><h1 id=3941>
+    <span class="no">[3941]</span>
+    <a class="thread-title" href="#3941">Re2:全置換で強制終了</a>
+    <span class="author">かろと</span>
+    <time datetime="2005-06-03T02:14:55">2005年06月03日 02:14</time></h1>
+    <div class="body">&gt;タイトル: Re2:全置換で強制終了<br>&gt;発言者: berupon<br>&gt;ちょっと追ってみたところ、<br>&gt;CBregexp.h の145行目<br>&gt;int CBregexp::GetStringLen(void)<br>&gt;に、<br>&gt;  if (!m_pRegExp-&gt;outendp || !m_pRegExp-&gt;outp)<br>&gt;    return 0;<br>&gt;とか追加すれば解決するような気がします。<br><br>追跡、ありがとうございます。<br><br>BREGEXP.DLLが、空置換した時に、<br>outendpも outp も NULLになってたのですが、そうでない場合があって、<br>outp だけが NULLがあるみたいですね。<br><br>最低でも、<br>if (m_pRegExp-&gt;outp == NULL) {<br>&#9;return 0;<br>}<br>は要るみたいです。<br>（outendpだけがNULLってのは、事実上ないと思いますが、念のため見てもよろしいかと）<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

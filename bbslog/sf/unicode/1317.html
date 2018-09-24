@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告(New) IME前後フィードバック機能 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1317</span>
+    <a class="thread-title" href="1317.html#1317">Commit報告(New) IME前後フィードバック機能</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1317>
+    <span class="no">[1317]</span>
+    <a class="thread-title" href="#1317">Commit報告(New) IME前後フィードバック機能</a>
+    <span class="author">もか</span>
+    <time datetime="2010-07-11T18:37:14">2010年07月11日 18:37</time></h1>
+    <div class="body">リビジョン：<br>  rev1793<br><br>変更種別：<br>  新機能<br><br>内容：<br>New:IME前後フィードバック機能<br>PatchUnicode#2972711<br><br>IMR_DOCUMENTFEEDに応答します。<br>MS-IME2002 + XP SP3<br>MS-IME2002 + XP SP3 + CUAS<br>MS-IME(10.0) + Vista SP2<br>MS-IME2007 + Vista SP2<br>IME2010 Beta+XP SP3<br>での、再変換・変換での考慮を確認しています。<br><br>確定済み文字列を含む文節の変更には未対応です。<br>またMS-IME2002/2003などで、ユーザ辞書が壊れていると、前後フィードバックでエディタがクラッシュする可能性があるらしいです。<br><br>その他の変更<br>・ビューモードでの再変換に応答しないように<br>・行末以降のフリーカーソル、複数行選択の場合の再変換対象を変更<br>→カーソル位置付近の適切と思われる行を対象にします<br></div></section>
+    </li></ul></body></html>

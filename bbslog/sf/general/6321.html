@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>関連付けツールで設定される「種類」の表記 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6321</span>
+    <a class="thread-title" href="6321.html#6321">関連付けツールで設定される「種類」の表記</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6322</span>
+    <a class="thread-title" href="6321.html#6322">RE: 関連付けツールで設定される「種類」の表記</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6323</span>
+    <a class="thread-title" href="6321.html#6323">Re2: 関連付けツールで設定される「種類」の表記</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">6325</span>
+    <a class="thread-title" href="6321.html#6325">RE: 関連付けツールで設定される「種類」の表記</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6326</span>
+    <a class="thread-title" href="6321.html#6326">Re2: 関連付けツールで設定される「種類」の表記</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6321>
+    <span class="no">[6321]</span>
+    <a class="thread-title" href="#6321">関連付けツールで設定される「種類」の表記</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-09-22T00:47:44">2007年09月22日 00:47</time></h1>
+    <div class="body">WindowsXPで関連付けツール(sakuext)を使わせていただいております。<br><br>シンプルで便利なのですが、<br>たとえばこのツールで C/C++ ( c,cpp,cxx,....) を関連付けした場合、<br>エクスプローラ上で表示される、ファイルの「種類」の表記が<br>.cppファイルも .hファイルも「C/C++」になってしまい、「種類」でソートしようとしても<br>拡張子がまぜこぜの配列になってしまいます。<br><br>自分としては「種類」で拡張子単位のソートが行いたいのですが、<br>これってどうにかなりますでしょうか。</div></section>
+    <ul><li><section><h1 id=6322>
+    <span class="no">[6322]</span>
+    <a class="thread-title" href="#6322">RE: 関連付けツールで設定される「種類」の表記</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-22T02:46:34">2007年09月22日 02:46</time></h1>
+    <div class="body">&gt;.cppファイルも .hファイルも「C/C++」になってしまい、「種類」でソートしようとしても<br>&gt;拡張子がまぜこぜの配列になってしまいます。<br>Winampでも似たようなことで困ったことを思い出しつつ探してみたらこんなのが見つかりました．<br>http://www.forest.impress.co.jp/article/2005/04/08/coltool.html<br><br>リンク先の「小物ツール部屋」からダウンロードできます．<br></div></section>
+    <ul><li><section><h1 id=6323>
+    <span class="no">[6323]</span>
+    <a class="thread-title" href="#6323">Re2: 関連付けツールで設定される「種類」の表記</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-09-22T03:55:24">2007年09月22日 03:55</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;.cppファイルも .hファイルも「C/C++」になってしまい、「種類」でソートしようとしても<br>&gt; &gt;拡張子がまぜこぜの配列になってしまいます。<br>&gt; Winampでも似たようなことで困ったことを思い出しつつ探してみたらこんなのが見つかりました．<br>&gt; http://www.forest.impress.co.jp/article/2005/04/08/coltool.html<br><br>なるほど。エクスプローラの拡張で行うのですね。<br>わざわざ探していただいてありがとうございます。調査不足でした。<br><br>使い勝手、すごく良いです。<br>カラム追加系の機能はいろいろ応用効きそうですね。。</div></section>
+    </li></ul></li><li><section><h1 id=6325>
+    <span class="no">[6325]</span>
+    <a class="thread-title" href="#6325">RE: 関連付けツールで設定される「種類」の表記</a>
+    <span class="author">すい</span>
+    <time datetime="2007-09-22T22:42:53">2007年09月22日 22:42</time></h1>
+    <div class="body">関連付けツールをコマンドラインから指定して使用すれば好きなように出来ます。<br>例えば、次のような内容のバッチファイルを作成して実行。<br><br>↓ファイル名 SET_C.BAT とかでね。<br>----------<br>"C:\Program Files\sakura\SakuEXT.exe" /aA1 /r SakuraEditor /e "c,c++" /n "C/C++(.c)" /M "さくら えでぃた(&amp;E)" "C:\Program Files\sakura\sakura.exe" "%%1"<br>"C:\Program Files\sakura\SakuEXT.exe" /aA1 /r SakuraEditor /e h       /n "C/C++(.h)" /M "さくら えでぃた(&amp;E)" "C:\Program Files\sakura\sakura.exe" "%%1"<br>"C:\Program Files\sakura\SakuEXT.exe" /aR  /r SakuraEditor /e cxx<br>----------<br><br>↑上記は、関連付けツールが<br>"C:\Program Files\sakura\SakuEXT.exe"<br>にあって、サクラエディタ本体が<br>"C:\Program Files\sakura\sakura.exe"<br>にある場合です。<br><br>１行目が<br><br>・拡張子(/e) c と c++ に対して、<br>・種類(/n) を "C/C++(.c)" として、そのファイルをマウス右クリックすると<br>・項目名(/M) "さくら えでぃた(&amp;E)" が現れて、それを実行すると<br>・コマンドライン "C:\Program Files\sakura\sakura.exe" "%1" が実行される。<br><br>と、設定しています。<br>２行目は<br><br>・拡張子(/e) h に対して、<br>・種類(/n) を "C/C++(h)" として<br>＜＜以下同じ＞＞<br><br>と、設定しています。<br><br>３行目は、戯れに、拡張子(/e) cxx に対する関連付け設定を解除(/aR) しています。<br>(色々出来ますわよ、という一例で。)<br><br>サクラエディタに使用する場合は、レジストリキー名称(/r) は<br>SakuraEditor を指定するようにして下さい。<br># もちろん、サクラエディタ以外のユーティリティに使用する場合は<br>#  SakuraEditor 以外の文字列にして下さいね。<br><br>注意点は、バッチに記述して実行する場合には、% という文字を %% と<br>２文字で記述しなくてはならない点です。<br>バッチに記述せず、直接コマンドプロンプトにコマンド文字列を<br>キー入力して実行する場合は<br>"C:\Program Files\sakura\SakuEXT.exe ～中略～ sakura.exe" "%1"<br>のように、末尾は "%1" と、普通にキー入力します。<br><br><br>自分用の関連付け設定バッチファイルを作成しておけば、いつでもそのバッチ実行 一発で<br>多種の任意の拡張子に対して任意のユーティリティを関連付け設定したり出来ますので便利かと～。<br><br>私は各種の圧縮書庫の拡張子に対してアーカイバを一発で関連付け設定～ とかやっていたりします。<br></div></section>
+    <ul><li><section><h1 id=6326>
+    <span class="no">[6326]</span>
+    <a class="thread-title" href="#6326">Re2: 関連付けツールで設定される「種類」の表記</a>
+    <span class="author">kobake</span>
+    <time datetime="2007-09-23T01:00:47">2007年09月23日 01:00</time></h1>
+    <div class="body">丁寧な解説ありがとうございます。<br>コマンドライン引数で自分用のカスタマイズができるのは良いですね。<br>自分用のバッチファイル作っておくことにします。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

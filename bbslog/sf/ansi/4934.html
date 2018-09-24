@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>カーソル行アンダーラインの残骸が出る | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4934</span>
+    <a class="thread-title" href="4934.html#4934">カーソル行アンダーラインの残骸が出る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4935</span>
+    <a class="thread-title" href="4934.html#4935">Re:カーソル行アンダーラインの残骸が出る</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4934>
+    <span class="no">[4934]</span>
+    <a class="thread-title" href="#4934">カーソル行アンダーラインの残骸が出る</a>
+    <span class="author">yon</span>
+    <time datetime="2007-07-20T13:01:14">2007年07月20日 13:01</time></h1>
+    <div class="body">画面表示系の細かい話なので、重要度は低いですが、<br>カーソル行アンダーラインの残骸が出ることがあります。<br>1.5.15.2と1.5.16.0で確認<br><br>１、新規ファイルを作成し、４行の改行を入れる。<br>２、どこかから、画面が埋まる以上の行に渡るテキストをコピーする。<br>３、先ほどのファイルでカーソルを最後の行に移動し、その位置にCtrl+vでペーストする。<br>    このとき、複数行に渡ってペーストされたテキストによって画面がスクロールする。<br>４、Ctrl+zで元に戻す。このとき、画面に表示される行番号を見ると3行と4行だけ表示された状態になる。<br>    (1行と2行が隠れる状態)<br>５、矢印↑キーでカーソルを移動する。<br>６、すると、最終行にアンダーラインが残る。<br>７、その状態でもう一度カーソルを最終行に移動してから、また別の行に移動すれば、消えます。<br><br>参考までに、、<br>よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=4935>
+    <span class="no">[4935]</span>
+    <a class="thread-title" href="#4935">Re:カーソル行アンダーラインの残骸が出る</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-20T22:43:30">2007年07月20日 22:43</time></h1>
+    <div class="body">▼ yonさん<br>&gt; カーソル行アンダーラインの残骸が出ることがあります。<br>４の操作でスクロールバーが更新されないところからおかしくなっているようです。<br>４以後の操作を、<br>４．ペーストされたテキストを選択してDelで削除する<br>５．Ctrl+zで元に戻す<br>とした場合もすぐにはスクロールバーが更新されないですね。<br><br>↓修正パッチを作ってみました。<br>Patches#1757559 「Undoでスクロールバーが更新されない」</div></section>
+    </li></ul></li></ul></body></html>

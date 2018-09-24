@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>置換その２ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6087</span>
+    <a class="thread-title" href="6087.html#6087">置換その２</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6088</span>
+    <a class="thread-title" href="6087.html#6088">RE: 置換その２</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6090</span>
+    <a class="thread-title" href="6087.html#6090">Re2: 置換その２</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6087>
+    <span class="no">[6087]</span>
+    <a class="thread-title" href="#6087">置換その２</a>
+    <span class="author">もも</span>
+    <time datetime="2007-06-05T18:26:04">2007年06月05日 18:26</time></h1>
+    <div class="body">またまた教えてください。（※初心者ですぅ。）<br><br><br>①行末に半角スペースを挿入するには置換でどのようにしたらよいでしょうか？<br>　たとえば、この４行の行末にすべて半角スペースを１個挿入する。<br>　She is a little girl. <br>　Her name is Rose. <br>　He is a little boy. <br>　His name is Jack. <br><br>②行に複数の文があってスペースがバラバラ（半角スペースが１個以上ある）になっているものを半角スペース１つに一括変換したいのですが、置換でどのようにしたらよいでしょうか？<br>  例えば、下の文は順番に半角スペースが３つ、２つ、１つ入っていますが、全部を１つに変換したいのです。<br>　She is a little girl.   Her name is Rose.  He is a little boy. His name is Jack. <br>　↓<br>　She is a little girl. Her name is Rose. He is a little boy. His name is Jack. <br><br><br>以上２点おねがいしますぅ。</div></section>
+    <ul><li><section><h1 id=6088>
+    <span class="no">[6088]</span>
+    <a class="thread-title" href="#6088">RE: 置換その２</a>
+    <span class="author">maru</span>
+    <time datetime="2007-06-05T19:13:11">2007年06月05日 19:13</time></h1>
+    <div class="body">&gt;①行末に半角スペースを挿入するには置換でどのようにしたらよいでしょうか？<br>４行の状態のまま行末に、ですか？<br>置換前「$」<br>置換後「 」<br>ちょっと分かりにくいですが、置換前は$記号をひとつ、置換後は、半角のスペースをひとつです。<br>$は行末にマッチします。<br><br>&gt;②(～省略～)半角スペース１つに一括変換したいのですが、置換でどのようにしたらよいでしょうか？<br>置換前「 +」<br>置換後「 」<br>これも分かりにくいですが、置換前は半角スペースと+記号をひとつずつ、置換後は半角スペースをひとつです。<br>「 +」はひとつ以上の連続した半角スペース、の意味です。<br><br><br>&gt;&lt;.*&gt;　と　\r\n　の正規表現の意味が？？？　簡単に解説してください<br>「&lt;.*&gt;」は「&lt;」記号＋なんらかの文字列＋「&gt;」記号の意味です。<br>ここで、なんらかの文字列には「&lt;」記号や「&gt;」記号も含みますので、「&lt;head&gt;」や「&lt;/head&gt;」はもちろん、「&lt;lesson&gt;01&lt;/lesson&gt;」にもマッチします。<br><br>「\r\n」は改行コードの意味です。<br><br>http://www.hi-ho.ne.jp/babaq/bregexp.html の「パターンについて」をご覧ください。<br></div></section>
+    <ul><li><section><h1 id=6090>
+    <span class="no">[6090]</span>
+    <a class="thread-title" href="#6090">Re2: 置換その２</a>
+    <span class="author">もも</span>
+    <time datetime="2007-06-05T19:37:14">2007年06月05日 19:37</time></h1>
+    <div class="body">回答ありがとうございますぅ。解決しましたー。スッキリ！<br>「 」スペースが見えないのに、正規表現っておもしろいですね。これからコツコツ勉強していこうと思います。（今日からスタートします！！）ガンバローっと。また、お願いしますね。お腹すいたー。今晩のメニューはお魚です。ではまた～。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>何個かバグを | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">980</span>
+    <a class="thread-title" href="980.html#980">何個かバグを</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">983</span>
+    <a class="thread-title" href="980.html#983">Re:何個かバグを</a></div>
+    </li><li><div class="list-title">
+    <span class="no">984</span>
+    <a class="thread-title" href="980.html#984">Bugsinfo.txt</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">985</span>
+    <a class="thread-title" href="980.html#985">Re:Bugsinfo.txt</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=980>
+    <span class="no">[980]</span>
+    <a class="thread-title" href="#980">何個かバグを</a>
+    <span class="author">みく</span>
+    <time datetime="2001-12-20T21:40:03">2001年12月20日 21:40</time></h1>
+    <div class="body">報告しておきます。既出でしたらすいません。<br>・EOFのある行を行番号のところをマウスでクリックして行選択できない。<br>・EOFの直前の文字をマウスで選択できない。<br>・Grep検索中画面のフォルダ名表示が以下の条件のとき更新されない。<br>サブフォルダがあり、その後にたくさんのファイルがあるとき。<br>サブフォルダに入るときにしか更新してないため、サブフォルダから<br>戻ってきたときには更新されない。<br></div></section>
+    <ul><li><section><h1 id=983>
+    <span class="no">[983]</span>
+    <a class="thread-title" href="#983">Re:何個かバグを</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-20T22:50:47">2001年12月20日 22:50</time></h1>
+    <div class="body">▼ みくさん<br>&gt; ・EOFのある行を行番号のところをマウスでクリックして行選択できない。<br>EOFを含む行の文字列によって選択範囲がかわる。<br>・・・単語選択の振る舞い？<br><br>&gt; ・EOFの直前の文字をマウスで選択できない。<br>フリーカーソルモードがOFFのときだけ再現<br><br>上記のバグとは直接関係ないですが、1.2.104.0で変更したロジックもちょっと変なので、<br>明日みてみようかな、と思ってます。<br></div></section>
+    </li><li><section><h1 id=984>
+    <span class="no">[984]</span>
+    <a class="thread-title" href="#984">Bugsinfo.txt</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-21T13:08:18">2001年12月21日 13:08</time></h1>
+    <div class="body">Bugsinfo.txtを更新しました．<br></div></section>
+    <ul><li><section><h1 id=985>
+    <span class="no">[985]</span>
+    <a class="thread-title" href="#985">Re:Bugsinfo.txt</a>
+    <span class="author">hor</span>
+    <time datetime="2001-12-21T19:25:52">2001年12月21日 19:25</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; Bugsinfo.txtを更新しました．<br><br>↓対策してみました。 ( ssrc_2001-12-19_bugs.lzh )<br><br>□Bugsinfo.txt にのってるバグの修正<br>  ・ページ設定の用紙サイズ変更をマウスで行うと「プログラムバグ」といわれる<br>  ・EOFの直前の文字をマウスで選択できない<br>  ・EOFのある行を行番号のところをマウスでクリックして行選択できない<br><br>□ 1.2.104.0 で hor が変更した部分の修正<br>  ・BOX選択エリアにEOFがあると反転表示が変になるのを修正<br>  ・ソート・マージの選択行を計算するロジックのミスを修正<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

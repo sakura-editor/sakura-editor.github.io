@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Re6: stricmp | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">761</span>
+    <a class="thread-title" href="761.html#761">Re6: stricmp</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">762</span>
+    <a class="thread-title" href="761.html#762">Re7: stricmp</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">763</span>
+    <a class="thread-title" href="761.html#763">Re8: stricmp</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">764</span>
+    <a class="thread-title" href="761.html#764">stricmpはlocaleの問題だった</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=761>
+    <span class="no">[761]</span>
+    <a class="thread-title" href="#761">Re6: stricmp</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-10-11T15:53:22">2001年10月11日 15:53</time></h1>
+    <div class="body">サクラエディタBBSから移って来ました。<br><br>▼げんたさん<br>&gt;該当部分を切り出して独立させると日本語でもちゃんと動きます．<br><br>該当部分はどこでしょうか。<br><br>&gt;TD32がデバッグ情報を読み込んでくれません<br><br><a href=http://user3.allnet.ne.jp/tadnakam/bcc32/td32.htm target=_top><nobr>http://<wbr>user3.<wbr>allnet.<wbr>ne.<wbr>jp/<wbr>tadnakam<wbr>/<wbr>bcc32/<wbr>td32.<wbr>htm</nobr></a><br>が詳しいです。<br></div></section>
+    <ul><li><section><h1 id=762>
+    <span class="no">[762]</span>
+    <a class="thread-title" href="#762">Re7: stricmp</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-10-11T16:21:29">2001年10月11日 16:21</time></h1>
+    <div class="body">▼ あああさん<br>&gt; 該当部分はどこでしょうか。<br>CShareData::IsPathOpened()の中で使われているstricmpです。<br>stricmpをtoupperを使った比較ループに置き換えると日本語部分で０を返すのがわかります。<br><br>ただ、main関数にtoupperを使った固定文字列の比較ループのみを含んだプログラムを作ると日本語があっても正しく動作します。<br><br>&gt; &gt;TD32がデバッグ情報を読み込んでくれません<br>&gt; <a href=http://user3.allnet.ne.jp/tadnakam/bcc32/td32.htm target=_top><nobr>http://<wbr>user3.<wbr>allnet.<wbr>ne.<wbr>jp/<wbr>tadnakam<wbr>/<wbr>bcc32/<wbr>td32.<wbr>htm</nobr></a><br>-yオプションがついていなかったのが原因のようです。あとで再コンパイルして試してみます。<br></div></section>
+    <ul><li><section><h1 id=763>
+    <span class="no">[763]</span>
+    <a class="thread-title" href="#763">Re8: stricmp</a>
+    <span class="author">あああ</span>
+    <time datetime="2001-10-11T18:07:39">2001年10月11日 18:07</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; stricmpをtoupperを使った比較ループに置き換えると日本語部分で０を返すのがわかります。<br><br>下線付きの _toupper を試しましたか？<br><br>&gt; ただ、main関数にtoupperを使った固定文字列の比較ループのみを含んだプログラムを作ると日本語があっても正しく動作します。<br><br>普通のexeは libc.libをつなげています。sakura_core はDLLですから、MSVCRT.LIB を取り込むのでしょう。<br><br>LIBC.LIB シングルスレッド スタティック ライブラリ、リテール版 <br>LIBCMT.LIB マルチスレッド スタティック ライブラリ、リテール版 <br>MSVCRT.LIB MSVCRTx0.DLL 用インポート ライブラリ、リテール版 <br>MSVCRTx0.DLL マルチスレッド DLL ライブラリ、リテール版 <br></div></section>
+    <ul><li><section><h1 id=764>
+    <span class="no">[764]</span>
+    <a class="thread-title" href="#764">stricmpはlocaleの問題だった</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-10-11T19:09:52">2001年10月11日 19:09</time></h1>
+    <div class="body">ようやくTurbo Debuggerが動いたのでtraceしてみました．<br><br>toupperの内部ではWin32 APIのLCMapStringを使っており，これが0x80以上のバイトに対して0を返しているみたいです．<br><br>ソース(BCCには付いてない．C++ Builder付属のやつね)の該当部分を見ると，localeがCのときは内部のテーブルを使ってくれるようです．<br><br>localeで検索するとCMemoryの中で setlocale( LC_ALL, "Japanese" ); をやっていますから，ファイルを開くときのコード判定部分を通ることでlocaleが変わってしまい，起動直後に判定する初回とファイル読み込み後に判定するDrag &amp; dropでは動作が異なっていたというのが種明かしでしょう．<br><br>とりあえず，ファイル名判定のstricmpの前にsetlocale ( LC_ALL, "C" ); を入れたら直りました．<br><br>&gt;sakura_core はDLLですから、MSVCRT.LIB を取り込むのでしょう。<br>これはMS VCの話．今はBCCを使っているので違います．当然実装もMSとは異なっているでしょう．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

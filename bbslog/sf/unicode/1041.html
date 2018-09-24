@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>強調キーワードの色分け能力を拡張するパッチを作成しました。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1041</span>
+    <a class="thread-title" href="1041.html#1041">強調キーワードの色分け能力を拡張するパッチを作成しました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1156</span>
+    <a class="thread-title" href="1041.html#1156">Re:強調キーワードの色分け能力を拡張するパッチを作成しました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1159</span>
+    <a class="thread-title" href="1041.html#1159">Re2:強調キーワードの色分け能力を拡張するパッチを作成しました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1162</span>
+    <a class="thread-title" href="1041.html#1162">Re3:強調キーワードの色分け能力を拡張するパッチを作成しました。</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1163</span>
+    <a class="thread-title" href="1041.html#1163">Commit報告: 強調キーワードの強化</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1041>
+    <span class="no">[1041]</span>
+    <a class="thread-title" href="#1041">強調キーワードの色分け能力を拡張するパッチを作成しました。</a>
+    <span class="author">ds14050</span>
+    <time datetime="2009-10-23T19:56:49">2009年10月23日 19:56</time></h1>
+    <div class="body">ご覧ください。<br><br>&gt;SourceForge.net: Sakura Editor: Modify: 2884092 - 強調キーワードの色分け機能拡張<br>&gt;<a href=https://sourceforge.net/tracker/?func=detail&aid=2884092&group_id=12488&atid=1013762 target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>2884092&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>1013762</nobr></a><br><br>関連。<br><br>&gt;Request/246 - SakuraEditorWiki<br>&gt;<a href=http://sakura.qp.land.to/?Request%2F246 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Request%<wbr>2F246</nobr></a><br><br>&gt;BugReport/32 - SakuraEditorWiki<br>&gt;<a href=http://sakura.qp.land.to/?BugReport%2F32 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F32</nobr></a><br></div></section>
+    <ul><li><section><h1 id=1156>
+    <span class="no">[1156]</span>
+    <a class="thread-title" href="#1156">Re:強調キーワードの色分け能力を拡張するパッチを作成しました。</a>
+    <span class="author">syat</span>
+    <time datetime="2010-04-04T12:52:33">2010年04月04日 12:52</time></h1>
+    <div class="body">すごく遅ればせながら、試してみました。<br>個人的にすごく欲しい機能です。<br>文字をキーワード、キーワード以外の文字、空白・コントロールコードの3つに分け、冒頭は一致するが長さが足りない場合延長してチェックすることでキーワード文字以外も対象になっています。原理的には一行におさまるどんな文字列もキーワードにできますね。（空白を含むことも可能）<br><br>せっかくなので一点要望があります。<br>今のパッチは一致するキーワードが一つでもあればチェックを終了します（最短一致）<br>例えばCSSだと、border も border-width もキーワードとして使いたいのですが、両方登録すると border にしかヒットしません。<br>最長一致でチェックできるとありがたいです。</div></section>
+    <ul><li><section><h1 id=1159>
+    <span class="no">[1159]</span>
+    <a class="thread-title" href="#1159">Re2:強調キーワードの色分け能力を拡張するパッチを作成しました。</a>
+    <span class="author">ds14050</span>
+    <time datetime="2010-04-05T04:48:10">2010年04月05日 04:48</time></h1>
+    <div class="body">試していただけたようでありがとうございます。<br><br>&gt;最長一致<br><br>やっぱり、border-widthを強調キーワード1、<br>borderを強調キーワード2へ登録してくれなんて<br>お願いはできませんよね。最長一致にしてみました。<br><br># CKeyWordSetMgr::SearchKeyWord2()の戻り値が<br># どんどん汚くなっています。最初は -1かそれ以外かだったのに。<br>#<br># /** nIdx番目のキーワードセットから pszKeyWordを探す。<br>#    見つかれば 0以上を、見つからなければ負の数を返す。<br>#    @retval 0以上 見つかった。(intmaxなら、pszKeywordから始まる、より長いキーワードが存在している)<br>#    @retval -1    見つからなかった。<br>#    @retval -2    見つからなかったが、pszKeywordから始まるキーワードが存在している。<br># */<br></div></section>
+    <ul><li><section><h1 id=1162>
+    <span class="no">[1162]</span>
+    <a class="thread-title" href="#1162">Re3:強調キーワードの色分け能力を拡張するパッチを作成しました。</a>
+    <span class="author">syat</span>
+    <time datetime="2010-04-07T00:57:04">2010年04月07日 00:57</time></h1>
+    <div class="body">対応ありがとうございます。<br>最長一致になっていることを確認しました。<br><br>延長してリトライしてるため性能悪くならないか心配でしたが、試してみたところパッチのありなしでほとんど差を感じませんでした。<br>コミット可能と思います。<br><br>CSS2.kwdでは「line-height」を強調するために「line」と「height」が登録されていて、関係ないlineも強調されたりするのがアレだったのですが、これですっきり^^<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=1163>
+    <span class="no">[1163]</span>
+    <a class="thread-title" href="#1163">Commit報告: 強調キーワードの強化</a>
+    <span class="author">ds14050</span>
+    <time datetime="2010-04-07T05:08:07">2010年04月07日 05:08</time></h1>
+    <div class="body">リビジョン：<br>　1732<br><br>変更種別：<br>　機能改善<br><br>内容：<br>　Imp: 記号や空白を含む強調キーワードを使用可能に。<br><br><a href=http://sakura-editor.svn.sourceforge.net/viewvc/sakura-editor?view=rev&revision=1732 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>viewvc/<wbr>sakura-<wbr>editor?<wbr>view=<wbr>rev&amp;<wbr>revision<wbr>=<wbr>1732</nobr></a><br><br>キーワードの整理ボタンは「現在の設定では強調キーワードとして表示できないキーワードを削除」(prop/CPropComKeyword.cpp)するものらしいので moca_skrさんのパッチも合わせてコミットしました。ありがとうございます。(wmemicmpや wstricmpは知識がないので従来通りです)<br></div></section>
+    </li></ul></li></ul></body></html>

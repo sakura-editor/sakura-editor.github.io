@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>MYTRACEの扱い方 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1459</span>
+    <a class="thread-title" href="1459.html#1459">MYTRACEの扱い方</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1499</span>
+    <a class="thread-title" href="1459.html#1499">Re: MYTRACEの扱い方</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1459>
+    <span class="no">[1459]</span>
+    <a class="thread-title" href="#1459">MYTRACEの扱い方</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-02-03T10:46:34">2002年02月03日 10:46</time></h1>
+    <div class="body">Debug.cppにMYTRACE という関数がありますよね。<br>これを残したままでリリースモードでコンパイルすると Do_not_use_the_MYTRACE_function_if_relea<br>se_mode というエラーがでてしまいます。<br>そこで、リリース時には下のように空白に置換えたら書きなおさなくても無効に出来てよいと思うのですが,どうでしょうか？<br><br>#ifndef _DEBUG<br>#define MYTRACE<br>#endif </div></section>
+    <ul><li><section><h1 id=1499>
+    <span class="no">[1499]</span>
+    <a class="thread-title" href="#1499">Re: MYTRACEの扱い方</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-07T23:17:41">2002年02月07日 23:17</time></h1>
+    <div class="body">&gt;#ifndef _DEBUG<br>&gt;#define MYTRACE<br>&gt;#endif <br>これだと，MYTRACEは無効になりますが，引数はそのまま残りますよね．もちろん()内の値は評価されて捨てられるだけですが，関数呼び出しなんかがあると副作用は残ります．(だから安全という説もあるが...^^;) コンパイラのタコさ加減によっては無駄な評価も残ってしまうかもしれませんけど．<br><br>私には現在の仕様から“関数呼び出しが残らないように手動で前後も含めて全て確認してね”というありがたい意志が読みとれます．<br></div></section>
+    </li></ul></li></ul></body></html>

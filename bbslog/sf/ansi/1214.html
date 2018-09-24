@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タイトルバーの再描画の抑制 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1214</span>
+    <a class="thread-title" href="1214.html#1214">タイトルバーの再描画の抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1216</span>
+    <a class="thread-title" href="1214.html#1216">Re:タイトルバーの再描画の抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1217</span>
+    <a class="thread-title" href="1214.html#1217">Re:タイトルバーの再描画の抑制</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1218</span>
+    <a class="thread-title" href="1214.html#1218">Re:タイトルバーの再描画の抑制</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1219</span>
+    <a class="thread-title" href="1214.html#1219">Re:タイトルバーの再描画の抑制</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1214>
+    <span class="no">[1214]</span>
+    <a class="thread-title" href="#1214">タイトルバーの再描画の抑制</a>
+    <span class="author">gae</span>
+    <time datetime="2002-01-19T00:41:20">2002年01月19日 00:41</time></h1>
+    <div class="body">しばらくぶりです。<br>久しぶりにソースをダウンロードしてビルドしてみました。<br>CPrintPreviewクラスがプロジェクトに入ってないらしく、<br>自分で追加してビルドを完了させました。<br>それはおいといて、<br><br><br>キーを入力する度にタイトルバーが再描画されてしまい鬱陶しいので、<br>どなたか修正して反映していただけないでしょうか？<br><br>void CEditDoc::SetParentCaption( BOOL bKillFocus )<br><br>ここで、GetWindowTextで現在のウィンドウタイトルを取得し、<br>文字列の内容が同一ならSetWindowTextをしないだけです。<br>これだけで、キー入力ごとに発生する負荷がかなり減りました。<br>(ほんとはもっとまともなやり方で解決したいですが、とりあえず)<br><br>あと、タイトルバーにバージョン番号表示は要らないと思いましたがどうでしょうか？<br>バージョンダイアログで確認できますし、<br>バージョン番号表示がなくなれば見た目スッキリして良いと思いました。<br><br>よろしくお願い致します。<br></div></section>
+    <ul><li><section><h1 id=1216>
+    <span class="no">[1216]</span>
+    <a class="thread-title" href="#1216">Re:タイトルバーの再描画の抑制</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-19T11:05:25">2002年01月19日 11:05</time></h1>
+    <div class="body">▼ gaeさん<br>&gt; しばらくぶりです。<br>&gt; 久しぶりにソースをダウンロードしてビルドしてみました。<br>&gt; CPrintPreviewクラスがプロジェクトに入ってないらしく、<br>&gt; 自分で追加してビルドを完了させました。<br>&gt; それはおいといて、<br>&gt; <br>&gt; <br>&gt; キーを入力する度にタイトルバーが再描画されてしまい鬱陶しいので、<br>&gt; どなたか修正して反映していただけないでしょうか？<br>&gt; <br>&gt; void CEditDoc::SetParentCaption( BOOL bKillFocus )<br>&gt; <br>&gt; ここで、GetWindowTextで現在のウィンドウタイトルを取得し、<br>&gt; 文字列の内容が同一ならSetWindowTextをしないだけです。<br>&gt; これだけで、キー入力ごとに発生する負荷がかなり減りました。<br>&gt; (ほんとはもっとまともなやり方で解決したいですが、とりあえず)<br>&gt; <br>&gt; あと、タイトルバーにバージョン番号表示は要らないと思いましたがどうでしょうか？<br>&gt; バージョンダイアログで確認できますし、<br>&gt; バージョン番号表示がなくなれば見た目スッキリして良いと思いました。<br>&gt; <br>&gt; よろしくお願い致します。<br><br>はじめましてです。<br><br>char&#9;pszNowCaption[1024];<br>::GetWindowText( m_hWnd, pszNowCaption, sizeof( pszNowCaption ) );<br>して、<br>if (strcmp(pszCap, pszNowCaption) != 0){<br>&#9;::SetWindowText( hwnd, pszCap );<br>}<br>でしょうか？<br>手元だとあまり違いがわからなかったので念のため。<br><br></div></section>
+    <ul><li><section><h1 id=1217>
+    <span class="no">[1217]</span>
+    <a class="thread-title" href="#1217">Re:タイトルバーの再描画の抑制</a>
+    <span class="author">gae</span>
+    <time datetime="2002-01-19T12:28:32">2002年01月19日 12:28</time></h1>
+    <div class="body">&gt; char&#9;pszNowCaption[1024];<br>&gt; ::GetWindowText( m_hWnd, pszNowCaption, sizeof( pszNowCaption ) );<br>&gt; して、<br>&gt; if (strcmp(pszCap, pszNowCaption) != 0){<br>&gt; &#9;::SetWindowText( hwnd, pszCap );<br>&gt; }<br>&gt; でしょうか？<br>&gt; 手元だとあまり違いがわからなかったので念のため。<br><br>これでいいと思います。<br><br>遅いマシンでキーリピートを最速にして<br>押しっぱなしにしてみてください。<br>かなりの速度差がわかるはずです。<br><br># また、WindowsXPではフォントのレンダリングが遅くなっているので<br># この差が大きいというのも<br></div></section>
+    </li><li><section><h1 id=1218>
+    <span class="no">[1218]</span>
+    <a class="thread-title" href="#1218">Re:タイトルバーの再描画の抑制</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-19T13:03:22">2002年01月19日 13:03</time></h1>
+    <div class="body">&gt;タイトル: Re:タイトルバーの再描画の抑制<br>&gt;発言者: やざき<br>&gt;char&#9;pszNowCaption[1024];<br>&gt;::GetWindowText( m_hWnd, pszNowCaption, sizeof( pszNowCaption ) );<br>&gt;して、<br>&gt;if (strcmp(pszCap, pszNowCaption) != 0){<br>&gt;&#9;::SetWindowText( hwnd, pszCap );<br>&gt;}<br>&gt;でしょうか？<br>&gt;手元だとあまり違いがわからなかったので念のため。<br><br>タイトルバーは画面に一個だから、どっかのクラスに持たせておけば<br>毎回GetWindowText()しなくてよいので、もっと速くならないだろうか。<br>＃m_hWnd と hwnd ってどう違うんだろう。<br></div></section>
+    <ul><li><section><h1 id=1219>
+    <span class="no">[1219]</span>
+    <a class="thread-title" href="#1219">Re:タイトルバーの再描画の抑制</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-19T14:11:15">2002年01月19日 14:11</time></h1>
+    <div class="body">▼みくさん<br>&gt;タイトルバーは画面に一個だから、どっかのクラスに持たせておけば<br>本質的にはそういう問題ではなくて，書き換えるべきタイミングをきちんと管理することが重要でしょう．<br><br>毎回書き換えに行くのは，たぶん(更新) というのを入れるかどうかを見たいのだと思いますので，<br>* CEditDoc::m_bIsModified への直接アクセスをアクセスクラス経由に置き換える<br>* アクセスクラスでIsModifiedが変更されたかどうかをチェックして，変更があった場合のみSetParentCaptionを呼び出す．<br>とすべきだと思います．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>画面最下行かつ[EOF]位置での改行動作 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5235</span>
+    <a class="thread-title" href="5235.html#5235">画面最下行かつ[EOF]位置での改行動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5236</span>
+    <a class="thread-title" href="5235.html#5236">Re:画面最下行かつ[EOF]位置での改行動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5237</span>
+    <a class="thread-title" href="5235.html#5237">Re2:画面最下行かつ[EOF]位置での改行動作</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5235>
+    <span class="no">[5235]</span>
+    <a class="thread-title" href="#5235">画面最下行かつ[EOF]位置での改行動作</a>
+    <span class="author">いちユーザー</span>
+    <time datetime="2007-12-19T13:32:39">2007年12月19日 13:32</time></h1>
+    <div class="body">Ver 1.6.2.0 / Win2k での確認例ですが、<br><br>71|<br>72|<br>  |[EOF] カーソル行 ----画面上での最下行----<br>このような状態で改行すると、<br><br>71|<br>72|<br>73|<br>  |[EOF] カーソル行<br><br>                   ----画面上での最下行----<br>という動作をします。<br><br>1.5.14.0からexe上書き、設定変更なしです。<br>1.5.14.0ではこのような動きをしていませんでした。</div></section>
+    <ul><li><section><h1 id=5236>
+    <span class="no">[5236]</span>
+    <a class="thread-title" href="#5236">Re:画面最下行かつ[EOF]位置での改行動作</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2007-12-19T16:45:34">2007年12月19日 16:45</time></h1>
+    <div class="body">▼ いちユーザーさん<br>&gt; Ver 1.6.2.0 / Win2k での確認例ですが、<br>&gt; 1.5.14.0ではこのような動きをしていませんでした。<br><br>はい、その修正は、Ver 1.6.0.0 以降です。<br>[ 1758102 ] 画面の高さが３ライン以下でも良い<br><br>空白の行がいつも最下行に残っていましたので、使わせていただきました。</div></section>
+    <ul><li><section><h1 id=5237>
+    <span class="no">[5237]</span>
+    <a class="thread-title" href="#5237">Re2:画面最下行かつ[EOF]位置での改行動作</a>
+    <span class="author">いちユーザー</span>
+    <time datetime="2007-12-19T17:47:03">2007年12月19日 17:47</time></h1>
+    <div class="body">解りました。ありがとうございます。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

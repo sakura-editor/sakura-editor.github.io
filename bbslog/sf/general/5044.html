@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>1.5.9.90beta | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5044</span>
+    <a class="thread-title" href="5044.html#5044">1.5.9.90beta</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5053</span>
+    <a class="thread-title" href="5044.html#5053">1.5.9.90beta 性能改善お試し版</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5100</span>
+    <a class="thread-title" href="5044.html#5100">ちょいと変どすぇ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5101</span>
+    <a class="thread-title" href="5044.html#5101">Re:ちょいと変どすぇ(修正内容)</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5044>
+    <span class="no">[5044]</span>
+    <a class="thread-title" href="#5044">1.5.9.90beta</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-02-20T00:41:52">2006年02月20日 00:41</time></h1>
+    <div class="body">ベータ版ですが，一応通常の手順でsourceforge.netに登録しました．<br>詳細は &gt;&gt;dev:4260 &gt;&gt;dev:4234をご覧ください．<br>特に品質が悪いということはないと思いますが，ノーチェックなのでbetaとします．<br></div></section>
+    <ul><li><section><h1 id=5053>
+    <span class="no">[5053]</span>
+    <a class="thread-title" href="#5053">1.5.9.90beta 性能改善お試し版</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-02-23T00:25:24">2006年02月23日 00:25</time></h1>
+    <div class="body">従来と同じ設定なら同等のパフォーマンスで動作するようにしました。<br>お試し版（実行形式）： <a href=http://www7a.biglobe.ne.jp/~ryoji target=_top><nobr>http://<wbr>www7a.<wbr>biglobe.<wbr>ne.<wbr>jp/~<wbr>ryoji</nobr></a><br>プログラムサイズもVS2003では以前のバージョンと同じになりました。<br>ソース修正パッチ &gt;&gt;dev:4284</div></section>
+    </li><li><section><h1 id=5100>
+    <span class="no">[5100]</span>
+    <a class="thread-title" href="#5100">ちょいと変どすぇ</a>
+    <span class="author">すい</span>
+    <time datetime="2006-03-15T22:31:33">2006年03月15日 22:31</time></h1>
+    <div class="body">1.5.9.90beta(sakura_2006-02-19.zip) 違和感ありです。<br><br>エディタでファイルを新規に開こうとして、<br>「他のファイルを編集中の、既に開かれているエディタウィンドウ」まで、<br>ファイルをドラッグ＆ドロップして来た場合の挙動がちょっと変です。<br><br>ファイルを掴んでいるマウスポインタの位置まで「編集中エディタウィンドウ」の<br>中のカーソルが移動してきます。（ファイルを掴んでいるマウスポインタの後を、<br>エディタ画面内のカーソル(キャレット)が追尾しまくります。）<br>編集途中のウィンドウのカーソル位置が勝手に移動してしまうので、非常に<br>取扱いにくくなってしまってます。<br><br>確認したところ、1.5.9.1(sakura_2006-01-10.zip) までは このような動きは無いようです。<br></div></section>
+    <ul><li><section><h1 id=5101>
+    <span class="no">[5101]</span>
+    <a class="thread-title" href="#5101">Re:ちょいと変どすぇ(修正内容)</a>
+    <span class="author">もか</span>
+    <time datetime="2006-03-16T02:06:12">2006年03月16日 02:06</time></h1>
+    <div class="body">いつもお世話になっております。<br>現象確認しました。<br>D&amp;Dの修正で出る不具合なので、すいさんの報告通り1.5.9.90beta固有のバグです。<br>(あと私のサイトのsakura_2005-04-29clipbrdでも発生します)<br>すみませんが、以下のようにソースコードの修正をお願いします。<br><br>CEditView.cpp<br>106行目付近(関数IsDataAvailable内)<br>IDataObject::QueryGetDataの戻り値を<br>  SUCCEEDED( pDataObject-&gt;QueryGetData( &amp;fe ) )<br>で判定しているのを止めて、<br>  S_OK == pDataObject-&gt;QueryGetData( &amp;fe )<br>に変更する必要があります。<br>　IDataObject::GetDataも、同様に変更したほうがいいかも。<br><br><br>S_OK     正常 OK<br>S_FALSE  正常 FALSE<br>E_xxx    C++/Java等でいうところの例外。<br>SUCCEEDEDは、「例外じゃない」のを調べるマクロなんですよね。<br><br>#　他の箇所でもSUCCEEDEDマクロを良く使っていますけど、場所によって同様の問題があるはずです<br>#埋もれるといやなので、一応パッチも出しておきます。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

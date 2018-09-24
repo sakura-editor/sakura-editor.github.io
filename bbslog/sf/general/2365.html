@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>スペルチェッカーについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2365</span>
+    <a class="thread-title" href="2365.html#2365">スペルチェッカーについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2366</span>
+    <a class="thread-title" href="2365.html#2366">Re: スペルチェッカーについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2372</span>
+    <a class="thread-title" href="2365.html#2372">Re2: スペルチェッカーについてー具体的方法は？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2375</span>
+    <a class="thread-title" href="2365.html#2375">Re3: スペルチェッカーについてー具体的方法は？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2378</span>
+    <a class="thread-title" href="2365.html#2378">Re4: GNUaspellと外部コマンドの実行について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2379</span>
+    <a class="thread-title" href="2365.html#2379">Re5: GNUaspellと外部コマンドの実行について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2384</span>
+    <a class="thread-title" href="2365.html#2384">Re6: GNUaspellと外部コマンドの実行について</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2380</span>
+    <a class="thread-title" href="2365.html#2380">Re5: GNUaspellと外部コマンドの実行について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2381</span>
+    <a class="thread-title" href="2365.html#2381">Re6: GNUaspellと外部コマンドの実行について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2382</span>
+    <a class="thread-title" href="2365.html#2382">GNU Aspellとの統合</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2365>
+    <span class="no">[2365]</span>
+    <a class="thread-title" href="#2365">スペルチェッカーについて</a>
+    <span class="author">Ki</span>
+    <time datetime="2002-10-15T13:01:30">2002年10月15日 13:01</time></h1>
+    <div class="body">英文を入力したとき、マクロを利用しispellを呼び出し英文のスペルチェックができると便利なのですがどなたかご存知ありませんか？<br></div></section>
+    <ul><li><section><h1 id=2366>
+    <span class="no">[2366]</span>
+    <a class="thread-title" href="#2366">Re: スペルチェッカーについて</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-15T16:42:19">2002年10月15日 16:42</time></h1>
+    <div class="body">&gt;マクロを利用しispellを呼び出し英文のスペルチェック<br>現在のファイルをそのままチェックにかけるのであれば単に外部コマンド実行でできますが，<br>1. 元のファイルを直接直されても問題ない<br>2. 「共通設定」－「排他制御しない」となっている<br>場合に限られます．<br><br>編集中の内容を一時ファイルに書き出した後でファイル名を外部コマンドに渡し，その結果を読み込むことができればいろいろなことがもっと柔軟にできるんですが．<br><br>ちなみに，ispellでなくてGNU aspell というので試してみました．<br><a href=http://aspell.sourceforge.net/ target=_top><nobr>http://<wbr>aspell.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=2372>
+    <span class="no">[2372]</span>
+    <a class="thread-title" href="#2372">Re2: スペルチェッカーについてー具体的方法は？</a>
+    <span class="author">Ki</span>
+    <time datetime="2002-10-16T12:24:08">2002年10月16日 12:24</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;マクロを利用しispellを呼び出し英文のスペルチェック<br>&gt; 現在のファイルをそのままチェックにかけるのであれば単に外部コマンド実行でできますが，<br>&gt; 1. 元のファイルを直接直されても問題ない<br>&gt; 2. 「共通設定」－「排他制御しない」となっている<br>&gt; 場合に限られます．<br>&gt; <br>&gt; 編集中の内容を一時ファイルに書き出した後でファイル名を外部コマンドに渡し，その結果を読み込むことができればいろいろなことがもっと柔軟にできるんですが．<br>&gt; <br>&gt; ちなみに，ispellでなくてGNU aspell というので試してみました．<br>&gt; <a href=http://aspell.sourceforge.net/ target=_top><nobr>http://<wbr>aspell.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr></nobr></a><br><br>informativeな情報ありがとうございました。スペルチェックできることがわかり助かりました。さらに初心者の私としまして二つ疑問が残ります。<br>1.GNUaspellを用いて、外部コマンド実行はどのようにすればよいのでしょうか？<br>2.外部コマンドに渡して、その結果を読み込むというのはどのようにすればよいのか？<br>以上、お手数をおかけしますがお教えくださいませ。どうかお願いします。<br></div></section>
+    <ul><li><section><h1 id=2375>
+    <span class="no">[2375]</span>
+    <a class="thread-title" href="#2375">Re3: スペルチェッカーについてー具体的方法は？</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-16T15:48:43">2002年10月16日 15:48</time></h1>
+    <div class="body">&gt;1.GNUaspellを用いて、外部コマンド実行はどのようにすればよいのでしょうか？<br>外部コマンド実行で単に，<br>パス\aspell -c $F<br>と実行すればできます．ショートカットキーへの割り当てを行いたいのであれば<br>S_FileSave();<br>S_ExecCommand('C:\\パス\\aspell.exe -c $F', 0);<br>というマクロを作っておけば一応可能です．「排他制御無し」かつ「更新の監視」を行う設定になっていれば，スペルチェック完了後にエディタにフォーカスが戻ったときにファイルを読み直すか聞かれるので，そこでYとすればスペルチェック完了後の文書が得られます．<br><br>&gt;2.外部コマンドに渡して、その結果を読み込むというのはどのようにすればよいのか？<br>いや，できたらいいけど今はできないって書いたつもりなんですが...(^^;)<br></div></section>
+    <ul><li><section><h1 id=2378>
+    <span class="no">[2378]</span>
+    <a class="thread-title" href="#2378">Re4: GNUaspellと外部コマンドの実行について</a>
+    <span class="author">Ki</span>
+    <time datetime="2002-10-16T21:56:23">2002年10月16日 21:56</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;1.GNUaspellを用いて、外部コマンド実行はどのようにすればよいのでしょうか？<br>&gt; 外部コマンド実行で単に，<br>&gt; パス\aspell -c $F<br>&gt; と実行すればできます．ショートカットキーへの割り当てを行いたいのであれば<br>&gt; S_FileSave();<br>&gt; S_ExecCommand('C:\\パス\\aspell.exe -c $F', 0);<br>&gt; というマクロを作っておけば一応可能です．「排他制御無し」かつ「更新の監視」を行う設定になっていれば，スペルチェック完了後にエディタにフォーカスが戻ったときにファイルを読み直すか聞かれるので，そこでYとすればスペルチェック完了後の文書が得られます．<br>&gt; <br>&gt; &gt;2.外部コマンドに渡して、その結果を読み込むというのはどのようにすればよいのか？<br>&gt; いや，できたらいいけど今はできないって書いたつもりなんですが...(^^;)<br><br>ダウンロードし解凍するとaspell-0.50.2のフォルダができます。これをハードディスクのBに保存し、サクラエディタで文書を作成し、外部コマンド実行ーファイル名を指定して実行で、B:\aspell-0.50.2\prog\aspell -c $Fと入力し実行しましたが、だめでした。原因がわかりますか？<br>また、Englishもダウンロードし解凍し、aspell-en-0.50-2のフォルダができましたので、同じようにBのハードディスクに保存したのですがこれだけでよいのでしょうか？<br>何度も質問してすみませんがお教えくださいませ。お手数をおかけします。</div></section>
+    <ul><li><section><h1 id=2379>
+    <span class="no">[2379]</span>
+    <a class="thread-title" href="#2379">Re5: GNUaspellと外部コマンドの実行について</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-17T00:18:05">2002年10月17日 00:18</time></h1>
+    <div class="body">&gt;サクラエディタで文書を作成し、外部コマンド実行ーファイル名を指定して実行で、B:\aspell-0.50.2\prog\aspell -c $Fと入力し実行しましたが、だめでした。原因がわかりますか？<br>この方法だと，ちゃんと名前を付けて保存されたファイルにしか適用できません．作成した文書は保存しましたか？<br><br>&gt;これだけでよいのでしょうか？<br>私も試しに使っただけなので詳しくは調べてません．<br><br>Manual を良く読めば使い方がわかるのでは？<br>http://savannah.gnu.org/download/aspell/manual/user/manual.html<br><br>辞書や言語の指定が必要みたいですが．<br></div></section>
+    <ul><li><section><h1 id=2384>
+    <span class="no">[2384]</span>
+    <a class="thread-title" href="#2384">Re6: GNUaspellと外部コマンドの実行について</a>
+    <span class="author">Ki</span>
+    <time datetime="2002-10-17T19:34:59">2002年10月17日 19:34</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;サクラエディタで文書を作成し、外部コマンド実行ーファイル名を指定して実行で、B:\aspell-0.50.2\prog\aspell -c $Fと入力し実行しましたが、だめでした。原因がわかりますか？<br>&gt; この方法だと，ちゃんと名前を付けて保存されたファイルにしか適用できません．作成した文書は保存しましたか？<br>&gt; <br>&gt; &gt;これだけでよいのでしょうか？<br>&gt; 私も試しに使っただけなので詳しくは調べてません．<br>&gt; <br>&gt; Manual を良く読めば使い方がわかるのでは？<br>&gt; http://savannah.gnu.org/download/aspell/manual/user/manual.html<br>&gt; <br>&gt; 辞書や言語の指定が必要みたいですが<br><br>げんたさん<br>　何度も恐れ入ります。Manualを読んでも初心者にはわからずまいりました。解凍した辞書フォルダをどこに置いてよいのかがわからないのです。パスがつながっていないのが原因だとは思うのですが。よろしくお願いします。</div></section>
+    </li></ul></li><li><section><h1 id=2380>
+    <span class="no">[2380]</span>
+    <a class="thread-title" href="#2380">Re5: GNUaspellと外部コマンドの実行について</a>
+    <span class="author">Wendy</span>
+    <time datetime="2002-10-17T01:03:20">2002年10月17日 01:03</time></h1>
+    <div class="body"><br>Ki さん<br>私も、興味を持ちました。割り込み失礼します。<br><br>げんたさん<br><br>&gt;&gt; S_FileSave();<br>&gt;&gt; S_ExecCommand('C:\\パス\\aspell.exe -c $F', 0);<br>&gt;&gt; というマクロを作っておけば一応可能です．「排他制御無し」かつ「更新の監視」を行う設定になっていれば，スペルチェック完了後にエディタにフォーカスが戻ったときにファイルを読み直すか聞かれるので，そこでYとすればスペルチェック完了後の文書が得られます．<br><br>私も試してみました。<br><br>//スペルチェック<br>S_FileSave();<br>S_ExecCommand('C:\\Program files\\aspell\\aspell\\aspell.exe -c $F',0);<br><br>としてみました。ちょっと掘りすぎて、みっともないですね(^^;<br><br>一応、上記で実行の確認できました。まあ、それ自体が実用に耐えるかどうかは別問題ですね。ただ、私は、いつも同じ問題が起きて解決できないので教えてください。本当は、もっと調べるべきだと思いますが、お知恵拝借できませんか？<br><br>それは、上記でも、<br>$F に、例えば、C:\Program files\aspell\aspell\spelchk.txt という場合に、<br><br>'C:\Program' で、一つのファイルと受け取ってしまうのですね。そうすると、ファイルが見つからないと、返してきてしまうのです。MS-DOSでコマンドするのでしたら、C:\Progra~1\…… とすればいいのですが、それはいつもというわけにはいきません。今回は、A:\spelchk.txt としましたが、C:\My Documents など、スペースの空いたフォルダーですので、いつも問題が発生しています。全体のフォルダー名を変えればという案もありますが、それでは、逆に、後々尾を引きそうです。<br><br>よかったら、どうやって解消するか、分かったら教えてください。<br><br>Wendy<br></div></section>
+    <ul><li><section><h1 id=2381>
+    <span class="no">[2381]</span>
+    <a class="thread-title" href="#2381">Re6: GNUaspellと外部コマンドの実行について</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-17T02:27:03">2002年10月17日 02:27</time></h1>
+    <div class="body">&gt; スペースの空いたフォルダ<br>すいません．ここまで考えていませんでした．<br>解決策は簡単で，単に$Fをダブルクォーテーションで囲めばOKです．<br><br>//スペルチェック<br>S_FileSave();<br>S_ExecCommand('C:\\Program files\\aspell\\aspell\\aspell.exe -c "$F"',0);<br>ですね．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=2382>
+    <span class="no">[2382]</span>
+    <a class="thread-title" href="#2382">GNU Aspellとの統合</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-17T10:29:49">2002年10月17日 10:29</time></h1>
+    <div class="body">GNU Aspellにpspellというスペルチェックをアプリケーションから利用するライブラリがあるので，これをエディタに取り込んでみるのもおもしろいかも．<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>異なる改行コードが混在して保存さてしまいます | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7377</span>
+    <a class="thread-title" href="7377.html#7377">異なる改行コードが混在して保存さてしまいます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7378</span>
+    <a class="thread-title" href="7377.html#7378">RE: 異なる改行コードが混在して保存さてしまいます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7379</span>
+    <a class="thread-title" href="7377.html#7379">Re2: 異なる改行コードが混在して保存さてしまいます</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7377>
+    <span class="no">[7377]</span>
+    <a class="thread-title" href="#7377">異なる改行コードが混在して保存さてしまいます</a>
+    <span class="author">TON</span>
+    <time datetime="2011-06-22T19:06:44">2011年06月22日 19:06</time></h1>
+    <div class="body">質問です。<br><br>PCに詳しくないため、とんちんかんな質問かもしれませんが、よろしければ教えてください。<br>※現象の説明がうまくできていないかもしれませんが、お願いいたします。<br><br>現象<br><br>サクラエディタで以下のURLのページの文章をサクラエディタにコピーし、そのまま保存したところ、サクラエディタの「デフォルトの文字コード」の「改行コード」の設定が、、LFであるにもかかわらず、CR+LFで保存されてしまいます。（ステータスバーにはLFと表示されています）<br>また、以下のURLのページの文章をサクラエディタにコピーしたのち、バックスペースを用いて一部の文章の改行を取り去ったのち、くわえてEnterで改行をおこなうと、その部分の改行だけLFになってしまいます。この状態で保存をすると、CR+LFとLFのコードが混じったファイルが出来上がってしまいます。<br>おかしいなあ・・・と思ったのは、Windows XPの「メモ帳」でこのファイルを開いたときでした。普通、LFで保存したファイルをメモ帳でひらくと文章の改行がおこなわれないのに、「改行がおこなわれる文章」と「改行がおこなわれない文章」が混在して表示されたからでした。<br>サクラエディタの画面では文章の末尾に、それぞれの文章によって「↓」と「←」の記号が混在されて表示された状態になります。<br>説明がわかりにくくて申し訳ありません。改行コードが混在している（と思われる・・・）ファイルが手元にありますので、よろしければお送りいたします。<br><br>↓テキストをコピーしたサイトのページ（CR+LFで出来たふつうのテキストだとは思いますが・・・）<br><a href=http://mozilla.jp/firefox/preview/faq/#q-rapid-10 target=_top><nobr>http://<wbr>mozilla.<wbr>jp/<wbr>firefox/<wbr>preview/<wbr>faq/#<wbr>q-<wbr>rapid-<wbr>10</nobr></a><br><br>サクラエディタ 2.0.2.0です。<br>お願いいたします。</div></section>
+    <ul><li><section><h1 id=7378>
+    <span class="no">[7378]</span>
+    <a class="thread-title" href="#7378">RE: 異なる改行コードが混在して保存さてしまいます</a>
+    <span class="author">もか</span>
+    <time datetime="2011-06-22T19:40:21">2011年06月22日 19:40</time></h1>
+    <div class="body">サクラエディタでは、改行コードの混在をサポートしています。<br>「名前をつけて保存」ダイアログの改行コードで指定しない限り、混在したままになります。<br>それ以外では、自分で変換しないと統一されません。<br>面倒なら、<br>ReplaceAll('[\\r\\n]+', '\\n', 30);<br>などのマクロを「ファイル保存前」に指定するのが今のところの解決方法です。<br></div></section>
+    <ul><li><section><h1 id=7379>
+    <span class="no">[7379]</span>
+    <a class="thread-title" href="#7379">Re2: 異なる改行コードが混在して保存さてしまいます</a>
+    <span class="author">TON</span>
+    <time datetime="2011-06-22T19:58:58">2011年06月22日 19:58</time></h1>
+    <div class="body"><br>&gt; サクラエディタでは、改行コードの混在をサポートしています。<br><br>もかさん　ありがとうございました。<br>私は今まで改行コードの混在をサポートしていない（またはサポートはしているけど、デフォルトで無効になっている？）エディタしか使ったことがなかったようで、ひとつのテキストファイルの中には一種類の改行コードしか使えないものだと思い込んでいました。<br>お手数おかけいたしました。とても勉強になりました。<br><br>ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

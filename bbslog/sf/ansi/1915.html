@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>改行コードの取扱い | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1915</span>
+    <a class="thread-title" href="1915.html#1915">改行コードの取扱い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1918</span>
+    <a class="thread-title" href="1915.html#1918">Re:改行コードの取扱い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1920</span>
+    <a class="thread-title" href="1915.html#1920">Re2:改行コードの取扱い</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2129</span>
+    <a class="thread-title" href="1915.html#2129">Re2:改行コードの取扱い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2130</span>
+    <a class="thread-title" href="1915.html#2130">Re3:改行コードの取扱い</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1915>
+    <span class="no">[1915]</span>
+    <a class="thread-title" href="#1915">改行コードの取扱い</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-18T23:45:41">2002年04月18日 23:45</time></h1>
+    <div class="body"><br>完全に思いつきなので、詳しい方にお聞きしたいのです。<br>CDocLine::m_cEolで、改行コードを保持しているではないですか。<br>それでもさらに、m_pLineにも改行コードを持っていますよね。<br>これってどうしてですか？？<br>m_pLineのほうは改行コードを格納しないでおいたほうが、すっきりしそうな気がするんですけれども。<br><br><br>nLineLen = pcCurDocLine-&gt;m_pLine-&gt;GetLength() - pcCurDocLine-&gt;m_cEol.GetLen() ; //改行コードをのぞいた長さ<br>が、<br>nLineLen = pcCurDocLine-&gt;m_pLine-&gt;GetLength();<br>になるし、正規表現の検索でも$が素直に使えるようになる。<br>\r\nはそのままでは使えなくなっちゃうけど。<br><br>どうかなぁ？<br></div></section>
+    <ul><li><section><h1 id=1918>
+    <span class="no">[1918]</span>
+    <a class="thread-title" href="#1918">Re:改行コードの取扱い</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-19T01:28:03">2002年04月19日 01:28</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; m_pLineのほうは改行コードを格納しないでおいたほうが、すっきりしそうな気がするんですけれども。<br>m_pEolはたぶんnakataniさんが後から追加したんだと思う。元々はCRLFしか扱えなかったので。<br><br>元々はクラスじゃなかったけど、コード→長さ、データの関係を取りやすくするためにクラスにしたのは私です。<br><br>で、本題ですが、私も同じこと考えたけど、影響範囲が広すぎるので手を出さなかった。<br>範囲計算とか行末判定とかコピーとか全部影響受けますよ。<br>lineの方に改行を持たなければ改行コード変換やコード揃えは楽に出来ます。<br><br>やるなら別ブランチにしましょう。</div></section>
+    <ul><li><section><h1 id=1920>
+    <span class="no">[1920]</span>
+    <a class="thread-title" href="#1920">Re2:改行コードの取扱い</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-19T09:44:59">2002年04月19日 09:44</time></h1>
+    <div class="body"><br>レスポンス感謝。ありがとう。<br>ぜひやりたいですねぇ。ただ抱えている仕事（もちろんサクラに関するものね^^;）が多いので、なかなか手をつけられないな。<br><br>■大仕事<br>1.ライセンス問題とsourceforge.jp引越し問題<br>　どうやらsourceforge.jpは、sourceforge.netとは別物の様子ですね。それでもやっぱり日本語だし、移動するだけの価値はあるんじゃないかなぁ。<br>　さらに開発に弾みがつくことが期待できないか？<br>　＃そしてCVSを使った暁にはブランチで改行コードの取扱いを変えていこう。と。<br>2.マクロのヘルプ<br><br><br>■そして常に発生している小仕事<br>1.本体のパッチ取り込み＆バグ修正＆リリース<br>2.ヘルプのパッチ取り込み＆バグ修正＆リリース<br><br>とりあえずライセンス問題解決して、先に進むべきか。<br></div></section>
+    </li><li><section><h1 id=2129>
+    <span class="no">[2129]</span>
+    <a class="thread-title" href="#2129">Re2:改行コードの取扱い</a>
+    <span class="author">みく</span>
+    <time datetime="2002-06-01T13:33:58">2002年06月01日 13:33</time></h1>
+    <div class="body"><br>ソース見てて見つけたのですが、DocLine.h, Layout.hに<br>GetLengthWithEOL()<br>GetLengthWithoutEOL()<br>のような関数が用意されているので、<br>m_nLengthを直接参照している部分をこれらの関数に<br>置き換えるようにすれば意味が分かりやすくなり後の<br>作業が楽になりそう。<br></div></section>
+    <ul><li><section><h1 id=2130>
+    <span class="no">[2130]</span>
+    <a class="thread-title" href="#2130">Re3:改行コードの取扱い</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-06-01T15:42:31">2002年06月01日 15:42</time></h1>
+    <div class="body"><br>&gt;ソース見てて見つけたのですが、DocLine.h, Layout.hに<br>&gt;GetLengthWithEOL()<br>&gt;GetLengthWithoutEOL()<br>&gt;のような関数が用意されているので、<br>&gt;m_nLengthを直接参照している部分をこれらの関数に<br>&gt;置き換えるようにすれば意味が分かりやすくなり後の<br>&gt;作業が楽になりそう。<br><br>楽になるはず。気がついたところから、積極的に変更してください &gt; みなさま<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

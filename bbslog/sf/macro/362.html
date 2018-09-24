@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>PerlScript の日本語問題について（再まとめ） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">362</span>
+    <a class="thread-title" href="362.html#362">PerlScript の日本語問題について（再まとめ）</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=362>
+    <span class="no">[362]</span>
+    <a class="thread-title" href="#362">PerlScript の日本語問題について（再まとめ）</a>
+    <span class="author">miau</span>
+    <time datetime="2007-03-15T08:14:10">2007年03月15日 08:14</time></h1>
+    <div class="body">以前「PerlScript で日本語を使いたい場合は適切にパディングを行えばよい」という旨を書きましたが、こういったスクリプトを連続で呼び出した場合サクラエディタが落ちたりしますね・・・。あれだけ色々書いておいて申し訳ないです。<br>（最近パッチを当ててないマシンを使っていて気づきました）<br><br>ということで、日本語対策についてまとめなおします。<br><br>(対策1) パディングを行う<br>　スクリプト中で使われている 2 バイト文字の個数ぶん、スクリプト末尾に文字を追加する。<br>　この方法でとりあえずスクリプト全体を読み込ませることができますが、クリーンアップ周り(?)に問題があるらしく、不安定です。お薦めできません。<br><br>(対策2) パッチを適用する<br>　ActivePerl 付属の PerlSE.dll を書き換える方法です。パッチはこちらで配布しています。<br>　<a href=http://miau.s9.xrea.com/blog/index.php?itemid=642 target=_top><nobr>http://<wbr>miau.<wbr>s9.<wbr>xrea.<wbr>com/<wbr>blog/<wbr>index.<wbr>php?<wbr>itemid=<wbr>642</nobr></a><br>　多少強引なことをやっていますが、通常の使用では問題ないと思います。<br><br>(対策3) スクリプトを JIS で書いて、use encoding する<br>　JIS であれば、Windows から 2 バイト文字と認識されることはありませんのでバイト数と文字数が一致し、PerlSE.dll の日本語問題を回避できます。<br>　これだけだと Perl がスクリプトをうまく解析できませんので、先頭に use encoding '7bit-jis'; と記述し、スクリプト全体をデコード後実行されるようにします。<br><br>(対策4) メイン処理を外部スクリプトにする<br>　日本語で問題が起きるのは PerlScript で直接読み込まれたファイルのみです。<br>　メイン処理を外部に出しておき、PerlScirpt からはこのファイルをrequire や eval で実行する、という仕組みで問題を回避できます。<br><br>(対策5) 日本語を書かない<br>　コメントを書かない or 英語で記述する。<br><br>抜本的な解決は ActiveState に期待するしかないのですが、英語版の Windows では再現しない現象ですので、対応は当分期待できません・・・。<br>「この対策がいいんじゃないか」というような意見があれば教えて下さい。<br></div></section>
+    </li></ul></body></html>

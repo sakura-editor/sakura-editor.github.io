@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>コメント色分けの不具合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3030</span>
+    <a class="thread-title" href="3030.html#3030">コメント色分けの不具合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3039</span>
+    <a class="thread-title" href="3030.html#3039">Re:コメント色分けの不具合</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3030>
+    <span class="no">[3030]</span>
+    <a class="thread-title" href="#3030">コメント色分けの不具合</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-08-19T22:28:42">2003年08月19日 22:28</time></h1>
+    <div class="body">コメントの色分けで本来コメントでない場所がコメント色になってしまう現象が発生しますが，[EOF]のみの行で発生することから行の新規挿入で設定しているコメントモードが変な気がします．<br><br>CLayoutMgr::DoLayout_Range()でコメントモードを設定していますが，なんとなく行の最終状態ではなく1つ前の状態をもとに新しい行を作っているように見えるのですが...<br><br>この関数自体複雑なのと，nCOMMENTMODE_Prevの表すものが不明確なのでこれ以上は調べられていません．<br></div></section>
+    <ul><li><section><h1 id=3039>
+    <span class="no">[3039]</span>
+    <a class="thread-title" href="#3039">Re:コメント色分けの不具合</a>
+    <span class="author">novice</span>
+    <time datetime="2003-08-29T21:42:18">2003年08月29日 21:42</time></h1>
+    <div class="body">再投稿です。<br><br>▼ げんたさん<br>&gt; コメントの色分けで本来コメントでない場所がコメント色になってしまう現象が発生しますが，[EOF]のみの行で発生することから行の新規挿入で設定しているコメントモードが変な気がします．<br><br>不具合の再現条件を調べました。<br><br>■ssrc_2002-10-06.tar.bz2(1.3.5.1)<br>・パターン１→再現しない。<br>・パターン２→再現しない。<br>・パターン３→再現する。<br><br>■ssrc_2002-10-10.tar.bz2(1.3.5.2)<br>・パターン１→再現する。<br>・パターン２→再現する。<br>・パターン３→再現する。<br><br>原因を調査してみましたが、[EOF]がある行の色指定が(1.3.5.1)では、CLayoutクラスのm_nTypeNextで管理されていましたが、(1.3.5.2)ではCLayoutMgrクラスのm_nLineTypeBotで管理するように変更されているようです。<br>(変更履歴を見ましたが、理由は分かりません)<br><br>ssrc_2003-08-20.tar.bz2(1.4.3.0)から上記変更(m_nLineTypeBot→m_nTypeNext)を元に戻してみたところ、<br>・パターン１→再現しない。<br>・パターン２→再現しない。<br>・パターン３→再現する。<br>となりました。<br><br>差分ソースを下記に置きます。<br>/Developer/Source/diff_ssrc_2003-08-20.lzh<br></div></section>
+    </li></ul></li></ul></body></html>

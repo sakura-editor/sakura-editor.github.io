@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マルチスクリーン | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3345</span>
+    <a class="thread-title" href="3345.html#3345">マルチスクリーン</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3346</span>
+    <a class="thread-title" href="3345.html#3346">マルチモニターでのウィンドウ整列</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3348</span>
+    <a class="thread-title" href="3345.html#3348">RE: マルチモニターでのウィンドウ整列</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3350</span>
+    <a class="thread-title" href="3345.html#3350">RE: マルチモニター</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3367</span>
+    <a class="thread-title" href="3345.html#3367">RE2: マルチモニター</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3345>
+    <span class="no">[3345]</span>
+    <a class="thread-title" href="#3345">マルチスクリーン</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-01-07T00:53:26">2004年01月07日 00:53</time></h1>
+    <div class="body">ちらっと見ただけで試す環境もないのですが，とりあえず問題の場所だけ．<br><br>CEditWnd.cppの385行目～(CEditWnd::Create)<br>デスクトップ画面からはみ出さないようにするためにSystemParametersInfo(SPI_GETWORKAREA)で得た値とウィンドウのサイズを比べてウィンドウ位置を調整しています．これだとプライマリモニターの値しか得られないので，マルチウィンドウの場合は<br>*まずMonitorFromWindow()でウィンドウのモニターハンドルを取得<br>* 次にGetMonitorInfo()でMONITORINFO構造体にウィンドウ情報を得る<br>とする必要があると思います．<br><br>SystemParametersInfo(SPI_GETWORKAREA)というのは他にもウィンドウの整列，Tip表示，補完ウィンドウ，TAB表示で使われています．<br>あと，マルチウィンドウ関連APIはWindows 95でサポートされていないので，Windows 95で起動でき無くならないためにはOSを判定した上でLoadLibraryとGetProcAddressで動的に呼びだす必要があります．<br><br>etc.cppに指定ウィンドウのある画面のワークエリアを取得する関数というのを作った方がいいでしょう．<br><br>時間ができたら実装してみるつもりですが，先にやりたい片はどうぞ(笑)<br></div></section>
+    <ul><li><section><h1 id=3346>
+    <span class="no">[3346]</span>
+    <a class="thread-title" href="#3346">マルチモニターでのウィンドウ整列</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-01-07T21:41:51">2004年01月07日 21:41</time></h1>
+    <div class="body">エディタウィンドウを並べる機能をマルチモニターで使ったときの動作についてちょっと疑問．<br><br>モニターAとBがあり，Aにウィンドウ1～3，Bにウィンドウ4～6があるとします．<br>そのときA上のウィンドウ2で「左右に並べて表示」を行ったときは<br>1. ウィンドウ1～6をモニターAで並べて表示．モニターBのウィンドウは無くなる．<br>2. ウィンドウ1～3はモニターAで，4～6はモニターBでそれぞれ並べて表示．<br>3. ウィンドウ1～3をモニターAで並べて表示．4～6はそのまま．<br>のどれがいいんでしょうか？<br></div></section>
+    <ul><li><section><h1 id=3348>
+    <span class="no">[3348]</span>
+    <a class="thread-title" href="#3348">RE: マルチモニターでのウィンドウ整列</a>
+    <span class="author">みく</span>
+    <time datetime="2004-01-07T22:28:22">2004年01月07日 22:28</time></h1>
+    <div class="body"><br>両方のモニタにまたがって表示されている場合はどうしましょ？<br></div></section>
+    </li></ul></li><li><section><h1 id=3350>
+    <span class="no">[3350]</span>
+    <a class="thread-title" href="#3350">RE: マルチモニター</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-01-10T14:45:33">2004年01月10日 14:45</time></h1>
+    <div class="body">なぜ現状サブモニターで開いた場合のサイズが0になってしまうのか．<br>&gt;デスクトップ画面からはみ出さないようにするためにSystemParametersInfo(SPI_GETWORKAREA)で得た値とウィンドウのサイズを比べてウィンドウ位置を調整しています．<br>と書きましたが，右or下にはみ出している場合には全体位置を調整するが，左or上の場合はそのような移動処置が無く単にはみ出た部分を切り捨てている．なので，2つ目のモニターがプライマリモニターに対して上or左にある場合に問題の現象が起こるのではないでしょうか．<br></div></section>
+    <ul><li><section><h1 id=3367>
+    <span class="no">[3367]</span>
+    <a class="thread-title" href="#3367">RE2: マルチモニター</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-01-25T14:36:40">2004年01月25日 14:36</time></h1>
+    <div class="body">とりあえず，1.4.3.5ではウィンドウ調整機能をはずすことで対応しました．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>これはマクロでできる？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">485</span>
+    <a class="thread-title" href="485.html#485">これはマクロでできる？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">486</span>
+    <a class="thread-title" href="485.html#486">Re:これはマクロでできる？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">487</span>
+    <a class="thread-title" href="485.html#487">Re2:これはマクロでできる？(オフトピ)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">502</span>
+    <a class="thread-title" href="485.html#502">Re2:これはマクロでできる？</a></div>
+    </li><li><div class="list-title">
+    <span class="no">543</span>
+    <a class="thread-title" href="485.html#543">-</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=485>
+    <span class="no">[485]</span>
+    <a class="thread-title" href="#485">これはマクロでできる？</a>
+    <span class="author">マクロスマクロ</span>
+    <time datetime="2010-03-17T10:58:57">2010年03月17日 10:58</time></h1>
+    <div class="body">皆様<br>はじめまして。<br>固定長レコードをCSVに変換するのにマクロでしようしていましたが。<br>躓いてしまいました。教えて下さい。<br><br>ある１０文字の文字列を下記のように処理できますか？<br><br>"1234567890"→"1234567890"<br>"12345     "→"12345"　として後ろの空白をTrimすることって出来ますか？<br><br>できない場合はPPAマクロを使うことになると思いますが、<br>このときはカーソル移動（S_Right）などが使えないという理解でいいのでしょうか？<br><br>2点よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=486>
+    <span class="no">[486]</span>
+    <a class="thread-title" href="#486">Re:これはマクロでできる？</a>
+    <span class="author">もか</span>
+    <time datetime="2010-04-15T09:17:00">2010年04月15日 09:17</time></h1>
+    <div class="body">マクロに詳しくないのですが、<br>置換で正規表現を使って<br>\s*"<br>を<br>"<br>に置換すればいけるので、<br>これをマクロ化できればよいのかと思います。<br><br>ダブルクォートで囲まれているといのうのが前提ですが。<br><br>▼ マクロスマクロさん<br>&gt; 皆様<br>&gt; はじめまして。<br>&gt; 固定長レコードをCSVに変換するのにマクロでしようしていましたが。<br>&gt; 躓いてしまいました。教えて下さい。<br>&gt; <br>&gt; ある１０文字の文字列を下記のように処理できますか？<br>&gt; <br>&gt; "1234567890"→"1234567890"<br>&gt; "12345     "→"12345"　として後ろの空白をTrimすることって出来ますか？<br></div></section>
+    <ul><li><section><h1 id=487>
+    <span class="no">[487]</span>
+    <a class="thread-title" href="#487">Re2:これはマクロでできる？(オフトピ)</a>
+    <span class="author">もか</span>
+    <time datetime="2010-04-16T00:42:23">2010年04月16日 00:42</time></h1>
+    <div class="body">あれ、投稿した記憶が無いんだけど？<br>ちがう同名の方かな。<br></div></section>
+    </li><li><section><h1 id=502>
+    <span class="no">[502]</span>
+    <a class="thread-title" href="#502">Re2:これはマクロでできる？</a>
+    <span class="author">Ethmeld</span>
+    <time datetime="2010-07-29T09:13:20">2010年07月29日 09:13</time></h1>
+    <div class="body">正規表現で置換するなら<br>「(\d+) *」で検索して、「$1」に置換したほうがスマートかとおもいます。<br><br>▼ もかさん<br>&gt; マクロに詳しくないのですが、<br>&gt; 置換で正規表現を使って<br>&gt; \s*"<br>&gt; を<br>&gt; "<br>&gt; に置換すればいけるので、<br>&gt; これをマクロ化できればよいのかと思います。<br>&gt; <br>&gt; ダブルクォートで囲まれているといのうのが前提ですが。<br>&gt; <br>&gt; ▼ マクロスマクロさん<br>&gt; &gt; 皆様<br>&gt; &gt; はじめまして。<br>&gt; &gt; 固定長レコードをCSVに変換するのにマクロでしようしていましたが。<br>&gt; &gt; 躓いてしまいました。教えて下さい。<br>&gt; &gt; <br>&gt; &gt; ある１０文字の文字列を下記のように処理できますか？<br>&gt; &gt; <br>&gt; &gt; "1234567890"→"1234567890"<br>&gt; &gt; "12345     "→"12345"　として後ろの空白をTrimすることって出来ますか？</div></section>
+    </li><li><section><h1 id=543>
+    <span class="no">[543]</span>
+    <a class="thread-title" href="#543">-</a>
+    <span class="author">管理者削除</span>
+    <time datetime="2011-11-21T14:10:44">2011年11月21日 14:10</time></h1>
+    <div class="body">-</div></section>
+    </li></ul></li></ul></li></ul></body></html>

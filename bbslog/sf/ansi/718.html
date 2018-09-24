@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マクロのキー割り当て | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">718</span>
+    <a class="thread-title" href="718.html#718">マクロのキー割り当て</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">731</span>
+    <a class="thread-title" href="718.html#731">Re: マクロのキー割り当て</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">733</span>
+    <a class="thread-title" href="718.html#733">1.2.99.7→1.2.99.6 ?</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">734</span>
+    <a class="thread-title" href="718.html#734">Re: 1.2.99.7→1.2.99.6 ?</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">735</span>
+    <a class="thread-title" href="718.html#735">Re2: マクロのキー割り当て</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">736</span>
+    <a class="thread-title" href="718.html#736">Re3: マクロのキー割り当て</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">737</span>
+    <a class="thread-title" href="718.html#737">Re2: マクロのキー割り当て</a></div>
+    </li><li><div class="list-title">
+    <span class="no">740</span>
+    <a class="thread-title" href="718.html#740">Re2: マクロのキー割り当て</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">746</span>
+    <a class="thread-title" href="718.html#746">Re3: マクロのキー割り当て</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">754</span>
+    <a class="thread-title" href="718.html#754">Re4: RC9</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=718>
+    <span class="no">[718]</span>
+    <a class="thread-title" href="#718">マクロのキー割り当て</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-10-01T12:12:21">2001年10月01日 12:12</time></h1>
+    <div class="body">1/3くらいできたので，とりあえずバイナリとソースを共有フォルダに置きました．マクロ読み込み＆実行はできますが，GUIが皆無なのでどうしても試したい人はiniファイルを直接編集してください．<br><br>▼試し方<br>一旦起動して終了すると，iniの後ろの方に項目が増えますので，ファイル名等を適当に書いてみてください．ファイルは絶対パス，またはマクロフォルダからの相対パスです．<br><br>登録してenabledを1にすると「ツール」メニューの「登録済みマクロ」に現れます．キーボードに割り当てるには機能番号31600-31619をKeyBindセクションに書いてください．<br><br>▼残りの作業<br>* マクロの登録画面<br>* キーバインドで登録済みマクロを扱えるようにする．<br>* マクロの割り当てを変更したとき，他のエディタに変更を通知する<br><br>あと，このソースはマクロ機能専用です．それ以外の機能はRC8をベースにしてください．<br></div></section>
+    <ul><li><section><h1 id=731>
+    <span class="no">[731]</span>
+    <a class="thread-title" href="#731">Re: マクロのキー割り当て</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-10-02T15:06:10">2001年10月02日 15:06</time></h1>
+    <div class="body">&gt;* キーバインドで登録済みマクロを扱えるようにする．<br>これを追加しました．共通設定－キー割り当ての「種別」末尾に「外部マクロ」カテゴリが現れ，(iniファイルで)登録されたユーザマクロをキーに割り付けることができます．<br><br>＃マクロ登録画面は誰かに作って欲しい...<br></div></section>
+    <ul><li><section><h1 id=733>
+    <span class="no">[733]</span>
+    <a class="thread-title" href="#733">1.2.99.7→1.2.99.6 ?</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-10-03T15:36:18">2001年10月03日 15:36</time></h1>
+    <div class="body">&gt; これを追加しました．共通設定－キー割り当ての「種別」末尾に「外部マクロ」カテゴリが現れ，(iniファイルで)登録されたユーザマクロをキーに割り付けることができます．<br>番号が若くなってます？<br> <br>&gt; ＃マクロ登録画面は誰かに作って欲しい...<br>既に作りかけが入ってましたが？？？</div></section>
+    <ul><li><section><h1 id=734>
+    <span class="no">[734]</span>
+    <a class="thread-title" href="#734">Re: 1.2.99.7→1.2.99.6 ?</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-10-03T17:34:24">2001年10月03日 17:34</time></h1>
+    <div class="body">&gt;番号が若くなってます？<br>マクロ拡張の方は RC7.1から分岐しているので，1.2.99.7の延長線上にはありません．バージョンもそのときのままになっています．メインに統合できるレベルになったら統合します．<br><br>&gt;&gt; ＃マクロ登録画面は誰かに作って欲しい... <br>&gt;既に作りかけが入ってましたが？？？<br>現状ではリストを見られるけど設定できない．もっと優れたインターフェースがあれば全面的に置き換えてもいいです．<br></div></section>
+    </li></ul></li><li><section><h1 id=735>
+    <span class="no">[735]</span>
+    <a class="thread-title" href="#735">Re2: マクロのキー割り当て</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-10-04T09:35:52">2001年10月04日 09:35</time></h1>
+    <div class="body">&gt;&gt;* キーバインドで登録済みマクロを扱えるようにする．<br>さらに，カスタムメニュー，コマンド一覧，ファンクションキー表示にも対応しました．<br><br>機能名を動的に変える機能追加してあちこち置き換えていますが，これを使ってカスタムメニューにもユーザが名前を付けられるようにできそうです．<br><br>そういえば，機能分類の「その他」とそこに入っている「未定義」って何なんでしょう？<br></div></section>
+    <ul><li><section><h1 id=736>
+    <span class="no">[736]</span>
+    <a class="thread-title" href="#736">Re3: マクロのキー割り当て</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-10-04T12:43:09">2001年10月04日 12:43</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 機能名を動的に変える機能追加してあちこち置き換えていますが，これを使ってカスタムメニューにもユーザが名前を付けられるようにできそうです．<br>お、カスタムメニューも日の目をみるか？　ツールバーに登録した時の位置をどうにかしてほしいです。先頭位置固定ではなく、アイコンを置いたところからメニューが出るように。m(__)m<br><br>&gt; 機能分類の「その他」とそこに入っている「未定義」って何なんでしょう？<br>その他はあくまでその他です。未定義はツールバーやキー割り当てなどで割り当てていないものに対して未定義と定義しておくことになっているようなので、その置く場所がないからその他に入れてます。<br>相当昔にダイアログを修正したときの記憶なので、多少記憶違いがあるかもしれませんが、キーに割り当てている機能で「未定義」と出てくるものがそれであることは確か。<br></div></section>
+    </li></ul></li><li><section><h1 id=737>
+    <span class="no">[737]</span>
+    <a class="thread-title" href="#737">Re2: マクロのキー割り当て</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-10-04T13:45:08">2001年10月04日 13:45</time></h1>
+    <div class="body">マクロの登録をGUIから行えるようにしました．ただし，本当に基本的な機能だけ．動かないボタンとか何も入っていないコンボボックスとかは愛嬌です．<br><br>共通設定－マクロで名前とファイル名を手入力し，登録先Idを選択して「設定」を押してください．<br></div></section>
+    </li><li><section><h1 id=740>
+    <span class="no">[740]</span>
+    <a class="thread-title" href="#740">Re2: マクロのキー割り当て</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-10-05T21:17:10">2001年10月05日 21:17</time></h1>
+    <div class="body">&gt;＃マクロ登録画面は誰かに作って欲しい... <br>といいながらも，設定画面が完成しました．<br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Source/macro/sakura_macro_2001-10-05.zip target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Source/<wbr>macro/<wbr>sakura_m<wbr>acro_200<wbr>1-<wbr>10-<wbr>05.<wbr>zip</nobr></a><br>↑RC7.1にマクロ機能を追加したものです．<br><br>ほぼ完成ですが，あと1点，マクロ設定を変更したときに他のウィンドウにそのことを通知する機能がないので，設定変更後に別ウィンドウでマクロを実行すると変更前の物が動くことがあります．<br>とりあえずはウィンドウを一旦閉じて開き直せば最新の設定になります．<br><br></div></section>
+    <ul><li><section><h1 id=746>
+    <span class="no">[746]</span>
+    <a class="thread-title" href="#746">Re3: マクロのキー割り当て</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-10-09T11:25:15">2001年10月09日 11:25</time></h1>
+    <div class="body">外部マクロ機能をmain streamに統合し，RC9としました．若干不具合が残っているので早速バグリストに追加しておきました(笑)．<br><br>あとはダイアログのデザイン修正とヘルプへの追加，Popupヘルプの対応かな．<br></div></section>
+    <ul><li><section><h1 id=754>
+    <span class="no">[754]</span>
+    <a class="thread-title" href="#754">Re4: RC9</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-10-09T20:10:44">2001年10月09日 20:10</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 外部マクロ機能をmain streamに統合し，RC9としました．<br>9/26 にeGroupsに投稿したヘルプのトピック番号対応付けの修正もとりこみお願いします。_(._.)_<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

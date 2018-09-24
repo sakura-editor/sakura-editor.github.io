@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>rev3756のGrepダイアログ検索キー設定について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2191</span>
+    <a class="thread-title" href="2191.html#2191">rev3756のGrepダイアログ検索キー設定について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2192</span>
+    <a class="thread-title" href="2191.html#2192">Re: rev3756のGrepダイアログ検索キー設定について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2193</span>
+    <a class="thread-title" href="2191.html#2193">Re2: rev3756のGrepダイアログ検索キー設定について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2194</span>
+    <a class="thread-title" href="2191.html#2194">Re3: rev3756のGrepダイアログ検索キー設定について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2195</span>
+    <a class="thread-title" href="2191.html#2195">Re4: rev3756のGrepダイアログ検索キー設定について</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2191>
+    <span class="no">[2191]</span>
+    <a class="thread-title" href="#2191">rev3756のGrepダイアログ検索キー設定について</a>
+    <span class="author">aqua</span>
+    <time datetime="2014-07-01T17:01:19">2014年07月01日 17:01</time></h1>
+    <div class="body">手元で最新のrev3756をビルドしてみました。<br>新規の無題ウィンドウでgrepダイアログを表示したところ、<br>検索条件は空欄のままでした。<br>＃履歴のドロップダウンリストには過去の検索履歴が入っています。<br><br>rev3756で適用されたpatchunicode:#836の説明を読むと、<br>空欄になるのを修正したような記述があるのですが…<br><br>rev3756は従来と比べてどのような違いがあるのでしょうか。</div></section>
+    <ul><li><section><h1 id=2192>
+    <span class="no">[2192]</span>
+    <a class="thread-title" href="#2192">Re: rev3756のGrepダイアログ検索キー設定について</a>
+    <span class="author">もか</span>
+    <time datetime="2014-07-01T18:47:00">2014年07月01日 18:47</time></h1>
+    <div class="body">カーソル位置の文字列をデフォルトの検索文字列にするがON(ONがデフォルト)の場合で<br>1. ファイルを開くか、変更有のウィンドウまたはタスクトレイからGrep<br>2. 新規作成されたウィンドウにGrep結果が表示される<br>3. 2のウィンドウでGrepダイアログを表示<br>　この3番のときにGrep条件が表示されるようになったはずです。<br>4. さらに新規作成画面を開いてGrepダイアログを表示しても、そこには空のキーが表示される<br><br>キーが空のときは履歴を持ってきてもいいのですが、<br>それだとファイル検索を連続してしたいときに、困るような気がします。<br>現状空のキーは検索履歴に登録されないので。<br></div></section>
+    <ul><li><section><h1 id=2193>
+    <span class="no">[2193]</span>
+    <a class="thread-title" href="#2193">Re2: rev3756のGrepダイアログ検索キー設定について</a>
+    <span class="author">aqua</span>
+    <time datetime="2014-07-01T19:24:57">2014年07月01日 19:24</time></h1>
+    <div class="body">回答ありがとうございます。<br>rev3756での変更についてはわかりました。<br><br>2.0.8.0あたり？のバージョンまでは、3番だけでなく4番でも1番で指定したGrep条件が入っていた記憶があり、そのほうが都合が良かったように感じたのですが、どうなのでしょう。<br>何か細かいところでそれまでのバージョンにはまずい部分があったのでしょうか。</div></section>
+    <ul><li><section><h1 id=2194>
+    <span class="no">[2194]</span>
+    <a class="thread-title" href="#2194">Re3: rev3756のGrepダイアログ検索キー設定について</a>
+    <span class="author">もか</span>
+    <time datetime="2014-07-01T20:40:46">2014年07月01日 20:40</time></h1>
+    <div class="body">rev3084で初期値を設定するのを削除したのが原因と分かりました。<br>この初期値は、Grepダイアログを表示したときではなくて、<br>メインウィンドウを作成したときに設定されるので、内容が古い場合がありました。<br>GetCurrentTextForSearchDlgで取得されるので、問題ないと認識していましたが、<br>キーが設定されない場合は、よくないですね。<br><br>新しいパッチを登録しました<br>https://sourceforge.net/p/sakura-editor/patchunicode/855/<br>こんな感じでどうでしょうか<br></div></section>
+    <ul><li><section><h1 id=2195>
+    <span class="no">[2195]</span>
+    <a class="thread-title" href="#2195">Re4: rev3756のGrepダイアログ検索キー設定について</a>
+    <span class="author">aqua</span>
+    <time datetime="2014-07-01T22:28:52">2014年07月01日 22:28</time></h1>
+    <div class="body">新しいパッチを適用して動作を見てみました。<br>改善されていると思います。<br><br>＃ソースコードは読めていません</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

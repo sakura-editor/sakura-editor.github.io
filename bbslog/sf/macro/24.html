@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>初の投稿です。「挿入モードにする。」 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">24</span>
+    <a class="thread-title" href="24.html#24">初の投稿です。「挿入モードにする。」</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">25</span>
+    <a class="thread-title" href="24.html#25">Re: 初の投稿です。「挿入モードにする。」</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=24>
+    <span class="no">[24]</span>
+    <a class="thread-title" href="#24">初の投稿です。「挿入モードにする。」</a>
+    <span class="author">PAPA</span>
+    <time datetime="2003-02-09T08:02:43">2003年02月09日 08:02</time></h1>
+    <div class="body">挿入モードか上書きモードか調べる機能がないので、<br>マクロ作ってみました。<br><br>以下<br><br>// 実行には PPA.DLL が必須です。sakura.exe と同じフォルダに <br>// PPA.DLL を入れておいてください。<br>// また、マクロファイルの拡張子は .PPA でなくてはなりません。<br>// 入力モードを調べて、インサートモードにするためのマクロです。<br>var<br>&#9;st:String;<br>begin<br>&#9;//インサートモードでなければインサートモードにする。<br>&#9;S_GoFileEnd();<br>&#9;S_Char(13);&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;//改行を入力する。<br>&#9;S_GoLineTop(1);&#9;&#9;&#9;&#9;&#9;&#9;&#9;//行頭にカーソルを移動する。<br>&#9;S_Char(97);&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;//行頭に'a'を入力する。<br>&#9;S_GoLineTop(1);&#9;&#9;&#9;&#9;&#9;&#9;&#9;//行頭にカーソルを移動する。<br>&#9;S_Char(98);&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;//行頭に'b'を入力<br>&#9;st := S_GetSelectedString(0);&#9;&#9;&#9;//カーソル位置の文字列を取得する。<br>&#9;if st &lt;&gt; 'ba' then begin&#9;&#9;&#9;&#9;//インサートモードであったなら、'a'の前に'b'が挿入されて'ba'となっている。<br>&#9;&#9;S_ChgmodINS();&#9;&#9;&#9;&#9;&#9;&#9;//'ba'でなければ、上書きモードなので、モードを変更してインサートモードにする。<br>&#9;end;<br>&#9;//調査時の変更を戻す。<br>&#9;S_Undo();<br>&#9;S_Undo();<br>&#9;S_Undo();<br>&#9;//カーソルをファイルの先頭に移動する。<br>&#9;S_GoFileTop();<br>end;</div></section>
+    <ul><li><section><h1 id=25>
+    <span class="no">[25]</span>
+    <a class="thread-title" href="#25">Re: 初の投稿です。「挿入モードにする。」</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-02-10T20:02:44">2003年02月10日 20:02</time></h1>
+    <div class="body">&gt;挿入モードか上書きモードか調べる機能がないので、<br>&gt;マクロ作ってみました。<br>すいません。現在のマクロはエディタの状態を取得することがほとんどできないのでこんなものをマクロで作らせることになってしまって...<br>本来はエディタ側がインターフェースを提供すべきものでしょうね。<br></div></section>
+    </li></ul></li></ul></body></html>

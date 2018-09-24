@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ロックファイルのOpen(1.3.5.3) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2418</span>
+    <a class="thread-title" href="2418.html#2418">ロックファイルのOpen(1.3.5.3)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2422</span>
+    <a class="thread-title" href="2418.html#2422">Re: ロックファイルのOpen(1.3.5.3)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2424</span>
+    <a class="thread-title" href="2418.html#2424">Re2: ロックファイルのOpen(1.3.5.3)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2427</span>
+    <a class="thread-title" href="2418.html#2427">Re3: ロックファイルのOpen(1.3.5.3)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2428</span>
+    <a class="thread-title" href="2418.html#2428">Re4: ロックファイルのOpen(1.3.4.0 - 1.3.5.3)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2429</span>
+    <a class="thread-title" href="2418.html#2429">Re5: ロックファイルのOpen(1.3.3.0 - 1.3.5.3)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2430</span>
+    <a class="thread-title" href="2418.html#2430">Re5: ロックファイルのOpen(1.3.4.0 - 1.3.5.3)</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2418>
+    <span class="no">[2418]</span>
+    <a class="thread-title" href="#2418">ロックファイルのOpen(1.3.5.3)</a>
+    <span class="author">PAL</span>
+    <time datetime="2002-10-17T17:27:11">2002年10月17日 17:27</time></h1>
+    <div class="body">PALと申します。<br><br>これはもしかしたら仕様改善なのかもしれませんが。<br><br>バッチファイル、IISのログなど、実行中でロックが掛かってる<br>ファイルが開けません。<br>旧バージョン(1.3.2.4など)ではリードオンリーで開けたかと<br>思います。<br><br>＃1.3.3.0辺りで開けなくなっていると思いますが、どの<br>＃バージョンから変更になったかまでは確認しておりません。<br><br>これは仕様変更によるものでしょうか。<br><br>もしバグであればお手数ですが対応をお願い致します。</div></section>
+    <ul><li><section><h1 id=2422>
+    <span class="no">[2422]</span>
+    <a class="thread-title" href="#2422">Re: ロックファイルのOpen(1.3.5.3)</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-18T09:34:33">2002年10月18日 09:34</time></h1>
+    <div class="body">&gt;バッチファイル、IISのログなど、実行中でロックが掛かってる<br>&gt;ファイルが開けません。<br>たしかに．<br>cat &gt; hoge<br>で書き込み中のファイルhogeを作って開こうとすると「他のアプリケーションで使われています」と出てきますね．その場合でもメモ帳では開けますね．<br>本当に読み込めない場合は「読み込みアクセス権がありません」と出るはずなのでファイルの開き方がまずいようです．<br><br>&gt;＃1.3.3.0辺りで開けなくなっていると思いますが、どの<br>&gt;＃バージョンから変更になったかまでは確認しておりません。<br>以前は _lopen( file, FD_READ )で開いていたのが1.3.3.0から<br>CreateFile(<br>&#9;pFileName,<br>&#9;GENERIC_READ,<br>&#9;FILE_SHARE_READ,<br>&#9;NULL,<br>&#9;OPEN_EXISTING,<br>&#9;FILE_FLAG_SEQUENTIAL_SCAN,<br>&#9;NULL<br>);<br>に変更されています．多分パラメータのどれかがまずいんでしょうけど...<br></div></section>
+    <ul><li><section><h1 id=2424>
+    <span class="no">[2424]</span>
+    <a class="thread-title" href="#2424">Re2: ロックファイルのOpen(1.3.5.3)</a>
+    <span class="author">蛭子屋</span>
+    <time datetime="2002-10-18T11:06:13">2002年10月18日 11:06</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; CreateFile(<br>&gt; &#9;pFileName,<br>&gt; &#9;GENERIC_READ,<br>&gt; &#9;FILE_SHARE_READ,<br>&gt; &#9;NULL,<br>&gt; &#9;OPEN_EXISTING,<br>&gt; &#9;FILE_FLAG_SEQUENTIAL_SCAN,<br>&gt; &#9;NULL<br>&gt; );<br><br>FILE_SHARE_READでは読み込みだけが共有されて書き込みが共有されていないので<br>他のプロセスが書き込んでるファイルが開けないんでは?<br><br>http://www.microsoft.com/japan/developer/library/jpwinpf/_win32_createfile.htm<br><br>FILE_SHARE_WRITEも追加すればいいのかな。</div></section>
+    <ul><li><section><h1 id=2427>
+    <span class="no">[2427]</span>
+    <a class="thread-title" href="#2427">Re3: ロックファイルのOpen(1.3.5.3)</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-19T00:45:21">2002年10月19日 00:45</time></h1>
+    <div class="body">&gt;FILE_SHARE_WRITEも追加すればいいのかな。<br>この変更でファイルは読めるようになったのですが，今度は上書き禁止の判定がおかしいようです．書き込めないファイルを開いても，タイトルバーに（上書き禁止）と入りませんし，読み込めないファイルを開こうとすると「文字コード判別エラー」と無関係(でもないけど，そう見える)なエラーメッセージが出ます．<br><br>ファイル周りでもう少し調査が必要なようです．<br></div></section>
+    <ul><li><section><h1 id=2428>
+    <span class="no">[2428]</span>
+    <a class="thread-title" href="#2428">Re4: ロックファイルのOpen(1.3.4.0 - 1.3.5.3)</a>
+    <span class="author">Moca</span>
+    <time datetime="2002-10-21T15:13:54">2002年10月21日 15:13</time></h1>
+    <div class="body">ご無沙汰しております。<br>妙な読み込みクラスを作った張本人です。<br>ご迷惑おかけしております。<br>▼ げんたさん<br>&gt; ファイル周りでもう少し調査が必要なようです．<br>読み込み中に，他のプロセスの書き込みでファイルサイズが縮小した場合，おそらく無限ループに陥ります。<br>このあたりも直さないと．．．<br></div></section>
+    <ul><li><section><h1 id=2429>
+    <span class="no">[2429]</span>
+    <a class="thread-title" href="#2429">Re5: ロックファイルのOpen(1.3.3.0 - 1.3.5.3)</a>
+    <span class="author">もか</span>
+    <time datetime="2002-10-21T15:46:53">2002年10月21日 15:46</time></h1>
+    <div class="body">1.3.4.0ではなく，1.3.3.0からでした。<br></div></section>
+    </li><li><section><h1 id=2430>
+    <span class="no">[2430]</span>
+    <a class="thread-title" href="#2430">Re5: ロックファイルのOpen(1.3.4.0 - 1.3.5.3)</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-21T19:33:32">2002年10月21日 19:33</time></h1>
+    <div class="body">&gt;読み込み中に，他のプロセスの書き込みでファイルサイズが縮小した場合，おそらく無限ループに陥ります。<br>マジッ...ショック...<br><br>ところでその例のクラスですがProgress出力のためかファイルサイズを取得していますよね．ファイルであると限定せずに外部からストリームのように読み込む形式であればパイプからの入力や圧縮ファイルの直読み込みなどもできるのではないかと思いました．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

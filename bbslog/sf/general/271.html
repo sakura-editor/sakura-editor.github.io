@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>UR1.2.31.0リリース | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">271</span>
+    <a class="thread-title" href="271.html#271">UR1.2.31.0リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">272</span>
+    <a class="thread-title" href="271.html#272">Re:UR1.2.31.0リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">274</span>
+    <a class="thread-title" href="271.html#274">Re2:UR1.2.31.0リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">275</span>
+    <a class="thread-title" href="271.html#275">Re3:UR1.2.31.0リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">276</span>
+    <a class="thread-title" href="271.html#276">&gt;#HPに新しい暫定ヘルプファイルをおきました。3月はもういじれないかも。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">277</span>
+    <a class="thread-title" href="271.html#277">RE: タイトルが。。。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">278</span>
+    <a class="thread-title" href="271.html#278">直ってました。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">279</span>
+    <a class="thread-title" href="271.html#279">ヘルプのミスはまだまだあります。。。m(__)m</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">280</span>
+    <a class="thread-title" href="271.html#280">Re:ヘルプのミスはまだまだあります。。。m(__)m</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=271>
+    <span class="no">[271]</span>
+    <a class="thread-title" href="#271">UR1.2.31.0リリース</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-03-09T05:58:44">2001年03月09日 05:58</time></h1>
+    <div class="body">[機能追加・仕様変更] <br>・ヘルプファイルのテキストをUR1.2.30.1用に追加・修正(一部未完)<br>・[指定行へジャンプ]で行番号未指定のまま[ジャンプ]ボタンを押したり、[検索]で条件を入れずに[上(下)検索]を押すと警告音を鳴らしてダイアログを閉じてしまうのを、[置換]と同じように注意メッセージを表示してダイアログに戻るように変更<br>・半角数字の色分けを組み込み<br><br>[バグ修正] <br>・[指定行へジャンプ]で[キャンセル]ボタンを押すと警告音が鳴るのを修正<br>・[キー割り当て一覧をコピー]を貼り付けると行末コードがLF(0x0a)になってしまうのを修正<br>・Cのアウトライン解析でプリプロセッサ指令行を検索対象から外した。<br>・Cのアウトライン解析でconstructorの後ろに記述する初期化部分が関数と認識される問題を修正。<br>・検索で同一でない文字にもHitする問題を修正。<br>・キーワード設定がなされていないとき、文字列の途中からでもURLや半角数字を検出してしまうのを修正。<br>・範囲選択開始のマクロ文字列 BebinSelect→BeginSelect<br>・Perlのアウトライン解析で折り返しがあると正しい位置にジャンプしない。<br>・OLEのドラッグ&amp;ドロップ実装の不備を修正。<br><br>[デフォルト設定値の追加・修正] <br>・右クリックメニューのショートカットキーのうち、Alt+右クリックなど[Alt]と[右クリック]を使う組合せがOSの制限で機能しないので削除<br><br>[デザイン追加・変更]<br>・[ファイル]メニューに[ウィンドウを閉じる]と[すべてのウィンドウを閉じる]を追加<br>・[移動], [選択], [矩形選択]メニューを[編集]配下に移動<br>・上記にともないアクセスキーを若干変更<br>・[変換]メニューの[TAB→空白]を上に移動<br><br>その他用語統一など細かい修正<br></div></section>
+    <ul><li><section><h1 id=272>
+    <span class="no">[272]</span>
+    <a class="thread-title" href="#272">Re:UR1.2.31.0リリース</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-03-09T14:24:49">2001年03月09日 14:24</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; [バグ修正] <br>(省略)<br>&gt; ・Perlのアウトライン解析で折り返しがあると正しい位置にジャンプしない。<br>語尾が不完全です。「のを修正」　それと私のHPに1.2.30.2(未公開)分の変更履歴もあります。OLEの方は既に入っていますが。。。<br>書き入れるのをやめたということなら納得。<br></div></section>
+    <ul><li><section><h1 id=274>
+    <span class="no">[274]</span>
+    <a class="thread-title" href="#274">Re2:UR1.2.31.0リリース</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-03-09T17:37:39">2001年03月09日 17:37</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; 私のHPに1.2.30.2(未公開)分の変更履歴もあります。<br>せっかくHTMLなのだから箇条書きタグを使ってくれれば私もそのままコピーするだけで済んだのですが。（甘えすぎ？）</div></section>
+    <ul><li><section><h1 id=275>
+    <span class="no">[275]</span>
+    <a class="thread-title" href="#275">Re3:UR1.2.31.0リリース</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-03-09T21:20:56">2001年03月09日 21:20</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼ じぇぷろさん<br>&gt; &gt; 私のHPに1.2.30.2(未公開)分の変更履歴もあります。<br>&gt; せっかくHTMLなのだから箇条書きタグを使ってくれれば私もそのままコピーするだけで済んだのですが。（甘えすぎ？）<br>これねえ。。。HTMLタグでインデントするとヘルプに取り込む時、逆にインデント記号が消えてしまって、必ずしも見やすいとは言えなくなるんすよ。HTMLをテキストで取ればわかるように。<br>今度書くことがあったら考えます。それと以下の部分は順番としてこうしておくとよろしいかと。。。<br><br>[デフォルト設定値の追加・修正] <br>・右クリックメニューのショートカットキーのうち、Alt+右クリックなど[Alt]と[右クリック]を使う組合せがOSの制限で機能しないので削除 <br>・ツールバーから「現在のウィンドウ幅で折り返し」「切り取り」「コピー」「貼り付け」を削除<br>[デザイン追加・変更] <br>・[ファイル]メニューに[ウィンドウを閉じる]と[すべてのウィンドウを閉じる]を追加 <br>・[移動], [選択], [矩形選択]メニューを[編集]配下に移動 <br>・上記にともないアクセスキーを若干変更 <br>・[変換]メニューの[TAB→空白]を上に移動 <br><br>#HPに新しい暫定ヘルプファイルをおきました。3月はもういじれないかも。</div></section>
+    <ul><li><section><h1 id=276>
+    <span class="no">[276]</span>
+    <a class="thread-title" href="#276">&gt;#HPに新しい暫定ヘルプファイルをおきました。3月はもういじれないかも。</a>
+    <span class="author">みく</span>
+    <time datetime="2001-03-10T08:31:17">2001年03月10日 08:31</time></h1>
+    <div class="body"><br>のすぐ後に言うのは気が引けるのですが、<br>1箇所見つけましたので、適当なタイミングで修正して<br>ください。<br><br>改行コードについて<br>取り扱える改行コード<br>複数の改行コードが混在したファイルも取り扱えるようにする<br>CR00LF00　（ 0d 00 0a 00 ) <br>CRLF　　　（ 0d 0a ） <br>LFCR　　　（ 0a 0d ） <br>CR　　　　（ ） 　　　　　＜－－－ここ<br>LF　　　　（ 0a ） <br></div></section>
+    <ul><li><section><h1 id=277>
+    <span class="no">[277]</span>
+    <a class="thread-title" href="#277">RE: タイトルが。。。</a>
+    <span class="author">みく</span>
+    <time datetime="2001-03-10T08:35:31">2001年03月10日 08:35</time></h1>
+    <div class="body">&gt;タイトル: &gt;#HPに新しい暫定ヘルプファイルをおきました。3月はもういじれないかも。<br>タイトル長すぎてごめんなさい。<br>INCMから投稿してみたんですが、編集中の1行目がタイトル<br>になるんですね。<br></div></section>
+    </li><li><section><h1 id=278>
+    <span class="no">[278]</span>
+    <a class="thread-title" href="#278">直ってました。</a>
+    <span class="author">みく</span>
+    <time datetime="2001-03-10T09:11:23">2001年03月10日 09:11</time></h1>
+    <div class="body"><br>ダウンロードして見てみたら、直ってました。<br>すいません。<br></div></section>
+    </li><li><section><h1 id=279>
+    <span class="no">[279]</span>
+    <a class="thread-title" href="#279">ヘルプのミスはまだまだあります。。。m(__)m</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-03-10T16:31:46">2001年03月10日 16:31</time></h1>
+    <div class="body">▼ みくさん<br>&gt; 1箇所見つけましたので、適当なタイミングで修正して<br>&gt; ください。<br><br>ヘルプの変更履歴はあまり興味がないだろうから一々書いてませんが、気の付いた範囲で直してます。原作版からのミスやすとーにぃ氏の改修時に混入したもの、原文自体のミスなどです。<br>ご指摘の件はすとーにぃ氏によるもの(笑)。非常に細かいところでいえば、変更履歴の<br>&gt;Jun. 23, 2000 <br>&gt;　7/1に修正したつもりの行末以降を<br>これは時間的におかしいので原文のミスだと思い、6/1に直してあります。(げんた氏のHPではそのまま)<br>履歴に関しては自分も書き間違いのまま載ってしまっている個所があったのですがちゃんと見直してません。(その前に直すべき個所が多い)<br><br>当然ながら私の改修時に混入させてしまったものもあると思います。「前の版にはあっていたのに」ということは改修している限り今後も付きまとうので仕方ありません。わざとやっているわけではありませんし。極力なくしたいとは思いますが。<br>ところで、既にリンクミス1箇所と直したほうがいい個所を見つけました。(私のミス)<br>やっぱりげんた氏の言う通り、ヘルプ専用掲示板もあったほうがこの種の情報を容易に一覧しやすいので、いいような気がしてきました。<br>ちょっと直してすぐアップという訳にもいかないので(面倒だから)、ある程度の期間が必要です。すとーにぃ氏はどう思いますか？<br>私はヘルプ専用掲示板を設置してもらった方が純然たる開発中心の話にのみ興味がある人(誰？)にも見やすくなるのではないでしょうか？<br>前に聞いたことがありますが、すとーにぃ氏は差分ファイルをマージできる環境ですか？マージできるなら、差分ファイルをeGroupsにアップすればチョコチョコ修正した個所もすぐわかって丸ごとアップするよりはいいかもしれません。</div></section>
+    <ul><li><section><h1 id=280>
+    <span class="no">[280]</span>
+    <a class="thread-title" href="#280">Re:ヘルプのミスはまだまだあります。。。m(__)m</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-03-12T12:40:35">2001年03月12日 12:40</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; すとーにぃ氏の改修時に混入したもの、原文自体のミスなどです。<br><br>まだまだ修正の必要な箇所があるみたいですね。。。<br>おいおい直していきます。<br><br>&gt; 私はヘルプ専用掲示板を設置してもらった方が純然たる開発<br>&gt; 中心の話にのみ興味がある人(誰？)にも見やすくなるのでは<br>&gt; ないでしょうか？<br><br>本体との連動部分の修正が完了していないので、それが区切りがついてからのほうがよいかと。＜掲示板分割<br><br>&gt; 前に聞いたことがありますが、すとーにぃ氏は差分ファイルを<br>&gt; マージできる環境ですか？<br><br>修正ファイルを丸ごとアップしてもらえればWinDiffで比較-&gt;マージ作業が可能です。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

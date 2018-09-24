@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>文字コードセットのデフォルト変更 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7063</span>
+    <a class="thread-title" href="7063.html#7063">文字コードセットのデフォルト変更</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7077</span>
+    <a class="thread-title" href="7063.html#7077">Re:文字コードセットのデフォルト変更</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7221</span>
+    <a class="thread-title" href="7063.html#7221">Re:文字コードセットのデフォルト変更</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7063>
+    <span class="no">[7063]</span>
+    <a class="thread-title" href="#7063">文字コードセットのデフォルト変更</a>
+    <span class="author">武本Timothy</span>
+    <time datetime="2009-10-21T20:18:28">2009年10月21日 20:18</time></h1>
+    <div class="body">サクラエディターを６年ほど前から愛用していますが、<br><br>ＵＴＦ-８のために使っているサクラエディターのファイルを<br>ついＳＪＩＳで保存してしまったのは何回あったか数え<br>きれません。<br><br>保存時の文字コードセットのデファルトをＳＪＩＳから<br>ＵＴＦ－８に変更する方法ありますか？<br><br>よろしくお願いします。<br>武本</div></section>
+    <ul><li><section><h1 id=7077>
+    <span class="no">[7077]</span>
+    <a class="thread-title" href="#7077">Re:文字コードセットのデフォルト変更</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-10-26T00:46:46">2009年10月26日 00:46</time></h1>
+    <div class="body">▼ 武本Timothyさん<br>デフォルトを変更する方法はなかったと思います。<br>新規文書については、v1.6.5.0より対応された自動実行マクロを使いUTF8で開き直すことで、<br>それっぽいことが可能です。<br> <br>下記のマクロを作成し「自動実行」→「新規／開ファイル後」に指定して下さい。<br> <br>var<br>  path : string;<br>begin<br>  path := S_ExpandParameter('$F');<br>  if CompareStr(path, '(無題)') = 0 then<br>    S_FileReopenUTF8(0);<br> <br>既存ファイル含めてであれば S_FileReopenUTF8(0); の1行で良いのですが、EUCのファイルを<br>開いたりすると化けます (^^;</div></section>
+    </li><li><section><h1 id=7221>
+    <span class="no">[7221]</span>
+    <a class="thread-title" href="#7221">Re:文字コードセットのデフォルト変更</a>
+    <span class="author">たかひろ</span>
+    <time datetime="2010-07-24T01:11:45">2010年07月24日 01:11</time></h1>
+    <div class="body">同じような希望の書き込みがあったので同意を込めて、<br>書き込みます。<br><br>私も文字コードのデフォルトを変更できたらよいな<br>と思っています。<br>この頃はLinuxでもそうですし、<br>Windows7でもUTF8が標準になりつつあるのかな、<br>と思うので、UTF8をデフォルトにしたいと思うことがあります。<br>英語だけのファイルをUTF8と判断することができれば嬉しく思います。<br><br>SourceForgeを見に行ったら、<br>sakura_core/charset/CCodeMediator.cpp<br>sakura_core/doc/CEditDoc.h<br>あたりのソースコードで<br>Wed Jun 17 02:41:07 2009 UTC by rastiv <br>で、タイプ別にデフォルトの文字コードを指定出来る様な<br>パッチが作られているようなので、何とかこの変更が上手く行くとうれしいな、<br>と思います。<br><br><br>▼ 武本Timothyさん<br>&gt; サクラエディターを６年ほど前から愛用していますが、<br>&gt; <br>&gt; ＵＴＦ-８のために使っているサクラエディターのファイルを<br>&gt; ついＳＪＩＳで保存してしまったのは何回あったか数え<br>&gt; きれません。<br>&gt; <br>&gt; 保存時の文字コードセットのデファルトをＳＪＩＳから<br>&gt; ＵＴＦ－８に変更する方法ありますか？<br>&gt; <br>&gt; よろしくお願いします。<br>&gt; 武本</div></section>
+    </li></ul></li></ul></body></html>

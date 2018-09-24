@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>JavaScriptの正規表現が良くわかりません… | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">614</span>
+    <a class="thread-title" href="614.html#614">JavaScriptの正規表現が良くわかりません…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">615</span>
+    <a class="thread-title" href="614.html#615">Re:JavaScriptの正規表現が良くわかりません…</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">616</span>
+    <a class="thread-title" href="614.html#616">Re2:JavaScriptの正規表現が良くわかりません…</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=614>
+    <span class="no">[614]</span>
+    <a class="thread-title" href="#614">JavaScriptの正規表現が良くわかりません…</a>
+    <span class="author">もも</span>
+    <time datetime="2017-03-28T15:16:36">2017年03月28日 15:16</time></h1>
+    <div class="body">同じ指定でサクラの正規表現置換だと正しく対象になるのですが、<br>同じ書き方をマクロ内のJavaScriptで指定しても動いてくれません。<br><br>癖のような物を把握しようと何回か試行錯誤しましたが、なぜこのような<br>挙動になるのかまるで理解が及ばず…<br><br>私の指示の正しく無い所の添削をお願い申し上げます。<br><br>状況としては、下のマクロを、//Test文字列 を別タブに複製して置換テスト<br>しているのですが、実行中、"文字列"を"23"に書き換え "^.*?23.*?$"<br>として 実行しても、対応行が削除されません。<br>同じ設定をサクラエディタの置換画面に入力するとただしく該当範囲が<br>設定されます。(//1234 と //2345 が該当)<br><br><br>”マクロ実行中・・・”の時間設定を調整したい<br><a href=../macro#570 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>cgi-<wbr>bin/<wbr>cyclamen<wbr>/<wbr>cyclamen<wbr>.<wbr>cgi?<wbr>log=<wbr>macro&amp;<wbr>tree=<wbr>r570</nobr></a><br><br>こちらでキャンセル待ち時間を0にする対応が書いてありましたが、<br>(気の済むまで入力待ちになる)下のマクロの実行中だけ時間を0にして<br>マクロ終了時に元の数字に戻す様な事を行いたいのですが可能でしょうか？<br><br><br>// 正規表現を使い、文字列を含む行を削除<br>function LineDelete(){<br>  Editor.SelectAll();<br>  var str = Editor.GetSelectedString(0);    // 選択文字を変数へ<br>  do {<br>    var a ="^.*?文字列.*?$";<br>    a = inputBox("文字列が含まれる行を削除します。※繰り返し実行", a); // キャンセルで停止する<br>    if (a != "") {<br>      messageBox("内容は\r\n" + a +"\r\n" + "です。");<br>      str = str.replace( new RegExp(a,'g'),"");<br>    }<br>  } while( a != "" )<br>  messageBox("キャンセルされたので終了します");<br>  Editor.InsText( str );<br>}<br>LineDelete();<br><br>//Test文字列<br>//1234<br>//2345<br>//3456<br>//4567<br><br></div></section>
+    <ul><li><section><h1 id=615>
+    <span class="no">[615]</span>
+    <a class="thread-title" href="#615">Re:JavaScriptの正規表現が良くわかりません…</a>
+    <span class="author">もか</span>
+    <time datetime="2017-03-28T23:11:57">2017年03月28日 23:11</time></h1>
+    <div class="body">^と$は、普通だと「全データの先頭と末尾」を指します。<br>RegExpのところを'mg'にして、マルチラインモードにする必要があると思います。<br><br>&gt;マクロの実行中だけ時間を0<br>そういうことは現在できません。<br></div></section>
+    <ul><li><section><h1 id=616>
+    <span class="no">[616]</span>
+    <a class="thread-title" href="#616">Re2:JavaScriptの正規表現が良くわかりません…</a>
+    <span class="author">もも</span>
+    <time datetime="2017-03-29T12:18:25">2017年03月29日 12:18</time></h1>
+    <div class="body">▼ もかさん<br>回答ありがとうございます。<br><br>&gt; ^と$は、普通だと「全データの先頭と末尾」を指します。<br>&gt; RegExpのところを'mg'にして、マルチラインモードにする必要があると思います。<br><br>mの意味を逆に解釈してました…(mが付くと各行の行頭・行末を認識しない)<br><br>&gt; &gt;マクロの実行中だけ時間を0<br>&gt; そういうことは現在できません。<br><br>うう、残念です。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

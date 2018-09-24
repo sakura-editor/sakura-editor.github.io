@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>要望事項 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">8017</span>
+    <a class="thread-title" href="8017.html#8017">要望事項</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8024</span>
+    <a class="thread-title" href="8017.html#8024">Re:要望事項</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8025</span>
+    <a class="thread-title" href="8017.html#8025">Re2:要望事項</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8017>
+    <span class="no">[8017]</span>
+    <a class="thread-title" href="#8017">要望事項</a>
+    <span class="author">ヒューねんず</span>
+    <time datetime="2015-03-16T17:43:12">2015年03月16日 17:43</time></h1>
+    <div class="body">ブックマークの設定をVBのエディタのように行番号のクリックで行えるようにお願いします。<br><br>私の他にも要望している人が多いと思いますので是非宜しくお願い致します。</div></section>
+    <ul><li><section><h1 id=8024>
+    <span class="no">[8024]</span>
+    <a class="thread-title" href="#8024">Re:要望事項</a>
+    <span class="author">gao</span>
+    <time datetime="2015-04-02T07:16:22">2015年04月02日 07:16</time></h1>
+    <div class="body">下記のマクロ(.js)を、ダブルクリックに「キー割り当て」すれば、<br>行番号エリアのダブルクリックで、ブックマークの登録／解除ができるようになります。<br><br><br>var xLogiPos = ExpandParameter("$x");      // DC(ダブルクリック)中の論理x座標。<br>var yLogiPos = ExpandParameter("$y");      // DC中の論理y座標。<br>var xLayPos = LineIndexToColumn(yLogiPos, xLogiPos);       // DC中のレイアウトx座標<br>var logiStr = GetLineStr( yLogiPos );     // DC中の論理行の文字列。<br><br>var selectedStr = GetSelectedString();          // 選択されている文字列。選択されているという事は、行番号エリアをDCしたという事で、それ以外有り得ない、という前提。と言うのも、手動で選択した領域に対してDCをすると、選択が解除されてしまうから。<br><br>var sbStr = "";        // ステータスバーへ通知する文字列。<br><br><br>// レイアウト1列目、かつ、選択されている場合は、行番号エリアでのDC。<br>if( xLayPos == 1  &amp;&amp;  selectedStr.length &gt; 0 ){<br>  Up();     // レイアウト行選択の挙動に伴って、カーソルが1行下に下がってしまうので、元の行に戻す。<br>  BookmarkSet();<br>  sbStr = GetLineAttribute( 0, 2 )? "ブックマーク登録": "ブックマーク解除";<br>  StatusMsg( sbStr, 0 );<br> <br> <br>/***************************************<br>**********************************<br>// 今件とは別の機能なので無効にしてますが、こちらも動作します。<br>// 行末、かつ、選択されていない場合は、改行文字から右側の領域でDCされている。<br>}else if( xLogiPos == logiStr.length - 1  &amp;&amp;  selectedStr == "" ){<br>  SplitWinV();          // ウィンドウ分割、を取り合えず割り当て。<br> <br>****************************************<br>**********************************/<br><br>// サクラエディタのデフォルトの挙動。<br>}else{<br>  SelectWord();<br>}</div></section>
+    <ul><li><section><h1 id=8025>
+    <span class="no">[8025]</span>
+    <a class="thread-title" href="#8025">Re2:要望事項</a>
+    <span class="author">gao</span>
+    <time datetime="2015-04-03T23:23:22">2015年04月03日 23:23</time></h1>
+    <div class="body">正常に動作しない場合は、「xLayPos == 1  &amp;&amp;」の箇所を削除してみて下さい。<br>それと、コメントの内容も、一部間違っていました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

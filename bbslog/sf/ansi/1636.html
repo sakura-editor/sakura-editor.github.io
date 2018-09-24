@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>メニューからヘルプの目次 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1636</span>
+    <a class="thread-title" href="1636.html#1636">メニューからヘルプの目次</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1640</span>
+    <a class="thread-title" href="1636.html#1640">RE: メニューからヘルプの目次</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1641</span>
+    <a class="thread-title" href="1636.html#1641">Re: メニューからヘルプの目次</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1649</span>
+    <a class="thread-title" href="1636.html#1649">Re: メニューからヘルプの目次</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1650</span>
+    <a class="thread-title" href="1636.html#1650">Re2: メニューからヘルプの目次</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1636>
+    <span class="no">[1636]</span>
+    <a class="thread-title" href="#1636">メニューからヘルプの目次</a>
+    <span class="author">みく</span>
+    <time datetime="2002-02-19T15:33:29">2002年02月19日 15:33</time></h1>
+    <div class="body"><br>いつの頃からかWin98でもヘルプの目次画面が表示されず<br>に目次ページが表示されます。ヘルプ2/14版で発生。<br><br>ヘルプファイルのタイムスタンプが11/28ころのものだと<br>目次ダイアログが出ました。それ以外はファイルがない<br>ので試してません。<br><br>もしかして、ヘルプの作成時に何かしらオプションでも<br>あるのでしょうか。<br></div></section>
+    <ul><li><section><h1 id=1640>
+    <span class="no">[1640]</span>
+    <a class="thread-title" href="#1640">RE: メニューからヘルプの目次</a>
+    <span class="author">みく</span>
+    <time datetime="2002-02-20T18:59:04">2002年02月20日 18:59</time></h1>
+    <div class="body"><br>sakura.exeのバージョンによる結果<br>1.2.103:OK<br>1.2.104:NG<br><br>で、CEditView_Command.cpp:5280を見ると、このころにNTに対応するために<br>変更されているわけですが、WinHelpの戻り値はヘルプを見ると<br><br>戻り値<br>関数が成功すると、0 以外の値が返ります。関数が失敗すると、0 が返ります。<br><br>となっているので、if文が逆じゃないかと。<br>で、逆にして試してみたけどやっぱり駄目でした。<br></div></section>
+    <ul><li><section><h1 id=1641>
+    <span class="no">[1641]</span>
+    <a class="thread-title" href="#1641">Re: メニューからヘルプの目次</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-21T00:43:42">2002年02月21日 00:43</time></h1>
+    <div class="body">&gt;このころにNTに対応するために変更<br>確認しましたが，確かにこの間で変更されています．<br><br>&gt;となっているので、if文が逆じゃないかと。<br>&gt;で、逆にして試してみたけどやっぱり駄目でした。<br>Grepすると，同じコードが3カ所にあるのがわかります．全部直したら直りましたよ．<br><br>直しついでに1つの関数にまとめた方がいいでしょう．<br></div></section>
+    <ul><li><section><h1 id=1649>
+    <span class="no">[1649]</span>
+    <a class="thread-title" href="#1649">Re: メニューからヘルプの目次</a>
+    <span class="author">みく</span>
+    <time datetime="2002-02-23T11:49:28">2002年02月23日 11:49</time></h1>
+    <div class="body"><br>&gt;Grepすると，同じコードが3カ所にあるのがわかります．全部直したら直りましたよ．<br>確かに。全部直したらOKでした。<br><br>CEditApp.cpp:853<br>CEditView_Command.cpp:5307<br>CEditWnd.cpp:1467<br>のif文の条件を"==0"にする。W2Kでも目次が出ました。<br></div></section>
+    <ul><li><section><h1 id=1650>
+    <span class="no">[1650]</span>
+    <a class="thread-title" href="#1650">Re2: メニューからヘルプの目次</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-23T23:18:59">2002年02月23日 23:18</time></h1>
+    <div class="body">手元では取り込みました。さんくす。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

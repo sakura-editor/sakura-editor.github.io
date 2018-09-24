@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Win95でメニューが出ない件 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">627</span>
+    <a class="thread-title" href="627.html#627">Win95でメニューが出ない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">628</span>
+    <a class="thread-title" href="627.html#628">Re:Win95でメニューが出ない件</a></div>
+    </li><li><div class="list-title">
+    <span class="no">629</span>
+    <a class="thread-title" href="627.html#629">Re: Win95でメニューが出ない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">630</span>
+    <a class="thread-title" href="627.html#630">Re2: PrintPreviewのメニュー</a></div>
+    </li><li><div class="list-title">
+    <span class="no">631</span>
+    <a class="thread-title" href="627.html#631">Re2: Win95でメニューが出ない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">632</span>
+    <a class="thread-title" href="627.html#632">Re3: Win95でメニューが出ない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">633</span>
+    <a class="thread-title" href="627.html#633">Re4: Win95でメニューが出ない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">634</span>
+    <a class="thread-title" href="627.html#634">Re5: Win95でメニューが出ない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">636</span>
+    <a class="thread-title" href="627.html#636">Re6: Win95でメニューが出ない件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">639</span>
+    <a class="thread-title" href="627.html#639">Re7: Win95でメニューが出ない件</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=627>
+    <span class="no">[627]</span>
+    <a class="thread-title" href="#627">Win95でメニューが出ない件</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-07-18T18:53:15">2001年07月18日 18:53</time></h1>
+    <div class="body">メニューが選択されたときにドロップダウンメニューを作り直しているので，メニュー作成に達しないのか，メニューは作成できるが表示ができていないのかを判断する材料がほしい．<br><br>全然出ないところを見ると作成できていないのだとおもいますが念のため．それともサイズ測定で0を返しているのかなぁ．描画でこけているなら中身は真っ白でもメニューは出るはず．<br><br>Win95でspyを動かせますか？(VC++付属 or Platform SDK付属品) WM_INITMENUPOPUP, WM_MENUSELECT, WM_MEASUREITEM, WM_DRAWITEMなどがどのように来ているかを知りたいんですが．と書いたのはいいが，spy++はログが保存できない．どうしよう．<br></div></section>
+    <ul><li><section><h1 id=628>
+    <span class="no">[628]</span>
+    <a class="thread-title" href="#628">Re:Win95でメニューが出ない件</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-07-18T19:34:19">2001年07月18日 19:34</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; Win95でspyを動かせますか？<br>残念ながら開発環境は入ってません。空きスペースないし、入れてもどうせ遅いし。</div></section>
+    </li><li><section><h1 id=629>
+    <span class="no">[629]</span>
+    <a class="thread-title" href="#629">Re: Win95でメニューが出ない件</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-07-18T19:51:36">2001年07月18日 19:51</time></h1>
+    <div class="body">なんとかWin95を1台発見したのでspyで見たところ，WM_INITMENUPOPUPは来ているけどWM_MEASUREITEMは出ていない．<br><br>メニュー関連でもう1つ変なところ発見．印刷Previewでメニューを開くと，「ファイル」以外が全部変．これはOSには関係ない．<br></div></section>
+    <ul><li><section><h1 id=630>
+    <span class="no">[630]</span>
+    <a class="thread-title" href="#630">Re2: PrintPreviewのメニュー</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-07-18T20:09:44">2001年07月18日 20:09</time></h1>
+    <div class="body">&gt;印刷Previewでメニュー<br>は表示しないようにした．（たぶん元々そうしたかったのだろう）<br><br>現状だとPrintPreviewを行うたびにリソースリークしているか不正なメモリをアクセスしているかのどちらか．<br></div></section>
+    </li><li><section><h1 id=631>
+    <span class="no">[631]</span>
+    <a class="thread-title" href="#631">Re2: Win95でメニューが出ない件</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-07-18T20:27:37">2001年07月18日 20:27</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; なんとかWin95を1台発見したのでspyで見たところ，WM_INITMENUPOPUPは来ているけどWM_MEASUREITEMは出ていない．<br>なぜ動く版があるの？<br>&gt;印刷Previewでメニューは表示しないようにした．<br>へ？　Win95/98では印刷プレビュー画面でメニューバーなんて出てきませんけど。<br><br></div></section>
+    <ul><li><section><h1 id=632>
+    <span class="no">[632]</span>
+    <a class="thread-title" href="#632">Re3: Win95でメニューが出ない件</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-07-18T20:41:45">2001年07月18日 20:41</time></h1>
+    <div class="body">&gt;&gt; なんとかWin95を1台発見したのでspyで見たところ，WM_INITMENUPOPUPは来ているけどWM_MEASUREITEMは出ていない．<br>&gt;なぜ動く版があるの？<br>メニューは表示されませんよ．<br><br>&gt;&gt;印刷Previewでメニューは表示しないようにした．<br>&gt;へ？　Win95/98では印刷プレビュー画面でメニューバーなんて出てきませんけど。<br>Win2Kでは出ていたんです．メニューバーの削除部分が明らかに正しくない実装でした．<br></div></section>
+    <ul><li><section><h1 id=633>
+    <span class="no">[633]</span>
+    <a class="thread-title" href="#633">Re4: Win95でメニューが出ない件</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-07-18T21:21:11">2001年07月18日 21:21</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;&gt; なんとかWin95を1台発見したのでspyで見たところ，WM_INITMENUPOPUPは来ているけどWM_MEASUREITEMは出ていない．<br>&gt; &gt;なぜ動く版があるの？<br>&gt; メニューは表示されませんよ．<br>そうではなくして、同じソースでも私家版では動いてまっせ、ということ。運がよかっただけ？　Win98では元々問題ないし。</div></section>
+    <ul><li><section><h1 id=634>
+    <span class="no">[634]</span>
+    <a class="thread-title" href="#634">Re5: Win95でメニューが出ない件</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-07-18T21:29:04">2001年07月18日 21:29</time></h1>
+    <div class="body">&gt;そうではなくして、同じソースでも私家版では動いてまっせ<br>その原因がわからないから調べようと思っているのですが．最適化すると出る問題かもしれないし．<br></div></section>
+    <ul><li><section><h1 id=636>
+    <span class="no">[636]</span>
+    <a class="thread-title" href="#636">Re6: Win95でメニューが出ない件</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-07-18T21:58:34">2001年07月18日 21:58</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 最適化すると出る問題かもしれないし．<br>Win95も確かRC3までは動くんですがね。RC4からだめ。この辺りで修正した内容が一番関係ありそうだけど、その修正で今までぎりぎりセーフだった問題が顕在化しただけということもあるから厄介。<br></div></section>
+    <ul><li><section><h1 id=639>
+    <span class="no">[639]</span>
+    <a class="thread-title" href="#639">Re7: Win95でメニューが出ない件</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-07-18T22:46:02">2001年07月18日 22:46</time></h1>
+    <div class="body">&gt;RC4からだめ。この辺りで修正した内容<br>htmlhelp.libのリンクをやめて動的読み込みに変えたのが影響するのかなぁ．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

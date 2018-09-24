@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Fix) 行番号（変更行）表示の更新範囲不足 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">883</span>
+    <a class="thread-title" href="883.html#883">Commit報告:(Fix) 行番号（変更行）表示の更新範囲不足</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=883>
+    <span class="no">[883]</span>
+    <a class="thread-title" href="#883">Commit報告:(Fix) 行番号（変更行）表示の更新範囲不足</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-03-29T04:39:04">2009年03月29日 04:39</time></h1>
+    <div class="body">リビジョン：<br>　rev1559<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>Fix: テキスト変更時に行番号（変更行）表示の更新範囲が不足することがある<br><br>次の場合に問題がありました。<br>・折り返し複数行の後ろのほうのレイアウト行を変更したときに前のほうのレイアウト行（改行単位行では同じ行）の行番号が変更行表示にならない<br>・Undoしきったあとで変更を加えたときに以前の変更行が変更行表示にならない<br>（いずれもF5キーやマウスによるカーソル移動で画面更新されると正しい表示になる）</div></section>
+    </li></ul></body></html>

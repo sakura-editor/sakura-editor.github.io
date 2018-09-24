@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>行末に「-」のある英単語の検索法は？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5167</span>
+    <a class="thread-title" href="5167.html#5167">行末に「-」のある英単語の検索法は？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5171</span>
+    <a class="thread-title" href="5167.html#5171">Re:行末に「-」のある英単語の検索法は？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5172</span>
+    <a class="thread-title" href="5167.html#5172">Re2:行末に「-」のある英単語の検索法は？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5173</span>
+    <a class="thread-title" href="5167.html#5173">Re3:行末に「-」のある英単語の検索法は？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5174</span>
+    <a class="thread-title" href="5167.html#5174">Re4:行末に「-」のある英単語の検索法は？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5175</span>
+    <a class="thread-title" href="5167.html#5175">Re5:行末に「-」のある英単語の検索法は？</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5176</span>
+    <a class="thread-title" href="5167.html#5176">Re:行末に「-」のある英単語の検索法は？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5177</span>
+    <a class="thread-title" href="5167.html#5177">Re2:行末に「-」のある英単語の検索法は？</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5167>
+    <span class="no">[5167]</span>
+    <a class="thread-title" href="#5167">行末に「-」のある英単語の検索法は？</a>
+    <span class="author">IDEO</span>
+    <time datetime="2006-04-15T06:22:26">2006年04月15日 06:22</time></h1>
+    <div class="body">5131で(全略)さんのJREGEX組み込み版SAKURAを教えていただき、改行マークを挟んだ検索で重宝しているIDEOですが、その後、OCRで電子テキストファイル化したものを検索する必要が出てきました。<br>　英文では行末で分かれた単語には「-」が入っているため、どのような検索式を書いたらよいのか分かりません。ご教示いただけますか？<br>　例えば、televisionは<br><br>te-<br>levision<br><br>とも<br><br>tele-<br>vision<br><br>とも<br><br>televi-<br>sion<br><br>とも印刷されますね。こういうのを長くて複雑でもよいから、一つの検索式で改行無しのtelevisionも含めて全て検索したいのですが。<br></div></section>
+    <ul><li><section><h1 id=5171>
+    <span class="no">[5171]</span>
+    <a class="thread-title" href="#5171">Re:行末に「-」のある英単語の検索法は？</a>
+    <span class="author">しみづ</span>
+    <time datetime="2006-04-16T04:16:42">2006年04月16日 04:16</time></h1>
+    <div class="body"><br>?te[\r\n\-]*le[\r\n\-]*vi[\r\n\-]*sion<br><br>なんてどうかしら。<br></div></section>
+    <ul><li><section><h1 id=5172>
+    <span class="no">[5172]</span>
+    <a class="thread-title" href="#5172">Re2:行末に「-」のある英単語の検索法は？</a>
+    <span class="author">IDEO</span>
+    <time datetime="2006-04-16T06:59:21">2006年04月16日 06:59</time></h1>
+    <div class="body">▼ しみづさん<br>　早速お返事、ありがとうございました。<br>&gt; <br>&gt; ?te[\r\n\-]*le[\r\n\-]*vi[\r\n\-]*sion<br>&gt; <br>で、見事に通常のtelevisionまで含めて、取りこぼしなく検索できました！<br>　感謝、感謝です。<br>　以前から話題にしているように、オープンされた現単一ファイルだけでなく、「Grep条件入力」が対応しているフォルダー内の全てのファイル検索にもこの改行またぎが効けば最高なんですがね。どうして私のところではできないのかなぁ…？</div></section>
+    <ul><li><section><h1 id=5173>
+    <span class="no">[5173]</span>
+    <a class="thread-title" href="#5173">Re3:行末に「-」のある英単語の検索法は？</a>
+    <span class="author">IDEO</span>
+    <time datetime="2006-04-16T07:08:11">2006年04月16日 07:08</time></h1>
+    <div class="body">自己レスですが、「Grep条件入力」の結果の画面で、最初に「□検索条件  」と表示されますが、その条件式で気づいたのですが、私としては[\」と入力したはずが、左上から右下に向かうスラッシュに変わっていました。<br>フォルダー内の全てのファイルの検索が私のところだけできないのは、ひょっとしてそのせいでしょうか？ちなみに、結果画面の8行目は「(文字コードセットの自動判別)」となっています。<br>が対応しているフォルダー内の全てのファイル検索にもこの改行またぎが効けば最高なんですがね。どうして私のところではできないのかなぁ…？</div></section>
+    <ul><li><section><h1 id=5174>
+    <span class="no">[5174]</span>
+    <a class="thread-title" href="#5174">Re4:行末に「-」のある英単語の検索法は？</a>
+    <span class="author">しみづ</span>
+    <time datetime="2006-04-16T08:49:09">2006年04月16日 08:49</time></h1>
+    <div class="body"><br>&gt;どうして私のところではできないのかなぁ…？<br><br>　勘違いしてませんか。作者さんは「Grepには対応していません」と言っているし、他の誰もできてませんよ、たぶん。<br>&gt;&gt;data:5136<br></div></section>
+    <ul><li><section><h1 id=5175>
+    <span class="no">[5175]</span>
+    <a class="thread-title" href="#5175">Re5:行末に「-」のある英単語の検索法は？</a>
+    <span class="author">IDEO</span>
+    <time datetime="2006-04-16T10:19:45">2006年04月16日 10:19</time></h1>
+    <div class="body">▼ しみづさん<br>またまた、お返事、早速ありがとうございました。<br><br>&gt; 　勘違いしてませんか。作者さんは「Grepには対応していません」と言っているし、他の誰もできてませんよ、たぶん。<br>&gt; &gt;&gt;data:5136<br>　なるほど。data:5136の最後の文章の意味は、そういうことでしたか。<br>　これで安心しました。<br>　でも逆に、できたらいいなぁという要望の気持ちはさらに強くなりました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=5176>
+    <span class="no">[5176]</span>
+    <a class="thread-title" href="#5176">Re:行末に「-」のある英単語の検索法は？</a>
+    <span class="author">fon</span>
+    <time datetime="2006-04-16T12:58:33">2006年04月16日 12:58</time></h1>
+    <div class="body">サクラ標準のBregexpでも、面倒ですができそうです。(目的が単語にヒットということであれば、ですが)<br>↓などが非常に参考になります。(注：勝手にリンク)<br><a href=http://www.geocities.jp/maru3128/sakura_bbs.html#M0730 target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>maru3128<wbr>/<wbr>sakura_b<wbr>bs.<wbr>html#<wbr>M0730</nobr></a><br>■やりたいこと(仮定)<br>・「文字列１＋ハイフン＋改行＋文字列２」→「文字列１＋文字列２」<br>・「文字列１＋改行＋文字列２」→「文字列１＋スペース＋文字列２」(*1)<br>・改行だけの行は詰めない<br>*1：期待通りでない場合もありそうなため、適宜実行<br>■手順<br>１．余分なスペースの削除<br>　テキスト全選択：Ctrl+A<br>　左側余白を削除：Alt+L<br>　右側余白を削除：Alt+R<br>２．改行コードの統一<br>　ファイルを名前を付けて保存<br>　　文字コード：SJIS<br>　　改行コード：CR+LF<br>３．ハイフンで終わる行を繋げる<br>　すべて置換(以下置換は正規表現ONで。)<br>　　置換前(*2)：-(\r\n)<br>　　置換後：<br>*2：改行をなくす場合'$'は使えない模様<br>■以下おまけ(*1)<br>４．改行だけの行を★に置換して覚えておく(やり方が美しくないです。)<br>　すべて置換<br>　　置換前：^$<br>　　置換後：★<br>５．文章の節以外の改行も繋げる<br>　すべて置換<br>　　置換前：(\r\n)<br>　　置換後(*3)： <br>*3：単語区切りのための半角スペース<br>６．ピリオドとかで改行する<br>　すべて置換<br>　　置換前：([\.\?!])<br>　　置換後(*4)：$1\r\n<br>*4：後読みが出来ないため後方参照を使用<br>７．★を元に戻す<br>　すべて置換<br>　　置換前：★<br>　　置換後：\r\n<br>８．余分なスペースの削除<br>　１．と同じ<br><br>■test case (Before)<br>The substitution of the word including changing line <br>is examined by the cherry. The word including the hy-<br>phen is not matched. <br><br>Is there a good method in the regular expression?<br><br>▼After<br>The substitution of the word including changing line is examined by the cherry.<br>The word including the hyphen is not matched. <br><br>Is there a good method in the regular expression?<br></div></section>
+    <ul><li><section><h1 id=5177>
+    <span class="no">[5177]</span>
+    <a class="thread-title" href="#5177">Re2:行末に「-」のある英単語の検索法は？</a>
+    <span class="author">IDEO</span>
+    <time datetime="2006-04-16T20:29:29">2006年04月16日 20:29</time></h1>
+    <div class="body">▼ fonさん<br>　とても詳しい、そして、私のようなど素人でも分かるようなステップ毎のご説明、ありがとうございました。<br>　改行マーク置換は、行のレイアウトが変わってしまうので、私は好きでなかったのですが、このようにハイフンの所だけ変えるのであればページの大勢は変わらず、実用的ですね。こういうやり方があったかと、感心しております。<br>　どうもありがとうございました。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

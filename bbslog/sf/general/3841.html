@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>不具合&gt;消えるタブ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3841</span>
+    <a class="thread-title" href="3841.html#3841">不具合&gt;消えるタブ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3852</span>
+    <a class="thread-title" href="3841.html#3852">RE: 不具合&gt;消えるタブ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3841>
+    <span class="no">[3841]</span>
+    <a class="thread-title" href="#3841">不具合&gt;消えるタブ</a>
+    <span class="author">無人駅</span>
+    <time datetime="2004-05-14T02:50:08">2004年05月14日 02:50</time></h1>
+    <div class="body">幻が発生しました。<br><br>発生VER<br>　　v1.4.5.0　Win98 or Win2000 Pro<br>　　v1.4.6.0　Win2000 Pro<br><br>以前、報告していた現象と同じと思いますが、発生方法がわかりましたので追加報告します。<br><br>１．スクロールしないと表示されないタブが３ページ以上出来るぐらいファイルをたくさん読込みます。<br>２．最終ページに表示されている全てのタブを右クリック 閉じるで消します。<br>　　（最後に読込んだファイルから順番に閉じる）<br><br>これで、タブが透明になって、タブのある領域をクリックすると、クリックした位置のタブのみ表示されるようになります。<br>タブのスクロールボタンをクリックすると正常に戻ります。<br><br>閉じたとき、タブの表示位置の計算に誤りがあるのでは？と思っています。<br></div></section>
+    <ul><li><section><h1 id=3852>
+    <span class="no">[3852]</span>
+    <a class="thread-title" href="#3852">RE: 不具合&gt;消えるタブ</a>
+    <span class="author">みく</span>
+    <time datetime="2004-05-22T18:08:35">2004年05月22日 18:08</time></h1>
+    <div class="body"><br>CTabWnd.cpp:272行目(WS_CLIPSIBLINGS追加)<br>&#9;//タブウインドウを作成する。<br>&#9;m_hwndTab = ::CreateWindow(<br>&#9;&#9;WC_TABCONTROL,<br>&#9;&#9;_T(""),<br>!&#9;&#9;WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS,<br><br><br>フォーカスのあるタブを削除すんなってことらしい。<br><br>CTabWnd.cpp:517行目あたりから。<br>&#9;case TWNT_DEL:&#9;//ウインドウ削除<br>&#9;&#9;nIndex = FindTabIndexByHWND( (HWND)lParam );<br>&#9;&#9;if( -1 != nIndex )<br>&#9;&#9;{<br>!&#9;&#9;&#9;//TabCtrl_DeleteItem( m_hwndTab, nIndex );<br>+&#9;&#9;&#9;int nIndexOld = nIndex;<br><br>&#9;&#9;&#9;//次のウインドウが自分ならアクティブに<br>&#9;&#9;&#9;nIndex = GetFirstOpenedWindow();<br>&#9;&#9;&#9;if( -1 != nIndex )<br>&#9;&#9;&#9;{<br>+&#9;&#9;&#9;&#9;//削除するアイテムからフォーカスをはずす<br>+&#9;&#9;&#9;&#9;TabCtrl_SetCurSel( m_hwndTab, nIndex );<br>+&#9;&#9;&#9;&#9;TabCtrl_SetCurFocus( m_hwndTab, nIndex );<br>+&#9;&#9;&#9;&#9;//TabCtrl_HighlightItem( m_hwndTab, nIndex, TRUE );<br><br>&#9;&#9;&#9;&#9;if( m_pShareData-&gt;m_pEditArr[ nIndex ].m_hWnd == m_hwndParent )<br>&#9;&#9;&#9;&#9;{<br>&#9;&#9;&#9;&#9;&#9;if( //TRUE  == m_pShareData-&gt;m_Common.m_bDispTabWnd&#9;//2004.02.02<br>&#9;&#9;&#9;&#9;&#9; //&amp;&amp; FALSE == m_pShareData-&gt;m_Common.m_bDispTabWndMultiWin<br>&#9;&#9;&#9;&#9;&#9; /*&amp;&amp;*/ FALSE == ::IsWindowVisible( m_hwndParent ) )<br>&#9;&#9;&#9;&#9;&#9;{<br>&#9;&#9;&#9;&#9;&#9;&#9;ShowHideWindow( m_hwndParent, TRUE );<br>&#9;&#9;&#9;&#9;&#9;&#9;ForceActiveWindow( m_hwndParent );<br>&#9;&#9;&#9;&#9;&#9;}<br>&#9;&#9;&#9;&#9;}<br>&#9;&#9;&#9;}<br>+&#9;&#9;&#9;TabCtrl_DeleteItem( m_hwndTab, nIndexOld );<br>&#9;&#9;}<br>&#9;&#9;break;<br></div></section>
+    </li></ul></li></ul></body></html>

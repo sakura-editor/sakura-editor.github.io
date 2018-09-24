@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>英単語をキャピタライズする | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">430</span>
+    <a class="thread-title" href="430.html#430">英単語をキャピタライズする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">431</span>
+    <a class="thread-title" href="430.html#431">Re:英単語をキャピタライズする</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=430>
+    <span class="no">[430]</span>
+    <a class="thread-title" href="#430">英単語をキャピタライズする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-29T02:16:48">2008年07月29日 02:16</time></h1>
+    <div class="body">&gt;&gt;data:6728 の件の英単語をキャピタライズするマクロです。<br><br>// Capitalize.ppa  by nasukoji  2008.07.29<br>// 半角英単語をキャピタライズする。<br>// 選択範囲がある場合、選択範囲内の単語を全てキャピタライズする。<br>// 選択範囲がない場合、カーソル位置以降の単語を1つキャピタライズする。<br>// <br>// PPA.DLL を SAKURA.EXE と同じディレクトリに置いてください。<br>// マクロファイルの拡張子は.PPAとしてください。<br><br>var<br>    selectMode : integer;   // マクロ実行開始時の選択状態の記憶<br>    areaColmFrom : integer; // 選択範囲記憶用<br>    areaLineFrom : integer;<br>    areaColmTo : integer;<br>    areaLineTo : integer;<br>    temp : integer;         // 一時変数<br>begin<br>    // 選択モードを記憶する<br>    selectMode := S_IsTextSelected();<br><br>    // 選択範囲を記憶する<br>    areaColmFrom := S_GetSelectColmFrom();<br>    areaLineFrom := S_GetSelectLineFrom();<br>    areaColmTo   := S_GetSelectColmTo();<br>    areaLineTo   := S_GetSelectLineTo();<br><br>    // 選択範囲の左上にカーソルを移動する<br>    if( selectMode = 1 ) then   // 普通の選択<br>        S_Left()<br>    else if( selectMode = 2 ) then  // 矩形選択<br>        begin<br>            S_Copy();   // 矩形選択を完了させるためのダミー<br>            S_Left();   // 選択範囲の左上に移動する<br><br>            // 左上から右下となるように範囲を調整<br>            if( areaColmFrom &gt; areaColmTo ) then<br>                begin<br>                    temp := areaColmFrom;<br>                    areaColmFrom := areaColmTo;<br>                    areaColmTo := temp;<br>                end;<br><br>            if( areaLineFrom &gt; areaLineTo ) then<br>                begin<br>                    temp := areaLineFrom;<br>                    areaLineFrom := areaLineTo;<br>                    areaLineTo := temp;<br>                end;<br>        end;<br><br>－－ つづく －－<br></div></section>
+    <ul><li><section><h1 id=431>
+    <span class="no">[431]</span>
+    <a class="thread-title" href="#431">Re:英単語をキャピタライズする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-07-29T02:17:31">2008年07月29日 02:17</time></h1>
+    <div class="body">－－ つづき －－<br>    // 置き換え処理<br>    repeat<br>        S_SearchNext( '\b[a-zA-Z]+(?=\b)', 22 )     // 半角英単語を検索<br>        if( S_IsTextSelected = 0 ) then break;      // 単語が無ければ終了<br><br>        // 選択範囲ありの場合、範囲内の単語のみ置き換え対象とする<br>        if( selectMode &lt;&gt; 0 ) then<br>            begin<br>                // 単語が選択範囲の終了位置をはみ出しているなら置き換え終了<br>                if(( areaLineTo &lt; S_GetSelectLineTo ) or (( areaLineTo = S_GetSelectLineTo ) and ( areaColmTo &lt; S_GetSelectColmTo ))) then<br>                    begin<br>                        // 選択範囲の次行に移動する<br>                        S_Jump( areaLineTo, 0 );<br>                        S_Down();<br>                        break;<br>                    end;<br><br>                if( selectMode = 2 ) then<br>                    begin<br>                        // 単語が選択範囲をはみ出している場合は置き換えない<br>                        if( areaColmFrom &gt; S_GetSelectColmFrom ) then continue;<br>                        if( areaColmTo &lt; S_GetSelectColmTo ) then continue;<br>                    end;<br>            end;<br><br>        S_CancelMode();<br>        S_SearchNext( '\b[a-zA-Z]', 22 );   // 半角英単語の先頭を検索<br>        S_ToUpper();        // 大文字に変換<br><br>        S_SearchNext( '(?&lt;=[a-zA-Z])[a-zA-Z]*(?=\b)', 22 );     // 2文字目以降を検索<br>        S_ToLower();        // 小文字に変換<br><br>        // 選択範囲なしの時は1回で終了する<br>        if( selectMode = 0 ) then<br>            begin<br>                // 選択の見映えを戻すために半角英単語を選択し直した後<br>                // 右に移動して選択状態をキャンセルする<br>                S_SearchPrev( '\b[a-zA-Z]+(?=\b)', 22 );<br>                S_Right();<br>                break;<br>            end;<br>    until False;<br>end;<br></div></section>
+    </li></ul></li></ul></body></html>

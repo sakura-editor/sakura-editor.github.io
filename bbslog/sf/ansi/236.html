@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>外部コマンド実行 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">236</span>
+    <a class="thread-title" href="236.html#236">外部コマンド実行</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=236>
+    <span class="no">[236]</span>
+    <a class="thread-title" href="#236">外部コマンド実行</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-05T09:13:57">2001年04月05日 09:13</time></h1>
+    <div class="body">双六さんが提供してくれたクラスを使おうと思ったのですが<br>1. 標準入出力を扱えるようにはなっているものの、テキストエディタは1プロセスで1文書しか扱えない。<br>2. データの読み書きが別スレッドで動作することに注意する必要がある。<br>3. このエディタの特性として、データの挿入操作が遅い。<br><br>GREPのように別プロセスを起動してウィンドウを用意してからコマンド実行とするか、とりあえず実行して結果をファイルに吐き出してからそのファイルを開くか2つ思いつきました。<br><br>後者の方はファイルに出すだけだからスレッドのこととかあまり考慮しなくて良いですしファイルを開くのも簡単。でもコマンドが完了しないとどうなっているのかさっぱりわかりません。<br><br>前者は出力の途中結果が見えるものの、コマンドラインオプションの追加、別スレッド動作の扱い、表示速度など考えることが多そうです。<br></div></section>
+    </li></ul></body></html>

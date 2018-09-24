@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>btoolのバグ修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1037</span>
+    <a class="thread-title" href="1037.html#1037">btoolのバグ修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1038</span>
+    <a class="thread-title" href="1037.html#1038">Re:btoolのバグ修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1055</span>
+    <a class="thread-title" href="1037.html#1055">Re2:btoolのバグ修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1078</span>
+    <a class="thread-title" href="1037.html#1078">makefile</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1083</span>
+    <a class="thread-title" href="1037.html#1083">Re:makefile</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1090</span>
+    <a class="thread-title" href="1037.html#1090">Re2:makefile</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1092</span>
+    <a class="thread-title" href="1037.html#1092">Re3:makefile</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1094</span>
+    <a class="thread-title" href="1037.html#1094">Re4:makefile</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1096</span>
+    <a class="thread-title" href="1037.html#1096">Re5:makefile</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1037>
+    <span class="no">[1037]</span>
+    <a class="thread-title" href="#1037">btoolのバグ修正</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-12-28T14:44:35">2001年12月28日 14:44</time></h1>
+    <div class="body">こんにちは。<br>btoolにバグがありました。修正ファイルをソースフォルダにアップしました。<br><br>それからbcc用makeファイルも修正しました。<br>*CMRU*.objの追加<br>*-DTRACE,-DDEBUGオプション付きのときに出力する警告を強化した。<br>*clobber(中間ファイル削除)ターゲットの追加<br></div></section>
+    <ul><li><section><h1 id=1038>
+    <span class="no">[1038]</span>
+    <a class="thread-title" href="#1038">Re:btoolのバグ修正</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-28T14:54:59">2001年12月28日 14:54</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; こんにちは。<br>&gt; btoolにバグがありました。修正ファイルをソースフォルダにアップしました。<br>&gt; <br>&gt; それからbcc用makeファイルも修正しました。<br>&gt; *CMRU*.objの追加<br>&gt; *-DTRACE,-DDEBUGオプション付きのときに出力する警告を強化した。<br>&gt; *clobber(中間ファイル削除)ターゲットの追加<br><br>そうか、makeファイルも直さないといけなかったんですね。<br>ありがとうございます。</div></section>
+    <ul><li><section><h1 id=1055>
+    <span class="no">[1055]</span>
+    <a class="thread-title" href="#1055">Re2:btoolのバグ修正</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-12-29T16:02:40">2001年12月29日 16:02</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; そうか、makeファイルも直さないといけなかったんですね。<br>最初に提供したときにも誰がメンテするのかとげんたさんから指摘がありました。で、雛型扱いでの提供としてます。<br>ところでsakura.makというファイル名ですが、VCからmakefileを出力すると上書きされてしまうようなのでsakurabc.makとかにリネームしたほうがいいとおもいます。<br><br>それからbccログのタグジャンプの件ありがとうございました。</div></section>
+    <ul><li><section><h1 id=1078>
+    <span class="no">[1078]</span>
+    <a class="thread-title" href="#1078">makefile</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-04T16:53:41">2002年01月04日 16:53</time></h1>
+    <div class="body">&gt;VCからmakefileを出力すると上書きされてしまうようなのでsakurabc.makとかにリネームしたほうがいい<br>リネームするなら素直に"makefile"とした方がmakeでファイル名を指定しなくて済むので楽です。<br></div></section>
+    <ul><li><section><h1 id=1083>
+    <span class="no">[1083]</span>
+    <a class="thread-title" href="#1083">Re:makefile</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-04T18:03:43">2002年01月04日 18:03</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;VCからmakefileを出力すると上書きされてしまうようなのでsakurabc.makとかにリネームしたほうがいい<br>&gt; リネームするなら素直に"makefile"とした方がmakeでファイル名を指定しなくて済むので楽です。<br><br>くは。確かに。makefileにしときます。</div></section>
+    <ul><li><section><h1 id=1090>
+    <span class="no">[1090]</span>
+    <a class="thread-title" href="#1090">Re2:makefile</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-01-06T19:11:00">2002年01月06日 19:11</time></h1>
+    <div class="body">あけましておめでとうございます。<br><br>&gt; くは。確かに。makefileにしときます。<br>＃bccに依存しまくりだし、なによりgcc用とか他のコンパイラが参入する時に困るのでmakefileは遠慮したかった。。。<br>でも、楽ってのはポイントですね。いっそデフォルトをDEBUGモードにしましょうか。<br></div></section>
+    <ul><li><section><h1 id=1092>
+    <span class="no">[1092]</span>
+    <a class="thread-title" href="#1092">Re3:makefile</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-06T22:22:51">2002年01月06日 22:22</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; &gt; くは。確かに。makefileにしときます。<br>&gt; ＃bccに依存しまくりだし、なによりgcc用とか他のコンパイラが参入する時に困るのでmakefileは遠慮したかった。。。<br><br>確かに。でもまぁ、必要になったときに考えるということでどうでしょう？<br><br>&gt; でも、楽ってのはポイントですね。いっそデフォルトをDEBUGモードにしましょうか。<br><br>主に使っている方が使いやすい楽なほうでいいと思ってます。<br>気に入らなければ個々人が直せばいい。それじゃだめ？^^;</div></section>
+    <ul><li><section><h1 id=1094>
+    <span class="no">[1094]</span>
+    <a class="thread-title" href="#1094">Re4:makefile</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-01-07T00:26:15">2002年01月07日 00:26</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; 必要になったときに考えるということでどうでしょう？<br>はい。了解です。<br>むかし、げんたさんが「ファイル名をころころ変えないで！」といっていたので、あらかじめ予想して固定したほうが良いのかな？と思いました。<br><br>&gt; &gt; でも、楽ってのはポイントですね。いっそデフォルトをDEBUGモードにしましょうか。<br>&gt; <br>&gt; 主に使っている方が使いやすい楽なほうでいいと思ってます。<br>&gt; 気に入らなければ個々人が直せばいい。それじゃだめ？^^;<br>いいです。<br>＃じっさいにbccのフォルダがデフォルトと違うので毎回直してupload/downloadしてます。<br></div></section>
+    <ul><li><section><h1 id=1096>
+    <span class="no">[1096]</span>
+    <a class="thread-title" href="#1096">Re5:makefile</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-07T02:19:55">2002年01月07日 02:19</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; ファイル名をころころ変えないで！<br>全くその通りです。今回も出来れば変えたくありません。<br><br>どうせやるならCVSリポジトリを作り直すことにして大きすぎるファイルの分割なんかも一緒にやりたいです。CEditView_Command.cppのように無関係な関数が一緒になっていると衝突しやすい上に回線が細い人はuploadも大変。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

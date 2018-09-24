@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現キーワードの文字数のこと | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1704</span>
+    <a class="thread-title" href="1704.html#1704">正規表現キーワードの文字数のこと</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1704>
+    <span class="no">[1704]</span>
+    <a class="thread-title" href="#1704">正規表現キーワードの文字数のこと</a>
+    <span class="author">もか</span>
+    <time datetime="2011-12-04T23:27:25">2011年12月04日 23:27</time></h1>
+    <div class="body">一般掲示板を眺めていて思ったのですが、<br>strcut RegexInfo{<br> szKeyword[100];<br>};<br>RegexInfo[100];<br>みたいになっているのを、<br>どうせ実行時に正規表現コンパイル時にコピーするわけだから、<br>szKeyword[100*100]みたいにしておいて、<br>複数ファイル名リストや補完候補みたいに<br>NUL区切り文字列にしてはどうでしょうか。<br>szKeyword[] = "const\0volatile\0";<br>そうすれば、99文字*100個にも999文字*10個にもできるようになります。<br>最大値チェックが面倒・わかりにくいという点に目をつぶればうまくいくように思います。<br></div></section>
+    </li></ul></body></html>

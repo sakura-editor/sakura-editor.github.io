@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>VisualCのダウンロード | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2440</span>
+    <a class="thread-title" href="2440.html#2440">VisualCのダウンロード</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2441</span>
+    <a class="thread-title" href="2440.html#2441">Re: VisualCのダウンロード</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2465</span>
+    <a class="thread-title" href="2440.html#2465">Re2: VisualCのダウンロード</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2440>
+    <span class="no">[2440]</span>
+    <a class="thread-title" href="#2440">VisualCのダウンロード</a>
+    <span class="author">中島</span>
+    <time datetime="2002-10-30T15:15:52">2002年10月30日 15:15</time></h1>
+    <div class="body">　Ruby のわたなべさんの日記によると、コマンドラインの VisualC7 が<br>ダウンロードできるそうです。 <br><br>  <a href=http://www.ruby-lang.org/~eban/diary/200210a.html#200210013 target=_top><nobr>http://<wbr>www.<wbr>ruby-<wbr>lang.<wbr>org/~<wbr>eban/<wbr>diary/<wbr>200210a.<wbr>html#<wbr>20021001<wbr>3</nobr></a><br><br>　GUI のプロジェクトファイルは読めないので、さくらエディタのコンパイルは<br>どうしたらできるでしょうか。<br></div></section>
+    <ul><li><section><h1 id=2441>
+    <span class="no">[2441]</span>
+    <a class="thread-title" href="#2441">Re: VisualCのダウンロード</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-10-30T15:44:50">2002年10月30日 15:44</time></h1>
+    <div class="body">&gt;コマンドラインの VisualC7 がダウンロードできるそうです。 <br>情報どうもです．VisualStudio.NET相当のコマンドライン版ってことですよね．<br><br>for中での変数宣言のスコープの問題と一部のテンプレートとかVC6でサポートされていなかった部分もVC7では標準に準拠しているのかな．<br><br>&gt;　GUI のプロジェクトファイルは読めないので、さくらエディタのコンパイルは<br>&gt;どうしたらできるでしょうか。<br>nmake用のMakefileを用意する必要があると思います．統合環境からはMakefileの作成でできたような...(やったこと無し)<br></div></section>
+    <ul><li><section><h1 id=2465>
+    <span class="no">[2465]</span>
+    <a class="thread-title" href="#2465">Re2: VisualCのダウンロード</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-11-01T00:37:35">2002年11月01日 00:37</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; for中での変数宣言のスコープの問題<br>テンプレートのほうはよくわかりませんがC++.NETのコンパイラと同じならOKと思います。<br><br>以下のコードで確認しました。<br>int main()<br>{<br>　　int j=0;<br>　　for( int i=0; i&lt;9; i++ ) j++;<br>　　for( int i=0; i&lt;9; i++ ) j+=i;<br>　　return 0;<br>}</div></section>
+    </li></ul></li></ul></li></ul></body></html>

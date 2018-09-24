@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タグ内のダブルクリックでの選択範囲 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7789</span>
+    <a class="thread-title" href="7789.html#7789">タグ内のダブルクリックでの選択範囲</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7790</span>
+    <a class="thread-title" href="7789.html#7790">Re:タグ内のダブルクリックでの選択範囲</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7791</span>
+    <a class="thread-title" href="7789.html#7791">Re2:タグ内のダブルクリックでの選択範囲</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7792</span>
+    <a class="thread-title" href="7789.html#7792">Re2:タグ内のダブルクリックでの選択範囲</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7793</span>
+    <a class="thread-title" href="7789.html#7793">Re3:タグ内のダブルクリックでの選択範囲</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7794</span>
+    <a class="thread-title" href="7789.html#7794">Re4:タグ内のダブルクリックでの選択範囲</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7789>
+    <span class="no">[7789]</span>
+    <a class="thread-title" href="#7789">タグ内のダブルクリックでの選択範囲</a>
+    <span class="author">marumaru</span>
+    <time datetime="2014-03-09T18:58:19">2014年03月09日 18:58</time></h1>
+    <div class="body">初めてお世話になります。<br><br>操作でお聞きしたいのですが、HTML編集時に、タグ内のテキスト部分をダブルクリックで<br>すべて選択できるようにするにはどのような設定にすればよいのでしょうか。<br><br>例えば、&lt;p&gt;今日は、とても寒いですが、お元気ですか？&lt;/p&gt;<br>このような時に、タグとタグの間のテキスト部分のダブルクリックで、<br>「今日は、・・・・・・ですか？」のように記載されているテキスト全文を選択したいのですが、<br>その設定方法がわかりません。<br><br>宜しければご教示頂ければと存じます。</div></section>
+    <ul><li><section><h1 id=7790>
+    <span class="no">[7790]</span>
+    <a class="thread-title" href="#7790">Re:タグ内のダブルクリックでの選択範囲</a>
+    <span class="author">もか</span>
+    <time datetime="2014-03-09T22:18:06">2014年03月09日 22:18</time></h1>
+    <div class="body">以下のようなマクロを共通設定の「マクロ」に設定して、<br>それを「キー割り当て」で「ダブルクリック」に割り当ててください。<br>.html以外のときに普通の単語選択をしたい場合は、<br>その処理も自分で書く必要があります。<br>(selecttag.js等の名前で保存)<br>function selectTag(){<br>&#9;var yorg = Editor.ExpandParameter( "$y" ) - 0;<br>&#9;var xorg = Editor.ExpandParameter( "$x" ) - 0;<br>&#9;Editor.SearchPrev( "&lt;", 0x802 );<br>&#9;var y1 = Editor.ExpandParameter( "$y" ) - 0;<br>&#9;var x1 = Editor.ExpandParameter( "$x" ) - 0;<br>&#9;Editor.MoveCursor(yorg,xorg,0);<br>&#9;Editor.SearchPrev( "&gt;", 0x802 );<br>&#9;var y2 = Editor.ExpandParameter( "$y" ) - 0;<br>&#9;var x2 = Editor.ExpandParameter( "$x" ) - 0;<br>&#9;if( y1 &lt; y2 || (y1 == y2 &amp;&amp; x1 &lt; x2) ){<br>&#9;&#9;var lineCount = Editor.GetLineCount(0);<br>&#9;&#9;if( y2 &lt;= lineCount ){<br>&#9;&#9;&#9;var line = Editor.GetLineStr(y2);<br>&#9;&#9;&#9;if( line.charAt(x2-1) == "&gt;" ){<br>&#9;&#9;&#9;&#9;Editor.Right();<br>&#9;&#9;&#9;&#9;Editor.BeginSelect();<br>&#9;&#9;&#9;&#9;Editor.SearchNext( "&lt;", 0x802 );<br>&#9;&#9;&#9;&#9;Editor.BeginSelect();<br>&#9;&#9;&#9;&#9;return;<br>&#9;&#9;&#9;}<br>&#9;&#9;}<br>&#9;}<br>&#9;Editor.MoveCursor(yorg,xorg,0);<br>&#9;Editor.SelectWord();<br>}<br>selectTag();<br></div></section>
+    <ul><li><section><h1 id=7791>
+    <span class="no">[7791]</span>
+    <a class="thread-title" href="#7791">Re2:タグ内のダブルクリックでの選択範囲</a>
+    <span class="author">marumaru</span>
+    <time datetime="2014-03-09T23:05:12">2014年03月09日 23:05</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 以下のようなマクロを共通設定の「マクロ」に設定して、<br>&gt; それを「キー割り当て」で「ダブルクリック」に割り当ててください。<br>&gt; .html以外のときに普通の単語選択をしたい場合は、<br>&gt; その処理も自分で書く必要があります。<br>&gt; (selecttag.js等の名前で保存)<br><br>ご丁寧にご教示いただきまして有難うございます。<br>ご返信を見る前に、ダメそうだったので一度アンインストールしてしまいました。<br>で、これを見てもう一度インストールをしようとしたのですが、<br><br>『ディレクトリ C:\Users\user\AppData\Roaming\sakura を作成中にエラーが発生しました。<br>エラー 183: 既に存在するファイルを作成することはできません』<br><br>とのことで、今格闘中です。<br>Roamingにできたsakuraのフォルダはアンインストール時点で消去しているので<br>エクスプローラーでも見当たらないので困惑中です。<br><br>と言うことで、再度インストールした後に確認させていただきます。<br>有難うございました。</div></section>
+    </li><li><section><h1 id=7792>
+    <span class="no">[7792]</span>
+    <a class="thread-title" href="#7792">Re2:タグ内のダブルクリックでの選択範囲</a>
+    <span class="author">marumaru</span>
+    <time datetime="2014-03-09T23:30:12">2014年03月09日 23:30</time></h1>
+    <div class="body">もかさん！大変有難うございました。<br>ダブルクリックでタグ内をのテキスト全部を選択出来ました。<br><br>只、一部不都合がありまして、選択・コピー時に閉じタグの最初の『&lt;』までが<br>選択されています。<br>（カーソルは『&lt;』の前で止まっていますが、選択範囲はカーソルを越えて『&lt;』まで選択されています。）<br>これを除いてテキストだけにするにはどこを変えれば宜しいのでしょうか？<br><br>度々お手数ではございますが、宜しくお願いいたします。<br></div></section>
+    <ul><li><section><h1 id=7793>
+    <span class="no">[7793]</span>
+    <a class="thread-title" href="#7793">Re3:タグ内のダブルクリックでの選択範囲</a>
+    <span class="author">もか</span>
+    <time datetime="2014-03-10T02:46:36">2014年03月10日 02:46</time></h1>
+    <div class="body">すみません。細かいところまで確認してませんでした。<br>Editor.SearchNext( "&lt;", 0x802 );<br>の下に<br>&#9;&#9;&#9;&#9;Editor.Right();<br>&#9;&#9;&#9;&#9;Editor.Left();<br>を入れてください。<br></div></section>
+    <ul><li><section><h1 id=7794>
+    <span class="no">[7794]</span>
+    <a class="thread-title" href="#7794">Re4:タグ内のダブルクリックでの選択範囲</a>
+    <span class="author">marumaru</span>
+    <time datetime="2014-03-10T11:58:23">2014年03月10日 11:58</time></h1>
+    <div class="body">▼ もかさん<br>&gt; Editor.SearchNext( "&lt;", 0x802 );<br>&gt; の下に<br>&gt; &#9;&#9;&#9;&#9;Editor.Right();<br>&gt; &#9;&#9;&#9;&#9;Editor.Left();<br>&gt; を入れてください。<br><br>もかさん、ご丁寧に何度も有難うございました。<br>無事思い通りのことが出来るようになりました！<br><br>HTML編集に活用できるエディタを探していましたが、タグ内のテキスト全文を<br>選択できるエディタがnotepad++以外国産では見つからず、サクラエディタを<br>試してみましたが、これもダメかなと思いながら、実は期待せずに書き込んで<br>みましたが、思いかけず完ぺきにできる方法を教えて頂きまして、<br>本当に感謝致しております。どうも有難うございました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

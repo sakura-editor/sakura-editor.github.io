@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>wineで使うと落ちる場合があります。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2263</span>
+    <a class="thread-title" href="2263.html#2263">wineで使うと落ちる場合があります。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2264</span>
+    <a class="thread-title" href="2263.html#2264">Re:wineで使うと落ちる場合があります。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2302</span>
+    <a class="thread-title" href="2263.html#2302">Re2:wineで使うと落ちる場合があります。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2263>
+    <span class="no">[2263]</span>
+    <a class="thread-title" href="#2263">wineで使うと落ちる場合があります。</a>
+    <span class="author">teru</span>
+    <time datetime="2015-04-10T23:17:24">2015年04月10日 23:17</time></h1>
+    <div class="body">/* 間違って一般の方に投稿していたので、投稿しなおしました。すみません。 */<br><br>OS: Debian + wine 1.7.40<br>ver: 2.2.0.1<br>現象：タブを表示する設定にした状態でファイルを開き、<br>内容を編集するとサクラエディタが落ちます。<br>原因：sakura_core/window/CTabWnd.cpp で、 TabCtrl_GetItem に渡す<br> TCITEM 構造体のメンバを適切に指定していないためと思われます。<br><br>自分でMingGWでビルドしたら(適用前でも)再現しなかったので確認できてませんが、<br>コードが足りてないのは確かなので、パッチを置いておきます。<br>Index: sakura_core/window/CTabWnd.cpp<br>===================================================================<br>--- sakura_core/window/CTabWnd.cpp      (revision 4017)<br>+++ sakura_core/window/CTabWnd.cpp      (working copy)<br>@@ -1831,6 +1831,7 @@<br>                        tcitem.mask    = TCIF_TEXT | TCIF_IMAGE;<br>                        TCHAR   szNameOld[1024];<br>                        tcitem.pszText = szNameOld;<br>+                       tcitem.cchTextMax = _countof(szNameOld);<br>                        TabCtrl_GetItem( m_hwndTab, nIndex, &amp;tcitem );<br>                        if( 0 != auto_strcmp( szNameOld, szName )<br>                                || tcitem.iImage != GetImageIndex( p ) ){<br></div></section>
+    <ul><li><section><h1 id=2264>
+    <span class="no">[2264]</span>
+    <a class="thread-title" href="#2264">Re:wineで使うと落ちる場合があります。</a>
+    <span class="author">ds14050</span>
+    <time datetime="2015-04-13T01:25:03">2015年04月13日 01:25</time></h1>
+    <div class="body">▼ teruさん<br>パッチ提供ありがとうございます。&lt;(_ _)&gt;<br><br>F1ヘルプによりますと<br>&gt; cchTextMax<br>&gt;   Size in TCHARs of the buffer pointed to by the pszText member. If the structure is not receiving information, this member is ignored. <br>1.バイト数ではなくTCHARで数えた文字数をセットすること<br>2.情報を受け取るので *なければ* 無視される<br>と書いてありました。否定文で注意書きを書くなって言いたくなりますね。<br><br>TCITEMで GREPしたところ、TCIF_TEXTをセットして Getしているのは<br>指摘された１か所だけでした。コミットはこちらです。<br><br> http://sourceforge.net/p/sakura-editor/code/4018/<br><br>WINEでテストはできていませんが、ブレークポイントをセットして<br>問題なく処理が通過していくのを確認しています。<br></div></section>
+    <ul><li><section><h1 id=2302>
+    <span class="no">[2302]</span>
+    <a class="thread-title" href="#2302">Re2:wineで使うと落ちる場合があります。</a>
+    <span class="author">teru</span>
+    <time datetime="2015-10-13T22:51:58">2015年10月13日 22:51</time></h1>
+    <div class="body">ver 2.3.0.0 で直っていることを確認しました。<br>ご対応ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

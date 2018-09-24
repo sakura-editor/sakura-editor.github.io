@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>矩形選択状態 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7685</span>
+    <a class="thread-title" href="7685.html#7685">矩形選択状態</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7686</span>
+    <a class="thread-title" href="7685.html#7686">Re:矩形選択状態</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7687</span>
+    <a class="thread-title" href="7685.html#7687">Re2:矩形選択状態</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7688</span>
+    <a class="thread-title" href="7685.html#7688">Re3:矩形選択状態</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7689</span>
+    <a class="thread-title" href="7685.html#7689">Re4:矩形選択状態</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7690</span>
+    <a class="thread-title" href="7685.html#7690">Re5:矩形選択状態</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7685>
+    <span class="no">[7685]</span>
+    <a class="thread-title" href="#7685">矩形選択状態</a>
+    <span class="author">tn</span>
+    <time datetime="2013-07-03T13:13:54">2013年07月03日 13:13</time></h1>
+    <div class="body">複数行のテキストの真ん中あたりで<br>「Alt+↓」「↓」「↓」と打つと，<br>ステータスバーに「0 Columns * 3 lines selected」<br>と表示され，幅0 の矩形選択状態になって，<br>その後の文字入力内容が複数行に同時に行われます．<br>この機能が便利で気に入っています．<br><br>しかし矩形選択状態で「Spaceキー」「Tabキー」を操作すると<br>SpaceやTabが挿入されず，テキスト右端までの矩形選択状態<br>に変わってしまい，例えば「74 Columns * 3 lines selected」<br>などと表示されます．<br><br>その後のSpaceやTabは複数行に同時に挿入されるので，<br>実使用に支障があるわけではないのですが，<br>右端までの矩形選択状態は解除されません．<br>できれば幅0を保持できないでしょうか．<br>御検討をよろしく御願い致します．<br></div></section>
+    <ul><li><section><h1 id=7686>
+    <span class="no">[7686]</span>
+    <a class="thread-title" href="#7686">Re:矩形選択状態</a>
+    <span class="author">ds14050</span>
+    <time datetime="2013-07-04T00:13:56">2013年07月04日 00:13</time></h1>
+    <div class="body">ソースコードにこういうコメントがあり、何らかの意図で行われています。<br><br>  /* SPACEorTABインンデントで矩形選択桁がゼロの時は選択範囲を最大にする */<br><br>ある不具合の修正プラスこの選択範囲拡大操作を取り除いた結果の不都合<br>の顛末が一応ここにあります。<br>&lt;<a href=http://vvvvvv.sakura.ne.jp/ds14050/diary/20091105.html#p02&gt; target=_top><nobr>http://<wbr>vvvvvv.<wbr>sakura.<wbr>ne.<wbr>jp/<wbr>ds14050/<wbr>diary/<wbr>20091105<wbr>.<wbr>html#<wbr>p02&gt;<wbr></nobr></a><br>要約すると、とんでもなく面倒なことが起こり、なんとか八方丸くおさま<br>る結果が得られるようになったが、選択範囲が勝手に最大化されることは<br>解決すべき問題ではなかったので従来通りの挙動が保存されました。この<br>経過により以前よりは幅0を維持するのが簡単になったのが慰めです。<br><br>自分も tnさんのリクエストに一票を投じますが、変更に至る道筋は見えていません。<br><br>### 2.0.8.0より矩形選択移動コマンドが追加されていますので<br>### 既存ユーザーはキー割り当てを自分で行う必要があると思いますが<br>### Altキーを放す必要はなくなりました。<br></div></section>
+    <ul><li><section><h1 id=7687>
+    <span class="no">[7687]</span>
+    <a class="thread-title" href="#7687">Re2:矩形選択状態</a>
+    <span class="author">もか</span>
+    <time datetime="2013-07-04T06:17:03">2013年07月04日 06:17</time></h1>
+    <div class="body">その日記の範囲はコミット済みで、あとは幅を広げる部分をコメントアウトするだけじゃないんですか？<br>よく分かっていないんですが「ここを残せば選択幅1のSPACEインデントで全角文字を揃える機能(2)が追加される」が<br>機能していないような気がします。<br><br>とりあえず、桁揃え機能を使わない人でソフトTab以外はこれで代用できる？<br>if( 2 == Editor.IsTextSelected() ){<br>&#9;Editor.Char( 0x20 );<br>}else{<br>&#9;Editor.IndentSpace();<br>}<br>Tabの場合は9, IndentTabで。<br></div></section>
+    <ul><li><section><h1 id=7688>
+    <span class="no">[7688]</span>
+    <a class="thread-title" href="#7688">Re3:矩形選択状態</a>
+    <span class="author">ds14050</span>
+    <time datetime="2013-07-05T00:36:15">2013年07月05日 00:36</time></h1>
+    <div class="body">&gt;あとは幅を広げる部分をコメントアウトするだけ<br><br>幅0であることに依存していた部分が取り除かれているので<br>その後のコミットが影響していないか確認は必要でしょうが<br>その通りです。<br>誰が何を根拠にその決定をするのでしょう？ということです。<br><br>&gt;「ここを残せば選択幅1のSPACEインデントで全角文字を揃え<br>&gt;る機能(2)が追加される」が機能していないような気がします。<br><br>2.0.7.1で機能してますよ。幅0ではなく幅1(半角1文字分)です。</div></section>
+    <ul><li><section><h1 id=7689>
+    <span class="no">[7689]</span>
+    <a class="thread-title" href="#7689">Re4:矩形選択状態</a>
+    <span class="author">もか</span>
+    <time datetime="2013-07-05T08:12:00">2013年07月05日 08:12</time></h1>
+    <div class="body">&gt;&gt;「ここを残せば選択幅1のSPACEインデントで全角文字を揃え<br>&gt;&gt;る機能(2)が追加される」が機能していないような気がします。<br>&gt;<br>&gt;2.0.7.1で機能してますよ。幅0ではなく幅1(半角1文字分)です。<br><br>日本語<br>1漢字<br>2ひらがな<br><br>とあったら、「日」の左から「2」の右側まで選択してSPACEインデントしても、<br>普通に3行ともにスペースが挿入されるけど、期待した動作は「日本語」の行だけ挿入されない<br>ということですよね？(全然違う？)<br></div></section>
+    <ul><li><section><h1 id=7690>
+    <span class="no">[7690]</span>
+    <a class="thread-title" href="#7690">Re5:矩形選択状態</a>
+    <span class="author">もか</span>
+    <time datetime="2013-07-05T09:03:25">2013年07月05日 09:03</time></h1>
+    <div class="body">コードをちゃんと読んでやっとわかりました。<br>「日」の右側から「ひ」の右側みたいな選択をすると揃えてくれました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

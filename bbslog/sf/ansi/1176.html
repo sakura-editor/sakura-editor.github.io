@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ブックマークを指定条件で一気に付けたり復元させたり | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1176</span>
+    <a class="thread-title" href="1176.html#1176">ブックマークを指定条件で一気に付けたり復元させたり</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1177</span>
+    <a class="thread-title" href="1176.html#1177">Re:ブックマークを指定条件で一気に付けたり復元させたり</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1179</span>
+    <a class="thread-title" href="1176.html#1179">Re:ブックマークを指定条件で一気に付けたり復元させたり</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1180</span>
+    <a class="thread-title" href="1176.html#1180">Re:ブックマークを指定条件で一気に付けたり復元させたり</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1181</span>
+    <a class="thread-title" href="1176.html#1181">Re:ブックマークを指定条件で一気に付けたり復元させたり</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1176>
+    <span class="no">[1176]</span>
+    <a class="thread-title" href="#1176">ブックマークを指定条件で一気に付けたり復元させたり</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-16T19:46:38">2002年01月16日 19:46</time></h1>
+    <div class="body">ブックマークを指定条件で一気に付けたり復元させたりする機能を<br>ssrc_2002-01-14_plus1.lzh で実装してみました。<br><br>思い付くままコーディングしてしまいましたので、<br>変なところが多々有ると思います・・・適当に修正していただけるとうれしいです。<br><br>&gt; ファイルを開いたときに自動でブックマークを設定してくると便利だと思ったりします。<br><br>開いたときに自動でブックマークを設定・・・については、とりあえず何もしてません。<br>外部マクロで一気に設定できて、それが復元できれば充分かな、とゆう気がするのですが・・・<br><br>&gt; あと、正規表現は複数指定できる方がいいです。<br>BookmarkPattern("^function")<br>BookmarkPattern("^sub")<br><br>をいれた外部マクロを実行すると行頭がfunctionとsubで始まる行にマークがつきます。</div></section>
+    <ul><li><section><h1 id=1177>
+    <span class="no">[1177]</span>
+    <a class="thread-title" href="#1177">Re:ブックマークを指定条件で一気に付けたり復元させたり</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-16T20:30:30">2002年01月16日 20:30</time></h1>
+    <div class="body">▼ horさん<br>&gt; ブックマークを指定条件で一気に付けたり復元させたりする機能を<br>&gt; ssrc_2002-01-14_plus1.lzh で実装してみました。<br><br>これに対して、右ヘルプの修正をしました。<br>＃.rc, .hm ファイルのみで、<br>＃内容は各コントロールのヘルプＩＤをチェックしただけ<br></div></section>
+    </li><li><section><h1 id=1179>
+    <span class="no">[1179]</span>
+    <a class="thread-title" href="#1179">Re:ブックマークを指定条件で一気に付けたり復元させたり</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-16T21:42:06">2002年01月16日 21:42</time></h1>
+    <div class="body">&gt; BookmarkPattern("^function")<br>&gt; BookmarkPattern("^sub")<br>&gt;  をいれた外部マクロを実行すると行頭がfunctionとsubで始まる行にマークがつきます。<br><br>↑間違えました・・・↓がほんとです。<br><br>BookmarkPattern("/^function/")<br>BookmarkPattern("/^sub/")<br><br>あと、CSMacroMgr.cpp の変更が漏れてました・・・申し訳ありません・・・<br>お手数ですが、２個所ある case F_FILEOPEN: の後に、case F_BOOKMARK_PATTERN: の挿入をお願いします。<br>　　　　　　　~~~~~~</div></section>
+    <ul><li><section><h1 id=1180>
+    <span class="no">[1180]</span>
+    <a class="thread-title" href="#1180">Re:ブックマークを指定条件で一気に付けたり復元させたり</a>
+    <span class="author">みく</span>
+    <time datetime="2002-01-16T23:07:47">2002年01月16日 23:07</time></h1>
+    <div class="body"><br>&gt;&gt;1179<br>&gt;あと、CSMacroMgr.cpp の変更が漏れてました・・・申し訳ありません・・・<br>&gt;お手数ですが、２個所ある case F_FILEOPEN: の後に、case F_BOOKMARK_PATTERN: の挿入をお願いします。<br>&gt;　　　　　　　~~~~~~<br><br>&gt;&gt;1178<br>&gt;一応、1/14版 CEditDoc_new.cpp の、912～914行と、926～929行をコメントアウトすることで<br>&gt;空白行を含むリストが表示されるようになります。<br><br>&gt;&gt;1177<br>&gt;右ヘルプの修正をしました。<br><br>を 20020114plus.zip としてアップしました。<br></div></section>
+    <ul><li><section><h1 id=1181>
+    <span class="no">[1181]</span>
+    <a class="thread-title" href="#1181">Re:ブックマークを指定条件で一気に付けたり復元させたり</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-17T00:44:37">2002年01月17日 00:44</time></h1>
+    <div class="body">&gt;一応、1/14版 CEditDoc_new.cpp の、912～914行と、926～929行をコメントアウトすることで<br>&gt;空白行を含むリストが表示されるようになります。<br>後でわかるようにコメントを入れておきましょう．<br><br>        // Jan, 16, 2001 hor<br>        //  このコメントを外すと，空行がマーク対象外になる<br>        //if( nLineLen&lt;=nNewLineLen &amp;&amp; nLineCount&lt; nLineLast ){<br>        //  continue;<br>        //}<br><br><br>        // Jan, 16, 2001 hor<br>        //  このコメントを外すと，スペースのみの行がマーク対象外になる<br>        //if(( i &gt;= nLineLen-nNewLineLen &amp;&amp; nLineCount&lt; nLineLast )||<br>        //   ( i &gt;= nLineLen )) {<br>        //  continue;<br>        //}<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

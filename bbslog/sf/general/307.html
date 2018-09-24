@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>[バグ?]英文テキストがUTF-7で | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">307</span>
+    <a class="thread-title" href="307.html#307">[バグ?]英文テキストがUTF-7で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">313</span>
+    <a class="thread-title" href="307.html#313">Re: [バグ?]英文テキストがUTF-7で</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">314</span>
+    <a class="thread-title" href="307.html#314">Re2: [バグ?]英文テキストがUTF-7で</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=307>
+    <span class="no">[307]</span>
+    <a class="thread-title" href="#307">[バグ?]英文テキストがUTF-7で</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-04-01T19:40:26">2001年04月01日 19:40</time></h1>
+    <div class="body">日本語のないテキストでTeXコマンドが入っているファイル、要するに.texですが、これがUTF-7で読み込まれることがある。<br>だいたいはSJISで読み込まれて、それで問題ないのだが、UTF-7として読み込まれたことを知らずに保存すると、TeXの下付き添え時x_+などがx_+-となってえらい迷惑する。<br>というよりも、マイナスがミスタイプで消えたと思って打ち直したら、プレビューで-がダブって「？」となる、というのが実際。<br>正確にはx_+-xのように+-があるときのよう。これはFAQにある現象である。FAQにはSJISで読み込み直すとあるが、一々UTF-7で読み込まれたことをチェックするのも面倒な話。<br>それに読み直しても履歴が消えるとまたUTF-7と誤認するし、根本的解決になってない。<br>普通の英文はSJISとなるのに、なぜUTF-7と判断してしまうのか？何とかSJISで読み込まれるようにならんものだろうか？あるいは要望にある様に(これはたけ氏の要望を私が記載した)<br>UTF-7を使わないユーザは誤判読しないために自動判別対象から外せるようになればいいのだが。。。<br>そもそもUTF-7、8がようわからん。たけ氏もヘルプに「たぶん日本語しか処理できません。よく知りません。」とあるが。。。実装が不完全？</div></section>
+    <ul><li><section><h1 id=313>
+    <span class="no">[313]</span>
+    <a class="thread-title" href="#313">Re: [バグ?]英文テキストがUTF-7で</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-04-02T08:57:36">2001年04月02日 08:57</time></h1>
+    <div class="body">▼じぇぷろ<br>&gt;x_+-x<br>添え字に+という記号を使うんですか。<br><br>&gt;普通の英文はSJISとなるのに、なぜUTF-7と判断してしまうのか？<br>というか、判定できない＝SJISとなっているだけでは？<br><br>やっていることは各文字コードに特有の文字を数えて、一番それらしいものを選んでいるだけです。ふつうのアルファベットはどのコードからもカウント対象外なので、漢字がない＝漢字コードカウント0で1文字でもUTF-7の文字があるとUTF-7に1票入ってしまうので誤認されます。<br><br><br>&gt; 何とかSJISで読み込まれるようにならんものだろうか？<br>+→+-の変換をUTF-7のポイント対象外とします。一応うまく動いているようです。<br></div></section>
+    <ul><li><section><h1 id=314>
+    <span class="no">[314]</span>
+    <a class="thread-title" href="#314">Re2: [バグ?]英文テキストがUTF-7で</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-04-02T12:38:28">2001年04月02日 12:38</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼じぇぷろ<br>&gt; &gt;x_+-x<br>&gt; 添え字に+という記号を使うんですか。<br>よく使います。式が煩雑にならないよう、$x_{k+1}-x_k$を簡潔に表現したい場合添え字kを省略し、+1のほうだけ+で表します。 <br><br>&gt; &gt;普通の英文はSJISとなるのに、なぜUTF-7と判断してしまうのか？<br>&gt; というか、判定できない＝SJISとなっているだけでは？<br>判定しなくていいいんです、orできなくしてくれればいいんです。(^_^;)<br>これで思いついたけど、「自動判別しない」=例えば「自分はSJISオンリーだ！」という設定にできてもいいですね。(メモ帳みたい(^^ゞ)<br>たまにEUCで文字化けしたときだけ読み直せばいい。もっともこれは判別対象を選択できて、そのうちSJISにしかチェックしなければ、結果的に固定となるから、やっぱり「自動判別の選択」があればいいということになるかな。<br><br>&gt; &gt; 何とかSJISで読み込まれるようにならんものだろうか？<br>&gt; +→+-の変換をUTF-7のポイント対象外とします。一応うまく動いているようです。<br>そうしていただくとありがたいですね。TeXのinputでファイルを複数読み込んでいる時、あるファイルはSJISで、あるファイルはUTF-7で読み込まれている状態では作業効率が悪いんです。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現キーワードでの後方一致検索 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5756</span>
+    <a class="thread-title" href="5756.html#5756">正規表現キーワードでの後方一致検索</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5758</span>
+    <a class="thread-title" href="5756.html#5758">RE: 正規表現キーワードでの後方一致検索</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5759</span>
+    <a class="thread-title" href="5756.html#5759">Re2: 正規表現キーワードでの後方一致検索</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5756>
+    <span class="no">[5756]</span>
+    <a class="thread-title" href="#5756">正規表現キーワードでの後方一致検索</a>
+    <span class="author">りう</span>
+    <time datetime="2007-01-20T20:03:08">2007年01月20日 20:03</time></h1>
+    <div class="body">正規表現キーワードで<br>\section{abc}　や \subsection{abc} というテキストの<br>abc のみをハイライトさせることは可能でしょうか？<br><br>/\\\w*section\{[^\}]+\}/k<br>の [^\}]+ に該当する部分です。<br><br>bregexp.dll には前方一致検索の (?=...) はあるので<br><br>/\\\w*section(?=\{[^\}]+\})/k<br><br>として上記の場合の \section や \subsectionだけをハイライトすることはできますが、<br>後方一致検索の (?&lt;=...) がない？らしく<br><br>/(?&lt;=\\\w*section\{)[^\}]+(?=\})/k<br><br>が、不正な正規表現としてエラーになります。<br>やりたいことは上の正規表現のマッチです。<br>ぜひアドバイスをお願いします。<br><br>Perl の正規表現の後方一致<br><a href=http://www.rfs.jp/sb/perl/02/09.html target=_top><nobr>http://<wbr>www.<wbr>rfs.<wbr>jp/<wbr>sb/<wbr>perl/<wbr>02/<wbr>09.<wbr>html</nobr></a></div></section>
+    <ul><li><section><h1 id=5758>
+    <span class="no">[5758]</span>
+    <a class="thread-title" href="#5758">RE: 正規表現キーワードでの後方一致検索</a>
+    <span class="author">すい</span>
+    <time datetime="2007-01-20T23:47:44">2007年01月20日 23:47</time></h1>
+    <div class="body">正規表現は Bregexp.dll というファイルによって提供されている機能です。<br><br>先読み (?=xxx) ならサクラエディタ用の Bregexp.dll<br>(Bregexp.dll V1.02 for SAKURA) でも動作しますが、<br>逆の戻り読み(後読み) (?&lt;=xxx) はサポートされていません。<br><br>で、http://webs.to/ken/ (K.Takata's software ) で配布されている<br>bregonig.dll Ver.1.20 なら戻り読みもサポートされています。<br># ↑これを Bregexp.dll に改名してサクラエディタの Bregexp.dll と入れ替える。<br><br>ただ、戻り読み (?&lt;=xxx) の xxx の中に * を含める事ができないので、<br><br>(?&lt;=\\\w*section\{)[^\}]+(?=\})<br><br>という表現は使用できませんねぇ。\w* を削除した<br><br>(?&lt;=\\section\{)[^\}]+(?=\})<br><br>なら動作しますけど。<br><br>っていうか、普通、戻り読みって固定長の正規表現しか受け付けないんですけど．．．<br>他のツールではどうだか知りませんが、少なくとも perl では無理。<br>戻り読みの中に * なんて使えるわけが．．．<br><br>戻り読み内に * が使えないのも bregonig.dll Ver.1.20 で使用されている<br>正規表現エンジン鬼車の仕様のようですし。<br></div></section>
+    <ul><li><section><h1 id=5759>
+    <span class="no">[5759]</span>
+    <a class="thread-title" href="#5759">Re2: 正規表現キーワードでの後方一致検索</a>
+    <span class="author">りう</span>
+    <time datetime="2007-01-21T01:18:12">2007年01月21日 01:18</time></h1>
+    <div class="body">▼ すいさん<br><br>戻り読み内が固定長だったとは知りませんでした…。<br><br>bregoing.dll を入れて<br>* は使わない書き方でやりたいことが無事実現できました。<br><br>ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

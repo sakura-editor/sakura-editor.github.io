@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>パッケージ作りました | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2059</span>
+    <a class="thread-title" href="2059.html#2059">パッケージ作りました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2062</span>
+    <a class="thread-title" href="2059.html#2062">RE: パッケージ作りました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2066</span>
+    <a class="thread-title" href="2059.html#2066">RE2: パッケージ作りました</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2069</span>
+    <a class="thread-title" href="2059.html#2069">Re: パッケージ作りました</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2059>
+    <span class="no">[2059]</span>
+    <a class="thread-title" href="#2059">パッケージ作りました</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-06-27T02:20:42">2002年06月27日 02:20</time></h1>
+    <div class="body"><a href=http://members.tripod.co.jp/sakura_editor/package/sinst_B020624_H020419.exe target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>package/<wbr>sinst_B0<wbr>20624_H0<wbr>20419.<wbr>exe</nobr></a><br></div></section>
+    <ul><li><section><h1 id=2062>
+    <span class="no">[2062]</span>
+    <a class="thread-title" href="#2062">RE: パッケージ作りました</a>
+    <span class="author">すい</span>
+    <time datetime="2002-06-27T20:59:37">2002年06月27日 20:59</time></h1>
+    <div class="body"><br>しまった。もうパッケージ出来ちゃってたんですか。(汗)<br>パッケージ内容物の希望が。(^^;<br><br>あ、キーボードマクロが全く使えない版（エラーが出る）のままだ。(泣)<br># 下の 猫美さん の書き込みの内容。<br><br>キーマクロの記録開始 → [End](行末へ) → キーマクロの実行　　でエラーが出ます。<br><br>同様に [BackSpace] [Delete] [↑] [↓] [←] [→] [Tab] [　　](スペース) も駄目です。<br><br>エラーになる物<br>S_GoLineEnd(0);&#9;// 行末に移動(折り返し単位)<br>S_DeleteBack(0);&#9;// カーソル前を削除<br>S_Delete(0);&#9;// 削除<br>S_Up(0);&#9;// カーソル上移動<br>S_Down(0);&#9;// カーソル下移動<br>S_Left(0);&#9;// カーソル左移動<br>S_Right(0);&#9;// カーソル右移動<br>S_IndentTab(0);&#9;// TABインデント<br>S_IndentSpace(0);&#9;// SPACEインデント<br><br>通常の文字入力は可能のようです。[Home] S_GoLineTop(0) も平気みたい。<br><br>他、試してみた範囲では<br>・範囲選択開始 S_BeginSelect はダメ。<br>・矩形範囲選択開始 S_BeginBoxSelect はダメ。<br>・コピー S_Copy ダメ。<br>・貼り付け S_Paste ダメ。<br>・切り取り S_Cut ダメ。<br><br>動作しない機能がかなり多いみたいです。<br><br><br>あと、追加です。<br>キーマクロの記録開始 → (何もせずに)キーマクロの記録終了<br>で、「マクロファイルを作成できませんでした。」というエラーが出ます。<br></div></section>
+    <ul><li><section><h1 id=2066>
+    <span class="no">[2066]</span>
+    <a class="thread-title" href="#2066">RE2: パッケージ作りました</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-06-27T23:06:35">2002年06月27日 23:06</time></h1>
+    <div class="body">&gt;あ、キーボードマクロが全く使えない版（エラーが出る）のままだ。(泣)<br>&gt;# 下の 猫美さん の書き込みの内容。<br>ああ，見落としてました．<br>けど出しちゃった物はしょうがない．<br><br>今回引数を厳密に解釈するようにしたのですが，記録側があまり厳密じゃなかったのね．<br>よけいな引数は無視する仕様の方がいいでしょうか．<br><br>昔のサクラエディタ(2002年2月より前)にこんな余分な引数付いていましたっけ？<br><br>&gt;あと、追加です。<br>&gt;キーマクロの記録開始 → (何もせずに)キーマクロの記録終了<br>&gt;で、「マクロファイルを作成できませんでした。」というエラーが出ます。<br>調べてみます．<br></div></section>
+    </li></ul></li><li><section><h1 id=2069>
+    <span class="no">[2069]</span>
+    <a class="thread-title" href="#2069">Re: パッケージ作りました</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-06-28T09:52:44">2002年06月28日 09:52</time></h1>
+    <div class="body">以下の件を修正しましたので，近日中に再パッケージ予定です．<br>- キーバインドのエクスポートでアプリケーションエラー<br>- キーボードマクロが全く使えない．→余分な引数を単に無視するように．<br>- キーマクロの記録開始 → (何もせずに)キーマクロの記録終了で、「マクロファイルを作成できませんでした。」というエラーが出る．→メッセージが出ないように．<br></div></section>
+    </li></ul></li></ul></body></html>

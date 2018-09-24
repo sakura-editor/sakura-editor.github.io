@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CShareDataをSingleton | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1040</span>
+    <a class="thread-title" href="1040.html#1040">CShareDataをSingleton</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1041</span>
+    <a class="thread-title" href="1040.html#1041">Re:CShareDataをSingleton</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1110</span>
+    <a class="thread-title" href="1040.html#1110">Re2:CShareDataをSingleton</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1111</span>
+    <a class="thread-title" href="1040.html#1111">Re3:CShareDataをSingleton</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1350</span>
+    <a class="thread-title" href="1040.html#1350">Re4:CShareDataをSingleton</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1352</span>
+    <a class="thread-title" href="1040.html#1352">Re5:CShareDataをSingleton</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1356</span>
+    <a class="thread-title" href="1040.html#1356">ウィンドウ分割</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1043</span>
+    <a class="thread-title" href="1040.html#1043">Re:CShareDataをSingleton</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1044</span>
+    <a class="thread-title" href="1040.html#1044">Re2:CShareDataをSingleton</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1054</span>
+    <a class="thread-title" href="1040.html#1054">Re3:CShareDataをSingleton</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1067</span>
+    <a class="thread-title" href="1040.html#1067">Re4:CShareDataをSingleton</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1070</span>
+    <a class="thread-title" href="1040.html#1070">Re5:CShareDataをSingleton</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1071</span>
+    <a class="thread-title" href="1040.html#1071">Re6:CShareDataをSingleton</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1040>
+    <span class="no">[1040]</span>
+    <a class="thread-title" href="#1040">CShareDataをSingleton</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-29T00:04:42">2001年12月29日 00:04</time></h1>
+    <div class="body">やざき＠Singleton好きです。<br><br>CShareDataをSingletonにすると、<br>使用メモリが600KBくらい減りますけど、<br>取り込みますか？ &gt; all</div></section>
+    <ul><li><section><h1 id=1041>
+    <span class="no">[1041]</span>
+    <a class="thread-title" href="#1041">Re:CShareDataをSingleton</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-29T00:08:42">2001年12月29日 00:08</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; やざき＠Singleton好きです。<br>&gt; <br>&gt; CShareDataをSingletonにすると、<br>&gt; 使用メモリが600KBくらい減りますけど、<br>&gt; 取り込みますか？ &gt; all<br><br>600KBは、編集ウィンドウのほう。タスクトレイのほうは<br>それほどかわらずです。<br><br><br>Singletonは、下のようなstaticなメンバ関数を作って、<br>必要なところでは、<br>CShareData* pcShareData = CShareData::getInstance();<br>とします。<br><br>CShareData* CShareData::getInstance()<br>{<br>&#9;if (_instance){<br>&#9;&#9;return _instance;<br>&#9;}<br>&#9;_instance = new CShareData;<br>&#9;if( !_instance-&gt;Init() ){<br>&#9;&#9;//&#9;適切なデータを得られなかった<br>&#9;&#9;return NULL;<br>&#9;}<br>&#9;return _instance;<br>}<br><br>で、コンストラクタと、デストラクタをprotectedにし、<br>好き勝手にnewしたり、CShareData cShareData;などと<br>できないようにします。<br><br>そもそもは、CShareDataのm_tbMyButtonがいろんなところで<br>領域確保されてるのが無駄だと思ったので、上記のようなことを<br>してみたのです。<br><br>コメント歓迎です。</div></section>
+    <ul><li><section><h1 id=1110>
+    <span class="no">[1110]</span>
+    <a class="thread-title" href="#1110">Re2:CShareDataをSingleton</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-01-08T23:07:29">2002年01月08日 23:07</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ▼ やざきさん<br>&gt; &gt; やざき＠Singleton好きです。<br>&gt; &gt; <br>&gt; &gt; CShareDataをSingletonにすると、<br>&gt; &gt; 使用メモリが600KBくらい減りますけど、<br>&gt; &gt; 取り込みますか？ &gt; all<br>&gt; <br>&gt; 600KBは、編集ウィンドウのほう。タスクトレイのほうは<br>&gt; それほどかわらずです。<br> <br>&gt; コメント歓迎です。<br>ウィンドウを一杯開くとメモリが足りなくなることが多いので使用メモリが減るのは歓迎します。<br>ところでリソース使用量はへるのでしょうか？<br></div></section>
+    <ul><li><section><h1 id=1111>
+    <span class="no">[1111]</span>
+    <a class="thread-title" href="#1111">Re3:CShareDataをSingleton</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-08T23:29:18">2002年01月08日 23:29</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; ▼ やざきさん<br>&gt; &gt; ▼ やざきさん<br>&gt; &gt; &gt; やざき＠Singleton好きです。<br>&gt; &gt; &gt; <br>&gt; &gt; &gt; CShareDataをSingletonにすると、<br>&gt; &gt; &gt; 使用メモリが600KBくらい減りますけど、<br>&gt; &gt; &gt; 取り込みますか？ &gt; all<br>&gt; &gt; <br>&gt; &gt; 600KBは、編集ウィンドウのほう。タスクトレイのほうは<br>&gt; &gt; それほどかわらずです。<br>&gt; <br>&gt; &gt; コメント歓迎です。<br>&gt; ウィンドウを一杯開くとメモリが足りなくなることが多いので使用メモリが減るのは歓迎します。<br>&gt; ところでリソース使用量はへるのでしょうか？<br><br>メモリを減らす需要はありますよねぇ。<br>いま最新のソースでは、無駄を省いて若干メモリ使用量を減らして、必要なところを付け足して若干増えて、結果、微減ってとこですかね。<br><br>CShareDataは、CEditAppや、CEditWndに生成・開放させて、そのポインタだけグローバルな変数にコピーして<br>それを使いまわすようにしたらわかりやすいかしらんと最近は思ってます。<br>命名するならg_pShareDataです。<br><br>CShareDataをダイエットしても、リソース使用量は減らないと思います。<br>残念ながら。。。<br><br>ウィンドウ4分割機能を廃止すれば、リソース使用量が減りそうな気がしますけど、どう？ &gt; all</div></section>
+    <ul><li><section><h1 id=1350>
+    <span class="no">[1350]</span>
+    <a class="thread-title" href="#1350">Re4:CShareDataをSingleton</a>
+    <span class="author">あろか</span>
+    <time datetime="2002-01-27T01:25:31">2002年01月27日 01:25</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; やざき＠Singleton好きです。<br>&gt; <br>&gt; CShareDataをSingletonにすると、<br>&gt; 使用メモリが600KBくらい減りますけど、<br>&gt; 取り込みますか？ &gt; all<br>この話ってどうなったのでしょうか？<br>現状だとあちこちのクラスでCCsareData.Init()を呼び出していて、それぞれで共有メモリを確保しているのでリソースに無駄が多いとおもうのですが。<br><br>▼ やざきさん<br>&gt; ウィンドウ4分割機能を廃止すれば、リソース使用量が減りそうな気がしますけど、どう？ &gt; all<br>４分割を停止したものを作って確認したところ、リソース消費量はエディタプロセス一つあたり3-4％食っていたのが2%にへりました。思ったほど減らないなと。<br>ウィンドウ分割機能はよく使うのでできれば残して欲しいです。</div></section>
+    <ul><li><section><h1 id=1352>
+    <span class="no">[1352]</span>
+    <a class="thread-title" href="#1352">Re5:CShareDataをSingleton</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-27T01:39:12">2002年01月27日 01:39</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; ▼ やざきさん<br>&gt; &gt; やざき＠Singleton好きです。<br>&gt; &gt; <br>&gt; &gt; CShareDataをSingletonにすると、<br>&gt; &gt; 使用メモリが600KBくらい減りますけど、<br>&gt; &gt; 取り込みますか？ &gt; all<br>&gt; この話ってどうなったのでしょうか？<br>&gt; 現状だとあちこちのクラスでCCsareData.Init()を呼び出していて、それぞれで共有メモリを確保しているのでリソースに無駄が多いとおもうのですが。<br><br>いまは手付かず。そもそもCShareDataにいなくてもいいものを取り出してお茶を濁しました。<br>horさんの指摘もありますが、CShareDataにあるべきか否かを検討しつつ、Singletonにするとか、CEditWndとCEditAppにのみCSHareDataを持たせるとか、<br>そういう工夫も考えられまする。<br><br><br>&gt; ▼ やざきさん<br>&gt; &gt; ウィンドウ4分割機能を廃止すれば、リソース使用量が減りそうな気がしますけど、どう？ &gt; all<br>&gt; ４分割を停止したものを作って確認したところ、リソース消費量はエディタプロセス一つあたり3-4％食っていたのが2%にへりました。思ったほど減らないなと。<br>&gt; ウィンドウ分割機能はよく使うのでできれば残して欲しいです。<br><br>へい。ひとまず4分割は残しておきます。<br>あたくしWindows2000を使っているのですが、そもそもリソース何%くらい減るんですか？<br>ってWindows2000でもリソースの減り具合って確認できるもの？</div></section>
+    </li><li><section><h1 id=1356>
+    <span class="no">[1356]</span>
+    <a class="thread-title" href="#1356">ウィンドウ分割</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-27T04:03:38">2002年01月27日 04:03</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; ウィンドウ分割機能はよく使うのでできれば残して欲しいです。<br>４つと決めうちじゃなくて、分割が指示されたときに動的に生成するようにするのは難しいですかね。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=1043>
+    <span class="no">[1043]</span>
+    <a class="thread-title" href="#1043">Re:CShareDataをSingleton</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-29T02:24:35">2001年12月29日 02:24</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; やざき＠Singleton好きです。<br>Singleton好きなやざきさんに質問。<br><br>C++でsingletonを作ると、デストラクタがちゃんと走らないでメモリリーク状態で終了するように思うんですが、これは私の勘違いですか？<br></div></section>
+    <ul><li><section><h1 id=1044>
+    <span class="no">[1044]</span>
+    <a class="thread-title" href="#1044">Re2:CShareDataをSingleton</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2001-12-29T05:42:39">2001年12月29日 05:42</time></h1>
+    <div class="body"><br>&gt; C++でsingletonを作ると、デストラクタがちゃんと走らないでメモリリーク状態で終了するように思うんですが、これは私の勘違いですか？<br><br>某所より転載。<br><br>CShareData* CShareData::getInstance()<br>{<br>  static CShareData instance;<br>  return instance;<br>}<br><br>で万事解決。</div></section>
+    <ul><li><section><h1 id=1054>
+    <span class="no">[1054]</span>
+    <a class="thread-title" href="#1054">Re3:CShareDataをSingleton</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-29T14:45:14">2001年12月29日 14:45</time></h1>
+    <div class="body">Singletonは、メモリリークになる問題は随所で論議されているみたいですね。<br><br>▼ 通りすがりさん<br>&gt; &gt; C++でsingletonを作ると、デストラクタがちゃんと走らないでメモリリーク状態で終了するように思うんですが、これは私の勘違いですか？<br>&gt; <br>&gt; 某所より転載。<br>&gt; <br>&gt; CShareData* CShareData::getInstance()<br>&gt; {<br>&gt;   static CShareData instance;<br>&gt;   return instance;<br>&gt; }<br>&gt; <br>&gt; で万事解決。<br><br>をを、すばらしい!!ありがとうございます。手元では取り込んでおきます。<br>CShareDataが開放されるときに一緒に開放される仕組みなんですよね？<br><br>で、本編に組み込まれるかは、開発陣の判断次第ってことで。<br></div></section>
+    <ul><li><section><h1 id=1067>
+    <span class="no">[1067]</span>
+    <a class="thread-title" href="#1067">Re4:CShareDataをSingleton</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-30T17:49:55">2001年12月30日 17:49</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; Singletonは、メモリリークになる問題は随所で論議されているみたいですね。<br>&gt; <br>&gt; ▼ 通りすがりさん<br>&gt; &gt; &gt; C++でsingletonを作ると、デストラクタがちゃんと走らないでメモリリーク状態で終了するように思うんですが、これは私の勘違いですか？<br>&gt; &gt; <br>&gt; &gt; 某所より転載。<br>&gt; &gt; <br>&gt; &gt; CShareData* CShareData::getInstance()<br>&gt; &gt; {<br>&gt; &gt;   static CShareData instance;<br>&gt; &gt;   return instance;<br>&gt; &gt; }<br>&gt; &gt; <br>&gt; &gt; で万事解決。<br>&gt; <br>&gt; をを、すばらしい!!ありがとうございます。手元では取り込んでおきます。<br>&gt; CShareDataが開放されるときに一緒に開放される仕組みなんですよね？<br>&gt; <br>&gt; で、本編に組み込まれるかは、開発陣の判断次第ってことで。<br><br>error C2248: 'CShareData::~CShareData' : protected メンバ (クラス 'CShareData' で宣言されている）にアクセスできません。<br><br>と出てしまた。くぅ。なぜ。</div></section>
+    <ul><li><section><h1 id=1070>
+    <span class="no">[1070]</span>
+    <a class="thread-title" href="#1070">Re5:CShareDataをSingleton</a>
+    <span class="author">通りすがりB</span>
+    <time datetime="2002-01-01T18:57:20">2002年01月01日 18:57</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ▼ やざきさん<br>&gt; &gt; Singletonは、メモリリークになる問題は随所で論議されているみたいですね。<br>&gt; &gt; <br>&gt; &gt; ▼ 通りすがりさん<br>&gt; &gt; &gt; &gt; C++でsingletonを作ると、デストラクタがちゃんと走らないでメモリリーク状態で終了するように思うんですが、これは私の勘違いですか？<br>&gt; &gt; &gt; <br>&gt; &gt; &gt; 某所より転載。<br>&gt; &gt; &gt; <br>&gt; &gt; &gt; CShareData* CShareData::getInstance()<br>&gt; &gt; &gt; {<br>&gt; &gt; &gt;   static CShareData instance;<br>&gt; &gt; &gt;   return instance;<br>&gt; &gt; &gt; }<br>&gt; &gt; &gt; <br>&gt; &gt; &gt; で万事解決。<br>&gt; &gt; <br>&gt; &gt; をを、すばらしい!!ありがとうございます。手元では取り込んでおきます。<br>&gt; &gt; CShareDataが開放されるときに一緒に開放される仕組みなんですよね？<br>&gt; &gt; <br>&gt; &gt; で、本編に組み込まれるかは、開発陣の判断次第ってことで。<br>&gt; <br>&gt; error C2248: 'CShareData::~CShareData' : protected メンバ (クラス 'CShareData' で宣言されている）にアクセスできません。<br>&gt; <br>&gt; と出てしまた。くぅ。なぜ。<br><br>デストラクタはPublicで良いのではないでしょうか。<br><br>666</div></section>
+    <ul><li><section><h1 id=1071>
+    <span class="no">[1071]</span>
+    <a class="thread-title" href="#1071">Re6:CShareDataをSingleton</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-02T01:11:19">2002年01月02日 01:11</time></h1>
+    <div class="body">▼ 通りすがりBさん<br>&gt; &gt; error C2248: 'CShareData::~CShareData' : protected メンバ (クラス 'CShareData' で宣言されている）にアクセスできません。<br>&gt; &gt; <br>&gt; &gt; と出てしまた。くぅ。なぜ。<br>&gt; <br>&gt; デストラクタはPublicで良いのではないでしょうか。<br><br>あら、やっぱりそういうものなんですか。<br>delete されたら困るかと思って、Publicにするのは避けてました。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

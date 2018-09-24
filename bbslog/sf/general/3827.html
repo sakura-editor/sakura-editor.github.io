@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現の置換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3827</span>
+    <a class="thread-title" href="3827.html#3827">正規表現の置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3828</span>
+    <a class="thread-title" href="3827.html#3828">Re: 正規表現の置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3829</span>
+    <a class="thread-title" href="3827.html#3829">Re2: 正規表現の置換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3830</span>
+    <a class="thread-title" href="3827.html#3830">Re3: 正規表現の置換</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3827>
+    <span class="no">[3827]</span>
+    <a class="thread-title" href="#3827">正規表現の置換</a>
+    <span class="author">fujimi</span>
+    <time datetime="2004-05-08T23:25:50">2004年05月08日 23:25</time></h1>
+    <div class="body">「1番目」「2番目」・・・となっているものを<br>「NO.1」「NO.2」というように置換したいのですが、置換後の欄にどのように入れたらいいのでしょうか。<br></div></section>
+    <ul><li><section><h1 id=3828>
+    <span class="no">[3828]</span>
+    <a class="thread-title" href="#3828">Re: 正規表現の置換</a>
+    <span class="author">もか</span>
+    <time datetime="2004-05-08T23:44:39">2004年05月08日 23:44</time></h1>
+    <div class="body">&gt;「1番目」「2番目」・・・となっているものを<br>&gt;「NO.1」「NO.2」というように置換したいのですが、置換後の欄にどのように入れたらいいのでしょうか。<br>前：「(\d+)番目」<br>後：「No.$1」<br>でどうでしょう。<br></div></section>
+    <ul><li><section><h1 id=3829>
+    <span class="no">[3829]</span>
+    <a class="thread-title" href="#3829">Re2: 正規表現の置換</a>
+    <span class="author">fujimi</span>
+    <time datetime="2004-05-09T08:59:43">2004年05月09日 08:59</time></h1>
+    <div class="body">&gt; 後：「No.$1」<br>&gt; でどうでしょう。<br><br>さっそくのレスありがとうございます。<br>これだと、「NO.」だけになって数字の部分が反映されないのです。<br>「\d」とか「\1\2」とかやっても同じでした。</div></section>
+    <ul><li><section><h1 id=3830>
+    <span class="no">[3830]</span>
+    <a class="thread-title" href="#3830">Re3: 正規表現の置換</a>
+    <span class="author">すい</span>
+    <time datetime="2004-05-09T12:53:37">2004年05月09日 12:53</time></h1>
+    <div class="body">&gt;これだと、「NO.」だけになって数字の部分が反映されないのです。<br>&gt;「\d」とか「\1\2」とかやっても同じでした。<br><br>私もやってみましたけど、ちゃんとなりますよ。<br><br>・置換前：(\d+)番目<br>・置換後：NO.$1<br><br>の置換で、「1番目、2番目、3番目」⇒「NO.1、NO.2、NO.3」と、なりますね。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

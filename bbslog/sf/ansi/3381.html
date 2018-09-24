@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マイナーなバグ修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3381</span>
+    <a class="thread-title" href="3381.html#3381">マイナーなバグ修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3383</span>
+    <a class="thread-title" href="3381.html#3383">RE: マイナーなバグ修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3384</span>
+    <a class="thread-title" href="3381.html#3384">Re:マイナーなバグ修正</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3381>
+    <span class="no">[3381]</span>
+    <a class="thread-title" href="#3381">マイナーなバグ修正</a>
+    <span class="author">もか</span>
+    <time datetime="2004-01-28T00:57:32">2004年01月28日 00:57</time></h1>
+    <div class="body">相変わらず、マイナーなバグのパッチを出します。<br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/<br>diff_040125fixs.zip<br><br>・再変換構造体を埋めるときのヌル終端が変<br>  ATOK on Win95/NT4での再変換が出来ない原因かもしれない(未確認)<br>・ファイル読み込み中などにウィンドウを閉じると、デスクトップに線が作画される<br>・CDocLineMgrのメモリーリーク<br>・外部コマンド実行の標準出力を取得するとき、CRとLFが分割されることがある<br>なお、CProfileは無関係の個所です。<br></div></section>
+    <ul><li><section><h1 id=3383>
+    <span class="no">[3383]</span>
+    <a class="thread-title" href="#3383">RE: マイナーなバグ修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-01-28T03:03:19">2004年01月28日 03:03</time></h1>
+    <div class="body">&gt;・CDocLineMgrのメモリーリーク<br>よく見つけましたね．日付が10月になってますが．^^;<br><br>&gt;・外部コマンド実行の標準出力を取得するとき、CRとLFが分割されることがある<br>末尾が\r\nのときに逆に分割されてしまうような気がしますが．改行コードは単純に1バイトなのでその直前の<br>for( j=0; j&lt;(int)read_cnt/*-1*/; j++ ) {<br>&#9;if( IsKanji1(work[j]) ) {<br>&#9;&#9;j++;<br>&#9;}<br>}<br>を抜けたときはj==read_cntですよね．<br></div></section>
+    <ul><li><section><h1 id=3384>
+    <span class="no">[3384]</span>
+    <a class="thread-title" href="#3384">Re:マイナーなバグ修正</a>
+    <span class="author">もか</span>
+    <time datetime="2004-01-28T15:23:53">2004年01月28日 15:23</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 日付が10月になってますが．^^;<br>Unicode版のために書き換えていたとき発見しました。<br>他の変更に埋もれてしまってたのを今ごろ発掘。<br>&gt;  末尾が\r\nのときに逆に分割されてしまうような気がしますが．<br>をを、鋭い。両方考慮しないとだめってことですね。<br>for( j=0; j&lt;(int)read_cnt - 1; j++ ) {<br>&#9;if( IsKanji1(work[j]) ) {<br>&#9;&#9;j++;<br>&#9;}if( work[j] == '\r' &amp;&amp; work[j+1] == '\n' ) {<br>&#9;&#9;j++;<br>&#9;} else if( work[j] == '\n' &amp;&amp; work[j+1] == '\r' ) {<br>&#9;&#9;j++;<br>&#9;}<br>}<br>if( j == read_cnt - 1 ){<br>&#9;if( IsKanji1(work[j]) ) {<br>&#9;&#9;j = read_cnt + 1; // ぴったり出力できないことを主張<br>&#9;}else if( work[j] == '\r' || work[j] == '\n' ) {<br>&#9;&#9;// CRLF,LFCRの一部ではない改行が末尾にある<br>&#9;&#9;// 次の読み込みで、CRLF,LFCRの一部になる可能性がある<br>&#9;&#9;j = read_cnt + 1;<br>&#9;}else{<br>&#9;&#9;j = read_cnt;<br>&#9;}<br>}<br>if( j == (int)read_cnt ){ // ぴったり出力できる場合<br><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

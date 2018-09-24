@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>TortoiseSVN 1.5 との併用で発生する問題と対策 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5288</span>
+    <a class="thread-title" href="5288.html#5288">TortoiseSVN 1.5 との併用で発生する問題と対策</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=5288>
+    <span class="no">[5288]</span>
+    <a class="thread-title" href="#5288">TortoiseSVN 1.5 との併用で発生する問題と対策</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-04-19T14:55:56">2008年04月19日 14:55</time></h1>
+    <div class="body">TortoiseSVN 1.5.0-beta1 を Vista 環境で使ってみたら sakura で次のような問題が起きました。<br><br>1. [同名のC/C++ヘッダ(ソース)を開く]でオープンに成功しても「オープンに失敗」のエラーが表示される<br><br>これは、<br>    [v][タブバーを表示する]<br>    [v][アイコン表示]<br>の設定で起きます。<br><br>2. タブバーのタブが１個だけのとき[タブを閉じる]で「エディタ間の対話に失敗」のエラーが表示される<br><br>これは、<br>    [v][タブバーを表示する]<br>    [v][ウィンドウをまとめてグループ化する]<br>    [v][最後のファイルを閉じたとき(無題)文書を残す]<br>    [v][アイコン表示]<br>の設定で起きます。<br><br>その他にも問題があるかもしれません。<br><br>子プロセスで sakura を起動する際の WaitForInputIdle が、子プロセスが SHGetFileInfo を実行した瞬間に終了してしまうため、こういう現象が起きています。<br>TSVN 側の問題ではないか？と TSVN のメーリングリストに現象報告して調査してもらったところ、どうやら Windows COM 同期機構が WaitForInputIdle を終わらせてしまっている（別スレッドでアイドリング状態になる？）らしく、TSVN のシェル拡張側としては対策方法が無い、とのこと。<br>COM 間同期の駆動条件は個別の COM 関数では判別／回避できそうにないので、これはどうしようもないのかな～、と思います。同じ TSVN でも Vista でのみ起きるというのは、Vista で Shell API 実装が STA から MTA に変更されたから、ということかしら？<br><br>いずれにせよ、WaitForInputIdle は COM が絡むと意図どおりには動作しなくなる可能性がありそうなので sakura 側での対策パッチを作成しました。<br>＃WaitForInputIdleがプロセスではなくスレッド指定できれば簡単に回避できるんですけどねぇ～ (^^;<br><br>Patches#1946334<br>「TortoiseSVN 1.5 との併用で発生する問題と対策」<br><br>（参考）<br><a href=http://www.nabble.com/TSVN-harms-WaitForInputIdle-function-td target=_top><nobr>http://<wbr>www.<wbr>nabble.<wbr>com/<wbr>TSVN-<wbr>harms-<wbr>WaitForI<wbr>nputIdle<wbr>-<wbr>function<wbr>-<wbr>td</nobr></a><br>16717726.html#a16717726<br></div></section>
+    </li></ul></body></html>

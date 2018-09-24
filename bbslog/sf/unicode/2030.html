@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>パッチ：タブバーの「閉じるボタン」関連修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2030</span>
+    <a class="thread-title" href="2030.html#2030">パッチ：タブバーの「閉じるボタン」関連修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2032</span>
+    <a class="thread-title" href="2030.html#2032">Re:パッチ：タブバーの「閉じるボタン」関連修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2038</span>
+    <a class="thread-title" href="2030.html#2038">Re2:パッチ：タブバーの「閉じるボタン」関連修正</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2030>
+    <span class="no">[2030]</span>
+    <a class="thread-title" href="#2030">パッチ：タブバーの「閉じるボタン」関連修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2013-07-27T11:36:44">2013年07月27日 11:36</time></h1>
+    <div class="body">ちょっと Ver 2.1.0.0 を使ってみて、気がついた問題点の修正パッチを作成しました。<br><br>PatchUnicode#649 タブバーの「閉じるボタン」関連修正<br><br>Fix:「閉じるボタン」ONのときフォントの指定が効かない<br>Fix:「閉じるボタン」と「等幅」がONだと非アクティブタブ上のマウスオーバーでタブがハイライトしない<br>（↑一度タブを並べ替えるなどの操作をするとハイライトするようになる）</div></section>
+    <ul><li><section><h1 id=2032>
+    <span class="no">[2032]</span>
+    <a class="thread-title" href="#2032">Re:パッチ：タブバーの「閉じるボタン」関連修正</a>
+    <span class="author">神楽</span>
+    <time datetime="2013-07-28T15:23:35">2013年07月28日 15:23</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; ちょっと Ver 2.1.0.0 を使ってみて、気がついた問題点の修正パッチを作成しました。<br>&gt; <br>&gt; PatchUnicode#649 タブバーの「閉じるボタン」関連修正<br>&gt; <br>&gt; Fix:「閉じるボタン」ONのときフォントの指定が効かない<br>&gt; Fix:「閉じるボタン」と「等幅」がONだと非アクティブタブ上のマウスオーバーでタブがハイライトしない<br>&gt; （↑一度タブを並べ替えるなどの操作をするとハイライトするようになる）<br><br>「閉じるボタン」ONのときにタブ幅が長くなってしまうのですが、<br>マウスオーバー時のみ各タブの右端に表示するか、<br>「アイコン表示」ONのサブオプションとして「アイコンクリックで閉じる」<br>というのを追加して頂けないでしょうか？</div></section>
+    <ul><li><section><h1 id=2038>
+    <span class="no">[2038]</span>
+    <a class="thread-title" href="#2038">Re2:パッチ：タブバーの「閉じるボタン」関連修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2013-08-01T23:46:39">2013年08月01日 23:46</time></h1>
+    <div class="body">▼ 神楽さん<br>&gt; 「閉じるボタン」ONのときにタブ幅が長くなってしまうのですが、<br>&gt; マウスオーバー時のみ各タブの右端に表示するか、<br><br>新たにこれを実現するパッチを作成しました。<br>PatchUnicode#656 タブの閉じるボタンを自動表示するオプションを追加<br>「閉じるボタン」を、[なし/常に表示/自動表示]の3つから選べるようにしてみました。<br><br>・New: タブの閉じるボタンを自動表示するオプションを追加<br>・Imp: タブの閉じるボタン上でマウスオーバーしたときにボタンを囲む矩形を描画する<br>・Fix: タブの閉じるボタン上でマウス左ボタンを押下げて別タブの閉じるボタン上で離すと別タブが閉じてしまう<br>・Fix: 高DPI(125%)で[共通設定]-[タブバー]で表記末尾が切れる項目がある</div></section>
+    </li></ul></li></ul></li></ul></body></html>

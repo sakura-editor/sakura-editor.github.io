@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>最終行(空行時)の行番号表示 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3239</span>
+    <a class="thread-title" href="3239.html#3239">最終行(空行時)の行番号表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3249</span>
+    <a class="thread-title" href="3239.html#3249">RE: 最終行(空行時)の行番号表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3251</span>
+    <a class="thread-title" href="3239.html#3251">RE2: 最終行(空行時)の行番号表示</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3252</span>
+    <a class="thread-title" href="3239.html#3252">Re2: 最終行(空行時)の行番号表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3258</span>
+    <a class="thread-title" href="3239.html#3258">Re3: 最終行(空行時)の行番号表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3262</span>
+    <a class="thread-title" href="3239.html#3262">Re4: 最終行(空行時)の行番号表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3264</span>
+    <a class="thread-title" href="3239.html#3264">Re5: 最終行(空行時)の行番号表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3265</span>
+    <a class="thread-title" href="3239.html#3265">Re6: 最終行(空行時)の行番号表示</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3266</span>
+    <a class="thread-title" href="3239.html#3266">Re5: 最終行(空行時)の行番号表示</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3269</span>
+    <a class="thread-title" href="3239.html#3269">Re2: 最終行(空行時)の行番号表示</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3239>
+    <span class="no">[3239]</span>
+    <a class="thread-title" href="#3239">最終行(空行時)の行番号表示</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-10-13T04:55:51">2003年10月13日 04:55</time></h1>
+    <div class="body">以前から何度も指摘されてきた最終行の空行に行番号が付かない件→新規画面で1行目の行番号がない件に取り組んでみました．<br><br>一応それらしく動く物ができましたのでパッチ＋バイナリを置いておきます．<br><a href=http://members.at.infoseek.co.jp/sakura_editor/snapshot/lastline_2003-10-13_from_1.4.3.2.zip target=_top><nobr>http://<wbr>members.<wbr>at.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr>sakura_e<wbr>ditor/<wbr>snapshot<wbr>/<wbr>lastline<wbr>_2003-<wbr>10-<wbr>13_from_<wbr>1.<wbr>4.<wbr>3.<wbr>2.<wbr>zip</nobr></a><br>すいさん(となぜか指名してみる)がOKを出したら取り込もうかと思っております．<br><br>[方向性]<br>・バッファ末尾の空行＝全体が空 or 最終行に改行がある 場合に空文字列のバッファを確保して最後に加える<br>・そのために最終行を付加する関数をCDocLineMgrの行加工部分の末尾で呼びだす．<br>当初はこれだけで動くと思ったのですが，レイアウト構築部分と画面表示部分で文字列長＝0の場合の考慮が抜けていて行が消えたり無限ループしたりしたので，以下の2点を追加しました．<br>・レイアウト構築時に文字列長＝0の場合を追加する．<br>・描画時に文字列長＝0の場合を考慮してoffset==0なら描画ループに入れるようにする．<br></div></section>
+    <ul><li><section><h1 id=3249>
+    <span class="no">[3249]</span>
+    <a class="thread-title" href="#3249">RE: 最終行(空行時)の行番号表示</a>
+    <span class="author">すい</span>
+    <time datetime="2003-10-15T00:02:13">2003年10月15日 00:02</time></h1>
+    <div class="body">&gt;http://members.at.infoseek.co.jp/sakura_editor/snapshot/lastline_2003-10-13_from_1.4.3.2.zip<br>&gt;すいさん(となぜか指名してみる)がOKを出したら取り込もうかと思っております．<br><br>指名されてしまった。指名料とらなくては。(笑)<br>指名料として１ジョークお支払いください。<br>支払われたジョークは私が個人的に笑いのある楽しい人生を送るために利用させていただきますので。<br>簡単・短いジョークで、駄洒落 可、ローカルな内輪ネタ不可、風化し易そうなネタ不可、<br>オヤジギャグは極力お控えください、な方向で。<br><br>という冗談は さておき、早速 NG を。(え゛)<br><br>★１<br>内容が全く同じファイルを２個開き、「検索(S)」→「ファイル内容比較(@)」すると、<br>全く同じファイルなのに「異なる箇所が見つかりました。」と虚偽報告されて<br>ファイル末尾へ移動します。<br><br>★２<br>「ファイル(F)」→「開き直す(W)」を実行すると、<br><br>・そのエディタのウィンドウがハングアップ(フリーズ)する事がある。<br>　タスクマネージャ（Windows2000）で見ると、CPU処理能力を喰いまくっている。<br><br>・そのエディタのウィンドウがエラーで落ちる事がある。(↓Windows2000の場合)<br>　|－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－|<br>　|アプリケーション エラー                                                         |<br>　|－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－|<br>　|　　　エラーが発生したため、sakura.exe を終了します。プログラムをもう一度開始す |<br>　|　！　る必要があります。                                                        |<br>　|　　　エラー ログを作成しています。                                             |<br>　|　                               [  OK  ]                                       |<br>　|－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－|<br><br>適当なファイルを開いて、[Alt]キー押しっぱなしで [F] → [W] → [F] → [W] → [F] → [W] .... と<br>何度も（回数は不定ですが50回くらい？）操作を繰り返すとか。。。<br><br>どうも「ファイルを開く」処理の中で異常が発生する事があるみたいに思えます。<br>一度だけ、「最近使ったファイル(F)」→「0 hogehoge.txt」 でファイルを開こうとした時にも<br>ハングアップしましたので。<br><br>上記両者共<br>・lastline_2003-10-13_from_1_4_3_2.zip でのみ発生します。<br>・sakura_2003-10-13.zip では発生しないようです。<br><br><br>★★<br>あと、そもそも、これ要望の動作と違うんじゃないでしょうか？<br>要望は「空のファイルを開いた時にも常に1行目だけは行番号表示する。他の場合の動作は現状通り。」<br>じゃぁありませんでしたっけ？ (;^^Ａ<br>つまり<br>・“空のファイルを開いている場合”のみの特化処理。<br>・１行目だけはファイル内容が空であろうが何であろうが、常に１行目のみ行番号を表示する。<br>みたいな。(違いました？)<br>この、「10行目までしかないファイルを開いた時、11行目まで行番号が表示されてしまう」のって、<br>なんか使っていて違和感あり過ぎなんですけれど。 (;^^;)<br></div></section>
+    <ul><li><section><h1 id=3251>
+    <span class="no">[3251]</span>
+    <a class="thread-title" href="#3251">RE2: 最終行(空行時)の行番号表示</a>
+    <span class="author">すい</span>
+    <time datetime="2003-10-15T01:33:04">2003年10月15日 01:33</time></h1>
+    <div class="body">&gt;★２<br>&gt;「ファイル(F)」→「開き直す(W)」を実行すると、<br>&gt;<br>&gt;・そのエディタのウィンドウがハングアップ(フリーズ)する事がある。<br>&gt;　タスクマネージャ（Windows2000）で見ると、CPU処理能力を喰いまくっている。<br>&gt;<br>&gt;・そのエディタのウィンドウがエラーで落ちる事がある。(↓Windows2000の場合)<br>　　 チョキチョキチョキ<br>　　　　"(V)．．(V)"<br>　　　　 ミ( 略 )ミ<br>&gt;適当なファイルを開いて、[Alt]キー押しっぱなしで [F] → [W] → [F] → [W] → [F] → [W] .... と<br>&gt;何度も（回数は不定ですが50回くらい？）操作を繰り返すとか。。。<br><br>http://www.egroups.co.jp/files/sakura-editor/Junk/CODE_TXT.LZH<br>↑この CODE.TXT (Shift_JIS) のファイルを開いて、「SJISで開き直す」「EUCで開き直す」を<br>ツールバーに登録して交互にボタン押して実行したりすると再現する確率が高いみたいです。<br>編集中のファイルの内容や操作方法（メニューから操作するか、ツールバーに登録して<br>ボタンを押すか、キー割り当てしてキー操作するか．．．）によって再現する確率が色々変わるみたい。<br>なんか不安定です。<br></div></section>
+    </li><li><section><h1 id=3252>
+    <span class="no">[3252]</span>
+    <a class="thread-title" href="#3252">Re2: 最終行(空行時)の行番号表示</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-10-15T12:19:23">2003年10月15日 12:19</time></h1>
+    <div class="body">メッセージボックスが表示されたときに、Ctrl+Cを押すと、その内容がテキストとしてクリップボードにコピーされます。コピーされた後、他のアプリに貼り付けできます。結構使えるのでお忘れなく。<br><br># 内部ではFormatMessageが呼ばれているらしい。</div></section>
+    <ul><li><section><h1 id=3258>
+    <span class="no">[3258]</span>
+    <a class="thread-title" href="#3258">Re3: 最終行(空行時)の行番号表示</a>
+    <span class="author">すい</span>
+    <time datetime="2003-10-16T00:34:30">2003年10月16日 00:34</time></h1>
+    <div class="body">&gt;メッセージボックスが表示されたときに、Ctrl+Cを押すと、その内容がテキストとしてクリップボードにコピーされます。<br><br>すみません、これ何を言っているのか わからないのですが？<br>少なくとも Windows 標準にはそんな機能ありませんよね。<br>Windows XP ではそんな機能が付いたという噂を聞いた事はありますが。<br># あいにく WindowsXP の環境は身近にありませんので。<br>念のため試すだけ試してみましたけど、そのような機能はありませんでした。(Windows2000)<br><br>別に全然困っていないですけどね。<br>ダイアログなどの文字列を取得する事が出来るフリーソフトの類は世の中たくさんありますから。<br>簡単に自作する事もできますし。HSPとかで。<br></div></section>
+    <ul><li><section><h1 id=3262>
+    <span class="no">[3262]</span>
+    <a class="thread-title" href="#3262">Re4: 最終行(空行時)の行番号表示</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-10-16T11:17:51">2003年10月16日 11:17</time></h1>
+    <div class="body">&gt;そのような機能はありませんでした。(Windows2000)<br>ふうん、それじゃ君の環境には何かフックが引っかかってたんだね。ダイアログが表示されたらポインタが勝手に動くようなアプリか。普通のWindowsなら、どこでもできるんですけど。<br>Wn9x/2kでも成功<br>---------------------------<br>名前を付けて保存<br>---------------------------<br>C:\a.txt は既に存在します。<br>上書きしますか?<br>---------------------------<br>はい(Y)   いいえ(N) <br>---------------------------</div></section>
+    <ul><li><section><h1 id=3264>
+    <span class="no">[3264]</span>
+    <a class="thread-title" href="#3264">Re5: 最終行(空行時)の行番号表示</a>
+    <span class="author">sage</span>
+    <time datetime="2003-10-16T23:31:00">2003年10月16日 23:31</time></h1>
+    <div class="body">▼ wmlhqさん<br>&gt; &gt;そのような機能はありませんでした。(Windows2000)<br>&gt; ふうん、それじゃ君の環境には何かフックが引っかかってたんだね。ダイアログが表示されたらポインタが勝手に動くようなアプリか。普通のWindowsなら、どこでもできるんですけど。<br>&gt; Wn9x/2kでも成功<br><br>ポインタが勝手に動いたりするものを入れてない WinMeですが、<br>うちでも、コピー＆ペーストできませぬ・・・<br></div></section>
+    <ul><li><section><h1 id=3265>
+    <span class="no">[3265]</span>
+    <a class="thread-title" href="#3265">Re6: 最終行(空行時)の行番号表示</a>
+    <span class="author">ZONE</span>
+    <time datetime="2003-10-17T00:28:11">2003年10月17日 00:28</time></h1>
+    <div class="body">▼ sageさん<br>&gt; ポインタが勝手に動いたりするものを入れてない WinMeですが、<br>&gt; うちでも、コピー＆ペーストできませぬ・・・<br>WinXPProです。Sakura(Ver1.4.3.2)で名前を付けて保存で、上書き保存のダイアログを表示し、秀丸やメモ帳にコピペしたら成功しました。<br>エクスプローラのファイル削除ダイアログはだめでした（当たり前ですか？）。<br></div></section>
+    </li></ul></li><li><section><h1 id=3266>
+    <span class="no">[3266]</span>
+    <a class="thread-title" href="#3266">Re5: 最終行(空行時)の行番号表示</a>
+    <span class="author">すい</span>
+    <time datetime="2003-10-17T04:39:21">2003年10月17日 04:39</time></h1>
+    <div class="body">この件について、蒔田さん からアドバイスのメールを頂きました。（ありがとうございます＞蒔田さん）<br><br>大雑把な内容は<br><br>MsgBox "メッセージ"<br>という１行だけのファイルを作成してWSHのファイル( hoge.vbs )として保存して<br>マウスで突ついて実行。ダイアログが現れたらCTRL+Cで取れます。<br><br>という感じで、やってみたら確かに取れました。<br><br>で、そこからさらに色々調べてみたり、あちこちのダイアログで試してみましたが、、、<br>う～ん、確かにクリップボードに取れるダイアログも一部ありますが、<br>日常的に見かけるダイアログの殆どは駄目ですね。<br><br>感じとしては、<br>“本当に MessageBox でプログラマーが（手抜き的な感じに）簡単・お気楽に表示しているようなダイアログ”<br>だけが取得可能。つまり<br>・絵が無い確認だけのダイアログ<br>・赤い○の中に白い×       の絵のダイアログ<br>・白い吹き出しの中に青い？ の絵のダイアログ<br>・黄色い△の中に黒い！     の絵のダイアログ<br>・白い吹き出しの中に青いｉ の絵のダイアログ<br>といったダイアログでのみ取り込み可能。他は駄目。<br><br>例えば「ファイル削除」とか「同名ファイルの上書き確認」とかの<br>よく見かけるような凝った（ (--;)ダイアログ中の絵とかが独自でしょ？）<br>確認ダイアログのような様な物はもちろん駄目。<br># MessageBox じゃぁない。<br><br>身近な例だと、このエディタの PPA マクロで MessageBox で表示<br>出来るような物だけ。(って、それ、身近な例として適切かぁ? ＞ 私 (;^^;) )<br><br>で、残念ながら私が普段目にするダイアログでは、クリップボードに<br>取れるダイアログは皆無に等しい状況です。 (;_;)<br><br>ちなみに今回のアプリケーションが落ちた時のエラーダイアログは、<br>一見、見た目は MessageBox っぽいのですけが、これもCTRL+Cでの<br>クリップボード取り込みは出来ないヤツですね。<br><br>&gt;---------------------------<br>&gt;名前を付けて保存<br>&gt;---------------------------<br>&gt;C:\a.txt は既に存在します。<br>&gt;上書きしますか?<br>&gt;---------------------------<br>&gt;はい(Y)   いいえ(N) <br>&gt;---------------------------<br>↑この手の普通に使っている限りは、まずお目にかかる事が無い<br>ダイアログだけみたいですね、取れるのは。 (--;)<br>残念ながら使い道（使える時）が殆ど無さそうです。 (;_;)<br><br>あと、引用前後しますが<br>&gt;Wn9x/2kでも成功<br><br>Win2k の方は分かったのですけど、9x の方とは？<br>具体的に何で試されたのでしょうか？(Win95/98/Meのどれ？)<br>実際 Windows 95 では無理でしたし、<br>http://homepage2.nifty.com/winfaq/w2k/hints.html#1236<br>↑とか見る限りこの機能は Windows 2000 以降の機能のようなのですが。。。<br><br>あと、私はこの手の動作確認時は常駐アプリの類は全て<br>停止してやっております。念のため。(当然ですが)<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=3269>
+    <span class="no">[3269]</span>
+    <a class="thread-title" href="#3269">Re2: 最終行(空行時)の行番号表示</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-10-18T16:20:40">2003年10月18日 16:20</time></h1>
+    <div class="body">&gt;あと、そもそも、これ要望の動作と違うんじゃないでしょうか？<br>&gt;この、「10行目までしかないファイルを開いた時、11行目まで行番号が表示されてしまう」のって、<br>&gt;なんか使っていて違和感あり過ぎなんですけれど。 (;^^;)<br>わたしが要望を誤解していたようです．とりあえずこれは参考例として放置しておきます．<br><br>1行目だけというのであれば先日wmlhqさんの書かれた方法がBESTかもしれません．<br>左側の幅を変えるだけでも1文字目の入力で右にずれることは無くなりますから違和感は減るでしょうし．<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

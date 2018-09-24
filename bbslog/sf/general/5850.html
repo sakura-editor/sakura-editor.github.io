@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>希望＞FontLink | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5850</span>
+    <a class="thread-title" href="5850.html#5850">希望＞FontLink</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5851</span>
+    <a class="thread-title" href="5850.html#5851">Re:希望＞FontLink</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5856</span>
+    <a class="thread-title" href="5850.html#5856">Re2:希望＞FontLink</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5857</span>
+    <a class="thread-title" href="5850.html#5857">Re3:希望＞FontLink</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5859</span>
+    <a class="thread-title" href="5850.html#5859">Re4:希望＞FontLink</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5891</span>
+    <a class="thread-title" href="5850.html#5891">Re5:希望＞FontLink</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5892</span>
+    <a class="thread-title" href="5850.html#5892">Re6:希望＞FontLink</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5899</span>
+    <a class="thread-title" href="5850.html#5899">Re6:希望＞FontLink</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5900</span>
+    <a class="thread-title" href="5850.html#5900">Re6:希望＞FontLink</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5850>
+    <span class="no">[5850]</span>
+    <a class="thread-title" href="#5850">希望＞FontLink</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2007-02-20T22:11:38">2007年02月20日 22:11</time></h1>
+    <div class="body">サクラエディタってFontLink機能って使えないんですか？<br></div></section>
+    <ul><li><section><h1 id=5851>
+    <span class="no">[5851]</span>
+    <a class="thread-title" href="#5851">Re:希望＞FontLink</a>
+    <span class="author">すす</span>
+    <time datetime="2007-02-21T16:33:52">2007年02月21日 16:33</time></h1>
+    <div class="body">▼ 通りすがりさん<br>&gt; サクラエディタってFontLink機能って使えないんですか？<br>過去に使えるようにして、という要望があったので<br>たぶん使えないのでは、ないでしょうか？</div></section>
+    <ul><li><section><h1 id=5856>
+    <span class="no">[5856]</span>
+    <a class="thread-title" href="#5856">Re2:希望＞FontLink</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2007-02-22T20:15:50">2007年02月22日 20:15</time></h1>
+    <div class="body"><br>これについて分かりやすい解説がないんだけど<br><br>ExtTextOut<br><br>を<br><br>ScriptStringAnalyse(SSA_LINK)<br>ScriptStringOut<br>ScriptStringFree<br><br>で置き換えたらいけるのかなぁ？<br>教えてえろい人！<br></div></section>
+    <ul><li><section><h1 id=5857>
+    <span class="no">[5857]</span>
+    <a class="thread-title" href="#5857">Re3:希望＞FontLink</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2007-02-23T18:21:27">2007年02月23日 18:21</time></h1>
+    <div class="body">関係なかったorz<br>sakura.iniを直編集、でふぉでFontlinkに入っている<br>Lucida Sans Unicode<br>Microsoft Sans Srif<br>Tahoma<br>を指定したら表示できた。<br>等幅指定がなんか悪さしてるんだきっと・・・<br></div></section>
+    <ul><li><section><h1 id=5859>
+    <span class="no">[5859]</span>
+    <a class="thread-title" href="#5859">Re4:希望＞FontLink</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-02-24T00:26:06">2007年02月24日 00:26</time></h1>
+    <div class="body"><br>&gt;sakura.iniを直編集、でふぉでFontlinkに入っている<br>&gt;Lucida Sans Unicode<br>&gt;Microsoft Sans Srif<br>&gt;Tahoma<br>&gt;を指定したら表示できた。<br>&gt;等幅指定がなんか悪さしてるんだきっと・・・<br><br>ChooseFont()に等幅フォントのみの指定をして呼びだしています．<br>書くときは<br><br>::GetTextExtentPoint32( hdc, "大", 2, &amp;sz );<br>(なぜ"大"なのかは不明)<br>で，1文字の幅を取得しています．<br><br>文字が重なっちゃうのは自己責任として等幅指定は外した方がいいのかな？<br>文字幅の取得方法はもっと良い方法がある？<br></div></section>
+    <ul><li><section><h1 id=5891>
+    <span class="no">[5891]</span>
+    <a class="thread-title" href="#5891">Re5:希望＞FontLink</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2007-02-27T18:25:21">2007年02月27日 18:25</time></h1>
+    <div class="body">とりあえずCF_FIXEDPITCHONLYをはずしてChooseFontで<br>FontLinkしてあるフォントを選択するとキャラクタセットがANSI_CHARSET<br>になるので、これをDEFAULT_CHARSETに書き換えるとFontLink<br>が動きました。<br>プロポーショナルフォントを選んでもアプリでは等幅で描画する<br>ので、重なりまくりですが・・・<br><br>cf.Flags = CF_SCREENFONTS | CF_INITTOLOGFONTSTRUCT;<br>...<br>if( plf-&gt;lfCharSet == ANSI_CHARSET ){<br>  plf-&gt;lfCharSet = DEFAULT_CHARSET;<br>}<br><br>FIXEDフォントのFontLinkは試してないのでどうなるかわかりません。<br><br>FontLinkへの道は開けたってことでOK<br></div></section>
+    <ul><li><section><h1 id=5892>
+    <span class="no">[5892]</span>
+    <a class="thread-title" href="#5892">Re6:希望＞FontLink</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2007-02-27T18:32:38">2007年02月27日 18:32</time></h1>
+    <div class="body">秀丸はFontLinkしてあるフォントも一覧で出るんですよね。<br>どうやって日本語フォントが表示可能か判断してるのか気になるところです。<br></div></section>
+    </li><li><section><h1 id=5899>
+    <span class="no">[5899]</span>
+    <a class="thread-title" href="#5899">Re6:希望＞FontLink</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2007-02-28T19:48:11">2007年02月28日 19:48</time></h1>
+    <div class="body">※調査結果<br><br>日本語を使いたいという前提で書くと、<br><br>1.<br>CharSetをSHIFTJIS_CHARSETにしてEnumFontFamiliesExを呼び出す。<br>→FontLinkを含む。日本語のみ得られる<br><br>2.<br>CharSetをDEFAULT_CHARSETにしてEnumFontFamiliesExを呼び出す。<br>→FontLinkを含まない。全言語（日本語、欧文、、、）<br><br>2.で得られたフォントのうちCharSetが日本語となるものを、<br>1.で得られたフォントから差し引くと、<br>残ったものがFontLinkのフォントとなります。<br>（実際にはFontLinkを区別する必要はないので、1.と2.のOR<br>を取ればOKです）<br><br>FontLinkをいじってないままだと<br>　Microsoft Sans Serif<br>　Lucida Sans Unicode<br>　Tahoma<br>が日本語フォントとして得られるはずです。（WinXP）<br></div></section>
+    </li><li><section><h1 id=5900>
+    <span class="no">[5900]</span>
+    <a class="thread-title" href="#5900">Re6:希望＞FontLink</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2007-02-28T19:51:09">2007年02月28日 19:51</time></h1>
+    <div class="body">※実装方法<br><br>ChooseFontダイアログはFontLinkフォントを抽出できないようなので、<br>秀丸のようにフォント選択を自作する必要があります。<br>一覧に表示するフォントは、1.と2.のORを取ったものです。<br>CharSetとFixedも情報として得られるので絞込みもできますので、<br>通常は日本語等幅フォントのみを表示し、高度な設定で<br>その他の言語（欧文とか）やプロポーショナルを選べるように<br>すればよいでしょう。<br><br>あとは誰かがダイアログを作るだけと・・・<br>（私は画面作る環境ないので無理orz）<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

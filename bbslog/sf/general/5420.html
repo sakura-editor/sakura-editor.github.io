@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マクロのBIT指定について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5420</span>
+    <a class="thread-title" href="5420.html#5420">マクロのBIT指定について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5421</span>
+    <a class="thread-title" href="5420.html#5421">Re:マクロのBIT指定について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5422</span>
+    <a class="thread-title" href="5420.html#5422">Re2:マクロのBIT指定について</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5420>
+    <span class="no">[5420]</span>
+    <a class="thread-title" href="#5420">マクロのBIT指定について</a>
+    <span class="author">SAM</span>
+    <time datetime="2006-09-11T12:26:55">2006年09月11日 12:26</time></h1>
+    <div class="body">過去ログやHELPにも載っていなかったので<br>質問させてください。<br>マクロを使う際に指定できるBITの指定方法がわかりません。<br><br>それぞれの bit が 0=チェックOFF / 1=チェックON<br>bit0：単語単位で探す<br>bit1：英大文字と小文字を区別する<br>bit2：正規表現<br>bit3：見つからないときにメッセージを表示<br>bit4：置換ダイアログを自動的に閉じる<br>bit5：先頭（末尾）から再検索する<br>bit6：クリップボードから貼り付ける<br><br>例えば上記の場合、正規表現を使用したい場合や<br>正規表現+クリップボードから貼り付けたい場合はどうすればよいのでしょうか？<br><br>かなり初歩的な質問ですがよろしくお願い致します。</div></section>
+    <ul><li><section><h1 id=5421>
+    <span class="no">[5421]</span>
+    <a class="thread-title" href="#5421">Re:マクロのBIT指定について</a>
+    <span class="author">maru</span>
+    <time datetime="2006-09-12T00:52:31">2006年09月12日 00:52</time></h1>
+    <div class="body">▼ SAMさん<br>言い換えると、次の値の和です。<br> 1：単語単位で探す<br> 2：英大文字と小文字を区別する<br> 4：正規表現<br> 8：見つからないときにメッセージを表示<br>16：置換ダイアログを自動的に閉じる<br>32：先頭（末尾）から再検索する<br>64：クリップボードから貼り付ける<br><br>だったらこう書いてくれれば、と突っ込まれそうですが<br>この書き方だと表現できない引数の場合もあるので<br>今のところは、統一してBitで説明しています。<br><br>&gt; 正規表現+クリップボードから貼り付けたい場合はどうすれば<br>もうお分かりでしょうが、４＋６４で６８を指定します。</div></section>
+    <ul><li><section><h1 id=5422>
+    <span class="no">[5422]</span>
+    <a class="thread-title" href="#5422">Re2:マクロのBIT指定について</a>
+    <span class="author">SAM</span>
+    <time datetime="2006-09-12T14:39:23">2006年09月12日 14:39</time></h1>
+    <div class="body">▼ maruさん<br>ありがとうございます！<br>これでなんとか目的のマクロを作成できそうです。<br>本当にありがとうございました。<br><br><br>&gt; ▼ SAMさん<br>&gt; 言い換えると、次の値の和です。<br>&gt;  1：単語単位で探す<br>&gt;  2：英大文字と小文字を区別する<br>&gt;  4：正規表現<br>&gt;  8：見つからないときにメッセージを表示<br>&gt; 16：置換ダイアログを自動的に閉じる<br>&gt; 32：先頭（末尾）から再検索する<br>&gt; 64：クリップボードから貼り付ける<br>&gt; <br>&gt; だったらこう書いてくれれば、と突っ込まれそうですが<br>&gt; この書き方だと表現できない引数の場合もあるので<br>&gt; 今のところは、統一してBitで説明しています。<br>&gt; <br>&gt; &gt; 正規表現+クリップボードから貼り付けたい場合はどうすれば<br>&gt; もうお分かりでしょうが、４＋６４で６８を指定します。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

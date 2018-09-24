@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>V2での上書き禁止について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1489</span>
+    <a class="thread-title" href="1489.html#1489">V2での上書き禁止について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1490</span>
+    <a class="thread-title" href="1489.html#1490">Re:V2での上書き禁止について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1491</span>
+    <a class="thread-title" href="1489.html#1491">Re:V2での上書き禁止について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1492</span>
+    <a class="thread-title" href="1489.html#1492">Re2:V2での上書き禁止について</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1493</span>
+    <a class="thread-title" href="1489.html#1493">Re:V2での上書き禁止について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1494</span>
+    <a class="thread-title" href="1489.html#1494">以前の動作も可能にするパッチを作成しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1495</span>
+    <a class="thread-title" href="1489.html#1495">Re:以前の動作も可能にするパッチを作成しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1496</span>
+    <a class="thread-title" href="1489.html#1496">排他制御のデフォルトは変更したほうがいい？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1497</span>
+    <a class="thread-title" href="1489.html#1497">Re:排他制御のデフォルトは変更したほうがいい？</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1546</span>
+    <a class="thread-title" href="1489.html#1546">Re:以前の動作も可能にするパッチを作成しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1547</span>
+    <a class="thread-title" href="1489.html#1547">Re2:以前の動作も可能にするパッチを作成しました</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1489>
+    <span class="no">[1489]</span>
+    <a class="thread-title" href="#1489">V2での上書き禁止について</a>
+    <span class="author">醤油</span>
+    <time datetime="2011-02-15T00:53:53">2011年02月15日 00:53</time></h1>
+    <div class="body">V2早速使わせてもらっています。<br>ANSI版では[共通設定]で[排他制御しない]のときは「上書き禁止」の状態を取得できず、そのかわりに編集は可能でした。<br>V2では[排他制御しない]でも上書き禁止の状態を取得しているようです。<br>これはV2の仕様でしょうか？<br>バグでしたら、以前と同じ動作にしてもらえるとありがたいです。<br></div></section>
+    <ul><li><section><h1 id=1490>
+    <span class="no">[1490]</span>
+    <a class="thread-title" href="#1490">Re:V2での上書き禁止について</a>
+    <span class="author">Coward</span>
+    <time datetime="2011-02-15T10:53:51">2011年02月15日 10:53</time></h1>
+    <div class="body">過去ログに、<br><br>&gt;&gt;unicode:310 「Commit報告:(Chg) 更新の監視でファイル書込可否も監視するようにした」<br><br>というのを見つけました。<br><br>更新の監視（＝排他制御しない）の際に書込み可否も監視（＝編集可否を設定）するように仕様変更されています。<br>これは、「排他制御しない」の場合でも上書き禁止なら編集不可にする、という暗黙の前提があってのことと思われます。<br>以前と同じ動作にするなら上の仕様変更も破棄する必要がありますね。<br><br>ということで、バグではなく意図した仕様変更なのではないかと。</div></section>
+    </li><li><section><h1 id=1491>
+    <span class="no">[1491]</span>
+    <a class="thread-title" href="#1491">Re:V2での上書き禁止について</a>
+    <span class="author">Coward</span>
+    <time datetime="2011-02-15T13:52:52">2011年02月15日 13:52</time></h1>
+    <div class="body">&gt;&gt;unicode:300 「Re2:Commit報告:(Fix) ファイル書込時バグ修正」<br><br>というのもありますね～。<br><br>&gt; そもそもファイルの排他制御をオフにすると、<br>&gt; 本家ANSI版では、「上書き禁止」モード自体にならなないんですよね…。<br><br>ANSI 版の動作は知っているがそれに合わせようとはしなかった（今のV2の動作で良いと判断した &gt;&gt;unicode:304）、ということでしょうね。</div></section>
+    <ul><li><section><h1 id=1492>
+    <span class="no">[1492]</span>
+    <a class="thread-title" href="#1492">Re2:V2での上書き禁止について</a>
+    <span class="author">醤油</span>
+    <time datetime="2011-02-17T11:29:02">2011年02月17日 11:29</time></h1>
+    <div class="body">なるほど、そういう仕様になったんですね。<br>ANSI版の動作（Windowsで読み取り専用属性がついていても、保存はできないが編集は可能）<br>に慣れていたので、できれば設定でANSI版の動作も選択できるようにしてもらえると嬉しいです。<br></div></section>
+    </li></ul></li><li><section><h1 id=1493>
+    <span class="no">[1493]</span>
+    <a class="thread-title" href="#1493">Re:V2での上書き禁止について</a>
+    <span class="author">ds14050</span>
+    <time datetime="2011-02-17T16:31:39">2011年02月17日 16:31</time></h1>
+    <div class="body">賛成に一票です。<br>前々から不満を感じていました。ANSI版はそうではなかったと知ってしまっては<br>以前の動作の復活を希望します。<br>  上書き保存→書き込み不可と判明→名前を付けて保存へ移行<br>という動作も気がきいていると思います。<br><br>排他されていたり読み取り専用属性がついているファイルを開いたときは<br>上書き禁止モードになり、これはビューモードとは別みたいなのですが<br>どうしてどちらも同じように編集行為が不可能になってしまったのでしょう。<br></div></section>
+    </li><li><section><h1 id=1494>
+    <span class="no">[1494]</span>
+    <a class="thread-title" href="#1494">以前の動作も可能にするパッチを作成しました</a>
+    <span class="author">ryoji</span>
+    <time datetime="2011-02-20T03:24:45">2011年02月20日 03:24</time></h1>
+    <div class="body">サクラが他プロセスに施す排他制御とは別に、外的要因で保存不可になっている（タイトルバーに「上書き禁止」が表示されている）ときに編集まで不可にするかどうかを指定するオプションを追加するパッチを作成してみました。<br>→ PatcheUnicode#3186997<br><br>[上書き禁止検出時は編集禁止にする]オプションです。<br>ON: 現在のV2動作と同じ<br>OFF: 「ビューモード」以外の状況ならどんなときでも編集可能<br><br>にしています。<br>こういうのでいいでしょうか？<br>＃僕はOFFが好みです (^^;<br><br>他エディタを見ると保存不可でも編集まで不可にするものは少ないようです。TeraPad あたりは編集不可がデフォルトになってますが、（今回の提案パッチと同様に）編集可能にもできるオプションがありますね。</div></section>
+    <ul><li><section><h1 id=1495>
+    <span class="no">[1495]</span>
+    <a class="thread-title" href="#1495">Re:以前の動作も可能にするパッチを作成しました</a>
+    <span class="author">ds14050</span>
+    <time datetime="2011-02-20T05:00:49">2011年02月20日 05:00</time></h1>
+    <div class="body">試してみました。<br>読み取り専用属性が付いていても排他されていても編集できるのが期待通りです。<br>今回のオプション化には余計な苦労があったんじゃないでしょうか。お疲れ様です。<br><br>&gt;他エディタを見ると編集まで不可にするものは少ないようです。<br>仮に、エディタでの編集までを不可能にするのであれば、それはファイルシステムと<br>エディタが直結しているということで、排他制御をするとともに随時エディタと<br>ファイルを同期する(=自動保存)使い方が想定できます。自分のメンタルモデルは<br>それとは違いエディタ上のテキストとファイルは切り離されていますし、オプションで<br>そういう使い方も許容されているのに、不可能ではないことをあえて禁止されることに<br>不満を感じていました。<br><br>V2を使い始めて動作の違いに戸惑う醤油さんのような人が多くないうちに取り込まれ<br>たらいいなと思います。これは、上書き不可能な時に編集を禁止する、のチェックの<br>デフォルトは OFFのほうがいいのではないかという提案でもあります。<br></div></section>
+    <ul><li><section><h1 id=1496>
+    <span class="no">[1496]</span>
+    <a class="thread-title" href="#1496">排他制御のデフォルトは変更したほうがいい？</a>
+    <span class="author">ryoji</span>
+    <time datetime="2011-02-20T15:09:33">2011年02月20日 15:09</time></h1>
+    <div class="body">&gt; デフォルトは OFFのほうがいいのではないかという提案でもあります。<br>新設オプションのデフォルトを ON にしたのは、[排他制御]のデフォルトが「他プロセスからの上書きを禁止」になっているから、という理由です。この場合は V1 でも保存不可能なら編集も禁止だったので、最初のまっさらな状態からの使い始めだけみると V1, V2, 新設オプション追加後のいずれも挙動は同じになります。従来挙動をできるだけ踏襲するというだけの理由。<br><br>なので、もともとのデフォルトが「排他制御なし」だったら新設オプションのほうのデフォルトは OFF にしていたと思います。<br><br>従来オプションのデフォルト値に関する妥当性検討は、してもいいとは思いますが、なんだか億劫で。誰か主導してやってくれないかなぁ。。。<br><br>＃軟弱に、自分の希望だけ気軽に言える立場でいたかったりする自分<br>(-_-;;;</div></section>
+    <ul><li><section><h1 id=1497>
+    <span class="no">[1497]</span>
+    <a class="thread-title" href="#1497">Re:排他制御のデフォルトは変更したほうがいい？</a>
+    <span class="author">ds14050</span>
+    <time datetime="2011-02-20T16:14:39">2011年02月20日 16:14</time></h1>
+    <div class="body">&gt;最初のまっさらな状態からの使い始めだけみると V1, V2, 新設オプション追加後のいずれも挙動は同じになります。<br>理解しました。すべての V1ユーザーではなく、排他制御を OFFにしていた人だけが上書き禁止モードの挙動の変化に戸惑っていたのですね。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=1546>
+    <span class="no">[1546]</span>
+    <a class="thread-title" href="#1546">Re:以前の動作も可能にするパッチを作成しました</a>
+    <span class="author">福生</span>
+    <time datetime="2011-05-01T13:12:57">2011年05月01日 13:12</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 他エディタを見ると保存不可でも編集まで不可にするものは少ないようです。TeraPad あたりは編集不可がデフォルトになってますが、（今回の提案パッチと同様に）編集可能にもできるオプションがありますね。<br><br>秀丸の場合はファイルを開くダイアログで、<br>上書き不可モードと編集不可モードが別オプションとなっています。<br><a href=http://hide.maruo.co.jp/software/hidemaru810/new3.html target=_top><nobr>http://<wbr>hide.<wbr>maruo.<wbr>co.<wbr>jp/<wbr>software<wbr>/<wbr>hidemaru<wbr>810/<wbr>new3.<wbr>html</nobr></a><br><br>サクラもそれにならって、開くダイアログに併用可能なチェックボタンを2つ並べて、<br>コマンドラインオプションも、-Rオプションの動作を上書き不可モードに限定し、<br>新設の-Vオプションを編集不可モード（ビューモード）とするというのはいかがでしょうか？</div></section>
+    <ul><li><section><h1 id=1547>
+    <span class="no">[1547]</span>
+    <a class="thread-title" href="#1547">Re2:以前の動作も可能にするパッチを作成しました</a>
+    <span class="author">ds14050</span>
+    <time datetime="2011-05-01T14:55:53">2011年05月01日 14:55</time></h1>
+    <div class="body">整理してみました。<br><br>!!現状(追試歓迎！)<br>*-Rオプション、Editor.ReadOnly()マクロともエディタをビューモードにする。<br>*上書き禁止モードはファイルの読み取り専用属性によって(のみ？)セットされる。<br>*オプションで上書き禁止とビューモードを連動させることができる。<br>ビューモードはユーザーの意思を反映し、上書き禁止は外部からの要請といえる。<br><br>!!上書き禁止モードをユーザーの意思でオンにできるとどうか。<br>*編集も上書きもしないことが保証できる。(※ビューモードと併用)<br>「ビューモードでは同一ファイルへの保存はできません。」というメッセージが出て<br>すでに禁止されている。<br><br>*編集はするが上書きはしないことを保証できる。(最初に「名前をつけて保存する」まで有効)<br>ファイルの読み取り専用属性とビューモードと、UNDO+再保存で足りることも多そう。<br>「俺はビューモードは使わない上書き禁止モードで十分だ」という選択はあるかも。<br><br>!!(番外)ビューモードに伴う強制的上書き禁止をオフにできるとどうか。<br>変更のないファイルを保存してタイムスタンプの更新ができる。<br><br><br>ビューモードの編集禁止は自分が望むより制限が厳しいと思う人には有用かも。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

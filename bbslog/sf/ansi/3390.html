@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>GREPから除外する機能（試作） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3390</span>
+    <a class="thread-title" href="3390.html#3390">GREPから除外する機能（試作）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3392</span>
+    <a class="thread-title" href="3390.html#3392">GREPから除外する機能</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3393</span>
+    <a class="thread-title" href="3390.html#3393">RE: GREPから除外する機能</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3411</span>
+    <a class="thread-title" href="3390.html#3411">RE: GREPから除外する機能</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3416</span>
+    <a class="thread-title" href="3390.html#3416">Re2: GREPから除外する機能</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3418</span>
+    <a class="thread-title" href="3390.html#3418">RE2: GREPから除外する機能</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3419</span>
+    <a class="thread-title" href="3390.html#3419">RE3: GREPから除外する機能</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">3481</span>
+    <a class="thread-title" href="3390.html#3481">RE: GREPから除外する機能（試作）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3502</span>
+    <a class="thread-title" href="3390.html#3502">RE2: GREPから除外する機能（試作）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3505</span>
+    <a class="thread-title" href="3390.html#3505">Re3: GREPから除外する機能</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3506</span>
+    <a class="thread-title" href="3390.html#3506">Re4: GREPから除外する機能</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3390>
+    <span class="no">[3390]</span>
+    <a class="thread-title" href="#3390">GREPから除外する機能（試作）</a>
+    <span class="author">みく</span>
+    <time datetime="2004-01-31T16:19:09">2004年01月31日 16:19</time></h1>
+    <div class="body"><br>GREPから指定拡張子を除外する機能を試作ってみました。<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/notgrep20040131.LZH<br><br>GREP条件入力画面のファイルのところに、<br><br>*.* !\.(obj|exe)$<br><br>のように入力するとそれにヒットするファイルが除外されます。<br>（例：すべてのファイルが対象だが、.obj, .exe ファイルは除外する）<br><br>以下、機能・制限の概要：<br>・頭の"!"が除外の意味。<br>・２文字目からが正規表現。<br>・除外パターンは一個しか指定できない。<br>（複数書いたら最初の一個のみ使う。２個目以降はなかったものとして動作する。）<br>・検索対象としてファイルの最初が"!"になるものを指定できなくなる。（除外と認識してしまうため）<br>・除外の正規表現にトークンの区切りである" ;,"を書いてはいけない。<br><br>画面での除外ファイル指定方法などの意見＆案を希望。<br></div></section>
+    <ul><li><section><h1 id=3392>
+    <span class="no">[3392]</span>
+    <a class="thread-title" href="#3392">GREPから除外する機能</a>
+    <span class="author">みく</span>
+    <time datetime="2004-02-01T10:27:46">2004年02月01日 10:27</time></h1>
+    <div class="body">&gt;タイトル: RE: GREPから除外する機能（試作）<br>&gt;発言者: みく<br>&gt;GREPから指定拡張子を除外する機能を試作ってみました。<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/notgrep20040201.LZH<br><br>GREP条件入力画面のファイルのところに、<br><br>*.* !*.obj !*.exe<br><br>のように入力するとそれにヒットするファイルが除外されます。<br>（例：すべてのファイルが対象だが、.obj, .exe 拡張子ファイルは除外する）<br><br>以下、機能・制限の概要：<br>・頭の"!"が除外の意味。<br>・２文字目からが除外ファイルのパターン（正規表現ではない）。<br>・検索対象ファイルの最初が"!"になるものを指定する場合は"!*.txt"のように""で囲んで書く。<br>・正規表現は使わない。<br>・何個でも書ける。<br>・優先順位はありません。（対象から除外を引く？）<br><br><br>メモ：<br>_tstoi()が残ってます。<br>VC++6.0でビルドすると、何やら警告がたくさん出るようになったのですが、オプション変えました？<br>cprofile.h(53)<br>map(46)<br>xtree(120) : warning C4786<br>vector(58)<br>vector(59)<br>xmemory(59) : warning C4786<br></div></section>
+    <ul><li><section><h1 id=3393>
+    <span class="no">[3393]</span>
+    <a class="thread-title" href="#3393">RE: GREPから除外する機能</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-02-01T12:13:03">2004年02月01日 12:13</time></h1>
+    <div class="body">&gt;VC++6.0でビルドすると、何やら警告がたくさん出るようになったのですが、オプション変えました？<br>いや特に．<br><br>&gt;cprofile.h(53)<br>コード上変なことはなさそう．<br><br>&gt;xtree(120) : warning C4786<br>&gt;xmemory(59) : warning C4786<br>warning C4786は識別子の長さ制限を超えただけなので実質的には問題なしかと．<br></div></section>
+    </li><li><section><h1 id=3411>
+    <span class="no">[3411]</span>
+    <a class="thread-title" href="#3411">RE: GREPから除外する機能</a>
+    <span class="author">みく</span>
+    <time datetime="2004-02-14T09:51:48">2004年02月14日 09:51</time></h1>
+    <div class="body"><br>→http://www.egroups.co.jp/files/sakura-editor/Developer/Source/notgrep20040214.LZH<br><br>(ssrc_2004-02-08に対するパッチ)<br><br>・GREPから除外する機能<br>&#9;!*.obj とするとGREPから除外する。<br>&#9;etc_uty.cppのmy_strtokを簡略化<br>・GREPの重複を回避する機能<br>&#9;*.* *.cpp などとすると a.cpp を2回GREPしてしまっていた。<br>・続タブのバグ修正<br>・VCでのビルドエラー回避<br>&#9;_tstoi -&gt; _ttoi<br>・デバッグモードでの警告抑止<br>&#9;CProfile.hで#pragma warning( disable : 4786 )<br><br>GREP機能は線形探索が一番速かったのでそうしてます。<br><br>＃デバッグよろしくです。<br><br>関連記事: &gt;&gt;dev:3002<br></div></section>
+    <ul><li><section><h1 id=3416>
+    <span class="no">[3416]</span>
+    <a class="thread-title" href="#3416">Re2: GREPから除外する機能</a>
+    <span class="author">もか</span>
+    <time datetime="2004-02-15T00:52:58">2004年02月15日 00:52</time></h1>
+    <div class="body">&gt;#pragma warning( disable : 4786 )<br> #ifdef _MSC_VER とかしたほうがよさげ<br><br># さっそく試食してみよう<br></div></section>
+    </li><li><section><h1 id=3418>
+    <span class="no">[3418]</span>
+    <a class="thread-title" href="#3418">RE2: GREPから除外する機能</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-02-15T12:50:00">2004年02月15日 12:50</time></h1>
+    <div class="body">&gt;&#9;etc_uty.cppのmy_strtokを簡略化<br>先頭にある連続したtokenを取り除く部分が削除されていますが大丈夫？<br></div></section>
+    <ul><li><section><h1 id=3419>
+    <span class="no">[3419]</span>
+    <a class="thread-title" href="#3419">RE3: GREPから除外する機能</a>
+    <span class="author">みく</span>
+    <time datetime="2004-02-15T18:45:25">2004年02月15日 18:45</time></h1>
+    <div class="body"><br>&gt;先頭にある連続したtokenを取り除く部分が削除されていますが大丈夫？<br><br>空のトークンは無視するんですね。<br><br>TCHAR* my_strtok( TCHAR* pBuffer, int nLen, int* pnOffset, const TCHAR* pDelimiter )<br>{<br>&#9;int i = *pnOffset;<br>&#9;TCHAR* p;<br><br>&#9;do {<br>&#9;&#9;bool bFlag = false;&#9;//ダブルコーテーションの中か？<br>&#9;&#9;if( i &gt;= nLen ) return NULL;<br>&#9;&#9;p = &amp;pBuffer[i];<br>&#9;&#9;for( ; i &lt; nLen; i++ )<br>&#9;&#9;{<br>&#9;&#9;&#9;if( pBuffer[i] == _T('"') ) bFlag = ! bFlag;<br>&#9;&#9;&#9;if( ! bFlag )<br>&#9;&#9;&#9;{<br>&#9;&#9;&#9;&#9;if( _tcschr( pDelimiter, pBuffer[i] ) )<br>&#9;&#9;&#9;&#9;{<br>&#9;&#9;&#9;&#9;&#9;pBuffer[i++] = _T('\0');<br>&#9;&#9;&#9;&#9;&#9;break;<br>&#9;&#9;&#9;&#9;}<br>&#9;&#9;&#9;}<br>&#9;&#9;}<br>&#9;&#9;*pnOffset = i;<br>&#9;} while( ! *p );&#9;//空のトークンなら次を探す<br>&#9;return p;<br>}<br><br>でどうだろう？<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=3481>
+    <span class="no">[3481]</span>
+    <a class="thread-title" href="#3481">RE: GREPから除外する機能（試作）</a>
+    <span class="author">みく</span>
+    <time datetime="2004-03-20T07:03:05">2004年03月20日 07:03</time></h1>
+    <div class="body"><br>ssrc_2004-03-17に対する差分に変更<br><br>http://www.egroups.co.jp/files/sakura-editor/Developer/Source/notgrep20040319.LZH<br></div></section>
+    <ul><li><section><h1 id=3502>
+    <span class="no">[3502]</span>
+    <a class="thread-title" href="#3502">RE2: GREPから除外する機能（試作）</a>
+    <span class="author">みく</span>
+    <time datetime="2004-03-27T05:42:05">2004年03月27日 05:42</time></h1>
+    <div class="body">&gt;タイトル: RE2: GREPから除外する機能（試作）<br>&gt;発言者: みく<br>&gt;ssrc_2004-03-17に対する差分に変更<br>&gt;<br>&gt;http://www.egroups.co.jp/files/sakura-editor/Developer/Source/notgrep20040319.LZH<br><br>+記事3419の適用が必要<br></div></section>
+    <ul><li><section><h1 id=3505>
+    <span class="no">[3505]</span>
+    <a class="thread-title" href="#3505">Re3: GREPから除外する機能</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-27T22:57:28">2004年03月27日 22:57</time></h1>
+    <div class="body">ソース見てテストしてみました。<br>DoGrepTree内<br> 6565行目：戻り値の型(int)なのに return falseになっている<br> bGrepSubFolder を処理していない<br>それ以外、除外する機能そのものは、ばっちりみたいです。<br>Win2K/Celeron533ではファイル検索モードで「* * * * * * * * !*.*」とかやってみたけど体感速度も全然低下しません。<br>「*.htm !*.html」(拡張子が、「html」のファイルを検索)もOKです。<br></div></section>
+    <ul><li><section><h1 id=3506>
+    <span class="no">[3506]</span>
+    <a class="thread-title" href="#3506">Re4: GREPから除外する機能</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-28T02:30:13">2004年03月28日 02:30</time></h1>
+    <div class="body">&gt; bGrepSubFolder を処理していない<br>これはbGrepSubFolderがFALSEならサブフォルダ検索をスキップすればOKですよね．<br>もかさんの指摘点だけなおして取り込んでみます．<br><br>よく見るとDoGrepFileにもbGrepSubFolder指定があるのが謎だ．(当然使ってない)<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告(Fix) 折り返し行インデントで折り返すとメモリを食い尽くす | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1307</span>
+    <a class="thread-title" href="1307.html#1307">Commit報告(Fix) 折り返し行インデントで折り返すとメモリを食い尽くす</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=1307>
+    <span class="no">[1307]</span>
+    <a class="thread-title" href="#1307">Commit報告(Fix) 折り返し行インデントで折り返すとメモリを食い尽くす</a>
+    <span class="author">もか</span>
+    <time datetime="2010-07-06T19:08:15">2010年07月06日 19:08</time></h1>
+    <div class="body"><br>リビジョン：<br>  rev1783<br><br>変更種別：<br>  バグ修正<br><br>内容：<br>Fix: 折り返し行インデントで折り返すとメモリを食い尽くす(Wiki BugReport/57)<br><br>折り返しをあきらめる「インデント部分以外の有効桁数」判定を 6固定から、タブ幅+2 に変更しました。<br>Tab=4のときは 6 になるので従来と同じです。<br>Tab=8のときは、ぎりぎりでも折り返しインデントできていたものが、インデントが早めに0になります。<br></div></section>
+    </li></ul></body></html>

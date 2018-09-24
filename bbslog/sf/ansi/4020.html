@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>コードのメンテ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4020</span>
+    <a class="thread-title" href="4020.html#4020">コードのメンテ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4025</span>
+    <a class="thread-title" href="4020.html#4025">コードのメンテ2</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4027</span>
+    <a class="thread-title" href="4020.html#4027">コードのメンテ3</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4029</span>
+    <a class="thread-title" href="4020.html#4029">RE: コードのメンテ3</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4031</span>
+    <a class="thread-title" href="4020.html#4031">Re2: コードのメンテ3</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4028</span>
+    <a class="thread-title" href="4020.html#4028">コードのメンテ4</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4035</span>
+    <a class="thread-title" href="4020.html#4035">Re:コードのメンテ4</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4036</span>
+    <a class="thread-title" href="4020.html#4036">RE: コードのメンテ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4037</span>
+    <a class="thread-title" href="4020.html#4037">Re2: コードのメンテ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4020>
+    <span class="no">[4020]</span>
+    <a class="thread-title" href="#4020">コードのメンテ</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-08-20T23:13:22">2005年08月20日 23:13</time></h1>
+    <div class="body">CLayoutMgr::DoLayoutとCLayoutMgr::DoLayout_Rangeのメンテナンス<br>・変数nCharChars2，nCharChars3のスコープを狭める<br>・句読点ぶらさげ，行末禁則，行頭禁則の処理対象位置かどうかの判断部分を関数として分離<br>・nCOMMENTMODEとnCOMMENTMODE_Prevの初期化で無意味なコードを削除<br><br>http://www2.wbs.ne.jp/~dskoba/sakura/1541dsk_clayoutmgr20050820c.lzh</div></section>
+    <ul><li><section><h1 id=4025>
+    <span class="no">[4025]</span>
+    <a class="thread-title" href="#4025">コードのメンテ2</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-08-21T21:32:59">2005年08月21日 21:32</time></h1>
+    <div class="body">・CShareData::InitPopupMenu()での初期化方法を変更<br>・CShareData::Init()でm_pShareData-&gt;m_Commonを参照で置き換え<br>・CShareData::InitTypeConfig()でpShareData-&gt;m_Types[0]を参照で置き換え<br><br>http://www2.wbs.ne.jp/~dskoba/sakura/1541dsk_csharedata20050821.lzh<br></div></section>
+    </li><li><section><h1 id=4027>
+    <span class="no">[4027]</span>
+    <a class="thread-title" href="#4027">コードのメンテ3</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-08-24T01:19:12">2005年08月24日 01:19</time></h1>
+    <div class="body">・メンバ関数がstaticである必要がないのでstaticをやめた<br>・上記変更に伴い，メンバ変数を引数で渡すのをやめ，直接読み書きする<br><br>http://www2.wbs.ne.jp/~dskoba/sakura/1541dsk_ccommandline20050824.lzh</div></section>
+    <ul><li><section><h1 id=4029>
+    <span class="no">[4029]</span>
+    <a class="thread-title" href="#4029">RE: コードのメンテ3</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-08-29T07:37:03">2005年08月29日 07:37</time></h1>
+    <div class="body">&gt;・メンバ関数がstaticである必要がないのでstaticをやめた<br>ParseCommandline()は引数や一時変数が削減できて良いと思うのですが，AtoiOptionIntの方は効果あるんですかね．<br>メンバ変数である必要がないからstaticにしている(見えない引数が1つ減る)とも考えられますが．<br>コンパイラがインライン展開してしまえばどちらも同じかもしれませんが．<br></div></section>
+    <ul><li><section><h1 id=4031>
+    <span class="no">[4031]</span>
+    <a class="thread-title" href="#4031">Re2: コードのメンテ3</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-08-30T23:00:59">2005年08月30日 23:00</time></h1>
+    <div class="body">&gt; ParseCommandline()は引数や一時変数が削減できて良いと思うのですが，AtoiOptionIntの方は効果あるんですかね．<br>&gt; メンバ変数である必要がないからstaticにしている(見えない引数が1つ減る)とも考えられますが．<br><br>ParseCommandline()を変更した際に勢い余って他のもstaticを止めてしまいました。<br>privateになっているし，staticのままのほうがよいと思います。<br><br>ところでSingletonになっていますが，その必要性はあるのだろうか。<br>そのままでもいいとしてDestroyInstance()があった方がいいのかも。</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4028>
+    <span class="no">[4028]</span>
+    <a class="thread-title" href="#4028">コードのメンテ4</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-08-27T22:45:35">2005年08月27日 22:45</time></h1>
+    <div class="body">CMemory::MemCharNext()は全箇所(?)で<br>  int nCharChars = CMemory::MemCharNext( pLine, nLineLen, &amp;pLine[i] ) - &amp;pLine[i];<br>のように指定した箇所の文字が何バイト文字かを調べるのに使っているので，新しく関数を用意する。<br><br>int CMemory::GetSizeOfChar( const char* pData, const int nDataLen, const int nIdx )<br>{<br>    if( nIdx &gt;= nDataLen ){<br>        return 0;<br>    }else if( nIdx == (nDataLen - 1) ){<br>        return 1;<br>    }<br><br>    //if( pData[nIdx] == '\0' ){<br>    //    return 1;<br>    //}<br>    if( _IS_SJIS_1( reinterpret_cast&lt;const unsigned char*&gt;(pData)[nIdx] )<br>            &amp;&amp; _IS_SJIS_2( reinterpret_cast&lt;const unsigned char*&gt;(pData)[nIdx+1] ) ){<br>        return 2;<br>    }<br>    return 1;<br>}<br></div></section>
+    <ul><li><section><h1 id=4035>
+    <span class="no">[4035]</span>
+    <a class="thread-title" href="#4035">Re:コードのメンテ4</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-09-03T00:04:24">2005年09月03日 00:04</time></h1>
+    <div class="body">置き換え可能な部分をCMemory::GetSizeOfChar()で置き換えた物をとりあえず作ってみました。<br>加えて以下の変更を含みます<br>・コードのメンテ1の1541dsk_clayoutmgr20050820c.lzh<br>・CLayoutMgr::DoLayout()とCLayoutMgr::DoLayout_Range()のnCharCharsのスコープを狭めた<br>・CLayoutMgr::DoLayout()とCLayoutMgr::DoLayout_Range()で条件式の変更<br><br>http://www2.wbs.ne.jp/~dskoba/sakura/1550dsk_20050902_diff.lzh<br></div></section>
+    </li></ul></li><li><section><h1 id=4036>
+    <span class="no">[4036]</span>
+    <a class="thread-title" href="#4036">RE: コードのメンテ</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-09-03T10:20:11">2005年09月03日 10:20</time></h1>
+    <div class="body">&gt;・句読点ぶらさげ，行末禁則，行頭禁則の処理対象位置かどうかの判断部分を関数として分離<br>引数がconst int&amp;となっていますが，これconst intでいいんですよね？<br>何故&amp;をつけたのかが謎ですが...<br></div></section>
+    <ul><li><section><h1 id=4037>
+    <span class="no">[4037]</span>
+    <a class="thread-title" href="#4037">Re2: コードのメンテ</a>
+    <span class="author">dskoba</span>
+    <time datetime="2005-09-05T00:45:33">2005年09月05日 00:45</time></h1>
+    <div class="body">&gt; 引数がconst int&amp;となっていますが，これconst intでいいんですよね？<br>&gt; 何故&amp;をつけたのかが謎ですが...<br><br>&amp;付けた方が逆に遅くなりますね。付けた理由ですが，クセかな……。<br>1.5.6.0でのコメント追加，お手数かけました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

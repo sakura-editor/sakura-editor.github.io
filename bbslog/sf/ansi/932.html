@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>sakura-2001-12-12-pre.zipに対応したソース | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">932</span>
+    <a class="thread-title" href="932.html#932">sakura-2001-12-12-pre.zipに対応したソース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">933</span>
+    <a class="thread-title" href="932.html#933">Re:sakura-2001-12-12-pre.zipに対応したソース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">934</span>
+    <a class="thread-title" href="932.html#934">Re2:sakura-2001-12-12-pre.zipに対応したソース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">935</span>
+    <a class="thread-title" href="932.html#935">Re3: 画面幅での折り返し</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">949</span>
+    <a class="thread-title" href="932.html#949">Re4: 画面幅での折り返し</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=932>
+    <span class="no">[932]</span>
+    <a class="thread-title" href="#932">sakura-2001-12-12-pre.zipに対応したソース</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-16T23:06:25">2001年12月16日 23:06</time></h1>
+    <div class="body">sakura-2001-12-12-pre.zipに対応したソースは、<br>どうすれば手に入りますか？<br><br>怪しいもの<br>ssrc_2001-12-01.zip<br>ssrc_2001-12-01_plus.lzh<br>ssrc_2001-12-01_plus1.lzh<br>LessWarndiff1201.lzh<br>etc_uty_2001-12-11.zip<br>dustbox20011211.zip<br><br>あたりはダウンロードしたのですが。。。</div></section>
+    <ul><li><section><h1 id=933>
+    <span class="no">[933]</span>
+    <a class="thread-title" href="#933">Re:sakura-2001-12-12-pre.zipに対応したソース</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-16T23:24:57">2001年12月16日 23:24</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; sakura-2001-12-12-pre.zipに対応したソースは、<br>&gt; どうすれば手に入りますか？<br>オリジナルソース＋horさんのソースをコンパイルしただけです。<br>horさんのソースは_plusに加えて_plus1を上書きします。<br>それ以外のソースは取り込んでいません。<br><br>horさんの変更が打ち止めなら今週くらいにRelease扱いにしようと思っております。<br></div></section>
+    <ul><li><section><h1 id=934>
+    <span class="no">[934]</span>
+    <a class="thread-title" href="#934">Re2:sakura-2001-12-12-pre.zipに対応したソース</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-16T23:46:29">2001年12月16日 23:46</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; ▼ やざきさん<br>&gt; &gt; sakura-2001-12-12-pre.zipに対応したソースは、<br>&gt; &gt; どうすれば手に入りますか？<br>&gt; オリジナルソース＋horさんのソースをコンパイルしただけです。<br>&gt; horさんのソースは_plusに加えて_plus1を上書きします。<br>&gt; それ以外のソースは取り込んでいません。<br><br>ありがとうございました。<br><br>早速。<br>タイプ別設定の折り返し桁数の横にボタンをつけて、<br>クリックしたら、ウィンドウサイズにあわせた桁数に<br>設定されるようにしたいと思います。<br>そこで、<br><br>CEditView::m_nViewColNum<br><br>に、<br><br>CPropTypes::DispatchEvent_p1()<br><br>からアクセスしたいんですが、<br><br>case IDC_BUTTON_MAXLINELEN:&#9;/* ウィンドウサイズにあわせる */<br>  nVal = m_nViewColNum - 1;<br>  ::SetDlgItemInt( hwndDlg, IDC_EDIT_MAXLINELEN, nVal, FALSE );<br>  return TRUE;<br><br>こんな感じじゃだめですよねぇ。<br>どうするのがオススメなんでしょう？<br></div></section>
+    <ul><li><section><h1 id=935>
+    <span class="no">[935]</span>
+    <a class="thread-title" href="#935">Re3: 画面幅での折り返し</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-12-17T09:15:59">2001年12月17日 09:15</time></h1>
+    <div class="body">&gt;CEditView::m_nViewColNum<br>&gt;に、<br>&gt;CPropTypes::DispatchEvent_p1()<br>&gt;からアクセスしたいんですが、<br>CPropTypesはCEditDocから呼ばれていて，CEditViewもCEditDocの要素なので，CEditDocからActiveViewにアクセスするしかないのですが，現在はその辺が考えられていなくてCPropTypesから親であるCEditDocへの参照がありません．<br><br>まずCPropTypesのコンストラクタか何かでCEditDocへのポインタを渡すようにして，その上でEditDoc経由でEditViewにアクセスすることになるかと思います．<br><br>ただ，画面分割していると横幅が異常に狭くなってしまうのがちょっと気がかりですが．<br></div></section>
+    <ul><li><section><h1 id=949>
+    <span class="no">[949]</span>
+    <a class="thread-title" href="#949">Re4: 画面幅での折り返し</a>
+    <span class="author">やざき</span>
+    <time datetime="2001-12-18T13:28:35">2001年12月18日 13:28</time></h1>
+    <div class="body">ウィンドウサイズにあわせるボタンを追加したソースファイル<br><br>set_winsize_2001-12-18.zip<br><br>を共有フォルダにアップロードしました。<br>取り込んでいただけると、これ幸いです。<br><br>ルールにそぐわない点などあれば、ご指摘ください。<br><br>では。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

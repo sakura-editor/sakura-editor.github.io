@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バグ報告等 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4019</span>
+    <a class="thread-title" href="4019.html#4019">バグ報告等</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=4019>
+    <span class="no">[4019]</span>
+    <a class="thread-title" href="#4019">バグ報告等</a>
+    <span class="author">あろか</span>
+    <time datetime="2005-08-20T11:23:21">2005年08月20日 11:23</time></h1>
+    <div class="body">CEditView.cpp<br>1060行目で、m_hwndVScrollBar にアクセスするために Hのチェックをしています。<br>HをVに変更してください。<br>→&#9;if( NULL != m_hwndVScrollBar ){<br><br>CPropTypes<br>m_nMaxLineSize_org はm_Types.m_nMaxLineSizeが代入されますが、<br>どこからも参照されていないのでメンバ変数ごと消してしまって問題なさそうです。<br></div></section>
+    </li></ul></body></html>

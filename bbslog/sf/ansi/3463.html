@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ツリービュー付き設定ダイアログ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3463</span>
+    <a class="thread-title" href="3463.html#3463">ツリービュー付き設定ダイアログ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3464</span>
+    <a class="thread-title" href="3463.html#3464">Re: ツリービュー付き設定ダイアログ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3465</span>
+    <a class="thread-title" href="3463.html#3465">Re:ツリービュー付き設定ダイアログ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3466</span>
+    <a class="thread-title" href="3463.html#3466">Re: ツリービュー付き設定ダイアログ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3468</span>
+    <a class="thread-title" href="3463.html#3468">Re:ツリービュー付き設定ダイアログ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3494</span>
+    <a class="thread-title" href="3463.html#3494">Re2:ツリービュー付き設定ダイアログ</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3463>
+    <span class="no">[3463]</span>
+    <a class="thread-title" href="#3463">ツリービュー付き設定ダイアログ</a>
+    <span class="author">dskoba</span>
+    <time datetime="2004-03-07T21:34:38">2004年03月07日 21:34</time></h1>
+    <div class="body">ツリービューで設定ページを選択するタイプの設定ダイアログを作ってみました。<br>1.4.3.7 からの DIFF差分<br><a href=http://www2.wbs.ne.jp/~dskoba/sakura/1437config2004-03-07.lzh target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>sakura/<wbr>1437conf<wbr>ig2004-<wbr>03-<wbr>07.<wbr>lzh</nobr></a><br>スクリーンショット<br><a href=http://www2.wbs.ne.jp/~dskoba/sakura/config.png target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>sakura/<wbr>config.<wbr>png</nobr></a><br><br>現在の制限は<br>・作業用に m_pShareData をコピーする関数が未完成<br>・共通の全般・クリッカブルURL，タイプ別のスクリーン・カラー・支援のページのみ実装<br>・テストのため，バージョン情報ダイアログの代わりにこのダイアログが開く<br><br>意見，問題点などお願いします。</div></section>
+    <ul><li><section><h1 id=3464>
+    <span class="no">[3464]</span>
+    <a class="thread-title" href="#3464">Re: ツリービュー付き設定ダイアログ</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-03-08T02:00:18">2004年03月08日 02:00</time></h1>
+    <div class="body">&gt;ツリービューで設定ページを選択するタイプの設定ダイアログを作ってみました。<br>おおっ，こういうのずっと前から欲しかったの．<br><br>[注意すること]<br>サイズが640x480より大きくならないようにする．<br><br>[できたらいいな]<br>ベース部分＋AddOn I/Fでページを追加できるようにできたら...<br><br>と，まだソースの方を見てませんが...<br><br>＃はやいところ1.4.4.0のメニューを決めてリリースしたいんですがそっちはどうしましょう？<br></div></section>
+    </li><li><section><h1 id=3465>
+    <span class="no">[3465]</span>
+    <a class="thread-title" href="#3465">Re:ツリービュー付き設定ダイアログ</a>
+    <span class="author">dskoba</span>
+    <time datetime="2004-03-09T01:20:01">2004年03月09日 01:20</time></h1>
+    <div class="body">1.4.3.7 からの DIFF差分2<br><a href=http://www2.wbs.ne.jp/~dskoba/sakura/1437config2004-03-09.lzh target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>sakura/<wbr>1437conf<wbr>ig2004-<wbr>03-<wbr>09.<wbr>lzh</nobr></a><br><br>・m_pShareData ってポインタを含まないから memcpy でコピー<br>・CDialog 及び追加したダイアログクラスのメンバをできるだけ public から protected へ<br>・各ファイルへコメント追加<br><br>など。<br></div></section>
+    </li><li><section><h1 id=3466>
+    <span class="no">[3466]</span>
+    <a class="thread-title" href="#3466">Re: ツリービュー付き設定ダイアログ</a>
+    <span class="author">もか</span>
+    <time datetime="2004-03-09T22:59:17">2004年03月09日 22:59</time></h1>
+    <div class="body">コンパイル＆実行してみました。全体的にいい感じです。<br>完成したらこっちに変更したいですね。<br><br>&gt;意見，問題点などお願いします。<br>元々承知していることもあるかと思いますが、ご了承を。<br>・ツリーの選択を変えるとフォーカスが移動しちゃう<br>カーソルキーで移動するとき不便だと思います。画面だけ変えてフォーカスを残せないでしょうか<br>・タスクトレイのメニューのショートカットキーの設定がだめ<br>トレイメニューが出ちゃって、現在のショートカット設定にすることができません。<br>現状、アクティブなウィンドウのタイトル名で抑制している実装(CEditApp)が、とても怪しいので、<br>ウィンドウメッセージか何での制御にいっそ変えたい。<br>・メモリー使用量<br>CDlgConfig.cppを見た感じでは、ダイアログ表示中は増えそうだけれど、閉じた後は、メモリーに残らなそうでいいですね。<br><br>#コモンコントロールのプロパティーコントロールはダイアログデータごとメモリーに残るみたい<br></div></section>
+    </li><li><section><h1 id=3468>
+    <span class="no">[3468]</span>
+    <a class="thread-title" href="#3468">Re:ツリービュー付き設定ダイアログ</a>
+    <span class="author">dskoba</span>
+    <time datetime="2004-03-13T01:35:53">2004年03月13日 01:35</time></h1>
+    <div class="body">1.4.3.7 からの DIFF差分3<br><a href=http://www2.wbs.ne.jp/~dskoba/sakura/1437config2004-03-13.lzh target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>sakura/<wbr>1437conf<wbr>ig2004-<wbr>03-<wbr>13.<wbr>lzh</nobr></a><br><br>&gt; ベース部分＋AddOn I/Fでページを追加できるようにできたら...<br>うまい方法か分かりませんが，追加できるようにしてみました。<br><br>&gt; ・ツリーの選択を変えるとフォーカスが移動しちゃう<br>修正しました。<br></div></section>
+    <ul><li><section><h1 id=3494>
+    <span class="no">[3494]</span>
+    <a class="thread-title" href="#3494">Re2:ツリービュー付き設定ダイアログ</a>
+    <span class="author">dskoba</span>
+    <time datetime="2004-03-24T00:59:57">2004年03月24日 00:59</time></h1>
+    <div class="body">1.4.3.7 からの DIFF差分<br><a href=http://www2.wbs.ne.jp/~dskoba/sakura/1437config2004-03-24.lzh target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>sakura/<wbr>1437conf<wbr>ig2004-<wbr>03-<wbr>24.<wbr>lzh</nobr></a><br><br>・1.4.4.1へ変更するのが面倒だったので1.4.3.7のまま<br>・タイプ別は一応移植終了<br>・アイテムの種類，アイテムの位置，動作を多少変更<br><br>完成するまでの間，以下の場所で更新します<br><a href=http://www2.wbs.ne.jp/~dskoba/products/index.htm#sakura_diff target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>products<wbr>/<wbr>index.<wbr>htm#<wbr>sakura_d<wbr>iff</nobr></a><br><br># おまけ<br># dot による図付きの doxygen による一覧(1.4.4.0)の HTML HELP (3MB)<br># しばらく公開しておきます<br><a href=http://www2.wbs.ne.jp/~dskoba/sakura/sakura1440.tbz target=_top><nobr>http://<wbr>www2.<wbr>wbs.<wbr>ne.<wbr>jp/~<wbr>dskoba/<wbr>sakura/<wbr>sakura14<wbr>40.<wbr>tbz</nobr></a></div></section>
+    </li></ul></li></ul></li></ul></body></html>

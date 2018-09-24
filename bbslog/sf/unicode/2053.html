@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>英語版つくってます | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2053</span>
+    <a class="thread-title" href="2053.html#2053">英語版つくってます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2055</span>
+    <a class="thread-title" href="2053.html#2055">Re:英語版つくってます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2068</span>
+    <a class="thread-title" href="2053.html#2068">Re2:英語版つくってます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2071</span>
+    <a class="thread-title" href="2053.html#2071">Re3:英語版つくってます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2072</span>
+    <a class="thread-title" href="2053.html#2072">Re4:英語版つくってます</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2077</span>
+    <a class="thread-title" href="2053.html#2077">Re5:英語版つくってます</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2053>
+    <span class="no">[2053]</span>
+    <a class="thread-title" href="#2053">英語版つくってます</a>
+    <span class="author">syat</span>
+    <time datetime="2013-10-01T07:18:41">2013年10月01日 07:18</time></h1>
+    <div class="body">Lucienさんの英語リソースと、なすこじさんの言語DLL機能を、UNICODE版に対応させ中です。<br>画面の見た目がある程度できたので、テストバイナリをアップしました。<br><a href=http://ux.getuploader.com/sakura_editor/download/84/sakura_en_20131001.zip target=_top><nobr>http://<wbr>ux.<wbr>getuploa<wbr>der.<wbr>com/<wbr>sakura_e<wbr>ditor/<wbr>download<wbr>/<wbr>84/<wbr>sakura_e<wbr>n_201310<wbr>01.<wbr>zip</nobr></a><br><br>現在branches/trunk2_i18nで作業しており、どこかのタイミングでtrunk2にマージしたいので、ご確認いただけると幸いです。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/259/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>259/<wbr></nobr></a><br></div></section>
+    <ul><li><section><h1 id=2055>
+    <span class="no">[2055]</span>
+    <a class="thread-title" href="#2055">Re:英語版つくってます</a>
+    <span class="author">まくろ</span>
+    <time datetime="2013-11-18T18:35:27">2013年11月18日 18:35</time></h1>
+    <div class="body">ExpandParameterか専用マクロを定義して<br>プラグイン側の言語も切り替えられるようにできますか<br></div></section>
+    <ul><li><section><h1 id=2068>
+    <span class="no">[2068]</span>
+    <a class="thread-title" href="#2068">Re2:英語版つくってます</a>
+    <span class="author">もか</span>
+    <time datetime="2013-12-03T00:24:01">2013年12月03日 00:24</time></h1>
+    <div class="body">&gt;プラグイン<br>どうしましょうか。<br>&gt;ExpandParameterか専用マクロを定義して<br>現在の言語を取得するように最低限1つこれは必要ですね。<br><br>あとplugin.defと同じで英語のものをplugin_en_US.defにするとか？<br>でもそれだと、定義部分が重複してトラブルの元だよね。<br>文字列部分だけ、plugin_en_US.defも合わせて読み込むようにするとかでしょうか。<br></div></section>
+    <ul><li><section><h1 id=2071>
+    <span class="no">[2071]</span>
+    <a class="thread-title" href="#2071">Re3:英語版つくってます</a>
+    <span class="author">まくろ</span>
+    <time datetime="2013-12-06T18:48:09">2013年12月06日 18:48</time></h1>
+    <div class="body">案１<br>defファイルを分ける<br><br>案２<br>plugin.def内の言語によって変わるキーだけ言語識別子を付加したキーを読む。<br>C[1]=HandlerName　←ここは絶対変わらない<br>C[1].Label=あいう　←デフォルトで読むキー<br>C[1].Label_en_US=aiu　←言語設定で読んでみるキー<br><br>言語をころころ切り替えても定義が不整合を起こさないようにしたいですね<br></div></section>
+    <ul><li><section><h1 id=2072>
+    <span class="no">[2072]</span>
+    <a class="thread-title" href="#2072">Re4:英語版つくってます</a>
+    <span class="author">もか</span>
+    <time datetime="2013-12-07T00:53:03">2013年12月07日 00:53</time></h1>
+    <div class="body">ためしに作ってみました。<br>https://sourceforge.net/p/sakura-editor/patchunicode/259/?page=5<br>言語ファイルを放り込むだけで特定言語に対応できるように、<br>&lt;プラグインフォルダ&gt;local\plugin_&lt;言語名&gt;.def<br>に、文字列部分だけ定義する方式にしてみました。<br></div></section>
+    <ul><li><section><h1 id=2077>
+    <span class="no">[2077]</span>
+    <a class="thread-title" href="#2077">Re5:英語版つくってます</a>
+    <span class="author">まくろ</span>
+    <time datetime="2013-12-07T14:02:07">2013年12月07日 14:02</time></h1>
+    <div class="body">もかさんの方式でよいと思います<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

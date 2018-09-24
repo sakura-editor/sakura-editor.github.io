@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>新規作成時のステータスバー表示 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3275</span>
+    <a class="thread-title" href="3275.html#3275">新規作成時のステータスバー表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3304</span>
+    <a class="thread-title" href="3275.html#3304">Re: 新規作成時のステータスバー表示</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3275>
+    <span class="no">[3275]</span>
+    <a class="thread-title" href="#3275">新規作成時のステータスバー表示</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2003-10-23T01:39:23">2003年10月23日 01:39</time></h1>
+    <div class="body">ステータスバーの最も左がredrawされません。<br>最小化して戻すと、最も左は表示されません。<br>新規作成の時は大丈夫です。<br></div></section>
+    <ul><li><section><h1 id=3304>
+    <span class="no">[3304]</span>
+    <a class="thread-title" href="#3304">Re: 新規作成時のステータスバー表示</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-11-08T11:01:21">2003年11月08日 11:01</time></h1>
+    <div class="body">&gt;ステータスバーの最も左がredrawされません。<br>&gt;最小化して戻すと、最も左は表示されません。<br>ソースを確認したところ，ステータスバーの一番左のメッセージエリアには枠の描画を行わないようSBT_NOBORDERSが指定されています．しかしステータスバーの初期状態ではすべて枠線ありの設定になっているために最初だけ枠が表示されてしまうようです．<br><br>また，SBT_NOBORDERSはフラットに描画する指定ではなく枠を書かない指定なのでバー自身が再描画されるまでは文字列が入れ替わっても枠は残ってしまいます．<br><br>枠設定前にまず「枠無し」を指定することで最初から枠を表示させなくできましたので，次になおします．<br></div></section>
+    </li></ul></li></ul></body></html>

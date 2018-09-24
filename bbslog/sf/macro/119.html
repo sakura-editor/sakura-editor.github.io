@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>クリップボードとスクリプト変数間のやり取り | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">119</span>
+    <a class="thread-title" href="119.html#119">クリップボードとスクリプト変数間のやり取り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">120</span>
+    <a class="thread-title" href="119.html#120">Re:クリップボードとスクリプト変数間のやり取り</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=119>
+    <span class="no">[119]</span>
+    <a class="thread-title" href="#119">クリップボードとスクリプト変数間のやり取り</a>
+    <span class="author">ひよ</span>
+    <time datetime="2004-11-16T11:37:15">2004年11月16日 11:37</time></h1>
+    <div class="body">簡単なVBSを組んでみたいのですが、クリップボードの内容を変数に取り出す、また逆に変数の内容をクリップボードに返す方法はあるでしょうか。リファレンスからは見つからなかったのですが。<br></div></section>
+    <ul><li><section><h1 id=120>
+    <span class="no">[120]</span>
+    <a class="thread-title" href="#120">Re:クリップボードとスクリプト変数間のやり取り</a>
+    <span class="author">しみづ</span>
+    <time datetime="2004-11-18T06:56:27">2004年11月18日 06:56</time></h1>
+    <div class="body"><br>　私自身は使う予定がないのでテストせずにアイデアとして出させてもらいますが、変数に入れられるのはGetSelectedStringくらいしか知りませんので、現ファイルの一部を作業用に使ってならできそうに思います。<br><br>　クリップボードから変数に入れるのは<br>（１）GoFileEndでファイル最後に飛ぶ<br>（２）MoveHistSetで履歴にセット<br>（３）Pasteでクリップボードを貼り付け<br>（４）履歴とファイル最後の間を選択<br>（５）GetSelectedStringで選択を変数に代入<br>（６）ファイルを元に戻す<br><br>　やったことないけど、（４）はできそうな、できなそうな……。<br><br>　変数をクリップボードに入れるのは、（３）をInsTextで変数から出して、（５）をCopyでクリップボードに入れるようにすればよさそうなのだが、どうでしょうか。<br></div></section>
+    </li></ul></li></ul></body></html>

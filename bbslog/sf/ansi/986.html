@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ファイルやフォルダの履歴でUNCを選択したとき | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">986</span>
+    <a class="thread-title" href="986.html#986">ファイルやフォルダの履歴でUNCを選択したとき</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=986>
+    <span class="no">[986]</span>
+    <a class="thread-title" href="#986">ファイルやフォルダの履歴でUNCを選択したとき</a>
+    <span class="author">すとーにぃ</span>
+    <time datetime="2001-12-21T20:11:17">2001年12月21日 20:11</time></h1>
+    <div class="body">ファイルやフォルダの履歴で\\で始まる名前を選択したとき、ネットワークにログインしていないと<br>　・ファイルの履歴→ファイルが存在しないので保存時に作成します、というダイアログが出る<br>　・フォルダの履歴→黙ってカレントディレクトリ？を表示する<br>となるので、ネットワークへの接続ダイアログ呼び出しを追加してみました。<br>(某xyzzyで実現されているような雰囲気)<br>既に接続されている場合は何もしません。<br><br>改修部分<br>etc_uty.cpp  NetConnect関数を追加<br>CEditWnd.cpp CEditDoc::FileRead() にNetConnectへの呼び出し追加<br>CEditApp.cpp CEditApp::DispatchEvent() にNetConnectへの呼び出し追加<br>プロジェクトの設定でリンクモジュールにMpr.libを追加<br><br>動作確認できる環境がNT4SP6a + VC6しかないので、他のOSでは確認してません。<br>(いちいちログオフしないと動作確認できないのがツライ...)<br></div></section>
+    </li></ul></body></html>

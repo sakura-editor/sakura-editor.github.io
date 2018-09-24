@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>アウトライン解析で異常終了する | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">166</span>
+    <a class="thread-title" href="166.html#166">アウトライン解析で異常終了する</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">167</span>
+    <a class="thread-title" href="166.html#167">Re:アウトライン解析で異常終了する</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">168</span>
+    <a class="thread-title" href="166.html#168">Re2:アウトライン解析で異常終了する</a></div>
+    </li><li><div class="list-title">
+    <span class="no">177</span>
+    <a class="thread-title" href="166.html#177">Re2:アウトライン解析で異常終了する</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">180</span>
+    <a class="thread-title" href="166.html#180">Re3:アウトライン解析で異常終了する</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=166>
+    <span class="no">[166]</span>
+    <a class="thread-title" href="#166">アウトライン解析で異常終了する</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-03-02T17:24:28">2008年03月02日 17:24</time></h1>
+    <div class="body">現状、C++などのアウトライン解析を実行すると異常終了してしまうようです。<br>パッチを作ってみました。<br>PatchUnicode#1905597<br><br>auto_sprintf()にm_pcFuncInfoArr-&gt;m_szFilePathを渡すとき明示的にLPCWSTRにキャストするようにしています。<br>＃単純文字列からクラスへの変更に伴う副作用ですね</div></section>
+    <ul><li><section><h1 id=167>
+    <span class="no">[167]</span>
+    <a class="thread-title" href="#167">Re:アウトライン解析で異常終了する</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-02T18:15:33">2008年03月02日 18:15</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 現状、C++などのアウトライン解析を実行すると異常終了してしまうようです。<br>&gt; パッチを作ってみました。<br>&gt; PatchUnicode#1905597<br>&gt; <br>&gt; auto_sprintf()にm_pcFuncInfoArr-&gt;m_szFilePathを渡すとき明示的にLPCWSTRにキャストするようにしています。<br>&gt; ＃単純文字列からクラスへの変更に伴う副作用ですね<br><br>ご対応ありがとうございます。<br>レビューしました。コミットしてOKと思います。<br><br>m_szFilePath の型を変えたときに変数名も変えるべきでした。<br>これだと普通の文字配列に見えちゃうんですよね。。<br><br>ちなみにやっかいなことに、Vistaでは旧版でも異常終了しませんでした (汗)。</div></section>
+    <ul><li><section><h1 id=168>
+    <span class="no">[168]</span>
+    <a class="thread-title" href="#168">Re2:アウトライン解析で異常終了する</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-02T18:20:01">2008年03月02日 18:20</time></h1>
+    <div class="body">&gt; ちなみにやっかいなことに、Vistaでは旧版でも異常終了しませんでした (汗)。<br><br>と思ったけどリリース版だとちゃんと (汗) 異常終了しました。<br>デバッグ版だと動き続けちゃいました。</div></section>
+    </li><li><section><h1 id=177>
+    <span class="no">[177]</span>
+    <a class="thread-title" href="#177">Re2:アウトライン解析で異常終了する</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-03-06T19:01:33">2008年03月06日 19:01</time></h1>
+    <div class="body">&gt; レビューしました。コミットしてOKと思います。<br><br>rev:1227でcommitしましたがANSIビルドが通らなくなってました。<br>↓その修正です。<br>PatchUnicode#1908620</div></section>
+    <ul><li><section><h1 id=180>
+    <span class="no">[180]</span>
+    <a class="thread-title" href="#180">Re3:アウトライン解析で異常終了する</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-06T20:30:11">2008年03月06日 20:30</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; &gt; レビューしました。コミットしてOKと思います。<br>&gt; <br>&gt; rev:1227でcommitしましたがANSIビルドが通らなくなってました。<br>&gt; ↓その修正です。<br>&gt; PatchUnicode#1908620<br><br>失礼しました。UNICODEビルドしかチェックしてなかったです。。<br>今回のパッチをレビューしました。全種ビルド通りました。<br>コミットしてOKと思います。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

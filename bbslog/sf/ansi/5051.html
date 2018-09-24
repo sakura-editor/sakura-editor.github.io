@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>カーソル位置縦線のゴミ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5051</span>
+    <a class="thread-title" href="5051.html#5051">カーソル位置縦線のゴミ</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=5051>
+    <span class="no">[5051]</span>
+    <a class="thread-title" href="#5051">カーソル位置縦線のゴミ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-09-22T22:46:49">2007年09月22日 22:46</time></h1>
+    <div class="body">カーソル位置縦線パッチにおいて，「共通設定」を閉じた直後にカーソル位置から上にゴミが残る現象が出るのですが回避方法がわかりません．<br><br>[前提条件]<br>カーソル位置縦線パッチを適用して画面キャッシュをONにする．<br>OS: Windows XP SP2<br><br>MYWM_CHANGESETTING受信箇所にbreakpointを設定して観察してみると，ゴミを除いた部分がエディタの内容が復元されて止まる場合と，ダイアログボックス全体が再描画されないまま残って止まる場合の2タイプがありました．前者の場合，ゴミ以外の部分はOnPaintが呼ばれずに復元されており，その直後にゴミ部分のみを指定したOnPaintが呼ばれて消えます．<br><br>Lunaだと発生しなくてClassicだと発生するような気もしますが，Classicで出ないこともあります．<br><br>Windowsが画面を保存して勝手に復元するのと，カーソル位置から1桁幅で上方向のみ対象外というのが謎です．<br></div></section>
+    </li></ul></body></html>

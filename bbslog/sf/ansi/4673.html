@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>印刷プレビューの改善パッチ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4673</span>
+    <a class="thread-title" href="4673.html#4673">印刷プレビューの改善パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4674</span>
+    <a class="thread-title" href="4673.html#4674">Re:印刷プレビューの改善パッチ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4676</span>
+    <a class="thread-title" href="4673.html#4676">RE: 印刷プレビューの改善パッチ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4673>
+    <span class="no">[4673]</span>
+    <a class="thread-title" href="#4673">印刷プレビューの改善パッチ</a>
+    <span class="author">もか</span>
+    <time datetime="2007-02-13T23:53:08">2007年02月13日 23:53</time></h1>
+    <div class="body">ご無沙汰しています。もかです。<br>　実際に印刷プレビュー→印刷をするときに思うところがあったので、修正してみました。<br><br>・印刷プレビューでアンチエイリアスっぽい表示をするための「滑らか」機能(Win 2K/XP以降のみ)<br>MS明朝などのビットマップフォントのおかげで、プレビューと印刷した後のイメージが全然違うのを<br>多少改善します。<br><br>・印刷プレビューでページ番号を指定して表示できるように<br>印刷して修正して再度修正以降のみ印刷したい場合など、後ろの方のページをプレビュー表示するのに<br>ボタンを何回もおして大変なので付けました。<br>本当はスクロールを編集時やWordやAcrobatのように「一番下」=「最後のページ」が良いと思いました。<br>今回は修正が多くなるので諦めました。<br> <br>提出中のパッチに依存しているので、それの更新版として作ってあります。<br>小枝研 &gt; 実験用本体 &gt; 印刷関連修正 の rev6 が該当品です。<br>(rev5 は、バグ修正とダイアログの修正のみで sf.net/patchesのほうを更新してあります。)<br>rev5 から rev6 への変更点は別物として、様子をみてから再度パッチを作り直します。<br><br>#巡回ペースの都合で議論には付いていけないため、マイペースで作業中です。<br></div></section>
+    <ul><li><section><h1 id=4674>
+    <span class="no">[4674]</span>
+    <a class="thread-title" href="#4674">Re:印刷プレビューの改善パッチ</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2007-02-14T22:39:49">2007年02月14日 22:39</time></h1>
+    <div class="body">使ってみました。<br><br>　すっげぇΣ(゜m゜;<br><br>チェックボックスの名前、「滑らか」が<br>素直に「滑らかに表示」だともっといい感じでそうです！<br></div></section>
+    </li><li><section><h1 id=4676>
+    <span class="no">[4676]</span>
+    <a class="thread-title" href="#4676">RE: 印刷プレビューの改善パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-02-17T13:11:03">2007年02月17日 13:11</time></h1>
+    <div class="body">ラスティブさんが反応しているので，今のうちに．<br>自分はほとんど印刷機能を使っていないので，テストしてくれる人がいるうちに進めましょう(笑)<br><br>&gt;・印刷プレビューでアンチエイリアスっぽい表示をするための「滑らか」機能(Win 2K/XP以降のみ)<br>２倍に拡大して描画してから，縮小しているのですね．<br>従来は切り捨てられてやせ細っていたところが改善されていますね．<br><br>&gt;・印刷プレビューでページ番号を指定して表示できるように<br>右と左のボタンの間にボックスを置いて，数字を入れてEnterでジャンプできるとより自然かなと思います．<br>ですが間に入れると画面デザインが崩れてしまいそうなのが悩ましい<br><br>あと，滑らかボタンの状態が保存されないのが気になりますね．<br><br>ついでに気になるところとして，プレビューを閉じるつもりでウィンドウごと閉じてしまうことがあるので，タブバーにあるような[X]マークがバーの右上にあるとすこし幸せになれるかも．<br></div></section>
+    </li></ul></li></ul></body></html>

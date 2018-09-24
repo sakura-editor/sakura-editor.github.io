@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Fix) 半角英数⇔全角英数の修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">766</span>
+    <a class="thread-title" href="766.html#766">Commit報告:(Fix) 半角英数⇔全角英数の修正</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=766>
+    <span class="no">[766]</span>
+    <a class="thread-title" href="#766">Commit報告:(Fix) 半角英数⇔全角英数の修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-01-17T15:52:20">2009年01月17日 15:52</time></h1>
+    <div class="body">リビジョン：<br>　rev1513<br><br>変更種別：<br>　バグ修正<br><br>内容：<br>　半角英数⇔全角英数の修正<br><br>変換されない文字があったり、不正な文字に変換されるのを修正しました。<br>＃Cランタイムライブラリ（_mbbtombc/_mbctombb）を利用したANSI版の変換と互換でない部分は互換になるようにしました<br><br><br>■修正した問題点<br><br>半角英数⇔全角英数で<br>&#9;空白( ⇔　)<br>&#9;カンマ(,⇔，)<br>&#9;ピリオド(.⇔．)<br>&#9;大括弧開き([⇔［)<br>&#9;大括弧閉じ(]⇔］)<br>が変換されない。<br><br>半角英数→全角英数で<br>&#9;「`」が「‘」に変換されない<br>&#9;「'」が「’」でなく「‘」に変換される<br>&#9;「"」が「”」でなく「“」に変換される<br>&#9;「~」が「￣」でなく「～」に変換される<br><br>全角英数→半角英数で<br>&#9;「‘」が「`」でなく「’」に変換される<br>&#9;「“」が「"」に変換される（従来は無変換）<br>&#9;「～」が「~」に変換される（従来は無変換）<br>&#9;「￣」が「~」に変換されない<br></div></section>
+    </li></ul></body></html>

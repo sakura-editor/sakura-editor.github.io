@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>開き直す とブックマーク | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2611</span>
+    <a class="thread-title" href="2611.html#2611">開き直す とブックマーク</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2616</span>
+    <a class="thread-title" href="2611.html#2616">RE: 開き直す とブックマーク</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2611>
+    <span class="no">[2611]</span>
+    <a class="thread-title" href="#2611">開き直す とブックマーク</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-12T21:16:49">2002年12月12日 21:16</time></h1>
+    <div class="body">「ブックマークを設定したと思ったのにぃ。何か変だな～～～」と思っていたら。<br>“ファイル - 開き直す”を実行すると、ブックマークの情報が消えちゃうんですね。<br><br>具体的には<br>1:ファイルをエディタで開く。<br>2:ブックマークを設定する。<br>3:開き直す実行<br>とやると、2で設定したブックマークは消えます。<br>“SJISで開き直す”“JISで開き直す”“EUCで開き直す”．．．も同様です。<br><br>“開き直す”を実行する前に一度でもファイルを閉じておけばブックマークは消えません。<br>例えば<br>1:ファイルをエディタで開く。<br>2:ブックマークを設定する。<br>2.1:[Ctrl]+[F4]（ファイル-閉じて(無題)）<br>2.2:[Alt]+[F] → [F] → [0]（ファイル - 最近使ったファイル - 0番目）<br>2.3: 2とは別の場所をブックマークで設定する。<br>3:開き直す実行<br>なら、<br>・2 で設定したブックマークは消えません。<br>・2.3 で設定したブックマークは消えます。<br>という具合。<br>“SJISで開き直す”“JISで開き直す”“EUCで開き直す”．．．も同様です。<br><br>「閉じて(無題) → 最近使ったファイル - 0番目」と「開き直す」は、動作仕様が<br>異なるという事で。<br><br>内部動作を考えれば、確かにこうなることは理解できますが（iniファイルに<br>情報が保存されるかどうかの違いなのでしょうね）、やはりブックマークの<br>情報は消えない方が良い気がします。<br><br><br>「こういう動作になっているから、その辺に気をつけてね ＞ ＡＬＬ」<br>というアナウンスを兼ねての書き込み。(*^^*)<br></div></section>
+    <ul><li><section><h1 id=2616>
+    <span class="no">[2616]</span>
+    <a class="thread-title" href="#2616">RE: 開き直す とブックマーク</a>
+    <span class="author">すい</span>
+    <time datetime="2002-12-13T19:50:28">2002年12月13日 19:50</time></h1>
+    <div class="body">よくよく調べて見るとブックマークが消えてしまうのは<br>&gt;1:ファイルをエディタで開く。<br>&gt;2:ブックマークを設定する。<br>&gt;3:開き直す実行<br>&gt;とやると、2で設定したブックマークは消えます。<br>↑コレだけじゃないですね。<br><br>ファイルを開く ⇒ 何か編集作業をする ⇒ 上書き保存 ⇒ 開き直す<br>で、全てのブックマークが消えちゃいます。<br>sakura.ini に記録されているブックマークも何もかも、全てのブックマークが消えます。<br>“SJISで開き直す”“JISで開き直す”“EUCで開き直す”．．．も同様です。<br><br>これはかなりキツい。<br>私なんかは“開き直す”を過去の編集履歴（undo）をクリアするために<br>（ undo をやり過ぎても、この今の状態以前には戻らないように編集内容を確定するために）<br>使用しているわけで、そのたびにブックマークが抹殺されてしまうとなると。。。<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>キーマクロの読込みでハング | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1134</span>
+    <a class="thread-title" href="1134.html#1134">キーマクロの読込みでハング</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1137</span>
+    <a class="thread-title" href="1134.html#1137">Re: キーマクロの読込みでハング</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1139</span>
+    <a class="thread-title" href="1134.html#1139">Re2: キーマクロの読込みでハング</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1134>
+    <span class="no">[1134]</span>
+    <a class="thread-title" href="#1134">キーマクロの読込みでハング</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-10T17:15:34">2002年01月10日 17:15</time></h1>
+    <div class="body">外部マクロファイルを編集(InsText追加)したあとに「キーマクロの読込み」を実行するとハングします。<br>「登録済みマクロ」から呼び出すと正常に動くようなので、<br>1/8版CKeyMacroMgr.cppの 211～241行を、CSMacroMgr.cppにあわせて<br>以下ようにしたほうが良いと思うのですが、いかがでしょうか？<br><br>    //  Skip Space<br>    while( szLine[i] == ' ' || szLine[i] == '\t' )<br>        i++;<br><br>    if( '\"' == szLine[i] ){<br>        ++i;<br>        nBgn = i;<br>        for( ; i &lt; nLineLen; ++i ){<br>            if( szLine[i] == '\\' ){// エスケープシーケンスのスキップ<br>                ++i;<br>                continue;<br>            }<br>            if( szLine[i] == '\"' ){<br>                break;<br>            }<br>        }<br><br>        cmemWork.SetData( szLine + nBgn, i - nBgn );<br>        cmemWork.Replace( "\\\"", "\"" );<br>        cmemWork.Replace( "\\\\", "\\" );<br>        /* キーマクロのバッファにデータ追加 */<br>        Append( nFuncID, (LPARAM)cmemWork.GetPtr( NULL ) );<br></div></section>
+    <ul><li><section><h1 id=1137>
+    <span class="no">[1137]</span>
+    <a class="thread-title" href="#1137">Re: キーマクロの読込みでハング</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-01-10T21:22:19">2002年01月10日 21:22</time></h1>
+    <div class="body">&gt;外部マクロファイルを編集(InsText追加)したあとに「キーマクロの読込み」を実行するとハングします。<br>既知のバグです。さぼってました。<br><br>&gt;1/8版CKeyMacroMgr.cppの 211～241行を、CSMacroMgr.cppにあわせて<br>CSMacroMgr.cppではメモリを動的に確保しているのですが、CKeyMacroMgrでは共有メモリ上の限られたエリアにデータを入れる必要があるために文字列の分割を行おうとしているのです。（そしてバグってますが）<br><br>ただこれが意味を持つのはINSTEXTだけなので、サイズを制限してそれ以上は受け付けなくなるようにすれば問題ないでしょう。<br></div></section>
+    <ul><li><section><h1 id=1139>
+    <span class="no">[1139]</span>
+    <a class="thread-title" href="#1139">Re2: キーマクロの読込みでハング</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-10T23:50:08">2002年01月10日 23:50</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;1/8版CKeyMacroMgr.cppの 211～241行を、CSMacroMgr.cppにあわせて<br>&gt; CSMacroMgr.cppではメモリを動的に確保しているのですが、<br>&gt; CKeyMacroMgrでは共有メモリ上の限られたエリアにデータを入れる必要があるために<br>&gt; 文字列の分割を行おうとしているのです。（そしてバグってますが）<br><br>ちゃんと見てませんでした・・・すいません、&lt;1134&gt;のロジックは忘れて下さい。<br><br>InsTextだけじゃなくて、FileOpen,ExecCommand を含むマクロファイルも<br>CKeyMacroMgrから実行しようとすると変な動きになります。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

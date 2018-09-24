@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ショートカットにドラッグ＆ドロップ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5243</span>
+    <a class="thread-title" href="5243.html#5243">ショートカットにドラッグ＆ドロップ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5244</span>
+    <a class="thread-title" href="5243.html#5244">Re:ショートカットにドラッグ＆ドロップ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5247</span>
+    <a class="thread-title" href="5243.html#5247">Re2:ショートカットにドラッグ＆ドロップ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5251</span>
+    <a class="thread-title" href="5243.html#5251">Re3:ショートカットにドラッグ＆ドロップ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5252</span>
+    <a class="thread-title" href="5243.html#5252">Re3:ショートカットにドラッグ＆ドロップ</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5243>
+    <span class="no">[5243]</span>
+    <a class="thread-title" href="#5243">ショートカットにドラッグ＆ドロップ</a>
+    <span class="author">かて</span>
+    <time datetime="2006-05-25T17:34:49">2006年05月25日 17:34</time></h1>
+    <div class="body">デスクトップにサクラエディタのショートカットを置いておき、<br>そこに複数のファイルをドラッグ＆ドロップしても、そのうちの一つしか開けません。<br>これは仕様でしょうか？<br><br>因みに、開いたエディタ対して複数のファイルをドラッグ＆ドロップした場合は全て開けるようです。<br></div></section>
+    <ul><li><section><h1 id=5244>
+    <span class="no">[5244]</span>
+    <a class="thread-title" href="#5244">Re:ショートカットにドラッグ＆ドロップ</a>
+    <span class="author">maru</span>
+    <time datetime="2006-05-25T22:45:25">2006年05月25日 22:45</time></h1>
+    <div class="body">▼ かてさん<br>&gt; デスクトップにサクラエディタのショートカットを置いておき、<br>&gt; そこに複数のファイルをドラッグ＆ドロップしても、そのうちの一つしか開けません。<br>&gt; これは仕様でしょうか？<br>はい、仕様です。<br><br>複数のファイルを開くための支援ツールが公開されており<br>「送るメニュー」やデスクトップのショートカットなどで<br>利用できます。<br><a href=http://www.geocities.jp/moca_skr/tools.html target=_top><nobr>http://<wbr>www.<wbr>geocitie<wbr>s.<wbr>jp/<wbr>moca_skr<wbr>/<wbr>tools.<wbr>html</nobr></a></div></section>
+    <ul><li><section><h1 id=5247>
+    <span class="no">[5247]</span>
+    <a class="thread-title" href="#5247">Re2:ショートカットにドラッグ＆ドロップ</a>
+    <span class="author">かて</span>
+    <time datetime="2006-05-29T09:32:14">2006年05月29日 09:32</time></h1>
+    <div class="body">ありがとうございます。<br><br>早速、multifile を保存してそのショートカットをデスクトップに作成し、<br>readonly.dat を参考に"-R"オプションを外して multfile.dat を作成しました。<br>これで、ドラッグ＆ドロップで複数ファイルを開けるようになったので、アイコンもサクラエディタ標準のものに変えて大満足！<br>・・・と、いきたかったのですが、デスクトップに作ったmultifileのショートカットをダブルクリックしても"無題"で新規ファイルが開けません。<br><br>どのようにすれば良いかご教示頂けませんでしょうか？<br></div></section>
+    <ul><li><section><h1 id=5251>
+    <span class="no">[5251]</span>
+    <a class="thread-title" href="#5251">Re3:ショートカットにドラッグ＆ドロップ</a>
+    <span class="author">maru</span>
+    <time datetime="2006-05-30T00:07:32">2006年05月30日 00:07</time></h1>
+    <div class="body">▼ かてさん<br>&gt; ・・・と、いきたかったのですが、デスクトップに作ったmultifileのショートカットをダブルクリックしても"無題"で新規ファイルが開けません。<br><br>手抜きな手段としては、下記のようなバッチファイルをsakuraと同じディレクトリに作っておいて、ショートカットを最小化にするとか。<br><br>:TOP<br>@start sakura.exe "%~dpnx1"<br>@shift<br>@if not "%~dpnx1"=="" goto TOP<br></div></section>
+    </li><li><section><h1 id=5252>
+    <span class="no">[5252]</span>
+    <a class="thread-title" href="#5252">Re3:ショートカットにドラッグ＆ドロップ</a>
+    <span class="author">ももんが13</span>
+    <time datetime="2006-05-30T11:17:53">2006年05月30日 11:17</time></h1>
+    <div class="body"><br>&gt; これで、ドラッグ＆ドロップで複数ファイルを開けるようになったので、アイコンもサクラエディタ標準のものに変えて大満足！<br>&gt; ・・・と、いきたかったのですが、デスクトップに作ったmultifileのショートカットをダブルクリックしても"無題"で新規ファイルが開けません。<br><br>こちらのVBSはどうでしょうか。<br>複数ファイルのドロップと単品起動に対応しています。<br><br><a href=http://muumoo.jp/news/2005/08/27/0.html target=_top><nobr>http://<wbr>muumoo.<wbr>jp/<wbr>news/<wbr>2005/<wbr>08/<wbr>27/<wbr>0.<wbr>html</nobr></a></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

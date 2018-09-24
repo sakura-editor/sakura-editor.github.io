@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>アウトプットウィンドウのアンダーライン | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2291</span>
+    <a class="thread-title" href="2291.html#2291">アウトプットウィンドウのアンダーライン</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=2291>
+    <span class="no">[2291]</span>
+    <a class="thread-title" href="#2291">アウトプットウィンドウのアンダーライン</a>
+    <span class="author">すなふき</span>
+    <time datetime="2002-09-02T23:16:19">2002年09月02日 23:16</time></h1>
+    <div class="body">こんにちは。<br><br>アウトプットウィンドウへ文字列が追加されたとき、<br>アンダーラインの表示が残ってしまう問題を修正しました。<br><br><br>以下のファイルの一行を変更すると修正されるようです。<br><br>ファイル　　　：CEditView_Command.cpp<br>メンバー関数　：Command_ADDTAIL<br>行番号　　　　：7020<br><br>MoveCursor の三番目の引き数をTRUEに変更。<br><br>変更前　　　　：MoveCursor( nNewPos, nNewLine, FALSE );<br>変更後　　　　：MoveCursor( nNewPos, nNewLine, TRUE );<br><br><br>開発されているみなさん、確認してみてください。<br>それでは。<br><br>エディターバージョン  ssrc_2002-08-18<br>Windows98 + Service Pack1<br>MS Visual Studio Ver6.0 + Service Pack5<br><br><br>↓ 参考までに再現手順です。<br><br>１．メニューの「ツール」-&gt;「外部コマンド実行」と選択し、<br>    「ファイル名を指定して実行」というダイアログを表示。<br><br>２．名前に「dir」と入力し、「標準出力を得る」にチェックをいれ、実行。<br></div></section>
+    </li></ul></body></html>

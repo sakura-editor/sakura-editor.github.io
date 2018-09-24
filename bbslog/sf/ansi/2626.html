@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>バグ修正＆タブ矢印表示 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2626</span>
+    <a class="thread-title" href="2626.html#2626">バグ修正＆タブ矢印表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2632</span>
+    <a class="thread-title" href="2626.html#2632">Re: バグ修正＆タブ矢印表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2633</span>
+    <a class="thread-title" href="2626.html#2633">Re2: バグ修正＆タブ矢印表示</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2645</span>
+    <a class="thread-title" href="2626.html#2645">Re: バグ修正＆タブ矢印表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2649</span>
+    <a class="thread-title" href="2626.html#2649">Re2: バグ修正＆タブ矢印表示</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2626>
+    <span class="no">[2626]</span>
+    <a class="thread-title" href="#2626">バグ修正＆タブ矢印表示</a>
+    <span class="author">みく</span>
+    <time datetime="2003-03-26T19:42:15">2003年03月26日 19:42</time></h1>
+    <div class="body"><br>ずいぶん昔のバグ修正として、正規表現キーワード設定画面での<br>更新ボタン押下時のコンボボックス不正表示の修正。<br><br>そのほかとして、タブ表示を専用の矢印記号にするオプションの追加。<br><br>ssrc_2003-03-09 に対する差分です。<br>→20030309.zip<br></div></section>
+    <ul><li><section><h1 id=2632>
+    <span class="no">[2632]</span>
+    <a class="thread-title" href="#2632">Re: バグ修正＆タブ矢印表示</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-03-29T13:40:45">2003年03月29日 13:40</time></h1>
+    <div class="body">&gt;ずいぶん昔のバグ修正として、正規表現キーワード設定画面での<br>&gt;更新ボタン押下時のコンボボックス不正表示の修正。<br>すいません。これどういう現象かもう少し説明して頂けますか？<br>バグリストには入っていましたっけ？<br><br>&gt;そのほかとして、タブ表示を専用の矢印記号にするオプションの追加。<br>これかなりいい感じですね。<br></div></section>
+    <ul><li><section><h1 id=2633>
+    <span class="no">[2633]</span>
+    <a class="thread-title" href="#2633">Re2: バグ修正＆タブ矢印表示</a>
+    <span class="author">みく</span>
+    <time datetime="2003-03-29T14:05:56">2003年03月29日 14:05</time></h1>
+    <div class="body">&gt;タイトル: Re2: バグ修正＆タブ矢印表示<br>&gt;発言者: げんた<br>&gt;&gt;ずいぶん昔のバグ修正として、正規表現キーワード設定画面での<br>&gt;&gt;更新ボタン押下時のコンボボックス不正表示の修正。<br>&gt;すいません。これどういう現象かもう少し説明して頂けますか？<br>&gt;バグリストには入っていましたっけ？<br><br>開発掲示板2518です。<br>更新ボタンを押したとき、色指定の値がリストビューに設定されますが、<br>逆にコンボボックスの値がリストビューの更新前の値に戻ります。<br><br>WM_ITEMCHANGEDで処理しているのですが、どうも更新直後には<br>リストビューのSubItemが正しく取得できないようです。<br>リストビューの左端の値は正しく取得できるんですけど。<br>ListView_Updateとか発行してみてもだめでした。<br></div></section>
+    </li></ul></li><li><section><h1 id=2645>
+    <span class="no">[2645]</span>
+    <a class="thread-title" href="#2645">Re: バグ修正＆タブ矢印表示</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-04-01T01:58:30">2003年04月01日 01:58</time></h1>
+    <div class="body">&gt;タブ表示を専用の矢印記号にするオプション<br>横スクロールすると、矢印が行番号と重なることがあるようです。<br>全角文字で2文字ずつスクロールすると起こりやすいみたいです。<br><br>また、設定画面において矢印表示がチェックされているときはタブ文字列の入力ができないようにしてみました（次回予定）。<br></div></section>
+    <ul><li><section><h1 id=2649>
+    <span class="no">[2649]</span>
+    <a class="thread-title" href="#2649">Re2: バグ修正＆タブ矢印表示</a>
+    <span class="author">みく</span>
+    <time datetime="2003-04-01T18:39:44">2003年04月01日 18:39</time></h1>
+    <div class="body"><br>クリッピング処理が抜けてました。<br><br>CEditView_New.cpp:1151行目のif条件に<br>rcClip2.left &lt;= x + nX * nCharWidth<br>を追加してください。<br><br>＃DrawTabArrow()の引数にrcClip2を追加して関数内で処理してもかまいません。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

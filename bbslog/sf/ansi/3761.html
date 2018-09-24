@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マウスのサイドボタン対応 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3761</span>
+    <a class="thread-title" href="3761.html#3761">マウスのサイドボタン対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3762</span>
+    <a class="thread-title" href="3761.html#3762">RE: マウスのサイドボタン対応</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3763</span>
+    <a class="thread-title" href="3761.html#3763">Re:マウスのサイドボタン対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3764</span>
+    <a class="thread-title" href="3761.html#3764">マウス中ボタン対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3765</span>
+    <a class="thread-title" href="3761.html#3765">Re:マウス中ボタン対応</a></div>
+    </li><li><div class="list-title">
+    <span class="no">3767</span>
+    <a class="thread-title" href="3761.html#3767">Re: マウス中ボタン対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3769</span>
+    <a class="thread-title" href="3761.html#3769">Re2: マウス中ボタン対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3773</span>
+    <a class="thread-title" href="3761.html#3773">Re3: マウス中ボタン対応</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3761>
+    <span class="no">[3761]</span>
+    <a class="thread-title" href="#3761">マウスのサイドボタン対応</a>
+    <span class="author">novice</span>
+    <time datetime="2004-10-10T22:38:19">2004年10月10日 22:38</time></h1>
+    <div class="body">インテリマウス等、ボタンが５つあるマウスのサイドボタンにキーを割り当てられるようにしました。<br><br>メニューから、「設定」―「共通設定」―「キー割り当て」―「キー」のところに、<br>・左サイドクリック<br>・右サイドクリック<br>の項目が増えます。<br><br>この機能を追加することにより、例えばマウスボタンを１回クリックするだけで、「タグジャンプ＆タグジャンプバック」ができるようになります。<br><br>変更対象ファイル<br>ssrc_2004-10-02.tar.bz2<br><br>差分ファイル<br>diff_ssrc_2004-10-02.zip<br><br>その他<br>(1)キー割り当てを「共有メモリ」に保存しているため、共有メモリのバージョンの変更しました。<br>(2)「Shift,Ctrl,Altキー」の状態を取得する関数(getCtrlKeyState)を追加しました。<br>(3)OSのバージョン、マウスの種類により動作しない可能性があります。<br></div></section>
+    <ul><li><section><h1 id=3762>
+    <span class="no">[3762]</span>
+    <a class="thread-title" href="#3762">RE: マウスのサイドボタン対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-10-11T10:26:43">2004年10月11日 10:26</time></h1>
+    <div class="body">&gt;メニューから、「設定」―「共通設定」―「キー割り当て」―「キー」のところに、<br>&gt;・左サイドクリック<br>&gt;・右サイドクリック<br>&gt;の項目が増えます。<br>うちでは動作確認できないのですが，とりあえずキー割り当てが保存できることだけ確認して取り込みました．<br>http://members.at.infoseek.co.jp/sakura_editor/snapshot/ssrc_2004-10-11a.tar.bz2<br></div></section>
+    </li><li><section><h1 id=3763>
+    <span class="no">[3763]</span>
+    <a class="thread-title" href="#3763">Re:マウスのサイドボタン対応</a>
+    <span class="author">Uchi</span>
+    <time datetime="2004-10-11T11:38:46">2004年10月11日 11:38</time></h1>
+    <div class="body">▼ noviceさん<br>便乗の要望をお願いしたいです<br>マウスの中ボタンも追加していただけるとうれしいのですが</div></section>
+    <ul><li><section><h1 id=3764>
+    <span class="no">[3764]</span>
+    <a class="thread-title" href="#3764">マウス中ボタン対応</a>
+    <span class="author">novice</span>
+    <time datetime="2004-10-11T15:49:09">2004年10月11日 15:49</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; 便乗の要望をお願いしたいです<br>&gt; マウスの中ボタンも追加していただけるとうれしいのですが<br>中ボタンにキーを割り当てられるようにしました。<br><br>メニューから、「設定」―「共通設定」―「キー割り当て」―「キー」のところに、<br>・中クリック<br>の項目が増えます。<br><br>※「右クリック」があるので「中クリック」としました。分かりにくかったら別の名称にしてください。<br>（左サイドクリック、右サイドクリックについても）<br><br>変更対象ファイル<br>ssrc_2004-10-11a.tar.bz2<br><br>差分ファイル<br>diff_ssrc_2004-10-11a.zip<br><br>その他<br>(1)キー割り当てを「共有メモリ」に保存しているため、共有メモリのバージョンの変更しました。<br>(2)実装的なことなのですが、今回実装した機能はクリックではなくて押下で処理しています(厳密に言うとクリックでなない)。<br></div></section>
+    <ul><li><section><h1 id=3765>
+    <span class="no">[3765]</span>
+    <a class="thread-title" href="#3765">Re:マウス中ボタン対応</a>
+    <span class="author">Uchi</span>
+    <time datetime="2004-10-11T22:57:07">2004年10月11日 22:57</time></h1>
+    <div class="body">▼ noviceさん<br>早速の対応ありがとうございます<br>すぐに使用してみたいと思います</div></section>
+    </li><li><section><h1 id=3767>
+    <span class="no">[3767]</span>
+    <a class="thread-title" href="#3767">Re: マウス中ボタン対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-10-20T02:11:58">2004年10月20日 02:11</time></h1>
+    <div class="body">レスが遅くなりました．<br>&gt;クリックではなくて押下で処理しています<br>とのことですが，現在右クリックはボタンを離したタイミング(WM_RBUTTONUP)でメニュー表示を行っていますので，中ボタンはそれに合わせた方がいいと思います．<br>サイドボタンは押したタイミングでもいいかな？どうでしょう？<br></div></section>
+    <ul><li><section><h1 id=3769>
+    <span class="no">[3769]</span>
+    <a class="thread-title" href="#3769">Re2: マウス中ボタン対応</a>
+    <span class="author">novice</span>
+    <time datetime="2004-10-20T22:33:50">2004年10月20日 22:33</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;クリックではなくて押下で処理しています<br>&gt; とのことですが，現在右クリックはボタンを離したタイミング(WM_RBUTTONUP)でメニュー表示を行っていますので，中ボタンはそれに合わせた方がいいと思います．<br>&gt; サイドボタンは押したタイミングでもいいかな？どうでしょう？<br>「diff_ssrc_2004-10-11a.zip」をアップロードする前にどっちがいいか動作確認してみたのですが、どっちでも操作的に違いはなさそうでした（好みの問題？）。<br>ということで、お任せします。<br><br>リリース後にユーザの皆さんにフィードバックしてもらう、でも問題ないかと思います。<br></div></section>
+    <ul><li><section><h1 id=3773>
+    <span class="no">[3773]</span>
+    <a class="thread-title" href="#3773">Re3: マウス中ボタン対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2004-10-22T03:45:49">2004年10月22日 03:45</time></h1>
+    <div class="body">&gt;アップロードする前にどっちがいいか動作確認してみたのですが、どっちでも操作的に違いはなさそうでした<br>了解です．<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

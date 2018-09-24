@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>MS-IMEとWXGでの再変換 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1710</span>
+    <a class="thread-title" href="1710.html#1710">MS-IMEとWXGでの再変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1720</span>
+    <a class="thread-title" href="1710.html#1720">Re:MS-IMEとWXGでの再変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1723</span>
+    <a class="thread-title" href="1710.html#1723">Re2:MS-IMEとWXGでの再変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1725</span>
+    <a class="thread-title" href="1710.html#1725">Re3:MS-IMEとWXGでの再変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1731</span>
+    <a class="thread-title" href="1710.html#1731">Re4:MS-IMEとWXGでの再変換</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1764</span>
+    <a class="thread-title" href="1710.html#1764">Re5:MS-IMEとWXGでの再変換</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1710>
+    <span class="no">[1710]</span>
+    <a class="thread-title" href="#1710">MS-IMEとWXGでの再変換</a>
+    <span class="author">おに</span>
+    <time datetime="2002-04-20T22:23:23">2002年04月20日 22:23</time></h1>
+    <div class="body">サクラエディタで文字列を選択してWXGで再変換を行うと、クリップボードの文字列が再変換状態になります。<br>MS-IMEで同じことを行うと、きちんと再変換されます。<br>どうしてでしょうか。</div></section>
+    <ul><li><section><h1 id=1720>
+    <span class="no">[1720]</span>
+    <a class="thread-title" href="#1720">Re:MS-IMEとWXGでの再変換</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-21T01:32:18">2002年04月21日 01:32</time></h1>
+    <div class="body">▼ おにさん<br>&gt; WXGで再変換を行うと、クリップボードの文字列が再変換状態になります。<br>&gt; MS-IMEで同じことを行うと、きちんと再変換されます。<br>お使いのOSはWindows NTですか？<br>あまり詳しくないのではずしているかもしれませんが、一応私の理解を書いておきます。<br>1. 再変換機能はWindows 95/NTではOSサポート外<br>2. しかし、MS IME98以降、ATOK12以降は特別なメッセージを使ってWindows 95/NTに対応できるようにしている。<br>3. このエディタは2.の条件の時は個別のメッセージを処理している。<br>Windows NTであれば、MS-IMEとATOK以外はとりあえずサポート外だと思います。<br>WXGに関する情報があれば追加できるのかもしれません。<br></div></section>
+    <ul><li><section><h1 id=1723>
+    <span class="no">[1723]</span>
+    <a class="thread-title" href="#1723">Re2:MS-IMEとWXGでの再変換</a>
+    <span class="author">minfu</span>
+    <time datetime="2002-04-21T01:54:00">2002年04月21日 01:54</time></h1>
+    <div class="body">WXGは持っていないので断定はできないのですが、再変換の仕組みは独自のものだと思います。<br><br>以前VJEの再変換がどうなっているのだろうと調べたことがありました。<br>おにさんがかかれているWXGの動きがVJEと非常に似ているのでひょっとしたら同じかもしれません。<br><br>ちなみに、VJEでは再変換の操作をすると<br>・VJEからアプリケーションにWM_COPYが送られてくる<br>・それに応答してアプリケーションがクリップボードにコピー<br>・文字列を未確定状態として表示する<br>・VJEからWM_DESTROYCLIPBOARDが送られる<br>というような流れでした。<br><br>VJE独自なのでOSに関係なくVJEさえ入っていればできるようです。ただ、クリップボードの中身は消えてしまいますが。<br></div></section>
+    <ul><li><section><h1 id=1725>
+    <span class="no">[1725]</span>
+    <a class="thread-title" href="#1725">Re3:MS-IMEとWXGでの再変換</a>
+    <span class="author">おに</span>
+    <time datetime="2002-04-21T02:32:47">2002年04月21日 02:32</time></h1>
+    <div class="body">今更ですが環境を書くと、WXG 4.03 + Windows2000 SP2 です。<br><br>&gt; ・VJEからアプリケーションにWM_COPYが送られてくる<br>&gt; ・それに応答してアプリケーションがクリップボードにコピー<br>&gt; ・文字列を未確定状態として表示する<br>&gt; ・VJEからWM_DESTROYCLIPBOARDが送られる<br><br>情報ありがとうございます。<br>ってことで実験。<br>空のウィンドウを作って、WM_COPYを受けて適当な文字列をクリップボードにセットすると、見事、常にその文字列で再変換されました。<br>WM_DESTROYCLIPBOARDではどういう処理をすればいいのですか？…リファレンスを見るとクリップボードビューアに送られるものみたいですから、何もしなくていいのかな？<br><br>というわけで、もしよろしければ、次のバージョンでWM_COPYの処理を加えていただけないでしょうか？<br>同時にVJE対応にもなりますよ～。</div></section>
+    <ul><li><section><h1 id=1731>
+    <span class="no">[1731]</span>
+    <a class="thread-title" href="#1731">Re4:MS-IMEとWXGでの再変換</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-21T11:55:27">2002年04月21日 11:55</time></h1>
+    <div class="body"><br>WM_COPYを受け取ったときに、選択範囲の文字列をクリップボードにコピーすればいいということでっか？<br>とりあえず入れてみましょうか。<br></div></section>
+    <ul><li><section><h1 id=1764>
+    <span class="no">[1764]</span>
+    <a class="thread-title" href="#1764">Re5:MS-IMEとWXGでの再変換</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-27T00:08:32">2002年04月27日 00:08</time></h1>
+    <div class="body"><br>WM_PASTEとWM_COPYに反応するようにしてみました。これで再変換できるかな？<br>動作はTextClipper（http://hp.vector.co.jp/authors/VA001032/textclip.html）で確認。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

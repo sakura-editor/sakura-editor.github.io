@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>コードのメンテ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4070</span>
+    <a class="thread-title" href="4070.html#4070">コードのメンテ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4096</span>
+    <a class="thread-title" href="4070.html#4096">1.5.8.0 プリコンパイル指定ミスってます</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4070>
+    <span class="no">[4070]</span>
+    <a class="thread-title" href="#4070">コードのメンテ</a>
+    <span class="author">あろか</span>
+    <time datetime="2005-10-25T01:25:23">2005年10月25日 01:25</time></h1>
+    <div class="body">VC++のプリコンパイル済みヘッダ用に StdAfx.h を対応させて見ました。<br>→ブリーフケース stdafx_base1570.diff<br>自分のところでは 7分くらいかかるリリースビルドがBcc並みの2分弱に改善されました。<br>（Bccでのコンパイル時間はほとんど変化ありませんでした。）<br></div></section>
+    <ul><li><section><h1 id=4096>
+    <span class="no">[4096]</span>
+    <a class="thread-title" href="#4096">1.5.8.0 プリコンパイル指定ミスってます</a>
+    <span class="author">全略</span>
+    <time datetime="2005-11-08T11:09:19">2005年11月08日 11:09</time></h1>
+    <div class="body">GNU/make用のMakefileを書き直していて気が付いたのですが<br>1.5.8.0のプロジェクトファイルにプリコンパイルヘッダー(でしたっけ?)の指定が抜けているため<br>コンパイル時間が余計にかかっています<br><br>コマンドで言えば -YXStdAfx.h ってヤツです<br><br>追加お願いします m(_~_)m<br></div></section>
+    </li></ul></li></ul></body></html>

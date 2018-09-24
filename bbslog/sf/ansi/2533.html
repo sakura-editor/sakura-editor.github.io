@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>無限に置換が行われる | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2533</span>
+    <a class="thread-title" href="2533.html#2533">無限に置換が行われる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2536</span>
+    <a class="thread-title" href="2533.html#2536">Re:無限に置換が行われる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2537</span>
+    <a class="thread-title" href="2533.html#2537">Re2:無限に置換が行われる</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2540</span>
+    <a class="thread-title" href="2533.html#2540">Re2:無限に置換が行われる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2674</span>
+    <a class="thread-title" href="2533.html#2674">Re3:無限に置換が行われる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2696</span>
+    <a class="thread-title" href="2533.html#2696">Re4:無限に置換が行われる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2697</span>
+    <a class="thread-title" href="2533.html#2697">Re5:無限に置換が行われる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2698</span>
+    <a class="thread-title" href="2533.html#2698">Re6:無限に置換が行われる</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2699</span>
+    <a class="thread-title" href="2533.html#2699">Re6:無限に置換が行われる</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2726</span>
+    <a class="thread-title" href="2533.html#2726">Re5:無限に置換が行われる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2739</span>
+    <a class="thread-title" href="2533.html#2739">Re6:無限に置換が行われる</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2533>
+    <span class="no">[2533]</span>
+    <a class="thread-title" href="#2533">無限に置換が行われる</a>
+    <span class="author">roshi</span>
+    <time datetime="2002-12-21T17:38:00">2002年12月21日 17:38</time></h1>
+    <div class="body">いつもサクラエディタにはお世話になっています。<br>置換を利用していた際に題名の現象が発生しましたので、念のためご報告させて頂きます。<br><br>＜再現方法＞<br>１．サクラエディタに下記のテキストをペースト<br>=======ここから=======<br>20020318/<br>20020325/<br>20020401/<br>=======ここまで=======<br>２．下記の正規表現を利用して置換を実行<br>置換前：/[\r\n]+$<br>置換後：（半角スペース）<br><br>＃置換は正常に行われました<br></div></section>
+    <ul><li><section><h1 id=2536>
+    <span class="no">[2536]</span>
+    <a class="thread-title" href="#2536">Re:無限に置換が行われる</a>
+    <span class="author">もか</span>
+    <time datetime="2002-12-27T02:56:28">2002年12月27日 02:56</time></h1>
+    <div class="body">▼ roshiさん<br>&gt; 置換前：/[\r\n]+$<br>&gt; 置換後：（半角スペース）<br>ということは、理論上の正しい動作の場合は3回置換して終わるはずです。<br>このパターンの場合は、確かにsakuraのバグっぽいです。<br>(所で4回目以降の置換は何を何に置換してるんだ？)<br>もし、無限ループしない方法・ソースの修正など、解る方ご一報お願いします。<br>(私はこの辺の動作が良くわかっていないので、断念)<br><br>#以下のようなものが無限ループならそういうものだとは思います<br>#置換前：[\r\n]+$<br>#置換後：,<br></div></section>
+    <ul><li><section><h1 id=2537>
+    <span class="no">[2537]</span>
+    <a class="thread-title" href="#2537">Re2:無限に置換が行われる</a>
+    <span class="author">もか</span>
+    <time datetime="2002-12-27T03:05:26">2002年12月27日 03:05</time></h1>
+    <div class="body">&gt; #以下のようなものが無限ループならそういうものだとは思います<br>&gt; #置換前：[\r\n]+$<br>&gt; #置換後：,<br>と書きましたが、正しくは<br><br>置換前：[\r\n]*$<br><br>の場合でした。<br></div></section>
+    </li><li><section><h1 id=2540>
+    <span class="no">[2540]</span>
+    <a class="thread-title" href="#2540">Re2:無限に置換が行われる</a>
+    <span class="author">かろと</span>
+    <time datetime="2002-12-29T05:47:44">2002年12月29日 05:47</time></h1>
+    <div class="body">▼ もかさん<br>&gt; ▼ roshiさん<br>&gt; &gt; 置換前：/[\r\n]+$<br>&gt; &gt; 置換後：（半角スペース）<br>&gt; ということは、理論上の正しい動作の場合は3回置換して終わるはずです。<br>&gt; このパターンの場合は、確かにsakuraのバグっぽいです。<br>&gt; (所で4回目以降の置換は何を何に置換してるんだ？)<br>&gt; もし、無限ループしない方法・ソースの修正など、解る方ご一報お願いします。<br>&gt; (私はこの辺の動作が良くわかっていないので、断念)<br><br>全然わかってないですが、トレースの結果　ここがまずそうという所<br>見つけました。<br><br>CDocLineMgr.cpp の 1731行目 (SearchWord() 内)<br>    if( nIdxPos &lt;= (nLineLen - pDocLine-&gt;m_cEol.GetLen() ) &amp;&amp; // 2002.02.08 hor $の次検索で次の行に移動できない問題を回避<br>               ~~~~<br>    if( nIdxPos &lt; (nLineLen - pDocLine-&gt;m_cEol.GetLen() ) &amp;&amp; // 2002.02.08 hor $の次検索で次の行に移動できない問題を回避<br>               ~~~<br>と、等号を外せば、無限ループにならないようです。<br>なんとなくOKそうなのですが、ちと自信ありません。（笑）<br><br>フォローお願いします。<br><br></div></section>
+    <ul><li><section><h1 id=2674>
+    <span class="no">[2674]</span>
+    <a class="thread-title" href="#2674">Re3:無限に置換が行われる</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-04-09T21:59:51">2003年04月09日 21:59</time></h1>
+    <div class="body">▼ かろとさん<br>&gt; ▼ もかさん<br>&gt; &gt; ▼ roshiさん<br>&gt; &gt; &gt; 置換前：/[\r\n]+$<br>&gt; &gt; &gt; 置換後：（半角スペース）<br>&gt; &gt; ということは、理論上の正しい動作の場合は3回置換して終わるはずです。<br>&gt; &gt; このパターンの場合は、確かにsakuraのバグっぽいです。<br>&gt; &gt; (所で4回目以降の置換は何を何に置換してるんだ？)<br>&gt; &gt; もし、無限ループしない方法・ソースの修正など、解る方ご一報お願いします。<br>&gt; &gt; (私はこの辺の動作が良くわかっていないので、断念)<br>&gt; <br>&gt; 全然わかってないですが、トレースの結果　ここがまずそうという所<br>&gt; 見つけました。<br>&gt; <br>&gt; CDocLineMgr.cpp の 1731行目 (SearchWord() 内)<br>&gt;     if( nIdxPos &lt;= (nLineLen - pDocLine-&gt;m_cEol.GetLen() ) &amp;&amp; <br>&gt;                ~~~~<br>&gt;     if( nIdxPos &lt; (nLineLen - pDocLine-&gt;m_cEol.GetLen() ) &amp;&amp; <br>&gt;                ~~~<br>&gt; と、等号を外せば、無限ループにならないようです。<br>&gt; なんとなくOKそうなのですが、ちと自信ありません。（笑）<br>&gt; <br>&gt; フォローお願いします。<br><br>フォローなし・・・(;_;)</div></section>
+    <ul><li><section><h1 id=2696>
+    <span class="no">[2696]</span>
+    <a class="thread-title" href="#2696">Re4:無限に置換が行われる</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-04-28T23:55:57">2003年04月28日 23:55</time></h1>
+    <div class="body">前回のは、改行だけの行を置換できなかったようです。m(__)m<br><br>今度こそ・・です。<br>CBregexp.cpp(210)に以下を追加<br>    // From Here Apr. 28, 2003 かろと<br>    // 検索開始位置が検索対象文字列の長さ以上の時は、<br>    // 検索する文字列がないハズだが、\r\nを検索した場合にBMatch()がtrueを返すため<br>    // 置換の無限ループに陥っていた。ここで、除外して falseを返す。<br>    if (nStart &gt;= len) {<br>        return false;<br>    }<br>    // To Here Apr. 28, 2003 かろと<br><br>問題は、BMatch()で、EOFが最後にある行の置換で、最後が \r\nでないにもかかわらず、<br>trueを返してきていることのようです。<br>恐らく、CDocLineMgr.cpp(1729)の以下の行は<br>    if(nIdxPos&lt;(pRegexpData-&gt;endp[0]-pLine)){   // 2002.02.08 hor EOF直前の文字が何度もマッチしてしまう問題を回避<br>この無限置換の対策のようなのですが、BMatch()がtrueを返した時は、endp[0]も進んでいて、<br>残念ながら、この条件では無限置換を回避できないようです。<br><br>今回の対策は、上記のように、<br>GetMatchInfo()内で、検索する余地がない(=行の最後から検索しようとしている)<br>場合は、falseを返してやろうというものです。<br><br>置換前：[\r\n]+<br>置換後：<br>と<br>置換前：[\r\n]+<br>置換後：(半角スペース)<br><br>では、うまく行ってますが、自信はないので、フォローいただければ幸い。<br><br><br>行(最後はEOFなので何もない)</div></section>
+    <ul><li><section><h1 id=2697>
+    <span class="no">[2697]</span>
+    <a class="thread-title" href="#2697">Re5:無限に置換が行われる</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-04-29T01:10:25">2003年04月29日 01:10</time></h1>
+    <div class="body"><br>Ver 1.3.9.0 に　無限置換対策<br><br>▼ かろとさん<br>&gt; 今度こそ・・です。<br>&gt; CBregexp.cpp(210)に以下を追加<br>＋<br>&gt; CDocLineMgr.cpp(1729)の以下の行の削除<br><br>を行ったものを<br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Junk/sakura_test20030428.lzh target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Junk/<wbr>sakura_t<wbr>est20030<wbr>428.<wbr>lzh</nobr></a><br><br>に置きました。バグ出しに協力いただける方はお願いします。<br></div></section>
+    <ul><li><section><h1 id=2698>
+    <span class="no">[2698]</span>
+    <a class="thread-title" href="#2698">Re6:無限に置換が行われる</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-04-30T04:43:37">2003年04月30日 04:43</time></h1>
+    <div class="body">eGroupはダウンロードの制限があるので、置くのはまずい。<br>と書いてあるのを見つけました。<br>すみません。<br><br>Tripodのフリースペース借りて、置き直しました。<br><br><a href=http://members.tripod.co.jp/karoto/Archive/sakura_test20030428.lzh target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>karoto/<wbr>Archive/<wbr>sakura_t<wbr>est20030<wbr>428.<wbr>lzh</nobr></a><br><br></div></section>
+    </li><li><section><h1 id=2699>
+    <span class="no">[2699]</span>
+    <a class="thread-title" href="#2699">Re6:無限に置換が行われる</a>
+    <span class="author">すい</span>
+    <time datetime="2003-04-30T16:50:50">2003年04月30日 16:50</time></h1>
+    <div class="body">すい＠実家です。いや～～、Win98 なんで念願の SqlSlammer に、さらに<br>ついでに CodeRed.F まで捕獲できてウハウハです。WormCatcher。<br>ダイヤルアップだからあんまり長時間接続できないのが難点ですが。遅いし。<br><br>&gt;http://www.egroups.co.jp/files/sakura-editor/Junk/sakura_test20030428.lzh<br>&gt;<br>&gt;に置きました。バグ出しに協力いただける方はお願いします。<br><br>改行色々置換してみましたけど問題ないみたいです。<br>無限置換にもならないですし。<br>今のところ他にも問題なさげです。<br></div></section>
+    </li></ul></li><li><section><h1 id=2726>
+    <span class="no">[2726]</span>
+    <a class="thread-title" href="#2726">Re5:無限に置換が行われる</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-05-12T11:46:27">2003年05月12日 11:46</time></h1>
+    <div class="body">▼ かろとさん<br>開発、大変なお仕事だと思います。<br><br>&gt; 今度こそ・・です。<br>&gt; <br>&gt; 恐らく、CDocLineMgr.cpp(1729)の以下の行は<br>&gt;     if(nIdxPos&lt;(pRegexpData-&gt;endp[0]-pLine)){   // 2002.02.08<br>&gt; この無限置換の対策のようなのですが、BMatch()がtrueを返した時は、endp[0]も進んでいて、<br>&gt; 残念ながら、この条件では無限置換を回避できないようです。<br><br>置換前：^\r\n<br>置換後：無し<br><br>置換前：\r\n<br>置換後：無し<br><br>これら、２つが両方とも目的を達するする為には、<br>CDocLineMgr.cpp(1729)の以下の行が必要です。<br>条件以下8行を削除しないでいただきたいと思います。<br>削除した場合、両方とも何も行わない結果になりました。<br>---p.s.----------------------<br>ベータ版では正しく動きました。失礼しました。</div></section>
+    <ul><li><section><h1 id=2739>
+    <span class="no">[2739]</span>
+    <a class="thread-title" href="#2739">Re6:無限に置換が行われる</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-13T22:43:48">2003年05月13日 22:43</time></h1>
+    <div class="body">▼ 蒔田　信幸さん<br>&gt; CDocLineMgr.cpp(1729)の以下の行が必要です。<br>&gt; 条件以下8行を削除しないでいただきたいと思います。<br>&gt; 削除した場合、両方とも何も行わない結果になりました。<br><br>誤解を与えたようです。<br>1729行のおかげで行頭文字が検索できない不具合を混入しており、<br>無限置換の対策として、1729行では不十分だという意味です。<br>それ以下の行は消しません。さすがに、それを消すと置換ができませんので(--;<br><br><br>&gt; ---p.s.----------------------<br>&gt; ベータ版では正しく動きました。失礼しました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

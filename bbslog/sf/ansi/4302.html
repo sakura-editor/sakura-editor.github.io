@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タブのホイール切り替え対応 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4302</span>
+    <a class="thread-title" href="4302.html#4302">タブのホイール切り替え対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4306</span>
+    <a class="thread-title" href="4302.html#4306">Re:タブのホイール切り替え対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4307</span>
+    <a class="thread-title" href="4302.html#4307">Re2:タブのホイール切り替え対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4308</span>
+    <a class="thread-title" href="4302.html#4308">Re3:タブのホイール切り替え対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4313</span>
+    <a class="thread-title" href="4302.html#4313">Re4:タブのホイール切り替え対応</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4302>
+    <span class="no">[4302]</span>
+    <a class="thread-title" href="#4302">タブのホイール切り替え対応</a>
+    <span class="author">John</span>
+    <time datetime="2006-03-18T00:21:11">2006年03月18日 00:21</time></h1>
+    <div class="body">2ちゃんねるのサクラエディタふぁんくらぶスレッドに投げておいたコードですが<br>こちらにも書き込んでおきます。<br>Win98以降なら有効だと思います（当方の環境は2Kなので2Kでは確認済みです）。<br><br>CTabWnd.h<br>LRESULT OnTabMouseWheel( WPARAM wParam );/*!&lt; タブ部 WM_MOUSEWHEEL 処理 */<br><br>CTabWnd.cpp<br>#ifndefWM_MOUSEWHEEL<br>#define WM_MOUSEWHEEL 0x020A<br>#endif<br><br>CTabWnd::TabWndDispatchEventに追記<br>case WM_MOUSEWHEEL:<br>return OnTabMouseWheel( wParam );<br>break;<br><br>/*! タブ部 WM_MOUSEWHEEL 処理 */<br>LRESULT CTabWnd::OnTabMouseWheel( WPARAM wParam )<br>{<br>int nDelta = (short)HIWORD(wParam);<br>HWND hWnd = FindWindow("TextEditorWindow", NULL);<br>if (nDelta&gt;0){<br>//前のウィンドウ<br>::SendMessage( hWnd, WM_COMMAND, F_PREVWINDOW , 0 );<br>return 0L;<br>} else if (nDelta&lt;0){<br>//次のウィンドウ<br>::SendMessage( hWnd, WM_COMMAND, F_NEXTWINDOW , 0 );<br>return 0L;<br>}<br>return 1L;<br>}</div></section>
+    <ul><li><section><h1 id=4306>
+    <span class="no">[4306]</span>
+    <a class="thread-title" href="#4306">Re:タブのホイール切り替え対応</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-03-18T16:19:14">2006年03月18日 16:19</time></h1>
+    <div class="body">試してみましたが、自分の環境(XP, 2000とも)ではだめでした... orz<br><br>MSDN 調べてみたら WM_MOUSEWHEEL はフォーカスのあるウィンドウに送られてくるもののようですね。<br>サクラエディタは通常、TextEditorWindow にフォーカスがあるのでタブ上でホイールしてもタブには WM_MOUSEWHEEL は来ないみたいです。<br>Spy++ で見たらやっぱり TextEditorWindow に WM_MOUSEWHEEL が来ています。<br><br>これだけで動くとすれば、何かマウス用の特別なドライバ／ユーティリティがインストールされてるとか、でしょうか...<br>このコード追加をしないでタブ上でホイールさせた場合、<br>1. 何もおきない<br>2. 編集画面がスクロールする<br>のどちらになりますか？<br>私の環境では 2 です。<br><br>あと、この機能を入れるとすればオプションにしたほうがいいかもと思います。<br>編集ウィンドウをスクロールしようとして誤爆するのを嫌う人もいそうですから。</div></section>
+    <ul><li><section><h1 id=4307>
+    <span class="no">[4307]</span>
+    <a class="thread-title" href="#4307">Re2:タブのホイール切り替え対応</a>
+    <span class="author">John</span>
+    <time datetime="2006-03-19T01:11:22">2006年03月19日 01:11</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; これだけで動くとすれば、何かマウス用の特別なドライバ／ユーティリティがインストールされてるとか、でしょうか...<br>申し訳ありません。<br>WheelPlus（http://toshi.pobox.ne.jp/）を常駐させた状態で<br>検証しておりました。<br>常駐停止させると効きませんね、これ・・・<br>改善が必要ですね。<br><br>&gt; このコード追加をしないでタブ上でホイールさせた場合、<br>&gt; 1. 何もおきない<br>&gt; 2. 編集画面がスクロールする<br>&gt; のどちらになりますか？<br>&gt; 私の環境では 2 です。<br>同じく 2 になります。<br><br>&gt; あと、この機能を入れるとすればオプションにしたほうがいいかもと思います。<br>&gt; 編集ウィンドウをスクロールしようとして誤爆するのを嫌う人もいそうですから。<br>そういう人もいるのですね。<br>失念しておりました。</div></section>
+    <ul><li><section><h1 id=4308>
+    <span class="no">[4308]</span>
+    <a class="thread-title" href="#4308">Re3:タブのホイール切り替え対応</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-03-19T02:30:17">2006年03月19日 02:30</time></h1>
+    <div class="body">▼ Johnさん<br>&gt; &gt; あと、この機能を入れるとすればオプションにしたほうがいいかもと思います。<br>&gt; &gt; 編集ウィンドウをスクロールしようとして誤爆するのを嫌う人もいそうですから。<br>&gt; そういう人もいるのですね。<br>&gt; 失念しておりました。<br>現状のサクラエディタでは WheelPlus のようなツール無しだと、マウスカーソルがスクリーン上のどこにあっても編集画面がスクロールするようになってます。デスクトップ上の何も無いところでも。<br>ウィンドウ分割しているときはキャレットがあるほうの編集ウィンドウがスクロールします。<br>なので、タブ上でだけスポット的にタブ切り替えが動くとすると違和感を覚える人は結構いるかもです。<br>ブラウザみたいに必ずマウスカーソル下にあるウィンドウがスクロールする（ウィンドウ外ならスクロールしない）仕様なら割と気にする人は少なくなるかもしれませんが。</div></section>
+    <ul><li><section><h1 id=4313>
+    <span class="no">[4313]</span>
+    <a class="thread-title" href="#4313">Re4:タブのホイール切り替え対応</a>
+    <span class="author">John</span>
+    <time datetime="2006-03-20T02:12:07">2006年03月20日 02:12</time></h1>
+    <div class="body">ツール無しで切り替え出来るようにしてみました。<br>オプション化はしてません。<br>CEditView.cpp<br>/* マウスホイールのメッセージ処理 */<br>LRESULT CEditView::OnMOUSEWHEEL( WPARAM wParam, LPARAM lParam )<br>の<br>//&#9;MYTRACE( "CEditView::DispatchEvent() WM_MOUSEWHEEL fwKeys=%xh zDelta=%d xPos=%d yPos=%d \n", fwKeys, zDelta, xPos, yPos );<br>の前に挿入して下さい。<br><br>&#9;RECT&#9;rc;<br> <br>&#9;HWND hWnd = FindWindow( "TextEditorWindow" , NULL );<br>&#9;HWND hTabWnd = FindWindowEx( hWnd, NULL, "CTabWnd" , NULL );<br>&#9;if( hTabWnd != 0){<br>&#9;&#9;if( 0 != ::GetWindowRect( hTabWnd, &amp;rc )){<br>&#9;&#9;&#9;if( rc.left &lt;= xPos &amp;&amp; xPos &lt;= rc.right){<br>&#9;&#9;&#9;&#9;if( rc.top &lt;=yPos &amp;&amp; yPos &lt;= rc.bottom){<br>&#9;&#9;&#9;&#9;&#9;if (zDelta&gt;0){<br>&#9;&#9;&#9;&#9;&#9;&#9;//前のウィンドウ<br>&#9;&#9;&#9;&#9;&#9;&#9;::SendMessage( hWnd, WM_COMMAND, F_PREVWINDOW , 0 );<br>&#9;&#9;&#9;&#9;&#9;&#9;return 0L;<br>&#9;&#9;&#9;&#9;&#9;} else if (zDelta&lt;0){<br>&#9;&#9;&#9;&#9;&#9;&#9;//次のウィンドウ<br>&#9;&#9;&#9;&#9;&#9;&#9;::SendMessage( hWnd, WM_COMMAND, F_NEXTWINDOW , 0 );<br>&#9;&#9;&#9;&#9;&#9;&#9;return 0L;<br>&#9;&#9;&#9;&#9;&#9;}<br>&#9;&#9;&#9;&#9;}<br>&#9;&#9;&#9;}<br>&#9;&#9;}<br>&#9;}<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

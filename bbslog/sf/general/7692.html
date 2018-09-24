@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CSV形式の６コめと９コめを、正規表現で比較したい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7692</span>
+    <a class="thread-title" href="7692.html#7692">CSV形式の６コめと９コめを、正規表現で比較したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7694</span>
+    <a class="thread-title" href="7692.html#7694">Re:CSV形式の６コめと９コめを、正規表現で比較したい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7695</span>
+    <a class="thread-title" href="7692.html#7695">Re2:CSV形式の６コめと９コめを、正規表現で比較したい</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7692>
+    <span class="no">[7692]</span>
+    <a class="thread-title" href="#7692">CSV形式の６コめと９コめを、正規表現で比較したい</a>
+    <span class="author">ろろ</span>
+    <time datetime="2013-07-07T10:51:14">2013年07月07日 10:51</time></h1>
+    <div class="body">いつもお世話になっております。<br>フィールド６と９の値が異なる時、正規表現で誤と表示する方法を教えてください。<br>置換前---------------------<br>1,2,3,4,5,aaa,7,8,bbb,10<br>1,2,3,4,5,aaa,7,8,aaa,10<br>置換後----------------------<br>1,2,3,4,5,aaa,7,8,bbb,10,誤<br>1,2,3,4,5,aaa,7,8,aaa,10<br>(N)→<br>(P)→<br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=7694>
+    <span class="no">[7694]</span>
+    <a class="thread-title" href="#7694">Re:CSV形式の６コめと９コめを、正規表現で比較したい</a>
+    <span class="author">aaa</span>
+    <time datetime="2013-07-07T23:18:59">2013年07月07日 23:18</time></h1>
+    <div class="body">▼ ろろさん<br>&gt; フィールド６と９の値が異なる時、正規表現で誤と表示する方法を教えてください。<br>これは正規表現でやることなのか?<br>すげー複雑になるぞ<br>(N)→^((?:(?:(?!")[^,]*|"(?:[^"]|"")*"),){5})<br>((?!")[^,]*|"(?:[^"]|"")*"),((?:(?:(?!")<br>[^,]*|"(?:[^"]|"")*"),){2})(?!\2(?:,|$))<br>(.*)$<br>(P)→$1$2,$3$4,誤<br></div></section>
+    <ul><li><section><h1 id=7695>
+    <span class="no">[7695]</span>
+    <a class="thread-title" href="#7695">Re2:CSV形式の６コめと９コめを、正規表現で比較したい</a>
+    <span class="author">ろろ</span>
+    <time datetime="2013-07-08T23:43:22">2013年07月08日 23:43</time></h1>
+    <div class="body">▼ aaaさん<br>できました。正規表現で比較ができると思いませんでした。ありがとうございました。<br>&gt; すげー複雑になるぞ<br>フィールド１と２にしてみました。(以下改行して表示されます。)<br>置換前---------------------<br>aaa,bbb<br>aaa,aaa<br>置換後----------------------<br>aaa,bbb,誤<br>aaa,aaa<br>(N)→^((?:(?:(?!")[^,]*|"(?:[^"]|"")*"),){0})<br>((?!")[^,]*|"(?:[^"]|"")*"),((?:(?:(?!")<br>[^,]*|"(?:[^"]|"")*"),){0})(?!\2(?:,|$))<br>(.*)$<br>(P)→$1$2,$3$4,誤<br>置換後----------------------<br>aaa,bbb<br>aaa,aaa,正<br>(N)→^((?:(?:(?!")[^,]*|"(?:[^"]|"")*"),){0})<br>((?!")[^,]*|"(?:[^"]|"")*"),((?:(?:(?!")<br>[^,]*|"(?:[^"]|"")*"),){0})(?!\2(?:,|$))<br>(.*)$<br>(P)→$1$2,$3$4,正<br>置換後----------------------<br>aaa,bbb,誤<br>aaa,aaa,正<br>(N)→<br>(P)→<br>どのように直したらいいですか。よろしくお願いします。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

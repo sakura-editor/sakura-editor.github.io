@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>多数の拡張子をsakuraに一括で関連付ける方法 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7958</span>
+    <a class="thread-title" href="7958.html#7958">多数の拡張子をsakuraに一括で関連付ける方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7969</span>
+    <a class="thread-title" href="7958.html#7969">Re:多数の拡張子をsakuraに一括で関連付ける方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7971</span>
+    <a class="thread-title" href="7958.html#7971">Re2:多数の拡張子をsakuraに一括で関連付ける方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7972</span>
+    <a class="thread-title" href="7958.html#7972">Re3:多数の拡張子をsakuraに一括で関連付ける方法</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7958>
+    <span class="no">[7958]</span>
+    <a class="thread-title" href="#7958">多数の拡張子をsakuraに一括で関連付ける方法</a>
+    <span class="author">質問</span>
+    <time datetime="2015-02-23T07:39:29">2015年02月23日 07:39</time></h1>
+    <div class="body">長年使用させて頂いており感謝しています。<br>いろいろ設定等で苦労することがあるのですが<br>ここに掲示板を発見しましたので質問等させて頂きます<br>複数の質問がありますので、それぞれ別のスレッドで書きます<br>環境 windowsXP vista 7 8.1<br>バージョン2.1.1.4 (今2.0.2.0から上書きしたばかり)<br><br>当方、多くのテキストファイルを扱い、<br>いろいろな拡張子を自分で用途に応じて付けて<br>sakuraで編集しています。<br>多くの中古PCでsakuraのフォルダをコピーしてsakuraを使用しています。<br><br>PCやOSを頻繁に変えることもあり、変えるごとに、<br>多数のテキストファイルの拡張子をsakuraに関連付するのが大変です。<br>一括でできる方法等あるのでしょうか？<br></div></section>
+    <ul><li><section><h1 id=7969>
+    <span class="no">[7969]</span>
+    <a class="thread-title" href="#7969">Re:多数の拡張子をsakuraに一括で関連付ける方法</a>
+    <span class="author">syat</span>
+    <time datetime="2015-02-26T22:25:53">2015年02月26日 22:25</time></h1>
+    <div class="body">タイプ別設定一覧画面の右下のチェックボックスから関連付けを行えます。<br><br>タイプ別設定がたくさんある場合はその数だけチェックをクリックする必要があります。<br>１つのタイプ別設定に一時的に多くの拡張子を設定、関連付けしたのち拡張子を戻せば、多少は楽になるかもしれません。<br></div></section>
+    <ul><li><section><h1 id=7971>
+    <span class="no">[7971]</span>
+    <a class="thread-title" href="#7971">Re2:多数の拡張子をsakuraに一括で関連付ける方法</a>
+    <span class="author">もか</span>
+    <time datetime="2015-02-26T22:41:03">2015年02月26日 22:41</time></h1>
+    <div class="body">&gt;タイトル: Re2:多数の拡張子をsakuraに一括で関連付ける方法<br>&gt;発言者: syat<br>&gt;タイプ別設定一覧画面の右下のチェックボックスから関連付けを行えます。<br>これ、「右クリック」をONにしないと「ダブルクリック」をONにできないんですね、この前まで知りませんでした。<br>あと、未登録の拡張子ならいいのですが、<br>HKEY_CURRENT_USER\Software\Microsoft\Win<br>dows\CurrentVersion\Explorer\FileExts<br>に拡張子が登録されてると動作しないんですよね。<br></div></section>
+    <ul><li><section><h1 id=7972>
+    <span class="no">[7972]</span>
+    <a class="thread-title" href="#7972">Re3:多数の拡張子をsakuraに一括で関連付ける方法</a>
+    <span class="author">syat</span>
+    <time datetime="2015-02-27T21:29:04">2015年02月27日 21:29</time></h1>
+    <div class="body">▼ もかさん<br>&gt; これ、「右クリック」をONにしないと「ダブルクリック」をONにできないんですね、この前まで知りませんでした。<br>そこらへんは旧関連付けツールを模していたはずです。<br><br>&gt; あと、未登録の拡張子ならいいのですが、<br>&gt; HKEY_CURRENT_USER\Software\Microsoft\Win<br>&gt; dows\CurrentVersion\Explorer\FileExts<br>&gt; に拡張子が登録されてると動作しないんですよね。<br><br>http://sgry.jp/articles/fileassociation.html<br><br>エディタの実装はHKCUのProgID式で、FileExts（既定のプログラム）はそれより優先度が高いのでそうなりますね。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

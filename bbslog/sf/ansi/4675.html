@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タブ動作に関連してCTRL+F4とかマクロとか | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4675</span>
+    <a class="thread-title" href="4675.html#4675">タブ動作に関連してCTRL+F4とかマクロとか</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4677</span>
+    <a class="thread-title" href="4675.html#4677">Re:タブ動作に関連してCTRL+F4とかマクロとか</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4675>
+    <span class="no">[4675]</span>
+    <a class="thread-title" href="#4675">タブ動作に関連してCTRL+F4とかマクロとか</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-02-17T11:34:43">2007年02月17日 11:34</time></h1>
+    <div class="body">タブバー表示状態を取得するマクロを追加しませんか？<br><br>今回のTABを閉じる動作の変更(patches#1658318)において，ALT+F4の割り当てが見直されています．<br>で，ふと思ったのがCTRL+F4です．<br><br>現状ではCTRL+F4は「閉じて(無題)」となっていますが，MDI風に考えればここは「閉じる」ですよね．<br>しかし，SDIではそれだと閉じるになってしまうので「閉じて(無題)」の方が良さそうです．<br>初期のキー割り当てはこのままで良いと思いますが，TABのON/OFFに合わせて機能を切り替えたいと思ったら，現在のタブ状態を取得するマクロは必須ではないかと思ったわけです．<br></div></section>
+    <ul><li><section><h1 id=4677>
+    <span class="no">[4677]</span>
+    <a class="thread-title" href="#4677">Re:タブ動作に関連してCTRL+F4とかマクロとか</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-02-18T04:28:51">2007年02月18日 04:28</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 現状ではCTRL+F4は「閉じて(無題)」となっていますが，MDI風に考えればここは「閉じる」ですよね．<br>&gt; しかし，SDIではそれだと閉じるになってしまうので「閉じて(無題)」の方が良さそうです．<br>&gt; 初期のキー割り当てはこのままで良いと思いますが，TABのON/OFFに合わせて機能を切り替えたいと思ったら，現在のタブ状態を取得するマクロは必須ではないかと思ったわけです．<br><br>Patches#1662465 「CTRL+F4へのキー割り当て改善」<br><br>げんたさんの案とは違いますが、<br>CTRL+F4にキー割り当てが無いときは、<br>MDI風設定では「閉じる」<br>SDI風設定では「閉じて(無題)」<br>になるようにして、デフォルトのキー割り当てを削除してみました。<br><br>これでマクロを使わずとも自然な挙動が得られると思います。<br>（上記と異なる動作にしたい場合のみコマンドやマクロを割り当ててもらう、ってことで）</div></section>
+    </li></ul></li></ul></body></html>

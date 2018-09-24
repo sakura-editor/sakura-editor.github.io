@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>BugReport/82のパッチ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1571</span>
+    <a class="thread-title" href="1571.html#1571">BugReport/82のパッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1575</span>
+    <a class="thread-title" href="1571.html#1575">Commit報告(Fix): BugReport/82 \Q...\E検索が正しくない。</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1571>
+    <span class="no">[1571]</span>
+    <a class="thread-title" href="#1571">BugReport/82のパッチ</a>
+    <span class="author">ds14050</span>
+    <time datetime="2011-06-02T23:15:08">2011年06月02日 23:15</time></h1>
+    <div class="body">BugReport/82<br>＜<a href=http://sakura.qp.land.to/?BugReport%2F82 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>BugRepor<wbr>t%<wbr>2F82</nobr></a>＞<br>の件でパッチを投稿しました。<br>＜<a href=https://sourceforge.net/tracker/?func=detail&aid=3310610&group_id=12488&atid=1013762 target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>3310610&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>1013762</nobr></a>＞<br><br>bcc32で作成した sakura.exe(1.6.6.0)と VS2008EEで作成した sakura.exe(2.0.2.0)、どちらも Revision 1922ベース、で添付したテストが通ることを確認してあります。<br>パッチを適用していない、ダウンロードできる sakura.exe(2.0.2.0)では以下の二つのテストが失敗しました。<br>  FAILED: (bregonig限定) \c\というシークェンスの後ろの .をエスケープされていると誤認して .を置き換え忘れてはいけない。<br>  FAILED: (bregonig限定) \Q...\Eがサポートされているときは \Qの後ろの .を置き換えてはいけない。<br>問題が発覚しなければ近いうちにコミットしたいと思います。マクロだけでも実行してみてください。<br><br>&lt;追記&gt; 「\c\というシークェンスの後ろ」というのは間違いです。\c\\という(一つの文字を表す)シークェンスの後ろが正しいです。</div></section>
+    <ul><li><section><h1 id=1575>
+    <span class="no">[1575]</span>
+    <a class="thread-title" href="#1575">Commit報告(Fix): BugReport/82 \Q...\E検索が正しくない。</a>
+    <span class="author">ds14050</span>
+    <time datetime="2011-06-11T01:42:20">2011年06月11日 01:42</time></h1>
+    <div class="body">リビジョン：<br> 1923<br> <a href=http://sakura-editor.svn.sourceforge.net/viewvc/sakura-editor?view=revision&revision=1923 target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>svn.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>viewvc/<wbr>sakura-<wbr>editor?<wbr>view=<wbr>revision<wbr>&amp;<wbr>revision<wbr>=<wbr>1923</nobr></a><br><br>変更種別：<br> バグ修正<br><br>内容：<br> Fix: 正規表現 \Q...\Eの中に . や $ が含まれていたときに正しく検索できて<br>      いなかった。(BugReport/82, bregonig.dllを使用している場合のみ)<br><br>補足:<br> ログに PatchUnicode:3310610 書き忘れました。<br> \Q...\Eの中に [ が入っていた場合も結果が正しくなかったはずです。<br> 本家 Perlでは変数埋め込みのために、\Q...\Eの中でも自由に $を置けないみたいです。<br></div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>2.2.0.0リリース | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7952</span>
+    <a class="thread-title" href="7952.html#7952">2.2.0.0リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7953</span>
+    <a class="thread-title" href="7952.html#7953">Re:2.2.0.0リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7954</span>
+    <a class="thread-title" href="7952.html#7954">Re2:2.2.0.0リリース</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7955</span>
+    <a class="thread-title" href="7952.html#7955">Re2:2.2.0.0リリース</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7956</span>
+    <a class="thread-title" href="7952.html#7956">Re3:2.2.0.0リリース</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">7957</span>
+    <a class="thread-title" href="7952.html#7957">Re: 2.2.0.0リリース</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7973</span>
+    <a class="thread-title" href="7952.html#7973">Grepダイアログのアクセラレータキーの重複</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7974</span>
+    <a class="thread-title" href="7952.html#7974">Re: Grepダイアログのアクセラレータキーの重複</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7952>
+    <span class="no">[7952]</span>
+    <a class="thread-title" href="#7952">2.2.0.0リリース</a>
+    <span class="author">syat</span>
+    <time datetime="2015-02-22T10:05:30">2015年02月22日 10:05</time></h1>
+    <div class="body">サクラエディタ V2 (Unicode版) の 2.2.0.0 をリリースしました。<br><br>インストーラパッケージ<br>なし<br><br>単体配布版<br><a href=http://sourceforge.net/projects/sakura-editor/files/sakura2/2.2.0.0/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>projects<wbr>/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>sakura2/<wbr>2.<wbr>2.<wbr>0.<wbr>0/<wbr></nobr></a><br><br>64bit（x64）単体配布 *テスト* 版<br>なし<br><br>更新履歴<br><a href=http://sakura.qp.land.to/?History%2F2.2.0.0 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>History%<wbr>2F2.<wbr>2.<wbr>0.<wbr>0</nobr></a><br><br>ヘルプファイル<br><a href=http://sourceforge.net/projects/sakura-editor/files/help2/2.2.0.0/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>projects<wbr>/<wbr>sakura-<wbr>editor/<wbr>files/<wbr>help2/<wbr>2.<wbr>2.<wbr>0.<wbr>0/<wbr></nobr></a></div></section>
+    <ul><li><section><h1 id=7953>
+    <span class="no">[7953]</span>
+    <a class="thread-title" href="#7953">Re:2.2.0.0リリース</a>
+    <span class="author">X2</span>
+    <time datetime="2015-02-22T15:23:15">2015年02月22日 15:23</time></h1>
+    <div class="body">2.2.0.0試してみていますが、希望通りに行間隔の設定が保存されません。<br><br>iniファイルなしの状態から初回起動した場合、<br>タイプ別設定（基本）画面の行の間隔は<br>デフォルトで 1 になっていますが、<br>全終了後に再起動すると 2 になります。<br>0 に書き換えて全終了・再起動しても 2 になりました。<br>3 や 4 なら保存されるようです。</div></section>
+    <ul><li><section><h1 id=7954>
+    <span class="no">[7954]</span>
+    <a class="thread-title" href="#7954">Re2:2.2.0.0リリース</a>
+    <span class="author">piko</span>
+    <time datetime="2015-02-22T16:04:06">2015年02月22日 16:04</time></h1>
+    <div class="body">ソースコードのCShareData_IO.cpp(1433-1437)の区間で<br>"m_nLineSpace" と記述されているところを<br>"m_nLineNumWidth" に修正するのが正しいように思います。</div></section>
+    </li><li><section><h1 id=7955>
+    <span class="no">[7955]</span>
+    <a class="thread-title" href="#7955">Re2:2.2.0.0リリース</a>
+    <span class="author">novice</span>
+    <time datetime="2015-02-22T16:12:39">2015年02月22日 16:12</time></h1>
+    <div class="body">▼ X2さん<br>&gt; 2.2.0.0試してみていますが、希望通りに行間隔の設定が保存されません。<br>&gt; <br>&gt; iniファイルなしの状態から初回起動した場合、<br>&gt; タイプ別設定（基本）画面の行の間隔は<br>&gt; デフォルトで 1 になっていますが、<br>&gt; 全終了後に再起動すると 2 になります。<br>&gt; 0 に書き換えて全終了・再起動しても 2 になりました。<br>&gt; 3 や 4 なら保存されるようです。<br><br>デバッガで追いかけてみました。<br>iniファイルの読み込み時に、2未満の時は2に設定されるのが原因のようです。<br>行番号の最少桁数と行間すきまの変数を間違って処理しているようです。<br>パッチ作っておきます。<br></div></section>
+    <ul><li><section><h1 id=7956>
+    <span class="no">[7956]</span>
+    <a class="thread-title" href="#7956">Re3:2.2.0.0リリース</a>
+    <span class="author">novice</span>
+    <time datetime="2015-02-22T16:24:39">2015年02月22日 16:24</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; パッチ作っておきます。<br><br><a href=http://sourceforge.net/p/sakura-editor/patchunicode/977/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>977/<wbr></nobr></a><br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=7957>
+    <span class="no">[7957]</span>
+    <a class="thread-title" href="#7957">Re: 2.2.0.0リリース</a>
+    <span class="author">もか</span>
+    <time datetime="2015-02-22T17:51:23">2015年02月22日 17:51</time></h1>
+    <div class="body">リリースお疲れ様です。<br>ヘルプで未修正だったところ・旧パッチ仕様だったところなど気が付いた範囲で変更しました。<br></div></section>
+    </li><li><section><h1 id=7973>
+    <span class="no">[7973]</span>
+    <a class="thread-title" href="#7973">Grepダイアログのアクセラレータキーの重複</a>
+    <span class="author">Anonimato</span>
+    <time datetime="2015-02-27T22:16:31">2015年02月27日 22:16</time></h1>
+    <div class="body">Grepダイアログで、「CP」チェックボックスのアクセラレータキーが、<br>「現在編集中のファイルから検索」のキーと重複しています。<br>そのため、旧バージョンではAlt+Q一発で「現在編集中のファイルから検索」の<br>オン／オフが切り替えられたのに、新バージョンでは<br><br>(1) Alt+Qでフォーカスを移す<br>(2) スペースキーを押してチェックを入れる／外す<br><br>という2段階の操作が必要になってしまい、少し不便です。<br>可能であれば、「CP」チェックボックスのアクセラレータキーを<br>他と重複しない別のキーに替えてほしいです。</div></section>
+    <ul><li><section><h1 id=7974>
+    <span class="no">[7974]</span>
+    <a class="thread-title" href="#7974">Re: Grepダイアログのアクセラレータキーの重複</a>
+    <span class="author">もか</span>
+    <time datetime="2015-02-27T23:29:54">2015年02月27日 23:29</time></h1>
+    <div class="body">&gt;という2段階の操作が必要になってしまい、少し不便です。<br>&gt;可能であれば、「CP」チェックボックスのアクセラレータキーを<br>&gt;他と重複しない別のキーに替えてほしいです。<br>ご不便おかけします。すみません。<br>CPのアクセスキーをGrep/Grep置換ともに&amp;2に変更します。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

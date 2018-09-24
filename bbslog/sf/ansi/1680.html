@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>画面最大化時の右下のリサイズ表示 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1680</span>
+    <a class="thread-title" href="1680.html#1680">画面最大化時の右下のリサイズ表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1681</span>
+    <a class="thread-title" href="1680.html#1681">RE: 画面最大化時の右下のリサイズ表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1682</span>
+    <a class="thread-title" href="1680.html#1682">Re2: 画面最大化時の右下のリサイズ表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1683</span>
+    <a class="thread-title" href="1680.html#1683">Re3: 画面最大化時の右下のリサイズ表示</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">1688</span>
+    <a class="thread-title" href="1680.html#1688">RE: 画面最大化時の右下のリサイズ表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1689</span>
+    <a class="thread-title" href="1680.html#1689">RE: 画面最大化時の右下のリサイズ表示</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1692</span>
+    <a class="thread-title" href="1680.html#1692">Re2: 画面最大化時の右下のリサイズ表示</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1680>
+    <span class="no">[1680]</span>
+    <a class="thread-title" href="#1680">画面最大化時の右下のリサイズ表示</a>
+    <span class="author">みく</span>
+    <time datetime="2002-03-03T20:51:57">2002年03月03日 20:51</time></h1>
+    <div class="body"><br>解析ダイアログと印刷プレビュー画面を最大化したとき、<br>右下のリサイズバー(?)がおかしな動きをするバグを修正してみました。<br>（単に表示・非表示切り替えするだけですけど）<br><br>CDialog.cpp:216行目付近のInvalidateRectの前<br>+&#9;&#9;if( wParam == SIZE_MAXIMIZED ){<br>+&#9;&#9;&#9;::ShowWindow( m_hwndSizeBox, SW_HIDE );<br>+&#9;&#9;}else{<br>+&#9;&#9;&#9;::ShowWindow( m_hwndSizeBox, SW_SHOW );<br>+&#9;&#9;}<br>&#9;&#9;::InvalidateRect( m_hwndSizeBox, NULL, TRUE );<br>&#9;}<br>&#9;return FALSE;<br>}<br><br>CPrintPreview.cpp:286行目付近のInvalidateRectの前<br>+&#9;if( NULL != m_hwndSizeBox ){<br>+&#9;&#9;if( wParam == SIZE_MAXIMIZED ){<br>+&#9;&#9;&#9;::ShowWindow( m_hwndSizeBox, SW_HIDE );<br>+&#9;&#9;}else{<br>+&#9;&#9;&#9;::ShowWindow( m_hwndSizeBox, SW_SHOW );<br>+&#9;&#9;}<br>+&#9;}<br>&#9;::InvalidateRect( m_pParentWnd-&gt;m_hWnd, NULL, TRUE );<br>&#9;return 0L;<br>}<br></div></section>
+    <ul><li><section><h1 id=1681>
+    <span class="no">[1681]</span>
+    <a class="thread-title" href="#1681">RE: 画面最大化時の右下のリサイズ表示</a>
+    <span class="author">みく</span>
+    <time datetime="2002-03-03T22:03:26">2002年03月03日 22:03</time></h1>
+    <div class="body"><br>最大化の状態で開くと残ったままです。<br>＃そんな簡単じゃなかったようで。。。<br><br>あと、解析ダイアログを最大化して閉じた後再び開くと<br>デスクトップいっぱいの、でっかい画面になってしまいます。<br></div></section>
+    <ul><li><section><h1 id=1682>
+    <span class="no">[1682]</span>
+    <a class="thread-title" href="#1682">Re2: 画面最大化時の右下のリサイズ表示</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-03T22:48:46">2002年03月03日 22:48</time></h1>
+    <div class="body">▼ みくさん<br>&gt; <br>&gt; 最大化の状態で開くと残ったままです。<br>&gt; ＃そんな簡単じゃなかったようで。。。<br>&gt; <br>&gt; あと、解析ダイアログを最大化して閉じた後再び開くと<br>&gt; デスクトップいっぱいの、でっかい画面になってしまいます。<br><br>おお。これをヒントにさらに修正しました。<br><br>CDialog.cppのOnDestroy()で、<br><br>/* ウィンドウ位置・サイズを記憶 */<br>WINDOWPLACEMENT cWindowPlacement;<br>cWindowPlacement.length = sizeof( WINDOWPLACEMENT );<br>::GetWindowPlacement( m_hWnd, &amp;cWindowPlacement );<br>m_nShowCmd = cWindowPlacement.showCmd;&#9;//&#9;最大化・最小化<br>m_xPos = cWindowPlacement.rcNormalPosition.left;<br>m_yPos = cWindowPlacement.rcNormalPosition.top;<br>m_nWidth = cWindowPlacement.rcNormalPosition.right - cWindowPlacement.rcNormalPosition.left;<br>m_nHeight = cWindowPlacement.rcNormalPosition.bottom - cWindowPlacement.rcNormalPosition.top;<br><br>OnInitDialog()で、<br><br>/* ウィンドウ位置・サイズを再現 */<br>WINDOWPLACEMENT cWindowPlacement;<br>cWindowPlacement.length = sizeof( WINDOWPLACEMENT );<br>cWindowPlacement.showCmd = m_nShowCmd;&#9;//&#9;最大化・最小化<br>cWindowPlacement.rcNormalPosition.left = m_xPos;<br>cWindowPlacement.rcNormalPosition.top = m_yPos;<br>cWindowPlacement.rcNormalPosition.right = m_nWidth - m_xPos;<br>cWindowPlacement.rcNormalPosition.bottom = m_nHeight - m_yPos;<br>::SetWindowPlacement( m_hWnd, &amp;cWindowPlacement );<br><br>これでうまくいくみたい。混ぜときますね。<br><br>＃でも印刷プレビューでは、右下のボックスが見えなくなって、下地（というのか？）が透けてしまうんですね。これはまたそのうちってことで :-)</div></section>
+    <ul><li><section><h1 id=1683>
+    <span class="no">[1683]</span>
+    <a class="thread-title" href="#1683">Re3: 画面最大化時の右下のリサイズ表示</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-03T22:56:53">2002年03月03日 22:56</time></h1>
+    <div class="body">まちがい <br><br>&gt; cWindowPlacement.rcNormalPosition.right = m_nWidth - m_xPos;<br>&gt; cWindowPlacement.rcNormalPosition.bottom = m_nHeight - m_yPos;<br><br>cWindowPlacement.rcNormalPosition.right = m_nWidth + m_xPos;<br>cWindowPlacement.rcNormalPosition.bottom = m_nHeight + m_yPos;<br><br>でした。</div></section>
+    </li></ul></li><li><section><h1 id=1688>
+    <span class="no">[1688]</span>
+    <a class="thread-title" href="#1688">RE: 画面最大化時の右下のリサイズ表示</a>
+    <span class="author">みく</span>
+    <time datetime="2002-03-04T19:16:40">2002年03月04日 19:16</time></h1>
+    <div class="body">&gt;タイトル: RE: 画面最大化時の右下のリサイズ表示<br>&gt;発言者: みく<br>&gt;最大化の状態で開くと残ったままです。<br><br>最大化状態でプレビューを開いたときの対応です。<br><br>CPrintPreview.cpp<br>&#9;if( NULL != m_hwndSizeBox ){<br>&#9;&#9;if( wParam == SIZE_MAXIMIZED ){<br>&#9;&#9;&#9;::ShowWindow( m_hwndSizeBox, SW_HIDE );<br>+&#9;&#9;}else if( wParam == SIZE_RESTORED ){<br>+&#9;&#9;&#9;if( ::IsZoom( m_pParentWnd-&gt;m_hWnd ) ){<br>+&#9;&#9;&#9;&#9;::ShowWindow( m_hwndSizeBox, SW_HIDE );<br>+&#9;&#9;&#9;}else{<br>+&#9;&#9;&#9;&#9;::ShowWindow( m_hwndSizeBox, SW_SHOW );<br>+&#9;&#9;&#9;}<br>&#9;&#9;}else{<br>&#9;&#9;&#9;::ShowWindow( m_hwndSizeBox, SW_SHOW );<br>&#9;&#9;}<br>&#9;}<br>&#9;::InvalidateRect( m_pParentWnd-&gt;m_hWnd, NULL, TRUE );<br>&#9;return 0L;<br>}<br></div></section>
+    <ul><li><section><h1 id=1689>
+    <span class="no">[1689]</span>
+    <a class="thread-title" href="#1689">RE: 画面最大化時の右下のリサイズ表示</a>
+    <span class="author">みく</span>
+    <time datetime="2002-03-04T19:18:06">2002年03月04日 19:18</time></h1>
+    <div class="body"><br>すいません。<br><br>&gt;+&#9;&#9;&#9;if( ::IsZoomed( m_pParentWnd-&gt;m_hWnd ) ){<br><br>でした。<br></div></section>
+    <ul><li><section><h1 id=1692>
+    <span class="no">[1692]</span>
+    <a class="thread-title" href="#1692">Re2: 画面最大化時の右下のリサイズ表示</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-03-05T00:46:37">2002年03月05日 00:46</time></h1>
+    <div class="body">▼ みくさん<br>取り込みました。さんくす。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

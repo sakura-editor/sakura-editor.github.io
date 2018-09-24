@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>PHPなどでの変数名補完の改善 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5414</span>
+    <a class="thread-title" href="5414.html#5414">PHPなどでの変数名補完の改善</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5420</span>
+    <a class="thread-title" href="5414.html#5420">Re:PHPなどでの変数名補完の改善</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5424</span>
+    <a class="thread-title" href="5414.html#5424">Re2:PHPなどでの変数名補完の改善</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5435</span>
+    <a class="thread-title" href="5414.html#5435">Re:PHPなどでの変数名補完の改善</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5438</span>
+    <a class="thread-title" href="5414.html#5438">すみません。パッチを改版しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5439</span>
+    <a class="thread-title" href="5414.html#5439">Re:すみません。パッチを改版しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5440</span>
+    <a class="thread-title" href="5414.html#5440">Re2:すみません。パッチを改版しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5490</span>
+    <a class="thread-title" href="5414.html#5490">Re3:すみません。パッチを改版しました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5491</span>
+    <a class="thread-title" href="5414.html#5491">ヘルプについて</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5414>
+    <span class="no">[5414]</span>
+    <a class="thread-title" href="#5414">PHPなどでの変数名補完の改善</a>
+    <span class="author">てふてふ</span>
+    <time datetime="2008-09-05T21:16:15">2008年09月05日 21:16</time></h1>
+    <div class="body">こんにちは。いつもサクラエディタにはお世話になっています。<br><br>PHPやPerlのソースで、変数名が$や@で始まっている場合に補完機能がうまくいかない点について、パッチを投稿しました。<br><a href=http://sourceforge.net/tracker/index.php?func=detail&aid=2094871&group_id=12488&atid=312488 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>2094871&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>312488</nobr></a><br>以前の動作と微妙に変わってしまう部分はありますが、便利だと思います。<br>ご意見ください。</div></section>
+    <ul><li><section><h1 id=5420>
+    <span class="no">[5420]</span>
+    <a class="thread-title" href="#5420">Re:PHPなどでの変数名補完の改善</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-09-10T00:06:43">2008年09月10日 00:06</time></h1>
+    <div class="body">▼ てふてふさん<br>カーソルの左の単語種類を調べるのにWhatKindOfChar()を使用してるようですので、おっしゃる通りに #$@\ から始まる単語の補完は変な動作になっていますね。<br><br>件のパッチは、キーワードの開始を英数およびアンダースコアに制限するということですよね？<br>開始部分はこれで良いのではないかと思います。<br><br>途中に #$@\ がある場合についてはどうでしょうか？<br>例えば myname@mydomain というのがあったとして my まで入力してctrl + spaceした場合、途中の記号をキーワード文字として扱うと myname@mydomain が候補となりますが、途中の記号もキーワード文字としないようにすると myname と mydomain が候補となりますよね。<br>どちらが使いやすいと思いますか？<br><br>私は補完を普段使っていないので判断がつきませぬ (^^;<br><br>今度はMacで書き込めるかな……？</div></section>
+    <ul><li><section><h1 id=5424>
+    <span class="no">[5424]</span>
+    <a class="thread-title" href="#5424">Re2:PHPなどでの変数名補完の改善</a>
+    <span class="author">てふてふ</span>
+    <time datetime="2008-09-10T20:45:31">2008年09月10日 20:45</time></h1>
+    <div class="body">▼ なすこじさん<br>ご意見ありがとうございます。<br><br>&gt; 途中に #$@\ がある場合についてはどうでしょうか？<br>&gt; 例えば myname@mydomain というのがあったとして my まで入力してctrl + spaceした場合、途中の記号をキーワード文字として扱うと myname@mydomain が候補となりますが、途中の記号もキーワード文字としないようにすると myname と mydomain が候補となりますよね。<br>&gt; どちらが使いやすいと思いますか？<br><br>２行下にも同様の箇所があったんですね。見落としてました。。。<br>パッチその②を投稿しました。<br><a href=http://sourceforge.net/tracker/index.php?func=detail&aid=2103564&group_id=12488&atid=312488 target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/<wbr>index.<wbr>php?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>2103564&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>312488</nobr></a><br>このパッチで、途中の記号もキーワード文字としないようになります。<br><br>私は主にプログラム作成と日本語文章書きにサクラエディタを使っていますが、#$@\を含んだ単語を見かけることはほとんどありません。<br>メールアドレスの@はよくありますが、<a href=mailto:myname@mydomain.com><nobr>myname@<wbr>mydomain<wbr>.<wbr>com</nobr></a> のようなとき「なぜ.comは補完されないんだ？」とか「mydomainだけ欲しいのに…」という光景が思い浮かびます。<br>それだったら mynameを補完 → @を打つ → mydomainを補完、で全然問題ないと思うし、<br>補完対象は英数字の単語のみ、とするほうがわかりやすくていいと私は思います。<br><br>英文書きの人とかTeX使いの人（\の需要？）の意見も聞いてみたいですね。私の周りにはいませんが。<br></div></section>
+    </li></ul></li><li><section><h1 id=5435>
+    <span class="no">[5435]</span>
+    <a class="thread-title" href="#5435">Re:PHPなどでの変数名補完の改善</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-10-07T05:51:34">2008年10月07日 05:51</time></h1>
+    <div class="body">▼ てふてふさん<br>現実逃避中の なすこじ です (^^;<br><br>最初のパッチについて、ソースコードおよび動作を確認しました。<br>unicode版と同様の状態にした方が良いと思うのでコミットをお願いします。<br></div></section>
+    <ul><li><section><h1 id=5438>
+    <span class="no">[5438]</span>
+    <a class="thread-title" href="#5438">すみません。パッチを改版しました</a>
+    <span class="author">syat</span>
+    <time datetime="2008-10-08T23:10:00">2008年10月08日 23:10</time></h1>
+    <div class="body">▼ なすこじさん<br>Unicode版にコミットしたパッチは、こちらに投稿した初回の(9/5)パッチから少し手が加わっています。<br>せっかく確認いただいたのにすみません。<br><br>ANSI版のほうにも同等のパッチを新たに投稿しました。<br>よければこちらをもう一度確認いただけないでしょうか<br><a href=https://sourceforge.net/tracker2/?func=detail&aid=2153215&group_id=12488&atid=312488 target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker2<wbr>/?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>2153215&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>312488</nobr></a><br>一通り動くことは確認してあります。<br><br><br>＃ところで次回のリリースはどのようになるんでしょうね？<br>＃1.6.3.0(ANSI)と1.7↑(UNICODE)の２本立てになるのかな、とか妄想したりしてますが。<br></div></section>
+    <ul><li><section><h1 id=5439>
+    <span class="no">[5439]</span>
+    <a class="thread-title" href="#5439">Re:すみません。パッチを改版しました</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-10-10T20:09:29">2008年10月10日 20:09</time></h1>
+    <div class="body">▼ syatさん<br>#2153215 についてソースコードおよび動作を確認しました。<br>コミットOKと思います。<br><br>&gt; ＃ところで次回のリリースはどのようになるんでしょうね？<br>&gt; ＃1.6.3.0(ANSI)と1.7↑(UNICODE)の２本立てになるのかな、とか妄想したりしてますが。<br><br>しばらくはANSI版を安定版として2本だてでいくと思います。<br>unicode版のバージョンは2.0から始まるのではないでしょうかね。<br></div></section>
+    <ul><li><section><h1 id=5440>
+    <span class="no">[5440]</span>
+    <a class="thread-title" href="#5440">Re2:すみません。パッチを改版しました</a>
+    <span class="author">syat</span>
+    <time datetime="2008-10-10T21:10:28">2008年10月10日 21:10</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; #2153215 についてソースコードおよび動作を確認しました。<br>&gt; コミットOKと思います。<br><br>ありがとうございます。コミットしました。</div></section>
+    <ul><li><section><h1 id=5490>
+    <span class="no">[5490]</span>
+    <a class="thread-title" href="#5490">Re3:すみません。パッチを改版しました</a>
+    <span class="author">maru</span>
+    <time datetime="2008-11-30T16:07:22">2008年11月30日 16:07</time></h1>
+    <div class="body">▼ syatさん なすこじさん<br>簡単に動作を確認したところ、補完リストの単語ファイルについては従来動作と思われたため、編集中のファイルから候補を選出する処理の機能改善、といった理解でヘルプを更新いたしました。<br><br><a href=http://sakura-editor.sourceforge.net/htmlhelp/HLP000104.html target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>htmlhelp<wbr>/<wbr>HLP00010<wbr>4.<wbr>html</nobr></a><br><br>ヘルプ内の日本語表現が適切かどうかという問題もありますが、そもそも私の理解が合っているかも不安です。<br><br>誤りなどあれば、ご指摘願います。<br></div></section>
+    <ul><li><section><h1 id=5491>
+    <span class="no">[5491]</span>
+    <a class="thread-title" href="#5491">ヘルプについて</a>
+    <span class="author">syat</span>
+    <time datetime="2008-11-30T21:24:12">2008年11月30日 21:24</time></h1>
+    <div class="body">▼ maruさん<br>ヘルプ修正どうもありがとうございます。<br>補完機能の部分で少しコメントさせてください。<br><br>&gt; 簡単に動作を確認したところ、補完リストの単語ファイルについては従来動作と思われたため、編集中のファイルから候補を選出する処理の機能改善、といった理解でヘルプを更新いたしました。<br>おっしゃる通りです。編集中ファイルから候補を探す部分だけの修正です。<br><br>・編集中ファイルから候補を探す部分で、'$@\#'の半角記号を含みません、とありますが、'_'以外の半角記号を含まない、としたほうが仕様として正確かと思います。'$@\#'は以前は候補単語に含めてましたが、1.6.3.0からは含まなくなりました、のような記述を添えるとよいかもしれません。<br><br>・今回から半角英数以外も候補に含めるよう変更しました。単語の区切りは文字種が変わるところ（英数・ひらがな・カタカナ・漢字・etc）ですが、ひらがなだけは前の単語にくっつけるようにしています。<br>　（助詞の部分を候補として出したくなかったのと、送り仮名がわかって便利かなと思ったため。）<br>　この動きが奇妙に思われるかもしれないので、仕様としてヘルプに書いていただけますか。<br><br>その他はとくに気になるところはありませんでした。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

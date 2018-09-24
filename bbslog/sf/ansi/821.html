@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>キー設定画面インポート時... | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">821</span>
+    <a class="thread-title" href="821.html#821">キー設定画面インポート時...</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=821>
+    <span class="no">[821]</span>
+    <a class="thread-title" href="#821">キー設定画面インポート時...</a>
+    <span class="author">みく</span>
+    <time datetime="2001-11-15T21:21:21">2001年11月15日 21:21</time></h1>
+    <div class="body">前回、キー設定のインポート時の画面更新バグ修正<br>したつもりでしましたが、バグを入れ込んでました。<br>「キーに割り当てられている機能」が更新されなく<br>なってました。<br>CPropCommon::p5_Import_KeySetting()<br>関数の最後で、IDC_LIST_FUNCと<br>IDC_LIST_KEYの両方にそれぞれLBN_SELCHANGEを<br>SendMessageしないといけません。<br><br>あと、あいかわらず<br>新しいフォルダ　（２）みたいなフォルダの<br>ファイルを開けません。<br></div></section>
+    </li></ul></body></html>

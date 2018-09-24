@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>を開くと落ちる	&gt;sakura.exe <br>とするだけで落ちます。<br>▼CCommandLine.cpp(221)<br>&gt;&#9;&#9;&#9;&#9;int len = lstrlen( pszToken + 1 );<br>&gt;&#9;&#9;&#9;&#9;cmWork.SetData( &amp;pszToken[1], len - ( pszToken[len] == '"' ? 1 : 0 ));<br>で結局、cmWork.SetData( p, -1 )になってるんではないかと。<br> | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4097</span>
+    <a class="thread-title" href="4097.html#4097">を開くと落ちる	&gt;sakura.exe <br>とするだけで落ちます。<br>▼CCommandLine.cpp(221)<br>&gt;&#9;&#9;&#9;&#9;int len = lstrlen( pszToken + 1 );<br>&gt;&#9;&#9;&#9;&#9;cmWork.SetData( &amp;pszToken[1], len - ( pszToken[len] == '"' ? 1 : 0 ));<br>で結局、cmWork.SetData( p, -1 )になってるんではないかと。<br></a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4098</span>
+    <a class="thread-title" href="4097.html#4098">RE: "を開くと落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4101</span>
+    <a class="thread-title" href="4097.html#4101">Re2: "を開くと落ちる</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4102</span>
+    <a class="thread-title" href="4097.html#4102">Re2: "を開くと落ちる</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4104</span>
+    <a class="thread-title" href="4097.html#4104">Re2: "を開くと落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4105</span>
+    <a class="thread-title" href="4097.html#4105">Re3: "を開くと落ちる</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4109</span>
+    <a class="thread-title" href="4097.html#4109">Re3: "を開くと落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4112</span>
+    <a class="thread-title" href="4097.html#4112">Re4: "を開くと落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4118</span>
+    <a class="thread-title" href="4097.html#4118">Re5: "を開くと落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4176</span>
+    <a class="thread-title" href="4097.html#4176">Re6: "を開くと落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4204</span>
+    <a class="thread-title" href="4097.html#4204">Re7: "を開くと落ちる</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4120</span>
+    <a class="thread-title" href="4097.html#4120">Re5: "を開くと落ちる</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4121</span>
+    <a class="thread-title" href="4097.html#4121">Re6: "を開くと落ちる</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4097>
+    <span class="no">[4097]</span>
+    <a class="thread-title" href="#4097">を開くと落ちる	&gt;sakura.exe <br>とするだけで落ちます。<br>▼CCommandLine.cpp(221)<br>&gt;&#9;&#9;&#9;&#9;int len = lstrlen( pszToken + 1 );<br>&gt;&#9;&#9;&#9;&#9;cmWork.SetData( &amp;pszToken[1], len - ( pszToken[len] == '"' ? 1 : 0 ));<br>で結局、cmWork.SetData( p, -1 )になってるんではないかと。<br></a>
+    <span class="author">もか</span>
+    <time datetime="2005-11-08T23:56:51">2005年11月08日 23:56</time></h1>
+    <div class="body"></div></section>
+    <ul><li><section><h1 id=4098>
+    <span class="no">[4098]</span>
+    <a class="thread-title" href="#4098">RE: "を開くと落ちる</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-11-09T00:26:00">2005年11月09日 00:26</time></h1>
+    <div class="body">&gt;&gt;sakura.exe "<br>&gt;とするだけで落ちます。<br>&gt;▼CCommandLine.cpp(221)<br>&gt;&gt;&#9;&#9;&#9;&#9;int len = lstrlen( pszToken + 1 );<br>&gt;&gt;&#9;&#9;&#9;&#9;cmWork.SetData( &amp;pszToken[1], len - ( pszToken[len] == '"' ? 1 : 0 ));<br>&gt;で結局、cmWork.SetData( p, -1 )になってるんではないかと。<br>言われてみればたしかに．１つの引用符が，最初と最後の2つと見間違えられてしまうのですね．<br>早急に直します．<br></div></section>
+    <ul><li><section><h1 id=4101>
+    <span class="no">[4101]</span>
+    <a class="thread-title" href="#4101">Re2: "を開くと落ちる</a>
+    <span class="author">すす</span>
+    <time datetime="2005-11-10T11:28:33">2005年11月10日 11:28</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;&gt;sakura.exe "<br>&gt; &gt;とするだけで落ちます。<br>&gt; &gt;▼CCommandLine.cpp(221)<br>&gt; &gt;&gt;&#9;&#9;&#9;&#9;int len = lstrlen( pszToken + 1 );<br>&gt; &gt;&gt;&#9;&#9;&#9;&#9;cmWork.SetData( &amp;pszToken[1], len - ( pszToken[len] == '"' ? 1 : 0 ));<br>&gt; &gt;で結局、cmWork.SetData( p, -1 )になってるんではないかと。<br>&gt; 言われてみればたしかに．１つの引用符が，最初と最後の2つと見間違えられてしまうのですね．<br>&gt; 早急に直します．<br>その部分のソースのコメントを読んで、ちょっと意地悪なんですが<br>sakura.exe """<br>として「名前を変えて保存」を行うと<br>「ダイアログが開けません。エラー:FNERR_INVALIDFILENAME」となり、保存できません。<br><br>すでに存在するファイルを開き「名前を変えて保存」で先頭に\をつけるとドライブのルートに保存されます。<br>　－＞これは仕様でもいい気がしますが。<br><br></div></section>
+    </li><li><section><h1 id=4102>
+    <span class="no">[4102]</span>
+    <a class="thread-title" href="#4102">Re2: "を開くと落ちる</a>
+    <span class="author">すす</span>
+    <time datetime="2005-11-10T16:06:08">2005年11月10日 16:06</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;&gt;sakura.exe "<br>&gt; &gt;とするだけで落ちます。<br>&gt; &gt;▼CCommandLine.cpp(221)<br>&gt; &gt;&gt;&#9;&#9;&#9;&#9;int len = lstrlen( pszToken + 1 );<br>if (len==0) {<br> break;<br>}<br>だけで起動時に落ちなくなりました。<br><br>&gt; &gt;&gt;&#9;&#9;&#9;&#9;cmWork.SetData( &amp;pszToken[1], len - ( pszToken[len] == '"' ? 1 : 0 ));<br>&gt; &gt;で結局、cmWork.SetData( p, -1 )になってるんではないかと。<br>&gt; 言われてみればたしかに．１つの引用符が，最初と最後の2つと見間違えられてしまうのですね．<br>&gt; 早急に直します．<br><br>ちょっと詳しく動作をチェックしたら<br>? * を含むファイル名<br>サクラエディタ起動　○<br>上書き保存　Ｘ　パスが存在しないか...<br>ファイル名を変更して保存－ダイアログ表示　○<br>　　　　　　　　　　　　－そのまま保存　　Ｘ　なにもエラーが出ない<br>　　　　　　　　　　　　－ファイル名を変更して保存　○<br><br><br>/ を含むファイル名<br>サクラエディタ起動　○<br>上書き保存　Ｘ　パスが存在しないか...<br>ファイル名を変更して保存－ダイアログ表示　○<br>　　　　　　　　　　　　－そのまま保存　　Ｘ　パスが存在しないか...<br>　　　　　　　　　　　　－ファイル名を変更して保存　○<br><br>&lt; を含むファイル名<br>サクラエディタ起動　○<br>上書き保存　Ｘ　パスが存在しないか...<br>ファイル名を変更して保存－ダイアログ表示　Ｘ<br><br>&gt; を含むファイル名<br>サクラエディタ起動　○<br>上書き保存　Ｘ　パスが存在しないか...<br>ファイル名を変更して保存－ダイアログ表示　○<br>　　　　　　　　　　　　－そのまま保存　　Ｘ　上記のファイル名は無効です。<br>　　　　　　　　　　　　－ファイル名を変更して保存　○<br><br>: を含むファイル名<br>サクラエディタ起動　○<br>上書き保存　Ｘ　保存するが:以降削られたファイル名に勝手に変わる<br>ファイル名を変更して保存－ダイアログ表示　Ｘ<br><br><br>"が3文字以上連続<br>サクラエディタ起動　○<br>上書き保存　Ｘ　パスが存在しないか...<br>ファイル名を変更して保存－ダイアログ表示　Ｘ<br><br>こんな感じでした。</div></section>
+    </li><li><section><h1 id=4104>
+    <span class="no">[4104]</span>
+    <a class="thread-title" href="#4104">Re2: "を開くと落ちる</a>
+    <span class="author">すす</span>
+    <time datetime="2005-11-11T15:45:27">2005年11月11日 15:45</time></h1>
+    <div class="body">▼ げんたさん<br><br>「ダイアログが開けません。エラー:FNERR_INVALIDFILENAME」はちょっと気になるので<br>とりあえず直してみました。<br>簡単なチェックだけですが、すみません。<br>このチェックだとURL指定されたときだめですね。<br>':'チェックどうしようかしら。<br><br>--- sakura_org\CCommandLine.cpp&#9;Thu Nov  3 20:53:18 2005<br>+++ sakura_core\CCommandLine.cpp&#9;Fri Nov 11 15:38:23 2005<br>@@ -219,12 +219,41 @@<br> &#9;&#9;&#9;&#9;//&#9;ファイル名には使えない文字なのでファイル名に含まれている場合は考慮不要<br> &#9;&#9;&#9;&#9;//&#9;またSHIFT-JISの2バイト目の考慮も不要<br> &#9;&#9;&#9;&#9;int len = lstrlen( pszToken + 1 );<br>+<br>+&#9;&#9;&#9;&#9;//&#9;Nov. 11, 2005 susu<br>+&#9;&#9;&#9;&#9;// "のみの場合落ちるので修正<br>+&#9;&#9;&#9;&#9;if ( len == 0 ) {<br>+&#9;&#9;&#9;&#9;&#9;break;<br>+&#9;&#9;&#9;&#9;}<br>+<br> &#9;&#9;&#9;&#9;cmWork.SetData( &amp;pszToken[1], len - ( pszToken[len] == '"' ? 1 : 0 ));<br> &#9;&#9;&#9;&#9;cmWork.Replace( "\"\"", "\"" );<br> &#9;&#9;&#9;&#9;strcpy( m_fi.m_szPath, cmWork.GetPtr() );&#9;/* ファイル名 */<br> &#9;&#9;&#9;}else{<br> &#9;&#9;&#9;&#9;strcpy( m_fi.m_szPath, pszToken );&#9;&#9;&#9;&#9;&#9;&#9;&#9;/* ファイル名 */<br> &#9;&#9;&#9;}<br>+<br>+&#9;&#9;&#9;// Nov. 11, 2005 susu<br>+&#9;&#9;&#9;// 不正なファイル名のままだとファイル保存時ダイアログが出なくなるので<br>+&#9;&#9;&#9;// 簡単なファイルチェックを行うように修正<br>+&#9;&#9;&#9;char msg_str[_MAX_PATH + 1];<br>+&#9;&#9;&#9;sprintf( msg_str, " %s \r\n上記のファイル名は不正です。ファイル名に \ / : * ? \" &lt; &gt; | の文字は使えません。 ", m_fi.m_szPath );<br>+&#9;&#9;&#9;for (int i = 0; i &lt; strlen(m_fi.m_szPath); i ++) { <br>+&#9;&#9;&#9;&#9;if ( (m_fi.m_szPath[i] == '&lt;' ||&#9;//&#9;0x3C<br>+&#9;&#9;&#9;&#9;&#9;  m_fi.m_szPath[i] == '&gt;' ||&#9;//&#9;0x3E<br>+&#9;&#9;&#9;&#9;&#9;  m_fi.m_szPath[i] == '?' ||&#9;//&#9;0x3F<br>+&#9;&#9;&#9;&#9;&#9;  m_fi.m_szPath[i] == '"' ||&#9;//&#9;0x22<br>+&#9;&#9;&#9;&#9;&#9;  m_fi.m_szPath[i] == '|' ||&#9;//&#9;0x7C<br>+&#9;&#9;&#9;&#9;&#9;  m_fi.m_szPath[i] == '*' ||&#9;//&#9;0x2A<br>+&#9;&#9;&#9;&#9;&#9;  ( m_fi.m_szPath[i] == ':' &amp;&amp; i != 1)&#9;&#9;//&#9;0x3A<br>+&#9;&#9;&#9;&#9;&#9; ) &amp;&amp;<br>+&#9;&#9;&#9;&#9;&#9;( i &gt; 0 &amp;&amp; ! _IS_SJIS_1( (unsigned char)(m_fi.m_szPath[i - 1] )) )){<br>+&#9;&#9;&#9;&#9;&#9;&#9;MessageBox( NULL, msg_str, "FileNameError", MB_OK);<br>+&#9;&#9;&#9;&#9;&#9;&#9;strcpy( m_fi.m_szPath, "" );<br>+&#9;&#9;&#9;&#9;&#9;&#9;break;<br>+&#9;&#9;&#9;&#9;}<br>+&#9;&#9;&#9;}<br>+<br> &#9;&#9;}else{<br> &#9;&#9;&#9;++pszToken;&#9;//&#9;先頭の'-'はskip<br> &#9;&#9;&#9;char *arg;<br></div></section>
+    <ul><li><section><h1 id=4105>
+    <span class="no">[4105]</span>
+    <a class="thread-title" href="#4105">Re3: "を開くと落ちる</a>
+    <span class="author">すす</span>
+    <time datetime="2005-11-11T15:52:35">2005年11月11日 15:52</time></h1>
+    <div class="body">▼ すすさん<br>&gt; ▼ げんたさん<br>&gt; <br>&gt; 「ダイアログが開けません。エラー:FNERR_INVALIDFILENAME」はちょっと気になるので<br>&gt; とりあえず直してみました。<br>&gt; 簡単なチェックだけですが、すみません。<br>&gt; このチェックだとURL指定されたときだめですね。<br>&gt; ':'チェックどうしようかしら。<br>&gt; <br>+ char msg_str[_MAX_PATH + 1];<br>+ sprintf(<br><br>この２行は<br>+ MessageBox<br>の直前の方がいいですね。<br></div></section>
+    </li><li><section><h1 id=4109>
+    <span class="no">[4109]</span>
+    <a class="thread-title" href="#4109">Re3: "を開くと落ちる</a>
+    <span class="author">すす</span>
+    <time datetime="2005-11-11T17:37:45">2005年11月11日 17:37</time></h1>
+    <div class="body">URI指定に対応　って大丈夫かな？<br><br>--- sakura_org\CCommandLine.cpp&#9;Thu Nov  3 20:53:18 2005<br>+++ sakura_core\CCommandLine.cpp&#9;Fri Nov 11 17:35:14 2005<br>@@ -219,12 +219,46 @@<br> &#9;&#9;&#9;&#9;//&#9;ファイル名には使えない文字なのでファイル名に含まれている場合は考慮不要<br> &#9;&#9;&#9;&#9;//&#9;またSHIFT-JISの2バイト目の考慮も不要<br> &#9;&#9;&#9;&#9;int len = lstrlen( pszToken + 1 );<br>+<br>+&#9;&#9;&#9;&#9;//&#9;Nov. 11, 2005 susu<br>+&#9;&#9;&#9;&#9;// "のみの場合落ちるので修正<br>+&#9;&#9;&#9;&#9;if ( len == 0 ) {<br>+&#9;&#9;&#9;&#9;&#9;break;<br>+&#9;&#9;&#9;&#9;}<br>+<br> &#9;&#9;&#9;&#9;cmWork.SetData( &amp;pszToken[1], len - ( pszToken[len] == '"' ? 1 : 0 ));<br> &#9;&#9;&#9;&#9;cmWork.Replace( "\"\"", "\"" );<br> &#9;&#9;&#9;&#9;strcpy( m_fi.m_szPath, cmWork.GetPtr() );&#9;/* ファイル名 */<br> &#9;&#9;&#9;}else{<br> &#9;&#9;&#9;&#9;strcpy( m_fi.m_szPath, pszToken );&#9;&#9;&#9;&#9;&#9;&#9;&#9;/* ファイル名 */<br> &#9;&#9;&#9;}<br>+<br>+&#9;&#9;&#9;// Nov. 11, 2005 susu<br>+&#9;&#9;&#9;// 不正なファイル名のままだとファイル保存時ダイアログが出なくなるので<br>+&#9;&#9;&#9;// 簡単なファイルチェックを行うように修正<br>+&#9;&#9;&#9;if (!memcmp(m_fi.m_szPath, "file:///", 8)) {<br>+&#9;&#9;&#9;&#9;char tmp_str[_MAX_PATH + 1];<br>+&#9;&#9;&#9;&#9;strcpy(tmp_str, &amp;(m_fi.m_szPath[8]));<br>+&#9;&#9;&#9;&#9;strcpy(m_fi.m_szPath, tmp_str);<br>+&#9;&#9;&#9;}<br>+&#9;&#9;&#9;for (int i = 0; i &lt; strlen(m_fi.m_szPath); i ++) {<br>+&#9;&#9;&#9;&#9;if ( (m_fi.m_szPath[i] == '&lt;' ||&#9;//&#9;0x3C<br>+&#9;&#9;&#9;&#9;&#9;  m_fi.m_szPath[i] == '&gt;' ||&#9;//&#9;0x3E<br>+&#9;&#9;&#9;&#9;&#9;  m_fi.m_szPath[i] == '?' ||&#9;//&#9;0x3F<br>+&#9;&#9;&#9;&#9;&#9;  m_fi.m_szPath[i] == '"' ||&#9;//&#9;0x22<br>+&#9;&#9;&#9;&#9;&#9;  m_fi.m_szPath[i] == '|' ||&#9;//&#9;0x7C<br>+&#9;&#9;&#9;&#9;&#9;  m_fi.m_szPath[i] == '*' ||&#9;//&#9;0x2A<br>+&#9;&#9;&#9;&#9;&#9;  ( m_fi.m_szPath[i] == ':' &amp;&amp; i != 1)&#9;&#9;//&#9;0x3A<br>+&#9;&#9;&#9;&#9;&#9; ) &amp;&amp;<br>+&#9;&#9;&#9;&#9;&#9;( i &gt; 0 &amp;&amp; ! _IS_SJIS_1( (unsigned char)(m_fi.m_szPath[i - 1] )) )){<br>+&#9;&#9;&#9;&#9;&#9;&#9;char msg_str[_MAX_PATH + 1];<br>+&#9;&#9;&#9;&#9;&#9;&#9;sprintf( msg_str, "%s\r\n上記のファイル名は不正です。ファイル名に \\ / : * ? \" &lt; &gt; | の文字は使えません。 ", m_fi.m_szPath );<br>+&#9;&#9;&#9;&#9;&#9;&#9;MessageBox( NULL, msg_str, "FileNameError", MB_OK);<br>+&#9;&#9;&#9;&#9;&#9;&#9;strcpy( m_fi.m_szPath, "" );<br>+&#9;&#9;&#9;&#9;&#9;&#9;break;<br>+&#9;&#9;&#9;&#9;}<br>+&#9;&#9;&#9;}<br>+<br> &#9;&#9;}else{<br> &#9;&#9;&#9;++pszToken;&#9;//&#9;先頭の'-'はskip<br> &#9;&#9;&#9;char *arg;<br><br></div></section>
+    <ul><li><section><h1 id=4112>
+    <span class="no">[4112]</span>
+    <a class="thread-title" href="#4112">Re4: "を開くと落ちる</a>
+    <span class="author">もか</span>
+    <time datetime="2005-11-11T22:55:02">2005年11月11日 22:55</time></h1>
+    <div class="body">すすさんの「&lt;&gt;?"|*」のチェックは必要ですね。<br>&gt;':'チェックどうしようかしら。<br>ディレクトリ名として登場する場合は確かに不正ですが、<br>過去に何回か登場しているNTFSの場合のサブストリームなら正常です。<br>&gt;&gt;3512<br>この機能、よくわからないのは、<br>(試さないほうがいいです。自己責任でお願いします)<br>&gt;notepad.exe :sub<br>&gt;notepad.exe .\:sub<br>などで、正常に読み書きできるのですが、ファイル名が無いのです。。。<br>この場合どうなってるんでしょうね。<br>どうやって削除したらいいのか私にはわかりませんでした。<br><br>&gt;「ダイアログが開けません。エラー:FNERR_INVALIDFILENAME」となり、保存できません。<br>マクロやD&amp;Dからファイル名がサクラエディタに設定されることも考慮すると、<br>CDlgOpenFileで対処するほうが良いと思います。<br>FNERR_INVALIDFILENAMEだった場合は、ファイル名を空にしてダイアログを開きなおしてくれるとうれしいです。<br></div></section>
+    <ul><li><section><h1 id=4118>
+    <span class="no">[4118]</span>
+    <a class="thread-title" href="#4118">Re5: "を開くと落ちる</a>
+    <span class="author">すす</span>
+    <time datetime="2005-11-12T03:15:10">2005年11月12日 03:15</time></h1>
+    <div class="body">▼ もかさん<br>&gt; すすさんの「&lt;&gt;?"|*」のチェックは必要ですね。<br>&gt; &gt;':'チェックどうしようかしら。<br>&gt; ディレクトリ名として登場する場合は確かに不正ですが、<br>&gt; 過去に何回か登場しているNTFSの場合のサブストリームなら正常です。<br>&gt; &gt;&gt;3512<br>&gt; この機能、よくわからないのは、<br>&gt; (試さないほうがいいです。自己責任でお願いします)<br>&gt; &gt;notepad.exe :sub<br>&gt; &gt;notepad.exe .\:sub<br>&gt; などで、正常に読み書きできるのですが、ファイル名が無いのです。。。<br>&gt; この場合どうなってるんでしょうね。<br>&gt; どうやって削除したらいいのか私にはわかりませんでした。<br>&gt; <br>&gt; &gt;「ダイアログが開けません。エラー:FNERR_INVALIDFILENAME」となり、保存できません。<br>&gt; マクロやD&amp;Dからファイル名がサクラエディタに設定されることも考慮すると、<br>&gt; CDlgOpenFileで対処するほうが良いと思います。<br>&gt; FNERR_INVALIDFILENAMEだった場合は、ファイル名を空にしてダイアログを開きなおしてくれるとうれしいです。<br>D&amp;Dの場合はすでに存在するファイルだから問題ないのでは？<br>マクロでオープンは。。。考えてもいませんでした。<br><br>きっと「げんたさん」が何とかしてくれる。。。</div></section>
+    <ul><li><section><h1 id=4176>
+    <span class="no">[4176]</span>
+    <a class="thread-title" href="#4176">Re6: "を開くと落ちる</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-11-27T15:12:13">2005年11月27日 15:12</time></h1>
+    <div class="body">&gt;きっと「げんたさん」が何とかしてくれる。。。<br>何にもしないでとりあえずそのまま突っ込もうかと思ったんですが...<br><br>"""でファイル名が"になる件が解決されていませんね．<br><br>&amp;&amp;( i &gt; 0 &amp;&amp; ! _IS_SJIS_1( (unsigned char)(m_fi.m_szPath[i - 1] ))<br>というのが間違っているようです．<br><br>i&gt;0を命題A, _IS_SJIS_1...を命題Bとしたとき<br>ここは (A&amp;&amp;B) ではなくて (A⇒B)が入らないとi==0，すなわち先頭に不正な文字が来た場合を見逃します．<br><br>A⇒Bを展開すると(!A||A&amp;&amp;B)ですかね．<br></div></section>
+    <ul><li><section><h1 id=4204>
+    <span class="no">[4204]</span>
+    <a class="thread-title" href="#4204">Re7: "を開くと落ちる</a>
+    <span class="author">すす</span>
+    <time datetime="2005-12-05T12:14:21">2005年12月05日 12:14</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;きっと「げんたさん」が何とかしてくれる。。。<br>&gt; 何にもしないでとりあえずそのまま突っ込もうかと思ったんですが...<br>&gt; <br>&gt; """でファイル名が"になる件が解決されていませんね．<br>自分で指摘したのに思いっきり、ミスってますね。<br>ご指摘＆修正ありがとうございました。</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4120>
+    <span class="no">[4120]</span>
+    <a class="thread-title" href="#4120">Re5: "を開くと落ちる</a>
+    <span class="author">すす</span>
+    <time datetime="2005-11-12T03:24:16">2005年11月12日 03:24</time></h1>
+    <div class="body">ちょっと書き忘れてました。<br><br>▼ もかさん<br>&gt; すすさんの「&lt;&gt;?"|*」のチェックは必要ですね。<br>&gt; &gt;':'チェックどうしようかしら。<br>&gt; ディレクトリ名として登場する場合は確かに不正ですが、<br>&gt; 過去に何回か登場しているNTFSの場合のサブストリームなら正常です。<br>NTFSの場合のサブストリームですか。知らなかった。<br>+                                          ( m_fi.m_szPath[i] == ':' &amp;&amp; i != 1)                //        0x3A<br>は削除ってことで<br><br>&gt; &gt;&gt;3512<br>&gt; この機能、よくわからないのは、<br>&gt; (試さないほうがいいです。自己責任でお願いします)<br>&gt; &gt;notepad.exe :sub<br>&gt; &gt;notepad.exe .\:sub<br>&gt; などで、正常に読み書きできるのですが、ファイル名が無いのです。。。<br>&gt; この場合どうなってるんでしょうね。<br>&gt; どうやって削除したらいいのか私にはわかりませんでした。<br>もしかしてディレクトリとか？<br></div></section>
+    <ul><li><section><h1 id=4121>
+    <span class="no">[4121]</span>
+    <a class="thread-title" href="#4121">Re6: "を開くと落ちる</a>
+    <span class="author">すす</span>
+    <time datetime="2005-11-12T03:42:49">2005年11月12日 03:42</time></h1>
+    <div class="body">▼ もかさん<br>&gt; &gt; &gt;&gt;3512<br>&gt; &gt; この機能、よくわからないのは、<br>&gt; &gt; (試さないほうがいいです。自己責任でお願いします)<br>&gt; &gt; &gt;notepad.exe :sub<br>&gt; &gt; &gt;notepad.exe .\:sub<br>&gt; &gt; などで、正常に読み書きできるのですが、ファイル名が無いのです。。。<br>&gt; &gt; この場合どうなってるんでしょうね。<br>&gt; &gt; どうやって削除したらいいのか私にはわかりませんでした。<br>&gt; もしかしてディレクトリとか？<br>ってことで試してみました。<br>メインストリームを削除するとサブストリームは削除<br>されるらしいので<br><br>c:\temp\tmp\　を作成<br>notepad.exe c:\temp\tmp:sub　なんか書いて保存<br>notepad.exe c:\temp\tmp:sub　書かれていることを確認<br>c:\temp\tmp　を削除<br>notepad.exe c:\temp\tmp:sub　見つからないんで作成するか？ダイアログが出ました。<br><br>やっぱりカレントディレクトリのサブストリームに書き込まれているようです。<br>サブストリームだけ削除ってできないのかなぁ？<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

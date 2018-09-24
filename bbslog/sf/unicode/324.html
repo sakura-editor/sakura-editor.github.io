@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Fix) swscanfバグ修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">324</span>
+    <a class="thread-title" href="324.html#324">Commit報告:(Fix) swscanfバグ修正</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=324>
+    <span class="no">[324]</span>
+    <a class="thread-title" href="#324">Commit報告:(Fix) swscanfバグ修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-04-27T22:15:08">2008年04月27日 22:15</time></h1>
+    <div class="body">リビジョン：<br>　rev1300<br><br>変更種別：<br>　バグ修正。<br><br>内容：<br>　rev1299で、いくつかの変数の型を BOOL から bool に変更した際に、<br>　その変数入力を swscanf で int として行っている箇所を変更し忘れたため、<br>　一部領域のデータ破壊が起こっていました。修正。<br><br>ところで CShareData::ShareData_IO_Common の中にある<br>_stscanf (ANSI版ソースでは sscanf) もデータ破壊を起こしそうな気がします。<br>後で検証します。<br></div></section>
+    </li></ul></body></html>

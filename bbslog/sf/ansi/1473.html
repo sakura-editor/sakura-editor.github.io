@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マウスカーソルのちらつき | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1473</span>
+    <a class="thread-title" href="1473.html#1473">マウスカーソルのちらつき</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1477</span>
+    <a class="thread-title" href="1473.html#1477">Re:マウスカーソルのちらつき</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1473>
+    <span class="no">[1473]</span>
+    <a class="thread-title" href="#1473">マウスカーソルのちらつき</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-02-04T22:51:37">2002年02月04日 22:51</time></h1>
+    <div class="body">マウスカーソルを編集ウィンドウの上に置いた状態でBSキーにて文字を削除するとマウスカーソルが砂時計になってまた一本棒に戻るのが見えて気になります．<br></div></section>
+    <ul><li><section><h1 id=1477>
+    <span class="no">[1477]</span>
+    <a class="thread-title" href="#1477">Re:マウスカーソルのちらつき</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-05T09:48:22">2002年02月05日 09:48</time></h1>
+    <div class="body">&gt; マウスカーソルを編集ウィンドウの上に置いた状態でBSキーにて文字を削除すると<br>&gt; マウスカーソルが砂時計になってまた一本棒に戻るのが見えて気になります．<br><br>CEditView::DeleteData 内の WaitCursor を以下の場所に移動。<br>    if( IsTextSelected() ){<br>        CWaitCursor cWaitCursor( m_hWnd );  // 2002.02.05<br><br>※この関数内の cmemBuf,bBoxSelected は使われてないので不要。</div></section>
+    </li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>【パッチ】vz 化計画 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3844</span>
+    <a class="thread-title" href="3844.html#3844">【パッチ】vz 化計画</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3849</span>
+    <a class="thread-title" href="3844.html#3849">RE: 【パッチ】vz 化計画</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3850</span>
+    <a class="thread-title" href="3844.html#3850">Re2: 【パッチ】vz 化計画</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3844>
+    <span class="no">[3844]</span>
+    <a class="thread-title" href="#3844">【パッチ】vz 化計画</a>
+    <span class="author">seclan</span>
+    <time datetime="2005-02-20T07:03:01">2005年02月20日 07:03</time></h1>
+    <div class="body">　なるべくvz に近い操作系を実現するため、不足していると思われる機能をいくつか実装してみました。追加した機能は以下のとおりです。いかがでしょう。(ただし現在のところマクロには対応していません)<br><br>*改行挿入<br>*単語の左端まで切り取り<br>*単語の右端まで切り取り<br>*コピー(選択範囲解除/折り返し単位)<br>*コピー(選択範囲解除/改行単位)<br>*行頭に移動(改行単位)<br>*行末に移動(改行単位)<br>*(範囲選択)行頭に移動(改行単位)<br>*(範囲選択)行末に移動(改行単位)<br>*一行挿入(折り返し単位)<br>*一行挿入(改行単位)<br>*行の二重化(改行単位)<br>*行切り取り(改行単位)<br>*行削除(改行単位)<br>*行か範囲切り取り(折り返し単位)<br>*行か範囲削除(折り返し単位)<br>*行か範囲切り取り(改行単位)<br>*行か範囲削除(改行単位)<br>*１ページアップか前検索<br>*１ページダウンか次検索<br>*ページ移動/検索モード切り替え<br>*Command_SEARCH_CLEARMARK(検索マークの切替え)を完全にトグルに<br><br>パッチ: <a href=http://seclan.dll.jp/sakura/ssrc_2005-02-04.seclan.patch.diff target=_top><nobr>http://<wbr>seclan.<wbr>dll.<wbr>jp/<wbr>sakura/<wbr>ssrc_200<wbr>5-<wbr>02-<wbr>04.<wbr>seclan.<wbr>patch.<wbr>diff</nobr></a><br>テスト用: <a href=http://seclan.dll.jp/sakura/sakura.exe target=_top><nobr>http://<wbr>seclan.<wbr>dll.<wbr>jp/<wbr>sakura/<wbr>sakura.<wbr>exe</nobr></a><br></div></section>
+    <ul><li><section><h1 id=3849>
+    <span class="no">[3849]</span>
+    <a class="thread-title" href="#3849">RE: 【パッチ】vz 化計画</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-02-20T20:54:20">2005年02月20日 20:54</time></h1>
+    <div class="body">&gt;*コピー(選択範囲解除/折り返し単位)<br>&gt;*コピー(選択範囲解除/改行単位)<br>コピー後の選択範囲解除は共通設定で動作を選べるようになっていますが，意図的に別コマンドとして独立させると言うことでしょうか．<br><br>&gt;*１ページアップか前検索<br>&gt;*１ページダウンか次検索<br>&gt;*ページ移動/検索モード切り替え<br>私はVz使っていなかったのですが，こういう機能があったのですか．<br>本当はキー配置を動的に変更できる機能(キー配置の切り替え機能)があればこういうのにもコマンド追加せずに対応できるんですけどね～，選択範囲の有無でキーの機能を切り替えたり(計画中にも達していない段階ですが...)<br>選択範囲有無で切り替えが出来れば提案された中から組み合わせコマンドを減らせるのですが，現時点で無いものをどうこう言ってもしょうがないか．<br><br>あと一般的な話になってしまいますが，折り返し単位の編集機能って使っている人いるのだろうか．<br><br>--<br>またpreview段階かと思いますが，コードについてもちょっとコメント．<br>コメントをコピペするときに文面を直し忘れないようにしてください．<br></div></section>
+    <ul><li><section><h1 id=3850>
+    <span class="no">[3850]</span>
+    <a class="thread-title" href="#3850">Re2: 【パッチ】vz 化計画</a>
+    <span class="author">seclan</span>
+    <time datetime="2005-02-20T22:48:42">2005年02月20日 22:48</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; コピー後の選択範囲解除は共通設定で動作を選べるようになっていますが，意図的に別コマンドとして独立させると言うことでしょうか．<br>そうです。文字列の選択→編集(E)→コピー(C) という方法を取ったときには Windows 標準の動作と互換になるように、このコマンドを使ったときには vz 互換動作にするためです。<br><br>&gt; 私はVz使っていなかったのですが，こういう機能があったのですか．<br>便利ですよ。<br><br>&gt; 本当はキー配置を動的に変更できる機能(キー配置の切り替え機能)があればこういうのにもコマンド追加せずに対応できるんですけどね～，選択範囲の有無でキーの機能を切り替えたり(計画中にも達していない段階ですが...)<br>&gt; 選択範囲有無で切り替えが出来れば提案された中から組み合わせコマンドを減らせるのですが，現時点で無いものをどうこう言ってもしょうがないか．<br>確かに、そういう機能を望んでいる人は多いでしょうね。自由度が増えますし、コマンドの数も減らせる可能性がありますから。でも実装は面倒そうです。今のところそのような機能は実装される見込みがないので、とっとと欲しい機能の部分だけ実装してみました。<br><br>&gt; あと一般的な話になってしまいますが，折り返し単位の編集機能って使っている人いるのだろうか．<br>私も通常はサクラエディタで言うところの改行単位の操作だけで、折り返し単位の機能はまったく使っていません。ただ、サクラエディタでは行操作は折り返し単位が基本になっているようなので、折り返し単位も実装してあります。<br><br>あと、マクロに関してですが、今のところ実装する予定はないので、誰かマクロで動かしたい人は、パッチをお願いします。<br><br>&gt; コメントをコピペするときに文面を直し忘れないようにしてください．<br>それは失礼しました。どのへんでしょうか。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

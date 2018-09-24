@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>LFCR改行 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">204</span>
+    <a class="thread-title" href="204.html#204">LFCR改行</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">205</span>
+    <a class="thread-title" href="204.html#205">Re:LFCR改行</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">229</span>
+    <a class="thread-title" href="204.html#229">Re2:LFCR改行</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">230</span>
+    <a class="thread-title" href="204.html#230">Re3:LFCR改行</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=204>
+    <span class="no">[204]</span>
+    <a class="thread-title" href="#204">LFCR改行</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-03-08T23:58:14">2008年03月08日 23:58</time></h1>
+    <div class="body">改行保存の話のついでに。<br>現在のサクラではLFCRを１改行として扱っていて、何度か廃止の話が出てきていると思います。でも、以前に過去ログを漁ってみたときも、もしかしたら使っている人もいるかもしれない、というだけで実際に活用しているという話は見当たりませんでした。<br>LF, CRLFのシーケンスで入力されたものを再読み込みするとLFCR, LFになる、というようにやはりちょっと嫌な面もあります。<br>新しいUnicode版では、一旦廃止して様子を見てはどうでしょうか？（復活可能にしておく必要はあるかもしれませんが）</div></section>
+    <ul><li><section><h1 id=205>
+    <span class="no">[205]</span>
+    <a class="thread-title" href="#205">Re:LFCR改行</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-03-09T00:24:37">2008年03月09日 00:24</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 改行保存の話のついでに。<br>&gt; 現在のサクラではLFCRを１改行として扱っていて、何度か廃止の話が出てきていると思います。でも、以前に過去ログを漁ってみたときも、もしかしたら使っている人もいるかもしれない、というだけで実際に活用しているという話は見当たりませんでした。<br>&gt; LF, CRLFのシーケンスで入力されたものを再読み込みするとLFCR, LFになる、というようにやはりちょっと嫌な面もあります。<br>&gt; 新しいUnicode版では、一旦廃止して様子を見てはどうでしょうか？（復活可能にしておく必要はあるかもしれませんが）<br><br>廃止に一票です。<br>僕の想像する範囲でもデメリットしか思い当たりません。</div></section>
+    <ul><li><section><h1 id=229>
+    <span class="no">[229]</span>
+    <a class="thread-title" href="#229">Re2:LFCR改行</a>
+    <span class="author">神楽</span>
+    <time datetime="2008-03-10T05:11:44">2008年03月10日 05:11</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; ▼ ryojiさん<br>&gt; &gt; 改行保存の話のついでに。<br>&gt; &gt; 現在のサクラではLFCRを１改行として扱っていて、何度か廃止の話が出てきていると思います。でも、以前に過去ログを漁ってみたときも、もしかしたら使っている人もいるかもしれない、というだけで実際に活用しているという話は見当たりませんでした。<br>&gt; &gt; LF, CRLFのシーケンスで入力されたものを再読み込みするとLFCR, LFになる、というようにやはりちょっと嫌な面もあります。<br>&gt; &gt; 新しいUnicode版では、一旦廃止して様子を見てはどうでしょうか？（復活可能にしておく必要はあるかもしれませんが）<br>&gt; <br>&gt; 廃止に一票です。<br>&gt; 僕の想像する範囲でもデメリットしか思い当たりません。<br><br>私も廃止に賛成です。<br>以下は以前にふぁんくらぶスレでLFCRが議論された時の抜粋です。<br><br>サクラエディタふぁんくらぶ part8<br><a href=http://pc11.2ch.net/test/read.cgi/software/1163950939/ target=_top><nobr>http://<wbr>pc11.<wbr>2ch.<wbr>net/<wbr>test/<wbr>read.<wbr>cgi/<wbr>software<wbr>/<wbr>11639509<wbr>39/<wbr></nobr></a><br>819 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/05/22(火) 21:25:22 ID:k/9zOhnK0<br>&gt;&gt;817<br>&gt; 　┌ が LFCR (\n\r)<br>LFCRは入力できないのになぜか表示記号は用意されてるんだよね<br>LFCRなんてどんな環境で使うのかまったく知らないけど<br><br>835 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/05/23(水) 00:11:14 ID:32DgleSx0<br>LFCRは、LFとCRで２つの改行として扱って欲しいなあ。<br><br>838 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/05/23(水) 06:58:31 ID:hMjne+FS0<br>矢印の方向はともかく、コピペするとLF+CRLFがLFCR+LFになるのは。<br>835 に一票</div></section>
+    <ul><li><section><h1 id=230>
+    <span class="no">[230]</span>
+    <a class="thread-title" href="#230">Re3:LFCR改行</a>
+    <span class="author">神楽</span>
+    <time datetime="2008-03-10T05:12:15">2008年03月10日 05:12</time></h1>
+    <div class="body">839 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/05/23(水) 07:44:10 ID:av6QQLH30<br><a href=http://www.google.co.jp/search?hl=ja&q=LFCR&lr= target=_top><nobr>http://<wbr>www.<wbr>google.<wbr>co.<wbr>jp/<wbr>search?<wbr>hl=<wbr>ja&amp;<wbr>q=<wbr>LFCR&amp;<wbr>lr=<wbr></nobr></a><br>ウェブ LFCR の検索結果 約 69,800 件中 1 - 100 件目 (0.16 秒)<br><br>ヒント: 日本語 の結果のみを検索 (表示設定 で検索対象言語を指定できます)。<br><br>汁ムゴ魚 - CRとLFの問題コレはLFCRじゃダメで、CRLFってのが決まり事。のはず。<br>このCRもLFもタイプライターの動作を表していて、 ... LFCR:↓で一行、←で一行こんな表記になる。<br>あきらかに間違っているのはサクラエディタで、CRとLFの矢印が逆だ。 ...<br>wantech.ikuto.com/diary/02soft/2006/06_0217_1601.htm - 12k - キャッシュ - 関連ページ<br><br>サクラエディタBBS改行コードLFCRはCopy&amp;Pasteのときに意図せず作ってしまうものではないでしょうか？<br>たとえば、LFモードで開いた ... また、検索してみると、LFCRとCRLFの両方を受け付けるフォーマット(仕様)・ソフトが結構あったり<br>LFCRでなければいけない場合も＜あっ ...<br>sakura-editor.sourceforge.net/cgi-bin/cyclamen/cyclamen.cgi?ol=200504&amp;tree=s4431 - 11k - キャッシュ - 関連ページ<br><br>845 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/05/23(水) 19:39:06 ID:7Z9fnFjE0<br>&gt;&gt;839<br>これ読んでも LFCR に対応する意味が皆無だ<br>でマークが逆である必要性もない<br><br>これ誰が望んでる仕様なの？<br><br>846 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/05/24(木) 00:36:04 ID:kjGerao30<br>&gt;&gt;845<br>とりあえず、今の仕様が厭だと思っている人は公式版のログ（一般／開発）を検索してみると良い。<br>確固たる理由があるわけじゃなく、開発側にもこれでいいのか？という迷いはあるようだ。<br><br>(1)記号の向きが全部逆（現在の仕様）なのは変<br>(2)CRLFやLFCRは逆にしておいて単独のCRやLFは正しい向きというのは変<br>(3)全部正しい向きにすると最も多く目にするCRLFの見た目が変<br><br>どれも変なら(2)がいい、という人はたくさんいると思う。<br>ただ、由来を知らず何の疑問も持ってない人にしてみれば、<br>仕様が変わると混乱するかも、ということはある。<br><br>847 名前：846[sage] 投稿日：2007/05/24(木) 00:48:02 ID:kjGerao30<br>で、自分はどう思うかというと、<br>一時的な混乱は捨て置いて(2)に仕様変更してもいいと思う。<br><br>848 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/05/24(木) 01:49:29 ID:6TMANXvt0<br>\r\n CRLF 復帰改行┌<br>\r CR 行頭復帰 ←<br>\n LF 改行 ↓<br>\n\r LFCR 改行復帰 ┘<br><br>俺はこれでもいいと思う。設定とかでユーザ側で選択とか<br>できたら良さげかも。(デフォルトは今のままでもおk)<br><br>849 名前：名無しさん＠お腹いっぱい。[sage] 投稿日：2007/05/24(木) 03:57:36 ID:J6Z4NYpg0<br>&gt;&gt;847<br>まず LFCR で改行というのがまず無い、単独のイメージを用意する意味がない<br>CRLF はイメージの順番が逆だがEnterキーのイメージにも近いし違和感はない<br>単独であるCR、LFの画像が逆なのどう考えても変<br>これは順番じゃなくてイメージ自体が間違えている<br><br>と言う事でCRとLFを入れ替えるべき<br>他のエディタがそうだし</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

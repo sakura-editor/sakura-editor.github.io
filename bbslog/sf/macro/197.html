@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>テキストブラウザ化するマクロ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">197</span>
+    <a class="thread-title" href="197.html#197">テキストブラウザ化するマクロ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">198</span>
+    <a class="thread-title" href="197.html#198">Re:テキストブラウザ化するマクロ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=197>
+    <span class="no">[197]</span>
+    <a class="thread-title" href="#197">テキストブラウザ化するマクロ</a>
+    <span class="author">ぷる</span>
+    <time datetime="2005-08-26T21:52:59">2005年08月26日 21:52</time></h1>
+    <div class="body">はじめまして。<br><br>Ajaxに似たアプローチで、サクラエディタがテキストブラウザに<br>ならないかと思って、ちょっとだけやってみました。<br><br><br>var selection = Editor.GetSelectedString(0);<br>if(selection.length == 0)<br>{<br>    selection = "http://www.yahoo.co.jp/";<br>}<br>else<br>{<br>    if(!selection.match(/:\/\/.*/))<br>    {<br>        Editor.GoFileTop();<br>        Editor.Down();<br>        Editor.GoLineEnd_Sel(0);<br>        selection = selection.replace(/^\//, "");<br>        selection = Editor.GetSelectedString(0) + selection;<br>    }<br>}<br><br>Editor.SelectAll();<br>Editor.InsText(selection + " を読み込み中...");<br>Editor.GoFileTop();<br>Editor.ReDraw();<br><br>var http = new ActiveXObject("Microsoft.XMLHTTP");<br><br>if(http != null)<br>{<br>    var uri = selection;<br>    http.open("GET", uri, false);<br>    http.send(null);<br> <br>    var html = http.responseText;<br>    var result = "";<br>    result += "------------------------------------------------------------\r\n";<br>    result += selection + "\r\n";<br>    result += "------------------------------------------------------------\r\n";<br>    result += html;<br> <br>    Editor.SelectAll();<br>    Editor.InsText(result);<br>    Editor.GoFileTop();<br>    Editor.ReDraw();<br>}<br><br><br>・URLを選択して、このマクロを実行します。<br>・URLを選択しないで実行すると、Yahoo!へいきます。<br>・いわゆる「戻る」はアンドゥ2回で行えます。<br><br>・ただソースを表示するだけです。<br>・非同期では動かなかった(何も起こらなかった)ので、同期通信です。<br><br>叩き台にもならないレベルで申し訳ないのです。<br><br>簡単にでもhtmlの構文解析をして、テキストブラウザとして<br>動作する程度にまでもっていきたかったのですが、<br>私のスキルではこれが限界でした。<br><br>なにかいい方法ないでしょうか・・・。</div></section>
+    <ul><li><section><h1 id=198>
+    <span class="no">[198]</span>
+    <a class="thread-title" href="#198">Re:テキストブラウザ化するマクロ</a>
+    <span class="author">(全略)</span>
+    <time datetime="2005-09-06T00:07:56">2005年09月06日 00:07</time></h1>
+    <div class="body">▼ ぷるさん<br>&gt; Ajaxに似たアプローチで、サクラエディタがテキストブラウザに<br>&gt; ならないかと思って、ちょっとだけやってみました。<br>AjaxってなもんじゃなくてもIEのオブジェクトを使えばもっと楽なんじゃないでしょうか?<br>面白そうなのでやってみました↓vbsですが<br><br>Dim uri<br>uri = Editor.GetSelectedString(0)<br>If uri = "" Then<br>&#9;uri = "http://www.yahoo.co.jp/"<br>Else<br>&#9;If Left(uri, 7) &lt;&gt; "http://" And InStr(uri, "/") &gt; 0 Then<br>&#9;&#9;Editor.GoFileTop()<br>&#9;&#9;Editor.GoLineEnd_Sel(0)<br>&#9;&#9;uri = Right(uri, Len(uri) - InStr(uri, "/"))<br>&#9;&#9;uri = Editor.GetSelectedString(0) &amp; uri<br>&#9;End If<br>End If<br><br>Editor.SelectAll()<br>Editor.InsText(uri &amp; " を読み込み中...")<br>Editor.GoFileTop()<br>Editor.ReDraw()<br><br>Dim ie<br>Set ie = CreateObject("InternetExplorer.Application")<br><br>If Not ie Is Nothing Then<br>&#9;ie.Visible = False<br>&#9;ie.Navigate(uri)<br> <br>&#9;Do While ie.Busy<br>&#9;Loop<br> <br>&#9;Dim body<br> <br>&#9;body = uri &amp; vbCrLf<br>&#9;body = body &amp; ie.document.title &amp; vbCrLf<br>&#9;body = body &amp; "------------------------------------------------------------" &amp; vbCrLf<br>&#9;body = body &amp; get_html(ie.Document.Body.childNodes, "")<br> <br>&#9;Editor.SelectAll()<br>&#9;Editor.InsText(body)<br>&#9;Editor.GoFileTop()<br>&#9;Editor.ReDraw()<br> <br>&#9;ie.Quit()<br>End If<br><br>Function get_html(ByVal document, ByVal margin)<br>&#9;Dim v<br> <br>&#9;For Each v In document<br> <br>&#9;&#9;Select Case TypeName(v)<br>&#9;&#9;Case "DispHTMLDOMTextNode":<br>&#9;&#9;&#9;Dim dv, prev_dv<br>&#9;&#9;&#9;dv = Trim(v.data)<br>&#9;&#9;&#9;Do<br>&#9;&#9;&#9;&#9;prev_dv = dv<br>&#9;&#9;&#9;&#9;dv      = Replace(dv, "  ", " ")<br>&#9;&#9;&#9;Loop While dv &lt;&gt; prev_dv<br> <br>&#9;&#9;&#9;If dv &lt;&gt; "" Then get_html = get_html &amp; dv<br>&#9;&#9;Case "HTMLAnchorElement":<br>&#9;&#9;&#9;get_html = get_html &amp; get_html(v.childNodes, margin)<br>&#9;&#9;&#9;get_html = get_html &amp; "&lt;""" &amp; v.href &amp; """&gt;"<br>&#9;&#9;Case Else:<br>&#9;&#9;&#9;Dim indent<br>&#9;&#9;&#9;indent = ""<br> <br>&#9;&#9;&#9;Select Case v.tagName<br>&#9;&#9;&#9;Case "P", "DIV", "TABLE", "TR":<br>&#9;&#9;&#9;&#9;indent = Space(2)<br>&#9;&#9;&#9;&#9;get_html = get_html &amp; vbCrLf &amp; margin<br>&#9;&#9;&#9;End Select<br> <br>&#9;&#9;&#9;get_html = get_html &amp; get_html(v.childNodes, margin &amp; indent)<br> <br>&#9;&#9;&#9;If indent &lt;&gt; "" Then get_html = get_html &amp; vbCrLf<br>&#9;&#9;End Select<br>&#9;Next<br>End Function<br><br>若干テキストブラウザっぽくはなりましたがまだまだですねぇ-_-)</div></section>
+    </li></ul></li></ul></body></html>

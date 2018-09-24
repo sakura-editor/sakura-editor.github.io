@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>タブの閉じるボタンすべてに枠が描画される | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2022</span>
+    <a class="thread-title" href="2022.html#2022">タブの閉じるボタンすべてに枠が描画される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2023</span>
+    <a class="thread-title" href="2022.html#2023">Re:タブの閉じるボタンすべてに枠が描画される</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2022>
+    <span class="no">[2022]</span>
+    <a class="thread-title" href="#2022">タブの閉じるボタンすべてに枠が描画される</a>
+    <span class="author">petit</span>
+    <time datetime="2013-07-19T05:12:34">2013年07月19日 05:12</time></h1>
+    <div class="body">タブの外観設定で「閉じるボタン」を有効にしておき、複数ファイルを開いた<br>状態からタブバー上の右端にある「閉じる」ボタン（▼の右にある×ボタン）で<br>現在のタブを閉じると、個々のタブの閉じるボタンすべてにボタンを囲む四角い<br>枠が描画されます。<br><br>隠れていたウィンドウが表示される際にもタブバー右端の「閉じる」ボタン上に<br>マウスカーソルがある状態になるので、それが影響しているのではないでしょうか。<br><br>CTabWnd.cpp(2592)<br>DrawBtnBkgnd( gr, &amp;rcBtn, m_bCloseBtnHilighted );<br></div></section>
+    <ul><li><section><h1 id=2023>
+    <span class="no">[2023]</span>
+    <a class="thread-title" href="#2023">Re:タブの閉じるボタンすべてに枠が描画される</a>
+    <span class="author">syat</span>
+    <time datetime="2013-07-20T06:50:31">2013年07月20日 06:50</time></h1>
+    <div class="body">▼ petitさん<br>&gt; 隠れていたウィンドウが表示される際にもタブバー右端の「閉じる」ボタン上に<br>&gt; マウスカーソルがある状態になるので、それが影響しているのではないでしょうか。<br><br>ご指摘の通り、右端閉じるボタンのハイライト状態がタブにも反映されていました。<br>リビジョン3239で修正しました。</div></section>
+    </li></ul></li></ul></body></html>

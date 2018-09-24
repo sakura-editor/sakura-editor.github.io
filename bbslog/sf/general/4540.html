@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>最近の Ver. | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4540</span>
+    <a class="thread-title" href="4540.html#4540">最近の Ver.</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4543</span>
+    <a class="thread-title" href="4540.html#4543">Re:最近の Ver.</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4567</span>
+    <a class="thread-title" href="4540.html#4567">Re:最近の Ver.</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4746</span>
+    <a class="thread-title" href="4540.html#4746">Re2:最近の Ver.</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4741</span>
+    <a class="thread-title" href="4540.html#4741">Re:最近の Ver.</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4744</span>
+    <a class="thread-title" href="4540.html#4744">Re2:最近の Ver.</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4540>
+    <span class="no">[4540]</span>
+    <a class="thread-title" href="#4540">最近の Ver.</a>
+    <span class="author">すい</span>
+    <time datetime="2005-07-13T03:05:08">2005年07月13日 03:05</time></h1>
+    <div class="body">なんだか最近のバージョン、とっても使い難いんですが。<br><br>sakura_2005-02-04.zip 1.5.2.1 までは OK だったのですが、<br><br><br>◎ sakura-2005-04-23.zip 1.5.3.0 より<br><br>デフォルトキー割り当てで [Ctrl]+[L] の「キーマクロの読み込み」を出すと<br>表示されるファイル（[ファイルの種類]の指定）が「*.mac」になっていて<br>拡張子 .mac のファイルしか表示されなくなっています。<br><br>そのため「キーマクロの読み込み」するたびに毎度毎度「*.*」とか<br>「*」とかキー入力してからじゃないとマクロファイルの選択が出来ず、<br>操作がとても面倒になりました。<br><br>実際にここで選択するマクロファイルの拡張子は .mac とは限らないわけで。<br>拡張子は何になるか見当もつかないわけで。（WSHとか使っている人もいるみたいですし、そういう人は特に...では?）<br>というか、ここで .mac のファイルを選択する事の方が少ない．．．(汗)<br>ここはやはりデフォルトは「*.*」じゃないと困るかと。<br><br><br>◎ sakura_2005-06-18.zip 1.5.3.2<br><br>正規表現「.」が改行コード「\n」にまでマッチしてしまうようになった。<br>正規表現置換で「.*」→「」とかすると、空行にならず、<br>行が丸々消え去ってしまってビックリ、とか。<br>他にも改行が消えて行が連結してしまってビックリ、とか。<br><br>最近ではすっかり「[^\r\n]*」とキー入力するのに慣れてきて<br>しまっているのがなんか悲しいです。<br><br><br>以上、たったの２点なのですが、結構こたえています。<br></div></section>
+    <ul><li><section><h1 id=4543>
+    <span class="no">[4543]</span>
+    <a class="thread-title" href="#4543">Re:最近の Ver.</a>
+    <span class="author">novice</span>
+    <time datetime="2005-07-13T21:38:51">2005年07月13日 21:38</time></h1>
+    <div class="body">▼ すいさん<br><br>&gt; ◎ sakura-2005-04-23.zip 1.5.3.0 より<br>&gt; <br>&gt; デフォルトキー割り当てで [Ctrl]+[L] の「キーマクロの読み込み」を出すと<br>&gt; 表示されるファイル（[ファイルの種類]の指定）が「*.mac」になっていて<br>&gt; 拡張子 .mac のファイルしか表示されなくなっています。<br>すいません。私が動作仕様を変えてしまいました。<br>"CEditView_Command.cpp"の9194行目あたりを<br>&#9;&#9;"*.mac",<br>から<br>&#9;&#9;"*.*",<br>に修正していただければ、元に戻ると思います。<br><br>書き込み時のデフォルト拡張子が"mac"だったので、読み込みのデフォルト拡張子も"mac"にした、というのが理由なのですが、元に戻すことに関して特に反対はありません。<br></div></section>
+    </li><li><section><h1 id=4567>
+    <span class="no">[4567]</span>
+    <a class="thread-title" href="#4567">Re:最近の Ver.</a>
+    <span class="author">miau</span>
+    <time datetime="2005-07-21T09:32:31">2005年07月21日 09:32</time></h1>
+    <div class="body">&gt; ◎ sakura_2005-06-18.zip 1.5.3.2<br>&gt; <br>&gt; 正規表現「.」が改行コード「\n」にまでマッチしてしまうようになった。<br>&gt; 正規表現置換で「.*」→「」とかすると、空行にならず、<br>&gt; 行が丸々消え去ってしまってビックリ、とか。<br>&gt; 他にも改行が消えて行が連結してしまってビックリ、とか。<br><br>同じく「\r」も「\r\n」にマッチするような動作になっているようです。<br>「.*\r」→「\r」とすると改行コードが CR に変わってしまったりとか。<br><br>Ver 1.5.4.1 でも同様でした。</div></section>
+    <ul><li><section><h1 id=4746>
+    <span class="no">[4746]</span>
+    <a class="thread-title" href="#4746">Re2:最近の Ver.</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-10-16T15:28:54">2005年10月16日 15:28</time></h1>
+    <div class="body">&gt;&gt; ▼ すいさん<br><br>&gt;&gt; 正規表現「.」が改行コード「\n」にまでマッチしてしまうようになった。<br>&gt;&gt; 正規表現置換で「.*」→「」とかすると、空行にならず、行が丸々消え去ってしまって<br><br>Ver 1.5.2.*<br>は、良くない、つまり悪いですか？ 私は、Ver 1.4.7.* を使っています。<br><br>&gt; 同じく「\r」も「\r\n」にマッチするような動作になっているようです。<br>&gt; 「.*\r」→「\r」とすると改行コードが CR に変わってしまったりとか。<br><br>問題としては、この"\r"→"[\r\n]"と、"."→"[.\r\n]"ですかね。</div></section>
+    </li></ul></li><li><section><h1 id=4741>
+    <span class="no">[4741]</span>
+    <a class="thread-title" href="#4741">Re:最近の Ver.</a>
+    <span class="author">ばく</span>
+    <time datetime="2005-10-14T16:12:01">2005年10月14日 16:12</time></h1>
+    <div class="body">1.5.3.1では、正規表現「\s+」が改行にマッチしてびっくりしました。<br>最新は1.5.7.0まで上がっていますが、正規表現周りのfix情報は<br>出てないように見えます…。<br>▼ すいさん<br>&gt; ◎ sakura_2005-06-18.zip 1.5.3.2<br>&gt; <br>&gt; 正規表現「.」が改行コード「\n」にまでマッチしてしまうようになった。<br>&gt; 正規表現置換で「.*」→「」とかすると、空行にならず、<br>&gt; 行が丸々消え去ってしまってビックリ、とか。<br>&gt; 他にも改行が消えて行が連結してしまってビックリ、とか。<br>&gt; <br>&gt; 最近ではすっかり「[^\r\n]*」とキー入力するのに慣れてきて<br>&gt; しまっているのがなんか悲しいです。<br></div></section>
+    <ul><li><section><h1 id=4744>
+    <span class="no">[4744]</span>
+    <a class="thread-title" href="#4744">Re2:最近の Ver.</a>
+    <span class="author">全略</span>
+    <time datetime="2005-10-15T13:47:11">2005年10月15日 13:47</time></h1>
+    <div class="body">▼ ばくさん<br>&gt; 1.5.3.1では、正規表現「\s+」が改行にマッチしてびっくりしました。<br>&gt; 最新は1.5.7.0まで上がっていますが、正規表現周りのfix情報は<br>&gt; 出てないように見えます…。<br>perlの正規表現では \s は [ \t\r\n\f] ですし<br>perl互換のBREGEXPが改行にマッチするのも当然では?<br><br>[ \t]+ (\tの前にスペースあり)とするべきだと思いますが<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

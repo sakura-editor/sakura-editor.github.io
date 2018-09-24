@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Vista UAC対応 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4853</span>
+    <a class="thread-title" href="4853.html#4853">Vista UAC対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4854</span>
+    <a class="thread-title" href="4853.html#4854">(提案)ファイルによる判別 RE: Vista UAC対応</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4855</span>
+    <a class="thread-title" href="4853.html#4855">Re:(提案)ファイルによる判別 RE: Vista UAC対応</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4858</span>
+    <a class="thread-title" href="4853.html#4858">Re:(提案)ファイルによる判別 RE: Vista UAC対応</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4859</span>
+    <a class="thread-title" href="4853.html#4859">ユーザ設定を共有エリアへ (RE: Vista UAC対応)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4860</span>
+    <a class="thread-title" href="4853.html#4860">Re:ユーザ設定を共有エリアへ (RE: Vista UAC対応)</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4853>
+    <span class="no">[4853]</span>
+    <a class="thread-title" href="#4853">Vista UAC対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-05-30T01:46:12">2007年05月30日 01:46</time></h1>
+    <div class="body">長くなってきたので，まとめました<br>http://sakura.qp.land.to/dev/?Feature%2FUAC<br><br>掲示板のコピペとryojiさんに提供していただいたパッチの解析によって仕様をまとめたつもりです．<br>表現が適当(こぴぺのまま)だったり誤っていたりする場合は適宜追加・修正してください．<br><br>仕様をまとめた理由は，試験仕様書代わりにするためです(^^)<br>こうしておけばすいさんあたりが相対パスで動くかどうかまとめバイナリを使って試してくれるだろうと...<br></div></section>
+    <ul><li><section><h1 id=4854>
+    <span class="no">[4854]</span>
+    <a class="thread-title" href="#4854">(提案)ファイルによる判別 RE: Vista UAC対応</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-05-30T01:52:31">2007年05月30日 01:52</time></h1>
+    <div class="body">現在のUAC対応パッチではProgram Files配下にあるかどうかでUAC対応の要不要を判定していますが，それに加えて特定のファイルがsakura.exeと同一ディレクトリに存在するかどうかで判定する方法はいかがでしょうか．<br><br>Windowsの管理するところのProgram Files配下に限定していると，例えばC:とD:があってD:に独自にProgram Filesを作ってインストールした場合，そこは勝手なディレクトリなのでユーザ別設定の対象外になりますよね．<br><br>もう1つの理由はインストーラの都合なのですが，ファイルをコピーする・しないで個人別設定を使う・使わないがコントロールできるとインストーラを作るときに設定の1つに含められるので楽です．(XPユーザが個人別設定を使えるようなインストーラを作るとするとスクリプトでディレクトリパスを切り出したりとかなり手間がかかるなと思いまして...)<br></div></section>
+    <ul><li><section><h1 id=4855>
+    <span class="no">[4855]</span>
+    <a class="thread-title" href="#4855">Re:(提案)ファイルによる判別 RE: Vista UAC対応</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-05-30T21:34:14">2007年05月30日 21:34</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 現在のUAC対応パッチではProgram Files配下にあるかどうかでUAC対応の要不要を判定していますが，それに加えて特定のファイルがsakura.exeと同一ディレクトリに存在するかどうかで判定する方法はいかがでしょうか．<br><br>設定フォルダのパス名はどうしましょう？<br>現時点では、Program Files下のサブフォルダ名をそのまま持ってきていますが．．．<br>混乱しないよう、ルールを複雑化するのは避けたいですね。<br><br>その「特定のファイル」で%AppData%下のサブフォルダ名を指定できるようにしますか？<br><br>IniFolder=[サブフォルダ名]<br><br>としたとき、%AppData%\[サブフォルダ名]に。<br>「特定のファイル」があって、指定が記載されていない場合のデフォルトは<br>%AppData%\sakura。<br><br>VistaのProgram Files下インストールでそのファイルが無い場合もやはり<br>%AppData%\sakura。<br>でも、<br>Enable=FALSE<br>の明示指定があれば、強制的に設定フォルダ=実行ファイルフォルダとする。<br>（VistaでもUACを完全に切るとか、アクセス権設定で特定フォルダのUACを切るようなことが可能といえば、可能なので）<br><br>まだ深くは考えてないですが、こんな感じでは、どうでしょ？</div></section>
+    </li><li><section><h1 id=4858>
+    <span class="no">[4858]</span>
+    <a class="thread-title" href="#4858">Re:(提案)ファイルによる判別 RE: Vista UAC対応</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-05-31T22:56:30">2007年05月31日 22:56</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 現在のUAC対応パッチではProgram Files配下にあるかどうかでUAC対応の要不要を判定していますが，それに加えて特定のファイルがsakura.exeと同一ディレクトリに存在するかどうかで判定する方法はいかがでしょうか．<br>&gt;&gt;dev:4857に書いたようにProgram Files配下の特別扱いはやめて、<br>sakura.exeと同一ディレクトリに存在する特定のファイルだけを<br>マルチユーザ化の判断材料にしようと思います。<br><br>&gt; もう1つの理由はインストーラの都合なのですが，<br>インストーラとの兼ね合いもあると思うので、検討してみた仕様を記載します。<br>ファイルの記述形式はini、ファイル名はsakura.exe.ini。<br>内容は下記の通り。<br><br>MultiUser: マルチユーザ設定にする／しない<br>    0:マルチユーザ設定にしない（デフォルト）<br>        ※0指定時はMultiUser以外の指定は無効<br>    1:マルチユーザ設定にする<br><br>UserRootFolder: 基準となるパスの指定<br>    0:アプリケーションデータフォルダ（デフォルト）  ex. C:\Documents and Settings\&lt;username&gt;\Application Data<br>    1:ユーザのルートフォルダ                        ex. C:\Documents and Settings\&lt;username&gt;<br>    2:ドキュメントフォルダ                          ex. C:\Documents and Settings\&lt;username&gt;\My Documents<br>    3:デスクトップフォルダ                          ex. C:\Documents and Settings\&lt;username&gt;\デスクトップ<br><br>UserSubFolder: サブフォルダ名<br>    デフォルトはsakura<br><br>○設定例<br>    設定ファイル（sakura.ini）をユーザのドキュメントフォルダ下のsakura_settingsサブフォルダに置く場合、<br>        MultiUser=1<br>        UserRootFolder=2<br>        UserSubFolder=sakura_settings<br>    ⇒ ex. C:\Documents and Settings\&lt;username&gt;\My Documents\sakura_settings\sakura.ini<br><br>といった感じです。</div></section>
+    </li></ul></li><li><section><h1 id=4859>
+    <span class="no">[4859]</span>
+    <a class="thread-title" href="#4859">ユーザ設定を共有エリアへ (RE: Vista UAC対応)</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-06-02T13:52:08">2007年06月02日 13:52</time></h1>
+    <div class="body">もう1つ気になった点があります．<br><br>複数のsakura.exe をProgram Filesとそれ以外の場所に置きます．<br>共有メモリの形式に互換性がある場合には両者は同時に起動でき，管理プロセスを共有します．<br>しかし，UAC機能はそれぞれのexeで独自に判定しているため，Program Files配下のsakura.exeはユーザディレクトリを参照し，そうでないsakura.exeはEXEの置かれているパスを参照します．<br><br>ですが，管理プロセスを共有しているのでsakura.iniは先に起動されたものが使われます．<br><br>ユーザディレクトリの場所も共有メモリに格納して，sakura.iniを共有するプロセスは全て同じ振る舞いをする方が自然だと思いますがいかがでしょうか．<br></div></section>
+    <ul><li><section><h1 id=4860>
+    <span class="no">[4860]</span>
+    <a class="thread-title" href="#4860">Re:ユーザ設定を共有エリアへ (RE: Vista UAC対応)</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-06-02T16:14:05">2007年06月02日 16:14</time></h1>
+    <div class="body">&gt;&gt;dev:4858仕様のパッチを作成してPatchesにUpしました。<br><br>▼ げんたさん<br>&gt; ユーザディレクトリの場所も共有メモリに格納して，sakura.iniを共有するプロセスは全て同じ振る舞いをする方が自然だと思いますがいかがでしょうか．<br>これは、自分もプロセスごとに持つのは良くないと思って修正してあります。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

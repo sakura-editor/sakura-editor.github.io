@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Imp) ステータスバーの文字コード表示の修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">477</span>
+    <a class="thread-title" href="477.html#477">Commit報告:(Imp) ステータスバーの文字コード表示の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">481</span>
+    <a class="thread-title" href="477.html#481">Re:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">488</span>
+    <a class="thread-title" href="477.html#488">Re2:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">495</span>
+    <a class="thread-title" href="477.html#495">Re3:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">491</span>
+    <a class="thread-title" href="477.html#491">Re2:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">496</span>
+    <a class="thread-title" href="477.html#496">Re3:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">497</span>
+    <a class="thread-title" href="477.html#497">Re4:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">498</span>
+    <a class="thread-title" href="477.html#498">Re3:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">500</span>
+    <a class="thread-title" href="477.html#500">Re4:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=477>
+    <span class="no">[477]</span>
+    <a class="thread-title" href="#477">Commit報告:(Imp) ステータスバーの文字コード表示の修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-12T23:01:42">2008年06月12日 23:01</time></h1>
+    <div class="body">リビジョン：<br>　rev1383<br><br>変更種別：<br>　機能改善<br><br>内容：<br>　ステータスバーの文字コード値を文字コード種別で切り替えます。<br>　SJIS,EUCの場合には、その文字コードに変換し、16進で表示します。<br>　JISではJISに変換し、エスケープシーケンスを除いた部分を16進で表示します。<br>　Unicode系(Unicode,UniBE,UTF-8,UTF-9)は、Unicode値で表示します。<br>　SJIS,EUC,JISの各モードで、Unicodeから変換できない文字は、頭に'u'をつけUnicode値を16進で表示します。</div></section>
+    <ul><li><section><h1 id=481>
+    <span class="no">[481]</span>
+    <a class="thread-title" href="#481">Re:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-15T09:24:37">2008年06月15日 09:24</time></h1>
+    <div class="body">SJIS,EUC,JISでUnicodeのコードを表示できるようにする設定が必要かご意見をお願いします。<br>UTF-8でもUnicode値を表示していますが、これもバイトコードでの表示が必要なのかご意見ください。</div></section>
+    <ul><li><section><h1 id=488>
+    <span class="no">[488]</span>
+    <a class="thread-title" href="#488">Re2:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a>
+    <span class="author">ラスティブ</span>
+    <time datetime="2008-06-16T00:40:02">2008年06月16日 00:40</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; SJIS,EUC,JISでUnicodeのコードを表示できるようにする設定が<br>&gt; 必要かご意見をお願いします。<br>&gt; UTF-8でもUnicode値を表示していますが、<br>&gt; これもバイトコードでの表示が必要なのかご意見ください。<br><br>　確認してみました。<br>　UTF-8はUnicode値での表示の方が統一性があって良いと思い<br>ました。UTF-8がバイトコードで表示されると、UTF-7が仲間外れ<br>になるといいますか、そんな印象を持ちます。初見ではバイト<br>コードで表示された方が使い勝手がいいとも思ったのですが＾＾；<br></div></section>
+    <ul><li><section><h1 id=495>
+    <span class="no">[495]</span>
+    <a class="thread-title" href="#495">Re3:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-17T03:35:15">2008年06月17日 03:35</time></h1>
+    <div class="body">▼ ラスティブさん<br>&gt; 　UTF-8はUnicode値での表示の方が統一性があって良いと思い<br>&gt; ました。UTF-8がバイトコードで表示されると、UTF-7が仲間外れ<br>&gt; になるといいますか、そんな印象を持ちます。初見ではバイト<br>&gt; コードで表示された方が使い勝手がいいとも思ったのですが＾＾；<br>UTF-7をはずしてある理由は、1文字の単位がバイト単位ではないからというのが理由です。<br>無理に表示することも可能（1文字の文字列として変換し表示）かとは思いますが、<br>使い道はなさそうなのではずしました。</div></section>
+    </li></ul></li><li><section><h1 id=491>
+    <span class="no">[491]</span>
+    <a class="thread-title" href="#491">Re2:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-16T22:19:12">2008年06月16日 22:19</time></h1>
+    <div class="body">さらっとコード流し読みしました。流れは追っていませんが、局所的な観点では問題は見つかりませんでした。<br><br><br>&gt; 　SJIS,EUC,JISの各モードで、Unicodeから変換できない文字は、頭に'u'をつけUnicode値を16進で表示します。<br><br>uが付いた場合に、ステータスバーの枠に収まりきらないことがあります。<br>該当枠の幅をあと半文字強くらい広げていただければ、と思います。<br><br><br>&gt; SJIS,EUC,JISでUnicodeのコードを表示できるようにする設定が必要かご意見をお願いします。<br>&gt; UTF-8でもUnicode値を表示していますが、これもバイトコードでの表示が必要なのかご意見ください。<br><br>文字エンコーディングに応じたコードを表示できたほうが良いと思ってはいました。<br>ただ、個人的な用途では生のUNICODE値を必要とすることが多いです。<br>要するに場面や人によりけりだと思います。設定による切り替え、または両者の同時表示でも良いかもしれません。<br></div></section>
+    <ul><li><section><h1 id=496>
+    <span class="no">[496]</span>
+    <a class="thread-title" href="#496">Re3:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a>
+    <span class="author">Uchi</span>
+    <time datetime="2008-06-17T03:35:56">2008年06月17日 03:35</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; 文字エンコーディングに応じたコードを表示できたほうが良いと思ってはいました。<br>&gt; ただ、個人的な用途では生のUNICODE値を必要とすることが多いです。<br>&gt; 要するに場面や人によりけりだと思います。設定による切り替え、または両者の同時表示でも良いかもしれません。<br>『タイプ別設定』または『共通設定』どちらかに設定することになると思いますが、<br>どちらがよろしいと思いますか？</div></section>
+    <ul><li><section><h1 id=497>
+    <span class="no">[497]</span>
+    <a class="thread-title" href="#497">Re4:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a>
+    <span class="author">kobake</span>
+    <time datetime="2008-06-17T04:47:14">2008年06月17日 04:47</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; ▼ kobakeさん<br>&gt; &gt; 文字エンコーディングに応じたコードを表示できたほうが良いと思ってはいました。<br>&gt; &gt; ただ、個人的な用途では生のUNICODE値を必要とすることが多いです。<br>&gt; &gt; 要するに場面や人によりけりだと思います。設定による切り替え、または両者の同時表示でも良いかもしれません。<br>&gt; 『タイプ別設定』または『共通設定』どちらかに設定することになると思いますが、<br>&gt; どちらがよろしいと思いますか？<br><br>割と確信のある直感では『共通設定』が適切かと思っています（直感なので理由は説明できませんが）。<br><br>タブに関しては迷うところですが、<br>・『ウィンドウ』タブに、『ステータスバー』グループを作り、その中に今回の項目を追加<br>・『ステータスバー』タブを新しく作り、そこに今回の項目を追加<br>…あたりを案として挙げておきます。<br><br><br>＃以下、余談ですが、大掛かりな変更が許されるなら、自分なら『共通設定』の整理をかねて、以下のようにします（ただし、「今の時点」では本家版統合を優先し、大掛かりな仕様変更は避けます）。<br>・『ビュー』タブ…新規作成<br>・『全般』タブ…『カーソル』『カーソル形状』『スクロール』『画面キャッシュ』を『ビュー』タブに移す<br>・『ウィンドウ』タブ…『ルーラー／行番号』を『ビュー』タブに移す<br>・『ウィンドウ』タブ…『ステータスバー』グループを追加<br></div></section>
+    </li></ul></li><li><section><h1 id=498>
+    <span class="no">[498]</span>
+    <a class="thread-title" href="#498">Re3:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a>
+    <span class="author">神楽</span>
+    <time datetime="2008-06-17T08:59:26">2008年06月17日 08:59</time></h1>
+    <div class="body">▼ kobakeさん<br>&gt; さらっとコード流し読みしました。流れは追っていませんが、局所的な観点では問題は見つかりませんでした。<br>&gt; <br>&gt; <br>&gt; &gt; 　SJIS,EUC,JISの各モードで、Unicodeから変換できない文字は、頭に'u'をつけUnicode値を16進で表示します。<br>&gt; <br>&gt; uが付いた場合に、ステータスバーの枠に収まりきらないことがあります。<br>&gt; 該当枠の幅をあと半文字強くらい広げていただければ、と思います。<br><br>等幅フォントにすれば今の枠のまま収まらないでしょうか？<br>でもここのフォントを変えようと思ったら他のメニューバー等の<br>フォントも変わっちゃうんでしょうか。<br>個人的にはついでにタブバーのフォントが等幅になると、<br>半角ファイル名のテキストを開くことが多いのでタブ幅の節約になるのですが。</div></section>
+    <ul><li><section><h1 id=500>
+    <span class="no">[500]</span>
+    <a class="thread-title" href="#500">Re4:Commit報告:(Imp) ステータスバーの文字コード表示の修正</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-06-17T21:12:14">2008年06月17日 21:12</time></h1>
+    <div class="body">▼ 神楽さん<br>&gt; 等幅フォントにすれば今の枠のまま収まらないでしょうか？<br><br>等幅のほうがプロポーショナルより狭いというわけではないです。<br>狭い文字もあれば広い文字もあって．．．<br><br>大文字は等幅のほうが概ね狭い<br>小文字はプロポーショナルのほうが概ね狭い<br>数字は同じくらい（等幅のほうが文字は狭く字間は広く見える）<br><br>な感じになると思います。<br><br>試しにsakura/trunk/sakura_coreディレクトリ下の全ソースファイル名をカンマ区切りでテキストファイルに出力し、それをメモ帳で開いて、ＭＳゴシック, 9pt とＭＳ Ｐゴシック, 9ptで比較してみたら、ＭＳ Ｐのほうが全体の幅は狭くなりました。<br>カンマ記号がＰでは狭い、というのを差し引いてもそう大差は無いと思います。<br><br>【追記】<br>カンマを空文字列に置換して（ファイ名の単純連結で）比較してもＰフォントのほうが全体は狭くなりました。<br>もちろん、たまたま平均的にはＰのほうが狭くなるような文字パターンだった、というだけでしょうけど。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

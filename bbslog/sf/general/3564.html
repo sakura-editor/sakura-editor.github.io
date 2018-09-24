@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>更新履歴(1.3.8.0)について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3564</span>
+    <a class="thread-title" href="3564.html#3564">更新履歴(1.3.8.0)について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3566</span>
+    <a class="thread-title" href="3564.html#3566">Re: 更新履歴(1.3.8.0)について</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3564>
+    <span class="no">[3564]</span>
+    <a class="thread-title" href="#3564">更新履歴(1.3.8.0)について</a>
+    <span class="author">豹悟郎</span>
+    <time datetime="2003-12-18T01:34:16">2003年12月18日 01:34</time></h1>
+    <div class="body">サクラエディタ更新履歴─Mar. 09, 2003 (1.3.8.0)に<br>以下の記述があります。<br><br>マクロコマンドGetSelectedStringは選択部分全体を返します<br>．未選択の時は空文字列を返します．(by 鬼さん)<br>従来の機能(選択部分の1行目/カーソル位置の単語)を使いたい<br>ときはExpandParameter("$s")を使ってください<br><br>バージョン1.4.3.3+PPAで利用する限り、"$s"だとエラーが出<br>ました。'$C'だと望み通り動きました(Win98)。<br>ご検証ください。<br></div></section>
+    <ul><li><section><h1 id=3566>
+    <span class="no">[3566]</span>
+    <a class="thread-title" href="#3566">Re: 更新履歴(1.3.8.0)について</a>
+    <span class="author">もか</span>
+    <time datetime="2003-12-18T22:12:57">2003年12月18日 22:12</time></h1>
+    <div class="body">▼豹悟郎さん<br>&gt;バージョン1.4.3.3+PPAで利用する限り、"$s"だとエラーが出ました。'$C'だと望み通り動きました(Win98)。<br>&gt;ご検証ください。<br>ご指摘のとおり$sは存在せず、$Cが正解です。<br>ありがとうございます。そして、すみませんでした。<br><br>元をたどると、<br>▼開発掲示板 #2556 03/02/06 RE:GetSelectedString (もか=私)<br>&gt;Editor.ExpandParameter( "$s" ); <br>&gt;で、代用可能なのでばっさり書き換えてもいいと思います。<br>と書いて、この時点で$Cを$sと記憶違いにより間違えていて、指摘されるまで気が付きませんでした。<br>HPの更新履歴の修正、お願いします。m(__)m &gt; げんたさん<br></div></section>
+    </li></ul></li></ul></body></html>

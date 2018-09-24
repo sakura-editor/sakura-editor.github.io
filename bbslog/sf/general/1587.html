@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>sakura_2002-04-12.zip | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1587</span>
+    <a class="thread-title" href="1587.html#1587">sakura_2002-04-12.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1590</span>
+    <a class="thread-title" href="1587.html#1590">Re: sakura_2002-04-12.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1591</span>
+    <a class="thread-title" href="1587.html#1591">Re2: sakura_2002-04-12.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1592</span>
+    <a class="thread-title" href="1587.html#1592">Re3: sakura_2002-04-12.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1594</span>
+    <a class="thread-title" href="1587.html#1594">Re4: sakura_2002-04-12.zip</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1593</span>
+    <a class="thread-title" href="1587.html#1593">RE: sakura_2002-04-12.zip</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1587>
+    <span class="no">[1587]</span>
+    <a class="thread-title" href="#1587">sakura_2002-04-12.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-12T19:19:45">2002年04月12日 19:19</time></h1>
+    <div class="body">アップロードしました。<br><br><a href=http://sakura-editor.sourceforge.net/snapshot/sakura_2002-04-12.zip target=_top><nobr>http://<wbr>sakura-<wbr>editor.<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>snapshot<wbr>/<wbr>sakura_2<wbr>002-<wbr>04-<wbr>12.<wbr>zip</nobr></a><br><br>・禁則に対応。<br>　みくさんに大感謝!!<br><br>・再変換をメニューからできるようになりました。<br>　そしてさらに、再変換の精度があがるようになりました。<br>　言い出しっぺのみくさんに感謝、実装してくださったminfuさんに大感謝!<br><br>以上でござんす。<br>すばらしい機能をお試しあれ。(^-^)<br></div></section>
+    <ul><li><section><h1 id=1590>
+    <span class="no">[1590]</span>
+    <a class="thread-title" href="#1590">Re: sakura_2002-04-12.zip</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-12T19:54:16">2002年04月12日 19:54</time></h1>
+    <div class="body">&gt;・禁則に対応。<br>&gt;　みくさんに大感謝!!<br>禁則処理が効かないようなのですが，どこを設定すれば良いのでしょうか...<br>折り返したときに句点が相変わらず次の行の頭に来てしまいます．<br></div></section>
+    <ul><li><section><h1 id=1591>
+    <span class="no">[1591]</span>
+    <a class="thread-title" href="#1591">Re2: sakura_2002-04-12.zip</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-12T20:31:24">2002年04月12日 20:31</time></h1>
+    <div class="body">&gt;禁則処理が効かないようなのですが，どこを設定すれば良いのでしょうか... <br>発見しました．<br>画面の設定はタイプ別設定で，印刷の方はページ設定の中ですね．<br><br>画面の禁則と印刷の禁則を独立にON/OFFできるので，禁則文字列の入力は画面の禁則のON/OFFに関わらず常に設定できた方が良いと思いますがいかがでしょうか．<br></div></section>
+    <ul><li><section><h1 id=1592>
+    <span class="no">[1592]</span>
+    <a class="thread-title" href="#1592">Re3: sakura_2002-04-12.zip</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-12T21:25:12">2002年04月12日 21:25</time></h1>
+    <div class="body"><br>&gt;画面の禁則と印刷の禁則を独立にON/OFFできるので，禁則文字列の入力は画面の禁則のON/OFFに関わらず常に設定できた方が良いと思いますがいかがでしょうか．<br><br>言われてみればそのとおりですね。<br>以下のソースを削除してください。<br>CPropTypes.cpp: 838～852,1134～1143を削除<br></div></section>
+    <ul><li><section><h1 id=1594>
+    <span class="no">[1594]</span>
+    <a class="thread-title" href="#1594">Re4: sakura_2002-04-12.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-12T21:30:21">2002年04月12日 21:30</time></h1>
+    <div class="body">▼ みくさん<br>&gt; <br>&gt; &gt;画面の禁則と印刷の禁則を独立にON/OFFできるので，禁則文字列の入力は画面の禁則のON/OFFに関わらず常に設定できた方が良いと思いますがいかがでしょうか．<br>&gt; <br>&gt; 言われてみればそのとおりですね。<br>&gt; 以下のソースを削除してください。<br>&gt; CPropTypes.cpp: 838～852,1134～1143を削除<br><br>はーい、削除しました。次回お楽しみに。&gt; みなさま</div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=1593>
+    <span class="no">[1593]</span>
+    <a class="thread-title" href="#1593">RE: sakura_2002-04-12.zip</a>
+    <span class="author">みく</span>
+    <time datetime="2002-04-12T21:25:13">2002年04月12日 21:25</time></h1>
+    <div class="body"><br>&gt;・再変換をメニューからできるようになりました。<br>&gt;　そしてさらに、再変換の精度があがるようになりました。<br>&gt;　言い出しっぺのみくさんに感謝、実装してくださったminfuさんに大感謝!<br><br>実装してくださったminfuさんに感謝です。<br></div></section>
+    </li></ul></li></ul></body></html>

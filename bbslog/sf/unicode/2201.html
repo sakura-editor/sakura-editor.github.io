@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>trunk投入予定 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2201</span>
+    <a class="thread-title" href="2201.html#2201">trunk投入予定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2202</span>
+    <a class="thread-title" href="2201.html#2202">Re:trunk投入予定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2203</span>
+    <a class="thread-title" href="2201.html#2203">Re2:trunk投入予定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2206</span>
+    <a class="thread-title" href="2201.html#2206">Re3:trunk投入予定</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2204</span>
+    <a class="thread-title" href="2201.html#2204">Re: trunk投入予定(外部貢献関連)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2205</span>
+    <a class="thread-title" href="2201.html#2205">Re2: trunk投入予定(外部貢献関連)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2214</span>
+    <a class="thread-title" href="2201.html#2214">Re2: trunk投入予定(外部貢献関連)</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2212</span>
+    <a class="thread-title" href="2201.html#2212">RE: trunk投入予定(r3836について)</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2213</span>
+    <a class="thread-title" href="2201.html#2213">Re:trunk投入予定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2216</span>
+    <a class="thread-title" href="2201.html#2216">Re2:trunk投入予定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2217</span>
+    <a class="thread-title" href="2201.html#2217">Re3:trunk投入予定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2218</span>
+    <a class="thread-title" href="2201.html#2218">Re4:trunk投入予定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2219</span>
+    <a class="thread-title" href="2201.html#2219">Re5:trunk投入予定</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2220</span>
+    <a class="thread-title" href="2201.html#2220">Re6:trunk投入予定</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2201>
+    <span class="no">[2201]</span>
+    <a class="thread-title" href="#2201">trunk投入予定</a>
+    <span class="author">もか</span>
+    <time datetime="2014-10-03T00:19:46">2014年10月03日 00:19</time></h1>
+    <div class="body">一週間後あたりから徐々にパッチをtrunkへ投入します。<br>2.1.1.4 or 2.1.2.0あたりをリリースしたい等色々考えてる人がいましたらお知らせください。<br>延期したりします。<br>(変更したり順番は変わったりします)<br><br>今現在、投入予定パッチは以下の通りです。<br>第一弾、改行コード・文字コード回りなど：<br>762&#9;Grepで標準出力に出力するコマンドラインオプションを追加<br>311&#9;コードページ対応<br>777&#9;NEL,PS,LSの改行コード表示を変更<br>847&#9;UTF-7のNEL,PS,LSを改行として読み込むように<br>854&#9;改行コードNEL,PS,LSを有効にするオプション追加<br><br>第二弾、割と安全そうなパッチ類：<br>716&#9;マルチプロファイル対応<br>726&#9;エンコーディング名による文字コードの設定<br>765&#9;偶数行の背景色の修正とノート線<br>773&#9;タブ多段・下に表示<br>803&#9;ブックマークの記憶方法の変更<br>821&#9;上書きモードでの矩形選択入力で選択範囲を削除するオプションを追加<br>829&#9;ファイルパスを省略表示するオプションの追加<br>838&#9;大きいファイルの暫定サポート<br>840&#9;文字情報が失われる場所を表示してジャンプできるように<br>851&#9;ルールファイル拡張2(正規表現置換)<br><br>外部協力類：<br>858&#9;保存確認メッセージが非フォーカス状態で表示される<br>863&#9;タグジャンプの一覧選択の改善とタグジャンプ検索オプション<br><br>大物・仕様変更：<br>636&#9;DiffのSJIS以外に対応<br>637&#9;Grep置換<br>710&#9;ファイルツリー表示<br>839&#9;長い行の比較・DIFFのサポートと排他制御の追加<br>841&#9;無題ウィンドウのカレントディレクトリをファイルダイアログの初期位置にする<br>864&#9;ミニマップ<br>882&#9;置換に行削除モード追加<br>883&#9;Grepに否定行検索を追加<br><br>マクロ類：<br>694&#9;SearchNext等のマクロで検索設定を元に戻すオプション<br>738&#9;関数リストマーク追加<br>739&#9;変更行へ移動コマンド追加<br>743&#9;改行置換時次の行を変更状態にしない<br>751&#9;PageUp/Downマクロの修正<br>758&#9;行属性取得マクロ追加<br>759&#9;選択ロック取得マクロ追加<br>760&#9;画面スクロール位置設定・画面行桁数取得マクロ追加<br>761&#9;ポップアップメニュー作成マクロ追加<br>865&#9;マクロ保存処理の変更<br><br>■投入しない予定のもの<br>713&#9;プロポーショナルフォント<br></div></section>
+    <ul><li><section><h1 id=2202>
+    <span class="no">[2202]</span>
+    <a class="thread-title" href="#2202">Re:trunk投入予定</a>
+    <span class="author">axis</span>
+    <time datetime="2014-10-03T23:59:01">2014年10月03日 23:59</time></h1>
+    <div class="body">現状で一度リリースしていただきたいです。<br>2.1.1.3よりもバグフィクスが進んでいるようですので。<br><br>&gt; 858&#9;保存確認メッセージが非フォーカス状態で表示される<br><br>できればこのバグフィクスも欲しいです。<br>Win7-&gt;8.1にしたらタイトルバーの非フォーカスが目立つようになり、<br>操作上の問題だけでなく、残念感というか、見苦しさも加わりました。<br><br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=2203>
+    <span class="no">[2203]</span>
+    <a class="thread-title" href="#2203">Re2:trunk投入予定</a>
+    <span class="author">もか</span>
+    <time datetime="2014-10-04T18:39:46">2014年10月04日 18:39</time></h1>
+    <div class="body">&gt;&gt; 858&#9;保存確認メッセージが非フォーカス状態で表示される<br>これは今晩にでもコミットしておきます。<br>&gt;現状で一度リリースしていただきたいです。<br>リリース係をしているsyatさんどうでしょうか？<br><br>リリースではなく、ベータ版とかでバイナリだけ上げるのは簡単なんですけど。<br></div></section>
+    <ul><li><section><h1 id=2206>
+    <span class="no">[2206]</span>
+    <a class="thread-title" href="#2206">Re3:trunk投入予定</a>
+    <span class="author">syat</span>
+    <time datetime="2014-10-05T15:39:51">2014年10月05日 15:39</time></h1>
+    <div class="body">呼ばれました。<br><br>&gt;現状で一度リリースしていただきたいです。<br>では今週のうちに少なくともバイナリまでリリースするようにします。<br>ほとんどFixとKeepなので2.1.1.4でよいですよね。<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=2204>
+    <span class="no">[2204]</span>
+    <a class="thread-title" href="#2204">Re: trunk投入予定(外部貢献関連)</a>
+    <span class="author">もか</span>
+    <time datetime="2014-10-04T21:52:17">2014年10月04日 21:52</time></h1>
+    <div class="body">&gt; 858&#9;保存確認メッセージが非フォーカス状態で表示される<br>コミットしました。<br><br>wikiに投稿されている、いくつかのパッチをトラッカーに登録しました。<br>他にもあるのを見つけた人はお知らせください。<br>以下の2つは、そのうちコミットします。<br>886 DIFF画面でダブルクリックしたとき実行<br>887 行番号の最小桁数<br><br><br>888 DLLプラグイン<br>これはほぼ完成のようです。<br>影響範囲も既存機能にはあまり関係ないため、取り込みやすいです。<br>しかしプロジェクトファイルのバージョンが違ったり、最新ではないみたいなので、すぐには取り込めそうにないです。<br><br>■作者の方へのお願い<br>zlib/libpngライセンスへの同意の表明をお願いします。<br>名前がない人は名前を名乗っていただくと一覧に掲載できます。<br></div></section>
+    <ul><li><section><h1 id=2205>
+    <span class="no">[2205]</span>
+    <a class="thread-title" href="#2205">Re2: trunk投入予定(外部貢献関連)</a>
+    <span class="author">axis</span>
+    <time datetime="2014-10-05T08:54:01">2014年10月05日 08:54</time></h1>
+    <div class="body">&gt; &gt; 858&#9;保存確認メッセージが非フォーカス状態で表示される<br>&gt; コミットしました。<br><br>をぉ、ありがとうございます！</div></section>
+    </li><li><section><h1 id=2214>
+    <span class="no">[2214]</span>
+    <a class="thread-title" href="#2214">Re2: trunk投入予定(外部貢献関連)</a>
+    <span class="author">ねこ</span>
+    <time datetime="2014-10-25T20:28:13">2014年10月25日 20:28</time></h1>
+    <div class="body">▼ もかさん<br><br>&gt; 887 行番号の最小桁数<br><br>これを担当したねこです。<br>ライセンスに同意いたします。<br>よろしくお願いします。<br></div></section>
+    </li></ul></li><li><section><h1 id=2212>
+    <span class="no">[2212]</span>
+    <a class="thread-title" href="#2212">RE: trunk投入予定(r3836について)</a>
+    <span class="author">もか</span>
+    <time datetime="2014-10-24T02:25:26">2014年10月24日 02:25</time></h1>
+    <div class="body">[r3836]のログに書くべき内容を#896と#895を取り違えてしまいました。<br>[patchunicode:#896] CP_UTF7でのNEL等を改行コードとして読み込めていない(r3832-)<br>が正しいです。<br>ログは修正しましたが、<br>https://sourceforge.net/p/sakura-editor/code/3836<br>のページに記載されたlogは間違っていますので注意してください。<br></div></section>
+    </li><li><section><h1 id=2213>
+    <span class="no">[2213]</span>
+    <a class="thread-title" href="#2213">Re:trunk投入予定</a>
+    <span class="author">もか</span>
+    <time datetime="2014-10-24T03:58:46">2014年10月24日 03:58</time></h1>
+    <div class="body">第二弾までコミットしました。<br><br>また、だいたい最新のバイナリを個人サイトのほうにアップしておきました。<br>http://mocaskr.web.fc2.com/weekly/sakura_weekly.html<br></div></section>
+    <ul><li><section><h1 id=2216>
+    <span class="no">[2216]</span>
+    <a class="thread-title" href="#2216">Re2:trunk投入予定</a>
+    <span class="author">B.Terios</span>
+    <time datetime="2014-11-27T23:39:45">2014年11月27日 23:39</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 第二弾までコミットしました。<br>&gt;<br>&gt; また、だいたい最新のバイナリを個人サイトのほうにアップしておきました。<br>&gt; http://mocaskr.web.fc2.com/weekly/sakura_weekly.html<br>こちらのファイルを使用しています。<br>新しい機能にワクワクしています。<br>ありがとうございます。<br><br>不具合(？)のご報告をさせてください。<br><br>sakura2-1-1-4r3863.zip の sakura.exe<br>サクラエディタ   Ver. 2.1.1.4 (Rev.3863)<br><br>      Share Ver: 160<br>      Compile Info: V1400 WR WIN500/I501/C000/N500<br>      Last Modified: 2014/11/23 23:30:40<br><br>でエディタ起動直後に Grep を実行すると<br>[サクラエディタ は動作を停止しました] が表示され、異常終了します。<br>(タスクトレイのサクラエディタは生き残ります。)<br>Grep ウィンドウ上で Grep を続けて行った場合も同様になります。<br><br>同じ操作を正式版の sakura.exe<br>サクラエディタ   Ver. 2.1.1.4<br><br>      Share Ver: 151<br>      Compile Info: V1500 WR WIN500/I501/C000/N500<br>      Last Modified: 2014/10/9 21:06:48<br><br>で行った場合は Grep が想定通りに実行されます。<br><br>実行した OS は Windows 7 Professional Service Pack 1 です。<br><br>ご確認いただけましたら幸いです。<br>よろしくお願いいたします。</div></section>
+    <ul><li><section><h1 id=2217>
+    <span class="no">[2217]</span>
+    <a class="thread-title" href="#2217">Re3:trunk投入予定</a>
+    <span class="author">もか</span>
+    <time datetime="2014-11-28T02:31:39">2014年11月28日 02:31</time></h1>
+    <div class="body">報告ありがとうございます。現象確認しました。<br>Grep置換パッチにバグがありました。<br>私用版のほうでテストしていないマージで追加修正した部分でした。<br>https://sourceforge.net/p/sakura-editor/patchunicode/918/<br></div></section>
+    <ul><li><section><h1 id=2218>
+    <span class="no">[2218]</span>
+    <a class="thread-title" href="#2218">Re4:trunk投入予定</a>
+    <span class="author">B.Terios</span>
+    <time datetime="2014-11-28T23:18:00">2014年11月28日 23:18</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 報告ありがとうございます。現象確認しました。<br>&gt; Grep置換パッチにバグがありました。<br>&gt; 私用版のほうでテストしていないマージで追加修正した部分でした。<br>&gt; https://sourceforge.net/p/sakura-editor/patchunicode/918/<br>早速のご確認・ご対応ありがとうございます。<br>度々ですみませんが、不具合というか不都合のご報告をさせて下さい。<br><br>以下の 2 行<br>S_SelectWord(0);<br>S_SearchClearMark(0);<br>を .mac ファイルにし、ダブルクリックに割り当てしています。<br>(以前、サクラエディタ掲示板で話題に上がったマクロで<br> 単語をダブルクリックすると、文書内の同じ単語がハイライト<br> 表示されるようになります。)<br><br>こちらを正式版の sakura.exe で実行するとステータスバーに<br>7 chars (1 lines) selected.<br>のように表示されます。<br>一方、sakura2-1-1-4r3863.zip の sakura.exe で実行すると<br>ステータスバーに情報が表示されません。<br>(正確には、一瞬表示されているようですが消えてしまいます。)<br><br>正式版と同様の動作にしていただけると有難いです。<br>また、マクロの記述内容の変更等で回避可能であれば方法を<br>教えていただけないでしょうか？<br><br>ご検討よろしくお願いいたします。<br></div></section>
+    <ul><li><section><h1 id=2219>
+    <span class="no">[2219]</span>
+    <a class="thread-title" href="#2219">Re5:trunk投入予定</a>
+    <span class="author">もか</span>
+    <time datetime="2014-11-29T01:52:04">2014年11月29日 01:52</time></h1>
+    <div class="body">またまた報告ありがとうございます。<br>現象を確認してパッチを投稿しました。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/925/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>925/<wbr></nobr></a><br>回避策ですが、ちょっとマクロで回避するのは難しいみたいです。<br>PostMessageで遅延してステータス表示が消えるためです。<br></div></section>
+    <ul><li><section><h1 id=2220>
+    <span class="no">[2220]</span>
+    <a class="thread-title" href="#2220">Re6:trunk投入予定</a>
+    <span class="author">B.Terios</span>
+    <time datetime="2014-11-30T00:30:04">2014年11月30日 00:30</time></h1>
+    <div class="body">再び、早速のご確認・ご対応ありがとうございます。<br>マクロでの回避が難しいことも承知いたしました。<br>また何かございましたら連絡させて下さい。<br>よろしくお願いいたします。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

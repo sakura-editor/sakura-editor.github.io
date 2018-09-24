@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マクロで質問 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1613</span>
+    <a class="thread-title" href="1613.html#1613">マクロで質問</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1614</span>
+    <a class="thread-title" href="1613.html#1614">Re:マクロで質問</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1616</span>
+    <a class="thread-title" href="1613.html#1616">Re:マクロで質問</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1613>
+    <span class="no">[1613]</span>
+    <a class="thread-title" href="#1613">マクロで質問</a>
+    <span class="author">みく</span>
+    <time datetime="2002-02-17T10:45:11">2002年02月17日 10:45</time></h1>
+    <div class="body"><br>・日本語文字はどう入力するのでしょうか(ImeChar)。<br>・ファイル系マクロがなくなっているのは機能低下ではないのでしょうか。<br>・以下のマクロはHandleCommand内から呼び出すときは引数がありますが必要ないのでしょうか。<br>//case F_FILEOPEN:&#9;Command_FILEOPEN((const char*)lparam1);break;<br>//case F_OPEN_HfromtoC:&#9;bRet = Command_OPEN_HfromtoC( (BOOL)lparam1 );break;<br>//case F_OPEN_HHPP:&#9;bRet = Command_OPEN_HHPP( (BOOL)lparam1 );break;<br>//case F_OPEN_CCPP:&#9;bRet = Command_OPEN_CCPP( (BOOL)lparam1 );break;<br>//case F_IME_CHAR:&#9;Command_IME_CHAR( (WORD)lparam1 ); break;<br>case F_UP_SEL:&#9;&#9;Command_UP( TRUE, bRepeat, lparam1 ); break;<br>case F_OUTLINE:&#9;&#9;bRet = Command_FUNCLIST( (BOOL)lparam1 );break;<br>case F_BOOKMARK_VIEW:&#9;bRet = Command_FUNCLIST( (BOOL)lparam1 ,OUTLINE_BOOKMARK );break;<br></div></section>
+    <ul><li><section><h1 id=1614>
+    <span class="no">[1614]</span>
+    <a class="thread-title" href="#1614">Re:マクロで質問</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-17T13:15:13">2002年02月17日 13:15</time></h1>
+    <div class="body">▼ みくさん<br>&gt; ・日本語文字はどう入力するのでしょうか(ImeChar)。<br><br>S_InsTextでどうでしょうか？<br><br><br>&gt; ・ファイル系マクロがなくなっているのは機能低下ではないのでしょうか。<br><br>機能低下です。:-)<br>次回できる限り盛りむよう努力します。<br><br><br>&gt; ・以下のマクロはHandleCommand内から呼び出すときは引数がありますが必要ないのでしょうか。<br><br>いるみたいですね。:-)<br></div></section>
+    <ul><li><section><h1 id=1616>
+    <span class="no">[1616]</span>
+    <a class="thread-title" href="#1616">Re:マクロで質問</a>
+    <span class="author">みく</span>
+    <time datetime="2002-02-17T19:09:04">2002年02月17日 19:09</time></h1>
+    <div class="body">&gt;タイトル: Re:マクロで質問<br>&gt;発言者: やざき<br>&gt;▼ みくさん<br>&gt;&gt; ・日本語文字はどう入力するのでしょうか(ImeChar)。<br>&gt;<br>&gt;S_InsTextでどうでしょうか？<br><br>これで十分ですね。<br><br>&gt;&gt; ・ファイル系マクロがなくなっているのは機能低下ではないのでしょうか。<br>&gt;<br>&gt;機能低下です。:-)<br>&gt;次回できる限り盛りむよう努力します。<br><br>よろしくお願いします。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ベータ版リリース作業に関するメモ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1297</span>
+    <a class="thread-title" href="1297.html#1297">ベータ版リリース作業に関するメモ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1386</span>
+    <a class="thread-title" href="1297.html#1386">Re:ベータ版リリース作業に関するメモ</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1406</span>
+    <a class="thread-title" href="1297.html#1406">Re:ベータ版リリース作業に関するメモ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1297>
+    <span class="no">[1297]</span>
+    <a class="thread-title" href="#1297">ベータ版リリース作業に関するメモ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-06-30T20:52:35">2010年06月30日 20:52</time></h1>
+    <div class="body">今後、私的な事情で、ベータ版のリリース作業が滞ることがあるかもしれません。<br>それで、滞っていたら、気にせず誰かリリースしていただきたい、ということで、作業メモを書いておきます。<br>＃といってもここ最近活動している人でSourceForgeにUploadできるのは、もかさんくらいなのかしら？<br><br>自分が今やっていることのメモ。<br><br>(1) SorceForgeへのUpload<br>SorceForgeの[Project Admin]-[File Manager]から。<br>[sakura-unicode-beta]フォルダに新しいフォルダ（rXXXX）を作成。<br>rXXXXフォルダにpdbW_rXXXX.zipとsakuraW_rXXXX.zipをUpload。<br><br>※エディタ本体（sakuraW.exe）は小細工無しにコンパイルしたものをそのまま掲載<br>※ReadMe.txtはタイトル部分のrevXXXXを書き換えているだけ<br><br>(2) Wiki Junk/44への記載<br>Junk/44に(1)のエディタ本体（sakuraW_rXXXX.zip）へのリンクを貼る。<br>更新履歴に新しい履歴を追加する。<br>（記載量が多いと書き込めなくなるので古い履歴は適当に削除）<br><br>(3) アナウンス<br>Wiki FrontPageの「最近のTopics」を更新。<br>[一般]掲示板にアナウンス投稿。<br><br>これだけです。もともと場つなぎ的にやりはじめたことなので、複雑なことはしていません。<br><br>＃私的な事情というのは概ね意欲低下（半年以上前からずるずる）でして。<br>＃今後は、開発に関わる作業全般でフェードアウト？かも。<br>＃ん～、気持ち次第だから不透明です。<br>＃(〃´・ω・`)ゞスンマッソン。</div></section>
+    <ul><li><section><h1 id=1386>
+    <span class="no">[1386]</span>
+    <a class="thread-title" href="#1386">Re:ベータ版リリース作業に関するメモ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-09-06T20:32:49">2010年09月06日 20:32</time></h1>
+    <div class="body">rev1817 では (1) の sakuraW.exe 作成方法を少し変えています。<br><br>&gt; ※エディタ本体（sakuraW.exe）は小細工無しにコンパイルしたものをそのまま掲載<br><br>バージョン情報ダイアログに Revision を表示するため、下記のように<br>オプションに SKR_PATCH_INFO プリプロセッサ定義を追加してコンパイルする<br><br><br>Index: sakura/sakura.vcproj<br>===================================================================<br>--- sakura/sakura.vcproj&#9;(リビジョン 1817)<br>+++ sakura/sakura.vcproj&#9;(作業コピー)<br>@@ -2635,6 +2635,14 @@<br> &#9;&#9;&#9;&#9;&lt;File<br> &#9;&#9;&#9;&#9;&#9;RelativePath="..\sakura_core\dlg\CDlgAbout.cpp"<br> &#9;&#9;&#9;&#9;&#9;&gt;<br>+&#9;&#9;&#9;&#9;&#9;&lt;FileConfiguration<br>+&#9;&#9;&#9;&#9;&#9;&#9;Name="Release_Unicode|Win32"<br>+&#9;&#9;&#9;&#9;&#9;&#9;&gt;<br>+&#9;&#9;&#9;&#9;&#9;&#9;&lt;Tool<br>+&#9;&#9;&#9;&#9;&#9;&#9;&#9;Name="VCCLCompilerTool"<br>+&#9;&#9;&#9;&#9;&#9;&#9;&#9;PreprocessorDefinitions="SKR_PATCH_INFO=\&amp;quot;Revision: 1817\&amp;quot;"<br>+&#9;&#9;&#9;&#9;&#9;&#9;/&gt;<br>+&#9;&#9;&#9;&#9;&#9;&lt;/FileConfiguration&gt;<br> &#9;&#9;&#9;&#9;&lt;/File&gt;<br> &#9;&#9;&#9;&#9;&lt;File<br> &#9;&#9;&#9;&#9;&#9;RelativePath="..\sakura_core\dlg\CDlgAbout.h"<br></div></section>
+    </li><li><section><h1 id=1406>
+    <span class="no">[1406]</span>
+    <a class="thread-title" href="#1406">Re:ベータ版リリース作業に関するメモ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2010-10-18T03:01:39">2010年10月18日 03:01</time></h1>
+    <div class="body">rev1848 にて。<br><br>&gt; (2) Wiki Junk/44への記載<br><br>これはやめました。<br>「(3)アナウンス」のほうに直に SourceForge からのダウンロードを案内する、です。</div></section>
+    </li></ul></li></ul></body></html>

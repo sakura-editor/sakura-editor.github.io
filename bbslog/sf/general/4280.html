@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>制御コードを削除したいです。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4280</span>
+    <a class="thread-title" href="4280.html#4280">制御コードを削除したいです。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4282</span>
+    <a class="thread-title" href="4280.html#4282">Re: 制御コードを削除したいです。</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4280>
+    <span class="no">[4280]</span>
+    <a class="thread-title" href="#4280">制御コードを削除したいです。</a>
+    <span class="author">初SAKURA</span>
+    <time datetime="2005-02-07T15:39:53">2005年02月07日 15:39</time></h1>
+    <div class="body">本日、初めてSAKURAをインストしました。<br><br>puttyで取得（EUC-JP）した、linux（rh9）コンソールログをwindows上で開いたことろ、lsコマンドで取得したファイル名の先頭に、<br>"[00m"とか、"]0;"、"[00;"という、文字がついています。これを表示しないようにしたいのですがどのようにすればよろしいでしょうか？<br>windowsのSAKURAではEUCで開きました。<br><br>よろしくお願い致します。</div></section>
+    <ul><li><section><h1 id=4282>
+    <span class="no">[4282]</span>
+    <a class="thread-title" href="#4282">Re: 制御コードを削除したいです。</a>
+    <span class="author">げんた</span>
+    <time datetime="2005-02-07T22:37:36">2005年02月07日 22:37</time></h1>
+    <div class="body">&gt;puttyで取得（EUC-JP）した、linux（rh9）コンソールログをwindows上で開いたことろ、lsコマンドで取得したファイル名の先頭に、<br>&gt;"[00m"とか、"]0;"、"[00;"という、文字がついています。<br>最近linuxをさわっていないので外しているかもしれませんが，Linuxって初期設定でファイル種別によって色が付くようになっていると思います．で，その色を付けるための色変更のエスケープシーケンスがファイル名の前に出力されているものと思われます．<br><br>lsをファイルに落とすのが目的であればファイルにリダイレクトすればそういうのは付かなくなると思います．(lsは出力先がコンソールかファイルかで挙動を変えるので)．<br>$ ls -l &gt; flie.txt<br>複数列出力なら<br>$ ls -C &gt; flie.txt<br><br>---<br>既に付いてしまったものを除去すること自体が目的であれば，正規表現置換で<br>\033\[(\d+)*(;\d+)*mとかパターンを指定して空文字列に置き換えればたぶん消せると思います．<br></div></section>
+    </li></ul></li></ul></body></html>

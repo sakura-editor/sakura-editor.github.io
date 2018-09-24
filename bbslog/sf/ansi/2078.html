@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>メモリリークや、各動作速度、メモリ使用量の修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2078</span>
+    <a class="thread-title" href="2078.html#2078">メモリリークや、各動作速度、メモリ使用量の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2081</span>
+    <a class="thread-title" href="2078.html#2081">Re: メモリリークや、各動作速度、メモリ使用量の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2082</span>
+    <a class="thread-title" href="2078.html#2082">Re2: メモリリークや、各動作速度、メモリ使用量の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2094</span>
+    <a class="thread-title" href="2078.html#2094">Re3: メモリリークや、各動作速度、メモリ使用量の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2097</span>
+    <a class="thread-title" href="2078.html#2097">Re4: メモリリークや、各動作速度、メモリ使用量の修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2100</span>
+    <a class="thread-title" href="2078.html#2100">Re5: メモリリークや、各動作速度、メモリ使用量の修正</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2098</span>
+    <a class="thread-title" href="2078.html#2098">Re4: メモリリークや、各動作速度、メモリ使用量の修正</a></div>
+    </li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2113</span>
+    <a class="thread-title" href="2078.html#2113">追加修正：選択範囲のバグ</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2078>
+    <span class="no">[2078]</span>
+    <a class="thread-title" href="#2078">メモリリークや、各動作速度、メモリ使用量の修正</a>
+    <span class="author">Azumaiya</span>
+    <time datetime="2002-05-22T02:17:56">2002年05月22日 02:17</time></h1>
+    <div class="body"> 修正、及び、改善した点は以下の通りです。<br><br>1.行が完全になくなったときにメモリリークしていたのを修正。<br>2.全置換している間に行数が変化すると、プログレスバーの表示が正しくなかったのを修正。<br>3.全置換、及び、Redo&amp;Undo 動作の速度改善。<br>4.Undo, Redo バッファのメモリ使用量について改善。<br><br> 3, 4 の改善のために修正箇所がかなり多岐に渡ってしまいました。<br> これを本体に取り込む場合には、しばらくの間テスト期間を設けた方がよいように思います。<br> こちらでも、動作確認をしながら修正していったのですが、おそらく漏れがあると思いますので・・・。<br><br> 修正対象は、2002/05/20 版で、アップしたファイルは以下の場所です。<br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/fix_2002-05-20_22.zip target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>fix_2002<wbr>-<wbr>05-<wbr>20_22.<wbr>zip</nobr></a><br></div></section>
+    <ul><li><section><h1 id=2081>
+    <span class="no">[2081]</span>
+    <a class="thread-title" href="#2081">Re: メモリリークや、各動作速度、メモリ使用量の修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-22T03:01:40">2002年05月22日 03:01</time></h1>
+    <div class="body">&gt;4.Undo, Redo バッファのメモリ使用量について改善。<br>いままであまり注目されたことのないUndo Bufferの改善とは感激です。数十万行のファイルを削除した場合などものすごく待たされるのでなんとかならないものかと思っていたところでした。o(^-^)o<br><br>入れ替えたところは遠慮しないでファイル先頭のCopyright表示も入れ替え・追加していただけたらと思います。特に総入れ替えしたところはライセンス表示も入れ替えていただいた方がわかりやすいと思います。一応 zlib/libpngを推奨しますが、納得できないとかもっと緩いライセンスが良いというなら決定権はそちらにありますのでご自由に。(もっと強いライセンスはちょっと困ります)<br></div></section>
+    <ul><li><section><h1 id=2082>
+    <span class="no">[2082]</span>
+    <a class="thread-title" href="#2082">Re2: メモリリークや、各動作速度、メモリ使用量の修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-22T06:51:06">2002年05月22日 06:51</time></h1>
+    <div class="body">&gt;数十万行のファイルを削除した場合などものすごく待たされる<br>10万行削除を試してみましたが、結果は全く変わりませんでした。どちらも20秒程度かかります。<br>削除が遅いのは削除したものをUndoに入れているためかと思っていましたが、ちょっと見当違いだったみたい。<br></div></section>
+    <ul><li><section><h1 id=2094>
+    <span class="no">[2094]</span>
+    <a class="thread-title" href="#2094">Re3: メモリリークや、各動作速度、メモリ使用量の修正</a>
+    <span class="author">Azumaiya</span>
+    <time datetime="2002-05-23T02:12:27">2002年05月23日 02:12</time></h1>
+    <div class="body">&gt; 削除が遅いのは削除したものをUndoに入れているためかと思っていましたが、ちょっと見当違いだったみたい。<br> 確かに違うようですね。<br> ですが、根本的な問題である realloc の連発による速度低下ということは変わりませんでした。<br><br> で、その選択削除動作が遅かったのを含めていくつかを追加で修正しました。<br> 修正部分は、<br><br>1.選択範囲削除の速度改善。<br>2.右上から左下へ矩形選択して、削除した後のキャレット位置がおかしかったのを修正。<br>3.矩形選択領域の半角→全角などの動作の Undo 動作後のキャレット位置がおかしくなってしまったのを修正。<br><br> です。<br> これらの修正ですが、違うファイルであげるのもどうかと思いましたので、先の修正と統合してあげておきました。<br> ファイル名は前回と同じで、修正対象も同じく 2002/05/20 版です。<br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/fix_2002-05-20_22.zip target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>fix_2002<wbr>-<wbr>05-<wbr>20_22.<wbr>zip</nobr></a><br></div></section>
+    <ul><li><section><h1 id=2097>
+    <span class="no">[2097]</span>
+    <a class="thread-title" href="#2097">Re4: メモリリークや、各動作速度、メモリ使用量の修正</a>
+    <span class="author">Azumaiya</span>
+    <time datetime="2002-05-23T14:07:03">2002年05月23日 14:07</time></h1>
+    <div class="body"> 修正箇所内で、メモリリークが起こっていたのを修正しました。</div></section>
+    <ul><li><section><h1 id=2100>
+    <span class="no">[2100]</span>
+    <a class="thread-title" href="#2100">Re5: メモリリークや、各動作速度、メモリ使用量の修正</a>
+    <span class="author">Azumaiya</span>
+    <time datetime="2002-05-23T15:52:12">2002年05月23日 15:52</time></h1>
+    <div class="body">▼ Azumaiyaさん<br>&gt;  修正箇所内で、メモリリークが起こっていたのを修正しました。<br> 追加で、Undo, Redo 中に落ちることがあったのを修正しておきました。<br></div></section>
+    </li></ul></li><li><section><h1 id=2098>
+    <span class="no">[2098]</span>
+    <a class="thread-title" href="#2098">Re4: メモリリークや、各動作速度、メモリ使用量の修正</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-05-23T14:21:13">2002年05月23日 14:21</time></h1>
+    <div class="body">&gt;&gt; 10万行削除を試してみましたが、結果は全く変わりませんでした。どちらも20秒程度かかります。<br>&gt; で、その選択削除動作が遅かったのを含めていくつかを追加で修正しました。<br>なな、なんと。今まで20秒かかったのが1秒以下で削除されるようになりました。試しに50万行削除してみましたが、これまでだと10分待っても終わらなかったのが数秒で削除されるようになりました。<br><br>どうもありがとうございました。<br></div></section>
+    </li></ul></li></ul></li></ul></li><li><section><h1 id=2113>
+    <span class="no">[2113]</span>
+    <a class="thread-title" href="#2113">追加修正：選択範囲のバグ</a>
+    <span class="author">Azumaiya</span>
+    <time datetime="2002-05-25T01:34:04">2002年05月25日 01:34</time></h1>
+    <div class="body">追加修正です。<br><br>1.選択しながらの「ファイル先頭に移動」を使ったときに、選択開始位置よりも、ファイル先頭行が短いと選択範囲がおかしかったのを修正。<br><br>です。<br> ファイルは、<br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/fix_2002-05-20_24.zip target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>fix_2002<wbr>-<wbr>05-<wbr>20_24.<wbr>zip</nobr></a><br><br> にアップしました。<br> これには、fix_2002-05-20_22.zip の修正も含まれています。<br></div></section>
+    </li></ul></li></ul></body></html>

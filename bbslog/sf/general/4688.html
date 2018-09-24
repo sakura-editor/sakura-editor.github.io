@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>扱えるファイル名（パス長） | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4688</span>
+    <a class="thread-title" href="4688.html#4688">扱えるファイル名（パス長）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4689</span>
+    <a class="thread-title" href="4688.html#4689">Re:扱えるファイル名（パス長）</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4690</span>
+    <a class="thread-title" href="4688.html#4690">Re2:扱えるファイル名（バグ）</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4691</span>
+    <a class="thread-title" href="4688.html#4691">Re2:扱えるファイル名（バグ詳細）</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4688>
+    <span class="no">[4688]</span>
+    <a class="thread-title" href="#4688">扱えるファイル名（パス長）</a>
+    <span class="author">pikotan</span>
+    <time datetime="2005-09-16T16:52:14">2005年09月16日 16:52</time></h1>
+    <div class="body">W2K/XP環境にて、<br><br>"東京都23区（千代田区、港区、中央区、品川区、新宿区、台東区、豊島区、板橋区、文京区、渋谷区、北区、荒川区、世田谷区、大田区、墨田区、江東区、中野区、目黒区、杉並区、練馬区、葛飾区、足立区、江戸川区）"<br><br>という馬鹿長い名前のフォルダの中にあるファイルの編集が出来なかったの<br>ですが、仕様でどこまでの長さが扱えるのか、よく知らなかった<br>んで、明示してもらえませんでしょうか。<br><br><br></div></section>
+    <ul><li><section><h1 id=4689>
+    <span class="no">[4689]</span>
+    <a class="thread-title" href="#4689">Re:扱えるファイル名（パス長）</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-09-17T00:48:27">2005年09月17日 00:48</time></h1>
+    <div class="body">▼ pikotanさん<br>&gt; W2K/XP環境にて、<br><br>ドライブ名＋フルパス＋ファイル名＋拡張子で前後の"を取り除いて、<br>259 byte です。（全角１文字=2 byte、'\'=1 byte）<br><br>WIN2000 sakura:Ver 1.4.7.0</div></section>
+    <ul><li><section><h1 id=4690>
+    <span class="no">[4690]</span>
+    <a class="thread-title" href="#4690">Re2:扱えるファイル名（バグ）</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-09-18T14:43:40">2005年09月18日 14:43</time></h1>
+    <div class="body">▼ 開発者　殿<br>sakura.ini を削除した後で、長いパス名のファイルを開くと、<br>261 byte 以上のパス名が、新規ファイルとしてオープンされます。<br><br>259+0 1新規テキスト文書.txt<br>259+1 12新規テキスト文書.txte ファイルが存在しません。<br>259+2 123新規テキスト文書.tx<br>259+3 1234新規テキスト文書.t<br>259+4 12345新規テキスト文書<br><br>WIN2000 sakura:Ver. 1.5.6.0 V</div></section>
+    </li><li><section><h1 id=4691>
+    <span class="no">[4691]</span>
+    <a class="thread-title" href="#4691">Re2:扱えるファイル名（バグ詳細）</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2005-09-19T16:49:24">2005年09月19日 16:49</time></h1>
+    <div class="body">▼ 開発者　殿<br>タスクトレイから、sakura を起動して、パス名が正確に 260 byteのファイルをオープンする前に、<br>261 byte以上のパス名のファイルをオープンすると、新規ファイルとしてオープンされてしまいます。<br><br>259+2 123新規テキスト文書.tx<br>259+3 1234新規テキスト文書.t<br>259+4 12345新規テキスト文書<br><br>この後で、パス名の長さが正確に、260 byteのファイルをオープンしようとして、<br>次のエラーで失敗すると、以降は正常に、sakuraを終了するまで、<br>260 byte 以上のパス名は、オープン出来なくなります。<br><br>259+1 12新規テキスト文書.txte ファイルが存在しません。<br><br>WIN2000 sakura:Ver. 1.5.6.0 V</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>複数行にまたがる検索／置換パッチの適用の方法 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">8164</span>
+    <a class="thread-title" href="8164.html#8164">複数行にまたがる検索／置換パッチの適用の方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8165</span>
+    <a class="thread-title" href="8164.html#8165">Re:複数行にまたがる検索／置換パッチの適用の方法</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8166</span>
+    <a class="thread-title" href="8164.html#8166">Re2:複数行にまたがる検索／置換パッチの適用の方法</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8164>
+    <span class="no">[8164]</span>
+    <a class="thread-title" href="#8164">複数行にまたがる検索／置換パッチの適用の方法</a>
+    <span class="author">jtb</span>
+    <time datetime="2016-08-08T01:29:57">2016年08月08日 01:29</time></h1>
+    <div class="body">初めまして。<br><br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/54/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>54/<wbr></nobr></a><br><br>こちらで紹介されていた<br>「複数行にまたがる検索／置換」簡易版パッチ<br>を是非利用したいのですが、<br>どのようにしてサクラエディタへ適用すればよいのでしょうか？</div></section>
+    <ul><li><section><h1 id=8165>
+    <span class="no">[8165]</span>
+    <a class="thread-title" href="#8165">Re:複数行にまたがる検索／置換パッチの適用の方法</a>
+    <span class="author">もか</span>
+    <time datetime="2016-08-08T02:46:50">2016年08月08日 02:46</time></h1>
+    <div class="body">■方法その1<br>svn のクライアントソフトを使って<br><a href=http://svn.code.sf.net/p/sakura-editor/code/sakura/trunk2 target=_top><nobr>http://<wbr>svn.<wbr>code.<wbr>sf.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>sakura/<wbr>trunk2</nobr></a><br>以下のコピーを取得します。<br>取得するリビジョンはパッチに書いてあるリビジョンにします。<br>(取得後でもupdateで特定リビジョンに更新できます)<br>sf.netのwebからでもソースコードのzipが取得できると思うのでそれでもいいです。<br>tortoiseSvnでパッチファイルの適用をします。<br>または、パッチファイルの改行コードをCRLFに修正して普通のpatch(という名前のソフト)でパッチをソースコードに当てます。<br>patchのコマンドは以下のような感じです。<br>&gt;cd sakura\trunk2<br>&gt;patch -p1 &lt; <a href=mailto:New@MultiLineSearch_U_11.patch><nobr>New@<wbr>MultiLin<wbr>eSearch_<wbr>U_11.<wbr>patch</nobr></a><br>VisualStudioかmingwを使ってソースコードをコンパイルします。<br>コンパイルしたsakura.exeをコピーするなりして使います。<br>■方法その2<br><a href=http://sakura.qp.land.to/?FAQ%2F2 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>FAQ%<wbr>2F2</nobr></a><br>に書いてあるように、upld:29をダウンロードしてきます。<br>少し古いけれど使えないこともないです。<br>最新機能も使いたいなら他を使ってください。<br><br>■方法その3<br><a href=http://mocaskr.web.fc2.com/weekly/sakura_weekly.html target=_top><nobr>http://<wbr>mocaskr.<wbr>web.<wbr>fc2.<wbr>com/<wbr>weekly/<wbr>sakura_w<wbr>eekly.<wbr>html</nobr></a><br>とりあえずコンパイルしました。<br>私のサイトのサンプル開発の複数行検索u11をお使いください。<br>2行の検索ができることは確認しましたが、置換などが正常に動作するかは分かりません。<br>2.3系なのでいくつか分かっている不具合がそのままあります。<br></div></section>
+    <ul><li><section><h1 id=8166>
+    <span class="no">[8166]</span>
+    <a class="thread-title" href="#8166">Re2:複数行にまたがる検索／置換パッチの適用の方法</a>
+    <span class="author">jtb</span>
+    <time datetime="2016-08-08T08:25:59">2016年08月08日 08:25</time></h1>
+    <div class="body">ご返信、誠にありがとうございます。<br>またお手を煩わせてしまい、失礼いたしました。<br>非常に助かります。<br><br><br>▼ もかさん<br>&gt; ■方法その1<br>&gt; svn のクライアントソフトを使って<br>&gt; <a href=http://svn.code.sf.net/p/sakura-editor/code/sakura/trunk2 target=_top><nobr>http://<wbr>svn.<wbr>code.<wbr>sf.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>sakura/<wbr>trunk2</nobr></a><br>&gt; 以下のコピーを取得します。<br>&gt; 取得するリビジョンはパッチに書いてあるリビジョンにします。<br>&gt; (取得後でもupdateで特定リビジョンに更新できます)<br>&gt; sf.netのwebからでもソースコードのzipが取得できると思うのでそれでもいいです。<br>&gt; tortoiseSvnでパッチファイルの適用をします。<br>&gt; または、パッチファイルの改行コードをCRLFに修正して普通のpatch(という名前のソフト)でパッチをソースコードに当てます。<br>&gt; patchのコマンドは以下のような感じです。<br>&gt; &gt;cd sakura\trunk2<br>&gt; &gt;patch -p1 &lt; <a href=mailto:New@MultiLineSearch_U_11.patch><nobr>New@<wbr>MultiLin<wbr>eSearch_<wbr>U_11.<wbr>patch</nobr></a><br>&gt; VisualStudioかmingwを使ってソースコードをコンパイルします。<br>&gt; コンパイルしたsakura.exeをコピーするなりして使います。<br>&gt; ■方法その2<br>&gt; <a href=http://sakura.qp.land.to/?FAQ%2F2 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>FAQ%<wbr>2F2</nobr></a><br>&gt; に書いてあるように、upld:29をダウンロードしてきます。<br>&gt; 少し古いけれど使えないこともないです。<br>&gt; 最新機能も使いたいなら他を使ってください。<br>&gt; <br>&gt; ■方法その3<br>&gt; <a href=http://mocaskr.web.fc2.com/weekly/sakura_weekly.html target=_top><nobr>http://<wbr>mocaskr.<wbr>web.<wbr>fc2.<wbr>com/<wbr>weekly/<wbr>sakura_w<wbr>eekly.<wbr>html</nobr></a><br>&gt; とりあえずコンパイルしました。<br>&gt; 私のサイトのサンプル開発の複数行検索u11をお使いください。<br>&gt; 2行の検索ができることは確認しましたが、置換などが正常に動作するかは分かりません。<br>&gt; 2.3系なのでいくつか分かっている不具合がそのままあります。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

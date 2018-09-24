@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>buildが出来なくなりました | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1910</span>
+    <a class="thread-title" href="1910.html#1910">buildが出来なくなりました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1911</span>
+    <a class="thread-title" href="1910.html#1911">Re:buildが出来なくなりました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1912</span>
+    <a class="thread-title" href="1910.html#1912">Re2:buildが出来なくなりました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1918</span>
+    <a class="thread-title" href="1910.html#1918">Re3:buildが出来なくなりました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1919</span>
+    <a class="thread-title" href="1910.html#1919">Re4:buildが出来なくなりました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1923</span>
+    <a class="thread-title" href="1910.html#1923">Re5:buildが出来なくなりました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1924</span>
+    <a class="thread-title" href="1910.html#1924">Re6:buildが出来なくなりました</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">1913</span>
+    <a class="thread-title" href="1910.html#1913">Re2:buildが出来なくなりました</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1910>
+    <span class="no">[1910]</span>
+    <a class="thread-title" href="#1910">buildが出来なくなりました</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-23T18:15:46">2013年04月23日 18:15</time></h1>
+    <div class="body">リビジョン 2904でbuildが出来なくなりました。<br>Funccode_x.hsrc<br>のパッチミスが原因と思われます。</div></section>
+    <ul><li><section><h1 id=1911>
+    <span class="no">[1911]</span>
+    <a class="thread-title" href="#1911">Re:buildが出来なくなりました</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-23T19:02:25">2013年04月23日 19:02</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; リビジョン 2904でbuildが出来なくなりました。<br>&gt; Funccode_x.hsrc<br>&gt; のパッチミスが原因と思われます。<br><br>rev2906で対応しました。<br>お手数おかけしました。<br><br>ただ、こちらの環境だとリビルドしてもエラーが発生しませんでした。<br>(Funccode_x.hsrcの変更を反映してもらえない？)<br></div></section>
+    <ul><li><section><h1 id=1912>
+    <span class="no">[1912]</span>
+    <a class="thread-title" href="#1912">Re2:buildが出来なくなりました</a>
+    <span class="author">Uchi</span>
+    <time datetime="2013-04-23T19:28:09">2013年04月23日 19:28</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; ただ、こちらの環境だとリビルドしてもエラーが発生しませんでした。<br>&gt; (Funccode_x.hsrcの変更を反映してもらえない？)<br>そちらだとFunccode_x.hsrcの時刻がFunccode_enum.hよりも後の時刻になってるんでしょうね<br>此方でも最初の所ではOKで、別のところではNGでした。<br>rebuildはFunccode_enum.hの作成には関与しないからそう言う事も有ると思います。<br><br>いっそFunccode_enum.hとFunccode_define.hをコミット対象から外した方が良いかも知れませんね。</div></section>
+    <ul><li><section><h1 id=1918>
+    <span class="no">[1918]</span>
+    <a class="thread-title" href="#1918">Re3:buildが出来なくなりました</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-27T11:03:50">2013年04月27日 11:03</time></h1>
+    <div class="body">▼ Uchiさん<br>&gt; いっそFunccode_enum.hとFunccode_define.hをコミット対象から外した方が良いかも知れませんね。<br><br>上記ファイルはHeaderMake.exeとFunccode_x.hsrc自動生成されるファイルですね。<br>中間ファイル的な扱いになるのでsvnへの登録不要にも思えますが、あえて登録したのは何か理由があるのかもしれません。<br>(たとえば、チェックアウト時に存在しないファイルをプロジェクトに登録したくないとか)<br><br>Funccode_enum.hとFunccode_define.hを手修正しなければ問題は発生しないので、現状維持でもいいのかなと思います。<br>(今回の件は自分の作業ミスなので)<br></div></section>
+    <ul><li><section><h1 id=1919>
+    <span class="no">[1919]</span>
+    <a class="thread-title" href="#1919">Re4:buildが出来なくなりました</a>
+    <span class="author">もか</span>
+    <time datetime="2013-04-27T13:14:44">2013年04月27日 13:14</time></h1>
+    <div class="body">前処理がCLべったりなのでmingw/Makefile環境では生成できないので、含まれてないと困る気がします。<br></div></section>
+    <ul><li><section><h1 id=1923>
+    <span class="no">[1923]</span>
+    <a class="thread-title" href="#1923">Re5:buildが出来なくなりました</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-27T18:15:36">2013年04月27日 18:15</time></h1>
+    <div class="body">▼ もかさん<br>&gt; 前処理がCLべったりなのでmingw/Makefile環境では生成できないので、含まれてないと困る気がします。<br><br>HeaderMake.cppの中身を見るとcl.exeのプリプロセッサ機能を使っているようです。<br>MinGWでも"gcc -E"で同様の機能が使えるので試しに使ってみたのですが、なんとかなりそうな感じです。<br><br>とりあえずFunccode_x.hsrcのカンマ抜けを修正しました。<br>http://sourceforge.net/p/sakura-editor/patchunicode/468/<br></div></section>
+    <ul><li><section><h1 id=1924>
+    <span class="no">[1924]</span>
+    <a class="thread-title" href="#1924">Re6:buildが出来なくなりました</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-27T19:48:47">2013年04月27日 19:48</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; HeaderMake.cppの中身を見るとcl.exeのプリプロセッサ機能を使っているようです。<br>&gt; MinGWでも"gcc -E"で同様の機能が使えるので試しに使ってみたのですが、なんとかなりそうな感じです。<br><br>・HeaderMakeのMinGW対応<br>・Funccode_x.hsrcからFunccode_define.h、Funccode_enum.hの自動生成対応<br>http://sourceforge.net/p/sakura-editor/patchunicode/468/<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=1913>
+    <span class="no">[1913]</span>
+    <a class="thread-title" href="#1913">Re2:buildが出来なくなりました</a>
+    <span class="author">novice</span>
+    <time datetime="2013-04-23T19:31:19">2013年04月23日 19:31</time></h1>
+    <div class="body">▼ noviceさん<br>&gt; ただ、こちらの環境だとリビルドしてもエラーが発生しませんでした。<br>&gt; (Funccode_x.hsrcの変更を反映してもらえない？)<br><br>原因が分かりました。<br>Funccode_x.hsrcの日付がFunccode_enum.h、Funccode_define.h<br>より古いと更新してもらえないようです。<br>(HeaderMake.exeの動作がそうなっている)<br><br>思い出すと、Funccode_enum.h、Funccode_define.h<br>を手修正していたような気がします。<br><br>忘れないように、Wikiに追記しました。<br><a href=http://sourceforge.net/p/sakura-editor/wiki/Coding/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>wiki/<wbr>Coding/<wbr></nobr></a><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>サクラエディタ開発者の方へのお願い | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2209</span>
+    <a class="thread-title" href="2209.html#2209">サクラエディタ開発者の方へのお願い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2210</span>
+    <a class="thread-title" href="2209.html#2210">Re:サクラエディタ開発者の方へのお願い</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2211</span>
+    <a class="thread-title" href="2209.html#2211">Re2:サクラエディタ開発者の方へのお願い</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2209>
+    <span class="no">[2209]</span>
+    <a class="thread-title" href="#2209">サクラエディタ開発者の方へのお願い</a>
+    <span class="author">suzz</span>
+    <time datetime="2014-10-12T17:19:59">2014年10月12日 17:19</time></h1>
+    <div class="body"><br>SVN へのコミットに関するお願いです。<br><br>コミットの際に、「変更した機能」や「修正した不具合現象」の詳細が分かる<br>ように書いていただけないでしょうか？<br><br>機能変更の場合、例えば、<br>「New: Grep拡張」<br>「Imp: PHPヒアドキュメント/C++ RowString/C# quoted String等対応」<br>と書かれているだけでは、どのような機能が増えたのか分かりません。<br>もう少し具体的にどのような機能を追加、変更したのか書いて<br>いただけないでしょうか？<br><br>不具合修正であれば、「不具合の原因」しか書かれていないことが多いです。<br>「バッファーオーバーラン」、「初期化不足」、「ハンドルリーク」など。<br>具体的にどのような操作を行うと、どのような問題が発生していたかが分からないと<br>修正が妥当なのか判断できませんし、動作確認もできません。<br><br>コミットログに source forge のチケット(patchunicode#xxx)や掲示板の<br> ID が書かれていますので、これらのページを見れば変更内容が分かることも<br>ありますが、できれば、チケットIDや掲示板IDだけではなく、チケットや<br>掲示板に書かれている内容も、詳細としてコミットログに一緒に書いて<br>いただけると、非常に助かります。(あちこちのページを見ずに済むので)<br><br><br>また、コミットの単位についても、別々の変更が一度にコミットされています。<br>例えば<br>1. 「typo修正」というコミットで、インデントの修正、コメントの修正、<br>ファイルヘッダの追加などを同時に行なっている<br>2. 不具合修正のコミットで、現象が似ている別の不具合を一度に修正している<br>3. 機能改善や不具合改修と一緒に、コメントやインデント修正などを行っている<br><br>など。<br>これら論理的に別々の変更は、分けてコミットしていただけると、<br>ソースコードの差分を見た際に、変更が把握しやすいです。<br><br>以上、ご検討、よろしくお願いいたします。<br><br></div></section>
+    <ul><li><section><h1 id=2210>
+    <span class="no">[2210]</span>
+    <a class="thread-title" href="#2210">Re:サクラエディタ開発者の方へのお願い</a>
+    <span class="author">もか</span>
+    <time datetime="2014-10-13T00:09:06">2014年10月13日 00:09</time></h1>
+    <div class="body">svn logを [patchunicode:#1234] 形式で書いてもらう。<br>なんと！このページでlogを見ると、リンクになります。<br><a href=https://sourceforge.net/p/sakura-editor/code/HEAD/log/?path=/sakura/trunk2 target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>code/<wbr>HEAD/<wbr>log/?<wbr>path=/<wbr>sakura/<wbr>trunk2</nobr></a><br>リンクになっていないと、ご指摘の通り不便極まりないがリンクならなんとか許せないでしょうか。<br><br>トラッカーの変更内容は、一番上のところに書き、パッチの内容が変わったら一番上の本文も修正する。<br>wiki・この掲示板の内容は、要約か必要な個所を引用して、トラッカーに貼り付ける。<br>パッチをコミット後に不具合などが出た場合は、新しくトラッカーIDを発行する運用にする。<br>(新ID側からリンクすると、バッグリンクが旧ID側に表示されるのが便利だとおもう)<br>で、手を打たない？<br><br>この上のURLおよび、forkしてgit svn fetchなどで取り込んだ後のsvn logは、<br>後で修正しても反映されないらしいので、気に食わない。<br>　コミット後のパッチに対するバグとかあってもフォローできないし、<br>記述が間違っててもフォローできない。<br>というか、コミットそのものがめんどくさくなるので、私はそれならコミットしない。<br></div></section>
+    <ul><li><section><h1 id=2211>
+    <span class="no">[2211]</span>
+    <a class="thread-title" href="#2211">Re2:サクラエディタ開発者の方へのお願い</a>
+    <span class="author">suzz</span>
+    <time datetime="2014-10-13T12:50:58">2014年10月13日 12:50</time></h1>
+    <div class="body">&gt; svn logを [patchunicode:#1234] 形式で書いてもらう。<br><br>チケット ID を書く時のキーワードを統一していただけると、BTS/ITS 連携機能が<br>使えるので便利ですね。<br><br><a href=http://tortoisesvn.net/docs/nightly/TortoiseSVN_ja/tsvn-dug-bugtracker.html target=_top><nobr>http://<wbr>tortoise<wbr>svn.<wbr>net/<wbr>docs/<wbr>nightly/<wbr>Tortoise<wbr>SVN_ja/<wbr>tsvn-<wbr>dug-<wbr>bugtrack<wbr>er.<wbr>html</nobr></a><br><br><br>&gt;トラッカーの変更内容は、一番上のところに書き、パッチの内容が変わったら一番上の本文も修正する。<br>&gt;wiki・この掲示板の内容は、要約か必要な個所を引用して、トラッカーに貼り付ける。<br><br>情報を「トラッカーの一番上の本文」に集められるのであれば、あとはコミットの時に<br>同じ文章をコピペすればよいと思うのですが。。。<br>そこまで頑張ったのなら、あともう一手間です。<br><br>リンクに対するコミットログの利点は、すばやく検索できることです。<br>ただ、svn だとサーバに接続しないとコミットログが検索できないので、<br>あまり恩恵は無いのかもしれないですが。<br><br><br>&gt;この上のURLおよび、forkしてgit svn fetchなどで取り込んだ後のsvn logは、<br>&gt;後で修正しても反映されないらしいので、気に食わない。<br>&gt;　コミット後のパッチに対するバグとかあってもフォローできないし、<br>&gt;記述が間違っててもフォローできない。<br><br>ちょっと意味を取り違えているかもしれないですが・・・<br><br>ソースコードと同様、コミットログも間違えないように気を付けてコミットするしかないと<br>思いますので、コミットログもレビューしてからコミットすればよいのでは？<br><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

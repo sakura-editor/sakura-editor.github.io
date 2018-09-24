@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>各種パッチお試しバイナリ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1828</span>
+    <a class="thread-title" href="1828.html#1828">各種パッチお試しバイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1834</span>
+    <a class="thread-title" href="1828.html#1834">Re:各種パッチお試しバイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1838</span>
+    <a class="thread-title" href="1828.html#1838">Re2:各種パッチお試しバイナリ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1839</span>
+    <a class="thread-title" href="1828.html#1839">Re3:各種パッチお試しバイナリ</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1828>
+    <span class="no">[1828]</span>
+    <a class="thread-title" href="#1828">各種パッチお試しバイナリ</a>
+    <span class="author">syat</span>
+    <time datetime="2012-06-26T07:01:26">2012年06月26日 07:01</time></h1>
+    <div class="body">いくつかのパッチを取り込んだテストバイナリを作成しました。<br><a href=http://ux.getuploader.com/sakura_editor/download/40/sakura_patch_3327635-3531937.zip target=_top><nobr>http://<wbr>ux.<wbr>getuploa<wbr>der.<wbr>com/<wbr>sakura_e<wbr>ditor/<wbr>download<wbr>/<wbr>40/<wbr>sakura_p<wbr>atch_332<wbr>7635-<wbr>3531937.<wbr>zip</nobr></a><br><br>以下のパッチが含まれています。bugfix優先と、あとは私の希望順です^^<br>・PatchUnicode_3327635 入力補完プラグイン<br>・PatchUnicode_3364481 ファイルを開くで複数選択<br>・PatchUnicode_3373462 WSHマクロの中断<br>・PatchUnicode_3396061 プラグインの最大個数を20から40に変更<br>・PatchUnicode_3410222 Javaアウトライン解析の日本語対応<br>・PatchUnicode_3465554 折り返し行での再作画が不足している<br>・PatchUnicode_3493822 複数ファイル読み出し<br>・PatchUnicode_3531937 全角→半角で単体の濁点・半濁点が変換されない<br><br>2週間ほど待って問題なさそうならコミットしようと思います。<br>（Javaアウトラインの日本語はVB,PL/SQL対応するかもしれません。余力があれば）<br></div></section>
+    <ul><li><section><h1 id=1834>
+    <span class="no">[1834]</span>
+    <a class="thread-title" href="#1834">Re:各種パッチお試しバイナリ</a>
+    <span class="author">novice</span>
+    <time datetime="2012-07-01T16:22:02">2012年07月01日 16:22</time></h1>
+    <div class="body">▼ syatさん<br>&gt; ・PatchUnicode_3493822 複数ファイル読み出し<br><br>typoがあったので更新しました。<br><a href=https://sourceforge.net/tracker/?func=detail&aid=3493822&group_id=12488&atid=1013762 target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker/?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>3493822&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>1013762</nobr></a><br><br>ソースコードの問題(生成されるバイナリは同じ)なので、コミット後に個別更新でも大丈夫です。<br></div></section>
+    <ul><li><section><h1 id=1838>
+    <span class="no">[1838]</span>
+    <a class="thread-title" href="#1838">Re2:各種パッチお試しバイナリ</a>
+    <span class="author">もか</span>
+    <time datetime="2012-09-25T17:19:19">2012年09月25日 17:19</time></h1>
+    <div class="body">&gt;・PatchUnicode_3327635 入力補完プラグイン<br>CComplementIfObj.h がコミットされていないようです。<br></div></section>
+    <ul><li><section><h1 id=1839>
+    <span class="no">[1839]</span>
+    <a class="thread-title" href="#1839">Re3:各種パッチお試しバイナリ</a>
+    <span class="author">syat</span>
+    <time datetime="2012-09-26T07:42:56">2012年09月26日 07:42</time></h1>
+    <div class="body">時間が空いて申し訳ありませんが、パッチをコミットしました。<br><br>・PatchUnicode_3327635 入力補完プラグイン<br>　→　リビジョン2362<br>・PatchUnicode_3364481 ファイルを開くで複数選択<br>　→　リビジョン2363<br>・PatchUnicode_3373462 WSHマクロの中断<br>　→　リビジョン2365<br>・PatchUnicode_3396061 プラグインの最大個数を20から40に変更<br>　→　リビジョン2366<br>・PatchUnicode_3410222 Javaアウトライン解析の日本語対応<br>　→　リビジョン2367<br>・PatchUnicode_3465554 折り返し行での再作画が不足している<br>　→　リビジョン2368<br>・PatchUnicode_3493822 複数ファイル読み出し<br>　→　リビジョン2369<br>・PatchUnicode_3531937 全角→半角で単体の濁点・半濁点が変換されない<br>　→　リビジョン2370<br><br><br>▼ もかさん<br>&gt; &gt;・PatchUnicode_3327635 入力補完プラグイン<br>&gt; CComplementIfObj.h がコミットされていないようです。<br><br>すみません;  追加コミットしました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

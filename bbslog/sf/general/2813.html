@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>連続する改行を一つにしたい | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2813</span>
+    <a class="thread-title" href="2813.html#2813">連続する改行を一つにしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2821</span>
+    <a class="thread-title" href="2813.html#2821">RE: 連続する改行を一つにしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2859</span>
+    <a class="thread-title" href="2813.html#2859">Re2: 連続する改行を一つにしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2864</span>
+    <a class="thread-title" href="2813.html#2864">Re3: 連続する改行を一つにしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2865</span>
+    <a class="thread-title" href="2813.html#2865">Re4: 連続する改行を一つにしたい</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2866</span>
+    <a class="thread-title" href="2813.html#2866">Re5: 連続する改行を一つにしたい</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2898</span>
+    <a class="thread-title" href="2813.html#2898">Re3: 連続する改行を一つにしたい</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2813>
+    <span class="no">[2813]</span>
+    <a class="thread-title" href="#2813">連続する改行を一つにしたい</a>
+    <span class="author">MMX</span>
+    <time datetime="2003-03-12T12:21:12">2003年03月12日 12:21</time></h1>
+    <div class="body">余分な改行のあるテキストを縮めるために<br>全置換  \n\n → \n<br>したが、ヒットしませんでした。<br>ヘルプでは文字しか検索できない雰囲気を感じました<br><br>マクロを書くのでしょうか？<br>インストール０日での質問です。<br>記事検索 「連続 改行」では見つかりませんでした<br>よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=2821>
+    <span class="no">[2821]</span>
+    <a class="thread-title" href="#2821">RE: 連続する改行を一つにしたい</a>
+    <span class="author">みく</span>
+    <time datetime="2003-03-12T18:51:14">2003年03月12日 18:51</time></h1>
+    <div class="body">&gt;タイトル: RE: 連続する改行を一つにしたい<br>&gt;発言者: MMX<br>&gt;余分な改行のあるテキストを縮めるために<br>&gt;全置換  \n\n → \n<br>&gt;したが、ヒットしませんでした。<br>&gt;ヘルプでは文字しか検索できない雰囲気を感じました<br><br>残念ながら複数行には対応していません。<br></div></section>
+    <ul><li><section><h1 id=2859>
+    <span class="no">[2859]</span>
+    <a class="thread-title" href="#2859">Re2: 連続する改行を一つにしたい</a>
+    <span class="author">MMX</span>
+    <time datetime="2003-04-07T16:19:39">2003年04月07日 16:19</time></h1>
+    <div class="body">▼ みくさん<br>Ver.1.3.8.2<br>＄が普通に使えないのは不思議な気分、はともかく。<br>キーマクロの雛形を作ろうとしたが？<br>空白行を改行一つに、うまく行く<br>^[ \t]+[\r\n]+ <br>\r\n<br>うまく行かない、連続改行がMMM...にならない<br>^[\r\n]+<br>M<br>全置換後のカーソル位置は次行いる？仕様ですか？ ＜＜＝＝ここ<br>改行のみそうなる（次の行に行く）？ <br>  ｄｄｄ→ｈとかの文字ではならない。<br>●秀丸、MIFES、ｘｙｚｚｙでは行の再編成は<br>全置換直後には起きていないようですが。直後タイプも<br>いくつかあるが使いやすいとは思えなかった。<br>=============== ここで挫折 =====<br>行頭M一つになる<br>^M+<br>M<br>特殊記号Mを改行に戻す<br>M<br>\r\n<br><br></div></section>
+    <ul><li><section><h1 id=2864>
+    <span class="no">[2864]</span>
+    <a class="thread-title" href="#2864">Re3: 連続する改行を一つにしたい</a>
+    <span class="author">MMX</span>
+    <time datetime="2003-04-08T10:39:05">2003年04月08日 10:39</time></h1>
+    <div class="body">▼ みくさん<br>行の再編成を含む全置換は特殊技能が必要そうなので<br>素直にマクロを試しました。<br>＝＝＝＝＝＝＝＝＝＝＝ PPA<br>//キーボードマクロのファイル<br>S_GoFileEnd(0);&#9;// ファイルの最後に移動<br><br>while<br>S_SearchPrev('^\\r\\n', 4)<br>do&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// 前を検索<br>S_Replace('^\\r\\n', '★', 4);&#9;// 置換<br><br>S_ReplaceAll('^★+', '★', 4);&#9;// <br>S_ReplaceAll('^★', '\\r\\n', 4);&#9;// <br>S_ReDraw(0);&#9;// 再描画<br>＝＝＝＝＝＝＝＝＝<br>ファイル末尾から改行のみを、★に変換し、１つに簡約、改行に<br>もどす。ですが。while の判定で失敗。<br><br>検索関数は検索結果を返さないのですか？！<br>マッチした文字数とか。<br><br>まさか、カーソルが動かなかったら検索失敗と扱うとか。</div></section>
+    <ul><li><section><h1 id=2865>
+    <span class="no">[2865]</span>
+    <a class="thread-title" href="#2865">Re4: 連続する改行を一つにしたい</a>
+    <span class="author">すい</span>
+    <time datetime="2003-04-08T12:46:18">2003年04月08日 12:46</time></h1>
+    <div class="body">&gt;検索関数は検索結果を返さないのですか？！<br>&gt;マッチした文字数とか。<br><br>返値を返すのは<br>・S_GetFilename<br>・S_GetSelectedString<br>・S_ExpandParameter<br>以外にありません。<br><br><br>&gt;まさか、カーソルが動かなかったら検索失敗と扱うとか。<br><br>それも手です。<br>今回の場合は検索直後に S_GetSelectedString で選択範囲文字列を取得して<br>その文字列（または文字列長）を調べるのが良いかな？<br># 最近のバージョンじゃないと駄目ですが。<br><br>while (True) do begin<br>&#9;S_SearchPrev('^\\r\\n', 4);<br>&#9;if ( Length(S_GetSelectedString(0)) = 0 ) then Break;<br>&#9;～～<br>&#9;他の処理<br>&#9;～～<br>end;<br><br>みたいな感じ。<br># 動作確認していませんけど。<br></div></section>
+    <ul><li><section><h1 id=2866>
+    <span class="no">[2866]</span>
+    <a class="thread-title" href="#2866">Re5: 連続する改行を一つにしたい</a>
+    <span class="author">MMX</span>
+    <time datetime="2003-04-08T14:59:37">2003年04月08日 14:59</time></h1>
+    <div class="body">▼ すいさん<br>&gt; 以外にありません。<br>if文の原料が少ないと苦しいです。<br>エディタの状態値（Getｘｘｘｘ）は不足している。<br>------ 連続空白行圧縮.PPA<br>S_GoFileEnd(0);&#9;// ファイルの最後に移動<br>while True do begin<br>S_SearchPrev('^[ \t]*\r\n', 4);&#9;// 前を検索<br>if S_GetSelectedString(0) = '' then Break;<br>S_InsText('★'):  // 置換<br>  end;<br>S_ReplaceAll('^★+', '\r\n', 4);&#9;// <br>-------------------------------------<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=2898>
+    <span class="no">[2898]</span>
+    <a class="thread-title" href="#2898">Re3: 連続する改行を一つにしたい</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-05-09T02:03:25">2003年05月09日 02:03</time></h1>
+    <div class="body">▼ MMXさん<br>Ver. 1.3.9.0 V<br><br>step1.「\r\n」-&gt;「\n」<br>step2.「^\n+」-&gt;「」<br>step3.「\n」-&gt;「\r\n」<br><br>３回の全置換で、結果的にですが、うまく行きました。<br>私、マクロには暗いので手作業でどうぞ。<br><br>また、変換中の文字「\n」を「\r」に読み替えても同じです。<br>蛇足ですが、step2.は「^[ \t\n]*\n」でも可能です。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

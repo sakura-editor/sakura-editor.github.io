@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ネットワーク経由のファイルが開けない | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">8129</span>
+    <a class="thread-title" href="8129.html#8129">ネットワーク経由のファイルが開けない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8130</span>
+    <a class="thread-title" href="8129.html#8130">Re:ネットワーク経由のファイルが開けない</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">8132</span>
+    <a class="thread-title" href="8129.html#8132">Re2:ネットワーク経由のファイルが開けない</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=8129>
+    <span class="no">[8129]</span>
+    <a class="thread-title" href="#8129">ネットワーク経由のファイルが開けない</a>
+    <span class="author">まに</span>
+    <time datetime="2016-03-10T11:27:29">2016年03月10日 11:27</time></h1>
+    <div class="body">会社でも自宅でも愛用させていただき、感謝しております。<br><br>掲題の通りの事象ですが、何故かある日突然、開けなくなりました。<br>共通設定の「ファイル」タブの「開こうとしたファイルが存在しないとき警告する」にチェックを入れると、<br>「ファイルが存在しません」とメッセージが表示されるので、サクラエディタはファイルを見つけられていないようです。<br>同ファイルをメモ帳で開くと、問題なく開けるので、原因が全く分かりません。<br><br>環境の詳細を以下に記します。<br>クライアント<br>OS：Windows 8.1 Pro 64bit<br>サクラエディタ：2.2.0.1(Unicode版)、2.3.0.0(Unicode版)<br>ファイルサーバのフォルダをネットワークドライブに割り当てても、直接開いても、不可。<br>ファイルサーバへはAdministratorで接続しています。<br>Windowsファイアーウォールを切ったりしてみましたが、改善せず。<br><br>ファイルサーバ<br>OS：Windows Server 2012<br><br>クライアント、ファイルサーバ共に再起動してみたりしましたが、改善せず。<br><br>何かお気づきの点がありましたら、教えていただきたく。<br>お手数ですが、よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=8130>
+    <span class="no">[8130]</span>
+    <a class="thread-title" href="#8130">Re:ネットワーク経由のファイルが開けない</a>
+    <span class="author">もか</span>
+    <time datetime="2016-03-10T20:12:04">2016年03月10日 20:12</time></h1>
+    <div class="body">メモ帳とサクラエディタではファイルを開く関数などが異なるため<br>同じ動作にならないことがあります。<br>こんな感じではないかと。<br><br>1. 管理者権限で起動をしている<br>通常状態と管理者モードでネットワークへのアクセス権が違うらしいです。<br><br>2. パスが長すぎる<br>サクラエディタでは256文字までしか開けません。<br><br>3. サクラでは特定の処理に失敗している<br>長いファイル名の確認<br>ファイルの存在確認<br>ファイルを開く<br>と3段階ぐらいを踏んでファイルを開いています。<br>「ネットワーク認証の確認」をする処理もあるのですが、<br>すべての場合でこの処理が呼ばれるかちょっとわからないので、<br>もしかしたら失敗するのかもしれません。<br><br>的確なアドバイスができなくてすみませんが、<br>まず「管理者として実行」になっていたらそれをやめてみてください<br></div></section>
+    <ul><li><section><h1 id=8132>
+    <span class="no">[8132]</span>
+    <a class="thread-title" href="#8132">Re2:ネットワーク経由のファイルが開けない</a>
+    <span class="author">まに</span>
+    <time datetime="2016-03-11T12:50:11">2016年03月11日 12:50</time></h1>
+    <div class="body">もか 様<br><br>アドバイスありがとうございます。<br>改善しました！<br>原因は「管理者権限で起動している」でした。<br><br>大変助かりました。また、勉強になりました。<br>ありがとうございました。<br><br>以上、よろしくお願いします。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

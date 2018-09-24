@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現キーワードへの要望 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5580</span>
+    <a class="thread-title" href="5580.html#5580">正規表現キーワードへの要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5581</span>
+    <a class="thread-title" href="5580.html#5581">Re:正規表現キーワードへの要望</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5584</span>
+    <a class="thread-title" href="5580.html#5584">Re:正規表現キーワードへの要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5585</span>
+    <a class="thread-title" href="5580.html#5585">Re2:正規表現キーワードへの要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5587</span>
+    <a class="thread-title" href="5580.html#5587">Re3:正規表現キーワードへの要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5588</span>
+    <a class="thread-title" href="5580.html#5588">Re4:正規表現キーワードへの要望</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5580>
+    <span class="no">[5580]</span>
+    <a class="thread-title" href="#5580">正規表現キーワードへの要望</a>
+    <span class="author">miya</span>
+    <time datetime="2006-11-07T13:57:34">2006年11月07日 13:57</time></h1>
+    <div class="body">おつかれさまです。<br><br>正規表現キーワードによる文字への着色に関する要望なのですが、<br>正規表現にヒットした文字列のうち、着色する部分を指定することは<br>できませんでしょうか。<br><br>自分がしたいことは、CやJavaなどで大文字と数字のみで構成され、<br>記号で囲まれた文字列を定数として強調表示したいという要求が<br>ありまして、次のような設定をしています。<br><br>/((["'])([\\].|[^\2])*?\2)/k ダブルクォーテーション文字列<br>/\W([A-Z_][A-Z0-9_]*)\W/k 正規表現キーワード1<br><br>しかし、この状態ですと、<br>hoge[ClassA.CONST_FOO] = ～<br>などと記述された部分にて、ピリオド(.)や大括弧(])まで<br>強調表示されてしまうので、これをなくしたいのです。<br></div></section>
+    <ul><li><section><h1 id=5581>
+    <span class="no">[5581]</span>
+    <a class="thread-title" href="#5581">Re:正規表現キーワードへの要望</a>
+    <span class="author">miya</span>
+    <time datetime="2006-11-07T16:31:04">2006年11月07日 16:31</time></h1>
+    <div class="body">すみません。<br>自己解決いたしました。<br><br>&gt; /((["'])([\\].|[^\2])*?\2)/k ダブルクォーテーション文字列<br>&gt; /\W([A-Z_][A-Z0-9_]*)\W/k 正規表現キーワード1<br><br>後読み可能な正規表現DLLに変更して、<br>http://homepage3.nifty.com/k-takata/mysoft/bregonig.html<br><br>正規表現キーワードを次のようにすることでうまくいきました。<br>/(["'])([\\].|[^\1])*?\1/k ダブルクォーテーション文字列<br>/(?&lt;!\w)[A-Z_][A-Z0-9_]*(?!\w)/k  正規表現キーワード1<br></div></section>
+    </li><li><section><h1 id=5584>
+    <span class="no">[5584]</span>
+    <a class="thread-title" href="#5584">Re:正規表現キーワードへの要望</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-11-08T12:14:15">2006年11月08日 12:14</time></h1>
+    <div class="body">▼ miyaさん<br>&gt; /((["'])([\\].|[^\2])*?\2)/k ダブルクォーテーション文字列<br>&gt; /\W([A-Z_][A-Z0-9_]*)\W/k 正規表現キーワード1<br>&gt; <br><br>/(')([\\].|[^\1])*?\1/k シングルクォーテーション文字列<br>/(")([\\].|[^\1])*?\1/k ダブルクォーテーション文字列<br>/(?!\W)[A-Z_][A-Z0-9_]*(?=\W)/k 正規表現キーワード1<br><br>そのまま、BREGEXP.DLL で、行けました。<br>入れ替える必要ないです。</div></section>
+    <ul><li><section><h1 id=5585>
+    <span class="no">[5585]</span>
+    <a class="thread-title" href="#5585">Re2:正規表現キーワードへの要望</a>
+    <span class="author">（全略）</span>
+    <time datetime="2006-11-08T13:39:07">2006年11月08日 13:39</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; ▼ miyaさん<br>&gt; &gt; /((["'])([\\].|[^\2])*?\2)/k ダブルクォーテーション文字列<br>&gt; &gt; /\W([A-Z_][A-Z0-9_]*)\W/k 正規表現キーワード1<br>&gt; &gt; <br>&gt; <br>&gt; /(')([\\].|[^\1])*?\1/k シングルクォーテーション文字列<br>&gt; /(")([\\].|[^\1])*?\1/k ダブルクォーテーション文字列<br>&gt; /(?!\W)[A-Z_][A-Z0-9_]*(?=\W)/k 正規表現キーワード1<br>&gt; <br>&gt; そのまま、BREGEXP.DLL で、行けました。<br>&gt; 入れ替える必要ないです。<br>いや、間違ってます<br>最初の大文字と数字のみで構成されっていう条件を満たせてません<br><br>戻り読みつかわんとやるんでしたら<br>m/\b_*[A-Z][A-Z0-9]*\b/<br>じゃないですかね～</div></section>
+    <ul><li><section><h1 id=5587>
+    <span class="no">[5587]</span>
+    <a class="thread-title" href="#5587">Re3:正規表現キーワードへの要望</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-11-08T20:58:18">2006年11月08日 20:58</time></h1>
+    <div class="body">▼ （全略）さん<br>&gt; ▼ じゅうじさん<br>&gt; いや、間違ってます<br>&gt; 最初の大文字と数字のみで構成されっていう条件を満たせてません<br>&gt; <br>&gt; 戻り読みつかわんとやるんでしたら<br>&gt; m/\b_*[A-Z][A-Z0-9]*\b/<br>&gt; じゃないですかね～<br><br>有難う御座います。大変助かりました。<br><br>/\b[A-Z_][A-Z0-9_]*\b/k</div></section>
+    <ul><li><section><h1 id=5588>
+    <span class="no">[5588]</span>
+    <a class="thread-title" href="#5588">Re4:正規表現キーワードへの要望</a>
+    <span class="author">miya</span>
+    <time datetime="2006-11-08T23:24:24">2006年11月08日 23:24</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; ▼ （全略）さん<br>&gt; &gt; ▼ じゅうじさん<br>&gt; &gt; いや、間違ってます<br>&gt; &gt; 最初の大文字と数字のみで構成されっていう条件を満たせてません<br>&gt; &gt; <br>&gt; &gt; 戻り読みつかわんとやるんでしたら<br>&gt; &gt; m/\b_*[A-Z][A-Z0-9]*\b/<br>&gt; &gt; じゃないですかね～<br>&gt; <br>&gt; 有難う御座います。大変助かりました。<br>&gt; <br>&gt; /\b[A-Z_][A-Z0-9_]*\b/k<br><br>おお、たしかにこれで標準の正規表現DLLでも期待通りに動きますね。<br><br>ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

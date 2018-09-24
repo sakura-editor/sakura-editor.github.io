@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マウスの中ボタン押下中のホイールスクロールではページスクロールする | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5477</span>
+    <a class="thread-title" href="5477.html#5477">マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5479</span>
+    <a class="thread-title" href="5477.html#5479">RE: マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5483</span>
+    <a class="thread-title" href="5477.html#5483">Re2: マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5501</span>
+    <a class="thread-title" href="5477.html#5501">Re:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5502</span>
+    <a class="thread-title" href="5477.html#5502">Re2:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5504</span>
+    <a class="thread-title" href="5477.html#5504">Re2:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5507</span>
+    <a class="thread-title" href="5477.html#5507">Re3:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5510</span>
+    <a class="thread-title" href="5477.html#5510">Re4:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5511</span>
+    <a class="thread-title" href="5477.html#5511">Re5:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5512</span>
+    <a class="thread-title" href="5477.html#5512">Re5:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5519</span>
+    <a class="thread-title" href="5477.html#5519">Re6:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5526</span>
+    <a class="thread-title" href="5477.html#5526">Re7:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5477>
+    <span class="no">[5477]</span>
+    <a class="thread-title" href="#5477">マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-11-25T16:01:51">2008年11月25日 16:01</time></h1>
+    <div class="body">マウスの中ボタンを押した状態でホイールスクロールした場合は、行ではなくページをスクロールします。<br>unicode版ではコミット済みです。<br><br>Patches #2341968<br></div></section>
+    <ul><li><section><h1 id=5479>
+    <span class="no">[5479]</span>
+    <a class="thread-title" href="#5479">RE: マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-11-26T00:14:10">2008年11月26日 00:14</time></h1>
+    <div class="body">個人的感想です．レビューコメントではありません．<br><br>1. マウスがウィンドウの外に出てもちゃんと動くのはマウスホイールのメッセージがフォーカスのあるウィンドウに来るからですね．SetCaptureは不要，と (._.) φ メモメモ．でも指が滑った瞬間にフォーカスが失われるので素人にはおすすめできない．<br><br>2. 中クリックに機能を割り当てると，割り当てられた機能がスクロールよりも優先されます．左右ボタンは離したときに動作するの中ボタンは押した瞬間に動作するのがちょっと気持ち悪いかも．ホイールをクリック後，回さずに離したときだけ中ボタン動作にできればさらに自然な動作になるように思いますが，欲張りすぎですかね．<br><br>3. ホイールを押したまま回すと指が疲れません？ そこで思ったのですが，親指の位置にボタンがあるようなマウスを使っている人は，親指でボタンを押しながらホイールを回すという動作も受け入れられるかもしれません．<br>(私のマウスにはそんなボタンは付いていませんが...)<br></div></section>
+    <ul><li><section><h1 id=5483>
+    <span class="no">[5483]</span>
+    <a class="thread-title" href="#5483">Re2: マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-11-28T03:59:34">2008年11月28日 03:59</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 1. マウスがウィンドウの外に出てもちゃんと動くのはマウスホイールのメッセージがフォーカスのあるウィンドウに来るからですね．SetCaptureは不要，と (._.) φ メモメモ．でも指が滑った瞬間にフォーカスが失われるので素人にはおすすめできない．<br> <br>Windowsは中ボタンでもフォーカス移動するみたいなので、誤操作のペナルティが大きいかもですね (^^;<br> <br>&gt; 2. 中クリックに機能を割り当てると，割り当てられた機能がスクロールよりも優先されます．左右ボタンは離したときに動作するの中ボタンは押した瞬間に動作するのがちょっと気持ち悪いかも．ホイールをクリック後，回さずに離したときだけ中ボタン動作にできればさらに自然な動作になるように思いますが，欲張りすぎですかね．<br> <br>元からの仕様だったので中ボタンの処理はいじらなかったのですが、確かに気持ち悪いので修正してみます。<br> <br>&gt; 3. ホイールを押したまま回すと指が疲れません？ そこで思ったのですが，親指の位置にボタンがあるようなマウスを使っている人は，親指でボタンを押しながらホイールを回すという動作も受け入れられるかもしれません．<br>&gt; (私のマウスにはそんなボタンは付いていませんが...)<br> <br>上の1.とも絡みますが、慣れとマウスの質じゃないでしょうかね。<br>これについては、左右サイドボタン、control、shift、altとの組み合わせでも考えてみます（altはちょっと無理かも……）<br> <br>ではでは。<br></div></section>
+    </li></ul></li><li><section><h1 id=5501>
+    <span class="no">[5501]</span>
+    <a class="thread-title" href="#5501">Re:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-12-08T00:22:05">2008年12月08日 00:22</time></h1>
+    <div class="body">マウスボタンまたはキーとの組み合わせによりページスクロールまたは横スクロール可能としました。<br>組み合わせに指定可能なものは以下のとおりです。<br>・マウス中ボタン<br>・マウス左サイドボタン<br>・マウス右サイドボタン<br>・CONTROLキー<br>・SHIFTキー<br><br>また、マウスの中ボタン・左サイドボタン・右サイドボタンに割り当てたコマンドの実行タイミングを、マウスボタン押下時から開放時に変更しました。</div></section>
+    <ul><li><section><h1 id=5502>
+    <span class="no">[5502]</span>
+    <a class="thread-title" href="#5502">Re2:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-12-13T09:33:07">2008年12月13日 09:33</time></h1>
+    <div class="body">SHIFTとの組み合わせで使ってみたら，かなり快適に感じました．<br>サイドボタン付きマウスを買いに行きたくなりそう．<br></div></section>
+    </li><li><section><h1 id=5504>
+    <span class="no">[5504]</span>
+    <a class="thread-title" href="#5504">Re2:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-12-22T23:16:03">2008年12月22日 23:16</time></h1>
+    <div class="body">この機能の恩恵にあずかろうと，週末にサイドボタン付きマウスを入手しましたので，あらためて動作確認しました．<br><br>まず，横スクロールとページスクロールは両方押すと横ページスクロールになるんですね．最初の意地悪テストのつもりで行ったのですが良い意味で裏切られました．<br><br>おおむね問題ないと思いますが，以下微妙に気づいた点があります．<br>1. ボタンを押したままダイアログを閉じる<br>ウィンドウがアクティブになったときにCEditWnd::ClearMouseState()でボタン状態をクリアしますが，最初から押されたままだとここで不一致になります．その時の状態を取得して設定するのがよいと思ったのですが，マウスの現在の押下状態を取得できるAPIが見つかりません．無いんでしたっけ？<br><br>2. ノンクライアントエリアでボタンを押す/離す<br>たとえばタイトルバーでボタンを押してマウスホイールしても，ページスクロールになりません．逆にエディット領域でボタンを押してタイトルバーで離してもページスクロールのままとなります．WM_NC*BUTTON* メッセージも拾った方が良いかと思いますが，Non-clientで押してNon-clientで離した場合に割り当てられたコマンドを実行するかは微妙なところですね．WM_NC*BUTTONUPではマウスボタンとの状態だけ更新してコマンドは実行しないというのが自然かと思います．<br><br>3. 初期化漏れ<br>CEditWndのコンストラクタでもClearMouseState()を呼び出して，マウスの状態変数をリセットした方がよいです．内部状態を表示させるデバッグコードを入れて状態変化を見ると，初期のゴミ値が残っているのが見えます．<br><br>4. WM_XBUTTON* メッセージの処理<br>Windows SDKのWM_XBUTTONDOWNの説明に<br>&gt;an application should return TRUE from this message if it processes it. Doing so will allow software that simulates this message on Microsoft Windows systems earlier than Windows 2000 to determine whether the window procedure processed the message or called DefWindowProc to process it.<br>とありますので，WM_XBUTTON処理後は0ではなくTRUEを返すのがマナーのようです．<br><br>5. ボタン名称<br>XBUTTONへのコマンド割り当て機能が入れられた当初から「左サイドボタン」「右サイドボタン」との名称になっていますが，最近のマウスを見ると右にボタンが付いている機種は全然見あたらず，右手の親指の位置で前後に並んでいるのが標準的です．<br>ですので，「サイドボタン1」「サイドボタン2」とした方が実態に即していると思います．<br><br>---<br>ところで，自分が購入したサンワサプライのMA-LS3というマウスにはドライバディスクが付いてきます．ドライバを入れるとマウスに各種機能が割り当てられたり，ホイールの横チルトでスクロールできたりするのですが，このドライバをインストールするとサイドバーを押した場合にWM_XBUTTON* というメッセージが全く送られてこなくなります．「サイドボタン＋ホイール機能が動かない」という書き込みが予想されるので．ヘルプ/FAQにその旨記載していただいた方が良いかもしれません．<br></div></section>
+    <ul><li><section><h1 id=5507>
+    <span class="no">[5507]</span>
+    <a class="thread-title" href="#5507">Re3:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-12-23T21:32:41">2008年12月23日 21:32</time></h1>
+    <div class="body">▼ げんたさん<br>確認ありがとうございます。<br>ちょこちょこ問題ありますね (^^;<br><br>&gt; 1. ボタンを押したままダイアログを閉じる<br>&gt; ウィンドウがアクティブになったときにCEditWnd::ClearMouseState()でボタン状態をクリアしますが，最初から押されたままだとここで不一致になります．その時の状態を取得して設定するのがよいと思ったのですが，マウスの現在の押下状態を取得できるAPIが見つかりません．無いんでしたっけ？<br><br>現在の状態の取得方法が分からなかったので、フォーカス移動を伴う場合はサイドボタンの入力を無かったことにしちゃいました (^^;<br>もう少し探ってみます。<br><br>&gt; 2. ノンクライアントエリアでボタンを押す/離す<br>&gt; 3. 初期化漏れ<br>&gt; 4. WM_XBUTTON* メッセージの処理<br>&gt; 5. ボタン名称<br><br>対処します。<br><br>ヘルプ/FAQへの注意追記は必要ですね。<br>あと、私自身で気になる所としては、共通設定のウィンドウが縦に長くなってきたことでしょうか。<br>右下のチェックを左に移動したりしましたが、ちょっと苦しい (^^;<br></div></section>
+    <ul><li><section><h1 id=5510>
+    <span class="no">[5510]</span>
+    <a class="thread-title" href="#5510">Re4:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-12-24T01:18:21">2008年12月24日 01:18</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; ▼ げんたさん<br>&gt; &gt; マウスの現在の押下状態を取得できるAPIが見つかりません．無いんでしたっけ？<br>&gt; <br>&gt; 現在の状態の取得方法が分からなかった<br><br>GetAsyncKeyStateは違います？</div></section>
+    <ul><li><section><h1 id=5511>
+    <span class="no">[5511]</span>
+    <a class="thread-title" href="#5511">Re5:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">げんた</span>
+    <time datetime="2008-12-24T19:52:54">2008年12月24日 19:52</time></h1>
+    <div class="body">&gt;GetAsyncKeyStateは違います？<br>あ，本当だ．<br>The GetAsyncKeyState function works with mouse buttons.<br>って書いてありました．<br><br>GetAsyncKeyState(VK_MBUTTON)<br>GetAsyncKeyState(VK_XBUTTON1)<br>GetAsyncKeyState(VK_XBUTTON2)<br><br>で，それぞれ取得できるようですね．<br><br>どうもありがとうございました．<br></div></section>
+    </li><li><section><h1 id=5512>
+    <span class="no">[5512]</span>
+    <a class="thread-title" href="#5512">Re5:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-12-26T04:38:40">2008年12月26日 04:38</time></h1>
+    <div class="body">▼ ryojiさん<br>▼ げんたさん<br>ありがとうございます。<br>これで変なメンバー変数の追加が不要になりますね。</div></section>
+    <ul><li><section><h1 id=5519>
+    <span class="no">[5519]</span>
+    <a class="thread-title" href="#5519">Re6:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-01-12T00:22:07">2009年01月12日 00:22</time></h1>
+    <div class="body">ボタン押下状態をGetAsyncKeyState()にて取得するようにし、<br>余分な関数・変数を削除しました。<br>これにより、ノンクライアントエリアでもページスクロール<br>できるようになりました。<br>また、コマンド実行の方は仕様変更ありません。<br><br>ボタン名称を変更しました。<br>　「マウス左サイドボタン」→「マウスサイドボタン1」<br>　「マウス右サイドボタン」→「マウスサイドボタン2」<br>（共通設定のキー割り当てに「左サイドクリック」「右サイドクリック」<br>というのがありますが、そちらは変更していません）<br><br>その他、メッセージ処理および初期化漏れを対処しました。<br><br>VK_XBUTTON1, VK_XBUTTON2は_WIN32_WINNTの都合により定義されない<br>ようでしたので、keycode.hに定義を追加して対処しました。<br></div></section>
+    <ul><li><section><h1 id=5526>
+    <span class="no">[5526]</span>
+    <a class="thread-title" href="#5526">Re7:マウスの中ボタン押下中のホイールスクロールではページスクロールする</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2009-01-15T23:16:32">2009年01月15日 23:16</time></h1>
+    <div class="body">rev1511でコミットしました。<br><br>Unicode版の方も早いうちに修正します。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

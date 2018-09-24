@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>[要望]ブックマークの設定行の一括削除 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3534</span>
+    <a class="thread-title" href="3534.html#3534">[要望]ブックマークの設定行の一括削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3535</span>
+    <a class="thread-title" href="3534.html#3535">Re:[要望]ブックマークの設定行の一括削除</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3536</span>
+    <a class="thread-title" href="3534.html#3536">Re2:[要望]ブックマークの設定行の一括削除</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3534>
+    <span class="no">[3534]</span>
+    <a class="thread-title" href="#3534">[要望]ブックマークの設定行の一括削除</a>
+    <span class="author">PEC</span>
+    <time datetime="2003-12-06T11:57:33">2003年12月06日 11:57</time></h1>
+    <div class="body">日頃から、サクラエディタのお世話になっています。<br><br>よくC++のファイルを、関数名でGrep検索するのですが、<br>コメントアウトされている箇所が多いので、<br>Grep検索結果の設定行を一括削除できれば、とても助かります。<br><br>例1:   | // ▼ 引数追加.<br>     □| //  bResult = ***-&gt;+++( 引数1 );<br>     ■|     bResult = ***-&gt;+++( 引数1, 引数2 );<br>       | // ▲ 引数追加.<br><br>例2:   | // ▼ 不要だったのでコメントアウト.<br>     □| //    bResult = ***-&gt;+++( 引数1 );<br>       | // ▲ 不要だったのでコメントアウト.<br><br>□の部分は、コメントアウトされているため、<br>Grep検索結果から判断できるので、<br>一度、"//"で検索を行い該当行をマークしておき、<br>ブックマーク行の一括削除がしたいです。<br><br><br>主題と少しずれてしまうのですが、<br>もう１件要望させていただきます。<br><br>アウトライン解析で、開いているツリー内のアイテム数を<br>何処かに表示して欲しいです。理由は、メソッドツリーで<br>クラスの中にいくつメソッドがあるかを把握したいためです。<br>(ただメソッド数を数えれば良いんですけど・・・。)<br><br>例:  ━クラス名<br>       ┣メソッド1<br>       ┣メソッド2<br>       ┗メソッド3<br><br>空いている所に"メソッド数:3"とでもあれば、良いなと思います。<br><br>要望が叶うことを期待しております。<br>開発者の方々、よろしくお願い致します。　　　以上</div></section>
+    <ul><li><section><h1 id=3535>
+    <span class="no">[3535]</span>
+    <a class="thread-title" href="#3535">Re:[要望]ブックマークの設定行の一括削除</a>
+    <span class="author">EIS</span>
+    <time datetime="2003-12-06T16:49:24">2003年12月06日 16:49</time></h1>
+    <div class="body">▼ PECさん<br>&gt; よくC++のファイルを、関数名でGrep検索するのですが、<br>&gt; コメントアウトされている箇所が多いので、<br>&gt; Grep検索結果の設定行を一括削除できれば、とても助かります。<br><br>^.*?\]: [ \t]*//.*[\r|\n]*<br>とかで置換ではダメですか<br>Grepの結果からの場合、ブロックコメント中のものは無理ですが</div></section>
+    <ul><li><section><h1 id=3536>
+    <span class="no">[3536]</span>
+    <a class="thread-title" href="#3536">Re2:[要望]ブックマークの設定行の一括削除</a>
+    <span class="author">PEC</span>
+    <time datetime="2003-12-06T17:08:43">2003年12月06日 17:08</time></h1>
+    <div class="body">▼ EISさん<br>&gt; ^.*?\]: [ \t]*//.*[\r|\n]*<br>&gt; とかで置換ではダメですか<br>&gt; Grepの結果からの場合、ブロックコメント中のものは無理ですが<br><br>確かに正規表現を使って、置換すればいいんですね。<br>削除することしか考えていませんでした。<br><br>自分がサクラエディタを使いこなしていないのを実感しました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

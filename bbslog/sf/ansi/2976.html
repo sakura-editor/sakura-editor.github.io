@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>読み取り専用のファイル | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2976</span>
+    <a class="thread-title" href="2976.html#2976">読み取り専用のファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2980</span>
+    <a class="thread-title" href="2976.html#2980">Re:読み取り専用のファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2982</span>
+    <a class="thread-title" href="2976.html#2982">Re2:読み取り専用のファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3235</span>
+    <a class="thread-title" href="2976.html#3235">Re3:読み取り専用のファイル</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2983</span>
+    <a class="thread-title" href="2976.html#2983">Re2:読み取り専用のファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3209</span>
+    <a class="thread-title" href="2976.html#3209">Re3:読み取り専用のファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3210</span>
+    <a class="thread-title" href="2976.html#3210">Re4:読み取り専用のファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3212</span>
+    <a class="thread-title" href="2976.html#3212">Re5:読み取り専用のファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3216</span>
+    <a class="thread-title" href="2976.html#3216">Re6:読み取り専用のファイル</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">3217</span>
+    <a class="thread-title" href="2976.html#3217">Re5:読み取り専用のファイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3218</span>
+    <a class="thread-title" href="2976.html#3218">Re6:読み取り専用のファイル</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2976>
+    <span class="no">[2976]</span>
+    <a class="thread-title" href="#2976">読み取り専用のファイル</a>
+    <span class="author">すい</span>
+    <time datetime="2003-07-25T03:10:40">2003年07月25日 03:10</time></h1>
+    <div class="body">読み取り専用属性が付いたファイルを開いた時に、<br><br>共通設定→ [ファイル] の設定が<br><br>・「他プロセスからの上書きを禁止する(P)」　の時<br>・「他プロセスからの読み書きを禁止する(R)」の時<br><br>　　→ タイトルバーに "(上書き禁止)" が表示される。<br>　　→ エディタ画面上での編集作業を一切受け付けない。<br><br>・「排他制御しない(N)」の時<br><br>　　→ タイトルバーに "(上書き禁止)" が表示さない。<br>　　→ エディタ画面上で編集作業が出来てしまう。もちろん保存は出来ませんが．．．<br><br>と、設定ごとに挙動が異なります。<br></div></section>
+    <ul><li><section><h1 id=2980>
+    <span class="no">[2980]</span>
+    <a class="thread-title" href="#2980">Re:読み取り専用のファイル</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-07-26T11:23:31">2003年07月26日 11:23</time></h1>
+    <div class="body">▼ すいさん<br>仕様が無いのでわかりませんが、<br>プログラムの設定で、そうなっているのではないでしょうか。<br><br>1. そのファイルを読み取り専用にされた理由は？<br>2. Sakura のファイル設定を「排他制御しない(N)」にされた理由は？<br><br>具体的な事が書かれていないと思います。<br><br>＃ここで、ハンドル名を変えるべきなのか？(vbec)<br><br>私は、CTRL+A,CTRL+C,CTRL+N,CTRL+Vを経由しないで、上書き禁止のファイルを参考にして新しいファイルに出来るので、<br>&gt; → タイトルバーに "(上書き禁止)" が表示される。<br>&gt; → エディタ画面上で編集作業が出来てしまう。もちろん保存は出来ませんが．．．<br>が要望です。</div></section>
+    <ul><li><section><h1 id=2982>
+    <span class="no">[2982]</span>
+    <a class="thread-title" href="#2982">Re2:読み取り専用のファイル</a>
+    <span class="author">すい</span>
+    <time datetime="2003-07-26T17:54:02">2003年07月26日 17:54</time></h1>
+    <div class="body">&gt;1. そのファイルを読み取り専用にされた理由は？<br>&gt;2. Sakura のファイル設定を「排他制御しない(N)」にされた理由は？<br>&gt;具体的な事が書かれていないと思います。<br><br>すみません。そういう話をしているんじゃないです。<br><br>一般ユーザからしてみれば「編集中のファイルの属性」とは何の関係も無い<br>排他制御の設定などで、コロコロ動作が変わってしまうというのは<br>混乱するだけはないかな、という話で。<br># 確かに<br># 「エディタで排他制御していない場合はエディタが気付かないうちに<br># 　他のユーティリティ等によって上書き禁止属性が変更される可能性がある」<br># とか、そういった理由でわざとやっているのかもしれませんが。<br><br>排他制御とは関係無しに上書き禁止ファイルの取り扱いの動作は<br>揃えておいた方が良いのでは。普通のユーザーの普通の使い方<br>からしてみれば実際何の関係もない話だと思いますし。<br><br>その揃える仕様が<br>&gt; → タイトルバーに "(上書き禁止)" が表示される。<br>&gt; → エディタ画面上での編集作業を一切受け付けない。<br>なのか、<br>&gt; → タイトルバーに "(上書き禁止)" が表示さない。<br>&gt; → エディタ画面上で編集作業が出来てしまう。もちろん保存は出来ませんが．．．<br>なのか、あるいは 蒔田　信幸さん のおっしゃる<br>&gt;&gt; → タイトルバーに "(上書き禁止)" が表示される。<br>&gt;&gt; → エディタ画面上で編集作業が出来てしまう。もちろん保存は出来ませんが．．．<br>なのか、といった検討は別途必要でしょうけれど。<br><br>あるいは<br>・排他制御している時<br>&gt; → タイトルバーに "(上書き禁止)" が表示される。<br>&gt; → エディタ画面上での編集作業を一切受け付けない。<br>・排他制御していない時<br>&gt;&gt; → タイトルバーに "(上書き禁止)" が表示される。<br>&gt;&gt; → エディタ画面上で編集作業が出来てしまう。もちろん保存は出来ませんが．．．<br>とかでも、良いかもしれません。(でも、これも後々バグ扱いされそうな仕様だなぁ。<br>「排他制御しない設定の時、上書き禁止でも編集作業できちゃいますよ」とかって。)<br><br><br>今の仕様だと排他制御していない時、上書き禁止のファイルを開いても、<br>「その開いたファイルが上書き禁止である」という事実に気付けない<br>（てっきり上書き禁止ファイルを 開いたらタイトルバーに "(上書き禁止)"<br>　のアナウンスがある物だと思っていたら、何も表示されない）<br>ので、非常に使いにくいのですよ。<br><br><br>ちなみに上書き禁止ファイルで編集作業が出来ないのは、<br>「こういう場合には、エディタをビューワーとして使用したい」とか<br>いうような内容だったかな?（↑私の記憶が曖昧なのでちょっと違うかも）<br>そういうような要望があるからだったかと思いますが。<br></div></section>
+    <ul><li><section><h1 id=3235>
+    <span class="no">[3235]</span>
+    <a class="thread-title" href="#3235">Re3:読み取り専用のファイル</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-10-12T11:02:13">2003年10月12日 11:02</time></h1>
+    <div class="body">▼ すいさん<br>まとめます、と。<br>読み取り専用として開くにチェックしないで、<br>排他制御しないにチェックしないで、<br>R/Oファイルを開いた時、編集が出来るようにしていただきたい。 <br><br>---------------- 2003/10/12 11:00 削除 ---------------<br>[3211] Re3:読み取り専用のファイル <br>▼ すいさん<br>決めかねていらっしゃるのなら。<br><br>排他制御とは関係なく、以下の仕様が良いと思います。<br>いかがでしょうか？<br><br>読み取り専用で開いた時は、いつも 　　　　　　　｜×｜（上書き禁止）<br>読み取り専用ではなく、R/Oファイルを開いた時は、｜○｜（読み取り専用）<br>　保存前に[OK]エラーダイアログ<br>○は修正可、×は、修正不可<br><br>以上 ☆[゜○゜]<br></div></section>
+    </li></ul></li><li><section><h1 id=2983>
+    <span class="no">[2983]</span>
+    <a class="thread-title" href="#2983">Re2:読み取り専用のファイル</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-07-27T16:06:58">2003年07月27日 16:06</time></h1>
+    <div class="body">▼ すいさん<br>&gt; 私は、CTRL+A,CTRL+C,CTRL+N,CTRL+Vを経由しないで、上書き禁止のファイルを参考にして新しいファイルに出来るので、<br>&gt; &gt; → タイトルバーに "(上書き禁止)" が表示される。<br>&gt; &gt; → エディタ画面上で編集作業が出来てしまう。もちろん保存は出来ませんが．．．<br>&gt; が要望です。 <br><br>すみません勘違いでした。<br>私の要望はテキストを（読みとり専用）ではなく、（読み取り専用）にして頂きたいというものです。<br><br>お詫びに、以下のように、まとめてみました。（順番は、エラーが最後）<br>----------------------------------------<br>  他プロセスからの上書きを禁止する(P)<br>  他プロセスからの読み書きを禁止する(R)<br>1.（排他制御する）<br>1.1 書き込み可能ファイルの時<br>1.1.1 読み取り専用で開く　　　　　　｜×｜（読みとり専用）<br>1.1.2 読み取り専用で開かない　　　　｜○｜無し<br>1.2 読み取り専用ファイルの時<br>1.2.1 読み取り専用で開く　　　　　　｜×｜（読みとり専用）<br>1.2.2 読み取り専用で開かない　　　　｜×｜（上書き禁止）<br><br>2. 排他制御しない(N)<br>2.1 書き込み可能ファイルの時<br>2.1.1 読み取り専用で開く　　　　　　｜×｜（読みとり専用）<br>2.1.2 読み取り専用で開かない　　　　｜○｜無し<br>2.2 読み取り専用ファイルの時<br>2.2.1 読み取り専用で開く　　　　　　｜×｜（読みとり専用）<br>2.2.2 読み取り専用で開かない　　　　｜○｜無し　保存前に[OK]エラーダイアログ<br><br>以上</div></section>
+    <ul><li><section><h1 id=3209>
+    <span class="no">[3209]</span>
+    <a class="thread-title" href="#3209">Re3:読み取り専用のファイル</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-10-04T10:04:59">2003年10月04日 10:04</time></h1>
+    <div class="body">SAKURA.INIを修正するだけで良いのですが、<br>ソースも修正してみました。<br>CShareData.cpp<br>@@ -708 +708 @@<br>-&#9;&#9;&#9;"${w?【Grep】$h$:【アウトプット】$:${I?$f$:$F$}$}${U?(更新)$}${R?(読みとり専用)$:(上書き禁止)$}${M?【キーマクロの記録中】$}" );&#9;//@@@ 2003.06.13 MIK<br>+&#9;&#9;&#9;"${w?【Grep】$h$:【アウトプット】$:${I?$f$:$F$}$}${U?(更新)$}${R?(読み取り専用)$:(上書き禁止)$}${M?【キーマクロの記録中】$}" );&#9;//@@@ 2003.06.13 MIK<br>@@ -1323 +1323 @@<br>-&#9;&#9;&#9;" sakura $V ${R?(読みとり専用)$:（上書き禁止）$}${M?  【キーマクロの記録中】$}" );<br>+&#9;&#9;&#9;" sakura $V ${R?(読み取り専用)$:（上書き禁止）$}${M?  【キーマクロの記録中】$}" );<br>@@ -1326 +1326 @@<br>-&#9;&#9;&#9;" sakura $V ${R?(読みとり専用)$:（上書き禁止）$}${M?  【キーマクロの記録中】$}" );<br>+&#9;&#9;&#9;" sakura $V ${R?(読み取り専用)$:（上書き禁止）$}${M?  【キーマクロの記録中】$}" );<br></div></section>
+    <ul><li><section><h1 id=3210>
+    <span class="no">[3210]</span>
+    <a class="thread-title" href="#3210">Re4:読み取り専用のファイル</a>
+    <span class="author">すい</span>
+    <time datetime="2003-10-04T14:23:25">2003年10月04日 14:23</time></h1>
+    <div class="body">それを直しても．．． (;^^Ａ<br>そもそも「読み取り専用」っていう名称自体が かなり紛らわしいのでアレだと思うのですが。<br><br>このエディタの中では「読み取り専用」と「上書き禁止」があるわけですが、<br>ReadOnly属性を付けたファイルを開いた場合の扱いは「上書き禁止」となるわけですよね。<br><br>ところが、ファイルのプロパティやなんかでは ReadOnly属性の事を「読み取り専用」と<br>呼んでいるわけで。<br><br>・このエディタ上で「読み取り専用」と呼んでいるのは、このエディタの<br>　[ファイル(F)]→[ファイル操作(R)]→[読み取り専用(O)] の機能の事であり、<br>　ファイルのプロパティ上での「読み取り専用」とは関係無い、。<br><br>・ファイルのプロパティ等で「読み取り専用」と呼んでいる物は、このエディタ上では<br>　「上書き禁止」という名称扱いである。<br><br>で、非常に紛らわしい。<br><br>エディタ上の名称を「読み取り専用」以外に変更して統一した方が良いんじゃないかな～、と。<br>ビューワー モードとか<br>参照専用とか<br>何かしっくり来る名称、無いでしょか？<br></div></section>
+    <ul><li><section><h1 id=3212>
+    <span class="no">[3212]</span>
+    <a class="thread-title" href="#3212">Re5:読み取り専用のファイル</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-10-05T11:16:08">2003年10月05日 11:16</time></h1>
+    <div class="body">▼ すいさん<br>&gt; エディタ上の名称を「読み取り専用」以外に変更して統一した方が良いんじゃないかな～、と。<br><br>ファイルオープンのダイアログボックス内で、<br>□読み取り専用ファイルとして開く(R)<br>ではなく、短く<br>□読み取り専用で開く(R)<br><br>等に文節を変更されるのが良いと思います。<br></div></section>
+    <ul><li><section><h1 id=3216>
+    <span class="no">[3216]</span>
+    <a class="thread-title" href="#3216">Re6:読み取り専用のファイル</a>
+    <span class="author">すい</span>
+    <time datetime="2003-10-05T22:33:46">2003年10月05日 22:33</time></h1>
+    <div class="body">&gt;&gt; エディタ上の名称を「読み取り専用」以外に変更して統一した方が良いんじゃないかな～、と。<br>&gt;<br>&gt;ファイルオープンのダイアログボックス内で、<br>&gt;□読み取り専用ファイルとして開く(R)<br>&gt;ではなく、短く<br>&gt;□読み取り専用で開く(R)<br>&gt;<br>&gt;等に文節を変更されるのが良いと思います。<br><br>いえ、「この機能の名称として“読み取り専用”という用語そのものを<br>一切使うべきではない」と言っているのですよ。<br>“読み取り専用”という言葉そのものが Windows 側の機能名称と<br>同じであるために混同して混乱する元になるでしょう？<br><br>エディタのタイトルバーに「読み取り専用」なんで出ていたら、<br>「今、開いているファイルがファイルのプロパティで“読み取り専用”に<br>　チェックが付いているんだな」<br><br>とか、あるいは<br>「ファイルのプロパティで“読み取り専用”にチェックが付いている時は<br>　“読み取り専用”という表示が出る仕様なんだな」<br><br>と勘違いしてしまう人が出かねないでしょう？<br>非常に紛らわしいのです。<br></div></section>
+    </li></ul></li><li><section><h1 id=3217>
+    <span class="no">[3217]</span>
+    <a class="thread-title" href="#3217">Re5:読み取り専用のファイル</a>
+    <span class="author">dskoba</span>
+    <time datetime="2003-10-06T00:45:10">2003年10月06日 00:45</time></h1>
+    <div class="body">▼ すいさん<br>&gt; エディタ上の名称を「読み取り専用」以外に変更して統一した方が良いんじゃないかな～、と。<br>&gt; ビューワー モードとか<br>&gt; 参照専用とか<br>&gt; 何かしっくり来る名称、無いでしょか？<br><br>無難なところでは<br>・閲覧モード<br>でしょうか。他には<br>・参照モード<br>・表示専用（モード）<br>・編集不可（モード）<br>とか<br><br></div></section>
+    <ul><li><section><h1 id=3218>
+    <span class="no">[3218]</span>
+    <a class="thread-title" href="#3218">Re6:読み取り専用のファイル</a>
+    <span class="author">wmlhq</span>
+    <time datetime="2003-10-06T14:12:30">2003年10月06日 14:12</time></h1>
+    <div class="body">名称は「編集不可（モード）」に決定！<br>「閲覧モード」は漢字が読めない人がいる。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

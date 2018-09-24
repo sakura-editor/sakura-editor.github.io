@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ryojiさんへ: キーワードヘルプ拡張パッチ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4549</span>
+    <a class="thread-title" href="4549.html#4549">ryojiさんへ: キーワードヘルプ拡張パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4550</span>
+    <a class="thread-title" href="4549.html#4550">Re:ryojiさんへ: キーワードヘルプ拡張パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4551</span>
+    <a class="thread-title" href="4549.html#4551">Re2:ryojiさんへ: キーワードヘルプ拡張パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4552</span>
+    <a class="thread-title" href="4549.html#4552">Re3:ryojiさんへ: キーワードヘルプ拡張パッチ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4564</span>
+    <a class="thread-title" href="4549.html#4564">Re4:ryojiさんへ: キーワードヘルプ拡張パッチ</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4549>
+    <span class="no">[4549]</span>
+    <a class="thread-title" href="#4549">ryojiさんへ: キーワードヘルプ拡張パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-08-27T12:19:49">2006年08月27日 12:19</time></h1>
+    <div class="body">キーワードヘルプ拡張パッチ #1487978 をcommitしたいんですが，<br>HTMLヘルプ化より先に入れていいですか？<br><br>*タイプ別設定に新タブ追加<br>*共通設定[支援]修正<br>*CShareDataのバージョン１つ上げ<br><br>最新版に対応させたpatchをおいておきました．<br><br>---<br>ついでに...(ryojiさんでなくてもいいですが...)<br>#1543101 Autorun設定時にTAGファイル生成が動作しない<br>#1519283 カーソル移動と選択状態見直し<br>#1530740 全て選択の選択範囲末尾が不正確<br>あたりも，見て頂けるとcheck-inできるようになるかなーと．<br><br>よろしくお願いします．<br></div></section>
+    <ul><li><section><h1 id=4550>
+    <span class="no">[4550]</span>
+    <a class="thread-title" href="#4550">Re:ryojiさんへ: キーワードヘルプ拡張パッチ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-08-27T15:50:51">2006年08月27日 15:50</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; キーワードヘルプ拡張パッチ #1487978 をcommitしたいんですが，<br>&gt; HTMLヘルプ化より先に入れていいですか？<br><br>先に入れるのはOKです。<br><br>&gt; 最新版に対応させたpatchをおいておきました．<br><br>これ、VC++6.0 や VC++ Toolkit 2003 でコンパイルが通らないみたいです。<br><br>&gt; ---<br>&gt; ついでに...(ryojiさんでなくてもいいですが...)<br>&gt; #1543101 Autorun設定時にTAGファイル生成が動作しない<br>&gt; #1519283 カーソル移動と選択状態見直し<br>&gt; #1530740 全て選択の選択範囲末尾が不正確<br>&gt; あたりも，見て頂けるとcheck-inできるようになるかなーと．<br><br>ぼちぼち見てみようかと思います～。</div></section>
+    <ul><li><section><h1 id=4551>
+    <span class="no">[4551]</span>
+    <a class="thread-title" href="#4551">Re2:ryojiさんへ: キーワードヘルプ拡張パッチ</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-08-27T22:48:55">2006年08月27日 22:48</time></h1>
+    <div class="body">&gt;&gt; 最新版に対応させたpatchをおいておきました．<br>&gt;<br>&gt;これ、VC++6.0 や VC++ Toolkit 2003 でコンパイルが通らないみたいです。<br>すいません．makefileにミスがありました．<br>dspとmakefileでビルドテストを再度行って，パッチを更新しました．<br><br>そして，sakura/trunk#991としてcommitしました．<br></div></section>
+    <ul><li><section><h1 id=4552>
+    <span class="no">[4552]</span>
+    <a class="thread-title" href="#4552">Re3:ryojiさんへ: キーワードヘルプ拡張パッチ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-08-28T03:29:26">2006年08月28日 03:29</time></h1>
+    <div class="body">&gt; そして，sakura/trunk#991としてcommitしました．<br><br>VC++6.0でのエラー(C6320)が残っていたので修正してcommitしました。<br>sakura/trunk#992</div></section>
+    <ul><li><section><h1 id=4564>
+    <span class="no">[4564]</span>
+    <a class="thread-title" href="#4564">Re4:ryojiさんへ: キーワードヘルプ拡張パッチ</a>
+    <span class="author">maru</span>
+    <time datetime="2006-09-02T18:08:44">2006年09月02日 18:08</time></h1>
+    <div class="body">表示だけの問題なのですが、辞書ファイルの指定でファイル名だけ（\マークが１文字も入らない状態）を指定すると、リスト表示部分の辞書ファイル名の先頭１文字目が欠けます。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

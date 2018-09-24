@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>sakuraextについて | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">593</span>
+    <a class="thread-title" href="593.html#593">sakuraextについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">594</span>
+    <a class="thread-title" href="593.html#594">Re:sakuraextについて</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">597</span>
+    <a class="thread-title" href="593.html#597">Re2:sakuraextについて</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=593>
+    <span class="no">[593]</span>
+    <a class="thread-title" href="#593">sakuraextについて</a>
+    <span class="author">bosagami</span>
+    <time datetime="2008-09-03T10:07:54">2008年09月03日 10:07</time></h1>
+    <div class="body">関連付けツール(sakuraext.exe)についてですが、UNICODE版ではどうなるのでしょう？<br>現在のバージョンですと全角文字が化けて表示されます。<br>（設定ファイルがUTF-8に変わったため？）<br><br>UNICODEでビルドしなおすのでしょうか？<br>ソースコードがあればビルドしてみますが・・・<br></div></section>
+    <ul><li><section><h1 id=594>
+    <span class="no">[594]</span>
+    <a class="thread-title" href="#594">Re:sakuraextについて</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-09-03T18:34:10">2008年09月03日 18:34</time></h1>
+    <div class="body">UTF-8 設定ファイルへの対応はプログラム内部でのコード変換処理が必要になりますね。<br>（UNICODE アプリなら UTF-8 -&gt; UNICODE）<br><br>sakuext のソースは HSP で書かれてます。<br>在処は &gt;&gt;dev:4810 参照<br><br>Vista UAC 機能対応の際にトライしてみましたが、HSP 初心者の自分にはコンパイル環境の構築も厄介でした。<br>当時のバージョン（HSP 2.55）でないとコンパイルエラーになるとか、loadlib.dll 無しの単体 exe で動くようにしたいけど HSP ランタイム（loadlib.hrt）はどこで手に入れてどう使うの？とか、いっそ HSP 2.61 でコンパイルエラーの修正をしたほうが楽かしら、とか。一旦は何とか思い通りにコンパイルできるところまで到達したんですが、当時の環境は既に無く、手順も忘れてます。 (^^;;;<br><br>結局、UAC 対応では sakuext 本体には手を加えず、管理者権限の別 exe から sakuext 本体を起動する方式（&gt;&gt;dev:4809 の案）にしています。UAC 対応後は SAKUEXT_body.exe がオリジナルの sakuext で、かわりの sakuext.exe はそれを起動するだけのラッパーになっています。<br><a href=http://sakura.qp.land.to/?Develop%2Fsakuraext target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>Develop%<wbr>2Fsakura<wbr>ext</nobr></a></div></section>
+    <ul><li><section><h1 id=597>
+    <span class="no">[597]</span>
+    <a class="thread-title" href="#597">Re2:sakuraextについて</a>
+    <span class="author">bosagami</span>
+    <time datetime="2008-09-04T09:51:03">2008年09月04日 09:51</time></h1>
+    <div class="body">&gt; sakuext のソースは HSP で書かれてます。<br>なるほど、HSPはわからないので手出しできないですね・・・<br><br>&gt; Vista UAC 機能対応の際にトライしてみましたが、HSP 初心者の自分にはコンパイル環境の構築も厄介でした。<br>過去ログを見ると、UAC対応で試行錯誤しているようで。<br>新規に作るのも難しそうだし、うーん。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>検索・置換関連の不具合修正 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2772</span>
+    <a class="thread-title" href="2772.html#2772">検索・置換関連の不具合修正</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2773</span>
+    <a class="thread-title" href="2772.html#2773">RE: 検索・置換関連の不具合修正 - その１</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2774</span>
+    <a class="thread-title" href="2772.html#2774">RE: 検索・置換関連の不具合修正 - その２</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2776</span>
+    <a class="thread-title" href="2772.html#2776">Re2: ドキッ！</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2779</span>
+    <a class="thread-title" href="2772.html#2779">Re3: 再度アップしました。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2780</span>
+    <a class="thread-title" href="2772.html#2780">Re3: ドキッ！</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2782</span>
+    <a class="thread-title" href="2772.html#2782">Re4: 不具合修正版</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2783</span>
+    <a class="thread-title" href="2772.html#2783">Re5: 不具合修正版</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2784</span>
+    <a class="thread-title" href="2772.html#2784">Re6: 不具合修正版</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2785</span>
+    <a class="thread-title" href="2772.html#2785">Re6: 不具合修正版</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2790</span>
+    <a class="thread-title" href="2772.html#2790">Re7: 不具合修正版 - 落ち</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2793</span>
+    <a class="thread-title" href="2772.html#2793">Re8: 不具合修正版 - 落ち</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2796</span>
+    <a class="thread-title" href="2772.html#2796">good !!</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2798</span>
+    <a class="thread-title" href="2772.html#2798">Re:good !!</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">2797</span>
+    <a class="thread-title" href="2772.html#2797">プリンタの用紙設定が</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2800</span>
+    <a class="thread-title" href="2772.html#2800">Re:プリンタの用紙設定が</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2788</span>
+    <a class="thread-title" href="2772.html#2788">Re4: ドキッ！</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">2775</span>
+    <a class="thread-title" href="2772.html#2775">Re:検索・置換関連の不具合修正</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2772>
+    <span class="no">[2772]</span>
+    <a class="thread-title" href="#2772">検索・置換関連の不具合修正</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-18T09:20:09">2003年05月18日 09:20</time></h1>
+    <div class="body">さすがに、別のスレッド立てました。<br><br>お試し版です。（1.3.9.1から変更してます）<br><a href=http://members.tripod.co.jp/karoto/Archive/sakura_test_20030517.lzh target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>karoto/<wbr>Archive/<wbr>sakura_t<wbr>est_2003<wbr>0517.<wbr>lzh</nobr></a><br><br>無限置換をさせない根本的な対策を施したつもりです。<br>（話題の \r?\n? でも　無限置換しません）<br><br>ただ、正式バージョンと正規表現のマッチの仕方が変わってしまいまして・・・<br>（例えば、 .* は、\n改行の行だけに改行前の０文字にマッチする）<br>従来通りのマッチの仕方にしようと検討中ですが、これじゃダメ？ってことで<br>一度見て頂こうと思いました。<br><br>加えて、「全て置換」時に始点挿入、終点追加が動かなかった不具合も修正してみました。<br><br></div></section>
+    <ul><li><section><h1 id=2773>
+    <span class="no">[2773]</span>
+    <a class="thread-title" href="#2773">RE: 検索・置換関連の不具合修正 - その１</a>
+    <span class="author">すい</span>
+    <time datetime="2003-05-19T03:22:37">2003年05月19日 03:22</time></h1>
+    <div class="body">&gt;お試し版です。（1.3.9.1から変更してます）<br>&gt;http://members.tripod.co.jp/karoto/Archive/sakura_test_20030517.lzh<br><br>以降、<br>・[置換]　　　：置換ダイアログにて [置換(R)] で１個ずつ置換していく場合<br>・[すべて置換]：置換ダイアログにて [すべて置換(A)] する場合<br>・[F3]　　　　：[F3] で↓方向に検索だけしていく場合<br>・[Shift]+[F3]：[Shift]+[F3] で↑方向に検索だけしていく場合<br>とします。<br><br>置換前：[\r\n]+<br>置換後：<br>説　明：改行削除<br>○[置換]　　　：正常<br>○[すべて置換]：正常<br>○[F3]　　　　：正常<br>○[Shift]+[F3]：正常<br><br>置換前：\r?$<br>置換後：abc$&amp;<br>説　明：$ を使った行末置換<br>○[置換]　　　：正常<br>○[すべて置換]：正常<br>○[F3]　　　　：正常<br>○[Shift]+[F3]：正常<br><br>難点<br>　\n(0a)改行の場合、置換ダイアログ や 検索ダイアログ（「検索ダイアログを自動的に閉じる」をチェックoffにしておいて）<br>　にて [上検索(U)] [下検索(D)] を押した場合、カーソルが表示されないので、<br>　今、どこにいるのかが分からない。よって、次、どこが置換対象になっているのかが分からないので<br>　「この行頭は [置換(R)] する、次の行頭とその次の行頭は [下検索(D)] で飛ばしてその次の行頭を [置換(R)]．．．」<br>　といった作業は実質不可能に近い。<br>　\n(0a)改行ではない場合や [F3]/[Shift]+[F3] にて↓↑検索時はカーソル位置が表示されるので、きちんと分かる。<br><br>置換前：[\r\n]+<br>置換後：abc$&amp;<br>説　明：$ を使わない行末置換<br>○[置換]　　　：正常<br>○[すべて置換]：正常<br>○[F3]　　　　：正常<br>○[Shift]+[F3]：正常<br><br>置換前：$<br>置換後：X<br>説　明：$ (行末) を検索/置換<br>×[置換]　　　：動作せず<br>×[すべて置換]：動作せず<br>○[F3]　　　　：正常<br>○[Shift]+[F3]：正常<br></div></section>
+    </li><li><section><h1 id=2774>
+    <span class="no">[2774]</span>
+    <a class="thread-title" href="#2774">RE: 検索・置換関連の不具合修正 - その２</a>
+    <span class="author">すい</span>
+    <time datetime="2003-05-19T03:25:40">2003年05月19日 03:25</time></h1>
+    <div class="body">置換前：.*<br>置換後：X<br>説　明：全ての行の内容を X にする。（\r も通常の文字と見なされるため、改行コードは \n になる。\r(0d)改行の行は連結される）<br><br>×[置換]　　　：「\n(0a)改行で空行ではない」場合、文字全体と行末部と２回置換がおこなわれて XX になる。<br>　　　　　　　　「\n(0a)改行ではない行」及び「 \n(0a)改行の空行」では動作正常。<br>×[すべて置換]：↑と同じ。<br><br>×[F3]　　　　：「\n(0a)改行で空行ではない」場合、文字全体と行末部と２回停止する。<br>　　　　　　　　「\n(0a)改行ではない行」及び「 \n(0a)改行の空行」では動作正常。<br>×[Shift]+[F3]：↑と同じ。<br><br>&gt;（例えば、 .* は、\n改行の行だけに改行前の０文字にマッチする）<br>これが↑の事ですね。<br><br><br>置換前：[^\r\n]*<br>置換後：X<br>説　明：全ての行の内容を X にする。<br>×[置換]　　　：空行ではない場合、文字全体と行末部と２回置換がおこなわれて XX になる。<br>×[すべて置換]：↑と同じ。<br>×[F3]　　　　：空行ではない場合、文字全体と行末部と２回停止する。<br>×[Shift]+[F3]：↑と同じ。<br><br><br>置換前：^<br>置換後：abc<br>説　明：行頭に abc を挿入する。<br>○[置換]　　　：正常<br>○[すべて置換]：正常<br>×[F3]　　　　：行頭の文字が全角文字だと、その行でストップしてしまう。<br>○[Shift]+[F3]：正常<br><br>難点<br>　置換ダイアログ や 検索ダイアログ（「検索ダイアログを自動的に閉じる」をチェックoffにしておいて）<br>　にて [上検索(U)] [下検索(D)] を押した場合、カーソルが表示されないので、<br>　今、どこにいるのかが分からない。よって、次、どこが置換対象になっているのかが分からないので<br>　「この行頭は [置換(R)] する、次の行頭とその次の行頭は [下検索(D)] で飛ばしてその次の行頭を [置換(R)]．．．」<br>　といった作業は実質不可能に近い。<br>　[F3]/[Shift]+[F3] にて↓↑検索時はカーソル位置が表示されるので、きちんと分かります。<br><br><br>置換前：\n*<br>置換後：X<br>説　明：全ての文字の間に対して X を挿入する。（\n(0a)改行の行では改行文字が消えてしまうので \r* にする。）<br>×[置換]　　　：全角文字の前の位置でカーソルが止まってしまう。そこで無限置換する。<br>×[すべて置換]：全角文字の前の位置でカーソルが止まってしまう。そこで無限置換する。<br>×[F3]　　　　：全角文字の前の位置でカーソルが止まってしまう。<br>×[Shift]+[F3]：全角文字の後ろの位置でカーソルが止まってしまう。<br><br><br>正式版に比べて かなり良いので、これでリリースしちゃっても、って思います。<br>ただ、「全角文字の所で止まっちゃうシリーズ」はなんだかアレ．．．(;^^;a<br><br>&gt;加えて、「全て置換」時に始点挿入、終点追加が動かなかった不具合も修正してみました。<br>始点挿入、終点追加は私的に お呼びじゃぁない事もありチェックしていないです。 m(_ _)m<br></div></section>
+    <ul><li><section><h1 id=2776>
+    <span class="no">[2776]</span>
+    <a class="thread-title" href="#2776">Re2: ドキッ！</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-19T07:38:41">2003年05月19日 07:38</time></h1>
+    <div class="body"><br>おはようございます。確認作業ありがとうございます。<br><br>▼ すいさん<br>&gt; 正式版に比べて かなり良いので、これでリリースしちゃっても、って思います。<br>&gt; ただ、「全角文字の所で止まっちゃうシリーズ」はなんだかアレ．．．(;^^;a<br><br>ドキッ！まさに、それです。（笑）<br><br>全角文字のバグ修正して、今晩再度アップします。<br><br>あと、げんたさんから指摘のあった、プリンタ設定の一部が保存されない不具合も昨日修正できました。<br><br>こいつです。<br><a href=http://members.tripod.co.jp/karoto/Archive/sakura_test_20030518.lzh target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>karoto/<wbr>Archive/<wbr>sakura_t<wbr>est_2003<wbr>0518.<wbr>lzh</nobr></a><br><br>ようやく一段落しそうな気配がしてきました。<br><br></div></section>
+    <ul><li><section><h1 id=2779>
+    <span class="no">[2779]</span>
+    <a class="thread-title" href="#2779">Re3: 再度アップしました。</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-19T22:52:43">2003年05月19日 22:52</time></h1>
+    <div class="body"><br>置き直しました。<br><br><a href=http://members.tripod.co.jp/karoto/Archive/sakura_test_20030520.lzh target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>karoto/<wbr>Archive/<wbr>sakura_t<wbr>est_2003<wbr>0520.<wbr>lzh</nobr></a><br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/sakura_1_3_9_1_20030520_diff.lzh target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>sakura_1<wbr>_3_9_1_2<wbr>0030520_<wbr>diff.<wbr>lzh</nobr></a> <br><br><br>-------------<br>う・・・$の検索ができない不具合ありです。忘れてください。（笑）<br><br>--------- （元文書）<br>全角文字での不具合　修正しました。(プリンタの設定記憶の不具合修正も入ってます）<br><br><a href=http://members.tripod.co.jp/karoto/Archive/sakura_test_20030519.lzh target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>karoto/<wbr>Archive/<wbr>sakura_t<wbr>est_2003<wbr>0519.<wbr>lzh</nobr></a><br><br>そろそろ一段落して欲しいという気持ちを込めて、（笑）<br>eGroupsに差分も置いておきました。<br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/sakura_1_3_9_1_20030519_diff.lzh target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>sakura_1<wbr>_3_9_1_2<wbr>0030519_<wbr>diff.<wbr>lzh</nobr></a> <br></div></section>
+    <ul><li><section><h1 id=2780>
+    <span class="no">[2780]</span>
+    <a class="thread-title" href="#2780">Re3: ドキッ！</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-05-20T16:31:28">2003年05月20日 16:31</time></h1>
+    <div class="body">▼ かろとさん<br>&gt; 全角文字のバグ修正して、今晩再度アップします。<br><br>お疲れ様です。<br>20030518では落ちなかったのですが、20030519で落ちました。<br><br>改行が \r のみで終わる場合。(Mac)<br>正規表現　チェック<br>置換前　「\r?」または「\n?」<br>置換後　例えば、「A」<br>実行に「すべて置換」を使う場合。<br><br>以上、ご報告まで。</div></section>
+    <ul><li><section><h1 id=2782>
+    <span class="no">[2782]</span>
+    <a class="thread-title" href="#2782">Re4: 不具合修正版</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-20T21:09:00">2003年05月20日 21:09</time></h1>
+    <div class="body">▼ 蒔田　信幸さん<br>&gt; お疲れ様です。<br>&gt; 20030518では落ちなかったのですが、20030519で落ちました。<br>&gt; <br>&gt; 以上、ご報告まで。<br><br>すみません。<br>20030519を自分でアップ後すぐ不具合に気が付いて夜中に修正してます。<br>20030520で確認をお願いします。<br>お手数をかけてすいません。<br><br></div></section>
+    <ul><li><section><h1 id=2783>
+    <span class="no">[2783]</span>
+    <a class="thread-title" href="#2783">Re5: 不具合修正版</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-05-20T21:37:21">2003年05月20日 21:37</time></h1>
+    <div class="body">▼ かろとさん<br>&gt; 20030519を自分でアップ後すぐ不具合に気が付いて夜中に修正してます。<br>&gt; 20030520で確認をお願いします。<br>&gt; お手数をかけてすいません。<br>&gt; <br>20030520 が最新だ！<br>ということですね、すみません。<br>それでも落ちます。<br>テストを今一度お願い致します。</div></section>
+    <ul><li><section><h1 id=2784>
+    <span class="no">[2784]</span>
+    <a class="thread-title" href="#2784">Re6: 不具合修正版</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-20T22:27:36">2003年05月20日 22:27</time></h1>
+    <div class="body">▼ 蒔田　信幸さん<br>&gt; 20030520 が最新だ！<br>&gt; それでも落ちます。<br>&gt; テストを今一度お願い致します。<br><br>再度試してみたら、<br>落ちることが確認できました。<br>他にもまずいところが・・・少々お待ちを・・</div></section>
+    </li><li><section><h1 id=2785>
+    <span class="no">[2785]</span>
+    <a class="thread-title" href="#2785">Re6: 不具合修正版</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-21T00:09:10">2003年05月21日 00:09</time></h1>
+    <div class="body">▼ 蒔田　信幸さん<br>&gt; 20030520 が最新だ！<br>&gt; ということですね、すみません。<br>&gt; それでも落ちます。<br>&gt; テストを今一度お願い致します。<br><br>レイアウト行と物理行を混同してたので、不一致になったところでアクセスエラーが出ていました。<br>（まだまだ、不慣れなもんです・・・）<br><br>こちらで、ご確認ください。<br><br><a href=http://members.tripod.co.jp/karoto/Archive/sakura_test_20030521.lzh target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>karoto/<wbr>Archive/<wbr>sakura_t<wbr>est_2003<wbr>0521.<wbr>lzh</nobr></a><br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/sakura_1_3_9_1_20030521_diff.lzh target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>sakura_1<wbr>_3_9_1_2<wbr>0030521_<wbr>diff.<wbr>lzh</nobr></a> <br><br><br></div></section>
+    <ul><li><section><h1 id=2790>
+    <span class="no">[2790]</span>
+    <a class="thread-title" href="#2790">Re7: 不具合修正版 - 落ち</a>
+    <span class="author">すい</span>
+    <time datetime="2003-05-21T23:12:11">2003年05月21日 23:12</time></h1>
+    <div class="body">&gt;こちらで、ご確認ください。<br>&gt;<br>&gt;http://members.tripod.co.jp/karoto/Archive/sakura_test_20030521.lzh<br><br>置換前：\n*<br>置換後：X<br>説　明：全ての文字の間に対して X を挿入する。（\n(0a)改行の行では改行文字が消えてしまうので \r* にする。）<br>×[置換]　　　：ファイル先頭から置換していくと、２回目の [置換(R)] （２行目）で落ちる。<br>　　　　　　　　２行目から始めても落ちる。<br>　　　　　　　　３行目以降からなら落ちない事が *多い* が、折り返し単位の行頭にだけ置換作業がおこなわれる。<br>○[すべて置換]：正常<br>○[F3]　　　　：正常<br>○[Shift]+[F3]：正常<br><br>置換前：\n*<br>置換後：X$&amp;<br>説　明：全ての文字の間に対して X を挿入する。（改行に依存しない）<br>×[置換]　　　：ファイル先頭から置換していくと、２回目の [置換(R)] （２行目）で落ちる。<br>　　　　　　　　２行目から始めても落ちる。<br>　　　　　　　　３行目以降からなら落ちない事が *多い* が、折り返し単位の行頭にだけ置換作業がおこなわれる。<br>○[すべて置換]：正常<br>○[F3]　　　　：正常<br>○[Shift]+[F3]：正常<br><br>落ちますねぇ。<br>なんか [置換] と [すべて置換] とで挙動が違ったりもするんですが。<br><br>他の置換は sakura_test_20030517.lzh と変わらないようです。<br></div></section>
+    <ul><li><section><h1 id=2793>
+    <span class="no">[2793]</span>
+    <a class="thread-title" href="#2793">Re8: 不具合修正版 - 落ち</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-22T05:37:52">2003年05月22日 05:37</time></h1>
+    <div class="body">おはようございます。<br>（時間がないので、手短に・・）<br><br>▼ すいさん<br>&gt; 落ちますねぇ。<br>&gt; なんか [置換] と [すべて置換] とで挙動が違ったりもするんですが。<br><br>申し訳なし・・・タイプミス発覚です・・（笑）<br><br>修正しました。<br><a href=http://members.tripod.co.jp/karoto/Archive/sakura_test_20030522.lzh target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>karoto/<wbr>Archive/<wbr>sakura_t<wbr>est_2003<wbr>0522.<wbr>lzh</nobr></a><br><br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/sakura_1_3_9_1_20030522_diff.lzh target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>sakura_1<wbr>_3_9_1_2<wbr>0030522_<wbr>diff.<wbr>lzh</nobr></a> <br></div></section>
+    <ul><li><section><h1 id=2796>
+    <span class="no">[2796]</span>
+    <a class="thread-title" href="#2796">good !!</a>
+    <span class="author">すい</span>
+    <time datetime="2003-05-24T01:16:44">2003年05月24日 01:16</time></h1>
+    <div class="body">&gt;http://members.tripod.co.jp/karoto/Archive/sakura_test_20030522.lzh<br><br>ほんとうに大変ご苦労様です。<br><br>動作としては sakura_test_20030517.lzh 版から「全角文字で止まっちゃう」<br>不具合が無くなったような感じですね。<br><br>私が試した限りでは大きな不具合も無さそうで、かつ、万人がよく<br>使いそうな置換（「^｝⇒｛hogehoge」とか、他）が正常に出来るように<br>改善されていたりして、非常に良いのではないかと。<br><br>他の方から何か不具合報告とか無ければ、これで ok って事で。<br></div></section>
+    <ul><li><section><h1 id=2798>
+    <span class="no">[2798]</span>
+    <a class="thread-title" href="#2798">Re:good !!</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-24T06:19:21">2003年05月24日 06:19</time></h1>
+    <div class="body">▼ すいさん<br>&gt; ほんとうに大変ご苦労様です。<br><br>いえいえ。<br>すいさんの確認もご苦労様です。<br><br>しかし、やっぱり手強いですね。検索・置換は。<br>今までなぜ不具合が多かったのも身をもって知りました。（笑）<br><br>次回作は、<br>・「$」→「hogehoge」<br>・行頭置換時にどこが置換されているのか分からない<br>を予定しております。懲りずにまたお付き合いください。<br></div></section>
+    </li></ul></li><li><section><h1 id=2797>
+    <span class="no">[2797]</span>
+    <a class="thread-title" href="#2797">プリンタの用紙設定が</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-05-24T01:33:22">2003年05月24日 01:33</time></h1>
+    <div class="body">なんかまたプリンタの用紙設定の反映タイミングが変なのですが，プリンタボタンを取り除けば問題ないか．<br></div></section>
+    <ul><li><section><h1 id=2800>
+    <span class="no">[2800]</span>
+    <a class="thread-title" href="#2800">Re:プリンタの用紙設定が</a>
+    <span class="author">かろと</span>
+    <time datetime="2003-05-24T16:38:51">2003年05月24日 16:38</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; なんかまたプリンタの用紙設定の反映タイミングが変なのですが，プリンタボタンを取り除けば問題ないか．<br><br>ページ設定の用紙サイズ(正確には、用紙の幅と高さ)が、プリンタダイアログへ反映されない不具合ありました。<br>修正しました。<br><br><a href=http://members.tripod.co.jp/karoto/Archive/sakura_test_20030524.lzh target=_top><nobr>http://<wbr>members.<wbr>tripod.<wbr>co.<wbr>jp/<wbr>karoto/<wbr>Archive/<wbr>sakura_t<wbr>est_2003<wbr>0524.<wbr>lzh</nobr></a><br><br><a href=http://www.egroups.co.jp/files/sakura-editor/Developer/Source/sakura_1_3_9_1_20030524_diff.lzh target=_top><nobr>http://<wbr>www.<wbr>egroups.<wbr>co.<wbr>jp/<wbr>files/<wbr>sakura-<wbr>editor/<wbr>Develope<wbr>r/<wbr>Source/<wbr>sakura_1<wbr>_3_9_1_2<wbr>0030524_<wbr>diff.<wbr>lzh</nobr></a> <br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=2788>
+    <span class="no">[2788]</span>
+    <a class="thread-title" href="#2788">Re4: ドキッ！</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-05-21T02:00:47">2003年05月21日 02:00</time></h1>
+    <div class="body">▼ かろとさん<br><br>ご苦労様です。<br>20030521 で修正確認できました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li><li><section><h1 id=2775>
+    <span class="no">[2775]</span>
+    <a class="thread-title" href="#2775">Re:検索・置換関連の不具合修正</a>
+    <span class="author">蒔田　信幸</span>
+    <time datetime="2003-05-19T03:40:02">2003年05月19日 03:40</time></h1>
+    <div class="body">▼ かろとさん<br>&gt; （例えば、 .* は、\n改行の行だけに改行前の０文字にマッチする）<br><br>（\r は 「.」 とマッチし、\n は「.」 とマッチしないのですから）<br>\n で始まる改行で、検索文字列が「.*」の時、改行前にもう一度マッチしてしまう。<br>\r で始まる改行で、検索文字列が「$」 の時、改行前にマッチしないで居てしまう。<br><br>とも言えますね。<br></div></section>
+    </li></ul></li></ul></body></html>

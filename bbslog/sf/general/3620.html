@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現が正しく処理されない？ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3620</span>
+    <a class="thread-title" href="3620.html#3620">正規表現が正しく処理されない？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3628</span>
+    <a class="thread-title" href="3620.html#3628">Re: 正規表現が正しく処理されない？</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3620>
+    <span class="no">[3620]</span>
+    <a class="thread-title" href="#3620">正規表現が正しく処理されない？</a>
+    <span class="author">としみ</span>
+    <time datetime="2004-02-01T18:57:30">2004年02月01日 18:57</time></h1>
+    <div class="body">はじめまして。<br>旧テキストエディタの頃から愛用させていただいております。<br><br>正規表現が正しく処理されない場合があるようなんですが、そういう事はあるでしょうか？<br><br>あるファイルをTeraTremのマクロにしようと思いまして、以下の置換を実行しようと思いました。<br><br>置換前 (.+)<br>置換後 sendln '$1'<br><br>しかし結果は<br><br>sendln '$1(cr)<br>'(lf)<br><br>となってしまいます。<br><br>同じ正規表現ライブラリを使った他のエディタでは正しく置換されるので、<br>サクラエディタのバグではないでしょうか？<br><br>よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=3628>
+    <span class="no">[3628]</span>
+    <a class="thread-title" href="#3628">Re: 正規表現が正しく処理されない？</a>
+    <span class="author">もか</span>
+    <time datetime="2004-02-05T23:23:36">2004年02月05日 23:23</time></h1>
+    <div class="body">こんばんは<br>&gt;正規表現が正しく処理されない場合があるようなんですが、そういう事はあるでしょうか？<br>正しく動作しないことは多々あります。<br>特に、行頭、行末、改行周りは文化の違いを含め複雑な問題を抱えています。<br>&gt;置換前 (.+)<br>&gt;置換後 sendln '$1'<br>&gt;同じ正規表現ライブラリを使った他のエディタでは正しく置換されるので、<br>&gt;サクラエディタのバグではないでしょうか？<br>サクラエディタでは、行にCR自体が実際に存在していて、<br>.にCRが含まれるためにこんな動作になります。<br>.は使わないで、[^\r\n]を使えばそれっぽく動きます。<br>とりあえずPerlの正規表現の仕様(Unix的にCRは改行ではない)ということにしたいところですが、<br>複数行をまじめにサポートするようになるとバグといえるかも。<br><br>とりあえず、こんな風に書くことで代替できます。<br>&gt;置換前 [^\r\n]+<br>&gt;置換後 sendln '$&amp;'<br>#他のどのエディタでしょうか,きになるなぁ<br></div></section>
+    </li></ul></li></ul></body></html>

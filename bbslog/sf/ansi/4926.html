@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>強調キーワード設定画面 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4926</span>
+    <a class="thread-title" href="4926.html#4926">強調キーワード設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4931</span>
+    <a class="thread-title" href="4926.html#4931">Re:強調キーワード設定画面</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4932</span>
+    <a class="thread-title" href="4926.html#4932">末尾のキーワードセットが破壊される</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4933</span>
+    <a class="thread-title" href="4926.html#4933">ヘルプの記載が古い</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4926>
+    <span class="no">[4926]</span>
+    <a class="thread-title" href="#4926">強調キーワード設定画面</a>
+    <span class="author">AC</span>
+    <time datetime="2007-07-11T23:12:20">2007年07月11日 23:12</time></h1>
+    <div class="body">大量のキーワード（１０００個くらい）をインポートしたり、セットを削除したりすると、最後のセットが壊れました。<br>また、セットにキーワードを登録しようとしても登録できないことがありました。<br>設定画面をいったん閉じて開きなおすと、登録できる場合もありました。<br>設定画面を開いて、異なるセットに対して複数のアクションをすると発生しやすいみたいです。<br>一回のアクション（セット削除、セット追加、インポートなど）ごとに設定画面を閉じると発生しませんでした。<br></div></section>
+    <ul><li><section><h1 id=4931>
+    <span class="no">[4931]</span>
+    <a class="thread-title" href="#4931">Re:強調キーワード設定画面</a>
+    <span class="author">AC</span>
+    <time datetime="2007-07-14T09:31:57">2007年07月14日 09:31</time></h1>
+    <div class="body">▼ ACさん<br>まじにやばすぎる。<br>タブなんか実装してる暇あったら、<br>実装した人、まじめにデバッグしてください。</div></section>
+    <ul><li><section><h1 id=4932>
+    <span class="no">[4932]</span>
+    <a class="thread-title" href="#4932">末尾のキーワードセットが破壊される</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-14T15:59:48">2007年07月14日 15:59</time></h1>
+    <div class="body">まずい箇所を見つけたのでパッチを作成しました。<br>Patches#1753916</div></section>
+    <ul><li><section><h1 id=4933>
+    <span class="no">[4933]</span>
+    <a class="thread-title" href="#4933">ヘルプの記載が古い</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-07-14T20:53:33">2007年07月14日 20:53</time></h1>
+    <div class="body">調べてて気づいたんですが、ヘルプの記載内容が古いみたいです。<br><br>※長さが100バイトを超えるキーワードは、100バイトに切り詰められて追加されます。<br>→現在は63バイトで切り詰めるようになってますね。<br><br>※1セットあたり、1000個までのキーワードを登録できます。<br>→全セットの総数で最大15000になっています。<br>（各セットのメモリ使用状況によっては13800個程度でそれ以上登録できなくなることもあります）</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

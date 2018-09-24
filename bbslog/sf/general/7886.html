@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>置換でつなぎたいのです。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7886</span>
+    <a class="thread-title" href="7886.html#7886">置換でつなぎたいのです。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7887</span>
+    <a class="thread-title" href="7886.html#7887">RE: 置換でつなぎたいのです。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">7888</span>
+    <a class="thread-title" href="7886.html#7888">Re:置換でつなぎたいのです。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7889</span>
+    <a class="thread-title" href="7886.html#7889">Re2:置換でつなぎたいのです。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7886>
+    <span class="no">[7886]</span>
+    <a class="thread-title" href="#7886">置換でつなぎたいのです。</a>
+    <span class="author">teruak_ark</span>
+    <time datetime="2014-09-23T09:55:21">2014年09月23日 09:55</time></h1>
+    <div class="body">例えばファイル中に<br><br>あああああああああ<br>いい<br><br>と書いてたら<br><br><br>あああああああああいい<br><br>と置換したいのです。<br><br><br>ところが正規表現にチェックマークを入れた状態で、<br>置換前　^..\r\n<br><br>置換後　..\r\n<br>でつなぎたいのですが、<br>置換後「いい」が消されて..と表示されつながりもできません。</div></section>
+    <ul><li><section><h1 id=7887>
+    <span class="no">[7887]</span>
+    <a class="thread-title" href="#7887">RE: 置換でつなぎたいのです。</a>
+    <span class="author">もか</span>
+    <time datetime="2014-09-23T13:52:10">2014年09月23日 13:52</time></h1>
+    <div class="body">&gt;置換前　^..\r\n<br>&gt;<br>&gt;置換後　..\r\n<br>&gt;でつなぎたいのですが、<br>&gt;置換後「いい」が消されて..と表示されつながりもできません。<br>..が実際に..なのならそれで正しい動作だと思います。<br><br>サクラエディタは改行を超えて検索・置換ができません。<br></div></section>
+    </li><li><section><h1 id=7888>
+    <span class="no">[7888]</span>
+    <a class="thread-title" href="#7888">Re:置換でつなぎたいのです。</a>
+    <span class="author">もか</span>
+    <time datetime="2014-09-23T14:08:21">2014年09月23日 14:08</time></h1>
+    <div class="body">以下のものを使うと、改行またぎの置換もできます。<br><a href=http://sakura.qp.land.to/?FAQ%2F2 target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/?<wbr>FAQ%<wbr>2F2</nobr></a><br><a href=http://ux.getuploader.com/sakura_editor/download/29/PatchUnicode_2309002_r1967.zip target=_top><nobr>http://<wbr>ux.<wbr>getuploa<wbr>der.<wbr>com/<wbr>sakura_e<wbr>ditor/<wbr>download<wbr>/<wbr>29/<wbr>PatchUni<wbr>code_230<wbr>9002_r19<wbr>67.<wbr>zip</nobr></a><br><br>2文字の行を前の行に連結したいなら、以下のような感じで。<br>置換前 \r\n(..)(?=\r\n)<br>置換後 $1<br></div></section>
+    <ul><li><section><h1 id=7889>
+    <span class="no">[7889]</span>
+    <a class="thread-title" href="#7889">Re2:置換でつなぎたいのです。</a>
+    <span class="author">teruak_ark</span>
+    <time datetime="2014-09-23T14:48:38">2014年09月23日 14:48</time></h1>
+    <div class="body">ありがとうございます。早速使ってみたいと思います<br><br>成功しました。感謝しています</div></section>
+    </li></ul></li></ul></li></ul></body></html>

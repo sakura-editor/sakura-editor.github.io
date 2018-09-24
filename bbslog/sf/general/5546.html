@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>CSVファイルのフィールド6だけを置換したい。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5546</span>
+    <a class="thread-title" href="5546.html#5546">CSVファイルのフィールド6だけを置換したい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5548</span>
+    <a class="thread-title" href="5546.html#5548">RE: CSVファイルのフィールド6だけを置換したい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5552</span>
+    <a class="thread-title" href="5546.html#5552">Re2: CSVファイルのフィールド6だけを置換したい。</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">5551</span>
+    <a class="thread-title" href="5546.html#5551">Re:CSVファイルのフィールド6だけを置換したい。</a></div>
+    </li><li><div class="list-title">
+    <span class="no">5553</span>
+    <a class="thread-title" href="5546.html#5553">Re: CSVファイルのフィールド6だけを置換したい。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5554</span>
+    <a class="thread-title" href="5546.html#5554">うごきました。</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5546>
+    <span class="no">[5546]</span>
+    <a class="thread-title" href="#5546">CSVファイルのフィールド6だけを置換したい。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2006-10-31T20:19:34">2006年10月31日 20:19</time></h1>
+    <div class="body">フィールド6だけ,BritainをUnited Kingdomに置換えしたい。(GAWK マニュアル August 1992より)<br>gawkファイル BEGIN{FS=",";OFS=","}{gsub(/Britain/,"United Kingdom",$6); print $0}<br>gawk1行      gawk 'BEGIN{FS=",";OFS=","}{gsub(/Britain/,"United Kingdom",$6); print $0}' csv.csv<br>             上の行は,Invalid charがでます。<br>perlファイル 理解不足とa2pで対応できるため省略<br>perl1行      理解不足のため省略<br>サクラエディタでなんとかなりますか？ サクラエディタの背景色黄色お気に入りです。<br>置換前(N) ?????????<br>置換後(N) ?????????<br>よろしくお願いします。<br></div></section>
+    <ul><li><section><h1 id=5548>
+    <span class="no">[5548]</span>
+    <a class="thread-title" href="#5548">RE: CSVファイルのフィールド6だけを置換したい。</a>
+    <span class="author">すい</span>
+    <time datetime="2006-11-01T01:40:45">2006年11月01日 01:40</time></h1>
+    <div class="body">&gt;フィールド6だけ,BritainをUnited Kingdomに置換えしたい。(GAWK マニュアル August 1992より)<br><br>正規表現ONで<br><br>置換前(N)：^((("[^"]*"|[^",]*),){5})Britain,<br>置換後(P)：$1United Kingdom,<br><br>で置換、とか？<br></div></section>
+    <ul><li><section><h1 id=5552>
+    <span class="no">[5552]</span>
+    <a class="thread-title" href="#5552">Re2: CSVファイルのフィールド6だけを置換したい。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-11-01T07:38:16">2006年11月01日 07:38</time></h1>
+    <div class="body">&gt; 正規表現ONで<br>&gt; <br>&gt; 置換前(N)：^((("[^"]*"|[^",]*),){5})Britain,<br>&gt; 置換後(P)：$1United Kingdom,<br><br>(N)→^(( *".*?",| *[^"][^,]*,){5})Britain,<br>sample:<br>"a " ,a",b,c,d,e,Britain,<br><br>括弧を減らしたりもしてます。</div></section>
+    </li></ul></li><li><section><h1 id=5551>
+    <span class="no">[5551]</span>
+    <a class="thread-title" href="#5551">Re:CSVファイルのフィールド6だけを置換したい。</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-11-01T06:25:27">2006年11月01日 06:25</time></h1>
+    <div class="body">▼ ろろさん<br>&gt; サクラエディタでなんとかなりますか？ サクラエディタの背景色黄色お気に入りです。<br>&gt; 置換前(N) ?????????<br>&gt; 置換後(N) ?????????<br><br>-------------------------<br>a,b,c,d,e,1USA2SAUSA3,g,h<br>-------------------------<br><br>(N)→^(([^,]*,){5}[^,]*)USA([^,]*?,)<br>(P)→$1United States$3<br><br>(N)→^(([^,]*,){5}[^,]*?)USA([^,]*,)<br>(P)→$1United States$3<br><br>USAが２個以上有ってもいい方法見つかりませんね,perlの場合。</div></section>
+    </li><li><section><h1 id=5553>
+    <span class="no">[5553]</span>
+    <a class="thread-title" href="#5553">Re: CSVファイルのフィールド6だけを置換したい。</a>
+    <span class="author">しみづ</span>
+    <time datetime="2006-11-02T17:42:42">2006年11月02日 17:42</time></h1>
+    <div class="body">&gt;gawkファイル BEGIN{FS=",";OFS=","}{gsub(/Britain/,"United Kingdom",$6); print $0}<br><br>&gt;             上の行は,Invalid charがでます。<br><br>gawkファイル BEGIN{FS=",";OFS=",";}{gsub(/Britain/,"United Kingdom",$6); print $0;}<br> としたら、どうなるでしょう。<br></div></section>
+    <ul><li><section><h1 id=5554>
+    <span class="no">[5554]</span>
+    <a class="thread-title" href="#5554">うごきました。</a>
+    <span class="author">ろろ</span>
+    <time datetime="2006-11-02T18:44:54">2006年11月02日 18:44</time></h1>
+    <div class="body">▼ しみづさん<br>gawk "BEGIN{FS=\",\";OFS=\",\"}{gsub(/Britain/,\"United Kingdom\",$6); print $0}" csv.csv<br>ありがとうございました。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

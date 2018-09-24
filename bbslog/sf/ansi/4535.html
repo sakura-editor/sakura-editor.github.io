@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>前回の置換前文字列を引き継ぐ | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">4535</span>
+    <a class="thread-title" href="4535.html#4535">前回の置換前文字列を引き継ぐ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4536</span>
+    <a class="thread-title" href="4535.html#4536">Re:前回の置換前文字列を引き継ぐ</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4546</span>
+    <a class="thread-title" href="4535.html#4546">Re2:前回の置換前文字列を引き継ぐ</a></div>
+    </li></ul></li><li><div class="list-title">
+    <span class="no">4538</span>
+    <a class="thread-title" href="4535.html#4538">カーソル位置の文字列を拾う動作の変更について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4540</span>
+    <a class="thread-title" href="4535.html#4540">RE: カーソル位置の文字列を拾う動作の変更について</a></div>
+    </li><li><div class="list-title">
+    <span class="no">4541</span>
+    <a class="thread-title" href="4535.html#4541">Re:カーソル位置の文字列を拾う動作の変更について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4543</span>
+    <a class="thread-title" href="4535.html#4543">Re2:カーソル位置の文字列を拾う動作の変更について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4548</span>
+    <a class="thread-title" href="4535.html#4548">前回の検索文字列を引き継ぐ</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">4561</span>
+    <a class="thread-title" href="4535.html#4561">RE: カーソル位置の文字列を拾う動作の変更について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">4563</span>
+    <a class="thread-title" href="4535.html#4563">Re2: カーソル位置の文字列を拾う動作の変更について</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=4535>
+    <span class="no">[4535]</span>
+    <a class="thread-title" href="#4535">前回の置換前文字列を引き継ぐ</a>
+    <span class="author">maru</span>
+    <time datetime="2006-08-07T21:47:02">2006年08月07日 21:47</time></h1>
+    <div class="body">そういえば、ryojiさんの「前回の置換前文字列を引き継ぐ」＠ふぁんくらぶ#97って、自然消滅？</div></section>
+    <ul><li><section><h1 id=4536>
+    <span class="no">[4536]</span>
+    <a class="thread-title" href="#4536">Re:前回の置換前文字列を引き継ぐ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-08-07T23:33:41">2006年08月07日 23:33</time></h1>
+    <div class="body">▼ maruさん<br>&gt; そういえば、ryojiさんの「前回の置換前文字列を引き継ぐ」＠ふぁんくらぶ#97って、自然消滅？<br>えっと、この次あたり Patches に submit するかもです。<br>オプション追加で Help 作成にも影響してくると思いますが、<br>人´∀｀)</div></section>
+    <ul><li><section><h1 id=4546>
+    <span class="no">[4546]</span>
+    <a class="thread-title" href="#4546">Re2:前回の置換前文字列を引き継ぐ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-08-19T18:37:33">2006年08月19日 18:37</time></h1>
+    <div class="body">&gt; えっと、この次あたり Patches に submit するかもです。<br>Patches#1535331 「ヘルプIDの不足分穴埋め」と sakura.rc で競合が発生することもあるので、本件については 1535331 が終わった後にしようかと思ってます。</div></section>
+    </li></ul></li><li><section><h1 id=4538>
+    <span class="no">[4538]</span>
+    <a class="thread-title" href="#4538">カーソル位置の文字列を拾う動作の変更について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-08-09T02:08:39">2006年08月09日 02:08</time></h1>
+    <div class="body">新しく「前回の置換前文字列を引き継ぐ」ようなオプションで動作する場合は別として、従来の、検索時に非選択ならカーソル位置の文字列を拾って検索文字とする動作について。<br><br>現状、検索文字はスペース、タブ上だとスペースやタブ、行末だと空になっています。<br>（例外としてgrepでは行末なら履歴文字列が入ります）<br>これを、スペース、タブ、行末なら履歴文字列を引き継ぐようにしてもいいかなと思うのですが、皆さんいかがでしょうか？<br><br>ちなみに、<br>VC6のIDEでは、スペース、タブ上ではスペースやタブ、行末ではカーソル前の文字列<br>VC8のIDEでは、スペース、タブ上では履歴文字列、行末ではカーソル前の文字列<br>が入るようになっているみたいです。</div></section>
+    <ul><li><section><h1 id=4540>
+    <span class="no">[4540]</span>
+    <a class="thread-title" href="#4540">RE: カーソル位置の文字列を拾う動作の変更について</a>
+    <span class="author">かろと</span>
+    <time datetime="2006-08-12T10:55:21">2006年08月12日 10:55</time></h1>
+    <div class="body">&gt;現状、検索文字はスペース、タブ上だとスペースやタブ、行末だと空になっています。<br>&gt;（例外としてgrepでは行末なら履歴文字列が入ります）<br>&gt;これを、スペース、タブ、行末なら履歴文字列を引き継ぐようにしてもいいかなと思うのですが、皆さんいかがでしょうか？<br><br>私もカーソル位置からスペースやタブを拾って検索したいと思ったことないので、同意します。<br>sakura的には、特に反対意見もでないようなら実装して、ユーザからの反応を待つ。<br>ということでいいんではないかと思います。<br></div></section>
+    </li><li><section><h1 id=4541>
+    <span class="no">[4541]</span>
+    <a class="thread-title" href="#4541">Re:カーソル位置の文字列を拾う動作の変更について</a>
+    <span class="author">じゅうじ</span>
+    <time datetime="2006-08-12T16:04:34">2006年08月12日 16:04</time></h1>
+    <div class="body">それって実は、VisualStudio (MDE) に仕様を合わせよう、と言う話ですね。<br>非選択状態なら、履歴から持ってくる仕様の方には、なりませんか。</div></section>
+    <ul><li><section><h1 id=4543>
+    <span class="no">[4543]</span>
+    <a class="thread-title" href="#4543">Re2:カーソル位置の文字列を拾う動作の変更について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-08-14T23:09:29">2006年08月14日 23:09</time></h1>
+    <div class="body">▼ じゅうじさん<br>&gt; それって実は、VisualStudio (MDE) に仕様を合わせよう、と言う話ですね。<br>&gt; 非選択状態なら、履歴から持ってくる仕様の方には、なりませんか。<br><br>わかりにくくてすいません。<br>非選択状態での動作について、履歴から持ってくる／カーソル位置から拾う、をオプションで選択できるようにする。<br>履歴から持ってくるように指定したときは必ず履歴から持ってくる（MS Word風に）。<br>カーソル位置から持ってくるように指定したときでも位置によっては履歴から持ってくる（VS 風に）。<br>という具合にしてみようか、ということです。</div></section>
+    <ul><li><section><h1 id=4548>
+    <span class="no">[4548]</span>
+    <a class="thread-title" href="#4548">前回の検索文字列を引き継ぐ</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-08-23T23:21:28">2006年08月23日 23:21</time></h1>
+    <div class="body">&gt; 非選択状態での動作について、履歴から持ってくる／カーソル位置から拾う、をオプションで選択できるようにする。<br>&gt; 履歴から持ってくるように指定したときは必ず履歴から持ってくる（MS Word風に）。<br>&gt; カーソル位置から持ってくるように指定したときでも位置によっては履歴から持ってくる（VS 風に）。<br>&gt; という具合にしてみようか、ということです。<br><br>Patches#1545323 にパッチをUpしました。<br>検索/置換/grepの各画面共通オプションにしています。</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=4561>
+    <span class="no">[4561]</span>
+    <a class="thread-title" href="#4561">RE: カーソル位置の文字列を拾う動作の変更について</a>
+    <span class="author">げんた</span>
+    <time datetime="2006-09-02T01:18:55">2006年09月02日 01:18</time></h1>
+    <div class="body">&gt;現状、検索文字はスペース、タブ上だとスペースやタブ、行末だと空になっています。<br>&gt;これを、スペース、タブ、行末なら履歴文字列を引き継ぐ<br>よくやるんですが<br><br>search_word| or something<br>と単語の後ろにカーソルがある場合に現在はスペースを取り込んでしまいますよね．<br>この場合，履歴じゃなくて直前の単語を取り込んで欲しいと思うことがあります．<br>皆さんはそういうときありませんか？<br><br>自分としては履歴を検索したいことはあまり無いですね．少し前に使った正規表現を再利用するときくらいでしょうか．<br>特に，直前のパターンをそのまま検索するならF3を押せば済む話ですし．<br></div></section>
+    <ul><li><section><h1 id=4563>
+    <span class="no">[4563]</span>
+    <a class="thread-title" href="#4563">Re2: カーソル位置の文字列を拾う動作の変更について</a>
+    <span class="author">ryoji</span>
+    <time datetime="2006-09-02T17:07:47">2006年09月02日 17:07</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; search_word| or something<br>&gt; と単語の後ろにカーソルがある場合に現在はスペースを取り込んでしまいますよね．<br>&gt; この場合，履歴じゃなくて直前の単語を取り込んで欲しいと思うことがあります．<br>&gt; 皆さんはそういうときありませんか？<br><br>自分は今までは特にそういうことはなかったです。<br>VSでは単語の後にカーソルがある場合も直前の単語を取り込むようになってますね。<br>これも今回のことで調べてみているうちに初めて気づいたくらいです。<br>これもやっぱりVSにあわせるのが良いのでしょうね。<br><br>ただ、これについてはダイレクトタグジャンプや外部ヘルプのトピック検索での単語取り込みにも影響するので、Patches#1545323 で操作している箇所よりも奥のほうに手を入れる必要がありそうです。<br><br>&gt; 自分としては履歴を検索したいことはあまり無いですね．少し前に使った正規表現を再利用するときくらいでしょうか．<br>&gt; 特に，直前のパターンをそのまま検索するならF3を押せば済む話ですし．<br><br>上記の単語末カーソルの件も含めて、あまりちょくちょく挙動が変わるのは良くないので、従来互換のほうは従来どおりということにしてパッチを作り直してみようかと思います。<br>カーソル位置から文字を引く動作の変更／改善については別途。<br><br>以下、余談。<br>自分は実は今回のオプション化にはあまりこだわってなくて、VS風／Word風どちらか一方だけあればどっちでも構わないのですが...<br>オプションで好きなほうを選べるようになってるのは、他では JmEditor くらいでしょうか。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5629</span>
+    <a class="thread-title" href="5629.html#5629">Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5630</span>
+    <a class="thread-title" href="5629.html#5630">Re:Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5631</span>
+    <a class="thread-title" href="5629.html#5631">Re2:Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5632</span>
+    <a class="thread-title" href="5629.html#5632">Re3:Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5638</span>
+    <a class="thread-title" href="5629.html#5638">Re4:Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">5816</span>
+    <a class="thread-title" href="5629.html#5816">Re2:Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5629>
+    <span class="no">[5629]</span>
+    <a class="thread-title" href="#5629">Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a>
+    <span class="author">arigayas</span>
+    <time datetime="2009-12-02T12:39:27">2009年12月02日 12:39</time></h1>
+    <div class="body">サクラエディタ 1.6.4 を Windows 7 Pro (64bit)で使ってます。<br><br>1.サクラエディタを最大化していない状態で起動してタブバーを表示状態にします。<br>2.複数のファイルを開きます。もしくは、新規作成を複数回します。<br>3.(Windows 7 の新機能なんですが) 画面の上部もしくは下部までウィンドウの端をドラッグしてリサイズします。<br>4.タブを移動すると3.のサイズに戻ります。<br><br>他のタブへ移動してもリサイズが解除されないようにして欲しいです。</div></section>
+    <ul><li><section><h1 id=5630>
+    <span class="no">[5630]</span>
+    <a class="thread-title" href="#5630">Re:Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-02T22:39:30">2009年12月02日 22:39</time></h1>
+    <div class="body">既に&gt;&gt;unicode:1029の別件に書いたとおり、Win 7 発売前からわかっていたことなのですが、残念ながら、現状のsakuraでのタブモード実装(←実現方法がやや特殊)とAero Snapとはどうにも相性が悪くて今のところ適切な解決策が見つかっていません。<br><br>※Aero Snapでは、4.で3.のサイズには戻らず、かつ、そのあとタイトルバーを下方向にドラッグしたら元のサイズに戻る、など、従来Windowsには無かった挙動になる必要があるけど、そういうのは現状のタブモード実装ではちょっとお手上げです。</div></section>
+    <ul><li><section><h1 id=5631>
+    <span class="no">[5631]</span>
+    <a class="thread-title" href="#5631">Re2:Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a>
+    <span class="author">arigayas</span>
+    <time datetime="2009-12-04T20:45:07">2009年12月04日 20:45</time></h1>
+    <div class="body">プログラミングに詳しくないんですが、<br>ウィンドウがリサイズしたらすべてのウィンドウに<br>現在のウィンドウサイズを通達して<br>そのサイズに追従するような仕組みを入れるのはどうかなぁ<br>と思ったんですがいかがでしょうか？</div></section>
+    <ul><li><section><h1 id=5632>
+    <span class="no">[5632]</span>
+    <a class="thread-title" href="#5632">Re3:Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-12-04T22:21:04">2009年12月04日 22:21</time></h1>
+    <div class="body">えぇ、と。<br><br>単に上下いっぱいに画面を広げ、タブ切り替え時にはそのサイズに追従させる、というだけならAero Snapを使わずとも、[ウィンドウ]-[縦方向に最大化]の仕組みで既にできています。<br><br>前のコメントにも少し書きましたが、Aero Snapで縦方向最大化した状態というのは、タイトルバーを下方向にドラッグしたり、[Windowsロゴ}+[↓]キーを使うことで、Snap前のサイズに戻せるという、従来に無い特性を持ったサイズです。（単に上下いっぱいにサイズを広げたのとは、見た目は同じでも、まるで違います）<br>その特殊サイズになったことをWindowsは教えてくれない（特殊サイズにリサイズされたことを知る術がない）ようですし、通常サイズをその特殊サイズに変更するAPIも今のところ見当たらないので、できないでいる、というコトです。やり方（Win 7の隠し機能？）が見つかるのを待ち、見つけた時点で対応したいなぁ...、と。<br>実現可能なAPIを知ってるなら是非教えてください。やりますから。(^^;<br><br>※タブバーの仕組みそのものを書き直すことでもできるのでしょうが、それではちょっと労力がかかりすぎる。<br><br>なんか、うまく説明できないので理解しにくいかもしれませんが...</div></section>
+    <ul><li><section><h1 id=5638>
+    <span class="no">[5638]</span>
+    <a class="thread-title" href="#5638">Re4:Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a>
+    <span class="author">arigayas</span>
+    <time datetime="2009-12-12T05:28:03">2009年12月12日 05:28</time></h1>
+    <div class="body">▼ ryojiさん<br>返事が遅くなって済みません。<br>現状ではWindowsがサイズ変更の情報を教えてくれないため<br>難しいということで了解しました</div></section>
+    </li></ul></li></ul></li><li><section><h1 id=5816>
+    <span class="no">[5816]</span>
+    <a class="thread-title" href="#5816">Re2:Windows 7 でタブバーを表示状態でリサイズしてタブを移動すると元のサイズに戻る</a>
+    <span class="author">同じく</span>
+    <time datetime="2018-03-19T09:51:23">2018年03月19日 09:51</time></h1>
+    <div class="body">▼ ryojiさん<br>&gt; 既に&gt;&gt;unicode:1029の別件に書いたとおり、Win 7 発売前からわかっていたことなのですが、残念ながら、現状のsakuraでのタブモード実装(←実現方法がやや特殊)とAero Snapとはどうにも相性が悪くて今のところ適切な解決策が見つかっていません。<br>&gt; <br>&gt; ※Aero Snapでは、4.で3.のサイズには戻らず、かつ、そのあとタイトルバーを下方向にドラッグしたら元のサイズに戻る、など、従来Windowsには無かった挙動になる必要があるけど、そういうのは現状のタブモード実装ではちょっとお手上げです。<br><br>同じことを書こうとしましたが、ここを見ました。<br>なんとか頑張ってほしいです。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

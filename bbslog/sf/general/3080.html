@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現について要望 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">3080</span>
+    <a class="thread-title" href="3080.html#3080">正規表現について要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3086</span>
+    <a class="thread-title" href="3080.html#3086">正規表現について要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3088</span>
+    <a class="thread-title" href="3080.html#3088">Re: 正規表現について要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3101</span>
+    <a class="thread-title" href="3080.html#3101">Re2: 正規表現について要望</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">3103</span>
+    <a class="thread-title" href="3080.html#3103">Re3: 正規表現について要望</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=3080>
+    <span class="no">[3080]</span>
+    <a class="thread-title" href="#3080">正規表現について要望</a>
+    <span class="author">かくる</span>
+    <time datetime="2003-07-16T19:01:44">2003年07月16日 19:01</time></h1>
+    <div class="body">サクラエディタは検索や置換等のときに<br>正規表現を使ったとき、<br>行単位でしか検索できないみたいですね。<br>改行をこえて正規表現を使いたいです。</div></section>
+    <ul><li><section><h1 id=3086>
+    <span class="no">[3086]</span>
+    <a class="thread-title" href="#3086">正規表現について要望</a>
+    <span class="author">かくる</span>
+    <time datetime="2003-07-20T19:18:15">2003年07月20日 19:18</time></h1>
+    <div class="body">レスが無い・・・<br>他の人は必要ないと思うのかな。<br>個人的にはできるとかなりうれしい、<br>ていうか、ぶっちゃけできないと結構困るんだよな・・</div></section>
+    <ul><li><section><h1 id=3088>
+    <span class="no">[3088]</span>
+    <a class="thread-title" href="#3088">Re: 正規表現について要望</a>
+    <span class="author">げんた</span>
+    <time datetime="2003-07-21T01:33:05">2003年07月21日 01:33</time></h1>
+    <div class="body">&gt;レスが無い・・・<br>じゃあマジレスしておきます．<br><br>&gt;他の人は必要ないと思うのかな。<br>欲しいと思っている人は結構居ると思います．これまでも何度か要望が出ております．<br>しかし難しそうなので放置中．<br><br>エディタは1行を1単位としてデータをメモリに持っています．<br>正規表現エンジンのBREGEXP.DLLは1続きのメモリに対して正規表現マッチを行うので1行単位で渡すようにしています．<br><br>BREGEXP.DLLのままで複数行を処理するためには編集中のデータを全部格納できるだけのメモリを用意して一度に渡さないといけないですが，メモリを2倍必要とするし毎回全データをコピーするのは非効率のでこれはやりたくない．となると，正規表現処理部の入れ替えを考えないといけない．連続しないバッファからデータを随時供給しつつパターンを探していくライブラリどこかにないですかねぇ．<br><br>&gt;できないと結構困る<br>http://www2.famille.ne.jp/~akio1998/ おっ，これ使えそう．<br></div></section>
+    <ul><li><section><h1 id=3101>
+    <span class="no">[3101]</span>
+    <a class="thread-title" href="#3101">Re2: 正規表現について要望</a>
+    <span class="author">かくる</span>
+    <time datetime="2003-07-24T11:58:35">2003年07月24日 11:58</time></h1>
+    <div class="body">▼ げんたさん<br>なるほど・・・<br>わざとこういう仕様にしてるのかと思ったら<br>難しいのでこういう仕様になってるのですね。<br>ライブラリの問題もあるのか・・・<br><br>&gt; &gt;できないと結構困る<br>&gt; http://www2.famille.ne.jp/~akio1998/ おっ，これ使えそう．<br>よさそう！と思ったらシェアウェア・・・<br>とりあえず他のエディタと併用して行ってみます。<br><br>しかし、単体で出来ないと不便なんで、<br>複数行に正規表現が使えるようになるのを期待して待ってます。</div></section>
+    <ul><li><section><h1 id=3103>
+    <span class="no">[3103]</span>
+    <a class="thread-title" href="#3103">Re3: 正規表現について要望</a>
+    <span class="author">ｔｙ</span>
+    <time datetime="2003-07-24T13:32:44">2003年07月24日 13:32</time></h1>
+    <div class="body">だったら、これのほうが良いのではないかと。<br>http://www.geocities.co.jp/SiliconValley-PaloAlto/8519/fwcont/multirep.html<br>（使って無いけど）<br><br>実は、http://www2.famille.ne.jp/~akio1998/　のアプリ、昔購入したのですが、複数行置換しか特徴が無く、既に開発停止中。<br>と思ったら、停止してしばらく、そいつから出会い系のメールが来た時には、切れそうになりました。<br>ですので、お勧めしません。ここまで切れそうになったアプリは、初めてでした。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

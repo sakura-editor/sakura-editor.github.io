@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>名前を付けて保存でエラーになることがある | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2079</span>
+    <a class="thread-title" href="2079.html#2079">名前を付けて保存でエラーになることがある</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2080</span>
+    <a class="thread-title" href="2079.html#2080">Re: 名前を付けて保存でエラーになることがある</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2081</span>
+    <a class="thread-title" href="2079.html#2081">Re2: 名前を付けて保存でエラーになることがある</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2082</span>
+    <a class="thread-title" href="2079.html#2082">Re2: 名前を付けて保存でエラーになることがある</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2083</span>
+    <a class="thread-title" href="2079.html#2083">Re3: 名前を付けて保存でエラーになることがある</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2079>
+    <span class="no">[2079]</span>
+    <a class="thread-title" href="#2079">名前を付けて保存でエラーになることがある</a>
+    <span class="author">syat</span>
+    <time datetime="2013-12-25T09:32:43">2013年12月25日 09:32</time></h1>
+    <div class="body">SVN最新ので名前を付けて保存すると落ちる時があります。<br>再現条件がはっきりしないのですが、対括弧の強調ありで、改行コード変換をしたときに落ちやすいようです。<br><br>スタックトレース：<br>&gt;&#9;sakura.exe!CNativeW::GetSizeOfChar(const wchar_t * pData=0xabababab, int nDataLen=4, int nIdx=0)  行 213 + 0x6 バイト<br> &#9;sakura.exe!CLayoutMgr::LogicToLayout(const CStrictPoint&lt;... &gt; &amp; ptLogic={...}, CStrictPoint&lt;... &gt; * pptLayout=0x0018a1a0, CStrictInteger&lt;1,1,1,0,1&gt; nLineHint={...})  行 859 + 0x1f バイト<br> &#9;sakura.exe!CEditView::DrawBracketPair(bool bDraw=false)  行 143<br> &#9;sakura.exe!CCaret::MoveCursor(CStrictPoint&lt;... &gt; ptWk_CaretPos={...}, const CStrictPoint&lt;... &gt; * pptWk_CaretPosLogic=0x0018ae54, bool bScroll=false, int nCaretMarginRate=20, bool bUnderLineDoNotOFF=false, bool bVertLineDoNotOFF=false)  行 373<br> &#9;sakura.exe!CCaret::MoveCursorFastMode(const CStrictPoint&lt;... &gt; &amp; ptWk_CaretPosLogic={...})  行 398 + 0x24 バイト<br> &#9;sakura.exe!CEditView::ReplaceData_CEditView3(C<br>RangeBase&lt;CStrictPoint&lt;... &gt; &gt; sDelRange={...}, std::vector&lt;CLineData,std::allocator&lt;CLineData&gt; &gt; * pcmemCopyOfDeleted=[...](), std::vector&lt;CLineData,std::allocator&lt;CLineData&gt; &gt; * pInsData=[1]({cmemLine={...} nSeq=4 }), bool bRedraw=false, COpeBlk * pcOpeBlk=0x0278fde8, int nDelSeq=4, int * pnInsSeq=0x00000000, bool bFastMode=true, const CRangeBase&lt;CStrictPoint&lt;... &gt; &gt; * psDelRangeLogicFast=0x0018b3f8)  行 949<br> &#9;sakura.exe!CEditView::ReplaceData_CEditView(co<br>nst CRangeBase&lt;CStrictPoint&lt;... &gt; &gt; &amp; sDelRange={...}, const wchar_t * pInsData=0x009ba638, CStrictInteger&lt;0,1,1,1,1&gt; nInsDataLen={...}, bool bRedraw=false, COpeBlk * pcOpeBlk=0x0278fde8, bool bFastMode=true, const CRangeBase&lt;CStrictPoint&lt;... &gt; &gt; * psDelRangeLogicFast=0x0018b3f8)  行 699<br> &#9;sakura.exe!CEditView::ReplaceData_CEditView2(c<br>onst CRangeBase&lt;CStrictPoint&lt;... &gt; &gt; &amp; sDelRange={...}, const wchar_t * pInsData=0x009ba638, CStrictInteger&lt;0,1,1,1,1&gt; nInsDataLen={...}, bool bRedraw=false, COpeBlk * pcOpeBlk=0x0278fde8, bool bFastMode=true)  行 716<br> &#9;sakura.exe!CDocVisitor::SetAllEol(CEol cEol={...})  行 51<br> &#9;sakura.exe!CSaveAgent::OnBeforeSave(const SSaveInfo &amp; sSaveInfo={...})  行 107<br> &#9;sakura.exe!CDocSubject::NotifyBeforeSave(const SSaveInfo &amp; a={...})  行 116 + 0x73 バイト<br></div></section>
+    <ul><li><section><h1 id=2080>
+    <span class="no">[2080]</span>
+    <a class="thread-title" href="#2080">Re: 名前を付けて保存でエラーになることがある</a>
+    <span class="author">もか</span>
+    <time datetime="2013-12-25T17:06:14">2013年12月25日 17:06</time></h1>
+    <div class="body">MoveCursorFastMode -&gt; LogicToLayoutですか。<br>解決策は、MoveCursorFastModeでMoveCursorを呼ばず、単純に座標設定だけにするとかでしょうか。<br></div></section>
+    <ul><li><section><h1 id=2081>
+    <span class="no">[2081]</span>
+    <a class="thread-title" href="#2081">Re2: 名前を付けて保存でエラーになることがある</a>
+    <span class="author">もか</span>
+    <time datetime="2013-12-25T21:45:43">2013年12月25日 21:45</time></h1>
+    <div class="body">パッチを登録しました。<br><a href=https://sourceforge.net/p/sakura-editor/patchunicode/722/ target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>722/<wbr></nobr></a><br></div></section>
+    </li><li><section><h1 id=2082>
+    <span class="no">[2082]</span>
+    <a class="thread-title" href="#2082">Re2: 名前を付けて保存でエラーになることがある</a>
+    <span class="author">syat</span>
+    <time datetime="2013-12-25T22:04:24">2013年12月25日 22:04</time></h1>
+    <div class="body">▼ もかさん<br>&gt; MoveCursorFastMode -&gt; LogicToLayoutですか。<br>&gt; 解決策は、MoveCursorFastModeでMoveCursorを呼ばず、単純に座標設定だけにするとかでしょうか。<br><br>LayoutToLogicExのGetSizeOfChar（落ちてるところ）の手前でGetLineStrを呼んでいますが、その中でpLayout-&gt;GetDocLineRef()内のCNativeが壊れているor未初期化でおかしなポインタを返しているようです。<br>うーん、わからん。</div></section>
+    <ul><li><section><h1 id=2083>
+    <span class="no">[2083]</span>
+    <a class="thread-title" href="#2083">Re3: 名前を付けて保存でエラーになることがある</a>
+    <span class="author">もか</span>
+    <time datetime="2013-12-26T01:55:32">2013年12月26日 01:55</time></h1>
+    <div class="body">改行を改行に置換するような処理の場合、<br>CSearchAgent::ReplaceDataの中では、改行がまず削除されて次の行と一度連結して、<br>次の行が削除された後、再度行が分割されて、新しくCDocLineが生成されます。<br>CLayoutMgr::GetLineStrの<br>(*ppcLayoutDes)-&gt;m_pCDocLine<br>は、fastModeの途中ではCLayoutMgrが更新されないので、<br>その削除されたCDocLineを参照したままで、その先で落ちてるんだと思います。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

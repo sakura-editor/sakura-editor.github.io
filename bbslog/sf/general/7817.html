@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>トークンの区切り | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7817</span>
+    <a class="thread-title" href="7817.html#7817">トークンの区切り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7818</span>
+    <a class="thread-title" href="7817.html#7818">Re:トークンの区切り</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7823</span>
+    <a class="thread-title" href="7817.html#7823">Re2:トークンの区切り</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7817>
+    <span class="no">[7817]</span>
+    <a class="thread-title" href="#7817">トークンの区切り</a>
+    <span class="author">齊藤</span>
+    <time datetime="2014-05-06T21:19:31">2014年05月06日 21:19</time></h1>
+    <div class="body">Scheme や Lisp 系の言語を読むのにサクラエディタを使うことがあるのですが、これらの言語は識別子としてマイナス、ピリオド、プラス、アンパサンドといった記号や漢字を英字と同様に使える場合があり、単に強調キーワードを指定しただけではおかしな色分けになってしまいます。<br>例えば let という語を強調キーワードに設定すると let-syntax の let の部分だけが強調されるような次第です。<br>現状のサクラエディタでは正規表現キーワードで頑張るしかないのでしょうか？</div></section>
+    <ul><li><section><h1 id=7818>
+    <span class="no">[7818]</span>
+    <a class="thread-title" href="#7818">Re:トークンの区切り</a>
+    <span class="author">syat</span>
+    <time datetime="2014-05-07T00:43:13">2014年05月07日 00:43</time></h1>
+    <div class="body">▼ 齊藤さん<br>バージョン2以降ではキーワードに記号を使用できるため、強調キーワードに let-syntax を追加すれば全体が強調されるはずです。<br>キーワードの始まりが同じなら、より長いほうを優先して強調します。<br></div></section>
+    <ul><li><section><h1 id=7823>
+    <span class="no">[7823]</span>
+    <a class="thread-title" href="#7823">Re2:トークンの区切り</a>
+    <span class="author">齊藤</span>
+    <time datetime="2014-05-07T18:24:50">2014年05月07日 18:24</time></h1>
+    <div class="body">いや、そうではなくて、 let という名前だけを強調したいのに let-syntax の let の部分も強調されてしまうのを抑制したいというような話です。<br>強調キーワードに let があっても letter や lettuce が強調されたりしませんよね。 let-syntax もそれと同様の状態になって欲しいということです。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

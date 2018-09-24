@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>bccでのコンパイル | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">676</span>
+    <a class="thread-title" href="676.html#676">bccでのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">677</span>
+    <a class="thread-title" href="676.html#677">Re:bccでのコンパイル</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">701</span>
+    <a class="thread-title" href="676.html#701">ファイル名のこと</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=676>
+    <span class="no">[676]</span>
+    <a class="thread-title" href="#676">bccでのコンパイル</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-09-11T02:12:58">2001年09月11日 02:12</time></h1>
+    <div class="body">RC7.1ではbccでコンパイルしているようですが、これでVC++をもっていなくてもC Magazineの付録CDや直接Downloadして<br>bccを入手できるので、開発者への間口は広くなったと思います。<br>しかし実際にはbccプログラマからのアプローチはまだないようです。<br>一つにはどうやってサクラエディタ用のコンパイル環境を整えるかがはっきりしていないことがあると思います。前にTiki氏が自分のHPにその方法を紹介していましたが、あろか氏の修正でまた少し状況が変わっていると思うので、この辺をFAQに書いておくともっと開発ユーザが出てくるのではないでしょうか？<br>はっきりいって今はGPL化問題でドツボにはまった感があるし、ここのところ目立った機能実現もなく開発ペースがかなりスローダウンしている<br>気がします。bcc開発ユーザがどしどし参入することに期待、ですね。<br>またRC7.1ではdllとexeの分離をやめて一体化していますが、Tiki氏がそうすることでコンパイルできると書いていたのを見た時から、その方がファイルサイズも小さいし、アップデートする手間も楽なのでいいのではないか、と思ってました。今後はそうするほうがいいと思います。<br>それとファイル名に関して。_srcは最後ではなく前の方に書くとバイナリとの区別がファイル名省略時にも判別しやすいと思いますが、どんなもんでしょう。sakura_src_・・・のようにです。<br>Snapshotのフォルダではファイル名の最後の方が省略されていまうからです。もっとも最近こっちは更新されてませんけど。ファイル名の省略表示はDownloadしたファイルに対しても言えることなのでこの変更は無駄ではないと思います。</div></section>
+    <ul><li><section><h1 id=677>
+    <span class="no">[677]</span>
+    <a class="thread-title" href="#677">Re:bccでのコンパイル</a>
+    <span class="author">あろか</span>
+    <time datetime="2001-09-11T06:05:16">2001年09月11日 06:05</time></h1>
+    <div class="body">▼ じぇぷろさん<br>&gt; 一つにはどうやってサクラエディタ用のコンパイル環境を整えるかがはっきりしていないことがあると思います。前にTiki氏が自分のHPにその方法を紹介していましたが、あろか氏の修正でまた少し状況が変わっていると思うので、この辺をFAQに書いておくともっと開発ユーザが出てくるのではないでしょうか？<br>私の修正の主な点は以下の３点です。<br>*GNU MAKE→BCCのMAKEに変更。<br>*手作業でやっていた.rcの修正を自動化<br>*リンク、その他の作業を一つのmakefileに突っ込んだ。<br>Borland C++は5.5.1を普通にインストールしてあります。初期の5.5はリソースがリンクできません。<br><br>&gt; Snapshotのフォルダではファイル名の最後の方が省略されていまうからです。<br>snapshotの性格としては日付のほうが重要ではないかと？ソースかどうかはファイルサイズで予想ができたのであまり困らなかったです。いずれにしてもファイル名全体が見えないのは不便ですね。<br></div></section>
+    <ul><li><section><h1 id=701>
+    <span class="no">[701]</span>
+    <a class="thread-title" href="#701">ファイル名のこと</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-09-22T17:17:18">2001年09月22日 17:17</time></h1>
+    <div class="body">▼ あろかさん<br>&gt; ▼ じぇぷろ<br>&gt; &gt; Snapshotのフォルダではファイル名の最後の方が省略されていまうからです。<br>&gt; snapshotの性格としては日付のほうが重要ではないかと？ソースかどうかはファイルサイズで予想ができたのであまり困らなかったです。いずれにしてもファイル名全体が見えないのは不便ですね。<br>日付はもちろん重要ですが、同じ日に複数登録しない限り、時刻の情報は省略部分にかかっても問題ないはずです。<br>半角4文字_src(バイナリには付けないか,または_bin)を前に持っていっても隠れるのは時刻の部分だと思います。4文字が長いなら_s(や_b)でもいいでしょう。<br>自分はDLしたファイルのソースとバイナリをファイル名の一瞥で区別できるようにそうしてました。大きなアイコン表示ではいうまでもなく、小さなアイコンで詳細表示にしてもファイル名が長いと後ろが省略されるからです。ファイルサイズ欄は往々にして表示からはみ出ますし。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

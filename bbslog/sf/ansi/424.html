@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>作業結果をeグループに置きました | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">424</span>
+    <a class="thread-title" href="424.html#424">作業結果をeグループに置きました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">425</span>
+    <a class="thread-title" href="424.html#425">Re:作業結果をeグループに置きました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">436</span>
+    <a class="thread-title" href="424.html#436">Re2:作業結果をeグループに置きました</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">441</span>
+    <a class="thread-title" href="424.html#441">Re3:作業結果をeグループに置きました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">446</span>
+    <a class="thread-title" href="424.html#446">diffを使うときの注意</a></div>
+    </li></ul></li></ul></li><li><div class="list-title">
+    <span class="no">428</span>
+    <a class="thread-title" href="424.html#428">Re:作業結果をeグループに置きました</a></div>
+    </li><li><div class="list-title">
+    <span class="no">447</span>
+    <a class="thread-title" href="424.html#447">ファイルが足りない？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">449</span>
+    <a class="thread-title" href="424.html#449">Re: ファイルが足りない？</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">452</span>
+    <a class="thread-title" href="424.html#452">Re2: ファイルが足りない？</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=424>
+    <span class="no">[424]</span>
+    <a class="thread-title" href="#424">作業結果をeグループに置きました</a>
+    <span class="author">nakatani</span>
+    <time datetime="2001-06-23T20:18:32">2001年06月23日 20:18</time></h1>
+    <div class="body">sakura_2001-05-28_09_srcをもとに手を加えたファイルを<br>置いてみました　サイズが大きい・・・<br><br>既に修正済みの個所等があったらごめんなさい。<br>ひととおりテストはしましたが不具合があったらごめんなさい。<br><br>----------------------------------------<br>---------------------------------------<br>おおまかな作業内容<br><br>■単語単位の検索機能を追加<br>　・検索、置換、Grepのダイアログに単語単位で探す(W)を追加<br>　・検索文字の色分け部分を修正<br>　・Grep用のコマンドラインオプションを判別できるようにした<br>　・Grepでの単語単位の検索は実装していません。実装したい人はいませんか?<br>■外部コマンド実行<br>　・標準出力アウトプット用ウインドウがいっぱいできる不具合を修正<br>　・アウトプットウインドウから標準出力をコマンド実行するとまったく出力されない不具合を修正<br>　・アウトプット結果が正しくない不具合を少しだけ修正    まだおかしいかも。<br><br>■VisulaBasicのアウトライン解析機能を追加<br>■コマンドラインオプション仕様(Option.txt)をヘルプをもとにしてつくる<br><br>以上</div></section>
+    <ul><li><section><h1 id=425>
+    <span class="no">[425]</span>
+    <a class="thread-title" href="#425">Re:作業結果をeグループに置きました</a>
+    <span class="author">nakatani</span>
+    <time datetime="2001-06-23T20:23:00">2001年06月23日 20:23</time></h1>
+    <div class="body">diffやpatchは持ってるけど使い方がわかりません<br>修正してあるファイルを全部アップロードしてしまいました<br>なにか良いアドバイスを・・・<br></div></section>
+    <ul><li><section><h1 id=436>
+    <span class="no">[436]</span>
+    <a class="thread-title" href="#436">Re2:作業結果をeグループに置きました</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-06-24T19:36:18">2001年06月24日 19:36</time></h1>
+    <div class="body">▼ nakataniさん<br>&gt; diffやpatchは持ってるけど使い方がわかりません<br>編集前のソースと編集後のソースを別のディレクトリ(例えばbeforeとafter)に入れて、<br>diff -ur before after &gt; diff_file.txt<br>とすると、両者の差分ファイルがdiff.txtに作られます。オプションの-uはUnified Diffという形式で作ることを表し、-rはディレクトリを再帰的にたどることを意味します。<br><br>差分を作る際はresourceディレクトリは含めないでください。（バイナリファイルはdiffをとれないから）<br><br>patchを使うときは、patchを当てたいディレクトリの中に移動して、<br>patch -p1 &lt; diff_file.txt<br>です。-p1というのは上から１階層ディレクトリ指定を無視すると言う意味で、たいていパッチを当てたいディレクトリ名はdiffファイルのディレクトリ名と異なっているのでこうしています。</div></section>
+    <ul><li><section><h1 id=441>
+    <span class="no">[441]</span>
+    <a class="thread-title" href="#441">Re3:作業結果をeグループに置きました</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-24T20:50:51">2001年06月24日 20:50</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; 差分を作る際はresourceディレクトリは含めないでください。（バイナリファイルはdiffをとれないから）<br>入れても無視してくれるのでOKです。基本的にバイナリ(.exeやaspなどもろもろ)無視してくれます。(あ、Gnu diffです。)はじめの頃は分けてましたが最近はめんどくさいので入れてます。フォルダ丸ごと指定。ただし一方にしかないとOnly in ...というメッセージがdiff中に入るので両方に入ってないと面倒です。これはリソースに限った話ではありませんが。<br>その行がdiff結果に入ったままでも問題ないですが、アップするファイルサイズを小さくするために削除した方が多少はいいかも知れません。（実際のことろあまり関係ないです。気分の問題。)</div></section>
+    </li><li><section><h1 id=446>
+    <span class="no">[446]</span>
+    <a class="thread-title" href="#446">diffを使うときの注意</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-06-25T10:31:39">2001年06月25日 10:31</time></h1>
+    <div class="body">&gt;▼ nakataniさん<br>&gt;&gt; diffやpatchは持ってるけど使い方がわかりません<br>&gt;編集前のソースと編集後のソースを別のディレクトリ(例えばbeforeとafter)に入れて、<br>&gt;diff -ur before after &gt; diff_file.txt<br>&gt;とすると、両者の差分ファイルがdiff.txtに作られます。オプションの-uはUnified Diffという形式で作ることを表し、-rはディレクトリを再帰的にたどることを意味します。<br><br>diffで比較元と比較先を指定するときは、ディレクトリの区切りとして\の代わりに/を使ってください。patchが\を正しく認識してくれないようです。（私だけ？）<br></div></section>
+    </li></ul></li></ul></li><li><section><h1 id=428>
+    <span class="no">[428]</span>
+    <a class="thread-title" href="#428">Re:作業結果をeグループに置きました</a>
+    <span class="author">じぇぷろ</span>
+    <time datetime="2001-06-23T22:47:40">2001年06月23日 22:47</time></h1>
+    <div class="body">▼ nakataniさん<br>&gt; ■外部コマンド実行<br>&gt; 　・標準出力アウトプット用ウインドウがいっぱいできる不具合を修正<br>&gt; 　・アウトプットウインドウから標準出力をコマンド実行するとまったく出力されない不具合を修正<br>&gt; 　・アウトプット結果が正しくない不具合を少しだけ修正    まだおかしいかも。<br>これは機能しなくなって久しく、すごく気になってたので、よかったです。最近もこれに関してげんた氏にレスしたばかりです。関連記事[399][402]</div></section>
+    </li><li><section><h1 id=447>
+    <span class="no">[447]</span>
+    <a class="thread-title" href="#447">ファイルが足りない？</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-06-25T11:50:40">2001年06月25日 11:50</time></h1>
+    <div class="body">&gt;ひととおりテストはしましたが不具合があったらごめんなさい。<br>sakura/WinMain.cpp が抜けているようです。<br>ParseCommandLineとDoGrepの引数が追加になっているようで、コンパイルできません。<br></div></section>
+    <ul><li><section><h1 id=449>
+    <span class="no">[449]</span>
+    <a class="thread-title" href="#449">Re: ファイルが足りない？</a>
+    <span class="author">げんた</span>
+    <time datetime="2001-06-25T12:24:56">2001年06月25日 12:24</time></h1>
+    <div class="body">&gt;sakura/WinMain.cpp が抜けているようです。<br>こちらで直しました。<br></div></section>
+    <ul><li><section><h1 id=452>
+    <span class="no">[452]</span>
+    <a class="thread-title" href="#452">Re2: ファイルが足りない？</a>
+    <span class="author">nakatani</span>
+    <time datetime="2001-06-25T12:51:46">2001年06月25日 12:51</time></h1>
+    <div class="body">▼ げんたさん<br>&gt; &gt;sakura/WinMain.cpp が抜けているようです。<br>&gt; こちらで直しました。<br><br>あ、忘れていました<br>どうもすみません<br><br>diffやpatchの使い方もありがとうございます<br>さっそく試してみます(週末ぐらいに)</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

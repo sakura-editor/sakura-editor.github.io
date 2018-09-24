@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>マクロの移植について | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀マクロトップへ</a>
+        <li><div class="list-title">
+    <span class="no">488</span>
+    <a class="thread-title" href="488.html#488">マクロの移植について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">489</span>
+    <a class="thread-title" href="488.html#489">Re: マクロの移植について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">490</span>
+    <a class="thread-title" href="488.html#490">Re2: マクロの移植についてー大成功</a></div>
+    </li><li><div class="list-title">
+    <span class="no">491</span>
+    <a class="thread-title" href="488.html#491">Re2: マクロの移植について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">492</span>
+    <a class="thread-title" href="488.html#492">Re3: マクロの移植について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">493</span>
+    <a class="thread-title" href="488.html#493">Re4: マクロの移植について</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">494</span>
+    <a class="thread-title" href="488.html#494">Re5: マクロの移植についてーお詫びと御礼と</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=488>
+    <span class="no">[488]</span>
+    <a class="thread-title" href="#488">マクロの移植について</a>
+    <span class="author">Ki</span>
+    <time datetime="2010-04-16T22:01:00">2010年04月16日 22:01</time></h1>
+    <div class="body">いつもありがたく使用させていただいております。<br>下記のマクロ(削除)は秀丸エディタで辞書引きソフトのLogophile<br>を検索するファイルの内容なのですが、マクロについての<br>知識がないために、サクラエディタにマクロの移植ができ<br>なくて困っています。どなたかご教示願えないでしょうか？<br></div></section>
+    <ul><li><section><h1 id=489>
+    <span class="no">[489]</span>
+    <a class="thread-title" href="#489">Re: マクロの移植について</a>
+    <span class="author">もか</span>
+    <time datetime="2010-04-17T01:33:42">2010年04月17日 01:33</time></h1>
+    <div class="body">// execlogophile.js みたいな名前でマクロフォルダへ<br><br>word_to_logophile();<br>function word_to_logophile()<br>{<br>&#9;// カーソル位置の「検索キーワード」的なものを取得<br>&#9;var str = Editor.ExpandParameter('$C');<br>&#9;// 前後の空白類を置換で削除<br>&#9;str = str.replace(/^[\s\u3000]+/, '').replace(/[\s\u3000]+$/, '');<br>&#9;// 選択文字がない場合終了<br>&#9;if( str.length == 0 ) return;<br>&#9;// 文字をUnicode,16進数4桁にして+をつける<br>&#9;str = str.replace(/./g, function(s){<br>&#9;&#9;var hexstr = '000'+(s.charCodeAt(0).toString(16));<br>&#9;&#9;return '+' + hexstr.match(/.{2,4}$/)[0];<br>&#9;});<br>&#9;var cmdLine = "\"C:\\Program Files\\Logophile\\Logophile.exe\" -f -u" + str;<br>&#9;// 外部コマンドを実行(入出力なし)<br>&#9;Editor.ExecCommand(cmdLine,0);<br>}<br><br>秀丸とLogophileの仕様が分からないので16進数4桁小文字にして送りつけます。<br>うまく動かないときは下記のように調整してください。<br>英語は2桁：'000'→'0'<br>大文字でないとだめ：-u" + str → -u" + str.toUpperCase()<br><br>Editor.がついてない部分は普通のJavaScriptです。<br>短いのがいいならまとめてこんな感じで<br>str=ExpandParameter('$C').replace(/^[\s\u3000]+/,'').replace(/[\s\u3000]+$/,'');<br>if(str.length){<br>&#9;str=str.replace(/./g,function(s){return '+'+('000'+(s.charCodeAt(0).toString(16))).match(/.{2,4}$/)[0];});<br>&#9;ExecCommand("\"C:\\Program Files\\Logophile\\Logophile.exe\" -f -u"+str.toUpperCase(),1);<br>}<br></div></section>
+    <ul><li><section><h1 id=490>
+    <span class="no">[490]</span>
+    <a class="thread-title" href="#490">Re2: マクロの移植についてー大成功</a>
+    <span class="author">Ki</span>
+    <time datetime="2010-04-17T11:07:20">2010年04月17日 11:07</time></h1>
+    <div class="body">もかさん<br>　２つのマクロをありがとうございました。前者で早速試して<br>みました。英語でも日本語でもうまくいきました。ほんとうに<br>ありがとうございました。<br></div></section>
+    </li><li><section><h1 id=491>
+    <span class="no">[491]</span>
+    <a class="thread-title" href="#491">Re2: マクロの移植について</a>
+    <span class="author">Ki</span>
+    <time datetime="2010-04-17T12:32:04">2010年04月17日 12:32</time></h1>
+    <div class="body">もかさん<br>スレッドを別に立ち上げた方がよかったのですが、もうひと<br>つ秀丸から辞書引きソフトのEBWinを呼び出して単語を引く<br>ソフト（削除）があります。<br>これもサクラエディタに移植していただけないでしょうか？<br>サクラエディタで利用できますと便利なのですが、いかがで<br>しょうか。お願いばかりで恐縮です。<br></div></section>
+    <ul><li><section><h1 id=492>
+    <span class="no">[492]</span>
+    <a class="thread-title" href="#492">Re3: マクロの移植について</a>
+    <span class="author">わざわざ何を……</span>
+    <time datetime="2010-04-18T17:32:08">2010年04月18日 17:32</time></h1>
+    <div class="body">▼ Kiさん<br><br>もかさんはひとつひとつ説明を加えながらコードを提示しています。<br>少なくとも下の二行に相当するコードがどの部分か、わかるのでは<br>ないですか。<br><br> $word = gettext(seltopx, seltopy, selendx, selendy);<br> run "C:\\Program Files\\EBWin\\EBWin.exe /S=" + $word;<br><br>gettextの 5番目の引数(1)が今度はありませんが、この説明は<br>秀丸ユーザーだった Kiさんに出してもらいたいものです。<br>(無視できるものかもしれませんが)<br><br>ここのサイトの構造はわかりにくいのですがマクロの一覧はここにあります。<br>  http://sakura.qp.land.to/SakuraMacro/<br>S_IsTextSelectedと S_SelectWordが、残った部分に相当するものではあ<br>りませんか。先頭の S_については文字通り「※先頭の'S_'について」という<br>項目が左のフレームの一番上にあります。最初のマクロより簡単<br>ですから自分でもできそうに思えてきたんじゃないですか。<br><br>言葉を尽くしても丸投げ連投では回答のハードルを上げます。<br>答えはもらいにくくなりますよ。<br></div></section>
+    <ul><li><section><h1 id=493>
+    <span class="no">[493]</span>
+    <a class="thread-title" href="#493">Re4: マクロの移植について</a>
+    <span class="author">もか</span>
+    <time datetime="2010-04-18T20:29:55">2010年04月18日 20:29</time></h1>
+    <div class="body">最初に訂正<br>見直してみると短い版がデバック用になってます。<br>誤：+str.toUpperCase(),1);<br>正：+str,0);<br><br>&gt;ここのサイトの構造はわかりにくいのですがマクロの一覧はここにあります。<br>&gt;  <a href=http://sakura.qp.land.to/SakuraMacro/ target=_top><nobr>http://<wbr>sakura.<wbr>qp.<wbr>land.<wbr>to/<wbr>SakuraMa<wbr>cro/<wbr></nobr></a><br>フォローありがとう。<br>マクロなら今は普通のヘルプにも...と思ったけど一覧がどこにもないです。どこに載せるべきか。<br>&gt;言葉を尽くしても丸投げ連投では回答のハードルを上げます。<br>&gt;答えはもらいにくくなりますよ。<br>そうですね。これ位なら15分程度でマクロを作てテストして投稿(解説を除く)までできますが、回答するのが面倒になりますね。<br>EDWinとかのコマンドをネットで検索する時間が必要なので。<br><br>あと重要な点として、「秀丸マクロの転載は著作権者の許可orライセンスにしたがっているか」確認してください。<br>問題があれば、秀丸マクロの転載部分は削除します。<br><br>実はEBWinのほうは、細かいことを考慮しないなら<br>・キーマクロの記録開始<br>・外部コマンド実行："C:\Program Files\EBWin\EBWin.exe" /S=$C<br>標準出力・標準入力のチェックをはずして実行<br>・キーマクロの記録終了&amp;保存で名前をつける(.mac)<br>これで、マクロができます。お試しください。<br><br>// 前回のを応用した少し賢い版<br>var str = Editor.ExpandParameter('$C');<br>// 選択文字列のコピーの前後の空白をなくす(トリム)<br>str = str.replace(/^[\s\u3000]+/, '').replace(/[\s\u3000]+$/, '');<br>if( str.length ){<br>&#9;// 保険 strを全置換「$」→「$$」$4つなのはJavaScriptのreplaceの仕様<br>&#9;str = str.replace(/\$/g, "$$$$");<br>&#9;Editor.ExecCommand("\"C:\\Program Files\\EBWin\\EBWin.exe\" /S="+str,0);<br>}<br><br>・googleしたもの<br>EBWin(辞書引きソフト/フリーソフト)<br><a href=http://www31.ocn.ne.jp/~h_ishida/EBPocket.html#download_win target=_top><nobr>http://<wbr>www31.<wbr>ocn.<wbr>ne.<wbr>jp/~<wbr>h_ishida<wbr>/<wbr>EBPocket<wbr>.<wbr>html#<wbr>download<wbr>_win</nobr></a><br>コマンドラインはここです。<br><a href=http://www31.ocn.ne.jp/~h_ishida/EBPocket/0_0_3_5.html target=_top><nobr>http://<wbr>www31.<wbr>ocn.<wbr>ne.<wbr>jp/~<wbr>h_ishida<wbr>/<wbr>EBPocket<wbr>/<wbr>0_0_3_5.<wbr>html</nobr></a><br></div></section>
+    <ul><li><section><h1 id=494>
+    <span class="no">[494]</span>
+    <a class="thread-title" href="#494">Re5: マクロの移植についてーお詫びと御礼と</a>
+    <span class="author">Ki</span>
+    <time datetime="2010-04-18T20:55:06">2010年04月18日 20:55</time></h1>
+    <div class="body">　もかさんはじめ皆様の言うとおりです。ご指摘等ありがと<br>うございます。<br>　もかさん、今回もほんとうにありがとうございます。長年<br>できたら便利と思っておりましただけにありがたく利用させ<br>ていただきます。これを機会にマクロの勉強をしなくてはい<br>けません。<br>　「秀丸マクロの転載部分」ですがこれはとっても大切なご<br>指摘だと思いました。削除させていただきました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

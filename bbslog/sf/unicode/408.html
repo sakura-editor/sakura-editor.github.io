@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Commit報告:(Imp/Fix) Drag&amp;Drop機能改善 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">408</span>
+    <a class="thread-title" href="408.html#408">Commit報告:(Imp/Fix) Drag&amp;Drop機能改善</a></div>
+    </li>
+    </ul><ul class="main"><li><section><h1 id=408>
+    <span class="no">[408]</span>
+    <a class="thread-title" href="#408">Commit報告:(Imp/Fix) Drag&amp;Drop機能改善</a>
+    <span class="author">ryoji</span>
+    <time datetime="2008-05-18T13:28:02">2008年05月18日 13:28</time></h1>
+    <div class="body">リビジョン：<br>　rev1343<br><br>変更種別：<br>　機能改善（細部の問題修正含む）<br><br>内容：<br>　Drag&amp;Drop機能改善<br><br>ANSI版でレビュー待ちの修正<br>Patches#1919556 Drag &amp; Drop機能改善（&gt;&gt;dev:5251）<br>Patches#1847838 Drag &amp; Drop編集時の不正挙動修正<br>をすべて含み、更に、分割ビューや別ウィンドウ、他アプリとの間での「移動」もできるようにしました。細かい部分でのバグ修正や改善も加えてあります。<br><br>本件もANSI版でのルールに従ったレビューの実施が困難ということでUNICODE版のほうに先行コミットさせていただきました。<br><br>移動／コピーの挙動については他エディタの多くが採用している方式（EmEditorなど）と同様のものにしています。<br><br>●分割ビュー間でのDrag &amp; Drop<br>　キーボードを併用しない場合は「移動」、Ctrlキー併用で「コピー」<br>●別ウィンドウのサクラ間でのDrag &amp; Drop<br>　キーボードを併用しない場合は「コピー」、Shiftキー併用で「移動」<br>●他アプリからのDrop<br>　キーボードを併用しない場合は「コピー」、Shiftキー併用で「移動」<br>●他アプリへのDrop<br>　キーボードを併用しない場合に「移動」／「コピー」のどちらになるかはDrop先アプリの仕様依存です。なお、Ctrlキー併用時は「コピー」を、Shiftキー併用時は「移動」を期待できます。Altキー併用で挙動が切り替わるアプリもあるみたいです。<br>一例として、MS WordへのDrop動作は、<br>　キーボードを併用しない場合は「移動」、Ctrlキー併用で「コピー」<br>になります。</div></section>
+    </li></ul></body></html>

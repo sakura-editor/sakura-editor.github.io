@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>正規表現キーワードで文字列の色分けができません。 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">932</span>
+    <a class="thread-title" href="932.html#932">正規表現キーワードで文字列の色分けができません。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">933</span>
+    <a class="thread-title" href="932.html#933">Re:正規表現キーワードで文字列の色分けができません。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">934</span>
+    <a class="thread-title" href="932.html#934">Re2:正規表現キーワードで文字列の色分けができません。</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">936</span>
+    <a class="thread-title" href="932.html#936">Re3:正規表現キーワードで文字列の色分けができません。</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=932>
+    <span class="no">[932]</span>
+    <a class="thread-title" href="#932">正規表現キーワードで文字列の色分けができません。</a>
+    <span class="author">ds14050</span>
+    <time datetime="2009-05-27T00:52:54">2009年05月27日 00:52</time></h1>
+    <div class="body">sakuraW_r1574で試したのですが、表題の通りです。<br><br>クォーテーション文字列の色分けを組み込みの機能を使わずに<br>正規表現キーワードで行っています。<br>そのときに色指定を「シングル(ダブル)クォーテーション」に<br>しているのです。<br><br>組み込みの色分け機能を使わないので色指定でクォーテーション文字列の<br>チェックを外しているのですが、チェックが外れていると正規表現キーワード<br>の色指定も無効になってしまっているようです。<br><br>みなさんは大丈夫ですか？<br><br># 一年ほど前にソースコードを見たときはコメントで明示して<br># こういう状況に対応していたはずなのです。<br></div></section>
+    <ul><li><section><h1 id=933>
+    <span class="no">[933]</span>
+    <a class="thread-title" href="#933">Re:正規表現キーワードで文字列の色分けができません。</a>
+    <span class="author">ds14050</span>
+    <time datetime="2009-05-27T06:13:09">2009年05月27日 06:13</time></h1>
+    <div class="body">追加です。<br><br>以前見たコメントというのは<br> sakura/trunk2/sakura_core/CRegexKeyword.cpp<br>のものでした。<br><br>242行目&gt; //色指定でチェックが入ってなければ検索しなくてもよい<br>249行目&gt; //正規表現では色指定のチェックを見る。<br>255行目&gt; //正規表現以外では、色指定チェックは見ない。<br>256行目&gt; //例えば、半角数値は正規表現を使い、基本機能を使わないという指定もあり<br><br>まずいのは以下の 2点だと思います。<br><br>sakura/trunk2/sakura_core/view/colors/CColor_RegexKeyword.cpp<br>bool CColor_RegexKeyword::BeginColor(const CStringRef&amp; cStr, int nPos)<br>21行目&gt; this-&gt;m_nCOMMENTMODE = ToColorIndexType_RegularExpression(nMatc<br>hColor);<br><br>nMatchColorは正規表現キーワード1,2,3,...の何番目の配色か<br>を表しているのではないと思います。<br><br>----<br><br>sakura/trunk2/sakura_core/view/CEditView_Paint.cpp<br>void CEditView::SetCurrentColor( CGraphics&amp; gr, EColorIndexType eColorIndex )<br>232行目&gt; if( info.m_bDisp ){<br><br>これは色指定のチェック状態をチェックしてるのだと思いますが<br>正規表現キーワードにとって正規表現キーワード1,2,3,...以外の<br>色指定のチェック状態はチェックしてはいけません。<br><br>この ifを外してしまうとどういう影響があるのかわかりませんが<br>色指定のチェックなしでも正規表現キーワードが有効にはなるようです。<br>つまり、以前の通りに。<br></div></section>
+    <ul><li><section><h1 id=934>
+    <span class="no">[934]</span>
+    <a class="thread-title" href="#934">Re2:正規表現キーワードで文字列の色分けができません。</a>
+    <span class="author">ryoji</span>
+    <time datetime="2009-05-27T20:54:18">2009年05月27日 20:54</time></h1>
+    <div class="body">▼ ds14050さん<br>&gt; 以前見たコメントというのは<br>&gt;  sakura/trunk2/sakura_core/CRegexKeyword.cpp<br>&gt; のものでした。<br><br>うぉ。現状の挙動は知ってましたが、昔からのものとばかり思い込んでいました。使い込みが足りてないのがばれちゃいますね。σ(^^;;;<br>「（謎の引用＞）仕様がねじれている気もするが」、以前の挙動のほうが柔軟ですよね。僕もそっちのが好みです。ていうか、このままじゃ、これ絡みで別の誤動作も確実なので...<br>正規表現URLをクリッカブルにする件（&gt;&gt;unicode:922）にも影響があるし、急いで修正しようと思います。<br><br>&gt; sakura/trunk2/sakura_core/view/colors/CColor_RegexKeyword.cpp<br><br>えぇ、と。<br>こちらは現在の処理で正しいです（のはず）。下駄はあとで外して使うことになっています。<br>「（謎の引用２＞）nMatchColorとはそのまま色指定なのだから COLORIDX_REGEX_FIRST という下駄をはかせる必要はなくて」とご推察のようですが、この下駄をはかせておかないと CColorStrategyPool::GetStrategyByColor の機能（色指定からCColorStrategy*へ辿る）が正しく動かなくなってしまいます。あと、ここでは「正規表現キーワード1,2,3,...の何番目の配色か」を覚えるほうが賢明な気もしますが（また、そうしているかのように読み違えやすいですが）、今のところはそうなっていません。<br>＃ちなみに、従来のANSI版でも同様に色指定に下駄をはかせて処理しています。<br><br>&gt; sakura/trunk2/sakura_core/view/CEditView_Paint.cpp<br><br>こちらがビンゴですね～。<br>色指定の有無は、ご指摘の CEditView::SetCurrentColor が呼ばれるよりも以前にチェック済みのはずで、ここでのチェックは念のためのガードのつもりではないかと思います。でも、この位置でのガードは内部矛盾を誘発するだけで何の利点も無さそうです。このガードを外して何か問題が起きるようなら、もともと事前のチェックのほうが間違っているわけで...<br>実は、rev1443あたりでこの近辺に見られた多くの描画関連デグレードを修復しています。で、このガードは不要なのでは？と、そのときに気が付きつつも、特に害がありそうにも見えなかったので除去してませんでした。<br><br>「（謎の引用３＞）待ってても直らないかもしれないので調べた。」<br>色分け関連のデグレードは見つけにくく修正も厄介なので、こういう報告があると、皆、助かると思いますよ。(^-^)</div></section>
+    <ul><li><section><h1 id=936>
+    <span class="no">[936]</span>
+    <a class="thread-title" href="#936">Re3:正規表現キーワードで文字列の色分けができません。</a>
+    <span class="author">ds14050</span>
+    <time datetime="2009-05-28T02:02:51">2009年05月28日 02:02</time></h1>
+    <div class="body">&gt;この下駄をはかせておかないと CColorStrategyPool::GetStrategyByColor<br>&gt;の機能 (色指定からCColorStrategy*へ辿る）が正しく動かなくなってしまいます。<br><br>ですよね。これが機能する理由がわからなくて、正規表現キーワードを<br>プールに一番最初に push_backするから、ストラテジを先頭から<br>検索したときに正規表現キーワードを優先的にみつけられるのかな<br>と想像していました。実際、ここを変更しても正規表現キーワードが<br>正しく動いているように見えたので、勘違いしました。<br><br>ともあれ、素早いチェックと修正ありがとうございます。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

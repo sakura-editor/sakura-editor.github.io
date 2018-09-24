@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>日本語の補完(ANSI) | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">5451</span>
+    <a class="thread-title" href="5451.html#5451">日本語の補完(ANSI)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5457</span>
+    <a class="thread-title" href="5451.html#5457">Re:日本語の補完(ANSI)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5458</span>
+    <a class="thread-title" href="5451.html#5458">Re2:日本語の補完(ANSI)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5459</span>
+    <a class="thread-title" href="5451.html#5459">Re3:日本語の補完(ANSI)</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">5460</span>
+    <a class="thread-title" href="5451.html#5460">Re4:日本語の補完(ANSI)</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=5451>
+    <span class="no">[5451]</span>
+    <a class="thread-title" href="#5451">日本語の補完(ANSI)</a>
+    <span class="author">syat</span>
+    <time datetime="2008-10-31T00:42:25">2008年10月31日 00:42</time></h1>
+    <div class="body">入力補完、編集中のファイルから候補を探す場合で、英数_<br>以外の文字も補完できるようにするパッチを投稿しました。<br><br>ID: 2209897<br><a href=https://sourceforge.net/tracker2/?func=detail&aid=2209897&group_id=12488&atid=312488 target=_top><nobr>https://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>tracker2<wbr>/?<wbr>func=<wbr>detail&amp;<wbr>aid=<wbr>2209897&amp;<wbr>group_id<wbr>=<wbr>12488&amp;<wbr>atid=<wbr>312488</nobr></a><br><br>ご確認お願いいたします。</div></section>
+    <ul><li><section><h1 id=5457>
+    <span class="no">[5457]</span>
+    <a class="thread-title" href="#5457">Re:日本語の補完(ANSI)</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-11-08T18:05:24">2008年11月08日 18:05</time></h1>
+    <div class="body">▼ syatさん<br>ソースコードおよび動作を確認しました。<br><br>良い感じで動作していると思います。<br>ソースの方は、strchr()を使っている所と( kindPre &gt;= CKMBCSPACE ? 2 : 1 )のようにサイズを取っている所が気になりました。<br>・strchr()の所をIS_KEYWORD_CHAR()では変ですか？<br>・CMEmory::GetSizeOfChar()で取得できるサイズとは意味合いが違います？<br><br>ではでは。<br></div></section>
+    <ul><li><section><h1 id=5458>
+    <span class="no">[5458]</span>
+    <a class="thread-title" href="#5458">Re2:日本語の補完(ANSI)</a>
+    <span class="author">syat</span>
+    <time datetime="2008-11-09T12:51:23">2008年11月09日 12:51</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; ソースコードおよび動作を確認しました。<br>ありがとうございます。<br><br>パッチを修正しました。japanese_hokan_A_3.patch<br>&gt; ・strchr()の所をIS_KEYWORD_CHAR()では変ですか？<br>strchrとIS_KEYWORD_CHARが混在していたのでIS_KEYWORD_CHARにあわせました。<br><br>&gt; ・CMEmory::GetSizeOfChar()で取得できるサイズとは意味合いが違います？<br>CMEmory::GetSizeOfChar()の存在知らなかった。。。ありがとうございます。<br>UNICODE版でも必ずしも１文字＝２バイトの固定長ではない（サロゲートペア？）と判明したので、GetSizeOfChar()を使うように改めます。<br></div></section>
+    <ul><li><section><h1 id=5459>
+    <span class="no">[5459]</span>
+    <a class="thread-title" href="#5459">Re3:日本語の補完(ANSI)</a>
+    <span class="author">なすこじ</span>
+    <time datetime="2008-11-15T14:53:45">2008年11月15日 14:53</time></h1>
+    <div class="body">▼ syatさん<br>ソースコードおよび動作を確認しました。<br>コミットOKと思います。<br></div></section>
+    <ul><li><section><h1 id=5460>
+    <span class="no">[5460]</span>
+    <a class="thread-title" href="#5460">Re4:日本語の補完(ANSI)</a>
+    <span class="author">syat</span>
+    <time datetime="2008-11-16T19:49:05">2008年11月16日 19:49</time></h1>
+    <div class="body">▼ なすこじさん<br>&gt; ソースコードおよび動作を確認しました。<br>&gt; コミットOKと思います。<br>ありがとうございます。<br>rev1465でコミットしました。</div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

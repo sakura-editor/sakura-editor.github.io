@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>禁則文字の重複 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀Unicode版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">2158</span>
+    <a class="thread-title" href="2158.html#2158">禁則文字の重複</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2159</span>
+    <a class="thread-title" href="2158.html#2159">Re:禁則文字の重複</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">2161</span>
+    <a class="thread-title" href="2158.html#2161">Re2:禁則文字の重複</a></div>
+    </li><li><div class="list-title">
+    <span class="no">2162</span>
+    <a class="thread-title" href="2158.html#2162">Re2:禁則文字の重複</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=2158>
+    <span class="no">[2158]</span>
+    <a class="thread-title" href="#2158">禁則文字の重複</a>
+    <span class="author">Viu89r9VV</span>
+    <time datetime="2014-04-25T19:54:03">2014年04月25日 19:54</time></h1>
+    <div class="body">Windows 7, サクラエディタ 2.1.1.1<br><br>行頭禁則に「￠」が2つ重複して登録されています。もしかして「￠」を登録したかったのかもしれません。ところで「￠」は何なのでしょうか。世界中の文字コード表に記述されていないのですが。Microsoft Word 2007 の行頭禁則文字に登録されています。<br><br>----------------------------------------<br>!%),.:;?]}￠°’”‰′″℃、。々〉》」』】〕゛゜ゝゞ・ヽヾ！％），．：；？］｝。」、・゛゜￠<br>----------------------------------------<br></div></section>
+    <ul><li><section><h1 id=2159>
+    <span class="no">[2159]</span>
+    <a class="thread-title" href="#2159">Re:禁則文字の重複</a>
+    <span class="author">Viu89r9VV</span>
+    <time datetime="2014-04-26T08:07:36">2014年04月26日 08:07</time></h1>
+    <div class="body">投稿者です。補足説明します。なお、本件の内容は、この掲示板では適正に表示されない可能性があります。<br><br>『本来、行頭禁則記号一覧の11番目に記述されるべきと想定される記号』の「￠」記号は、半角記号で環境依存文字です。この掲示板で適正に表示されないのは、掲示板のソフトウェア側で環境依存文字の半角記号を強制変換しているためと想定されます。<br><br>￠ &amp;cent;　セント<br><a href=http://cssxhtmlseo.web.fc2.com/css_sample/css_cord.html target=_top><nobr>http://<wbr>cssxhtml<wbr>seo.<wbr>web.<wbr>fc2.<wbr>com/<wbr>css_samp<wbr>le/<wbr>css_cord<wbr>.<wbr>html</nobr></a><br><br>一方、『行頭禁則記号一覧の51番目（最後）に記述されるべきと想定される記号』の￠記号は全角記号です。<br><br>これがサクラエディタでは、両方とも全角記号になっているように見受けられます。確認をお願いします。<br><br>なお、なぜ前述のように想定したかというと、Microsoft Word では、上記のように11番目に環境依存文字の半角記号、51番目に全角記号が記述されているからです。サクラエディタの行頭禁則は、それをコピーしたと想定されるため、上記のように判断しました。<br></div></section>
+    <ul><li><section><h1 id=2161>
+    <span class="no">[2161]</span>
+    <a class="thread-title" href="#2161">Re2:禁則文字の重複</a>
+    <span class="author">しみづ</span>
+    <time datetime="2014-04-26T20:07:12">2014年04月26日 20:07</time></h1>
+    <div class="body"><br>&gt;『本来、行頭禁則記号一覧の11番目に記述されるべきと想定される記号』の「￠」記号は、半角記号で環境依存文字です。この掲示板で適正に表示されないのは、掲示板のソフトウェア側で環境依存文字の半角記号を強制変換しているためと想定されます。<br><br>　掲示板のソフトウェア側というより、多分ＯＳがシフトJISでの受け取り側用に変換しているのでしょう。<br><br>　下の記述のU+00A2のほうが、元々は多分欧州で半角文字0xA2で表示されていたのでしょう。<br>http://ja.wikipedia.org/wiki/%E3%82%BB%E3%83%B3%E3%83%88_%28%E9%80%9<br>A%E8%B2%A8%29#.E7.AC.A6.E5.8F.B7.E4.BD.8D.E7.BD.AE<br>　しかし日本ではその辺のコードは半角カタカナを表示するように実装されてきました。バックスラッシュ「＼」が日本では「￥」で表示されるようなものです。<br><br>　行頭禁則記号一覧の11番目がU+00A2で51番目がU+FFE0なのかということなのではないでしょうか。<br></div></section>
+    </li><li><section><h1 id=2162>
+    <span class="no">[2162]</span>
+    <a class="thread-title" href="#2162">Re2:禁則文字の重複</a>
+    <span class="author">novice</span>
+    <time datetime="2014-04-26T22:01:54">2014年04月26日 22:01</time></h1>
+    <div class="body">▼ Viu89r9VVさん<br>&gt; これがサクラエディタでは、両方とも全角記号になっているように見受けられます。確認をお願いします。<br><br>patchを登録しました。<br><a href=http://sourceforge.net/p/sakura-editor/patchunicode/807/ target=_top><nobr>http://<wbr>sourcefo<wbr>rge.<wbr>net/<wbr>p/<wbr>sakura-<wbr>editor/<wbr>patchuni<wbr>code/<wbr>807/<wbr></nobr></a><br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

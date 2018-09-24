@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ブロック型コメントの色分け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">7716</span>
+    <a class="thread-title" href="7716.html#7716">ブロック型コメントの色分け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7717</span>
+    <a class="thread-title" href="7716.html#7717">Re:ブロック型コメントの色分け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">7721</span>
+    <a class="thread-title" href="7716.html#7721">Re2:ブロック型コメントの色分け</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=7716>
+    <span class="no">[7716]</span>
+    <a class="thread-title" href="#7716">ブロック型コメントの色分け</a>
+    <span class="author">泥造</span>
+    <time datetime="2013-09-29T15:41:25">2013年09月29日 15:41</time></h1>
+    <div class="body">VHDL という言語では行型のコメントは -- で始まります。<br>加えて一種の方言（pragma）ですが、ブロック型のコメントは<br>-- synthesis translate_off で始まり、<br>-- synthesis translate_on で終わります。<br>ブロック型のコメントの -- synthesis translate_on の<br>文字色が、-- synthesis tr までしか色がつかないので、<br>行末まで色がつくと気持ち良いかなと思います。<br>よろしくお願いします。<br>sakura は v2.1.0.0 です。</div></section>
+    <ul><li><section><h1 id=7717>
+    <span class="no">[7717]</span>
+    <a class="thread-title" href="#7717">Re:ブロック型コメントの色分け</a>
+    <span class="author">通りすがり</span>
+    <time datetime="2013-10-03T23:50:29">2013年10月03日 23:50</time></h1>
+    <div class="body">VHDLのコメントは<br>行型の-- が一般的だが、コンパイラのPragmaで <br>&gt; -- synthesis translate_off で始まり、<br>&gt; -- synthesis translate_on で終わります。<br>というスタイルのコメントもあるって、ことですね。<br><br>この場合、タイプ別設定にて<br>ブロック型コメントとして<br>「-- synthesis translate_off」から<br>「-- synthesis translate_on」<br>というのを追加すれば良いのですが、<br>sakura v2.1.0.0 では、この設定が15文字しか入らないため、<br>「-- synthesis tr までしか色がつかない」という現象が<br>おきているようです。<br><br>とりあえずは、<br>1.ブロック型コメントとして<br>「-- synthesis tr」から「translate_on」を登録<br>2. 行型コメントとして、「--」を登録<br>で、ごまかして運用できないでしょうか？<br><br>もちろん、Sakuraの仕様変更で文字数増やせば、もう少しマシな<br>設定ができますが、それだけでは完璧にならないと思います。<br><br>通りすがりの私の意見としては、<br>コメントの文法にここまで対応すべきかどうかは疑問で、<br>本件はせいぜい正規表現キーワードでPragmaを目立つようにするくらいが<br>適切かと思いますが、どうでしょう？</div></section>
+    <ul><li><section><h1 id=7721>
+    <span class="no">[7721]</span>
+    <a class="thread-title" href="#7721">Re2:ブロック型コメントの色分け</a>
+    <span class="author">泥造</span>
+    <time datetime="2013-10-07T08:57:25">2013年10月07日 08:57</time></h1>
+    <div class="body">▼ 通りすがりさん<br><br>&gt; とりあえずは、<br>&gt; 1.ブロック型コメントとして<br>&gt; 「-- synthesis tr」から「translate_on」を登録<br>&gt; 2. 行型コメントとして、「--」を登録<br>&gt; で、ごまかして運用できないでしょうか？<br><br>なるほど、これでうまくいきました。ありがとう。<br><br>蛇足ながら、ダイアログの登録欄が文字数15文字に<br>制限されてると親切ですね。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>「アウトライン」-「フォーカスを移す」 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1559</span>
+    <a class="thread-title" href="1559.html#1559">「アウトライン」-「フォーカスを移す」</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1567</span>
+    <a class="thread-title" href="1559.html#1567">Re:「アウトライン」-「フォーカスを移す」</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1590</span>
+    <a class="thread-title" href="1559.html#1590">Re2:「アウトライン」-「フォーカスを移す」</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1592</span>
+    <a class="thread-title" href="1559.html#1592">Re3:「アウトライン」-「フォーカスを移す」</a></div>
+    </li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1559>
+    <span class="no">[1559]</span>
+    <a class="thread-title" href="#1559">「アウトライン」-「フォーカスを移す」</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-11T22:59:54">2002年02月11日 22:59</time></h1>
+    <div class="body">「アウトライン」ダイアログの「フォーカスを移す」チェックが入っててもダブルクリックでフォーカスが移らない件、<br>・・・直ってませんでした。<br><br>リスト上でダブルクリックしたときはちゃんと動くのに、ツリー上だとだめみたいです。<br>手元ではCDlgFuncListにフラグを追加することでツリー上でダブルクリックしてもフォーカス移動できるようにしたのですが、<br>もっとスマートな方法があれば教えていただけますでしょうか？<br><br>あと、ブックマークの設定解除キーを押したときは「自動的に閉じる」や「フォーカスを移す」を無視して、<br>閉じない&amp;フォーカス移さない。にした方が続けてマーク設定解除しやすいので便利かな、と思うのですが、いかがでしょうか？<br><br>PS.単語単位の移動/選択について<br> CDocLineMgrのPrevOrNextWordとWhatKindOfCharあたりを変更すれば、<br>  ・空白文字の先頭でカーソル移動を停止する<br>  ・空白文字（タブ,半角スペース,全角スペース）を区別する<br>  ・半角英大文字・小文字を区別する<br>  ・半角数字を区別する<br>  ・全角英大文字・小文字を区別する<br>  ・全角数字を区別する<br> みたいなオプションに従って振る舞いを制御するのも割と簡単に実装できそうです。<br> でも、ShareDataのm_Commonとかにオプションを覚えたとして、CDocLineMgrからどう参照したらいいのやら・・・</div></section>
+    <ul><li><section><h1 id=1567>
+    <span class="no">[1567]</span>
+    <a class="thread-title" href="#1567">Re:「アウトライン」-「フォーカスを移す」</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-13T10:23:17">2002年02月13日 10:23</time></h1>
+    <div class="body">&gt; あと、ブックマークの設定解除キーを押したときは「自動的に閉じる」や「フォーカスを移す」を無視して、<br>&gt; 閉じない&amp;フォーカス移さない。にした方が続けてマーク設定解除しやすいので便利かな、と思うのですが、いかがでしょうか？<br><br>うーん。難しいですよね。<br>確かに、そのほうが便利そうなのですが、「自動的に閉じる」「フォーカスを移す」は、やっぱりそのまま動作したほうが、わかりやすい（説明しやすい）んじゃないでしょうか？</div></section>
+    <ul><li><section><h1 id=1590>
+    <span class="no">[1590]</span>
+    <a class="thread-title" href="#1590">Re2:「アウトライン」-「フォーカスを移す」</a>
+    <span class="author">hor</span>
+    <time datetime="2002-02-13T21:36:17">2002年02月13日 21:36</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; &gt; あと、ブックマークの設定解除キーを押したときは「自動的に閉じる」や「フォーカスを移す」を無視して、<br>&gt; &gt; 閉じない&amp;フォーカス移さない。にした方が続けてマーク設定解除しやすいので便利かな、と思うのですが、いかがでしょうか？<br>&gt; <br>&gt; うーん。難しいですよね。<br>&gt; 確かに、そのほうが便利そうなのですが、「自動的に閉じる」「フォーカスを移す」は、<br>&gt; やっぱりそのまま動作したほうが、わかりやすい（説明しやすい）んじゃないでしょうか？<br><br>コメントありがとうございます。<br><br>[再描画],[ブックマーク一覧],[アウトライン解析]の割当キーを押したときも「自動的に閉じる」「フォーカスを移す」<br>を無視していますので、ジャンプのときだけ有効なオプションとして扱うとゆうのはいかがでしょう？</div></section>
+    <ul><li><section><h1 id=1592>
+    <span class="no">[1592]</span>
+    <a class="thread-title" href="#1592">Re3:「アウトライン」-「フォーカスを移す」</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-02-14T14:00:38">2002年02月14日 14:00</time></h1>
+    <div class="body">▼ horさん<br>&gt; ▼ やざきさん<br>&gt; &gt; &gt; あと、ブックマークの設定解除キーを押したときは「自動的に閉じる」や「フォーカスを移す」を無視して、<br>&gt; &gt; &gt; 閉じない&amp;フォーカス移さない。にした方が続けてマーク設定解除しやすいので便利かな、と思うのですが、いかがでしょうか？<br>&gt; &gt; <br>&gt; &gt; うーん。難しいですよね。<br>&gt; &gt; 確かに、そのほうが便利そうなのですが、「自動的に閉じる」「フォーカスを移す」は、<br>&gt; &gt; やっぱりそのまま動作したほうが、わかりやすい（説明しやすい）んじゃないでしょうか？<br>&gt; <br>&gt; コメントありがとうございます。<br>&gt; <br>&gt; [再描画],[ブックマーク一覧],[アウトライン解析]の割当キーを押したときも「自動的に閉じる」「フォーカスを移す」<br>&gt; を無視していますので、ジャンプのときだけ有効なオプションとして扱うとゆうのはいかがでしょう？<br><br>いいですよ。それとわかるように表示して欲しいかも。<br><br>+- ジャンプしたとき ----------------------------------------<br>---+<br>|□このウィンドウを自動的に閉じる □フォーカスをエディタに移す |<br>+---------------------------------------<br>-----------------------+<br><br>という感じで。（見づらいと思いますけどわかってください^^;)</div></section>
+    </li></ul></li></ul></li></ul></li></ul></body></html>

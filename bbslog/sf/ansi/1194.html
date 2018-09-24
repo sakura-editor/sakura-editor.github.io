@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ssrc_2002-01-17.zip | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1194</span>
+    <a class="thread-title" href="1194.html#1194">ssrc_2002-01-17.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1200</span>
+    <a class="thread-title" href="1194.html#1200">Re:ssrc_2002-01-17.zip</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1202</span>
+    <a class="thread-title" href="1194.html#1202">Re2:ssrc_2002-01-17.zip</a></div>
+    </li><li><div class="list-title">
+    <span class="no">1203</span>
+    <a class="thread-title" href="1194.html#1203">Re2:ssrc_2002-01-17.zip</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1194>
+    <span class="no">[1194]</span>
+    <a class="thread-title" href="#1194">ssrc_2002-01-17.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-17T23:48:05">2002年01月17日 23:48</time></h1>
+    <div class="body">アップロードしました。<br>みくさんの全部含む版パッチ（ありがとうございます）を取り込むかたちで、みなさまの修正を取り込みました。<br><br>・空行にもブックマークが付くように変更。<br>　げんたさんと、horさんに感謝。<br><br>・ブックマークを指定条件で一気に設定する機能を追加。<br>・「最近使ったファイル」に表示されつづけている限りは、一度設定したブックマークを覚えていてくれる機能を追加。<br>　horさんありがとうございます。<br><br>　＃GetBookMarks()では、バッファサイズが10240を期待しているのに、<br>　＃FileInfo::m_szMarkLinesは、1024は、危険な匂いがします。。<br><br>・外部コマンド実行時に選択文字を渡す機能を追加。<br>　こちらもhorさんと、げんたさんに感謝。ありがとうございます。<br><br>・ダイアログのチップヘルプが出ないsakura.exe側の問題に対処。<br>　もはさん、みくさんありがとうございました。<br><br>・メニューがグレーダウンしなくなったバグ修正。<br>　ごめんなさい～。<br><br>というわけで、引き続きどうぞよろしく～。<br>そうそう、お試し版って一般掲示板に書かなくていいの？ &gt; みくさん</div></section>
+    <ul><li><section><h1 id=1200>
+    <span class="no">[1200]</span>
+    <a class="thread-title" href="#1200">Re:ssrc_2002-01-17.zip</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-18T18:28:34">2002年01月18日 18:28</time></h1>
+    <div class="body">▼ やざきさん<br>&gt; ・空行にもブックマークが付くように変更。<br><br>ブックマークの一覧に空行も表示されるように変更 ... が正しいかと。<br><br>&gt; 　＃GetBookMarks()では、バッファサイズが10240を期待しているのに、<br>&gt; 　＃FileInfo::m_szMarkLinesは、1024は、危険な匂いがします。。<br><br>1024のMAX_MARKLINES_LENを使うように変更しました。<br><br>それと、外部マクロのアドバイスありがとうございました。<br>とりあえず、MAX_Yは12にしてmytool.bmpを変更してみました。<br><br>→ ssrc_2002-01-17_plus.lzh を参照下さい。</div></section>
+    <ul><li><section><h1 id=1202>
+    <span class="no">[1202]</span>
+    <a class="thread-title" href="#1202">Re2:ssrc_2002-01-17.zip</a>
+    <span class="author">hor</span>
+    <time datetime="2002-01-18T18:53:42">2002年01月18日 18:53</time></h1>
+    <div class="body">ssrc_2002-01-17_plus.zip 中の mytool.bmp では<br>外部マクロボタンの数字を１から始めてますが、<br>共通設定－マクロのIDは０から始まっているので、<br>数字が０から始まる mytool.bmp もつくってみました。 ( mytool.lzh )<br><br>好きなほうを使って下さい。</div></section>
+    </li><li><section><h1 id=1203>
+    <span class="no">[1203]</span>
+    <a class="thread-title" href="#1203">Re2:ssrc_2002-01-17.zip</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-01-18T19:00:57">2002年01月18日 19:00</time></h1>
+    <div class="body">▼ horさん<br>&gt; ▼ やざきさん<br>&gt; &gt; ・空行にもブックマークが付くように変更。<br>&gt; <br>&gt; ブックマークの一覧に空行も表示されるように変更 ... が正しいかと。<br><br>そうですね。失礼しました。<br><br><br>&gt; それと、外部マクロのアドバイスありがとうございました。<br>&gt; とりあえず、MAX_Yは12にしてmytool.bmpを変更してみました。<br>&gt; <br>&gt; → ssrc_2002-01-17_plus.lzh を参照下さい。<br><br>あ、mytool.bmpの最後の段は使用されてなかったんですね。<br>こちらも失礼しました。<br>そして、外部マクロのアイコン追加ありがとうございます～。</div></section>
+    </li></ul></li></ul></li></ul></body></html>

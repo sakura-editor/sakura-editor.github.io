@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Windows XPでツールバー編集が変な件 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀ANSI版開発トップへ</a>
+        <li><div class="list-title">
+    <span class="no">1856</span>
+    <a class="thread-title" href="1856.html#1856">Windows XPでツールバー編集が変な件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1857</span>
+    <a class="thread-title" href="1856.html#1857">Re:Windows XPでツールバー編集が変な件</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">1858</span>
+    <a class="thread-title" href="1856.html#1858">Re2:Windows XPでツールバー編集が変な件</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=1856>
+    <span class="no">[1856]</span>
+    <a class="thread-title" href="#1856">Windows XPでツールバー編集が変な件</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-13T21:47:33">2002年04月13日 21:47</time></h1>
+    <div class="body">sakura.manifestがある場合、なぜか<br>::SendMessage( hwndResList, LB_INSERTSTRING, nIndex1, 0 );<br>でエラー(-1)が返るようです。<br><br>文字列を登録するときは0はNULLポインタなので不正ですが、OwnerDrawではintegerなので0もOKのはずなんですが。</div></section>
+    <ul><li><section><h1 id=1857>
+    <span class="no">[1857]</span>
+    <a class="thread-title" href="#1857">Re:Windows XPでツールバー編集が変な件</a>
+    <span class="author">げんた</span>
+    <time datetime="2002-04-13T23:00:42">2002年04月13日 23:00</time></h1>
+    <div class="body">まず"1"を挿入・追加してから目的の値を改めて設定するように変更しました。<br>とりあえずうまく動くようです。<br><br>CPropComToolbar_XP_fix.zip です。</div></section>
+    <ul><li><section><h1 id=1858>
+    <span class="no">[1858]</span>
+    <a class="thread-title" href="#1858">Re2:Windows XPでツールバー編集が変な件</a>
+    <span class="author">やざき</span>
+    <time datetime="2002-04-13T23:09:58">2002年04月13日 23:09</time></h1>
+    <div class="body">&gt;まず"1"を挿入・追加してから目的の値を改めて設定するように変更しました。<br>&gt;とりあえずうまく動くようです。<br><br>取り込みます。ありがとー。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

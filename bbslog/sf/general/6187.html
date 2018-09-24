@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>Rubyファイル編集時の動作 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6187</span>
+    <a class="thread-title" href="6187.html#6187">Rubyファイル編集時の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6189</span>
+    <a class="thread-title" href="6187.html#6189">Re:Rubyファイル編集時の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6200</span>
+    <a class="thread-title" href="6187.html#6200">Re2:Rubyファイル編集時の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6202</span>
+    <a class="thread-title" href="6187.html#6202">Re3:Rubyファイル編集時の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6206</span>
+    <a class="thread-title" href="6187.html#6206">Re4:Rubyファイル編集時の動作</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6207</span>
+    <a class="thread-title" href="6187.html#6207">Re5:Rubyファイル編集時の動作</a></div>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6187>
+    <span class="no">[6187]</span>
+    <a class="thread-title" href="#6187">Rubyファイル編集時の動作</a>
+    <span class="author">neko</span>
+    <time datetime="2007-08-02T16:09:43">2007年08月02日 16:09</time></h1>
+    <div class="body">YahooブリーフケースにあるRuby設定ファイル（<a href=http://file1.grp.yahoofs.jp/v1/8ICxRvCQ9wQRCaf3_hq3jIwQfJI_lOl6uNXKlww target=_top><nobr>http://<wbr>file1.<wbr>grp.<wbr>yahoofs.<wbr>jp/<wbr>v1/<wbr>8ICxRvCQ<wbr>9wQRCaf3<wbr>_hq3jIwQ<wbr>fJI_lOl6<wbr>uNXKlww</nobr></a><br>liFvjlb0wdshHa5W38eOFUL2qkSZjncegAJa4g1p<br>x/User/Data/RubyDef.lzh）を使っているのですが，自動インデントが有効になっているときに，たとえば以下のようなコード<br>5000.times do<br>  puts( rand(100) )<br>end<br>のendの後ろで改行を入れると，<br>5000.times do<br>  puts( rand(100) )<br>end<br>en<br>となってしまいます．<br><br>たぶんバグだと思うので，修正お願いします．</div></section>
+    <ul><li><section><h1 id=6189>
+    <span class="no">[6189]</span>
+    <a class="thread-title" href="#6189">Re:Rubyファイル編集時の動作</a>
+    <span class="author">too</span>
+    <time datetime="2007-08-03T00:25:53">2007年08月03日 00:25</time></h1>
+    <div class="body">メニュー[設定]-[タイプ別設定]で開くダイアログの[スクリーン]タブにて、<br>「その他のインデント対象文字」の欄になにか入っている、<br>というわけではないでしょうか？<br></div></section>
+    <ul><li><section><h1 id=6200>
+    <span class="no">[6200]</span>
+    <a class="thread-title" href="#6200">Re2:Rubyファイル編集時の動作</a>
+    <span class="author">neko</span>
+    <time datetime="2007-08-03T13:53:02">2007年08月03日 13:53</time></h1>
+    <div class="body">たしかに，「begin」が入っています．<br>しかし，これの影響で消えているとすると，結局バグだと思いますがいかがでしょうか？<br><br>それとも，これが規定の動作なのでしょうか？<br>だとするとこの動作はちょっと問題があるとおもいます．</div></section>
+    <ul><li><section><h1 id=6202>
+    <span class="no">[6202]</span>
+    <a class="thread-title" href="#6202">Re3:Rubyファイル編集時の動作</a>
+    <span class="author">すい</span>
+    <time datetime="2007-08-03T19:20:05">2007年08月03日 19:20</time></h1>
+    <div class="body">&gt;&gt;「その他のインデント対象文字」の欄になにか入っている、<br>&gt;たしかに，「begin」が入っています．<br><br>つまり、<br>「“b”という文字と、“e”という文字と、“g”という文字と、“i”という文字と、<br>　“n”という文字を、スペースやタブ文字等と同様に、インデント文字と みなして<br>　オートインデント（改行時に、次行の先頭にもコピーされる）しなさい。」<br>と、わざわざ設定しているのですから、当然そういう動作になりますよね。<br><br>「end」という文字が行頭にあれば、そのうち<br>“e”という文字と、“n”という文字は、スペースやタブ文字等と同様に<br>扱ってオートインデント（次行の先頭にもコピーされる）される。<br>でも“d”という文字はインデント文字扱いに設定されていないから、<br>次行にコピーされては来ない。<br><br>きちんと設定通りに動作していますよね。<br><br>というか、そもそも何故「その他のインデント対象文字(&amp;I)」の欄に<br>「begin」なんていう設定をしているのですか？<br></div></section>
+    <ul><li><section><h1 id=6206>
+    <span class="no">[6206]</span>
+    <a class="thread-title" href="#6206">Re4:Rubyファイル編集時の動作</a>
+    <span class="author">neko</span>
+    <time datetime="2007-08-05T23:55:50">2007年08月05日 23:55</time></h1>
+    <div class="body">え，そういう動作になるんですか，想定外でした．<br>てっきり「begin」と言う単語を見つけたら，次からtab等でインデントされるものであると考えておりました．<br><br>正直，今となってはどういった経緯で「begin」が入ってるのか思い出せませんが，<br>私の設定ミスのようですね，，，<br><br>すいさんの機嫌も損ねさせてしまったようで，申し訳ありませんでした．<br>私としてはそういう文章を書いたつもりはなかったのですが，<br>結果的にそうなってしまったのは私の責任です．<br><br>大変申し訳ありませんでした．<br><br>これ以上失礼なことを重ねるのは申し訳ないので，これ以降書き込みは控えさせていただきます．<br><br>重ね重ね，申し訳ありませんでした．</div></section>
+    <ul><li><section><h1 id=6207>
+    <span class="no">[6207]</span>
+    <a class="thread-title" href="#6207">Re5:Rubyファイル編集時の動作</a>
+    <span class="author">すい</span>
+    <time datetime="2007-08-06T04:42:05">2007年08月06日 04:42</time></h1>
+    <div class="body">&gt;てっきり「begin」と言う単語を見つけたら，次からtab等でインデントされるものであると考えておりました．<br><br>ああ、そういうつもりだったのですか。<br>残念ながらそういう機能(設定項目)はありませんから、少なくとも現状のサクラエディタには。<br><br>もし、『「begin」という単語の後の改行でタブが入る』とかいう機能が<br>将来付くとしたら「スマートインデント」の中に追加される形になると<br>思いますけど。<br><br>&gt;すいさんの機嫌も損ねさせてしまったようで，申し訳ありませんでした．<br><br>え゛、べつにそんな事はないのですけど、、、<br>いらぬ誤解をさせてしまったようでしたら すみません。<br><br><br>----- 業務(?)連絡 -----<br>設定画面、見直した方が良いのかも。<br>タイプ別設定の「インデント」の中。<br><br>最上段の<br>・自動インデント(&amp;U)<br>・全角空白も(&amp;Z)<br>と<br>・その他のインデント対象文字(&amp;I)<br>はオートインデント（自動インデント）の設定項目。<br><br>で、その間に何故か関係ない<br>・スマートインデント(&amp;S)<br>の設定項目がある。<br><br>この設定項目の配置は変えた方が良いかと。<br>あと、「その他のインデント対象文字(&amp;I)」は<br>「その他の*自動*インデント対象文字(&amp;I)」という項目名に変更した方が。<br></div></section>
+    </li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></body></html>

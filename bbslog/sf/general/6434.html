@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>古いサクラをVistaで正しく動作させる場合 | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6434</span>
+    <a class="thread-title" href="6434.html#6434">古いサクラをVistaで正しく動作させる場合</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6435</span>
+    <a class="thread-title" href="6434.html#6435">RE: 古いサクラをVistaで正しく動作させる場合</a></div>
+    </li><li><div class="list-title">
+    <span class="no">6436</span>
+    <a class="thread-title" href="6434.html#6436">Re:古いサクラをVistaで正しく動作させる場合</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6434>
+    <span class="no">[6434]</span>
+    <a class="thread-title" href="#6434">古いサクラをVistaで正しく動作させる場合</a>
+    <span class="author">ここまで読んだ</span>
+    <time datetime="2007-11-01T00:56:23">2007年11月01日 00:56</time></h1>
+    <div class="body">使用OSはVistaUltimate(32bit)<br><br>古いVer(Ver0.3.9.0 UR1.2.34.2)のサクラがお気に入りで、それを使っているのですが<br>Vistaで使うと、最新のVer1.5.15.3と同じ挙動をしてしまいます。<br><br>さらには古いサクラで設定したマクロ・キー設定が死んでる、古いVerには無い常駐機能が勝手に付属（？）してます。<br>ヘルプからVerを除いてみると、0.3.9.0にはなっています。<br><br>古いサクラの挙動をVistaでさせるのは、無理なのでしょうか？<br></div></section>
+    <ul><li><section><h1 id=6435>
+    <span class="no">[6435]</span>
+    <a class="thread-title" href="#6435">RE: 古いサクラをVistaで正しく動作させる場合</a>
+    <span class="author">げんた</span>
+    <time datetime="2007-11-01T02:15:38">2007年11月01日 02:15</time></h1>
+    <div class="body">&gt;Vistaで使うと、最新のVer1.5.15.3と同じ挙動をしてしまいます。<br>どのようにインストールされたのでしょうか．単なるファイルコピーですか？<br>「同じ挙動」が最新版の機能が入っているように見えるという意味であれば，動かしているつもりのsakura.exeとは違うものが動いているのではないでしょうか．<br><br>&gt;古いVerには無い常駐機能が勝手に付属<br>常駐機能とはどれを指しているのでしょうか？<br>Windows起動時に常駐させる機能ですか？<br>タスクトレイアイコンの意味でしたら，当初からこのエディタは2プロセス構成ですので「古いVerには無い」ということは無いはずです．<br></div></section>
+    </li><li><section><h1 id=6436>
+    <span class="no">[6436]</span>
+    <a class="thread-title" href="#6436">Re:古いサクラをVistaで正しく動作させる場合</a>
+    <span class="author">ryoji</span>
+    <time datetime="2007-11-01T19:54:13">2007年11月01日 19:54</time></h1>
+    <div class="body">&gt;ヘルプからVerを除いてみると、0.3.9.0にはなっています。<br>ということは、動いているのが0.3.9.0には違いないと思います。<br><br>VistaのVirtual Store機能に騙されているんじゃないでしょうか？<br>「Ver1.5.15.3と同じ挙動」というのは、思ったのとは違う設定（ini）で動いてしまっている、てことかしら？と。<br><br>例えば...<br>Ver1.5.15.3をProgram Files下にインストールして一度動かすとsakuraはiniをインストール先フォルダに保存しようとするんですが、Vistaはこれを騙して別のフォルダ（Virtual Store）に保存します。<br>アンインストールしてインストール先フォルダをまるごと削除したとしてもVirtual StoreにはVer1.5.15.3のiniが残ります。<br>その状況で、削除したのと同じフォルダ名でフォルダを作成し、そこに旧バージョンのexe, iniをコピーして動かした場合、sakuraは同じフォルダのiniを読もうとするんですが、Vistaはまたこれを騙してVirtual Storeに残っているほうのiniを読ませます。その結果、ユーザーの意図通りの設定では動かない、ということになります。<br><br>上記のような現象なら...<br>Virtual Storeにiniが残っている場合、インストール先フォルダをエクスプローラで表示すると「互換性フォルダ」ボタンがツールバーに表示されます。そのボタンを押せばVirtual Storeに移動するので、そこにあるiniファイル（Ver1.5.15.3が作成したini）を削除してください。<br><br>VistaでexeをProgram Files下に置きたいしVirtual Storeも回避したいという場合は、<br>・Vistaの設定でUACをOFFにする（非推奨）<br>・sakura Ver1.6.0.0以後をマルチユーザー設定で使用する<br>くらいしか方法はありません。<br>あとは、<br>・ini、その他Program Files下へのファイル保存がVirtual Store行きになるということを承知のうえでProgram Files下にexeを置いて使う<br>・Program Files以外にフォルダを作成し、そこにexeを置いて使う<br>のいずれかを選択することになります。<br><br>UACをOFFにしてしまうので無い限り、従来環境をVistaに移行する場合はマクロ保存先フォルダなど各種パス設定の見直しがほぼ必須になると思います。面倒ですけど、OSのほうの仕様が変わってしまったので...</div></section>
+    </li></ul></li></ul></body></html>

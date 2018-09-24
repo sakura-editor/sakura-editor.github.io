@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>ヘッダー部分のみを削除するには | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6489</span>
+    <a class="thread-title" href="6489.html#6489">ヘッダー部分のみを削除するには</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6499</span>
+    <a class="thread-title" href="6489.html#6499">RE: ヘッダー部分のみを削除するには</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6506</span>
+    <a class="thread-title" href="6489.html#6506">Re2: ヘッダー部分のみを削除するには</a></div>
+    </li></ul></li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6489>
+    <span class="no">[6489]</span>
+    <a class="thread-title" href="#6489">ヘッダー部分のみを削除するには</a>
+    <span class="author">もも</span>
+    <time datetime="2007-11-28T23:59:24">2007年11月28日 23:59</time></h1>
+    <div class="body">例えば<br><br> &lt;h_&gt;&lt;p_&gt;After 35 straight veto victories, intense <br> lobbying fails president with election in offing&lt;p/&gt;<br> &lt;p_&gt;By Elaine S. Povich&lt;p/&gt;<br> &lt;p_&gt;CHICAGO TRIBUNE&lt;p/&gt;&lt;h/&gt;<br> &lt;p_&gt;WASHINGTON - Despite intense White House lobbying, Congress has <br> voted to override the veto of a cable television regulation bill, <br> dealing President Bush the first veto defeat of his presidency just <br> four weeks before the election.&lt;p/&gt;<br><br>というテキストのヘッダー部分の&lt;h_&gt;から&lt;h/&gt;のみを削除して<br><br>&lt;p_&gt;WASHINGTON - Despite intense White House lobbying, Congress has <br> voted to override the veto of a cable television regulation bill, <br> dealing President Bush the first veto defeat of his presidency just <br> four weeks before the election.&lt;p/&gt;<br><br>という部分だけを取り出したいのですがどのようにしたらよいのでしょうか。<br>よろしくお願いします。</div></section>
+    <ul><li><section><h1 id=6499>
+    <span class="no">[6499]</span>
+    <a class="thread-title" href="#6499">RE: ヘッダー部分のみを削除するには</a>
+    <span class="author">maru</span>
+    <time datetime="2007-12-02T03:45:26">2007年12月02日 03:45</time></h1>
+    <div class="body">レス付かないですね・・・。<br>多分マクロでこんな感じです。<br><br>//キーボードマクロのファイル<br>S_GoFileTop(0);&#9;// ファイルの先頭に移動<br>S_SearchNext('&lt;h_&gt;', 16);&#9;// 次を検索<br>S_Delete(0);&#9;// 削除<br>S_MoveHistSet(0);&#9;// 現在位置を移動履歴に登録<br>S_SearchNext('&lt;h/&gt;', 16);&#9;// 次を検索<br>S_Delete(0);&#9;// 削除<br>S_BeginSelect(0);&#9;// 範囲選択開始<br>S_MoveHistPrev(0);&#9;// 移動履歴: 前へ<br>S_Delete(0);&#9;// 削除<br><br>該当箇所が見つからなかった場合のフォローはありません。<br></div></section>
+    <ul><li><section><h1 id=6506>
+    <span class="no">[6506]</span>
+    <a class="thread-title" href="#6506">Re2: ヘッダー部分のみを削除するには</a>
+    <span class="author">もも</span>
+    <time datetime="2007-12-02T20:38:38">2007年12月02日 20:38</time></h1>
+    <div class="body">ありがとうございました。<br><br>何回か置換処理を分けて取り出すことにしました。<br><br>マクロはまだやったことがないのですが、これから覚えようと思っています。<br></div></section>
+    </li></ul></li></ul></li></ul></body></html>

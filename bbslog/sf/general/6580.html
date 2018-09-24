@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <script src='../bbs.js'></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120820034-1"></script>
+
+  <link href="../bbs.css" type="text/css" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>unicode版フォントによる文字化け | サクラエディタ過去ログ</title>
+</head>
+<body>
+<ul class="side">
+        <a href="./" class="toindex">◀一般トップへ</a>
+        <li><div class="list-title">
+    <span class="no">6580</span>
+    <a class="thread-title" href="6580.html#6580">unicode版フォントによる文字化け</a></div>
+    <ul><li><div class="list-title">
+    <span class="no">6582</span>
+    <a class="thread-title" href="6580.html#6582">Re:unicode版フォントによる文字化け</a></div>
+    </li></ul></li>
+    </ul><ul class="main"><li><section><h1 id=6580>
+    <span class="no">[6580]</span>
+    <a class="thread-title" href="#6580">unicode版フォントによる文字化け</a>
+    <span class="author">phi</span>
+    <time datetime="2008-02-10T23:18:01">2008年02月10日 23:18</time></h1>
+    <div class="body">unicode自体非対応なので、バグなのかわからないのですが…<br><br><a href=http://osakattf.hp.infoseek.co.jp/ target=_top><nobr>http://<wbr>osakattf<wbr>.<wbr>hp.<wbr>infoseek<wbr>.<wbr>co.<wbr>jp/<wbr></nobr></a><br><br>上記で公開されているosakaフォントを試してたところ、間違えてunicode版を適用させてしまいました。<br>それによって文字化けが発生したのですが、通常のフォント(MS Pゴシックなど)に変更しても解消されません。<br>また、unicode版osakaフォント自体を削除しても解消されることはありませんでした。(フォントを削除しても「フォント設定」の「フォント名」にはunicode版osakaフォントが残っている状態です。)<br><br>もちろん、sakura.iniを削除して作り直してもいいのですが、設定をいじりすぎて作り直すのが大変なので、できるだけ作り直さない方法で解決法はないでしょうか？<br><br>■使用環境<br>  Sakura 1.6.2.0.<br>  Windows XP Home SP2</div></section>
+    <ul><li><section><h1 id=6582>
+    <span class="no">[6582]</span>
+    <a class="thread-title" href="#6582">Re:unicode版フォントによる文字化け</a>
+    <span class="author">phi</span>
+    <time datetime="2008-02-11T16:42:57">2008年02月11日 16:42</time></h1>
+    <div class="body">現状報告させていただきます。<br><br>&gt;フォントを削除しても「フォント設定」の「フォント名」にはunicode版osakaフォントが残っている状態です。<br><br>フォント削除後、再起動をさせてから確認したところフォント名にunicode版osakaフォントは消えていました。<br><br>sakura.iniに関しましては、特に設定が面倒な「タイプ別設定」にあたる[Types(0)]～[Types(19)]、[KeyWords]、何に当たるのかわからないのですが、念のために[Other]の部分を文字化けが生じているsakura.iniからコピペしてとりあえず文字化けは解決しました。<br>もしかすると、書き換えによって何か問題が生じるかもしれないので、他にsakura.iniのどの部分をコピペした方がいいか、してはいけないのかというようなアドバイスがありましたらお願いします。</div></section>
+    </li></ul></li></ul></body></html>
