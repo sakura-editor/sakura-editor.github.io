@@ -39,6 +39,8 @@
     </a>
 
     <p>
+      <form action="https://www.google.com/search" id="sakura-site-search-box">
+        <!-- 見出しと検索ボックスを同じ行にいれるために form タグの中に入れています -->
         [▲HOME]
         [<a href="/intro.html">機能紹介</a>]
         [<a href="/download.html">ダウンロード</a>]
@@ -46,6 +48,13 @@
         [<a href="https://ja.osdn.net/projects/sakura-editor/forums/34071/" target="_blank">一般話題（質疑・要望等）</a>]
         [<a href="https://ja.osdn.net/projects/sakura-editor/forums/34094/" target="_blank">マクロ掲示板</a>]
         [<a href="index.en.html" target="_blank">English</a>]
+
+        <!-- Google の検索ボックス -->
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="hidden" name="q" value="site:https://sakura-editor.github.io" />
+        <input type="text" name="q" size="31" />
+        <input type="submit" name="sa" value="Search" />
+      </form>
     </p>
     <h1 class="title">サクラエディタ</h1>
 
